@@ -587,6 +587,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4-open-source-cad-3d-print-file-catalog-openscad-stl" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Open-Source CAD &amp; 3D Print File Catalog (OpenSCAD &amp; STL)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Open-Source CAD & 3D Print File Catalog (OpenSCAD & STL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canonical-production-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canonical Production Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slicing-build-targets-prusaslicer-openscad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slicing &amp; Build Targets (PrusaSlicer &amp; OpenSCAD)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -958,6 +991,39 @@
       3. Deliberate Quality-of-Life Departures from HP32SII
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-open-source-cad-3d-print-file-catalog-openscad-stl" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Open-Source CAD &amp; 3D Print File Catalog (OpenSCAD &amp; STL)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Open-Source CAD & 3D Print File Catalog (OpenSCAD & STL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canonical-production-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canonical Production Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slicing-build-targets-prusaslicer-openscad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slicing &amp; Build Targets (PrusaSlicer &amp; OpenSCAD)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1701,6 +1767,112 @@
 <li><em>HP32SII:</em> Relied on abbreviated, unindexed 2-letter codes.</li>
 <li><em>StackCalc:</em> Hardware uses organized softkey pagination, while companion apps feature a searchable database complete with full names, precise values, and physical SI units.</li>
 </ol>
+<hr />
+<h2 id="4-open-source-cad-3d-print-file-catalog-openscad-stl">4. Open-Source CAD &amp; 3D Print File Catalog (OpenSCAD &amp; STL)</h2>
+<p>All mechanical components for StackCalc32 are fully parametric, version-controlled, and open-source. CAD source models are maintained in the main repository under <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/designs/</code></a>, with verified build targets managed via <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/Makefile</code></a>.</p>
+<h3 id="canonical-production-models">Canonical Production Models</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>OpenSCAD Source (<code>Hardware/designs/</code>)</th>
+<th>Export Target (<code>scratch/stl/</code>)</th>
+<th>Material</th>
+<th>Infill &amp; Slicing Specifications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tapered Chassis Shell</strong></td>
+<td><code>chassis_tapered.scad</code></td>
+<td><code>chassis_tapered.stl</code></td>
+<td>Matte PLA / PETG</td>
+<td>Continuous 1.60857° anti-rocking desk wedge. Dual-tier internal sliding guide channels for PCB and faceplate. Sliced at 0.20 mm layer height, 3 perimeters, 100% infill.</td>
+</tr>
+<tr>
+<td><strong>Flexure Top Cap</strong></td>
+<td><code>top_cap.scad</code></td>
+<td><code>top_cap.stl</code></td>
+<td>95A Flexible TPU</td>
+<td>Squeeze-release cap that closes display frame and houses wired CR2032 battery carrier. 0.20 mm layer height, 4 perimeters, 100% infill.</td>
+</tr>
+<tr>
+<td><strong>Retaining Pegs</strong></td>
+<td><code>tpu_retaining_peg.scad</code></td>
+<td><code>tpu_retaining_peg.stl</code></td>
+<td>95A Flexible TPU</td>
+<td>Mushroom-head compliant locking pins securing faceplate and chassis without screws or glue. 0.20 mm layer height.</td>
+</tr>
+<tr>
+<td><strong>Unified Sandwich Faceplate</strong></td>
+<td><code>unified_sandwich_faceplate.scad</code></td>
+<td><code>unified_sandwich_faceplate.stl</code></td>
+<td>Black PLA / PETG</td>
+<td>Integrated stepped optical LCD bezel pocket and 43-key matrix apertures. 0.20 mm layer height with top-surface ironing.</td>
+</tr>
+<tr>
+<td><strong>Tactile Key Membrane</strong></td>
+<td><code>hp32sii_sandwich_tpu_membrane.scad</code></td>
+<td><code>hp32sii_sandwich_tpu_membrane.stl</code></td>
+<td>95A Flexible TPU</td>
+<td>Tactile membrane seating 43 switch plungers directly over ALPS SMD switches. 0.10 mm layer height.</td>
+</tr>
+<tr>
+<td><strong>Keycaps &amp; Plungers</strong></td>
+<td><code>hp32sii_production_buttons.scad</code> / <code>rounded_buttons.scad</code></td>
+<td><code>buttons.stl</code> / <code>rounded_buttons.stl</code></td>
+<td>PLA / PETG</td>
+<td>Authentic HP-32SII trapezoidal caps or retro-circular buttons with 3-point planar spiral suspension. Sliced at 0.05 mm slow detail, 4 perimeters, 6% ironing flow.</td>
+</tr>
+<tr>
+<td><strong>Protective Travel Pouch</strong></td>
+<td><code>tpu_pouch.scad</code></td>
+<td><code>tpu_pouch.stl</code></td>
+<td>95A Flexible TPU</td>
+<td>Drop-proof travel sleeve featuring debossed StackCalc 4-level stack emblem and rear reference card slot. 0.28 mm draft layer height.</td>
+</tr>
+<tr>
+<td><strong>Modular Puzzle Stand</strong></td>
+<td><code>puzzle_stand.scad</code></td>
+<td><code>puzzle_stand.stl</code></td>
+<td>PLA / PETG</td>
+<td>4-piece interlocking frame (<code>piece_c_bl</code>, <code>piece_c_br</code>, <code>piece_c_tl</code>, <code>piece_c_tr</code>, <code>piece_lateral_strut</code>) converting from transit bumpers into an upright portrait desk stand.</td>
+</tr>
+<tr>
+<td><strong>Origami Dual-Angle Stand</strong></td>
+<td><code>origami_stand.scad</code></td>
+<td><code>origami_stand.stl</code></td>
+<td>PLA / PETG</td>
+<td>Dual-angle desk fixture providing a 78° upright showcase display angle and a 10.0° ergonomic typing elevator.</td>
+</tr>
+<tr>
+<td><strong>Manufacturing Dummy PCB</strong></td>
+<td><code>dummy_pcb.scad</code></td>
+<td><code>dummy_pcb.stl</code></td>
+<td>PLA</td>
+<td>Dimensional reference model for validating rail slide tolerances, board keepouts, and switch datum alignment (<code>make verify-fit</code>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slicing-build-targets-prusaslicer-openscad">Slicing &amp; Build Targets (PrusaSlicer &amp; OpenSCAD)</h3>
+<p>Pre-configured PrusaSlicer print projects and build workflows are available directly from the repository root:</p>
+<ul>
+<li><strong>Complete Multi-Material Project:</strong> <code>Hardware/watch-calc-32.3mf</code></li>
+<li><strong>Building via Makefile:</strong>
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Check OpenSCAD and PrusaSlicer environment</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>make<span class="w"> </span>doctor
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Compile all production STL meshes</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>make<span class="w"> </span>production
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Run mathematical tolerance and interference checks</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>make<span class="w"> </span>verify-fit
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>make<span class="w"> </span>verify-interference
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># Export PrusaSlicer multi-material project file</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>make<span class="w"> </span>3mf
+</span></code></pre></div></li>
+</ul>
 
 
 

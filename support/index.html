@@ -898,9 +898,9 @@
 <h2 id="contact-our-team">📬 Contact Our Team</h2>
 <p>If you need direct assistance, encountered a bug, or have a question:</p>
 <ul>
-<li><strong>Email Support:</strong> <a href="mailto:support@stackcalc.io">support@stackcalc.io</a> <em>(Average response within 24 hours)</em></li>
-<li><strong>GitHub Issue Tracker:</strong> <a href="https://github.com/abagher2/watch-calc-32/issues">github.com/abagher2/watch-calc-32/issues</a> <em>(Best for bug reports and technical questions)</em></li>
+<li><strong>GitHub Issue Tracker:</strong> <a href="https://github.com/abagher2/stackcalc/issues">https://github.com/abagher2/stackcalc/issues</a> <em>(Best for bug reports, troubleshooting, and feature requests)</em></li>
 <li><strong>Community Documentation:</strong> Explore our in-depth guides for <a href="../hardware/">Hardware</a>, <a href="../firmware/">Firmware</a>, <a href="../ios_app/">iOS App</a>, and <a href="../tutorials/">Interactive Tutorials</a>.</li>
+<li><strong>Web Support &amp; Help Desk:</strong> Visit <a href="https://www.stackcalc.io/support/">stackcalc.io/support/</a> for frequent updates.</li>
 </ul>
 <hr />
 <h2 id="frequently-asked-questions-faq">❓ Frequently Asked Questions (FAQ)</h2>
@@ -926,7 +926,8 @@
 <p>StackCalc offers two distinct user interfaces on iPhone and iPad:
 - <strong>Hardware Replica (Default):</strong> An authentic, brutalist digital twin of our physical open-source hardware, featuring the high-contrast icy silver-blue ST7567A dot-matrix screen, trapezoidal snap-dome key caps, and laser-marked legends.
 - <strong>Modern App:</strong> An expansive, glassmorphism-free touch interface with dynamic softkeys and high-resolution TUI graph rendering.
-- <strong>To Switch:</strong> Press <code>MODES</code> &rarr; <code>Interface</code> &rarr; toggle between <code>Hardware Replica</code> and <code>App</code>.</p>
+- <strong>To Switch Interface:</strong> Press <strong>Yellow Shift</strong> + <code>FLAGS</code> (or tap <code>FLAGS</code> in the menu catalog) &rarr; <code>HW</code> &rarr; select <code>APP</code> or <code>REPLICA</code>.
+- <strong>Faceplate Themes:</strong> You can also customize faceplate aesthetics in the same menu via <code>FLAGS</code> &rarr; <code>FACE</code> (<code>RETRO</code>, <code>STEALTH</code>, <code>NOVA</code>, <code>SPACE</code>, or <code>VOYAGER</code>).</p>
 <hr />
 <h3 id="5-how-do-i-use-the-equation-solver-and-numerical-integrator">5. How do I use the Equation Solver and Numerical Integrator?</h3>
 <p>StackCalc includes an equation solver based on the legendary HP-32SII algorithms:
@@ -937,20 +938,34 @@
 <hr />
 <h3 id="6-how-do-i-clear-continuous-memory-or-reset-the-calculator">6. How do I clear continuous memory or reset the calculator?</h3>
 <ul>
-<li><strong>Clear Current X:</strong> Press <code>C</code> (or backspace <code>←</code>).</li>
-<li><strong>Clear Entire Stack:</strong> Press <strong>Yellow Shift</strong> + <code>C</code> (<code>CLEAR</code>) &rarr; <code>Stack</code>.</li>
-<li><strong>Full Factory Reset:</strong> Press <code>FLAGS</code> &rarr; scroll to <code>Reset All</code> / <code>Clear Continuous Memory</code>. All memory registers, stack levels, and equations will return to default state.</li>
+<li><strong>Clear Current X Entry / Cancel:</strong> Press <code>C</code> (or backspace <code>←</code>).</li>
+<li><strong>The CLEAR Menu:</strong> Press <strong>Yellow Shift</strong> + <code>C</code> (<code>CLEAR</code>) to open the dedicated memory reset menu:</li>
+<li><code>CLSTK</code>: Clears all four levels of the operational stack (<span class="arithmatex">\(X, Y, Z, T\)</span>).</li>
+<li><code>CLREGS</code>: Clears the 26 storage registers (<span class="arithmatex">\(R_0 \dots R_{25}\)</span>).</li>
+<li><code>CLSTAT</code>: Clears all two-variable statistical accumulation registers (<span class="arithmatex">\(\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n\)</span>).</li>
+<li><code>CLEQN</code>: Clears all stored user equations.</li>
+<li><code>CLVARS</code>: Clears all variables and financial registers.</li>
+<li><code>CLALL</code>: Complete factory reset; clears all stack levels, variables, registers, and equations back to initial state.</li>
 </ul>
 <hr />
 <h3 id="7-physical-hardware-diy-snap-together-kits">7. Physical Hardware &amp; DIY Snap-Together Kits</h3>
 <ul>
 <li><strong>Pre-Soldered Boards:</strong> All electronic circuit boards and LCD modules shipped from our storefront are 100% pre-soldered and tested.</li>
 <li><strong>Assembly Guide:</strong> Assembly takes less than 5 minutes—no soldering iron required. Detailed step-by-step schematics and video walkthroughs are available in the <a href="../hardware/">Hardware Documentation</a>.</li>
-<li><strong>3D Printing Files:</strong> All CAD models (<code>.scad</code>, <code>.stl</code>, <code>.3mf</code>) for enclosures, plungers, and faceplates are open-source and free to download from our GitHub repository.</li>
+<li><strong>Open-Source CAD &amp; 3D Print Models (OpenSCAD &amp; STL):</strong> All mechanical parts are open-source and maintained in the main repository (<code>Hardware/designs/</code>):</li>
+<li><strong>Chassis Enclosure:</strong> <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/designs/chassis_tapered.scad</code></a> &rarr; <code>chassis_tapered.stl</code> (1.60857° anti-rocking continuous desk wedge with dual-tier PCB and faceplate sliding rails)</li>
+<li><strong>Flexure Top Cap:</strong> <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/designs/top_cap.scad</code></a> &rarr; <code>top_cap.stl</code> (squeeze-release cap with integrated wired CR2032 coin cell holder)</li>
+<li><strong>Locking Retaining Pegs:</strong> <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/designs/tpu_retaining_peg.scad</code></a> &rarr; <code>tpu_retaining_peg.stl</code> (compliant 95A TPU mushroom pins for screwless interlock)</li>
+<li><strong>Unified Faceplate:</strong> <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/designs/unified_sandwich_faceplate.scad</code></a> &rarr; <code>unified_sandwich_faceplate.stl</code> (dual-tier sliding faceplate with LCD aperture)</li>
+<li><strong>Tactile Key Membrane:</strong> <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/designs/hp32sii_sandwich_tpu_membrane.scad</code></a> &rarr; <code>hp32sii_sandwich_tpu_membrane.stl</code> (95A TPU tactile button suspension)</li>
+<li><strong>Keycaps &amp; Plungers:</strong> <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/designs/hp32sii_production_buttons.scad</code></a> &amp; <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/designs/rounded_buttons.scad</code></a> (trapezoidal HP-32SII or circular retro keycaps with 3-point planar spiral springs)</li>
+<li><strong>Protective Pouch:</strong> <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/designs/tpu_pouch.scad</code></a> &rarr; <code>tpu_pouch.stl</code> (impact-absorbing 95A TPU sleeve with rear reference card pocket)</li>
+<li><strong>Desktop Stands:</strong> <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/designs/puzzle_stand.scad</code></a> &amp; <a href="https://github.com/abagher2/watch-calc-32"><code>Hardware/designs/origami_stand.scad</code></a> (modular 4-piece corner bumper / portrait stand and 10° typing elevator)</li>
+<li><strong>PrusaSlicer 3MF Project:</strong> <code>Hardware/watch-calc-32.3mf</code> (pre-configured multi-material print plate with 0.05 mm button detail layer heights and top-surface ironing)</li>
 </ul>
 <hr />
 <h2 id="reporting-a-bug-or-requesting-a-feature">🛠️ Reporting a Bug or Requesting a Feature</h2>
-<p>When submitting an issue via <a href="https://github.com/abagher2/watch-calc-32/issues">GitHub</a> or emailing <a href="mailto:support@stackcalc.io">support@stackcalc.io</a>, please include:
+<p>When submitting an issue via our <a href="https://github.com/abagher2/stackcalc/issues">GitHub Issue Tracker</a>, please include:
 1. <strong>Device &amp; OS Version</strong> (e.g., iPhone 17 Pro Max with iOS 18, Apple Watch Series 11 with watchOS 11, or physical RP2350 hardware).
 2. <strong>Interface Mode</strong> (Hardware Replica or App).
 3. <strong>Step-by-Step Keystroke Sequence</strong> (e.g., <code>5</code>, <code>ENTER</code>, <code>3</code>, <code>÷</code>).
