@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="216" viewBox="0 0 180 216">
+  <path d="M28 16H18v184h10" fill="none" stroke="#1C1C1E" stroke-opacity=".28" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="36" y="8" width="126" height="42" rx="11" fill="#1C1C1E" fill-opacity=".055" stroke="#1C1C1E" stroke-opacity=".12"/>
+  <g transform="translate(130 16)" fill="#3A3A3C" fill-opacity=".48">
+    <rect width="14" height="3" rx="1.5"/><rect x="12" y="2" width="3" height="11" rx="1.5"/><rect y="11.5" width="14" height="3" rx="1.5"/><rect y="13" width="3" height="11" rx="1.5"/><rect y="23" width="14" height="3" rx="1.5"/>
+  </g>
+  <rect x="36" y="58" width="126" height="42" rx="11" fill="#1C1C1E" fill-opacity=".07" stroke="#1C1C1E" stroke-opacity=".14"/>
+  <g transform="translate(130 66)" fill="#3A3A3C" fill-opacity=".58">
+    <rect width="14" height="3" rx="1.5"/><rect y="2" width="3" height="11" rx="1.5"/><rect y="11.5" width="14" height="3" rx="1.5"/><rect x="12" y="13" width="3" height="11" rx="1.5"/><rect y="23" width="14" height="3" rx="1.5"/>
+  </g>
+  <rect x="36" y="108" width="126" height="42" rx="11" fill="#1C1C1E" fill-opacity=".085" stroke="#1C1C1E" stroke-opacity=".16"/>
+  <g transform="translate(130 116)" fill="#3A3A3C" fill-opacity=".68">
+    <rect width="14" height="3" rx="1.5"/><rect x="12" y="2" width="3" height="11" rx="1.5"/><rect y="11.5" width="14" height="3" rx="1.5"/><rect x="12" y="13" width="3" height="11" rx="1.5"/><rect y="23" width="14" height="3" rx="1.5"/>
+  </g>
+  <rect x="36" y="158" width="126" height="50" rx="13" fill="#FF9F0A" fill-opacity=".14" stroke="#D97706" stroke-opacity=".82" stroke-width="2"/>
+  <g transform="translate(130 170)" fill="#B45309">
+    <rect width="14" height="3" rx="1.5"/><rect x="12" y="2" width="3" height="11" rx="1.5"/><rect x="12" y="13" width="3" height="11" rx="1.5"/><rect y="23" width="14" height="3" rx="1.5"/><rect y="13" width="3" height="11" rx="1.5"/><rect y="2" width="3" height="11" rx="1.5"/><rect y="11.5" width="14" height="3" rx="1.5"/>
+  </g>
+</svg>

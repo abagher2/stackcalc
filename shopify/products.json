@@ -1,0 +1,591 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "catalog_name": "StackCalc Hardware Catalog",
+  "currency": "USD",
+  "version": "2026.1",
+  "store_url": "https://shop.stackcalc.io",
+  "products": [
+    {
+      "id": "sc32-founders-edition",
+      "handle": "sc32-founders-edition",
+      "title": "StackCalc SC-32 Founder's Edition (Batch 00)",
+      "product_type": "Scientific Calculator",
+      "vendor": "StackCalc",
+      "category": "Office Supplies > Calculators",
+      "hs_tariff_code": "8470.10.00",
+      "weight_grams": 185,
+      "base_price": 89.00,
+      "compare_at_price": 115.00,
+      "cost_per_item": 26.50,
+      "published": true,
+      "description": "Our limited inaugural production run (Batch 00, strictly 5 numbered units worldwide). Built for mathematicians, students, and engineers who value physical focus and mathematical clarity.",
+      "tags": [
+        "Calculator",
+        "RPN",
+        "Scientific Calculator",
+        "Physical Calculator",
+        "Founder's Edition",
+        "Batch 00",
+        "Limited Edition",
+        "Snap Assembly",
+        "STEM"
+      ],
+      "features": [
+        "Priority early access shipping from inaugural Batch 00",
+        "Personalized laser nameplate engraving on rear plate (max 15 characters)",
+        "Pure 4-level RPN stack: fractions, trig, roots, exponents, & two-variable stats",
+        "43 crisp mechanical snap-dome tactile keys for rapid entry",
+        "High-contrast glare-free graphic screen readable in bright daylight",
+        "Standard CR2032 coin cell battery included (months of daily operation)",
+        "Reversible protective TPU travel pouch & dual desk stands included",
+        "Effortless 5-minute snap assembly (100% pre-soldered & factory-tested, zero tools)"
+      ],
+      "custom_line_item_properties": [
+        {
+          "name": "Engraving",
+          "label": "Custom Nameplate Engraving",
+          "type": "text",
+          "max_length": 15,
+          "required": false,
+          "placeholder": "e.g. A. LOVELACE",
+          "help_text": "Up to 15 alphanumeric characters. Laser engraved in Space Mono on rear PETG plate."
+        }
+      ],
+      "options": [
+        {
+          "name": "Colorway",
+          "values": [
+            "RetroFuturism",
+            "Stealth Industrial",
+            "Supernova",
+            "Deep Space",
+            "Voyager"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "sku": "SC32-FND-RETRO",
+          "title": "RetroFuturism (Apollo Off-White)",
+          "colorway": "RetroFuturism",
+          "price": 89.00,
+          "compare_at_price": 115.00,
+          "inventory_qty": 1,
+          "inventory_policy": "deny",
+          "weight_grams": 185,
+          "barcode": ""
+        },
+        {
+          "sku": "SC32-FND-STLTH",
+          "title": "Stealth Industrial (Matte Black & Slate)",
+          "colorway": "Stealth Industrial",
+          "price": 89.00,
+          "compare_at_price": 115.00,
+          "inventory_qty": 1,
+          "inventory_policy": "deny",
+          "weight_grams": 185,
+          "barcode": ""
+        },
+        {
+          "sku": "SC32-FND-SPRNV",
+          "title": "Supernova (Silk Crimson & Gold)",
+          "colorway": "Supernova",
+          "price": 89.00,
+          "compare_at_price": 115.00,
+          "inventory_qty": 1,
+          "inventory_policy": "deny",
+          "weight_grams": 185,
+          "barcode": ""
+        },
+        {
+          "sku": "SC32-FND-DPSPC",
+          "title": "Deep Space (Cosmic Purple & Teal)",
+          "colorway": "Deep Space",
+          "price": 89.00,
+          "compare_at_price": 115.00,
+          "inventory_qty": 1,
+          "inventory_policy": "deny",
+          "weight_grams": 185,
+          "barcode": ""
+        },
+        {
+          "sku": "SC32-FND-VYG01",
+          "title": "Voyager (Nautical Navy & Frost White)",
+          "colorway": "Voyager",
+          "price": 89.00,
+          "compare_at_price": 115.00,
+          "inventory_qty": 1,
+          "inventory_policy": "deny",
+          "weight_grams": 185,
+          "barcode": ""
+        }
+      ]
+    },
+    {
+      "id": "sc32-scientific-calculator",
+      "handle": "sc32-scientific-calculator",
+      "title": "StackCalc SC-32 RPN Scientific Calculator",
+      "product_type": "Scientific Calculator",
+      "vendor": "StackCalc",
+      "category": "Office Supplies > Calculators",
+      "hs_tariff_code": "8470.10.00",
+      "weight_grams": 170,
+      "base_price": 59.00,
+      "compare_at_price": null,
+      "cost_per_item": 18.20,
+      "published": true,
+      "description": "The definitive physical RPN scientific calculator for students, teachers, and STEM professionals. Starting at $59, StackCalc is the lowest-cost dedicated RPN scientific calculator on Earth. Features identical hardware and math engine to the Founder's Edition with a standard serialized backplate.",
+      "tags": [
+        "Calculator",
+        "RPN",
+        "Scientific Calculator",
+        "Physical Calculator",
+        "Regular Edition",
+        "Snap Assembly",
+        "STEM",
+        "Students",
+        "High School",
+        "College",
+        "Engineering"
+      ],
+      "features": [
+        "Unbeatable $59 price: lowest-cost dedicated RPN scientific calculator in the world",
+        "Identical hardware & math engine to Founder's Edition",
+        "Pure 4-level RPN stack: fractions, trig, powers, roots, & two-variable stats",
+        "43 crisp mechanical tactile keys with pre-printed keycaps",
+        "Standard serialized backplate (no custom name engraving)",
+        "High-contrast glare-free graphic screen readable in bright classrooms",
+        "Standard coin cell battery included for multi-month battery life",
+        "Effortless 5-minute snap assembly (100% pre-soldered, zero tools needed)",
+        "Packaging converts directly into dual ergonomic desk stands"
+      ],
+      "custom_line_item_properties": [],
+      "options": [
+        {
+          "name": "Colorway",
+          "values": [
+            "RetroFuturism",
+            "Stealth Industrial",
+            "Supernova",
+            "Deep Space",
+            "Voyager"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "sku": "SC32-STD-RETRO",
+          "title": "RetroFuturism (Apollo Off-White)",
+          "colorway": "RetroFuturism",
+          "price": 59.00,
+          "compare_at_price": null,
+          "inventory_qty": 100,
+          "inventory_policy": "deny",
+          "weight_grams": 170,
+          "barcode": ""
+        },
+        {
+          "sku": "SC32-STD-STLTH",
+          "title": "Stealth Industrial (Matte Black & Slate)",
+          "colorway": "Stealth Industrial",
+          "price": 59.00,
+          "compare_at_price": null,
+          "inventory_qty": 100,
+          "inventory_policy": "deny",
+          "weight_grams": 170,
+          "barcode": ""
+        },
+        {
+          "sku": "SC32-STD-SPRNV",
+          "title": "Supernova (Silk Crimson & Gold)",
+          "colorway": "Supernova",
+          "price": 59.00,
+          "compare_at_price": null,
+          "inventory_qty": 50,
+          "inventory_policy": "deny",
+          "weight_grams": 170,
+          "barcode": ""
+        },
+        {
+          "sku": "SC32-STD-DPSPC",
+          "title": "Deep Space (Cosmic Purple & Teal)",
+          "colorway": "Deep Space",
+          "price": 59.00,
+          "compare_at_price": null,
+          "inventory_qty": 50,
+          "inventory_policy": "deny",
+          "weight_grams": 170,
+          "barcode": ""
+        },
+        {
+          "sku": "SC32-STD-VYG01",
+          "title": "Voyager (Nautical Navy & Frost White)",
+          "colorway": "Voyager",
+          "price": 59.00,
+          "compare_at_price": null,
+          "inventory_qty": 50,
+          "inventory_policy": "deny",
+          "weight_grams": 170,
+          "barcode": ""
+        }
+      ]
+    },
+    {
+      "id": "sc6-elementary-calculator",
+      "handle": "sc6-elementary-calculator",
+      "title": "StackCalc SC-6 Elementary Math Calculator",
+      "product_type": "Elementary Calculator",
+      "vendor": "StackCalc",
+      "category": "Office Supplies > Calculators",
+      "hs_tariff_code": "8470.10.00",
+      "weight_grams": 150,
+      "base_price": 35.00,
+      "compare_at_price": null,
+      "cost_per_item": 11.50,
+      "published": true,
+      "description": "Purpose-built for elementary students (Grades K–6) building foundational math intuition. Non-shifted visual layout featuring ten frames, number racks, dedicated fraction simplification [SIMP], skip-counting, place value, and time/currency calculations.",
+      "tags": [
+        "Calculator",
+        "Elementary Math",
+        "K-6",
+        "STEM",
+        "Ten Frames",
+        "Number Racks",
+        "Fractions",
+        "SIMP",
+        "Math Education",
+        "Kids",
+        "Classroom"
+      ],
+      "features": [
+        "Visual ten frames: numbers group into tens and ones directly on screen",
+        "Interactive number racks: bead models reinforce addition and subtraction strategies",
+        "Dedicated [SIMP] key for step-by-step manual fraction simplification",
+        "Skip-counting [REP] and integer factoring operations",
+        "Clock time and currency arithmetic operations",
+        "Large, high-visibility tactile keys & durable snap chassis with rounded drop corners",
+        "Kid-safe, coin-cell battery included, zero distractions or ads",
+        "Effortless 5-minute snap assembly (100% pre-soldered, zero tools)"
+      ],
+      "custom_line_item_properties": [],
+      "options": [
+        {
+          "name": "Colorway",
+          "values": [
+            "Schoolhouse Blue",
+            "Solar Yellow",
+            "Forest Green",
+            "Slate Gray",
+            "Coral Red"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "sku": "SC6-ELM-BLUE",
+          "title": "Schoolhouse Blue",
+          "colorway": "Schoolhouse Blue",
+          "price": 35.00,
+          "compare_at_price": null,
+          "inventory_qty": 100,
+          "inventory_policy": "deny",
+          "weight_grams": 150,
+          "barcode": ""
+        },
+        {
+          "sku": "SC6-ELM-YLLW",
+          "title": "Solar Yellow",
+          "colorway": "Solar Yellow",
+          "price": 35.00,
+          "compare_at_price": null,
+          "inventory_qty": 100,
+          "inventory_policy": "deny",
+          "weight_grams": 150,
+          "barcode": ""
+        },
+        {
+          "sku": "SC6-ELM-GREN",
+          "title": "Forest Green",
+          "colorway": "Forest Green",
+          "price": 35.00,
+          "compare_at_price": null,
+          "inventory_qty": 100,
+          "inventory_policy": "deny",
+          "weight_grams": 150,
+          "barcode": ""
+        },
+        {
+          "sku": "SC6-ELM-SLTE",
+          "title": "Slate Gray",
+          "colorway": "Slate Gray",
+          "price": 35.00,
+          "compare_at_price": null,
+          "inventory_qty": 100,
+          "inventory_policy": "deny",
+          "weight_grams": 150,
+          "barcode": ""
+        },
+        {
+          "sku": "SC6-ELM-RED0",
+          "title": "Coral Red",
+          "colorway": "Coral Red",
+          "price": 35.00,
+          "compare_at_price": null,
+          "inventory_qty": 100,
+          "inventory_policy": "deny",
+          "weight_grams": 150,
+          "barcode": ""
+        }
+      ]
+    },
+    {
+      "id": "unit-circle-volvelle",
+      "handle": "unit-circle-volvelle",
+      "title": "The Unit Circle Volvelle — Mechanical Trigonometry Calculator",
+      "product_type": "Educational Math Tool",
+      "vendor": "StackCalc",
+      "category": "Educational Materials > Math Teaching Aids",
+      "hs_tariff_code": "9017.20.80",
+      "weight_grams": 45,
+      "base_price": 18.00,
+      "compare_at_price": null,
+      "cost_per_item": 1.80,
+      "published": true,
+      "description": "An indestructible, two-piece mechanical rotary disc calculator engineered for trigonometric analysis and spatial comprehension without power, batteries, or digital screens.",
+      "tags": [
+        "Trigonometry",
+        "Unit Circle",
+        "Volvelle",
+        "Math Tool",
+        "Rotary Calculator",
+        "STEM",
+        "Geometry",
+        "Calculus",
+        "Zero-Battery",
+        "3D-Printed"
+      ],
+      "features": [
+        "100% 3D-printed with snap-fit center pivot (zero metal screws)",
+        "Fixed Outer Ring: Laser-engraved degrees (0°–360°) and radians (0–2π)",
+        "Rotating Inner Disc: Aperture window displays exact (cos θ, sin θ) and tan θ values",
+        "Instantaneous spatial and numerical comprehension of unit circle trigonometry",
+        "Indestructible desktop companion for high school, college physics, and calculus"
+      ],
+      "custom_line_item_properties": [],
+      "options": [
+        {
+          "name": "Finish",
+          "values": [
+            "High-Contrast White/Navy",
+            "Stealth Slate/Gold"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "sku": "VOL-TRG-WHT",
+          "title": "High-Contrast White/Navy",
+          "finish": "High-Contrast White/Navy",
+          "price": 18.00,
+          "compare_at_price": null,
+          "inventory_qty": 200,
+          "inventory_policy": "deny",
+          "weight_grams": 45,
+          "barcode": ""
+        },
+        {
+          "sku": "VOL-TRG-STH",
+          "title": "Stealth Slate/Gold",
+          "finish": "Stealth Slate/Gold",
+          "price": 18.00,
+          "compare_at_price": null,
+          "inventory_qty": 100,
+          "inventory_policy": "deny",
+          "weight_grams": 45,
+          "barcode": ""
+        }
+      ]
+    },
+    {
+      "id": "stackcalc-reference-decks",
+      "handle": "stackcalc-reference-decks",
+      "title": "StackCalc Reference Decks (3-Card Math Keystroke Set)",
+      "product_type": "Math Reference Deck",
+      "vendor": "StackCalc",
+      "category": "Educational Materials > Flashcards & Reference Cards",
+      "hs_tariff_code": "4911.99.80",
+      "weight_grams": 30,
+      "base_price": 15.00,
+      "compare_at_price": null,
+      "cost_per_item": 1.20,
+      "published": true,
+      "description": "Standardized, credit-card-sized pieces of flat PLA/PETG that slide directly into the rear TPU pouch of your calculator. Maps textbook algebraic notation to StackCalc RPN operational keystrokes.",
+      "tags": [
+        "Reference Cards",
+        "Cheatsheet",
+        "Math Guide",
+        "RPN Keystrokes",
+        "High School Math",
+        "7th Grade Math",
+        "Quick Reference",
+        "TPU Pouch Ready"
+      ],
+      "features": [
+        "Credit-card-sized (85.6 × 53.98 mm) durable polymer cards",
+        "Dual-column workflow: standard algebraic formula on left, exact RPN keystrokes on right",
+        "Slides directly into the TPU pouch behind your StackCalc calculator",
+        "Eliminates syntax confusion during exams, homework, and laboratory work",
+        "Available in Grade 07 Math, Core High School Math, or complete Dual Set"
+      ],
+      "custom_line_item_properties": [],
+      "options": [
+        {
+          "name": "Curriculum Set",
+          "values": [
+            "Set 1: Grade 07 Math",
+            "Set 2: Core High School Math",
+            "Dual Set Pack (Set 1 + Set 2)"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "sku": "REF-CRD-GR07",
+          "title": "Set 1: Grade 07 Math",
+          "curriculum_set": "Set 1: Grade 07 Math",
+          "price": 15.00,
+          "compare_at_price": null,
+          "inventory_qty": 250,
+          "inventory_policy": "deny",
+          "weight_grams": 30,
+          "barcode": ""
+        },
+        {
+          "sku": "REF-CRD-HIGHSCH",
+          "title": "Set 2: Core High School Math",
+          "curriculum_set": "Set 2: Core High School Math",
+          "price": 15.00,
+          "compare_at_price": null,
+          "inventory_qty": 250,
+          "inventory_policy": "deny",
+          "weight_grams": 30,
+          "barcode": ""
+        },
+        {
+          "sku": "REF-CRD-DUAL",
+          "title": "Dual Set Pack (Set 1 + Set 2)",
+          "curriculum_set": "Dual Set Pack (Set 1 + Set 2)",
+          "price": 25.00,
+          "compare_at_price": 30.00,
+          "inventory_qty": 150,
+          "inventory_policy": "deny",
+          "weight_grams": 60,
+          "barcode": ""
+        }
+      ]
+    },
+    {
+      "id": "student-essentials-bundle",
+      "handle": "student-essentials-bundle",
+      "title": "StackCalc Student Essentials Bundle",
+      "product_type": "Bundle",
+      "vendor": "StackCalc",
+      "category": "Office Supplies > Calculators",
+      "hs_tariff_code": "8470.10.00",
+      "weight_grams": 280,
+      "base_price": 125.00,
+      "compare_at_price": 147.00,
+      "cost_per_item": 30.70,
+      "published": true,
+      "description": "The complete tactile STEM toolkit. Includes the SC-32 RPN calculator in your choice of colorway, The Unit Circle Volvelle, Reference Decks Sets 1 and 2, and the reversible TPU travel pouch. Save over $20 compared to buying separately.",
+      "tags": [
+        "Bundle",
+        "Student Kit",
+        "Calculator",
+        "Volvelle",
+        "Reference Deck",
+        "STEM",
+        "Best Value"
+      ],
+      "features": [
+        "1× StackCalc SC-32 Calculator Kit in your choice of colorway",
+        "1× The Unit Circle Volvelle (mechanical trigonometry tool)",
+        "1× Reference Deck Set 1 (Grade 07 Math, 3 cards)",
+        "1× Reference Deck Set 2 (Core High School Math, 3 cards)",
+        "1× Reversible TPU protective travel pouch & dual desk stands",
+        "Everything needed for junior high, high school, and college STEM success",
+        "Save $22 compared to individual items"
+      ],
+      "custom_line_item_properties": [],
+      "options": [
+        {
+          "name": "Calculator Colorway",
+          "values": [
+            "RetroFuturism",
+            "Stealth Industrial",
+            "Supernova",
+            "Deep Space",
+            "Voyager"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "sku": "BNDL-ESS-RETRO",
+          "title": "RetroFuturism",
+          "colorway": "RetroFuturism",
+          "price": 125.00,
+          "compare_at_price": 147.00,
+          "inventory_qty": 50,
+          "inventory_policy": "deny",
+          "weight_grams": 280,
+          "barcode": ""
+        },
+        {
+          "sku": "BNDL-ESS-STLTH",
+          "title": "Stealth Industrial",
+          "colorway": "Stealth Industrial",
+          "price": 125.00,
+          "compare_at_price": 147.00,
+          "inventory_qty": 50,
+          "inventory_policy": "deny",
+          "weight_grams": 280,
+          "barcode": ""
+        },
+        {
+          "sku": "BNDL-ESS-SPRNV",
+          "title": "Supernova",
+          "colorway": "Supernova",
+          "price": 125.00,
+          "compare_at_price": 147.00,
+          "inventory_qty": 25,
+          "inventory_policy": "deny",
+          "weight_grams": 280,
+          "barcode": ""
+        },
+        {
+          "sku": "BNDL-ESS-DPSPC",
+          "title": "Deep Space",
+          "colorway": "Deep Space",
+          "price": 125.00,
+          "compare_at_price": 147.00,
+          "inventory_qty": 25,
+          "inventory_policy": "deny",
+          "weight_grams": 280,
+          "barcode": ""
+        },
+        {
+          "sku": "BNDL-ESS-VYG01",
+          "title": "Voyager",
+          "colorway": "Voyager",
+          "price": 125.00,
+          "compare_at_price": 147.00,
+          "inventory_qty": 25,
+          "inventory_policy": "deny",
+          "weight_grams": 280,
+          "barcode": ""
+        }
+      ]
+    }
+  ]
+}

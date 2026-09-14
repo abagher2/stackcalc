@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+{% endblock %}
