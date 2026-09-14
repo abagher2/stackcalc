@@ -61,3 +61,7 @@ nav:
     - iOS App: ios_app.md
     - Tutorials: tutorials.md
     - Store & Accessories: ecommerce.md
+  - Legal & Support:
+    - Privacy Policy: privacy.md
+    - Terms of Service: terms.md
+    - Support: support.md
