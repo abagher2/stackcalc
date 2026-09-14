@@ -50,7 +50,7 @@ When purchasing physical calculators, DIY snap-assembly kits, or accessories thr
 
 - **Assembly Kits:** Physical kits ship with 100% pre-soldered and factory-tested electronics. Assembly involves snap-fitting keycaps, chassis, and faceplates. Users must follow documented assembly instructions to prevent mechanical stress or damage to display cables.
 - **Limited Warranty:** We warrant that pre-tested mainboards and electronic displays will be free from defects in materials and workmanship under normal use for a period of 90 days from delivery.
-- **Returns & Exchanges:** Unassembled kits in original packaging may be returned within 30 days of receipt. Contact [support@stackcalc.io](mailto:support@stackcalc.io) for return authorization.
+- **Returns & Exchanges:** Unassembled kits in original packaging may be returned within 30 days of receipt. Open an issue on our [GitHub Help Desk](https://github.com/abagher2/stackcalc/issues) for return authorization.
 
 ---
 
@@ -85,6 +85,6 @@ We reserve the right to revise these Terms at any time. Any changes will be publ
 
 If you have questions regarding these Terms of Service:
 
-- **Email:** [support@stackcalc.io](mailto:support@stackcalc.io)
-- **Help Desk:** [https://www.stackcalc.io/support/](https://www.stackcalc.io/support/)
-- **Repository:** [github.com/abagher2/watch-calc-32](https://github.com/abagher2/watch-calc-32)
+- **GitHub Issue Tracker:** [https://github.com/abagher2/stackcalc/issues](https://github.com/abagher2/stackcalc/issues)
+- **Help Desk & Support:** [https://www.stackcalc.io/support/](https://www.stackcalc.io/support/)
+- **Repository:** [https://github.com/abagher2/stackcalc](https://github.com/abagher2/stackcalc)

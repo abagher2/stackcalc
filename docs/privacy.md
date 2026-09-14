@@ -60,7 +60,7 @@ If you choose to purchase physical hardware kits or accessories through our Shop
 Because StackCalc collects no data on remote servers:
 
 - There is no remote account or database record to delete.
-- To erase all local state, simply tap `FLAGS` &rarr; `Reset All` / `Clear Continuous Memory` inside the app, or uninstall the application from your Apple device.
+- To erase all local state, press **Yellow Shift** + `C` (`CLEAR`) &rarr; tap `CLALL` inside the app, or uninstall the application from your Apple device.
 
 ---
 
@@ -72,8 +72,9 @@ We may update this Privacy Policy to reflect future updates or legal compliance.
 
 ## 8. Contact Information
 
-If you have questions or inquiries regarding this Privacy Policy, please contact our engineering team:
+If you have questions or inquiries regarding this Privacy Policy, please reach out through our public channels:
 
-- **Email:** [support@stackcalc.io](mailto:support@stackcalc.io)
-- **GitHub Repository:** [github.com/abagher2/watch-calc-32](https://github.com/abagher2/watch-calc-32)
-- **Web Support:** [https://www.stackcalc.io/support/](https://www.stackcalc.io/support/)
+- **GitHub Issue Tracker:** [https://github.com/abagher2/stackcalc/issues](https://github.com/abagher2/stackcalc/issues)
+- **Web Support & Help Desk:** [https://www.stackcalc.io/support/](https://www.stackcalc.io/support/)
+- **Documentation & Source:** [https://github.com/abagher2/stackcalc](https://github.com/abagher2/stackcalc)
+

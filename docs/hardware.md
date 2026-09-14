@@ -195,3 +195,46 @@ While maintaining functional parity, StackCalc incorporates deliberate modern en
 6. **Searchable Constants Directory:**
    - *HP32SII:* Relied on abbreviated, unindexed 2-letter codes.
    - *StackCalc:* Hardware uses organized softkey pagination, while companion apps feature a searchable database complete with full names, precise values, and physical SI units.
+
+---
+
+## 4. Open-Source CAD & 3D Print File Catalog (OpenSCAD & STL)
+
+All mechanical components for StackCalc32 are fully parametric, version-controlled, and open-source. CAD source models are maintained in the main repository under [`Hardware/designs/`](https://github.com/abagher2/watch-calc-32), with verified build targets managed via [`Hardware/Makefile`](https://github.com/abagher2/watch-calc-32).
+
+### Canonical Production Models
+
+| Component | OpenSCAD Source (`Hardware/designs/`) | Export Target (`scratch/stl/`) | Material | Infill & Slicing Specifications |
+|---|---|---|---|---|
+| **Tapered Chassis Shell** | `chassis_tapered.scad` | `chassis_tapered.stl` | Matte PLA / PETG | Continuous 1.60857° anti-rocking desk wedge. Dual-tier internal sliding guide channels for PCB and faceplate. Sliced at 0.20 mm layer height, 3 perimeters, 100% infill. |
+| **Flexure Top Cap** | `top_cap.scad` | `top_cap.stl` | 95A Flexible TPU | Squeeze-release cap that closes display frame and houses wired CR2032 battery carrier. 0.20 mm layer height, 4 perimeters, 100% infill. |
+| **Retaining Pegs** | `tpu_retaining_peg.scad` | `tpu_retaining_peg.stl` | 95A Flexible TPU | Mushroom-head compliant locking pins securing faceplate and chassis without screws or glue. 0.20 mm layer height. |
+| **Unified Sandwich Faceplate** | `unified_sandwich_faceplate.scad` | `unified_sandwich_faceplate.stl` | Black PLA / PETG | Integrated stepped optical LCD bezel pocket and 43-key matrix apertures. 0.20 mm layer height with top-surface ironing. |
+| **Tactile Key Membrane** | `hp32sii_sandwich_tpu_membrane.scad` | `hp32sii_sandwich_tpu_membrane.stl` | 95A Flexible TPU | Tactile membrane seating 43 switch plungers directly over ALPS SMD switches. 0.10 mm layer height. |
+| **Keycaps & Plungers** | `hp32sii_production_buttons.scad` / `rounded_buttons.scad` | `buttons.stl` / `rounded_buttons.stl` | PLA / PETG | Authentic HP-32SII trapezoidal caps or retro-circular buttons with 3-point planar spiral suspension. Sliced at 0.05 mm slow detail, 4 perimeters, 6% ironing flow. |
+| **Protective Travel Pouch** | `tpu_pouch.scad` | `tpu_pouch.stl` | 95A Flexible TPU | Drop-proof travel sleeve featuring debossed StackCalc 4-level stack emblem and rear reference card slot. 0.28 mm draft layer height. |
+| **Modular Puzzle Stand** | `puzzle_stand.scad` | `puzzle_stand.stl` | PLA / PETG | 4-piece interlocking frame (`piece_c_bl`, `piece_c_br`, `piece_c_tl`, `piece_c_tr`, `piece_lateral_strut`) converting from transit bumpers into an upright portrait desk stand. |
+| **Origami Dual-Angle Stand** | `origami_stand.scad` | `origami_stand.stl` | PLA / PETG | Dual-angle desk fixture providing a 78° upright showcase display angle and a 10.0° ergonomic typing elevator. |
+| **Manufacturing Dummy PCB** | `dummy_pcb.scad` | `dummy_pcb.stl` | PLA | Dimensional reference model for validating rail slide tolerances, board keepouts, and switch datum alignment (`make verify-fit`). |
+
+### Slicing & Build Targets (PrusaSlicer & OpenSCAD)
+
+Pre-configured PrusaSlicer print projects and build workflows are available directly from the repository root:
+
+- **Complete Multi-Material Project:** `Hardware/watch-calc-32.3mf`
+- **Building via Makefile:**
+  ```bash
+  # Check OpenSCAD and PrusaSlicer environment
+  make doctor
+
+  # Compile all production STL meshes
+  make production
+
+  # Run mathematical tolerance and interference checks
+  make verify-fit
+  make verify-interference
+
+  # Export PrusaSlicer multi-material project file
+  make 3mf
+  ```
+
