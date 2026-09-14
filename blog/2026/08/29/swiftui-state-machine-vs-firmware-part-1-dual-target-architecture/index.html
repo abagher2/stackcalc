@@ -1,0 +1,819 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/blog/2026/08/29/swiftui-state-machine-vs-firmware-part-1-dual-target-architecture/">
+      
+      
+        <link rel="prev" href="../../26/hardware-simulation-browser-hil-with-wokwi-rp2350-emulation/">
+      
+      
+        <link rel="next" href="../../31/swiftui-state-machine-vs-firmware-part-2-event-loop-parity/">
+      
+      
+      <link rel="icon" href="../../../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>SwiftUI State Machine vs Firmware (Part 1: Dual-Target Architecture) - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/brutalist.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-vision-a-single-source-of-rpn-truth" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SwiftUI State Machine vs Firmware (Part 1: Dual-Target Architecture)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../../..#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+    
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../hardware/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS App
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ecommerce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Store & Accessories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-vision-a-single-source-of-rpn-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Vision: A Single Source of RPN Truth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-decoupling-in-calculatorengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Decoupling in CalculatorEngine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-and-display-abstraction-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input and Display Abstraction Boundaries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion-the-shared-state-machine-dividend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion: The Shared State Machine Dividend
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          A. Bagher
+                        
+                      </strong>
+                      <br>
+                      Creator of StackCalc32
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-08-29 00:00:00" class="md-ellipsis">Saturday, August 29, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/firmware/">Firmware</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              3 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+  <h1>SwiftUI State Machine vs Firmware (Part 1: Dual-Target Architecture)</h1>
+
+<p>Coming from an iOS and Apple Watch development background, our natural instinct when designing StackCalc32 was to build in SwiftUI. But as passionate calculator lovers who have always revered classic scientific instruments like the HP-32SII, we hold a deep conviction that it is an absolute injustice that more students and engineers do not use RPN calculators today. The four-level operational stack is simply a better, more transparent way to calculate. We didn't want RPN confined to glass screens; we wanted an accessible, low-cost physical handheld calculator that anyone could build. And rather than writing C for the hardware and Swift for the watch, we set out to run the exact same Swift core across an Apple Watch and a $4 bare-metal Raspberry Pi RP2350 microcontroller.</p>
+<!-- more -->
+
+<h2 id="the-vision-a-single-source-of-rpn-truth">The Vision: A Single Source of RPN Truth</h2>
+<p>Classic scientific calculators are defined by dozens of subtle, idiosyncratic behaviors: stack lift enablement on digit entry, stack drop on binary arithmetic, automatic X-register duplication on <code>ENTER</code>, base-N conversion truncation, and error state recovery. Re-implementing these delicate rules in two different languages meant that whenever we patched an edge-case bug in complex fraction simplification on watchOS, the hardware calculator would immediately drift out of sync.</p>
+<p>We refused to maintain two divergent math engines. Instead, we architected StackCalc32 around a single, shared Swift package: <code>RPNCore</code>. The core calculation engine knows nothing about touchscreens, liquid crystal displays, operating systems, or GPIO registers.</p>
+<pre class="mermaid"><code>graph TD
+    subgraph "Shared Core Domain (RPNCore)"
+        Core[CalculatorEngine State Machine]
+        Stack[4-Level / 999-Level RPN Stack]
+        Math[Scientific &amp; Base-N Math Evaluator]
+        Core --&gt; Stack
+        Core --&gt; Math
+    end
+    subgraph "Target 1: Apple Ecosystem (watchOS &amp; iOS)"
+        UI[SwiftUI Views &amp; Gestures] --&gt; Core
+        Haptics[CoreHaptics &amp; WKOvershotType] --&gt; UI
+        Storage1[UserDefaults / AppStorage] --&gt; Core
+    end
+    subgraph "Target 2: Microcontroller (RP2350 Bare-Metal)"
+        Matrix[8x6 GPIO Keypad Driver] --&gt; Core
+        LCD[ST7567 1-bit Monochrome Driver] &lt;-- Core
+        Storage2[32 KiB Flash Ping-Pong Slots] --&gt; Core
+    end</code></pre>
+<h2 id="architectural-decoupling-in-calculatorengine">Architectural Decoupling in <code>CalculatorEngine</code></h2>
+<p>To allow compilation inside Apple's rich Darwin runtime as well as the constrained ARMv6-M Embedded Swift environment, <code>CalculatorEngine</code> operates as a pure finite state machine. It accepts strongly-typed enumeration events and mutates internal state without side effects:</p>
+<div class="language-swift highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Pure state machine boundary in RPNCore</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="nc">CalculatorEngine</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">private</span><span class="p">(</span><span class="kr">set</span><span class="p">)</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">stack</span><span class="p">:</span><span class="w"> </span><span class="n">RPNStack</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">private</span><span class="p">(</span><span class="kr">set</span><span class="p">)</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">registers</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nb">Double</span><span class="p">]</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">private</span><span class="p">(</span><span class="kr">set</span><span class="p">)</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">currentMode</span><span class="p">:</span><span class="w"> </span><span class="n">DisplayMode</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">private</span><span class="p">(</span><span class="kr">set</span><span class="p">)</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">annunciators</span><span class="p">:</span><span class="w"> </span><span class="n">AnnunciatorFlags</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kr">mutating</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">handle</span><span class="p">(</span><span class="n">operation</span><span class="p">:</span><span class="w"> </span><span class="n">CalculatorOperation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="p">.</span><span class="n">add</span><span class="p">:</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">            </span><span class="n">performAddition</span><span class="p">()</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="p">.</span><span class="n">digit</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nv">d</span><span class="p">):</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="n">appendDigit</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="p">.</span><span class="n">enter</span><span class="p">:</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="n">pushStack</span><span class="p">()</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="p">.</span><span class="n">clear</span><span class="p">:</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="n">clearCurrentInput</span><span class="p">()</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="c1">// ... Additional operations handled deterministically</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The engine has zero dependencies on <code>SwiftUI.View</code>, <code>Combine.ObservableObject</code>, or hardware registers. It consumes no background threads and creates no asynchronous tasks. It is an immutable-friendly reducer that takes an event, mutates its registers, and yields an updated state.</p>
+<h2 id="input-and-display-abstraction-boundaries">Input and Display Abstraction Boundaries</h2>
+<p>While the core math logic remains identical, the physical interaction models diverge fundamentally:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">Apple Platforms (watchOS / iOS)</th>
+<th style="text-align: left;">Microcontroller Firmware (RP2350)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Language &amp; Profile</strong></td>
+<td style="text-align: left;">Standard Swift 6 with ARC &amp; Foundation</td>
+<td style="text-align: left;">Embedded Swift (<code>-enable-experimental-feature Embedded</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Input Capture</strong></td>
+<td style="text-align: left;">SwiftUI <code>Button</code>, <code>DragGesture</code>, Digital Crown</td>
+<td style="text-align: left;">8x6 GPIO matrix scanning with 10 ms debouncer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Display Pipeline</strong></td>
+<td style="text-align: left;">SwiftUI declarative views @ 60–120 Hz</td>
+<td style="text-align: left;">132x72 monochrome buffer over 8 MHz SPI</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>State Persistence</strong></td>
+<td style="text-align: left;"><code>UserDefaults</code> / <code>@AppStorage</code> (JSON)</td>
+<td style="text-align: left;">32 KiB raw QSPI flash sectors with FNV-1a checksums</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Memory Budget</strong></td>
+<td style="text-align: left;">Gigabytes of unified RAM</td>
+<td style="text-align: left;">264 KiB SRAM total (220 KiB heap reserve)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Concurrency</strong></td>
+<td style="text-align: left;">Swift Concurrency (<code>async</code>/<code>await</code>, Actors)</td>
+<td style="text-align: left;">Single-threaded polling event loop in <code>Main.swift</code></td>
+</tr>
+</tbody>
+</table>
+<p>On the Apple Watch, key events originate from touch callbacks and Digital Crown rotations, prompting SwiftUI view redraws. On the physical calculator, the firmware polling loop scans 48 physical switch junctions, dispatches matching <code>CalculatorOperation</code> enums to <code>CalculatorEngine</code>, and directly formats pixels into a 1,188-byte framebuffer.</p>
+<p>In Part 2, we dive into how event loop synchronization and display throttling maintain bit-for-bit parity across both platforms.</p>
+<h2 id="conclusion-the-shared-state-machine-dividend">Conclusion: The Shared State Machine Dividend</h2>
+<p>Decoupling our RPN engine into a pure Swift state machine felt like extra work during week one, but it paid astronomical dividends throughout the rest of the project. Whenever we found a subtle rounding error in trigonometric conversions or a stack-lift quirk during complex number entry, fixing it once in <code>RPNCore</code> automatically resolved it on both the Apple Watch app and the physical handheld calculator on our desk. Bringing pure functional state machines from modern app development to bare-metal hardware proved that good software architecture transcends physical boundaries.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

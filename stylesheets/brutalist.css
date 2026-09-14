@@ -1,0 +1,752 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* --- Bundled Terminus Font (Used across physical firmware and iOS/watchOS LCD) --- */
+@font-face {
+  font-family: 'Terminus';
+  src: url('../assets/fonts/TerminusTTF-4.49.3.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Terminus';
+  src: url('../assets/fonts/TerminusTTF-Bold-4.49.3.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-terminus {
+  font-family: 'Terminus', 'Space Mono', monospace !important;
+}
+
+/* --- Authentic ST7567A LCD Screen Styling --- */
+.lcd-screen {
+  background-color: #E2E6EE !important;
+  color: #181A1B !important;
+  font-family: 'Terminus', 'Space Mono', monospace !important;
+  position: relative;
+  text-align: left !important;
+}
+
+.lcd-screen::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(#CBD1DC 1.5px, transparent 1.5px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.lcd-display-text {
+  font-family: 'Terminus', monospace !important;
+  text-align: left !important;
+}
+
+/* --- Root & Material Theme Tokens --- */
+:root,
+[data-md-color-scheme="slate"],
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #181A1B;
+  --md-primary-fg-color--light: #222527;
+  --md-primary-fg-color--dark: #000000;
+  --md-primary-bg-color: #E2E6EE;
+  --md-primary-bg-color--light: #CBD1DC;
+
+  --md-accent-fg-color: #32ADE6;
+  --md-accent-fg-color--transparent: rgba(50, 173, 230, 0.12);
+  --md-accent-bg-color: #181A1B;
+
+  --md-default-bg-color: #181A1B;
+  --md-default-bg-color--light: #202326;
+  --md-default-bg-color--lighter: #282C30;
+  --md-default-bg-color--lightest: #34393E;
+
+  --md-default-fg-color: #E2E6EE;
+  --md-default-fg-color--light: #CBD1DC;
+  --md-default-fg-color--lighter: #8E98A8;
+  --md-default-fg-color--lightest: #5A6270;
+
+  --md-code-bg-color: #000000;
+  --md-code-fg-color: #E2E6EE;
+
+  --md-typeset-color: #CBD1DC;
+  --md-typeset-a-color: #32ADE6;
+
+  /* Custom StackCalc Tokens */
+  --sc-charcoal: #181A1B;
+  --sc-pitch: #000000;
+  --sc-icyblue: #E2E6EE;
+  --sc-mask: #CBD1DC;
+  --sc-cyan: #32ADE6;
+  --sc-orange: #FF9F0A;
+  --sc-amber: #FFBF00;
+}
+
+/* --- Global Background & Dot Matrix Texture --- */
+body,
+.md-container,
+.md-main {
+  background-color: #181A1B !important;
+  background-image: radial-gradient(#282C31 1.2px, transparent 1.2px) !important;
+  background-size: 8px 8px !important;
+  color: #E2E6EE !important;
+  -webkit-font-smoothing: none;
+}
+
+::selection {
+  background-color: #32ADE6 !important;
+  color: #000000 !important;
+}
+
+/* --- Header --- */
+.md-header {
+  background-color: #181A1B !important;
+  border-bottom: 2px solid #E2E6EE !important;
+  box-shadow: none !important;
+}
+
+.md-header__title {
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: #E2E6EE !important;
+}
+
+.md-header__button {
+  color: #E2E6EE !important;
+}
+
+.md-header__button:hover {
+  color: #32ADE6 !important;
+}
+
+/* Header Reserve Button */
+.brutalist-button-header {
+  background-color: #E2E6EE !important;
+  color: #181A1B !important;
+  border: 2px solid #E2E6EE !important;
+  box-shadow: 2px 2px 0px #32ADE6 !important;
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  padding: 4px 12px !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-inline-start: 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  transition: all 0.1s ease-in-out !important;
+}
+
+.brutalist-button-header:hover {
+  transform: translate(1px, 1px) !important;
+  box-shadow: 1px 1px 0px #32ADE6 !important;
+  color: #181A1B !important;
+}
+
+/* Header Search */
+.md-search__inner {
+  background-color: #000000 !important;
+  border: 2px solid #CBD1DC !important;
+  border-radius: 0 !important;
+}
+
+.md-search__input {
+  font-family: 'Space Mono', monospace !important;
+  color: #E2E6EE !important;
+  background-color: #000000 !important;
+}
+
+.md-search__input::placeholder {
+  color: #8E98A8 !important;
+}
+
+.md-search__output {
+  background-color: #181A1B !important;
+  border: 2px solid #CBD1DC !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+}
+
+/* --- Navigation Tabs --- */
+.md-tabs {
+  background-color: #181A1B !important;
+  border-bottom: 1px solid #282C30 !important;
+}
+
+.md-tabs__link {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #CBD1DC !important;
+  transition: color 0.15s ease-in-out !important;
+  opacity: 1 !important;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: #32ADE6 !important;
+  border-bottom: 2px solid #32ADE6 !important;
+}
+
+/* --- Typography & Headings --- */
+.md-typeset {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+  color: #CBD1DC !important;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700 !important;
+  color: #E2E6EE !important;
+  letter-spacing: -0.02em !important;
+  text-wrap: balance;
+}
+
+.md-typeset h1 {
+  font-size: 2.2rem !important;
+  border-bottom: 2px solid #CBD1DC !important;
+  padding-bottom: 0.6rem !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1.75rem !important;
+}
+
+.md-typeset h2 {
+  font-size: 1.45rem !important;
+  border-left: 4px solid #32ADE6 !important;
+  padding-left: 0.8rem !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.md-typeset h3 {
+  font-size: 1.2rem !important;
+  color: #FF9F0A !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.md-typeset h4 {
+  font-size: 1.05rem !important;
+  color: #32ADE6 !important;
+}
+
+.md-typeset a {
+  color: #32ADE6 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent !important;
+  transition: border-bottom-color 0.1s ease !important;
+}
+
+.md-typeset a:hover {
+  border-bottom-color: #32ADE6 !important;
+}
+
+.md-typeset p {
+  text-wrap: pretty;
+}
+
+/* --- Blog Post Listing Cards (.md-post) --- */
+.md-post {
+  background-color: #181A1B !important;
+  border: 2px solid #CBD1DC !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  padding: 2rem !important;
+  margin-bottom: 2.5rem !important;
+  transition: transform 0.12s ease-in-out, box-shadow 0.12s ease-in-out, border-color 0.12s ease-in-out !important;
+}
+
+.md-post:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 4px 4px 0px #32ADE6 !important;
+  border-color: #E2E6EE !important;
+}
+
+.md-post__header h2,
+.md-post__header h1 {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  border-left: none !important;
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+  color: #E2E6EE !important;
+}
+
+.md-post__header h2 a,
+.md-post__header h1 a {
+  color: #E2E6EE !important;
+  border-bottom: none !important;
+}
+
+.md-post__header h2 a:hover,
+.md-post__header h1 a:hover {
+  color: #32ADE6 !important;
+}
+
+.md-post__meta {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.78rem !important;
+  color: #32ADE6 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Category and Tag Badges */
+.md-tag,
+.md-typeset a[href*="/category/"],
+.md-typeset a[href*="/archive/"] {
+  font-family: 'Space Mono', monospace !important;
+  background: #000000 !important;
+  border: 1px solid #CBD1DC !important;
+  color: #E2E6EE !important;
+  font-size: 0.72rem !important;
+  padding: 2px 8px !important;
+  border-radius: 2px !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
+  margin: 2px 4px 2px 0 !important;
+  text-decoration: none !important;
+}
+
+.md-tag:hover,
+.md-typeset a[href*="/category/"]:hover,
+.md-typeset a[href*="/archive/"]:hover {
+  border-color: #32ADE6 !important;
+  color: #32ADE6 !important;
+}
+
+/* Excerpt "Continue reading" Button */
+.md-post__inner > p:last-child a:last-child,
+.md-typeset .md-post a[href*="/posts/"]:last-of-type {
+  display: inline-block !important;
+  background: #E2E6EE !important;
+  color: #181A1B !important;
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  padding: 6px 16px !important;
+  border: 2px solid #E2E6EE !important;
+  box-shadow: 3px 3px 0px #32ADE6 !important;
+  text-transform: uppercase !important;
+  margin-top: 1rem !important;
+  text-decoration: none !important;
+  transition: all 0.1s ease-in-out !important;
+}
+
+.md-post__inner > p:last-child a:last-child:hover,
+.md-typeset .md-post a[href*="/posts/"]:last-of-type:hover {
+  transform: translate(1px, 1px) !important;
+  box-shadow: 1px 1px 0px #32ADE6 !important;
+  color: #181A1B !important;
+}
+
+/* --- Code Blocks & Terminal --- */
+.highlight,
+.highlighttable,
+pre {
+  background-color: #000000 !important;
+  border: 2px solid #CBD1DC !important;
+  box-shadow: 4px 4px 0px #181A1B !important;
+  border-radius: 0px !important;
+}
+
+.md-typeset code {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.88rem !important;
+}
+
+.md-typeset :not(pre) > code {
+  background-color: #000000 !important;
+  color: #32ADE6 !important;
+  border: 1px solid #32ADE6 !important;
+  padding: 1px 6px !important;
+  border-radius: 2px !important;
+}
+
+/* --- Mermaid Diagrams --- */
+.mermaid {
+  background-color: #000000 !important;
+  border: 2px solid #CBD1DC !important;
+  box-shadow: 4px 4px 0px #181A1B !important;
+  padding: 1.5rem !important;
+  border-radius: 0px !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* --- Tables --- */
+.md-typeset table:not([class]) {
+  border: 2px solid #E2E6EE !important;
+  border-collapse: collapse !important;
+  width: 100% !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  margin: 1.5rem 0 !important;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #000000 !important;
+  color: #E2E6EE !important;
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid #E2E6EE !important;
+  text-transform: uppercase !important;
+  padding: 10px 14px !important;
+}
+
+.md-typeset table:not([class]) td {
+  border-bottom: 1px solid #282C30 !important;
+  padding: 10px 14px !important;
+  color: #CBD1DC !important;
+  font-size: 0.95rem !important;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background-color: rgba(50, 173, 230, 0.05) !important;
+}
+
+/* --- Admonitions --- */
+.md-typeset .admonition {
+  border: 2px solid #CBD1DC !important;
+  border-radius: 0px !important;
+  background-color: #141517 !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  margin: 1.5rem 0 !important;
+}
+
+.md-typeset .admonition .admonition-title {
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: #E2E6EE !important;
+}
+
+.md-typeset .admonition.note,
+.md-typeset .admonition.info {
+  border-left: 6px solid #32ADE6 !important;
+}
+
+.md-typeset .admonition.warning {
+  border-left: 6px solid #FF9F0A !important;
+}
+
+.md-typeset .admonition.danger,
+.md-typeset .admonition.bug {
+  border-left: 6px solid #FF453A !important;
+}
+
+.md-typeset .admonition.tip,
+.md-typeset .admonition.success {
+  border-left: 6px solid #30D158 !important;
+}
+
+/* --- Sidebar Navigation & TOC --- */
+.md-sidebar {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.82rem !important;
+}
+
+.md-nav__link {
+  color: #CBD1DC !important;
+}
+
+.md-nav__link--active,
+.md-nav__link:hover {
+  color: #32ADE6 !important;
+  font-weight: 700 !important;
+}
+
+/* --- Pagination & Footer Links --- */
+.md-footer__link {
+  background-color: #181A1B !important;
+  border: 2px solid #CBD1DC !important;
+  box-shadow: 3px 3px 0px #000000 !important;
+  font-family: 'Space Mono', monospace !important;
+  transition: all 0.1s ease !important;
+}
+
+.md-footer__link:hover {
+  border-color: #32ADE6 !important;
+  box-shadow: 3px 3px 0px #32ADE6 !important;
+}
+
+.md-footer {
+  background-color: #000000 !important;
+  border-top: 2px solid #E2E6EE !important;
+  font-family: 'Space Mono', monospace !important;
+  color: #CBD1DC !important;
+}
+
+.md-copyright {
+  font-size: 0.75rem !important;
+}
+
+/* ==========================================================================
+   AUTHENTIC STACKCALC DIGITAL TWIN (iOS / WATCH / HARDWARE) KEYPAD STYLES
+   ========================================================================== */
+
+/* App Keycap Base */
+.sc-keycap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  user-select: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform 0.06s ease, background-color 0.06s ease, box-shadow 0.06s ease;
+  font-family: 'Space Mono', -apple-system, BlinkMacSystemFont, sans-serif;
+  height: 48px;
+  min-height: 48px;
+}
+
+/* Light Theme (RetroFuturism - Production Default) */
+.sc-theme-light .sc-chassis {
+  background-color: #F2F2F7;
+  color: #111111;
+}
+
+.sc-theme-light .sc-brand-title,
+.sc-theme-light .sc-status-time {
+  color: #111111;
+}
+
+.sc-theme-light .sc-keycap-std {
+  background: #FFFFFF;
+  color: #111111;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 1px 1px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.sc-theme-light .sc-keycap-std:active,
+.sc-theme-light .sc-keycap-std.sc-key-pressed {
+  transform: translateY(1.5px) scale(0.98);
+  background: #E5E5EA;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.sc-theme-light .sc-keycap-lfu {
+  background: #FFFFFF;
+  color: #111111;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sc-theme-light .sc-lcd-panel {
+  background-color: #E2E6EE;
+  color: #181A1B;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.sc-theme-light .sc-keycap-enter {
+  background: #E2E6EE !important;
+  color: #111111 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.sc-theme-light .sc-keycap-enter:active,
+.sc-theme-light .sc-keycap-enter.sc-key-pressed {
+  transform: translateY(1.5px) scale(0.98);
+  background: #D5D9E2 !important;
+}
+
+/* Backspace key (always black rounded badge with white icon in app) */
+.sc-keycap-backspace {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.sc-keycap-backspace:active,
+.sc-keycap-backspace.sc-key-pressed {
+  transform: translateY(1.5px) scale(0.98);
+  background: #282A2E !important;
+}
+
+/* Dark Theme (Stealth Industrial) */
+.sc-theme-dark .sc-chassis {
+  background-color: #121315;
+  color: #E2E6EE;
+}
+
+.sc-theme-dark .sc-brand-title,
+.sc-theme-dark .sc-status-time {
+  color: #FFFFFF;
+}
+
+.sc-theme-dark .sc-keycap-enter {
+  background: #242528 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.sc-theme-dark .sc-keycap-enter:active,
+.sc-theme-dark .sc-keycap-enter.sc-key-pressed {
+  transform: translateY(1.5px) scale(0.98);
+  background: #18191B !important;
+}
+
+.sc-theme-dark .sc-keycap-std {
+  background: #242528;
+  color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sc-theme-dark .sc-keycap-std:active,
+.sc-theme-dark .sc-keycap-std.sc-key-pressed {
+  transform: translateY(1.5px) scale(0.98);
+  background: #18191B;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+}
+
+.sc-theme-dark .sc-keycap-lfu {
+  background: #242528;
+  color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sc-theme-dark .sc-lcd-panel {
+  background-color: #181A1B;
+  color: #E2E6EE;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Shift Keycaps */
+.sc-keycap-shift-orange {
+  background: #FF9500 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 4px rgba(255, 149, 0, 0.35) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.sc-keycap-shift-orange:active,
+.sc-keycap-shift-orange.sc-key-active {
+  background: #D97706 !important;
+  transform: translateY(1.5px) scale(0.98);
+  box-shadow: 0 0 2px rgba(255, 149, 0, 0.2) !important;
+}
+
+.sc-keycap-shift-cyan {
+  background: #00A3FF !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 4px rgba(0, 163, 255, 0.35) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.sc-keycap-shift-cyan:active,
+.sc-keycap-shift-cyan.sc-key-active {
+  background: #0077CC !important;
+  transform: translateY(1.5px) scale(0.98);
+  box-shadow: 0 0 2px rgba(0, 163, 255, 0.2) !important;
+}
+
+/* Keycap Primary & Alpha Labels */
+.sc-keycap-primary {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1;
+  text-align: center;
+  pointer-events: none;
+}
+
+.sc-keycap-alpha {
+  position: absolute;
+  right: 5px;
+  bottom: 4px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #8E8E93;
+  pointer-events: none;
+  line-height: 1;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Faceplate Dual-Legend Rows (printed in the gap between button rows) */
+.sc-legend-row {
+  display: grid;
+  font-family: 'Space Mono', monospace;
+  font-size: 8.5px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0 2px;
+  margin-bottom: 2px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.sc-legend-yellow {
+  color: #FF9500;
+}
+
+.sc-legend-blue {
+  color: #00A3FF;
+}
+
+/* Apple Watch Mode (Pitch Black OLED Parity) */
+.sc-watch-frame {
+  background-color: #000000;
+  border-radius: 40px;
+  border: 4px solid #2C2D32;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  padding: 14px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.sc-watch-key {
+  background: #111214;
+  color: #FFFFFF;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 16px;
+  height: 42px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.08s ease, transform 0.08s ease;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sc-watch-key:active,
+.sc-watch-key.sc-key-pressed {
+  background: #282A2E !important;
+  transform: scale(0.96) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+#watch-display-enter.sc-key-pressed {
+  opacity: 0.6 !important;
+  transform: scale(0.98) !important;
+}
+
+

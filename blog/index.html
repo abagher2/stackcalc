@@ -1,0 +1,1090 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/blog/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../hardware/">
+      
+      
+      <link rel="icon" href="../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Index - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/brutalist.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="..#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../hardware/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS App
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ecommerce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Store & Accessories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <div class="bg-charcoal text-icyblue p-6 border-2 border-mask shadow-[4px_4px_0px_#000000] mb-10">
+  <h1 class="font-mono text-3xl font-bold mb-3 text-accentCyan">The Engineering Blog</h1>
+  <p class="font-sans text-base leading-relaxed">
+    Welcome to the StackCalc32 engineering blog. This section chronicles the technical challenges and design decisions—from bare-metal RP2350 firmware development to precise mechanical tolerances—leading up to our Kickstarter launch.
+  </p>
+</div>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-09-12 00:00:00">Saturday, September 12, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="category/mathematics/" class="md-meta__link">Mathematics</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="testing-for-mathematicians-precision-invariants-domain-boundaries"><a class="toclink" href="2026/09/12/testing-for-mathematicians-precision-invariants--domain-boundaries/">Testing for Mathematicians: Precision Invariants &amp; Domain Boundaries</a></h2>
+<p>Try this experiment on your favorite smartphone calculator: enter <span class="arithmatex">\(\tan(\pi/2)\)</span> and see whether the app silently vomits a giant number like <span class="arithmatex">\(1.6331239 \times 10^{16}\)</span> instead of throwing a math error. Or switch into complex mode, calculate <span class="arithmatex">\(\sqrt{-4}\)</span>, and check the sign of the imaginary zero.</p>
+<p>Most consumer calculator applications treat mathematics as casual arithmetic. If an equation drifts by a micro-epsilon or an asymptotic pole gets rounded to a huge float, consumer apps shrug it off. </p>
+<p>As a software and AI expert with a desktop 3D printer running prototypes on my desk, I believe it is an absolute injustice that more students, engineers, and scientists do not use RPN calculators. Infix calculators hide state behind operator hierarchies and sloppy float approximations. When you are computing filter poles, resonance frequencies, or branch cuts in the complex plane, IEEE 754 signed zero semantics and multi-precision argument reductions aren't academic pedantry—they are the bedrock of sound engineering.</p>
+<p>When designing StackCalc, our ambition was to create an accessible, open-source instrument that working mathematicians and students could trust without reservation. That meant building a test suite explicitly focused on numerical analysis pitfalls. We paired with AI coding agents to assemble pathological test suites, stress-testing catastrophic cancellation, trigonometric argument reduction across massive multiples of <span class="arithmatex">\(\pi\)</span>, IEEE 754 signed zero branch cuts, and continuous fraction limits.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/09/12/testing-for-mathematicians-precision-invariants--domain-boundaries/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-09-10 00:00:00">Thursday, September 10, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/tools/" class="md-meta__link">Tools</a>, 
+              <a href="category/architecture/" class="md-meta__link">Architecture</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-toolchain-cmake-ninja-swift-pm-multi-arch-coordination"><a class="toclink" href="2026/09/10/the-toolchain-cmake-ninja--swift-pm-multi-arch-coordination/">The Toolchain: CMake, Ninja &amp; Swift PM Multi-Arch Coordination</a></h2>
+<p>Almost every multi-platform hardware project starts with the same comfortable compromise: write the iOS and desktop apps in Swift, and write the microcontroller firmware in C or C++. It sounds perfectly reasonable on a whiteboard. But six months into development, someone invariably discovers that <span class="arithmatex">\(1/3 \times 3 - 1\)</span> yields <code>0.0</code> on the iPhone app but <code>-1e-11</code> on the physical prototype because the two math engines handled intermediate guard digits differently.</p>
+<p>Maintaining two independent math engines in two languages doubles your bugs and creates subtle, infuriating behavioral drift.</p>
+<p>As a software and AI expert with a 3D printer running on my desk, I believe it is an absolute injustice that more people do not use RPN calculators. If we were going to build an open, accessible instrument that students and makers could build for under $15 and trust completely, behavioral drift between the app and the physical hardware was unacceptable.</p>
+<p>With the emergence of Embedded Swift, StackCalc took an audacious alternate path: compile the identical calculation engine (<code>RPNCore</code>) across all targets, from Apple Watch to bare-metal silicon. Realizing this vision, however, meant solving a ferocious build system challenge. Apple platforms live inside Swift Package Manager (SPM) and <code>xcodebuild</code> targeting 64-bit Mach-O binaries, while microcontrollers live in the world of CMake, Ninja, the GNU Arm Embedded Toolchain (<code>arm-none-eabi-gcc</code>), and custom linker scripts producing raw ELF and UF2 flash images. Coming from software, we paired with AI coding agents to diagnose cryptic cross-compilation linker errors and synthesize clean Clang modulemaps that let Swift talk directly to the Raspberry Pi Pico 2 SDK.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/09/10/the-toolchain-cmake-ninja--swift-pm-multi-arch-coordination/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-09-05 00:00:00">Saturday, September 5, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="category/performance/" class="md-meta__link">Performance</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="benchmarking-165ms-cold-boot-154ms-math-operations-133mhz"><a class="toclink" href="2026/09/05/benchmarking-165ms-cold-boot--154ms-math-operations--133mhz/">Benchmarking: 1.65ms Cold Boot &amp; 15.4ms Math Operations @ 133MHz</a></h2>
+<p>Pick up an HP-32SII or an HP-15C, slide the physical power switch, and the LCD is instantly alive. There is no splash screen, no spinning indicator, and no operating system kernel warming up its memory pools. You press <code>2</code>, <code>ENTER</code>, <code>3</code>, <code>+</code>, and the mathematical answer is already glowing on the glass before your thumb has fully released the mechanical snap dome.</p>
+<p>That sub-millisecond immediacy is why I fell in love with vintage calculating hardware. As a software and AI expert with a desktop 3D printer whirring away printing calculator cases, I believe it is an absolute injustice that more students and engineers do not use RPN calculators. When you pull a scientific calculator out of your pocket or backpack, you are usually in the middle of an active train of thought: checking a resistor divider, calculating an antenna angle, or verifying a structural load limit. If a calculator takes half a second to wake up or drops keystrokes on glass, it shatters your focus. It feels like a disposable gadget rather than a precision instrument.</p>
+<p>To guarantee that same instantaneous feel on our low-cost physical hardware—running a Raspberry Pi RP2350 microcontroller at 133 MHz without a hardware floating-point unit (FPU)—we instituted strict cycle-accurate micro-benchmarks. Our targets were uncompromising: cold boot to input readiness under 2.0 ms, and total button-to-photon latency comfortably under the 16.6 ms (60 FPS) human visual perception threshold.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/09/05/benchmarking-165ms-cold-boot--154ms-math-operations--133mhz/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-09-03 00:00:00">Thursday, September 3, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/tools/" class="md-meta__link">Tools</a>, 
+              <a href="category/qa/" class="md-meta__link">QA</a>, 
+              <a href="category/testing/" class="md-meta__link">Testing</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="cross-platform-cicd-building-embedded-swift-and-xcode-targets"><a class="toclink" href="2026/09/03/cross-platform-cicd-building-embedded-swift-and-xcode-targets/">Cross-Platform CI/CD: Building Embedded Swift and Xcode Targets</a></h2>
+<p>Most software teams have it pretty straightforward in continuous integration: run <code>npm test</code> or <code>cargo test</code>, grab a code coverage badge, and call it a day. But when your monorepo simultaneously targets watchOS 10 on the Apple Watch and bare-metal ARM Cortex-M33 on a sub-dollar microcontroller, CI feels like refereeing a cage match between radically conflicting operating systems, toolchains, and compiler flags.</p>
+<p>As a software engineer who loves classic RPN calculators and spends evenings prototyping 3D-printed calculator chassis at home, I am driven by the belief that it is an absolute injustice that more students and engineers do not use RPN. We wanted to build a rock-solid, open-source device that makes RPN accessible to anyone. But maintaining true mathematical and behavioral parity between high-level Swift on Apple Silicon and Embedded Swift on physical silicon requires industrial-grade automation. A single Git commit to <code>RPNCore</code> touches the core calculation engine. Within minutes, our pipeline must prove that this mathematical change compiles cleanly under Xcode 16 for watchOS, iOS, and macOS, passes 1,200 unit tests, and simultaneously compiles via CMake and Ninja under an Ubuntu ARM toolchain to generate bit-accurate UF2 firmware for the Raspberry Pi RP2350.</p>
+<p>Wrangling these two universes into a single automated pipeline without burning our CI budget or waiting thirty minutes per pull request took serious plumbing. We paired with AI coding agents to untangle the matrix dependencies, generate optimized GitHub Actions workflows, and establish hermetic caching layers.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/09/03/cross-platform-cicd-building-embedded-swift-and-xcode-targets/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-31 00:00:00">Monday, August 31, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/firmware/" class="md-meta__link">Firmware</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="swiftui-state-machine-vs-firmware-part-2-event-loop-parity"><a class="toclink" href="2026/08/31/swiftui-state-machine-vs-firmware-part-2-event-loop-parity/">SwiftUI State Machine vs Firmware (Part 2: Event Loop Parity)</a></h2>
+<p>Bridging high-level reactive UI frameworks with bare-metal embedded event loops is a study in contrasting software philosophies. In modern Apple app development, we never write event loops: SwiftUI is a declarative engine that refreshes automatically on top of a 120 Hz Metal compositor, driven by RunLoops and Grand Central Dispatch. On the RP2350, however, we were building on bare metal to create an accessible, low-cost physical RPN calculator—driven by our belief that it is an injustice that more students and engineers do not use RPN. And on bare silicon, there is no compositor, no OS event queue, and no thread scheduler: you have to construct the event loop yourself as an explicit <code>while(true)</code> loop executing at 100 Hz.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/08/31/swiftui-state-machine-vs-firmware-part-2-event-loop-parity/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-29 00:00:00">Saturday, August 29, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/firmware/" class="md-meta__link">Firmware</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="swiftui-state-machine-vs-firmware-part-1-dual-target-architecture"><a class="toclink" href="2026/08/29/swiftui-state-machine-vs-firmware-part-1-dual-target-architecture/">SwiftUI State Machine vs Firmware (Part 1: Dual-Target Architecture)</a></h2>
+<p>Coming from an iOS and Apple Watch development background, our natural instinct when designing StackCalc32 was to build in SwiftUI. But as passionate calculator lovers who have always revered classic scientific instruments like the HP-32SII, we hold a deep conviction that it is an absolute injustice that more students and engineers do not use RPN calculators today. The four-level operational stack is simply a better, more transparent way to calculate. We didn't want RPN confined to glass screens; we wanted an accessible, low-cost physical handheld calculator that anyone could build. And rather than writing C for the hardware and Swift for the watch, we set out to run the exact same Swift core across an Apple Watch and a $4 bare-metal Raspberry Pi RP2350 microcontroller.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/08/29/swiftui-state-machine-vs-firmware-part-1-dual-target-architecture/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-26 00:00:00">Wednesday, August 26, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="category/hardware/" class="md-meta__link">Hardware</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="hardware-simulation-browser-hil-with-wokwi-rp2350-emulation"><a class="toclink" href="2026/08/26/hardware-simulation-browser-hil-with-wokwi-rp2350-emulation/">Hardware Simulation: Browser HIL with Wokwi RP2350 Emulation</a></h2>
+<p>In modern software development, our feedback loop is measured in seconds: you modify code, hit <code>Cmd-R</code>, and immediately inspect the result in an iOS simulator or browser window. When I began designing custom hardware for StackCalc32, the physical turnaround time was a terrifying culture shock. In hardware, a minor pinout mismatch or inverted SPI clock phase doesn't just mean a quick rebuild; it means generating Gerber files, shipping them to an overseas fab, waiting two weeks for delivery, and nervously soldering surface-mount parts—only to discover your display won't initialize.</p>
+<p>As a software and AI expert with a desktop 3D printer whirring away on my desk, I believe it is an absolute injustice that more people do not use RPN calculators. I wanted to build an accessible, ultra-low-cost physical calculator that could inspire students and makers to fall in love with RPN. But coming from software, a multi-week hardware feedback loop was intolerable. I don't have an electrical engineering lab or specialized hardware test fixtures; my natural developer instinct was to build software mocks and emulators to test everything before physical boards arrived.</p>
+<p>Before ordering our first run of 4-layer FR4 boards, I wanted the instant feedback loops I take for granted in software: running our exact, byte-for-byte compiled <code>stackcalc_firmware.uf2</code> binary on a virtual calculator in the browser. Pairing with AI coding agents to generate peripheral simulation models, we constructed a complete headless Hardware-in-the-Loop (HIL) simulation pipeline using Wokwi's cycle-accurate RP2350 emulation core.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/08/26/hardware-simulation-browser-hil-with-wokwi-rp2350-emulation/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-24 00:00:00">Monday, August 24, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="category/architecture/" class="md-meta__link">Architecture</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="building-a-cross-surface-fuzzer-part-2-continuous-in-memory-app-reset"><a class="toclink" href="2026/08/24/building-a-cross-surface-fuzzer-part-2-continuous-in-memory-app-reset/">Building a Cross-Surface Fuzzer (Part 2: Continuous In-Memory App Reset)</a></h2>
+<p>Here is the brutal math of differential fuzzing: if resetting your target device requires a cold boot that takes 500 milliseconds, running a serious 100,000-vector fuzzing campaign takes nearly fourteen hours. That’s not continuous integration; that’s an overnight prayer meeting.</p>
+<p>In Part 1, we established our differential oracle pipeline and golden path state invariants across six platforms. But when we sat down to run our first serious campaign, we slammed straight into a brick wall of execution throughput. </p>
+<p>At barely two test cases per second, our CI runners were timing out, our fans were screaming, and rapid local iteration was impossible. Coming from high-level software engineering, waiting fourteen hours for a test run felt completely unacceptable. To make cross-surface fuzzing a practical software superpower that runs during a coffee break, we had to re-architect our engine around an ultra-fast, zero-leak in-memory reset routine that executes in microseconds. Pairing with AI coding agents, we methodically mapped and audited every struct and volatile register in <code>RPNCore</code> to guarantee complete state purging without rebooting the microcontroller.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/08/24/building-a-cross-surface-fuzzer-part-2-continuous-in-memory-app-reset/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-22 00:00:00">Saturday, August 22, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="category/architecture/" class="md-meta__link">Architecture</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              5 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="building-a-cross-surface-fuzzer-part-1-golden-path-state-invariants"><a class="toclink" href="2026/08/22/building-a-cross-surface-fuzzer-part-1-golden-path-state-invariants/">Building a Cross-Surface Fuzzer (Part 1: Golden Path State Invariants)</a></h2>
+<p>Human test suites suffer from a fatal blind spot: they only verify what the engineer had the imagination to anticipate. We wrote 1,200 deterministic unit tests for <code>RPNCore</code> and felt smugly confident in our code coverage—until we unleashed differential fuzzing, one of the greatest superpowers of modern software engineering, directly against physical silicon.</p>
+<p>As a software and AI expert with a desktop 3D printer whirring away printing prototype calculator enclosures, I believe it is an absolute injustice that more students, makers, and engineers do not use RPN calculators. But if we were going to build an open, accessible instrument that purists could trust, the engine could not have subtle behavioral quirks. We paired with AI coding agents to synthesize grammar-guided fuzzing vectors and turned loose an automated fuzzing harness that simulated a caffeinated toddler hammering keys at 40 Hz across both an M3 Max Mac and a physical RP2350 microcontroller on our workbench.</p>
+<p>Within four minutes, the differential fuzzer caught three subtle state discrepancies that our static unit tests never dreamed of.</p>
+<p>In an RPN (Reverse Polish Notation) scientific calculator, our calculation engine had to run with byte-for-byte fidelity across six radically distinct environments: watchOS, iOS, macOS, bare-metal RP2350 (ARM Cortex-M33), RP2350 (ARM Cortex-M33), and a web-based WebAssembly simulator. A user's trust hinges entirely on predictable stack transformations, register lift preservation, and sub-ULP numerical agreement across transcendental functions. To guarantee true behavioral parity, we architected an automated cross-surface fuzzer driven by strict golden path state invariants.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/08/22/building-a-cross-surface-fuzzer-part-1-golden-path-state-invariants/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-21 00:00:00">Friday, August 21, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="category/performance/" class="md-meta__link">Performance</a>, 
+              <a href="category/firmware/" class="md-meta__link">Firmware</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="debugging-memory-leaks-pico_debug_malloc-zero-arc-overhead"><a class="toclink" href="2026/08/21/debugging-memory-leaks-pico_debug_malloc--zero-arc-overhead/">Debugging Memory Leaks: PICO_DEBUG_MALLOC &amp; Zero ARC Overhead</a></h2>
+<p>It was 1:30 AM when our Rev 1 prototype froze solid on the bench, displaying half an equation and a frozen cursor. The Raspberry Pi RP2350 wasn't physically damaged, but the SWD debugger delivered a chilling diagnosis: total SRAM exhaustion. A 264 KB microcontroller had choked to death on memory fragments.</p>
+<p>Coming from modern iOS and backend software engineering, where machines have gigabytes of unified RAM and Automatic Reference Counting (ARC) quietly cleans up temporary closures and string buffers, bringing Swift to bare-metal silicon was an exhilarating culture shock. On a Cortex-M33 with no virtual memory, dynamic heap allocation is an immediate death sentence: even tiny string formatting allocations fragment 264 KB of SRAM into unusable swiss cheese within hours. As a software and AI expert with a desktop 3D printer running prototypes on my desk, I believe it is an absolute injustice that more students and makers do not use RPN calculators. But to build a reliable, low-cost physical device they can actually build and cherish, <code>RPNCore</code> had to survive indefinitely on bare metal. I instituted an absolute zero-heap mandate. Navigating the experimental Embedded Swift dialect to eliminate ARC overhead while retaining elegant value semantics was made possible by pairing with AI coding agents—systematically auditing call graphs, hunting hidden compiler boxing, and verifying static stack layouts.</p>
+<p>When porting <code>RPNCore</code> to Embedded Swift, we instituted a radical design mandate: <strong>zero dynamic heap allocations during runtime calculation</strong>. To guarantee this invariant, we stripped away ARC overhead and locked down the runtime using low-level Pico SDK memory hooks.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/08/21/debugging-memory-leaks-pico_debug_malloc--zero-arc-overhead/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a> <a class="md-pagination__link" href="page/3/">3</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="page/5/">5</a>
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

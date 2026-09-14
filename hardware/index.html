@@ -1,0 +1,1639 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/hardware/">
+      
+      
+        <link rel="prev" href="../blog/">
+      
+      
+        <link rel="next" href="../firmware/">
+      
+      
+      <link rel="icon" href="../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Hardware & Rubric - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/brutalist.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hardware-specifications-capability-rubric" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hardware & Rubric
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="..#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../blog/" class="md-tabs__link">
+        
+  
+    
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-physical-hardware-architecture-assembly-kit-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Physical Hardware Architecture &amp; Assembly Kit Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Physical Hardware Architecture & Assembly Kit Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Specifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-diy-assembly-kit-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      The DIY Assembly Kit Experience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-editions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Editions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-hp32sii-parity-modern-capability-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. HP32SII Parity &amp; Modern Capability Rubric
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. HP32SII Parity & Modern Capability Rubric">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-arithmetic-rpn-stack-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Arithmetic &amp; RPN Stack Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientific-transcendental-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scientific &amp; Transcendental Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-numbers-a-bi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex Numbers (\(a + bi\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modern-fractions-educational-mathematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern Fractions &amp; Educational Mathematics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-variable-statistics-curve-fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Variable Statistics &amp; Curve Fitting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-registers-program-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Registers &amp; Program Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-numerical-solvers-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Numerical Solvers &amp; Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modern-interface-system-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern Interface &amp; System Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-deliberate-quality-of-life-departures-from-hp32sii" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Deliberate Quality-of-Life Departures from HP32SII
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS App
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ecommerce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Store & Accessories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-physical-hardware-architecture-assembly-kit-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Physical Hardware Architecture &amp; Assembly Kit Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Physical Hardware Architecture & Assembly Kit Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Specifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-diy-assembly-kit-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      The DIY Assembly Kit Experience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-editions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Editions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-hp32sii-parity-modern-capability-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. HP32SII Parity &amp; Modern Capability Rubric
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. HP32SII Parity & Modern Capability Rubric">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-arithmetic-rpn-stack-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Arithmetic &amp; RPN Stack Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientific-transcendental-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scientific &amp; Transcendental Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-numbers-a-bi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex Numbers (\(a + bi\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modern-fractions-educational-mathematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern Fractions &amp; Educational Mathematics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-variable-statistics-curve-fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Variable Statistics &amp; Curve Fitting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-registers-program-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Registers &amp; Program Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-numerical-solvers-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Numerical Solvers &amp; Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modern-interface-system-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern Interface &amp; System Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-deliberate-quality-of-life-departures-from-hp32sii" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Deliberate Quality-of-Life Departures from HP32SII
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="hardware-specifications-capability-rubric">Hardware Specifications &amp; Capability Rubric</h1>
+<p>StackCalc is designed as a rugged, tactile physical instrument accompanied by a 1:1 software digital twin. We take engineering parity seriously: the exact deterministic calculation engine running on our physical RP2350 microcontroller powers our iOS and watchOS applications.</p>
+<hr />
+<h2 id="1-physical-hardware-architecture-assembly-kit-model">1. Physical Hardware Architecture &amp; Assembly Kit Model</h2>
+<p>The StackCalc32 handheld calculator draws inspiration from the legendary HP32SII while introducing modern manufacturing tolerances, serviceable modular mechanics, and high-performance embedded silicon. </p>
+<p>All physical hardware is distributed exclusively as <strong>DIY Hardware Assembly Kits</strong>. The 4-layer FR4 mainboard arrives <strong>100% pre-soldered and pre-flashed</strong> with surface-mount components, allowing builders to achieve complete, tool-less assembly in under 5 minutes without a soldering iron.</p>
+<pre class="mermaid"><code>graph TD
+    A[3D-Printed Tapered Chassis] --&gt; B[Tier-1 Rails: Button &amp; Screen Faceplates]
+    A --&gt; C[Tier-2 Rails: 4-Layer Pre-Soldered SMT PCB]
+    B --&gt; D[43 ALPS SKQGABE010 Tactile Switches @ 1.5mm Z]
+    C --&gt; E[Raspberry Pi Pico 2: RP2350 Dual-Core @ 150MHz]
+    C --&gt; F[EastRising ERC13265FS-1 Transflective LCD 132x65]
+    C --&gt; G[Wired CR2032 Coin Cell via JST PH 2-Pin]
+    A --&gt; H[95A TPU Top Cap &amp; Battery Carrier with M2 Fasteners]
+    A --&gt; I[Reversible TPU Slipcover / C-Cover]</code></pre>
+<h3 id="physical-specifications">Physical Specifications</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Authoritative Specification</th>
+<th>Engineering Details &amp; Tolerances</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Distribution Model</strong></td>
+<td><strong>DIY Assembly Kit</strong></td>
+<td>100% pre-soldered SMT board; frictionless 5-minute tool-less slide assembly</td>
+</tr>
+<tr>
+<td><strong>Microcontroller Module</strong></td>
+<td><strong>Raspberry Pi Pico 2 (<code>SC1632</code>)</strong></td>
+<td>RP2350 (Dual Cortex-M33 / Hazard3 RISC-V @ 150 MHz, Hardware double FPU, 4MB QSPI flash)</td>
+</tr>
+<tr>
+<td><strong>Firmware Runtime</strong></td>
+<td>Bare-Metal Embedded Swift</td>
+<td>Zero dynamic allocation, deterministic execution, sub-15ms cold boot</td>
+</tr>
+<tr>
+<td><strong>Display Module</strong></td>
+<td><strong>EastRising ERC13265FS-1</strong> (2.5-inch)</td>
+<td>132×65 pixel FSTN transflective graphic LCD with ST7567 / ST7567A controller</td>
+</tr>
+<tr>
+<td><strong>Display Connection</strong></td>
+<td>10-pin 0.5mm FPC ZIF</td>
+<td>Hirose <code>FH12-10S-0.5SH(55)</code> bottom-contact connector (<code>J1</code>)</td>
+</tr>
+<tr>
+<td><strong>Display Active Area</strong></td>
+<td>56.73 × 27.92 mm</td>
+<td>Bezel opening: 57.13 × 28.32 mm; Glass viewing area: 66.0 × 32.5 mm</td>
+</tr>
+<tr>
+<td><strong>Typography</strong></td>
+<td>Native Terminus Font</td>
+<td>Bundled 6×8 pixel font for 4 lines of left-justified stack text</td>
+</tr>
+<tr>
+<td><strong>Keypad Matrix</strong></td>
+<td><strong>43 SMD Tactile Switches</strong></td>
+<td>ALPS <code>SKQGABE010</code> (1.5mm Z-height off PCB surface, 180g actuation force)</td>
+</tr>
+<tr>
+<td><strong>Key Pitch</strong></td>
+<td>11.50 mm (H) × 11.30 mm (V)</td>
+<td>Upper 6-column matrix (22 keys) and 4×5 arithmetic pad (20 keys)</td>
+</tr>
+<tr>
+<td><strong>ENTER Key</strong></td>
+<td>Double-Wide (21.90 × 10.40 mm)</td>
+<td>Centered switch on 19.20 × 9.20 mm carriage with 4 captive flange sectors</td>
+</tr>
+<tr>
+<td><strong>Button Kinematics</strong></td>
+<td>0.80 mm Down / 0.20 mm Up</td>
+<td>0.80 mm downward working travel; 0.20 mm upward release</td>
+</tr>
+<tr>
+<td><strong>Faceplate Options</strong></td>
+<td>Rounded Retro or HP-32SII</td>
+<td>3 planar spiral springs (rounded) or captive diamond cartridge (HP-32SII)</td>
+</tr>
+<tr>
+<td><strong>Dimensions (Bare)</strong></td>
+<td><strong>80.0 × 148.0 × 16.0 mm max</strong></td>
+<td>11.9 mm keypad depth tapering to 16.0 mm display depth</td>
+</tr>
+<tr>
+<td><strong>Rear Taper</strong></td>
+<td><strong>1.60857° Planar Wedge</strong></td>
+<td>Continuous desk contact; zero rocking under upper function-key rows</td>
+</tr>
+<tr>
+<td><strong>Mainboard PCB</strong></td>
+<td><strong>72.0 × 142.4 × 1.6 mm</strong></td>
+<td>4-layer FR4 SMT board with gold immersion finish (ENIG)</td>
+</tr>
+<tr>
+<td><strong>Power Architecture</strong></td>
+<td><strong>Wired CR2032 Coin Cell Holder</strong></td>
+<td>JST PH 2-pin side-entry header (<code>S2B-PH-K-S(LF)(SN)</code>); &lt;30µA dormant sleep</td>
+</tr>
+<tr>
+<td><strong>Top Cap Enclosure</strong></td>
+<td>95A-Class Flexible TPU</td>
+<td>Houses wired CR2032 battery carrier, braces screen frame, flared M2 nut towers</td>
+</tr>
+<tr>
+<td><strong>Protective Cover</strong></td>
+<td>Reversible TPU C-Cover</td>
+<td>83.8 × 149.3 × 18.2 mm; front storage shield or rear desktop sleeve with card slot</td>
+</tr>
+<tr>
+<td><strong>Packaging &amp; Stands</strong></td>
+<td>6.6 × 4.9 × 1.9 in Mailer Box</td>
+<td>Multi-tier protective isolation converting into <strong>78° Showcase &amp; 10° Typing Stands</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-diy-assembly-kit-experience">The DIY Assembly Kit Experience</h3>
+<p>To comply with international regulatory frameworks (FCC Part 15 SDoC evaluation kit rules) while celebrating maker culture, StackCalc32 is provided as an unassembled development kit:</p>
+<ol>
+<li><strong>Zero-Solder Mechanical Sliding Stack:</strong></li>
+<li><strong>Step 1 (Faceplates):</strong> The button faceplate and screen faceplate slide into the Tier-1 chassis rails, interlocking via hidden tongue-and-groove pockets.</li>
+<li><strong>Step 2 (PCB):</strong> The populated 4-layer mainboard slides smoothly down the Tier-2 rails behind the faceplates until the tactile switches seat against the button plungers at the fixed switch datum.</li>
+<li><strong>Step 3 (Top Cap &amp; Battery):</strong> The 95A TPU top cap with integrated CR2032 battery carrier slides down to close the display frame, secured by two M2 screws into brass nuts seated in flared towers.</li>
+<li><strong>Step 4 (Slipcover):</strong> The reversible TPU C-cover slides over the calculator.</li>
+<li><strong>Protective Packaging That Becomes Dual Stands:</strong></li>
+<li>The custom 6.6 × 4.9 × 1.9 inch mailer box organizes each component into dedicated vertical tiers (PCB, Chassis, Top Cap, Button Membrane, Faceplate, and TPU Pouch).</li>
+<li>Once unboxed, the internal packaging elements assemble into two ergonomic desktop fixtures:<ul>
+<li><strong>The 78° Upright Shelf Showcase Stand:</strong> Displays the calculator at an optimal portrait viewing angle with an integrated rear docking slot for the TPU pouch.</li>
+<li><strong>The 10.0° Ergonomic Typing Elevator Desk Wedge:</strong> Raises the rear by exactly 1.0 inch (25.4 mm) for fatigue-free desktop calculation.</li>
+</ul>
+</li>
+</ol>
+<h3 id="hardware-editions">Hardware Editions</h3>
+<ol>
+<li><strong>SC-32 Professional (Flagship Kit — In Production):</strong></li>
+<li>Full scientific, transcendental, complex number, statistical, and financial calculation engine.</li>
+<li>Powered by the Raspberry Pi Pico 2 (RP2350) with 4 MB QSPI flash, supporting 16 built-in TUI tutorials and flash persistence.</li>
+<li><strong>SC-6 Basic Variant (In Development):</strong></li>
+<li>Tailored specifically for primary education (K–5).</li>
+<li>Introduces visual Ten Frames, Number Racks, step-by-step fraction reduction (<code>[SIMP]</code>), and currency math.</li>
+</ol>
+<hr />
+<h2 id="2-hp32sii-parity-modern-capability-rubric">2. HP32SII Parity &amp; Modern Capability Rubric</h2>
+<p>This rubric tracks operational capabilities across all StackCalc surfaces compared against the original HP32SII. Every operation produces mathematically bit-identical results.</p>
+<h3 id="core-arithmetic-rpn-stack-operations">Core Arithmetic &amp; RPN Stack Operations</h3>
+<table>
+<thead>
+<tr>
+<th>Capability / Key</th>
+<th style="text-align: center;">Original HP32SII</th>
+<th style="text-align: center;">Physical Hardware (SC-32)</th>
+<th style="text-align: center;">iOS App</th>
+<th style="text-align: center;">watchOS App</th>
+<th>Notes &amp; Operational Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Basic Arithmetic (<code>+</code>, <code>-</code>, <code>×</code>, <code>÷</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Standard two-operand evaluation; drops Y onto X</td>
+</tr>
+<tr>
+<td><strong>Stack Commit (<code>ENTER</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Copies X into Y and arms automatic stack lift</td>
+</tr>
+<tr>
+<td><strong>Sign Toggle (<code>+/-</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Negates mantissa or active exponent</td>
+</tr>
+<tr>
+<td><strong>Absolute Value (<code>\|x\|</code> / <code>ABS</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Promoted to Blue Shift <code>+/-</code> for direct one-touch access</td>
+</tr>
+<tr>
+<td><strong>Integer Remainder Division (<code>÷R</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Returns integer quotient and pushes remainder</td>
+</tr>
+<tr>
+<td><strong>Scientific Notation (<code>E</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Initiates base-10 exponent entry (<code>1.23E4</code>)</td>
+</tr>
+<tr>
+<td><strong>Register Swap (<code>𝑥≷𝑦</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Exchanges values in X and Y registers</td>
+</tr>
+<tr>
+<td><strong>Stack Roll Down (<code>R↓</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Rotates four-level stack: X→T, Y→X, Z→Y, T→Z</td>
+</tr>
+<tr>
+<td><strong>Stack Roll Up (<code>R↑</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Rotates four-level stack in reverse direction</td>
+</tr>
+<tr>
+<td><strong>Last Argument Recovery (<code>LAST𝑥</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Restores previous X operand before last operation</td>
+</tr>
+<tr>
+<td><strong>Full Precision View (<code>SHOW</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Temporarily reveals full 15-digit internal IEEE-754 value</td>
+</tr>
+<tr>
+<td><strong>Backspace / Clear (<code>&lt;-</code>, <code>C</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Deletes single digits during entry; clears active menu or line</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scientific-transcendental-functions">Scientific &amp; Transcendental Functions</h3>
+<table>
+<thead>
+<tr>
+<th>Capability / Key</th>
+<th style="text-align: center;">Original HP32SII</th>
+<th style="text-align: center;">Physical Hardware (SC-32)</th>
+<th style="text-align: center;">iOS App</th>
+<th style="text-align: center;">watchOS App</th>
+<th>Notes &amp; Operational Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Square Root (<code>√𝑥</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Evaluates <span class="arithmatex">\(\sqrt{x}\)</span>; supports negative arguments in complex mode</td>
+</tr>
+<tr>
+<td><strong>Square (<code>𝑥²</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Evaluates <span class="arithmatex">\(x^2\)</span> onto active stack</td>
+</tr>
+<tr>
+<td><strong>Natural Logarithm (<code>LN</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Evaluates <span class="arithmatex">\(\ln(x)\)</span> base-<span class="arithmatex">\(e\)</span></td>
+</tr>
+<tr>
+<td><strong>Common Logarithm (<code>LOG</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Evaluates <span class="arithmatex">\(\log_{10}(x)\)</span> base-10</td>
+</tr>
+<tr>
+<td><strong>Natural Exponential (<code>𝑒ˣ</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Evaluates <span class="arithmatex">\(e^x\)</span></td>
+</tr>
+<tr>
+<td><strong>Base-10 Exponential (<code>10ˣ</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Evaluates <span class="arithmatex">\(10^x\)</span></td>
+</tr>
+<tr>
+<td><strong>Power (<code>𝑦ˣ</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Combines Y and X to evaluate <span class="arithmatex">\(y^x\)</span></td>
+</tr>
+<tr>
+<td><strong>Arbitrary Root (<code>ˣ√𝑦</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Evaluates <span class="arithmatex">\(\sqrt[x]{y}\)</span></td>
+</tr>
+<tr>
+<td><strong>Reciprocal (<code>¹/𝑥</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Evaluates <span class="arithmatex">\(1/x\)</span></td>
+</tr>
+<tr>
+<td><strong>Factorial / Gamma (<code>𝑥!</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Computes <span class="arithmatex">\(n!\)</span> for integers and <span class="arithmatex">\(\Gamma(x+1)\)</span> for non-integers</td>
+</tr>
+<tr>
+<td><strong>Trigonometry (<code>SIN</code>, <code>COS</code>, <code>TAN</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Evaluates sine, cosine, tangent in current angular mode</td>
+</tr>
+<tr>
+<td><strong>Inverse Trig (<code>ASIN</code>, <code>ACOS</code>, <code>ATAN</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Evaluates arcsine, arccosine, and arctangent</td>
+</tr>
+<tr>
+<td><strong>Hyperbolic Modes (<code>HYP</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Arms hyperbolic trig: <span class="arithmatex">\(\sinh, \cosh, \tanh, \text{asinh}\)</span>, etc.</td>
+</tr>
+<tr>
+<td><strong>Constant Pi (<code>π</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Enters <span class="arithmatex">\(\pi = 3.141592653589793...\)</span> onto stack</td>
+</tr>
+</tbody>
+</table>
+<h3 id="complex-numbers-a-bi">Complex Numbers (<span class="arithmatex">\(a + bi\)</span>)</h3>
+<table>
+<thead>
+<tr>
+<th>Capability / Key</th>
+<th style="text-align: center;">Original HP32SII</th>
+<th style="text-align: center;">Physical Hardware (SC-32)</th>
+<th style="text-align: center;">iOS App</th>
+<th style="text-align: center;">watchOS App</th>
+<th>Notes &amp; Operational Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Complex Pair Entry</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Rectangular real and imaginary coordinate input via <code>CMPLX</code></td>
+</tr>
+<tr>
+<td><strong>Euler's Identity Parity</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Evaluates <span class="arithmatex">\(e^{\pi i} = -1.0000 + 0.0000i\)</span> accurately</td>
+</tr>
+<tr>
+<td><strong>Complex Transcendentals</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Full complex domain for roots, powers, logs, and trig</td>
+</tr>
+<tr>
+<td><strong>Polar / Rectangular Conversion</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Instant transformation between <span class="arithmatex">\((r, \theta)\)</span> and <span class="arithmatex">\((x, y)\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="modern-fractions-educational-mathematics">Modern Fractions &amp; Educational Mathematics</h3>
+<table>
+<thead>
+<tr>
+<th>Capability / Key</th>
+<th style="text-align: center;">Original HP32SII</th>
+<th style="text-align: center;">Physical Hardware (SC-32)</th>
+<th style="text-align: center;">iOS App</th>
+<th style="text-align: center;">watchOS App</th>
+<th>Notes &amp; Operational Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Three-Part Fraction Entry</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Formatted entry via <code>.Whole.Numerator.Denominator</code></td>
+</tr>
+<tr>
+<td><strong>Manual Step-by-Step Reduction</strong></td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td><code>[SIMP]</code> softkey factors out common divisors iteratively</td>
+</tr>
+<tr>
+<td><strong>Fraction/Decimal Toggle (<code>[FDISP]</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Instantly toggles display between exact fraction and decimal</td>
+</tr>
+<tr>
+<td><strong>Mixed Fraction Arithmetic</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Direct addition, subtraction, multiplication of mixed numbers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="two-variable-statistics-curve-fitting">Two-Variable Statistics &amp; Curve Fitting</h3>
+<table>
+<thead>
+<tr>
+<th>Capability / Key</th>
+<th style="text-align: center;">Original HP32SII</th>
+<th style="text-align: center;">Physical Hardware (SC-32)</th>
+<th style="text-align: center;">iOS App</th>
+<th style="text-align: center;">watchOS App</th>
+<th>Notes &amp; Operational Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Accumulation (<code>Σ+</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Enters coordinate pair <span class="arithmatex">\((x, y)\)</span> into dedicated stat registers</td>
+</tr>
+<tr>
+<td><strong>Data Deletion (<code>Σ-</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Subtracts erroneous data point from active statistics</td>
+</tr>
+<tr>
+<td><strong>Sample &amp; Population Means (<code>𝑥̄, 𝑦̄</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Computes weighted arithmetic means of x and y</td>
+</tr>
+<tr>
+<td><strong>Standard Deviations (<code>s, σ</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Computes sample (<span class="arithmatex">\(s\)</span>) and population (<span class="arithmatex">\(\sigma\)</span>) standard deviations</td>
+</tr>
+<tr>
+<td><strong>Linear Regression (<code>L.R.</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Solves slope (<span class="arithmatex">\(m\)</span>), y-intercept (<span class="arithmatex">\(b\)</span>), and correlation (<span class="arithmatex">\(r\)</span>)</td>
+</tr>
+<tr>
+<td><strong>Summation Recall (<code>SUMS</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Recalls accumulated <span class="arithmatex">\(\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="storage-registers-program-variables">Storage Registers &amp; Program Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Capability / Key</th>
+<th style="text-align: center;">Original HP32SII</th>
+<th style="text-align: center;">Physical Hardware (SC-32)</th>
+<th style="text-align: center;">iOS App</th>
+<th style="text-align: center;">watchOS App</th>
+<th>Notes &amp; Operational Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Register Store &amp; Recall (<code>STO</code>, <code>RCL</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Stores/recalls values across 26 global lettered registers (A–Z)</td>
+</tr>
+<tr>
+<td><strong>Indirect Register Addressing</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Uses register <code>(i)</code> as a pointer for dynamic indexed access</td>
+</tr>
+<tr>
+<td><strong>Register Arithmetic</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>In-place operations (<code>STO +</code>, <code>STO -</code>, <code>STO ×</code>, <code>STO ÷</code>)</td>
+</tr>
+<tr>
+<td><strong>Continuous Memory</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Preserves all registers across power downs and sleep states</td>
+</tr>
+</tbody>
+</table>
+<h3 id="advanced-numerical-solvers-integration">Advanced Numerical Solvers &amp; Integration</h3>
+<table>
+<thead>
+<tr>
+<th>Capability / Key</th>
+<th style="text-align: center;">Original HP32SII</th>
+<th style="text-align: center;">Physical Hardware (SC-32)</th>
+<th style="text-align: center;">iOS App</th>
+<th style="text-align: center;">watchOS App</th>
+<th>Notes &amp; Operational Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Single-Root Solver (<code>SOLVE</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Numerical secant/Brent root-finder without algebraic CAS</td>
+</tr>
+<tr>
+<td><strong>Numerical Integration (<code>∫</code>)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Romberg / adaptive quadrature definite integral solver</td>
+</tr>
+<tr>
+<td><strong>Cubic Polynomial Solver (<code>POLY</code>)</strong></td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Solves real and complex roots for <span class="arithmatex">\(Ax^3 + Bx^2 + Cx + D = 0\)</span></td>
+</tr>
+<tr>
+<td><strong>Time Value of Money (<code>TVM</code>)</strong></td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Dedicated financial amortizer (<span class="arithmatex">\(N, I\%YR, PV, PMT, FV\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modern-interface-system-enhancements">Modern Interface &amp; System Enhancements</h3>
+<table>
+<thead>
+<tr>
+<th>Capability / Feature</th>
+<th style="text-align: center;">Original HP32SII</th>
+<th style="text-align: center;">Physical Hardware (SC-32)</th>
+<th style="text-align: center;">iOS App</th>
+<th style="text-align: center;">watchOS App</th>
+<th>Notes &amp; Operational Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Interactive TUI Tutorials</strong></td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>16 built-in step-by-step guided lessons with verification</td>
+</tr>
+<tr>
+<td><strong>Flexible Stack Architecture</strong></td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Configurable classic 4-level, 8-level, or unbounded stack</td>
+</tr>
+<tr>
+<td><strong>Function Graphing (<code>PLOT</code>)</strong></td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Hardware ST7567A pixel plot; interactive pinch/pan on iOS</td>
+</tr>
+<tr>
+<td><strong>Continuous Tactile Field (HPTC)</strong></td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td>Simulated mechanical travel via continuous CoreHaptics</td>
+</tr>
+<tr>
+<td><strong>Pitch-Black OLED Mode</strong></td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td>True #000000 background optimized for Apple Watch displays</td>
+</tr>
+<tr>
+<td><strong>Searchable Constants (<code>CNST</code>)</strong></td>
+<td style="text-align: center;">Partial</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>Hardware softkey index; searchable rich picker on iOS/watchOS</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-deliberate-quality-of-life-departures-from-hp32sii">3. Deliberate Quality-of-Life Departures from HP32SII</h2>
+<p>While maintaining functional parity, StackCalc incorporates deliberate modern enhancements to improve usability, durability, and educational clarity:</p>
+<ol>
+<li><strong>Unified RPN Programming:</strong></li>
+<li><em>HP32SII:</em> Required users to navigate between an archaic algebraic equation mode and RPN keystroke programming.</li>
+<li><em>StackCalc:</em> Unifies all equation definition into deterministic RPN stack operations. This eliminates parser ambiguities and ensures identical execution behavior on microcontrollers, phones, and watches.</li>
+<li><strong>Dedicated Absolute Value (<code>|x|</code>) Key:</strong></li>
+<li><em>HP32SII:</em> Hid the absolute value function deep within the secondary <code>PARTS</code> menu.</li>
+<li><em>StackCalc:</em> Assigns <code>|x|</code> directly to Blue Shift <code>+/-</code>, providing instant one-touch evaluation.</li>
+<li><strong>Modern Remainder Notation (<code>÷R</code>):</strong></li>
+<li><em>HP32SII:</em> Labeled integer division as <code>INT÷</code> above the <code>E</code> key.</li>
+<li><em>StackCalc:</em> Uses <code>÷R</code> to clearly communicate integer division with remainder, aligning with modern engineering and educational standards.</li>
+<li><strong>Clean Power Architecture (Software Targets):</strong></li>
+<li><em>HP32SII:</em> Included a physical <code>OFF</code> key label.</li>
+<li><em>StackCalc:</em> Retains power management on the hardware unit, but hides unnecessary power buttons on iOS and watchOS where operating system lifecycle handlers manage state.</li>
+<li><strong>Configurable Stack Depth:</strong></li>
+<li><em>HP32SII:</em> Restricted permanently to a 4-level stack (<span class="arithmatex">\(X, Y, Z, T\)</span>).</li>
+<li><em>StackCalc:</em> The <code>FLAGS</code> menu allows selecting between classic 4-level, 8-level, and unbounded Infinite stack depths.</li>
+<li><strong>Searchable Constants Directory:</strong></li>
+<li><em>HP32SII:</em> Relied on abbreviated, unindexed 2-letter codes.</li>
+<li><em>StackCalc:</em> Hardware uses organized softkey pagination, while companion apps feature a searchable database complete with full names, precise values, and physical SI units.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

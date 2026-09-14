@@ -1,0 +1,835 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/blog/2026/07/24/unit-conversions-dimension-trees--invertible-scaling-factors/">
+      
+      
+        <link rel="prev" href="../../21/complex-numbers-coordinate-conversions--rectangularpolar-display/">
+      
+      
+        <link rel="next" href="../../26/statistical-functions-linear-regression--sigma-register-accumulation/">
+      
+      
+      <link rel="icon" href="../../../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Unit Conversions: Dimension Trees & Invertible Scaling Factors - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/brutalist.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-dimension-tree-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unit Conversions: Dimension Trees & Invertible Scaling Factors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../../..#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+    
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../hardware/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS App
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ecommerce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Store & Accessories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-dimension-tree-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Dimension Tree Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplicative-vs-affine-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplicative vs. Affine Scaling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exact-conversion-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exact Conversion Constants
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-invariants-during-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stack Invariants During Conversion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion-core-invariants-for-dimension-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion: Core Invariants for Dimension Transformations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          A. Bagher
+                        
+                      </strong>
+                      <br>
+                      Creator of StackCalc32
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-07-24 00:00:00" class="md-ellipsis">Friday, July 24, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/engineering/">Engineering</a>, 
+                              <a href="../../../../category/mathematics/">Mathematics</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              4 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+  <h1>Unit Conversions: Dimension Trees & Invertible Scaling Factors</h1>
+
+<p>Ask an aerospace engineer about the Mars Climate Orbiter, and they will remind you how a mismatch between pound-force seconds and Newton seconds turned a $327 million spacecraft into atmospheric confetti. As a software engineer who values strong typing and invariant checks, dimensional integrity is something I take personally. But on a handheld calculator, unit conversion looks deceptively simple—until you start implementing it on an RPN execution stack. Should converting inches to centimeters push the result into <span class="arithmatex">\(Y\)</span>? Does tapping Fahrenheit to Celsius calculate an absolute temperature or a thermal delta? In <code>RPNCore</code>, we treated unit conversion not as a superficial menu afterthought, but as an in-place register transformation governed by strict physical invariants. To ensure zero cumulative drift, I used AI coding agents to cross-reference legal NIST conversion ratios and generate exhaustive round-trip property tests across our dimensional catalog.</p>
+<!-- more -->
+
+<h2 id="the-dimension-tree-architecture">The Dimension Tree Architecture</h2>
+<p>Physical units group naturally into dimensional families governed by the International System of Units (SI):</p>
+<div class="arithmatex">\[[\text{Quantity}] = [L]^a [M]^b [T]^c [I]^d [\Theta]^e [N]^f [J]^g\]</div>
+<p>In <code>RPNCore</code>, conversions are categorized across five primary engineering dimensions:</p>
+<ol>
+<li><strong>Length (<span class="arithmatex">\([L]\)</span>)</strong>: Inches <span class="arithmatex">\(\leftrightarrow\)</span> Centimeters, Feet <span class="arithmatex">\(\leftrightarrow\)</span> Meters, Miles <span class="arithmatex">\(\leftrightarrow\)</span> Kilometers.</li>
+<li><strong>Mass (<span class="arithmatex">\([M]\)</span>)</strong>: Pounds (avoirdupois) <span class="arithmatex">\(\leftrightarrow\)</span> Kilograms, Ounces <span class="arithmatex">\(\leftrightarrow\)</span> Grams.</li>
+<li><strong>Temperature (<span class="arithmatex">\([\Theta]\)</span>)</strong>: Degrees Fahrenheit <span class="arithmatex">\(\leftrightarrow\)</span> Degrees Celsius, Kelvin <span class="arithmatex">\(\leftrightarrow\)</span> Celsius.</li>
+<li><strong>Volume (<span class="arithmatex">\([L^3]\)</span>)</strong>: US Gallons <span class="arithmatex">\(\leftrightarrow\)</span> Liters, Fluid Ounces <span class="arithmatex">\(\leftrightarrow\)</span> Milliliters.</li>
+<li><strong>Pressure &amp; Energy (<span class="arithmatex">\([M L^{-1} T^{-2}]\)</span>)</strong>: PSI <span class="arithmatex">\(\leftrightarrow\)</span> Kilopascals, Joules <span class="arithmatex">\(\leftrightarrow\)</span> Calories.</li>
+</ol>
+<pre class="mermaid"><code>graph TD
+    UserKey[User Keystroke: e.g. in -&gt; cm] --&gt; DimensionRouter{Dimension Family}
+    DimensionRouter --&gt;|Multiplicative| Scale[x_out = x_in * Factor]
+    DimensionRouter --&gt;|Affine| Offset[x_out = x_in * Scale + Offset]
+    DimensionRouter --&gt;|Inverse| InvScale[x_out = x_in / Factor]
+    Scale --&gt; InPlaceUpdate[Update Register X In-Place]
+    Offset --&gt; InPlaceUpdate
+    InvScale --&gt; InPlaceUpdate
+    InPlaceUpdate --&gt; StackPreserved[Y, Z, T and LASTx Preserved]</code></pre>
+<h2 id="multiplicative-vs-affine-scaling">Multiplicative vs. Affine Scaling</h2>
+<p>Most unit conversions are purely multiplicative linear maps (<span class="arithmatex">\(y = k \cdot x\)</span>). However, temperature conversions are <strong>affine transformations</strong> containing an additive zero-point offset:</p>
+<div class="arithmatex">\[T_F = T_C \times \frac{9}{5} + 32, \quad T_C = (T_F - 32) \times \frac{5}{9}\]</div>
+<p>Failing to distinguish between absolute temperature values (<span class="arithmatex">\(100^\circ\text{C} = 212^\circ\text{F}\)</span>) and temperature differentials (<span class="arithmatex">\(\Delta 10^\circ\text{C} = \Delta 18^\circ\text{F}\)</span>) is a classic source of engineering bugs. In <code>RPNCore</code>, primary conversion keys evaluate absolute affine transforms, while the <code>PARTS</code> submenu provides delta scalers.</p>
+<h2 id="exact-conversion-constants">Exact Conversion Constants</h2>
+<p>To ensure zero numerical drift during bidirectional conversions, <code>RPNCore</code> uses exact legal definitions:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Conversion Pair</th>
+<th style="text-align: left;">Direction</th>
+<th style="text-align: left;">Exact Definition Ratio</th>
+<th style="text-align: left;">Approximate Scaling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Inches <span class="arithmatex">\(\to\)</span> Centimeters</strong></td>
+<td style="text-align: left;">Multiplicative</td>
+<td style="text-align: left;"><span class="arithmatex">\(1\text{ in} \equiv 2.54\text{ cm}\)</span> (exact)</td>
+<td style="text-align: left;"><span class="arithmatex">\(2.54\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Feet <span class="arithmatex">\(\to\)</span> Meters</strong></td>
+<td style="text-align: left;">Multiplicative</td>
+<td style="text-align: left;"><span class="arithmatex">\(1\text{ ft} \equiv 0.3048\text{ m}\)</span> (exact)</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.3048\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pounds <span class="arithmatex">\(\to\)</span> Kilograms</strong></td>
+<td style="text-align: left;">Multiplicative</td>
+<td style="text-align: left;"><span class="arithmatex">\(1\text{ lb} \equiv 0.45359237\text{ kg}\)</span> (exact)</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.45359237\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gallons <span class="arithmatex">\(\to\)</span> Liters</strong></td>
+<td style="text-align: left;">Multiplicative</td>
+<td style="text-align: left;"><span class="arithmatex">\(1\text{ gal} \equiv 231\text{ in}^3 = 3.785411784\text{ L}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(3.785411784\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Celsius <span class="arithmatex">\(\to\)</span> Fahrenheit</strong></td>
+<td style="text-align: left;">Affine</td>
+<td style="text-align: left;"><span class="arithmatex">\(F = C \times \frac{9}{5} + 32\)</span></td>
+<td style="text-align: left;">Linear slope <span class="arithmatex">\(1.8\)</span>, offset <span class="arithmatex">\(32\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="stack-invariants-during-conversion">Stack Invariants During Conversion</h2>
+<p>A critical UX requirement in RPN is that converting the display value in <span class="arithmatex">\(X\)</span> must not disturb the rest of the stack. If register <span class="arithmatex">\(Y\)</span> holds a length in inches (<span class="arithmatex">\(12.0\)</span>) and <span class="arithmatex">\(X\)</span> holds a width in inches (<span class="arithmatex">\(4.0\)</span>), pressing <code>in -&gt; cm</code> must transform <span class="arithmatex">\(X\)</span> to <span class="arithmatex">\(10.16\)</span> while leaving <span class="arithmatex">\(Y\)</span> untouched at <span class="arithmatex">\(12.0\)</span>. The user can then press <code>*</code> to calculate square-inch area or convert <span class="arithmatex">\(Y\)</span> separately.</p>
+<div class="language-swift highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Unit conversion implementation in RPNCore/Sources/RPNCore/CalculatorEngine.swift</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">convertUnit</span><span class="p">(</span><span class="n">factor</span><span class="p">:</span><span class="w"> </span><span class="nb">Double</span><span class="p">,</span><span class="w"> </span><span class="n">affineOffset</span><span class="p">:</span><span class="w"> </span><span class="nb">Double</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">isInverse</span><span class="p">:</span><span class="w"> </span><span class="nb">Bool</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">commitInput</span><span class="p">()</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">guard</span><span class="w"> </span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="bp">isEmpty</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">currentX</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">stack</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">real</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">converted</span><span class="p">:</span><span class="w"> </span><span class="nb">Double</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">isInverse</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="n">converted</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">currentX</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">affineOffset</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">factor</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="n">converted</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">currentX</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factor</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">affineOffset</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="c1">// In-place update: Stack registers Y, Z, T are NOT shifted</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">stack</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">CalculatorValue</span><span class="p">(</span><span class="n">real</span><span class="p">:</span><span class="w"> </span><span class="n">converted</span><span class="p">,</span><span class="w"> </span><span class="n">imag</span><span class="p">:</span><span class="w"> </span><span class="n">stack</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">imag</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="c1">// Stack lift is re-enabled so subsequent number entry lifts the converted result</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="n">stackLiftEnabled</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="n">updateDisplay</span><span class="p">()</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>By guaranteeing exact conversion factors and in-place register updates, StackCalc32 provides engineers with an effortless, transparent dimensional tool.</p>
+<h2 id="conclusion-core-invariants-for-dimension-transformations">Conclusion: Core Invariants for Dimension Transformations</h2>
+<p>When designing unit conversions for measurement and engineering tools, keep three rules in mind:
+- <strong>In-place mutations only</strong>: A unit conversion is a change of perspective on the current number in <span class="arithmatex">\(X\)</span>; it must never trigger an unintended stack lift or drop that scrambles pending operands.
+- <strong>Use legal definitions over approximations</strong>: Never approximate <span class="arithmatex">\(1\text{ in}\)</span> as <span class="arithmatex">\(2.540005\text{ cm}\)</span>; use the exact international treaty value <span class="arithmatex">\(2.54\text{ cm}\)</span> so bidirectional conversions return the identical bit pattern.
+- <strong>Separate affine values from differentials</strong>: Adding <span class="arithmatex">\(10^\circ\text{C}\)</span> to a material's temperature is an affine transform, but calculating a temperature rise requires a pure scalar multiplier (<span class="arithmatex">\(1.8\)</span>) without the <span class="arithmatex">\(+32\)</span> bias.</p>
+<p>For students and makers building physical projects, having exact, non-destructive unit conversions directly on the stack prevents catastrophic unit errors before components ever hit the physical assembly bench.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

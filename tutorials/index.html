@@ -1,0 +1,1216 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/tutorials/">
+      
+      
+        <link rel="prev" href="../ios_app/">
+      
+      
+        <link rel="next" href="../ecommerce/">
+      
+      
+      <link rel="icon" href="../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Tutorials - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/brutalist.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#learn-by-doing-interactive-tui-tutorials" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorials
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="..#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../blog/" class="md-tabs__link">
+        
+  
+    
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../hardware/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS App
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-terminal-navigation-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Terminal Navigation &amp; Controls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rpn-basics-eliminating-parentheses" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. RPN Basics: Eliminating Parentheses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-complex-numbers-eulers-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Complex Numbers: Euler’s Identity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-fraction-entry-manual-simplification-simp" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Fraction Entry &amp; Manual Simplification ([SIMP])
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mixed-fraction-arithmetic-decimal-toggle-fdisp" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Mixed Fraction Arithmetic &amp; Decimal Toggle ([FDISP])
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-time-value-of-money-tvm-amortization" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Time Value of Money (TVM Amortization)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-statistical-sums-standard-deviation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Statistical Sums &amp; Standard Deviation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-executing-tutorials-on-physical-firmware-rp2350" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Executing Tutorials on Physical Firmware (RP2350)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Executing Tutorials on Physical Firmware (RP2350)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-launch-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Launch Sequence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-display-dynamic-softkeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Display &amp; Dynamic Softkeys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-time-keystroke-stack-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-Time Keystroke &amp; Stack Verification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-volatile-flash-memory-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Volatile Flash Memory Persistence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-complete-16-lesson-curriculum" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Complete 16-Lesson Curriculum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experience-stackcalc-across-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experience StackCalc Across Surfaces
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ecommerce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Store & Accessories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-terminal-navigation-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Terminal Navigation &amp; Controls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rpn-basics-eliminating-parentheses" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. RPN Basics: Eliminating Parentheses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-complex-numbers-eulers-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Complex Numbers: Euler’s Identity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-fraction-entry-manual-simplification-simp" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Fraction Entry &amp; Manual Simplification ([SIMP])
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mixed-fraction-arithmetic-decimal-toggle-fdisp" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Mixed Fraction Arithmetic &amp; Decimal Toggle ([FDISP])
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-time-value-of-money-tvm-amortization" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Time Value of Money (TVM Amortization)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-statistical-sums-standard-deviation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Statistical Sums &amp; Standard Deviation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-executing-tutorials-on-physical-firmware-rp2350" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Executing Tutorials on Physical Firmware (RP2350)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Executing Tutorials on Physical Firmware (RP2350)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-launch-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Launch Sequence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-display-dynamic-softkeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Display &amp; Dynamic Softkeys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-time-keystroke-stack-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-Time Keystroke &amp; Stack Verification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-volatile-flash-memory-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Volatile Flash Memory Persistence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-complete-16-lesson-curriculum" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Complete 16-Lesson Curriculum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experience-stackcalc-across-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experience StackCalc Across Surfaces
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="learn-by-doing-interactive-tui-tutorials">Learn by Doing: Interactive TUI Tutorials</h1>
+<p>The StackCalc32 firmware, Apple Watch app, and iOS app include 16 built-in interactive lessons powered by the native Text User Interface (TUI). </p>
+<p>The TUI replaces standard nested modal dialogues with an expandable, chatbot-style scrolling terminal rendered in the bundled <strong>Terminus</strong> pixel font. Lessons describe physical and digital calculator operations, providing real-time verification against the deterministic <code>RPNCore</code> engine.</p>
+<hr />
+<h2 id="1-terminal-navigation-controls">1. Terminal Navigation &amp; Controls</h2>
+<p>Learn how to navigate the expandable TUI scrolling transcript buffer and switch between the standard 1-line LCD and the full-screen terminal.</p>
+<div class="lcd-screen p-4 border-2 border-charcoal font-terminus shadow-md my-4" style="max-width: 650px;">
+  <div class="text-xs uppercase tracking-wider text-charcoal border-b border-charcoal border-opacity-30 pb-1 flex justify-between font-bold">
+    <span>&gt; TUI: CONTROLS (LESSON 1/16)</span>
+    <span>[C] EXIT</span>
+  </div>
+  <div class="text-sm text-charcoal leading-snug space-y-1 py-2">
+    <p>&gt; Terminal navigation tutorial.</p>
+    <p>&gt; Use ↰ + 8 to scroll up and ↰ + 7 to scroll down.</p>
+    <p>&gt; Step 1: Press Yellow Shift (↰)</p>
+    <p>&gt; Step 2: Press 8 [SCROLL UP]</p>
+    <p>&gt; Step 3: Press Yellow Shift (↰)</p>
+    <p>&gt; Step 4: Press 7 [SCROLL DOWN]</p>
+    <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: Transcript buffer navigation unlocked.</p>
+  </div>
+  <div class="pt-2 border-t border-charcoal border-opacity-30 flex justify-between items-center text-xs font-bold">
+    <span class="text-xl">0.0000_</span>
+    <span class="bg-charcoal text-icyblue px-2 py-0.5">[NEXT]</span>
+  </div>
+</div>
+
+<ul>
+<li><strong>Tap ↰ (Yellow Shift)</strong> to engage the shift annunciator.</li>
+<li><strong>Tap 8</strong> to scroll up into previous calculation history.</li>
+<li><strong>Tap 7</strong> to scroll down back to the active prompt.</li>
+<li><strong>Tap C</strong> to dismiss the TUI overlay back to the primary stack view.</li>
+</ul>
+<hr />
+<h2 id="2-rpn-basics-eliminating-parentheses">2. RPN Basics: Eliminating Parentheses</h2>
+<p>Reverse Polish Notation replaces the traditional <code>=</code> button and parenthesis keys with an automatic 4-level stack (<span class="arithmatex">\(X, Y, Z, T\)</span>).</p>
+<p><em>Mission: Calculate <span class="arithmatex">\(5 + 3\)</span> without parentheses.</em></p>
+<div class="lcd-screen p-4 border-2 border-charcoal font-terminus shadow-md my-4" style="max-width: 650px;">
+  <div class="text-xs uppercase tracking-wider text-charcoal border-b border-charcoal border-opacity-30 pb-1 flex justify-between font-bold">
+    <span>&gt; TUI: RPN BASICS (LESSON 2/16)</span>
+    <span>[C] EXIT</span>
+  </div>
+  <div class="text-sm text-charcoal leading-snug space-y-1 py-2">
+    <p>&gt; Mission: Calculate 5 + 3 with no parentheses.</p>
+    <p>&gt; In RPN, you enter arguments first, then specify the operator.</p>
+    <p>&gt; Step 1: Tap 5</p>
+    <p>&gt; Step 2: Tap ENTER [Lifts 5 into Stack Register Y]</p>
+    <p>&gt; Step 3: Tap 3 [Enters 3 into Stack Register X]</p>
+    <p>&gt; Step 4: Tap + [Combines Y and X into X]</p>
+    <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: X = 8.0000 [STACK LIFT ARMED]</p>
+  </div>
+  <div class="pt-2 border-t border-charcoal border-opacity-30 flex justify-between items-center text-xs font-bold">
+    <span class="text-xl">8.0000_</span>
+    <span class="bg-charcoal text-icyblue px-2 py-0.5">[NEXT]</span>
+  </div>
+</div>
+
+<ol>
+<li><strong>Tap 5</strong>: Types <code>5_</code> left-justified on the LCD display.</li>
+<li><strong>Tap ENTER</strong>: Commits <code>5</code> to the bottom of the stack and arms stack-lift.</li>
+<li><strong>Tap 3</strong>: Types <code>3_</code> in the active <span class="arithmatex">\(X\)</span> register while <span class="arithmatex">\(Y\)</span> retains <code>5</code>.</li>
+<li><strong>Tap +</strong>: Instantly evaluates <span class="arithmatex">\(5 + 3 = 8.0000\)</span>.</li>
+</ol>
+<hr />
+<h2 id="3-complex-numbers-eulers-identity">3. Complex Numbers: Euler’s Identity</h2>
+<p>StackCalc handles full complex pairs <span class="arithmatex">\((a + bi)\)</span> natively across all scientific and transcendental functions.</p>
+<p><em>Mission: Verify Euler's identity: <span class="arithmatex">\(e^{\pi i} = -1\)</span>.</em></p>
+<div class="lcd-screen p-4 border-2 border-charcoal font-terminus shadow-md my-4" style="max-width: 650px;">
+  <div class="text-xs uppercase tracking-wider text-charcoal border-b border-charcoal border-opacity-30 pb-1 flex justify-between font-bold">
+    <span>&gt; TUI: COMPLEX PAIRS (LESSON 3/16)</span>
+    <span>[C] EXIT</span>
+  </div>
+  <div class="text-sm text-charcoal leading-snug space-y-1 py-2">
+    <p>&gt; Mission: Verify e^(πi) = −1 with complex pairs.</p>
+    <p>&gt; Step 1: Tap 0 -&gt; press ENTER [Real part in Y = 0]</p>
+    <p>&gt; Step 2: Tap Blue Shift -&gt; Tap SIN (π) [Imaginary part in X = 3.1416]</p>
+    <p>&gt; Step 3: Tap Yellow Shift -&gt; Tap STO (CMPLX) [Arms complex operator]</p>
+    <p>&gt; Step 4: Tap eˣ [Evaluates transcendental e^(0 + πi)]</p>
+    <p>&gt; Step 5: Yellow Shift -&gt; STO (CMPLX) -&gt; Blue Shift -&gt; ENTER (SHOW)</p>
+    <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: Result = −1.0000 + 0.0000i</p>
+  </div>
+  <div class="pt-2 border-t border-charcoal border-opacity-30 flex justify-between items-center text-xs font-bold">
+    <span class="text-xl">-1.0000_</span>
+    <span class="bg-charcoal text-icyblue px-2 py-0.5">[NEXT]</span>
+  </div>
+</div>
+
+<hr />
+<h2 id="4-fraction-entry-manual-simplification-simp">4. Fraction Entry &amp; Manual Simplification ([SIMP])</h2>
+<p>Unlike consumer calculators that automatically simplify fractions and hide the underlying math from students, StackCalc preserves exact fraction state. Students must press <code>[SIMP]</code> to actively reduce fractions step-by-step.</p>
+<p><em>Mission: Enter <span class="arithmatex">\(\frac{2}{4}\)</span> and reduce it to <span class="arithmatex">\(\frac{1}{2}\)</span>.</em></p>
+<div class="lcd-screen p-4 border-2 border-charcoal font-terminus shadow-md my-4" style="max-width: 650px;">
+  <div class="text-xs uppercase tracking-wider text-charcoal border-b border-charcoal border-opacity-30 pb-1 flex justify-between font-bold">
+    <span>&gt; TUI: FRACTION SIMPLIFICATION (LESSON 5/16)</span>
+    <span>[C] EXIT</span>
+  </div>
+  <div class="text-sm text-charcoal leading-snug space-y-1 py-2">
+    <p>&gt; Mission: Enter 2/4 and reduce step-by-step.</p>
+    <p>&gt; Format: [Whole] . [Numerator] . [Denominator]</p>
+    <p>&gt; Step 1: Tap . -&gt; Tap 2 -&gt; Tap . -&gt; Tap 4 [.2.4]</p>
+    <p>&gt; Step 2: Tap ENTER [Displays: .2.4_ without reducing]</p>
+    <p>&gt; Step 3: Tap Softkey [SIMP]</p>
+    <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: Common divisor 2 factored out -&gt; .1.2 (.1/2)</p>
+  </div>
+  <div class="pt-2 border-t border-charcoal border-opacity-30 flex justify-between items-center text-xs font-bold">
+    <span class="text-xl">.1.2_</span>
+    <span class="bg-charcoal text-icyblue px-2 py-0.5">[NEXT]</span>
+  </div>
+</div>
+
+<hr />
+<h2 id="5-mixed-fraction-arithmetic-decimal-toggle-fdisp">5. Mixed Fraction Arithmetic &amp; Decimal Toggle ([FDISP])</h2>
+<p>Add mixed numbers exactly and toggle instantly between exact fractional form and floating-point decimal.</p>
+<p><em>Mission: Add <span class="arithmatex">\(1 \frac{1}{2} + 1 \frac{3}{4} = 3 \frac{1}{4} = 3.2500\)</span>.</em></p>
+<div class="lcd-screen p-4 border-2 border-charcoal font-terminus shadow-md my-4" style="max-width: 650px;">
+  <div class="text-xs uppercase tracking-wider text-charcoal border-b border-charcoal border-opacity-30 pb-1 flex justify-between font-bold">
+    <span>&gt; TUI: MIXED FRACTION ARITHMETIC (LESSON 6/16)</span>
+    <span>[C] EXIT</span>
+  </div>
+  <div class="text-sm text-charcoal leading-snug space-y-1 py-2">
+    <p>&gt; Mission: Add 1 1/2 + 1 3/4 exactly.</p>
+    <p>&gt; Step 1: Tap 1 . 1 . 2 -&gt; Press ENTER [1 1/2 in Y]</p>
+    <p>&gt; Step 2: Tap 1 . 3 . 4 [1 3/4 in X]</p>
+    <p>&gt; Step 3: Tap + [Exact sum evaluated: 3 1/4]</p>
+    <p>&gt; Step 4: Tap [FDISP] to toggle to decimal representation.</p>
+    <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: 3.2500 [PRESS FDISP AGAIN TO RETURN TO 3_1/4]</p>
+  </div>
+  <div class="pt-2 border-t border-charcoal border-opacity-30 flex justify-between items-center text-xs font-bold">
+    <span class="text-xl">3.2500_</span>
+    <span class="bg-charcoal text-icyblue px-2 py-0.5">[NEXT]</span>
+  </div>
+</div>
+
+<hr />
+<h2 id="6-time-value-of-money-tvm-amortization">6. Time Value of Money (TVM Amortization)</h2>
+<p>The built-in financial solver handles loan payments, mortgages, savings plans, and balloon notes without requiring complex algebraic formulas.</p>
+<p><em>Mission: Calculate the monthly payment on a $200,000 30-year fixed loan at 5.5% annual interest.</em></p>
+<div class="arithmatex">\[\text{Monthly Payment} = \frac{PV \cdot i}{1 - (1 + i)^{-N}}\]</div>
+<div class="lcd-screen p-4 border-2 border-charcoal font-terminus shadow-md my-4" style="max-width: 650px;">
+  <div class="text-xs uppercase tracking-wider text-charcoal border-b border-charcoal border-opacity-30 pb-1 flex justify-between font-bold">
+    <span>&gt; TUI: TVM AMORTIZATION (LESSON 8/16)</span>
+    <span>[C] EXIT</span>
+  </div>
+  <div class="text-sm text-charcoal leading-snug space-y-1 py-2">
+    <p>&gt; Loan parameters: N=360 months, I/YR=5.5%, PV=$200,000</p>
+    <p>&gt; Step 1: 360 -&gt; [N] (Number of periods)</p>
+    <p>&gt; Step 2: 5.5 -&gt; [I/YR] (Annual interest rate)</p>
+    <p>&gt; Step 3: 200000 -&gt; [PV] (Present loan value)</p>
+    <p>&gt; Step 4: 0 -&gt; [FV] (Future loan balance)</p>
+    <p>&gt; Step 5: Press [PMT] to execute solver.</p>
+    <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: PMT = $1,126.83 / month</p>
+  </div>
+  <div class="pt-2 border-t border-charcoal border-opacity-30 flex justify-between items-center text-xs font-bold">
+    <span class="text-xl">1,126.83_</span>
+    <span class="bg-charcoal text-icyblue px-2 py-0.5">[NEXT]</span>
+  </div>
+</div>
+
+<hr />
+<h2 id="7-statistical-sums-standard-deviation">7. Statistical Sums &amp; Standard Deviation</h2>
+<p>Accumulate 2-variable data pairs <span class="arithmatex">\((x, y)\)</span> into continuous memory registers using <span class="arithmatex">\(\Sigma+\)</span> to calculate means and sample standard deviations.</p>
+<p><em>Mission: Enter sample data points <span class="arithmatex">\((2, 4)\)</span> and <span class="arithmatex">\((4, 6)\)</span>, then solve mean and standard deviation.</em></p>
+<div class="lcd-screen p-4 border-2 border-charcoal font-terminus shadow-md my-4" style="max-width: 650px;">
+  <div class="text-xs uppercase tracking-wider text-charcoal border-b border-charcoal border-opacity-30 pb-1 flex justify-between font-bold">
+    <span>&gt; TUI: STATISTICS &amp; STD DEV (LESSON 14/16)</span>
+    <span>[C] EXIT</span>
+  </div>
+  <div class="text-sm text-charcoal leading-snug space-y-1 py-2">
+    <p>&gt; Step 1: Tap Yellow Shift (↰) -&gt; CLEAR -&gt; Σ (Clears stat registers)</p>
+    <p>&gt; Step 2: 4 [Y] -&gt; ENTER -&gt; 2 [X] -&gt; Tap Σ+ [Accumulates n=1]</p>
+    <p>&gt; Step 3: 6 [Y] -&gt; ENTER -&gt; 4 [X] -&gt; Tap Σ+ [Accumulates n=2]</p>
+    <p>&gt; Step 4: Tap Blue Shift -&gt; yˣ (x̄, ȳ) -&gt; Mean X = 3.0000, Mean Y = 5.0000</p>
+    <p>&gt; Step 5: Tap Blue Shift -&gt; ¹/x (s, σ) -&gt; Sample StdDev = 1.4142</p>
+    <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: Standard deviation s = 1.4142</p>
+  </div>
+  <div class="pt-2 border-t border-charcoal border-opacity-30 flex justify-between items-center text-xs font-bold">
+    <span class="text-xl">1.4142_</span>
+    <span class="bg-charcoal text-icyblue px-2 py-0.5">[EXIT]</span>
+  </div>
+</div>
+
+<hr />
+<h2 id="8-executing-tutorials-on-physical-firmware-rp2350">8. Executing Tutorials on Physical Firmware (RP2350)</h2>
+<p>StackCalc32's 16 guided lessons are not limited to touchscreens—they are implemented natively in bare-metal Embedded Swift running on the physical RP2350 microcontroller. The hardware provides an authentic, distraction-free environment to master RPN calculation.</p>
+<h3 id="hardware-launch-sequence">Hardware Launch Sequence</h3>
+<ul>
+<li><strong>Dedicated Launcher Key</strong>: Press <strong>Yellow Shift (↰) + C</strong> anywhere on the physical keypad to launch the built-in Interactive Tutorial Runner.</li>
+<li><strong>Instant Event Interception</strong>: The firmware event loop intercepts matrix scanning, suspends the standard operational stack, and loads the active tutorial state machine directly into the display buffer.</li>
+</ul>
+<h3 id="physical-display-dynamic-softkeys">Physical Display &amp; Dynamic Softkeys</h3>
+<ul>
+<li><strong>ST7567A Transflective LCD</strong>: The 132×65 pixel monochrome display renders a 4-line terminal transcript using the sharp 6×8 pixel Terminus font. High contrast ensures clear legibility under harsh laboratory lighting or direct sunlight.</li>
+<li><strong>Tactile Softkey Integration</strong>: The top row of 6 tactile keys dynamically maps to contextual controls:</li>
+<li><strong>Key 1 (<code>[PREV]</code>)</strong>: Revisit the previous instruction step.</li>
+<li><strong>Key 2 (<code>[NEXT]</code>)</strong>: Advance to the next step once target preconditions are verified.</li>
+<li><strong>Key 5 (<code>[SKIP]</code>)</strong>: Jump ahead to the subsequent lesson in the curriculum.</li>
+<li><strong>Key 6 (<code>[EXIT]</code>)</strong>: Dismiss the tutorial session and immediately restore your active calculation stack.</li>
+</ul>
+<h3 id="real-time-keystroke-stack-verification">Real-Time Keystroke &amp; Stack Verification</h3>
+<ul>
+<li>When an instructional step prompts for an input sequence (for example, <code>Press 5 -&gt; ENTER -&gt; 3 -&gt; +</code>), the firmware monitors physical switch actuations across the 43-key matrix.</li>
+<li>Each switch closure evaluates against the deterministic <code>RPNCore</code> math engine.</li>
+<li>Upon matching expected results, the LCD displays <code>VERIFIED: [TEST PASSED]</code> and enables the <code>[NEXT]</code> softkey to advance.</li>
+</ul>
+<h3 id="non-volatile-flash-memory-persistence">Non-Volatile Flash Memory Persistence</h3>
+<ul>
+<li>Progress across the 16 lessons is tracked via an internal bitmask stored in the RP2350's non-volatile QSPI flash memory (<code>firmwareTutorialCompletionMask</code>).</li>
+<li>Your tutorial progress and mastery state persist across deep sleep, power cycles, and battery changes.</li>
+</ul>
+<hr />
+<h2 id="the-complete-16-lesson-curriculum">The Complete 16-Lesson Curriculum</h2>
+<p>Every lesson is available with complete bit-for-bit parity across the physical hardware instrument, iPad, and Apple Watch:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Lesson Title</th>
+<th>Target Capabilities Covered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>01</strong></td>
+<td><strong>RPN Basics</strong></td>
+<td>Stack lift mechanics, eliminating parentheses, 4-level register manipulation (<span class="arithmatex">\(X, Y, Z, T\)</span>)</td>
+</tr>
+<tr>
+<td><strong>02</strong></td>
+<td><strong>Complex Numbers</strong></td>
+<td>Cartesian <span class="arithmatex">\((a + bi)\)</span> entry, complex transcendentals, Euler's identity (<span class="arithmatex">\(e^{\pi i} = -1\)</span>)</td>
+</tr>
+<tr>
+<td><strong>03</strong></td>
+<td><strong>Angular Modes</strong></td>
+<td>Degree, Radian, and Gradian conversions and trigonometric evaluations</td>
+</tr>
+<tr>
+<td><strong>04</strong></td>
+<td><strong>Register Storage</strong></td>
+<td>Direct and indirect register addressing with <code>STO</code> and <code>RCL</code></td>
+</tr>
+<tr>
+<td><strong>05</strong></td>
+<td><strong>Fraction Entry</strong></td>
+<td>Three-part <code>.Whole.Numerator.Denominator</code> fractional format</td>
+</tr>
+<tr>
+<td><strong>06</strong></td>
+<td><strong>Manual Simplification</strong></td>
+<td>Factoring common divisors step-by-step using the <code>[SIMP]</code> softkey</td>
+</tr>
+<tr>
+<td><strong>07</strong></td>
+<td><strong>Mixed Arithmetic</strong></td>
+<td>Exact fractional addition, subtraction, multiplication, and division</td>
+</tr>
+<tr>
+<td><strong>08</strong></td>
+<td><strong>Fraction/Decimal Toggle</strong></td>
+<td>Toggling instantly between exact rational fractions and floating-point decimal via <code>[FDISP]</code></td>
+</tr>
+<tr>
+<td><strong>09</strong></td>
+<td><strong>TVM Amortization</strong></td>
+<td>Solving loan amortization parameters (<span class="arithmatex">\(N, I\%YR, PV, PMT, FV\)</span>) without algebraic formulas</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>Unit Conversions</strong></td>
+<td>Metric and Imperial length, mass, volume, and temperature conversions</td>
+</tr>
+<tr>
+<td><strong>11</strong></td>
+<td><strong>Integer Division</strong></td>
+<td>Integer quotient and remainder arithmetic using modern <code>÷R</code> notation</td>
+</tr>
+<tr>
+<td><strong>12</strong></td>
+<td><strong>Last X Recovery</strong></td>
+<td>Error correction and argument reuse via <code>LAST𝑥</code></td>
+</tr>
+<tr>
+<td><strong>13</strong></td>
+<td><strong>Time Conversions</strong></td>
+<td>Decimal hours to Hours:Minutes:Seconds (<code>▸HR</code>, <code>▸HMS</code>)</td>
+</tr>
+<tr>
+<td><strong>14</strong></td>
+<td><strong>Base Modes</strong></td>
+<td>Hexadecimal, Decimal, Octal, and Binary bitwise logic and word sizes</td>
+</tr>
+<tr>
+<td><strong>15</strong></td>
+<td><strong>Two-Variable Statistics</strong></td>
+<td>Accumulating coordinate data pairs with <span class="arithmatex">\(\Sigma+\)</span> and <span class="arithmatex">\(\Sigma-\)</span></td>
+</tr>
+<tr>
+<td><strong>16</strong></td>
+<td><strong>Standard Deviation</strong></td>
+<td>Sample (<span class="arithmatex">\(s\)</span>) and population (<span class="arithmatex">\(\sigma\)</span>) standard deviations, weighted means</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="experience-stackcalc-across-surfaces">Experience StackCalc Across Surfaces</h2>
+<p>Master the tutorials on dedicated tactile hardware, or practice on your iPhone and Apple Watch:</p>
+<div class="my-6" style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+  <a href="../#preorder" class="brutalist-button-primary px-6 py-3.5 font-mono text-xs sm:text-sm font-bold inline-flex items-center gap-2 text-decoration-none">
+    PRE-ORDER PHYSICAL HARDWARE &rarr;
+  </a>
+  <a href="https://apps.apple.com/app/id6801788040" target="_blank" class="brutalist-button px-6 py-3.5 font-mono text-xs sm:text-sm font-bold inline-flex items-center gap-2 text-decoration-none" style="border: 2px solid #CBD1DC; color: #E2E6EE;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -3px; display: inline-block;"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.88c.61-.74 1.04-1.78.92-2.82-.93.04-2.02.63-2.65 1.37-.56.64-.99 1.69-.86 2.71 1.05.08 2.01-.54 2.59-1.26z"/></svg>
+    DOWNLOAD COMPANION APP STORE
+  </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,838 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/blog/2026/08/13/pioneering-with-embedded-swift-part-2-zero-allocation-byte-parsing/">
+      
+      
+        <link rel="prev" href="../../12/fractional-math-engine-part-2-continued-fractions--mil%C3%BC-355113/">
+      
+      
+        <link rel="next" href="../../14/numerical-integration-simpsons-38-rule-with-dynamic-interruption/">
+      
+      
+      <link rel="icon" href="../../../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Pioneering with Embedded Swift (Part 2: Zero-Allocation Byte Parsing) - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/brutalist.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#discovering-the-heap-exhaustion-leak" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pioneering with Embedded Swift (Part 2: Zero-Allocation Byte Parsing)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../../..#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+    
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../hardware/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS App
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ecommerce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Store & Accessories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#discovering-the-heap-exhaustion-leak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discovering the Heap Exhaustion Leak
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-cause-dynamic-string-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Cause: Dynamic String Construction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-zero-allocation-solution-fastmatchop" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Zero-Allocation Solution: fastMatchOp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion-hard-learned-heuristics-for-embedded-swift-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion: Hard-Learned Heuristics for Embedded Swift Memory
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          A. Bagher
+                        
+                      </strong>
+                      <br>
+                      Creator of StackCalc32
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-08-13 00:00:00" class="md-ellipsis">Thursday, August 13, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/firmware/">Firmware</a>, 
+                              <a href="../../../../category/embedded-swift/">Embedded Swift</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              4 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+  <h1>Pioneering with Embedded Swift (Part 2: Zero-Allocation Byte Parsing)</h1>
+
+<p>We were feeling pretty confident. We had compiled bare-metal Embedded Swift, linked it against the Raspberry Pi Pico 2 SDK, and verified our core RPN engine inside a simulated environment. The simulated screen drew the stack, the keys responded, and our unit tests passed. But as software engineers driven by the conviction that RPN calculators are mathematically superior—and that it is an absolute injustice that more students and engineers do not use them—we wanted our calculator to run forever without a hitch. So we turned on our automated keystroke fuzzer. At operation 1,214, the calculator died cold with an unhandled hard fault (<code>isr_hardfault</code>).</p>
+<!-- more -->
+
+<h2 id="discovering-the-heap-exhaustion-leak">Discovering the Heap Exhaustion Leak</h2>
+<p>In modern iOS and macOS development, memory is cheap, dynamic allocations are practically invisible, and Automatic Reference Counting (ARC) quietly cleans up after you. On the RP2350, however, we were working with just 264 KiB of total SRAM—out of which we had carved a modest 220 KiB heap pool. In software, memory is abundant; on bare-metal microcontrollers, even the tiniest memory leak is a ticking time bomb.</p>
+<p>To track down where our RAM was evaporating without the benefit of expensive lab hardware, we enabled memory allocation tracing in the Pico SDK by passing <code>PICO_DEBUG_MALLOC=1</code> and streaming telemetry over the serial port. Watching the console log allocations in real time was sickening. Every single button press produced an upward staircase of small, orphaned chunks:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[MALLOC] ptr=0x2001a4f0 size=32  total_allocated=4128  active_blocks=84
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>[MALLOC] ptr=0x2001a520 size=48  total_allocated=4176  active_blocks=85
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[MALLOC] ptr=0x2001a560 size=32  total_allocated=4208  active_blocks=86
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>...
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[PANIC] Out of memory: malloc failed for 64 bytes at Main.swift:88
+</span></code></pre></div>
+<p>Nobody was calling <code>free()</code>. But more importantly, why was a basic calculator engine touching the heap on every keystroke in the first place?</p>
+<h2 id="root-cause-dynamic-string-construction">Root Cause: Dynamic <code>String</code> Construction</h2>
+<p>We traced the allocations straight into <code>CalculatorEngine.commitInput()</code>. Coming from high-level Swift, our early implementation took what seemed like the most readable, idiomatic path to parse input into a floating-point number:</p>
+<div class="language-swift highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// The leaking implementation:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">let</span><span class="w"> </span><span class="nv">str</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="n">decoding</span><span class="p">:</span><span class="w"> </span><span class="n">currentInputBuffer</span><span class="p">,</span><span class="w"> </span><span class="k">as</span><span class="p">:</span><span class="w"> </span><span class="nb">UTF8</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">val</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">Double</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">push</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>On macOS or iOS, creating a short-lived <code>String</code> is optimized down to SSO (Small String Optimization) or swept clean by ARC autorelease pools. In Embedded Swift on ARMv6-M, however, strings spanning multi-byte UTF-8 representations trigger heap allocations via the underlying allocator. Without thread-exit collectors or an ARC cycle collector running in background threads, the micro-heap of 220 KiB eventually fragmented into complete exhaustion.</p>
+<p>Furthermore, in <code>LFUManager.swift</code>, dynamic hashing inside <code>Dictionary&lt;String, Int&gt;</code> caused persistent allocations on every function invocation. We addressed this by guarding usage tracking:</p>
+<div class="language-swift highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">recordUsage</span><span class="p">(</span><span class="n">of</span><span class="w"> </span><span class="n">function</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="cp">#if</span><span class="w"> </span><span class="cp">hasFeature</span><span class="p">(</span><span class="cp">Embedded</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="c1">// Avoid dynamic dictionary hashing and allocation on bare metal</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="k">return</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="cp">#endif</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="c1">// Host tracking implementation follows...</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>graph TD
+    subgraph "Leaking Pipeline (Heap Dependent)"
+        RawIn1[Raw Key Buffer] --&gt; StrInit[String decoding: as: UTF8]
+        StrInit --&gt; HeapAlloc[malloc 32/48 bytes]
+        HeapAlloc --&gt; SwiftDbl[Double init str]
+        SwiftDbl --&gt; Leak[ARC Retain Leak on Cortex-M33]
+    end
+    subgraph "Zero-Allocation Pipeline (Pure Byte Inspection)"
+        RawIn2[Raw Key Buffer UnsafePointer&lt;UInt8&gt;] --&gt; ByteScan[fastMatchOp byte-by-byte]
+        ByteScan --&gt; MatchOp{Length &amp; Byte Match?}
+        MatchOp -- Multi-byte UTF-8 --&gt; OpEnum[CalculatorOperation Enum]
+        MatchOp -- ASCII Digits --&gt; IntMath[Scalar Horner Math result * 10 + d]
+        IntMath --&gt; ZeroAlloc[0 Mallocs / 0 Leaks / 0 Heap Overhead]
+        OpEnum --&gt; ZeroAlloc
+    end</code></pre>
+<h2 id="the-zero-allocation-solution-fastmatchop">The Zero-Allocation Solution: <code>fastMatchOp</code></h2>
+<p>The fix was uncompromising: banish dynamic <code>String</code> construction entirely from our hot calculation loop. We prompted an AI coding assistant to help us design an allocation-free scanner that could inspect raw byte buffers directly. The result was <code>fastMatchOp</code>, which operates directly on raw memory pointers:</p>
+<div class="language-swift highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">func</span><span class="w"> </span><span class="nf">fastMatchOp</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">buf</span><span class="p">:</span><span class="w"> </span><span class="nb">UnsafePointer</span><span class="p">&lt;</span><span class="nb">UInt8</span><span class="p">&gt;,</span><span class="w"> </span><span class="kc">_</span><span class="w"> </span><span class="n">len</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">CalculatorOperation</span><span class="p">?</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">b0</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">b1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">b2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">b3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">b4</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">b5</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">b6</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="c1">// Multi-byte Unicode mathematical operators</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="c1">// "→cm" UTF-8: [226, 134, 146, 99, 109]</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b0</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">226</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">134</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b2</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">146</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b3</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">99</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b4</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">109</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">.</span><span class="n">toCm</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="c1">// "√𝑥" UTF-8: [226, 136, 154, 240, 157, 145, 165]</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b0</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">226</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">136</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b2</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">154</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b3</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">240</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b4</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">157</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b5</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">145</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b6</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">165</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">.</span><span class="n">sqrt</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="c1">// "𝑦ˣ" UTF-8: [240, 157, 145, 166, 203, 163]</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b0</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">240</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">157</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b2</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">145</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b3</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">166</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b4</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">203</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b5</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">163</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">.</span><span class="n">power</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="c1">// ASCII Standard Operations</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b0</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">43</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">.</span><span class="n">add</span><span class="w"> </span><span class="p">}</span><span class="w">         </span><span class="c1">// '+'</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b0</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">45</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">.</span><span class="n">subtract</span><span class="w"> </span><span class="p">}</span><span class="w">    </span><span class="c1">// '-'</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b0</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">46</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">.</span><span class="n">decimal</span><span class="w"> </span><span class="p">}</span><span class="w">     </span><span class="c1">// '.'</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b0</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">48</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">57</span><span class="w"> </span><span class="p">{</span><span class="w">           </span><span class="c1">// '0'..'9'</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">.</span><span class="n">digit</span><span class="p">(</span><span class="nb">Int</span><span class="p">(</span><span class="n">b0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">48</span><span class="p">))</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Integer and fraction parsing was similarly rewritten to compute numerical values via pure Horner scalar math (<code>result = result * 10 + Int(c - 48)</code>), eliminating intermediate string objects entirely.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Memory Metric</th>
+<th style="text-align: left;">Leaking <code>String</code> Parser</th>
+<th style="text-align: left;">Zero-Allocation <code>fastMatchOp</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Heap Allocations per Keystroke</strong></td>
+<td style="text-align: left;">2 to 4 <code>malloc()</code> calls</td>
+<td style="text-align: left;"><strong>0 calls</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Active Heap Growth (10,000 ops)</strong></td>
+<td style="text-align: left;">+128 KiB (fragmentation crash)</td>
+<td style="text-align: left;"><strong>0 bytes (flatline)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Execution Latency per Match</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(14.2\,\mu\text{s}\)</span></td>
+<td style="text-align: left;"><strong><span class="arithmatex">\(0.48\,\mu\text{s}\)</span> (30x faster)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Deterministic Timing</strong></td>
+<td style="text-align: left;">Variable (heap scan jitter)</td>
+<td style="text-align: left;">Constant time (<span class="arithmatex">\(O(1)\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>With direct byte inspection in place, our fuzzer ran past 100,000 continuous operations without allocating a single byte on the heap.</p>
+<h2 id="conclusion-hard-learned-heuristics-for-embedded-swift-memory">Conclusion: Hard-Learned Heuristics for Embedded Swift Memory</h2>
+<p>If you are running Embedded Swift on bare silicon, treat the dynamic heap as a dangerous luxury. Coming from software where memory feels infinite, adjusting to 264 KB of SRAM forced us to rethink every abstraction:
+- Treat <code>String</code> as radioactive in hot loops; parse raw <code>UnsafePointer&lt;UInt8&gt;</code> buffers directly.
+- Multi-byte Unicode mathematical symbols (<code>√𝑥</code>, <code>𝑦ˣ</code>) should be matched against their fixed UTF-8 byte sequences.
+- Keep the runtime heap flatlined at zero bytes during active calculation. When there are zero allocations, there are zero memory leaks, zero fragmentation traps, and zero garbage collection spikes. Building a bulletproof, low-cost RPN calculator means ensuring every byte of silicon serves the user reliably.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

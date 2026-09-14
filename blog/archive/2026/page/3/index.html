@@ -1,0 +1,1060 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/blog/archive/2026/page/3/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>2026 - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/brutalist.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2026" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2026
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../../..#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+    
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../hardware/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS App
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ecommerce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Store & Accessories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="2026">2026</h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-05 00:00:00">Wednesday, August 5, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="extending-logical-completeness-part-1-boolean-algebra-word-sizes"><a class="toclink" href="../../../../2026/08/05/extending-logical-completeness-part-1-boolean-algebra--word-sizes/">Extending Logical Completeness (Part 1: Boolean Algebra &amp; Word Sizes)</a></h2>
+<p>When you are writing bare-metal firmware or working with embedded bit protocols, continuous decimal math isn't what you need. As a software engineer diving into low-level microcontroller code, you don't care about <span class="arithmatex">\(\sin(x)\)</span> or Euler's constant; you care that bit 7 in a control register is high, that <code>0xDEADBEEF</code> masked against <code>0x00FF0000</code> shifts cleanly, and that negative integers roll over according to two's complement arithmetic. The HP-32SII addressed this with its dedicated <code>BASE</code> menu, but implementing multi-radix support on an RPN execution stack is full of traps. In Part 1 of this series, we explore how <code>RPNCore</code> handles radix switching, dynamic key matrix masking, and bit-level register synchronization without corrupting floating-point stack history. To make sure our state transitions were airtight, I used AI coding agents to model the mode-switching state machine and test dynamic keypad masking logic across all four radices.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/08/05/extending-logical-completeness-part-1-boolean-algebra--word-sizes/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-02 00:00:00">Sunday, August 2, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/mathematics/" class="md-meta__link">Mathematics</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="curating-scientific-functions-part-2-hyperbolic-transcendental-precision"><a class="toclink" href="../../../../2026/08/02/curating-scientific-functions-part-2-hyperbolic--transcendental-precision/">Curating Scientific Functions (Part 2: Hyperbolic &amp; Transcendental Precision)</a></h2>
+<p>It was late one evening when our automated differential test harness spat out a red failure line: evaluating <code>2.5 !</code> against an actual HP-32SII reference unit didn't throw an <code>INVALID DATA</code> exception. Instead, the vintage hardware sat calmly on the desk and output <code>3.32335097</code>. Our modern Swift engine had thrown a fatal domain error, convinced that factorials only exist for non-negative integers.</p>
+<p>As a software and AI engineer, that discrepancy sent me straight down the rabbit hole of William Kahan's legendary numerical architecture at Hewlett-Packard. The HP-32SII wasn't running a discrete loop; it was evaluating the continuous Euler Gamma function <span class="arithmatex">\(\Gamma(z + 1)\)</span> across the real line. To make <code>RPNCore</code> behave like a true Corvallis instrument, I used AI coding agents as a mathematical sparring partner—generating test vectors for extreme asymptotic domains, exploring hyperbolic overflow edge cases like <span class="arithmatex">\(\text{asinh}(10^{160})\)</span>, and tuning Taylor expansions to eradicate catastrophic cancellation on bare-metal silicon.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/08/02/curating-scientific-functions-part-2-hyperbolic--transcendental-precision/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-31 00:00:00">Friday, July 31, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="curating-scientific-functions-part-1-key-ergonomics-shift-layers"><a class="toclink" href="../../../../2026/07/31/curating-scientific-functions-part-1-key-ergonomics--shift-layers/">Curating Scientific Functions (Part 1: Key Ergonomics &amp; Shift Layers)</a></h2>
+<p>Hold a set of digital calipers up to an HP Pioneer chassis. The key pitch is exactly <span class="arithmatex">\(11.0\text{ mm}\)</span> center-to-center; the keycaps themselves measure <span class="arithmatex">\(8.0\text{ mm}\)</span> across. As an amateur 3D-printing enthusiast and software engineer, measuring that vintage HP-32SII on my desk was my first step before firing up OpenSCAD. Slicing and test-printing faceplate bezels on my desktop 3D printer taught me quickly: if you compress those switches by just two millimeters to squeeze in an extra column, human fingers start accidentally hitting adjacent keys. That physical anatomical limit means you have exactly 43 tactile switches to work with. How do you fit an entire undergraduate STEM curriculum—single-variable calculus, trigonometry, complex phasors, and probability—onto 43 switches without turning key navigation into an endless puzzle? To solve this without cluttering the faceplate, I used AI coding agents to analyze mathematical operator frequencies across real engineering problem sets. In Part 1 of this series, we walk through how we engineered the physical layout, shift matrices, and frequency-tiering for StackCalc32.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/31/curating-scientific-functions-part-1-key-ergonomics--shift-layers/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-29 00:00:00">Wednesday, July 29, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="beyond-the-hp-32sii-modern-additions-without-cluttering-the-stack"><a class="toclink" href="../../../../2026/07/29/beyond-the-hp-32sii-modern-additions-without-cluttering-the-stack/">Beyond the HP-32SII: Modern Additions Without Cluttering the Stack</a></h2>
+<p>Hold a 1991 HP-32SII under a desk lamp and look at its faceplate. Every millimeter of brushed aluminum around its 43 keys is covered in gold and blue silk-screened type. It is a masterpiece of information density, but it also sits on the absolute edge of human visual bandwidth. If you added even two more labels, the keyboard would turn into an unreadable sea of hieroglyphics. As a software engineer with a desktop 3D printer whirring beside my desk, I am used to digital worlds where adding a feature costs nothing more than a few lines of code. But as I modeled faceplate bezels in OpenSCAD and sliced test prints, the physical limits of plastic and human fingers became starkly obvious. To me, it is an injustice that more people do not use RPN calculators, and building a modern low-cost physical device to inspire the next generation meant honoring that classic layout while adding modern staples like parallel impedance (<code>x||y</code>) and integer quotients (<code>divR</code>). To resolve candidate assignments without cluttering the faceplate, I used AI coding agents to analyze engineering keystroke frequencies and simulate competing keymaps.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/29/beyond-the-hp-32sii-modern-additions-without-cluttering-the-stack/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-26 00:00:00">Sunday, July 26, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/mathematics/" class="md-meta__link">Mathematics</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="statistical-functions-linear-regression-sigma-register-accumulation"><a class="toclink" href="../../../../2026/07/26/statistical-functions-linear-regression--sigma-register-accumulation/">Statistical Functions: Linear Regression &amp; Sigma Register Accumulation</a></h2>
+<p>Feed three numbers into a standard textbook sample variance formula: <span class="arithmatex">\(1,000,001\)</span>, <span class="arithmatex">\(1,000,002\)</span>, and <span class="arithmatex">\(1,000,003\)</span>. In exact mathematics, the variance is <span class="arithmatex">\(1.0\)</span>. Run that exact formula on a naive double-precision calculator, and you can get <span class="arithmatex">\(0.000000\)</span>—or worse, a negative number inside a square root resulting in <code>NaN</code>. Welcome to the nightmare of catastrophic cancellation. In modern software and data science, we are spoiled: we buffer millions of coordinates in Python or Swift and run multi-pass Welford algorithms without a second thought for memory. But on a handheld calculator powered by an RP2350 with 264 KiB of SRAM, buffering dynamic arrays of points is out of the question. Following Hewlett-Packard's classic engineering model, <code>RPNCore</code> solves this with an isolated six-register online accumulator. To ensure numerical stability, I paired with AI coding agents to synthesize pathological floating-point datasets and test our normalized offset delta algorithms against SciPy baselines.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/26/statistical-functions-linear-regression--sigma-register-accumulation/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-24 00:00:00">Friday, July 24, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/mathematics/" class="md-meta__link">Mathematics</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="unit-conversions-dimension-trees-invertible-scaling-factors"><a class="toclink" href="../../../../2026/07/24/unit-conversions-dimension-trees--invertible-scaling-factors/">Unit Conversions: Dimension Trees &amp; Invertible Scaling Factors</a></h2>
+<p>Ask an aerospace engineer about the Mars Climate Orbiter, and they will remind you how a mismatch between pound-force seconds and Newton seconds turned a $327 million spacecraft into atmospheric confetti. As a software engineer who values strong typing and invariant checks, dimensional integrity is something I take personally. But on a handheld calculator, unit conversion looks deceptively simple—until you start implementing it on an RPN execution stack. Should converting inches to centimeters push the result into <span class="arithmatex">\(Y\)</span>? Does tapping Fahrenheit to Celsius calculate an absolute temperature or a thermal delta? In <code>RPNCore</code>, we treated unit conversion not as a superficial menu afterthought, but as an in-place register transformation governed by strict physical invariants. To ensure zero cumulative drift, I used AI coding agents to cross-reference legal NIST conversion ratios and generate exhaustive round-trip property tests across our dimensional catalog.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/24/unit-conversions-dimension-trees--invertible-scaling-factors/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-21 00:00:00">Tuesday, July 21, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/mathematics/" class="md-meta__link">Mathematics</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="complex-numbers-coordinate-conversions-rectangularpolar-display"><a class="toclink" href="../../../../2026/07/21/complex-numbers-coordinate-conversions--rectangularpolar-display/">Complex Numbers: Coordinate Conversions &amp; Rectangular/Polar Display</a></h2>
+<p>If you want to spark an argument among calculator purists, ask them how complex numbers should live on a 4-level RPN stack. On the classic HP-15C from 1982, turning on Complex Mode split your stack in half: the real parts lived in one place and the imaginary parts in another, cutting your operational headroom down to two levels. If you were calculating AC circuit impedances or phasors, you spent half your time swapping registers instead of doing math. Coming from software engineering, where value types and vector math are second nature, that split-register compromise felt archaic. When we designed <code>CalculatorValue</code> in <code>RPNCore</code>, we rejected that constraint completely: every single stack level holds a full two-dimensional vector <code>(real, imag)</code>. To ensure mathematical rigor across transcendental operations and branch cuts, I paired with AI coding agents to synthesize test suites comparing our Swift implementation against Python's <code>cmath</code> ground truth.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/21/complex-numbers-coordinate-conversions--rectangularpolar-display/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-19 00:00:00">Sunday, July 19, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/mathematics/" class="md-meta__link">Mathematics</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="handling-precision-binary-vs-decimal-float-trade-offs"><a class="toclink" href="../../../../2026/07/19/handling-precision-binary-vs-decimal-float-trade-offs/">Handling Precision: Binary vs Decimal Float Trade-offs</a></h2>
+<p>Nothing shatters your pride as a software engineer faster than flashing your freshly compiled calculator firmware onto physical silicon, watching someone type <code>0.1 ENTER 0.2 +</code>, and seeing the LCD display: <code>0.30000000000000004</code>. In modern web or backend development, we are conditioned to shrug off floating-point noise as an unavoidable quirk of IEEE-754. But on a dedicated scientific calculator, displaying <code>0.300000000004</code> makes you look like you slapped a naive script onto a screen.</p>
+<p>Classic Hewlett-Packard calculators never suffered this embarrassment because the HP-32SII ran on a custom 4-bit Saturn microprocessor calculating in native Binary-Coded Decimal (BCD). When compiling bare-metal Embedded Swift for an RP2350 Cortex-M33 running at 133 MHz, however, full software BCD emulation brought transcendental trigonometric functions to an absolute crawl. To find an honest, lightning-fast compromise, I used AI coding agents as a mathematical sounding board—iterating through dozens of candidate threshold algorithms and fuzzing edge-case inputs until we arrived at our 12-digit guard mantissa.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/19/handling-precision-binary-vs-decimal-float-trade-offs/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-17 00:00:00">Friday, July 17, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="architecting-rpncore-as-a-multi-platform-swift-package"><a class="toclink" href="../../../../2026/07/17/architecting-rpncore-as-a-multi-platform-swift-package/">Architecting RPNCore as a Multi-Platform Swift Package</a></h2>
+<p>Compiling modern Swift for an Apple Watch is comfortable: you have gigabytes of virtual memory, Apple's rich Foundation runtime, and a compiler that happily handles dynamic ARC metadata. But compiling that exact same Swift codebase for an RP2350 microcontroller with 264 KiB of SRAM, no operating system, and no heap allocator was a revelation in zero-allocation discipline. Coming from high-level app and backend engineering, I had never faced a world where importing <code>Foundation</code> could instantly brick a build. When we sat down to build <code>RPNCore</code>, our design constraint was uncompromising: one single Swift package had to drive our watchOS app, our iOS interface, our macOS fuzzing oracles, and the bare-metal firmware running on our custom hardware. To bridge high-level elegance with bare-metal limits, I paired with AI coding agents to navigate Embedded Swift compiler configurations and design clean static value boundaries.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/17/architecting-rpncore-as-a-multi-platform-swift-package/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-14 00:00:00">Tuesday, July 14, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-backspace-debate-reversing-stack-lift-on-buffer-clear"><a class="toclink" href="../../../../2026/07/14/the-backspace-debate-reversing-stack-lift-on-buffer-clear/">The Backspace Debate: Reversing Stack Lift on Buffer Clear</a></h2>
+<p>Picture this: you've just chained five complex operations together, and your intermediate result—say, <span class="arithmatex">\(142.857\)</span>—is sitting comfortably in the <span class="arithmatex">\(X\)</span> register. You start typing the next number in your formula: you hit <code>3</code>, but your finger slipped; you meant <code>4</code>. Naturally, you tap Backspace. On a naive RPN calculator, you look at the screen and freeze in horror: <span class="arithmatex">\(X\)</span> is now <code>0.0</code>, your <span class="arithmatex">\(142.857\)</span> has been permanently shoved up into <span class="arithmatex">\(Y\)</span>, and the entire stack history you spent three minutes building is desynchronized.</p>
+<p>As software developers, our instinct is to think of Backspace as merely popping a character off an input string buffer (<code>string.popLast()</code>). But on an authentic RPN calculator, typing a digit is inextricably tied to the stack-lift state machine. That exact scenario sparked a week-long debate on our team that we forever call "The Backspace Debate"—and led us to pair with AI coding agents to exhaustively map out HP-32SII state transition tables to ensure our engine forgives human hesitation without corrupting registers.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/14/the-backspace-debate-reversing-stack-lift-on-buffer-clear/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  <a class="md-pagination__link" href="../../">1</a> <a class="md-pagination__link" href="../2/">2</a> <span class="md-pagination__current">3</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a>
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
