@@ -1,0 +1,38 @@
+#!/bin/bash
+echo "============================="
+echo "Checking branch for MkDocs deployment..."
+echo "============================="
+
+# Read the refs being pushed from stdin
+while read local_ref local_sha remote_ref remote_sha
+do
+    if [[ "$remote_ref" == "refs/heads/main" ]]; then
+        echo "Pushing to 'main' branch. Deploying site to GitHub Pages..."
+        
+        # Ensure virtual environment is used if present
+        if [ -d ".venv" ]; then
+            source .venv/bin/activate
+        fi
+        
+        # Temporarily disable the pre-push hook for this deploy to prevent infinite recursion
+        git config --local core.hooksPath /dev/null
+        
+        # Deploy the site
+        mkdocs gh-deploy --force
+        DEPLOY_EXIT_CODE=$?
+        
+        # Re-enable the hooks
+        git config --local core.hooksPath .githooks
+        
+        if [ $DEPLOY_EXIT_CODE -ne 0 ]; then
+            echo "❌ MkDocs deployment failed. Push aborted."
+            exit 1
+        fi
+        
+        echo "✅ MkDocs site deployed successfully!"
+        exit 0
+    fi
+done
+
+echo "Not pushing to 'main' branch. Skipping automatic site deployment."
+exit 0

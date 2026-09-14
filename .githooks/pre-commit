@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "============================="
+echo "Generating MkDocs site locally..."
+echo "============================="
+
+# Ensure virtual environment is used if present
+if [ -d ".venv" ]; then
+    source .venv/bin/activate
+fi
+
+# Build the site
+mkdocs build --strict
+
+if [ $? -ne 0 ]; then
+    echo "❌ MkDocs build failed. Commit aborted."
+    exit 1
+fi
+
+echo "✅ MkDocs build succeeded!"
+exit 0
