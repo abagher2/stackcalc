@@ -2,7 +2,7 @@
 
 StackCalc is engineered from day one as a dual physical-digital system. Our companion applications for Apple Watch, iPad, and iPhone share the exact same deterministic Swift package—`RPNCore`—as our bare-metal Raspberry Pi RP2350 microcontroller firmware. 
 
-Every operation, stack-lift mechanic, transcendental function, and fraction reduction behaves with bit-for-bit parity across all surfaces.
+The apps share calculator semantics through RPNCore; platform capabilities and completed native regression evidence determine supported behavior.
 
 ---
 
@@ -37,3 +37,9 @@ StackCalc is available on the Apple App Store for Apple Watch, iPad, and iPhone:
     DOWNLOAD STACKCALC: WATCH &amp; IPAD RPN
   </a>
 </div>
+
+## Surface colors and widget behavior
+
+Watch uses one fixed black/orange/cyan functional scheme. iPhone, iPad and their widgets use the chosen material palette with direction and shape to identify shifts. System widget tint may override app colors. Ordinary widget arithmetic remains available beyond five taps; native pending feedback and an Open calculator route support handoff. Visible latency depends on the host and must be measured; no zero-latency guarantee is made.
+
+Tutorials retain the phone calculator geometry. Watch guidance uses full-screen pages followed by its normal keypad. SC6 retains the tested vertical X/T display and correction behavior; a horizontal operand layout is not the current implementation.

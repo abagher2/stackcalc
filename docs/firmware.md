@@ -47,8 +47,8 @@ The instrument is powered by the **Raspberry Pi Pico 2** module (`SC1632`), buil
 | **System Clock** | 150 MHz | Dynamically scaled down during idle and paused states |
 | **Internal SRAM** | 520 KB | Fully partitioned with zero dynamic heap allocation |
 | **Non-Volatile Storage** | 4 MB QSPI Flash | Dedicated 8 KB partition for ping-pong wear-leveled user state |
-| **Cold-Boot Latency** | < 15 ms | Instant-on execution straight from XIP (Execute-In-Place) flash |
-| **Quiescent Current** | < 30 µA | Ultra-low power dormant sleep on CR2032 battery rail |
+| **Cold-Boot Latency** | Measurement pending | Record build and physical-device timing |
+| **Quiescent Current** | Measurement pending | Validate on the matching board and battery rail |
 
 ---
 
@@ -62,7 +62,7 @@ The 43 tactile switches are wired in a shared matrix layout consisting of an upp
 
 ### Transflective Graphic Display Pipeline (ST7567A)
 The EastRising ST7567A 132×65 transflective LCD is driven via 4-wire hardware SPI:
-- **Frame Buffer**: A compact 1-bit-per-pixel buffer (1,072 bytes) maps directly to the display pages.
+- **Frame Buffer**: A compact 1-bit-per-pixel buffer (1,188 bytes: nine pages of 132 columns) maps directly to the display pages.
 - **Zero-Tear Blits**: The entire frame buffer is blitted directly via `display_send_buffer()` at SPI clock speeds up to 20 MHz.
 - **Embedded Typography**: Characters are drawn from `font_bitmaps.c`, encoding the authentic **Terminus** 6×8 pixel font for 4 crisp lines of left-justified mathematical telemetry.
 
@@ -76,7 +76,7 @@ StackCalc saves calculation registers and system state across power cycles witho
 To achieve multi-month battery operation from a single standard CR2032 coin cell, the firmware employs multi-tier power states:
 1. **Active Compute (150 MHz)**: Full clock frequency during numerical solver execution, polynomial evaluation, and Romberg definite integration.
 2. **Idle Mode**: Gated system clocks while awaiting keypad scan events.
-3. **Dormant Deep Sleep**: After 5 minutes of inactivity, the firmware issues `hw_display_sleep_c()` to shut down the ST7567A bias circuits, flushes state to flash, and disables internal oscillators, consuming less than 30 µA.
+3. **Dormant Deep Sleep**: After 5 minutes of inactivity, the firmware issues `hw_display_sleep_c()` to shut down the ST7567A bias circuits, flushes state to flash, and disables internal oscillators, with current consumption requiring measurement on the matching board.
 
 ---
 

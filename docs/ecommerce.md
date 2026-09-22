@@ -2,7 +2,7 @@
 
 The StackCalc physical calculator line delivers an affordable, tactile mathematical instrument for students, families learning math, and STEM professionals. At **$59**, StackCalc is the most accessible dedicated RPN scientific calculator available. 
 
-To keep production costs low and provide a hands-on experience, StackCalc is distributed as a **simple 5-minute snap-together assembly kit**. The 4-layer mainboard arrives **100% pre-soldered, pre-tested, and pre-flashed** with all display and tactile switch circuitry in place. Users perform an effortless, tool-less sliding stack assembly in under 5 minutes without needing a soldering iron or technical skill—making it an engaging STEM activity for families and a quick desk setup for professionals.
+StackCalc hardware is designed as a DIY assembly kit using a snap-retained cap. Proposed kit contents, preassembly and test coverage must be confirmed for the specific batch before purchase. Assembly time, tool-free service and novice assembly results remain unverified; see the [current hardware guide](hardware.md).
 
 ---
 
@@ -37,7 +37,7 @@ graph TD
 
 #### 2. SC-32 Standard Edition ($59 USD)
 - **Core Value:** At **$59**, this is the lowest-cost dedicated RPN scientific calculator on Earth, making RPN stack mathematics accessible to every student and professional.
-- **Hardware & Assembly:** Identical 43-key mechanical tactile switches, high-contrast graphic display, pre-flashed Embedded Swift firmware, and 5-minute snap assembly. Standard serialized backplate (no name engraving).
+- **Hardware & Assembly:** Identical 43-key mechanical tactile switches, high-contrast graphic display, pre-flashed Embedded Swift firmware, and snap retention; assembly timing remains unverified. Standard serialized backplate (no name engraving).
 
 #### 3. SC-6 Elementary Edition ($35 USD)
 - **Target Audience:** Elementary students (Grades K–6) and foundational STEM education.
@@ -181,3 +181,8 @@ The documentation and landing pages integrate the Shopify JavaScript SDK (`buybu
 | **Student Essentials Bundle** *(Kit + Volvelle + Set 1 & 2)* | $125.00 | $30.70 | 75.4% |
 
 By combining the low-mass, rapid-print mathematical accessories with the flagship calculator kit, Average Order Value expands from **$89.00 to ~$125.00** while delivering tangible educational utility to students and professionals.
+
+
+## Build qualification
+
+The [current hardware guide](hardware.md) defines kit parts, snap retention and material direction. Accessories and CAD renders are not evidence of physical fit, drop protection, timed assembly or marking durability. Confirm the offered build revision and qualified material batch before treating a prototype design as a released kit.

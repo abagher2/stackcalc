@@ -1,81 +1,47 @@
-# Hardware Specifications & Capability Rubric
+# Hardware build and capability reference
 
-StackCalc is designed as a rugged, tactile physical instrument accompanied by a 1:1 software digital twin. We take engineering parity seriously: the exact deterministic calculation engine running on our physical RP2350 microcontroller powers our iOS and watchOS applications.
+Current design contract: 2026-09-22. The physical calculator and bitmap emulator use **132×65** pixels: nine 132-byte pages, **1,188 bytes**, with one visible row in the final page. Module/controller identification and physical edge visibility still require verification against the installed specimen and BOM.
 
----
+## Current CAD kit
 
-## 1. Physical Hardware Architecture & Assembly Kit Model
+The active source family is `chassis_award`, `top_cap_award`, `unified_faceplate_award` and `tpu_membrane_award`. The suffix is a CAD identifier, not an award or manufacturing qualification. The top cap defaults to **snap retention**. Screw/nut variants, separate faceplates, circular Test-9 fixtures and experimental covers/stands are not interchangeable current-kit instructions.
 
-The StackCalc32 handheld calculator draws inspiration from the legendary HP32SII while introducing modern manufacturing tolerances, serviceable modular mechanics, and high-performance embedded silicon. 
+| From the source checkout | Output under scratch/stl |
+| --- | --- |
+| `make -C Hardware chassis` | `chassis_award.stl` |
+| `make -C Hardware top-cap` | `top_cap_award.stl` |
+| `make -C Hardware unibody-faceplate` | `unified_faceplate_award.stl` |
+| `make -C Hardware button-membrane` | `tpu_membrane_award.stl` |
 
-All physical hardware is distributed exclusively as **DIY Hardware Assembly Kits**. The 4-layer FR4 mainboard arrives **100% pre-soldered and pre-flashed** with surface-mount components, allowing builders to achieve complete, tool-less assembly in under 5 minutes without a soldering iron.
+Run `make -C Hardware doctor` first and `make -C Hardware assembly-preview` for a CAD view. The [hardware source and build guide](https://github.com/abagher2/watch-calc-32/tree/main/Hardware) is the source of downloadable designs; generated meshes must match the chosen source revision. Record that revision with the build. Export success does not prove physical fit.
 
-```mermaid
-graph TD
-    A[3D-Printed Tapered Chassis] --> B[Tier-1 Rails: Button & Screen Faceplates]
-    A --> C[Tier-2 Rails: 4-Layer Pre-Soldered SMT PCB]
-    B --> D[43 ALPS SKQGABE010 Tactile Switches @ 1.5mm Z]
-    C --> E[Raspberry Pi Pico 2: RP2350 Dual-Core @ 150MHz]
-    C --> F[EastRising ERC13265FS-1 Transflective LCD 132x65]
-    C --> G[Wired CR2032 Coin Cell via JST PH 2-Pin]
-    A --> H[95A TPU Top Cap & Battery Carrier with M2 Fasteners]
-    A --> I[Reversible TPU Slipcover / C-Cover]
-```
+### Assembly and service
 
-### Physical Specifications
+Dry-fit the matching faceplate and membrane in the chassis rails, slide the populated PCB behind them, inspect display/switch/wiring clearances, then fit the snap-retained cap. Check battery polarity and clearance against the board and holder documentation before applying power. Remove power before service, release retention without forcing the display, and disassemble in reverse order. Timed assembly, key force, retention fatigue, drop resistance and tool-free service remain unverified until a matching specimen is tested.
 
-| Parameter | Authoritative Specification | Engineering Details & Tolerances |
-|---|---|---|
-| **Distribution Model** | **DIY Assembly Kit** | 100% pre-soldered SMT board; frictionless 5-minute tool-less slide assembly |
-| **Microcontroller Module** | **Raspberry Pi Pico 2 (`SC1632`)** | RP2350 (Dual Cortex-M33 / Hazard3 RISC-V @ 150 MHz, Hardware double FPU, 4MB QSPI flash) |
-| **Firmware Runtime** | Bare-Metal Embedded Swift | Zero dynamic allocation, deterministic execution, sub-15ms cold boot |
-| **Display Module** | **EastRising ERC13265FS-1** (2.5-inch) | 132×65 pixel FSTN transflective graphic LCD with ST7567 / ST7567A controller |
-| **Display Connection** | 10-pin 0.5mm FPC ZIF | Hirose `FH12-10S-0.5SH(55)` bottom-contact connector (`J1`) |
-| **Display Active Area** | 56.73 × 27.92 mm | Bezel opening: 57.13 × 28.32 mm; Glass viewing area: 66.0 × 32.5 mm |
-| **Typography** | Native Terminus Font | Bundled 6×8 pixel font for 4 lines of left-justified stack text |
-| **Keypad Matrix** | **43 SMD Tactile Switches** | ALPS `SKQGABE010` (1.5mm Z-height off PCB surface, 180g actuation force) |
-| **Key Pitch** | 11.50 mm (H) × 11.30 mm (V) | Upper 6-column matrix (22 keys) and 4×5 arithmetic pad (20 keys) |
-| **ENTER Key** | Double-Wide (21.90 × 10.40 mm) | Centered switch on 19.20 × 9.20 mm carriage with 4 captive flange sectors |
-| **Button Kinematics** | 0.80 mm Down / 0.20 mm Up | 0.80 mm downward working travel; 0.20 mm upward release |
-| **Faceplate Options** | Rounded Retro or HP-32SII | 3 planar spiral springs (rounded) or captive diamond cartridge (HP-32SII) |
-| **Dimensions (Bare)** | **80.0 × 148.0 × 16.0 mm max** | 11.9 mm keypad depth tapering to 16.0 mm display depth |
-| **Rear Taper** | **1.60857° Planar Wedge** | Continuous desk contact; zero rocking under upper function-key rows |
-| **Mainboard PCB** | **72.0 × 142.4 × 1.6 mm** | 4-layer FR4 SMT board with gold immersion finish (ENIG) |
-| **Power Architecture** | **Wired CR2032 Coin Cell Holder** | JST PH 2-pin side-entry header (`S2B-PH-K-S(LF)(SN)`); <30µA dormant sleep |
-| **Top Cap Enclosure** | 95A-Class Flexible TPU | Houses wired CR2032 battery carrier, braces screen frame, flared M2 nut towers |
-| **Protective Cover** | Reversible TPU C-Cover | 83.8 × 149.3 × 18.2 mm; front storage shield or rear desktop sleeve with card slot |
-| **Packaging & Stands** | 6.6 × 4.9 × 1.9 in Mailer Box | Multi-tier protective isolation converting into **78° Showcase & 10° Typing Stands** |
+### Material and marking direction
 
-### The DIY Assembly Kit Experience
+| Theme | Chassis appearance | Button material direction |
+| --- | --- | --- |
+| RetroFuturism | White/off-white PLA/PETG | Warm cream TPU |
+| Stealth Industrial | Black PLA/PETG | Dark-blue TPU |
+| Supernova | Red/gold silk | Gray TPU |
+| Deep Space | Purple/green/blue silk | Dark-blue TPU |
+| Voyager | Dark blue | Gray TPU |
 
-To comply with international regulatory frameworks (FCC Part 15 SDoC evaluation kit rules) while celebrating maker culture, StackCalc32 is provided as an unassembled development kit:
+Primary and secondary buttons share the same material. Button trenches are laser engraved and labels use laser foaming. Manufacturer/SKU, batch, hardness and qualified processing parameters are not yet confirmed here. Software colors communicate appearance; exact physical matches and abrasion resistance require specimen measurement. Orange/blue functional coding belongs exclusively to the fixed watch interface, including watch widgets. Filament base colors and manufacturing layer colors are separate.
 
-1. **Zero-Solder Mechanical Sliding Stack:**
-   - **Step 1 (Faceplates):** The button faceplate and screen faceplate slide into the Tier-1 chassis rails, interlocking via hidden tongue-and-groove pockets.
-   - **Step 2 (PCB):** The populated 4-layer mainboard slides smoothly down the Tier-2 rails behind the faceplates until the tactile switches seat against the button plungers at the fixed switch datum.
-   - **Step 3 (Top Cap & Battery):** The 95A TPU top cap with integrated CR2032 battery carrier slides down to close the display frame, secured by two M2 screws into brass nuts seated in flared towers.
-   - **Step 4 (Slipcover):** The reversible TPU C-cover slides over the calculator.
-2. **Protective Packaging That Becomes Dual Stands:**
-   - The custom 6.6 × 4.9 × 1.9 inch mailer box organizes each component into dedicated vertical tiers (PCB, Chassis, Top Cap, Button Membrane, Faceplate, and TPU Pouch).
-   - Once unboxed, the internal packaging elements assemble into two ergonomic desktop fixtures:
-     - **The 78° Upright Shelf Showcase Stand:** Displays the calculator at an optimal portrait viewing angle with an integrated rear docking slot for the TPU pouch.
-     - **The 10.0° Ergonomic Typing Elevator Desk Wedge:** Raises the rear by exactly 1.0 inch (25.4 mm) for fatigue-free desktop calculation.
+### CAD illustrations and optional accessories
 
-### Hardware Editions
+![Current assembly CAD illustration](assets/isometric.png)
 
-1. **SC-32 Professional (Flagship Kit — In Production):**
-   - Full scientific, transcendental, complex number, statistical, and financial calculation engine.
-   - Powered by the Raspberry Pi Pico 2 (RP2350) with 4 MB QSPI flash, supporting 16 built-in TUI tutorials and flash persistence.
-2. **SC-6 Basic Variant (In Development):**
-   - Tailored specifically for primary education (K–5).
-   - Introduces visual Ten Frames, Number Racks, step-by-step fraction reduction (`[SIMP]`), and currency math.
-
+These images are CAD illustrations, not photographs of a qualified specimen. Compare their exact source configuration with the selected kit before assembly. Optional stands and covers have separate source configurations and are not validated kit contents or protection claims.
 
 ---
 
 ## 2. HP32SII Parity & Modern Capability Rubric
 
-This rubric tracks operational capabilities across all StackCalc surfaces compared against the original HP32SII. Every operation produces mathematically bit-identical results.
+This rubric tracks operational capabilities across all StackCalc surfaces compared against the original HP32SII. Capabilities below are implementation references; release claims require platform-specific regression and device evidence.
 
 ### Core Arithmetic & RPN Stack Operations
 
@@ -84,7 +50,7 @@ This rubric tracks operational capabilities across all StackCalc surfaces compar
 | **Basic Arithmetic (`+`, `-`, `×`, `÷`)** | ✅ | ✅ | ✅ | ✅ | Standard two-operand evaluation; drops Y onto X |
 | **Stack Commit (`ENTER`)** | ✅ | ✅ | ✅ | ✅ | Copies X into Y and arms automatic stack lift |
 | **Sign Toggle (`+/-`)** | ✅ | ✅ | ✅ | ✅ | Negates mantissa or active exponent |
-| **Absolute Value (`\|x\|` / `ABS`)** | ✅ | ✅ | ✅ | ✅ | Promoted to Blue Shift `+/-` for direct one-touch access |
+| **Absolute Value (`\|x\|` / `ABS`)** | ✅ | ✅ | ✅ | ✅ | Promoted to Right Shift `+/-` for direct one-touch access |
 | **Integer Remainder Division (`÷R`)** | ✅ | ✅ | ✅ | ✅ | Returns integer quotient and pushes remainder |
 | **Scientific Notation (`E`)** | ✅ | ✅ | ✅ | ✅ | Initiates base-10 exponent entry (`1.23E4`) |
 | **Register Swap (`𝑥≷𝑦`)** | ✅ | ✅ | ✅ | ✅ | Exchanges values in X and Y registers |
@@ -166,7 +132,7 @@ This rubric tracks operational capabilities across all StackCalc surfaces compar
 |---|:---:|:---:|:---:|:---:|---|
 | **Interactive TUI Tutorials** | ❌ | ✅ | ✅ | ✅ | 16 built-in step-by-step guided lessons with verification |
 | **Flexible Stack Architecture** | ❌ | ✅ | ✅ | ✅ | Configurable classic 4-level, 8-level, or unbounded stack |
-| **Function Graphing (`PLOT`)** | ❌ | ✅ | ✅ | ✅ | Hardware ST7567A pixel plot; interactive pinch/pan on iOS |
+| **Function Graphing (`PLOT`)** | ❌ | ❌ | ✅ | ✅ | Physical firmware disables PLOT; native-app graphing requires its supported interface |
 | **Continuous Tactile Field (HPTC)** | ❌ | ❌ | ✅ | ❌ | Simulated mechanical travel via continuous CoreHaptics |
 | **Pitch-Black OLED Mode** | ❌ | ❌ | ❌ | ✅ | True #000000 background optimized for Apple Watch displays |
 | **Searchable Constants (`CNST`)** | Partial | ✅ | ✅ | ✅ | Hardware softkey index; searchable rich picker on iOS/watchOS |
@@ -182,7 +148,7 @@ While maintaining functional parity, StackCalc incorporates deliberate modern en
    - *StackCalc:* Unifies all equation definition into deterministic RPN stack operations. This eliminates parser ambiguities and ensures identical execution behavior on microcontrollers, phones, and watches.
 2. **Dedicated Absolute Value (`|x|`) Key:**
    - *HP32SII:* Hid the absolute value function deep within the secondary `PARTS` menu.
-   - *StackCalc:* Assigns `|x|` directly to Blue Shift `+/-`, providing instant one-touch evaluation.
+   - *StackCalc:* Assigns `|x|` directly to Right Shift `+/-`, providing instant one-touch evaluation.
 3. **Modern Remainder Notation (`÷R`):**
    - *HP32SII:* Labeled integer division as `INT÷` above the `E` key.
    - *StackCalc:* Uses `÷R` to clearly communicate integer division with remainder, aligning with modern engineering and educational standards.
@@ -195,46 +161,3 @@ While maintaining functional parity, StackCalc incorporates deliberate modern en
 6. **Searchable Constants Directory:**
    - *HP32SII:* Relied on abbreviated, unindexed 2-letter codes.
    - *StackCalc:* Hardware uses organized softkey pagination, while companion apps feature a searchable database complete with full names, precise values, and physical SI units.
-
----
-
-## 4. Open-Source CAD & 3D Print File Catalog (OpenSCAD & STL)
-
-All mechanical components for StackCalc32 are fully parametric, version-controlled, and open-source. CAD source models are maintained in the main repository under [`Hardware/designs/`](https://github.com/abagher2/watch-calc-32), with verified build targets managed via [`Hardware/Makefile`](https://github.com/abagher2/watch-calc-32).
-
-### Canonical Production Models
-
-| Component | OpenSCAD Source (`Hardware/designs/`) | Export Target (`scratch/stl/`) | Material | Infill & Slicing Specifications |
-|---|---|---|---|---|
-| **Tapered Chassis Shell** | `chassis_tapered.scad` | `chassis_tapered.stl` | Matte PLA / PETG | Continuous 1.60857° anti-rocking desk wedge. Dual-tier internal sliding guide channels for PCB and faceplate. Sliced at 0.20 mm layer height, 3 perimeters, 100% infill. |
-| **Flexure Top Cap** | `top_cap.scad` | `top_cap.stl` | 95A Flexible TPU | Squeeze-release cap that closes display frame and houses wired CR2032 battery carrier. 0.20 mm layer height, 4 perimeters, 100% infill. |
-| **Retaining Pegs** | `tpu_retaining_peg.scad` | `tpu_retaining_peg.stl` | 95A Flexible TPU | Mushroom-head compliant locking pins securing faceplate and chassis without screws or glue. 0.20 mm layer height. |
-| **Unified Sandwich Faceplate** | `unified_sandwich_faceplate.scad` | `unified_sandwich_faceplate.stl` | Black PLA / PETG | Integrated stepped optical LCD bezel pocket and 43-key matrix apertures. 0.20 mm layer height with top-surface ironing. |
-| **Tactile Key Membrane** | `hp32sii_sandwich_tpu_membrane.scad` | `hp32sii_sandwich_tpu_membrane.stl` | 95A Flexible TPU | Tactile membrane seating 43 switch plungers directly over ALPS SMD switches. 0.10 mm layer height. |
-| **Keycaps & Plungers** | `hp32sii_production_buttons.scad` / `rounded_buttons.scad` | `buttons.stl` / `rounded_buttons.stl` | PLA / PETG | Authentic HP-32SII trapezoidal caps or retro-circular buttons with 3-point planar spiral suspension. Sliced at 0.05 mm slow detail, 4 perimeters, 6% ironing flow. |
-| **Protective Travel Pouch** | `tpu_pouch.scad` | `tpu_pouch.stl` | 95A Flexible TPU | Drop-proof travel sleeve featuring debossed StackCalc 4-level stack emblem and rear reference card slot. 0.28 mm draft layer height. |
-| **Modular Puzzle Stand** | `puzzle_stand.scad` | `puzzle_stand.stl` | PLA / PETG | 4-piece interlocking frame (`piece_c_bl`, `piece_c_br`, `piece_c_tl`, `piece_c_tr`, `piece_lateral_strut`) converting from transit bumpers into an upright portrait desk stand. |
-| **Origami Dual-Angle Stand** | `origami_stand.scad` | `origami_stand.stl` | PLA / PETG | Dual-angle desk fixture providing a 78° upright showcase display angle and a 10.0° ergonomic typing elevator. |
-| **Manufacturing Dummy PCB** | `dummy_pcb.scad` | `dummy_pcb.stl` | PLA | Dimensional reference model for validating rail slide tolerances, board keepouts, and switch datum alignment (`make verify-fit`). |
-
-### Slicing & Build Targets (PrusaSlicer & OpenSCAD)
-
-Pre-configured PrusaSlicer print projects and build workflows are available directly from the repository root:
-
-- **Complete Multi-Material Project:** `Hardware/watch-calc-32.3mf`
-- **Building via Makefile:**
-  ```bash
-  # Check OpenSCAD and PrusaSlicer environment
-  make doctor
-
-  # Compile all production STL meshes
-  make production
-
-  # Run mathematical tolerance and interference checks
-  make verify-fit
-  make verify-interference
-
-  # Export PrusaSlicer multi-material project file
-  make 3mf
-  ```
-

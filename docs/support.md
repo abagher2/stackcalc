@@ -34,7 +34,7 @@ RPN completely eliminates parentheses, eliminates syntax errors, and keeps all i
 
 ### 2. How do I display and calculate with exact fractions?
 StackCalc includes an arbitrary-precision rational fractions engine:
-- To toggle between decimal representation and exact fractional notation, press **Yellow Shift** + `.` (`FDISP`).
+- To toggle between decimal representation and exact fractional notation, press **Left Shift** + `.` (`FDISP`).
 - A decimal like `2.125` instantly renders as exact `2 1/8`.
 - Pressing `.` between integers enters mixed fractions directly (e.g., `3` `.` `1` `/c` `2` for $3 \frac{1}{2}$).
 
@@ -52,14 +52,14 @@ StackCalc includes an arbitrary-precision rational fractions engine:
 StackCalc offers two distinct user interfaces on iPhone and iPad:
 - **Hardware Replica (Default):** An authentic, brutalist digital twin of our physical open-source hardware, featuring the high-contrast icy silver-blue ST7567A dot-matrix screen, trapezoidal snap-dome key caps, and laser-marked legends.
 - **Modern App:** An expansive, glassmorphism-free touch interface with dynamic softkeys and high-resolution TUI graph rendering.
-- **To Switch Interface:** Press **Yellow Shift** + `FLAGS` (or tap `FLAGS` in the menu catalog) &rarr; `HW` &rarr; select `APP` or `REPLICA`.
+- **To Switch Interface:** Press **Left Shift** + `FLAGS` (or tap `FLAGS` in the menu catalog) &rarr; `HW` &rarr; select `APP` or `REPLICA`.
 - **Faceplate Themes:** You can also customize faceplate aesthetics in the same menu via `FLAGS` &rarr; `FACE` (`RETRO`, `STEALTH`, `NOVA`, `SPACE`, or `VOYAGER`).
 
 ---
 
 ### 5. How do I use the Equation Solver and Numerical Integrator?
 StackCalc includes an equation solver based on the legendary HP-32SII algorithms:
-1. Press **Blue Shift** + `STO` (`EQN Mode`) to view or input equations.
+1. Press **Right Shift** + `STO` (`EQN Mode`) to view or input equations.
 2. Select an equation (such as the preloaded Normal PDF `NPDF`).
 3. Press `SOLVE` to solve for any independent variable without isolating it algebraically.
 4. Press `∫` (Integrate) to perform numerical integration across specified upper and lower bounds.
@@ -68,7 +68,7 @@ StackCalc includes an equation solver based on the legendary HP-32SII algorithms
 
 ### 6. How do I clear continuous memory or reset the calculator?
 - **Clear Current X Entry / Cancel:** Press `C` (or backspace `←`).
-- **The CLEAR Menu:** Press **Yellow Shift** + `C` (`CLEAR`) to open the dedicated memory reset menu:
+- **The CLEAR Menu:** Press **Left Shift** + `C` (`CLEAR`) to open the dedicated memory reset menu:
   - `CLSTK`: Clears all four levels of the operational stack ($X, Y, Z, T$).
   - `CLREGS`: Clears the 26 storage registers ($R_0 \dots R_{25}$).
   - `CLSTAT`: Clears all two-variable statistical accumulation registers ($\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n$).
@@ -81,7 +81,7 @@ StackCalc includes an equation solver based on the legendary HP-32SII algorithms
 
 ### 7. Physical Hardware & DIY Snap-Together Kits
 - **Pre-Soldered Boards:** All electronic circuit boards and LCD modules shipped from our storefront are 100% pre-soldered and tested.
-- **Assembly Guide:** Assembly takes less than 5 minutes—no soldering iron required. Detailed step-by-step schematics and video walkthroughs are available in the [Hardware Documentation](hardware.md).
+- **Assembly Guide:** Use the current source revision and snap-retention instructions. Assembly time and tools must be validated for the selected kit; see the [Hardware Documentation](hardware.md).
 - **Open-Source CAD & 3D Print Models (OpenSCAD & STL):** All mechanical parts are open-source and maintained in the main repository (`Hardware/designs/`):
   - **Chassis Enclosure:** [`Hardware/designs/chassis_tapered.scad`](https://github.com/abagher2/watch-calc-32) &rarr; `chassis_tapered.stl` (1.60857° anti-rocking continuous desk wedge with dual-tier PCB and faceplate sliding rails)
   - **Flexure Top Cap:** [`Hardware/designs/top_cap.scad`](https://github.com/abagher2/watch-calc-32) &rarr; `top_cap.stl` (squeeze-release cap with integrated wired CR2032 coin cell holder)

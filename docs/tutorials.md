@@ -18,9 +18,9 @@ Learn how to navigate the expandable TUI scrolling transcript buffer and switch 
   <div class="text-sm text-charcoal leading-snug space-y-1 py-2">
     <p>&gt; Terminal navigation tutorial.</p>
     <p>&gt; Use ↰ + 8 to scroll up and ↰ + 7 to scroll down.</p>
-    <p>&gt; Step 1: Press Yellow Shift (↰)</p>
+    <p>&gt; Step 1: Press Left Shift (↰)</p>
     <p>&gt; Step 2: Press 8 [SCROLL UP]</p>
-    <p>&gt; Step 3: Press Yellow Shift (↰)</p>
+    <p>&gt; Step 3: Press Left Shift (↰)</p>
     <p>&gt; Step 4: Press 7 [SCROLL DOWN]</p>
     <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: Transcript buffer navigation unlocked.</p>
   </div>
@@ -30,7 +30,7 @@ Learn how to navigate the expandable TUI scrolling transcript buffer and switch 
   </div>
 </div>
 
-- **Tap ↰ (Yellow Shift)** to engage the shift annunciator.
+- **Tap ↰ (Left Shift)** to engage the shift annunciator.
 - **Tap 8** to scroll up into previous calculation history.
 - **Tap 7** to scroll down back to the active prompt.
 - **Tap C** to dismiss the TUI overlay back to the primary stack view.
@@ -84,10 +84,10 @@ StackCalc handles full complex pairs $(a + bi)$ natively across all scientific a
   <div class="text-sm text-charcoal leading-snug space-y-1 py-2">
     <p>&gt; Mission: Verify e^(πi) = −1 with complex pairs.</p>
     <p>&gt; Step 1: Tap 0 -&gt; press ENTER [Real part in Y = 0]</p>
-    <p>&gt; Step 2: Tap Blue Shift -&gt; Tap SIN (π) [Imaginary part in X = 3.1416]</p>
-    <p>&gt; Step 3: Tap Yellow Shift -&gt; Tap STO (CMPLX) [Arms complex operator]</p>
+    <p>&gt; Step 2: Tap Right Shift -&gt; Tap SIN (π) [Imaginary part in X = 3.1416]</p>
+    <p>&gt; Step 3: Tap Left Shift -&gt; Tap STO (CMPLX) [Arms complex operator]</p>
     <p>&gt; Step 4: Tap eˣ [Evaluates transcendental e^(0 + πi)]</p>
-    <p>&gt; Step 5: Yellow Shift -&gt; STO (CMPLX) -&gt; Blue Shift -&gt; ENTER (SHOW)</p>
+    <p>&gt; Step 5: Left Shift -&gt; STO (CMPLX) -&gt; Right Shift -&gt; ENTER (SHOW)</p>
     <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: Result = −1.0000 + 0.0000i</p>
   </div>
   <div class="pt-2 border-t border-charcoal border-opacity-30 flex justify-between items-center text-xs font-bold">
@@ -194,11 +194,11 @@ Accumulate 2-variable data pairs $(x, y)$ into continuous memory registers using
     <span>[C] EXIT</span>
   </div>
   <div class="text-sm text-charcoal leading-snug space-y-1 py-2">
-    <p>&gt; Step 1: Tap Yellow Shift (↰) -&gt; CLEAR -&gt; Σ (Clears stat registers)</p>
+    <p>&gt; Step 1: Tap Left Shift (↰) -&gt; CLEAR -&gt; Σ (Clears stat registers)</p>
     <p>&gt; Step 2: 4 [Y] -&gt; ENTER -&gt; 2 [X] -&gt; Tap Σ+ [Accumulates n=1]</p>
     <p>&gt; Step 3: 6 [Y] -&gt; ENTER -&gt; 4 [X] -&gt; Tap Σ+ [Accumulates n=2]</p>
-    <p>&gt; Step 4: Tap Blue Shift -&gt; yˣ (x̄, ȳ) -&gt; Mean X = 3.0000, Mean Y = 5.0000</p>
-    <p>&gt; Step 5: Tap Blue Shift -&gt; ¹/x (s, σ) -&gt; Sample StdDev = 1.4142</p>
+    <p>&gt; Step 4: Tap Right Shift -&gt; yˣ (x̄, ȳ) -&gt; Mean X = 3.0000, Mean Y = 5.0000</p>
+    <p>&gt; Step 5: Tap Right Shift -&gt; ¹/x (s, σ) -&gt; Sample StdDev = 1.4142</p>
     <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: Standard deviation s = 1.4142</p>
   </div>
   <div class="pt-2 border-t border-charcoal border-opacity-30 flex justify-between items-center text-xs font-bold">
@@ -214,7 +214,7 @@ Accumulate 2-variable data pairs $(x, y)$ into continuous memory registers using
 StackCalc32's 16 guided lessons are not limited to touchscreens—they are implemented natively in bare-metal Embedded Swift running on the physical RP2350 microcontroller. The hardware provides an authentic, distraction-free environment to master RPN calculation.
 
 ### Hardware Launch Sequence
-- **Dedicated Launcher Key**: Press **Yellow Shift (↰) + C** anywhere on the physical keypad to launch the built-in Interactive Tutorial Runner.
+- **Dedicated Launcher Key**: Press **Left Shift (↰) + C** anywhere on the physical keypad to launch the built-in Interactive Tutorial Runner.
 - **Instant Event Interception**: The firmware event loop intercepts matrix scanning, suspends the standard operational stack, and loads the active tutorial state machine directly into the display buffer.
 
 ### Physical Display & Dynamic Softkeys
