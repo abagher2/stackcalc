@@ -655,6 +655,208 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-08-26 00:00:00">Wednesday, August 26, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="../../../../category/hardware/" class="md-meta__link">Hardware</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="hardware-simulation-browser-hil-with-wokwi-rp2350-emulation"><a class="toclink" href="../../../../2026/08/26/hardware-simulation-browser-hil-with-wokwi-rp2350-emulation/">Hardware Simulation: Browser HIL with Wokwi RP2350 Emulation</a></h2>
+<p>In modern software development, our feedback loop is measured in seconds: you modify code, hit <code>Cmd-R</code>, and immediately inspect the result in an iOS simulator or browser window. When I began designing custom hardware for StackCalc32, the physical turnaround time was a terrifying culture shock. In hardware, a minor pinout mismatch or inverted SPI clock phase doesn't just mean a quick rebuild; it means generating Gerber files, shipping them to an overseas fab, waiting two weeks for delivery, and nervously soldering surface-mount parts—only to discover your display won't initialize.</p>
+<p>As a software and AI expert with a desktop 3D printer whirring away on my desk, I believe it is an absolute injustice that more people do not use RPN calculators. I wanted to build an accessible, ultra-low-cost physical calculator that could inspire students and makers to fall in love with RPN. But coming from software, a multi-week hardware feedback loop was intolerable. I don't have an electrical engineering lab or specialized hardware test fixtures; my natural developer instinct was to build software mocks and emulators to test everything before physical boards arrived.</p>
+<p>Before ordering our first run of 4-layer FR4 boards, I wanted the instant feedback loops I take for granted in software: running our exact, byte-for-byte compiled <code>stackcalc_firmware.uf2</code> binary on a virtual calculator in the browser. Pairing with AI coding agents to generate peripheral simulation models, we constructed a complete headless Hardware-in-the-Loop (HIL) simulation pipeline using Wokwi's cycle-accurate RP2350 emulation core.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/08/26/hardware-simulation-browser-hil-with-wokwi-rp2350-emulation/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-24 00:00:00">Monday, August 24, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="../../../../category/architecture/" class="md-meta__link">Architecture</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="building-a-cross-surface-fuzzer-part-2-continuous-in-memory-app-reset"><a class="toclink" href="../../../../2026/08/24/building-a-cross-surface-fuzzer-part-2-continuous-in-memory-app-reset/">Building a Cross-Surface Fuzzer (Part 2: Continuous In-Memory App Reset)</a></h2>
+<p>Here is the brutal math of differential fuzzing: if resetting your target device requires a cold boot that takes 500 milliseconds, running a serious 100,000-vector fuzzing campaign takes nearly fourteen hours. That’s not continuous integration; that’s an overnight prayer meeting.</p>
+<p>In Part 1, we established our differential oracle pipeline and golden path state invariants across six platforms. But when we sat down to run our first serious campaign, we slammed straight into a brick wall of execution throughput. </p>
+<p>At barely two test cases per second, our CI runners were timing out, our fans were screaming, and rapid local iteration was impossible. Coming from high-level software engineering, waiting fourteen hours for a test run felt completely unacceptable. To make cross-surface fuzzing a practical software superpower that runs during a coffee break, we had to re-architect our engine around an ultra-fast, zero-leak in-memory reset routine that executes in microseconds. Pairing with AI coding agents, we methodically mapped and audited every struct and volatile register in <code>RPNCore</code> to guarantee complete state purging without rebooting the microcontroller.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/08/24/building-a-cross-surface-fuzzer-part-2-continuous-in-memory-app-reset/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-22 00:00:00">Saturday, August 22, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="../../../../category/architecture/" class="md-meta__link">Architecture</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              5 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="building-a-cross-surface-fuzzer-part-1-golden-path-state-invariants"><a class="toclink" href="../../../../2026/08/22/building-a-cross-surface-fuzzer-part-1-golden-path-state-invariants/">Building a Cross-Surface Fuzzer (Part 1: Golden Path State Invariants)</a></h2>
+<p>Human test suites suffer from a fatal blind spot: they only verify what the engineer had the imagination to anticipate. We wrote 1,200 deterministic unit tests for <code>RPNCore</code> and felt smugly confident in our code coverage—until we unleashed differential fuzzing, one of the greatest superpowers of modern software engineering, directly against physical silicon.</p>
+<p>As a software and AI expert with a desktop 3D printer whirring away printing prototype calculator enclosures, I believe it is an absolute injustice that more students, makers, and engineers do not use RPN calculators. But if we were going to build an open, accessible instrument that purists could trust, the engine could not have subtle behavioral quirks. We paired with AI coding agents to synthesize grammar-guided fuzzing vectors and turned loose an automated fuzzing harness that simulated a caffeinated toddler hammering keys at 40 Hz across both an M3 Max Mac and a physical RP2350 microcontroller on our workbench.</p>
+<p>Within four minutes, the differential fuzzer caught three subtle state discrepancies that our static unit tests never dreamed of.</p>
+<p>In an RPN (Reverse Polish Notation) scientific calculator, our calculation engine had to run with byte-for-byte fidelity across six radically distinct environments: watchOS, iOS, macOS, bare-metal RP2350 (ARM Cortex-M33), RP2350 (ARM Cortex-M33), and a web-based WebAssembly simulator. A user's trust hinges entirely on predictable stack transformations, register lift preservation, and sub-ULP numerical agreement across transcendental functions. To guarantee true behavioral parity, we architected an automated cross-surface fuzzer driven by strict golden path state invariants.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/08/22/building-a-cross-surface-fuzzer-part-1-golden-path-state-invariants/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-21 00:00:00">Friday, August 21, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="../../../../category/performance/" class="md-meta__link">Performance</a>, 
+              <a href="../../../../category/firmware/" class="md-meta__link">Firmware</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="debugging-memory-leaks-pico_debug_malloc-zero-arc-overhead"><a class="toclink" href="../../../../2026/08/21/debugging-memory-leaks-pico_debug_malloc--zero-arc-overhead/">Debugging Memory Leaks: PICO_DEBUG_MALLOC &amp; Zero ARC Overhead</a></h2>
+<p>It was 1:30 AM when our Rev 1 prototype froze solid on the bench, displaying half an equation and a frozen cursor. The Raspberry Pi RP2350 wasn't physically damaged, but the SWD debugger delivered a chilling diagnosis: total SRAM exhaustion. A 264 KB microcontroller had choked to death on memory fragments.</p>
+<p>Coming from modern iOS and backend software engineering, where machines have gigabytes of unified RAM and Automatic Reference Counting (ARC) quietly cleans up temporary closures and string buffers, bringing Swift to bare-metal silicon was an exhilarating culture shock. On a Cortex-M33 with no virtual memory, dynamic heap allocation is an immediate death sentence: even tiny string formatting allocations fragment 264 KB of SRAM into unusable swiss cheese within hours. As a software and AI expert with a desktop 3D printer running prototypes on my desk, I believe it is an absolute injustice that more students and makers do not use RPN calculators. But to build a reliable, low-cost physical device they can actually build and cherish, <code>RPNCore</code> had to survive indefinitely on bare metal. I instituted an absolute zero-heap mandate. Navigating the experimental Embedded Swift dialect to eliminate ARC overhead while retaining elegant value semantics was made possible by pairing with AI coding agents—systematically auditing call graphs, hunting hidden compiler boxing, and verifying static stack layouts.</p>
+<p>When porting <code>RPNCore</code> to Embedded Swift, we instituted a radical design mandate: <strong>zero dynamic heap allocations during runtime calculation</strong>. To guarantee this invariant, we stripped away ARC overhead and locked down the runtime using low-level Pico SDK memory hooks.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/08/21/debugging-memory-leaks-pico_debug_malloc--zero-arc-overhead/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-08-19 00:00:00">Wednesday, August 19, 2026</time></li>
         
           <li class="md-meta__item">
@@ -936,199 +1138,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-12 00:00:00">Wednesday, August 12, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="../../../../category/mathematics/" class="md-meta__link">Mathematics</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="fractional-math-engine-part-2-continued-fractions-milu-355113"><a class="toclink" href="../../../../2026/08/12/fractional-math-engine-part-2-continued-fractions--mil%C3%BC-355113/">Fractional Math Engine (Part 2: Continued Fractions &amp; Milü 355/113)</a></h2>
-<p>During an early bench test of our EastRising LCD driver, we typed in <span class="arithmatex">\(\pi\)</span> with fraction mode enabled and watched the screen scramble into garbage. Coming from modern software development where responsive CSS and dynamic fonts handle layout overflow gracefully, moving to a physical 12-character LCD was a stark wake-up call. When our naive continued-fraction converter generated a high-order convergent with a three-digit whole part, a four-digit numerator, and a four-digit denominator, the rendered string <code>-123 4567/8901</code> spilled past column 12, overwrote annunciator RAM, and turned on random battery icons.</p>
-<p>That visual glitch made an essential reality obvious: in a physical calculator, pure mathematical approximation must live within a rigid, non-negotiable physical glass budget. In Part 2 of this series, we dive into how <code>RPNCore</code> couples continued fraction expansion (the Stern-Brocot tree) with display-constrained iterative fitting—reproducing historical marvels like Zu Chongzhi's 5th-century Milü ratio (<span class="arithmatex">\(355/113\)</span>) without ever dropping a character off the edge of the glass. To ensure our adaptive algorithm never hangs in infinite loops on edge cases, I used AI coding agents to stress-test <code>computeFractionToFit</code> against hundreds of pathological floats.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/08/12/fractional-math-engine-part-2-continued-fractions--mil%C3%BC-355113/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-11 00:00:00">Tuesday, August 11, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../../category/firmware/" class="md-meta__link">Firmware</a>, 
-              <a href="../../../../category/embedded-swift/" class="md-meta__link">Embedded Swift</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="pioneering-with-embedded-swift-part-1-cortex-m33-bare-metal-toolchain"><a class="toclink" href="../../../../2026/08/11/pioneering-with-embedded-swift-part-1-cortex-m33-bare-metal-toolchain/">Pioneering with Embedded Swift (Part 1: Cortex-M33 Bare-Metal Toolchain)</a></h2>
-<p>When we first pitched the idea of running Swift 6 on the new Raspberry Pi Pico 2 (featuring the RP2350 with its Cortex-M33 cores and an FPU—even though our experimental Embedded Swift toolchain doesn't fully support the hardware FPU yet), the initial reaction was pure skepticism. Embedded systems are traditionally seen as the sacred ground of raw C and assembly. But as software engineers who love modern languages and revere classic scientific RPN calculators like the HP-32SII, our goal was bigger: building an accessible, open, low-cost physical calculator to inspire the next generation of students and engineers to love RPN as much as we do. Anyone who has maintained a complex scientific calculator codebase in raw C knows the creeping dread of manual pointer juggling, buffer overflows, and silent memory corruption when evaluating nested fraction math or base-N conversions.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/08/11/pioneering-with-embedded-swift-part-1-cortex-m33-bare-metal-toolchain/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-10 00:00:00">Monday, August 10, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="../../../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="fractional-math-engine-part-1-mixed-fractions-display-modes"><a class="toclink" href="../../../../2026/08/10/fractional-math-engine-part-1-mixed-fractions--display-modes/">Fractional Math Engine (Part 1: Mixed Fractions &amp; Display Modes)</a></h2>
-<p>Step into a workshop or fire up a desktop 3D printer for mechanical prototyping, and you quickly notice that the physical world does not run in continuous decimals or arbitrary floats. Whether sizing clearances in fractional inches, measuring drill bit diameters, or designing mating joints, physical dimensions demand mixed fractions. Trying to calculate physical clearances on a standard calculator means constantly juggling mental conversions on scrap paper: you divide <span class="arithmatex">\(3\)</span> by <span class="arithmatex">\(16\)</span>, get <span class="arithmatex">\(0.1875\)</span>, add <span class="arithmatex">\(1.625\)</span>, and then squint at a fractional chart to remember that <span class="arithmatex">\(1.8125\)</span> is <span class="arithmatex">\(1\ 13/16\)</span>. The HP-32SII was legendary among craftspeople and engineers because it bypassed that madness entirely: mixed fractions were first-class values on the stack. In Part 1 of this series, we unpack how <code>RPNCore</code> models mixed fraction entry, state transitions, and exact Euclidean reductions.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/08/10/fractional-math-engine-part-1-mixed-fractions--display-modes/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-07 00:00:00">Friday, August 7, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="../../../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="extending-logical-completeness-part-2-base-n-bitwise-ops"><a class="toclink" href="../../../../2026/08/07/extending-logical-completeness-part-2-base-n-bitwise-ops/">Extending Logical Completeness (Part 2: Base-N Bitwise Ops)</a></h2>
-<p>Take the number <code>0</code> in hex, hit <code>NOT</code>, and ask yourself what should appear on the screen. In high-level software, our default integer types in Swift or Python are 64-bit and unbounded, so you get <code>0xFFFFFFFFFFFFFFFF</code>. That might be mathematically correct in an abstract 64-bit universe, but if you're simulating an 8-bit microcontroller register, you just blew right past your peripheral's boundaries. In physical computing, bit inversion and shifts only make sense relative to an explicit hardware bus width. To ensure our engine models hardware faithfully without heap allocations, I used AI coding agents to generate comprehensive boundary test suites across 8, 16, 32, and 64-bit modes, validating sign-extension in arithmetic shift right (<code>ASR</code>) and circular rotation edge cases. In Part 2 of this series, we look at how <code>RPNCore</code> enforces word size constraints, handles arithmetic versus logical shifts, and parses hex strings on bare silicon with zero allocations.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/08/07/extending-logical-completeness-part-2-base-n-bitwise-ops/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
       
         
           
@@ -1136,7 +1145,7 @@
 
 
 <nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__current">2</span> <a class="md-pagination__link" href="../3/">3</a> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a>
+  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__current">2</span> <a class="md-pagination__link" href="../3/">3</a> <a class="md-pagination__link" href="../4/">4</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../6/">6</a>
 </nav>
         
       

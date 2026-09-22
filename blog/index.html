@@ -669,6 +669,209 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-09-22 00:00:00">Tuesday, September 22, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="category/reverseengineering/" class="md-meta__link">ReverseEngineering</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              5 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="verifying-parity-without-the-rom-part-1-black-box-behavioral-modeling"><a class="toclink" href="2026/09/22/verifying-parity-without-the-rom-part-1-black-box-behavioral-modeling/">Verifying Parity Without the ROM (Part 1: Black-Box Behavioral Modeling)</a></h2>
+<p>On my workbench, right beside my 3D printer and mechanical keyboard, sits a battered HP-32SII manufactured in Singapore in the spring of 1989. Its rubber feet have long turned to dust, and the silver Pioneer-series aluminum faceplate is worn smooth around the <code>ENTER</code> key. But when you press a button, that segmented LCD still snaps with crisp, uncompromising mathematical certainty.</p>
+<p>As a software and AI expert with a desktop 3D printer whirring away printing button plungers, I believe it is an absolute injustice that more people do not use RPN calculators. When setting out to resurrect this legendary machine as an open, accessible, low-cost calculator for the next generation of students and makers, I faced an absolute legal and architectural constraint: clean-room implementation. Dumping Hewlett-Packard's proprietary Saturn processor ROM and disassembling its microcode was completely off-limits. To create an open-source, commercially viable device that vintage purists would respect and new students could trust, we had to achieve bit-for-bit behavioral parity entirely through clean-room black-box reverse engineering.</p>
+<p>How does a software developer reverse-engineer thirty years of Corvallis state machine nuances without a ROM dump? This was where AI coding agents became an indispensable force multiplier. I fed vintage user manual descriptions and mathematical edge cases into AI prompting workflows, asking the models to synthesize candidate finite state machines and flag hidden state latches (like stack-lift disable rules after <code>ENTER</code> or <code>CLx</code>). We then validated those synthesized state tables against physical keystroke sequences on my actual HP-32SII hardware, building an authoritative 350-scenario golden trace catalog that continuously audits <code>RPNCore</code>.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/09/22/verifying-parity-without-the-rom-part-1-black-box-behavioral-modeling/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-09-19 00:00:00">Saturday, September 19, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="category/qa/" class="md-meta__link">QA</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="ui-fuzzing-key-mash-injection-annunciator-state-parity"><a class="toclink" href="2026/09/19/ui-fuzzing-key-mash-injection--annunciator-state-parity/">UI Fuzzing: Key Mash Injection &amp; Annunciator State Parity</a></h2>
+<p>A calculation engine can pass 1,200 unit tests with flying colors and still completely fall apart the second a real human touches the keyboard.</p>
+<p>Humans do not key in clean mathematical textbook formulas. They mash buttons impatiently, double-tap keys while walking down the stairs, change their minds mid-keystroke, toggle shift layers frantically, and mash <code>CLEAR</code> while an input prompt is halfway through animating onto the screen.</p>
+<p>As a software and AI expert with a 3D printer running button plunger prototypes on my desk, I believe it is an absolute injustice that more students and engineers do not use RPN calculators. But when someone tries an RPN calculator for the first time, a single stuck shift layer or corrupted input buffer will convince them the whole paradigm is broken. In an RPN scientific calculator, the user interface is an intricate, hair-trigger state machine. A single button press does not simply render a character—it mutates the active mantissa, switches modifier layers (Gold, Blue), toggles degree/radian annunciators, or navigates prompt stacks. </p>
+<p>To ensure our UI never deadlocks, drops strokes, or displays ghost annunciators on glass or physical silicon, we brought software testing superpowers to the interface. We paired with AI coding agents to map state transitions and built a dedicated "toddler simulator"—an adversarial UI fuzzing harness (<code>Tools/Fuzzing/live_simulator_fuzzer.py</code>) designed to bombard running simulator instances and physical keypad bridges with 40 chaotic keystrokes per second.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/09/19/ui-fuzzing-key-mash-injection--annunciator-state-parity/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-09-17 00:00:00">Thursday, September 17, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="category/architecture/" class="md-meta__link">Architecture</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="test-harness-architecture-http-oracle-queue-on-port-8181"><a class="toclink" href="2026/09/17/test-harness-architecture-http-oracle-queue-on-port-8181/">Test Harness Architecture: HTTP Oracle Queue on Port 8181</a></h2>
+<p>As software engineers, our immediate instinct when told to coordinate differential fuzzing across seven disparate platforms—from an Apple Watch simulator to a physical microcontroller hooked up via USB—is often to reach for Kubernetes, RabbitMQ, and gRPC. I almost fell into that trap myself.</p>
+<p>But in a maker environment where my desktop 3D printer is humming in the corner, prototype boards are wired up on the desk, and an Apple Silicon laptop generates test vectors a thousand times faster than a Cortex-M33 can execute them, heavyweight distributed frameworks are a recipe for endless yak shaving. I don't need a cloud cluster; I need lightweight software superpowers applied to physical hardware. As an RPN calculator enthusiast, I believe it is an absolute injustice that more students and engineers do not use RPN calculators. To make StackCalc an open, accessible, low-cost instrument that everyone can trust, the testing infrastructure had to be rock-solid and friction-free.</p>
+<p>Instead of orchestrating complex brokers, we built a dead-simple HTTP test oracle and dispatch queue server (<code>Tools/Fuzzing/fuzz_queue_server.py</code>) in under 200 lines of standard library Python. Operating on port 8181, this service acts as the resilient synchronization hub for our entire cross-surface testing fleet, dispatching identical input vectors and collecting telemetry for offline regression analysis.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/09/17/test-harness-architecture-http-oracle-queue-on-port-8181/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-09-15 00:00:00">Tuesday, September 15, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/testing/" class="md-meta__link">Testing</a>, 
+              <a href="category/qa/" class="md-meta__link">QA</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              5 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="hardware-fuzzing-lessons-retiring-the-python-simulator-after-44100-mismatches"><a class="toclink" href="2026/09/15/hardware-fuzzing-lessons-retiring-the-python-simulator-after-44100-mismatches/">Hardware Fuzzing Lessons: Retiring the Python Simulator After 44/100 Mismatches</a></h2>
+<p>We spent three days chasing a floating-point ghost on the RP2350 microcontroller before discovering that our "gold standard" test oracle was lying through its teeth.</p>
+<p>Like almost every software engineer, my natural reflex for rapid scripting and math modeling is Python. Early in the project, I used an AI coding assistant to quickly spin up a 200-line Python simulator (<code>python_engine.py</code>) to act as our differential test oracle. The script was supposed to generate test vectors, compute the expected stack state, and serve as the golden reference for our bare-metal Embedded Swift firmware. Python has great math libraries and zero compiler hassle—what could possibly go wrong?</p>
+<p>As a software and AI expert with a 3D printer running prototypes on my desk, I believe it is an absolute injustice that more students and engineers do not use RPN calculators. I wanted our physical hardware to be beyond reproach. So we hooked both engines up to our automated differential fuzzer—wielding software testing superpowers against bare-metal silicon—took a sip of coffee, and ran our first 100 random keystroke sequences.</p>
+<p>The result was an unmitigated, humbling disaster: <strong>44 out of 100 tests failed immediately</strong>.</p>
+<p>The microcontroller firmware wasn't broken at all. The failure was a classic case of software habits blinding us to physical calculator realities: my Python script (and the initial AI prompts that drafted it) had backed the RPN stack with an unbounded Python <code>list.append()</code>. It completely missed the fundamental hardware invariant of the HP-32SII: a strictly bounded 4-level stack where pushing beyond <span class="arithmatex">\(T\)</span> drops values into the bit-bucket, and binary reductions cause the top register <span class="arithmatex">\(T\)</span> to duplicate into itself!</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/09/15/hardware-fuzzing-lessons-retiring-the-python-simulator-after-44100-mismatches/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-09-12 00:00:00">Saturday, September 12, 2026</time></li>
         
           <li class="md-meta__item">
@@ -952,208 +1155,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-26 00:00:00">Wednesday, August 26, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/testing/" class="md-meta__link">Testing</a>, 
-              <a href="category/hardware/" class="md-meta__link">Hardware</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="hardware-simulation-browser-hil-with-wokwi-rp2350-emulation"><a class="toclink" href="2026/08/26/hardware-simulation-browser-hil-with-wokwi-rp2350-emulation/">Hardware Simulation: Browser HIL with Wokwi RP2350 Emulation</a></h2>
-<p>In modern software development, our feedback loop is measured in seconds: you modify code, hit <code>Cmd-R</code>, and immediately inspect the result in an iOS simulator or browser window. When I began designing custom hardware for StackCalc32, the physical turnaround time was a terrifying culture shock. In hardware, a minor pinout mismatch or inverted SPI clock phase doesn't just mean a quick rebuild; it means generating Gerber files, shipping them to an overseas fab, waiting two weeks for delivery, and nervously soldering surface-mount parts—only to discover your display won't initialize.</p>
-<p>As a software and AI expert with a desktop 3D printer whirring away on my desk, I believe it is an absolute injustice that more people do not use RPN calculators. I wanted to build an accessible, ultra-low-cost physical calculator that could inspire students and makers to fall in love with RPN. But coming from software, a multi-week hardware feedback loop was intolerable. I don't have an electrical engineering lab or specialized hardware test fixtures; my natural developer instinct was to build software mocks and emulators to test everything before physical boards arrived.</p>
-<p>Before ordering our first run of 4-layer FR4 boards, I wanted the instant feedback loops I take for granted in software: running our exact, byte-for-byte compiled <code>stackcalc_firmware.uf2</code> binary on a virtual calculator in the browser. Pairing with AI coding agents to generate peripheral simulation models, we constructed a complete headless Hardware-in-the-Loop (HIL) simulation pipeline using Wokwi's cycle-accurate RP2350 emulation core.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2026/08/26/hardware-simulation-browser-hil-with-wokwi-rp2350-emulation/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-24 00:00:00">Monday, August 24, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/testing/" class="md-meta__link">Testing</a>, 
-              <a href="category/architecture/" class="md-meta__link">Architecture</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="building-a-cross-surface-fuzzer-part-2-continuous-in-memory-app-reset"><a class="toclink" href="2026/08/24/building-a-cross-surface-fuzzer-part-2-continuous-in-memory-app-reset/">Building a Cross-Surface Fuzzer (Part 2: Continuous In-Memory App Reset)</a></h2>
-<p>Here is the brutal math of differential fuzzing: if resetting your target device requires a cold boot that takes 500 milliseconds, running a serious 100,000-vector fuzzing campaign takes nearly fourteen hours. That’s not continuous integration; that’s an overnight prayer meeting.</p>
-<p>In Part 1, we established our differential oracle pipeline and golden path state invariants across six platforms. But when we sat down to run our first serious campaign, we slammed straight into a brick wall of execution throughput. </p>
-<p>At barely two test cases per second, our CI runners were timing out, our fans were screaming, and rapid local iteration was impossible. Coming from high-level software engineering, waiting fourteen hours for a test run felt completely unacceptable. To make cross-surface fuzzing a practical software superpower that runs during a coffee break, we had to re-architect our engine around an ultra-fast, zero-leak in-memory reset routine that executes in microseconds. Pairing with AI coding agents, we methodically mapped and audited every struct and volatile register in <code>RPNCore</code> to guarantee complete state purging without rebooting the microcontroller.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2026/08/24/building-a-cross-surface-fuzzer-part-2-continuous-in-memory-app-reset/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-22 00:00:00">Saturday, August 22, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/testing/" class="md-meta__link">Testing</a>, 
-              <a href="category/architecture/" class="md-meta__link">Architecture</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              5 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="building-a-cross-surface-fuzzer-part-1-golden-path-state-invariants"><a class="toclink" href="2026/08/22/building-a-cross-surface-fuzzer-part-1-golden-path-state-invariants/">Building a Cross-Surface Fuzzer (Part 1: Golden Path State Invariants)</a></h2>
-<p>Human test suites suffer from a fatal blind spot: they only verify what the engineer had the imagination to anticipate. We wrote 1,200 deterministic unit tests for <code>RPNCore</code> and felt smugly confident in our code coverage—until we unleashed differential fuzzing, one of the greatest superpowers of modern software engineering, directly against physical silicon.</p>
-<p>As a software and AI expert with a desktop 3D printer whirring away printing prototype calculator enclosures, I believe it is an absolute injustice that more students, makers, and engineers do not use RPN calculators. But if we were going to build an open, accessible instrument that purists could trust, the engine could not have subtle behavioral quirks. We paired with AI coding agents to synthesize grammar-guided fuzzing vectors and turned loose an automated fuzzing harness that simulated a caffeinated toddler hammering keys at 40 Hz across both an M3 Max Mac and a physical RP2350 microcontroller on our workbench.</p>
-<p>Within four minutes, the differential fuzzer caught three subtle state discrepancies that our static unit tests never dreamed of.</p>
-<p>In an RPN (Reverse Polish Notation) scientific calculator, our calculation engine had to run with byte-for-byte fidelity across six radically distinct environments: watchOS, iOS, macOS, bare-metal RP2350 (ARM Cortex-M33), RP2350 (ARM Cortex-M33), and a web-based WebAssembly simulator. A user's trust hinges entirely on predictable stack transformations, register lift preservation, and sub-ULP numerical agreement across transcendental functions. To guarantee true behavioral parity, we architected an automated cross-surface fuzzer driven by strict golden path state invariants.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2026/08/22/building-a-cross-surface-fuzzer-part-1-golden-path-state-invariants/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-21 00:00:00">Friday, August 21, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/testing/" class="md-meta__link">Testing</a>, 
-              <a href="category/performance/" class="md-meta__link">Performance</a>, 
-              <a href="category/firmware/" class="md-meta__link">Firmware</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="debugging-memory-leaks-pico_debug_malloc-zero-arc-overhead"><a class="toclink" href="2026/08/21/debugging-memory-leaks-pico_debug_malloc--zero-arc-overhead/">Debugging Memory Leaks: PICO_DEBUG_MALLOC &amp; Zero ARC Overhead</a></h2>
-<p>It was 1:30 AM when our Rev 1 prototype froze solid on the bench, displaying half an equation and a frozen cursor. The Raspberry Pi RP2350 wasn't physically damaged, but the SWD debugger delivered a chilling diagnosis: total SRAM exhaustion. A 264 KB microcontroller had choked to death on memory fragments.</p>
-<p>Coming from modern iOS and backend software engineering, where machines have gigabytes of unified RAM and Automatic Reference Counting (ARC) quietly cleans up temporary closures and string buffers, bringing Swift to bare-metal silicon was an exhilarating culture shock. On a Cortex-M33 with no virtual memory, dynamic heap allocation is an immediate death sentence: even tiny string formatting allocations fragment 264 KB of SRAM into unusable swiss cheese within hours. As a software and AI expert with a desktop 3D printer running prototypes on my desk, I believe it is an absolute injustice that more students and makers do not use RPN calculators. But to build a reliable, low-cost physical device they can actually build and cherish, <code>RPNCore</code> had to survive indefinitely on bare metal. I instituted an absolute zero-heap mandate. Navigating the experimental Embedded Swift dialect to eliminate ARC overhead while retaining elegant value semantics was made possible by pairing with AI coding agents—systematically auditing call graphs, hunting hidden compiler boxing, and verifying static stack layouts.</p>
-<p>When porting <code>RPNCore</code> to Embedded Swift, we instituted a radical design mandate: <strong>zero dynamic heap allocations during runtime calculation</strong>. To guarantee this invariant, we stripped away ARC overhead and locked down the runtime using low-level Pico SDK memory hooks.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2026/08/21/debugging-memory-leaks-pico_debug_malloc--zero-arc-overhead/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
       
         
           
@@ -1161,7 +1162,7 @@
 
 
 <nav class="md-pagination">
-  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a> <a class="md-pagination__link" href="page/3/">3</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="page/5/">5</a>
+  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a> <a class="md-pagination__link" href="page/3/">3</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="page/6/">6</a>
 </nav>
         
       

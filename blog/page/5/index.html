@@ -669,6 +669,215 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-27 00:00:00">Saturday, June 27, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/devops/" class="md-meta__link">DevOps</a>, 
+              <a href="../../category/apple/" class="md-meta__link">Apple</a>, 
+              <a href="../../category/tools/" class="md-meta__link">Tools</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="app-store-metadata-automation-generating-multi-device-asset-catalogs"><a class="toclink" href="../../2026/06/27/app-store-metadata-automation-generating-multi-device-asset-catalogs/">App Store Metadata Automation: Generating Multi-Device Asset Catalogs</a></h2>
+<p>There is no quicker way to kill the romantic joy of indie hardware and software engineering than uploading a build to App Store Connect at one in the morning, only to receive an immediate rejection email from an automated Apple bot:</p>
+<p><code>ERROR ITMS-90022: Missing required icon file. The bundle does not contain an app icon for watchOS of exactly 55x55 pixels.</code></p>
+<p>You stare at the terminal in disbelief. You already generated 18 different icon sizes. You exported 40mm, 41mm, 44mm, 45mm, and 49mm variations. But because you were off by a single fractional point—or worse, because Photoshop saved a 24-bit PNG with an invisible 1-bit alpha channel flag—Apple's automated ingestion gate slammed the door in your face.</p>
+<p>If you are shipping a dual-target app that lives simultaneously on watchOS and iOS, managing icons and App Store metadata by hand in Photoshop or Figma is a fool's errand. You will spend hours slicing images, dragging assets into Xcode asset catalog slots, and praying you didn't mix up the <code>@2x</code> and <code>@3x</code> assets.</p>
+<p>We decided to automate the entire nightmare into extinction using headless Swift and Fastlane (commit <code>415ff44</code>).</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/27/app-store-metadata-automation-generating-multi-device-asset-catalogs/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-06-25 00:00:00">Thursday, June 25, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/watchos/" class="md-meta__link">watchOS</a>, 
+              <a href="../../category/ios/" class="md-meta__link">iOS</a>, 
+              <a href="../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="alpha-mode-input-handling-text-entry-without-a-full-keyboard"><a class="toclink" href="../../2026/06/25/alpha-mode-input-handling-text-entry-without-a-full-keyboard/">Alpha Mode Input Handling: Text Entry Without a Full Keyboard</a></h2>
+<p>Nothing snaps you out of the retro calculator trance faster than typing <code>STO</code> to save a variable and having iOS suddenly pop up a giant, translucent, system QWERTY keyboard that violently covers your entire screen.</p>
+<p>On watchOS, it gets even more comedic: the system tries to summon Apple's "Scribble" handwriting recognition. There you are, trying to carefully finger-draw an uppercase "X" on a tiny 40mm screen while the watch misinterprets it as an "8" or a multiplication sign.</p>
+<p>It felt like an insult to the engineering elegance of the 1980s.</p>
+<p>A physical Hewlett-Packard HP-32SII never needed a QWERTY keyboard. It handled variables (<code>STO A</code> through <code>STO Z</code>) and symbolic equations (<code>2*PI*R^2 + H*R = 0</code>) using a beautifully simple multiplexing layer: you tapped the <code>ALPHA</code> key, and every existing button on the faceplate temporarily adopted the tiny letter printed in yellow or blue silkscreen beside it. It was fast, deterministic, and felt like operating an old Nokia phone with T9 muscle memory.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/25/alpha-mode-input-handling-text-entry-without-a-full-keyboard/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-06-23 00:00:00">Tuesday, June 23, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/watchos/" class="md-meta__link">watchOS</a>, 
+              <a href="../../category/architecture/" class="md-meta__link">Architecture</a>, 
+              <a href="../../category/ux/" class="md-meta__link">UX</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="watch-tutorial-presentation-logic-interactive-state-machines-on-the-wrist"><a class="toclink" href="../../2026/06/23/watch-tutorial-presentation-logic-interactive-state-machines-on-the-wrist/">Watch Tutorial Presentation Logic: Interactive State Machines on the Wrist</a></h2>
+<p>Nobody in the history of consumer electronics has ever opened a PDF user manual on an Apple Watch. You download an app to your wrist, raise your arm, and you expect to start tapping immediately.</p>
+<p>There was just one glaring problem: StackCalc32 is an RPN calculator.</p>
+<p>To an engineer who grew up with an HP-15C or an HP-48GX, typing <code>2 [ENTER] 3 [+]</code> is as natural as breathing. But to a modern programmer or student whose entire mathematical life has been spent on algebraic infix calculators, RPN feels like an alien transmission. Where is the <code>=</code> key? Why did tapping <code>3</code> just overwrite what was on screen? Why are numbers sliding upward into a mystery four-level stack (<span class="arithmatex">\(X, Y, Z, T\)</span>)?</p>
+<p>On an iPhone or iPad, onboarding is easy: you can pop up full-screen modal sheets, show cute animated diagrams, and darken the background. But on an Apple Watch display measuring less than two inches diagonally, a modal sheet completely devours the keypad. You cannot teach someone how to operate a mechanical calculator if the buttons are hidden behind an essay.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/23/watch-tutorial-presentation-logic-interactive-state-machines-on-the-wrist/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-06-20 00:00:00">Saturday, June 20, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/watchos/" class="md-meta__link">watchOS</a>, 
+              <a href="../../category/ux/" class="md-meta__link">UX</a>, 
+              <a href="../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="fraction-entry-on-watchos-the-slider-ui-experiment-and-deterministic-fallback"><a class="toclink" href="../../2026/06/20/fraction-entry-on-watchos-the-slider-ui-experiment-and-deterministic-fallback/">Fraction Entry on watchOS: The Slider UI Experiment and Deterministic Fallback</a></h2>
+<p>Every indie developer has built a feature they thought was pure genius, only to discover in testing that it was completely unusable garbage.</p>
+<p>For us, that feature was the watchOS Fraction Slider.</p>
+<p>On a vintage Hewlett-Packard HP-32SII, entering mixed fractions is second nature. You tap <code>3 . 1 6 . 1 1 3</code> and the display snaps to the famous Milü approximation for <span class="arithmatex">\(\pi\)</span> (<span class="arithmatex">\(3\ 16/113 \approx \pi\)</span>). Behind the scenes, the machine uses the decimal key as a separator delimiter, mapping into <code>RPNCore</code> operations like <code>CalculatorOperation.slashc</code> (<code>/c</code>) and configuring hardware flags (Flags 7, 8, and 9) to control maximum denominators.</p>
+<p>When we ported this to the Apple Watch, we ran headfirst into a wall. On a 40mm watch face, cramming a 43-key layout onto the screen is impossible. We didn't have room for a dedicated <code>/c</code> fraction button on the primary numeric panel. So we thought: <em>Hey, why not do something modern and touch-native?</em></p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/20/fraction-entry-on-watchos-the-slider-ui-experiment-and-deterministic-fallback/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-06-18 00:00:00">Thursday, June 18, 2026</time></li>
         
           <li class="md-meta__item">
@@ -958,109 +1167,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-03 00:00:00">Wednesday, June 3, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/watchos/" class="md-meta__link">watchOS</a>, 
-              <a href="../../category/architecture/" class="md-meta__link">Architecture</a>, 
-              <a href="../../category/design/" class="md-meta__link">Design</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              5 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="why-we-started-with-the-apple-watch-part-1-the-screen-real-estate-equation"><a class="toclink" href="../../2026/06/03/why-we-started-with-the-apple-watch-part-1-the-screen-real-estate-equation/">Why We Started With The Apple Watch (Part 1: The Screen Real-Estate Equation)</a></h2>
-<p>Try typing an equation into the default Apple Watch calculator with adult human thumbs. You reach over with your right index finger, aim for the <code>7</code>, and end up tapping <code>4</code>, <code>8</code>, and <code>CLEAR</code> all in the span of three agonizing seconds. Now imagine strapping a full Hewlett-Packard HP-48GX or HP-32SII—with its forest of forty-plus buttons, shift keys, and complex exponents—onto your wrist. It sounds like an engineering dare, or pure masochism.</p>
-<p>As a software and AI developer, my native comfort zone has always been high-level software, reactive state machines, and modern mobile platforms. Traditional hardware projects typically start on the breadboard: wire up a microcontroller, write a quick C loop, 3D-print a rough enclosure, and maybe, months later, hack together a mobile companion app as an afterthought.</p>
-<p>With StackCalc32, we deliberately inverted the entire pipeline: we wrote our very first line of production code for watchOS.</p>
-<p>Starting a full scientific RPN calculator on a wearable screen with barely <span class="arithmatex">\(176\text{ pt}\)</span> of horizontal elbow room felt insane. But from an architectural standpoint, the Apple Watch was our crucible. If we could make a 120-function RPN engine feel effortless, blisteringly fast, and impossible to fat-finger on a 40mm OLED face, then scaling up to the spacious canvas of an iPhone or a physical RP2350 PCB would be pure gravy. More importantly, as someone who believes it's an injustice that RPN isn't in every student's and engineer's pocket, putting a tactile RPN stack directly on the wrist was the ultimate proof of concept before routing a single physical PCB trace.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/03/why-we-started-with-the-apple-watch-part-1-the-screen-real-estate-equation/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-01 00:00:00">Monday, June 1, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="../../category/hardware/" class="md-meta__link">Hardware</a>, 
-              <a href="../../category/software/" class="md-meta__link">Software</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="welcome-to-the-stackcalc-engineering-blog"><a class="toclink" href="../../2026/06/01/welcome-to-the-stackcalc-engineering-blog/">Welcome to the StackCalc Engineering Blog</a></h2>
-<p>Look at the desk of almost any experienced software engineer or scientist, and right beside the mechanical keyboard and dual monitors, you'll often find a vintage Hewlett-Packard calculator—usually an HP-32SII or an HP-15C held together with stubborn affection. Those classic machines weren't disposable consumer gadgets; they were precision instruments built with crisp tactile keycaps, instant boot times, and Reverse Polish Notation (RPN) that let you calculate complex equations at the speed of thought without ever touching a parenthesis or an <code>=</code> key.</p>
-<p>As a software and AI expert, my daily world is high-level code, system architectures, and machine learning models. But I've also spent years as an amateur 3D-printing enthusiast, with a desktop 3D printer quietly whirring in the corner of my workspace. I don't have an electrical engineering background or a fancy electronics lab; I just love these calculators and think it is an absolute injustice that more people do not use them. When I looked at the state of modern calculators—glassy, laggy smartphone apps that drop keystrokes, sprout banner ads, or distort into awkward oval buttons when turned sideways—and saw vintage HP hardware fetching upwards of $200 on eBay, I decided it was time to build something new.</p>
-<p>I wanted to create an accessible, modern, open-source, low-cost physical RPN calculator for the next generation of engineers, students, and makers, inspiring them to discover the elegance of RPN just as I did. Coming from software, tackling custom 4-layer PCB layout and bare-metal microcontroller firmware felt like stepping onto an alien planet. But by pairing software expertise with modern AI coding agents to navigate unfamiliar hardware intricacies, and using desktop 3D printing to iterate physical enclosures and tactile button plungers, StackCalc32 was born: a unified ecosystem spanning physical hardware, bare-metal Embedded Swift, and native Apple Watch and iPhone apps.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/01/welcome-to-the-stackcalc-engineering-blog/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
       
         
           
@@ -1068,7 +1174,7 @@
 
 
 <nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../3/">3</a> <a class="md-pagination__link" href="../4/">4</a> <span class="md-pagination__current">5</span>
+  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../3/">3</a> <a class="md-pagination__link" href="../4/">4</a> <span class="md-pagination__current">5</span> <a class="md-pagination__link" href="../6/">6</a>
 </nav>
         
       

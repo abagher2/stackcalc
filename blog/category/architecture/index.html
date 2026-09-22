@@ -655,6 +655,56 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-09-17 00:00:00">Thursday, September 17, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../testing/" class="md-meta__link">Testing</a>, 
+              <a href="./" class="md-meta__link">Architecture</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="test-harness-architecture-http-oracle-queue-on-port-8181"><a class="toclink" href="../../2026/09/17/test-harness-architecture-http-oracle-queue-on-port-8181/">Test Harness Architecture: HTTP Oracle Queue on Port 8181</a></h2>
+<p>As software engineers, our immediate instinct when told to coordinate differential fuzzing across seven disparate platforms—from an Apple Watch simulator to a physical microcontroller hooked up via USB—is often to reach for Kubernetes, RabbitMQ, and gRPC. I almost fell into that trap myself.</p>
+<p>But in a maker environment where my desktop 3D printer is humming in the corner, prototype boards are wired up on the desk, and an Apple Silicon laptop generates test vectors a thousand times faster than a Cortex-M33 can execute them, heavyweight distributed frameworks are a recipe for endless yak shaving. I don't need a cloud cluster; I need lightweight software superpowers applied to physical hardware. As an RPN calculator enthusiast, I believe it is an absolute injustice that more students and engineers do not use RPN calculators. To make StackCalc an open, accessible, low-cost instrument that everyone can trust, the testing infrastructure had to be rock-solid and friction-free.</p>
+<p>Instead of orchestrating complex brokers, we built a dead-simple HTTP test oracle and dispatch queue server (<code>Tools/Fuzzing/fuzz_queue_server.py</code>) in under 200 lines of standard library Python. Operating on port 8181, this service acts as the resilient synchronization hub for our entire cross-surface testing fleet, dispatching identical input vectors and collecting telemetry for offline regression analysis.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/09/17/test-harness-architecture-http-oracle-queue-on-port-8181/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-09-10 00:00:00">Thursday, September 10, 2026</time></li>
         
           <li class="md-meta__item">

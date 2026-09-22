@@ -1002,13 +1002,13 @@
 </tr>
 <tr>
 <td><strong>Cold-Boot Latency</strong></td>
-<td>&lt; 15 ms</td>
-<td>Instant-on execution straight from XIP (Execute-In-Place) flash</td>
+<td>Measurement pending</td>
+<td>Record build and physical-device timing</td>
 </tr>
 <tr>
 <td><strong>Quiescent Current</strong></td>
-<td>&lt; 30 µA</td>
-<td>Ultra-low power dormant sleep on CR2032 battery rail</td>
+<td>Measurement pending</td>
+<td>Validate on the matching board and battery rail</td>
 </tr>
 </tbody>
 </table>
@@ -1021,7 +1021,7 @@
 - <strong>Dormant Wakeup</strong>: Keypad columns are configured as edge-triggered GPIO interrupt sources (<code>matrix_scan_wake_key()</code>). When in deep sleep, any keypress immediately wakes the RP2350 PLLs without losing calculation context.</p>
 <h3 id="transflective-graphic-display-pipeline-st7567a">Transflective Graphic Display Pipeline (ST7567A)</h3>
 <p>The EastRising ST7567A 132×65 transflective LCD is driven via 4-wire hardware SPI:
-- <strong>Frame Buffer</strong>: A compact 1-bit-per-pixel buffer (1,072 bytes) maps directly to the display pages.
+- <strong>Frame Buffer</strong>: A compact 1-bit-per-pixel buffer (1,188 bytes: nine pages of 132 columns) maps directly to the display pages.
 - <strong>Zero-Tear Blits</strong>: The entire frame buffer is blitted directly via <code>display_send_buffer()</code> at SPI clock speeds up to 20 MHz.
 - <strong>Embedded Typography</strong>: Characters are drawn from <code>font_bitmaps.c</code>, encoding the authentic <strong>Terminus</strong> 6×8 pixel font for 4 crisp lines of left-justified mathematical telemetry.</p>
 <h3 id="ping-pong-non-volatile-flash-persistence">Ping-Pong Non-Volatile Flash Persistence</h3>
@@ -1033,7 +1033,7 @@
 <p>To achieve multi-month battery operation from a single standard CR2032 coin cell, the firmware employs multi-tier power states:
 1. <strong>Active Compute (150 MHz)</strong>: Full clock frequency during numerical solver execution, polynomial evaluation, and Romberg definite integration.
 2. <strong>Idle Mode</strong>: Gated system clocks while awaiting keypad scan events.
-3. <strong>Dormant Deep Sleep</strong>: After 5 minutes of inactivity, the firmware issues <code>hw_display_sleep_c()</code> to shut down the ST7567A bias circuits, flushes state to flash, and disables internal oscillators, consuming less than 30 µA.</p>
+3. <strong>Dormant Deep Sleep</strong>: After 5 minutes of inactivity, the firmware issues <code>hw_display_sleep_c()</code> to shut down the ST7567A bias circuits, flushes state to flash, and disables internal oscillators, with current consumption requiring measurement on the matching board.</p>
 <hr />
 <h2 id="4-the-shared-rpncore-engine">4. The Shared RPNCore Engine</h2>
 <p>A central principle of StackCalc is <strong>bit-for-bit math parity across all surfaces</strong>:

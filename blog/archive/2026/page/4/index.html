@@ -655,6 +655,200 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-07-21 00:00:00">Tuesday, July 21, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/mathematics/" class="md-meta__link">Mathematics</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="complex-numbers-coordinate-conversions-rectangularpolar-display"><a class="toclink" href="../../../../2026/07/21/complex-numbers-coordinate-conversions--rectangularpolar-display/">Complex Numbers: Coordinate Conversions &amp; Rectangular/Polar Display</a></h2>
+<p>If you want to spark an argument among calculator purists, ask them how complex numbers should live on a 4-level RPN stack. On the classic HP-15C from 1982, turning on Complex Mode split your stack in half: the real parts lived in one place and the imaginary parts in another, cutting your operational headroom down to two levels. If you were calculating AC circuit impedances or phasors, you spent half your time swapping registers instead of doing math. Coming from software engineering, where value types and vector math are second nature, that split-register compromise felt archaic. When we designed <code>CalculatorValue</code> in <code>RPNCore</code>, we rejected that constraint completely: every single stack level holds a full two-dimensional vector <code>(real, imag)</code>. To ensure mathematical rigor across transcendental operations and branch cuts, I paired with AI coding agents to synthesize test suites comparing our Swift implementation against Python's <code>cmath</code> ground truth.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/21/complex-numbers-coordinate-conversions--rectangularpolar-display/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-19 00:00:00">Sunday, July 19, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/mathematics/" class="md-meta__link">Mathematics</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="handling-precision-binary-vs-decimal-float-trade-offs"><a class="toclink" href="../../../../2026/07/19/handling-precision-binary-vs-decimal-float-trade-offs/">Handling Precision: Binary vs Decimal Float Trade-offs</a></h2>
+<p>Nothing shatters your pride as a software engineer faster than flashing your freshly compiled calculator firmware onto physical silicon, watching someone type <code>0.1 ENTER 0.2 +</code>, and seeing the LCD display: <code>0.30000000000000004</code>. In modern web or backend development, we are conditioned to shrug off floating-point noise as an unavoidable quirk of IEEE-754. But on a dedicated scientific calculator, displaying <code>0.300000000004</code> makes you look like you slapped a naive script onto a screen.</p>
+<p>Classic Hewlett-Packard calculators never suffered this embarrassment because the HP-32SII ran on a custom 4-bit Saturn microprocessor calculating in native Binary-Coded Decimal (BCD). When compiling bare-metal Embedded Swift for an RP2350 Cortex-M33 running at 133 MHz, however, full software BCD emulation brought transcendental trigonometric functions to an absolute crawl. To find an honest, lightning-fast compromise, I used AI coding agents as a mathematical sounding board—iterating through dozens of candidate threshold algorithms and fuzzing edge-case inputs until we arrived at our 12-digit guard mantissa.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/19/handling-precision-binary-vs-decimal-float-trade-offs/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-17 00:00:00">Friday, July 17, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="architecting-rpncore-as-a-multi-platform-swift-package"><a class="toclink" href="../../../../2026/07/17/architecting-rpncore-as-a-multi-platform-swift-package/">Architecting RPNCore as a Multi-Platform Swift Package</a></h2>
+<p>Compiling modern Swift for an Apple Watch is comfortable: you have gigabytes of virtual memory, Apple's rich Foundation runtime, and a compiler that happily handles dynamic ARC metadata. But compiling that exact same Swift codebase for an RP2350 microcontroller with 264 KiB of SRAM, no operating system, and no heap allocator was a revelation in zero-allocation discipline. Coming from high-level app and backend engineering, I had never faced a world where importing <code>Foundation</code> could instantly brick a build. When we sat down to build <code>RPNCore</code>, our design constraint was uncompromising: one single Swift package had to drive our watchOS app, our iOS interface, our macOS fuzzing oracles, and the bare-metal firmware running on our custom hardware. To bridge high-level elegance with bare-metal limits, I paired with AI coding agents to navigate Embedded Swift compiler configurations and design clean static value boundaries.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/17/architecting-rpncore-as-a-multi-platform-swift-package/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-14 00:00:00">Tuesday, July 14, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../../category/engineering/" class="md-meta__link">Engineering</a>, 
+              <a href="../../../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-backspace-debate-reversing-stack-lift-on-buffer-clear"><a class="toclink" href="../../../../2026/07/14/the-backspace-debate-reversing-stack-lift-on-buffer-clear/">The Backspace Debate: Reversing Stack Lift on Buffer Clear</a></h2>
+<p>Picture this: you've just chained five complex operations together, and your intermediate result—say, <span class="arithmatex">\(142.857\)</span>—is sitting comfortably in the <span class="arithmatex">\(X\)</span> register. You start typing the next number in your formula: you hit <code>3</code>, but your finger slipped; you meant <code>4</code>. Naturally, you tap Backspace. On a naive RPN calculator, you look at the screen and freeze in horror: <span class="arithmatex">\(X\)</span> is now <code>0.0</code>, your <span class="arithmatex">\(142.857\)</span> has been permanently shoved up into <span class="arithmatex">\(Y\)</span>, and the entire stack history you spent three minutes building is desynchronized.</p>
+<p>As software developers, our instinct is to think of Backspace as merely popping a character off an input string buffer (<code>string.popLast()</code>). But on an authentic RPN calculator, typing a digit is inextricably tied to the stack-lift state machine. That exact scenario sparked a week-long debate on our team that we forever call "The Backspace Debate"—and led us to pair with AI coding agents to exhaustively map out HP-32SII state transition tables to ensure our engine forgives human hesitation without corrupting registers.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/14/the-backspace-debate-reversing-stack-lift-on-buffer-clear/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-07-12 00:00:00">Sunday, July 12, 2026</time></li>
         
           <li class="md-meta__item">
@@ -951,215 +1145,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-27 00:00:00">Saturday, June 27, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../../category/devops/" class="md-meta__link">DevOps</a>, 
-              <a href="../../../../category/apple/" class="md-meta__link">Apple</a>, 
-              <a href="../../../../category/tools/" class="md-meta__link">Tools</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="app-store-metadata-automation-generating-multi-device-asset-catalogs"><a class="toclink" href="../../../../2026/06/27/app-store-metadata-automation-generating-multi-device-asset-catalogs/">App Store Metadata Automation: Generating Multi-Device Asset Catalogs</a></h2>
-<p>There is no quicker way to kill the romantic joy of indie hardware and software engineering than uploading a build to App Store Connect at one in the morning, only to receive an immediate rejection email from an automated Apple bot:</p>
-<p><code>ERROR ITMS-90022: Missing required icon file. The bundle does not contain an app icon for watchOS of exactly 55x55 pixels.</code></p>
-<p>You stare at the terminal in disbelief. You already generated 18 different icon sizes. You exported 40mm, 41mm, 44mm, 45mm, and 49mm variations. But because you were off by a single fractional point—or worse, because Photoshop saved a 24-bit PNG with an invisible 1-bit alpha channel flag—Apple's automated ingestion gate slammed the door in your face.</p>
-<p>If you are shipping a dual-target app that lives simultaneously on watchOS and iOS, managing icons and App Store metadata by hand in Photoshop or Figma is a fool's errand. You will spend hours slicing images, dragging assets into Xcode asset catalog slots, and praying you didn't mix up the <code>@2x</code> and <code>@3x</code> assets.</p>
-<p>We decided to automate the entire nightmare into extinction using headless Swift and Fastlane (commit <code>415ff44</code>).</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/06/27/app-store-metadata-automation-generating-multi-device-asset-catalogs/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-25 00:00:00">Thursday, June 25, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../../category/watchos/" class="md-meta__link">watchOS</a>, 
-              <a href="../../../../category/ios/" class="md-meta__link">iOS</a>, 
-              <a href="../../../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="alpha-mode-input-handling-text-entry-without-a-full-keyboard"><a class="toclink" href="../../../../2026/06/25/alpha-mode-input-handling-text-entry-without-a-full-keyboard/">Alpha Mode Input Handling: Text Entry Without a Full Keyboard</a></h2>
-<p>Nothing snaps you out of the retro calculator trance faster than typing <code>STO</code> to save a variable and having iOS suddenly pop up a giant, translucent, system QWERTY keyboard that violently covers your entire screen.</p>
-<p>On watchOS, it gets even more comedic: the system tries to summon Apple's "Scribble" handwriting recognition. There you are, trying to carefully finger-draw an uppercase "X" on a tiny 40mm screen while the watch misinterprets it as an "8" or a multiplication sign.</p>
-<p>It felt like an insult to the engineering elegance of the 1980s.</p>
-<p>A physical Hewlett-Packard HP-32SII never needed a QWERTY keyboard. It handled variables (<code>STO A</code> through <code>STO Z</code>) and symbolic equations (<code>2*PI*R^2 + H*R = 0</code>) using a beautifully simple multiplexing layer: you tapped the <code>ALPHA</code> key, and every existing button on the faceplate temporarily adopted the tiny letter printed in yellow or blue silkscreen beside it. It was fast, deterministic, and felt like operating an old Nokia phone with T9 muscle memory.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/06/25/alpha-mode-input-handling-text-entry-without-a-full-keyboard/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-23 00:00:00">Tuesday, June 23, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../../category/watchos/" class="md-meta__link">watchOS</a>, 
-              <a href="../../../../category/architecture/" class="md-meta__link">Architecture</a>, 
-              <a href="../../../../category/ux/" class="md-meta__link">UX</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="watch-tutorial-presentation-logic-interactive-state-machines-on-the-wrist"><a class="toclink" href="../../../../2026/06/23/watch-tutorial-presentation-logic-interactive-state-machines-on-the-wrist/">Watch Tutorial Presentation Logic: Interactive State Machines on the Wrist</a></h2>
-<p>Nobody in the history of consumer electronics has ever opened a PDF user manual on an Apple Watch. You download an app to your wrist, raise your arm, and you expect to start tapping immediately.</p>
-<p>There was just one glaring problem: StackCalc32 is an RPN calculator.</p>
-<p>To an engineer who grew up with an HP-15C or an HP-48GX, typing <code>2 [ENTER] 3 [+]</code> is as natural as breathing. But to a modern programmer or student whose entire mathematical life has been spent on algebraic infix calculators, RPN feels like an alien transmission. Where is the <code>=</code> key? Why did tapping <code>3</code> just overwrite what was on screen? Why are numbers sliding upward into a mystery four-level stack (<span class="arithmatex">\(X, Y, Z, T\)</span>)?</p>
-<p>On an iPhone or iPad, onboarding is easy: you can pop up full-screen modal sheets, show cute animated diagrams, and darken the background. But on an Apple Watch display measuring less than two inches diagonally, a modal sheet completely devours the keypad. You cannot teach someone how to operate a mechanical calculator if the buttons are hidden behind an essay.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/06/23/watch-tutorial-presentation-logic-interactive-state-machines-on-the-wrist/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-20 00:00:00">Saturday, June 20, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../../category/watchos/" class="md-meta__link">watchOS</a>, 
-              <a href="../../../../category/ux/" class="md-meta__link">UX</a>, 
-              <a href="../../../../category/rpncore/" class="md-meta__link">RPNCore</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="fraction-entry-on-watchos-the-slider-ui-experiment-and-deterministic-fallback"><a class="toclink" href="../../../../2026/06/20/fraction-entry-on-watchos-the-slider-ui-experiment-and-deterministic-fallback/">Fraction Entry on watchOS: The Slider UI Experiment and Deterministic Fallback</a></h2>
-<p>Every indie developer has built a feature they thought was pure genius, only to discover in testing that it was completely unusable garbage.</p>
-<p>For us, that feature was the watchOS Fraction Slider.</p>
-<p>On a vintage Hewlett-Packard HP-32SII, entering mixed fractions is second nature. You tap <code>3 . 1 6 . 1 1 3</code> and the display snaps to the famous Milü approximation for <span class="arithmatex">\(\pi\)</span> (<span class="arithmatex">\(3\ 16/113 \approx \pi\)</span>). Behind the scenes, the machine uses the decimal key as a separator delimiter, mapping into <code>RPNCore</code> operations like <code>CalculatorOperation.slashc</code> (<code>/c</code>) and configuring hardware flags (Flags 7, 8, and 9) to control maximum denominators.</p>
-<p>When we ported this to the Apple Watch, we ran headfirst into a wall. On a 40mm watch face, cramming a 43-key layout onto the screen is impossible. We didn't have room for a dedicated <code>/c</code> fraction button on the primary numeric panel. So we thought: <em>Hey, why not do something modern and touch-native?</em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/06/20/fraction-entry-on-watchos-the-slider-ui-experiment-and-deterministic-fallback/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
       
         
           
@@ -1167,7 +1152,7 @@
 
 
 <nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <a class="md-pagination__link" href="../2/">2</a> <a class="md-pagination__link" href="../3/">3</a> <span class="md-pagination__current">4</span> <a class="md-pagination__link" href="../5/">5</a>
+  <a class="md-pagination__link" href="../../">1</a> <a class="md-pagination__link" href="../2/">2</a> <a class="md-pagination__link" href="../3/">3</a> <span class="md-pagination__current">4</span> <a class="md-pagination__link" href="../5/">5</a> <a class="md-pagination__link" href="../6/">6</a>
 </nav>
         
       

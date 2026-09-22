@@ -12,7 +12,7 @@
         <meta name="author" content="StackCalc Engineering">
       
       
-        <link rel="canonical" href="https://www.stackcalc.io/blog/category/qa/">
+        <link rel="canonical" href="https://www.stackcalc.io/blog/category/reverseengineering/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>QA - StackCalc32</title>
+        <title>ReverseEngineering - StackCalc32</title>
       
     
     
@@ -101,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#qa" class="md-skip">
+        <a href="#reverseengineering" class="md-skip">
           Skip to content
         </a>
       
@@ -139,7 +139,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              QA
+              ReverseEngineering
             
           </span>
         </div>
@@ -638,7 +638,7 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="qa">QA</h1>
+        <h1 id="reverseengineering">ReverseEngineering</h1>
       </header>
       
         <article class="md-post md-post--excerpt">
@@ -655,64 +655,13 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-09-19 00:00:00">Saturday, September 19, 2026</time></li>
+          <time datetime="2026-09-22 00:00:00">Tuesday, September 22, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
               <a href="../testing/" class="md-meta__link">Testing</a>, 
-              <a href="./" class="md-meta__link">QA</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="ui-fuzzing-key-mash-injection-annunciator-state-parity"><a class="toclink" href="../../2026/09/19/ui-fuzzing-key-mash-injection--annunciator-state-parity/">UI Fuzzing: Key Mash Injection &amp; Annunciator State Parity</a></h2>
-<p>A calculation engine can pass 1,200 unit tests with flying colors and still completely fall apart the second a real human touches the keyboard.</p>
-<p>Humans do not key in clean mathematical textbook formulas. They mash buttons impatiently, double-tap keys while walking down the stairs, change their minds mid-keystroke, toggle shift layers frantically, and mash <code>CLEAR</code> while an input prompt is halfway through animating onto the screen.</p>
-<p>As a software and AI expert with a 3D printer running button plunger prototypes on my desk, I believe it is an absolute injustice that more students and engineers do not use RPN calculators. But when someone tries an RPN calculator for the first time, a single stuck shift layer or corrupted input buffer will convince them the whole paradigm is broken. In an RPN scientific calculator, the user interface is an intricate, hair-trigger state machine. A single button press does not simply render a character—it mutates the active mantissa, switches modifier layers (Gold, Blue), toggles degree/radian annunciators, or navigates prompt stacks. </p>
-<p>To ensure our UI never deadlocks, drops strokes, or displays ghost annunciators on glass or physical silicon, we brought software testing superpowers to the interface. We paired with AI coding agents to map state transitions and built a dedicated "toddler simulator"—an adversarial UI fuzzing harness (<code>Tools/Fuzzing/live_simulator_fuzzer.py</code>) designed to bombard running simulator instances and physical keypad bridges with 40 chaotic keystrokes per second.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/09/19/ui-fuzzing-key-mash-injection--annunciator-state-parity/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-09-15 00:00:00">Tuesday, September 15, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../testing/" class="md-meta__link">Testing</a>, 
-              <a href="./" class="md-meta__link">QA</a></li>
+              <a href="./" class="md-meta__link">ReverseEngineering</a></li>
         
         
           
@@ -727,169 +676,14 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="hardware-fuzzing-lessons-retiring-the-python-simulator-after-44100-mismatches"><a class="toclink" href="../../2026/09/15/hardware-fuzzing-lessons-retiring-the-python-simulator-after-44100-mismatches/">Hardware Fuzzing Lessons: Retiring the Python Simulator After 44/100 Mismatches</a></h2>
-<p>We spent three days chasing a floating-point ghost on the RP2350 microcontroller before discovering that our "gold standard" test oracle was lying through its teeth.</p>
-<p>Like almost every software engineer, my natural reflex for rapid scripting and math modeling is Python. Early in the project, I used an AI coding assistant to quickly spin up a 200-line Python simulator (<code>python_engine.py</code>) to act as our differential test oracle. The script was supposed to generate test vectors, compute the expected stack state, and serve as the golden reference for our bare-metal Embedded Swift firmware. Python has great math libraries and zero compiler hassle—what could possibly go wrong?</p>
-<p>As a software and AI expert with a 3D printer running prototypes on my desk, I believe it is an absolute injustice that more students and engineers do not use RPN calculators. I wanted our physical hardware to be beyond reproach. So we hooked both engines up to our automated differential fuzzer—wielding software testing superpowers against bare-metal silicon—took a sip of coffee, and ran our first 100 random keystroke sequences.</p>
-<p>The result was an unmitigated, humbling disaster: <strong>44 out of 100 tests failed immediately</strong>.</p>
-<p>The microcontroller firmware wasn't broken at all. The failure was a classic case of software habits blinding us to physical calculator realities: my Python script (and the initial AI prompts that drafted it) had backed the RPN stack with an unbounded Python <code>list.append()</code>. It completely missed the fundamental hardware invariant of the HP-32SII: a strictly bounded 4-level stack where pushing beyond <span class="arithmatex">\(T\)</span> drops values into the bit-bucket, and binary reductions cause the top register <span class="arithmatex">\(T\)</span> to duplicate into itself!</p>
+    <h2 id="verifying-parity-without-the-rom-part-1-black-box-behavioral-modeling"><a class="toclink" href="../../2026/09/22/verifying-parity-without-the-rom-part-1-black-box-behavioral-modeling/">Verifying Parity Without the ROM (Part 1: Black-Box Behavioral Modeling)</a></h2>
+<p>On my workbench, right beside my 3D printer and mechanical keyboard, sits a battered HP-32SII manufactured in Singapore in the spring of 1989. Its rubber feet have long turned to dust, and the silver Pioneer-series aluminum faceplate is worn smooth around the <code>ENTER</code> key. But when you press a button, that segmented LCD still snaps with crisp, uncompromising mathematical certainty.</p>
+<p>As a software and AI expert with a desktop 3D printer whirring away printing button plungers, I believe it is an absolute injustice that more people do not use RPN calculators. When setting out to resurrect this legendary machine as an open, accessible, low-cost calculator for the next generation of students and makers, I faced an absolute legal and architectural constraint: clean-room implementation. Dumping Hewlett-Packard's proprietary Saturn processor ROM and disassembling its microcode was completely off-limits. To create an open-source, commercially viable device that vintage purists would respect and new students could trust, we had to achieve bit-for-bit behavioral parity entirely through clean-room black-box reverse engineering.</p>
+<p>How does a software developer reverse-engineer thirty years of Corvallis state machine nuances without a ROM dump? This was where AI coding agents became an indispensable force multiplier. I fed vintage user manual descriptions and mathematical edge cases into AI prompting workflows, asking the models to synthesize candidate finite state machines and flag hidden state latches (like stack-lift disable rules after <code>ENTER</code> or <code>CLx</code>). We then validated those synthesized state tables against physical keystroke sequences on my actual HP-32SII hardware, building an authoritative 350-scenario golden trace catalog that continuously audits <code>RPNCore</code>.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/09/15/hardware-fuzzing-lessons-retiring-the-python-simulator-after-44100-mismatches/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-09-03 00:00:00">Thursday, September 3, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../tools/" class="md-meta__link">Tools</a>, 
-              <a href="./" class="md-meta__link">QA</a>, 
-              <a href="../testing/" class="md-meta__link">Testing</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="cross-platform-cicd-building-embedded-swift-and-xcode-targets"><a class="toclink" href="../../2026/09/03/cross-platform-cicd-building-embedded-swift-and-xcode-targets/">Cross-Platform CI/CD: Building Embedded Swift and Xcode Targets</a></h2>
-<p>Most software teams have it pretty straightforward in continuous integration: run <code>npm test</code> or <code>cargo test</code>, grab a code coverage badge, and call it a day. But when your monorepo simultaneously targets watchOS 10 on the Apple Watch and bare-metal ARM Cortex-M33 on a sub-dollar microcontroller, CI feels like refereeing a cage match between radically conflicting operating systems, toolchains, and compiler flags.</p>
-<p>As a software engineer who loves classic RPN calculators and spends evenings prototyping 3D-printed calculator chassis at home, I am driven by the belief that it is an absolute injustice that more students and engineers do not use RPN. We wanted to build a rock-solid, open-source device that makes RPN accessible to anyone. But maintaining true mathematical and behavioral parity between high-level Swift on Apple Silicon and Embedded Swift on physical silicon requires industrial-grade automation. A single Git commit to <code>RPNCore</code> touches the core calculation engine. Within minutes, our pipeline must prove that this mathematical change compiles cleanly under Xcode 16 for watchOS, iOS, and macOS, passes 1,200 unit tests, and simultaneously compiles via CMake and Ninja under an Ubuntu ARM toolchain to generate bit-accurate UF2 firmware for the Raspberry Pi RP2350.</p>
-<p>Wrangling these two universes into a single automated pipeline without burning our CI budget or waiting thirty minutes per pull request took serious plumbing. We paired with AI coding agents to untangle the matrix dependencies, generate optimized GitHub Actions workflows, and establish hermetic caching layers.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/09/03/cross-platform-cicd-building-embedded-swift-and-xcode-targets/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-19 00:00:00">Wednesday, August 19, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../testing/" class="md-meta__link">Testing</a>, 
-              <a href="./" class="md-meta__link">QA</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              5 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="unit-testing-rpncore-1200-boundary-test-cases-mutation-testing"><a class="toclink" href="../../2026/08/19/unit-testing-rpncore-1200-boundary-test-cases--mutation-testing/">Unit Testing RPNCore: 1,200 Boundary Test Cases &amp; Mutation Testing</a></h2>
-<p>If a banking app is off by half a cent, an auditor files a bug ticket. If a mobile game drops a physics frame, nobody gets hurt. But if an RPN scientific calculator miscalculates <span class="arithmatex">\(\tan(89.999^\circ)\)</span>, silently mangles a stack lift after <code>ENTER</code>, or drops an exponent during structural load analysis, someone's real-world bridge calculation fails.</p>
-<p>As a software engineer who grew up with an abiding love for classic RPN calculators and now tinkers with desktop 3D printing to build an accessible, modern instrument for the next generation of students and makers, I knew that reliability couldn't be an afterthought. When designing <code>RPNCore</code>—the calculation engine that powers StackCalc across both Apple Silicon and bare-metal ARM microcontrollers—our early design discussions were fueled by sheer mathematical paranoia. We didn't want a token test suite that rubber-stamped 95% line coverage on happy paths. Bringing software testing rigor to hardware, we paired with AI coding agents to systematically brainstorm boundary vectors and construct an adversarial battering ram that actively tried to break the engine under every conceivable mathematical edge case.</p>
-<p>Today, <code>RPNCore</code> is guarded by over 1,200 deterministic test cases distributed across 50 dedicated XCTest suites. More importantly, we validated the bug-hunting power of those tests using automated mutation analysis to prove that our assertions actively catch subtle logic faults.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/08/19/unit-testing-rpncore-1200-boundary-test-cases--mutation-testing/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-07-07 00:00:00">Tuesday, July 7, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../ios/" class="md-meta__link">iOS</a>, 
-              <a href="../watchos/" class="md-meta__link">watchOS</a>, 
-              <a href="./" class="md-meta__link">QA</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="fixing-testflight-bugs-the-7-beta-defects-final-polish"><a class="toclink" href="../../2026/07/07/fixing-testflight-bugs-the-7-beta-defects--final-polish/">Fixing TestFlight Bugs: The 7 Beta Defects &amp; Final Polish</a></h2>
-<p>There is nothing quite like the stomach-drop feeling of pushing your pride-and-joy build to Apple TestFlight, thinking your test suite has 100% mathematical code coverage, and then watching real human beings shatter your assumptions within twenty-four hours.</p>
-<p>We sent our first private beta to thirty people: a mix of mechanical engineers, civil surveyors, and seasoned HP calculator collectors. We thought we had built a bulletproof instrument. </p>
-<p>Instead, our inbox exploded: German engineers complained that <span class="arithmatex">\(\pi\)</span> was being truncated to exactly <span class="arithmatex">\(3.0\)</span>; surveyors in the field reported the app was locking up after four hundred keystrokes; and collectors wondered why dismissing a menu caused the calculator to fire random math operations behind their backs.</p>
-<p>Synthetic unit tests in Xcode test what the developer thought to test. Real users on TestFlight test what happens when chaos meets reality. Over three grueling weeks, we tracked down and eradicated the <strong>7 critical beta defects</strong> in commit <code>4510d8f</code>.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/07/07/fixing-testflight-bugs-the-7-beta-defects--final-polish/">
+        <a href="../../2026/09/22/verifying-parity-without-the-rom-part-1-black-box-behavioral-modeling/">
           Continue reading
         </a>
       </nav>
