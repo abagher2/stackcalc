@@ -3,9 +3,6 @@ site_description: "A high-quality, everyday-use RPN calculator for a new generat
 site_author: "StackCalc Engineering"
 site_url: "https://www.stackcalc.io"
 
-exclude_docs: |
-  ecommerce.md
-
 extra_css:
   - stylesheets/brutalist.css
 

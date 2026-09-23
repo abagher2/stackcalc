@@ -44,13 +44,11 @@ StackCalc is built to empower students with deep spatial intuition and conceptua
 
 ---
 
-## 4. Hardware Kits & Storefront Purchases
+## 4. Physical prototypes and future products
 
-When purchasing physical calculators, DIY snap-assembly kits, or accessories through `https://www.stackcalc.io` (via our Shopify storefront):
+StackCalc currently publishes selected printable prototype files and teaching materials. The pictured calculator is an unpowered mechanical prototype; its RP2350 board design is in fabrication. StackCalc does not offer a physical calculator for direct purchase through `stackcalc.io` at this time.
 
-- **Assembly Kits:** Physical kits ship with 100% pre-soldered and factory-tested electronics. Assembly involves snap-fitting keycaps, chassis, and faceplates. Users must follow documented assembly instructions to prevent mechanical stress or damage to display cables.
-- **Limited Warranty:** We warrant that pre-tested mainboards and electronic displays will be free from defects in materials and workmanship under normal use for a period of 90 days from delivery.
-- **Returns & Exchanges:** Unassembled kits in original packaging may be returned within 30 days of receipt. Open an issue on our [GitHub Help Desk](https://github.com/abagher2/stackcalc/issues) for return authorization.
+If a physical product becomes available through a named marketplace, the listing will identify the offered revision, contents, processing time, warranty, and return policy. The marketplace listing and applicable law govern that purchase.
 
 ---
 

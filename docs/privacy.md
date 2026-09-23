@@ -51,7 +51,7 @@ StackCalc is designed for learners of all ages, from elementary school students 
 
 Our documentation and storefront website (`https://www.stackcalc.io`) is hosted via GitHub Pages. Standard server access logs (such as IP addresses and browser user-agent headers) may be automatically processed by GitHub to ensure infrastructure security and deliver the web service. We do not inject tracking cookies or third-party marketing trackers on this documentation site.
 
-If you choose to purchase physical hardware kits or accessories through our Shopify storefront, payment processing and shipping details are handled securely by Shopify's certified PCI-compliant checkout infrastructure and are subject to Shopify's standard privacy policies.
+StackCalc does not currently process direct physical-product purchases through this website. If a future product links to a named marketplace, that marketplace's privacy policy will describe its checkout, payment, and shipping-data practices.
 
 ---
 
