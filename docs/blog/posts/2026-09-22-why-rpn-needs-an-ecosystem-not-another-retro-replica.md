@@ -30,6 +30,6 @@ Established RPN calculators are excellent instruments for people who already hav
 
 The design rule is to keep meaning stable while changing the surface. A fraction tower, a stack tile, a watch interaction, and a physical key should all point to the same operation instead of asking the learner to memorize a new model on every device.
 
-## What this project will test
+## What comes next
 
-The ecosystem is a product and teaching-resource direction, not a claim of classroom effectiveness. The work now is to publish reproducible artifacts, run physical and educator validation, and report what each method establishes. The current mechanical calculator is an unpowered four-part printed prototype; the companion app is available on the [App Store](https://apps.apple.com/app/id6801788040).
+The next step is to put the artifacts in people’s hands: printable teaching materials, physical prototypes, and educator sessions that improve the activities. The current mechanical calculator is an unpowered four-part printed prototype; the companion app is available on the [App Store](https://apps.apple.com/app/id6801788040).

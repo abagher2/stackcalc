@@ -4,9 +4,9 @@ title: "StackCalc Learning Lab"
 
 # StackCalc Learning Lab
 
-The Learning Lab is the first physical teaching-resource collection in the StackCalc ecosystem. It does not replace the calculator. It gives a learner tangible ways to represent quantities, a four-register stack, an expression tree, and coordinate relationships before translating them into calculator operations.
+The Learning Lab is the first physical teaching-resource collection in the StackCalc ecosystem. It gives a learner tangible ways to represent quantities, a four-register stack, an expression tree, and coordinate relationships before translating them into calculator operations.
 
-The collection is a completed source-and-manufacturing prototype, not a classroom-outcome study or a retail kit. It contains 13 STL plates with 79 solids, matching OpenSCAD sources, laser artwork, a catalog manifest, reference cards, and a teacher booklet.
+The internally maintained collection contains 13 STL plates with 79 solids, matching OpenSCAD sources, laser artwork, a catalog manifest, reference cards, and a teacher booklet. The public release below contains the printable STL plates and teacher PDFs.
 
 ![StackCalc Learning Lab teacher guide showing the fraction studio, stack stage, expression tree, and coordinate lab](assets/learning-lab-teacher-guide.png)
 
@@ -32,9 +32,9 @@ The fraction studio uses blocks with a common 24 × 24 mm footprint. Whole, half
 
 *The printable reference cards label the stack, fraction, and distance activities used with the STL plates.*
 
-## Current boundaries
+## Prototype status
 
-The teaching resources are designed and generated locally. Printer fit, engraving contrast, edge durability, writing-surface behavior, classroom use, curriculum alignment, pricing, packaging, and retail fulfillment all require separate physical and educator validation. The calculator itself remains an unpowered four-part mechanical prototype while its RP2350 PCB is developed.
+The Learning Lab is ready for printing and teacher review. The calculator is an unpowered four-part mechanical prototype, and its RP2350 PCB is in fabrication. We will add fit, engraving, and educator findings as they are collected.
 
 ## Download the prototype materials
 
