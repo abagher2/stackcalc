@@ -13,11 +13,17 @@ The active source family is `chassis_award`, `top_cap_award`, `unified_faceplate
 | `make -C Hardware unibody-faceplate` | `unified_faceplate_award.stl` |
 | `make -C Hardware button-membrane` | `tpu_membrane_award.stl` |
 
-Run `make -C Hardware doctor` first and `make -C Hardware assembly-preview` for a CAD view. The [hardware source and build guide](https://github.com/abagher2/watch-calc-32/tree/main/Hardware) is the source of downloadable designs; generated meshes must match the chosen source revision. Record that revision with the build. Export success does not prove physical fit.
+## Download the current mechanical prototype
+
+The public mechanical release contains the matching four STL files used by the present printed prototype: chassis, faceplate, TPU membrane, and snap-retained cap. It does not include electronics source, firmware source, CAD generators, manufacturing artwork, or a claim that the printed calculator is a completed powered device.
+
+[Download the current four-part mechanical STL set](downloads/stackcalc-current-mechanical-prototype-stls.zip){ .md-button }
+
+The matching PrusaSlicer 3MF reference projects are available in the Hackaday project Files area for people following the documented prototype print settings. Use the four STL files as a set; older print-in-place spring fixtures, separate faceplates, and alternate covers are exploration artifacts rather than substitute kit parts.
 
 ### Assembly and service
 
-Dry-fit the matching faceplate and membrane in the chassis rails, slide the populated PCB behind them, inspect display/switch/wiring clearances, then fit the snap-retained cap. Check battery polarity and clearance against the board and holder documentation before applying power. Remove power before service, release retention without forcing the display, and disassemble in reverse order. Timed assembly, key force, retention fatigue, drop resistance and tool-free service remain unverified until a matching specimen is tested.
+Dry-fit the matching faceplate and membrane in the chassis rails, then fit the snap-retained cap. The current release is an unpowered mechanical prototype: its RP2350 board design is in fabrication and is not installed in the pictured specimen. Once the board arrives, the integration sequence will add board seating, display alignment, switch reach, connector clearance, battery polarity, and power checks. Release the retention features rather than prying on the display surround when reopening the printed assembly.
 
 ### Material and marking direction
 
