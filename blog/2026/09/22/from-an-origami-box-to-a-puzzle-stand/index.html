@@ -12,13 +12,13 @@
         <meta name="author" content="StackCalc Engineering">
       
       
-        <link rel="canonical" href="https://www.stackcalc.io/blog/2026/09/22/fuzzing-the-firmware-path-in-an-rp2350-emulator/">
+        <link rel="canonical" href="https://www.stackcalc.io/blog/2026/09/22/from-an-origami-box-to-a-puzzle-stand/">
       
       
-        <link rel="prev" href="../how-the-pcb-design-shapes-a-printed-calculator-before-it-arrives/">
+        <link rel="prev" href="../fuzzing-the-firmware-path-in-an-rp2350-emulator/">
       
       
-        <link rel="next" href="../from-an-origami-box-to-a-puzzle-stand/">
+        <link rel="next" href="../what-the-first-printed-stackcalc-prototype-can-teach-us/">
       
       
       <link rel="icon" href="../../../../../assets/stackcalc-logo.svg">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Fuzzing the Firmware Path in an RP2350 Emulator - StackCalc32</title>
+        <title>From an Origami Box to a Puzzle Stand - StackCalc32</title>
       
     
     
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fuzz-the-same-input-boundary-the-board-will-use" class="md-skip">
+        <a href="#start-with-a-fold-not-a-tray" class="md-skip">
           Skip to content
         </a>
       
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fuzzing the Firmware Path in an RP2350 Emulator
+              From an Origami Box to a Puzzle Stand
             
           </span>
         </div>
@@ -645,27 +645,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fuzz-the-same-input-boundary-the-board-will-use" class="md-nav__link">
+  <a href="#start-with-a-fold-not-a-tray" class="md-nav__link">
     <span class="md-ellipsis">
-      Fuzz the same input boundary the board will use
+      Start with a fold, not a tray
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#let-an-llm-broaden-the-questions-not-decide-correctness" class="md-nav__link">
+  <a href="#turn-the-insert-into-a-small-construction-set" class="md-nav__link">
     <span class="md-ellipsis">
-      Let an LLM broaden the questions, not decide correctness
+      Turn the insert into a small construction set
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-this-establishes" class="md-nav__link">
+  <a href="#use-simulation-to-decide-what-to-print-next" class="md-nav__link">
     <span class="md-ellipsis">
-      What this establishes
+      Use simulation to decide what to print next
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packaging-is-part-of-the-interaction-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packaging is part of the interaction design
     </span>
   </a>
   
@@ -738,9 +747,9 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/testing/">Testing</a>, 
-                              <a href="../../../../category/firmware/">Firmware</a>, 
-                              <a href="../../../../category/simulation/">Simulation</a></span>
+                              <a href="../../../../category/hardware/">Hardware</a>, 
+                              <a href="../../../../category/3d-printing/">3D Printing</a>, 
+                              <a href="../../../../category/product-design/">Product Design</a></span>
                         </div>
                       </li>
                     
@@ -751,7 +760,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              5 min read
                             
                           </span>
                         </div>
@@ -771,20 +780,32 @@
         
 
 
-  <h1>Fuzzing the Firmware Path in an RP2350 Emulator</h1>
+  <h1>From an Origami Box to a Puzzle Stand</h1>
 
-<p>The StackCalc calculator board is not assembled yet, but the firmware path is already rich enough to break in interesting ways. A random input sequence can cross number entry, ENTER, stack lift, shifts, menus, modes, clear, correction, and display updates in combinations that a hand-written demo never reaches.</p>
-<p>We use the RP2350 emulator to run the firmware image and fuzz those combinations through its keypad contract. That is firmware-emulation evidence, not evidence of a physical switch matrix or display.</p>
+<p>Shipping support is usually dead weight: it protects a device for one trip and then disappears into a bin. We wanted the StackCalc packaging support to keep earning its space on a desk or shelf. That changed the design question from “how do we protect a calculator?” to “what can protect it, organize the kit, and become useful after unboxing?”</p>
+<p>The first answer was an origami fold. The current answer is a printed puzzle stand: four dovetail-connected corner pieces form an upright shelf stand, while a separate strut becomes a low desktop typing support. The printed pieces and the package envelope are still being refined together, but the change already made the whole product feel more connected—from the first opened box to the way the calculator lives between uses.</p>
+<p><img alt="A printed StackCalc prototype docked in the shelf-stand assembly." src="../../../../../assets/prototype-puzzle-stand-shelf.jpeg" /></p>
 <!-- more -->
 
-<h2 id="fuzz-the-same-input-boundary-the-board-will-use">Fuzz the same input boundary the board will use</h2>
-<p>The simulator browser does not invoke calculator commands directly. Its key manifest maps a visible key to a row-and-column contact; the local service injects that contact into the emulated matrix; the firmware’s normal scan path receives it. The resulting calculator state writes the 132 × 65 framebuffer that the browser renders.</p>
-<p>The fuzz evaluator builds a catalog from the same reachable operations and physical key map used by the firmware profile. It includes short, named recipes for risky transitions as well as generated sequences. This is a useful testing shape because a failure has a path to diagnosis: is the problem in the operation mapping, matrix injection, firmware state transition, or rendered frame?</p>
-<h2 id="let-an-llm-broaden-the-questions-not-decide-correctness">Let an LLM broaden the questions, not decide correctness</h2>
-<p>We also use LLMs to propose awkward state combinations and questions that are easy to omit from a conventional test plan: correction after a mode change, a shift followed by a number, a stack operation after an interrupted entry, or an unusual sequence through a menu. Those proposals become explicit, reproducible sequences. The reference calculator state and the emulator output remain the things we inspect; an LLM is not the test oracle.</p>
-<h2 id="what-this-establishes">What this establishes</h2>
-<p>The emulator can exercise the compiled firmware’s matrix, calculator, persistence, rendering, and diagnostic seams together. It can expose a key-map mismatch or a sequence that leaves the modeled calculator in an unexpected state. It cannot measure a real switch’s bounce, electrical pull-ups, LCD contrast, current draw, or a physical keypress. Those become board-level tests when the fabricated PCB is assembled.</p>
-<p>The PCB is nevertheless part of this work: its key and display interfaces inform both the firmware contract and the mechanical layout. The source and current simulator overview are on the <a href="../../../../../firmware/">StackCalc firmware page</a>.</p>
+<h2 id="start-with-a-fold-not-a-tray">Start with a fold, not a tray</h2>
+<p>Our first packaging concept was a single scored-cardboard blank. Its panels wrapped an approximately 80 × 150 × 20 mm calculator envelope for transport, then folded into a wedge with a front lip. It was deliberately simple: a cut line, score lines, a tuck flap, and a second fold that turned a carton wall into a desk support.</p>
+<p>That experiment was useful even though it was not the direction we kept. It let us see the real questions early: where does the calculator stop, which edge takes the load, how does a user reach the device, and can a support be assembled without a bag of separate hardware? The fold made protection and support depend on the same flexible panel. The next version split those jobs into durable printed parts that could lock together in more than one arrangement.</p>
+<h2 id="turn-the-insert-into-a-small-construction-set">Turn the insert into a small construction set</h2>
+<p>The current CAD works inside a 124.46 × 167.64 × 48.26 mm packaging envelope. Four corner modules surround the calculator bay and lock through dovetail joints with 0.20 mm nominal FDM clearance. The joints are not decorative: they locate the corners, carry the stand geometry, and let the same pieces be rearranged after the package is opened.</p>
+<p>In shelf mode, the front bay holds the calculator at 78°. A rear bay leaves room for the accompanying TPU pouch, and the low front lip keeps the device from sliding forward. That creates a near-vertical home for a calculator that might spend much of its time waiting on a bookshelf, kitchen counter, or shared family desk.</p>
+<p>In desk mode, a separate lateral strut lifts the rear edge by 25.4 mm. Across the 146 mm calculator length, that produces an 11.6° typing incline. The intent is a quieter role: the calculator stays low enough to use like a desktop tool, with a retaining lip at the back rather than a large display pedestal.</p>
+<p><img alt="CAD render of the shelf configuration: a front calculator bay, rear pouch bay, and dovetail-connected corner modules." src="../../../../../assets/puzzle-stand-shelf-render.png" /></p>
+<p>The two configurations ask for different things. The shelf stand needs a stable upright presentation and an easy grab point. The desk stand needs a clean resting angle and a support that does not occupy the area where hands approach the keys. Treating them as the same product component forced us to make every corner, rail, and lip earn its material.</p>
+<h2 id="use-simulation-to-decide-what-to-print-next">Use simulation to decide what to print next</h2>
+<p>The stand geometry was not chosen only by posing it in CAD. We built a custom six-degree-of-freedom contact-dynamics model around the stand’s dimensions and contact surfaces. It steps through the dovetail assembly, calculator settling into the 78° front bay, pouch settling in the rear bay, transverse motion on a desk, pitch-and-roll agitation, and a 4 N top-row keypress load.</p>
+<p>That model gives us a fast way to compare geometry before committing to another print. If a retaining lip is moved, a contact point changes. If a bay opens by a millimetre, the simulated settling path changes. If a support is taller, the keypress moment and the centre-of-mass relationship change with it. We use those outputs to choose the next arrangement to print, then compare them with the physical prototypes in hand.</p>
+<p>The model is part of the design loop, not a substitute for the printed object. The photos matter because they show the things a simulation does not: whether the dovetail is pleasant to assemble, whether the calculator is easy to lift out, and whether the whole arrangement reads as a useful object instead of packing material that happens to stand up.</p>
+<p><img alt="A physical printed stand prototype reveals the corner modules, rails, and central interlock from the back." src="../../../../../assets/prototype-puzzle-stand-assembly.jpeg" /></p>
+<h2 id="packaging-is-part-of-the-interaction-design">Packaging is part of the interaction design</h2>
+<p>The stand is one component in a larger product path. Its rails and bays make room for the calculator and companion parts while the mechanical chassis, TPU button membrane, PCB layout, firmware simulator, iPhone app, and Learning Lab are being developed around the same RPN experience.</p>
+<p>That is why we started packaging work early. A mailer dimension changes component placement. Component placement changes how a person first encounters the calculator. The first physical action after unboxing can either be “throw this away” or “put this somewhere useful.” We want it to be the latter.</p>
+<p>The current mechanical calculator is still a printed prototype, and the RP2350 board is in fabrication. The stand prototypes let us keep improving the whole system around it now rather than leaving shipping and daily placement as last-minute problems. More context on the mechanical direction is in our <a href="../a-tool-free-calculator-built-around-a-sliding-assembly/">tool-free sliding assembly post</a>, and the companion materials live in the <a href="../../../../../learning-lab/">StackCalc Learning Lab</a>.</p>
+<p>For the next revision, the question is less about whether a stand can be made and more about which everyday use deserves priority: the upright shelf view or the low desktop wedge. That is the tradeoff we are testing in prints, models, and the rest of the product system.</p>
 
 
 
