@@ -491,7 +491,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Current CAD kit">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-current-mechanical-prototype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download the current mechanical prototype
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Download the current mechanical prototype">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -853,7 +862,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Current CAD kit">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-current-mechanical-prototype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download the current mechanical prototype
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Download the current mechanical prototype">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1038,9 +1056,12 @@
 </tr>
 </tbody>
 </table>
-<p>Run <code>make -C Hardware doctor</code> first and <code>make -C Hardware assembly-preview</code> for a CAD view. The <a href="https://github.com/abagher2/watch-calc-32/tree/main/Hardware">hardware source and build guide</a> is the source of downloadable designs; generated meshes must match the chosen source revision. Record that revision with the build. Export success does not prove physical fit.</p>
+<h2 id="download-the-current-mechanical-prototype">Download the current mechanical prototype</h2>
+<p>The public mechanical release contains the matching four STL files used by the present printed prototype: chassis, faceplate, TPU membrane, and snap-retained cap. It does not include electronics source, firmware source, CAD generators, manufacturing artwork, or a claim that the printed calculator is a completed powered device.</p>
+<p><a href="../downloads/stackcalc-current-mechanical-prototype-stls.zip">Download the current four-part mechanical STL set</a>{ .md-button }</p>
+<p>The matching PrusaSlicer 3MF reference projects are available in the Hackaday project Files area for people following the documented prototype print settings. Use the four STL files as a set; older print-in-place spring fixtures, separate faceplates, and alternate covers are exploration artifacts rather than substitute kit parts.</p>
 <h3 id="assembly-and-service">Assembly and service</h3>
-<p>Dry-fit the matching faceplate and membrane in the chassis rails, slide the populated PCB behind them, inspect display/switch/wiring clearances, then fit the snap-retained cap. Check battery polarity and clearance against the board and holder documentation before applying power. Remove power before service, release retention without forcing the display, and disassemble in reverse order. Timed assembly, key force, retention fatigue, drop resistance and tool-free service remain unverified until a matching specimen is tested.</p>
+<p>Dry-fit the matching faceplate and membrane in the chassis rails, then fit the snap-retained cap. The current release is an unpowered mechanical prototype: its RP2350 board design is in fabrication and is not installed in the pictured specimen. Once the board arrives, the integration sequence will add board seating, display alignment, switch reach, connector clearance, battery polarity, and power checks. Release the retention features rather than prying on the display surround when reopening the printed assembly.</p>
 <h3 id="material-and-marking-direction">Material and marking direction</h3>
 <table>
 <thead>
