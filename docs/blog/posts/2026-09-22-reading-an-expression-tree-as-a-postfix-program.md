@@ -46,3 +46,7 @@ Once a learner can read the seven-token example, introduce one new branch rather
 ## Ask for a trace, not only a string
 
 For a reproducible activity, have a learner record three things: the completed branch, the token read next, and the resulting postfix string. With `(a + b) * (c - d)`, the trace is plus branch, minus branch, then multiply; the postfix string follows from that route. A teacher can swap variables for numbers afterward and run the same operation order through the Stack Stage. That creates a visible bridge from algebra structure to calculator state without asking the tree board to impersonate a keypad.
+
+## Check the route aloud
+
+Before anyone enters numbers, ask the group to read the route aloud: left leaf, right leaf, parent operation; then repeat for the second branch and the final parent. Hearing that stable order makes the later postfix string easier to audit.
