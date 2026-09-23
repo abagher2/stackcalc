@@ -7,7 +7,7 @@ description: StackCalc Privacy Policy — Zero data collection, 100% on-device l
 
 <div class="inline-block px-3 py-1 mb-6 border border-accentCyan text-accentCyan font-mono text-xs tracking-wider">// LEGAL PROTOCOL · ZERO DATA COLLECTION · EFFECTIVE SEPTEMBER 14, 2026</div>
 
-At **StackCalc**, we believe mathematics is personal, foundational, and should never be accompanied by surveillance, telemetry, or advertising. Whether you are using **StackCalc32** on iOS, iPadOS, or Apple Watch, or using the physical open-source hardware calculator, **we collect zero personal data**.
+At **StackCalc**, we believe mathematics is personal, foundational, and should never be accompanied by surveillance, telemetry, or advertising. Whether you are using **StackCalc32** on iOS, iPadOS, or Apple Watch, or following the physical calculator project, **we collect zero personal data**.
 
 ---
 
@@ -76,5 +76,5 @@ If you have questions or inquiries regarding this Privacy Policy, please reach o
 
 - **GitHub Issue Tracker:** [https://github.com/abagher2/stackcalc/issues](https://github.com/abagher2/stackcalc/issues)
 - **Web Support & Help Desk:** [https://www.stackcalc.io/support/](https://www.stackcalc.io/support/)
-- **Documentation & Source:** [https://github.com/abagher2/stackcalc](https://github.com/abagher2/stackcalc)
+- **Documentation & public downloads:** [https://www.stackcalc.io](https://www.stackcalc.io)
 

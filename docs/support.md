@@ -79,19 +79,12 @@ StackCalc includes an equation solver based on the legendary HP-32SII algorithms
 
 ---
 
-### 7. Physical Hardware & DIY Snap-Together Kits
-- **Pre-Soldered Boards:** All electronic circuit boards and LCD modules shipped from our storefront are 100% pre-soldered and tested.
-- **Assembly Guide:** Use the current source revision and snap-retention instructions. Assembly time and tools must be validated for the selected kit; see the [Hardware Documentation](hardware.md).
-- **Open-Source CAD & 3D Print Models (OpenSCAD & STL):** All mechanical parts are open-source and maintained in the main repository (`Hardware/designs/`):
-  - **Chassis Enclosure:** [`Hardware/designs/chassis_tapered.scad`](https://github.com/abagher2/watch-calc-32) &rarr; `chassis_tapered.stl` (1.60857° anti-rocking continuous desk wedge with dual-tier PCB and faceplate sliding rails)
-  - **Flexure Top Cap:** [`Hardware/designs/top_cap.scad`](https://github.com/abagher2/watch-calc-32) &rarr; `top_cap.stl` (squeeze-release cap with integrated wired CR2032 coin cell holder)
-  - **Locking Retaining Pegs:** [`Hardware/designs/tpu_retaining_peg.scad`](https://github.com/abagher2/watch-calc-32) &rarr; `tpu_retaining_peg.stl` (compliant 95A TPU mushroom pins for screwless interlock)
-  - **Unified Faceplate:** [`Hardware/designs/unified_sandwich_faceplate.scad`](https://github.com/abagher2/watch-calc-32) &rarr; `unified_sandwich_faceplate.stl` (dual-tier sliding faceplate with LCD aperture)
-  - **Tactile Key Membrane:** [`Hardware/designs/hp32sii_sandwich_tpu_membrane.scad`](https://github.com/abagher2/watch-calc-32) &rarr; `hp32sii_sandwich_tpu_membrane.stl` (95A TPU tactile button suspension)
-  - **Keycaps & Plungers:** [`Hardware/designs/hp32sii_production_buttons.scad`](https://github.com/abagher2/watch-calc-32) & [`Hardware/designs/rounded_buttons.scad`](https://github.com/abagher2/watch-calc-32) (trapezoidal HP-32SII or circular retro keycaps with 3-point planar spiral springs)
-  - **Protective Pouch:** [`Hardware/designs/tpu_pouch.scad`](https://github.com/abagher2/watch-calc-32) &rarr; `tpu_pouch.stl` (impact-absorbing 95A TPU sleeve with rear reference card pocket)
-  - **Desktop Stands:** [`Hardware/designs/puzzle_stand.scad`](https://github.com/abagher2/watch-calc-32) & [`Hardware/designs/origami_stand.scad`](https://github.com/abagher2/watch-calc-32) (modular 4-piece corner bumper / portrait stand and 10° typing elevator)
-  - **PrusaSlicer 3MF Project:** `Hardware/watch-calc-32.3mf` (pre-configured multi-material print plate with 0.05 mm button detail layer heights and top-surface ironing)
+### 7. Physical Calculator and printable materials
+
+- **Current physical status:** The tool-free chassis, faceplate, TPU membrane, and cap are printed mechanical prototypes. The KiCad RP2350 board design is in fabrication; no populated, powered calculator is represented by the current photos or downloads.
+- **Public printable release:** Download the matching four-part STL set from the [hardware guide](hardware.md#download-the-current-mechanical-prototype). It is intended for current mechanical fit and assembly exploration.
+- **Teaching materials:** The [Learning Lab](learning-lab.md#download-the-prototype-materials) provides printable learning resources and teacher PDFs.
+- **What is not public:** Electronics source, firmware source, CAD generators, manufacturing artwork, and production documentation are not public downloads.
 
 ---
 

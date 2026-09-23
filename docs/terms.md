@@ -19,7 +19,7 @@ By downloading, installing, accessing, or purchasing products through StackCalc,
 StackCalc grants you a personal, non-exclusive, non-transferable, revocable license to use the StackCalc32 software on Apple-branded devices (iPhone, iPad, Apple Watch) in accordance with the standard Apple Media Services Terms and Conditions and Licensed Application End User License Agreement (Standard EULA).
 
 ### 1.2 Open Hardware & Firmware
-StackCalc believes in open, repairable, and educational engineering. The physical hardware schematics (KiCAD), mechanical enclosures (OpenSCAD CAD models), and embedded microcontroller firmware in our public repository are licensed under their respective open-source licenses (e.g., MIT / CERN-OHL). You are free to inspect, build, modify, and learn from these designs in compliance with their open-source license terms.
+StackCalc publishes selected printable and teaching materials for the current prototype, including the four-part mechanical STL set and Learning Lab teacher PDFs. Electronics source, firmware source, CAD generators, manufacturing artwork, and production documentation are not part of the public release. Availability of a printable file does not represent a completed powered calculator or a manufacturing qualification.
 
 ---
 

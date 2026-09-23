@@ -19,6 +19,15 @@ The public mechanical release contains the matching four STL files used by the p
 
 [Download the current four-part mechanical STL set](downloads/stackcalc-current-mechanical-prototype-stls.zip){ .md-button }
 
+## Proof reel
+
+<video controls preload="metadata" poster="assets/prototype-front.jpg" style="width: 100%; max-width: 960px;">
+  <source src="assets/stackcalc-proof-reel.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+This 24-second reel uses the actual printed mechanical prototype, the shipping iPhone app, and the membrane, assembly, and stand simulations. It does not depict a powered physical calculator.
+
 The matching PrusaSlicer 3MF reference projects are available in the Hackaday project Files area for people following the documented prototype print settings. Use the four STL files as a set; older print-in-place spring fixtures, separate faceplates, and alternate covers are exploration artifacts rather than substitute kit parts.
 
 ### Assembly and service

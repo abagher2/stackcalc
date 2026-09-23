@@ -42,3 +42,7 @@ The public [Learning Lab release](../../learning-lab.md#download-the-prototype-m
 ## Extend the board without changing the rule
 
 Once a learner can read the seven-token example, introduce one new branch rather than a completely different notation. The rule stays stable: finish the left and right subtrees, then read their parent operation. That repeatable visual rule gives a teacher a way to add difficulty while retaining the same RPN explanation.
+
+## Ask for a trace, not only a string
+
+For a reproducible activity, have a learner record three things: the completed branch, the token read next, and the resulting postfix string. With `(a + b) * (c - d)`, the trace is plus branch, minus branch, then multiply; the postfix string follows from that route. A teacher can swap variables for numbers afterward and run the same operation order through the Stack Stage. That creates a visible bridge from algebra structure to calculator state without asking the tree board to impersonate a keypad.

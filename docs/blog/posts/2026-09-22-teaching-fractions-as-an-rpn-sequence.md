@@ -46,3 +46,7 @@ The printable parts, reference cards, and teacher booklet are in the [Learning L
 ## Print a small set and rotate roles
 
 A complete class set is not required to begin. One tray can support a small group if one learner builds the quantity, one names the numerator and denominator, one predicts the stack, and one enters the sequence on the app. Rotating those roles makes the relationship between physical fraction, spoken explanation, and RPN entry explicit.
+
+## Record what the learner predicts
+
+A useful worksheet has three short fields: the tower built, the fraction it represents, and the exact stack sequence to enter. The group should agree on the first two before touching the app. If the numerical result is wrong, return to the physical model and identify whether the error began with the quantity, the numerator/denominator language, or the RPN operation order. That makes a wrong answer diagnostic rather than merely incorrect, and gives a teacher a repeatable way to compare activities across a class.

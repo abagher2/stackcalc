@@ -42,3 +42,7 @@ An unchanged screen should produce a different counter pattern from a changed re
 ![The same RPN interaction is available in the shipping app while the firmware loop is inspected in emulation.](../../assets/iphone-rpn-stack.png)
 
 The fabricated board will add the electrical measurement layer: current draw, regulator behavior, display inrush, and real input-to-photon timing. The emulator gives us the named sequences and software baseline to carry into that test. The related [firmware simulator article](2026-08-26-simulating-hardware-in-software.md) explains the matrix and framebuffer path.
+
+## Keep the experiment repeatable
+
+Each profile should name the firmware revision, reset state, interaction sequence, and counter deltas. That prevents an idle-loop comparison from being confused with a warmed-up display path or a different saved-state condition. The first board session can replay those named sequences with a current probe and display timing capture. When a measured result differs from the emulator’s work counters, the discrepancy becomes a concrete hardware question—display bus activity, regulator losses, or wake timing—rather than a vague disagreement about whether the firmware was efficient.

@@ -50,3 +50,7 @@ The board and cards are included in the public [Learning Lab STL and PDF release
 ## Use mistakes as the activity material
 
 The most useful prompts are not “what is the answer?” but “what did the stack contain just before the answer?” Give a learner a plausible wrong tile arrangement, then ask which earlier keypress caused it. That keeps the activity grounded in prediction, correction, and explanation—the same habits that make RPN practical after the tiles are put away.
+
+## Set up a repeatable first session
+
+Use one operation family per round. In the first round, learners build an addition sequence and explain why X and Y are the operands. In the next, leave the tiles in a deliberately incorrect arrangement and ask them to identify the keypress that caused the error. The point is that an instructor can see and discuss the state transition in the moment. The same card sequence can then be repeated on the app, so the physical activity and calculator behavior reinforce one vocabulary.

@@ -18,7 +18,7 @@ That is why the firmware simulator is useful. It gives us a fast way to exercise
 
 ## A browser window connected to simulated firmware
 
-The browser shell in [`Firmware/Simulator`](https://github.com/abagher2/watch-calc-32/tree/main/Firmware/Simulator) is deliberately thin. It draws the calculator and creates its keypad from the shared firmware key map. A press becomes a row-and-column contact sent to the local simulator service.
+The browser simulator shell is deliberately thin. It draws the calculator and creates its keypad from the shared firmware key map. A press becomes a row-and-column contact sent to the local simulator service.
 
 That service loads the simulator-specific firmware build into an RP2350 emulator. It advances the emulated processor, exposes its matrix state, and reads the firmware display buffer. Changed 132×65 frames stream back to the browser. This lets us inspect the relationship between a key-map entry, calculator state, and the firmware-rendered display without wiring a board.
 
