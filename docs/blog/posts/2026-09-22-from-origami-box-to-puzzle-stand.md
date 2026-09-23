@@ -43,6 +43,8 @@ That model gives us a fast way to compare geometry before committing to another 
 
 The model is part of the design loop, not a substitute for the printed object. The photos matter because they show the things a simulation does not: whether the dovetail is pleasant to assemble, whether the calculator is easy to lift out, and whether the whole arrangement reads as a useful object instead of packing material that happens to stand up.
 
+![A physical printed stand prototype reveals the corner modules, rails, and central interlock from the back.](../../assets/prototype-puzzle-stand-assembly.jpeg)
+
 ![A second physical prototype view shows the calculator seated in the printed shelf stand.](../../assets/prototype-puzzle-stand-seated.jpeg)
 
 ## Packaging is part of the interaction design
