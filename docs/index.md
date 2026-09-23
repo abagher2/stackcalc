@@ -33,4 +33,4 @@ Our design question is how a learner can see, touch, and predict the next stack 
 - Start with the [StackCalc Learning Lab](learning-lab.md) and its reproducible materials.
 - Read the [engineering blog](blog/index.md) for the shared core, emulator, PCB-to-CAD relationship, printed assembly, and teaching-resource methods.
 - Review the [hardware documentation](hardware.md) for the current source-to-output map and physical-validation boundary.
-- Follow the staged [Hackaday project](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator) for build-log discussions. The StackCalc site remains the canonical home for source materials and downloads.
+- Follow the [Hackaday project](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator) for build-log discussion and project updates. StackCalc remains the canonical home for public STL packs, teacher PDFs, and detailed learning materials.

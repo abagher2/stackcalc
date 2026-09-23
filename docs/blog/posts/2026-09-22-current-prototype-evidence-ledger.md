@@ -35,7 +35,7 @@ That makes the study useful for locating geometry that needs physical testing an
 
 ![Frame from the membrane deformation study](../../assets/tpu-membrane-simulation-frame.png)
 
-<video controls preload="metadata" style={{width: '100%'}}>
+<video controls preload="metadata" style="width: 100%;">
   <source src="/assets/tpu-membrane-simulation.mp4" type="video/mp4" />
 </video>
 
@@ -51,7 +51,7 @@ The simulator establishes behavior of the compiled emulator build. It does not e
 
 The next useful data set is deliberately plain: matching specimen and revision, print material and settings, fit observations, key travel and force, neighboring-key interference, cap retention cycles, and a service/disassembly record. We will report the sample count, method, result, and failures alongside photographs.
 
-The current CAD files, slicer projects, membrane-study assets, and app walkthroughs are staged on the [StackCalc Hackaday project](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator) while the project remains private for review.
+The project build log, current photos, and project updates are on [Hackaday](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator). StackCalc remains the source for the public STL packs, teacher PDFs, and detailed learning activities.
 
 ## Use the prototype as a map of the next revision
 

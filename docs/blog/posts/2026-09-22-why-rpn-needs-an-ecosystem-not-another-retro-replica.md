@@ -13,7 +13,7 @@ categories:
 
 RPN calculators already exist. StackCalc is not a nostalgia project trying to recreate a familiar beige machine. The gap we see is a learning path: a way to move from a familiar screen to a physical instrument while understanding what the stack is doing.
 
-That is why StackCalc joins the current iPhone and Apple Watch apps, a shared calculator core, Learning Lab prototypes, and a planned RP2350 handheld around the same calculation behavior. The connection is semantic, not cosmetic.
+That is why StackCalc joins the current iPhone and Apple Watch apps, a shared calculator core, Learning Lab prototypes, and an RP2350 handheld whose board is in fabrication around the same calculation behavior. The connection is semantic, not cosmetic.
 
 <!-- more -->
 

@@ -12,7 +12,7 @@ categories:
 
 “Tool-free” is easy to write on a feature list and hard to make useful in a printed enclosure. The test is not whether an assembly has no screws; it is whether a person can insert, retain, inspect, and later release the parts without turning every opening into a breakage risk.
 
-The current StackCalc kit is an unpowered, four-part mechanical prototype: a tapered chassis, unified faceplate, TPU membrane, and snap-retained top cap. Its RP2350 KiCad board is in fabrication, but no assembled board has been installed, so this remains a mechanical design lesson rather than an electronics assembly claim.
+The current StackCalc assembly is an unpowered, four-part mechanical prototype: a tapered chassis, unified faceplate, TPU membrane, and snap-retained top cap. Its RP2350 KiCad board is in fabrication, but no assembled board has been installed, so this remains a mechanical design lesson rather than an electronics assembly claim.
 
 <!-- more -->
 

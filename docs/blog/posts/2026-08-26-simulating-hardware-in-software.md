@@ -1,6 +1,6 @@
 ---
-title: "What the Firmware Simulator Can Tell Us Before the PCB Exists"
-description: "How StackCalc runs compiled RP2350 firmware in a browser before board bring-up."
+title: "What the Firmware Simulator Can Tell Us Before Board Bring-Up"
+description: "How StackCalc runs compiled RP2350 firmware in a browser while the board is in fabrication."
 image: assets/iphone-rpn-stack.png
 date: 2026-08-26
 authors:
