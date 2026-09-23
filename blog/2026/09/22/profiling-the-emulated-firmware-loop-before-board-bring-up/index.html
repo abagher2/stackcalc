@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+        <meta name="description" content="What emulator counters reveal about scan, render, transfer, and sleep decisions.">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -18,7 +18,7 @@
         <link rel="prev" href="../reading-an-expression-tree-as-a-postfix-program/">
       
       
-        <link rel="next" href="../making-the-four-level-stack-visible-before-the-first-keypress/">
+        <link rel="next" href="../one-calculator-core-for-watch-phone-and-rp2350/">
       
       
       <link rel="icon" href="../../../../../assets/stackcalc-logo.svg">
@@ -69,13 +69,13 @@
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Profiling the Emulated Firmware Loop Before Board Bring-Up">
-  <meta property="og:description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+  <meta property="og:description" content="What emulator counters reveal about scan, render, transfer, and sleep decisions.">
   <meta property="og:url" content="https://www.stackcalc.io/blog/2026/09/22/profiling-the-emulated-firmware-loop-before-board-bring-up/">
-  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/iphone-rpn-stack.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Profiling the Emulated Firmware Loop Before Board Bring-Up">
-  <meta name="twitter:description" content="A high-quality, everyday-use RPN calculator for a new generation.">
-  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:description" content="What emulator counters reveal about scan, render, transfer, and sleep decisions.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/iphone-rpn-stack.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
       tailwind.config = {
@@ -676,6 +676,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#profile-a-sequence-not-an-adjective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile a sequence, not an adjective
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -756,7 +765,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -787,6 +796,14 @@
 <h2 id="what-an-emulator-profile-can-say">What an emulator profile can say</h2>
 <p>It can compare control-flow choices in the compiled firmware image: whether a sequence reached the intended sleep branch, whether a matrix scan occurred, and whether an update produced a new display frame. It is also useful for finding accidental work introduced by a code change.</p>
 <p>It cannot measure board current, regulator behavior, display inrush, battery voltage sag, or real button-to-photon latency. Those require the fabricated board, selected display, battery hardware, and an instrumented measurement setup. We publish simulator results as tuning evidence, then follow them with physical measurements rather than treating the model as a battery claim.</p>
+<h2 id="profile-a-sequence-not-an-adjective">Profile a sequence, not an adjective</h2>
+<p>“Low power” is not a useful firmware decision until it names the behavior being observed. The emulator exposes counters for boot completion, total and active loop work, sleep loops, full and wake-only matrix scans, renders, display transfers, skipped identical frames, and maximum loop interval. That turns a key sequence into something we can compare from one firmware revision to the next.</p>
+<p>A minimal reporting loop looks like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sample counters → run named key sequence → sample counters again → compare deltas
+</span></code></pre></div>
+<p>An unchanged screen should produce a different counter pattern from a changed result. A keypress should wake the required matrix, calculation, render, and transfer work, then let the loop return to its low-work behavior. If a code change turns an idle sequence into repeated display transfers, the counters make the regression visible before it becomes a measurement session on the board.</p>
+<p><img alt="The same RPN interaction is available in the shipping app while the firmware loop is inspected in emulation." src="../../../../../assets/iphone-rpn-stack.png" /></p>
+<p>The fabricated board will add the electrical measurement layer: current draw, regulator behavior, display inrush, and real input-to-photon timing. The emulator gives us the named sequences and software baseline to carry into that test. The related <a href="../../../08/26/what-the-firmware-simulator-can-tell-us-before-the-pcb-exists/">firmware simulator article</a> explains the matrix and framebuffer path.</p>
 
 
 

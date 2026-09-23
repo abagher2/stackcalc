@@ -12,7 +12,7 @@
         <meta name="author" content="StackCalc Engineering">
       
       
-        <link rel="canonical" href="https://www.stackcalc.io/blog/category/simulation/">
+        <link rel="canonical" href="https://www.stackcalc.io/blog/category/ios/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Simulation - StackCalc32</title>
+        <title>iOS - StackCalc32</title>
       
     
     
@@ -66,7 +66,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="StackCalc32">
   <meta property="og:description" content="A high-quality, everyday-use RPN calculator for a new generation.">
-  <meta property="og:url" content="https://www.stackcalc.io/blog/category/simulation/">
+  <meta property="og:url" content="https://www.stackcalc.io/blog/category/ios/">
   <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="StackCalc32">
@@ -115,7 +115,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#simulation" class="md-skip">
+        <a href="#ios" class="md-skip">
           Skip to content
         </a>
       
@@ -153,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Simulation
+              iOS
             
           </span>
         </div>
@@ -652,7 +652,7 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="simulation">Simulation</h1>
+        <h1 id="ios">iOS</h1>
       </header>
       
         <article class="md-post md-post--excerpt">
@@ -674,9 +674,9 @@
           <li class="md-meta__item">
             in
             
-              <a href="../testing/" class="md-meta__link">Testing</a>, 
               <a href="../firmware/" class="md-meta__link">Firmware</a>, 
-              <a href="./" class="md-meta__link">Simulation</a></li>
+              <a href="./" class="md-meta__link">iOS</a>, 
+              <a href="../rpn/" class="md-meta__link">RPN</a></li>
         
         
           
@@ -691,13 +691,13 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="fuzzing-the-firmware-path-in-an-rp2350-emulator"><a class="toclink" href="../../2026/09/22/fuzzing-the-firmware-path-in-an-rp2350-emulator/">Fuzzing the Firmware Path in an RP2350 Emulator</a></h2>
-<p>The StackCalc calculator board is not assembled yet, but the firmware path is already rich enough to break in interesting ways. A random input sequence can cross number entry, ENTER, stack lift, shifts, menus, modes, clear, correction, and display updates in combinations that a hand-written demo never reaches.</p>
-<p>We use the RP2350 emulator to run the firmware image and fuzz those combinations through its keypad contract. That is firmware-emulation evidence, not evidence of a physical switch matrix or display.</p>
+    <h2 id="one-calculator-core-for-watch-phone-and-rp2350"><a class="toclink" href="../../2026/09/22/one-calculator-core-for-watch-phone-and-rp2350/">One Calculator Core for Watch, Phone, and RP2350</a></h2>
+<p>A calculator can look consistent across devices while disagreeing at exactly the moments that teach people how RPN works: ENTER, stack lift, an error state, a program step, or an unfinished number. We did not want the Watch, iPhone, and eventual handheld to agree only on the happy path. StackCalc has one calculator core so a named key sequence has one meaning before any surface decides how to draw it.</p>
+<p><img alt="The iPhone app exposes the same RPN stack that the firmware-facing path renders into a compact display." src="../../../assets/iphone-rpn-stack.png" /></p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/09/22/fuzzing-the-firmware-path-in-an-rp2350-emulator/">
+        <a href="../../2026/09/22/one-calculator-core-for-watch-phone-and-rp2350/">
           Continue reading
         </a>
       </nav>
@@ -724,9 +724,9 @@
           <li class="md-meta__item">
             in
             
-              <a href="../firmware/" class="md-meta__link">Firmware</a>, 
-              <a href="../performance/" class="md-meta__link">Performance</a>, 
-              <a href="./" class="md-meta__link">Simulation</a></li>
+              <a href="./" class="md-meta__link">iOS</a>, 
+              <a href="../education/" class="md-meta__link">Education</a>, 
+              <a href="../rpn/" class="md-meta__link">RPN</a></li>
         
         
           
@@ -741,12 +741,13 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="profiling-the-emulated-firmware-loop-before-board-bring-up"><a class="toclink" href="../../2026/09/22/profiling-the-emulated-firmware-loop-before-board-bring-up/">Profiling the Emulated Firmware Loop Before Board Bring-Up</a></h2>
-<p>Power management begins as a behavior problem before it becomes a battery-life number. The StackCalc firmware has to decide when to scan the matrix, wake the display path, skip an unchanged frame, save state, and return to a lower-work loop. We can exercise those decisions in the RP2350 emulator while the PCB is in fabrication.</p>
+    <h2 id="why-we-started-with-the-apple-watch"><a class="toclink" href="../../2026/09/22/why-we-started-with-the-apple-watch/">Why We Started with the Apple Watch</a></h2>
+<p>For many children, the first personal computer they wear is not a phone or laptop. It is a watch, often after an iPad. That changed where we started StackCalc. The Apple Watch was not a companion screen added after the calculator had been designed; it was the first place we had to prove that an RPN calculator could explain its next action in a very small space.</p>
+<p><img alt="StackCalc on Apple Watch, where the stack and the next action have to stay legible at a glance." src="../../../assets/watch-rpn-stack.png" /></p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/09/22/profiling-the-emulated-firmware-loop-before-board-bring-up/">
+        <a href="../../2026/09/22/why-we-started-with-the-apple-watch/">
           Continue reading
         </a>
       </nav>

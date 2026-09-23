@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+        <meta name="description" content="Using cross-surface key recipes to find RPN state-path mismatches before hardware arrives.">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -69,13 +69,13 @@
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Fuzzing the Firmware Path in an RP2350 Emulator">
-  <meta property="og:description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+  <meta property="og:description" content="Using cross-surface key recipes to find RPN state-path mismatches before hardware arrives.">
   <meta property="og:url" content="https://www.stackcalc.io/blog/2026/09/22/fuzzing-the-firmware-path-in-an-rp2350-emulator/">
-  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/iphone-rpn-stack.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Fuzzing the Firmware Path in an RP2350 Emulator">
-  <meta name="twitter:description" content="A high-quality, everyday-use RPN calculator for a new generation.">
-  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:description" content="Using cross-surface key recipes to find RPN state-path mismatches before hardware arrives.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/iphone-rpn-stack.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
       tailwind.config = {
@@ -685,6 +685,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#keep-the-failure-as-a-recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keep the failure as a recipe
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -765,7 +774,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -799,6 +808,16 @@
 <h2 id="what-this-establishes">What this establishes</h2>
 <p>The emulator can exercise the compiled firmware’s matrix, calculator, persistence, rendering, and diagnostic seams together. It can expose a key-map mismatch or a sequence that leaves the modeled calculator in an unexpected state. It cannot measure a real switch’s bounce, electrical pull-ups, LCD contrast, current draw, or a physical keypress. Those become board-level tests when the fabricated PCB is assembled.</p>
 <p>The PCB is nevertheless part of this work: its key and display interfaces inform both the firmware contract and the mechanical layout. The source and current simulator overview are on the <a href="../../../../../firmware/">StackCalc firmware page</a>.</p>
+<h2 id="keep-the-failure-as-a-recipe">Keep the failure as a recipe</h2>
+<p>A useful fuzz result is not a large number of random presses. It is a short sequence that another person can replay. Our runner begins with a physical-key catalog generated from the shared key map, asks the RPNCore oracle for the expected state, then sends mapped contacts to the firmware emulator and comparable requests to the app surfaces.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>expected = core.evaluate(sequence)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>actual   = firmware.run(mappedContacts(sequence))
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>keep sequence when expected != actual
+</span></code></pre></div>
+<p>The real detail is in the sequence vocabulary. We deliberately include partial entries, ENTER, shift state, error dismissal, prompts, program operations, fractions, complex values, and numeric limits. Those are the places where a calculator can look fine after a simple addition but still lose its state contract.</p>
+<p>The fuzzer can also drive the visible app and firmware simulators, which makes a retained case a debugging artifact rather than an opaque test log. A person can watch the same recipe travel through the screen and matrix path, then decide whether the mismatch belongs in a renderer, a key map, or the engine.</p>
+<p><img alt="The iPhone stack display is one of the surfaces compared against the shared calculator state." src="../../../../../assets/iphone-rpn-stack.png" /></p>
+<p>We will run the saved recipes against the populated RP2350 board after bring-up. Until then, the <a href="../../../08/26/what-the-firmware-simulator-can-tell-us-before-the-pcb-exists/">firmware article</a> explains the emulator path and the <a href="../../../../../learning-lab/">Learning Lab</a> provides physical ways to teach the same stack transitions.</p>
 
 
 

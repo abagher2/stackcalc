@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+        <meta name="description" content="A printable expression tree turns postorder traversal into an RPN program.">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -69,13 +69,13 @@
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Reading an Expression Tree as a Postfix Program">
-  <meta property="og:description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+  <meta property="og:description" content="A printable expression tree turns postorder traversal into an RPN program.">
   <meta property="og:url" content="https://www.stackcalc.io/blog/2026/09/22/reading-an-expression-tree-as-a-postfix-program/">
-  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/learning-lab-expression-tree.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Reading an Expression Tree as a Postfix Program">
-  <meta name="twitter:description" content="A high-quality, everyday-use RPN calculator for a new generation.">
-  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:description" content="A printable expression tree turns postorder traversal into an RPN program.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/learning-lab-expression-tree.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
       tailwind.config = {
@@ -676,6 +676,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#give-postorder-a-physical-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      Give postorder a physical route
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend-the-board-without-changing-the-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extend the board without changing the rule
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -756,7 +774,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              2 min read
                             
                           </span>
                         </div>
@@ -788,6 +806,13 @@
 <h2 id="the-important-distinction">The important distinction</h2>
 <p>Postorder is a way to read an expression tree. ENTER is a calculator action that manages stack entry. They are related, but they are not interchangeable. A useful lesson keeps the parsing step and the key sequence separate, then connects them by following the resulting stack state.</p>
 <p>The board is a generated prototype resource. It needs print-fit checks, marking validation, educator review, and classroom testing before it can support stronger teaching claims.</p>
+<h2 id="give-postorder-a-physical-route">Give postorder a physical route</h2>
+<p>An expression tree makes postfix notation less mysterious because the operator is visibly waiting above its completed inputs. Start with <code>(a + b) * (c - d)</code>. Build the plus branch, build the minus branch, then place multiply above both. Reading the tokens in postorder produces <code>a b + c d - *</code> because each branch is complete before its parent operation is read.</p>
+<p>That is a different lesson from ENTER. Postorder tells us the operation order implied by an algebraic expression. ENTER manages repeated numeric entry on an RPN calculator. They meet when someone keys a program, but separating them prevents a learner from believing that ENTER is just another algebra operator.</p>
+<p><img alt="The printable expression-tree board makes postorder traversal visible before it becomes a key sequence." src="../../../../../assets/learning-lab-expression-tree.svg" /></p>
+<p>The public <a href="../../../../../learning-lab/#download-the-prototype-materials">Learning Lab release</a> includes the board, removable tokens, reference cards, and teacher booklet. A useful extension is to remove one operation token and ask learners to supply it from the desired postfix program. The activity creates a bridge from algebra notation to the stack model used in the app and handheld.</p>
+<h2 id="extend-the-board-without-changing-the-rule">Extend the board without changing the rule</h2>
+<p>Once a learner can read the seven-token example, introduce one new branch rather than a completely different notation. The rule stays stable: finish the left and right subtrees, then read their parent operation. That repeatable visual rule gives a teacher a way to add difficulty while retaining the same RPN explanation.</p>
 
 
 

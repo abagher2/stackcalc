@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+        <meta name="description" content="A printable Stack Stage makes the four RPN registers tangible before the first keypress.">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.stackcalc.io/blog/2026/09/22/making-the-four-level-stack-visible-before-the-first-keypress/">
       
       
-        <link rel="prev" href="../profiling-the-emulated-firmware-loop-before-board-bring-up/">
+        <link rel="prev" href="../one-calculator-core-for-watch-phone-and-rp2350/">
       
       
         <link rel="next" href="../how-the-pcb-design-shapes-a-printed-calculator-before-it-arrives/">
@@ -69,13 +69,13 @@
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Making the Four-Level Stack Visible Before the First Keypress">
-  <meta property="og:description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+  <meta property="og:description" content="A printable Stack Stage makes the four RPN registers tangible before the first keypress.">
   <meta property="og:url" content="https://www.stackcalc.io/blog/2026/09/22/making-the-four-level-stack-visible-before-the-first-keypress/">
-  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/learning-lab-stack-stage.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Making the Four-Level Stack Visible Before the First Keypress">
-  <meta name="twitter:description" content="A high-quality, everyday-use RPN calculator for a new generation.">
-  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:description" content="A printable Stack Stage makes the four RPN registers tangible before the first keypress.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/learning-lab-stack-stage.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
       tailwind.config = {
@@ -676,6 +676,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#turn-a-display-convention-into-a-table-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turn a display convention into a table exercise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-mistakes-as-the-activity-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use mistakes as the activity material
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -756,7 +774,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -796,6 +814,13 @@
 <h2 id="why-the-constraint-helps">Why the constraint helps</h2>
 <p>The blank tiles force the explanation to be about state, not decoration. A learner can change the numbers, make a wrong prediction, and repair it without treating a printed diagram as a fixed answer. The same sequence can then be keyed into StackCalc on the watch or phone.</p>
 <p>This is a prototype teaching aid. It has not yet been evaluated with learners or educators, and the final marking, material, and classroom durability need physical validation.</p>
+<h2 id="turn-a-display-convention-into-a-table-exercise">Turn a display convention into a table exercise</h2>
+<p>The Stack Stage has four labeled positions—X, Y, Z, and T—because “the stack moves” is too abstract for a first lesson. Put a value in X. Press ENTER and duplicate it into Y. Place a new value in X. Before pressing an operation, ask which two positions will be consumed and which value will become the new X. The learner predicts the state before the calculator confirms it.</p>
+<p>The board is a printable companion rather than a replacement for the calculator. Its physical tiles make the transition slow enough to discuss; the app and firmware path then repeat the same sequence at normal calculator speed. That is why the labels match the vocabulary used by the RPN core rather than inventing a separate classroom notation.</p>
+<p><img alt="The Stack Stage turns the four visible RPN registers into movable tiles." src="../../../../../assets/learning-lab-stack-stage.svg" /></p>
+<p>The board and cards are included in the public <a href="../../../../../learning-lab/#download-the-prototype-materials">Learning Lab STL and PDF release</a>. A simple first activity is <code>3 ENTER 4 +</code>; a better second activity is to start with two values already placed and ask students to reconstruct the entry sequence that produced them. That moves the lesson from memorising keypresses to explaining calculator state.</p>
+<h2 id="use-mistakes-as-the-activity-material">Use mistakes as the activity material</h2>
+<p>The most useful prompts are not “what is the answer?” but “what did the stack contain just before the answer?” Give a learner a plausible wrong tile arrangement, then ask which earlier keypress caused it. That keeps the activity grounded in prediction, correction, and explanation—the same habits that make RPN practical after the tiles are put away.</p>
 
 
 

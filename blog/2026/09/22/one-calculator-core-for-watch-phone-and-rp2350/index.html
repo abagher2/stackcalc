@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Why StackCalc connects a Watch app, printable lessons, firmware emulation, and a handheld.">
+        <meta name="description" content="How StackCalc keeps the same RPN key sequence meaningful on Apple devices and the RP2350 firmware path.">
       
       
         <meta name="author" content="StackCalc Engineering">
       
       
-        <link rel="canonical" href="https://www.stackcalc.io/blog/2026/09/22/why-rpn-needs-an-ecosystem-not-another-retro-replica/">
+        <link rel="canonical" href="https://www.stackcalc.io/blog/2026/09/22/one-calculator-core-for-watch-phone-and-rp2350/">
       
       
-        <link rel="prev" href="../why-we-started-with-the-apple-watch/">
+        <link rel="prev" href="../profiling-the-emulated-firmware-loop-before-board-bring-up/">
       
       
-        <link rel="next" href="../a-tool-free-calculator-built-around-a-sliding-assembly/">
+        <link rel="next" href="../making-the-four-level-stack-visible-before-the-first-keypress/">
       
       
       <link rel="icon" href="../../../../../assets/stackcalc-logo.svg">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Why RPN Needs an Ecosystem, Not Another Retro Replica - StackCalc32</title>
+        <title>One Calculator Core for Watch, Phone, and RP2350 - StackCalc32</title>
       
     
     
@@ -68,14 +68,14 @@
   
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Why RPN Needs an Ecosystem, Not Another Retro Replica">
-  <meta property="og:description" content="Why StackCalc connects a Watch app, printable lessons, firmware emulation, and a handheld.">
-  <meta property="og:url" content="https://www.stackcalc.io/blog/2026/09/22/why-rpn-needs-an-ecosystem-not-another-retro-replica/">
-  <meta property="og:image" content="https://www.stackcalc.io/assets/watch-rpn-stack.png">
+  <meta property="og:title" content="One Calculator Core for Watch, Phone, and RP2350">
+  <meta property="og:description" content="How StackCalc keeps the same RPN key sequence meaningful on Apple devices and the RP2350 firmware path.">
+  <meta property="og:url" content="https://www.stackcalc.io/blog/2026/09/22/one-calculator-core-for-watch-phone-and-rp2350/">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/iphone-rpn-stack.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Why RPN Needs an Ecosystem, Not Another Retro Replica">
-  <meta name="twitter:description" content="Why StackCalc connects a Watch app, printable lessons, firmware emulation, and a handheld.">
-  <meta name="twitter:image" content="https://www.stackcalc.io/assets/watch-rpn-stack.png">
+  <meta name="twitter:title" content="One Calculator Core for Watch, Phone, and RP2350">
+  <meta name="twitter:description" content="How StackCalc keeps the same RPN key sequence meaningful on Apple devices and the RP2350 firmware path.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/iphone-rpn-stack.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
       tailwind.config = {
@@ -119,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-problem-is-legible-state" class="md-skip">
+        <a href="#keep-the-calculator-separate-from-the-surface" class="md-skip">
           Skip to content
         </a>
       
@@ -157,7 +157,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Why RPN Needs an Ecosystem, Not Another Retro Replica
+              One Calculator Core for Watch, Phone, and RP2350
             
           </span>
         </div>
@@ -659,36 +659,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-problem-is-legible-state" class="md-nav__link">
+  <a href="#keep-the-calculator-separate-from-the-surface" class="md-nav__link">
     <span class="md-ellipsis">
-      The problem is legible state
+      Keep the calculator separate from the surface
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#four-connected-surfaces" class="md-nav__link">
+  <a href="#make-a-key-path-inspectable" class="md-nav__link">
     <span class="md-ellipsis">
-      Four connected surfaces
+      Make a key path inspectable
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-comes-next" class="md-nav__link">
+  <a href="#why-this-matters-for-an-educational-calculator" class="md-nav__link">
     <span class="md-ellipsis">
-      What comes next
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#let-each-surface-do-the-job-it-is-good-at" class="md-nav__link">
-    <span class="md-ellipsis">
-      Let each surface do the job it is good at
+      Why this matters for an educational calculator
     </span>
   </a>
   
@@ -761,8 +752,8 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/education/">Education</a>, 
-                              <a href="../../../../category/design/">Design</a>, 
+                              <a href="../../../../category/firmware/">Firmware</a>, 
+                              <a href="../../../../category/ios/">iOS</a>, 
                               <a href="../../../../category/rpn/">RPN</a></span>
                         </div>
                       </li>
@@ -794,30 +785,27 @@
         
 
 
-  <h1>Why RPN Needs an Ecosystem, Not Another Retro Replica</h1>
+  <h1>One Calculator Core for Watch, Phone, and RP2350</h1>
 
-<p>RPN calculators already exist. StackCalc is not a nostalgia project trying to recreate a familiar beige machine. The gap we see is a learning path: a way to move from a familiar screen to a physical instrument while understanding what the stack is doing.</p>
-<p>That is why StackCalc joins the current iPhone and Apple Watch apps, a shared calculator core, Learning Lab prototypes, and a planned RP2350 handheld around the same calculation behavior. The connection is semantic, not cosmetic.</p>
+<p>A calculator can look consistent across devices while disagreeing at exactly the moments that teach people how RPN works: ENTER, stack lift, an error state, a program step, or an unfinished number. We did not want the Watch, iPhone, and eventual handheld to agree only on the happy path. StackCalc has one calculator core so a named key sequence has one meaning before any surface decides how to draw it.</p>
+<p><img alt="The iPhone app exposes the same RPN stack that the firmware-facing path renders into a compact display." src="../../../../../assets/iphone-rpn-stack.png" /></p>
 <!-- more -->
 
-<h2 id="the-problem-is-legible-state">The problem is legible state</h2>
-<p>RPN turns a calculation into small, checkable actions: place values on the stack, then apply an operation. It can remove parenthesis entry, but the interface must make state legible. A learner needs to see the working value, know when ENTER commits it, and understand what an operation will consume.</p>
-<p>Established RPN calculators are excellent instruments for people who already have those habits. StackCalc investigates the earlier step: what should a learner be able to see, touch, and predict before pressing the next key?</p>
-<h2 id="four-connected-surfaces">Four connected surfaces</h2>
-<ul>
-<li><strong>A shared RPN core</strong> keeps operation meaning and calculator state consistent across interfaces.</li>
-<li><strong>The Apple Watch and iPhone/iPad apps</strong> let us study compact controls and display hierarchy on devices a learner already knows.</li>
-<li><strong>The Learning Lab</strong> makes amounts, stack positions, postfix expression order, and coordinate relationships tangible.</li>
-<li><strong>The RP2350 handheld design</strong> carries that same interaction model into a dedicated physical calculator. Its KiCad PCB is in fabrication; an assembled, powered board is the next physical milestone.</li>
-</ul>
-<p>The design rule is to keep meaning stable while changing the surface. A fraction tower, a stack tile, a watch interaction, and a physical key should all point to the same operation instead of asking the learner to memorize a new model on every device.</p>
-<h2 id="what-comes-next">What comes next</h2>
-<p>The next step is to put the artifacts in people’s hands: printable teaching materials, physical prototypes, and educator sessions that improve the activities. The current mechanical calculator is an unpowered four-part printed prototype; the companion app is available on the <a href="https://apps.apple.com/app/id6801788040">App Store</a>.</p>
-<h2 id="let-each-surface-do-the-job-it-is-good-at">Let each surface do the job it is good at</h2>
-<p>The Apple Watch is the tightest constraint: the current entry, visible stack, and next action have to survive a very small screen. The iPhone and iPad create room to practise and explore. The Learning Lab slows the interaction down with tiles, fraction pieces, and expression trees. The printed handheld gives the model dedicated keys and a physical place in daily work. None of those surfaces needs to imitate the other perfectly; they need to preserve the same calculator meaning.</p>
-<p><img alt="The Watch view pushed StackCalc toward a visible, compact explanation of the RPN stack." src="../../../../../assets/watch-rpn-stack.png" /></p>
-<p>The shared core and firmware emulator make that statement testable. A named sequence can be sent through the app, the core, and the RP2350 matrix path instead of being reimplemented as unrelated UI behavior. The board design is in fabrication, so the hardware will soon add a real display, switch layer, and power path to that same set of checks.</p>
-<p>The public <a href="../../../../../learning-lab/">Learning Lab</a> provides the printable STL pack and teacher PDFs; the companion app is on the <a href="https://apps.apple.com/app/id6801788040">App Store</a>. We are not publishing implementation source. We are publishing the objects, activities, rendered models, and design record that explain how the product is being built. The next project milestone is not another retro shell—it is the first physical comparison between the emulator’s known behavior and the assembled RP2350 calculator.</p>
+<h2 id="keep-the-calculator-separate-from-the-surface">Keep the calculator separate from the surface</h2>
+<p>The shared Swift package owns calculator state: the four stack registers, entry buffer, program state, parsing, display data, and operation semantics. A Watch tap, an iPhone button, and a firmware matrix contact are each translated into a typed key event. The core applies that event and returns the new state; the surface then decides whether that state becomes a large iPhone LCD, a compact Watch screen, or a 132 × 65-pixel firmware frame.</p>
+<p>The useful boundary is small enough to explain without publishing the implementation:</p>
+<div class="language-swift highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">let</span><span class="w"> </span><span class="nv">nextState</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">engine</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="n">keyEvent</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">renderer</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="n">nextState</span><span class="p">.</span><span class="n">display</span><span class="p">)</span>
+</span></code></pre></div>
+<p>The important part is the division of responsibility. The input layer may know where a key lives; it does not decide what ENTER means. The renderer may choose a type size or bitmap font; it does not decide whether the stack lifted. That prevents a familiar failure mode in multi-surface calculator work: a display fix quietly becoming a second calculator engine.</p>
+<h2 id="make-a-key-path-inspectable">Make a key path inspectable</h2>
+<p>The RP2350 browser simulator follows the same split. It generates its keypad from the shared firmware key map, writes a row-and-column contact into emulator memory, steps the compiled firmware image, and reads the framebuffer back. A browser click is therefore not a mock calculator button. It travels through the matrix contract that the real board will use, then returns pixels produced by the firmware.</p>
+<p>That makes a small investigation repeatable. Send <code>3</code>, <code>ENTER</code>, <code>4</code>, and <code>+</code> through the Watch, phone, core, and firmware path. Compare the stack transition and rendered result after each key. If one target disagrees, the sequence is short enough to replay and narrow down whether the difference belongs in key routing, engine state, or rendering.</p>
+<p>The same boundary also made fuzzing useful. A campaign can generate a candidate recipe, ask the core for the expected result, send the mapped keys to the app and firmware emulator, and preserve the sequence whenever a target diverges. The point is not that every target must share pixels. The point is that they share calculator behavior while each keeps its own appropriate presentation.</p>
+<h2 id="why-this-matters-for-an-educational-calculator">Why this matters for an educational calculator</h2>
+<p>RPN is easier to learn when the state is predictable. A learner can move from a stack tile to the Watch, then to the physical keys, without being asked to memorize three incompatible versions of ENTER. The Learning Lab makes the state tangible; the app makes it portable; the handheld gives it a dedicated instrument. The core is the thread that keeps those objects honest.</p>
+<p>The public <a href="../../../../../learning-lab/">Learning Lab</a> has the printable STL plates and teacher PDFs. The live companion app is available on the <a href="https://apps.apple.com/app/id6801788040">App Store</a>. The RP2350 board design is in fabrication, while the firmware already runs through the emulator path described here. We are keeping implementation source private; the published material focuses on the parts, lessons, artifacts, and behavior that people can inspect and reproduce.</p>
+<p>The next useful comparison is the first board bring-up: run the same saved key recipes against the populated board, then compare display state, matrix behavior, and timing with the emulator record. That is how a shared core becomes more than an architecture diagram—it becomes a practical way to find a mismatch before a person encounters it.</p>
 
 
 

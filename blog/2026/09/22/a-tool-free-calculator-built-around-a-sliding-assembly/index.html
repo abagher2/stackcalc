@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+        <meta name="description" content="How rails, lead-ins, stops, and a snap cap make the printed assembly tool-free.">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -69,13 +69,13 @@
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
   <meta property="og:title" content="A Tool-Free Calculator Built Around a Sliding Assembly">
-  <meta property="og:description" content="A high-quality, everyday-use RPN calculator for a new generation.">
+  <meta property="og:description" content="How rails, lead-ins, stops, and a snap cap make the printed assembly tool-free.">
   <meta property="og:url" content="https://www.stackcalc.io/blog/2026/09/22/a-tool-free-calculator-built-around-a-sliding-assembly/">
-  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/prototype-open-assembly.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="A Tool-Free Calculator Built Around a Sliding Assembly">
-  <meta name="twitter:description" content="A high-quality, everyday-use RPN calculator for a new generation.">
-  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:description" content="How rails, lead-ins, stops, and a snap cap make the printed assembly tool-free.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/prototype-open-assembly.jpg">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
       tailwind.config = {
@@ -694,6 +694,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#print-the-interfaces-then-practise-the-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Print the interfaces, then practise the sequence
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -773,7 +782,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -816,6 +825,11 @@
 <h2 id="how-to-test-a-tool-free-enclosure-honestly">How to test a tool-free enclosure honestly</h2>
 <p>Start with simple observations on a named revision: insertion path, binding points, seating consistency, release access, and visible stress at snap features. Then add repeatable measurements: insertion and removal force, cap retention after repeated cycles, fit across multiple prints, and any damage after service. Pair each result with material, print profile, and sample count.</p>
 <p>The matching STL exports and PrusaSlicer <code>.3mf</code> profiles make the current geometry reproducible. They are a starting point, not a promise of universal printer fit. The current project files and staged build log are available on the <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator">StackCalc Hackaday project</a>.</p>
+<h2 id="print-the-interfaces-then-practise-the-sequence">Print the interfaces, then practise the sequence</h2>
+<p>The current build is intentionally small: chassis, faceplate, TPU membrane, and top cap. That makes it possible to inspect each interface instead of burying several unknowns inside a finished-looking case. The chassis rails establish direction; the lead-ins tolerate approach error; the shoulders identify the seated position; and the cap handles final retention.</p>
+<p><img alt="The open printed assembly shows the rail, membrane, and cap interfaces before closure." src="../../../../../assets/prototype-open-assembly.jpg" /></p>
+<p>The matching STL files and PrusaSlicer 3MF profiles are staged with the project build materials. The 3MF projects matter because print orientation, support placement, layer height, and per-part overrides influence whether a slide fit behaves like the model. Start by printing the matching set, remove support carefully from mating surfaces, dry-fit the faceplate and membrane square to the rails, then close the cap through its intended catch features.</p>
+<p>The calculator electronics are not installed in this prototype, but the KiCad board was designed around its envelope and is in fabrication. The next pass will use the board to check the same interfaces under real display, connector, and switch constraints. Until then, the <a href="../from-an-origami-box-to-a-puzzle-stand/">stand and packaging article</a> shows how the same printed design work extends beyond the enclosure.</p>
 
 
 
