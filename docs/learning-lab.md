@@ -8,7 +8,9 @@ The Learning Lab is the first physical teaching-resource collection in the Stack
 
 The collection is a completed source-and-manufacturing prototype, not a classroom-outcome study or a retail kit. It contains 13 STL plates with 79 solids, matching OpenSCAD sources, laser artwork, a catalog manifest, reference cards, and a teacher booklet.
 
-![Fraction studio tray and blocks](assets/learning-lab-fraction-tray.png)
+![StackCalc Learning Lab teacher guide showing the fraction studio, stack stage, expression tree, and coordinate lab](assets/learning-lab-teacher-guide.png)
+
+*The first page of the printable teacher guide labels the four connected investigations. The pictured boards are teaching representations, rather than unengraved STL previews.*
 
 ## The first collection
 
@@ -26,7 +28,9 @@ The calculator, apps, and Learning Lab share a single premise: values arrive bef
 
 The fraction studio uses blocks with a common 24 × 24 mm footprint. Whole, half, third, quarter, sixth, and eighth blocks are 96/n mm tall, so equivalent towers meet at the same height. The stack stage is a 158 × 164 mm board with four reusable value tiles. The expression-tree board is 196 × 164 mm with tokens for `a`, `b`, `+`, `c`, `d`, `-`, and `*`. Those are design facts about the supplied prototype; they do not demonstrate learning outcomes.
 
-![Stack-stage board](assets/learning-lab-stack-stage.svg)
+![Printable StackCalc Learning Lab reference cards](assets/learning-lab-reference-cards.png)
+
+*The printable reference cards label the stack, fraction, and distance activities used with the STL plates.*
 
 ## Current boundaries
 
@@ -34,11 +38,11 @@ The teaching resources are designed and generated locally. Printer fit, engravin
 
 ## Download the prototype materials
 
-The 0.2.0 prototype bundle is the canonical release of the current Learning Lab source, STL plates, generated artwork, manufacturing references, and print-ready teaching materials. It is published for reproduction and review; it is not a retail kit or a claim of classroom validation.
+The 0.2.0 STL pack is the canonical printable release of the Learning Lab. It contains the 13 STL plates only; the teaching cards and teacher booklet are provided separately as PDFs. Source code, CAD generators, and manufacturing artwork are not part of this public download.
 
 | File | Contents |
 | --- | --- |
-| [Learning Lab prototype bundle 0.2.0](downloads/stackcalc-learning-lab-0.2.0-prototype.zip) | Complete source and generated outputs, including the 13 STL plates and manufacturing assets. SHA-256: `59d38255959e62001c27b1fd51453ba02e5b1d90749e201a3086393d7e44c67d` |
+| [Learning Lab STL pack 0.2.0](downloads/stackcalc-learning-lab-0.2.0-stl-pack.zip) | The 13 printable STL plates for the first collection. SHA-256: `b0dc8ecd980a4760ca1bd5c9038d93ff23a29736937eb6bf7017881926908fa1` |
 | [Reference cards — Letter](downloads/reference-cards-letter.pdf) | Printable stack, fraction, and distance cards for US Letter paper. |
 | [Reference cards — A4](downloads/reference-cards-a4.pdf) | Printable stack, fraction, and distance cards for A4 paper. |
 | [Teacher booklet — Letter](downloads/teacher-booklet-letter.pdf) | Eight-page investigation guide and worksheet for US Letter paper. |

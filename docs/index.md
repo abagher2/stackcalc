@@ -18,7 +18,7 @@ description: "A shared RPN calculator core across Apple apps, firmware emulation
 StackCalc is an ecosystem around one calculator model rather than a single retro-calculator replica. The same RPN ideas are explored on devices a learner already has, with physical resources that make stack behavior and mathematical relationships visible.
 
 - **Apple apps:** The iPhone, iPad, and Apple Watch companion app is available on the [App Store](https://apps.apple.com/app/id6801788040).
-- **Learning Lab:** The first collection includes a fraction studio, four-register stack stage, expression-tree board, coordinate lab, printable cards, and an eight-page teacher booklet. [Download the complete 0.2.0 prototype bundle](learning-lab.md#download-the-prototype-materials).
+- **Learning Lab:** The first collection includes a fraction studio, four-register stack stage, expression-tree board, coordinate lab, printable cards, and an eight-page teacher booklet. [Download the 0.2.0 STL pack and teacher PDFs](learning-lab.md#download-the-prototype-materials).
 - **Firmware emulator:** A local browser simulator runs the compiled firmware image through an RP2350 emulator. Its generated keypad feeds a row-and-column matrix contract, and its display reads the firmware’s 132 × 65 framebuffer.
 - **Physical calculator:** The tool-free chassis, faceplate, TPU membrane, and snap cap are real printed mechanical prototypes. The KiCad PCB design and manufacturing BOM are complete and fabrication is in progress; no populated, powered StackCalc board is being represented here.
 
