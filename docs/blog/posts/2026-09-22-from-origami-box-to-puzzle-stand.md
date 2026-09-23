@@ -1,5 +1,7 @@
 ---
 title: "From an Origami Box to a Puzzle Stand"
+description: "How a cardboard fold evolved into a printed shelf stand and desk wedge."
+image: assets/prototype-puzzle-stand-shelf.jpeg
 date: 2026-09-22
 authors:
   - abagher

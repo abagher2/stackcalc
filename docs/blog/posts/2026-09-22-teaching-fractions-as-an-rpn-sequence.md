@@ -1,5 +1,7 @@
 ---
 title: "Teaching Fractions as an RPN Sequence"
+description: "Build fractions physically, then enter the same relationship as an RPN sequence."
+image: assets/learning-lab-fraction-tray.png
 date: 2026-09-22
 authors:
   - abagher
@@ -30,3 +32,17 @@ The physical blocks make the intermediate operands discussable before the operat
 ## Take it from the tray to the calculator
 
 The fraction plate, printable cards, and teacher booklet give a teacher a repeatable starting activity: build a quantity, name its numerator and denominator, predict the stack entry, then key the sequence. The next round of use will refine print fit, engraving, and the language used in the activity.
+
+## Make the denominator a dimension
+
+The fraction pieces were designed so their geometry carries the arithmetic. Every block shares a 24 × 24 mm footprint; the height is 96 mm divided by the denominator. Two halves, three thirds, four quarters, six sixths, and eight eighths all build to the same whole height. The six-pocket tray uses 24.6 mm pockets so printed pieces have room to seat without treating FDM tolerance as an afterthought.
+
+Start with a visible quantity. Build three quarters, ask what number names the count and what number names the partition, then enter `3 ENTER 4 /`. The sequence has an explanation before it becomes a calculator habit. For an addition exercise, build both quantities, name the result each one represents, and only then place the results on the RPN stack.
+
+![The fraction tray turns denominators into a printable physical dimension.](../../assets/learning-lab-fraction-tray.png)
+
+The printable parts, reference cards, and teacher booklet are in the [Learning Lab release](../../learning-lab.md#download-the-prototype-materials). The same stack sequence appears in the app and in the forthcoming handheld, so the blocks are not a separate math toy: they are a slower, inspectable version of the calculation a learner will later key in.
+
+## Print a small set and rotate roles
+
+A complete class set is not required to begin. One tray can support a small group if one learner builds the quantity, one names the numerator and denominator, one predicts the stack, and one enters the sequence on the app. Rotating those roles makes the relationship between physical fraction, spoken explanation, and RPN entry explicit.

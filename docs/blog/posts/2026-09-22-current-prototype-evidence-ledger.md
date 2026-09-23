@@ -1,5 +1,7 @@
 ---
 title: "What the First Printed StackCalc Prototype Can Teach Us"
+description: "What a printed StackCalc assembly reveals about the next mechanical revision."
+image: assets/prototype-front.jpg
 date: 2026-09-22
 authors:
   - abagher
@@ -50,3 +52,13 @@ The simulator establishes behavior of the compiled emulator build. It does not e
 The next useful data set is deliberately plain: matching specimen and revision, print material and settings, fit observations, key travel and force, neighboring-key interference, cap retention cycles, and a service/disassembly record. We will report the sample count, method, result, and failures alongside photographs.
 
 The current CAD files, slicer projects, membrane-study assets, and app walkthroughs are staged on the [StackCalc Hackaday project](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator) while the project remains private for review.
+
+## Use the prototype as a map of the next revision
+
+The four printed parts tell us where to look next. The chassis establishes the board envelope and the slide direction. The unified faceplate reveals whether the display opening and key windows read as one surface. The TPU membrane is the active keypad direction after the earlier spring experiments. The cap tells us whether final retention can happen without a screw driver or a buried fastener.
+
+A practical prototype review starts with a short handling script: slide the parts into their rails, seat the membrane without twisting it, close the cap, pick the assembly up by its sides, reopen it through the intended release features, and repeat. The point is to identify a specific change—not to give a printed object a pass/fail label before the board is installed.
+
+![The current printed prototype makes the chassis, faceplate, membrane, and cap relationship visible.](../../assets/prototype-front.jpg)
+
+The printable parts and reference 3MF projects are linked from the StackCalc [hardware guide](../../hardware.md); the public [Learning Lab pack](../../learning-lab.md#download-the-prototype-materials) contains the teacher-facing STL activities and PDFs. The next revision will use the fabricated board to turn these handling observations into real fit, display-alignment, and switch-reach checks.

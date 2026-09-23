@@ -1,5 +1,7 @@
 ---
 title: "A Tool-Free Calculator Built Around a Sliding Assembly"
+description: "How rails, lead-ins, stops, and a snap cap make the printed assembly tool-free."
+image: assets/prototype-open-assembly.jpg
 date: 2026-09-22
 authors:
   - abagher
@@ -40,3 +42,13 @@ A useful prototype record names both the decision an experiment informed and the
 Start with simple observations on a named revision: insertion path, binding points, seating consistency, release access, and visible stress at snap features. Then add repeatable measurements: insertion and removal force, cap retention after repeated cycles, fit across multiple prints, and any damage after service. Pair each result with material, print profile, and sample count.
 
 The matching STL exports and PrusaSlicer `.3mf` profiles make the current geometry reproducible. They are a starting point, not a promise of universal printer fit. The current project files and staged build log are available on the [StackCalc Hackaday project](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator).
+
+## Print the interfaces, then practise the sequence
+
+The current build is intentionally small: chassis, faceplate, TPU membrane, and top cap. That makes it possible to inspect each interface instead of burying several unknowns inside a finished-looking case. The chassis rails establish direction; the lead-ins tolerate approach error; the shoulders identify the seated position; and the cap handles final retention.
+
+![The open printed assembly shows the rail, membrane, and cap interfaces before closure.](../../assets/prototype-open-assembly.jpg)
+
+The matching STL files and PrusaSlicer 3MF profiles are staged with the project build materials. The 3MF projects matter because print orientation, support placement, layer height, and per-part overrides influence whether a slide fit behaves like the model. Start by printing the matching set, remove support carefully from mating surfaces, dry-fit the faceplate and membrane square to the rails, then close the cap through its intended catch features.
+
+The calculator electronics are not installed in this prototype, but the KiCad board was designed around its envelope and is in fabrication. The next pass will use the board to check the same interfaces under real display, connector, and switch constraints. Until then, the [stand and packaging article](2026-09-22-from-origami-box-to-puzzle-stand.md) shows how the same printed design work extends beyond the enclosure.

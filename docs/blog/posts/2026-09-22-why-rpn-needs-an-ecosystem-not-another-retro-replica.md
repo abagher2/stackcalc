@@ -1,5 +1,7 @@
 ---
 title: "Why RPN Needs an Ecosystem, Not Another Retro Replica"
+description: "Why StackCalc connects a Watch app, printable lessons, firmware emulation, and a handheld."
+image: assets/watch-rpn-stack.png
 date: 2026-09-22
 authors:
   - abagher
@@ -33,3 +35,13 @@ The design rule is to keep meaning stable while changing the surface. A fraction
 ## What comes next
 
 The next step is to put the artifacts in people’s hands: printable teaching materials, physical prototypes, and educator sessions that improve the activities. The current mechanical calculator is an unpowered four-part printed prototype; the companion app is available on the [App Store](https://apps.apple.com/app/id6801788040).
+
+## Let each surface do the job it is good at
+
+The Apple Watch is the tightest constraint: the current entry, visible stack, and next action have to survive a very small screen. The iPhone and iPad create room to practise and explore. The Learning Lab slows the interaction down with tiles, fraction pieces, and expression trees. The printed handheld gives the model dedicated keys and a physical place in daily work. None of those surfaces needs to imitate the other perfectly; they need to preserve the same calculator meaning.
+
+![The Watch view pushed StackCalc toward a visible, compact explanation of the RPN stack.](../../assets/watch-rpn-stack.png)
+
+The shared core and firmware emulator make that statement testable. A named sequence can be sent through the app, the core, and the RP2350 matrix path instead of being reimplemented as unrelated UI behavior. The board design is in fabrication, so the hardware will soon add a real display, switch layer, and power path to that same set of checks.
+
+The public [Learning Lab](../../learning-lab.md) provides the printable STL pack and teacher PDFs; the companion app is on the [App Store](https://apps.apple.com/app/id6801788040). We are not publishing implementation source. We are publishing the objects, activities, rendered models, and design record that explain how the product is being built. The next project milestone is not another retro shell—it is the first physical comparison between the emulator’s known behavior and the assembled RP2350 calculator.

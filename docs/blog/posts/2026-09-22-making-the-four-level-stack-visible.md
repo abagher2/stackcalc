@@ -1,5 +1,7 @@
 ---
 title: "Making the Four-Level Stack Visible Before the First Keypress"
+description: "A printable Stack Stage makes the four RPN registers tangible before the first keypress."
+image: assets/learning-lab-stack-stage.svg
 date: 2026-09-22
 authors:
   - abagher
@@ -34,3 +36,17 @@ The board does not simulate every calculator state. It gives an instructor or se
 The blank tiles force the explanation to be about state, not decoration. A learner can change the numbers, make a wrong prediction, and repair it without treating a printed diagram as a fixed answer. The same sequence can then be keyed into StackCalc on the watch or phone.
 
 This is a prototype teaching aid. It has not yet been evaluated with learners or educators, and the final marking, material, and classroom durability need physical validation.
+
+## Turn a display convention into a table exercise
+
+The Stack Stage has four labeled positions—X, Y, Z, and T—because “the stack moves” is too abstract for a first lesson. Put a value in X. Press ENTER and duplicate it into Y. Place a new value in X. Before pressing an operation, ask which two positions will be consumed and which value will become the new X. The learner predicts the state before the calculator confirms it.
+
+The board is a printable companion rather than a replacement for the calculator. Its physical tiles make the transition slow enough to discuss; the app and firmware path then repeat the same sequence at normal calculator speed. That is why the labels match the vocabulary used by the RPN core rather than inventing a separate classroom notation.
+
+![The Stack Stage turns the four visible RPN registers into movable tiles.](../../assets/learning-lab-stack-stage.svg)
+
+The board and cards are included in the public [Learning Lab STL and PDF release](../../learning-lab.md#download-the-prototype-materials). A simple first activity is `3 ENTER 4 +`; a better second activity is to start with two values already placed and ask students to reconstruct the entry sequence that produced them. That moves the lesson from memorising keypresses to explaining calculator state.
+
+## Use mistakes as the activity material
+
+The most useful prompts are not “what is the answer?” but “what did the stack contain just before the answer?” Give a learner a plausible wrong tile arrangement, then ask which earlier keypress caused it. That keeps the activity grounded in prediction, correction, and explanation—the same habits that make RPN practical after the tiles are put away.
