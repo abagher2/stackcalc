@@ -2,6 +2,20 @@
 
 {% block extrahead %}
   {{ super() }}
+  {% set social_title = page.meta.title if page and page.meta and page.meta.title else config.site_name %}
+  {% set social_description = page.meta.description if page and page.meta and page.meta.description else config.site_description %}
+  {% set social_image_path = page.meta.image if page and page.meta and page.meta.image else 'assets/hero.jpg' %}
+  {% set social_image = (config.site_url | trim('/')) ~ '/' ~ (social_image_path | trim('/')) %}
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ social_title | e }}">
+  <meta property="og:description" content="{{ social_description | e }}">
+  <meta property="og:url" content="{{ page.canonical_url if page and page.canonical_url else config.site_url }}">
+  <meta property="og:image" content="{{ social_image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ social_title | e }}">
+  <meta name="twitter:description" content="{{ social_description | e }}">
+  <meta name="twitter:image" content="{{ social_image }}">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
       tailwind.config = {
