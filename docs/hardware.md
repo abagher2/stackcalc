@@ -21,10 +21,12 @@ The public mechanical release contains the matching four STL files used by the p
 
 ## Proof reel
 
-<video controls preload="metadata" poster="assets/prototype-front.jpg" style="width: 100%; max-width: 960px;">
-  <source src="assets/stackcalc-proof-reel.mp4" type="video/mp4">
+<video controls playsinline preload="metadata" aria-label="StackCalc mechanical prototype and app proof reel" poster="../assets/prototype-front.jpg" style="width: 100%; max-width: 960px;">
+  <source src="../assets/stackcalc-proof-reel.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
+[Open or download the 24-second proof reel](assets/stackcalc-proof-reel.mp4).
 
 This 24-second reel uses the actual printed mechanical prototype, the shipping iPhone app, and the membrane, assembly, and stand simulations. It does not depict a powered physical calculator.
 

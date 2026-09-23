@@ -1,130 +1,60 @@
-# Embedded Swift Firmware & Pico SDK Architecture
+# Embedded Swift firmware
 
-The StackCalc32 physical handheld instrument is powered by a custom bare-metal **Embedded Swift** runtime operating directly atop the **Raspberry Pi RP2350** microcontroller and Pico SDK 2.3.0.
+StackCalc's firmware source targets the **Raspberry Pi Pico 2 / RP2350** using Embedded Swift and a C hardware layer. It shares calculator logic and the bitmap interface with `RPNCore`.
 
-Rather than relying on a heavy embedded OS or fragmented micro-Python interpreters, StackCalc uses Swift's official embedded profile (`-enable-experimental-feature Embedded`) to achieve deterministic mathematical execution, zero dynamic heap allocations, and sub-15ms cold-boot times.
+The pictured physical calculator is an **unpowered mechanical prototype**. Board fabrication and integration are still in progress. The architecture below describes the current source, not measured performance of an assembled product. The public mechanical download does not include firmware source or a flashable release.
 
----
+## Architecture
 
-## 1. System Architecture
+| Source component | Responsibility |
+| --- | --- |
+| `Main.swift` | Calculator event loop, input dispatch, display updates and continuous memory |
+| `hardware_wrapper.c` / `BridgingHeader.h` | Pico SDK boundary for GPIO, SPI, time and flash |
+| `RPNCore` | Shared calculator operations, key mapping, bitmap rendering and tutorials |
+| `CMakeLists.txt` | Embedded build configuration; excludes app-only plotting |
+| `Simulator/` | Browser display and transport around the emulated firmware image |
 
-The firmware architecture is split cleanly across two layers: a low-level C Hardware Abstraction Layer (HAL) interfacing with the Pico SDK peripherals, and a high-level Swift runtime hosting the deterministic `RPNCore` math engine and user interface.
+The physical design uses the current **37-key layout**. Source sharing supports consistent behavior, but cross-platform parity must be checked with matching operations and state; it is not a blanket bit-for-bit guarantee for every feature.
 
-```mermaid
-graph TD
-    subgraph Hardware Peripherals
-        A[43-Key Snap-Dome Matrix] --> B[GPIO Row/Col Bus]
-        C[ST7567A 132x65 LCD] --> D[SPI Bus + Control Lines]
-        E[QSPI Flash Storage] --> F[Flash Controller]
-        G[Power Management] --> H[Wired CR2032 Coin Cell via JST PH 2-Pin]
-    end
+## Display and input
 
-    subgraph C Hardware Layer [Pico SDK 2.3.0]
-        B --> I[hardware_wrapper.c: Matrix Scanner]
-        D --> J[hardware_wrapper.c: SPI DMA Driver]
-        F --> K[hardware_wrapper.c: Ping-Pong Flash NV]
-        H --> L[hardware_wrapper.c: Sleep & Clocks]
-    end
+The logical display is **132×65 pixels**, with **1,188 bytes** arranged as nine pages of 132 columns. The final page has one visible row. The hardware wrapper currently configures **8 MHz SPI** and sends each page with blocking writes. It does not implement the previously described DMA or establish a tear-free display claim. Module/controller identity and physical edge visibility still need checking against the installed specimen and BOM.
 
-    subgraph Embedded Swift Runtime
-        I & J & K & L --> M[BridgingHeader.h]
-        M --> N[Main.swift: Firmware Event Loop]
-        N --> O[RPNCore Engine]
-        N --> P[ST7567 Display Renderer & Terminus Font]
-        N --> Q[Interactive Tutorial Runner]
-    end
-```
+The GPIO scanner samples the matrix; the Swift loop debounces changed input before dispatching the corresponding operation. The active loop uses a 10 ms sleep interval. In the source's sleeping state, the LCD output is disabled, scanning is restricted to **C/ON**, and the loop uses a 100 ms interval. Other keys do not wake that state. These source intervals are not measured touch-to-display latency or battery-life results.
 
----
+## Continuous memory
 
-## 2. Silicon & Target Platform
+The flash implementation alternates between two slots, each eight flash sectors, at the end of flash. It validates payloads with an **FNV-1a checksum** and selects the newer valid sequence. It also includes migration from the older, smaller slot layout.
 
-The instrument is powered by the **Raspberry Pi Pico 2** module (`SC1632`), built on the **RP2350** microcontroller featuring high-speed dual-core compute and flexible clock gating:
+This replaces the earlier description of two 4 KB sectors and CRC32. Power-loss recovery, flash endurance and retention must be evaluated on the matching board. The firmware uses allocated buffers and Swift collections; **zero heap allocation is not a current claim**.
 
-| Parameter | Specification | Implementation Notes |
-|---|---|---|
-| **Core Architecture** | Dual-core Arm Cortex-M33 / Hazard3 RISC-V | Standard build runs on Cortex-M33 with hardware double-precision FPU |
-| **System Clock** | 150 MHz | Dynamically scaled down during idle and paused states |
-| **Internal SRAM** | 520 KB | Fully partitioned with zero dynamic heap allocation |
-| **Non-Volatile Storage** | 4 MB QSPI Flash | Dedicated 8 KB partition for ping-pong wear-leveled user state |
-| **Cold-Boot Latency** | Measurement pending | Record build and physical-device timing |
-| **Quiescent Current** | Measurement pending | Validate on the matching board and battery rail |
+## Build and inspection
 
----
+These commands are for a source checkout with the configured Embedded Swift toolchain, Pico SDK, ARM compiler, CMake and Ninja. The current local Pico SDK checkout is based on 2.3.0. The build script accepts `WATCHCALC_SWIFT_TOOLCHAIN` for an external Swift toolchain and otherwise uses `Firmware/toolchains/swift`.
 
-## 3. Core Firmware Subsystems
+Run from the repository root:
 
-### Keypad Matrix Scanning & Debounce
-The 43 tactile switches are wired in a shared matrix layout consisting of an upper 6-column grid and a lower 4×5 arithmetic keypad with a centered double-wide `ENTER` key:
-- **Matrix Strobe**: Scanned via `matrix_scan()` which cycles GPIO row lines and samples column states with internal pull-ups enabled.
-- **Debounce Filter**: Consecutive samples must match over a stable hysteresis window before generating a discrete `CalculatorOperation` event.
-- **Dormant Wakeup**: Keypad columns are configured as edge-triggered GPIO interrupt sources (`matrix_scan_wake_key()`). When in deep sleep, any keypress immediately wakes the RP2350 PLLs without losing calculation context.
-
-### Transflective Graphic Display Pipeline (ST7567A)
-The EastRising ST7567A 132×65 transflective LCD is driven via 4-wire hardware SPI:
-- **Frame Buffer**: A compact 1-bit-per-pixel buffer (1,188 bytes: nine pages of 132 columns) maps directly to the display pages.
-- **Zero-Tear Blits**: The entire frame buffer is blitted directly via `display_send_buffer()` at SPI clock speeds up to 20 MHz.
-- **Embedded Typography**: Characters are drawn from `font_bitmaps.c`, encoding the authentic **Terminus** 6×8 pixel font for 4 crisp lines of left-justified mathematical telemetry.
-
-### Ping-Pong Non-Volatile Flash Persistence
-StackCalc saves calculation registers and system state across power cycles without requiring dynamic memory or third-party serialization libraries:
-- **Alternating Sectors**: Two 4 KB flash sectors alternate as active snapshots to provide wear-leveling and fail-safe recovery.
-- **Fixed-Size Binary Payload**: Serializes the 4-level/8-level stack, lettered registers (A–Z), statistical summations ($\Sigma$), angular modes, and the tutorial completion bitmask.
-- **CRC32 Integrity**: Each payload snapshot is guarded by a 32-bit CRC checksum. If power is interrupted mid-write, the firmware automatically falls back to the previous validated sector.
-
-### Power Management & Sleep States
-To achieve multi-month battery operation from a single standard CR2032 coin cell, the firmware employs multi-tier power states:
-1. **Active Compute (150 MHz)**: Full clock frequency during numerical solver execution, polynomial evaluation, and Romberg definite integration.
-2. **Idle Mode**: Gated system clocks while awaiting keypad scan events.
-3. **Dormant Deep Sleep**: After 5 minutes of inactivity, the firmware issues `hw_display_sleep_c()` to shut down the ST7567A bias circuits, flushes state to flash, and disables internal oscillators, with current consumption requiring measurement on the matching board.
-
----
-
-## 4. The Shared RPNCore Engine
-
-A central principle of StackCalc is **bit-for-bit math parity across all surfaces**:
-- The exact same Swift files (`StackCalcEngine.swift`, `RPNStack.swift`, `Solver.swift`, `ComplexMath.swift`) that compile into the native iOS and watchOS targets compile directly into the RP2350 binary.
-- Compiling under Embedded Swift ensures zero reference-counting runtime overhead, strict value semantics, and stack-allocated closures.
-- All floating-point evaluations conform to IEEE-754 double precision.
-
----
-
-## 5. Build System & Compilation
-
-The firmware build system uses CMake and Ninja to orchestrate both the Embedded Swift compiler and the ARM GCC toolchain.
-
-### Build Prerequisites
-- **Embedded Swift Toolchain**: Swift 6.0+ with embedded feature flags.
-- **Raspberry Pi Pico SDK**: Version 2.3.0 (configured via `PICO_SDK_PATH`).
-- **ARM Toolchain**: `arm-none-eabi-gcc` and `arm-none-eabi-binutils`.
-- **CMake & Ninja**: Version 3.20+.
-
-### Compilation Commands
-
-From the repository root:
-
-```bash
-# 1. Build the production hardware UF2 binary:
+```sh
+# Hardware UF2
 Firmware/compile_firmware.sh hardware
 
-# 2. Build instrumented ELF with target-side profiling:
+# Instrumented hardware build
 Firmware/compile_firmware.sh profile
 
-# 3. Build WebAssembly / Node.js simulator binary:
+# Firmware image for the localhost emulator
 Firmware/compile_firmware.sh emulator
+node Firmware/Simulator/server.js
 
-# 4. Run binary memory and ELF section size inspection:
+# ELF sizing and optional live hardware counters
 python3 Firmware/profile_power_memory.py
 ```
 
-Hardware build artifacts are emitted as `build/stackcalc32.uf2` and copied into the canonical manufacturing export directory (`Hardware/output/WatchCalc32_Manufacturing/Firmware_Files/`).
+Each build replaces `Firmware/build`; run the variants sequentially. The hardware output is `Firmware/build/WatchCalcFirmware.uf2`, copied to `Hardware/output/WatchCalc32_Manufacturing/Firmware_Files/WatchCalcFirmware_RP2350.uf2`. The profile variant uses the `_Profile.uf2` suffix in that export directory. An emulator build is for the simulator, not for flashing a board.
 
----
+## Physical verification still required
 
-## 6. Flashing the Instrument
+A powered board is needed to verify cold startup, input-to-display timing, display edges, memory recovery, current consumption and battery life. The previous sub-15 ms boot, sub-two-second flashing and multi-month battery statements were not qualified measurements and are withdrawn.
 
-1. Connect the Raspberry Pi Pico 2 module on the StackCalc32 mainboard to your workstation via a USB data cable.
-2. While holding down the physical `BOOTSEL` button (accessible via the top-cap pinhole or rear chassis service port), toggle power.
-3. The RP2350 mounts as an external mass-storage volume named `RPI-RP2`.
-4. Drag and drop `stackcalc32.uf2` onto the volume.
-5. The device flashes in under two seconds and reboots immediately into the active Terminus calculator interface.
+When a board-specific firmware release is available, its instructions must identify the board revision, matching UF2, USB/BOOTSEL access and recovery procedure. Do not infer those details from the mechanical prototype photos.
+
+See the [hardware build and capability reference](hardware.md) for the current mechanical kit and its qualification limits.

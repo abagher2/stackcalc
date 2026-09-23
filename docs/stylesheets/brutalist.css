@@ -201,6 +201,9 @@ body,
   font-size: 1.05rem !important;
   line-height: 1.75 !important;
   color: #CBD1DC !important;
+  /* Long headings and source paths must fit narrow phones. Code blocks and
+     tables retain their own horizontal scrolling. */
+  overflow-wrap: anywhere;
 }
 
 .md-typeset h1,
@@ -253,6 +256,10 @@ body,
 
 .md-typeset a:hover {
   border-bottom-color: #32ADE6 !important;
+}
+
+.md-typeset a.md-button {
+  border: 0.1rem solid currentColor !important;
 }
 
 .md-typeset p {
@@ -390,6 +397,7 @@ pre {
 
 /* --- Tables --- */
 .md-typeset table:not([class]) {
+  overflow-wrap: normal;
   border: 2px solid #E2E6EE !important;
   border-collapse: collapse !important;
   width: 100% !important;
@@ -748,5 +756,4 @@ pre {
   opacity: 0.6 !important;
   transform: scale(0.98) !important;
 }
-
 
