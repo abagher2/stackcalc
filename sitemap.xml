@@ -2,406 +2,130 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.stackcalc.io/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/ecommerce/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/firmware/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hardware/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/ios_app/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
+    </url>
+    <url>
+         <loc>https://www.stackcalc.io/learning-lab/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/privacy/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/support/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/terms/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/tutorials/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/01/welcome-to-the-stackcalc-engineering-blog/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/2026/08/26/what-the-firmware-simulator-can-tell-us-before-the-pcb-exists/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/03/why-we-started-with-the-apple-watch-part-1-the-screen-real-estate-equation/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/2026/09/22/what-the-first-printed-stackcalc-prototype-can-teach-us/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/06/why-we-started-with-the-apple-watch-part-2-rapid-calculation-ergonomics/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/2026/09/22/fuzzing-the-firmware-path-in-an-rp2350-emulator/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/08/bypassing-the-apple-watch-crown-limits-part-1-unbounded-accumulation-in-watchos/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/2026/09/22/how-the-pcb-design-shapes-a-printed-calculator-before-it-arrives/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/11/bypassing-the-apple-watch-crown-limits-part-2-05-deadband--event-suppression/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/2026/09/22/making-the-four-level-stack-visible-before-the-first-keypress/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/13/the-watchos-minimap-ui-part-1-two-dimensional-paging-navigation/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/2026/09/22/profiling-the-emulated-firmware-loop-before-board-bring-up/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/15/the-watchos-minimap-ui-part-2-29x15-pt-spatial-annunciator-matrix/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/2026/09/22/reading-an-expression-tree-as-a-postfix-program/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/18/simulating-physical-buttons-with-haptics-snap-action-dome-emulation/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/2026/09/22/teaching-fractions-as-an-rpn-sequence/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/20/fraction-entry-on-watchos-the-slider-ui-experiment-and-deterministic-fallback/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/2026/09/22/a-tool-free-calculator-built-around-a-sliding-assembly/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/23/watch-tutorial-presentation-logic-interactive-state-machines-on-the-wrist/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/25/alpha-mode-input-handling-text-entry-without-a-full-keyboard/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/27/app-store-metadata-automation-generating-multi-device-asset-catalogs/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/06/30/fighting-ios-constraints-lcd-font-scaling--layout-priorities/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/02/hacking-ios-manual-180-degree-ui-flips-bypassing-face-id-lockout/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/05/the-voyager-layout-10-column-hp-15c-landscape-mode/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/07/fixing-testflight-bugs-the-7-beta-defects--final-polish/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/09/unifying-plot-calculations-100-parity-across-ui-surfaces/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/12/understanding-rpn-the-hp-32sii-4-level-stack-model/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/14/the-backspace-debate-reversing-stack-lift-on-buffer-clear/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/17/architecting-rpncore-as-a-multi-platform-swift-package/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/19/handling-precision-binary-vs-decimal-float-trade-offs/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/21/complex-numbers-coordinate-conversions--rectangularpolar-display/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/24/unit-conversions-dimension-trees--invertible-scaling-factors/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/26/statistical-functions-linear-regression--sigma-register-accumulation/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/29/beyond-the-hp-32sii-modern-additions-without-cluttering-the-stack/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/07/31/curating-scientific-functions-part-1-key-ergonomics--shift-layers/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/02/curating-scientific-functions-part-2-hyperbolic--transcendental-precision/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/05/extending-logical-completeness-part-1-boolean-algebra--word-sizes/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/07/extending-logical-completeness-part-2-base-n-bitwise-ops/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/10/fractional-math-engine-part-1-mixed-fractions--display-modes/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/11/pioneering-with-embedded-swift-part-1-cortex-m33-bare-metal-toolchain/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/12/fractional-math-engine-part-2-continued-fractions--mil%C3%BC-355113/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/13/pioneering-with-embedded-swift-part-2-zero-allocation-byte-parsing/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/14/numerical-integration-simpsons-38-rule-with-dynamic-interruption/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/15/swift-on-rp2350-soft-float-aapcs-abi-clash--memory-overhead/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/17/root-finding-algorithms-secant-method--brents-optimization/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/18/optimizing-embedded-swift-linker-flags--symbol-stripping/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/19/unit-testing-rpncore-1200-boundary-test-cases--mutation-testing/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/21/debugging-memory-leaks-pico_debug_malloc--zero-arc-overhead/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/22/building-a-cross-surface-fuzzer-part-1-golden-path-state-invariants/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/24/building-a-cross-surface-fuzzer-part-2-continuous-in-memory-app-reset/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/26/hardware-simulation-browser-hil-with-wokwi-rp2350-emulation/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/29/swiftui-state-machine-vs-firmware-part-1-dual-target-architecture/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/08/31/swiftui-state-machine-vs-firmware-part-2-event-loop-parity/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/09/03/cross-platform-cicd-building-embedded-swift-and-xcode-targets/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/09/05/benchmarking-165ms-cold-boot--154ms-math-operations--133mhz/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/09/10/the-toolchain-cmake-ninja--swift-pm-multi-arch-coordination/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/09/12/testing-for-mathematicians-precision-invariants--domain-boundaries/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/09/15/hardware-fuzzing-lessons-retiring-the-python-simulator-after-44100-mismatches/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/09/17/test-harness-architecture-http-oracle-queue-on-port-8181/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/09/19/ui-fuzzing-key-mash-injection--annunciator-state-parity/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/2026/09/22/verifying-parity-without-the-rom-part-1-black-box-behavioral-modeling/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/2026/09/22/why-rpn-needs-an-ecosystem-not-another-retro-replica/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/archive/2026/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/testing/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/reverseengineering/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/qa/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/architecture/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/mathematics/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/tools/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/performance/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/firmware/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/hardware/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/category/embedded-swift/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/category/testing/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/category/engineering/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/category/firmware/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/category/rpncore/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/category/simulation/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/category/watchos/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/category/pcb/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/category/ios/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/category/3d-printing/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/category/swiftui/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/category/education/</loc>
+         <lastmod>2026-09-23</lastmod>
+    </url>
+    <url>
+         <loc>https://www.stackcalc.io/blog/category/rpn/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/design/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/category/typography/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/category/performance/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
     <url>
-         <loc>https://www.stackcalc.io/blog/category/devops/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/apple/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/ux/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/haptics/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/ui/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/ergonomics/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/software/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/page/2/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/page/3/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/page/4/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/page/5/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/page/6/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/archive/2026/page/2/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/archive/2026/page/3/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/archive/2026/page/4/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/archive/2026/page/5/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/archive/2026/page/6/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/engineering/page/2/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/rpncore/page/2/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/testing/page/2/</loc>
-         <lastmod>2026-09-22</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/blog/category/watchos/page/2/</loc>
-         <lastmod>2026-09-22</lastmod>
+         <loc>https://www.stackcalc.io/blog/category/mathematics/</loc>
+         <lastmod>2026-09-23</lastmod>
     </url>
 </urlset>

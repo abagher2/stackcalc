@@ -1,1299 +1,843 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StackCalc | Tactile Handheld RPN Calculator & Digital Twin</title>
-    <meta name="description" content="An uncompromising aerospace-grade tactile RPN mathematical instrument with a perfect 1:1 iOS and watchOS digital twin. Master Stack Math on physical hardware.">
-    <link rel="icon" href="assets/stackcalc-logo.svg" type="image/svg+xml">
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/brutalist.css">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A shared RPN calculator core across Apple apps, firmware emulation, teaching resources, and a physical calculator in development.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/">
+      
+      
+      
+        <link rel="next" href="blog/">
+      
+      
+      <link rel="icon" href="assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        charcoal: '#181A1B',
-                        pitch: '#000000',
-                        icyblue: '#E2E6EE',
-                        mask: '#CBD1DC',
-                        accentCyan: '#32ADE6',
-                        accentOrange: '#FF9F0A',
-                        accentAmber: '#FFBF00'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Space Mono', 'monospace'],
-                        terminus: ['Terminus', 'Space Mono', 'monospace'],
-                    },
-                    backgroundImage: {
-                        'dot-matrix': 'radial-gradient(#CBD1DC 1px, transparent 1px)',
-                    },
-                    backgroundSize: {
-                        'dot-matrix': '4px 4px',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        /* Bundled Terminus Font */
-        @font-face {
-            font-family: 'Terminus';
-            src: url('assets/fonts/TerminusTTF-4.49.3.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Terminus';
-            src: url('assets/fonts/TerminusTTF-Bold-4.49.3.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        body {
-            background-color: #181A1B;
-            color: #E2E6EE;
-            -webkit-font-smoothing: none;
-        }
-
-        .font-terminus {
-            font-family: 'Terminus', 'Space Mono', monospace;
-        }
+    
+      
+        <title>StackCalc | RPN Across Devices and Physical Learning - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+      
         
-        .brutalist-border {
-            border: 2px solid #E2E6EE;
-        }
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
 
-        .brutalist-border-mask {
-            border: 2px solid #CBD1DC;
-        }
 
-        .brutalist-button {
-            transition: all 0.1s ease-in-out;
-            border: 2px solid #E2E6EE;
-            color: #E2E6EE;
-            background: transparent;
-        }
-
-        .brutalist-button:hover {
-            background-color: #E2E6EE;
-            color: #181A1B;
-        }
+    
+    
+      
+    
+    
+      
         
-        .brutalist-button-primary {
-            background-color: #E2E6EE;
-            color: #181A1B;
-            border: 2px solid #E2E6EE;
-            box-shadow: 4px 4px 0px #32ADE6;
-            transition: all 0.1s ease-in-out;
-        }
         
-        .brutalist-button-primary:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px #32ADE6;
-        }
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/brutalist.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-        /* Authentic ST7567A LCD screen */
-        .lcd-screen {
-            background-color: #E2E6EE;
-            color: #181A1B;
-            position: relative;
-        }
+    
+    
+    
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
         
-        .lcd-screen::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: radial-gradient(#CBD1DC 1.5px, transparent 1.5px);
-            background-size: 3px 3px;
-            pointer-events: none;
-            opacity: 0.55;
-        }
+        <a href="#stackcalc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
 
-        .stack-rect {
-            transition: all 0.3s ease;
-        }
-        .logo-container:hover .stack-rect:nth-child(1) { transform: translateY(-2px); }
-        .logo-container:hover .stack-rect:nth-child(2) { transform: translateY(-1px); }
-        .logo-container:hover .stack-rect:nth-child(4) { transform: translateY(1px); }
+  
 
-        /* Calculator Grid Helpers (Explicit grid definitions ensuring 100% reliability) */
-        .sc-grid-6 {
-            display: grid !important;
-            grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
-            gap: 5px !important;
-        }
-
-        .sc-grid-5 {
-            display: grid !important;
-            grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-            gap: 5px !important;
-        }
-
-        .sc-grid-3 {
-            display: grid !important;
-            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-            gap: 5px !important;
-        }
-
-        .sc-col-span-2 {
-            grid-column: span 2 / span 2 !important;
-        }
-
-        /* Phone chassis hardware bezel */
-        .iphone-frame {
-            background: #1C1D21;
-            border: 8px solid #2C2D32;
-            border-radius: 46px;
-            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.12);
-        }
-    </style>
-</head>
-<body class="font-sans antialiased selection:bg-accentCyan selection:text-pitch overflow-x-hidden">
-
-    <!-- NAVIGATION -->
-    <nav class="fixed w-full top-0 z-50 bg-charcoal border-b-2 border-icyblue">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <a href="#" class="flex items-center gap-4 logo-container cursor-pointer text-decoration-none">
-                    <!-- Vector Stack Logo -->
-                    <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
-                        <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
-                        <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
-                        <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
-                    </svg>
-                    <span class="font-mono font-bold text-xl tracking-tight text-icyblue">STACKCALC<span class="text-accentCyan">_</span></span>
-                </a>
-                
-                <!-- Desktop Nav -->
-                <div class="hidden lg:flex items-center space-x-6 font-mono text-sm">
-                    <a href="#manifesto" class="hover:text-accentCyan transition-colors">MANIFESTO</a>
-                    <a href="#hardware" class="hover:text-accentCyan transition-colors">HARDWARE</a>
-                    <a href="#digital" class="hover:text-accentCyan transition-colors">DIGITAL TWIN</a>
-                    <a href="hardware/" class="hover:text-accentCyan transition-colors">DOCS</a>
-                    <a href="blog/" class="hover:text-accentCyan transition-colors">BLOG</a>
-                    <a href="https://apps.apple.com/app/id6801788040" target="_blank" class="hover:text-accentCyan transition-colors flex items-center gap-1.5 text-xs border border-mask px-3 py-1.5">
-                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.88c.61-.74 1.04-1.78.92-2.82-.93.04-2.02.63-2.65 1.37-.56.64-.99 1.69-.86 2.71 1.05.08 2.01-.54 2.59-1.26z"/></svg>
-                        APP STORE
-                    </a>
-                    <a href="#preorder" class="brutalist-button-primary px-5 py-2 font-bold tracking-widest uppercase">Pre-Order</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="flex lg:hidden items-center gap-2">
-                    <a href="https://apps.apple.com/app/id6801788040" target="_blank" class="font-mono text-xs border border-mask px-2.5 py-1.5">APP</a>
-                    <button id="mobile-menu-btn" type="button" class="font-mono brutalist-button px-3 py-1.5 text-xs uppercase" aria-label="Toggle navigation menu">
-                        MENU
-                    </button>
-                </div>
-            </div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
         </div>
-
-        <!-- Mobile Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-charcoal border-b-2 border-icyblue px-4 pt-2 pb-6 space-y-3 font-mono text-sm">
-            <a href="#manifesto" class="block py-2 hover:text-accentCyan border-b border-mask border-opacity-20 mobile-link">MANIFESTO</a>
-            <a href="#hardware" class="block py-2 hover:text-accentCyan border-b border-mask border-opacity-20 mobile-link">HARDWARE</a>
-            <a href="#digital" class="block py-2 hover:text-accentCyan border-b border-mask border-opacity-20 mobile-link">DIGITAL TWIN</a>
-            <a href="hardware/" class="block py-2 hover:text-accentCyan border-b border-mask border-opacity-20 mobile-link">DOCS</a>
-            <a href="blog/" class="block py-2 hover:text-accentCyan border-b border-mask border-opacity-20 mobile-link">BLOG</a>
-            <a href="https://apps.apple.com/app/id6801788040" target="_blank" class="block py-2 text-accentCyan border-b border-mask border-opacity-20 mobile-link">DOWNLOAD APP STORE</a>
-            <a href="#preorder" class="block mt-4 brutalist-button-primary px-4 py-3 text-center font-bold uppercase mobile-link">Pre-Order Founder's Edition</a>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              StackCalc | RPN Across Devices and Physical Learning
+            
+          </span>
         </div>
-    </nav>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+    
+  
+  Home
 
-    <main class="pt-20">
-        <!-- HERO -->
-        <section class="relative min-h-[92vh] flex items-center border-b-2 border-icyblue bg-pitch">
-            <div class="absolute inset-0 bg-dot-matrix opacity-20 pointer-events-none"></div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 py-12 lg:py-16">
-                
-                <!-- Left Column: Hero Copy & Actions -->
-                <div class="lg:col-span-6">
-                    <p class="font-mono text-accentCyan mb-4 uppercase tracking-widest text-sm">// DEDICATED PHYSICAL CALCULATOR &amp; DIGITAL TWIN</p>
-                    <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tighter mb-6 leading-none text-icyblue">
-                        DITCH THE <br>FLAT GLASS.
-                    </h1>
-                    <p class="text-lg sm:text-xl text-mask mb-8 font-sans leading-relaxed">
-                        The tactile physical RPN calculator designed for students mastering mathematics and professionals solving real-world problems. Starting at just <strong class="text-white font-bold">$59</strong>—the most accessible dedicated RPN scientific calculator available. Ships as a simple 5-minute snap-together kit with 100% pre-soldered electronics (zero soldering or tools required), paired with an identical 1:1 Apple Watch and iPhone digital twin.
-                    </p>
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="blog/" class="md-tabs__link">
+        
+  
+    
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="learning-lab/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="privacy/" class="md-tabs__link">
+          
+  
+  Legal & Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
                     
-                    <div class="flex flex-wrap gap-4 font-mono text-sm mb-6">
-                        <a href="#preorder" class="brutalist-button-primary px-8 py-4 text-center font-bold">PRE-ORDER FOUNDER'S ($89) &rarr;</a>
-                        <a href="#hardware" class="brutalist-button px-6 py-4 text-center font-bold">EXPLORE THE MATH</a>
-                        <a href="https://apps.apple.com/app/id6801788040" target="_blank" class="brutalist-button px-5 py-4 text-center font-bold flex items-center gap-2 border-mask text-mask hover:text-icyblue hover:border-accentCyan">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.88c.61-.74 1.04-1.78.92-2.82-.93.04-2.02.63-2.65 1.37-.56.64-.99 1.69-.86 2.71 1.05.08 2.01-.54 2.59-1.26z"/></svg>
-                            APP STORE (TWIN)
-                        </a>
-                    </div>
-                    <p class="font-mono text-xs text-mask opacity-80">// On-screen simulator demonstrates our companion digital twin. Pre-order the physical calculator below.</p>
-                </div>
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#32ADE6" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF9F0A" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-exists-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      What exists today
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-rpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why RPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#follow-the-current-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Follow the current work
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
                 
-                <!-- Right Column: The Actual iOS App Digital Twin (100% Matching iPhone_1_main.png and watch_1.png) -->
-                <div class="lg:col-span-6 flex flex-col items-center relative">
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS App
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Legal & Support
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Legal & Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
                     
-                    <!-- Surface Preview Switcher -->
-                    <div class="flex items-center gap-1.5 mb-2 font-mono text-xs select-none">
-                        <span class="text-mask text-[11px] uppercase mr-1">// DIGITAL TWIN:</span>
-                        <button id="mode-btn-ios-light" onclick="setCalcMode('ios-light')" class="px-3 py-1 font-bold rounded-full border border-accentCyan bg-accentCyan text-pitch transition-all cursor-pointer">iPhone Light</button>
-                        <button id="mode-btn-ios-dark" onclick="setCalcMode('ios-dark')" class="px-3 py-1 font-bold rounded-full border border-mask/40 bg-pitch text-mask hover:text-white transition-all cursor-pointer">iPhone Dark</button>
-                        <button id="mode-btn-watch" onclick="setCalcMode('watch')" class="px-3 py-1 font-bold rounded-full border border-mask/40 bg-pitch text-mask hover:text-white transition-all cursor-pointer">Apple Watch</button>
-                    </div>
 
-                    <!-- Live Mission Showcase Indicator -->
-                    <div class="w-full max-w-[395px] flex items-center justify-between mb-2.5 px-2 font-mono text-xs select-none">
-                        <div class="flex items-center gap-2">
-                            <span class="inline-block w-2 h-2 rounded-full bg-accentCyan animate-pulse"></span>
-                            <span id="showcase-mission-tag" class="text-accentCyan font-bold uppercase tracking-wider text-[11px]">DEMO: STACK MATH (5 + 3 = 8)</span>
-                        </div>
-                        <span id="showcase-step-tag" class="text-mask text-[10px] tracking-wide">AUTOPLAY</span>
-                    </div>
-
-                    <!-- iPhone Frame (Authentic Digital Twin) -->
-                    <div id="calc-iphone-container" class="w-full max-w-[370px] sm:max-w-[395px] iphone-frame p-3.5 sm:p-4 flex flex-col select-none sc-theme-light transition-colors duration-200">
-                        <div class="sc-chassis rounded-[36px] p-3 sm:p-3.5 border border-black/5 transition-colors duration-200">
-                            
-                            <!-- Status Bar -->
-                            <div class="flex justify-between items-center text-xs font-bold font-sans px-1 mb-2">
-                                <span class="sc-status-time">6:00</span>
-                                <div class="w-20 h-4 bg-[#000000] rounded-full mx-auto shadow-inner"></div>
-                                <div class="flex items-center gap-1 text-[10px]">
-                                    <span>5G</span>
-                                    <div class="w-3.5 h-2 border border-current rounded-xs p-0.5"><div class="w-full h-full bg-current"></div></div>
-                                </div>
-                            </div>
-
-                            <!-- App Header (StackCalc 32 / STACK CALCULATOR) -->
-                            <div class="flex justify-between items-baseline mb-2 px-1">
-                                <div class="leading-none select-none">
-                                    <span class="font-bold italic text-xl tracking-tight sc-brand-title font-sans">StackCalc</span>
-                                    <span class="font-bold italic text-xl tracking-tight text-[#00A3FF] block -mt-1 font-sans">32</span>
-                                </div>
-                                <span class="font-mono text-[10px] tracking-[0.16em] text-[#8E8E93] font-bold select-none">STACK CALCULATOR</span>
-                            </div>
-
-                            <!-- Authentic ST7567A LCD Screen (Left-Justified, Terminus Font, Clean Display) -->
-                            <div class="sc-lcd-panel lcd-screen p-3 rounded-2xl flex items-center justify-start mb-3" style="min-height: 96px;">
-                                <span id="app-lcd-text" class="font-terminus text-5xl font-bold tracking-tight text-left select-text">8_</span>
-                            </div>
-
-                            <!-- 8-Row Keypad Matrix (HP32KeyMap.swift Standard Grid) -->
-                            <div class="space-y-1 font-sans">
-                                
-                                <!-- Row 0: LFU Quick Keys (6 cols) -->
-                                <div class="sc-grid-6">
-                                    <button onclick="handleKeyClick('sin')" class="sc-keycap sc-keycap-std sc-keycap-lfu">SIN</button>
-                                    <button onclick="handleKeyClick('cos')" class="sc-keycap sc-keycap-std sc-keycap-lfu">COS</button>
-                                    <button onclick="handleKeyClick('tan')" class="sc-keycap sc-keycap-std sc-keycap-lfu">TAN</button>
-                                    <button onclick="handleKeyClick('ln')" class="sc-keycap sc-keycap-std sc-keycap-lfu">LN</button>
-                                    <button onclick="handleKeyClick('exp')" class="sc-keycap sc-keycap-std sc-keycap-lfu italic">eˣ</button>
-                                    <button onclick="handleKeyClick('sqrt')" class="sc-keycap sc-keycap-std sc-keycap-lfu">√𝑥</button>
-                                </div>
-
-                                <!-- Row 1: Dual Legends on Faceplate (6 cols) -->
-                                <div class="sc-legend-row sc-grid-6">
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">𝑥²</span><span class="sc-legend-blue">PARTS</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">10ˣ</span><span class="sc-legend-blue">PROB</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">LOG</span><span class="sc-legend-blue">L.R.</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">ˣ√𝑦</span><span class="sc-legend-blue">𝑥̄,𝑦̄</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">𝑥!</span><span class="sc-legend-blue">s,σ</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">Σ-</span><span class="sc-legend-blue">SUMS</span></div>
-                                </div>
-                                <!-- Row 1: Keys with Alpha A-F (6 cols) -->
-                                <div class="sc-grid-6">
-                                    <button id="btn-sqrt" onclick="handleKeyClick('sqrt')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary">√𝑥</span><span class="sc-keycap-alpha">A</span></button>
-                                    <button onclick="handleKeyClick('exp')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary italic">eˣ</span><span class="sc-keycap-alpha">B</span></button>
-                                    <button onclick="handleKeyClick('ln')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary">LN</span><span class="sc-keycap-alpha">C</span></button>
-                                    <button id="btn-pow" onclick="handleKeyClick('pow')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary italic">𝑦ˣ</span><span class="sc-keycap-alpha">D</span></button>
-                                    <button onclick="handleKeyClick('inv')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary">𝑥⁻¹</span><span class="sc-keycap-alpha">E</span></button>
-                                    <button onclick="handleKeyClick('stat')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary">Σ+</span><span class="sc-keycap-alpha">F</span></button>
-                                </div>
-
-                                <!-- Row 2: Dual Legends on Faceplate (6 cols) -->
-                                <div class="sc-legend-row sc-grid-6">
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">CMPLX</span><span class="sc-legend-blue">EQN</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">RND</span><span class="sc-legend-blue">SCRL</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">HYP</span><span class="sc-legend-blue">R↑</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">ASIN</span><span class="sc-legend-blue">π</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">ACOS</span><span class="sc-legend-blue">%</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">ATAN</span><span class="sc-legend-blue">%CHG</span></div>
-                                </div>
-                                <!-- Row 2: Keys with Alpha G-L (6 cols) -->
-                                <div class="sc-grid-6">
-                                    <button onclick="handleKeyClick('sto')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary">STO</span><span class="sc-keycap-alpha">G</span></button>
-                                    <button onclick="handleKeyClick('rcl')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary">RCL</span><span class="sc-keycap-alpha">H</span></button>
-                                    <button onclick="handleKeyClick('rolldown')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary">R↓</span><span class="sc-keycap-alpha">I</span></button>
-                                    <button onclick="handleKeyClick('sin')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary">SIN</span><span class="sc-keycap-alpha">J</span></button>
-                                    <button onclick="handleKeyClick('cos')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary">COS</span><span class="sc-keycap-alpha">K</span></button>
-                                    <button onclick="handleKeyClick('tan')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary">TAN</span><span class="sc-keycap-alpha">L</span></button>
-                                </div>
-
-                                <!-- Row 3: Dual Legends on Faceplate (6 cols) -->
-                                <div class="sc-legend-row sc-grid-6">
-                                    <div class="sc-col-span-2 flex justify-between px-1"><span class="sc-legend-yellow">LAST𝑥</span><span class="sc-legend-blue">SHOW</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">MEM</span><span class="sc-legend-blue">𝑥⇄?</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">MODES</span><span class="sc-legend-blue">|𝑥|</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">DISP</span><span class="sc-legend-blue">÷R</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">CLEAR</span><span></span></div>
-                                </div>
-                                <!-- Row 3: Wide ENTER (2 cols) + Controls (6 cols total) -->
-                                <div class="sc-grid-6">
-                                    <button id="btn-enter" onclick="handleKeyClick('enter')" class="sc-keycap sc-keycap-enter sc-col-span-2"><span class="sc-keycap-primary text-base font-black">ENTER</span><span class="sc-keycap-alpha">M</span></button>
-                                    <button id="btn-swap" onclick="handleKeyClick('swap')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary font-bold">𝑥⇄𝑦</span><span class="sc-keycap-alpha">N</span></button>
-                                    <button id="btn-chs" onclick="handleKeyClick('chs')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary font-bold">+/–</span><span class="sc-keycap-alpha">O</span></button>
-                                    <button id="btn-ee" onclick="handleKeyClick('ee')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary font-bold">E</span><span class="sc-keycap-alpha">P</span></button>
-                                    <button id="btn-back" onclick="handleKeyClick('back')" class="sc-keycap sc-keycap-backspace flex items-center justify-center">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3 12.59L17.59 17 14 13.41 10.41 17 9 15.59 12.59 12 9 8.41 10.41 7 14 10.59 17.59 7 19 8.41 15.41 12 19 15.59z"/></svg>
-                                    </button>
-                                </div>
-
-                                <!-- Row 4: Dual Legends on Faceplate (5 cols) -->
-                                <div class="sc-legend-row sc-grid-5">
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">FN=</span><span class="sc-legend-blue">POLY</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">↓</span><span class="sc-legend-blue">SOLVE</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">↑</span><span class="sc-legend-blue">∫</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">▸km</span><span class="sc-legend-blue">▸mi</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">𝑥?𝑦</span><span class="sc-legend-blue">𝑥?0</span></div>
-                                </div>
-                                <!-- Row 4: Numpad Top (5 cols) -->
-                                <div class="sc-grid-5">
-                                    <button onclick="handleKeyClick('xeq')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary">XEQ</span></button>
-                                    <button id="btn-7" onclick="handleKeyClick('7')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">7</span><span class="sc-keycap-alpha">Q</span></button>
-                                    <button id="btn-8" onclick="handleKeyClick('8')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">8</span><span class="sc-keycap-alpha">R</span></button>
-                                    <button id="btn-9" onclick="handleKeyClick('9')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">9</span><span class="sc-keycap-alpha">S</span></button>
-                                    <button id="btn-div" onclick="handleKeyClick('/')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">÷</span></button>
-                                </div>
-
-                                <!-- Row 5: Dual Legends on Faceplate (5 cols) -->
-                                <div class="sc-legend-row sc-grid-5">
-                                    <div></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">▸θ,r</span><span class="sc-legend-blue">▸y,x</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">▸HR</span><span class="sc-legend-blue">▸HMS</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">▸DEG</span><span class="sc-legend-blue">▸RAD</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">BASE</span><span class="sc-legend-blue">FLAGS</span></div>
-                                </div>
-                                <!-- Row 5: Orange Shift + Numpad Mid (5 cols) -->
-                                <div class="sc-grid-5">
-                                    <button id="btn-shift-y" onclick="handleKeyClick('shift_y')" class="sc-keycap sc-keycap-shift-orange">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 14l-4-4 4-4"/><path d="M5 10h11a4 4 0 1 1 0 8h-1"/></svg>
-                                    </button>
-                                    <button id="btn-4" onclick="handleKeyClick('4')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">4</span><span class="sc-keycap-alpha">T</span></button>
-                                    <button id="btn-5" onclick="handleKeyClick('5')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">5</span><span class="sc-keycap-alpha">U</span></button>
-                                    <button id="btn-6" onclick="handleKeyClick('6')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">6</span><span class="sc-keycap-alpha">V</span></button>
-                                    <button id="btn-mul" onclick="handleKeyClick('*')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">×</span></button>
-                                </div>
-
-                                <!-- Row 6: Dual Legends on Faceplate (5 cols) -->
-                                <div class="sc-legend-row sc-grid-5">
-                                    <div></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">▸kg</span><span class="sc-legend-blue">▸lb</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">▸°C</span><span class="sc-legend-blue">▸°F</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">▸cm</span><span class="sc-legend-blue">▸in</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">▸l</span><span class="sc-legend-blue">▸gal</span></div>
-                                </div>
-                                <!-- Row 6: Cyan Shift + Numpad Lower (5 cols) -->
-                                <div class="sc-grid-5">
-                                    <button id="btn-shift-b" onclick="handleKeyClick('shift_b')" class="sc-keycap sc-keycap-shift-cyan">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 14l4-4-4-4"/><path d="M19 10H8a4 4 0 1 0 0 8h1"/></svg>
-                                    </button>
-                                    <button id="btn-1" onclick="handleKeyClick('1')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">1</span><span class="sc-keycap-alpha">W</span></button>
-                                    <button id="btn-2" onclick="handleKeyClick('2')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">2</span><span class="sc-keycap-alpha">X</span></button>
-                                    <button id="btn-3" onclick="handleKeyClick('3')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">3</span><span class="sc-keycap-alpha">Y</span></button>
-                                    <button id="btn-sub" onclick="handleKeyClick('-')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">−</span></button>
-                                </div>
-
-                                <!-- Row 7: Dual Legends on Faceplate (5 cols) -->
-                                <div class="sc-legend-row sc-grid-5">
-                                    <div class="text-right"><span class="sc-legend-blue text-[8px]">OFF</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">REGS</span><span class="sc-legend-blue">VIEW</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">FDISP</span><span class="sc-legend-blue">/c</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">TVM</span><span class="sc-legend-blue">𝑥∥𝑦</span></div>
-                                    <div class="flex justify-between"><span class="sc-legend-yellow">LBL</span><span class="sc-legend-blue">RTN</span></div>
-                                </div>
-                                <!-- Row 7: C, 0, ., PLOT, + (5 cols) -->
-                                <div class="sc-grid-5">
-                                    <button id="btn-c" onclick="handleKeyClick('c')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg font-bold">C</span></button>
-                                    <button id="btn-0" onclick="handleKeyClick('0')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg">0</span><span class="sc-keycap-alpha">Z</span></button>
-                                    <button id="btn-dot" onclick="handleKeyClick('.')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg font-bold">.</span><span class="sc-keycap-alpha">i</span></button>
-                                    <button onclick="handleKeyClick('plot')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-xs font-bold">PLOT</span><span class="sc-keycap-alpha">(i)</span></button>
-                                    <button id="btn-add" onclick="handleKeyClick('+')" class="sc-keycap sc-keycap-std"><span class="sc-keycap-primary text-lg font-bold">+</span></button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Apple Watch Frame (Matches watch_1.png Parity) -->
-                    <div id="calc-watch-container" class="sc-watch-frame hidden select-none">
-                        <!-- Watch Status Header -->
-                        <div class="flex justify-end items-baseline mb-1 px-2 text-xs font-mono">
-                            <span class="text-white font-bold tracking-wider text-sm">10:15</span>
-                        </div>
-
-                        <!-- Watch Pitch-Black OLED Display (Left-Justified Terminus, Tap to ENTER) -->
-                        <div id="watch-display-enter" onclick="handleKeyClick('enter')" title="Tap display to ENTER" class="py-2 px-2 text-left mb-2 cursor-pointer hover:opacity-90">
-                            <span id="watch-lcd-text" class="font-terminus text-5xl font-bold text-white tracking-tight">8</span>
-                        </div>
-
-                        <!-- Watch 3-Column Keypad with Authentic Legends -->
-                        <div class="space-y-1">
-                            <!-- Watch Row 1 Legends -->
-                            <div class="sc-grid-3 text-[8.5px] font-mono font-bold px-1 text-center">
-                                <div class="flex justify-between"><span class="text-accentOrange">↓</span><span class="text-accentCyan">SOLVE</span></div>
-                                <div class="flex justify-between"><span class="text-accentOrange">↑</span><span class="text-accentCyan">∫</span></div>
-                                <div class="flex justify-between"><span class="text-accentOrange">▶km</span><span class="text-accentCyan">▶mi</span></div>
-                            </div>
-                            <!-- Watch Row 1 Keys -->
-                            <div class="sc-grid-3">
-                                <button id="watch-btn-7" onclick="handleKeyClick('7')" class="sc-watch-key">7</button>
-                                <button id="watch-btn-8" onclick="handleKeyClick('8')" class="sc-watch-key">8</button>
-                                <button id="watch-btn-9" onclick="handleKeyClick('9')" class="sc-watch-key">9</button>
-                            </div>
-
-                            <!-- Watch Row 2 Legends -->
-                            <div class="sc-grid-3 text-[8px] font-mono font-bold px-1 text-center">
-                                <div class="flex justify-between"><span class="text-accentOrange">▶θ,r</span><span class="text-accentCyan">▶y,x</span></div>
-                                <div class="flex justify-between"><span class="text-accentOrange">▶HR</span><span class="text-accentCyan">▶HMS</span></div>
-                                <div class="flex justify-between"><span class="text-accentOrange">▶DEG</span><span class="text-accentCyan">▶RAD</span></div>
-                            </div>
-                            <!-- Watch Row 2 Keys -->
-                            <div class="sc-grid-3">
-                                <button id="watch-btn-4" onclick="handleKeyClick('4')" class="sc-watch-key">4</button>
-                                <button id="watch-btn-5" onclick="handleKeyClick('5')" class="sc-watch-key">5</button>
-                                <button id="watch-btn-6" onclick="handleKeyClick('6')" class="sc-watch-key">6</button>
-                            </div>
-
-                            <!-- Watch Row 3 Legends -->
-                            <div class="sc-grid-3 text-[8px] font-mono font-bold px-1 text-center">
-                                <div class="flex justify-between"><span class="text-accentOrange">▶kg</span><span class="text-accentCyan">▶lb</span></div>
-                                <div class="flex justify-between"><span class="text-accentOrange">▶°C</span><span class="text-accentCyan">▶°F</span></div>
-                                <div class="flex justify-between"><span class="text-accentOrange">▶cm</span><span class="text-accentCyan">▶in</span></div>
-                            </div>
-                            <!-- Watch Row 3 Keys -->
-                            <div class="sc-grid-3">
-                                <button id="watch-btn-1" onclick="handleKeyClick('1')" class="sc-watch-key">1</button>
-                                <button id="watch-btn-2" onclick="handleKeyClick('2')" class="sc-watch-key">2</button>
-                                <button id="watch-btn-3" onclick="handleKeyClick('3')" class="sc-watch-key">3</button>
-                            </div>
-
-                            <!-- Watch Row 4 Legends -->
-                            <div class="sc-grid-3 text-[8px] font-mono font-bold px-1 text-center">
-                                <div class="flex justify-between"><span class="text-accentOrange">REGS</span><span class="text-accentCyan">VIEW</span></div>
-                                <div class="flex justify-between"><span class="text-accentOrange">FDISP</span><span class="text-accentCyan">/c</span></div>
-                                <div class="flex justify-between"><span class="text-accentOrange">PLOT</span></div>
-                            </div>
-                            <!-- Watch Row 4 Keys -->
-                            <div class="sc-grid-3">
-                                <button id="watch-btn-0" onclick="handleKeyClick('0')" class="sc-watch-key">0</button>
-                                <button id="watch-btn-dot" onclick="handleKeyClick('.')" class="sc-watch-key">.</button>
-                                <button id="watch-btn-chs" onclick="handleKeyClick('chs')" class="sc-watch-key">+/–</button>
-                            </div>
-
-                            <!-- Watch Row 5: Sticky Bottom Toolbar -->
-                            <div class="sc-grid-3 pt-1.5">
-                                <button id="watch-btn-shift-y" onclick="handleKeyClick('shift_y')" class="sc-watch-key bg-[#D97706] text-white font-bold flex items-center justify-center">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 14l-4-4 4-4"/><path d="M5 10h11a4 4 0 1 1 0 8h-1"/></svg>
-                                </button>
-                                <button id="watch-btn-c" onclick="handleKeyClick('c')" class="sc-watch-key bg-[#5C3A1E] text-white font-bold">C</button>
-                                <button id="watch-btn-shift-b" onclick="handleKeyClick('shift_b')" class="sc-watch-key bg-[#0284C7] text-white font-bold flex items-center justify-center">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 14l4-4-4-4"/><path d="M19 10H8a4 4 0 1 0 0 8h1"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Conversion Toast (Appears when visitor taps keys on the demo) -->
-                    <div id="conversion-toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4 w-[92%] max-w-[450px] bg-pitch/95 border-2 border-accentCyan p-4 rounded-xl shadow-[0_10px_35px_rgba(0,0,0,0.85)] text-center font-mono backdrop-blur-md">
-                        <div class="flex items-center justify-between mb-1.5">
-                            <p class="text-accentCyan font-bold text-xs tracking-wider flex items-center gap-1.5">
-                                <span class="inline-block w-2 h-2 rounded-full bg-accentCyan animate-pulse"></span>
-                                // GET THE PHYSICAL INSTRUMENT
-                            </p>
-                            <button onclick="document.getElementById('conversion-toast').classList.add('opacity-0','pointer-events-none','translate-y-4'); document.getElementById('conversion-toast').classList.remove('opacity-100','pointer-events-auto','translate-y-0');" class="text-mask hover:text-white text-xs px-1 font-mono">✕</button>
-                        </div>
-                        <p class="text-mask text-[12px] leading-relaxed mb-3">Nothing replaces real snap-dome switches and spatial muscle memory. Pre-order the physical handheld calculator on Shopify, or install the companion digital twin on your iPhone &amp; Watch.</p>
-                        <div class="flex justify-center gap-2.5">
-                            <a href="#preorder" class="brutalist-button-primary px-4 py-2 text-[11px] font-bold flex items-center gap-1.5">
-                                PRE-ORDER HARDWARE &rarr;
-                            </a>
-                            <a href="https://apps.apple.com/app/id6801788040" target="_blank" class="brutalist-button px-3.5 py-2 text-[11px] font-bold text-icyblue border-mask hover:border-white flex items-center gap-1">
-                                APP STORE (TWIN)
-                            </a>
-                        </div>
-                    </div>
-
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-exists-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      What exists today
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-rpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why RPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#follow-the-current-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Follow the current work
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
                 </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
 
 
+<h1 id="stackcalc">StackCalc</h1>
+<div style="text-align: center;">
+<picture>
+  <source srcset="assets/launch-stack-dark.svg" media="(prefers-color-scheme: dark)">
+  <img src="assets/launch-stack-light.svg" alt="StackCalc logo" style="width: 200px; margin-bottom: 1rem; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
+</picture>
+<p style="font-size: 1.2rem; color: gray;">RPN software, teaching resources, and an instrument in development.</p>
+</div>
+
+<h2 id="what-exists-today">What exists today</h2>
+<p>StackCalc is an ecosystem around one calculator model rather than a single retro-calculator replica. The same RPN ideas are explored on devices a learner already has, with physical resources that make stack behavior and mathematical relationships visible.</p>
+<ul>
+<li><strong>Apple apps:</strong> The iPhone, iPad, and Apple Watch companion app is available on the <a href="https://apps.apple.com/app/id6801788040">App Store</a>.</li>
+<li><strong>Learning Lab:</strong> The first collection includes a fraction studio, four-register stack stage, expression-tree board, coordinate lab, printable cards, and an eight-page teacher booklet. <a href="learning-lab/#download-the-prototype-materials">Download the complete 0.2.0 prototype bundle</a>.</li>
+<li><strong>Firmware emulator:</strong> A local browser simulator runs the compiled firmware image through an RP2350 emulator. Its generated keypad feeds a row-and-column matrix contract, and its display reads the firmware’s 132 × 65 framebuffer.</li>
+<li><strong>Physical calculator:</strong> The tool-free chassis, faceplate, TPU membrane, and snap cap are real printed mechanical prototypes. The KiCad PCB design and manufacturing BOM are complete and fabrication is in progress; no populated, powered StackCalc board is being represented here.</li>
+</ul>
+<h2 id="why-rpn">Why RPN</h2>
+<p>RPN turns a calculation into a sequence of small actions: place values on a stack, then apply an operation. It can reduce parenthesis entry, but it makes calculator state important. A person needs to see the working value, know what ENTER changes, and predict what an operation will consume.</p>
+<p>Our design question is how a learner can see, touch, and predict the next stack action across an app, a teaching aid, a simulator, and eventually a dedicated handheld.</p>
+<h2 id="follow-the-current-work">Follow the current work</h2>
+<ul>
+<li>Start with the <a href="learning-lab/">StackCalc Learning Lab</a> and its reproducible materials.</li>
+<li>Read the <a href="blog/">engineering blog</a> for the shared core, emulator, PCB-to-CAD relationship, printed assembly, and teaching-resource methods.</li>
+<li>Review the <a href="hardware/">hardware documentation</a> for the current source-to-output map and physical-validation boundary.</li>
+<li>Follow the staged <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator">Hackaday project</a> for build-log discussions. The StackCalc site remains the canonical home for source materials and downloads.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
             </div>
-        </section>
-
-        <!-- UNIFIED MANIFESTO / ETHOS -->
-        <section id="manifesto" class="py-24 bg-charcoal border-b-2 border-icyblue relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-3xl mb-14">
-                    <p class="font-mono text-accentCyan mb-2 uppercase tracking-widest text-sm">// THE STACKCALC ETHOS</p>
-                    <h2 class="text-4xl md:text-6xl font-extrabold uppercase mb-6 tracking-tight">Real Math. Real Keys. Real Focus.</h2>
-                    <p class="text-mask text-lg leading-relaxed">
-                        Inspired by legendary scientific instruments like the HP32SII and engineered to end the confusion of nested parentheses and distracting smartphone screens. Whether you're a student building algebraic intuition or a professional solving complex equations, StackCalc delivers pure mathematical clarity at a price anyone can afford.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <div class="border-t-2 border-accentCyan pt-5">
-                        <div class="font-mono text-accentCyan text-xs font-bold mb-2">// PILLAR 01</div>
-                        <h3 class="font-mono text-xl font-bold mb-3 text-icyblue">Physical Over Glass</h3>
-                        <p class="text-mask text-sm leading-relaxed mb-4">We reject flat, notification-driven touchscreens for serious mathematics. Crisp mechanical snap-dome keys confirm every entry with unmistakable tactile feedback. A high-contrast display readable in bright classrooms or direct sunlight. No notifications, no ads, no subscriptions.</p>
-                        <span class="font-mono text-xs text-accentCyan uppercase font-bold">&gt; TACTILE MUSCLE MEMORY</span>
-                    </div>
-                    <div class="border-t-2 border-accentOrange pt-5">
-                        <div class="font-mono text-accentOrange text-xs font-bold mb-2">// PILLAR 02</div>
-                        <h3 class="font-mono text-xl font-bold mb-3 text-icyblue">Pure Stack Math (RPN)</h3>
-                        <p class="text-mask text-sm leading-relaxed mb-4">Reverse Polish Notation reclaims calculation as intuitive block-building. Enter numbers, press the operator, and intermediate results emerge naturally on the 4-level stack. Eliminates parenthesis mistakes, operator precedence errors, and equals key confusion.</p>
-                        <span class="font-mono text-xs text-accentOrange uppercase font-bold">&gt; 4-LEVEL VISUAL STACK</span>
-                    </div>
-                    <div class="border-t-2 border-icyblue pt-5">
-                        <div class="font-mono text-accentAmber text-xs font-bold mb-2">// PILLAR 03</div>
-                        <h3 class="font-mono text-xl font-bold mb-3 text-icyblue">Accessible to Everyone ($59)</h3>
-                        <p class="text-mask text-sm leading-relaxed mb-4">Vintage RPN scientific calculators trade for $150 to $400+. We engineered StackCalc so students and professionals can own a genuine, heavy-duty RPN calculator for just $59. Simple 5-minute snap assembly keeps costs low without requiring any tools or soldering.</p>
-                        <span class="font-mono text-xs text-accentAmber uppercase font-bold">&gt; UNBEATABLE $59 VALUE</span>
-                    </div>
-                </div>
-
-                <div class="pt-6 border-t border-mask/20 flex flex-wrap justify-between items-center gap-4 font-mono text-xs text-mask">
-                    <span>// ZERO SUBSCRIPTIONS &bull; BARE-METAL PRECISION &bull; STANDARDIZED TEST COMPLIANT</span>
-                    <a href="blog/" class="text-accentCyan hover:underline font-bold">// EXPLORE OUR ENGINEERING CHRONICLES &rarr;</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- PHYSICAL CALCULATOR -->
-        <section id="hardware" class="py-24 bg-pitch border-b-2 border-icyblue">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12">
-                    <div>
-                        <p class="font-mono text-accentCyan mb-2">// DEDICATED PHYSICAL CALCULATOR</p>
-                        <h2 class="text-4xl md:text-5xl font-extrabold uppercase">Real Tactile Calculator.</h2>
-                    </div>
-                    <div class="mt-4 md:mt-0 text-right">
-                        <p class="font-mono text-mask max-w-xs text-sm mb-3">Pure mathematical focus. Heavy snap-dome tactile keys. Instant 5-minute snap assembly.</p>
-                        <a href="#preorder" class="brutalist-button-primary px-5 py-2 font-mono text-xs font-bold uppercase inline-block mb-2">PRE-ORDER FOUNDER'S BATCH 00 &rarr;</a>
-                        <div><a href="hardware/" class="font-mono text-xs text-mask hover:text-accentCyan hover:underline font-bold">// VIEW DETAILED SPECS &rarr;</a></div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Hardware Variants -->
-                    <div class="flex flex-col gap-6">
-                        <!-- SC-32 Card -->
-                        <div class="brutalist-border p-6 bg-charcoal relative shadow-[4px_4px_0px_#181A1B]">
-                            <div class="font-mono text-lg border-b-2 border-mask pb-3 mb-4 flex justify-between items-center">
-                                <span class="font-bold">SC-32 RPN SCIENTIFIC</span>
-                                <span class="text-accentCyan text-xs font-bold tracking-widest border border-accentCyan px-2 py-0.5">FROM $59 USD</span>
-                            </div>
-                            <ul class="space-y-3 font-mono text-sm">
-                                <li class="flex justify-between"><span class="text-mask">Math Engine:</span> <span class="text-icyblue">Pure 4-Level RPN Stack (Fractions, Trig, Stats)</span></li>
-                                <li class="flex justify-between"><span class="text-mask">Keys:</span> <span class="text-icyblue">43 Heavy Snap-Dome Tactile Buttons</span></li>
-                                <li class="flex justify-between"><span class="text-mask">Display:</span> <span class="text-icyblue">High-Contrast Glare-Free Graphic Screen</span></li>
-                                <li class="flex justify-between"><span class="text-mask">Battery:</span> <span class="text-icyblue">Multi-Month Run-Time (Coin Cell Included)</span></li>
-                                <li class="flex justify-between"><span class="text-mask">Assembly:</span> <span class="text-icyblue">5-Minute Snap Fit (100% Pre-Soldered, Zero Tools)</span></li>
-                            </ul>
-                            <div class="mt-4 pt-3 border-t border-mask/30 flex justify-between items-center">
-                                <span class="text-mask text-xs font-mono">The Most Accessible RPN Calculator on Earth</span>
-                                <span class="text-mask font-bold text-xs font-mono uppercase tracking-wider">COMING SOON · $59</span>
-                            </div>
-                        </div>
-                        
-                        <!-- SC-6 Card -->
-                        <div class="brutalist-border p-6 bg-charcoal relative shadow-[4px_4px_0px_#181A1B]">
-                            <div class="font-mono text-lg border-b-2 border-mask pb-3 mb-4 flex justify-between items-center">
-                                <span class="font-bold">SC-6 ELEMENTARY VARIANT</span>
-                                <span class="text-accentCyan text-xs font-bold tracking-widest border border-accentCyan px-2 py-0.5">$35 USD</span>
-                            </div>
-                            <ul class="space-y-3 font-mono text-sm">
-                                <li class="flex justify-between"><span class="text-mask">Target:</span> <span class="text-icyblue">Lower-Grades (Grades K–6)</span></li>
-                                <li class="flex justify-between"><span class="text-mask">Visual Tools:</span> <span class="text-icyblue">Ten Frames, Number Racks, Place Value</span></li>
-                                <li class="flex justify-between"><span class="text-mask">Fractions:</span> <span class="text-icyblue">Step-by-Step [SIMP] Reduction Key</span></li>
-                                <li class="flex justify-between"><span class="text-mask">Operations:</span> <span class="text-icyblue">Skip-Counting [REP], Clock &amp; Currency</span></li>
-                                <li class="flex justify-between"><span class="text-mask">Assembly:</span> <span class="text-icyblue">5-Minute Snap Fit (100% Pre-Soldered)</span></li>
-                            </ul>
-                            <div class="mt-4 pt-3 border-t border-mask/30 flex justify-between items-center">
-                                <span class="text-mask text-xs font-mono">Foundational Tactile STEM Learning</span>
-                                <span class="text-mask font-bold text-xs font-mono uppercase tracking-wider">COMING SOON · $35</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Faceplate Ecosystem -->
-                    <div class="flex flex-col justify-between gap-4">
-                        <div>
-                            <span class="font-mono text-accentCyan text-xs font-bold tracking-widest block mb-2">// 5 APP-MATCHED COLORWAYS</span>
-                            <p class="text-mask text-xs mb-3 font-sans leading-relaxed">Match your physical calculator to your favorite digital twin theme. Choose your colorway at checkout.</p>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div class="brutalist-border p-4 bg-[#E2E6EE] text-[#181A1B] flex flex-col justify-between">
-                                <span class="font-mono font-bold text-xs">RETROFUTURISM</span>
-                                <span class="font-mono text-[10px] opacity-80 mt-4">Apollo Off-White &amp; Dark Blue (iOS Light Default)</span>
-                            </div>
-                            <div class="brutalist-border p-4 bg-[#181A1B] text-white flex flex-col justify-between">
-                                <span class="font-mono font-bold text-xs text-icyblue">STEALTH INDUSTRIAL</span>
-                                <span class="font-mono text-[10px] text-mask mt-4">Matte Black &amp; Deep Slate (iOS Dark Default)</span>
-                            </div>
-                            <div class="brutalist-border p-4 text-white flex flex-col justify-between" style="background: linear-gradient(135deg, #370000 0%, #1a0000 100%);">
-                                <span class="font-mono font-bold text-xs text-accentAmber">SUPERNOVA</span>
-                                <span class="font-mono text-[10px] text-mask mt-4">Silk Crimson &amp; Sunburst Gold</span>
-                            </div>
-                            <div class="brutalist-border p-4 text-white flex flex-col justify-between" style="background: linear-gradient(135deg, #1b0a2a 0%, #0d1527 100%);">
-                                <span class="font-mono font-bold text-xs text-[#a78bfa]">DEEP SPACE</span>
-                                <span class="font-mono text-[10px] text-mask mt-4">Cosmic Purple &amp; Nebula Blue</span>
-                            </div>
-                            <div class="brutalist-border p-4 text-white sm:col-span-2 flex flex-col justify-between" style="background: linear-gradient(135deg, #001a33 0%, #000a1a 100%);">
-                                <span class="font-mono font-bold text-xs text-accentCyan">VOYAGER</span>
-                                <span class="font-mono text-[10px] text-mask mt-2">Nautical Navy &amp; Ice White Contrast</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DIGITAL TWIN -->
-        <section id="digital" class="py-24 bg-charcoal border-b-2 border-icyblue relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-16">
-                    <p class="font-mono text-accentOrange mb-2">// COMPANION APPS (iOS &amp; watchOS)</p>
-                    <h2 class="text-4xl md:text-6xl font-extrabold uppercase">The 1:1 Digital Twin.</h2>
-                    <p class="font-mono text-mask text-sm max-w-xl mx-auto mt-3">Never retrain your muscle memory. The exact deterministic math engine running on our physical hardware runs identically on your wrist and phone.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <!-- Continuous Tactile Field -->
-                    <div class="flex flex-col items-center text-center">
-                        <div class="w-24 h-24 rounded-full border-4 border-icyblue flex items-center justify-center mb-6 relative">
-                            <div class="absolute inset-0 rounded-full animate-ping opacity-20 border-4 border-icyblue"></div>
-                            <span class="font-mono text-2xl font-bold">HPTC</span>
-                        </div>
-                        <h3 class="font-mono font-bold text-xl mb-4">Continuous Tactile Field</h3>
-                        <p class="text-mask text-sm leading-relaxed">Slide across key seams for boundary pulses. Sink into the center for a heavy mechanical impact and sharp metallic click. Lift to actuate. Zero-distance drag gesture.</p>
-                    </div>
-
-                    <!-- TUI Overlay -->
-                    <div class="flex flex-col items-center text-center">
-                        <div class="w-24 h-24 border-4 border-accentCyan flex items-center justify-center mb-6 lcd-screen">
-                            <span class="font-terminus text-lg font-bold text-charcoal">>_</span>
-                        </div>
-                        <h3 class="font-mono font-bold text-xl mb-4">TUI Terminal Overlays</h3>
-                        <p class="text-mask text-sm leading-relaxed">Standard Apple UI is rejected. Settings, Plotting, and Tutorials expand into a native Text User Interface (TUI). Crisp Terminus typography and debossed branding.</p>
-                    </div>
-
-                    <!-- watchOS (Rendered to match watch_1.png) -->
-                    <div class="flex flex-col items-center text-center">
-                        <!-- Apple Watch Mockup Frame -->
-                        <div class="w-48 bg-pitch border-4 border-[#282C34] rounded-3xl p-3 mb-6 shadow-2xl">
-                            <div class="flex justify-between items-baseline text-[10px] font-mono text-white/70 mb-1">
-                                <span>10:15</span>
-                            </div>
-                            <div class="text-left font-terminus text-2xl font-bold text-white mb-2">0</div>
-                            <div class="grid grid-cols-3 gap-1 text-[10px] font-mono">
-                                <div class="bg-[#121315] text-white p-1 rounded-sm">7</div>
-                                <div class="bg-[#121315] text-white p-1 rounded-sm">8</div>
-                                <div class="bg-[#121315] text-white p-1 rounded-sm">9</div>
-                                <div class="bg-[#121315] text-white p-1 rounded-sm">4</div>
-                                <div class="bg-[#121315] text-white p-1 rounded-sm">5</div>
-                                <div class="bg-[#121315] text-white p-1 rounded-sm">6</div>
-                                <div class="bg-[#121315] text-white p-1 rounded-sm">1</div>
-                                <div class="bg-[#121315] text-white p-1 rounded-sm">2</div>
-                                <div class="bg-[#121315] text-white p-1 rounded-sm">3</div>
-                            </div>
-                            <div class="grid grid-cols-3 gap-1 text-[9px] font-bold mt-1">
-                                <div class="bg-[#FF9F0A] text-pitch p-0.5 rounded-sm">↰</div>
-                                <div class="bg-[#3A2500] text-accentOrange p-0.5 rounded-sm">C</div>
-                                <div class="bg-[#32ADE6] text-pitch p-0.5 rounded-sm">↱</div>
-                            </div>
-                        </div>
-
-                        <h3 class="font-mono font-bold text-xl mb-4">Pitch-Black Rapid Field</h3>
-                        <p class="text-mask text-sm mb-6 leading-relaxed">watchOS app utilizes true #000000 OLED backgrounds. Features the Pioneer color palette wayfinding pills and the invisible screen-tap macro ENTER mechanic.</p>
-                        <a href="https://apps.apple.com/app/id6801788040" target="_blank" class="brutalist-button px-6 py-2 font-mono text-xs font-bold flex items-center gap-2 border-accentOrange text-accentOrange hover:bg-accentOrange hover:text-pitch">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.88c.61-.74 1.04-1.78.92-2.82-.93.04-2.02.63-2.65 1.37-.56.64-.99 1.69-.86 2.71 1.05.08 2.01-.54 2.59-1.26z"/></svg>
-                            APP STORE (OFFICIAL)
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- INTERACTIVE TUTORIALS / STACK ACADEMY (High-Contrast Editorial Feature) -->
-        <section id="tutorials" class="py-20 bg-icyblue text-charcoal border-b-4 border-pitch">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
-                    <div class="max-w-2xl">
-                        <div class="inline-block px-3 py-1 mb-3 bg-charcoal text-icyblue font-mono text-xs font-bold uppercase tracking-wider">// INTERACTIVE TUI RUNTIME</div>
-                        <h2 class="text-4xl sm:text-5xl font-extrabold uppercase tracking-tight text-charcoal mb-4">Stack Academy: 16 Built-In Lessons</h2>
-                        <p class="text-base sm:text-lg text-charcoal/80 font-sans leading-relaxed mb-6">
-                            Master RPN stack mechanics, manual fraction reduction with <code class="font-mono font-bold">[SIMP]</code>, complex Euler identities, and TVM amortization. Embedded natively in physical calculator firmware—launchable at any time by pressing <strong class="font-mono font-bold">Yellow Shift (↰) + C</strong>—with 100% parity across Apple Watch and iPhone.
-                        </p>
-                        <div class="flex flex-wrap gap-4 font-mono text-xs font-bold uppercase">
-                            <a href="tutorials/" class="brutalist-button bg-charcoal text-icyblue border-charcoal px-6 py-3.5 hover:bg-transparent hover:text-charcoal transition-colors">
-                                EXPLORE 16 INTERACTIVE LESSONS &rarr;
-                            </a>
-                            <a href="hardware/" class="brutalist-button bg-transparent text-charcoal border-charcoal px-6 py-3.5 hover:bg-charcoal hover:text-icyblue transition-colors">
-                                VIEW HARDWARE SPECIFICATIONS &rarr;
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Quick Lesson Blueprint Teaser -->
-                    <div class="w-full lg:w-96 border-2 border-charcoal p-5 bg-[#D8DCE6] font-mono text-xs shadow-[6px_6px_0px_#181A1B]">
-                        <div class="flex justify-between border-b-2 border-charcoal pb-2 mb-3 font-bold">
-                            <span>// CURRICULUM PREVIEW</span>
-                            <span>16 LESSONS</span>
-                        </div>
-                        <ul class="space-y-2 text-charcoal/90">
-                            <li class="flex items-center gap-2"><span class="text-charcoal font-bold">&gt;</span> 01: RPN Basics (Parenthesis Elimination)</li>
-                            <li class="flex items-center gap-2"><span class="text-charcoal font-bold">&gt;</span> 02: Complex Pairs (Euler's Identity)</li>
-                            <li class="flex items-center gap-2"><span class="text-charcoal font-bold">&gt;</span> 06: Manual Fraction Factoring [SIMP]</li>
-                            <li class="flex items-center gap-2"><span class="text-charcoal font-bold">&gt;</span> 09: TVM Loan Amortization</li>
-                            <li class="flex items-center gap-2"><span class="text-charcoal font-bold">&gt;</span> 16: Two-Variable Stats &amp; StdDev</li>
-                        </ul>
-                        <div class="mt-4 pt-3 border-t border-charcoal/30 flex justify-between items-center text-[11px] font-bold">
-                            <span>FIRMWARE + COMPANION APPS</span>
-                            <a href="tutorials/" class="text-charcoal hover:underline">READ ALL &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PRE-ORDER / SHOPIFY STOREFRONT / FOOTER -->
-        <section id="preorder" class="py-24 bg-pitch relative text-center border-t border-mask/30">
-            <div class="absolute inset-0 bg-dot-matrix opacity-10 pointer-events-none"></div>
-            <div id="reserve" class="max-w-6xl mx-auto px-4 relative z-10">
-                <svg width="48" height="60" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-6">
-                    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
-                    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
-                    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
-                    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
-                    <text x="16" y="9" font-family="Space Mono, monospace" font-size="7" font-weight="bold" fill="#181A1B" text-anchor="middle">32</text>
-                </svg>
-                <div class="inline-block px-3 py-1 mb-4 border border-accentCyan text-accentCyan font-mono text-xs tracking-wider">// DIRECT STOREFRONT · FOUNDER'S BATCH 00</div>
-                <h2 class="text-4xl md:text-5xl font-extrabold uppercase mb-4 tracking-tight">Pre-Order Your Calculator</h2>
-                <p class="text-mask mb-8 font-sans max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
-                    Dedicated physical calculators designed for students, families, and professionals who value mathematical clarity and distraction-free focus. Starting at just <strong>$59</strong>, StackCalc is the most affordable dedicated RPN scientific calculator available anywhere.
-                </p>
-
-                <!-- 5-Minute Assembly Callout -->
-                <div class="mb-10 border border-accentCyan/40 bg-charcoal/80 p-5 brutalist-border max-w-4xl mx-auto text-left">
-                    <div class="flex items-center gap-2 mb-2">
-                        <span class="inline-block w-2.5 h-2.5 bg-accentCyan animate-pulse"></span>
-                        <span class="font-mono text-xs font-bold text-accentCyan uppercase tracking-wider">// EFFORTLESS 5-MINUTE SNAP ASSEMBLY · 100% PRE-SOLDERED</span>
-                    </div>
-                    <p class="font-sans text-xs md:text-sm text-mask leading-relaxed">
-                        Every StackCalc ships as an easy 5-minute snap-together kit. All electronics and display screens are 100% pre-soldered and factory-tested—zero soldering, wire stripping, or special tools required. Simply seat the pre-tested mainboard into the anti-wobble chassis, position the tactile keycaps, and snap on your faceplate. Packaging converts directly into dual ergonomic desk stands!
-                    </p>
-                </div>
-
-                <!-- 5 Signature Colorways Palette Bar -->
-                <div class="mb-12 max-w-5xl mx-auto text-left border border-mask/30 bg-charcoal/60 p-5 brutalist-border">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3 border-b border-mask/20 pb-2">
-                        <span class="font-mono text-xs font-bold text-accentCyan uppercase tracking-wider">// 5 SIGNATURE COLORWAYS · CHOOSE AT CHECKOUT</span>
-                        <span class="font-mono text-[11px] text-mask">Matching Themes in iOS &amp; watchOS Digital Twins</span>
-                    </div>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-                        <div class="p-3 border border-mask/40 bg-[#E2E6EE] text-[#181A1B] text-center rounded-none shadow-[2px_2px_0px_#181A1B]">
-                            <div class="w-4 h-4 mx-auto mb-1.5 rounded-full border border-charcoal/40 bg-[#E2E6EE]"></div>
-                            <div class="font-mono text-[11px] font-bold">RetroFuturism</div>
-                            <div class="font-mono text-[9px] text-charcoal/80 mt-0.5">Apollo Off-White</div>
-                        </div>
-                        <div class="p-3 border border-mask/40 bg-[#181A1B] text-white text-center rounded-none shadow-[2px_2px_0px_rgba(255,255,255,0.1)]">
-                            <div class="w-4 h-4 mx-auto mb-1.5 rounded-full border border-mask/50 bg-[#181A1B]"></div>
-                            <div class="font-mono text-[11px] font-bold text-icyblue">Stealth Industrial</div>
-                            <div class="font-mono text-[9px] text-mask mt-0.5">Matte Black &amp; Slate</div>
-                        </div>
-                        <div class="p-3 border border-mask/40 text-white text-center rounded-none shadow-[2px_2px_0px_rgba(255,255,255,0.1)]" style="background: linear-gradient(135deg, #370000 0%, #1a0000 100%);">
-                            <div class="w-4 h-4 mx-auto mb-1.5 rounded-full border border-amber-400/40 bg-[#B91C1C]"></div>
-                            <div class="font-mono text-[11px] font-bold text-accentAmber">Supernova</div>
-                            <div class="font-mono text-[9px] text-mask mt-0.5">Silk Crimson &amp; Gold</div>
-                        </div>
-                        <div class="p-3 border border-mask/40 text-white text-center rounded-none shadow-[2px_2px_0px_rgba(255,255,255,0.1)]" style="background: linear-gradient(135deg, #1b0a2a 0%, #0d1527 100%);">
-                            <div class="w-4 h-4 mx-auto mb-1.5 rounded-full border border-purple-400/40 bg-[#4C1D95]"></div>
-                            <div class="font-mono text-[11px] font-bold text-[#c4b5fd]">Deep Space</div>
-                            <div class="font-mono text-[9px] text-mask mt-0.5">Cosmic Purple &amp; Teal</div>
-                        </div>
-                        <div class="p-3 border border-mask/40 text-white text-center col-span-2 sm:col-span-1 rounded-none shadow-[2px_2px_0px_rgba(255,255,255,0.1)]" style="background: linear-gradient(135deg, #001a33 0%, #000a1a 100%);">
-                            <div class="w-4 h-4 mx-auto mb-1.5 rounded-full border border-cyan-400/40 bg-[#0369A1]"></div>
-                            <div class="font-mono text-[11px] font-bold text-accentCyan">Voyager</div>
-                            <div class="font-mono text-[9px] text-mask mt-0.5">Navy &amp; Ice White</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Tiers Grid (3 Tiers) -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left max-w-6xl mx-auto mb-14">
-                    <!-- Product Tier 1: Founder's Edition -->
-                    <div class="border-2 border-accentCyan bg-charcoal p-6 brutalist-border shadow-[4px_4px_0px_#32ADE6] flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-3">
-                                <span class="text-accentCyan font-mono text-xs font-bold tracking-widest">// TIER 01 — FOUNDER'S</span>
-                                <span class="bg-accentCyan/20 text-accentCyan text-xs px-2 py-0.5 font-mono font-bold">BATCH 00 · 5 UNITS</span>
-                            </div>
-                            <h3 class="font-mono text-xl font-black text-white mb-1">SC-32 Founder's Edition</h3>
-                            <div class="text-accentCyan font-mono text-base font-bold mb-3">$89.00 USD</div>
-                            <p class="text-mask text-xs leading-relaxed mb-4">Our limited inaugural production run. Priority early shipping from Batch 00 with personalized laser name engraving on the rear chassis plate (entered at checkout). Physically identical hardware and math engine to the regular edition.</p>
-                            <ul class="font-mono text-xs text-mask space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><span class="text-accentCyan font-bold">✔</span> Priority early shipping from inaugural Batch 00</li>
-                                <li class="flex items-center gap-2"><span class="text-accentCyan font-bold">✔</span> Personalized laser name engraving on rear plate</li>
-                                <li class="flex items-center gap-2"><span class="text-accentCyan font-bold">✔</span> Choice of 5 signature colorways (Apollo, Stealth, etc.)</li>
-                                <li class="flex items-center gap-2"><span class="text-accentCyan font-bold">✔</span> Pure 4-level RPN stack: fractions, trig, roots, &amp; stats</li>
-                                <li class="flex items-center gap-2"><span class="text-accentCyan font-bold">✔</span> 43 heavy snap-dome tactile keys for rapid entry</li>
-                                <li class="flex items-center gap-2"><span class="text-accentCyan font-bold">✔</span> Glare-free graphic screen &amp; multi-month battery</li>
-                                <li class="flex items-center gap-2"><span class="text-accentCyan font-bold">✔</span> Reversible TPU travel pouch &amp; dual desk stands</li>
-                                <li class="flex items-center gap-2"><span class="text-accentCyan font-bold">✔</span> Effortless 5-minute snap assembly (100% pre-soldered)</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <a href="https://z4cvet-ig.myshopify.com/products/sc32-founders-edition" target="_blank" onclick="copyStoreAccessCode(event, false)" class="brutalist-button-primary w-full py-3.5 text-center font-mono font-bold text-xs flex items-center justify-center gap-2">
-                                PRE-ORDER FOUNDER'S ($89) &rarr;
-                            </a>
-                            <button type="button" id="copy-pwd-btn" onclick="copyStoreAccessCode(event, true)" class="w-full mt-2.5 py-2 px-3 bg-pitch/90 border border-accentCyan/40 text-accentCyan hover:bg-accentCyan hover:text-pitch font-mono text-[11px] font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer brutalist-border" title="Click to copy storefront access code">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
-                                <span id="copy-pwd-text">CLICK TO COPY STORE ACCESS CODE</span>
-                            </button>
-                            <p class="text-[10px] font-mono text-mask/70 text-center mt-1.5">// Required on Shopify password screen. Auto-copied on click.</p>
-                        </div>
-                    </div>
-
-                    <!-- Product Tier 2: Regular Edition -->
-                    <div class="border-2 border-accentCyan/50 bg-charcoal p-6 brutalist-border shadow-[4px_4px_0px_rgba(50,173,230,0.3)] flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-3">
-                                <span class="text-mask font-mono text-xs font-bold tracking-widest">// TIER 02 — REGULAR EDITION</span>
-                                <span class="bg-accentCyan/20 text-accentCyan text-xs px-2 py-0.5 font-mono font-bold">MOST POPULAR · $59</span>
-                            </div>
-                            <h3 class="font-mono text-xl font-black text-white mb-1">SC-32 Scientific Calculator</h3>
-                            <div class="text-icyblue font-mono text-base font-bold mb-3">$59.00 USD</div>
-                            <p class="text-mask text-xs leading-relaxed mb-4">The definitive physical RPN scientific calculator for students, teachers, and professionals. Complete 5-minute snap-together kit with 100% pre-soldered electronics. The most affordable dedicated RPN scientific calculator in the world.</p>
-                            <ul class="font-mono text-xs text-mask space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><span class="text-icyblue font-bold">✔</span> Unbeatable $59 price: the lowest-cost dedicated RPN</li>
-                                <li class="flex items-center gap-2"><span class="text-icyblue font-bold">✔</span> Identical hardware &amp; math engine to Founder's Edition</li>
-                                <li class="flex items-center gap-2"><span class="text-icyblue font-bold">✔</span> Choice of 5 signature colorways (select on Shopify)</li>
-                                <li class="flex items-center gap-2"><span class="text-icyblue font-bold">✔</span> Fast, deterministic 4-level RPN stack (no parentheses)</li>
-                                <li class="flex items-center gap-2"><span class="text-icyblue font-bold">✔</span> 43 crisp mechanical tactile keys with pre-printed caps</li>
-                                <li class="flex items-center gap-2"><span class="text-icyblue font-bold">✔</span> Standard serialized backplate (no name engraving)</li>
-                                <li class="flex items-center gap-2"><span class="text-icyblue font-bold">✔</span> High-contrast graphic LCD &amp; coin cell battery included</li>
-                                <li class="flex items-center gap-2"><span class="text-icyblue font-bold">✔</span> Packaging folds into dual ergonomic desk stands</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="w-full py-3.5 text-center font-mono font-bold text-xs flex items-center justify-center gap-2 border-2 border-mask/30 text-mask/70 bg-pitch/60 uppercase tracking-wider">
-                                <span class="inline-block w-1.5 h-1.5 rounded-full bg-mask/40"></span>
-                                COMING SOON · PRODUCTION RUN
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product Tier 3: SC-6 Elementary Edition -->
-                    <div class="border-2 border-mask/50 bg-charcoal p-6 brutalist-border shadow-[4px_4px_0px_rgba(255,255,255,0.15)] flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-3">
-                                <span class="text-accentOrange font-mono text-xs font-bold tracking-widest">// TIER 03 — ELEMENTARY</span>
-                                <span class="bg-accentOrange/20 text-accentOrange text-xs px-2 py-0.5 font-mono font-bold">GRADES K–6 · STEM</span>
-                            </div>
-                            <h3 class="font-mono text-xl font-black text-white mb-1">SC-6 Elementary Calculator</h3>
-                            <div class="text-accentOrange font-mono text-base font-bold mb-3">$35.00 USD</div>
-                            <p class="text-mask text-xs leading-relaxed mb-4">Engineered specifically for elementary students building foundational mathematical intuition. Non-shifted visual layout featuring ten frames, number racks, dedicated fraction simplification, and skip-counting.</p>
-                            <ul class="font-mono text-xs text-mask space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><span class="text-accentOrange font-bold">✔</span> Purpose-built for elementary students (Grades K–6)</li>
-                                <li class="flex items-center gap-2"><span class="text-accentOrange font-bold">✔</span> Visual math models: ten frames, number racks, &amp; place value</li>
-                                <li class="flex items-center gap-2"><span class="text-accentOrange font-bold">✔</span> Dedicated [SIMP] key for step-by-step fraction reduction</li>
-                                <li class="flex items-center gap-2"><span class="text-accentOrange font-bold">✔</span> Skip-counting [REP] and integer factoring operations</li>
-                                <li class="flex items-center gap-2"><span class="text-accentOrange font-bold">✔</span> Large, high-visibility tactile keys &amp; durable snap chassis</li>
-                                <li class="flex items-center gap-2"><span class="text-accentOrange font-bold">✔</span> Kid-safe, battery included, zero distractions or ads</li>
-                                <li class="flex items-center gap-2"><span class="text-accentOrange font-bold">✔</span> Choice of vibrant colorways to match school supplies</li>
-                                <li class="flex items-center gap-2"><span class="text-accentOrange font-bold">✔</span> Effortless 5-minute snap assembly (100% pre-soldered)</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="w-full py-3.5 text-center font-mono font-bold text-xs flex items-center justify-center gap-2 border-2 border-mask/30 text-mask/70 bg-pitch/60 uppercase tracking-wider">
-                                <span class="inline-block w-1.5 h-1.5 rounded-full bg-accentOrange/40"></span>
-                                COMING SOON · IN DEVELOPMENT
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ACCESSORIES EXPANSION -->
-                <div class="mt-16 mb-14 text-left max-w-4xl mx-auto">
-                    <div class="text-center mb-10">
-                        <div class="inline-block px-3 py-1 mb-2 border border-accentCyan text-accentCyan font-mono text-xs tracking-wider">// BRAND-ALIGNED ACCESSORY EXPANSION</div>
-                        <h3 class="text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-white">Physical Mathematical Tools</h3>
-                        <p class="text-mask font-sans text-xs md:text-sm max-w-xl mx-auto mt-2 leading-relaxed">
-                            Tactile, zero-battery reference tools designed to complement the StackCalc physical calculator and expand your mathematical intuition.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Accessory 1: The Unit Circle Volvelle -->
-                        <div class="border-2 border-mask/50 bg-charcoal p-6 brutalist-border shadow-[4px_4px_0px_rgba(255,255,255,0.15)] flex flex-col justify-between hover:border-accentCyan transition-colors">
-                            <div>
-                                <div class="flex justify-between items-start mb-3">
-                                    <span class="text-accentCyan font-mono text-xs font-bold tracking-widest">// ACCESSORY 01</span>
-                                    <span class="bg-accentCyan/20 text-accentCyan text-xs px-2 py-0.5 font-mono font-bold">100% 3D-PRINTED</span>
-                                </div>
-                                <h4 class="font-mono text-xl font-black text-white mb-1">The Unit Circle Volvelle</h4>
-                                <div class="text-accentCyan font-mono text-sm font-bold mb-3">$18.00 USD</div>
-                                <p class="text-mask text-xs leading-relaxed mb-4">
-                                    A two-piece mechanical rotary disc calculator engineered for trigonometric analysis without power or batteries. 100% 3D-printed with a snap-fit center pivot—zero metal screws required.
-                                </p>
-                                <ul class="font-mono text-xs text-mask space-y-2 mb-6">
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-accentCyan font-bold">✔</span>
-                                        <span><strong>Fixed Outer Ring:</strong> Laser-engraved degrees (0°–360°) and radians (0–2π).</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-accentCyan font-bold">✔</span>
-                                        <span><strong>Rotating Inner Disc:</strong> Cutout aperture window reveals exact (cos θ, sin θ) and tan θ coordinate values.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-accentCyan font-bold">✔</span>
-                                        <span><strong>Zero-Battery Tactile Tool:</strong> Instantaneous spatial and trigonometric comprehension.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <div class="w-full py-3 text-center font-mono font-bold text-xs flex items-center justify-center gap-2 border border-mask/30 text-mask/70 bg-pitch/60 uppercase tracking-wider">
-                                    <span class="inline-block w-1.5 h-1.5 rounded-full bg-mask/40"></span>
-                                    COMING SOON · IN PROTOTYPING
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Accessory 2: Reference Decks -->
-                        <div class="border-2 border-mask/50 bg-charcoal p-6 brutalist-border shadow-[4px_4px_0px_rgba(255,255,255,0.15)] flex flex-col justify-between hover:border-accentCyan transition-colors">
-                            <div>
-                                <div class="flex justify-between items-start mb-3">
-                                    <span class="text-accentCyan font-mono text-xs font-bold tracking-widest">// ACCESSORY 02</span>
-                                    <span class="bg-mask/20 text-icyblue text-xs px-2 py-0.5 font-mono font-bold">TPU POUCH READY</span>
-                                </div>
-                                <h4 class="font-mono text-xl font-black text-white mb-1">StackCalc Reference Decks</h4>
-                                <div class="text-accentCyan font-mono text-sm font-bold mb-3">$15.00 USD / SET</div>
-                                <p class="text-mask text-xs leading-relaxed mb-4">
-                                    Standardized, credit-card-sized pieces of flat PLA/PETG (3 cards/set) that slide directly into the TPU pouch behind your calculator. Maps textbook algebraic notation to StackCalc RPN keystrokes.
-                                </p>
-                                <ul class="font-mono text-xs text-mask space-y-2 mb-6">
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-icyblue font-bold">✔</span>
-                                        <span><strong>Dual-Column Workflow:</strong> Standard algebraic formula on left; exact keystrokes ([STO], [EQN], [ENTER]) on right.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-icyblue font-bold">✔</span>
-                                        <span><strong>Set 1 (Grade 07):</strong> Fractions, Proportions, Geometry, &amp; Two-Step Equations.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-icyblue font-bold">✔</span>
-                                        <span><strong>Set 2 (Core High School):</strong> Quadratic Formula, Trigonometry, &amp; TVM Basics.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="w-full py-2.5 text-center font-mono font-bold text-xs flex items-center justify-center gap-2 border border-mask/30 text-mask/70 bg-pitch/60 uppercase tracking-wider">
-                                    COMING SOON · SET 1 (GRADE 07)
-                                </div>
-                                <div class="w-full py-2.5 text-center font-mono font-bold text-xs flex items-center justify-center gap-2 border border-mask/30 text-mask/70 bg-pitch/60 uppercase tracking-wider">
-                                    COMING SOON · SET 2 (HIGH SCHOOL)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-8 flex flex-wrap justify-center gap-6 sm:gap-8 font-mono text-xs text-mask">
-                    <a href="https://apps.apple.com/app/id6801788040" target="_blank" class="hover:text-accentCyan font-bold">APP STORE (APPLE)</a>
-                    <a href="ecommerce/" class="hover:text-accentCyan font-bold">STORE STRATEGY</a>
-                    <a href="hardware/" class="hover:text-icyblue">SPEC &amp; HARDWARE</a>
-                    <a href="blog/" class="hover:text-icyblue">ENGINEERING BLOG</a>
-                    <a href="tutorials/" class="hover:text-icyblue">TUTORIALS</a>
-                    <a href="privacy/" class="hover:text-accentCyan font-bold">PRIVACY POLICY</a>
-                    <a href="terms/" class="hover:text-accentCyan font-bold">TERMS OF SERVICE</a>
-                    <a href="support/" class="hover:text-accentCyan font-bold">SUPPORT</a>
-                </div>
-                <p class="mt-8 font-mono text-xs text-mask opacity-50">&copy; 2026 StackCalc. Designed in California. Built on Earth.</p>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // --- Mobile navigation drawer toggle ---
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
-        }
-
-        // --- Storefront Access Code Copy ---
-        function copyStoreAccessCode(e, showFeedback) {
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText('stackcalc32').then(() => {
-                    if (showFeedback) {
-                        const btn = document.getElementById('copy-pwd-btn');
-                        const textEl = document.getElementById('copy-pwd-text');
-                        if (btn && textEl) {
-                            textEl.innerText = '✓ ACCESS CODE COPIED TO CLIPBOARD!';
-                            btn.classList.add('bg-accentCyan', 'text-pitch');
-                            setTimeout(() => {
-                                textEl.innerText = 'CLICK TO COPY STORE ACCESS CODE';
-                                btn.classList.remove('bg-accentCyan', 'text-pitch');
-                            }, 3500);
-                        }
-                    }
-                }).catch(err => {
-                    console.error('Clipboard copy failed:', err);
-                });
-            }
-        }
-
-        // --- Preview Mode Switcher (iPhone Light, iPhone Dark, Apple Watch) ---
-        function setCalcMode(mode) {
-            const iphone = document.getElementById('calc-iphone-container');
-            const watch = document.getElementById('calc-watch-container');
-            const btnLight = document.getElementById('mode-btn-ios-light');
-            const btnDark = document.getElementById('mode-btn-ios-dark');
-            const btnWatch = document.getElementById('mode-btn-watch');
-
-            const activeClass = "px-3 py-1 font-bold rounded-full border border-accentCyan bg-accentCyan text-pitch transition-all cursor-pointer";
-            const inactiveClass = "px-3 py-1 font-bold rounded-full border border-mask/40 bg-pitch text-mask hover:text-white transition-all cursor-pointer";
-
-            if (btnLight) btnLight.className = inactiveClass;
-            if (btnDark) btnDark.className = inactiveClass;
-            if (btnWatch) btnWatch.className = inactiveClass;
-
-            if (mode === 'ios-light') {
-                if (iphone) {
-                    iphone.classList.remove('hidden');
-                    iphone.classList.remove('sc-theme-dark');
-                    iphone.classList.add('sc-theme-light');
-                }
-                if (watch) watch.classList.add('hidden');
-                if (btnLight) btnLight.className = activeClass;
-            } else if (mode === 'ios-dark') {
-                if (iphone) {
-                    iphone.classList.remove('hidden');
-                    iphone.classList.remove('sc-theme-light');
-                    iphone.classList.add('sc-theme-dark');
-                }
-                if (watch) watch.classList.add('hidden');
-                if (btnDark) btnDark.className = activeClass;
-            } else if (mode === 'watch') {
-                if (iphone) iphone.classList.add('hidden');
-                if (watch) watch.classList.remove('hidden');
-                if (btnWatch) btnWatch.className = activeClass;
-            }
-        }
-
-        // --- Synthetic Mechanical Tactile Click (Web Audio API) ---
-        let audioCtx = null;
-        function playTactileClick() {
-            try {
-                if (!audioCtx) {
-                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                }
-                if (audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'triangle';
-                osc.frequency.setValueAtTime(130, audioCtx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(35, audioCtx.currentTime + 0.03);
-                gain.gain.setValueAtTime(0.22, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.03);
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.03);
-            } catch(e) {}
-        }
-
-        // --- Conversion Prompt (Directs visitors to App Store and Hardware Kit) ---
-        let toastTimeout = null;
-        function showConversionToast() {
-            const toast = document.getElementById('conversion-toast');
-            if (!toast) return;
-            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-            toast.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-            if (toastTimeout) clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => {
-                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-                toast.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-            }, 6000);
-        }
-
-        // --- Keycap Press Animation ---
-        function animateKey(key) {
-            let phoneBtnId = null;
-            if (['0','1','2','3','4','5','6','7','8','9'].includes(key)) {
-                phoneBtnId = 'btn-' + key;
-            } else if (key === '.') {
-                phoneBtnId = 'btn-dot';
-            } else if (key === 'enter') {
-                phoneBtnId = 'btn-enter';
-            } else if (key === '+') {
-                phoneBtnId = 'btn-add';
-            } else if (key === '-') {
-                phoneBtnId = 'btn-sub';
-            } else if (key === '*') {
-                phoneBtnId = 'btn-mul';
-            } else if (key === '/') {
-                phoneBtnId = 'btn-div';
-            } else if (key === 'c') {
-                phoneBtnId = 'btn-c';
-            } else if (key === 'back') {
-                phoneBtnId = 'btn-back';
-            } else if (key === 'sqrt') {
-                phoneBtnId = 'btn-sqrt';
-            } else if (key === 'pow') {
-                phoneBtnId = 'btn-pow';
-            } else if (key === 'chs') {
-                phoneBtnId = 'btn-chs';
-            } else if (key === 'swap') {
-                phoneBtnId = 'btn-swap';
-            } else if (key === 'ee') {
-                phoneBtnId = 'btn-ee';
-            } else if (key === 'shift_y') {
-                phoneBtnId = 'btn-shift-y';
-            } else if (key === 'shift_b') {
-                phoneBtnId = 'btn-shift-b';
-            }
-
-            let watchBtnId = null;
-            if (['0','1','2','3','4','5','6','7','8','9'].includes(key)) {
-                watchBtnId = 'watch-btn-' + key;
-            } else if (key === '.') {
-                watchBtnId = 'watch-btn-dot';
-            } else if (key === 'c') {
-                watchBtnId = 'watch-btn-c';
-            } else if (key === 'chs') {
-                watchBtnId = 'watch-btn-chs';
-            } else if (key === 'shift_y') {
-                watchBtnId = 'watch-btn-shift-y';
-            } else if (key === 'shift_b') {
-                watchBtnId = 'watch-btn-shift-b';
-            } else if (key === 'enter') {
-                watchBtnId = 'watch-display-enter';
-            }
-
-            const targets = [
-                phoneBtnId ? document.getElementById(phoneBtnId) : null,
-                watchBtnId ? document.getElementById(watchBtnId) : null
-            ].filter(Boolean);
-
-            targets.forEach(el => {
-                el.classList.add('sc-key-pressed', 'key-active');
-                setTimeout(() => {
-                    el.classList.remove('sc-key-pressed', 'key-active');
-                }, 180);
-            });
-        }
-
-        // --- Click Handler: Plays Click, Shows Conversion Prompt, Highlights Key ---
-        function handleKeyClick(key) {
-            playTactileClick();
-            animateKey(key);
-            showConversionToast();
-        }
-
-        // --- Automated Showcase Animation Engine ---
-        // Demonstrates the true hardware & app RPN workflow without leaking proprietary calculation engine code
-        const showcaseMissions = [
-            {
-                title: "// DEMO 1/3: RPN STACK MATH (5 + 3 = 8)",
-                steps: [
-                    { step: "> [C] Clear registers", key: 'c', lcd: "0_", delay: 1100 },
-                    { step: "> [5] Enter first operand", key: '5', lcd: "5_", delay: 1100 },
-                    { step: "> [ENTER] Push to Stack Register Y", key: 'enter', lcd: "5.0000", delay: 1300 },
-                    { step: "> [3] Enter second operand into X", key: '3', lcd: "3_", delay: 1100 },
-                    { step: "> [+] Evaluate X + Y [Stack Result]", key: '+', lcd: "8.0000", delay: 2800 }
-                ]
-            },
-            {
-                title: "// DEMO 2/3: CHAIN OPERATORS (√9 × 4 = 12)",
-                steps: [
-                    { step: "> [C] Clear registers", key: 'c', lcd: "0_", delay: 1100 },
-                    { step: "> [9] Enter 9 into X", key: '9', lcd: "9_", delay: 1100 },
-                    { step: "> [√x] Compute square root of X", key: 'sqrt', lcd: "3.0000", delay: 1500 },
-                    { step: "> [ENTER] Push 3.0000 onto Stack Y", key: 'enter', lcd: "3.0000", delay: 1200 },
-                    { step: "> [4] Enter 4 into X", key: '4', lcd: "4_", delay: 1100 },
-                    { step: "> [×] Multiply registers Y × X", key: '*', lcd: "12.0000", delay: 2800 }
-                ]
-            },
-            {
-                title: "// DEMO 3/3: EXPONENTIAL MATH (2⁸ = 256)",
-                steps: [
-                    { step: "> [C] Clear registers", key: 'c', lcd: "0_", delay: 1100 },
-                    { step: "> [2] Enter base into X", key: '2', lcd: "2_", delay: 1100 },
-                    { step: "> [ENTER] Push base (2) to Stack Y", key: 'enter', lcd: "2.0000", delay: 1300 },
-                    { step: "> [8] Enter exponent into X", key: '8', lcd: "8_", delay: 1100 },
-                    { step: "> [yˣ] Evaluate 2⁸ [Stack Result]", key: 'pow', lcd: "256.0000", delay: 3000 }
-                ]
-            }
-        ];
-
-        function setLcdText(text) {
-            const appLcd = document.getElementById('app-lcd-text');
-            if (appLcd) appLcd.innerText = text;
-            const watchLcd = document.getElementById('watch-lcd-text');
-            if (watchLcd) watchLcd.innerText = text;
-        }
-
-        function setMissionTags(missionTitle, stepDesc) {
-            const mTag = document.getElementById('showcase-mission-tag');
-            if (mTag && missionTitle) mTag.innerText = missionTitle;
-            const sTag = document.getElementById('showcase-step-tag');
-            if (sTag && stepDesc) sTag.innerText = stepDesc;
-        }
-
-        async function runShowcaseAnimation() {
-            while (true) {
-                for (const mission of showcaseMissions) {
-                    setMissionTags(mission.title, "> Initializing operational mission...");
-                    await new Promise(r => setTimeout(r, 600));
-
-                    for (const s of mission.steps) {
-                        setMissionTags(mission.title, s.step);
-                        animateKey(s.key);
-                        setLcdText(s.lcd);
-                        await new Promise(r => setTimeout(r, s.delay));
-                    }
-                }
-            }
-        }
-
-        // Launch automated showcase animation once DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => setTimeout(runShowcaseAnimation, 1000));
-        } else {
-            setTimeout(runShowcaseAnimation, 1000);
-        }
-    </script>
-</body>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
 </html>

@@ -183,7 +183,7 @@
   </div>
 </div>
     
-    <a href="../../..#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
     
   </nav>
   
@@ -234,7 +234,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../hardware/" class="md-tabs__link">
+        <a href="../../../learning-lab/" class="md-tabs__link">
           
   
   Documentation
@@ -393,6 +393,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../hardware/" class="md-nav__link">
         
   
@@ -461,27 +482,6 @@
   
   <span class="md-ellipsis">
     Tutorials
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ecommerce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Store & Accessories
   </span>
   
 
@@ -655,70 +655,20 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-09-05 00:00:00">Saturday, September 5, 2026</time></li>
+          <time datetime="2026-09-22 00:00:00">Tuesday, September 22, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="../testing/" class="md-meta__link">Testing</a>, 
-              <a href="./" class="md-meta__link">Performance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="benchmarking-165ms-cold-boot-154ms-math-operations-133mhz"><a class="toclink" href="../../2026/09/05/benchmarking-165ms-cold-boot--154ms-math-operations--133mhz/">Benchmarking: 1.65ms Cold Boot &amp; 15.4ms Math Operations @ 133MHz</a></h2>
-<p>Pick up an HP-32SII or an HP-15C, slide the physical power switch, and the LCD is instantly alive. There is no splash screen, no spinning indicator, and no operating system kernel warming up its memory pools. You press <code>2</code>, <code>ENTER</code>, <code>3</code>, <code>+</code>, and the mathematical answer is already glowing on the glass before your thumb has fully released the mechanical snap dome.</p>
-<p>That sub-millisecond immediacy is why I fell in love with vintage calculating hardware. As a software and AI expert with a desktop 3D printer whirring away printing calculator cases, I believe it is an absolute injustice that more students and engineers do not use RPN calculators. When you pull a scientific calculator out of your pocket or backpack, you are usually in the middle of an active train of thought: checking a resistor divider, calculating an antenna angle, or verifying a structural load limit. If a calculator takes half a second to wake up or drops keystrokes on glass, it shatters your focus. It feels like a disposable gadget rather than a precision instrument.</p>
-<p>To guarantee that same instantaneous feel on our low-cost physical hardware—running a Raspberry Pi RP2350 microcontroller at 133 MHz without a hardware floating-point unit (FPU)—we instituted strict cycle-accurate micro-benchmarks. Our targets were uncompromising: cold boot to input readiness under 2.0 ms, and total button-to-photon latency comfortably under the 16.6 ms (60 FPS) human visual perception threshold.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/09/05/benchmarking-165ms-cold-boot--154ms-math-operations--133mhz/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-21 00:00:00">Friday, August 21, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../testing/" class="md-meta__link">Testing</a>, 
+              <a href="../firmware/" class="md-meta__link">Firmware</a>, 
               <a href="./" class="md-meta__link">Performance</a>, 
-              <a href="../firmware/" class="md-meta__link">Firmware</a></li>
+              <a href="../simulation/" class="md-meta__link">Simulation</a></li>
         
         
           
           <li class="md-meta__item">
             
-              4 min read
+              2 min read
             
           </li>
         
@@ -727,14 +677,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="debugging-memory-leaks-pico_debug_malloc-zero-arc-overhead"><a class="toclink" href="../../2026/08/21/debugging-memory-leaks-pico_debug_malloc--zero-arc-overhead/">Debugging Memory Leaks: PICO_DEBUG_MALLOC &amp; Zero ARC Overhead</a></h2>
-<p>It was 1:30 AM when our Rev 1 prototype froze solid on the bench, displaying half an equation and a frozen cursor. The Raspberry Pi RP2350 wasn't physically damaged, but the SWD debugger delivered a chilling diagnosis: total SRAM exhaustion. A 264 KB microcontroller had choked to death on memory fragments.</p>
-<p>Coming from modern iOS and backend software engineering, where machines have gigabytes of unified RAM and Automatic Reference Counting (ARC) quietly cleans up temporary closures and string buffers, bringing Swift to bare-metal silicon was an exhilarating culture shock. On a Cortex-M33 with no virtual memory, dynamic heap allocation is an immediate death sentence: even tiny string formatting allocations fragment 264 KB of SRAM into unusable swiss cheese within hours. As a software and AI expert with a desktop 3D printer running prototypes on my desk, I believe it is an absolute injustice that more students and makers do not use RPN calculators. But to build a reliable, low-cost physical device they can actually build and cherish, <code>RPNCore</code> had to survive indefinitely on bare metal. I instituted an absolute zero-heap mandate. Navigating the experimental Embedded Swift dialect to eliminate ARC overhead while retaining elegant value semantics was made possible by pairing with AI coding agents—systematically auditing call graphs, hunting hidden compiler boxing, and verifying static stack layouts.</p>
-<p>When porting <code>RPNCore</code> to Embedded Swift, we instituted a radical design mandate: <strong>zero dynamic heap allocations during runtime calculation</strong>. To guarantee this invariant, we stripped away ARC overhead and locked down the runtime using low-level Pico SDK memory hooks.</p>
+    <h2 id="profiling-the-emulated-firmware-loop-before-board-bring-up"><a class="toclink" href="../../2026/09/22/profiling-the-emulated-firmware-loop-before-board-bring-up/">Profiling the Emulated Firmware Loop Before Board Bring-Up</a></h2>
+<p>Power management begins as a behavior problem before it becomes a battery-life number. The StackCalc firmware has to decide when to scan the matrix, wake the display path, skip an unchanged frame, save state, and return to a lower-work loop. We can exercise those decisions in the RP2350 emulator while the PCB is in fabrication.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/08/21/debugging-memory-leaks-pico_debug_malloc--zero-arc-overhead/">
+        <a href="../../2026/09/22/profiling-the-emulated-firmware-loop-before-board-bring-up/">
           Continue reading
         </a>
       </nav>

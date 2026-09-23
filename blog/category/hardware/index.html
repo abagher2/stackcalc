@@ -183,7 +183,7 @@
   </div>
 </div>
     
-    <a href="../../..#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
     
   </nav>
   
@@ -234,7 +234,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../hardware/" class="md-tabs__link">
+        <a href="../../../learning-lab/" class="md-tabs__link">
           
   
   Documentation
@@ -393,6 +393,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../hardware/" class="md-nav__link">
         
   
@@ -461,27 +482,6 @@
   
   <span class="md-ellipsis">
     Tutorials
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ecommerce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Store & Accessories
   </span>
   
 
@@ -655,19 +655,19 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-08-26 00:00:00">Wednesday, August 26, 2026</time></li>
+          <time datetime="2026-09-22 00:00:00">Tuesday, September 22, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="../testing/" class="md-meta__link">Testing</a>, 
-              <a href="./" class="md-meta__link">Hardware</a></li>
+              <a href="./" class="md-meta__link">Hardware</a>, 
+              <a href="../testing/" class="md-meta__link">Testing</a></li>
         
         
           
           <li class="md-meta__item">
             
-              4 min read
+              3 min read
             
           </li>
         
@@ -676,14 +676,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="hardware-simulation-browser-hil-with-wokwi-rp2350-emulation"><a class="toclink" href="../../2026/08/26/hardware-simulation-browser-hil-with-wokwi-rp2350-emulation/">Hardware Simulation: Browser HIL with Wokwi RP2350 Emulation</a></h2>
-<p>In modern software development, our feedback loop is measured in seconds: you modify code, hit <code>Cmd-R</code>, and immediately inspect the result in an iOS simulator or browser window. When I began designing custom hardware for StackCalc32, the physical turnaround time was a terrifying culture shock. In hardware, a minor pinout mismatch or inverted SPI clock phase doesn't just mean a quick rebuild; it means generating Gerber files, shipping them to an overseas fab, waiting two weeks for delivery, and nervously soldering surface-mount parts—only to discover your display won't initialize.</p>
-<p>As a software and AI expert with a desktop 3D printer whirring away on my desk, I believe it is an absolute injustice that more people do not use RPN calculators. I wanted to build an accessible, ultra-low-cost physical calculator that could inspire students and makers to fall in love with RPN. But coming from software, a multi-week hardware feedback loop was intolerable. I don't have an electrical engineering lab or specialized hardware test fixtures; my natural developer instinct was to build software mocks and emulators to test everything before physical boards arrived.</p>
-<p>Before ordering our first run of 4-layer FR4 boards, I wanted the instant feedback loops I take for granted in software: running our exact, byte-for-byte compiled <code>stackcalc_firmware.uf2</code> binary on a virtual calculator in the browser. Pairing with AI coding agents to generate peripheral simulation models, we constructed a complete headless Hardware-in-the-Loop (HIL) simulation pipeline using Wokwi's cycle-accurate RP2350 emulation core.</p>
+    <h2 id="what-the-first-printed-stackcalc-prototype-can-teach-us"><a class="toclink" href="../../2026/09/22/what-the-first-printed-stackcalc-prototype-can-teach-us/">What the First Printed StackCalc Prototype Can Teach Us</a></h2>
+<p>The first useful prototype is rarely the one that looks closest to a product. It is the one that makes the next decision cheaper. The current StackCalc hardware is a 3D-printed, tool-free mechanical prototype. Its KiCad PCB design is complete and fabrication is in progress, but there is no assembled, powered StackCalc board yet. The print lets us ask clearly: does the insertion path make sense, where does a part bind, and which keypad assumptions should be tested next?</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/08/26/hardware-simulation-browser-hil-with-wokwi-rp2350-emulation/">
+        <a href="../../2026/09/22/what-the-first-printed-stackcalc-prototype-can-teach-us/">
           Continue reading
         </a>
       </nav>
@@ -705,20 +703,20 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-06-01 00:00:00">Monday, June 1, 2026</time></li>
+          <time datetime="2026-09-22 00:00:00">Tuesday, September 22, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="../engineering/" class="md-meta__link">Engineering</a>, 
               <a href="./" class="md-meta__link">Hardware</a>, 
-              <a href="../software/" class="md-meta__link">Software</a></li>
+              <a href="../pcb/" class="md-meta__link">PCB</a>, 
+              <a href="../3d-printing/" class="md-meta__link">3D Printing</a></li>
         
         
           
           <li class="md-meta__item">
             
-              4 min read
+              2 min read
             
           </li>
         
@@ -727,14 +725,110 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="welcome-to-the-stackcalc-engineering-blog"><a class="toclink" href="../../2026/06/01/welcome-to-the-stackcalc-engineering-blog/">Welcome to the StackCalc Engineering Blog</a></h2>
-<p>Look at the desk of almost any experienced software engineer or scientist, and right beside the mechanical keyboard and dual monitors, you'll often find a vintage Hewlett-Packard calculator—usually an HP-32SII or an HP-15C held together with stubborn affection. Those classic machines weren't disposable consumer gadgets; they were precision instruments built with crisp tactile keycaps, instant boot times, and Reverse Polish Notation (RPN) that let you calculate complex equations at the speed of thought without ever touching a parenthesis or an <code>=</code> key.</p>
-<p>As a software and AI expert, my daily world is high-level code, system architectures, and machine learning models. But I've also spent years as an amateur 3D-printing enthusiast, with a desktop 3D printer quietly whirring in the corner of my workspace. I don't have an electrical engineering background or a fancy electronics lab; I just love these calculators and think it is an absolute injustice that more people do not use them. When I looked at the state of modern calculators—glassy, laggy smartphone apps that drop keystrokes, sprout banner ads, or distort into awkward oval buttons when turned sideways—and saw vintage HP hardware fetching upwards of $200 on eBay, I decided it was time to build something new.</p>
-<p>I wanted to create an accessible, modern, open-source, low-cost physical RPN calculator for the next generation of engineers, students, and makers, inspiring them to discover the elegance of RPN just as I did. Coming from software, tackling custom 4-layer PCB layout and bare-metal microcontroller firmware felt like stepping onto an alien planet. But by pairing software expertise with modern AI coding agents to navigate unfamiliar hardware intricacies, and using desktop 3D printing to iterate physical enclosures and tactile button plungers, StackCalc32 was born: a unified ecosystem spanning physical hardware, bare-metal Embedded Swift, and native Apple Watch and iPhone apps.</p>
+    <h2 id="how-the-pcb-design-shapes-a-printed-calculator-before-it-arrives"><a class="toclink" href="../../2026/09/22/how-the-pcb-design-shapes-a-printed-calculator-before-it-arrives/">How the PCB Design Shapes a Printed Calculator Before It Arrives</a></h2>
+<p>The printed StackCalc enclosure is not a generic case waiting for an electronics design. Its CAD reads fixed coordinates from the KiCad board so the rails, display opening, key interfaces, and clearances are designed around the same board that is now in fabrication.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/06/01/welcome-to-the-stackcalc-engineering-blog/">
+        <a href="../../2026/09/22/how-the-pcb-design-shapes-a-printed-calculator-before-it-arrives/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-09-22 00:00:00">Tuesday, September 22, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">Hardware</a>, 
+              <a href="../3d-printing/" class="md-meta__link">3D Printing</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="a-tool-free-calculator-built-around-a-sliding-assembly"><a class="toclink" href="../../2026/09/22/a-tool-free-calculator-built-around-a-sliding-assembly/">A Tool-Free Calculator Built Around a Sliding Assembly</a></h2>
+<p>“Tool-free” is easy to write on a feature list and hard to make useful in a printed enclosure. The test is not whether an assembly has no screws; it is whether a person can insert, retain, inspect, and later release the parts without turning every opening into a breakage risk.</p>
+<p>The current StackCalc kit is an unpowered, four-part mechanical prototype: a tapered chassis, unified faceplate, TPU membrane, and snap-retained top cap. Its RP2350 KiCad board is in fabrication, but no assembled board has been installed, so this remains a mechanical design lesson rather than an electronics assembly claim.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/09/22/a-tool-free-calculator-built-around-a-sliding-assembly/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-26 00:00:00">Wednesday, August 26, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../testing/" class="md-meta__link">Testing</a>, 
+              <a href="./" class="md-meta__link">Hardware</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="what-the-firmware-simulator-can-tell-us-before-the-pcb-exists"><a class="toclink" href="../../2026/08/26/what-the-firmware-simulator-can-tell-us-before-the-pcb-exists/">What the Firmware Simulator Can Tell Us Before the PCB Exists</a></h2>
+<p>The current StackCalc prototype is a 3D-printed, tool-free mechanical assembly. Its RP2350 calculator PCB design is in fabrication, but no board has yet been assembled and powered, so we cannot yet make claims about powered bring-up, battery life, display behavior, or key feel on the finished electronics.</p>
+<p>That is why the firmware simulator is useful. It gives us a fast way to exercise the calculator software and its proposed row-and-column interface while the physical electronics are still being developed. It is evidence about the simulated build, not evidence that a physical PCB works.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/08/26/what-the-firmware-simulator-can-tell-us-before-the-pcb-exists/">
           Continue reading
         </a>
       </nav>

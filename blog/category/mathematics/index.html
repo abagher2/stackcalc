@@ -183,7 +183,7 @@
   </div>
 </div>
     
-    <a href="../../..#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
     
   </nav>
   
@@ -234,7 +234,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../hardware/" class="md-tabs__link">
+        <a href="../../../learning-lab/" class="md-tabs__link">
           
   
   Documentation
@@ -393,6 +393,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../hardware/" class="md-nav__link">
         
   
@@ -461,27 +482,6 @@
   
   <span class="md-ellipsis">
     Tutorials
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ecommerce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Store & Accessories
   </span>
   
 
@@ -655,19 +655,20 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-09-12 00:00:00">Saturday, September 12, 2026</time></li>
+          <time datetime="2026-09-22 00:00:00">Tuesday, September 22, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="../testing/" class="md-meta__link">Testing</a>, 
-              <a href="./" class="md-meta__link">Mathematics</a></li>
+              <a href="../education/" class="md-meta__link">Education</a>, 
+              <a href="./" class="md-meta__link">Mathematics</a>, 
+              <a href="../rpn/" class="md-meta__link">RPN</a></li>
         
         
           
           <li class="md-meta__item">
             
-              4 min read
+              1 min read
             
           </li>
         
@@ -676,15 +677,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="testing-for-mathematicians-precision-invariants-domain-boundaries"><a class="toclink" href="../../2026/09/12/testing-for-mathematicians-precision-invariants--domain-boundaries/">Testing for Mathematicians: Precision Invariants &amp; Domain Boundaries</a></h2>
-<p>Try this experiment on your favorite smartphone calculator: enter <span class="arithmatex">\(\tan(\pi/2)\)</span> and see whether the app silently vomits a giant number like <span class="arithmatex">\(1.6331239 \times 10^{16}\)</span> instead of throwing a math error. Or switch into complex mode, calculate <span class="arithmatex">\(\sqrt{-4}\)</span>, and check the sign of the imaginary zero.</p>
-<p>Most consumer calculator applications treat mathematics as casual arithmetic. If an equation drifts by a micro-epsilon or an asymptotic pole gets rounded to a huge float, consumer apps shrug it off. </p>
-<p>As a software and AI expert with a desktop 3D printer running prototypes on my desk, I believe it is an absolute injustice that more students, engineers, and scientists do not use RPN calculators. Infix calculators hide state behind operator hierarchies and sloppy float approximations. When you are computing filter poles, resonance frequencies, or branch cuts in the complex plane, IEEE 754 signed zero semantics and multi-precision argument reductions aren't academic pedantry—they are the bedrock of sound engineering.</p>
-<p>When designing StackCalc, our ambition was to create an accessible, open-source instrument that working mathematicians and students could trust without reservation. That meant building a test suite explicitly focused on numerical analysis pitfalls. We paired with AI coding agents to assemble pathological test suites, stress-testing catastrophic cancellation, trigonometric argument reduction across massive multiples of <span class="arithmatex">\(\pi\)</span>, IEEE 754 signed zero branch cuts, and continuous fraction limits.</p>
+    <h2 id="reading-an-expression-tree-as-a-postfix-program"><a class="toclink" href="../../2026/09/22/reading-an-expression-tree-as-a-postfix-program/">Reading an Expression Tree as a Postfix Program</a></h2>
+<p>An expression tree can make postfix notation less mysterious: finish each branch before visiting the operation above it. The Learning Lab expression-tree board turns that traversal into an arrangement of removable tokens.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/09/12/testing-for-mathematicians-precision-invariants--domain-boundaries/">
+        <a href="../../2026/09/22/reading-an-expression-tree-as-a-postfix-program/">
           Continue reading
         </a>
       </nav>
@@ -706,19 +704,20 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-08-12 00:00:00">Wednesday, August 12, 2026</time></li>
+          <time datetime="2026-09-22 00:00:00">Tuesday, September 22, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="../engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="./" class="md-meta__link">Mathematics</a></li>
+              <a href="../education/" class="md-meta__link">Education</a>, 
+              <a href="./" class="md-meta__link">Mathematics</a>, 
+              <a href="../rpn/" class="md-meta__link">RPN</a></li>
         
         
           
           <li class="md-meta__item">
             
-              4 min read
+              2 min read
             
           </li>
         
@@ -727,303 +726,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="fractional-math-engine-part-2-continued-fractions-milu-355113"><a class="toclink" href="../../2026/08/12/fractional-math-engine-part-2-continued-fractions--mil%C3%BC-355113/">Fractional Math Engine (Part 2: Continued Fractions &amp; Milü 355/113)</a></h2>
-<p>During an early bench test of our EastRising LCD driver, we typed in <span class="arithmatex">\(\pi\)</span> with fraction mode enabled and watched the screen scramble into garbage. Coming from modern software development where responsive CSS and dynamic fonts handle layout overflow gracefully, moving to a physical 12-character LCD was a stark wake-up call. When our naive continued-fraction converter generated a high-order convergent with a three-digit whole part, a four-digit numerator, and a four-digit denominator, the rendered string <code>-123 4567/8901</code> spilled past column 12, overwrote annunciator RAM, and turned on random battery icons.</p>
-<p>That visual glitch made an essential reality obvious: in a physical calculator, pure mathematical approximation must live within a rigid, non-negotiable physical glass budget. In Part 2 of this series, we dive into how <code>RPNCore</code> couples continued fraction expansion (the Stern-Brocot tree) with display-constrained iterative fitting—reproducing historical marvels like Zu Chongzhi's 5th-century Milü ratio (<span class="arithmatex">\(355/113\)</span>) without ever dropping a character off the edge of the glass. To ensure our adaptive algorithm never hangs in infinite loops on edge cases, I used AI coding agents to stress-test <code>computeFractionToFit</code> against hundreds of pathological floats.</p>
+    <h2 id="teaching-fractions-as-an-rpn-sequence"><a class="toclink" href="../../2026/09/22/teaching-fractions-as-an-rpn-sequence/">Teaching Fractions as an RPN Sequence</a></h2>
+<p>Fractions create two useful RPN questions: what quantity does a numerator and denominator represent, and what sequence turns those quantities into a result? The Learning Lab fraction studio keeps those questions side by side instead of asking a learner to jump straight to a symbolic entry.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/08/12/fractional-math-engine-part-2-continued-fractions--mil%C3%BC-355113/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-02 00:00:00">Sunday, August 2, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="./" class="md-meta__link">Mathematics</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="curating-scientific-functions-part-2-hyperbolic-transcendental-precision"><a class="toclink" href="../../2026/08/02/curating-scientific-functions-part-2-hyperbolic--transcendental-precision/">Curating Scientific Functions (Part 2: Hyperbolic &amp; Transcendental Precision)</a></h2>
-<p>It was late one evening when our automated differential test harness spat out a red failure line: evaluating <code>2.5 !</code> against an actual HP-32SII reference unit didn't throw an <code>INVALID DATA</code> exception. Instead, the vintage hardware sat calmly on the desk and output <code>3.32335097</code>. Our modern Swift engine had thrown a fatal domain error, convinced that factorials only exist for non-negative integers.</p>
-<p>As a software and AI engineer, that discrepancy sent me straight down the rabbit hole of William Kahan's legendary numerical architecture at Hewlett-Packard. The HP-32SII wasn't running a discrete loop; it was evaluating the continuous Euler Gamma function <span class="arithmatex">\(\Gamma(z + 1)\)</span> across the real line. To make <code>RPNCore</code> behave like a true Corvallis instrument, I used AI coding agents as a mathematical sparring partner—generating test vectors for extreme asymptotic domains, exploring hyperbolic overflow edge cases like <span class="arithmatex">\(\text{asinh}(10^{160})\)</span>, and tuning Taylor expansions to eradicate catastrophic cancellation on bare-metal silicon.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/08/02/curating-scientific-functions-part-2-hyperbolic--transcendental-precision/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-07-26 00:00:00">Sunday, July 26, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="./" class="md-meta__link">Mathematics</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="statistical-functions-linear-regression-sigma-register-accumulation"><a class="toclink" href="../../2026/07/26/statistical-functions-linear-regression--sigma-register-accumulation/">Statistical Functions: Linear Regression &amp; Sigma Register Accumulation</a></h2>
-<p>Feed three numbers into a standard textbook sample variance formula: <span class="arithmatex">\(1,000,001\)</span>, <span class="arithmatex">\(1,000,002\)</span>, and <span class="arithmatex">\(1,000,003\)</span>. In exact mathematics, the variance is <span class="arithmatex">\(1.0\)</span>. Run that exact formula on a naive double-precision calculator, and you can get <span class="arithmatex">\(0.000000\)</span>—or worse, a negative number inside a square root resulting in <code>NaN</code>. Welcome to the nightmare of catastrophic cancellation. In modern software and data science, we are spoiled: we buffer millions of coordinates in Python or Swift and run multi-pass Welford algorithms without a second thought for memory. But on a handheld calculator powered by an RP2350 with 264 KiB of SRAM, buffering dynamic arrays of points is out of the question. Following Hewlett-Packard's classic engineering model, <code>RPNCore</code> solves this with an isolated six-register online accumulator. To ensure numerical stability, I paired with AI coding agents to synthesize pathological floating-point datasets and test our normalized offset delta algorithms against SciPy baselines.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/07/26/statistical-functions-linear-regression--sigma-register-accumulation/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-07-24 00:00:00">Friday, July 24, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="./" class="md-meta__link">Mathematics</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="unit-conversions-dimension-trees-invertible-scaling-factors"><a class="toclink" href="../../2026/07/24/unit-conversions-dimension-trees--invertible-scaling-factors/">Unit Conversions: Dimension Trees &amp; Invertible Scaling Factors</a></h2>
-<p>Ask an aerospace engineer about the Mars Climate Orbiter, and they will remind you how a mismatch between pound-force seconds and Newton seconds turned a $327 million spacecraft into atmospheric confetti. As a software engineer who values strong typing and invariant checks, dimensional integrity is something I take personally. But on a handheld calculator, unit conversion looks deceptively simple—until you start implementing it on an RPN execution stack. Should converting inches to centimeters push the result into <span class="arithmatex">\(Y\)</span>? Does tapping Fahrenheit to Celsius calculate an absolute temperature or a thermal delta? In <code>RPNCore</code>, we treated unit conversion not as a superficial menu afterthought, but as an in-place register transformation governed by strict physical invariants. To ensure zero cumulative drift, I used AI coding agents to cross-reference legal NIST conversion ratios and generate exhaustive round-trip property tests across our dimensional catalog.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/07/24/unit-conversions-dimension-trees--invertible-scaling-factors/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-07-21 00:00:00">Tuesday, July 21, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="./" class="md-meta__link">Mathematics</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="complex-numbers-coordinate-conversions-rectangularpolar-display"><a class="toclink" href="../../2026/07/21/complex-numbers-coordinate-conversions--rectangularpolar-display/">Complex Numbers: Coordinate Conversions &amp; Rectangular/Polar Display</a></h2>
-<p>If you want to spark an argument among calculator purists, ask them how complex numbers should live on a 4-level RPN stack. On the classic HP-15C from 1982, turning on Complex Mode split your stack in half: the real parts lived in one place and the imaginary parts in another, cutting your operational headroom down to two levels. If you were calculating AC circuit impedances or phasors, you spent half your time swapping registers instead of doing math. Coming from software engineering, where value types and vector math are second nature, that split-register compromise felt archaic. When we designed <code>CalculatorValue</code> in <code>RPNCore</code>, we rejected that constraint completely: every single stack level holds a full two-dimensional vector <code>(real, imag)</code>. To ensure mathematical rigor across transcendental operations and branch cuts, I paired with AI coding agents to synthesize test suites comparing our Swift implementation against Python's <code>cmath</code> ground truth.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/07/21/complex-numbers-coordinate-conversions--rectangularpolar-display/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-07-19 00:00:00">Sunday, July 19, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="./" class="md-meta__link">Mathematics</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="handling-precision-binary-vs-decimal-float-trade-offs"><a class="toclink" href="../../2026/07/19/handling-precision-binary-vs-decimal-float-trade-offs/">Handling Precision: Binary vs Decimal Float Trade-offs</a></h2>
-<p>Nothing shatters your pride as a software engineer faster than flashing your freshly compiled calculator firmware onto physical silicon, watching someone type <code>0.1 ENTER 0.2 +</code>, and seeing the LCD display: <code>0.30000000000000004</code>. In modern web or backend development, we are conditioned to shrug off floating-point noise as an unavoidable quirk of IEEE-754. But on a dedicated scientific calculator, displaying <code>0.300000000004</code> makes you look like you slapped a naive script onto a screen.</p>
-<p>Classic Hewlett-Packard calculators never suffered this embarrassment because the HP-32SII ran on a custom 4-bit Saturn microprocessor calculating in native Binary-Coded Decimal (BCD). When compiling bare-metal Embedded Swift for an RP2350 Cortex-M33 running at 133 MHz, however, full software BCD emulation brought transcendental trigonometric functions to an absolute crawl. To find an honest, lightning-fast compromise, I used AI coding agents as a mathematical sounding board—iterating through dozens of candidate threshold algorithms and fuzzing edge-case inputs until we arrived at our 12-digit guard mantissa.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/07/19/handling-precision-binary-vs-decimal-float-trade-offs/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-07-12 00:00:00">Sunday, July 12, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="./" class="md-meta__link">Mathematics</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              5 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="understanding-rpn-the-hp-32sii-4-level-stack-model"><a class="toclink" href="../../2026/07/12/understanding-rpn-the-hp-32sii-4-level-stack-model/">Understanding RPN: The HP-32SII 4-Level Stack Model</a></h2>
-<p>Pick up a Hewlett-Packard HP-32SII from 1991, press a key, and feel that definitive tactile snap. Modern membrane calculators feel like squishing wet cardboard, but an HP Pioneer snaps with the precision of a fine mechanical switch. As a software and AI engineer, my daily work lives in layers of high-level abstraction, garbage-collected runtimes, and infinite virtual memory. But on my desk, right next to my mechanical keyboard and my desktop 3D printer, has always sat an HP-32SII. The real genius of the machine isn't just the double-shot molded plastic; it's the four quiet registers—<span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(Y\)</span>, <span class="arithmatex">\(Z\)</span>, and <span class="arithmatex">\(T\)</span>—ticking away inside its Saturn CPU. In software, we are conditioned to treat stacks as unbounded dynamic arrays (<code>[Double]</code>) that grow until memory runs out. When I first fell in love with RPN, the bounded four-level stack felt like a revelation: it eliminates parentheses, wipes out operator precedence hierarchies, and provides a tight cognitive envelope where you calculate at the speed of thought. To me, it is an absolute injustice that more people do not use RPN calculators today. That conviction sparked StackCalc32: I wanted to build an accessible, low-cost physical RPN device to inspire the next generation of students and engineers to appreciate RPN as much as I do. Recreating that four-level mental model down to the exact register displacement mechanics was our non-negotiable starting point.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/07/12/understanding-rpn-the-hp-32sii-4-level-stack-model/">
+        <a href="../../2026/09/22/teaching-fractions-as-an-rpn-sequence/">
           Continue reading
         </a>
       </nav>

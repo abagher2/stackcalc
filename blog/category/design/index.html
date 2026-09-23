@@ -183,7 +183,7 @@
   </div>
 </div>
     
-    <a href="../../..#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
     
   </nav>
   
@@ -234,7 +234,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../hardware/" class="md-tabs__link">
+        <a href="../../../learning-lab/" class="md-tabs__link">
           
   
   Documentation
@@ -393,6 +393,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../hardware/" class="md-nav__link">
         
   
@@ -461,27 +482,6 @@
   
   <span class="md-ellipsis">
     Tutorials
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ecommerce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Store & Accessories
   </span>
   
 
@@ -655,20 +655,20 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-07-05 00:00:00">Sunday, July 5, 2026</time></li>
+          <time datetime="2026-09-22 00:00:00">Tuesday, September 22, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="../ios/" class="md-meta__link">iOS</a>, 
-              <a href="../swiftui/" class="md-meta__link">SwiftUI</a>, 
+              <a href="../education/" class="md-meta__link">Education</a>, 
+              <a href="../rpn/" class="md-meta__link">RPN</a>, 
               <a href="./" class="md-meta__link">Design</a></li>
         
         
           
           <li class="md-meta__item">
             
-              5 min read
+              2 min read
             
           </li>
         
@@ -677,16 +677,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="the-voyager-layout-10-column-hp-15c-landscape-mode"><a class="toclink" href="../../2026/07/05/the-voyager-layout-10-column-hp-15c-landscape-mode/">The Voyager Layout: 10-Column HP-15C Landscape Mode</a></h2>
-<p>Why does almost every mobile calculator treat landscape mode like an embarrassing design afterthought?</p>
-<p>You rotate your phone sideways, and what do you get? A generic 4×5 grid of buttons that has been stretched horizontally like warm taffy, turning clean circular keys into giant, cartoonish oval pills. Half the screen is empty black void, while scientific functions are either missing entirely or stuffed into an awkward secondary drawer.</p>
-<p>In 1981, Hewlett-Packard did something revolutionary: they turned the pocket calculator sideways on purpose.</p>
-<p>They called it the "Voyager" series—the legendary HP-15C Advanced Scientific and HP-12C Financial calculators. Instead of a cramped vertical faceplate, the Voyager gave engineers a wide horizontal console: a sprawling 10-column keyboard, a panoramic LCD, and an enormous, double-height vertical <code>ENTER</code> key anchored right where your right thumb naturally lands. It was the peak of 20th-century ergonomic industrial design.</p>
-<p>When we built the landscape mode for StackCalc32, we refused to stretch buttons into ugly hot dogs. In commit <code>cc2c083</code>, rotating your iPhone sideways dynamically morphs the vertical 6-column HP-32SII Pioneer interface into a full-blooded, 10-column HP-15C Voyager console.</p>
+    <h2 id="making-the-four-level-stack-visible-before-the-first-keypress"><a class="toclink" href="../../2026/09/22/making-the-four-level-stack-visible-before-the-first-keypress/">Making the Four-Level Stack Visible Before the First Keypress</a></h2>
+<p>The difficult part of RPN is often not arithmetic. It is knowing where a value is, when the stack will lift, and what a binary operator will consume. A screen can show those facts after a keypress; the StackCalc Learning Lab asks a learner to predict them first.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/07/05/the-voyager-layout-10-column-hp-15c-landscape-mode/">
+        <a href="../../2026/09/22/making-the-four-level-stack-visible-before-the-first-keypress/">
           Continue reading
         </a>
       </nav>
@@ -708,20 +704,20 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-06-15 00:00:00">Monday, June 15, 2026</time></li>
+          <time datetime="2026-09-22 00:00:00">Tuesday, September 22, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="../watchos/" class="md-meta__link">watchOS</a>, 
-              <a href="../ui/" class="md-meta__link">UI</a>, 
-              <a href="./" class="md-meta__link">Design</a></li>
+              <a href="../education/" class="md-meta__link">Education</a>, 
+              <a href="./" class="md-meta__link">Design</a>, 
+              <a href="../rpn/" class="md-meta__link">RPN</a></li>
         
         
           
           <li class="md-meta__item">
             
-              4 min read
+              2 min read
             
           </li>
         
@@ -730,117 +726,13 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="the-watchos-minimap-ui-part-2-29x15-pt-spatial-annunciator-matrix"><a class="toclink" href="../../2026/06/15/the-watchos-minimap-ui-part-2-29x15-pt-spatial-annunciator-matrix/">The watchOS Minimap UI (Part 2: 29x15 pt Spatial Annunciator Matrix)</a></h2>
-<p>In early test builds of StackCalc32, our two-dimensional T-pad layout had an embarrassing side effect: testers would swipe upward into the Matrix panel to grab a square root, get distracted, and then wonder why tapping <code>7</code> wouldn't put a number onto the stack.</p>
-<p>Without visual feedback, a four-quadrant canvas is a blind maze.</p>
-<p>On iOS, you can slap a row of little <code>UIPageControl</code> dots at the bottom of the screen. But page dots are completely useless here: they only understand linear, one-dimensional lists. They cannot tell you that there is an Alpha keyboard to your left, an Arithmetic pad to your right, and an advanced Matrix panel directly above your head. Worse, on an Apple Watch, adding a dedicated pagination bar burns 15 to 20 vertical points that we desperately need for key strike targets.</p>
+    <h2 id="why-rpn-needs-an-ecosystem-not-another-retro-replica"><a class="toclink" href="../../2026/09/22/why-rpn-needs-an-ecosystem-not-another-retro-replica/">Why RPN Needs an Ecosystem, Not Another Retro Replica</a></h2>
+<p>RPN calculators already exist. StackCalc is not a nostalgia project trying to recreate a familiar beige machine. The gap we see is a learning path: a way to move from a familiar screen to a physical instrument while understanding what the stack is doing.</p>
+<p>That is why StackCalc joins the current iPhone and Apple Watch apps, a shared calculator core, Learning Lab prototypes, and a planned RP2350 handheld around the same calculation behavior. The connection is semantic, not cosmetic.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/06/15/the-watchos-minimap-ui-part-2-29x15-pt-spatial-annunciator-matrix/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-13 00:00:00">Saturday, June 13, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../watchos/" class="md-meta__link">watchOS</a>, 
-              <a href="../ui/" class="md-meta__link">UI</a>, 
-              <a href="./" class="md-meta__link">Design</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-watchos-minimap-ui-part-1-two-dimensional-paging-navigation"><a class="toclink" href="../../2026/06/13/the-watchos-minimap-ui-part-1-two-dimensional-paging-navigation/">The watchOS Minimap UI (Part 1: Two-Dimensional Paging Navigation)</a></h2>
-<p>Have you ever gotten hopelessly lost inside an Apple Watch app? You swipe left, swipe down, tap a button, and suddenly you are staring at a screen of options with zero idea how to get back to where you started. You end up panic-swiping in every direction or pressing the digital crown just to reboot the app.</p>
-<p>Now imagine that happening in the middle of a rapid chain calculation while solving an engineering problem.</p>
-<p>A physical Hewlett-Packard HP-32SII has 43 physical buttons. With orange and blue shift keys, that little handheld beast gives you instant access to over 120 scientific functions. On a 41mm Apple Watch, you get a grand total of <span class="arithmatex">\(176 \times 215\text{ pt}\)</span> of glass. If you tried to squeeze 43 buttons onto that screen at once, each key would measure about <span class="arithmatex">\(14 \times 12\text{ pt}\)</span>—barely large enough for the tip of a toothpick, and an absolute disaster for human fingers.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/13/the-watchos-minimap-ui-part-1-two-dimensional-paging-navigation/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abagher" alt="A. Bagher">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-03 00:00:00">Wednesday, June 3, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../watchos/" class="md-meta__link">watchOS</a>, 
-              <a href="../architecture/" class="md-meta__link">Architecture</a>, 
-              <a href="./" class="md-meta__link">Design</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              5 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="why-we-started-with-the-apple-watch-part-1-the-screen-real-estate-equation"><a class="toclink" href="../../2026/06/03/why-we-started-with-the-apple-watch-part-1-the-screen-real-estate-equation/">Why We Started With The Apple Watch (Part 1: The Screen Real-Estate Equation)</a></h2>
-<p>Try typing an equation into the default Apple Watch calculator with adult human thumbs. You reach over with your right index finger, aim for the <code>7</code>, and end up tapping <code>4</code>, <code>8</code>, and <code>CLEAR</code> all in the span of three agonizing seconds. Now imagine strapping a full Hewlett-Packard HP-48GX or HP-32SII—with its forest of forty-plus buttons, shift keys, and complex exponents—onto your wrist. It sounds like an engineering dare, or pure masochism.</p>
-<p>As a software and AI developer, my native comfort zone has always been high-level software, reactive state machines, and modern mobile platforms. Traditional hardware projects typically start on the breadboard: wire up a microcontroller, write a quick C loop, 3D-print a rough enclosure, and maybe, months later, hack together a mobile companion app as an afterthought.</p>
-<p>With StackCalc32, we deliberately inverted the entire pipeline: we wrote our very first line of production code for watchOS.</p>
-<p>Starting a full scientific RPN calculator on a wearable screen with barely <span class="arithmatex">\(176\text{ pt}\)</span> of horizontal elbow room felt insane. But from an architectural standpoint, the Apple Watch was our crucible. If we could make a 120-function RPN engine feel effortless, blisteringly fast, and impossible to fat-finger on a 40mm OLED face, then scaling up to the spacious canvas of an iPhone or a physical RP2350 PCB would be pure gravy. More importantly, as someone who believes it's an injustice that RPN isn't in every student's and engineer's pocket, putting a tactile RPN stack directly on the wrist was the ultimate proof of concept before routing a single physical PCB trace.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/03/why-we-started-with-the-apple-watch-part-1-the-screen-real-estate-equation/">
+        <a href="../../2026/09/22/why-rpn-needs-an-ecosystem-not-another-retro-replica/">
           Continue reading
         </a>
       </nav>
