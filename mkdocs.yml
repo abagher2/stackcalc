@@ -3,6 +3,9 @@ site_description: "A high-quality, everyday-use RPN calculator for a new generat
 site_author: "StackCalc Engineering"
 site_url: "https://www.stackcalc.io"
 
+exclude_docs: |
+  ecommerce.md
+
 extra_css:
   - stylesheets/brutalist.css
 
@@ -56,11 +59,11 @@ nav:
   - Home: index.md
   - Engineering Blog: blog/index.md
   - Documentation:
+    - Learning Lab: learning-lab.md
     - Hardware & Rubric: hardware.md
     - Firmware: firmware.md
     - iOS App: ios_app.md
     - Tutorials: tutorials.md
-    - Store & Accessories: ecommerce.md
   - Legal & Support:
     - Privacy Policy: privacy.md
     - Terms of Service: terms.md

@@ -38,7 +38,7 @@
       </label>
       {% include "partials/search.html" %}
     {% endif %}
-    <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}#reserve" class="brutalist-button-header">RESERVE KIT</a>
+    <a href="{{ 'learning-lab/' | url }}" class="brutalist-button-header">LEARNING LAB</a>
     {% if config.repo_url %}
       <div class="md-header__source">
         {% include "partials/source.html" %}

@@ -1,39 +1,36 @@
 ---
-template: home.html
-title: "StackCalc | The Uncompromising Digital Twin"
-description: "The affordable, dedicated physical RPN scientific calculator. Starting at $59, designed for students learning math and professionals solving real-world problems. With a 1:1 iOS and watchOS digital twin."
+title: "StackCalc | RPN Across Devices and Physical Learning"
+description: "A shared RPN calculator core across Apple apps, firmware emulation, teaching resources, and a physical calculator in development."
 ---
 
-# The Calculator for a New Generation
+# StackCalc
 
 <div style="text-align: center;">
 <picture>
   <source srcset="assets/launch-stack-dark.svg" media="(prefers-color-scheme: dark)">
-  <img src="assets/launch-stack-light.svg" alt="StackCalc32 Logo" style="width: 200px; margin-bottom: 1rem; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
+  <img src="assets/launch-stack-light.svg" alt="StackCalc logo" style="width: 200px; margin-bottom: 1rem; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
 </picture>
-<h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">StackCalc32</h1>
-<p style="font-size: 1.2rem; color: gray;">Fast. Usable. Affordable. RPN.</p>
+<p style="font-size: 1.2rem; color: gray;">RPN software, teaching resources, and an instrument in development.</p>
 </div>
 
-## The Philosophy
+## What exists today
 
-When I was in high school, I was the captain of the calculator team. My weapon of choice? The **HP32SII**. It was fast, tactile, and nearly perfect for everyday use. I was devastated when I had to return it upon graduating. For years, I scraped by with `dc`, MATLAB, and R, always missing the immediacy of the HP32SII. HP had long stopped making them, and I had no interest in carrying around a fragile antique.
+StackCalc is an ecosystem around one calculator model rather than a single retro-calculator replica. The same RPN ideas are explored on devices a learner already has, with physical resources that make stack behavior and mathematical relationships visible.
 
-Eventually, I discovered SwissMicros and bought their incredible modern recreations: the DM42, DM41 CC, DM15CC, and the DM32. When my daughter started middle school and was finally allowed to use a calculator in class, my first instinct was to hand her the DM41 CC. After all, she'd been trained in RPN since the first grade! But giving a child a $250+ titanium masterpiece to toss into a messy backpack just wasn't practical.
+- **Apple apps:** The iPhone, iPad, and Apple Watch companion app is available on the [App Store](https://apps.apple.com/app/id6801788040).
+- **Learning Lab:** The first collection includes a fraction studio, four-register stack stage, expression-tree board, coordinate lab, printable cards, and an eight-page teacher booklet. [Download the complete 0.2.0 prototype bundle](learning-lab.md#download-the-prototype-materials).
+- **Firmware emulator:** A local browser simulator runs the compiled firmware image through an RP2350 emulator. Its generated keypad feeds a row-and-column matrix contract, and its display reads the firmware’s 132 × 65 framebuffer.
+- **Physical calculator:** The tool-free chassis, faceplate, TPU membrane, and snap cap are real printed mechanical prototypes. The KiCad PCB design and manufacturing BOM are complete and fabrication is in progress; no populated, powered StackCalc board is being represented here.
 
-I searched the market for lower-end RPN calculators. There were none. Actually, there are several incredible projects in the community, such as OpenRPN, the PX-15C, various low-cost DIY hacks, and the ultra-premium SwissMicros calculators. However, these are generally targeted at hobbyists and wealthy professionals, rather than everyday students. We are targeting the entry-level scientific calculator market—where Texas Instruments and Casio rule—to give students a faster, better alternative to the status quo.
+## Why RPN
 
-**So I built my own.**
+RPN turns a calculation into a sequence of small actions: place values on a stack, then apply an operation. It can reduce parenthesis entry, but it makes calculator state important. A person needs to see the working value, know what ENTER changes, and predict what an operation will consume.
 
-StackCalc32 is not a hobbyist project or a piece designed to sit behind glass for calculator enthusiasts to marvel at. It is designed to be a **fast, everyday-use calculator** that you reach for when you need to crunch numbers.  Our mission is simple: we want to end the tyranny of in-fix calculators, unbind future generations from the shackles of parentheses, and eliminate the forced equals sign once and for all.
+Our design question is how a learner can see, touch, and predict the next stack action across an app, a teaching aid, a simulator, and eventually a dedicated handheld.
 
-- **Native Apple Watch Support:** Because that's what kids have these days. It’s the perfect Trojan Horse to introduce them to RPN before graduating to the hardware or iPad app.
-- **Tutorials:** For the 99.9% of people who have not yet seen the light of the RPN system, we added interactive tutorials for common operations. 
-- **Reduced Feature**: We have removed many features from the HP32SII and not added features popular with other calculators for good reasons:
-  - **No Programming:** Removed so it is fully compliant for ACT and SAT testing centers (and to keep things mathematically pure).
-  - **Plotting (App Only):** Included in the iOS app, but  excluded from the hardware firmware for test compliance.
-  - **No QWERTY or Wifi:** Full keyboards and wifi calculators are banned from testing centers. 
-  - **No CAS or Algebraic Mode:** Equations are entered as RPN and the solvers are numeric. We support single-root solvers and 3rd-degree polynomial solvers.
-  - **No Matrix or Vectors:** There many great computer programs for matrix calculations and entering them in a calculator is extremely cumbersome. 
+## Follow the current work
 
-Geek out over the details with us. Welcome to StackCalc32.
+- Start with the [StackCalc Learning Lab](learning-lab.md) and its reproducible materials.
+- Read the [engineering blog](blog/index.md) for the shared core, emulator, PCB-to-CAD relationship, printed assembly, and teaching-resource methods.
+- Review the [hardware documentation](hardware.md) for the current source-to-output map and physical-validation boundary.
+- Follow the staged [Hackaday project](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator) for build-log discussions. The StackCalc site remains the canonical home for source materials and downloads.

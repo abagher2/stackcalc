@@ -37,6 +37,26 @@ Primary and secondary buttons share the same material. Button trenches are laser
 
 These images are CAD illustrations, not photographs of a qualified specimen. Compare their exact source configuration with the selected kit before assembly. Optional stands and covers have separate source configurations and are not validated kit contents or protection claims.
 
+![Current printed StackCalc parts laid out for assembly](assets/prototype-exploded-parts.jpg)
+
+*Current 3D-printed mechanical parts prepared for fit and assembly exploration. The RP2350 calculator PCB design is complete and fabrication is in progress; no assembled, powered StackCalc board is on the bench yet.*
+
+![Current printed StackCalc prototype with the assembly open](assets/prototype-open-assembly.jpg)
+
+*The current tool-free mechanical assembly in progress. Physical retention, key force, and service claims remain to be measured on the matching final build.*
+
+### Print-in-place spring exploration
+
+Before selecting the current TPU membrane direction, we printed integrated spring and key experiments to study travel, return behavior, and print tolerance in a single part. These experiments informed the mechanical layout, but they are not the current keypad design or a validation of final key force.
+
+![Print-in-place spring keypad experiment](assets/prototype-print-in-place-springs.jpg)
+
+*A printed test array with integrated circular key and spring features. It records an exploratory route that was superseded by the current TPU membrane direction.*
+
+![Close view of print-in-place spring features](assets/prototype-print-in-place-spring-detail.jpg)
+
+*Close view of the printed spring geometry. The current design work uses a separate TPU membrane; repeatable force, life, and tactile measurements remain future test work.*
+
 ---
 
 ## 2. HP32SII Parity & Modern Capability Rubric
