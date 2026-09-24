@@ -5,8 +5,24 @@
     <link>http://localhost:8768/blog/</link>
     <description>A high-quality, everyday-use RPN calculator for a new generation.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Sep 2026 17:01:48 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 17:44:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:8768/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[We Pressed One TPU Key 280 Ways Before the PCB Arrived]]></title>
+      <link>http://localhost:8768/blog/2026/09/24/we-pressed-one-tpu-key-280-ways-before-the-pcb-arrived/</link>
+      <guid isPermaLink="true">http://localhost:8768/blog/2026/09/24/we-pressed-one-tpu-key-280-ways-before-the-pcb-arrived/</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A repeatable angle, direction, and offset sweep for choosing which keypad geometry to print next.]]></description>
+      <category>Hardware</category><category>Simulation</category><category>3D Printing</category>
+    </item>
+    <item>
+      <title><![CDATA[The TPU Button Video Is a Design Review, Not a Slow-Motion Test]]></title>
+      <link>http://localhost:8768/blog/2026/09/24/the-tpu-button-video-is-a-design-review-not-a-slow-motion-test/</link>
+      <guid isPermaLink="true">http://localhost:8768/blog/2026/09/24/the-tpu-button-video-is-a-design-review-not-a-slow-motion-test/</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Why we animate the CAD mesh before the board arrives, and exactly what the animation can teach us.]]></description>
+      <category>Hardware</category><category>Simulation</category><category>3D Printing</category>
+    </item>
     <item>
       <title><![CDATA[Why We Started with the Apple Watch]]></title>
       <link>http://localhost:8768/blog/2026/09/22/why-we-started-with-the-apple-watch/</link>
