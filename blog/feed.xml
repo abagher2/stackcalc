@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>StackCalc32 Engineering Blog</title>
+    <link>https://www.stackcalc.io/blog/</link>
+    <description>A high-quality, everyday-use RPN calculator for a new generation.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Sep 2026 19:25:32 +0000</lastBuildDate>
+    <atom:link href="https://www.stackcalc.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[We Pressed One TPU Key 280 Ways Before the PCB Arrived]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/24/we-pressed-one-tpu-key-280-ways-before-the-pcb-arrived/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/24/we-pressed-one-tpu-key-280-ways-before-the-pcb-arrived/</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A repeatable angle, direction, and offset sweep for choosing which keypad geometry to print next.]]></description>
+      <category>Hardware</category><category>Simulation</category><category>3D Printing</category>
+    </item>
+    <item>
+      <title><![CDATA[The TPU Button Video Is a Design Review, Not a Slow-Motion Test]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/24/the-tpu-button-video-is-a-design-review-not-a-slow-motion-test/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/24/the-tpu-button-video-is-a-design-review-not-a-slow-motion-test/</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Why we animate the CAD mesh before the board arrives, and exactly what the animation can teach us.]]></description>
+      <category>Hardware</category><category>Simulation</category><category>3D Printing</category>
+    </item>
+    <item>
+      <title><![CDATA[Why We Started with the Apple Watch]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/why-we-started-with-the-apple-watch/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/why-we-started-with-the-apple-watch/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[The watch was StackCalc’s first design constraint: make the RPN stack visible and the next action obvious on a device a child already wears.]]></description>
+      <category>iOS</category><category>Education</category><category>RPN</category>
+    </item>
+    <item>
+      <title><![CDATA[Why RPN Needs an Ecosystem, Not Another Retro Replica]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/why-rpn-needs-an-ecosystem-not-another-retro-replica/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/why-rpn-needs-an-ecosystem-not-another-retro-replica/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Why StackCalc connects a Watch app, printable lessons, firmware emulation, and a handheld.]]></description>
+      <category>Education</category><category>Design</category><category>RPN</category>
+    </item>
+    <item>
+      <title><![CDATA[A Tool-Free Calculator Built Around a Sliding Assembly]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/a-tool-free-calculator-built-around-a-sliding-assembly/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/a-tool-free-calculator-built-around-a-sliding-assembly/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[How rails, lead-ins, stops, and a snap cap make the printed assembly tool-free.]]></description>
+      <category>Hardware</category><category>3D Printing</category>
+    </item>
+    <item>
+      <title><![CDATA[Teaching Fractions as an RPN Sequence]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/teaching-fractions-as-an-rpn-sequence/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/teaching-fractions-as-an-rpn-sequence/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Build fractions physically, then enter the same relationship as an RPN sequence.]]></description>
+      <category>Education</category><category>Mathematics</category><category>RPN</category>
+    </item>
+    <item>
+      <title><![CDATA[Reading an Expression Tree as a Postfix Program]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/reading-an-expression-tree-as-a-postfix-program/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/reading-an-expression-tree-as-a-postfix-program/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A printable expression tree turns postorder traversal into an RPN program.]]></description>
+      <category>Education</category><category>Mathematics</category><category>RPN</category>
+    </item>
+    <item>
+      <title><![CDATA[Profiling the Emulated Firmware Loop Before Board Bring-Up]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/profiling-the-emulated-firmware-loop-before-board-bring-up/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/profiling-the-emulated-firmware-loop-before-board-bring-up/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[What emulator counters reveal about scan, render, transfer, and sleep decisions.]]></description>
+      <category>Firmware</category><category>Performance</category><category>Simulation</category>
+    </item>
+    <item>
+      <title><![CDATA[One Calculator Core for Watch, Phone, and RP2350]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/one-calculator-core-for-watch-phone-and-rp2350/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/one-calculator-core-for-watch-phone-and-rp2350/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[How StackCalc keeps the same RPN key sequence meaningful on Apple devices and the RP2350 firmware path.]]></description>
+      <category>Firmware</category><category>iOS</category><category>RPN</category>
+    </item>
+    <item>
+      <title><![CDATA[Making the Four-Level Stack Visible Before the First Keypress]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/making-the-four-level-stack-visible-before-the-first-keypress/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/making-the-four-level-stack-visible-before-the-first-keypress/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[A printable Stack Stage makes the four RPN registers tangible before the first keypress.]]></description>
+      <category>Education</category><category>RPN</category><category>Design</category>
+    </item>
+    <item>
+      <title><![CDATA[How the PCB Design Shapes a Printed Calculator Before It Arrives]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/how-the-pcb-design-shapes-a-printed-calculator-before-it-arrives/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/how-the-pcb-design-shapes-a-printed-calculator-before-it-arrives/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[How KiCad coordinates define the printed enclosure before the RP2350 board arrives.]]></description>
+      <category>Hardware</category><category>PCB</category><category>3D Printing</category>
+    </item>
+    <item>
+      <title><![CDATA[Fuzzing the Firmware Path in an RP2350 Emulator]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/fuzzing-the-firmware-path-in-an-rp2350-emulator/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/fuzzing-the-firmware-path-in-an-rp2350-emulator/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Using cross-surface key recipes to find RPN state-path mismatches before hardware arrives.]]></description>
+      <category>Testing</category><category>Firmware</category><category>Simulation</category>
+    </item>
+    <item>
+      <title><![CDATA[From an Origami Box to a Puzzle Stand]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/from-an-origami-box-to-a-puzzle-stand/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/from-an-origami-box-to-a-puzzle-stand/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[How a cardboard fold evolved into a printed shelf stand and desk wedge.]]></description>
+      <category>Hardware</category><category>3D Printing</category><category>Product Design</category>
+    </item>
+    <item>
+      <title><![CDATA[What the First Printed StackCalc Prototype Can Teach Us]]></title>
+      <link>https://www.stackcalc.io/blog/2026/09/22/what-the-first-printed-stackcalc-prototype-can-teach-us/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/09/22/what-the-first-printed-stackcalc-prototype-can-teach-us/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[What a printed StackCalc assembly reveals about the next mechanical revision.]]></description>
+      <category>Hardware</category><category>Testing</category>
+    </item>
+    <item>
+      <title><![CDATA[What the Firmware Simulator Can Tell Us Before Board Bring-Up]]></title>
+      <link>https://www.stackcalc.io/blog/2026/08/26/what-the-firmware-simulator-can-tell-us-before-board-bring-up/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/08/26/what-the-firmware-simulator-can-tell-us-before-board-bring-up/</guid>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[How StackCalc runs compiled RP2350 firmware in a browser while the board is in fabrication.]]></description>
+      <category>Testing</category><category>Hardware</category>
+    </item>
+  </channel>
+</rss>
