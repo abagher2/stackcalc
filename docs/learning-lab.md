@@ -48,8 +48,9 @@ The 0.2.0 STL pack is the canonical printable release of the Learning Lab. It co
 | [Teacher booklet — Letter](downloads/teacher-booklet-letter.pdf) | Eight-page investigation guide and worksheet for US Letter paper. |
 | [Teacher booklet — A4](downloads/teacher-booklet-a4.pdf) | Eight-page investigation guide and worksheet for A4 paper. |
 
-Read the related engineering notes:
+Read the related engineering notes and catalog:
 
+- [Product & Hardware Catalog](products.md)
 - [Why RPN needs an ecosystem](blog/posts/2026-09-22-why-rpn-needs-an-ecosystem-not-another-retro-replica.md)
 - [Make the four-level stack visible](blog/posts/2026-09-22-making-the-four-level-stack-visible.md)
 - [Teach a fraction as a sequence](blog/posts/2026-09-22-teaching-fractions-as-an-rpn-sequence.md)

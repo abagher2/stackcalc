@@ -33,7 +33,9 @@ plugins:
   - blog:
       post_date_format: full
       draft_if_future_date: true
-      
+
+hooks:
+  - hooks/generate_feed.py
 
 markdown_extensions:
   - attr_list
@@ -55,13 +57,14 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Engineering Blog: blog/index.md
+  - Catalog: products.md
   - Documentation:
     - Learning Lab: learning-lab.md
     - Hardware & Rubric: hardware.md
     - Firmware: firmware.md
     - iOS App: ios_app.md
     - Tutorials: tutorials.md
+  - Build Logs ↗: https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
   - Legal & Support:
     - Privacy Policy: privacy.md
     - Terms of Service: terms.md
