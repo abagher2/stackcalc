@@ -76,13 +76,13 @@ Before selecting the current TPU membrane direction, we printed integrated sprin
 
 ---
 
-## 2. HP32SII Parity & Modern Capability Rubric
+## 2. Classic Scientific RPN Parity & Modern Capability Rubric
 
-This rubric tracks operational capabilities across all StackCalc surfaces compared against the original HP32SII. Capabilities below are implementation references; release claims require platform-specific regression and device evidence.
+This rubric tracks operational capabilities across all StackCalc surfaces compared against classic scientific RPN handheld baselines. Capabilities below are implementation references; release claims require platform-specific regression and device evidence.
 
 ### Core Arithmetic & RPN Stack Operations
 
-| Capability / Key | Original HP32SII | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
+| Capability / Key | Classic RPN Baseline | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
 |---|:---:|:---:|:---:|:---:|---|
 | **Basic Arithmetic (`+`, `-`, `×`, `÷`)** | ✅ | ✅ | ✅ | ✅ | Standard two-operand evaluation; drops Y onto X |
 | **Stack Commit (`ENTER`)** | ✅ | ✅ | ✅ | ✅ | Copies X into Y and arms automatic stack lift |
@@ -99,7 +99,7 @@ This rubric tracks operational capabilities across all StackCalc surfaces compar
 
 ### Scientific & Transcendental Functions
 
-| Capability / Key | Original HP32SII | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
+| Capability / Key | Classic RPN Baseline | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
 |---|:---:|:---:|:---:|:---:|---|
 | **Square Root (`√𝑥`)** | ✅ | ✅ | ✅ | ✅ | Evaluates $\sqrt{x}$; supports negative arguments in complex mode |
 | **Square (`𝑥²`)** | ✅ | ✅ | ✅ | ✅ | Evaluates $x^2$ onto active stack |
@@ -118,7 +118,7 @@ This rubric tracks operational capabilities across all StackCalc surfaces compar
 
 ### Complex Numbers ($a + bi$)
 
-| Capability / Key | Original HP32SII | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
+| Capability / Key | Classic RPN Baseline | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
 |---|:---:|:---:|:---:|:---:|---|
 | **Complex Pair Entry** | ✅ | ✅ | ✅ | ✅ | Rectangular real and imaginary coordinate input via `CMPLX` |
 | **Euler's Identity Parity** | ✅ | ✅ | ✅ | ✅ | Evaluates $e^{\pi i} = -1.0000 + 0.0000i$ accurately |
@@ -127,7 +127,7 @@ This rubric tracks operational capabilities across all StackCalc surfaces compar
 
 ### Modern Fractions & Educational Mathematics
 
-| Capability / Key | Original HP32SII | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
+| Capability / Key | Classic RPN Baseline | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
 |---|:---:|:---:|:---:|:---:|---|
 | **Three-Part Fraction Entry** | ✅ | ✅ | ✅ | ✅ | Formatted entry via `.Whole.Numerator.Denominator` |
 | **Manual Step-by-Step Reduction** | ❌ | ✅ | ✅ | ✅ | `[SIMP]` softkey factors out common divisors iteratively |
@@ -136,7 +136,7 @@ This rubric tracks operational capabilities across all StackCalc surfaces compar
 
 ### Two-Variable Statistics & Curve Fitting
 
-| Capability / Key | Original HP32SII | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
+| Capability / Key | Classic RPN Baseline | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
 |---|:---:|:---:|:---:|:---:|---|
 | **Data Accumulation (`Σ+`)** | ✅ | ✅ | ✅ | ✅ | Enters coordinate pair $(x, y)$ into dedicated stat registers |
 | **Data Deletion (`Σ-`)** | ✅ | ✅ | ✅ | ✅ | Subtracts erroneous data point from active statistics |
@@ -147,7 +147,7 @@ This rubric tracks operational capabilities across all StackCalc surfaces compar
 
 ### Storage Registers & Program Variables
 
-| Capability / Key | Original HP32SII | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
+| Capability / Key | Classic RPN Baseline | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
 |---|:---:|:---:|:---:|:---:|---|
 | **Register Store & Recall (`STO`, `RCL`)** | ✅ | ✅ | ✅ | ✅ | Stores/recalls values across 26 global lettered registers (A–Z) |
 | **Indirect Register Addressing** | ✅ | ✅ | ✅ | ✅ | Uses register `(i)` as a pointer for dynamic indexed access |
@@ -156,7 +156,7 @@ This rubric tracks operational capabilities across all StackCalc surfaces compar
 
 ### Advanced Numerical Solvers & Integration
 
-| Capability / Key | Original HP32SII | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
+| Capability / Key | Classic RPN Baseline | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
 |---|:---:|:---:|:---:|:---:|---|
 | **Single-Root Solver (`SOLVE`)** | ✅ | ✅ | ✅ | ✅ | Numerical secant/Brent root-finder without algebraic CAS |
 | **Numerical Integration (`∫`)** | ✅ | ✅ | ✅ | ✅ | Romberg / adaptive quadrature definite integral solver |
@@ -165,7 +165,7 @@ This rubric tracks operational capabilities across all StackCalc surfaces compar
 
 ### Modern Interface & System Enhancements
 
-| Capability / Feature | Original HP32SII | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
+| Capability / Feature | Classic RPN Baseline | Physical Hardware (SC-32) | iOS App | watchOS App | Notes & Operational Details |
 |---|:---:|:---:|:---:|:---:|---|
 | **Interactive TUI Tutorials** | ❌ | ✅ | ✅ | ✅ | 16 built-in step-by-step guided lessons with verification |
 | **Flexible Stack Architecture** | ❌ | ✅ | ✅ | ✅ | Configurable classic 4-level, 8-level, or unbounded stack |
@@ -176,25 +176,25 @@ This rubric tracks operational capabilities across all StackCalc surfaces compar
 
 ---
 
-## 3. Deliberate Quality-of-Life Departures from HP32SII
+## 3. Deliberate Quality-of-Life Departures from Classic Handhelds
 
-While maintaining functional parity, StackCalc incorporates deliberate modern enhancements to improve usability, durability, and educational clarity:
+While maintaining functional pedigree, StackCalc incorporates deliberate modern enhancements to improve usability, durability, and educational clarity:
 
 1. **Unified RPN Programming:**
-   - *HP32SII:* Required users to navigate between an archaic algebraic equation mode and RPN keystroke programming.
+   - *Classic Handhelds:* Required users to navigate between an archaic algebraic equation mode and keystroke programming.
    - *StackCalc:* Unifies all equation definition into deterministic RPN stack operations. This eliminates parser ambiguities and ensures identical execution behavior on microcontrollers, phones, and watches.
 2. **Dedicated Absolute Value (`|x|`) Key:**
-   - *HP32SII:* Hid the absolute value function deep within the secondary `PARTS` menu.
+   - *Classic Handhelds:* Hid the absolute value function deep within secondary menus.
    - *StackCalc:* Assigns `|x|` directly to Right Shift `+/-`, providing instant one-touch evaluation.
 3. **Modern Remainder Notation (`÷R`):**
-   - *HP32SII:* Labeled integer division as `INT÷` above the `E` key.
+   - *Classic Handhelds:* Labeled integer division ambiguously as `INT÷`.
    - *StackCalc:* Uses `÷R` to clearly communicate integer division with remainder, aligning with modern engineering and educational standards.
 4. **Clean Power Architecture (Software Targets):**
-   - *HP32SII:* Included a physical `OFF` key label.
+   - *Classic Handhelds:* Included a physical `OFF` key label.
    - *StackCalc:* Retains power management on the hardware unit, but hides unnecessary power buttons on iOS and watchOS where operating system lifecycle handlers manage state.
 5. **Configurable Stack Depth:**
-   - *HP32SII:* Restricted permanently to a 4-level stack ($X, Y, Z, T$).
+   - *Classic Handhelds:* Restricted permanently to a 4-level stack ($X, Y, Z, T$).
    - *StackCalc:* The `FLAGS` menu allows selecting between classic 4-level, 8-level, and unbounded Infinite stack depths.
 6. **Searchable Constants Directory:**
-   - *HP32SII:* Relied on abbreviated, unindexed 2-letter codes.
+   - *Classic Handhelds:* Relied on abbreviated, unindexed 2-letter codes.
    - *StackCalc:* Hardware uses organized softkey pagination, while companion apps feature a searchable database complete with full names, precise values, and physical SI units.

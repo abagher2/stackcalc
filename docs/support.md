@@ -58,7 +58,7 @@ StackCalc offers two distinct user interfaces on iPhone and iPad:
 ---
 
 ### 5. How do I use the Equation Solver and Numerical Integrator?
-StackCalc includes an equation solver based on the legendary HP-32SII algorithms:
+StackCalc includes an equation solver based on classic Romberg numerical integration and secant root-finding algorithms:
 1. Press **Right Shift** + `STO` (`EQN Mode`) to view or input equations.
 2. Select an equation (such as the preloaded Normal PDF `NPDF`).
 3. Press `SOLVE` to solve for any independent variable without isolating it algebraically.
@@ -83,7 +83,7 @@ StackCalc includes an equation solver based on the legendary HP-32SII algorithms
 
 - **Current physical status:** The tool-free chassis, faceplate, TPU membrane, and cap are printed mechanical prototypes. The KiCad RP2350 board design is in fabrication; no populated, powered calculator is represented by the current photos or downloads.
 - **Public printable release:** Download the matching four-part STL set from the [hardware guide](hardware.md#download-the-current-mechanical-prototype). It is intended for current mechanical fit and assembly exploration.
-- **Teaching materials:** The [Learning Lab](learning-lab.md#download-the-prototype-materials) provides printable learning resources and teacher PDFs.
+- **Teaching materials:** The [Learning Lab](learning-lab.md#download-the-prototype-materials) provides printable curriculum materials and teacher PDFs.
 - **What is not public:** Electronics source, firmware source, CAD generators, manufacturing artwork, and production documentation are not public downloads.
 
 ---

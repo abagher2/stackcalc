@@ -1,14 +1,16 @@
 site_name: StackCalc32
-site_description: "A high-quality, everyday-use RPN calculator for a new generation."
+site_description: "StackCalc: Handheld Reverse Polish Notation (RPN) calculators, precision physical math manipulatives (Ten-Frames, Fraction Towers, Math Dominoes, Algebra Tiles), and open-source STEM learning systems."
 site_author: "StackCalc Engineering"
 site_url: "https://www.stackcalc.io"
 
 extra_css:
   - stylesheets/brutalist.css
+  - stylesheets/ecommerce.css
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/ecommerce.js
 
 theme:
   name: material
@@ -57,15 +59,58 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Catalog: products.md
+  - Catalog:
+    - Master Directory: products.md
+    - SC-32 Scientific Calculator:
+        - Product Overview: products/sc32-calculator/index.md
+        - Hardware Assembly: products/sc32-calculator/assembly.md
+        - Operational Lessons: products/sc32-calculator/lessons.md
+    - SC-6 Elementary Calculator: products/sc6-elementary.md
+    - Fraction Studio Towers:
+        - Product Overview: products/fraction-studio/index.md
+        - Assembly Guide: products/fraction-studio/assembly.md
+        - Classroom Lessons: products/fraction-studio/lessons.md
+    - Classroom Planetary Clock:
+        - Product Overview: products/classroom-clock/index.md
+        - Assembly Guide: products/classroom-clock/assembly.md
+        - Classroom Lessons: products/classroom-clock/lessons.md
+    - Ten Frames & Counters:
+        - Product Overview: products/ten-frames/index.md
+        - Assembly Guide: products/ten-frames/assembly.md
+        - Classroom Lessons: products/ten-frames/lessons.md
+    - Math Domino Studio:
+        - Product Overview: products/math-dominoes/index.md
+        - Assembly Guide: products/math-dominoes/assembly.md
+        - Classroom Lessons: products/math-dominoes/lessons.md
+    - Algebra Boxes & Tiles:
+        - Product Overview: products/algebra-boxes/index.md
+        - Assembly Guide: products/algebra-boxes/assembly.md
+        - Classroom Lessons: products/algebra-boxes/lessons.md
+    - Probability Dice & Spinner:
+        - Product Overview: products/dice-and-spinner/index.md
+        - Assembly Guide: products/dice-and-spinner/assembly.md
+        - Classroom Lessons: products/dice-and-spinner/lessons.md
+    - Unit Circle & Trig Volvelle: products/unit-circle-volvelle.md
+    - Stands & Pouches: products/stands-and-pouches.md
+    - Curriculum & Decks: products/curriculum-and-decks.md
+    - Download Center (3MFs): downloads.md
+  - Curriculum & Standards:
+    - Master Curriculum Guide: curriculum/index.md
+    - Standards Alignment Matrix: curriculum/alignment-matrix.md
+    - Printable Student Worksheets: curriculum/worksheets.md
+    - Teacher Facilitator Guide: curriculum/teacher-guide.md
   - Documentation:
     - Learning Lab: learning-lab.md
     - Hardware & Rubric: hardware.md
     - Firmware: firmware.md
-    - iOS App: ios_app.md
+    - Mac & iOS Apps: ios_app.md
     - Tutorials: tutorials.md
+    - Manufacturing & Sourcing: etsy-publishing-guide.md
+    - Shipping & Packaging: shipping-and-packaging.md
+    - Exam Compliance & Proctor Guide: exam-compliance.md
   - Build Logs ↗: https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
   - Legal & Support:
     - Privacy Policy: privacy.md
     - Terms of Service: terms.md
     - Support: support.md
+

@@ -57,7 +57,7 @@ If a physical product becomes available through a named marketplace, the listing
 The name **StackCalc**, the 4-Level Stack debossed emblem, user interface themes (RetroFuturism, Stealth Industrial, Supernova, Deep Space, Voyager), website content, and original graphics are the property of StackCalc Engineering.
 
 - *Apple, iPhone, iPad, Apple Watch, and watchOS are trademarks of Apple Inc., registered in the U.S. and other countries.*
-- *HP-32SII, HP-42S, and HP-15C are referenced solely for historical context, backwards compatibility, and mathematical pedigree comparison.*
+- *Historical calculator architectures and legacy model notations are referenced solely for retrospective computing context, mathematical pedigree, and pedagogical comparison.*
 
 ---
 

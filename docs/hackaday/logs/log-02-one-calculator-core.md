@@ -26,7 +26,7 @@ We built a single clean-room engine (`RPNCore`) that compiles across three radic
 |                           RPNCore (Swift Package)                       |
 |           • Four-Level Stack Architecture (X, Y, Z, T)                  |
 |           • Arbitrary-Precision Rational Fraction Engine                |
-|           • HP-32SII Saturn CPU State Parity (Clean-Room)              |
+|           • Classic RPN Computing Engine Parity (Clean-Room)           |
 +--------------------+--------------------------------+-------------------+
                      │                                │
                      ▼                                ▼

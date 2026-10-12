@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 820" width="1260" height="820">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', monospace; }
+      .title { font-size: 26px; font-weight: 700; fill: #ffffff; letter-spacing: -0.5px; }
+      .subtitle { font-size: 14px; font-weight: 400; fill: #e2e8f0; }
+      .badge-sku { font-size: 15px; font-weight: 700; fill: #ffffff; }
+      .badge-rev { font-size: 13px; font-weight: 700; fill: #ffffff; }
+      .badge-box { font-size: 12px; font-weight: 400; fill: #cccccc; }
+      .section-hdr { font-size: 13px; font-weight: 700; fill: #ffffff; letter-spacing: 1px; text-transform: uppercase; }
+      .th { font-size: 11px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
+      .td { font-size: 11px; font-weight: 400; fill: #ffffff; }
+      .td-id { font-size: 10px; font-weight: 700; fill: #ffffff; }
+      .td-price { font-size: 11px; font-weight: 700; fill: #ffffff; text-anchor: end; }
+      .qc-item { font-size: 11px; font-weight: 400; fill: #ffffff; }
+      .footer-txt { font-size: 10px; font-weight: 400; fill: #cccccc; }
+    </style>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect x="0" y="0" width="1260" height="820" fill="#000000" />
+
+  <!-- Outer Card Frame (135x90mm Proportions) -->
+  <rect x="15" y="15" width="1230" height="790" rx="14" fill="#000000" stroke="#ffffff" stroke-width="1.8" />
+  <rect x="25" y="25" width="1210" height="770" rx="8" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+
+  <!-- Top Header Panel -->
+  <rect x="35" y="35" width="1190" height="100" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+  
+  <!-- StackCalc Brand Logo Badge -->
+  <g transform="translate(55, 52)">
+    <rect x="0" y="0" width="65" height="65" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.4" />
+    <rect x="12" y="14" width="41" height="6" rx="2" fill="#ffffff" />
+    <rect x="16" y="24" width="33" height="6" rx="2" fill="#ffffff" opacity="0.85" />
+    <rect x="20" y="34" width="25" height="6" rx="2" fill="#ffffff" opacity="0.70" />
+    <rect x="24" y="44" width="17" height="6" rx="2" fill="#ffffff" opacity="0.55" />
+  </g>
+
+  <!-- Header Typography -->
+  <text x="135" y="68" class="font-mono title">MATH DOMINO STUDIO &amp; 12-FRAME REGROUPING LAB</text>
+  <text x="135" y="90" class="font-mono subtitle">28 Double-Six Dominoes, 2 Blanks, 12-Frame Tray &amp; Doubling Lid</text>
+  <text x="135" y="112" class="font-mono badge-box">PACKAGING SPEC: 3x1x7U Gridfinity Storage Box with Stackable Doubling Snap Lid | TOTAL PIECES: 32</text>
+
+  <!-- Top-Right SKU & Rev Badges -->
+  <g transform="translate(1025, 52)">
+    <rect x="0" y="0" width="180" height="30" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="90" y="20" class="font-mono badge-sku" text-anchor="middle">SKU: DOMI-01</text>
+    
+    <rect x="0" y="36" width="180" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="90" y="55" class="font-mono badge-rev" text-anchor="middle">BUILD REV: 807b88e</text>
+  </g>
+
+  <!-- LEFT COLUMN: Component Inventory & Replacement Reference Table -->
+  <g transform="translate(35, 150)">
+    <rect x="0" y="0" width="700" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    
+    <rect x="0" y="0" width="700" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="20" y="22" class="font-mono section-hdr">COMPONENT SCHEMATIC INVENTORY &amp; REPLACEMENT CODES</text>
+    
+    <text x="20" y="52" class="font-mono th">#</text>
+    <text x="50" y="52" class="font-mono th">PART DESCRIPTION</text>
+    <text x="320" y="52" class="font-mono th">QTY</text>
+    <text x="375" y="52" class="font-mono th">MATERIAL / FINISH</text>
+    <text x="525" y="52" class="font-mono th">PART ID (REV)</text>
+    <text x="680" y="52" class="font-mono th" text-anchor="end">FEE</text>
+    <line x1="15" y1="60" x2="685" y2="60" stroke="#ffffff" stroke-width="1" />
+
+    <circle cx="25" cy="76" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="25" y="80" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">1</text>
+    <text x="50" y="80" class="font-mono td">Double-Six Dominoes (0-0 to 6-6)</text>
+    <text x="320" y="80" class="font-mono td" font-weight="700">28x</text>
+    <text x="375" y="80" class="font-mono td" fill="#cccccc">Matte White PLA</text>
+    <text x="525" y="80" class="font-mono td-id">DOMI-TILE-01a2b3c</text>
+    <text x="680" y="80" class="font-mono td-price">$2.25</text>
+    <line x1="15" y1="88" x2="685" y2="88" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="25" cy="104" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="25" y="108" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">2</text>
+    <text x="50" y="108" class="font-mono td">Customizable Blank Dominoes</text>
+    <text x="320" y="108" class="font-mono td" font-weight="700">2x</text>
+    <text x="375" y="108" class="font-mono td" fill="#cccccc">Matte White PLA</text>
+    <text x="525" y="108" class="font-mono td-id">DOMI-BLNK-01a2b3c</text>
+    <text x="680" y="108" class="font-mono td-price">$2.25</text>
+    <line x1="15" y1="116" x2="685" y2="116" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="25" cy="132" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="25" y="136" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">3</text>
+    <text x="50" y="136" class="font-mono td">6x2 12-Frame Regrouping Tray</text>
+    <text x="320" y="136" class="font-mono td" font-weight="700">1x</text>
+    <text x="375" y="136" class="font-mono td" fill="#cccccc">Cyan Silk PLA</text>
+    <text x="525" y="136" class="font-mono td-id">DOMI-TRAY-d4e5f6a</text>
+    <text x="680" y="136" class="font-mono td-price">$7.50</text>
+    <line x1="15" y1="144" x2="685" y2="144" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="25" cy="160" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="25" y="164" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">4</text>
+    <text x="50" y="164" class="font-mono td">Doubles Practice Snap Lid (1+1 to 6+6)</text>
+    <text x="320" y="164" class="font-mono td" font-weight="700">1x</text>
+    <text x="375" y="164" class="font-mono td" fill="#cccccc">Matte Black PLA</text>
+    <text x="525" y="164" class="font-mono td-id">DOMI-LID-b7c8d9e</text>
+    <text x="680" y="164" class="font-mono td-price">$7.50</text>
+    <line x1="15" y1="172" x2="685" y2="172" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="25" cy="188" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="25" y="192" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">5</text>
+    <text x="50" y="192" class="font-mono td">3x1x7U Storage Enclosure Body</text>
+    <text x="320" y="192" class="font-mono td" font-weight="700">1x</text>
+    <text x="375" y="192" class="font-mono td" fill="#cccccc">Matte Black PLA</text>
+    <text x="525" y="192" class="font-mono td-id">DOMI-BOX-a1b2c3d</text>
+    <text x="680" y="192" class="font-mono td-price">$12.00</text>
+    <line x1="15" y1="200" x2="685" y2="200" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <rect x="15" y="415" width="670" height="46" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <circle cx="38" cy="438" r="12" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="38" y="443" class="font-mono badge-rev" text-anchor="middle" font-size="14px" fill="#ffffff">✓</text>
+    <text x="60" y="433" class="font-mono td" font-weight="700" fill="#ffffff">NO LOST PIECE LEFT BEHIND LIFETIME GUARANTEE</text>
+    <text x="60" y="449" class="font-mono subtitle" font-size="10px" fill="#e2e8f0">Need a single replacement tile? Order by Part ID at <tspan fill="#ffffff" font-weight="700">stackcalc.io/parts</tspan> or Etsy #09. 24h dispatch.</text>
+  </g>
+
+  <g transform="translate(750, 150)">
+    <rect x="0" y="0" width="415" height="305" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="415" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="20" y="22" class="font-mono section-hdr">PACKING BENCH QC CHECKLIST</text>
+
+    <g transform="translate(20, 62)">
+      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">All 28 double-six domino tiles + 2 blanks verified (30 miniblock tiles)</text>
+    </g>
+
+    <g transform="translate(20, 96)">
+      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">Dual-sided design: StackCalc 4-register logos on underside, stacking sockets on top</text>
+    </g>
+
+    <g transform="translate(20, 130)">
+      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">12-frame tray features bridge-through-10 tactile demarcation (10 + 2 = 12)</text>
+    </g>
+
+    <g transform="translate(20, 164)">
+      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">Doubling snap lid with 12 miniblock sockets locks firmly for rattle-free carry</text>
+    </g>
+
+    <g transform="translate(20, 215)">
+      <rect x="0" y="0" width="375" height="75" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="15" y="22" class="font-mono th" fill="#cccccc">CALIFORNIA LAB INSPECTION PASS</text>
+      <text x="15" y="42" class="font-mono td" font-size="10px">Inspector Stamp: <tspan fill="#ffffff" font-weight="700">[ QC-CALIF-01 PASSED ]</tspan></text>
+      <text x="15" y="60" class="font-mono td" font-size="10px">Dimensional Datum: <tspan fill="#cccccc">±0.05 mm Mitutoyo Calibrated</tspan></text>
+    </g>
+  </g>
+
+  <g transform="translate(750, 470)">
+    <rect x="0" y="0" width="415" height="155" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <rect x="0" y="0" width="415" height="28" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="15" y="18" class="font-mono th" fill="#ffffff">PEDAGOGICAL DESIGN INTEGRITY NOTICE</text>
+    
+    <text x="18" y="36" class="font-mono td" font-size="10.5px" fill="#ffffff">
+      <tspan x="18" dy="17">Zero Lost Piece Guarantee: If a student misplaces an</tspan>
+      <tspan x="18" dy="17">individual domino, order single replacements on</tspan>
+      <tspan x="18" dy="17">stackcalc.io/parts for $2.25.</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(35, 640)">
+    <rect x="0" y="0" width="1190" height="110" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    
+    <g transform="translate(25, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">STACKCALC ENGINEERING LABS</text>
+      <text x="0" y="18" class="font-mono footer-txt">Designed &amp; Manufactured in Mountain View, California, USA.</text>
+      <text x="0" y="32" class="font-mono footer-txt">100% Lead-Free, BPA-Free, Non-Toxic High-Impact Thermoplastic PLA/PETG.</text>
+    </g>
+
+    <g transform="translate(480, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">ARCHIVAL COMPANION REFERENCE</text>
+      <text x="0" y="18" class="font-mono footer-txt">This card serves as your official kit manifest &amp; warranty registration.</text>
+      <text x="0" y="32" class="font-mono footer-txt">SIDE A: REPLACEMENT MANIFEST &amp; CAD SCHEMATIC | MONOCHROME WHITE LASER ABLATION</text>
+    </g>
+
+    <g transform="translate(930, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">OFFICIAL PORTAL</text>
+      <text x="0" y="18" class="font-mono td-id" font-size="12px" fill="#ffffff">stackcalc.io/parts</text>
+      <text x="0" y="32" class="font-mono footer-txt">Direct Replacement Service</text>
+    </g>
+  </g>
+
+</svg>

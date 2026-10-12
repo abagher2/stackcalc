@@ -17,23 +17,20 @@ description: "The affordable, dedicated physical RPN scientific calculator. Star
 
 ## The Philosophy
 
-When I was in high school, I was the captain of the calculator team. My weapon of choice? The **HP32SII**. It was fast, tactile, and nearly perfect for everyday use. I was devastated when I had to return it upon graduating. For years, I scraped by with `dc`, MATLAB, and R, always missing the immediacy of the HP32SII. HP had long stopped making them, and I had no interest in carrying around a fragile antique.
+When I was in high school, I was the captain of the calculator team. My instrument of choice was a legendary tactile Reverse Polish Notation scientific calculator. It was fast, mechanical, and mathematically pure. For years afterward, throughout engineering school and research, I relied on postfix evaluation, always missing the physical immediacy of that tactile machine.
 
-Eventually, I discovered SwissMicros and bought their incredible modern recreations: the DM42, DM41 CC, DM15CC, and the DM32. When my daughter started middle school and was finally allowed to use a calculator in class, my first instinct was to hand her the DM41 CC. After all, she'd been trained in RPN since the first grade! But giving a child a $250+ titanium masterpiece to toss into a messy backpack just wasn't practical.
-
-I searched the market for lower-end RPN calculators. There were none. Actually, there are several incredible projects in the community, such as OpenRPN, the PX-15C, various low-cost DIY hacks, and the ultra-premium SwissMicros calculators. However, these are generally targeted at hobbyists and wealthy professionals, rather than everyday students. We are targeting the entry-level scientific calculator market—where Texas Instruments and Casio rule—to give students a faster, better alternative to the status quo.
+When my daughter started middle school and was finally allowed to use a calculator in class, I looked for an everyday, accessible RPN handheld for her. There were none. The market offered only two extremes: fragile, expensive vintage collectibles suited for display cases, or disposable in-fix graphing bricks covered in confusing parentheses syntax and battery compartments that corrode.
 
 **So I built my own.**
 
-StackCalc32 is not a hobbyist project or a piece designed to sit behind glass for calculator enthusiasts to marvel at. It is designed to be a **fast, everyday-use calculator** that you reach for when you need to crunch numbers.  Our mission is simple: we want to end the tyranny of in-fix calculators, unbind future generations from the shackles of parentheses, and eliminate the forced equals sign once and for all.
+StackCalc is not a retro novelty or a piece designed to sit behind glass for collectors. It is designed to be a **fast, everyday mathematical instrument** that you reach for when you need to solve real-world problems. Our mission is simple: end the cognitive friction of in-fix entry, unbind learners from the confusion of nested parentheses, and eliminate the forced equals sign once and for all.
 
-- **Native Apple Watch Support:** Because that's what kids have these days. It’s the perfect Trojan Horse to introduce them to RPN before graduating to the hardware or iPad app.
-- **Tutorials:** For the 99.9% of people who have not yet seen the light of the RPN system, we added interactive tutorials for common operations. 
-- **Reduced Feature**: We have removed many features from the HP32SII and not added features popular with other calculators for good reasons:
-  - **No Programming:** Removed so it is fully compliant for ACT and SAT testing centers (and to keep things mathematically pure).
-  - **Plotting (App Only):** Included in the iOS app, but  excluded from the hardware firmware for test compliance.
-  - **No QWERTY or Wifi:** Full keyboards and wifi calculators are banned from testing centers. 
-  - **No CAS or Algebraic Mode:** Equations are entered as RPN and the solvers are numeric. We support single-root solvers and 3rd-degree polynomial solvers.
-  - **No Matrix or Vectors:** There many great computer programs for matrix calculations and entering them in a calculator is extremely cumbersome. 
+- **Native Watch & Phone Digital Twin:** Immediate access on modern everyday devices. It provides a tactile gateway to learn RPN before graduating to the dedicated hardware instrument.
+- **Interactive Tutorials:** Built-in guided learning modules demonstrating how the four-level stack evaluates expressions sequentially without syntax errors.
+- **Deliberate Minimalism & Focus:** We removed features common to distracting classroom devices for intentional pedagogical reasons:
+  - **No Complex Scripting:** Kept intentionally non-programmable so it is fully compliant with ACT, SAT, and AP exam testing regulations.
+  - **No Radios or Touchscreen Distractions:** Hardware firmware contains zero Wi-Fi, Bluetooth, or camera hardware, ensuring 100% exam compliance and unbreakable classroom focus.
+  - **No CAS Black Boxes:** Solvers are strictly numeric and evaluate via visible stack steps.
+  - **No Unwieldy Matrix Menus:** Deep matrix algebra belongs on modern computational notebooks; everyday calculation belongs on an immediate, tactile handheld. 
 
 Geek out over the details with us. Welcome to StackCalc32.
