@@ -1,176 +1,177 @@
 ---
-title: "Printable Student Lab Worksheets & Rubrics | StackCalc"
-description: "Reproducible 4-zone classroom lab worksheets connecting concrete manipulatives with RPN calculator stack execution. Includes scoring rubrics and downloadable PDFs."
+title: "Classroom Visual Companions & Station Lab Guides | StackCalc"
+description: "Pre-generated, publication-grade 2-page classroom station guides and facilitator keys for Singapore Dimensions, Bridges in Mathematics, and Big Ideas Math. Form A and Form B instant PDF downloads."
 ---
 
-# Printable Student Lab Worksheets & Scoring Rubrics
+# Classroom Visual Companions & Station Lab Guides
 
 <div class="te-viewport-header mb-6">
-  <span class="te-viewport-sku">STUDENT LAB SYSTEM // 4-ZONE COGNITIVE TEMPLATE</span>
-  <span class="te-viewport-status text-emerald-400">● 100% REPRODUCIBLE &bull; ZERO CONSUMABLE FEES</span>
+  <span class="te-viewport-sku">PRE-GENERATED CURRICULUM CATALOG // 120 MASTER EDITIONS</span>
+  <span class="te-viewport-status text-emerald-400">● 100% READY TO PRINT &bull; ZERO SCRIPTS FOR TEACHERS</span>
 </div>
 
-All StackCalc student lab sheets are engineered around our standardized **4-Zone Cognitive Architecture**. Each worksheet bridges a hands-on physical investigation on the desk with pictorial modeling and formal RPN stack calculation.
+Welcome to the **StackCalc Visual Companion & Station Guide Library**. Unlike generic online worksheet generators that produce detached drill sheets that fight against district-adopted curricula, StackCalc companion guides operate as **Tactile Learning Lab Station Guides** aligned directly to textbook chapters across:
+
+1. **Singapore Dimensions Math** (Pre-K through Grade 8 & Additional Math)
+2. **Bridges in Mathematics** (Kindergarten through Grade 5)
+3. **Big Ideas Math & Secondary / AP Standards** (Grades 6 through 12+, AP Stats, AP CSP)
+
+Every guide is **100% pre-generated as a publication-grade 2-page PDF** in two distinct versions:
+- **Form A (Classroom Master):** For station rotations, collaborative desk labs, and direct teacher facilitation.
+- **Form B (Retake & Homework Variant):** Features fresh problem numbers with identical pedagogical depth for independent practice or retake assessments.
 
 ---
 
-## The 4-Zone Lab Sheet Architecture
+## The 2-Page Station Companion Architecture
 
 ```
++===================================================================================+
+| PAGE 1: STUDENT STATION COMPANION & VISUAL LAB GUIDE                              |
 +-----------------------------------------------------------------------------------+
-| ZONE 1: THE CONCRETE BENCH INVESTIGATION                                          |
-| • Physical desk setup on the Gridfinity Desk Workbench Lid                       |
-| • Kinesthetic alignment, tactile height matching, and counter indexing            |
-| • Prompt: "Assemble the blocks and record the physical measurement..."            |
+| HEADER: Curriculum • Grade Level • Chapter Number & Title • CCSS Alignment        |
+| STUDENT BENCH BAR: Name, Date, Target Calculator Model, Check Score (___ / 4)    |
+| STUDENT SELF-CHECK RULE: "Solve with blocks and pencil first! Calculator is ONLY  |
+|                          used to verify answers on the 4-line LCD screen."        |
 +-----------------------------------------------------------------------------------+
-| ZONE 2: THE PICTORIAL MODEL (TAPE DIAGRAM / AREA MODEL)                          |
-| • Visual representation connecting physical reality to mathematical symbols       |
-| • Singapore Bar Models, Bridges Open Arrays, or Coordinate Grid sketches          |
-| • Prompt: "Sketch the tape model showing your decomposition..."                   |
+| ZONE 1: TACTILE STATION TUTORIAL & CPA PROGRESSION                                |
+| [Col 1: 2D Blueprint]   [Col 2: Desk Setup]       [Col 3: Step-by-Step LCD Trace] |
+| Millimeter-precision    Concrete bench setup      MODE: [123] Base-10 Arithmetic  |
+| vector CAD schematic    paired with pictorial     1. [4]     X: 4  (Operand 1)    |
+| from physical STL       sketch guidelines         2. [ENTER] Y: 4 | X: 4 (Lift)   |
+| library (catalog.py)    (tape / bond model)       3. [1]     Y: 4 | X: 1 (Operand 2)  |
+|                                                   4. [+]     X: 5  (Stack Drop)   |
+|                                                   EXPECTED LCD: 5 counters        |
 +-----------------------------------------------------------------------------------+
-| ZONE 3: THE RPN STACK EXECUTION                                                   |
-| • Exact keycap sequence entry on the SC-6 Elementary or SC-32 Scientific         |
-| • 4-line stack state diagram recording Register X, Y, Z, and T                    |
-| • Prompt: "Enter the operands and execute the operator key..."                    |
+| ZONE 2: 4 AUTHENTIC MATH PRACTICE PROBLEMS                                        |
+| • Problem Statement & CCSS Standard                                               |
+| • Left Panel: Spacious "Manipulative Model & Desk Sketch" drawing workspace      |
+| • Right Panel: Clean "Final Math Answer" underline & [ ] "Verified on SC-6" box   |
++===================================================================================+
+| PAGE 2: OFFICIAL TEACHER FACILITATOR GUIDE & DIAGNOSTIC KEY                       |
 +-----------------------------------------------------------------------------------+
-| ZONE 4: CONJECTURE & TRANSFER CHALLENGE                                           |
-| • Higher-order reasoning task requiring students to generalize the pattern       |
-| • Physical verification: student predicts, enters keys, and proves with blocks   |
-| • Prompt: "Explain why changing the denominator changes the stack result..."      |
+| BOX 1: HARDWARE STATION INVENTORY & 3D PRINT PREPARATION                          |
+| • Station Kit, CAD Blueprint ID, Target Device (SC-6 Elementary vs SC-32 Scientific) |
+| • CAD / STL Source File, Standard Gridfinity Footprint, Recommended PLA Filaments|
 +-----------------------------------------------------------------------------------+
+| BOX 2: CANONICAL SOLUTIONS & RPN STACK TRACE TABLE                                |
+| • Prompt #, Standard, Expected Math Answer (Gold Badge), Keystroke & Register Flow|
++-----------------------------------------------------------------------------------+
+| BOX 3: TEACHER DIAGNOSTIC GUIDE: MISCONCEPTIONS & REMEDIATION                     |
+| • Key misconception to observe during station rotation                            |
+| • How physical blocks and RPN stack foster immediate student self-correction     |
+| • Station facilitation and desk pacing guidance                                   |
++-----------------------------------------------------------------------------------+
+| BOX 4: 4-TIER CLASSROOM SCORING & MASTERY RUBRIC                                  |
+| • Exemplary (18-20 pts) • Proficient (14-17 pts) • Developing • Intervention      |
++===================================================================================+
 ```
 
 ---
 
-## Core Laboratory Worksheet Blueprints
+## Pedagogical Guiding Principles
 
-### Lab Sheet 01: Bridging Through 10 (Grades K–2)
-* **Manipulatives:** Ten-Frame Dual Stage + Two-Color Counting Discs.
-* **Calculator Target:** SC-6 Elementary / SC-32 (`[123]` Base-10 Mode).
-* **Investigation Focus:** Decomposing addition into friendly benchmark tens: $8 + 5 = (8 + 2) + 3 = 10 + 3 = 13$.
+### 1. Authentic Math Problem Solving (No Calculator Write-In Cells)
+Students are learning mathematics, not calculator operation. Practice problems feature spacious drawing canvases for tape diagrams, bar models, number bonds, or area matrices. Students solve with physical blocks and paper first. There are strictly **zero calculator button fill-in blanks**.
 
-```
-[ZONE 1: CONCRETE] Place 8 teal discs into the first 10-frame. 
-                 Take 5 coral discs. How many coral discs are needed to fill 
-                 the first frame? (Answer: 2).
-                 Move 2 coral discs into the frame. 
-                 How many remain? (Answer: 3).
-                 Lift the full frame to the Carry Shelf!
+### 2. Student Self-Check Rule (No Cheating)
+A clear instructional banner enforces that the calculator is strictly a self-checking device. When a student enters their solution into the StackCalc 4-line LCD screen, any discrepancy immediately prompts them to re-inspect their physical bench model or regrouping, turning mistakes into productive struggle without requiring teacher intervention.
 
-[ZONE 2: PICTORIAL] Draw the two frames:
-                  Frame 1: [●][●][●][●][●] / [●][●][●][○][○] => 8 + 2 = 10
-                  Frame 2: [○][○][○][ ][ ] / [ ][ ][ ][ ][ ] => 3 remaining
+### 3. Exact Continuous Squircle App Buttons
+All buttons in keystroke sequences and LCD traces are rendered with millimeter-precision touch squircles featuring dark trench bezels matching the StackCalc iOS/macOS production app (`HardwareReplicaKeyCap.swift`).
 
-[ZONE 3: STACK]    Keystrokes: [8] [ENTER] [2] [+] [3] [+]
-                  Stack X: 13
-                  Stack Y: 10
-
-[ZONE 4: TRANSFER] Predict: What would happen if we started with 9 discs and added 6?
-                  Write the keystroke sequence and test with counters.
-```
+### 4. Step-by-Step LCD Stack Trace
+Zone 1 (Right Panel) illustrates worked-out examples with the stack after each keypress: explicitly starting with the **Mode Key** (`[123]`, `[FDISP]`, `[CLK]`, `[EQN]`, `[DEG]`), followed by operands, automatic stack lift (`Y: val | X: val`), and operator stack drop transitions (`X: result`).
 
 ---
 
-### Lab Sheet 02: Fraction Tower Equivalence & Common Denominators (Grades 3–5)
-* **Manipulatives:** Fraction Studio Proportional Towers (84mm Whole).
-* **Calculator Target:** SC-6 / SC-32 (`[FDISP]` Two-Dot Fraction Mode).
-* **Investigation Focus:** Proving $1/2 + 1/4 = 3/4$ without guessing abstract common denominators.
+## 1. Singapore Dimensions Math (Pre-K to Grade 8 & Add Math)
 
-```
-[ZONE 1: CONCRETE] Place one 1/2 block (42.0 mm) into the workbench lid.
-                 Stack one 1/4 block (21.0 mm) on top. 
-                 Total physical stack height: 63.0 mm.
-                 Test thirds (28.0 mm): Do they match? (No, 56mm or 84mm).
-                 Test fourths (21.0 mm): How many fourths match flush? (3).
+The Singapore Math method utilizes the Concrete-Pictorial-Abstract (CPA) pedagogical sequence, emphasizing Number Bonds, Bar Models, Bridging Through 10, and Place Value Discs.
 
-[ZONE 2: PICTORIAL] Sketch an 84mm bar model partitioned into fourths.
-                  Shade the 1/2 portion (2 fourths) in teal.
-                  Shade the 1/4 portion (1 fourth) in amber.
-                  Total shaded units: 3 out of 4.
-
-[ZONE 3: STACK]    Keystrokes: [.] [1] [.] [2] [ENTER] [.] [1] [.] [4] [+]
-                  LCD Register X: 0.7500
-                  Press [FDISP]:
-                  LCD Register X: 3/4
-
-[ZONE 4: TRANSFER] Challenge: Can you measure 1/3 + 1/6 using only fourths? 
-                  Explain why sixths are required using block heights.
-```
-
----
-
-### Lab Sheet 03: Planetary Gear Elapsed Time (Grades 3–6)
-* **Manipulatives:** Sectional Geared Classroom Clock (12-Hour).
-* **Calculator Target:** SC-32 Scientific (`[CLK]` Modulo-60 Mode).
-* **Investigation Focus:** Calculating elapsed time and avoiding the base-10 to base-60 calculation trap.
-
-```
-[ZONE 1: CONCRETE] Set clock hands to 9:45. Rotate the outer minute ring forward 
-                 by 3 hours and 35 minutes (215 minutes). 
-                 Observe the planetary reduction gear: 
-                 Where does the hour arbor land? (1:20).
-
-[ZONE 2: PICTORIAL] Draw dual number lines:
-                  Line 1 (Hours): 9 AM ---> 12 PM ---> 1 PM
-                  Line 2 (Minutes): 45 min + 15 min (to 10:00) + 20 min = 35 min
-
-[ZONE 3: STACK]    Keystrokes: [9] [.] [4] [5] [ENTER] [3] [.] [3] [5] [CLK] [+]
-                  LCD Register X: 13.20 (Formatted as 1:20 PM)
-                  LCD Register Y: 09:45:00
-
-[ZONE 4: TRANSFER] Why is standard in-fix math wrong when entering 9.45 + 3.35 = 12.80?
-                  Explain what [CLK] does to the minute register.
-```
+| Grade Level | Chapter / Unit & Topic | Target Calculator | Primary Manipulative & CAD Blueprint | Form A (Classroom Master) | Form B (Retake / HW Variant) |
+| :--- | :--- | :--- | :--- | :---: | :---: |
+| **Kindergarten (KA)** | Chapter 1: Numbers to 5: Counting & Cardinality | **SC-6 Elementary** | Ten-Frame Studio (`ten_frame_tray`) | [Download Form A &darr;](../downloads/worksheets/dimensions_kindergarten_ka_chapter_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_kindergarten_ka_chapter_1_form_b.pdf) |
+| **Kindergarten (KA)** | Chapter 2: Numbers to 10: Ten-Frame Structure | **SC-6 Elementary** | Ten-Frame Studio (`ten_frame_tray`) | [Download Form A &darr;](../downloads/worksheets/dimensions_kindergarten_ka_chapter_2_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_kindergarten_ka_chapter_2_form_b.pdf) |
+| **Kindergarten (KA)** | Chapter 3: Comparing Numbers within 10 | **SC-6 Elementary** | Number Rack (`number_rack`) | [Download Form A &darr;](../downloads/worksheets/dimensions_kindergarten_ka_chapter_3_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_kindergarten_ka_chapter_3_form_b.pdf) |
+| **Kindergarten (KA)** | Chapter 4: Number Bonds to 5 & 10 | **SC-6 Elementary** | Math Domino Studio (`number_bond_stage`) | [Download Form A &darr;](../downloads/worksheets/dimensions_kindergarten_ka_chapter_4_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_kindergarten_ka_chapter_4_form_b.pdf) |
+| **Grade 1A** | Chapter 2: Number Bonds to 10 & Complements | **SC-6 Elementary** | Ten-Frame Studio & Math Dominoes (`number_bond_stage`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_1a_chapter_2_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_1a_chapter_2_form_b.pdf) |
+| **Grade 1A** | Chapter 3: Addition as Putting Together & Part-Part-Whole | **SC-6 Elementary** | Math Domino Studio & Number Rack (`number_rack`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_1a_chapter_3_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_1a_chapter_3_form_b.pdf) |
+| **Grade 1A** | Chapter 7: Numbers to 20: Place Value & Staging | **SC-6 Elementary** | Place Value Studio (`place_value_tray_whole`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_1a_chapter_7_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_1a_chapter_7_form_b.pdf) |
+| **Grade 1A** | Chapter 8: Making 10 to Add (Bridging Through 10) | **SC-6 Elementary** | Ten-Frame Studio (`ten_frame_shelf`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_1a_chapter_8_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_1a_chapter_8_form_b.pdf) |
+| **Grade 2A** | Chapter 1: Numbers to 1,000: Hundreds, Tens & Ones | **SC-6 Elementary** | Place Value Studio (`place_value_base_ten`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_2a_chapter_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_2a_chapter_1_form_b.pdf) |
+| **Grade 2A** | Chapter 4: Multiplication & Doubles: 2, 5 & 10 Facts | **SC-6 Elementary** | Math Dominoes & Interlocking Cubes (`unifix_tray`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_2a_chapter_4_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_2a_chapter_4_form_b.pdf) |
+| **Grade 3A** | Chapter 3: Multiplication & Division: Arrays & Groups | **SC-6 Elementary** | Interlocking Cubes & Gridfinity Baseplate (`gridfinity_baseplate`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_3a_chapter_3_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_3a_chapter_3_form_b.pdf) |
+| **Grade 3A** | Chapter 5: Multi-Step Word Problems & Bar Models | **SC-6 Elementary** | Interlocking Cubes & 4-Line Hardware LCD Stack (`stack_board`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_3a_chapter_5_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_3a_chapter_5_form_b.pdf) |
+| **Grade 3B** | Chapter 9: Fractions: Equivalence & Common Denominators | **SC-6 Elementary** | Fraction Studio Towers (`fraction_tray`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_3b_chapter_9_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_3b_chapter_9_form_b.pdf) |
+| **Grade 3B** | Chapter 10: Time: Modulo-60 Arithmetic & Elapsed Minutes | **SC-6 Elementary** | Classroom Planetary Geared Clock (`clock_dial`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_3b_chapter_10_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_3b_chapter_10_form_b.pdf) |
+| **Grade 4A** | Chapter 5: Fractions: Mixed Numbers & Addition | **SC-6 Elementary** | Fraction Studio (`fraction_blocks`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_4a_chapter_5_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_4a_chapter_5_form_b.pdf) |
+| **Grade 5A** | Chapter 2: Fractions: Adding with Unlike Denominators | **SC-6 Elementary** | Fraction Studio Towers (`fraction_tray`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_5a_chapter_2_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_5a_chapter_2_form_b.pdf) |
+| **Grade 6A** | Chapter 1: Negative Numbers, Zero Pairs & Absolute Value | **SC-6 Elementary** | Ten-Frame Studio (`number_rack`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_6a_chapter_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_6a_chapter_1_form_b.pdf) |
+| **Grade 6A** | Chapter 3: Algebraic Expressions & Postfix Traversal | **SC-6 Elementary** | Interlocking Cubes & 4-Line Hardware LCD Stack (`tree_board`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_6a_chapter_3_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_6a_chapter_3_form_b.pdf) |
+| **Grade 7A** | Chapter 4: Linear Equations & Stage Balancing | **SC-32 Scientific** | Algebra Studio & Factoring Stage (`algebra_stage`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_7a_chapter_4_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_7a_chapter_4_form_b.pdf) |
+| **Grade 8A** | Chapter 5: Quadratic Factorisation & [EQN] Root Solver | **SC-32 Scientific** | Algebra Studio & Factoring Stage (`algebra_tiles`) | [Download Form A &darr;](../downloads/worksheets/dimensions_grade_8a_chapter_5_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_grade_8a_chapter_5_form_b.pdf) |
+| **High School (Add. Math)** | Chapter 7: Circular Measure & Trigonometric Ratios | **SC-32 Scientific** | Unit Circle Trigonometry Volvelle (`unit_circle_volvelle`) | [Download Form A &darr;](../downloads/worksheets/dimensions_high_school_add_math_chapter_7_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_high_school_add_math_chapter_7_form_b.pdf) |
+| **High School (Add. Math)** | Chapter 9: 2D Vector Decomposition & Resultants | **SC-32 Scientific** | Unit Circle Trigonometry Volvelle (`unit_circle_volvelle`) | [Download Form A &darr;](../downloads/worksheets/dimensions_high_school_add_math_chapter_9_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/dimensions_high_school_add_math_chapter_9_form_b.pdf) |
 
 ---
 
-### Lab Sheet 04: Geometric Quadratic Factoring (Grades 8–10)
-* **Manipulatives:** Algebra Factoring Stage + Polynomial Unit Tiles.
-* **Calculator Target:** SC-32 Scientific (`[EQN]` Solver Mode).
-* **Investigation Focus:** Factoring $x^2 + 5x + 6$ into $(x + 2)(x + 3)$ using spatial area models.
+## 2. Bridges in Mathematics (Kindergarten to Grade 5)
 
-```
-[ZONE 1: CONCRETE] Take 1 large x^2 tile (40x40 mm), 5 green x-tiles (40x10 mm), 
-                 and 6 yellow unit squares (10x10 mm).
-                 Arrange them into a single solid rectangle with no gaps.
-                 Vertical height of rectangle:   (x + 2)
-                 Horizontal width of rectangle:  (x + 3)
+Bridges in Mathematics (The Math Learning Center) uses visual models including the **Number Rack (Rekenrek)**, Open Number Lines, Open Arrays, Combinations to 10, and Tile Rectangles.
 
-[ZONE 2: PICTORIAL] Draw the 2x2 area matrix:
-                  +---------+-------+
-                  |   x^2   |  3x   |  <-- row 1 (height x)
-                  +---------+-------+
-                  |   2x    |   6   |  <-- row 2 (height 2)
-                  +---------+-------+
-                    col 1    col 2
-                   (width x)(width 3)
-
-[ZONE 3: STACK]    Solve roots on SC-32:
-                  Keystrokes: [1] [ENTER] [5] [ENTER] [6] [EQN]
-                  Line 2 (Y): Root 1 = -2.0000  ==>  (x - r1) = (x + 2)
-                  Line 1 (X): Root 2 = -3.0000  ==>  (x - r2) = (x + 3)
-
-[ZONE 4: TRANSFER] Try factoring x^2 + 4x + 5 with your tiles. Can you make 
-                  a solid rectangle? What does the SC-32 display when roots 
-                  are complex?
-```
+| Grade Level | Chapter / Unit & Topic | Target Calculator | Primary Manipulative & CAD Blueprint | Form A (Classroom Master) | Form B (Retake / HW Variant) |
+| :--- | :--- | :--- | :--- | :---: | :---: |
+| **Kindergarten** | Unit 1: Numbers to 5 & 10: The Step Counter & Ten-Frame | **SC-6 Elementary** | Ten-Frame Stage & Two-Color Discs (`ten_frame_tray`) | [Download Form A &darr;](../downloads/worksheets/bridges_kindergarten_unit_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_kindergarten_unit_1_form_b.pdf) |
+| **Kindergarten** | Unit 2: Numbers to 10: Five-Structure & Five-Frames | **SC-6 Elementary** | Ten-Frame Stage (`ten_frame_tray`) | [Download Form A &darr;](../downloads/worksheets/bridges_kindergarten_unit_2_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_kindergarten_unit_2_form_b.pdf) |
+| **Kindergarten** | Unit 3: Combinations to 10 with the Number Rack | **SC-6 Elementary** | Number Rack (`number_rack`) | [Download Form A &darr;](../downloads/worksheets/bridges_kindergarten_unit_3_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_kindergarten_unit_3_form_b.pdf) |
+| **Kindergarten** | Unit 4: Paths to 20: Comparing Groups on the Number Rack | **SC-6 Elementary** | Number Rack (`number_rack`) | [Download Form A &darr;](../downloads/worksheets/bridges_kindergarten_unit_4_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_kindergarten_unit_4_form_b.pdf) |
+| **Grade 1** | Unit 1: Numbers All Around Us: Rekenrek Subitizing & Ten-Structures | **SC-6 Elementary** | Number Rack (`number_rack`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_1_unit_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_1_unit_1_form_b.pdf) |
+| **Grade 1** | Unit 2: Developing Strategies with Dominoes & Doubles | **SC-6 Elementary** | Math Domino Studio (`number_bond_stage`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_1_unit_2_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_1_unit_2_form_b.pdf) |
+| **Grade 1** | Unit 3: Adding, Subtracting & Combinations of 10 | **SC-6 Elementary** | Ten-Frame Studio (`ten_frame_shelf`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_1_unit_3_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_1_unit_3_form_b.pdf) |
+| **Grade 1** | Unit 4: Leapfrogs on the Number Line: Skip Counting | **SC-6 Elementary** | Interlocking Cubes & Number Rail (`unifix_tray`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_1_unit_4_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_1_unit_4_form_b.pdf) |
+| **Grade 1** | Unit 6: Figure the Facts with the Number Rack: Teen Numbers | **SC-6 Elementary** | Number Rack (`number_rack`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_1_unit_6_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_1_unit_6_form_b.pdf) |
+| **Grade 2** | Unit 1: Figure the Facts: Addition Strategies & Near Doubles | **SC-6 Elementary** | Number Rack (`number_rack`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_2_unit_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_2_unit_1_form_b.pdf) |
+| **Grade 2** | Unit 2: Place Value & Bundling Tens into Hundreds | **SC-6 Elementary** | Place Value Base-Ten Studio (`place_value_base_ten`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_2_unit_2_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_2_unit_2_form_b.pdf) |
+| **Grade 2** | Unit 3: Addition & Subtraction Within 100: Jump & Split Strategies | **SC-6 Elementary** | Stack Stage Rail & Interlocking Cubes (`stack_board`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_2_unit_3_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_2_unit_3_form_b.pdf) |
+| **Grade 2** | Unit 6: Geometry & Fractions: Partitioning Equal Shares | **SC-6 Elementary** | Fraction Studio Proportional Towers (`fraction_tray`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_2_unit_6_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_2_unit_6_form_b.pdf) |
+| **Grade 3** | Unit 1: Addition & Subtraction Patterns on the Open Number Line | **SC-6 Elementary** | Stack Stage Rail & Interlocking Cubes (`stack_board`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_3_unit_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_3_unit_1_form_b.pdf) |
+| **Grade 3** | Unit 2: Introduction to Multiplication: Equal Groups & Arrays | **SC-6 Elementary** | Gridfinity 4x4 Coordinate Baseplate & Cubes (`gridfinity_baseplate`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_3_unit_2_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_3_unit_2_form_b.pdf) |
+| **Grade 3** | Unit 4: Measurement & Fractions: Unit Fractions & Tower Heights | **SC-6 Elementary** | Fraction Studio Proportional Towers (`fraction_blocks`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_3_unit_4_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_3_unit_4_form_b.pdf) |
+| **Grade 3** | Unit 5: Multiplication, Division & Area: Open Arrays | **SC-6 Elementary** | Gridfinity 4x4 Coordinate Baseplate & Cubes (`gridfinity_baseplate`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_3_unit_5_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_3_unit_5_form_b.pdf) |
+| **Grade 4** | Unit 1: Multi-Digit Multiplication: Partial Products & Ratio Tables | **SC-6 Elementary** | Gridfinity Baseplate & Stacking Blocks (`gridfinity_baseplate`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_4_unit_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_4_unit_1_form_b.pdf) |
+| **Grade 4** | Unit 3: Fractions & Decimals: Proportional Towers & Two-Dot Notation | **SC-6 Elementary** | Fraction Studio Towers (`fraction_tray`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_4_unit_3_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_4_unit_3_form_b.pdf) |
+| **Grade 4** | Unit 4: Measurement & Angles: Modulo-60 Clock Navigation | **SC-6 Elementary** | 4-Quadrant Modulo-60 Clock Dial (`clock_dial`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_4_unit_4_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_4_unit_4_form_b.pdf) |
+| **Grade 5** | Unit 1: Expressions, Equations & Volume: Postorder Traversal & Cubic Units | **SC-6 Elementary** | 4x4 Expression Tree Case & Cubic Blocks (`tree_board`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_5_unit_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_5_unit_1_form_b.pdf) |
+| **Grade 5** | Unit 2: Adding & Subtracting Fractions with Unlike Denominators | **SC-6 Elementary** | Fraction Studio Towers (`fraction_tray`) | [Download Form A &darr;](../downloads/worksheets/bridges_grade_5_unit_2_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bridges_grade_5_unit_2_form_b.pdf) |
 
 ---
 
-## 4-Point Student Assessment Rubric
+## 3. Big Ideas Math & AP Standards (Grades 6 to 12+)
 
-Teachers evaluate student lab sheets using this standardized rubric:
+Big Ideas Math (Ron Larson & Laurie Boswell) and Advanced Placement standards bridge middle school conceptual mastery into formal secondary algebra, calculus, and computer science. Visual models feature the **Balance Scale**, **Polynomial Algebra Tiles**, **Area Matrices**, **Unit Circle Volvelles**, and **Expression Tree Boards**.
 
-| Score | Zone 1: Concrete Setup | Zone 2: Pictorial Model | Zone 3: RPN Keystrokes | Zone 4: Explanation & Transfer |
-| :---: | :--- | :--- | :--- | :--- |
-| **4 (Exemplary)** | Manipulative assembled with zero gaps/overhangs; precise measurements verified with gauge. | Clear, labeled diagram (Singapore bar model or area matrix) showing exact proportional parts. | Accurate keystroke sequence preserving operand order; all 4 stack levels correctly recorded. | Articulates mathematical principle linking the physical block action directly to the stack result. |
-| **3 (Proficient)** | Manipulative assembled correctly with minor guidance. | Diagram drawn accurately with correct values but minor labeling omissions. | Correct keystroke sequence and final answer; minor notation slip in intermediate stack levels. | Correct explanation of why the answer is valid, but relies partially on rote rules. |
-| **2 (Developing)** | Blocks misaligned or wrong denominations chosen; corrected after teacher prompt. | Incomplete diagram; bar model not drawn to scale or missing key subdivisions. | Keystrokes contain syntax errors (e.g. pressed `[ENTER]` twice or looked for `=`). | Concludes answer is correct without explaining the connection to the physical blocks. |
-| **1 (Beginning)** | Unable to set up physical investigation independently. | Diagram missing or shows unrelated shapes. | Incorrect keystrokes and incorrect stack result. | Blank or rote repetition of problem statement. |
+| Grade Level | Chapter / Unit & Topic | Target Calculator | Primary Manipulative & CAD Blueprint | Form A (Classroom Master) | Form B (Retake / HW Variant) |
+| :--- | :--- | :--- | :--- | :---: | :---: |
+| **Grade 6** | Chapter 1: Numerical Expressions & Factors: Prime Factorisation & GCF | **SC-6 Elementary** | 4x4 Expression Tree Case & Factor Tokens (`tree_board`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_6_chapter_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_6_chapter_1_form_b.pdf) |
+| **Grade 6** | Chapter 2: Fractions & Decimals: Dividing Fractions & Reciprocals | **SC-6 Elementary** | Fraction Studio Proportional Towers (`fraction_tray`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_6_chapter_2_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_6_chapter_2_form_b.pdf) |
+| **Grade 6** | Chapter 3: Algebraic Expressions & Properties: Order of Operations | **SC-6 Elementary** | 4x4 Expression Tree Case & Token Operators (`tree_board`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_6_chapter_3_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_6_chapter_3_form_b.pdf) |
+| **Grade 6** | Chapter 6: Integers & The Coordinate Plane: Negative Numbers & Zero Pairs | **SC-6 Elementary** | Number Rack & Zero-Pair Color Discs (`number_rack`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_6_chapter_6_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_6_chapter_6_form_b.pdf) |
+| **Grade 6** | Chapter 7: Equations & Inequalities: One-Step Equations & Balance Scale | **SC-6 Elementary** | Tactile Algebra Stage & Balance Blocks (`algebra_stage`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_6_chapter_7_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_6_chapter_7_form_b.pdf) |
+| **Grade 7** | Chapter 1: Adding & Subtracting Rational Numbers: Signed Stack | **SC-32 Scientific** | Stack Stage Rail & Color-Coded Tiles (`stack_board`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_7_chapter_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_7_chapter_1_form_b.pdf) |
+| **Grade 7** | Chapter 2: Multiplying & Dividing Rational Numbers: Sign Rules | **SC-32 Scientific** | Stack Stage Rail & Color-Coded Tiles (`stack_board`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_7_chapter_2_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_7_chapter_2_form_b.pdf) |
+| **Grade 7** | Chapter 3: Expressions & Equations: Two-Step Equations & Balance Stage | **SC-32 Scientific** | Tactile Algebra Stage & Tile Weights (`algebra_stage`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_7_chapter_3_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_7_chapter_3_form_b.pdf) |
+| **Grade 7** | Chapter 4: Ratios & Proportional Reasoning: Unit Rates & Proportions | **SC-6 Elementary** | Interlocking Cubes & Ratio Rail (`unifix_tray`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_7_chapter_4_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_7_chapter_4_form_b.pdf) |
+| **Grade 7** | Chapter 8: Circles & Area: Circumference, Pi & Modulo Dial | **SC-32 Scientific** | 4-Quadrant Modulo Clock & Rotary Dial (`clock_dial`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_7_chapter_8_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_7_chapter_8_form_b.pdf) |
+| **Grade 8** | Chapter 1: Solving Multi-Step Equations: Variables on Both Sides | **SC-32 Scientific** | Tactile Algebra Stage & Tile Weights (`algebra_stage`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_8_chapter_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_8_chapter_1_form_b.pdf) |
+| **Grade 8** | Chapter 7: Real Numbers & The Pythagorean Theorem: Radicals & Square Roots | **SC-32 Scientific** | Gridfinity 4x4 Coordinate Baseplate & Triangles (`gridfinity_baseplate`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_8_chapter_7_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_8_chapter_7_form_b.pdf) |
+| **Algebra 1** | Chapter 7: Polynomial Equations & Factoring: Area Model & [EQN] Solver | **SC-32 Scientific** | Tactile Algebra Stage & Polynomial Tiles (`algebra_tiles`) | [Download Form A &darr;](../downloads/worksheets/bigideas_algebra_1_chapter_7_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_algebra_1_chapter_7_form_b.pdf) |
+| **Algebra 2** | Chapter 6: Exponential & Logarithmic Functions: Compound Interest & LN | **SC-32 Scientific** | Stack Stage Rail & Token Tiles (`stack_board`) | [Download Form A &darr;](../downloads/worksheets/bigideas_algebra_2_chapter_6_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_algebra_2_chapter_6_form_b.pdf) |
+| **AP Standards** | AP Stats Unit 4: Probability & Combinatorics: Permutations & Combinations | **SC-32 Scientific** | Probability Spinner & Fair Dice Pack (`probability_spinner`) | [Download Form A &darr;](../downloads/worksheets/bigideas_ap_standards_ap_stats_unit_4_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_ap_standards_ap_stats_unit_4_form_b.pdf) |
+| **AP Standards** | AP CSP Big Idea 2: Digital Information: Base Conversions & Two's Complement | **SC-32 Scientific** | 4x4 Expression Tree Case & Logic Bit Tokens (`tree_board`) | [Download Form A &darr;](../downloads/worksheets/bigideas_ap_standards_ap_csp_big_idea_2_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_ap_standards_ap_csp_big_idea_2_form_b.pdf) |
 
 ---
 
-## Download Printable Lab Worksheet Packs
+## Master Classroom Curriculum Manuals
 
 * **[Download 12-Unit Teacher Curriculum Manual (Letter PDF) &rarr;](../downloads/stackcalc-curriculum-guide-letter.pdf)**
 * **[Download Timed Student Proficiency Trials (Letter PDF) &rarr;](../downloads/stackcalc-student-proficiency-trials.pdf)**

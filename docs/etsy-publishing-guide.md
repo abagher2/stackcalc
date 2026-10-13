@@ -67,7 +67,7 @@ All 8 launch listings have complete, pre-validated copy-paste Markdown packages 
 | `PROB-01` | Probability Dice & Spinner | \$29.00 | `dice-spinner-hero-square.png` | `dice-spinner-hero-4x3.png` |
 | `TRIG-01` | Unit Circle Trig Volvelle | \$16.00 | `unit-circle-volvelle-hero-square.png` | `unit-circle-volvelle-hero-4x3.png` |
 | `DOMI-01` | Math Domino Studio | \$29.00 | `dominoes-studio-hero-square.png` | `dominoes-studio-hero-4x3.png` |
-| `DIGI-01` | Complete 3D Print STL Bundle | \$19.00 | `algebra-tiles-craftsmanship-square.png` | `algebra-boxes-hero-4x3.png` |
+| `DIGI-01` | Complete 3D Print STL Library | \$19.00 | `algebra-tiles-craftsmanship-square.png` | `algebra-boxes-hero-4x3.png` |
 | `REPLACE-01` | Lifetime Replacement Parts Service | \$2.49+ | `infographic-guarantee-safety-square.png` | `infographic-guarantee-safety-square.png` |
 
 ---
@@ -123,14 +123,14 @@ Etsy requires makers to disclose production assistance under their **Creativity 
 
 ### Step 6: 13/13 Search Tag Saturation
 Copy all 13 exact-match tags from Section 2 of the listing file. Enter each tag individually (all under 20 characters):
-- *Example for SC-32:* `rpn calculator`, `pocket calculator`, `stem calculator`, `math engineering`, `hp calculator`, `coder desk toy`, `engineer gift`, `sat test calculator`, `rp2350 hardware`, `retro calculator`, `tactile keyboard`, `college math tool`, `physics calculator`.
+- *Example for SC-32:* `rpn calculator`, `pocket calculator`, `stem calculator`, `math engineering`, `scientific tool`, `coder desk toy`, `engineer gift`, `sat test calculator`, `rp2350 hardware`, `retro calculator`, `tactile keyboard`, `college math tool`, `physics calculator`.
 - *Rule:* Use all 13 tags. Never leave empty tag slots.
 
-### Step 7: Dropdown Variations & Bundle Pricing (CRO Booster)
+### Step 7: Dropdown Variations (CRO Booster)
 Enable **Variations** in the listing editor to provide tier options that increase Average Order Value (AOV):
-- **Option 1 (Individual Kit):** Base retail price (e.g., $34.00 – $89.00).
-- **Option 2 (Field Bundle / Founder Pack):** Base unit + TPU protective pouch + desktop stand packaging (+$20.00 – $26.00).
-- **Option 3 (Classroom 5-Pack Station):** 5 identical kits + bulk teacher lesson guide with a 10–15% district discount.
+- **Option 1 (Maker Kit / Base Unit):** Base retail price (e.g., $59.00).
+- **Option 2 (Founder Edition Assembled):** Factory assembled and tested ($89.00).
+- **Option 3 (Classroom 5-Pack Station):** 5 identical kits + bulk teacher lesson guide with standard volume tiering.
 
 ### Step 8: Standardized Shipping Profile Selection
 Select the pre-configured USPS Ground Advantage shipping profile:
@@ -243,7 +243,7 @@ Before sealing each mailer, warehouse fulfillment must execute the specific chec
 
 ---
 
-### 2. SC-32 Engineer's Field Bundle / Founder Pack
+### 2. SC-32 Engineer's Field Pack / Founder Edition
 - **Packaging:** Profile C Mailer ($9 \times 6 \times 3\text{ in}$ Rigid Corrugated Mailer Box)
 - **Target Weight:** ~420 g (14.8 oz) packed
 - **Physical Contents:**
@@ -412,7 +412,7 @@ Before sealing each mailer, warehouse fulfillment must execute the specific chec
 
 ---
 
-### 12. Complete 3D Print STL Bundle (Digital Download)
+### 12. Complete 3D Print STL Library (Digital Download)
 - **Packaging:** Automated Instant Digital Delivery (.ZIP)
 - **Target Weight:** 0 g (Digital Delivery)
 - **Digital Contents:**

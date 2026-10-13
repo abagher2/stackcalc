@@ -4,54 +4,49 @@ title: "StackCalc Learning Lab"
 
 # StackCalc Learning Lab
 
-The Learning Lab is the first physical teaching-resource collection in the StackCalc ecosystem. It gives a learner tangible ways to represent quantities, a four-register stack, an expression tree, and coordinate relationships before translating them into calculator operations.
+The Learning Lab is the physical STEM education ecosystem engineered by StackCalc. Rather than generic novelty toys, every manipulative in the Learning Lab is an authentic, tactile instrument designed to pair 1:1 with the physical keys and dedicated register displays of our **SC-6 Elementary** and **SC-32 Scientific** RPN calculators.
 
-The internally maintained collection contains 13 STL plates with 79 solids, matching OpenSCAD sources, laser artwork, a catalog manifest, reference cards, and a teacher booklet. The public release below contains the printable STL plates and teacher PDFs.
+The calculator's high-contrast, four-line reflective LCD screen is the real operational stack. Students manipulate physical models on their desk, observe how values are staged, and verify calculations on the live stack registers without hidden parenthesis logic.
 
-![StackCalc Learning Lab teacher guide showing the fraction studio, stack stage, expression tree, and coordinate lab](assets/learning-lab-teacher-guide.png)
+## The Physical Instrument Collection
 
-*The first page of the printable teacher guide labels the four connected investigations. The pictured boards are teaching representations, rather than unengraved STL previews.*
+All manipulatives are built on the open-source **Gridfinity** modular standard with tactile detents, dual-color filament lettering, debossed cartouche badges, and weighted rubber feet:
 
-## The first collection
+| Instrument | Calculator Integration | What It Makes Visible |
+| :--- | :--- | :--- |
+| **Fraction Studio Towers** | `[FDISP]` key | Proportional stacking towers (1/1 to 1/8) where equivalent heights demonstrate common denominators and fraction reduction. |
+| **Ten-Frame Studio** | `[▦]` Ten-Frame key | Dual-color counters in 2×5 arrays and 8-bit register trays for place-value anchoring and base-10 decomposition. |
+| **Math Domino Studio** | Doubles facts / Part-part-whole | Precision dominoes in 12-frame debossed trays illustrating additive composition and associative grouping. |
+| **Place Value Studio** | `[123]` Place Value key | Proportional base-10 units, rods, flats, and thousands cubes matching register staging. |
+| **Algebra Studio & Factoring Stage** | `[EQN]` Equation solver | Quadratic factoring frames and area tiles ($x^2$, $x$, $1$) for tactile polynomial expansion and binomial root solving. |
+| **Classroom Planetary Clock** | `[CLK]` Time key | Geared mechanical gear train with visible epicyclic movement linking 60-minute cycles directly to fractional hours. |
+| **Unit Circle Trig Volvelle** | `[SIN]`, `[COS]`, `[RAD]`, `[π]` keys | Dual-rotor rotating dial showing exact radian-degree equivalents, coordinates, and exact radical ratios. |
+| **Probability Dice & Spinner** | `[Σ+]`, `[x̄]` Statistics keys | Weighted dice sets and calibrated spinner for empirical frequency logging and real-time mean/standard deviation. |
 
-| Resource | What it makes visible |
-| --- | --- |
-| Fraction studio | A quantity, its whole, numerator, and denominator before an RPN fraction entry. |
-| Stack stage | Four value tiles arranged as X, Y, Z, and T, so ENTER, stack lift, and binary operations have a physical model. |
-| Expression tree | Seven removable tokens for reading an expression in postorder before keying the resulting RPN sequence. |
-| Coordinate lab | A 10 × 10 point grid and locator pegs for measuring a 3-4-5 triangle and checking a distance calculation. |
-| Pocket cards | Compact references for stack, fractions, and distance exercises. |
+## Concrete-Pictorial-Abstract (CPA) Pedagogy
 
-## A common calculation model
+StackCalc directly implements Jerome Bruner’s CPA progression and Singapore Math methodologies:
 
-The calculator, apps, and Learning Lab share a single premise: values arrive before the operation that consumes them. The Learning Lab turns that sequence into a question a learner can inspect: what goes on the stack now, and what two values will this operation use?
+1. **Concrete:** Students physically construct quantities, group counters, rotate volvelles, or factor algebraic tiles.
+2. **Pictorial:** Students sketch representations, tape diagrams, or area models into their printed lab sheets.
+3. **Abstract:** Students push values onto the calculator's hardware stack (`[ENTER]`), apply operations, and inspect register state.
 
-The fraction studio uses blocks with a common 24 × 24 mm footprint. Whole, half, third, quarter, sixth, and eighth blocks are 96/n mm tall, so equivalent towers meet at the same height. The stack stage is a 158 × 164 mm board with four reusable value tiles. The expression-tree board is 196 × 164 mm with tokens for `a`, `b`, `+`, `c`, `d`, `-`, and `*`. Those are design facts about the supplied prototype; they do not demonstrate learning outcomes.
+## Download Educational Literature & 3D Models {: #download-the-prototype-materials }
 
-![Printable StackCalc Learning Lab reference cards](assets/learning-lab-reference-cards.png)
+All classroom curriculum, teacher guides, student proficiency trials, and 3D printing files are fully open-source:
 
-*The printable reference cards label the stack, fraction, and distance activities used with the STL plates.*
+| Literature & Print Files | Description | Format |
+| :--- | :--- | :--- |
+| **12-Unit Teacher Curriculum Guide** | Full 12-unit instructional syllabus with standards alignment, lesson plans, and step-by-step keystroke transcripts. | [Letter PDF](downloads/stackcalc-curriculum-guide-letter.pdf) · [A4 PDF](downloads/stackcalc-curriculum-guide-a4.pdf) |
+| **Student Timed Proficiency Trials** | 12 student assessment challenges with scoring rubrics and time-gate benchmarks. | [Letter PDF](downloads/stackcalc-student-proficiency-trials.pdf) · [A4 PDF](downloads/student-proficiency-trials-a4.pdf) |
+| **Teacher Booklet & Lab Sheets** | Classroom investigation cards, reproducible lab exercises, and diagnostic guides. | [Letter PDF](downloads/teacher-booklet-letter.pdf) · [A4 PDF](downloads/teacher-booklet-a4.pdf) |
+| **Hardware Reference Cards** | Desk cards summarizing RPN stack operations, trigonometry volvelle reading, and fraction conversions. | [Letter PDF](downloads/reference-cards-letter.pdf) · [A4 PDF](downloads/reference-cards-a4.pdf) |
+| **Printable STL / 3MF Archives** | Complete 3D manufacturing files for all 8 kits with calibrated Bambu Lab and Prusa print profiles. | [Master 3MF Directory](downloads.md) |
 
-## Prototype status
+Read the related documentation and lesson guides:
 
-The Learning Lab is ready for printing and teacher review. The calculator is an unpowered four-part mechanical prototype, and its RP2350 PCB is in fabrication. We will add fit, engraving, and educator findings as they are collected.
-
-## Download the prototype materials
-
-The 0.2.0 STL pack is the canonical printable release of the Learning Lab. It contains the 13 STL plates only; the teaching cards and teacher booklet are provided separately as PDFs. Source code, CAD generators, and manufacturing artwork are not part of this public download.
-
-| File | Contents |
-| --- | --- |
-| [Learning Lab STL pack 0.2.0](downloads/stackcalc-learning-lab-0.2.0-stl-pack.zip) | The 13 printable STL plates for the first collection. SHA-256: `b0dc8ecd980a4760ca1bd5c9038d93ff23a29736937eb6bf7017881926908fa1` |
-| [Reference cards — Letter](downloads/reference-cards-letter.pdf) | Printable stack, fraction, and distance cards for US Letter paper. |
-| [Reference cards — A4](downloads/reference-cards-a4.pdf) | Printable stack, fraction, and distance cards for A4 paper. |
-| [Teacher booklet — Letter](downloads/teacher-booklet-letter.pdf) | Eight-page investigation guide and worksheet for US Letter paper. |
-| [Teacher booklet — A4](downloads/teacher-booklet-a4.pdf) | Eight-page investigation guide and worksheet for A4 paper. |
-
-Read the related engineering notes and catalog:
-
-- [Product & Hardware Catalog](products.md)
-- [Why RPN needs an ecosystem](blog/posts/2026-09-22-why-rpn-needs-an-ecosystem-not-another-retro-replica.md)
-- [Make the four-level stack visible](blog/posts/2026-09-22-making-the-four-level-stack-visible.md)
-- [Teach a fraction as a sequence](blog/posts/2026-09-22-teaching-fractions-as-an-rpn-sequence.md)
-- [Read an expression tree as a postfix program](blog/posts/2026-09-22-reading-an-expression-tree-as-a-postfix-program.md)
+- [Curriculum Overview & Standards Alignment](curriculum/index.md)
+- [Complete CCSS-M / Singapore / Bridges Alignment Matrix](curriculum/alignment-matrix.md)
+- [Classroom Worksheets & Lesson Transcripts](curriculum/worksheets.md)
+- [Teacher Facilitator Guide & Common Misconceptions](curriculum/teacher-guide.md)
+- [Master Product & Hardware Catalog](products.md)

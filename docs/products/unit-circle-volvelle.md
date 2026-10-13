@@ -548,11 +548,11 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION: COMPLETE THE CLASSROOM MATH STATION (CROSS-SELL BUNDLE)
+       SECTION: COMPLEMENTARY CLASSROOM INSTRUMENTS (STANDALONE CROSS-SELL)
        ========================================================================== -->
   <section class="cross-sell-section">
     <div class="text-center max-w-2xl mx-auto mb-6">
-      <span class="text-xs font-mono uppercase text-cyan-400 font-bold tracking-wider">&bull; Complete The Math Station</span>
+      <span class="text-xs font-mono uppercase text-cyan-400 font-bold tracking-wider">&bull; Related Instruments</span>
       <h2 class="text-2xl font-bold text-white mt-1 mb-2">Build a Complete Hands-On Trigonometry Station</h2>
       <p class="text-sm text-slate-300">
         Pair rotary unit circle geometry with instant RPN trigonometric execution in degree and radian modes.
@@ -596,28 +596,27 @@ hide:
             <span class="text-xs font-mono text-amber-400">Teacher Approved</span>
           </div>
           <a href="/products/curriculum-and-decks/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            Add Workbook &amp; Decks &rarr;
+            View Workbook &amp; Decks &rarr;
           </a>
         </div>
       </div>
 
-      <!-- Cross-Sell 3: Complete Trig Station Bundle -->
-      <div class="cross-sell-card featured">
-        <span class="cross-sell-badge">SAVE $19.00</span>
+      <!-- Cross-Sell 3: Classroom Sectional Clock -->
+      <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/unit-circle-volvelle-hero.png" alt="Trig Station Bundle" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">Complete Pre-Calculus Station Bundle</h3>
+          <img src="../../assets/renders/clock-classroom-hero.png" alt="Classroom Sectional Clock" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">Classroom Sectional Clock</h3>
           <p class="cross-sell-card-desc">
-            Includes Unit Circle Volvelle + SC-32 Calculator + 36-Page Spiral Student Workbook + CR80 Waterproof Cheatsheet Decks + Desktop Origami Stand.
+            Physical 12:1 planetary gear clock with removable 15-minute quadrant sectors. Connects rotational angle to time intervals and trigonometry.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$110.00</span>
-            <span class="cross-sell-savings">&check; Save $19 (Was $129)</span>
+            <span class="cross-sell-price">$36.00</span>
+            <span class="text-xs font-mono text-cyan-400">Standalone Kit</span>
           </div>
-          <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary w-full text-center mt-3 text-xs block" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-            Order Complete Station on Etsy ↗
+          <a href="/products/classroom-clock/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
+            View Sectional Clock &rarr;
           </a>
         </div>
       </div>

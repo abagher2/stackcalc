@@ -108,7 +108,10 @@ function initEcommerceInteractions() {
   // 4. Interactive Ten-Frame Simulator
   initTenFrameSimulator();
 
-  // 5. Catalog Filter Nav (Safe Fallback)
+  // 5. Mobile Sticky Buy Bar (High-Conversion Floating Action Dock)
+  initStickyBuyBar();
+
+  // 6. Catalog Filter Nav (Safe Fallback)
   window.filterCatalog = window.filterCatalog || function (category, btn) {
     const cards = document.querySelectorAll('.te-card');
     const buttons = document.querySelectorAll('.te-filter-btn');
@@ -335,6 +338,56 @@ function initTenFrameSimulator() {
   }
 
   render();
+}
+
+// 5. Mobile Sticky Buy Bar (High-Conversion Floating Action Dock)
+function initStickyBuyBar() {
+  const buyBox = document.querySelector('.ec-buybox');
+  const mainImg = document.getElementById('main-product-image');
+  const titleEl = document.querySelector('.ec-product-title');
+  const priceEl = document.querySelector('.ec-price-current');
+  const primaryBtn = document.querySelector('.ec-btn-primary');
+
+  if (!buyBox || !primaryBtn) return;
+
+  let bar = document.querySelector('.ec-sticky-bar');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.className = 'ec-sticky-bar';
+    const imgSrc = mainImg ? mainImg.src : '';
+    const titleText = titleEl ? titleEl.textContent.trim() : 'Product';
+    const priceText = priceEl ? priceEl.textContent.trim() : '$89.00';
+    const btnHref = primaryBtn.getAttribute('href') || 'https://www.etsy.com/shop/StackCalc';
+
+    bar.innerHTML = `
+      <div class="ec-sticky-info">
+        ${imgSrc ? `<img src="${imgSrc}" class="ec-sticky-thumb" alt="${titleText}">` : ''}
+        <div>
+          <div class="ec-sticky-title">${titleText}</div>
+          <div class="ec-sticky-price">${priceText}</div>
+        </div>
+      </div>
+      <a href="${btnHref}" target="_blank" rel="noopener noreferrer" class="ec-sticky-btn">
+        ORDER ON ETSY ↗
+      </a>
+    `;
+    document.body.appendChild(bar);
+  }
+
+  // Observe buyBox scroll position
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+          bar.classList.add('visible');
+        } else {
+          bar.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(buyBox);
+  }
 }
 
 // Initialize on standard DOM load

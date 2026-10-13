@@ -100,7 +100,7 @@ StackCalc standardizes on crush-proof corrugated shipping mailers that maximize 
 |---|---|---|---|---|---|
 | **Box Tier 1** | $7 \times 5 \times 2\text{ in}$ ($178 \times 127 \times 51\,\text{mm}$) | $6.5 \times 4.5 \times 1.9\text{ in}$ ($165 \times 114 \times 48\,\text{mm}$) | Rests flat on top of 3x1 Gridfinity bin | Algebra Boxes, Ten-Frames, Dice & Spinner | USPS Ground Advantage (<8 oz) |
 | **Box Tier 2** | $8 \times 6 \times 3\text{ in}$ ($203 \times 152 \times 76\,\text{mm}$) | $7.5 \times 5.5 \times 2.8\text{ in}$ ($190 \times 140 \times 71\,\text{mm}$) | Rests flat centered on top of tray | Fraction Studio, Classroom Clock | USPS Ground Advantage (<12 oz) |
-| **Box Tier 3** | $9 \times 6 \times 3\text{ in}$ ($229 \times 152 \times 76\,\text{mm}$) | $8.5 \times 5.5 \times 2.8\text{ in}$ ($216 \times 140 \times 71\,\text{mm}$) | Sits in dedicated lid pocket | SC-32 Calculator Keynote Bundle | USPS Ground Advantage (<16 oz) |
+| **Box Tier 3** | $9 \times 6 \times 3\text{ in}$ ($229 \times 152 \times 76\,\text{mm}$) | $8.5 \times 5.5 \times 2.8\text{ in}$ ($216 \times 140 \times 71\,\text{mm}$) | Sits in dedicated lid pocket | SC-32 Calculator Assembled Edition | USPS Ground Advantage (<16 oz) |
 | **Pouch Tier 4** | $6.5 \times 4.5\text{ in}$ Stay-Flat Mailer | $6.2 \times 4.2\text{ in}$ ($158 \times 107\,\text{mm}$) | Encased with part in glassine sleeve | Single Replacement Parts, Volvelle | First-Class Rigid Mailer (<3 oz) |
 
 ---

@@ -306,11 +306,11 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION: COMPLETE THE ELEMENTARY MATH STATION (CROSS-SELL BUNDLE)
+       SECTION: COMPLEMENTARY CLASSROOM INSTRUMENTS (STANDALONE CROSS-SELL)
        ========================================================================== -->
   <section class="cross-sell-section">
     <div class="text-center max-w-2xl mx-auto mb-6">
-      <span class="text-xs font-mono uppercase text-cyan-400 font-bold tracking-wider">&bull; Complete The Math Station</span>
+      <span class="text-xs font-mono uppercase text-cyan-400 font-bold tracking-wider">&bull; Related Instruments</span>
       <h2 class="text-2xl font-bold text-white mt-1 mb-2">Build an Early Numeracy Hands-On Station</h2>
       <p class="text-sm text-slate-300">
         Combine the SC-6 elementary calculator with physical tactile trays and proportional towers for Grades K&ndash;6.
@@ -350,7 +350,7 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$28.00</span>
+            <span class="cross-sell-price">$38.00</span>
             <span class="text-xs font-mono text-amber-400">Proportional Heights</span>
           </div>
           <a href="/products/fraction-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
@@ -359,23 +359,22 @@ hide:
         </div>
       </div>
 
-      <!-- Cross-Sell 3: Early Math Classroom Station Bundle -->
-      <div class="cross-sell-card featured">
-        <span class="cross-sell-badge">SAVE $19.00</span>
+      <!-- Cross-Sell 3: Curriculum Workbook & Decks -->
+      <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/sc6-elementary-hero.png" alt="Early Math Station" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">Early Numeracy Math Station</h3>
+          <img src="../../assets/learning-lab-teacher-guide.png" alt="Curriculum Workbook" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">36-Page Spiral Student Workbook</h3>
           <p class="cross-sell-card-desc">
-            Includes SC-6 Elementary Calculator + Ten-Frames Studio + Fraction Studio + 36-Page Spiral Student Workbook + CR80 Cheatsheet Decks.
+            Features 20 dedicated laboratory investigations with step-by-step CRA worksheets, tactile token diagrams, teacher diagnostic notes, and full solutions key.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$94.00</span>
-            <span class="cross-sell-savings">&check; Save $19 (Was $113)</span>
+            <span class="cross-sell-price">$24.00</span>
+            <span class="text-xs font-mono text-cyan-400">Print + Digital</span>
           </div>
-          <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary w-full text-center mt-3 text-xs block" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-            Order Complete Station on Etsy ↗
+          <a href="/products/curriculum-and-decks/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
+            View Workbook &amp; Decks &rarr;
           </a>
         </div>
       </div>

@@ -51,7 +51,7 @@ hide:
           "@type": "Review",
           "author": {"@type": "Person", "name": "Dr. Arthur V., Aerospace Engineering Professor"},
           "datePublished": "2026-08-30",
-          "reviewBody": "Finally, a modern RPN calculator worthy of replacing vintage HP hardware. The 400g snap-dome keys give unmistakable tactile feedback, and the instant-on ST7567A LCD is crystal clear outdoors.",
+          "reviewBody": "Finally, a modern RPN calculator worthy of replacing vintage scientific hardware. The 400g snap-dome keys give unmistakable tactile feedback, and the instant-on ST7567A LCD is crystal clear outdoors.",
           "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
         }
       ],
@@ -615,11 +615,11 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION: COMPLETE THE CLASSROOM MATH STATION (CROSS-SELL BUNDLE)
+       SECTION: COMPLEMENTARY CLASSROOM INSTRUMENTS (STANDALONE CROSS-SELL)
        ========================================================================== -->
   <section class="cross-sell-section">
     <div class="text-center max-w-2xl mx-auto mb-6">
-      <span class="text-xs font-mono uppercase text-cyan-400 font-bold tracking-wider">&bull; Complete The Math Station</span>
+      <span class="text-xs font-mono uppercase text-cyan-400 font-bold tracking-wider">&bull; Related Instruments</span>
       <h2 class="text-2xl font-bold text-white mt-1 mb-2">Equip Your Classroom With Tactile STEM Manipulatives</h2>
       <p class="text-sm text-slate-300">
         The SC-32 was designed from the ground up to pair with our physical manipulative collection, taking students seamlessly from spatial touch to rapid scientific computation.
@@ -628,22 +628,22 @@ hide:
 
     <div class="cross-sell-grid">
 
-      <!-- Cross-Sell 1: Manipulative Starter Duo -->
+      <!-- Cross-Sell 1: Fraction Studio -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/fraction-studio-hero.png" alt="Manipulatives Duo" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">Fraction Studio &amp; Algebra Boxes Duo</h3>
+          <img src="../../assets/renders/fraction-studio-hero.png" alt="Fraction Studio" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">Fraction Studio</h3>
           <p class="cross-sell-card-desc">
-            Pair the SC-32 with tactile proportional fraction towers (84mm Whole) and polynomial tile trays. Bridges arithmetic fractions directly into quadratic factoring.
+            Tactile proportional fraction towers (84mm Whole) with snap-fit segments. Bridges arithmetic fractions directly into stack computation.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$58.00</span>
-            <span class="text-xs font-mono text-cyan-400">Manipulatives Pair</span>
+            <span class="cross-sell-price">$38.00</span>
+            <span class="text-xs font-mono text-cyan-400">Standalone Kit</span>
           </div>
           <a href="/products/fraction-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            Explore Manipulatives &rarr;
+            Explore Fraction Studio &rarr;
           </a>
         </div>
       </div>
@@ -660,31 +660,30 @@ hide:
         <div>
           <div class="cross-sell-price-row">
             <span class="cross-sell-price">$24.00</span>
-            <span class="text-xs font-mono text-amber-400">Teacher Approved</span>
+            <span class="text-xs font-mono text-amber-400">Print + Digital</span>
           </div>
           <a href="/products/curriculum-and-decks/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            Add Workbook &amp; Decks &rarr;
+            View Workbook &amp; Decks &rarr;
           </a>
         </div>
       </div>
 
-      <!-- Cross-Sell 3: Complete Math Lab Classroom Bundle -->
-      <div class="cross-sell-card featured">
-        <span class="cross-sell-badge">SAVE $35.00</span>
+      <!-- Cross-Sell 3: Tactile Algebra Boxes -->
+      <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/sc32-hero-keynote.png" alt="Complete Math Lab Bundle" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">Complete Classroom Math Lab Bundle</h3>
+          <img src="../../assets/renders/algebra-boxes-hero.png" alt="Tactile Algebra Boxes" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">Tactile Algebra Boxes</h3>
           <p class="cross-sell-card-desc">
-            Includes SC-32 Calculator + Fraction Studio + Algebra Boxes + Sectional Clock + Unit Circle Volvelle + 36-Page Spiral Workbook + CR80 Decks + Modular 3-in-1 Stand.
+            Physical polynomial trays with dual-color positive/negative tiles for concrete factoring, FOIL visual models, and quadratic completeness.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$185.00</span>
-            <span class="cross-sell-savings">&check; Save $35 (Was $220)</span>
+            <span class="cross-sell-price">$24.00</span>
+            <span class="text-xs font-mono text-cyan-400">Standalone Kit</span>
           </div>
-          <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary w-full text-center mt-3 text-xs block" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-            Order Complete Lab Bundle on Etsy ↗
+          <a href="/products/algebra-boxes/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
+            View Algebra Boxes &rarr;
           </a>
         </div>
       </div>

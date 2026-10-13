@@ -473,11 +473,11 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION: COMPLETE THE CLASSROOM MATH STATION (CROSS-SELL BUNDLE)
+       SECTION: COMPLEMENTARY CLASSROOM INSTRUMENTS (STANDALONE CROSS-SELL)
        ========================================================================== -->
   <section class="cross-sell-section">
     <div class="text-center max-w-2xl mx-auto mb-6">
-      <span class="text-xs font-mono uppercase text-cyan-400 font-bold tracking-wider">&bull; Complete The Math Station</span>
+      <span class="text-xs font-mono uppercase text-cyan-400 font-bold tracking-wider">&bull; Related Instruments</span>
       <h2 class="text-2xl font-bold text-white mt-1 mb-2">Build Your Classroom Tactile Math Laboratory</h2>
       <p class="text-sm text-slate-300">
         Pair our curriculum workbooks with the flagship SC-32 RPN calculator and tactile manipulative kits for an end-to-end active learning environment.
@@ -506,43 +506,42 @@ hide:
         </div>
       </div>
 
-      <!-- Cross-Sell 2: Manipulative Starter Duo -->
+      <!-- Cross-Sell 2: Fraction Studio -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/fraction-studio-hero.png" alt="Manipulatives Duo" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">Fraction Studio &amp; Algebra Boxes Duo</h3>
+          <img src="../../assets/renders/fraction-studio-hero.png" alt="Fraction Studio" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">Fraction Studio</h3>
           <p class="cross-sell-card-desc">
             Tactile proportional fraction towers (84mm Whole) and precision polynomial tile trays. Powers Labs 01, 03, 04, and 05 with physical self-correction.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$58.00</span>
+            <span class="cross-sell-price">$38.00</span>
             <span class="text-xs font-mono text-amber-400">Tactile Stations</span>
           </div>
           <a href="/products/fraction-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            Explore Manipulatives &rarr;
+            Explore Fraction Studio &rarr;
           </a>
         </div>
       </div>
 
-      <!-- Cross-Sell 3: Complete Math Lab Classroom Bundle -->
-      <div class="cross-sell-card featured">
-        <span class="cross-sell-badge">SAVE $35.00</span>
+      <!-- Cross-Sell 3: Tactile Algebra Boxes -->
+      <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/sc32-hero-keynote.png" alt="Complete Math Lab Bundle" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">All-in-One STEM Classroom Lab Suite</h3>
+          <img src="../../assets/renders/algebra-boxes-hero.png" alt="Tactile Algebra Boxes" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">Tactile Algebra Boxes</h3>
           <p class="cross-sell-card-desc">
-            Includes SC-32 Calculator + 36-Page Spiral Workbook + CR80 Waterproof Decks + Fraction Studio + Algebra Boxes + Sectional Clock + Unit Circle Volvelle.
+            Physical polynomial trays with dual-color positive/negative tiles for concrete factoring, FOIL visual models, and quadratic completeness.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$185.00</span>
-            <span class="cross-sell-savings">&check; Save $35 (Was $220)</span>
+            <span class="cross-sell-price">$24.00</span>
+            <span class="text-xs font-mono text-cyan-400">Standalone Kit</span>
           </div>
-          <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary w-full text-center mt-3 text-xs block" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-            Order Complete Suite on Etsy ↗
+          <a href="/products/algebra-boxes/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
+            View Algebra Boxes &rarr;
           </a>
         </div>
       </div>
