@@ -2,6 +2,11 @@
 
 {% block extrahead %}
   {{ super() }}
+  {% if page and page.meta and page.meta.robots %}
+  <meta name="robots" content="{{ page.meta.robots }}">
+  {% elif page and page.file and (page.file.src_path.startswith('manuals/sc32/') or page.file.src_path.startswith('manuals/sc6/')) %}
+  <meta name="robots" content="noindex, nofollow">
+  {% endif %}
   {% set social_title = page.meta.title if page and page.meta and page.meta.title else config.site_name %}
   {% set social_description = page.meta.description if page and page.meta and page.meta.description else config.site_description %}
   {% set social_image_path = page.meta.image if page and page.meta and page.meta.image else 'assets/hero.jpg' %}

@@ -36,17 +36,35 @@ The matching PrusaSlicer 3MF reference projects are available in the Hackaday pr
 
 Dry-fit the matching faceplate and membrane in the chassis rails, then fit the snap-retained cap. The current release is an unpowered mechanical prototype: its RP2350 board design is in fabrication and is not installed in the pictured specimen. Once the board arrives, the integration sequence will add board seating, display alignment, switch reach, connector clearance, battery polarity, and power checks. Release the retention features rather than prying on the display surround when reopening the printed assembly.
 
-### Material and marking direction
+### Material, Color & Faceplate Specification
 
-| Theme | Chassis appearance | Button material direction |
-| --- | --- | --- |
-| RetroFuturism | White/off-white PLA/PETG | Warm cream TPU |
-| Stealth Industrial | Black PLA/PETG | Dark-blue TPU |
-| Supernova | Red/gold silk | Gray TPU |
-| Deep Space | Purple/green/blue silk | Dark-blue TPU |
-| Voyager | Dark blue | Gray TPU |
+> [!IMPORTANT] **Enclosure Color Clarification:**
+> **Physical calculator enclosures are never white.** All physical StackCalc production handhelds (SC-32 and SC-6) are molded and printed in dark, technical, high-rigidity thermoplastics (Sunlu Midnight Navy PLA 2.0+, Technical Matte Black PLA/PETG, Elegoo Space Gray PLA, Sunlu Dark Chestnut PLA, and Sunlu Coffee Brown PLA).
+> 
+> Single-color Sunlu White PLA 2.0+ (`#F5F5F3`) is utilized exclusively for **classroom tactile manipulatives** (Fraction Studio proportional blocks, Ten-Frame two-color tokens, Math Dominoes tiles), and as an **in-app virtual software theme** ("RetroFuturism", marked `isVirtual: true`). On physical calculators, "white" appears solely as high-contrast **subsurface micro-foamed legends** nucleated by 1064nm pulsed infrared laser exposure.
 
-Primary and secondary buttons share the same material. Button trenches are laser engraved and labels use laser foaming. Manufacturer/SKU, batch, hardness and qualified processing parameters are not yet confirmed here. Software colors communicate appearance; exact physical matches and abrasion resistance require specimen measurement. Orange/blue functional coding belongs exclusively to the fixed watch interface, including watch widgets. Filament base colors and manufacturing layer colors are separate.
+#### Physical Production Hardware Twins (8 CMF Editions)
+All physical production calculators feature custom **Tactile Light Gray TPU 95A (`#94999E`)** keycaps (or Cobalt Azure / Black TPU) with recessed laser-ablated legends and direct laser micro-foamed markings:
+
+| Edition Name | Chassis Base Material | Faceplate Material & Finish | Keycap Material | Laser Marking & Foaming | Optical Contrast |
+| :--- | :--- | :--- | :--- | :--- | :---: |
+| **Cosmos (Champion)** | Sunlu Midnight Navy PLA 2.0+ (`#28334A`) | Sunlu Midnight Navy PLA 2.0+ | Light Gray TPU 95A (`#94999E`) | 1064nm IR Stark White Micro-Foam (`#FFFFFF`) | **15.2:1 AAA** |
+| **Stealth Industrial** | Technical Black PETG (`#101114`) | Matte Black PLA 2.0+ (Archimedean Chords) | Cobalt Azure TPU 95A (`#028CE3`) | Carbon Black Key Legends + Silver & Gold Foil | **>5.3:1 AA** |
+| **Grayscale (IR Foamed)** | Technical Matte Black PLA (`#101114`) | Technical Matte Black PLA 2.0+ | Light Gray TPU 95A (`#94999E`) | 1064nm IR Clean White Micro-Foam | **12.8:1 AAA** |
+| **Voyager** | Sunlu Midnight Navy PLA 2.0+ (`#28334A`) | Elegoo Space Gray PLA (`#4B4E54`) | Light Gray TPU 95A (`#94999E`) | 1064nm IR Chalk White Foam + Gold/Cyan Shifts | **12.4:1 AAA** |
+| **Avionics Slate Gray** | Elegoo Space Gray PLA (`#4B4E54`) | Elegoo Space Gray PLA (`#4B4E54`) | Light Gray TPU 95A (`#94999E`) | 1064nm IR Chalk White Foam + Amber/Cyan | **12.4:1 AAA** |
+| **Heritage Pioneer** | Sunlu Dark Chestnut PLA (`#3B1F17`) | Sunlu Dark Chestnut PLA (`#3B1F17`) | Light Gray TPU 95A (`#94999E`) | 1064nm IR Antique Cream Foam (`#F5F0E6`) | **10.8:1 AAA** |
+| **Earth-Tone (Espresso)** | Sunlu Coffee Brown PLA (`#4A2E1B`) | Sunlu Coffee Brown PLA (`#4A2E1B`) | Light Gray TPU 95A (`#94999E`) | 1064nm IR Warm Chalk Foam (`#F8F6F0`) | **13.0:1 AAA** |
+| **Synthwave (Signature)** | Technical Black PLA (`#101114`) | Purple+Black Dual Silk PLA (`#695CC7`) | Light Gray TPU 95A (`#94999E`) | 1064nm IR Silver-Frost Foam (`#E8EAF0`) | **7.5:1 AA** |
+| **Pure Black** | Black PETG (`#101114`) | Technical Black PLA 2.0+ | Black TPU (`#18181A`) | 1064nm IR Stark White Micro-Foam | **14.2:1 AAA** |
+
+#### In-App Heritage Software Themes (Virtual Only)
+These digital twin themes celebrate historical calculator designs within the iOS and iPadOS companion applications:
+* **RetroFuturism (Virtual Only):** Dieter Rams / 1980s Braun aerospace cream (`#F5F5F3`) with deep navy markings (`#142240`) and antique bronze accents (`#784408`).
+* **Pioneer Brown (Virtual Only):** 1988 Corvallis HP-32SII tribute in matte brown (`#2E241C`) with golden amber and cyan pad-printed legends.
+* **Pioneer Black (Virtual Only):** 1990s updated Pioneer release in deep matte black (`#1F1F21`) with emerald green and orchid purple legends.
+
+Primary and secondary buttons share the same material. Button trenches are laser engraved and faceplate labels use 1064nm pulsed infrared laser foaming. Software colors communicate appearance; exact physical matches and abrasion resistance require specimen measurement. Orange/blue functional coding belongs exclusively to the fixed watch interface, including watch widgets. Filament base colors and manufacturing layer colors are separate.
 
 ### CAD illustrations and optional accessories
 
@@ -169,10 +187,9 @@ This rubric tracks operational capabilities across all StackCalc surfaces compar
 |---|:---:|:---:|:---:|:---:|---|
 | **Interactive TUI Tutorials** | ❌ | ✅ | ✅ | ✅ | 16 built-in step-by-step guided lessons with verification |
 | **Flexible Stack Architecture** | ❌ | ✅ | ✅ | ✅ | Configurable classic 4-level, 8-level, or unbounded stack |
-| **Function Graphing (`PLOT`)** | ❌ | ❌ | ✅ | ✅ | Physical firmware disables PLOT; native-app graphing requires its supported interface |
+| **Function Graphing (`PLOT`)** | ❌ | ✅ | ✅ | ✅ | Basic plotting engine renders function curves and regression scatter data directly on graphic LCD and app interfaces |
 | **Continuous Tactile Field (HPTC)** | ❌ | ❌ | ✅ | ❌ | Simulated mechanical travel via continuous CoreHaptics |
 | **Pitch-Black OLED Mode** | ❌ | ❌ | ❌ | ✅ | True #000000 background optimized for Apple Watch displays |
-| **Searchable Constants (`CNST`)** | Partial | ✅ | ✅ | ✅ | Hardware softkey index; searchable rich picker on iOS/watchOS |
 
 ---
 
@@ -189,12 +206,12 @@ While maintaining functional pedigree, StackCalc incorporates deliberate modern 
 3. **Modern Remainder Notation (`÷R`):**
    - *Classic Handhelds:* Labeled integer division ambiguously as `INT÷`.
    - *StackCalc:* Uses `÷R` to clearly communicate integer division with remainder, aligning with modern engineering and educational standards.
-4. **Clean Power Architecture (Software Targets):**
+4. **Integrated Basic Plotting Engine (`PLOT`):**
+   - *Classic Handhelds:* Required bulky peripheral thermal printers or external plotters to visualize data.
+   - *StackCalc:* Built-in plotting engine renders function evaluation curves ($y = f(x)$) and statistical scatter/regression plots directly on the transflective graphic LCD display and mobile screens.
+5. **Clean Power Architecture (Software Targets):**
    - *Classic Handhelds:* Included a physical `OFF` key label.
    - *StackCalc:* Retains power management on the hardware unit, but hides unnecessary power buttons on iOS and watchOS where operating system lifecycle handlers manage state.
-5. **Configurable Stack Depth:**
+6. **Configurable Stack Depth:**
    - *Classic Handhelds:* Restricted permanently to a 4-level stack ($X, Y, Z, T$).
    - *StackCalc:* The `FLAGS` menu allows selecting between classic 4-level, 8-level, and unbounded Infinite stack depths.
-6. **Searchable Constants Directory:**
-   - *Classic Handhelds:* Relied on abbreviated, unindexed 2-letter codes.
-   - *StackCalc:* Hardware uses organized softkey pagination, while companion apps feature a searchable database complete with full names, precise values, and physical SI units.

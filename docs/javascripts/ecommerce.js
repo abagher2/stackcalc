@@ -355,15 +355,29 @@ function initStickyBuyBar() {
     bar = document.createElement('div');
     bar.className = 'ec-sticky-bar';
     const imgSrc = mainImg ? mainImg.src : '';
-    const titleText = titleEl ? titleEl.textContent.trim() : 'Product';
+    const rawTitle = titleEl ? titleEl.textContent.trim() : 'Product';
+    const titleMap = {
+      'SC-32 Scientific RPN Maker Kit': 'SC-32 Maker Kit',
+      'Fraction Studio Proportional Towers': 'Fraction Studio',
+      'Ten-Frame Dual Stage & Carry Shelf': 'Ten-Frames',
+      'Math Domino Studio & 12-Frame Set': 'Math Dominoes',
+      'Counting Tiles & Planar Array Studio': 'Counting Tiles',
+      'Sectional Classroom Planetary Clock': 'Planetary Clock',
+      'Prime Factor Studio & Slide Rule Comparator': 'Prime Studio',
+      'Algebra Factoring Studio & Tiles': 'Algebra Boxes',
+      'Unit Circle Trigonometry Volvelle': 'Unit Circle Volvelle',
+      'Probability Dice & Modular Spinner Pack': 'Dice & Spinners',
+      'SC-6 Elementary Calculator': 'SC-6 Elementary'
+    };
+    const titleText = titleMap[rawTitle] || (rawTitle.length > 20 ? rawTitle.slice(0, 18) + '...' : rawTitle);
     const priceText = priceEl ? priceEl.textContent.trim() : '$89.00';
     const btnHref = primaryBtn.getAttribute('href') || 'https://www.etsy.com/shop/StackCalc';
 
     bar.innerHTML = `
       <div class="ec-sticky-info">
         ${imgSrc ? `<img src="${imgSrc}" class="ec-sticky-thumb" alt="${titleText}">` : ''}
-        <div>
-          <div class="ec-sticky-title">${titleText}</div>
+        <div class="ec-sticky-text">
+          <div class="ec-sticky-title" title="${rawTitle}">${titleText}</div>
           <div class="ec-sticky-price">${priceText}</div>
         </div>
       </div>
@@ -374,8 +388,22 @@ function initStickyBuyBar() {
     document.body.appendChild(bar);
   }
 
-  // Observe buyBox scroll position
-  if ('IntersectionObserver' in window) {
+  // Observe primary button so floating dock pops up smoothly the instant buy CTA leaves view
+  const triggerEl = primaryBtn;
+  function updateStickyBar() {
+    if (!triggerEl || !bar) return;
+    const rect = triggerEl.getBoundingClientRect();
+    if (rect.bottom < 0) {
+      bar.classList.add('visible');
+    } else {
+      bar.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', updateStickyBar, { passive: true });
+  updateStickyBar();
+
+  if ('IntersectionObserver' in window && triggerEl) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
@@ -384,9 +412,9 @@ function initStickyBuyBar() {
           bar.classList.remove('visible');
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0 });
 
-    observer.observe(buyBox);
+    observer.observe(triggerEl);
   }
 }
 

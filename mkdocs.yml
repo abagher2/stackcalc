@@ -37,6 +37,7 @@ plugins:
       draft_if_future_date: true
 
 hooks:
+  - hooks/book_macros.py
   - hooks/generate_feed.py
 
 markdown_extensions:
@@ -78,10 +79,12 @@ nav:
         - Product Overview: products/ten-frames/index.md
         - Assembly Guide: products/ten-frames/assembly.md
         - Classroom Lessons: products/ten-frames/lessons.md
+    - Counting & Array Tiles: products/counting-tiles/index.md
     - Math Domino Studio:
         - Product Overview: products/math-dominoes/index.md
         - Assembly Guide: products/math-dominoes/assembly.md
         - Classroom Lessons: products/math-dominoes/lessons.md
+    - Prime Factor Studio: products/prime-factor-studio/index.md
     - Algebra Boxes & Tiles:
         - Product Overview: products/algebra-boxes/index.md
         - Assembly Guide: products/algebra-boxes/assembly.md
@@ -99,12 +102,23 @@ nav:
     - Standards Alignment Matrix: curriculum/alignment-matrix.md
     - Printable Student Worksheets: curriculum/worksheets.md
     - Teacher Facilitator Guide: curriculum/teacher-guide.md
+    - RPN Elementary Power Guide: curriculum/rpn-elementary-guide.md
+    - Competitive STEM & Speed Calculation: curriculum/uil-competition.md
+  - Books & Reference Manuals:
+    - Reference Manuals Hub: manuals/index.md
+    - SC-32 Scientific Companion ($16 Print Edition): manuals/sc32-user-guide.md
+    - 14. High-Speed Equation Entry: manuals/sc32/14-uil-contest-playbook.md
+    - SC-6 Elementary Companion ($16 Print Edition): manuals/sc6-user-guide.md
+    - Bestseller Rubric & Editorial Guide: manuals/bestseller-rubric-and-editorial-guide.md
+    - Critical Editorial Review: manuals/critical-editorial-review-and-school-adoption.md
+    - Agent & OpenAPI Spec: api/index.md
   - Documentation:
     - Learning Lab: learning-lab.md
     - Hardware & Rubric: hardware.md
     - Firmware: firmware.md
     - Mac & iOS Apps: ios_app.md
     - Tutorials: tutorials.md
+    - Press & Editorial Kit: press.md
     - Manufacturing & Sourcing: etsy-publishing-guide.md
     - Shipping & Packaging: shipping-and-packaging.md
     - Exam Compliance & Proctor Guide: exam-compliance.md
@@ -113,4 +127,21 @@ nav:
     - Privacy Policy: privacy.md
     - Terms of Service: terms.md
     - Support: support.md
+
+not_in_nav: |
+  hackaday/**
+  manuals/sc32/**
+  manuals/sc6/**
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    unrecognized_links: warn
+    anchors: warn
+    absolute_links: warn
+
 

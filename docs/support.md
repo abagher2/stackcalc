@@ -15,9 +15,10 @@ Welcome to the **StackCalc Help & Support Center**. Whether you are exploring Re
 
 If you need direct assistance, encountered a bug, or have a question:
 
+- **Direct Email Support:** [support@stackcalc.io](mailto:support@stackcalc.io) *(Fastest response for App Store customers and reviewers)*
 - **GitHub Issue Tracker:** [https://github.com/abagher2/stackcalc/issues](https://github.com/abagher2/stackcalc/issues) *(Best for bug reports, troubleshooting, and feature requests)*
 - **Community Documentation:** Explore our in-depth guides for [Hardware](hardware.md), [Firmware](firmware.md), [iOS App](ios_app.md), and [Interactive Tutorials](tutorials.md).
-- **Web Support & Help Desk:** Visit [stackcalc.io/support/](https://www.stackcalc.io/support/) for frequent updates.
+- **Web Support & Help Desk:** Visit [https://stackcalc.io/support/](https://stackcalc.io/support/) for frequent updates.
 
 ---
 
@@ -81,8 +82,8 @@ StackCalc includes an equation solver based on classic Romberg numerical integra
 
 ### 7. Physical Calculator and printable materials
 
-- **Current physical status:** The tool-free chassis, faceplate, TPU membrane, and cap are printed mechanical prototypes. The KiCad RP2350 board design is in fabrication; no populated, powered calculator is represented by the current photos or downloads.
-- **Public printable release:** Download the matching four-part STL set from the [hardware guide](hardware.md#download-the-current-mechanical-prototype). It is intended for current mechanical fit and assembly exploration.
+- **Current physical status:** The SC-32 is offered as a tool-free Maker Kit with a 100% pre-soldered RP2350 logic board, sliding dovetail chassis, snap-dome keycaps, and transflective monochrome LCD. Tool-free 5-minute snap assembly with zero soldering required.
+- **Public printable release:** Download the matching four-part STL/3MF set from the [hardware guide](hardware.md). It is intended for mechanical exploration and community fabrication.
 - **Teaching materials:** The [Learning Lab](learning-lab.md#download-the-prototype-materials) provides printable curriculum materials and teacher PDFs.
 - **What is not public:** Electronics source, firmware source, CAD generators, manufacturing artwork, and production documentation are not public downloads.
 

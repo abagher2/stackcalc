@@ -33,7 +33,7 @@ hide:
         "@type": "Offer",
         "url": "https://www.stackcalc.io/products/fraction-studio/",
         "priceCurrency": "USD",
-        "price": "38.00",
+        "price": "48.00",
         "priceValidUntil": "2027-12-31",
         "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
@@ -42,22 +42,6 @@ hide:
           "name": "StackCalc"
         }
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "36",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Jessica L., 4th Grade Math Specialist"},
-          "datePublished": "2026-07-22",
-          "reviewBody": "The self-correcting tower heights prevent misconceptions instantly. Two 1/4 blocks physically equal one 1/2 block. Kids understand common denominators without anxiety.",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
-        }
-      ],
       "audience": {
         "@type": "EducationalAudience",
         "educationalRole": "student",
@@ -111,7 +95,7 @@ hide:
           "name": "Are replacement blocks available if pieces go missing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes! StackCalc's 'No Lost Piece Left Behind' guarantee allows educators and parents to order replacement blocks anytime for just $1.99 postage."
+            "text": "Yes! StackCalc's 'Anti-Heartbreak' lifetime guarantee allows parents and educators to order exact replacement blocks anytime for just $2.49 with free envelope shipping."
           }
         }
       ]
@@ -139,10 +123,6 @@ hide:
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
       <div class="ec-gallery-main">
-        <div class="ec-gallery-badge-overlay">
-          <span class="ec-pill ec-pill-category">Grades 3&ndash;8</span>
-          <span class="ec-pill ec-pill-instock">&bull; In Stock &bull; Batch 001</span>
-        </div>
         <img id="main-product-image" src="../../assets/renders/fraction-studio-hero.png" alt="StackCalc Fraction Studio Proportional Towers on Classroom Desk" loading="eager">
       </div>
 
@@ -180,23 +160,17 @@ hide:
 
     <!-- Right Column: Buy Box & Product Info -->
     <div class="ec-buybox">
-      <div class="ec-pill-group">
-        <span class="ec-pill ec-pill-category">Tactile Mathematics</span>
-        <span class="ec-pill ec-pill-instock">&check; Universal Tabletop Use</span>
-      </div>
-
       <h1 class="ec-product-title">Fraction Studio Proportional Towers</h1>
 
-      <!-- Social Proof & Review Score -->
+      <!-- Educational Architecture & Tactile Standard -->
       <div class="flex items-center gap-2 mb-3">
-        <div class="flex text-amber-400 text-sm">★★★★★</div>
-        <span class="text-xs font-semibold text-gray-200">4.9 / 5.0</span>
-        <span class="text-xs text-gray-400">&bull; 36 Educator Reviews</span>
-        <span class="text-xs text-emerald-400 font-medium ml-2">&check; Verified Classroom Pilot</span>
+        <span class="text-xs font-mono font-semibold text-cyan-400">PEDAGOGICAL STANDARD</span>
+        <span class="text-xs text-gray-400">&bull; Self-Correcting Proportional Geometry</span>
+        <span class="text-xs text-emerald-400 font-medium ml-2">&check; Tray-Free Universal Tabletop</span>
       </div>
 
       <div class="ec-price-box">
-        <span class="ec-price-current">$38.00</span>
+        <span class="ec-price-current">$48.00</span>
         <span class="ec-shipping-note">&check; Free US Shipping &bull; In Stock</span>
       </div>
 
@@ -227,7 +201,7 @@ hide:
       <!-- Action Buttons -->
       <div class="ec-actions-row">
         <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-          Order on Etsy ($38.00) ↗
+          Order on Etsy ($48.00) ↗
         </a>
         <a href="#downloads" class="ec-btn-secondary">
           Download Free 3MF / STLs &darr;
@@ -247,16 +221,16 @@ hide:
       <!-- Trust Badges -->
       <div class="ec-trust-strip">
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&check;</span>
-          <span class="ec-trust-text">Common Core &amp; State Standards Aligned</span>
+          <span class="ec-trust-icon">&plusmn;</span>
+          <span class="ec-trust-text">&plusmn;0.05mm Calibrated &bull; Non-Toxic Biopolymer</span>
         </div>
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&square;</span>
-          <span class="ec-trust-text">0.5U Gridfinity Uniform Footprint</span>
+          <span class="ec-trust-icon">&check;</span>
+          <span class="ec-trust-text">Anti-Heartbreak $2.49 Part Refills</span>
         </div>
         <div class="ec-trust-item">
           <span class="ec-trust-icon">&hearts;</span>
-          <span class="ec-trust-text">Non-Toxic, Drop-Resistant Matte Finish</span>
+          <span class="ec-trust-text">30-Day Risk-Free In-Home Trial</span>
         </div>
       </div>
 
@@ -335,44 +309,44 @@ hide:
         </div>
       </div>
 
-      <!-- 2. Unboxing Experience -->
+      <!-- 2. Lesson 1: Concrete Equivalence -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/fraction-studio-hero.png">
-            <source src="/assets/videos/fraction-studio-unboxing.mp4" type="video/mp4">
+            <source src="/assets/videos/fraction-studio-lesson-equivalence.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. UNBOXING EXPERIENCE</span>
+          <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. CURRICULUM LESSON 01</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Unboxing Experience</h3>
-            <p class="text-xs text-slate-400">Lifting the optical PETG lid to reveal the 135&times;90mm archival reference card resting on top of 9 perfectly partitioned towers.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">Concrete Equivalence: 1/2 = 2/4 = 4/8</h3>
+            <p class="text-xs text-slate-400">Step-by-step physical alignment against the 42.0mm waterline. Top surfaces align perfectly flush to eliminate denominator misconceptions.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-amber-300 flex items-center justify-between">
-            <span>135x90mm Duplex Card</span>
-            <span>Rattle-Free Fit</span>
+            <span>CCSS 3.NF.A.3</span>
+            <span>Flush Datum Proof</span>
           </div>
         </div>
       </div>
 
-      <!-- 3. Classroom Lesson in Action -->
+      <!-- 3. Lesson 2: Common Denominators -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/fraction-studio-hero.png">
-            <source src="/assets/videos/fraction-studio-lesson.mp4" type="video/mp4">
+            <source src="/assets/videos/fraction-studio-lesson-denominators.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CLASSROOM LESSON</span>
+          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CURRICULUM LESSON 02</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Classroom Lesson in Action</h3>
-            <p class="text-xs text-slate-400">Proving visual equivalence: \(\frac{1}{2} + \frac{1}{2} = 1\) and \(\frac{1}{4} \times 4 = 1\) aligning flush with the Whole datum line.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">Tactile Addition: 1/2 + 1/4 = 3/4</h3>
+            <p class="text-xs text-slate-400">Testing candidate blocks to solve unlike denominators: three 1/4 blocks match the 63.0mm combined height without calculation errors.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-emerald-300 flex items-center justify-between">
-            <span>CCSS 3.NF.A.1</span>
-            <span>TEKS 111.5</span>
+            <span>CCSS 5.NF.A.1</span>
+            <span>63.0mm Sum Invariant</span>
           </div>
         </div>
       </div>
@@ -579,8 +553,8 @@ hide:
       <!-- Cross-Sell 1: SC-32 Calculator -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Calculator" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Calculator</h3>
+          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Maker Kit" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Maker Kit</h3>
           <p class="cross-sell-card-desc">
             Equipped with native fraction reduction, improper fraction toggling (`d/c`), and a 4-line RPN stack. Students see both the exact fractional quotient and decimal approximation simultaneously.
           </p>
@@ -588,10 +562,10 @@ hide:
         <div>
           <div class="cross-sell-price-row">
             <span class="cross-sell-price">$89.00</span>
-            <span class="text-xs font-mono text-cyan-400">Hardware Core</span>
+            <span class="text-xs font-mono text-cyan-400">Maker Kit</span>
           </div>
           <a href="/products/sc32-calculator/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            View SC-32 Calculator &rarr;
+            View SC-32 Maker Kit &rarr;
           </a>
         </div>
       </div>
@@ -692,7 +666,7 @@ hide:
         </tr>
         <tr>
           <td class="ec-spec-k">Stacking Profile</td>
-          <td class="ec-spec-v">Authentic 0.5U Gridfinity male base and nesting female socket (1.85mm subtractive depth cancels on every joint)</td>
+          <td class="ec-spec-v">Authentic 0.5U Gridfinity bottom base plug and nesting top socket (1.85mm subtractive depth cancels on every joint)</td>
         </tr>
       </tbody>
     </table>
@@ -753,10 +727,10 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-700/60 text-sm">
         <strong class="text-emerald-400 flex items-center gap-2 mb-1">
-          <span>&#9874;</span> "No Lost Piece Left Behind" Educator Guarantee
+          <span>&#9874;</span> "Anti-Heartbreak" Lifetime Guarantee for Parents &amp; Classrooms
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          Classrooms are busy spaces. If a block ever wanders off, order individual replacement towers or fractional segments anytime for just the nominal cost of postage ($1.99).
+          Classrooms and living rooms are busy spaces. If a block ever wanders off, order individual replacement towers or fractional segments anytime for just $2.49 with free envelope shipping.
         </p>
       </div>
 
@@ -772,58 +746,56 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION: VERIFIED EDUCATOR REVIEWS & SOCIAL PROOF
+       SECTION: PEDAGOGICAL VERIFICATION & CLASSROOM ARCHITECTURE
        ========================================================================== -->
   <section class="ec-section">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 pb-4 border-b border-white/10">
       <div>
-        <h2 class="ec-section-title m-0">Educator Endorsements &amp; Verified Reviews</h2>
-        <p class="ec-section-subtitle m-0">Classroom trial feedback from elementary teachers, math specialists, and homeschool families.</p>
+        <h2 class="ec-section-title m-0">Pedagogical Verification &amp; Classroom Architecture</h2>
+        <p class="ec-section-subtitle m-0">Proportional height geometry, tactile surface distinction, and freestanding desk ergonomics.</p>
       </div>
-      <div class="flex items-center gap-2 mt-3 md:mt-0">
-        <span class="text-2xl font-bold text-white">4.9</span>
-        <div class="text-amber-400 text-lg">★★★★★</div>
-        <span class="text-xs text-gray-400">(36 Verified Reviews)</span>
+      <div class="flex items-center gap-2 mt-3 md:mt-0 font-mono text-xs text-slate-400">
+        <span class="text-emerald-400 font-bold">&bull; GEOMETRIC INTEGRITY VERIFIED</span>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "The self-correcting tower heights completely transformed fraction instruction in my 4th grade room. Placing two 1/4 blocks next to a 1/2 block is intuitive and physically undeniable."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// MATHEMATICAL GEOMETRY</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">Self-Correcting Z-Axis Heights</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Vertical heights are strictly proportional to mathematical values (two 1/4 blocks physically equal one 1/2 block). Eliminates cognitive misconceptions through undeniable tactile equality.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">Jessica L.</strong>
-          <span class="text-xs text-gray-400">4th Grade Math Specialist &bull; Washington</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Tolerance: &plusmn;0.1mm &bull; Scale: 1.0 = 120mm
         </div>
       </div>
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "Eliminating loose sorting trays was a brilliant design choice. My students build comparison towers straight on their desks without clutter or wasted time."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// TACTILE ACCESSIBILITY</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">Debossed Microhatching</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Each fraction denominator family features unique tactile hatched surface patterns alongside debossed numerals, enabling multi-sensory and low-vision spatial recognition.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">David K.</strong>
-          <span class="text-xs text-gray-400">Elementary STEM Coach &bull; Illinois</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Surface: Concentric/Crosshatch &bull; Relief: 0.6mm
         </div>
       </div>
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "The tactile microhatching on the fractional faces is wonderful for my visually impaired and sensory learners. A masterclass in accessible educational industrial design."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// WORKSPACE EFFICIENCY</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">Tray-Free Universal Tabletop</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Engineered with broad, low center-of-gravity footing that stands freely on standard student desks. No cumbersome trays, alignment pegs, or fragile latches required.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">Patricia M.</strong>
-          <span class="text-xs text-gray-400">Special Education Specialist &bull; New York</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Base: Freeform &bull; Footprint: Desk Optimized
         </div>
       </div>
     </div>
@@ -869,11 +841,11 @@ hide:
 
       <details class="p-4 rounded-lg bg-slate-900/50 border border-slate-700/60 group">
         <summary class="font-semibold text-gray-100 cursor-pointer flex justify-between items-center">
-          <span>What if a student loses a fraction block?</span>
+          <span>What if a student or child loses a fraction block?</span>
           <span class="text-cyan-400 text-lg group-open:rotate-45 transition-transform">+</span>
         </summary>
         <p class="mt-3 text-sm text-gray-300 leading-relaxed">
-          Under our "No Lost Piece Left Behind" lifetime guarantee, teachers and parents can order individual replacement blocks anytime for just $1.99 postage.
+          Under our "Anti-Heartbreak" lifetime guarantee, parents and teachers can order individual matching replacement blocks anytime for just $2.49 with free envelope shipping. Never retire a set because a piece went missing.
         </p>
       </details>
     </div>

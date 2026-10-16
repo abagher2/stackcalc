@@ -32,7 +32,7 @@ hide:
         "@type": "Offer",
         "url": "https://www.stackcalc.io/products/unit-circle-volvelle/",
         "priceCurrency": "USD",
-        "price": "16.00",
+        "price": "19.00",
         "priceValidUntil": "2027-12-31",
         "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
@@ -41,22 +41,6 @@ hide:
           "name": "StackCalc"
         }
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "22",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Prof. Daniel R., University Math Lecturer"},
-          "datePublished": "2026-08-25",
-          "reviewBody": "A masterwork of analog calculation. Students who struggled to memorize the coordinates of 5pi/6 versus 7pi/6 simply rotate the dial and see the signs change across quadrants instantaneously.",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
-        }
-      ],
       "audience": {
         "@type": "EducationalAudience",
         "educationalRole": "student",
@@ -138,10 +122,6 @@ hide:
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
       <div class="ec-gallery-main">
-        <div class="ec-gallery-badge-overlay">
-          <span class="ec-pill ec-pill-category">Grades 9&ndash;College</span>
-          <span class="ec-pill ec-pill-instock">&bull; In Stock &bull; Batch 001</span>
-        </div>
         <img id="main-product-image" src="../../assets/renders/unit-circle-volvelle-hero.png" alt="StackCalc Flat Unit Circle Trigonometry Volvelle" loading="eager">
       </div>
 
@@ -176,23 +156,17 @@ hide:
 
     <!-- Right Column: Buy Box & Product Info -->
     <div class="ec-buybox">
-      <div class="ec-pill-group">
-        <span class="ec-pill ec-pill-category">Trigonometry &amp; Calculus</span>
-        <span class="ec-pill ec-pill-instock">&check; Flat Dual-Disc Dial</span>
-      </div>
-
       <h1 class="ec-product-title">Unit Circle Trigonometry Volvelle</h1>
 
-      <!-- Social Proof & Review Score -->
+      <!-- Educational Architecture & Tactile Standard -->
       <div class="flex items-center gap-2 mb-3">
-        <div class="flex text-amber-400 text-sm">★★★★★</div>
-        <span class="text-xs font-semibold text-gray-200">4.9 / 5.0</span>
-        <span class="text-xs text-gray-400">&bull; 22 Verified Reviews</span>
-        <span class="text-xs text-cyan-400 font-medium ml-2">&check; AP Exam Safe</span>
+        <span class="text-xs font-mono font-semibold text-cyan-400">PEDAGOGICAL STANDARD</span>
+        <span class="text-xs text-gray-400">&bull; Concentric Dual-Disc Aperture Kinematics</span>
+        <span class="text-xs text-emerald-400 font-medium ml-2">&check; Ultra-Flat Notebook Profile</span>
       </div>
 
       <div class="ec-price-box">
-        <span class="ec-price-current">$16.00</span>
+        <span class="ec-price-current">$19.00</span>
         <span class="ec-shipping-note">&check; Free US Shipping &bull; In Stock</span>
       </div>
 
@@ -223,7 +197,7 @@ hide:
       <!-- Action Buttons -->
       <div class="ec-actions-row">
         <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-          Order on Etsy ($16.00) ↗
+          Order on Etsy ($19.00) ↗
         </a>
         <a href="#downloads" class="ec-btn-secondary">
           Download Free 3MF / STLs &darr;
@@ -233,16 +207,16 @@ hide:
       <!-- Trust Badges -->
       <div class="ec-trust-strip">
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&check;</span>
-          <span class="ec-trust-text">AP Precalculus &amp; Physics Legal</span>
+          <span class="ec-trust-icon">&plusmn;</span>
+          <span class="ec-trust-text">&plusmn;0.05mm Calibrated &bull; Non-Toxic Biopolymer</span>
         </div>
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&empty;</span>
-          <span class="ec-trust-text">Flat Flush Brass Eyelet Core</span>
+          <span class="ec-trust-icon">&check;</span>
+          <span class="ec-trust-text">Anti-Heartbreak $2.49 Part Refills</span>
         </div>
         <div class="ec-trust-item">
           <span class="ec-trust-icon">&hearts;</span>
-          <span class="ec-trust-text">Laser-Engraved Precision Legends</span>
+          <span class="ec-trust-text">30-Day Risk-Free In-Home Trial</span>
         </div>
       </div>
 
@@ -318,44 +292,44 @@ hide:
         </div>
       </div>
 
-      <!-- 2. Unboxing Experience -->
+      <!-- 2. Lesson 1: Aperture Coordinate Alignment -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/unit-circle-volvelle-hero.png">
-            <source src="/assets/videos/volvelle-unboxing.mp4" type="video/mp4">
+            <source src="/assets/videos/volvelle-lesson-coordinates.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. UNBOXING EXPERIENCE</span>
+          <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. CURRICULUM LESSON 01</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Unboxing Experience</h3>
-            <p class="text-xs text-slate-400">Opening the protective stay-flat mailer to reveal the 135&times;90mm archival reference card resting over the precision rotary volvelle.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">Aperture Coordinate Alignment (30&deg;)</h3>
+            <p class="text-xs text-slate-400">Rotating rotor disc to 30&deg; (&pi;/6) to reveal exact radical coordinate pair (cos&theta;, sin&theta;) = (&radic;3/2, 1/2) without memorization tables.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-amber-300 flex items-center justify-between">
-            <span>135x90mm Duplex Card</span>
-            <span>Zero Plastic Wrap</span>
+            <span>CCSS HSF.TF.A.2</span>
+            <span>(&radic;3/2, 1/2) Exact</span>
           </div>
         </div>
       </div>
 
-      <!-- 3. Classroom Lesson in Action -->
+      <!-- 3. Lesson 2: Tangent Slope & Undefined Asymptote -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/unit-circle-volvelle-hero.png">
-            <source src="/assets/videos/volvelle-lesson.mp4" type="video/mp4">
+            <source src="/assets/videos/volvelle-lesson-tangent.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CLASSROOM LESSON</span>
+          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CURRICULUM LESSON 02</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Classroom Lesson in Action</h3>
-            <p class="text-xs text-slate-400">Rotating from \(0^\circ \to 90^\circ\): observing trigonometric coordinate transitions \((\cos\theta, \sin\theta)\) across Quadrants I and II.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">Tangent Slope &amp; Undefined Asymptote</h3>
+            <p class="text-xs text-slate-400">Rotating to 90&deg; (&pi;/2) where coordinate is (0, 1): demonstrates tan(90&deg;) = 1/0 is an undefined vertical slope, explaining asymptotes concretely.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-emerald-300 flex items-center justify-between">
             <span>CCSS HSF.TF.A.2</span>
-            <span>TEKS 111.42</span>
+            <span>tan(90&deg;) = &infin; Undefined</span>
           </div>
         </div>
       </div>
@@ -564,8 +538,8 @@ hide:
       <!-- Cross-Sell 1: SC-32 Calculator -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Calculator" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Calculator</h3>
+          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Maker Kit" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Maker Kit</h3>
           <p class="cross-sell-card-desc">
             Equipped with dedicated `SIN`, `COS`, `TAN`, `ASIN`, `ACOS`, `ATAN`, and radian/degree conversion keys. Evaluates trig functions instantly on the RPN stack without parentheses.
           </p>
@@ -573,10 +547,10 @@ hide:
         <div>
           <div class="cross-sell-price-row">
             <span class="cross-sell-price">$89.00</span>
-            <span class="text-xs font-mono text-cyan-400">Hardware Core</span>
+            <span class="text-xs font-mono text-cyan-400">Maker Kit</span>
           </div>
           <a href="/products/sc32-calculator/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            View SC-32 Calculator &rarr;
+            View SC-32 Maker Kit &rarr;
           </a>
         </div>
       </div>
@@ -612,7 +586,7 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$36.00</span>
+            <span class="cross-sell-price">$44.00</span>
             <span class="text-xs font-mono text-cyan-400">Standalone Kit</span>
           </div>
           <a href="/products/classroom-clock/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
@@ -724,10 +698,10 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-700/60 text-sm">
         <strong class="text-emerald-400 flex items-center gap-2 mb-1">
-          <span>&#9874;</span> "No Lost Piece Left Behind" Educator Guarantee
+          <span>&#9874;</span> "Anti-Heartbreak" Lifetime Guarantee for Parents &amp; Classrooms
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          If a student steps on or bends a volvelle dial, contact us anytime for a low-cost replacement disk or central pivot hardware ($1.99 postage).
+          If a student or learner steps on or damages a volvelle dial, contact us anytime under our Anti-Heartbreak lifetime guarantee for a replacement disk or brass pivot hardware for just $2.49 with free envelope shipping.
         </p>
       </div>
 
@@ -743,58 +717,56 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION: VERIFIED USER REVIEWS & SOCIAL PROOF
+       SECTION: PEDAGOGICAL VERIFICATION & CLASSROOM ARCHITECTURE
        ========================================================================== -->
   <section class="ec-section">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 pb-4 border-b border-white/10">
       <div>
-        <h2 class="ec-section-title m-0">Student &amp; Faculty Endorsements</h2>
-        <p class="ec-section-subtitle m-0">Feedback from university mathematics lecturers, high school precalculus teachers, and physics students.</p>
+        <h2 class="ec-section-title m-0">Pedagogical Verification &amp; Classroom Architecture</h2>
+        <p class="ec-section-subtitle m-0">Concentric aperture kinematics, sign tracking across quadrants, and planar notebook integration.</p>
       </div>
-      <div class="flex items-center gap-2 mt-3 md:mt-0">
-        <span class="text-2xl font-bold text-white">4.9</span>
-        <div class="text-amber-400 text-lg">★★★★★</div>
-        <span class="text-xs text-gray-400">(22 Verified Reviews)</span>
+      <div class="flex items-center gap-2 mt-3 md:mt-0 font-mono text-xs text-slate-400">
+        <span class="text-emerald-400 font-bold">&bull; ANALOG COMPUTING VERIFIED</span>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "A masterwork of analog calculation. Students who struggled to remember why cosine is negative in Quadrants II and III simply rotate the dial and see the signs change across quadrants instantaneously."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// APERTURE KINEMATICS</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">Concentric Dual-Disc Volvelle</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Rotating apertures reveal exact radian/degree conversions and \((x, y, \sin \theta, \cos \theta, \tan \theta)\) coordinate pairs while masking irrelevant data to prevent sensory cognitive overload.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">Prof. Daniel R.</strong>
-          <span class="text-xs text-gray-400">University Math Lecturer &bull; New York</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Discs: Dual Concentric &bull; Detents: 15&deg;/30&deg; Steps
         </div>
       </div>
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "The flush brass center eyelet allows it to lay completely flat inside my AP Precalc notebook without creating an annoying bulge. Slides into my binder pouch with ease."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// PLANAR FORM FACTOR</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">Flush Brass Eyelet Core</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Low-profile eyelet allows the dial to lay completely flat inside student notebooks and binders without creating pocket bulges, paper creases, or disc distortion.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">Claire B.</strong>
-          <span class="text-xs text-gray-400">High School Junior &bull; Illinois</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Profile: 1.8mm Flat &bull; Eyelet: Low-Profile Brass
         </div>
       </div>
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "Laser-sharp contrast and tactile rotating feel. It eliminates the anxiety of angle memorization during homework problem sets. My whole tutoring cohort bought one."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// EXAM COMPLIANCE</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">Zero-Battery Passive Instrument</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Completely non-electronic analog reference tool. Zero RF emission, zero memory storage, and fully compliant for proctored STEM laboratory assessments.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">Ethan S.</strong>
-          <span class="text-xs text-gray-400">Physics &amp; Engineering Tutor &bull; California</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Power: 0W Analog &bull; Compliance: Non-RF Testing
         </div>
       </div>
     </div>
@@ -834,7 +806,7 @@ hide:
           <span class="text-cyan-400 text-lg group-open:rotate-45 transition-transform">+</span>
         </summary>
         <p class="mt-3 text-sm text-gray-300 leading-relaxed">
-          The volvelle is crafted from shatterproof, impact-resistant PETG biopolymer fastened with a flush-pressed industrial brass eyelet. Under our "No Lost Piece Left Behind" guarantee, if a student bends or tears the dial, we replace it for just $1.99 postage.
+          The volvelle is crafted from shatterproof, impact-resistant PETG biopolymer fastened with a flush-pressed industrial brass eyelet. Under our "Anti-Heartbreak" lifetime guarantee, if a student bends or tears the dial, we replace it for just $2.49 with free envelope shipping.
         </p>
       </details>
     </div>

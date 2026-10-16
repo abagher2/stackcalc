@@ -25,21 +25,12 @@ hide:
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
       <div class="ec-gallery-main">
-        <div class="ec-gallery-badge-overlay">
-          <span class="ec-pill ec-pill-category">Grades 6&ndash;10</span>
-          <span class="ec-pill ec-pill-instock">&bull; In Stock &bull; Batch 001</span>
-        </div>
         <img id="main-product-image" src="../../assets/learning-lab-teacher-guide.png" alt="StackCalc Curriculum Workbook and Reference Decks" loading="eager">
       </div>
     </div>
 
     <!-- Right Column: Buy Box & Product Info -->
     <div class="ec-buybox">
-      <div class="ec-pill-group">
-        <span class="ec-pill ec-pill-category">Classroom Curriculum</span>
-        <span class="ec-pill ec-pill-instock">&check; Free PDF Downloads Included</span>
-      </div>
-
       <h1 class="ec-product-title">Curriculum Workbooks &amp; Problem Decks</h1>
 
       <div class="ec-price-box">
@@ -99,6 +90,21 @@ hide:
 
     </div>
 
+  </div>
+
+  <!-- Free Pre-Generated Digital Curriculum Callout -->
+  <div style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(16, 185, 129, 0.08)); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">// 100% FREE DIGITAL CURRICULUM PORTAL</span>
+      <h3 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.25rem; font-weight: 800; color: #FFFFFF;">Looking for Immediate Pre-Generated Printables?</h3>
+      <p style="margin: 0; font-size: 0.85rem; color: #CBD5E1; max-width: 650px;">
+        Explore our complete digital catalog: 120 pre-generated classroom station guides (Singapore Math, Bridges, Big Ideas) and 12 official Texas UIL &amp; TMSCA tournament practice exams with complete 3-sig-fig scoring keys.
+      </p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+      <a href="../../curriculum/worksheets/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #38BDF8; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">120 STATION GUIDES &rarr;</a>
+      <a href="../../curriculum/uil-competition/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #10B981; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">24 UIL EXAMS &amp; KEYS &rarr;</a>
+    </div>
   </div>
 
   <!-- ==========================================================================
@@ -489,19 +495,19 @@ hide:
       <!-- Cross-Sell 1: SC-32 Calculator -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Calculator" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Calculator</h3>
+          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Maker Kit" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Maker Kit</h3>
           <p class="cross-sell-card-desc">
-            Tactile 43-key snap-dome instrument with RP2350 silicon, sunlight-readable reflective LCD, 4-line live operational stack, and SAT/ACT testing compliance.
+            Tactile 43-key snap-dome instrument with RP2350 silicon, sunlight-readable reflective LCD, 4-line live operational stack, and SAT/ACT testing compliance. 100% pre-soldered, 5-min assembly.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
             <span class="cross-sell-price">$89.00</span>
-            <span class="text-xs font-mono text-cyan-400">Exam Legal</span>
+            <span class="text-xs font-mono text-cyan-400">Maker Kit</span>
           </div>
           <a href="/products/sc32-calculator/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            View SC-32 Calculator &rarr;
+            View SC-32 Maker Kit &rarr;
           </a>
         </div>
       </div>
@@ -517,7 +523,7 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$38.00</span>
+            <span class="cross-sell-price">$48.00</span>
             <span class="text-xs font-mono text-amber-400">Tactile Stations</span>
           </div>
           <a href="/products/fraction-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
@@ -537,7 +543,7 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$24.00</span>
+            <span class="cross-sell-price">$42.00</span>
             <span class="text-xs font-mono text-cyan-400">Standalone Kit</span>
           </div>
           <a href="/products/algebra-boxes/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">

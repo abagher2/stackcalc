@@ -1,7 +1,7 @@
 ---
 template: home.html
 title: "StackCalc | The Uncompromising Digital Twin"
-description: "The affordable, dedicated physical RPN scientific calculator. Starting at $59, designed for students learning math and professionals solving real-world problems. With a 1:1 iOS and watchOS digital twin."
+description: "The affordable, dedicated physical RPN scientific calculator. Starting at $89, designed for students learning math and professionals solving real-world problems. With a 1:1 iOS and watchOS digital twin."
 ---
 
 # The Calculator for a New Generation
@@ -34,3 +34,5 @@ StackCalc is not a retro novelty or a piece designed to sit behind glass for col
   - **No Unwieldy Matrix Menus:** Deep matrix algebra belongs on modern computational notebooks; everyday calculation belongs on an immediate, tactile handheld. 
 
 Geek out over the details with us. Welcome to StackCalc32.
+
+<span id="school-po"></span>

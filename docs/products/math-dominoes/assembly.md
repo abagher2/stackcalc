@@ -62,7 +62,7 @@ hide:
         <ul class="text-xs text-slate-300 space-y-1.5 mt-2 font-mono">
           <li>&check; <strong>Bottom Tier:</strong> Holds 30 dominoes in rattle-free vertical channels.</li>
           <li>&check; <strong>Mid Tier:</strong> Pull-out 6&times;2 tray with raised bridge-through-10 tactile demarcation.</li>
-          <li>&check; <strong>Top Lid:</strong> 12 molded miniblock female sockets with debossed doubles expressions ("1+1=2" to "6+6=12").</li>
+          <li>&check; <strong>Top Lid:</strong> 12 molded miniblock recessed sockets with debossed doubles expressions ("1+1=2" to "6+6=12").</li>
         </ul>
       </div>
     </div>

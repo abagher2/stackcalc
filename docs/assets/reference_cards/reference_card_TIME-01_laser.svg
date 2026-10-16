@@ -3,18 +3,15 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
       .font-mono { font-family: 'Space Mono', monospace; }
-      .title { font-size: 26px; font-weight: 700; fill: #ffffff; letter-spacing: -0.5px; }
-      .subtitle { font-size: 14px; font-weight: 400; fill: #e2e8f0; }
-      .badge-sku { font-size: 15px; font-weight: 700; fill: #ffffff; }
-      .badge-rev { font-size: 13px; font-weight: 700; fill: #ffffff; }
-      .badge-box { font-size: 12px; font-weight: 400; fill: #cccccc; }
-      .section-hdr { font-size: 13px; font-weight: 700; fill: #ffffff; letter-spacing: 1px; text-transform: uppercase; }
-      .th { font-size: 11px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
-      .td { font-size: 11px; font-weight: 400; fill: #ffffff; }
-      .td-id { font-size: 10px; font-weight: 700; fill: #ffffff; }
-      .td-price { font-size: 11px; font-weight: 700; fill: #ffffff; text-anchor: end; }
-      .qc-item { font-size: 11px; font-weight: 400; fill: #ffffff; }
-      .footer-txt { font-size: 10px; font-weight: 400; fill: #cccccc; }
+      .title { font-size: 20px; font-weight: 700; fill: #ffffff; letter-spacing: -0.5px; }
+      .subtitle { font-size: 12px; font-weight: 400; fill: #e2e8f0; }
+      .badge-sku { font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .badge-rev { font-size: 12px; font-weight: 700; fill: #ffffff; }
+      .badge-box { font-size: 10.5px; font-weight: 400; fill: #cccccc; }
+      .section-hdr { font-size: 11.5px; font-weight: 700; fill: #ffffff; letter-spacing: 0.8px; text-transform: uppercase; }
+      .th { font-size: 10px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
+      .td { font-size: 10px; font-weight: 400; fill: #ffffff; }
+      .footer-txt { font-size: 9.3px; font-weight: 400; fill: #cccccc; }
     </style>
   </defs>
 
@@ -26,10 +23,10 @@
   <rect x="25" y="25" width="1210" height="770" rx="8" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
 
   <!-- Top Header Panel -->
-  <rect x="35" y="35" width="1190" height="100" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+  <rect x="35" y="35" width="1190" height="102" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
   
   <!-- StackCalc Brand Logo Badge -->
-  <g transform="translate(55, 52)">
+  <g transform="translate(48, 50)">
     <rect x="0" y="0" width="65" height="65" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.4" />
     <rect x="12" y="14" width="41" height="6" rx="2" fill="#ffffff" />
     <rect x="16" y="24" width="33" height="6" rx="2" fill="#ffffff" opacity="0.85" />
@@ -37,165 +34,267 @@
     <rect x="24" y="44" width="17" height="6" rx="2" fill="#ffffff" opacity="0.55" />
   </g>
 
+  <!-- Box Button Icon Badge -->
+  
+    <g transform="translate(125, 49)" data-macro="{{icon:button_clock}}">
+      <rect x="0" y="0" width="65" height="65" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <g transform="translate(5.2, 5.2) scale(0.546)">
+        <path d="M 100 50 L 100 81.65625 C 100 86.9375 100 89.578125 99.101562 92.421875 C 97.972656 95.527344 95.527344 97.972656 92.421875 99.101562 C 89.578125 100 86.9375 100 81.65625 100 L 18.34375 100 C 13.0625 100 10.421875 100 7.578125 99.101562 C 4.472656 97.972656 2.027344 95.527344 0.898438 92.421875 C 0 89.578125 0 86.9375 0 81.65625 L 0 18.34375 C 0 13.0625 0 10.421875 0.898438 7.578125 C 2.027344 4.472656 4.472656 2.027344 7.578125 0.898438 C 10.421875 0 13.0625 0 18.34375 0 L 81.65625 0 C 86.9375 0 89.578125 0 92.421875 0.898438 C 95.527344 2.027344 97.972656 4.472656 99.101562 7.578125 C 100 10.421875 100 13.0625 100 18.34375 Z M 96.5 50 L 96.5 83.507812 C 96.5 87.246094 96.5 89.117188 95.863281 91.132812 C 95.0625 93.332031 93.332031 95.0625 91.132812 95.863281 C 89.117188 96.5 87.246094 96.5 83.507812 96.5 L 16.492188 96.5 C 12.753906 96.5 10.882812 96.5 8.867188 95.863281 C 6.667969 95.0625 4.9375 93.332031 4.136719 91.132812 C 3.5 89.117188 3.5 87.246094 3.5 83.507812 L 3.5 16.492188 C 3.5 12.753906 3.5 10.882812 4.136719 8.867188 C 4.9375 6.667969 6.667969 4.9375 8.867188 4.136719 C 10.882812 3.5 12.753906 3.5 16.492188 3.5 L 83.507812 3.5 C 87.246094 3.5 89.117188 3.5 91.132812 4.136719 C 93.332031 4.9375 95.0625 6.667969 95.863281 8.867188 C 96.5 10.882812 96.5 12.753906 96.5 16.492188 Z M 96.5 50 " fill="#ffffff" fill-rule="evenodd" /><path d="M 83 50 C 83 68.226562 68.226562 83 50 83 C 31.773438 83 17 68.226562 17 50 C 17 31.773438 31.773438 17 50 17 C 68.226562 17 83 31.773438 83 50 Z M 79.800781 50 C 79.800781 66.457031 66.457031 79.800781 50 79.800781 C 33.542969 79.800781 20.199219 66.457031 20.199219 50 C 20.199219 33.542969 33.542969 20.199219 50 20.199219 C 66.457031 20.199219 79.800781 33.542969 79.800781 50 Z M 79.800781 50 " fill="#ffffff" fill-rule="evenodd" /><path d="M 54 50 C 54 52.210938 52.210938 54 50 54 C 47.789062 54 46 52.210938 46 50 C 46 47.789062 47.789062 46 50 46 C 52.210938 46 54 47.789062 54 50 Z M 54 50 " fill="#ffffff" fill-rule="nonzero" /><path d="M 48 26 L 52 26 L 52 50 L 48 50 Z M 48 26 " fill="#ffffff" fill-rule="nonzero" /><path d="M 33 48 L 50 48 L 50 52 L 33 52 Z M 33 48 " fill="#ffffff" fill-rule="nonzero" />
+      </g>
+    </g>
+    
+
   <!-- Header Typography -->
-  <text x="135" y="68" class="font-mono title">CLASSROOM PLANETARY CLOCK &amp; INTERVAL SYSTEM</text>
-  <text x="135" y="90" class="font-mono subtitle">Geared Epicyclic Kinematics, Hour Quadrants &amp; Modular Intervals</text>
-  <text x="135" y="112" class="font-mono badge-box">PACKAGING SPEC: 3x2x6U Gridfinity Storage Box with Digital Clock Practice Lid | TOTAL PIECES: 19</text>
+  <text x="215" y="60" class="font-mono title">CLASSROOM PLANETARY CLOCK &amp; INTERVAL SYSTEM</text>
+  <text x="215" y="78" class="font-mono subtitle">Kinesthetic Time, Epicyclic 12:1 Gears &amp; Modular Arithmetic</text>
+
+  <!-- Studio Continuum Ribbon -->
+  <text x="215.0" y="109.0" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">STUDIO CONTINUUM:</text>\n
+    <g transform="translate(323.0, 98.0)">
+      <rect x="0" y="0" width="70.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="35.0" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Ten-Frames</text>
+    </g>\n<text x="395.5" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(403.5, 98.0)">
+      <rect x="0" y="0" width="58.4" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="29.2" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Dominoes</text>
+    </g>\n<text x="464.4" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(472.4, 98.0)">
+      <rect x="0" y="0" width="41.0" height="15" rx="3.5" fill="#ffffff" stroke="#ffffff" stroke-width="0.8" />
+      <text x="20.5" y="10.8" class="font-mono" font-size="7.5px" font-weight="700" text-anchor="middle" fill="#000000">Clock</text>
+    </g>\n<text x="515.9" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(523.9, 98.0)">
+      <rect x="0" y="0" width="64.2" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="32.1" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Fractions</text>
+    </g>\n<text x="590.6" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(598.6, 98.0)">
+      <rect x="0" y="0" width="46.8" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="23.4" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Primes</text>
+    </g>\n<text x="647.9" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(655.9, 98.0)">
+      <rect x="0" y="0" width="75.8" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="37.9" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Probability</text>
+    </g>\n<text x="734.2" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(742.2, 98.0)">
+      <rect x="0" y="0" width="52.6" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="26.3" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Algebra</text>
+    </g>\n<text x="797.3" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(805.3, 98.0)">
+      <rect x="0" y="0" width="58.4" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="29.2" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Volvelle</text>
+    </g>\n<text x="866.2" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(874.2, 98.0)">
+      <rect x="0" y="0" width="41.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="20.5" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">SC-32</text>
+    </g>
 
   <!-- Top-Right SKU & Rev Badges -->
-  <g transform="translate(1025, 52)">
-    <rect x="0" y="0" width="180" height="30" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="90" y="20" class="font-mono badge-sku" text-anchor="middle">SKU: TIME-01</text>
+  <g transform="translate(1025, 48)">
+    <rect x="0" y="0" width="180" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="90" y="19" class="font-mono badge-sku" text-anchor="middle">SKU: TIME-01</text>
     
-    <rect x="0" y="36" width="180" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="90" y="55" class="font-mono badge-rev" text-anchor="middle">BUILD REV: a793ddd</text>
+    <rect x="0" y="34" width="180" height="26" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="90" y="52" class="font-mono badge-rev" text-anchor="middle">USER GUIDE</text>
   </g>
 
-  <!-- LEFT COLUMN: Component Inventory & Replacement Reference Table -->
-  <g transform="translate(35, 150)">
-    <rect x="0" y="0" width="700" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    
-    <rect x="0" y="0" width="700" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="20" y="22" class="font-mono section-hdr">COMPONENT SCHEMATIC INVENTORY &amp; REPLACEMENT CODES</text>
-    
-    <text x="20" y="52" class="font-mono th">#</text>
-    <text x="50" y="52" class="font-mono th">PART DESCRIPTION</text>
-    <text x="320" y="52" class="font-mono th">QTY</text>
-    <text x="375" y="52" class="font-mono th">MATERIAL / FINISH</text>
-    <text x="525" y="52" class="font-mono th">PART ID (REV)</text>
-    <text x="680" y="52" class="font-mono th" text-anchor="end">FEE</text>
-    <line x1="15" y1="60" x2="685" y2="60" stroke="#ffffff" stroke-width="1" />
+  <!-- COLUMN 1: WHAT IS THIS MANIPULATIVE? -->
+  <g transform="translate(35, 148)">
+    <rect x="0" y="0" width="405" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="405" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">1. WHAT IS THIS MANIPULATIVE?</text>
 
-    <circle cx="25" cy="76" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="80" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">1</text>
-    <text x="50" y="80" class="font-mono td">Monolithic Epicyclic Core (12:1)</text>
-    <text x="320" y="80" class="font-mono td" font-weight="700">1x</text>
-    <text x="375" y="80" class="font-mono td" fill="#cccccc">Dual Silk &amp; PETG</text>
-    <text x="525" y="80" class="font-mono td-id">TIME-CLOC-db69de7</text>
-    <text x="680" y="80" class="font-mono td-price">$19.50</text>
-    <line x1="15" y1="88" x2="685" y2="88" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <!-- Headline -->
+    <text x="16" y="56" class="font-mono" font-size="11.5px" font-weight="700" fill="#ffffff">EPICYCLIC 12:1 GEARS &amp; MODULO ARITHMETIC</text>
 
-    <circle cx="25" cy="104" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="108" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">2</text>
-    <text x="50" y="108" class="font-mono td">Hour Dial Quadrants (Q1-Q4)</text>
-    <text x="320" y="108" class="font-mono td" font-weight="700">4x</text>
-    <text x="375" y="108" class="font-mono td" fill="#cccccc">Matte Black &amp; Gold</text>
-    <text x="525" y="108" class="font-mono td-id">TIME-CLOC-db69de7</text>
-    <text x="680" y="108" class="font-mono td-price">$5.50</text>
-    <line x1="15" y1="116" x2="685" y2="116" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <circle cx="25" cy="132" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="136" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">3</text>
-    <text x="50" y="136" class="font-mono td">Interval Blocks (:00, :15, :30, :45)</text>
-    <text x="320" y="136" class="font-mono td" font-weight="700">6x</text>
-    <text x="375" y="136" class="font-mono td" fill="#cccccc">Red+Blue Silk PLA</text>
-    <text x="525" y="136" class="font-mono td-id">TIME-CLOC-1f0896e</text>
-    <text x="680" y="136" class="font-mono td-price">$4.50</text>
-    <line x1="15" y1="144" x2="685" y2="144" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <circle cx="25" cy="160" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="164" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">4</text>
-    <text x="50" y="164" class="font-mono td">Period Indicator Blocks (AM/PM)</text>
-    <text x="320" y="164" class="font-mono td" font-weight="700">6x</text>
-    <text x="375" y="164" class="font-mono td" fill="#cccccc">Glow Red PLA</text>
-    <text x="525" y="164" class="font-mono td-id">TIME-CLOC-aa0a73c</text>
-    <text x="680" y="164" class="font-mono td-price">$3.50</text>
-    <line x1="15" y1="172" x2="685" y2="172" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <circle cx="25" cy="188" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="192" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">5</text>
-    <text x="50" y="192" class="font-mono td">Hour &amp; Minute Phosphor Hands</text>
-    <text x="320" y="192" class="font-mono td" font-weight="700">2x</text>
-    <text x="375" y="192" class="font-mono td" fill="#cccccc">Glow Green PLA</text>
-    <text x="525" y="192" class="font-mono td-id">TIME-CLOC-db69de7</text>
-    <text x="680" y="192" class="font-mono td-price">$3.00</text>
-    <line x1="15" y1="200" x2="685" y2="200" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <circle cx="25" cy="216" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="220" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">6</text>
-    <text x="50" y="220" class="font-mono td">3x2 Storage Bin &amp; Digital Lid</text>
-    <text x="320" y="220" class="font-mono td" font-weight="700">1x</text>
-    <text x="375" y="220" class="font-mono td" fill="#cccccc">Matte Black PLA</text>
-    <text x="525" y="220" class="font-mono td-id">TIME-CLOC-db69de7</text>
-    <text x="680" y="220" class="font-mono td-price">$16.50</text>
-    <line x1="15" y1="228" x2="685" y2="228" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <rect x="15" y="415" width="670" height="46" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <circle cx="38" cy="438" r="12" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="38" y="443" class="font-mono badge-rev" text-anchor="middle" font-size="14px" fill="#ffffff">✓</text>
-    <text x="60" y="433" class="font-mono td" font-weight="700" fill="#ffffff">NO LOST PIECE LEFT BEHIND LIFETIME GUARANTEE</text>
-    <text x="60" y="449" class="font-mono subtitle" font-size="10px" fill="#e2e8f0">Need a single replacement tile? Order by Part ID at <tspan fill="#ffffff" font-weight="700">stackcalc.io/parts</tspan> or Etsy #09. 24h dispatch.</text>
-  </g>
-
-  <g transform="translate(750, 150)">
-    <rect x="0" y="0" width="415" height="305" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="415" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="20" y="22" class="font-mono section-hdr">PACKING BENCH QC CHECKLIST</text>
-
-    <g transform="translate(20, 62)">
-      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">Epicyclic gear mesh verified: 1 full minute ring turn advances hour hand 1/12th</text>
-    </g>
-
-    <g transform="translate(20, 96)">
-      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">Planetary carrier plate rotates smoothly with zero binding</text>
-    </g>
-
-    <g transform="translate(20, 130)">
-      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">Digital practice lid sockets mate with standard 19.6mm interval blocks</text>
-    </g>
-
-    <g transform="translate(20, 164)">
-      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">Snap-fit lid holds clock core securely during inverted transit</text>
-    </g>
-
-    <g transform="translate(20, 215)">
-      <rect x="0" y="0" width="375" height="75" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="15" y="22" class="font-mono th" fill="#cccccc">CALIFORNIA LAB INSPECTION PASS</text>
-      <text x="15" y="42" class="font-mono td" font-size="10px">Inspector Stamp: <tspan fill="#ffffff" font-weight="700">[ QC-CALIF-01 PASSED ]</tspan></text>
-      <text x="15" y="60" class="font-mono td" font-size="10px">Dimensional Datum: <tspan fill="#cccccc">±0.05 mm Mitutoyo Calibrated</tspan></text>
-    </g>
-  </g>
-
-  <g transform="translate(750, 470)">
-    <rect x="0" y="0" width="415" height="155" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <rect x="0" y="0" width="415" height="28" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="15" y="18" class="font-mono th" fill="#ffffff">PEDAGOGICAL DESIGN INTEGRITY NOTICE</text>
-    
-    <text x="18" y="36" class="font-mono td" font-size="10.5px" fill="#ffffff">
-      <tspan x="18" dy="17">Print-In-Place Precision: The planetary core contains</tspan>
-      <tspan x="18" dy="17">internal planetary bearings printed assembled. Never</tspan>
-      <tspan x="18" dy="17">force with tools; spins freely by hand out of the box.</tspan>
+    <!-- Concept principle text -->
+    <text x="16" y="76" class="font-mono" font-size="9.3px" fill="#ffffff">
+      <tspan x="16" dy="0" font-weight="400" fill="#ffffff">Time is continuous rotational motion and modular arithmetic.</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">The StackCalc Classroom Clock features an internal compound gearset:</tspan><tspan x="16" dy="15" font-weight="700" fill="#ffffff">   12:1 Exact Planetary Reduction Ratio</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">When the minute hand completes 1 full revolution (360°),</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">the planetary sun-and-planet gears advance the hour hand by 30°!</tspan>
     </text>
+
+    <!-- Calibration Datum Box -->
+    <g transform="translate(14, 158)">
+      <rect x="0" y="0" width="377" height="72" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">CALIBRATED 60-MINUTE / 12-HOUR DATUM</text>
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n
+    </g>
+
+    <!-- Lid Feature -->
+    <text x="16" y="252" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">CLOCK STAND LID &amp; MODULAR WEDGE BAYS</text>
+    <text x="16" y="270" class="font-mono" font-size="9.3px" fill="#cccccc">
+      <tspan x="16" dy="0">The 7U storage lid features an angled desktop easel stand and</tspan><tspan x="16" dy="14">color-coded radial slots to store 15-min, 30-min, and 5-min wedges.</tspan><tspan x="16" dy="14">Drop wedges into the dial to measure elapsed time kinesthetically!</tspan>
+    </text>
+
+    <!-- Visual Diagram of Geometry / Stacking -->
+    <g transform="translate(14, 318)">
+      <rect x="0" y="0" width="377" height="144" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      
+      <text x="12" y="18" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">PLANETARY GEARS: 12:1 RATIO AT 3:30 (105°)</text>
+      <circle cx="85" cy="82" r="48" fill="#000000" stroke="#ffffff" stroke-width="1.8" />
+      <path d="M 85 82 L 85 34 A 48 48 0 0 1 133 82 Z" fill="#ffffff" opacity="0.25" stroke="#ffffff" stroke-width="1" />
+      
+      <text x="85" y="45" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">12</text>
+      <text x="125" y="85" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+      <text x="85" y="123" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">6</text>
+      <text x="45" y="85" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">9</text>
+
+      <line x1="85" y1="82" x2="85" y2="120" stroke="#ffffff" stroke-width="2" />
+      <line x1="85" y1="82" x2="110" y2="92" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" />
+      <circle cx="85" cy="82" r="3.5" fill="#ffffff" />
+
+      <text x="155" y="50" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">12:1 EPICYCLIC GEARS</text>
+      <text x="155" y="66" class="font-mono" font-size="8px" fill="#cccccc">360° min → 30° hour</text>
+      <text x="155" y="80" class="font-mono" font-size="8px" fill="#cccccc">At 3:30: Hour hand = 105°</text>
+      <text x="155" y="96" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">15-Min Quadrant Wedge:</text>
+      <text x="155" y="110" class="font-mono" font-size="8px" fill="#cccccc">90° arc = 1/4 of an hour</text>
+      <text x="155" y="124" class="font-mono" font-size="8px" fill="#cccccc">Modulo 12 &amp; Modulo 60</text>
+
+    </g>
   </g>
 
-  <g transform="translate(35, 640)">
-    <rect x="0" y="0" width="1190" height="110" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+  <!-- COLUMN 2: KIT PARTS INVENTORY -->
+  <g transform="translate(455, 148)">
+    <rect x="0" y="0" width="385" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="385" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">2. KIT PARTS INVENTORY (18 PIECES)</text>
+
+    <!-- Table Header -->
+    <text x="16" y="52" class="font-mono th">COMPONENT</text>
+    <text x="125" y="52" class="font-mono th">QTY</text>
+    <text x="160" y="52" class="font-mono th">SPEC / DIMENSION</text>
+    <text x="275" y="52" class="font-mono th">PALETTE COLOR</text>
+    <line x1="12" y1="58" x2="373" y2="58" stroke="#ffffff" stroke-width="1" />
+
     
-    <g transform="translate(25, 25)">
-      <text x="0" y="0" class="font-mono th" fill="#ffffff">STACKCALC ENGINEERING LABS</text>
-      <text x="0" y="18" class="font-mono footer-txt">Designed &amp; Manufactured in Mountain View, California, USA.</text>
-      <text x="0" y="32" class="font-mono footer-txt">100% Lead-Free, BPA-Free, Non-Toxic High-Impact Thermoplastic PLA/PETG.</text>
-    </g>
+    <text x="16" y="74" class="font-mono td" font-weight="700">Geared Clock Frame</text>
+    <text x="125" y="74" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="160" y="74" class="font-mono td">105.0 mm Dial (12h/60m)</text>
+    <text x="275" y="74" class="font-mono td" fill="#cccccc">Slate Gray</text>
+    <line x1="12" y1="80" x2="373" y2="80" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
-    <g transform="translate(480, 25)">
-      <text x="0" y="0" class="font-mono th" fill="#ffffff">ARCHIVAL COMPANION REFERENCE</text>
-      <text x="0" y="18" class="font-mono footer-txt">This card serves as your official kit manifest &amp; warranty registration.</text>
-      <text x="0" y="32" class="font-mono footer-txt">SIDE A: REPLACEMENT MANIFEST &amp; CAD SCHEMATIC | MONOCHROME WHITE LASER ABLATION</text>
-    </g>
+    <text x="16" y="97" class="font-mono td" font-weight="700">12:1 Epicyclic Gear</text>
+    <text x="125" y="97" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="160" y="97" class="font-mono td">Internal Sun-Planet Mesh</text>
+    <text x="275" y="97" class="font-mono td" fill="#cccccc">Gold / Blue</text>
+    <line x1="12" y1="103" x2="373" y2="103" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
-    <g transform="translate(930, 25)">
-      <text x="0" y="0" class="font-mono th" fill="#ffffff">OFFICIAL PORTAL</text>
-      <text x="0" y="18" class="font-mono td-id" font-size="12px" fill="#ffffff">stackcalc.io/parts</text>
-      <text x="0" y="32" class="font-mono footer-txt">Direct Replacement Service</text>
+    <text x="16" y="120" class="font-mono td" font-weight="700">15-Min Wedges</text>
+    <text x="125" y="120" class="font-mono td" font-weight="700" fill="#ffffff">4x</text>
+    <text x="160" y="120" class="font-mono td">90° Quadrant (1/4 Hour)</text>
+    <text x="275" y="120" class="font-mono td" fill="#cccccc">Sky Blue</text>
+    <line x1="12" y1="126" x2="373" y2="126" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="143" class="font-mono td" font-weight="700">30-Min Wedges</text>
+    <text x="125" y="143" class="font-mono td" font-weight="700" fill="#ffffff">2x</text>
+    <text x="160" y="143" class="font-mono td">180° Semicircle (1/2 Hour)</text>
+    <text x="275" y="143" class="font-mono td" fill="#cccccc">Royal Purple</text>
+    <line x1="12" y1="149" x2="373" y2="149" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="166" class="font-mono td" font-weight="700">5-Min Wedges</text>
+    <text x="125" y="166" class="font-mono td" font-weight="700" fill="#ffffff">8x</text>
+    <text x="160" y="166" class="font-mono td">30° Hour Sector (1/12th)</text>
+    <text x="275" y="166" class="font-mono td" fill="#cccccc">Emerald Green</text>
+    <line x1="12" y1="172" x2="373" y2="172" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="189" class="font-mono td" font-weight="700">Display Stand Lid</text>
+    <text x="125" y="189" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="160" y="189" class="font-mono td">Clock Stand &amp; Wedge Bay</text>
+    <text x="275" y="189" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
+    <line x1="12" y1="195" x2="373" y2="195" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="212" class="font-mono td" font-weight="700">3x1 Storage Bin</text>
+    <text x="125" y="212" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="160" y="212" class="font-mono td">49.0 mm Height (7U)</text>
+    <text x="275" y="212" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
+    <line x1="12" y1="218" x2="373" y2="218" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+
+    <!-- Total Pieces Summary -->
+    <text x="16" y="334" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">TOTAL: 16 Clock &amp; Wedge Components + Storage Bin + Stand Lid = 18 Parts</text>
+
+    <!-- Palette Box -->
+    <g transform="translate(12, 350)">
+      <rect x="0" y="0" width="361" height="112" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">FRACTION-ALIGNED TIME PALETTE</text>
+      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n
     </g>
   </g>
 
+  <!-- COLUMN 3: WHY KEEP THIS REFERENCE CARD? -->
+  <g transform="translate(855, 148)">
+    <rect x="0" y="0" width="370" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="370" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">3. WHY KEEP THIS REFERENCE CARD?</text>
+
+    <!-- Reason 1: No Lost Piece Guarantee -->
+    <g transform="translate(14, 48)">
+      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ NO LOST PIECE LEFT BEHIND</text>
+      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+        <tspan x="12" dy="0">Classroom manipulatives get lost. Never abandon</tspan>
+        <tspan x="12" dy="13">an incomplete set! Every individual math component</tspan>
+        <tspan x="12" dy="13">is permanently stocked for single replacements.</tspan>
+      </text>
+      <rect x="12" y="84" width="318" height="28" rx="4" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <text x="171" y="98" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">Scan back QR or visit stackcalc.io/parts</text>
+      <text x="171" y="108" class="font-mono" font-size="8px" text-anchor="middle" fill="#cccccc">Order individual replacement pieces anytime</text>
+    </g>
+
+    <!-- Reason 2: Self-Auditing Sockets -->
+    <g transform="translate(14, 186)">
+      <rect x="0" y="0" width="342" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ 10-SECOND SELF-CHECKING PACK-UP</text>
+      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+        <tspan x="12" dy="0">Pack-up is a built-in math game! Seat the clock frame into its</tspan><tspan x="12" dy="13">recessed bottom cradle. Drop the 14 colored wedges into their</tspan><tspan x="12" dy="13">labeled radial lid bays. Any missing wedge leaves an empty bay.</tspan><tspan x="12" dy="13">Easel lid latches firmly for silent, rattle-free carry.</tspan>
+      </text>
+    </g>
+
+    <!-- Reason 3: Quick Lesson Guide -->
+    <g transform="translate(14, 334)">
+      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ HANDS-ON TUTORIAL ON REVERSE</text>
+      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+        <tspan x="12" dy="0">Flip this card over for a complete step-by-step</tspan>
+        <tspan x="12" dy="13">hands-on lesson with concrete numbers, stage</tspan>
+        <tspan x="12" dy="13">arrangements, calculator cross-references, and</tspan>
+        <tspan x="12" dy="13">The Big Aha! conceptual breakthrough!</tspan>
+        <tspan x="12" dy="16" font-weight="700" fill="#ffffff">Keep this card stored inside the box lid!</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(35, 635)">
+    <rect x="0" y="0" width="1190" height="115" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    
+    <g transform="translate(25, 24)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
+      <text x="0" y="18" class="font-mono footer-txt">Designed in Mountain View, California, USA • Non-Toxic BPA-Free.</text>
+      <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates (10x / 30x Stations): stackcalc.io/schools</text>
+    </g>
+
+    <g transform="translate(450, 24)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">MODULO ARITHMETIC &amp; CONTINUOUS RATIOS</text>
+      <text x="0" y="18" class="font-mono footer-txt">Clock arithmetic is modulo 12 and modulo 60 governed by strict continuous gear kinematics.</text>
+      <text x="0" y="32" class="font-mono footer-txt">Title I &amp; IV STEM Grant Eligible • UNSPSC 60101700 • SIDE A: IN-BOX USER COMPANION GUIDE | MONOCHROME WHITE LASER ABLATION</text>
+    </g>
+
+    <g transform="translate(980, 24)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">OFFICIAL REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#ffffff">stackcalc.io/parts</text>
+      <text x="0" y="32" class="font-mono footer-txt">Order individual replacement pieces anytime</text>
+    </g>
+  </g>
+  <metadata id="stackcalc-book-macro-manifest" data-kit="TIME-01">
+    <stackcalc-macros>
+      <macro-ref token="{{blocks:planetary_geared_clock_330}}" kind="blocks" id="planetary_geared_clock_330" png="planetary_geared_clock_330.png" svg="planetary_geared_clock_330.svg" scene="Education/tools/generate_book_diagrams.py::book_planetary_clock_330.scad" scad="book_planetary_clock_330.scad" scad-sources="Education/scad/parametric_clock_adjustments.scad,Education/scad/parametric_clock_assembly.scad" stls="scratch/stl/education/clock_base_housing.stl,scratch/stl/education/clock_dial.stl,scratch/stl/education/clock_hour_ring.stl,scratch/stl/education/clock_minute_hand.stl" />
+      <macro-ref token="{{blocks:clock_quadrant_concept}}" kind="blocks" id="clock_quadrant_concept" png="clock-quadrant-concept.png" svg="clock-quadrant-concept.png" scene="Tools/rendering/render_concept_and_craftsmanship_stills.py::render_clock_quadrant_concept" scad="Education/scad/clock_system_blocks.scad" scad-sources="Education/scad/parametric_clock_adjustments.scad,Education/scad/clock_system_blocks.scad" stls="scratch/stl/clock_base_core.stl,scratch/stl/clock_full_dial.stl,scratch/stl/clock_hour_hand.stl,scratch/stl/clock_minute_hand.stl,scratch/stl/clock_quadrant_1.stl" />
+      <macro-ref token="{{blocks:clock_gear_stages_macro}}" kind="blocks" id="clock_gear_stages_macro" png="clock-gear-stages-macro.png" svg="clock-gear-stages-macro.png" scene="Tools/rendering/render_concept_and_craftsmanship_stills.py::render_clock_gear_stages_macro" scad="Education/scad/parametric_clock_adjustments.scad" scad-sources="Education/scad/parametric_clock_adjustments.scad,Education/scad/clock_system_box.scad" stls="scratch/stl/clock_base_core.stl,scratch/stl/clock_full_dial.stl,scratch/stl/clock_hour_hand.stl,scratch/stl/clock_minute_hand.stl" />
+      <macro-ref token="{{blocks:clock_classroom_hero}}" kind="blocks" id="clock_classroom_hero" png="clock-classroom-hero.png" svg="clock-classroom-hero.png" scene="Tools/rendering/render_product_stills.py::render_classroom_clock" scad="Education/scad/clock_system_box.scad" scad-sources="Education/scad/clock_system_box.scad,Education/scad/parametric_clock_adjustments.scad" stls="scratch/stl/education/clock_system_box.stl,scratch/stl/clock_base_core.stl,scratch/stl/clock_full_dial.stl,scratch/stl/clock_hour_hand.stl,scratch/stl/clock_minute_hand.stl,scratch/stl/clock_quadrant_1.stl" />
+      <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{blocks:sc32_hero_keynote}}" kind="blocks" id="sc32_hero_keynote" png="sc32-hero-keynote.png" svg="sc32-hero-keynote.png" scene="Tools/rendering/render_product_stills.py::render_sc32_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{seq:refcard_time01_ex1}}" res-token="{{res:refcard_time01_ex1}}" stack-token="{{res:refcard_time01_ex1:stack}}" kind="sequence" id="refcard_time01_ex1" model="sc6" expanded-seq="3.30 [f] [▸HR] 30 [×]" res="105" stack="T:0|Z:0|Y:0|X:105" />
+      <macro-ref token="{{seq:refcard_time01_ex2}}" res-token="{{res:refcard_time01_ex2}}" stack-token="{{res:refcard_time01_ex2:stack}}" kind="sequence" id="refcard_time01_ex2" model="sc6" expanded-seq="3.30 [f] [▸HR] 0.45 [f] [▸HR] [+] [g] [▸HMS]" res="4.15" stack="T:0|Z:0|Y:0|X:4.15" />
+      <macro-ref token="{{seq:refcard_time01_ex3}}" res-token="{{res:refcard_time01_ex3}}" stack-token="{{res:refcard_time01_ex3:stack}}" kind="sequence" id="refcard_time01_ex3" model="sc6" expanded-seq="60 [g] [FACT] 4 [÷]" res="15" stack="T:0|Z:0|Y:0|X:15" />
+      <macro-ref token="{{icon:button_clock}}" kind="icon" id="button_clock" svg="Education/scad/lib/icons/button_clock.svg" scad="Education/scad/clock_system_box.scad" key="🕒" model="sc6" />
+    </stackcalc-macros>
+  </metadata>
 </svg>

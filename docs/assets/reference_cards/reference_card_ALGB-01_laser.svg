@@ -3,18 +3,15 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
       .font-mono { font-family: 'Space Mono', monospace; }
-      .title { font-size: 26px; font-weight: 700; fill: #ffffff; letter-spacing: -0.5px; }
-      .subtitle { font-size: 14px; font-weight: 400; fill: #e2e8f0; }
-      .badge-sku { font-size: 15px; font-weight: 700; fill: #ffffff; }
-      .badge-rev { font-size: 13px; font-weight: 700; fill: #ffffff; }
-      .badge-box { font-size: 12px; font-weight: 400; fill: #cccccc; }
-      .section-hdr { font-size: 13px; font-weight: 700; fill: #ffffff; letter-spacing: 1px; text-transform: uppercase; }
-      .th { font-size: 11px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
-      .td { font-size: 11px; font-weight: 400; fill: #ffffff; }
-      .td-id { font-size: 10px; font-weight: 700; fill: #ffffff; }
-      .td-price { font-size: 11px; font-weight: 700; fill: #ffffff; text-anchor: end; }
-      .qc-item { font-size: 11px; font-weight: 400; fill: #ffffff; }
-      .footer-txt { font-size: 10px; font-weight: 400; fill: #cccccc; }
+      .title { font-size: 20px; font-weight: 700; fill: #ffffff; letter-spacing: -0.5px; }
+      .subtitle { font-size: 12px; font-weight: 400; fill: #e2e8f0; }
+      .badge-sku { font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .badge-rev { font-size: 12px; font-weight: 700; fill: #ffffff; }
+      .badge-box { font-size: 10.5px; font-weight: 400; fill: #cccccc; }
+      .section-hdr { font-size: 11.5px; font-weight: 700; fill: #ffffff; letter-spacing: 0.8px; text-transform: uppercase; }
+      .th { font-size: 10px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
+      .td { font-size: 10px; font-weight: 400; fill: #ffffff; }
+      .footer-txt { font-size: 9.3px; font-weight: 400; fill: #cccccc; }
     </style>
   </defs>
 
@@ -26,10 +23,10 @@
   <rect x="25" y="25" width="1210" height="770" rx="8" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
 
   <!-- Top Header Panel -->
-  <rect x="35" y="35" width="1190" height="100" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+  <rect x="35" y="35" width="1190" height="102" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
   
   <!-- StackCalc Brand Logo Badge -->
-  <g transform="translate(55, 52)">
+  <g transform="translate(48, 50)">
     <rect x="0" y="0" width="65" height="65" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.4" />
     <rect x="12" y="14" width="41" height="6" rx="2" fill="#ffffff" />
     <rect x="16" y="24" width="33" height="6" rx="2" fill="#ffffff" opacity="0.85" />
@@ -37,184 +34,291 @@
     <rect x="24" y="44" width="17" height="6" rx="2" fill="#ffffff" opacity="0.55" />
   </g>
 
+  <!-- Box Button Icon Badge -->
+  
+    <g transform="translate(125, 49)" data-macro="{{icon:button_algebra}}">
+      <rect x="0" y="0" width="65" height="65" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <g transform="translate(5.2, 5.2) scale(0.546)">
+        <path d="M 2.78125 0 L 2.78125 -23.796875 L 17.8125 -23.796875 L 17.8125 -19.515625 L 7.28125 -19.515625 L 7.28125 -14.078125 L 17.40625 -14.078125 L 17.40625 -9.796875 L 7.28125 -9.796875 L 7.28125 -4.28125 L 18.21875 -4.28125 L 18.21875 0 Z M 2.78125 0 " transform="translate(19, 63)" fill="#ffffff" fill-rule="nonzero" /><path d="M 11.484375 5.921875 C 10.578125 5.921875 9.8125 5.601562 9.1875 4.96875 C 8.570312 4.332031 8.265625 3.5625 8.265625 2.65625 L 8.265625 0.265625 C 6.179688 -0.117188 4.550781 -1.117188 3.375 -2.734375 C 2.207031 -4.359375 1.625 -6.53125 1.625 -9.25 L 1.625 -14.546875 C 1.625 -17.609375 2.40625 -19.992188 3.96875 -21.703125 C 5.539062 -23.421875 7.6875 -24.28125 10.40625 -24.28125 C 13.125 -24.28125 15.265625 -23.421875 16.828125 -21.703125 C 18.390625 -19.992188 19.171875 -17.609375 19.171875 -14.546875 L 19.171875 -9.25 C 19.171875 -6.53125 18.585938 -4.359375 17.421875 -2.734375 C 16.253906 -1.117188 14.628906 -0.117188 12.546875 0.265625 L 12.546875 0.890625 C 12.546875 1.523438 12.828125 1.84375 13.390625 1.84375 L 15.5 1.84375 L 15.5 5.921875 Z M 10.40625 -3.609375 C 12.039062 -3.609375 13.160156 -4.113281 13.765625 -5.125 C 14.378906 -6.144531 14.6875 -7.453125 14.6875 -9.046875 L 14.6875 -14.75 C 14.6875 -15.75 14.535156 -16.660156 14.234375 -17.484375 C 13.941406 -18.316406 13.484375 -18.976562 12.859375 -19.46875 C 12.242188 -19.957031 11.425781 -20.203125 10.40625 -20.203125 C 9.382812 -20.203125 8.554688 -19.957031 7.921875 -19.46875 C 7.285156 -18.976562 6.828125 -18.316406 6.546875 -17.484375 C 6.265625 -16.660156 6.125 -15.75 6.125 -14.75 L 6.125 -9.046875 C 6.125 -7.453125 6.425781 -6.144531 7.03125 -5.125 C 7.644531 -4.113281 8.769531 -3.609375 10.40625 -3.609375 Z M 10.40625 -3.609375 " transform="translate(39.808, 63)" fill="#ffffff" fill-rule="nonzero" /><path d="M 2.078125 0 L 2.078125 -23.796875 L 10.84375 -23.796875 L 13.640625 -2.25 L 14.25 -2.25 L 14.25 -23.796875 L 18.734375 -23.796875 L 18.734375 0 L 9.96875 0 L 7.171875 -21.5625 L 6.5625 -21.5625 L 6.5625 0 Z M 2.078125 0 " transform="translate(60.616, 63)" fill="#ffffff" fill-rule="nonzero" /><path d="M 100 50 L 100 81.65625 C 100 86.9375 100 89.578125 99.101562 92.421875 C 97.972656 95.527344 95.527344 97.972656 92.421875 99.101562 C 89.578125 100 86.9375 100 81.65625 100 L 18.34375 100 C 13.0625 100 10.421875 100 7.578125 99.101562 C 4.472656 97.972656 2.027344 95.527344 0.898438 92.421875 C 0 89.578125 0 86.9375 0 81.65625 L 0 18.34375 C 0 13.0625 0 10.421875 0.898438 7.578125 C 2.027344 4.472656 4.472656 2.027344 7.578125 0.898438 C 10.421875 0 13.0625 0 18.34375 0 L 81.65625 0 C 86.9375 0 89.578125 0 92.421875 0.898438 C 95.527344 2.027344 97.972656 4.472656 99.101562 7.578125 C 100 10.421875 100 13.0625 100 18.34375 Z M 96.5 50 L 96.5 83.507812 C 96.5 87.246094 96.5 89.117188 95.863281 91.132812 C 95.0625 93.332031 93.332031 95.0625 91.132812 95.863281 C 89.117188 96.5 87.246094 96.5 83.507812 96.5 L 16.492188 96.5 C 12.753906 96.5 10.882812 96.5 8.867188 95.863281 C 6.667969 95.0625 4.9375 93.332031 4.136719 91.132812 C 3.5 89.117188 3.5 87.246094 3.5 83.507812 L 3.5 16.492188 C 3.5 12.753906 3.5 10.882812 4.136719 8.867188 C 4.9375 6.667969 6.667969 4.9375 8.867188 4.136719 C 10.882812 3.5 12.753906 3.5 16.492188 3.5 L 83.507812 3.5 C 87.246094 3.5 89.117188 3.5 91.132812 4.136719 C 93.332031 4.9375 95.0625 6.667969 95.863281 8.867188 C 96.5 10.882812 96.5 12.753906 96.5 16.492188 Z M 96.5 50 " fill="#ffffff" fill-rule="evenodd" />
+      </g>
+    </g>
+    
+
   <!-- Header Typography -->
-  <text x="135" y="68" class="font-mono title">ALGEBRA FACTORING STUDIO &amp; POLYNOMIAL TILES</text>
-  <text x="135" y="90" class="font-mono subtitle">Kinesthetic Quadratics, Factoring &amp; Polynomial Binomial Arrays</text>
-  <text x="135" y="112" class="font-mono badge-box">PACKAGING SPEC: 3x1x7U Gridfinity Storage Box with Dual-Stage Factoring Lid | TOTAL PIECES: 34</text>
+  <text x="215" y="60" class="font-mono title">ALGEBRA FACTORING STUDIO &amp; POLYNOMIAL TILES</text>
+  <text x="215" y="78" class="font-mono subtitle">Kinesthetic Quadratics, Factoring &amp; Polynomial Binomial Arrays</text>
+
+  <!-- Studio Continuum Ribbon -->
+  <text x="215.0" y="109.0" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">STUDIO CONTINUUM:</text>\n
+    <g transform="translate(323.0, 98.0)">
+      <rect x="0" y="0" width="70.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="35.0" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Ten-Frames</text>
+    </g>\n<text x="395.5" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(403.5, 98.0)">
+      <rect x="0" y="0" width="58.4" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="29.2" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Dominoes</text>
+    </g>\n<text x="464.4" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(472.4, 98.0)">
+      <rect x="0" y="0" width="41.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="20.5" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Clock</text>
+    </g>\n<text x="515.9" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(523.9, 98.0)">
+      <rect x="0" y="0" width="64.2" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="32.1" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Fractions</text>
+    </g>\n<text x="590.6" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(598.6, 98.0)">
+      <rect x="0" y="0" width="46.8" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="23.4" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Primes</text>
+    </g>\n<text x="647.9" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(655.9, 98.0)">
+      <rect x="0" y="0" width="75.8" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="37.9" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Probability</text>
+    </g>\n<text x="734.2" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(742.2, 98.0)">
+      <rect x="0" y="0" width="52.6" height="15" rx="3.5" fill="#ffffff" stroke="#ffffff" stroke-width="0.8" />
+      <text x="26.3" y="10.8" class="font-mono" font-size="7.5px" font-weight="700" text-anchor="middle" fill="#000000">Algebra</text>
+    </g>\n<text x="797.3" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(805.3, 98.0)">
+      <rect x="0" y="0" width="58.4" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="29.2" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Volvelle</text>
+    </g>\n<text x="866.2" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(874.2, 98.0)">
+      <rect x="0" y="0" width="41.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="20.5" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">SC-32</text>
+    </g>
 
   <!-- Top-Right SKU & Rev Badges -->
-  <g transform="translate(1025, 52)">
-    <rect x="0" y="0" width="180" height="30" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="90" y="20" class="font-mono badge-sku" text-anchor="middle">SKU: ALGB-01</text>
+  <g transform="translate(1025, 48)">
+    <rect x="0" y="0" width="180" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="90" y="19" class="font-mono badge-sku" text-anchor="middle">SKU: ALGB-01</text>
     
-    <rect x="0" y="36" width="180" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="90" y="55" class="font-mono badge-rev" text-anchor="middle">BUILD REV: a793ddd</text>
+    <rect x="0" y="34" width="180" height="26" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="90" y="52" class="font-mono badge-rev" text-anchor="middle">USER GUIDE</text>
   </g>
 
-  <!-- LEFT COLUMN: Component Inventory & Replacement Reference Table -->
-  <g transform="translate(35, 150)">
-    <rect x="0" y="0" width="700" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    
-    <rect x="0" y="0" width="700" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="20" y="22" class="font-mono section-hdr">COMPONENT SCHEMATIC INVENTORY &amp; REPLACEMENT CODES</text>
-    
-    <text x="20" y="52" class="font-mono th">#</text>
-    <text x="50" y="52" class="font-mono th">PART DESCRIPTION</text>
-    <text x="320" y="52" class="font-mono th">QTY</text>
-    <text x="375" y="52" class="font-mono th">MATERIAL / FINISH</text>
-    <text x="525" y="52" class="font-mono th">PART ID (REV)</text>
-    <text x="680" y="52" class="font-mono th" text-anchor="end">FEE</text>
-    <line x1="15" y1="60" x2="685" y2="60" stroke="#ffffff" stroke-width="1" />
+  <!-- COLUMN 1: WHAT IS THIS MANIPULATIVE? -->
+  <g transform="translate(35, 148)">
+    <rect x="0" y="0" width="405" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="405" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">1. WHAT IS THIS MANIPULATIVE?</text>
 
-    <circle cx="25" cy="76" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="80" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">1</text>
-    <text x="50" y="80" class="font-mono td">Quadratic Flat Tile (+x²)</text>
-    <text x="320" y="80" class="font-mono td" font-weight="700">1x</text>
-    <text x="375" y="80" class="font-mono td" fill="#cccccc">Green Silk PLA</text>
-    <text x="525" y="80" class="font-mono td-id">ALGB-ALGE-27be3b1</text>
-    <text x="680" y="80" class="font-mono td-price">$6.49</text>
-    <line x1="15" y1="88" x2="685" y2="88" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <!-- Headline -->
+    <text x="16" y="56" class="font-mono" font-size="11.5px" font-weight="700" fill="#ffffff">GEOMETRIC AREA MODEL. MULTIPLY BY DIMENSION.</text>
 
-    <circle cx="25" cy="104" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="108" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">2</text>
-    <text x="50" y="108" class="font-mono td">Quadratic Flat Tile (-x²)</text>
-    <text x="320" y="108" class="font-mono td" font-weight="700">1x</text>
-    <text x="375" y="108" class="font-mono td" fill="#cccccc">Purple Silk PLA</text>
-    <text x="525" y="108" class="font-mono td-id">ALGB-ALGE-34c80ce</text>
-    <text x="680" y="108" class="font-mono td-price">$6.49</text>
-    <line x1="15" y1="116" x2="685" y2="116" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <circle cx="25" cy="132" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="136" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">3</text>
-    <text x="50" y="136" class="font-mono td">Linear Rod Tiles (+x)</text>
-    <text x="320" y="136" class="font-mono td" font-weight="700">5x</text>
-    <text x="375" y="136" class="font-mono td" fill="#cccccc">Green Silk PLA</text>
-    <text x="525" y="136" class="font-mono td-id">ALGB-ALGE-2d21624</text>
-    <text x="680" y="136" class="font-mono td-price">$3.99</text>
-    <line x1="15" y1="144" x2="685" y2="144" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <circle cx="25" cy="160" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="164" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">4</text>
-    <text x="50" y="164" class="font-mono td">Linear Rod Tiles (-x)</text>
-    <text x="320" y="164" class="font-mono td" font-weight="700">5x</text>
-    <text x="375" y="164" class="font-mono td" fill="#cccccc">Purple Silk PLA</text>
-    <text x="525" y="164" class="font-mono td-id">ALGB-ALGE-2d21624</text>
-    <text x="680" y="164" class="font-mono td-price">$3.99</text>
-    <line x1="15" y1="172" x2="685" y2="172" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <circle cx="25" cy="188" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="192" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">5</text>
-    <text x="50" y="192" class="font-mono td">Constant Miniblocks (+1)</text>
-    <text x="320" y="192" class="font-mono td" font-weight="700">9x</text>
-    <text x="375" y="192" class="font-mono td" fill="#cccccc">Yellow Glow PLA</text>
-    <text x="525" y="192" class="font-mono td-id">ALGB-ALGE-76cc68a</text>
-    <text x="680" y="192" class="font-mono td-price">$2.49</text>
-    <line x1="15" y1="200" x2="685" y2="200" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <circle cx="25" cy="216" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="220" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">6</text>
-    <text x="50" y="220" class="font-mono td">Constant Miniblocks (-1)</text>
-    <text x="320" y="220" class="font-mono td" font-weight="700">9x</text>
-    <text x="375" y="220" class="font-mono td" fill="#cccccc">Red Glow PLA</text>
-    <text x="525" y="220" class="font-mono td-id">ALGB-ALGE-76cc68a</text>
-    <text x="680" y="220" class="font-mono td-price">$2.49</text>
-    <line x1="15" y1="228" x2="685" y2="228" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <circle cx="25" cy="244" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="248" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">7</text>
-    <text x="50" y="248" class="font-mono td">Factoring Corner L-Rails</text>
-    <text x="320" y="248" class="font-mono td" font-weight="700">2x</text>
-    <text x="375" y="248" class="font-mono td" fill="#cccccc">Blue-Gray PLA</text>
-    <text x="525" y="248" class="font-mono td-id">ALGB-ALGE-ac06e0d</text>
-    <text x="680" y="248" class="font-mono td-price">$4.99</text>
-    <line x1="15" y1="256" x2="685" y2="256" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <circle cx="25" cy="272" r="9" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="25" y="276" class="font-mono td" font-weight="700" text-anchor="middle" font-size="10px">8</text>
-    <text x="50" y="276" class="font-mono td">3x1 Storage Bin &amp; Stage Lid</text>
-    <text x="320" y="276" class="font-mono td" font-weight="700">1x</text>
-    <text x="375" y="276" class="font-mono td" fill="#cccccc">Matte Black PLA</text>
-    <text x="525" y="276" class="font-mono td-id">ALGB-ALGE-49cb192</text>
-    <text x="680" y="276" class="font-mono td-price">$13.50</text>
-    <line x1="15" y1="284" x2="685" y2="284" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
-
-    <rect x="15" y="415" width="670" height="46" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <circle cx="38" cy="438" r="12" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="38" y="443" class="font-mono badge-rev" text-anchor="middle" font-size="14px" fill="#ffffff">✓</text>
-    <text x="60" y="433" class="font-mono td" font-weight="700" fill="#ffffff">NO LOST PIECE LEFT BEHIND LIFETIME GUARANTEE</text>
-    <text x="60" y="449" class="font-mono subtitle" font-size="10px" fill="#e2e8f0">Need a single replacement tile? Order by Part ID at <tspan fill="#ffffff" font-weight="700">stackcalc.io/parts</tspan> or Etsy #09. 24h dispatch.</text>
-  </g>
-
-  <g transform="translate(750, 150)">
-    <rect x="0" y="0" width="415" height="305" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="415" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="20" y="22" class="font-mono section-hdr">PACKING BENCH QC CHECKLIST</text>
-
-    <g transform="translate(20, 62)">
-      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">30 math tiles + 2 corner rails verified (32 working components)</text>
-    </g>
-
-    <g transform="translate(20, 96)">
-      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">Lid factoring channel seats rods with 0.15mm slide tolerance</text>
-    </g>
-
-    <g transform="translate(20, 130)">
-      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">Snap-detent lid retention locks firmly for silent zero-rattle carry</text>
-    </g>
-
-    <g transform="translate(20, 164)">
-      <rect x="0" y="0" width="16" height="16" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-      <polyline points="3,8 7,12 13,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-      <text x="26" y="12" class="font-mono qc-item" font-size="10.5px">Under-floor inspection plaque verified: SKU ALGB-01 | REV a793ddd</text>
-    </g>
-
-    <g transform="translate(20, 215)">
-      <rect x="0" y="0" width="375" height="75" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="15" y="22" class="font-mono th" fill="#cccccc">CALIFORNIA LAB INSPECTION PASS</text>
-      <text x="15" y="42" class="font-mono td" font-size="10px">Inspector Stamp: <tspan fill="#ffffff" font-weight="700">[ QC-CALIF-01 PASSED ]</tspan></text>
-      <text x="15" y="60" class="font-mono td" font-size="10px">Dimensional Datum: <tspan fill="#cccccc">±0.05 mm Mitutoyo Calibrated</tspan></text>
-    </g>
-  </g>
-
-  <g transform="translate(750, 470)">
-    <rect x="0" y="0" width="415" height="155" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <rect x="0" y="0" width="415" height="28" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="15" y="18" class="font-mono th" fill="#ffffff">PEDAGOGICAL DESIGN INTEGRITY NOTICE</text>
-    
-    <text x="18" y="36" class="font-mono td" font-size="10.5px" fill="#ffffff">
-      <tspan x="18" dy="17">Pedagogical Note: Student tiles display pure</tspan>
-      <tspan x="18" dy="17">mathematical symbols (+x², -x, +1). All engineering</tspan>
-      <tspan x="18" dy="17">revisions are permanently archived on this companion</tspan>
-      <tspan x="18" dy="17">card.</tspan>
+    <!-- Concept principle text -->
+    <text x="16" y="76" class="font-mono" font-size="9.3px" fill="#ffffff">
+      <tspan x="16" dy="0" font-weight="400" fill="#ffffff">Quadratic equations are not abstract pencil symbols.</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">Polynomial tiles model multiplication geometrically:</tspan><tspan x="16" dy="15" font-weight="700" fill="#ffffff">   Area = Length × Width = (x + a)(x + b)</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">Arranging tiles into a solid rectangle proves that</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">factoring a trinomial is literally un-multiplying area!</tspan>
     </text>
+
+    <!-- Calibration Datum Box -->
+    <g transform="translate(14, 158)">
+      <rect x="0" y="0" width="377" height="72" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">CALIBRATED POLYNOMIAL DATUM</text>
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n
+    </g>
+
+    <!-- Lid Feature -->
+    <text x="16" y="252" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">DUAL-STAGE FACTORING LID &amp; L-RAILS</text>
+    <text x="16" y="270" class="font-mono" font-size="9.3px" fill="#cccccc">
+      <tspan x="16" dy="0">Slide the two L-rails into the lid's precision channels to</tspan><tspan x="16" dy="14">anchor the Cartesian origin. Align x-rods and unit tiles</tspan><tspan x="16" dy="14">flush against rails to read binomial factors instantly!</tspan>
+    </text>
+
+    <!-- Visual Diagram of Geometry / Stacking -->
+    <g transform="translate(14, 318)">
+      <rect x="0" y="0" width="377" height="144" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      
+      <text x="12" y="18" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">AREA MODEL: (x + 3)(x + 2) = x² + 5x + 6</text>
+      <line x1="45" y1="28" x2="45" y2="132" stroke="#ffffff" stroke-width="2.5" />
+      <line x1="45" y1="28" x2="200" y2="28" stroke="#ffffff" stroke-width="2.5" />
+      <text x="35" y="78" class="font-mono" font-size="9px" font-weight="700" text-anchor="middle" fill="#ffffff">x+2</text>
+      <text x="120" y="22" class="font-mono" font-size="9px" font-weight="700" text-anchor="middle" fill="#ffffff">x + 3</text>
+
+      <rect x="52" y="34" width="48" height="48" rx="2" fill="#000000" stroke="#ffffff" stroke-width="1.3" />
+      <text x="76" y="62" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#ffffff">+x²</text>
+
+      <rect x="104" y="34" width="13" height="48" rx="1.5" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <rect x="119" y="34" width="13" height="48" rx="1.5" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <rect x="134" y="34" width="13" height="48" rx="1.5" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="125" y="62" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">3x</text>
+
+      <rect x="52" y="86" width="48" height="13" rx="1.5" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <rect x="52" y="101" width="48" height="13" rx="1.5" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="76" y="104" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">2x</text>
+
+      <rect x="104" y="86" width="13" height="13" rx="1" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <rect x="119" y="86" width="13" height="13" rx="1" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <rect x="134" y="86" width="13" height="13" rx="1" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <rect x="104" y="101" width="13" height="13" rx="1" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <rect x="119" y="101" width="13" height="13" rx="1" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <rect x="134" y="101" width="13" height="13" rx="1" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <text x="125" y="106" class="font-mono" font-size="7.5px" font-weight="700" text-anchor="middle" fill="#ffffff">+6</text>
+
+      <text x="175" y="55" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">SOLID RECTANGLE</text>
+      <text x="175" y="70" class="font-mono" font-size="8px" fill="#cccccc">Zero gaps, zero overlaps</text>
+      <text x="175" y="85" class="font-mono" font-size="8px" fill="#cccccc">Linear: 3x + 2x = 5x</text>
+      <text x="175" y="100" class="font-mono" font-size="8px" fill="#cccccc">Constant: 3 × 2 = 6</text>
+      <text x="175" y="118" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">Un-multiplying area!</text>
+
+    </g>
   </g>
 
-  <g transform="translate(35, 640)">
-    <rect x="0" y="0" width="1190" height="110" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+  <!-- COLUMN 2: KIT PARTS INVENTORY -->
+  <g transform="translate(455, 148)">
+    <rect x="0" y="0" width="385" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="385" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">2. KIT PARTS INVENTORY (34 PIECES)</text>
+
+    <!-- Table Header -->
+    <text x="16" y="52" class="font-mono th">COMPONENT</text>
+    <text x="125" y="52" class="font-mono th">QTY</text>
+    <text x="160" y="52" class="font-mono th">SPEC / DIMENSION</text>
+    <text x="275" y="52" class="font-mono th">PALETTE COLOR</text>
+    <line x1="12" y1="58" x2="373" y2="58" stroke="#ffffff" stroke-width="1" />
+
     
-    <g transform="translate(25, 25)">
-      <text x="0" y="0" class="font-mono th" fill="#ffffff">STACKCALC ENGINEERING LABS</text>
-      <text x="0" y="18" class="font-mono footer-txt">Designed &amp; Manufactured in Mountain View, California, USA.</text>
-      <text x="0" y="32" class="font-mono footer-txt">100% Lead-Free, BPA-Free, Non-Toxic High-Impact Thermoplastic PLA/PETG.</text>
-    </g>
+    <text x="16" y="74" class="font-mono td" font-weight="700">Quadratic (+x²)</text>
+    <text x="125" y="74" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="160" y="74" class="font-mono td">35.00 × 35.00 mm (5U×5U)</text>
+    <text x="275" y="74" class="font-mono td" fill="#cccccc">Emerald Green</text>
+    <line x1="12" y1="80" x2="373" y2="80" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
-    <g transform="translate(480, 25)">
-      <text x="0" y="0" class="font-mono th" fill="#ffffff">ARCHIVAL COMPANION REFERENCE</text>
-      <text x="0" y="18" class="font-mono footer-txt">This card serves as your official kit manifest &amp; warranty registration.</text>
-      <text x="0" y="32" class="font-mono footer-txt">SIDE A: REPLACEMENT MANIFEST &amp; CAD SCHEMATIC | MONOCHROME WHITE LASER ABLATION</text>
-    </g>
+    <text x="16" y="97" class="font-mono td" font-weight="700">Quadratic (-x²)</text>
+    <text x="125" y="97" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="160" y="97" class="font-mono td">35.00 × 35.00 mm (5U×5U)</text>
+    <text x="275" y="97" class="font-mono td" fill="#cccccc">Royal Purple</text>
+    <line x1="12" y1="103" x2="373" y2="103" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
-    <g transform="translate(930, 25)">
-      <text x="0" y="0" class="font-mono th" fill="#ffffff">OFFICIAL PORTAL</text>
-      <text x="0" y="18" class="font-mono td-id" font-size="12px" fill="#ffffff">stackcalc.io/parts</text>
-      <text x="0" y="32" class="font-mono footer-txt">Direct Replacement Service</text>
+    <text x="16" y="120" class="font-mono td" font-weight="700">Linear Rod (+x)</text>
+    <text x="125" y="120" class="font-mono td" font-weight="700" fill="#ffffff">5x</text>
+    <text x="160" y="120" class="font-mono td">35.00 × 7.00 mm (5U×1U)</text>
+    <text x="275" y="120" class="font-mono td" fill="#cccccc">Emerald Green</text>
+    <line x1="12" y1="126" x2="373" y2="126" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="143" class="font-mono td" font-weight="700">Linear Rod (-x)</text>
+    <text x="125" y="143" class="font-mono td" font-weight="700" fill="#ffffff">5x</text>
+    <text x="160" y="143" class="font-mono td">35.00 × 7.00 mm (5U×1U)</text>
+    <text x="275" y="143" class="font-mono td" fill="#cccccc">Royal Purple</text>
+    <line x1="12" y1="149" x2="373" y2="149" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="166" class="font-mono td" font-weight="700">Constant (+1)</text>
+    <text x="125" y="166" class="font-mono td" font-weight="700" fill="#ffffff">9x</text>
+    <text x="160" y="166" class="font-mono td">7.00 × 7.00 mm (1U×1U)</text>
+    <text x="275" y="166" class="font-mono td" fill="#cccccc">Warm Gold</text>
+    <line x1="12" y1="172" x2="373" y2="172" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="189" class="font-mono td" font-weight="700">Constant (-1)</text>
+    <text x="125" y="189" class="font-mono td" font-weight="700" fill="#ffffff">9x</text>
+    <text x="160" y="189" class="font-mono td">7.00 × 7.00 mm (1U×1U)</text>
+    <text x="275" y="189" class="font-mono td" fill="#cccccc">Crimson Red</text>
+    <line x1="12" y1="195" x2="373" y2="195" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="212" class="font-mono td" font-weight="700">Corner L-Rails</text>
+    <text x="125" y="212" class="font-mono td" font-weight="700" fill="#ffffff">2x</text>
+    <text x="160" y="212" class="font-mono td">105.0 mm Cartesian Axis</text>
+    <text x="275" y="212" class="font-mono td" fill="#cccccc">Slate Gray</text>
+    <line x1="12" y1="218" x2="373" y2="218" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="235" class="font-mono td" font-weight="700">3x1 Storage Bin</text>
+    <text x="125" y="235" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="160" y="235" class="font-mono td">49.0 mm Height (7U)</text>
+    <text x="275" y="235" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
+    <line x1="12" y1="241" x2="373" y2="241" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="258" class="font-mono td" font-weight="700">Stage Lid</text>
+    <text x="125" y="258" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="160" y="258" class="font-mono td">Dual-Stage Factoring</text>
+    <text x="275" y="258" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
+    <line x1="12" y1="264" x2="373" y2="264" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+
+    <!-- Total Pieces Summary -->
+    <text x="16" y="334" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">TOTAL: 30 Math Tiles + 2 L-Rails + Storage Bin + Stage Lid = 34 Parts</text>
+
+    <!-- Palette Box -->
+    <g transform="translate(12, 350)">
+      <rect x="0" y="0" width="361" height="112" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">DUAL-COLOR SIGN CONVENTION (+ / -)</text>
+      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n
     </g>
   </g>
 
+  <!-- COLUMN 3: WHY KEEP THIS REFERENCE CARD? -->
+  <g transform="translate(855, 148)">
+    <rect x="0" y="0" width="370" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="370" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">3. WHY KEEP THIS REFERENCE CARD?</text>
+
+    <!-- Reason 1: No Lost Piece Guarantee -->
+    <g transform="translate(14, 48)">
+      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ NO LOST PIECE LEFT BEHIND</text>
+      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+        <tspan x="12" dy="0">Classroom manipulatives get lost. Never abandon</tspan>
+        <tspan x="12" dy="13">an incomplete set! Every individual math component</tspan>
+        <tspan x="12" dy="13">is permanently stocked for single replacements.</tspan>
+      </text>
+      <rect x="12" y="84" width="318" height="28" rx="4" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <text x="171" y="98" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">Scan back QR or visit stackcalc.io/parts</text>
+      <text x="171" y="108" class="font-mono" font-size="8px" text-anchor="middle" fill="#cccccc">Order individual replacement pieces anytime</text>
+    </g>
+
+    <!-- Reason 2: Self-Auditing Sockets -->
+    <g transform="translate(14, 186)">
+      <rect x="0" y="0" width="342" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ 10-SECOND SELF-CHECKING PACK-UP</text>
+      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+        <tspan x="12" dy="0">Pack-up is a built-in math game! Lay the two x² tiles flat on</tspan><tspan x="12" dy="13">the box floor, slot the 10 x-rods in side bays, and stack the 18</tspan><tspan x="12" dy="13">unit cubes in center bays. L-rails snap securely into lid retention.</tspan><tspan x="12" dy="13">Lid latches firmly for silent, rattle-free carry.</tspan>
+      </text>
+    </g>
+
+    <!-- Reason 3: Quick Lesson Guide -->
+    <g transform="translate(14, 334)">
+      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ HANDS-ON TUTORIAL ON REVERSE</text>
+      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+        <tspan x="12" dy="0">Flip this card over for a complete step-by-step</tspan>
+        <tspan x="12" dy="13">hands-on lesson with concrete numbers, stage</tspan>
+        <tspan x="12" dy="13">arrangements, calculator cross-references, and</tspan>
+        <tspan x="12" dy="13">The Big Aha! conceptual breakthrough!</tspan>
+        <tspan x="12" dy="16" font-weight="700" fill="#ffffff">Keep this card stored inside the box lid!</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(35, 635)">
+    <rect x="0" y="0" width="1190" height="115" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    
+    <g transform="translate(25, 24)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
+      <text x="0" y="18" class="font-mono footer-txt">Designed in Mountain View, California, USA • Non-Toxic BPA-Free.</text>
+      <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates (10x / 30x Stations): stackcalc.io/schools</text>
+    </g>
+
+    <g transform="translate(450, 24)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">FUNDAMENTAL THEOREM OF ALGEBRA</text>
+      <text x="0" y="18" class="font-mono footer-txt">Every degree-n polynomial has exactly n complex roots counted with multiplicity.</text>
+      <text x="0" y="32" class="font-mono footer-txt">Title I &amp; IV STEM Grant Eligible • UNSPSC 60101700 • SIDE A: IN-BOX USER COMPANION GUIDE | MONOCHROME WHITE LASER ABLATION</text>
+    </g>
+
+    <g transform="translate(980, 24)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">OFFICIAL REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#ffffff">stackcalc.io/parts</text>
+      <text x="0" y="32" class="font-mono footer-txt">Order individual replacement pieces anytime</text>
+    </g>
+  </g>
+  <metadata id="stackcalc-book-macro-manifest" data-kit="ALGB-01">
+    <stackcalc-macros>
+      <macro-ref token="{{blocks:algebra_factoring_area}}" kind="blocks" id="algebra_factoring_area" png="algebra_factoring_area.png" svg="algebra_factoring_area.svg" scene="Education/tools/generate_book_diagrams.py::book_algebra_factoring_area.scad" scad="book_algebra_factoring_area.scad" scad-sources="Education/scad/algebra_factoring_box.scad,Education/scad/algebra_factoring_parts.scad" stls="Education/build/stl/components/algebra_box_body.stl,Education/build/stl/components/algebra_stage_rail_long.stl,Education/build/stl/components/algebra_tile_pos_x2.stl,Education/build/stl/components/algebra_tile_pos_x_1.stl,Education/build/stl/components/algebra_tile_pos_1_1.stl" />
+      <macro-ref token="{{blocks:algebra_difference_of_squares}}" kind="blocks" id="algebra_difference_of_squares" png="algebra_difference_of_squares.png" svg="algebra_difference_of_squares.svg" scene="Education/tools/generate_book_diagrams.py::book_algebra_difference_of_squares.scad" scad="book_algebra_difference_of_squares.scad" scad-sources="Education/scad/algebra_factoring_box.scad,Education/scad/algebra_factoring_parts.scad" stls="Education/build/stl/components/algebra_box_body.stl,Education/build/stl/components/algebra_stage_rail_long.stl,Education/build/stl/components/algebra_tile_pos_x2.stl,Education/build/stl/components/algebra_tile_pos_x_1.stl,Education/build/stl/components/algebra_tile_neg_x_1.stl,Education/build/stl/components/algebra_tile_neg_1_1.stl" />
+      <macro-ref token="{{blocks:algebra_lframe_grid_hero}}" kind="blocks" id="algebra_lframe_grid_hero" png="algebra-lframe-grid-hero.png" svg="algebra-lframe-grid-hero.png" scene="Tools/rendering/render_concept_and_craftsmanship_stills.py::render_algebra_lframe_grid_hero" scad="Education/scad/algebra_factoring_parts.scad" scad-sources="Education/scad/algebra_factoring_box.scad,Education/scad/algebra_factoring_parts.scad" stls="scratch/stl/algebra_stage_base.stl,scratch/stl/algebra_stage_height.stl,scratch/stl/algebra_x2_flat.stl,scratch/stl/algebra_x_rod.stl,scratch/stl/algebra_unit_tile.stl" />
+      <macro-ref token="{{blocks:algebra_boxes_hero}}" kind="blocks" id="algebra_boxes_hero" png="algebra-boxes-hero.png" svg="algebra-boxes-hero.png" scene="Tools/rendering/render_product_stills.py::render_algebra_boxes" scad="Education/scad/algebra_factoring_box.scad" scad-sources="Education/scad/algebra_factoring_box.scad,Education/scad/algebra_factoring_parts.scad" stls="scratch/stl/education/algebra_factoring_box.stl,scratch/stl/algebra_stage_base.stl,scratch/stl/algebra_tiles.stl" />
+      <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{blocks:sc32_hero_keynote}}" kind="blocks" id="sc32_hero_keynote" png="sc32-hero-keynote.png" svg="sc32-hero-keynote.png" scene="Tools/rendering/render_product_stills.py::render_sc32_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{seq:refcard_algb01_ex1}}" res-token="{{res:refcard_algb01_ex1}}" stack-token="{{res:refcard_algb01_ex1:stack}}" kind="sequence" id="refcard_algb01_ex1" model="sc32" expanded-seq="4 [ENTER] 2 [+] 4 [ENTER] 3 [+] [×]" res="42" stack="T:0|Z:0|Y:0|X:42" />
+      <macro-ref token="{{seq:refcard_algb01_ex2}}" res-token="{{res:refcard_algb01_ex2}}" stack-token="{{res:refcard_algb01_ex2:stack}}" kind="sequence" id="refcard_algb01_ex2" model="sc32" expanded-seq="[↱] [POLY] 1 [A] 0 [B] 4 [+/-] [C] 0 [D] [EXEC] [RCL] 1 [RCL] 5" res="2" stack="T:-2|Z:0|Y:-2|X:2" />
+      <macro-ref token="{{seq:refcard_algb01_ex3}}" res-token="{{res:refcard_algb01_ex3}}" stack-token="{{res:refcard_algb01_ex3:stack}}" kind="sequence" id="refcard_algb01_ex3" model="sc32" expanded-seq="[↱] [POLY] 1 [A] 5 [B] 6 [C] 0 [D] [EXEC] [RCL] 1 [RCL] 3" res="-2" stack="T:-3|Z:0|Y:-3|X:-2" />
+      <macro-ref token="{{icon:button_algebra}}" kind="icon" id="button_algebra" svg="Education/scad/lib/icons/button_algebra.svg" scad="Education/scad/algebra_factoring_box.scad" key="POLY" model="sc32" />
+    </stackcalc-macros>
+  </metadata>
 </svg>

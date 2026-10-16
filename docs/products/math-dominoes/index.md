@@ -35,7 +35,7 @@ hide:
         "@type": "Offer",
         "url": "https://www.stackcalc.io/products/math-dominoes/",
         "priceCurrency": "USD",
-        "price": "29.00",
+        "price": "38.00",
         "priceValidUntil": "2027-12-31",
         "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
@@ -44,22 +44,6 @@ hide:
           "name": "StackCalc"
         }
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "28",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Elena M., 1st & 2nd Grade Math Interventionist"},
-          "datePublished": "2026-09-14",
-          "reviewBody": "The doubling lid is pure pedagogical genius. Students match doubles directly into the molded sockets, reinforcing 1+1 through 6+6 with zero paper worksheets. The 12-frame tray with the 10-divider makes bridging tens effortless.",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
-        }
-      ],
       "audience": {
         "@type": "EducationalAudience",
         "educationalRole": "student",
@@ -113,7 +97,7 @@ hide:
           "name": "What is the single-tile replacement guarantee?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Every component is stamped with an archival Git tracking ID on the companion Reference Card. If a student misplaces any individual tile, single replacement tiles can be ordered anytime for $2.25 with zero need to purchase a whole new set."
+            "text": "Every component is stamped with an archival Git tracking ID on the companion Reference Card. If a student misplaces any individual tile, single replacement tiles can be ordered anytime for $2.49 with zero need to purchase a whole new set."
           }
         }
       ]
@@ -141,10 +125,6 @@ hide:
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
       <div class="ec-gallery-main">
-        <div class="ec-gallery-badge-overlay">
-          <span class="ec-pill ec-pill-category">Grades Pre-K&ndash;4</span>
-          <span class="ec-pill ec-pill-instock">&bull; In Stock &bull; Batch 001</span>
-        </div>
         <img id="main-product-image" src="../../assets/renders/etsy/dominoes-studio-hero-square.png" alt="StackCalc Math Domino Studio - 30 Miniblock Double-Six Dominoes in 3x1 Gridfinity Box" loading="eager">
       </div>
 
@@ -191,23 +171,17 @@ hide:
 
     <!-- Right Column: Buy Box & Product Info -->
     <div class="ec-buybox">
-      <div class="ec-pill-group">
-        <span class="ec-pill ec-pill-category">Early Numeracy</span>
-        <span class="ec-pill ec-pill-instock">&check; 3-in-1 Studio System</span>
-      </div>
-
       <h1 class="ec-product-title">Math Domino Studio &amp; 12-Frame Set</h1>
 
-      <!-- Social Proof & Review Score -->
+      <!-- Educational Architecture & Tactile Standard -->
       <div class="flex items-center gap-2 mb-3">
-        <div class="flex text-amber-400 text-sm">★★★★★</div>
-        <span class="text-xs font-semibold text-gray-200">4.9 / 5.0</span>
-        <span class="text-xs text-gray-400">&bull; 28 Educator Reviews</span>
-        <span class="text-xs text-cyan-400 font-medium ml-2">&check; Verified Physical Print</span>
+        <span class="text-xs font-mono font-semibold text-cyan-400">PEDAGOGICAL STANDARD</span>
+        <span class="text-xs text-gray-400">&bull; 12-Frame Regrouping &amp; Doubling Lid</span>
+        <span class="text-xs text-emerald-400 font-medium ml-2">&check; 42mm Gridfinity Compliant</span>
       </div>
 
       <div class="ec-price-box">
-        <span class="ec-price-current">$29.00</span>
+        <span class="ec-price-current">$38.00</span>
         <span class="ec-shipping-note">&check; Free US Tracked Shipping &bull; Batch 001</span>
       </div>
 
@@ -268,7 +242,7 @@ hide:
       <!-- Action Buttons -->
       <div class="ec-actions-row">
         <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-          Order on Etsy ($29.00) ↗
+          Order on Etsy ($38.00) ↗
         </a>
         <a href="#downloads" class="ec-btn-secondary">
           Download Free 3MF / STLs &darr;
@@ -278,16 +252,16 @@ hide:
       <!-- Trust Badges -->
       <div class="ec-trust-strip">
         <div class="ec-trust-item">
+          <span class="ec-trust-icon">&plusmn;</span>
+          <span class="ec-trust-text">&plusmn;0.05mm Calibrated &bull; Non-Toxic Biopolymer</span>
+        </div>
+        <div class="ec-trust-item">
           <span class="ec-trust-icon">&check;</span>
-          <span class="ec-trust-text">Common Core &bull; TEKS Aligned</span>
+          <span class="ec-trust-text">Anti-Heartbreak $2.49 Part Refills</span>
         </div>
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&circlearrowright;</span>
-          <span class="ec-trust-text">100% Non-Toxic Cornstarch PLA</span>
-        </div>
-        <div class="ec-trust-item">
-          <span class="ec-trust-icon">&star;</span>
-          <span class="ec-trust-text">$2.25 Single-Tile Replacement</span>
+          <span class="ec-trust-icon">&hearts;</span>
+          <span class="ec-trust-text">30-Day Risk-Free In-Home Trial</span>
         </div>
       </div>
 
@@ -306,7 +280,7 @@ hide:
         For forty years, early math education has been caught between two false choices: flimsy blow-molded yellow plastic toys with loose tolerances and sharp burrs, or disembodied flat glass screens that strip weight, friction, and spatial muscle memory from developing minds.
       </p>
       <p class="ec-manifesto-p">
-        At StackCalc, we reject throwaway plastic culture. Every tile, detent, and frame is drafted with <strong>0.18mm mechanical tolerances</strong>, molded in high-density matte biopolymers, and keyed into the open Gridfinity architecture. When a classroom loses a tile, you don't throw away the kit&mdash;our archival tracking cards provide <strong>direct single-piece replacements for $2.25</strong>. Real weight. Crisp mechanical clicks. Concrete mathematical intuition that endures.
+        At StackCalc, we reject throwaway plastic culture. Every tile, detent, and frame is drafted with <strong>0.18mm mechanical tolerances</strong>, molded in high-density matte biopolymers, and keyed into the open Gridfinity architecture. When a classroom loses a tile, you don't throw away the kit&mdash;our archival tracking cards provide <strong>direct single-piece replacements for $2.49</strong>. Real weight. Crisp mechanical clicks. Concrete mathematical intuition that endures.
       </p>
 
       <div class="ec-manifesto-stats">
@@ -323,7 +297,7 @@ hide:
           <span class="ec-stat-label">Non-Toxic Bio-Polymers</span>
         </div>
         <div class="ec-manifesto-stat">
-          <span class="ec-stat-num">$2.25</span>
+          <span class="ec-stat-num">$2.49</span>
           <span class="ec-stat-label">Single-Piece Archival Care</span>
         </div>
       </div>
@@ -427,65 +401,65 @@ hide:
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
 
-      <!-- 1. CAD Kinematics -->
+      <!-- 1. Lesson 1: Doubles Anchors -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
-          <video controls playsinline preload="metadata" poster="../../assets/renders/ten-frames-real-front-badged-square.png">
-            <source src="/assets/videos/ten-frames-assembly.mp4" type="video/mp4">
+          <video controls playsinline preload="metadata" poster="../../assets/renders/dominoes-studio-hero.png">
+            <source src="/assets/videos/math-dominoes-lesson-doubles.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-cyan-500/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">1. CAD KINEMATICS</span>
+          <span class="absolute top-3 left-3 bg-cyan-500/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">1. CURRICULUM LESSON 01</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Gridfinity 3x1 Mechanics</h3>
-            <p class="text-xs text-slate-400">Exploded 3D view showing 3x1x7U bin body, 12-frame desktop tray, and stackable doubling lid with 0.18mm compliant snap detents.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">Doubles Anchors of Mental Math</h3>
+            <p class="text-xs text-slate-400">Docking doubles tiles [1|1] through [6|6] into lid sockets to establish mental keystones (2, 4, 6, 8, 10, 12) for rapid mental calculation.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-cyan-400 flex items-center justify-between">
-            <span>60 FPS Cycles Render</span>
-            <span>0.18mm Snap Detents</span>
+            <span>CCSS 1.OA.C.6</span>
+            <span>6 + 6 = 12 Anchor</span>
           </div>
         </div>
       </div>
 
-      <!-- 2. Unboxing Experience -->
+      <!-- 2. Lesson 2: Near-Doubles Fluency -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
-          <video controls playsinline preload="metadata" poster="../../assets/renders/ten-frames-real-front-badged-square.png">
-            <source src="/assets/videos/ten-frames-unboxing.mp4" type="video/mp4">
+          <video controls playsinline preload="metadata" poster="../../assets/renders/dominoes-studio-hero.png">
+            <source src="/assets/videos/math-dominoes-lesson-near-doubles.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. UNBOXING EXPERIENCE</span>
+          <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. CURRICULUM LESSON 02</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Unboxing Experience</h3>
-            <p class="text-xs text-slate-400">Opening the crush-proof mailer box to reveal the laser-engraved reference card resting on top of the rattle-free 30-tile domino caddy.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">Near-Doubles Fluency (+1 / -1)</h3>
+            <p class="text-xs text-slate-400">Comparing [6|6] with adjacent [6|7] in the box well to solve 6 + 7 = (6 + 6) + 1 = 13, eliminating finger counting permanently.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-amber-300 flex items-center justify-between">
-            <span>135x90mm Card</span>
-            <span>Zero Plastic Wrap</span>
+            <span>CCSS 2.OA.B.2</span>
+            <span>(6 + 6) + 1 = 13</span>
           </div>
         </div>
       </div>
 
-      <!-- 3. Classroom Lesson in Action -->
+      <!-- 3. Kinematic Tray & Lid Architecture -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
-          <video controls playsinline preload="metadata" poster="../../assets/renders/ten-frames-real-angle-badged-square.png">
-            <source src="/assets/videos/ten-frames-lesson.mp4" type="video/mp4">
+          <video controls playsinline preload="metadata" poster="../../assets/renders/dominoes-studio-hero.png">
+            <source src="/assets/videos/dice-spinner-lesson-sum-dist.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. DOUBLES IN ACTION</span>
+          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. SUM DISTRIBUTION</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Doubles Addition &amp; Regrouping</h3>
-            <p class="text-xs text-slate-400">Elementary students matching doubles tiles, bridging through 10 on the 12-frame tray, and verifying results on the SC-6 calculator.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">Discrete Sum Combinations</h3>
+            <p class="text-xs text-slate-400">Mapping the 28-tile sum distribution from 0 to 12, discovering why sum 6 and sum 7 occur with peak frequency across the set.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-emerald-300 flex items-center justify-between">
-            <span>Early Numeracy</span>
-            <span>Self-Correcting</span>
+            <span>28 Distinct Tiles</span>
+            <span>Triangular Frequencies</span>
           </div>
         </div>
       </div>
@@ -498,7 +472,7 @@ hide:
         <img src="/assets/reference_cards/reference_card_DOMI-01_laser.png" alt="DOMI-01 Card" class="w-24 h-auto rounded border border-slate-700 shadow" />
         <div>
           <h4 class="text-sm font-bold text-slate-100">Archival 2-Sided Reference Card (135&times;90mm)</h4>
-          <p class="text-xs text-slate-400">Included inside every box. Scan Side B to access the full demonstration video suite or inspect Side A for replacement Part IDs and anti-arbitrage rates ($2.25/tile).</p>
+          <p class="text-xs text-slate-400">Included inside every box. Scan Side B to access the full demonstration video suite or inspect Side A for replacement Part IDs and anti-arbitrage rates ($2.49/tile).</p>
         </div>
       </div>
       <div class="flex flex-wrap gap-2">
@@ -740,7 +714,7 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$39.00</span>
+            <span class="cross-sell-price">$49.00</span>
             <span class="text-xs font-mono text-cyan-400">Grades K&ndash;5</span>
           </div>
           <a href="/products/sc6-elementary/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
@@ -760,7 +734,7 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$16.00</span>
+            <span class="cross-sell-price">$36.00</span>
             <span class="text-xs font-mono text-amber-400">Place Value</span>
           </div>
           <a href="/products/ten-frames/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
@@ -896,10 +870,10 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-700/60 text-sm">
         <strong class="text-emerald-400 flex items-center gap-2 mb-1">
-          <span>&#9874;</span> "No Lost Piece Left Behind" $2.25 Replacement Guarantee
+          <span>&#9874;</span> "No Lost Piece Left Behind" $2.49 Replacement Guarantee
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          Classrooms see active daily use! If a student misplaces an individual domino, don't buy an entire new set. Order single replacement tiles using the Part ID on the companion card for just $2.25.
+          Classrooms see active daily use! If a student misplaces an individual domino, don't buy an entire new set. Order single replacement tiles using the Part ID on the companion card for just $2.49.
         </p>
       </div>
 

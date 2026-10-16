@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 820" width="1260" height="820">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', monospace; }
+      .title { font-size: 22px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
+      .subtitle { font-size: 13px; font-weight: 400; fill: #475569; }
+      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
+      .badge-box { font-size: 11px; font-weight: 400; fill: #64748b; }
+      .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
+      .th { font-size: 10px; font-weight: 700; fill: #475569; text-transform: uppercase; }
+      .td { font-size: 10px; font-weight: 400; fill: #0f172a; }
+      .td-id { font-size: 9.5px; font-weight: 700; fill: #0284c7; }
+      .td-price { font-size: 10px; font-weight: 700; fill: #059669; text-anchor: end; }
+      .footer-txt { font-size: 9.5px; font-weight: 400; fill: #475569; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1260" height="820" fill="#ffffff" />
+  <rect x="15" y="15" width="1230" height="790" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+  <rect x="25" y="25" width="1210" height="770" rx="8" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+
+  <rect x="35" y="35" width="1190" height="100" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.2" />
+  <g transform="translate(55, 52)">
+    <rect x="0" y="0" width="65" height="65" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.4" />
+    <rect x="12" y="14" width="41" height="6" rx="2" fill="#0f172a" />
+    <rect x="16" y="24" width="33" height="6" rx="2" fill="#0f172a" opacity="0.85" />
+    <rect x="20" y="34" width="25" height="6" rx="2" fill="#0f172a" opacity="0.70" />
+    <rect x="24" y="44" width="17" height="6" rx="2" fill="#0f172a" opacity="0.55" />
+  </g>
+
+  <text x="135" y="66" class="font-mono title">PRIME FACTOR STUDIO — PACKING BENCH &amp; QC SPEC</text>
+  <text x="135" y="88" class="font-mono subtitle">Box Floor Layout, Pack-Up Verification &amp; Parts Replacement Manifest</text>
+  <text x="135" y="110" class="font-mono badge-box">WAREHOUSE FULFILLMENT &amp; PACKING BENCH REFERENCE • REV a793ddd • 3x1x13U Modular Storage Box with 84.0mm Waterline &amp; 12-Socket Lid Tray</text>
+
+  <g transform="translate(1025, 52)">
+    <rect x="0" y="0" width="180" height="30" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="90" y="20" class="font-mono badge-sku" text-anchor="middle">SKU: PRIME-01-PACK</text>
+    <rect x="0" y="36" width="180" height="28" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2" />
+    <text x="90" y="55" class="font-mono badge-rev" text-anchor="middle">REV a793ddd</text>
+  </g>
+
+  <!-- Left: Parts Table -->
+  <g transform="translate(35, 150)">
+    <rect x="0" y="0" width="765" height="475" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="765" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">PACKING BENCH MANIFEST &amp; REFILL REPLACEMENT PRICING</text>
+    <text x="16" y="52" class="font-mono th">#</text>
+    <text x="45" y="52" class="font-mono th">COMPONENT DESCRIPTION</text>
+    <text x="285" y="52" class="font-mono th">QTY</text>
+    <text x="340" y="52" class="font-mono th">COLOR / SPEC</text>
+    <text x="490" y="52" class="font-mono th">CONTENT-ADDRESSED ID</text>
+    <text x="745" y="52" class="font-mono th" text-anchor="end">REFILL</text>
+    <line x1="12" y1="58" x2="753" y2="58" stroke="#cbd5e1" stroke-width="1" />
+
+    <circle cx="21" cy="71" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="74" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">1</text>
+    <text x="45" y="74" class="font-mono td" font-weight="700">Prime Block [2] (1U = 7.00mm)</text>
+    <text x="285" y="74" class="font-mono td" font-weight="700">29x</text>
+    <text x="340" y="74" class="font-mono td">Blue</text>
+    <text x="490" y="74" class="font-mono td-id">PRIM-BLCK-02</text>
+    <text x="745" y="74" class="font-mono td-price">$2.49</text>
+    <line x1="12" y1="80" x2="753" y2="80" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="95" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="98" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">2</text>
+    <text x="45" y="98" class="font-mono td" font-weight="700">Prime Block [3] (1.58U = 11.09mm)</text>
+    <text x="285" y="98" class="font-mono td" font-weight="700">17x</text>
+    <text x="340" y="98" class="font-mono td">Gold</text>
+    <text x="490" y="98" class="font-mono td-id">PRIM-BLCK-03</text>
+    <text x="745" y="98" class="font-mono td-price">$2.49</text>
+    <line x1="12" y1="104" x2="753" y2="104" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="119" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="122" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">3</text>
+    <text x="45" y="122" class="font-mono td" font-weight="700">Prime Block [5] (2.32U = 16.25mm)</text>
+    <text x="285" y="122" class="font-mono td" font-weight="700">8x</text>
+    <text x="340" y="122" class="font-mono td">Classic White</text>
+    <text x="490" y="122" class="font-mono td-id">PRIM-BLCK-05</text>
+    <text x="745" y="122" class="font-mono td-price">$2.49</text>
+    <line x1="12" y1="128" x2="753" y2="128" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="143" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="146" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">4</text>
+    <text x="45" y="146" class="font-mono td" font-weight="700">Prime Block [7] (2.81U = 19.65mm)</text>
+    <text x="285" y="146" class="font-mono td" font-weight="700">4x</text>
+    <text x="340" y="146" class="font-mono td">Slate Gray</text>
+    <text x="490" y="146" class="font-mono td-id">PRIM-BLCK-07</text>
+    <text x="745" y="146" class="font-mono td-price">$2.49</text>
+    <line x1="12" y1="152" x2="753" y2="152" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="167" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="170" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">5</text>
+    <text x="45" y="170" class="font-mono td" font-weight="700">Prime Block [11] (3.46U = 24.21mm)</text>
+    <text x="285" y="170" class="font-mono td" font-weight="700">3x</text>
+    <text x="340" y="170" class="font-mono td">Gold</text>
+    <text x="490" y="170" class="font-mono td-id">PRIM-BLCK-11</text>
+    <text x="745" y="170" class="font-mono td-price">$2.99</text>
+    <line x1="12" y1="176" x2="753" y2="176" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="191" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="194" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">6</text>
+    <text x="45" y="194" class="font-mono td" font-weight="700">Prime Block [13] (3.70U = 25.90mm)</text>
+    <text x="285" y="194" class="font-mono td" font-weight="700">3x</text>
+    <text x="340" y="194" class="font-mono td">Classic White</text>
+    <text x="490" y="194" class="font-mono td-id">PRIM-BLCK-13</text>
+    <text x="745" y="194" class="font-mono td-price">$2.99</text>
+    <line x1="12" y1="200" x2="753" y2="200" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="215" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="218" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">7</text>
+    <text x="45" y="218" class="font-mono td" font-weight="700">Prime Block [17] (4.09U = 28.61mm)</text>
+    <text x="285" y="218" class="font-mono td" font-weight="700">2x</text>
+    <text x="340" y="218" class="font-mono td">Slate Gray</text>
+    <text x="490" y="218" class="font-mono td-id">PRIM-BLCK-17</text>
+    <text x="745" y="218" class="font-mono td-price">$2.99</text>
+    <line x1="12" y1="224" x2="753" y2="224" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="239" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="242" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">8</text>
+    <text x="45" y="242" class="font-mono td" font-weight="700">Prime Block [19] (4.25U = 29.73mm)</text>
+    <text x="285" y="242" class="font-mono td" font-weight="700">2x</text>
+    <text x="340" y="242" class="font-mono td">Gold</text>
+    <text x="490" y="242" class="font-mono td-id">PRIM-BLCK-19</text>
+    <text x="745" y="242" class="font-mono td-price">$2.99</text>
+    <line x1="12" y1="248" x2="753" y2="248" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="263" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="266" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">9</text>
+    <text x="45" y="266" class="font-mono td" font-weight="700">Prime Block [23] (4.52U = 31.67mm)</text>
+    <text x="285" y="266" class="font-mono td" font-weight="700">2x</text>
+    <text x="340" y="266" class="font-mono td">Slate Gray</text>
+    <text x="490" y="266" class="font-mono td-id">PRIM-BLCK-23</text>
+    <text x="745" y="266" class="font-mono td-price">$2.99</text>
+    <line x1="12" y1="272" x2="753" y2="272" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="287" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="290" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">10</text>
+    <text x="45" y="290" class="font-mono td" font-weight="700">3x1x13U Storage Bin &amp; Stage</text>
+    <text x="285" y="290" class="font-mono td" font-weight="700">1x</text>
+    <text x="340" y="290" class="font-mono td">Classic White</text>
+    <text x="490" y="290" class="font-mono td-id">GEN-PRIM-3bf2795</text>
+    <text x="745" y="290" class="font-mono td-price">$16.50</text>
+    <line x1="12" y1="296" x2="753" y2="296" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="311" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="314" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">11</text>
+    <text x="45" y="314" class="font-mono td" font-weight="700">12-Socket Comparison Stage Lid</text>
+    <text x="285" y="314" class="font-mono td" font-weight="700">1x</text>
+    <text x="340" y="314" class="font-mono td">Classic White</text>
+    <text x="490" y="314" class="font-mono td-id">GEN-PRIM-LID01</text>
+    <text x="745" y="314" class="font-mono td-price">$7.50</text>
+    <line x1="12" y1="320" x2="753" y2="320" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="340" class="font-mono" font-size="9.5px" font-weight="700" fill="#0f172a">TOTAL: 72 VERIFIED WORKING COMPONENTS</text>
+    <g transform="translate(12, 355)">
+      <rect x="0" y="0" width="741" height="105" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.2" />
+      <text x="16" y="24" class="font-mono" font-size="11.5px" font-weight="700" fill="#166534">WAREHOUSE NO LOST PIECE GUARANTEE</text>
+      <text x="16" y="44" class="font-mono" font-size="9.5px" fill="#475569">
+        <tspan x="16" dy="0">Individual replacement blocks are permanently stocked in Mountain View, California.</tspan>
+        <tspan x="16" dy="15">Anti-arbitrage pricing: Order single replacement components anytime at stackcalc.io/parts.</tspan>
+        <tspan x="16" dy="16">Never retire an educational classroom kit due to a single misplaced component.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Right: QC Checks & Waterline Notice -->
+  <g transform="translate(815, 150)">
+    <rect x="0" y="0" width="410" height="475" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="410" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">PACKING QC &amp; WATERLINE PROTOCOL</text>
+
+    <g transform="translate(14, 48)">
+      <rect x="0" y="0" width="382" height="142" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1" />
+      <text x="12" y="20" class="font-mono section-hdr">FINAL BENCH INSPECTION</text>
+
+      <text x="14" y="40" class="font-mono" font-size="10px" font-weight="700" fill="#16a34a">✓</text>
+      <text x="28" y="40" class="font-mono" font-size="8.8px" fill="#1e293b">All 70 prime blocks verified: 29x[2] through 2x[23]</text>
+
+      <text x="14" y="64" class="font-mono" font-size="10px" font-weight="700" fill="#16a34a">✓</text>
+      <text x="28" y="64" class="font-mono" font-size="8.8px" fill="#1e293b">Harmonized 1U log datum: h(2)=7.00mm, K=23.2535 mm/dec</text>
+
+      <text x="14" y="88" class="font-mono" font-size="10px" font-weight="700" fill="#16a34a">✓</text>
+      <text x="28" y="88" class="font-mono" font-size="8.8px" fill="#1e293b">Floor sockets labeled with tower products (2048, 2187, 1875, 2401...)</text>
+
+      <text x="14" y="112" class="font-mono" font-size="10px" font-weight="700" fill="#16a34a">✓</text>
+      <text x="28" y="112" class="font-mono" font-size="8.8px" fill="#1e293b">12-socket stage lid latches firmly for quiet carry</text>
+
+    </g>
+
+    <g transform="translate(14, 202)">
+      <rect x="0" y="0" width="382" height="130" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.2" />
+      <rect x="0" y="0" width="382" height="26" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1" />
+      <text x="12" y="17" class="font-mono" font-size="10px" font-weight="700" fill="#0369a1">PACKING WATERLINE NOTICE</text>
+      <text x="12" y="44" class="font-mono" font-size="8.8px" fill="#0c4a6e">
+        <tspan x="12" dy="0">SELF-CHECKING PACK-UP WATERLINE: Seat all 70 blocks into the 12 floor sockets so all 12 towers level off at the 84.0mm summit waterline before snapping the lid shut.</tspan>
+      </text>
+    </g>
+
+    <g transform="translate(14, 345)">
+      <rect x="0" y="0" width="382" height="115" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="18" class="font-mono th" fill="#475569">CALIFORNIA LAB QC AUDIT</text>
+      <text x="12" y="38" class="font-mono" font-size="13px" font-weight="700" fill="#166534">INSPECTION: PASSED</text>
+      <text x="12" y="56" class="font-mono" font-size="8.8px" fill="#0284c7">Inspector: Station 04 • Mountain View, CA</text>
+      <text x="12" y="70" class="font-mono" font-size="8.8px" fill="#0284c7">Lot Release: 2026-Q4-ARCHIVAL</text>
+      <text x="12" y="84" class="font-mono" font-size="8.8px" fill="#0284c7">Standards: ASTM F963 / EN71 / RoHS Lead-Free</text>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(35, 640)">
+    <rect x="0" y="0" width="1190" height="110" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <g transform="translate(25, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#0f172a">FACTORY SPECIFICATION</text>
+      <text x="0" y="18" class="font-mono footer-txt">Harmonized Modular Mathematics Manipulative System.</text>
+      <text x="0" y="32" class="font-mono footer-txt">Manufactured with Pride in California, USA.</text>
+    </g>
+    <g transform="translate(450, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#0f172a">PARTS REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono footer-txt">Official Parts Portal: stackcalc.io/parts</text>
+      <text x="0" y="32" class="font-mono footer-txt">SIDE A: WAREHOUSE PACKING BENCH &amp; QC MANIFEST | PAPER SPEC</text>
+    </g>
+    <g transform="translate(980, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#0f172a">INSTITUTIONAL DIRECT</text>
+      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#0284c7">sales@stackcalc.io</text>
+      <text x="0" y="32" class="font-mono footer-txt">Direct Invoicing • Net-30 Terms</text>
+    </g>
+  </g>
+  <metadata id="stackcalc-book-macro-manifest" data-kit="PRIME-01">
+    <stackcalc-macros>
+      <macro-ref token="{{blocks:prime_studio_comparator_stage}}" kind="blocks" id="prime_studio_comparator_stage" png="prime_studio_comparator_stage.png" svg="prime_studio_comparator_stage.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_comparator_stage.scad" scad="book_prime_comparator_stage.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_3_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_lcm_gcd_venn}}" kind="blocks" id="prime_lcm_gcd_venn" png="prime_lcm_gcd_venn.png" svg="prime_lcm_gcd_venn.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_lcm_gcd_venn.scad" scad="book_prime_lcm_gcd_venn.scad" scad-sources="Education/scad/prime_lcm_gcd_assembly.scad,Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_studio_commutativity}}" kind="blocks" id="prime_studio_commutativity" png="prime_studio_commutativity.png" svg="prime_studio_commutativity.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_studio_commutativity.scad" scad="book_prime_studio_commutativity.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{blocks:sc32_hero_keynote}}" kind="blocks" id="sc32_hero_keynote" png="sc32-hero-keynote.png" svg="sc32-hero-keynote.png" scene="Tools/rendering/render_product_stills.py::render_sc32_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{seq:refcard_prime01_ex1}}" res-token="{{res:refcard_prime01_ex1}}" stack-token="{{res:refcard_prime01_ex1:stack}}" kind="sequence" id="refcard_prime01_ex1" model="sc6" expanded-seq="12 [g] [FACT] 18 [g] [FACT]" res="18" stack="T:0|Z:0|Y:12|X:18" />
+      <macro-ref token="{{seq:refcard_prime01_ex2}}" res-token="{{res:refcard_prime01_ex2}}" stack-token="{{res:refcard_prime01_ex2:stack}}" kind="sequence" id="refcard_prime01_ex2" model="sc6" expanded-seq="12 [ENTER] 18 [GCF] 12 [ENTER] 18 [f] [LCM]" res="36" stack="T:0|Z:0|Y:6|X:36" />
+      <macro-ref token="{{seq:refcard_prime01_ex3}}" res-token="{{res:refcard_prime01_ex3}}" stack-token="{{res:refcard_prime01_ex3:stack}}" kind="sequence" id="refcard_prime01_ex3" model="sc6" expanded-seq="2 [ENTER] 3 [×] 5 [×] [g] [FACT]" res="30" stack="T:0|Z:0|Y:0|X:30" />
+      <macro-ref token="{{icon:button_prime}}" kind="icon" id="button_prime" svg="Education/scad/lib/icons/button_prime.svg" scad="Education/scad/prime_studio_box.scad" key="FACT" model="sc6" />
+    </stackcalc-macros>
+  </metadata>
+</svg>

@@ -111,7 +111,7 @@ We believe educational instruments must belong to the communities that use them.
 
 1. **Perpetual Reproduction License:** Buy a kit once, and print unlimited classroom lab worksheets forever. We never charge monthly seat fees or software subscriptions.
 2. **"No Lost Piece Left Behind":** Classrooms lose parts. When a block goes missing, teachers shouldn't have to replace an entire kit. We ship individual replacement parts for a flat \$4, or teachers can download our 100% free open-source `.3MF` files and print replacement parts in their school's maker lab for pennies.
-3. **Apollo-Era Instrumental Brutalism:** We engineer in durable Sunlu White PLA 2.0+, high-rigidity PETG, and 400g metal snap-dome switches built for hundreds of thousands of actuation cycles.
+3. **Apollo-Era Instrumental Brutalism:** We engineer in durable technical thermoplastics (Midnight Navy PLA 2.0+, Space Gray, Black PETG), and 400g metal snap-dome switches built for hundreds of thousands of actuation cycles.
 
 The era of in-fix parentheses fatigue is over. Welcome to tactile Postfix computing.
 

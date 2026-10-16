@@ -222,4 +222,58 @@ hide:
     </div>
   </section>
 
+  <!-- ==========================================================================
+       SECTION: PRE-GENERATED STATION WORKSHEETS & STANDARDS INTEGRATION
+       ========================================================================== -->
+  <section class="ec-section">
+    <div class="p-6 md:p-8 rounded-2xl bg-[#0D1017] border border-cyan-500/30 shadow-xl">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+        <div>
+          <span class="font-mono text-xs text-cyan-400 font-bold uppercase tracking-wider">// CURRICULUM &amp; STATION GUIDES</span>
+          <h2 class="text-2xl font-bold text-white mt-1">Pre-Generated Clock Worksheets &amp; Standards</h2>
+        </div>
+        <span class="text-xs px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono font-bold">CCSS 2.MD.C.7 &bull; 3.MD.A.1</span>
+      </div>
+      <p class="text-sm text-slate-300 leading-relaxed mb-6">
+        The Sectional Classroom Planetary Clock pairs directly with our 120-edition library of publication-grade, 2-page classroom station guides. Designed for early elementary through intermediate time-telling, each guide features CAD diagrams, authentic drawing workspaces, and 4-tier teacher scoring rubrics.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 font-mono text-xs">
+        <a href="../../../curriculum/worksheets/" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 transition flex flex-col justify-between group">
+          <div>
+            <strong class="text-white group-hover:text-cyan-400 block mb-1">📝 120 Station Worksheets</strong>
+            <span class="text-[11px] text-slate-400">Download Form A &amp; Form B PDFs for Singapore Dimensions 3B Ch 10 and Bridges Grade 4 Unit 4.</span>
+          </div>
+          <span class="text-cyan-400 font-bold mt-3 block">&rarr; Browse Worksheets</span>
+        </a>
+
+        <a href="../../../curriculum/alignment-matrix/#common-core" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-400 transition flex flex-col justify-between group">
+          <div>
+            <strong class="text-white group-hover:text-emerald-400 block mb-1">🎯 Standards Alignment Matrix</strong>
+            <span class="text-[11px] text-slate-400">Cross-reference chapter-by-chapter with Common Core, Bridges, and Singapore Math.</span>
+          </div>
+          <span class="text-emerald-400 font-bold mt-3 block">&rarr; View Matrix</span>
+        </a>
+
+        <a href="../../../curriculum/teacher-guide/" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-amber-400 transition flex flex-col justify-between group">
+          <div>
+            <strong class="text-white group-hover:text-amber-400 block mb-1">🧑‍🏫 Teacher Facilitator Guide</strong>
+            <span class="text-[11px] text-slate-400">Continuous 12:1 gear kinematics diagnostics, eliminating "false 3:30" traps, and rotation guides.</span>
+          </div>
+          <span class="text-amber-400 font-bold mt-3 block">&rarr; Read Teacher Guide</span>
+        </a>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+        <div class="text-slate-400 text-[11px]">
+          Perpetual Reproduction License &bull; Free Classroom Photocopy Rights
+        </div>
+        <a href="../../../downloads/stackcalc-curriculum-sample-v0.2.0.pdf" download class="px-4 py-2 rounded bg-white/10 hover:bg-white/20 text-white font-bold transition flex items-center gap-1.5">
+          <span>Download 36-Page Curriculum Sample (.PDF)</span>
+          <span>&darr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </div>

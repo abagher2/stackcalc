@@ -59,14 +59,16 @@ All 8 launch listings have complete, pre-validated copy-paste Markdown packages 
 
 | SKU | Product Listing Guide | Base Price | Primary 1:1 Image Asset | 4:3 Context Banner Asset |
 |---|---|:---:|---|---|
-| `SC-32-HW` | SC-32 RPN Calculator | \$89.00 | `sc32-hero-keynote-square.png` | `sc32-hero-keynote-4x3.png` |
-| `FRAC-01` | Fraction Studio Towers | \$38.00 | `fraction-studio-hero-square.png` | `fraction-studio-hero-4x3.png` |
-| `ALGB-01` | Algebra Factoring Studio | \$34.00 | `algebra-boxes-hero-square.png` | `algebra-boxes-hero-4x3.png` |
-| `TIME-01` | Classroom Planetary Clock | \$36.00 | `clock-classroom-hero-square.png` | `clock-classroom-hero-4x3.png` |
-| `BASE-10` | Ten-Frames & Counters | \$28.00 | `ten-frames-hero-square.png` | `ten-frames-hero-4x3.png` |
-| `PROB-01` | Probability Dice & Spinner | \$29.00 | `dice-spinner-hero-square.png` | `dice-spinner-hero-4x3.png` |
-| `TRIG-01` | Unit Circle Trig Volvelle | \$16.00 | `unit-circle-volvelle-hero-square.png` | `unit-circle-volvelle-hero-4x3.png` |
-| `DOMI-01` | Math Domino Studio | \$29.00 | `dominoes-studio-hero-square.png` | `dominoes-studio-hero-4x3.png` |
+| `SC-32-HW` | SC-32 Scientific RPN Maker Kit | \$89.00 | `sc32-hero-keynote-square.png` | `sc32-hero-keynote-4x3.png` |
+| `FRAC-01` | Fraction Studio Towers | \$48.00 | `fraction-studio-hero-square.png` | `fraction-studio-hero-4x3.png` |
+| `PRIME-01` | Prime Factor Studio & Slide Rule | \$46.00 | `prime-studio-hero.png` | `prime-studio-hero.png` |
+| `TILE-01` | Counting Tiles & Planar Array Studio | \$44.00 | `counting-tiles-hero.png` | `counting-tiles-hero.png` |
+| `TIME-01` | Classroom Planetary Clock | \$44.00 | `clock-classroom-hero-square.png` | `clock-classroom-hero-4x3.png` |
+| `ALGB-01` | Algebra Factoring Studio | \$42.00 | `algebra-boxes-hero-square.png` | `algebra-boxes-hero-4x3.png` |
+| `DOMI-01` | Math Domino Studio | \$38.00 | `dominoes-studio-hero-square.png` | `dominoes-studio-hero-4x3.png` |
+| `BASE-10` | Ten-Frames & Counters | \$36.00 | `ten-frames-hero-square.png` | `ten-frames-hero-4x3.png` |
+| `PROB-01` | Probability Dice & Spinner | \$36.00 | `dice-spinner-hero-square.png` | `dice-spinner-hero-4x3.png` |
+| `TRIG-01` | Unit Circle Trig Volvelle | \$19.00 | `unit-circle-volvelle-hero-square.png` | `unit-circle-volvelle-hero-4x3.png` |
 | `DIGI-01` | Complete 3D Print STL Library | \$19.00 | `algebra-tiles-craftsmanship-square.png` | `algebra-boxes-hero-4x3.png` |
 | `REPLACE-01` | Lifetime Replacement Parts Service | \$2.49+ | `infographic-guarantee-safety-square.png` | `infographic-guarantee-safety-square.png` |
 
@@ -128,9 +130,8 @@ Copy all 13 exact-match tags from Section 2 of the listing file. Enter each tag 
 
 ### Step 7: Dropdown Variations (CRO Booster)
 Enable **Variations** in the listing editor to provide tier options that increase Average Order Value (AOV):
-- **Option 1 (Maker Kit / Base Unit):** Base retail price (e.g., $59.00).
-- **Option 2 (Founder Edition Assembled):** Factory assembled and tested ($89.00).
-- **Option 3 (Classroom 5-Pack Station):** 5 identical kits + bulk teacher lesson guide with standard volume tiering.
+- **Option 1 (Maker Kit / Base Unit):** 100% pre-soldered RP2350 logic board, tool-free 5-min snap assembly ($89.00).
+- **Option 2 (Classroom Station 5-Pack):** 5 pre-soldered Maker Kits + bulk teacher lesson guide with standard volume tiering.
 
 ### Step 8: Standardized Shipping Profile Selection
 Select the pre-configured USPS Ground Advantage shipping profile:
@@ -154,7 +155,7 @@ Select the pre-configured USPS Ground Advantage shipping profile:
 
 ### 4.1 The 50% Anti-Arbitrage Pricing Formula
 To prevent customers or third parties from buying individual components to assemble full kits piecemeal, all replacement parts are priced at **50% above the amortized per-piece price** of the full retail kit ($1.5 \times \text{Amortized Cost}$):
-- **Small Tile / Counter / Single Domino Tile:** \$2.25 – \$2.49 (Amortized \$1.50–\$1.66)
+- **Small Tile / Counter / Single Domino Tile:** \$2.49 (Amortized \$1.66)
 - **Trio Small Tiles / Domino 6-Pack:** \$3.99 – \$6.75 (Amortized \$2.66–\$4.50)
 - **Linear Rod / Medium Tower:** \$3.49 – \$4.95 (Amortized \$2.33–\$3.30)
 - **Quadrant Wedge / Clock Hand:** \$5.25 – \$6.00 (Amortized \$3.50–\$4.00)
@@ -211,9 +212,9 @@ A common concern with Git-based versioning is: *"Does every commit to the reposi
 ### Operational Rationale & Benefits:
 1. **Zero Hazmat Labeling & Airmail Friction:** Lithium cells trigger complex DOT/USPS Section 349 shipping rules, hazardous materials declarations, package labeling mandates, and restrictions on international priority airmail.
 2. **Eliminated Fire & Ingestion Liability:** Eliminates Reese's Law (16 CFR Part 1263) pre-installed battery testing certification requirements for shipping packages.
-3. **Universal Accessibility:** The SC-32 uses a standard, ubiquitous CR2032 3V coin cell available at any grocery store, pharmacy, or hardware store for ~$0.50, and can also run continuously on any standard USB-C desktop cable with zero battery installed.
+3. **Universal Accessibility:** The SC-32 uses a standard, ubiquitous CR2032 3V coin cell available at any grocery store, pharmacy, or hardware store for ~$0.50.
 4. **Transparent Customer Notice:** Every calculator listing and package insert clearly states:  
-   *"Requires 1x standard CR2032 coin cell (widely available, not included due to postal carrier safety regulations) or standard USB-C desktop power."*
+   *"Requires 1x standard CR2032 coin cell (widely available, omitted from shipment per postal carrier safety regulations)."*
 
 ---
 
@@ -228,13 +229,13 @@ Before sealing each mailer, warehouse fulfillment must execute the specific chec
 - **Packaging:** Profile C Mailer ($9 \times 6 \times 3\text{ in}$ Rigid Corrugated Mailer Box)
 - **Target Weight:** ~360 g (12.7 oz) packed
 - **Physical Contents:**
-  - [ ] 1x Assembled SC-32 Calculator (or unpopulated DIY snap kit: RP2350 SMT mainboard, chassis shell, top cap, TPU membrane, faceplate)
+  - [ ] 1x Pre-Soldered SC-32 Maker Kit (pre-soldered RP2350 SMT mainboard, tool-free sliding chassis shell, top cap, tactile membrane, faceplate)
   - [ ] 4-Piece Interlocking Puzzle Stand (seated as internal packaging trusses or flat nested)
   - [ ] **NO BATTERY VERIFICATION:** Confirmed battery compartment is completely empty (no CR2032 cell inside per postal rules).
 - **Printed Collateral & Cards:**
   - [ ] 1x Archival Reference & Schematic Card (`SC-32-HW`, with exploded assembly, puzzle stand diagram, Part IDs, and specs)
   - [ ] 1x Double-Sided Credit Card RPN Reference Guide (`reference_card_front.svg` / `reference_card_back.svg`)
-  - [ ] 1x Power & Safety Slip: *"Requires 1x CR2032 coin cell or USB-C cable (battery omitted per USPS/ICAO air safety)"*
+  - [ ] 1x Power & Safety Slip: *"Requires 1x CR2032 coin cell (battery omitted per USPS/ICAO air safety)"*
 - **Pre-Sealing QA Gate:**
   - [ ] Sliding faceplate dovetail glide test (smooth engagement, no binding)
   - [ ] All 43 tactile snap-domes actuate cleanly with distinct audible snap
@@ -247,10 +248,9 @@ Before sealing each mailer, warehouse fulfillment must execute the specific chec
 - **Packaging:** Profile C Mailer ($9 \times 6 \times 3\text{ in}$ Rigid Corrugated Mailer Box)
 - **Target Weight:** ~420 g (14.8 oz) packed
 - **Physical Contents:**
-  - [ ] 1x Assembled SC-32 Calculator
+  - [ ] 1x Pre-Soldered SC-32 Maker Kit
   - [ ] 4-Piece Interlocking Puzzle Stand
   - [ ] 1x Reversible Shore 95A Flexible TPU Protective Cozy Pouch
-  - [ ] 1x Premium 1m Braided USB-C to USB-C Cable
   - [ ] 1x Founder's Serialized Rear Nameplate (inspected for crisp Space Mono laser engraving)
   - [ ] **NO BATTERY VERIFICATION:** Confirmed battery compartment is empty.
 - **Printed Collateral & Cards:**
@@ -265,12 +265,12 @@ Before sealing each mailer, warehouse fulfillment must execute the specific chec
 - **Packaging:** Profile B Mailer ($8 \times 6 \times 3\text{ in}$ Heavyweight Mailer Box)
 - **Target Weight:** ~290 g (10.2 oz) packed
 - **Physical Contents:**
-  - [ ] 1x SC-6 Elementary Calculator (Sunlu White PLA 2.0+ lab chassis, Slate Gray sliding cowl, tactile snap-dome keypad)
+  - [ ] 1x SC-6 Elementary Calculator (Impact-resistant Elegoo Space Gray / Midnight Navy PLA 2.0+ chassis, Slate Gray sliding cowl, tactile snap-dome keypad)
   - [ ] 1x 2-Piece Folding Desk Wedge Stand
   - [ ] **NO BATTERY VERIFICATION:** Confirmed battery cavity is empty.
 - **Printed Collateral & Cards:**
   - [ ] 1x SC-6 Elementary Student Quick-Start Card (`sc6_guide_card.png`)
-  - [ ] 1x Parental Power Notice: *"Requires 1x CR2032 or USB-C (battery omitted per postal rules)"*
+  - [ ] 1x Parental Power Notice: *"Requires 1x standard CR2032 coin cell (battery omitted per postal rules)"*
   - [ ] 1x Safety & Choking Hazard card (Ages 6+) + Lifetime Warranty card
 
 ---

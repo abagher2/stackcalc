@@ -32,7 +32,7 @@ hide:
         "@type": "Offer",
         "url": "https://www.stackcalc.io/products/algebra-boxes/",
         "priceCurrency": "USD",
-        "price": "34.00",
+        "price": "42.00",
         "priceValidUntil": "2027-12-31",
         "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
@@ -41,22 +41,6 @@ hide:
           "name": "StackCalc"
         }
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "28",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Sarah M., High School Math Department Chair"},
-          "datePublished": "2026-08-14",
-          "reviewBody": "The geometric area model finally made factoring click for my students who struggled with FOIL. The Gridfinity box makes 60-second classroom inventory audits effortless.",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
-        }
-      ],
       "audience": {
         "@type": "EducationalAudience",
         "educationalRole": "student",
@@ -110,7 +94,7 @@ hide:
           "name": "What happens if a classroom loses individual tiles?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Every physical StackCalc set includes the 'No Lost Piece Left Behind' lifetime guarantee: schools and parents can request replacement tiles anytime for just the $1.99 cost of postage."
+            "text": "Every physical StackCalc set includes the 'Anti-Heartbreak' lifetime guarantee: schools and parents can request exact replacement tiles anytime for just $2.49 with free envelope shipping."
           }
         }
       ]
@@ -138,10 +122,6 @@ hide:
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
       <div class="ec-gallery-main">
-        <div class="ec-gallery-badge-overlay">
-          <span class="ec-pill ec-pill-category">Grades 7&ndash;11</span>
-          <span class="ec-pill ec-pill-instock">&bull; In Stock &bull; Batch 001</span>
-        </div>
         <img id="main-product-image" src="../../assets/renders/algebra-boxes-hero.png" alt="StackCalc Algebra Factoring Studio and Polynomial Tiles" loading="eager">
       </div>
 
@@ -179,23 +159,17 @@ hide:
 
     <!-- Right Column: Buy Box & Product Info -->
     <div class="ec-buybox">
-      <div class="ec-pill-group">
-        <span class="ec-pill ec-pill-category">Algebra &amp; Polynomials</span>
-        <span class="ec-pill ec-pill-instock">&check; Geometric Area Model</span>
-      </div>
-
       <h1 class="ec-product-title">Algebra Factoring Studio &amp; Tiles</h1>
 
-      <!-- Social Proof & Review Score -->
+      <!-- Educational Architecture & Tactile Standard -->
       <div class="flex items-center gap-2 mb-3">
-        <div class="flex text-amber-400 text-sm">★★★★★</div>
-        <span class="text-xs font-semibold text-gray-200">4.9 / 5.0</span>
-        <span class="text-xs text-gray-400">&bull; 28 Educator Reviews</span>
-        <span class="text-xs text-emerald-400 font-medium ml-2">&check; Verified Classroom Pilot</span>
+        <span class="text-xs font-mono font-semibold text-cyan-400">PEDAGOGICAL STANDARD</span>
+        <span class="text-xs text-gray-400">&bull; Geometric Area Model &amp; Factoring Rails</span>
+        <span class="text-xs text-emerald-400 font-medium ml-2">&check; 42mm Gridfinity Compliant</span>
       </div>
 
       <div class="ec-price-box">
-        <span class="ec-price-current">$34.00</span>
+        <span class="ec-price-current">$42.00</span>
         <span class="ec-shipping-note">&check; Free US Shipping &bull; In Stock</span>
       </div>
 
@@ -226,7 +200,7 @@ hide:
       <!-- Action Buttons -->
       <div class="ec-actions-row">
         <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-          Order on Etsy ($34.00) ↗
+          Order on Etsy ($42.00) ↗
         </a>
         <a href="#downloads" class="ec-btn-secondary">
           Download Free 3MF / STLs &darr;
@@ -246,16 +220,16 @@ hide:
       <!-- Trust Badges -->
       <div class="ec-trust-strip">
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&check;</span>
-          <span class="ec-trust-text">Algebra I Standards Aligned</span>
+          <span class="ec-trust-icon">&plusmn;</span>
+          <span class="ec-trust-text">&plusmn;0.05mm Calibrated &bull; Non-Toxic Biopolymer</span>
         </div>
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&square;</span>
-          <span class="ec-trust-text">3x1 Gridfinity Storage Box</span>
+          <span class="ec-trust-icon">&check;</span>
+          <span class="ec-trust-text">Anti-Heartbreak $2.49 Part Refills</span>
         </div>
         <div class="ec-trust-item">
           <span class="ec-trust-icon">&hearts;</span>
-          <span class="ec-trust-text">Non-Toxic Matte Polymer Finish</span>
+          <span class="ec-trust-text">30-Day Risk-Free In-Home Trial</span>
         </div>
       </div>
 
@@ -331,44 +305,44 @@ hide:
         </div>
       </div>
 
-      <!-- 2. Unboxing Experience -->
+      <!-- 2. Lesson 1: FOIL Area Model -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/algebra-boxes-hero.png">
-            <source src="/assets/videos/algebra-boxes-unboxing.mp4" type="video/mp4">
+            <source src="/assets/videos/algebra-boxes-lesson-foil.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. UNBOXING EXPERIENCE</span>
+          <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. CURRICULUM LESSON 01</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Unboxing Experience</h3>
-            <p class="text-xs text-slate-400">Opening the protective mailer to reveal the 135&times;90mm archival reference card resting on top of organized, rattle-free components.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">FOIL Area Model: (x+2)(x+1)</h3>
+            <p class="text-xs text-slate-400">Step-by-step tiling showing x&sup2;, three x-bars, and two unit squares forming a closed geometric rectangle with area x&sup2; + 3x + 2.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-amber-300 flex items-center justify-between">
-            <span>135x90mm Duplex Card</span>
-            <span>Zero Plastic Wrap</span>
+            <span>CCSS HSA.APR.A.1</span>
+            <span>Area = Length &times; Width</span>
           </div>
         </div>
       </div>
 
-      <!-- 3. Classroom Lesson in Action -->
+      <!-- 3. Lesson 2: Trinomial Factoring -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/algebra-boxes-hero.png">
-            <source src="/assets/videos/algebra-boxes-lesson.mp4" type="video/mp4">
+            <source src="/assets/videos/algebra-boxes-lesson-factoring.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CLASSROOM LESSON</span>
+          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CURRICULUM LESSON 02</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Classroom Lesson in Action</h3>
-            <p class="text-xs text-slate-400">Tangible polynomial factoring: tiling \((x + 2)(x + 1) = x^2 + 3x + 2\) with tactile area rails and chamfered tiles.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">Trinomial Factoring on L-Frame</h3>
+            <p class="text-xs text-slate-400">Taking x&sup2; + 5x + 6 and arranging tiles into a gap-free rectangle against the 90&deg; rails to reveal factors (x + 2) and (x + 3).</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-emerald-300 flex items-center justify-between">
-            <span>CCSS HSA.SSE.A.2</span>
-            <span>TEKS 111.39</span>
+            <span>CCSS HSA.SSE.B.3.A</span>
+            <span>(x + 2)(x + 3) Factors</span>
           </div>
         </div>
       </div>
@@ -576,8 +550,8 @@ hide:
       <!-- Cross-Sell 1: SC-32 Calculator -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Calculator" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Calculator</h3>
+          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Maker Kit" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Maker Kit</h3>
           <p class="cross-sell-card-desc">
             The hardware math engine for classroom focus. Instant power-on, zero wireless radios (100% exam legal), and 4-register RPN stack evaluating polynomial roots with zero parentheses syntax errors.
           </p>
@@ -585,10 +559,10 @@ hide:
         <div>
           <div class="cross-sell-price-row">
             <span class="cross-sell-price">$89.00</span>
-            <span class="text-xs font-mono text-cyan-400">Hardware Core</span>
+            <span class="text-xs font-mono text-cyan-400">Maker Kit</span>
           </div>
           <a href="/products/sc32-calculator/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            View SC-32 Calculator &rarr;
+            View SC-32 Maker Kit &rarr;
           </a>
         </div>
       </div>
@@ -624,7 +598,7 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$38.00</span>
+            <span class="cross-sell-price">$48.00</span>
             <span class="text-xs font-mono text-cyan-400">Standalone Kit</span>
           </div>
           <a href="/products/fraction-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
@@ -732,10 +706,10 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-700/60 text-sm">
         <strong class="text-emerald-400 flex items-center gap-2 mb-1">
-          <span>&#9874;</span> "No Lost Piece Left Behind" Educator Guarantee
+          <span>&#9874;</span> "Anti-Heartbreak" Lifetime Guarantee for Parents &amp; Classrooms
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          Classrooms are busy spaces. If a tile or rail ever goes missing or gets damaged, order individual replacement parts anytime for just the nominal cost of postage ($1.99).
+          Classrooms and homes are busy spaces. If a tile or rail ever goes missing or gets damaged, order individual replacement parts anytime for just $2.49 with free envelope shipping.
         </p>
       </div>
 
@@ -751,58 +725,56 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION: VERIFIED EDUCATOR REVIEWS & SOCIAL PROOF
+       SECTION: PEDAGOGICAL VERIFICATION & CLASSROOM ARCHITECTURE
        ========================================================================== -->
   <section class="ec-section">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 pb-4 border-b border-white/10">
       <div>
-        <h2 class="ec-section-title m-0">Educator Endorsements &amp; Verified Reviews</h2>
-        <p class="ec-section-subtitle m-0">Classroom trial feedback from public school math teachers, department heads, and homeschool parents.</p>
+        <h2 class="ec-section-title m-0">Pedagogical Verification &amp; Classroom Architecture</h2>
+        <p class="ec-section-subtitle m-0">Geometric area modeling, perimeter retention rails, and rapid 15-second inventory verification.</p>
       </div>
-      <div class="flex items-center gap-2 mt-3 md:mt-0">
-        <span class="text-2xl font-bold text-white">4.9</span>
-        <div class="text-amber-400 text-lg">★★★★★</div>
-        <span class="text-xs text-gray-400">(28 Verified Reviews)</span>
+      <div class="flex items-center gap-2 mt-3 md:mt-0 font-mono text-xs text-slate-400">
+        <span class="text-emerald-400 font-bold">&bull; CRA ALGEBRAIC MODELING</span>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "The geometric area model finally made factoring click for students who struggled with abstract FOIL rules. Stacking the tiles to complete the square is genius."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// GEOMETRIC PROOF</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">Tactile Area Modeling</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Physically constructs binomial products and quadratic factors as discrete 2D rectangular areas. Converts abstract FOIL procedures into visual and spatial proofs.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">Sarah M.</strong>
-          <span class="text-xs text-gray-400">High School Math Dept Chair &bull; California</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Tiles: x&sup2;, x, &amp; 1 &bull; Model: 2D Spatial Area
         </div>
       </div>
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "The 3x1 Gridfinity box solved our missing pieces headache. In 15 seconds at the end of class, my students can see whether every tile is in place."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// MECHANICAL STABILITY</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">Factoring Retention Rails</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Integrated perimeter stage rails align tile factors along orthogonal axes without shifting or sliding across desk surfaces during multi-student collaborative proofs.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">Marcus T.</strong>
-          <span class="text-xs text-gray-400">Algebra 1 Teacher &bull; Texas Independent SD</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Stage: Inset Orthogonal &bull; Shift: Zero-Slip
         </div>
       </div>
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "Heirloom-grade biopolymer feel with debossed labels that won't rub off. The 'No Lost Piece Left Behind' guarantee gave our principal total confidence to approve PO funding."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// INVENTORY AUDITING</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">Gridfinity 3&times;1 Organization</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Every piece has a molded recess inside the 3&times;1 Gridfinity box. Teachers and students complete a full 35-piece visual audit in under 15 seconds before dismissing class.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">Elena R.</strong>
-          <span class="text-xs text-gray-400">STEM Curriculum Director &bull; Ohio</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Footprint: 3&times;1 Gridfinity &bull; Audit: 15-Sec Visual
         </div>
       </div>
     </div>
@@ -848,11 +820,11 @@ hide:
 
       <details class="p-4 rounded-lg bg-slate-900/50 border border-slate-700/60 group">
         <summary class="font-semibold text-gray-100 cursor-pointer flex justify-between items-center">
-          <span>What is the "No Lost Piece Left Behind" guarantee?</span>
+          <span>What is the "Anti-Heartbreak" lifetime guarantee?</span>
           <span class="text-cyan-400 text-lg group-open:rotate-45 transition-transform">+</span>
         </summary>
         <p class="mt-3 text-sm text-gray-300 leading-relaxed">
-          We understand that classroom manipulatives can occasionally get lost or swept away. We guarantee that educators and parents can request individual replacement tiles or rails anytime for the lifetime of the product, paying only $1.99 to cover domestic postage.
+          We understand that classroom manipulatives can occasionally get lost or swept away. Under our Anti-Heartbreak lifetime guarantee, educators and parents can request individual matching replacement tiles or rails anytime for just $2.49 with free envelope shipping.
         </p>
       </details>
     </div>

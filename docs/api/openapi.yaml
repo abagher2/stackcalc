@@ -1,0 +1,229 @@
+openapi: 3.1.0
+info:
+  title: StackCalc Calculator Engine & Hardware Reference API
+  version: 1.2.0
+  description: A simple, view-only REST and OpenAPI specification for AI agents, developers,
+    and educational tools to query StackCalc SC-32 and SC-6 hardware capabilities,
+    RPN stack mechanics, button rubrics, and operational transitions.
+  contact:
+    name: StackCalc Engineering Team
+    url: https://www.stackcalc.io/support/
+    email: support@stackcalc.io
+  license:
+    name: MIT Open Source Hardware License
+    url: https://www.stackcalc.io/license/
+servers:
+- url: https://www.stackcalc.io/api
+  description: Production Documentation & Reference Gateway
+paths:
+  /v1/models:
+    get:
+      summary: List all calculator models
+      description: Returns basic metadata for all active StackCalc hardware and simulation
+        targets (SC-32 and SC-6).
+      operationId: listModels
+      responses:
+        '200':
+          description: Array of calculator model metadata
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CalculatorModelSummary'
+  /v1/models/{modelId}:
+    get:
+      summary: Get calculator model architecture & specs
+      description: Returns full architectural specifications, stack dimensions, display
+        parameters, and registers for the specified model (`sc32` or `sc6`).
+      operationId: getModelDetails
+      parameters:
+      - name: modelId
+        in: path
+        required: true
+        description: Calculator model identifier (`sc32` or `sc6`)
+        schema:
+          type: string
+          enum:
+          - sc32
+          - sc6
+      responses:
+        '200':
+          description: Detailed calculator model architecture
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalculatorModelDetail'
+        '404':
+          description: Model not found
+  /v1/models/{modelId}/operations:
+    get:
+      summary: List all operations for a calculator model
+      description: Returns the complete button rubric and operation catalog for the
+        given model, with optional subsystem filtering.
+      operationId: listOperations
+      parameters:
+      - name: modelId
+        in: path
+        required: true
+        description: Calculator model identifier (`sc32` or `sc6`)
+        schema:
+          type: string
+          enum:
+          - sc32
+          - sc6
+      - name: subsystem
+        in: query
+        required: false
+        description: Optional category filter (e.g. arithmetic, scientific, solvers,
+          fractions, statistics)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of operations and button assignments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CalculatorOperation'
+  /v1/models/{modelId}/operations/{operationId}:
+    get:
+      summary: Get operation details and stack delta
+      description: Returns the exact keystroke sequence, shift position, mathematical
+        definition, stack transition matrix, and worked example for an operation.
+      operationId: getOperationDetail
+      parameters:
+      - name: modelId
+        in: path
+        required: true
+        description: Calculator model identifier (`sc32` or `sc6`)
+        schema:
+          type: string
+          enum:
+          - sc32
+          - sc6
+      - name: operationId
+        in: path
+        required: true
+        description: Canonical operation identifier (e.g. `intDiv`, `rep`, `lastx`,
+          `solve`, `plot`, `simp`)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Operation details with stack delta and examples
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalculatorOperation'
+        '404':
+          description: Operation not found
+  /v1/models/{modelId}/modes:
+    get:
+      summary: List operational and visual modes
+      description: Returns the operational and visual modes available on the specified
+        calculator (e.g., 4-stack XYZT, Ten-Frame, Clock, Number Line, Quiz).
+      operationId: listModes
+      parameters:
+      - name: modelId
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - sc32
+          - sc6
+      responses:
+        '200':
+          description: Array of modes and visual configurations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CalculatorMode'
+components:
+  schemas:
+    CalculatorModelSummary:
+      type: object
+      properties:
+        model:
+          type: string
+          example: SC-32
+        name:
+          type: string
+          example: StackCalc SC-32 Scientific Calculator
+        target_audience:
+          type: string
+          example: High School, University STEM, UIL Tournaments
+        default_stack_depth:
+          type: integer
+          example: 4
+    CalculatorModelDetail:
+      type: object
+      properties:
+        model:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        architecture:
+          type: object
+          properties:
+            stack_engine:
+              type: string
+            default_stack_depth:
+              type: integer
+            display:
+              type: string
+            microcontroller:
+              type: string
+    CalculatorOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          example: intDiv
+        name:
+          type: string
+          example: Integer Division with Remainder
+        key:
+          type: string
+          example: "\xF7"
+        shift:
+          type: string
+          enum:
+          - primary
+          - yellow
+          - blue
+        legend:
+          type: string
+          example: "\xF7R"
+        subsystem:
+          type: string
+          example: Core Stack & Arithmetic
+        description:
+          type: string
+        stack_delta:
+          type: object
+          properties:
+            before:
+              type: object
+            after:
+              type: object
+        example:
+          type: string
+    CalculatorMode:
+      type: object
+      properties:
+        key:
+          type: string
+          example: "\u25A6"
+        name:
+          type: string
+          example: Ten-Frame Studio
+        description:
+          type: string

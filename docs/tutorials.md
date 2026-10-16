@@ -98,9 +98,9 @@ StackCalc handles full complex pairs $(a + bi)$ natively across all scientific a
 
 ---
 
-## 4. Fraction Entry & Manual Simplification ([SIMP])
+## 4. Fraction Entry & Manual Simplification ({{keycap:SIMP}})
 
-Unlike consumer calculators that automatically simplify fractions and hide the underlying math from students, StackCalc preserves exact fraction state. Students must press `[SIMP]` to actively reduce fractions step-by-step.
+Unlike consumer calculators that automatically simplify fractions and hide the underlying math from students, StackCalc preserves exact fraction state. Students must press `{{keycap:SIMP}}` to actively reduce fractions step-by-step.
 
 *Mission: Enter $\frac{2}{4}$ and reduce it to $\frac{1}{2}$.*
 
@@ -125,7 +125,7 @@ Unlike consumer calculators that automatically simplify fractions and hide the u
 
 ---
 
-## 5. Mixed Fraction Arithmetic & Decimal Toggle ([FDISP])
+## 5. Mixed Fraction Arithmetic & Decimal Toggle ({{keycap:FDISP}})
 
 Add mixed numbers exactly and toggle instantly between exact fractional form and floating-point decimal.
 
@@ -166,16 +166,16 @@ $$\text{Monthly Payment} = \frac{PV \cdot i}{1 - (1 + i)^{-N}}$$
     <span>[C] EXIT</span>
   </div>
   <div class="text-sm text-charcoal leading-snug space-y-1 py-2">
-    <p>&gt; Loan parameters: N=360 months, I/YR=5.5%, PV=$200,000</p>
+    <p>&gt; Loan parameters: N=360 months, I%YR=0.4583% (5.5% ÷ 12), PV=$200,000</p>
     <p>&gt; Step 1: 360 -&gt; [N] (Number of periods)</p>
-    <p>&gt; Step 2: 5.5 -&gt; [I/YR] (Annual interest rate)</p>
+    <p>&gt; Step 2: 5.5 -&gt; [ENTER] -&gt; 12 -&gt; [÷] -&gt; [I%YR] (Monthly periodic rate)</p>
     <p>&gt; Step 3: 200000 -&gt; [PV] (Present loan value)</p>
     <p>&gt; Step 4: 0 -&gt; [FV] (Future loan balance)</p>
     <p>&gt; Step 5: Press [PMT] to execute solver.</p>
-    <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: PMT = $1,126.83 / month</p>
+    <p class="font-bold bg-[#CBD1DC] bg-opacity-40 px-1 inline-block">&gt; VERIFIED: PMT = -$1,135.58 / month</p>
   </div>
   <div class="pt-2 border-t border-charcoal border-opacity-30 flex justify-between items-center text-xs font-bold">
-    <span class="text-xl">1,126.83_</span>
+    <span class="text-xl">-1,135.58_</span>
     <span class="bg-charcoal text-icyblue px-2 py-0.5">[NEXT]</span>
   </div>
 </div>
@@ -184,7 +184,7 @@ $$\text{Monthly Payment} = \frac{PV \cdot i}{1 - (1 + i)^{-N}}$$
 
 ## 7. Statistical Sums & Standard Deviation
 
-Accumulate 2-variable data pairs $(x, y)$ into continuous memory registers using $\Sigma+$ to calculate means and sample standard deviations.
+Accumulate 2-variable data pairs $(x, y)$ into continuous memory registers using `{{keycap:Σ+}}` to calculate means and sample standard deviations.
 
 *Mission: Enter sample data points $(2, 4)$ and $(4, 6)$, then solve mean and standard deviation.*
 
@@ -214,7 +214,7 @@ Accumulate 2-variable data pairs $(x, y)$ into continuous memory registers using
 StackCalc32's 16 guided lessons are not limited to touchscreens—they are implemented natively in bare-metal Embedded Swift running on the physical RP2350 microcontroller. The hardware provides an authentic, distraction-free environment to master RPN calculation.
 
 ### Hardware Launch Sequence
-- **Dedicated Launcher Key**: Press **Left Shift (↰) + C** anywhere on the physical keypad to launch the built-in Interactive Tutorial Runner.
+- **Dedicated Launcher Key**: Press **Left Shift ({{keycap:↰}}) + {{keycap:C}}** anywhere on the physical keypad to launch the built-in Interactive Tutorial Runner.
 - **Instant Event Interception**: The firmware event loop intercepts matrix scanning, suspends the standard operational stack, and loads the active tutorial state machine directly into the display buffer.
 
 ### Physical Display & Dynamic Softkeys
@@ -226,7 +226,7 @@ StackCalc32's 16 guided lessons are not limited to touchscreens—they are imple
   - **Key 6 (`[EXIT]`)**: Dismiss the tutorial session and immediately restore your active calculation stack.
 
 ### Real-Time Keystroke & Stack Verification
-- When an instructional step prompts for an input sequence (for example, `Press 5 -> ENTER -> 3 -> +`), the firmware monitors physical switch actuations across the 43-key matrix.
+- When an instructional step prompts for an input sequence (for example, `5 {{key:ENTER}} 3 {{key:+}}`), the firmware monitors physical switch actuations across the 43-key matrix.
 - Each switch closure evaluates against the deterministic `RPNCore` math engine.
 - Upon matching expected results, the LCD displays `VERIFIED: [TEST PASSED]` and enables the `[NEXT]` softkey to advance.
 
@@ -245,19 +245,19 @@ Every lesson is available with complete bit-for-bit parity across the physical h
 | **01** | **RPN Basics** | Stack lift mechanics, eliminating parentheses, 4-level register manipulation ($X, Y, Z, T$) |
 | **02** | **Complex Numbers** | Cartesian $(a + bi)$ entry, complex transcendentals, Euler's identity ($e^{\pi i} = -1$) |
 | **03** | **Angular Modes** | Degree, Radian, and Gradian conversions and trigonometric evaluations |
-| **04** | **Register Storage** | Direct and indirect register addressing with `STO` and `RCL` |
+| **04** | **Register Storage** | Direct and indirect register addressing with `{{keycap:STO}}` and `{{keycap:RCL}}` |
 | **05** | **Fraction Entry** | Three-part `.Whole.Numerator.Denominator` fractional format |
-| **06** | **Manual Simplification** | Factoring common divisors step-by-step using the `[SIMP]` softkey |
+| **06** | **Manual Simplification** | Factoring common divisors step-by-step using the `{{keycap:SIMP}}` key |
 | **07** | **Mixed Arithmetic** | Exact fractional addition, subtraction, multiplication, and division |
-| **08** | **Fraction/Decimal Toggle** | Toggling instantly between exact rational fractions and floating-point decimal via `[FDISP]` |
-| **09** | **TVM Amortization** | Solving loan amortization parameters ($N, I\%YR, PV, PMT, FV$) without algebraic formulas |
+| **08** | **Fraction/Decimal Toggle** | Toggling instantly between exact rational fractions and floating-point decimal via `{{keycap:FDISP}}` |
+| **09** | **TVM Amortization** | Solving loan amortization parameters (`{{keycap:N}}`, `{{keycap:I%YR}}`, `{{keycap:PV}}`, `{{keycap:PMT}}`, `{{keycap:FV}}`) without algebraic formulas |
 | **10** | **Unit Conversions** | Metric and Imperial length, mass, volume, and temperature conversions |
-| **11** | **Integer Division** | Integer quotient and remainder arithmetic using modern `÷R` notation |
-| **12** | **Last X Recovery** | Error correction and argument reuse via `LAST𝑥` |
-| **13** | **Time Conversions** | Decimal hours to Hours:Minutes:Seconds (`▸HR`, `▸HMS`) |
-| **14** | **Base Modes** | Hexadecimal, Decimal, Octal, and Binary bitwise logic and word sizes |
-| **15** | **Two-Variable Statistics** | Accumulating coordinate data pairs with $\Sigma+$ and $\Sigma-$ |
-| **16** | **Standard Deviation** | Sample ($s$) and population ($\sigma$) standard deviations, weighted means |
+| **11** | **Integer Division** | Integer quotient and remainder arithmetic using `{{keycap:÷R}}` notation |
+| **12** | **Last X Recovery** | Error correction and argument reuse via `{{keycap:LASTX}}` |
+| **13** | **Time Conversions** | Decimal hours to Hours:Minutes:Seconds (`{{keycap:▸HR}}`, `{{keycap:▸HMS}}`) |
+| **14** | **Base Modes** | Hexadecimal, Decimal, Octal, and Binary base conversions and 36-bit integer arithmetic |
+| **15** | **Two-Variable Statistics** | Accumulating coordinate data pairs with `{{keycap:Σ+}}` and `{{keycap:Σ-}}` |
+| **16** | **Standard Deviation** | Sample ($s$) and population ($\sigma$) standard deviations, weighted means (`{{keycap:s,σ}}`, `{{keycap:x̄,ȳ}}`, `{{keycap:x̄w}}`) |
 
 ---
 

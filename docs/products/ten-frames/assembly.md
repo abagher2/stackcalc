@@ -97,7 +97,7 @@ hide:
         <span class="ec-highlight-icon">4</span>
         <div>
           <strong class="text-white">Reversible Counters:</strong>
-          <p class="text-sm text-gray-300 m-0">Each 19.0 mm counter features a male base on Side A (seating into tray sockets) and a female socket with debossed concentric tactile micro-grooves on Side B, allowing vertical stacking for multi-addend problems.</p>
+          <p class="text-sm text-gray-300 m-0">Each 19.0 mm counter features a bottom base plug on Side A (seating into tray sockets) and a top stacking socket with debossed concentric tactile micro-grooves on Side B, allowing vertical stacking for multi-addend problems.</p>
         </div>
       </div>
     </div>

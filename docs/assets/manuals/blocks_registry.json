@@ -1,0 +1,848 @@
+{
+  "algebra_boxes_hero": {
+    "alt": "Algebra Boxes Studio Kit Hardware",
+    "camera": "lens=38mm,target=(0,0,20)",
+    "id": "algebra_boxes_hero",
+    "png": "algebra-boxes-hero.png",
+    "renderer": "blender",
+    "scad": "Education/scad/algebra_factoring_box.scad",
+    "scad_sources": [
+      "Education/scad/algebra_factoring_box.scad",
+      "Education/scad/algebra_factoring_parts.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_algebra_boxes",
+    "stls": [
+      "scratch/stl/education/algebra_factoring_box.stl",
+      "scratch/stl/algebra_stage_base.stl",
+      "scratch/stl/algebra_tiles.stl"
+    ],
+    "svg": "algebra-boxes-hero.png"
+  },
+  "algebra_difference_of_squares": {
+    "alt": "Algebra Factoring Studio: Difference of squares (x+2)(x-2) = x^2 + 2x - 2x - 4 = x^2 - 4 with zero-pair cancellation",
+    "camera": "58,0,25",
+    "id": "algebra_difference_of_squares",
+    "png": "algebra_difference_of_squares.png",
+    "renderer": "openscad",
+    "scad": "book_algebra_difference_of_squares.scad",
+    "scad_sources": [
+      "Education/scad/algebra_factoring_box.scad",
+      "Education/scad/algebra_factoring_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_algebra_difference_of_squares.scad",
+    "stls": [
+      "Education/build/stl/components/algebra_box_body.stl",
+      "Education/build/stl/components/algebra_stage_rail_long.stl",
+      "Education/build/stl/components/algebra_tile_pos_x2.stl",
+      "Education/build/stl/components/algebra_tile_pos_x_1.stl",
+      "Education/build/stl/components/algebra_tile_neg_x_1.stl",
+      "Education/build/stl/components/algebra_tile_neg_1_1.stl"
+    ],
+    "svg": "algebra_difference_of_squares.svg"
+  },
+  "algebra_factoring_area": {
+    "alt": "Algebra Factoring Studio: L-frame stage and geometric polynomial tiles showing (x+2)(x+3) = x^2 + 5x + 6",
+    "camera": "58,0,25",
+    "id": "algebra_factoring_area",
+    "png": "algebra_factoring_area.png",
+    "renderer": "openscad",
+    "scad": "book_algebra_factoring_area.scad",
+    "scad_sources": [
+      "Education/scad/algebra_factoring_box.scad",
+      "Education/scad/algebra_factoring_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_algebra_factoring_area.scad",
+    "stls": [
+      "Education/build/stl/components/algebra_box_body.stl",
+      "Education/build/stl/components/algebra_stage_rail_long.stl",
+      "Education/build/stl/components/algebra_tile_pos_x2.stl",
+      "Education/build/stl/components/algebra_tile_pos_x_1.stl",
+      "Education/build/stl/components/algebra_tile_pos_1_1.stl"
+    ],
+    "svg": "algebra_factoring_area.svg"
+  },
+  "algebra_lframe_grid_hero": {
+    "alt": "Algebra L-Frame Grid Hardware Stage",
+    "camera": "lens=55mm,elev=44,azim=-12",
+    "id": "algebra_lframe_grid_hero",
+    "png": "algebra-lframe-grid-hero.png",
+    "renderer": "blender",
+    "scad": "Education/scad/algebra_factoring_parts.scad",
+    "scad_sources": [
+      "Education/scad/algebra_factoring_box.scad",
+      "Education/scad/algebra_factoring_parts.scad"
+    ],
+    "scene": "Tools/rendering/render_concept_and_craftsmanship_stills.py::render_algebra_lframe_grid_hero",
+    "stls": [
+      "scratch/stl/algebra_stage_base.stl",
+      "scratch/stl/algebra_stage_height.stl",
+      "scratch/stl/algebra_x2_flat.stl",
+      "scratch/stl/algebra_x_rod.stl",
+      "scratch/stl/algebra_unit_tile.stl"
+    ],
+    "svg": "algebra-lframe-grid-hero.png"
+  },
+  "clock_classroom_hero": {
+    "alt": "Classroom Maker Space Clock: Precision Geared Engineering",
+    "camera": "lens=40mm,target=(-7.5,0,15)",
+    "id": "clock_classroom_hero",
+    "png": "clock-classroom-hero.png",
+    "renderer": "blender",
+    "scad": "Education/scad/clock_system_box.scad",
+    "scad_sources": [
+      "Education/scad/clock_system_box.scad",
+      "Education/scad/parametric_clock_adjustments.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_classroom_clock",
+    "stls": [
+      "scratch/stl/education/clock_system_box.stl",
+      "scratch/stl/clock_base_core.stl",
+      "scratch/stl/clock_full_dial.stl",
+      "scratch/stl/clock_hour_hand.stl",
+      "scratch/stl/clock_minute_hand.stl",
+      "scratch/stl/clock_quadrant_1.stl"
+    ],
+    "svg": "clock-classroom-hero.png"
+  },
+  "clock_gear_stages_macro": {
+    "alt": "Planetary Clock Epicyclic Gear Stages: 12:1 Compound Reduction",
+    "camera": "lens=65mm,elev=48,azim=12",
+    "id": "clock_gear_stages_macro",
+    "png": "clock-gear-stages-macro.png",
+    "renderer": "blender",
+    "scad": "Education/scad/parametric_clock_adjustments.scad",
+    "scad_sources": [
+      "Education/scad/parametric_clock_adjustments.scad",
+      "Education/scad/clock_system_box.scad"
+    ],
+    "scene": "Tools/rendering/render_concept_and_craftsmanship_stills.py::render_clock_gear_stages_macro",
+    "stls": [
+      "scratch/stl/clock_base_core.stl",
+      "scratch/stl/clock_full_dial.stl",
+      "scratch/stl/clock_hour_hand.stl",
+      "scratch/stl/clock_minute_hand.stl"
+    ],
+    "svg": "clock-gear-stages-macro.png"
+  },
+  "clock_quadrant_concept": {
+    "alt": "Clock Quadrant Concept: Pendulum Escapements and Harmonic Oscillation",
+    "camera": "lens=62mm,elev=44,azim=-5",
+    "id": "clock_quadrant_concept",
+    "png": "clock-quadrant-concept.png",
+    "renderer": "blender",
+    "scad": "Education/scad/clock_system_blocks.scad",
+    "scad_sources": [
+      "Education/scad/parametric_clock_adjustments.scad",
+      "Education/scad/clock_system_blocks.scad"
+    ],
+    "scene": "Tools/rendering/render_concept_and_craftsmanship_stills.py::render_clock_quadrant_concept",
+    "stls": [
+      "scratch/stl/clock_base_core.stl",
+      "scratch/stl/clock_full_dial.stl",
+      "scratch/stl/clock_hour_hand.stl",
+      "scratch/stl/clock_minute_hand.stl",
+      "scratch/stl/clock_quadrant_1.stl"
+    ],
+    "svg": "clock-quadrant-concept.png"
+  },
+  "counting_tiles_array_3x8": {
+    "alt": "Counting & Array Studio: Planar commutativity proof (3x8 = 24 and 8x3 = 24)",
+    "camera": "55,0,25",
+    "id": "counting_tiles_array_3x8",
+    "png": "counting_tiles_array_3x8.png",
+    "renderer": "openscad",
+    "scad": "book_counting_tiles_array_3x8.scad",
+    "scad_sources": [
+      "Education/scad/unifix_cubes_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_counting_tiles_array_3x8.scad",
+    "stls": [
+      "Education/build/stl/components/counting_tile_white_1.stl"
+    ],
+    "svg": "counting_tiles_array_3x8.svg"
+  },
+  "counting_tiles_box_3x1x13u": {
+    "alt": "Counting & Array Studio: 3x1x13U Gridfinity enclosure with 4 color-coded 12-tile towers",
+    "camera": "55,0,30",
+    "id": "counting_tiles_box_3x1x13u",
+    "png": "counting_tiles_box_3x1x13u.png",
+    "renderer": "openscad",
+    "scad": "book_counting_tiles_box_3x1x13u.scad",
+    "scad_sources": [
+      "Education/scad/unifix_cubes_box.scad",
+      "Education/scad/unifix_cubes_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_counting_tiles_box_3x1x13u.scad",
+    "stls": [
+      "Education/build/stl/components/counting_tile_box_body_13u.stl",
+      "Education/build/stl/components/counting_tile_white_1.stl"
+    ],
+    "svg": "counting_tiles_box_3x1x13u.svg"
+  },
+  "counting_tiles_distributive_4color": {
+    "alt": "Counting & Array Studio: 4-color distributive area model (10+2)(10+2) = 100+20+20+4 = 144",
+    "camera": "55,0,25",
+    "id": "counting_tiles_distributive_4color",
+    "png": "counting_tiles_distributive_4color.png",
+    "renderer": "openscad",
+    "scad": "book_counting_tiles_distributive_4color.scad",
+    "scad_sources": [
+      "Education/scad/unifix_cubes_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_counting_tiles_distributive_4color.scad",
+    "stls": [
+      "Education/build/stl/components/counting_tile_white_1.stl"
+    ],
+    "svg": "counting_tiles_distributive_4color.svg"
+  },
+  "counting_tiles_fraction_datum_84mm": {
+    "alt": "Universal 84.0 mm Datum & Common Denominator Lid Tray Comparison: 12 units = 1 Whole (84mm) and 1/3 + 1/4 = 7/12 (49mm)",
+    "camera": "65,0,28",
+    "id": "counting_tiles_fraction_datum_84mm",
+    "png": "counting_tiles_fraction_datum_84mm.png",
+    "renderer": "openscad",
+    "scad": "book_counting_tiles_fraction_datum_84mm.scad",
+    "scad_sources": [
+      "Education/scad/unifix_cubes_parts.scad",
+      "Education/scad/fraction_studio_parts.scad",
+      "Education/scad/fraction_studio_box.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_counting_tiles_fraction_datum_84mm.scad",
+    "stls": [
+      "Education/build/stl/components/fraction_box_lid.stl",
+      "Education/build/stl/components/counting_tile_white_1.stl",
+      "Education/build/stl/components/fraction_block_1_whole.stl",
+      "Education/build/stl/components/fraction_block_third_1.stl",
+      "Education/build/stl/components/fraction_block_fourth_1.stl",
+      "Education/build/stl/components/fraction_block_twelfth_1.stl"
+    ],
+    "svg": "counting_tiles_fraction_datum_84mm.svg"
+  },
+  "dice_spinner_craftsmanship": {
+    "alt": "Dice Spinner Mechanical Craftsmanship",
+    "camera": "lens=55mm,elev=36,azim=16",
+    "id": "dice_spinner_craftsmanship",
+    "png": "dice-spinner-craftsmanship.png",
+    "renderer": "blender",
+    "scad": "Education/scad/dice_and_spinner_parts.scad",
+    "scad_sources": [
+      "Education/scad/dice_and_spinner_box.scad",
+      "Education/scad/dice_and_spinner_parts.scad"
+    ],
+    "scene": "Tools/rendering/render_concept_and_craftsmanship_stills.py::render_dice_spinner_craftsmanship",
+    "stls": [
+      "Education/build/stl/components/dice_spinner_box_body.stl",
+      "scratch/stl/spinner_lid.stl",
+      "scratch/stl/spinner_arrow.stl",
+      "scratch/stl/spinner_retention_cap.stl",
+      "scratch/stl/spinner_dial_operations.stl",
+      "scratch/stl/fair_die_18mm.stl"
+    ],
+    "svg": "dice-spinner-craftsmanship.png"
+  },
+  "dice_spinner_d20_and_polyhedra": {
+    "alt": "Probability Dice & Spinner Studio: Independent 2d6 pairs (36-outcome sample space) with 10-sector hub and operations dial",
+    "camera": "58,0,25",
+    "id": "dice_spinner_d20_and_polyhedra",
+    "png": "dice_spinner_d20_and_polyhedra.png",
+    "renderer": "openscad",
+    "scad": "book_dice_spinner_d20_and_polyhedra.scad",
+    "scad_sources": [
+      "Education/scad/dice_and_spinner_box.scad",
+      "Education/scad/dice_and_spinner_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_dice_spinner_d20_and_polyhedra.scad",
+    "stls": [
+      "Education/build/stl/components/dice_spinner_box_body.stl",
+      "Education/build/stl/components/spinner_hub_housing.stl",
+      "Education/build/stl/components/dice_math_white_1.stl",
+      "Education/build/stl/components/dice_math_bluegray_1.stl",
+      "Education/build/stl/components/spinner_dial_operations.stl",
+      "Education/build/stl/components/spinner_arrow_pointer.stl",
+      "Education/build/stl/components/spinner_retention_pin.stl"
+    ],
+    "svg": "dice_spinner_d20_and_polyhedra.svg"
+  },
+  "dice_spinner_probability": {
+    "alt": "Probability Dice & Spinner Studio: 1x1 spinner enclosure with 10-sector lid, biased and binary dial plates, and 4 volume-equalized fair d6 dice",
+    "camera": "58,0,25",
+    "id": "dice_spinner_probability",
+    "png": "dice_spinner_probability.png",
+    "renderer": "openscad",
+    "scad": "book_dice_spinner_probability.scad",
+    "scad_sources": [
+      "Education/scad/dice_and_spinner_box.scad",
+      "Education/scad/dice_and_spinner_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_dice_spinner_probability.scad",
+    "stls": [
+      "Education/build/stl/components/dice_spinner_box_body.stl",
+      "Education/build/stl/components/spinner_hub_housing.stl",
+      "Education/build/stl/components/dice_math_white_1.stl",
+      "Education/build/stl/components/spinner_dial_biased_1_2_1_4.stl",
+      "Education/build/stl/components/spinner_dial_binary_50_50.stl",
+      "Education/build/stl/components/spinner_arrow_pointer.stl",
+      "Education/build/stl/components/spinner_retention_pin.stl"
+    ],
+    "svg": "dice_spinner_probability.svg"
+  },
+  "dominoes_studio_hero": {
+    "alt": "Dominoes Studio: Modular Enclosure and Tactile Training Tiles",
+    "camera": "lens=38mm,target=(0,-6,20)",
+    "id": "dominoes_studio_hero",
+    "png": "dominoes-studio-hero.png",
+    "renderer": "blender",
+    "scad": "Education/scad/math_dominoes_box.scad",
+    "scad_sources": [
+      "Education/scad/math_dominoes_box.scad",
+      "Education/scad/math_dominoes_parts.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_dominoes_studio",
+    "stls": [
+      "Education/build/stl/components/domino_box_body.stl",
+      "Education/build/stl/components/domino_doubles_lid.stl",
+      "Education/build/stl/components/domino_12_frame_tray.stl",
+      "Education/build/stl/components/domino_tile_1.stl"
+    ],
+    "svg": "dominoes-studio-hero.png"
+  },
+  "dominoes_studio_stealth_black": {
+    "alt": "Dominoes Studio Stealth Black: Technical Thermoplastics and Batch Manufacturing",
+    "camera": "lens=38mm,target=(0,-6,20)",
+    "id": "dominoes_studio_stealth_black",
+    "png": "dominoes-studio-stealth_black.png",
+    "renderer": "blender",
+    "scad": "Education/scad/math_dominoes_box.scad",
+    "scad_sources": [
+      "Education/scad/math_dominoes_box.scad",
+      "Education/scad/math_dominoes_parts.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_dominoes_studio",
+    "stls": [
+      "Education/build/stl/components/domino_box_body.stl",
+      "Education/build/stl/components/domino_doubles_lid.stl",
+      "Education/build/stl/components/domino_12_frame_tray.stl",
+      "Education/build/stl/components/domino_tile_1.stl"
+    ],
+    "svg": "dominoes-studio-stealth_black.png"
+  },
+  "fraction_gauge_comparison": {
+    "alt": "Fraction Studio Gauge Comparison: Direct height equivalence across denominator families",
+    "camera": "lens=58mm,elev=28,azim=-8",
+    "id": "fraction_gauge_comparison",
+    "png": "fraction-studio-gauge-comparison.png",
+    "renderer": "blender",
+    "scad": "Education/scad/fraction_studio_box.scad",
+    "scad_sources": [
+      "Education/scad/fraction_studio_box.scad",
+      "Education/scad/fraction_studio_parts.scad"
+    ],
+    "scene": "Tools/rendering/render_concept_and_craftsmanship_stills.py::render_fraction_gauge_comparison",
+    "stls": [
+      "Education/build/stl/components/fraction_box_body.stl",
+      "scratch/stl/fraction_1_1.stl",
+      "scratch/stl/fraction_1_2.stl",
+      "scratch/stl/fraction_1_3.stl",
+      "scratch/stl/fraction_1_4.stl",
+      "scratch/stl/fraction_1_6.stl"
+    ],
+    "svg": "fraction-studio-gauge-comparison.png"
+  },
+  "fraction_studio_common_denominator": {
+    "alt": "Fraction Studio: Common denominator discovery on 12-socket Lid Tray proving 1/3 (28mm) + 1/4 (21mm) = 7/12 (49mm)",
+    "camera": "65,0,28",
+    "id": "fraction_studio_common_denominator",
+    "png": "fraction_studio_common_denominator.png",
+    "renderer": "openscad",
+    "scad": "book_fraction_studio_common_denominator.scad",
+    "scad_sources": [
+      "Education/scad/fraction_studio_box.scad",
+      "Education/scad/fraction_studio_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_fraction_studio_common_denominator.scad",
+    "stls": [
+      "Education/build/stl/components/fraction_box_lid.stl",
+      "Education/build/stl/components/fraction_block_1_whole.stl",
+      "Education/build/stl/components/fraction_block_half_1.stl",
+      "Education/build/stl/components/fraction_block_third_1.stl",
+      "Education/build/stl/components/fraction_block_fourth_1.stl",
+      "Education/build/stl/components/fraction_block_twelfth_1.stl"
+    ],
+    "svg": "fraction_studio_common_denominator.svg"
+  },
+  "fraction_studio_hero": {
+    "alt": "StackCalc Fraction Studio: 84mm Proportional Towers and Twin Comparator Well",
+    "camera": "lens=55mm,target=(0,-15,42)",
+    "id": "fraction_studio_hero",
+    "png": "fraction-studio-hero.png",
+    "renderer": "blender",
+    "scad": "Education/scad/fraction_studio_parts.scad",
+    "scad_sources": [
+      "Education/scad/fraction_studio_box.scad",
+      "Education/scad/fraction_studio_parts.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_fraction_studio",
+    "stls": [
+      "scratch/stl/fraction_studio_actual_towers.stl",
+      "scratch/stl/education/fraction_studio_parts.stl"
+    ],
+    "svg": "fraction-studio-hero.png"
+  },
+  "fraction_studio_twin_comparator": {
+    "alt": "Fraction Studio: 12-socket Lid Tray comparison proving 4/6 + 1/12 = 3/4 (63.0 mm) alongside 1 Whole (84.0 mm)",
+    "camera": "65,0,28",
+    "id": "fraction_studio_twin_comparator",
+    "png": "fraction_studio_twin_comparator.png",
+    "renderer": "openscad",
+    "scad": "book_fraction_studio_twin_comparator.scad",
+    "scad_sources": [
+      "Education/scad/fraction_studio_box.scad",
+      "Education/scad/fraction_studio_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_fraction_studio_twin_comparator.scad",
+    "stls": [
+      "Education/build/stl/components/fraction_box_lid.stl",
+      "Education/build/stl/components/fraction_block_1_whole.stl",
+      "Education/build/stl/components/fraction_block_half_1.stl",
+      "Education/build/stl/components/fraction_block_fourth_1.stl",
+      "Education/build/stl/components/fraction_block_sixth_1.stl",
+      "Education/build/stl/components/fraction_block_twelfth_1.stl"
+    ],
+    "svg": "fraction_studio_twin_comparator.svg"
+  },
+  "materials_swatch_grid": {
+    "alt": "Calibrated Technical Thermoplastics CMF Swatch Grid",
+    "camera": "ortho_grid",
+    "id": "materials_swatch_grid",
+    "png": "materials_swatch_grid.png",
+    "renderer": "blender",
+    "scad": "Hardware/designs/laser_calibration_card.scad",
+    "scad_sources": [
+      "Hardware/designs/laser_calibration_card.scad",
+      "Hardware/designs/unified_faceplate_award.scad"
+    ],
+    "scene": "Hardware/tools/generate_swatch_sheet.py::main",
+    "stls": [
+      "scratch/stl/laser_calibration_card.stl",
+      "scratch/stl/unified_faceplate_award.stl"
+    ],
+    "svg": "materials_swatch_grid.png"
+  },
+  "math_dominoes_bridging_12frame": {
+    "alt": "Math Dominoes Studio: Bridging 10 on 12-frame tray ([5|4]=9 + [3|2]=5 = 10 + 4 = 14)",
+    "camera": "58,0,25",
+    "id": "math_dominoes_bridging_12frame",
+    "png": "math_dominoes_bridging_12frame.png",
+    "renderer": "openscad",
+    "scad": "book_math_dominoes_bridging_12frame.scad",
+    "scad_sources": [
+      "Education/scad/math_dominoes_box.scad",
+      "Education/scad/math_dominoes_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_math_dominoes_bridging_12frame.scad",
+    "stls": [
+      "Education/build/stl/components/domino_box_body.stl",
+      "Education/build/stl/components/domino_doubles_lid.stl",
+      "Education/build/stl/components/domino_12_frame_tray.stl",
+      "Education/build/stl/components/domino_tile_1.stl"
+    ],
+    "svg": "math_dominoes_bridging_12frame.svg"
+  },
+  "math_dominoes_pairing": {
+    "alt": "Math Dominoes Studio: 3x1 enclosure and 12-frame tray showing 6 + 6 = 12 bridging the 10-break line",
+    "camera": "58,0,25",
+    "id": "math_dominoes_pairing",
+    "png": "math_dominoes_pairing.png",
+    "renderer": "openscad",
+    "scad": "book_math_dominoes_pairing.scad",
+    "scad_sources": [
+      "Education/scad/math_dominoes_box.scad",
+      "Education/scad/math_dominoes_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_math_dominoes_pairing.scad",
+    "stls": [
+      "Education/build/stl/components/domino_box_body.stl",
+      "Education/build/stl/components/domino_12_frame_tray.stl",
+      "Education/build/stl/components/domino_tile_1.stl"
+    ],
+    "svg": "math_dominoes_pairing.svg"
+  },
+  "number_rack_subitizing": {
+    "alt": "Number Rack Studio: Dual-row Rekenrek bead subitizing on Snapfinity lid (T = 7, X = 4)",
+    "camera": "58,0,25",
+    "id": "number_rack_subitizing",
+    "png": "number_rack_subitizing.png",
+    "renderer": "openscad",
+    "scad": "book_number_rack_subitizing.scad",
+    "scad_sources": [
+      "Education/scad/number_rack_assembly.scad",
+      "Education/scad/number_rack_box.scad",
+      "Education/scad/number_rack_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_number_rack_subitizing.scad",
+    "stls": [
+      "scratch/stl/education/number_rack_box.stl",
+      "scratch/stl/education/number_rack_parts.stl"
+    ],
+    "svg": "number_rack_subitizing.svg"
+  },
+  "place_value_regrouping": {
+    "alt": "Place Value Studio: 3x1 enclosure and 4x2 tray decomposing 132 = 100 + 30 + 2",
+    "camera": "58,0,25",
+    "id": "place_value_regrouping",
+    "png": "place_value_regrouping.png",
+    "renderer": "openscad",
+    "scad": "book_place_value_regrouping.scad",
+    "scad_sources": [
+      "Education/scad/place_value_box.scad",
+      "Education/scad/place_value_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_place_value_regrouping.scad",
+    "stls": [
+      "Education/build/stl/components/place_value_box_body.stl",
+      "Education/build/stl/components/place_value_tray_4x2_1.stl",
+      "Education/build/stl/components/pv_digit_block_slate_1.stl"
+    ],
+    "svg": "place_value_regrouping.svg"
+  },
+  "planetary_geared_clock_330": {
+    "alt": "Planetary Geared Clock: 12:1 epicyclic gear train at 3:30 (minute hand at 180 deg, hour hand at 105 deg)",
+    "camera": "55,0,30",
+    "id": "planetary_geared_clock_330",
+    "png": "planetary_geared_clock_330.png",
+    "renderer": "openscad",
+    "scad": "book_planetary_clock_330.scad",
+    "scad_sources": [
+      "Education/scad/parametric_clock_adjustments.scad",
+      "Education/scad/parametric_clock_assembly.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_planetary_clock_330.scad",
+    "stls": [
+      "scratch/stl/education/clock_base_housing.stl",
+      "scratch/stl/education/clock_dial.stl",
+      "scratch/stl/education/clock_hour_ring.stl",
+      "scratch/stl/education/clock_minute_hand.stl"
+    ],
+    "svg": "planetary_geared_clock_330.svg"
+  },
+  "prime_lcm_gcd_venn": {
+    "alt": "Prime Factor Studio: Simultaneous GCD (10) and LCM (100) tower comparison for 20 and 50 on the 12-socket Lid Tray",
+    "camera": "65,0,28",
+    "id": "prime_lcm_gcd_venn",
+    "png": "prime_lcm_gcd_venn.png",
+    "renderer": "openscad",
+    "scad": "book_prime_lcm_gcd_venn.scad",
+    "scad_sources": [
+      "Education/scad/prime_lcm_gcd_assembly.scad",
+      "Education/scad/prime_studio_box.scad",
+      "Education/scad/prime_studio_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_prime_lcm_gcd_venn.scad",
+    "stls": [
+      "Education/build/stl/components/prime_box_lid.stl",
+      "Education/build/stl/components/prime_block_2_1.stl",
+      "Education/build/stl/components/prime_block_5_1.stl"
+    ],
+    "svg": "prime_lcm_gcd_venn.svg"
+  },
+  "prime_studio_commutativity": {
+    "alt": "Prime Factor Studio: Commutative factor stacking 2x5 = 10 and 5x2 = 10 on the 12-socket Lid Tray",
+    "camera": "65,0,28",
+    "id": "prime_studio_commutativity",
+    "png": "prime_studio_commutativity.png",
+    "renderer": "openscad",
+    "scad": "book_prime_studio_commutativity.scad",
+    "scad_sources": [
+      "Education/scad/prime_studio_box.scad",
+      "Education/scad/prime_studio_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_prime_studio_commutativity.scad",
+    "stls": [
+      "Education/build/stl/components/prime_box_lid.stl",
+      "Education/build/stl/components/prime_block_2_1.stl",
+      "Education/build/stl/components/prime_block_5_1.stl"
+    ],
+    "svg": "prime_studio_commutativity.svg"
+  },
+  "prime_studio_comparator_stage": {
+    "alt": "Prime Factor Studio: 12-socket Lid Tray comparing prime factor towers for 20, 30, 50, and 18",
+    "camera": "65,0,28",
+    "id": "prime_studio_comparator_stage",
+    "png": "prime_studio_comparator_stage.png",
+    "renderer": "openscad",
+    "scad": "book_prime_comparator_stage.scad",
+    "scad_sources": [
+      "Education/scad/prime_studio_box.scad",
+      "Education/scad/prime_studio_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_prime_comparator_stage.scad",
+    "stls": [
+      "Education/build/stl/components/prime_box_lid.stl",
+      "Education/build/stl/components/prime_block_2_1.stl",
+      "Education/build/stl/components/prime_block_3_1.stl",
+      "Education/build/stl/components/prime_block_5_1.stl"
+    ],
+    "svg": "prime_studio_comparator_stage.svg"
+  },
+  "sc32_craftsmanship_pureblack": {
+    "alt": "StackCalc SC-32 Laser-Ablated Keycap Legends and Matte Enclosure Craftsmanship",
+    "camera": "lens=65mm,elev=28,azim=14",
+    "id": "sc32_craftsmanship_pureblack",
+    "png": "sc32-craftsmanship-pureblack.png",
+    "renderer": "blender",
+    "scad": "Hardware/designs/unified_faceplate_award.scad",
+    "scad_sources": [
+      "Hardware/designs/chassis_award.scad",
+      "Hardware/designs/unified_faceplate_award.scad",
+      "Hardware/designs/tpu_membrane_award.scad",
+      "Hardware/designs/top_cap_award.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_sc32_calculator",
+    "stls": [
+      "scratch/stl/chassis_award.stl",
+      "scratch/stl/unified_faceplate_award.stl",
+      "scratch/stl/tpu_membrane_award.stl",
+      "scratch/stl/top_cap_award.stl"
+    ],
+    "svg": "sc32-craftsmanship-pureblack.png"
+  },
+  "sc32_dovetail_service": {
+    "alt": "StackCalc SC-32 Tool-Free Dovetail Battery Bay",
+    "camera": "lens=46mm,elev=40,azim=18",
+    "id": "sc32_dovetail_service",
+    "png": "sc32-dovetail-service.png",
+    "renderer": "blender",
+    "scad": "Hardware/designs/top_cap_award.scad",
+    "scad_sources": [
+      "Hardware/designs/chassis_award.scad",
+      "Hardware/designs/unified_faceplate_award.scad",
+      "Hardware/designs/tpu_membrane_award.scad",
+      "Hardware/designs/top_cap_award.scad"
+    ],
+    "scene": "Tools/rendering/render_concept_and_craftsmanship_stills.py::render_sc32_dovetail_service",
+    "stls": [
+      "scratch/stl/chassis_award.stl",
+      "scratch/stl/unified_faceplate_award.stl",
+      "scratch/stl/tpu_membrane_award.stl",
+      "scratch/stl/top_cap_award.stl"
+    ],
+    "svg": "sc32-dovetail-service.png"
+  },
+  "sc32_exploded_assembly": {
+    "alt": "StackCalc SC-32 Internal Exploded Assembly",
+    "camera": "lens=46mm,target=(0,0,0)",
+    "id": "sc32_exploded_assembly",
+    "png": "sc32-exploded-assembly.png",
+    "renderer": "blender",
+    "scad": "Hardware/designs/assembly_award.scad",
+    "scad_sources": [
+      "Hardware/designs/chassis_award.scad",
+      "Hardware/designs/unified_faceplate_award.scad",
+      "Hardware/designs/tpu_membrane_award.scad",
+      "Hardware/designs/top_cap_award.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_sc32_calculator",
+    "stls": [
+      "scratch/stl/chassis_award.stl",
+      "scratch/stl/unified_faceplate_award.stl",
+      "scratch/stl/tpu_membrane_award.stl",
+      "scratch/stl/top_cap_award.stl"
+    ],
+    "svg": "sc32-exploded-assembly.png"
+  },
+  "sc32_hero_keynote": {
+    "alt": "StackCalc SC-32 Scientific RPN Calculator Hardware",
+    "camera": "lens=55mm,elev=32,azim=-15",
+    "id": "sc32_hero_keynote",
+    "png": "sc32-hero-keynote.png",
+    "renderer": "blender",
+    "scad": "Hardware/designs/assembly_award.scad",
+    "scad_sources": [
+      "Hardware/designs/chassis_award.scad",
+      "Hardware/designs/unified_faceplate_award.scad",
+      "Hardware/designs/tpu_membrane_award.scad",
+      "Hardware/designs/top_cap_award.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_sc32_calculator",
+    "stls": [
+      "scratch/stl/chassis_award.stl",
+      "scratch/stl/unified_faceplate_award.stl",
+      "scratch/stl/tpu_membrane_award.stl",
+      "scratch/stl/top_cap_award.stl"
+    ],
+    "svg": "sc32-hero-keynote.png"
+  },
+  "sc32_rpn_calculation": {
+    "alt": "StackCalc SC-32 Live 4-Level XYZT Stack Hardware Display",
+    "camera": "lens=55mm,elev=35,azim=-10",
+    "id": "sc32_rpn_calculation",
+    "png": "sc32-rpn-calculation.png",
+    "renderer": "blender",
+    "scad": "Hardware/designs/assembly_award.scad",
+    "scad_sources": [
+      "Hardware/designs/chassis_award.scad",
+      "Hardware/designs/unified_faceplate_award.scad",
+      "Hardware/designs/tpu_membrane_award.scad",
+      "Hardware/designs/top_cap_award.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_sc32_calculator",
+    "stls": [
+      "scratch/stl/chassis_award.stl",
+      "scratch/stl/unified_faceplate_award.stl",
+      "scratch/stl/tpu_membrane_award.stl",
+      "scratch/stl/top_cap_award.stl"
+    ],
+    "svg": "sc32-rpn-calculation.png"
+  },
+  "sc32_utility_ortho": {
+    "alt": "StackCalc SC-32 Orthographic Hardware Faceplate and 43-Key Matrix",
+    "camera": "ortho_top_down",
+    "id": "sc32_utility_ortho",
+    "png": "sc32-utility-ortho.png",
+    "renderer": "blender",
+    "scad": "Hardware/designs/unified_faceplate_award.scad",
+    "scad_sources": [
+      "Hardware/designs/chassis_award.scad",
+      "Hardware/designs/unified_faceplate_award.scad",
+      "Hardware/designs/tpu_membrane_award.scad",
+      "Hardware/designs/top_cap_award.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_sc32_calculator",
+    "stls": [
+      "scratch/stl/chassis_award.stl",
+      "scratch/stl/unified_faceplate_award.stl",
+      "scratch/stl/tpu_membrane_award.stl",
+      "scratch/stl/top_cap_award.stl"
+    ],
+    "svg": "sc32-utility-ortho.png"
+  },
+  "sc6_elementary_hero": {
+    "alt": "StackCalc SC-6 Elementary RPN Hardware Calculator",
+    "camera": "lens=50mm,elev=30,azim=-12",
+    "id": "sc6_elementary_hero",
+    "png": "sc6-elementary-hero.png",
+    "renderer": "blender",
+    "scad": "Hardware/designs/assembly_award.scad",
+    "scad_sources": [
+      "Hardware/designs/chassis_award.scad",
+      "Hardware/designs/unified_faceplate_award.scad",
+      "Hardware/designs/tpu_membrane_award.scad",
+      "Hardware/designs/top_cap_award.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_sc6_calculator",
+    "stls": [
+      "scratch/stl/chassis_award.stl",
+      "scratch/stl/unified_faceplate_award.stl",
+      "scratch/stl/tpu_membrane_award.stl",
+      "scratch/stl/top_cap_award.stl"
+    ],
+    "svg": "sc6-elementary-hero.png"
+  },
+  "ten_frame_bridging_ten": {
+    "alt": "Ten-Frame Studio: 2x5 tray with 5.0 mm subitizing rib bridging ten (8 + 5 = 10 + 3 = 13)",
+    "camera": "55,0,25",
+    "id": "ten_frame_bridging_ten",
+    "png": "ten_frame_bridging_ten.png",
+    "renderer": "openscad",
+    "scad": "book_ten_frame_bridging_ten.scad",
+    "scad_sources": [
+      "Education/scad/ten_frames_box.scad",
+      "Education/scad/ten_frames_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_ten_frame_bridging_ten.scad",
+    "stls": [
+      "Education/build/stl/components/tenframe_tray_1.stl",
+      "Education/build/stl/components/tenframe_counter_face_a_1.stl",
+      "Education/build/stl/components/tenframe_box_body.stl"
+    ],
+    "svg": "ten_frame_bridging_ten.svg"
+  },
+  "ten_frame_subitizing_5anchor": {
+    "alt": "Ten-Frame Studio: 5-anchor subitizing (5 Red + 3 Green = 8, 2 empty to 10) and 70.0 mm 10-rod height parity",
+    "camera": "55,0,25",
+    "id": "ten_frame_subitizing_5anchor",
+    "png": "ten_frame_subitizing_5anchor.png",
+    "renderer": "openscad",
+    "scad": "book_ten_frame_subitizing_5anchor.scad",
+    "scad_sources": [
+      "Education/scad/ten_frames_box.scad",
+      "Education/scad/ten_frames_parts.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_ten_frame_subitizing_5anchor.scad",
+    "stls": [
+      "Education/build/stl/components/tenframe_box_body.stl",
+      "Education/build/stl/components/tenframe_tray_1.stl",
+      "Education/build/stl/components/tenframe_counter_face_a_1.stl",
+      "Education/build/stl/components/tenframe_miniblock_10_1.stl"
+    ],
+    "svg": "ten_frame_subitizing_5anchor.svg"
+  },
+  "ten_frames_hero": {
+    "alt": "Ten-Frame Studio Physical Manipulative Kit",
+    "camera": "lens=38mm,target=(0,-5,20)",
+    "id": "ten_frames_hero",
+    "png": "ten-frames-hero.png",
+    "renderer": "blender",
+    "scad": "Education/scad/ten_frames_box.scad",
+    "scad_sources": [
+      "Education/scad/ten_frames_box.scad",
+      "Education/scad/ten_frames_parts.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_ten_frames",
+    "stls": [
+      "scratch/stl/education/ten_frames_box.stl",
+      "scratch/stl/ten_frame_tray.stl",
+      "scratch/stl/ten_frame_shelf.stl",
+      "scratch/stl/ten_frame_counter.stl"
+    ],
+    "svg": "ten-frames-hero.png"
+  },
+  "tpu_travel_pouch": {
+    "alt": "StackCalc SC-32 Tournament Travel Pouch and Competition Setup",
+    "camera": "lens=50mm,target=(0,0,25)",
+    "id": "tpu_travel_pouch",
+    "png": "tpu-travel-pouch-hero.png",
+    "renderer": "blender",
+    "scad": "Hardware/designs/tpu_pouch.scad",
+    "scad_sources": [
+      "Hardware/designs/tpu_pouch.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_tpu_pouch",
+    "stls": [
+      "scratch/stl/tpu_pouch.stl"
+    ],
+    "svg": "tpu-travel-pouch-hero.png"
+  },
+  "unit_circle_volvelle": {
+    "alt": "Unit Circle Volvelle: Rotating radian/degree dial and trigonometric projection windows",
+    "camera": "lens=55mm,target=(0,0,1.6)",
+    "id": "unit_circle_volvelle",
+    "png": "unit-circle-volvelle-hero.png",
+    "renderer": "blender",
+    "scad": "Hardware/designs/volvelle.scad",
+    "scad_sources": [
+      "Hardware/designs/volvelle.scad"
+    ],
+    "scene": "Tools/rendering/render_product_stills.py::render_volvelle",
+    "stls": [
+      "scratch/stl/volvelle.stl"
+    ],
+    "svg": "unit-circle-volvelle-hero.png"
+  },
+  "unit_circle_volvelle_30deg": {
+    "alt": "Unit Circle Volvelle: Dialed to 30 deg (pi/6) showing right-triangle projections cos(30)=sqrt(3)/2 and sin(30)=1/2",
+    "camera": "48,0,20",
+    "id": "unit_circle_volvelle_30deg",
+    "png": "unit_circle_volvelle_30deg.png",
+    "renderer": "openscad",
+    "scad": "book_unit_circle_volvelle_30deg.scad",
+    "scad_sources": [
+      "Hardware/designs/volvelle.scad"
+    ],
+    "scene": "Education/tools/generate_book_diagrams.py::book_unit_circle_volvelle_30deg.scad",
+    "stls": [
+      "scratch/stl/volvelle.stl"
+    ],
+    "svg": "unit_circle_volvelle_30deg.svg"
+  }
+}

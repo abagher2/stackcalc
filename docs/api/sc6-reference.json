@@ -1,0 +1,364 @@
+{
+  "model": "SC-6",
+  "name": "StackCalc SC-6 Elementary Calculator",
+  "version": "1.2.0",
+  "description": "Foundational Tactile Reverse Polish Notation (RPN) Handheld for Grades K–6 classrooms with default 4-stack XYZT display, 4 elementary superpowers, 7 concrete manipulative modes, geometry formulas, prime factorization, and built-in math quiz engine.",
+  "hardware": {
+    "mcu": "Raspberry Pi RP2350 Silicon",
+    "chassis": "Impact-resistant dark technical thermoplastics (Elegoo Space Gray PLA / Sunlu Midnight Navy PLA 2.0+) with Light Gray TPU 95A keypad and tool-free sliding dovetail protective cowl",
+    "keyboard": "28 tactile snap-dome keys with 400g actuation force and unmistakable mechanical click",
+    "display": "Transflective ST7567A monochrome LCD with ambient daylight readability and zero blue light",
+    "power": "1x CR2032 3V Lithium Coin Cell (entire 9-month school year life)",
+    "pedagogy": "Concrete-Representational-Abstract (CRA) math learning with tactile manipulation"
+  },
+  "architecture": {
+    "stack_engine": "RPN (Reverse Polish Notation)",
+    "default_stack_depth": 4,
+    "visible_stack_lines": 4,
+    "stack_levels": [
+      {
+        "register": "X",
+        "line": 1,
+        "description": "Active input mantissa / primary result"
+      },
+      {
+        "register": "Y",
+        "line": 2,
+        "description": "First operand or remainder reservoir"
+      },
+      {
+        "register": "Z",
+        "line": 3,
+        "description": "Suspended intermediate subtotal level"
+      },
+      {
+        "register": "T",
+        "line": 4,
+        "description": "Top constant reservoir for skip-counting"
+      }
+    ],
+    "registers": {
+      "stack": [
+        "X",
+        "Y",
+        "Z",
+        "T"
+      ],
+      "last_x": "LAST X register stores operand prior to calculation for self-checking inverse arithmetic",
+      "quiz_state": [
+        "Score",
+        "Total",
+        "Mastery Level (1-6)",
+        "Streak"
+      ]
+    }
+  },
+  "superpowers": [
+    {
+      "id": "rep",
+      "name": "Rhythmic Skip-Counting & Fact Ladders",
+      "key": "REP",
+      "shift": "blue",
+      "description": "Fills all 4 stack levels with the value in X. Repeatedly pressing [+] produces rhythmic fact ladders (e.g. 7, 14, 21, 28) with auditory snap-dome cadence.",
+      "example": "7 [g] [REP] [+] [+] [+] -> 14, 21, 28"
+    },
+    {
+      "id": "intDiv",
+      "name": "Integer Division with Whole Quotient & Remainder",
+      "key": "÷R",
+      "shift": "blue",
+      "description": "Solves long division by loading whole quotient Q into Line X and remainder R into Line Y simultaneously on the 4-line screen.",
+      "example": "23 [ENTER] 4 [g] [÷R] -> Line X displays 5, Line Y displays 3"
+    },
+    {
+      "id": "simp",
+      "name": "Step-by-Step Fraction Simplification",
+      "key": "SIMP",
+      "shift": "blue",
+      "description": "Reduces active fraction by dividing numerator and denominator by their smallest prime common factor, temporarily flashing the factor.",
+      "example": "24/36 [g] [SIMP] -> 12/18 (flashes factor 2); second press yields 2/3"
+    },
+    {
+      "id": "lastx",
+      "name": "Self-Checking Inverse Verification",
+      "key": "LASTX",
+      "shift": "yellow",
+      "description": "Recalls the previous second operand so students can run inverse operations (subtracting to verify addition) without asking teacher.",
+      "example": "48 [ENTER] 37 [+] -> 85; [f] [LASTX] [-] -> 48 (proven!)"
+    }
+  ],
+  "visual_modes": [
+    {
+      "key": "123",
+      "name": "Base-10 Elementary Arithmetic",
+      "description": "Standard 4-stack XYZT live display for multi-digit whole numbers and decimals."
+    },
+    {
+      "key": "▦",
+      "name": "Ten-Frame Studio",
+      "description": "Visual 2x5 dot grid displaying quantities up to 10 or 20 paired with carry shelf."
+    },
+    {
+      "key": "LINE",
+      "name": "Number Line Mode",
+      "description": "Visual linear continuum showing directed hops for addition, subtraction, and skip-counting."
+    },
+    {
+      "key": "COUNT",
+      "name": "Counters / Discrete Objects",
+      "description": "Displays discrete tactile tokens for subitizing and one-to-one correspondence."
+    },
+    {
+      "key": "🕒",
+      "name": "Planetary Clock Modulo-60",
+      "description": "Modulo-60 time arithmetic for hours, minutes, and elapsed time intervals."
+    },
+    {
+      "key": "🎲",
+      "name": "Polyhedral Dice & Random",
+      "description": "Simulates 6-sided dice or generates uniform random integers 1 to X."
+    },
+    {
+      "key": "?",
+      "name": "Interactive Quiz Engine",
+      "description": "Built-in timed arithmetic challenges with automatic scoring and streak tracking across Levels 1 to 6."
+    }
+  ],
+  "quiz_levels": [
+    {
+      "level": 1,
+      "name": "Basic Addition & Subtraction",
+      "range": "Within 10",
+      "grade": "K-1"
+    },
+    {
+      "level": 2,
+      "name": "Double-Digit Whole Numbers",
+      "range": "Within 100",
+      "grade": "Grade 2"
+    },
+    {
+      "level": 3,
+      "name": "Multi-Digit & Fact Ladders",
+      "range": "Multiplication tables & skip counting",
+      "grade": "Grade 3"
+    },
+    {
+      "level": 4,
+      "name": "Fractions & Decimals",
+      "range": "Common denominators & mixed numbers",
+      "grade": "Grade 4"
+    },
+    {
+      "level": 5,
+      "name": "Mixed Mastery & Pre-Algebra",
+      "range": "Fractions, decimals, algebraic unknowns",
+      "grade": "Grade 5"
+    },
+    {
+      "level": 6,
+      "name": "UIL Contest Speed Sprint",
+      "range": "Timed competitive word problems & arithmetic",
+      "grade": "Grade 6 (Unlocked on 100% L5 score)"
+    }
+  ],
+  "geometry": [
+    {
+      "name": "Rectangle Area",
+      "key": "RECT",
+      "formula": "length × width",
+      "example": "4 [ENTER] 5 [f] [RECT] -> 20"
+    },
+    {
+      "name": "Triangle Area",
+      "key": "TRI",
+      "formula": "(base × height) / 2",
+      "example": "6 [ENTER] 4 [g] [TRI] -> 12"
+    },
+    {
+      "name": "Circle Area",
+      "key": "CIRC",
+      "formula": "π × r²",
+      "example": "3 [f] [CIRC] -> 28.274"
+    },
+    {
+      "name": "Hypotenuse / Distance",
+      "key": "HYP",
+      "formula": "√(a² + b²)",
+      "example": "3 [ENTER] 4 [g] [HYP] -> 5"
+    },
+    {
+      "name": "Prism Volume",
+      "key": "PRISM",
+      "formula": "base_area × height",
+      "example": "20 [ENTER] 5 [f] [PRISM] -> 100"
+    },
+    {
+      "name": "Cone / Pyramid Volume",
+      "key": "CONE",
+      "formula": "(base_area × height) / 3",
+      "example": "30 [ENTER] 4 [g] [CONE] -> 40"
+    }
+  ],
+  "conversions": [
+    {
+      "type": "Mass",
+      "metric": "g (grams)",
+      "customary": "oz (ounces)",
+      "forward": "▸g",
+      "reverse": "▸oz"
+    },
+    {
+      "type": "Mass",
+      "metric": "kg (kilograms)",
+      "customary": "lb (pounds)",
+      "forward": "▸kg",
+      "reverse": "▸lb"
+    },
+    {
+      "type": "Length",
+      "metric": "cm (centimeters)",
+      "customary": "in (inches)",
+      "forward": "▸cm",
+      "reverse": "▸in"
+    },
+    {
+      "type": "Length",
+      "metric": "ft (feet)",
+      "customary": "mi (miles)",
+      "forward": "▸ft",
+      "reverse": "▸mi"
+    },
+    {
+      "type": "Volume",
+      "metric": "mL (milliliters)",
+      "customary": "fl oz (fluid ounces)",
+      "forward": "▸mL",
+      "reverse": "▸fl"
+    },
+    {
+      "type": "Volume",
+      "metric": "L (liters)",
+      "customary": "gal (gallons)",
+      "forward": "▸L",
+      "reverse": "▸gal"
+    },
+    {
+      "type": "Temperature",
+      "metric": "°C (Celsius)",
+      "customary": "°F (Fahrenheit)",
+      "forward": "▸°C",
+      "reverse": "▸°F"
+    }
+  ],
+  "number_theory": [
+    {
+      "name": "Prime Number Test",
+      "key": "PRIME",
+      "output": "PRIME, COMPOSITE, or NEITHER",
+      "example": "7 [PRIME] -> 'PRIME'"
+    },
+    {
+      "name": "Prime Factorization",
+      "key": "FACT",
+      "output": "Expanded prime factors (e.g. 2² × 3)",
+      "example": "12 [g] [FACT] -> '2² × 3'"
+    },
+    {
+      "name": "Common Factors",
+      "key": "C.FAC",
+      "output": "Lists shared factors of Y and X",
+      "example": "24 [ENTER] 36 [f] [C.FAC]"
+    },
+    {
+      "name": "Greatest Common Factor",
+      "key": "GCF",
+      "output": "Greatest common divisor",
+      "example": "24 [ENTER] 36 [GCF] -> 12"
+    },
+    {
+      "name": "Lowest Common Multiple",
+      "key": "LCM",
+      "output": "Smallest positive integer divisible by both",
+      "example": "4 [ENTER] 6 [f] [LCM] -> 12"
+    },
+    {
+      "name": "Ratio",
+      "key": "a:b",
+      "output": "Irreducible ratio notation",
+      "example": "8 [ENTER] 12 [g] [a:b] -> '2:3'"
+    }
+  ],
+  "operations": [
+    {
+      "key": "ENTER",
+      "primary": "Stack Lift / Commit",
+      "yellow": "LASTX",
+      "blue": "SHOW",
+      "description": "Lifts numbers up stack elevator; recalls prior operand on [f]; shows full 15-digit precision on [g]."
+    },
+    {
+      "key": "x⇄y",
+      "primary": "Swap X and Y",
+      "yellow": "R↓ (Roll Down)",
+      "blue": "REP (Skip Count)",
+      "description": "Exchanges Line 1 and Line 2; rolls 4-stack down on [f]; fills stack for skip-counting ladders on [g]."
+    },
+    {
+      "key": "÷",
+      "primary": "Standard Division",
+      "yellow": "MOD (Modulo)",
+      "blue": "÷R (Quotient & Remainder)",
+      "description": "Divides Y by X; returns remainder on [f]; loads quotient in X and remainder in Y on [g]."
+    },
+    {
+      "key": "a ᵇ/c",
+      "primary": "Mixed Fraction (a b/c)",
+      "yellow": "d/c (Improper Fraction)",
+      "blue": "SIMP (Step-by-Step Reduction)",
+      "description": "Displays mixed fraction; toggles improper fraction on [f]; reduces step-by-step showing common factors on [g]."
+    },
+    {
+      "key": "▦",
+      "primary": "Ten-Frame Studio",
+      "yellow": "LINE (Number Line)",
+      "blue": "COUNT (Discrete Tokens)",
+      "description": "Displays 2x5 dot grid; shows number line with directed jumps on [f]; shows token counters on [g]."
+    },
+    {
+      "key": "🕒",
+      "primary": "Planetary Clock",
+      "yellow": "▸HR (Decimal Hours)",
+      "blue": "▸HMS (Time Format)",
+      "description": "Modulo-60 clock arithmetic for hours and minutes; converts between decimal hours and HH.MMSS."
+    },
+    {
+      "key": "🎲",
+      "primary": "Polyhedral Dice",
+      "yellow": "1…x (Random 1 to X)",
+      "blue": "t…x (Random Range)",
+      "description": "Simulates 6-sided dice rolls; generates uniform random integer in range 1 to X on [f]."
+    },
+    {
+      "key": "C",
+      "primary": "Clear Line",
+      "yellow": "? (Math Quiz Engine)",
+      "blue": "OFF (Power Down)",
+      "description": "Erases active line or error; launches built-in interactive Math Quiz challenge on [f]; enters ultra-low power sleep on [g]."
+    },
+    {
+      "key": "≠",
+      "primary": "Submit / Test Inequality",
+      "yellow": "> (Greater Than)",
+      "blue": "< (Less Than)",
+      "description": "Submits quiz answers; tests numerical inequality comparisons."
+    },
+    {
+      "key": "+",
+      "primary": "Addition",
+      "yellow": "≥ (Greater or Equal)",
+      "blue": "≤ (Less or Equal)",
+      "description": "Adds Y and X; drops stack; evaluates greater/less than equal comparisons on shifts."
+    }
+  ]
+}

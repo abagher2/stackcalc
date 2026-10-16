@@ -24,7 +24,7 @@ hide:
     <div class="ec-catalog-eyebrow">Hardware Assembly &bull; Zero Tool Setup</div>
     <h1 class="ec-catalog-headline">Fraction Studio Mechanical &amp; Stacking Guide</h1>
     <p class="ec-catalog-subhead">
-      Engineered with authentic 0.5U Gridfinity interlocking bases and female stacking sockets. Learn how the mathematical cancelation theorem ensures zero-error vertical proportionality.
+      Engineered with authentic 0.5U Gridfinity interlocking base plugs and top stacking sockets. Learn how the mathematical cancelation theorem ensures zero-error vertical proportionality.
     </p>
   </header>
 
@@ -49,7 +49,7 @@ hide:
         </div>
         <div class="ec-video-caption">
           <strong>Step-by-Step Stacking Demonstration</strong>
-          <span>Self-aligning 0.5U Gridfinity male foot and female socket</span>
+          <span>Self-aligning 0.5U Gridfinity bottom plug and top socket</span>
         </div>
       </div>
 
@@ -65,7 +65,7 @@ hide:
           Joint cancelation: d_socket - d_socket = 0.00 mm
         </div>
         <p class="ec-feature-desc text-xs text-gray-400">
-          Because the 1.85 mm male base drops completely into the 1.85 mm female socket, every block contributes <em>exactly</em> \(84.0 / n\text{ mm}\) of visible vertical height.
+          Because the 1.85 mm bottom base plug drops completely into the 1.85 mm top stacking socket, every block contributes <em>exactly</em> \(84.0 / n\text{ mm}\) of visible vertical height.
         </p>
       </div>
     </div>
@@ -97,7 +97,7 @@ hide:
         <span class="ec-highlight-icon">3</span>
         <div>
           <strong class="text-white">Interlocking Joint Insertion:</strong>
-          <p class="text-sm text-gray-300 m-0">Lower the upper block vertically into the female socket of the lower block. The 45-degree lead-in chamfers naturally guide the block into position with a satisfying slip-fit (0.20 mm bilateral clearance).</p>
+          <p class="text-sm text-gray-300 m-0">Lower the upper block vertically into the top stacking socket of the lower block. The 45-degree lead-in chamfers naturally guide the block into position with a satisfying slip-fit (0.20 mm bilateral clearance).</p>
         </div>
       </div>
 

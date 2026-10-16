@@ -65,6 +65,18 @@ hide:
         "position": 8,
         "name": "Math Domino Studio & 12-Frame Set",
         "url": "https://www.stackcalc.io/products/math-dominoes/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "name": "Counting Tiles & Planar Array Studio",
+        "url": "https://www.stackcalc.io/products/counting-tiles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "name": "Prime Factor Studio & Slide Rule Comparator",
+        "url": "https://www.stackcalc.io/products/prime-factor-studio/"
       }
     ]
   }
@@ -100,8 +112,8 @@ hide:
     <!-- eBay-Style Live Trust & Guarantee Status Strip -->
     <div class="te-trust-strip">
       <div class="te-trust-item">
-        <span class="te-trust-rating">★★★★★ 4.9 / 5.0</span>
-        <span class="text-gray-400 text-xs">(180+ Educator Pilot Reviews)</span>
+        <span class="text-emerald-400 font-bold">&check;</span>
+        <span>SAT &bull; ACT &bull; AP Exam Permitted (No RF)</span>
       </div>
       <div class="te-trust-item text-xs text-emerald-400">
         <span>✓</span>
@@ -129,8 +141,9 @@ hide:
           </p>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
-          <a href="mailto:quotes@stackcalc.io?subject=StackCalc%20School%20Purchase%20Order%20Quote%20Request" style="padding: 0.55rem 1rem; border-radius: 6px; background-color: #FFBF00; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">REQUEST PO QUOTE ↗</a>
-          <a href="../downloads/stackcalc-curriculum-sample-v0.2.0.pdf" download style="padding: 0.55rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">SAMPLE WORKBOOK (.PDF) ↓</a>
+          <a href="../#school-po" style="padding: 0.55rem 1rem; border-radius: 6px; background-color: #FFBF00; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">INTERACTIVE PO FORM &rarr;</a>
+          <a href="../curriculum/worksheets/" style="padding: 0.55rem 1rem; border-radius: 6px; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">120 STATION WORKSHEETS &rarr;</a>
+          <a href="../curriculum/uil-competition/" style="padding: 0.55rem 1rem; border-radius: 6px; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">24 UIL EXAMS &amp; KEYS &rarr;</a>
         </div>
       </div>
     </div>
@@ -138,8 +151,8 @@ hide:
     <!-- Tri-Tier Acquisition Architecture Banner -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; font-family: 'Space Mono', monospace; font-size: 0.75rem;">
       <div style="background: #11141A; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.85rem;">
-        <span style="color: #38BDF8; font-weight: 700;">TIER 1 &bull; ASSEMBLED ($28–$89)</span>
-        <div style="color: #E2E6EE; font-size: 0.78rem; margin-top: 0.25rem;">Factory assembled &amp; calibrated. Ships in 48 hours via Etsy.</div>
+        <span style="color: #38BDF8; font-weight: 700;">TIER 1 &bull; PHYSICAL INSTRUMENTS &amp; KITS ($18–$89)</span>
+        <div style="color: #E2E6EE; font-size: 0.78rem; margin-top: 0.25rem;">Classroom manipulatives &amp; pre-soldered Maker Kits. Ships in 48 hours via Etsy.</div>
       </div>
       <div style="background: #11141A; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.85rem;">
         <span style="color: #FFBF00; font-weight: 700;">TIER 2 &bull; MAKER PACKS ($15–$25)</span>
@@ -198,7 +211,7 @@ hide:
         <!-- Pre-Image Header Bar (Never overlapping the product!) -->
         <div class="te-viewport-header">
           <span class="te-viewport-sku">SYS-32 // RPN SCIENTIFIC INSTRUMENT</span>
-          <span class="te-viewport-status">● BATCH 001 FABRICATION [SHIPS 24H]</span>
+          <span class="te-viewport-status">● READY TO SHIP [24H]</span>
         </div>
 
         <!-- Clean Media Viewport -->
@@ -302,10 +315,9 @@ hide:
           <h2 class="te-spotlight-title">SC-32 Scientific RPN Calculator</h2>
 
           <div class="te-rating-row">
-            <span class="te-rating-stars">★★★★★</span>
-            <span class="te-rating-val">4.9 / 5.0</span>
-            <span class="text-gray-400">(42 Reviews)</span>
-            <span class="te-rating-tag">✓ SAT &bull; ACT &bull; AP APPROVED</span>
+            <span class="te-rating-tag">&check; SAT &bull; ACT &bull; AP APPROVED</span>
+            <span class="text-emerald-400 font-mono text-xs font-bold ml-2">&bull; BATCH 04 IN PRODUCTION</span>
+            <span class="text-gray-400 font-mono text-xs ml-2">&bull; ZERO SOLDERING REQUIRED</span>
           </div>
 
           <!-- Teenage Engineering Technical Field Spec Grid -->
@@ -339,21 +351,21 @@ hide:
           <!-- Price & Allocation Tiers -->
           <div class="te-price-tier-box">
             <div class="te-price-headline">
-              <span class="te-price-main">$59.00 &ndash; $89.00</span>
-              <span class="te-price-note">✓ Free US Priority Shipping &bull; No Upfront Risk</span>
+              <span class="te-price-main">$89.00</span>
+              <span class="te-price-note">&check; Free US Priority Shipping &bull; 100% Pre-Soldered Maker Kit</span>
             </div>
             <div class="te-tier-options">
               <div class="te-tier-opt">
-                <strong>Core Edition ($59)</strong>
-                <span>Standard Stealth or Polar White finish</span>
+                <strong>Pre-Soldered Logic Board</strong>
+                <span>RP2350 silicon + 43 mechanical snap domes</span>
               </div>
               <div class="te-tier-opt">
-                <strong>Curated Silk ($79)</strong>
-                <span>Supernova, Voyager, Deep Space, or Synthwave</span>
+                <strong>Sliding Dovetail Housing</strong>
+                <span>Tool-free 5-min snap assembly, zero soldering</span>
               </div>
               <div class="te-tier-opt">
-                <strong>Founder Pack ($89)</strong>
-                <span>Includes 3-in-1 Puzzle Stand &amp; TPU Pouch</span>
+                <strong>Full Accessories Included</strong>
+                <span>Includes 3-in-1 Desk Stand &amp; Shore 95A TPU Pouch</span>
               </div>
             </div>
           </div>
@@ -362,6 +374,9 @@ hide:
         <div class="te-actions-row">
           <a href="sc32-calculator/" class="te-btn-primary">
             <span>Explore Hardware &amp; 4K Videos &rarr;</span>
+          </a>
+          <a href="../manuals/sc32/" class="te-btn-secondary">
+            <span>Owner's Manual &amp; Print ($19) &rarr;</span>
           </a>
           <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary">
             <span>Order on Etsy Storefront ↗</span>
@@ -381,7 +396,7 @@ hide:
         <h2 class="te-section-title">Classroom Physical Manipulatives</h2>
         <p class="text-sm text-gray-400 m-0">Hands-on architectural math tools designed for standard tabletop and desk use.</p>
       </div>
-      <span class="te-section-badge">6 KITS &bull; 42MM GRIDFINITY STANDARD &bull; NON-TOXIC PLA 2.0+</span>
+      <span class="te-section-badge">8 KITS &bull; 42MM GRIDFINITY STANDARD &bull; NON-TOXIC PLA 2.0+</span>
     </div>
 
     <div class="te-grid-3">
@@ -411,7 +426,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$34.99</span>
+            <span class="te-card-price">$48.00</span>
             <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           
@@ -427,7 +442,7 @@ hide:
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">TIME-01 // PLANETARY GEARS</span>
-          <span class="te-card-status status-preorder">○ PRE-ORDER [BATCH 001]</span>
+          <span class="te-card-status status-preorder">○ PRE-ORDER</span>
         </div>
         <div class="te-card-viewport">
           <a href="classroom-clock/">
@@ -448,7 +463,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$32.99</span>
+            <span class="te-card-price">$44.00</span>
             <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           
@@ -464,7 +479,7 @@ hide:
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">ALGB-01 // POLYNOMIAL STAGE</span>
-          <span class="te-card-status status-preorder">○ PRE-ORDER [BATCH 001]</span>
+          <span class="te-card-status status-preorder">○ PRE-ORDER</span>
         </div>
         <div class="te-card-viewport">
           <a href="algebra-boxes/">
@@ -485,7 +500,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$39.99</span>
+            <span class="te-card-price">$42.00</span>
             <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           
@@ -501,7 +516,7 @@ hide:
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">BASE-10 // REGROUPING STAGE</span>
-          <span class="te-card-status status-instock">● BATCH 001 [SHIPS 24H]</span>
+          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
         </div>
         <div class="te-card-viewport">
           <a href="ten-frames/">
@@ -522,7 +537,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$28.00</span>
+            <span class="te-card-price">$36.00</span>
             <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           
@@ -538,7 +553,7 @@ hide:
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">DOMI-01 // MATH DOMINOES</span>
-          <span class="te-card-status status-instock">● BATCH 001 [SHIPS 24H]</span>
+          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
         </div>
         <div class="te-card-viewport">
           <a href="math-dominoes/">
@@ -559,7 +574,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$29.00</span>
+            <span class="te-card-price">$38.00</span>
             <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           
@@ -596,7 +611,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$29.99</span>
+            <span class="te-card-price">$36.00</span>
             <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           
@@ -633,7 +648,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$19.99</span>
+            <span class="te-card-price">$19.00</span>
             <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           
@@ -641,6 +656,80 @@ hide:
             <a href="unit-circle-volvelle/" class="te-card-btn">Specs &rarr;</a>
             <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/unit-circle-volvelle-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. Counting Tiles & Planar Array Studio -->
+      <article class="te-card">
+        <div class="te-card-header">
+          <span class="te-card-sku">TILE-01 // ARRAYS &amp; MAPS</span>
+          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
+        </div>
+        <div class="te-card-viewport">
+          <a href="counting-tiles/">
+            <img src="../assets/renders/counting-tiles-hero.png" alt="Counting Tiles &amp; Planar Array Studio" loading="lazy">
+          </a>
+        </div>
+        <div class="te-card-specs">
+          <span class="te-card-spec-item">TILES: 144 PIECES</span>
+          <span class="te-card-spec-item">GRADES: K&ndash;6</span>
+          <span class="te-card-spec-item">GRID: 3x1x13U BOX</span>
+        </div>
+        <div class="te-card-body">
+          <div class="te-card-category">Cardinality &amp; Multiplication Arrays</div>
+          <h3 class="te-card-title"><a href="counting-tiles/">Counting Tiles &amp; Planar Array Studio</a></h3>
+          <p class="te-card-desc">
+            144 precision stacking tiles (4 colors &times; 36) in a 3x1x13U Gridfinity box with docking lid grid. Bridges one-to-one counting, the 12&times;12 multiplication matrix, partial-product area models, and the Four-Color Map Theorem.
+          </p>
+        </div>
+        <div class="te-card-footer">
+          <div>
+            <span class="te-card-price">$44.00</span>
+            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
+          </div>
+          
+          <div class="te-card-actions">
+            <a href="counting-tiles/" class="te-card-btn">Specs &rarr;</a>
+            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="../downloads/counting-tiles-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. Prime Factor Studio & Slide Rule Comparator -->
+      <article class="te-card">
+        <div class="te-card-header">
+          <span class="te-card-sku">PRIME-01 // NUMBER THEORY</span>
+          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
+        </div>
+        <div class="te-card-viewport">
+          <a href="prime-factor-studio/">
+            <img src="../assets/renders/prime-studio-hero.png" alt="Prime Factor Studio &amp; Slide Rule Scale" loading="lazy">
+          </a>
+        </div>
+        <div class="te-card-specs">
+          <span class="te-card-spec-item">BLOCKS: 29 PROPORTIONAL</span>
+          <span class="te-card-spec-item">GRADES: 3&ndash;9</span>
+          <span class="te-card-spec-item">SCALE: 1 TO 100 SLIDE RULE</span>
+        </div>
+        <div class="te-card-body">
+          <div class="te-card-category">Prime Factorization &amp; Logarithms</div>
+          <h3 class="te-card-title"><a href="prime-factor-studio/">Prime Factor Studio &amp; Slide Rule Scale</a></h3>
+          <p class="te-card-desc">
+            29 proportional logarithmic prime factor blocks with a 3x1x13U Gridfinity box and bilateral slide rule scale (1 to 100). Stacking prime blocks physically multiplies them, proving the Fundamental Theorem of Arithmetic.
+          </p>
+        </div>
+        <div class="te-card-footer">
+          <div>
+            <span class="te-card-price">$46.00</span>
+            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
+          </div>
+          
+          <div class="te-card-actions">
+            <a href="prime-factor-studio/" class="te-card-btn">Specs &rarr;</a>
+            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="../downloads/prime-factor-studio-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
       </article>
@@ -666,7 +755,7 @@ hide:
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">SYS-32 // SCIENTIFIC RPN</span>
-          <span class="te-card-status status-instock">● BATCH 001 [SHIPS 24H]</span>
+          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
         </div>
         <div class="te-card-viewport">
           <a href="sc32-calculator/">
@@ -691,19 +780,20 @@ hide:
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Flagship RPN Hardware</div>
-          <h3 class="te-card-title"><a href="sc32-calculator/">SC-32 Scientific RPN Calculator</a></h3>
+          <h3 class="te-card-title"><a href="sc32-calculator/">SC-32 Scientific RPN Maker Kit</a></h3>
           <p class="te-card-desc">
-            The definitive dedicated physical RPN calculator. Raspberry Pi RP2350 silicon, 43 snap-dome tactile switches (400g actuation), transflective graphic LCD, and tool-free sliding dovetail chassis with 8 interchangeable faceplate finishes. SAT/ACT/AP approved.
+            The definitive dedicated physical RPN calculator. Raspberry Pi RP2350 silicon, 43 snap-dome tactile switches (400g actuation), transflective graphic LCD, and tool-free sliding dovetail chassis with 8 interchangeable faceplate finishes. 100% pre-soldered, 5-minute snap assembly. SAT/ACT/AP approved.
           </p>
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$59.00 &ndash; $89.00</span>
-            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
+            <span class="te-card-price">$89.00</span>
+            <span class="te-card-shipping-tag">&bull; 100% Pre-Soldered</span>
           </div>
           
           <div class="te-card-actions">
             <a href="sc32-calculator/" class="te-card-btn">Specs &rarr;</a>
+            <a href="../manuals/sc32/" class="te-card-btn" title="Owner's Manual & Spiral Print Edition">Manual 📖</a>
             <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/sc32-calculator-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
@@ -722,7 +812,7 @@ hide:
           </a>
         </div>
         <div class="te-card-specs">
-          <span class="te-card-spec-item">STACK: 6-REGISTER</span>
+          <span class="te-card-spec-item">STACK: 4-LINE XYZT</span>
           <span class="te-card-spec-item">GRADES: 1&ndash;6</span>
           <span class="te-card-spec-item">KEYS: TACTILE DOMES</span>
         </div>
@@ -730,17 +820,18 @@ hide:
           <div class="te-card-category">Elementary RPN Calculator</div>
           <h3 class="te-card-title"><a href="sc6-elementary/">SC-6 Elementary Edition</a></h3>
           <p class="te-card-desc">
-            Tactile arithmetic calculator designed for primary and intermediate students. Clean White PLA 2.0+ lab chassis, Slate Gray tool-free sliding cowl, 400g snap-dome keys, and simplified 6-stack RPN operation with crisp right-aligned Terminus font.
+            Tactile arithmetic calculator designed for primary and intermediate students. Clean White PLA 2.0+ lab chassis, Slate Gray tool-free sliding cowl, 400g snap-dome keys, and default 4-line XYZT operational stack (with toggleable 2-stack mode for counting racks and dice) using crisp right-aligned Terminus font.
           </p>
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$39.00 &ndash; $49.00</span>
+            <span class="te-card-price">$49.00 &ndash; $59.00</span>
             <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           
           <div class="te-card-actions">
             <a href="sc6-elementary/" class="te-card-btn">Specs &rarr;</a>
+            <a href="../manuals/sc6/" class="te-card-btn" title="Owner's Manual & Spiral Print Edition">Manual 📖</a>
             <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/sc6-elementary-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
@@ -821,7 +912,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$18.00 &ndash; $25.00</span>
+            <span class="te-card-price">$24.00</span>
             <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           
@@ -858,7 +949,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$15.00</span>
+            <span class="te-card-price">$18.00</span>
             <span class="te-card-shipping-tag">✓ Ships with Calculator</span>
           </div>
           
@@ -930,8 +1021,10 @@ hide:
             60-card tactile problem decks and spiral-bound student laboratory workbooks. Each card walks students through the Concrete-Representational-Abstract (CRA) continuum: first testing quantities with physical blocks, then sketching diagrams, and finally recording equations.
           </p>
         </div>
-        <div class="te-actions-row">
+        <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem;">
           <a href="curriculum-and-decks/" class="te-btn-primary">Explore Curriculum Guides &rarr;</a>
+          <a href="../curriculum/worksheets/" class="te-btn-secondary" style="border: 1px solid rgba(56, 189, 248, 0.4); color: #38BDF8;">120 Free Station Guides &rarr;</a>
+          <a href="../curriculum/uil-competition/" class="te-btn-secondary" style="border: 1px solid rgba(16, 185, 129, 0.4); color: #10B981;">24 UIL Practice Exams &rarr;</a>
         </div>
       </div>
       <div class="p-8 bg-black/40 flex flex-col justify-center">
@@ -1046,7 +1139,7 @@ hide:
             <span class="text-sky-400">✓</span> DISTRICT POS &amp; NET-30 TERMS
           </h4>
           <p class="text-gray-300 text-xs leading-relaxed m-0">
-            We accept official school district and university purchase orders. Email your PO to <code>procurement@stackcalc.io</code> for immediate Net-30 order fulfillment and automated electronic invoicing. W-9 forms provided upon request.
+            We accept official school district and university purchase orders. Email your PO to <code>quotes@stackcalc.io</code> for immediate Net-30 order fulfillment and automated electronic invoicing. W-9 forms provided upon request.
           </p>
         </div>
 
@@ -1073,7 +1166,7 @@ hide:
         <div class="text-xs text-gray-400 font-mono">
           <strong class="text-gray-200">Bulk Tier Pricing:</strong> 10+ Sets (15% off) &bull; Full Grade-Level Sets (30+ units, 25% off + Free Educator Master Training Pack).
         </div>
-        <a href="mailto:procurement@stackcalc.io?subject=School%20District%20Procurement%20Inquiry" class="te-btn-primary text-xs py-2 px-4 whitespace-nowrap">
+        <a href="mailto:quotes@stackcalc.io?subject=School%20District%20Procurement%20Inquiry" class="te-btn-primary text-xs py-2 px-4 whitespace-nowrap">
           Request Institutional W-9 &amp; Quote &rarr;
         </a>
       </div>
@@ -1117,7 +1210,7 @@ hide:
             <td style="padding: 1rem 1.25rem; color: #94A3B8;">Flimsy injection plastic, mushy membrane keys, battery acid leaks</td>
             <td style="padding: 1rem 1.25rem; color: #94A3B8;">Thin brittle polystyrene, pastel colors that chip</td>
             <td style="padding: 1rem 1.25rem; color: #94A3B8;">Softwood, chips easily, moisture expansion</td>
-            <td style="padding: 1rem 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 2px solid #38BDF8; border-right: 2px solid #38BDF8; font-weight: 700; color: #FFFFFF;">Apollo-era brutalist Sunlu White PLA 2.0+, 400g metal snap-dome keys.</td>
+            <td style="padding: 1rem 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 2px solid #38BDF8; border-right: 2px solid #38BDF8; font-weight: 700; color: #FFFFFF;">High-rigidity technical polymers (PETG/PLA 2.0+), 400g metal snap-dome keys.</td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
             <td style="padding: 1rem 1.25rem; font-family: 'Space Mono', monospace; font-weight: 700; color: #FFFFFF;">Modularity &amp; Storage</td>

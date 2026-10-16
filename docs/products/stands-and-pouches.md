@@ -27,7 +27,7 @@ hide:
         "@type": "Offer",
         "url": "https://www.stackcalc.io/products/stands-and-pouches/",
         "priceCurrency": "USD",
-        "price": "14.00",
+        "price": "18.00",
         "priceValidUntil": "2027-12-31",
         "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
@@ -35,11 +35,6 @@ hide:
           "@type": "Organization",
           "name": "StackCalc"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "19"
       }
     }
   ]
@@ -65,10 +60,6 @@ hide:
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
       <div class="ec-gallery-main">
-        <div class="ec-gallery-badge-overlay">
-          <span class="ec-pill ec-pill-category">Hardware Accessories</span>
-          <span class="ec-pill ec-pill-instock">&bull; In Stock &bull; Batch 001</span>
-        </div>
         <img id="main-product-image" src="../../assets/renders/puzzle-stand-seated.png" alt="StackCalc Modular 3-in-1 Puzzle Stand Configurations" loading="eager">
       </div>
 
@@ -85,15 +76,10 @@ hide:
 
     <!-- Right Column: Buy Box & Product Info -->
     <div class="ec-buybox">
-      <div class="ec-pill-group">
-        <span class="ec-pill ec-pill-category">Ergonomic Stands &amp; Cases</span>
-        <span class="ec-pill ec-pill-instock">&check; 3-in-1 Zero-Waste Design</span>
-      </div>
-
       <h1 class="ec-product-title">Modular 3-in-1 Stands &amp; TPU Pouches</h1>
 
       <div class="ec-price-box">
-        <span class="ec-price-current">$15.00 &ndash; $25.00</span>
+        <span class="ec-price-current">$18.00 &ndash; $24.00</span>
         <span class="ec-shipping-note">&check; Free Tracked US Shipping</span>
       </div>
 
@@ -117,14 +103,14 @@ hide:
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Shore 95A Flexible TPU Sleeve:</strong> Custom drop-tested sleeve with integrated 3-ring school binder clip ($15).</span>
+          <span><strong>Shore 95A Flexible TPU Sleeve:</strong> Custom drop-tested sleeve with integrated 3-ring school binder clip ($18).</span>
         </div>
       </div>
 
       <!-- Action Buttons -->
       <div class="ec-actions-row">
         <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-          Order on Etsy ($18.00) ↗
+          Order on Etsy ($18.00 &ndash; $24.00) ↗
         </a>
         <a href="/downloads/stands-and-pouches-open-source-stls.zip" class="ec-btn-secondary">
           Download Free 3D Print STLs (.ZIP) &darr;
@@ -285,19 +271,19 @@ hide:
       <!-- Cross-Sell 1: SC-32 Calculator -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Calculator" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Calculator</h3>
+          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Maker Kit" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Maker Kit</h3>
           <p class="cross-sell-card-desc">
-            Tactile 43-key snap-dome instrument with RP2350 silicon, sunlight-readable reflective LCD, and SAT/ACT testing compliance.
+            Tactile 43-key snap-dome instrument with RP2350 silicon, sunlight-readable reflective LCD, and SAT/ACT testing compliance. 100% pre-soldered, 5-min tool-free assembly.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
             <span class="cross-sell-price">$89.00</span>
-            <span class="text-xs font-mono text-cyan-400">Flagship</span>
+            <span class="text-xs font-mono text-cyan-400">Maker Kit</span>
           </div>
           <a href="/products/sc32-calculator/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            View SC-32 Calculator &rarr;
+            View SC-32 Maker Kit &rarr;
           </a>
         </div>
       </div>
@@ -313,7 +299,7 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$39.00</span>
+            <span class="cross-sell-price">$49.00</span>
             <span class="text-xs font-mono text-amber-400">Elementary</span>
           </div>
           <a href="/products/sc6-elementary/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">

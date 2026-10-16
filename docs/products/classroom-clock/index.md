@@ -32,7 +32,7 @@ hide:
         "@type": "Offer",
         "url": "https://www.stackcalc.io/products/classroom-clock/",
         "priceCurrency": "USD",
-        "price": "36.00",
+        "price": "44.00",
         "priceValidUntil": "2027-12-31",
         "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
@@ -41,22 +41,6 @@ hide:
           "name": "StackCalc"
         }
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "31",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Emily H., 2nd Grade Elementary Teacher"},
-          "datePublished": "2026-08-04",
-          "reviewBody": "The synchronized 12:1 gearing prevents the common student confusion where the hour hand is placed arbitrarily. The removable 15-minute quadrants make 'quarter past' and 'quarter till' immediately obvious.",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
-        }
-      ],
       "audience": {
         "@type": "EducationalAudience",
         "educationalRole": "student",
@@ -138,10 +122,6 @@ hide:
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
       <div class="ec-gallery-main">
-        <div class="ec-gallery-badge-overlay">
-          <span class="ec-pill ec-pill-category">Grades K&ndash;5</span>
-          <span class="ec-pill ec-pill-instock">&bull; In Stock &bull; Batch 001</span>
-        </div>
         <img id="main-product-image" src="../../assets/renders/clock-classroom-hero.png" alt="StackCalc Sectional Classroom Clock with Planetary Gearing" loading="eager">
       </div>
 
@@ -179,23 +159,17 @@ hide:
 
     <!-- Right Column: Buy Box & Product Info -->
     <div class="ec-buybox">
-      <div class="ec-pill-group">
-        <span class="ec-pill ec-pill-category">Time &amp; Gear Mechanics</span>
-        <span class="ec-pill ec-pill-instock">&check; 12:1 Mechanical Synchronization</span>
-      </div>
-
       <h1 class="ec-product-title">Sectional Classroom Planetary Clock</h1>
 
-      <!-- Social Proof & Review Score -->
+      <!-- Educational Architecture & Tactile Standard -->
       <div class="flex items-center gap-2 mb-3">
-        <div class="flex text-amber-400 text-sm">★★★★★</div>
-        <span class="text-xs font-semibold text-gray-200">4.9 / 5.0</span>
-        <span class="text-xs text-gray-400">&bull; 31 Educator Reviews</span>
-        <span class="text-xs text-emerald-400 font-medium ml-2">&check; Verified Classroom Pilot</span>
+        <span class="text-xs font-mono font-semibold text-cyan-400">PEDAGOGICAL STANDARD</span>
+        <span class="text-xs text-gray-400">&bull; 12:1 Compound Planetary Synchronization</span>
+        <span class="text-xs text-emerald-400 font-medium ml-2">&check; Removable Quadrant Discs</span>
       </div>
 
       <div class="ec-price-box">
-        <span class="ec-price-current">$36.00</span>
+        <span class="ec-price-current">$44.00</span>
         <span class="ec-shipping-note">&check; Free US Shipping &bull; In Stock</span>
       </div>
 
@@ -226,7 +200,7 @@ hide:
       <!-- Action Buttons -->
       <div class="ec-actions-row">
         <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-          Order on Etsy ($36.00) ↗
+          Order on Etsy ($44.00) ↗
         </a>
         <a href="#downloads" class="ec-btn-secondary">
           Download Free 3MF / STLs &darr;
@@ -246,16 +220,16 @@ hide:
       <!-- Trust Badges -->
       <div class="ec-trust-strip">
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&check;</span>
-          <span class="ec-trust-text">Enforces Real-World Time Mechanics</span>
+          <span class="ec-trust-icon">&plusmn;</span>
+          <span class="ec-trust-text">&plusmn;0.05mm Calibrated &bull; Non-Toxic Biopolymer</span>
         </div>
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&square;</span>
-          <span class="ec-trust-text">2x1 Gridfinity Desktop Footprint</span>
+          <span class="ec-trust-icon">&check;</span>
+          <span class="ec-trust-text">Anti-Heartbreak $2.49 Part Refills</span>
         </div>
         <div class="ec-trust-item">
           <span class="ec-trust-icon">&hearts;</span>
-          <span class="ec-trust-text">Durable Drop-Tested PETG Gearing</span>
+          <span class="ec-trust-text">30-Day Risk-Free In-Home Trial</span>
         </div>
       </div>
 
@@ -334,44 +308,44 @@ hide:
         </div>
       </div>
 
-      <!-- 2. Unboxing Experience -->
+      <!-- 2. Lesson 1: 12:1 Continuous Planetary Gearing -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/clock-classroom-hero.png">
-            <source src="/assets/videos/classroom-clock-unboxing.mp4" type="video/mp4">
+            <source src="/assets/videos/classroom-clock-lesson-gearing.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. UNBOXING EXPERIENCE</span>
+          <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. CURRICULUM LESSON 01</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Unboxing Experience</h3>
-            <p class="text-xs text-slate-400">Opening the protective mailer to reveal the 135&times;90mm archival reference card resting on top of the planetary core and quadrant wedges.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">12:1 Planetary Gearing Synchronization</h3>
+            <p class="text-xs text-slate-400">Rotating minute hand 360&deg; continuously advances hour hand 30&deg; via internal epicyclic gearing, eliminating "half-past" false time reading.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-amber-300 flex items-center justify-between">
-            <span>135x90mm Duplex Card</span>
-            <span>Zero Plastic Wrap</span>
+            <span>CCSS 2.MD.C.7</span>
+            <span>Zero Gear Slip</span>
           </div>
         </div>
       </div>
 
-      <!-- 3. Classroom Lesson in Action -->
+      <!-- 3. Lesson 2: Elapsed Time with 15-Minute Quadrants -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/clock-classroom-hero.png">
-            <source src="/assets/videos/classroom-clock-lesson.mp4" type="video/mp4">
+            <source src="/assets/videos/classroom-clock-lesson-elapsed.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CLASSROOM LESSON</span>
+          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CURRICULUM LESSON 02</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Classroom Lesson in Action</h3>
-            <p class="text-xs text-slate-400">Synchronized time advancement: rotating the gold minute hand 360&deg; drives the hour hand smoothly through 30&deg; with zero gear slip.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">Elapsed Time with Quadrant Wedges</h3>
+            <p class="text-xs text-slate-400">Inserting 15-minute pie wedges from 2:15 to 3:00 to visualize 45 minutes elapsed time as concrete geometric sectors rather than subtraction.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-emerald-300 flex items-center justify-between">
-            <span>CCSS 1.MD.B.3</span>
-            <span>TEKS 111.4</span>
+            <span>CCSS 3.MD.A.1</span>
+            <span>15 + 15 + 15 = 45 Min</span>
           </div>
         </div>
       </div>
@@ -579,8 +553,8 @@ hide:
       <!-- Cross-Sell 1: SC-32 Calculator -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Calculator" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Calculator</h3>
+          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Maker Kit" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Maker Kit</h3>
           <p class="cross-sell-card-desc">
             Perfect for multi-step time-elapsed conversions, angular degree-to-radian transformations, and gear train ratio calculations without confusing parentheses.
           </p>
@@ -588,10 +562,10 @@ hide:
         <div>
           <div class="cross-sell-price-row">
             <span class="cross-sell-price">$89.00</span>
-            <span class="text-xs font-mono text-cyan-400">Hardware Core</span>
+            <span class="text-xs font-mono text-cyan-400">Maker Kit</span>
           </div>
           <a href="/products/sc32-calculator/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            View SC-32 Calculator &rarr;
+            View SC-32 Maker Kit &rarr;
           </a>
         </div>
       </div>
@@ -627,7 +601,7 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$16.00</span>
+            <span class="cross-sell-price">$19.00</span>
             <span class="text-xs font-mono text-cyan-400">Standalone Tool</span>
           </div>
           <a href="/products/unit-circle-volvelle/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
@@ -739,10 +713,10 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-700/60 text-sm">
         <strong class="text-emerald-400 flex items-center gap-2 mb-1">
-          <span>&#9874;</span> "No Lost Piece Left Behind" Educator Guarantee
+          <span>&#9874;</span> "Anti-Heartbreak" Lifetime Guarantee for Parents &amp; Classrooms
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          If a quadrant wedge, hand, or face half is lost or broken during active classroom use, order individual replacement parts anytime for just the nominal cost of postage ($1.99).
+          If a quadrant wedge, hand, or face half is lost or broken during active use, order individual matching replacement parts anytime for just $2.49 with free envelope shipping.
         </p>
       </div>
 
@@ -758,58 +732,56 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION: VERIFIED EDUCATOR REVIEWS & SOCIAL PROOF
+       SECTION: PEDAGOGICAL VERIFICATION & CLASSROOM ARCHITECTURE
        ========================================================================== -->
   <section class="ec-section">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 pb-4 border-b border-white/10">
       <div>
-        <h2 class="ec-section-title m-0">Educator Endorsements &amp; Verified Reviews</h2>
-        <p class="ec-section-subtitle m-0">Classroom trial feedback from elementary teachers, math specialists, and homeschool families.</p>
+        <h2 class="ec-section-title m-0">Pedagogical Verification &amp; Classroom Architecture</h2>
+        <p class="ec-section-subtitle m-0">Compound planetary kinematic accuracy, modular quadrant geometry, and tip-resistant desk footing.</p>
       </div>
-      <div class="flex items-center gap-2 mt-3 md:mt-0">
-        <span class="text-2xl font-bold text-white">4.9</span>
-        <div class="text-amber-400 text-lg">★★★★★</div>
-        <span class="text-xs text-gray-400">(31 Verified Reviews)</span>
+      <div class="flex items-center gap-2 mt-3 md:mt-0 font-mono text-xs text-slate-400">
+        <span class="text-emerald-400 font-bold">&bull; 12:1 SYNCHRONOUS KINEMATICS</span>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "The synchronized 12:1 gearing prevents the common student confusion where the hour hand is placed arbitrarily. The removable 15-minute quadrants make 'quarter past' and 'quarter till' immediately obvious."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// KINEMATIC INTEGRITY</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">12:1 Planetary Gear Drive</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Double-helical herringbone planetary gear core steps the hour hand in precise mathematical lockstep with the minute dial, permanently eliminating arbitrary hand misalignment.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">Emily H.</strong>
-          <span class="text-xs text-gray-400">2nd Grade Elementary Teacher &bull; Texas</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Ratio: 12:1 Lockstep &bull; Mesh: Herringbone
         </div>
       </div>
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "The internal planetary gears are captivating. My students actively turn the minute knob to watch the planetary carrier step the hour hand smoothly. Built like a tank."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// SPATIAL FRACTIONS</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">Detachable Quadrants</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Removable 15-minute quadrant sectors detach smoothly, allowing students to physically build "quarter after", "half past", and elapsed time intervals prior to reading numerals.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">Brian W.</strong>
-          <span class="text-xs text-gray-400">3rd Grade Teacher &bull; Colorado</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Quadrants: 4&times; 15-Min &bull; Split: Circular
         </div>
       </div>
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-          <p class="text-sm text-gray-200 italic mb-4">
-            "We use the removable quadrants for teaching elapsed time during math centers. Having a 2x1 Gridfinity stand keeps it upright and stable on student tables."
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// DESK STABILITY</span>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">Gridfinity 2&times;1 Stand</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Low center-of-gravity modular base seats firmly into standard 42mm Gridfinity trays or rests stable on student desks without tipping during vigorous manual minute rotation.
           </p>
         </div>
-        <div class="border-t border-white/10 pt-3">
-          <strong class="text-xs text-white block">Megan C.</strong>
-          <span class="text-xs text-gray-400">Math Interventionist &bull; Michigan</span>
+        <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
+          Footprint: 2&times;1 Gridfinity &bull; Angle: 15&deg; Ergonomic
         </div>
       </div>
     </div>
@@ -855,11 +827,11 @@ hide:
 
       <details class="p-4 rounded-lg bg-slate-900/50 border border-slate-700/60 group">
         <summary class="font-semibold text-gray-100 cursor-pointer flex justify-between items-center">
-          <span>What if a gear or hand gets damaged?</span>
+          <span>What if a gear or hand gets damaged or lost?</span>
           <span class="text-cyan-400 text-lg group-open:rotate-45 transition-transform">+</span>
         </summary>
         <p class="mt-3 text-sm text-gray-300 leading-relaxed">
-          Under our "No Lost Piece Left Behind" lifetime guarantee, schools and parents can request replacement hands, quadrants, or stands anytime for just $1.99 postage.
+          Under our "Anti-Heartbreak" lifetime guarantee, schools and parents can request individual matching replacement hands, quadrants, or stands anytime for just $2.49 with free envelope shipping.
         </p>
       </details>
     </div>

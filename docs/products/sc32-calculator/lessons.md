@@ -169,4 +169,66 @@ hide:
     </div>
   </section>
 
+  <!-- ==========================================================================
+       SECTION: TEXAS UIL COMPETITION & STANDARDS INTEGRATION HUB
+       ========================================================================== -->
+  <section class="ec-section">
+    <div class="p-6 md:p-8 rounded-2xl bg-[#0D1017] border border-cyan-500/30 shadow-xl">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+        <div>
+          <span class="font-mono text-xs text-cyan-400 font-bold uppercase tracking-wider">// COMPETITION &amp; CURRICULUM INTEGRATION</span>
+          <h2 class="text-2xl font-bold text-white mt-1">Texas UIL Tournament Center &amp; Exam Compliance</h2>
+        </div>
+        <span class="text-xs px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono font-bold">UIL &bull; TMSCA &bull; SAT &bull; ACT &bull; AP APPROVED</span>
+      </div>
+      <p class="text-sm text-slate-300 leading-relaxed mb-6">
+        The SC-32 is engineered for the Texas UIL Calculator Applications 30-minute academic sprint. By eliminating nested parentheses and algebraic syntax errors, the 4-line RPN operational stack saves up to 28% of physical keystrokes per round while maintaining strict non-CAS exam compliance.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6 font-mono text-xs">
+        <a href="../../../curriculum/uil-competition/" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-400 transition flex flex-col justify-between group">
+          <div>
+            <strong class="text-white group-hover:text-emerald-400 block mb-1">🏆 UIL Competition Center</strong>
+            <span class="text-[11px] text-slate-400">Download 12 authentic 70-problem tournament exams and official 3-sig-fig scoring keys.</span>
+          </div>
+          <span class="text-emerald-400 font-bold mt-3 block">&rarr; Practice Exams</span>
+        </a>
+
+        <a href="../../../exam-compliance/" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 transition flex flex-col justify-between group">
+          <div>
+            <strong class="text-white group-hover:text-cyan-400 block mb-1">⚖️ Exam Compliance Guide</strong>
+            <span class="text-[11px] text-slate-400">Official SAT, ACT, AP Physics/Calculus, and UIL non-CAS verification document.</span>
+          </div>
+          <span class="text-cyan-400 font-bold mt-3 block">&rarr; View Compliance</span>
+        </a>
+
+        <a href="../../../curriculum/alignment-matrix/#common-core" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-amber-400 transition flex flex-col justify-between group">
+          <div>
+            <strong class="text-white group-hover:text-amber-400 block mb-1">🎯 Standards Alignment</strong>
+            <span class="text-[11px] text-slate-400">CCSS 6.EE.A.2, 7.EE.B.3, and high school polynomial factoring integration.</span>
+          </div>
+          <span class="text-amber-400 font-bold mt-3 block">&rarr; View Matrix</span>
+        </a>
+
+        <a href="../../../curriculum/teacher-guide/" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400 transition flex flex-col justify-between group">
+          <div>
+            <strong class="text-white group-hover:text-purple-400 block mb-1">🧑‍🏫 Teacher Guide</strong>
+            <span class="text-[11px] text-slate-400">RPN stack mechanics, 30-second equals-key diagnostics, and pacing calendars.</span>
+          </div>
+          <span class="text-purple-400 font-bold mt-3 block">&rarr; Read Teacher Guide</span>
+        </a>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+        <div class="text-slate-400 text-[11px]">
+          Perpetual Reproduction License &bull; Free Classroom Photocopy Rights
+        </div>
+        <a href="../../../downloads/stackcalc-curriculum-sample-v0.2.0.pdf" download class="px-4 py-2 rounded bg-white/10 hover:bg-white/20 text-white font-bold transition flex items-center gap-1.5">
+          <span>Download 36-Page Curriculum Sample (.PDF)</span>
+          <span>&darr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </div>

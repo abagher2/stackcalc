@@ -33,7 +33,7 @@ Every physical StackCalc product kit includes a custom duplex **Archival Referen
       <li><strong>High-Contrast Vector QR Code:</strong> Deep links directly to product video suite.</li>
       <li><strong>3-Step Quick Start Lesson:</strong> Zero-to-concept hands-on math under 60 seconds.</li>
       <li><strong>Curriculum Standards:</strong> Explicit CCSS &amp; Texas TEKS alignments.</li>
-      <li><strong>District PO Channel:</strong> <code>school-orders@stackcalc.io</code> for direct school orders.</li>
+      <li><strong>District PO Channel:</strong> <code>quotes@stackcalc.io</code> for direct school orders.</li>
     </ul>
   </div>
 </div>
@@ -100,7 +100,7 @@ StackCalc standardizes on crush-proof corrugated shipping mailers that maximize 
 |---|---|---|---|---|---|
 | **Box Tier 1** | $7 \times 5 \times 2\text{ in}$ ($178 \times 127 \times 51\,\text{mm}$) | $6.5 \times 4.5 \times 1.9\text{ in}$ ($165 \times 114 \times 48\,\text{mm}$) | Rests flat on top of 3x1 Gridfinity bin | Algebra Boxes, Ten-Frames, Dice & Spinner | USPS Ground Advantage (<8 oz) |
 | **Box Tier 2** | $8 \times 6 \times 3\text{ in}$ ($203 \times 152 \times 76\,\text{mm}$) | $7.5 \times 5.5 \times 2.8\text{ in}$ ($190 \times 140 \times 71\,\text{mm}$) | Rests flat centered on top of tray | Fraction Studio, Classroom Clock | USPS Ground Advantage (<12 oz) |
-| **Box Tier 3** | $9 \times 6 \times 3\text{ in}$ ($229 \times 152 \times 76\,\text{mm}$) | $8.5 \times 5.5 \times 2.8\text{ in}$ ($216 \times 140 \times 71\,\text{mm}$) | Sits in dedicated lid pocket | SC-32 Calculator Assembled Edition | USPS Ground Advantage (<16 oz) |
+| **Box Tier 3** | $9 \times 6 \times 3\text{ in}$ ($229 \times 152 \times 76\,\text{mm}$) | $8.5 \times 5.5 \times 2.8\text{ in}$ ($216 \times 140 \times 71\,\text{mm}$) | Sits in dedicated lid pocket | SC-32 Hardware Maker Kit | USPS Ground Advantage (<16 oz) |
 | **Pouch Tier 4** | $6.5 \times 4.5\text{ in}$ Stay-Flat Mailer | $6.2 \times 4.2\text{ in}$ ($158 \times 107\,\text{mm}$) | Encased with part in glassine sleeve | Single Replacement Parts, Volvelle | First-Class Rigid Mailer (<3 oz) |
 
 ---
@@ -134,9 +134,92 @@ flowchart LR
 
 ---
 
-## 5. Downloads & Printable Packing Bench Sheets
+## 5. Spiral-Bound Book & Student Workbook Fulfillment Protocol
+
+To provide students with rugged, lay-flat laboratory workbooks without maintaining costly book warehouse inventory, StackCalc uses a **Hybrid Zero-Inventory Print-on-Demand (POD)** model governed by **`PLAYBOOK-OPS-01`**:
+
+```mermaid
+flowchart TD
+    Order["Incoming Workbook Order"] --> Branch{"Order Type"}
+    
+    Branch -->|"Standalone Workbook (SC-BOOK-01)"| POD["Pathway A: Lulu Direct POD Drop-Ship"]
+    Branch -->|"Tactile Kit Bundle (*-BNDL)"| Bench["Pathway B: Packing Bench Buffer (SHELF-BOOK-01)"]
+    Branch -->|"District Bulk Order (10-30+ copies)"| Bulk["Pathway C: Bulk POD Run (Mixam / Lulu)"]
+    
+    POD --> POD1["Automated Lulu Direct API / xPress"]
+    POD1 --> POD2["Zero local touch • Shipped in 24-48h"]
+    POD2 --> POD3["Digital PDF license link emailed to customer"]
+    
+    Bench --> Bench1["Pull 1 copy from SHELF-BOOK-01 buffer"]
+    Bench1 --> Bench2["Execute 5-Point Bench QA Audit"]
+    Bench2 --> Bench3["Consolidate with 3D Gridfinity kit in single 12x9x4' box"]
+    
+    Bulk --> Bulk1["See District Purchase Order Playbook"]
+    Bulk1 --> Bulk2["Dispatched directly to school front office"]
+```
+
+### Essential Binding & QA Requirements
+1. **The Lay-Flat Desk Mandate:** Laboratory workbooks must feature **Wire-O or heavy-duty plastic coil binding**. Glued paperback bindings (such as standard Amazon KDP) snap shut on active student desks and are strictly prohibited in StackCalc classrooms.
+2. **5-Point Bench Quality Assurance Audit:**
+   - **Gate 1 (Spine Integrity):** Loops fully circular and crimped; zero sharp wire snags or crushed teeth.
+   - **Gate 2 ($360^\circ$ Fold):** Front cover folds $360^\circ$ behind the back cover with zero resistance.
+   - **Gate 3 (43-Page Completeness):** All 20 CRA units, Singapore/Bridges concordances, and answer keys present.
+   - **Gate 4 (Punch Margin):** Clean $0.5\text{"}$ spiral punch margin with zero text truncation.
+   - **Gate 5 (License Card):** Slip physical Single-Teacher Reproduction License Card inside front cover.
+3. **Farm Tracker Integration:** Integrated directly into the operations engine. Workbench operators can review the complete SOP anytime via:
+   ```bash
+   python3 Tools/farm_tracker.py playbook spiral
+   ```
+
+---
+
+## 6. School District & Institutional Purchase Orders (Net-30)
+
+School districts, BOCES, charter networks, and private academies procure educational instruments and manipulatives through formal **Purchase Orders (POs)** operating under standard **Net-30 terms** governed by **`PLAYBOOK-OPS-02`**:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor District as School District / Teacher
+    participant Hub as StackCalc Procurement Desk
+    participant Farm as Farm Tracker / Slant 3D API
+    participant POD as Lulu / Mixam POD
+    actor Office as School Front Office (Attn: Teacher)
+
+    District->>Hub: Submit PO Document (Web Quote STK-PO-xxxx or Direct PO)
+    Hub->>District: Return W-9, Direct Deposit ACH & Tax Exemption Review (<24h SLA)
+    Hub->>District: Issue Digital Perpetual District License PDF
+    par Hardware Production
+        Hub->>Farm: Route Manipulatives (In-House Farm or Slant 3D API)
+    and Lay-Flat Workbooks
+        Hub->>POD: Trigger Lay-Flat Spiral Workbooks Dropship
+    end
+    Farm-->>Office: USPS Priority / UPS Ground Parcel Delivery (Direct to Front Office)
+    POD-->>Office: Parcel Delivery (Attn: Teacher / Room #)
+    Hub->>District: Electronic Net-30 Invoice with Tracking Numbers (<2h of dispatch)
+    District->>Hub: Net-30 Remittance via Direct Deposit (ACH/EFT)
+```
+
+### Institutional Operating Standards
+- **Strict Parcel Delivery Mandate (No Freight Docks):** All shipments are delivered as standard **USPS Priority Mail or UPS Ground parcels** directly to the school front office (`Attn: [Educator Name], Math Dept / Room #`). StackCalc never requires or utilizes freight docks, loading bays, or pallet staging.
+- **24-Hour Vendor Onboarding SLA:** Signed IRS Form W-9, EFT/ACH Direct Deposit authorizations, and FERPA/Texas DIR compliance statements are dispatched within 24 business hours of request.
+- **Zero-Inventory Production Scalability:**
+  - **Class Packs (1–15 Units):** Scheduled through the in-house Prusa MK4S sprint queue.
+  - **District Fleets (16–100+ Units):** Tactile Gridfinity trays and components are routed directly to **Slant 3D's distributed farm API**, while spiral workbooks drop-ship in volume via Mixam or Lulu.
+- **Perpetual District Reproduction License (`DIST-LIC-PERPETUAL`):** Includes perpetual multi-teacher reproduction rights, internal LMS hosting (Canvas, Google Classroom), and all 20 CRA unit answer keys.
+- **Farm Tracker Integration:** Operators can review institutional protocols and Net-30 remittance procedures via:
+  ```bash
+  python3 Tools/farm_tracker.py playbook district
+  ```
+
+---
+
+## 7. Downloads & Printable Packing Bench Sheets
 
 - **Printable Packing Bench Sheet (Duplex HTML):**  
   [Open Printable Packing Bench Sheet](downloads/packing_bench_cards.html)
 - **Product Catalog & Digital Decks:**  
   Explore all product suites in the [Master Catalog](products.md) or browse [Curriculum Decks](products/curriculum-and-decks.md).
+- **Curriculum Alignment Matrix:**  
+  Review state and national curriculum alignments in the [Curriculum Alignment Matrix](curriculum/alignment-matrix.md).
+
