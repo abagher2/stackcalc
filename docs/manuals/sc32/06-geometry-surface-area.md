@@ -117,6 +117,12 @@ When you compute the area of any face (or face pair) in Register $X$ and press `
 
 **Zero parentheses, zero named memory variables, and zero scratch paper!**
 
+### The Algebraic Trap vs. StackCalc Superpower Showdown
+
+| Challenge / Metric | Algebraic Trap (TI-84 / Infix) | Algebraic Strokes | StackCalc SC-32 Superpower | SC-32 Strokes | Superpower Advantage |
+| :--- | :--- | :---: | :--- | :---: | :--- |
+| **Multi-Face Solid Surface Area**: 6 Faces | String calculation: `12 * 8 + 12 * 5 + 8 * 5 + 0.5 * 8 * 6 + ...` (38 strokes). Typo requires retyping entire 38 characters. | 38 | **Master Surface Area (`{{key:Σ+}}`)**: Key each face on stack, press `{{key:Σ+}}` (22 strokes). Screen tracks face count $n$ and accumulated area $\Sigma x$. Tap `{{key:Σ-}}` to pull back any error! | 22 | **42% fewer strokes + 100% face visibility** |
+
 <div class="admonition note">
 <p class="admonition-title">The Master Surface Area Statistical Accumulator Bus</p>
 <ol>

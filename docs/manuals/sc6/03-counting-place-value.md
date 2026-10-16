@@ -924,64 +924,23 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.25: Twos Ladder (Even Numbers to 20)
 - **Word Problem:** Count by 2s up to 20 in 2-Stack mode.
 - **Keystrokes:** Configure `{{key:FLAGS}} 2-LV`. Type `{{res:sc6_03_counting_place_value_seq_44:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_44:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `2` `{{key:ENTER}}` — Lock step increment 2 onto the upper shelf ($Y = 2$), priming the physical constant.
-  2. `2` `{{key:+}}` — Snap the first 2-cube domino into place on the ground floor ($X = 4$).
-  3. `{{key:+}}` — Rhythmic tap of `+`: the upper shelf drops its constant 2 again, snapping the next pair ($X = 6$).
-  4. Rhythmic taps continue through $8, 10, 12, 14, 16, 18$ to $20$.
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `2` {{key:ENTER}} | 0 | 0 | 2 | 2 | Prime constant step increment 2 into holding register $Y$ |
-| `2` {{key:+}} | 0 | 0 | 2 | 4 | Add first pair; ground floor climbs to 4 |
-| {{key:+}} | 0 | 0 | 2 | 6 | Rhythmic tap of `+` pulls constant 2; total reaches 6 |
-| {{key:+}} | 0 | 0 | 2 | 8 | Next even pair added; register $X$ displays 8 |
-| {{key:+}} | 0 | 0 | 2 | 10 | Benchmark decade reached ($X = 10$) |
-| {{key:+}} ... {{key:+}} | 0 | 0 | 2 | 20 | Continuous cadence climbs through 12, 14, 16, 18 to 20 |
-
+- **Stack Flow:** In 2-Stack mode (`{{key:FLAGS}} 2-LV`), tap `2 {{key:ENTER}} 2 {{key:+}}` -> (T=0, Z=0, Y=2, X=4). Rhythmic taps of `{{key:+}}` advance through 6, 8, 10, up to 20 while Register $Y$ preserves the constant 2.
 - **Register State:** Register $Y$ preserves constant $2.0$ in 2-LV mode.
 
 ---
 
 #### Problem 3.26: Fives Ladder (Nickel Coins to 50 Cents)
 - **Word Problem:** Count by 5s to 50.
-- **Keystrokes:** In 2-Stack mode: `{{res:sc6_03_counting_place_value_seq_45:keys}}` followed by 8 presses of `{{key:+}}`.
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `5` `{{key:ENTER}}` — Set the 5-cent nickel cluster on the constant upper shelf ($Y = 5$).
-  2. `5` `{{key:+}}` — Slide the first two 5-bead yellow clusters together on the Number Rack ($X = 10$).
-  3. Each subsequent tap of `{{key:+}}` slides another 5-bead group: $15, 20, 25, 30, 35, 40, 45, 50$.
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `5` {{key:ENTER}} | 0 | 0 | 5 | 5 | Place 5-cent nickel increment onto upper holding shelf ($Y = 5$) |
-| `5` {{key:+}} | 0 | 0 | 5 | 10 | Combine first two 5-bead clusters; register $X$ displays 10 |
-| {{key:+}} | 0 | 0 | 5 | 15 | Rhythmic tap adds another nickel; total climbs to 15 |
-| {{key:+}} | 0 | 0 | 5 | 20 | Fourth nickel lands ($X = 20$) |
-| {{key:+}} ... {{key:+}} | 0 | 0 | 5 | 50 | Cadence advances through 25, 30, 35, 40, 45 to terminal 50 |
-
+- **Keystrokes:** In 2-Stack mode: `{{res:sc6_03_counting_place_value_seq_45:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_45:value}}`**
+- **Stack Flow:** In 2-Stack mode, tap `5 {{key:ENTER}} 5 {{key:+}}` -> (T=0, Z=0, Y=5, X=10). Successive taps of `{{key:+}}` slide additional 5-bead groups on the Number Rack, advancing by 5-cent nickels through 15, 20, 25, up to 50 cents.
 - **Diagnostic Check:** 10 nickels equal 50 cents.
 
 ---
 
 #### Problem 3.27: Tens Ladder (Dime Coins to 100 Cents)
 - **Word Problem:** Count by 10s to 100.
-- **Keystrokes:** In 2-Stack mode: `{{res:sc6_03_counting_place_value_seq_46:keys}}` followed by 8 presses of `{{key:+}}`.
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `10` `{{key:ENTER}}` — Place an orange 10-rod on the constant upper shelf ($Y = 10$).
-  2. `10` `{{key:+}}` — Join the first two 10-rods in the Place Value Studio ($X = 20$).
-  3. Each rhythmic press of `{{key:+}}` adds another ten-rod until 10 rods assemble into a complete 100-flat ($X = 100$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `10` {{key:ENTER}} | 0 | 0 | 10 | 10 | Place 10-rod dime increment onto holding shelf ($Y = 10$) |
-| `10` {{key:+}} | 0 | 0 | 10 | 20 | Combine first two 10-rods in Place Value Studio ($X = 20$) |
-| {{key:+}} | 0 | 0 | 10 | 30 | Third ten-rod joins the stack ($X = 30$) |
-| {{key:+}} | 0 | 0 | 10 | 40 | Fourth ten-rod joins ($X = 40$) |
-| {{key:+}} ... {{key:+}} | 0 | 0 | 10 | 100 | Ten rods assemble into a complete 100-flat ($X = 100$) |
-
+- **Keystrokes:** In 2-Stack mode: `{{res:sc6_03_counting_place_value_seq_46:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_46:value}}`**
+- **Stack Flow:** In 2-Stack mode, tap `10 {{key:ENTER}} 10 {{key:+}}` -> (T=0, Z=0, Y=10, X=20). Successive taps of `{{key:+}}` advance by 10-cent dimes until 10 rods assemble into a complete 100-flat ($X = 100$).
 - **Diagnostic Check:** One dollar achieved!
 
 ---
@@ -989,27 +948,14 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.28: Countdown from 50 by 5s
 - **Word Problem:** Count down from 50 to 0 by 5s.
 - **Keystrokes:** In 2-Stack mode: `{{res:sc6_03_counting_place_value_seq_47:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_47:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `50` `{{key:ENTER}}` — Set the starting tower of 50 beads onto the upper shelf ($Y = 50$).
-  2. `5` `{{key:-}}` — Slide one 5-bead cluster back to the right on the Number Rack ($X = 45$).
-  3. Each subsequent tap of `{{key:-}}` steps the elevator down by 5 units: $40, 35, 30, 25, 20, 15, 10, 5, 0$.
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `50` {{key:ENTER}} | 0 | 0 | 50 | 50 | Load initial 50-bead collection onto upper shelf ($Y = 50$) |
-| `5` {{key:-}} | 0 | 0 | 5 | 45 | Subtract first 5-bead group; register $X$ displays 45 |
-| `5` {{key:-}} | 0 | 0 | 0 | 40 | Subtract next 5-unit decrement ($X = 40$) |
-| `5` {{key:-}} | 0 | 0 | 0 | 35 | Downward elevator descends to 35 |
-| `5` {{key:-}} ... | 0 | 0 | 0 | 0 | Step down through 30, 25, 20, 15, 10, 5 to terminal zero |
-
+- **Stack Flow:** In 2-Stack mode, tap `50 {{key:ENTER}} 5 {{key:-}}` -> (T=0, Z=0, Y=50, X=45). Successive taps of `{{key:-}}` step down through 40, 35, 30, down to terminal zero.
 - **Diagnostic Check:** Terminal zero reached safely.
 
 ---
 
 #### Problem 3.29: Threes Ladder in 4-Stack Mode with `{{key:REP}}`
 - **Word Problem:** Generate multiples of 3 in 4-stack mode using Superpower 1.
-- **Keystrokes:** In 4-Stack mode: `3 {{key:REP}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}}`
+- **Keystrokes:** In 4-Stack mode: `3 {{key:REP}} {{key:+}} {{key:+}} {{key:+}}`
 - **Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
@@ -1018,7 +964,6 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 | {{key:+}} | 3 | 3 | 3 | 6 | First addition yields 6; register $T$ preserves constant 3 |
 | {{key:+}} | 3 | 3 | 3 | 9 | Stack drop supplies 3 automatically; total reaches 9 |
 | {{key:+}} | 3 | 3 | 3 | 12 | Constant replicates from top of stack ($X = 12$) |
-| {{key:+}} ... {{key:+}} | 3 | 3 | 3 | 30 | Multiples of 3 generated through 15, 18, 21, 24, 27 to 30 |
 
 - **Diagnostic Check:** Times table for 3 generated effortlessly.
 
@@ -1026,17 +971,8 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 
 #### Problem 3.30: Sevens Ladder in 4-Stack Mode with `{{key:REP}}`
 - **Word Problem:** Skip count by 7s across 7 days in a week.
-- **Keystrokes:** In 4-Stack mode: `7 {{key:REP}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}}`
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `7` {{key:REP}} | 7 | 7 | 7 | 7 | Replicate weekly increment 7 across all four registers |
-| {{key:+}} | 7 | 7 | 7 | 14 | Two weeks completed ($X = 14$) |
-| {{key:+}} | 7 | 7 | 7 | 21 | Three weeks completed ($X = 21$) |
-| {{key:+}} | 7 | 7 | 7 | 28 | Four weeks / 1 lunar cycle ($X = 28$) |
-| {{key:+}} ... {{key:+}} | 7 | 7 | 7 | 49 | 7 weeks assemble into 49 days ($X = 49$) |
-
+- **Keystrokes:** In 4-Stack mode: `7 {{key:REP}} {{key:+}} {{key:+}}`
+- **Stack Flow:** In 4-Stack mode, tap `7 {{key:REP}} {{key:+}}` -> (T=7, Z=7, Y=7, X=14). Successive taps of `{{key:+}}` pull constant 7 from the top of the stack, climbing through 21, 28, 35, 42, to 49 days.
 - **Diagnostic Check:** 7 weeks = 49 days.
 
 ---

@@ -489,21 +489,10 @@ $$Q_{\text{daily}} = \sum (I_i \cdot t_i)$$
 **Switch Dynamics Context:** A high-speed typist actuates a snap-dome switch that oscillates mechanically for $t_{\text{bounce}} = 4.8\text{ ms}$ before settling. If Core 1 scans the matrix at $f_{\text{scan}} = 200\text{ Hz}$ ($T_{\text{frame}} = 5.0\text{ ms}$) with a $20\text{ ms}$ lockout window, calculate the safety margin ratio:
 $$M = \frac{T_{\text{lockout}}}{t_{\text{bounce}}}$$
 
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_02:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_02:value}}}$.
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_02:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_02:value}}`**.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `20` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $20.0000$ | $20.0000$ | Lockout duration $T_{\text{lockout}} = 20.0\text{ ms}$ in $Y$ |
-| `4.8` | $0.0000$ | $0.0000$ | $20.0000$ | $4.8000$ | Switch chatter time $t_{\text{bounce}}$ in $X$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$4.1667$** | Debounce safety margin ratio $M$ |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `20` `{{key:ENTER}}` — Load the firmware debounce lockout window ($T_{\text{lockout}} = 20.0\text{ ms}$) into Register $Y$.
-2. `4.8` `{{key:÷}}` — Enter the measured contact chatter duration ($t_{\text{bounce}} = 4.8\text{ ms}$) and execute division; the resulting safety margin ($M = 4.1667$) proves the switch settles four times faster than the lockout cutoff.
-
-Safety factor exceeds $4\times$, guaranteeing absolute immunity to switch bounce false triggers.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `20 {{key:ENTER}} 4.8 {{key:÷}}` loads the firmware debounce lockout window ($T_{\text{lockout}} = 20.0\text{ ms}$) into Register $Y$ and divides by the measured contact chatter duration ($t_{\text{bounce}} = 4.8\text{ ms}$). The stack drops, leaving safety margin $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{4.1667})$ in Register $X$—proving the switch settles four times faster than the lockout cutoff without requiring scratchpad storage.
 
 ---
 
@@ -511,21 +500,10 @@ Safety factor exceeds $4\times$, guaranteeing absolute immunity to switch bounce
 **Optics Context:** A luminance meter measures light reflected from an unactivated pixel ($L_{\text{white}} = 142.0\text{ cd/m}^2$) and an activated black pixel ($L_{\text{black}} = 9.35\text{ cd/m}^2$). Calculate the photometric contrast ratio:
 $$C_R = \frac{L_{\text{white}}}{L_{\text{black}}}$$
 
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_03:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_03:value}}} \approx 15.2:1$.
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_03:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_03:value}}`** $\approx 15.2:1$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `142` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $142.0000$ | $142.0000$ | Background luminance $L_{\text{white}}$ in $Y$ |
-| `9.35` | $0.0000$ | $0.0000$ | $142.0000$ | $9.3500$ | Activated pixel luminance $L_{\text{black}}$ in $X$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$15.1872$** | Photopic contrast ratio $C_R \approx 15.2:1$ |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `142` `{{key:ENTER}}` — Enter the unactivated background luminance ($L_{\text{white}} = 142.0\text{ cd/m}^2$) into the stack.
-2. `9.35` `{{key:÷}}` — Key the activated black pixel luminance ($L_{\text{black}} = 9.35\text{ cd/m}^2$) and divide; the photopic contrast ratio ($C_R = 15.19:1$) appears immediately, confirming ISO 9241-303 Class 1 optical clarity.
-
-Confirms ISO 9241-303 Class 1 visual ergonomics.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `142 {{key:ENTER}} 9.35 {{key:÷}}` enters unactivated background luminance ($L_{\text{white}} = 142.0\text{ cd/m}^2$) into $Y$ and divides by activated black pixel luminance ($L_{\text{black}} = 9.35\text{ cd/m}^2$). The stack drops, resolving the photopic contrast ratio $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{15.1872})$ directly to confirm ISO 9241-303 Class 1 visual ergonomics.
 
 ---
 
@@ -613,20 +591,9 @@ $$E_{\text{pulse}} = \frac{P_{\text{avg}}}{f_{\text{rep}}}, \quad P_{\text{peak}
 
 **Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_07:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_07:value}}`**
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1.20` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $1.2000$ | $1.2000$ | Average laser power $P_{\text{avg}} = 1.20\text{ W}$ |
-| `35000` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.4286 \times 10^{-5}$ | Pulse energy $E_{\text{pulse}} = 34.29\,\mu\text{J}$ |
-| `1 {{key:E}} 7 {{key:+/-}}` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$342.8571$** | Peak optical burst power $P_{\text{peak}}$ in Watts |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `1.20` `{{key:ENTER}}` — Deposit average laser optical power ($P_{\text{avg}} = 1.20\text{ W}$) into the accumulator.
-2. `35000` `{{key:÷}}` — Key pulse repetition frequency ($f_{\text{rep}} = 35.0\text{ kHz}$) and divide; single-pulse optical energy ($E_{\text{pulse}} = 34.29\,\mu\text{J}$) condenses in $X$.
-3. `1 {{key:E}} 7 {{key:+/-}}` `{{key:÷}}` — Enter optical pulse width ($\tau = 100\text{ ns} = 1.0 \times 10^{-7}\text{ s}$) and divide; peak instantaneous optical burst power ($P_{\text{peak}} = 342.86\text{ W}$) is calculated in place.
-
-Stack: $Y = 3.4286 \times 10^{-5}\text{ J}$ ($34.29\,\mu\text{J}$), $X = \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_07:value}}\text{ W}}$ peak power.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1.20 {{key:ENTER}} 35000 {{key:÷}}` deposits average laser power ($1.20\text{ W}$) into $Y$, divides by pulse frequency ($35.0\text{ kHz}$), and drops the stack to leave pulse energy $3.4286 \times 10^{-5}\text{ J}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.4286 \times 10^{-5})$.
+2. Striking `1 {{key:E}} 7 {{key:+/-}} {{key:÷}}` enters pulse width ($\tau = 100\text{ ns}$) and divides, evaluating peak optical burst power $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{342.8571}\text{ W})$ directly in Register $X$.
 
 ---
 
@@ -634,23 +601,11 @@ Stack: $Y = 3.4286 \times 10^{-5}\text{ J}$ ($34.29\,\mu\text{J}$), $X = \mathbf
 **Thermal Context:** Twin CR2032 batteries deliver $V_{\text{in}} = 5.80\text{ V}$ to an LDO supplying $V_{\text{out}} = 3.30\text{ V}$ at active computation current $I = 18.2\text{ mA}$:
 $$P_{\text{diss}} = (V_{\text{in}} - V_{\text{out}}) \cdot I$$
 
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_08:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_08:value}}\text{ mW}}$.
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_08:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_08:value}}`**$\text{ mW}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `5.80` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $5.8000$ | $5.8000$ | Battery input potential $V_{\text{in}} = 5.80\text{ V}$ |
-| `3.30` `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.5000$ | Voltage drop $\Delta V = V_{\text{in}} - V_{\text{out}}$ |
-| `0.0182` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0455$ | Dissipated power in Watts |
-| `1000` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$45.5000$** | Regulator dissipation $P_{\text{diss}}$ in mW |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `5.80` `{{key:ENTER}}` — Arm the stack with the battery input potential ($V_{\text{in}} = 5.80\text{ V}$).
-2. `3.30` `{{key:-}}` — Enter regulated output voltage ($V_{\text{out}} = 3.30\text{ V}$) and subtract; linear drop headroom ($\Delta V = 2.50\text{ V}$) condenses in $X$.
-3. `18.2` `{{key:×}}` — Key active core current ($I = 18.2\text{ mA}$) and multiply; total internal regulator heat dissipation ($P_{\text{diss}} = 45.50\text{ mW}$) is derived with zero parentheses.
-
-Negligible thermal rise of $< 1.2^\circ\text{C}$ in the SOT-23 regulator package.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `5.80 {{key:ENTER}} 3.30 {{key:-}}` evaluates battery headroom drop $\Delta V = 2.50\text{ V}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.5000)$.
+2. Striking `0.0182 {{key:×}} 1000 {{key:×}}` multiplies by active computation current ($18.2\text{ mA}$) and normalizes to milliwatts, yielding regulator heat dissipation $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{45.5000}\text{ mW})$—confirming negligible thermal rise ($< 1.2^\circ\text{C}$) without grouping syntax.
 
 ---
 
@@ -658,21 +613,10 @@ Negligible thermal rise of $< 1.2^\circ\text{C}$ in the SOT-23 regulator package
 **Electronics Context:** Keypad matrix lines use $3.3\text{ V}$ logic with low-state threshold $V_{IL,\max} = 0.80\text{ V}$. A Schottky isolating diode has forward drop $V_F = 0.32\text{ V}$ at $2.0\text{ mA}$. Calculate the low-state noise margin:
 $$V_{NM,L} = V_{IL,\max} - V_F$$
 
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_09:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_09:value}}\text{ V}}$.
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_09:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_09:value}}`**$\text{ V}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `0.80` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $0.8000$ | $0.8000$ | Low-state input threshold $V_{IL,\max}$ in Volts |
-| `0.32` | $0.0000$ | $0.0000$ | $0.8000$ | $0.3200$ | Schottky diode forward drop $V_F$ |
-| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.4800$** | Low-state noise immunity margin $V_{NM,L}$ in Volts |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `0.80` `{{key:ENTER}}` — Load the maximum low-level input threshold ($V_{IL,\max} = 0.80\text{ V}$) into Register $Y$.
-2. `0.32` `{{key:-}}` — Enter Schottky matrix diode forward drop ($V_F = 0.32\text{ V}$) and subtract; low-state noise immunity margin ($V_{NM,L} = 0.4800\text{ V} = 480\text{ mV}$) remains live in Register $X$.
-
-Guarantees $480\text{ mV}$ of electrical noise immunity against ambient RF interference.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.80 {{key:ENTER}} 0.32 {{key:-}}` loads low-state input threshold ($0.80\text{ V}$) into Register $Y$ and subtracts Schottky forward drop ($0.32\text{ V}$). The stack drops, resolving the noise immunity margin $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.4800}\text{ V} = 480\text{ mV})$ in place to guarantee RF immunity.
 
 ---
 
@@ -717,24 +661,11 @@ Ensures microcontroller clock PLL is stable before releasing Core 0 from reset.
 **RF Electronics Context:** A $12.000\text{ MHz}$ fundamental quartz crystal specifies load capacitance $C_L = 18.0\text{ pF}$. With PCB stray capacitance $C_{\text{stray}} = 3.5\text{ pF}$, calculate matching external shunt capacitors ($C_1 = C_2 = C$):
 $$C_L = \frac{C}{2} + C_{\text{stray}} \implies C = 2 (C_L - C_{\text{stray}})$$
 
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_11:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_11:value}}\text{ pF}}$.
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_11:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_11:value}}`**$\text{ pF}$.
 
-> **Named RPN Stack Idiom: *The Parallel Reciprocal x∥y Shortcut & Capacitance Matching*** — Invert stray capacitance offset and double the series combination directly in the operational stack {{cite:horowitz2015}}.
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $18.0000$ | $18.0000$ | Crystal nominal load capacitance $C_L$ |
-| `3.5` `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $14.5000$ | Net series capacitance $C_L - C_{\text{stray}}$ |
-| `2` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$29.0000$** | Matching shunt capacitor rating $C$ in pF |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `18` `{{key:ENTER}}` — Load the crystal specified load capacitance ($C_L = 18.0\text{ pF}$) into Register $Y$.
-2. `3.5` `{{key:-}}` — Subtract stray trace capacitance ($C_{\text{stray}} = 3.5\text{ pF}$); net series capacitance ($C_L - C_{\text{stray}} = 14.5\text{ pF}$) appears in $X$.
-3. `2` `{{key:×}}` — Double the value for the two symmetric legs; the target capacitor value ($C = 29.0\text{ pF}$) is verified immediately.
-
-Select standard $27\text{ pF}$ or $30\text{ pF}$ C0G ceramic capacitors.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `18 {{key:ENTER}} 3.5 {{key:-}}` evaluates net series capacitance $C_L - C_{\text{stray}} = 14.5\text{ pF}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 14.5000)$.
+2. Striking `2 {{key:×}}` doubles the series branch value, calculating the required matching shunt capacitor rating $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{29.0000}\text{ pF})$—indicating standard $27\text{ pF}$ or $30\text{ pF}$ C0G ceramics with zero memory registers.
 
 ---
 
@@ -742,22 +673,11 @@ Select standard $27\text{ pF}$ or $30\text{ pF}$ C0G ceramic capacitors.
 **Memory Reliability Context:** A math enthusiast saves 45 equation configurations per day. If QSPI flash sectors withstand $100,000$ write/erase cycles and ping-pong wear-leveling doubles endurance across 2 slots, find sector lifetime in years:
 $$t_{\text{years}} = \frac{2 \times 100,000}{45 \times 365.25}$$
 
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_12:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_12:value}}\text{ years}}$.
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_12:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_12:value}}`**$\text{ years}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `200000` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $200000.00$ | $200000.00$ | Total dual-slot endurance cycles |
-| `45` `{{key:ENTER}}` | $0.0000$ | $200000.00$ | $45.0000$ | $45.0000$ | Daily edit transactions |
-| `365.25` `{{key:×}}` | $0.0000$ | $0.0000$ | $200000.00$ | $16436.25$ | Annual sector write cycles |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12.1682$** | Guaranteed flash endurance in years |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `200000` `{{key:ENTER}}` — Prime the stack with total ping-pong cycle capacity ($2 \times 100,000 = 200,000\text{ cycles}$).
-2. `45` `{{key:ENTER}}` — Enter daily save frequency ($45\text{ saves/day}$) into the active register.
-3. `365.25` `{{key:×}}` — Multiply by average days per year; the annual write cycle rate ($16,436.25\text{ writes/year}$) is calculated while total capacity waits in $Y$.
-4. `{{key:÷}}` — Divide capacity by yearly wear; minimum operational endurance ($t = 12.168\text{ years}$) confirms over a decade of continuous service.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `200000 {{key:ENTER}} 45 {{key:ENTER}} 365.25 {{key:×}}` loads dual-slot endurance ($200,000\text{ cycles}$) into $Z$ and evaluates annual sector write cycles ($45 \times 365.25 = 16,436.25\text{ writes/yr}$) in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 200000.0000, X: 16436.2500)$.
+2. Striking `{{key:÷}}` divides total cycle endurance by yearly wear, yielding guaranteed operational lifespan $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{12.1682}\text{ years})$—confirming over a decade of continuous daily service.
 
 ---
 
@@ -832,21 +752,11 @@ $$R_{\text{int}} = \frac{V_1 - V_2}{I_2 - I_1}$$
 **Display Engineering Context:** The liquid crystal threshold voltage varies with temperature by $\frac{dV_{\text{LCD}}}{dT} = -12.5\text{ mV/}^\circ\text{C}$. If nominal voltage is $V_0 = 9.00\text{ V}$ at $25.0^\circ\text{C}$, find required drive voltage at freezing ($0.0^\circ\text{C}$):
 $$V(T) = V_0 + \frac{dV}{dT} (T - T_0) = 9.00 + (-0.0125)(0 - 25)$$
 
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_15:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_15:value}}\text{ V}}$.
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_15:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_15:value}}`**$\text{ V}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `0` `{{key:ENTER}}` `25` `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-25.0000$ | Freezing temperature offset $\Delta T$ |
-| `0.0125` `{{key:+/-}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3125$ | Voltage correction factor |
-| `9.00` `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$9.3125$** | Required drive potential $V(0)$ in Volts |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `0` `{{key:ENTER}}` — Enter freezing test temperature ($T = 0.0^\circ\text{C}$) into the stack.
-2. `25` `{{key:-}}` — Subtract reference calibration baseline ($T_0 = 25.0^\circ\text{C}$); temperature offset ($\Delta T = -25.0^\circ\text{C}$) forms in $X$.
-3. `0.0125` `{{key:+/-}}` `{{key:×}}` — Multiply by LCD thermal sensitivity slope ($-0.0125\text{ V}/^\circ\text{C}$); bias voltage correction ($+0.3125\text{ V}$) forms in $X$.
-4. `9.00` `{{key:+}}` — Add nominal room-temperature drive potential ($V_0 = 9.00\text{ V}$); target liquid crystal bias voltage ($V_{\text{LCD}} = 9.3125\text{ V}$) is confirmed.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0 {{key:ENTER}} 25 {{key:-}}` evaluates temperature differential $\Delta T = -25.0^\circ\text{C}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: -25.0000)$.
+2. Striking `0.0125 {{key:+/-}} {{key:×}} 9.00 {{key:+}}` scales by thermal sensitivity slope ($-0.0125\text{ V/}^\circ\text{C}$) to produce offset $+0.3125\text{ V}$ and adds nominal room-temperature drive potential, resolving freezing LCD bias potential $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{9.3125}\text{ V})$ in place.
 
 ---
 
