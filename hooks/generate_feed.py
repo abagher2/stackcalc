@@ -76,6 +76,21 @@ def on_post_build(config, **kwargs):
     feed_items_str = "\n".join(items)
     now_rfc822 = email.utils.format_datetime(datetime.now(timezone.utc))
 
+    # To avoid dirtying the git working directory on every build when posts are unchanged,
+    # preserve existing lastBuildDate if feed items match.
+    blog_docs_dir = docs_dir / "blog"
+    existing_feed = blog_docs_dir / "feed.xml"
+    if existing_feed.exists():
+        try:
+            old_text = existing_feed.read_text(encoding="utf-8")
+            old_items = re.search(r"<atom:link[^>]*/>\s*(.*?)\s*</channel>", old_text, re.DOTALL)
+            if old_items and old_items.group(1).strip() == feed_items_str.strip():
+                old_date = re.search(r"<lastBuildDate>(.*?)</lastBuildDate>", old_text)
+                if old_date:
+                    now_rfc822 = old_date.group(1)
+        except Exception:
+            pass
+
     feed_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -95,8 +110,6 @@ def on_post_build(config, **kwargs):
     (blog_site_dir / "feed.xml").write_text(feed_xml, encoding="utf-8")
 
     # Also save in docs/blog/feed.xml so it can be served or tracked
-    blog_docs_dir = docs_dir / "blog"
-    blog_docs_dir.mkdir(parents=True, exist_ok=True)
     (blog_docs_dir / "feed.xml").write_text(feed_xml, encoding="utf-8")
 
     print(f"INFO    -  Generated blog RSS feed at {blog_site_dir / 'feed.xml'} with {len(items)} items")

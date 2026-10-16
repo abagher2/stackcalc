@@ -231,7 +231,7 @@ $$\mathbf{8 + 5 = 8 + (2 + 3) = (8 + 2) + 3 = 10 + 3 = 13}$$
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:8}} {{key:▦}} | 0 | 0 | 0 | 8 |
 | {{key:2}} {{key:+}} | 0 | 0 | 0 | 10 |
-| {{key:3}} {{key:+}} | 0 | 0 | 10 | 13 |
+| {{key:3}} {{key:+}} | 0 | 0 | 0 | 13 |
 
 <div class="admonition note">
 <p class="admonition-title">For Parents &amp; Teachers: Teacher Dialogue Script</p>
@@ -419,7 +419,7 @@ The SC-6 display animates these exact parabolic paths in real time, making dista
 
 ---
 
-## The European Rekenrek / Number Rack (`{{key:▦}}`)
+## The European Rekenrek / Number Rack (`{{key:COUNT}}`)
 
 The 100-bead and 20-bead Rekenrek (Number Rack) was invented by Adrian Treffers at the Freudenthal Institute in the Netherlands. It consists of two parallel stainless-steel rods, each carrying beads divided into color-coded groups of **5 Red** and **5 White**.
 
@@ -428,9 +428,9 @@ The 100-bead and 20-bead Rekenrek (Number Rack) was invented by Adrian Treffers 
 > Wire 1 (Tens):  [🔴🔴🔴🔴🔴][⚪⚪⚪⚪⚪]  ---  [🔴🔴🔴🔴🔴][⚪⚪⚪⚪⚪]
 > Wire 2 (Ones):  [🔴🔴🔴🔴🔴][⚪⚪⚪⚪⚪]  ---  [🔴🔴🔴🔴🔴][⚪⚪⚪⚪⚪]
 
-### Operating Rekenrek Mode (`{{key:▦}}`)
+### Operating Rekenrek Mode (`{{key:COUNT}}`)
 1. Type a target number (for example, `{{key:1}} {{key:4}}`).
-2. Press `{{key:▦}}` (or `{{key:COUNT}}`).
+2. Press `{{key:COUNT}}` (or `[g] [COUNT]`).
 3. The transflective LCD maps the quantity across the two wires:
    - Wire 1 shows 10 beads slid to the active left side (5 red, 5 white).
    - Wire 2 shows 4 red beads slid to the active left side.
@@ -475,7 +475,7 @@ $$\text{placeValueDigit}(Y, X) = \left\lfloor \frac{|Y|}{X} \right\rfloor \bmod 
 2. Query the Tens place: `{{key:1}} {{key:0}} {{key:PV}}`.
    - Register $X$ displays: `2` (There are 2 tens in 4,725!).
 
-| Keystroke | Register T | Register Z | Register Y (Subject) | Register X (Query) |
+| Keystroke | Display T | Display Z | Display Y (Subject) | Display X (Query / Result) |
 | :--- | :--- | :--- | :--- | :--- |
 | `4725` | 0 | 0 | 0 | 4725 |
 | {{key:ENTER}} | 0 | 0 | 4725 | 4725 |

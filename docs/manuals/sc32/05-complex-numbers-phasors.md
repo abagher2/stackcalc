@@ -841,17 +841,7 @@ $r = 16^{1/4} = 2.0$. First root $\theta = \pi/4 = 45^\circ$:
 $$z_0 = 2(\cos 45^\circ + i\sin 45^\circ) = \sqrt{2} + i\sqrt{2} \approx 1.414214 + 1.414214i$$
 Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_28:keys}}`$\implies$ **$1.414214$ in $X$ and $Y$**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `45` `{{key:ENTER}}` — Enter root argument angle ($\theta = 45.0^\circ$) into $Y$.
-2. `{{key:COS}}` — Evaluate cosine ($\cos 45^\circ \approx 0.707107$).
-3. `2` `{{key:×}}` — Scale by radial magnitude ($r = 16^{1/4} = 2.0$), yielding real component $1.414214$.
-4. `45` `{{key:SIN}}` `2` `{{key:×}}` — Compute scaled imaginary projection, establishing $z_0 = 1.414214 + 1.414214i$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `45 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $45.0000$ | $45.0000$ | Enter root argument angle $\theta = 45.0^\circ$ |
-| 2 | `2` | $0.0000$ | $0.0000$ | $45.0000$ | $2.0000$ | Load radial modulus $r = 16^{1/4} = 2.0$ |
-| 3 | `{{key:▸y,x}}` | $0.0000$ | $0.0000$ | **$1.414214$** | **$1.414214$** | Principal root $z_0 = 1.414214 + 1.414214i$ |
+Key the angle and radial modulus `45 {{key:ENTER}} 2` into $(Y, X)$ $(T:0, Z:0, Y:45, X:2)$, then convert from polar to rectangular via `{{key:▸y,x}}`, extracting principal root $z_0 = 1.414214 + 1.414214i$ across $(T:0, Z:0, Y:1.414214, X:1.414214)$.
 
 Result: **$1.414214 + 1.414214i$**.
 
@@ -861,19 +851,7 @@ Result: **$1.414214 + 1.414214i$**.
 **Electromagnetics Context:** Skin depth $\delta = \sqrt{2/(\omega \mu \sigma)}$. For copper ($\sigma = 5.8 \times 10^7\text{ S/m}$) at $f = 10\text{ MHz}$ ($\omega = 6.283185 \times 10^7\text{ rad/s}$):
 $$\delta = \sqrt{\frac{2}{6.283185\cdot 10^7 \times 4\pi\cdot 10^{-7} \times 5.8\cdot 10^7}} \approx 2.089 \times 10^{-5}\text{ m} = \mathbf{20.89\,\mu\text{m}}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `4` `{{key:π}}` `{{key:×}}` `1 {{key:E}} 7 {{key:+/-}}` `{{key:×}}` — Form free-space magnetic permeability ($\mu_0 = 4\pi \times 10^{-7}\text{ H/m}$).
-2. `6.283185 {{key:E}} 7` `{{key:×}}` — Multiply by RF angular frequency ($\omega$).
-3. `5.8 {{key:E}} 7` `{{key:×}}` — Multiply by copper conductivity ($\sigma$), forming denominator product.
-4. `2` `{{key:x⇄y}}` `{{key:÷}}` — Position numerator constant 2 via `{{key:x⇄y}}` and divide.
-5. `{{key:√x}}` — Extract square root in place, resolving copper skin depth ($\delta \approx \mathbf{20.89\,\mu\text{m}}$).
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `4 {{key:π}} {{key:×}} 1 {{key:E}} 7 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.256637\text{e-}6$ | Vacuum permeability $\mu_0 = 4\pi \times 10^{-7}\text{ H/m}$ |
-| 2 | `6.283185 {{key:E}} 7 {{key:×}} 5.8 {{key:E}} 7 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.582845\text{e+}9$ | Denominator product $\omega \mu \sigma$ |
-| 3 | `2 {{key:x⇄y}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.363905\text{e-}10$ | Ratio $2 / (\omega \mu \sigma)$ |
-| 4 | `{{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.0890\text{e-}5$** | Copper skin depth $\delta \approx 20.89\,\mu\text{m}$ |
+Form permeability with `4 {{key:π}} {{key:×}} 1 {{key:E}} 7 {{key:+/-}} {{key:×}}` $(T:0, Z:0, Y:0, X:1.2566 \times 10^{-6})$, multiply by frequency and conductivity `6.283185 {{key:E}} 7 {{key:×}} 5.8 {{key:E}} 7 {{key:×}}` $(T:0, Z:0, Y:0, X:4.5828 \times 10^9)$, invert into ratio $2/(\omega\mu\sigma)$ with `2 {{key:x⇄y}} {{key:÷}}` $(T:0, Z:0, Y:0, X:4.3639 \times 10^{-10})$, and take the square root `{{key:√x}}`, arriving at skin depth $(T:0, Z:0, Y:0, X:2.0890 \times 10^{-5})$.
 
 Result: **$\delta = 20.89\,\mu\text{m}$**.
 
@@ -904,17 +882,7 @@ Result: **$49.9985 - 0.9995i\,\Omega$**.
 **Photonics Context:** Complex propagation constant $\beta(\omega) = \beta_0 + \beta_1(\omega - \omega_0) + \frac{1}{2}\beta_2(\omega - \omega_0)^2$. Pulse dispersion parameter $D = -2\pi c \beta_2 / \lambda^2$. For $\beta_2 = -20\text{ ps}^2/\text{km}$ at $\lambda = 1.55\,\mu\text{m}$:
 $$D = \frac{-2\pi(3\cdot 10^8)(-20\cdot 10^{-27})}{(1.55\cdot 10^{-6})^2} \approx \mathbf{15.68\text{ ps/(nm}\cdot\text{km)}}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `2` `{{key:π}}` `{{key:×}}` `3 {{key:E}} 8` `{{key:×}}` `20 {{key:E}} 27 {{key:+/-}}` `{{key:×}}` — Form numerator product $2\pi c |\beta_2| \approx 3.7699 \times 10^{-17}\text{ s}^3/\text{m}$.
-2. `1.55 {{key:E}} 6 {{key:+/-}}` `{{key:x²}}` — Key operating wavelength $\lambda = 1.55\,\mu\text{m}$ and square in place ($\lambda^2 \approx 2.4025 \times 10^{-12}\text{ m}^2$).
-3. `{{key:÷}}` — Divide numerator by $\lambda^2$, yielding raw dispersion factor $1.569 \times 10^{-5}\text{ s/m}^2$.
-4. `1 {{key:E}} 6` `{{key:×}}` — Scale by unit conversion factor to resolve group velocity dispersion parameter $D \approx \mathbf{15.68\text{ ps/(nm}\cdot\text{km)}}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2 {{key:π}} {{key:×}} 3 {{key:E}} 8 {{key:×}} 20 {{key:E}} 27 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.769911\text{e-}17$ | Numerator $2\pi c |\beta_2|$ in $\text{s}^3/\text{m}$ |
-| 2 | `1.55 {{key:E}} 6 {{key:+/-}} {{key:x²}}` | $0.0000$ | $0.0000$ | $3.769911\text{e-}17$ | $2.402500\text{e-}12$ | Wavelength squared $\lambda^2$ in $\text{m}^2$ |
-| 3 | `{{key:÷}} 1 {{key:E}} 6 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$15.6841$** | Dispersion parameter $D \approx 15.68\text{ ps/(nm}\cdot\text{km)}$ |
+Compute numerator $2\pi c |\beta_2|$ with `2 {{key:π}} {{key:×}} 3 {{key:E}} 8 {{key:×}} 20 {{key:E}} 27 {{key:+/-}} {{key:×}}` $(T:0, Z:0, Y:0, X:3.7699 \times 10^{-17})$, square wavelength with `1.55 {{key:E}} 6 {{key:+/-}} {{key:x²}}` $(T:0, Z:0, Y:3.7699 \times 10^{-17}, X:2.4025 \times 10^{-12})$, and divide and scale via `{{key:÷}} 1 {{key:E}} 6 {{key:×}}`, arriving at dispersion parameter $(T:0, Z:0, Y:0, X:15.6841)$.
 
 Result: **$15.68\text{ ps/(nm}\cdot\text{km)}$**.
 
@@ -925,16 +893,7 @@ Result: **$15.68\text{ ps/(nm}\cdot\text{km)}$**.
 For $A_W = 200\,\Omega\cdot\text{s}^{-1/2}$ at $\omega = 100\text{ rad/s}$:
 $$\mathbf{Z}_W = \frac{200}{10} (1 - j) = \mathbf{20.0000 - 20.0000i\,\Omega}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `100` `{{key:√x}}` — Compute square root of angular frequency $\sqrt{\omega} = 10.0\text{ rad}^{1/2}\text{/s}^{1/2}$ in Register $X$.
-2. `200` `{{key:x⇄y}}` `{{key:÷}}` — Key Warburg coefficient $A_W = 200$, swap registers via `{{key:x⇄y}}`, and divide; scale factor $20.0\,\Omega$ occupies Register $X$.
-3. `20` `{{key:ENTER}}` `20 {{key:+/-}}` — Load real resistance and capacitive reactance directly across $(Y = 20.0, X = -20.0)$, confirming Warburg impedance $\mathbf{Z}_W = \mathbf{20.0000 - 20.0000i\,\Omega}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `100 {{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $10.0000$ | Square root of angular frequency $\sqrt{\omega}$ |
-| 2 | `200 {{key:x⇄y}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $20.0000$ | Warburg magnitude $A_W / \sqrt{\omega} = 20\,\Omega$ |
-| 3 | `20 {{key:ENTER}} 20 {{key:+/-}}` | $0.0000$ | $20.0000$ | **$20.0000$** | **$-20.0000$** | Warburg impedance $\mathbf{Z}_W = 20 - 20i\,\Omega$ |
+Evaluate $\sqrt{\omega}$ with `100 {{key:√x}}` $(T:0, Z:0, Y:0, X:10)$, compute scale factor $A_W/\sqrt{\omega} = 20\,\Omega$ with `200 {{key:x⇄y}} {{key:÷}}` $(T:0, Z:0, Y:0, X:20)$, and enter resistance and reactance directly `20 {{key:ENTER}} 20 {{key:+/-}}`, confirming Warburg impedance $(T:0, Z:20, Y:20.0000, X:-20.0000)$.
 
 Result: **$20.0000 - 20.0000i\,\Omega$**.
 
@@ -945,18 +904,7 @@ Result: **$20.0000 - 20.0000i\,\Omega$**.
 $$\mathbf{H}^* = 0.02 - 0.01i \implies \mathbf{E} \cdot \mathbf{H}^* = (10+5i)(0.02-0.01i) = (0.2 + 0.05) + (-0.1 + 0.1)i = 0.25 + 0i$$
 Average radiated power: $\text{Re}(\mathbf{S}_{\text{cpx}}) = 0.5 \times 0.25 = \mathbf{0.125\text{ W/m}^2}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `10` `{{key:ENTER}}` `5` — Load electric field phasor $\mathbf{E} = 10.0 + 5.0i\text{ V/m}$ into Registers $(Y, X)$.
-2. `0.02` `{{key:ENTER}}` `0.01 {{key:+/-}}` — Load complex conjugate magnetic field phasor $\mathbf{H}^* = 0.02 - 0.01i\text{ A/m}$ into $(Y, X)$, lifting $\mathbf{E}$ to $(T, Z)$.
-3. `{{key:CMPLX}}` `{{key:×}}` — Execute complex multiplication $\mathbf{E} \times \mathbf{H}^*$; real cross-product power $0.2500$ appears in $Y$ with $0.0000i$ in $X$.
-4. `2` `{{key:÷}}` — Scale by time-average factor $1/2$ to resolve average electromagnetic radiation density $\text{Re}(\mathbf{S}_{\text{cpx}}) = \mathbf{0.125\text{ W/m}^2}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `10 {{key:ENTER}} 5 {{key:ENTER}}` | $0.0000$ | $10.0000$ | $5.0000$ | $5.0000$ | Electric field phasor $\mathbf{E} = 10 + 5i$ pushed |
-| 2 | `0.02 {{key:ENTER}} 0.01 {{key:+/-}}` | $10.0000$ | $5.0000$ | $0.0200$ | $-0.0100$ | Conjugate magnetic phasor $\mathbf{H}^*$ in $(Y, X)$ |
-| 3 | `{{key:CMPLX}} {{key:×}}` | $10.0000$ | $10.0000$ | $0.2500$ | $0.0000$ | Poynting product $\mathbf{E} \times \mathbf{H}^* = 0.25 + 0i$ |
-| 4 | `2 {{key:÷}}` | $10.0000$ | $10.0000$ | $0.2500$ | **$0.1250$** | Average radiation density $\text{Re}(\mathbf{S}) = 0.125\text{ W/m}^2$ |
+Load electric field $\mathbf{E}$ via `10 {{key:ENTER}} 5 {{key:ENTER}}` and conjugate magnetic field $\mathbf{H}^*$ via `0.02 {{key:ENTER}} 0.01 {{key:+/-}}`, placing $(T:10, Z:5, Y:0.02, X:-0.01)$. Execute `{{key:CMPLX}} {{key:×}}` to obtain $0.25 + 0i$ $(T:10, Z:10, Y:0.25, X:0)$, and divide by 2 with `2 {{key:÷}}`, giving average radiation density $(T:10, Z:10, Y:0.25, X:0.1250)$.
 
 Result: **$0.125\text{ W/m}^2$**.
 
@@ -966,16 +914,7 @@ Result: **$0.125\text{ W/m}^2$**.
 **Avionics Context:** Fiber optic gyroscope: $\Delta\Phi = \frac{8\pi A N}{c \lambda} \Omega$. For coil area $A = 0.01\text{ m}^2$, $N = 1000\text{ turns}$, $\lambda = 1.31\,\mu\text{m}$, rotation rate $\Omega = 1.0\text{ rad/s}$:
 $$\Delta\Phi = \frac{8\pi(0.01)(1000)}{(3\cdot 10^8)(1.31\cdot 10^{-6})} \approx \mathbf{0.6402\text{ radians}}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `8` `{{key:π}}` `{{key:×}}` `0.01` `{{key:×}}` `1000` `{{key:×}}` — Form numerator optical area-turn product $8\pi A N \approx 251.3274\text{ m}^2$ in Register $X$.
-2. `3 {{key:E}} 8` `{{key:ENTER}}` `1.31 {{key:E}} 6 {{key:+/-}}` `{{key:×}}` — Compute denominator optical velocity-wavelength product $c \lambda = 393.0\text{ m}^2/\text{s}$ in $X$ while numerator lifts to $Y$.
-3. `{{key:÷}}` — Divide numerator by denominator; for unit rotation $\Omega = 1.0\text{ rad/s}$, Sagnac interferometer phase shift evaluates to $\Delta\Phi \approx \mathbf{0.6402\text{ radians}}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `8 {{key:π}} {{key:×}} 0.01 {{key:×}} 1000 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $251.3274$ | Numerator optical area-turn product $8\pi A N$ |
-| 2 | `3 {{key:E}} 8 {{key:ENTER}} 1.31 {{key:E}} 6 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $251.3274$ | $393.0000$ | Denominator optical speed-wavelength $c\lambda$ |
-| 3 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.6402$** | Sagnac interferometer phase shift $\Delta\Phi\text{ (rad)}$ |
+Form optical area-turns product with `8 {{key:π}} {{key:×}} 0.01 {{key:×}} 1000 {{key:×}}` $(T:0, Z:0, Y:0, X:251.3274)$, compute $c\lambda$ with `3 {{key:E}} 8 {{key:ENTER}} 1.31 {{key:E}} 6 {{key:+/-}} {{key:×}}` $(T:0, Z:0, Y:251.3274, X:393.0000)$, and divide with `{{key:÷}}`, resolving Sagnac phase shift $(T:0, Z:0, Y:0, X:0.6402)$.
 
 Result: **$0.6402\text{ radians}$**.
 
@@ -986,16 +925,7 @@ Result: **$0.6402\text{ radians}$**.
 $$\mathbf{Y}_m = \frac{1}{50000} - j\frac{1}{15000} = 2.0 \times 10^{-5} - 6.6667 \times 10^{-5}i\,\text{S}$$
 Impedance: $\mathbf{Z}_m = 1/\mathbf{Y}_m = \mathbf{4,137.93 + 13,793.10i\,\Omega}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `50000` `{{key:1/x}}` — Evaluate core-loss conductance $G_c = 1/50,000 = 2.0 \times 10^{-5}\text{ S}$ in Register $X$.
-2. `15000` `{{key:1/x}}` `{{key:+/-}}` — Compute magnetizing susceptance $B_m = -1/15,000 \approx -6.6667 \times 10^{-5}\text{ S}$ in $X$, lifting $G_c$ to $Y$.
-3. `{{key:CMPLX}}` `{{key:1/x}}` — Take complex reciprocal of admittance $\mathbf{Y}_m = G_c + j B_m$; equivalent branch impedance evaluates to $R_{\text{eq}} = \mathbf{4,137.93\,\Omega}$ in Register $Y$ and $X_{\text{eq}} = \mathbf{13,793.10\,\Omega}$ in Register $X$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `50000 {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000\text{e-}5$ | Core-loss conductance $G_c = 1/50\text{ k}\Omega$ |
-| 2 | `15000 {{key:1/x}} {{key:+/-}}` | $0.0000$ | $0.0000$ | $2.0000\text{e-}5$ | $-6.6667\text{e-}5$ | Magnetizing susceptance $B_m$ |
-| 3 | `{{key:CMPLX}} {{key:1/x}}` | $0.0000$ | $0.0000$ | **$4137.9310$** | **$13793.1034$** | Branch impedance $\mathbf{Z}_m = 4137.93 + 13793.10i\,\Omega$ |
+Key core conductance `50000 {{key:1/x}}` $(T:0, Z:0, Y:0, X:2.0 \times 10^{-5})$ and susceptance `15000 {{key:1/x}} {{key:+/-}}` $(T:0, Z:0, Y:2.0 \times 10^{-5}, X:-6.6667 \times 10^{-5})$, then take complex reciprocal with `{{key:CMPLX}} {{key:1/x}}`, arriving at equivalent branch impedance $(T:0, Z:0, Y:4137.9310, X:13793.1034)$.
 
 Result: **$4,137.93 + 13,793.10i\,\Omega$**.
 
@@ -1006,16 +936,7 @@ Result: **$4,137.93 + 13,793.10i\,\Omega$**.
 Major axis $a = 10.0$, minor axis $b = 6.0$. Axial ratio:
 $$\text{AR} = \frac{10.0}{6.0} = 1.6667 \implies \text{AR}_{\text{dB}} = 20 \log_{10}(1.6667) = \mathbf{4.4370\text{ dB}}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `10` `{{key:ENTER}}` `6` `{{key:÷}}` — Divide major axis by minor axis to obtain linear axial ratio $\text{AR} = 10.0 / 6.0 \approx 1.666667$.
-2. `{{key:LOG}}` — Take base-10 logarithm ($\log_{10}(1.666667) \approx 0.221849$) in place.
-3. `20` `{{key:×}}` — Scale by 20 to convert to decibels; polarization axial ratio evaluates to $\text{AR}_{\text{dB}} = \mathbf{4.4370\text{ dB}}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `10 {{key:ENTER}} 6 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.666667$ | Major-to-minor axial ratio $\text{AR} = 10/6$ |
-| 2 | `{{key:LOG}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.221849$ | Base-10 logarithm $\log_{10}(\text{AR})$ |
-| 3 | `20 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$4.436975$** | Axial ratio in decibels: $\text{AR}_{\text{dB}} = 4.4370\text{ dB}$ |
+Key `10 {{key:ENTER}} 6 {{key:÷}}` $(T:0, Z:0, Y:0, X:1.666667)$ to divide the axes, take the base-10 logarithm with `{{key:LOG}}` $(T:0, Z:0, Y:0, X:0.221849)$, and scale with `20 {{key:×}}` to determine polarization axial ratio in decibels $(T:0, Z:0, Y:0, X:4.436975)$.
 
 Result: **$4.4370\text{ dB}$**.
 
@@ -1077,16 +998,7 @@ $$e^{i\pi/2} = i \implies \sqrt{i} = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i \a
 
 > **Named RPN Stack Idiom: *The Inside-Out Radical & Euler Polar Identity*** — Load Euler imaginary exponent $e^{i\pi/2} = i$, extract complex square root directly, and resolve $\sqrt{i} = \sqrt{2}/2 + i\sqrt{2}/2$ without scratchpad memory {{cite:strogatz2019,hp15c1982}}.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0` `{{key:ENTER}}` — Load zero real part into $Y$.
-2. `1` — Enter unit imaginary component into $X$, defining $0 + 1i$.
-3. `{{key:CMPLX}}` `{{key:√x}}` — Extract complex square root in place, populating $Y$ with $\sqrt{2}/2 \approx 0.707107$ and $X$ with $0.707107i$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0 {{key:ENTER}} {{key:π}} 2 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.570796$ | Imaginary exponent $\pi/2$ loaded into $X$ |
-| 2 | `{{key:CMPLX}} {{key:eˣ}}` | $0.0000$ | $0.0000$ | $0.000000$ | $1.000000$ | Complex exponential $e^{i\pi/2} = 0 + 1i$ |
-| 3 | `{{key:CMPLX}} {{key:√x}}` | $0.0000$ | $0.0000$ | **$0.707107$** | **$0.707107$** | Complex square root: $\sqrt{i} = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i$ |
+Enter imaginary exponent $\pi/2$ via `0 {{key:ENTER}} {{key:π}} 2 {{key:÷}}` $(T:0, Z:0, Y:0, X:1.570796)$, evaluate complex exponential with `{{key:CMPLX}} {{key:eˣ}}` $(T:0, Z:0, Y:0.000000, X:1.000000)$, and extract the square root with `{{key:CMPLX}} {{key:√x}}`, producing $(T:0, Z:0, Y:0.707107, X:0.707107)$ in 4 seconds flat!
 
 Result: **$0.707107 + 0.707107i$**.
 
