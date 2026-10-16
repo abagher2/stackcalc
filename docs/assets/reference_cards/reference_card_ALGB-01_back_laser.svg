@@ -34,19 +34,19 @@
     <rect x="24" y="44" width="17" height="6" rx="2" fill="#ffffff" opacity="0.55" />
   </g>
 
-  <!-- Header Typography with Bifurcated Teacher Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">TEACHER ANCHOR: CCSS.HSA.SSE.A.2 • TEKS 111.39.c.10.E • UNSPSC 60101700 • TITLE I / IV GRANT ELIGIBLE • MODEL: SC32</text>
+  <!-- Header Typography with Series & Mathematical Domain Anchor -->
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 06 OF 09 • DOMAIN: POLYNOMIAL GEOMETRY & BINOMIAL FACTORING • CARTESIAN L-RAILS • ZERO-PAIR TEXTURE CONTRAST</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: FACTORING TRINOMIALS &amp; BINOMIAL ARRAYS</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: Factoring x² + 5x + 6 = (x+2)(x+3)</text>
   <text x="130" y="117" class="font-mono badge-box">Grades 7–11 Pre-Algebra &amp; Algebra II • Hands-On Classroom &amp; Home STEM Studio Series</text>
 
-  <!-- Top-Right SKU Badges -->
+  <!-- Top-Right Series & SKU Badges -->
   <g transform="translate(1025, 48)">
     <rect x="0" y="0" width="180" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="90" y="19" class="font-mono badge-txt" text-anchor="middle">SKU: ALGB-01</text>
+    <text x="90" y="19" class="font-mono badge-txt" text-anchor="middle">CARD 06 / 09 • ALGB-01</text>
     
     <rect x="0" y="34" width="180" height="26" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="90" y="52" class="font-mono badge-txt" text-anchor="middle">LESSON TUTORIAL</text>
+    <text x="90" y="52" class="font-mono badge-txt" text-anchor="middle">MATHEMATICAL GUIDE</text>
   </g>
 
   <!-- LEFT COLUMN: SCAN FOR VIDEO DEMO, STANDARDS & GUIDING QUESTION -->
@@ -69,15 +69,15 @@
     <!-- Standards Box -->
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">CURRICULUM STANDARDS</text>
+      <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">CURRICULAR ALIGNMENT</text>
       <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#ffffff" font-weight="700">Grades 7–11 Pre-Algebra &amp; Algebra II</text>
     </g>
 
-    <!-- Parent / Teacher Guiding Question Box -->
+    <!-- Mathematical Inquiry Box -->
     <g transform="translate(12, 375)">
       <rect x="0" y="0" width="276" height="88" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="10" y="17" class="font-mono" font-size="8.8px" font-weight="700" fill="#ffffff">💡 GUIDING QUESTION (ASK, DON'T TELL)</text>
+      <text x="10" y="17" class="font-mono" font-size="8.8px" font-weight="700" fill="#ffffff">💡 MATHEMATICAL INQUIRY</text>
       <text x="10" y="34" class="font-mono" font-size="8.2px" fill="#ffffff">
         <tspan x="10" dy="0">Can you arrange the linear rods so the rec</tspan>
         <tspan x="10" dy="13">tangle closes completely without any gaps o</tspan>
@@ -142,17 +142,17 @@
       </text>
     </g>
 
-    <!-- NOW YOU TRY! ACTIVE STUDENT CHALLENGE BOX -->
+    <!-- EXTENSION INVESTIGATION BOX -->
     <g transform="translate(0, 385)">
       <rect x="0" y="0" width="875" height="90" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="4,3" />
       <rect x="0" y="0" width="875" height="24" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="16" y="16" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">★ NOW YOU TRY! (STUDENT PRACTICE CHALLENGE): FACTOR: x² + 6x + 8</text>
+      <text x="16" y="16" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">★ EXTENSION INVESTIGATION: FACTOR: x² + 6x + 8</text>
       
       <text x="16" y="44" class="font-mono" font-size="8.8px" fill="#ffffff">
         <tspan x="16" dy="0">Arrange one +x² tile, six +x rods, and eight +1 units into a solid rectangle. What are its rail dimensions? (Scan QR for 3D animated solution!)</tspan>
       </text>
       <text x="16" y="74" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">
-        → Build with your blocks, then scan the QR code to watch the animated 3D solution on your screen!
+        → Assemble with your physical blocks, then scan the QR code to verify with the 3D step-by-step vector model.
       </text>
     </g>
   </g>
@@ -162,21 +162,21 @@
     <rect x="0" y="0" width="1190" height="115" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     
     <g transform="translate(25, 24)">
-      <text x="0" y="0" class="font-mono th" fill="#ffffff">KINUX LAB KINESTHETIC CURRICULUM</text>
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
       <text x="0" y="18" class="font-mono footer-txt">Interactive Mathematics Manipulative Ecosystem.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates (10x / 30x Stations): stackcalc.io/schools</text>
+      <text x="0" y="32" class="font-mono footer-txt">Designed in Mountain View, California • Archival BPA-Free POM/PETG.</text>
     </g>
 
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#ffffff">CROSS-REFERENCED CALCULATOR VERIFICATION</text>
       <text x="0" y="18" class="font-mono footer-txt">Every keystroke sequence verified with RPNCore CalculatorEngine.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Title I &amp; IV STEM Grants • UNSPSC 60101700 • Net-30 District POs: sales@stackcalc.io</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Pitch • stackcalc.io</text>
     </g>
 
     <g transform="translate(980, 24)">
-      <text x="0" y="0" class="font-mono th" fill="#ffffff">TEACHER &amp; REFILL PORTAL</text>
-      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#ffffff">stackcalc.io/education</text>
-      <text x="0" y="32" class="font-mono footer-txt">Single Refills: stackcalc.io/parts</text>
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">PARTS &amp; SCHOOL REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#ffffff">stackcalc.io/parts</text>
+      <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates: stackcalc.io/schools</text>
     </g>
   </g>
   <metadata id="stackcalc-book-macro-manifest" data-kit="ALGB-01">

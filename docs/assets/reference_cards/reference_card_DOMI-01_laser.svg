@@ -50,50 +50,50 @@
 
   <!-- Studio Continuum Ribbon -->
   <text x="215.0" y="109.0" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">STUDIO CONTINUUM:</text>\n
-    <g transform="translate(323.0, 98.0)">
-      <rect x="0" y="0" width="70.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="35.0" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Ten-Frames</text>
-    </g>\n<text x="395.5" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
-    <g transform="translate(403.5, 98.0)">
-      <rect x="0" y="0" width="58.4" height="15" rx="3.5" fill="#ffffff" stroke="#ffffff" stroke-width="0.8" />
-      <text x="29.2" y="10.8" class="font-mono" font-size="7.5px" font-weight="700" text-anchor="middle" fill="#000000">Dominoes</text>
-    </g>\n<text x="464.4" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
-    <g transform="translate(472.4, 98.0)">
-      <rect x="0" y="0" width="41.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="20.5" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Clock</text>
-    </g>\n<text x="515.9" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
-    <g transform="translate(523.9, 98.0)">
-      <rect x="0" y="0" width="64.2" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="32.1" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Fractions</text>
-    </g>\n<text x="590.6" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
-    <g transform="translate(598.6, 98.0)">
-      <rect x="0" y="0" width="46.8" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="23.4" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Primes</text>
-    </g>\n<text x="647.9" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
-    <g transform="translate(655.9, 98.0)">
-      <rect x="0" y="0" width="75.8" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="37.9" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Probability</text>
-    </g>\n<text x="734.2" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
-    <g transform="translate(742.2, 98.0)">
+    <g transform="translate(319.0, 98.0)">
+      <rect x="0" y="0" width="81.6" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="40.8" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">1·Ten-Frames</text>
+    </g>\n<text x="403.1" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(411.1, 98.0)">
+      <rect x="0" y="0" width="70.0" height="15" rx="3.5" fill="#ffffff" stroke="#ffffff" stroke-width="0.8" />
+      <text x="35.0" y="10.8" class="font-mono" font-size="7.5px" font-weight="700" text-anchor="middle" fill="#000000">2·Dominoes</text>
+    </g>\n<text x="483.6" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(491.6, 98.0)">
       <rect x="0" y="0" width="52.6" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="26.3" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Algebra</text>
-    </g>\n<text x="797.3" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
-    <g transform="translate(805.3, 98.0)">
+      <text x="26.3" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">3·Clock</text>
+    </g>\n<text x="546.7" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(554.7, 98.0)">
+      <rect x="0" y="0" width="75.8" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="37.9" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">4·Fractions</text>
+    </g>\n<text x="633.0" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(641.0, 98.0)">
       <rect x="0" y="0" width="58.4" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="29.2" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Volvelle</text>
-    </g>\n<text x="866.2" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
-    <g transform="translate(874.2, 98.0)">
-      <rect x="0" y="0" width="41.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="20.5" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">SC-32</text>
+      <text x="29.2" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">5·Primes</text>
+    </g>\n<text x="701.9" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(709.9, 98.0)">
+      <rect x="0" y="0" width="64.2" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="32.1" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">6·Algebra</text>
+    </g>\n<text x="776.6" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(784.6, 98.0)">
+      <rect x="0" y="0" width="87.4" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="43.7" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">7·Probability</text>
+    </g>\n<text x="874.5" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(882.5, 98.0)">
+      <rect x="0" y="0" width="70.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="35.0" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">8·Volvelle</text>
+    </g>\n<text x="955.0" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(963.0, 98.0)">
+      <rect x="0" y="0" width="52.6" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="26.3" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">9·SC-32</text>
     </g>
 
-  <!-- Top-Right SKU & Rev Badges -->
+  <!-- Top-Right Series & SKU Badges -->
   <g transform="translate(1025, 48)">
     <rect x="0" y="0" width="180" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="90" y="19" class="font-mono badge-sku" text-anchor="middle">SKU: DOMI-01</text>
+    <text x="90" y="19" class="font-mono badge-sku" text-anchor="middle">CARD 02 / 09 • DOMI-01</text>
     
     <rect x="0" y="34" width="180" height="26" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="90" y="52" class="font-mono badge-rev" text-anchor="middle">USER GUIDE</text>
+    <text x="90" y="52" class="font-mono badge-rev" text-anchor="middle">MATHEMATICAL REFERENCE</text>
   </g>
 
   <!-- COLUMN 1: WHAT IS THIS MANIPULATIVE? -->
@@ -276,7 +276,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#ffffff">TRIANGULAR NUMBER COMBINATORIAL THEOREM</text>
       <text x="0" y="18" class="font-mono footer-txt">The number of unordered pairs chosen with replacement from n elements is T(n) = n(n+1)/2.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Title I &amp; IV STEM Grant Eligible • UNSPSC 60101700 • SIDE A: IN-BOX USER COMPANION GUIDE | MONOCHROME WHITE LASER ABLATION</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | MONOCHROME WHITE LASER ABLATION</text>
     </g>
 
     <g transform="translate(980, 24)">
