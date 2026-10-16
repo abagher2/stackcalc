@@ -3934,47 +3934,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Ancient Bazaar Mission:</strong> In your spice merchant stall, you arrange 5 terracotta jars of ground golden turmeric on the upper shelf in the morning. An afternoon caravan camel arrives with 3 additional jars of fragrant cinnamon. How many spice jars do you have in total to sell to travelers?</li>
 <li><strong>Manipulative:</strong> Frame 1 fills top row (5 jars), bottom row adds 3 jars.</li>
 <li><strong>Keystrokes:</strong> <code>5 [ENTER] 3 [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>8</code></strong></li>
-<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>5</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: left;">Load 5 turmeric jars into Register <span class="arithmatex">\(X\)</span> and activate Ten-Frame Studio</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>3</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">Stack lifts; 5 jars rise to Mezzanine <span class="arithmatex">\(Y\)</span>, 3 cinnamon jars enter Ground <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">8</td>
-<td style="text-align: left;">Add jars together; Ten-Frame displays full top row of 5 plus 3 in bottom row (<span class="arithmatex">\(X = 8\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>5 [ENTER] 3 [+]</code> -&gt; (T=0, Z=0, Y=0, X=8) to fuse both spice groups into 8 on the ground floor.</li>
 <li><strong>Diagnostic Check:</strong> Top row full (5), bottom row has 3. Total <span class="arithmatex">\(X = 8\)</span>.</li>
 </ul>
 <hr />
@@ -3998,23 +3958,15 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>9</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">9</td>
-<td style="text-align: left;">Load 9 rolls of indigo linen into Register <span class="arithmatex">\(X\)</span> and open Ten-Frame Studio</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>9</code> [ENTER]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">9</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">Stack lifts; 9 rolls rise to <span class="arithmatex">\(Y\)</span>, key 1 silk roll into <span class="arithmatex">\(X\)</span> to fill empty pocket</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Load 9 rolls of indigo linen into <span class="arithmatex">\(X\)</span> and duplicate to Mezzanine <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;">[+]</td>
+<td style="text-align: left;"><code>1</code> [+]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -4022,15 +3974,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <td style="text-align: left;">Bridge to ten; Frame 1 completely fills and flashes (<span class="arithmatex">\(X = 10\)</span>)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>3</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">Stack lifts; benchmark 10 rises to <span class="arithmatex">\(Y\)</span>, key remaining 3 silk rolls into <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
+<td style="text-align: left;"><code>3</code> [+]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -4048,63 +3992,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Ancient Bazaar Mission:</strong> An olive grove caravan unloads 8 glazed clay amphorae filled with pressed olive oil and 7 stone flagons of pure rosewater. How many vessels are set out on the tasting table?</li>
 <li><strong>Manipulative:</strong> Frame 1 has 8 counters (2 empty pockets). Decompose 7 into <span class="arithmatex">\(2 + 5\)</span>.</li>
 <li><strong>Keystrokes:</strong> <code>8 [ENTER] 2 [+] 5 [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>15</code></strong></li>
-<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>8</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">8</td>
-<td style="text-align: left;">Load 8 amphorae into Register <span class="arithmatex">\(X\)</span> and open Ten-Frame Studio (2 empty slots in Frame 1)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>2</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">8</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">Stack lifts; 8 amphorae rise to <span class="arithmatex">\(Y\)</span>, key 2 rosewater flagons into <span class="arithmatex">\(X\)</span> to bridge ten</td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: left;">Bridge to ten; Frame 1 fills completely (<span class="arithmatex">\(X = 10\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>5</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: left;">Stack lifts; 10 rises to <span class="arithmatex">\(Y\)</span>, key remaining 5 rosewater flagons into <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">15</td>
-<td style="text-align: left;">Final addition yields 15 vessels; Frame 2 shows full top row of 5 (<span class="arithmatex">\(X = 15\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>8 [ENTER] 2 [+] 5 [+]</code> -&gt; (T=0, Z=0, Y=0, X=15), bridging to ten with 2 rosewater flagons before adding the remaining 5.</li>
 <li><strong>Diagnostic Check:</strong> <span class="arithmatex">\(X = 15\)</span>. Frame 1 has 10; Frame 2 has a full top row of 5.</li>
 </ul>
 <hr />
@@ -4128,39 +4016,23 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>7</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">7</td>
-<td style="text-align: left;">Load 7 lapis lazuli gems into Register <span class="arithmatex">\(X\)</span> and activate Ten-Frame Studio</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>3</code></td>
+<td style="text-align: left;"><code>7</code> [ENTER]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">7</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">Stack lifts; 7 gems rise to <span class="arithmatex">\(Y\)</span>, key 3 carnelian stones into <span class="arithmatex">\(X\)</span> to complete frame</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Load 7 lapis lazuli gems into <span class="arithmatex">\(X\)</span> and duplicate to Mezzanine <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;">[+]</td>
+<td style="text-align: left;"><code>3</code> [+]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">10</td>
-<td style="text-align: left;">Bridge to ten; Frame 1 fills completely (<span class="arithmatex">\(X = 10\)</span>)</td>
+<td style="text-align: left;">Bridge to ten; Frame 1 completely fills (<span class="arithmatex">\(X = 10\)</span>)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>3</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">Stack lifts; 10 rises to <span class="arithmatex">\(Y\)</span>, key remaining 3 carnelian stones into <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
+<td style="text-align: left;"><code>3</code> [+]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -4178,47 +4050,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Ancient Bazaar Mission:</strong> A coin changer counts 16 engraved bronze coins resting across two ten-frame money trays. How many additional bronze coins are needed to fill both ten-frame trays to an even twenty coins?</li>
 <li><strong>Manipulative:</strong> Frame 1 is full (10). Frame 2 has 6 counters (4 empty pockets).</li>
 <li><strong>Keystrokes:</strong> <code>16 [ENTER] 4 [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>20</code></strong></li>
-<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>16</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: left;">Load 16 bronze coins into Register <span class="arithmatex">\(X\)</span> and open Ten-Frame Studio</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>4</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">Stack lifts; 16 coins rise to <span class="arithmatex">\(Y\)</span>, key 4 additional coins into <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">20</td>
-<td style="text-align: left;">Add coins; both ten-frame trays fill completely to an even decade (<span class="arithmatex">\(X = 20\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>16 [ENTER] 4 [+]</code> -&gt; (T=0, Z=0, Y=0, X=20), completely filling both ten-frame trays to an even decade.</li>
 <li><strong>Diagnostic Check:</strong> Both frames completely full. <span class="arithmatex">\(X = 20\)</span>.</li>
 </ul>
 <hr />
@@ -4227,47 +4059,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Ancient Bazaar Mission:</strong> A fruit merchant's wicker crate holds a full harvest of 10 ripe sweet pomegranates. A traveling family purchases 4 pomegranates for their desert journey. How many pomegranates remain in the crate?</li>
 <li><strong>Manipulative:</strong> Full Frame 1 (10). Remove 4 counters.</li>
 <li><strong>Keystrokes:</strong> <code>10 [ENTER] 4 [-]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>6</code></strong></li>
-<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>10</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: left;">Load full crate of 10 pomegranates into Register <span class="arithmatex">\(X\)</span> and open Ten-Frame Studio</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>4</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">Stack lifts; 10 pomegranates rise to Mezzanine <span class="arithmatex">\(Y\)</span>, key 4 purchased fruits into Ground <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[-]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: left;">Subtract 4; top row (5) plus 1 counter on bottom row remain in Frame 1 (<span class="arithmatex">\(X = 6\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>10 [ENTER] 4 [-]</code> -&gt; (T=0, Z=0, Y=0, X=6), leaving 6 sweet pomegranates in the harvest crate.</li>
 <li><strong>Diagnostic Check:</strong> Top row (5) plus 1 counter on bottom row remain. <span class="arithmatex">\(X = 6\)</span>.</li>
 </ul>
 <hr />
@@ -4291,23 +4083,15 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>14</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">14</td>
-<td style="text-align: left;">Load 14 perfume vials into Register <span class="arithmatex">\(X\)</span> and open Ten-Frame Studio</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>4</code></td>
+<td style="text-align: left;"><code>14</code> [ENTER]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">14</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">Stack lifts; 14 vials rise to <span class="arithmatex">\(Y\)</span>, key first decrement of 4 vials into <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">Load 14 perfume vials into <span class="arithmatex">\(X\)</span> and duplicate to Mezzanine <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;">[-]</td>
+<td style="text-align: left;"><code>4</code> [-]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -4315,15 +4099,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <td style="text-align: left;">First subtraction empties Frame 2, leaving clean benchmark ten (<span class="arithmatex">\(X = 10\)</span>)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>2</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">Stack lifts; 10 vials rise to <span class="arithmatex">\(Y\)</span>, key remaining decrement of 2 vials into <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[-]</td>
+<td style="text-align: left;"><code>2</code> [-]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -4341,63 +4117,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Ancient Bazaar Mission:</strong> At the caravan weigh station, a scale master inspects 9 burlap sacks of golden saffron threads and 8 sacks of green cardamom pods. What is the total count of spice sacks ready for the camel train?</li>
 <li><strong>Manipulative:</strong> Decompose 8 into <span class="arithmatex">\(1 + 7\)</span> to bridge ten.</li>
 <li><strong>Keystrokes:</strong> <code>9 [ENTER] 1 [+] 7 [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>17</code></strong></li>
-<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>9</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">9</td>
-<td style="text-align: left;">Load 9 saffron sacks into Register <span class="arithmatex">\(X\)</span> and open Ten-Frame Studio</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">9</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">Stack lifts; 9 sacks rise to <span class="arithmatex">\(Y\)</span>, key 1 cardamom sack into <span class="arithmatex">\(X\)</span> to bridge ten</td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: left;">Bridge to ten; Frame 1 completely fills and flashes (<span class="arithmatex">\(X = 10\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>7</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">7</td>
-<td style="text-align: left;">Stack lifts; benchmark 10 rises to <span class="arithmatex">\(Y\)</span>, key remaining 7 cardamom sacks into <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">17</td>
-<td style="text-align: left;">Combine ten and seven; Frame 2 holds 7 dots, giving total <span class="arithmatex">\(X = 17\)</span> sacks</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>9 [ENTER] 1 [+] 7 [+]</code> -&gt; (T=0, Z=0, Y=0, X=17), completing the first frame with 1 sack and landing 7 sacks in the second frame.</li>
 <li><strong>Diagnostic Check:</strong> <span class="arithmatex">\(X = 17\)</span>. Frame 1 has 10; Frame 2 has 7.</li>
 </ul>
 <hr />
@@ -4408,31 +4128,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Silk Road Caravan Mission:</strong> Your caravan reaches the oasis trading post of Dunhuang. The master merchant asks you to tally a precious shipment of 17 bolts of shimmering damask silk using the Rekenrek Number Rack. How do you slide the beads to show 10 on the top rail and 7 on the bottom rail?</li>
 <li><strong>Manipulative:</strong> On your Number Rack, slide all 10 beads on Rail 1 (5 red, 5 white) to represent 1 full ten-pack. On Rail 2, slide 7 beads (5 red, 2 white). Touch both rails: <span class="arithmatex">\(10 + 7 = 17\)</span>.</li>
 <li><strong>Keystrokes:</strong> <code>10 [ENTER] 7 [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>17</code></strong></li>
-<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>17</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">17</td>
-<td style="text-align: left;">Tally 17 silk bolts and display on Number Rack (Rail 1 full, Rail 2 has 7)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>10 [ENTER] 7 [+]</code> -&gt; (T=0, Z=0, Y=0, X=17). Press <code>[g] [COUNT]</code> to display 17 on the Number Rack (Rail 1 full with 10, Rail 2 with 7).</li>
 <li><strong>Diagnostic Check:</strong> Exactly 1 full wire of 10 and 7 beads on wire 2. Total <span class="arithmatex">\(X = 17\)</span>.</li>
 </ul>
 <hr />
@@ -4441,47 +4137,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Silk Road Caravan Mission:</strong> In the caravan storage tent, you have 12 glazed ceramic jars of rare pistachio oil already strapped to the pack saddles. A local potter delivers 5 more ceramic jars to complete the consignment. How many ceramic jars are ready for the crossing?</li>
 <li><strong>Manipulative:</strong> Set 12 beads on your Number Rack (10 on Rail 1, 2 red on Rail 2). Slide 5 more red beads on Rail 2 to join the 2 white beads, completing the 5-bead red cluster plus 2 white (<span class="arithmatex">\(2 + 5 = 7\)</span>).</li>
 <li><strong>Keystrokes:</strong> <code>12 [ENTER] 5 [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>17</code></strong></li>
-<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>12</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: left;">Load 12 ceramic jars into Register <span class="arithmatex">\(X\)</span> and activate Number Rack mode</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>5</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: left;">Stack lifts; 12 jars rise to Mezzanine <span class="arithmatex">\(Y\)</span>, key 5 new jars into Ground <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">17</td>
-<td style="text-align: left;">Combine jars; Rail 2 red cluster completes with 2 white beads (<span class="arithmatex">\(X = 17\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>12 [ENTER] 5 [+]</code> -&gt; (T=0, Z=0, Y=0, X=17), combining the ceramic jar consignments into a single total.</li>
 <li><strong>Diagnostic Check:</strong> Wire 2 red group completes (5) plus 2 white beads. <span class="arithmatex">\(X = 17\)</span>.</li>
 </ul>
 <hr />
@@ -4490,47 +4146,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Silk Road Caravan Mission:</strong> Your lead camel carries 18 bundles of dried cinnamon bark across two pannier baskets. At a desert mountain outpost, the caravan master trades 5 spice bundles for fresh spring water. How many spice bundles remain in the camel's pack?</li>
 <li><strong>Manipulative:</strong> Start with 18 beads active on the Number Rack (10 on Rail 1, 8 on Rail 2: 5 red and 3 white). Slide the 5 red beads on Rail 2 back to the resting side, leaving 3 white beads on Rail 2 and all 10 on Rail 1 (<span class="arithmatex">\(10 + 3 = 13\)</span>).</li>
 <li><strong>Keystrokes:</strong> <code>18 [ENTER] 5 [-]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>13</code></strong></li>
-<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>18</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">18</td>
-<td style="text-align: left;">Load 18 spice bundles into Register <span class="arithmatex">\(X\)</span> and open Number Rack studio</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>5</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">18</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: left;">Stack lifts; 18 bundles rise to Mezzanine <span class="arithmatex">\(Y\)</span>, key 5 traded bundles into Ground <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[-]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">13</td>
-<td style="text-align: left;">Subtract traded bundles; Rail 2 sheds 5 red beads, leaving 10 on Rail 1 and 3 on Rail 2 (<span class="arithmatex">\(X = 13\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>18 [ENTER] 5 [-]</code> -&gt; (T=0, Z=0, Y=0, X=13), subtracting the traded spice bundles from the pack.</li>
 <li><strong>Diagnostic Check:</strong> <span class="arithmatex">\(X = 13\)</span> (10 on Wire 1, 3 on Wire 2).</li>
 </ul>
 <hr />
@@ -4539,42 +4155,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Silk Road Caravan Mission:</strong> A desert merchant offers 15 cast-bronze trade weights for bartering at the caravan gate. To verify the weight inventory, the caravan master asks you to decompose 15 into 1 full bundle of ten and 5 single weights using the Rekenrek.</li>
 <li><strong>Manipulative:</strong> Slide 10 beads across Rail 1 (5 red, 5 white) to lock in 1 full ten. On Rail 2, slide exactly the 5 red beads across. Observe: 1 full rail of ten plus 1 red cluster of five proves that <span class="arithmatex">\(15 = 10 + 5\)</span>.</li>
 <li><strong>Keystrokes:</strong> <code>15 [ENTER] 10 [-]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>5</code></strong></li>
-<li><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong></li>
-<li><code>15</code> — Enter 15 bronze weights into Ground Floor Register <span class="arithmatex">\(X\)</span> (<span class="arithmatex">\(X = 15\)</span>).</li>
-<li><code>[▦]</code> — Activate the interactive Number Rack studio on the LCD display <span class="arithmatex">\(\rightarrow \mathbf{15}\)</span>.</li>
-<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>15</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">15</td>
-<td style="text-align: left;">Enter 15 bronze trade weights into Ground Floor Register <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">15</td>
-<td style="text-align: left;">Activate Number Rack studio; Rail 1 shows 10, Rail 2 shows 5 (<span class="arithmatex">\(X = 15\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>15 [ENTER] 10 [-]</code> -&gt; (T=0, Z=0, Y=0, X=5), proving that 15 decomposes into 1 full ten-rail and 5 red beads.</li>
 <li><strong>Diagnostic Check:</strong> Wire 1 has 10; Wire 2 has exactly the 5 red beads active. Total <span class="arithmatex">\(X = 15\)</span>.</li>
 </ul>
 <hr />
@@ -4606,28 +4187,12 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <td style="text-align: left;">Enter 6 left-side amphorae into <span class="arithmatex">\(X\)</span> and duplicate to Mezzanine <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>6</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: left;">Key 6 right-side amphorae into active Register <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
+<td style="text-align: left;"><code>6</code> [+]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">12</td>
 <td style="text-align: left;">Add double quantities; <span class="arithmatex">\(6 + 6 = 12\)</span> amphorae forms in Register <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: left;">Activate Number Rack studio; displays double groups (5 red + 5 red = 10, plus 2 white = 12)</td>
 </tr>
 </tbody>
 </table>
@@ -4663,15 +4228,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <td style="text-align: left;">Load Team A's 7 silk bundles into <span class="arithmatex">\(X\)</span> and duplicate to Mezzanine <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>7</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">7</td>
-<td style="text-align: left;">Key 7 silk bundles into active Register <span class="arithmatex">\(X\)</span> to set up double</td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
+<td style="text-align: left;"><code>7</code> [+]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -4679,15 +4236,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <td style="text-align: left;">Add the known double; <span class="arithmatex">\(7 + 7 = 14\)</span> silk bundles forms in Register <span class="arithmatex">\(X\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">14</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">Stack lifts; subtotal 14 rises to <span class="arithmatex">\(Y\)</span>, enter extra 1 bundle into <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[+]</td>
+<td style="text-align: left;"><code>1</code> [+]</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -4705,47 +4254,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Silk Road Caravan Mission:</strong> A merchant's caravan crate contains 19 hand-painted ceramic spice bowls ready for market. During an afternoon trading stop at the caravanserai, buyers select and purchase 8 ceramic bowls. How many ceramic bowls remain packed in the crate?</li>
 <li><strong>Manipulative:</strong> Display 19 beads on your Number Rack (10 on Rail 1, 9 on Rail 2: 5 red and 4 white). Slide 8 beads on Rail 2 back to the resting position (5 red and 3 white), leaving 1 white bead on Rail 2 and all 10 on Rail 1 (<span class="arithmatex">\(10 + 1 = 11\)</span>).</li>
 <li><strong>Keystrokes:</strong> <code>19 [ENTER] 8 [-]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>11</code></strong></li>
-<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>19</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">19</td>
-<td style="text-align: left;">Load 19 ceramic spice bowls into Register <span class="arithmatex">\(X\)</span> and activate Number Rack studio</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>8</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">19</td>
-<td style="text-align: center;">8</td>
-<td style="text-align: left;">Stack lifts; 19 bowls rise to Mezzanine <span class="arithmatex">\(Y\)</span>, key 8 purchased bowls into Ground <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[-]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: left;">Subtract sold bowls; Rail 2 sheds 8 beads, leaving 10 on Rail 1 and 1 on Rail 2 (<span class="arithmatex">\(X = 11\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>19 [ENTER] 8 [-]</code> -&gt; (T=0, Z=0, Y=0, X=11), shedding 8 beads from Rail 2 to leave 11 ceramic spice bowls.</li>
 <li><strong>Diagnostic Check:</strong> 10 on Wire 1, 1 on Wire 2. Total <span class="arithmatex">\(X = 11\)</span>.</li>
 </ul>
 <hr />
@@ -4754,47 +4263,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Silk Road Caravan Mission:</strong> A master caravan ledger rack holds 20 bronze weight ingots across both rails (10 on Rail 1, 10 on Rail 2). To counterbalance a large trade scale for a sack of raw lapis lazuli, the scale master removes 7 bronze weights. How many bronze weights remain on the ledger rack?</li>
 <li><strong>Manipulative:</strong> Start with all 20 beads active on the 20-rack (both rails fully shifted left). Slide 7 beads on Rail 2 back to the right (5 white and 2 red). Count the remaining beads: Rail 1 still has 10, and Rail 2 has 3 red beads active (<span class="arithmatex">\(10 + 3 = 13\)</span>).</li>
 <li><strong>Keystrokes:</strong> <code>20 [ENTER] 7 [-]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>13</code></strong></li>
-<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>20</code> [▦]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">20</td>
-<td style="text-align: left;">Load all 20 bronze weights into Register <span class="arithmatex">\(X\)</span> and activate Number Rack mode</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>7</code></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">7</td>
-<td style="text-align: left;">Stack lifts; full rack count 20 rises to Mezzanine <span class="arithmatex">\(Y\)</span>, key 7 removed weights into Ground <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">[-]</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">13</td>
-<td style="text-align: left;">Subtract 7 weights; Rail 1 retains 10 and Rail 2 retains 3, yielding 13 remaining weights (<span class="arithmatex">\(X = 13\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>20 [ENTER] 7 [-]</code> -&gt; (T=0, Z=0, Y=0, X=13), subtracting 7 weights to leave 13 bronze weights on the ledger rack.</li>
 <li><strong>Diagnostic Check:</strong> <span class="arithmatex">\(X = 13\)</span>. Full top rail of 10 plus 3 beads on bottom rail.</li>
 </ul>
 <hr />
