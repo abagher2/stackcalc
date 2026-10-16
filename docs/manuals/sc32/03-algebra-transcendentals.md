@@ -187,13 +187,9 @@ $$L_p = 20 \log_{10}\left(\frac{1.45}{2.0 \times 10^{-5}}\right)$$
 
 Keystrokes: `{{res:sc32_03_algebra_transcendentals_seq_02:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_02:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1.45 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $1.4500$ | $1.4500$ | Sound pressure loaded to $Y$ |
-| 2 | `2.0 {{key:E}} 5 {{key:+/-}}` | $0.0000$ | $0.0000$ | $1.4500$ | $2.0000 \times 10^{-5}$ | $p_0$ reference in $X$ |
-| 3 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $72500.0000$ | Pressure ratio $p/p_0$ |
-| 4 | `{{keycap:LOG}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.860338$ | Common log (Bels) |
-| 5 | `20 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$97.206760\text{ dB}$** | Decibel sound pressure level |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1.45 {{key:ENTER}} 2.0 {{key:E}} 5 {{key:+/-}} {{key:÷}}` divides measured acoustic pressure by reference threshold $p_0 = 20\,\mu\text{Pa}$, yielding relative pressure ratio $72,500.0$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 72500.0000)$.
+2. Striking `{{key:LOG}} 20 {{key:×}}` computes the decade power and scales by $20\text{ dB/decade}$, resolving stadium acoustic sound pressure level directly as $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{97.2068}\text{ dB SPL})$.
 
 The stadium speaker produces **$97.2\text{ dB SPL}$**, indicating a high-intensity sound level requiring hearing protection during extended exposure.
 
@@ -212,13 +208,9 @@ Calculate the pH of an acetic acid buffer system with:
 
 Keystrokes: `{{res:sc32_03_algebra_transcendentals_seq_03:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_03:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.185 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $0.1850$ | $0.1850$ | Conjugate base concentration $[\text{A}^-]$ |
-| 2 | `0.120` | $0.0000$ | $0.0000$ | $0.1850$ | $0.1200$ | Weak acid concentration $[\text{HA}]$ |
-| 3 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.541667$ | Concentration ratio $[\text{A}^-]/[\text{HA}]$ |
-| 4 | `{{keycap:LOG}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.187989$ | Logarithmic ratio |
-| 5 | `4.76 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$4.947989$** | Final buffer pH |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.185 {{key:ENTER}} 0.120 {{key:÷}}` forms the conjugate base-to-acid ratio $[\text{A}^-]/[\text{HA}] \approx 1.5417$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 1.5417)$.
+2. Striking `{{key:LOG}} 4.76 {{key:+}}` computes the logarithmic ratio ($\approx 0.1880$) and sums baseline dissociation constant $\text{pK}_a = 4.76$, yielding buffer equilibrium $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{4.9480})$ with zero scratchpad memory.
 
 The buffer stabilizes at **$\text{pH} = 4.95$**.
 
@@ -245,12 +237,10 @@ Keystrokes:
 3. Divide numerator by denominator: `{{key:x⇄y}} {{key:÷}}` $\rightarrow$ $X = 78135.21\text{ J/mol}$
 4. Convert to $\text{kJ/mol}$: `1000 {{key:÷}}` $\rightarrow$ **$78.14\text{ kJ/mol}$**
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `300 {{key:1/x}} 350 {{key:1/x}} {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0005$ | Reciprocal temperature denominator $(1/T_1 - 1/T_2)$ |
-| 2 | `2.85 {{key:E}} 2 {{key:+/-}} {{key:ENTER}} 3.25 {{key:E}} 4 {{key:+/-}} {{key:÷}} {{key:LN}} 8.314462 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0005$ | $37207.2435$ | Numerator rate constant product $R \ln(k_2/k_1)$ |
-| 3 | `{{key:x⇄y}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $78135.2113$ | Activation energy $E_a$ in J/mol |
-| 4 | `1000 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$78.1352$** | Activation energy $E_a$ in kJ/mol |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `300 {{key:1/x}} 350 {{key:1/x}} {{key:-}}` evaluates reciprocal temperature difference $(1/T_1 - 1/T_2) \approx 0.000476\text{ K}^{-1}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.0005)$.
+2. Keying `2.85 {{key:E}} 2 {{key:+/-}} {{key:ENTER}} 3.25 {{key:E}} 4 {{key:+/-}} {{key:÷}} {{key:LN}} 8.314462 {{key:×}}` evaluates numerator energy product $R \ln(k_2/k_1) \approx 37,207.24\text{ J/mol}$ while temperature denominator waits in $Y$ $(T: 0.0000, Z: 0.0000, Y: 0.0005, X: 37207.2435)$.
+3. Striking `{{key:x⇄y}} {{key:÷}} 1000 {{key:÷}}` swaps, divides numerator by denominator, and converts to $\text{kJ/mol}$, producing activation energy $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{78.1352}\text{ kJ/mol})$.
 
 ---
 
@@ -272,14 +262,9 @@ $$\kappa = \frac{M g h}{R T} = \frac{0.0289644 \times 9.80665 \times 4207}{8.314
 Keystrokes:
 `{{res:sc32_03_algebra_transcendentals_seq_47:keys}}`
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.0289644 {{key:ENTER}} 9.80665 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2840$ | Molar weight $\times g$ |
-| 2 | `4207 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1194.9705$ | Potential energy product |
-| 3 | `8.314462 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $143.7219$ | Scaled by gas constant $R$ |
-| 4 | `288.15 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.4988$ | Dimensionless exponent $\kappa$ |
-| 5 | `{{key:+/-}} {{key:eˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6073$ | Attenuation factor $e^{-\kappa}$ |
-| 6 | `1013.25 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$615.3168$** | Pressure atop Mauna Kea (hPa) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.0289644 {{key:ENTER}} 9.80665 {{key:×}} 4207 {{key:×}} 8.314462 {{key:÷}} 288.15 {{key:÷}}` evaluates dimensionless potential scale height exponent $\kappa \approx 0.4988$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.4988)$.
+2. Striking `{{key:+/-}} {{key:eˣ}} 1013.25 {{key:×}}` computes attenuation factor $e^{-\kappa} \approx 0.6073$ and scales by sea-level pressure $1013.25\text{ hPa}$, yielding summit barometric pressure $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{615.3168}\text{ hPa})$.
 
 Atop Mauna Kea, atmospheric pressure is **$615.3\text{ hPa}$** (approx. $60.7\%$ of sea level pressure), explaining why astronomical observatories require supplemental oxygen equipment for summit personnel.
 

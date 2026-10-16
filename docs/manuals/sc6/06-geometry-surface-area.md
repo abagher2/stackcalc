@@ -152,9 +152,9 @@ A school garden measures $14\text{ meters}$ in length and $8.5\text{ meters}$ in
 | :--- | :--- | :--- | :--- | :--- |
 | 14 | 0 | 0 | 0 | 14 |
 | {{key:ENTER}} | 0 | 0 | 14 | 14 |
-| 8.5 | 0 | 0 | 14 | 8.5 |
-| {{key:+}} | 0 | 0 | 0 | 22.5 |
-| {{key:2}} | 0 | 0 | 22.5 | 2 |
+| 8.5 | 0 | 0 | 14 | $8.5$ |
+| {{key:+}} | 0 | 0 | 0 | $22.5$ |
+| {{key:2}} | 0 | 0 | $22.5$ | 2 |
 | {{key:×}} | 0 | 0 | 0 | 45 |
 
 For dedicated fast evaluation, the SC-6 provides `{{key:RECT}}`, which evaluates $Y \times X$ directly:
@@ -253,7 +253,7 @@ The circular turnaround loop of a physical education sprint track has a radius o
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 15 | 0 | 0 | 0 | 15 |
-| {{key:CIRC}} | 0 | 0 | 0 | 706.8583 |
+| {{key:CIRC}} | 0 | 0 | 0 | $706.8583$ |
 
 #### Worked Example 6.6: Circular Annulus (Washer / Doughnut)
 A 3D-printed spacer washer has an outer radius $R = 12\text{ mm}$ and a center bore hole of radius $r = 5\text{ mm}$. What is the net surface area of the top plastic face?
@@ -294,12 +294,12 @@ A storm runoff culvert has a trapezoidal cross-section with bottom width $a = 60
 | :--- | :--- | :--- | :--- | :--- |
 | 60 | 0 | 0 | 0 | 60 |
 | {{key:ENTER}} | 0 | 0 | 60 | 60 |
-| {{key:1}}{{key:1}}{{key:0}} | 0 | 0 | 60 | 110 |
-| {{key:+}} | 0 | 0 | 0 | 170 |
-| {{key:2}} | 0 | 0 | 170 | 2 |
-| {{key:÷}} | 0 | 0 | 0 | 85 |
-| 40 | 0 | 0 | 85 | 40 |
-| {{key:×}} | 0 | 0 | 0 | 3400 |
+| {{key:1}}{{key:1}}{{key:0}} | 60 | 1 | 1 | 0 |
+| {{key:+}} | 60 | 60 | 1 | 1 |
+| {{key:2}} | 60 | 1 | 1 | 2 |
+| {{key:÷}} | 60 | 60 | 1 | $0.5000$ |
+| 40 | 60 | 1 | $0.5000$ | 40 |
+| {{key:×}} | 60 | 60 | 1 | 20 |
 
 The flow area is exactly $\mathbf{3,400\text{ cm}^2}$ ($0.34\text{ m}^2$).
 
@@ -392,21 +392,21 @@ A classroom maker project requires designing an injection-molded instrument case
 | {{key:2}} | 0 | 0 | 20 | 2 | n=0, Σx=0 |
 | {{key:×}} | 0 | 0 | 0 | 40 | n=0, Σx=0 |
 | {{key:Σ+}} | 0 | 0 | 0 | 1 | n=1,Σx=40 |
-| {{key:5}} | 0 | 0 | 1 | 5 | n=1,Σx=40 |
+| {{key:5}} | 0 | 0 | 0 | 5 | n=1,Σx=40 |
 | {{key:ENTER}} | 0 | 0 | 5 | 5 | n=1,Σx=40 |
 | {{key:3}} | 0 | 0 | 5 | 3 | n=1,Σx=40 |
 | {{key:×}} | 0 | 0 | 0 | 15 | n=1,Σx=40 |
 | {{key:2}} | 0 | 0 | 15 | 2 | n=1,Σx=40 |
 | {{key:×}} | 0 | 0 | 0 | 30 | n=1,Σx=40 |
 | {{key:Σ+}} | 0 | 0 | 0 | 2 | n=2,Σx=70 |
-| {{key:4}} | 0 | 0 | 2 | 4 | n=2,Σx=70 |
+| {{key:4}} | 0 | 0 | 0 | 4 | n=2,Σx=70 |
 | {{key:ENTER}} | 0 | 0 | 4 | 4 | n=2,Σx=70 |
 | {{key:3}} | 0 | 0 | 4 | 3 | n=2,Σx=70 |
 | {{key:×}} | 0 | 0 | 0 | 12 | n=2,Σx=70 |
 | {{key:2}} | 0 | 0 | 12 | 2 | n=2,Σx=70 |
 | {{key:×}} | 0 | 0 | 0 | 24 | n=2,Σx=70 |
 | {{key:Σ+}} | 0 | 0 | 0 | 3 | n=3,Σx=94 |
-| {{key:Σx}} | 0 | 0 | 3 | 94 | Total: 94 |
+| {{key:Σx}} | 0 | 0 | 0 | 94 | Total: 94 |
 
 ---
 
@@ -553,10 +553,10 @@ A cargo container measures $12\text{ meters}$ long, $2.4\text{ meters}$ wide, an
 | :--- | :--- | :--- | :--- | :--- |
 | 12 | 0 | 0 | 0 | 12 |
 | {{key:ENTER}} | 0 | 0 | 12 | 12 |
-| 2.4 | 0 | 0 | 12 | 2.4 |
-| {{key:×}} | 0 | 0 | 0 | 28.8 |
-| 2.6 | 0 | 0 | 28.8 | 2.6 |
-| {{key:×}} | 0 | 0 | 0 | 74.88 |
+| 2.4 | 0 | 0 | 12 | $2.4$ |
+| {{key:×}} | 0 | 0 | 0 | $28.8$ |
+| 2.6 | 0 | 0 | $28.8$ | $2.6$ |
+| {{key:×}} | 0 | 0 | 0 | $74.88$ |
 The cargo volume is $\mathbf{74.88\text{ m}^3}$.
 
 ---
@@ -702,13 +702,13 @@ A transcontinental flight departs New York at 9:45 AM ($9.45\text{ HMS}$) and ha
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:9}}{{key:.}}{{key:4}}{{key:5}} | 0 | 0 | 0 | 9.45 |
-| {{key:▸HR}} | 0 | 0 | 0 | 9.75 |
-| {{key:ENTER}} | 0 | 0 | 9.75 | 9.75 |
-| {{key:2}}{{key:.}}{{key:3}}{{key:5}} | 0 | 0 | 9.75 | 2.35 |
-| {{key:▸HR}} | 0 | 0 | 9.75 | 2.583333 |
-| {{key:+}} | 0 | 0 | 0 | 12.333333 |
-| {{key:▸HMS}} | 0 | 0 | 0 | 12.20 |
+| {{key:9}}{{key:.}}{{key:4}}{{key:5}} | 0 | 9 | 4 | $5.00$ |
+| {{key:▸HR}} | 0 | 9 | 4 | $5.00$ |
+| {{key:ENTER}} | 9 | 4 | $5.00$ | $5.00$ |
+| {{key:2}}{{key:.}}{{key:3}}{{key:5}} | 5 | 2 | $3.00$ | $5.00$ |
+| {{key:▸HR}} | 5 | 2 | $3.00$ | $5.000000$ |
+| {{key:+}} | 5 | 5 | 2 | $8.000000$ |
+| {{key:▸HMS}} | 5 | 5 | 2 | $8.00$ |
 The flight lands at exactly **12:20 PM**, matching the physical clock face to the second!
 
 <div class="admonition note">
@@ -836,12 +836,12 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `2.4` | $0$ | $0$ | $0$ | $2.4$ | Key in kiosk width ($2.4\text{ m}$) into buffer |
-| `{{key:ENTER}}` | $0$ | $0$ | $2.4$ | $2.4$ | Stack lifts; width locked onto shelf $Y$ |
-| `1.2` | $0$ | $0$ | $2.4$ | $1.2$ | Key in kiosk height ($1.2\text{ m}$) on floor $X$ |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $3.6$ | Sum horizontal and vertical edges to form half-perimeter |
-| `2` | $0$ | $0$ | $3.6$ | $2$ | Key in scale factor 2 on floor $X$ ($Y = 3.6$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $7.2$ | Double half-perimeter to finalize total perimeter ($7.2\text{ m}$) |
+| `2.4` | $0.0000$ | $0.0000$ | $0.0000$ | $2.4$ | Key in kiosk width ($2.4\text{ m}$) into buffer |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.4$ | $2.4$ | Stack lifts; width locked onto shelf $Y$ |
+| `1.2` | $0.0000$ | $0.0000$ | $2.4$ | $1.2$ | Key in kiosk height ($1.2\text{ m}$) on floor $X$ |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6$ | Sum horizontal and vertical edges to form half-perimeter |
+| `2` | $0.0000$ | $0.0000$ | $3.6$ | $2.0000$ | Key in scale factor 2 on floor $X$ ($Y = 3.6$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7.2$ | Double half-perimeter to finalize total perimeter ($7.2\text{ m}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $7.2000$. Total perimeter is $\mathbf{7.20\text{ meters}}$.
 
@@ -853,8 +853,8 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `3.5` | $0$ | $0$ | $0$ | $3.5$ | Key sandpit edge length ($3.5\text{ m}$) into floor $X$ |
-| `{{key:x²}}` | $0$ | $0$ | $0$ | $12.25$ | Square number in place ($3.5 \times 3.5$) for square tarp area |
+| `3.5` | $0.0000$ | $0.0000$ | $0.0000$ | $3.5$ | Key sandpit edge length ($3.5\text{ m}$) into floor $X$ |
+| `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $12.25$ | Square number in place ($3.5 \times 3.5$) for square tarp area |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $12.2500$. Canvas tarp area required is $\mathbf{12.25\text{ m}^2}$.
 
@@ -866,10 +866,10 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `25` | $0$ | $0$ | $0$ | $25$ | Key triangle baseline ($25\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $25$ | $25$ | Stack lifts; base locked into Register $Y$ |
-| `60` | $0$ | $0$ | $25$ | $60$ | Key perpendicular altitude ($60\text{ cm}$) into floor $X$ |
-| `{{key:TRI}}` | $0$ | $0$ | $0$ | $750$ | Dedicated triangle primitive evaluates $\frac{1}{2} \times 25 \times 60$ in one motion |
+| `25` | $0.0000$ | $0.0000$ | $0.0000$ | $25.0000$ | Key triangle baseline ($25\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $25.0000$ | $25.0000$ | Stack lifts; base locked into Register $Y$ |
+| `60` | $0.0000$ | $0.0000$ | $25.0000$ | $60.0000$ | Key perpendicular altitude ($60\text{ cm}$) into floor $X$ |
+| `{{key:TRI}}` | $0.0000$ | $0.0000$ | $0.0000$ | $750.0000$ | Dedicated triangle primitive evaluates $\frac{1}{2} \times 25 \times 60$ in one motion |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $750.0000$. Felt fabric area is $\mathbf{750.00\text{ cm}^2}$.
 
@@ -881,8 +881,8 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` | $0$ | $0$ | $0$ | $15$ | Key circle radius ($15\text{ cm}$) into floor $X$ |
-| `{{key:CIRC}}` | $0$ | $0$ | $0$ | $706.8583$ | Dedicated circular solver squares radius and scales by $\pi$ in place |
+| `15` | $0.0000$ | $0.0000$ | $0.0000$ | $15.0000$ | Key circle radius ($15\text{ cm}$) into floor $X$ |
+| `{{key:CIRC}}` | $0.0000$ | $0.0000$ | $0.0000$ | $706.8583$ | Dedicated circular solver squares radius and scales by $\pi$ in place |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $706.8583$. Bronze plate area is $\mathbf{706.86\text{ cm}^2}$.
 
@@ -894,12 +894,12 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `4.2` | $0$ | $0$ | $0$ | $4.2$ | Key fountain radius ($4.2\text{ m}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $4.2$ | $4.2$ | Stack lifts; radius locked into Register $Y$ |
-| `2` | $0$ | $0$ | $4.2$ | $2$ | Key diameter doubling factor 2 |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $8.4$ | Multiply to obtain full diameter ($8.4\text{ m}$) in Register $X$ |
-| `{{key:π}}` | $0$ | $0$ | $8.4$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ onto stack |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $26.3894$ | Multiply diameter by $\pi$ to wrap curb perimeter |
+| `4.2` | $0.0000$ | $0.0000$ | $0.0000$ | $4.2$ | Key fountain radius ($4.2\text{ m}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $4.2$ | $4.2$ | Stack lifts; radius locked into Register $Y$ |
+| `2` | $0.0000$ | $0.0000$ | $4.2$ | $2.0000$ | Key diameter doubling factor 2 |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.4$ | Multiply to obtain full diameter ($8.4\text{ m}$) in Register $X$ |
+| `{{key:π}}` | $0.0000$ | $0.0000$ | $8.4$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ onto stack |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $26.3894$ | Multiply diameter by $\pi$ to wrap curb perimeter |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $26.3894$. Granite curb perimeter is $\mathbf{26.39\text{ meters}}$.
 
@@ -911,10 +911,10 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `8` | $0$ | $0$ | $0$ | $8$ | Key flower bed baseline ($8\text{ m}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $8$ | $8$ | Stack lifts; base locked into Register $Y$ |
-| `4.5` | $0$ | $0$ | $8$ | $4.5$ | Key perpendicular altitude ($4.5\text{ m}$) into floor $X$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $36$ | Multiply base by height to compute parallelogram area |
+| `8` | $0.0000$ | $0.0000$ | $0.0000$ | $8.0000$ | Key flower bed baseline ($8\text{ m}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $8.0000$ | $8.0000$ | Stack lifts; base locked into Register $Y$ |
+| `4.5` | $0.0000$ | $0.0000$ | $8.0000$ | $4.5$ | Key perpendicular altitude ($4.5\text{ m}$) into floor $X$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $36.0000$ | Multiply base by height to compute parallelogram area |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $36.0000$. Flower bed area is $\mathbf{36.00\text{ m}^2}$.
 
@@ -926,14 +926,14 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `14` | $0$ | $0$ | $0$ | $14$ | Key top crest base ($14\text{ m}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $14$ | $14$ | Stack lifts; top base locked into Register $Y$ |
-| `22` | $0$ | $0$ | $14$ | $22$ | Key ground base ($22\text{ m}$) into floor $X$ |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $36$ | Sum parallel bases ($14 + 22 = 36\text{ m}$) |
-| `2` | $0$ | $0$ | $36$ | $2$ | Key divisor 2 on floor $X$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $18$ | Divide sum by 2 to compute average midline width ($18\text{ m}$) |
-| `6` | $0$ | $0$ | $18$ | $6$ | Key embankment vertical height ($6\text{ m}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $108$ | Multiply average width by height for total area |
+| `14` | $0.0000$ | $0.0000$ | $0.0000$ | $14.0000$ | Key top crest base ($14\text{ m}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $14.0000$ | $14.0000$ | Stack lifts; top base locked into Register $Y$ |
+| `22` | $0.0000$ | $0.0000$ | $14.0000$ | $22.0000$ | Key ground base ($22\text{ m}$) into floor $X$ |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $36.0000$ | Sum parallel bases ($14 + 22 = 36\text{ m}$) |
+| `2` | $0.0000$ | $0.0000$ | $36.0000$ | $2.0000$ | Key divisor 2 on floor $X$ |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Divide sum by 2 to compute average midline width ($18\text{ m}$) |
+| `6` | $0.0000$ | $0.0000$ | $18.0000$ | $6.0000$ | Key embankment vertical height ($6\text{ m}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $108.0000$ | Multiply average width by height for total area |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $108.0000$. Sod embankment area is $\mathbf{108.00\text{ m}^2}$.
 
@@ -945,12 +945,12 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `40` | $0$ | $0$ | $0$ | $40$ | Key horizontal diagonal ($40\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $40$ | $40$ | Stack lifts; diagonal locked into Register $Y$ |
-| `70` | $0$ | $0$ | $40$ | $70$ | Key vertical diagonal ($70\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $2800$ | Multiply diagonals to enclose bounding rectangle |
-| `2` | $0$ | $0$ | $2800$ | $2$ | Key divisor 2 for diamond half-area |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $1400$ | Halve product to obtain net rhombus area |
+| `40` | $0.0000$ | $0.0000$ | $0.0000$ | $40.0000$ | Key horizontal diagonal ($40\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $40.0000$ | $40.0000$ | Stack lifts; diagonal locked into Register $Y$ |
+| `70` | $0.0000$ | $0.0000$ | $40.0000$ | $70.0000$ | Key vertical diagonal ($70\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2800.0000$ | Multiply diagonals to enclose bounding rectangle |
+| `2` | $0.0000$ | $0.0000$ | $2800.0000$ | $2.0000$ | Key divisor 2 for diamond half-area |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1400.0000$ | Halve product to obtain net rhombus area |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $1400.0000$. Paver face area is $\mathbf{1400.00\text{ cm}^2}$.
 
@@ -962,15 +962,15 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `12` | $0$ | $0$ | $0$ | $12$ | Key hexagon side length ($12\text{ cm}$) |
-| `{{key:x²}}` | $0$ | $0$ | $0$ | $144$ | Square side length ($12^2 = 144$) |
-| `3` | $0$ | $0$ | $144$ | $3$ | Key multiplier 3 for triangular sectors |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $432$ | Multiply ($144 \times 3 = 432$) |
-| `3` | $0$ | $0$ | $432$ | $3$ | Key number 3 on floor $X$ |
-| `{{key:√x}}` | $0$ | $0$ | $432$ | $1.7321$ | Extract square root in place ($\sqrt{3} \approx 1.732051$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $748.2459$ | Multiply by $\sqrt{3}$ ($432 \times 1.732051 = 748.2459$) |
-| `2` | $0$ | $0$ | $748.2459$ | $2$ | Key denominator divisor 2 |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $374.1230$ | Halve to finalize regular hexagonal area |
+| `12` | $0.0000$ | $0.0000$ | $0.0000$ | $12.0000$ | Key hexagon side length ($12\text{ cm}$) |
+| `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $144.0000$ | Square side length ($12^2 = 144$) |
+| `3` | $0.0000$ | $0.0000$ | $144.0000$ | $3.0000$ | Key multiplier 3 for triangular sectors |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $432.0000$ | Multiply ($144 \times 3 = 432$) |
+| `3` | $0.0000$ | $0.0000$ | $432.0000$ | $3.0000$ | Key number 3 on floor $X$ |
+| `{{key:√x}}` | $0.0000$ | $0.0000$ | $432.0000$ | $1.7321$ | Extract square root in place ($\sqrt{3} \approx 1.732051$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $748.2459$ | Multiply by $\sqrt{3}$ ($432 \times 1.732051 = 748.2459$) |
+| `2` | $0.0000$ | $0.0000$ | $748.2459$ | $2.0000$ | Key denominator divisor 2 |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $374.1230$ | Halve to finalize regular hexagonal area |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $374.1230$. Hexagonal gazebo floor area is $\mathbf{374.12\text{ cm}^2}$.
 
@@ -982,13 +982,13 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `25` | $0$ | $0$ | $0$ | $25$ | Key outer washer radius ($25\text{ mm}$) |
-| `{{key:x²}}` | $0$ | $0$ | $0$ | $625$ | Square outer radius ($25^2 = 625$) |
-| `10` | $0$ | $0$ | $625$ | $10$ | Key inner hole radius ($10\text{ mm}$) |
-| `{{key:x²}}` | $0$ | $0$ | $625$ | $100$ | Square inner radius ($10^2 = 100$) |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $525$ | Subtract inner square from outer square ($625 - 100 = 525$) |
-| `{{key:π}}` | $0$ | $0$ | $525$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $1649.3361$ | Multiply by $\pi$ to evaluate annular area |
+| `25` | $0.0000$ | $0.0000$ | $0.0000$ | $25.0000$ | Key outer washer radius ($25\text{ mm}$) |
+| `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $625.0000$ | Square outer radius ($25^2 = 625$) |
+| `10` | $0.0000$ | $0.0000$ | $625.0000$ | $10.0000$ | Key inner hole radius ($10\text{ mm}$) |
+| `{{key:x²}}` | $0.0000$ | $0.0000$ | $625.0000$ | $100.0000$ | Square inner radius ($10^2 = 100$) |
+| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $525.0000$ | Subtract inner square from outer square ($625 - 100 = 525$) |
+| `{{key:π}}` | $0.0000$ | $0.0000$ | $525.0000$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1649.3361$ | Multiply by $\pi$ to evaluate annular area |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $1649.3361$. Gasket contact area is $\mathbf{1649.34\text{ mm}^2}$.
 
@@ -1003,29 +1003,29 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:CLΣ}}` | $0$ | $0$ | $0$ | $0$ | Clear statistical memory accumulators ($n = 0, \Sigma x = 0$) |
-| `6` | $0$ | $0$ | $0$ | $6$ | Key in pod length ($6\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $6$ | $6$ | Stack lifts; length locked into Register $Y$ |
-| `4` | $0$ | $0$ | $6$ | $4$ | Key in pod width ($4\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $24$ | Multiply length by width for single top face ($24\text{ cm}^2$) |
-| `2` | $0$ | $0$ | $24$ | $2$ | Key in face-pair factor 2 |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $48$ | Double for top and bottom face pair ($48\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $1$ | Accumulate pair 1 into $\Sigma x$ ($n = 1, \Sigma x = 48$) |
-| `6` | $0$ | $0$ | $0$ | $6$ | Key in pod length ($6\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $6$ | $6$ | Stack lifts; length locked into Register $Y$ |
-| `2` | $0$ | $0$ | $6$ | $2$ | Key in pod height ($2\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $12$ | Multiply length by height for single front face ($12\text{ cm}^2$) |
-| `2` | $0$ | $0$ | $12$ | $2$ | Key in face-pair factor 2 |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $24$ | Double for front and back face pair ($24\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $2$ | Accumulate pair 2 into $\Sigma x$ ($n = 2, \Sigma x = 72$) |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in pod width ($4\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $4$ | $4$ | Stack lifts; width locked into Register $Y$ |
-| `2` | $0$ | $0$ | $4$ | $2$ | Key in pod height ($2\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $8$ | Multiply width by height for single side face ($8\text{ cm}^2$) |
-| `2` | $0$ | $0$ | $8$ | $2$ | Key in face-pair factor 2 |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $16$ | Double for left and right end pair ($16\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $3$ | Accumulate pair 3 into $\Sigma x$ ($n = 3, \Sigma x = 88$) |
-| `{{key:Σx}}` | $0$ | $0$ | $3$ | $88$ | Recall total accumulated surface area across all 6 faces |
+| `{{key:CLΣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Clear statistical memory accumulators ($n = 0, \Sigma x = 0$) |
+| `6` | $0.0000$ | $0.0000$ | $0.0000$ | $6.0000$ | Key in pod length ($6\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $6.0000$ | $6.0000$ | Stack lifts; length locked into Register $Y$ |
+| `4` | $0.0000$ | $0.0000$ | $6.0000$ | $4.0000$ | Key in pod width ($4\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $24.0000$ | Multiply length by width for single top face ($24\text{ cm}^2$) |
+| `2` | $0.0000$ | $0.0000$ | $24.0000$ | $2.0000$ | Key in face-pair factor 2 |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $48.0000$ | Double for top and bottom face pair ($48\text{ cm}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Accumulate pair 1 into $\Sigma x$ ($n = 1, \Sigma x = 48$) |
+| `6` | $0.0000$ | $0.0000$ | $0.0000$ | $6.0000$ | Key in pod length ($6\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $6.0000$ | $6.0000$ | Stack lifts; length locked into Register $Y$ |
+| `2` | $0.0000$ | $0.0000$ | $6.0000$ | $2.0000$ | Key in pod height ($2\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $12.0000$ | Multiply length by height for single front face ($12\text{ cm}^2$) |
+| `2` | $0.0000$ | $0.0000$ | $12.0000$ | $2.0000$ | Key in face-pair factor 2 |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $24.0000$ | Double for front and back face pair ($24\text{ cm}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Accumulate pair 2 into $\Sigma x$ ($n = 2, \Sigma x = 72$) |
+| `4` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Key in pod width ($4\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $4.0000$ | $4.0000$ | Stack lifts; width locked into Register $Y$ |
+| `2` | $0.0000$ | $0.0000$ | $4.0000$ | $2.0000$ | Key in pod height ($2\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.0000$ | Multiply width by height for single side face ($8\text{ cm}^2$) |
+| `2` | $0.0000$ | $0.0000$ | $8.0000$ | $2.0000$ | Key in face-pair factor 2 |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $16.0000$ | Double for left and right end pair ($16\text{ cm}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.0000$ | Accumulate pair 3 into $\Sigma x$ ($n = 3, \Sigma x = 88$) |
+| `{{key:Σx}}` | $0.0000$ | $0.0000$ | $0.0000$ | $88.0000$ | Recall total accumulated surface area across all 6 faces |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $88.0000$. Total thermal foil area is $\mathbf{88.00\text{ cm}^2}$.
 
@@ -1037,10 +1037,10 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `2` | $0$ | $0$ | $0$ | $2$ | Key in cube edge length ($2\text{ cm}$) |
-| `{{key:x²}}` | $0$ | $0$ | $0$ | $4$ | Square edge in place ($2^2 = 4\text{ cm}^2$) for single face area |
-| `6` | $0$ | $0$ | $4$ | $6$ | Key in total count of identical cube faces ($6$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $24$ | Multiply to obtain total surface area of all 6 facets |
+| `2` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Key in cube edge length ($2\text{ cm}$) |
+| `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Square edge in place ($2^2 = 4\text{ cm}^2$) for single face area |
+| `6` | $0.0000$ | $0.0000$ | $4.0000$ | $6.0000$ | Key in total count of identical cube faces ($6$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $24.0000$ | Multiply to obtain total surface area of all 6 facets |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $24.0000$. Beacon surface area is $\mathbf{24.00\text{ cm}^2}$.
 
@@ -1052,20 +1052,20 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:CLΣ}}` | $0$ | $0$ | $0$ | $0$ | Reset statistical accumulator ($n = 0, \Sigma x = 0$) |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in triangular end base ($4\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $4$ | $4$ | Stack lifts; base locked into Register $Y$ |
-| `3.464` | $0$ | $0$ | $4$ | $3.464$ | Key in triangle height ($3.464\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $13.856$ | Multiply: two triangular ends combine into $bh = 13.856\text{ cm}^2$ |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $1$ | Deposit both end caps into accumulator ($n = 1, \Sigma x = 13.856$) |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in prism side width ($4\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $4$ | $4$ | Stack lifts; width locked into Register $Y$ |
-| `20` | $0$ | $0$ | $4$ | $20$ | Key in container length ($20\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $80$ | Multiply for single rectangular wall area ($80\text{ cm}^2$) |
-| `3` | $0$ | $0$ | $80$ | $3$ | Key in 3 congruent wrapping side walls |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $240$ | Multiply to obtain total lateral area ($240\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $2$ | Deposit lateral walls into accumulator ($n = 2, \Sigma x = 253.856$) |
-| `{{key:Σx}}` | $0$ | $0$ | $2$ | $253.856$ | Recall total accumulated prism surface area |
+| `{{key:CLΣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Reset statistical accumulator ($n = 0, \Sigma x = 0$) |
+| `4` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Key in triangular end base ($4\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $4.0000$ | $4.0000$ | Stack lifts; base locked into Register $Y$ |
+| `3.464` | $0.0000$ | $0.0000$ | $4.0000$ | $3.464$ | Key in triangle height ($3.464\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $13.856$ | Multiply: two triangular ends combine into $bh = 13.856\text{ cm}^2$ |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Deposit both end caps into accumulator ($n = 1, \Sigma x = 13.856$) |
+| `4` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Key in prism side width ($4\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $4.0000$ | $4.0000$ | Stack lifts; width locked into Register $Y$ |
+| `20` | $0.0000$ | $0.0000$ | $4.0000$ | $20.0000$ | Key in container length ($20\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $80.0000$ | Multiply for single rectangular wall area ($80\text{ cm}^2$) |
+| `3` | $0.0000$ | $0.0000$ | $80.0000$ | $3.0000$ | Key in 3 congruent wrapping side walls |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $240.0000$ | Multiply to obtain total lateral area ($240\text{ cm}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Deposit lateral walls into accumulator ($n = 2, \Sigma x = 253.856$) |
+| `{{key:Σx}}` | $0.0000$ | $0.0000$ | $0.0000$ | $253.856$ | Recall total accumulated prism surface area |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $253.8560$. Total insulation wrap area is $\mathbf{253.86\text{ cm}^2}$.
 
@@ -1077,22 +1077,22 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:CLΣ}}` | $0$ | $0$ | $0$ | $0$ | Reset statistical memory bin ($n = 0, \Sigma x = 0$) |
-| `3.3` | $0$ | $0$ | $0$ | $3.3$ | Key in flask radius ($3.3\text{ cm}$) |
-| `{{key:CIRC}}` | $0$ | $0$ | $0$ | $34.2119$ | Dedicated circle solver evaluates single disc area ($\pi r^2$) |
-| `2` | $0$ | $0$ | $34.2119$ | $2$ | Key in multiplier 2 for circular ends |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $68.4239$ | Double for top and bottom lids ($68.4239\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $1$ | Deposit both end discs into accumulator ($n = 1, \Sigma x = 68.4239$) |
-| `3.3` | $0$ | $0$ | $0$ | $3.3$ | Key in radius ($3.3\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $3.3$ | $3.3$ | Stack lifts; radius locked into Register $Y$ |
-| `2` | $0$ | $0$ | $3.3$ | $2$ | Key doubling factor 2 for diameter |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $6.6$ | Multiply to obtain diameter ($6.6\text{ cm}$) |
-| `{{key:π}}` | $0$ | $0$ | $6.6$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $20.7345$ | Multiply diameter by $\pi$ for circumference ($20.7345\text{ cm}$) |
-| `12.2` | $0$ | $0$ | $20.7345$ | $12.2$ | Key in cylinder height ($12.2\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $252.9611$ | Multiply circumference by height for lateral wall ($252.961\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $2$ | Deposit lateral jacket into accumulator ($n = 2, \Sigma x = 321.385$) |
-| `{{key:Σx}}` | $0$ | $0$ | $2$ | $321.3849$ | Recall total accumulated cylindrical surface area |
+| `{{key:CLΣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Reset statistical memory bin ($n = 0, \Sigma x = 0$) |
+| `3.3` | $0.0000$ | $0.0000$ | $0.0000$ | $3.3$ | Key in flask radius ($3.3\text{ cm}$) |
+| `{{key:CIRC}}` | $0.0000$ | $0.0000$ | $0.0000$ | $34.2119$ | Dedicated circle solver evaluates single disc area ($\pi r^2$) |
+| `2` | $0.0000$ | $0.0000$ | $34.2119$ | $2.0000$ | Key in multiplier 2 for circular ends |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $68.4239$ | Double for top and bottom lids ($68.4239\text{ cm}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Deposit both end discs into accumulator ($n = 1, \Sigma x = 68.4239$) |
+| `3.3` | $0.0000$ | $0.0000$ | $0.0000$ | $3.3$ | Key in radius ($3.3\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $3.3$ | $3.3$ | Stack lifts; radius locked into Register $Y$ |
+| `2` | $0.0000$ | $0.0000$ | $3.3$ | $2.0000$ | Key doubling factor 2 for diameter |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6.6$ | Multiply to obtain diameter ($6.6\text{ cm}$) |
+| `{{key:π}}` | $0.0000$ | $0.0000$ | $6.6$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $20.7345$ | Multiply diameter by $\pi$ for circumference ($20.7345\text{ cm}$) |
+| `12.2` | $0.0000$ | $0.0000$ | $20.7345$ | $12.2$ | Key in cylinder height ($12.2\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $252.9610$ | Multiply circumference by height for lateral wall ($252.961\text{ cm}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Deposit lateral jacket into accumulator ($n = 2, \Sigma x = 321.385$) |
+| `{{key:Σx}}` | $0.0000$ | $0.0000$ | $0.0000$ | $321.3849$ | Recall total accumulated cylindrical surface area |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $321.3849$. Total titanium flask surface area is $\mathbf{321.38\text{ cm}^2}$.
 
@@ -1104,11 +1104,11 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:π}}` | $0$ | $0$ | $0$ | $3.1416$ | Summon circle constant $\pi \approx 3.141593$ onto floor $X$ |
-| `8` | $0$ | $0$ | $3.1416$ | $8$ | Key in conical base radius ($8\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $25.1327$ | Multiply $\pi$ by radius to obtain semi-perimeter product |
-| `18` | $0$ | $0$ | $25.1327$ | $18$ | Key in slant height ($18\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $452.3893$ | Multiply by slant height to unroll lateral conical surface |
+| `{{key:π}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.1416$ | Summon circle constant $\pi \approx 3.141593$ onto floor $X$ |
+| `8` | $0.0000$ | $0.0000$ | $3.1416$ | $8.0000$ | Key in conical base radius ($8\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $25.1327$ | Multiply $\pi$ by radius to obtain semi-perimeter product |
+| `18` | $0.0000$ | $0.0000$ | $25.1327$ | $18.0000$ | Key in slant height ($18\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $452.3893$ | Multiply by slant height to unroll lateral conical surface |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $452.3893$. Lateral fiberglass cowl area is $\mathbf{452.39\text{ cm}^2}$.
 
@@ -1120,18 +1120,18 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:CLΣ}}` | $0$ | $0$ | $0$ | $0$ | Clear statistical accumulator ($n = 0, \Sigma x = 0$) |
-| `20` | $0$ | $0$ | $0$ | $20$ | Key in square floor base side ($20\text{ cm}$) |
-| `{{key:x²}}` | $0$ | $0$ | $0$ | $400$ | Square side length ($20^2 = 400\text{ cm}^2$) for floor area |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $1$ | Deposit floor square into accumulator ($n = 1, \Sigma x = 400$) |
-| `20` | $0$ | $0$ | $0$ | $20$ | Key in tent base edge ($20\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $20$ | $20$ | Stack lifts; edge locked into Register $Y$ |
-| `16` | $0$ | $0$ | $20$ | $16$ | Key in wall slant height ($16\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $320$ | Multiply base by slant height ($20 \times 16 = 320$) |
-| `2` | $0$ | $0$ | $320$ | $2$ | Scale by 2 ($4 \times \frac{1}{2} = 2$) for all 4 triangular faces |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $640$ | Multiply to evaluate total canopy wall area ($640\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $2$ | Deposit 4 canopy walls into accumulator ($n = 2, \Sigma x = 1040$) |
-| `{{key:Σx}}` | $0$ | $0$ | $2$ | $1040$ | Recall total tent model surface area |
+| `{{key:CLΣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Clear statistical accumulator ($n = 0, \Sigma x = 0$) |
+| `20` | $0.0000$ | $0.0000$ | $0.0000$ | $20.0000$ | Key in square floor base side ($20\text{ cm}$) |
+| `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $400.0000$ | Square side length ($20^2 = 400\text{ cm}^2$) for floor area |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Deposit floor square into accumulator ($n = 1, \Sigma x = 400$) |
+| `20` | $0.0000$ | $0.0000$ | $0.0000$ | $20.0000$ | Key in tent base edge ($20\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $20.0000$ | $20.0000$ | Stack lifts; edge locked into Register $Y$ |
+| `16` | $0.0000$ | $0.0000$ | $20.0000$ | $16.0000$ | Key in wall slant height ($16\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $320.0000$ | Multiply base by slant height ($20 \times 16 = 320$) |
+| `2` | $0.0000$ | $0.0000$ | $320.0000$ | $2.0000$ | Scale by 2 ($4 \times \frac{1}{2} = 2$) for all 4 triangular faces |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $640.0000$ | Multiply to evaluate total canopy wall area ($640\text{ cm}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Deposit 4 canopy walls into accumulator ($n = 2, \Sigma x = 1040$) |
+| `{{key:Σx}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1040.0000$ | Recall total tent model surface area |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $1040.0000$. Total pyramid tent surface area is $\mathbf{1040.00\text{ cm}^2}$.
 
@@ -1143,27 +1143,27 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:CLΣ}}` | $0$ | $0$ | $0$ | $0$ | Reset statistical accumulator ($n = 0, \Sigma x = 0$) |
-| `30` | $0$ | $0$ | $0$ | $30$ | Key in pod length ($30\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $30$ | $30$ | Stack lifts; length locked into Register $Y$ |
-| `20` | $0$ | $0$ | $30$ | $20$ | Key in pod width ($20\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $600$ | Multiply for single bottom floor ($600\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $1$ | Deposit single floor into accumulator ($n = 1, \Sigma x = 600$) |
-| `30` | $0$ | $0$ | $0$ | $30$ | Key in pod length ($30\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $30$ | $30$ | Stack lifts; length locked into Register $Y$ |
-| `15` | $0$ | $0$ | $30$ | $15$ | Key in pod height ($15\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $450$ | Multiply for single side wall ($450\text{ cm}^2$) |
-| `2` | $0$ | $0$ | $450$ | $2$ | Key in multiplier 2 for front and back wall pair |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $900$ | Double for long wall pair ($900\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $2$ | Deposit long wall pair into accumulator ($n = 2, \Sigma x = 1500$) |
-| `20` | $0$ | $0$ | $0$ | $20$ | Key in pod width ($20\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $20$ | $20$ | Stack lifts; width locked into Register $Y$ |
-| `15` | $0$ | $0$ | $20$ | $15$ | Key in pod height ($15\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $300$ | Multiply for single end wall ($300\text{ cm}^2$) |
-| `2` | $0$ | $0$ | $300$ | $2$ | Key in multiplier 2 for left and right end pair |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $600$ | Double for end wall pair ($600\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $0$ | $3$ | Deposit end wall pair into accumulator ($n = 3, \Sigma x = 2100$) |
-| `{{key:Σx}}` | $0$ | $0$ | $3$ | $2100$ | Recall total open-top 5-face surface area |
+| `{{key:CLΣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Reset statistical accumulator ($n = 0, \Sigma x = 0$) |
+| `30` | $0.0000$ | $0.0000$ | $0.0000$ | $30.0000$ | Key in pod length ($30\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $30.0000$ | $30.0000$ | Stack lifts; length locked into Register $Y$ |
+| `20` | $0.0000$ | $0.0000$ | $30.0000$ | $20.0000$ | Key in pod width ($20\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $600.0000$ | Multiply for single bottom floor ($600\text{ cm}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Deposit single floor into accumulator ($n = 1, \Sigma x = 600$) |
+| `30` | $0.0000$ | $0.0000$ | $0.0000$ | $30.0000$ | Key in pod length ($30\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $30.0000$ | $30.0000$ | Stack lifts; length locked into Register $Y$ |
+| `15` | $0.0000$ | $0.0000$ | $30.0000$ | $15.0000$ | Key in pod height ($15\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $450.0000$ | Multiply for single side wall ($450\text{ cm}^2$) |
+| `2` | $0.0000$ | $0.0000$ | $450.0000$ | $2.0000$ | Key in multiplier 2 for front and back wall pair |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $900.0000$ | Double for long wall pair ($900\text{ cm}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Deposit long wall pair into accumulator ($n = 2, \Sigma x = 1500$) |
+| `20` | $0.0000$ | $0.0000$ | $0.0000$ | $20.0000$ | Key in pod width ($20\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $20.0000$ | $20.0000$ | Stack lifts; width locked into Register $Y$ |
+| `15` | $0.0000$ | $0.0000$ | $20.0000$ | $15.0000$ | Key in pod height ($15\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $300.0000$ | Multiply for single end wall ($300\text{ cm}^2$) |
+| `2` | $0.0000$ | $0.0000$ | $300.0000$ | $2.0000$ | Key in multiplier 2 for left and right end pair |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $600.0000$ | Double for end wall pair ($600\text{ cm}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.0000$ | Deposit end wall pair into accumulator ($n = 3, \Sigma x = 2100$) |
+| `{{key:Σx}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2100.0000$ | Recall total open-top 5-face surface area |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $2100.0000$. Open-top lining area is $\mathbf{2100.00\text{ cm}^2}$.
 
@@ -1175,14 +1175,14 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `0.5` | $0$ | $0$ | $0$ | $0.5$ | Key in borehole inner radius ($0.5\text{ m}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $0.5$ | $0.5$ | Stack lifts; radius locked into Register $Y$ |
-| `2` | $0$ | $0$ | $0.5$ | $2$ | Key in factor 2 for diameter |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $1$ | Multiply to obtain full diameter ($1.0\text{ m}$) |
-| `{{key:π}}` | $0$ | $0$ | $1$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $3.1416$ | Multiply diameter by $\pi$ for circumference ($3.1416\text{ m}$) |
-| `4` | $0$ | $0$ | $3.1416$ | $4$ | Key in casing depth ($4\text{ m}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $12.5664$ | Multiply circumference by depth to unroll cylindrical sleeve |
+| `0.5` | $0.0000$ | $0.0000$ | $0.0000$ | $0.5$ | Key in borehole inner radius ($0.5\text{ m}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $0.5$ | $0.5$ | Stack lifts; radius locked into Register $Y$ |
+| `2` | $0.0000$ | $0.0000$ | $0.5$ | $2.0000$ | Key in factor 2 for diameter |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Multiply to obtain full diameter ($1.0\text{ m}$) |
+| `{{key:π}}` | $0.0000$ | $0.0000$ | $1.0000$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.1416$ | Multiply diameter by $\pi$ for circumference ($3.1416\text{ m}$) |
+| `4` | $0.0000$ | $0.0000$ | $3.1416$ | $4.0000$ | Key in casing depth ($4\text{ m}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $12.5664$ | Multiply circumference by depth to unroll cylindrical sleeve |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $12.5664$. Inner borehole sleeve area is $\mathbf{12.57\text{ m}^2}$.
 
@@ -1194,12 +1194,12 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` | $0$ | $0$ | $0$ | $18$ | Key in container base length ($18\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $18$ | $18$ | Stack lifts; length locked into Register $Y$ |
-| `6` | $0$ | $0$ | $18$ | $6$ | Key in container base width ($6\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $108$ | Multiply length by width for base footprint ($108\text{ cm}^2$) |
-| `28` | $0$ | $0$ | $108$ | $28$ | Key in container vertical height ($28\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $3024$ | Multiply base footprint by height to obtain 3D volume |
+| `18` | $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Key in container base length ($18\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $18.0000$ | $18.0000$ | Stack lifts; length locked into Register $Y$ |
+| `6` | $0.0000$ | $0.0000$ | $18.0000$ | $6.0000$ | Key in container base width ($6\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $108.0000$ | Multiply length by width for base footprint ($108\text{ cm}^2$) |
+| `28` | $0.0000$ | $0.0000$ | $108.0000$ | $28.0000$ | Key in container vertical height ($28\text{ cm}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3024.0000$ | Multiply base footprint by height to obtain 3D volume |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $3024.0000$. Container internal volume is $\mathbf{3024.00\text{ cm}^3}$.
 
@@ -1211,12 +1211,12 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `2` | $0$ | $0$ | $0$ | $2$ | Key in unit cube edge length ($2\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $2$ | $2$ | Stack lifts; edge locked into Register $Y$ |
-| `3` | $0$ | $0$ | $2$ | $3$ | Key in exponent 3 for cubing volume |
-| `{{key:yˣ}}` | $0$ | $0$ | $0$ | $8$ | Compute $2^3 = 8\text{ cm}^3$ for single unit cube volume |
-| `24` | $0$ | $0$ | $8$ | $24$ | Key in count of habitat modular cubes ($24$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $192$ | Multiply unit volume by 24 for aggregate habitat volume |
+| `2` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Key in unit cube edge length ($2\text{ cm}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.0000$ | $2.0000$ | Stack lifts; edge locked into Register $Y$ |
+| `3` | $0.0000$ | $0.0000$ | $2.0000$ | $3.0000$ | Key in exponent 3 for cubing volume |
+| `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.0000$ | Compute $2^3 = 8\text{ cm}^3$ for single unit cube volume |
+| `24` | $0.0000$ | $0.0000$ | $8.0000$ | $24.0000$ | Key in count of habitat modular cubes ($24$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $192.0000$ | Multiply unit volume by 24 for aggregate habitat volume |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $192.0000$. Habitat model volume is $\mathbf{192.00\text{ cm}^3}$.
 
@@ -1225,113 +1225,51 @@ The following problem bank provides complete, publication-grade reference soluti
 
 #### Challenge 21: Municipal Cylindrical Water Tower Capacity
 - **Water Works Context:** A municipal water storage tower has an interior radius $r = 4\text{ m}$ and height $h = 16\text{ m}$. Calculate total holding capacity in cubic meters.
-- **Hands-On Manipulative Stage (Cylinder Volume):** Take the clear cylindrical measuring vessel. Measure circular base radius $r = 4\text{ cm}$ on the grid mat. Tapping `{{key:CIRC}}` evaluates base area $\pi r^2$; multiplying by height $16\text{ cm}$ models the continuous volumetric fill.
+- **Hands-On Manipulative Stage (Cylinder Volume):** Model Small with Blocks: Take the clear cylindrical measuring vessel. Measure circular base radius $r = 4\text{ cm}$ on the grid mat. Tapping `{{key:CIRC}}` evaluates base area $\pi r^2$; multiplying by height $16\text{ cm}$ models the continuous volumetric fill. Scale Big on StackCalc: Key `4 CIRC 16 ×`: compute circular base footprint $50.2655\text{ m}^2$ with the circle key `(T:0, Z:0, Y:0, X:50.2655)`, then multiply by height $16\text{ m}$ to evaluate total storage capacity to $804.25\text{ m}^3$ `(T:0, Z:0, Y:0, X:804.2477)` ($\approx 804,248\text{ liters}$).
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_21:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_21:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in cylindrical tank radius ($4\text{ m}$) |
-| `{{key:CIRC}}` | $0$ | $0$ | $0$ | $50.2655$ | Compute circular base area via circle key ($A = \pi \times 4^2$) |
-| `16` | $0$ | $0$ | $50.2655$ | $16$ | Key in vertical tank height ($16\text{ m}$); base area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $804.2477$ | Multiply base area by height to compute cylinder volume |
-
 - **Diagnostic Checkpoint:** Register $X$ displays $804.2477$. Total storage capacity is $\mathbf{804.25\text{ m}^3}$ ($\approx 804,248\text{ liters}$).
+
+---
 
 #### Challenge 22: Conical Sand Filtration Drainage Pile Volume
 - **Water Works Context:** A sand filtration pile at the municipal water treatment facility forms a cone with base radius $r = 3\text{ meters}$ and vertical peak height $h = 2\text{ meters}$. Find the total volume of filter sand.
-- **Hands-On Manipulative Stage (Cone vs Cylinder):** Pour three equal conical scoops of sand into the matching cylindrical sleeve of height $2\text{ cm}$ and radius $3\text{ cm}$. Exactly three conical volumes fill the cylinder, grounding Archimedes' $\frac{1}{3}$ divisor.
+- **Hands-On Manipulative Stage (Cone vs Cylinder):** Model Small with Blocks: Pour three equal conical scoops of sand into the matching cylindrical sleeve of height $2\text{ cm}$ and radius $3\text{ cm}$. Exactly three conical volumes fill the cylinder, grounding Archimedes' $\frac{1}{3}$ divisor. Scale Big on StackCalc: Key `3 CIRC 2 × 3 ÷`: compute base area $28.2743\text{ m}^2$, multiply by height $2\text{ m}$ to reach bounding cylinder volume $56.5487\text{ m}^3$ `(T:0, Z:0, Y:0, X:56.5487)`, then divide by 3 to apply Archimedes' conical reduction factor, yielding $18.85\text{ m}^3$ `(T:0, Z:0, Y:0, X:18.8496)`.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_22:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_22:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3` | $0$ | $0$ | $0$ | $3$ | Key in conical sand pile radius ($3\text{ m}$) |
-| `{{key:CIRC}}` | $0$ | $0$ | $0$ | $28.2743$ | Compute circular footprint area via circle key ($A = \pi \times 3^2$) |
-| `2` | $0$ | $0$ | $28.2743$ | $2$ | Key in vertical apex height ($2\text{ m}$); area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $56.5487$ | Multiply circular base by height to find bounding cylinder volume |
-| `3` | $0$ | $0$ | $56.5487$ | $3$ | Key in conical divisor 3; cylinder volume lifts to Register $Y$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $18.8496$ | Divide by 3 to apply Archimedes' conical reduction factor ($\frac{1}{3}\pi r^2 h$) |
-
 - **Diagnostic Checkpoint:** Register $X$ displays $18.8496$. Filter sand pile volume is $\mathbf{18.85\text{ m}^3}$.
+
+---
 
 #### Challenge 23: Square Pyramid Reservoir Enclosure Roof
 - **Water Works Context:** A square pyramid roof caps an outdoor water storage reservoir. The base measures $s = 12\text{ m}$ on each side, and the vertical peak height is $h = 5\text{ m}$. Find the enclosed roof volume.
-- **Hands-On Manipulative Stage (Pyramid Enclosure):** Construct the $12\text{ cm} \times 12\text{ cm}$ square base using interlocking Geo-Sticks. Raising four slant struts to an apex of $5\text{ cm}$ encloses one-third the volume of the enclosing prism box.
+- **Hands-On Manipulative Stage (Pyramid Enclosure):** Model Small with Blocks: Construct a square base using interlocking Geo-Sticks. Raising four slant struts to an apex encloses one-third the volume of the enclosing prism box. Scale Big on StackCalc: Key `12 x² 5 × 3 ÷`: square the base edge to get $144\text{ m}^2$ `(T:0, Z:0, Y:0, X:144)`, scale by peak height $5\text{ m}$ to enclose the bounding prism $720\text{ m}^3$, and divide by 3 to find the enclosed pyramid roof volume of $240.00\text{ m}^3$ `(T:0, Z:0, Y:0, X:240)`.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_23:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_23:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `12` | $0$ | $0$ | $0$ | $12$ | Key in square reservoir roof side length ($12\text{ m}$) |
-| `{{key:x²}}` | $0$ | $0$ | $0$ | $144$ | Square base edge to compute square roof footprint ($12^2 = 144\text{ m}^2$) |
-| `5` | $0$ | $0$ | $144$ | $5$ | Key in vertical apex height ($5\text{ m}$); base area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $720$ | Multiply base area by height to compute bounding prism volume ($720\text{ m}^3$) |
-| `3` | $0$ | $0$ | $720$ | $3$ | Key in pyramid reduction divisor 3; prism volume lifts to Register $Y$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $240$ | Divide by 3 to compute pyramid volume ($\frac{1}{3}s^2 h$) |
-
 - **Diagnostic Checkpoint:** Register $X$ displays $240.0000$. Enclosed reservoir roof volume is $\mathbf{240.00\text{ m}^3}$.
+
+---
 
 #### Challenge 24: Spherical Pressure Surge Surge-Vessel
 - **Water Works Context:** A spherical high-pressure surge vessel absorbs hydraulic shock waves in the main aqueduct line. Its internal radius is $r = 12\text{ cm}$. Find the total internal gas/fluid expansion volume.
-- **Hands-On Manipulative Stage (Sphere Inscription):** Place the 3D spherical shell inside a bounding cylinder of radius $12\text{ cm}$ and height $24\text{ cm}$. Archimedes' theorem demonstrates that the sphere occupies exactly two-thirds of the cylinder's volume, verifying $V = \frac{4}{3}\pi r^3$.
+- **Hands-On Manipulative Stage (Sphere Inscription):** Model Small with Blocks: Place the 3D spherical shell inside a bounding cylinder. Archimedes' theorem demonstrates that the sphere occupies exactly two-thirds of the cylinder's volume, verifying $V = \frac{4}{3}\pi r^3$. Scale Big on StackCalc: Key `4 ENTER 3 ÷ π × 12 ENTER 3 yˣ ×`: establish the spherical coefficient $\frac{4}{3}\pi \approx 4.1888$, cube radius $12\text{ cm}$ to get $1,728\text{ cm}^3$ `(T:0, Z:0, Y:4.1888, X:1728)`, and multiply to compute the total surge vessel volume of $7,238.23\text{ cm}^3$ `(T:0, Z:0, Y:0, X:7238.2295)`.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_24:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_24:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in numerator 4 of spherical volume ratio |
-| `{{key:ENTER}}` | $0$ | $0$ | $4$ | $4$ | Stack lifts; 4 copied into Register $Y$ |
-| `3` | $0$ | $0$ | $4$ | $3$ | Key in denominator 3 |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $1.3333$ | Divide to stage spherical ratio factor $4/3 \approx 1.3333$ |
-| `{{key:π}}` | $0$ | $0$ | $1.3333$ | $3.1416$ | Push circle constant $\pi$; ratio factor lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $4.1888$ | Multiply to establish spherical coefficient $\frac{4}{3}\pi \approx 4.1888$ |
-| `12` | $0$ | $0$ | $4.1888$ | $12$ | Key in surge-vessel radius ($12\text{ cm}$); coefficient lifts to Register $Y$ |
-| `{{key:ENTER}}` | $0$ | $4.1888$ | $12$ | $12$ | Stack lifts; radius locked into Register $Y$ |
-| `3` | $0$ | $4.1888$ | $12$ | $3$ | Key in power exponent 3 |
-| `{{key:yˣ}}` | $0$ | $0$ | $4.1888$ | $1728$ | Raise radius to 3rd power ($12^3 = 1728\text{ cm}^3$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $7238.2295$ | Multiply spherical factor by $r^3$ to compute total sphere volume |
-
 - **Diagnostic Checkpoint:** Register $X$ displays $7238.2295$. Surge vessel internal volume is $\mathbf{7238.23\text{ cm}^3}$.
+
+---
 
 #### Challenge 25: Hemispherical Reservoir Planetarium Dome Volume
 - **Water Works Context:** A municipal water educational facility features a hemispherical observation dome with radius $r = 8\text{ meters}$. Find the total enclosed air volume beneath the dome.
-- **Hands-On Manipulative Stage (Hemisphere Halving):** Place the transparent hemispherical dome on the flat grid desk. The volume is calculated by computing the full sphere volume $\frac{4}{3}\pi r^3$ and dividing by 2 on the stack floor.
+- **Hands-On Manipulative Stage (Hemisphere Halving):** Model Small with Blocks: Place the transparent hemispherical dome on the flat grid desk. The volume is calculated by computing the full sphere volume $\frac{4}{3}\pi r^3$ and dividing by 2 on the stack floor. Scale Big on StackCalc: Key `4 ENTER 3 ÷ π × 8 ENTER 3 yˣ × 2 ÷`: evaluate the full sphere volume $2,144.6606\text{ m}^3$ `(T:0, Z:0, Y:0, X:2144.6606)`, then divide by 2 to yield the hemispherical observation dome capacity of $1,072.33\text{ m}^3$ `(T:0, Z:0, Y:0, X:1072.3303)`.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_25:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_25:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in spherical numerator 4 |
-| `{{key:ENTER}}` | $0$ | $0$ | $4$ | $4$ | Stack lifts; 4 copied to Register $Y$ |
-| `3` | $0$ | $0$ | $4$ | $3$ | Key in denominator 3 |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $1.3333$ | Compute ratio factor $4/3$ |
-| `{{key:π}}` | $0$ | $0$ | $1.3333$ | $3.1416$ | Push circle constant $\pi$; ratio factor lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $4.1888$ | Multiply to establish spherical coefficient $\frac{4}{3}\pi$ |
-| `8` | $0$ | $0$ | $4.1888$ | $8$ | Key in dome radius ($8\text{ m}$); coefficient lifts to Register $Y$ |
-| `{{key:ENTER}}` | $0$ | $4.1888$ | $8$ | $8$ | Stack lifts; dome radius locked into Register $Y$ |
-| `3` | $0$ | $4.1888$ | $8$ | $3$ | Key in power exponent 3 |
-| `{{key:yˣ}}` | $0$ | $0$ | $4.1888$ | $512$ | Raise dome radius to 3rd power ($8^3 = 512\text{ m}^3$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $2144.6606$ | Multiply coefficient by $r^3$ to compute full sphere volume |
-| `2` | $0$ | $0$ | $2144.6606$ | $2$ | Key in hemisphere divisor 2; full sphere volume lifts to Register $Y$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $1072.3303$ | Divide by 2 to compute hemispherical dome volume |
-
 - **Diagnostic Checkpoint:** Register $X$ displays $1072.3303$. Hemispherical dome capacity is $\mathbf{1072.33\text{ m}^3}$.
+
+---
 
 #### Challenge 26: Water Quality Testing Lab Fluid Displacement
 - **Water Works Context:** In the water utility testing laboratory, an irregular mineral core sample is submerged into a graduated cylinder of radius $r = 2.5\text{ cm}$. The water level rises by $\Delta h = 3.2\text{ cm}$. Find the exact volume of the rock sample.
-- **Hands-On Manipulative Stage (Fluid Displacement):** Submerge an irregular acrylic specimen into the calibrated cylinder. Observe the meniscus displace upward by exactly $3.2\text{ cm}$, proving that displaced fluid volume equals specimen volume.
+- **Hands-On Manipulative Stage (Fluid Displacement):** Model Small with Blocks: Submerge an irregular acrylic specimen into the calibrated cylinder. Observe the meniscus displace upward by exactly $3.2\text{ cm}$, proving that displaced fluid volume equals specimen volume. Scale Big on StackCalc: Key `2.5 CIRC 3.2 ×`: evaluate cylinder cross-section to $19.6350\text{ cm}^2$ `(T:0, Z:0, Y:0, X:19.635)`, then multiply by displacement rise $3.2\text{ cm}$ to find the displaced mineral sample volume of $62.83\text{ cm}^3$ `(T:0, Z:0, Y:0, X:62.8319)` ($62.83\text{ mL}$).
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_26:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_26:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2.5` | $0$ | $0$ | $0$ | $2.5$ | Key in graduated cylinder internal radius ($2.5\text{ cm}$) |
-| `{{key:CIRC}}` | $0$ | $0$ | $0$ | $19.6350$ | Compute cylinder circular cross-section via circle key ($A = \pi \times 2.5^2$) |
-| `3.2` | $0$ | $0$ | $19.6350$ | $3.2$ | Key in water displacement height rise $\Delta h$; area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $62.8319$ | Multiply cross-sectional area by rise height to find displaced volume |
-
 - **Diagnostic Checkpoint:** Register $X$ displays $62.8319$. Displaced mineral sample volume is $\mathbf{62.83\text{ cm}^3}$ ($62.83\text{ mL}$).
+
+---
 
 #### Challenge 27: Conical Frustum Water Treatment Settling Tank
 - **Water Works Context:** A municipal clarifier conical frustum settling basin has top rim radius $R = 10\text{ m}$, bottom base radius $r = 6\text{ m}$, and vertical depth $h = 12\text{ m}$. Calculate total sediment basin volume using $V = \frac{\pi h}{3}(R^2 + r^2 + Rr)$.
@@ -1341,58 +1279,42 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `10` | $0$ | $0$ | $0$ | $10$ | Key in top rim radius ($10\text{ m}$) |
-| `{{key:x²}}` | $0$ | $0$ | $0$ | $100$ | Square top radius ($10^2 = 100$) |
-| `6` | $0$ | $0$ | $100$ | $6$ | Key in bottom base radius ($6\text{ m}$); $R^2$ lifts to Register $Y$ |
-| `{{key:x²}}` | $0$ | $0$ | $100$ | $36$ | Square bottom radius ($6^2 = 36$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $136$ | Add radius squares ($R^2 + r^2 = 100 + 36 = 136$) |
-| `10` | $0$ | $0$ | $136$ | $10$ | Key in top radius 10; sum lifts to Register $Y$ |
-| `{{key:ENTER}}` | $0$ | $136$ | $10$ | $10$ | Stack lifts; top radius copied to Register $Y$ |
-| `6` | $0$ | $136$ | $10$ | $6$ | Key in bottom radius 6 |
-| `{{key:×}}` | $0$ | $0$ | $136$ | $60$ | Compute radii cross-product ($R \times r = 10 \times 6 = 60$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $196$ | Add cross-term to sum of squares ($136 + 60 = 196$) |
-| `{{key:π}}` | $0$ | $0$ | $196$ | $3.1416$ | Push circle constant $\pi$; geometric factor lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $615.7522$ | Multiply factor by $\pi$ ($196\pi \approx 615.7522$) |
-| `12` | $0$ | $0$ | $615.7522$ | $12$ | Key in vertical tank depth ($12\text{ m}$); scaled factor lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $7389.0259$ | Multiply by basin depth ($7389.0259$) |
-| `3` | $0$ | $0$ | $7389.0259$ | $3$ | Key in frustum divisor 3; accumulated product lifts to Register $Y$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $2463.0086$ | Divide by 3 to finalize frustum basin volume ($\frac{\pi h}{3}(R^2+r^2+Rr)$) |
+| `10` | $0.0000$ | $0.0000$ | $0.0000$ | $10.0000$ | Key in top rim radius ($10\text{ m}$) |
+| `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $100.0000$ | Square top radius ($10^2 = 100$) |
+| `6` | $0.0000$ | $0.0000$ | $100.0000$ | $6.0000$ | Key in bottom base radius ($6\text{ m}$); $R^2$ lifts to Register $Y$ |
+| `{{key:x²}}` | $0.0000$ | $0.0000$ | $100.0000$ | $36.0000$ | Square bottom radius ($6^2 = 36$) |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $136.0000$ | Add radius squares ($R^2 + r^2 = 100 + 36 = 136$) |
+| `10` | $0.0000$ | $0.0000$ | $136.0000$ | $10.0000$ | Key in top radius 10; sum lifts to Register $Y$ |
+| `{{key:ENTER}}` | $0.0000$ | $136.0000$ | $10.0000$ | $10.0000$ | Stack lifts; top radius copied to Register $Y$ |
+| `6` | $0.0000$ | $136.0000$ | $10.0000$ | $6.0000$ | Key in bottom radius 6 |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $136.0000$ | $60.0000$ | Compute radii cross-product ($R \times r = 10 \times 6 = 60$) |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $196.0000$ | Add cross-term to sum of squares ($136 + 60 = 196$) |
+| `{{key:π}}` | $0.0000$ | $0.0000$ | $196.0000$ | $3.1416$ | Push circle constant $\pi$; geometric factor lifts to Register $Y$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $615.7522$ | Multiply factor by $\pi$ ($196\pi \approx 615.7522$) |
+| `12` | $0.0000$ | $0.0000$ | $615.7522$ | $12.0000$ | Key in vertical tank depth ($12\text{ m}$); scaled factor lifts to Register $Y$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7389.0259$ | Multiply by basin depth ($7389.0259$) |
+| `3` | $0.0000$ | $0.0000$ | $7389.0259$ | $3.0000$ | Key in frustum divisor 3; accumulated product lifts to Register $Y$ |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2463.0086$ | Divide by 3 to finalize frustum basin volume ($\frac{\pi h}{3}(R^2+r^2+Rr)$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $2463.0086$. Conical frustum basin volume is $\mathbf{2463.01\text{ m}^3}$.
 
+---
+
 #### Challenge 28: Water Plant Pumping Shift Duration via `{{key:▸HR}}`
 - **Water Works Context:** The municipal filtration pumps start at 8:15 AM ($8.15\text{ HMS}$) and shut down for maintenance at 3:05 PM ($15.05\text{ HMS}$). Find total active pumping duration.
-- **Hands-On Manipulative Stage (Planetary Time Dial):** Align the hour and minute indicators of the base-60 gear clock to 8:15 and advance through 15:05. Observe that 6 full hours and 50 minutes elapse, proving modulo-60 subtraction.
+- **Hands-On Manipulative Stage (Planetary Time Dial):** Model Small with Blocks: Align the hour and minute indicators of the base-60 gear clock to 8:15 and advance through 15:05. Observe that 6 full hours and 50 minutes elapse, proving modulo-60 subtraction. Scale Big on StackCalc: Key `15.05 ▸HR 8.15 ▸HR - ▸HMS`: convert shutdown 15:05 to $15.0833\text{ hr}$ and startup 8:15 to $8.25\text{ hr}$, subtract to find $6.8333\text{ decimal hours}$ `(T:0, Z:0, Y:0, X:6.8333)`, and tap `▸HMS` to display the active pumping duration of $6\text{ hr } 50\text{ min}$ `(T:0, Z:0, Y:0, X:6.5)` ($6.50\text{ HMS}$).
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_28:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_28:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15.05` | $0$ | $0$ | $0$ | $15.05$ | Key in afternoon shutdown time 15:05 (`HH.MM` format) |
-| `{{key:▸HR}}` | $0$ | $0$ | $0$ | $15.0833$ | Convert clock time to continuous decimal hours ($15 + 5/60$) |
-| `8.15` | $0$ | $0$ | $15.0833$ | $8.15$ | Key in morning startup time 8:15; shutdown hours lift to Register $Y$ |
-| `{{key:▸HR}}` | $0$ | $0$ | $15.0833$ | $8.25$ | Convert morning startup time to decimal hours ($8 + 15/60$) |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $6.8333$ | Deduct start time from end time to find elapsed decimal hours |
-| `{{key:▸HMS}}` | $0$ | $0$ | $0$ | $6.5$ | Convert decimal hours back to clock format (`6 hr 50 min`) |
-
 - **Diagnostic Checkpoint:** Register $X$ displays $6.5000$. Total elapsed pumping duration is $\mathbf{6\text{ hr } 50\text{ min}}$ ($6.50\text{ HMS}$).
+
+---
 
 #### Challenge 29: Reservoir Backwash Cycle Completion Time
 - **Water Works Context:** A backwash filtration cycle initiates at 7:10 AM ($7.10\text{ HMS}$) and runs continuously for 3 hours and 48 minutes ($3.48\text{ HMS}$). Determine exact cycle completion time.
-- **Hands-On Manipulative Stage (Time Accumulation):** Dial the clock face from 7:10 forward by 3 hours to 10:10, then advance 48 minutes across the modulo-60 sector to 10:58.
+- **Hands-On Manipulative Stage (Time Accumulation):** Model Small with Blocks: Dial the clock face from 7:10 forward by 3 hours to 10:10, then advance 48 minutes across the modulo-60 sector to 10:58. Scale Big on StackCalc: Key `7.10 ▸HR 3.48 ▸HR + ▸HMS`: convert start time 7:10 to $7.1667\text{ hr}$ and runtime 3h 48m to $3.8\text{ hr}$, add to reach $10.9667\text{ decimal hours}$ `(T:0, Z:0, Y:0, X:10.9667)`, and tap `▸HMS` to confirm cycle completion at $10:58\text{ AM}$ `(T:0, Z:0, Y:0, X:10.58)` ($10.58\text{ HMS}$).
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_29:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_29:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `7.10` | $0$ | $0$ | $0$ | $7.1$ | Key in cycle initiation time 7:10 AM (`HH.MM` format) |
-| `{{key:▸HR}}` | $0$ | $0$ | $0$ | $7.1667$ | Convert start time to continuous decimal hours ($7 + 10/60$) |
-| `3.48` | $0$ | $0$ | $7.1667$ | $3.48$ | Key in cycle runtime 3h 48m; start hours lift to Register $Y$ |
-| `{{key:▸HR}}` | $0$ | $0$ | $7.1667$ | $3.8$ | Convert runtime duration to decimal hours ($3 + 48/60$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $10.9667$ | Add runtime to start time to find completion time in decimal hours |
-| `{{key:▸HMS}}` | $0$ | $0$ | $0$ | $10.58$ | Convert decimal hours back to clock format (`10:58 AM`) |
-
 - **Diagnostic Checkpoint:** Register $X$ displays $10.5800$. Backwash cycle completes at $\mathbf{10:58\text{ AM}}$ ($10.58\text{ HMS}$).
+
+---
 
 #### Challenge 30: Overnight Aqueduct Flow Transfer Across Midnight
 - **Water Works Context:** An inter-basin raw water transfer begins at 21:30 ($9:30\text{ PM}$) and runs for 4 hours and 45 minutes ($4.45\text{ HMS}$). Calculate overnight valve shutoff time.
@@ -1402,14 +1324,14 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `21.30` | $0$ | $0$ | $0$ | $21.3$ | Key in transfer start time 21:30 (`HH.MM` format) |
-| `{{key:▸HR}}` | $0$ | $0$ | $0$ | $21.5$ | Convert departure time to decimal hours ($21 + 30/60 = 21.5$) |
-| `4.45` | $0$ | $0$ | $21.5$ | $4.45$ | Key in pump runtime 4h 45m; start time lifts to Register $Y$ |
-| `{{key:▸HR}}` | $0$ | $0$ | $21.5$ | $4.75$ | Convert runtime to decimal hours ($4 + 45/60 = 4.75$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $26.25$ | Add runtime to start time, exceeding 24 hours ($26.25\text{ hr}$ total) |
-| `24` | $0$ | $0$ | $26.25$ | $24$ | Key in 24-hour diurnal period; accumulated hours lift to Register $Y$ |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $2.25$ | Deduct 24 hours to cross midnight into the next calendar morning ($2.25\text{ hr}$) |
-| `{{key:▸HMS}}` | $0$ | $0$ | $0$ | $2.15$ | Convert decimal hours back to clock format (`02:15 AM`) |
+| `21.30` | $0.0000$ | $0.0000$ | $0.0000$ | $21.3$ | Key in transfer start time 21:30 (`HH.MM` format) |
+| `{{key:▸HR}}` | $0.0000$ | $0.0000$ | $0.0000$ | $21.3$ | Convert departure time to decimal hours ($21 + 30/60 = 21.5$) |
+| `4.45` | $0.0000$ | $0.0000$ | $21.3$ | $4.45$ | Key in pump runtime 4h 45m; start time lifts to Register $Y$ |
+| `{{key:▸HR}}` | $0.0000$ | $0.0000$ | $21.3$ | $4.45$ | Convert runtime to decimal hours ($4 + 45/60 = 4.75$) |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $25.75$ | Add runtime to start time, exceeding 24 hours ($26.25\text{ hr}$ total) |
+| `24` | $0.0000$ | $0.0000$ | $25.75$ | $24.0000$ | Key in 24-hour diurnal period; accumulated hours lift to Register $Y$ |
+| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.75$ | Deduct 24 hours to cross midnight into the next calendar morning ($2.25\text{ hr}$) |
+| `{{key:▸HMS}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.75$ | Convert decimal hours back to clock format (`02:15 AM`) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $2.1500$. Overnight transfer terminates at $\mathbf{02:15\text{ AM}}$ ($2.15\text{ HMS}$).
 
@@ -1421,58 +1343,21 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Flight Navigation Context:** In trans-continental flight dispatch, an analog navigational heading dial reads 4:20 ($4.20\text{ HMS}$). Calculate the continuous hour hand azimuth angle using $(4 + 20/60) \times 30^\circ$.
 - **Hands-On Manipulative Stage (Continuous Gear Hands):** Turn the crown on the planetary gear clock demonstrator to 4:20. Observe that the hour hand does not stay pinned at 4; it advances smoothly one-third of the way toward 5, reaching exactly $130^\circ$.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_31:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_31:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in base hour mark (4 o'clock) |
-| `{{key:ENTER}}` | $0$ | $0$ | $4$ | $4$ | Stack lifts; base hour locked into Register $Y$ |
-| `20` | $0$ | $0$ | $4$ | $20$ | Key in elapsed minutes (20 min) |
-| `{{key:ENTER}}` | $0$ | $4$ | $20$ | $20$ | Stack lifts; minutes copied to Register $Y$ |
-| `60` | $0$ | $4$ | $20$ | $60$ | Key in minutes per hour divisor (60) |
-| `{{key:÷}}` | $0$ | $0$ | $4$ | $0.3333$ | Divide to compute fractional hour ($20/60 = 0.3333$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $4.3333$ | Add minute fraction to base hour mark ($4.3333\text{ hr}$) |
-| `30` | $0$ | $0$ | $4.3333$ | $30$ | Key in degrees per hour scale factor ($30^\circ/\text{hr}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $130$ | Multiply decimal hours by $30^\circ$ to find continuous hour hand angle |
-
+- **Operational Narrative & Stack Flow:** Key `4` and `{{key:ENTER}}` to hold the base hour in Register $Y$ `(T:0, Z:0, Y:4, X:4)`. Key `20`, `{{key:ENTER}}`, `60`, and `{{key:÷}}` to convert the minutes into a fractional hour `(T:0, Z:0, Y:4, X:0.3333)`. Press `{{key:+}}` to obtain the continuous decimal hour $4.3333\text{ hr}$ `(T:0, Z:0, Y:0, X:4.3333)`. Key `30` and press `{{key:×}}` to multiply by $30^\circ/\text{hr}$, yielding the continuous hour hand angle `(T:0, Z:0, Y:0, X:130)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $130.0000$. Continuous hour hand position is $\mathbf{130.00^\circ}$.
 
 #### Challenge 32: Planetary Clock Hand Angle at 8:45
 - **Flight Navigation Context:** A cockpit heading dial displays flight waypoint time 8:45 ($8.45\text{ HMS}$). Determine continuous hour hand azimuth using $(8 + 45/60) \times 30^\circ$.
 - **Hands-On Manipulative Stage (Planetary Gear Kinematics):** Advance the clock demonstrator to 8:45. The minute hand points at 9 ($270^\circ$), while the planetary gearing smoothly rotates the hour hand three-quarters past 8, aligning squarely at $262.5^\circ$.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_32:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_32:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `8` | $0$ | $0$ | $0$ | $8$ | Key in base hour mark (8 o'clock) |
-| `{{key:ENTER}}` | $0$ | $0$ | $8$ | $8$ | Stack lifts; 8 locked into Register $Y$ |
-| `45` | $0$ | $0$ | $8$ | $45$ | Key in elapsed minutes (45 min) |
-| `{{key:ENTER}}` | $0$ | $8$ | $45$ | $45$ | Stack lifts; minutes copied to Register $Y$ |
-| `60` | $0$ | $8$ | $45$ | $60$ | Key in minutes per hour divisor (60) |
-| `{{key:÷}}` | $0$ | $0$ | $8$ | $0.75$ | Divide to find fractional hour ($45/60 = 0.75$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $8.75$ | Add fraction to base hour ($8.75\text{ hr}$) |
-| `30` | $0$ | $0$ | $8.75$ | $30$ | Key in degrees per hour factor ($30^\circ/\text{hr}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $262.5$ | Multiply to compute continuous hour hand rotation angle |
-
+- **Operational Narrative & Stack Flow:** Key `8` and `{{key:ENTER}}` to lock the base hour into Register $Y$ `(T:0, Z:0, Y:8, X:8)`. Key `45`, `{{key:ENTER}}`, `60`, and `{{key:÷}}` to compute the minute fraction $45/60 = 0.75$ `(T:0, Z:0, Y:8, X:0.75)`. Press `{{key:+}}` to find decimal hour $8.75\text{ hr}$ `(T:0, Z:0, Y:0, X:8.75)`. Key `30` and press `{{key:×}}` to multiply by $30^\circ/\text{hr}$, finalizing the continuous hour hand azimuth `(T:0, Z:0, Y:0, X:262.5)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $262.5000$. Continuous hour hand position is $\mathbf{262.50^\circ}$.
 
 #### Challenge 33: Angular Separation Between Clock Hands at 2:30
 - **Flight Navigation Context:** An azimuth radar scope aligns hands at 2:30. The minute hand points at $180^\circ$, and the continuous hour hand rotates to $(2 + 30/60) \times 30^\circ = 75^\circ$. Find the angular separation between hands.
 - **Hands-On Manipulative Stage (Dual Protractor Dial):** Place the transparent $360^\circ$ protractor over the clock face. Measure the angular wedge between the minute hand ($180^\circ$) and the hour hand ($75^\circ$), verifying an acute separation of $105^\circ$.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_33:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_33:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `180` | $0$ | $0$ | $0$ | $180$ | Key in minute hand azimuth at bottom of dial ($180^\circ$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $180$ | $180$ | Stack lifts; minute hand angle locked into Register $Y$ |
-| `2.5` | $0$ | $0$ | $180$ | $2.5$ | Key in decimal hour 2:30 ($2.5\text{ hr}$) |
-| `{{key:ENTER}}` | $0$ | $180$ | $2.5$ | $2.5$ | Stack lifts; decimal hour copied to Register $Y$ |
-| `30` | $0$ | $180$ | $2.5$ | $30$ | Key in degrees per hour scale factor ($30^\circ/\text{hr}$) |
-| `{{key:×}}` | $0$ | $0$ | $180$ | $75$ | Compute hour hand angle ($2.5 \times 30^\circ = 75^\circ$) |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $105$ | Deduct hour hand angle from minute hand angle to find angular separation |
-
+- **Operational Narrative & Stack Flow:** Key `180` and `{{key:ENTER}}` to position the minute hand azimuth in Register $Y$ `(T:0, Z:0, Y:180, X:180)`. Key `2.5`, `{{key:ENTER}}`, `30`, and press `{{key:×}}` to compute the continuous hour hand angle $75^\circ$ `(T:0, Z:0, Y:180, X:75)`. Press `{{key:-}}` to subtract the hour hand angle from the minute hand angle, yielding the angular separation `(T:0, Z:0, Y:0, X:105)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $105.0000$. Angular separation between hands is $\mathbf{105.00^\circ}$.
 
 #### Challenge 34: Multi-Leg Trans-Continental Flight Schedule
@@ -1483,18 +1368,18 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `10` | $0$ | $0$ | $0$ | $10$ | Key in initial departure time 10:00 AM (`HH.MM`) |
-| `{{key:▸HR}}` | $0$ | $0$ | $0$ | $10$ | Convert departure to decimal hours ($10.0\text{ hr}$) |
-| `2.15` | $0$ | $0$ | $10$ | $2.15$ | Key in Leg 1 flight duration (2h 15m); departure lifts to Register $Y$ |
-| `{{key:▸HR}}` | $0$ | $0$ | $10$ | $2.25$ | Convert Leg 1 time to decimal hours ($2 + 15/60 = 2.25$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $12.25$ | Add Leg 1 to departure time ($12.25\text{ hr}$) |
-| `1.30` | $0$ | $0$ | $12.25$ | $1.30$ | Key in airport layover duration (1h 30m) |
-| `{{key:▸HR}}` | $0$ | $0$ | $12.25$ | $1.5$ | Convert layover to decimal hours ($1 + 30/60 = 1.5$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $13.75$ | Add layover to accumulated itinerary ($13.75\text{ hr}$) |
-| `3.20` | $0$ | $0$ | $13.75$ | $3.20$ | Key in Leg 2 flight duration (3h 20m) |
-| `{{key:▸HR}}` | $0$ | $0$ | $13.75$ | $3.3333$ | Convert Leg 2 to decimal hours ($3 + 20/60 = 3.3333$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $17.0833$ | Add Leg 2 to find landing time in decimal hours |
-| `{{key:▸HMS}}` | $0$ | $0$ | $0$ | $17.05$ | Convert decimal hours back to clock time (`17:05` or `5:05 PM`) |
+| `10` | $0.0000$ | $0.0000$ | $0.0000$ | $10.0000$ | Key in initial departure time 10:00 AM (`HH.MM`) |
+| `{{key:▸HR}}` | $0.0000$ | $0.0000$ | $0.0000$ | $10.0000$ | Convert departure to decimal hours ($10.0\text{ hr}$) |
+| `2.15` | $0.0000$ | $0.0000$ | $10.0000$ | $2.15$ | Key in Leg 1 flight duration (2h 15m); departure lifts to Register $Y$ |
+| `{{key:▸HR}}` | $0.0000$ | $0.0000$ | $10.0000$ | $2.15$ | Convert Leg 1 time to decimal hours ($2 + 15/60 = 2.25$) |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $12.15$ | Add Leg 1 to departure time ($12.25\text{ hr}$) |
+| `1.30` | $0.0000$ | $0.0000$ | $12.15$ | $1.30$ | Key in airport layover duration (1h 30m) |
+| `{{key:▸HR}}` | $0.0000$ | $0.0000$ | $12.15$ | $1.3$ | Convert layover to decimal hours ($1 + 30/60 = 1.5$) |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $13.45$ | Add layover to accumulated itinerary ($13.75\text{ hr}$) |
+| `3.20` | $0.0000$ | $0.0000$ | $13.45$ | $3.20$ | Key in Leg 2 flight duration (3h 20m) |
+| `{{key:▸HR}}` | $0.0000$ | $0.0000$ | $13.45$ | $3.2000$ | Convert Leg 2 to decimal hours ($3 + 20/60 = 3.3333$) |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $16.6500$ | Add Leg 2 to find landing time in decimal hours |
+| `{{key:▸HMS}}` | $0.0000$ | $0.0000$ | $0.0000$ | $16.65$ | Convert decimal hours back to clock time (`17:05` or `5:05 PM`) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $17.0500$. Final itinerary arrival is $\mathbf{17:05\text{ HMS}}$ ($5:05\text{ PM}$).
 
@@ -1502,39 +1387,14 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Flight Navigation Context:** A mechanical aircraft instrument drive utilizes an epicyclic planetary gear train with a sun gear of $N_s = 14$ teeth and an outer stationary ring gear of $N_r = 154$ teeth. Find the planetary reduction ratio $R = 1 + N_r / N_s$.
 - **Hands-On Manipulative Stage (Planetary Gear Set):** Rotate the sun gear 12 full turns on the desk model. Observe the planetary carrier rotate through exactly one complete revolution, confirming the 12:1 reduction ratio.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_35:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_35:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `154` | $0$ | $0$ | $0$ | $154$ | Key in outer stationary ring gear tooth count ($N_r = 154$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $154$ | $154$ | Stack lifts; ring gear tooth count locked into Register $Y$ |
-| `14` | $0$ | $0$ | $154$ | $14$ | Key in driving sun gear tooth count ($N_s = 14$) |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $11$ | Divide to compute primary gear ratio ($N_r / N_s = 154 / 14 = 11$) |
-| `1` | $0$ | $0$ | $11$ | $1$ | Key in carrier rotation constant 1; ratio lifts to Register $Y$ |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $12$ | Add 1 for the stationary-ring planetary carrier reduction ratio |
-
+- **Operational Narrative & Stack Flow:** Key `154`, press `{{key:ENTER}}`, key `14`, and press `{{key:÷}}` to calculate the primary gear ratio $154 / 14 = 11$ `(T:0, Z:0, Y:0, X:11)`. Key `1` and press `{{key:+}}` to add the stationary-ring planetary carrier constant, arriving at the reduction ratio `(T:0, Z:0, Y:0, X:12)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $12.0000$. Epicyclic gear train ratio is $\mathbf{12.0000:1}$ (exact 12:1 reduction).
 
 #### Challenge 36: Aviation Navigation Beacon Housing Volume
 - **Flight Navigation Context:** An airport visual navigation beacon housing consists of a rectangular electronics base ($15 \times 15 \times 20\text{ cm}$) topped by a square pyramid optical roof ($15 \times 15 \times 9\text{ cm}$). Calculate the total enclosed internal volume.
 - **Hands-On Manipulative Stage (Modular Beacon Model):** Stack the detachable square pyramid acrylic top onto the rectangular acrylic prism base. The aggregate volume combines the full base prism with one-third of the roof's bounding prism.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_36:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_36:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` | $0$ | $0$ | $0$ | $15$ | Key in square tower base side length ($15\text{ cm}$) |
-| `{{key:x²}}` | $0$ | $0$ | $0$ | $225$ | Square side length to find tower base footprint ($15^2 = 225\text{ cm}^2$) |
-| `20` | $0$ | $0$ | $225$ | $20$ | Key in rectangular base height ($20\text{ cm}$); base area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $4500$ | Multiply to compute rectangular tower base volume ($4500\text{ cm}^3$) |
-| `15` | $0$ | $0$ | $4500$ | $15$ | Key in pyramid roof base side length ($15\text{ cm}$) |
-| `{{key:x²}}` | $0$ | $0$ | $4500$ | $225$ | Square side length to find pyramid base area ($225\text{ cm}^2$) |
-| `9` | $0$ | $4500$ | $225$ | $9$ | Key in pyramid apex height ($9\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $4500$ | $2025$ | Multiply base area by pyramid height ($225 \times 9 = 2025\text{ cm}^3$) |
-| `3` | $0$ | $4500$ | $2025$ | $3$ | Key in pyramid reduction divisor 3 |
-| `{{key:÷}}` | $0$ | $0$ | $4500$ | $675$ | Divide by 3 to compute pyramid roof volume ($675\text{ cm}^3$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $5175$ | Add pyramid roof volume to rectangular base volume |
-
+- **Operational Narrative & Stack Flow:** Key `15`, press `{{key:x²}}` ($225\text{ cm}^2$), key `20`, and press `{{key:×}}` to compute the rectangular base volume of $4500\text{ cm}^3$ `(T:0, Z:0, Y:0, X:4500)`. Next, key `15`, press `{{key:x²}}` ($225\text{ cm}^2$), key `9`, and press `{{key:×}}` ($2025\text{ cm}^3$); key `3` and press `{{key:÷}}` to find the square pyramid roof volume of $675\text{ cm}^3$ `(T:0, Z:0, Y:4500, X:675)`. Press `{{key:+}}` to merge both components into the total composite volume `(T:0, Z:0, Y:0, X:5175)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $5175.0000$. Composite beacon volume is $\mathbf{5175.00\text{ cm}^3}$.
 
 #### Challenge 37: Precision Machined Instrument Housing Net Volume
@@ -1545,15 +1405,15 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `10` | $0$ | $0$ | $0$ | $10$ | Key in square block side length ($10\text{ cm}$) |
-| `{{key:x²}}` | $0$ | $0$ | $0$ | $100$ | Square side length to find block top area ($10^2 = 100\text{ cm}^2$) |
-| `5` | $0$ | $0$ | $100$ | $5$ | Key in block height ($5\text{ cm}$); top area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $500$ | Multiply to compute gross solid prism volume ($500\text{ cm}^3$) |
-| `2` | $0$ | $0$ | $500$ | $2$ | Key in cylindrical drill hole radius ($2\text{ cm}$); prism volume lifts to Register $Y$ |
-| `{{key:CIRC}}` | $0$ | $0$ | $500$ | $12.5664$ | Compute drill hole circular area via circle key ($A = \pi \times 2^2$) |
-| `5` | $0$ | $500$ | $12.5664$ | $5$ | Key in drill hole depth ($5\text{ cm}$); drill area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $500$ | $62.8319$ | Multiply area by depth to compute cylindrical void volume ($62.8319\text{ cm}^3$) |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $437.1681$ | Subtract cylindrical void from gross prism to find net alloy volume |
+| `10` | $0.0000$ | $0.0000$ | $0.0000$ | $10.0000$ | Key in square block side length ($10\text{ cm}$) |
+| `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $100.0000$ | Square side length to find block top area ($10^2 = 100\text{ cm}^2$) |
+| `5` | $0.0000$ | $0.0000$ | $100.0000$ | $5.0000$ | Key in block height ($5\text{ cm}$); top area lifts to Register $Y$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $500.0000$ | Multiply to compute gross solid prism volume ($500\text{ cm}^3$) |
+| `2` | $0.0000$ | $0.0000$ | $500.0000$ | $2.0000$ | Key in cylindrical drill hole radius ($2\text{ cm}$); prism volume lifts to Register $Y$ |
+| `{{key:CIRC}}` | $0.0000$ | $0.0000$ | $500.0000$ | $12.5664$ | Compute drill hole circular area via circle key ($A = \pi \times 2^2$) |
+| `5` | $0.0000$ | $500.0000$ | $12.5664$ | $5.0000$ | Key in drill hole depth ($5\text{ cm}$); drill area lifts to Register $Y$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $500.0000$ | $62.8319$ | Multiply area by depth to compute cylindrical void volume ($62.8319\text{ cm}^3$) |
+| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $437.1681$ | Subtract cylindrical void from gross prism to find net alloy volume |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $437.1681$. Net metal chassis volume is $\mathbf{437.17\text{ cm}^3}$.
 
@@ -1561,37 +1421,14 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Flight Navigation Context:** A flight ramp technician works from 9:15 AM to 2:45 PM ($14.45\text{ HMS}$) at an hourly pay rate of $\$18.50/\text{hour}$. Find total gross compensation using `{{key:▸HR}}`.
 - **Hands-On Manipulative Stage (Shift Clock Card):** Lay down the shift interval card on the desk. Converting 9:15 AM to $9.25\text{ hr}$ and 2:45 PM to $14.75\text{ hr}$ reveals an exact shift length of $5.5\text{ hours}$.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_38:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_38:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `14.45` | $0$ | $0$ | $0$ | $14.45$ | Key in afternoon shift end time 14:45 (`HH.MM`) |
-| `{{key:▸HR}}` | $0$ | $0$ | $0$ | $14.75$ | Convert departure to continuous decimal hours ($14 + 45/60 = 14.75$) |
-| `9.15` | $0$ | $0$ | $14.75$ | $9.15$ | Key in morning shift start time 9:15; end hours lift to Register $Y$ |
-| `{{key:▸HR}}` | $0$ | $0$ | $14.75$ | $9.25$ | Convert start time to decimal hours ($9 + 15/60 = 9.25$) |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $5.5$ | Deduct start time from end time to determine work duration ($5.5\text{ hr}$) |
-| `18.50` | $0$ | $0$ | $5.5$ | $18.50$ | Key in hourly wage rate ($\$18.50/\text{hr}$); hours lift to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $101.75$ | Multiply hours by wage rate to compute gross earnings |
-
+- **Operational Narrative & Stack Flow:** Key `14.45` and press `{{key:▸HR}}` to convert afternoon shift end to decimal hours ($14.75\text{ hr}$) `(T:0, Z:0, Y:0, X:14.75)`. Key `9.15` and press `{{key:▸HR}}` to convert morning start time to decimal hours ($9.25\text{ hr}$) `(T:0, Z:0, Y:14.75, X:9.25)`. Press `{{key:-}}` to determine shift duration of $5.5\text{ hr}$ `(T:0, Z:0, Y:0, X:5.5)`. Key `18.50` and press `{{key:×}}` to multiply hours by the wage rate, giving gross earnings `(T:0, Z:0, Y:0, X:101.75)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $101.7500$. Total ground crew compensation earned is $\mathbf{\$101.75}$.
 
 #### Challenge 39: Aircraft Emergency Water Ballast Pool Mass
 - **Flight Navigation Context:** A marine emergency flight test water ballast flume measures $25\text{ m} \times 10\text{ m} \times 2\text{ m}$. With fresh water density at $1,000\text{ kg/m}^3$, compute total water mass in kilograms.
-- **Hands-On Manipulative Stage (Scale Block Model):** Assemble a $25 \times 10 \times 2$ scale block configuration using base-ten rods and flats. The $500\text{ m}^3$ prism volume scales directly by unit density to yield metric tonnage.
+- **Hands-On Manipulative Stage (Two-Step Model Small -> Scale Big):** Build a 1:100 scale cross-section model of the flume using 5 unit cubes ($5\text{ cm}^3$). Then scale big on StackCalc: multiplying $25\text{ m} \times 10\text{ m} \times 2\text{ m}$ gives $500\text{ m}^3$, and multiplying by $1,000\text{ kg/m}^3$ yields total ballast mass.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_39:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_39:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `25` | $0$ | $0$ | $0$ | $25$ | Key in ballast pool length ($25\text{ m}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $25$ | $25$ | Stack lifts; length locked into Register $Y$ |
-| `10` | $0$ | $0$ | $25$ | $10$ | Key in pool width ($10\text{ m}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $250$ | Multiply length by width to compute surface footprint ($250\text{ m}^2$) |
-| `2` | $0$ | $0$ | $250$ | $2$ | Key in water depth ($2\text{ m}$); footprint lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $500$ | Multiply by depth to compute total water volume ($500\text{ m}^3$) |
-| `1000` | $0$ | $0$ | $500$ | $1000$ | Key in water density ($1000\text{ kg/m}^3$); volume lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $500000$ | Multiply volume by density to calculate total water mass in kilograms |
-
+- **Operational Narrative & Stack Flow:** Key `25`, press `{{key:ENTER}}`, key `10`, and press `{{key:×}}` to compute the surface footprint $250\text{ m}^2$ `(T:0, Z:0, Y:0, X:250)`. Key `2` and press `{{key:×}}` to calculate the flume volume of $500\text{ m}^3$ `(T:0, Z:0, Y:0, X:500)`. Key `1000` and press `{{key:×}}` to scale volume by water density, finalizing the total ballast mass in kilograms `(T:0, Z:0, Y:0, X:500000)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $500000.0000$. Total water ballast mass is $\mathbf{500,000\text{ kg}}$ ($500\text{ metric tons}$).
 
 #### Challenge 40: Aviation Fuel Silo Lateral Painting Surface Area
@@ -1602,22 +1439,22 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:CLΣ}}` | $0$ | $0$ | $0$ | $0$ | Clear statistical accumulator registers ($n = 0, \Sigma x = 0$) |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in cylinder radius ($4\text{ m}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $4$ | $4$ | Stack lifts; radius locked into Register $Y$ |
-| `2` | $0$ | $0$ | $4$ | $2$ | Key in factor 2 |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $8$ | Multiply to find cylinder diameter ($2r = 8\text{ m}$) |
-| `{{key:π}}` | $0$ | $0$ | $8$ | $3.1416$ | Push circle constant $\pi$; diameter lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $25.1327$ | Multiply to compute cylinder perimeter ($2\pi r \approx 25.1327\text{ m}$) |
-| `10` | $0$ | $0$ | $25.1327$ | $10$ | Key in cylinder height ($10\text{ m}$); perimeter lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $251.3274$ | Multiply perimeter by height to compute cylinder wall area ($251.3274\text{ m}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $1$ | $251.3274$ | Accumulate cylinder wall into statistical bin ($n = 1, \Sigma x = 251.3274$) |
-| `4` | $0$ | $0$ | $1$ | $4$ | Key in hemispherical dome radius ($4\text{ m}$) |
-| `{{key:CIRC}}` | $0$ | $0$ | $1$ | $50.2655$ | Compute circular disk area via circle key ($A = \pi \times 4^2 = 50.2655\text{ m}^2$) |
-| `2` | $0$ | $1$ | $50.2655$ | $2$ | Key in dome factor 2 (hemisphere area $= 2\pi r^2$); base area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $1$ | $100.5310$ | Multiply by 2 to compute dome external surface ($100.5310\text{ m}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $2$ | $100.5310$ | Accumulate dome surface into statistical bin ($n = 2, \Sigma x = 351.8584$) |
-| `{{key:Σx}}` | $0$ | $0$ | $2$ | $351.8584$ | Recall total accumulated exterior surface area ($\Sigma x$) |
+| `{{key:CLΣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Clear statistical accumulator registers ($n = 0, \Sigma x = 0$) |
+| `4` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Key in cylinder radius ($4\text{ m}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $4.0000$ | $4.0000$ | Stack lifts; radius locked into Register $Y$ |
+| `2` | $0.0000$ | $0.0000$ | $4.0000$ | $2.0000$ | Key in factor 2 |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.0000$ | Multiply to find cylinder diameter ($2r = 8\text{ m}$) |
+| `{{key:π}}` | $0.0000$ | $0.0000$ | $8.0000$ | $3.1416$ | Push circle constant $\pi$; diameter lifts to Register $Y$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $25.1327$ | Multiply to compute cylinder perimeter ($2\pi r \approx 25.1327\text{ m}$) |
+| `10` | $0.0000$ | $0.0000$ | $25.1327$ | $10.0000$ | Key in cylinder height ($10\text{ m}$); perimeter lifts to Register $Y$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $251.3274$ | Multiply perimeter by height to compute cylinder wall area ($251.3274\text{ m}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Accumulate cylinder wall into statistical bin ($n = 1, \Sigma x = 251.3274$) |
+| `4` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Key in hemispherical dome radius ($4\text{ m}$) |
+| `{{key:CIRC}}` | $0.0000$ | $0.0000$ | $0.0000$ | $50.2655$ | Compute circular disk area via circle key ($A = \pi \times 4^2 = 50.2655\text{ m}^2$) |
+| `2` | $0.0000$ | $0.0000$ | $50.2655$ | $2.0000$ | Key in dome factor 2 (hemisphere area $= 2\pi r^2$); base area lifts to Register $Y$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $100.5310$ | Multiply by 2 to compute dome external surface ($100.5310\text{ m}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Accumulate dome surface into statistical bin ($n = 2, \Sigma x = 351.8584$) |
+| `{{key:Σx}}` | $0.0000$ | $0.0000$ | $0.0000$ | $351.8584$ | Recall total accumulated exterior surface area ($\Sigma x$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $351.8584$. Total exterior painting area is $\mathbf{351.86\text{ m}^2}$.
 
@@ -1629,31 +1466,31 @@ The following problem bank provides complete, publication-grade reference soluti
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:CLΣ}}` | $0$ | $0$ | $0$ | $0$ | Clear statistical registers ($n = 0, \Sigma x = 0$) |
-| `1.2` | $0$ | $0$ | $0$ | $1.2$ | Key in culvert channel bottom width ($1.2\text{ m}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $1.2$ | $1.2$ | Stack lifts; bottom width locked into Register $Y$ |
-| `15` | $0$ | $0$ | $1.2$ | $15$ | Key in channel length ($15\text{ m}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $18$ | Multiply to compute bottom slab area ($1.2 \times 15 = 18\text{ m}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $1$ | $18$ | Deposit bottom slab area into bin ($n = 1, \Sigma x = 18$) |
-| `1.0` | $0$ | $0$ | $1$ | $1.0$ | Key in slant side wall width ($1.0\text{ m}$) |
-| `{{key:ENTER}}` | $0$ | $1$ | $1.0$ | $1.0$ | Stack lifts; slant width copied into Register $Y$ |
-| `15` | $0$ | $1$ | $1.0$ | $15$ | Key in channel length ($15\text{ m}$) |
-| `{{key:×}}` | $0$ | $0$ | $1$ | $15$ | Multiply to compute single slant wall area ($15\text{ m}^2$) |
-| `2` | $0$ | $1$ | $15$ | $2$ | Key in count of symmetric slant walls (2) |
-| `{{key:×}}` | $0$ | $0$ | $1$ | $30$ | Multiply to compute twin slant walls ($2 \times 15 = 30\text{ m}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $2$ | $30$ | Deposit slant walls into bin ($n = 2, \Sigma x = 48$) |
-| `1.2` | $0$ | $0$ | $2$ | $1.2$ | Key in trapezoid bottom width ($1.2\text{ m}$) |
-| `{{key:ENTER}}` | $0$ | $2$ | $1.2$ | $1.2$ | Stack lifts; bottom width copied to Register $Y$ |
-| `2.4` | $0$ | $2$ | $1.2$ | $2.4$ | Key in trapezoid top width ($2.4\text{ m}$) |
-| `{{key:+}}` | $0$ | $0$ | $2$ | $3.6$ | Add parallel bases ($1.2 + 2.4 = 3.6\text{ m}$) |
-| `2` | $0$ | $2$ | $3.6$ | $2$ | Key in averaging divisor 2 |
-| `{{key:÷}}` | $0$ | $0$ | $2$ | $1.8$ | Divide to compute average width ($1.8\text{ m}$) |
-| `0.8` | $0$ | $2$ | $1.8$ | $0.8$ | Key in vertical channel depth ($0.8\text{ m}$) |
-| `{{key:×}}` | $0$ | $0$ | $2$ | $1.44$ | Multiply to compute single trapezoid end area ($1.44\text{ m}^2$) |
-| `2` | $0$ | $2$ | $1.44$ | $2$ | Key in count of end plates (2) |
-| `{{key:×}}` | $0$ | $0$ | $2$ | $2.88$ | Multiply to compute twin end plates ($2 \times 1.44 = 2.88\text{ m}^2$) |
-| `{{key:Σ+}}` | $0$ | $0$ | $3$ | $2.88$ | Deposit end plates into bin ($n = 3, \Sigma x = 50.88$) |
-| `{{key:Σx}}` | $0$ | $0$ | $3$ | $50.88$ | Recall total accumulated concrete lining surface area |
+| `{{key:CLΣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Clear statistical registers ($n = 0, \Sigma x = 0$) |
+| `1.2` | $0.0000$ | $0.0000$ | $0.0000$ | $1.2$ | Key in culvert channel bottom width ($1.2\text{ m}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $1.2$ | $1.2$ | Stack lifts; bottom width locked into Register $Y$ |
+| `15` | $0.0000$ | $0.0000$ | $1.2$ | $15.0000$ | Key in channel length ($15\text{ m}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Multiply to compute bottom slab area ($1.2 \times 15 = 18\text{ m}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Deposit bottom slab area into bin ($n = 1, \Sigma x = 18$) |
+| `1.0` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0$ | Key in slant side wall width ($1.0\text{ m}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $1.0$ | $1.0$ | Stack lifts; slant width copied into Register $Y$ |
+| `15` | $0.0000$ | $0.0000$ | $1.0$ | $15.0000$ | Key in channel length ($15\text{ m}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $15.0000$ | Multiply to compute single slant wall area ($15\text{ m}^2$) |
+| `2` | $0.0000$ | $0.0000$ | $15.0000$ | $2.0000$ | Key in count of symmetric slant walls (2) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $30.0000$ | Multiply to compute twin slant walls ($2 \times 15 = 30\text{ m}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Deposit slant walls into bin ($n = 2, \Sigma x = 48$) |
+| `1.2` | $0.0000$ | $0.0000$ | $0.0000$ | $1.2$ | Key in trapezoid bottom width ($1.2\text{ m}$) |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $1.2$ | $1.2$ | Stack lifts; bottom width copied to Register $Y$ |
+| `2.4` | $0.0000$ | $0.0000$ | $1.2$ | $2.4$ | Key in trapezoid top width ($2.4\text{ m}$) |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6$ | Add parallel bases ($1.2 + 2.4 = 3.6\text{ m}$) |
+| `2` | $0.0000$ | $0.0000$ | $3.6$ | $2.0000$ | Key in averaging divisor 2 |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.8$ | Divide to compute average width ($1.8\text{ m}$) |
+| `0.8` | $0.0000$ | $0.0000$ | $1.8$ | $0.8$ | Key in vertical channel depth ($0.8\text{ m}$) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.44$ | Multiply to compute single trapezoid end area ($1.44\text{ m}^2$) |
+| `2` | $0.0000$ | $0.0000$ | $1.44$ | $2.0000$ | Key in count of end plates (2) |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.88$ | Multiply to compute twin end plates ($2 \times 1.44 = 2.88\text{ m}^2$) |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.00$ | Deposit end plates into bin ($n = 3, \Sigma x = 50.88$) |
+| `{{key:Σx}}` | $0.0000$ | $0.0000$ | $0.0000$ | $50.88$ | Recall total accumulated concrete lining surface area |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $50.8800$. Total concrete culvert liner area is $\mathbf{50.88\text{ m}^2}$.
 
@@ -1661,200 +1498,63 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Flight Navigation Context:** A galley liquid measuring cup is engineered as a conical frustum with bottom radius $r = 3\text{ cm}$, top rim radius $R = 5\text{ cm}$, and depth $h = 7\text{ cm}$. Find fluid capacity in milliliters ($\text{cm}^3$) using $V = \frac{\pi h}{3}(R^2 + r^2 + Rr)$.
 - **Hands-On Manipulative Stage (Graduated Frustum Cup):** Inspect the silicone measuring cup. Calibrate the fluid fill level against the theoretical formula, confirming that the expanding slant profile holds $359\text{ mL}$.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_42:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_42:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `5` | $0$ | $0$ | $0$ | $5$ | Key in top rim radius ($5\text{ cm}$) |
-| `{{key:x²}}` | $0$ | $0$ | $0$ | $25$ | Square top radius ($5^2 = 25$) |
-| `3` | $0$ | $0$ | $25$ | $3$ | Key in bottom base radius ($3\text{ cm}$); $R^2$ lifts to Register $Y$ |
-| `{{key:x²}}` | $0$ | $0$ | $25$ | $9$ | Square bottom radius ($3^2 = 9$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $34$ | Add radius squares ($25 + 9 = 34$) |
-| `5` | $0$ | $0$ | $34$ | $5$ | Key in top radius 5; sum of squares lifts to Register $Y$ |
-| `{{key:ENTER}}` | $0$ | $34$ | $5$ | $5$ | Stack lifts; top radius copied to Register $Y$ |
-| `3` | $0$ | $34$ | $5$ | $3$ | Key in bottom radius 3 |
-| `{{key:×}}` | $0$ | $0$ | $34$ | $15$ | Compute cross-term product ($5 \times 3 = 15$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $49$ | Add cross-term to sum of squares ($34 + 15 = 49$) |
-| `{{key:π}}` | $0$ | $0$ | $49$ | $3.1416$ | Push circle constant $\pi$; geometric sum lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $153.9380$ | Multiply sum by $\pi$ ($49\pi \approx 153.9380$) |
-| `7` | $0$ | $0$ | $153.9380$ | $7$ | Key in cup depth ($7\text{ cm}$); factor lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $1077.5663$ | Multiply by cup depth ($1077.5663$) |
-| `3` | $0$ | $0$ | $1077.5663$ | $3$ | Key in frustum divisor 3; accumulated product lifts to Register $Y$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $359.1888$ | Divide by 3 to finalize frustum cup volume ($\frac{\pi h}{3}(R^2+r^2+Rr)$) |
-
+- **Operational Narrative & Stack Flow:** Key `5`, press `{{key:x²}}` ($25$), key `3`, press `{{key:x²}}` ($9$), and press `{{key:+}}` to compute $R^2 + r^2 = 34$ `(T:0, Z:0, Y:0, X:34)`. Key `5`, press `{{key:ENTER}}`, key `3`, and press `{{key:×}}` ($15$) `(T:0, Z:0, Y:34, X:15)`. Press `{{key:+}}` to evaluate $R^2 + r^2 + Rr = 49$ `(T:0, Z:0, Y:0, X:49)`. Push `{{key:π}}` and press `{{key:×}}` ($153.9380$), key `7` and press `{{key:×}}` ($1077.5663$), then key `3` and press `{{key:÷}}` to finish the frustum volume calculation `(T:0, Z:0, Y:0, X:359.1888)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $359.1888$. Measuring cup capacity is $\mathbf{359.19\text{ mL}}$ ($359.19\text{ cm}^3$).
 
 #### Challenge 43: Aircraft Wing Core Hexagonal Prism Honeycomb Cell
 - **Flight Navigation Context:** A lightweight aircraft wing composite spar is built from regular hexagonal honeycomb cells with cell side $s = 3\text{ cm}$ and extrusion length $L = 10\text{ cm}$. Find the interior air volume of a single honeycomb chamber.
 - **Hands-On Manipulative Stage (Hexagonal Extrusion):** Assemble six equilateral triangle prisms of side $3\text{ cm}$ into a regular hexagon. Extruding along the 10 cm axis demonstrates that volume equals base area ($\frac{3\sqrt{3}}{2}s^2$) times length.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_43:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_43:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3` | $0$ | $0$ | $0$ | $3$ | Key in hexagon side length ($3\text{ cm}$) |
-| `{{key:x²}}` | $0$ | $0$ | $0$ | $9$ | Square side length ($3^2 = 9$) |
-| `3` | $0$ | $0$ | $9$ | $3$ | Key in hexagon multiplier 3; $s^2$ lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $27$ | Multiply to compute $3s^2 = 27$ |
-| `3` | $0$ | $0$ | $27$ | $3$ | Key in radicand 3; product lifts to Register $Y$ |
-| `{{key:√x}}` | $0$ | $0$ | $27$ | $1.7321$ | Evaluate square root $\sqrt{3} \approx 1.7321$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $46.7654$ | Scale by $\sqrt{3}$ for equilateral triangle sector factor ($46.7654$) |
-| `2` | $0$ | $0$ | $46.7654$ | $2$ | Key in divisor 2; sector product lifts to Register $Y$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $23.3827$ | Halve to compute hexagonal cross-sectional base area ($23.3827\text{ cm}^2$) |
-| `10` | $0$ | $0$ | $23.3827$ | $10$ | Key in extrusion length ($10\text{ cm}$); base area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $233.8269$ | Multiply base area by length to compute hexagonal prism volume |
-
+- **Operational Narrative & Stack Flow:** Key `3`, press `{{key:x²}}` ($9$), key `3`, and press `{{key:×}}` to compute $3s^2 = 27$ `(T:0, Z:0, Y:0, X:27)`. Key `3`, press `{{key:√x}}` ($1.7321$), and press `{{key:×}}` to multiply by $\sqrt{3}$ ($46.7654$) `(T:0, Z:0, Y:0, X:46.7654)`. Key `2` and press `{{key:÷}}` to compute hexagonal base area $23.3827\text{ cm}^2$ `(T:0, Z:0, Y:0, X:23.3827)`. Key `10` and press `{{key:×}}` to scale across extrusion length, giving total chamber volume `(T:0, Z:0, Y:0, X:233.8269)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $233.8269$. Honeycomb cell internal volume is $\mathbf{233.83\text{ cm}^3}$.
 
 #### Challenge 44: Airfield Radar Tower Concrete Hollow Core Block
 - **Flight Navigation Context:** A foundation cinder block for a radar tower measures $40\text{ cm} \times 20\text{ cm} \times 20\text{ cm}$ externally, with twin interior rectangular voids measuring $14\text{ cm} \times 12\text{ cm} \times 20\text{ cm}$ each. Find net concrete volume.
-- **Hands-On Manipulative Stage (Cored Block Subtracter):** Build the outer $40 \times 20 \times 20$ solid envelope with unit cubes. Physically extract the two $14 \times 12 \times 20$ core blocks to measure remaining concrete volume.
+- **Hands-On Manipulative Stage (Two-Step Model Small -> Scale Big):** Model the hollow core concept on your desk using 16 unit cubes ($4 \times 2 \times 2$ envelope) and remove 4 center cubes. Then scale big on StackCalc: evaluate the full $40 \times 20 \times 20\text{ cm}$ envelope ($16,000\text{ cm}^3$) and subtract both $14 \times 12 \times 20\text{ cm}$ voids ($6,720\text{ cm}^3$) directly in the stack.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_44:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_44:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `40` | $0$ | $0$ | $0$ | $40$ | Key in block length ($40\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $40$ | $40$ | Stack lifts; length locked into Register $Y$ |
-| `20` | $0$ | $0$ | $40$ | $20$ | Key in block width ($20\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $800$ | Multiply to compute outer cross-sectional area ($800\text{ cm}^2$) |
-| `20` | $0$ | $0$ | $800$ | $20$ | Key in block height ($20\text{ cm}$); area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $16000$ | Multiply by height to compute gross envelope volume ($16,000\text{ cm}^3$) |
-| `14` | $0$ | $0$ | $16000$ | $14$ | Key in rectangular void length ($14\text{ cm}$); envelope lifts to Register $Y$ |
-| `{{key:ENTER}}` | $0$ | $16000$ | $14$ | $14$ | Stack lifts; void length locked into Register $Y$ |
-| `12` | $0$ | $16000$ | $14$ | $12$ | Key in void width ($12\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $16000$ | $168$ | Multiply to compute single void cross-section ($168\text{ cm}^2$) |
-| `20` | $0$ | $16000$ | $168$ | $20$ | Key in void height ($20\text{ cm}$); void area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $16000$ | $3360$ | Multiply by void height to compute single void volume ($3360\text{ cm}^3$) |
-| `2` | $0$ | $16000$ | $3360$ | $2$ | Key in count of symmetrical void cores (2) |
-| `{{key:×}}` | $0$ | $0$ | $16000$ | $6720$ | Multiply to compute aggregate twin void volume ($2 \times 3360 = 6720\text{ cm}^3$) |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $9280$ | Subtract twin void volumes from gross envelope to find net concrete volume |
-
+- **Operational Narrative & Stack Flow:** Key `40`, press `{{key:ENTER}}`, key `20`, and press `{{key:×}}` ($800\text{ cm}^2$); key `20` and press `{{key:×}}` to calculate gross envelope volume of $16,000\text{ cm}^3$ `(T:0, Z:0, Y:0, X:16000)`. Next, key `14`, press `{{key:ENTER}}`, key `12`, and press `{{key:×}}` ($168\text{ cm}^2$); key `20` and press `{{key:×}}` ($3360\text{ cm}^3$); key `2` and press `{{key:×}}` to compute twin void volume of $6720\text{ cm}^3$ `(T:0, Z:0, Y:16000, X:6720)`. Press `{{key:-}}` to subtract the voids from the outer envelope, finding net concrete volume `(T:0, Z:0, Y:0, X:9280)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $9280.0000$. Net concrete volume is $\mathbf{9280.00\text{ cm}^3}$.
 
 #### Challenge 45: Navigational Dial Inscribed Equilateral Triangle Waste Area
 - **Flight Navigation Context:** A triangular compass pointer plate of side $s = 10\text{ cm}$ is laser cut from a circular acrylic disc of radius $R = \frac{s}{\sqrt{3}} \approx 5.7735\text{ cm}$. Find the waste acrylic scrap area ($A_{\text{waste}} = A_{\text{circle}} - A_{\text{triangle}}$).
 - **Hands-On Manipulative Stage (Inscribed Triangle Discs):** Overlay the equilateral triangle template inside the circular ring. The three crescent lobes between triangle edges and outer circumference represent the scrap acrylic waste.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_45:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_45:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `5.7735` | $0$ | $0$ | $0$ | $5.7735$ | Key in circular blank radius ($R \approx 5.7735\text{ cm}$) |
-| `{{key:CIRC}}` | $0$ | $0$ | $0$ | $104.7197$ | Compute enclosing circle area via circle key ($A = \pi \times 5.7735^2$) |
-| `10` | $0$ | $0$ | $104.7197$ | $10$ | Key in equilateral triangle side ($10\text{ cm}$); circle area lifts to Register $Y$ |
-| `{{key:x²}}` | $0$ | $0$ | $104.7197$ | $100$ | Square triangle side ($10^2 = 100\text{ cm}^2$) |
-| `3` | $0$ | $104.7197$ | $100$ | $3$ | Key in radicand 3; side square lifts to Register $Y$ |
-| `{{key:√x}}` | $0$ | $104.7197$ | $100$ | $1.7321$ | Evaluate square root $\sqrt{3} \approx 1.7321$ |
-| `{{key:×}}` | $0$ | $0$ | $104.7197$ | $173.2051$ | Multiply $s^2$ by $\sqrt{3}$ ($173.2051$) |
-| `4` | $0$ | $104.7197$ | $173.2051$ | $4$ | Key in equilateral triangle divisor 4 |
-| `{{key:÷}}` | $0$ | $0$ | $104.7197$ | $43.3013$ | Divide by 4 to compute equilateral triangle area ($\frac{\sqrt{3}}{4}s^2 = 43.3013\text{ cm}^2$) |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $61.4184$ | Deduct triangle area from circle area to determine acrylic scrap waste |
-
+- **Operational Narrative & Stack Flow:** Key `5.7735` and press `{{key:CIRC}}` to compute the enclosing circle area $104.7197\text{ cm}^2$ `(T:0, Z:0, Y:0, X:104.7197)`. Key `10`, press `{{key:x²}}` ($100$), key `3`, press `{{key:√x}}` ($1.7321$), and press `{{key:×}}` ($173.2051$); key `4` and press `{{key:÷}}` to find the equilateral triangle area of $43.3013\text{ cm}^2$ `(T:0, Z:0, Y:104.7197, X:43.3013)`. Press `{{key:-}}` to deduct the triangle from the circle, isolating the scrap waste area `(T:0, Z:0, Y:0, X:61.4184)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $61.4184$. Scrap acrylic waste area is $\mathbf{61.42\text{ cm}^2}$.
 
 #### Challenge 46: Airport Weather Radar Geodesic Radome Strut Tubing
 - **Flight Navigation Context:** A 3V geodesic radar dome covering an airfield weather tracking array requires 30 Type-A struts ($1.20\text{ m}$), 40 Type-B struts ($1.35\text{ m}$), and 50 Type-C struts ($1.42\text{ m}$). Find total structural aluminum tubing length.
-- **Hands-On Manipulative Stage (Geodesic Dome Struts):** Sort color-coded Geo-Sticks into three bins by length: 30 Red (A), 40 Blue (B), and 50 Gold (C). Tallying lengths along the stack chain evaluates total extrusion stock.
+- **Hands-On Manipulative Stage (Two-Step Model Small -> Scale Big):** Model the geodesic dome triangle vertex using 3 Type-A, 4 Type-B, and 5 Type-C Geo-Sticks from your kit. Then scale big on StackCalc: multiply the full engineering batch quantities ($30 \times 1.20\text{ m}$, $40 \times 1.35\text{ m}$, $50 \times 1.42\text{ m}$) directly through the 4-register stack.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_46:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_46:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `30` | $0$ | $0$ | $0$ | $30$ | Key in Type-A strut quantity (30 struts) |
-| `{{key:ENTER}}` | $0$ | $0$ | $30$ | $30$ | Stack lifts; quantity locked into Register $Y$ |
-| `1.20` | $0$ | $0$ | $30$ | $1.20$ | Key in Type-A strut length ($1.20\text{ m}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $36$ | Multiply to compute total Type-A tubing length ($36\text{ m}$) |
-| `40` | $0$ | $0$ | $36$ | $40$ | Key in Type-B strut quantity (40 struts); Type-A length lifts to Register $Y$ |
-| `{{key:ENTER}}` | $0$ | $36$ | $40$ | $40$ | Stack lifts; Type-B quantity locked into Register $Y$ |
-| `1.35` | $0$ | $36$ | $40$ | $1.35$ | Key in Type-B strut length ($1.35\text{ m}$) |
-| `{{key:×}}` | $0$ | $0$ | $36$ | $54$ | Multiply to compute total Type-B tubing length ($54\text{ m}$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $90$ | Add Type-B length to Type-A length ($36 + 54 = 90\text{ m}$) |
-| `50` | $0$ | $0$ | $90$ | $50$ | Key in Type-C strut quantity (50 struts); running sum lifts to Register $Y$ |
-| `{{key:ENTER}}` | $0$ | $90$ | $50$ | $50$ | Stack lifts; Type-C quantity locked into Register $Y$ |
-| `1.42` | $0$ | $90$ | $50$ | $1.42$ | Key in Type-C strut length ($1.42\text{ m}$) |
-| `{{key:×}}` | $0$ | $0$ | $90$ | $71$ | Multiply to compute total Type-C tubing length ($71\text{ m}$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $161$ | Add Type-C length to finalize total radome strut tubing length |
-
+- **Operational Narrative & Stack Flow:** Key `30`, press `{{key:ENTER}}`, key `1.20`, and press `{{key:×}}` to compute Type-A tubing length ($36\text{ m}$) `(T:0, Z:0, Y:0, X:36)`. Key `40`, press `{{key:ENTER}}`, key `1.35`, and press `{{key:×}}` ($54\text{ m}$); press `{{key:+}}` to reach running sum $90\text{ m}$ `(T:0, Z:0, Y:0, X:90)`. Key `50`, press `{{key:ENTER}}`, key `1.42`, and press `{{key:×}}` ($71\text{ m}$); press `{{key:+}}` to add Type-C struts and finalize total tubing length `(T:0, Z:0, Y:0, X:161)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $161.0000$. Total structural tubing length is $\mathbf{161.00\text{ meters}}$.
 
 #### Challenge 47: Solar Noon to Sunset Daylight Duration Arc
 - **Flight Navigation Context:** On the equinox at the flight base, solar noon occurs at 12:00 PM and sunset occurs at 6:18 PM ($18.18\text{ HMS}$). Find total afternoon daylight duration as a continuous decimal hour.
 - **Hands-On Manipulative Stage (Continuous Sun Dial):** Dial the 24-hour planetary clock from 12:00 through 18:18. Converting 18 minutes past 18:00 gives $18/60 = 0.3\text{ hr}$, resulting in exactly $6.3\text{ decimal hours}$ of afternoon sun.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_47:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_47:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18.18` | $0$ | $0$ | $0$ | $18.18$ | Key in sunset time 18:18 (`HH.MM` format) |
-| `{{key:▸HR}}` | $0$ | $0$ | $0$ | $18.3$ | Convert sunset time to continuous decimal hours ($18 + 18/60 = 18.3\text{ hr}$) |
-| `12` | $0$ | $0$ | $18.3$ | $12$ | Key in solar noon reference time (12:00); sunset hours lift to Register $Y$ |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $6.3$ | Deduct solar noon to obtain afternoon elapsed daylight hours |
-
+- **Operational Narrative & Stack Flow:** Key `18.18` and press `{{key:▸HR}}` to convert clock time to continuous decimal hours $18.3\text{ hr}$ `(T:0, Z:0, Y:0, X:18.3)`. Key `12` and press `{{key:-}}` to deduct solar noon reference time, leaving elapsed afternoon daylight `(T:0, Z:0, Y:0, X:6.3)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $6.3000$. Afternoon daylight duration is $\mathbf{6.3000\text{ decimal hours}}$ ($6\text{ hr } 18\text{ min}$).
 
 #### Challenge 48: Submerged Bronze Sphere Hydrometer Water Rise
 - **Flight Navigation Context:** In the avionics fluids laboratory, a solid bronze calibration ball of radius $r = 3\text{ cm}$ is submerged into a cylindrical test beaker of radius $R = 5\text{ cm}$. Find the exact fluid height rise $\Delta h = \frac{V_{\text{sphere}}}{\pi R^2}$.
 - **Hands-On Manipulative Stage (Beaker Displacement Calibration):** Drop the 3D-printed calibration sphere into the fluid cylinder. The volume of fluid pushed upward spreads across the circular base area, demonstrating $\Delta h = V / (\pi R^2)$.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_48:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_48:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in spherical ratio numerator 4 |
-| `{{key:ENTER}}` | $0$ | $0$ | $4$ | $4$ | Stack lifts; 4 copied to Register $Y$ |
-| `3` | $0$ | $0$ | $4$ | $3$ | Key in denominator 3 |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $1.3333$ | Compute spherical factor $4/3$ |
-| `{{key:π}}` | $0$ | $0$ | $1.3333$ | $3.1416$ | Push circle constant $\pi$; ratio factor lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $4.1888$ | Multiply to establish spherical coefficient $\frac{4}{3}\pi$ |
-| `3` | $0$ | $0$ | $4.1888$ | $3$ | Key in bronze ball radius ($3\text{ cm}$); coefficient lifts to Register $Y$ |
-| `{{key:ENTER}}` | $0$ | $4.1888$ | $3$ | $3$ | Stack lifts; radius locked into Register $Y$ |
-| `3` | $0$ | $4.1888$ | $3$ | $3$ | Key in power exponent 3 |
-| `{{key:yˣ}}` | $0$ | $0$ | $4.1888$ | $27$ | Raise radius to 3rd power ($3^3 = 27\text{ cm}^3$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $113.0973$ | Multiply coefficient by $r^3$ to compute bronze sphere volume ($113.0973\text{ cm}^3$) |
-| `5` | $0$ | $0$ | $113.0973$ | $5$ | Key in beaker radius ($5\text{ cm}$); sphere volume lifts to Register $Y$ |
-| `{{key:CIRC}}` | $0$ | $0$ | $113.0973$ | $78.5398$ | Compute beaker cross-sectional base area via circle key ($A = \pi \times 5^2$) |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $1.44$ | Divide displaced sphere volume by beaker area to find exact water rise $\Delta h$ |
-
+- **Operational Narrative & Stack Flow:** Key `4`, press `{{key:ENTER}}`, key `3`, and press `{{key:÷}}` ($1.3333$); push `{{key:π}}` and press `{{key:×}}` to establish the sphere coefficient $4.1888$ `(T:0, Z:0, Y:0, X:4.1888)`. Key `3`, press `{{key:ENTER}}`, key `3`, and press `{{key:yˣ}}` ($27\text{ cm}^3$); press `{{key:×}}` to compute bronze sphere volume $113.0973\text{ cm}^3$ `(T:0, Z:0, Y:0, X:113.0973)`. Key `5`, press `{{key:CIRC}}` to find beaker base area $78.5398\text{ cm}^2$ `(T:0, Z:0, Y:113.0973, X:78.5398)`, and press `{{key:÷}}` to divide displaced volume by beaker area, giving fluid rise $\Delta h$ `(T:0, Z:0, Y:0, X:1.44)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $1.4400$. Fluid level displacement rise is $\mathbf{1.44\text{ cm}}$.
 
 #### Challenge 49: Rover Wheel Epicyclic Planetary Reduction
 - **Flight Navigation Context:** A robotic lunar sample rover wheel hub incorporates an epicyclic planetary gear drive with sun gear $N_s = 10$, four planets $N_p = 25$, and stationary outer ring gear $N_r = 60$. Find the overall reduction ratio $R = 1 + N_r / N_s$.
 - **Hands-On Manipulative Stage (Rover Wheel Gear Hub):** Spin the central sun gear input shaft 7 turns. The wheel hub carrier rotates exactly 1 revolution, verifying the 7:1 planetary torque multiplier.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_49:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_49:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `60` | $0$ | $0$ | $0$ | $60$ | Key in ring gear tooth count ($N_r = 60$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $60$ | $60$ | Stack lifts; ring gear teeth locked into Register $Y$ |
-| `10` | $0$ | $0$ | $60$ | $10$ | Key in sun gear tooth count ($N_s = 10$) |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $6$ | Divide to compute primary tooth ratio ($60 / 10 = 6$) |
-| `1` | $0$ | $0$ | $6$ | $1$ | Key in carrier rotation constant 1; ratio lifts to Register $Y$ |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $7$ | Add 1 for the stationary-ring planetary carrier torque multiplication |
-
+- **Operational Narrative & Stack Flow:** Key `60`, press `{{key:ENTER}}`, key `10`, and press `{{key:÷}}` to evaluate primary tooth ratio $60 / 10 = 6$ `(T:0, Z:0, Y:0, X:6)`. Key `1` and press `{{key:+}}` to add the carrier constant, establishing the final reduction ratio `(T:0, Z:0, Y:0, X:7)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $7.0000$. Rover drive reduction ratio is $\mathbf{7.0000:1}$ (7:1 torque mechanical advantage).
 
 #### Challenge 50: Flight Cargo Bullion Mass & Currency Valuation
 - **Flight Navigation Context:** High-value bullion cargo transport: A pure gold bar measures $15\text{ cm} \times 8\text{ cm} \times 4\text{ cm}$. With gold density at $19.3\text{ g/cm}^3$ and current market spot price at $\$65.00/\text{gram}$, calculate total ingot value using the SC-6 currency formatter `{{key:$}}`.
 - **Hands-On Manipulative Stage (Density Block Comparison):** Compare the compact gold bar model against an equal-volume plastic block. The extreme density of gold ($19.3\text{ g/cm}^3$) packs $9.264\text{ kg}$ into a modest $480\text{ cm}^3$ volume.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_50:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_50:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` | $0$ | $0$ | $0$ | $15$ | Key in gold ingot length ($15\text{ cm}$) |
-| `{{key:ENTER}}` | $0$ | $0$ | $15$ | $15$ | Stack lifts; length locked into Register $Y$ |
-| `8` | $0$ | $0$ | $15$ | $8$ | Key in ingot width ($8\text{ cm}$) |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $120$ | Multiply length by width to compute base area ($120\text{ cm}^2$) |
-| `4` | $0$ | $0$ | $120$ | $4$ | Key in ingot thickness ($4\text{ cm}$); base area lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $480$ | Multiply to compute ingot volume via elevator drop ($480\text{ cm}^3$) |
-| `19.3` | $0$ | $0$ | $480$ | $19.3$ | Key in pure gold density ($19.3\text{ g/cm}^3$); volume lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $9264$ | Multiply volume by density to calculate total mass ($9264\text{ grams}$) |
-| `65` | $0$ | $0$ | $9264$ | $65$ | Key in market spot price per gram ($\$65.00/\text{g}$); mass lifts to Register $Y$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $602160$ | Multiply mass by spot price to compute market bullion value |
-| `{{key:$}}` | $0$ | $0$ | $0$ | $602160.00$ | Format display via hardware currency engine (`$602,160.00`) |
-
+- **Operational Narrative & Stack Flow:** Key `15`, press `{{key:ENTER}}`, key `8`, and press `{{key:×}}` to compute ingot footprint $120\text{ cm}^2$ `(T:0, Z:0, Y:0, X:120)`. Key `4` and press `{{key:×}}` to obtain ingot volume $480\text{ cm}^3$ `(T:0, Z:0, Y:0, X:480)`. Key `19.3` and press `{{key:×}}` to determine total mass $9264\text{ g}$ `(T:0, Z:0, Y:0, X:9264)`. Key `65` and press `{{key:×}}` to compute market bullion value `$602,160` `(T:0, Z:0, Y:0, X:602160)`. Press `{{key:$}}` to format the display via the hardware currency engine `(T:0, Z:0, Y:0, X:602160.00)`.
 - **Diagnostic Checkpoint:** Register $X$ displays `$602160.00`. Total gold bullion cargo value is $\mathbf{\$602,160.00}$.
 
 ---
