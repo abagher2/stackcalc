@@ -234,7 +234,7 @@ class KeyRegistry:
         if self.is_sc32:
             if "▸θ,r" in self.entries:
                 pol_entry = self.entries["▸θ,r"]
-                for alias in ("->POL", "→POL", "▸POL", "->θ,r", "→θ,r"):
+                for alias in ("->POL", "→POL", "▸POL", "->θ,r", "→θ,r", "->P", "→P", "▸P", "->POLAR", "→POLAR", "POLAR"):
                     self.entries[alias] = pol_entry
             if "▸y,x" in self.entries:
                 rec_entry = self.entries["▸y,x"]
