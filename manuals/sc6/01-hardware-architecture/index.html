@@ -1,0 +1,3110 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Discover the daylight screen, the 4-level number stack, tactile clicky buttons, and 3D-printed math blocks of the StackCalc SC-6.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/manuals/sc6/01-hardware-architecture/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Chapter 1: Meet Your SC-6 Stack Calculator & Math Blocks - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brutalist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/ecommerce.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+  
+  
+  
+  
+  <meta property="og:site_name" content="StackCalc32">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chapter 1: Meet Your SC-6 Stack Calculator &amp; Math Blocks">
+  <meta property="og:description" content="Discover the daylight screen, the 4-level number stack, tactile clicky buttons, and 3D-printed math blocks of the StackCalc SC-6.">
+  <meta property="og:url" content="https://www.stackcalc.io/manuals/sc6/01-hardware-architecture/">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chapter 1: Meet Your SC-6 Stack Calculator &amp; Math Blocks">
+  <meta name="twitter:description" content="Discover the daylight screen, the 4-level number stack, tactile clicky buttons, and 3D-printed math blocks of the StackCalc SC-6.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                      tiny5: ['Tiny5', 'Terminus', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-1-meet-your-sc-6-stack-calculator-math-blocks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 1: Meet Your SC-6 Stack Calculator & Math Blocks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../products/" class="md-tabs__link">
+          
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curriculum/" class="md-tabs__link">
+          
+  
+  Curriculum & Standards
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Books & Reference Manuals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learning-lab/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-tabs__link">
+        
+  
+    
+  
+  Build Logs ↗
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../privacy/" class="md-tabs__link">
+          
+  
+  Legal & Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Catalog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Catalog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC-32 Scientific Calculator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SC-32 Scientific Calculator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Assembly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-elementary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Elementary Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fraction Studio Towers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Fraction Studio Towers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classroom Planetary Clock
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Classroom Planetary Clock
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ten Frames & Counters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ten Frames & Counters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/counting-tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Counting & Array Tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math Domino Studio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Math Domino Studio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prime-factor-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prime Factor Studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Boxes & Tiles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Boxes & Tiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probability Dice & Spinner
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Probability Dice & Spinner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/unit-circle-volvelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Circle & Trig Volvelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/stands-and-pouches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stands & Pouches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/curriculum-and-decks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curriculum & Decks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../downloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download Center (3MFs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curriculum & Standards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Curriculum & Standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Curriculum Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/alignment-matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standards Alignment Matrix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/worksheets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Printable Student Worksheets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/teacher-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teacher Facilitator Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/rpn-elementary-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN Elementary Power Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/uil-competition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Competitive STEM & Speed Calculation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Books & Reference Manuals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Books & Reference Manuals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Manuals Hub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sc32-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-32 Scientific Companion ($16 Print Edition)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sc32/14-uil-contest-playbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. High-Speed Equation Entry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sc6-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Elementary Companion ($16 Print Edition)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestseller-rubric-and-editorial-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bestseller Rubric & Editorial Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../critical-editorial-review-and-school-adoption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Editorial Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent & OpenAPI Spec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac & iOS Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../press/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Press & Editorial Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../etsy-publishing-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing & Sourcing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shipping-and-packaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shipping & Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exam-compliance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Compliance & Proctor Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Logs ↗
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Legal & Support
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Legal & Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-why-real-buttons-and-blocks-beat-a-glowing-tablet-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Why Real Buttons and Blocks Beat a Glowing Tablet Screen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-meet-your-stack-calculator-the-screen-the-number-stack-your-secret-shift-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Meet Your Stack Calculator: The Screen, The Number Stack &amp; Your Secret Shift Keys
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Meet Your Stack Calculator: The Screen, The Number Stack & Your Secret Shift Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-the-daylight-screen-the-4-level-number-stack-t-z-y-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1 The Daylight Screen &amp; The 4-Level Number Stack (\(T, Z, Y, X\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-the-big-enter-button-pushing-numbers-onto-the-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2 The Big ENTER Button: Pushing Numbers Onto the Stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-one-button-three-superpowers-how-the-f-and-g-keys-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.3 One Button, Three Superpowers: How the [f] and [g] Keys Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-setting-up-your-15-classroom-desk-stand" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.4 Setting Up Your 15° Classroom Desk Stand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-the-tool-showdown-glass-screen-confusion-vs-tactile-stack-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.5 The Tool Showdown: Glass Screen Confusion vs. Tactile Stack Precision
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-why-the-calculator-is-dark-and-the-blocks-are-bright" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Why the Calculator Is Dark and the Blocks Are Bright
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-built-like-a-tank-how-your-calculator-survives-the-classroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Built Like a Tank: How Your Calculator Survives the Classroom
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Built Like a Tank: How Your Calculator Survives the Classroom">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-what-hides-inside-a-clicking-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 What Hides Inside a Clicking Button?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-why-your-screen-works-like-paper-instead-of-a-flashlight" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.2 Why Your Screen Works Like Paper Instead of a Flashlight
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-the-sliding-15-desk-stand-built-in-easel" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.3 The Sliding 15° Desk Stand: Built-in Easel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-secret-white-bubbles-why-the-letters-never-rub-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.4 Secret White Bubbles: Why the Letters Never Rub Off
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-instant-on-readiness-continuous-backpack-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Instant-On Readiness &amp; Continuous Backpack Memory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-meet-your-math-blocks-building-numbers-with-your-hands" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 Meet Your Math Blocks: Building Numbers with Your Hands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 Meet Your Math Blocks: Building Numbers with Your Hands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-the-ten-frame-trays-flip-counters" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.1 The Ten-Frame Trays &amp; Flip Counters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-the-four-color-counting-array-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.2 The Four-Color Counting &amp; Array Studio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163-the-84-mm-fraction-towers-comparator-tray" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.3 The 84 mm Fraction Towers &amp; Comparator Tray
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#164-the-prime-factor-studio-number-block-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.4 The Prime Factor Studio &amp; Number Block Scale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#165-the-planetary-geared-clock" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.5 The Planetary Geared Clock
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#166-the-polyhedral-dice-spinner-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.6 The Polyhedral Dice &amp; Spinner Studio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#167-the-place-value-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.7 The Place Value Studio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#168-the-number-rack-rekenrek" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.8 The Number Rack (Rekenrek)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-taking-care-of-your-stack-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 Taking Care of Your Stack Calculator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7 Taking Care of Your Stack Calculator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-adjusting-screen-contrast" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7.1 Adjusting Screen Contrast
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-what-to-do-if-you-get-stuck-troubleshooting-pathways" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8 What to Do If You Get Stuck (Troubleshooting Pathways)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8 What to Do If You Get Stuck (Troubleshooting Pathways)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181-screen-is-dark-or-blank" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8.1 Screen Is Dark or Blank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#182-returning-to-normal-numbers-from-a-sandbox-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8.2 Returning to Normal Numbers from a Sandbox Mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-hands-on-studio-proof-your-first-math-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.9 Hands-On Studio Proof: Your First Math Discovery
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#110-story-driven-problem-expeditions-the-calculator-workshop-maker-bench" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.10 Story-Driven Problem Expeditions (The Calculator Workshop &amp; Maker Bench)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10 Story-Driven Problem Expeditions (The Calculator Workshop & Maker Bench)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1101-expedition-1-the-calculator-workshop-maker-bench-problems-1116" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.10.1 Expedition 1: The Calculator Workshop &amp; Maker Bench (Problems 1.1–1.6)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.10.1 Expedition 1: The Calculator Workshop & Maker Bench (Problems 1.1–1.6)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-11-battery-reserve-life-on-the-kitchen-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 1.1: Battery Reserve Life on the Kitchen Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-12-screen-memory-dot-matrix-frame-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 1.2: Screen Memory (Dot-Matrix Frame Buffer)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-13-daylight-transflective-screen-contrast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 1.3: Daylight Transflective Screen Contrast
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-14-clicking-button-snap-dome-spring-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 1.4: Clicking Button Snap-Dome Spring Rate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-15-manipulative-studio-gridfinity-footprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 1.5: Manipulative Studio Gridfinity Footprint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-16-desk-stand-incline-triangle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 1.6: Desk Stand Incline Triangle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#111-what-you-mastered-looking-ahead" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.11 What You Mastered &amp; Looking Ahead
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="chapter-1-meet-your-sc-6-stack-calculator-math-blocks">Chapter 1: Meet Your SC-6 Stack Calculator &amp; Math Blocks</h1>
+<div class="te-viewport-header mb-6">
+  <span class="te-viewport-sku">STACKCALC SC-6 // CHAPTER 1</span>
+  <span class="te-viewport-status text-emerald-400">● DAYLIGHT SCREEN &bull; 400G CLICKY BUTTONS &bull; 4-LEVEL NUMBER STACK</span>
+</div>
+
+<h2 id="11-why-real-buttons-and-blocks-beat-a-glowing-tablet-screen">1.1 Why Real Buttons and Blocks Beat a Glowing Tablet Screen</h2>
+<p>Picture an eight-year-old sitting at a wooden kitchen table on a rainy Tuesday afternoon. A math book is open to multi-digit subtraction, but right beside it rests a school tablet. Within ninety seconds of starting homework, a red notification badge slides across the glass: a message chime, a game update, a colorful video banner. Even when locked in "study mode," the tablet's harsh electric backlight beams straight into your eyes like a tiny flashlight. Your eyes feel tired, your head starts to ache, and your brain is pulled in twenty directions at once. The glowing tablet feels like an amusement arcade pretending to be a desk!</p>
+<p>Now look at the other side of your desk: the <strong>StackCalc SC-6</strong>. Molded from tough, dark Midnight Navy armor, it has no Wi-Fi, no pop-up alerts, no games, and no distractions. Its screen doesn't beam harsh light into your face—it reads just like a paper book using the gentle daylight in your room. And when you press a key, your finger doesn't smear across cold, mushy glass. Beneath every key sits a tiny stainless-steel dome that clicks down with a crisp, satisfying <em>snap!</em> Your fingers feel the click and your ears hear the snap: <em>the number is pushed onto the stack, and you are ready for the next step.</em></p>
+<p><img alt="StackCalc SC-6 Elementary Handheld Portrait" src="../../../assets/manuals/screenshots/sc6_hero_calculator.png" />
+<em>Figure 1.1: The StackCalc SC-6 Elementary Handheld in Midnight Navy with sliding 15° easel desk cowl. A dedicated tactile tool for deep mathematical focus.</em></p>
+<p>The SC-6 is built like an astronaut's pocket instrument. Nothing on it is flimsy or disposable. Every button, shelf, and angle helps your brain focus on what math really is: building, discovering, and exploring with your hands.</p>
+<div class="admonition note">
+<p class="admonition-title">For Parents &amp; Teachers: Cognitive Load &amp; Working Memory Limits</p>
+<p>
+In John Sweller’s Cognitive Load Theory *([Sweller, 1988](appendix-c-formulas-and-conversions.md#cite-sweller1988))*, extraneous mental load from glowing tablets and split attention destroys mathematical understanding. George A. Miller’s foundational research on working memory limits ($7 \pm 2$ items) *([Miller, 1956](appendix-c-formulas-and-conversions.md#cite-miller1956))* explains why young minds drown under notification-heavy operating systems. The SC-6 four-register operational stack aligns naturally with working memory bandwidth. Following David Macaulay’s cutaway architecture of physical machines *([Macaulay, 2016](appendix-c-formulas-and-conversions.md#cite-macaulay2016))*, every radius, wall thickness, and micro-foamed snap-dome was engineered to anchor the child’s wandering attention in the tactile reality of mathematical thought.
+</p>
+</div>
+
+<blockquote>
+<p>CHAPTER BASELINE MODE: [NUM]<br />
+Standard Base-10 Arithmetic • 4-Stack XYZT • Clean Display</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Unlocked Keycaps Ribbon — Hardware &amp; Instrument Control</p>
+<p>
+• <strong>Instrument Controls:</strong> <code>[C]</code> Clear / Reset, <code>[<-]</code> Destructive Backspace, <code>[g] [OFF]</code> Low-Power Deep Standby, <code>[g] [FLAGS]</code> Hardware System Flags.<br>
+• <strong>Hardware Status Display:</strong> Four-register active stack (<code>T</code>, <code>Z</code>, <code>Y</code>, <code>X</code>), Battery Reserve Indicator, Active Visual Sandbox Header Badge (<code>[▦]</code>, <code>[f] [LINE]</code>, <code>[PV]</code>, <code>[🕒]</code>, <code>[🎲]</code>, <code>[f] [?]</code>).<br>
+• <strong>Classroom Safety Envelope:</strong> Recessed display window with 1.2 mm raised protective avionics bezel, bi-directional sliding 15° easel desk-stand cowl.
+</p>
+</div>
+
+<blockquote>
+<p>[!NOTE]
+<strong>Faceplate Themes &amp; Shift Legend Conventions:</strong><br />
+Because the StackCalc SC-6 hardware faceplates and companion app support multiple visual themes (<code>Pure Black</code>, <code>Retro Futurism</code>, <code>Pioneer</code>, <code>Stealth</code>, <code>Supernova</code>, <code>Voyager</code>, and <code>Arcade</code>), keycap and shift accent colors vary by faceplate. Throughout this textbook, shifted operations are always referenced by their functional shift symbols rather than color: <strong><code>[f]</code> Shift</strong> (Row 5, Col 0) and <strong><code>[g]</code> Shift</strong> (Row 6, Col 0).</p>
+</blockquote>
+<hr />
+<h2 id="12-meet-your-stack-calculator-the-screen-the-number-stack-your-secret-shift-keys">1.2 Meet Your Stack Calculator: The Screen, The Number Stack &amp; Your Secret Shift Keys</h2>
+<p>Before we build block towers and solve puzzles, let's take a quick tour of your calculator: its daylight screen, the 4-level number stack, the big ENTER button, and the secret shift keys.</p>
+<h3 id="121-the-daylight-screen-the-4-level-number-stack-t-z-y-x">1.2.1 The Daylight Screen &amp; The 4-Level Number Stack (<span class="arithmatex">\(T, Z, Y, X\)</span>)</h3>
+<p>Unlike phones or tablets that shine bright electric light straight into your eyes, the SC-6 features a <strong>Daylight Screen</strong>. It reads just like paper in a book, catching the natural light in your room!</p>
+<p>On the screen, numbers don't vanish into hidden memory. Instead, they stack up on four visible shelves—the <strong>4-Level Number Stack</strong> (<span class="arithmatex">\(T, Z, Y, X\)</span>), just like stacking physical blocks, pancakes, or books on your desk:
+- <strong>Level <span class="arithmatex">\(X\)</span> (The Ground Shelf / Active Entry):</strong> This is the bottom shelf of the screen where numbers appear as you type them, and where the immediate results of every calculation appear.
+- <strong>Level <span class="arithmatex">\(Y\)</span> (The Second Shelf / Waiting Partner):</strong> When you tap <code>[ENTER]</code>, your number pushes smoothly up to Level <span class="arithmatex">\(Y\)</span>. Level <span class="arithmatex">\(Y\)</span> holds the first number waiting for math to happen (like the <span class="arithmatex">\(12\)</span> waiting in <span class="arithmatex">\(12 - 4\)</span>).
+- <strong>Levels <span class="arithmatex">\(Z\)</span> and <span class="arithmatex">\(T\)</span> (The Mezzanine and Top Shelves):</strong> Above <span class="arithmatex">\(Y\)</span> sit two more shelves. When you push several numbers onto the stack, previous values rise into <span class="arithmatex">\(Z\)</span> and <span class="arithmatex">\(T\)</span>. When operations execute, values drop down from <span class="arithmatex">\(T\)</span> to <span class="arithmatex">\(Z\)</span> to <span class="arithmatex">\(Y\)</span> automatically, letting you solve big multi-step problems without scratch paper or parentheses!</p>
+<h3 id="122-the-big-enter-button-pushing-numbers-onto-the-stack">1.2.2 The Big ENTER Button: Pushing Numbers Onto the Stack</h3>
+<p>Look at the big, friendly black <code>[ENTER]</code> button in the lower-right area of the keypad. It is the heart of <strong>Stack Math</strong>!</p>
+<p>In ordinary school arithmetic, you might have been taught to fear the equals sign (<code>=</code>) because it acts like a sudden test. On the SC-6:
+1. <strong>There is no <code>=</code> button:</strong> In Stack Math, combining two numbers <em>is</em> the answer! When you tap <code>[+]</code>, <code>[-]</code>, <code>[×]</code>, or <code>[÷]</code>, the operator fuses the quantities on Level <span class="arithmatex">\(Y\)</span> and Level <span class="arithmatex">\(X\)</span> immediately and visibly.
+2. <strong><code>[ENTER]</code> commits and pushes:</strong> When typing a number, tapping <code>[ENTER]</code> signals that entry is complete, pushes the value of Level <span class="arithmatex">\(X\)</span> upward onto Level <span class="arithmatex">\(Y\)</span>, and lifts previous values into <span class="arithmatex">\(Z\)</span> and <span class="arithmatex">\(T\)</span>. The next digits you type enter fresh into Level <span class="arithmatex">\(X\)</span> without overwriting Level <span class="arithmatex">\(Y\)</span>.</p>
+<h3 id="123-one-button-three-superpowers-how-the-f-and-g-keys-work">1.2.3 One Button, Three Superpowers: How the [f] and [g] Keys Work</h3>
+<p>Instead of hiding cool math tools inside confusing computer menus, each button on the SC-6 has up to <strong>three superpowers</strong>:
+- <strong>Primary White Keycap (Direct Press):</strong> Tapping any key directly executes its primary action printed in crisp white on the keycap face (numeric digits <code>0</code>–<code>9</code>, <code>[ENTER]</code>, <code>[+]</code>, <code>[-]</code>, <code>[×]</code>, <code>[÷]</code>, clear <code>[C]</code>, and backspace <code>[&lt;-]</code>).
+- <strong><code>[f]</code> Shift Key (Row 5, Col 0):</strong> Pressing <code>[f]</code> first unlocks the secret superpower printed directly above the keycap. This includes tools like finding common multiples with <code>[f] [LCM]</code>, simplifying fractions step-by-step with <code>[g] [SIMP]</code>, unit conversions, and memory register recall <code>[f] [REGS]</code>.
+- <strong><code>[g]</code> Shift Key (Row 6, Col 0):</strong> Pressing <code>[g]</code> first unlocks the secret superpower printed on or below the keycap. This includes prime factor trees with <code>[g] [FACT]</code>, skip-counting replication with <code>[g] [REP]</code>, integer division with remainder <code>[g] [÷R]</code>, low-power standby <code>[g] [OFF]</code>, and hardware settings <code>[g] [FLAGS]</code>.</p>
+<h3 id="124-setting-up-your-15-classroom-desk-stand">1.2.4 Setting Up Your 15° Classroom Desk Stand</h3>
+<p>Your SC-6 includes a rugged, bi-directional <strong>sliding protective cowl</strong>. At the start of math time:
+1. Slide the protective cover downward off the front of the calculator.
+2. Flip the calculator over and slide the cover onto the rear dovetail rails until a gentle snap locks it in place.
+3. Set the SC-6 on your desk—it now rests at a stable <strong><span class="arithmatex">\(15^\circ\)</span> reading angle</strong>, right beside your manipulative block tray, keeping both hands completely free: your left hand can build a fraction tower or place counters in a ten-frame, while your right hand taps keys into the stack!</p>
+<h3 id="125-the-tool-showdown-glass-screen-confusion-vs-tactile-stack-precision">1.2.5 The Tool Showdown: Glass Screen Confusion vs. Tactile Stack Precision</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Challenge / Dimension</th>
+<th style="text-align: left;">The Glowing Tablet &amp; Smartphone Trap</th>
+<th style="text-align: left;">The StackCalc SC-6 + Physical Studio Superpower</th>
+<th style="text-align: left;">Keystrokes &amp; Efficiency</th>
+<th style="text-align: left;">Live Stack Visibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>First Number Entry (<span class="arithmatex">\(347\)</span>)</strong></td>
+<td style="text-align: left;"><strong>Phone/Tablet</strong>: Unlock <span class="arithmatex">\(\to\)</span> swipe <span class="arithmatex">\(\to\)</span> open app <span class="arithmatex">\(\to\)</span> dismiss ad <span class="arithmatex">\(\to\)</span> tap glass screen with zero feedback (<span class="arithmatex">\(12+\)</span> steps). Screen washes out in classroom daylight (<span class="arithmatex">\(1,000\text{ lux}\)</span>).</td>
+<td style="text-align: left;"><strong>SC-6 + Base-10 Blocks</strong>: Slide cowl to 15° easel <span class="arithmatex">\(\to\)</span> lay 3 hundreds flats, 4 ten-rods, 7 unit cubes <span class="arithmatex">\(\to\)</span> tap <code>347 [ENTER]</code> on 400g snap-domes. Sunlight transflective LCD has infinite contrast.</td>
+<td style="text-align: left;"><strong>4 strokes vs. 12+ steps (67% reduction)</strong></td>
+<td style="text-align: left;">Level <span class="arithmatex">\(X = 347\)</span> rests visible on the ground shelf; previous results wait upstairs in <span class="arithmatex">\(Y, Z, T\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tactile Confirmation</strong></td>
+<td style="text-align: left;">Smooth flat glass: no physical boundary between digits, zero tactile click, high error rate from accidental adjacent touches.</td>
+<td style="text-align: left;">400-gram stainless snap-domes provide an audible click and physical snap; fingers know instantly that the stroke committed.</td>
+<td style="text-align: left;"><strong>1 mechanical snap per digit</strong></td>
+<td style="text-align: left;">Zero missed or doubled keystrokes; visual and haptic verification.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Optical Ergonomics &amp; Daylight</strong></td>
+<td style="text-align: left;">Harsh <span class="arithmatex">\(450\text{ cd/m}^2\)</span> blue-light backlight causes eye fatigue and pupil constriction after 20 minutes; unreadable outdoors.</td>
+<td style="text-align: left;">Transflective ambient LCD (<span class="arithmatex">\(0\text{ mW}\)</span> self-emission) reflects room light like printed paper; contrast increases with brighter sunlight.</td>
+<td style="text-align: left;"><strong>0 mW light emitted into eyes</strong></td>
+<td style="text-align: left;">Crisp 15.2:1 contrast in full daylight; reads effortlessly for hours.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Intermediate Step Visibility</strong></td>
+<td style="text-align: left;">Single-line algebraic display: numbers disappear the moment an operation or <code>=</code> is pressed; intermediate totals are hidden.</td>
+<td style="text-align: left;">Four visible shelves (<span class="arithmatex">\(T, Z, Y, X\)</span>): every operand and intermediate result remains in plain sight on the screen.</td>
+<td style="text-align: left;"><strong>Zero scratch paper required</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(Y \mid X\)</span> split screen displays both active number and waiting partner simultaneously.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Focus &amp; Classroom Distractions</strong></td>
+<td style="text-align: left;">Social media notifications, game badges, and web pop-ups interrupt mathematical working memory every 90 seconds.</td>
+<td style="text-align: left;">Zero Wi-Fi, zero radios, zero notifications. Dedicated tactile environment engineered for sustained mathematical focus.</td>
+<td style="text-align: left;"><strong>100% focused attention</strong></td>
+<td style="text-align: left;">Working memory dedicated entirely to problem solving and block patterns.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="13-why-the-calculator-is-dark-and-the-blocks-are-bright">1.3 Why the Calculator Is Dark and the Blocks Are Bright</h2>
+<p>Why is your calculator molded in dark Midnight Navy or Slate Gray, while your math blocks are bright white, radiant gold, and electric blue?</p>
+<p>Think about how an astronomer uses a telescope: the inside tube of the telescope is painted dark matte black so stray light doesn't bounce into your eyes, letting you focus clearly on the stars. The dark shell of your SC-6 creates a quiet, restful frame of deep focus around the display with zero glare.</p>
+<p>Your math blocks, on the other hand, are the stars! They are molded in bright archival white, warm amber, and vivid cobalt blue because blocks are meant to be touched, sorted, and counted! Your hands instinctively reach for the bright physical objects to build arrays, trains, and towers, while your eyes rest comfortably on the dark, glare-free calculator that records the results. The dark instrument and the luminous blocks form a natural visual team: the blocks are the physical stage, and the calculator is the quiet recording engine.</p>
+<div class="admonition note">
+<p class="admonition-title">For Parents &amp; Teachers: Color Discipline &amp; Physical Manipulatives</p>
+<p>
+To prevent cognitive confusion in young learners, the SC-6 establishes a strict material separation: all exterior handheld calculator chassis, bezels, and battery covers are molded exclusively from dark, impact-modified technical thermoplastics (Midnight Navy, Space Gray, and Technical Matte Black). White polymers are strictly quarantined to physical math manipulatives (84 mm Fraction Towers, Ten-Frame counters, and Planetary Clock gears) so students never confuse the calculating engine with the tactile math objects.
+</p>
+</div>
+
+<hr />
+<h2 id="14-built-like-a-tank-how-your-calculator-survives-the-classroom">1.4 Built Like a Tank: How Your Calculator Survives the Classroom</h2>
+<p>Classroom tools must endure energetic daily life: slipping off 30-inch classroom desks onto hard floors, tumbling in backpacks packed with heavy metal binders, and surviving custodial wipe-downs.</p>
+<p>The SC-6 is built around four physical principles of durability:</p>
+<h3 id="141-what-hides-inside-a-clicking-button">1.4.1 What Hides Inside a Clicking Button?</h3>
+<p>Beneath every keycap rests a tiny arch of spring-tempered stainless steel, shaped like a microscopic umbrella. When your finger pushes down on the dished keycap, the metal arch resists until you reach exactly 400 grams of downward force. At that precise instant, the dome buckles downward with a crisp, audible <em>snap</em>, bridging two gold-plated electrical contacts on the circuit board below.</p>
+<p>You feel that snap instantly in your fingertip and hear a gentle <em>click</em>. You never have to wonder, <em>Did the calculator hear me?</em> Your finger felt the number commit. As soon as you lift your finger, the steel arch springs back to its resting shape in less than two milliseconds, ready for your next number. This mechanical feedback completely eliminates the double-taps and skipped strokes common to flimsy rubber calculators.</p>
+<h3 id="142-why-your-screen-works-like-paper-instead-of-a-flashlight">1.4.2 Why Your Screen Works Like Paper Instead of a Flashlight</h3>
+<p>Most phone and tablet screens are like tiny lightbulbs: they shine bright electric light directly into your eyes, causing pupils to constrict and delicate eye muscles to tire after twenty minutes of homework.</p>
+<p>The SC-6 uses a transflective dot-matrix screen that produces zero light of its own (<span class="arithmatex">\(0.00\text{ mW/sr}\cdot\text{m}^2\)</span>). Instead, it operates just like the printed paper page of this book. Ambient daylight enters through the protective front glass, passes through the liquid crystal numerals, strikes a mirror-like reflector on the back wall of the screen, and bounces straight back out to your eyes. The brighter the classroom or the sunshine on the patio, the crisper and blacker the numbers appear! You can explore math for hours without a hint of optical strain.</p>
+<h3 id="143-the-sliding-15-desk-stand-built-in-easel">1.4.3 The Sliding 15° Desk Stand: Built-in Easel</h3>
+<p>Slide the protective cover downward off the front face of the calculator. Turn the calculator over and examine the back: two precision dovetail guide rails run along the outer edges of the chassis. Slide the cowl upward along those rails until a gentle snap locks it firmly in place.</p>
+<p>Set the instrument down on your desk. The SC-6 now tilts toward your eyes at an exact <span class="arithmatex">\(15^\circ\)</span> reading angle—just like a miniature drafting easel! Both of your hands remain completely free: your left hand can build a fraction tower or arrange counters in a ten-frame, while your right hand taps numbers into the stack. When math time concludes, slide the cowl off the back, slide it over the front glass display, and place the calculator into your backpack. The screen is armor-plated against metal binder rings, rulers, and compass points.</p>
+<h3 id="144-secret-white-bubbles-why-the-letters-never-rub-off">1.4.4 Secret White Bubbles: Why the Letters Never Rub Off</h3>
+<p>Traditional school calculators print their numbers and symbols with surface ink. Within a few months of daily math practice, your fingers wear off the numbers—leaving blank keys right when you need them most.</p>
+<p>The SC-6 completely eliminates surface ink. Instead, every number and symbol is permanently created <em>inside</em> the keycap using <strong>1064nm Infrared Laser Micro-Foaming</strong>:</p>
+<div class="admonition note">
+<p class="admonition-title">How Laser Micro-Foaming Works Inside the Keycap</p>
+<p>
+• <strong>Invisible Light, Below the Surface:</strong> A focused infrared laser passes harmlessly through the top protective skin of the keycap without burning or scratching the surface.<br>
+• <strong>Microscopic White Bubbles:</strong> Tiny mineral particles blended inside the polymer absorb that brief flash of warmth and expand into millions of microscopic, light-scattering gas bubbles sealed safely beneath the outer skin.<br>
+• <strong>Lifetime Classroom Legibility:</strong> Just as white seafoam looks bright white because tiny bubbles scatter light in every direction, those sealed micro-bubbles create a crisp chalk-white symbol (15.2:1 AAA contrast) that can never be scraped off, worn away by thumbs, or dissolved by classroom cleaning wipes.
+</p>
+</div>
+
+<p>Each keycap features a gentle <span class="arithmatex">\(0.8\text{ mm}\)</span> spherical concave dish in <code>SpaceMono-Bold</code> typography that naturally guides your fingertip toward the center of the key, tested to over 1,000,000 presses with zero fading.</p>
+<hr />
+<h2 id="15-instant-on-readiness-continuous-backpack-memory">1.5 Instant-On Readiness &amp; Continuous Backpack Memory</h2>
+<p>Beneath the tough thermoplastic shell, the SC-6 is engineered so you never wait for a booting screen and never lose your work:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Instrument Feature</th>
+<th style="text-align: left;">Classroom &amp; Backpack Advantage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Instant-On Readiness</strong></td>
+<td style="text-align: left;">Wakes from sleep in under <span class="arithmatex">\(5\text{ milliseconds}\)</span> the moment you press <code>[C]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Continuous Memory</strong></td>
+<td style="text-align: left;">Automatically preserves all stack numbers, registers, and quiz streaks when powered off</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Year-Long Power Reserve</strong></td>
+<td style="text-align: left;">A single CR2032 coin cell provides over <span class="arithmatex">\(350\text{ hours}\)</span> of active classroom discovery</td>
+</tr>
+</tbody>
+</table>
+<p>When the SC-6 turns off—either by pressing <code>[g] [OFF]</code> or after 3 minutes of quiet desk time—it saves every number on your stack (<span class="arithmatex">\(X, Y, Z, T\)</span>), your <code>LASTX</code> history, your statistical sums, and your math quiz streak into non-volatile memory. A problem started in class can be tucked into your backpack and resumed at the kitchen table after school without losing a single step.</p>
+<hr />
+<h2 id="16-meet-your-math-blocks-building-numbers-with-your-hands">1.6 Meet Your Math Blocks: Building Numbers with Your Hands</h2>
+<p>To make sure every number on the screen connects directly to something you can hold and explore, your StackCalc SC-6 comes with eight physical 3D-printed math block sets. Each set is molded in bright, durable colors that match the calculator's screen modes and number stack:</p>
+<h3 id="161-the-ten-frame-trays-flip-counters">1.6.1 The Ten-Frame Trays &amp; Flip Counters</h3>
+<ul>
+<li><strong>The Physical Tool:</strong> Two 5-pocket trays with ten two-color disc counters (coral red on one side, radiant gold on the other). Built-in scoops make it easy for your fingers to slide and flip counters.</li>
+<li><strong>How It Works with the SC-6:</strong> Tap <code>[▦]</code> to mirror your trays right on the screen! Register <span class="arithmatex">\(Y\)</span> shows the top tray, and Register <span class="arithmatex">\(X\)</span> shows the bottom tray. Flip counters to find friend pairs that make 10 (<span class="arithmatex">\(7 \text{ red} + 3 \text{ gold} = 10\)</span>). Tap <code>[+]</code>, and watch the counters group into a full ten with extras left over (<span class="arithmatex">\(7 + 5 = 12\)</span>) right on the stack!</li>
+</ul>
+<h3 id="162-the-four-color-counting-array-studio">1.6.2 The Four-Color Counting &amp; Array Studio</h3>
+<ul>
+<li><strong>The Physical Tool:</strong> 144 smooth-docking counting tiles in four colors: clean white, cobalt blue, radiant gold, and slate gray. Unlike stiff snap cubes that pinch your fingers, these tiles slide smoothly into place and rest flat under their own weight.</li>
+<li><strong>How It Works with the SC-6:</strong> Arrange tiles into rows and columns to build rectangular arrays for multiplication (<span class="arithmatex">\(4 \times 6 = 24\)</span>). Row count sits on Level <span class="arithmatex">\(Y\)</span>, column count sits on Level <span class="arithmatex">\(X\)</span>, and tapping <code>[×]</code> calculates the total tiles. Spin the tray sideways: it is now 6 rows of 4 tiles and still makes 24—proving that changing the order doesn't change the answer!</li>
+</ul>
+<h3 id="163-the-84-mm-fraction-towers-comparator-tray">1.6.3 The 84 mm Fraction Towers &amp; Comparator Tray</h3>
+<ul>
+<li><strong>The Physical Tool:</strong> A precision <span class="arithmatex">\(84.0\text{ mm}\)</span> master tower for the whole (<span class="arithmatex">\(1\)</span>), along with matching fraction pieces (<span class="arithmatex">\(1/2\)</span>, <span class="arithmatex">\(1/3\)</span>, <span class="arithmatex">\(1/4\)</span>, <span class="arithmatex">\(1/6\)</span>, <span class="arithmatex">\(1/8\)</span>, <span class="arithmatex">\(1/12\)</span>) and a side-by-side comparison tray.</li>
+<li><strong>Why Exactly 84 mm?</strong> Because 84 is a magical number for fractions: it divides cleanly by <span class="arithmatex">\(1, 2, 3, 4, 6, 7, 12, 14, 21, 28, \text{ and } 42\)</span>! That means every single fraction piece has an exact, clean height in millimeters (<span class="arithmatex">\(1/1 = 84\text{ mm}\)</span>, <span class="arithmatex">\(1/2 = 42\text{ mm}\)</span>, <span class="arithmatex">\(1/3 = 28\text{ mm}\)</span>, <span class="arithmatex">\(1/4 = 21\text{ mm}\)</span>, <span class="arithmatex">\(1/6 = 14\text{ mm}\)</span>, <span class="arithmatex">\(1/12 = 7\text{ mm}\)</span>) with zero uneven edges!</li>
+<li><strong>How It Works with the SC-6:</strong> Snap two <span class="arithmatex">\(1/4\)</span> towers together in the tray, and feel with your finger how their top edge matches the <span class="arithmatex">\(1/2\)</span> tower perfectly! On the calculator, type <code>. 2 . 4</code>, tap <code>[g] [SIMP]</code>, and watch the numbers shrink to <code>1/2</code> while your blocks stay locked flush in the tray.</li>
+</ul>
+<h3 id="164-the-prime-factor-studio-number-block-scale">1.6.4 The Prime Factor Studio &amp; Number Block Scale</h3>
+<ul>
+<li><strong>The Physical Tool:</strong> Secret puzzle blocks for prime numbers (<span class="arithmatex">\(2, 3, 5, 7, \dots\)</span>) whose heights scale so that stacking blocks multiplies their numbers together!</li>
+<li><strong>How It Works with the SC-6:</strong> Stacking block 2 on top of block 3 reaches the exact height of 6 on the back-wall scale! On the SC-6, type <code>60</code> and tap <code>[g] [FACT]</code> to watch the screen reveal its secret prime building blocks: <span class="arithmatex">\(2^2 \times 3 \times 5\)</span>.</li>
+</ul>
+<h3 id="165-the-planetary-geared-clock">1.6.5 The Planetary Geared Clock</h3>
+<ul>
+<li><strong>The Physical Tool:</strong> A real working clock with interlocking planetary gear teeth. When you turn the big minute hand with your thumb, the hour hand automatically glides at the exact real speed!</li>
+<li><strong>How It Works with the SC-6:</strong> Tap <code>[🕒]</code> to open the clock screen. Enter a start time and elapsed minutes, then tap <code>[+]</code>. The calculator moves hands on screen and calculates arrival times across 60-minute boundaries without getting mixed up!</li>
+</ul>
+<h3 id="166-the-polyhedral-dice-spinner-studio">1.6.6 The Polyhedral Dice &amp; Spinner Studio</h3>
+<ul>
+<li><strong>The Physical Tool:</strong> Precision gaming dice (<span class="arithmatex">\(d4, d6, d8, d10, d12, d20\)</span>) and a balanced spinning dial for classroom probability games.</li>
+<li><strong>How It Works with the SC-6:</strong> Roll dice across your desk to collect experimental data. Tap <code>[🎲]</code> to roll matching digital dice into Level <span class="arithmatex">\(X\)</span>, saving your rolls on levels <span class="arithmatex">\(Y, Z, T\)</span> to create live dot plots and frequency tables.</li>
+</ul>
+<h3 id="167-the-place-value-studio">1.6.7 The Place Value Studio</h3>
+<ul>
+<li><strong>The Physical Tool:</strong> Proportional base-10 unit blocks (<span class="arithmatex">\(1\)</span>), ten-sticks (<span class="arithmatex">\(10\)</span>), hundred-flats (<span class="arithmatex">\(100\)</span>), and thousand-cubes (<span class="arithmatex">\(1000\)</span>).</li>
+<li><strong>How It Works with the SC-6:</strong> Group unit blocks into tens and ten-sticks into hundreds. Tap <code>[PV]</code> to split any multi-digit number across the stack shelves, displaying expanded form (<span class="arithmatex">\(347 = 300 + 40 + 7\)</span>) with matching visual block counters!</li>
+</ul>
+<h3 id="168-the-number-rack-rekenrek">1.6.8 The Number Rack (Rekenrek)</h3>
+<ul>
+<li><strong>The Physical Tool:</strong> Two sturdy metal rails with ten sliding beads each, split into five red beads and five white beads.</li>
+<li><strong>How It Works with the SC-6:</strong> The top rail links to Level <span class="arithmatex">\(Y\)</span> and the bottom rail links to Level <span class="arithmatex">\(X\)</span>. Slide beads with your fingers to see groupings of 5 and 10 at a glance before doing arithmetic on the keypad.</li>
+</ul>
+<hr />
+<h2 id="17-taking-care-of-your-stack-calculator">1.7 Taking Care of Your Stack Calculator</h2>
+<h3 id="171-adjusting-screen-contrast">1.7.1 Adjusting Screen Contrast</h3>
+<p>If your daylight screen appears too faint in a cozy room or too dark under bright sunshine, you can tune it in seconds:
+1. Press <code>[g] [FLAGS]</code>.
+2. Press <code>[7]</code> for Display Contrast.
+3. Tap <code>[+]</code> to make numbers darker, or <code>[-]</code> to make the background lighter.
+4. Press <code>[ENTER]</code> to save your favorite setting!</p>
+<div class="admonition note">
+<p class="admonition-title">For Parents &amp; Teachers: Instrument Maintenance &amp; Diagnostic Checkpoints</p>
+
+**1. Battery Voltage &amp; Replacement:** When battery voltage drops below 2.65V, a low-battery outline flashes in the upper-right corner of the LCD. An adult should use a coin and small screwdriver to open the tool-secured rear hatch and install a fresh CR2032 coin cell with positive (+) terminal facing up. Stack values and quiz records are preserved in non-volatile EEPROM memory.
+
+**2. Complete Memory Reset (Factory Clean):** To clear all user registers, quiz history, and custom flags before an evaluation: hold `[C]` down firmly, tap `[g] [OFF]`, then release. The display flashes `"ALL REGISTERS RESET - FACTORY CLEAN"`.
+
+**3. Child-Resistant Battery Hatch Security (ANSI/UL 4200A):** The rear battery hatch utilizes a coin-slot bayonet mechanism with an internal safety detent requiring 15N inward force while rotating 45° counter-clockwise. Inspect annually to ensure the silicone O-ring seal is seated.
+</div>
+
+<div class="admonition warning">
+<p class="admonition-title">COIN CELL BATTERY INGESTION HAZARD (REESE'S LAW / 16 CFR PART 1263)</p>
+<p>
+This instrument operates on a <strong>CR2032 3.0V lithium coin cell battery</strong>. <strong>DEATH or serious injury can occur if ingested.</strong> A swallowed button or coin cell battery can cause <strong>Internal Chemical Burns in as little as 2 hours</strong>. <strong>KEEP new and used batteries OUT OF REACH of children.</strong> Battery replacement must be performed exclusively by an adult, ensuring the retention fastener is securely tightened. Seek immediate medical attention if a battery is suspected to be swallowed or inserted inside any part of the body (U.S. National Battery Ingestion Hotline: <strong>1-800-498-8666</strong>).
+</p>
+</div>
+
+<hr />
+<h2 id="18-what-to-do-if-you-get-stuck-troubleshooting-pathways">1.8 What to Do If You Get Stuck (Troubleshooting Pathways)</h2>
+<h3 id="181-screen-is-dark-or-blank">1.8.1 Screen Is Dark or Blank</h3>
+<ul>
+<li><strong>Check 1 (Sleep Mode):</strong> The SC-6 automatically goes to sleep after 3 minutes to save power. Tap <code>[C]</code> once—the screen wakes instantly in under 5 milliseconds!</li>
+<li><strong>Check 2 (Room Light):</strong> Remember, your daylight screen produces zero blue light and works by reflecting the light in your room. If the room is dark, turn on a lamp or move near a window.</li>
+<li><strong>Check 3 (Battery Check):</strong> If tapping <code>[C]</code> under bright light does not wake the screen, ask an adult to inspect the CR2032 coin cell battery.</li>
+</ul>
+<h3 id="182-returning-to-normal-numbers-from-a-sandbox-mode">1.8.2 Returning to Normal Numbers from a Sandbox Mode</h3>
+<p>If your screen is showing clock dials (<code>[🕒]</code>), ten-frames (<code>[▦]</code>), or number lines (<code>[f] [LINE]</code>), and you want standard numbers back, choose any of these three easy pathways:
+1. <strong>The Universal Clear Key:</strong> Tap <code>[C]</code> once or twice. When no digits are actively being typed, <code>[C]</code> instantly returns to Regular Number Mode (<code>[NUM]</code>).
+2. <strong>The Mode Toggle:</strong> Tap the active mode button again (if in <code>[▦]</code>, tap <code>[▦]</code> again).
+3. <strong>The Format Keys:</strong> Tap any number format key (<code>[g] [FIX]</code>, <code>[f] [ALL]</code>, or <code>[FDISP]</code>) to exit the visual tool immediately.</p>
+<hr />
+<h2 id="19-hands-on-studio-proof-your-first-math-discovery">1.9 Hands-On Studio Proof: Your First Math Discovery</h2>
+<div class="admonition tip">
+<p class="admonition-title">Hands-On Studio Proof: The Tactile Instrument &amp; The Manipulative Dock</p>
+<p>
+<strong>Step 1 (Physical Concrete Intuition):</strong> Take your 3D-printed Ten-Frame tray and counting tiles from your manipulative studio. Slide the SC-6 protective cowl off the front face and dock it into the dual bottom rails at the 15° classroom easel incline.<br>
+<strong>Step 2 (The Representational Bridge):</strong> Press <code>[C]</code> to wake the instrument. Feel the authoritative 400g snap-dome click under your thumb. The transflective screen instantly illuminates with zero blue light, displaying the clean horizontal <code>Y | X</code> operational baseline.<br>
+<strong>Step 3 (Scaling on the Calculator):</strong> Lay 5 counting tiles into the physical ten-frame tray. On the calculator keypad, type <code>5 [ENTER]</code>. Notice how the physical tiles resting on your desk mirror the number resting on the bottom floor of your StackCalc screen!
+</p>
+</div>
+
+<hr />
+<h2 id="110-story-driven-problem-expeditions-the-calculator-workshop-maker-bench">1.10 Story-Driven Problem Expeditions (The Calculator Workshop &amp; Maker Bench)</h2>
+<h3 id="1101-expedition-1-the-calculator-workshop-maker-bench-problems-1116">1.10.1 Expedition 1: The Calculator Workshop &amp; Maker Bench (Problems 1.1–1.6)</h3>
+<p><em>Mission Briefing:</em> Before heading out into the field with your manipulative studio, you step into the Maker Bench workshop. Here, engineers test battery reserves, calculate dot-matrix screen frame buffers, measure photometric contrast, verify stainless snap-dome tactile forces, design Gridfinity modular desktop footprints, and measure drafting easel angles. Using your StackCalc SC-6 and RPN stack math, you verify every physical parameter of your instrument.</p>
+<h4 id="problem-11-battery-reserve-life-on-the-kitchen-table">Problem 1.1: Battery Reserve Life on the Kitchen Table</h4>
+<ul>
+<li><strong>Workshop Mission:</strong> The SC-6 operates on a single CR2032 lithium coin cell with a nominal reserve capacity of <span class="arithmatex">\(225\text{ mAh}\)</span>. During an active school day, the calculator operates for 2 hours in active classroom calculation mode (consuming <span class="arithmatex">\(0.65\text{ mA}\)</span>) and spends 22 hours in low-power sleep mode (consuming <span class="arithmatex">\(0.0025\text{ mA}\)</span>). Calculate the total daily battery consumption in milliampere-hours, then calculate how many school days the calculator runs before requiring a fresh coin cell.</li>
+<li><strong>Manipulative Studio Connection:</strong> The rear tool-secured bayonet hatch protects the CR2032 coin cell, while non-volatile EEPROM memory safeguards all stack registers and quiz records across battery replacements.</li>
+<li><strong>Keystrokes:</strong> <code>0.65 [ENTER] 2 [×] 0.0025 [ENTER] 22 [×] [+] 225 [x⇄y] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>166.051660517</code></strong></li>
+<li><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong></li>
+<li><code>0.65</code> <code>[ENTER]</code> <code>2</code> <code>[×]</code> — Active daily power consumption: <span class="arithmatex">\(0.65\text{ mA} \times 2\text{ h} = 1.30\text{ mAh}\)</span>.</li>
+<li><code>0.0025</code> <code>[ENTER]</code> <code>22</code> <code>[×]</code> — Sleep standby power consumption: <span class="arithmatex">\(0.0025\text{ mA} \times 22\text{ h} = 0.055\text{ mAh}\)</span>.</li>
+<li><code>[+]</code> — Combine active and standby draw: <span class="arithmatex">\(1.30 + 0.055 = 1.355\text{ mAh/day}\)</span> daily consumption.</li>
+<li><code>225</code> <code>[x⇄y]</code> <code>[÷]</code> — Load the <span class="arithmatex">\(225\text{ mAh}\)</span> battery capacity and divide by daily consumption: <span class="arithmatex">\(225 \div 1.355 \approx 166.05\text{ school days}\)</span> (well over a full academic year!).</li>
+<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Operational Commentary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>0.65</code> [ENTER]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.6500\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.6500\)</span></td>
+<td style="text-align: left;">Active current draw (<span class="arithmatex">\(0.65\text{ mA}\)</span>) placed into Register <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2</code> [×]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3000\)</span></td>
+<td style="text-align: left;">Active daily draw: <span class="arithmatex">\(0.65 \times 2 = 1.30\text{ mAh}\)</span> in Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.0025</code> [ENTER]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0025\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0025\)</span></td>
+<td style="text-align: left;">Sleep standby current (<span class="arithmatex">\(0.0025\text{ mA}\)</span>) entered; active draw lifts to <span class="arithmatex">\(Z\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>22</code> [×]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0550\)</span></td>
+<td style="text-align: left;">Sleep draw: <span class="arithmatex">\(0.0025 \times 22 = 0.055\text{ mAh}\)</span> in <span class="arithmatex">\(X\)</span>; active draw drops to <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[+]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3550\)</span></td>
+<td style="text-align: left;">Sum daily consumption: <span class="arithmatex">\(1.30 + 0.055 = 1.355\text{ mAh/day}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>225</code> [x⇄y]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="arithmatex">\(225.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3550\)</span></td>
+<td style="text-align: left;">Enter <span class="arithmatex">\(225\text{ mAh}\)</span> total capacity and swap: 225 in <span class="arithmatex">\(Y\)</span>, daily draw in <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[÷]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="arithmatex">\(166.0517\)</span></td>
+<td style="text-align: left;">Divide total reserve by daily draw: <span class="arithmatex">\(\approx 166.05\text{ school days}\)</span> of power</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Diagnostic Check:</strong> Register <span class="arithmatex">\(X \approx 166.05\text{ days}\)</span>. A single coin cell powers the entire school year.</li>
+</ul>
+<hr />
+<h4 id="problem-12-screen-memory-dot-matrix-frame-buffer">Problem 1.2: Screen Memory (Dot-Matrix Frame Buffer)</h4>
+<ul>
+<li><strong>Workshop Mission:</strong> The transflective daylight LCD features a graphic dot-matrix resolution of 132 columns by 65 rows. Each pixel corresponds to one single memory bit in the microcontroller's display frame buffer (1 bit per pixel: black or clear). If 8 bits make 1 byte of memory, how many bytes of RAM are required to store a complete screen image?</li>
+<li><strong>Manipulative Studio Connection:</strong> The 8,580 individual display pixels render high-contrast vector ten-frames, number line jump arcs, and bold numbers without a power-hungry backlight.</li>
+<li><strong>Keystrokes:</strong> <code>132 [ENTER] 65 [×] 8 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>1072.5</code></strong></li>
+<li><strong>Narrative Stack Analysis:</strong><br />
+  Key <code>132 [ENTER] 65 [×]</code> to calculate the total pixel count: the stack multiplies the horizontal columns by vertical rows, placing <span class="arithmatex">\(8,580\text{ pixels}\)</span> in Register <span class="arithmatex">\(X\)</span>. Now key <code>8 [÷]</code> to pack bits into bytes: the display drops the stack, revealing exactly <strong><code>1072.5</code></strong> bytes (allocated as <span class="arithmatex">\(1,073\text{ bytes}\)</span> of continuous frame buffer memory) with <span class="arithmatex">\((T: 0, Z: 0, Y: 0, X: 1072.5)\)</span>.</li>
+</ul>
+<hr />
+<h4 id="problem-13-daylight-transflective-screen-contrast">Problem 1.3: Daylight Transflective Screen Contrast</h4>
+<ul>
+<li><strong>Workshop Mission:</strong> In optoelectronics quality assurance, screen readability is measured by the photometric contrast ratio: the luminance of the reflective background compared to the luminance of the black active liquid crystal segments. Under bright classroom ambient light (<span class="arithmatex">\(500\text{ lux}\)</span>), a calibrated photometer measures the white screen background at <span class="arithmatex">\(142.0\text{ cd/m}^2\)</span> and the activated black pixels at <span class="arithmatex">\(9.35\text{ cd/m}^2\)</span>. Calculate the contrast ratio and verify that it meets the AAA <span class="arithmatex">\(15:1\)</span> optical readability standard.</li>
+<li><strong>Manipulative Studio Connection:</strong> Just like dark ink on bright white paper, higher ambient room light increases screen contrast naturally without glare or eye strain.</li>
+<li><strong>Keystrokes:</strong> <code>142 [ENTER] 9.35 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>15.187165775</code></strong></li>
+<li><strong>Narrative Stack Analysis:</strong><br />
+  Key <code>142 [ENTER] 9.35 [÷]</code>: the stack lifts the white background luminance <span class="arithmatex">\(142.0\text{ cd/m}^2\)</span> to Register <span class="arithmatex">\(Y\)</span>, inputs the black segment luminance <span class="arithmatex">\(9.35\text{ cd/m}^2\)</span> into Register <span class="arithmatex">\(X\)</span>, and divides in a single stroke to yield a contrast ratio of <strong><code>15.19:1</code></strong> <span class="arithmatex">\((T: 0, Z: 0, Y: 0, X: 15.1872)\)</span>, successfully surpassing the rigorous 15:1 AAA standard!</li>
+</ul>
+<hr />
+<h4 id="problem-14-clicking-button-snap-dome-spring-rate">Problem 1.4: Clicking Button Snap-Dome Spring Rate</h4>
+<ul>
+<li><strong>Workshop Mission:</strong> The tactile snap-dome switches under every SC-6 keycap are engineered from spring-tempered stainless steel. To trigger a clean electrical contact, a key requires an actuation force of <span class="arithmatex">\(400.0\text{ grams}\)</span> over a tactile key travel distance of <span class="arithmatex">\(1.6\text{ mm}\)</span>. Calculate the mechanical spring rate <span class="arithmatex">\(k\)</span> in grams per millimeter (<span class="arithmatex">\(k = F \div \Delta x\)</span>).</li>
+<li><strong>Manipulative Studio Connection:</strong> The 400g snap force prevents accidental double-strokes while giving the child unmistakable tactile and audible confirmation that a digit has committed to the stack.</li>
+<li><strong>Keystrokes:</strong> <code>400 [ENTER] 1.6 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>250</code></strong></li>
+<li><strong>Narrative Stack Analysis:</strong><br />
+  Enter the actuation force and stroke distance: key <code>400 [ENTER] 1.6 [÷]</code>. Register <span class="arithmatex">\(Y\)</span> holds the <span class="arithmatex">\(400.0\text{ g}\)</span> downward load while Register <span class="arithmatex">\(X\)</span> takes the <span class="arithmatex">\(1.6\text{ mm}\)</span> travel. Tapping <code>[÷]</code> divides the quantities, leaving a spring rate of exactly <strong><code>250.0</code></strong> <span class="arithmatex">\(\text{g/mm}\)</span> <span class="arithmatex">\((T: 0, Z: 0, Y: 0, X: 250)\)</span>.</li>
+</ul>
+<hr />
+<h4 id="problem-15-manipulative-studio-gridfinity-footprint">Problem 1.5: Manipulative Studio Gridfinity Footprint</h4>
+<ul>
+<li><strong>Workshop Mission:</strong> On the maker bench, modular 3D-printed manipulative studio trays are organized using the standardized Gridfinity system (<span class="arithmatex">\(42\text{ mm}\)</span> grid units). A complete elementary desktop math station includes: 2 Ten-Frame Trays (<span class="arithmatex">\(2 \times 1\text{ units}\)</span> each), 1 Fraction Studio Well (<span class="arithmatex">\(3 \times 1\text{ units}\)</span>), and 1 Counting &amp; Array Box (<span class="arithmatex">\(3 \times 2\text{ units}\)</span>). Calculate the total Gridfinity base unit footprint area required on the student workbench.</li>
+<li><strong>Manipulative Studio Connection:</strong> Organizing blocks in modular Gridfinity trays keeps student desks orderly, prevents lost counters, and models area arithmetic through modular storage units.</li>
+<li><strong>Keystrokes:</strong> <code>2 [ENTER] 1 [×] 3 [ENTER] 1 [×] [+] 3 [ENTER] 2 [×] [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>11</code></strong></li>
+<li><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong></li>
+<li><code>2</code> <code>[ENTER]</code> <code>1</code> <code>[×]</code> — Ten-Frame footprint: <span class="arithmatex">\(2 \times 1 = 2\text{ units}\)</span> in Register <span class="arithmatex">\(X\)</span>.</li>
+<li><code>3</code> <code>[ENTER]</code> <code>1</code> <code>[×]</code> — Fraction Well footprint: <span class="arithmatex">\(3 \times 1 = 3\text{ units}\)</span> in Register <span class="arithmatex">\(X\)</span>; 2 units lift to <span class="arithmatex">\(Y\)</span>.</li>
+<li><code>[+]</code> — Combine the two storage trays: <span class="arithmatex">\(2 + 3 = 5\text{ units}\)</span> accumulated on the stack.</li>
+<li><code>3</code> <code>[ENTER]</code> <code>2</code> <code>[×]</code> — Counting box footprint: <span class="arithmatex">\(3 \times 2 = 6\text{ units}\)</span>; subtotal 5 lifts to <span class="arithmatex">\(Y\)</span>.</li>
+<li><code>[+]</code> — Add all tray footprints: <span class="arithmatex">\(5 + 6 = 11\text{ Gridfinity base units}\)</span> (total bench width <span class="arithmatex">\(= 11 \times 42\text{ mm} = 462\text{ mm}\)</span>).</li>
+<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Operational Commentary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>2</code> [ENTER]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Enter ten-frame tray length (2 units) into Register <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1</code> [×]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Ten-frame footprint: <span class="arithmatex">\(2 \times 1 = 2\text{ units}\)</span> in Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>3</code> [ENTER]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Footprint 2 lifts to <span class="arithmatex">\(Y\)</span>; enter fraction well length (3 units) into <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1</code> [×]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Fraction well footprint: <span class="arithmatex">\(3 \times 1 = 3\text{ units}\)</span> in Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[+]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Combine footprints: <span class="arithmatex">\(2 + 3 = 5\text{ units}\)</span> in Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>3</code> [ENTER]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Subtotal 5 lifts to <span class="arithmatex">\(Y\)</span>; enter counting box length (3 units) into <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2</code> [×]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Counting box footprint: <span class="arithmatex">\(3 \times 2 = 6\text{ units}\)</span> in Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[+]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Sum all footprints: <span class="arithmatex">\(5 + 6 = 11\text{ Gridfinity units}\)</span> (<span class="arithmatex">\(462\text{ mm}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Diagnostic Check:</strong> Register <span class="arithmatex">\(X = 11\)</span>. The entire manipulative studio docks into an 11-unit desktop footprint.</li>
+</ul>
+<hr />
+<h4 id="problem-16-desk-stand-incline-triangle">Problem 1.6: Desk Stand Incline Triangle</h4>
+<ul>
+<li><strong>Workshop Mission:</strong> The sliding protective cowl flips onto the rear chassis dovetails to form a <span class="arithmatex">\(15^\circ\)</span> reading easel. If the base depth of the resting calculator chassis is <span class="arithmatex">\(80.0\text{ mm}\)</span> along the tabletop, calculate the vertical elevation lift height <span class="arithmatex">\(h\)</span> of the top display edge above the desk (<span class="arithmatex">\(h = \text{base} \times \tan(15^\circ)\)</span>).</li>
+<li><strong>Manipulative Studio Connection:</strong> The <span class="arithmatex">\(15^\circ\)</span> reading angle aligns the transflective screen with overhead classroom lighting and prevents neck strain during long math explorations.</li>
+<li><strong>Keystrokes:</strong> <code>80</code> <code>[ENTER]</code> <code>15</code> <code>[TAN]</code> <code>[×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>21.435935394</code></strong></li>
+<li><strong>Narrative Stack Analysis:</strong><br />
+  Key <code>80 [ENTER] 15 [TAN] [×]</code>: the stack lifts the <span class="arithmatex">\(80.0\text{ mm}\)</span> base depth to Register <span class="arithmatex">\(Y\)</span>, computes <span class="arithmatex">\(\tan(15^\circ) \approx 0.2679\)</span> in Register <span class="arithmatex">\(X\)</span>, and multiplies to find a vertical elevation lift of <strong><code>21.44</code></strong> <span class="arithmatex">\(\text{mm}\)</span> <span class="arithmatex">\((T: 0, Z: 0, Y: 0, X: 21.4359)\)</span>, creating the ideal drafting incline on the student desk.</li>
+</ul>
+<hr />
+<h2 id="111-what-you-mastered-looking-ahead">1.11 What You Mastered &amp; Looking Ahead</h2>
+<p>Now that your desk studio is set up and your blocks are arranged in their trays, let's explore how Stack Math works in action—and see why stacking numbers beats parenthetical confusion every single time!</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/ecommerce.js"></script>
+      
+    
+  </body>
+</html>

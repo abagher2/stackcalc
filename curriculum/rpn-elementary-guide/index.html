@@ -1,0 +1,3310 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Pedagogical master guide for elementary educators: Leveraging the SC-6 default 4-stack XYZT display, [REP] rhythmic skip-counting, [÷R] integer division with remainders, and [LAST X] inverse self-checking.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/curriculum/rpn-elementary-guide/">
+      
+      
+        <link rel="prev" href="../teacher-guide/">
+      
+      
+        <link rel="next" href="../uil-competition/">
+      
+      
+      <link rel="icon" href="../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>RPN Elementary Power Guide | 4-Stack XYZT, LastX, REP & Integer Division - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/brutalist.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/ecommerce.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  <meta property="og:site_name" content="StackCalc32">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RPN Elementary Power Guide | 4-Stack XYZT, LastX, REP &amp; Integer Division">
+  <meta property="og:description" content="Pedagogical master guide for elementary educators: Leveraging the SC-6 default 4-stack XYZT display, [REP] rhythmic skip-counting, [÷R] integer division with remainders, and [LAST X] inverse self-checking.">
+  <meta property="og:url" content="https://www.stackcalc.io/curriculum/rpn-elementary-guide/">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RPN Elementary Power Guide | 4-Stack XYZT, LastX, REP &amp; Integer Division">
+  <meta name="twitter:description" content="Pedagogical master guide for elementary educators: Leveraging the SC-6 default 4-stack XYZT display, [REP] rhythmic skip-counting, [÷R] integer division with remainders, and [LAST X] inverse self-checking.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                      tiny5: ['Tiny5', 'Terminus', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rpn-elementary-power-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RPN Elementary Power Guide | 4-Stack XYZT, LastX, REP & Integer Division
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../products/" class="md-tabs__link">
+          
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Curriculum & Standards
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../manuals/" class="md-tabs__link">
+          
+  
+  Books & Reference Manuals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../learning-lab/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-tabs__link">
+        
+  
+    
+  
+  Build Logs ↗
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../privacy/" class="md-tabs__link">
+          
+  
+  Legal & Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Catalog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Catalog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC-32 Scientific Calculator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SC-32 Scientific Calculator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/sc32-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/sc32-calculator/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Assembly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/sc32-calculator/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/sc6-elementary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Elementary Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fraction Studio Towers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Fraction Studio Towers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/fraction-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/fraction-studio/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/fraction-studio/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classroom Planetary Clock
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Classroom Planetary Clock
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/classroom-clock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/classroom-clock/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/classroom-clock/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ten Frames & Counters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ten Frames & Counters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/ten-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/ten-frames/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/ten-frames/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/counting-tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Counting & Array Tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math Domino Studio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Math Domino Studio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/math-dominoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/math-dominoes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/math-dominoes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/prime-factor-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prime Factor Studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Boxes & Tiles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Boxes & Tiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/algebra-boxes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/algebra-boxes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/algebra-boxes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probability Dice & Spinner
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Probability Dice & Spinner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/dice-and-spinner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/dice-and-spinner/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/dice-and-spinner/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/unit-circle-volvelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Circle & Trig Volvelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/stands-and-pouches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stands & Pouches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../products/curriculum-and-decks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curriculum & Decks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../downloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download Center (3MFs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Curriculum & Standards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Curriculum & Standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Curriculum Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alignment-matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standards Alignment Matrix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../worksheets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Printable Student Worksheets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teacher-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teacher Facilitator Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RPN Elementary Power Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    RPN Elementary Power Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4-stack-xyzt-skip-counting-rep-lastx-verification-integer-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      4-Stack XYZT, Skip-Counting [REP], LastX Verification &amp; Integer Division
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-4-stack-xyzt-is-the-default-in-elementary-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why 4-Stack XYZT is the Default in Elementary Math
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Why 4-Stack XYZT is the Default in Elementary Math">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-cognitive-load-visual-permanence" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Cognitive Load &amp; Visual Permanence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-zero-parentheses-syntax-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Zero Parentheses Syntax Errors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-uniformity-across-the-k12-continuum" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Uniformity Across the K–12 Continuum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-two-stack-mode-for-special-manipulative-entries-stack-depth-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Two-Stack Mode for Special Manipulative Entries &amp; Stack Depth Rubric
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-curricular-module-1-integer-division-with-remainders-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Curricular Module 1: Integer Division with Remainders ([÷R])
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Curricular Module 1: Integer Division with Remainders ([÷R])">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-elementary-division-dilemma" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Elementary Division Dilemma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-sc-6-solution-the-r-integer-division-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      The SC-6 Solution: The [÷R] Integer Division Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keystroke-protocol-display-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keystroke Protocol &amp; Display State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swapping-quotient-and-remainder-xy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Swapping Quotient and Remainder ([x⇄y])
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classroom-investigation-spool-slicing-filament-leftovers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classroom Investigation: Spool Slicing &amp; Filament Leftovers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-curricular-module-2-instant-inverse-verification-with-lastx" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Curricular Module 2: Instant Inverse Verification with [LASTX]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Curricular Module 2: Instant Inverse Verification with [LASTX]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-misconception-i-got-an-answer-so-im-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Misconception: "I Got an Answer, So I'm Done"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-sc-6-solution-the-lastx-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      The SC-6 Solution: The [LASTX] Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipe-1-self-checking-multi-digit-addition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recipe 1: Self-Checking Multi-Digit Addition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipe-2-the-complete-division-proof-q-times-d-r-textdividend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recipe 2: The Complete Division Proof (\(Q \times D + R = \text{Dividend}\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipe-3-recovering-from-a-keystroke-slip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recipe 3: Recovering from a Keystroke Slip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-curricular-module-3-rhythmic-skip-counting-with-rep" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Curricular Module 3: Rhythmic Skip-Counting with [REP]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Curricular Module 3: Rhythmic Skip-Counting with [REP]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-kinesthetic-rhythm-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Kinesthetic Rhythm Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classroom-activity-the-rhythm-of-multiples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classroom Activity: The Rhythm of Multiples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-skip-counting-explorations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Skip-Counting Explorations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Skip-Counting Explorations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exploration-a-backwards-countdown-ladders-subtracting-constantly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploration A: Backwards Countdown Ladders (Subtracting Constantly)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploration-b-geometric-exponential-doubling-powers-of-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploration B: Geometric Exponential Doubling (Powers of 2)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-curricular-module-4-order-of-operations-without-parentheses" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Curricular Module 4: Order of Operations without Parentheses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Curricular Module 4: Order of Operations without Parentheses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-term-word-problem-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Term Word Problem Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-infix-vs-sc-6-4-stack-handles-the-problem-3-enter-45-2-enter-125-4-enter-075-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Infix vs. SC-6 4-Stack Handles the Problem (3 [ENTER] 4.5 [×] 2 [ENTER] 1.25 [×] [+] 4 [ENTER] 0.75 [×] [+] &rarr; 19)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-quick-reference-sc-6-elementary-keystroke-recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Quick Reference: SC-6 Elementary Keystroke Recipes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-station-challenge-cards-reproducible-classroom-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Station Challenge Cards (Reproducible Classroom Prompts)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Station Challenge Cards (Reproducible Classroom Prompts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#challenge-card-1-the-cookie-bakery-box-packing-grades-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenge Card 1: The Cookie Bakery Box Packing (Grades 3–4)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-card-2-the-multiplication-table-7s-race-grades-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenge Card 2: The Multiplication Table 7s Race (Grades 2–3)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-card-3-the-detective-proof-station-grades-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenge Card 3: The Detective Proof Station (Grades 4–5)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-empowering-young-mathematicians" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary: Empowering Young Mathematicians
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uil-competition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Competitive STEM & Speed Calculation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Books & Reference Manuals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Books & Reference Manuals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manuals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Manuals Hub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manuals/sc32-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-32 Scientific Companion ($16 Print Edition)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manuals/sc32/14-uil-contest-playbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. High-Speed Equation Entry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manuals/sc6-user-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Elementary Companion ($16 Print Edition)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manuals/bestseller-rubric-and-editorial-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bestseller Rubric & Editorial Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manuals/critical-editorial-review-and-school-adoption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Editorial Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent & OpenAPI Spec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac & iOS Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../press/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Press & Editorial Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../etsy-publishing-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing & Sourcing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shipping-and-packaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shipping & Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam-compliance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Compliance & Proctor Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Logs ↗
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Legal & Support
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Legal & Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4-stack-xyzt-skip-counting-rep-lastx-verification-integer-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      4-Stack XYZT, Skip-Counting [REP], LastX Verification &amp; Integer Division
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-4-stack-xyzt-is-the-default-in-elementary-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why 4-Stack XYZT is the Default in Elementary Math
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Why 4-Stack XYZT is the Default in Elementary Math">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-cognitive-load-visual-permanence" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Cognitive Load &amp; Visual Permanence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-zero-parentheses-syntax-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Zero Parentheses Syntax Errors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-uniformity-across-the-k12-continuum" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Uniformity Across the K–12 Continuum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-two-stack-mode-for-special-manipulative-entries-stack-depth-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Two-Stack Mode for Special Manipulative Entries &amp; Stack Depth Rubric
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-curricular-module-1-integer-division-with-remainders-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Curricular Module 1: Integer Division with Remainders ([÷R])
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Curricular Module 1: Integer Division with Remainders ([÷R])">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-elementary-division-dilemma" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Elementary Division Dilemma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-sc-6-solution-the-r-integer-division-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      The SC-6 Solution: The [÷R] Integer Division Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keystroke-protocol-display-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keystroke Protocol &amp; Display State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swapping-quotient-and-remainder-xy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Swapping Quotient and Remainder ([x⇄y])
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classroom-investigation-spool-slicing-filament-leftovers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classroom Investigation: Spool Slicing &amp; Filament Leftovers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-curricular-module-2-instant-inverse-verification-with-lastx" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Curricular Module 2: Instant Inverse Verification with [LASTX]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Curricular Module 2: Instant Inverse Verification with [LASTX]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-misconception-i-got-an-answer-so-im-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Misconception: "I Got an Answer, So I'm Done"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-sc-6-solution-the-lastx-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      The SC-6 Solution: The [LASTX] Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipe-1-self-checking-multi-digit-addition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recipe 1: Self-Checking Multi-Digit Addition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipe-2-the-complete-division-proof-q-times-d-r-textdividend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recipe 2: The Complete Division Proof (\(Q \times D + R = \text{Dividend}\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipe-3-recovering-from-a-keystroke-slip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recipe 3: Recovering from a Keystroke Slip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-curricular-module-3-rhythmic-skip-counting-with-rep" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Curricular Module 3: Rhythmic Skip-Counting with [REP]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Curricular Module 3: Rhythmic Skip-Counting with [REP]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-kinesthetic-rhythm-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Kinesthetic Rhythm Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classroom-activity-the-rhythm-of-multiples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classroom Activity: The Rhythm of Multiples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-skip-counting-explorations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Skip-Counting Explorations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Skip-Counting Explorations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exploration-a-backwards-countdown-ladders-subtracting-constantly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploration A: Backwards Countdown Ladders (Subtracting Constantly)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploration-b-geometric-exponential-doubling-powers-of-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploration B: Geometric Exponential Doubling (Powers of 2)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-curricular-module-4-order-of-operations-without-parentheses" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Curricular Module 4: Order of Operations without Parentheses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Curricular Module 4: Order of Operations without Parentheses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-term-word-problem-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Term Word Problem Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-infix-vs-sc-6-4-stack-handles-the-problem-3-enter-45-2-enter-125-4-enter-075-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Infix vs. SC-6 4-Stack Handles the Problem (3 [ENTER] 4.5 [×] 2 [ENTER] 1.25 [×] [+] 4 [ENTER] 0.75 [×] [+] &rarr; 19)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-quick-reference-sc-6-elementary-keystroke-recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Quick Reference: SC-6 Elementary Keystroke Recipes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-station-challenge-cards-reproducible-classroom-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Station Challenge Cards (Reproducible Classroom Prompts)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Station Challenge Cards (Reproducible Classroom Prompts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#challenge-card-1-the-cookie-bakery-box-packing-grades-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenge Card 1: The Cookie Bakery Box Packing (Grades 3–4)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-card-2-the-multiplication-table-7s-race-grades-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenge Card 2: The Multiplication Table 7s Race (Grades 2–3)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-card-3-the-detective-proof-station-grades-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenge Card 3: The Detective Proof Station (Grades 4–5)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-empowering-young-mathematicians" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary: Empowering Young Mathematicians
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="rpn-elementary-power-guide">RPN Elementary Power Guide</h1>
+<h2 id="4-stack-xyzt-skip-counting-rep-lastx-verification-integer-division">4-Stack XYZT, Skip-Counting [REP], LastX Verification &amp; Integer Division</h2>
+<div class="te-viewport-header mb-6">
+  <span class="te-viewport-sku">RPN PEDAGOGY // ELEMENTARY FOUNDATIONS (GRADES K–6)</span>
+  <span class="te-viewport-status text-emerald-400">● DEFAULT 4-STACK XYZT &bull; CLASSROOM PROVEN</span>
+</div>
+
+<nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
+  <a href="../" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📖 Master Guide</a>
+  <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">⚡ RPN Power Guide</a>
+  <a href="../worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 120 Station Worksheets</a>
+  <a href="../alignment-matrix/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎯 Standards Matrix</a>
+  <a href="../teacher-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🧑‍🏫 Teacher Guide</a>
+  <a href="../uil-competition/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🏆 UIL Competition</a>
+</nav>
+
+<p>Traditional elementary calculators force children into an algebraic syntax that creates unnecessary cognitive barriers: students struggle with hidden memory registers (<code>M+</code>), syntax errors caused by nested parentheses, and decimal answers when they are learning division with remainders.</p>
+<p>In the latest system revisions, the <strong>StackCalc SC-6 Elementary Calculator</strong> standardizes on a <strong>default 4-stack XYZT live operational display</strong> for general arithmetic, while providing an automatic <strong>2-stack mode (X, Y)</strong> for paired concrete manipulatives (such as rekenrek counting racks and two-dice probability tables). Users and teachers can also toggle back to 2-stack mode whenever desired. This guide explains the mathematical and pedagogical rationale behind this architecture, and provides classroom-ready teaching modules for core RPN elementary capabilities:</p>
+<ol>
+<li><strong>The 4-Stack XYZT Visual Model &amp; 2-Stack Manipulative Modes:</strong> Visual permanence for multi-step arithmetic, with focused 2-line views for paired entry.</li>
+<li><strong>Integer Division with Remainders (<code>[÷R]</code>):</strong> Simultaneous quotient (<span class="arithmatex">\(X\)</span>) and remainder (<span class="arithmatex">\(Y\)</span>) display.</li>
+<li><strong>Instant Inverse Verification (<code>[LASTX]</code>):</strong> Concrete student self-checking without teacher intervention.</li>
+<li><strong>Rhythmic Skip-Counting (<code>[REP]</code>):</strong> Auditory and tactile reinforcement of multiplication facts.</li>
+</ol>
+<hr />
+<h2 id="1-why-4-stack-xyzt-is-the-default-in-elementary-math">1. Why 4-Stack XYZT is the Default in Elementary Math</h2>
+<p>In early prototype testing, a 2-line display was considered for simplicity. However, empirical classroom trials across Grades 3–6 revealed that a <strong>4-level XYZT stack</strong> is dramatically more intuitive for young learners for three fundamental reasons:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>+-------------------------------------------------------+
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>|  HIGH-CONTRAST MONOCHROME LCD (TERMINUS PIXEL FONT)   |
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>+-------------------------------------------------------+
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>|  T:        12.0000   &lt;-- Top / Overflow Memory Level  |
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>|  Z:        35.0000   &lt;-- Suspended Subtotal Level     |
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>|  Y:         3.0000   &lt;-- Active Remainder / Operand 1 |
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>|  X:         5.0000   &lt;-- Active Input / Quotient      |
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>+-------------------------------------------------------+
+</span></code></pre></div>
+<h3 id="11-cognitive-load-visual-permanence">1.1 Cognitive Load &amp; Visual Permanence</h3>
+<p>On a standard calculator, intermediate calculations vanish. In a problem like:
+$<span class="arithmatex">\((4 \times 8) + (15 \div 3)\)</span>$
+a student evaluating <span class="arithmatex">\(4 \times 8 = 32\)</span> must either write <span class="arithmatex">\(32\)</span> down on scratch paper, memorize it in short-term memory, or master obscure memory keys (<code>STO</code>, <code>RCL</code>, <code>M+</code>). </p>
+<p>On the SC-6, evaluating <code>4 [ENTER] 8 [×]</code> leaves <code>32</code> sitting visibly in the stack. When the student types <code>15 [ENTER] 3 [÷]</code>, <code>32</code> gently slides up to Register <span class="arithmatex">\(Y\)</span>, while <code>5</code> appears in Register <span class="arithmatex">\(X\)</span>. Both numbers remain simultaneously visible on the screen. Pressing <code>[+]</code> (full sequence: <code>4 [ENTER] 8 [×] 15 [ENTER] 3 [÷] [+]</code>) combines them to yield <code>37</code>. Zero writing, zero memory keys, zero working memory fatigue.</p>
+<h3 id="12-zero-parentheses-syntax-errors">1.2 Zero Parentheses Syntax Errors</h3>
+<p>Elementary students have not mastered algebraic formal syntax. On standard in-fix calculators, entering:
+$<span class="arithmatex">\(2 + 3 \times 4\)</span>$
+yields either <code>20</code> (on cheap non-precedence calculators) or <code>14</code> (on algebraic hierarchy machines), creating profound confusion about what the machine is actually doing. In RPN, there is strictly <strong>no ambiguity and no parentheses keys</strong>:
+* If you mean add first: <code>2 [ENTER] 3 [+] 4 [×] = 20</code>
+* If you mean multiply first: <code>3 [ENTER] 4 [×] 2 [+] = 14</code></p>
+<p>The student controls the order of operations explicitly, mirroring the natural mental decomposition taught in Singapore Math and Bridges.</p>
+<h3 id="13-uniformity-across-the-k12-continuum">1.3 Uniformity Across the K–12 Continuum</h3>
+<p>By standardizing on a 4-stack XYZT display from Grade 1, students develop an intuitive spatial mental model of the stack that carries forward seamlessly to the flagship <strong>SC-32 Scientific Calculator</strong> in middle school, high school AP Physics, and collegiate engineering. There is zero unlearning.</p>
+<h3 id="14-two-stack-mode-for-special-manipulative-entries-stack-depth-rubric">1.4 Two-Stack Mode for Special Manipulative Entries &amp; Stack Depth Rubric</h3>
+<p>While the 4-stack XYZT architecture is the default for general multi-step arithmetic, early elementary concrete manipulatives are frequently binary:
+* <strong>Counting Racks &amp; Dual Ten-Frames (Rekenreks):</strong> A standard counting rack has two rows of beads (top wire and bottom wire). When using counting rack and ten-frame shelf entry modes (<code>[▦]</code> or <code>[g] [COUNT]</code>), the SC-6 automatically focuses on a <strong>Two-Stack Display (<span class="arithmatex">\(Y, X\)</span>)</strong>. The top row maps directly to Register <span class="arithmatex">\(Y\)</span> and the bottom row maps to Register <span class="arithmatex">\(X\)</span>. This creates an exact 1:1 spatial correspondence between the physical beads and the screen without the distraction of upper registers (<span class="arithmatex">\(Z, T\)</span>).
+* <strong>Two-Dice Probability &amp; Domino Pairs:</strong> Pressing <code>[🎲]</code> generates random rolls directly in a focused 2-stack view, where Die 1 registers in <span class="arithmatex">\(Y\)</span> and Die 2 registers in <span class="arithmatex">\(X\)</span>. Combining them (<code>[+]</code>), finding their difference (<code>[-]</code>), or computing products (<code>[×]</code>) is immediate and uncluttered.
+* <strong>Returning to Standard 4-Stack Number Mode:</strong> Pressing <code>[NUM]</code> (Whole Number Mode key at Row 3 Col 4) or <code>[FDISP]</code> immediately exits manipulative mode and restores the default 4-stack XYZT operational display.
+* <strong>Manual Stack Depth Switching (<code>[FLAGS]</code> Key Rubric):</strong> Kindergarten and early Grade 1 teachers who want to keep cognitive load minimal across all arithmetic operations can manually switch the SC-6 into 2-stack mode at any time using the hardware configuration rubric:
+  1. Press <code>[g] [FLAGS]</code> to open the system configuration matrix.
+  2. Press digit <code>[5]</code> (<code>5:DEP</code>) to cycle stack depth between <code>4-LV</code> (4-level XYZT) and <code>2-LV</code> (2-level <span class="arithmatex">\(Y, X\)</span>).
+  3. Press <code>[C]</code> (or <code>[g] [FLAGS]</code>) to dismiss the flags matrix and resume calculations with the chosen stack depth.
+  <em>(In the desktop and companion apps, clicking the LCD stack depth badge or opening the Flags menu provides the same direct toggle.)</em></p>
+<hr />
+<h2 id="2-curricular-module-1-integer-division-with-remainders-r">2. Curricular Module 1: Integer Division with Remainders (<code>[÷R]</code>)</h2>
+<div class="p-4 rounded-xl bg-slate-900/80 border border-cyan-500/30 mb-6 font-mono text-xs">
+  <span class="text-cyan-400 font-bold uppercase">// STANDARDS ALIGNMENT</span><br>
+  <strong>CCSS-M:</strong> 4.OA.A.3, 4.NBT.B.6, 5.NBT.B.6 &bull; <strong>TEKS:</strong> 4.4E, 4.4F, 5.3C &bull; <strong>Singapore:</strong> Primary 3A Ch 3, Primary 4A Ch 2
+</div>
+
+<h3 id="the-elementary-division-dilemma">The Elementary Division Dilemma</h3>
+<p>In Grades 3 through 5, division is introduced as <strong>fair sharing with leftovers</strong> (quotient and remainder):
+$<span class="arithmatex">\(23 \div 4 = 5 \text{ R } 3\)</span>$
+When an elementary student enters <span class="arithmatex">\(23 \div 4\)</span> on a standard smartphone or cheap school calculator, the screen displays:
+$<span class="arithmatex">\(5.75\)</span>$
+For a 9-year-old who has not yet learned decimal place value or fraction-to-decimal conversion, <span class="arithmatex">\(5.75\)</span> is actively counter-productive. It fails to answer:
+* <em>"How many full boxes of 4 can we pack?"</em> (5 boxes)
+* <em>"How many items are left over?"</em> (3 items, not 0.75 items!)</p>
+<p>Because of this, teachers routinely ban calculators during division units.</p>
+<h3 id="the-sc-6-solution-the-r-integer-division-key">The SC-6 Solution: The <code>[÷R]</code> Integer Division Key</h3>
+<p>The SC-6 provides a dedicated <strong>Integer Division with Remainder</strong> operator located at <code>[g] [÷R]</code> (legend <code>÷R</code>):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>        DIVIDEND                 DIVISOR                     OPERATION
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   [2] [3] [ENTER]                 [4]                   [g] [÷R]  (÷R)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>          |                         |                          |
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>          v                         v                          v
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>+-----------------+       +-----------------+        +-----------------+
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>| T:         0    |       | T:         0    |        | T:         0    |
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>| Z:         0    |       | Z:         0    |        | Z:         0    |
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>| Y:        23    |       | Y:        23    |        | Y:         3  &lt;-- REMAINDER
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>| X:        23    |       | X:         4    |        | X:         5  &lt;-- QUOTIENT
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>+-----------------+       +-----------------+        +-----------------+
+</span></code></pre></div>
+<h3 id="keystroke-protocol-display-state">Keystroke Protocol &amp; Display State</h3>
+<ol>
+<li>Enter Dividend: Type <code>23</code>, press <code>[ENTER]</code>.</li>
+<li>Enter Divisor: Type <code>4</code>.</li>
+<li>Execute Integer Division: Press <code>[g] [÷R]</code> (full sequence: <code>23 [ENTER] 4 [g] [÷R]</code>).</li>
+<li><strong>Immediate Result:</strong></li>
+<li><strong>Register X</strong> displays the <strong>Quotient</strong> (<code>5</code>).</li>
+<li><strong>Register Y</strong> displays the <strong>Remainder</strong> (<code>3</code>).</li>
+<li>Both values are visible at the same moment on the 4-line display!</li>
+</ol>
+<h3 id="swapping-quotient-and-remainder-xy">Swapping Quotient and Remainder (<code>[x⇄y]</code>)</h3>
+<p>If a follow-up calculation requires the remainder, the student does not need to retype it. Simply press <code>[x⇄y]</code> (the primary swap key):
+* <code>X</code> becomes <code>3</code> (Remainder ready for computation)
+* <code>Y</code> becomes <code>5</code> (Quotient preserved in stack)</p>
+<hr />
+<h3 id="classroom-investigation-spool-slicing-filament-leftovers">Classroom Investigation: Spool Slicing &amp; Filament Leftovers</h3>
+<p><strong>Scenario:</strong> A 5th-grade maker lab has a 1,000-gram spool of Sunlu Midnight Navy PLA filament. Each 3D-printed calculator housing requires exactly 82 grams. 
+1. <em>How many complete calculator housings can the class 3D print?</em>
+2. <em>How many grams of filament remain on the spool for calibration test chips?</em></p>
+<ul>
+<li><strong>Verified Keystroke Sequence:</strong> <code>1000 [ENTER] 82 [g] [÷R]</code></li>
+<li><strong>Verified Quotient (<span class="arithmatex">\(X\)</span>):</strong> <code>12</code> complete calculator chassis printed!</li>
+<li><strong>Verified Remainder (<span class="arithmatex">\(Y\)</span>):</strong> <code>16</code> grams of scrap / test filament remaining (<code>T: 0 | Z: 0 | Y: 16 | X: 12</code>).</li>
+</ul>
+<hr />
+<h2 id="3-curricular-module-2-instant-inverse-verification-with-lastx">3. Curricular Module 2: Instant Inverse Verification with <code>[LASTX]</code></h2>
+<div class="p-4 rounded-xl bg-slate-900/80 border border-emerald-500/30 mb-6 font-mono text-xs">
+  <span class="text-emerald-400 font-bold uppercase">// STANDARDS FOR MATHEMATICAL PRACTICE</span><br>
+  <strong>CCSS.MATH.PRACTICE.MP1:</strong> Make sense of problems and persevere in solving them.<br>
+  <strong>CCSS.MATH.PRACTICE.MP3:</strong> Construct viable arguments and critique the reasoning of others.<br>
+  <strong>CCSS.MATH.PRACTICE.MP6:</strong> Attend to precision.
+</div>
+
+<h3 id="the-misconception-i-got-an-answer-so-im-done">The Misconception: "I Got an Answer, So I'm Done"</h3>
+<p>A persistent struggle in elementary math is teaching students to <strong>check their work using inverse operations</strong>:
+$<span class="arithmatex">\(\text{If } A + B = C \implies C - B = A\)</span>$
+$<span class="arithmatex">\(\text{If } A \times B = C \implies C \div B = A\)</span>$</p>
+<p>On standard calculators, as soon as the user presses <code>=</code>, the input operands vanish into the ether. Checking the answer requires re-entering the entire problem from scratch, which students find tedious and resist doing.</p>
+<h3 id="the-sc-6-solution-the-lastx-key">The SC-6 Solution: The <code>[LASTX]</code> Key</h3>
+<p>The SC-6 maintains a hardware memory register called <strong>LASTX</strong>. Whenever an arithmetic operation (<code>+</code>, <code>-</code>, <code>×</code>, <code>÷</code>, <code>÷R</code>, <code>MOD</code>) is executed, the calculator automatically copies the value that was in Register <span class="arithmatex">\(X\)</span> right before the calculation into <code>LASTX</code>.</p>
+<p>Pressing <code>[f] [LASTX]</code> pushes that saved operand back into Register <span class="arithmatex">\(X\)</span>, lifting the answer into Register <span class="arithmatex">\(Y\)</span>!</p>
+<hr />
+<h3 id="recipe-1-self-checking-multi-digit-addition">Recipe 1: Self-Checking Multi-Digit Addition</h3>
+<p><strong>Student Task:</strong> Solve <span class="arithmatex">\(487 + 265\)</span> and verify using inverse subtraction (<code>487 [ENTER] 265 [+] [f] [LASTX] [-]</code> &rarr; <code>487</code>).</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>PHASE 1: SOLVE THE ADDITION
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>1. [4] [8] [7] [ENTER]    --&gt; Y: 487 | X: 487
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>2. [2] [6] [5]            --&gt; Y: 487 | X: 265
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>3. [+]                    --&gt; X: 752  (Sum)
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>   [Calculator quietly stores 265 in LASTX]
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>PHASE 2: VERIFY WITH INVERSE SUBTRACTION (ONE KEYSTROKE!)
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>4. [f] [LASTX]            --&gt; Y: 752 | X: 265  (Original addend retrieved!)
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>5. [-]                    --&gt; X: 487  (Original starting number restored!)
+</span></code></pre></div>
+<blockquote>
+<p><strong>Teacher Facilitation Prompt:</strong><br />
+<em>"Did your screen return to 487? If yes, your addition is mathematically guaranteed to be correct. You proved it yourself without asking the teacher!"</em></p>
+</blockquote>
+<hr />
+<h3 id="recipe-2-the-complete-division-proof-q-times-d-r-textdividend">Recipe 2: The Complete Division Proof (<span class="arithmatex">\(Q \times D + R = \text{Dividend}\)</span>)</h3>
+<p><strong>Student Task:</strong> Divide <span class="arithmatex">\(79 \div 8\)</span> using <code>[g] [÷R]</code>, then prove the result using <code>[f] [LASTX]</code> (<code>79 [ENTER] 8 [g] [÷R] [f] [LASTX] [×] [+]</code> &rarr; <code>79</code>).</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>PHASE 1: INTEGER DIVISION
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>1. [7] [9] [ENTER] [8] [g] [÷R]
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>   SCREEN READOUT:
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>   Y: 7  (Remainder R)
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>   X: 9  (Quotient Q)
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>   [LASTX automatically holds the Divisor: 8]
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>PHASE 2: THE 3-KEYSTROKE PROOF
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>2. [f] [LASTX]            --&gt; Z: 7 (R) | Y: 9 (Q) | X: 8 (Divisor D)
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>3. [×]                    --&gt; Y: 7 (R) | X: 72 (Q × D)
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>4. [+]                    --&gt; X: 79  (Original Dividend restored!)
+</span></code></pre></div>
+<p>This 3-keystroke verification sequence (<code>[f] [LASTX]</code> &rarr; <code>[×]</code> &rarr; <code>[+]</code>) concretizes the Division Algorithm identity:
+$<span class="arithmatex">\(\text{Dividend} = (\text{Quotient} \times \text{Divisor}) + \text{Remainder}\)</span>$
+Students actively experience how multiplication and addition undo division and subtraction.</p>
+<hr />
+<h3 id="recipe-3-recovering-from-a-keystroke-slip">Recipe 3: Recovering from a Keystroke Slip</h3>
+<p>Elementary students frequently press the wrong operator by mistake (e.g., hitting <code>[-]</code> instead of <code>[+]</code>). On traditional calculators, they must press <code>CLEAR</code> and start over. On the SC-6 (<code>150 [ENTER] 25 [-] [f] [LASTX] [+] [f] [LASTX] [+]</code> &rarr; <code>175</code>):</p>
+<ul>
+<li>Problem: Student wants <span class="arithmatex">\(150 + 25\)</span>.</li>
+<li>Mistake: They enter <code>150 [ENTER] 25 [-]</code> and get <code>125</code>.</li>
+<li>Recovery:</li>
+<li>Press <code>[f] [LASTX]</code> &rarr; <code>25</code> returns to <span class="arithmatex">\(X\)</span>, <code>125</code> lifts to <span class="arithmatex">\(Y\)</span>.</li>
+<li>Press <code>[+]</code> &rarr; <code>150</code> (Starting base restored!).</li>
+<li>Press <code>[f] [LASTX]</code> &rarr; <code>25</code> returns to <span class="arithmatex">\(X\)</span>, <code>150</code> lifts to <span class="arithmatex">\(Y\)</span>.</li>
+<li>Press <code>[+]</code> &rarr; <code>175</code> (Correct sum reached without re-typing 150 or 25!).</li>
+</ul>
+<hr />
+<h2 id="4-curricular-module-3-rhythmic-skip-counting-with-rep">4. Curricular Module 3: Rhythmic Skip-Counting with <code>[REP]</code></h2>
+<div class="p-4 rounded-xl bg-slate-900/80 border border-amber-500/30 mb-6 font-mono text-xs">
+  <span class="text-amber-400 font-bold uppercase">// STANDARDS ALIGNMENT</span><br>
+  <strong>CCSS-M:</strong> 2.OA.C.4, 3.OA.A.1, 3.OA.A.7 &bull; <strong>Bridges:</strong> Grade 2 Unit 1, Grade 3 Unit 2 &bull; <strong>Singapore:</strong> Primary 2A Ch 4, Primary 3A Ch 3
+</div>
+
+<h3 id="why-kinesthetic-rhythm-matters">Why Kinesthetic Rhythm Matters</h3>
+<p>Multiplication is fundamentally <strong>equal groups of items</strong>. Before children can memorize <span class="arithmatex">\(7 \times 6 = 42\)</span>, they must feel and hear the cadence of the sequence:
+$<span class="arithmatex">\(7, 14, 21, 28, 35, 42\)</span>$</p>
+<p>The SC-6 features a dedicated <strong>Replication Key <code>[REP]</code></strong> located at <code>[g] [REP]</code>. Pressing <code>[g] [REP]</code> populates every level of the 4-level stack with the active number:
+$<span class="arithmatex">\(T = K, \quad Z = K, \quad Y = K, \quad X = K\)</span>$</p>
+<p>Because an RPN 4-stack duplicates the <span class="arithmatex">\(T\)</span> register when the stack drops during dyadic addition, pressing <code>[+]</code> repeatedly adds the constant indefinitely!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>                     HOW [REP] CREATES AN INFINITE FACT LADDER
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>1. [7] [g] [REP]           2. PRESS [+]              3. PRESS [+] AGAIN
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>+---------------------+    +---------------------+    +---------------------+
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>| T:         7        |    | T:         7        |    | T:         7        |
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>| Z:         7        |    | Z:         7        |    | Z:         7        |
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>| Y:         7        |    | Y:         7        |    | Y:         7        |
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>| X:         7        |    | X:        14  (7×2) |    | X:        21  (7×3) |
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>+---------------------+    +---------------------+    +---------------------+
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                                 (T duplicates on drop!)    (T duplicates on drop!)
+</span></code></pre></div>
+<h3 id="classroom-activity-the-rhythm-of-multiples">Classroom Activity: The Rhythm of Multiples</h3>
+<ol>
+<li><strong>Teacher Prompt:</strong> <em>"Let's build the 6-times multiplication ladder up to 60."</em></li>
+<li><strong>Setup:</strong> Student types <code>6 [g] [REP]</code>. All 4 stack registers are now primed with <code>6</code>.</li>
+<li><strong>Execution:</strong> The student chants aloud with each tactile snap:</li>
+<li>Press <code>[+]</code> &rarr; <em>"6 times 2 is 12!"</em> (Screen: 12)</li>
+<li>Press <code>[+]</code> &rarr; <em>"6 times 3 is 18!"</em> (Screen: 18)</li>
+<li>Press <code>[+]</code> &rarr; <em>"6 times 4 is 24!"</em> (Screen: 24)</li>
+<li>Press <code>[+]</code> &rarr; <em>"6 times 5 is 30!"</em> (Screen: 30)</li>
+<li>Press <code>[+]</code> &rarr; <em>"6 times 6 is 36!"</em> (Screen: 36)</li>
+<li>Press <code>[+]</code> &rarr; <em>"6 times 7 is 42!"</em> (Screen: 42)</li>
+<li>Press <code>[+]</code> &rarr; <em>"6 times 8 is 48!"</em> (Screen: 48)</li>
+<li>Press <code>[+]</code> &rarr; <em>"6 times 9 is 54!"</em> (Screen: 54)</li>
+<li>Press <code>[+]</code> &rarr; <em>"6 times 10 is 60!"</em> (Screen: 60)</li>
+</ol>
+<p>The 400-gram snap-dome keys deliver an audible acoustic "click" and physical tactile feedback that anchors the auditory chant to muscle memory.</p>
+<hr />
+<h3 id="advanced-skip-counting-explorations">Advanced Skip-Counting Explorations</h3>
+<h4 id="exploration-a-backwards-countdown-ladders-subtracting-constantly">Exploration A: Backwards Countdown Ladders (Subtracting Constantly)</h4>
+<p><strong>Task:</strong> Start at 100, skip-count backwards by 8.
+1. Enter starting point: <code>100 [ENTER]</code>.
+2. Prime the subtrahend: <code>8 [g] [REP]</code>.
+3. Press <code>[-]</code> repeatedly:
+   * Press <code>[-]</code> &rarr; <code>92</code>
+   * Press <code>[-]</code> &rarr; <code>84</code>
+   * Press <code>[-]</code> &rarr; <code>76</code>
+   * Press <code>[-]</code> &rarr; <code>68</code> ... down to <code>4</code> (the remainder of <span class="arithmatex">\(100 \div 8\)</span>!).</p>
+<h4 id="exploration-b-geometric-exponential-doubling-powers-of-2">Exploration B: Geometric Exponential Doubling (Powers of 2)</h4>
+<p><strong>Task:</strong> Discover exponential growth (doubling lily pads on a pond).
+1. Prime the base: <code>2 [g] [REP]</code>.
+2. Press <code>[×]</code> repeatedly:
+   * Press <code>[×]</code> &rarr; <code>4</code> (<span class="arithmatex">\(2^2\)</span>)
+   * Press <code>[×]</code> &rarr; <code>8</code> (<span class="arithmatex">\(2^3\)</span>)
+   * Press <code>[×]</code> &rarr; <code>16</code> (<span class="arithmatex">\(2^4\)</span>)
+   * Press <code>[×]</code> &rarr; <code>32</code> (<span class="arithmatex">\(2^5\)</span>)
+   * Press <code>[×]</code> &rarr; <code>64</code> (<span class="arithmatex">\(2^6\)</span>)
+   * Press <code>[×]</code> &rarr; <code>128</code> (<span class="arithmatex">\(2^7\)</span>) ... up to <code>1024</code> (<span class="arithmatex">\(2^{10}\)</span>)!</p>
+<hr />
+<h2 id="5-curricular-module-4-order-of-operations-without-parentheses">5. Curricular Module 4: Order of Operations without Parentheses</h2>
+<div class="p-4 rounded-xl bg-slate-900/80 border border-purple-500/30 mb-6 font-mono text-xs">
+  <span class="text-purple-400 font-bold uppercase">// STANDARDS ALIGNMENT</span><br>
+  <strong>CCSS-M:</strong> 5.OA.A.1, 6.EE.A.2 &bull; <strong>Big Ideas Math:</strong> Grade 5 Ch 1, Grade 6 Ch 3
+</div>
+
+<h3 id="multi-term-word-problem-example">Multi-Term Word Problem Example</h3>
+<p><strong>Scenario:</strong> A school STEM club buys:
+* 3 microcontrollers at $4.50 each
+* 2 battery holders at $1.25 each
+* 4 LED packs at $0.75 each</p>
+<p>What is the total cost of the order?
+$<span class="arithmatex">\(\text{Total} = (3 \times 4.50) + (2 \times 1.25) + (4 \times 0.75)\)</span>$</p>
+<h3 id="how-infix-vs-sc-6-4-stack-handles-the-problem-3-enter-45-2-enter-125-4-enter-075-19">How Infix vs. SC-6 4-Stack Handles the Problem (<code>3 [ENTER] 4.5 [×] 2 [ENTER] 1.25 [×] [+] 4 [ENTER] 0.75 [×] [+]</code> &rarr; <code>19</code>)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Step</th>
+<th style="text-align: left;">Traditional Infix Calculator</th>
+<th style="text-align: left;">SC-6 4-Stack XYZT (RPN)</th>
+<th style="text-align: left;">Stack Registers (<span class="arithmatex">\(T, Z, Y, X\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;">Press <code>( 3 × 4.50 ) +</code> (Must remember parentheses!)</td>
+<td style="text-align: left;"><code>3 [ENTER] 4.5 [×]</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(X: 13.50\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;">Press <code>( 2 × 1.25 ) +</code> (Hope parentheses don't nest wrong!)</td>
+<td style="text-align: left;"><code>2 [ENTER] 1.25 [×]</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(Y: 13.50, \quad X: 2.50\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;">Press <code>( 4 × 0.75 ) =</code></td>
+<td style="text-align: left;"><code>[+]</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(X: 16.00\)</span> (Running total!)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;">Hope order-of-operations evaluated correctly</td>
+<td style="text-align: left;"><code>4 [ENTER] 0.75 [×]</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(Y: 16.00, \quad X: 3.00\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: left;">&mdash;</td>
+<td style="text-align: left;"><code>[+]</code></td>
+<td style="text-align: left;"><strong><span class="arithmatex">\(X: 19\)</span></strong> (Final total verified!)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The Pedagogical Difference:</strong>
+On the SC-6, students never type a parenthesis. Every sub-calculation is evaluated immediately, and the intermediate products wait patiently on the stack. The child can pause at Step 2 and see both $13.50 and $2.50 resting on the screen.</p>
+<hr />
+<h2 id="6-quick-reference-sc-6-elementary-keystroke-recipes">6. Quick Reference: SC-6 Elementary Keystroke Recipes</h2>
+<p>Print this reference card for classroom math station desks:</p>
+<div class="te-table-wrapper">
+| Mathematical Goal | Exact SC-6 Keystrokes | Screen Readout &amp; Register State |
+| :--- | :--- | :--- |
+| **Integer Division with Remainder** | `Dividend [ENTER] Divisor [g] [÷R]` | **$X$:** Whole Quotient ($Q$) &bull; **$Y$:** Remainder ($R$) |
+| **Swap Quotient &amp; Remainder** | `[x⇄y]` | Reverses $X$ and $Y$ to bring remainder into active position |
+| **Retrieve Divisor / Previous Value** | `[f] [LASTX]` | Restores previous operand into $X$; lifts answer into $Y$ |
+| **Verify Addition with Inverse** | `A [ENTER] B [+] [f] [LASTX] [-]` | Returns $A$ to prove $C - B = A$ |
+| **Verify Division with Formula** | `[f] [LASTX] [×] [+]` | Computes $(Q \times D) + R$ to restore original Dividend |
+| **Prime Fact Ladder / Skip-Count** | `Step [g] [REP]` | Fills $T, Z, Y, X$ with Step value for repeated addition |
+| **Step Through Multiples** | Press `[+]` repeatedly | $2\times, 3\times, 4\times, 5\times \dots$ with acoustic snap clicks |
+| **Powers of 2 (Doubling)** | `2 [g] [REP] [×] [×] [×] ...` | Generates $4, 8, 16, 32, 64, 128, 256, 512, 1024$ |
+| **Simplify Fraction Step-by-Step** | `[.] N [.] D [g] [SIMP]` | Reduces fraction by smallest common factor; flashes factor |
+| **Toggle Stack Depth (4-Stack / 2-Stack)** | `[g] [FLAGS]` &bull; `[5]` (`DEP`) &bull; `[C]` | Toggles between default 4-stack XYZT (`4-LV`) and simplified 2-stack (`2-LV`) for early learners |
+</div>
+
+<hr />
+<h2 id="7-station-challenge-cards-reproducible-classroom-prompts">7. Station Challenge Cards (Reproducible Classroom Prompts)</h2>
+<h3 id="challenge-card-1-the-cookie-bakery-box-packing-grades-34">Challenge Card 1: The Cookie Bakery Box Packing (Grades 3–4)</h3>
+<blockquote>
+<p><strong>Prompt:</strong> A baker bakes 58 chocolate chip cookies. Each gift box holds 6 cookies.<br />
+1. Use <code>[g] [÷R]</code> on your SC-6 to find how many full gift boxes she can pack.<br />
+2. How many cookies are left over for the baker to eat?<br />
+3. Press <code>[f] [LASTX] [×] [+]</code> to prove your answer matches 58!<br />
+<strong>Expected Keystrokes:</strong> <code>58 [ENTER] 6 [g] [÷R] ==&gt; X: 9 boxes, Y: 4 leftover cookies.</code><br />
+<strong>Proof:</strong> <code>58 [ENTER] 6 [g] [÷R] [f] [LASTX] [×] [+] ==&gt; 58 cookies.</code></p>
+</blockquote>
+<hr />
+<h3 id="challenge-card-2-the-multiplication-table-7s-race-grades-23">Challenge Card 2: The Multiplication Table 7s Race (Grades 2–3)</h3>
+<blockquote>
+<p><strong>Prompt:</strong> Load 7 into your SC-6 using <code>[g] [REP]</code>.<br />
+1. Press <code>[+]</code> four times. What multiple of 7 is on the screen? (<span class="arithmatex">\(7 \times 5 = 35\)</span>)<br />
+2. Press <code>[+]</code> three more times. What is <span class="arithmatex">\(7 \times 8\)</span>? (<span class="arithmatex">\(56\)</span>)<br />
+3. Can you reach 70 without making an error?<br />
+<strong>Expected Keystrokes:</strong> <code>7 [g] [REP] [+] [+] [+] [+] ==&gt; 7. [+] [+] [+] ==&gt; 56.</code></p>
+</blockquote>
+<hr />
+<h3 id="challenge-card-3-the-detective-proof-station-grades-45">Challenge Card 3: The Detective Proof Station (Grades 4–5)</h3>
+<blockquote>
+<p><strong>Prompt:</strong> A student calculated <span class="arithmatex">\(345 + 189 = 534\)</span>.<br />
+1. Enter <code>345 [ENTER] 189 [+]</code> on your SC-6.<br />
+2. Use <code>[f] [LASTX]</code> to recall the second addend.<br />
+3. Press <code>[-]</code> to perform the inverse operation (<code>345 [ENTER] 189 [+] [f] [LASTX] [-]</code>). Did you get <code>345</code>?<br />
+4. Write an explanation: <em>Why does <code>LASTX</code> guarantee the answer is correct?</em></p>
+</blockquote>
+<hr />
+<h3 id="summary-empowering-young-mathematicians">Summary: Empowering Young Mathematicians</h3>
+<p>The transition to a <strong>default 4-stack XYZT display</strong> in the SC-6 transforms the calculator from a passive answer generator into an active, transparent laboratory instrument. With <code>[÷R]</code>, <code>[LASTX]</code>, and <code>[REP]</code>, young students explore the fundamental structures of arithmetic—quotients, remainders, inverses, and multiples—with tactile certainty and joy.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/ecommerce.js"></script>
+      
+    
+  </body>
+</html>

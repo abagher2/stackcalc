@@ -1,0 +1,3189 @@
+/* ==========================================================================
+   STACKCALC ECOMMERCE & PRODUCT LISTING SYSTEM
+   Modern, elegant, high-conversion product pages & catalog
+   ========================================================================== */
+
+/* --- Container & Layout Resets for Ecommerce Pages --- */
+:root {
+  --te-orange: #FF4400;
+  --te-orange-hover: #FF5A1F;
+  --te-orange-glow: rgba(255, 68, 0, 0.25);
+  --te-cyan: #38BDF8;
+  --te-green: #10B981;
+  --te-bg-deep: #0A0C10;
+  --te-bg-card: #11141A;
+  --te-bg-card-hover: #161A22;
+  --te-bg-viewport: #0E1015;
+  --te-border-subtle: rgba(255, 255, 255, 0.08);
+  --te-border-medium: rgba(255, 255, 255, 0.14);
+  --te-border-active: #FF4400;
+  --te-text-primary: #FFFFFF;
+  --te-text-secondary: #CBD1DC;
+  --te-text-muted: #8E98A8;
+}
+
+/* ==========================================================================
+   TEENAGE ENGINEERING INDUSTRIAL DESIGN SYSTEM OVERRIDES
+   Global background, navigation bar, and studio aesthetics
+   ========================================================================== */
+
+/* 1. Global Background Reset: Completely eliminate the coarse 8px dot-matrix grid */
+html:has(.ecommerce-page),
+body:has(.ecommerce-page),
+body.ecommerce-mode,
+.md-container:has(.ecommerce-page),
+.md-main:has(.ecommerce-page),
+body.ecommerce-mode .md-container,
+body.ecommerce-mode .md-main {
+  background-color: #0A0C10 !important;
+  background-image: none !important;
+  background-size: auto !important;
+  color: #D1D5DB !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* 2. Teenage Engineering Global Header */
+body:has(.ecommerce-page) .md-header,
+body.ecommerce-mode .md-header {
+  background-color: rgba(10, 12, 16, 0.94) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+}
+
+body:has(.ecommerce-page) .md-header__title,
+body.ecommerce-mode .md-header__title {
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  font-size: 0.95rem !important;
+  color: #F3F4F6 !important;
+}
+
+body:has(.ecommerce-page) .md-header__button,
+body.ecommerce-mode .md-header__button {
+  color: #94A3B8 !important;
+  transition: color 0.15s ease !important;
+}
+
+body:has(.ecommerce-page) .md-header__button:hover,
+body.ecommerce-mode .md-header__button:hover {
+  color: #FFFFFF !important;
+}
+
+/* 3. Header Action Button: High-Precision Monospace Micro-Button */
+body:has(.ecommerce-page) .brutalist-button-header,
+body.ecommerce-mode .brutalist-button-header {
+  background-color: #FFFFFF !important;
+  color: #0A0C10 !important;
+  border: 1px solid #FFFFFF !important;
+  box-shadow: none !important;
+  border-radius: 4px !important;
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  padding: 5px 12px !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform: none !important;
+}
+
+body:has(.ecommerce-page) .brutalist-button-header:hover,
+body.ecommerce-mode .brutalist-button-header:hover {
+  background-color: var(--te-orange, #FF4400) !important;
+  border-color: var(--te-orange, #FF4400) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 16px rgba(255, 68, 0, 0.45) !important;
+  transform: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .brutalist-button-header,
+  body:has(.ecommerce-page) .brutalist-button-header,
+  body.ecommerce-mode .brutalist-button-header {
+    display: none !important;
+  }
+}
+
+/* 4. Teenage Engineering Navigation Tabs */
+body:has(.ecommerce-page) .md-tabs,
+body.ecommerce-mode .md-tabs {
+  background-color: #0C0E13 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+body:has(.ecommerce-page) .md-tabs__link,
+body.ecommerce-mode .md-tabs__link {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.74rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #8E98A8 !important;
+  border-bottom: 2px solid transparent !important;
+  transition: all 0.15s ease !important;
+  padding: 0.7rem 1rem !important;
+  opacity: 1 !important;
+}
+
+body:has(.ecommerce-page) .md-tabs__link:hover,
+body.ecommerce-mode .md-tabs__link:hover {
+  color: #FFFFFF !important;
+  border-bottom-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body:has(.ecommerce-page) .md-tabs__link--active,
+body.ecommerce-mode .md-tabs__link--active {
+  color: var(--te-cyan, #38BDF8) !important;
+  border-bottom: 2px solid var(--te-cyan, #38BDF8) !important;
+}
+
+/* 5. Minimalist Search Bar */
+body:has(.ecommerce-page) .md-search__inner,
+body.ecommerce-mode .md-search__inner {
+  background-color: #12151D !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 6px !important;
+}
+
+body:has(.ecommerce-page) .md-search__input,
+body.ecommerce-mode .md-search__input {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.825rem !important;
+  color: #E2E6EE !important;
+  background-color: transparent !important;
+}
+
+body:has(.ecommerce-page) .md-search__output,
+body.ecommerce-mode .md-search__output {
+  background-color: #0F1218 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75) !important;
+}
+
+/* 6. Footer Clean Reset */
+body:has(.ecommerce-page) .md-footer,
+body.ecommerce-mode .md-footer {
+  background-color: #08090C !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.ecommerce-page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #D1D5DB;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem 1rem;
+  overflow-x: clip;
+}
+
+/* Force container full width in MkDocs Material */
+.md-content:has(.ecommerce-page) .md-content__inner,
+body.ecommerce-mode .md-content__inner {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.md-main:has(.ecommerce-page) .md-grid,
+body.ecommerce-mode .md-main .md-grid {
+  max-width: 1320px !important;
+}
+
+/* Authentic brutalist monospace typography inside ecommerce pages */
+.ecommerce-page h1,
+.ecommerce-page h2,
+.ecommerce-page h3,
+.ecommerce-page h4,
+.ecommerce-page h5,
+.ecommerce-page h6 {
+  font-family: 'Space Mono', monospace !important;
+  text-transform: none !important;
+  letter-spacing: -0.02em !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  text-wrap: balance;
+}
+
+.ecommerce-page h1 {
+  font-size: 2.25rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  line-height: 1.2 !important;
+  margin: 0.5rem 0 0.75rem 0 !important;
+}
+
+@media (max-width: 768px) {
+  .ecommerce-page h1,
+  .ecommerce-page h1.ec-product-title {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    margin: 0 0 0.4rem 0 !important;
+  }
+}
+
+.ecommerce-page h2 {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: #F3F4F6 !important;
+  line-height: 1.3 !important;
+  margin: 2.5rem 0 1rem 0 !important;
+}
+
+.ecommerce-page h3 {
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  color: #E5E7EB !important;
+  line-height: 1.4 !important;
+  margin: 1.5rem 0 0.5rem 0 !important;
+}
+
+.ecommerce-page a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.ecommerce-page img {
+  border: none !important;
+}
+
+.ecommerce-page p {
+
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #9CA3AF;
+  text-wrap: pretty;
+  margin-bottom: 1rem;
+}
+
+/* --- Breadcrumbs --- */
+.ec-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+  color: #6B7280;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ec-breadcrumb a {
+  color: #9CA3AF !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease;
+}
+
+.ec-breadcrumb a:hover {
+  color: #38BDF8 !important;
+}
+
+.ec-breadcrumb-separator {
+  color: #4B5563;
+}
+
+.ec-breadcrumb-current {
+  color: #E5E7EB;
+  font-weight: 500;
+}
+
+/* --- Hero 2-Column Split (Product Image + Buy Box) --- */
+.ec-pdp-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 960px) {
+  .ec-pdp-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Left Column: Image Gallery */
+.ec-gallery {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 961px) {
+  .ec-gallery {
+    position: sticky;
+    top: 5.5rem;
+    align-self: start;
+  }
+}
+
+.ec-gallery-main {
+  background: radial-gradient(circle at 50% 50%, #1F242D 0%, #14161B 80%, #0E1013 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.ec-gallery-main img {
+  max-height: 360px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.75));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ec-gallery-main:hover img {
+  transform: scale(1.03);
+}
+
+.ec-gallery-badge-overlay {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 0.85rem;
+  z-index: 2;
+  position: static !important;
+}
+
+/* Zero Image Overlap Guarantee */
+.ec-gallery-badge-overlay,
+.ec-card-badge,
+.ec-gallery-main .ec-pill,
+.te-card-viewport .ec-pill,
+.ec-card-media .ec-pill {
+  position: static !important;
+  inset: auto !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+}
+
+.ec-gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .ec-gallery {
+    gap: 0.65rem;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .ec-gallery-main {
+    min-height: 240px;
+    padding: 1rem 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .ec-gallery-main img {
+    max-height: 210px;
+  }
+  .ec-gallery-thumbs {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
+    padding-bottom: 0.25rem;
+    scrollbar-width: none;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .ec-gallery-thumbs::-webkit-scrollbar {
+    display: none;
+  }
+  .ec-gallery-thumb {
+    flex: 0 0 54px;
+    height: 54px;
+    min-width: 54px;
+    scroll-snap-align: start;
+  }
+  .ec-breadcrumb {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.75rem;
+  }
+  .ec-pdp-hero {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .ec-buybox {
+    padding: 1.25rem 1rem !important;
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .ec-product-title {
+    order: 1;
+  }
+  .ec-buybox > .flex.items-center {
+    order: 2;
+  }
+  .ec-price-box {
+    order: 3;
+  }
+  .te-faceplate-section {
+    order: 4;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .ec-actions-row {
+    order: 5;
+    margin-top: 0.25rem !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .ec-btn-primary,
+  .ec-btn-secondary {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.82rem !important;
+    text-align: center !important;
+  }
+  .ec-trust-strip {
+    order: 6;
+    margin-bottom: 1.25rem !important;
+  }
+  .ec-short-summary {
+    order: 7;
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 1rem !important;
+  }
+  .ec-highlights-list {
+    order: 8;
+    padding: 0.85rem !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .ec-buybox > div[class*="items-center"],
+  .ec-buybox > .flex {
+    flex-wrap: wrap !important;
+    gap: 0.35rem 0.6rem !important;
+  }
+  .te-faceplate-header {
+    flex-wrap: wrap !important;
+    gap: 0.25rem !important;
+  }
+  .te-swatch-btn {
+    padding: 0.4rem 0.15rem !important;
+    gap: 0.25rem !important;
+  }
+  .te-swatch-name {
+    font-size: 0.56rem !important;
+    letter-spacing: -0.02em !important;
+    word-break: keep-all !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important;
+  }
+  .ec-buybox > .flex.flex-wrap {
+    order: 9;
+  }
+}
+
+.ec-gallery-thumb {
+  background: #12141A;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  padding: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ec-gallery-thumb:hover {
+  border-color: rgba(56, 189, 248, 0.6);
+  background: #181C24;
+  transform: translateY(-2px);
+}
+
+.ec-gallery-thumb.active {
+  border-color: #38BDF8 !important;
+  background: #172338 !important;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.45);
+}
+
+.ec-gallery-thumb img {
+  max-height: 52px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.ec-gallery-thumb:hover img {
+  transform: scale(1.08);
+}
+
+/* Tier / Edition Selector Cards */
+.ec-tier-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1.25rem;
+}
+
+.ec-tier-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+  width: 100%;
+}
+
+.ec-tier-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(56, 189, 248, 0.5);
+  transform: translateY(-1px);
+}
+
+.ec-tier-card.active {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: #38BDF8;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.2);
+}
+
+.ec-tier-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.ec-tier-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ec-tier-badge {
+  font-size: 0.65rem;
+  font-family: 'Space Mono', monospace;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ec-tier-badge-rec {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.ec-tier-badge-save {
+  background: rgba(52, 211, 153, 0.2);
+  color: #34D399;
+  border: 1px solid rgba(52, 211, 153, 0.4);
+}
+
+.ec-tier-sub {
+  font-size: 0.725rem;
+  color: #9CA3AF;
+}
+
+.ec-tier-pricing {
+  text-align: right;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+
+.ec-tier-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+/* Colorway Swatch Chips */
+.ec-swatches-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.ec-swatch-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.7rem;
+  background: #14171F;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #D1D5DB;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ec-swatch-chip:hover {
+  background: #1A1F2B;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.ec-swatch-chip.active {
+  background: #172338;
+  border-color: #38BDF8;
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+.ec-swatch-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.ec-swatch-dot-black {
+  background: #18181b;
+}
+
+.ec-swatch-dot-navy {
+  background: #0f172a;
+}
+
+.ec-swatch-dot-gray {
+  background: #4b5563;
+}
+
+.ec-swatch-dot-brown {
+  background: #3e2723;
+}
+
+
+/* Right Column: Buy Box & Product Info */
+.ec-buybox {
+  display: flex;
+  flex-direction: column;
+  background: #13151A;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.ec-pill-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.ec-pill {
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ec-pill-category {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.ec-pill-instock {
+  background: rgba(52, 211, 153, 0.12);
+  color: #34D399;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+.ec-pill-preorder {
+  background: rgba(251, 191, 36, 0.12);
+  color: #FBBF24;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+.ec-pill-free {
+  background: rgba(167, 139, 250, 0.12);
+  color: #A78BFA;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+}
+
+.ec-product-title {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  line-height: 1.25 !important;
+  margin: 0.25rem 0 0.5rem 0 !important;
+}
+
+@media (max-width: 768px) {
+  .ec-product-title {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    margin: 0 0 0.4rem 0 !important;
+  }
+}
+
+.ec-ratings-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #9CA3AF;
+  margin-bottom: 1.25rem;
+}
+
+.ec-stars {
+  color: #FBBF24;
+  letter-spacing: 0.1em;
+}
+
+.ec-ratings-count {
+  color: #6B7280;
+}
+
+/* Price Display Block */
+.ec-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  padding: 1rem 0;
+  margin-bottom: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+}
+
+.ec-price-current {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .ec-price-box {
+    padding: 0.65rem 0;
+    margin-bottom: 0.85rem;
+  }
+  .ec-price-current {
+    font-size: 1.55rem;
+  }
+}
+
+.ec-price-original {
+  font-size: 1.15rem;
+  color: #6B7280;
+  text-decoration: line-through;
+}
+
+.ec-shipping-note {
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: #34D399;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ec-short-summary {
+  font-size: 0.95rem;
+  color: #D1D5DB;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Key Specs at a Glance Pills / Checklist */
+.ec-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.ec-highlight-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  color: #D1D5DB;
+  line-height: 1.45;
+}
+
+.ec-highlight-icon {
+  color: #38BDF8;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Action Buttons */
+.ec-actions-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.ec-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  color: #0F1115 !important;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.875rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none !important;
+  border: 1px solid #FFFFFF;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.15);
+}
+
+.ec-btn-primary:hover {
+  background: #F3F4F6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+  color: #000000 !important;
+}
+
+.ec-btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #E5E7EB !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.ec-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+}
+
+/* Trust Badges Strip */
+.ec-trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ec-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.25rem;
+}
+
+.ec-trust-icon {
+  font-size: 1.15rem;
+}
+
+.ec-trust-text {
+  font-size: 0.725rem;
+  color: #9CA3AF;
+  line-height: 1.25;
+}
+
+/* --- Section Dividers & Tabs --- */
+.ec-section {
+  margin-top: 4rem;
+  margin-bottom: 3.5rem;
+}
+
+.ec-section-title {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.ec-section-subtitle {
+  font-size: 1rem;
+  color: #9CA3AF;
+  margin-bottom: 2rem;
+}
+
+/* Feature Cards Grid */
+.ec-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .ec-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ec-feature-card {
+  background: #13151A;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.ec-feature-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+}
+
+.ec-feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.12);
+  color: #38BDF8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.ec-feature-title {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.ec-feature-desc {
+  font-size: 0.875rem;
+  color: #9CA3AF;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Video Showcase Wrapper */
+.ec-video-wrapper {
+  background: #13151A;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+.ec-video-player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ec-video-player video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ec-video-caption {
+  font-size: 0.85rem;
+  color: #9CA3AF;
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Specifications Table */
+.ec-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #13151A;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.ec-spec-table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ec-spec-table tr:last-child {
+  border-bottom: none;
+}
+
+.ec-spec-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.ec-spec-k {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #9CA3AF;
+  width: 35%;
+}
+
+.ec-spec-v {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  color: #F3F4F6;
+  font-weight: 500;
+}
+
+/* What's In The Box List */
+.ec-box-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .ec-box-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ec-box-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  background: #13151A;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+}
+
+.ec-box-icon {
+  color: #38BDF8;
+  font-size: 1.1rem;
+}
+
+.ec-box-text {
+  font-size: 0.9rem;
+  color: #E5E7EB;
+  font-weight: 500;
+}
+
+/* Open Source & Maker Download Box */
+.ec-maker-box {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.06) 0%, rgba(13, 15, 20, 0.95) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.ec-maker-info {
+  max-width: 650px;
+}
+
+.ec-maker-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.ec-maker-desc {
+  font-size: 0.9rem;
+  color: #9CA3AF;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Discreet Ecosystem Blurb at Page Bottom */
+.ec-ecosystem-callout {
+  background: #111317;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .ec-ecosystem-callout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.ec-ecosystem-badge {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(56, 189, 248, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38BDF8;
+  font-size: 1.5rem;
+}
+
+.ec-ecosystem-title {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #E5E7EB !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.ec-ecosystem-desc {
+  font-size: 0.85rem;
+  color: #8E98A8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ec-ecosystem-link {
+  color: #38BDF8 !important;
+  text-decoration: none !important;
+  font-weight: 500;
+}
+
+.ec-ecosystem-link:hover {
+  text-decoration: underline !important;
+}
+
+/* ==========================================================================
+   TEENAGE ENGINEERING & TECHNICAL INDUSTRIAL E-COMMERCE DESIGN SYSTEM
+   Precision typography, mechanical segmented navigation, unobstructed media,
+   tactile faceplate swatches, and high-conversion eBay-style clarity.
+   ========================================================================== */
+
+/* --- Industrial Color Tokens & Micro-Typography --- */
+:root {
+  --te-orange: #FF4400;
+  --te-orange-hover: #FF5A1F;
+  --te-orange-glow: rgba(255, 68, 0, 0.25);
+  --te-cyan: #38BDF8;
+  --te-green: #10B981;
+  --te-bg-deep: #0C0E12;
+  --te-bg-card: #13161D;
+  --te-bg-card-hover: #171B24;
+  --te-bg-viewport: #0F1218;
+  --te-border-subtle: rgba(255, 255, 255, 0.08);
+  --te-border-medium: rgba(255, 255, 255, 0.14);
+  --te-border-active: #FF4400;
+  --te-text-primary: #FFFFFF;
+  --te-text-secondary: #CBD1DC;
+  --te-text-muted: #8E98A8;
+}
+
+/* --- Catalog Header --- */
+.ec-catalog-header,
+.te-catalog-header {
+  padding: 2.25rem 0 1.75rem 0;
+  border-bottom: 1px solid var(--te-border-medium);
+  margin-bottom: 2rem;
+}
+
+.te-header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--te-cyan);
+  margin-bottom: 0.65rem;
+}
+
+.te-header-meta-tag {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.ec-catalog-headline,
+.te-catalog-headline {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 2.35rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.15 !important;
+  margin: 0.35rem 0 0.85rem 0 !important;
+  text-wrap: balance;
+}
+
+.ec-catalog-subhead,
+.te-catalog-subhead {
+  font-size: 0.98rem;
+  color: var(--te-text-muted);
+  max-width: 740px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* --- eBay-Style Trust & Certification Status Strip --- */
+.te-trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  background: #0E1015;
+  border: 1px solid var(--te-border-subtle);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin-bottom: 1.75rem;
+}
+
+.te-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.te-trust-rating {
+  color: #FBBF24;
+  font-weight: 700;
+}
+
+.te-trust-link-etsy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #F1641E !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  padding: 3px 8px;
+  background: rgba(241, 100, 30, 0.12);
+  border: 1px solid rgba(241, 100, 30, 0.35);
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.te-trust-link-etsy:hover {
+  background: rgba(241, 100, 30, 0.25);
+  border-color: #F1641E;
+}
+
+/* --- Teenage Engineering Mechanical Segmented Filter Bar --- */
+.ec-filter-nav,
+.te-filter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0.35rem;
+  background: #0B0D11;
+  border: 1px solid var(--te-border-medium);
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.ec-filter-btn,
+.te-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.85rem;
+  border-radius: 5px;
+  background: #14171E;
+  color: var(--te-text-secondary) !important;
+  border: 1px solid var(--te-border-subtle);
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.te-btn-idx {
+  color: var(--te-orange);
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+.te-btn-count {
+  font-size: 0.68rem;
+  color: var(--te-text-muted);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.ec-filter-btn:hover,
+.te-filter-btn:hover {
+  background: #1D222C;
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF !important;
+}
+
+.ec-filter-btn.active,
+.te-filter-btn.active {
+  background: #FFFFFF !important;
+  color: #0C0E12 !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.ec-filter-btn.active .te-btn-idx,
+.te-filter-btn.active .te-btn-idx {
+  color: var(--te-orange) !important;
+}
+
+.ec-filter-btn.active .te-btn-count,
+.te-filter-btn.active .te-btn-count {
+  background: rgba(0, 0, 0, 0.12) !important;
+  color: #0C0E12 !important;
+}
+
+/* --- Section Section Header Bars --- */
+.ec-catalog-section-bar,
+.te-section-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--te-border-medium);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ec-catalog-section-heading,
+.te-section-title {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 !important;
+}
+
+.te-section-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.74rem;
+  color: var(--te-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ==========================================================================
+   FEATURED HARDWARE SPOTLIGHT (TEENAGE ENGINEERING STYLE SHOWCASE)
+   ========================================================================== */
+.ec-spotlight-card,
+.te-spotlight-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: var(--te-bg-card);
+  border: 1px solid var(--te-border-medium);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.7);
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+@media (max-width: 980px) {
+  .ec-spotlight-card,
+  .te-spotlight-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Spotlight Left Column: Unobstructed Viewport + Faceplate Matrix */
+.te-spotlight-left {
+  background: #0E1116;
+  border-right: 1px solid var(--te-border-subtle);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 980px) {
+  .te-spotlight-left {
+    border-right: none;
+    border-bottom: 1px solid var(--te-border-subtle);
+  }
+}
+
+/* Header bar strictly ABOVE the image (Never on top of it!) */
+.te-viewport-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--te-border-subtle);
+  margin-bottom: 1rem;
+}
+
+.te-viewport-sku {
+  color: var(--te-cyan);
+  font-weight: 700;
+}
+
+.te-viewport-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--te-green);
+  font-weight: 600;
+}
+
+/* Clean Unobstructed Media Viewport */
+.ec-spotlight-media,
+.te-spotlight-viewport {
+  background: radial-gradient(circle at 50% 50%, #191D26 0%, #101217 75%, #0B0D11 100%);
+  border: 1px solid var(--te-border-subtle);
+  border-radius: 10px;
+  padding: 1.5rem;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ec-spotlight-media img,
+.te-spotlight-viewport img {
+  max-height: 310px;
+  max-width: 92%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.85));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.te-spotlight-card:hover .te-spotlight-viewport img {
+  transform: scale(1.02);
+}
+
+/* TACTILE HARDWARE FACEPLATE SWATCH MATRIX */
+.te-faceplate-section {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--te-border-subtle);
+}
+
+.te-faceplate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--te-text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.te-faceplate-label {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.te-swatches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+}
+
+/* Card Inline Mini-Swatches */
+.te-card-swatches {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.6rem 1.25rem 0 1.25rem;
+}
+
+.te-card-swatches-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--te-text-muted);
+  text-transform: uppercase;
+  margin-right: 2px;
+}
+
+.te-card-swatch-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  display: inline-block;
+}
+
+.te-card-swatch-dot:hover,
+.te-card-swatch-dot.active {
+  transform: scale(1.3);
+  border-color: #FFFFFF;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.te-swatch-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.25rem;
+  background: #13161C;
+  border: 1px solid var(--te-border-subtle);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.te-swatch-btn:hover {
+  background: #1B1F27;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.te-swatch-btn.active {
+  background: #1E232E;
+  border-color: var(--te-orange);
+  box-shadow: 0 0 0 1px var(--te-orange);
+}
+
+.te-swatch-chip {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 2px 5px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Canonical Hardware Finishes from render_blender_hardware.py */
+.chip-stealth {
+  background: #121316;
+  border: 2px solid #0F62FE; /* Azure key accent */
+}
+
+.chip-retro {
+  background: #F5F4F0; /* Ivory / Polar White PLA */
+  border: 2px solid #8C6239; /* Antique bronze foil */
+}
+
+.chip-voyager {
+  background: linear-gradient(135deg, rgba(234, 234, 234, 0.85) 0%, #0B1528 100%);
+  border: 2px solid #38BDF8;
+}
+
+.chip-supernova {
+  background: linear-gradient(135deg, #BC2726 0%, #C49449 60%, #FFEA9F 100%);
+  border: 1px solid #FFEA9F;
+}
+
+.chip-deepspace {
+  background: linear-gradient(135deg, #685BC7 0%, #1DAA27 50%, #1729AB 100%);
+  border: 1px solid #685BC7;
+}
+
+.chip-synthwave {
+  background: linear-gradient(135deg, #685BC7 0%, #3E125C 70%, #1D1C1B 100%);
+  border: 1px solid #685BC7;
+}
+
+.chip-arcade {
+  background: linear-gradient(135deg, #BC2726 0%, #1729AB 60%, #4DA8FF 100%);
+  border: 1px solid #4DA8FF;
+}
+
+.chip-clearlab {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, #181A1B 100%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.te-swatch-name {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--te-text-secondary);
+  text-align: center;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* CMF Dynamic Readout Box */
+.te-cmf-readout {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  background: #090B0E;
+  border: 1px solid var(--te-border-subtle);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  color: var(--te-text-muted);
+  line-height: 1.4;
+}
+
+.te-cmf-readout strong {
+  color: #FFFFFF;
+}
+
+/* Thumbnails Strip */
+.te-spotlight-thumbs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.te-thumb-item {
+  height: 48px;
+  background: #11141A;
+  border: 1px solid var(--te-border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  transition: all 0.15s ease;
+}
+
+.te-thumb-item img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.te-thumb-item:hover,
+.te-thumb-item.active {
+  border-color: var(--te-cyan);
+  background: #181D26;
+}
+
+/* Spotlight Right Column: Specs & Buy Box */
+.ec-spotlight-info,
+.te-spotlight-right {
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--te-bg-card);
+}
+
+.te-product-id {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.74rem;
+  color: var(--te-orange);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.te-spotlight-title {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 1.85rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.2 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.te-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.te-rating-stars {
+  color: #FBBF24;
+}
+
+.te-rating-val {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.te-rating-tag {
+  color: var(--te-cyan);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  margin-left: 0.5rem;
+}
+
+/* Teenage Engineering Technical Field Spec Grid */
+.te-field-specs {
+  border: 1px solid var(--te-border-subtle);
+  border-radius: 6px;
+  background: #0B0D11;
+  margin: 1.25rem 0;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.te-spec-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  padding: 0.55rem 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.te-spec-row:last-child {
+  border-bottom: none;
+}
+
+.te-spec-key {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--te-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.te-spec-val {
+  color: var(--te-text-secondary);
+  font-weight: 500;
+}
+
+.te-price-tier-box {
+  background: #0E1015;
+  border: 1px solid var(--te-border-subtle);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.te-price-headline {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.te-price-main {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.te-price-note {
+  font-size: 0.8rem;
+  color: var(--te-green);
+  font-weight: 600;
+}
+
+.te-tier-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--te-text-muted);
+}
+
+.te-tier-opt {
+  padding: 0.4rem 0.5rem;
+  background: #14171E;
+  border: 1px solid var(--te-border-subtle);
+  border-radius: 4px;
+}
+
+.te-tier-opt strong {
+  display: block;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+}
+
+/* Action Buttons (Teenage Engineering High-Contrast) */
+.te-actions-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.te-btn-primary {
+  flex: 1 1 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  color: #0C0E12 !important;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  border: 1px solid #FFFFFF;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.te-btn-primary:hover {
+  background: var(--te-orange);
+  border-color: var(--te-orange);
+  color: #FFFFFF !important;
+}
+
+.te-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: #14171E;
+  color: #F1641E !important;
+  border: 1px solid rgba(241, 100, 30, 0.5);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.15rem;
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+}
+
+.te-btn-secondary:hover {
+  background: rgba(241, 100, 30, 0.15);
+  border-color: #F1641E;
+}
+
+/* ==========================================================================
+   PRODUCT CARDS GRID (TEENAGE ENGINEERING INDUSTRIAL SPEC CARDS)
+   ========================================================================== */
+.ec-grid-3,
+.te-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 1060px) {
+  .ec-grid-3,
+  .te-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .ec-grid-3,
+  .te-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Container */
+.ec-card,
+.te-card {
+  background: var(--te-bg-card);
+  border: 1px solid var(--te-border-medium);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+
+.ec-card:hover,
+.te-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* 1. Header Bar: Strictly ABOVE the Image (NO PILLS OVER IMAGES!) */
+.te-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  background: #0E1015;
+  border-bottom: 1px solid var(--te-border-subtle);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.te-card-sku {
+  color: var(--te-cyan);
+  font-weight: 700;
+}
+
+.te-card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+.status-instock {
+  color: var(--te-green);
+}
+
+.status-preorder {
+  color: #FBBF24;
+}
+
+.status-free {
+  color: #38BDF8;
+}
+
+/* Legacy pill fallback: moves out of absolute overlay */
+.ec-card-pill-overlay {
+  position: static !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0.65rem 1rem !important;
+  background: #0E1015 !important;
+  border-bottom: 1px solid var(--te-border-subtle) !important;
+}
+
+/* 2. Media Viewport: Completely Unobstructed, Uniform Aspect Ratio */
+.ec-card-media,
+.te-card-viewport {
+  background: radial-gradient(circle at 50% 50%, #1A1E26 0%, #111318 80%, #0C0D11 100%);
+  aspect-ratio: 4 / 3;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  position: relative;
+  border-bottom: 1px solid var(--te-border-subtle);
+  overflow: hidden;
+}
+
+.ec-card-media a,
+.te-card-viewport a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.ec-card-media img,
+.te-card-viewport img {
+  max-height: 190px;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.75));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ec-card:hover .ec-card-media img,
+.te-card:hover .te-card-viewport img {
+  transform: scale(1.04);
+}
+
+/* 3. Micro-Spec Hardware Readout Strip */
+.te-card-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #0A0C10;
+  border-bottom: 1px solid var(--te-border-subtle);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  text-align: center;
+  padding: 0.35rem 0.5rem;
+  color: var(--te-text-muted);
+}
+
+.te-card-spec-item {
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.te-card-spec-item:last-child {
+  border-right: none;
+}
+
+/* 4. Card Content Body */
+.ec-card-content,
+.te-card-body {
+  padding: 1.25rem 1.25rem 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ec-card-category,
+.te-card-category {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--te-cyan);
+  margin-bottom: 0.35rem;
+}
+
+.ec-card-title,
+.te-card-title {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  line-height: 1.3 !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.ec-card-title a,
+.te-card-title a {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease;
+}
+
+.ec-card-title a:hover,
+.te-card-title a:hover {
+  color: var(--te-cyan) !important;
+}
+
+.ec-card-desc,
+.te-card-desc {
+  font-size: 0.85rem;
+  color: var(--te-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* 5. Card Footer: Pricing & Action */
+.ec-card-bottom,
+.te-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid var(--te-border-subtle);
+  background: #0E1015;
+}
+
+.ec-card-price,
+.te-card-price {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.te-card-shipping-tag {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--te-green);
+  font-weight: 500;
+}
+
+.ec-card-btn,
+.te-card-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.95rem;
+  border-radius: 5px;
+  background: #FFFFFF;
+  color: #0C0E12 !important;
+  text-decoration: none !important;
+  border: 1px solid #FFFFFF;
+  transition: all 0.15s ease;
+}
+
+.ec-card-btn:hover,
+.te-card-btn:hover {
+  background: var(--te-orange);
+  border-color: var(--te-orange);
+  color: #FFFFFF !important;
+}
+
+.te-card-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.te-btn-etsy-sm {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.45rem 0.75rem;
+  border-radius: 5px;
+  background: #FF4400;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  border: 1px solid #FF4400;
+  transition: all 0.15s ease;
+}
+.te-btn-etsy-sm:hover {
+  background: #FF5A1F;
+  border-color: #FF5A1F;
+}
+.te-btn-stl-sm {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.45rem 0.65rem;
+  border-radius: 5px;
+  background: rgba(16, 185, 129, 0.15);
+  color: #10B981 !important;
+  text-decoration: none !important;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  transition: all 0.15s ease;
+}
+.te-btn-stl-sm:hover {
+  background: #10B981;
+  color: #080B10 !important;
+}
+
+/* ==========================================================================
+   WORKBOOK LAB SHEETS & TEACHER'S MANUAL REPRODUCTIONS
+   ========================================================================== */
+.workbook-lab-container {
+  background: #0D1117;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  margin: 2rem 0;
+}
+
+.workbook-spine-punches {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  background: rgba(0, 0, 0, 0.4);
+  border-right: 1px dashed rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.workbook-ring-hole {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #0A0C10;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.workbook-body {
+  padding: 2rem 2rem 2rem 3rem;
+}
+
+.workbook-header {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.workbook-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: #94A3B8;
+}
+
+.workbook-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.workbook-objective {
+  font-size: 0.88rem;
+  color: #CBD5E1;
+  line-height: 1.5;
+  margin: 0.5rem 0 0 0;
+}
+
+.workbook-phase-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.workbook-phase-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.workbook-phase-1 { color: #38BDF8; }
+.workbook-phase-2 { color: #F59E0B; }
+.workbook-phase-3 { color: #10B981; }
+
+.calc-keystroke-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.6rem 0;
+  font-family: 'Space Mono', monospace;
+}
+
+.calc-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.55rem;
+  background: #1E293B;
+  border: 1px solid #475569;
+  border-bottom: 3px solid #334155;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.calc-key-op {
+  background: #0284C7;
+  border-color: #0369A1;
+  border-bottom-color: #075985;
+  color: #FFFFFF;
+}
+
+.calc-key-enter {
+  background: #D97706;
+  border-color: #B45309;
+  border-bottom-color: #92400E;
+  color: #FFFFFF;
+}
+
+.calc-key-func {
+  background: #059669;
+  border-color: #047857;
+  border-bottom-color: #065F46;
+  color: #FFFFFF;
+}
+
+.calc-stack-display {
+  background: #04080F;
+  border: 1px solid #1E293B;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: #38BDF8;
+  margin: 0.6rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.workbook-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin: 0.75rem 0;
+}
+
+.workbook-table th {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: #94A3B8;
+}
+
+.workbook-table td {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 0.75rem;
+  color: #E2E8F0;
+}
+
+.workbook-teacher-box {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  color: #FDE68A;
+  line-height: 1.5;
+}
+
+.workbook-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   CROSS-SELL & CLASSROOM MATH STATION BUNDLES
+   ========================================================================== */
+.cross-sell-section {
+  margin: 3.5rem 0;
+  padding: 2.5rem 2rem;
+  background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.06), transparent 70%), #0D1117;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.cross-sell-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .cross-sell-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.cross-sell-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.cross-sell-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.cross-sell-card.featured {
+  background: linear-gradient(180deg, rgba(255, 68, 0, 0.08), rgba(255, 255, 255, 0.02));
+  border-color: rgba(255, 68, 0, 0.4);
+}
+
+.cross-sell-badge {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background: var(--te-orange, #FF4400);
+  color: #FFFFFF;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cross-sell-thumb {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 1rem;
+}
+
+.cross-sell-card-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 0.5rem 0;
+}
+
+.cross-sell-card-desc {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  flex-grow: 1;
+}
+
+.cross-sell-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.cross-sell-price {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+
+.cross-sell-savings {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: #10B981;
+  font-weight: 700;
+}
+
+
+
+/* ==========================================================================
+   TEENAGE ENGINEERING & APPLE DESIGN SYSTEM ELEVATION
+   Full-Bleed Canvas, Design Manifesto, Interactive Audio-Tactile Sandboxes & Unboxing
+   ========================================================================== */
+
+/* 1. Full-Bleed Canvas Expansion */
+.md-grid:has(.ecommerce-page),
+body:has(.ecommerce-page) .md-grid,
+body.ecommerce-mode .md-grid {
+  max-width: 1400px !important;
+  padding: 0 1.5rem !important;
+}
+
+body:has(.ecommerce-page) .md-content__inner,
+body.ecommerce-mode .md-content__inner {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 2. The StackCalc Design Manifesto Section */
+.ec-manifesto-banner {
+  background: radial-gradient(ellipse at 50% 0%, #171B24 0%, #0D0F14 60%, #080A0D 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3.5rem 2.5rem;
+  margin: 4.5rem 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7);
+}
+
+.ec-manifesto-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #38BDF8 30%, #FF4400 70%, transparent);
+}
+
+.ec-manifesto-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ec-manifesto-badge {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+}
+
+.ec-manifesto-title {
+  font-family: 'Space Mono', monospace !important;
+  font-size: clamp(2rem, 4vw, 3.25rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  color: #FFFFFF !important;
+  line-height: 1.15 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.ec-manifesto-p {
+  font-size: 1.05rem;
+  color: #CBD5E1;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.ec-manifesto-p strong {
+  color: #FFFFFF;
+}
+
+.ec-manifesto-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.75rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .ec-manifesto-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.ec-manifesto-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ec-stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.ec-stat-label {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 3. Interactive Domino Doubling & Regrouping Simulator */
+.ec-sandbox-wrapper {
+  background: #0E1015;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 2rem;
+  margin: 3.5rem 0;
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.ec-sandbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ec-sandbox-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #10B981;
+}
+
+.ec-sandbox-title {
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  margin: 0.2rem 0 0 0 !important;
+}
+
+.ec-sandbox-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ec-sandbox-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #CBD5E1;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ec-sandbox-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+/* Doubling Snap Lid Sockets (Row 1) */
+.domino-lid-container {
+  background: #14171E;
+  border: 2px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.domino-lid-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94A3B8;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.domino-lid-sockets-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .domino-lid-sockets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.domino-socket {
+  background: #0A0C10;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.domino-socket.filled {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: #10B981;
+  box-shadow: inset 0 0 12px rgba(16, 185, 129, 0.25), 0 0 10px rgba(16, 185, 129, 0.2);
+  cursor: pointer;
+}
+
+.socket-expr {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #94A3B8;
+}
+
+.domino-socket.filled .socket-expr {
+  color: #10B981;
+}
+
+.socket-sum {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Unsnapped Tiles Desk Pool */
+.domino-pool-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94A3B8;
+  margin-bottom: 0.65rem;
+  text-transform: uppercase;
+}
+
+.domino-pool-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  min-height: 52px;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.domino-tile-sim {
+  background: #1E232E;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  padding: 0.5rem 0.85rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.domino-tile-sim:hover {
+  background: #28303F;
+  border-color: #38BDF8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(56, 189, 248, 0.25);
+}
+
+.domino-tile-sim .divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* 12-Frame Regrouping Tray (6x2 with Bridge Divider) */
+.domino-tray-container {
+  background: #12151C;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.domino-tray-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.domino-tray-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38BDF8;
+  text-transform: uppercase;
+}
+
+.domino-tray-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.35rem;
+  position: relative;
+}
+
+.tray-cell {
+  background: #090B0E;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.tray-cell.filled {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38BDF8;
+}
+
+.tray-cell.bridge-ten {
+  border-right: 3px solid #FF4400 !important;
+  margin-right: 4px;
+}
+
+.cell-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: #64748B;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+}
+
+.cell-pip {
+  font-size: 1.1rem;
+  color: #38BDF8;
+}
+
+.ec-sim-status-box {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #CBD5E1;
+}
+
+/* 4. Interactive Ten-Frame Simulator */
+.tenframe-grid-stage {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  max-width: 500px;
+  margin: 1.25rem auto;
+}
+
+.tenframe-sim-cell {
+  background: #090B0E;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tenframe-sim-cell:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  background: #141720;
+}
+
+.token-disc {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  animation: tokenPop 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes tokenPop {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.token-disc.ocean-teal {
+  background: radial-gradient(circle at 35% 35%, #38BDF8, #0284C7);
+  border: 1px solid #7DD3FC;
+}
+
+.token-disc.coral {
+  background: radial-gradient(circle at 35% 35%, #FB7185, #E11D48);
+  border: 1px solid #FDA4AF;
+}
+
+/* 5. Unboxing Architecture Cards */
+.ec-unboxing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin: 2.5rem 0;
+}
+
+@media (max-width: 900px) {
+  .ec-unboxing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .ec-unboxing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ec-unboxing-card {
+  background: #11141A;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.ec-unboxing-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+}
+
+.ec-unboxing-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38BDF8;
+  margin-bottom: 0.75rem;
+}
+
+.ec-unboxing-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 0.5rem 0;
+}
+
+.ec-unboxing-card p {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & LIGHTHOUSE OPTIMIZATIONS (WCAG AAA FOCUS & TOUCH TARGETS)
+   ========================================================================== */
+a:focus-visible,
+button:focus-visible,
+.ec-gallery-thumb:focus-visible,
+.ec-swatch-chip:focus-visible,
+.ec-btn-primary:focus-visible,
+.ec-btn-secondary:focus-visible,
+.ec-sandbox-btn:focus-visible,
+.tenframe-sim-cell:focus-visible,
+.domino-tile-sim:focus-visible,
+.domino-socket:focus-visible {
+  outline: 2px solid #38BDF8 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.6) !important;
+}
+
+/* Ensure 44x44px Minimum Touch Targets */
+.ec-btn-primary,
+.ec-btn-secondary,
+.ec-sandbox-btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ec-gallery-thumb {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+.ec-swatch-chip {
+  min-height: 38px;
+}
+
+/* Respect User Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE STICKY BUY BAR (HIGH-CONVERSION BOTTOM DOCK)
+   ========================================================================== */
+.ec-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 12, 16, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 12px;
+  padding-bottom: max(8px, env(safe-area-inset-bottom, 8px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 999;
+  transform: translateY(115%);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.ec-sticky-bar.visible {
+  transform: translateY(0);
+}
+
+.ec-sticky-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  min-width: 0;
+  flex: 1;
+}
+
+.ec-sticky-text {
+  min-width: 0;
+  flex: 1;
+}
+
+.ec-sticky-thumb {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+.ec-sticky-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #FFFFFF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.ec-sticky-price {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #38BDF8;
+}
+
+.ec-sticky-btn {
+  background: #FF4400;
+  color: #FFFFFF;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s ease, transform 0.1s ease;
+  box-shadow: 0 4px 12px rgba(255, 68, 0, 0.3);
+}
+
+.ec-sticky-btn:hover {
+  background: #FF5A1F;
+}
+

@@ -1,0 +1,325 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 820" width="1260" height="820">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', monospace; }
+      .title { font-size: 20px; font-weight: 700; fill: #ffffff; letter-spacing: -0.5px; }
+      .subtitle { font-size: 12px; font-weight: 400; fill: #e2e8f0; }
+      .badge-sku { font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .badge-rev { font-size: 12px; font-weight: 700; fill: #ffffff; }
+      .badge-box { font-size: 10.5px; font-weight: 400; fill: #cccccc; }
+      .section-hdr { font-size: 11.5px; font-weight: 700; fill: #ffffff; letter-spacing: 0.8px; text-transform: uppercase; }
+      .th { font-size: 10px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
+      .td { font-size: 10px; font-weight: 400; fill: #ffffff; }
+      .footer-txt { font-size: 9.3px; font-weight: 400; fill: #cccccc; }
+    </style>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect x="0" y="0" width="1260" height="820" fill="#000000" />
+
+  <!-- Outer Card Frame (135x90mm Proportions) -->
+  <rect x="15" y="15" width="1230" height="790" rx="14" fill="#000000" stroke="#ffffff" stroke-width="1.8" />
+  <rect x="25" y="25" width="1210" height="770" rx="8" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+
+  <!-- Top Header Panel -->
+  <rect x="35" y="35" width="1190" height="102" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+  
+  <!-- StackCalc Brand Logo Badge -->
+  <g transform="translate(48, 50)">
+    <rect x="0" y="0" width="65" height="65" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.4" />
+    <rect x="12" y="14" width="41" height="6" rx="2" fill="#ffffff" />
+    <rect x="16" y="24" width="33" height="6" rx="2" fill="#ffffff" opacity="0.85" />
+    <rect x="20" y="34" width="25" height="6" rx="2" fill="#ffffff" opacity="0.70" />
+    <rect x="24" y="44" width="17" height="6" rx="2" fill="#ffffff" opacity="0.55" />
+  </g>
+
+  <!-- Box Button Icon Badge -->
+  
+    <g transform="translate(125, 49)" data-macro="{{icon:button_fraction}}">
+      <rect x="0" y="0" width="65" height="65" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <g transform="translate(5.2, 5.2) scale(0.546)">
+        <path d="M 2.109375 0 L 2.109375 -16.796875 L 12.859375 -16.796875 L 12.859375 -13.78125 L 5.28125 -13.78125 L 5.28125 -9.9375 L 12.71875 -9.9375 L 12.71875 -6.90625 L 5.28125 -6.90625 L 5.28125 0 Z M 2.109375 0 " transform="translate(13, 59)" fill="#ffffff" fill-rule="nonzero" /><path d="M 1.109375 0 L 1.109375 -3.046875 L 2.6875 -3.046875 L 2.6875 -13.78125 L 1.109375 -13.78125 L 1.109375 -16.796875 L 7.203125 -16.796875 C 9.265625 -16.796875 10.800781 -16.304688 11.8125 -15.328125 C 12.832031 -14.359375 13.34375 -12.863281 13.34375 -10.84375 L 13.34375 -5.953125 C 13.34375 -3.929688 12.832031 -2.429688 11.8125 -1.453125 C 10.800781 -0.484375 9.265625 0 7.203125 0 Z M 5.859375 -3.03125 L 7.203125 -3.03125 C 8.304688 -3.03125 9.078125 -3.285156 9.515625 -3.796875 C 9.953125 -4.316406 10.171875 -5.128906 10.171875 -6.234375 L 10.171875 -10.84375 C 10.171875 -11.800781 9.953125 -12.53125 9.515625 -13.03125 C 9.078125 -13.53125 8.304688 -13.78125 7.203125 -13.78125 L 5.859375 -13.78125 Z M 5.859375 -3.03125 " transform="translate(27.688, 59)" fill="#ffffff" fill-rule="nonzero" /><path d="M 1.734375 0 L 1.734375 -3.03125 L 5.765625 -3.03125 L 5.765625 -13.78125 L 1.734375 -13.78125 L 1.734375 -16.796875 L 12.953125 -16.796875 L 12.953125 -13.78125 L 8.921875 -13.78125 L 8.921875 -3.03125 L 12.953125 -3.03125 L 12.953125 0 Z M 1.734375 0 " transform="translate(42.376, 59)" fill="#ffffff" fill-rule="nonzero" /><path d="M 7.578125 0.34375 C 6.109375 0.34375 4.875 0.078125 3.875 -0.453125 C 2.875 -0.992188 2.117188 -1.726562 1.609375 -2.65625 C 1.109375 -3.59375 0.859375 -4.644531 0.859375 -5.8125 L 0.859375 -6.53125 L 4.03125 -6.53125 L 4.03125 -5.953125 C 4.03125 -4.941406 4.328125 -4.132812 4.921875 -3.53125 C 5.515625 -2.9375 6.414062 -2.640625 7.625 -2.640625 C 8.59375 -2.640625 9.304688 -2.847656 9.765625 -3.265625 C 10.234375 -3.679688 10.46875 -4.175781 10.46875 -4.75 C 10.46875 -5.113281 10.378906 -5.453125 10.203125 -5.765625 C 10.023438 -6.078125 9.703125 -6.347656 9.234375 -6.578125 C 8.773438 -6.816406 8.113281 -7.007812 7.25 -7.15625 C 6.125 -7.34375 5.125 -7.617188 4.25 -7.984375 C 3.382812 -8.359375 2.695312 -8.875 2.1875 -9.53125 C 1.6875 -10.195312 1.4375 -11.082031 1.4375 -12.1875 L 1.4375 -12.34375 C 1.4375 -13.25 1.675781 -14.066406 2.15625 -14.796875 C 2.632812 -15.523438 3.3125 -16.097656 4.1875 -16.515625 C 5.0625 -16.929688 6.082031 -17.140625 7.25 -17.140625 C 8.570312 -17.140625 9.6875 -16.898438 10.59375 -16.421875 C 11.507812 -15.941406 12.203125 -15.300781 12.671875 -14.5 C 13.148438 -13.707031 13.390625 -12.859375 13.390625 -11.953125 L 13.390625 -11.09375 L 10.21875 -11.09375 L 10.21875 -11.65625 C 10.21875 -12.332031 9.957031 -12.914062 9.4375 -13.40625 C 8.914062 -13.90625 8.1875 -14.15625 7.25 -14.15625 C 6.46875 -14.15625 5.835938 -13.988281 5.359375 -13.65625 C 4.890625 -13.332031 4.65625 -12.894531 4.65625 -12.34375 C 4.65625 -11.757812 4.90625 -11.289062 5.40625 -10.9375 C 5.914062 -10.59375 6.863281 -10.289062 8.25 -10.03125 C 10.007812 -9.726562 11.351562 -9.195312 12.28125 -8.4375 C 13.21875 -7.675781 13.6875 -6.5625 13.6875 -5.09375 L 13.6875 -4.796875 C 13.6875 -3.242188 13.140625 -2 12.046875 -1.0625 C 10.960938 -0.125 9.472656 0.34375 7.578125 0.34375 Z M 7.578125 0.34375 " transform="translate(57.064, 59)" fill="#ffffff" fill-rule="nonzero" /><path d="M 1.734375 0 L 1.734375 -16.796875 L 8.296875 -16.796875 C 9.453125 -16.796875 10.410156 -16.5625 11.171875 -16.09375 C 11.929688 -15.625 12.5 -15.015625 12.875 -14.265625 C 13.25 -13.523438 13.4375 -12.742188 13.4375 -11.921875 L 13.4375 -11.359375 C 13.4375 -10.523438 13.25 -9.722656 12.875 -8.953125 C 12.5 -8.179688 11.929688 -7.550781 11.171875 -7.0625 C 10.410156 -6.582031 9.453125 -6.34375 8.296875 -6.34375 L 4.890625 -6.34375 L 4.890625 0 Z M 4.890625 -9.359375 L 7.984375 -9.359375 C 8.691406 -9.359375 9.25 -9.550781 9.65625 -9.9375 C 10.0625 -10.320312 10.265625 -10.816406 10.265625 -11.421875 L 10.265625 -11.71875 C 10.265625 -12.320312 10.0625 -12.816406 9.65625 -13.203125 C 9.25 -13.585938 8.691406 -13.78125 7.984375 -13.78125 L 4.890625 -13.78125 Z M 4.890625 -9.359375 " transform="translate(71.752, 59)" fill="#ffffff" fill-rule="nonzero" /><path d="M 100 50 L 100 81.65625 C 100 86.9375 100 89.578125 99.101562 92.421875 C 97.972656 95.527344 95.527344 97.972656 92.421875 99.101562 C 89.578125 100 86.9375 100 81.65625 100 L 18.34375 100 C 13.0625 100 10.421875 100 7.578125 99.101562 C 4.472656 97.972656 2.027344 95.527344 0.898438 92.421875 C 0 89.578125 0 86.9375 0 81.65625 L 0 18.34375 C 0 13.0625 0 10.421875 0.898438 7.578125 C 2.027344 4.472656 4.472656 2.027344 7.578125 0.898438 C 10.421875 0 13.0625 0 18.34375 0 L 81.65625 0 C 86.9375 0 89.578125 0 92.421875 0.898438 C 95.527344 2.027344 97.972656 4.472656 99.101562 7.578125 C 100 10.421875 100 13.0625 100 18.34375 Z M 96.5 50 L 96.5 83.507812 C 96.5 87.246094 96.5 89.117188 95.863281 91.132812 C 95.0625 93.332031 93.332031 95.0625 91.132812 95.863281 C 89.117188 96.5 87.246094 96.5 83.507812 96.5 L 16.492188 96.5 C 12.753906 96.5 10.882812 96.5 8.867188 95.863281 C 6.667969 95.0625 4.9375 93.332031 4.136719 91.132812 C 3.5 89.117188 3.5 87.246094 3.5 83.507812 L 3.5 16.492188 C 3.5 12.753906 3.5 10.882812 4.136719 8.867188 C 4.9375 6.667969 6.667969 4.9375 8.867188 4.136719 C 10.882812 3.5 12.753906 3.5 16.492188 3.5 L 83.507812 3.5 C 87.246094 3.5 89.117188 3.5 91.132812 4.136719 C 93.332031 4.9375 95.0625 6.667969 95.863281 8.867188 C 96.5 10.882812 96.5 12.753906 96.5 16.492188 Z M 96.5 50 " fill="#ffffff" fill-rule="evenodd" />
+      </g>
+    </g>
+    
+
+  <!-- Header Typography -->
+  <text x="215" y="60" class="font-mono title">FRACTION STUDIO PROPORTIONAL TOWERS</text>
+  <text x="215" y="78" class="font-mono subtitle">4-Way Multi-Notational Fraction Blocks (1/1 to 1/12)</text>
+
+  <!-- Studio Continuum Ribbon -->
+  <text x="215.0" y="109.0" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">STUDIO CONTINUUM:</text>\n
+    <g transform="translate(323.0, 98.0)">
+      <rect x="0" y="0" width="70.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="35.0" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Ten-Frames</text>
+    </g>\n<text x="395.5" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(403.5, 98.0)">
+      <rect x="0" y="0" width="58.4" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="29.2" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Dominoes</text>
+    </g>\n<text x="464.4" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(472.4, 98.0)">
+      <rect x="0" y="0" width="41.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="20.5" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Clock</text>
+    </g>\n<text x="515.9" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(523.9, 98.0)">
+      <rect x="0" y="0" width="64.2" height="15" rx="3.5" fill="#ffffff" stroke="#ffffff" stroke-width="0.8" />
+      <text x="32.1" y="10.8" class="font-mono" font-size="7.5px" font-weight="700" text-anchor="middle" fill="#000000">Fractions</text>
+    </g>\n<text x="590.6" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(598.6, 98.0)">
+      <rect x="0" y="0" width="46.8" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="23.4" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Primes</text>
+    </g>\n<text x="647.9" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(655.9, 98.0)">
+      <rect x="0" y="0" width="75.8" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="37.9" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Probability</text>
+    </g>\n<text x="734.2" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(742.2, 98.0)">
+      <rect x="0" y="0" width="52.6" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="26.3" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Algebra</text>
+    </g>\n<text x="797.3" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(805.3, 98.0)">
+      <rect x="0" y="0" width="58.4" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="29.2" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">Volvelle</text>
+    </g>\n<text x="866.2" y="108.5" class="font-mono" font-size="7.5px" fill="#ffffff">→</text>\n
+    <g transform="translate(874.2, 98.0)">
+      <rect x="0" y="0" width="41.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="20.5" y="10.8" class="font-mono" font-size="7.5px" font-weight="400" text-anchor="middle" fill="#cccccc">SC-32</text>
+    </g>
+
+  <!-- Top-Right SKU & Rev Badges -->
+  <g transform="translate(1025, 48)">
+    <rect x="0" y="0" width="180" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="90" y="19" class="font-mono badge-sku" text-anchor="middle">SKU: FRAC-01</text>
+    
+    <rect x="0" y="34" width="180" height="26" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="90" y="52" class="font-mono badge-rev" text-anchor="middle">USER GUIDE</text>
+  </g>
+
+  <!-- COLUMN 1: WHAT IS THIS MANIPULATIVE? -->
+  <g transform="translate(35, 148)">
+    <rect x="0" y="0" width="405" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="405" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">1. WHAT IS THIS MANIPULATIVE?</text>
+
+    <!-- Headline -->
+    <text x="16" y="56" class="font-mono" font-size="11.5px" font-weight="700" fill="#ffffff">PROPORTIONAL HEIGHT &amp; 4-WAY MULTI-NOTATION</text>
+
+    <!-- Concept principle text -->
+    <text x="16" y="76" class="font-mono" font-size="9.3px" fill="#ffffff">
+      <tspan x="16" dy="0" font-weight="400" fill="#ffffff">Fractions are numbers, proportions, and geometric lengths.</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">Every Fraction Studio block encodes 4 representations on its faces:</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">   Fraction • Decimal • Percent • Central Angle</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">1/4 = 0.25 = 25% = 90°. When you compare fraction towers,</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">equal physical height directly proves mathematical equivalence!</tspan>
+    </text>
+
+    <!-- Calibration Datum Box -->
+    <g transform="translate(14, 158)">
+      <rect x="0" y="0" width="377" height="72" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">UNIVERSAL 84.00 MM WHOLE DATUM</text>
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n
+    </g>
+
+    <!-- Lid Feature -->
+    <text x="16" y="252" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">TWIN COMPARATOR WELL LID &amp; STAGE</text>
+    <text x="16" y="270" class="font-mono" font-size="9.3px" fill="#cccccc">
+      <tspan x="16" dy="0">Flip the 7U lid over to reveal the twin comparison stage.</tspan><tspan x="16" dy="14">Stand two fraction towers side-by-side in the dual wells —</tspan><tspan x="16" dy="14">common denominators and inequality signs are visible instantly!</tspan>
+    </text>
+
+    <!-- Visual Diagram of Geometry / Stacking -->
+    <g transform="translate(14, 318)">
+      <rect x="0" y="0" width="377" height="144" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      
+      <text x="12" y="18" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">PROPORTIONAL EQUIVALENCE: 1/3 + 1/6 = 1/2</text>
+      <rect x="45" y="32" width="45" height="96" rx="2" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <text x="67" y="82" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">[ 1/1 ]</text>
+      <text x="67" y="96" class="font-mono" font-size="7.5px" text-anchor="middle" fill="#cccccc">84.0 mm</text>
+      <text x="67" y="138" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">1 WHOLE</text>
+
+      <rect x="110" y="80" width="45" height="48" rx="2" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <text x="132" y="108" class="font-mono" font-size="9px" font-weight="700" text-anchor="middle" fill="#ffffff">[ 1/2 ]</text>
+      <text x="132" y="138" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">HALF (42mm)</text>
+
+      <rect x="175" y="96" width="45" height="32" rx="2" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <text x="197" y="115" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#ffffff">[ 1/3 ]</text>
+      <rect x="175" y="80" width="45" height="16" rx="2" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <text x="197" y="92" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">[ 1/6 ]</text>
+      <text x="197" y="138" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">SUM STACK</text>
+
+      <line x1="100" y1="80" x2="230" y2="80" stroke="#ffffff" stroke-width="1.6" stroke-dasharray="3,2" />
+      <text x="240" y="83" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">FLUSH SUMMIT = 50%</text>
+      <text x="240" y="98" class="font-mono" font-size="8px" fill="#cccccc">33.3% + 16.7% = 50.0%</text>
+      <text x="240" y="112" class="font-mono" font-size="8px" fill="#cccccc">120° + 60° = 180°</text>
+
+    </g>
+  </g>
+
+  <!-- COLUMN 2: KIT PARTS INVENTORY -->
+  <g transform="translate(455, 148)">
+    <rect x="0" y="0" width="385" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="385" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">2. KIT PARTS INVENTORY (80 PIECES)</text>
+
+    <!-- Table Header -->
+    <text x="16" y="52" class="font-mono th">COMPONENT</text>
+    <text x="125" y="52" class="font-mono th">QTY</text>
+    <text x="160" y="52" class="font-mono th">SPEC / DIMENSION</text>
+    <text x="275" y="52" class="font-mono th">PALETTE COLOR</text>
+    <line x1="12" y1="58" x2="373" y2="58" stroke="#ffffff" stroke-width="1" />
+
+    
+    <text x="16" y="74" class="font-mono td" font-weight="700">Whole [1/1]</text>
+    <text x="125" y="74" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="160" y="74" class="font-mono td">84.00 mm (12U = 1 Whole)</text>
+    <text x="275" y="74" class="font-mono td" fill="#cccccc">Classic White</text>
+    <line x1="12" y1="80" x2="373" y2="80" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="97" class="font-mono td" font-weight="700">Halves [1/2]</text>
+    <text x="125" y="97" class="font-mono td" font-weight="700" fill="#ffffff">2x</text>
+    <text x="160" y="97" class="font-mono td">42.00 mm (6U = 50.0%)</text>
+    <text x="275" y="97" class="font-mono td" fill="#cccccc">Warm Gold</text>
+    <line x1="12" y1="103" x2="373" y2="103" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="120" class="font-mono td" font-weight="700">Thirds [1/3]</text>
+    <text x="125" y="120" class="font-mono td" font-weight="700" fill="#ffffff">3x</text>
+    <text x="160" y="120" class="font-mono td">28.00 mm (4U = 33.3%)</text>
+    <text x="275" y="120" class="font-mono td" fill="#cccccc">Emerald Green</text>
+    <line x1="12" y1="126" x2="373" y2="126" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="143" class="font-mono td" font-weight="700">Fourths [1/4]</text>
+    <text x="125" y="143" class="font-mono td" font-weight="700" fill="#ffffff">4x</text>
+    <text x="160" y="143" class="font-mono td">21.00 mm (3U = 25.0%)</text>
+    <text x="275" y="143" class="font-mono td" fill="#cccccc">Royal Purple</text>
+    <line x1="12" y1="149" x2="373" y2="149" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="166" class="font-mono td" font-weight="700">Fifths [1/5]</text>
+    <text x="125" y="166" class="font-mono td" font-weight="700" fill="#ffffff">5x</text>
+    <text x="160" y="166" class="font-mono td">16.80 mm (2.4U = 20.0%)</text>
+    <text x="275" y="166" class="font-mono td" fill="#cccccc">Sky Blue</text>
+    <line x1="12" y1="172" x2="373" y2="172" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="189" class="font-mono td" font-weight="700">Sixths [1/6]</text>
+    <text x="125" y="189" class="font-mono td" font-weight="700" fill="#ffffff">6x</text>
+    <text x="160" y="189" class="font-mono td">14.00 mm (2U = 16.7%)</text>
+    <text x="275" y="189" class="font-mono td" fill="#cccccc">Coral Orange</text>
+    <line x1="12" y1="195" x2="373" y2="195" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="212" class="font-mono td" font-weight="700">Eighths [1/8]</text>
+    <text x="125" y="212" class="font-mono td" font-weight="700" fill="#ffffff">8x</text>
+    <text x="160" y="212" class="font-mono td">10.50 mm (1.5U = 12.5%)</text>
+    <text x="275" y="212" class="font-mono td" fill="#cccccc">Warm Gold</text>
+    <line x1="12" y1="218" x2="373" y2="218" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="235" class="font-mono td" font-weight="700">Tenths [1/10]</text>
+    <text x="125" y="235" class="font-mono td" font-weight="700" fill="#ffffff">10x</text>
+    <text x="160" y="235" class="font-mono td">8.40 mm (1.2U = 10.0%)</text>
+    <text x="275" y="235" class="font-mono td" fill="#cccccc">Sky Blue</text>
+    <line x1="12" y1="241" x2="373" y2="241" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="258" class="font-mono td" font-weight="700">Twelfths [1/12]</text>
+    <text x="125" y="258" class="font-mono td" font-weight="700" fill="#ffffff">12x</text>
+    <text x="160" y="258" class="font-mono td">7.00 mm (1U = 8.3%)</text>
+    <text x="275" y="258" class="font-mono td" fill="#cccccc">Slate Gray</text>
+    <line x1="12" y1="264" x2="373" y2="264" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="281" class="font-mono td" font-weight="700">Mini-Fractions</text>
+    <text x="125" y="281" class="font-mono td" font-weight="700" fill="#ffffff">27x</text>
+    <text x="160" y="281" class="font-mono td">7.00 mm Fractional Units</text>
+    <text x="275" y="281" class="font-mono td" fill="#cccccc">Assorted Family</text>
+    <line x1="12" y1="287" x2="373" y2="287" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="304" class="font-mono td" font-weight="700">3x1 Box &amp; Lid</text>
+    <text x="125" y="304" class="font-mono td" font-weight="700" fill="#ffffff">2x</text>
+    <text x="160" y="304" class="font-mono td">49.0 mm Storage &amp; Stage</text>
+    <text x="275" y="304" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
+    <line x1="12" y1="310" x2="373" y2="310" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+
+
+    <!-- Total Pieces Summary -->
+    <text x="16" y="334" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">TOTAL: 78 Proportional Math Blocks + Storage Bin + Stage Lid = 80 Parts</text>
+
+    <!-- Palette Box -->
+    <g transform="translate(12, 350)">
+      <rect x="0" y="0" width="361" height="112" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">FAMILY COLOR CODING SCHEME</text>
+      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n
+    </g>
+  </g>
+
+  <!-- COLUMN 3: WHY KEEP THIS REFERENCE CARD? -->
+  <g transform="translate(855, 148)">
+    <rect x="0" y="0" width="370" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="370" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">3. WHY KEEP THIS REFERENCE CARD?</text>
+
+    <!-- Reason 1: No Lost Piece Guarantee -->
+    <g transform="translate(14, 48)">
+      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ NO LOST PIECE LEFT BEHIND</text>
+      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+        <tspan x="12" dy="0">Classroom manipulatives get lost. Never abandon</tspan>
+        <tspan x="12" dy="13">an incomplete set! Every individual math component</tspan>
+        <tspan x="12" dy="13">is permanently stocked for single replacements.</tspan>
+      </text>
+      <rect x="12" y="84" width="318" height="28" rx="4" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <text x="171" y="98" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">Scan back QR or visit stackcalc.io/parts</text>
+      <text x="171" y="108" class="font-mono" font-size="8px" text-anchor="middle" fill="#cccccc">Order individual replacement pieces anytime</text>
+    </g>
+
+    <!-- Reason 2: Self-Auditing Sockets -->
+    <g transform="translate(14, 186)">
+      <rect x="0" y="0" width="342" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ 10-SECOND SELF-CHECKING PACK-UP</text>
+      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+        <tspan x="12" dy="0">Pack-up is a built-in math game! Stand each fraction family in</tspan><tspan x="12" dy="13">its designated graduated slot. All full families level off at the</tspan><tspan x="12" dy="13">84.00 mm rim. A missing piece leaves an immediately visible gap.</tspan><tspan x="12" dy="13">Comparison stage lid snaps flush for silent zero-rattle carry.</tspan>
+      </text>
+    </g>
+
+    <!-- Reason 3: Quick Lesson Guide -->
+    <g transform="translate(14, 334)">
+      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ HANDS-ON TUTORIAL ON REVERSE</text>
+      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+        <tspan x="12" dy="0">Flip this card over for a complete step-by-step</tspan>
+        <tspan x="12" dy="13">hands-on lesson with concrete numbers, stage</tspan>
+        <tspan x="12" dy="13">arrangements, calculator cross-references, and</tspan>
+        <tspan x="12" dy="13">The Big Aha! conceptual breakthrough!</tspan>
+        <tspan x="12" dy="16" font-weight="700" fill="#ffffff">Keep this card stored inside the box lid!</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(35, 635)">
+    <rect x="0" y="0" width="1190" height="115" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    
+    <g transform="translate(25, 24)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
+      <text x="0" y="18" class="font-mono footer-txt">Designed in Mountain View, California, USA • Non-Toxic BPA-Free.</text>
+      <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates (10x / 30x Stations): stackcalc.io/schools</text>
+    </g>
+
+    <g transform="translate(450, 24)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">FUNDAMENTAL THEOREM OF RATIONAL ARITHMETIC</text>
+      <text x="0" y="18" class="font-mono footer-txt">Proportional height is strictly preserved under common denominator fraction addition.</text>
+      <text x="0" y="32" class="font-mono footer-txt">Title I &amp; IV STEM Grant Eligible • UNSPSC 60101700 • SIDE A: IN-BOX USER COMPANION GUIDE | MONOCHROME WHITE LASER ABLATION</text>
+    </g>
+
+    <g transform="translate(980, 24)">
+      <text x="0" y="0" class="font-mono th" fill="#ffffff">OFFICIAL REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#ffffff">stackcalc.io/parts</text>
+      <text x="0" y="32" class="font-mono footer-txt">Order individual replacement pieces anytime</text>
+    </g>
+  </g>
+  <metadata id="stackcalc-book-macro-manifest" data-kit="FRAC-01">
+    <stackcalc-macros>
+      <macro-ref token="{{blocks:fraction_studio_twin_comparator}}" kind="blocks" id="fraction_studio_twin_comparator" png="fraction_studio_twin_comparator.png" svg="fraction_studio_twin_comparator.svg" scene="Education/tools/generate_book_diagrams.py::book_fraction_studio_twin_comparator.scad" scad="book_fraction_studio_twin_comparator.scad" scad-sources="Education/scad/fraction_studio_box.scad,Education/scad/fraction_studio_parts.scad" stls="Education/build/stl/components/fraction_box_lid.stl,Education/build/stl/components/fraction_block_1_whole.stl,Education/build/stl/components/fraction_block_half_1.stl,Education/build/stl/components/fraction_block_fourth_1.stl,Education/build/stl/components/fraction_block_sixth_1.stl,Education/build/stl/components/fraction_block_twelfth_1.stl" />
+      <macro-ref token="{{blocks:fraction_studio_common_denominator}}" kind="blocks" id="fraction_studio_common_denominator" png="fraction_studio_common_denominator.png" svg="fraction_studio_common_denominator.svg" scene="Education/tools/generate_book_diagrams.py::book_fraction_studio_common_denominator.scad" scad="book_fraction_studio_common_denominator.scad" scad-sources="Education/scad/fraction_studio_box.scad,Education/scad/fraction_studio_parts.scad" stls="Education/build/stl/components/fraction_box_lid.stl,Education/build/stl/components/fraction_block_1_whole.stl,Education/build/stl/components/fraction_block_half_1.stl,Education/build/stl/components/fraction_block_third_1.stl,Education/build/stl/components/fraction_block_fourth_1.stl,Education/build/stl/components/fraction_block_twelfth_1.stl" />
+      <macro-ref token="{{blocks:fraction_studio_hero}}" kind="blocks" id="fraction_studio_hero" png="fraction-studio-hero.png" svg="fraction-studio-hero.png" scene="Tools/rendering/render_product_stills.py::render_fraction_studio" scad="Education/scad/fraction_studio_parts.scad" scad-sources="Education/scad/fraction_studio_box.scad,Education/scad/fraction_studio_parts.scad" stls="scratch/stl/fraction_studio_actual_towers.stl,scratch/stl/education/fraction_studio_parts.stl" />
+      <macro-ref token="{{blocks:fraction_gauge_comparison}}" kind="blocks" id="fraction_gauge_comparison" png="fraction-studio-gauge-comparison.png" svg="fraction-studio-gauge-comparison.png" scene="Tools/rendering/render_concept_and_craftsmanship_stills.py::render_fraction_gauge_comparison" scad="Education/scad/fraction_studio_box.scad" scad-sources="Education/scad/fraction_studio_box.scad,Education/scad/fraction_studio_parts.scad" stls="Education/build/stl/components/fraction_box_body.stl,scratch/stl/fraction_1_1.stl,scratch/stl/fraction_1_2.stl,scratch/stl/fraction_1_3.stl,scratch/stl/fraction_1_4.stl,scratch/stl/fraction_1_6.stl" />
+      <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{blocks:sc32_hero_keynote}}" kind="blocks" id="sc32_hero_keynote" png="sc32-hero-keynote.png" svg="sc32-hero-keynote.png" scene="Tools/rendering/render_product_stills.py::render_sc32_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{seq:refcard_frac01_ex1}}" res-token="{{res:refcard_frac01_ex1}}" stack-token="{{res:refcard_frac01_ex1:stack}}" kind="sequence" id="refcard_frac01_ex1" model="sc6" expanded-seq="4 [ENTER] 6 [÷] 1 [ENTER] 12 [÷] [+] [FDISP]" res="3/4" stack="T:0|Z:0|Y:0|X:3/4" />
+      <macro-ref token="{{seq:refcard_frac01_ex2}}" res-token="{{res:refcard_frac01_ex2}}" stack-token="{{res:refcard_frac01_ex2:stack}}" kind="sequence" id="refcard_frac01_ex2" model="sc6" expanded-seq="1 [ENTER] 3 [÷] 1 [ENTER] 4 [÷] [+] [FDISP]" res="7/12" stack="T:0|Z:0|Y:0|X:7/12" />
+      <macro-ref token="{{seq:refcard_frac01_ex3}}" res-token="{{res:refcard_frac01_ex3}}" stack-token="{{res:refcard_frac01_ex3:stack}}" kind="sequence" id="refcard_frac01_ex3" model="sc6" expanded-seq="1 [ENTER] 2 [÷] 1 [ENTER] 4 [÷] [+] 1 [ENTER] 4 [÷] [+] [FDISP]" res="1" stack="T:0|Z:0|Y:0|X:1" />
+      <macro-ref token="{{icon:button_fraction}}" kind="icon" id="button_fraction" svg="Education/scad/lib/icons/button_fraction.svg" scad="Education/scad/fraction_studio_box.scad" key="FDISP" model="sc6" />
+    </stackcalc-macros>
+  </metadata>
+</svg>

@@ -1,0 +1,1069 @@
+{
+  "model": "SC-32",
+  "name": "StackCalc SC-32 Scientific Calculator",
+  "version": "1.2.0",
+  "description": "Professional 4-Stack Reverse Polish Notation (RPN) Scientific Handheld with 43-key matrix, numerical Brent root solver, adaptive Romberg quadrature, cubic polynomial root finder, TVM financial amortization, vector curve plotting, and full HP-32SII heritage.",
+  "hardware": {
+    "mcu": "Raspberry Pi RP2350 Dual-Core ARM Cortex-M33 @ 150MHz",
+    "display": "ST7567A Transflective Monochrome Graphic LCD (128x64 pixels, ambient daylight reflective, zero blue light)",
+    "keyboard": "43-key matrix with 400g tactile metal snap-dome switches and dual shift modifiers (f Yellow, g Blue)",
+    "power": "1x CR2032 3V Lithium Coin Cell (6-12 months daily use)",
+    "memory": "Flash-backed continuous memory preserving stacks, 26 storage registers A-Z, indirect register (i), equations, and statistical accumulators across sleep and battery swaps",
+    "boot_time_ms": 5,
+    "contest_compliance": [
+      "Texas UIL High School & Middle School Certified",
+      "TMSCA Tournament Legal",
+      "PSIA Approved",
+      "TAPPS Compliant",
+      "Non-CAS (Pure Numerical Evaluation)",
+      "Zero Wireless Radios (No Bluetooth, Wi-Fi, or RF)",
+      "Silent Snap-Dome Operation",
+      "Hardware Reset via Hold [C] on Power-Up"
+    ]
+  },
+  "architecture": {
+    "stack_engine": "RPN (Reverse Polish Notation)",
+    "default_stack_depth": 4,
+    "configurable_stack_depths": [
+      4,
+      8,
+      "unbounded (up to 999)"
+    ],
+    "stack_levels": [
+      {
+        "register": "X",
+        "line": 1,
+        "description": "Active input mantissa and primary result display"
+      },
+      {
+        "register": "Y",
+        "line": 2,
+        "description": "Second operand for dyadic calculations (+, -, ×, ÷, yˣ, ÷R, x∥y)"
+      },
+      {
+        "register": "Z",
+        "line": 3,
+        "description": "Suspended intermediate subtotal level"
+      },
+      {
+        "register": "T",
+        "line": 4,
+        "description": "Top register and constant reservoir; duplicates on stack drops"
+      }
+    ],
+    "registers": {
+      "stack": [
+        "X",
+        "Y",
+        "Z",
+        "T"
+      ],
+      "storage": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "(i)"
+      ],
+      "last_x": "LAST X register stores operand prior to the most recent operation for error recovery and chain calculation",
+      "statistics": [
+        "Σx",
+        "Σy",
+        "Σx²",
+        "Σy²",
+        "Σxy",
+        "n"
+      ]
+    }
+  },
+  "menus": {
+    "DISP": {
+      "title": "Display Formatting",
+      "trigger": "[f] [DISP]",
+      "items": [
+        {
+          "label": "FIX",
+          "requires_digit": true,
+          "description": "Fixed decimal point display (0-9 places)"
+        },
+        {
+          "label": "SCI",
+          "requires_digit": true,
+          "description": "Scientific exponential notation (0-9 places)"
+        },
+        {
+          "label": "ENG",
+          "requires_digit": true,
+          "description": "Engineering notation with multiples-of-3 exponents"
+        },
+        {
+          "label": "ALL",
+          "requires_digit": false,
+          "description": "Full floating mantissa suppressing trailing zeros"
+        }
+      ]
+    },
+    "MODES": {
+      "title": "Calculator Modes",
+      "trigger": "[f] [MODES]",
+      "items": [
+        {
+          "label": "DEG",
+          "description": "Degrees angular mode (360° circle)"
+        },
+        {
+          "label": "RAD",
+          "description": "Radians angular mode (2π circle)"
+        },
+        {
+          "label": "GRAD",
+          "description": "Gradians angular mode (400 grad circle)"
+        },
+        {
+          "label": ".",
+          "description": "Period decimal point separator (3.1415)"
+        },
+        {
+          "label": ",",
+          "description": "Comma decimal point separator (3,1415)"
+        }
+      ]
+    },
+    "BASE": {
+      "title": "Base Arithmetic & Logic",
+      "trigger": "[f] [BASE]",
+      "items": [
+        {
+          "label": "HEX",
+          "description": "Hexadecimal mode (Base 16, 36-bit two's complement)"
+        },
+        {
+          "label": "DEC",
+          "description": "Decimal mode (Base 10)"
+        },
+        {
+          "label": "OCT",
+          "description": "Octal mode (Base 8)"
+        },
+        {
+          "label": "BIN",
+          "description": "Binary mode (Base 2)"
+        }
+      ]
+    },
+    "FLAGS": {
+      "title": "System Flags & Configuration",
+      "trigger": "[g] [FLAGS]",
+      "items": [
+        {
+          "label": "STACK",
+          "description": "Select stack depth: 2, 4, 8, or INF"
+        },
+        {
+          "label": "MODE",
+          "description": "Switch calculator model between SC-32 and SC-6"
+        },
+        {
+          "label": "UI",
+          "description": "Switch interface style between Modern App and Hardware Replica"
+        },
+        {
+          "label": "FACE",
+          "description": "Select faceplate theme"
+        },
+        {
+          "label": "EXAM",
+          "description": "Toggle Contest Lockdown Exam Mode"
+        },
+        {
+          "label": "SF",
+          "requires_digit": true,
+          "description": "Set system flag 0-9"
+        },
+        {
+          "label": "CF",
+          "requires_digit": true,
+          "description": "Clear system flag 0-9"
+        },
+        {
+          "label": "FS?",
+          "requires_digit": true,
+          "description": "Test if system flag is set"
+        },
+        {
+          "label": "FC?",
+          "requires_digit": true,
+          "description": "Test if system flag is clear"
+        }
+      ]
+    },
+    "CLEAR": {
+      "title": "Memory Clearing",
+      "trigger": "[f] [CLEAR]",
+      "items": [
+        {
+          "label": "CLEQN",
+          "description": "Clear all equations from equation memory"
+        },
+        {
+          "label": "CLVARS",
+          "description": "Clear all variables A-Z and TVM financial registers"
+        },
+        {
+          "label": "CLALL",
+          "description": "Clear variables, equations, and return to default state"
+        },
+        {
+          "label": "CLSTAT",
+          "description": "Clear statistical summation registers (CLΣ)"
+        },
+        {
+          "label": "CLREGS",
+          "description": "Clear global storage registers A-Z"
+        },
+        {
+          "label": "CLSTK",
+          "description": "Clear all 4 levels of the operational stack"
+        }
+      ]
+    },
+    "PARTS": {
+      "title": "Number Parts & Decompositions",
+      "trigger": "[g] [PARTS]",
+      "items": [
+        {
+          "label": "IP",
+          "description": "Integer part: truncates fractional mantissa"
+        },
+        {
+          "label": "FP",
+          "description": "Fractional part: truncates integer portion"
+        },
+        {
+          "label": "ABS",
+          "description": "Absolute value |x|"
+        },
+        {
+          "label": "SGN",
+          "description": "Signum function (-1 for x<0, 0 for x=0, 1 for x>0)"
+        },
+        {
+          "label": "GCD",
+          "description": "Greatest Common Divisor of Y and X"
+        },
+        {
+          "label": "LCM",
+          "description": "Least Common Multiple of Y and X"
+        }
+      ]
+    },
+    "PROB": {
+      "title": "Probability & Combinatorics",
+      "trigger": "[g] [PROB]",
+      "items": [
+        {
+          "label": "Cn,r",
+          "description": "Combinations: nCr = n! / (r!(n-r)!) with Y=n, X=r"
+        },
+        {
+          "label": "Pn,r",
+          "description": "Permutations: nPr = n! / (n-r)! with Y=n, X=r"
+        },
+        {
+          "label": "n!",
+          "description": "Factorial / Euler Gamma Function Γ(x+1)"
+        },
+        {
+          "label": "RAND",
+          "description": "Generate uniform random real number 0 <= x < 1"
+        },
+        {
+          "label": "SD",
+          "description": "Seed hardware pseudo-random number generator"
+        }
+      ]
+    },
+    "STAT": {
+      "title": "Two-Variable Statistics & Summaries",
+      "trigger": "[g] [SUMS] / [g] [L.R.] / [g] [x̄,ȳ]",
+      "items": [
+        {
+          "label": "x̄,ȳ",
+          "description": "Arithmetic sample means of X and Y, and weighted mean x̄w"
+        },
+        {
+          "label": "s,σ",
+          "description": "Sample standard deviations (n-1) and population standard deviations (n)"
+        },
+        {
+          "label": "L.R.",
+          "description": "Linear regression: slope m, y-intercept b, correlation r, estimates ŷ and x̂"
+        },
+        {
+          "label": "SUMS",
+          "description": "Statistical summations: Σx, Σy, Σx², Σy², Σxy, and sample size n"
+        }
+      ]
+    },
+    "TEST": {
+      "title": "Conditional Numerical Comparisons",
+      "trigger": "[f] [x?y] / [g] [x?0]",
+      "items": [
+        {
+          "label": "x=y",
+          "description": "Tests if X equals Y (skips next instruction if false)"
+        },
+        {
+          "label": "x≠y",
+          "description": "Tests if X is not equal to Y"
+        },
+        {
+          "label": "x>y",
+          "description": "Tests if X is strictly greater than Y"
+        },
+        {
+          "label": "x<y",
+          "description": "Tests if X is strictly less than Y"
+        },
+        {
+          "label": "x≥y",
+          "description": "Tests if X is greater than or equal to Y"
+        },
+        {
+          "label": "x≤y",
+          "description": "Tests if X is less than or equal to Y"
+        },
+        {
+          "label": "x=0",
+          "description": "Tests if X equals zero"
+        },
+        {
+          "label": "x≠0",
+          "description": "Tests if X is not equal to zero"
+        },
+        {
+          "label": "x>0",
+          "description": "Tests if X is strictly positive"
+        },
+        {
+          "label": "x<0",
+          "description": "Tests if X is strictly negative"
+        },
+        {
+          "label": "x≥0",
+          "description": "Tests if X is non-negative"
+        },
+        {
+          "label": "x≤0",
+          "description": "Tests if X is non-positive"
+        }
+      ]
+    },
+    "CMPLX": {
+      "title": "Complex Number Arithmetic",
+      "trigger": "[f] [CMPLX]",
+      "description": "Prefix operator using Y=Real and X=Imaginary convention. Evaluates +, -, ×, ÷, √x, eˣ, LN, SIN, COS, TAN in the complex plane, and displays Y + Xi format on [SHOW]."
+    },
+    "SOLVE": {
+      "title": "Numerical Root Finder",
+      "trigger": "[g] [SOLVE]",
+      "description": "Secant and Brent's method root solver for nonlinear equations defined in [EQN]. Converges to real root with |f(x)| < 1e-12."
+    },
+    "INTEG": {
+      "title": "Adaptive Romberg Numerical Integration",
+      "trigger": "[g] [∫]",
+      "description": "Evaluates definite integral from limit a in Y to limit b in X using Romberg extrapolation over adaptive trapezoidal intervals."
+    },
+    "POLY": {
+      "title": "Polynomial Root Solver",
+      "trigger": "[g] [POLY]",
+      "description": "Solves quadratic (Ax² + Bx + C = 0) and cubic (Ax³ + Bx² + Cx + D = 0) characteristic equations with full real and complex roots."
+    },
+    "TVM": {
+      "title": "Time Value of Money Financial Engine",
+      "trigger": "[f] [TVM]",
+      "description": "Five-key compound interest solver with N, I%YR, PV, PMT, FV adhering to universal cash-flow sign conventions."
+    },
+    "PLOT": {
+      "title": "Basic Function & Scatter Plotting",
+      "trigger": "[g] [PLOT]",
+      "description": "Renders 64-point vector curve for active equation or scatter plot with regression overlay on ST7567A display, with coordinate cursor tracing."
+    }
+  },
+  "operations": [
+    {
+      "id": "enter",
+      "name": "Stack Lift / Commit",
+      "key": "ENTER",
+      "shift": "primary",
+      "subsystem": "Stack Mechanics",
+      "description": "Lifts stack contents upwards: copies X into Y, Y into Z, Z into T. Arms stack lift so subsequent digit entry replaces X without pushing.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "T": "z",
+          "Z": "y",
+          "Y": "x",
+          "X": "x"
+        }
+      },
+      "example": "3 [ENTER] 5 [+] -> 8"
+    },
+    {
+      "id": "lastx",
+      "name": "Recall Prior Operand",
+      "key": "LASTx",
+      "shift": "yellow",
+      "subsystem": "Stack Mechanics",
+      "description": "Recalls the value stored in the LAST X register into Register X, lifting the operational stack.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "result"
+        },
+        "after": {
+          "T": "z",
+          "Z": "y",
+          "Y": "result",
+          "X": "prior_x"
+        }
+      },
+      "example": "48 [ENTER] 37 [+] -> 85; [f] [LASTx] [-] -> 48 (self-check)"
+    },
+    {
+      "id": "show",
+      "name": "Show Full Precision",
+      "key": "SHOW",
+      "shift": "blue",
+      "subsystem": "Stack Mechanics",
+      "description": "Displays the full unrounded 15-digit internal mantissa and exponent of Register X (or complex pair Y+Xi) until next keypress.",
+      "stack_delta": {
+        "before": {
+          "X": "rounded"
+        },
+        "after": {
+          "X": "unrounded 15 digits"
+        }
+      },
+      "example": "1 [ENTER] 3 [÷] -> 0.3333; [g] [SHOW] -> 0.333333333333333"
+    },
+    {
+      "id": "swapXY",
+      "name": "Exchange X and Y",
+      "key": "x⇄y",
+      "shift": "primary",
+      "subsystem": "Stack Mechanics",
+      "description": "Exchanges the contents of Registers X and Y. Upper stack registers Z and T remain completely unaffected.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "T": "t",
+          "Z": "z",
+          "Y": "x",
+          "X": "y"
+        }
+      },
+      "example": "5 [ENTER] 12 [x⇄y] puts 12 in Y and 5 in X"
+    },
+    {
+      "id": "rollDown",
+      "name": "Roll Down Stack",
+      "key": "R↓",
+      "shift": "primary",
+      "subsystem": "Stack Mechanics",
+      "description": "Cycles all four stack registers downward: X moves to T, T moves to Z, Z moves to Y, and Y moves to X.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "T": "x",
+          "Z": "t",
+          "Y": "z",
+          "X": "y"
+        }
+      },
+      "example": "Inspect all 4 stack levels sequentially without clearing."
+    },
+    {
+      "id": "rollUp",
+      "name": "Roll Up Stack",
+      "key": "R↑",
+      "shift": "blue",
+      "subsystem": "Stack Mechanics",
+      "description": "Cycles all four stack registers upward: T moves to X, X moves to Y, Y moves to Z, and Z moves to T.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "T": "z",
+          "Z": "y",
+          "Y": "x",
+          "X": "t"
+        }
+      },
+      "example": "Reverse stack cycle direction."
+    },
+    {
+      "id": "parallel",
+      "name": "Parallel Resistance / Impedance",
+      "key": "x∥y",
+      "shift": "primary",
+      "subsystem": "Engineering & Electronics",
+      "description": "Calculates parallel combination of two components: (X × Y) / (X + Y) or 1 / (1/X + 1/Y). Drops stack.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "T": "t",
+          "Z": "t",
+          "Y": "z",
+          "X": "(xy)/(x+y)"
+        }
+      },
+      "example": "8 [ENTER] 16 [x∥y] -> 5.3333 ohms"
+    },
+    {
+      "id": "add",
+      "name": "Addition",
+      "key": "+",
+      "shift": "primary",
+      "subsystem": "Arithmetic",
+      "description": "Adds Y and X. Drops stack; preserves T in T; records previous X in LAST X.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "T": "t",
+          "Z": "t",
+          "Y": "z",
+          "X": "y + x"
+        }
+      },
+      "example": "12 [ENTER] 4 [+] -> 16"
+    },
+    {
+      "id": "subtract",
+      "name": "Subtraction",
+      "key": "-",
+      "shift": "primary",
+      "subsystem": "Arithmetic",
+      "description": "Subtracts X from Y (Y - X). Drops stack; preserves T in T; records previous X in LAST X.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "T": "t",
+          "Z": "t",
+          "Y": "z",
+          "X": "y - x"
+        }
+      },
+      "example": "20 [ENTER] 6 [-] -> 14"
+    },
+    {
+      "id": "multiply",
+      "name": "Multiplication",
+      "key": "×",
+      "shift": "primary",
+      "subsystem": "Arithmetic",
+      "description": "Multiplies Y and X. Drops stack; preserves T in T; records previous X in LAST X.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "T": "t",
+          "Z": "t",
+          "Y": "z",
+          "X": "y × x"
+        }
+      },
+      "example": "7 [ENTER] 8 [×] -> 56"
+    },
+    {
+      "id": "divide",
+      "name": "Division",
+      "key": "÷",
+      "shift": "primary",
+      "subsystem": "Arithmetic",
+      "description": "Divides Y by X (Y ÷ X). Drops stack; preserves T in T; records previous X in LAST X. Errors on zero divisor.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "T": "t",
+          "Z": "t",
+          "Y": "z",
+          "X": "y ÷ x"
+        }
+      },
+      "example": "100 [ENTER] 4 [÷] -> 25"
+    },
+    {
+      "id": "sqrt",
+      "name": "Square Root",
+      "key": "√x",
+      "shift": "primary",
+      "subsystem": "Transcendental Math",
+      "description": "Computes principal square root of X. Supports negative reals when preceded by [CMPLX].",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "√x"
+        }
+      },
+      "example": "144 [√x] -> 12"
+    },
+    {
+      "id": "square",
+      "name": "Square (x²)",
+      "key": "x²",
+      "shift": "yellow",
+      "subsystem": "Transcendental Math",
+      "description": "Computes X squared (X²).",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "x²"
+        }
+      },
+      "example": "15 [f] [x²] -> 225"
+    },
+    {
+      "id": "power",
+      "name": "General Power (yˣ)",
+      "key": "yˣ",
+      "shift": "primary",
+      "subsystem": "Transcendental Math",
+      "description": "Raises base Y to exponent X (Y^X). Drops stack.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "T": "t",
+          "Z": "t",
+          "Y": "z",
+          "X": "yˣ"
+        }
+      },
+      "example": "2 [ENTER] 10 [yˣ] -> 1024"
+    },
+    {
+      "id": "xRootY",
+      "name": "X-th Root of Y (ˣ√y)",
+      "key": "ˣ√y",
+      "shift": "yellow",
+      "subsystem": "Transcendental Math",
+      "description": "Extracts X-th root of Y (Y^(1/X)). Drops stack.",
+      "stack_delta": {
+        "before": {
+          "T": "t",
+          "Z": "z",
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "T": "t",
+          "Z": "t",
+          "Y": "z",
+          "X": "y^(1/x)"
+        }
+      },
+      "example": "27 [ENTER] 3 [f] [ˣ√y] -> 3"
+    },
+    {
+      "id": "reciprocal",
+      "name": "Reciprocal (1/x)",
+      "key": "1/x",
+      "shift": "primary",
+      "subsystem": "Arithmetic",
+      "description": "Calculates multiplicative inverse 1/X.",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "1/x"
+        }
+      },
+      "example": "8 [1/x] -> 0.125"
+    },
+    {
+      "id": "ln",
+      "name": "Natural Logarithm (ln x)",
+      "key": "LN",
+      "shift": "primary",
+      "subsystem": "Transcendental Math",
+      "description": "Computes natural logarithm base-e of X.",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "ln(x)"
+        }
+      },
+      "example": "2.7182818 [LN] -> 1.0000"
+    },
+    {
+      "id": "exp",
+      "name": "Natural Exponential (eˣ)",
+      "key": "eˣ",
+      "shift": "primary",
+      "subsystem": "Transcendental Math",
+      "description": "Computes Euler exponential e^X.",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "e^x"
+        }
+      },
+      "example": "1 [eˣ] -> 2.71828"
+    },
+    {
+      "id": "log",
+      "name": "Common Logarithm (log₁₀ x)",
+      "key": "LOG",
+      "shift": "yellow",
+      "subsystem": "Transcendental Math",
+      "description": "Computes base-10 common logarithm of X.",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "log₁₀(x)"
+        }
+      },
+      "example": "1000 [f] [LOG] -> 3"
+    },
+    {
+      "id": "exp10",
+      "name": "Base-10 Exponential (10ˣ)",
+      "key": "10ˣ",
+      "shift": "yellow",
+      "subsystem": "Transcendental Math",
+      "description": "Raises 10 to power X (10^X).",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "10^x"
+        }
+      },
+      "example": "4 [f] [10ˣ] -> 10000"
+    },
+    {
+      "id": "sin",
+      "name": "Sine",
+      "key": "SIN",
+      "shift": "primary",
+      "subsystem": "Trigonometry",
+      "description": "Computes trigonometric sine in active angular mode (DEG/RAD/GRAD).",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "sin(x)"
+        }
+      },
+      "example": "30 [SIN] in DEG mode -> 0.5"
+    },
+    {
+      "id": "asin",
+      "name": "Arcsine (sin⁻¹)",
+      "key": "ASIN",
+      "shift": "yellow",
+      "subsystem": "Trigonometry",
+      "description": "Computes inverse trigonometric sine.",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "asin(x)"
+        }
+      },
+      "example": "0.5 [f] [ASIN] -> 30.0000°"
+    },
+    {
+      "id": "cos",
+      "name": "Cosine",
+      "key": "COS",
+      "shift": "primary",
+      "subsystem": "Trigonometry",
+      "description": "Computes trigonometric cosine.",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "cos(x)"
+        }
+      },
+      "example": "60 [COS] in DEG mode -> 0.5"
+    },
+    {
+      "id": "acos",
+      "name": "Arccosine (cos⁻¹)",
+      "key": "ACOS",
+      "shift": "yellow",
+      "subsystem": "Trigonometry",
+      "description": "Computes inverse trigonometric cosine.",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "acos(x)"
+        }
+      },
+      "example": "0.5 [f] [ACOS] -> 60.0000°"
+    },
+    {
+      "id": "tan",
+      "name": "Tangent",
+      "key": "TAN",
+      "shift": "primary",
+      "subsystem": "Trigonometry",
+      "description": "Computes trigonometric tangent.",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "tan(x)"
+        }
+      },
+      "example": "45 [TAN] in DEG mode -> 1.0"
+    },
+    {
+      "id": "atan",
+      "name": "Arctangent (tan⁻¹)",
+      "key": "ATAN",
+      "shift": "yellow",
+      "subsystem": "Trigonometry",
+      "description": "Computes inverse trigonometric tangent.",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "atan(x)"
+        }
+      },
+      "example": "1 [f] [ATAN] -> 45.0000°"
+    },
+    {
+      "id": "pi",
+      "name": "Constant Pi (π)",
+      "key": "π",
+      "shift": "blue",
+      "subsystem": "Transcendental Math",
+      "description": "Pushes 15-digit mathematical constant π (3.14159265358979) onto stack.",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "Y": "x",
+          "X": "3.14159..."
+        }
+      },
+      "example": "[g] [π] -> 3.14159265"
+    },
+    {
+      "id": "statAdd",
+      "name": "Statistical Accumulate (Σ+)",
+      "key": "Σ+",
+      "shift": "primary",
+      "subsystem": "Statistics",
+      "description": "Accumulates coordinate pair (Y=y, X=x) into background summations (Σx, Σy, Σx², Σy², Σxy, n) and returns sample count n in X.",
+      "stack_delta": {
+        "before": {
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "X": "n"
+        }
+      },
+      "example": "5 [ENTER] 3 [Σ+] -> 1 data point accumulated"
+    },
+    {
+      "id": "statSub",
+      "name": "Statistical Remove (Σ-)",
+      "key": "Σ-",
+      "shift": "yellow",
+      "subsystem": "Statistics",
+      "description": "Removes erroneous coordinate pair (Y=y, X=x) from summations.",
+      "stack_delta": {
+        "before": {
+          "Y": "y",
+          "X": "x"
+        },
+        "after": {
+          "X": "n-1"
+        }
+      },
+      "example": "Corrects mistaken entry."
+    },
+    {
+      "id": "sto",
+      "name": "Store to Register",
+      "key": "STO",
+      "shift": "primary",
+      "subsystem": "Storage & Memory",
+      "description": "Stores value in Register X into named storage register A-Z or indirect register (i). Supports register arithmetic (e.g. STO + A).",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "X": "x"
+        }
+      },
+      "example": "42 [STO] [A] stores 42 in Register A"
+    },
+    {
+      "id": "rcl",
+      "name": "Recall from Register",
+      "key": "RCL",
+      "shift": "primary",
+      "subsystem": "Storage & Memory",
+      "description": "Recalls value from named storage register A-Z into Register X, lifting stack.",
+      "stack_delta": {
+        "before": {
+          "X": "x"
+        },
+        "after": {
+          "Y": "x",
+          "X": "reg_value"
+        }
+      },
+      "example": "[RCL] [A] brings Register A to X"
+    },
+    {
+      "id": "intDiv",
+      "name": "Integer Division with Remainder (÷R)",
+      "key": "÷R",
+      "shift": "blue",
+      "subsystem": "Arithmetic",
+      "description": "Evaluates integer division of Y by X, loading whole quotient Q into X and remainder R into Y.",
+      "stack_delta": {
+        "before": {
+          "Y": "dividend",
+          "X": "divisor"
+        },
+        "after": {
+          "Y": "remainder",
+          "X": "quotient"
+        }
+      },
+      "example": "23 [ENTER] 4 [g] [÷R] -> Y=3, X=5"
+    },
+    {
+      "id": "fdisp",
+      "name": "Fraction Display Toggle",
+      "key": "FDISP",
+      "shift": "yellow",
+      "subsystem": "Fractions",
+      "description": "Toggles display format of Register X between decimal and fractional representation.",
+      "stack_delta": {
+        "before": {
+          "X": "0.75"
+        },
+        "after": {
+          "X": "3/4"
+        }
+      },
+      "example": "0.75 [f] [FDISP] -> 3/4"
+    },
+    {
+      "id": "plot",
+      "name": "Plotting Engine",
+      "key": "PLOT",
+      "shift": "blue",
+      "subsystem": "Visualization",
+      "description": "Renders active equation curve or regression scatter plot on graphic LCD with coordinate crosshair tracer.",
+      "stack_delta": {
+        "before": {},
+        "after": {}
+      },
+      "example": "[g] [PLOT] launches graph view"
+    }
+  ]
+}

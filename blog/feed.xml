@@ -5,8 +5,16 @@
     <link>https://www.stackcalc.io/blog/</link>
     <description>A high-quality, everyday-use RPN calculator for a new generation.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Sep 2026 19:25:32 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 18:19:07 +0000</lastBuildDate>
     <atom:link href="https://www.stackcalc.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[The Postfix Manifesto: Why Human Thought Calculates in Stacks, Not Parentheses]]></title>
+      <link>https://www.stackcalc.io/blog/2026/10/12/the-postfix-manifesto/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/10/12/the-postfix-manifesto/</guid>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Why legacy in-fix notation creates cognitive friction, parentheses syntax errors, and working memory fatigue—and how tactile RPN restores spatial mathematical intuition.]]></description>
+      <category>Pedagogy</category><category>Hardware</category><category>RPN</category><category>Design</category>
+    </item>
     <item>
       <title><![CDATA[We Pressed One TPU Key 280 Ways Before the PCB Arrived]]></title>
       <link>https://www.stackcalc.io/blog/2026/09/24/we-pressed-one-tpu-key-280-ways-before-the-pcb-arrived/</link>
