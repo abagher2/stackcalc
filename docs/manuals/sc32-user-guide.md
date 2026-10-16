@@ -1466,6 +1466,17 @@ where $R_0 \approx 15\,\Omega$ for fresh cells and $DOD$ is the depth of dischar
 
 To prevent voltage sag below the $2.10\text{ V}$ brownout threshold during high-speed Romberg integration bursts, the power rail incorporates an array of low-ESR ceramic decoupling capacitors ($3 \times 22\,\mu\text{F}$ X7R) acting as an energy reservoir, supplying instantaneous pulse current without stressing the high-impedance lithium chemistry.
 
+### 1.11.2 Algebraic Trap vs. StackCalc Superpower Showdown
+
+| Evaluation Dimension | The Algebraic Calculator Trap (`TI-30X` / `TI-84` / App) | The StackCalc SC-32 Hardware Superpower |
+| :--- | :--- | :--- |
+| **Signature Problem** | **Coin Cell Operational Life:** $T_{\text{life}} = \frac{225}{(0.65 \times 2 + 0.0025 \times 22) / 24}$ | **Inside-Out Stack Integration:** Evaluates daily active/sleep draw, normalizes hourly, and divides capacity. |
+| **Keystroke Sequence** | `2 2 5 / ( ( 0 . 6 5 * 2 + 0 . 0 0 2 5 * 2 2 ) / 2 4 ) =` | `0.65 [ENTER] 2 [×] 0.0025 [ENTER] 22 [×] [+] 24 [÷] 225 [x⇄y] [÷]` |
+| **Stroke Count & Penalty**| **27 keystrokes** (Triple nested parentheses, operator precedence overhead) | **21 keystrokes** (**22% fewer strokes**, zero grouping syntax) |
+| **Failure Modes** | Missing closing bracket divides $225$ by active term and adds sleep term, resulting in wildly incorrect lifetime estimate. | Grouping errors are physically impossible; daily consumption ($1.355\text{ mAh}$) is verified before lifetime division. |
+| **Stack Transparency** | Intermediate active charge ($1.30\text{ mAh}$) and daily total ($1.355\text{ mAh}$) remain hidden inside the expression buffer. | Daily draw ($1.355\text{ mAh}$) and average hourly current ($0.056\text{ mA}$) inspectable live on stack registers $Y, X$. |
+| **Field Resilience** | Clearing display or syntax error wipes entire nested equation from memory. | Every intermediate charge stage resides in hardware registers $X, Y, Z, T$; fully inspectable with `[R↓]`. |
+
 ---
 
 ## 1.12 Engineering Design Briefing: The Semiconductor Cleanroom & Avionics Stress Chamber (Problems 1.1 through 1.25)
@@ -1499,10 +1510,10 @@ $$Q_{\text{daily}} = \sum (I_i \cdot t_i)$$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `18.2` `[ENTER]` `0.5` `[×]` | $0.0000$ | $0.0000$ | $18.2000$ | $9.1000$ | Active calculation: $9.100\text{ mAh}$ |
-| `4.8` `[ENTER]` `1.5` `[×]` `[+]`| $0.0000$ | $0.0000$ | $9.1000$ | $16.3000$ | Add idle typing ($7.200\text{ mAh}$) |
-| `0.85` `[ENTER]` `2.0` `[×]` `[+]`| $0.0000$ | $0.0000$ | $16.3000$ | $18.0000$ | Add standby pause ($1.700\text{ mAh}$) |
-| `0.0118` `[ENTER]` `20` `[×]` `[+]`| $0.0000$ | $0.0000$ | $18.0000$ | $18.2360$ | Total daily drain: $18.236\text{ mAh/day}$ |
+| `18.2` `[ENTER]` `0.5` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $9.1000$ | Active calculation: $9.100\text{ mAh}$ |
+| `4.8` `[ENTER]` `1.5` `[×]` `[+]`| $0.0000$ | $0.0000$ | $0.0000$ | $16.3000$ | Add idle typing ($7.200\text{ mAh}$) |
+| `0.85` `[ENTER]` `2.0` `[×]` `[+]`| $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Add standby pause ($1.700\text{ mAh}$) |
+| `0.0118` `[ENTER]` `20` `[×]` `[+]`| $0.0000$ | $0.0000$ | $0.0000$ | $18.2360$ | Total daily drain: $18.236\text{ mAh/day}$ |
 | `225` `[x⇄y]` `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$12.3382$** | Expected battery life: **$12.34\text{ days}$** continuous heavy school use |
 
 > **Homeschooler Diagnostic Checkpoint:**
@@ -1515,21 +1526,10 @@ $$Q_{\text{daily}} = \sum (I_i \cdot t_i)$$
 **Switch Dynamics Context:** A high-speed typist actuates a snap-dome switch that oscillates mechanically for $t_{\text{bounce}} = 4.8\text{ ms}$ before settling. If Core 1 scans the matrix at $f_{\text{scan}} = 200\text{ Hz}$ ($T_{\text{frame}} = 5.0\text{ ms}$) with a $20\text{ ms}$ lockout window, calculate the safety margin ratio:
 $$M = \frac{T_{\text{lockout}}}{t_{\text{bounce}}}$$
 
-**Keystrokes:** `20 [ENTER] 4.8 [÷]`$\to \mathbf{4.1667}$.
+**Keystrokes:** `20 [ENTER] 4.8 [÷]` $\rightarrow$ **`4.1667`**.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `20` `[ENTER]` | $0.0000$ | $0.0000$ | $20.0000$ | $20.0000$ | Lockout duration $T_{\text{lockout}} = 20.0\text{ ms}$ in $Y$ |
-| `4.8` | $0.0000$ | $0.0000$ | $20.0000$ | $4.8000$ | Switch chatter time $t_{\text{bounce}}$ in $X$ |
-| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$4.1667$** | Debounce safety margin ratio $M$ |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `20` `[ENTER]` — Load the firmware debounce lockout window ($T_{\text{lockout}} = 20.0\text{ ms}$) into Register $Y$.
-2. `4.8` `[÷]` — Enter the measured contact chatter duration ($t_{\text{bounce}} = 4.8\text{ ms}$) and execute division; the resulting safety margin ($M = 4.1667$) proves the switch settles four times faster than the lockout cutoff.
-
-Safety factor exceeds $4\times$, guaranteeing absolute immunity to switch bounce false triggers.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `20 [ENTER] 4.8 [÷]` loads the firmware debounce lockout window ($T_{\text{lockout}} = 20.0\text{ ms}$) into Register $Y$ and divides by the measured contact chatter duration ($t_{\text{bounce}} = 4.8\text{ ms}$). The stack drops, leaving safety margin $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{4.1667})$ in Register $X$—proving the switch settles four times faster than the lockout cutoff without requiring scratchpad storage.
 
 ---
 
@@ -1537,21 +1537,10 @@ Safety factor exceeds $4\times$, guaranteeing absolute immunity to switch bounce
 **Optics Context:** A luminance meter measures light reflected from an unactivated pixel ($L_{\text{white}} = 142.0\text{ cd/m}^2$) and an activated black pixel ($L_{\text{black}} = 9.35\text{ cd/m}^2$). Calculate the photometric contrast ratio:
 $$C_R = \frac{L_{\text{white}}}{L_{\text{black}}}$$
 
-**Keystrokes:** `142 [ENTER] 9.35 [÷]`$\to \mathbf{15.1872} \approx 15.2:1$.
+**Keystrokes:** `142 [ENTER] 9.35 [÷]` $\rightarrow$ **`15.1872`** $\approx 15.2:1$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `142` `[ENTER]` | $0.0000$ | $0.0000$ | $142.0000$ | $142.0000$ | Background luminance $L_{\text{white}}$ in $Y$ |
-| `9.35` | $0.0000$ | $0.0000$ | $142.0000$ | $9.3500$ | Activated pixel luminance $L_{\text{black}}$ in $X$ |
-| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$15.1872$** | Photopic contrast ratio $C_R \approx 15.2:1$ |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `142` `[ENTER]` — Enter the unactivated background luminance ($L_{\text{white}} = 142.0\text{ cd/m}^2$) into the stack.
-2. `9.35` `[÷]` — Key the activated black pixel luminance ($L_{\text{black}} = 9.35\text{ cd/m}^2$) and divide; the photopic contrast ratio ($C_R = 15.19:1$) appears immediately, confirming ISO 9241-303 Class 1 optical clarity.
-
-Confirms ISO 9241-303 Class 1 visual ergonomics.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `142 [ENTER] 9.35 [÷]` enters unactivated background luminance ($L_{\text{white}} = 142.0\text{ cd/m}^2$) into $Y$ and divides by activated black pixel luminance ($L_{\text{black}} = 9.35\text{ cd/m}^2$). The stack drops, resolving the photopic contrast ratio $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{15.1872})$ directly to confirm ISO 9241-303 Class 1 visual ergonomics.
 
 ---
 
@@ -1568,7 +1557,7 @@ $$T_{\text{frame}} = \frac{(9 + 1056) \times 8\text{ bits}}{8.0 \times 10^6\text
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `1065` `[ENTER]` | $0.0000$ | $0.0000$ | $1065.0000$ | $1065.0000$ | Frame payload: 9 command + 1056 data bytes |
-| `8` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $8,520.0000$ | Serialized bit stream length |
+| `8` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $8520.0000$ | Serialized bit stream length |
 | `8 [E] 6` `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.001065$ | Clock transmission duration in seconds |
 | `1000` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0650$** | Frame refresh period $T_{\text{frame}}$ in milliseconds |
 
@@ -1593,9 +1582,9 @@ where $2166136261 \oplus 77 = 2166136200$.
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `2166136200` `[ENTER]` | $0.0000$ | $0.0000$ | $2.1661 \times 10^9$ | $2.1661 \times 10^9$ | Load XOR-accumulated hash state |
+| `2166136200` `[ENTER]` | $0.0000$ | $0.0000$ | $2.1661 \times 10^{9}$ | $2.1661 \times 10^{9}$ | Load XOR-accumulated hash state |
 | `16777619` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6343 \times 10^{16}$ | Multiply by 32-bit FNV prime |
-| `4294967296` `[↱] [÷R]` | $0.0000$ | $0.0000$ | $8,461,672.00$ | **$1,489,615,688.00$** | Divide with remainder: $Y=\text{quotient}, X=\text{wrapped hash}$ |
+| `4294967296` `[↱] [÷R]` | $0.0000$ | $0.0000$ | $3.3562 \times 10^{9}$ | **$8461672.00$** | Divide with remainder: $Y=\text{quotient}, X=\text{wrapped hash}$ |
 
 **Step-by-Step RPN Reasoning & Stack Logic:****
 1. `2166136200` `[ENTER]` — Arm the operational stack with the XOR-accumulated hash state ($2,166,136,200$).
@@ -1639,20 +1628,9 @@ $$E_{\text{pulse}} = \frac{P_{\text{avg}}}{f_{\text{rep}}}, \quad P_{\text{peak}
 
 **Keystrokes:** `1.20 [ENTER] 35000 [÷] 1 [E] 7 [+/-] [÷]` $\rightarrow$ **`342.85714286`**
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1.20` `[ENTER]` | $0.0000$ | $0.0000$ | $1.2000$ | $1.2000$ | Average laser power $P_{\text{avg}} = 1.20\text{ W}$ |
-| `35000` `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.4286 \times 10^{-5}$ | Pulse energy $E_{\text{pulse}} = 34.29\,\mu\text{J}$ |
-| `1 [E] 7 [+/-]` `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$342.8571$** | Peak optical burst power $P_{\text{peak}}$ in Watts |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `1.20` `[ENTER]` — Deposit average laser optical power ($P_{\text{avg}} = 1.20\text{ W}$) into the accumulator.
-2. `35000` `[÷]` — Key pulse repetition frequency ($f_{\text{rep}} = 35.0\text{ kHz}$) and divide; single-pulse optical energy ($E_{\text{pulse}} = 34.29\,\mu\text{J}$) condenses in $X$.
-3. `1 [E] 7 [+/-]` `[÷]` — Enter optical pulse width ($\tau = 100\text{ ns} = 1.0 \times 10^{-7}\text{ s}$) and divide; peak instantaneous optical burst power ($P_{\text{peak}} = 342.86\text{ W}$) is calculated in place.
-
-Stack: $Y = 3.4286 \times 10^{-5}\text{ J}$ ($34.29\,\mu\text{J}$), $X = \mathbf{342.85714286\text{ W}}$ peak power.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1.20 [ENTER] 35000 [÷]` deposits average laser power ($1.20\text{ W}$) into $Y$, divides by pulse frequency ($35.0\text{ kHz}$), and drops the stack to leave pulse energy $3.4286 \times 10^{-5}\text{ J}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.4286 \times 10^{-5})$.
+2. Striking `1 [E] 7 [+/-] [÷]` enters pulse width ($\tau = 100\text{ ns}$) and divides, evaluating peak optical burst power $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{342.8571}\text{ W})$ directly in Register $X$.
 
 ---
 
@@ -1660,23 +1638,11 @@ Stack: $Y = 3.4286 \times 10^{-5}\text{ J}$ ($34.29\,\mu\text{J}$), $X = \mathbf
 **Thermal Context:** Twin CR2032 batteries deliver $V_{\text{in}} = 5.80\text{ V}$ to an LDO supplying $V_{\text{out}} = 3.30\text{ V}$ at active computation current $I = 18.2\text{ mA}$:
 $$P_{\text{diss}} = (V_{\text{in}} - V_{\text{out}}) \cdot I$$
 
-**Keystrokes:** `5.80 [ENTER] 3.30 [-] 0.0182 [×] 1000 [×]`$\to \mathbf{45.5000\text{ mW}}$.
+**Keystrokes:** `5.80 [ENTER] 3.30 [-] 0.0182 [×] 1000 [×]` $\rightarrow$ **`45.5000`**$\text{ mW}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `5.80` `[ENTER]` | $0.0000$ | $0.0000$ | $5.8000$ | $5.8000$ | Battery input potential $V_{\text{in}} = 5.80\text{ V}$ |
-| `3.30` `[-]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.5000$ | Voltage drop $\Delta V = V_{\text{in}} - V_{\text{out}}$ |
-| `0.0182` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0455$ | Dissipated power in Watts |
-| `1000` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$45.5000$** | Regulator dissipation $P_{\text{diss}}$ in mW |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `5.80` `[ENTER]` — Arm the stack with the battery input potential ($V_{\text{in}} = 5.80\text{ V}$).
-2. `3.30` `[-]` — Enter regulated output voltage ($V_{\text{out}} = 3.30\text{ V}$) and subtract; linear drop headroom ($\Delta V = 2.50\text{ V}$) condenses in $X$.
-3. `18.2` `[×]` — Key active core current ($I = 18.2\text{ mA}$) and multiply; total internal regulator heat dissipation ($P_{\text{diss}} = 45.50\text{ mW}$) is derived with zero parentheses.
-
-Negligible thermal rise of $< 1.2^\circ\text{C}$ in the SOT-23 regulator package.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `5.80 [ENTER] 3.30 [-]` evaluates battery headroom drop $\Delta V = 2.50\text{ V}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.5000)$.
+2. Striking `0.0182 [×] 1000 [×]` multiplies by active computation current ($18.2\text{ mA}$) and normalizes to milliwatts, yielding regulator heat dissipation $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{45.5000}\text{ mW})$—confirming negligible thermal rise ($< 1.2^\circ\text{C}$) without grouping syntax.
 
 ---
 
@@ -1684,21 +1650,10 @@ Negligible thermal rise of $< 1.2^\circ\text{C}$ in the SOT-23 regulator package
 **Electronics Context:** Keypad matrix lines use $3.3\text{ V}$ logic with low-state threshold $V_{IL,\max} = 0.80\text{ V}$. A Schottky isolating diode has forward drop $V_F = 0.32\text{ V}$ at $2.0\text{ mA}$. Calculate the low-state noise margin:
 $$V_{NM,L} = V_{IL,\max} - V_F$$
 
-**Keystrokes:** `0.80 [ENTER] 0.32 [-]`$\to \mathbf{0.4800\text{ V}}$.
+**Keystrokes:** `0.80 [ENTER] 0.32 [-]` $\rightarrow$ **`0.4800`**$\text{ V}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `0.80` `[ENTER]` | $0.0000$ | $0.0000$ | $0.8000$ | $0.8000$ | Low-state input threshold $V_{IL,\max}$ in Volts |
-| `0.32` | $0.0000$ | $0.0000$ | $0.8000$ | $0.3200$ | Schottky diode forward drop $V_F$ |
-| `[-]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.4800$** | Low-state noise immunity margin $V_{NM,L}$ in Volts |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `0.80` `[ENTER]` — Load the maximum low-level input threshold ($V_{IL,\max} = 0.80\text{ V}$) into Register $Y$.
-2. `0.32` `[-]` — Enter Schottky matrix diode forward drop ($V_F = 0.32\text{ V}$) and subtract; low-state noise immunity margin ($V_{NM,L} = 0.4800\text{ V} = 480\text{ mV}$) remains live in Register $X$.
-
-Guarantees $480\text{ mV}$ of electrical noise immunity against ambient RF interference.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.80 [ENTER] 0.32 [-]` loads low-state input threshold ($0.80\text{ V}$) into Register $Y$ and subtracts Schottky forward drop ($0.32\text{ V}$). The stack drops, resolving the noise immunity margin $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.4800}\text{ V} = 480\text{ mV})$ in place to guarantee RF immunity.
 
 ---
 
@@ -1718,7 +1673,7 @@ $$V(t) = V_{\text{dd}} \left(1 - e^{-t/RC}\right) \implies t = - R C \ln\left(1 
 | `2.10` `[ENTER]` `3.30` `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6364$ | Normalized threshold $V_{\text{th}} / V_{\text{dd}}$ |
 | `[+/-]` `1` `[+]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3636$ | Uncharged voltage headroom ($1 - V_{\text{th}}/V_{\text{dd}}$) |
 | `[LN]` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.0116$ | Natural logarithm of voltage headroom |
-| `100000` `[ENTER]` | $0.0000$ | $0.0000$ | $-1.0116$ | $100,000.00$ | Pull-up resistance $R = 100\text{ k}\Omega$ |
+| `100000` `[ENTER]` | $0.0000$ | $-1.0116$ | $100000.0000$ | $100000.00$ | Pull-up resistance $R = 100\text{ k}\Omega$ |
 | `1 [E] 7 [+/-]` `[×]` | $0.0000$ | $0.0000$ | $-1.0116$ | $0.0100$ | Circuit time constant $RC = 0.01\text{ s}$ |
 | `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $-0.010116$ | Negative elapsed delay in seconds |
 | `[+/-]` `1000` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$10.1160$** | POR reset lockout time in milliseconds |
@@ -1743,24 +1698,11 @@ Ensures microcontroller clock PLL is stable before releasing Core 0 from reset.
 **RF Electronics Context:** A $12.000\text{ MHz}$ fundamental quartz crystal specifies load capacitance $C_L = 18.0\text{ pF}$. With PCB stray capacitance $C_{\text{stray}} = 3.5\text{ pF}$, calculate matching external shunt capacitors ($C_1 = C_2 = C$):
 $$C_L = \frac{C}{2} + C_{\text{stray}} \implies C = 2 (C_L - C_{\text{stray}})$$
 
-**Keystrokes:** `18 [ENTER] 3.5 [-] 2 [×]`$\to \mathbf{29.0000\text{ pF}}$.
+**Keystrokes:** `18 [ENTER] 3.5 [-] 2 [×]` $\rightarrow$ **`29.0000`**$\text{ pF}$.
 
-> **Named RPN Stack Idiom: *The Parallel Reciprocal x∥y Shortcut & Capacitance Matching*** — Invert stray capacitance offset and double the series combination directly in the operational stack *([Horowitz & Hill, 2015](sc32/appendix-e-annotated-bibliography.md#cite-horowitz2015))*.
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` `[ENTER]` | $0.0000$ | $0.0000$ | $18.0000$ | $18.0000$ | Crystal nominal load capacitance $C_L$ |
-| `3.5` `[-]` | $0.0000$ | $0.0000$ | $0.0000$ | $14.5000$ | Net series capacitance $C_L - C_{\text{stray}}$ |
-| `2` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$29.0000$** | Matching shunt capacitor rating $C$ in pF |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `18` `[ENTER]` — Load the crystal specified load capacitance ($C_L = 18.0\text{ pF}$) into Register $Y$.
-2. `3.5` `[-]` — Subtract stray trace capacitance ($C_{\text{stray}} = 3.5\text{ pF}$); net series capacitance ($C_L - C_{\text{stray}} = 14.5\text{ pF}$) appears in $X$.
-3. `2` `[×]` — Double the value for the two symmetric legs; the target capacitor value ($C = 29.0\text{ pF}$) is verified immediately.
-
-Select standard $27\text{ pF}$ or $30\text{ pF}$ C0G ceramic capacitors.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `18 [ENTER] 3.5 [-]` evaluates net series capacitance $C_L - C_{\text{stray}} = 14.5\text{ pF}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 14.5000)$.
+2. Striking `2 [×]` doubles the series branch value, calculating the required matching shunt capacitor rating $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{29.0000}\text{ pF})$—indicating standard $27\text{ pF}$ or $30\text{ pF}$ C0G ceramics with zero memory registers.
 
 ---
 
@@ -1768,22 +1710,11 @@ Select standard $27\text{ pF}$ or $30\text{ pF}$ C0G ceramic capacitors.
 **Memory Reliability Context:** A math enthusiast saves 45 equation configurations per day. If QSPI flash sectors withstand $100,000$ write/erase cycles and ping-pong wear-leveling doubles endurance across 2 slots, find sector lifetime in years:
 $$t_{\text{years}} = \frac{2 \times 100,000}{45 \times 365.25}$$
 
-**Keystrokes:** `200000 [ENTER] 45 [ENTER] 365.25 [×] [÷]`$\to \mathbf{12.1683\text{ years}}$.
+**Keystrokes:** `200000 [ENTER] 45 [ENTER] 365.25 [×] [÷]` $\rightarrow$ **`12.1683`**$\text{ years}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `200000` `[ENTER]` | $0.0000$ | $0.0000$ | $200,000.00$ | $200,000.00$ | Total dual-slot endurance cycles |
-| `45` `[ENTER]` | $0.0000$ | $200,000.00$ | $45.0000$ | $45.0000$ | Daily edit transactions |
-| `365.25` `[×]` | $0.0000$ | $0.0000$ | $200,000.00$ | $16,436.25$ | Annual sector write cycles |
-| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$12.1683$** | Guaranteed flash endurance in years |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `200000` `[ENTER]` — Prime the stack with total ping-pong cycle capacity ($2 \times 100,000 = 200,000\text{ cycles}$).
-2. `45` `[ENTER]` — Enter daily save frequency ($45\text{ saves/day}$) into the active register.
-3. `365.25` `[×]` — Multiply by average days per year; the annual write cycle rate ($16,436.25\text{ writes/year}$) is calculated while total capacity waits in $Y$.
-4. `[÷]` — Divide capacity by yearly wear; minimum operational endurance ($t = 12.168\text{ years}$) confirms over a decade of continuous service.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `200000 [ENTER] 45 [ENTER] 365.25 [×]` loads dual-slot endurance ($200,000\text{ cycles}$) into $Z$ and evaluates annual sector write cycles ($45 \times 365.25 = 16,436.25\text{ writes/yr}$) in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 200000.0000, X: 16436.2500)$.
+2. Striking `[÷]` divides total cycle endurance by yearly wear, yielding guaranteed operational lifespan $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{12.1682}\text{ years})$—confirming over a decade of continuous daily service.
 
 ---
 
@@ -1800,13 +1731,13 @@ $$I = \frac{b h^3}{12}, \quad \delta = \frac{F L^3}{48 E I}$$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` `[ENTER]` `2.5` `[ENTER]` `3` `[yˣ]` | $0.0000$ | $15.0000$ | $0.0000$ | $15.6250$ | Thickness cubed $h^3 = 2.5^3$ |
-| `[×]` `12` `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $19.5313$ | Moment of inertia $I = bh^3/12$ in mm$^4$ |
-| `3.92` `[ENTER]` `60` `[ENTER]` `3` `[yˣ]` | $0.0000$ | $19.5313$ | $3.9200$ | $216,000.00$ | Span cubed $L^3 = 60^3$ |
-| `[×]` | $0.0000$ | $0.0000$ | $19.5313$ | $846,720.00$ | Bending load numerator $F L^3$ |
-| `48` `[ENTER]` `3500` `[×]` | $0.0000$ | $19.5313$ | $846,720.00$ | $168,000.00$ | Modulus factor $48 E$ |
-| `[R↓]` `[×]` | $0.0000$ | $0.0000$ | $846,720.00$ | $3,281,250.00$ | Flexural rigidity $48 E I$ |
-| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.2580$** | Center beam flexure $\delta$ in mm |
+| `15` `[ENTER]` `2.5` `[ENTER]` `3` `[yˣ]` | $0.0000$ | $0.0000$ | $15.0000$ | $15.6250$ | Thickness cubed $h^3 = 2.5^3$ |
+| `[×]` `12` `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $19.5312$ | Moment of inertia $I = bh^3/12$ in mm$^4$ |
+| `3.92` `[ENTER]` `60` `[ENTER]` `3` `[yˣ]` | $19.5312$ | $19.5312$ | $3.9200$ | $216000.00$ | Span cubed $L^3 = 60^3$ |
+| `[×]` | $19.5312$ | $19.5312$ | $19.5312$ | $846720.00$ | Bending load numerator $F L^3$ |
+| `48` `[ENTER]` `3500` `[×]` | $19.5312$ | $19.5312$ | $846720.00$ | $168000.00$ | Modulus factor $48 E$ |
+| `[R↓]` `[×]` | $168000.0000$ | $168000.0000$ | $19.53$ | $1.6538 \times 10^{7}$ | Flexural rigidity $48 E I$ |
+| `[÷]` | $168000.0000$ | $168000.0000$ | $168000.0000$ | **$1.1810 \times 10^{-6}$** | Center beam flexure $\delta$ in mm |
 
 **Step-by-Step RPN Reasoning & Stack Logic:****
 1. `15` `[ENTER]` — Enter faceplate bridge width ($b = 15.0\text{ mm}$) and press `[ENTER]` to begin beam cross-section calculations.
@@ -1858,21 +1789,11 @@ $$R_{\text{int}} = \frac{V_1 - V_2}{I_2 - I_1}$$
 **Display Engineering Context:** The liquid crystal threshold voltage varies with temperature by $\frac{dV_{\text{LCD}}}{dT} = -12.5\text{ mV/}^\circ\text{C}$. If nominal voltage is $V_0 = 9.00\text{ V}$ at $25.0^\circ\text{C}$, find required drive voltage at freezing ($0.0^\circ\text{C}$):
 $$V(T) = V_0 + \frac{dV}{dT} (T - T_0) = 9.00 + (-0.0125)(0 - 25)$$
 
-**Keystrokes:** `0 [ENTER] 25 [-] 0.0125 [+/-] [×] 9.00 [+]`$\to \mathbf{9.3125\text{ V}}$.
+**Keystrokes:** `0 [ENTER] 25 [-] 0.0125 [+/-] [×] 9.00 [+]` $\rightarrow$ **`9.3125`**$\text{ V}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `0` `[ENTER]` `25` `[-]` | $0.0000$ | $0.0000$ | $0.0000$ | $-25.0000$ | Freezing temperature offset $\Delta T$ |
-| `0.0125` `[+/-]` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3125$ | Voltage correction factor |
-| `9.00` `[+]` | $0.0000$ | $0.0000$ | $0.0000$ | **$9.3125$** | Required drive potential $V(0)$ in Volts |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `0` `[ENTER]` — Enter freezing test temperature ($T = 0.0^\circ\text{C}$) into the stack.
-2. `25` `[-]` — Subtract reference calibration baseline ($T_0 = 25.0^\circ\text{C}$); temperature offset ($\Delta T = -25.0^\circ\text{C}$) forms in $X$.
-3. `0.0125` `[+/-]` `[×]` — Multiply by LCD thermal sensitivity slope ($-0.0125\text{ V}/^\circ\text{C}$); bias voltage correction ($+0.3125\text{ V}$) forms in $X$.
-4. `9.00` `[+]` — Add nominal room-temperature drive potential ($V_0 = 9.00\text{ V}$); target liquid crystal bias voltage ($V_{\text{LCD}} = 9.3125\text{ V}$) is confirmed.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0 [ENTER] 25 [-]` evaluates temperature differential $\Delta T = -25.0^\circ\text{C}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: -25.0000)$.
+2. Striking `0.0125 [+/-] [×] 9.00 [+]` scales by thermal sensitivity slope ($-0.0125\text{ V/}^\circ\text{C}$) to produce offset $+0.3125\text{ V}$ and adds nominal room-temperature drive potential, resolving freezing LCD bias potential $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{9.3125}\text{ V})$ in place.
 
 ---
 
@@ -1958,26 +1879,13 @@ Demonstrates why all internal solder joints and SMD inductors are epoxy underfil
 **Energetics Context:** In deep sleep ($I = 11.8\,\mu\text{A}$ at $V = 3.0\text{ V}$), find total energy consumed in Joules over an 18-month shelf storage ($547.5\text{ days} = 13,140\text{ hours}$):
 $$E = V \cdot I \cdot t$$
 
-**Keystrokes:** `3.0 [ENTER] 11.8 [E] 6 [+/-] [×] 13140 [×] 3600 [×]`$\to \mathbf{1,674.5616\text{ Joules}}$.
+**Keystrokes:** `3.0 [ENTER] 11.8 [E] 6 [+/-] [×] 13140 [×] 3600 [×]` $\rightarrow$ **`1,674.5616`**$\text{ Joules}$.
 
 > **Named RPN Stack Idiom: *The Constant-in-T Pipeline*** — Park battery potential in the stack to stream current and time across months, accumulating total dissipated Joules without scratchpad storage *([Horowitz & Hill, 2015](sc32/appendix-e-annotated-bibliography.md#cite-horowitz2015))*.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3.0` `[ENTER]` | $0.0000$ | $0.0000$ | $3.0000$ | $3.0000$ | Battery terminal voltage $V = 3.0\text{ V}$ |
-| `11.8 [E] 6 [+/-]` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.5400 \times 10^{-5}$ | Quiescent sleep power dissipation in Watts |
-| `13140` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.4652$ | Accumulated shelf energy in Watt-hours |
-| `3600` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$1,674.5616$** | Total 18-month energy consumed in Joules |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `3.0` `[ENTER]` — Load nominal coin-cell terminal voltage ($V = 3.0\text{ V}$) onto the stack.
-2. `1.18 [E] 5 [+/-]` `[×]` — Multiply by deep sleep quiescent current ($I = 1.18 \times 10^{-5}\text{ A}$); continuous sleep power dissipation ($P = 35.40\,\mu\text{W}$) occupies $X$.
-3. `13140` `[×]` — Scale by 18-month storage duration in hours ($13,140\text{ hours}$); accumulated watt-hours ($0.4652\text{ Wh}$) forms in $X$.
-4. `3600` `[×]` — Multiply by seconds per hour ($3600\text{ s/h}$); total dissipated shelf energy ($E = 1,674.56\text{ Joules}$) resolves with zero parentheses.
-
-Consumes less than $20\%$ of the coin cell's $8,100\text{ J}$ chemical capacity.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `3.0 [ENTER] 11.8 [E] 6 [+/-] [×]` loads nominal battery potential ($3.0\text{ V}$) and multiplies by deep sleep current ($11.8\,\mu\text{A}$), forming continuous power dissipation $3.5400 \times 10^{-5}\text{ W}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.5400 \times 10^{-5})$.
+2. Striking `13140 [×] 3600 [×]` scales by storage duration in hours and converts to seconds, calculating total 18-month energy consumed $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1674.5616}\text{ Joules})$—less than $20\%$ of the coin cell's chemical reserve.
 
 ---
 
@@ -1985,24 +1893,11 @@ Consumes less than $20\%$ of the coin cell's $8,100\text{ J}$ chemical capacity.
 **Silicon Design Context:** Phase-Locked Loop loop filter has damping factor $\zeta = 0.707$ and natural frequency $\omega_n = 2.40 \times 10^6\text{ rad/s}$. Calculate settling time to $1\%$ phase error:
 $$t_{\text{lock}} \approx \frac{4.6}{\zeta \omega_n}$$
 
-**Keystrokes:** `4.6 [ENTER] 0.707 [ENTER] 2.40 [E] 6 [×] [÷] 1 [E] 6 [×]`$\to \mathbf{2.7109853843\,\mu\text{s}}$.
+**Keystrokes:** `4.6 [ENTER] 0.707 [ENTER] 2.40 [E] 6 [×] [÷] 1 [E] 6 [×]` $\rightarrow$ **`2.7109853843`**$\,\mu\text{s}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4.6` `[ENTER]` | $0.0000$ | $0.0000$ | $4.6000$ | $4.6000$ | Four-time-constant settling factor |
-| `0.707` `[ENTER]` | $0.0000$ | $4.6000$ | $0.7070$ | $0.7070$ | Damping ratio $\zeta = 0.707$ |
-| `2.40 [E] 6` `[×]` | $0.0000$ | $0.0000$ | $4.6000$ | $1.6968 \times 10^6$ | Denominator product $\zeta \omega_n$ |
-| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.7110 \times 10^{-6}$ | Settling time in seconds |
-| `1 [E] 6` `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.7110$** | Phase lock time $t_{\text{lock}}$ in microseconds |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `4.6` `[ENTER]` — Prime the stack with the four-time-constant $1\%$ settling factor ($4.6$).
-2. `0.707` `[÷]` — Divide by PLL loop damping ratio ($\zeta = 0.707$); normalized damping rate ($6.5064$) forms in $X$.
-3. `2.4 [E] 6` `[÷]` — Divide by PLL natural angular frequency ($\omega_n = 2.40 \times 10^6\text{ rad/s}$); total phase lock acquisition time ($t_{\text{lock}} = 2.7110 \times 10^{-6}\text{ s} = 2.71\,\mu\text{s}$) is confirmed.
-
-Confirms clock stabilization takes $< 3\,\mu\text{s}$, well within the $0.45\text{ ms}$ boot window.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `4.6 [ENTER] 0.707 [ENTER] 2.40 [E] 6 [×] [÷]` loads the four-time-constant factor ($4.6$), evaluates the loop denominator $\zeta \omega_n = 1.6968 \times 10^6\text{ rad/s}$, and divides to obtain settling time $2.7110 \times 10^{-6}\text{ s}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.7110 \times 10^{-6})$.
+2. Striking `1 [E] 6 [×]` converts to microseconds, confirming PLL phase lock acquisition $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2.7110}\,\mu\text{s})$ takes under $3\,\mu\text{s}$.
 
 ---
 
@@ -2016,8 +1911,8 @@ $$N_f = \frac{C}{(\Delta T)^m}$$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `55` `[ENTER]` `2.2` `[yˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $6,742.1465$ | Thermal swing power $(\Delta T)^{2.2}$ |
-| `1.8 [E] 7` | $0.0000$ | $0.0000$ | $6,742.1465$ | $1.8000 \times 10^7$ | SAC305 fatigue coefficient $C$ |
+| `55` `[ENTER]` `2.2` `[yˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $6742.1423$ | Thermal swing power $(\Delta T)^{2.2}$ |
+| `1.8 [E] 7` | $0.0000$ | $0.0000$ | $6742.1423$ | $1.8000 \times 10^{7}$ | SAC305 fatigue coefficient $C$ |
 | `[x⇄y]` `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$2669.7745$** | Thermal shock endurance cycles $N_f$ |
 
 **Step-by-Step RPN Reasoning & Stack Logic:****
@@ -2033,21 +1928,10 @@ $$N_f = \frac{C}{(\Delta T)^m}$$
 **EMC Compliance Context:** Human Body Model ($C = 100\text{ pF}$, discharge resistance $R = 1500\,\Omega$) charged to $V_0 = 8000\text{ V}$ (IEC 61000-4-2 contact discharge). Find peak instantaneous current:
 $$I_{\text{peak}} = \frac{V_0}{R}$$
 
-**Keystrokes:** `8000 [ENTER] 1500 [÷]`$\to \mathbf{5.3333\text{ Amperes}}$.
+**Keystrokes:** `8000 [ENTER] 1500 [÷]` $\rightarrow$ **`5.3333`**$\text{ Amperes}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `8000` `[ENTER]` | $0.0000$ | $0.0000$ | $8000.0000$ | $8000.0000$ | HBM electrostatic potential $V_0 = 8000\text{ V}$ |
-| `1500` | $0.0000$ | $0.0000$ | $8000.0000$ | $1500.0000$ | Discharge series resistance $R = 1500\,\Omega$ |
-| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$5.3333$** | Peak instantaneous spark current in Amperes |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `8000` `[ENTER]` — Load Human Body Model electrostatic test potential ($V_0 = 8000\text{ V}$) into the stack.
-2. `1500` `[÷]` — Divide by discharge series resistance ($R = 1500\,\Omega$); peak instantaneous discharge current ($I_{\text{peak}} = 5.3333\text{ A}$) appears on the display.
-
-Explains why dedicated TVS clamping diodes (clamping to $< 6.5\text{ V}$) guard all external I/O pins.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `8000 [ENTER] 1500 [÷]` loads HBM electrostatic potential ($8000\text{ V}$) into Register $Y$ and divides by discharge resistance ($1500\,\Omega$). The stack drops, evaluating peak instantaneous spark current $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{5.3333}\text{ A})$ directly—explaining why dedicated TVS diodes guard all external I/O pins.
 
 ---
 
@@ -2056,17 +1940,8 @@ Explains why dedicated TVS clamping diodes (clamping to $< 6.5\text{ V}$) guard 
 $$I_{\text{sneak}} = \frac{V_{\text{cc}}}{R_{\text{pu}} + 3 R_{\text{contact}}} \approx \frac{3.3}{10000} = 0.33\text{ mA}$$
 Because Schottky diodes are placed in series with every keycap in the SC-32, the reverse-biased diode blocks sneak current completely ($I_{\text{leak}} < 0.1\,\mu\text{A}$), providing 100% anti-ghosting rollover.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3.3` `[ENTER]` | $0.0000$ | $0.0000$ | $3.3000$ | $3.3000$ | Logic supply rail $V_{\text{cc}} = 3.3\text{ V}$ in $Y$ |
-| `10000` | $0.0000$ | $0.0000$ | $3.3000$ | $10,000.00$ | Row pull-up resistance $R_{\text{pu}} = 10\text{ k}\Omega$ |
-| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.00033$** | Sneak path current in Amperes ($0.33\text{ mA}$) |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `3.3` `[ENTER]` — Load logic supply voltage ($V_{\text{cc}} = 3.3\text{ V}$) into Register $Y$.
-2. `10000` `[÷]` — Divide by pull-up resistance ($10\text{ k}\Omega$); sneak current resolves to $\mathbf{0.33\text{ mA}}$ in Register $X$.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `3.3 [ENTER] 10000 [÷]` loads logic supply potential ($3.3\text{ V}$) into Register $Y$ and divides by row pull-up resistance ($10,000\,\Omega$). The stack drops, resolving the unmitigated sneak current $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{3.3000 \times 10^{-4}}\text{ A} = 0.33\text{ mA})$ in Register $X$.
 
 ---
 
@@ -2076,16 +1951,9 @@ $$V_{\text{out}} = I_{\text{photo}} \cdot R_f = \left(\frac{0.25 \times 10^{-6}\
 $$V_{\text{LSB}} = \frac{3.30\text{ V}}{4096} \approx 0.80566\text{ mV}$$
 $$\text{Resolution} = \frac{V_{\text{LSB}}}{0.0060\text{ V/lux}} = \frac{0.80566}{6.0} \approx \mathbf{0.1343\text{ lux/count}}.$$
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3.3` `[ENTER]` `4096` `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0008057$ | Quantization voltage step $V_{\text{LSB}} \approx 0.8057\text{ mV}$ |
-| `0.006` `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.1343$** | Ambient lux measurement resolution in lux/count |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `3.3` `[ENTER] 4096 [÷]` — Evaluate 12-bit ADC quantization step ($V_{\text{LSB}} = 0.80566\text{ mV}$) directly in Register $X$.
-2. `.006` `[÷]` — Enter sensor transimpedance transfer factor ($6.0\text{ mV/lux}$) and divide; measurement resolution resolves to $\mathbf{0.1343\text{ lux/count}}$ in Register $X$.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `3.3 [ENTER] 4096 [÷]` evaluates 12-bit ADC voltage step $V_{\text{LSB}} = 8.0566 \times 10^{-4}\text{ V}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 8.0566 \times 10^{-4})$.
+2. Striking `0.006 [÷]` divides by the transimpedance transfer factor ($6.0\text{ mV/lux}$), resolving optical measurement resolution $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.1343}\text{ lux/count})$ directly.
 
 ---
 
@@ -2093,23 +1961,11 @@ $$\text{Resolution} = \frac{V_{\text{LSB}}}{0.0060\text{ V/lux}} = \frac{0.80566
 **Thermodynamics Context:** At full continuous 150 MHz dual-core computation, the board dissipates $P = 60.0\text{ mW} = 0.060\text{ W}$. The chassis has total heat radiating area $A = 0.024\text{ m}^2$ with natural convection heat transfer coefficient $h_c = 6.5\text{ W/m}^2\text{K}$:
 $$\Delta T = \frac{P}{h_c \cdot A}$$
 
-**Keystrokes:** `0.060 [ENTER] 6.5 [ENTER] 0.024 [×] [÷]`$\to \mathbf{0.3846\text{ K}} \approx 0.38^\circ\text{C}$.
+**Keystrokes:** `0.060 [ENTER] 6.5 [ENTER] 0.024 [×] [÷]` $\rightarrow$ **`0.3846`**$\text{ K} \approx 0.38^\circ\text{C}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `0.060` `[ENTER]` | $0.0000$ | $0.0000$ | $0.0600$ | $0.0600$ | Continuous dissipation $P = 60.0\text{ mW}$ |
-| `6.5` `[ENTER]` | $0.0000$ | $0.0600$ | $6.5000$ | $6.5000$ | Convection coefficient $h_c = 6.5\text{ W/m}^2\text{K}$ |
-| `0.024` `[×]` | $0.0000$ | $0.0000$ | $0.0600$ | $0.1560$ | Dissipation conductance $h_c A$ |
-| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.3846$** | Steady-state temperature rise $\Delta T$ in K ($0.38^\circ\text{C}$) |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `0.060` `[ENTER]` — Arm the stack with continuous computing thermal dissipation ($P = 0.060\text{ W}$).
-2. `6.5` `[÷]` — Divide by natural convection coefficient ($h_c = 6.5\text{ W/(m}^2\cdot\text{K)}$); intermediate thermal impedance ($9.2308 \times 10^{-3}\text{ K}\cdot\text{m}^2$) forms in $X$.
-3. `0.024` `[÷]` — Divide by effective surface area ($A = 0.024\text{ m}^2$); steady-state equilibrium temperature rise ($\Delta T = 0.3846\text{ K} \approx 0.38^\circ\text{C}$) is verified.
-
-Confirms the SC-32 remains completely cool to the touch with zero thermal throttling under indefinite continuous computing.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.060 [ENTER] 6.5 [ENTER] 0.024 [×]` loads continuous thermal dissipation ($0.060\text{ W}$) into $Z$ and evaluates convection conductance $h_c A = 0.1560\text{ W/K}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0600, X: 0.1560)$.
+2. Striking `[÷]` divides dissipation by conductance, determining steady-state equilibrium temperature rise $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.3846}\text{ K} \approx 0.38^\circ\text{C})$—proving the chassis remains cool to the touch with zero throttling.
 
 ---
 
@@ -3606,10 +3462,10 @@ Keystrokes: `2.5 [ENTER] 3.8 [yˣ]` $\rightarrow$ **`32.521609664`**
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `[2] [.] [5]` | $0.0000$ | $0.0000$ | $2.0000$ | $5.0000$ | Enter base $y$ |
-| 2 | `[ENTER]` | $0.0000$ | $2.0000$ | $5.0000$ | $5.0000$ | Stack lift disabled; $y$ pushed to $Y$ |
-| 3 | `[3] [.] [8]` | $2.0000$ | $5.0000$ | $3.0000$ | $8.0000$ | Overwrite $X$ with exponent $x$ |
-| 4 | `[yˣ]` | $2.0000$ | $2.0000$ | $5.0000$ | **$6561.0000000000$** | Evaluates $2.5^{3.8}$; Stack lift armed |
+| 1 | `[2] [.] [5]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.5000$ | Enter base $y$ |
+| 2 | `[ENTER]` | $0.0000$ | $0.0000$ | $2.5000$ | $2.5000$ | Stack lift disabled; $y$ pushed to $Y$ |
+| 3 | `[3] [.] [8]` | $0.0000$ | $0.0000$ | $2.5000$ | $3.8000$ | Overwrite $X$ with exponent $x$ |
+| 4 | `[yˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | **$32.5216096641$** | Evaluates $2.5^{3.8}$; Stack lift armed |
 
 ### 3.2.4 `[↰] [ˣ√y]` (Arbitrary Radical Root)
 * **Mathematical Definition:** Evaluates $\sqrt[X]{Y} = Y^{1/X}$.
@@ -3689,8 +3545,8 @@ $$t = -\frac{\ln(N(t)/N_0)}{\lambda} = -\frac{\ln(0.234) \times 5730}{\ln 2}$$
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & Pedagogical State |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `[.] [2] [3] [4]` | $0.0000$ | $2.0000$ | $3.0000$ | $4.0000$ | Remaining proportion |
-| 2 | `[LN]` | $0.0000$ | $2.0000$ | $3.0000$ | $1.386294$ | $\ln(0.234)$ evaluated |
+| 1 | `[.] [2] [3] [4]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2340$ | Remaining proportion |
+| 2 | `[LN]` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.452434$ | $\ln(0.234)$ evaluated |
 | 3 | `[5] [7] [3] [0]` | $5.0000$ | $7.0000$ | $3.000000$ | $0.0000$ | Stack lifts automatically |
 | 4 | `[×]` | $5.0000$ | $5.0000$ | $7.0000$ | $0.0000$ | Numerator product |
 | 5 | `[2]` | $5.0000$ | $7.0000$ | $0.0000$ | $2.0000$ | Base 2 for half-life |
@@ -7066,6 +6922,12 @@ When you compute the area of any face (or face pair) in Register $X$ and press `
 
 **Zero parentheses, zero named memory variables, and zero scratch paper!**
 
+### 6.4.2 The Algebraic Trap vs. StackCalc Superpower Showdown
+
+| Challenge / Metric | Algebraic Trap (TI-84 / Infix) | Algebraic Strokes | StackCalc SC-32 Superpower | SC-32 Strokes | Superpower Advantage |
+| :--- | :--- | :---: | :--- | :---: | :--- |
+| **Multi-Face Solid Surface Area**: 6 Faces | String calculation: `12 * 8 + 12 * 5 + 8 * 5 + 0.5 * 8 * 6 + ...` (38 strokes). Typo requires retyping entire 38 characters. | 38 | **Master Surface Area (`[Σ+]`)**: Key each face on stack, press `[Σ+]` (22 strokes). Screen tracks face count $n$ and accumulated area $\Sigma x$. Tap `[↰] [Σ-]` to pull back any error! | 22 | **42% fewer strokes + 100% face visibility** |
+
 <div class="admonition note">
 <p class="admonition-title">The Master Surface Area Statistical Accumulator Bus</p>
 <ol>
@@ -7232,12 +7094,7 @@ $$A = \pi (R^2 - r^2) = \pi (85^2 - 50^2) = \pi (7225 - 2500) = 4725\pi \approx 
 
 **Keystrokes:** `85 [↰] [x²] 50 [↰] [x²] [-] [↱] [π] [×]` $\rightarrow$ **`14,844.02529`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `85 [x²]` | $0.0000$ | $0.0000$ | $0.0000$ | $7225.0000$ | $R^2$ evaluated |
-| 2 | `50 [x²]` | $0.0000$ | $0.0000$ | $7225.0000$ | $2500.0000$ | $r^2$ evaluated |
-| 3 | `[-]` | $0.0000$ | $0.0000$ | $0.0000$ | $4725.0000$ | $R^2 - r^2$ |
-| 4 | `[π] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$14844.025289$** | Annulus Area in mm² |
+Compute the squared outer radius $R^2 = 7225$ with `85 [x²]`, subtract inner bore $r^2 = 2500$ via `50 [x²] [-]`, leaving differential area factor $4725.0$ in Register $X$. Scaling by circle constant `[π] [×]` delivers the annular gasket face area, bringing the stack to $(T:0, Z:0, Y:0, X:14844.0253)$.
 
 Result: **$14,844.03\text{ mm}^2$** ($148.44\text{ cm}^2$).
 
@@ -7249,11 +7106,7 @@ $$A = 2 (1 + \sqrt{2}) s^2 \approx 4.828427 \times 65^2 = 4.828427 \times 4225 =
 
 **Keystrokes:** `2 [√x] 1 [+] 2 [×] 65 [↰] [x²] [×]` $\rightarrow$ **`20,400.1046`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2 [√x] 1 [+] 2 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $4.828427$ | $2(1 + \sqrt{2})$ factor |
-| 2 | `65 [x²]` | $0.0000$ | $0.0000$ | $4.828427$ | $4225.0000$ | $s^2$ evaluated |
-| 3 | `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$20400.104684$** | Octagon Area in mm² |
+Form the regular octagonal geometry coefficient $2(1 + \sqrt{2}) \approx 4.828427$ directly on the stack via `2 [√x] 1 [+] 2 [×]`. Then square facet edge length $s = 65\text{ mm}$ via `65 [x²]` and evaluate the product with `[×]`, establishing total sheet metal enclosure area at $(T:0, Z:0, Y:0, X:20400.1047)$.
 
 Result: **$20,400.10\text{ mm}^2$**.
 
@@ -7267,11 +7120,7 @@ Result: **$20,400.10\text{ mm}^2$**.
 
 **Keystrokes (Area):** `250 [ENTER] 150 [×] [↱] [π] [×]` $\rightarrow$ **`117,809.7245`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `250 [ENTER]` | $0.0000$ | $0.0000$ | $250.0000$ | $250.0000$ | Semimajor axis $a$ pushed |
-| 2 | `150 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $37500.0000$ | Product $a \times b$ |
-| 3 | `[π] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$117809.724510$** | Area $A = \pi a b$ in mm² |
+Push semimajor axis $a = 250$ via `250 [ENTER]`, multiply by semiminor axis $b = 150$ via `150 [×]` to obtain planar product $37,500.0$, and apply `[π] [×]` to resolve exact manway opening area at $(T:0, Z:0, Y:0, X:117809.7245)$.
 
 Result: **$117,809.72\text{ mm}^2$** ($1,178.10\text{ cm}^2$).
 
@@ -7283,12 +7132,7 @@ $$V = \frac{1}{3} \pi h (R^2 + R r + r^2) = \frac{2.5\pi}{3} (1.8^2 + 1.8(0.4) +
 
 **Keystrokes:** `1.8 [↰] [x²] 1.8 [ENTER] 0.4 [×] [+] 0.4 [↰] [x²] [+] [↱] [π] [×] 2.5 [×] 3 [÷]` $\rightarrow$ **`10.786134777`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1.8 [x²]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.2400$ | $R^2$ |
-| 2 | `1.8 [ENTER] 0.4 [×] [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.9600$ | $R^2 + Rr$ |
-| 3 | `0.4 [x²] [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $4.1200$ | $R^2 + Rr + r^2$ |
-| 4 | `[π] [×] 2.5 [×] 3 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$10.786135$** | Frustum volume in m³ |
+Evaluate upper radius squared $R^2 = 3.24$ with `1.8 [x²]`, accumulate cross-product $R \cdot r = 0.72$ via `1.8 [ENTER] 0.4 [×] [+]`, and add lower base squared $r^2 = 0.16$ via `0.4 [x²] [+]` for sum $4.12$. Finally, multiply by height and conical scale factor via `[π] [×] 2.5 [×] 3 [÷]`, leaving frustum storage volume at $(T:0, Z:0, Y:0, X:10.7861)$.
 
 Result: **$10.7861\text{ m}^3$** ($10,786.1\text{ liters}$).
 
@@ -7301,19 +7145,13 @@ Result: **$10.7861\text{ m}^3$** ($10,786.1\text{ liters}$).
 
 **Keystrokes (Volume):** `[↱] [π] [↰] [x²] 2 [×] 45 [×] 3.5 [↰] [x²] [×]` $\rightarrow$ **`10,881.23885`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `[π] [x²] 2 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $19.739209$ | $2\pi^2$ evaluated |
-| 2 | `45 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $888.264396$ | $2\pi^2 R$ |
-| 3 | `3.5 [x²] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$10880.887208$** | Torus Volume $V$ in mm³ |
+Evaluate $2\pi^2$ via `[π] [x²] 2 [×]`, scale by major centerline radius $R = 45\text{ mm}$ via `45 [×]`, and multiply by cross-sectional radius squared $r^2 = 3.5^2$ via `3.5 [x²] [×]`, establishing torus body volume at $(T:0, Z:0, Y:0, X:10880.8872)$.
 
 **Keystrokes (Surface Area):** `[↱] [π] [↰] [x²] 4 [×] 45 [×] 3.5 [×]` $\rightarrow$ **`6217.6500`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `[π] [x²] 4 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $39.478418$ | $4\pi^2$ evaluated |
-| 2 | `45 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $1776.528792$ | $4\pi^2 R$ with $R = 45\text{ mm}$ |
-| 3 | `3.5 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$6217.850773$** | Torus Surface Area $A = 4\pi^2 R r$ in mm² |
+Compute the $4\pi^2$ envelope constant via `[π] [x²] 4 [×]`, then chain major and minor radii via `45 [×] 3.5 [×]` to yield total contact surface area at $(T:0, Z:0, Y:0, X:6217.8508)$.
+
+Result: **$V = 10,880.89\text{ mm}^3$**, **$A = 6,217.85\text{ mm}^2$**.
 
 ---
 
@@ -7323,11 +7161,7 @@ $$V = \frac{1}{3} \pi h^2 (3R - h) = \frac{\pi (1.5^2)}{3} (3(4.0) - 1.5) = \fra
 
 **Keystrokes:** `4 [ENTER] 3 [×] 1.5 [-] 1.5 [↰] [x²] [×] [↱] [π] [×] 3 [÷]` $\rightarrow$ **`24.740042147`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `4 [ENTER] 3 [×] 1.5 [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $10.5000$ | $3R - h$ term |
-| 2 | `1.5 [x²] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $23.6250$ | $h^2(3R - h)$ |
-| 3 | `[π] [×] 3 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$24.740042$** | Liquid volume in m³ |
+Evaluate diameter difference factor $(3R - h) = 10.5$ via `4 [ENTER] 3 [×] 1.5 [-]`. Multiply by depth squared $h^2 = 2.25$ via `1.5 [x²] [×]`, and scale by spherical sector factor `[π] [×] 3 [÷]`, resolving liquid charge volume at $(T:0, Z:0, Y:0, X:24.7400)$.
 
 Result: **$24.7400\text{ m}^3$** ($24,740.0\text{ liters}$).
 
@@ -7340,13 +7174,7 @@ $$V = \frac{h}{3} (A_1 + A_2 + \sqrt{A_1 A_2}) = \frac{4.5}{3} (10.24 + 3.24 + \
 
 **Keystrokes:** `3.2 [↰] [x²] [STO] 1  1.8 [↰] [x²] [STO] 2  [+] [RCL] 1 [RCL] 2 [×] [√x] [+] 4.5 [×] 3 [÷]` $\rightarrow$ **`28.86`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `3.2 [x²] [STO] 1` | $0.0000$ | $0.0000$ | $0.0000$ | $10.2400$ | Base 1 area stored in Reg 1 |
-| 2 | `1.8 [x²] [STO] 2` | $0.0000$ | $0.0000$ | $10.2400$ | $3.2400$ | Base 2 area stored in Reg 2 |
-| 3 | `[+]` | $0.0000$ | $0.0000$ | $0.0000$ | $13.4800$ | Sum $A_1 + A_2$ |
-| 4 | `[RCL] 1 [RCL] 2 [×] [√x]` | $0.0000$ | $0.0000$ | $13.4800$ | $5.7600$ | Geometric mean $\sqrt{A_1 A_2}$ |
-| 5 | `[+] 4.5 [×] 3 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$28.860000$** | Pyramidal frustum volume $V$ |
+Store lower base $A_1 = 10.24$ into Register 1 via `3.2 [x²] [STO] 1`, and upper base $A_2 = 3.24$ into Register 2 via `1.8 [x²] [STO] 2`. Add them via `[+]` for sum $13.48$. Compute geometric mean $\sqrt{A_1 A_2} = 5.76$ via `[RCL] 1 [RCL] 2 [×] [√x]`, sum with base areas via `[+]`, and multiply by $h/3$ via `4.5 [×] 3 [÷]`, yielding pedestal volume at $(T:0, Z:0, Y:0, X:28.8600)$.
 
 Result: **$28.8600\text{ m}^3$**.
 
@@ -7359,11 +7187,7 @@ Result: **$28.8600\text{ m}^3$**.
 
 **Keystrokes (Volume):** `5 [√x] 3 [+] 5 [×] 12 [÷] 18 [ENTER] 3 [yˣ] [×]` $\rightarrow$ **`12,723.64519`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `5 [√x] 3 [+] 5 [×] 12 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.181695$ | Volume coefficient evaluated |
-| 2 | `18 [ENTER] 3 [yˣ]` | $0.0000$ | $0.0000$ | $2.181695$ | $5832.0000$ | Edge cubed $a^3$ |
-| 3 | `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$12713.409324$** | Icosahedron Volume in mm³ |
+Evaluate icosahedral volume factor $\frac{5(3+\sqrt{5})}{12} \approx 2.181695$ via `5 [√x] 3 [+] 5 [×] 12 [÷]`. Cube die edge $a = 18\text{ mm}$ via `18 [ENTER] 3 [yˣ]` and multiply via `[×]`, arriving at total polyhedron volume at $(T:0, Z:0, Y:0, X:12713.4093)$.
 
 Result: **$V = 12,713.41\text{ mm}^3$**, **$A = 2,805.92\text{ mm}^2$**.
 
@@ -7375,11 +7199,7 @@ $$V = \frac{15 + 7\sqrt{5}}{4} a^3 \approx \frac{15 + 15.652476}{4} (1728) = 7.6
 
 **Keystrokes:** `5 [√x] 7 [×] 15 [+] 4 [÷] 12 [ENTER] 3 [yˣ] [×]` $\rightarrow$ **`13,241.86956`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `5 [√x] 7 [×] 15 [+] 4 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $7.663119$ | Volume coefficient evaluated |
-| 2 | `12 [ENTER] 3 [yˣ]` | $0.0000$ | $0.0000$ | $7.663119$ | $1728.0000$ | $a^3 = 12^3$ |
-| 3 | `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$13241.869389$** | Dodecahedron Volume in mm³ |
+Compute the dodecahedral volume constant $\frac{15+7\sqrt{5}}{4} \approx 7.663119$ via `5 [√x] 7 [×] 15 [+] 4 [÷]`. Cube facet edge $a = 12\text{ mm}$ via `12 [ENTER] 3 [yˣ]` and multiply with `[×]`, yielding $(T:0, Z:0, Y:0, X:13241.8694)$.
 
 Result: **$13,241.87\text{ mm}^3$**.
 
@@ -7393,11 +7213,7 @@ Result: **$13,241.87\text{ mm}^3$**.
 
 **Keystrokes (Volume):** `2 [√x] 12 [÷] 50 [ENTER] 3 [yˣ] [×]` $\rightarrow$ **`14,731.39127`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2 [√x] 12 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.117851$ | Coefficient $\sqrt{2}/12$ |
-| 2 | `50 [ENTER] 3 [yˣ]` | $0.0000$ | $0.0000$ | $0.117851$ | $125000.0000$ | $a^3 = 50^3$ |
-| 3 | `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$14731.391275$** | Tetrahedron Volume in mm³ |
+Evaluate coefficient $\sqrt{2}/12 \approx 0.117851$ via `2 [√x] 12 [÷]`. Cube edge length $a = 50\text{ mm}$ via `50 [ENTER] 3 [yˣ]` for $125,000.0$, and multiply via `[×]` to resolve tetrahedron volume at $(T:0, Z:0, Y:0, X:14731.3913)$.
 
 Result: **$h = 40.82\text{ mm}$**, **$A = 4,330.13\text{ mm}^2$**, **$V = 14,731.39\text{ mm}^3$**.
 
@@ -7443,10 +7259,10 @@ Accumulate all 4 elements via `[Σ+]` $\implies$ **Total Surface Area = $76,000.
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `[CLΣ] 16 [ENTER] 100 [×] 35 [×] [Σ+]` | $0.0000$ | $0.0000$ | $1600.0000$ | $1.0000$ | 16 fin sides ($56,000.0\text{ mm}^2$) accumulated ($n=1$) |
-| 2 | `8 [ENTER] 100 [×] 2 [×] [Σ+]` | $0.0000$ | $0.0000$ | $800.0000$ | $2.0000$ | 8 fin tips ($1,600.0\text{ mm}^2$) accumulated ($n=2$) |
-| 3 | `100 [ENTER] 100 [×] 1600 [-] [Σ+]` | $0.0000$ | $0.0000$ | $100.0000$ | $3.0000$ | Base exposed top ($8,400.0\text{ mm}^2$) accumulated ($n=3$) |
-| 4 | `100 [ENTER] 100 [×] [Σ+]` | $0.0000$ | $0.0000$ | $100.0000$ | $4.0000$ | Base flat bottom ($10,000.0\text{ mm}^2$) accumulated ($n=4$) |
+| 1 | `[CLΣ] 16 [ENTER] 100 [×] 35 [×] [Σ+]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | 16 fin sides ($56,000.0\text{ mm}^2$) accumulated ($n=1$) |
+| 2 | `8 [ENTER] 100 [×] 2 [×] [Σ+]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | 8 fin tips ($1,600.0\text{ mm}^2$) accumulated ($n=2$) |
+| 3 | `100 [ENTER] 100 [×] 1600 [-] [Σ+]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.0000$ | Base exposed top ($8,400.0\text{ mm}^2$) accumulated ($n=3$) |
+| 4 | `100 [ENTER] 100 [×] [Σ+]` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Base flat bottom ($10,000.0\text{ mm}^2$) accumulated ($n=4$) |
 | 5 | `[↱] [SUMS]` | $0.0000$ | $0.0000$ | $4.0000$ | **$76000.0000$** | Recall total heat sink surface area $\Sigma x$ |
 
 ---
@@ -7458,13 +7274,7 @@ $$d = \sqrt{850^2 + 1100^2 + 550^2} = \sqrt{722500 + 1210000 + 302500} = \sqrt{2
 
 **Keystrokes:** `2100 [ENTER] 1250 [-] [↰] [x²]  680 [ENTER] 420 [+/-] [-] [↰] [x²] [+]  1400 [ENTER] 850 [-] [↰] [x²] [+] [√x]` $\rightarrow$ **`1,494.991639`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2100 [ENTER] 1250 [-] [x²]` | $0.0000$ | $0.0000$ | $0.0000$ | $722500.0000$ | $\Delta x^2 = 850^2$ |
-| 2 | `680 [ENTER] 420 [+/-] [-] [x²]` | $0.0000$ | $0.0000$ | $722500.0000$ | $1210000.0000$ | $\Delta y^2 = 1100^2$ |
-| 3 | `[+]` | $0.0000$ | $0.0000$ | $0.0000$ | $1932500.0000$ | $\Delta x^2 + \Delta y^2$ |
-| 4 | `1400 [ENTER] 850 [-] [x²]` | $0.0000$ | $0.0000$ | $1932500.0000$ | $302500.0000$ | $\Delta z^2 = 550^2$ |
-| 5 | `[+] [√x]` | $0.0000$ | $0.0000$ | $0.0000$ | **$1494.991639$** | 3D Distance $d$ in meters |
+Compute the squared coordinate deltas along each orthogonal axis: evaluate $\Delta x^2 = 850^2 = 722,500$ via `2100 [ENTER] 1250 [-] [x²]`, accumulate $\Delta y^2 = 1100^2 = 1,210,000$ with `680 [ENTER] 420 [+/-] [-] [x²] [+]`, and add $\Delta z^2 = 550^2 = 302,500$ via `1400 [ENTER] 850 [-] [x²] [+]`. Extract the square root via `[√x]` to resolve 3D spatial separation at $(T:0, Z:0, Y:0, X:1494.9916)$.
 
 Result: **$1,494.99\text{ meters}$**.
 
@@ -7478,12 +7288,7 @@ Result: **$1,494.99\text{ meters}$**.
 
 **Keystrokes:** `1494.9916 [STO] [D] 850 [RCL] [D] [÷] 1100 [RCL] [D] [÷] 550 [RCL] [D] [÷]` $\rightarrow$ **`0.3678950437`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1494.9916 [STO] D` | $0.0000$ | $0.0000$ | $0.0000$ | $1494.9916$ | Vector magnitude saved |
-| 2 | `850 [RCL] D [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.568565$** | $\cos\alpha$ (X-direction cosine) |
-| 3 | `1100 [RCL] D [÷]` | $0.0000$ | $0.0000$ | $0.568565$ | **$0.735790$** | $\cos\beta$ (Y-direction cosine) |
-| 4 | `550 [RCL] D [÷]` | $0.0000$ | $0.568565$ | $0.735790$ | **$0.367895$** | $\cos\gamma$ (Z-direction cosine) |
+Store the vector magnitude in variable `D` via `1494.9916 [STO] D`. Compute $\cos\alpha = 850 / D = 0.568565$ via `850 [RCL] D [÷]`, followed by $\cos\beta = 0.735790$ via `1100 [RCL] D [÷]` and $\cos\gamma = 0.367895$ via `550 [RCL] D [÷]`, leaving the directional cosines arrayed across the stack as $(T:0, Z:0.568565, Y:0.735790, X:0.367895)$.
 
 Check: $0.568565^2 + 0.735790^2 + 0.367895^2 \equiv \mathbf{1.000000}$.
 
@@ -7499,12 +7304,7 @@ $$\vec{C} = (-16, 10, 17) \implies |\vec{C}| = \sqrt{256 + 100 + 289} = \sqrt{64
 
 **Keystrokes (Magnitude):** `16 [↰] [x²] 10 [↰] [x²] [+] 17 [↰] [x²] [+] [√x]` $\rightarrow$ **`25.396850198`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `16 [x²]` | $0.0000$ | $0.0000$ | $0.0000$ | $256.0000$ | $C_x^2$ |
-| 2 | `10 [x²] [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $356.0000$ | $C_x^2 + C_y^2$ |
-| 3 | `17 [x²] [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $645.0000$ | Sum of squares |
-| 4 | `[√x]` | $0.0000$ | $0.0000$ | $0.0000$ | **$25.396850$** | Cross product magnitude $|\vec{C}|$ |
+Square each Cartesian cross-product component sequentially: `16 [x²] 10 [x²] [+] 17 [x²] [+]` produces sum of squares $645.0$ in Register $X$. Taking the square root via `[√x]` delivers vector magnitude $|\vec{C}|$ at $(T:0, Z:0, Y:0, X:25.3969)$.
 
 Result: **$\vec{C} = (-16, 10, 17), |\vec{C}| = 25.40$**.
 
@@ -7517,10 +7317,7 @@ $$\theta = \arccos(4/9) \approx \mathbf{63.6122^\circ}$$
 
 **Keystrokes:** `4 [ENTER] 9 [÷] [↰] [ACOS]` $\rightarrow$ **`63.612200039`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `4 [ENTER] 9 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.444444$ | Ratio $4/9$ evaluated |
-| 2 | `[↰] [ACOS]` | $0.0000$ | $0.0000$ | $0.0000$ | **$63.612200$** | Dihedral angle $\theta$ in degrees |
+Evaluate cosine quotient $4/9 \approx 0.444444$ via `4 [ENTER] 9 [÷]`. Taking inverse cosine via `[↰] [ACOS]` extracts the dihedral intersection angle in degrees, settling the stack at $(T:0, Z:0, Y:0, X:63.6122)$.
 
 Result: **$\theta = 63.6122^\circ$**.
 
@@ -7592,10 +7389,7 @@ $$k = \sqrt{\frac{I}{M}} = \sqrt{\frac{14.8}{42.0}} = \sqrt{0.352381} = \mathbf{
 
 **Keystrokes:** `14.8 [ENTER] 42 [÷] [√x]` $\rightarrow$ **`0.5936168397`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `14.8 [ENTER] 42 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.352381$ | Ratio $I/M$ |
-| 2 | `[√x]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.593617$** | Radius of gyration $k$ in meters |
+Divide moment of inertia $I = 14.8$ by mass $M = 42.0$ via `14.8 [ENTER] 42 [÷]` to form gyration metric $0.352381$. Extracting the square root via `[√x]` gives radius of gyration $k$ in meters at $(T:0, Z:0, Y:0, X:0.593617)$.
 
 Result: **$k = 0.5936\text{ m}$** ($593.6\text{ mm}$).
 
@@ -7632,17 +7426,9 @@ For $f = 1.2, R = 2.0$: $\frac{R^2}{4f^2} = \frac{4}{4(1.44)} = \frac{1}{1.44} \
 $1 + 0.694444 = 1.694444 \implies (1.694444)^{1.5} \approx 2.205739$.
 $$A = \frac{8\pi(1.44)}{3} [2.205739 - 1] = 3.84\pi \times 1.205739 \approx \mathbf{14.5458\text{ m}^2}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `[CLΣ]` — Zero the statistical accumulators ($n = 0, \Sigma x = 0$) before summing composite geometric faces.
-2. **Evaluate Each Sub-Feature in $(Y, X)$:** Compute each individual face area or sub-volume directly on the RPN stack from the inside out and press `[Σ+]` to add it into the running $\Sigma x$ register while incrementing the face counter $n$ in Register $X$.
-3. `[Σx]` — Recall the accumulated total surface area or composite volume into Register $X$ without touching general-purpose storage registers.
+Evaluate base factor $1 + R^2/(4f^2) \approx 1.694444$ via `2 [x²] 4 [÷] 1.2 [x²] [÷] 1 [+]`. Raise to power $1.5$ and subtract unity via `1.5 [yˣ] 1 [-]` to obtain $1.205739$. Form leading coefficient $\frac{8\pi f^2}{3} \approx 12.063716$ via `8 [ENTER] [π] [×] 1.2 [x²] [×] 3 [÷]` and multiply via `[×]` to resolve reflector area at $(T:0, Z:0, Y:0, X:14.5458)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2 [x²] 4 [÷] 1.2 [x²] [÷] 1 [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.694444$ | Base $(1 + R^2/(4f^2))$ evaluated |
-| 2 | `1.5 [yˣ] 1 [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.205739$ | Bracket term $(1 + R^2/(4f^2))^{3/2} - 1$ |
-| 3 | `8 [ENTER] [π] [×] 1.2 [x²] [×] 3 [÷]` | $0.0000$ | $0.0000$ | $1.205739$ | $12.063716$ | Leading factor $8\pi f^2 / 3$ |
-| 4 | `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$14.545789$** | Parabolic reflector surface area in m² |
+Result: **$14.5458\text{ m}^2$**.
 
 ---
 
@@ -7655,17 +7441,9 @@ $$p \approx 1.6075 \implies A \approx 4\pi \left(\frac{(ab)^p + (ac)^p + (bc)^p}
 Sum $= 5,308.1 / 3 = 1,769.37 \implies (1769.37)^{1/1.6075} \approx 103.52$
 $A \approx 4\pi \times 103.52 \approx \mathbf{1,300.9\text{ km}^2}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `[CLΣ]` — Zero the statistical accumulators ($n = 0, \Sigma x = 0$) before summing composite geometric faces.
-2. **Evaluate Each Sub-Feature in $(Y, X)$:** Compute each individual face area or sub-volume directly on the RPN stack from the inside out and press `[Σ+]` to add it into the running $\Sigma x$ register while incrementing the face counter $n$ in Register $X$.
-3. `[Σx]` — Recall the accumulated total surface area or composite volume into Register $X$ without touching general-purpose storage registers.
+Compute $(ab)^p = 150^{1.6075} \approx 3178.60$ with `150 [ENTER] 1.6075 [yˣ]`. Accumulate $(ac)^p = 90^{1.6075}$ via `90 [ENTER] 1.6075 [yˣ] [+]` and $(bc)^p = 60^{1.6075}$ divided by 3 via `60 [ENTER] 1.6075 [yˣ] [+] 3 [÷]`, reaching mean power $1769.3683$. Take the $1/p$ root and scale by $4\pi$ via `1 1.6075 [÷] [yˣ] 4 [×] [π] [×]` to establish ellipsoid surface area at $(T:0, Z:0, Y:0, X:1300.9168)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `150 [ENTER] 1.6075 [yˣ]` | $0.0000$ | $0.0000$ | $150.0000$ | $3178.6008$ | $(ab)^p = 150^{1.6075}$ |
-| 2 | `90 [ENTER] 1.6075 [yˣ] [+]` | $0.0000$ | $0.0000$ | $90.0000$ | $4578.3371$ | Add $(ac)^p = 90^{1.6075}$ |
-| 3 | `60 [ENTER] 1.6075 [yˣ] [+] 3 [÷]` | $0.0000$ | $0.0000$ | $60.0000$ | $1769.3683$ | Add $(bc)^p$ and divide by 3 |
-| 4 | `1 1.6075 [÷] [yˣ] 4 [×] [π] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$1300.9168$** | Raise to $1/p$ and scale by $4\pi$ (km²) |
+Result: **$1,300.92\text{ km}^2$**.
 
 ---
 
@@ -7677,18 +7455,9 @@ $$\text{Mass } m = 3.11769 \times 7.85 = \mathbf{24.4739\text{ grams}}$$
 
 > **Named RPN Stack Idiom: *The Inside-Out Radical & Regular Polygon Pipeline*** — Square hex bolt face flat-to-flat span, multiply by polygonal area factor $3\sqrt{3}/2$, and scale by thickness without scratchpad storage *([Macaulay, 2016](sc32/appendix-e-annotated-bibliography.md#cite-macaulay2016); [HP, 1982](sc32/appendix-e-annotated-bibliography.md#cite-hp15c1982))*.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `3` `[√x]` `3` `[×]` `2` `[÷]` — Evaluate regular hexagonal area coefficient ($3\sqrt{3}/2 \approx 2.598076$).
-2. `10` `[↰] [x²]` `[×]` — Square hex edge $s = 10.0\text{ mm}$ and multiply, establishing face area $A \approx 259.81\text{ mm}^2$.
-3. `6.5` `[×]` — Multiply by bolt head height $h = 6.5\text{ mm}$ to find volume $V \approx 1688.75\text{ mm}^3$.
-4. `7.85` `[×]` `1000` `[÷]` — Scale by steel density ($7.85\text{ g/cm}^3$) to obtain fastener head mass $m \approx \mathbf{13.26\text{ g}}$.
+Evaluate regular hex coefficient $3\sqrt{3}/2 \approx 2.598076$ via `3 [√x] 3 [×] 2 [÷]`. Square side $s = 10\text{ mm}$ with `10 [x²] [×]` to yield face area $259.8076\text{ mm}^2$. Multiply by height $h = 12\text{ mm}$ via `12 [×]` for volume $3117.6915\text{ mm}^3$, and convert to grams at $\rho = 7.85\text{ g/cm}^3$ via `1000 [÷] 7.85 [×]`, resolving fastener mass at $(T:0, Z:0, Y:0, X:24.4739)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `3 [√x] 3 [×] 2 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.598076$ | Regular hex area factor $3\sqrt{3}/2$ |
-| 2 | `10 [x²] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $259.807621$ | Bolt head face area $A$ in mm² |
-| 3 | `12 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $3117.691454$ | Volume $V = A \cdot h$ in mm³ |
-| 4 | `1000 [÷] 7.85 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$24.473878$** | Mass in grams ($\rho = 7.85\text{ g/cm}^3$) |
+Result: **$24.4739\text{ grams}$**.
 
 ---
 
@@ -7700,16 +7469,9 @@ $$\text{Mass } m = 3.11769 \times 7.85 = \mathbf{24.4739\text{ grams}}$$
 
 > **Named RPN Stack Idiom: *The x⇄y Denominator Flip & Wetted Perimeter Pipeline*** — Compute open channel flow cross-sectional area, compute wetted boundary perimeter, and divide via stack swap with zero register allocation *([HP, 1982](sc32/appendix-e-annotated-bibliography.md#cite-hp15c1982))*.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `4.5` `[ENTER]` `1.8` `[×]` — Compute canal flow area $A = 4.5 \times 1.8 = 8.10\text{ m}^2$.
-2. `4.5` `[ENTER]` `1.8` `[ENTER]` `2` `[×]` `[+]` — Form wetted perimeter $P = 4.5 + 2(1.8) = 8.10\text{ m}$.
-3. `[x⇄y]` `[÷]` — Swap and divide flow area by wetted perimeter, establishing hydraulic radius $R_h = \mathbf{1.000\text{ m}}$.
+Evaluate cross-sectional flow area $A = (b+zy)y = 12.06\text{ m}^2$ with `4 [ENTER] 1.5 [ENTER] 1.8 [×] [+] 1.8 [×]`. Then compute wetted perimeter $P = b + 2y\sqrt{1+z^2} \approx 10.4892\text{ m}$ via `4 [ENTER] 2 [ENTER] 1.8 [×] 1 [ENTER] 1.5 [x²] [+] [√x] [×] [+]`, positioning $A$ in Register $Y$ and $P$ in Register $X$. Pressing `[÷]` divides the two directly to establish hydraulic radius at $(T:0, Z:0, Y:0, X:1.1498)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `4 [ENTER] 1.5 [ENTER] 1.8 [×] [+] 1.8 [×]` | $0.0000$ | $4.0000$ | $6.7000$ | $12.060000$ | Flow area $A = (b + zy)y$ in m² |
-| 2 | `4 [ENTER] 2 [ENTER] 1.8 [×] 1 [ENTER] 1.5 [x²] [+] [√x] [×] [+]` | $0.0000$ | $12.060000$ | $4.0000$ | $10.489240$ | Wetted perimeter $P = b + 2y\sqrt{1+z^2}$ in m |
-| 3 | `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.149750$** | Hydraulic radius $R_h = A / P$ in meters |
+Result: **$R_h = 1.1498\text{ meters}$**.
 
 ---
 
@@ -7718,17 +7480,9 @@ $$\text{Mass } m = 3.11769 \times 7.85 = \mathbf{24.4739\text{ grams}}$$
 $$\theta = 2 \arccos\left(\frac{r - d}{r}\right) = 2 \arccos\left(\frac{0.2}{0.6}\right) = 2 \arccos(0.333333) = 2(70.5288^\circ) = 141.0575^\circ = 2.461914\text{ rad}$$
 $$\text{Area } A = \frac{1}{2} r^2 (\theta - \sin\theta) = 0.5(0.36)(2.461914 - \sin(141.0575^\circ)) = 0.18(2.461914 - 0.628539) = 0.18(1.833375) = \mathbf{0.330008\text{ m}^2}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `120` `[ENTER]` `[↱] [π]` `[×]` `180` `[÷]` — Convert central angle $120.0^\circ$ into radians ($\theta \approx 2.094395\text{ rad}$).
-2. `120` `[SIN]` `[-]` — Subtract $\sin(120^\circ) \approx 0.866025$ to obtain chord differential factor $1.228370$.
-3. `0.75` `[↰] [x²]` `[×]` `2` `[÷]` — Multiply by $R^2/2$ with $R = 0.75\text{ m}$, yielding partially filled flow area $A \approx \mathbf{0.3455\text{ m}^2}$.
+Determine subtended angle $\theta = 141.0576^\circ$ via `0.6 [ENTER] 0.4 [-] 0.6 [÷] [↰] [ACOS] 2 [×]`. Convert to radians $\theta_{\text{rad}} \approx 2.461914$ via `[ENTER] [π] [×] 180 [÷]`, and subtract sine via `[x⇄y] [SIN] [-]` to obtain chord bracket $1.833375$. Scaling by $r^2/2$ via `0.6 [x²] [×] 2 [÷]` delivers flow cross section at $(T:0, Z:0, Y:0, X:0.330008)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.6 [ENTER] 0.4 [-] 0.6 [÷] [↰] [ACOS] 2 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $141.057559$ | Subtended angle $\theta$ in degrees |
-| 2 | `[ENTER] [π] [×] 180 [÷]` | $0.0000$ | $0.0000$ | $141.057559$ | $2.461914$ | Converted angle $\theta_{\text{rad}}$ in radians |
-| 3 | `[x⇄y] [SIN] [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.833375$ | Chord term $(\theta_{\text{rad}} - \sin\theta)$ |
-| 4 | `0.6 [x²] [×] 2 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.330008$** | Flow cross-sectional area $A$ in m² |
+Result: **$0.330008\text{ m}^2$**.
 
 ---
 
@@ -7740,17 +7494,9 @@ $$\text{Area } A = \frac{1}{2} r^2 (\theta - \sin\theta) = 0.5(0.36)(2.461914 - 
 
 > **Named RPN Stack Idiom: *The Σ+ Multi-Face Surface Area Accumulator & Perforation Subtraction*** — Compute tank bulkhead gross area, stream orifice hole areas, and subtract net open area in place *([HP, 1982](sc32/appendix-e-annotated-bibliography.md#cite-hp15c1982); [Munroe, 2014](sc32/appendix-e-annotated-bibliography.md#cite-munroe2014))*.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1.2` `[↰] [x²]` `[↱] [π]` `[×]` — Calculate gross plate area $A_{\text{gross}} = \pi R^2 \approx 4.5239\text{ m}^2$.
-2. `0.04` `[↰] [x²]` `[↱] [π]` `[×]` — Form area of single perforation $a = \pi r^2 \approx 5.0265 \times 10^{-3}\text{ m}^2$.
-3. `120` `[×]` — Multiply by hole count ($N = 120$), establishing total relief area $A_{\text{holes}} \approx 0.6032\text{ m}^2$.
-4. `[-]` — Subtract perforations from gross area, yielding net structural baffle area $A_{\text{net}} \approx \mathbf{3.9207\text{ m}^2}$.
+Compute gross solid plate area $\pi R^2 \approx 502,654.82\text{ mm}^2$ with `400 [x²] [π] [×]`. Evaluate the 48 perforation holes $48 \times \pi r_h^2 \approx 46,181.41\text{ mm}^2$ via `17.5 [x²] [π] [×] 48 [×]`, and subtract directly with `[-]`, leaving net solid baffle area at $(T:0, Z:0, Y:0, X:456473.4126)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `400 [x²] [π] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $502654.8246$ | Gross solid circular area $\pi R^2$ in mm² |
-| 2 | `17.5 [x²] [π] [×] 48 [×]` | $0.0000$ | $0.0000$ | $502654.8246$ | $46181.4120$ | Total perforation area ($48 \times \pi r_h^2$) |
-| 3 | `[-]` | $0.0000$ | $0.0000$ | $0.0000$ | **$456473.4126$** | Net solid baffle area $A_{\text{net}}$ in mm² |
+Result: **$456,473.41\text{ mm}^2$**.
 
 ---
 
@@ -7788,18 +7534,9 @@ Ratio $R/r = \sqrt{3} \approx 1.732051$.
 
 **Keystrokes:** `40 [ENTER] 2 [√x] [÷] 40 [ENTER] 6 [√x] [÷] [÷]` $\rightarrow$ **`1.7321`**
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `40` `[ENTER]` `2` `[√x]` `[÷]` — Compute circumscribed sphere radius ($R = a/\sqrt{2} \approx 28.2843\text{ mm}$).
-2. `40` `[ENTER]` `6` `[√x]` `[÷]` — Compute inscribed sphere radius ($r = a/\sqrt{6} \approx 16.3299\text{ mm}$).
-3. `[÷]` — Divide radii to yield exact geometric ratio ($R/r = \sqrt{3} \approx \mathbf{1.7321}$).
-4. `[↰] [x²]` — Square the ratio to confirm the invariant $(R/r)^2 = 3.0000$.
+Evaluate circumradius $R = a/\sqrt{2} \approx 28.2843\text{ mm}$ via `40 [ENTER] 2 [√x] [÷]`, then inradius $r = a/\sqrt{6} \approx 16.3299\text{ mm}$ via `40 [ENTER] 6 [√x] [÷]`. Dividing the two via `[÷]` yields exact sphere ratio $R/r = \sqrt{3} \approx 1.7321$ at $(T:0, Z:0, Y:0, X:1.7321)$, and squaring via `[↰] [x²]` confirms invariant $(R/r)^2 = 3.0000$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `40 [ENTER] 2 [√x] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $28.2843$ | Circumradius $R = a/\sqrt{2}$ in mm |
-| 2 | `40 [ENTER] 6 [√x] [÷]` | $0.0000$ | $0.0000$ | $28.2843$ | $16.3299$ | Inradius $r = a/\sqrt{6}$ in mm |
-| 3 | `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.7321$** | Polyhedral sphere ratio $R/r = \sqrt{3}$ |
-| 4 | `[↰] [x²]` | $0.0000$ | $0.0000$ | $0.0000$ | **$3.0000$** | Invariant $(R/r)^2 = 3$ confirmed |
+Result: **$R/r = \sqrt{3} \approx 1.7321$**.
 
 ---
 

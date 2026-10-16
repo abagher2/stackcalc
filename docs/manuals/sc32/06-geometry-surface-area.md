@@ -621,17 +621,9 @@ For $f = 1.2, R = 2.0$: $\frac{R^2}{4f^2} = \frac{4}{4(1.44)} = \frac{1}{1.44} \
 $1 + 0.694444 = 1.694444 \implies (1.694444)^{1.5} \approx 2.205739$.
 $$A = \frac{8\pi(1.44)}{3} [2.205739 - 1] = 3.84\pi \times 1.205739 \approx \mathbf{14.5458\text{ m}^2}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `{{key:CLΣ}}` — Zero the statistical accumulators ($n = 0, \Sigma x = 0$) before summing composite geometric faces.
-2. **Evaluate Each Sub-Feature in $(Y, X)$:** Compute each individual face area or sub-volume directly on the RPN stack from the inside out and press `{{key:Σ+}}` to add it into the running $\Sigma x$ register while incrementing the face counter $n$ in Register $X$.
-3. `{{key:Σx}}` — Recall the accumulated total surface area or composite volume into Register $X$ without touching general-purpose storage registers.
+Evaluate base factor $1 + R^2/(4f^2) \approx 1.694444$ via `2 {{keycap:x²}} 4 {{key:÷}} 1.2 {{keycap:x²}} {{key:÷}} 1 {{key:+}}`. Raise to power $1.5$ and subtract unity via `1.5 {{key:yˣ}} 1 {{key:-}}` to obtain $1.205739$. Form leading coefficient $\frac{8\pi f^2}{3} \approx 12.063716$ via `8 {{key:ENTER}} {{keycap:π}} {{key:×}} 1.2 {{keycap:x²}} {{key:×}} 3 {{key:÷}}` and multiply via `{{key:×}}` to resolve reflector area at $(T:0, Z:0, Y:0, X:14.5458)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2 {{keycap:x²}} 4 {{key:÷}} 1.2 {{keycap:x²}} {{key:÷}} 1 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.694444$ | Base $(1 + R^2/(4f^2))$ evaluated |
-| 2 | `1.5 {{key:yˣ}} 1 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.205739$ | Bracket term $(1 + R^2/(4f^2))^{3/2} - 1$ |
-| 3 | `8 {{key:ENTER}} {{keycap:π}} {{key:×}} 1.2 {{keycap:x²}} {{key:×}} 3 {{key:÷}}` | $0.0000$ | $0.0000$ | $1.205739$ | $12.063716$ | Leading factor $8\pi f^2 / 3$ |
-| 4 | `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$14.545789$** | Parabolic reflector surface area in m² |
+Result: **$14.5458\text{ m}^2$**.
 
 ---
 
@@ -644,17 +636,9 @@ $$p \approx 1.6075 \implies A \approx 4\pi \left(\frac{(ab)^p + (ac)^p + (bc)^p}
 Sum $= 5,308.1 / 3 = 1,769.37 \implies (1769.37)^{1/1.6075} \approx 103.52$
 $A \approx 4\pi \times 103.52 \approx \mathbf{1,300.9\text{ km}^2}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `{{key:CLΣ}}` — Zero the statistical accumulators ($n = 0, \Sigma x = 0$) before summing composite geometric faces.
-2. **Evaluate Each Sub-Feature in $(Y, X)$:** Compute each individual face area or sub-volume directly on the RPN stack from the inside out and press `{{key:Σ+}}` to add it into the running $\Sigma x$ register while incrementing the face counter $n$ in Register $X$.
-3. `{{key:Σx}}` — Recall the accumulated total surface area or composite volume into Register $X$ without touching general-purpose storage registers.
+Compute $(ab)^p = 150^{1.6075} \approx 3178.60$ with `150 {{key:ENTER}} 1.6075 {{key:yˣ}}`. Accumulate $(ac)^p = 90^{1.6075}$ via `90 {{key:ENTER}} 1.6075 {{key:yˣ}} {{key:+}}` and $(bc)^p = 60^{1.6075}$ divided by 3 via `60 {{key:ENTER}} 1.6075 {{key:yˣ}} {{key:+}} 3 {{key:÷}}`, reaching mean power $1769.3683$. Take the $1/p$ root and scale by $4\pi$ via `1 1.6075 {{key:÷}} {{key:yˣ}} 4 {{key:×}} {{keycap:π}} {{key:×}}` to establish ellipsoid surface area at $(T:0, Z:0, Y:0, X:1300.9168)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `150 {{key:ENTER}} 1.6075 {{key:yˣ}}` | $0.0000$ | $0.0000$ | $150.0000$ | $3178.6008$ | $(ab)^p = 150^{1.6075}$ |
-| 2 | `90 {{key:ENTER}} 1.6075 {{key:yˣ}} {{key:+}}` | $0.0000$ | $0.0000$ | $90.0000$ | $4578.3371$ | Add $(ac)^p = 90^{1.6075}$ |
-| 3 | `60 {{key:ENTER}} 1.6075 {{key:yˣ}} {{key:+}} 3 {{key:÷}}` | $0.0000$ | $0.0000$ | $60.0000$ | $1769.3683$ | Add $(bc)^p$ and divide by 3 |
-| 4 | `1 1.6075 {{key:÷}} {{key:yˣ}} 4 {{key:×}} {{keycap:π}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1300.9168$** | Raise to $1/p$ and scale by $4\pi$ (km²) |
+Result: **$1,300.92\text{ km}^2$**.
 
 ---
 
@@ -666,18 +650,9 @@ $$\text{Mass } m = 3.11769 \times 7.85 = \mathbf{24.4739\text{ grams}}$$
 
 > **Named RPN Stack Idiom: *The Inside-Out Radical & Regular Polygon Pipeline*** — Square hex bolt face flat-to-flat span, multiply by polygonal area factor $3\sqrt{3}/2$, and scale by thickness without scratchpad storage {{cite:macaulay2016,hp15c1982}}.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `3` `{{key:√x}}` `3` `{{key:×}}` `2` `{{key:÷}}` — Evaluate regular hexagonal area coefficient ($3\sqrt{3}/2 \approx 2.598076$).
-2. `10` `{{key:x²}}` `{{key:×}}` — Square hex edge $s = 10.0\text{ mm}$ and multiply, establishing face area $A \approx 259.81\text{ mm}^2$.
-3. `6.5` `{{key:×}}` — Multiply by bolt head height $h = 6.5\text{ mm}$ to find volume $V \approx 1688.75\text{ mm}^3$.
-4. `7.85` `{{key:×}}` `1000` `{{key:÷}}` — Scale by steel density ($7.85\text{ g/cm}^3$) to obtain fastener head mass $m \approx \mathbf{13.26\text{ g}}$.
+Evaluate regular hex coefficient $3\sqrt{3}/2 \approx 2.598076$ via `3 {{key:√x}} 3 {{key:×}} 2 {{key:÷}}`. Square side $s = 10\text{ mm}$ with `10 {{keycap:x²}} {{key:×}}` to yield face area $259.8076\text{ mm}^2$. Multiply by height $h = 12\text{ mm}$ via `12 {{key:×}}` for volume $3117.6915\text{ mm}^3$, and convert to grams at $\rho = 7.85\text{ g/cm}^3$ via `1000 {{key:÷}} 7.85 {{key:×}}`, resolving fastener mass at $(T:0, Z:0, Y:0, X:24.4739)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `3 {{key:√x}} 3 {{key:×}} 2 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.598076$ | Regular hex area factor $3\sqrt{3}/2$ |
-| 2 | `10 {{keycap:x²}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $259.807621$ | Bolt head face area $A$ in mm² |
-| 3 | `12 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3117.691454$ | Volume $V = A \cdot h$ in mm³ |
-| 4 | `1000 {{key:÷}} 7.85 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$24.473878$** | Mass in grams ($\rho = 7.85\text{ g/cm}^3$) |
+Result: **$24.4739\text{ grams}$**.
 
 ---
 
@@ -689,16 +664,9 @@ $$\text{Mass } m = 3.11769 \times 7.85 = \mathbf{24.4739\text{ grams}}$$
 
 > **Named RPN Stack Idiom: *The x⇄y Denominator Flip & Wetted Perimeter Pipeline*** — Compute open channel flow cross-sectional area, compute wetted boundary perimeter, and divide via stack swap with zero register allocation {{cite:hp15c1982}}.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `4.5` `{{key:ENTER}}` `1.8` `{{key:×}}` — Compute canal flow area $A = 4.5 \times 1.8 = 8.10\text{ m}^2$.
-2. `4.5` `{{key:ENTER}}` `1.8` `{{key:ENTER}}` `2` `{{key:×}}` `{{key:+}}` — Form wetted perimeter $P = 4.5 + 2(1.8) = 8.10\text{ m}$.
-3. `{{key:x⇄y}}` `{{key:÷}}` — Swap and divide flow area by wetted perimeter, establishing hydraulic radius $R_h = \mathbf{1.000\text{ m}}$.
+Evaluate cross-sectional flow area $A = (b+zy)y = 12.06\text{ m}^2$ with `4 {{key:ENTER}} 1.5 {{key:ENTER}} 1.8 {{key:×}} {{key:+}} 1.8 {{key:×}}`. Then compute wetted perimeter $P = b + 2y\sqrt{1+z^2} \approx 10.4892\text{ m}$ via `4 {{key:ENTER}} 2 {{key:ENTER}} 1.8 {{key:×}} 1 {{key:ENTER}} 1.5 {{keycap:x²}} {{key:+}} {{key:√x}} {{key:×}} {{key:+}}`, positioning $A$ in Register $Y$ and $P$ in Register $X$. Pressing `{{key:÷}}` divides the two directly to establish hydraulic radius at $(T:0, Z:0, Y:0, X:1.1498)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `4 {{key:ENTER}} 1.5 {{key:ENTER}} 1.8 {{key:×}} {{key:+}} 1.8 {{key:×}}` | $0.0000$ | $4.0000$ | $6.7000$ | $12.060000$ | Flow area $A = (b + zy)y$ in m² |
-| 2 | `4 {{key:ENTER}} 2 {{key:ENTER}} 1.8 {{key:×}} 1 {{key:ENTER}} 1.5 {{keycap:x²}} {{key:+}} {{key:√x}} {{key:×}} {{key:+}}` | $0.0000$ | $12.060000$ | $4.0000$ | $10.489240$ | Wetted perimeter $P = b + 2y\sqrt{1+z^2}$ in m |
-| 3 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.149750$** | Hydraulic radius $R_h = A / P$ in meters |
+Result: **$R_h = 1.1498\text{ meters}$**.
 
 ---
 
@@ -707,17 +675,9 @@ $$\text{Mass } m = 3.11769 \times 7.85 = \mathbf{24.4739\text{ grams}}$$
 $$\theta = 2 \arccos\left(\frac{r - d}{r}\right) = 2 \arccos\left(\frac{0.2}{0.6}\right) = 2 \arccos(0.333333) = 2(70.5288^\circ) = 141.0575^\circ = 2.461914\text{ rad}$$
 $$\text{Area } A = \frac{1}{2} r^2 (\theta - \sin\theta) = 0.5(0.36)(2.461914 - \sin(141.0575^\circ)) = 0.18(2.461914 - 0.628539) = 0.18(1.833375) = \mathbf{0.330008\text{ m}^2}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `120` `{{key:ENTER}}` `{{key:π}}` `{{key:×}}` `180` `{{key:÷}}` — Convert central angle $120.0^\circ$ into radians ($\theta \approx 2.094395\text{ rad}$).
-2. `120` `{{key:SIN}}` `{{key:-}}` — Subtract $\sin(120^\circ) \approx 0.866025$ to obtain chord differential factor $1.228370$.
-3. `0.75` `{{key:x²}}` `{{key:×}}` `2` `{{key:÷}}` — Multiply by $R^2/2$ with $R = 0.75\text{ m}$, yielding partially filled flow area $A \approx \mathbf{0.3455\text{ m}^2}$.
+Determine subtended angle $\theta = 141.0576^\circ$ via `0.6 {{key:ENTER}} 0.4 {{key:-}} 0.6 {{key:÷}} {{key:ACOS}} 2 {{key:×}}`. Convert to radians $\theta_{\text{rad}} \approx 2.461914$ via `{{key:ENTER}} {{keycap:π}} {{key:×}} 180 {{key:÷}}`, and subtract sine via `{{key:x⇄y}} {{key:SIN}} {{key:-}}` to obtain chord bracket $1.833375$. Scaling by $r^2/2$ via `0.6 {{keycap:x²}} {{key:×}} 2 {{key:÷}}` delivers flow cross section at $(T:0, Z:0, Y:0, X:0.330008)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.6 {{key:ENTER}} 0.4 {{key:-}} 0.6 {{key:÷}} {{key:ACOS}} 2 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $141.057559$ | Subtended angle $\theta$ in degrees |
-| 2 | `{{key:ENTER}} {{keycap:π}} {{key:×}} 180 {{key:÷}}` | $0.0000$ | $0.0000$ | $141.057559$ | $2.461914$ | Converted angle $\theta_{\text{rad}}$ in radians |
-| 3 | `{{key:x⇄y}} {{key:SIN}} {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.833375$ | Chord term $(\theta_{\text{rad}} - \sin\theta)$ |
-| 4 | `0.6 {{keycap:x²}} {{key:×}} 2 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.330008$** | Flow cross-sectional area $A$ in m² |
+Result: **$0.330008\text{ m}^2$**.
 
 ---
 
@@ -729,17 +689,9 @@ $$\text{Area } A = \frac{1}{2} r^2 (\theta - \sin\theta) = 0.5(0.36)(2.461914 - 
 
 > **Named RPN Stack Idiom: *The Σ+ Multi-Face Surface Area Accumulator & Perforation Subtraction*** — Compute tank bulkhead gross area, stream orifice hole areas, and subtract net open area in place {{cite:hp15c1982,munroe2014}}.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1.2` `{{key:x²}}` `{{key:π}}` `{{key:×}}` — Calculate gross plate area $A_{\text{gross}} = \pi R^2 \approx 4.5239\text{ m}^2$.
-2. `0.04` `{{key:x²}}` `{{key:π}}` `{{key:×}}` — Form area of single perforation $a = \pi r^2 \approx 5.0265 \times 10^{-3}\text{ m}^2$.
-3. `120` `{{key:×}}` — Multiply by hole count ($N = 120$), establishing total relief area $A_{\text{holes}} \approx 0.6032\text{ m}^2$.
-4. `{{key:-}}` — Subtract perforations from gross area, yielding net structural baffle area $A_{\text{net}} \approx \mathbf{3.9207\text{ m}^2}$.
+Compute gross solid plate area $\pi R^2 \approx 502,654.82\text{ mm}^2$ with `400 {{keycap:x²}} {{keycap:π}} {{key:×}}`. Evaluate the 48 perforation holes $48 \times \pi r_h^2 \approx 46,181.41\text{ mm}^2$ via `17.5 {{keycap:x²}} {{keycap:π}} {{key:×}} 48 {{key:×}}`, and subtract directly with `{{key:-}}`, leaving net solid baffle area at $(T:0, Z:0, Y:0, X:456473.4126)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `400 {{keycap:x²}} {{keycap:π}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $502654.8246$ | Gross solid circular area $\pi R^2$ in mm² |
-| 2 | `17.5 {{keycap:x²}} {{keycap:π}} {{key:×}} 48 {{key:×}}` | $0.0000$ | $0.0000$ | $502654.8246$ | $46181.4120$ | Total perforation area ($48 \times \pi r_h^2$) |
-| 3 | `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$456473.4126$** | Net solid baffle area $A_{\text{net}}$ in mm² |
+Result: **$456,473.41\text{ mm}^2$**.
 
 ---
 
@@ -777,18 +729,9 @@ Ratio $R/r = \sqrt{3} \approx 1.732051$.
 
 **Keystrokes:** `40 {{key:ENTER}} 2 {{key:√x}} {{key:÷}} 40 {{key:ENTER}} 6 {{key:√x}} {{key:÷}} {{key:÷}}` $\rightarrow$ **`1.7321`**
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `40` `{{key:ENTER}}` `2` `{{key:√x}}` `{{key:÷}}` — Compute circumscribed sphere radius ($R = a/\sqrt{2} \approx 28.2843\text{ mm}$).
-2. `40` `{{key:ENTER}}` `6` `{{key:√x}}` `{{key:÷}}` — Compute inscribed sphere radius ($r = a/\sqrt{6} \approx 16.3299\text{ mm}$).
-3. `{{key:÷}}` — Divide radii to yield exact geometric ratio ($R/r = \sqrt{3} \approx \mathbf{1.7321}$).
-4. `{{key:x²}}` — Square the ratio to confirm the invariant $(R/r)^2 = 3.0000$.
+Evaluate circumradius $R = a/\sqrt{2} \approx 28.2843\text{ mm}$ via `40 {{key:ENTER}} 2 {{key:√x}} {{key:÷}}`, then inradius $r = a/\sqrt{6} \approx 16.3299\text{ mm}$ via `40 {{key:ENTER}} 6 {{key:√x}} {{key:÷}}`. Dividing the two via `{{key:÷}}` yields exact sphere ratio $R/r = \sqrt{3} \approx 1.7321$ at $(T:0, Z:0, Y:0, X:1.7321)$, and squaring via `{{key:x²}}` confirms invariant $(R/r)^2 = 3.0000$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `40 {{key:ENTER}} 2 {{key:√x}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $28.2843$ | Circumradius $R = a/\sqrt{2}$ in mm |
-| 2 | `40 {{key:ENTER}} 6 {{key:√x}} {{key:÷}}` | $0.0000$ | $0.0000$ | $28.2843$ | $16.3299$ | Inradius $r = a/\sqrt{6}$ in mm |
-| 3 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.7321$** | Polyhedral sphere ratio $R/r = \sqrt{3}$ |
-| 4 | `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$3.0000$** | Invariant $(R/r)^2 = 3$ confirmed |
+Result: **$R/r = \sqrt{3} \approx 1.7321$**.
 
 ---
 

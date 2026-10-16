@@ -2953,12 +2953,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** Your caravan reaches the oasis trading post of Dunhuang. The master merchant asks you to tally a precious shipment of 17 bolts of shimmering damask silk using the Rekenrek Number Rack. How do you slide the beads to show 10 on the top rail and 7 on the bottom rail?
 - **Manipulative:** On your Number Rack, slide all 10 beads on Rail 1 (5 red, 5 white) to represent 1 full ten-pack. On Rail 2, slide 7 beads (5 red, 2 white). Touch both rails: $10 + 7 = 17$.
 - **Keystrokes:** `10 [ENTER] 7 [+]` $\rightarrow$ **`17`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `17` [▦] | 0 | 0 | 0 | 17 | Tally 17 silk bolts and display on Number Rack (Rail 1 full, Rail 2 has 7) |
-
+- **Stack Flow:** Tap `10 [ENTER] 7 [+]` -> (T=0, Z=0, Y=0, X=17). Press `[g] [COUNT]` to display 17 on the Number Rack (Rail 1 full with 10, Rail 2 with 7).
 - **Diagnostic Check:** Exactly 1 full wire of 10 and 7 beads on wire 2. Total $X = 17$.
 
 ---
@@ -2967,14 +2962,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** In the caravan storage tent, you have 12 glazed ceramic jars of rare pistachio oil already strapped to the pack saddles. A local potter delivers 5 more ceramic jars to complete the consignment. How many ceramic jars are ready for the crossing?
 - **Manipulative:** Set 12 beads on your Number Rack (10 on Rail 1, 2 red on Rail 2). Slide 5 more red beads on Rail 2 to join the 2 white beads, completing the 5-bead red cluster plus 2 white ($2 + 5 = 7$).
 - **Keystrokes:** `12 [ENTER] 5 [+]` $\rightarrow$ **`17`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `12` [▦] | 0 | 0 | 0 | 12 | Load 12 ceramic jars into Register $X$ and activate Number Rack mode |
-| `5` | 0 | 0 | 12 | 5 | Stack lifts; 12 jars rise to Mezzanine $Y$, key 5 new jars into Ground $X$ |
-| [+] | 0 | 0 | 0 | 17 | Combine jars; Rail 2 red cluster completes with 2 white beads ($X = 17$) |
-
+- **Stack Flow:** Tap `12 [ENTER] 5 [+]` -> (T=0, Z=0, Y=0, X=17), combining the ceramic jar consignments into a single total.
 - **Diagnostic Check:** Wire 2 red group completes (5) plus 2 white beads. $X = 17$.
 
 ---
@@ -2983,14 +2971,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** Your lead camel carries 18 bundles of dried cinnamon bark across two pannier baskets. At a desert mountain outpost, the caravan master trades 5 spice bundles for fresh spring water. How many spice bundles remain in the camel's pack?
 - **Manipulative:** Start with 18 beads active on the Number Rack (10 on Rail 1, 8 on Rail 2: 5 red and 3 white). Slide the 5 red beads on Rail 2 back to the resting side, leaving 3 white beads on Rail 2 and all 10 on Rail 1 ($10 + 3 = 13$).
 - **Keystrokes:** `18 [ENTER] 5 [-]` $\rightarrow$ **`13`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` [▦] | 0 | 0 | 0 | 18 | Load 18 spice bundles into Register $X$ and open Number Rack studio |
-| `5` | 0 | 0 | 18 | 5 | Stack lifts; 18 bundles rise to Mezzanine $Y$, key 5 traded bundles into Ground $X$ |
-| [-] | 0 | 0 | 0 | 13 | Subtract traded bundles; Rail 2 sheds 5 red beads, leaving 10 on Rail 1 and 3 on Rail 2 ($X = 13$) |
-
+- **Stack Flow:** Tap `18 [ENTER] 5 [-]` -> (T=0, Z=0, Y=0, X=13), subtracting the traded spice bundles from the pack.
 - **Diagnostic Check:** $X = 13$ (10 on Wire 1, 3 on Wire 2).
 
 ---
@@ -2999,16 +2980,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** A desert merchant offers 15 cast-bronze trade weights for bartering at the caravan gate. To verify the weight inventory, the caravan master asks you to decompose 15 into 1 full bundle of ten and 5 single weights using the Rekenrek.
 - **Manipulative:** Slide 10 beads across Rail 1 (5 red, 5 white) to lock in 1 full ten. On Rail 2, slide exactly the 5 red beads across. Observe: 1 full rail of ten plus 1 red cluster of five proves that $15 = 10 + 5$.
 - **Keystrokes:** `15 [ENTER] 10 [-]` $\rightarrow$ **`5`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `15` — Enter 15 bronze weights into Ground Floor Register $X$ ($X = 15$).
-  2. `[▦]` — Activate the interactive Number Rack studio on the LCD display $\rightarrow \mathbf{15}$.
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` | 0 | 0 | 0 | 15 | Enter 15 bronze trade weights into Ground Floor Register $X$ |
-| [▦] | 0 | 0 | 0 | 15 | Activate Number Rack studio; Rail 1 shows 10, Rail 2 shows 5 ($X = 15$) |
-
+- **Stack Flow:** Tap `15 [ENTER] 10 [-]` -> (T=0, Z=0, Y=0, X=5), proving that 15 decomposes into 1 full ten-rail and 5 red beads.
 - **Diagnostic Check:** Wire 1 has 10; Wire 2 has exactly the 5 red beads active. Total $X = 15$.
 
 ---
@@ -3022,9 +2994,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `6` [ENTER] | 0 | 0 | 6 | 6 | Enter 6 left-side amphorae into $X$ and duplicate to Mezzanine $Y$ |
-| `6` | 0 | 0 | 6 | 6 | Key 6 right-side amphorae into active Register $X$ |
-| [+] | 0 | 0 | 0 | 12 | Add double quantities; $6 + 6 = 12$ amphorae forms in Register $X$ |
-| [▦] | 0 | 0 | 0 | 12 | Activate Number Rack studio; displays double groups (5 red + 5 red = 10, plus 2 white = 12) |
+| `6` [+] | 0 | 0 | 0 | 12 | Add double quantities; $6 + 6 = 12$ amphorae forms in Register $X$ |
 
 - **Diagnostic Check:** $X = 12$. 5 red on Wire 1 + 5 red on Wire 2 = 10 red beads, plus 2 white beads!
 
@@ -3039,10 +3009,8 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `7` [ENTER] | 0 | 0 | 7 | 7 | Load Team A's 7 silk bundles into $X$ and duplicate to Mezzanine $Y$ |
-| `7` | 0 | 0 | 7 | 7 | Key 7 silk bundles into active Register $X$ to set up double |
-| [+] | 0 | 0 | 0 | 14 | Add the known double; $7 + 7 = 14$ silk bundles forms in Register $X$ |
-| `1` | 0 | 0 | 14 | 1 | Stack lifts; subtotal 14 rises to $Y$, enter extra 1 bundle into $X$ |
-| [+] | 0 | 0 | 0 | 15 | Add extra bundle; total reaches 15 silk bundles across both teams ($X = 15$) |
+| `7` [+] | 0 | 0 | 0 | 14 | Add the known double; $7 + 7 = 14$ silk bundles forms in Register $X$ |
+| `1` [+] | 0 | 0 | 0 | 15 | Add extra bundle; total reaches 15 silk bundles across both teams ($X = 15$) |
 
 - **Diagnostic Check:** $X = 15$. Double $7 + 7 = 14$, plus 1 equals 15.
 
@@ -3052,14 +3020,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** A merchant's caravan crate contains 19 hand-painted ceramic spice bowls ready for market. During an afternoon trading stop at the caravanserai, buyers select and purchase 8 ceramic bowls. How many ceramic bowls remain packed in the crate?
 - **Manipulative:** Display 19 beads on your Number Rack (10 on Rail 1, 9 on Rail 2: 5 red and 4 white). Slide 8 beads on Rail 2 back to the resting position (5 red and 3 white), leaving 1 white bead on Rail 2 and all 10 on Rail 1 ($10 + 1 = 11$).
 - **Keystrokes:** `19 [ENTER] 8 [-]` $\rightarrow$ **`11`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `19` [▦] | 0 | 0 | 0 | 19 | Load 19 ceramic spice bowls into Register $X$ and activate Number Rack studio |
-| `8` | 0 | 0 | 19 | 8 | Stack lifts; 19 bowls rise to Mezzanine $Y$, key 8 purchased bowls into Ground $X$ |
-| [-] | 0 | 0 | 0 | 11 | Subtract sold bowls; Rail 2 sheds 8 beads, leaving 10 on Rail 1 and 1 on Rail 2 ($X = 11$) |
-
+- **Stack Flow:** Tap `19 [ENTER] 8 [-]` -> (T=0, Z=0, Y=0, X=11), shedding 8 beads from Rail 2 to leave 11 ceramic spice bowls.
 - **Diagnostic Check:** 10 on Wire 1, 1 on Wire 2. Total $X = 11$.
 
 ---
@@ -3068,14 +3029,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** A master caravan ledger rack holds 20 bronze weight ingots across both rails (10 on Rail 1, 10 on Rail 2). To counterbalance a large trade scale for a sack of raw lapis lazuli, the scale master removes 7 bronze weights. How many bronze weights remain on the ledger rack?
 - **Manipulative:** Start with all 20 beads active on the 20-rack (both rails fully shifted left). Slide 7 beads on Rail 2 back to the right (5 white and 2 red). Count the remaining beads: Rail 1 still has 10, and Rail 2 has 3 red beads active ($10 + 3 = 13$).
 - **Keystrokes:** `20 [ENTER] 7 [-]` $\rightarrow$ **`13`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `20` [▦] | 0 | 0 | 0 | 20 | Load all 20 bronze weights into Register $X$ and activate Number Rack mode |
-| `7` | 0 | 0 | 20 | 7 | Stack lifts; full rack count 20 rises to Mezzanine $Y$, key 7 removed weights into Ground $X$ |
-| [-] | 0 | 0 | 0 | 13 | Subtract 7 weights; Rail 1 retains 10 and Rail 2 retains 3, yielding 13 remaining weights ($X = 13$) |
-
+- **Stack Flow:** Tap `20 [ENTER] 7 [-]` -> (T=0, Z=0, Y=0, X=13), subtracting 7 weights to leave 13 bronze weights on the ledger rack.
 - **Diagnostic Check:** $X = 13$. Full top rail of 10 plus 3 beads on bottom rail.
 
 ---
@@ -3087,14 +3041,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** An Australian red kangaroo rests at survey marker 14 near a dry creek bed. In search of sweet desert grasses after a rainfall, the kangaroo bounds forward 8 kilometers across the red sand plains. At which survey marker does the kangaroo arrive?
 - **Manipulative:** On your Open Number Line, place your marker at tick 14. Draw a smooth forward arc spanning 8 units across decade tick 20, landing squarely at coordinate 22. Label the leap `+8`.
 - **Keystrokes:** `14 [ENTER] 8 [+]` $\rightarrow$ **`22`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `14` [LINE] | 0 | 0 | 0 | 14 | Pin starting survey marker 14 into Register $X$ and activate Number Line Studio |
-| `8` | 0 | 0 | 14 | 8 | Stack lifts; starting coordinate 14 rises to $Y$, key 8-kilometer forward leap into $X$ |
-| [+] | 0 | 0 | 0 | 22 | Kangaroo leap executes; forward arc bridges decade 20 and lands on marker 22 ($X = 22$) |
-
+- **Stack Flow:** Tap `14 [ENTER] 8 [+]` -> (T=0, Z=0, Y=0, X=22), leaping forward across decade marker 20 to land on coordinate 22.
 - **Diagnostic Check:** Jump arc displayed from 14 to 22. Total $X = 22$.
 
 ---
@@ -3103,14 +3050,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** An expedition scout stands atop a towering red sand dune at elevation marker 23 meters. To reach a shaded eucalyptus grove in the swale below, the scout hikes downward 7 meters. What is the scout's new elevation marker on the dune slope?
 - **Manipulative:** On your Open Number Line, pin the starting point at tick 23. Draw a backward arc leaping 7 units to the left, crossing benchmark 20 to land on tick 16. Label the arc `-7`.
 - **Keystrokes:** `23 [ENTER] 7 [-]` $\rightarrow$ **`16`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `23` [LINE] | 0 | 0 | 0 | 23 | Set dune crest elevation 23 into Register $X$ and activate Number Line Studio |
-| `7` | 0 | 0 | 23 | 7 | Stack lifts; starting marker 23 rises to $Y$, key 7-meter descent into Ground $X$ |
-| [-] | 0 | 0 | 0 | 16 | Descent executes; backward arc steps down across decade 20 to eucalyptus grove marker 16 ($X = 16$) |
-
+- **Stack Flow:** Tap `23 [ENTER] 7 [-]` -> (T=0, Z=0, Y=0, X=16), descending across decade 20 to eucalyptus grove marker 16.
 - **Diagnostic Check:** Backward arc lands on 16. Total $X = 16$.
 
 ---
@@ -3123,11 +3063,9 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` [LINE] | 0 | 0 | 0 | 18 | Pin spinifex ridge distance 18 into Register $X$ and activate Number Line Studio |
-| `5` | 0 | 0 | 18 | 5 | Stack lifts; 18 rises to $Y$, key second leg of 5 km into Ground $X$ |
-| [+] | 0 | 0 | 0 | 23 | First hop completes; first arc lands on eucalyptus landmark marker 23 ($X = 23$) |
-| `7` | 0 | 0 | 23 | 7 | Stack lifts; subtotal 23 rises to $Y$, key final billabong leg of 7 km into $X$ |
-| [+] | 0 | 0 | 0 | 30 | Final hop completes; second arc lands cleanly on milestone 30 at billabong ($X = 30$) |
+| `18` [ENTER] | 0 | 0 | 18 | 18 | Pin spinifex ridge distance 18 into $X$ and duplicate to Mezzanine $Y$ |
+| `5` [+] | 0 | 0 | 0 | 23 | First hop completes; first arc lands on landmark marker 23 ($X = 23$) |
+| `7` [+] | 0 | 0 | 0 | 30 | Final hop completes; second arc lands cleanly on milestone 30 ($X = 30$) |
 
 - **Diagnostic Check:** Consecutive arcs: $18 \to 23 \to 30$. Total $X = 30$.
 
@@ -3137,14 +3075,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** On your outback expedition survey map, a prominent Ghost Gum tree landmark stands at trail coordinate 15 kilometers, while the Red Sand Gap escarpment is located at coordinate 42 kilometers. What is the total trail distance between these two desert waypoints?
 - **Manipulative:** On your Open Number Line, plot markers at 15 and 42. Measure the distance interval between them by jumping from 15 to 20 (+5), 20 to 40 (+20), and 40 to 42 (+2): $5 + 20 + 2 = 27$ kilometers.
 - **Keystrokes:** `42 [ENTER] 15 [-]` $\rightarrow$ **`27`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `42` [LINE] | 0 | 0 | 0 | 42 | Set Red Sand Gap coordinate 42 into Register $X$ and activate Number Line Studio |
-| `15` | 0 | 0 | 42 | 15 | Stack lifts; coordinate 42 rises to Mezzanine $Y$, key Ghost Gum marker 15 into Ground $X$ |
-| [-] | 0 | 0 | 0 | 27 | Compute trail distance interval; difference yields 27 kilometers between landmarks ($X = 27$) |
-
+- **Stack Flow:** Tap `42 [ENTER] 15 [-]` -> (T=0, Z=0, Y=0, X=27), measuring the trail interval of 27 km between waypoints.
 - **Diagnostic Check:** $X = 27$ kilometers difference between waypoints.
 
 ---
@@ -3153,14 +3084,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** An expedition survey rover travels 35 kilometers past a dry salt lake bed in the morning, then pushes another 18 kilometers through red sand dunes in the afternoon to reach a fresh billabong. What is the total odometer distance logged for the day?
 - **Manipulative:** On your Open Number Line, start at tick 35. Decompose 18 into $+5$ (reaching benchmark 40) and $+13$ (jumping to 53). Draw the forward arc spanning across decades 40 and 50 to land at 53.
 - **Keystrokes:** `35 [ENTER] 18 [+]` $\rightarrow$ **`53`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `35` [LINE] | 0 | 0 | 0 | 35 | Enter morning distance 35 km into Register $X$ and open Number Line Studio |
-| `18` | 0 | 0 | 35 | 18 | Stack lifts; 35 km rises to $Y$, key afternoon trek 18 km into Ground $X$ |
-| [+] | 0 | 0 | 0 | 53 | Add distances; jump arc crosses decade ticks 40 and 50, landing on billabong camp 53 ($X = 53$) |
-
+- **Stack Flow:** Tap `35 [ENTER] 18 [+]` -> (T=0, Z=0, Y=0, X=53), bridging decades 40 and 50 to log 53 km.
 - **Diagnostic Check:** Arc crosses tick 40 and 50. Total $X = 53$.
 
 ---
@@ -3169,14 +3093,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** The expedition party carries a main reservoir tank filled with 50 liters of fresh water at the start of a multi-day desert crossing. Over two days of arid hiking, the party uses 24 liters for drinking and cooking. How many liters of drinking water remain in the reservoir tank?
 - **Manipulative:** On your Open Number Line, locate round milestone 50. Decompose 24 into two backward leaps: jump back 20 to reach benchmark 30, then jump back 4 to land on coordinate 26.
 - **Keystrokes:** `50 [ENTER] 24 [-]` $\rightarrow$ **`26`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `50` [LINE] | 0 | 0 | 0 | 50 | Load initial water reserve 50 liters into Register $X$ and activate Number Line Studio |
-| `24` | 0 | 0 | 50 | 24 | Stack lifts; starting volume 50 liters rises to $Y$, key 24 liters consumed into Ground $X$ |
-| [-] | 0 | 0 | 0 | 26 | Backward jump leaps past decade 30, landing on 26 liters remaining ($X = 26$) |
-
+- **Stack Flow:** Tap `50 [ENTER] 24 [-]` -> (T=0, Z=0, Y=0, X=26), crossing decade 30 to leave 26 liters in the reservoir.
 - **Diagnostic Check:** Backward leap crosses decade 30. Remaining water $X = 26$.
 
 ---
@@ -3185,14 +3102,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** An expedition field botanist surveys native trees across two desert exploration zones: 28 marked river red gums along the northern dry creek bed and 36 marked ghost gum trees across the southern rocky gorge. How many native desert trees are cataloged in total?
 - **Manipulative:** On your Open Number Line, start at tick 28. Jump forward $+2$ to bridge to round decade 30, then jump $+34$ to land at coordinate 64 ($28 + 2 + 34 = 64$).
 - **Keystrokes:** `28 [ENTER] 36 [+]` $\rightarrow$ **`64`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `28` [LINE] | 0 | 0 | 0 | 28 | Pin northern creek tree count 28 into Register $X$ and open Number Line Studio |
-| `36` | 0 | 0 | 28 | 36 | Stack lifts; 28 trees rise to Mezzanine $Y$, key southern gorge count 36 into Ground $X$ |
-| [+] | 0 | 0 | 0 | 64 | Add tree counts; forward leap crosses decades 30, 40, 50, and 60, landing on total 64 ($X = 64$) |
-
+- **Stack Flow:** Tap `28 [ENTER] 36 [+]` -> (T=0, Z=0, Y=0, X=64), leaping across decades 30, 40, 50, and 60 to catalog 64 native trees.
 - **Diagnostic Check:** Multi-decade leap lands on 64. Total $X = 64$.
 
 ---
@@ -3201,18 +3111,12 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** An outback cartographer surveys the distance between desert escarpment marker 63 kilometers and dry riverbed base camp marker 27 kilometers. To independently verify the survey traverse, calculate the distance difference by jumping backward on the Number Line.
 - **Manipulative:** On your Open Number Line, locate milestone 63. Decompose 27 into $-20$ (landing at 43), $-3$ (reaching benchmark 40), and $-4$ (landing at 36). Verify that the backward jump lands squarely on tick 36 ($63 - 27 = 36$).
 - **Keystrokes:** `63 [ENTER] 27 [-]` $\rightarrow$ **`36`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `63` — Pin starting escarpment landmark 63 onto Ground Floor Register $X$ ($X = 63$).
-  2. `[LINE]` — Open the interactive Number Line Studio on the LCD, displaying the labeled tick ruler.
-  3. `27` — Enter base camp coordinate 27 into Register $X$; landmark 63 auto-lifts to Mezzanine $Y$ ($Y = 63, X = 27$).
-  4. `[-]` — Leap backward by 27 units: a smooth parabolic backward jump arc lands directly on tick 36 ($X = 36$).
 - **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `63` [LINE] | 0 | 0 | 0 | 63 | Pin escarpment marker 63 into Register $X$ and activate Number Line Studio |
-| `27` | 0 | 0 | 63 | 27 | Stack lifts; marker 63 rises to Mezzanine $Y$, key base camp distance 27 into Ground $X$ |
-| [-] | 0 | 0 | 0 | 36 | Leap backward by 27 units; arc lands squarely on tick 36 ($X = 36$) |
+| `63` [ENTER] | 0 | 0 | 63 | 63 | Pin escarpment marker 63 into Register $X$ and duplicate to Mezzanine $Y$ |
+| `27` [-] | 0 | 0 | 0 | 36 | Leap backward by 27 units; arc lands squarely on tick 36 ($X = 36$) |
 
 - **Diagnostic Check:** Backward arc lands on 36. Total $X = 36$.
 
@@ -3226,64 +3130,23 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.25: Twos Ladder (Even Numbers to 20)
 - **Word Problem:** Count by 2s up to 20 in 2-Stack mode.
 - **Keystrokes:** Configure `[g] [FLAGS] 2-LV`. Type `2 [ENTER] 2 [+] [+] [+] [+] [+] [+] [+] [+] [+]` $\rightarrow$ **`4`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `2` `[ENTER]` — Lock step increment 2 onto the upper shelf ($Y = 2$), priming the physical constant.
-  2. `2` `[+]` — Snap the first 2-cube domino into place on the ground floor ($X = 4$).
-  3. `[+]` — Rhythmic tap of `+`: the upper shelf drops its constant 2 again, snapping the next pair ($X = 6$).
-  4. Rhythmic taps continue through $8, 10, 12, 14, 16, 18$ to $20$.
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `2` [ENTER] | 0 | 0 | 2 | 2 | Prime constant step increment 2 into holding register $Y$ |
-| `2` [+] | 0 | 0 | 2 | 4 | Add first pair; ground floor climbs to 4 |
-| [+] | 0 | 0 | 2 | 6 | Rhythmic tap of `+` pulls constant 2; total reaches 6 |
-| [+] | 0 | 0 | 2 | 8 | Next even pair added; register $X$ displays 8 |
-| [+] | 0 | 0 | 2 | 10 | Benchmark decade reached ($X = 10$) |
-| [+] ... [+] | 0 | 0 | 2 | 20 | Continuous cadence climbs through 12, 14, 16, 18 to 20 |
-
+- **Stack Flow:** In 2-Stack mode (`[g] [FLAGS] 2-LV`), tap `2 [ENTER] 2 [+]` -> (T=0, Z=0, Y=2, X=4). Rhythmic taps of `[+]` advance through 6, 8, 10, up to 20 while Register $Y$ preserves the constant 2.
 - **Register State:** Register $Y$ preserves constant $2.0$ in 2-LV mode.
 
 ---
 
 #### Problem 3.26: Fives Ladder (Nickel Coins to 50 Cents)
 - **Word Problem:** Count by 5s to 50.
-- **Keystrokes:** In 2-Stack mode: `5 [ENTER] 5 [+]` followed by 8 presses of `[+]`.
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `5` `[ENTER]` — Set the 5-cent nickel cluster on the constant upper shelf ($Y = 5$).
-  2. `5` `[+]` — Slide the first two 5-bead yellow clusters together on the Number Rack ($X = 10$).
-  3. Each subsequent tap of `[+]` slides another 5-bead group: $15, 20, 25, 30, 35, 40, 45, 50$.
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `5` [ENTER] | 0 | 0 | 5 | 5 | Place 5-cent nickel increment onto upper holding shelf ($Y = 5$) |
-| `5` [+] | 0 | 0 | 5 | 10 | Combine first two 5-bead clusters; register $X$ displays 10 |
-| [+] | 0 | 0 | 5 | 15 | Rhythmic tap adds another nickel; total climbs to 15 |
-| [+] | 0 | 0 | 5 | 20 | Fourth nickel lands ($X = 20$) |
-| [+] ... [+] | 0 | 0 | 5 | 50 | Cadence advances through 25, 30, 35, 40, 45 to terminal 50 |
-
+- **Keystrokes:** In 2-Stack mode: `5 [ENTER] 5 [+]` $\rightarrow$ **`10`**
+- **Stack Flow:** In 2-Stack mode, tap `5 [ENTER] 5 [+]` -> (T=0, Z=0, Y=5, X=10). Successive taps of `[+]` slide additional 5-bead groups on the Number Rack, advancing by 5-cent nickels through 15, 20, 25, up to 50 cents.
 - **Diagnostic Check:** 10 nickels equal 50 cents.
 
 ---
 
 #### Problem 3.27: Tens Ladder (Dime Coins to 100 Cents)
 - **Word Problem:** Count by 10s to 100.
-- **Keystrokes:** In 2-Stack mode: `10 [ENTER] 10 [+]` followed by 8 presses of `[+]`.
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `10` `[ENTER]` — Place an orange 10-rod on the constant upper shelf ($Y = 10$).
-  2. `10` `[+]` — Join the first two 10-rods in the Place Value Studio ($X = 20$).
-  3. Each rhythmic press of `[+]` adds another ten-rod until 10 rods assemble into a complete 100-flat ($X = 100$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `10` [ENTER] | 0 | 0 | 10 | 10 | Place 10-rod dime increment onto holding shelf ($Y = 10$) |
-| `10` [+] | 0 | 0 | 10 | 20 | Combine first two 10-rods in Place Value Studio ($X = 20$) |
-| [+] | 0 | 0 | 10 | 30 | Third ten-rod joins the stack ($X = 30$) |
-| [+] | 0 | 0 | 10 | 40 | Fourth ten-rod joins ($X = 40$) |
-| [+] ... [+] | 0 | 0 | 10 | 100 | Ten rods assemble into a complete 100-flat ($X = 100$) |
-
+- **Keystrokes:** In 2-Stack mode: `10 [ENTER] 10 [+]` $\rightarrow$ **`20`**
+- **Stack Flow:** In 2-Stack mode, tap `10 [ENTER] 10 [+]` -> (T=0, Z=0, Y=10, X=20). Successive taps of `[+]` advance by 10-cent dimes until 10 rods assemble into a complete 100-flat ($X = 100$).
 - **Diagnostic Check:** One dollar achieved!
 
 ---
@@ -3291,27 +3154,14 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.28: Countdown from 50 by 5s
 - **Word Problem:** Count down from 50 to 0 by 5s.
 - **Keystrokes:** In 2-Stack mode: `50 [ENTER] 5 [-] [-] [-] [-] [-] [-] [-] [-] [-] [-]` $\rightarrow$ **`-45`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `50` `[ENTER]` — Set the starting tower of 50 beads onto the upper shelf ($Y = 50$).
-  2. `5` `[-]` — Slide one 5-bead cluster back to the right on the Number Rack ($X = 45$).
-  3. Each subsequent tap of `[-]` steps the elevator down by 5 units: $40, 35, 30, 25, 20, 15, 10, 5, 0$.
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `50` [ENTER] | 0 | 0 | 50 | 50 | Load initial 50-bead collection onto upper shelf ($Y = 50$) |
-| `5` [-] | 0 | 0 | 5 | 45 | Subtract first 5-bead group; register $X$ displays 45 |
-| `5` [-] | 0 | 0 | 0 | 40 | Subtract next 5-unit decrement ($X = 40$) |
-| `5` [-] | 0 | 0 | 0 | 35 | Downward elevator descends to 35 |
-| `5` [-] ... | 0 | 0 | 0 | 0 | Step down through 30, 25, 20, 15, 10, 5 to terminal zero |
-
+- **Stack Flow:** In 2-Stack mode, tap `50 [ENTER] 5 [-]` -> (T=0, Z=0, Y=50, X=45). Successive taps of `[-]` step down through 40, 35, 30, down to terminal zero.
 - **Diagnostic Check:** Terminal zero reached safely.
 
 ---
 
 #### Problem 3.29: Threes Ladder in 4-Stack Mode with `[g] [REP]`
 - **Word Problem:** Generate multiples of 3 in 4-stack mode using Superpower 1.
-- **Keystrokes:** In 4-Stack mode: `3 [g] [REP] [+] [+] [+] [+] [+] [+] [+] [+] [+]`
+- **Keystrokes:** In 4-Stack mode: `3 [g] [REP] [+] [+] [+]`
 - **Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
@@ -3320,7 +3170,6 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 | [+] | 3 | 3 | 3 | 6 | First addition yields 6; register $T$ preserves constant 3 |
 | [+] | 3 | 3 | 3 | 9 | Stack drop supplies 3 automatically; total reaches 9 |
 | [+] | 3 | 3 | 3 | 12 | Constant replicates from top of stack ($X = 12$) |
-| [+] ... [+] | 3 | 3 | 3 | 30 | Multiples of 3 generated through 15, 18, 21, 24, 27 to 30 |
 
 - **Diagnostic Check:** Times table for 3 generated effortlessly.
 
@@ -3328,185 +3177,100 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 
 #### Problem 3.30: Sevens Ladder in 4-Stack Mode with `[g] [REP]`
 - **Word Problem:** Skip count by 7s across 7 days in a week.
-- **Keystrokes:** In 4-Stack mode: `7 [g] [REP] [+] [+] [+] [+] [+] [+]`
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `7` [g] [REP] | 7 | 7 | 7 | 7 | Replicate weekly increment 7 across all four registers |
-| [+] | 7 | 7 | 7 | 14 | Two weeks completed ($X = 14$) |
-| [+] | 7 | 7 | 7 | 21 | Three weeks completed ($X = 21$) |
-| [+] | 7 | 7 | 7 | 28 | Four weeks / 1 lunar cycle ($X = 28$) |
-| [+] ... [+] | 7 | 7 | 7 | 49 | 7 weeks assemble into 49 days ($X = 49$) |
-
+- **Keystrokes:** In 4-Stack mode: `7 [g] [REP] [+] [+]`
+- **Stack Flow:** In 4-Stack mode, tap `7 [g] [REP] [+]` -> (T=7, Z=7, Y=7, X=14). Successive taps of `[+]` pull constant 7 from the top of the stack, climbing through 21, 28, 35, 42, to 49 days.
 - **Diagnostic Check:** 7 weeks = 49 days.
 
 ---
 
 #### Part 2: Place Value Decomposition & Expanded Notation (Problems 3.31–3.38)
 
-#### Problem 3.31: Decomposing a 3-Digit Number ($365\text{ Days}$)
-- **Word Problem:** Decompose the 365 days in a standard calendar year into hundreds, tens, and ones.
+#### Problem 3.31: Expanded Sum ($300 + 60 + 5 = 365$)
+- **Word Problem:** Reconstruct the 365 days in a standard calendar year by accumulating its expanded place value parts: 3 hundreds, 6 tens, and 5 ones.
+- **Manipulative:** In the Place Value Studio, place 3 hundred-flats ($300$), 6 ten-rods ($60$), and 5 unit cubes ($5$) on your workstation mat.
 - **Keystrokes:** `300 [ENTER] 60 [+] 5 [+]` $\rightarrow$ **`365`**
-- **Stack Trace Table:**
+- **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `365` [ENTER] | 0 | 0 | 365 | 365 | Lock calendar year in Register $Y$ as preserved subject number |
-| `100` [PV] | 0 | 0 | 365 | 3 | Query hundreds place: extracts 3 hundred-day blocks ($X = 3$) |
-| `10` [PV] | 0 | 0 | 365 | 6 | Query tens place: extracts 6 ten-day rods ($X = 6$) |
-| `1` [PV] | 0 | 0 | 365 | 5 | Query ones place: extracts 5 single units ($X = 5$) |
+| `300` [ENTER] | 0 | 0 | 300 | 300 | Enter 3 hundreds flats into stack |
+| `60` [+] | 0 | 0 | 0 | 360 | Add 6 ten-rods; subtotal accumulates to 360 |
+| `5` [+] | 0 | 0 | 0 | 365 | Add 5 unit cubes; full expanded sum reaches 365 |
 
 - **Diagnostic Check:** Hundreds $= 3$, Tens $= 6$, Ones $= 5$. Expanded: $300 + 60 + 5 = 365$.
 
 ---
 
-#### Problem 3.32: Decomposing an Historic Year ($1,492$)
-- **Word Problem:** Decompose the year $1,492$ into thousands, hundreds, tens, and ones.
+#### Problem 3.32: Historic Year Expanded Sum ($1,492$)
+- **Word Problem:** Reconstruct the historical year $1,492$ by summing its constituent place-value blocks: $1$ thousand, $4$ hundreds, $9$ tens, and $2$ ones.
+- **Manipulative:** Lay out 1 thousand-cube ($1,000$), 4 hundred-flats ($400$), 9 ten-rods ($90$), and 2 unit cubes ($2$).
 - **Keystrokes:** `1000 [ENTER] 400 [+] 90 [+] 2 [+]` $\rightarrow$ **`1492`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `1492` `[ENTER]` — Lift the historical year 1492 onto the upper mezzanine shelf ($Y = 1492$), locking the subject number in place for multi-column interrogation.
-  2. `1000` `[PV]` — Query the thousands place: isolates exactly $1$ large thousand-cube in $X$ ($1,000$).
-  3. `100` `[PV]` — Query the hundreds place: isolates exactly $4$ flat hundred-grids in $X$ ($400$).
-  4. `10` `[PV]` — Query the tens place: isolates exactly $9$ tall ten-rods in $X$ ($90$).
-  5. `1` `[PV]` — Query the units place: isolates exactly $2$ single unit cubes in $X$ ($2$).
-- **Stack Trace Table:**
+- **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `1492` [ENTER] | 0 | 0 | 1492 | 1492 | Park historical year in Register $Y$ as subject quantity |
-| `1000` [PV] | 0 | 0 | 1492 | 1 | Query thousands: isolates 1 thousand-cube ($X = 1$) |
-| `100` [PV] | 0 | 0 | 1492 | 4 | Query hundreds: isolates 4 hundred-flats ($X = 4$) |
-| `10` [PV] | 0 | 0 | 1492 | 9 | Query tens: isolates 9 ten-rods ($X = 9$) |
-| `1` [PV] | 0 | 0 | 1492 | 2 | Query ones: isolates 2 single unit cubes ($X = 2$) |
+| `1000` [ENTER] | 0 | 0 | 1000 | 1000 | Enter 1 thousand-cube into stack |
+| `400` [+] | 0 | 0 | 0 | 1400 | Add 4 hundred-flats; subtotal reaches 1400 |
+| `90` [+] | 0 | 0 | 0 | 1490 | Add 9 ten-rods; subtotal reaches 1490 |
+| `2` [+] | 0 | 0 | 0 | 1492 | Add 2 unit cubes; full historical year reaches 1492 |
 
-- **Results:** Thousands $= 1$, Hundreds $= 4$, Tens $= 9$, Ones $= 2$.
-- **Expanded Notation:** $1,000 + 400 + 90 + 2 = 1,492$.
+- **Results:** Thousands $= 1$, Hundreds $= 4$, Tens $= 9$, Ones $= 2$. Expanded: $1,000 + 400 + 90 + 2 = 1,492$.
 
 ---
 
-#### Problem 3.33: Zero as a Placeholder ($8,040$)
-- **Word Problem:** Interrogate the digits of $8,040$.
+#### Problem 3.33: Zero as a Placeholder ($8,000 + 40 = 8,040$)
+- **Word Problem:** Reconstruct $8,040$ from 8 thousands and 4 tens, observing how the empty hundreds and ones positions function as zero placeholders.
 - **Keystrokes:** `8000 [ENTER] 40 [+]` $\rightarrow$ **`8040`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `8040` `[ENTER]` — Set 8040 onto the upper shelf ($Y = 8040$), preserving the number across place-value queries.
-  2. `1000` `[PV]` — Thousands place: isolates $8$ thousand-cubes in $X$ ($8,000$).
-  3. `100` `[PV]` — Hundreds place: isolates $0$ (the hundreds slot in the Place Value Studio tray is completely empty!).
-  4. `10` `[PV]` — Tens place: isolates $4$ ten-rods in $X$ ($40$).
-  5. `1` `[PV]` — Ones place: isolates $0$ (the ones cup is empty—revealing zero's vital physical job as a spatial placeholder).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `8040` [ENTER] | 0 | 0 | 8040 | 8040 | Set subject quantity into Register $Y$ |
-| `1000` [PV] | 0 | 0 | 8040 | 8 | Query thousands: extracts 8 thousand-cubes ($X = 8$) |
-| `100` [PV] | 0 | 0 | 8040 | 0 | Query hundreds: tray slot empty; confirms 0 placeholder |
-| `10` [PV] | 0 | 0 | 8040 | 4 | Query tens: extracts 4 ten-rods ($X = 4$) |
-| `1` [PV] | 0 | 0 | 8040 | 0 | Query ones: unit cup empty; confirms 0 placeholder |
-
-- **Results:**
-  - Thousands ($1000$): $8$
-  - Hundreds ($100$): $0$ (Verified zero placeholder!)
-  - Tens ($10$): $4$
-  - Ones ($1$): $0$ (Verified zero placeholder!)
+- **Stack Flow:** Tap `8000 [ENTER] 40 [+]` -> (T=0, Z=0, Y=0, X=8040), verifying that the zero hundreds slot leaves a clean placeholder in $8,040$.
+- **Results:** Thousands ($1000$): $8$, Hundreds ($100$): $0$, Tens ($10$): $4$, Ones ($1$): $0$.
 
 ---
 
-#### Problem 3.34: Five-Digit Exploration ($98,765$)
-- **Word Problem:** Decompose $98,765$ across all 5 columns.
+#### Problem 3.34: Five-Digit Expanded Sum ($98,765$)
+- **Word Problem:** Reconstruct the five-digit sequence $98,765$ by sequentially accumulating each positional tier.
 - **Keystrokes:** `90000 [ENTER] 8000 [+] 700 [+] 60 [+] 5 [+]` $\rightarrow$ **`98765`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `98765` `[ENTER]` — Lift the 5-digit number onto the mezzanine shelf ($Y = 98765$).
-  2. `10000` `[PV]` — Ten-Thousands: isolates $9$ ten-thousand blocks ($90,000$).
-  3. `1000` `[PV]` — Thousands: isolates $8$ thousand-cubes ($8,000$).
-  4. `100` `[PV]` — Hundreds: isolates $7$ hundred-flats ($700$).
-  5. `10` `[PV]` — Tens: isolates $6$ ten-rods ($60$).
-  6. `1` `[PV]` — Ones: isolates $5$ single unit cubes ($5$).
-- **Stack Trace Table:**
+- **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `98765` [ENTER] | 0 | 0 | 98765 | 98765 | Load five-digit subject number into preserved Register $Y$ |
-| `10000` [PV] | 0 | 0 | 98765 | 9 | Ten-thousands query: isolates 9 ten-thousand blocks ($X = 9$) |
-| `1000` [PV] | 0 | 0 | 98765 | 8 | Thousands query: isolates 8 thousand-cubes ($X = 8$) |
-| `100` [PV] | 0 | 0 | 98765 | 7 | Hundreds query: isolates 7 hundred-flats ($X = 7$) |
-| `10` [PV] | 0 | 0 | 98765 | 6 | Tens query: isolates 6 ten-rods ($X = 6$) |
-| `1` [PV] | 0 | 0 | 98765 | 5 | Ones query: isolates 5 unit cubes ($X = 5$) |
+| `90000` [ENTER] | 0 | 0 | 90000 | 90000 | Enter 9 ten-thousand blocks into stack |
+| `8000` [+] | 0 | 0 | 0 | 98000 | Add 8 thousand-cubes ($X = 98000$) |
+| `700` [+] | 0 | 0 | 0 | 98700 | Add 7 hundred-flats ($X = 98700$) |
+| `60` [+] | 0 | 0 | 0 | 98760 | Add 6 ten-rods ($X = 98760$) |
+| `5` [+] | 0 | 0 | 0 | 98765 | Add 5 unit cubes; completes 98,765 |
 
 - **Results:** Ten-Thousands $= 9$, Thousands $= 8$, Hundreds $= 7$, Tens $= 6$, Ones $= 5$.
 
 ---
 
-#### Problem 3.35: Decimal Tenths and Hundredths ($345.67$)
-- **Word Problem:** Extract the decimal digits of $345.67$.
+#### Problem 3.35: Decimal Tenths and Hundredths ($345 + 0.6 + 0.07 = 345.67$)
+- **Word Problem:** Reconstruct $345.67$ by combining the whole number baseline with decimal tenths ($0.6$) and hundredths ($0.07$).
 - **Keystrokes:** `345 [ENTER] 0.6 [+] 0.07 [+]` $\rightarrow$ **`345.67`**
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `345.67` [ENTER] | 0 | 0 | 345.67 | 345.67 | Lock decimal subject value in Register $Y$ |
-| `.1` [PV] | 0 | 0 | 345.67 | 6 | Query tenths ($10^{-1}$): extracts tenths digit ($X = 6$) |
-| `.01` [PV] | 0 | 0 | 345.67 | 7 | Query hundredths ($10^{-2}$): extracts hundredths digit ($X = 7$) |
-
+- **Stack Flow:** Tap `345 [ENTER] 0.6 [+] 0.07 [+]` -> (T=0, Z=0, Y=0, X=345.67), reconstructing whole units, tenths, and hundredths into $345.67$.
 - **Diagnostic Check:** Tenths place $= 6$, Hundredths place $= 7$.
 
 ---
 
-#### Problem 3.36: Small Currency Decimals ($0.47$)
-- **Word Problem:** Decompose 47 cents ($0.47$) into dimes (tenths) and pennies (hundredths).
+#### Problem 3.36: Small Currency Decimals ($0.40 + 0.07 = 0.47$)
+- **Word Problem:** Decompose 47 cents into 4 dimes ($0.40$) and 7 pennies ($0.07$).
 - **Keystrokes:** `0.40 [ENTER] 0.07 [+]` $\rightarrow$ **`0.47`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `0.47` `[ENTER]` — Rest the 47-cent coin pile on the upper mezzanine shelf ($Y = 0.47$).
-  2. `.1` `[PV]` — Query tenths place ($0.10$): extracts $4$ dimes resting in Register $X$.
-  3. `.01` `[PV]` — Query hundredths place ($0.01$): extracts $7$ copper pennies resting in Register $X$.
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `0.47` [ENTER] | 0 | 0 | 0.47 | 0.47 | Rest currency total in Register $Y$ |
-| `.1` [PV] | 0 | 0 | 0.47 | 4 | Query tenths place: extracts 4 dimes ($X = 4$) |
-| `.01` [PV] | 0 | 0 | 0.47 | 7 | Query hundredths place: extracts 7 pennies ($X = 7$) |
-
+- **Stack Flow:** Tap `0.40 [ENTER] 0.07 [+]` -> (T=0, Z=0, Y=0, X=0.47), combining 4 dimes and 7 pennies into $\$0.47$.
 - **Results:** Dimes (Tenths) $= 4$, Pennies (Hundredths) $= 7$.
 
 ---
 
-#### Problem 3.37: Large Thousand-Block Count ($12,500$)
-- **Word Problem:** A stadium has $12,500$ seats. How many ten-thousands and thousands?
+#### Problem 3.37: Large Thousand-Block Count ($10,000 + 2,500 = 12,500$)
+- **Word Problem:** A stadium has $10,000$ grandstand seats and $2,500$ concourse seats. Combine these place-value blocks to find total seating capacity.
 - **Keystrokes:** `10000 [ENTER] 2500 [+]` $\rightarrow$ **`12500`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `12500` `[ENTER]` — Place the $12,500$ arena seats onto the held shelf ($Y = 12500$).
-  2. `10000` `[PV]` — Query ten-thousands: isolates $1$ full grandstand section ($10,000\text{ seats}$).
-  3. `1000` `[PV]` — Query thousands: isolates $2$ stadium concourse sections ($2,000\text{ seats}$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `12500` [ENTER] | 0 | 0 | 12500 | 12500 | Park stadium capacity in Register $Y$ |
-| `10000` [PV] | 0 | 0 | 12500 | 1 | Query ten-thousands: isolates 1 grandstand section ($X = 1$) |
-| `1000` [PV] | 0 | 0 | 12500 | 2 | Query thousands: isolates 2 concourse blocks ($X = 2$) |
-
+- **Stack Flow:** Tap `10000 [ENTER] 2500 [+]` -> (T=0, Z=0, Y=0, X=12500), combining grandstand and concourse blocks to total 12,500 seats.
 - **Results:** Ten-thousands $= 1$, Thousands $= 2$.
 
 ---
 
-#### Problem 3.38: Hundred-Thousands Place ($450,200$)
-- **Word Problem:** Decompose $450,200$.
+#### Problem 3.38: Hundred-Thousands Place ($400,000 + 50,000 + 200 = 450,200$)
+- **Word Problem:** Reconstruct regional census population $450,200$ from 4 hundred-thousands, 5 ten-thousands, and 2 hundreds.
 - **Keystrokes:** `400000 [ENTER] 50000 [+] 200 [+]` $\rightarrow$ **`450200`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `450200` `[ENTER]` — Place 450,200 onto the upper shelf ($Y = 450200$).
-  2. `100000` `[PV]` — Query hundred-thousands: isolates $4$ hundred-thousand blocks ($400,000$).
-  3. `10000` `[PV]` — Query ten-thousands: isolates $5$ ten-thousand blocks ($50,000$).
-  4. `100` `[PV]` — Query hundreds: isolates $2$ hundred-flats ($200$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `450200` [ENTER] | 0 | 0 | 450200 | 450200 | Park 450,200 in Register $Y$ |
-| `100000` [PV] | 0 | 0 | 450200 | 4 | Query hundred-thousands: isolates 4 large blocks ($X = 4$) |
-| `10000` [PV] | 0 | 0 | 450200 | 5 | Query ten-thousands: isolates 5 blocks ($X = 5$) |
-| `100` [PV] | 0 | 0 | 450200 | 2 | Query hundreds: isolates 2 hundred-flats ($X = 2$) |
-
+- **Stack Flow:** Tap `400000 [ENTER] 50000 [+] 200 [+]` -> (T=0, Z=0, Y=0, X=450200), combining regional census population blocks into $450,200$.
 - **Results:** Hundred-thousands $= 4$, Ten-thousands $= 5$, Hundreds $= 2$.
 
 ---
@@ -3517,15 +3281,8 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Word Problem:** Decompose the lunar distance $384,400\text{ km}$. If a rocket flies at $4,000\text{ km/h}$, find transit hours.
 - **Keystrokes:**
   1. Digits: `384400 [ENTER] 100000 [PV] 10000 [PV] 1000 [PV] 100 [PV]`
-  2. Travel time: `384400 [ENTER] 4000 [÷]`
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `384400` [ENTER] | 0 | 0 | 384400 | 384400 | Enter lunar orbital distance in kilometers |
-| `4000` | 0 | 0 | 384400 | 4000 | Key in spacecraft velocity ($4,000\text{ km/h}$) |
-| [÷] | 0 | 0 | 0 | 96.1 | Compute transit duration: 96.1 hours ($\approx 4$ days) |
-
+  2. Travel time: `384400 [ENTER] 4000 [÷]` $\rightarrow$ **`96.1`**
+- **Stack Flow:** Tap `384400 [ENTER] 4000 [÷]` -> (T=0, Z=0, Y=0, X=96.1), calculating 96.1 transit hours ($\approx 4$ days) to reach the Moon.
 - **Result:** $X = 96.1\text{ hours}$ ($\approx 4\text{ days}$).
 
 ---
@@ -3533,17 +3290,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.40: Human Heartbeats in a Decade
 - **Word Problem:** If your heart beats $42,048,000$ times in 1 year, how many beats occur across a 10-year decade?
 - **Keystrokes:** `42048000 [ENTER] 10 [×]` $\rightarrow$ **`420480000`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `42048000` `[ENTER]` — Set the annual count of $42,048,000\text{ beats}$ onto the upper mezzanine shelf ($Y = 42048000$).
-  2. `10` `[×]` — Scale by 10 years: the decade multiplier shifts every digit one place value left $\rightarrow$ ($X = 420480000$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `42048000` [ENTER] | 0 | 0 | 42048000 | 42048000 | Enter annual heartbeat baseline into Register $Y$ |
-| `10` | 0 | 0 | 42048000 | 10 | Enter decade multiplier (10 years) |
-| [×] | 0 | 0 | 0 | 420480000 | Decimal scale shifts digits left: 420,480,000 beats |
-
+- **Stack Flow:** Tap `42048000 [ENTER] 10 [×]` -> (T=0, Z=0, Y=0, X=420480000), scaling annual heartbeats across a 10-year decade to $420,480,000$ beats.
 - **Result:** $X = 420,480,000\text{ beats}$ (420 million beats!).
 - **Decompose Hundred-Millions:** `[ENTER] 100000000 [PV]` $\longrightarrow X = \mathbf{4}$ (4 hundred-million beats).
 
@@ -3552,17 +3299,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.41: Drops in an Olympic Swimming Pool
 - **Word Problem:** An Olympic pool holds $2,500,000\text{ liters}$. Each liter has $20,000\text{ drops}$ of water. Compute the total drops.
 - **Keystrokes:** `2500000 [ENTER] 20000 [×]` $\rightarrow$ **`50000000000`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `2500000` `[ENTER]` — Place the $2,500,000\text{ liter}$ water volume on the mezzanine shelf ($Y = 2500000$).
-  2. `20000` `[×]` — Fold in $20,000\text{ drops/liter}$ to find the total liquid drops in the pool $\rightarrow$ ($X = 50000000000$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `2500000` [ENTER] | 0 | 0 | 2500000 | 2500000 | Enter Olympic pool volume in liters |
-| `20000` | 0 | 0 | 2500000 | 20000 | Enter drop density ($20,000\text{ drops/liter}$) |
-| [×] | 0 | 0 | 0 | 50000000000 | Direct multiplication yields 50 billion drops |
-
+- **Stack Flow:** Tap `2500000 [ENTER] 20000 [×]` -> (T=0, Z=0, Y=0, X=50000000000), computing 50 billion water drops in the Olympic pool.
 - **Result:** $X = 50,000,000,000\text{ drops}$ (50 billion drops!).
 - **Decompose Ten-Billions:** `[ENTER] 10000000000 [PV]` $\longrightarrow X = \mathbf{5}$ (5 ten-billion drops).
 
@@ -3571,20 +3308,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.42: Saturn's Ring Diameter ($282,000\text{ km}$)
 - **Word Problem:** Saturn's main ring system spans $282,000\text{ kilometers}$. Decompose into Hundred-Thousands, Ten-Thousands, and Thousands.
 - **Keystrokes:** `282000 [ENTER] 100000 [PV] 10000 [PV] 1000 [PV]` $\rightarrow$ **`2`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `282000` `[ENTER]` — Set Saturn's $282,000\text{ km}$ ring diameter onto the mezzanine shelf ($Y = 282000$).
-  2. `100000` `[PV]` — Query hundred-thousands: isolates $2$ hundred-thousand km blocks ($200,000\text{ km}$).
-  3. `10000` `[PV]` — Query ten-thousands: isolates $8$ ten-thousand km blocks ($80,000\text{ km}$).
-  4. `1000` `[PV]` — Query thousands: isolates $2$ thousand km blocks ($2,000\text{ km}$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `282000` [ENTER] | 0 | 0 | 282000 | 282000 | Enter Saturn ring span into Register $Y$ |
-| `100000` [PV] | 0 | 0 | 282000 | 2 | Query hundred-thousands: isolates 2 units ($X = 2$) |
-| `10000` [PV] | 0 | 0 | 282000 | 8 | Query ten-thousands: isolates 8 units ($X = 8$) |
-| `1000` [PV] | 0 | 0 | 282000 | 2 | Query thousands: isolates 2 units ($X = 2$) |
-
+- **Place Value Interrogation:** Park 282,000 in Register $Y$ with `282000 [ENTER]`. Query each decimal place: `100000 [PV]` yields 2 hundred-thousands, `10000 [PV]` yields 8 ten-thousands, and `1000 [PV]` yields 2 thousands ($Y: 282000, X: 2$).
 - **Results:** Hundred-Thousands $= 2$, Ten-Thousands $= 8$, Thousands $= 2$.
 
 ---
@@ -3592,13 +3316,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.43: School District Annual Milk Cartons
 - **Word Problem:** A school district has 14 elementary schools. Each school serves 450 cartons of milk per day over a 180-day school year. Calculate total annual milk cartons and extract the millions and hundred-thousands digits.
 - **Keystrokes:** `14 [ENTER] 450 [×] 180 [×]` $\rightarrow$ **`1134000`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `14` `[ENTER]` — Place the 14 elementary schools onto the mezzanine shelf ($Y = 14$).
-  2. `450` `[×]` — Multiply by 450 cartons/school to find the daily milk consumption ($6,300\text{ cartons/day}$ in $X$).
-  3. `180` `[×]` — Multiply by 180 school days to calculate the annual district total ($1,134,000\text{ cartons/year}$ on the stack).
-  - Intermediate 1 ($14 \times 450$): $6,300\text{ cartons/day}$.
-  - Intermediate 2 ($6,300 \times 180$): $1,134,000\text{ cartons/year}$.
-- **Stack Trace Table:**
+- **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -3620,30 +3338,20 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
   2. If each branch holds an equal share on average, compute the average books per branch.
 - **Keystrokes:**
   1. Digits: `875420 [ENTER] 10000 [PV]` $\longrightarrow X = \mathbf{7}$.
-  2. Division: `875420 [ENTER] 12 [÷]` $\longrightarrow X = \mathbf{72,951.67\text{ books}}$.
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `875420` [ENTER] | 0 | 0 | 875420 | 875420 | Enter total cataloged books into stack |
-| `12` | 0 | 0 | 875420 | 12 | Key in 12 branch locations |
-| [÷] | 0 | 0 | 0 | 72951.67 | Compute branch average: $72,951.67\text{ books/branch}$ |
+  2. Division: `875420 [ENTER] 12 [÷]` $\rightarrow$ **`72,951.66667`**
+- **Stack Flow:** Tap `875420 [ENTER] 12 [÷]` -> (T=0, Z=0, Y=0, X=72951.66667), computing the average branch circulation of $72,951.67\text{ books}$.
 
 ---
 
 #### Problem 3.45: Solar Transit Distance of Voyager 1
 - **Word Problem:** Space probe Voyager 1 travels at approximately $17\text{ km/second}$. How many kilometers does it travel in a full 24-hour day ($86,400\text{ seconds}$)?
 - **Keystrokes:** `86400 [ENTER] 17 [×]` $\rightarrow$ **`1468800`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `86400` `[ENTER]` — Place the $86,400\text{ seconds}$ of a complete solar day onto the mezzanine shelf ($Y = 86400$).
-  2. `17` `[×]` — Multiply by Voyager 1's speed of $17\text{ km/s}$ to compute the daily distance traversed $\rightarrow$ ($X = 1468800$).
-- **Stack Trace Table:**
+- **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `86400` [ENTER] | 0 | 0 | 86400 | 86400 | Enter seconds per solar day into Register $Y$ |
-| `17` | 0 | 0 | 86400 | 17 | Key in probe velocity ($17\text{ km/s}$) |
-| [×] | 0 | 0 | 0 | 1468800 | Daily distance covered: $1,468,800\text{ km/day}$ |
+| `17` [×] | 0 | 0 | 0 | 1468800 | Daily distance covered: $1,468,800\text{ km/day}$ |
 
 - **Result:** $X = 1,468,800\text{ kilometers/day}$.
 - **Place Value Decomposition:**

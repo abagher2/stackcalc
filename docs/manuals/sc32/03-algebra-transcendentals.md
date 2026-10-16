@@ -77,10 +77,10 @@ Keystrokes: `{{res:sc32_03_algebra_transcendentals_seq_01:keys}}` $\rightarrow$ 
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{key:2}} {{key:.}} {{key:5}}` | $0.0000$ | $0.0000$ | $2.0000$ | $5.0000$ | Enter base $y$ |
-| 2 | `{{key:ENTER}}` | $0.0000$ | $2.0000$ | $5.0000$ | $5.0000$ | Stack lift disabled; $y$ pushed to $Y$ |
-| 3 | `{{key:3}} {{key:.}} {{key:8}}` | $2.0000$ | $5.0000$ | $3.0000$ | $8.0000$ | Overwrite $X$ with exponent $x$ |
-| 4 | `{{key:yˣ}}` | $2.0000$ | $2.0000$ | $5.0000$ | **$6561.0000000000$** | Evaluates $2.5^{3.8}$; Stack lift armed |
+| 1 | `{{key:2}} {{key:.}} {{key:5}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.5000$ | Enter base $y$ |
+| 2 | `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.5000$ | $2.5000$ | Stack lift disabled; $y$ pushed to $Y$ |
+| 3 | `{{key:3}} {{key:.}} {{key:8}}` | $0.0000$ | $0.0000$ | $2.5000$ | $3.8000$ | Overwrite $X$ with exponent $x$ |
+| 4 | `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$32.5216096641$** | Evaluates $2.5^{3.8}$; Stack lift armed |
 
 ### `{{key:ˣ√y}}` (Arbitrary Radical Root)
 * **Mathematical Definition:** Evaluates $\sqrt[X]{Y} = Y^{1/X}$.
@@ -160,8 +160,8 @@ $$t = -\frac{\ln(N(t)/N_0)}{\lambda} = -\frac{\ln(0.234) \times 5730}{\ln 2}$$
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & Pedagogical State |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{key:.}} {{key:2}} {{key:3}} {{key:4}}` | $0.0000$ | $2.0000$ | $3.0000$ | $4.0000$ | Remaining proportion |
-| 2 | `{{key:LN}}` | $0.0000$ | $2.0000$ | $3.0000$ | $1.386294$ | $\ln(0.234)$ evaluated |
+| 1 | `{{key:.}} {{key:2}} {{key:3}} {{key:4}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2340$ | Remaining proportion |
+| 2 | `{{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.452434$ | $\ln(0.234)$ evaluated |
 | 3 | `{{key:5}} {{key:7}} {{key:3}} {{key:0}}` | $5.0000$ | $7.0000$ | $3.000000$ | $0.0000$ | Stack lifts automatically |
 | 4 | `{{key:×}}` | $5.0000$ | $5.0000$ | $7.0000$ | $0.0000$ | Numerator product |
 | 5 | `{{key:2}}` | $5.0000$ | $7.0000$ | $0.0000$ | $2.0000$ | Base 2 for half-life |

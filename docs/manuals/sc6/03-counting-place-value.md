@@ -1075,15 +1075,8 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Word Problem:** Decompose the lunar distance $384,400\text{ km}$. If a rocket flies at $4,000\text{ km/h}$, find transit hours.
 - **Keystrokes:**
   1. Digits: `384400 {{key:ENTER}} 100000 {{key:PV}} 10000 {{key:PV}} 1000 {{key:PV}} 100 {{key:PV}}`
-  2. Travel time: `{{res:sc6_03_counting_place_value_seq_48:keys}}`
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `384400` {{key:ENTER}} | 0 | 0 | 384400 | 384400 | Enter lunar orbital distance in kilometers |
-| `4000` | 0 | 0 | 384400 | 4000 | Key in spacecraft velocity ($4,000\text{ km/h}$) |
-| {{key:÷}} | 0 | 0 | 0 | 96.1 | Compute transit duration: 96.1 hours ($\approx 4$ days) |
-
+  2. Travel time: `{{res:sc6_03_counting_place_value_seq_48:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_48:value}}`**
+- **Stack Flow:** Tap `384400 {{key:ENTER}} 4000 {{key:÷}}` -> (T=0, Z=0, Y=0, X=96.1), calculating 96.1 transit hours ($\approx 4$ days) to reach the Moon.
 - **Result:** $X = 96.1\text{ hours}$ ($\approx 4\text{ days}$).
 
 ---
@@ -1091,17 +1084,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.40: Human Heartbeats in a Decade
 - **Word Problem:** If your heart beats $42,048,000$ times in 1 year, how many beats occur across a 10-year decade?
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_34:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_34:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `42048000` `{{key:ENTER}}` — Set the annual count of $42,048,000\text{ beats}$ onto the upper mezzanine shelf ($Y = 42048000$).
-  2. `10` `{{key:×}}` — Scale by 10 years: the decade multiplier shifts every digit one place value left $\rightarrow$ ($X = 420480000$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `42048000` {{key:ENTER}} | 0 | 0 | 42048000 | 42048000 | Enter annual heartbeat baseline into Register $Y$ |
-| `10` | 0 | 0 | 42048000 | 10 | Enter decade multiplier (10 years) |
-| {{key:×}} | 0 | 0 | 0 | 420480000 | Decimal scale shifts digits left: 420,480,000 beats |
-
+- **Stack Flow:** Tap `42048000 {{key:ENTER}} 10 {{key:×}}` -> (T=0, Z=0, Y=0, X=420480000), scaling annual heartbeats across a 10-year decade to $420,480,000$ beats.
 - **Result:** $X = 420,480,000\text{ beats}$ (420 million beats!).
 - **Decompose Hundred-Millions:** `{{key:ENTER}} 100000000 {{key:PV}}` $\longrightarrow X = \mathbf{4}$ (4 hundred-million beats).
 
@@ -1110,17 +1093,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.41: Drops in an Olympic Swimming Pool
 - **Word Problem:** An Olympic pool holds $2,500,000\text{ liters}$. Each liter has $20,000\text{ drops}$ of water. Compute the total drops.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_35:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_35:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `2500000` `{{key:ENTER}}` — Place the $2,500,000\text{ liter}$ water volume on the mezzanine shelf ($Y = 2500000$).
-  2. `20000` `{{key:×}}` — Fold in $20,000\text{ drops/liter}$ to find the total liquid drops in the pool $\rightarrow$ ($X = 50000000000$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `2500000` {{key:ENTER}} | 0 | 0 | 2500000 | 2500000 | Enter Olympic pool volume in liters |
-| `20000` | 0 | 0 | 2500000 | 20000 | Enter drop density ($20,000\text{ drops/liter}$) |
-| {{key:×}} | 0 | 0 | 0 | 50000000000 | Direct multiplication yields 50 billion drops |
-
+- **Stack Flow:** Tap `2500000 {{key:ENTER}} 20000 {{key:×}}` -> (T=0, Z=0, Y=0, X=50000000000), computing 50 billion water drops in the Olympic pool.
 - **Result:** $X = 50,000,000,000\text{ drops}$ (50 billion drops!).
 - **Decompose Ten-Billions:** `{{key:ENTER}} 10000000000 {{key:PV}}` $\longrightarrow X = \mathbf{5}$ (5 ten-billion drops).
 
@@ -1129,20 +1102,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.42: Saturn's Ring Diameter ($282,000\text{ km}$)
 - **Word Problem:** Saturn's main ring system spans $282,000\text{ kilometers}$. Decompose into Hundred-Thousands, Ten-Thousands, and Thousands.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_36:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_36:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `282000` `{{key:ENTER}}` — Set Saturn's $282,000\text{ km}$ ring diameter onto the mezzanine shelf ($Y = 282000$).
-  2. `100000` `{{key:PV}}` — Query hundred-thousands: isolates $2$ hundred-thousand km blocks ($200,000\text{ km}$).
-  3. `10000` `{{key:PV}}` — Query ten-thousands: isolates $8$ ten-thousand km blocks ($80,000\text{ km}$).
-  4. `1000` `{{key:PV}}` — Query thousands: isolates $2$ thousand km blocks ($2,000\text{ km}$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `282000` {{key:ENTER}} | 0 | 0 | 282000 | 282000 | Enter Saturn ring span into Register $Y$ |
-| `100000` {{key:PV}} | 0 | 0 | 282000 | 2 | Query hundred-thousands: isolates 2 units ($X = 2$) |
-| `10000` {{key:PV}} | 0 | 0 | 282000 | 8 | Query ten-thousands: isolates 8 units ($X = 8$) |
-| `1000` {{key:PV}} | 0 | 0 | 282000 | 2 | Query thousands: isolates 2 units ($X = 2$) |
-
+- **Place Value Interrogation:** Park 282,000 in Register $Y$ with `282000 {{key:ENTER}}`. Query each decimal place: `100000 {{key:PV}}` yields 2 hundred-thousands, `10000 {{key:PV}}` yields 8 ten-thousands, and `1000 {{key:PV}}` yields 2 thousands ($Y: 282000, X: 2$).
 - **Results:** Hundred-Thousands $= 2$, Ten-Thousands $= 8$, Thousands $= 2$.
 
 ---
@@ -1150,13 +1110,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 #### Problem 3.43: School District Annual Milk Cartons
 - **Word Problem:** A school district has 14 elementary schools. Each school serves 450 cartons of milk per day over a 180-day school year. Calculate total annual milk cartons and extract the millions and hundred-thousands digits.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_37:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_37:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `14` `{{key:ENTER}}` — Place the 14 elementary schools onto the mezzanine shelf ($Y = 14$).
-  2. `450` `{{key:×}}` — Multiply by 450 cartons/school to find the daily milk consumption ($6,300\text{ cartons/day}$ in $X$).
-  3. `180` `{{key:×}}` — Multiply by 180 school days to calculate the annual district total ($1,134,000\text{ cartons/year}$ on the stack).
-  - Intermediate 1 ($14 \times 450$): $6,300\text{ cartons/day}$.
-  - Intermediate 2 ($6,300 \times 180$): $1,134,000\text{ cartons/year}$.
-- **Stack Trace Table:**
+- **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -1178,30 +1132,20 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
   2. If each branch holds an equal share on average, compute the average books per branch.
 - **Keystrokes:**
   1. Digits: `875420 {{key:ENTER}} 10000 {{key:PV}}` $\longrightarrow X = \mathbf{7}$.
-  2. Division: `{{res:sc6_03_counting_place_value_seq_49:keys}}` $\longrightarrow X = \mathbf{72,951.67\text{ books}}$.
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `875420` {{key:ENTER}} | 0 | 0 | 875420 | 875420 | Enter total cataloged books into stack |
-| `12` | 0 | 0 | 875420 | 12 | Key in 12 branch locations |
-| {{key:÷}} | 0 | 0 | 0 | 72951.67 | Compute branch average: $72,951.67\text{ books/branch}$ |
+  2. Division: `{{res:sc6_03_counting_place_value_seq_49:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_49:value}}`**
+- **Stack Flow:** Tap `875420 {{key:ENTER}} 12 {{key:÷}}` -> (T=0, Z=0, Y=0, X=72951.66667), computing the average branch circulation of $72,951.67\text{ books}$.
 
 ---
 
 #### Problem 3.45: Solar Transit Distance of Voyager 1
 - **Word Problem:** Space probe Voyager 1 travels at approximately $17\text{ km/second}$. How many kilometers does it travel in a full 24-hour day ($86,400\text{ seconds}$)?
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_38:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_38:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `86400` `{{key:ENTER}}` — Place the $86,400\text{ seconds}$ of a complete solar day onto the mezzanine shelf ($Y = 86400$).
-  2. `17` `{{key:×}}` — Multiply by Voyager 1's speed of $17\text{ km/s}$ to compute the daily distance traversed $\rightarrow$ ($X = 1468800$).
-- **Stack Trace Table:**
+- **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `86400` {{key:ENTER}} | 0 | 0 | 86400 | 86400 | Enter seconds per solar day into Register $Y$ |
-| `17` | 0 | 0 | 86400 | 17 | Key in probe velocity ($17\text{ km/s}$) |
-| {{key:×}} | 0 | 0 | 0 | 1468800 | Daily distance covered: $1,468,800\text{ km/day}$ |
+| `17` {{key:×}} | 0 | 0 | 0 | 1468800 | Daily distance covered: $1,468,800\text{ km/day}$ |
 
 - **Result:** $X = 1,468,800\text{ kilometers/day}$.
 - **Place Value Decomposition:**
