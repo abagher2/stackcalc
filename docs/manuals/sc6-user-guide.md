@@ -2437,7 +2437,7 @@ $$\mathbf{8 + 5 = 8 + (2 + 3) = (8 + 2) + 3 = 10 + 3 = 13}$$
 | :--- | :--- | :--- | :--- | :--- |
 | [8] [▦] | 0 | 0 | 0 | 8 |
 | [2] [+] | 0 | 0 | 0 | 10 |
-| [3] [+] | 0 | 0 | 10 | 13 |
+| [3] [+] | 0 | 0 | 0 | 13 |
 
 <div class="admonition note">
 <p class="admonition-title">For Parents &amp; Teachers: Teacher Dialogue Script</p>
@@ -2625,7 +2625,7 @@ The SC-6 display animates these exact parabolic paths in real time, making dista
 
 ---
 
-## 3.7 The European Rekenrek / Number Rack (`[▦]`)
+## 3.7 The European Rekenrek / Number Rack (`[g] [COUNT]`)
 
 The 100-bead and 20-bead Rekenrek (Number Rack) was invented by Adrian Treffers at the Freudenthal Institute in the Netherlands. It consists of two parallel stainless-steel rods, each carrying beads divided into color-coded groups of **5 Red** and **5 White**.
 
@@ -2634,9 +2634,9 @@ The 100-bead and 20-bead Rekenrek (Number Rack) was invented by Adrian Treffers 
 > Wire 1 (Tens):  [🔴🔴🔴🔴🔴][⚪⚪⚪⚪⚪]  ---  [🔴🔴🔴🔴🔴][⚪⚪⚪⚪⚪]
 > Wire 2 (Ones):  [🔴🔴🔴🔴🔴][⚪⚪⚪⚪⚪]  ---  [🔴🔴🔴🔴🔴][⚪⚪⚪⚪⚪]
 
-### 3.7.1 Operating Rekenrek Mode (`[▦]`)
+### 3.7.1 Operating Rekenrek Mode (`[g] [COUNT]`)
 1. Type a target number (for example, `[1] [4]`).
-2. Press `[▦]` (or `[g] [COUNT]`).
+2. Press `[g] [COUNT]` (or `[g] [COUNT]`).
 3. The transflective LCD maps the quantity across the two wires:
    - Wire 1 shows 10 beads slid to the active left side (5 red, 5 white).
    - Wire 2 shows 4 red beads slid to the active left side.
@@ -2681,7 +2681,7 @@ $$\text{placeValueDigit}(Y, X) = \left\lfloor \frac{|Y|}{X} \right\rfloor \bmod 
 2. Query the Tens place: `[1] [0] [PV]`.
    - Register $X$ displays: `2` (There are 2 tens in 4,725!).
 
-| Keystroke | Register T | Register Z | Register Y (Subject) | Register X (Query) |
+| Keystroke | Display T | Display Z | Display Y (Subject) | Display X (Query / Result) |
 | :--- | :--- | :--- | :--- | :--- |
 | `4725` | 0 | 0 | 0 | 4725 |
 | [ENTER] | 0 | 0 | 4725 | 4725 |
@@ -6347,7 +6347,7 @@ Standard Base-10 Arithmetic &bull; 4-Stack XYZT &bull; Clean Transflective Displ
 <p>
 • <strong>2D Geometry Keys:</strong> <code>[f] [RECT]</code> Rectangle Area, <code>[g] [TRI]</code> Triangle Area, <code>[f] [CIRC]</code> Circle Area, <code>[π]</code> Pi Constant.<br>
 • <strong>3D Solid Volume Keys:</strong> <code>[f] [PRISM]</code> Prism Volume, <code>[g] [CONE]</code> Cone Volume, <code>[f] [PRISM]</code> Pyramid Volume.<br>
-• <strong>The Master Surface Area Technique:</strong> <code>[Σ+]</code> (Accumulate Face Pairs), <code>[f] [Σ-]</code> (Deduct Cutouts), <code>[f] [Σx]</code> / <code>[f] [Σx]</code> (Recall Total Surface Area), <code>[g] [CLΣ]</code> (Reset Statistical Registers).<br>
+• <strong>The Master Surface Area Technique:</strong> <code>[Σ+]</code> (Accumulate Face Pairs), <code>[f] [Σ-]</code> (Deduct Cutouts), <code>[f] [Σx]</code> (Recall Total Surface Area), <code>[g] [CLΣ]</code> (Reset Statistical Registers).<br>
 • <strong>Planetary Clock &amp; Modulo-60 Time:</strong> <code>[🕒]</code> (Clock Sandbox), <code>[f] [▸HR]</code> (HMS to Decimal Hours), <code>[g] [▸HMS]</code> (Decimal Hours to HMS), <code>[🕒]</code> (Digital Colon Format).
 </p>
 </div>
@@ -6581,12 +6581,12 @@ A storm runoff culvert has a trapezoidal cross-section with bottom width $a = 60
 | :--- | :--- | :--- | :--- | :--- |
 | 60 | 0 | 0 | 0 | 60 |
 | [ENTER] | 0 | 0 | 60 | 60 |
-| [1][1][0] | 60 | 1 | 1 | 0 |
-| [+] | 60 | 60 | 1 | 1 |
-| [2] | 60 | 1 | 1 | 2 |
-| [÷] | 60 | 60 | 1 | $0.5000$ |
-| 40 | 60 | 1 | $0.5000$ | 40 |
-| [×] | 60 | 60 | 1 | 20 |
+| 110 | 0 | 0 | 60 | 110 |
+| [+] | 0 | 0 | 0 | 170 |
+| 2 | 0 | 0 | 170 | 2 |
+| [÷] | 0 | 0 | 0 | 85 |
+| 40 | 0 | 0 | 85 | 40 |
+| [×] | 0 | 0 | 0 | 3400 |
 
 The flow area is exactly $\mathbf{3,400\text{ cm}^2}$ ($0.34\text{ m}^2$).
 
@@ -6602,7 +6602,17 @@ $$A_{\text{hex}} = \frac{3\sqrt{3}}{2} s^2 \approx 2.598076 \times s^2$$
 #### Worked Example 6.8: Hexagonal Ceramic Paver
 A courtyard is paved with regular hexagonal pavers, each having side length $s = 10\text{ cm}$. Find the surface area of one paver.
 
-> **RPN Calculation:**
+**Grade 3–5 Elementary Method (Using Constant Factor $2.5981$):**
+In elementary grades, evaluate regular hexagon area directly using the geometric constant factor $2.5981 \times s^2$:
+> `10 [x²] 2.5981 [×]` $\longrightarrow \mathbf{259.81\text{ cm}^2}$.
+
+<div class="admonition note">
+<p class="admonition-title">Grade 6+ Mathematical Extension: Exact Radical Apothem Solver</p>
+<p>
+For middle school mathematicians, the exact regular hexagonal area is derived from 6 equilateral triangles: $A = \frac{3\sqrt{3}}{2} s^2$. Evaluate using the hardware square root key <code>[√x]</code>:
+</p>
+
+> **RPN Exact Evaluation:**
 > 10 [x²] [3] [×] [3] [√x] [×] [2] [÷]  -> 259.8076 cm²
 - `10 [x²]` $\longrightarrow 100$
 - **Step-by-Step RPN Reasoning & Stack Logic:**
@@ -6612,6 +6622,7 @@ A courtyard is paved with regular hexagonal pavers, each having side length $s =
 - `3 [f] [√x]` $\longrightarrow 1.73205$
 - `[×]` $\longrightarrow 519.6152$
 - `[2] [÷]` $\longrightarrow \mathbf{259.81\text{ cm}^2}$.
+</div>
 
 ---
 
@@ -6632,12 +6643,18 @@ When using a standard algebraic calculator, you face three frustrating obstacles
 &bull; <strong>Rule 1:</strong> Always reset statistical memory before starting: <code>[g] [CLΣ]</code>.<br>
 &bull; <strong>Rule 2:</strong> Compute each face pair and press <code>[Σ+]</code> immediately.<br>
 &bull; <strong>Rule 3:</strong> The screen displays <code>n = 1, 2, 3...</code>, counting face pairs accumulated in hardware.<br>
-&bull; <strong>Rule 4:</strong> Press <code>[f] [Σx]</code> or <code>[f] [Σx]</code> to reveal the total surface area!<br><br>
+&bull; <strong>Rule 4:</strong> Press <code>[f] [Σx]</code> to reveal the total surface area!<br><br>
 <em>Zero scratch paper &bull; Zero parentheses &bull; 100% hardware stack verified.</em>
 </p>
 </div>
 
-### 6.4.2 Station Lesson 6.1: Folding Polyhedral Nets & The Master Surface Area Technique (`[Σ+]`)
+### 6.4.2 Algebraic Trap vs. StackCalc Superpower Showdown: Rectangular Prism Surface Area
+
+| Challenge / Equation | The Algebraic Calculator Trap (TI-30X / Smartphone) | The StackCalc SC-6 + Manipulative Superpower | Keystroke Reduction | Live Stack Visibility | Pedagogical Breakthrough |
+| :--- | :--- | :--- | :---: | :--- | :--- |
+| **Rectangular Prism Surface Area:**<br>$2(8 \times 5 + 8 \times 3 + 5 \times 3)$ | `2 * ( 8 * 5 + 8 * 3 + 5 * 3 ) =`<br>(19 keystrokes).<br>One missed bracket or operator typo ruins the entire expression.<br>No individual face audit is possible.<br>*Trap: Decimals or typos force complete re-entry; zero visual verification of intermediate face pairs.* | **SC-6 + Stats Mode (`[Σ+]`):**<br>`[g] [CLΣ] 8 [ENTER] 5 [×] [Σ+] 3 [×] [Σ+] 5 [ENTER] 3 [×] [Σ+] [f] [Σx] 2 [×]`<br>$\rightarrow \mathbf{158.0\text{ cm}^2}$ (17 keystrokes).<br>Every face pair verified on screen before accumulating; zero scratch paper. | **11% fewer keystrokes**<br>(17 vs. 19) | **100% Face Visibility:**<br>Tracks item count $n = 1, 2, 3$ and lets you inspect intermediate face areas ($40, 24, 15$) before multiplying by 2. | **Modular Face Decomposition:**<br>Transforms abstract bracket clutter into an intuitive physical inventory of 2D nets; mistakes can be corrected face-by-face without starting over. |
+
+### 6.4.3 Station Lesson 6.1: Folding Polyhedral Nets & The Master Surface Area Technique (`[Σ+]`)
 
 <div class="admonition note">
 <p class="admonition-title">Station Lesson 6.1: Tactile Setup</p>
@@ -6697,7 +6714,7 @@ A classroom maker project requires designing an injection-molded instrument case
 
 ---
 
-### 6.4.3 The Cube Manipulative
+### 6.4.4 The Cube Manipulative
 A regular cube has 6 congruent square faces. For a solid cube manipulative with side length $s = 4\text{ cm}$:
 $$\text{Area of 1 face} = 4\text{ cm} \times 4\text{ cm} = 16\text{ cm}^2$$
 $$\text{Total Surface Area} = 6 \times 16\text{ cm}^2 = 96\text{ cm}^2$$
@@ -6712,7 +6729,7 @@ Or you can use the direct face-pair shortcut:
 
 ---
 
-### 6.4.4 Triangular Prism
+### 6.4.5 Triangular Prism
 
 A right triangular prism manipulative features:
 - Two right-triangular end bases with legs $a = 3\text{ cm}$ and $b = 4\text{ cm}$ (hypotenuse $c = 5\text{ cm}$).
@@ -6720,10 +6737,11 @@ A right triangular prism manipulative features:
 
 | Triangular Prism Face | Geometry & Dimensions | Area Calculation |
 | :--- | :--- | :--- |
-| **2 Triangular Ends** | Base $b = 6\text{ cm}$, height $h = 4\text{ cm}$ | $2 \times (\frac{1}{2} \times 6 \times 4) = 24\text{ cm}^2$ |
-| **2 Sloped Roof Panels** | Slant width $5\text{ cm}$, length $L = 6\text{ cm}$ | $2 \times (5 \times 6) = 60\text{ cm}^2$ |
-| **1 Flat Rectangular Floor** | Base $6\text{ cm}$, length $L = 6\text{ cm}$ | $1 \times (6 \times 6) = 36\text{ cm}^2$ |
-| **Total Surface Area** | Accumulated via `[Σ+]` | **$120\text{ cm}^2$** |
+| **2 Triangular Ends** | Right triangle legs $a = 3\text{ cm}$, $b = 4\text{ cm}$ | $2 \times (\frac{1}{2} \times 3 \times 4) = 12\text{ cm}^2$ |
+| **1 Bottom Rectangular Base** | Base $3\text{ cm}$, length $L = 6\text{ cm}$ | $1 \times (3 \times 6) = 18\text{ cm}^2$ |
+| **1 Vertical Rectangular Back** | Height $4\text{ cm}$, length $L = 6\text{ cm}$ | $1 \times (4 \times 6) = 24\text{ cm}^2$ |
+| **1 Slanted Rectangular Roof** | Hypotenuse $5\text{ cm}$, length $L = 6\text{ cm}$ | $1 \times (5 \times 6) = 30\text{ cm}^2$ |
+| **Total Surface Area** | Accumulated via `[Σ+]` ($n = 4$) | **$84\text{ cm}^2$** |
 
 #### Step-by-Step Face Inventory:
 1. **Two Triangular Ends:** Each end has area $\frac{1}{2} \times 3 \times 4 = 6\text{ cm}^2$. Together, the pair equals $2 \times 6 = 12\text{ cm}^2$.
@@ -6742,7 +6760,7 @@ $$\text{Total Surface Area} = 12 + 18 + 24 + 30 = 84\text{ cm}^2$$
 
 ---
 
-### 6.4.5 Right Circular Cylinder
+### 6.4.6 Right Circular Cylinder
 A right cylinder consists of two parallel circular disks of radius $r$ joined by a curved lateral wall of height $h$. When unrolled flat, the lateral wall forms a rectangle whose width is the circular circumference $2\pi r$ and whose height is $h$:
 $$\text{Total Surface Area} = 2(\pi r^2) + 2\pi r h$$
 
@@ -6759,7 +6777,7 @@ The tank requires $\mathbf{207.35\text{ m}^2}$ of steel sheeting.
 
 ---
 
-### 6.4.6 Right Circular Cone
+### 6.4.7 Right Circular Cone
 A right cone has a circular base of radius $r$ and a pointed vertex. The lateral surface unrolls into a circular sector of radius $s$ (the slant height), where $s = \sqrt{r^2 + h^2}$:
 $$\text{Base Area} = \pi r^2, \qquad \text{Lateral Area} = \pi r s$$
 $$\text{Total Surface Area} = \pi r^2 + \pi r \sqrt{r^2 + h^2}$$
@@ -6778,7 +6796,7 @@ The cone requires $\mathbf{1,837.83\text{ cm}^2}$ of vinyl.
 
 ---
 
-### 6.4.7 Regular Square-Based Pyramid
+### 6.4.8 Regular Square-Based Pyramid
 A square pyramid features a flat square base of side $s$ and four congruent isosceles triangular walls meeting at the apex. The slant height $l$ runs from the apex down the center of each triangular face:
 $$\text{Base Area} = s^2, \qquad \text{Wall Area} = 4 \times \left(\frac{1}{2} s l\right) = 2 s l$$
 $$\text{Total Surface Area} = s^2 + 2 s l$$
@@ -6796,7 +6814,7 @@ A pyramid tent has a square floor of side $s = 3\text{ meters}$ and a slant heig
 
 ---
 
-### 6.4.8 Open-Top Solids & Custom Maker Enclosures
+### 6.4.9 Open-Top Solids & Custom Maker Enclosures
 Real-world engineering frequently demands calculating surface areas of open containers, such as an acrylic aquarium, an electronics project box with a removable lid, or a sheet metal tool tray.
 
 #### Worked Example 6.12: Acrylic Glass Aquarium

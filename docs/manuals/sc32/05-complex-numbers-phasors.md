@@ -870,7 +870,7 @@ $$Z_0 = \sqrt{\frac{R' + j\omega L'}{G' + j\omega C'}} = \sqrt{\frac{0.1 + 2.5i}
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
 | 1 | `0.1 {{key:ENTER}} 2.5` | $0.0000$ | $0.0000$ | $0.1000$ | $2.5000$ | Load series impedance $Z' = 0.1 + 2.5i$ |
-| 2 | `1 {{key:E}} 6 {{key:+/-}} {{key:ENTER}} 1 {{key:E}} 3 {{key:+/-}}` | $0.1000$ | $2.5000$ | $1.0000\text{e-}6$ | $1.0000\text{e-}3$ | Load shunt admittance $Y'$ into $(Y, X)$ |
+| 2 | `1 {{key:E}} 6 {{key:+/-}} {{key:ENTER}} 1 {{key:E}} 3 {{key:+/-}}` | $0.1000$ | $2.5000$ | $1.0000 \times 10^{-6}$ | $1.0000 \times 10^{-3}$ | Load shunt admittance $Y'$ into $(Y, X)$ |
 | 3 | `{{key:CMPLX}} {{key:÷}}` | $0.1000$ | $0.1000$ | $2499.0010$ | $-99.9575$ | Complex impedance ratio $Z'/Y'$ |
 | 4 | `{{key:CMPLX}} {{key:√x}}` | $0.1000$ | $0.1000$ | **$49.9985$** | **$-0.9995$** | Characteristic impedance $Z_0 = \sqrt{Z'/Y'}$ |
 

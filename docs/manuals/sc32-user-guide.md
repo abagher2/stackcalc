@@ -4269,25 +4269,12 @@ $$z = \frac{\Delta f}{f} \approx \frac{G M}{R c^2}$$
 $$t = \frac{\rho \cdot c_p \cdot r}{3 \varepsilon \sigma} \left(\frac{1}{T_2^3} - \frac{1}{T_1^3}\right)$$
 For iron droplet: $\rho = 7800\text{ kg/m}^3, c_p = 450\text{ J/kg}\cdot\text{K}, r = 0.0015\text{ m}, \varepsilon = 0.80, \sigma = 5.67037 \times 10^{-8}$.
 
-**Keystrokes:**
-`1000 [ENTER] 3 [yˣ] [1/x] 1500 [ENTER] 3 [yˣ] [1/x] [-] 7800 [ENTER] 450 [×] 0.0015 [×] [×] 3 [ENTER] 0.80 [×] 5.67037 [E] 8 [+/-] [×] [÷]`
+**Keystrokes:** `1000 [ENTER] 3 [yˣ] [1/x] 1500 [ENTER] 3 [yˣ] [1/x] [-] 7800 [ENTER] 450 [×] 0.0015 [×] [×] 3 [ENTER] 0.80 [×] 5.67037 [E] 8 [+/-] [×] [÷]` $\rightarrow$ **`27.224854815`**$\text{ seconds}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1000` `[ENTER]` `3` `[yˣ]` `[1/x]` — Evaluate inverse cubed lower temperature ($1/T_2^3 = 1/1000^3 = 1.000 \times 10^{-9}$) in place.
-2. `1500` `[ENTER]` `3` `[yˣ]` `[1/x]` — Evaluate inverse cubed initial temperature ($1/T_1^3 = 1/1500^3 = 2.963 \times 10^{-10}$) in place.
-3. `[-]` — Subtract cubed temperatures; radiative cooling temperature difference ($7.0370 \times 10^{-10}$) forms in $X$.
-4. `7800` `[×]` `450` `[×]` `0.0015` `[×]` — Scale by droplet mass and thermal capacity ($\rho c_p r$); numerator product occupies $X$.
-5. `3` `[ENTER]` `0.85` `[×]` `5.67037 [E] 8 [+/-]` `[×]` — Evaluate radiation resistance denominator ($3 \varepsilon \sigma = 1.446 \times 10^{-7}$) in place.
-6. `[÷]` — Divide thermal numerator by radiation denominator; droplet cooling duration ($t = 25.64\text{ seconds}$) evaluates without grouping punctuation.
-
-Result: $t \approx \mathbf{27.214\text{ seconds}}$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `1000 [ENTER] 3 [yˣ] [1/x]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000 \times 10^{-9}$ | Final reciprocal temperature cubed $1/T_f^3$ |
-| 2 | `1500 [ENTER] 3 [yˣ] [1/x] [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $7.0370 \times 10^{-10}$ | Subtract initial reciprocal temperature cubed $1/T_0^3$ |
-| 3 | `7800 [ENTER] 450 [×] 0.0015 [×] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.7050 \times 10^{-6}$ | Multiply by droplet thermal mass parameter $\rho c_p r$ |
-| 4 | `3 [ENTER] 0.80 [×] 5.67037 [E] 8 [+/-] [×] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$27.2249$** | Divide by $3 \epsilon \sigma$ for radiative cooling time $t$ (s) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1000 [ENTER] 3 [yˣ] [1/x] 1500 [ENTER] 3 [yˣ] [1/x] [-]` evaluates inverse cube temperature difference $(1/T_2^3 - 1/T_1^3) \approx 7.0370 \times 10^{-10}\text{ K}^{-3}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 7.0370 \times 10^{-10})$.
+2. Keying `7800 [ENTER] 450 [×] 0.0015 [×] [×]` multiplies by thermal mass parameter $\rho c_p r = 5.265 \times 10^3$, giving numerator $3.7050 \times 10^{-6}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.7050 \times 10^{-6})$.
+3. Striking `3 [ENTER] 0.80 [×] 5.67037 [E] 8 [+/-] [×] [÷]` builds radiation denominator $3 \varepsilon \sigma \approx 1.3609 \times 10^{-7}$ and divides, calculating droplet radiative cooling time $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{27.2249}\text{ s})$ with zero scratchpad memory.
 
 ---
 
@@ -4296,19 +4283,13 @@ Result: $t \approx \mathbf{27.214\text{ seconds}}$.
 * Rule of 72 approximation: $t_{\text{approx}} = 72 / 7.2 = \mathbf{10.0\text{ years}}$
 * Exact exponential doubling: $t_{\text{exact}} = \frac{\ln 2}{\ln(1 + 0.072)}$
 
-**Keystrokes:** `2 [LN] 1.072 [LN] [÷]`$\to \mathbf{9.9694\text{ years}}$.
+**Keystrokes:** `2 [LN] 1.072 [LN] [÷]` $\rightarrow$ **`9.9694`**$\text{ years}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `2` `[LN]` — Compute natural logarithm $\ln 2 \approx 0.693147$ representing exact capital doubling factor.
-2. `1.072` `[LN]` — Evaluate annual continuous growth rate $\ln(1 + r) = \ln(1.072) \approx 0.069526$ in $X$ while $\ln 2$ waits in $Y$.
-3. `[÷]` — Divide doubling factor by growth rate; exact doubling time ($t \approx \mathbf{9.9696\text{ years}}$) resolves directly from the stack.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `2 [LN]` evaluates the natural logarithm of doubling $\ln 2 \approx 0.6931$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.6931)$.
+2. Striking `1.072 [LN] [÷]` pushes $\ln 2$ to $Y$, evaluates annual continuous growth $\ln(1.072) \approx 0.0695$, and divides, obtaining exact doubling period $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{9.9696}\text{ years})$.
 
 Error in the empirical rule is under $0.31\%$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `2 [LN]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6931$ | Natural logarithm of doubling ratio $\ln(2)$ |
-| 2 | `1.072 [LN] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$9.9696$** | Divide by $\ln(1 + r)$ for exact compounding doubling time (years) |
 
 ---
 
@@ -4316,17 +4297,11 @@ Error in the empirical rule is under $0.31\%$.
 **Acoustic Signal Processing Context:** Standard linear PCM quantizer with $N = 24\text{ bits}$:
 $$\text{SNR}_{\text{dB}} = 6.0206 N + 1.7609\text{ dB}$$
 
-**Keystrokes:** `6.0206 [ENTER] 24 [×] 1.7609 [+]`$\to \mathbf{146.2553\text{ dB}}$.
+**Keystrokes:** `6.0206 [ENTER] 24 [×] 1.7609 [+]` $\rightarrow$ **`146.2553`**$\text{ dB}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `6.0206` `[ENTER]` — Load linear PCM dynamic range slope ($6.0206\text{ dB/bit}$) into $Y$.
-2. `24` `[×]` — Key quantizer resolution ($N = 24\text{ bits}$) and multiply; raw resolution dynamic range ($144.4944\text{ dB}$) forms in $X$.
-3. `1.7609` `[+]` — Add sinusoidal quantization noise correction constant ($1.7609\text{ dB}$); theoretical maximum Signal-to-Noise Ratio ($\text{SNR} = 146.2553\text{ dB}$) is obtained directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `6.0206 [ENTER] 24 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $144.4944$ | Dynamic range from resolution bits $6.0206 \times 24$ |
-| 2 | `1.7609 [+]` | $0.0000$ | $0.0000$ | $0.0000$ | **$146.2553$** | Add quantization noise baseline constant for theoretical SNR (dB) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `6.0206 [ENTER] 24 [×]` evaluates raw dynamic range from bit depth $6.0206 \times 24 = 144.4944\text{ dB}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 144.4944)$.
+2. Striking `1.7609 [+]` adds quantization noise floor correction constant, evaluating maximum theoretical SNR $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{146.2553}\text{ dB})$ in place.
 
 ---
 
@@ -4334,20 +4309,11 @@ $$\text{SNR}_{\text{dB}} = 6.0206 N + 1.7609\text{ dB}$$
 **Solid State Physics Context:** State energy above Fermi level $\Delta E = E - E_F = 0.050\text{ eV}$ at room temperature $T = 300\text{ K}$ ($k T = 0.025852\text{ eV}$):
 $$f(E) = \frac{1}{1 + \exp\left(\frac{E - E_F}{k T}\right)}$$
 
-**Keystrokes:** `0.050 [ENTER] 0.025852 [÷] [eˣ] 1 [+] [1/x]`$\to \mathbf{0.126315} = 12.63\%$.
+**Keystrokes:** `0.050 [ENTER] 0.025852 [÷] [eˣ] 1 [+] [1/x]` $\rightarrow$ **`0.126315`** ($12.63\%$).
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0.050` `[ENTER]` — Key electron energy offset above Fermi level ($\Delta E = 0.050\text{ eV}$) into $Y$.
-2. `0.025852` `[÷]` — Enter room-temperature thermal voltage ($k T = 0.025852\text{ eV}$) and divide; normalized thermal excitation argument ($1.9341$) forms in $X$.
-3. `[eˣ]` — Exponentiate in place ($e^{1.9341} \approx 6.9178$); Boltzmann factor appears in $X$.
-4. `1` `[+]` — Add Fermi-Dirac exclusion unity; total quantum denominator ($7.9178$) forms in $X$.
-5. `[1/x]` — Take reciprocal in place; electron orbital state occupancy probability ($f(E) = 0.126298 = 12.63\%$) evaluates with zero grouping overhead.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.050 [ENTER] 0.025852 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.9341$ | Normalized Fermi energy offset $(E - E_F)/(k T)$ |
-| 2 | `[eˣ] 1 [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $7.9177$ | Fermi-Dirac exponential denominator $(e^x + 1)$ |
-| 3 | `[1/x]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.1263$** | Take reciprocal for electron occupation probability $f(E)$ |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.050 [ENTER] 0.025852 [÷]` computes normalized Fermi level offset $(E - E_F)/(kT) \approx 1.9341$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 1.9341)$.
+2. Striking `[eˣ] 1 [+] [1/x]` evaluates exponential Boltzmann factor, adds Fermi exclusion unity ($7.9177$), and takes the reciprocal, determining electron occupation probability $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.1263} = 12.63\%)$ without parenthesis grouping.
 
 ---
 
@@ -4355,22 +4321,11 @@ $$f(E) = \frac{1}{1 + \exp\left(\frac{E - E_F}{k T}\right)}$$
 **Fluid Mechanics Context:** Fluid viscosity $\mu = 0.0025\text{ Pa}\cdot\text{s}$, tube length $L = 0.20\text{ m}$, radius $R = 0.0005\text{ m}$, flow rate $Q = 1.5 \times 10^{-8}\text{ m}^3/\text{s}$:
 $$\Delta P = \frac{8 \mu L Q}{\pi R^4}$$
 
-**Keystrokes:** `8 [ENTER] 0.0025 [×] 0.20 [×] 1.5 [E] 8 [+/-] [×] [↱] [π] [÷] 0.0005 [ENTER] 4 [yˣ] [÷]`$\to \mathbf{305.57749074\text{ Pa}}$.
+**Keystrokes:** `8 [ENTER] 0.0025 [×] 0.20 [×] 1.5 [E] 8 [+/-] [×] [↱] [π] [÷] 0.0005 [ENTER] 4 [yˣ] [÷]` $\rightarrow$ **`305.57749074`**$\text{ Pa}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `8` `[ENTER]` — Load Hagen-Poiseuille viscous laminar constant ($8$) into $Y$.
-2. `0.0025` `[×]` — Enter fluid dynamic viscosity ($\mu = 0.0025\text{ Pa}\cdot\text{s}$) and multiply; viscous factor ($0.020\text{ Pa}\cdot\text{s}$) forms in $X$.
-3. `0.20` `[×]` — Scale by capillary tube length ($L = 0.20\text{ m}$); friction length factor ($0.0040\text{ Pa}\cdot\text{s}\cdot\text{m}$) occupies $X$.
-4. `1.5 [E] 8 [+/-]` `[×]` — Multiply by volumetric flow rate ($Q = 1.5 \times 10^{-8}\text{ m}^3/\text{s}$); total viscous loss numerator ($6.0 \times 10^{-11}\text{ N}\cdot\text{m}$) forms in $X$.
-5. `0.0005` `[ENTER]` `4` `[yˣ]` — Raise capillary radius to 4th power ($R^4 = 6.25 \times 10^{-14}\text{ m}^4$) in place.
-6. `[↱] [π]` `[×]` — Multiply by $\pi$; viscous geometric denominator ($\pi R^4 = 1.9635 \times 10^{-13}\text{ m}^4$) condenses in $X$ while numerator waits in $Y$.
-7. `[÷]` — Divide viscous numerator by geometric denominator; laminar capillary pressure drop ($\Delta P = 305.58\text{ Pa}$) is evaluated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `8 [ENTER] 0.0025 [×] 0.20 [×] 1.5 [E] 8 [+/-] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $6.0000 \times 10^{-11}$ | Poiseuille numerator $8 \mu L Q$ |
-| 2 | `[↱] [π] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.9099 \times 10^{-11}$ | Divide by geometric circular factor $\pi$ |
-| 3 | `0.0005 [ENTER] 4 [yˣ] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$305.5775$** | Divide by capillary radius to fourth power $R^4$ for pressure drop $\Delta P$ (Pa) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `8 [ENTER] 0.0025 [×] 0.20 [×] 1.5 [E] 8 [+/-] [×]` accumulates Hagen-Poiseuille numerator $8 \mu L Q = 6.0000 \times 10^{-11}\text{ N}\cdot\text{m}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 6.0000 \times 10^{-11})$.
+2. Keying `[↱] [π] [÷] 0.0005 [ENTER] 4 [yˣ] [÷]` divides by geometric circle factor $\pi$ and capillary radius fourth power $R^4 = 6.25 \times 10^{-14}\text{ m}^4$, evaluating viscous laminar pressure drop $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{305.5775}\text{ Pa})$ with zero auxiliary registers.
 
 ---
 
@@ -6809,17 +6764,7 @@ Keystrokes: `50 [ENTER] 20 [×] [√x] 0.8 [×]`$\implies$ **$25.2982\,\mu\text{
 
 > **Named RPN Stack Idiom: *The Inside-Out Radical & Mutual Inductance Pipeline*** — Multiply primary and secondary inductances directly in the stack, extract square root in place, and scale by coupling coefficient without register allocation *([Horowitz & Hill, 2015](sc32/appendix-e-annotated-bibliography.md#cite-horowitz2015); [HP, 1982](sc32/appendix-e-annotated-bibliography.md#cite-hp15c1982))*.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `50` `[ENTER]` — Key primary winding inductance ($L_1 = 50.0\,\mu\text{H}$) into $Y$.
-2. `20` `[×]` — Multiply by secondary winding inductance ($L_2 = 20.0\,\mu\text{H}$) to form inductive product ($1000.0\,\mu\text{H}^2$).
-3. `[√x]` — Take square root to obtain geometric mean inductance ($\sqrt{L_1 L_2} \approx 31.6228\,\mu\text{H}$).
-4. `0.8` `[×]` — Scale by magnetic coupling coefficient ($k = 0.80$), establishing mutual inductance $M \approx \mathbf{25.2982\,\mu\text{H}}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `50 [ENTER] 20 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $1000.0000$ | Inductive product $L_1 L_2$ in $\mu\text{H}^2$ |
-| 2 | `[√x]` | $0.0000$ | $0.0000$ | $0.0000$ | $31.6228$ | Geometric mean $\sqrt{L_1 L_2}$ |
-| 3 | `0.8 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$25.2982$** | Mutual inductance $M = k\sqrt{L_1 L_2}$ in $\mu\text{H}$ |
+Enter `50 [ENTER] 20 [×]` to form the inductive product $1000\,\mu\text{H}^2$ in $X$ $(T:0, Z:0, Y:0, X:1000)$, take the square root with `[√x]` $(T:0, Z:0, Y:0, X:31.6228)$, and scale by coupling coefficient with `0.8 [×]`, resolving $(T:0, Z:0, Y:0, X:25.2982)$.
 
 Result: **$25.2982\,\mu\text{H}$**.
 
@@ -6875,15 +6820,7 @@ Result: **$-2.000000 \pm 4.582576i$**.
 **Electromagnetics Context:** Propagation constant $\gamma = \alpha + j\beta$. In cutoff band: $\alpha = 14.5\text{ Np/m}, \beta = 0\text{ rad/m}$. Attenuation in decibels per meter:
 $$\text{Atten} = 20 \log_{10}(e) \times \alpha = 8.68589 \times 14.5 = \mathbf{125.945\text{ dB/m}}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1` `[eˣ]` `[↰] [LOG]` `20` `[×]` — Compute the Nepers-to-decibels conversion factor $20 \log_{10}(e) \approx 8.685890\text{ dB/Np}$ in Register $X$.
-2. `14.5` `[×]` — Multiply by attenuation coefficient $\alpha = 14.5\text{ Np/m}$; total cutoff attenuation evaluates to $\mathbf{125.945\text{ dB/m}}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1 [eˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.718282$ | Natural exponential base $e$ |
-| 2 | `[↰] [LOG] 20 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $8.685890$ | Nepers-to-dB factor $20\log_{10}(e)$ |
-| 3 | `14.5 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$125.945405$** | Total attenuation $= 125.945\text{ dB/m}$ |
+Key `1 [eˣ] [↰] [LOG] 20 [×]` to calculate the Nepers-to-dB conversion factor ($8.685890\text{ dB/Np}$) in $X$ $(T:0, Z:0, Y:0, X:8.685890)$, then multiply by attenuation coefficient with `14.5 [×]`, resolving total attenuation $(T:0, Z:0, Y:0, X:125.945405)$.
 
 Result: **$125.945\text{ dB/m}$**.
 
@@ -6916,15 +6853,7 @@ Result: **$0.764706 - 0.058824i$**.
 **RF Context:** Tank circuit with $R = 10\text{ k}\Omega, L = 10\,\mu\text{H}, C = 100\text{ pF}$. Resonant frequency $\omega_0 = 1/\sqrt{LC} = 31.6228\text{ Mrad/s}$. At resonance, reactive admittances cancel ($j\omega C + 1/(j\omega L) = 0$), leaving pure resistance:
 $$\mathbf{Z}_{\text{tank}} = R = 10,000.0 + 0.0i\,\Omega$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `10 [E] 6 [+/-]` `[ENTER]` `100 [E] 12 [+/-]` `[×]` `[√x]` `[1/x]` — Compute resonant frequency $\omega_0 = 1/\sqrt{LC} \approx 31.6228 \times 10^6\text{ rad/s}$.
-2. `10000` `[ENTER]` `0` — Load tank impedance at resonance $(Y = 10000.0, X = 0.0)$, verifying purely resistive impedance $\mathbf{Z}_{\text{tank}} = 10,000.0 + 0.0i\,\Omega$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `10 [E] 6 [+/-] [ENTER] 100 [E] 12 [+/-] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.000000\text{e-}15$ | Form reactive product $LC = 1.0 \times 10^{-15}\text{ s}^2$ |
-| 2 | `[√x] [1/x]` | $0.0000$ | $0.0000$ | $0.0000$ | $31622776.60$ | Resonant frequency $\omega_0 = 31.6228\text{ Mrad/s}$ |
-| 3 | `10000 [ENTER] 0` | $0.0000$ | $31622776.60$ | **$10000.0000$** | **$0.0000$** | Pure resistance $\mathbf{Z}_{\text{tank}} = 10,000 + 0i\,\Omega$ |
+Evaluate the reactive product with `10 [E] 6 [+/-] [ENTER] 100 [E] 12 [+/-] [×]` $(T:0, Z:0, Y:0, X:1.0 \times 10^{-15})$, extract the resonant frequency with `[√x] [1/x]` $(T:0, Z:0, Y:0, X:3.1623 \times 10^7)$, then load the resonant tank impedance `10000 [ENTER] 0` across $(Y, X)$, confirming purely resistive impedance $(T:0, Z:3.1623 \times 10^7, Y:10000.0000, X:0.0000)$.
 
 Result: **$10,000.0 + 0.0i\,\Omega$**.
 
@@ -6936,17 +6865,7 @@ For cylinder point $z = 1.1 + 0.2i$ and $c = 1.0$:
 $$\frac{1}{z} = \frac{1.1 - 0.2i}{1.21 + 0.04} = \frac{1.1 - 0.2i}{1.25} = 0.88 - 0.16i$$
 $$\zeta = (1.1 + 0.2i) + (0.88 - 0.16i) = \mathbf{1.980000 + 0.040000i}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1.1` `[ENTER]` `0.2` — Load cylinder boundary coordinate $z = 1.1 + 0.2i$ into Registers $(Y, X)$.
-2. `[↰] [CMPLX]` `[1/x]` — Invert complex coordinate; yields $1/z = 0.880000 - 0.160000i$ across $(Y, X)$.
-3. `1.1` `[ENTER]` `0.2` `[↰] [CMPLX]` `[+]` — Add original coordinate $z$; mapped airfoil coordinate $\zeta = \mathbf{1.980000 + 0.040000i}$ resolves across Registers $(Y, X)$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1.1 [ENTER] 0.2` | $0.0000$ | $0.0000$ | $1.1000$ | $0.2000$ | Cylinder point $z = 1.1 + 0.2i$ loaded |
-| 2 | `[↰] [CMPLX] [1/x]` | $0.0000$ | $0.0000$ | $0.880000$ | $-0.160000$ | Invert: $1/z = 0.88 - 0.16i$ |
-| 3 | `1.1 [ENTER] 0.2` | $0.880000$ | $-0.160000$ | $1.1000$ | $0.2000$ | Reload $z$ into $(Y, X)$ |
-| 4 | `[↰] [CMPLX] [+]` | $0.880000$ | $0.880000$ | **$1.980000$** | **$0.040000$** | Joukowsky transform: $\zeta = 1.98 + 0.04i$ |
+Load $z = 1.1 + 0.2i$ via `1.1 [ENTER] 0.2` $(T:0, Z:0, Y:1.1, X:0.2)$ and invert with `[↰] [CMPLX] [1/x]` to find $1/z$ $(T:0, Z:0, Y:0.880000, X:-0.160000)$. Reload $z$ into $(Y, X)$ via `1.1 [ENTER] 0.2` and sum with `[↰] [CMPLX] [+]`, mapping the airfoil boundary to $(T:0.88, Z:0.88, Y:1.980000, X:0.040000)$.
 
 Result: **$1.980000 + 0.040000i$**.
 
@@ -6958,17 +6877,7 @@ $r = 16^{1/4} = 2.0$. First root $\theta = \pi/4 = 45^\circ$:
 $$z_0 = 2(\cos 45^\circ + i\sin 45^\circ) = \sqrt{2} + i\sqrt{2} \approx 1.414214 + 1.414214i$$
 Keystrokes: `45 [ENTER] 2 [↱] [▸y,x]`$\implies$ **$1.414214$ in $X$ and $Y$**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `45` `[ENTER]` — Enter root argument angle ($\theta = 45.0^\circ$) into $Y$.
-2. `[COS]` — Evaluate cosine ($\cos 45^\circ \approx 0.707107$).
-3. `2` `[×]` — Scale by radial magnitude ($r = 16^{1/4} = 2.0$), yielding real component $1.414214$.
-4. `45` `[SIN]` `2` `[×]` — Compute scaled imaginary projection, establishing $z_0 = 1.414214 + 1.414214i$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `45 [ENTER]` | $0.0000$ | $0.0000$ | $45.0000$ | $45.0000$ | Enter root argument angle $\theta = 45.0^\circ$ |
-| 2 | `2` | $0.0000$ | $0.0000$ | $45.0000$ | $2.0000$ | Load radial modulus $r = 16^{1/4} = 2.0$ |
-| 3 | `[↱] [▸y,x]` | $0.0000$ | $0.0000$ | **$1.414214$** | **$1.414214$** | Principal root $z_0 = 1.414214 + 1.414214i$ |
+Key the angle and radial modulus `45 [ENTER] 2` into $(Y, X)$ $(T:0, Z:0, Y:45, X:2)$, then convert from polar to rectangular via `[↱] [▸y,x]`, extracting principal root $z_0 = 1.414214 + 1.414214i$ across $(T:0, Z:0, Y:1.414214, X:1.414214)$.
 
 Result: **$1.414214 + 1.414214i$**.
 
@@ -6978,19 +6887,7 @@ Result: **$1.414214 + 1.414214i$**.
 **Electromagnetics Context:** Skin depth $\delta = \sqrt{2/(\omega \mu \sigma)}$. For copper ($\sigma = 5.8 \times 10^7\text{ S/m}$) at $f = 10\text{ MHz}$ ($\omega = 6.283185 \times 10^7\text{ rad/s}$):
 $$\delta = \sqrt{\frac{2}{6.283185\cdot 10^7 \times 4\pi\cdot 10^{-7} \times 5.8\cdot 10^7}} \approx 2.089 \times 10^{-5}\text{ m} = \mathbf{20.89\,\mu\text{m}}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `4` `[↱] [π]` `[×]` `1 [E] 7 [+/-]` `[×]` — Form free-space magnetic permeability ($\mu_0 = 4\pi \times 10^{-7}\text{ H/m}$).
-2. `6.283185 [E] 7` `[×]` — Multiply by RF angular frequency ($\omega$).
-3. `5.8 [E] 7` `[×]` — Multiply by copper conductivity ($\sigma$), forming denominator product.
-4. `2` `[x⇄y]` `[÷]` — Position numerator constant 2 via `[x⇄y]` and divide.
-5. `[√x]` — Extract square root in place, resolving copper skin depth ($\delta \approx \mathbf{20.89\,\mu\text{m}}$).
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `4 [↱] [π] [×] 1 [E] 7 [+/-] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.256637\text{e-}6$ | Vacuum permeability $\mu_0 = 4\pi \times 10^{-7}\text{ H/m}$ |
-| 2 | `6.283185 [E] 7 [×] 5.8 [E] 7 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $4.582845\text{e+}9$ | Denominator product $\omega \mu \sigma$ |
-| 3 | `2 [x⇄y] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $4.363905\text{e-}10$ | Ratio $2 / (\omega \mu \sigma)$ |
-| 4 | `[√x]` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.0890\text{e-}5$** | Copper skin depth $\delta \approx 20.89\,\mu\text{m}$ |
+Form permeability with `4 [↱] [π] [×] 1 [E] 7 [+/-] [×]` $(T:0, Z:0, Y:0, X:1.2566 \times 10^{-6})$, multiply by frequency and conductivity `6.283185 [E] 7 [×] 5.8 [E] 7 [×]` $(T:0, Z:0, Y:0, X:4.5828 \times 10^9)$, invert into ratio $2/(\omega\mu\sigma)$ with `2 [x⇄y] [÷]` $(T:0, Z:0, Y:0, X:4.3639 \times 10^{-10})$, and take the square root `[√x]`, arriving at skin depth $(T:0, Z:0, Y:0, X:2.0890 \times 10^{-5})$.
 
 Result: **$\delta = 20.89\,\mu\text{m}$**.
 
@@ -7009,7 +6906,7 @@ $$Z_0 = \sqrt{\frac{R' + j\omega L'}{G' + j\omega C'}} = \sqrt{\frac{0.1 + 2.5i}
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
 | 1 | `0.1 [ENTER] 2.5` | $0.0000$ | $0.0000$ | $0.1000$ | $2.5000$ | Load series impedance $Z' = 0.1 + 2.5i$ |
-| 2 | `1 [E] 6 [+/-] [ENTER] 1 [E] 3 [+/-]` | $0.1000$ | $2.5000$ | $1.0000\text{e-}6$ | $1.0000\text{e-}3$ | Load shunt admittance $Y'$ into $(Y, X)$ |
+| 2 | `1 [E] 6 [+/-] [ENTER] 1 [E] 3 [+/-]` | $0.1000$ | $2.5000$ | $1.0000 \times 10^{-6}$ | $1.0000 \times 10^{-3}$ | Load shunt admittance $Y'$ into $(Y, X)$ |
 | 3 | `[↰] [CMPLX] [÷]` | $0.1000$ | $0.1000$ | $2499.0010$ | $-99.9575$ | Complex impedance ratio $Z'/Y'$ |
 | 4 | `[↰] [CMPLX] [√x]` | $0.1000$ | $0.1000$ | **$49.9985$** | **$-0.9995$** | Characteristic impedance $Z_0 = \sqrt{Z'/Y'}$ |
 
@@ -7021,17 +6918,7 @@ Result: **$49.9985 - 0.9995i\,\Omega$**.
 **Photonics Context:** Complex propagation constant $\beta(\omega) = \beta_0 + \beta_1(\omega - \omega_0) + \frac{1}{2}\beta_2(\omega - \omega_0)^2$. Pulse dispersion parameter $D = -2\pi c \beta_2 / \lambda^2$. For $\beta_2 = -20\text{ ps}^2/\text{km}$ at $\lambda = 1.55\,\mu\text{m}$:
 $$D = \frac{-2\pi(3\cdot 10^8)(-20\cdot 10^{-27})}{(1.55\cdot 10^{-6})^2} \approx \mathbf{15.68\text{ ps/(nm}\cdot\text{km)}}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `2` `[↱] [π]` `[×]` `3 [E] 8` `[×]` `20 [E] 27 [+/-]` `[×]` — Form numerator product $2\pi c |\beta_2| \approx 3.7699 \times 10^{-17}\text{ s}^3/\text{m}$.
-2. `1.55 [E] 6 [+/-]` `[↰] [x²]` — Key operating wavelength $\lambda = 1.55\,\mu\text{m}$ and square in place ($\lambda^2 \approx 2.4025 \times 10^{-12}\text{ m}^2$).
-3. `[÷]` — Divide numerator by $\lambda^2$, yielding raw dispersion factor $1.569 \times 10^{-5}\text{ s/m}^2$.
-4. `1 [E] 6` `[×]` — Scale by unit conversion factor to resolve group velocity dispersion parameter $D \approx \mathbf{15.68\text{ ps/(nm}\cdot\text{km)}}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2 [↱] [π] [×] 3 [E] 8 [×] 20 [E] 27 [+/-] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.769911\text{e-}17$ | Numerator $2\pi c |\beta_2|$ in $\text{s}^3/\text{m}$ |
-| 2 | `1.55 [E] 6 [+/-] [↰] [x²]` | $0.0000$ | $0.0000$ | $3.769911\text{e-}17$ | $2.402500\text{e-}12$ | Wavelength squared $\lambda^2$ in $\text{m}^2$ |
-| 3 | `[÷] 1 [E] 6 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$15.6841$** | Dispersion parameter $D \approx 15.68\text{ ps/(nm}\cdot\text{km)}$ |
+Compute numerator $2\pi c |\beta_2|$ with `2 [↱] [π] [×] 3 [E] 8 [×] 20 [E] 27 [+/-] [×]` $(T:0, Z:0, Y:0, X:3.7699 \times 10^{-17})$, square wavelength with `1.55 [E] 6 [+/-] [↰] [x²]` $(T:0, Z:0, Y:3.7699 \times 10^{-17}, X:2.4025 \times 10^{-12})$, and divide and scale via `[÷] 1 [E] 6 [×]`, arriving at dispersion parameter $(T:0, Z:0, Y:0, X:15.6841)$.
 
 Result: **$15.68\text{ ps/(nm}\cdot\text{km)}$**.
 
@@ -7042,16 +6929,7 @@ Result: **$15.68\text{ ps/(nm}\cdot\text{km)}$**.
 For $A_W = 200\,\Omega\cdot\text{s}^{-1/2}$ at $\omega = 100\text{ rad/s}$:
 $$\mathbf{Z}_W = \frac{200}{10} (1 - j) = \mathbf{20.0000 - 20.0000i\,\Omega}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `100` `[√x]` — Compute square root of angular frequency $\sqrt{\omega} = 10.0\text{ rad}^{1/2}\text{/s}^{1/2}$ in Register $X$.
-2. `200` `[x⇄y]` `[÷]` — Key Warburg coefficient $A_W = 200$, swap registers via `[x⇄y]`, and divide; scale factor $20.0\,\Omega$ occupies Register $X$.
-3. `20` `[ENTER]` `20 [+/-]` — Load real resistance and capacitive reactance directly across $(Y = 20.0, X = -20.0)$, confirming Warburg impedance $\mathbf{Z}_W = \mathbf{20.0000 - 20.0000i\,\Omega}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `100 [√x]` | $0.0000$ | $0.0000$ | $0.0000$ | $10.0000$ | Square root of angular frequency $\sqrt{\omega}$ |
-| 2 | `200 [x⇄y] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $20.0000$ | Warburg magnitude $A_W / \sqrt{\omega} = 20\,\Omega$ |
-| 3 | `20 [ENTER] 20 [+/-]` | $0.0000$ | $20.0000$ | **$20.0000$** | **$-20.0000$** | Warburg impedance $\mathbf{Z}_W = 20 - 20i\,\Omega$ |
+Evaluate $\sqrt{\omega}$ with `100 [√x]` $(T:0, Z:0, Y:0, X:10)$, compute scale factor $A_W/\sqrt{\omega} = 20\,\Omega$ with `200 [x⇄y] [÷]` $(T:0, Z:0, Y:0, X:20)$, and enter resistance and reactance directly `20 [ENTER] 20 [+/-]`, confirming Warburg impedance $(T:0, Z:20, Y:20.0000, X:-20.0000)$.
 
 Result: **$20.0000 - 20.0000i\,\Omega$**.
 
@@ -7062,18 +6940,7 @@ Result: **$20.0000 - 20.0000i\,\Omega$**.
 $$\mathbf{H}^* = 0.02 - 0.01i \implies \mathbf{E} \cdot \mathbf{H}^* = (10+5i)(0.02-0.01i) = (0.2 + 0.05) + (-0.1 + 0.1)i = 0.25 + 0i$$
 Average radiated power: $\text{Re}(\mathbf{S}_{\text{cpx}}) = 0.5 \times 0.25 = \mathbf{0.125\text{ W/m}^2}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `10` `[ENTER]` `5` — Load electric field phasor $\mathbf{E} = 10.0 + 5.0i\text{ V/m}$ into Registers $(Y, X)$.
-2. `0.02` `[ENTER]` `0.01 [+/-]` — Load complex conjugate magnetic field phasor $\mathbf{H}^* = 0.02 - 0.01i\text{ A/m}$ into $(Y, X)$, lifting $\mathbf{E}$ to $(T, Z)$.
-3. `[↰] [CMPLX]` `[×]` — Execute complex multiplication $\mathbf{E} \times \mathbf{H}^*$; real cross-product power $0.2500$ appears in $Y$ with $0.0000i$ in $X$.
-4. `2` `[÷]` — Scale by time-average factor $1/2$ to resolve average electromagnetic radiation density $\text{Re}(\mathbf{S}_{\text{cpx}}) = \mathbf{0.125\text{ W/m}^2}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `10 [ENTER] 5 [ENTER]` | $0.0000$ | $10.0000$ | $5.0000$ | $5.0000$ | Electric field phasor $\mathbf{E} = 10 + 5i$ pushed |
-| 2 | `0.02 [ENTER] 0.01 [+/-]` | $10.0000$ | $5.0000$ | $0.0200$ | $-0.0100$ | Conjugate magnetic phasor $\mathbf{H}^*$ in $(Y, X)$ |
-| 3 | `[↰] [CMPLX] [×]` | $10.0000$ | $10.0000$ | $0.2500$ | $0.0000$ | Poynting product $\mathbf{E} \times \mathbf{H}^* = 0.25 + 0i$ |
-| 4 | `2 [÷]` | $10.0000$ | $10.0000$ | $0.2500$ | **$0.1250$** | Average radiation density $\text{Re}(\mathbf{S}) = 0.125\text{ W/m}^2$ |
+Load electric field $\mathbf{E}$ via `10 [ENTER] 5 [ENTER]` and conjugate magnetic field $\mathbf{H}^*$ via `0.02 [ENTER] 0.01 [+/-]`, placing $(T:10, Z:5, Y:0.02, X:-0.01)$. Execute `[↰] [CMPLX] [×]` to obtain $0.25 + 0i$ $(T:10, Z:10, Y:0.25, X:0)$, and divide by 2 with `2 [÷]`, giving average radiation density $(T:10, Z:10, Y:0.25, X:0.1250)$.
 
 Result: **$0.125\text{ W/m}^2$**.
 
@@ -7083,16 +6950,7 @@ Result: **$0.125\text{ W/m}^2$**.
 **Avionics Context:** Fiber optic gyroscope: $\Delta\Phi = \frac{8\pi A N}{c \lambda} \Omega$. For coil area $A = 0.01\text{ m}^2$, $N = 1000\text{ turns}$, $\lambda = 1.31\,\mu\text{m}$, rotation rate $\Omega = 1.0\text{ rad/s}$:
 $$\Delta\Phi = \frac{8\pi(0.01)(1000)}{(3\cdot 10^8)(1.31\cdot 10^{-6})} \approx \mathbf{0.6402\text{ radians}}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `8` `[↱] [π]` `[×]` `0.01` `[×]` `1000` `[×]` — Form numerator optical area-turn product $8\pi A N \approx 251.3274\text{ m}^2$ in Register $X$.
-2. `3 [E] 8` `[ENTER]` `1.31 [E] 6 [+/-]` `[×]` — Compute denominator optical velocity-wavelength product $c \lambda = 393.0\text{ m}^2/\text{s}$ in $X$ while numerator lifts to $Y$.
-3. `[÷]` — Divide numerator by denominator; for unit rotation $\Omega = 1.0\text{ rad/s}$, Sagnac interferometer phase shift evaluates to $\Delta\Phi \approx \mathbf{0.6402\text{ radians}}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `8 [↱] [π] [×] 0.01 [×] 1000 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $251.3274$ | Numerator optical area-turn product $8\pi A N$ |
-| 2 | `3 [E] 8 [ENTER] 1.31 [E] 6 [+/-] [×]` | $0.0000$ | $0.0000$ | $251.3274$ | $393.0000$ | Denominator optical speed-wavelength $c\lambda$ |
-| 3 | `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.6402$** | Sagnac interferometer phase shift $\Delta\Phi\text{ (rad)}$ |
+Form optical area-turns product with `8 [↱] [π] [×] 0.01 [×] 1000 [×]` $(T:0, Z:0, Y:0, X:251.3274)$, compute $c\lambda$ with `3 [E] 8 [ENTER] 1.31 [E] 6 [+/-] [×]` $(T:0, Z:0, Y:251.3274, X:393.0000)$, and divide with `[÷]`, resolving Sagnac phase shift $(T:0, Z:0, Y:0, X:0.6402)$.
 
 Result: **$0.6402\text{ radians}$**.
 
@@ -7103,16 +6961,7 @@ Result: **$0.6402\text{ radians}$**.
 $$\mathbf{Y}_m = \frac{1}{50000} - j\frac{1}{15000} = 2.0 \times 10^{-5} - 6.6667 \times 10^{-5}i\,\text{S}$$
 Impedance: $\mathbf{Z}_m = 1/\mathbf{Y}_m = \mathbf{4,137.93 + 13,793.10i\,\Omega}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `50000` `[1/x]` — Evaluate core-loss conductance $G_c = 1/50,000 = 2.0 \times 10^{-5}\text{ S}$ in Register $X$.
-2. `15000` `[1/x]` `[+/-]` — Compute magnetizing susceptance $B_m = -1/15,000 \approx -6.6667 \times 10^{-5}\text{ S}$ in $X$, lifting $G_c$ to $Y$.
-3. `[↰] [CMPLX]` `[1/x]` — Take complex reciprocal of admittance $\mathbf{Y}_m = G_c + j B_m$; equivalent branch impedance evaluates to $R_{\text{eq}} = \mathbf{4,137.93\,\Omega}$ in Register $Y$ and $X_{\text{eq}} = \mathbf{13,793.10\,\Omega}$ in Register $X$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `50000 [1/x]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000\text{e-}5$ | Core-loss conductance $G_c = 1/50\text{ k}\Omega$ |
-| 2 | `15000 [1/x] [+/-]` | $0.0000$ | $0.0000$ | $2.0000\text{e-}5$ | $-6.6667\text{e-}5$ | Magnetizing susceptance $B_m$ |
-| 3 | `[↰] [CMPLX] [1/x]` | $0.0000$ | $0.0000$ | **$4137.9310$** | **$13793.1034$** | Branch impedance $\mathbf{Z}_m = 4137.93 + 13793.10i\,\Omega$ |
+Key core conductance `50000 [1/x]` $(T:0, Z:0, Y:0, X:2.0 \times 10^{-5})$ and susceptance `15000 [1/x] [+/-]` $(T:0, Z:0, Y:2.0 \times 10^{-5}, X:-6.6667 \times 10^{-5})$, then take complex reciprocal with `[↰] [CMPLX] [1/x]`, arriving at equivalent branch impedance $(T:0, Z:0, Y:4137.9310, X:13793.1034)$.
 
 Result: **$4,137.93 + 13,793.10i\,\Omega$**.
 
@@ -7123,16 +6972,7 @@ Result: **$4,137.93 + 13,793.10i\,\Omega$**.
 Major axis $a = 10.0$, minor axis $b = 6.0$. Axial ratio:
 $$\text{AR} = \frac{10.0}{6.0} = 1.6667 \implies \text{AR}_{\text{dB}} = 20 \log_{10}(1.6667) = \mathbf{4.4370\text{ dB}}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `10` `[ENTER]` `6` `[÷]` — Divide major axis by minor axis to obtain linear axial ratio $\text{AR} = 10.0 / 6.0 \approx 1.666667$.
-2. `[↰] [LOG]` — Take base-10 logarithm ($\log_{10}(1.666667) \approx 0.221849$) in place.
-3. `20` `[×]` — Scale by 20 to convert to decibels; polarization axial ratio evaluates to $\text{AR}_{\text{dB}} = \mathbf{4.4370\text{ dB}}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `10 [ENTER] 6 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.666667$ | Major-to-minor axial ratio $\text{AR} = 10/6$ |
-| 2 | `[↰] [LOG]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.221849$ | Base-10 logarithm $\log_{10}(\text{AR})$ |
-| 3 | `20 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$4.436975$** | Axial ratio in decibels: $\text{AR}_{\text{dB}} = 4.4370\text{ dB}$ |
+Key `10 [ENTER] 6 [÷]` $(T:0, Z:0, Y:0, X:1.666667)$ to divide the axes, take the base-10 logarithm with `[↰] [LOG]` $(T:0, Z:0, Y:0, X:0.221849)$, and scale with `20 [×]` to determine polarization axial ratio in decibels $(T:0, Z:0, Y:0, X:4.436975)$.
 
 Result: **$4.4370\text{ dB}$**.
 
@@ -7194,16 +7034,7 @@ $$e^{i\pi/2} = i \implies \sqrt{i} = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i \a
 
 > **Named RPN Stack Idiom: *The Inside-Out Radical & Euler Polar Identity*** — Load Euler imaginary exponent $e^{i\pi/2} = i$, extract complex square root directly, and resolve $\sqrt{i} = \sqrt{2}/2 + i\sqrt{2}/2$ without scratchpad memory *([Strogatz, 2019](sc32/appendix-e-annotated-bibliography.md#cite-strogatz2019); [HP, 1982](sc32/appendix-e-annotated-bibliography.md#cite-hp15c1982))*.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0` `[ENTER]` — Load zero real part into $Y$.
-2. `1` — Enter unit imaginary component into $X$, defining $0 + 1i$.
-3. `[↰] [CMPLX]` `[√x]` — Extract complex square root in place, populating $Y$ with $\sqrt{2}/2 \approx 0.707107$ and $X$ with $0.707107i$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0 [ENTER] [↱] [π] 2 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.570796$ | Imaginary exponent $\pi/2$ loaded into $X$ |
-| 2 | `[↰] [CMPLX] [eˣ]` | $0.0000$ | $0.0000$ | $0.000000$ | $1.000000$ | Complex exponential $e^{i\pi/2} = 0 + 1i$ |
-| 3 | `[↰] [CMPLX] [√x]` | $0.0000$ | $0.0000$ | **$0.707107$** | **$0.707107$** | Complex square root: $\sqrt{i} = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i$ |
+Enter imaginary exponent $\pi/2$ via `0 [ENTER] [↱] [π] 2 [÷]` $(T:0, Z:0, Y:0, X:1.570796)$, evaluate complex exponential with `[↰] [CMPLX] [eˣ]` $(T:0, Z:0, Y:0.000000, X:1.000000)$, and extract the square root with `[↰] [CMPLX] [√x]`, producing $(T:0, Z:0, Y:0.707107, X:0.707107)$ in 4 seconds flat!
 
 Result: **$0.707107 + 0.707107i$**.
 

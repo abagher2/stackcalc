@@ -430,7 +430,7 @@ The 100-bead and 20-bead Rekenrek (Number Rack) was invented by Adrian Treffers 
 
 ### Operating Rekenrek Mode (`{{key:COUNT}}`)
 1. Type a target number (for example, `{{key:1}} {{key:4}}`).
-2. Press `{{key:COUNT}}` (or `[g] [COUNT]`).
+2. Press `{{key:COUNT}}` (or `{{key:COUNT}}`).
 3. The transflective LCD maps the quantity across the two wires:
    - Wire 1 shows 10 beads slid to the active left side (5 red, 5 white).
    - Wire 2 shows 4 red beads slid to the active left side.
@@ -498,6 +498,15 @@ This invariant allows you to rapidly query every single place value column witho
 In Grade 5, place value extends to the right of the decimal point (tenths and hundredths):
 - Query Tenths ($0.1$): Type `{{key:.}} {{key:1}} {{key:PV}}` on $345.67 \longrightarrow X = \mathbf{6}$.
 - Query Hundredths ($0.01$): Type `{{key:.}} {{key:0}} {{key:1}} {{key:PV}}` on $345.67 \longrightarrow X = \mathbf{7}$.
+
+### Showdown: Algebraic Reversal vs. Forward RPN Place Value
+
+| Challenge Problem | Conventional Algebraic Syntax | StackCalc RPN Workflow | Algebraic Failure Mechanism | RPN Engineering Triumph |
+| :--- | :--- | :--- | :--- | :--- |
+| **Stadium Light Wattage**<br>$(30 \times 1500) + (10 \times 2000)$ | `30 [×] 1500 [+] 10 [×] 2000 [=]` | `30 [ENTER] 1500 [×] 10 [ENTER] 2000 [×] [+]` | Hierarchy confusion; parenthesis overload | Subtotals preserved on stack; zero parentheses |
+| **Decade Bridging**<br>$8 + 5 = 8 + 2 + 3$ | `8 [+] 2 [+] 3 [=]` | `8 [ENTER] 2 [+] 3 [+]` | Loss of intermediate decade landmark | Visual flash at decade $10$; smooth accumulation |
+| **Place Value Query**<br>Extract tens of $4,725$ | Re-enter number, divide by 10, truncate | `4725 [ENTER] 10 [PV]` | Destructive division destroys base number | Preserves $Y$ subject value across chained queries |
+| **Constant Counting**<br>Twos ladder cadence | `2 [+] 2 [=] [=] [=] ...` | `2 [ENTER] 2 [+] [+] [+] ...` | Flaky algebraic constant equals-key state | Deterministic stack retention on upper shelf |
 
 ---
 
