@@ -740,25 +740,12 @@ $$z = \frac{\Delta f}{f} \approx \frac{G M}{R c^2}$$
 $$t = \frac{\rho \cdot c_p \cdot r}{3 \varepsilon \sigma} \left(\frac{1}{T_2^3} - \frac{1}{T_1^3}\right)$$
 For iron droplet: $\rho = 7800\text{ kg/m}^3, c_p = 450\text{ J/kg}\cdot\text{K}, r = 0.0015\text{ m}, \varepsilon = 0.80, \sigma = 5.67037 \times 10^{-8}$.
 
-**Keystrokes:**
-`{{res:sc32_03_algebra_transcendentals_seq_24:keys}}`
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_24:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_24:value}}`**$\text{ seconds}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1000` `{{key:ENTER}}` `3` `{{key:yˣ}}` `{{key:1/x}}` — Evaluate inverse cubed lower temperature ($1/T_2^3 = 1/1000^3 = 1.000 \times 10^{-9}$) in place.
-2. `1500` `{{key:ENTER}}` `3` `{{key:yˣ}}` `{{key:1/x}}` — Evaluate inverse cubed initial temperature ($1/T_1^3 = 1/1500^3 = 2.963 \times 10^{-10}$) in place.
-3. `{{key:-}}` — Subtract cubed temperatures; radiative cooling temperature difference ($7.0370 \times 10^{-10}$) forms in $X$.
-4. `7800` `{{key:×}}` `450` `{{key:×}}` `0.0015` `{{key:×}}` — Scale by droplet mass and thermal capacity ($\rho c_p r$); numerator product occupies $X$.
-5. `3` `{{key:ENTER}}` `0.85` `{{key:×}}` `5.67037 {{key:E}} 8 {{key:+/-}}` `{{key:×}}` — Evaluate radiation resistance denominator ($3 \varepsilon \sigma = 1.446 \times 10^{-7}$) in place.
-6. `{{key:÷}}` — Divide thermal numerator by radiation denominator; droplet cooling duration ($t = 25.64\text{ seconds}$) evaluates without grouping punctuation.
-
-Result: $t \approx \mathbf{27.214\text{ seconds}}$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `1000 {{key:ENTER}} 3 {{key:yˣ}} {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000 \times 10^{-9}$ | Final reciprocal temperature cubed $1/T_f^3$ |
-| 2 | `1500 {{key:ENTER}} 3 {{key:yˣ}} {{key:1/x}} {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7.0370 \times 10^{-10}$ | Subtract initial reciprocal temperature cubed $1/T_0^3$ |
-| 3 | `7800 {{key:ENTER}} 450 {{key:×}} 0.0015 {{key:×}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.7050 \times 10^{-6}$ | Multiply by droplet thermal mass parameter $\rho c_p r$ |
-| 4 | `3 {{key:ENTER}} 0.80 {{key:×}} 5.67037 {{key:E}} 8 {{key:+/-}} {{key:×}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$27.2249$** | Divide by $3 \epsilon \sigma$ for radiative cooling time $t$ (s) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1000 {{key:ENTER}} 3 {{key:yˣ}} {{key:1/x}} 1500 {{key:ENTER}} 3 {{key:yˣ}} {{key:1/x}} {{key:-}}` evaluates inverse cube temperature difference $(1/T_2^3 - 1/T_1^3) \approx 7.0370 \times 10^{-10}\text{ K}^{-3}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 7.0370 \times 10^{-10})$.
+2. Keying `7800 {{key:ENTER}} 450 {{key:×}} 0.0015 {{key:×}} {{key:×}}` multiplies by thermal mass parameter $\rho c_p r = 5.265 \times 10^3$, giving numerator $3.7050 \times 10^{-6}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.7050 \times 10^{-6})$.
+3. Striking `3 {{key:ENTER}} 0.80 {{key:×}} 5.67037 {{key:E}} 8 {{key:+/-}} {{key:×}} {{key:÷}}` builds radiation denominator $3 \varepsilon \sigma \approx 1.3609 \times 10^{-7}$ and divides, calculating droplet radiative cooling time $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{27.2249}\text{ s})$ with zero scratchpad memory.
 
 ---
 
@@ -767,19 +754,13 @@ Result: $t \approx \mathbf{27.214\text{ seconds}}$.
 * Rule of 72 approximation: $t_{\text{approx}} = 72 / 7.2 = \mathbf{10.0\text{ years}}$
 * Exact exponential doubling: $t_{\text{exact}} = \frac{\ln 2}{\ln(1 + 0.072)}$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_25:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_25:value}}\text{ years}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_25:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_25:value}}`**$\text{ years}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `2` `{{key:LN}}` — Compute natural logarithm $\ln 2 \approx 0.693147$ representing exact capital doubling factor.
-2. `1.072` `{{key:LN}}` — Evaluate annual continuous growth rate $\ln(1 + r) = \ln(1.072) \approx 0.069526$ in $X$ while $\ln 2$ waits in $Y$.
-3. `{{key:÷}}` — Divide doubling factor by growth rate; exact doubling time ($t \approx \mathbf{9.9696\text{ years}}$) resolves directly from the stack.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `2 {{key:LN}}` evaluates the natural logarithm of doubling $\ln 2 \approx 0.6931$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.6931)$.
+2. Striking `1.072 {{key:LN}} {{key:÷}}` pushes $\ln 2$ to $Y$, evaluates annual continuous growth $\ln(1.072) \approx 0.0695$, and divides, obtaining exact doubling period $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{9.9696}\text{ years})$.
 
 Error in the empirical rule is under $0.31\%$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `2 {{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6931$ | Natural logarithm of doubling ratio $\ln(2)$ |
-| 2 | `1.072 {{key:LN}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$9.9696$** | Divide by $\ln(1 + r)$ for exact compounding doubling time (years) |
 
 ---
 
@@ -787,17 +768,11 @@ Error in the empirical rule is under $0.31\%$.
 **Acoustic Signal Processing Context:** Standard linear PCM quantizer with $N = 24\text{ bits}$:
 $$\text{SNR}_{\text{dB}} = 6.0206 N + 1.7609\text{ dB}$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_26:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_26:value}}\text{ dB}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_26:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_26:value}}`**$\text{ dB}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `6.0206` `{{key:ENTER}}` — Load linear PCM dynamic range slope ($6.0206\text{ dB/bit}$) into $Y$.
-2. `24` `{{key:×}}` — Key quantizer resolution ($N = 24\text{ bits}$) and multiply; raw resolution dynamic range ($144.4944\text{ dB}$) forms in $X$.
-3. `1.7609` `{{key:+}}` — Add sinusoidal quantization noise correction constant ($1.7609\text{ dB}$); theoretical maximum Signal-to-Noise Ratio ($\text{SNR} = 146.2553\text{ dB}$) is obtained directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `6.0206 {{key:ENTER}} 24 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $144.4944$ | Dynamic range from resolution bits $6.0206 \times 24$ |
-| 2 | `1.7609 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$146.2553$** | Add quantization noise baseline constant for theoretical SNR (dB) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `6.0206 {{key:ENTER}} 24 {{key:×}}` evaluates raw dynamic range from bit depth $6.0206 \times 24 = 144.4944\text{ dB}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 144.4944)$.
+2. Striking `1.7609 {{key:+}}` adds quantization noise floor correction constant, evaluating maximum theoretical SNR $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{146.2553}\text{ dB})$ in place.
 
 ---
 
@@ -805,20 +780,11 @@ $$\text{SNR}_{\text{dB}} = 6.0206 N + 1.7609\text{ dB}$$
 **Solid State Physics Context:** State energy above Fermi level $\Delta E = E - E_F = 0.050\text{ eV}$ at room temperature $T = 300\text{ K}$ ($k T = 0.025852\text{ eV}$):
 $$f(E) = \frac{1}{1 + \exp\left(\frac{E - E_F}{k T}\right)}$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_27:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_27:value}}} = 12.63\%$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_27:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_27:value}}`** ($12.63\%$).
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0.050` `{{key:ENTER}}` — Key electron energy offset above Fermi level ($\Delta E = 0.050\text{ eV}$) into $Y$.
-2. `0.025852` `{{key:÷}}` — Enter room-temperature thermal voltage ($k T = 0.025852\text{ eV}$) and divide; normalized thermal excitation argument ($1.9341$) forms in $X$.
-3. `{{key:eˣ}}` — Exponentiate in place ($e^{1.9341} \approx 6.9178$); Boltzmann factor appears in $X$.
-4. `1` `{{key:+}}` — Add Fermi-Dirac exclusion unity; total quantum denominator ($7.9178$) forms in $X$.
-5. `{{key:1/x}}` — Take reciprocal in place; electron orbital state occupancy probability ($f(E) = 0.126298 = 12.63\%$) evaluates with zero grouping overhead.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.050 {{key:ENTER}} 0.025852 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.9341$ | Normalized Fermi energy offset $(E - E_F)/(k T)$ |
-| 2 | `{{key:eˣ}} 1 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7.9177$ | Fermi-Dirac exponential denominator $(e^x + 1)$ |
-| 3 | `{{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.1263$** | Take reciprocal for electron occupation probability $f(E)$ |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.050 {{key:ENTER}} 0.025852 {{key:÷}}` computes normalized Fermi level offset $(E - E_F)/(kT) \approx 1.9341$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 1.9341)$.
+2. Striking `{{key:eˣ}} 1 {{key:+}} {{key:1/x}}` evaluates exponential Boltzmann factor, adds Fermi exclusion unity ($7.9177$), and takes the reciprocal, determining electron occupation probability $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.1263} = 12.63\%)$ without parenthesis grouping.
 
 ---
 
@@ -826,22 +792,11 @@ $$f(E) = \frac{1}{1 + \exp\left(\frac{E - E_F}{k T}\right)}$$
 **Fluid Mechanics Context:** Fluid viscosity $\mu = 0.0025\text{ Pa}\cdot\text{s}$, tube length $L = 0.20\text{ m}$, radius $R = 0.0005\text{ m}$, flow rate $Q = 1.5 \times 10^{-8}\text{ m}^3/\text{s}$:
 $$\Delta P = \frac{8 \mu L Q}{\pi R^4}$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_28:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_28:value}}\text{ Pa}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_28:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_28:value}}`**$\text{ Pa}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `8` `{{key:ENTER}}` — Load Hagen-Poiseuille viscous laminar constant ($8$) into $Y$.
-2. `0.0025` `{{key:×}}` — Enter fluid dynamic viscosity ($\mu = 0.0025\text{ Pa}\cdot\text{s}$) and multiply; viscous factor ($0.020\text{ Pa}\cdot\text{s}$) forms in $X$.
-3. `0.20` `{{key:×}}` — Scale by capillary tube length ($L = 0.20\text{ m}$); friction length factor ($0.0040\text{ Pa}\cdot\text{s}\cdot\text{m}$) occupies $X$.
-4. `1.5 {{key:E}} 8 {{key:+/-}}` `{{key:×}}` — Multiply by volumetric flow rate ($Q = 1.5 \times 10^{-8}\text{ m}^3/\text{s}$); total viscous loss numerator ($6.0 \times 10^{-11}\text{ N}\cdot\text{m}$) forms in $X$.
-5. `0.0005` `{{key:ENTER}}` `4` `{{key:yˣ}}` — Raise capillary radius to 4th power ($R^4 = 6.25 \times 10^{-14}\text{ m}^4$) in place.
-6. `{{key:π}}` `{{key:×}}` — Multiply by $\pi$; viscous geometric denominator ($\pi R^4 = 1.9635 \times 10^{-13}\text{ m}^4$) condenses in $X$ while numerator waits in $Y$.
-7. `{{key:÷}}` — Divide viscous numerator by geometric denominator; laminar capillary pressure drop ($\Delta P = 305.58\text{ Pa}$) is evaluated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `8 {{key:ENTER}} 0.0025 {{key:×}} 0.20 {{key:×}} 1.5 {{key:E}} 8 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6.0000 \times 10^{-11}$ | Poiseuille numerator $8 \mu L Q$ |
-| 2 | `{{key:π}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.9099 \times 10^{-11}$ | Divide by geometric circular factor $\pi$ |
-| 3 | `0.0005 {{key:ENTER}} 4 {{key:yˣ}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$305.5775$** | Divide by capillary radius to fourth power $R^4$ for pressure drop $\Delta P$ (Pa) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `8 {{key:ENTER}} 0.0025 {{key:×}} 0.20 {{key:×}} 1.5 {{key:E}} 8 {{key:+/-}} {{key:×}}` accumulates Hagen-Poiseuille numerator $8 \mu L Q = 6.0000 \times 10^{-11}\text{ N}\cdot\text{m}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 6.0000 \times 10^{-11})$.
+2. Keying `{{key:π}} {{key:÷}} 0.0005 {{key:ENTER}} 4 {{key:yˣ}} {{key:÷}}` divides by geometric circle factor $\pi$ and capillary radius fourth power $R^4 = 6.25 \times 10^{-14}\text{ m}^4$, evaluating viscous laminar pressure drop $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{305.5775}\text{ Pa})$ with zero auxiliary registers.
 
 ---
 

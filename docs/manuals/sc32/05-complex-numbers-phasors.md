@@ -817,15 +817,7 @@ Result: **$0.764706 - 0.058824i$**.
 **RF Context:** Tank circuit with $R = 10\text{ k}\Omega, L = 10\,\mu\text{H}, C = 100\text{ pF}$. Resonant frequency $\omega_0 = 1/\sqrt{LC} = 31.6228\text{ Mrad/s}$. At resonance, reactive admittances cancel ($j\omega C + 1/(j\omega L) = 0$), leaving pure resistance:
 $$\mathbf{Z}_{\text{tank}} = R = 10,000.0 + 0.0i\,\Omega$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `10 {{key:E}} 6 {{key:+/-}}` `{{key:ENTER}}` `100 {{key:E}} 12 {{key:+/-}}` `{{key:×}}` `{{key:√x}}` `{{key:1/x}}` — Compute resonant frequency $\omega_0 = 1/\sqrt{LC} \approx 31.6228 \times 10^6\text{ rad/s}$.
-2. `10000` `{{key:ENTER}}` `0` — Load tank impedance at resonance $(Y = 10000.0, X = 0.0)$, verifying purely resistive impedance $\mathbf{Z}_{\text{tank}} = 10,000.0 + 0.0i\,\Omega$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `10 {{key:E}} 6 {{key:+/-}} {{key:ENTER}} 100 {{key:E}} 12 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.000000\text{e-}15$ | Form reactive product $LC = 1.0 \times 10^{-15}\text{ s}^2$ |
-| 2 | `{{key:√x}} {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $31622776.60$ | Resonant frequency $\omega_0 = 31.6228\text{ Mrad/s}$ |
-| 3 | `10000 {{key:ENTER}} 0` | $0.0000$ | $31622776.60$ | **$10000.0000$** | **$0.0000$** | Pure resistance $\mathbf{Z}_{\text{tank}} = 10,000 + 0i\,\Omega$ |
+Evaluate the reactive product with `10 {{key:E}} 6 {{key:+/-}} {{key:ENTER}} 100 {{key:E}} 12 {{key:+/-}} {{key:×}}` $(T:0, Z:0, Y:0, X:1.0 \times 10^{-15})$, extract the resonant frequency with `{{key:√x}} {{key:1/x}}` $(T:0, Z:0, Y:0, X:3.1623 \times 10^7)$, then load the resonant tank impedance `10000 {{key:ENTER}} 0` across $(Y, X)$, confirming purely resistive impedance $(T:0, Z:3.1623 \times 10^7, Y:10000.0000, X:0.0000)$.
 
 Result: **$10,000.0 + 0.0i\,\Omega$**.
 
@@ -837,17 +829,7 @@ For cylinder point $z = 1.1 + 0.2i$ and $c = 1.0$:
 $$\frac{1}{z} = \frac{1.1 - 0.2i}{1.21 + 0.04} = \frac{1.1 - 0.2i}{1.25} = 0.88 - 0.16i$$
 $$\zeta = (1.1 + 0.2i) + (0.88 - 0.16i) = \mathbf{1.980000 + 0.040000i}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1.1` `{{key:ENTER}}` `0.2` — Load cylinder boundary coordinate $z = 1.1 + 0.2i$ into Registers $(Y, X)$.
-2. `{{key:CMPLX}}` `{{key:1/x}}` — Invert complex coordinate; yields $1/z = 0.880000 - 0.160000i$ across $(Y, X)$.
-3. `1.1` `{{key:ENTER}}` `0.2` `{{key:CMPLX}}` `{{key:+}}` — Add original coordinate $z$; mapped airfoil coordinate $\zeta = \mathbf{1.980000 + 0.040000i}$ resolves across Registers $(Y, X)$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1.1 {{key:ENTER}} 0.2` | $0.0000$ | $0.0000$ | $1.1000$ | $0.2000$ | Cylinder point $z = 1.1 + 0.2i$ loaded |
-| 2 | `{{key:CMPLX}} {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.880000$ | $-0.160000$ | Invert: $1/z = 0.88 - 0.16i$ |
-| 3 | `1.1 {{key:ENTER}} 0.2` | $0.880000$ | $-0.160000$ | $1.1000$ | $0.2000$ | Reload $z$ into $(Y, X)$ |
-| 4 | `{{key:CMPLX}} {{key:+}}` | $0.880000$ | $0.880000$ | **$1.980000$** | **$0.040000$** | Joukowsky transform: $\zeta = 1.98 + 0.04i$ |
+Load $z = 1.1 + 0.2i$ via `1.1 {{key:ENTER}} 0.2` $(T:0, Z:0, Y:1.1, X:0.2)$ and invert with `{{key:CMPLX}} {{key:1/x}}` to find $1/z$ $(T:0, Z:0, Y:0.880000, X:-0.160000)$. Reload $z$ into $(Y, X)$ via `1.1 {{key:ENTER}} 0.2` and sum with `{{key:CMPLX}} {{key:+}}`, mapping the airfoil boundary to $(T:0.88, Z:0.88, Y:1.980000, X:0.040000)$.
 
 Result: **$1.980000 + 0.040000i$**.
 
