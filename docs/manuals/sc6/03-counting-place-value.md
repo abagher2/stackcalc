@@ -540,12 +540,10 @@ How many times does the heart beat in an entire year?
 Let us calculate this continuously on the SC-6 stack without writing down any scratch paper:
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:8}} {{key:0}} | 0 | 0 | 0 | 80 |
-| {{key:ENTER}} | 0 | 0 | 80 | 80 |
-| {{key:6}} {{key:0}} {{key:×}} | 0 | 0 | 0 | 4800 |
-| {{key:2}} {{key:4}} {{key:×}} | 0 | 0 | 0 | 115200 |
-| {{key:3}} {{key:6}} {{key:5}} | 0 | 0 | 115200 | 365 |
-| {{key:×}} | 0 | 0 | 0 | 42048000 |
+| 80 {{key:ENTER}} | 0 | 0 | 80 | 80 |
+| 60 {{key:×}} | 0 | 0 | 0 | 4800 |
+| 24 {{key:×}} | 0 | 0 | 0 | 115200 |
+| 365 {{key:×}} | 0 | 0 | 0 | 42048000 |
 
 Now let's query the Ten-Millions place with `{{key:PV}}`:
 - Type `{{key:ENTER}} {{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` $\longrightarrow X = \mathbf{4}$ (4 ten-millions!).
@@ -609,7 +607,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <strong>Classroom Script 3.3: Teen Number Reversals (14 vs 41)</strong><br>
 • <em>Teacher:</em> "Emma, read this number on the desk: $14$."<br>
 • <em>Emma:</em> "Fourteen."<br>
-• <em>Teacher:</em> "When you write it down, sometimes you write 4 first and get 41. Let's put 14 on our Rekenrek screen: `14 {{key:▦}}`."<br>
+• <em>Teacher:</em> "When you write it down, sometimes you write 4 first and get 41. Let's put 14 on our Rekenrek screen: `14 {{key:COUNT}}`."<br>
 • <em>Emma:</em> "Wire 1 has 10 beads slid to the left. Wire 2 has 4 beads."<br>
 • <em>Teacher:</em> "Which wire has more beads?"<br>
 • <em>Emma:</em> "Wire 1! It has ten beads!"<br>
