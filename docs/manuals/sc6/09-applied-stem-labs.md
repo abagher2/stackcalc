@@ -181,9 +181,9 @@ How much does it cost to 3D print a complete classroom kit of 24 interlocking ma
 | {{key:ENTER}} | 0 | 0 | 24 | 24 |
 | 3.1 | 0 | 0 | 24 | $3.1$ |
 | {{key:×}} | 0 | 0 | 0 | $74.4$ |
-| {{key:.}} 02 | 0 | 0 | $74.4$ | $2.00$ |
-| {{key:×}} | 0 | 0 | 0 | $148.800$ |
-| {{key:$}} | 0 | 0 | 0 | $148.80$ |
+| {{key:.}} 02 | 0 | 0 | $74.4$ | $0.02$ |
+| {{key:×}} | 0 | 0 | 0 | $1.488$ |
+| {{key:$}} | 0 | 0 | 0 | $1.49$ |
 
 ---
 
@@ -195,14 +195,14 @@ A classroom 3D printer draws an average electrical power of $P = 120\text{ Watts
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:.}} 12 | 0 | 0 | 0 | $12.00$ |
-| {{key:ENTER}} | 0 | 0 | $12.00$ | $12.00$ |
-| 4.5 | 0 | 0 | $12.00$ | $4.5$ |
-| {{key:×}} | 0 | 0 | 0 | $54.00$ |
-| {{key:.}} 15 | 0 | 0 | $54.00$ | $15.00$ |
-| {{key:×}} | 0 | 0 | 0 | $810.000$ |
-| 1.49 {{key:+}} | 0 | 0 | 0 | $811.490$ |
-| {{key:$}} | 0 | 0 | 0 | $811.49$ |
+| {{key:.}} 12 | 0 | 0 | 0 | $0.12$ |
+| {{key:ENTER}} | 0 | 0 | $0.12$ | $0.12$ |
+| 4.5 | 0 | 0 | $0.12$ | $4.5$ |
+| {{key:×}} | 0 | 0 | 0 | $0.54$ |
+| {{key:.}} 15 | 0 | 0 | $0.54$ | $0.15$ |
+| {{key:×}} | 0 | 0 | 0 | $0.081$ |
+| 1.49 {{key:+}} | 0 | 0 | 0 | $1.571$ |
+| {{key:$}} | 0 | 0 | 0 | $1.57$ |
 
 ---
 
@@ -555,14 +555,13 @@ Stage 2: Gear C ($16\text{ teeth}$) drives Gear D ($48\text{ teeth}$).
 | {{key:×}} | 0 | 0 | 0 | $9.0$ |
 
 ### Lab Mission 9.2: Calculating Output Shaft Speed
-If the input electric motor spins at $1,800\text{ RPM}$, what is the final output shaft speed?
-- `1800 {{key:x⇄y}} {{key:÷}}` $\longrightarrow X = \mathbf{200\text{ RPM}}$!
+If the input electric motor spins at $1,800\text{ RPM}$, what is the final output shaft speed with a $9:1$ compound reduction?
+- `1800 {{key:ENTER}} 9 {{key:÷}}` $\longrightarrow X = \mathbf{200\text{ RPM}}$!
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| 1800 | 0 | 0 | $0.0$ | 1800 |
-| {{key:x⇄y}} | 0 | 0 | 1800 | $0.0$ |
-| {{key:÷}} | 0 | 0 | 0 | 0 |
+| `1800` {{key:ENTER}} | 0 | 0 | 1800 | 1800 |
+| `9` {{key:÷}} | 0 | 0 | 0 | 200 |
 
 ---
 
@@ -591,14 +590,14 @@ Input syringe diameter $d_1 = 1.0\text{ cm}$; output syringe diameter $d_2 = 3.0
 | {{key:x²}} | 0 | 0 | 0 | 9 |
 
 ### Lab Mission 10.2: Lifting a 4.5 kg Weight
-If you push the small syringe with a force of $F_1 = 5.0\text{ Newtons}$ ($\approx 0.5\text{ kg}$ effort), what force is exerted by the large syringe?
-- `5.0 {{key:×}}` $\longrightarrow X = \mathbf{45.0\text{ Newtons}}$ ($\approx \mathbf{4.59\text{ kg}}$ lift)!
+If you push the small syringe with a force of $F_1 = 5.0\text{ Newtons}$ ($\approx 0.5\text{ kg}$ effort) and a $9\times$ area multiplication factor, what force is exerted by the large syringe?
+- `9 {{key:ENTER}} 5.0 {{key:×}}` $\longrightarrow X = \mathbf{45.0\text{ Newtons}}$, then `9.8 {{key:÷}}` $\longrightarrow X = \mathbf{4.59\text{ kg}}$ lift!
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| 5.0 | 0 | 0 | 0 | $5.0$ |
-| {{key:×}} | 0 | 0 | 0 | $0.0$ |
-| `9.8` {{key:÷}} | 0 | 0 | 0 | $0.00$ |
+| `9` {{key:ENTER}} | 0 | 0 | 9 | 9 |
+| `5.0` {{key:×}} | 0 | 0 | 0 | $45.0$ |
+| `9.8` {{key:÷}} | 0 | 0 | 0 | $4.59$ |
 
 ---
 
@@ -627,9 +626,9 @@ Miniature indoor quadcopters powered by lithium-polymer (LiPo) batteries are pop
 | :--- | :--- | :--- | :--- | :--- |
 | 850 | 0 | 0 | 0 | 850 |
 | {{key:ENTER}} | 0 | 0 | 850 | 850 |
-| {{key:.}} {{key:8}} {{key:×}} | 0 | 0 | 0 | 6800 |
-| 60 {{key:×}} | 0 | 0 | 0 | 408000 |
-| `4200` {{key:÷}} | 0 | 0 | 0 | $97.143$ |
+| {{key:.}} {{key:8}} {{key:×}} | 0 | 0 | 0 | 680 |
+| 60 {{key:×}} | 0 | 0 | 0 | 40800 |
+| `4200` {{key:÷}} | 0 | 0 | 0 | $9.714$ |
 
 ### Lab Mission 11.2: Drone Payload Penalty & Reduced Endurance
 Mount an action camera ($m = 45\text{ grams}$) to the drone. The increased lift requirement increases the hover current draw from $4,200\text{ mA}$ to $5,500\text{ mA}$.
@@ -639,16 +638,16 @@ Mount an action camera ($m = 45\text{ grams}$) to the drone. The increased lift 
 2. Calculate the percentage reduction in endurance:
    - Initial time: $9.714\text{ min}$.
    - New time: $7.418\text{ min}$.
-   - Percent change: `9.714` {{key:ENTER}} `7.418` {{key:%CHG}} $\longrightarrow \mathbf{-23.64\%}$ penalty!
+   - Percent change: enter `9.714`, swap `{{key:x⇄y}}`, then press `{{key:%CHG}}` $\longrightarrow \mathbf{-23.64\%}$ penalty!
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | `680` {{key:ENTER}} | 0 | 0 | 680 | 680 |
 | `60` {{key:×}} | 0 | 0 | 0 | 40800 |
 | `5500` {{key:÷}} | 0 | 0 | 0 | $7.418$ |
-| `9.714`{{key:ENTER}} | 0 | $7.4182$ | $9.714$ | $9.714$ |
-| {{key:x⇄y}} | 0 | $7.4182$ | $9.714$ | $9.714$ |
-| {{keycap:%CHG}} | 0 | 0 | $7.4182$ | $0.00$ |
+| `9.714` | 0 | 0 | $7.418$ | $9.714$ |
+| {{key:x⇄y}} | 0 | 0 | $9.714$ | $7.418$ |
+| {{keycap:%CHG}} | 0 | 0 | $9.714$ | $-23.64$ |
 
 ---
 

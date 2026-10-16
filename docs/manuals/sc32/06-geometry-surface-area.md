@@ -763,16 +763,9 @@ $$I = \frac{2}{5} M \frac{R_2^5 - R_1^5}{R_2^3 - R_1^3} = \frac{2}{5}(7347.74) \
 $$V = \frac{16}{3} r^3 = \frac{16}{3} (3375) = 16 \times 1125 = \mathbf{18,000.0\text{ mm}^3}$$
 Surface area: $A = 16 r^2 = 16(225) = \mathbf{3,600.0\text{ mm}^2}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `16` `{{key:ENTER}}` `3` `{{key:÷}}` — Enter Steinmetz geometric constant ($16/3 \approx 5.333333$).
-2. `0.25` `{{key:ENTER}}` `3` `{{key:yˣ}}` — Cube cylinder radius ($r = 0.25\text{ m}$), giving $r^3 = 0.015625\text{ m}^3$.
-3. `{{key:×}}` — Multiply to establish intersection volume $V \approx \mathbf{0.083333\text{ m}^3}$ ($83.33\text{ L}$).
+Evaluate Steinmetz coefficient $16/3 \approx 5.333333$ via `16 {{key:ENTER}} 3 {{key:÷}}`. Cube radius $r = 15\text{ mm}$ with `15 {{key:ENTER}} 3 {{key:yˣ}} {{key:×}}` to yield solid volume $18,000.0\text{ mm}^3$ at $(T:0, Z:0, Y:0, X:18000.0000)$, and evaluate surface area $16 r^2 = 3600.0\text{ mm}^2$ via `15 {{keycap:x²}} 16 {{key:×}}`.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `16 {{key:ENTER}} 3 {{key:÷}}` | $0.0000$ | $0.0000$ | $16.0000$ | $5.333333$ | Factor $16/3$ evaluated |
-| 2 | `15 {{key:ENTER}} 3 {{key:yˣ}} {{key:×}}` | $0.0000$ | $0.0000$ | $5.333333$ | **$18000.0000$** | Steinmetz volume $V = \frac{16}{3}r^3$ in mm³ |
-| 3 | `15 {{keycap:x²}} 16 {{key:×}}` | $0.0000$ | $0.0000$ | $18000.0000$ | **$3600.0000$** | Surface area $A = 16 r^2$ in mm² |
+Result: **$V = 18,000.0\text{ mm}^3$**, **$A = 3,600.0\text{ mm}^2$**.
 
 ---
 
@@ -785,18 +778,9 @@ $$e = \sqrt{1 - \frac{b^2}{a^2}} = \sqrt{1 - \frac{225}{3600}} = \sqrt{1 - 0.062
 
 **Keystrokes:** `4 {{key:ENTER}} 3 {{key:÷}} {{key:π}} {{key:×}} 60 {{key:×}} 15 {{key:x²}} {{key:×}}` $\rightarrow$ **`56548.6678`**; `15 {{key:x²}} 60 {{key:x²}} {{key:÷}} 1 {{key:x⇄y}} {{key:-}} {{key:√x}}` $\rightarrow$ **`0.9682`**
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `4` `{{key:ENTER}}` `3` `{{key:÷}}` `{{key:π}}` `{{key:×}}` — Form geometric sphere-volume constant ($4\pi/3 \approx 4.188790$).
-2. `60` `{{key:×}}` `15` `{{key:x²}}` `{{key:×}}` — Multiply by semimajor axis ($a = 60.0\text{ m}$) and $b^2 = 225.0\text{ m}^2$, giving volume ($V \approx \mathbf{56,548.67\text{ m}^3}$).
-3. `15` `{{key:x²}}` `60` `{{key:x²}}` `{{key:÷}}` — Form squared axis ratio ($b^2/a^2 = 225/3600 = 0.0625$).
-4. `1` `{{key:x⇄y}}` `{{key:-}}` `{{key:√x}}` — Subtract from unity and extract square root to determine prolate eccentricity ($e \approx \mathbf{0.9682}$).
+Evaluate volume constant $\frac{4\pi}{3} \approx 4.188790$ via `4 {{key:ENTER}} 3 {{key:÷}} {{key:π}} {{key:×}}` and multiply by $a \cdot b^2 = 60 \times 15^2$ via `60 {{key:×}} 15 {{key:x²}} {{key:×}}`, establishing envelope volume $56,548.67\text{ m}^3$ in Register $X$. For eccentricity, form squared ratio $b^2/a^2 = 0.0625$ with `15 {{key:x²}} 60 {{key:x²}} {{key:÷}}`, subtract from unity, and extract the square root via `1 {{key:x⇄y}} {{key:-}} {{key:√x}}` to settle prolate eccentricity at $(T:0, Z:0, Y:56548.6678, X:0.9682)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `4 {{key:ENTER}} 3 {{key:÷}} {{key:π}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.1888$ | Factor $4\pi/3$ in Register $X$ |
-| 2 | `60 {{key:×}} 15 {{key:x²}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$56548.6678$** | Prolate volume $V$ in m³ |
-| 3 | `15 {{key:x²}} 60 {{key:x²}} {{key:÷}}` | $0.0000$ | $0.0000$ | $56548.6678$ | $0.0625$ | Axis squared ratio $b^2/a^2$ |
-| 4 | `1 {{key:x⇄y}} {{key:-}} {{key:√x}}` | $0.0000$ | $0.0000$ | $56548.6678$ | **$0.9682$** | Prolate eccentricity $e = \sqrt{1 - b^2/a^2}$ |
+Result: **$V = 56,548.67\text{ m}^3$**, **$e = 0.9682$**.
 
 ---
 
@@ -807,16 +791,9 @@ Keystrokes: `{{res:sc32_06_geometry_surface_area_seq_19:keys}}`$\implies$ **$298
 
 > **Named RPN Stack Idiom: *The x⇄y Denominator Flip & Planetary Geodesy*** — Compute equatorial minus polar radius difference, enter equatorial radius, and divide via stack swap {{cite:gauss1809,hp15c1982}}.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `6378.137` `{{key:ENTER}}` — Enter equatorial radius ($a = 6378.137\text{ km}$).
-2. `6356.752` `{{key:-}}` — Subtract polar radius ($b = 6356.752\text{ km}$) to obtain difference ($a - b = 21.385\text{ km}$).
-3. `6378.137` `{{key:x⇄y}}` `{{key:÷}}` — Exchange registers and divide by $a$ to yield flattening factor ($f \approx \mathbf{1/298.257}$).
+Evaluate radius difference $(a - b) = 21.385\text{ km}$ via `6378.137 {{key:ENTER}} 6356.752 {{key:-}}`. Divide by equatorial radius $a$ via `6378.137 {{key:÷}}` for flattening factor $f \approx 0.003353$, and invert via `{{key:1/x}}` to determine inverse flattening $1/f$ at $(T:0, Z:0, Y:0, X:298.2572)$.
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `6378.137 {{key:ENTER}} 6356.752 {{key:-}}` | $0.0000$ | $0.0000$ | $6378.1370$ | $21.3850$ | Equatorial minus polar delta $(a - b)$ in km |
-| 2 | `6378.137 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.003353$ | Flattening factor $f = (a - b)/a$ |
-| 3 | `{{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$298.2572$** | Reciprocal flattening index $1/f$ |
+Result: **$1/f = 298.2572$**.
 
 ---
 

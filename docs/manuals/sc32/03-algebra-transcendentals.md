@@ -160,14 +160,11 @@ $$t = -\frac{\ln(N(t)/N_0)}{\lambda} = -\frac{\ln(0.234) \times 5730}{\ln 2}$$
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & Pedagogical State |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{key:.}} {{key:2}} {{key:3}} {{key:4}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2340$ | Remaining proportion |
-| 2 | `{{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.452434$ | $\ln(0.234)$ evaluated |
-| 3 | `{{key:5}} {{key:7}} {{key:3}} {{key:0}}` | $5.0000$ | $7.0000$ | $3.000000$ | $0.0000$ | Stack lifts automatically |
-| 4 | `{{key:×}}` | $5.0000$ | $5.0000$ | $7.0000$ | $0.0000$ | Numerator product |
-| 5 | `{{key:2}}` | $5.0000$ | $7.0000$ | $0.0000$ | $2.0000$ | Base 2 for half-life |
-| 6 | `{{key:LN}}` | $5.0000$ | $7.0000$ | $0.0000$ | $0.693147$ | $\ln(2)$ divisor |
-| 7 | `{{key:÷}}` | $5.0000$ | $5.0000$ | $7.0000$ | $0.0000$ | Quotient |
-| 8 | `{{key:+/-}}` | $5.0000$ | $5.0000$ | $7.0000$ | **$0.0000$** | Artifact age in years |
+| 1 | `0.234` `{{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.4524$ | Remaining proportion and $\ln(0.234)$ |
+| 2 | `5730` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-8322.4478$ | Product with Cambridge half-life |
+| 3 | `2` `{{key:LN}}` | $0.0000$ | $0.0000$ | $-8322.4478$ | $0.6931$ | Base 2 and $\ln(2)$ divisor |
+| 4 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-12006.7541$ | Quotient |
+| 5 | `{{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12006.7541$** | Artifact age in years |
 
 The bone is approximately **$12,007\text{ years old}$**.
 
