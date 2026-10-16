@@ -3606,10 +3606,10 @@ Keystrokes: `2.5 [ENTER] 3.8 [yˣ]` $\rightarrow$ **`32.521609664`**
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `[2] [.] [5]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.5000$ | Enter base $y$ |
-| 2 | `[ENTER]` | $0.0000$ | $0.0000$ | $2.5000$ | $2.5000$ | Stack lift disabled; $y$ pushed to $Y$ |
-| 3 | `[3] [.] [8]` | $0.0000$ | $0.0000$ | $2.5000$ | $3.8000$ | Overwrite $X$ with exponent $x$ |
-| 4 | `[yˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | **$32.2242534685$** | Evaluates $2.5^{3.8}$; Stack lift armed |
+| 1 | `[2] [.] [5]` | $0.0000$ | $0.0000$ | $2.0000$ | $5.0000$ | Enter base $y$ |
+| 2 | `[ENTER]` | $0.0000$ | $2.0000$ | $5.0000$ | $5.0000$ | Stack lift disabled; $y$ pushed to $Y$ |
+| 3 | `[3] [.] [8]` | $2.0000$ | $5.0000$ | $3.0000$ | $8.0000$ | Overwrite $X$ with exponent $x$ |
+| 4 | `[yˣ]` | $2.0000$ | $2.0000$ | $5.0000$ | **$6561.0000000000$** | Evaluates $2.5^{3.8}$; Stack lift armed |
 
 ### 3.2.4 `[↰] [ˣ√y]` (Arbitrary Radical Root)
 * **Mathematical Definition:** Evaluates $\sqrt[X]{Y} = Y^{1/X}$.
@@ -3689,14 +3689,14 @@ $$t = -\frac{\ln(N(t)/N_0)}{\lambda} = -\frac{\ln(0.234) \times 5730}{\ln 2}$$
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & Pedagogical State |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `[.] [2] [3] [4]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2340$ | Remaining proportion |
-| 2 | `[LN]` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.452434$ | $\ln(0.234)$ evaluated |
-| 3 | `[5] [7] [3] [0]` | $0.0000$ | $0.0000$ | $-1.452434$ | $5730.0000$ | Stack lifts automatically |
-| 4 | `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $-8322.4478$ | Numerator product |
-| 5 | `[2]` | $0.0000$ | $0.0000$ | $-8322.4478$ | $2.0000$ | Base 2 for half-life |
-| 6 | `[LN]` | $0.0000$ | $0.0000$ | $-8322.4478$ | $0.693147$ | $\ln(2)$ divisor |
-| 7 | `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $-12006.7533$ | Quotient |
-| 8 | `[+/-]` | $0.0000$ | $0.0000$ | $0.0000$ | **$12006.7533$** | Artifact age in years |
+| 1 | `[.] [2] [3] [4]` | $0.0000$ | $2.0000$ | $3.0000$ | $4.0000$ | Remaining proportion |
+| 2 | `[LN]` | $0.0000$ | $2.0000$ | $3.0000$ | $1.386294$ | $\ln(0.234)$ evaluated |
+| 3 | `[5] [7] [3] [0]` | $5.0000$ | $7.0000$ | $3.000000$ | $0.0000$ | Stack lifts automatically |
+| 4 | `[×]` | $5.0000$ | $5.0000$ | $7.0000$ | $0.0000$ | Numerator product |
+| 5 | `[2]` | $5.0000$ | $7.0000$ | $0.0000$ | $2.0000$ | Base 2 for half-life |
+| 6 | `[LN]` | $5.0000$ | $7.0000$ | $0.0000$ | $0.693147$ | $\ln(2)$ divisor |
+| 7 | `[÷]` | $5.0000$ | $5.0000$ | $7.0000$ | $0.0000$ | Quotient |
+| 8 | `[+/-]` | $5.0000$ | $5.0000$ | $7.0000$ | **$0.0000$** | Artifact age in years |
 
 The bone is approximately **$12,007\text{ years old}$**.
 
@@ -4359,34 +4359,25 @@ Result: $f(8.5) \approx \mathbf{0.098485\text{ (m/s)}^{-1}}$.
 **Geodesy Context:** Latitude GPS readout $= 30.267153^\circ\text{ N}$. Decompose into degrees, arcminutes, and arcseconds:
 
 **Keystrokes:**
-1. Store: `30.267153` `[STO] 1`
-2. Degrees: `[↱] [PARTS] [IP]` $\to \mathbf{30^\circ}$
-3. Arcminutes: `[RCL] 1` [↱] [PARTS] [FP]` `60` `[×]` `[ENTER]` [↱] [PARTS] [IP]` $\to \mathbf{16'}$
-4. Arcseconds: `[x⇄y]` [↱] [PARTS]` [FP]` `60` `[×]` $\to \mathbf{1.75''}$
-Coordinates: $30^\circ 16' 1.75''\text{ N}$.
+1. Store: `30.267153 [STO] 1`
+2. Degrees: `[↱] [PARTS] [IP]` $\rightarrow$ **$30^\circ$**
+3. Arcminutes: `[RCL] 1 [↱] [PARTS] [FP] 60 [×] [ENTER] [↱] [PARTS] [IP]` $\rightarrow$ **$16'$**
+4. Arcseconds: `[x⇄y] [↱] [PARTS] [FP] 60 [×]` $\rightarrow$ **$1.75''$**
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `30.267153 [ENTER]` | $0.0000$ | $0.0000$ | $30.2672$ | $30.2672$ | Load decimal latitude $30.267153^\circ$ |
-| 2 | `[↱] [PARTS] [IP]` | $0.0000$ | $0.0000$ | $30.2672$ | $30.0000$ | Integer degrees ($30^\circ$) |
-| 3 | `30.267153 [↱] [PARTS] [FP] 60 [×]` | $30.2672$ | $30.2672$ | $30.0000$ | $16.0292$ | Fractional degrees scaled to arcminutes ($16.02918'$) |
-| 4 | `[↱] [PARTS] [IP]` | $30.2672$ | $30.2672$ | $30.0000$ | $16.0000$ | Integer arcminutes ($16'$) |
-| 5 | `16.02918 [↱] [PARTS] [FP] 60 [×]` | $30.0000$ | $30.0000$ | $16.0000$ | **$1.7508$** | Fractional arcminutes scaled to arcseconds ($1.75''$) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `30.267153 [ENTER] [↱] [PARTS] [IP]` loads latitude and isolates integer degrees $(T: 0.0000, Z: 0.0000, Y: 30.2672, X: \mathbf{30.0000^\circ})$.
+2. Keying `30.267153 [↱] [PARTS] [FP] 60 [×]` extracts fractional degrees and scales to arcminutes $16.0292'$, followed by `[↱] [PARTS] [IP]` to extract integer minutes $(T: 30.2672, Z: 30.2672, Y: 30.0000, X: \mathbf{16.0000'})$.
+3. Striking `16.02918 [↱] [PARTS] [FP] 60 [×]` extracts fractional arcminutes and multiplies by 60 to yield arcseconds $(T: 30.0000, Z: 30.0000, Y: 16.0000, X: \mathbf{1.7508''})$, resolving $30^\circ 16' 1.75''\text{ N}$.
 
 ---
 
 ### 3.9.27 Problem 3.27: Combinatorial Permutations of 16-Port Network Switch
 **Computer Science Context:** Number of unique routing permutations across 16 ports ($16!$):
 
-**Keystrokes:** `16 [↰] [x!]`$\to \mathbf{2.092279E13 \times 10^{13}}$ ($20.92\text{ trillion paths}$).
+**Keystrokes:** `16 [↰] [x!]` $\rightarrow$ **`2.092279E13`** $\times 10^{13}$ ($20.92\text{ trillion paths}$).
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `16` — Enter 16 into Register $X$ ($X = 16$).
-2. `[↰] [x!]` — Compute factorial $16!$ in place $\rightarrow$ ($X = 2.092e+13$).
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `16 [↰] [x!]` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.0923 \times 10^{13}$** | Evaluate factorial $16!$ for total routing permutations |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `16 [↰] [x!]` evaluates factorial $16!$ in place in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2.0923 \times 10^{13}})$, computing all $20.92$ trillion port routing combinations instantly without stack displacement.
 
 ---
 
@@ -4394,19 +4385,11 @@ Coordinates: $30^\circ 16' 1.75''\text{ N}$.
 **Higher Geometry Context:** Volume of a 5D unit hypersphere:
 $$V_5 = \frac{\pi^{5/2}}{\Gamma\left(\frac{5}{2} + 1\right)} = \frac{\pi^{2.5}}{(2.5)!}$$
 
-**Keystrokes:** `[↱] [π] [ENTER] 2.5 [yˣ] 2.5 [↰] [x!] [÷]`$\to \mathbf{5.263789}$.
+**Keystrokes:** `[↱] [π] [ENTER] 2.5 [yˣ] 2.5 [↰] [x!] [÷]` $\rightarrow$ **`5.263789`**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `[↱] [π]` `2.5` `[yˣ]` — Load constant $\pi$ and raise to fractional hypersphere power $2.5$; volumetric numerator ($\pi^{2.5} \approx 17.493418$) forms in $X$.
-2. `2.5` `[↰] [x!]` — Enter half-integer argument $2.5$ and evaluate gamma factor $\Gamma(3.5) = 2.5! \approx 3.323351$ via Lanczos/Stirling factorial in place.
-3. `[÷]` — Divide volumetric numerator by gamma factor; 5-dimensional unit hypersphere volume ($V_5 \approx \mathbf{5.2638}$) is obtained directly.
-
-Verified: $\Gamma(3.5) = \frac{15\sqrt{\pi}}{8} \approx 3.323351$, $\pi^{2.5} / 3.323351 \approx 5.263789$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `[↱] [π] [ENTER] 2.5 [yˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $17.4934$ | Evaluate numerator $\pi^{5/2} = \pi^{2.5}$ |
-| 2 | `2.5 [↰] [x!] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$5.2638$** | Divide by half-integer factorial $\Gamma(3.5) = 2.5!$ for unit 5-sphere volume |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `[↱] [π] [ENTER] 2.5 [yˣ]` evaluates volumetric numerator $\pi^{2.5} \approx 17.4934$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 17.4934)$.
+2. Striking `2.5 [↰] [x!] [÷]` enters half-integer argument $2.5$, evaluates gamma factor $\Gamma(3.5) = 2.5! \approx 3.3234$ via Lanczos expansion, and divides, obtaining 5-sphere volume $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{5.2638})$ directly.
 
 ---
 
@@ -4414,18 +4397,11 @@ Verified: $\Gamma(3.5) = \frac{15\sqrt{\pi}}{8} \approx 3.323351$, $\pi^{2.5} / 
 **RF Transmission Line Context:** Shunt conductance $G = 0.020\text{ S}$ in parallel with susceptance $B = 0.015\text{ S}$. Find equivalent magnitude:
 $$|Y| = \sqrt{G^2 + B^2}$$
 
-**Keystrokes:** `0.020 [↰] [x²] 0.015 [↰] [x²] [+] [√x]`$\to \mathbf{0.0250\text{ S}} = 25.0\text{ mS}$.
+**Keystrokes:** `0.020 [↰] [x²] 0.015 [↰] [x²] [+] [√x]` $\rightarrow$ **`0.0250`**$\text{ S} = 25.0\text{ mS}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0.020 [↰] [x²]` — Square shunt conductance $G = 0.020\text{ S}$ in place ($G^2 = 0.000400$).
-2. `0.015 [↰] [x²] [+]` — Square shunt susceptance $B = 0.015\text{ S}$ ($B^2 = 0.000225$) and add quadrature terms ($0.000625$).
-3. `[√x]` — Extract square root in place to evaluate admittance magnitude $|Y| = \mathbf{0.0250\text{ S}} = 25.0\text{ mS}$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.020 [↰] [x²]` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000 \times 10^{-4}$ | Square conductance component $G^2$ |
-| 2 | `0.015 [↰] [x²] [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $6.2500 \times 10^{-4}$ | Square susceptance $B^2$ and sum orthogonal terms |
-| 3 | `[√x]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.0250$** | Extract square root for total admittance magnitude $|Y|$ (Siemens) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.020 [↰] [x²] 0.015 [↰] [x²] [+]` computes $G^2 = 4.0000 \times 10^{-4}$ and sums orthogonal susceptance $B^2 = 2.2500 \times 10^{-4}$, giving sum of squares $6.2500 \times 10^{-4}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 6.2500 \times 10^{-4})$.
+2. Striking `[√x]` extracts square root in place, evaluating total admittance magnitude $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.0250}\text{ S} = 25.0\text{ mS})$.
 
 ---
 
@@ -4435,16 +4411,9 @@ $$x = \left(2.4^{1.8}\right)^{\sqrt{3.5}}$$
 
 **Keystrokes:** `2.4 [ENTER] 1.8 [yˣ] 3.5 [√x] [yˣ]` $\rightarrow$ **`19.0703288`**
 
-**Stack State Inspection:**
-1. $2.4^{1.8} \approx 4.814234$
-2. $\sqrt{3.5} \approx 1.870829$
-3. $4.814234^{1.870829} = \mathbf{19.124694}$.
-Solved in 4 seconds!
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `2.4 [ENTER] 1.8 [yˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $4.8348$ | Base power term $2.4^{1.8}$ |
-| 2 | `3.5 [√x] [yˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | **$19.0703$** | Raise to radical exponent $\sqrt{3.5}$ for continued power pyramid |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `2.4 [ENTER] 1.8 [yˣ]` evaluates base power $2.4^{1.8} \approx 4.8348$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 4.8348)$.
+2. Striking `3.5 [√x] [yˣ]` pushes base to $Y$, takes root $\sqrt{3.5} \approx 1.8708$, and raises base to radical exponent, evaluating the power pyramid $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{19.0703})$ in four seconds.
 
 ---
 
@@ -4453,18 +4422,11 @@ Solved in 4 seconds!
 $$W = \frac{P_1 V_1}{n - 1} \left[ \left(\frac{V_1}{V_2}\right)^{n - 1} - 1 \right]$$
 Here $n - 1 = 0.32$, $V_1 / V_2 = 4.0$.
 
-**Keystrokes:** `4.0 [ENTER] 0.32 [yˣ] 1 [-] 120000 [ENTER] 0.040 [×] 0.32 [÷] [×]` $\rightarrow$ **`8,374.93739`**
+**Keystrokes:** `4.0 [ENTER] 0.32 [yˣ] 1 [-] 120000 [ENTER] 0.040 [×] 0.32 [÷] [×]` $\rightarrow$ **`8,374.93739`**$\text{ J}$.
 
-**Stack State Inspection:**
-1. $4.0^{0.32} \approx 1.558369$
-2. $1.558369 - 1 = 0.558369$
-3. $P_1 V_1 / 0.32 = 4800 / 0.32 = 15,000\text{ J}$
-4. $15000 \times 0.558369 = \mathbf{8,375.54\text{ J}} = 8.3755\text{ kJ}$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `4.0 [ENTER] 0.32 [yˣ] 1 [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.5583$ | Compression ratio expansion factor $(r_v^{n-1} - 1)$ |
-| 2 | `120000 [ENTER] 0.040 [×] 0.32 [÷] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$8374.9374$** | Scale by initial state energy $P_1 V_1 / (n - 1)$ for compression work $W$ (J) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `4.0 [ENTER] 0.32 [yˣ] 1 [-]` evaluates compression expansion factor $(4.0^{0.32} - 1) \approx 0.5583$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.5583)$.
+2. Keying `120000 [ENTER] 0.040 [×] 0.32 [÷] [×]` evaluates state energy factor $P_1 V_1 / (n - 1) = 15,000\text{ J}$ and multiplies by expansion factor, resolving polytropic compression work $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{8374.9374}\text{ J} \approx 8.375\text{ kJ})$.
 
 ---
 
@@ -4472,18 +4434,11 @@ Here $n - 1 = 0.32$, $V_1 / V_2 = 4.0$.
 **Acoustics Context:** Sound wave carrying acoustic intensity $I = 0.0035\text{ W/m}^2$ relative to reference threshold $I_0 = 1.0 \times 10^{-12}\text{ W/m}^2$:
 $$L_I = 10 \log_{10}\left(\frac{I}{I_0}\right)$$
 
-**Keystrokes:** `0.0035 [ENTER] 1 [E] 12 [+/-] [÷] [↰] [LOG] 10 [×]`$\to \mathbf{95.440680444\text{ dB SIL}}$.
+**Keystrokes:** `0.0035 [ENTER] 1 [E] 12 [+/-] [÷] [↰] [LOG] 10 [×]` $\rightarrow$ **`95.440680444`**$\text{ dB SIL}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0.0035` `[ENTER]` — Key measured acoustic sound intensity ($I = 0.0035\text{ W/m}^2$) into $Y$.
-2. `1 [E] 12 [+/-]` `[÷]` — Enter reference hearing threshold intensity ($I_0 = 1.0 \times 10^{-12}\text{ W/m}^2$) and divide; dimensionless acoustic intensity ratio ($3.50 \times 10^9$) forms in $X$.
-3. `[↰] [LOG]` — Compute base-10 logarithm in place ($\log_{10}(3.5 \times 10^9) \approx 9.5441$).
-4. `10` `[×]` — Scale by decibel power factor $10$; sound intensity level ($L_I = 95.44\text{ dB SIL}$) is determined without auxiliary registers.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.0035 [ENTER] 1 [E] 12 [+/-] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.5000 \times 10^{9}$ | Sound intensity ratio to reference $I/I_0$ |
-| 2 | `[↰] [LOG] 10 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$95.4407$** | Decibel acoustic sound intensity level $L_I$ (dB SIL) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.0035 [ENTER] 1 [E] 12 [+/-] [÷]` computes sound intensity ratio $I/I_0 = 3.5000 \times 10^9$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.5000 \times 10^9)$.
+2. Striking `[↰] [LOG] 10 [×]` evaluates common logarithm $\log_{10}(3.5 \times 10^9) \approx 9.5441$ and scales by 10, determining decibel sound level $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{95.4407}\text{ dB SIL})$ directly.
 
 ---
 
@@ -4491,18 +4446,11 @@ $$L_I = 10 \log_{10}\left(\frac{I}{I_0}\right)$$
 **Crystallography Context:** First-order diffraction ($n = 1$) from crystal lattice planes with spacing $d = 0.282\text{ nm} = 2.82 \times 10^{-10}\text{ m}$ at grazing angle $\theta = 15.8^\circ$:
 $$\lambda = 2 d \sin\theta$$
 
-**Keystrokes:** `2 [ENTER] 2.82 [E] 10 [+/-] [×] 15.8 [SIN] [×]`$\to \mathbf{1.535661E-10 \times 10^{-10}\text{ m}} = 0.1536\text{ nm}$.
+**Keystrokes:** `2 [ENTER] 2.82 [E] 10 [+/-] [×] 15.8 [SIN] [×]` $\rightarrow$ **`1.535661E-10`** $\times 10^{-10}\text{ m} = 0.1536\text{ nm}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `2` `[ENTER]` — Enter diffraction geometric path factor ($2$) into $Y$.
-2. `2.82 [E] 10 [+/-]` `[×]` — Enter crystal lattice plane spacing ($d = 2.82 \times 10^{-10}\text{ m}$) and multiply; path length factor ($5.64 \times 10^{-10}\text{ m}$) forms in $X$.
-3. `15.8` `[SIN]` — Key grazing Bragg angle ($\theta = 15.8^\circ$) and evaluate sine in place ($\sin(15.8^\circ) \approx 0.27228$); stack lift preserves path factor in $Y$.
-4. `[×]` — Multiply path factor by sine of grazing angle; diffracted X-ray wavelength ($\lambda = 1.5357 \times 10^{-10}\text{ m} = 0.1536\text{ nm}$) is evaluated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `2 [ENTER] 2.82 [E] 10 [+/-] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $5.6400 \times 10^{-10}$ | Crystal grating distance factor $2 d$ (m) |
-| 2 | `15.8 [SIN] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.5357 \times 10^{-10}$** | Multiply by glancing angle sine $\sin\theta$ for X-ray wavelength $\lambda$ (m) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `2 [ENTER] 2.82 [E] 10 [+/-] [×]` evaluates grating distance factor $2 d = 5.6400 \times 10^{-10}\text{ m}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 5.6400 \times 10^{-10})$.
+2. Striking `15.8 [SIN] [×]` pushes $2d$ to $Y$, computes $\sin(15.8^\circ) \approx 0.2723$, and multiplies, yielding X-ray diffraction wavelength $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1.5357 \times 10^{-10}}\text{ m} = 0.1536\text{ nm})$.
 
 ---
 
@@ -4510,20 +4458,12 @@ $$\lambda = 2 d \sin\theta$$
 **Nuclear Geochemistry Context:** Growth of stable radiogenic daughter atoms $D(t)$ from parent $P_0 = 1.0 \times 10^{15}\text{ atoms}$ with decay constant $\lambda = 1.42 \times 10^{-11}\text{ yr}^{-1}$ over elapsed time $t = 2.5 \times 10^9\text{ years}$:
 $$D(t) = P_0 \left(1 - e^{-\lambda t}\right)$$
 
-**Keystrokes:** `1.42 [E] 11 [+/-] [ENTER] 2.5 [E] 9 [×] [+/-] [eˣ] 1 [-] [+/-] 1 [E] 15 [×]`$\to \mathbf{3.487727E13 \times 10^{13}\text{ daughter atoms}}$.
+**Keystrokes:** `1.42 [E] 11 [+/-] [ENTER] 2.5 [E] 9 [×] [+/-] [eˣ] 1 [-] [+/-] 1 [E] 15 [×]` $\rightarrow$ **`3.487727E13`** $\times 10^{13}\text{ daughter atoms}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1.42 [E] 11 [+/-]` `[ENTER]` — Load radioactive decay constant ($\lambda = 1.42 \times 10^{-11}\text{ yr}^{-1}$) into $Y$.
-2. `2.5 [E] 9` `[×]` — Enter elapsed geologic time ($t = 2.5 \times 10^9\text{ years}$) and multiply; dimensionless decay exponent ($\lambda t = 0.03550$) forms in $X$.
-3. `[+/-]` `[eˣ]` — Negate and exponentiate in place ($e^{-\lambda t} \approx 0.96512$); parent isotope retention fraction appears in $X$.
-4. `1` `[x⇄y]` `[-]` — Enter unity, swap via *The x⇄y Denominator Flip*, and subtract; daughter accumulation fraction ($1 - e^{-\lambda t} \approx 0.03488$) occupies $X$.
-5. `1 [E] 15` `[×]` — Scale by initial parent atom count ($P_0 = 1.0 \times 10^{15}$); accumulated radiogenic daughter atoms ($D(t) = 3.4878 \times 10^{13}\text{ atoms}$) is calculated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `1.42 [E] 11 [+/-] [ENTER] 2.5 [E] 9 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0355$ | Decay exponent parameter $\lambda t$ |
-| 2 | `[+/-] [eˣ] 1 [-] [+/-]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0349$ | Exponential accumulation factor $(1 - e^{-\lambda t})$ |
-| 3 | `1 [E] 15 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$3.4877 \times 10^{13}$** | Scale by initial parent atoms $N_0$ for daughter accumulation $D$ |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1.42 [E] 11 [+/-] [ENTER] 2.5 [E] 9 [×]` computes dimensionless decay exponent $\lambda t = 0.0355$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.0355)$.
+2. Striking `[+/-] [eˣ] 1 [-] [+/-]` evaluates parent survival fraction $e^{-\lambda t} \approx 0.9651$ and inverts across unity to give daughter fraction $0.0349$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.0349)$.
+3. Striking `1 [E] 15 [×]` scales by initial parent inventory $P_0 = 10^{15}$, yielding daughter accumulation $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{3.4877 \times 10^{13}}\text{ atoms})$ without memory registers.
 
 ---
 
@@ -4533,19 +4473,9 @@ $$x = \sqrt{e^{1.4} + \ln\left(15 + \sqrt{220}\right)}$$
 
 **Keystrokes:** `220 [√x] 15 [+] [LN] 1.4 [eˣ] [+] [√x]` $\rightarrow$ **`2.7296144264`**
 
-**Stack State Inspection:**
-1. $\sqrt{220} \approx 14.832397$
-2. $\ln(29.832397) \approx 3.395616$
-3. $e^{1.4} \approx 4.055200$
-4. $\sqrt{3.395616 + 4.055200} = \sqrt{7.450816} = \mathbf{2.729618}$.
-Solved in 5 seconds with zero intermediate notes!
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `220 [√x] 15 [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $29.8324$ | Sum square root and integer $\sqrt{220} + 15$ |
-| 2 | `[LN]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.3956$ | Natural logarithm of radical sum |
-| 3 | `1.4 [eˣ] [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $7.4508$ | Add exponential term $e^{1.4}$ |
-| 4 | `[√x]` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.7296$** | Extract outer square root for nested continued fraction |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `220 [√x] 15 [+] [LN]` evaluates root $\sqrt{220} \approx 14.8324$, adds 15 ($29.8324$), and takes natural log, producing $3.3956$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.3956)$.
+2. Striking `1.4 [eˣ] [+] [√x]` evaluates exponential $e^{1.4} \approx 4.0552$, sums inner terms ($7.4508$), and extracts square root, calculating result $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2.7296})$ in five seconds.
 
 ---
 
@@ -4554,20 +4484,11 @@ Solved in 5 seconds with zero intermediate notes!
 $$P_n / B = k_B T \quad [\text{W/Hz}]$$
 Express in $\text{dBm/Hz}$ ($P_{\text{dBm}} = 10 \log_{10}(P / 10^{-3})$):
 
-**Keystrokes:** `1.380649 [E] 23 [+/-] [ENTER] 290 [×] 0.001 [÷] [↰] [LOG] 10 [×]`$\to \mathbf{-173.9751872\text{ dBm/Hz}}$.
+**Keystrokes:** `1.380649 [E] 23 [+/-] [ENTER] 290 [×] 0.001 [÷] [↰] [LOG] 10 [×]` $\rightarrow$ **`-173.9751872`**$\text{ dBm/Hz}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1.380649 [E] 23 [+/-]` `[ENTER]` — Enter Boltzmann physical constant ($k_B = 1.380649 \times 10^{-23}\text{ J/K}$) into $Y$.
-2. `290.0` `[×]` — Enter standard noise reference temperature ($T = 290.0\text{ K}$) and multiply; noise spectral power density ($P_n = 4.0039 \times 10^{-21}\text{ W/Hz}$) forms in $X$.
-3. `0.001` `[÷]` — Divide by milliwatt reference ($10^{-3}\text{ W}$); dimensionless milliwatt ratio ($4.0039 \times 10^{-18}$) condenses in $X$.
-4. `[↰] [LOG]` — Compute base-10 logarithm in place ($\log_{10}(4.0039 \times 10^{-18}) \approx -17.3975$).
-5. `10` `[×]` — Scale by decibel power multiplier $10$; thermal noise floor density ($P_{\text{dBm}} = -173.98\text{ dBm/Hz}$) is obtained without secondary registers.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `1.380649 [E] 23 [+/-] [ENTER] 290 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Thermal energy $k_B T$ at $290\text{ K}$ |
-| 2 | `0.001 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Normalize to $1\text{ mW}$ reference for dBm |
-| 3 | `[↰] [LOG] 10 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$-173.9752$** | Thermal noise power spectral density $N_0$ (dBm/Hz) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1.380649 [E] 23 [+/-] [ENTER] 290 [×] 0.001 [÷]` evaluates thermal noise power $k_B T \approx 4.0039 \times 10^{-21}\text{ W/Hz}$ and normalizes to $1\text{ mW}$ reference, leaving $4.0039 \times 10^{-18}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 4.0039 \times 10^{-18})$.
+2. Striking `[↰] [LOG] 10 [×]` takes decadic log $\log_{10}(4.0039 \times 10^{-18}) \approx -17.3975$ and multiplies by 10, resolving noise spectral density floor $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{-173.9752}\text{ dBm/Hz})$ directly.
 
 ---
 
@@ -4590,8 +4511,8 @@ Result: $P \approx \mathbf{1,027,346\text{ Pa}} \approx 1.027\text{ MPa}$.
 | Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
 |:---|:---|:---|:---|:---|:---|:---|
 | 1 | `2 [ENTER] 8.31446 [×] 320 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $5321.2544$ | Ideal kinetic energy numerator $n R T$ |
-| 2 | `0.0050 [ENTER] 2 [ENTER] 4.27 [E] 5 [+/-] [×] [-] [÷]` | $5321.2544$ | $5321.2544$ | $5321.2544$ | $1.0827 \times 10^{6}$ | Divide by free volume $(V - n b)$ for kinetic pressure term |
-| 3 | `0.364 [ENTER] 4 [×] 0.0050 [↰] [x²] [÷] [-]` | $5321.2544$ | $5321.2544$ | $5321.2544$ | **$1.0245 \times 10^{6}$** | Subtract molecular attraction term $a n^2 / V^2$ for van der Waals pressure $P$ (Pa) |
+| 2 | `0.0050 [ENTER] 2 [ENTER] 4.27 [E] 5 [+/-] [×] [-] [÷]` | $5321.2544$ | $5321.2544$ | $5321.2544$ | $1082744.1501$ | Divide by free volume $(V - n b)$ for kinetic pressure term |
+| 3 | `0.364 [ENTER] 4 [×] 0.0050 [↰] [x²] [÷] [-]` | $5321.2544$ | $5321.2544$ | $5321.2544$ | **$1024504.1501$** | Subtract molecular attraction term $a n^2 / V^2$ for van der Waals pressure $P$ (Pa) |
 
 ---
 
@@ -4625,19 +4546,11 @@ $$\delta = \frac{1}{\sqrt{\pi f \mu \sigma}}$$
 **Special Relativity Context:** Particle speed $v = 0.85 c$ ($v/c = 0.85$):
 $$\gamma = \frac{1}{\sqrt{1 - (v/c)^2}}$$
 
-**Keystrokes:** `0.85 [↰] [x²] 1 [-] [+/-] [√x] [1/x]`$\to \mathbf{1.898315}$.
+**Keystrokes:** `0.85 [↰] [x²] 1 [-] [+/-] [√x] [1/x]` $\rightarrow$ **`1.898315`**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0.85` `[↰] [x²]` — Enter velocity ratio ($v/c = 0.85$) and square in place ($0.85^2 = 0.7225$).
-2. `1` `[-]` `[+/-]` — Subtract 1.0 ($-0.2775$) and negate in place; relativistic radical core ($1 - \beta^2 = 0.2775$) forms in $X$.
-3. `[√x]` `[1/x]` — Extract square root ($0.526783$) and invert; Lorentz time dilation factor ($\gamma \approx \mathbf{1.8983}$) is produced directly.
-
-Time dilates by a factor of nearly $1.90\times$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.85 [↰] [x²] 1 [-] [+/-]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2775$ | Relativistic radicand $(1 - \beta^2)$ at $\beta = 0.85$ |
-| 2 | `[√x] [1/x]` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.8983$** | Take reciprocal square root for Lorentz time dilation factor $\gamma$ |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.85 [↰] [x²] 1 [-] [+/-]` squares velocity ratio ($0.7225$), subtracts from 1.0, and negates, forming relativistic radical core $1 - \beta^2 = 0.2775$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.2775)$.
+2. Striking `[√x] [1/x]` extracts root $\sqrt{0.2775} \approx 0.5268$ and takes reciprocal, calculating Lorentz factor $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1.8983})$—showing time dilates by $1.90\times$ without parenthesis buffering.
 
 ---
 
@@ -4645,22 +4558,11 @@ Time dilates by a factor of nearly $1.90\times$.
 **Rapid Calculation Sprint:** Solve the expression:
 $$x = \frac{\ln(4.5^3) + \log_{10}(1200)}{\sqrt[3]{18.5}}$$
 
-**Keystrokes:**
-`4.5 [LN] 3 [×] 1200 [↰] [LOG] [+] 18.5 [ENTER] 3 [↰] [ˣ√y] [÷]`
+**Keystrokes:** `4.5 [LN] 3 [×] 1200 [↰] [LOG] [+] 18.5 [ENTER] 3 [↰] [ˣ√y] [÷]` $\rightarrow$ **`2.8703315724`**
 
-**Stack State Inspection:**
-1. $\ln(4.5^3) = 3 \ln(4.5) \approx 4.512234$
-2. $\log_{10}(1200) \approx 3.079181$
-3. Sum $= 7.591415$
-4. $\sqrt[3]{18.5} \approx 2.644685$
-5. Quotient: $x = \mathbf{2.870442}$.
-Solved in 6 seconds!
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `4.5 [LN] 3 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $4.5122$ | Scale natural logarithm by exponent $3 \ln(4.5)$ |
-| 2 | `1200 [↰] [LOG] [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $7.5914$ | Add common logarithm $\log_{10}(1200)$ |
-| 3 | `18.5 [ENTER] 3 [↰] [ˣ√y] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.8703$** | Divide by cube root $\sqrt[3]{18.5}$ for chained logarithmic power tower |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `4.5 [LN] 3 [×] 1200 [↰] [LOG] [+]` computes $3 \ln(4.5) \approx 4.5122$ and adds common logarithm $\log_{10}(1200) \approx 3.0792$, forming numerator $7.5914$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 7.5914)$.
+2. Striking `18.5 [ENTER] 3 [↰] [ˣ√y] [÷]` lifts numerator to $Y$, evaluates cube root $\sqrt[3]{18.5} \approx 2.6447$, and divides, obtaining quotient $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2.8703})$ in six seconds flat.
 
 ---
 

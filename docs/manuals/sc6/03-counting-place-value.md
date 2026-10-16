@@ -503,10 +503,10 @@ In Grade 5, place value extends to the right of the decimal point (tenths and hu
 
 | Challenge Problem | Conventional Algebraic Syntax | StackCalc RPN Workflow | Algebraic Failure Mechanism | RPN Engineering Triumph |
 | :--- | :--- | :--- | :--- | :--- |
-| **Stadium Light Wattage**<br>$(30 \times 1500) + (10 \times 2000)$ | `30 [×] 1500 [+] 10 [×] 2000 [=]` | `30 [ENTER] 1500 [×] 10 [ENTER] 2000 [×] [+]` | Hierarchy confusion; parenthesis overload | Subtotals preserved on stack; zero parentheses |
-| **Decade Bridging**<br>$8 + 5 = 8 + 2 + 3$ | `8 [+] 2 [+] 3 [=]` | `8 [ENTER] 2 [+] 3 [+]` | Loss of intermediate decade landmark | Visual flash at decade $10$; smooth accumulation |
-| **Place Value Query**<br>Extract tens of $4,725$ | Re-enter number, divide by 10, truncate | `4725 [ENTER] 10 [PV]` | Destructive division destroys base number | Preserves $Y$ subject value across chained queries |
-| **Constant Counting**<br>Twos ladder cadence | `2 [+] 2 [=] [=] [=] ...` | `2 [ENTER] 2 [+] [+] [+] ...` | Flaky algebraic constant equals-key state | Deterministic stack retention on upper shelf |
+| **Stadium Light Wattage**<br>$(30 \times 1500) + (10 \times 2000)$ | `30 {{key:×}} 1500 {{key:+}} 10 {{key:×}} 2000 [=]` | `30 {{key:ENTER}} 1500 {{key:×}} 10 {{key:ENTER}} 2000 {{key:×}} {{key:+}}` | Hierarchy confusion; parenthesis overload | Subtotals preserved on stack; zero parentheses |
+| **Decade Bridging**<br>$8 + 5 = 8 + 2 + 3$ | `8 {{key:+}} 2 {{key:+}} 3 [=]` | `8 {{key:ENTER}} 2 {{key:+}} 3 {{key:+}}` | Loss of intermediate decade landmark | Visual flash at decade $10$; smooth accumulation |
+| **Place Value Query**<br>Extract tens of $4,725$ | Re-enter number, divide by 10, truncate | `4725 {{key:ENTER}} 10 {{key:PV}}` | Destructive division destroys base number | Preserves $Y$ subject value across chained queries |
+| **Constant Counting**<br>Twos ladder cadence | `2 {{key:+}} 2 [=] [=] [=] ...` | `2 {{key:ENTER}} 2 {{key:+}} {{key:+}} {{key:+}} ...` | Flaky algebraic constant equals-key state | Deterministic stack retention on upper shelf |
 
 ---
 
@@ -651,14 +651,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Ancient Bazaar Mission:** In your spice merchant stall, you arrange 5 terracotta jars of ground golden turmeric on the upper shelf in the morning. An afternoon caravan camel arrives with 3 additional jars of fragrant cinnamon. How many spice jars do you have in total to sell to travelers?
 - **Manipulative:** Frame 1 fills top row (5 jars), bottom row adds 3 jars.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_02:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_02:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `5` {{key:▦}} | 0 | 0 | 0 | 5 | Load 5 turmeric jars into Register $X$ and activate Ten-Frame Studio |
-| `3` | 0 | 0 | 5 | 3 | Stack lifts; 5 jars rise to Mezzanine $Y$, 3 cinnamon jars enter Ground $X$ |
-| {{key:+}} | 0 | 0 | 0 | 8 | Add jars together; Ten-Frame displays full top row of 5 plus 3 in bottom row ($X = 8$) |
-
+- **Stack Flow:** Tap `5 {{key:ENTER}} 3 {{key:+}}` -> (T=0, Z=0, Y=0, X=8) to fuse both spice groups into 8 on the ground floor.
 - **Diagnostic Check:** Top row full (5), bottom row has 3. Total $X = 8$.
 
 ---
@@ -671,11 +664,9 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `9` {{key:▦}} | 0 | 0 | 0 | 9 | Load 9 rolls of indigo linen into Register $X$ and open Ten-Frame Studio |
-| `1` | 0 | 0 | 9 | 1 | Stack lifts; 9 rolls rise to $Y$, key 1 silk roll into $X$ to fill empty pocket |
-| {{key:+}} | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 completely fills and flashes ($X = 10$) |
-| `3` | 0 | 0 | 10 | 3 | Stack lifts; benchmark 10 rises to $Y$, key remaining 3 silk rolls into $X$ |
-| {{key:+}} | 0 | 0 | 0 | 13 | Combine ten and three; Frame 2 holds 3 dots, giving total $X = 13$ rolls |
+| `9` {{key:ENTER}} | 0 | 0 | 9 | 9 | Load 9 rolls of indigo linen into $X$ and duplicate to Mezzanine $Y$ |
+| `1` {{key:+}} | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 completely fills and flashes ($X = 10$) |
+| `3` {{key:+}} | 0 | 0 | 0 | 13 | Combine ten and three; Frame 2 holds 3 dots, giving total $X = 13$ rolls |
 
 - **Diagnostic Check:** Frame 1 completes at 10 (flashes). Frame 2 holds 3. $X = 13$.
 
@@ -685,16 +676,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Ancient Bazaar Mission:** An olive grove caravan unloads 8 glazed clay amphorae filled with pressed olive oil and 7 stone flagons of pure rosewater. How many vessels are set out on the tasting table?
 - **Manipulative:** Frame 1 has 8 counters (2 empty pockets). Decompose 7 into $2 + 5$.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_04:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_04:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `8` {{key:▦}} | 0 | 0 | 0 | 8 | Load 8 amphorae into Register $X$ and open Ten-Frame Studio (2 empty slots in Frame 1) |
-| `2` | 0 | 0 | 8 | 2 | Stack lifts; 8 amphorae rise to $Y$, key 2 rosewater flagons into $X$ to bridge ten |
-| {{key:+}} | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 fills completely ($X = 10$) |
-| `5` | 0 | 0 | 10 | 5 | Stack lifts; 10 rises to $Y$, key remaining 5 rosewater flagons into $X$ |
-| {{key:+}} | 0 | 0 | 0 | 15 | Final addition yields 15 vessels; Frame 2 shows full top row of 5 ($X = 15$) |
-
+- **Stack Flow:** Tap `8 {{key:ENTER}} 2 {{key:+}} 5 {{key:+}}` -> (T=0, Z=0, Y=0, X=15), bridging to ten with 2 rosewater flagons before adding the remaining 5.
 - **Diagnostic Check:** $X = 15$. Frame 1 has 10; Frame 2 has a full top row of 5.
 
 ---
@@ -707,11 +689,9 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `7` {{key:▦}} | 0 | 0 | 0 | 7 | Load 7 lapis lazuli gems into Register $X$ and activate Ten-Frame Studio |
-| `3` | 0 | 0 | 7 | 3 | Stack lifts; 7 gems rise to $Y$, key 3 carnelian stones into $X$ to complete frame |
-| {{key:+}} | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 fills completely ($X = 10$) |
-| `3` | 0 | 0 | 10 | 3 | Stack lifts; 10 rises to $Y$, key remaining 3 carnelian stones into $X$ |
-| {{key:+}} | 0 | 0 | 0 | 13 | Combine ten and three; Frame 2 holds 3 dots, giving total $X = 13$ gems |
+| `7` {{key:ENTER}} | 0 | 0 | 7 | 7 | Load 7 lapis lazuli gems into $X$ and duplicate to Mezzanine $Y$ |
+| `3` {{key:+}} | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 completely fills ($X = 10$) |
+| `3` {{key:+}} | 0 | 0 | 0 | 13 | Combine ten and three; Frame 2 holds 3 dots, giving total $X = 13$ gems |
 
 - **Diagnostic Check:** $X = 13$. Frame 1 has 10; Frame 2 has 3.
 
@@ -721,14 +701,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Ancient Bazaar Mission:** A coin changer counts 16 engraved bronze coins resting across two ten-frame money trays. How many additional bronze coins are needed to fill both ten-frame trays to an even twenty coins?
 - **Manipulative:** Frame 1 is full (10). Frame 2 has 6 counters (4 empty pockets).
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_06:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_06:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `16` {{key:▦}} | 0 | 0 | 0 | 16 | Load 16 bronze coins into Register $X$ and open Ten-Frame Studio |
-| `4` | 0 | 0 | 16 | 4 | Stack lifts; 16 coins rise to $Y$, key 4 additional coins into $X$ |
-| {{key:+}} | 0 | 0 | 0 | 20 | Add coins; both ten-frame trays fill completely to an even decade ($X = 20$) |
-
+- **Stack Flow:** Tap `16 {{key:ENTER}} 4 {{key:+}}` -> (T=0, Z=0, Y=0, X=20), completely filling both ten-frame trays to an even decade.
 - **Diagnostic Check:** Both frames completely full. $X = 20$.
 
 ---
@@ -737,14 +710,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Ancient Bazaar Mission:** A fruit merchant's wicker crate holds a full harvest of 10 ripe sweet pomegranates. A traveling family purchases 4 pomegranates for their desert journey. How many pomegranates remain in the crate?
 - **Manipulative:** Full Frame 1 (10). Remove 4 counters.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_07:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_07:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `10` {{key:▦}} | 0 | 0 | 0 | 10 | Load full crate of 10 pomegranates into Register $X$ and open Ten-Frame Studio |
-| `4` | 0 | 0 | 10 | 4 | Stack lifts; 10 pomegranates rise to Mezzanine $Y$, key 4 purchased fruits into Ground $X$ |
-| {{key:-}} | 0 | 0 | 0 | 6 | Subtract 4; top row (5) plus 1 counter on bottom row remain in Frame 1 ($X = 6$) |
-
+- **Stack Flow:** Tap `10 {{key:ENTER}} 4 {{key:-}}` -> (T=0, Z=0, Y=0, X=6), leaving 6 sweet pomegranates in the harvest crate.
 - **Diagnostic Check:** Top row (5) plus 1 counter on bottom row remain. $X = 6$.
 
 ---
@@ -757,11 +723,9 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `14` {{key:▦}} | 0 | 0 | 0 | 14 | Load 14 perfume vials into Register $X$ and open Ten-Frame Studio |
-| `4` | 0 | 0 | 14 | 4 | Stack lifts; 14 vials rise to $Y$, key first decrement of 4 vials into $X$ |
-| {{key:-}} | 0 | 0 | 0 | 10 | First subtraction empties Frame 2, leaving clean benchmark ten ($X = 10$) |
-| `2` | 0 | 0 | 10 | 2 | Stack lifts; 10 vials rise to $Y$, key remaining decrement of 2 vials into $X$ |
-| {{key:-}} | 0 | 0 | 0 | 8 | Second subtraction takes 2 from Frame 1, leaving 8 vials in stock ($X = 8$) |
+| `14` {{key:ENTER}} | 0 | 0 | 14 | 14 | Load 14 perfume vials into $X$ and duplicate to Mezzanine $Y$ |
+| `4` {{key:-}} | 0 | 0 | 0 | 10 | First subtraction empties Frame 2, leaving clean benchmark ten ($X = 10$) |
+| `2` {{key:-}} | 0 | 0 | 0 | 8 | Second subtraction takes 2 from Frame 1, leaving 8 vials in stock ($X = 8$) |
 
 - **Diagnostic Check:** $X = 8$. Frame 1 has 8 counters (full top row of 5 and 3 on bottom).
 
@@ -771,16 +735,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Ancient Bazaar Mission:** At the caravan weigh station, a scale master inspects 9 burlap sacks of golden saffron threads and 8 sacks of green cardamom pods. What is the total count of spice sacks ready for the camel train?
 - **Manipulative:** Decompose 8 into $1 + 7$ to bridge ten.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_09:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_09:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `9` {{key:▦}} | 0 | 0 | 0 | 9 | Load 9 saffron sacks into Register $X$ and open Ten-Frame Studio |
-| `1` | 0 | 0 | 9 | 1 | Stack lifts; 9 sacks rise to $Y$, key 1 cardamom sack into $X$ to bridge ten |
-| {{key:+}} | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 completely fills and flashes ($X = 10$) |
-| `7` | 0 | 0 | 10 | 7 | Stack lifts; benchmark 10 rises to $Y$, key remaining 7 cardamom sacks into $X$ |
-| {{key:+}} | 0 | 0 | 0 | 17 | Combine ten and seven; Frame 2 holds 7 dots, giving total $X = 17$ sacks |
-
+- **Stack Flow:** Tap `9 {{key:ENTER}} 1 {{key:+}} 7 {{key:+}}` -> (T=0, Z=0, Y=0, X=17), completing the first frame with 1 sack and landing 7 sacks in the second frame.
 - **Diagnostic Check:** $X = 17$. Frame 1 has 10; Frame 2 has 7.
 
 ---
@@ -792,12 +747,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** Your caravan reaches the oasis trading post of Dunhuang. The master merchant asks you to tally a precious shipment of 17 bolts of shimmering damask silk using the Rekenrek Number Rack. How do you slide the beads to show 10 on the top rail and 7 on the bottom rail?
 - **Manipulative:** On your Number Rack, slide all 10 beads on Rail 1 (5 red, 5 white) to represent 1 full ten-pack. On Rail 2, slide 7 beads (5 red, 2 white). Touch both rails: $10 + 7 = 17$.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_10:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_10:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `17` {{key:▦}} | 0 | 0 | 0 | 17 | Tally 17 silk bolts and display on Number Rack (Rail 1 full, Rail 2 has 7) |
-
+- **Stack Flow:** Tap `10 {{key:ENTER}} 7 {{key:+}}` -> (T=0, Z=0, Y=0, X=17). Press `{{key:COUNT}}` to display 17 on the Number Rack (Rail 1 full with 10, Rail 2 with 7).
 - **Diagnostic Check:** Exactly 1 full wire of 10 and 7 beads on wire 2. Total $X = 17$.
 
 ---
@@ -806,14 +756,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** In the caravan storage tent, you have 12 glazed ceramic jars of rare pistachio oil already strapped to the pack saddles. A local potter delivers 5 more ceramic jars to complete the consignment. How many ceramic jars are ready for the crossing?
 - **Manipulative:** Set 12 beads on your Number Rack (10 on Rail 1, 2 red on Rail 2). Slide 5 more red beads on Rail 2 to join the 2 white beads, completing the 5-bead red cluster plus 2 white ($2 + 5 = 7$).
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_11:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_11:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `12` {{key:▦}} | 0 | 0 | 0 | 12 | Load 12 ceramic jars into Register $X$ and activate Number Rack mode |
-| `5` | 0 | 0 | 12 | 5 | Stack lifts; 12 jars rise to Mezzanine $Y$, key 5 new jars into Ground $X$ |
-| {{key:+}} | 0 | 0 | 0 | 17 | Combine jars; Rail 2 red cluster completes with 2 white beads ($X = 17$) |
-
+- **Stack Flow:** Tap `12 {{key:ENTER}} 5 {{key:+}}` -> (T=0, Z=0, Y=0, X=17), combining the ceramic jar consignments into a single total.
 - **Diagnostic Check:** Wire 2 red group completes (5) plus 2 white beads. $X = 17$.
 
 ---
@@ -822,14 +765,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** Your lead camel carries 18 bundles of dried cinnamon bark across two pannier baskets. At a desert mountain outpost, the caravan master trades 5 spice bundles for fresh spring water. How many spice bundles remain in the camel's pack?
 - **Manipulative:** Start with 18 beads active on the Number Rack (10 on Rail 1, 8 on Rail 2: 5 red and 3 white). Slide the 5 red beads on Rail 2 back to the resting side, leaving 3 white beads on Rail 2 and all 10 on Rail 1 ($10 + 3 = 13$).
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_12:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_12:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` {{key:▦}} | 0 | 0 | 0 | 18 | Load 18 spice bundles into Register $X$ and open Number Rack studio |
-| `5` | 0 | 0 | 18 | 5 | Stack lifts; 18 bundles rise to Mezzanine $Y$, key 5 traded bundles into Ground $X$ |
-| {{key:-}} | 0 | 0 | 0 | 13 | Subtract traded bundles; Rail 2 sheds 5 red beads, leaving 10 on Rail 1 and 3 on Rail 2 ($X = 13$) |
-
+- **Stack Flow:** Tap `18 {{key:ENTER}} 5 {{key:-}}` -> (T=0, Z=0, Y=0, X=13), subtracting the traded spice bundles from the pack.
 - **Diagnostic Check:** $X = 13$ (10 on Wire 1, 3 on Wire 2).
 
 ---
@@ -838,16 +774,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** A desert merchant offers 15 cast-bronze trade weights for bartering at the caravan gate. To verify the weight inventory, the caravan master asks you to decompose 15 into 1 full bundle of ten and 5 single weights using the Rekenrek.
 - **Manipulative:** Slide 10 beads across Rail 1 (5 red, 5 white) to lock in 1 full ten. On Rail 2, slide exactly the 5 red beads across. Observe: 1 full rail of ten plus 1 red cluster of five proves that $15 = 10 + 5$.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_13:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_13:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `15` — Enter 15 bronze weights into Ground Floor Register $X$ ($X = 15$).
-  2. `{{key:▦}}` — Activate the interactive Number Rack studio on the LCD display $\rightarrow \mathbf{15}$.
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` | 0 | 0 | 0 | 15 | Enter 15 bronze trade weights into Ground Floor Register $X$ |
-| {{key:▦}} | 0 | 0 | 0 | 15 | Activate Number Rack studio; Rail 1 shows 10, Rail 2 shows 5 ($X = 15$) |
-
+- **Stack Flow:** Tap `15 {{key:ENTER}} 10 {{key:-}}` -> (T=0, Z=0, Y=0, X=5), proving that 15 decomposes into 1 full ten-rail and 5 red beads.
 - **Diagnostic Check:** Wire 1 has 10; Wire 2 has exactly the 5 red beads active. Total $X = 15$.
 
 ---
@@ -861,9 +788,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `6` {{key:ENTER}} | 0 | 0 | 6 | 6 | Enter 6 left-side amphorae into $X$ and duplicate to Mezzanine $Y$ |
-| `6` | 0 | 0 | 6 | 6 | Key 6 right-side amphorae into active Register $X$ |
-| {{key:+}} | 0 | 0 | 0 | 12 | Add double quantities; $6 + 6 = 12$ amphorae forms in Register $X$ |
-| {{key:▦}} | 0 | 0 | 0 | 12 | Activate Number Rack studio; displays double groups (5 red + 5 red = 10, plus 2 white = 12) |
+| `6` {{key:+}} | 0 | 0 | 0 | 12 | Add double quantities; $6 + 6 = 12$ amphorae forms in Register $X$ |
 
 - **Diagnostic Check:** $X = 12$. 5 red on Wire 1 + 5 red on Wire 2 = 10 red beads, plus 2 white beads!
 
@@ -878,10 +803,8 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `7` {{key:ENTER}} | 0 | 0 | 7 | 7 | Load Team A's 7 silk bundles into $X$ and duplicate to Mezzanine $Y$ |
-| `7` | 0 | 0 | 7 | 7 | Key 7 silk bundles into active Register $X$ to set up double |
-| {{key:+}} | 0 | 0 | 0 | 14 | Add the known double; $7 + 7 = 14$ silk bundles forms in Register $X$ |
-| `1` | 0 | 0 | 14 | 1 | Stack lifts; subtotal 14 rises to $Y$, enter extra 1 bundle into $X$ |
-| {{key:+}} | 0 | 0 | 0 | 15 | Add extra bundle; total reaches 15 silk bundles across both teams ($X = 15$) |
+| `7` {{key:+}} | 0 | 0 | 0 | 14 | Add the known double; $7 + 7 = 14$ silk bundles forms in Register $X$ |
+| `1` {{key:+}} | 0 | 0 | 0 | 15 | Add extra bundle; total reaches 15 silk bundles across both teams ($X = 15$) |
 
 - **Diagnostic Check:** $X = 15$. Double $7 + 7 = 14$, plus 1 equals 15.
 
@@ -891,14 +814,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** A merchant's caravan crate contains 19 hand-painted ceramic spice bowls ready for market. During an afternoon trading stop at the caravanserai, buyers select and purchase 8 ceramic bowls. How many ceramic bowls remain packed in the crate?
 - **Manipulative:** Display 19 beads on your Number Rack (10 on Rail 1, 9 on Rail 2: 5 red and 4 white). Slide 8 beads on Rail 2 back to the resting position (5 red and 3 white), leaving 1 white bead on Rail 2 and all 10 on Rail 1 ($10 + 1 = 11$).
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_16:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_16:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `19` {{key:▦}} | 0 | 0 | 0 | 19 | Load 19 ceramic spice bowls into Register $X$ and activate Number Rack studio |
-| `8` | 0 | 0 | 19 | 8 | Stack lifts; 19 bowls rise to Mezzanine $Y$, key 8 purchased bowls into Ground $X$ |
-| {{key:-}} | 0 | 0 | 0 | 11 | Subtract sold bowls; Rail 2 sheds 8 beads, leaving 10 on Rail 1 and 1 on Rail 2 ($X = 11$) |
-
+- **Stack Flow:** Tap `19 {{key:ENTER}} 8 {{key:-}}` -> (T=0, Z=0, Y=0, X=11), shedding 8 beads from Rail 2 to leave 11 ceramic spice bowls.
 - **Diagnostic Check:** 10 on Wire 1, 1 on Wire 2. Total $X = 11$.
 
 ---
@@ -907,14 +823,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Silk Road Caravan Mission:** A master caravan ledger rack holds 20 bronze weight ingots across both rails (10 on Rail 1, 10 on Rail 2). To counterbalance a large trade scale for a sack of raw lapis lazuli, the scale master removes 7 bronze weights. How many bronze weights remain on the ledger rack?
 - **Manipulative:** Start with all 20 beads active on the 20-rack (both rails fully shifted left). Slide 7 beads on Rail 2 back to the right (5 white and 2 red). Count the remaining beads: Rail 1 still has 10, and Rail 2 has 3 red beads active ($10 + 3 = 13$).
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_17:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_17:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `20` {{key:▦}} | 0 | 0 | 0 | 20 | Load all 20 bronze weights into Register $X$ and activate Number Rack mode |
-| `7` | 0 | 0 | 20 | 7 | Stack lifts; full rack count 20 rises to Mezzanine $Y$, key 7 removed weights into Ground $X$ |
-| {{key:-}} | 0 | 0 | 0 | 13 | Subtract 7 weights; Rail 1 retains 10 and Rail 2 retains 3, yielding 13 remaining weights ($X = 13$) |
-
+- **Stack Flow:** Tap `20 {{key:ENTER}} 7 {{key:-}}` -> (T=0, Z=0, Y=0, X=13), subtracting 7 weights to leave 13 bronze weights on the ledger rack.
 - **Diagnostic Check:** $X = 13$. Full top rail of 10 plus 3 beads on bottom rail.
 
 ---

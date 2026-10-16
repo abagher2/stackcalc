@@ -2705,6 +2705,15 @@ In Grade 5, place value extends to the right of the decimal point (tenths and hu
 - Query Tenths ($0.1$): Type `[.] [1] [PV]` on $345.67 \longrightarrow X = \mathbf{6}$.
 - Query Hundredths ($0.01$): Type `[.] [0] [1] [PV]` on $345.67 \longrightarrow X = \mathbf{7}$.
 
+### 3.8.4 Showdown: Algebraic Reversal vs. Forward RPN Place Value
+
+| Challenge Problem | Conventional Algebraic Syntax | StackCalc RPN Workflow | Algebraic Failure Mechanism | RPN Engineering Triumph |
+| :--- | :--- | :--- | :--- | :--- |
+| **Stadium Light Wattage**<br>$(30 \times 1500) + (10 \times 2000)$ | `30 [×] 1500 [+] 10 [×] 2000 [=]` | `30 [ENTER] 1500 [×] 10 [ENTER] 2000 [×] [+]` | Hierarchy confusion; parenthesis overload | Subtotals preserved on stack; zero parentheses |
+| **Decade Bridging**<br>$8 + 5 = 8 + 2 + 3$ | `8 [+] 2 [+] 3 [=]` | `8 [ENTER] 2 [+] 3 [+]` | Loss of intermediate decade landmark | Visual flash at decade $10$; smooth accumulation |
+| **Place Value Query**<br>Extract tens of $4,725$ | Re-enter number, divide by 10, truncate | `4725 [ENTER] 10 [PV]` | Destructive division destroys base number | Preserves $Y$ subject value across chained queries |
+| **Constant Counting**<br>Twos ladder cadence | `2 [+] 2 [=] [=] [=] ...` | `2 [ENTER] 2 [+] [+] [+] ...` | Flaky algebraic constant equals-key state | Deterministic stack retention on upper shelf |
+
 ---
 
 ## 3.9 Big Numbers in Nature: Expanding Horizons
@@ -2737,12 +2746,10 @@ How many times does the heart beat in an entire year?
 Let us calculate this continuously on the SC-6 stack without writing down any scratch paper:
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [8] [0] | 0 | 0 | 0 | 80 |
-| [ENTER] | 0 | 0 | 80 | 80 |
-| [6] [0] [×] | 0 | 0 | 0 | 4800 |
-| [2] [4] [×] | 0 | 0 | 0 | 115200 |
-| [3] [6] [5] | 0 | 0 | 115200 | 365 |
-| [×] | 0 | 0 | 0 | 42048000 |
+| 80 [ENTER] | 0 | 0 | 80 | 80 |
+| 60 [×] | 0 | 0 | 0 | 4800 |
+| 24 [×] | 0 | 0 | 0 | 115200 |
+| 365 [×] | 0 | 0 | 0 | 42048000 |
 
 Now let's query the Ten-Millions place with `[PV]`:
 - Type `[ENTER] [1] [0] [0] [0] [0] [0] [0] [0] [PV]` $\longrightarrow X = \mathbf{4}$ (4 ten-millions!).
@@ -2806,7 +2813,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <strong>Classroom Script 3.3: Teen Number Reversals (14 vs 41)</strong><br>
 • <em>Teacher:</em> "Emma, read this number on the desk: $14$."<br>
 • <em>Emma:</em> "Fourteen."<br>
-• <em>Teacher:</em> "When you write it down, sometimes you write 4 first and get 41. Let's put 14 on our Rekenrek screen: `14 [▦]`."<br>
+• <em>Teacher:</em> "When you write it down, sometimes you write 4 first and get 41. Let's put 14 on our Rekenrek screen: `14 [g] [COUNT]`."<br>
 • <em>Emma:</em> "Wire 1 has 10 beads slid to the left. Wire 2 has 4 beads."<br>
 • <em>Teacher:</em> "Which wire has more beads?"<br>
 • <em>Emma:</em> "Wire 1! It has ten beads!"<br>
@@ -2850,14 +2857,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Ancient Bazaar Mission:** In your spice merchant stall, you arrange 5 terracotta jars of ground golden turmeric on the upper shelf in the morning. An afternoon caravan camel arrives with 3 additional jars of fragrant cinnamon. How many spice jars do you have in total to sell to travelers?
 - **Manipulative:** Frame 1 fills top row (5 jars), bottom row adds 3 jars.
 - **Keystrokes:** `5 [ENTER] 3 [+]` $\rightarrow$ **`8`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `5` [▦] | 0 | 0 | 0 | 5 | Load 5 turmeric jars into Register $X$ and activate Ten-Frame Studio |
-| `3` | 0 | 0 | 5 | 3 | Stack lifts; 5 jars rise to Mezzanine $Y$, 3 cinnamon jars enter Ground $X$ |
-| [+] | 0 | 0 | 0 | 8 | Add jars together; Ten-Frame displays full top row of 5 plus 3 in bottom row ($X = 8$) |
-
+- **Stack Flow:** Tap `5 [ENTER] 3 [+]` -> (T=0, Z=0, Y=0, X=8) to fuse both spice groups into 8 on the ground floor.
 - **Diagnostic Check:** Top row full (5), bottom row has 3. Total $X = 8$.
 
 ---
@@ -2870,11 +2870,9 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `9` [▦] | 0 | 0 | 0 | 9 | Load 9 rolls of indigo linen into Register $X$ and open Ten-Frame Studio |
-| `1` | 0 | 0 | 9 | 1 | Stack lifts; 9 rolls rise to $Y$, key 1 silk roll into $X$ to fill empty pocket |
-| [+] | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 completely fills and flashes ($X = 10$) |
-| `3` | 0 | 0 | 10 | 3 | Stack lifts; benchmark 10 rises to $Y$, key remaining 3 silk rolls into $X$ |
-| [+] | 0 | 0 | 0 | 13 | Combine ten and three; Frame 2 holds 3 dots, giving total $X = 13$ rolls |
+| `9` [ENTER] | 0 | 0 | 9 | 9 | Load 9 rolls of indigo linen into $X$ and duplicate to Mezzanine $Y$ |
+| `1` [+] | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 completely fills and flashes ($X = 10$) |
+| `3` [+] | 0 | 0 | 0 | 13 | Combine ten and three; Frame 2 holds 3 dots, giving total $X = 13$ rolls |
 
 - **Diagnostic Check:** Frame 1 completes at 10 (flashes). Frame 2 holds 3. $X = 13$.
 
@@ -2884,16 +2882,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Ancient Bazaar Mission:** An olive grove caravan unloads 8 glazed clay amphorae filled with pressed olive oil and 7 stone flagons of pure rosewater. How many vessels are set out on the tasting table?
 - **Manipulative:** Frame 1 has 8 counters (2 empty pockets). Decompose 7 into $2 + 5$.
 - **Keystrokes:** `8 [ENTER] 2 [+] 5 [+]` $\rightarrow$ **`15`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `8` [▦] | 0 | 0 | 0 | 8 | Load 8 amphorae into Register $X$ and open Ten-Frame Studio (2 empty slots in Frame 1) |
-| `2` | 0 | 0 | 8 | 2 | Stack lifts; 8 amphorae rise to $Y$, key 2 rosewater flagons into $X$ to bridge ten |
-| [+] | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 fills completely ($X = 10$) |
-| `5` | 0 | 0 | 10 | 5 | Stack lifts; 10 rises to $Y$, key remaining 5 rosewater flagons into $X$ |
-| [+] | 0 | 0 | 0 | 15 | Final addition yields 15 vessels; Frame 2 shows full top row of 5 ($X = 15$) |
-
+- **Stack Flow:** Tap `8 [ENTER] 2 [+] 5 [+]` -> (T=0, Z=0, Y=0, X=15), bridging to ten with 2 rosewater flagons before adding the remaining 5.
 - **Diagnostic Check:** $X = 15$. Frame 1 has 10; Frame 2 has a full top row of 5.
 
 ---
@@ -2906,11 +2895,9 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `7` [▦] | 0 | 0 | 0 | 7 | Load 7 lapis lazuli gems into Register $X$ and activate Ten-Frame Studio |
-| `3` | 0 | 0 | 7 | 3 | Stack lifts; 7 gems rise to $Y$, key 3 carnelian stones into $X$ to complete frame |
-| [+] | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 fills completely ($X = 10$) |
-| `3` | 0 | 0 | 10 | 3 | Stack lifts; 10 rises to $Y$, key remaining 3 carnelian stones into $X$ |
-| [+] | 0 | 0 | 0 | 13 | Combine ten and three; Frame 2 holds 3 dots, giving total $X = 13$ gems |
+| `7` [ENTER] | 0 | 0 | 7 | 7 | Load 7 lapis lazuli gems into $X$ and duplicate to Mezzanine $Y$ |
+| `3` [+] | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 completely fills ($X = 10$) |
+| `3` [+] | 0 | 0 | 0 | 13 | Combine ten and three; Frame 2 holds 3 dots, giving total $X = 13$ gems |
 
 - **Diagnostic Check:** $X = 13$. Frame 1 has 10; Frame 2 has 3.
 
@@ -2920,14 +2907,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Ancient Bazaar Mission:** A coin changer counts 16 engraved bronze coins resting across two ten-frame money trays. How many additional bronze coins are needed to fill both ten-frame trays to an even twenty coins?
 - **Manipulative:** Frame 1 is full (10). Frame 2 has 6 counters (4 empty pockets).
 - **Keystrokes:** `16 [ENTER] 4 [+]` $\rightarrow$ **`20`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `16` [▦] | 0 | 0 | 0 | 16 | Load 16 bronze coins into Register $X$ and open Ten-Frame Studio |
-| `4` | 0 | 0 | 16 | 4 | Stack lifts; 16 coins rise to $Y$, key 4 additional coins into $X$ |
-| [+] | 0 | 0 | 0 | 20 | Add coins; both ten-frame trays fill completely to an even decade ($X = 20$) |
-
+- **Stack Flow:** Tap `16 [ENTER] 4 [+]` -> (T=0, Z=0, Y=0, X=20), completely filling both ten-frame trays to an even decade.
 - **Diagnostic Check:** Both frames completely full. $X = 20$.
 
 ---
@@ -2936,14 +2916,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Ancient Bazaar Mission:** A fruit merchant's wicker crate holds a full harvest of 10 ripe sweet pomegranates. A traveling family purchases 4 pomegranates for their desert journey. How many pomegranates remain in the crate?
 - **Manipulative:** Full Frame 1 (10). Remove 4 counters.
 - **Keystrokes:** `10 [ENTER] 4 [-]` $\rightarrow$ **`6`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `10` [▦] | 0 | 0 | 0 | 10 | Load full crate of 10 pomegranates into Register $X$ and open Ten-Frame Studio |
-| `4` | 0 | 0 | 10 | 4 | Stack lifts; 10 pomegranates rise to Mezzanine $Y$, key 4 purchased fruits into Ground $X$ |
-| [-] | 0 | 0 | 0 | 6 | Subtract 4; top row (5) plus 1 counter on bottom row remain in Frame 1 ($X = 6$) |
-
+- **Stack Flow:** Tap `10 [ENTER] 4 [-]` -> (T=0, Z=0, Y=0, X=6), leaving 6 sweet pomegranates in the harvest crate.
 - **Diagnostic Check:** Top row (5) plus 1 counter on bottom row remain. $X = 6$.
 
 ---
@@ -2956,11 +2929,9 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `14` [▦] | 0 | 0 | 0 | 14 | Load 14 perfume vials into Register $X$ and open Ten-Frame Studio |
-| `4` | 0 | 0 | 14 | 4 | Stack lifts; 14 vials rise to $Y$, key first decrement of 4 vials into $X$ |
-| [-] | 0 | 0 | 0 | 10 | First subtraction empties Frame 2, leaving clean benchmark ten ($X = 10$) |
-| `2` | 0 | 0 | 10 | 2 | Stack lifts; 10 vials rise to $Y$, key remaining decrement of 2 vials into $X$ |
-| [-] | 0 | 0 | 0 | 8 | Second subtraction takes 2 from Frame 1, leaving 8 vials in stock ($X = 8$) |
+| `14` [ENTER] | 0 | 0 | 14 | 14 | Load 14 perfume vials into $X$ and duplicate to Mezzanine $Y$ |
+| `4` [-] | 0 | 0 | 0 | 10 | First subtraction empties Frame 2, leaving clean benchmark ten ($X = 10$) |
+| `2` [-] | 0 | 0 | 0 | 8 | Second subtraction takes 2 from Frame 1, leaving 8 vials in stock ($X = 8$) |
 
 - **Diagnostic Check:** $X = 8$. Frame 1 has 8 counters (full top row of 5 and 3 on bottom).
 
@@ -2970,16 +2941,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Ancient Bazaar Mission:** At the caravan weigh station, a scale master inspects 9 burlap sacks of golden saffron threads and 8 sacks of green cardamom pods. What is the total count of spice sacks ready for the camel train?
 - **Manipulative:** Decompose 8 into $1 + 7$ to bridge ten.
 - **Keystrokes:** `9 [ENTER] 1 [+] 7 [+]` $\rightarrow$ **`17`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `9` [▦] | 0 | 0 | 0 | 9 | Load 9 saffron sacks into Register $X$ and open Ten-Frame Studio |
-| `1` | 0 | 0 | 9 | 1 | Stack lifts; 9 sacks rise to $Y$, key 1 cardamom sack into $X$ to bridge ten |
-| [+] | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 completely fills and flashes ($X = 10$) |
-| `7` | 0 | 0 | 10 | 7 | Stack lifts; benchmark 10 rises to $Y$, key remaining 7 cardamom sacks into $X$ |
-| [+] | 0 | 0 | 0 | 17 | Combine ten and seven; Frame 2 holds 7 dots, giving total $X = 17$ sacks |
-
+- **Stack Flow:** Tap `9 [ENTER] 1 [+] 7 [+]` -> (T=0, Z=0, Y=0, X=17), completing the first frame with 1 sack and landing 7 sacks in the second frame.
 - **Diagnostic Check:** $X = 17$. Frame 1 has 10; Frame 2 has 7.
 
 ---

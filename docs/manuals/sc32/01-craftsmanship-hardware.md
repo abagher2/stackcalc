@@ -462,10 +462,10 @@ $$Q_{\text{daily}} = \sum (I_i \cdot t_i)$$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `18.2` `{{key:ENTER}}` `0.5` `{{key:×}}` | $0.0000$ | $0.0000$ | $18.2000$ | $9.1000$ | Active calculation: $9.100\text{ mAh}$ |
-| `4.8` `{{key:ENTER}}` `1.5` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $9.1000$ | $16.3000$ | Add idle typing ($7.200\text{ mAh}$) |
-| `0.85` `{{key:ENTER}}` `2.0` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $16.3000$ | $18.0000$ | Add standby pause ($1.700\text{ mAh}$) |
-| `0.0118` `{{key:ENTER}}` `20` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $18.0000$ | $18.2360$ | Total daily drain: $18.236\text{ mAh/day}$ |
+| `18.2` `{{key:ENTER}}` `0.5` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $9.1000$ | Active calculation: $9.100\text{ mAh}$ |
+| `4.8` `{{key:ENTER}}` `1.5` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $0.0000$ | $16.3000$ | Add idle typing ($7.200\text{ mAh}$) |
+| `0.85` `{{key:ENTER}}` `2.0` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Add standby pause ($1.700\text{ mAh}$) |
+| `0.0118` `{{key:ENTER}}` `20` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $0.0000$ | $18.2360$ | Total daily drain: $18.236\text{ mAh/day}$ |
 | `225` `{{key:x⇄y}}` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12.3382$** | Expected battery life: **$12.34\text{ days}$** continuous heavy school use |
 
 > **Homeschooler Diagnostic Checkpoint:**
@@ -531,7 +531,7 @@ $$T_{\text{frame}} = \frac{(9 + 1056) \times 8\text{ bits}}{8.0 \times 10^6\text
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `1065` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $1065.0000$ | $1065.0000$ | Frame payload: 9 command + 1056 data bytes |
-| `8` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8,520.0000$ | Serialized bit stream length |
+| `8` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8520.0000$ | Serialized bit stream length |
 | `8 {{key:E}} 6` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.001065$ | Clock transmission duration in seconds |
 | `1000` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0650$** | Frame refresh period $T_{\text{frame}}$ in milliseconds |
 
@@ -556,9 +556,9 @@ where $2166136261 \oplus 77 = 2166136200$.
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `2166136200` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.1661 \times 10^9$ | $2.1661 \times 10^9$ | Load XOR-accumulated hash state |
+| `2166136200` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.1661 \times 10^{9}$ | $2.1661 \times 10^{9}$ | Load XOR-accumulated hash state |
 | `16777619` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6343 \times 10^{16}$ | Multiply by 32-bit FNV prime |
-| `4294967296` `{{key:÷R}}` | $0.0000$ | $0.0000$ | $8,461,672.00$ | **$1,489,615,688.00$** | Divide with remainder: $Y=\text{quotient}, X=\text{wrapped hash}$ |
+| `4294967296` `{{key:÷R}}` | $0.0000$ | $0.0000$ | $3.3562 \times 10^{9}$ | **$8461672.00$** | Divide with remainder: $Y=\text{quotient}, X=\text{wrapped hash}$ |
 
 **Step-by-Step RPN Reasoning & Stack Logic:****
 1. `2166136200` `{{key:ENTER}}` — Arm the operational stack with the XOR-accumulated hash state ($2,166,136,200$).
@@ -681,7 +681,7 @@ $$V(t) = V_{\text{dd}} \left(1 - e^{-t/RC}\right) \implies t = - R C \ln\left(1 
 | `2.10` `{{key:ENTER}}` `3.30` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6364$ | Normalized threshold $V_{\text{th}} / V_{\text{dd}}$ |
 | `{{key:+/-}}` `1` `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3636$ | Uncharged voltage headroom ($1 - V_{\text{th}}/V_{\text{dd}}$) |
 | `{{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.0116$ | Natural logarithm of voltage headroom |
-| `100000` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $-1.0116$ | $100,000.00$ | Pull-up resistance $R = 100\text{ k}\Omega$ |
+| `100000` `{{key:ENTER}}` | $0.0000$ | $-1.0116$ | $100000.0000$ | $100000.00$ | Pull-up resistance $R = 100\text{ k}\Omega$ |
 | `1 {{key:E}} 7 {{key:+/-}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $-1.0116$ | $0.0100$ | Circuit time constant $RC = 0.01\text{ s}$ |
 | `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-0.010116$ | Negative elapsed delay in seconds |
 | `{{key:+/-}}` `1000` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$10.1160$** | POR reset lockout time in milliseconds |
@@ -737,10 +737,10 @@ $$t_{\text{years}} = \frac{2 \times 100,000}{45 \times 365.25}$$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `200000` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $200,000.00$ | $200,000.00$ | Total dual-slot endurance cycles |
-| `45` `{{key:ENTER}}` | $0.0000$ | $200,000.00$ | $45.0000$ | $45.0000$ | Daily edit transactions |
-| `365.25` `{{key:×}}` | $0.0000$ | $0.0000$ | $200,000.00$ | $16,436.25$ | Annual sector write cycles |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12.1683$** | Guaranteed flash endurance in years |
+| `200000` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $200000.00$ | $200000.00$ | Total dual-slot endurance cycles |
+| `45` `{{key:ENTER}}` | $0.0000$ | $200000.00$ | $45.0000$ | $45.0000$ | Daily edit transactions |
+| `365.25` `{{key:×}}` | $0.0000$ | $0.0000$ | $200000.00$ | $16436.25$ | Annual sector write cycles |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12.1682$** | Guaranteed flash endurance in years |
 
 **Step-by-Step RPN Reasoning & Stack Logic:****
 1. `200000` `{{key:ENTER}}` — Prime the stack with total ping-pong cycle capacity ($2 \times 100,000 = 200,000\text{ cycles}$).
@@ -763,13 +763,13 @@ $$I = \frac{b h^3}{12}, \quad \delta = \frac{F L^3}{48 E I}$$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` `{{key:ENTER}}` `2.5` `{{key:ENTER}}` `3` `{{key:yˣ}}` | $0.0000$ | $15.0000$ | $0.0000$ | $15.6250$ | Thickness cubed $h^3 = 2.5^3$ |
-| `{{key:×}}` `12` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $19.5313$ | Moment of inertia $I = bh^3/12$ in mm$^4$ |
-| `3.92` `{{key:ENTER}}` `60` `{{key:ENTER}}` `3` `{{key:yˣ}}` | $0.0000$ | $19.5313$ | $3.9200$ | $216,000.00$ | Span cubed $L^3 = 60^3$ |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $19.5313$ | $846,720.00$ | Bending load numerator $F L^3$ |
-| `48` `{{key:ENTER}}` `3500` `{{key:×}}` | $0.0000$ | $19.5313$ | $846,720.00$ | $168,000.00$ | Modulus factor $48 E$ |
-| `{{key:R↓}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $846,720.00$ | $3,281,250.00$ | Flexural rigidity $48 E I$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.2580$** | Center beam flexure $\delta$ in mm |
+| `15` `{{key:ENTER}}` `2.5` `{{key:ENTER}}` `3` `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $15.0000$ | $15.6250$ | Thickness cubed $h^3 = 2.5^3$ |
+| `{{key:×}}` `12` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $19.5312$ | Moment of inertia $I = bh^3/12$ in mm$^4$ |
+| `3.92` `{{key:ENTER}}` `60` `{{key:ENTER}}` `3` `{{key:yˣ}}` | $19.5312$ | $19.5312$ | $3.9200$ | $216000.00$ | Span cubed $L^3 = 60^3$ |
+| `{{key:×}}` | $19.5312$ | $19.5312$ | $19.5312$ | $846720.00$ | Bending load numerator $F L^3$ |
+| `48` `{{key:ENTER}}` `3500` `{{key:×}}` | $19.5312$ | $19.5312$ | $846720.00$ | $168000.00$ | Modulus factor $48 E$ |
+| `{{key:R↓}}` `{{key:×}}` | $168000.0000$ | $168000.0000$ | $19.53$ | $1.6538 \times 10^{7}$ | Flexural rigidity $48 E I$ |
+| `{{key:÷}}` | $168000.0000$ | $168000.0000$ | $168000.0000$ | **$1.1810 \times 10^{-6}$** | Center beam flexure $\delta$ in mm |
 
 **Step-by-Step RPN Reasoning & Stack Logic:****
 1. `15` `{{key:ENTER}}` — Enter faceplate bridge width ($b = 15.0\text{ mm}$) and press `{{key:ENTER}}` to begin beam cross-section calculations.
@@ -932,7 +932,7 @@ $$E = V \cdot I \cdot t$$
 | `3.0` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $3.0000$ | $3.0000$ | Battery terminal voltage $V = 3.0\text{ V}$ |
 | `11.8 {{key:E}} 6 {{key:+/-}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.5400 \times 10^{-5}$ | Quiescent sleep power dissipation in Watts |
 | `13140` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.4652$ | Accumulated shelf energy in Watt-hours |
-| `3600` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1,674.5616$** | Total 18-month energy consumed in Joules |
+| `3600` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1674.5616$** | Total 18-month energy consumed in Joules |
 
 **Step-by-Step RPN Reasoning & Stack Logic:****
 1. `3.0` `{{key:ENTER}}` — Load nominal coin-cell terminal voltage ($V = 3.0\text{ V}$) onto the stack.
@@ -956,7 +956,7 @@ $$t_{\text{lock}} \approx \frac{4.6}{\zeta \omega_n}$$
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `4.6` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $4.6000$ | $4.6000$ | Four-time-constant settling factor |
 | `0.707` `{{key:ENTER}}` | $0.0000$ | $4.6000$ | $0.7070$ | $0.7070$ | Damping ratio $\zeta = 0.707$ |
-| `2.40 {{key:E}} 6` `{{key:×}}` | $0.0000$ | $0.0000$ | $4.6000$ | $1.6968 \times 10^6$ | Denominator product $\zeta \omega_n$ |
+| `2.40 {{key:E}} 6` `{{key:×}}` | $0.0000$ | $0.0000$ | $4.6000$ | $1696800.0000$ | Denominator product $\zeta \omega_n$ |
 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.7110 \times 10^{-6}$ | Settling time in seconds |
 | `1 {{key:E}} 6` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.7110$** | Phase lock time $t_{\text{lock}}$ in microseconds |
 
@@ -979,8 +979,8 @@ $$N_f = \frac{C}{(\Delta T)^m}$$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `55` `{{key:ENTER}}` `2.2` `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6,742.1465$ | Thermal swing power $(\Delta T)^{2.2}$ |
-| `1.8 {{key:E}} 7` | $0.0000$ | $0.0000$ | $6,742.1465$ | $1.8000 \times 10^7$ | SAC305 fatigue coefficient $C$ |
+| `55` `{{key:ENTER}}` `2.2` `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6742.1423$ | Thermal swing power $(\Delta T)^{2.2}$ |
+| `1.8 {{key:E}} 7` | $0.0000$ | $0.0000$ | $6742.1423$ | $1.8000 \times 10^{7}$ | SAC305 fatigue coefficient $C$ |
 | `{{key:x⇄y}}` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2669.7745$** | Thermal shock endurance cycles $N_f$ |
 
 **Step-by-Step RPN Reasoning & Stack Logic:****
@@ -1024,8 +1024,8 @@ Because Schottky diodes are placed in series with every keycap in the SC-32, the
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `3.3` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $3.3000$ | $3.3000$ | Logic supply rail $V_{\text{cc}} = 3.3\text{ V}$ in $Y$ |
-| `10000` | $0.0000$ | $0.0000$ | $3.3000$ | $10,000.00$ | Row pull-up resistance $R_{\text{pu}} = 10\text{ k}\Omega$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.00033$** | Sneak path current in Amperes ($0.33\text{ mA}$) |
+| `10000` | $0.0000$ | $0.0000$ | $3.3000$ | $10000.00$ | Row pull-up resistance $R_{\text{pu}} = 10\text{ k}\Omega$ |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$3.3000 \times 10^{-4}$** | Sneak path current in Amperes ($0.33\text{ mA}$) |
 
 **Step-by-Step RPN Reasoning & Stack Logic:****
 1. `3.3` `{{key:ENTER}}` — Load logic supply voltage ($V_{\text{cc}} = 3.3\text{ V}$) into Register $Y$.
@@ -1043,7 +1043,7 @@ $$\text{Resolution} = \frac{V_{\text{LSB}}}{0.0060\text{ V/lux}} = \frac{0.80566
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `3.3` `{{key:ENTER}}` `4096` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0008057$ | Quantization voltage step $V_{\text{LSB}} \approx 0.8057\text{ mV}$ |
+| `3.3` `{{key:ENTER}}` `4096` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.0566 \times 10^{-4}$ | Quantization voltage step $V_{\text{LSB}} \approx 0.8057\text{ mV}$ |
 | `0.006` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.1343$** | Ambient lux measurement resolution in lux/count |
 
 **Step-by-Step RPN Reasoning & Stack Logic:****
