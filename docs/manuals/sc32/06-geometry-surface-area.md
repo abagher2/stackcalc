@@ -289,12 +289,7 @@ $$A = \pi (R^2 - r^2) = \pi (85^2 - 50^2) = \pi (7225 - 2500) = 4725\pi \approx 
 
 **Keystrokes:** `{{res:sc32_06_geometry_surface_area_seq_01:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_01:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `85 {{keycap:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7225.0000$ | $R^2$ evaluated |
-| 2 | `50 {{keycap:x²}}` | $0.0000$ | $0.0000$ | $7225.0000$ | $2500.0000$ | $r^2$ evaluated |
-| 3 | `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4725.0000$ | $R^2 - r^2$ |
-| 4 | `{{keycap:π}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$14844.025289$** | Annulus Area in mm² |
+Compute the squared outer radius $R^2 = 7225$ with `85 {{keycap:x²}}`, subtract inner bore $r^2 = 2500$ via `50 {{keycap:x²}} {{key:-}}`, leaving differential area factor $4725.0$ in Register $X$. Scaling by circle constant `{{keycap:π}} {{key:×}}` delivers the annular gasket face area, bringing the stack to $(T:0, Z:0, Y:0, X:14844.0253)$.
 
 Result: **$14,844.03\text{ mm}^2$** ($148.44\text{ cm}^2$).
 
@@ -306,11 +301,7 @@ $$A = 2 (1 + \sqrt{2}) s^2 \approx 4.828427 \times 65^2 = 4.828427 \times 4225 =
 
 **Keystrokes:** `{{res:sc32_06_geometry_surface_area_seq_02:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_02:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2 {{key:√x}} 1 {{key:+}} 2 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.828427$ | $2(1 + \sqrt{2})$ factor |
-| 2 | `65 {{keycap:x²}}` | $0.0000$ | $0.0000$ | $4.828427$ | $4225.0000$ | $s^2$ evaluated |
-| 3 | `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$20400.104684$** | Octagon Area in mm² |
+Form the regular octagonal geometry coefficient $2(1 + \sqrt{2}) \approx 4.828427$ directly on the stack via `2 {{key:√x}} 1 {{key:+}} 2 {{key:×}}`. Then square facet edge length $s = 65\text{ mm}$ via `65 {{keycap:x²}}` and evaluate the product with `{{key:×}}`, establishing total sheet metal enclosure area at $(T:0, Z:0, Y:0, X:20400.1047)$.
 
 Result: **$20,400.10\text{ mm}^2$**.
 
@@ -324,11 +315,7 @@ Result: **$20,400.10\text{ mm}^2$**.
 
 **Keystrokes (Area):** `{{res:sc32_06_geometry_surface_area_seq_03:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_03:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `250 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $250.0000$ | $250.0000$ | Semimajor axis $a$ pushed |
-| 2 | `150 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $37500.0000$ | Product $a \times b$ |
-| 3 | `{{keycap:π}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$117809.724510$** | Area $A = \pi a b$ in mm² |
+Push semimajor axis $a = 250$ via `250 {{key:ENTER}}`, multiply by semiminor axis $b = 150$ via `150 {{key:×}}` to obtain planar product $37,500.0$, and apply `{{keycap:π}} {{key:×}}` to resolve exact manway opening area at $(T:0, Z:0, Y:0, X:117809.7245)$.
 
 Result: **$117,809.72\text{ mm}^2$** ($1,178.10\text{ cm}^2$).
 
@@ -340,12 +327,7 @@ $$V = \frac{1}{3} \pi h (R^2 + R r + r^2) = \frac{2.5\pi}{3} (1.8^2 + 1.8(0.4) +
 
 **Keystrokes:** `{{res:sc32_06_geometry_surface_area_seq_04:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_04:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1.8 {{keycap:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.2400$ | $R^2$ |
-| 2 | `1.8 {{key:ENTER}} 0.4 {{key:×}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.9600$ | $R^2 + Rr$ |
-| 3 | `0.4 {{keycap:x²}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.1200$ | $R^2 + Rr + r^2$ |
-| 4 | `{{keycap:π}} {{key:×}} 2.5 {{key:×}} 3 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$10.786135$** | Frustum volume in m³ |
+Evaluate upper radius squared $R^2 = 3.24$ with `1.8 {{keycap:x²}}`, accumulate cross-product $R \cdot r = 0.72$ via `1.8 {{key:ENTER}} 0.4 {{key:×}} {{key:+}}`, and add lower base squared $r^2 = 0.16$ via `0.4 {{keycap:x²}} {{key:+}}` for sum $4.12$. Finally, multiply by height and conical scale factor via `{{keycap:π}} {{key:×}} 2.5 {{key:×}} 3 {{key:÷}}`, leaving frustum storage volume at $(T:0, Z:0, Y:0, X:10.7861)$.
 
 Result: **$10.7861\text{ m}^3$** ($10,786.1\text{ liters}$).
 
@@ -358,19 +340,13 @@ Result: **$10.7861\text{ m}^3$** ($10,786.1\text{ liters}$).
 
 **Keystrokes (Volume):** `{{res:sc32_06_geometry_surface_area_seq_05:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_05:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{keycap:π}} {{keycap:x²}} 2 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $19.739209$ | $2\pi^2$ evaluated |
-| 2 | `45 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $888.264396$ | $2\pi^2 R$ |
-| 3 | `3.5 {{keycap:x²}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$10880.887208$** | Torus Volume $V$ in mm³ |
+Evaluate $2\pi^2$ via `{{keycap:π}} {{keycap:x²}} 2 {{key:×}}`, scale by major centerline radius $R = 45\text{ mm}$ via `45 {{key:×}}`, and multiply by cross-sectional radius squared $r^2 = 3.5^2$ via `3.5 {{keycap:x²}} {{key:×}}`, establishing torus body volume at $(T:0, Z:0, Y:0, X:10880.8872)$.
 
 **Keystrokes (Surface Area):** `{{res:sc32_06_geometry_surface_area_seq_06:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_06:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{keycap:π}} {{keycap:x²}} 4 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $39.478418$ | $4\pi^2$ evaluated |
-| 2 | `45 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1776.528792$ | $4\pi^2 R$ with $R = 45\text{ mm}$ |
-| 3 | `3.5 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$6217.850773$** | Torus Surface Area $A = 4\pi^2 R r$ in mm² |
+Compute the $4\pi^2$ envelope constant via `{{keycap:π}} {{keycap:x²}} 4 {{key:×}}`, then chain major and minor radii via `45 {{key:×}} 3.5 {{key:×}}` to yield total contact surface area at $(T:0, Z:0, Y:0, X:6217.8508)$.
+
+Result: **$V = 10,880.89\text{ mm}^3$**, **$A = 6,217.85\text{ mm}^2$**.
 
 ---
 
@@ -380,11 +356,7 @@ $$V = \frac{1}{3} \pi h^2 (3R - h) = \frac{\pi (1.5^2)}{3} (3(4.0) - 1.5) = \fra
 
 **Keystrokes:** `{{res:sc32_06_geometry_surface_area_seq_07:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_07:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `4 {{key:ENTER}} 3 {{key:×}} 1.5 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $10.5000$ | $3R - h$ term |
-| 2 | `1.5 {{keycap:x²}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $23.6250$ | $h^2(3R - h)$ |
-| 3 | `{{keycap:π}} {{key:×}} 3 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$24.740042$** | Liquid volume in m³ |
+Evaluate diameter difference factor $(3R - h) = 10.5$ via `4 {{key:ENTER}} 3 {{key:×}} 1.5 {{key:-}}`. Multiply by depth squared $h^2 = 2.25$ via `1.5 {{keycap:x²}} {{key:×}}`, and scale by spherical sector factor `{{keycap:π}} {{key:×}} 3 {{key:÷}}`, resolving liquid charge volume at $(T:0, Z:0, Y:0, X:24.7400)$.
 
 Result: **$24.7400\text{ m}^3$** ($24,740.0\text{ liters}$).
 
@@ -397,13 +369,7 @@ $$V = \frac{h}{3} (A_1 + A_2 + \sqrt{A_1 A_2}) = \frac{4.5}{3} (10.24 + 3.24 + \
 
 **Keystrokes:** `{{res:sc32_06_geometry_surface_area_seq_08:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_08:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `3.2 {{keycap:x²}} {{key:STO}} 1` | $0.0000$ | $0.0000$ | $0.0000$ | $10.2400$ | Base 1 area stored in Reg 1 |
-| 2 | `1.8 {{keycap:x²}} {{key:STO}} 2` | $0.0000$ | $0.0000$ | $10.2400$ | $3.2400$ | Base 2 area stored in Reg 2 |
-| 3 | `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $13.4800$ | Sum $A_1 + A_2$ |
-| 4 | `{{key:RCL}} 1 {{key:RCL}} 2 {{key:×}} {{key:√x}}` | $0.0000$ | $0.0000$ | $13.4800$ | $5.7600$ | Geometric mean $\sqrt{A_1 A_2}$ |
-| 5 | `{{key:+}} 4.5 {{key:×}} 3 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$28.860000$** | Pyramidal frustum volume $V$ |
+Store lower base $A_1 = 10.24$ into Register 1 via `3.2 {{keycap:x²}} {{key:STO}} 1`, and upper base $A_2 = 3.24$ into Register 2 via `1.8 {{keycap:x²}} {{key:STO}} 2`. Add them via `{{key:+}}` for sum $13.48$. Compute geometric mean $\sqrt{A_1 A_2} = 5.76$ via `{{key:RCL}} 1 {{key:RCL}} 2 {{key:×}} {{key:√x}}`, sum with base areas via `{{key:+}}`, and multiply by $h/3$ via `4.5 {{key:×}} 3 {{key:÷}}`, yielding pedestal volume at $(T:0, Z:0, Y:0, X:28.8600)$.
 
 Result: **$28.8600\text{ m}^3$**.
 
@@ -416,11 +382,7 @@ Result: **$28.8600\text{ m}^3$**.
 
 **Keystrokes (Volume):** `{{res:sc32_06_geometry_surface_area_seq_09:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_09:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `5 {{key:√x}} 3 {{key:+}} 5 {{key:×}} 12 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.181695$ | Volume coefficient evaluated |
-| 2 | `18 {{key:ENTER}} 3 {{key:yˣ}}` | $0.0000$ | $0.0000$ | $2.181695$ | $5832.0000$ | Edge cubed $a^3$ |
-| 3 | `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12713.409324$** | Icosahedron Volume in mm³ |
+Evaluate icosahedral volume factor $\frac{5(3+\sqrt{5})}{12} \approx 2.181695$ via `5 {{key:√x}} 3 {{key:+}} 5 {{key:×}} 12 {{key:÷}}`. Cube die edge $a = 18\text{ mm}$ via `18 {{key:ENTER}} 3 {{key:yˣ}}` and multiply via `{{key:×}}`, arriving at total polyhedron volume at $(T:0, Z:0, Y:0, X:12713.4093)$.
 
 Result: **$V = 12,713.41\text{ mm}^3$**, **$A = 2,805.92\text{ mm}^2$**.
 
@@ -432,11 +394,7 @@ $$V = \frac{15 + 7\sqrt{5}}{4} a^3 \approx \frac{15 + 15.652476}{4} (1728) = 7.6
 
 **Keystrokes:** `{{res:sc32_06_geometry_surface_area_seq_10:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_10:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `5 {{key:√x}} 7 {{key:×}} 15 {{key:+}} 4 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7.663119$ | Volume coefficient evaluated |
-| 2 | `12 {{key:ENTER}} 3 {{key:yˣ}}` | $0.0000$ | $0.0000$ | $7.663119$ | $1728.0000$ | $a^3 = 12^3$ |
-| 3 | `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$13241.869389$** | Dodecahedron Volume in mm³ |
+Compute the dodecahedral volume constant $\frac{15+7\sqrt{5}}{4} \approx 7.663119$ via `5 {{key:√x}} 7 {{key:×}} 15 {{key:+}} 4 {{key:÷}}`. Cube facet edge $a = 12\text{ mm}$ via `12 {{key:ENTER}} 3 {{key:yˣ}}` and multiply with `{{key:×}}`, yielding $(T:0, Z:0, Y:0, X:13241.8694)$.
 
 Result: **$13,241.87\text{ mm}^3$**.
 
@@ -450,11 +408,7 @@ Result: **$13,241.87\text{ mm}^3$**.
 
 **Keystrokes (Volume):** `{{res:sc32_06_geometry_surface_area_seq_11:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_11:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2 {{key:√x}} 12 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.117851$ | Coefficient $\sqrt{2}/12$ |
-| 2 | `50 {{key:ENTER}} 3 {{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.117851$ | $125000.0000$ | $a^3 = 50^3$ |
-| 3 | `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$14731.391275$** | Tetrahedron Volume in mm³ |
+Evaluate coefficient $\sqrt{2}/12 \approx 0.117851$ via `2 {{key:√x}} 12 {{key:÷}}`. Cube edge length $a = 50\text{ mm}$ via `50 {{key:ENTER}} 3 {{key:yˣ}}` for $125,000.0$, and multiply via `{{key:×}}` to resolve tetrahedron volume at $(T:0, Z:0, Y:0, X:14731.3913)$.
 
 Result: **$h = 40.82\text{ mm}$**, **$A = 4,330.13\text{ mm}^2$**, **$V = 14,731.39\text{ mm}^3$**.
 
@@ -500,10 +454,10 @@ Accumulate all 4 elements via `{{key:Σ+}}` $\implies$ **Total Surface Area = $7
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{key:CLΣ}} 16 {{key:ENTER}} 100 {{key:×}} 35 {{key:×}} {{key:Σ+}}` | $0.0000$ | $0.0000$ | $1600.0000$ | $1.0000$ | 16 fin sides ($56,000.0\text{ mm}^2$) accumulated ($n=1$) |
-| 2 | `8 {{key:ENTER}} 100 {{key:×}} 2 {{key:×}} {{key:Σ+}}` | $0.0000$ | $0.0000$ | $800.0000$ | $2.0000$ | 8 fin tips ($1,600.0\text{ mm}^2$) accumulated ($n=2$) |
-| 3 | `100 {{key:ENTER}} 100 {{key:×}} 1600 {{key:-}} {{key:Σ+}}` | $0.0000$ | $0.0000$ | $100.0000$ | $3.0000$ | Base exposed top ($8,400.0\text{ mm}^2$) accumulated ($n=3$) |
-| 4 | `100 {{key:ENTER}} 100 {{key:×}} {{key:Σ+}}` | $0.0000$ | $0.0000$ | $100.0000$ | $4.0000$ | Base flat bottom ($10,000.0\text{ mm}^2$) accumulated ($n=4$) |
+| 1 | `{{key:CLΣ}} 16 {{key:ENTER}} 100 {{key:×}} 35 {{key:×}} {{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | 16 fin sides ($56,000.0\text{ mm}^2$) accumulated ($n=1$) |
+| 2 | `8 {{key:ENTER}} 100 {{key:×}} 2 {{key:×}} {{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | 8 fin tips ($1,600.0\text{ mm}^2$) accumulated ($n=2$) |
+| 3 | `100 {{key:ENTER}} 100 {{key:×}} 1600 {{key:-}} {{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.0000$ | Base exposed top ($8,400.0\text{ mm}^2$) accumulated ($n=3$) |
+| 4 | `100 {{key:ENTER}} 100 {{key:×}} {{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Base flat bottom ($10,000.0\text{ mm}^2$) accumulated ($n=4$) |
 | 5 | `{{key:SUMS}}` | $0.0000$ | $0.0000$ | $4.0000$ | **$76000.0000$** | Recall total heat sink surface area $\Sigma x$ |
 
 ---

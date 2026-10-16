@@ -842,26 +842,13 @@ Demonstrates why all internal solder joints and SMD inductors are epoxy underfil
 **Energetics Context:** In deep sleep ($I = 11.8\,\mu\text{A}$ at $V = 3.0\text{ V}$), find total energy consumed in Joules over an 18-month shelf storage ($547.5\text{ days} = 13,140\text{ hours}$):
 $$E = V \cdot I \cdot t$$
 
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_19:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_19:value}}\text{ Joules}}$.
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_19:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_19:value}}`**$\text{ Joules}$.
 
 > **Named RPN Stack Idiom: *The Constant-in-T Pipeline*** — Park battery potential in the stack to stream current and time across months, accumulating total dissipated Joules without scratchpad storage {{cite:horowitz2015}}.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3.0` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $3.0000$ | $3.0000$ | Battery terminal voltage $V = 3.0\text{ V}$ |
-| `11.8 {{key:E}} 6 {{key:+/-}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.5400 \times 10^{-5}$ | Quiescent sleep power dissipation in Watts |
-| `13140` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.4652$ | Accumulated shelf energy in Watt-hours |
-| `3600` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1674.5616$** | Total 18-month energy consumed in Joules |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `3.0` `{{key:ENTER}}` — Load nominal coin-cell terminal voltage ($V = 3.0\text{ V}$) onto the stack.
-2. `1.18 {{key:E}} 5 {{key:+/-}}` `{{key:×}}` — Multiply by deep sleep quiescent current ($I = 1.18 \times 10^{-5}\text{ A}$); continuous sleep power dissipation ($P = 35.40\,\mu\text{W}$) occupies $X$.
-3. `13140` `{{key:×}}` — Scale by 18-month storage duration in hours ($13,140\text{ hours}$); accumulated watt-hours ($0.4652\text{ Wh}$) forms in $X$.
-4. `3600` `{{key:×}}` — Multiply by seconds per hour ($3600\text{ s/h}$); total dissipated shelf energy ($E = 1,674.56\text{ Joules}$) resolves with zero parentheses.
-
-Consumes less than $20\%$ of the coin cell's $8,100\text{ J}$ chemical capacity.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `3.0 {{key:ENTER}} 11.8 {{key:E}} 6 {{key:+/-}} {{key:×}}` loads nominal battery potential ($3.0\text{ V}$) and multiplies by deep sleep current ($11.8\,\mu\text{A}$), forming continuous power dissipation $3.5400 \times 10^{-5}\text{ W}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.5400 \times 10^{-5})$.
+2. Striking `13140 {{key:×}} 3600 {{key:×}}` scales by storage duration in hours and converts to seconds, calculating total 18-month energy consumed $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1674.5616}\text{ Joules})$—less than $20\%$ of the coin cell's chemical reserve.
 
 ---
 
@@ -869,24 +856,11 @@ Consumes less than $20\%$ of the coin cell's $8,100\text{ J}$ chemical capacity.
 **Silicon Design Context:** Phase-Locked Loop loop filter has damping factor $\zeta = 0.707$ and natural frequency $\omega_n = 2.40 \times 10^6\text{ rad/s}$. Calculate settling time to $1\%$ phase error:
 $$t_{\text{lock}} \approx \frac{4.6}{\zeta \omega_n}$$
 
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_20:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_20:value}}\,\mu\text{s}}$.
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_20:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_20:value}}`**$\,\mu\text{s}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4.6` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $4.6000$ | $4.6000$ | Four-time-constant settling factor |
-| `0.707` `{{key:ENTER}}` | $0.0000$ | $4.6000$ | $0.7070$ | $0.7070$ | Damping ratio $\zeta = 0.707$ |
-| `2.40 {{key:E}} 6` `{{key:×}}` | $0.0000$ | $0.0000$ | $4.6000$ | $1696800.0000$ | Denominator product $\zeta \omega_n$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.7110 \times 10^{-6}$ | Settling time in seconds |
-| `1 {{key:E}} 6` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.7110$** | Phase lock time $t_{\text{lock}}$ in microseconds |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `4.6` `{{key:ENTER}}` — Prime the stack with the four-time-constant $1\%$ settling factor ($4.6$).
-2. `0.707` `{{key:÷}}` — Divide by PLL loop damping ratio ($\zeta = 0.707$); normalized damping rate ($6.5064$) forms in $X$.
-3. `2.4 {{key:E}} 6` `{{key:÷}}` — Divide by PLL natural angular frequency ($\omega_n = 2.40 \times 10^6\text{ rad/s}$); total phase lock acquisition time ($t_{\text{lock}} = 2.7110 \times 10^{-6}\text{ s} = 2.71\,\mu\text{s}$) is confirmed.
-
-Confirms clock stabilization takes $< 3\,\mu\text{s}$, well within the $0.45\text{ ms}$ boot window.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `4.6 {{key:ENTER}} 0.707 {{key:ENTER}} 2.40 {{key:E}} 6 {{key:×}} {{key:÷}}` loads the four-time-constant factor ($4.6$), evaluates the loop denominator $\zeta \omega_n = 1.6968 \times 10^6\text{ rad/s}$, and divides to obtain settling time $2.7110 \times 10^{-6}\text{ s}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.7110 \times 10^{-6})$.
+2. Striking `1 {{key:E}} 6 {{key:×}}` converts to microseconds, confirming PLL phase lock acquisition $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2.7110}\,\mu\text{s})$ takes under $3\,\mu\text{s}$.
 
 ---
 
@@ -917,21 +891,10 @@ $$N_f = \frac{C}{(\Delta T)^m}$$
 **EMC Compliance Context:** Human Body Model ($C = 100\text{ pF}$, discharge resistance $R = 1500\,\Omega$) charged to $V_0 = 8000\text{ V}$ (IEC 61000-4-2 contact discharge). Find peak instantaneous current:
 $$I_{\text{peak}} = \frac{V_0}{R}$$
 
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_22:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_22:value}}\text{ Amperes}}$.
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_22:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_22:value}}`**$\text{ Amperes}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `8000` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $8000.0000$ | $8000.0000$ | HBM electrostatic potential $V_0 = 8000\text{ V}$ |
-| `1500` | $0.0000$ | $0.0000$ | $8000.0000$ | $1500.0000$ | Discharge series resistance $R = 1500\,\Omega$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$5.3333$** | Peak instantaneous spark current in Amperes |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `8000` `{{key:ENTER}}` — Load Human Body Model electrostatic test potential ($V_0 = 8000\text{ V}$) into the stack.
-2. `1500` `{{key:÷}}` — Divide by discharge series resistance ($R = 1500\,\Omega$); peak instantaneous discharge current ($I_{\text{peak}} = 5.3333\text{ A}$) appears on the display.
-
-Explains why dedicated TVS clamping diodes (clamping to $< 6.5\text{ V}$) guard all external I/O pins.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `8000 {{key:ENTER}} 1500 {{key:÷}}` loads HBM electrostatic potential ($8000\text{ V}$) into Register $Y$ and divides by discharge resistance ($1500\,\Omega$). The stack drops, evaluating peak instantaneous spark current $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{5.3333}\text{ A})$ directly—explaining why dedicated TVS diodes guard all external I/O pins.
 
 ---
 
@@ -940,17 +903,8 @@ Explains why dedicated TVS clamping diodes (clamping to $< 6.5\text{ V}$) guard 
 $$I_{\text{sneak}} = \frac{V_{\text{cc}}}{R_{\text{pu}} + 3 R_{\text{contact}}} \approx \frac{3.3}{10000} = 0.33\text{ mA}$$
 Because Schottky diodes are placed in series with every keycap in the SC-32, the reverse-biased diode blocks sneak current completely ($I_{\text{leak}} < 0.1\,\mu\text{A}$), providing 100% anti-ghosting rollover.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3.3` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $3.3000$ | $3.3000$ | Logic supply rail $V_{\text{cc}} = 3.3\text{ V}$ in $Y$ |
-| `10000` | $0.0000$ | $0.0000$ | $3.3000$ | $10000.00$ | Row pull-up resistance $R_{\text{pu}} = 10\text{ k}\Omega$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$3.3000 \times 10^{-4}$** | Sneak path current in Amperes ($0.33\text{ mA}$) |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `3.3` `{{key:ENTER}}` — Load logic supply voltage ($V_{\text{cc}} = 3.3\text{ V}$) into Register $Y$.
-2. `10000` `{{key:÷}}` — Divide by pull-up resistance ($10\text{ k}\Omega$); sneak current resolves to $\mathbf{0.33\text{ mA}}$ in Register $X$.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `3.3 {{key:ENTER}} 10000 {{key:÷}}` loads logic supply potential ($3.3\text{ V}$) into Register $Y$ and divides by row pull-up resistance ($10,000\,\Omega$). The stack drops, resolving the unmitigated sneak current $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{3.3000 \times 10^{-4}}\text{ A} = 0.33\text{ mA})$ in Register $X$.
 
 ---
 
@@ -960,16 +914,9 @@ $$V_{\text{out}} = I_{\text{photo}} \cdot R_f = \left(\frac{0.25 \times 10^{-6}\
 $$V_{\text{LSB}} = \frac{3.30\text{ V}}{4096} \approx 0.80566\text{ mV}$$
 $$\text{Resolution} = \frac{V_{\text{LSB}}}{0.0060\text{ V/lux}} = \frac{0.80566}{6.0} \approx \mathbf{0.1343\text{ lux/count}}.$$
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3.3` `{{key:ENTER}}` `4096` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.0566 \times 10^{-4}$ | Quantization voltage step $V_{\text{LSB}} \approx 0.8057\text{ mV}$ |
-| `0.006` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.1343$** | Ambient lux measurement resolution in lux/count |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `3.3` `{{key:ENTER}} 4096 {{key:÷}}` — Evaluate 12-bit ADC quantization step ($V_{\text{LSB}} = 0.80566\text{ mV}$) directly in Register $X$.
-2. `.006` `{{key:÷}}` — Enter sensor transimpedance transfer factor ($6.0\text{ mV/lux}$) and divide; measurement resolution resolves to $\mathbf{0.1343\text{ lux/count}}$ in Register $X$.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `3.3 {{key:ENTER}} 4096 {{key:÷}}` evaluates 12-bit ADC voltage step $V_{\text{LSB}} = 8.0566 \times 10^{-4}\text{ V}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 8.0566 \times 10^{-4})$.
+2. Striking `0.006 {{key:÷}}` divides by the transimpedance transfer factor ($6.0\text{ mV/lux}$), resolving optical measurement resolution $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.1343}\text{ lux/count})$ directly.
 
 ---
 
@@ -977,23 +924,11 @@ $$\text{Resolution} = \frac{V_{\text{LSB}}}{0.0060\text{ V/lux}} = \frac{0.80566
 **Thermodynamics Context:** At full continuous 150 MHz dual-core computation, the board dissipates $P = 60.0\text{ mW} = 0.060\text{ W}$. The chassis has total heat radiating area $A = 0.024\text{ m}^2$ with natural convection heat transfer coefficient $h_c = 6.5\text{ W/m}^2\text{K}$:
 $$\Delta T = \frac{P}{h_c \cdot A}$$
 
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_23:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_23:value}}\text{ K}} \approx 0.38^\circ\text{C}$.
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_23:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_23:value}}`**$\text{ K} \approx 0.38^\circ\text{C}$.
 
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `0.060` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $0.0600$ | $0.0600$ | Continuous dissipation $P = 60.0\text{ mW}$ |
-| `6.5` `{{key:ENTER}}` | $0.0000$ | $0.0600$ | $6.5000$ | $6.5000$ | Convection coefficient $h_c = 6.5\text{ W/m}^2\text{K}$ |
-| `0.024` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0600$ | $0.1560$ | Dissipation conductance $h_c A$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.3846$** | Steady-state temperature rise $\Delta T$ in K ($0.38^\circ\text{C}$) |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `0.060` `{{key:ENTER}}` — Arm the stack with continuous computing thermal dissipation ($P = 0.060\text{ W}$).
-2. `6.5` `{{key:÷}}` — Divide by natural convection coefficient ($h_c = 6.5\text{ W/(m}^2\cdot\text{K)}$); intermediate thermal impedance ($9.2308 \times 10^{-3}\text{ K}\cdot\text{m}^2$) forms in $X$.
-3. `0.024` `{{key:÷}}` — Divide by effective surface area ($A = 0.024\text{ m}^2$); steady-state equilibrium temperature rise ($\Delta T = 0.3846\text{ K} \approx 0.38^\circ\text{C}$) is verified.
-
-Confirms the SC-32 remains completely cool to the touch with zero thermal throttling under indefinite continuous computing.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.060 {{key:ENTER}} 6.5 {{key:ENTER}} 0.024 {{key:×}}` loads continuous thermal dissipation ($0.060\text{ W}$) into $Z$ and evaluates convection conductance $h_c A = 0.1560\text{ W/K}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0600, X: 0.1560)$.
+2. Striking `{{key:÷}}` divides dissipation by conductance, determining steady-state equilibrium temperature rise $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.3846}\text{ K} \approx 0.38^\circ\text{C})$—proving the chassis remains cool to the touch with zero throttling.
 
 ---
 
