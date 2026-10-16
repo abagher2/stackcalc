@@ -979,168 +979,92 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 
 #### Part 2: Place Value Decomposition & Expanded Notation (Problems 3.31–3.38)
 
-#### Problem 3.31: Decomposing a 3-Digit Number ($365\text{ Days}$)
-- **Word Problem:** Decompose the 365 days in a standard calendar year into hundreds, tens, and ones.
+#### Problem 3.31: Expanded Sum ($300 + 60 + 5 = 365$)
+- **Word Problem:** Reconstruct the 365 days in a standard calendar year by accumulating its expanded place value parts: 3 hundreds, 6 tens, and 5 ones.
+- **Manipulative:** In the Place Value Studio, place 3 hundred-flats ($300$), 6 ten-rods ($60$), and 5 unit cubes ($5$) on your workstation mat.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_26:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_26:value}}`**
-- **Stack Trace Table:**
+- **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `365` {{key:ENTER}} | 0 | 0 | 365 | 365 | Lock calendar year in Register $Y$ as preserved subject number |
-| `100` {{key:PV}} | 0 | 0 | 365 | 3 | Query hundreds place: extracts 3 hundred-day blocks ($X = 3$) |
-| `10` {{key:PV}} | 0 | 0 | 365 | 6 | Query tens place: extracts 6 ten-day rods ($X = 6$) |
-| `1` {{key:PV}} | 0 | 0 | 365 | 5 | Query ones place: extracts 5 single units ($X = 5$) |
+| `300` {{key:ENTER}} | 0 | 0 | 300 | 300 | Enter 3 hundreds flats into stack |
+| `60` {{key:+}} | 0 | 0 | 0 | 360 | Add 6 ten-rods; subtotal accumulates to 360 |
+| `5` {{key:+}} | 0 | 0 | 0 | 365 | Add 5 unit cubes; full expanded sum reaches 365 |
 
 - **Diagnostic Check:** Hundreds $= 3$, Tens $= 6$, Ones $= 5$. Expanded: $300 + 60 + 5 = 365$.
 
 ---
 
-#### Problem 3.32: Decomposing an Historic Year ($1,492$)
-- **Word Problem:** Decompose the year $1,492$ into thousands, hundreds, tens, and ones.
+#### Problem 3.32: Historic Year Expanded Sum ($1,492$)
+- **Word Problem:** Reconstruct the historical year $1,492$ by summing its constituent place-value blocks: $1$ thousand, $4$ hundreds, $9$ tens, and $2$ ones.
+- **Manipulative:** Lay out 1 thousand-cube ($1,000$), 4 hundred-flats ($400$), 9 ten-rods ($90$), and 2 unit cubes ($2$).
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_27:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_27:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `1492` `{{key:ENTER}}` — Lift the historical year 1492 onto the upper mezzanine shelf ($Y = 1492$), locking the subject number in place for multi-column interrogation.
-  2. `1000` `{{key:PV}}` — Query the thousands place: isolates exactly $1$ large thousand-cube in $X$ ($1,000$).
-  3. `100` `{{key:PV}}` — Query the hundreds place: isolates exactly $4$ flat hundred-grids in $X$ ($400$).
-  4. `10` `{{key:PV}}` — Query the tens place: isolates exactly $9$ tall ten-rods in $X$ ($90$).
-  5. `1` `{{key:PV}}` — Query the units place: isolates exactly $2$ single unit cubes in $X$ ($2$).
-- **Stack Trace Table:**
+- **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `1492` {{key:ENTER}} | 0 | 0 | 1492 | 1492 | Park historical year in Register $Y$ as subject quantity |
-| `1000` {{key:PV}} | 0 | 0 | 1492 | 1 | Query thousands: isolates 1 thousand-cube ($X = 1$) |
-| `100` {{key:PV}} | 0 | 0 | 1492 | 4 | Query hundreds: isolates 4 hundred-flats ($X = 4$) |
-| `10` {{key:PV}} | 0 | 0 | 1492 | 9 | Query tens: isolates 9 ten-rods ($X = 9$) |
-| `1` {{key:PV}} | 0 | 0 | 1492 | 2 | Query ones: isolates 2 single unit cubes ($X = 2$) |
+| `1000` {{key:ENTER}} | 0 | 0 | 1000 | 1000 | Enter 1 thousand-cube into stack |
+| `400` {{key:+}} | 0 | 0 | 0 | 1400 | Add 4 hundred-flats; subtotal reaches 1400 |
+| `90` {{key:+}} | 0 | 0 | 0 | 1490 | Add 9 ten-rods; subtotal reaches 1490 |
+| `2` {{key:+}} | 0 | 0 | 0 | 1492 | Add 2 unit cubes; full historical year reaches 1492 |
 
-- **Results:** Thousands $= 1$, Hundreds $= 4$, Tens $= 9$, Ones $= 2$.
-- **Expanded Notation:** $1,000 + 400 + 90 + 2 = 1,492$.
+- **Results:** Thousands $= 1$, Hundreds $= 4$, Tens $= 9$, Ones $= 2$. Expanded: $1,000 + 400 + 90 + 2 = 1,492$.
 
 ---
 
-#### Problem 3.33: Zero as a Placeholder ($8,040$)
-- **Word Problem:** Interrogate the digits of $8,040$.
+#### Problem 3.33: Zero as a Placeholder ($8,000 + 40 = 8,040$)
+- **Word Problem:** Reconstruct $8,040$ from 8 thousands and 4 tens, observing how the empty hundreds and ones positions function as zero placeholders.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_28:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_28:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `8040` `{{key:ENTER}}` — Set 8040 onto the upper shelf ($Y = 8040$), preserving the number across place-value queries.
-  2. `1000` `{{key:PV}}` — Thousands place: isolates $8$ thousand-cubes in $X$ ($8,000$).
-  3. `100` `{{key:PV}}` — Hundreds place: isolates $0$ (the hundreds slot in the Place Value Studio tray is completely empty!).
-  4. `10` `{{key:PV}}` — Tens place: isolates $4$ ten-rods in $X$ ($40$).
-  5. `1` `{{key:PV}}` — Ones place: isolates $0$ (the ones cup is empty—revealing zero's vital physical job as a spatial placeholder).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `8040` {{key:ENTER}} | 0 | 0 | 8040 | 8040 | Set subject quantity into Register $Y$ |
-| `1000` {{key:PV}} | 0 | 0 | 8040 | 8 | Query thousands: extracts 8 thousand-cubes ($X = 8$) |
-| `100` {{key:PV}} | 0 | 0 | 8040 | 0 | Query hundreds: tray slot empty; confirms 0 placeholder |
-| `10` {{key:PV}} | 0 | 0 | 8040 | 4 | Query tens: extracts 4 ten-rods ($X = 4$) |
-| `1` {{key:PV}} | 0 | 0 | 8040 | 0 | Query ones: unit cup empty; confirms 0 placeholder |
-
-- **Results:**
-  - Thousands ($1000$): $8$
-  - Hundreds ($100$): $0$ (Verified zero placeholder!)
-  - Tens ($10$): $4$
-  - Ones ($1$): $0$ (Verified zero placeholder!)
+- **Stack Flow:** Tap `8000 {{key:ENTER}} 40 {{key:+}}` -> (T=0, Z=0, Y=0, X=8040), verifying that the zero hundreds slot leaves a clean placeholder in $8,040$.
+- **Results:** Thousands ($1000$): $8$, Hundreds ($100$): $0$, Tens ($10$): $4$, Ones ($1$): $0$.
 
 ---
 
-#### Problem 3.34: Five-Digit Exploration ($98,765$)
-- **Word Problem:** Decompose $98,765$ across all 5 columns.
+#### Problem 3.34: Five-Digit Expanded Sum ($98,765$)
+- **Word Problem:** Reconstruct the five-digit sequence $98,765$ by sequentially accumulating each positional tier.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_29:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_29:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `98765` `{{key:ENTER}}` — Lift the 5-digit number onto the mezzanine shelf ($Y = 98765$).
-  2. `10000` `{{key:PV}}` — Ten-Thousands: isolates $9$ ten-thousand blocks ($90,000$).
-  3. `1000` `{{key:PV}}` — Thousands: isolates $8$ thousand-cubes ($8,000$).
-  4. `100` `{{key:PV}}` — Hundreds: isolates $7$ hundred-flats ($700$).
-  5. `10` `{{key:PV}}` — Tens: isolates $6$ ten-rods ($60$).
-  6. `1` `{{key:PV}}` — Ones: isolates $5$ single unit cubes ($5$).
-- **Stack Trace Table:**
+- **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `98765` {{key:ENTER}} | 0 | 0 | 98765 | 98765 | Load five-digit subject number into preserved Register $Y$ |
-| `10000` {{key:PV}} | 0 | 0 | 98765 | 9 | Ten-thousands query: isolates 9 ten-thousand blocks ($X = 9$) |
-| `1000` {{key:PV}} | 0 | 0 | 98765 | 8 | Thousands query: isolates 8 thousand-cubes ($X = 8$) |
-| `100` {{key:PV}} | 0 | 0 | 98765 | 7 | Hundreds query: isolates 7 hundred-flats ($X = 7$) |
-| `10` {{key:PV}} | 0 | 0 | 98765 | 6 | Tens query: isolates 6 ten-rods ($X = 6$) |
-| `1` {{key:PV}} | 0 | 0 | 98765 | 5 | Ones query: isolates 5 unit cubes ($X = 5$) |
+| `90000` {{key:ENTER}} | 0 | 0 | 90000 | 90000 | Enter 9 ten-thousand blocks into stack |
+| `8000` {{key:+}} | 0 | 0 | 0 | 98000 | Add 8 thousand-cubes ($X = 98000$) |
+| `700` {{key:+}} | 0 | 0 | 0 | 98700 | Add 7 hundred-flats ($X = 98700$) |
+| `60` {{key:+}} | 0 | 0 | 0 | 98760 | Add 6 ten-rods ($X = 98760$) |
+| `5` {{key:+}} | 0 | 0 | 0 | 98765 | Add 5 unit cubes; completes 98,765 |
 
 - **Results:** Ten-Thousands $= 9$, Thousands $= 8$, Hundreds $= 7$, Tens $= 6$, Ones $= 5$.
 
 ---
 
-#### Problem 3.35: Decimal Tenths and Hundredths ($345.67$)
-- **Word Problem:** Extract the decimal digits of $345.67$.
+#### Problem 3.35: Decimal Tenths and Hundredths ($345 + 0.6 + 0.07 = 345.67$)
+- **Word Problem:** Reconstruct $345.67$ by combining the whole number baseline with decimal tenths ($0.6$) and hundredths ($0.07$).
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_30:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_30:value}}`**
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `345.67` {{key:ENTER}} | 0 | 0 | 345.67 | 345.67 | Lock decimal subject value in Register $Y$ |
-| `.1` {{key:PV}} | 0 | 0 | 345.67 | 6 | Query tenths ($10^{-1}$): extracts tenths digit ($X = 6$) |
-| `.01` {{key:PV}} | 0 | 0 | 345.67 | 7 | Query hundredths ($10^{-2}$): extracts hundredths digit ($X = 7$) |
-
+- **Stack Flow:** Tap `345 {{key:ENTER}} 0.6 {{key:+}} 0.07 {{key:+}}` -> (T=0, Z=0, Y=0, X=345.67), reconstructing whole units, tenths, and hundredths into $345.67$.
 - **Diagnostic Check:** Tenths place $= 6$, Hundredths place $= 7$.
 
 ---
 
-#### Problem 3.36: Small Currency Decimals ($0.47$)
-- **Word Problem:** Decompose 47 cents ($0.47$) into dimes (tenths) and pennies (hundredths).
+#### Problem 3.36: Small Currency Decimals ($0.40 + 0.07 = 0.47$)
+- **Word Problem:** Decompose 47 cents into 4 dimes ($0.40$) and 7 pennies ($0.07$).
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_31:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_31:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `0.47` `{{key:ENTER}}` — Rest the 47-cent coin pile on the upper mezzanine shelf ($Y = 0.47$).
-  2. `.1` `{{key:PV}}` — Query tenths place ($0.10$): extracts $4$ dimes resting in Register $X$.
-  3. `.01` `{{key:PV}}` — Query hundredths place ($0.01$): extracts $7$ copper pennies resting in Register $X$.
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `0.47` {{key:ENTER}} | 0 | 0 | 0.47 | 0.47 | Rest currency total in Register $Y$ |
-| `.1` {{key:PV}} | 0 | 0 | 0.47 | 4 | Query tenths place: extracts 4 dimes ($X = 4$) |
-| `.01` {{key:PV}} | 0 | 0 | 0.47 | 7 | Query hundredths place: extracts 7 pennies ($X = 7$) |
-
+- **Stack Flow:** Tap `0.40 {{key:ENTER}} 0.07 {{key:+}}` -> (T=0, Z=0, Y=0, X=0.47), combining 4 dimes and 7 pennies into $\$0.47$.
 - **Results:** Dimes (Tenths) $= 4$, Pennies (Hundredths) $= 7$.
 
 ---
 
-#### Problem 3.37: Large Thousand-Block Count ($12,500$)
-- **Word Problem:** A stadium has $12,500$ seats. How many ten-thousands and thousands?
+#### Problem 3.37: Large Thousand-Block Count ($10,000 + 2,500 = 12,500$)
+- **Word Problem:** A stadium has $10,000$ grandstand seats and $2,500$ concourse seats. Combine these place-value blocks to find total seating capacity.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_32:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_32:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `12500` `{{key:ENTER}}` — Place the $12,500$ arena seats onto the held shelf ($Y = 12500$).
-  2. `10000` `{{key:PV}}` — Query ten-thousands: isolates $1$ full grandstand section ($10,000\text{ seats}$).
-  3. `1000` `{{key:PV}}` — Query thousands: isolates $2$ stadium concourse sections ($2,000\text{ seats}$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `12500` {{key:ENTER}} | 0 | 0 | 12500 | 12500 | Park stadium capacity in Register $Y$ |
-| `10000` {{key:PV}} | 0 | 0 | 12500 | 1 | Query ten-thousands: isolates 1 grandstand section ($X = 1$) |
-| `1000` {{key:PV}} | 0 | 0 | 12500 | 2 | Query thousands: isolates 2 concourse blocks ($X = 2$) |
-
+- **Stack Flow:** Tap `10000 {{key:ENTER}} 2500 {{key:+}}` -> (T=0, Z=0, Y=0, X=12500), combining grandstand and concourse blocks to total 12,500 seats.
 - **Results:** Ten-thousands $= 1$, Thousands $= 2$.
 
 ---
 
-#### Problem 3.38: Hundred-Thousands Place ($450,200$)
-- **Word Problem:** Decompose $450,200$.
+#### Problem 3.38: Hundred-Thousands Place ($400,000 + 50,000 + 200 = 450,200$)
+- **Word Problem:** Reconstruct regional census population $450,200$ from 4 hundred-thousands, 5 ten-thousands, and 2 hundreds.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_33:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_33:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `450200` `{{key:ENTER}}` — Place 450,200 onto the upper shelf ($Y = 450200$).
-  2. `100000` `{{key:PV}}` — Query hundred-thousands: isolates $4$ hundred-thousand blocks ($400,000$).
-  3. `10000` `{{key:PV}}` — Query ten-thousands: isolates $5$ ten-thousand blocks ($50,000$).
-  4. `100` `{{key:PV}}` — Query hundreds: isolates $2$ hundred-flats ($200$).
-- **Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `450200` {{key:ENTER}} | 0 | 0 | 450200 | 450200 | Park 450,200 in Register $Y$ |
-| `100000` {{key:PV}} | 0 | 0 | 450200 | 4 | Query hundred-thousands: isolates 4 large blocks ($X = 4$) |
-| `10000` {{key:PV}} | 0 | 0 | 450200 | 5 | Query ten-thousands: isolates 5 blocks ($X = 5$) |
-| `100` {{key:PV}} | 0 | 0 | 450200 | 2 | Query hundreds: isolates 2 hundred-flats ($X = 2$) |
-
+- **Stack Flow:** Tap `400000 {{key:ENTER}} 50000 {{key:+}} 200 {{key:+}}` -> (T=0, Z=0, Y=0, X=450200), combining regional census population blocks into $450,200$.
 - **Results:** Hundred-thousands $= 4$, Ten-thousands $= 5$, Hundreds $= 2$.
 
 ---

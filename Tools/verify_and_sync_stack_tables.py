@@ -203,6 +203,21 @@ class RPNStackSimulator:
             r = math.fmod(y, x)
         self.stack[0] = float(q)
         self.stack[1] = float(r)
+    def execute_percent(self) -> None:
+        """%: Computes percentage (Y * X) / 100. Leaves result in X, preserves Y."""
+        x = self.stack[0]
+        y = self.stack[1]
+        self.last_x = x
+        self.stack[0] = (y * x) / 100.0
+        self.stack_lift_enabled = True
+        self.is_building_number = False
+
+    def execute_percent_change(self) -> None:
+        """%CHG / Δ%: Computes percent change ((X - Y) / Y) * 100. Leaves result in X, preserves Y."""
+        x = self.stack[0]
+        y = self.stack[1]
+        self.last_x = x
+        self.stack[0] = ((x - y) / y) * 100.0 if y != 0 else 0.0
         self.stack_lift_enabled = True
         self.is_building_number = False
 
@@ -505,9 +520,9 @@ class RPNStackSimulator:
             "nPr": lambda: self.execute_dyadic(lambda y, x: float(math.perm(int(y), int(x))) if int(y) >= int(x) >= 0 else 0.0),
             "nCr": lambda: self.execute_dyadic(lambda y, x: float(math.comb(int(y), int(x))) if int(y) >= int(x) >= 0 else 0.0),
             "MOD": lambda: self.execute_dyadic(lambda y, x: y - x * math.floor(y / x) if x != 0 else 0.0),
-            "%": lambda: self.execute_dyadic(lambda y, x: (y * x) / 100.0),
-            "%CHG": lambda: self.execute_dyadic(lambda y, x: ((x - y) / y) * 100.0 if y != 0 else 0.0),
-            "Δ%": lambda: self.execute_dyadic(lambda y, x: ((x - y) / y) * 100.0 if y != 0 else 0.0),
+            "%": self.execute_percent,
+            "%CHG": self.execute_percent_change,
+            "Δ%": self.execute_percent_change,
             "x⇄y": self.swap_xy,
             "x≷y": self.swap_xy,
             "𝑥≷𝑦": self.swap_xy,
@@ -605,6 +620,65 @@ class RPNStackSimulator:
 # 2. Tokenizer & Keystroke Sequence Replayer
 # ==============================================================================
 
+def is_digit_token(tok: str) -> bool:
+    return bool(re.match(r"^\d+$", tok.strip()))
+
+
+def assemble_decimal_tokens(tokens: List[str]) -> List[str]:
+    """
+    Handles Bug A: Assembles {{key:.}} with preceding or succeeding digit tokens into floats.
+    E.g. ['.', '8'] -> ['0.8']
+         ['0', '.', '8'] -> ['0.8']
+         ['5', '.', '0'] -> ['5.0']
+    Preserves two-dot fractions: ['.', '5', '.', '8'] or ['1', '.', '2', '.', '5'].
+    """
+    assembled: List[str] = []
+    i = 0
+    n = len(tokens)
+    while i < n:
+        # Check two-dot fractions first:
+        # Form 1: . num . den (e.g. ['.', '5', '.', '8'])
+        if tokens[i] == "." and (i + 3) < n and tokens[i + 2] == "." and is_digit_token(tokens[i + 1]) and is_digit_token(tokens[i + 3]):
+            assembled.extend(tokens[i : i + 4])
+            i += 4
+            continue
+        # Form 2: whole . num . den (e.g. ['1', '.', '2', '.', '5'])
+        if is_digit_token(tokens[i]) and (i + 4) < n and tokens[i + 1] == "." and tokens[i + 3] == "." and is_digit_token(tokens[i + 2]) and is_digit_token(tokens[i + 4]):
+            assembled.extend(tokens[i : i + 5])
+            i += 5
+            continue
+
+        # Case 1: tok == "." followed by digits (e.g. ['.', '8'] or ['.', '8', '5'])
+        if tokens[i] == "." and (i + 1) < n and is_digit_token(tokens[i + 1]):
+            frac_part = ""
+            j = i + 1
+            while j < n and is_digit_token(tokens[j]):
+                frac_part += tokens[j]
+                j += 1
+            assembled.append(f"0.{frac_part}")
+            i = j
+            continue
+
+        # Case 2: tok is digits, followed by "."
+        if is_digit_token(tokens[i]) and (i + 1) < n and tokens[i + 1] == ".":
+            int_part = tokens[i]
+            frac_part = ""
+            j = i + 2
+            while j < n and is_digit_token(tokens[j]):
+                frac_part += tokens[j]
+                j += 1
+            if frac_part:
+                assembled.append(f"{int_part}.{frac_part}")
+            else:
+                assembled.append(f"{int_part}.0")
+            i = j
+            continue
+
+        assembled.append(tokens[i])
+        i += 1
+    return assembled
+
+
 def tokenize_keystrokes(raw_str: str) -> List[str]:
     """
     Extracts high-level tokens from a Keystroke cell or inline trace sequence.
@@ -660,7 +734,7 @@ def tokenize_keystrokes(raw_str: str) -> List[str]:
 
         pos += 1
 
-    return tokens
+    return assemble_decimal_tokens(tokens)
 
 
 def execute_keystroke_sequence(sim: RPNStackSimulator, raw_str: str) -> None:
@@ -999,6 +1073,43 @@ class TableDiscrepancy:
         self.raw_cell = raw_cell
 
 
+def extract_expected_nonzero_from_context(file_path: Path, start_line: int) -> Optional[float]:
+    """
+    Extracts expected non-zero numerical answer from the prose immediately preceding a table.
+    Used for Bug B: flagging tables whose final X evaluates to 0.0 when context expects non-zero.
+    """
+    try:
+        lines = file_path.read_text(encoding="utf-8").splitlines()
+    except Exception:
+        return None
+
+    # Look back up to 30 lines preceding start_line
+    start_idx = max(0, start_line - 31)
+    end_idx = max(0, start_line - 1)
+    lookback = lines[start_idx:end_idx]
+    text_block = "\n".join(lookback)
+
+    patterns = [
+        r"(?:\\longrightarrow|\\rightarrow|->)\s*(?:X\s*=\s*)?\\mathbf\{([+-]?[0-9]+(?:\.[0-9]+)?)[^\}]*\}",
+        r"(?:\\longrightarrow|\\rightarrow|->)\s*(?:X\s*=\s*)?\*\*([+-]?[0-9]+(?:\.[0-9]+)?)[^\*]*\*\*",
+        r"displays:\s*\*\*([+-]?[0-9]+(?:\.[0-9]+)?)[^\*]*\*\*",
+        r"X\s*=\s*\\mathbf\{([+-]?[0-9]+(?:\.[0-9]+)?)[^\}]*\}",
+        r"X\s*=\s*\*\*([+-]?[0-9]+(?:\.[0-9]+)?)[^\*]*\*\*",
+        r"(?:\\longrightarrow|\\rightarrow|->)\s*X\s*=\s*([+-]?[0-9]+(?:\.[0-9]+)?)",
+    ]
+    for pat in patterns:
+        matches = list(re.finditer(pat, text_block))
+        if matches:
+            last_m = matches[-1]
+            try:
+                val = float(last_m.group(1))
+                if abs(val) > 1e-6:
+                    return val
+            except ValueError:
+                pass
+    return None
+
+
 def audit_table(table: StackTableLocation) -> List[TableDiscrepancy]:
     """Audits a single 4-register markdown table against RPNStackSimulator physics."""
     is_sc6 = "sc6" in str(table.file_path)
@@ -1042,6 +1153,26 @@ def audit_table(table: StackTableLocation) -> List[TableDiscrepancy]:
                         raw_cell=raw_c,
                     )
                 )
+
+    # Bug B: Flag table whose final X evaluates to 0.0 when surrounding context expects non-zero
+    if abs(sim.x) < 1e-9 and table.row_lines:
+        exp_ctx = extract_expected_nonzero_from_context(table.file_path, table.start_line)
+        if exp_ctx is not None:
+            last_line_num, last_raw_line = table.row_lines[-1]
+            last_cells = [c.strip() for c in last_raw_line.split("|")[1:-1]]
+            last_k = last_cells[table.col_k] if len(last_cells) > table.col_k else "Final Row"
+            last_x_raw = last_cells[table.col_x] if len(last_cells) > table.col_x else "$0.00$"
+            discrepancies.append(
+                TableDiscrepancy(
+                    file_path=table.file_path,
+                    line_num=last_line_num,
+                    step_keystrokes=f"Final X evaluates to 0.0 but surrounding context indicates non-zero result ({exp_ctx})",
+                    reg_name="X (Zero Result Audit)",
+                    expected_val=exp_ctx,
+                    actual_val=sim.x,
+                    raw_cell=last_x_raw,
+                )
+            )
 
     return discrepancies
 

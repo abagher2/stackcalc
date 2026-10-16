@@ -469,13 +469,7 @@ $$d = \sqrt{850^2 + 1100^2 + 550^2} = \sqrt{722500 + 1210000 + 302500} = \sqrt{2
 
 **Keystrokes:** `{{res:sc32_06_geometry_surface_area_seq_12:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_12:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2100 {{key:ENTER}} 1250 {{key:-}} {{keycap:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $722500.0000$ | $\Delta x^2 = 850^2$ |
-| 2 | `680 {{key:ENTER}} 420 {{key:+/-}} {{key:-}} {{keycap:x²}}` | $0.0000$ | $0.0000$ | $722500.0000$ | $1210000.0000$ | $\Delta y^2 = 1100^2$ |
-| 3 | `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1932500.0000$ | $\Delta x^2 + \Delta y^2$ |
-| 4 | `1400 {{key:ENTER}} 850 {{key:-}} {{keycap:x²}}` | $0.0000$ | $0.0000$ | $1932500.0000$ | $302500.0000$ | $\Delta z^2 = 550^2$ |
-| 5 | `{{key:+}} {{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1494.991639$** | 3D Distance $d$ in meters |
+Compute the squared coordinate deltas along each orthogonal axis: evaluate $\Delta x^2 = 850^2 = 722,500$ via `2100 {{key:ENTER}} 1250 {{key:-}} {{keycap:x²}}`, accumulate $\Delta y^2 = 1100^2 = 1,210,000$ with `680 {{key:ENTER}} 420 {{key:+/-}} {{key:-}} {{keycap:x²}} {{key:+}}`, and add $\Delta z^2 = 550^2 = 302,500$ via `1400 {{key:ENTER}} 850 {{key:-}} {{keycap:x²}} {{key:+}}`. Extract the square root via `{{key:√x}}` to resolve 3D spatial separation at $(T:0, Z:0, Y:0, X:1494.9916)$.
 
 Result: **$1,494.99\text{ meters}$**.
 
@@ -489,12 +483,7 @@ Result: **$1,494.99\text{ meters}$**.
 
 **Keystrokes:** `{{res:sc32_06_geometry_surface_area_seq_13:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_13:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1494.9916 {{key:STO}} D` | $0.0000$ | $0.0000$ | $0.0000$ | $1494.9916$ | Vector magnitude saved |
-| 2 | `850 {{key:RCL}} D {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.568565$** | $\cos\alpha$ (X-direction cosine) |
-| 3 | `1100 {{key:RCL}} D {{key:÷}}` | $0.0000$ | $0.0000$ | $0.568565$ | **$0.735790$** | $\cos\beta$ (Y-direction cosine) |
-| 4 | `550 {{key:RCL}} D {{key:÷}}` | $0.0000$ | $0.568565$ | $0.735790$ | **$0.367895$** | $\cos\gamma$ (Z-direction cosine) |
+Store the vector magnitude in variable `D` via `1494.9916 {{key:STO}} D`. Compute $\cos\alpha = 850 / D = 0.568565$ via `850 {{key:RCL}} D {{key:÷}}`, followed by $\cos\beta = 0.735790$ via `1100 {{key:RCL}} D {{key:÷}}` and $\cos\gamma = 0.367895$ via `550 {{key:RCL}} D {{key:÷}}`, leaving the directional cosines arrayed across the stack as $(T:0, Z:0.568565, Y:0.735790, X:0.367895)$.
 
 Check: $0.568565^2 + 0.735790^2 + 0.367895^2 \equiv \mathbf{1.000000}$.
 
@@ -510,12 +499,7 @@ $$\vec{C} = (-16, 10, 17) \implies |\vec{C}| = \sqrt{256 + 100 + 289} = \sqrt{64
 
 **Keystrokes (Magnitude):** `{{res:sc32_06_geometry_surface_area_seq_14:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_14:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `16 {{keycap:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $256.0000$ | $C_x^2$ |
-| 2 | `10 {{keycap:x²}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $356.0000$ | $C_x^2 + C_y^2$ |
-| 3 | `17 {{keycap:x²}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $645.0000$ | Sum of squares |
-| 4 | `{{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$25.396850$** | Cross product magnitude $|\vec{C}|$ |
+Square each Cartesian cross-product component sequentially: `16 {{keycap:x²}} 10 {{keycap:x²}} {{key:+}} 17 {{keycap:x²}} {{key:+}}` produces sum of squares $645.0$ in Register $X$. Taking the square root via `{{key:√x}}` delivers vector magnitude $|\vec{C}|$ at $(T:0, Z:0, Y:0, X:25.3969)$.
 
 Result: **$\vec{C} = (-16, 10, 17), |\vec{C}| = 25.40$**.
 
@@ -528,10 +512,7 @@ $$\theta = \arccos(4/9) \approx \mathbf{63.6122^\circ}$$
 
 **Keystrokes:** `{{res:sc32_06_geometry_surface_area_seq_15:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_15:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `4 {{key:ENTER}} 9 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.444444$ | Ratio $4/9$ evaluated |
-| 2 | `{{key:ACOS}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$63.612200$** | Dihedral angle $\theta$ in degrees |
+Evaluate cosine quotient $4/9 \approx 0.444444$ via `4 {{key:ENTER}} 9 {{key:÷}}`. Taking inverse cosine via `{{key:ACOS}}` extracts the dihedral intersection angle in degrees, settling the stack at $(T:0, Z:0, Y:0, X:63.6122)$.
 
 Result: **$\theta = 63.6122^\circ$**.
 
@@ -603,10 +584,7 @@ $$k = \sqrt{\frac{I}{M}} = \sqrt{\frac{14.8}{42.0}} = \sqrt{0.352381} = \mathbf{
 
 **Keystrokes:** `{{res:sc32_06_geometry_surface_area_seq_18:keys}}` $\rightarrow$ **`{{res:sc32_06_geometry_surface_area_seq_18:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `14.8 {{key:ENTER}} 42 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.352381$ | Ratio $I/M$ |
-| 2 | `{{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.593617$** | Radius of gyration $k$ in meters |
+Divide moment of inertia $I = 14.8$ by mass $M = 42.0$ via `14.8 {{key:ENTER}} 42 {{key:÷}}` to form gyration metric $0.352381$. Extracting the square root via `{{key:√x}}` gives radius of gyration $k$ in meters at $(T:0, Z:0, Y:0, X:0.593617)$.
 
 Result: **$k = 0.5936\text{ m}$** ($593.6\text{ mm}$).
 
