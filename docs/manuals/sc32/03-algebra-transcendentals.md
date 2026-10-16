@@ -77,10 +77,10 @@ Keystrokes: `{{res:sc32_03_algebra_transcendentals_seq_01:keys}}` $\rightarrow$ 
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{key:2}} {{key:.}} {{key:5}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.5000$ | Enter base $y$ |
-| 2 | `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.5000$ | $2.5000$ | Stack lift disabled; $y$ pushed to $Y$ |
-| 3 | `{{key:3}} {{key:.}} {{key:8}}` | $0.0000$ | $0.0000$ | $2.5000$ | $3.8000$ | Overwrite $X$ with exponent $x$ |
-| 4 | `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$32.2242534685$** | Evaluates $2.5^{3.8}$; Stack lift armed |
+| 1 | `{{key:2}} {{key:.}} {{key:5}}` | $0.0000$ | $0.0000$ | $2.0000$ | $5.0000$ | Enter base $y$ |
+| 2 | `{{key:ENTER}}` | $0.0000$ | $2.0000$ | $5.0000$ | $5.0000$ | Stack lift disabled; $y$ pushed to $Y$ |
+| 3 | `{{key:3}} {{key:.}} {{key:8}}` | $2.0000$ | $5.0000$ | $3.0000$ | $8.0000$ | Overwrite $X$ with exponent $x$ |
+| 4 | `{{key:yˣ}}` | $2.0000$ | $2.0000$ | $5.0000$ | **$6561.0000000000$** | Evaluates $2.5^{3.8}$; Stack lift armed |
 
 ### `{{key:ˣ√y}}` (Arbitrary Radical Root)
 * **Mathematical Definition:** Evaluates $\sqrt[X]{Y} = Y^{1/X}$.
@@ -160,14 +160,14 @@ $$t = -\frac{\ln(N(t)/N_0)}{\lambda} = -\frac{\ln(0.234) \times 5730}{\ln 2}$$
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & Pedagogical State |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{key:.}} {{key:2}} {{key:3}} {{key:4}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2340$ | Remaining proportion |
-| 2 | `{{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.452434$ | $\ln(0.234)$ evaluated |
-| 3 | `{{key:5}} {{key:7}} {{key:3}} {{key:0}}` | $0.0000$ | $0.0000$ | $-1.452434$ | $5730.0000$ | Stack lifts automatically |
-| 4 | `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-8322.4478$ | Numerator product |
-| 5 | `{{key:2}}` | $0.0000$ | $0.0000$ | $-8322.4478$ | $2.0000$ | Base 2 for half-life |
-| 6 | `{{key:LN}}` | $0.0000$ | $0.0000$ | $-8322.4478$ | $0.693147$ | $\ln(2)$ divisor |
-| 7 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-12006.7533$ | Quotient |
-| 8 | `{{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12006.7533$** | Artifact age in years |
+| 1 | `{{key:.}} {{key:2}} {{key:3}} {{key:4}}` | $0.0000$ | $2.0000$ | $3.0000$ | $4.0000$ | Remaining proportion |
+| 2 | `{{key:LN}}` | $0.0000$ | $2.0000$ | $3.0000$ | $1.386294$ | $\ln(0.234)$ evaluated |
+| 3 | `{{key:5}} {{key:7}} {{key:3}} {{key:0}}` | $5.0000$ | $7.0000$ | $3.000000$ | $0.0000$ | Stack lifts automatically |
+| 4 | `{{key:×}}` | $5.0000$ | $5.0000$ | $7.0000$ | $0.0000$ | Numerator product |
+| 5 | `{{key:2}}` | $5.0000$ | $7.0000$ | $0.0000$ | $2.0000$ | Base 2 for half-life |
+| 6 | `{{key:LN}}` | $5.0000$ | $7.0000$ | $0.0000$ | $0.693147$ | $\ln(2)$ divisor |
+| 7 | `{{key:÷}}` | $5.0000$ | $5.0000$ | $7.0000$ | $0.0000$ | Quotient |
+| 8 | `{{key:+/-}}` | $5.0000$ | $5.0000$ | $7.0000$ | **$0.0000$** | Artifact age in years |
 
 The bone is approximately **$12,007\text{ years old}$**.
 
@@ -982,8 +982,8 @@ Result: $P \approx \mathbf{1,027,346\text{ Pa}} \approx 1.027\text{ MPa}$.
 | Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
 |:---|:---|:---|:---|:---|:---|:---|
 | 1 | `2 {{key:ENTER}} 8.31446 {{key:×}} 320 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $5321.2544$ | Ideal kinetic energy numerator $n R T$ |
-| 2 | `0.0050 {{key:ENTER}} 2 {{key:ENTER}} 4.27 {{key:E}} 5 {{key:+/-}} {{key:×}} {{key:-}} {{key:÷}}` | $5321.2544$ | $5321.2544$ | $5321.2544$ | $1.0827 \times 10^{6}$ | Divide by free volume $(V - n b)$ for kinetic pressure term |
-| 3 | `0.364 {{key:ENTER}} 4 {{key:×}} 0.0050 {{key:x²}} {{key:÷}} {{key:-}}` | $5321.2544$ | $5321.2544$ | $5321.2544$ | **$1.0245 \times 10^{6}$** | Subtract molecular attraction term $a n^2 / V^2$ for van der Waals pressure $P$ (Pa) |
+| 2 | `0.0050 {{key:ENTER}} 2 {{key:ENTER}} 4.27 {{key:E}} 5 {{key:+/-}} {{key:×}} {{key:-}} {{key:÷}}` | $5321.2544$ | $5321.2544$ | $5321.2544$ | $1082744.1501$ | Divide by free volume $(V - n b)$ for kinetic pressure term |
+| 3 | `0.364 {{key:ENTER}} 4 {{key:×}} 0.0050 {{key:x²}} {{key:÷}} {{key:-}}` | $5321.2544$ | $5321.2544$ | $5321.2544$ | **$1024504.1501$** | Subtract molecular attraction term $a n^2 / V^2$ for van der Waals pressure $P$ (Pa) |
 
 ---
 
@@ -1017,19 +1017,11 @@ $$\delta = \frac{1}{\sqrt{\pi f \mu \sigma}}$$
 **Special Relativity Context:** Particle speed $v = 0.85 c$ ($v/c = 0.85$):
 $$\gamma = \frac{1}{\sqrt{1 - (v/c)^2}}$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_42:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_42:value}}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_42:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_42:value}}`**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0.85` `{{key:x²}}` — Enter velocity ratio ($v/c = 0.85$) and square in place ($0.85^2 = 0.7225$).
-2. `1` `{{key:-}}` `{{key:+/-}}` — Subtract 1.0 ($-0.2775$) and negate in place; relativistic radical core ($1 - \beta^2 = 0.2775$) forms in $X$.
-3. `{{key:√x}}` `{{key:1/x}}` — Extract square root ($0.526783$) and invert; Lorentz time dilation factor ($\gamma \approx \mathbf{1.8983}$) is produced directly.
-
-Time dilates by a factor of nearly $1.90\times$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.85 {{key:x²}} 1 {{key:-}} {{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2775$ | Relativistic radicand $(1 - \beta^2)$ at $\beta = 0.85$ |
-| 2 | `{{key:√x}} {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.8983$** | Take reciprocal square root for Lorentz time dilation factor $\gamma$ |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.85 {{key:x²}} 1 {{key:-}} {{key:+/-}}` squares velocity ratio ($0.7225$), subtracts from 1.0, and negates, forming relativistic radical core $1 - \beta^2 = 0.2775$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.2775)$.
+2. Striking `{{key:√x}} {{key:1/x}}` extracts root $\sqrt{0.2775} \approx 0.5268$ and takes reciprocal, calculating Lorentz factor $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1.8983})$—showing time dilates by $1.90\times$ without parenthesis buffering.
 
 ---
 
@@ -1037,22 +1029,11 @@ Time dilates by a factor of nearly $1.90\times$.
 **Rapid Calculation Sprint:** Solve the expression:
 $$x = \frac{\ln(4.5^3) + \log_{10}(1200)}{\sqrt[3]{18.5}}$$
 
-**Keystrokes:**
-`{{res:sc32_03_algebra_transcendentals_seq_43:keys}}`
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_43:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_43:value}}`**
 
-**Stack State Inspection:**
-1. $\ln(4.5^3) = 3 \ln(4.5) \approx 4.512234$
-2. $\log_{10}(1200) \approx 3.079181$
-3. Sum $= 7.591415$
-4. $\sqrt[3]{18.5} \approx 2.644685$
-5. Quotient: $x = \mathbf{2.870442}$.
-Solved in 6 seconds!
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `4.5 {{key:LN}} 3 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.5122$ | Scale natural logarithm by exponent $3 \ln(4.5)$ |
-| 2 | `1200 {{key:LOG}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7.5914$ | Add common logarithm $\log_{10}(1200)$ |
-| 3 | `18.5 {{key:ENTER}} 3 {{key:ˣ√y}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.8703$** | Divide by cube root $\sqrt[3]{18.5}$ for chained logarithmic power tower |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `4.5 {{key:LN}} 3 {{key:×}} 1200 {{key:LOG}} {{key:+}}` computes $3 \ln(4.5) \approx 4.5122$ and adds common logarithm $\log_{10}(1200) \approx 3.0792$, forming numerator $7.5914$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 7.5914)$.
+2. Striking `18.5 {{key:ENTER}} 3 {{key:ˣ√y}} {{key:÷}}` lifts numerator to $Y$, evaluates cube root $\sqrt[3]{18.5} \approx 2.6447$, and divides, obtaining quotient $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2.8703})$ in six seconds flat.
 
 ---
 
@@ -1081,4 +1062,3 @@ Display modes (`{{key:FIX}}`, `{{key:SCI}}`, `{{key:ENG}}`, and `{{key:ALL}}`) g
 Chapter 3 expanded the operational stack into the continuous domain of algebra and transcendentals. You explored in-place monadic transformations, arbitrary powers and fractional roots, natural and common logarithms across wide dynamic ranges, and factorials extending smoothly into the half-integer Gamma domain. With IEEE-754 64-bit precision, in-place evaluation preserves upper stack registers ($Y, Z, T$) untouched, while `{{key:SHOW}}` and display formats (`{{key:FIX}}`, `{{key:SCI}}`, `{{key:ENG}}`, `{{key:ALL}}`) adapt readouts directly to engineering disciplines.
 
 Linear and exponential scales are only part of the physical world; nature also rotates, oscillates, and points through multi-dimensional space. In **Chapter 4: Trigonometry, Vectors & Polar Transformations**, you will step onto the unit circle, navigating degree, radian, and gradian angular modes. You will harness direct and inverse trigonometric functions, hyperbolic projections, and instantaneous rectangular-to-polar conversions to decompose forces, track geodetic traverses, and navigate 2D vector spaces on the stack.
-
