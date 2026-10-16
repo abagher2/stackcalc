@@ -433,18 +433,9 @@ $$t = \frac{1}{\lambda} \ln\left(1 + C \cdot \frac{{}^{40}\text{Ar}}{{}^{40}\tex
 
 **Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_06:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_06:value}}`**
 
-**Stack State Inspection:**
-1. $9.54 \times 0.0850 = 0.810900$
-2. $1 + 0.810900 = 1.810900$
-3. $\ln(1.810900) \approx 0.593823$
-4. Divide by $\lambda$: $t \approx \mathbf{1,071,302,544\text{ years}} \approx 1.071\text{ billion years}$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `9.54 {{key:ENTER}} 0.0850 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.8109$ | Argon-potassium branching product $C \cdot ({}^{40}\text{Ar}/{}^{40}\text{K})$ |
-| 2 | `1 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.8109$ | Accumulate unity reference $(1 + C \cdot \text{ratio})$ |
-| 3 | `{{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.5938$ | Natural logarithm $\ln(1 + C \cdot \text{ratio})$ |
-| 4 | `5.543 {{key:E}} 10 {{key:+/-}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0713 \times 10^{9}$** | Divide by decay constant $\lambda$ for age $t$ (years) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `9.54 {{key:ENTER}} 0.0850 {{key:×}} 1 {{key:+}}` evaluates the accumulation argument $(1 + C \cdot \text{ratio}) = 1.8109$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 1.8109)$.
+2. Striking `{{key:LN}} 5.543 {{key:E}} 10 {{key:+/-}} {{key:÷}}` takes the natural logarithm ($\approx 0.5938$) and divides by decay constant $\lambda$, resolving rock formation age $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1.0713 \times 10^{9}}\text{ yr})$ ($1.071\text{ billion years}$) without scratchpad registers.
 
 ---
 
@@ -452,24 +443,13 @@ $$t = \frac{1}{\lambda} \ln\left(1 + C \cdot \frac{{}^{40}\text{Ar}}{{}^{40}\tex
 **Biomedical Physiology Context:** Human blood plasma maintains pH via the carbonic acid-bicarbonate buffer ($\text{pK}_a = 6.10$). Clinical blood gas analysis measures bicarbonate $[\text{HCO}_3^-] = 24.0\text{ mEq/L}$ and dissolved carbon dioxide $[\text{CO}_2] = 1.20\text{ mEq/L}$:
 $$\text{pH} = \text{pK}_a + \log_{10}\left(\frac{[\text{HCO}_3^-]}{[\text{CO}_2]}\right) = 6.10 + \log_{10}\left(\frac{24.0}{1.20}\right)$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_07:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_07:value}}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_07:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_07:value}}`**.
 
 > **Named RPN Stack Idiom: *The x⇄y Denominator Flip & Logarithmic Buffer Ratio*** — Compute base-to-acid ratio directly on the stack, take $\log_{10}$ in place, and add $\text{pK}_a$ without parentheses {{cite:hp15c1982}}.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `24.0` `{{key:ENTER}}` — Load the plasma bicarbonate conjugate base concentration ($[\text{HCO}_3^-] = 24.0\text{ mEq/L}$) into $Y$.
-2. `1.20` `{{key:÷}}` — Enter dissolved carbon dioxide acid concentration ($[\text{CO}_2] = 1.20\text{ mEq/L}$) and divide; the clinical buffer ratio ($20.00$) forms directly in $X$.
-3. `{{key:LOG}}` — Compute the base-10 logarithm in place ($\log_{10}(20.0) \approx 1.3010$).
-4. `6.10` `{{key:+}}` — Add baseline dissociation constant ($\text{pK}_a = 6.10$), yielding arterial blood pH ($7.4010$).
-
-Normal physiological blood pH ($7.40$).
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `24.0 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $24.0000$ | $24.0000$ | Load bicarbonate conjugate base $[	ext{HCO}_3^-]$ |
-| 2 | `1.20 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $20.0000$ | Divide by dissolved $[	ext{CO}_2]$ for buffer ratio |
-| 3 | `{{key:LOG}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.3010$ | Base-10 logarithm $\log_{10}(20.0)$ |
-| 4 | `6.10 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$7.4010$** | Add dissociation constant $\text{pK}_a$ for blood pH |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `24.0 {{key:ENTER}} 1.20 {{key:÷}}` loads bicarbonate concentration ($24.0\text{ mEq/L}$) into $Y$, enters dissolved carbon dioxide ($1.20\text{ mEq/L}$), and divides, forming clinical buffer ratio $20.00$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 20.0000)$.
+2. Striking `{{key:LOG}} 6.10 {{key:+}}` computes $\log_{10}(20.0) \approx 1.3010$ and adds baseline dissociation constant $\text{pK}_a = 6.10$, yielding physiological arterial blood pH $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{7.4010})$ without grouping syntax.
 
 ---
 
@@ -478,22 +458,11 @@ Normal physiological blood pH ($7.40$).
 $$\text{Loss}_{\text{dB}} = \alpha \cdot L = 0.22 \times 65.0 = 14.30\text{ dB}$$
 $$P_{\text{out}} = P_{\text{in}} \cdot 10^{-\text{Loss}_{\text{dB}} / 10} = 15.0 \cdot 10^{-1.430}$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_08:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_08:value}}\text{ mW}} = 556.7\,\mu\text{W}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_08:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_08:value}}`**$\text{ mW} = 556.7\,\mu\text{W}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0.22` `{{key:ENTER}}` — Prime the stack with silica fiber attenuation coefficient ($\alpha = 0.22\text{ dB/km}$) in $Y$.
-2. `65.0` `{{key:×}}` — Enter fiber link distance ($L = 65.0\text{ km}$) and multiply; total link insertion loss ($14.30\text{ dB}$) forms in $X$.
-3. `10` `{{key:÷}}` — Divide by decibel scaling factor $10$; decade optical attenuation exponent ($1.4300$) condenses in $X$.
-4. `{{key:+/-}}` — Negate in place to reflect transmission loss ($-1.4300$).
-5. `{{key:10ˣ}}` — Raise $10$ to power in place; optical power transmission throughput factor ($0.037154$) appears in $X$.
-6. `15.0` `{{key:×}}` — Scale by input transmitter optical power ($P_{\text{in}} = 15.0\text{ mW}$); received detector power ($P_{\text{out}} = 0.5573\text{ mW} = 557.3\,\mu\text{W}$) is evaluated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.22 {{key:ENTER}} 65 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $14.3000$ | Total optical fiber attenuation loss (dB) |
-| 2 | `10 {{key:÷}} {{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.4300$ | Scale to decade attenuation exponent $-\text{Loss}/10$ |
-| 3 | `{{key:10ˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0372$ | Optical transmission throughput factor |
-| 4 | `15 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.5573$** | Scale by input power $P_{\text{in}} = 15\text{ mW}$ to get $P_{\text{out}}$ (mW) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.22 {{key:ENTER}} 65 {{key:×}} 10 {{key:÷}} {{key:+/-}}` computes total insertion loss ($14.30\text{ dB}$) and scales to negative decade exponent $-\text{Loss}/10 = -1.4300$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: -1.4300)$.
+2. Striking `{{key:10ˣ}} 15 {{key:×}}` evaluates power transmission throughput factor ($10^{-1.43} \approx 0.0372$) and scales by launch power $15.0\text{ mW}$, resolving received detector power $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.5573}\text{ mW})$ ($557.3\,\mu\text{W}$).
 
 ---
 
@@ -503,26 +472,21 @@ $$I = I_s \left[\exp\left(\frac{V}{n \cdot V_t}\right) - 1\right] = 1.8 \times 1
 
 **Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_09:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_09:value}}`**
 
-> **Named RPN Stack Idiom: *The Inside-Out Exponential Diode Pipeline*** — Compute the junction voltage ratio $V/(n V_t)$ inside-out, exponentiate, subtract 1, and scale by saturation current without scratchpad storage {{cite:horowitz2015,hp15c1982}}.
+> **Named RPN Stack Idiom: *The Inside-Out Exponential Diode Pipeline*** — Compute the junction voltage ratio $V/(n V_t)$ inside-out via single-`ENTER` chain division, exponentiate, subtract 1, and scale by saturation current without scratchpad storage {{cite:horowitz2015,hp15c1982}}.
 
 **Step-by-Step RPN Reasoning & Stack Logic:**
 1. `0.58` `{{key:ENTER}}` — Load solar cell forward bias terminal potential ($V = 0.58\text{ V}$) into $Y$.
-2. `1.25` `{{key:ENTER}}` — Enter silicon junction diode ideality factor ($n = 1.25$) into $Y$.
-3. `0.025852` `{{key:×}}` — Multiply by thermal voltage ($V_t = 0.025852\text{ V}$); composite ideality denominator ($n V_t = 0.032315\text{ V}$) forms in $X$.
-4. `{{key:÷}}` — Divide forward voltage by thermal denominator; dimensionless diode activation argument ($V/nV_t \approx 17.9483$) occupies $X$.
-5. `{{key:eˣ}}` — Evaluate natural exponential in place ($e^{17.9483} \approx 6.2351 \times 10^7$).
-6. `1` `{{key:-}}` — Subtract unity reference in place; exponential emission factor forms in $X$.
-7. `1.8 {{key:E}} 11 {{key:+/-}}` `{{key:×}}` — Scale by reverse saturation current ($I_s = 1.8 \times 10^{-11}\text{ A}$); generated photovoltaic forward current ($I = 1.1223 \times 10^{-3}\text{ A} = 1.122\text{ mA}$) evaluates without grouping overhead.
+2. `1.25` `{{key:÷}}` `0.025852` `{{key:÷}}` — Chain divide by ideality factor ($n = 1.25$) and thermal voltage ($V_t = 0.025852\text{ V}$); dimensionless diode activation argument ($V/(nV_t) \approx 17.9483$) occupies $X$.
+3. `{{key:eˣ}}` `1` `{{key:-}}` — Evaluate natural exponential in place ($e^{17.9483} \approx 6.2351 \times 10^7$) and subtract unity reference.
+4. `1.8 {{key:E}} 11 {{key:+/-}}` `{{key:×}}` — Scale by reverse saturation current ($I_s = 1.8 \times 10^{-11}\text{ A}$); generated photovoltaic forward current ($I = 1.1223 \times 10^{-3}\text{ A} = 1.122\text{ mA}$) evaluates without grouping overhead.
 
 Stack: Exponent $= 17.9483$, $e^{17.9483} \approx 6.235 \times 10^7$, Current $I \approx \mathbf{0.001122\text{ A}} = 1.122\text{ mA}$.
 
 | Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
 |:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.58 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $0.5800$ | $0.5800$ | Load forward bias terminal potential $V$ |
-| 2 | `1.25 {{key:ENTER}} 0.025852 {{key:×}}` | $0.0000$ | $0.0000$ | $0.5800$ | $0.0323$ | Compute composite thermal denominator $n V_t$ |
-| 3 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $17.9483$ | Dimensionless diode activation argument $V/(n V_t)$ |
-| 4 | `{{key:eˣ}} 1 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6.2353 \times 10^{7}$ | Exponential emission factor $(e^{V/nV_t} - 1)$ |
-| 5 | `1.8 {{key:E}} 11 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.0011$** | Scale by saturation current $I_s$ for forward current $I$ (A) |
+| 1 | `0.58 {{key:ENTER}} 1.25 {{key:÷}} 0.025852 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $17.9483$ | Chain division for diode activation argument $V/(n V_t)$ |
+| 2 | `{{key:eˣ}} 1 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6.2353 \times 10^{7}$ | Exponential emission factor $(e^{V/nV_t} - 1)$ |
+| 3 | `1.8 {{key:E}} 11 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.0011$** | Scale by saturation current $I_s$ for forward current $I$ (A) |
 
 ---
 
@@ -530,17 +494,11 @@ Stack: Exponent $= 17.9483$, $e^{17.9483} \approx 6.235 \times 10^7$, Current $I
 **Aerospace Context:** Single-stage orbital rocket with effective exhaust velocity $v_e = 3,150\text{ m/s}$ and mass ratio $m_0 / m_f = 9.20$ ($m_0 = \text{wet mass}, m_f = \text{dry mass}$):
 $$\Delta v = v_e \ln\left(\frac{m_0}{m_f}\right)$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_10:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_10:value}}\text{ m/s}} \approx 6.99\text{ km/s}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_10:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_10:value}}`**$\text{ m/s} \approx 6.99\text{ km/s}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `9.20` — Key propellant mass fraction ratio ($m_0/m_f = 9.20$) into Register $X$.
-2. `{{key:LN}}` — Compute natural logarithm $\ln(9.20) \approx 2.2192$ in place.
-3. `3150` `{{key:×}}` — Scale by rocket engine effective exhaust velocity ($v_e = 3150\text{ m/s}$); total ideal mission burnout velocity ($\Delta v \approx \mathbf{6,990.49\text{ m/s}} \approx 6.99\text{ km/s}$) is calculated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `9.20 {{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.2192$ | Natural logarithm of mass ratio $\ln(m_0/m_f)$ |
-| 2 | `3150 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$6990.4910$** | Scale by effective exhaust velocity $v_e$ for burnout $\Delta v$ (m/s) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `9.20 {{key:LN}}` evaluates the natural logarithm of the propellant mass ratio $\ln(9.20) \approx 2.2192$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.2192)$.
+2. Striking `3150 {{key:×}}` scales by effective exhaust velocity $v_e = 3150\text{ m/s}$, producing total mission burnout velocity increment $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{6990.4910}\text{ m/s})$ ($\approx 6.99\text{ km/s}$) in two keystrokes.
 
 ---
 
@@ -548,21 +506,13 @@ $$\Delta v = v_e \ln\left(\frac{m_0}{m_f}\right)$$
 **Seismology Context:** Gutenberg-Richter relation comparing seismic energy released by a magnitude $M_2 = 7.8$ earthquake versus an $M_1 = 5.2$ earthquake:
 $$\frac{E_2}{E_1} = 10^{1.5 (M_2 - M_1)}$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_11:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_11:value}}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_11:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_11:value}}`**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `7.8` `{{key:ENTER}}` — Enter major shock Richter magnitude ($M_2 = 7.8$) into $Y$.
-2. `5.2` `{{key:-}}` — Enter baseline moderate shock magnitude ($M_1 = 5.2$) and subtract in place; magnitude delta ($\Delta M = 2.6$) forms in $X$.
-3. `1.5` `{{key:×}}` — Multiply by empirical Gutenberg-Richter energy scaling slope ($1.5$); decade logarithmic energy exponent ($3.9000$) condenses in $X$.
-4. `{{key:10ˣ}}` — Raise $10$ to power in place; relative seismic energy release ratio ($E_2/E_1 = 7,943.28$) evaluates directly, proving a 2.6-magnitude difference releases nearly 8,000 times more destructive mechanical energy {{cite:ellenberg2014}}.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `7.8 {{key:ENTER}} 5.2 {{key:-}} 1.5 {{key:×}}` evaluates the seismic magnitude difference ($\Delta M = 2.6$) and multiplies by slope $1.5$, forming decade energy exponent $3.9000$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.9000)$.
+2. Striking `{{key:10ˣ}}` exponentiates in place, yielding relative radiated seismic energy ratio $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{7943.2823})$—proving a 2.6-magnitude difference releases nearly 8,000 times more destructive energy {{cite:ellenberg2014}}.
 
 The magnitude 7.8 earthquake releases nearly 8,000 times more seismic energy!
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `7.8 {{key:ENTER}} 5.2 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.6000$ | Magnitude differential $\Delta M = M_1 - M_2$ |
-| 2 | `1.5 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.9000$ | Seismic scaling factor $1.5 \times \Delta M$ |
-| 3 | `{{key:10ˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$7943.2823$** | Seismic wave radiated energy ratio $E_1/E_2$ |
 
 ---
 
@@ -570,22 +520,13 @@ The magnitude 7.8 earthquake releases nearly 8,000 times more seismic energy!
 **Aviation Context:** Aircraft altimeter reads static ambient pressure $P = 725.0\text{ hPa}$ ($P_0 = 1013.25\text{ hPa}$, scale height $H_s = 8434\text{ meters}$):
 $$h = - H_s \ln\left(\frac{P}{P_0}\right)$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_12:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_12:value}}\text{ meters}} \approx 9,275\text{ ft}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_12:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_12:value}}`**$\text{ meters} \approx 9,275\text{ ft}$.
 
 > **Named RPN Stack Idiom: *The LASTX Dual-Branch Trick & Logarithmic Pressure Scale*** — Form static pressure ratio $P/P_0$, take natural log in place, and scale by atmospheric scale height with zero scratch registers {{cite:hp15c1982}}.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `725` `{{key:ENTER}}` — Load flight ambient barometric pressure ($P = 725.0\text{ hPa}$) into $Y$.
-2. `1013.25` `{{key:÷}}` — Enter standard sea-level reference pressure ($P_0 = 1013.25\text{ hPa}$) and divide; dimensionless pressure ratio ($P/P_0 = 0.715519$) appears in $X$.
-3. `{{key:LN}}` — Take natural logarithm in place ($\ln(0.715519) \approx -0.33475$); negative log-altitude factor forms immediately.
-4. `8434` `{{key:×}}` — Scale by atmospheric scale height ($H_s = 8434\text{ m}$); un-negated barometric altitude ($-2823.29\text{ m}$) accumulates in $X$.
-5. `{{key:+/-}}` — Negate to obtain positive true altitude ($h = 2,823.29\text{ m} \approx 9,263\text{ ft}$) without secondary scratch registers.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `725 {{key:ENTER}} 1013.25 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.7155$ | Atmospheric pressure ratio $P/P_0$ |
-| 2 | `{{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-0.3347$ | Natural logarithm $\ln(P/P_0)$ |
-| 3 | `8434 {{key:×}} {{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2823.2529$** | Scale by scale height $H_p$ for geopotential altitude $h$ (m) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `725 {{key:ENTER}} 1013.25 {{key:÷}} {{key:LN}}` computes static ambient pressure ratio $P/P_0 \approx 0.7155$ and takes the natural logarithm ($-0.3347$) in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: -0.3347)$.
+2. Striking `8434 {{key:×}} {{key:+/-}}` scales by atmospheric scale height $H_s = 8434\text{ m}$ and negates, resolving true barometric altitude $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2823.2529}\text{ m})$ ($\approx 9,263\text{ ft}$) directly.
 
 ---
 
@@ -615,7 +556,7 @@ Result: $B_\lambda \approx \mathbf{2.632 \times 10^{13}\text{ W}/(\text{m}^3\cdo
 | Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
 |:---|:---|:---|:---|:---|:---|:---|
 | 1 | `4.98020 {{key:eˣ}} 1 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $144.5035$ | Planck photon distribution denominator $(e^x - 1)$ |
-| 2 | `1.19104 {{key:E}} 16 {{key:+/-}} {{key:ENTER}}` | $0.0000$ | $144.5035$ | $0.0000$ | $0.0000$ | Load first radiation constant $2hc^2$ |
+| 2 | `1.19104 {{key:E}} 16 {{key:+/-}} {{key:ENTER}}` | $0.0000$ | $144.5035$ | $1.1910 \times 10^{-16}$ | $1.1910 \times 10^{-16}$ | Load first radiation constant $2hc^2$ |
 | 3 | `5.0 {{key:E}} 7 {{key:+/-}} {{key:ENTER}} 5 {{key:yˣ}} {{key:÷}}` | $144.5035$ | $144.5035$ | $144.5035$ | $3.8113 \times 10^{15}$ | Divide by wavelength to fifth power $\lambda^5$ |
 | 4 | `{{key:x⇄y}} {{key:÷}}` | $144.5035$ | $144.5035$ | $144.5035$ | **$2.6375 \times 10^{13}$** | Divide spectral power by photon denominator for radiance $B_\lambda$ |
 
@@ -651,25 +592,15 @@ Result: $n_i \approx \mathbf{1.045 \times 10^{10}\text{ cm}^{-3}}$.
 ---
 
 ### Problem 3.11: Arrhenius Diffusion Coefficient in Austenite Steel
+### Problem 3.11: Arrhenius Diffusion Coefficient in Austenite Steel
 **Metallurgy Context:** Carbon diffusion in FCC iron at $T = 1200\text{ K}$ ($D_0 = 2.3 \times 10^{-5}\text{ m}^2/\text{s}$, activation energy $Q = 148\text{ kJ/mol} = 148,000\text{ J/mol}$, $R = 8.31446\text{ J/mol}\cdot\text{K}$):
 $$D = D_0 \exp\left(-\frac{Q}{R T}\right)$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_15:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_15:value}} \times 10^{-12}\text{ m}^2/\text{s}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_15:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_15:value}}`** $\times 10^{-12}\text{ m}^2/\text{s}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `148000` `{{key:ENTER}}` — Load activation energy ($Q = 148,000\text{ J/mol}$) into $Y$.
-2. `8.31446` `{{key:ENTER}}` — Enter universal gas constant ($R = 8.31446\text{ J/(mol}\cdot\text{K)}$) into $Y$.
-3. `1200` `{{key:×}}` — Scale by heat-treating furnace temperature ($T = 1200\text{ K}$); thermal energy denominator ($RT = 9977.35\text{ J/mol}$) forms in $X$.
-4. `{{key:÷}}` — Divide activation energy by thermal denominator; dimensionless barrier argument ($Q/RT \approx 14.8336$) occupies $X$.
-5. `{{key:+/-}}` `{{key:eˣ}}` — Negate and evaluate Arrhenius exponential in place; kinetic activation fraction ($3.6128 \times 10^{-7}$) forms in $X$.
-6. `2.3 {{key:E}} 5 {{key:+/-}}` `{{key:×}}` — Scale by maximal diffusion pre-exponential factor ($D_0 = 2.3 \times 10^{-5}\text{ m}^2/\text{s}$); carbon diffusivity ($D = 8.3094 \times 10^{-12}\text{ m}^2/\text{s}$) evaluates without parenthesis overhead.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `148000 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $148000.0000$ | $148000.0000$ | Load activation energy $Q$ (J/mol) |
-| 2 | `8.31446 {{key:ENTER}} 1200 {{key:×}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $14.8336$ | Thermal energy $R T$ denominator at $1200\text{ K}$ |
-| 3 | `{{key:+/-}} {{key:eˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6129 \times 10^{-7}$ | Arrhenius Boltzmann factor $\exp(-Q/RT)$ |
-| 4 | `2.3 {{key:E}} 5 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$8.3096 \times 10^{-12}$** | Scale by pre-exponential $D_0$ for diffusion coefficient $D$ ($\text{m}^2/\text{s}$) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `148000 {{key:ENTER}} 8.31446 {{key:ENTER}} 1200 {{key:×}} {{key:÷}}` evaluates the activation exponent $Q/(RT) \approx 14.8336$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 14.8336)$.
+2. Striking `{{key:+/-}} {{key:eˣ}} 2.3 {{key:E}} 5 {{key:+/-}} {{key:×}}` negates, exponentiates to Boltzmann probability $3.6129 \times 10^{-7}$, and scales by pre-exponential $D_0$, resolving carbon diffusivity $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{8.3096 \times 10^{-12}}\text{ m}^2/\text{s})$ without scratchpad memory.
 
 ---
 
@@ -677,21 +608,13 @@ $$D = D_0 \exp\left(-\frac{Q}{R T}\right)$$
 **Astrophysics Context:** Sirius ($m_1 = -1.46$) vs Polaris ($m_2 = +1.98$). Find luminosity brightness ratio:
 $$\frac{L_1}{L_2} = 10^{0.4 (m_2 - m_1)}$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_16:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_16:value}}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_16:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_16:value}}`**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1.98` `{{key:ENTER}}` — Key Polaris apparent magnitude ($m_2 = +1.98$) into $Y$.
-2. `1.46` `{{key:+/-}}` `{{key:-}}` — Enter Sirius apparent magnitude ($m_1 = -1.46$) and subtract; stellar magnitude difference ($\Delta m = 3.44$) forms in $X$.
-3. `0.4` `{{key:×}}` — Scale by Pogson logarithmic luminance factor ($0.4$); decade brightness exponent ($1.3760$) condenses in $X$.
-4. `{{key:10ˣ}}` — Raise $10$ to power in place; relative visual luminosity ratio ($L_1/L_2 = 23.7684$) is obtained directly, proving Sirius shines nearly 24 times brighter in Earth's night sky.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1.98 {{key:ENTER}} 1.46 {{key:+/-}} {{key:-}} 0.4 {{key:×}}` evaluates apparent magnitude difference $\Delta m = 3.44$ and multiplies by $0.4$, forming decade luminance exponent $1.3760$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 1.3760)$.
+2. Striking `{{key:10ˣ}}` exponentiates in place, yielding visual brightness ratio $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{23.7684})$—proving Sirius shines nearly 24 times brighter than Polaris with zero scratchpad memory.
 
 Sirius appears $\approx 23.8$ times brighter than Polaris.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `1.98 {{key:ENTER}} 1.46 {{key:+/-}} {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.4400$ | Apparent magnitude difference $\Delta m = m_2 - m_1$ |
-| 2 | `0.4 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.3760$ | Pogson brightness exponent $0.4 \times \Delta m$ |
-| 3 | `{{key:10ˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$23.7684$** | Luminosity brightness ratio $b_1/b_2$ |
 
 ---
 
@@ -699,24 +622,12 @@ Sirius appears $\approx 23.8$ times brighter than Polaris.
 **Petroleum Geology Context:** Core plug ($L = 0.050\text{ m}$, cross-section $A = 0.00125\text{ m}^2$) under pressure drop $\Delta P = 250\text{ kPa} = 250,000\text{ Pa}$ with crude oil viscosity $\mu = 0.035\text{ Pa}\cdot\text{s}$ produces volumetric flow $Q = 1.8 \times 10^{-7}\text{ m}^3/\text{s}$. Find permeability $k$ in Darcy ($1\text{ D} = 9.86923 \times 10^{-13}\text{ m}^2$):
 $$k = \frac{Q \cdot \mu \cdot L}{A \cdot \Delta P}$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_17:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_17:value}}\text{ Darcy}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_17:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_17:value}}`**$\text{ Darcy}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1.8 {{key:E}} 7 {{key:+/-}}` `{{key:ENTER}}` — Load volumetric oil discharge rate ($Q = 1.8 \times 10^{-7}\text{ m}^3/\text{s}$) into $Y$.
-2. `0.035` `{{key:×}}` — Multiply by crude oil dynamic viscosity ($\mu = 0.035\text{ Pa}\cdot\text{s}$); viscous flow product forms in $X$.
-3. `0.050` `{{key:×}}` — Scale by core plug specimen length ($L = 0.050\text{ m}$); Darcy flow numerator ($3.15 \times 10^{-10}\text{ N}\cdot\text{s}$) forms in $X$.
-4. `0.00125` `{{key:ENTER}}` — Key plug cross-sectional area ($A = 0.00125\text{ m}^2$) into $Y$.
-5. `250000` `{{key:×}}` — Multiply by differential driving pressure ($\Delta P = 250,000\text{ Pa}$); hydraulic driving denominator ($312.50\text{ N}$) occupies $X$ while numerator waits in $Y$.
-6. `{{key:÷}}` — Divide flow numerator by driving denominator; permeability in SI units ($k = 1.0080 \times 10^{-12}\text{ m}^2$) appears in $X$.
-7. `9.86923 {{key:E}} 13 {{key:+/-}}` `{{key:÷}}` — Divide by Darcy unit conversion constant ($9.86923 \times 10^{-13}\text{ m}^2/\text{D}$); sandstone core permeability ($k = 1.0214\text{ Darcy}$) is produced on screen.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `1.8 {{key:E}} 7 {{key:+/-}} {{key:ENTER}}` | $0.0000$ | $0.0000$ | $1.8000 \times 10^{-7}$ | $1.8000 \times 10^{-7}$ | Load core sample cross-sectional area $A$ ($\text{m}^2$) |
-| 2 | `0.035 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6.3000 \times 10^{-9}$ | Multiply by dynamic viscosity $\mu$ ($\text{Pa}\cdot\text{s}$) |
-| 3 | `0.050 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.1500 \times 10^{-10}$ | Multiply by core sample length $L$ (m) |
-| 4 | `0.00125 {{key:ENTER}} 250000 {{key:×}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0080 \times 10^{-12}$ | Divide by volumetric flow rate times differential pressure $Q \Delta P$ |
-| 5 | `9.86923 {{key:E}} 13 {{key:+/-}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0214$** | Convert permeability $\kappa$ ($\text{m}^2$) to Darcys |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1.8 {{key:E}} 7 {{key:+/-}} {{key:ENTER}} 0.035 {{key:×}} 0.050 {{key:×}}` forms Darcy numerator $Q \mu L = 3.15 \times 10^{-10}\text{ N}\cdot\text{s}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.1500 \times 10^{-10})$.
+2. Keying `0.00125 {{key:ENTER}} 250000 {{key:×}} {{key:÷}}` builds denominator $A \Delta P = 312.5\text{ N}$ and divides, yielding SI permeability $1.0080 \times 10^{-12}\text{ m}^2$ in $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 1.0080 \times 10^{-12})$.
+3. Striking `9.86923 {{key:E}} 13 {{key:+/-}} {{key:÷}}` converts to Darcys, displaying sandstone core permeability $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1.0214}\text{ Darcy})$ directly.
 
 ---
 
@@ -724,18 +635,11 @@ $$k = \frac{Q \cdot \mu \cdot L}{A \cdot \Delta P}$$
 **Information Theory Context:** Channel bandwidth $B = 20.0\text{ MHz} = 2.0 \times 10^7\text{ Hz}$ with signal-to-noise ratio $\text{SNR} = 30.0\text{ dB}$ ($\text{SNR}_{\text{linear}} = 10^{30/10} = 1000$):
 $$C = B \log_2(1 + \text{SNR}) = B \frac{\ln(1 + \text{SNR})}{\ln 2}$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_18:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_18:value}}\text{ Mbps}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_18:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_18:value}}`**$\text{ Mbps}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1001` `{{key:LN}}` — Key signal-to-noise ratio term ($1 + \text{SNR} = 1001$) and take natural logarithm ($\ln 1001 \approx 6.908755$).
-2. `2` `{{key:LN}}` `{{key:÷}}` — Compute $\ln 2 \approx 0.693147$ and divide; base-2 spectral efficiency ($\log_2 1001 \approx 9.967226\text{ bits/s/Hz}$) forms in $X$.
-3. `20 {{key:E}} 6` `{{key:×}}` `1 {{key:E}} 6` `{{key:÷}}` — Scale by channel bandwidth ($B = 20.0\text{ MHz}$) and normalize; maximum channel capacity ($C \approx \mathbf{199.34\text{ Mbps}}$) is evaluated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `1001 {{key:LN}} 2 {{key:LN}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $9.9672$ | Evaluate base-2 channel capacity $\log_2(1 + \text{SNR})$ |
-| 2 | `20 {{key:E}} 6 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.9934 \times 10^{8}$ | Scale by RF channel bandwidth $B = 20\text{ MHz}$ |
-| 3 | `1 {{key:E}} 6 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$199.3445$** | Express channel capacity $C$ in Mbps |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1001 {{key:LN}} 2 {{key:LN}} {{key:÷}}` evaluates base-2 spectral efficiency $\log_2(1001) \approx 9.9672\text{ bits/s/Hz}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 9.9672)$.
+2. Striking `20 {{key:E}} 6 {{key:×}} 1 {{key:E}} 6 {{key:÷}}` scales by bandwidth $B = 20\text{ MHz}$ and normalizes to Mbps, resolving channel capacity $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{199.3445}\text{ Mbps})$ with zero parenthetical overhead.
 
 ---
 

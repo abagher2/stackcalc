@@ -149,6 +149,13 @@ Complete verified sequence: `{{res:sc6_order_of_ops:keys}}` $\longrightarrow$ **
 | **5th Grade Order of Operations:**<br>$(15 - 3) 	imes (4 + 2) \div 6 = 12$ | `( 1 5 - 3 ) * ( 4 + 2 ) / 6 =`<br>(14 keystrokes).<br>*Trap: Missed or misplaced parenthesis computes $15 - 12 + 0.33 = 3.33$ silently! Intermediate results ($12, 6$) are invisible inside hardware buffers.* | **SC-6 Elevator Stack + Two-Number Fusion:**<br>`15 {{key:ENTER}} 3 {{key:-}} 4 {{key:ENTER}} 2 {{key:+}} {{key:×}} 6 {{key:÷}}`<br>(11 keystrokes).<br>Both intermediate quantities ($12$ in $Y$, $6$ in $X$) are visible simultaneously before multiplying! Zero parentheses. | **21% fewer keystrokes**<br>(11 vs. 14) | **Dual Live Registers:**<br>Register $Y$ holds $12$ while Register $X$ computes $6$; live display proves $(15 - 3) 	imes (4 + 2)$ without scratch paper. | **Cognitive Clarity:**<br>Eliminates parenthesis anxiety and Dijkstra shunting-yard confusion; replaces abstract rules with physical two-number stack fusion. |
 
 
+### Algebraic Trap vs. StackCalc Superpower Showdown: Order of Operations
+
+| Challenge / Equation | The Algebraic Calculator Trap (TI-30X / Smartphone) | The StackCalc SC-6 + Manipulative Superpower | Keystroke Reduction | Live Stack Visibility | Pedagogical Breakthrough |
+| :--- | :--- | :--- | :---: | :--- | :--- |
+| **5th Grade Order of Operations:**<br>$(15 - 3) 	imes (4 + 2) \div 6 = 12$ | `( 1 5 - 3 ) * ( 4 + 2 ) / 6 =`<br>(14 keystrokes).<br>*Trap: Missed or misplaced parenthesis computes $15 - 12 + 0.33 = 3.33$ silently! Intermediate results ($12, 6$) are invisible inside hardware buffers.* | **SC-6 Elevator Stack + Two-Number Fusion:**<br>`15 {{key:ENTER}} 3 {{key:-}} 4 {{key:ENTER}} 2 {{key:+}} {{key:×}} 6 {{key:÷}}`<br>(11 keystrokes).<br>Both intermediate quantities ($12$ in $Y$, $6$ in $X$) are visible simultaneously before multiplying! Zero parentheses. | **21% fewer keystrokes**<br>(11 vs. 14) | **Dual Live Registers:**<br>Register $Y$ holds $12$ while Register $X$ computes $6$; live display proves $(15 - 3) 	imes (4 + 2)$ without scratch paper. | **Cognitive Clarity:**<br>Eliminates parenthesis anxiety and Dijkstra shunting-yard confusion; replaces abstract rules with physical two-number stack fusion. |
+
+
 <div class="admonition note">
 <p class="admonition-title">For Educators &amp; Parents: Cognitive Load Theory &amp; The Operational Equal-Sign Misconception</p>
 <p>
@@ -288,152 +295,74 @@ Rather than facing disconnected lists of drill problems, you embark on four cohe
 ### Expedition 1: The School Playground Construction Crew (Problems 01–10)
 *Mission Briefing:* The local elementary school is constructing a brand-new adventure playground. As the project engineers, your crew must lay border timbers, pour sandbox gravel, measure stepping stone distances, and ensure safety clearances using the SC-6 stack.
 
-### Problem 01: Single-Digit Sum ($5 + 3 = 8$)
+### Problem 01:
 - **Playground Construction Mission:** Your playground construction crew is laying interlocking rubber safety tiles under the two-bay swing set. The crew unloads 5 blue safety tiles in the morning, and the supply truck delivers 3 more green safety tiles in the afternoon. How many total safety tiles are ready to lay down?
 - **Concrete Stage:** Place 5 blue counting tiles on the left side of your desk, and 3 green tiles on the right. Slide them together into one combined row of 8 tiles.
 - **Representational Stage:** The horizontal display shows `Y = 5` (left) and `X = 3` (right) before combining.
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_01:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_01:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T (Roof Floor) | Register Z (Loft Floor) | Register Y (Mezzanine) | Register X (Ground Flr) |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:C}} | 0 | 0 | 0 | 0 |
-| {{key:5}} | 0 | 0 | 0 | 5 |
-| {{key:ENTER}} | 0 | 0 | 5 | 5 |
-| {{key:3}} | 0 | 0 | 5 | 3 |
-| {{key:+}} | 0 | 0 | 0 | 8 |
+- **Stack Flow:** Tap `5 {{key:ENTER}} 3 {{key:+}}` -> (T=0, Z=0, Y=0, X=8) to fuse both groups into 8 on the ground floor.
 - **Diagnostic Checkpoint:** Did you see $Y = 5$ on the left and $X = 3$ on the right before pressing `{{key:+}}`? If your screen shows $53$, you forgot to press `{{key:ENTER}}` between the digits!
-
 ---
 
-### Problem 02: Single-Digit Subtraction ($9 - 4 = 5$)
+### Problem 02:
 - **Playground Construction Mission:** Your crew needs to anchor 9 sturdy cedar fence posts along the adventure playground perimeter. Before lunch, your crew finishes concreting 4 posts firmly into the ground. How many fence posts still need to be anchored?
 - **Concrete Stage:** Align 9 counting tiles in a row representing the fence line. Detach 4 tiles from the end for the completed posts. Count the 5 remaining tiles.
 - **Representational Stage:** Left column holds starting number $9$; right column holds second number $4$.
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_02:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_02:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:9}} | 0 | 0 | 0 | 9 |
-| {{key:ENTER}} | 0 | 0 | 9 | 9 |
-| {{key:4}} | 0 | 0 | 9 | 4 |
-| {{key:-}} | 0 | 0 | 0 | 5 |
+- **Stack Flow:** Tap `9 {{key:ENTER}} 4 {{key:-}}` -> (T=0, Z=0, Y=0, X=5) to leave 5 unbolted posts on the ground floor.
 - **Diagnostic Checkpoint:** If your screen displays $-5$, you entered the second number first (`4 {{key:ENTER}} 9 {{key:-}}`). Do not re-type! Simply tap `{{key:x⇄y}} {{key:-}}` to reverse and correct the calculation!
-
 ---
 
-### Problem 03: Continuous Chained Addition ($4 + 5 + 6 = 15$)
+### Problem 03:
 - **Playground Construction Mission:** To fill the giant wooden sandbox, your crew wheels loads of washed pea gravel from the supply depot: 4 wheelbarrows on Monday, 5 on Tuesday, and 6 on Wednesday. How many total wheelbarrows of gravel did you pour into the sandbox?
 - **Concrete Stage:** Stack 4 unit cubes on your desk, add 5 cubes, and then add 6 more cubes to form a single continuous tower of 15 cubes.
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_03:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_03:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:4}} | 0 | 0 | 0 | 4 |
-| {{key:ENTER}} | 0 | 0 | 4 | 4 |
-| {{key:5}} | 0 | 0 | 4 | 5 |
-| {{key:+}} | 0 | 0 | 0 | 9 |
-| {{key:6}} | 0 | 0 | 9 | 6 |
-| {{key:+}} | 0 | 0 | 0 | 15 |
-- **Automatic Stack Lift Invariant:** Notice row 5. Typing `6` automatically lifts the intermediate subtotal $9$ into Register $Y$. You do **not** press `{{key:ENTER}}` again!
-
+- **Stack Flow:** Tap `4 {{key:ENTER}} 5 {{key:+}} 6 {{key:+}}` -> (T=0, Z=0, Y=0, X=15). The intermediate sum $9$ automatically lifts to $Y$ when you key $6$, delivering $15$ with zero extra `[ENTER]` strokes.
 ---
 
-### Problem 04: Regrouping Across Ten ($8 + 7 = 15$)
+### Problem 04:
 - **Playground Construction Mission:** Your crew is installing round sensory stepping stones along the winding garden path. You lay down 8 smooth slate stones in the morning, and the supply truck brings 7 granite stones in the afternoon. How many total stepping stones lead to the climbing tower?
 - **Concrete Stage:** Place 8 counters into your first Ten-Frame tray. Take 2 counters from the group of 7 to fill the first tray to a complete 10; the remaining 5 counters spill into the second tray. Total: 1 full ten and 5 ones ($15$).
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_04:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_04:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:8}} | 0 | 0 | 0 | 8 |
-| {{key:ENTER}} | 0 | 0 | 8 | 8 |
-| {{key:7}} | 0 | 0 | 8 | 7 |
-| {{key:+}} | 0 | 0 | 0 | 15 |
-- **Diagnostic Checkpoint:** The result $15$ is immediately available on Level $X$ for subsequent additions.
-
+- **Stack Flow:** Tap `8 {{key:ENTER}} 7 {{key:+}}` -> (T=0, Z=0, Y=0, X=15), bridging the decade seamlessly to leave 15 stepping stones.
 ---
 
-### Problem 05: Taking from Ten ($10 - 6 = 4$)
+### Problem 05:
 - **Playground Construction Mission:** A heavy hardware box holds a bundle of 10 galvanized steel crossbeam bolts for the jungle gym frame. Your crew bolts 6 of them through the climbing net uprights. How many bolts remain in the box for the balance-beam brackets?
 - **Concrete Stage:** Fill a complete Ten-Frame tray with 10 counters. Remove 6 counters. Exactly 4 counters remain in the tray.
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_05:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_05:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:1}} {{key:0}} | 0 | 0 | 0 | 10 |
-| {{key:ENTER}} | 0 | 0 | 10 | 10 |
-| {{key:6}} | 0 | 0 | 10 | 6 |
-| {{key:-}} | 0 | 0 | 0 | 4 |
-
+- **Stack Flow:** Tap `10 {{key:ENTER}} 6 {{key:-}}` -> (T=0, Z=0, Y=0, X=4), leaving 4 bolts ready in Register $X$.
 ---
 
-### Problem 06: Zero Property of Addition ($7 + 0 = 7$)
+### Problem 06:
 - **Playground Construction Mission:** Your crew stakes 7 bright orange survey flags along the safety perimeter of the zip-line runway. The ground inspector checks the layout and confirms that zero additional flags are needed ($+0$). How many flags remain planted along the runway?
 - **Concrete Stage:** Place 7 counting tiles on your desk. Add zero tiles. You still have 7 tiles.
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_06:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_06:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:7}} | 0 | 0 | 0 | 7 |
-| {{key:ENTER}} | 0 | 0 | 7 | 7 |
-| {{key:0}} | 0 | 0 | 7 | 0 |
-| {{key:+}} | 0 | 0 | 0 | 7 |
-- **Mathematical Property:** Identity element of addition ($a + 0 = a$).
-
+- **Stack Flow:** Tap `7 {{key:ENTER}} 0 {{key:+}}` -> (T=0, Z=0, Y=0, X=7), proving identity element $a + 0 = a$.
 ---
 
-### Problem 07: Zero Property of Subtraction ($8 - 0 = 8$)
+### Problem 07:
 - **Playground Construction Mission:** The crew equipment chest has 8 safety climbing carabiners hanging from the inspection rack. During morning foundation prep, zero carabiners are taken out because the climbing tower hasn't arrived yet. How many carabiners stay clipped to the rack?
 - **Concrete Stage:** Set out 8 counting tiles. Remove zero tiles. Exactly 8 tiles remain.
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_07:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_07:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:8}} | 0 | 0 | 0 | 8 |
-| {{key:ENTER}} | 0 | 0 | 8 | 8 |
-| {{key:0}} | 0 | 0 | 8 | 0 |
-| {{key:-}} | 0 | 0 | 0 | 8 |
-
+- **Stack Flow:** Tap `8 {{key:ENTER}} 0 {{key:-}}` -> (T=0, Z=0, Y=0, X=8), verifying $a - 0 = a$.
 ---
 
-### Problem 08: Identity Subtraction ($6 - 6 = 0$)
+### Problem 08:
 - **Playground Construction Mission:** 6 heavy galvanized link chains are uncoiled on the grass for the three playground tire swings. Your crew bolts all 6 chains to the overhead swing hanger hooks. How many uninstalled chains remain on the grass?
 - **Concrete Stage:** Place 6 counting tiles on the desk. Remove all 6 tiles. Zero tiles remain ($6 - 6 = 0$).
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_08:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_08:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:6}} | 0 | 0 | 0 | 6 |
-| {{key:ENTER}} | 0 | 0 | 6 | 6 |
-| {{key:6}} | 0 | 0 | 6 | 6 |
-| {{key:-}} | 0 | 0 | 0 | 0 |
-
+- **Stack Flow:** Tap `6 {{key:ENTER}} 6 {{key:-}}` -> (T=0, Z=0, Y=0, X=0), clearing inventory to zero.
 ---
 
-### Problem 09: Two-Digit Addition without Regrouping ($23 + 14 = 37$)
+### Problem 09:
 - **Playground Construction Mission:** Your construction crew paves the safety perimeter around the spiral slide using 23 heavy interlocking rubber pavers, and lays another 14 pavers around the low balance-beam zone. How many total border pavers did your crew install?
 - **Concrete Stage:** Build 23 using 2 ten-sticks and 3 unit cubes. Build 14 using 1 ten-stick and 4 unit cubes. Combine tens ($2+1=3$) and ones ($3+4=7$) to find 37.
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_09:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_09:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:2}} {{key:3}} | 0 | 0 | 0 | 23 |
-| {{key:ENTER}} | 0 | 0 | 23 | 23 |
-| {{key:1}} {{key:4}} | 0 | 0 | 23 | 14 |
-| {{key:+}} | 0 | 0 | 0 | 37 |
-
+- **Stack Flow:** Tap `23 {{key:ENTER}} 14 {{key:+}}` -> (T=0, Z=0, Y=0, X=37), calculating 37 installed pavers in one fluent motion.
 ---
 
-### Problem 10: Two-Digit Addition with Regrouping ($47 + 36 = 83$)
+### Problem 10:
 - **Playground Construction Mission:** Your crew spreads soft cedar playground woodchips beneath the monkey bars to ensure a deep shock-absorbing cushion. The first wheelbarrow delivers $47\text{ kg}$ of woodchips, and the second wheelbarrow brings $36\text{ kg}$. What is the total mass of woodchips spread beneath the bars?
 - **Concrete Stage:** Represent 47 with 4 tens and 7 ones. Represent 36 with 3 tens and 6 ones. Combine ones ($7 + 6 = 13$, regroup as 1 ten and 3 ones), then add tens ($4 + 3 + 1 = 8$ tens). Total: 8 tens and 3 ones ($83$).
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_10:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_10:value}}`**
@@ -441,523 +370,355 @@ Rather than facing disconnected lists of drill problems, you embark on four cohe
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:4}} {{key:7}} | 0 | 0 | 0 | 47 |
+| 47 | 0 | 0 | 0 | 47 |
 | {{key:ENTER}} | 0 | 0 | 47 | 47 |
-| {{key:3}} {{key:6}} | 0 | 0 | 47 | 36 |
+| 36 | 0 | 0 | 47 | 36 |
 | {{key:+}} | 0 | 0 | 0 | 83 |
 | {{key:LASTX}} | 0 | 0 | 83 | 36 |
 | {{key:-}} | 0 | 0 | 0 | 47 |
 - **Self-Check Invariant:** Rows 5 and 6 demonstrate Superpower 4 (`{{key:LASTX}}`), verifying $83 - 36 = 47$ instantly.
-
-
 ---
 
 ### Expedition 2: The High-Rise Elevator Express (Problems 11–20)
 *Mission Briefing:* You are the logistics controller for a bustling 20-story urban high-rise. Your mission is to track passenger loads rising between floors, monitor freight delivery weights, and calculate multi-floor transfers using the SC-6 operational stack.
 
-### Problem 11: Two-Digit Subtraction with Regrouping ($83 - 36 = 47$)
+### Problem 11:
 - **High-Rise Elevator Mission:** A freight elevator begins at the ground floor loaded with $83\text{ kg}$ of construction fixtures. At Floor 4, the logistics crew unloads $36\text{ kg}$ of steel brackets. How many kilograms of cargo remain inside the freight cab?
 - **Concrete Stage (Counting Tile Studio):** Lay out 8 ten-rods and 3 unit cubes ($83$). To subtract 36, trade 1 ten-rod for 10 units (leaving 7 tens and 13 units). Remove 3 tens and 6 units to leave 4 tens and 7 units ($47$).
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_11:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_11:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `8` `3` | $0$ | $0$ | $0$ | $83$ | Initial elevator cargo mass entered into ground floor $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $83$ | $83$ | Stack lifts; cargo mass secured on Floor $Y$ |
-| `3` `6` | $0$ | $0$ | $83$ | $36$ | Unloaded fixture mass keyed into Floor $X$ |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $47$ | Starting number $Y$ minus second number $X$; $47\text{ kg}$ remaining cargo |
-
+- **Stack Flow:** Tap `83 {{key:ENTER}} 36 {{key:-}}` -> (T=0, Z=0, Y=0, X=47) to leave 47 kg of remaining fixtures.
 ---
 
-### Problem 12: Doubling a Quantity via `{{key:ENTER}} {{key:+}}` ($16 \to 32$)
+### Problem 12:
 - **High-Rise Elevator Mission:** An express elevator cab carries 16 convention delegates from the concourse. At the mezzanine level, an equal delegation of 16 more delegates steps aboard, doubling the passenger count. How many delegates are now riding the elevator?
 - **Concrete Stage:** Stack two identical 16-tile towers from your counting tile studio, showing $16 + 16 = 32$.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_12:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_12:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `6` | $0$ | $0$ | $0$ | $16$ | Initial passenger count enters active Register $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $16$ | $16$ | Elevator lift duplicates $16$ into both $Y$ and $X$ |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $32$ | Instant doubling: $16 + 16 = 32$ without re-typing |
-
-- **Stack Superpower:** Tapping `{{key:ENTER}}` places the number in both $Y$ and $X$. Pressing `{{key:+}}` immediately doubles it in a single rhythmic motion!
-
+- **Stack Flow:** Tap `16 {{key:ENTER}} {{key:+}}` -> (T=0, Z=0, Y=0, X=32). Pressing `{{key:ENTER}}` duplicates 16 into both shelves, and `{{key:+}}` doubles it instantly without re-typing!
 ---
 
-### Problem 13: Geometric Doubling Ladder ($2 \to 4 \to 8 \to 16 \to 32$)
+### Problem 13:
 - **High-Rise Elevator Mission:** An automated smart-lift dispatch computer doubles its active corridor scans on each floor rise. Starting with $2$ baseline sensor beams at Floor 1, determine the total active sensor scans by Floor 5.
 - **Concrete Stage:** Place 2 tiles on the table. Double the pile to 4, then 8, then 16, then 32, feeling exponential growth in your hands.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_13:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_13:value}}`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2` | $0$ | $0$ | $0$ | $2$ | Floor 1 baseline sensor beam count enters $X$ |
-| `{{key:ENTER}}` `{{key:+}}` | $0$ | $0$ | $0$ | $4$ | Cycle 1: Duplicated and added ($2 \times 2 = 4$) |
-| `{{key:ENTER}}` `{{key:+}}` | $0$ | $0$ | $0$ | $8$ | Cycle 2: Duplicated and added ($4 \times 2 = 8$) |
-| `{{key:ENTER}}` `{{key:+}}` | $0$ | $0$ | $0$ | $16$ | Cycle 3: Duplicated and added ($8 \times 2 = 16$) |
-| `{{key:ENTER}}` `{{key:+}}` | $0$ | $0$ | $0$ | $32$ | Cycle 4: Duplicated and added ($16 \times 2 = 32$ scans) |
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 2 | 0 | 0 | 0 | 2 |
+| {{key:ENTER}} {{key:+}} | 0 | 0 | 0 | 4 |
+| {{key:ENTER}} {{key:+}} | 0 | 0 | 0 | 8 |
+| {{key:ENTER}} {{key:+}} | 0 | 0 | 0 | 16 |
+| {{key:ENTER}} {{key:+}} | 0 | 0 | 0 | 32 |
 ---
 
-### Problem 14: Three-Stage High-Rise Transfer Total ($15 + 24 + 31 = 70$)
+### Problem 14:
 - **High-Rise Elevator Mission:** During morning rush hour, an express elevator boards 15 passengers on the subway concourse, 24 passengers on the ground plaza, and 31 passengers at the parking deck. How many total passengers are transported upward?
 - **Concrete Stage:** Form three separate tile trains of 15, 24, and 31 tiles. Slide them end-to-end to verify a combined length of 70 tiles.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_14:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_14:value}}`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `5` | $0$ | $0$ | $0$ | $15$ | Concourse passengers enter Register $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $15$ | $15$ | Passengers lift safely to Mezzanine Floor $Y$ |
-| `2` `4` | $0$ | $0$ | $15$ | $24$ | Plaza passengers board at Ground Floor $X$ |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $39$ | First subtotal ($15 + 24 = 39$) forms in $X$ |
-| `3` `1` | $0$ | $0$ | $39$ | $31$ | Subtotal auto-lifts to $Y$; parking passengers enter $X$ |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $70$ | Final addition yields $70$ total passengers |
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 15 | 0 | 0 | 0 | 15 |
+| {{key:ENTER}} | 0 | 0 | 15 | 15 |
+| 24 | 0 | 0 | 15 | 24 |
+| {{key:+}} | 0 | 0 | 0 | 39 |
+| 31 | 0 | 0 | 39 | 31 |
+| {{key:+}} | 0 | 0 | 0 | 70 |
 ---
 
-### Problem 15: Subtraction from Round Century ($100 - 43 = 57$)
+### Problem 15:
 - **High-Rise Elevator Mission:** The skyscraper's observation deck elevator has a maximum permitted safety capacity of 100 people. If an incoming tour group consists of 43 visitors, how many additional visitors can board before reaching capacity?
 - **Concrete Stage:** Model 100 with a ten-by-ten tile flat. Remove 4 rows of ten and 3 individual tiles to reveal 5 tens and 7 units ($57$).
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_15:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_15:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `0` `0` | $0$ | $0$ | $0$ | $100$ | Maximum rated cab capacity entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $100$ | $100$ | Capacity limit lifts to upper holding shelf $Y$ |
-| `4` `3` | $0$ | $0$ | $100$ | $43$ | Boarding visitor count keyed into active Register $X$ |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $57$ | Capacity minus visitors; $57$ remaining passenger spots |
-
+- **Stack Flow:** Tap `100 {{key:ENTER}} 43 {{key:-}}` -> (T=0, Z=0, Y=0, X=57), confirming 57 open visitor spots.
 ---
 
-### Problem 16: Step-Counting by Tens in 2-Stack Mode (`2-LV`)
+### Problem 16:
 - **High-Rise Elevator Mission:** The elevator safety inspector tests the floor indicator sensors by stepping upward in 10-floor intervals starting from the basement lobby (Floor 0) up to Floor 50 in 2-stack mode (`2-LV`).
 - **Concrete Stage:** Line up 5 ten-rods end-to-end, counting rhythmically: 10, 20, 30, 40, 50.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_16:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_16:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `0` | $0$ | $0$ | $0$ | $10$ | Step increment of 10 floors keyed into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $10$ | $10$ | Step increment locked into constant holder Register $Y$ |
-| `0` | $0$ | $0$ | $10$ | $0$ | Starting basement datum (Floor 0) entered into $X$ |
-| `{{key:+}}` | $0$ | $0$ | $10$ | $10$ | Step 1: $0 + 10 = 10$; Floor 10 reached |
-| `{{key:+}}` | $0$ | $0$ | $10$ | $20$ | Step 2: Constant $10$ adds; Floor 20 reached |
-| `{{key:+}}` | $0$ | $0$ | $10$ | $30$ | Step 3: Constant $10$ adds; Floor 30 reached |
-| `{{key:+}}` | $0$ | $0$ | $10$ | $40$ | Step 4: Constant $10$ adds; Floor 40 reached |
-| `{{key:+}}` | $0$ | $0$ | $10$ | $50$ | Step 5: Constant $10$ adds; Floor 50 reached |
-
-- **Stack Insight:** In 2-Stack mode, Register $Y$ acts as the constant holder ($10$), enabling continuous step counting on every press of `{{key:+}}`.
-
+- **Stack Flow:** In 2-Stack mode, Register $Y$ acts as the constant holder. Key in `10 {{key:ENTER}} 0 {{key:+}}` -> (T=0, Z=0, Y=0, X=10); subsequent taps of `{{key:+}}` climb rhythmically through Floors 20, 30, 40, and 50.
 ---
 
-### Problem 17: Rectangular Array Multiplication ($4 \times 6 = 24$)
+### Problem 17:
 - **High-Rise Elevator Mission:** The skyscraper's parking garage has 4 levels, each equipped with 6 electric vehicle elevator transfer bays. How many transfer bays are available in total?
 - **Concrete Stage:** Construct a $4 \times 6$ array using 24 counting tiles from the manipulative studio.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_17:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_17:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0$ | $0$ | $0$ | $4$ | Number of garage levels entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $4$ | $4$ | Level count lifts to Mezzanine Floor $Y$ |
-| `6` | $0$ | $0$ | $4$ | $6$ | Transfer bays per level entered into Ground Floor $X$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $24$ | Row-by-column multiplication gives $24$ total bays |
-
+- **Stack Flow:** Tap `4 {{key:ENTER}} 6 {{key:×}}` -> (T=0, Z=0, Y=0, X=24), calculating 24 total transfer bays.
 ---
 
-### Problem 18: High-Rise Window Array ($7 \times 8 = 56$)
+### Problem 18:
 - **High-Rise Elevator Mission:** The exterior window washing elevator scaffold cleans 7 structural window bays on each of 8 executive floors. How many total window panes are washed on this run?
 - **Concrete Stage:** Build a $7 \times 8$ grid using counting studio tiles, rotating the tray $90^\circ$ to see that $7 \times 8 = 8 \times 7 = 56$.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_18:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_18:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `7` | $0$ | $0$ | $0$ | $7$ | Window bays per floor entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $7$ | $7$ | Bays per floor lifts safely to Register $Y$ |
-| `8` | $0$ | $0$ | $7$ | $8$ | Number of executive floors entered into Register $X$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $56$ | Array product computes $56$ total window panes |
-
+- **Stack Flow:** Tap `7 {{key:ENTER}} 8 {{key:×}}` -> (T=0, Z=0, Y=0, X=56), evaluating 56 window panes.
 ---
 
-### Problem 19: Equal Sharing Division ($24 \div 4 = 6$)
+### Problem 19:
 - **High-Rise Elevator Mission:** A security supervisor delivers 24 handheld communication radios equally among 4 elevator lobby stations. How many radios are allocated to each station?
 - **Concrete Stage:** Deal out 24 counting tiles into 4 equal groups, confirming 6 tiles in each group.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_19:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_19:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2` `4` | $0$ | $0$ | $0$ | $24$ | Total radios to be distributed entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $24$ | $24$ | Total lifts to Mezzanine Floor $Y$ |
-| `4` | $0$ | $0$ | $24$ | $4$ | Number of target lobby stations entered into $X$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $6$ | Equal division yields $6$ radios per station |
-
+- **Stack Flow:** Tap `24 {{key:ENTER}} 4 {{key:÷}}` -> (T=0, Z=0, Y=0, X=6), allocating 6 radios per station.
 ---
 
-### Problem 20: Equal Partition Division ($56 \div 7 = 8$)
+### Problem 20:
 - **High-Rise Elevator Mission:** An express shuttle elevator transports 56 security staff members arriving for an international summit, distributing them equally across 7 security checkpoint floors. How many officers are stationed on each floor?
 - **Concrete Stage:** Separate a group of 56 counting tiles into 7 equal rows, counting 8 tiles per row.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_20:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_20:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `5` `6` | $0$ | $0$ | $0$ | $56$ | Total staff officers entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $56$ | $56$ | Total lifts to Mezzanine Floor $Y$ |
-| `7` | $0$ | $0$ | $56$ | $7$ | Checkpoint floor count entered into $X$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $8$ | Equal partition allocates $8$ officers per floor |
-
-
+- **Stack Flow:** Tap `56 {{key:ENTER}} 7 {{key:÷}}` -> (T=0, Z=0, Y=0, X=8), placing 8 officers per floor.
 ---
 
 ### Expedition 3: The Saturday Supermarket Shopping Spree (Problems 21–30)
 *Mission Briefing:* Armed with a weekly household grocery budget, you navigate the supermarket aisles. You must calculate bulk food packaging remainders, compute multi-item basket discounts, verify sales receipts, and check coin change without scratch paper.
 
-### Problem 21: Superpower 2 Division with Remainder ($17 \div 5$)
+### Problem 21:
 - **Supermarket Shopping Mission:** The bakery aisle manager packages 17 warm sourdough dinner rolls into bags of 5 rolls. How many bags are filled completely, and how many loose rolls remain?
 - **Concrete Stage:** Distribute 17 counting tiles into groups of 5. Count 3 full groups and 2 loose tiles.
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_21:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_21:value}}`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `7` | $0$ | $0$ | $0$ | $17$ | Total dinner rolls entered into Register $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $17$ | $17$ | Rolls lift to Mezzanine Floor $Y$ |
-| `5` | $0$ | $0$ | $17$ | $5$ | Bag packaging capacity entered into Floor $X$ |
-| `{{key:÷R}}` | $0$ | $0$ | $2$ | $3$ | Integer division: $Q = 3$ bags in $X$, $R = 2$ loose rolls in $Y$ |
-| `{{key:x⇄y}}` | $0$ | $0$ | $3$ | $2$ | Swap registers: inspect remainder $2$ on active display |
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 17 | 0 | 0 | 0 | 17 |
+| {{key:ENTER}} | 0 | 0 | 17 | 17 |
+| 5 | 0 | 0 | 17 | 5 |
+| {{key:÷R}} | 0 | 0 | 2 | 3 |
+| {{key:x⇄y}} | 0 | 0 | 3 | 2 |
 - **Diagnostic Checkpoint:** Register $X$ shows Quotient $Q = 3$ full bags. Register $Y$ holds Remainder $R = 2$ loose rolls. Press `{{key:x⇄y}}` to inspect remainder and swap back. Total bags needed to pack all rolls: $3 + 1 = 4\text{ bags}$.
-
 ---
 
-### Problem 22: Division with Remainder ($125 \div 8$)
+### Problem 22:
 - **Supermarket Shopping Mission:** In the dairy aisle, a wholesale crate of 125 farm-fresh eggs is sorted into specialty cartons holding 8 eggs each. How many cartons are filled completely, and how many eggs remain?
 - **Concrete Stage:** Group base-10 counting blocks to represent 125 divided by 8, observing 15 full groups of 8 and 5 remaining units.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_22:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_22:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `2` `5` | $0$ | $0$ | $0$ | $125$ | Total egg count keyed into Register $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $125$ | $125$ | Egg count lifts to Register $Y$ |
-| `8` | $0$ | $0$ | $125$ | $8$ | Carton capacity (8 eggs) keyed into Register $X$ |
-| `{{key:÷R}}` | $0$ | $0$ | $5$ | $15$ | Quotient $15$ cartons in $X$; remainder $5$ eggs in $Y$ |
-
-- **Result:** $X = 15$ full cartons, $Y = 5$ leftover eggs.
-
+- **Stack Flow:** Tap `125 {{key:ENTER}} 8 {{key:÷R}}` -> (T=0, Z=0, Y=5, X=15), revealing 15 full cartons in Register $X$ and 5 leftover eggs in Register $Y$.
 ---
 
-### Problem 23: Multiplication Verification via `{{key:LASTX}}`
+### Problem 23:
 - **Supermarket Shopping Mission:** The store manager orders 15 wholesale crates of Valencia oranges at $\$8.00$ per crate ($15 \times 8 = 120$). Verify the total invoice using Superpower 4 (`{{key:LASTX}}`) without re-typing.
 - **Concrete Stage:** Model 15 rows of 8 tiles, then divide the total by 8 to restore the original 15 rows.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_23:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_23:value}}`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `5` | $0$ | $0$ | $0$ | $15$ | Crates ordered entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $15$ | $15$ | Crate count lifts to Mezzanine Floor $Y$ |
-| `8` | $0$ | $0$ | $15$ | $8$ | Price per crate entered into Ground Floor $X$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $120$ | Invoice total ($15 \times 8 = \$120$) calculates into $X$ |
-| `{{key:LASTX}}` | $0$ | $0$ | $120$ | $8$ | Superpower 4 recalls prior number ($8$) into $X$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $15$ | Inverse check: $\$120 \div 8 = 15$ crates confirmed |
-
-- **Result:** Inverse division restores starting multiplicand $15.0$ in Register $X$!
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 15 | 0 | 0 | 0 | 15 |
+| {{key:ENTER}} | 0 | 0 | 15 | 15 |
+| 8 | 0 | 0 | 15 | 8 |
+| {{key:×}} | 0 | 0 | 0 | 120 |
+| {{key:LASTX}} | 0 | 0 | 120 | 8 |
+| {{key:÷}} | 0 | 0 | 0 | 15 |
 ---
 
-### Problem 24: Correcting Reversed Numbers with `{{key:x⇄y}}`
+### Problem 24:
 - **Supermarket Shopping Mission:** A shopper calculates unit pricing for a 24-ounce container of Greek yogurt divided into 8 snack portions ($24 \div 8 = 3$), but accidentally typed 8 first (`8 {{key:ENTER}} 24`).
 - **Remediation Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_24:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_24:value}}`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| *(Accident)* | $0$ | $0$ | $8$ | $24$ | Numbers staged in reverse order ($Y=8, X=24$) |
-| `{{key:x⇄y}}` | $0$ | $0$ | $24$ | $8$ | Single keystroke swaps numbers: $Y=24, X=8$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $3$ | Correct quotient ($24 \div 8 = 3$) evaluates in place |
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 8 | 0 | 0 | 0 | 8 |
+| {{key:ENTER}} | 0 | 0 | 8 | 8 |
+| 24 | 0 | 0 | 8 | 24 |
+| {{key:x⇄y}} | 0 | 0 | 24 | 8 |
+| {{key:÷}} | 0 | 0 | 0 | 3 |
 - **Diagnostic Checkpoint:** Never start over when you type numbers in the wrong order! Just tap the swap key {{key:x⇄y}} to put them in the right seats, then divide!
-
 ---
 
-### Problem 25: Multi-Step Grocery Cart Item Total ($14 + 5 - 3 = 16$)
+### Problem 25:
 - **Supermarket Shopping Mission:** A shopper enters the checkout lane with 14 items in their cart. They add 5 items from the impulse rack, but decide to put back 3 items. How many items are scanned at checkout?
 - **Concrete Stage:** Place 14 counting tiles on the desk. Add 5 more tiles, then remove 3 tiles.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_25:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_25:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `4` | $0$ | $0$ | $0$ | $14$ | Initial cart item count entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $14$ | $14$ | Initial count lifts to Register $Y$ |
-| `5` | $0$ | $0$ | $14$ | $5$ | Added items entered into Ground Floor $X$ |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $19$ | Subtotal ($14 + 5 = 19$) calculates into $X$ |
-| `3` | $0$ | $0$ | $19$ | $3$ | Subtotal auto-lifts to $Y$; returned items entered in $X$ |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $16$ | Final item count ($19 - 3 = 16$) appears in $X$ |
-
-- **Diagnostic Checkpoint:** Notice how 19 was automatically lifted into $Y$ when you typed 3!
-
+- **Stack Flow:** Tap `14 {{key:ENTER}} 5 {{key:+}} 3 {{key:-}}` -> (T=0, Z=0, Y=0, X=16). The subtotal 19 auto-lifts when you type 3, arriving at 16 scanned items seamlessly.
 ---
 
-### Problem 26: Combined Store Purchase ($(3 \times 4) + (2 \times 5) = 22$)
+### Problem 26:
 - **Supermarket Shopping Mission:** At the bakery counter, a customer buys 3 artisan baguettes at $\$4.00$ each and 2 specialty cheese rounds at $\$5.00$ each. Find the total basket cost.
 - **Concrete Stage:** Build two tile groups: one $3 \times 4$ array (12) and one $2 \times 5$ array (10). Slide them together to count 22 tiles.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_26:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_26:value}}`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3` | $0$ | $0$ | $0$ | $3$ | Baguette quantity entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $3$ | $3$ | Quantity lifts to Register $Y$ |
-| `4` | $0$ | $0$ | $3$ | $4$ | Price per baguette entered into $X$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $12$ | Baguette subtotal ($3 \times 4 = \$12$) forms in $X$ |
-| `2` | $0$ | $0$ | $12$ | $2$ | Subtotal auto-lifts to $Y$; cheese quantity keyed into $X$ |
-| `{{key:ENTER}}` | $0$ | $12$ | $2$ | $2$ | Stack lifts: $\$12$ to $Z$, quantity $2$ to $Y$ and $X$ |
-| `5` | $0$ | $12$ | $2$ | $5$ | Price per cheese round entered into $X$ |
-| `{{key:×}}` | $0$ | $0$ | $12$ | $10$ | Cheese subtotal ($2 \times 5 = \$10$) forms in $X$ ($Y=\$12$) |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $22$ | Combined total ($12 + 10 = \$22$) resolves cleanly |
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 3 | 0 | 0 | 0 | 3 |
+| {{key:ENTER}} | 0 | 0 | 3 | 3 |
+| 4 | 0 | 0 | 3 | 4 |
+| {{key:×}} | 0 | 0 | 0 | 12 |
+| 2 | 0 | 0 | 12 | 2 |
+| {{key:ENTER}} | 0 | 12 | 2 | 2 |
+| 5 | 0 | 12 | 2 | 5 |
+| {{key:×}} | 0 | 0 | 12 | 10 |
+| {{key:+}} | 0 | 0 | 0 | 22 |
 - **Stack Elegance:** Notice in row 8: Register $Y$ held the first subtotal ($12$) while Register $X$ computed the second subtotal ($10$). Pressing `{{key:+}}` combined them cleanly without writing down anything on paper!
-
 ---
 
-### Problem 27: Perimeter of a Rectangular Display Table ($2 \times (12 + 8) = 40$)
+### Problem 27:
 - **Supermarket Shopping Mission:** The store manager arranges a rectangular organic fruit display table that is 12 feet long and 8 feet wide. What is the total length of decorative bumper railing needed to surround the table?
 - **Concrete Stage:** Construct a 12 by 8 rectangle with grid tiles, calculating $2 \times (\text{length} + \text{width})$.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_27:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_27:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `2` | $0$ | $0$ | $0$ | $12$ | Table length (12 ft) entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $12$ | $12$ | Length lifts to Register $Y$ |
-| `8` | $0$ | $0$ | $12$ | $8$ | Table width (8 ft) entered into $X$ |
-| `{{key:+}}` | $0$ | $0$ | $0$ | $20$ | Semi-perimeter ($12 + 8 = 20\text{ ft}$) evaluates in $X$ |
-| `2` | $0$ | $0$ | $20$ | $2$ | Semi-perimeter auto-lifts to $Y$; factor $2$ entered in $X$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $40$ | Total perimeter ($20 \times 2 = 40\text{ ft}$) calculated |
-
-- **Result:** $40\text{ feet}$.
-
+- **Stack Flow:** Tap `12 {{key:ENTER}} 8 {{key:+}} 2 {{key:×}}` -> (T=0, Z=0, Y=0, X=40), calculating 40 feet of bumper railing without writing down semi-perimeter 20.
 ---
 
-### Problem 28: Promotional Triangular Sign Area ($\frac{1}{2} \times 10 \times 6 = 30$)
+### Problem 28:
 - **Supermarket Shopping Mission:** A triangular promotional sign hanging over the bakery aisle has a base of 10 cm and a height of 6 cm. What is the surface area of the promotional sign?
 - **Concrete Stage:** Form a $10 \times 6$ array of 60 tiles, then divide it into two equal halves of 30 tiles.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_28:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_28:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `0` | $0$ | $0$ | $0$ | $10$ | Sign base (10 cm) entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $10$ | $10$ | Base lifts to Register $Y$ |
-| `6` | $0$ | $0$ | $10$ | $6$ | Sign height (6 cm) entered into $X$ |
-| `{{key:×}}` | $0$ | $0$ | $0$ | $60$ | Base times height ($10 \times 6 = 60$) forms in $X$ |
-| `2` | $0$ | $0$ | $60$ | $2$ | Product auto-lifts to $Y$; divisor $2$ entered in $X$ |
-| `{{key:÷}}` | $0$ | $0$ | $0$ | $30$ | Half-area ($\frac{60}{2} = 30\text{ cm}^2$) evaluates |
-
-- **Result:** $30\text{ cm}^2$.
-
+- **Stack Flow:** Tap `10 {{key:ENTER}} 6 {{key:×}} 2 {{key:÷}}` -> (T=0, Z=0, Y=0, X=30), evaluating the $30\text{ cm}^2$ sign area cleanly.
 ---
 
-### Problem 29: Weekly Grocery Allowance Balance ($50 - 18 - 12 = 20$)
+### Problem 29:
 - **Supermarket Shopping Mission:** A customer brings a $\$50$ cash grocery budget to the supermarket. They spend $\$18$ on fresh produce and $\$12$ on dairy items. How much grocery cash remains in their wallet?
 - **Concrete Stage:** Start with 5 ten-rods ($50$). Remove 1 ten and 8 units ($18$, leaving 32), then remove 1 ten and 2 units ($12$, leaving 20).
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_29:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_29:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `5` `0` | $0$ | $0$ | $0$ | $50$ | Starting cash budget entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $50$ | $50$ | Budget lifts to Register $Y$ |
-| `1` `8` | $0$ | $0$ | $50$ | $18$ | Produce expense entered into $X$ |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $32$ | Remaining cash after produce ($50 - 18 = \$32$) in $X$ |
-| `1` `2` | $0$ | $0$ | $32$ | $12$ | Subtotal auto-lifts to $Y$; dairy expense entered in $X$ |
-| `{{key:-}}` | $0$ | $0$ | $0$ | $20$ | Final remaining cash ($32 - 12 = \$20$) resolves in $X$ |
-
-- **Result:** $\$20.00$ remaining.
-
+- **Stack Flow:** Tap `50 {{key:ENTER}} 18 {{key:-}} 12 {{key:-}}` -> (T=0, Z=0, Y=0, X=20), leaving $\$20.00$ cash in your wallet.
 ---
 
-### Problem 30: Bulk Platter Sharing with Loose Change ($17.50 \div 4$)
+### Problem 30:
 - **Supermarket Shopping Mission:** Four family members purchase a bulk deli sandwich platter costing $\$17.50$. Using Superpower 2 (`{{key:÷R}}`), determine how many whole dollars each person contributes and the remaining loose coin change.
 - **Concrete Stage:** Count 17 dollar tiles and two quarter coins. Distribute 4 dollar tiles to each of 4 people, leaving $1.50 in change.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_30:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_30:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `7` `.` `5` `0` | $0$ | $0$ | $0$ | $17.5$ | Total platter price entered into $X$ |
-| `{{key:ENTER}}` | $0$ | $0$ | $17.5$ | $17.5$ | Platter price lifts to Register $Y$ |
-| `4` | $0$ | $0$ | $17.5$ | $4$ | Four contributing family members entered into $X$ |
-| `{{key:÷R}}` | $0$ | $0$ | $1.50$ | $4.00$ | Whole quotient $\$4.00$ in $X$; remaining change $\$1.50$ in $Y$ |
-
-- **Result:** $X = \$4.00$ each; $Y = \$1.50$ remaining loose change.
-
+- **Stack Flow:** Tap `17.50 {{key:ENTER}} 4 {{key:÷R}}` -> (T=0, Z=0, Y=1.5, X=4), giving $X = \$4.00$ whole dollars per person and $Y = \$1.50$ remaining change.
 ---
 
 ### Expedition 4: The Junior Math Olympiad Sprint (Problems 31–40)
 *Mission Briefing:* The state tournament clock is running! In this high-speed mental sprint, you solve chained order-of-operations expressions, evaluate multi-bracket terms with zero parentheses, and navigate radical equations using pure RPN stack elegance.
 
-### Problem 31: Roll Down Stack Inspection (`{{key:R↓}}`)
+### Problem 31:
 - **Word Problem:** Load values 10, 20, 30, 40 into the stack. Rotate them down to inspect each register.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_31:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_31:value}}`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| (Initial) | 10 | 20 | 30 | 40 |
+| 10 | 0 | 0 | 0 | 10 |
+| {{key:ENTER}} | 0 | 0 | 10 | 10 |
+| 20 | 0 | 0 | 10 | 20 |
+| {{key:ENTER}} | 0 | 10 | 20 | 20 |
+| 30 | 0 | 10 | 20 | 30 |
+| {{key:ENTER}} | 10 | 20 | 30 | 30 |
+| 40 | 10 | 20 | 30 | 40 |
 | {{key:R↓}} | 40 | 10 | 20 | 30 |
 | {{key:R↓}} | 30 | 40 | 10 | 20 |
 | {{key:R↓}} | 20 | 30 | 40 | 10 |
 | {{key:R↓}} | 10 | 20 | 30 | 40 |
 - **Carousel Property:** 4 presses of `{{key:R↓}}` restore the exact original stack!
-
 ---
 
-### Problem 32: Reverse Carousel via Three Roll-Downs (`{{key:R↓}} {{key:R↓}} {{key:R↓}}`)
+### Problem 32:
 - **Word Problem:** Bring the top roof-garden register ($T = 10$) down into the active Ground Floor ($X$) by rotating the 4-level carousel three steps (`{{key:R↓}} {{key:R↓}} {{key:R↓}}`).
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_32:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_32:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| (Initial) | 10 | 20 | 30 | 40 |
-| 3x {{keycap:R↓}} | 20 | 30 | 40 | 10 |
-
+- **Stack Flow:** Load registers and rotate: tap `10 {{key:ENTER}} 20 {{key:ENTER}} 30 {{key:ENTER}} 40 {{key:R↓}} {{key:R↓}} {{key:R↓}}` -> (T=20, Z=30, Y=40, X=10), bringing 10 into Register $X$.
 ---
 
-### Problem 33: Rapid Sprint Challenge 1 ($(15 - 3) \times (4 + 2) \div 6 = 12$)
+### Problem 33:
 - **Word Problem:** 5th-grade math sprint order-of-operations challenge.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_33:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_33:value}}`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `15`{{key:ENTER}}{{key:3}} | 0 | 0 | 15 | 3 |
+| 15 | 0 | 0 | 0 | 15 |
+| {{key:ENTER}} | 0 | 0 | 15 | 15 |
+| 3 | 0 | 0 | 15 | 3 |
 | {{key:-}} | 0 | 0 | 0 | 12 |
-| {{key:4}}{{key:ENTER}}{{key:2}} | 0 | 12 | 4 | 2 |
+| 4 | 0 | 0 | 12 | 4 |
+| {{key:ENTER}} | 0 | 12 | 4 | 4 |
+| 2 | 0 | 12 | 4 | 2 |
 | {{key:+}} | 0 | 0 | 12 | 6 |
 | {{key:×}} | 0 | 0 | 0 | 72 |
-| {{key:6}} {{key:÷}} | 0 | 0 | 0 | 12 |
+| 6 | 0 | 0 | 72 | 6 |
+| {{key:÷}} | 0 | 0 | 0 | 12 |
 - **Result:** $12.0$. Zero parentheses!
-
 ---
 
-### Problem 34: Rapid Sprint Challenge 2 ($(24 - 8) \div (6 - 2) = 4$)
+### Problem 34:
 - **Word Problem:** Calculate the quotient of two parenthesized differences.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_34:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_34:value}}`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `24`{{key:ENTER}}{{key:8}} | 0 | 0 | 24 | 8 |
+| 24 | 0 | 0 | 0 | 24 |
+| {{key:ENTER}} | 0 | 0 | 24 | 24 |
+| 8 | 0 | 0 | 24 | 8 |
 | {{key:-}} | 0 | 0 | 0 | 16 |
-| {{key:6}}{{key:ENTER}}{{key:2}} | 0 | 16 | 6 | 2 |
+| 6 | 0 | 0 | 16 | 6 |
+| {{key:ENTER}} | 0 | 16 | 6 | 6 |
+| 2 | 0 | 16 | 6 | 2 |
 | {{key:-}} | 0 | 0 | 16 | 4 |
 | {{key:÷}} | 0 | 0 | 0 | 4 |
 - **Result:** $4.0$.
-
 ---
 
-### Problem 35: Rapid Sprint Challenge 3 ($(18 + 6) \times (10 - 5) \div 12 = 10$)
+### Problem 35:
 - **Word Problem:** Three-part chained expression.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_35:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_35:value}}`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `18`{{key:ENTER}}{{key:6}} | 0 | 0 | 18 | 6 |
+| 18 | 0 | 0 | 0 | 18 |
+| {{key:ENTER}} | 0 | 0 | 18 | 18 |
+| 6 | 0 | 0 | 18 | 6 |
 | {{key:+}} | 0 | 0 | 0 | 24 |
-| `10`{{key:ENTER}}{{key:5}} | 0 | 24 | 10 | 5 |
+| 10 | 0 | 0 | 24 | 10 |
+| {{key:ENTER}} | 0 | 24 | 10 | 10 |
+| 5 | 0 | 24 | 10 | 5 |
 | {{key:-}} | 0 | 0 | 24 | 5 |
 | {{key:×}} | 0 | 0 | 0 | 120 |
-| `12` {{key:÷}} | 0 | 0 | 0 | 10 |
+| 12 | 0 | 0 | 120 | 12 |
+| {{key:÷}} | 0 | 0 | 0 | 10 |
 - **Result:** $10.0$.
-
 ---
 
-### Problem 36: Complex Fraction $\frac{48 - (4 \times 6)}{3 + (2 \times 4.5)} = 2$
+### Problem 36:
 - **Word Problem:** Multi-term fraction bar challenge.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_36:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_36:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| Numerator | 0 | 0 | 0 | 24 |
-| Denominator | 0 | 24 | 0 | 12 |
-| {{key:÷}} | 0 | 0 | 0 | 2 |
-- **Result:** $2.0$.
-
+- **Stack Flow:** Tap `48 {{key:ENTER}} 4 {{key:ENTER}} 6 {{key:×}} {{key:-}} 3 {{key:ENTER}} 2 {{key:ENTER}} 4.5 {{key:×}} {{key:+}} {{key:÷}}` -> (T=24, Z=24, Y=24, X=2), resolving the complex fraction to $2.0$ with zero parentheses!
 ---
 
-### Problem 37: Difference of Squares ($15^2 - 9^2 = 144$)
+### Problem 37:
 - **Word Problem:** A large square patio of $15\text{ ft} \times 15\text{ ft}$ has a central fountain of $9\text{ ft} \times 9\text{ ft}$. Find the remaining paved area.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_37:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_37:value}}`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:1}} {{key:5}} | 0 | 0 | 0 | 15 |
+| 15 | 0 | 0 | 0 | 15 |
 | {{key:x²}} | 0 | 0 | 0 | 225 |
-| {{key:9}} | 0 | 0 | 225 | 9 |
+| 9 | 0 | 0 | 225 | 9 |
 | {{key:x²}} | 0 | 0 | 225 | 81 |
 | {{key:-}} | 0 | 0 | 0 | 144 |
 - **Result:** $144.0\text{ sq ft}$.
-
 ---
 
-### Problem 38: Hypotenuse of Right Triangle ($6^2 + 8^2 = 100 \to 10$)
+### Problem 38:
 - **Word Problem:** A right triangle has perpendicular legs of 6 cm and 8 cm. Find hypotenuse $c = \sqrt{a^2 + b^2}$.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_38:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_38:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:6}} {{key:x²}} | 0 | 0 | 0 | 36 |
-| {{key:8}} {{key:x²}} | 0 | 0 | 36 | 64 |
-| {{key:+}} | 0 | 0 | 0 | 100 |
-| {{key:√x}} | 0 | 0 | 0 | 10 |
-- **Result:** $10.0\text{ cm}$.
-
+- **Stack Flow:** Tap `6 {{key:x²}} 8 {{key:x²}} {{key:+}} {{key:√x}}` -> (T=0, Z=0, Y=0, X=10), computing hypotenuse $10.0\text{ cm}$ without scratch paper.
 ---
 
-### Problem 39: Chained Temperature Conversion ($68^\circ\text{F} \to 20^\circ\text{C}$)
+### Problem 39:
 - **Word Problem:** Convert $68^\circ\text{F}$ to Celsius: $C = (F - 32) \times 5 \div 9$.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_39:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_39:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `68` {{key:ENTER}} `32` | 0 | 0 | 68 | 32 |
-| {{key:-}} | 0 | 0 | 0 | 36 |
-| {{key:5}} {{key:×}} | 0 | 0 | 0 | 180 |
-| {{key:9}} {{key:÷}} | 0 | 0 | 0 | 20 |
-- **Result:** $20.0^\circ\text{C}$.
-
+- **Stack Flow:** Tap `68 {{key:ENTER}} 32 {{key:-}} 5 {{key:×}} 9 {{key:÷}}` -> (T=0, Z=0, Y=0, X=20), converting directly to $20.0^\circ\text{C}$.
 ---
 
-### Problem 40: Multi-Register Balance Audit via `{{key:LASTX}}`
+### Problem 40:
 - **Word Problem:** Your school savings account has $\$120.00$. You make a purchase of $\$45.00$. Use Superpower 4 to restore your previous balance.
 - **RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_40:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_40:value}}`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `120`{{key:ENTER}} | 0 | 0 | 120 | 120 |
-| `45` {{key:-}} | 0 | 0 | 0 | 75 |
+| 120 | 0 | 0 | 0 | 120 |
+| {{key:ENTER}} | 0 | 0 | 120 | 120 |
+| 45 | 0 | 0 | 120 | 45 |
+| {{key:-}} | 0 | 0 | 0 | 75 |
 | {{key:LASTX}} | 0 | 0 | 75 | 45 |
 | {{key:+}} | 0 | 0 | 0 | 120 |
 - **Result:** Initial $\$120.00$ balance completely restored.
-
-
 ---
 
 ## Beat Every Adult in the Room! The `1089` Mind-Reading Stack Trick
@@ -1027,4 +788,3 @@ You never have to balance tricky parentheses brackets or juggle extra numbers in
 ## What You Mastered & Looking Ahead
 
 Now that you've mastered pushing numbers onto the stack, swapping registers, and dropping calculations cleanly, let's travel back in time to discover how ancient pebble counters and ten human fingers created zero and the power of place value!
-

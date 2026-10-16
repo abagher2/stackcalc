@@ -830,60 +830,30 @@ The following problem bank provides complete, publication-grade reference soluti
 
 #### Challenge 1: Park Perimeter Ribbon Framing
 - **Park Masterplan Context:** The landscape architect plans a rectangular information kiosk bulletin board in the central plaza measuring $2.4\text{ meters}$ wide and $1.2\text{ meters}$ high. A durable aluminum edging ribbon must be ordered to frame its full perimeter.
-- **Hands-On Manipulative Stage (Counting Tiles):** Arrange a $24 \times 12$ proportional tile grid on your desk. Touch the top edge ($24$) and right edge ($12$): together they form one half-perimeter ($36$). Doubling this L-shape completes all four enclosing sides ($72$) without counting individual tiles.
+- **Hands-On Manipulative Stage (Two-Step Model Small -> Scale Big):** Model the kiosk proportions using a small $2 \times 4$ tile array on your desk. Touch the top and right edges to see the half-perimeter ($6$). Then scale big on StackCalc: enter the true $2.4\text{ m} \times 1.2\text{ m}$ dimensions, sum to find the half-perimeter ($3.6\text{ m}$), and double it for the full perimeter.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_01:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_01:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2.4` | $0.0000$ | $0.0000$ | $0.0000$ | $2.4$ | Key in kiosk width ($2.4\text{ m}$) into buffer |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.4$ | $2.4$ | Stack lifts; width locked onto shelf $Y$ |
-| `1.2` | $0.0000$ | $0.0000$ | $2.4$ | $1.2$ | Key in kiosk height ($1.2\text{ m}$) on floor $X$ |
-| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6$ | Sum horizontal and vertical edges to form half-perimeter |
-| `2` | $0.0000$ | $0.0000$ | $3.6$ | $2.0000$ | Key in scale factor 2 on floor $X$ ($Y = 3.6$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7.2$ | Double half-perimeter to finalize total perimeter ($7.2\text{ m}$) |
-
+- **Operational Narrative & Stack Flow:** Key `2.4` and press `{{key:ENTER}}` to hold the kiosk width in Register $Y$ `(T:0, Z:0, Y:2.4, X:2.4)`. Key `1.2` and press `{{key:+}}` to compute the half-perimeter $3.6\text{ m}$ `(T:0, Z:0, Y:0, X:3.6)`. Key `2` and press `{{key:×}}` to double the L-shape, giving the full perimeter `(T:0, Z:0, Y:0, X:7.2)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $7.2000$. Total perimeter is $\mathbf{7.20\text{ meters}}$.
 
 #### Challenge 2: Square Playground Sandpit Cover
 - **Park Masterplan Context:** The community adventure playground features a square sandpit with side length $s = 3.5\text{ meters}$. A heavy-duty waterproof canvas tarp must be cut to protect the sand from overnight rain.
 - **Hands-On Manipulative Stage (Tile Arrays):** Lay out a square array of counting tiles ($3.5 \times 3.5$ scale). Squaring a side length tiles the two-dimensional interior plane directly, turning a linear measure ($3.5\text{ m}$) into areal units ($\text{m}^2$).
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_02:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_02:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3.5` | $0.0000$ | $0.0000$ | $0.0000$ | $3.5$ | Key sandpit edge length ($3.5\text{ m}$) into floor $X$ |
-| `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $12.25$ | Square number in place ($3.5 \times 3.5$) for square tarp area |
-
+- **Operational Narrative & Stack Flow:** Key `3.5` and press `{{key:x²}}` to square the edge length in place, directly producing the square tarp area `(T:0, Z:0, Y:0, X:12.25)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $12.2500$. Canvas tarp area required is $\mathbf{12.25\text{ m}^2}$.
 
 #### Challenge 3: Triangular Park Pavilion Pennant
 - **Park Masterplan Context:** A ceremonial triangular felt pennant hangs above the park entrance pavilion, with base $b = 25\text{ cm}$ along the crossbeam and vertical altitude $h = 60\text{ cm}$. Calculate the felt fabric required.
 - **Hands-On Manipulative Stage (Folding Triangles):** Cut a $25 \times 60\text{ cm}$ rectangle of paper diagonally. Two identical right triangles emerge. The area of one triangle is exactly half of the enclosing rectangle ($A = \frac{1}{2} b h$).
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_03:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_03:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `25` | $0.0000$ | $0.0000$ | $0.0000$ | $25.0000$ | Key triangle baseline ($25\text{ cm}$) |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $25.0000$ | $25.0000$ | Stack lifts; base locked into Register $Y$ |
-| `60` | $0.0000$ | $0.0000$ | $25.0000$ | $60.0000$ | Key perpendicular altitude ($60\text{ cm}$) into floor $X$ |
-| `{{key:TRI}}` | $0.0000$ | $0.0000$ | $0.0000$ | $750.0000$ | Dedicated triangle primitive evaluates $\frac{1}{2} \times 25 \times 60$ in one motion |
-
+- **Operational Narrative & Stack Flow:** Key `25`, press `{{key:ENTER}}`, key `60`, and press `{{key:TRI}}` to execute the dedicated triangle area solver in one step `(T:0, Z:0, Y:0, X:750)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $750.0000$. Felt fabric area is $\mathbf{750.00\text{ cm}^2}$.
 
 #### Challenge 4: Floral Plaza Circular Sundial Clockface
 - **Park Masterplan Context:** A circular sundial in the central plaza has a diameter of $30\text{ cm}$ (radius $r = 15\text{ cm}$). The bronze faceplate must be cut from polished sheet metal.
 - **Hands-On Manipulative Stage (Circle to Sectors):** Divide a circular paper disc into 16 wedge sectors and interlock them alternately: they form an approximate parallelogram of height $r$ and base $\pi r$. Area equals $\pi r^2$.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_04:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_04:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` | $0.0000$ | $0.0000$ | $0.0000$ | $15.0000$ | Key circle radius ($15\text{ cm}$) into floor $X$ |
-| `{{key:CIRC}}` | $0.0000$ | $0.0000$ | $0.0000$ | $706.8583$ | Dedicated circular solver squares radius and scales by $\pi$ in place |
-
+- **Operational Narrative & Stack Flow:** Key `15` and press `{{key:CIRC}}` to square the radius and multiply by $\pi$ in a single hardware cycle `(T:0, Z:0, Y:0, X:706.8583)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $706.8583$. Bronze plate area is $\mathbf{706.86\text{ cm}^2}$.
 
 #### Challenge 5: Circular Fountain Stone Curb Perimeter
@@ -907,15 +877,7 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Park Masterplan Context:** An ornamental botanical flower bed is laid out as a parallelogram with base $b = 8\text{ meters}$ and perpendicular altitude $h = 4.5\text{ meters}$. Calculate the topsoil area.
 - **Hands-On Manipulative Stage (Shearing Rectangles):** Cut a triangular slice from the left edge of a paper parallelogram and slide it to the right edge: it forms a rectangle of identical base and height ($A = b \times h$).
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_06:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_06:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `8` | $0.0000$ | $0.0000$ | $0.0000$ | $8.0000$ | Key flower bed baseline ($8\text{ m}$) |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $8.0000$ | $8.0000$ | Stack lifts; base locked into Register $Y$ |
-| `4.5` | $0.0000$ | $0.0000$ | $8.0000$ | $4.5$ | Key perpendicular altitude ($4.5\text{ m}$) into floor $X$ |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $36.0000$ | Multiply base by height to compute parallelogram area |
-
+- **Operational Narrative & Stack Flow:** Key `8`, press `{{key:ENTER}}`, key `4.5`, and press `{{key:×}}` to evaluate parallelogram area ($8 \times 4.5$) `(T:0, Z:0, Y:0, X:36)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $36.0000$. Flower bed area is $\mathbf{36.00\text{ m}^2}$.
 
 #### Challenge 7: Trapezoid Highway Ramp Embankment
@@ -941,17 +903,7 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Park Masterplan Context:** Plaza pathways are tiled with diamond-shaped granite pavers having diagonal spans $d_1 = 40\text{ cm}$ and $d_2 = 70\text{ cm}$. Find the paver face area ($A = \frac{1}{2} d_1 d_2$).
 - **Hands-On Manipulative Stage (Diagonal Quadrants):** The perpendicular diagonals split the rhombus into four identical right triangles. Reassembling them forms a rectangle of dimensions $d_1 \times \frac{1}{2} d_2$.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_08:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_08:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `40` | $0.0000$ | $0.0000$ | $0.0000$ | $40.0000$ | Key horizontal diagonal ($40\text{ cm}$) |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $40.0000$ | $40.0000$ | Stack lifts; diagonal locked into Register $Y$ |
-| `70` | $0.0000$ | $0.0000$ | $40.0000$ | $70.0000$ | Key vertical diagonal ($70\text{ cm}$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2800.0000$ | Multiply diagonals to enclose bounding rectangle |
-| `2` | $0.0000$ | $0.0000$ | $2800.0000$ | $2.0000$ | Key divisor 2 for diamond half-area |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1400.0000$ | Halve product to obtain net rhombus area |
-
+- **Operational Narrative & Stack Flow:** Key `40`, press `{{key:ENTER}}`, key `70`, and press `{{key:×}}` to compute the bounding rectangle $2800\text{ cm}^2$ `(T:0, Z:0, Y:0, X:2800)`. Key `2` and press `{{key:÷}}` to halve the product, yielding the net rhombus area `(T:0, Z:0, Y:0, X:1400)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $1400.0000$. Paver face area is $\mathbf{1400.00\text{ cm}^2}$.
 
 #### Challenge 9: Regular Hexagonal Gazebo Floor
@@ -978,18 +930,7 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Park Masterplan Context:** The park irrigation line uses neoprene annular washers with outer radius $R = 25\text{ mm}$ and inner pipe cutout radius $r = 10\text{ mm}$. Calculate the rubber seal contact area ($A = \pi (R^2 - r^2)$).
 - **Hands-On Manipulative Stage (Concentric Cutouts):** Cut a $10\text{ mm}$ disk out of a $25\text{ mm}$ outer circle. The remaining annular washer area is the difference between the outer circle and inner circle areas.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_10:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_10:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `25` | $0.0000$ | $0.0000$ | $0.0000$ | $25.0000$ | Key outer washer radius ($25\text{ mm}$) |
-| `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $625.0000$ | Square outer radius ($25^2 = 625$) |
-| `10` | $0.0000$ | $0.0000$ | $625.0000$ | $10.0000$ | Key inner hole radius ($10\text{ mm}$) |
-| `{{key:x²}}` | $0.0000$ | $0.0000$ | $625.0000$ | $100.0000$ | Square inner radius ($10^2 = 100$) |
-| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $525.0000$ | Subtract inner square from outer square ($625 - 100 = 525$) |
-| `{{key:π}}` | $0.0000$ | $0.0000$ | $525.0000$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1649.3361$ | Multiply by $\pi$ to evaluate annular area |
-
+- **Operational Narrative & Stack Flow:** Key `25`, press `{{key:x²}}` ($625$), key `10`, press `{{key:x²}}` ($100$), and press `{{key:-}}` to calculate the difference of radius squares $525\text{ mm}^2$ `(T:0, Z:0, Y:0, X:525)`. Push `{{key:π}}` and press `{{key:×}}` to scale by the circle constant, arriving at the annular contact area `(T:0, Z:0, Y:0, X:1649.3361)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $1649.3361$. Gasket contact area is $\mathbf{1649.34\text{ mm}^2}$.
 
 ## Expedition 2: The Antarctic Research Station Cold-Weather Packaging (Challenges 6.11–6.20)
@@ -1033,15 +974,7 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Antarctic Logistics Context:** A miniature cubic GPS beacon deployed on the Ross Ice Shelf measures $s = 2\text{ cm}$ along each edge. Calculate its total six-sided surface area.
 - **Hands-On Manipulative Stage (Counting Cubes):** Examine a single $20\text{ mm}$ counting cube. It has 6 identical square facets. Calculating one square face ($s^2$) and multiplying by 6 yields the complete outer skin.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_12:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_12:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Key in cube edge length ($2\text{ cm}$) |
-| `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Square edge in place ($2^2 = 4\text{ cm}^2$) for single face area |
-| `6` | $0.0000$ | $0.0000$ | $4.0000$ | $6.0000$ | Key in total count of identical cube faces ($6$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $24.0000$ | Multiply to obtain total surface area of all 6 facets |
-
+- **Operational Narrative & Stack Flow:** Key `2`, press `{{key:x²}}` ($4\text{ cm}^2$), key `6`, and press `{{key:×}}` to multiply the face area by 6 facets `(T:0, Z:0, Y:0, X:24)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $24.0000$. Beacon surface area is $\mathbf{24.00\text{ cm}^2}$.
 
 #### Challenge 13: Thermal Wrap for an Equilateral Prismatic Ice Core Carrier

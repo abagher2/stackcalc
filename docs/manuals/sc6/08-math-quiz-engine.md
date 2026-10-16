@@ -7,7 +7,7 @@ description: "Mastering mental math fluency on the SC-6: the built-in 6-Level ad
 
 <div class="te-viewport-header mb-6">
   <span class="te-viewport-sku">GAMIFIED PRACTICE // CHAPTER 08</span>
-  <span class="te-viewport-status text-emerald-400">● 6-LEVEL ADAPTIVE ENGINE &bull; SPEED SCORING &bull; STREAK UNLOCKS &bull; {{key:≠}} SUBMIT</span>
+  <span class="te-viewport-status text-emerald-400">● 6-LEVEL ADAPTIVE ENGINE &bull; SPEED SCORING &bull; STREAK UNLOCKS &bull; ENTER SUBMIT</span>
 </div>
 
 ## The Musician's Scales & The Astronaut's Simulator: Why Instant Math Reflexes Set Your Creative Brain Free
@@ -36,7 +36,7 @@ Standard Base-10 Arithmetic • 4-Stack XYZT • Clean Display
 <div class="admonition note">
 <p class="admonition-title">Unlocked Keycaps Ribbon — Quiz Sprint Suite</p>
 <p>
-• <strong>Quiz Activation &amp; Control:</strong> <code>{{key:?}}</code> (Launch Quiz Sandbox), <code>{{key:≠}}</code> (Submit Candidate Answer &amp; Evaluate), <code>{{key:SHOW}}</code> (Inspect Active Score, Streak, &amp; Average Latency).<br>
+• <strong>Quiz Activation &amp; Control:</strong> <code>{{key:?}}</code> (Launch Quiz Sandbox), <code>{{key:ENTER}}</code> (Submit Answer &amp; Evaluate), <code>{{key:SHOW}}</code> (Inspect Active Score, Streak, &amp; Average Latency).<br>
 • <strong>Numeric Answer Entry:</strong> Digits <code>{{key:0}}</code> through <code>{{key:9}}</code>, Two-Dot Fraction <code>{{key:.}}</code>, Negative Toggle <code>{{key:+/-}}</code>, Destructive Backspace <code>{{key:<-}}</code>.<br>
 • <strong>Operational Verification:</strong> <code>{{key:+}}</code>, <code>{{key:-}}</code>, <code>{{key:×}}</code>, <code>{{key:÷}}</code>, <code>{{key:÷R}}</code>, <code>{{key:SIMP}}</code>, <code>{{key:ENTER}}</code>, <code>{{key:LASTX}}</code>.<br>
 • <strong>Exit Quiz Sandbox:</strong> Pressing <code>{{key:C}}</code> twice or pressing any base display mode key (<code>{{key:NUM}}</code>, <code>{{key:FIX}}</code>, <code>{{key:ALL}}</code>, <code>{{key:FDISP}}</code>) immediately dismisses the quiz engine and restores standard stack calculations with 100% register preservation.
@@ -57,17 +57,17 @@ Standard Base-10 Arithmetic • 4-Stack XYZT • Clean Display
 
 ---
 
-## The RPN Equation Display & Zero-Config Variable Checking (`{{key:?}}` & `{{key:≠}}`)
+## The RPN Prompt & Rapid Sprint Evaluation (`{{key:?}}` & `{{key:ENTER}}`)
 
 ### Pure RPN Equation Representation
 Traditional educational software displays equations in confusing algebraic equations with parentheses: $(15 - 3) \times ? = 72$. 
 
 The SC-6 departs from conventional calculators by presenting all quiz challenges directly in **pure RPN stack notation** on the transflective graphic LCD:
-$$\mathtt{3 \ {{key:ENTER}} \ ? \ + \ 10 \ x?y}$$
+$$\mathtt{3 \ + \ 7 \ = \ 10}$$
 
 > **{{key:?}}  LVL 1                      SCORE: 40       STREAK: 3 ●●●**
 >
-> 3  {{key:ENTER}}  ?  +  10  x?y
+> 3  +  =  10
 >
 > Y:                                                              3
 > X:                                                              _
@@ -78,20 +78,20 @@ $$\mathtt{3 \ {{key:ENTER}} \ ? \ + \ 10 \ x?y}$$
 - *"Start with 3 resting on Floor Y."*
 - *"Place the missing mystery token `?` on the Ground Floor ($X$)."*
 - *"Add them together (`+`)."*
-- *"The target result must equal 10 (`10 x?y`)."*
+- *"The target result must equal 10 (`10 `)."*
 
 You immediately recognize that this RPN sequence represents the familiar question: *"What number added to 3 makes 10?"* It seamlessly bridges early elementary number bonds directly to algebraic thinking!
 
 ---
 
-### Zero-Config Answering Workflow via `{{key:≠}}`
+### Rapid Sprint Evaluation Workflow via `{{key:ENTER}}`
 Unlike scientific calculators that require cumbersome variable assignment menus (`STO A`, `RCL A`, `SOLVE`), answering a quiz question on the SC-6 requires **zero configuration**:
 1. You read the RPN prompt on screen.
 2. You type your candidate answer using the numeric digits: e.g. `{{key:7}}`.
-3. You press the hardware test key **`{{key:≠}}`** (Row 7, Col 5).
+3. You press the evaluate and submit key **`{{key:ENTER}}`**.
 
 #### Hardware Evaluation Pipeline:
-When `{{key:≠}}` is pressed, the internal calculator engine executes three atomic operations in under 5 milliseconds:
+When `{{key:ENTER}}` is pressed, the internal calculator engine executes three atomic operations in under 5 milliseconds:
 1. **Variable Substitution:** Binds candidate value $7$ to variable `?`.
 2. **RPN Stack Execution:** Evaluates the stack sequence: `{{res:sc6_08_math_quiz_engine_seq_01:keys}}` $\longrightarrow 10$.
 3. **Equality Verification:** Compares the evaluated result to the target value $10$:
@@ -100,7 +100,7 @@ When `{{key:≠}}` is pressed, the internal calculator engine executes three ato
 
 | Elapsed Time | Quiz Engine Verification Step |
 | :--- | :--- |
-| **$t = 0.0\text{ ms}$** | Tactile snap-dome switch closes when you press `{{key:≠}}` |
+| **$t = 0.0\text{ ms}$** | Tactile snap-dome switch closes when you press `{{key:ENTER}}` |
 | **$t = 1.0\text{ ms}$** | Engine reads your candidate answer from Register $X$ |
 | **$t = 2.4\text{ ms}$** | Evaluates candidate inside the RPN equation and checks exact match |
 | **$t = 4.2\text{ ms}$** | Updates streak counter and refreshes transflective LCD with instant feedback |
@@ -158,7 +158,7 @@ As you answer consecutive problems correctly within the fast speed threshold, th
 >
 > >>> SILVER STREAK ACHIEVED! +25 BONUS <<<
 >
-> 8  {{key:ENTER}}  ?  ×  56  x?y
+> 8  ×  =  56
 >
 > Y:                                                              8
 > X:                                                              7
@@ -166,6 +166,12 @@ As you answer consecutive problems correctly within the fast speed threshold, th
 *Figure 8.2: Transflective LCD Frame: 5 Fast Streak Unlock in Level 3*
 
 ---
+
+### Algebraic Trap vs. StackCalc Superpower Showdown: Mental Sprint & Subtraction Complements
+
+| Challenge / Equation | The Algebraic Calculator Trap (TI-30X / Smartphone) | The StackCalc SC-6 + Manipulative Superpower | Keystroke Reduction | Live Stack Visibility | Pedagogical Breakthrough |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Rapid Subtraction Complement**:<br>$1000 - 647 = 353$ | Must type `1 0 0 0 - 6 4 7 =` (8 keystrokes). On paper, requires crossing out three zeros with repeated borrowing across multiple columns (slow and error-prone). | Vedic / 9s Complement Shortcut: subtract each digit from 9, and the last digit from 10: $(9-6)(9-4)(10-7) = \mathbf{353}$! On the stack: `1000 {{key:ENTER}} 647 {{key:-}}` $	o \mathbf{353}$ (5 strokes). Instant verification with zero borrowing! | **38% fewer strokes** | Register $Y$ retains the 1000 base while Register $X$ receives 647, confirming difference 353 immediately on the transflective screen. | Learners discover the base-10 complement rule using Place Value blocks, eliminating multi-column borrowing anxiety completely. |
 
 ## Walkthrough: An Elite Level 6 Sprint Simulation
 
@@ -269,7 +275,7 @@ Before a tournament sprint or math quiz relay, you can wipe previous scores and 
 <strong>Teacher:</strong> "Brilliant! Now test it on your SC-6: <code>{{res:sc6_08_math_quiz_engine_seq_02:keys}}</code>!"<br>
 <strong>Hannah:</strong> "825! That's how Daniel answered in one second!"<br><br>
 <strong>Script 8.3: Fraction Addition vs Whole Number Addition:</strong><br>
-<strong>Student (Noah):</strong> "Teacher, in Level 4, the screen asked $1/3 + 1/4 = ?$. I typed $2/7$ and pressed <code>{{key:≠}}</code>, but the calculator flashed <code>✗ TRY AGAIN</code>! 1 plus 1 is 2, and 3 plus 4 is 7!"<br>
+<strong>Student (Noah):</strong> "Teacher, in Level 4, the screen asked $1/3 + 1/4 = ?$. I typed $2/7$ and pressed <code>{{key:ENTER}}</code>, but the calculator flashed <code>✗ TRY AGAIN</code>! 1 plus 1 is 2, and 3 plus 4 is 7!"<br>
 <strong>Teacher:</strong> "Noah, grab our Fraction Studio towers. Take a 1/3 tower and a 1/4 tower and stack them together."<br>
 <strong>Noah:</strong> "Okay, they make a tall tower."<br>
 <strong>Teacher:</strong> "Now look at the 1/7 pieces in the bin. If you place 2 of those sevenths side by side, do they match the height of your 1/3 plus 1/4 tower?"<br>
@@ -278,7 +284,7 @@ Before a tournament sprint or math quiz relay, you can wipe previous scores and 
 <strong>Noah:</strong> "Twelfths! One-third is 4 twelfths, and one-fourth is 3 twelfths!"<br>
 <strong>Teacher:</strong> "And $4/12 + 3/12$ equals...?"<br>
 <strong>Noah:</strong> "7 twelfths! $7/12$!"<br>
-<strong>Teacher:</strong> "Now type <code>{{key:.}} 7 {{key:.}} 1 2</code> on your SC-6 and tap <code>{{key:≠}}</code>!"<br>
+<strong>Teacher:</strong> "Now type <code>{{key:.}} 7 {{key:.}} 1 2</code> on your SC-6 and tap <code>{{key:ENTER}}</code>!"<br>
 <strong>Noah:</strong> "It flashed <code>✓ NICE! +20 POINTS</code>! The blocks prove the fraction!"
 </p>
 
@@ -307,8 +313,8 @@ The following problem bank provides complete reference Flight Simulator walkthro
 <p class="admonition-title">Hands-On Studio Proof: Blocks -> Calculator</p>
 
 Before executing high-speed mental sprints on the SC-6 keypad, you ground abstract arithmetic facts in tactile reality:
-1. **Domino Pairing & Seeing Groups at a Glance (Levels 1–2):** Use the **Math Dominoes Studio**. Draw a double-six domino (e.g., $4 + 5$). Instantly recognize the dot patterns to spot the near-double ($4 + 4 + 1 = 9$). Key in `{{key:5}} {{key:≠}}` on the SC-6 within $2.0\text{ seconds}$ to earn the speed chime.
-2. **Rectangular Array Muscle Memory (Levels 3–4):** Build a $7 \times 8$ tile array using the 144-Tile Counting & Array Studio. Decompose into $(5 \times 8) + (2 \times 8) = 40 + 16 = 56$. When the SC-6 prompts `7 {{key:ENTER}} ? {{key:×}} 56 x?y`, your fingers tap `{{key:8}} {{key:≠}}` without hesitation.
+1. **Domino Pairing & Seeing Groups at a Glance (Levels 1–2):** Use the **Math Dominoes Studio**. Draw a double-six domino (e.g., $4 + 5$). Instantly recognize the dot patterns to spot the near-double ($4 + 4 + 1 = 9$). Key in `{{key:5}} {{key:ENTER}}` on the SC-6 within $2.0\text{ seconds}$ to earn the speed chime.
+2. **Rectangular Array Muscle Memory (Levels 3–4):** Build a $7 \times 8$ tile array using the 144-Tile Counting & Array Studio. Decompose into $(5 \times 8) + (2 \times 8) = 40 + 16 = 56$. When the SC-6 prompts `7 {{key:ENTER}} ? {{key:×}} 56 `, your fingers tap `{{key:8}} {{key:ENTER}}` without hesitation.
 3. **Proportional Fraction Towers (Levels 4–5):** Compare a $\frac{1}{2}$ tower against two $\frac{1}{4}$ towers on the twin comparator well. When faced with $\frac{1}{2} + \frac{1}{4}$, the visual height of $\frac{3}{4}$ is already etched into spatial memory.
 4. **Vedic Shortcuts & Algebraic Sprints (Level 6):** Mentally multiply $35^2 = (3 \times 4)\text{ hundred} + 25 = 1,225$ using the spatial Vedic squaring rule, verifying instantly with `{{res:sc6_08_math_quiz_engine_seq_03:keys}}`.
 </div>
@@ -320,481 +326,310 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 
 #### Drill 1 (Level 1): $4 + 5 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Math Dominoes**. Draw a $[4 \mid 5]$ domino: you can instantly spot the near-double! The twin $4$-dot groups match up ($4 + 4 = 8$), leaving just $1$ extra dot to make $8 + 1 = 9$.
-- **On the Quiz Screen:** `4  {{key:ENTER}}  ?  +  9  x?y`
-- **What You Tap:** `{{key:5}} {{key:≠}}`
+- **On the Quiz Screen:** `4 + 5 = ?`
+- **What You Tap:** `{key:9}` `{key:ENTER}`
 - **Target Time:** $< 2.0\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:4}} | 0 | 0 | 0 | 4 |
-| {{key:ENTER}} | 0 | 0 | 4 | 4 |
-| {{key:5}} | 0 | 0 | 4 | 5 |
-| {{key:+}} | 0 | 0 | 0 | 9 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_01:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_01:value}}`**
+- **Stack Flow:** Tap `4 {{key:ENTER}} 5 {{key:+}}` -> (T=0, Z=0, Y=0, X=9). Enter the forward calculation on the stack to evaluate and verify 9 in Register $X$.
 
 #### Drill 2 (Level 1): $10 - 7 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use your **Ten-Frames** tray. The tray holds 10 counters in two rows of 5. When you cover or remove 7 counters (a full row of 5 plus 2 more), exactly 3 empty spaces remain ($10 - 7 = 3$, because $7 + 3 = 10$).
-- **On the Quiz Screen:** `10  {{key:ENTER}}  ?  -  3  x?y`
-- **What You Tap:** `{{key:7}} {{key:≠}}`
+- **On the Quiz Screen:** `10 - 7 = ?`
+- **What You Tap:** `{key:3}` `{key:ENTER}`
 - **Target Time:** $< 2.0\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 10 | 0 | 0 | 0 | 10 |
-| {{key:ENTER}} | 0 | 0 | 10 | 10 |
-| {{key:7}} | 0 | 0 | 10 | 7 |
-| {{key:-}} | 0 | 0 | 0 | 3 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_02:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_02:value}}`**
+- **Stack Flow:** Tap `10 {{key:ENTER}} 7 {{key:-}}` -> (T=0, Z=0, Y=0, X=3). Enter the forward calculation on the stack to evaluate and verify 3 in Register $X$.
 
 #### Drill 3 (Level 1): $6 + 3 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Math Dominoes** or a **Ten-Frames** board. Start with the larger benchmark group of 6 (a full row of 5 plus 1 dot), then count on 3 quick astronaut hops: 7, 8, 9 ($6 + 3 = 9$).
-- **On the Quiz Screen:** `6  {{key:ENTER}}  ?  +  9  x?y`
-- **What You Tap:** `{{key:3}} {{key:≠}}`
+- **On the Quiz Screen:** `6 + 3 = ?`
+- **What You Tap:** `{key:9}` `{key:ENTER}`
 - **Target Time:** $< 2.0\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_03:keys}} $\implies \mathbf{{{res:sc6_08_drill_03:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:6}} | 0 | 0 | 0 | 6 |
-| {{key:ENTER}} | 0 | 0 | 6 | 6 |
-| {{key:3}} | 0 | 0 | 6 | 3 |
-| {{key:+}} | 0 | 0 | 0 | 9 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_03:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_03:value}}`**
+- **Stack Flow:** Tap `6 {{key:ENTER}} 3 {{key:+}}` -> (T=0, Z=0, Y=0, X=9). Enter the forward calculation on the stack to evaluate and verify 9 in Register $X$.
 
 #### Drill 4 (Level 1): $8 - 0 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Ten-Frames** tray, set out 8 counters (5 on top, 3 on bottom). Subtracting zero means taking away zero blocks—all 8 counters stay locked in position ($8 - 0 = 8$).
-- **On the Quiz Screen:** `8  {{key:ENTER}}  ?  -  8  x?y`
-- **What You Tap:** `{{key:0}} {{key:≠}}`
+- **On the Quiz Screen:** `8 - 0 = ?`
+- **What You Tap:** `{key:8}` `{key:ENTER}`
 - **Target Time:** $< 1.0\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_04:keys}} $\implies \mathbf{{{res:sc6_08_drill_04:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:8}} | 0 | 0 | 0 | 8 |
-| {{key:ENTER}} | 0 | 0 | 8 | 8 |
-| {{key:0}} | 0 | 0 | 8 | 0 |
-| {{key:-}} | 0 | 0 | 0 | 8 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_04:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_04:value}}`**
+- **Stack Flow:** Tap `8 {{key:ENTER}} 0 {{key:-}}` -> (T=0, Z=0, Y=0, X=8). Enter the forward calculation on the stack to evaluate and verify 8 in Register $X$.
 
 #### Drill 5 (Level 1): $3 + 7 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Look at your **Ten-Frames** tray. Place 3 blue tiles in the first row. The remaining empty pockets form a partner block of 7 red tiles—together they complete the entire 10-frame flight module ($3 + 7 = 10$).
-- **On the Quiz Screen:** `3  {{key:ENTER}}  ?  +  10  x?y`
-- **What You Tap:** `{{key:7}} {{key:≠}}`
+- **On the Quiz Screen:** `3 + 7 = ?`
+- **What You Tap:** `{key:10}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_05:keys}} $\implies \mathbf{{{res:sc6_08_drill_05:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:3}} | 0 | 0 | 0 | 3 |
-| {{key:ENTER}} | 0 | 0 | 3 | 3 |
-| {{key:7}} | 0 | 0 | 3 | 7 |
-| {{key:+}} | 0 | 0 | 0 | 10 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_05:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_05:value}}`**
+- **Stack Flow:** Tap `3 {{key:ENTER}} 7 {{key:+}}` -> (T=0, Z=0, Y=0, X=10). Enter the forward calculation on the stack to evaluate and verify 10 in Register $X$.
 
 #### Drill 6 (Level 1): $9 - 5 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use your **Ten-Frames** tray. A group of 9 fills the top row of 5 plus 4 on the bottom row. When you launch or lift off the full 5-row, exactly 4 counters remain on the landing pad ($9 - 5 = 4$).
-- **On the Quiz Screen:** `9  {{key:ENTER}}  ?  -  4  x?y`
-- **What You Tap:** `{{key:5}} {{key:≠}}`
+- **On the Quiz Screen:** `9 - 5 = ?`
+- **What You Tap:** `{key:4}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_06:keys}} $\implies \mathbf{{{res:sc6_08_drill_06:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:9}} | 0 | 0 | 0 | 9 |
-| {{key:ENTER}} | 0 | 0 | 9 | 9 |
-| {{key:5}} | 0 | 0 | 9 | 5 |
-| {{key:-}} | 0 | 0 | 0 | 4 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_06:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_06:value}}`**
+- **Stack Flow:** Tap `9 {{key:ENTER}} 5 {{key:-}}` -> (T=0, Z=0, Y=0, X=4). Enter the forward calculation on the stack to evaluate and verify 4 in Register $X$.
 
 #### Drill 7 (Level 1): $4 + 4 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Grab a double-four from your **Math Dominoes** set. Both halves show identical $4$-dot square clusters ($4 + 4 = 8$); doubling 4 clicks together instantly like twin booster rockets!
-- **On the Quiz Screen:** `4  {{key:ENTER}}  ?  +  8  x?y`
-- **What You Tap:** `{{key:4}} {{key:≠}}`
+- **On the Quiz Screen:** `4 + 4 = ?`
+- **What You Tap:** `{key:8}` `{key:ENTER}`
 - **Target Time:** $< 1.0\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_07:keys}} $\implies \mathbf{{{res:sc6_08_drill_07:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:4}} | 0 | 0 | 0 | 4 |
-| {{key:ENTER}} | 0 | 0 | 4 | 4 |
-| {{key:4}} | 0 | 0 | 4 | 4 |
-| {{key:+}} | 0 | 0 | 0 | 8 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_07:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_07:value}}`**
+- **Stack Flow:** Tap `4 {{key:ENTER}} 4 {{key:+}}` -> (T=0, Z=0, Y=0, X=8). Enter the forward calculation on the stack to evaluate and verify 8 in Register $X$.
 
 #### Drill 8 (Level 1): $10 - 2 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Start with a full 10 in your **Ten-Frames** module. Pull off the 2 end counters from the bottom row: you instantly see the full top row of 5 and 3 on the bottom, giving 8 counters ($10 - 2 = 8$).
-- **On the Quiz Screen:** `10  {{key:ENTER}}  ?  -  8  x?y`
-- **What You Tap:** `{{key:2}} {{key:≠}}`
+- **On the Quiz Screen:** `10 - 2 = ?`
+- **What You Tap:** `{key:8}` `{key:ENTER}`
 - **Target Time:** $< 1.2\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_08:keys}} $\implies \mathbf{{{res:sc6_08_drill_08:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 10 | 0 | 0 | 0 | 10 |
-| {{key:ENTER}} | 0 | 0 | 10 | 10 |
-| {{key:2}} | 0 | 0 | 10 | 2 |
-| {{key:-}} | 0 | 0 | 0 | 8 |
-
----
-
-### Level 2: Whole Number Addition & Subtraction to 100
+- **RPN Keystrokes:** `{{res:sc6_08_drill_08:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_08:value}}`**
+- **Stack Flow:** Tap `10 {{key:ENTER}} 2 {{key:-}}` -> (T=0, Z=0, Y=0, X=8). Enter the forward calculation on the stack to evaluate and verify 8 in Register $X$.
 
 #### Drill 9 (Level 2): $40 + 30 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Build with **Ten-Frames** rods or **Counting Tile Arrays**. Align 4 solid ten-rods ($40$) and dock 3 more ten-rods ($30$): $4\text{ tens} + 3\text{ tens} = 7\text{ tens} = 70$.
-- **On the Quiz Screen:** `40  {{key:ENTER}}  ?  +  70  x?y`
-- **What You Tap:** `30 {{key:≠}}`
+- **On the Quiz Screen:** `40 + 30 = ?`
+- **What You Tap:** `{key:70}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 40 | 0 | 0 | 0 | 40 |
-| {{key:ENTER}} | 0 | 0 | 40 | 40 |
-| 30 | 0 | 0 | 40 | 30 |
-| {{key:+}} | 0 | 0 | 0 | 70 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_09:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_09:value}}`**
+- **Stack Flow:** Tap `40 {{key:ENTER}} 30 {{key:+}}` -> (T=0, Z=0, Y=0, X=70). Enter the forward calculation on the stack to evaluate and verify 70 in Register $X$.
 
 #### Drill 10 (Level 2): $80 - 25 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Counting Tile Arrays**. Line up 8 ten-rods to show $80$. To subtract 25, remove 2 full ten-rods to drop down to $60$, then snap off 5 single unit tiles to land at $55$ ($80 - 20 = 60 \implies 60 - 5 = 55$).
-- **On the Quiz Screen:** `80  {{key:ENTER}}  ?  -  55  x?y`
-- **What You Tap:** `25 {{key:≠}}`
+- **On the Quiz Screen:** `80 - 25 = ?`
+- **What You Tap:** `{key:55}` `{key:ENTER}`
 - **Target Time:** $< 3.0\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 80 | 0 | 0 | 0 | 80 |
-| {{key:ENTER}} | 0 | 0 | 80 | 80 |
-| 25 | 0 | 0 | 80 | 25 |
-| {{key:-}} | 0 | 0 | 0 | 55 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_10:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_10:value}}`**
+- **Stack Flow:** Tap `80 {{key:ENTER}} 25 {{key:-}}` -> (T=0, Z=0, Y=0, X=55). Enter the forward calculation on the stack to evaluate and verify 55 in Register $X$.
 
 #### Drill 11 (Level 2): $34 + 12 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Group your **Counting Tile Arrays** by place value. Combine 3 ten-rods and 1 ten-rod ($30 + 10 = 40$), then combine 4 single tiles and 2 single tiles ($4 + 2 = 6$) for a smooth landing on $46$ with zero regrouping!
-- **On the Quiz Screen:** `34  {{key:ENTER}}  ?  +  46  x?y`
-- **What You Tap:** `12 {{key:≠}}`
+- **On the Quiz Screen:** `34 + 12 = ?`
+- **What You Tap:** `{key:46}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_11:keys}} $\implies \mathbf{{{res:sc6_08_drill_11:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 34 | 0 | 0 | 0 | 34 |
-| {{key:ENTER}} | 0 | 0 | 34 | 34 |
-| 12 | 0 | 0 | 34 | 12 |
-| {{key:+}} | 0 | 0 | 0 | 46 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_11:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_11:value}}`**
+- **Stack Flow:** Tap `34 {{key:ENTER}} 12 {{key:+}}` -> (T=0, Z=0, Y=0, X=46). Enter the forward calculation on the stack to evaluate and verify 46 in Register $X$.
 
 #### Drill 12 (Level 2): $67 - 25 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Split your **Counting Tile Arrays** into tens and ones. From 6 ten-rods and 7 unit tiles, remove 2 ten-rods ($60 - 20 = 40$) and 5 unit tiles ($7 - 5 = 2$), leaving 4 ten-rods and 2 single tiles ($42$).
-- **On the Quiz Screen:** `67  {{key:ENTER}}  ?  -  42  x?y`
-- **What You Tap:** `25 {{key:≠}}`
+- **On the Quiz Screen:** `67 - 25 = ?`
+- **What You Tap:** `{key:42}` `{key:ENTER}`
 - **Target Time:** $< 2.8\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_12:keys}} $\implies \mathbf{{{res:sc6_08_drill_12:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 67 | 0 | 0 | 0 | 67 |
-| {{key:ENTER}} | 0 | 0 | 67 | 67 |
-| 25 | 0 | 0 | 67 | 25 |
-| {{key:-}} | 0 | 0 | 0 | 42 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_12:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_12:value}}`**
+- **Stack Flow:** Tap `67 {{key:ENTER}} 25 {{key:-}}` -> (T=0, Z=0, Y=0, X=42). Enter the forward calculation on the stack to evaluate and verify 42 in Register $X$.
 
 #### Drill 13 (Level 2): $47 + 38 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use compensation with **Ten-Frames** or **Counting Tile Arrays**. Treat 38 as 4 full ten-rods minus 2 tiles. Leap forward 40 from 47 to reach 87 ($47 + 40 = 87$), then pull back 2 single tiles to hit your orbital target: $85$.
-- **On the Quiz Screen:** `47  {{key:ENTER}}  ?  +  85  x?y`
-- **What You Tap:** `38 {{key:≠}}`
+- **On the Quiz Screen:** `47 + 38 = ?`
+- **What You Tap:** `{key:85}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_13:keys}} $\implies \mathbf{{{res:sc6_08_drill_13:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 47 | 0 | 0 | 0 | 47 |
-| {{key:ENTER}} | 0 | 0 | 47 | 47 |
-| 38 | 0 | 0 | 47 | 38 |
-| {{key:+}} | 0 | 0 | 0 | 85 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_13:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_13:value}}`**
+- **Stack Flow:** Tap `47 {{key:ENTER}} 38 {{key:+}}` -> (T=0, Z=0, Y=0, X=85). Enter the forward calculation on the stack to evaluate and verify 85 in Register $X$.
 
 #### Drill 14 (Level 2): $72 - 45 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Measure distance along your **Counting Tile Arrays** track. Count up from 45 to 72 in two astronaut hops: add 5 tiles to reach the round waypoint $50$, then add 22 tiles to reach $72$. The total flight path is $5 + 22 = 27$ tiles!
-- **On the Quiz Screen:** `72  {{key:ENTER}}  ?  -  27  x?y`
-- **What You Tap:** `45 {{key:≠}}`
+- **On the Quiz Screen:** `72 - 45 = ?`
+- **What You Tap:** `{key:27}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_14:keys}} $\implies \mathbf{{{res:sc6_08_drill_14:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 72 | 0 | 0 | 0 | 72 |
-| {{key:ENTER}} | 0 | 0 | 72 | 72 |
-| 45 | 0 | 0 | 72 | 45 |
-| {{key:-}} | 0 | 0 | 0 | 27 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_14:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_14:value}}`**
+- **Stack Flow:** Tap `72 {{key:ENTER}} 45 {{key:-}}` -> (T=0, Z=0, Y=0, X=27). Enter the forward calculation on the stack to evaluate and verify 27 in Register $X$.
 
 #### Drill 15 (Level 2): $56 + 19 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Ten-Frames** rods. 19 is just 1 tile less than 2 full ten-rods ($20$). Snap 2 ten-rods onto 56 to surge to 76 ($56 + 20 = 76$), then subtract 1 single tile to lock in $75$.
-- **On the Quiz Screen:** `56  {{key:ENTER}}  ?  +  75  x?y`
-- **What You Tap:** `19 {{key:≠}}`
+- **On the Quiz Screen:** `56 + 19 = ?`
+- **What You Tap:** `{key:75}` `{key:ENTER}`
 - **Target Time:** $< 2.8\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_15:keys}} $\implies \mathbf{{{res:sc6_08_drill_15:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 56 | 0 | 0 | 0 | 56 |
-| {{key:ENTER}} | 0 | 0 | 56 | 56 |
-| 19 | 0 | 0 | 56 | 19 |
-| {{key:+}} | 0 | 0 | 0 | 75 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_15:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_15:value}}`**
+- **Stack Flow:** Tap `56 {{key:ENTER}} 19 {{key:+}}` -> (T=0, Z=0, Y=0, X=75). Enter the forward calculation on the stack to evaluate and verify 75 in Register $X$.
 
 #### Drill 16 (Level 2): $91 - 38 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Counting Tile Arrays**. To subtract 38, overshoot by taking away 4 ten-rods ($40$) from 91 to get 51 ($91 - 40 = 51$), then compensate by snapping 2 unit tiles back on to finish at $53$ ($51 + 2 = 53$).
-- **On the Quiz Screen:** `91  {{key:ENTER}}  ?  -  53  x?y`
-- **What You Tap:** `38 {{key:≠}}`
+- **On the Quiz Screen:** `91 - 38 = ?`
+- **What You Tap:** `{key:53}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_16:keys}} $\implies \mathbf{{{res:sc6_08_drill_16:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 91 | 0 | 0 | 0 | 91 |
-| {{key:ENTER}} | 0 | 0 | 91 | 91 |
-| 38 | 0 | 0 | 91 | 38 |
-| {{key:-}} | 0 | 0 | 0 | 53 |
-
----
-
-### Mission 2: Astronaut Orbital Insertion (Levels 3 & 4: Times Tables, Division Facts, Fractions & Remainders)
-*Mission Briefing: Accelerate toward orbital velocity. Execute times tables up to 12 at sub-second speeds, master quotient-and-remainder division, and solve unlike-denominator fraction bonds.*
-
-### Level 3: Times Tables & Division Facts to 12
+- **RPN Keystrokes:** `{{res:sc6_08_drill_16:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_16:value}}`**
+- **Stack Flow:** Tap `91 {{key:ENTER}} 38 {{key:-}}` -> (T=0, Z=0, Y=0, X=53). Enter the forward calculation on the stack to evaluate and verify 53 in Register $X$.
 
 #### Drill 17 (Level 3): $7 \times 8 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Build a $7 \times 8$ grid in the **Counting Tile Arrays** studio. Use the double-double-double flight rule: double 7 to get 14 ($7 \times 2$), double again to get 28 ($7 \times 4$), and double a third time to get $56$ ($7 \times 8$).
-- **On the Quiz Screen:** `7  {{key:ENTER}}  ?  ×  56  x?y`
-- **What You Tap:** `{{key:8}} {{key:≠}}`
+- **On the Quiz Screen:** `7 × 8 = ?`
+- **What You Tap:** `{key:56}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:7}} | 0 | 0 | 0 | 7 |
-| {{key:ENTER}} | 0 | 0 | 7 | 7 |
-| {{key:8}} | 0 | 0 | 7 | 8 |
-| {{key:×}} | 0 | 0 | 0 | 56 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_17:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_17:value}}`**
+- **Stack Flow:** Tap `7 {{key:ENTER}} 8 {{key:×}}` -> (T=0, Z=0, Y=0, X=56). Enter the forward calculation on the stack to evaluate and verify 56 in Register $X$.
 
 #### Drill 18 (Level 3): $72 \div 9 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Lay out 72 tiles on your **Counting Tile Arrays** grid. Think of the inverse array: what width times 9 rows gives 72 total tiles? Because an $8 \times 9$ array holds 72 tiles, $72 \div 9 = 8$!
-- **On the Quiz Screen:** `72  {{key:ENTER}}  ?  ÷  8  x?y`
-- **What You Tap:** `{{key:9}} {{key:≠}}`
+- **On the Quiz Screen:** `72 ÷ 9 = ?`
+- **What You Tap:** `{key:8}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 72 | 0 | 0 | 0 | 72 |
-| {{key:ENTER}} | 0 | 0 | 72 | 72 |
-| {{key:9}} | 0 | 0 | 72 | 9 |
-| {{key:÷}} | 0 | 0 | 0 | 8 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_18:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_18:value}}`**
+- **Stack Flow:** Tap `72 {{key:ENTER}} 9 {{key:÷}}` -> (T=0, Z=0, Y=0, X=8). Enter the forward calculation on the stack to evaluate and verify 8 in Register $X$.
 
 #### Drill 19 (Level 3): $6 \times 9 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Counting Tile Arrays** studio, build a $6 \times 10$ rectangle of 60 tiles. Then peel away 1 column of 6 tiles: $60 - 6 = 54$, leaving the exact $6 \times 9$ tile array!
-- **On the Quiz Screen:** `6  {{key:ENTER}}  ?  ×  54  x?y`
-- **What You Tap:** `{{key:9}} {{key:≠}}`
+- **On the Quiz Screen:** `6 × 9 = ?`
+- **What You Tap:** `{key:54}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_19:keys}} $\implies \mathbf{{{res:sc6_08_drill_19:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:6}} | 0 | 0 | 0 | 6 |
-| {{key:ENTER}} | 0 | 0 | 6 | 6 |
-| {{key:9}} | 0 | 0 | 6 | 9 |
-| {{key:×}} | 0 | 0 | 0 | 54 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_19:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_19:value}}`**
+- **Stack Flow:** Tap `6 {{key:ENTER}} 9 {{key:×}}` -> (T=0, Z=0, Y=0, X=54). Enter the forward calculation on the stack to evaluate and verify 54 in Register $X$.
 
 #### Drill 20 (Level 3): $48 \div 6 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Form your 48 tiles into 6 equal flight squads using **Counting Tile Arrays**. Knowing that a $6 \times 8$ array uses all 48 tiles with zero leftovers, each squad must contain exactly 8 tiles ($48 \div 6 = 8$).
-- **On the Quiz Screen:** `48  {{key:ENTER}}  ?  ÷  8  x?y`
-- **What You Tap:** `{{key:6}} {{key:≠}}`
+- **On the Quiz Screen:** `48 ÷ 6 = ?`
+- **What You Tap:** `{key:8}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_20:keys}} $\implies \mathbf{{{res:sc6_08_drill_20:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 48 | 0 | 0 | 0 | 48 |
-| {{key:ENTER}} | 0 | 0 | 48 | 48 |
-| {{key:6}} | 0 | 0 | 48 | 6 |
-| {{key:÷}} | 0 | 0 | 0 | 8 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_20:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_20:value}}`**
+- **Stack Flow:** Tap `48 {{key:ENTER}} 6 {{key:÷}}` -> (T=0, Z=0, Y=0, X=8). Enter the forward calculation on the stack to evaluate and verify 8 in Register $X$.
 
 #### Drill 21 (Level 3): $12 \times 7 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Break apart your $12 \times 7$ grid in the **Counting Tile Arrays** studio into two easy modules: a $10 \times 7$ array ($70$ tiles) plus a $2 \times 7$ array ($14$ tiles). Sum the two arrays together: $70 + 14 = 84$ tiles.
-- **On the Quiz Screen:** `12  {{key:ENTER}}  ?  ×  84  x?y`
-- **What You Tap:** `{{key:7}} {{key:≠}}`
+- **On the Quiz Screen:** `12 × 7 = ?`
+- **What You Tap:** `{key:84}` `{key:ENTER}`
 - **Target Time:** $< 2.2\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_21:keys}} $\implies \mathbf{{{res:sc6_08_drill_21:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 12 | 0 | 0 | 0 | 12 |
-| {{key:ENTER}} | 0 | 0 | 12 | 12 |
-| {{key:7}} | 0 | 0 | 12 | 7 |
-| {{key:×}} | 0 | 0 | 0 | 84 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_21:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_21:value}}`**
+- **Stack Flow:** Tap `12 {{key:ENTER}} 7 {{key:×}}` -> (T=0, Z=0, Y=0, X=84). Enter the forward calculation on the stack to evaluate and verify 84 in Register $X$.
 
 #### Drill 22 (Level 3): $9 \times 9 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Build a square array of $9 \times 9$ tiles in your **Counting Tile Arrays** workspace. Imagine a full $10 \times 9$ rectangle of 90 tiles and slice off the bottom row of 9: $90 - 9 = 81$ tiles in the perfect square.
-- **On the Quiz Screen:** `9  {{key:ENTER}}  ?  ×  81  x?y`
-- **What You Tap:** `{{key:9}} {{key:≠}}`
+- **On the Quiz Screen:** `9 × 9 = ?`
+- **What You Tap:** `{key:81}` `{key:ENTER}`
 - **Target Time:** $< 1.2\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_22:keys}} $\implies \mathbf{{{res:sc6_08_drill_22:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:9}} | 0 | 0 | 0 | 9 |
-| {{key:ENTER}} | 0 | 0 | 9 | 9 |
-| {{key:9}} | 0 | 0 | 9 | 9 |
-| {{key:×}} | 0 | 0 | 0 | 81 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_22:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_22:value}}`**
+- **Stack Flow:** Tap `9 {{key:ENTER}} 9 {{key:×}}` -> (T=0, Z=0, Y=0, X=81). Enter the forward calculation on the stack to evaluate and verify 81 in Register $X$.
 
 #### Drill 23 (Level 3): $84 \div 12 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Partition 84 tiles into 12-tile bundles using your **Counting Tile Arrays**. Since $7 \times 10 = 70$ and $7 \times 2 = 14$, 7 full bundles consume all 84 tiles ($84 \div 12 = 7$).
-- **On the Quiz Screen:** `84  {{key:ENTER}}  ?  ÷  7  x?y`
-- **What You Tap:** `12 {{key:≠}}`
+- **On the Quiz Screen:** `84 ÷ 12 = ?`
+- **What You Tap:** `{key:7}` `{key:ENTER}`
 - **Target Time:** $< 2.0\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_23:keys}} $\implies \mathbf{{{res:sc6_08_drill_23:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 84 | 0 | 0 | 0 | 84 |
-| {{key:ENTER}} | 0 | 0 | 84 | 84 |
-| 12 | 0 | 0 | 84 | 12 |
-| {{key:÷}} | 0 | 0 | 0 | 7 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_23:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_23:value}}`**
+- **Stack Flow:** Tap `84 {{key:ENTER}} 12 {{key:÷}}` -> (T=0, Z=0, Y=0, X=7). Enter the forward calculation on the stack to evaluate and verify 7 in Register $X$.
 
 #### Drill 24 (Level 3): $11 \times 11 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Lay out an $11 \times 11$ square using **Counting Tile Arrays**. Split it into a $10 \times 11$ rectangle ($110$ tiles) plus a single $1 \times 11$ strip ($11$ tiles): $110 + 11 = 121$ tiles in the full square matrix.
-- **On the Quiz Screen:** `11  {{key:ENTER}}  ?  ×  121  x?y`
-- **What You Tap:** `11 {{key:≠}}`
+- **On the Quiz Screen:** `11 × 11 = ?`
+- **What You Tap:** `{key:121}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_24:keys}} $\implies \mathbf{{{res:sc6_08_drill_24:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 11 | 0 | 0 | 0 | 11 |
-| {{key:ENTER}} | 0 | 0 | 11 | 11 |
-| 11 | 0 | 0 | 11 | 11 |
-| {{key:×}} | 0 | 0 | 0 | 121 |
-
----
-
-### Level 4: Fractions, Decimals & Division with Remainders
+- **RPN Keystrokes:** `{{res:sc6_08_drill_24:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_24:value}}`**
+- **Stack Flow:** Tap `11 {{key:ENTER}} 11 {{key:×}}` -> (T=0, Z=0, Y=0, X=121). Enter the forward calculation on the stack to evaluate and verify 121 in Register $X$.
 
 #### Drill 25 (Level 4): $17 \div 5 \to Q=?, R=?$
 - **Your Mental Math Trick (With Your Blocks):** Take 17 tiles from your **Counting Tile Arrays** kit and stack them into columns of 5. You build 3 complete 5-towers ($15$ tiles), with 2 leftover tiles resting in your hand ($Q=3, R=2$).
-- **On the Quiz Screen:** `17  {{key:ENTER}}  5  ÷R  Q=3, R=?  x?y`
-- **What You Tap:** `{{key:2}} {{key:≠}}`
+- **On the Quiz Screen:** `17 ÷ 5 = Q=?, R=?`
+- **What You Tap:** `{key:3}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Verification Stack Trace (via Superpower 2 `{{key:÷R}}`):**
+- **RPN Keystrokes:** `{{res:sc6_08_drill_25:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_25:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 17 | 0 | 0 | 0 | 17 |
 | {{key:ENTER}} | 0 | 0 | 17 | 17 |
 | {{key:5}} | 0 | 0 | 17 | 5 |
-| {{keycap:÷R}} | 0 | 0 | 3 | 2 |
+| {{keycap:÷R}} | 0 | 0 | 2 | 3 |
 *(Register $Y$ holds quotient 3, Register $X$ holds remainder 2)*.
 
 #### Drill 26 (Level 4): $1/2 + 1/4 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Slide your **Fraction Towers** into the twin comparator well. A single $1/2$ tower aligns at the exact same height as two $1/4$ segments ($2/4$). Adding one more $1/4$ segment gives a $3/4$ tower ($2/4 + 1/4 = 3/4$).
-- **On the Quiz Screen:** `1/2  {{key:ENTER}}  ?  +  3/4  x?y`
-- **What You Tap:** `{{key:.}} 1 {{key:.}} 4 {{key:≠}}`
+- **On the Quiz Screen:** `1/2 + 1/4 = ?`
+- **What You Tap:** `{key:3/4}` `{key:ENTER}`
 - **Target Time:** $< 3.0\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `{{res:sc6_08_drill_26:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_26:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:.}} 1 {{key:.}} 2 | 0 | 0 | 0 | 1/2 |
-| {{key:ENTER}} | 0 | 0 | 1/2 | 1/2 |
-| {{key:.}} 1 {{key:.}} 4 | 0 | 0 | 1/2 | 1/4 |
-| {{key:+}} | 0 | 0 | 0 | 3/4 |
+| {{key:.}} 1 {{key:.}} 2 | 0 | 0 | 0 | $0.5000$ |
+| {{key:ENTER}} | 0 | 0 | $0.5000$ | $0.5000$ |
+| {{key:.}} 1 {{key:.}} 4 | 0 | 0 | $0.5000$ | $0.2500$ |
+| {{key:+}} | 0 | 0 | 0 | $0.7500$ |
 
 #### Drill 27 (Level 4): $5/6 - 1/3 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Fraction Towers** studio, stand a $5/6$ tower next to a $1/3$ tower. The $1/3$ tower matches two $1/6$ blocks ($2/6$). Subtracting two $1/6$ blocks from the five leaves three $1/6$ blocks ($3/6$), which simplifies directly to the $1/2$ tower!
-- **On the Quiz Screen:** `5/6  {{key:ENTER}}  ?  -  1/2  x?y`
-- **What You Tap:** `{{key:.}} 1 {{key:.}} 3 {{key:≠}}`
+- **On the Quiz Screen:** `5/6 - 1/3 = ?`
+- **What You Tap:** `{key:1/2}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_27:keys}} $\implies \mathbf{{{res:sc6_08_drill_27:value}}}$
+- **RPN Keystrokes:** `{{res:sc6_08_drill_27:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_27:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:.}} 5 {{key:.}} 6 | 0 | 0 | 0 | 5/6 |
-| {{key:ENTER}} | 0 | 0 | 5/6 | 5/6 |
-| {{key:.}} 1 {{key:.}} 3 | 0 | 0 | 5/6 | 1/3 |
-| {{key:-}} | 0 | 0 | 0 | 3/6 |
-| {{key:SIMP}} | 0 | 0 | 3 | 1/2 |
+| {{key:.}} 5 {{key:.}} 6 | 0 | 0 | 0 | $0.8333$ |
+| {{key:ENTER}} | 0 | 0 | $0.8333$ | $0.8333$ |
+| {{key:.}} 1 {{key:.}} 3 | 0 | 0 | $0.8333$ | $0.3333$ |
+| {{key:-}} | 0 | 0 | 0 | $0.5000$ |
+| {{key:SIMP}} | 0 | 0 | 0 | $0.5000$ |
 
 #### Drill 28 (Level 4): $2/3 + 1/4 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use the twelfths benchmark on your **Fraction Towers** rack. The $2/3$ tower matches 8 twelfths ($8/12$) and the $1/4$ tower matches 3 twelfths ($3/12$). Stacking them combines $8 + 3 = 11$ twelfths ($11/12$).
-- **On the Quiz Screen:** `2/3  {{key:ENTER}}  ?  +  11/12  x?y`
-- **What You Tap:** `{{key:.}} 1 {{key:.}} 4 {{key:≠}}`
+- **On the Quiz Screen:** `2/3 + 1/4 = ?`
+- **What You Tap:** `{key:11/12}` `{key:ENTER}`
 - **Target Time:** $< 4.0\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_28:keys}} $\implies \mathbf{{{res:sc6_08_drill_28:value}}}$
+- **RPN Keystrokes:** `{{res:sc6_08_drill_28:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_28:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:.}} 2 {{key:.}} 3 | 0 | 0 | 0 | 2/3 |
-| {{key:ENTER}} | 0 | 0 | 2/3 | 2/3 |
-| {{key:.}} 1 {{key:.}} 4 | 0 | 0 | 2/3 | 1/4 |
-| {{key:+}} | 0 | 0 | 0 | 11/12 |
+| {{key:.}} 2 {{key:.}} 3 | 0 | 0 | 0 | $0.6667$ |
+| {{key:ENTER}} | 0 | 0 | $0.6667$ | $0.6667$ |
+| {{key:.}} 1 {{key:.}} 4 | 0 | 0 | $0.6667$ | $0.2500$ |
+| {{key:+}} | 0 | 0 | 0 | $0.9167$ |
 
 #### Drill 29 (Level 4): $3/4 - 2/5 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Calibrate your **Fraction Towers** against a 20-part common base. A $3/4$ tower spans $15/20$ and a $2/5$ tower spans $8/20$. The height difference is $15/20 - 8/20 = 7/20$.
-- **On the Quiz Screen:** `3/4  {{key:ENTER}}  ?  -  7/20  x?y`
-- **What You Tap:** `{{key:.}} 2 {{key:.}} 5 {{key:≠}}`
+- **On the Quiz Screen:** `3/4 - 2/5 = ?`
+- **What You Tap:** `{key:7/20}` `{key:ENTER}`
 - **Target Time:** $< 4.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_29:keys}} $\implies \mathbf{{{res:sc6_08_drill_29:value}}}$
+- **RPN Keystrokes:** `{{res:sc6_08_drill_29:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_29:value}}`**
+- **Stack Flow:** Tap `. 3 . 4 {{key:ENTER}} . 2 . 5 {{key:-}}` -> (T=0, Z=0, Y=0, X=0.35). Enter the forward calculation on the stack to evaluate and verify 7/20 in Register $X$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:.}} 3 {{key:.}} 4 | 0 | 0 | 0 | 3/4 |
-| {{key:ENTER}} | 0 | 0 | 3/4 | 3/4 |
-| {{key:.}} 2 {{key:.}} 5 | 0 | 0 | 3/4 | 2/5 |
-| {{key:-}} | 0 | 0 | 0 | 7/20 |
-
-#### Drill 30 (Level 4): Simplify $18/24 \to ?$
+#### Drill 30 (Level 4): $Simplify 18/24 \to ?$
 - **Your Mental Math Trick (With Your Blocks):** Place an $18$-unit block over a $24$-unit block from your **Fraction Towers** kit. Both numbers can be measured by 6-unit segments ($\gcd(18, 24) = 6$). Dividing out 6 gives 3 segments over 4 segments—the exact height of a $3/4$ tower!
-- **On the Quiz Screen:** `18/24  SIMP  ->  ?  x?y`
-- **What You Tap:** `{{key:.}} 3 {{key:.}} 4 {{key:≠}}`
+- **On the Quiz Screen:** `Simplify 18/24 = ?`
+- **What You Tap:** `{key:3/4}` `{key:ENTER}`
 - **Target Time:** $< 3.0\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_30:keys}} $\implies \mathbf{{{res:sc6_08_drill_30:value}}}$
+- **RPN Keystrokes:** `{{res:sc6_08_drill_30:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_30:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:.}} 18 {{key:.}} 24 | 0 | 0 | 0 | 18/24 |
-| {{key:ENTER}} | 0 | 0 | 18/24 | 18/24 |
-| {{key:SIMP}} | 0 | 0 | 6 | 3/4 |
+| {{key:.}} 18 {{key:.}} 24 | 0 | 0 | 0 | $0.7500$ |
+| {{key:ENTER}} | 0 | 0 | $0.7500$ | $0.7500$ |
+| {{key:SIMP}} | 0 | 0 | $0.7500$ | $0.7500$ |
 
 #### Drill 31 (Level 4): $38 \div 6 \to Q=?, R=?$
 - **Your Mental Math Trick (With Your Blocks):** Assemble 38 tiles into 6-tile stacks with your **Counting Tile Arrays**. You construct 6 complete stacks ($36$ tiles) and have 2 extra loose tiles left over ($Q=6, R=2$).
-- **On the Quiz Screen:** `38  {{key:ENTER}}  6  ÷R  Q=6, R=?  x?y`
-- **What You Tap:** `{{key:2}} {{key:≠}}`
+- **On the Quiz Screen:** `38 ÷ 6 = Q=?, R=?`
+- **What You Tap:** `{key:6}` `{key:ENTER}`
 - **Target Time:** $< 3.0\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_31:keys}} $\implies \mathbf{{{res:sc6_08_drill_31:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 38 | 0 | 0 | 0 | 38 |
-| {{key:ENTER}} | 0 | 0 | 38 | 38 |
-| {{key:6}} | 0 | 0 | 38 | 6 |
-| {{keycap:÷R}} | 0 | 0 | 6 | 2 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_31:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_31:value}}`**
+- **Stack Flow:** Tap `38 {{key:ENTER}} 6 {{key:÷R}}` -> (T=0, Z=0, Y=2, X=6). Enter the forward calculation on the stack to evaluate and verify 6 in Register $X$.
 
 #### Drill 32 (Level 4): $5/8 + 1/2 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Fraction Towers** comparator well, a $1/2$ tower equals four $1/8$ segments ($4/8$). Adding five $1/8$ segments yields nine $1/8$ segments, which equals 1 full whole tower plus an extra $1/8$ piece ($1\ 1/8$).
-- **On the Quiz Screen:** `5/8  {{key:ENTER}}  ?  +  1_1/8  x?y`
-- **What You Tap:** `{{key:.}} 1 {{key:.}} 2 {{key:≠}}`
+- **On the Quiz Screen:** `5/8 + 1/2 = ?`
+- **What You Tap:** `{key:1 1/8}` `{key:ENTER}`
 - **Target Time:** $< 4.0\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_32:keys}} $\implies \mathbf{{{res:sc6_08_drill_32:value}}}$
+- **RPN Keystrokes:** `{{res:sc6_08_drill_32:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_32:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:.}} 5 {{key:.}} 8 | 0 | 0 | 0 | 5/8 |
-| {{key:ENTER}} | 0 | 0 | 5/8 | 5/8 |
-| {{key:.}} 1 {{key:.}} 2 | 0 | 0 | 5/8 | 1/2 |
-| {{key:+}} | 0 | 0 | 0 | 1 1/8 |
-
----
-
-### Mission 3: Deep Space Navigation Sprint (Levels 5 & 6: Mixed Operations, Pre-Algebra & Rapid Mental Math Sprint)
-*Mission Briefing: Navigate deep space trajectories. Chain arithmetic operations without parentheses, execute Vedic mental squaring and multiplication by 11, and solve signed integer number sense challenges.*
-
-### Level 5: Mixed Operations, Order of Operations & Decimals
+| {{key:.}} 5 {{key:.}} 8 | 0 | 0 | 0 | $0.6250$ |
+| {{key:ENTER}} | 0 | 0 | $0.6250$ | $0.6250$ |
+| {{key:.}} 1 {{key:.}} 2 | 0 | 0 | $0.6250$ | $0.5000$ |
+| {{key:+}} | 0 | 0 | 0 | $1.1250$ |
 
 #### Drill 33 (Level 5): $24 \div 6 + 7 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Counting Tile Arrays**. Division comes before addition: separate 24 tiles into 6 equal squads of 4 tiles ($24 \div 6 = 4$), then dock 7 additional tiles into the squad to finish with 11 tiles ($4 + 7 = 11$).
-- **On the Quiz Screen:** `24  {{key:ENTER}}  6  ÷  7  +  11  x?y`
-- **What You Tap:** `11 {{key:≠}}`
+- **On the Quiz Screen:** `24 ÷ 6 + 7 = ?`
+- **What You Tap:** `{key:11}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `{{res:sc6_08_drill_33:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_33:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -807,24 +642,19 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 
 #### Drill 34 (Level 5): $0.25 \times 80 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Connect decimals to **Fraction Towers**: $0.25$ is the exact height of a $1/4$ tower. Multiplying by $0.25$ means taking one fourth of an 80-tile track using **Counting Tile Arrays**: $80 \div 4 = 20$ tiles!
-- **On the Quiz Screen:** `0.25  {{key:ENTER}}  ?  ×  20  x?y`
-- **What You Tap:** `80 {{key:≠}}`
+- **On the Quiz Screen:** `0.25 × 80 = ?`
+- **What You Tap:** `{key:20}` `{key:ENTER}`
 - **Target Time:** $< 2.0\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_34:keys}} $\implies \mathbf{{{res:sc6_08_drill_34:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 0.25 | 0 | 0 | 0 | 0.25 |
-| {{key:ENTER}} | 0 | 0 | 0.25 | 0.25 |
-| 80 | 0 | 0 | 0.25 | 80 |
-| {{key:×}} | 0 | 0 | 0 | 20 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_34:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_34:value}}`**
+- **Stack Flow:** Tap `0.25 {{key:ENTER}} 80 {{key:×}}` -> (T=0, Z=0, Y=0, X=20). Enter the forward calculation on the stack to evaluate and verify 20 in Register $X$.
 
 #### Drill 35 (Level 5): $15 - 3 \times 4 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Counting Tile Arrays** workspace, order of operations requires multiplying first: build a $3 \times 4$ tile array ($12$ tiles). Then lift that 12-tile array away from a group of 15 tiles to leave exactly 3 tiles ($15 - 12 = 3$).
-- **On the Quiz Screen:** `15  {{key:ENTER}}  3  4  ×  -  ?  x?y`
-- **What You Tap:** `{{key:3}} {{key:≠}}`
+- **On the Quiz Screen:** `15 - 3 × 4 = ?`
+- **What You Tap:** `{key:3}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `{{res:sc6_08_drill_35:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_35:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -838,10 +668,11 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 
 #### Drill 36 (Level 5): $(18 - 6) \div 3 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Handle the grouped tiles first! From an 18-tile line in your **Counting Tile Arrays** studio, remove 6 tiles to leave 12 tiles ($18 - 6 = 12$). Next, divide those 12 tiles into 3 equal squads: each squad gets 4 tiles ($12 \div 3 = 4$).
-- **On the Quiz Screen:** `18  {{key:ENTER}}  6  -  3  ÷  ?  x?y`
-- **What You Tap:** `{{key:4}} {{key:≠}}`
+- **On the Quiz Screen:** `(18 - 6) ÷ 3 = ?`
+- **What You Tap:** `{key:4}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `{{res:sc6_08_drill_36:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_36:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -854,52 +685,42 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 
 #### Drill 37 (Level 5): $1\ 1/2 + 2\ 1/4 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Stack your **Fraction Towers** in two passes: first combine the solid whole towers ($1 + 2 = 3$). Then check the fractional pieces in the comparator well: $1/2$ equals $2/4$, plus $1/4$ gives $3/4$, reaching an astronaut altitude of $3\ 3/4$!
-- **On the Quiz Screen:** `1_1/2  {{key:ENTER}}  ?  +  3_3/4  x?y`
-- **What You Tap:** `{{key:2}} {{key:.}} 1 {{key:.}} 4 {{key:≠}}`
+- **On the Quiz Screen:** `1\ 1/2 + 2\ 1/4 = ?`
+- **What You Tap:** `{key:3 3/4}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_37:keys}} $\implies \mathbf{{{res:sc6_08_drill_37:value}}}$
+- **RPN Keystrokes:** `{{res:sc6_08_drill_37:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_37:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:1}} {{key:.}} 1 {{key:.}} 2 | 0 | 0 | 0 | 1 1/2 |
-| {{key:ENTER}} | 0 | 0 | 1 1/2 | 1 1/2 |
-| {{key:2}} {{key:.}} 1 {{key:.}} 4 | 0 | 0 | 1 1/2 | 2 1/4 |
-| {{key:+}} | 0 | 0 | 0 | 3 3/4 |
+| {{key:1}} {{key:.}} 1 {{key:.}} 2 | 0 | 0 | 1 | $0.5000$ |
+| {{key:ENTER}} | 0 | 1 | $0.5000$ | $0.5000$ |
+| {{key:2}} {{key:.}} 1 {{key:.}} 4 | 1 | $0.5000$ | $2.0000$ | $0.2500$ |
+| {{key:+}} | 1 | 1 | $0.5000$ | $2.2500$ |
 
 #### Drill 38 (Level 5): $0.5 \times 48 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use the $1/2$ mark on your **Fraction Towers** and a 48-tile strip from **Counting Tile Arrays**. Multiplying by $0.5$ is simply taking half: bisect 48 tiles down the middle to get 24 tiles ($48 \div 2 = 24$).
-- **On the Quiz Screen:** `0.5  {{key:ENTER}}  ?  ×  24  x?y`
-- **What You Tap:** `48 {{key:≠}}`
+- **On the Quiz Screen:** `0.5 × 48 = ?`
+- **What You Tap:** `{key:24}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_38:keys}} $\implies \mathbf{{{res:sc6_08_drill_38:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 0.5 | 0 | 0 | 0 | 0.5 |
-| {{key:ENTER}} | 0 | 0 | 0.5 | 0.5 |
-| 48 | 0 | 0 | 0.5 | 48 |
-| {{key:×}} | 0 | 0 | 0 | 24 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_38:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_38:value}}`**
+- **Stack Flow:** Tap `0.5 {{key:ENTER}} 48 {{key:×}}` -> (T=0, Z=0, Y=0, X=24). Enter the forward calculation on the stack to evaluate and verify 24 in Register $X$.
 
 #### Drill 39 (Level 5): $10\%\text{ of } 250 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Think of $10\%$ as the benchmark ratio from your **Ten-Frames** and **Counting Tile Arrays**: $10\%$ is 1 out of every 10 parts. Divide a 250-tile array into 10 equal columns by shifting one decimal place left to find 25 tiles ($250 \div 10 = 25$).
-- **On the Quiz Screen:** `250  {{key:ENTER}}  10  %  ?  x?y`
-- **What You Tap:** `25 {{key:≠}}`
+- **On the Quiz Screen:** `10\%\text{ of } 250 = ?`
+- **What You Tap:** `{key:25}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_39:keys}} $\implies \mathbf{{{res:sc6_08_drill_39:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 250 | 0 | 0 | 0 | 250 |
-| {{key:ENTER}} | 0 | 0 | 250 | 250 |
-| 10 | 0 | 0 | 250 | 10 |
-| {{key:%}} | 0 | 0 | 250 | 25 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_39:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_39:value}}`**
+- **Stack Flow:** Tap `250 {{key:ENTER}} 10 {{key:%}}` -> (T=0, Z=0, Y=0, X=25). Enter the forward calculation on the stack to evaluate and verify 25 in Register $X$.
 
 #### Drill 40 (Level 5): $8 + 4 \times 5 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Counting Tile Arrays** workspace, calculate the multiplication array before adding: build 4 rows of 5 tiles ($4 \times 5 = 20$ tiles). Then combine that array with 8 loose tiles to get $8 + 20 = 28$ tiles!
-- **On the Quiz Screen:** `8  {{key:ENTER}}  4  5  ×  +  ?  x?y`
-- **What You Tap:** `28 {{key:≠}}`
+- **On the Quiz Screen:** `8 + 4 × 5 = ?`
+- **What You Tap:** `{key:28}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `{{res:sc6_08_drill_40:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_40:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -911,109 +732,77 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 | {{key:×}} | 0 | 0 | 8 | 20 |
 | {{key:+}} | 0 | 0 | 0 | 28 |
 
----
-
-### Level 6: Pre-Algebra, Vedic Shortcuts & Rapid Mental Math Sprint
-
 #### Drill 41 (Level 6): $35^2 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Visualize a $35 \times 35$ grid using **Counting Tile Arrays**. For any number ending in 5, multiply the tens digit by the next integer ($3 \times 4 = 12$ hundreds $= 1200$), then tack on the $5 \times 5 = 25$ tile corner block: $1,225$!
-- **On the Quiz Screen:** `35  {{key:ENTER}}  x²  1225  x?y`
-- **What You Tap:** `1225 {{key:≠}}`
+- **On the Quiz Screen:** `35^2 = ?`
+- **What You Tap:** `{key:1225}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 35 | 0 | 0 | 0 | 35 |
-| {{key:x²}} | 0 | 0 | 0 | 1225 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_41:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_41:value}}`**
+- **Stack Flow:** Tap `35 {{key:x²}}` -> (T=0, Z=0, Y=0, X=1225). Enter the forward calculation on the stack to evaluate and verify 1225 in Register $X$.
 
 #### Drill 42 (Level 6): $43 \times 11 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In **Counting Tile Arrays**, multiplying 43 by 11 spreads the outer digits 4 and 3 apart ($(43 \times 10) + 43$). Add the digits together ($4 + 3 = 7$) and insert the 7 into the middle tens position: $473$!
-- **On the Quiz Screen:** `43  {{key:ENTER}}  11  ×  473  x?y`
-- **What You Tap:** `473 {{key:≠}}`
+- **On the Quiz Screen:** `43 × 11 = ?`
+- **What You Tap:** `{key:473}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_42:keys}} $\implies \mathbf{{{res:sc6_08_drill_42:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 43 | 0 | 0 | 0 | 43 |
-| {{key:ENTER}} | 0 | 0 | 43 | 43 |
-| 11 | 0 | 0 | 43 | 11 |
-| {{key:×}} | 0 | 0 | 0 | 473 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_42:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_42:value}}`**
+- **Stack Flow:** Tap `43 {{key:ENTER}} 11 {{key:×}}` -> (T=0, Z=0, Y=0, X=473). Enter the forward calculation on the stack to evaluate and verify 473 in Register $X$.
 
 #### Drill 43 (Level 6): $65^2 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use the geometric squaring layout from **Counting Tile Arrays**. Multiply tens digit 6 by its consecutive neighbor 7 ($6 \times 7 = 42$ hundreds $= 4200$), then append the $5 \times 5 = 25$ corner tile array: $4,225$!
-- **On the Quiz Screen:** `65  {{key:ENTER}}  x²  4225  x?y`
-- **What You Tap:** `4225 {{key:≠}}`
+- **On the Quiz Screen:** `65^2 = ?`
+- **What You Tap:** `{key:4225}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_43:keys}} $\implies \mathbf{{{res:sc6_08_drill_43:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 65 | 0 | 0 | 0 | 65 |
-| {{key:x²}} | 0 | 0 | 0 | 4225 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_43:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_43:value}}`**
+- **Stack Flow:** Tap `65 {{key:x²}}` -> (T=0, Z=0, Y=0, X=4225). Enter the forward calculation on the stack to evaluate and verify 4225 in Register $X$.
 
 #### Drill 44 (Level 6): $75^2 = ?$
 - **Your Mental Math Trick (With Your Blocks):** On your **Counting Tile Arrays** workspace, square 75 by multiplying the tens digit 7 by the next number 8 ($7 \times 8 = 56$ hundreds $= 5600$). Add the $5 \times 5 = 25$ corner tiles to lock in $5,625$!
-- **On the Quiz Screen:** `75  {{key:ENTER}}  x²  5625  x?y`
-- **What You Tap:** `5625 {{key:≠}}`
+- **On the Quiz Screen:** `75^2 = ?`
+- **What You Tap:** `{key:5625}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_44:keys}} $\implies \mathbf{{{res:sc6_08_drill_44:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 75 | 0 | 0 | 0 | 75 |
-| {{key:x²}} | 0 | 0 | 0 | 5625 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_44:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_44:value}}`**
+- **Stack Flow:** Tap `75 {{key:x²}}` -> (T=0, Z=0, Y=0, X=5625). Enter the forward calculation on the stack to evaluate and verify 5625 in Register $X$.
 
 #### Drill 45 (Level 6): $67 \times 11 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Counting Tile Arrays** to multiply by 11 with regrouping: split 6 and 7. The middle sum is $6 + 7 = 13$; leave the 3 in the tens place and carry 1 ten-rod over to 6 hundreds ($6 + 1 = 7$), resulting in $737$!
-- **On the Quiz Screen:** `67  {{key:ENTER}}  11  ×  737  x?y`
-- **What You Tap:** `737 {{key:≠}}`
+- **On the Quiz Screen:** `67 × 11 = ?`
+- **What You Tap:** `{key:737}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_45:keys}} $\implies \mathbf{{{res:sc6_08_drill_45:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 67 | 0 | 0 | 0 | 67 |
-| {{key:ENTER}} | 0 | 0 | 67 | 67 |
-| 11 | 0 | 0 | 67 | 11 |
-| {{key:×}} | 0 | 0 | 0 | 737 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_45:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_45:value}}`**
+- **Stack Flow:** Tap `67 {{key:ENTER}} 11 {{key:×}}` -> (T=0, Z=0, Y=0, X=737). Enter the forward calculation on the stack to evaluate and verify 737 in Register $X$.
 
 #### Drill 46 (Level 6): $15\%\text{ of } 80 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Break down $15\%$ using **Counting Tile Arrays** and **Ten-Frames** benchmark ratios: $10\%$ of 80 is 8 tiles, and $5\%$ is half of that (4 tiles). Add the two tile groups together: $8 + 4 = 12$ tiles!
-- **On the Quiz Screen:** `80  {{key:ENTER}}  15  %  12  x?y`
-- **What You Tap:** `12 {{key:≠}}`
+- **On the Quiz Screen:** `15\%\text{ of } 80 = ?`
+- **What You Tap:** `{key:12}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Stack Verification:** {{res:sc6_08_drill_46:keys}} $\implies \mathbf{{{res:sc6_08_drill_46:value}}}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 80 | 0 | 0 | 0 | 80 |
-| {{key:ENTER}} | 0 | 0 | 80 | 80 |
-| 15 | 0 | 0 | 80 | 15 |
-| {{key:%}} | 0 | 0 | 80 | 12 |
+- **RPN Keystrokes:** `{{res:sc6_08_drill_46:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_46:value}}`**
+- **Stack Flow:** Tap `80 {{key:ENTER}} 15 {{key:%}}` -> (T=0, Z=0, Y=0, X=12). Enter the forward calculation on the stack to evaluate and verify 12 in Register $X$.
 
 #### Drill 47 (Level 6): $-14 + 9 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Line up **Prime Blocks** or directional counters along your integer number track: place 14 red negative counters and 9 green positive counters. The 9 positive counters cancel out 9 negative counters into zero-pairs, leaving 5 red negative counters ($ -5 $).
-- **On the Quiz Screen:** `-14  {{key:ENTER}}  9  +  -5  x?y`
-- **What You Tap:** `{{key:5}} {{key:+/-}} {{key:≠}}`
+- **On the Quiz Screen:** `-14 + 9 = ?`
+- **What You Tap:** `{key:-5}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `{{res:sc6_08_drill_47:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_47:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 14 | 0 | 0 | 0 | 14 |
-| {{key:+/-}} | 0 | 0 | 0 | -14 |
-| {{key:ENTER}} | 0 | 0 | -14 | -14 |
-| {{key:9}} | 0 | 0 | -14 | 9 |
-| {{key:+}} | 0 | 0 | 0 | -5 |
+| {{key:+/-}} | 0 | 0 | 0 | $-14.0000$ |
+| {{key:ENTER}} | 0 | 0 | $-14.0000$ | $-14.0000$ |
+| {{key:9}} | 0 | 0 | $-14.0000$ | 9 |
+| {{key:+}} | 0 | 0 | 0 | $-5.0000$ |
 
 #### Drill 48 (Level 6): $\gcd(24, 36) = ?$
 - **Your Mental Math Trick (With Your Blocks):** Build prime factor towers using **Prime Blocks**: 24 decomposes into $2 \times 2 \times 2 \times 3$, and 36 decomposes into $2 \times 2 \times 3 \times 3$. Their shared prime blocks are two $2$s and one $3$ ($2 \times 2 \times 3 = 12$). The tallest common block tower that measures both evenly is $12$!
-- **On the Quiz Screen:** `24  {{key:ENTER}}  36  GCF  12  x?y`
-- **What You Tap:** `12 {{key:≠}}`
+- **On the Quiz Screen:** `\gcd(24, 36) = ?`
+- **What You Tap:** `{key:12}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `{{res:sc6_08_drill_48:keys}}` $\rightarrow$ **`{{res:sc6_08_drill_48:value}}`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -1021,8 +810,6 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 | {{key:ENTER}} | 0 | 0 | 24 | 24 |
 | 36 | 0 | 0 | 24 | 36 |
 | {{key:GCF}} | 0 | 0 | 0 | 12 |
-
----
 
 ## Mental Math & Number Sense Fluency: 8 Essential Mental Math Theorems
 
@@ -1131,7 +918,7 @@ For official competition prep rules, timing charts, and station tracking sheets,
 In this chapter, you trained your mathematical reflexes and built lightning-fast math reflexes:
 
 1. **Pure RPN Mental Representation:** You deciphered arithmetic questions presented as elegant RPN stack puzzles on the transflective LCD.
-2. **Zero-Config Answering:** You mastered instant submission via the hardware test key (`{{key:≠}}`), getting immediate tactile and auditory feedback on every attempt.
+2. **Instant Sprint Evaluation:** You mastered instant submission via the hardware test key (`{{key:ENTER}}`), getting immediate tactile and auditory feedback on every attempt.
 3. **The 6-Level Adaptive Ladder:** You advanced across number bonds, multi-digit operations, times tables, fraction remainders, and lightning-fast pre-algebra shortcuts.
 4. **Mental Math Superpowers:** You conquered the eight mental math theorems—from the 11s shortcut to Vedic squaring—drastically shrinking your latency without scratch paper.
 

@@ -334,7 +334,7 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
 | `{{key:C}}` | 0 | 0 | 0 | 0 | Clean baseline stack in `{{key:NUM}}` mode. |
-| `1` `0` | 0 | 0 | 0 | 10 | Key target capacity ($10$) into Ground Floor $X$. |
+| 10 | 0 | 0 | 0 | 10 | Key target capacity ($10$) into Ground Floor $X$. |
 | `{{key:ENTER}}` | 0 | 0 | 10 | 10 | Target capacity lifts smoothly into Mezzanine Floor $Y$. |
 | `7` | 0 | 0 | 10 | 7 | Enter red counters into Ground Floor $X$. |
 | `{{key:-}}` | 0 | 0 | 0 | 3 | Subtraction combines $Y - X = 3$. Result in $X$! |
@@ -387,8 +387,8 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `2` `4` `{{key:ENTER}}` | 0 | 0 | 24 | 24 | First number committed to Mezzanine Floor $Y$. |
-| `1` `5` `{{key:+}}` | 0 | 0 | 0 | 39 | Addition completed; `LAST x` preserves $15$ in hardware. |
+| 24 {{key:ENTER}} | 0 | 0 | 24 | 24 | First number committed to Mezzanine Floor $Y$. |
+| 15 {{key:+}} | 0 | 0 | 0 | 39 | Addition completed; `LAST x` preserves $15$ in hardware. |
 | `{{key:LASTX}}` | 0 | 0 | 39 | 15 | Prior number ($15$) recalled into $X$; sum lifts to $Y$! |
 | `{{key:-}}` | 0 | 0 | 0 | 24 | Inverse check: $39 - 15 = 24$. Starting number verified! |
 
@@ -408,9 +408,9 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 |:---|:---:|:---:|:---:|:---:|:---|
 | `9` | 0 | 0 | 0 | 9 | Box A quantity entered into Ground Floor $X$. |
 | `{{key:ENTER}}` | 0 | 0 | 9 | 9 | Box A lifts to Mezzanine Floor $Y$. |
-| `1` `2` | 0 | 0 | 9 | 12 | Box B quantity entered into Ground Floor $X$. |
+| 12 | 0 | 0 | 9 | 12 | Box B quantity entered into Ground Floor $X$. |
 | `{{key:≠}}` | 0 | 0 | 9 | 12 | Test displays `NO (9 ≠ 12)`; values preserved on stack. |
-| `{{key:-}}` | 0 | 0 | 0 | 3 | $12 - 9 = 3$ apples difference. Stack drops cleanly. |
+| `{{key:-}}` | 0 | 0 | 0 | -3 | $12 - 9 = 3$ apples difference. Stack drops cleanly. |
 
 ---
 
@@ -426,10 +426,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `4` `5` `2` `0` | 0 | 0 | 0 | 4520 | Full number entered into Ground Floor $X$. |
+| 4520 | 0 | 0 | 0 | 4520 | Full number entered into Ground Floor $X$. |
 | `{{key:ENTER}}` | 0 | 0 | 4520 | 4520 | Full number lifts to Mezzanine Floor $Y$. |
-| `1` `0` `0` | 0 | 0 | 4520 | 100 | Place value target ($100$) entered into Ground Floor $X$. |
-| `{{key:PV}}` | 0 | 0 | 0 | 5 | Hardware extracts hundreds digit: 5 hundreds! |
+| 10 `0` | 0 | 4520 | 10 | 0 | Place value target ($100$) entered into Ground Floor $X$. |
+| `{{key:PV}}` | 0 | 4520 | 10 | 0 | Hardware extracts hundreds digit: 5 hundreds! |
 
 ---
 
@@ -446,7 +446,7 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | `{{key:ENTER}}` | 0 | 0 | 8 | 8 | Box count lifts to Mezzanine Floor $Y$. |
 | `4` | 0 | 0 | 8 | 4 | Additional 4 boxes entered into Ground Floor $X$. |
 | `{{key:+}}` | 0 | 0 | 0 | 12 | Total boxes calculated: $12$ tens. |
-| `1` `0` | 0 | 0 | 12 | 10 | Pencils per box ($10$) entered into $X$. |
+| 10 | 0 | 0 | 12 | 10 | Pencils per box ($10$) entered into $X$. |
 | `{{key:×}}` | 0 | 0 | 0 | 120 | $12 \times 10 = 120$ total pencils! |
 
 ---
@@ -483,9 +483,9 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `5` `2` `3` | 0 | 0 | 0 | 523 | Starting number entered into Ground Floor $X$. |
+| 523 | 0 | 0 | 0 | 523 | Starting number entered into Ground Floor $X$. |
 | `{{key:ENTER}}` | 0 | 0 | 523 | 523 | Starting number lifts to Mezzanine Floor $Y$. |
-| `2` `8` `7` | 0 | 0 | 523 | 287 | Second number entered into Ground Floor $X$. |
+| 287 | 0 | 0 | 523 | 287 | Second number entered into Ground Floor $X$. |
 | `{{key:-}}` | 0 | 0 | 0 | 236 | Subtraction evaluates: $523 - 287 = 236$. |
 | `{{key:LASTX}}` | 0 | 0 | 236 | 287 | Superpower 4 recalls prior number ($287$) into $X$! |
 | `{{key:+}}` | 0 | 0 | 0 | 523 | Inverse check: $236 + 287 = 523$ verified! |
@@ -507,10 +507,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | `5` | 0 | 0 | 0 | 5 | Step constant ($5$) entered into Ground Floor $X$. |
 | `{{key:ENTER}}` | 0 | 0 | 5 | 5 | Constant lifts to Register $Y$. |
 | `0` | 0 | 0 | 5 | 0 | Starting origin ($0$) entered into Register $X$. |
-| `{{key:+}}` | 0 | 0 | 5 | 5 | $5 + 0 = 5$; Register $Y$ preserves constant $5$! |
-| `{{key:+}}` | 0 | 0 | 5 | 10 | Next tap of `+` adds constant: $5 + 5 = 10$. |
-| `{{key:+}}` | 0 | 0 | 5 | 15 | Next tap of `+` adds constant: $10 + 5 = 15$. |
-| `{{key:+}}` | 0 | 0 | 5 | 20 | Next tap of `+` adds constant: $15 + 5 = 20$. |
+| `{{key:+}}` | 0 | 0 | 0 | 5 | $5 + 0 = 5$; Register $Y$ preserves constant $5$! |
+| `{{key:+}}` | 0 | 0 | 0 | 5 | Next tap of `+` adds constant: $5 + 5 = 10$. |
+| `{{key:+}}` | 0 | 0 | 0 | 5 | Next tap of `+` adds constant: $10 + 5 = 15$. |
+| `{{key:+}}` | 0 | 0 | 0 | 5 | Next tap of `+` adds constant: $15 + 5 = 20$. |
 
 ---
 
@@ -577,8 +577,8 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `3` `.` `3` `0` | 0 | 0 | 0 | 3.30 | Time string `3.30` entered into Ground Floor $X$. |
-| `{{key:🕒}}` | 0 | 0 | 0 | 3:30:00 | Clock sandbox launches: continuous hands display! |
+| 3.30 | 0 | 0 | 0 | $3.30$ | Time string `3.30` entered into Ground Floor $X$. |
+| `{{key:🕒}}` | 0 | 0 | 0 | $3.3000$ | Clock sandbox launches: continuous hands display! |
 
 ---
 
@@ -594,10 +594,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `.` `1` `.` `4` | 0 | 0 | 0 | 1/4 | Two-dot notation builds fraction $1/4$ in $X$. |
-| `{{key:ENTER}}` | 0 | 0 | 1/4 | 1/4 | Fraction committed and lifts to Mezzanine Floor $Y$. |
-| `{{key:FDISP}}` | 0 | 0 | 1/4 | 0.25 | Instant decimal conversion: $1/4 = 0.25$! |
-| `{{key:FDISP}}` | 0 | 0 | 1/4 | 1/4 | Instant toggle back to fraction representation! |
+| `.` `1` `.` `4` | 0 | 0 | 0 | $0.2500$ | Two-dot notation builds fraction $1/4$ in $X$. |
+| `{{key:ENTER}}` | 0 | 0 | $0.2500$ | $0.2500$ | Fraction committed and lifts to Mezzanine Floor $Y$. |
+| `{{key:FDISP}}` | 0 | 0 | $0.2500$ | $0.25$ | Instant decimal conversion: $1/4 = 0.25$! |
+| `{{key:FDISP}}` | 0 | 0 | $0.2500$ | $0.2500$ | Instant toggle back to fraction representation! |
 
 ---
 
@@ -614,10 +614,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `1` `2` `5` | 0 | 0 | 0 | 125 | Total passengers entered into Ground Floor $X$. |
-| `{{key:ENTER}}` | 0 | 0 | 125 | 125 | 125 committed and copied to Mezzanine Floor $Y$. |
-| `8` | 0 | 0 | 125 | 8 | Capacity per van keyed into $X$. |
-| `{{key:÷R}}` | 0 | 0 | 5 | 15 | Integer division with remainder: $X = 15$ full vans, $Y = 5$ leftover passengers! |
+| 12 `5` | 0 | 0 | 12 | 5 | Total passengers entered into Ground Floor $X$. |
+| `{{key:ENTER}}` | 0 | 12 | 5 | 5 | 125 committed and copied to Mezzanine Floor $Y$. |
+| `8` | 0 | 12 | 5 | 8 | Capacity per van keyed into $X$. |
+| `{{key:÷R}}` | 0 | 12 | 5 | 0 | Integer division with remainder: $X = 15$ full vans, $Y = 5$ leftover passengers! |
 
 ---
 
@@ -633,10 +633,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `.` `1` `2` `.` `1` `8` | 0 | 0 | 0 | 12/18 | Enter fraction $12/18$ into Ground Floor $X$. |
-| `{{key:ENTER}}` | 0 | 0 | 12/18 | 12/18 | Fraction committed to stack. |
-| `{{key:SIMP}}` | 0 | 0 | 12/18 | 2/3 | Reduced by common factor: $12/18$ simplifies to $2/3$! |
-| `{{key:SIMP}}` | 0 | 0 | 12/18 | 2/3 | Flashes `"LOWEST TERMS"`; fraction is already irreducible! |
+| `.` 12 `.` `1` `8` | 0 | 0 | 12 | $8.0000$ | Enter fraction $12/18$ into Ground Floor $X$. |
+| `{{key:ENTER}}` | 0 | 12 | $8.0000$ | $8.0000$ | Fraction committed to stack. |
+| `{{key:SIMP}}` | 0 | 12 | $8.0000$ | $8.0000$ | Reduced by common factor: $12/18$ simplifies to $2/3$! |
+| `{{key:SIMP}}` | 0 | 12 | $8.0000$ | $8.0000$ | Flashes `"LOWEST TERMS"`; fraction is already irreducible! |
 
 ---
 
@@ -652,10 +652,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `2` `.` `3` `.` `4` | 0 | 0 | 0 | 2 3/4 | Mixed number $2\ 3/4$ keyed into Ground Floor $X$. |
-| `{{key:ENTER}}` | 0 | 0 | 2 3/4 | 2 3/4 | Mixed number committed to stack. |
-| `{{key:d/c}}` | 0 | 0 | 2 3/4 | 11/4 | Converted to improper fraction: $11/4$. |
-| `{{key:a ᵇ/c}}` | 0 | 0 | 2 3/4 | 2 3/4 | Converted back to mixed fraction: $2\ 3/4$. |
+| `2` `.` `3` `.` `4` | 0 | 0 | 2 | $0.7500$ | Mixed number $2\ 3/4$ keyed into Ground Floor $X$. |
+| `{{key:ENTER}}` | 0 | 2 | $0.7500$ | $0.7500$ | Mixed number committed to stack. |
+| `{{key:d/c}}` | 0 | 2 | $0.7500$ | $0.7500$ | Converted to improper fraction: $11/4$. |
+| `{{key:a ᵇ/c}}` | 0 | 2 | $0.7500$ | $0.7500$ | Converted back to mixed fraction: $2\ 3/4$. |
 
 ---
 
@@ -671,10 +671,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `1` `7` `.` `5` `0` | 0 | 0 | 0 | 17.50 | Total car wash earnings $\$17.50$ entered into $X$. |
-| `{{key:ENTER}}` | 0 | 0 | 17.50 | 17.50 | Committed and lifted to Mezzanine Floor $Y$. |
-| `4` | 0 | 0 | 17.50 | 4 | Number of children keyed into $X$. |
-| `{{key:÷R}}` | 0 | 0 | 1.50 | 4.00 | $X = \$4.00$ whole dollars each, $Y = \$1.50$ remaining change! |
+| 17.50 | 0 | 0 | 0 | $17.50$ | Total car wash earnings $\$17.50$ entered into $X$. |
+| `{{key:ENTER}}` | 0 | 0 | $17.50$ | $17.50$ | Committed and lifted to Mezzanine Floor $Y$. |
+| `4` | 0 | 0 | $17.50$ | 4 | Number of children keyed into $X$. |
+| `{{key:÷R}}` | 0 | 0 | $1.50$ | $4.00$ | $X = \$4.00$ whole dollars each, $Y = \$1.50$ remaining change! |
 
 ---
 
@@ -689,10 +689,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `.` `2` `.` `4` | 0 | 0 | 0 | 2/4 | First fraction $2/4$ keyed into Ground Floor $X$. |
-| `{{key:ENTER}}` | 0 | 0 | 2/4 | 2/4 | First fraction committed to Floor $Y$. |
-| `.` `2` `.` `4` | 0 | 0 | 2/4 | 2/4 | Second fraction $2/4$ keyed into Ground Floor $X$. |
-| `{{key:+}}` | 0 | 0 | 0 | 4/4 | Unreduced invariant preserved: displays $4/4$! |
+| `.` `2` `.` `4` | 0 | 0 | 0 | $0.5000$ | First fraction $2/4$ keyed into Ground Floor $X$. |
+| `{{key:ENTER}}` | 0 | 0 | $0.5000$ | $0.5000$ | First fraction committed to Floor $Y$. |
+| `.` `2` `.` `4` | 0 | 0 | $0.5000$ | $0.5000$ | Second fraction $2/4$ keyed into Ground Floor $X$. |
+| `{{key:+}}` | 0 | 0 | 0 | $1.0000$ | Unreduced invariant preserved: displays $4/4$! |
 | `{{key:SIMP}}` | 0 | 0 | 0 | 1 | Manual simplification reduces $4/4$ to whole number $1$! |
 
 ---
@@ -707,12 +707,12 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `8` `{{key:ENTER}}` `1` `2` | 0 | 0 | 8 | 12 | Denominators 8 and 12 loaded into stack. |
+| `8` `{{key:ENTER}}` 12 | 0 | 0 | 8 | 12 | Denominators 8 and 12 loaded into stack. |
 | `{{key:LCM}}` | 0 | 0 | 0 | 24 | Least common denominator found: $\text{LCM}(8, 12) = 24$. |
-| `.` `3` `.` `8` | 0 | 0 | 24 | 3/8 | First fraction $3/8$ entered into $X$. |
-| `{{key:ENTER}}` | 0 | 24 | 3/8 | 3/8 | Pushed to Mezzanine Floor $Y$. |
-| `.` `5` `.` `1` `2` | 0 | 24 | 3/8 | 5/12 | Second fraction $5/12$ entered into $X$. |
-| `{{key:+}}` | 0 | 0 | 24 | 19/24 | Added with common denominator: $3/8 + 5/12 = 19/24$! |
+| `.` `3` `.` `8` | 0 | 0 | 24 | $0.3750$ | First fraction $3/8$ entered into $X$. |
+| `{{key:ENTER}}` | 0 | 24 | $0.3750$ | $0.3750$ | Pushed to Mezzanine Floor $Y$. |
+| `.` `5` `.` 12 | 0 | 24 | $0.3750$ | $0.4167$ | Second fraction $5/12$ entered into $X$. |
+| `{{key:+}}` | 0 | 0 | 24 | $0.7917$ | Added with common denominator: $3/8 + 5/12 = 19/24$! |
 
 ---
 
@@ -729,7 +729,7 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `1` `5` `{{key:ENTER}}` `3` `{{key:-}}` | 0 | 0 | 0 | 12 | First group evaluated: $15 - 3 = 12$. |
+| 15 {{key:ENTER}} 3 {{key:-}} | 0 | 0 | 0 | 12 | First group evaluated: $15 - 3 = 12$. |
 | `4` `{{key:ENTER}}` `2` `{{key:+}}` | 0 | 0 | 12 | 6 | Second group evaluated: $4 + 2 = 6$, subtotal 1 rests safely on $Y$! |
 | `{{key:×}}` | 0 | 0 | 0 | 72 | Multiplied together: $12 \times 6 = 72$. |
 | `6` `{{key:÷}}` | 0 | 0 | 0 | 12 | Divided by 6: $72 \div 6 = 12$, zero parenthesis keys required! |
@@ -759,7 +759,7 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | `5` `{{key:ENTER}}` `4` `{{key:×}}` `2` `{{key:×}}` `{{key:Σ+}}` | 0 | 0 | 0 | 1 | Face Pair 1 ($40$) accumulated into $\Sigma$. Register $X$ shows sample count $N=1$. |
 | `5` `{{key:ENTER}}` `3` `{{key:×}}` `2` `{{key:×}}` `{{key:Σ+}}` | 0 | 0 | 0 | 2 | Face Pair 2 ($30$) accumulated into $\Sigma$. Register $X$ shows $N=2$. |
 | `4` `{{key:ENTER}}` `3` `{{key:×}}` `2` `{{key:×}}` `{{key:Σ+}}` | 0 | 0 | 0 | 3 | Face Pair 3 ($24$) accumulated into $\Sigma$. Register $X$ shows $N=3$. |
-| `{{key:Σx}}` | 0 | 0 | 0 | 94.0 | Recall sum $\Sigma x$: total surface area $94\text{ cm}^2$ without scratch paper! |
+| `{{key:Σx}}` | 0 | 0 | 0 | $94.0$ | Recall sum $\Sigma x$: total surface area $94\text{ cm}^2$ without scratch paper! |
 
 ---
 
@@ -777,11 +777,11 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `9` `.` `4` `5` `{{key:▸HR}}` | 0 | 0 | 0 | 9.75 | 9 hr 45 min converted to decimal hours ($9.75$). |
-| `{{key:ENTER}}` | 0 | 0 | 9.75 | 9.75 | Pushed to Mezzanine Floor $Y$. |
-| `2` `.` `3` `5` `{{key:▸HR}}` | 0 | 0 | 9.75 | 2.5833 | 2 hr 35 min converted to decimal hours ($2.5833$). |
-| `{{key:+}}` | 0 | 0 | 0 | 12.3333 | Hours added: total elapsed time $12.3333\text{ hr}$. |
-| `{{key:▸HMS}}` | 0 | 0 | 0 | 12.20 | Converted back to clock time: 12:20 PM arrival! |
+| 9.45 {{key:▸HR}} | 0 | 0 | 0 | $9.45$ | 9 hr 45 min converted to decimal hours ($9.75$). |
+| `{{key:ENTER}}` | 0 | 0 | $9.45$ | $9.45$ | Pushed to Mezzanine Floor $Y$. |
+| 2.35 {{key:▸HR}} | 0 | 0 | $9.45$ | $2.3500$ | 2 hr 35 min converted to decimal hours ($2.5833$). |
+| `{{key:+}}` | 0 | 0 | 0 | $11.8000$ | Hours added: total elapsed time $12.3333\text{ hr}$. |
+| `{{key:▸HMS}}` | 0 | 0 | 0 | $11.80$ | Converted back to clock time: 12:20 PM arrival! |
 
 ---
 
@@ -798,11 +798,11 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `.` `1` `5` `.` `2` `5` `{{key:a:b}}` | 0 | 0 | 0 | 15:25 | Ratio $15:25$ formatted into Ground Floor $X$. |
-| `{{key:SIMP}}` | 0 | 0 | 0 | 3:5 | Simplified to lowest ratio terms: $3:5$. |
-| `2` | 0 | 0 | 3:5 | 2 | Batch multiplier 2 keyed into $X$. |
-| `{{key:×}}` | 0 | 0 | 0 | 6:10 | Ratio multiplied: $6:10$ for double batch! |
-| `{{key:SIMP}}` | 0 | 0 | 0 | 3:5 | Reduced back to base proportions $3:5$. |
+| .15.25 {{key:a:b}} | 0 | 0 | 0 | $0.0000$ | Ratio $15:25$ formatted into Ground Floor $X$. |
+| `{{key:SIMP}}` | 0 | 0 | 0 | $0.0000$ | Simplified to lowest ratio terms: $3:5$. |
+| `2` | 0 | 0 | $0.0000$ | 2 | Batch multiplier 2 keyed into $X$. |
+| `{{key:×}}` | 0 | 0 | 0 | $0.0000$ | Ratio multiplied: $6:10$ for double batch! |
+| `{{key:SIMP}}` | 0 | 0 | 0 | $0.0000$ | Reduced back to base proportions $3:5$. |
 
 ---
 
@@ -818,8 +818,8 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `3` `6` `0` | 0 | 0 | 0 | 360 | Value 360 entered into Ground Floor $X$. |
-| `{{key:FACT}}` | 0 | 0 | 0 | 2³ × 3² × 5 | Dedicated factoring hardware displays prime decomposition: $2^3 \times 3^2 \times 5$! |
+| 360 | 0 | 0 | 0 | 360 | Value 360 entered into Ground Floor $X$. |
+| `{{key:FACT}}` | 0 | 0 | 0 | $0.0000$ | Dedicated factoring hardware displays prime decomposition: $2^3 \times 3^2 \times 5$! |
 
 ---
 
@@ -836,11 +836,11 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `2` `4` `{{key:ENTER}}` `3` `6` `{{key:GCF}}` | 0 | 0 | 0 | 12 | Compute $\text{GCF}(24, 36) = 12$. |
-| `{{key:ENTER}}` | 0 | 0 | 12 | 12 | GCF lifted to Floor $Y$. |
-| `2` `4` `{{key:ENTER}}` `3` `6` `{{key:LCM}}` | 0 | 12 | 12 | 72 | Compute $\text{LCM}(24, 36) = 72$; earlier GCF pushed safely to $Z$. |
-| `{{key:×}}` | 0 | 0 | 12 | 864 | $\text{GCF} \times \text{LCM} = 12 \times 72 = 864$. |
-| `2` `4` `{{key:ENTER}}` `3` `6` `{{key:×}}` | 0 | 864 | 24 | 864 | Direct product $24 \times 36 = 864$, confirming $\text{GCF} \times \text{LCM} = a \times b$! |
+| 24 {{key:ENTER}} `3` `6` `{{key:GCF}}` | 0 | 0 | 24 | 3 | Compute $\text{GCF}(24, 36) = 12$. |
+| `{{key:ENTER}}` | 0 | 24 | 3 | 3 | GCF lifted to Floor $Y$. |
+| 24 {{key:ENTER}} `3` `6` `{{key:LCM}}` | 3 | 3 | 24 | 6 | Compute $\text{LCM}(24, 36) = 72$; earlier GCF pushed safely to $Z$. |
+| `{{key:×}}` | 3 | 3 | 3 | 144 | $\text{GCF} \times \text{LCM} = 12 \times 72 = 864$. |
+| 24 {{key:ENTER}} `3` `6` `{{key:×}}` | 144 | 144 | 24 | 18 | Direct product $24 \times 36 = 864$, confirming $\text{GCF} \times \text{LCM} = a \times b$! |
 
 ---
 
@@ -863,10 +863,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
 | `{{key:CLΣ}}` | 0 | 0 | 0 | 0 | Reset statistics registers. |
-| 10 scores keyed with `{{key:Σ+}}` | 0 | 0 | 0 | 10 | 10 scores accumulated; sample size $N=10$. |
-| `{{key:x̄}}` | 0 | 0 | 0 | 83.5 | Calculate mean quiz score: $\bar{x} = 83.5$. |
-| `{{key:MED}}` | 0 | 0 | 83.5 | 85.0 | Calculate median score: $\text{Median} = 85.0$. |
-| `{{key:MODE}}` | 0 | 83.5 | 85.0 | 85.0 | Calculate modal score: $\text{Mode} = 85.0$. |
+| 10 scores keyed with `{{key:Σ+}}` | 0 | 0 | 0 | 1 | 10 scores accumulated; sample size $N=10$. |
+| `{{key:x̄}}` | 0 | 0 | 0 | $10.0$ | Calculate mean quiz score: $\bar{x} = 83.5$. |
+| `{{key:MED}}` | 0 | 0 | $0.0$ | $10.0$ | Calculate median score: $\text{Median} = 85.0$. |
+| `{{key:MODE}}` | 0 | $0.0$ | $0.0$ | $10.0$ | Calculate modal score: $\text{Mode} = 85.0$. |
 
 ---
 
@@ -884,12 +884,12 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `0` `.` `0` `8` `7` `5` `{{key:x²}}` `{{key:π}}` `{{key:×}}` | 0 | 0 | 0 | 0.02405 | Filament radius $r = 0.0875\text{ cm}$; area $\pi r^2 = 0.02405\text{ cm}^2$. |
-| `5` `0` `0` `{{key:×}}` | 0 | 0 | 0 | 12.0264 | Length $500\text{ cm} \times \text{area} = 12.0264\text{ cm}^3$ volume. |
-| `1` `.` `2` `4` `{{key:×}}` | 0 | 0 | 0 | 14.9128 | Density $1.24\text{ g/cm}^3 \times \text{volume} = 14.9128\text{ g}$ mass. |
-| `2` `0` `{{key:ENTER}}` `1` `0` `0` `0` `{{key:÷}}` | 0 | 0 | 14.9128 | 0.020 | Spool price per gram: $\$20 / 1000\text{ g} = \$0.02/\text{g}$. |
-| `{{key:×}}` | 0 | 0 | 0 | 0.2983 | Mass $\times$ price per gram $= \$0.2983$. |
-| `{{key:$}}` | 0 | 0 | 0 | $0.30 | Formatted into currency: chassis print costs $\$0.30$! |
+| 0.0875 {{key:x²}} {{key:π}} {{key:×}} | 0 | 0 | 0 | $0.02405$ | Filament radius $r = 0.0875\text{ cm}$; area $\pi r^2 = 0.02405\text{ cm}^2$. |
+| 500 {{key:×}} | 0 | 0 | 0 | $12.0264$ | Length $500\text{ cm} \times \text{area} = 12.0264\text{ cm}^3$ volume. |
+| 1.24 {{key:×}} | 0 | 0 | 0 | $14.9127$ | Density $1.24\text{ g/cm}^3 \times \text{volume} = 14.9128\text{ g}$ mass. |
+| `2` `0` `{{key:ENTER}}` 10 `0` `0` `{{key:÷}}` | 0 | 0 | $10.0000$ | $0.000$ | Spool price per gram: $\$20 / 1000\text{ g} = \$0.02/\text{g}$. |
+| `{{key:×}}` | 0 | 0 | 0 | $0.0000$ | Mass $\times$ price per gram $= \$0.2983$. |
+| `{{key:$}}` | 0 | 0 | 0 | $0.00$ | Formatted into currency: chassis print costs $\$0.30$! |
 
 ---
 
@@ -906,11 +906,11 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `3` `{{key:ENTER}}` `2` `{{key:-}}` | 0 | 0 | 0 | 1.0 | Battery voltage minus LED forward drop: $3.0 - 2.0 = 1.0\text{ V}$. |
-| `0` `.` `0` `2` `0` `{{key:÷}}` | 0 | 0 | 0 | 50.0 | Divide by LED current $0.020\text{ A}$: resistor $R = 50.0\ \Omega$. |
-| `{{key:LASTX}}` | 0 | 0 | 50.0 | 0.020 | Restore divisor $I_f = 0.020\text{ A}$ into $X$; $R = 50.0\ \Omega$ lifts to $Y$! |
-| `{{key:x²}}` | 0 | 0 | 50.0 | 0.0004 | Square current: $I^2 = 0.0004\text{ A}^2$. |
-| `{{key:×}}` | 0 | 0 | 0 | 0.020 | Power $P = I^2 R = 0.020\text{ W}$ ($20\text{ mW}$ dissipation)! |
+| `3` `{{key:ENTER}}` `2` `{{key:-}}` | 0 | 0 | 0 | $1.0$ | Battery voltage minus LED forward drop: $3.0 - 2.0 = 1.0\text{ V}$. |
+| 0.020 {{key:÷}} | 0 | 0 | 0 | $50.0$ | Divide by LED current $0.020\text{ A}$: resistor $R = 50.0\ \Omega$. |
+| `{{key:LASTX}}` | 0 | 0 | $50.0$ | $0.020$ | Restore divisor $I_f = 0.020\text{ A}$ into $X$; $R = 50.0\ \Omega$ lifts to $Y$! |
+| `{{key:x²}}` | 0 | 0 | $50.0$ | $4.0000 \times 10^{-4}$ | Square current: $I^2 = 0.0004\text{ A}^2$. |
+| `{{key:×}}` | 0 | 0 | 0 | $0.020$ | Power $P = I^2 R = 0.020\text{ W}$ ($20\text{ mW}$ dissipation)! |
 
 
 ---
@@ -1018,5 +1018,3 @@ StackCalc™, StackCalc SC-6™, and StackCalc SC-32™ are independent products
 * **HP®**, **Hewlett-Packard®**, and **HP-32SII™** are registered trademarks or trademarks of **HP Inc.**, which does not sponsor, endorse, or affiliate with this textbook.
 * **Unifix®** is a registered trademark of Didax, Inc.; **Cuisenaire®** is a registered trademark of Hand2Mind, Inc.; **Singapore Math®** and **Dimensions Math®** are registered trademarks of Singapore Math Inc.; **Big Ideas Math®** is a registered trademark of Larson Texts, Inc. All references to curriculum frameworks and classic manipulative systems are strictly nominative and comparative for educator cross-reference.
 * **Gridfinity** is an open-source modular storage specification created by Zack Freedman (MIT License).
-
-
