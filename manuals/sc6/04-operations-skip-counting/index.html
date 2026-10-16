@@ -4806,15 +4806,56 @@ after addition ($47 + 36 = 83.0$), tapping <code>[f] [LASTX] [-]</code> immediat
 <h4 id="problem-437-custom-servo-bracket-3d-print-batch">Problem 4.37: Custom Servo Bracket 3D Print Batch</h4>
 <ul>
 <li><strong>Word Problem:</strong> Your engineering team 3D prints 45 custom servo brackets valued at <span class="arithmatex">\(\$2\)</span> each (<span class="arithmatex">\(45 \times 2 = \$90\)</span>). Raw spool filament and brass insert costs total <span class="arithmatex">\(\$28\)</span>. What is the net project yield?</li>
-<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Model Small with Blocks: Lay out 9 full ten-bars (90 counting tiles). Remove 2 ten-bars and 8 single tiles (28 tiles) to simulate material expenses: count the remaining 6 ten-bars and 2 singles (<span class="arithmatex">\(62\)</span> tiles) representing net project yield! Scale Big on StackCalc: Follow the financial calculation on the stack: load 45 brackets in <span class="arithmatex">\(Y\)</span> and multiply by 2 in <span class="arithmatex">\(X\)</span> to reach gross production value <span class="arithmatex">\(\$90\)</span> <code>(T:0, Z:0, Y:0, X:90)</code>. Then enter material expenses with <code>28 -</code> to deduct costs, leaving a net project yield of <span class="arithmatex">\(\$62\)</span> <code>(T:0, Z:0, Y:0, X:62)</code> in Register <span class="arithmatex">\(X\)</span>.</li>
+<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Lay out 9 full ten-bars (90 counting tiles). Remove 2 ten-bars and 8 single tiles (28 tiles) to simulate material expenses: count the remaining 6 ten-bars and 2 singles (<span class="arithmatex">\(62\)</span> tiles) representing net project yield!</li>
 <li><strong>Keystrokes:</strong> <code>45 [ENTER] 2 [×] 28 [-]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>62</code></strong></li>
+<li><strong>4-Register Stack Trace Table:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: left;">Register T</th>
+<th style="text-align: left;">Register Z</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Operational Commentary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>45</code> [ENTER] 2</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Load 45 bracket count in <span class="arithmatex">\(Y\)</span>, enter <span class="arithmatex">\(\$2\)</span> value in <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[×]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">90</td>
+<td style="text-align: left;">Evaluate gross production value: <span class="arithmatex">\(45 \times 2 = \$90\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>28</code> [-]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">62</td>
+<td style="text-align: left;">Deduct material expense: <span class="arithmatex">\(\$90 - \$28 = \$62\)</span> net yield</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>Diagnostic Check:</strong> Net project yield <span class="arithmatex">\(= \$62\)</span>.</li>
 </ul>
 <hr />
 <h4 id="problem-438-test-bench-frame-extrusion-gusset-packs">Problem 4.38: Test Bench Frame Extrusion &amp; Gusset Packs</h4>
 <ul>
 <li><strong>Word Problem:</strong> A structural test frame requires 40 meters of T-slot aluminum extrusion at <span class="arithmatex">\(\$6\)</span> per meter (<span class="arithmatex">\(40 \times 6 = \$240\)</span>), plus 5 heavy-duty cast corner gusset packs at <span class="arithmatex">\(\$14\)</span> each (<span class="arithmatex">\(5 \times 14 = \$70\)</span>). Find the total structural framing expense.</li>
-<li><strong>Hands-On with Your Blocks (Counting Tiles / Number Rack):</strong> Model Small with Blocks: Model the two purchases on a small scale with counting tiles: 4 meters at <span class="arithmatex">\(\$6\)</span> (<span class="arithmatex">\(4 \times 6 = 24\)</span> tiles) and 1 gusset pack at <span class="arithmatex">\(\$14\)</span> (14 tiles) combine for <span class="arithmatex">\(24 + 14 = 38\)</span> tiles. Scale Big on StackCalc: Scale the real build up on your 4-register stack: <span class="arithmatex">\(40 \times 6 = \$240\)</span> extrusion and <span class="arithmatex">\(5 \times 14 = \$70\)</span> gussets combine seamlessly for a total framing expense of <span class="arithmatex">\(\$310\)</span>!</li>
+<li><strong>Hands-On with Your Blocks (Counting Tiles / Number Rack):</strong> Model the two framing purchases using tens: 24 tens (<span class="arithmatex">\(240\)</span>) and 7 tens (<span class="arithmatex">\(70\)</span>). Combine them on your desk: <span class="arithmatex">\(24 + 7 = 31\)</span> tens <span class="arithmatex">\(= 310\)</span> tiles representing the total framing investment.</li>
 <li><strong>Keystrokes:</strong> <code>40 [ENTER] 6 [×] 5 [ENTER] 14 [×] [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>310</code></strong></li>
 <li><strong>4-Register Stack Trace Table:</strong></li>
 </ul>
@@ -4879,15 +4920,56 @@ after addition ($47 + 36 = 83.0$), tapping <code>[f] [LASTX] [-]</code> immediat
 <h4 id="problem-439-fastener-inventory-reconciliation">Problem 4.39: Fastener Inventory Reconciliation</h4>
 <ul>
 <li><strong>Word Problem:</strong> A hardware workshop inventory bin starts Monday with 850 socket-head cap screws. During frame assembly, 145 screws are driven into chassis joints, and 88 unused screws from a disassembled prototype are returned to the bin. Find the ending screw count.</li>
-<li><strong>Hands-On with Your Blocks (Place Value / Counting Tiles):</strong> Model Small with Blocks: Model the inventory flux with a small batch: start with 85 counting tiles, remove 14 tiles (leaving 71), then add 8 tiles to count 79 tiles on your desk mat. Scale Big on StackCalc: Key <code>850 ENTER</code> to park baseline fastener stock into Register <span class="arithmatex">\(Y\)</span> <code>(T:0, Z:0, Y:850, X:850)</code>. Deduct consumed hardware with <code>145 -</code> to leave 705 <code>(T:0, Z:0, Y:0, X:705)</code>, then restock reclaimed screws with <code>88 +</code> to settle at the ending inventory of 793 screws <code>(T:0, Z:0, Y:0, X:793)</code> in active display <span class="arithmatex">\(X\)</span>.</li>
+<li><strong>Hands-On with Your Blocks (Place Value / Counting Tiles):</strong> Model 850 with 8 hundred-flats and 5 ten-bars. Remove 1 flat, 4 ten-bars, and 5 ones (145), leaving 705. Add 8 ten-bars and 8 ones (88): count the final collection of 7 hundreds, 9 tens, and 3 ones (<span class="arithmatex">\(793\)</span> screws).</li>
 <li><strong>Keystrokes:</strong> <code>850 [ENTER] 145 [-] 88 [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>793</code></strong></li>
+<li><strong>4-Register Stack Trace Table:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: left;">Register T</th>
+<th style="text-align: left;">Register Z</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Operational Commentary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>850</code>[ENTER]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">850</td>
+<td style="text-align: left;">850</td>
+<td style="text-align: left;">Park baseline fastener stock into Register <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>145</code> [-]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">705</td>
+<td style="text-align: left;">Deduct consumed hardware: <span class="arithmatex">\(850 - 145 = 705\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>88</code> [+]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">793</td>
+<td style="text-align: left;">Restock reclaimed screws: <span class="arithmatex">\(705 + 88 = 793\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>Diagnostic Check:</strong> Ending screw count <span class="arithmatex">\(= \mathbf{793}\)</span>.</li>
 </ul>
 <hr />
 <h4 id="problem-440-robotics-wiring-harness-assembly">Problem 4.40: Robotics Wiring Harness Assembly</h4>
 <ul>
 <li><strong>Word Problem:</strong> A production run assembles wiring harnesses: 120 sensor ribbon cables at <span class="arithmatex">\(\$3\)</span> each, 85 heat-shrink sleeve bundles at <span class="arithmatex">\(\$2\)</span> each, and 40 flexible cable-drag chains at <span class="arithmatex">\(\$4\)</span> each. Compute total wiring harness material cost.</li>
-<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Model Small with Blocks: Model the subtotal ratios using small groups: 12 tiles (<span class="arithmatex">\(12 \times 1\)</span>), 8 tiles, and 4 tiles combine for 24 tiles. Scale Big on StackCalc: Let the 4-register stack manage the three larger commercial orders: <span class="arithmatex">\(120 \times 3 = \$360\)</span> ribbon cables, <span class="arithmatex">\(85 \times 2 = \$170\)</span> heat-shrink sleeves, and <span class="arithmatex">\(40 \times 4 = \$160\)</span> drag chains accumulate cleanly to a total material cost of <span class="arithmatex">\(\$690\)</span>!</li>
+<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Represent each wiring subtotal using bundled tens: 36 tens (<span class="arithmatex">\(360\)</span>), 17 tens (<span class="arithmatex">\(170\)</span>), and 16 tens (<span class="arithmatex">\(160\)</span>). Combine all three bundles: <span class="arithmatex">\(36 + 17 + 16 = 69\)</span> tens <span class="arithmatex">\(= 690\)</span> tiles!</li>
 <li><strong>Keystrokes:</strong> <code>120 [ENTER] 3 [×] 85 [ENTER] 2 [×] [+] 40 [ENTER] 4 [×] [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>690</code></strong></li>
 <li><strong>4-Register Stack Trace Table:</strong></li>
 </ul>
@@ -4960,7 +5042,7 @@ after addition ($47 + 36 = 83.0$), tapping <code>[f] [LASTX] [-]</code> immediat
 <h4 id="problem-441-hex-standoff-packaging-for-sensor-modules">Problem 4.41: Hex Standoff Packaging for Sensor Modules</h4>
 <ul>
 <li><strong>Word Problem:</strong> 4 automated workstations assemble 24 sensor modules each (<span class="arithmatex">\(4 \times 24 = 96\)</span> modules). Each module requires 2 threaded hex standoff posts (<span class="arithmatex">\(96 \times 2 = 192\)</span> standoffs). Standoffs are packaged in bags of 15. How many full bags are consumed, and how many standoffs are needed from an additional bag?</li>
-<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Model Small with Blocks: Model the packing rhythm with 19 counting tiles: partition into a group of 15 and 4 loose singles, proving you need 2 bags for 19 parts. Scale Big on StackCalc: Scale to full production on your stack: 4 stations <span class="arithmatex">\(\times\)</span> 24 modules <span class="arithmatex">\(\times\)</span> 2 standoffs <span class="arithmatex">\(= 192\)</span> standoffs. Tapping <code>[g] [÷R]</code> with 15 instantly reveals <span class="arithmatex">\(X = 12\)</span> full bags and <span class="arithmatex">\(Y = 12\)</span> loose standoffs, showing 13 total bags must be pulled from storage!</li>
+<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Form 4 groups of 24 tiles (96 tiles). Double that group to 192 tiles. Partition into clusters of 15 tiles: you make 12 full clusters of 15 (<span class="arithmatex">\(180\)</span> tiles) with 12 loose tiles remaining. You need 13 total bags to complete assembly!</li>
 <li><strong>Keystrokes:</strong> <code>4 [ENTER] 24 [×] 2 [×] 15 [g] [÷R]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>12</code></strong></li>
 <li><strong>4-Register Stack Trace Table:</strong></li>
 </ul>
@@ -5017,8 +5099,57 @@ after addition ($47 + 36 = 83.0$), tapping <code>[f] [LASTX] [-]</code> immediat
 <h4 id="problem-442-conveyor-pallet-roller-bearings">Problem 4.42: Conveyor Pallet Roller Bearings</h4>
 <ul>
 <li><strong>Word Problem:</strong> 3 automated conveyor loops have 12 carrier pallets each (<span class="arithmatex">\(3 \times 12 = 36\)</span> pallets). Each pallet requires 3 precision roller bearings (<span class="arithmatex">\(36 \times 3 = 108\)</span> bearings). Bearings are packaged in protective tubes of 8. How many complete tubes are emptied, and how many bearings are taken from the last tube?</li>
-<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Model Small with Blocks: Lay out 12 counting tiles and group them into sets of 8: 1 full set of 8 with 4 loose bearings remaining. Scale Big on StackCalc: Compute the full production run on your stack: enter <code>3 ENTER 12 ×</code> to find 36 pallets <code>(T:0, Z:0, Y:0, X:36)</code>, then <code>3 ×</code> to calculate 108 bearings <code>(T:0, Z:0, Y:0, X:108)</code>. Finally, divide by tube size with <code>8 ÷R</code>: integer division yields <span class="arithmatex">\(Q = 13\)</span> full tubes in Register <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(R = 4\)</span> loose bearings in Register <span class="arithmatex">\(Y\)</span> <code>(T:0, Z:0, Y:4, X:13)</code>.</li>
+<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Lay out 3 rows of 12 counting tiles (36 tiles), then triple that layout to 108 tiles. Group the 108 tiles into sets of 8: you get 13 full sets of 8 (<span class="arithmatex">\(104\)</span> tiles) and 4 loose bearings remaining in the final tube.</li>
 <li><strong>Keystrokes:</strong> <code>3 [ENTER] 12 [×] 3 [×] 8 [g] [÷R]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>13</code></strong></li>
+<li><strong>4-Register Stack Trace Table:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: left;">Register T</th>
+<th style="text-align: left;">Register Z</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Operational Commentary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[3] [ENTER] 12</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Enter 3 conveyor loops and 12 pallets/loop</td>
+</tr>
+<tr>
+<td style="text-align: left;">[×]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">36</td>
+<td style="text-align: left;">Total carrier pallets: <span class="arithmatex">\(3 \times 12 = 36\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[3] [×]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">108</td>
+<td style="text-align: left;">Total roller bearings needed: <span class="arithmatex">\(36 \times 3 = 108\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[8] [g] [÷R]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Integer division: <span class="arithmatex">\(Q = 13\)</span> tubes in <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(R = 4\)</span> loose in <span class="arithmatex">\(Y\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>Diagnostic Check:</strong> <span class="arithmatex">\(X = 13\)</span> full tubes, with <span class="arithmatex">\(Y = 4\)</span> bearings remaining in the final tube. Pull 14 tubes!</li>
 </ul>
 <hr />
@@ -5027,23 +5158,105 @@ after addition ($47 + 36 = 83.0$), tapping <code>[f] [LASTX] [-]</code> immediat
 <h4 id="problem-443-rapid-mental-multiplication-by-25-36-times-25">Problem 4.43: Rapid Mental Multiplication by 25 (<span class="arithmatex">\(36 \times 25\)</span>)</h4>
 <ul>
 <li><strong>Word Problem:</strong> In the High-Speed Math Discovery Studio sprint round, the coach challenges you to calculate <span class="arithmatex">\(36 \times 25\)</span> mentally in under two seconds. Since <span class="arithmatex">\(25 = \frac{100}{4}\)</span>, divide 36 by 4 to get 9, then multiply by 100 to reach 900 (<span class="arithmatex">\(36 \times 25 = 900\)</span>)! Verify the mental calculation on your SC-6 stack.</li>
-<li><strong>Hands-On with Your Blocks (Counting Tiles / Number Rack):</strong> Model Small with Blocks: Model the quartering principle with 12 counting tiles: partition into 4 equal quarters of 3 tiles. Scale Big on StackCalc: Scale up to 36 on your stack: entering <code>36 ENTER</code>, dividing by 4 with <code>4 ÷</code> yields quarterly factor 9 <code>(T:0, Z:0, Y:0, X:9)</code>, and multiplying with <code>100 ×</code> delivers the mental product 900 <code>(T:0, Z:0, Y:0, X:900)</code> in two seconds flat!</li>
+<li><strong>Hands-On with Your Blocks (Counting Tiles / Number Rack):</strong> Count out 36 counting tiles and partition them into 4 equal quarters (9 tiles each). Because each group of 4 quarters represents a full hundred (<span class="arithmatex">\(4 \times 25 = 100\)</span>), the 9 quarters represent 9 full hundreds: <span class="arithmatex">\(9 \times 100 = 900\)</span>!</li>
 <li><strong>Keystrokes:</strong> <code>36 [ENTER] 4 [÷] 100 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>900</code></strong></li>
+<li><strong>4-Register Stack Trace Table:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: left;">Register T</th>
+<th style="text-align: left;">Register Z</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Operational Commentary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>36</code> [ENTER]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">36</td>
+<td style="text-align: left;">36</td>
+<td style="text-align: left;">Enter multiplicand 36 into holding Register <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[4] [÷]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Divide by 4: quarterly factor is 9 in active Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>100</code> [×]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">900</td>
+<td style="text-align: left;">Multiply by 100: rapid mental product evaluated to 900</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>Diagnostic Check:</strong> <span class="arithmatex">\(X = \mathbf{900}\)</span> (Solved in 2 seconds!).</li>
 </ul>
 <hr />
 <h4 id="problem-444-mental-multiplication-by-99-45-times-99">Problem 4.44: Mental Multiplication by 99 (<span class="arithmatex">\(45 \times 99\)</span>)</h4>
 <ul>
 <li><strong>Word Problem:</strong> During the rapid sprint challenge, you are asked to compute <span class="arithmatex">\(45 \times 99\)</span> without scratch paper. Use the distributive mental trick: multiplying by 99 is identical to multiplying by 100 and subtracting 1 group of 45 (<span class="arithmatex">\(45 \times 100 - 45 = 4500 - 45 = 4455\)</span>)! Execute the sequence on your SC-6 stack.</li>
-<li><strong>Hands-On with Your Blocks (Ten-Frames / Place Value):</strong> Model Small with Blocks: Model the <span class="arithmatex">\((n-1)\)</span> distributive trick with 4 groups of 10 counting tiles (40 tiles) minus 4 tiles to get <span class="arithmatex">\(4 \times 9 = 36\)</span> tiles. Scale Big on StackCalc: Apply the same distributive law to scale big: enter <code>45 ENTER 100 ×</code> to build the baseline 4,500 <code>(T:0, Z:0, Y:0, X:4500)</code>, then subtract 1 unit group with <code>45 -</code> to lock in 4,455 <code>(T:0, Z:0, Y:0, X:4455)</code> in Register <span class="arithmatex">\(X\)</span>.</li>
+<li><strong>Hands-On with Your Blocks (Ten-Frames / Place Value):</strong> Visualize 100 groups of 45 counting tiles (<span class="arithmatex">\(4,500\)</span> tiles). Remove just 1 single group of 45 tiles: count the remaining collection (<span class="arithmatex">\(4,455\)</span> tiles) to confirm the distributive shortcut!</li>
 <li><strong>Keystrokes:</strong> <code>45 [ENTER] 100 [×] 45 [-]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>4455</code></strong></li>
+<li><strong>4-Register Stack Trace Table:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: left;">Register T</th>
+<th style="text-align: left;">Register Z</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Operational Commentary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>45</code> [ENTER]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;">Enter 45 into holding Register <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>100</code> [×]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">4500</td>
+<td style="text-align: left;">Scale by 100: baseline product is 4,500 in Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>45</code> [-]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">4455</td>
+<td style="text-align: left;">Subtract 1 unit group of 45: rapid product equals 4,455</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>Diagnostic Check:</strong> <span class="arithmatex">\(X = \mathbf{4,455}\)</span>.</li>
 </ul>
 <hr />
 <h4 id="problem-445-consecutive-integers-sum-trick-1-2-dots-20">Problem 4.45: Consecutive Integers Sum Trick (<span class="arithmatex">\(1 + 2 + \dots + 20\)</span>)</h4>
 <ul>
 <li><strong>Word Problem:</strong> The sprint prompt asks for the sum of all consecutive integers from 1 to 20 (<span class="arithmatex">\(1 + 2 + 3 + \dots + 20\)</span>). Apply young Carl Friedrich Gauss's famous pairing formula: <span class="arithmatex">\(S = \frac{n(n+1)}{2} = \frac{20 \times 21}{2} = 210\)</span>. Execute the chained calculation seamlessly without parentheses.</li>
-<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Model Small with Blocks: Build a 4-rung staircase of counting tiles (<span class="arithmatex">\(1+2+3+4 = 10\)</span> tiles). Pair it with an identical twin flipped upside down to make a <span class="arithmatex">\(4 \times 5 = 20\)</span> tile rectangle, proving the sum is half: <span class="arithmatex">\(20 / 2 = 10\)</span> tiles! Scale Big on StackCalc: Scale Gauss's formula up to 20 rungs on your 4-register stack: load 20, multiply by 21 to get 420, and divide by 2 to find the sum of 210 without scratch paper!</li>
+<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Build a stepped staircase of counting tiles from 1 up to 20 rungs. Assemble an identical twin staircase, flip it <span class="arithmatex">\(180^\circ\)</span>, and interlock the two staircases into a solid rectangular grid of <span class="arithmatex">\(20 \times 21 = 420\)</span> tiles. Halve the rectangle by separating the two staircases: exactly 210 tiles!</li>
 <li><strong>Keystrokes:</strong> <code>20 [ENTER] 21 [×] 2 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>210</code></strong></li>
 <li><strong>4-Register Stack Trace Table:</strong></li>
 </ul>
@@ -5092,15 +5305,56 @@ after addition ($47 + 36 = 83.0$), tapping <code>[f] [LASTX] [-]</code> immediat
 <h4 id="problem-446-rapid-remainder-sprint-3458-div-11">Problem 4.46: Rapid Remainder Sprint (<span class="arithmatex">\(3,458 \div 11\)</span>)</h4>
 <ul>
 <li><strong>Word Problem:</strong> The discovery studio countdown timer is set to 3 seconds: extract both the whole quotient and integer remainder of <span class="arithmatex">\(3,458 \div 11\)</span>. While an algebraic calculator displays an unhelpful repeating decimal (<span class="arithmatex">\(314.3636\dots\)</span>), your SC-6 evaluates both integer parts simultaneously with a single tap of <code>[g] [÷R]</code>!</li>
-<li><strong>Hands-On with Your Blocks (Ten-Frames):</strong> Model Small with Blocks: Model division with remainder on a small scale: partition 35 counting tiles into groups of 11 to see 3 full groups with 2 tiles remaining. Scale Big on StackCalc: Tackle the 4-digit tournament sprint on your stack: enter <code>3458 ENTER</code> and tap <code>11 ÷R</code> to capture quotient 314 in <span class="arithmatex">\(X\)</span> and remainder 4 in <span class="arithmatex">\(Y\)</span> <code>(T:0, Z:0, Y:4, X:314)</code>. Swapping with <code>x⇄y</code> displays remainder 4 <code>(T:0, Z:0, Y:314, X:4)</code> instantly!</li>
+<li><strong>Hands-On with Your Blocks (Ten-Frames):</strong> Model the division by grouping: partitioning 3,458 items into bundles of 11 produces 314 complete bundles (<span class="arithmatex">\(314 \times 11 = 3,454\)</span>) with exactly 4 items remaining loose.</li>
 <li><strong>Keystrokes:</strong> <code>3458 [ENTER] 11 [g] [÷R]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>314</code></strong></li>
+<li><strong>4-Register Stack Trace Table:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: left;">Register T</th>
+<th style="text-align: left;">Register Z</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Operational Commentary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>3458</code>[ENTER]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">3458</td>
+<td style="text-align: left;">3458</td>
+<td style="text-align: left;">Load 3,458 into holding Register <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>11</code> [g] [÷R]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">314</td>
+<td style="text-align: left;">Integer divide: quotient <span class="arithmatex">\(X = 314\)</span>, remainder <span class="arithmatex">\(Y = 4\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[x⇄y]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">314</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Swap registers: active display displays remainder 4</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>Diagnostic Check:</strong> Quotient <span class="arithmatex">\(X = \mathbf{314}\)</span>, Remainder <span class="arithmatex">\(Y = \mathbf{4}\)</span>.</li>
 </ul>
 <hr />
 <h4 id="problem-447-chained-multi-step-arithmetic-sprint-15-times-12-18-times-6">Problem 4.47: Chained Multi-Step Arithmetic Sprint (<span class="arithmatex">\(15 \times 12 - 18 \times 6\)</span>)</h4>
 <ul>
 <li><strong>Word Problem:</strong> Evaluate the combined expression <span class="arithmatex">\((15 \times 12) - (18 \times 6)\)</span> during the tournament sprint without scratch notes or parentheses. Watch how the RPN 4-register stack holds the first product (<span class="arithmatex">\(180\)</span>) automatically in Register <span class="arithmatex">\(Y\)</span> while you compute the second product (<span class="arithmatex">\(108\)</span>), subtracting instantly!</li>
-<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Model Small with Blocks: Model the subtraction on a small scale with counting tiles: build a <span class="arithmatex">\(5 \times 4\)</span> rectangle (20 tiles) and a <span class="arithmatex">\(3 \times 4\)</span> rectangle (12 tiles), then subtract to leave 8 tiles. Scale Big on StackCalc: Let the stack manage the larger tournament products: compute <span class="arithmatex">\(15 \times 12 = 180\)</span> in <span class="arithmatex">\(Y\)</span>, multiply <span class="arithmatex">\(18 \times 6 = 108\)</span> in <span class="arithmatex">\(X\)</span>, and subtract directly to reveal 72 without writing down intermediate numbers!</li>
+<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Assemble a rectangular array of 15 by 12 counting tiles (<span class="arithmatex">\(180\)</span> tiles). Beside it, assemble an array of 18 by 6 counting tiles (<span class="arithmatex">\(108\)</span> tiles). Remove 108 tiles from the 180-tile array: count the 72 tiles remaining!</li>
 <li><strong>Keystrokes:</strong> <code>15 [ENTER] 12 [×] 18 [ENTER] 6 [×] [-]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>72</code></strong></li>
 <li><strong>4-Register Stack Trace Table:</strong></li>
 </ul>
@@ -5165,24 +5419,123 @@ after addition ($47 + 36 = 83.0$), tapping <code>[f] [LASTX] [-]</code> immediat
 <h4 id="problem-448-rapid-mental-square-of-a-number-ending-in-5-352">Problem 4.48: Rapid Mental Square of a Number Ending in 5 (<span class="arithmatex">\(35^2\)</span>)</h4>
 <ul>
 <li><strong>Word Problem:</strong> In the speed squaring round, compute <span class="arithmatex">\(35^2\)</span> in under 2 seconds. Apply the Vedic mental math rule: multiply the tens digit <span class="arithmatex">\(3\)</span> by <span class="arithmatex">\((3+1)=4\)</span> to get 12, then append 25 to immediately produce <span class="arithmatex">\(1,225\)</span>! Verify the product on your SC-6 stack.</li>
-<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Model Small with Blocks: Model the geometric squaring trick on a small scale: decompose a <span class="arithmatex">\(5 \times 5\)</span> square (25 tiles) into quadrants. Scale Big on StackCalc: Key <code>35 ENTER 35 ×</code> to multiply base by height on your stack, evaluating the square to 1,225 <code>(T:0, Z:0, Y:0, X:1225)</code> in active Register <span class="arithmatex">\(X\)</span>.</li>
+<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Decompose a <span class="arithmatex">\(35 \times 35\)</span> tile square into four geometric quadrants on your desk: a <span class="arithmatex">\(30 \times 30\)</span> square (<span class="arithmatex">\(900\)</span>), two <span class="arithmatex">\(30 \times 5\)</span> rectangles (<span class="arithmatex">\(150 + 150 = 300\)</span>), and a <span class="arithmatex">\(5 \times 5\)</span> corner square (<span class="arithmatex">\(25\)</span>). Sum them: <span class="arithmatex">\(900 + 300 + 25 = 1,225\)</span> tiles!</li>
 <li><strong>Keystrokes:</strong> <code>35 [ENTER] 35 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>1225</code></strong></li>
+<li><strong>4-Register Stack Trace Table:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: left;">Register T</th>
+<th style="text-align: left;">Register Z</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Operational Commentary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>35</code> [ENTER]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">35</td>
+<td style="text-align: left;">35</td>
+<td style="text-align: left;">Enter 35 into <span class="arithmatex">\(X\)</span> and lift duplicate to holding Register <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>35</code> [×]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1225</td>
+<td style="text-align: left;">Multiply base by height: square evaluates to 1,225</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>Diagnostic Check:</strong> <span class="arithmatex">\(X = \mathbf{1,225}\)</span>.</li>
 </ul>
 <hr />
 <h4 id="problem-449-sum-of-first-10-odd-integers-1-3-5-dots-19">Problem 4.49: Sum of First 10 Odd Integers (<span class="arithmatex">\(1 + 3 + 5 + \dots + 19\)</span>)</h4>
 <ul>
 <li><strong>Word Problem:</strong> In the studio pattern sprint, find the sum of the first 10 odd numbers (<span class="arithmatex">\(1 + 3 + 5 + 7 + 9 + 11 + 13 + 15 + 17 + 19\)</span>). The ancient Pythagorean theorem reveals that the sum of the first <span class="arithmatex">\(n\)</span> odd integers is always a perfect square: <span class="arithmatex">\(n^2 = 10^2 = 100\)</span>! Prove this on your SC-6.</li>
-<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Model with Blocks: Start with 1 tile on your desk. Wrap 3 tiles around it to form a <span class="arithmatex">\(2 \times 2\)</span> square (4). Wrap 5 tiles around that to make a <span class="arithmatex">\(3 \times 3\)</span> square (9). Continue wrapping odd L-shaped strips up to 19 tiles: you physically construct a solid <span class="arithmatex">\(10 \times 10\)</span> square of 100 tiles! Follow on StackCalc: Key <code>10 ENTER 10 ×</code> to square the count of odd terms, producing 100 <code>(T:0, Z:0, Y:0, X:100)</code> in Register <span class="arithmatex">\(X\)</span>.</li>
+<li><strong>Hands-On with Your Blocks (Counting Tiles):</strong> Start with 1 tile on your desk. Wrap 3 tiles around it to form a <span class="arithmatex">\(2 \times 2\)</span> square (4). Wrap 5 tiles around that to make a <span class="arithmatex">\(3 \times 3\)</span> square (9). Continue wrapping odd L-shaped strips up to 19 tiles: you physically construct a solid <span class="arithmatex">\(10 \times 10\)</span> square of 100 tiles!</li>
 <li><strong>Keystrokes:</strong> <code>10 [ENTER] 10 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>100</code></strong></li>
+<li><strong>4-Register Stack Trace Table:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: left;">Register T</th>
+<th style="text-align: left;">Register Z</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Operational Commentary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>10</code> [ENTER]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Enter count of odd integers <span class="arithmatex">\(n=10\)</span> into Register <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>10</code> [×]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">Square the count: <span class="arithmatex">\(10 \times 10 = 100\)</span> in active Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>Diagnostic Check:</strong> <span class="arithmatex">\(X = \mathbf{100}\)</span>.</li>
 </ul>
 <hr />
 <h4 id="problem-450-chained-divisibility-modulo-sprint-4896-div-16">Problem 4.50: Chained Divisibility &amp; Modulo Sprint (<span class="arithmatex">\(4,896 \div 16\)</span>)</h4>
 <ul>
 <li><strong>Word Problem:</strong> The final tournament sprint challenge tests rapid divisibility: is 4,896 evenly divisible by 16? Tap <code>[g] [÷R]</code> on your SC-6: if the integer remainder in Register <span class="arithmatex">\(Y\)</span> equals 0, the number divides evenly with zero remainder!</li>
-<li><strong>Hands-On with Your Blocks (Counting Tiles / Ten-Frames):</strong> Model Small with Blocks: Test divisibility on a small scale: group 32 counting tiles into sets of 16 to confirm exactly 2 sets with 0 remaining. Scale Big on StackCalc: Key <code>4896 ENTER</code> and tap <code>16 ÷R</code> to extract quotient 306 in <span class="arithmatex">\(X\)</span> and remainder 0 in <span class="arithmatex">\(Y\)</span> <code>(T:0, Z:0, Y:0, X:306)</code>. With remainder equal to 0, 4,896 divides evenly by 16!</li>
+<li><strong>Hands-On with Your Blocks (Counting Tiles / Ten-Frames):</strong> Model the division through bundling: dividing 4,896 items into groups of 16 produces exactly 306 complete packages, with zero loose items remaining on the sorting table.</li>
 <li><strong>Keystrokes:</strong> <code>4896 [ENTER] 16 [g] [÷R]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>306</code></strong></li>
+<li><strong>4-Register Stack Trace Table:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: left;">Register T</th>
+<th style="text-align: left;">Register Z</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Operational Commentary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>4896</code>[ENTER]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">4896</td>
+<td style="text-align: left;">4896</td>
+<td style="text-align: left;">Load 4,896 into holding Register <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>16</code> [g] [÷R]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">306</td>
+<td style="text-align: left;">Integer divide: <span class="arithmatex">\(X = 306\)</span> quotient, <span class="arithmatex">\(Y = 0\)</span> remainder</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>Diagnostic Check:</strong> Quotient <span class="arithmatex">\(X = \mathbf{306}\)</span>, Remainder <span class="arithmatex">\(Y = \mathbf{0}\)</span>. Evenly divisible!</li>
 </ul>
 <hr />

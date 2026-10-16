@@ -2166,6 +2166,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="9.2 Building Real Things: From Workshop Tools to the Number Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-algebraic-trap-vs-stackcalc-superpower-showdown-maker-dimensional-analysis-spool-costing" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.1 Algebraic Trap vs. StackCalc Superpower Showdown: Maker Dimensional Analysis &amp; Spool Costing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3268,6 +3283,29 @@ Following Jerome Bruner's <strong>Concrete-Representational-Abstract (CRA)</stro
 </div>
 
 <hr />
+<h3 id="921-algebraic-trap-vs-stackcalc-superpower-showdown-maker-dimensional-analysis-spool-costing">9.2.1 Algebraic Trap vs. StackCalc Superpower Showdown: Maker Dimensional Analysis &amp; Spool Costing</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Challenge / Equation</th>
+<th style="text-align: left;">The Algebraic Calculator Trap (TI-30X / Smartphone)</th>
+<th style="text-align: left;">The StackCalc SC-6 + Manipulative Superpower</th>
+<th style="text-align: left;">Keystroke Reduction</th>
+<th style="text-align: left;">Live Stack Visibility</th>
+<th style="text-align: left;">Pedagogical Breakthrough</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>3D Printing Filament Cost</strong>:<br><span class="arithmatex">\(14.91\text{g} \times (\$20.00 / 1000\text{g}) = \$0.30\)</span></td>
+<td style="text-align: left;">Must type <code>1 4 . 9 1 * ( 2 0 / 1 0 0 0 ) =</code> (18 keystrokes). Forgetting parentheses multiplies mass by 20 before dividing, or requires writing unit cost (<span class="arithmatex">\(\$0.02\)</span>) on scrap paper.</td>
+<td style="text-align: left;">Continuous dimensional pipeline: <code>14.91 [ENTER] 20 [ENTER] 1000 [÷] [×] [$]</code> <span class="arithmatex">\(\to \mathbf{\$0.30}\)</span> (12 strokes). Intermediate unit cost (<span class="arithmatex">\(\$0.02/\text{g}\)</span>) stays visible on the stack!</td>
+<td style="text-align: left;"><strong>33% fewer strokes</strong></td>
+<td style="text-align: left;">Register <span class="arithmatex">\(Y\)</span> preserves <span class="arithmatex">\(14.91\text{g}\)</span> while Register <span class="arithmatex">\(X\)</span> computes the unit price <span class="arithmatex">\(\$0.02/\text{g}\)</span>, allowing single-tap <code>[×]</code> and <code>[$]</code> currency formatting without scrap paper.</td>
+<td style="text-align: left;">Students measure physical filament with calipers, trace dimensional unit cancellation directly on the stack, and see exact manufacturing cost before printing.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="93-project-1-3d-printing-filament-mass-infill-spool-cost-estimation">9.3 Project 1: 3D Printing Filament Mass, Infill &amp; Spool Cost Estimation</h2>
 <p>In modern classroom maker spaces, 3D printers turn digital CAD designs into physical objects. Before you send a job to the printer, calculate the volume of plastic extruded, convert that volume to mass in grams, and determine the exact financial cost from your filament budget.</p>
 <div class="admonition note">
@@ -3327,63 +3365,63 @@ Standard 3D printing filament is a flexible plastic cylinder with an exact diame
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.0875</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.0875\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[x²]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.007656</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.007656\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[π] [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.024053</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.024053\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>500</code> [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">12.02641</td>
+<td style="text-align: left;"><span class="arithmatex">\(12.02641\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>1.24</code> [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">14.91275</td>
+<td style="text-align: left;"><span class="arithmatex">\(14.91275\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>20</code>[ENTER]</td>
+<td style="text-align: left;">20 [ENTER]</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">14.91275</td>
-<td style="text-align: left;">14.91275</td>
+<td style="text-align: left;"><span class="arithmatex">\(14.91275\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(20.00000\)</span></td>
 <td style="text-align: left;">20</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>1000</code> [÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">14.91275</td>
-<td style="text-align: left;">0.02</td>
+<td style="text-align: left;"><span class="arithmatex">\(14.91275\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.02\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.298255</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.298255\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[$]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">$0.30</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.30\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3421,74 +3459,74 @@ Standard 3D printing filament is a flexible plastic cylinder with an exact diame
 <td style="text-align: left;">124</td>
 </tr>
 <tr>
-<td style="text-align: left;">[2][4][.][8]</td>
+<td style="text-align: left;">24.8</td>
+<td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">124</td>
-<td style="text-align: left;">124</td>
-<td style="text-align: left;">24.8</td>
+<td style="text-align: left;"><span class="arithmatex">\(24.8\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[ENTER]</td>
+<td style="text-align: left;">0</td>
 <td style="text-align: left;">124</td>
-<td style="text-align: left;">124</td>
-<td style="text-align: left;">24.8</td>
-<td style="text-align: left;">24.8</td>
+<td style="text-align: left;"><span class="arithmatex">\(24.8\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(24.8\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">80</td>
-<td style="text-align: left;">124</td>
-<td style="text-align: left;">24.8</td>
-<td style="text-align: left;">24.8</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><span class="arithmatex">\(124.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(24.8\)</span></td>
 <td style="text-align: left;">80</td>
 </tr>
 <tr>
 <td style="text-align: left;">[ENTER]</td>
-<td style="text-align: left;">24.8</td>
-<td style="text-align: left;">24.8</td>
+<td style="text-align: left;"><span class="arithmatex">\(124.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(24.8\)</span></td>
 <td style="text-align: left;">80</td>
 <td style="text-align: left;">80</td>
 </tr>
 <tr>
-<td style="text-align: left;">[.][1][5][×]</td>
-<td style="text-align: left;">24.8</td>
-<td style="text-align: left;">24.8</td>
-<td style="text-align: left;">80</td>
+<td style="text-align: left;">0.15 [×]</td>
+<td style="text-align: left;"><span class="arithmatex">\(124.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(124.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(24.8000\)</span></td>
 <td style="text-align: left;">12</td>
 </tr>
 <tr>
-<td style="text-align: left;">[1][.]<code>24</code> [×]</td>
-<td style="text-align: left;">24.8</td>
-<td style="text-align: left;">24.8</td>
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">14.88</td>
+<td style="text-align: left;">1.24 [×]</td>
+<td style="text-align: left;"><span class="arithmatex">\(124.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(124.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(24.8000\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(14.88\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[+]</td>
-<td style="text-align: left;">0</td>
 <td style="text-align: left;">124</td>
-<td style="text-align: left;">24.8</td>
-<td style="text-align: left;">39.68</td>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;"><span class="arithmatex">\(124.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(39.68\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[-]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">84.32</td>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;"><span class="arithmatex">\(84.32\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>.02</code> [×]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1.6864</td>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;"><span class="arithmatex">\(1.6864\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[$]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">$1.69</td>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;"><span class="arithmatex">\(1.69\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3531,35 +3569,35 @@ Standard 3D printing filament is a flexible plastic cylinder with an exact diame
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">24</td>
-<td style="text-align: left;">3.1</td>
+<td style="text-align: left;"><span class="arithmatex">\(3.1\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">74.4</td>
+<td style="text-align: left;"><span class="arithmatex">\(74.4\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[.] 02</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">74.4</td>
-<td style="text-align: left;">0.02</td>
+<td style="text-align: left;"><span class="arithmatex">\(74.4\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(2.00\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">1.488</td>
+<td style="text-align: left;"><span class="arithmatex">\(148.800\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[$]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">$1.49</td>
+<td style="text-align: left;"><span class="arithmatex">\(148.80\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3585,56 +3623,56 @@ Standard 3D printing filament is a flexible plastic cylinder with an exact diame
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.12</td>
+<td style="text-align: left;"><span class="arithmatex">\(12.00\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[ENTER]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.12</td>
-<td style="text-align: left;">0.12</td>
+<td style="text-align: left;"><span class="arithmatex">\(12.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(12.00\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">4.5</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.12</td>
-<td style="text-align: left;">4.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(12.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(4.5\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.54</td>
+<td style="text-align: left;"><span class="arithmatex">\(54.00\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[.] 15</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.54</td>
-<td style="text-align: left;">0.15</td>
+<td style="text-align: left;"><span class="arithmatex">\(54.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(15.00\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.081</td>
+<td style="text-align: left;"><span class="arithmatex">\(810.000\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;">[1][.]<code>49</code> [+]</td>
+<td style="text-align: left;">1.49 [+]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">1.571</td>
+<td style="text-align: left;"><span class="arithmatex">\(811.490\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[$]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">$1.57</td>
+<td style="text-align: left;"><span class="arithmatex">\(811.49\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3720,35 +3758,35 @@ Standard 3D printing filament is a flexible plastic cylinder with an exact diame
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">1.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(1.0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>.020</code> [÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">50.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(50.0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[f] [LASTX]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">50.0</td>
-<td style="text-align: left;">0.020</td>
+<td style="text-align: left;"><span class="arithmatex">\(50.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.020\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[x²]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">50.0</td>
-<td style="text-align: left;">0.0004</td>
+<td style="text-align: left;"><span class="arithmatex">\(50.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0000 \times 10^{-4}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.020</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.020\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3778,39 +3816,39 @@ Standard 3D printing filament is a flexible plastic cylinder with an exact diame
 <td style="text-align: left;">9</td>
 </tr>
 <tr>
-<td style="text-align: left;">[3][.][2][-]</td>
+<td style="text-align: left;">3.2 [-]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">5.8</td>
+<td style="text-align: left;"><span class="arithmatex">\(5.8\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>.020</code> [÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">290.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(290.0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[f] [LASTX]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">290.0</td>
-<td style="text-align: left;">0.020</td>
+<td style="text-align: left;"><span class="arithmatex">\(290.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.020\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[x²]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">290.0</td>
-<td style="text-align: left;">0.0004</td>
+<td style="text-align: left;"><span class="arithmatex">\(290.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0000 \times 10^{-4}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.116</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.116\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3859,50 +3897,50 @@ $<span class="arithmatex">\(\text{Measured 10-cycle time} = 20.1\text{ seconds}\
 <td style="text-align: left;"><code>20.1</code>[ENTER]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">20.1</td>
+<td style="text-align: left;"><span class="arithmatex">\(20.1000\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(20.1\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>10</code> [÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">2.01</td>
+<td style="text-align: left;"><span class="arithmatex">\(2.01\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[x²]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">4.0401</td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0401\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[4] [ENTER]</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">4.0401</td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0401\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0000\)</span></td>
 <td style="text-align: left;">4</td>
 </tr>
 <tr>
 <td style="text-align: left;">[π] [x²] [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">4.0401</td>
-<td style="text-align: left;">39.4784</td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0401\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(39.4784\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[1] [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">4.0401</td>
-<td style="text-align: left;">39.4784</td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0401\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(39.4784\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[x⇄y] [÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.7716</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.7716\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><em>(Compared to the accepted standard <span class="arithmatex">\(g = 9.80665\text{ m/s}^2\)</span>, your hands-on experiment achieves less than <span class="arithmatex">\(0.4\%\)</span> experimental error!)</em></td>
@@ -3933,20 +3971,20 @@ $<span class="arithmatex">\(L = \frac{g \times T^2}{4\pi^2} = \frac{9.80665 \tim
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.80665</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.80665\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[ENTER]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.80665</td>
-<td style="text-align: left;">9.80665</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.80665\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(9.80665\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[2] [x²]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.80665</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.80665\)</span></td>
 <td style="text-align: left;">4</td>
 </tr>
 <tr>
@@ -3954,28 +3992,28 @@ $<span class="arithmatex">\(L = \frac{g \times T^2}{4\pi^2} = \frac{9.80665 \tim
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">39.2266</td>
+<td style="text-align: left;"><span class="arithmatex">\(39.2266\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[4] [ENTER]</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">39.2266</td>
+<td style="text-align: left;"><span class="arithmatex">\(39.2266\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0000\)</span></td>
 <td style="text-align: left;">4</td>
 </tr>
 <tr>
 <td style="text-align: left;">[π] [x²] [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">39.2266</td>
-<td style="text-align: left;">39.4784</td>
+<td style="text-align: left;"><span class="arithmatex">\(39.2266\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(39.4784\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.9936</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.9936\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4044,24 +4082,24 @@ $<span class="arithmatex">\(L = \frac{g \times T^2}{4\pi^2} = \frac{9.80665 \tim
 <td style="text-align: left;">78</td>
 </tr>
 <tr>
-<td style="text-align: left;">[2][2][.][5]</td>
+<td style="text-align: left;">22.5</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">78</td>
-<td style="text-align: left;">22.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(22.5\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[-]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">55.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(55.5\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">25</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">55.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(55.5\)</span></td>
 <td style="text-align: left;">25</td>
 </tr>
 <tr>
@@ -4069,7 +4107,7 @@ $<span class="arithmatex">\(L = \frac{g \times T^2}{4\pi^2} = \frac{9.80665 \tim
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">2.22</td>
+<td style="text-align: left;"><span class="arithmatex">\(2.22\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4135,14 +4173,14 @@ $<span class="arithmatex">\(L = \frac{g \times T^2}{4\pi^2} = \frac{9.80665 \tim
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.6071</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.6071\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;">[1][0][0][×]</td>
+<td style="text-align: left;">100 [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">60.71</td>
+<td style="text-align: left;"><span class="arithmatex">\(60.71\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4205,49 +4243,49 @@ $<span class="arithmatex">\(D = \{ 182\text{ cm}, 195\text{ cm}, 188\text{ cm}, 
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">n = 1</td>
+<td style="text-align: left;"><span class="arithmatex">\(1.0000\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>195</code> [Σ+]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">n = 2</td>
+<td style="text-align: left;"><span class="arithmatex">\(2.0000\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>188</code> [Σ+]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">n = 3</td>
+<td style="text-align: left;"><span class="arithmatex">\(3.0000\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>201</code> [Σ+]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">n = 4</td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0000\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>189</code> [Σ+]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">n = 5</td>
+<td style="text-align: left;"><span class="arithmatex">\(5.0000\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[g] [x̄]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">191.00</td>
+<td style="text-align: left;"><span class="arithmatex">\(191.00\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[f] <code>s</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">191.00</td>
-<td style="text-align: left;">7.28</td>
+<td style="text-align: left;"><span class="arithmatex">\(191.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(7.25\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4271,50 +4309,50 @@ Over <span class="arithmatex">\(95\%\)</span> of all shots will land directly in
 <td style="text-align: left;">[7] [.] <code>28</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">7.28</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;"><span class="arithmatex">\(28.00\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[ENTER]</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">7.28</td>
-<td style="text-align: left;">7.28</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;"><span class="arithmatex">\(28.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(28.00\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[2] [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">14.56</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;"><span class="arithmatex">\(56.00\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>191</code>[ENTER]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">14.56</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">56</td>
+<td style="text-align: left;"><span class="arithmatex">\(191.00\)</span></td>
 <td style="text-align: left;">191</td>
 </tr>
 <tr>
 <td style="text-align: left;">[x⇄y] [-]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">176.44</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">56</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>191</code>[ENTER]</td>
+<td style="text-align: left;">56</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">176.44</td>
+<td style="text-align: left;"><span class="arithmatex">\(191.00\)</span></td>
 <td style="text-align: left;">191</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>14.56</code> [+]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">176.44</td>
-<td style="text-align: left;">205.56</td>
+<td style="text-align: left;">56</td>
+<td style="text-align: left;">56</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(205.56\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4387,7 +4425,7 @@ $<span class="arithmatex">\(\text{Rate} = \frac{h_2 - h_1}{t_2 - t_1} = \frac{10
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">12.83</td>
+<td style="text-align: left;"><span class="arithmatex">\(12.83\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4431,7 +4469,7 @@ $<span class="arithmatex">\(\text{Rate} = \frac{h_2 - h_1}{t_2 - t_1} = \frac{10
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">1333.33</td>
+<td style="text-align: left;"><span class="arithmatex">\(1333.33\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4469,7 +4507,7 @@ Total Formula:        171.5%</p>
 <td style="text-align: left;"><code>500</code> [ENTER]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
+<td style="text-align: left;">500</td>
 <td style="text-align: left;">500</td>
 </tr>
 <tr>
@@ -4483,7 +4521,7 @@ Total Formula:        171.5%</p>
 <td style="text-align: left;"><code>68</code> [%]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">3500</td>
+<td style="text-align: left;">0</td>
 <td style="text-align: left;">2380</td>
 </tr>
 <tr>
@@ -4491,28 +4529,28 @@ Total Formula:        171.5%</p>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">2380</td>
-<td style="text-align: left;">3500</td>
+<td style="text-align: left;">0</td>
 </tr>
 <tr>
 <td style="text-align: left;">[2] [%]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">3500</td>
-<td style="text-align: left;">70</td>
+<td style="text-align: left;">2380</td>
+<td style="text-align: left;">0</td>
 </tr>
 <tr>
 <td style="text-align: left;">[x⇄y]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">70</td>
-<td style="text-align: left;">3500</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2380</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>1.5</code> [%]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">3500</td>
-<td style="text-align: left;">52.5</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><span class="arithmatex">\(35.7\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4533,32 +4571,32 @@ Total Formula:        171.5%</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">[1][.][3][.][4]</td>
+<td style="text-align: left;">. 1 . 3 . 4</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1 3/4</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.3333\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0000\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[ENTER]</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1 3/4</td>
-<td style="text-align: left;">1 3/4</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.3333\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0000\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0000\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[4]</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1 3/4</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.3333\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0000\)</span></td>
 <td style="text-align: left;">4</td>
 </tr>
 <tr>
 <td style="text-align: left;">[÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">7/16</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.3333\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(1.0000\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4637,19 +4675,19 @@ Stage 2: Gear C (<span class="arithmatex">\(16\text{ teeth}\)</span>) drives Gea
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">3.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(3.0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">48</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">3.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(3.0\)</span></td>
 <td style="text-align: left;">48</td>
 </tr>
 <tr>
 <td style="text-align: left;">[ENTER]</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">3.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(3.0\)</span></td>
 <td style="text-align: left;">48</td>
 <td style="text-align: left;">48</td>
 </tr>
@@ -4657,15 +4695,15 @@ Stage 2: Gear C (<span class="arithmatex">\(16\text{ teeth}\)</span>) drives Gea
 <td style="text-align: left;">16 [÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">3.0</td>
-<td style="text-align: left;">3.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(3.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(3.0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.0\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4684,10 +4722,10 @@ Stage 2: Gear C (<span class="arithmatex">\(16\text{ teeth}\)</span>) drives Gea
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">[1][8][0][0]</td>
+<td style="text-align: left;">1800</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.0\)</span></td>
 <td style="text-align: left;">1800</td>
 </tr>
 <tr>
@@ -4695,14 +4733,14 @@ Stage 2: Gear C (<span class="arithmatex">\(16\text{ teeth}\)</span>) drives Gea
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">1800</td>
-<td style="text-align: left;">9.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">200</td>
+<td style="text-align: left;">0</td>
 </tr>
 </tbody>
 </table>
@@ -4805,22 +4843,22 @@ Stage 2: Gear C (<span class="arithmatex">\(16\text{ teeth}\)</span>) drives Gea
 <td style="text-align: left;">5.0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">5.0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><span class="arithmatex">\(5.0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">45.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>9.8</code> [÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">4.59</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4874,21 +4912,21 @@ Usable Battery Margin: 80% (20% reserve to prevent LiPo damage)</p>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">680</td>
+<td style="text-align: left;">6800</td>
 </tr>
 <tr>
 <td style="text-align: left;">60 [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">40800</td>
+<td style="text-align: left;">408000</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>4200</code> [÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.714</td>
+<td style="text-align: left;"><span class="arithmatex">\(97.143\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -4916,7 +4954,7 @@ Usable Battery Margin: 80% (20% reserve to prevent LiPo damage)</p>
 <td style="text-align: left;"><code>680</code> [ENTER]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
+<td style="text-align: left;">680</td>
 <td style="text-align: left;">680</td>
 </tr>
 <tr>
@@ -4931,28 +4969,28 @@ Usable Battery Margin: 80% (20% reserve to prevent LiPo damage)</p>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">7.418</td>
+<td style="text-align: left;"><span class="arithmatex">\(7.418\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>9.714</code>[ENTER]</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">7.418</td>
-<td style="text-align: left;">9.714</td>
+<td style="text-align: left;"><span class="arithmatex">\(7.4182\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(9.714\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(9.714\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[x⇄y]</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">9.714</td>
-<td style="text-align: left;">7.418</td>
+<td style="text-align: left;"><span class="arithmatex">\(7.4182\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(9.714\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(9.714\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[%CHG]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">-23.64</td>
+<td style="text-align: left;"><span class="arithmatex">\(7.4182\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -5023,14 +5061,14 @@ Usable Battery Margin: 80% (20% reserve to prevent LiPo damage)</p>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">5</td>
-<td style="text-align: left;">0.8660</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.8660\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">4.33</td>
+<td style="text-align: left;"><span class="arithmatex">\(4.33\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -5106,60 +5144,60 @@ Usable Battery Margin: 80% (20% reserve to prevent LiPo damage)</p>
 <td style="text-align: left;">0</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>2.5</code>[3][×]</td>
+<td style="text-align: left;">2.5 [ENTER] 3 [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">7.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(7.5\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[Σ+]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">n = 1</td>
+<td style="text-align: left;"><span class="arithmatex">\(1.0000\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;">[5][2][×]</td>
+<td style="text-align: left;">5 [ENTER] 2 [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">10.0</td>
-</tr>
-<tr>
-<td style="text-align: left;">[Σ+]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">n = 2</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>3.54</code>[3][×]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">10.62</td>
+<td style="text-align: left;"><span class="arithmatex">\(10.0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[Σ+]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">n = 3</td>
+<td style="text-align: left;"><span class="arithmatex">\(2.0000\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3.54 [ENTER] 3 [×]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><span class="arithmatex">\(10.62\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[Σ+]</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><span class="arithmatex">\(3.0000\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[f] [Σx]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">28.12</td>
+<td style="text-align: left;"><span class="arithmatex">\(28.12\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>1000</code> [÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.02812</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.02812\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -5185,56 +5223,56 @@ Usable Battery Margin: 80% (20% reserve to prevent LiPo damage)</p>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.7716</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.7716\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[ENTER]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.7716</td>
-<td style="text-align: left;">9.7716</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.7716\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(9.7716\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>9.80665</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.7716</td>
-<td style="text-align: left;">9.80665</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.7716\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(9.80665\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[-]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">-0.03505</td>
+<td style="text-align: left;"><span class="arithmatex">\(-0.03505\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[ABS]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.03505</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.03505\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>9.80665</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.03505</td>
-<td style="text-align: left;">9.80665</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.03505\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(9.80665\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.003574</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.003574\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>100</code> [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.357%</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.357\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><em>(You achieved an outstanding <span class="arithmatex">\(0.36\%\)</span> experimental error!)</em></td>
@@ -5293,28 +5331,28 @@ $<span class="arithmatex">\(d_{\text{hole}} = 10.00\text{ mm} + 2 \times 0.15\te
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">8.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(8.0\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;">[9][.][9][2]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">8.0</td>
 <td style="text-align: left;">9.92</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><span class="arithmatex">\(8.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(9.92\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[x⇄y]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.92</td>
-<td style="text-align: left;">8.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.92\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(8.0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[÷]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">1.24</td>
+<td style="text-align: left;"><span class="arithmatex">\(1.24\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -5358,14 +5396,14 @@ Does the total maker space electrical load exceed the National Electrical Code (
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">[4]<code>150</code>[×]</td>
+<td style="text-align: left;">4 [ENTER] 150 [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">600</td>
 </tr>
 <tr>
-<td style="text-align: left;">[2]<code>65</code>[×]</td>
+<td style="text-align: left;">2 [ENTER] 65 [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">600</td>
@@ -5390,21 +5428,21 @@ Does the total maker space electrical load exceed the National Electrical Code (
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.75</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.75\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>15``80</code>[%]</td>
+<td style="text-align: left;">15 [ENTER] 80 [%]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.75</td>
-<td style="text-align: left;">12.0</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.75\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(12.0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[x⇄y] [-]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">5.25</td>
+<td style="text-align: left;"><span class="arithmatex">\(5.25\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -5504,7 +5542,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.0875</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.0875\)</span></td>
 <td style="text-align: left;">Key in filament radius in centimeters (<span class="arithmatex">\(r = 0.0875\text{ cm}\)</span>)</td>
 </tr>
 <tr>
@@ -5512,15 +5550,15 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.007656</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.007656\)</span></td>
 <td style="text-align: left;">Square the radius (<span class="arithmatex">\(r^2 = 0.00765625\text{ cm}^2\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[π]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.007656</td>
-<td style="text-align: left;">3.141593</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.007656\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(3.141593\)</span></td>
 <td style="text-align: left;">Call the constant <span class="arithmatex">\(\pi\)</span>; stack lifts squared radius into Register <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
@@ -5528,7 +5566,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.024053</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.024053\)</span></td>
 <td style="text-align: left;">Multiply <span class="arithmatex">\(r^2 \times \pi\)</span> to find circular cross-sectional area (<span class="arithmatex">\(A_f \approx 0.02405\text{ cm}^2\)</span>)</td>
 </tr>
 </tbody>
@@ -5542,56 +5580,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> Your slicer software previews a custom spice-jar funnel for kitchen experiments, reporting that the print requires <span class="arithmatex">\(1,200\text{ cm}\)</span> (<span class="arithmatex">\(12\text{ meters}\)</span>) of filament. Determine the total cubic centimeters of solid plastic in the funnel.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Unspool a <span class="arithmatex">\(1\text{ meter}\)</span> reference ribbon of scrap filament from the workbench spool holder. Imagine twelve of these meter lengths bundled together into the solid walls of your funnel.</li>
 <li><strong>RPN Keystrokes:</strong> <code>.02405 [ENTER] 1200 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>28.86 cm³</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>.02405</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0.02405</td>
-<td style="text-align: left;">Key in filament cross-sectional area (<span class="arithmatex">\(A_f = 0.02405\text{ cm}^2\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0.02405</td>
-<td style="text-align: left;">0.02405</td>
-<td style="text-align: left;">Stack lift duplicates area into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1200</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0.02405</td>
-<td style="text-align: left;">1200</td>
-<td style="text-align: left;">Key in total extruded filament length in centimeters (<span class="arithmatex">\(1,200\text{ cm}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">28.86</td>
-<td style="text-align: left;">Multiply area by length to calculate total volume (<span class="arithmatex">\(V = A_f \times L\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>28.86 cm³</code>. Slicing <span class="arithmatex">\(1,200\text{ cm}\)</span> of filament yields exactly <span class="arithmatex">\(\mathbf{28.86\text{ cm}^3}\)</span> of extruded volume.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>.02405 [ENTER] 1200 [×]</code> -&gt; (T=0, Z=0, Y=0, X=28.86). Multiply area by length to calculate total volume (<span class="arithmatex">\(V = A_f \times L\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>28.86 cm³</code>. Slicing <span class="arithmatex">\(1,200\text{ cm}\)</span> of filament yields exactly <span class="arithmatex">\(\mathbf{28.86\text{ cm}^3}\)</span> of extruded volume.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-93-kitchen-model-mass-from-density-rho-124text-gcm3">Challenge 9.3: Kitchen Model Mass from Density (<span class="arithmatex">\(\rho = 1.24\text{ g/cm}^3\)</span>)</h4>
@@ -5599,56 +5593,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> Now that you know your funnel volume is <span class="arithmatex">\(28.86\text{ cm}^3\)</span>, you must convert that volume into mass in grams so you can verify the finished print on your kitchen gram scale.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Place a <span class="arithmatex">\(1\text{ cm} \times 1\text{ cm} \times 1\text{ cm}\)</span> solid PLA test cube on your digital kitchen scale. Notice it reads <span class="arithmatex">\(1.24\text{ grams}\)</span>, establishing the density <span class="arithmatex">\(\rho = 1.24\text{ g/cm}^3\)</span>.</li>
 <li><strong>RPN Keystrokes:</strong> <code>28.86 [ENTER] 1.24 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>35.79 g</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>28.86</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">28.86</td>
-<td style="text-align: left;">Key in model volume in cubic centimeters (<span class="arithmatex">\(28.86\text{ cm}^3\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">28.86</td>
-<td style="text-align: left;">28.86</td>
-<td style="text-align: left;">Lift model volume into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1.24</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">28.86</td>
-<td style="text-align: left;">1.24</td>
-<td style="text-align: left;">Key in standard PLA thermoplastic density (<span class="arithmatex">\(\rho = 1.24\text{ g/cm}^3\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">35.79</td>
-<td style="text-align: left;">Multiply volume by density to find model mass (<span class="arithmatex">\(m = V \times \rho\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>35.79 g</code>. The finished bioplastic kitchen funnel will weigh approximately <span class="arithmatex">\(\mathbf{35.79\text{ grams}}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>28.86 [ENTER] 1.24 [×]</code> -&gt; (T=0, Z=0, Y=0, X=35.7864). Multiply volume by density to find model mass (<span class="arithmatex">\(m = V \times \rho\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>35.79 g</code>. The finished bioplastic kitchen funnel will weigh approximately <span class="arithmatex">\(\mathbf{35.79\text{ grams}}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-94-spool-material-cost-for-kitchen-print-002textg">Challenge 9.4: Spool Material Cost for Kitchen Print (<span class="arithmatex">\(\$0.02/\text{g}\)</span>)</h4>
@@ -5656,64 +5606,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> You purchased a <span class="arithmatex">\(1,000\text{ gram}\)</span> spool of corn-based PLA for <span class="arithmatex">\(\$20.00\)</span>, which works out to <span class="arithmatex">\(\$0.02\)</span> per gram. Calculate the exact material cost to print your <span class="arithmatex">\(35.79\text{ gram}\)</span> kitchen funnel.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Set two shiny copper pennies next to each <span class="arithmatex">\(1\text{ gram}\)</span> calibration weight on your scale pan to visualize the <span class="arithmatex">\(2\text{ cents}\)</span> per gram material cost ratio.</li>
 <li><strong>RPN Keystrokes:</strong> <code>35.79 [ENTER] .02 [×] [$]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>$0.72</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>35.79</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">35.79</td>
-<td style="text-align: left;">Key in calculated funnel mass in grams (<span class="arithmatex">\(35.79\text{ g}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">35.79</td>
-<td style="text-align: left;">35.79</td>
-<td style="text-align: left;">Lift mass into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>.02</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">35.79</td>
-<td style="text-align: left;">0.02</td>
-<td style="text-align: left;">Key in filament unit cost per gram (<span class="arithmatex">\(\$0.02/\text{g}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0.7158</td>
-<td style="text-align: left;">Multiply mass by unit cost to find total raw material expense</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[$]</code></td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.72</td>
-<td style="text-align: left;">Format active register as two-decimal currency</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>$0.72</code>. Fabricating the custom funnel costs just <span class="arithmatex">\(\mathbf{\$0.72}\)</span> in raw bioplastic.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>35.79 [ENTER] .02 [×] [$]</code> -&gt; (T=0, Z=0, Y=0, X=0.7158). Format active register as two-decimal currency.</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>$0.72</code>. Fabricating the custom funnel costs just <span class="arithmatex">\(\mathbf{\$0.72}\)</span> in raw bioplastic.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-95-red-indicator-led-current-limiting-resistor-on-3v-v_f-18textv-i_f-15textma">Challenge 9.5: Red Indicator LED Current-Limiting Resistor on 3V (<span class="arithmatex">\(V_f = 1.8\text{V}, I_f = 15\text{mA}\)</span>)</h4>
@@ -5756,7 +5654,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">1.8</td>
+<td style="text-align: left;"><span class="arithmatex">\(1.8\)</span></td>
 <td style="text-align: left;">Key in red LED forward voltage drop (<span class="arithmatex">\(V_f = 1.8\text{ V}\)</span>)</td>
 </tr>
 <tr>
@@ -5764,15 +5662,15 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">1.2</td>
+<td style="text-align: left;"><span class="arithmatex">\(1.2\)</span></td>
 <td style="text-align: left;">Subtract to find voltage across resistor: <span class="arithmatex">\(V_R = V_s - V_f = 1.2\text{ V}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>.015</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">1.2</td>
-<td style="text-align: left;">0.015</td>
+<td style="text-align: left;"><span class="arithmatex">\(1.2\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.015\)</span></td>
 <td style="text-align: left;">Key in operating current in amperes (<span class="arithmatex">\(15\text{ mA} = 0.015\text{ A}\)</span>)</td>
 </tr>
 <tr>
@@ -5821,7 +5719,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">80</td>
-<td style="text-align: left;">0.015</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.015\)</span></td>
 <td style="text-align: left;">Recall current <span class="arithmatex">\(I = 0.015\text{ A}\)</span> from <code>LASTX</code> via Superpower 4</td>
 </tr>
 <tr>
@@ -5829,7 +5727,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">80</td>
-<td style="text-align: left;">0.000225</td>
+<td style="text-align: left;"><span class="arithmatex">\(2.2500 \times 10^{-4}\)</span></td>
 <td style="text-align: left;">Square current: <span class="arithmatex">\(I^2 = (0.015)^2 = 0.000225\text{ A}^2\)</span></td>
 </tr>
 <tr>
@@ -5837,7 +5735,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.018</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.018\)</span></td>
 <td style="text-align: left;">Multiply <span class="arithmatex">\(R \times I^2\)</span> to calculate dissipated power (<span class="arithmatex">\(P = 0.018\text{ W}\)</span>)</td>
 </tr>
 </tbody>
@@ -5851,72 +5749,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> To inspect clarity in homemade kombucha fermentation jars, you assemble a high-intensity green flashlight powered by a <span class="arithmatex">\(9\text{V}\)</span> battery. Calculate the required resistor for <span class="arithmatex">\(V_f = 2.2\text{ V}\)</span> and <span class="arithmatex">\(I_f = 20\text{ mA}\)</span>.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Snap a <span class="arithmatex">\(9\text{V}\)</span> battery clip onto the terminal. Test with multimeter leads to confirm <span class="arithmatex">\(9.0\text{ V}\)</span> open-circuit potential before inserting the green LED.</li>
 <li><strong>RPN Keystrokes:</strong> <code>[9] [ENTER] 2.2 [-] .020 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>340.0 Ω</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>[9]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">Key in battery supply voltage (<span class="arithmatex">\(V_s = 9.0\text{ V}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">Lift supply voltage into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>2.2</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">2.2</td>
-<td style="text-align: left;">Key in green LED forward voltage drop (<span class="arithmatex">\(V_f = 2.2\text{ V}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[-]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">6.8</td>
-<td style="text-align: left;">Subtract forward drop: voltage across resistor is <span class="arithmatex">\(6.8\text{ V}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>.020</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">6.8</td>
-<td style="text-align: left;">0.02</td>
-<td style="text-align: left;">Key in forward current (<span class="arithmatex">\(20\text{ mA} = 0.020\text{ A}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">340</td>
-<td style="text-align: left;">Divide voltage by current via Ohm's law (<span class="arithmatex">\(R = 6.8 / 0.020 = 340\,\Omega\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>340.0 Ω</code>. The 9V green inspection light requires a <span class="arithmatex">\(\mathbf{340.0\,\Omega}\)</span> resistor.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>[9] [ENTER] 2.2 [-] .020 [÷]</code> -&gt; (T=0, Z=0, Y=0, X=340). Divide voltage by current via Ohm's law (<span class="arithmatex">\(R = 6.8 / 0.020 = 340\,\Omega\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>340.0 Ω</code>. The 9V green inspection light requires a <span class="arithmatex">\(\mathbf{340.0\,\Omega}\)</span> resistor.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-98-power-rating-for-340omega-resistor-at-20textma">Challenge 9.8: Power Rating for <span class="arithmatex">\(340\,\Omega\)</span> Resistor at <span class="arithmatex">\(20\text{mA}\)</span></h4>
@@ -5951,7 +5789,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">340</td>
-<td style="text-align: left;">0.02</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.02\)</span></td>
 <td style="text-align: left;">Recall current <span class="arithmatex">\(I = 0.020\text{ A}\)</span> instantly from <code>LASTX</code></td>
 </tr>
 <tr>
@@ -5959,7 +5797,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">340</td>
-<td style="text-align: left;">0.0004</td>
+<td style="text-align: left;"><span class="arithmatex">\(4.0000 \times 10^{-4}\)</span></td>
 <td style="text-align: left;">Square current: <span class="arithmatex">\(I^2 = (0.020)^2 = 0.0004\text{ A}^2\)</span></td>
 </tr>
 <tr>
@@ -5967,7 +5805,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.136</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.136\)</span></td>
 <td style="text-align: left;">Multiply <span class="arithmatex">\(R \times I^2\)</span> to find thermal dissipation in watts</td>
 </tr>
 </tbody>
@@ -6000,47 +5838,47 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
 <td style="text-align: left;">Calculate constant <span class="arithmatex">\(2\pi \approx 6.283185\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>.5</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
-<td style="text-align: left;">0.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.5\)</span></td>
 <td style="text-align: left;">Key in string length in meters (<span class="arithmatex">\(L = 0.50\text{ m}\)</span>); lifts <span class="arithmatex">\(2\pi\)</span> to <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[ENTER]</code></td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
-<td style="text-align: left;">0.5</td>
-<td style="text-align: left;">0.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.5\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.5\)</span></td>
 <td style="text-align: left;">Stack lift duplicates length into Register <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>9.8</code></td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
-<td style="text-align: left;">0.5</td>
-<td style="text-align: left;">9.8</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.5\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(9.8\)</span></td>
 <td style="text-align: left;">Key in gravitational acceleration (<span class="arithmatex">\(g = 9.8\text{ m/s}^2\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[÷]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
-<td style="text-align: left;">0.05102</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.05102\)</span></td>
 <td style="text-align: left;">Divide length by gravity (<span class="arithmatex">\(L/g \approx 0.051020\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[f] [√x]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
-<td style="text-align: left;">0.225877</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.225877\)</span></td>
 <td style="text-align: left;">Take square root: <span class="arithmatex">\(\sqrt{L/g} \approx 0.225877\)</span></td>
 </tr>
 <tr>
@@ -6048,7 +5886,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">1.419227</td>
+<td style="text-align: left;"><span class="arithmatex">\(1.419227\)</span></td>
 <td style="text-align: left;">Multiply by <span class="arithmatex">\(2\pi\)</span> to obtain oscillation period (<span class="arithmatex">\(T \approx 1.42\text{ s}\)</span>)</td>
 </tr>
 </tbody>
@@ -6081,31 +5919,31 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.8</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.8\)</span></td>
 <td style="text-align: left;">Key in gravitational acceleration (<span class="arithmatex">\(g = 9.8\text{ m/s}^2\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[ENTER]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.8</td>
-<td style="text-align: left;">9.8</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.8\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(9.8\)</span></td>
 <td style="text-align: left;">Lift gravity into Register <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>1.5</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.8</td>
-<td style="text-align: left;">1.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.8\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(1.5\)</span></td>
 <td style="text-align: left;">Key in target period in seconds (<span class="arithmatex">\(T = 1.50\text{ s}\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[x²]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">9.8</td>
-<td style="text-align: left;">2.25</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.8\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(2.25\)</span></td>
 <td style="text-align: left;">Square period (<span class="arithmatex">\(T^2 = 2.25\text{ s}^2\)</span>)</td>
 </tr>
 <tr>
@@ -6113,39 +5951,39 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">22.05</td>
+<td style="text-align: left;"><span class="arithmatex">\(22.05\)</span></td>
 <td style="text-align: left;">Multiply <span class="arithmatex">\(g \times T^2 = 9.8 \times 2.25 = 22.05\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[4]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">22.05</td>
+<td style="text-align: left;"><span class="arithmatex">\(22.05\)</span></td>
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">Key in constant 4; lifts numerator <span class="arithmatex">\(22.05\)</span> into Register <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[π]</code></td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">22.05</td>
+<td style="text-align: left;"><span class="arithmatex">\(22.05\)</span></td>
 <td style="text-align: left;">4</td>
-<td style="text-align: left;">3.141593</td>
+<td style="text-align: left;"><span class="arithmatex">\(3.141593\)</span></td>
 <td style="text-align: left;">Call constant <span class="arithmatex">\(\pi\)</span>; stack lifts</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[x²]</code></td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">22.05</td>
+<td style="text-align: left;"><span class="arithmatex">\(22.05\)</span></td>
 <td style="text-align: left;">4</td>
-<td style="text-align: left;">9.869604</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.869604\)</span></td>
 <td style="text-align: left;">Square <span class="arithmatex">\(\pi\)</span>: <span class="arithmatex">\(\pi^2 \approx 9.869604\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[×]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">22.05</td>
-<td style="text-align: left;">39.478418</td>
+<td style="text-align: left;"><span class="arithmatex">\(22.05\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(39.478418\)</span></td>
 <td style="text-align: left;">Multiply <span class="arithmatex">\(4 \times \pi^2 \approx 39.478418\)</span></td>
 </tr>
 <tr>
@@ -6153,7 +5991,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.558533</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.558533\)</span></td>
 <td style="text-align: left;">Divide numerator by denominator to compute length (<span class="arithmatex">\(L \approx 0.559\text{ m}\)</span>)</td>
 </tr>
 </tbody>
@@ -6169,72 +6007,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> You build a cardboard pizza-box solar oven lined with aluminum foil reflectors. A digital probe thermometer placed inside shows the temperature climbing from <span class="arithmatex">\(20^\circ\text{C}\)</span> to <span class="arithmatex">\(65^\circ\text{C}\)</span> during a <span class="arithmatex">\(15\text{-minute}\)</span> exposure under the noon sun. Compute the heating velocity in degrees per minute.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Insert a digital STEM probe thermometer through a small hole in the clear plastic wrap window of the solar cooker. Watch the digital numbers tick upward in real sunlight.</li>
 <li><strong>RPN Keystrokes:</strong> <code>65 [ENTER] 20 [-] 15 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>3.00 °C/min</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>65</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">65</td>
-<td style="text-align: left;">Key in peak solar oven temperature (<span class="arithmatex">\(65^\circ\text{C}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">65</td>
-<td style="text-align: left;">65</td>
-<td style="text-align: left;">Lift final temperature into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>20</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">65</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">Key in starting ambient temperature (<span class="arithmatex">\(20^\circ\text{C}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[-]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">45</td>
-<td style="text-align: left;">Subtract to find temperature rise: <span class="arithmatex">\(\Delta T = 65 - 20 = 45^\circ\text{C}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>15</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">45</td>
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">Key in elapsed solar exposure time (<span class="arithmatex">\(15\text{ minutes}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Divide temperature rise by time to compute heating rate (<span class="arithmatex">\(45 / 15 = 3.00^\circ\text{C/min}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>3.00 °C/min</code>. The solar oven heats up at an impressive <span class="arithmatex">\(\mathbf{3.00^\circ\text{C/min}}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>65 [ENTER] 20 [-] 15 [÷]</code> -&gt; (T=0, Z=0, Y=0, X=3). Divide temperature rise by time to compute heating rate (<span class="arithmatex">\(45 / 15 = 3.00^\circ\text{C/min}\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>3.00 °C/min</code>. The solar oven heats up at an impressive <span class="arithmatex">\(\mathbf{3.00^\circ\text{C/min}}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-912-solar-oven-temperature-percent-increase-20circ-to-65circtextc">Challenge 9.12: Solar Oven Temperature Percent Increase (<span class="arithmatex">\(20^\circ \to 65^\circ\text{C}\)</span>)</h4>
@@ -6242,56 +6020,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> To evaluate how efficiently your solar reflectors amplify ambient energy, calculate the percentage thermal increase achieved by your solar cooker over the starting temperature.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Place one thermometer in the ambient outdoor shade (<span class="arithmatex">\(20^\circ\text{C}\)</span>) and one inside the solar box (<span class="arithmatex">\(65^\circ\text{C}\)</span>). Compare the column heights on liquid-in-glass lab thermometers.</li>
 <li><strong>RPN Keystrokes:</strong> <code>20 [ENTER] 65 [g] [%CHG]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>+225.0%</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>20</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">Key in initial baseline temperature (<span class="arithmatex">\(20^\circ\text{C}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">Lock baseline temperature into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>65</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">65</td>
-<td style="text-align: left;">Key in peak solar oven temperature (<span class="arithmatex">\(65^\circ\text{C}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[g] [%CHG]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">225</td>
-<td style="text-align: left;">Compute percent change: <span class="arithmatex">\((65 - 20) / 20 \times 100\% = +225.0\%\)</span></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>+225.0%</code>. The solar oven achieved a <span class="arithmatex">\(\mathbf{+225.0\%}\)</span> thermal boost over ambient air.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>20 [ENTER] 65 [g] [%CHG]</code> -&gt; (T=0, Z=0, Y=0, X=225). Compute percent change: <span class="arithmatex">\((65 - 20) / 20 \times 100\% = +225.0\%\)</span>.</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>+225.0%</code>. The solar oven achieved a <span class="arithmatex">\(\mathbf{+225.0\%}\)</span> thermal boost over ambient air.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-913-seed-bomber-catapult-mean-launch-distance-150-162-156text-cm">Challenge 9.13: Seed-Bomber Catapult Mean Launch Distance (<span class="arithmatex">\(150, 162, 156\text{ cm}\)</span>)</h4>
@@ -6299,64 +6033,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> You are using an elastic catapult to launch wild flower seed balls into a community solar garden. Over three test launches, you measure distances of <span class="arithmatex">\(150\text{ cm}\)</span>, <span class="arithmatex">\(162\text{ cm}\)</span>, and <span class="arithmatex">\(156\text{ cm}\)</span>. Find the mean launch distance.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Unroll a metric surveyor tape along the playground lawn. Stake colored flags at <span class="arithmatex">\(150\text{ cm}\)</span>, <span class="arithmatex">\(162\text{ cm}\)</span>, and <span class="arithmatex">\(156\text{ cm}\)</span> to visualize the spread of your seed balls.</li>
 <li><strong>RPN Keystrokes:</strong> <code>[g] [CLΣ] 150 [Σ+] 162 [Σ+] 156 [Σ+] [g] [x̄]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>156.00 cm</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>[g] [CLΣ]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">Clear all statistical registers</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>150 [Σ+]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Accumulate Trial 1 (<span class="arithmatex">\(150\text{ cm}\)</span>); sample count <span class="arithmatex">\(n = 1\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>162 [Σ+]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Accumulate Trial 2 (<span class="arithmatex">\(162\text{ cm}\)</span>); sample count <span class="arithmatex">\(n = 2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>156 [Σ+]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Accumulate Trial 3 (<span class="arithmatex">\(156\text{ cm}\)</span>); sample count <span class="arithmatex">\(n = 3\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[g] [x̄]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">156</td>
-<td style="text-align: left;">Recall arithmetic mean <span class="arithmatex">\(\bar{x} = 156.00\text{ cm}\)</span> (sample size <span class="arithmatex">\(n=3\)</span> in <span class="arithmatex">\(Z\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>156.00 cm</code>. The average launch distance across three trials is <span class="arithmatex">\(\mathbf{156.00\text{ cm}}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>[g] [CLΣ] 150 [Σ+] 162 [Σ+] 156 [Σ+] [g] [x̄]</code> -&gt; (T=0, Z=0, Y=0, X=156). Recall arithmetic mean <span class="arithmatex">\(\bar{x} = 156.00\text{ cm}\)</span> (sample size <span class="arithmatex">\(n=3\)</span> in <span class="arithmatex">\(Z\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>156.00 cm</code>. The average launch distance across three trials is <span class="arithmatex">\(\mathbf{156.00\text{ cm}}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-914-catapult-consistency-mean-absolute-deviation-mad">Challenge 9.14: Catapult Consistency &amp; Mean Absolute Deviation (MAD)</h4>
@@ -6364,64 +6046,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> How consistent is your seed catapult? Calculate the Mean Absolute Deviation (MAD) of the three launch distances (<span class="arithmatex">\(150, 162, 156\text{ cm}\)</span>) around the <span class="arithmatex">\(156\text{ cm}\)</span> mean to measure launch variability.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Use physical counting tiles to measure the distance from each flag to the center line: <span class="arithmatex">\(|150-156| = 6\text{ tiles}\)</span>, <span class="arithmatex">\(|162-156| = 6\text{ tiles}\)</span>, and <span class="arithmatex">\(|156-156| = 0\text{ tiles}\)</span>.</li>
 <li><strong>RPN Keystrokes:</strong> <code>[g] [CLΣ] 150 [Σ+] 162 [Σ+] 156 [Σ+] [g] [MAD]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>4.00 cm</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>[g] [CLΣ]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">Reset statistical accumulator registers</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>150 [Σ+]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Add Trial 1 (<span class="arithmatex">\(150\text{ cm}\)</span>); <span class="arithmatex">\(n=1\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>162 [Σ+]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Add Trial 2 (<span class="arithmatex">\(162\text{ cm}\)</span>); <span class="arithmatex">\(n=2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>156 [Σ+]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Add Trial 3 (<span class="arithmatex">\(156\text{ cm}\)</span>); <span class="arithmatex">\(n=3\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[g] [MAD]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Calculate Mean Absolute Deviation: <span class="arithmatex">\(\text{MAD} = (6 + 6 + 0) / 3 = 4.00\text{ cm}\)</span></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>4.00 cm</code>. The catapult demonstrates high consistency with a MAD of only <span class="arithmatex">\(\mathbf{4.00\text{ cm}}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>[g] [CLΣ] 150 [Σ+] 162 [Σ+] 156 [Σ+] [g] [MAD]</code> -&gt; (T=0, Z=0, Y=0, X=3). Calculate Mean Absolute Deviation: <span class="arithmatex">\(\text{MAD} = (6 + 6 + 0) / 3 = 4.00\text{ cm}\)</span>.</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>4.00 cm</code>. The catapult demonstrates high consistency with a MAD of only <span class="arithmatex">\(\mathbf{4.00\text{ cm}}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-915-solar-nursery-bean-sprout-growth-velocity-15text-mm-to-75text-mm-in-5text-days">Challenge 9.15: Solar Nursery Bean Sprout Growth Velocity (<span class="arithmatex">\(15\text{ mm} \to 75\text{ mm}\)</span> in <span class="arithmatex">\(5\text{ days}\)</span>)</h4>
@@ -6429,72 +6059,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> Inside your solar heated seedling nursery, a pole bean sprout shoots up from <span class="arithmatex">\(15\text{ mm}\)</span> to <span class="arithmatex">\(75\text{ mm}\)</span> over a <span class="arithmatex">\(5\text{-day}\)</span> observation period. Compute its average vertical growth rate in millimeters per day.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Align a clear plastic millimeter ruler alongside the tender green sprout each morning, recording the height in your field notebook.</li>
 <li><strong>RPN Keystrokes:</strong> <code>75 [ENTER] 15 [-] [5] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>12.0 mm/day</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>75</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">75</td>
-<td style="text-align: left;">Key in final sprout height (<span class="arithmatex">\(75\text{ mm}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">75</td>
-<td style="text-align: left;">75</td>
-<td style="text-align: left;">Lift final height into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>15</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">75</td>
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">Key in initial sprout height (<span class="arithmatex">\(15\text{ mm}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[-]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">60</td>
-<td style="text-align: left;">Subtract to find net vertical growth: <span class="arithmatex">\(\Delta h = 75 - 15 = 60\text{ mm}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[5]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">60</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">Key in elapsed time (<span class="arithmatex">\(5\text{ days}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">Divide growth by days to obtain velocity (<span class="arithmatex">\(60 / 5 = 12.0\text{ mm/day}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>12.0 mm/day</code>. The bean seedling grew at a brisk rate of <span class="arithmatex">\(\mathbf{12.0\text{ mm/day}}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>75 [ENTER] 15 [-] [5] [÷]</code> -&gt; (T=0, Z=0, Y=0, X=12). Divide growth by days to obtain velocity (<span class="arithmatex">\(60 / 5 = 12.0\text{ mm/day}\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>12.0 mm/day</code>. The bean seedling grew at a brisk rate of <span class="arithmatex">\(\mathbf{12.0\text{ mm/day}}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-916-total-seedling-height-percentage-surge-15text-mm-to-75text-mm">Challenge 9.16: Total Seedling Height Percentage Surge (<span class="arithmatex">\(15\text{ mm} \to 75\text{ mm}\)</span>)</h4>
@@ -6502,56 +6072,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> To determine how vigorously the bean sprout responded to greenhouse warmth, calculate the overall percentage increase in height over the five days.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Stack 15 single snap cubes to represent Day 1 height, and build a second tower of 75 cubes for Day 5. Observe that the growth of 60 cubes is exactly four times the original 15-cube height!</li>
 <li><strong>RPN Keystrokes:</strong> <code>15 [ENTER] 75 [g] [%CHG]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>+400.0%</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>15</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">Key in initial seedling height (<span class="arithmatex">\(15\text{ mm}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">Lock initial height into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>75</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">75</td>
-<td style="text-align: left;">Key in Day 5 seedling height (<span class="arithmatex">\(75\text{ mm}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[g] [%CHG]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">400</td>
-<td style="text-align: left;">Compute percent change: <span class="arithmatex">\((75 - 15) / 15 \times 100\% = +400.0\%\)</span></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>+400.0%</code>. The sprout surged by <span class="arithmatex">\(\mathbf{+400.0\%}\)</span> over its starting height.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>15 [ENTER] 75 [g] [%CHG]</code> -&gt; (T=0, Z=0, Y=0, X=400). Compute percent change: <span class="arithmatex">\((75 - 15) / 15 \times 100\% = +400.0\%\)</span>.</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>+400.0%</code>. The sprout surged by <span class="arithmatex">\(\mathbf{+400.0\%}\)</span> over its starting height.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-917-field-bakery-scaling-flour-for-12-loaves-450text-g-per-loaf">Challenge 9.17: Field Bakery Scaling: Flour for 12 Loaves (<span class="arithmatex">\(450\text{ g}\)</span> per loaf)</h4>
@@ -6559,56 +6085,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> Your solar research team needs fresh sourdough bread for a weekend campout. If a single artisan loaf requires <span class="arithmatex">\(450\text{ grams}\)</span> of unbleached flour, how much total flour is needed for a batch of 12 loaves?</li>
 <li><strong>Hands-On Physical Measurement:</strong> Scoop <span class="arithmatex">\(450\text{ grams}\)</span> of flour into a mixing bowl on a tare-zeroed digital scale. Multiply by 12 to find the bulk sack requirement.</li>
 <li><strong>RPN Keystrokes:</strong> <code>450 [ENTER] 12 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>5,400 grams</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>450</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">450</td>
-<td style="text-align: left;">Key in flour mass for one loaf (<span class="arithmatex">\(450\text{ g}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">450</td>
-<td style="text-align: left;">450</td>
-<td style="text-align: left;">Duplicate single-loaf flour into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>12</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">450</td>
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">Key in target loaf count (<span class="arithmatex">\(12\text{ loaves}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">5400</td>
-<td style="text-align: left;">Multiply to calculate total batch flour (<span class="arithmatex">\(450 \times 12 = 5,400\text{ g}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>5,400 grams</code>. The 12-loaf field bake requires exactly <span class="arithmatex">\(\mathbf{5,400\text{ grams}}\)</span> (<span class="arithmatex">\(5.4\text{ kg}\)</span>) of flour.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>450 [ENTER] 12 [×]</code> -&gt; (T=0, Z=0, Y=0, X=5400). Multiply to calculate total batch flour (<span class="arithmatex">\(450 \times 12 = 5,400\text{ g}\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>5,400 grams</code>. The 12-loaf field bake requires exactly <span class="arithmatex">\(\mathbf{5,400\text{ grams}}\)</span> (<span class="arithmatex">\(5.4\text{ kg}\)</span>) of flour.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-918-artisan-hydration-water-at-65-for-5400text-g-flour">Challenge 9.18: Artisan Hydration: Water at <span class="arithmatex">\(65\%\)</span> for <span class="arithmatex">\(5,400\text{ g}\)</span> Flour</h4>
@@ -6616,56 +6098,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> Master bakers calculate all recipe ingredients as a percentage of the total flour weight (baker's percentages). For an open, airy crumb, the recipe calls for <span class="arithmatex">\(65\%\)</span> hydration water. Find the required water mass for <span class="arithmatex">\(5,400\text{ g}\)</span> of flour.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Place a glass measuring pitcher on the scale, tare the display to zero, and pour water until the digital scale reads the computed gram target.</li>
 <li><strong>RPN Keystrokes:</strong> <code>5400 [ENTER] 65 [%]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>3,510 grams</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>5400</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">5400</td>
-<td style="text-align: left;">Key in total flour mass (<span class="arithmatex">\(5,400\text{ g}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">5400</td>
-<td style="text-align: left;">5400</td>
-<td style="text-align: left;">Lock flour base mass into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>65</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">5400</td>
-<td style="text-align: left;">65</td>
-<td style="text-align: left;">Key in baker's hydration percentage (<span class="arithmatex">\(65\%\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[%]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">5400</td>
-<td style="text-align: left;">3510</td>
-<td style="text-align: left;">Compute <span class="arithmatex">\(65\%\)</span> of <span class="arithmatex">\(5,400\)</span>: water mass is <span class="arithmatex">\(3,510\text{ grams}\)</span></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>3,510 grams</code>. You need <span class="arithmatex">\(\mathbf{3,510\text{ grams}}\)</span> (<span class="arithmatex">\(3.51\text{ liters}\)</span>) of water for <span class="arithmatex">\(65\%\)</span> hydration.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>5400 [ENTER] 65 [%]</code> -&gt; (T=0, Z=0, Y=0, X=3510). Compute <span class="arithmatex">\(65\%\)</span> of <span class="arithmatex">\(5,400\)</span>: water mass is <span class="arithmatex">\(3,510\text{ grams}\)</span>.</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>3,510 grams</code>. You need <span class="arithmatex">\(\mathbf{3,510\text{ grams}}\)</span> (<span class="arithmatex">\(3.51\text{ liters}\)</span>) of water for <span class="arithmatex">\(65\%\)</span> hydration.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-919-bakers-salt-percentage-at-2-for-5400text-g-flour">Challenge 9.19: Baker's Salt Percentage at <span class="arithmatex">\(2\%\)</span> for <span class="arithmatex">\(5,400\text{ g}\)</span> Flour</h4>
@@ -6673,56 +6111,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> In artisan bread baking, salt tightens gluten strands and regulates yeast fermentation at exactly <span class="arithmatex">\(2.0\%\)</span> of flour weight. Calculate the mass of fine sea salt required for the <span class="arithmatex">\(5,400\text{ g}\)</span> flour batch.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Place a small ceramic pinch bowl on your sensitive gram scale and measure out fine sea salt crystals until the display matches the calculator's result.</li>
 <li><strong>RPN Keystrokes:</strong> <code>5400 [ENTER] [2] [%]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>108 grams</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>5400</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">5400</td>
-<td style="text-align: left;">Key in total flour mass (<span class="arithmatex">\(5,400\text{ g}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">5400</td>
-<td style="text-align: left;">5400</td>
-<td style="text-align: left;">Lock flour base mass into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[2]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">5400</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Key in baker's salt percentage (<span class="arithmatex">\(2\%\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[%]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">5400</td>
-<td style="text-align: left;">108</td>
-<td style="text-align: left;">Compute <span class="arithmatex">\(2\%\)</span> of <span class="arithmatex">\(5,400\)</span>: salt mass is <span class="arithmatex">\(108\text{ grams}\)</span></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>108 grams</code>. The recipe requires <span class="arithmatex">\(\mathbf{108\text{ grams}}\)</span> of fine sea salt.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>5400 [ENTER] [2] [%]</code> -&gt; (T=0, Z=0, Y=0, X=108). Compute <span class="arithmatex">\(2\%\)</span> of <span class="arithmatex">\(5,400\)</span>: salt mass is <span class="arithmatex">\(108\text{ grams}\)</span>.</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>108 grams</code>. The recipe requires <span class="arithmatex">\(\mathbf{108\text{ grams}}\)</span> of fine sea salt.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-920-high-energy-trail-cookies-scaling-2-frac14-cups-sugar-times-4">Challenge 9.20: High-Energy Trail Cookies: Scaling <span class="arithmatex">\(2\ \frac{1}{4}\)</span> Cups Sugar <span class="arithmatex">\(\times 4\)</span></h4>
@@ -6730,64 +6124,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> To fuel the expedition crew on a mountain hike, you scale up a high-energy oatmeal cookie recipe by a factor of 4. The base recipe calls for <span class="arithmatex">\(2\ \frac{1}{4}\)</span> cups of brown sugar. Find the total sugar needed.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Use physical nesting measuring cups: two whole 1-cup scoops and one 1/4-cup scoop. Lay out 4 identical sets on the counter.</li>
 <li><strong>RPN Keystrokes:</strong> <code>2 [.] 1 [.] 4 [ENTER] [4] [×] [a ᵇ/c]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>9 cups</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>2 [.] 1 [.] 4</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">2.25</td>
-<td style="text-align: left;">Enter mixed number <span class="arithmatex">\(2\ \frac{1}{4}\)</span> cups via two-dot syntax</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">2.25</td>
-<td style="text-align: left;">2.25</td>
-<td style="text-align: left;">Lift single-batch sugar quantity into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[4]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">2.25</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Key in batch scaling factor (<span class="arithmatex">\(4\text{ batches}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">Multiply: <span class="arithmatex">\(2.25 \times 4 = 9\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[a ᵇ/c]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">Display result as mixed/whole number format</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>9 cups</code>. Scaling the cookie recipe by 4 requires exactly <span class="arithmatex">\(\mathbf{9\text{ cups}}\)</span> of brown sugar.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>2 [.] 1 [.] 4 [ENTER] [4] [×] [a ᵇ/c]</code> -&gt; (T=0, Z=0, Y=2, X=1). Display result as mixed/whole number format.</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>9 cups</code>. Scaling the cookie recipe by 4 requires exactly <span class="arithmatex">\(\mathbf{9\text{ cups}}\)</span> of brown sugar.</p>
+</li>
 </ul>
 <hr />
 <h3 id="9173-expedition-3-the-3d-printing-filament-workshop-challenges-921930">9.17.3 Expedition 3: The 3D Printing &amp; Filament Workshop (Challenges 9.21–9.30)</h3>
@@ -6797,56 +6139,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> You are printing custom gears for a direct-drive 3D printer extruder to push stiff filament without slipping. The small motor pinion has 16 teeth and drives a large 64-tooth gear. Find the reduction gear ratio.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Count the teeth on two interlocking 3D-printed gears with your fingertips, marking tooth #1 with a silver felt-tip pen. Notice you must turn the small gear 4 full revolutions to rotate the big gear once.</li>
 <li><strong>RPN Keystrokes:</strong> <code>64 [ENTER] 16 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>4.0 : 1</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>64</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">64</td>
-<td style="text-align: left;">Key in driven gear tooth count (<span class="arithmatex">\(64\text{ teeth}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">64</td>
-<td style="text-align: left;">64</td>
-<td style="text-align: left;">Lift driven gear teeth into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>16</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">64</td>
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">Key in driving motor pinion tooth count (<span class="arithmatex">\(16\text{ teeth}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Divide driven by driver teeth to obtain gear ratio (<span class="arithmatex">\(64 / 16 = 4.0\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>4.0 : 1</code>. The extruder gear train provides a <span class="arithmatex">\(\mathbf{4.0 : 1}\)</span> mechanical reduction ratio.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>64 [ENTER] 16 [÷]</code> -&gt; (T=0, Z=0, Y=0, X=4). Divide driven by driver teeth to obtain gear ratio (<span class="arithmatex">\(64 / 16 = 4.0\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>4.0 : 1</code>. The extruder gear train provides a <span class="arithmatex">\(\mathbf{4.0 : 1}\)</span> mechanical reduction ratio.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-922-stepper-motor-output-rpm-1200text-rpm-div-4">Challenge 9.22: Stepper Motor Output RPM (<span class="arithmatex">\(1,200\text{ RPM} \div 4\)</span>)</h4>
@@ -6854,56 +6152,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> The NEMA-17 stepper motor spins at <span class="arithmatex">\(1,200\text{ RPM}\)</span>. With the <span class="arithmatex">\(4:1\)</span> gear reduction from Challenge 9.21, calculate the final rotational speed of the filament drive hobbed wheel.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Feel the output shaft while adjusting motor stepping pulses. The output shaft spins at one-quarter the motor speed with four times the gripping torque.</li>
 <li><strong>RPN Keystrokes:</strong> <code>1200 [ENTER] [4] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>300 RPM</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>1200</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1200</td>
-<td style="text-align: left;">Key in stepper motor input speed (<span class="arithmatex">\(1,200\text{ RPM}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1200</td>
-<td style="text-align: left;">1200</td>
-<td style="text-align: left;">Lock input motor speed into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[4]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1200</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Key in gear reduction ratio from Challenge 9.21 (<span class="arithmatex">\(4\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">300</td>
-<td style="text-align: left;">Divide motor speed by reduction ratio to find output speed (<span class="arithmatex">\(1200 / 4 = 300\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>300 RPM</code>. The filament drive wheel rotates smoothly at <span class="arithmatex">\(\mathbf{300\text{ RPM}}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>1200 [ENTER] [4] [÷]</code> -&gt; (T=0, Z=0, Y=0, X=300). Divide motor speed by reduction ratio to find output speed (<span class="arithmatex">\(1200 / 4 = 300\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>300 RPM</code>. The filament drive wheel rotates smoothly at <span class="arithmatex">\(\mathbf{300\text{ RPM}}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-923-two-stage-compound-gear-reduction-4010-times-3015">Challenge 9.23: Two-Stage Compound Gear Reduction (<span class="arithmatex">\((40/10) \times (30/15)\)</span>)</h4>
@@ -6936,8 +6190,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <tr>
 <td style="text-align: left;"><code>30 [ENTER]</code></td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
 <td style="text-align: left;">4</td>
+<td style="text-align: left;">30</td>
 <td style="text-align: left;">30</td>
 <td style="text-align: left;">Key in Stage 2 driven gear (<span class="arithmatex">\(30\text{T}\)</span>); lifts Stage 1 ratio into <span class="arithmatex">\(Y\)</span></td>
 </tr>
@@ -6968,64 +6222,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> You build a fluid press using two medical syringes connected by clear vinyl tubing to test the crush strength of 3D-printed parts. The input syringe has diameter <span class="arithmatex">\(d_1 = 1\text{ cm}\)</span> and the output cylinder has diameter <span class="arithmatex">\(d_2 = 4\text{ cm}\)</span>. Find the hydraulic force multiplier (<span class="arithmatex">\(A_2 / A_1 = (d_2/d_1)^2\)</span>).</li>
 <li><strong>Hands-On Physical Measurement:</strong> Connect a <span class="arithmatex">\(10\text{ mL}\)</span> syringe (<span class="arithmatex">\(1\text{ cm}\)</span> diameter) to a large <span class="arithmatex">\(60\text{ mL}\)</span> syringe (<span class="arithmatex">\(4\text{ cm}\)</span> diameter) filled with colored water. Push the small plunger and observe the massive force generated at the large piston.</li>
 <li><strong>RPN Keystrokes:</strong> <code>[4] [ENTER] [1] [÷] [x²]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>16.0 ×</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>[4]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Key in output cylinder diameter (<span class="arithmatex">\(d_2 = 4\text{ cm}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Lift output diameter into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[1]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Key in input syringe diameter (<span class="arithmatex">\(d_1 = 1\text{ cm}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Divide diameters: linear ratio is <span class="arithmatex">\(4 / 1 = 4\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[x²]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">Square diameter ratio to compute area mechanical advantage (<span class="arithmatex">\(4^2 = 16.0\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>16.0 ×</code>. The hydraulic syringe press provides a <span class="arithmatex">\(\mathbf{16.0\times}\)</span> force multiplication.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>[4] [ENTER] [1] [÷] [x²]</code> -&gt; (T=0, Z=0, Y=0, X=16). Square diameter ratio to compute area mechanical advantage (<span class="arithmatex">\(4^2 = 16.0\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>16.0 ×</code>. The hydraulic syringe press provides a <span class="arithmatex">\(\mathbf{16.0\times}\)</span> force multiplication.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-925-hydraulic-press-lift-capacity-10text-n-input-times-16">Challenge 9.25: Hydraulic Press Lift Capacity (<span class="arithmatex">\(10\text{ N input} \times 16\)</span>)</h4>
@@ -7033,56 +6235,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> If you press down on the small input syringe with an effort force of <span class="arithmatex">\(10\text{ Newtons}\)</span> (about <span class="arithmatex">\(1\text{ kg}\)</span> of push), how much lifting force does the hydraulic press exert on the 3D-printed test sample?</li>
 <li><strong>Hands-On Physical Measurement:</strong> Hook a spring dynamometer scale to the input plunger and push until it reads <span class="arithmatex">\(10\text{ N}\)</span>. On the output piston, a <span class="arithmatex">\(16\text{ kg}\)</span> weight (<span class="arithmatex">\(160\text{ N}\)</span>) is effortlessly lifted.</li>
 <li><strong>RPN Keystrokes:</strong> <code>10 [ENTER] 16 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>160 Newtons</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>10</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">Key in input effort force in Newtons (<span class="arithmatex">\(10\text{ N}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">Duplicate input force into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>16</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">Key in hydraulic mechanical advantage from Challenge 9.24 (<span class="arithmatex">\(16\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">160</td>
-<td style="text-align: left;">Multiply effort by multiplier to calculate output force (<span class="arithmatex">\(10 \times 16 = 160\text{ N}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>160 Newtons</code>. The hydraulic press delivers <span class="arithmatex">\(\mathbf{160\text{ Newtons}}\)</span> of crush force.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>10 [ENTER] 16 [×]</code> -&gt; (T=0, Z=0, Y=0, X=160). Multiply effort by multiplier to calculate output force (<span class="arithmatex">\(10 \times 16 = 160\text{ N}\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>160 Newtons</code>. The hydraulic press delivers <span class="arithmatex">\(\mathbf{160\text{ Newtons}}\)</span> of crush force.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-926-quadcopter-drone-battery-flight-time-1200text-mah-80text-safe-5text-a">Challenge 9.26: Quadcopter Drone Battery Flight Time (<span class="arithmatex">\(1,200\text{ mAh}, 80\%\text{ safe}, 5\text{ A}\)</span>)</h4>
@@ -7141,7 +6299,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">11.52</td>
+<td style="text-align: left;"><span class="arithmatex">\(11.52\)</span></td>
 <td style="text-align: left;">Divide usable capacity by current to find flight time (<span class="arithmatex">\(57600 / 5000 = 11.52\text{ min}\)</span>)</td>
 </tr>
 </tbody>
@@ -7155,56 +6313,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> Convert the decimal flight time of <span class="arithmatex">\(11.52\text{ minutes}\)</span> into whole minutes and exact seconds so you can program the flight controller's low-battery alarm timer.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Look at a digital stopwatch displaying MM:SS format. Setting the timer to 11:31 ensures the drone lands before the low-voltage cutoff.</li>
 <li><strong>RPN Keystrokes:</strong> <code>11 [ENTER] .52 [ENTER] 60 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>11 min 31 sec</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>11 [ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">Park whole flight minutes in holding Register <span class="arithmatex">\(Y\)</span> (<span class="arithmatex">\(11\text{ min}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>.52 [ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">0.52</td>
-<td style="text-align: left;">0.52</td>
-<td style="text-align: left;">Key in fractional minute portion (<span class="arithmatex">\(0.52\text{ min}\)</span>) and duplicate</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>60</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">0.52</td>
-<td style="text-align: left;">60</td>
-<td style="text-align: left;">Key in seconds conversion factor (<span class="arithmatex">\(60\text{ sec/min}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">31.2</td>
-<td style="text-align: left;">Multiply to convert fraction to seconds (<span class="arithmatex">\(0.52 \times 60 = 31.2\text{ sec}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>31.2</code> with Register <span class="arithmatex">\(Y = 11\)</span>. The total safe hover duration is <span class="arithmatex">\(\mathbf{11\text{ minutes and } 31\text{ seconds}}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>11 [ENTER] .52 [ENTER] 60 [×]</code> -&gt; (T=0, Z=0, Y=11, X=31.2). Multiply to convert fraction to seconds (<span class="arithmatex">\(0.52 \times 60 = 31.2\text{ sec}\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>31.2</code> with Register <span class="arithmatex">\(Y = 11\)</span>. The total safe hover duration is <span class="arithmatex">\(\mathbf{11\text{ minutes and } 31\text{ seconds}}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-928-solar-tracker-bracket-power-at-30circ-morning-tilt-10text-w-peak-times-0866">Challenge 9.28: Solar Tracker Bracket: Power at <span class="arithmatex">\(30^\circ\)</span> Morning Tilt (<span class="arithmatex">\(10\text{ W peak} \times 0.866\)</span>)</h4>
@@ -7212,56 +6326,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> You 3D-print an adjustable bracket to align a mini solar panel toward the sun. When the sun is at a <span class="arithmatex">\(30^\circ\)</span> angle from normal, the effective solar flux factor is <span class="arithmatex">\(\cos 30^\circ \approx 0.866\)</span>. If the panel is rated for <span class="arithmatex">\(10\text{ W}\)</span> peak output, find the actual generated power.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Mount a protractor on the 3D-printed panel bracket. Adjust the angle until the shadow of a center pin aligns with the <span class="arithmatex">\(30^\circ\)</span> mark.</li>
 <li><strong>RPN Keystrokes:</strong> <code>10 [ENTER] .866 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>8.66 Watts</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>10</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">Key in rated peak solar panel wattage (<span class="arithmatex">\(10\text{ W}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">Lock rated power into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>.866</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">0.866</td>
-<td style="text-align: left;">Key in cosine projection factor for <span class="arithmatex">\(30^\circ\)</span> tilt (<span class="arithmatex">\(\cos 30^\circ \approx 0.866\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">8.66</td>
-<td style="text-align: left;">Multiply peak power by tilt factor (<span class="arithmatex">\(10 \times 0.866 = 8.66\text{ W}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>8.66 Watts</code>. At a <span class="arithmatex">\(30^\circ\)</span> tilt angle, the solar panel generates <span class="arithmatex">\(\mathbf{8.66\text{ Watts}}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>10 [ENTER] .866 [×]</code> -&gt; (T=0, Z=0, Y=0, X=8.66). Multiply peak power by tilt factor (<span class="arithmatex">\(10 \times 0.866 = 8.66\text{ W}\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>8.66 Watts</code>. At a <span class="arithmatex">\(30^\circ\)</span> tilt angle, the solar panel generates <span class="arithmatex">\(\mathbf{8.66\text{ Watts}}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-929-solar-tracker-bracket-power-at-45circ-autumn-tilt-10text-w-peak-times-0707">Challenge 9.29: Solar Tracker Bracket: Power at <span class="arithmatex">\(45^\circ\)</span> Autumn Tilt (<span class="arithmatex">\(10\text{ W peak} \times 0.707\)</span>)</h4>
@@ -7269,56 +6339,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> In late autumn afternoon light, the sun dips to a <span class="arithmatex">\(45^\circ\)</span> inclination angle (<span class="arithmatex">\(\cos 45^\circ \approx 0.707\)</span>). Compute the power generated by your <span class="arithmatex">\(10\text{ W}\)</span> panel at this oblique angle.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Tilt the protractor bracket to <span class="arithmatex">\(45^\circ\)</span> and measure the output with a USB power meter plugged between the panel and your calculator charging port.</li>
 <li><strong>RPN Keystrokes:</strong> <code>10 [ENTER] .707 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>7.07 Watts</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>10</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">Key in rated peak solar panel wattage (<span class="arithmatex">\(10\text{ W}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">Lock rated power into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>.707</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">0.707</td>
-<td style="text-align: left;">Key in cosine projection factor for <span class="arithmatex">\(45^\circ\)</span> tilt (<span class="arithmatex">\(\cos 45^\circ \approx 0.707\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">7.07</td>
-<td style="text-align: left;">Multiply peak power by tilt factor (<span class="arithmatex">\(10 \times 0.707 = 7.07\text{ W}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>7.07 Watts</code>. At a <span class="arithmatex">\(45^\circ\)</span> angle, solar generation drops to <span class="arithmatex">\(\mathbf{7.07\text{ Watts}}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>10 [ENTER] .707 [×]</code> -&gt; (T=0, Z=0, Y=0, X=7.07). Multiply peak power by tilt factor (<span class="arithmatex">\(10 \times 0.707 = 7.07\text{ W}\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>7.07 Watts</code>. At a <span class="arithmatex">\(45^\circ\)</span> angle, solar generation drops to <span class="arithmatex">\(\mathbf{7.07\text{ Watts}}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-930-kinetic-energy-of-derby-test-car-m-020text-kg-v-4text-ms">Challenge 9.30: Kinetic Energy of Derby Test Car (<span class="arithmatex">\(m = 0.20\text{ kg}, v = 4\text{ m/s}\)</span>)</h4>
@@ -7344,8 +6370,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;"><code>.5 [ENTER]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.5</td>
-<td style="text-align: left;">0.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.5\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.5\)</span></td>
 <td style="text-align: left;">Enter constant half-factor (<span class="arithmatex">\(1/2 = 0.5\)</span>) into Register <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
@@ -7353,14 +6379,14 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.1</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.1\)</span></td>
 <td style="text-align: left;">Multiply by car mass (<span class="arithmatex">\(0.20\text{ kg}\)</span>): <span class="arithmatex">\(\frac{1}{2}m = 0.10\text{ kg}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[4]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.1</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.1\)</span></td>
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">Key in velocity (<span class="arithmatex">\(v = 4.0\text{ m/s}\)</span>); lifts <span class="arithmatex">\(\frac{1}{2}m\)</span> to Register <span class="arithmatex">\(Y\)</span></td>
 </tr>
@@ -7368,7 +6394,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;"><code>[x²]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">0.1</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.1\)</span></td>
 <td style="text-align: left;">16</td>
 <td style="text-align: left;">Square velocity: <span class="arithmatex">\(v^2 = 4^2 = 16\text{ m}^2/\text{s}^2\)</span></td>
 </tr>
@@ -7377,7 +6403,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">1.6</td>
+<td style="text-align: left;"><span class="arithmatex">\(1.6\)</span></td>
 <td style="text-align: left;">Multiply <span class="arithmatex">\(\frac{1}{2}m \times v^2 = 0.10 \times 16 = 1.60\text{ Joules}\)</span></td>
 </tr>
 </tbody>
@@ -7435,8 +6461,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;"><code>[%]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">56</td>
-<td style="text-align: left;">16.8</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><span class="arithmatex">\(16.8\)</span></td>
 <td style="text-align: left;">Calculate <span class="arithmatex">\(30\%\)</span> savings (<span class="arithmatex">\(\$16.80\)</span>); base price <span class="arithmatex">\(\$56\)</span> preserved in <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
@@ -7444,15 +6470,15 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">39.2</td>
+<td style="text-align: left;"><span class="arithmatex">\(-16.8\)</span></td>
 <td style="text-align: left;">Subtract savings from base price: net price is <span class="arithmatex">\(\$39.20\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[$]</code></td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$39.20</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(-16.80\)</span></td>
 <td style="text-align: left;">Format result in two-decimal currency mode</td>
 </tr>
 </tbody>
@@ -7485,31 +6511,31 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">39.2</td>
+<td style="text-align: left;"><span class="arithmatex">\(39.2\)</span></td>
 <td style="text-align: left;">Key in discounted subtotal (<span class="arithmatex">\(\$39.20\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[ENTER]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">39.2</td>
-<td style="text-align: left;">39.2</td>
+<td style="text-align: left;"><span class="arithmatex">\(39.2\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(39.2\)</span></td>
 <td style="text-align: left;">Lock subtotal into Register <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>7.5</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">39.2</td>
-<td style="text-align: left;">7.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(39.2\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(7.5\)</span></td>
 <td style="text-align: left;">Key in sales tax percentage (<span class="arithmatex">\(7.5\%\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[%]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">39.2</td>
-<td style="text-align: left;">2.94</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.0\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(2.94\)</span></td>
 <td style="text-align: left;">Calculate sales tax amount (<span class="arithmatex">\(\$2.94\)</span>); subtotal preserved in <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
@@ -7517,15 +6543,15 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">42.14</td>
+<td style="text-align: left;"><span class="arithmatex">\(2.94\)</span></td>
 <td style="text-align: left;">Add tax to subtotal: final total checkout is <span class="arithmatex">\(\$42.14\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[$]</code></td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$42.14</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(2.94\)</span></td>
 <td style="text-align: left;">Format result in currency mode</td>
 </tr>
 </tbody>
@@ -7539,64 +6565,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> Six student makers in your robotics club jointly purchase a shared assortment of ball bearings, stepper motors, and pulleys totaling <span class="arithmatex">\(\$124.80\)</span>. How much does each member owe when splitting the cost equally?</li>
 <li><strong>Hands-On Physical Measurement:</strong> Deal six small payment envelopes onto the table. Divide the total expense into equal shares so every member pays their exact fair portion.</li>
 <li><strong>RPN Keystrokes:</strong> <code>124.80 [ENTER] [6] [÷] [$]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>$20.80</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>124.80</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">124.8</td>
-<td style="text-align: left;">Key in total team robotics order total (<span class="arithmatex">\(\$124.80\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">124.8</td>
-<td style="text-align: left;">124.8</td>
-<td style="text-align: left;">Lift total cost into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[6]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">124.8</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">Key in number of team members (<span class="arithmatex">\(6\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">20.8</td>
-<td style="text-align: left;">Divide expense evenly: individual member share is <span class="arithmatex">\(\$20.80\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[$]</code></td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$20.80</td>
-<td style="text-align: left;">Format result in currency mode</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>$20.80</code>. Each student maker contributes <span class="arithmatex">\(\mathbf{\$20.80}\)</span> to the shared kit.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>124.80 [ENTER] [6] [÷] [$]</code> -&gt; (T=0, Z=0, Y=0, X=20.8). Format result in currency mode.</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>$20.80</code>. Each student maker contributes <span class="arithmatex">\(\mathbf{\$20.80}\)</span> to the shared kit.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-934-interlocking-snap-cube-sliced-volume-2text-cm-times-2text-cm-times-2text-cm">Challenge 9.34: Interlocking Snap Cube Sliced Volume (<span class="arithmatex">\(2\text{ cm} \times 2\text{ cm} \times 2\text{ cm}\)</span>)</h4>
@@ -7604,56 +6578,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> You are modeling custom interlocking snap cubes for classroom math manipulatives. Each cube measures exactly <span class="arithmatex">\(2.0\text{ cm}\)</span> on each edge (<span class="arithmatex">\(2\text{ cm} \times 2\text{ cm} \times 2\text{ cm}\)</span>). Calculate the total volume of one cube.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Hold a physical plastic snap cube in your hand. Measure each of its three dimensions with a metric ruler to verify <span class="arithmatex">\(2.0\text{ cm} \times 2.0\text{ cm} \times 2.0\text{ cm}\)</span>.</li>
 <li><strong>RPN Keystrokes:</strong> <code>[2] [ENTER] [2] [×] [2] [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>8.0 cm³</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>[2] [ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Enter cube width (<span class="arithmatex">\(2\text{ cm}\)</span>) into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[2] [×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Multiply by depth (<span class="arithmatex">\(2\text{ cm}\)</span>) to find face area: <span class="arithmatex">\(4\text{ cm}^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[2]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Enter cube height (<span class="arithmatex">\(2\text{ cm}\)</span>); lifts area to Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">Multiply area by height to calculate solid volume (<span class="arithmatex">\(4 \times 2 = 8.0\text{ cm}^3\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>8.0 cm³</code>. The volume of a <span class="arithmatex">\(2\text{ cm}\)</span> snap cube is exactly <span class="arithmatex">\(\mathbf{8.0\text{ cm}^3}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>[2] [ENTER] [2] [×] [2] [×]</code> -&gt; (T=0, Z=0, Y=0, X=8). Multiply area by height to calculate solid volume (<span class="arithmatex">\(4 \times 2 = 8.0\text{ cm}^3\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>8.0 cm³</code>. The volume of a <span class="arithmatex">\(2\text{ cm}\)</span> snap cube is exactly <span class="arithmatex">\(\mathbf{8.0\text{ cm}^3}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-935-snap-cube-theoretical-solid-mass-rho-124text-gcm3">Challenge 9.35: Snap Cube Theoretical Solid Mass (<span class="arithmatex">\(\rho = 1.24\text{ g/cm}^3\)</span>)</h4>
@@ -7661,56 +6591,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> If you were to 3D print the <span class="arithmatex">\(8.0\text{ cm}^3\)</span> snap cube completely solid (<span class="arithmatex">\(100\%\)</span> infill) out of standard PLA thermoplastic (<span class="arithmatex">\(\rho = 1.24\text{ g/cm}^3\)</span>), what would the cube weigh?</li>
 <li><strong>Hands-On Physical Measurement:</strong> Place an 8-cube block array on your balance pan. Compare the feel of solid plastic against lightweight hollow everyday objects.</li>
 <li><strong>RPN Keystrokes:</strong> <code>[8] [ENTER] 1.24 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>9.92 grams</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>[8]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">Key in snap cube volume from Challenge 9.34 (<span class="arithmatex">\(8.0\text{ cm}^3\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">Lock cube volume into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1.24</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">1.24</td>
-<td style="text-align: left;">Key in standard PLA thermoplastic density (<span class="arithmatex">\(\rho = 1.24\text{ g/cm}^3\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">9.92</td>
-<td style="text-align: left;">Multiply volume by density to calculate solid mass (<span class="arithmatex">\(8 \times 1.24 = 9.92\text{ g}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>9.92 grams</code>. A solid <span class="arithmatex">\(100\%\)</span> infill snap cube weighs <span class="arithmatex">\(\mathbf{9.92\text{ grams}}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>[8] [ENTER] 1.24 [×]</code> -&gt; (T=0, Z=0, Y=0, X=9.92). Multiply volume by density to calculate solid mass (<span class="arithmatex">\(8 \times 1.24 = 9.92\text{ g}\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>9.92 grams</code>. A solid <span class="arithmatex">\(100\%\)</span> infill snap cube weighs <span class="arithmatex">\(\mathbf{9.92\text{ grams}}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-936-material-savings-with-20-gyroid-infill-31text-g-actual">Challenge 9.36: Material Savings with <span class="arithmatex">\(20\%\)</span> Gyroid Infill (<span class="arithmatex">\(3.1\text{ g actual}\)</span>)</h4>
@@ -7718,56 +6604,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> To save filament, you slice the snap cube with lightweight <span class="arithmatex">\(20\%\)</span> gyroid internal infill and 2 solid perimeter shells. When weighed on your gram scale, the printed cube weighs only <span class="arithmatex">\(3.1\text{ grams}\)</span>. How much plastic did you save compared to a solid block?</li>
 <li><strong>Hands-On Physical Measurement:</strong> Place the solid theoretical reference weight (<span class="arithmatex">\(9.92\text{ g}\)</span>) on one side of a balance beam and the hollow printed cube (<span class="arithmatex">\(3.1\text{ g}\)</span>) on the other. Add calibration weights to measure the saved mass.</li>
 <li><strong>RPN Keystrokes:</strong> <code>9.92 [ENTER] 3.1 [-]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>6.82 g saved</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>9.92</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">9.92</td>
-<td style="text-align: left;">Key in theoretical solid block mass (<span class="arithmatex">\(9.92\text{ g}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">9.92</td>
-<td style="text-align: left;">9.92</td>
-<td style="text-align: left;">Lock solid mass into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>3.1</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">9.92</td>
-<td style="text-align: left;">3.1</td>
-<td style="text-align: left;">Key in actual printed hollow cube weight from scale (<span class="arithmatex">\(3.1\text{ g}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[-]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">6.82</td>
-<td style="text-align: left;">Subtract printed mass from solid mass: plastic saved is <span class="arithmatex">\(6.82\text{ g}\)</span></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>6.82 g saved</code>. Using <span class="arithmatex">\(20\%\)</span> gyroid infill saves <span class="arithmatex">\(\mathbf{6.82\text{ grams}}\)</span> of plastic per block.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>9.92 [ENTER] 3.1 [-]</code> -&gt; (T=0, Z=0, Y=0, X=6.82). Subtract printed mass from solid mass: plastic saved is <span class="arithmatex">\(6.82\text{ g}\)</span>.</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>6.82 g saved</code>. Using <span class="arithmatex">\(20\%\)</span> gyroid infill saves <span class="arithmatex">\(\mathbf{6.82\text{ grams}}\)</span> of plastic per block.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-937-workshop-ceiling-pulley-pendulum-l-20text-meters">Challenge 9.37: Workshop Ceiling Pulley Pendulum (<span class="arithmatex">\(L = 2.0\text{ meters}\)</span>)</h4>
@@ -7794,21 +6636,21 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
 <td style="text-align: left;">Calculate constant factor <span class="arithmatex">\(2\pi \approx 6.283185\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[2]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">Key in pendulum cord length (<span class="arithmatex">\(L = 2.0\text{ meters}\)</span>); lifts <span class="arithmatex">\(2\pi\)</span> to <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[ENTER]</code></td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">Duplicate length into Register <span class="arithmatex">\(Y\)</span></td>
@@ -7816,25 +6658,25 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <tr>
 <td style="text-align: left;"><code>9.8</code></td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">9.8</td>
+<td style="text-align: left;"><span class="arithmatex">\(9.8\)</span></td>
 <td style="text-align: left;">Key in gravitational acceleration (<span class="arithmatex">\(g = 9.8\text{ m/s}^2\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[÷]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
-<td style="text-align: left;">0.204082</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.204082\)</span></td>
 <td style="text-align: left;">Divide length by gravity: <span class="arithmatex">\(L/g = 2.0 / 9.8 \approx 0.204082\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[f] [√x]</code></td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">6.283185</td>
-<td style="text-align: left;">0.451754</td>
+<td style="text-align: left;"><span class="arithmatex">\(6.283185\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.451754\)</span></td>
 <td style="text-align: left;">Take square root: <span class="arithmatex">\(\sqrt{L/g} \approx 0.451754\)</span></td>
 </tr>
 <tr>
@@ -7842,7 +6684,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">2.838454</td>
+<td style="text-align: left;"><span class="arithmatex">\(2.838454\)</span></td>
 <td style="text-align: left;">Multiply by <span class="arithmatex">\(2\pi\)</span> to find period (<span class="arithmatex">\(T \approx 2.84\text{ seconds}\)</span>)</td>
 </tr>
 </tbody>
@@ -7856,72 +6698,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> While testing insulation materials for your solar cooker box, a thick storm cloud covers the sun. The cooker cools down from <span class="arithmatex">\(70^\circ\text{C}\)</span> to <span class="arithmatex">\(40^\circ\text{C}\)</span> over <span class="arithmatex">\(20\text{ minutes}\)</span>. Calculate the rate of thermal loss in degrees Celsius per minute.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Monitor the temperature drop on a digital data-logging thermometer every 5 minutes, plotting the cooling curve on graph paper.</li>
 <li><strong>RPN Keystrokes:</strong> <code>70 [ENTER] 40 [-] 20 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>1.50 °C/min</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>70</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">70</td>
-<td style="text-align: left;">Key in starting peak hot temperature (<span class="arithmatex">\(70^\circ\text{C}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">70</td>
-<td style="text-align: left;">70</td>
-<td style="text-align: left;">Lift starting temperature into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>40</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">70</td>
-<td style="text-align: left;">40</td>
-<td style="text-align: left;">Key in cooled temperature in shade (<span class="arithmatex">\(40^\circ\text{C}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[-]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">30</td>
-<td style="text-align: left;">Subtract to find thermal loss: <span class="arithmatex">\(\Delta T = 70 - 40 = 30^\circ\text{C}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>20</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">30</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">Key in elapsed cooling time (<span class="arithmatex">\(20\text{ minutes}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1.5</td>
-<td style="text-align: left;">Divide temperature loss by time to find cooling rate (<span class="arithmatex">\(30 / 20 = 1.50^\circ\text{C/min}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>1.50 °C/min</code>. The cooker dissipates heat at a steady rate of <span class="arithmatex">\(\mathbf{1.50^\circ\text{C/min}}\)</span>.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>70 [ENTER] 40 [-] 20 [÷]</code> -&gt; (T=0, Z=0, Y=0, X=1.5). Divide temperature loss by time to find cooling rate (<span class="arithmatex">\(30 / 20 = 1.50^\circ\text{C/min}\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>1.50 °C/min</code>. The cooker dissipates heat at a steady rate of <span class="arithmatex">\(\mathbf{1.50^\circ\text{C/min}}\)</span>.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-939-quarter-batch-polymer-clay-recipe-3-frac12text-cups-milk-div-4">Challenge 9.39: Quarter-Batch Polymer Clay Recipe (<span class="arithmatex">\(3\ \frac{1}{2}\text{ cups milk} \div 4\)</span>)</h4>
@@ -7929,64 +6711,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <li><strong>Maker Lab Context:</strong> You are mixing a small batch of homemade casein polymer clay for molding custom pulley wheels. The master recipe calls for <span class="arithmatex">\(3\ \frac{1}{2}\)</span> cups of warm milk, but you only want to make a <span class="arithmatex">\(1/4\)</span> test batch. Find the exact fractional cups of milk needed.</li>
 <li><strong>Hands-On Physical Measurement:</strong> Take a 1-cup liquid measuring cup marked with 8 fluid ounce divisions. Fill to the 7-ounce line to verify <span class="arithmatex">\(7/8\text{ cup}\)</span>.</li>
 <li><strong>RPN Keystrokes:</strong> <code>3 [.] 1 [.] 2 [ENTER] [4] [÷] [a ᵇ/c]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>7/8 cup</code></strong></li>
-<li><strong>4-Register Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>3 [.] 1 [.] 2</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">3.5</td>
-<td style="text-align: left;">Enter recipe mixed fraction <span class="arithmatex">\(3\ \frac{1}{2}\)</span> cups via two-dot syntax</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[ENTER]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">3.5</td>
-<td style="text-align: left;">3.5</td>
-<td style="text-align: left;">Lock master recipe milk amount into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[4]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">3.5</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Key in quarter-batch divisor (<span class="arithmatex">\(4\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0.875</td>
-<td style="text-align: left;">Divide by 4: decimal amount is <span class="arithmatex">\(0.875\text{ cups}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[a ᵇ/c]</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">7/8</td>
-<td style="text-align: left;">Convert decimal to proper fraction display format (<span class="arithmatex">\(7/8\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>7/8 cup</code>. The quarter-batch recipe requires exactly <span class="arithmatex">\(\mathbf{7/8\text{ cup}}\)</span> of milk.</li>
+<li>
+<p><strong>Stack Flow:</strong> Tap <code>3 [.] 1 [.] 2 [ENTER] [4] [÷] [a ᵇ/c]</code> -&gt; (T=0, Z=0, Y=3, X=0.125). Convert decimal to proper fraction display format (<span class="arithmatex">\(7/8\)</span>).</p>
+</li>
+<li>
+<p><strong>Diagnostic Checkpoint:</strong> Register <span class="arithmatex">\(X\)</span> displays <code>7/8 cup</code>. The quarter-batch recipe requires exactly <span class="arithmatex">\(\mathbf{7/8\text{ cup}}\)</span> of milk.</p>
+</li>
 </ul>
 <hr />
 <h4 id="challenge-940-batch-award-medals-production-cost-50-times-145text-g-times-002textg">Challenge 9.40: Batch Award Medals Production Cost (<span class="arithmatex">\(50 \times 14.5\text{ g} \times 0.02/\text{g}\)</span>)</h4>
@@ -8029,7 +6759,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">50</td>
-<td style="text-align: left;">14.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(14.5\)</span></td>
 <td style="text-align: left;">Key in mass per individual printed medal (<span class="arithmatex">\(14.5\text{ g}\)</span>)</td>
 </tr>
 <tr>
@@ -8045,7 +6775,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">725</td>
-<td style="text-align: left;">0.02</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.02\)</span></td>
 <td style="text-align: left;">Key in filament spool cost per gram (<span class="arithmatex">\(\$0.02/\text{g}\)</span>)</td>
 </tr>
 <tr>
@@ -8053,15 +6783,15 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">14.5</td>
+<td style="text-align: left;"><span class="arithmatex">\(14.5\)</span></td>
 <td style="text-align: left;">Multiply mass by unit price to find total batch expense (<span class="arithmatex">\(725 \\times 0.02 = 14.50\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[$]</code></td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$0.00</td>
-<td style="text-align: left;">$14.50</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.00\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(14.50\)</span></td>
 <td style="text-align: left;">Format result in currency mode</td>
 </tr>
 </tbody>

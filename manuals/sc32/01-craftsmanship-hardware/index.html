@@ -2469,15 +2469,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#1112-algebraic-trap-vs-stackcalc-superpower-showdown-coin-cell-power-budget" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.11.2 Algebraic Trap vs. StackCalc Superpower Showdown: Coin Cell Power Budget
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3688,29 +3679,6 @@ To confirm that all snap-domes and Schottky diodes are functioning with zero ele
 $<span class="arithmatex">\(R_{\text{int}}(DOD) = R_0 + k \cdot \left(\frac{DOD}{1 - DOD}\right)\)</span>$
 where <span class="arithmatex">\(R_0 \approx 15\,\Omega\)</span> for fresh cells and <span class="arithmatex">\(DOD\)</span> is the depth of discharge (<span class="arithmatex">\(0.0 \le DOD &lt; 1.0\)</span>). </p>
 <p>To prevent voltage sag below the <span class="arithmatex">\(2.10\text{ V}\)</span> brownout threshold during high-speed Romberg integration bursts, the power rail incorporates an array of low-ESR ceramic decoupling capacitors (<span class="arithmatex">\(3 \times 22\,\mu\text{F}\)</span> X7R) acting as an energy reservoir, supplying instantaneous pulse current without stressing the high-impedance lithium chemistry.</p>
-<h3 id="1112-algebraic-trap-vs-stackcalc-superpower-showdown-coin-cell-power-budget">1.11.2 Algebraic Trap vs. StackCalc Superpower Showdown: Coin Cell Power Budget</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Challenge / Equation</th>
-<th style="text-align: left;">The Algebraic Calculator Trap (TI-30X / Smartphone)</th>
-<th style="text-align: left;">The StackCalc SC-32 + Engineering Superpower</th>
-<th style="text-align: center;">Keystroke Reduction</th>
-<th style="text-align: left;">Live Stack Visibility</th>
-<th style="text-align: left;">Engineering Breakthrough</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Coin Cell Operational Life:</strong><br><span class="arithmatex">\(225 / ((0.65 \times 2 + 0.0025 \times 22) / 24)\)</span></td>
-<td style="text-align: left;"><code>2 2 5 / ( ( 0 . 6 5 * 2 + 0 . 0 0 2 5 * 2 2 ) / 2 4 ) =</code><br>(27 keystrokes).<br><em>Trap: Triple-nested parentheses; missing an inner bracket ruins order of operations. Daily consumption (<span class="arithmatex">\(1.355\text{ mAh}\)</span>) remains invisible inside calculation buffer.</em></td>
-<td style="text-align: left;"><strong>Inside-Out Stack Energy Integration:</strong><br><code>0.65 [ENTER] 2 [×] 0.0025 [ENTER] 22 [×] [+] 24 [÷] 225 [x⇄y] [÷]</code><br>(21 keystrokes).<br>Evaluates subsystem energy rails inside-out with zero parentheses.</td>
-<td style="text-align: center;"><strong>22% fewer keystrokes</strong><br>(21 vs. 27)</td>
-<td style="text-align: left;"><strong>Continuous Rail Inspection:</strong><br>Daily energy draw (<span class="arithmatex">\(1.355\text{ mAh}\)</span>) and hourly average load (<span class="arithmatex">\(0.056\text{ mA}\)</span>) inspectable on stack before final battery life division.</td>
-<td style="text-align: left;"><strong>Subsystem Power Visibility:</strong><br>Eliminates nested syntax errors; allows hardware engineers to audit individual power states before calculating total multi-month cell life.</td>
-</tr>
-</tbody>
-</table>
 <hr />
 <h2 id="112-engineering-design-briefing-the-semiconductor-cleanroom-avionics-stress-chamber-problems-11-through-125">1.12 Engineering Design Briefing: The Semiconductor Cleanroom &amp; Avionics Stress Chamber (Problems 1.1 through 1.25)</h2>
 <p>Mastery of scientific instrumentation requires understanding the physical principles of the hardware itself. In this engineering expedition, you step into the role of a hardware reliability engineer qualifying the SC-32 for extreme field service. From calculating coin cell longevity under mixed duty cycles to auditing optical reflectance in direct sunlight, every problem deconstructs the physical reality of the instrument in your hands.</p>

@@ -2430,6 +2430,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#384-showdown-algebraic-reversal-vs-forward-rpn-place-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.8.4 Showdown: Algebraic Reversal vs. Forward RPN Place Value
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3263,21 +3272,21 @@ $<span class="arithmatex">\(\mathbf{8 + 5 = 8 + (2 + 3) = (8 + 2) + 3 = 10 + 3 =
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>8</code> [▦]</td>
+<td style="text-align: left;">[8] [▦]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">8</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>2</code> [+]</td>
+<td style="text-align: left;">[2] [+]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">10</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>3</code> [+]</td>
+<td style="text-align: left;">[3] [+]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
@@ -3666,7 +3675,7 @@ Wire 2 (Ones):  [🔴🔴🔴🔴🔴][⚪⚪⚪⚪⚪]  ---  [🔴🔴🔴🔴�
 <h3 id="371-operating-rekenrek-mode-g-count">3.7.1 Operating Rekenrek Mode (<code>[g] [COUNT]</code>)</h3>
 <ol>
 <li>Type a target number (for example, <code>[1] [4]</code>).</li>
-<li>Press <code>[g] [COUNT]</code>.</li>
+<li>Press <code>[g] [COUNT]</code> (or <code>[g] [COUNT]</code>).</li>
 <li>The transflective LCD maps the quantity across the two wires:</li>
 <li>Wire 1 shows 10 beads slid to the active left side (5 red, 5 white).</li>
 <li>Wire 2 shows 4 red beads slid to the active left side.</li>
@@ -3706,10 +3715,10 @@ $<span class="arithmatex">\(\text{placeValueDigit}(Y, X) = \left\lfloor \frac{|Y
 <thead>
 <tr>
 <th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y (Subject)</th>
-<th style="text-align: left;">Register X (Query)</th>
+<th style="text-align: left;">Display T</th>
+<th style="text-align: left;">Display Z</th>
+<th style="text-align: left;">Display Y (Subject)</th>
+<th style="text-align: left;">Display X (Query / Result)</th>
 </tr>
 </thead>
 <tbody>
@@ -3755,6 +3764,48 @@ $<span class="arithmatex">\(\text{placeValueDigit}(Y, X) = \left\lfloor \frac{|Y
 <p>In Grade 5, place value extends to the right of the decimal point (tenths and hundredths):
 - Query Tenths (<span class="arithmatex">\(0.1\)</span>): Type <code>[.] [1] [PV]</code> on <span class="arithmatex">\(345.67 \longrightarrow X = \mathbf{6}\)</span>.
 - Query Hundredths (<span class="arithmatex">\(0.01\)</span>): Type <code>[.] [0] [1] [PV]</code> on <span class="arithmatex">\(345.67 \longrightarrow X = \mathbf{7}\)</span>.</p>
+<h3 id="384-showdown-algebraic-reversal-vs-forward-rpn-place-value">3.8.4 Showdown: Algebraic Reversal vs. Forward RPN Place Value</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Challenge Problem</th>
+<th style="text-align: left;">Conventional Algebraic Syntax</th>
+<th style="text-align: left;">StackCalc RPN Workflow</th>
+<th style="text-align: left;">Algebraic Failure Mechanism</th>
+<th style="text-align: left;">RPN Engineering Triumph</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Stadium Light Wattage</strong><br><span class="arithmatex">\((30 \times 1500) + (10 \times 2000)\)</span></td>
+<td style="text-align: left;"><code>30 [×] 1500 [+] 10 [×] 2000 [=]</code></td>
+<td style="text-align: left;"><code>30 [ENTER] 1500 [×] 10 [ENTER] 2000 [×] [+]</code></td>
+<td style="text-align: left;">Hierarchy confusion; parenthesis overload</td>
+<td style="text-align: left;">Subtotals preserved on stack; zero parentheses</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Decade Bridging</strong><br><span class="arithmatex">\(8 + 5 = 8 + 2 + 3\)</span></td>
+<td style="text-align: left;"><code>8 [+] 2 [+] 3 [=]</code></td>
+<td style="text-align: left;"><code>8 [ENTER] 2 [+] 3 [+]</code></td>
+<td style="text-align: left;">Loss of intermediate decade landmark</td>
+<td style="text-align: left;">Visual flash at decade <span class="arithmatex">\(10\)</span>; smooth accumulation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Place Value Query</strong><br>Extract tens of <span class="arithmatex">\(4,725\)</span></td>
+<td style="text-align: left;">Re-enter number, divide by 10, truncate</td>
+<td style="text-align: left;"><code>4725 [ENTER] 10 [PV]</code></td>
+<td style="text-align: left;">Destructive division destroys base number</td>
+<td style="text-align: left;">Preserves <span class="arithmatex">\(Y\)</span> subject value across chained queries</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Constant Counting</strong><br>Twos ladder cadence</td>
+<td style="text-align: left;"><code>2 [+] 2 [=] [=] [=] ...</code></td>
+<td style="text-align: left;"><code>2 [ENTER] 2 [+] [+] [+] ...</code></td>
+<td style="text-align: left;">Flaky algebraic constant equals-key state</td>
+<td style="text-align: left;">Deterministic stack retention on upper shelf</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="39-big-numbers-in-nature-expanding-horizons">3.9 Big Numbers in Nature: Expanding Horizons</h2>
 <p>Once you master place value bundling, you are ready to explore the vast scale of our physical world:</p>
@@ -3782,12 +3833,10 @@ How many times does the heart beat in an entire year?
 <p>Let us calculate this continuously on the SC-6 stack without writing down any scratch paper:
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [8] [0] | 0 | 0 | 0 | 80 |
-| [ENTER] | 0 | 0 | 80 | 80 |
-| [6] [0] [×] | 0 | 0 | 0 | 4800 |
-| [2] [4] [×] | 0 | 0 | 0 | 115200 |
-| [3] [6] [5] | 0 | 0 | 115200 | 365 |
-| [×] | 0 | 0 | 0 | 42048000 |</p>
+| 80 [ENTER] | 0 | 0 | 80 | 80 |
+| 60 [×] | 0 | 0 | 0 | 4800 |
+| 24 [×] | 0 | 0 | 0 | 115200 |
+| 365 [×] | 0 | 0 | 0 | 42048000 |</p>
 <p>Now let's query the Ten-Millions place with <code>[PV]</code>:
 - Type <code>[ENTER] [1] [0] [0] [0] [0] [0] [0] [0] [PV]</code> <span class="arithmatex">\(\longrightarrow X = \mathbf{4}\)</span> (4 ten-millions!).
 - Type <code>[1] [0] [0] [0] [0] [0] [0] [PV]</code> <span class="arithmatex">\(\longrightarrow X = \mathbf{2}\)</span> (2 millions!).</p>
@@ -3844,7 +3893,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <strong>Classroom Script 3.3: Teen Number Reversals (14 vs 41)</strong><br>
 • <em>Teacher:</em> "Emma, read this number on the desk: $14$."<br>
 • <em>Emma:</em> "Fourteen."<br>
-• <em>Teacher:</em> "When you write it down, sometimes you write 4 first and get 41. Let's put 14 on our Rekenrek screen: `14 [▦]`."<br>
+• <em>Teacher:</em> "When you write it down, sometimes you write 4 first and get 41. Let's put 14 on our Rekenrek screen: `14 [g] [COUNT]`."<br>
 • <em>Emma:</em> "Wire 1 has 10 beads slid to the left. Wire 2 has 4 beads."<br>
 • <em>Teacher:</em> "Which wire has more beads?"<br>
 • <em>Emma:</em> "Wire 1! It has ten beads!"<br>
