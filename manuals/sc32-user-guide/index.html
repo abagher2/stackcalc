@@ -6289,6 +6289,48 @@ To confirm that all snap-domes and Schottky diodes are functioning with zero ele
 $<span class="arithmatex">\(R_{\text{int}}(DOD) = R_0 + k \cdot \left(\frac{DOD}{1 - DOD}\right)\)</span>$
 where <span class="arithmatex">\(R_0 \approx 15\,\Omega\)</span> for fresh cells and <span class="arithmatex">\(DOD\)</span> is the depth of discharge (<span class="arithmatex">\(0.0 \le DOD &lt; 1.0\)</span>). </p>
 <p>To prevent voltage sag below the <span class="arithmatex">\(2.10\text{ V}\)</span> brownout threshold during high-speed Romberg integration bursts, the power rail incorporates an array of low-ESR ceramic decoupling capacitors (<span class="arithmatex">\(3 \times 22\,\mu\text{F}\)</span> X7R) acting as an energy reservoir, supplying instantaneous pulse current without stressing the high-impedance lithium chemistry.</p>
+<h3 id="1112-algebraic-trap-vs-stackcalc-superpower-showdown">1.11.2 Algebraic Trap vs. StackCalc Superpower Showdown</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Evaluation Dimension</th>
+<th style="text-align: left;">The Algebraic Calculator Trap (<code>TI-30X</code> / <code>TI-84</code> / App)</th>
+<th style="text-align: left;">The StackCalc SC-32 Hardware Superpower</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Signature Problem</strong></td>
+<td style="text-align: left;"><strong>Coin Cell Operational Life:</strong> <span class="arithmatex">\(T_{\text{life}} = \frac{225}{(0.65 \times 2 + 0.0025 \times 22) / 24}\)</span></td>
+<td style="text-align: left;"><strong>Inside-Out Stack Integration:</strong> Evaluates daily active/sleep draw, normalizes hourly, and divides capacity.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Keystroke Sequence</strong></td>
+<td style="text-align: left;"><code>2 2 5 / ( ( 0 . 6 5 * 2 + 0 . 0 0 2 5 * 2 2 ) / 2 4 ) =</code></td>
+<td style="text-align: left;"><code>0.65 [ENTER] 2 [×] 0.0025 [ENTER] 22 [×] [+] 24 [÷] 225 [x⇄y] [÷]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Stroke Count &amp; Penalty</strong></td>
+<td style="text-align: left;"><strong>27 keystrokes</strong> (Triple nested parentheses, operator precedence overhead)</td>
+<td style="text-align: left;"><strong>21 keystrokes</strong> (<strong>22% fewer strokes</strong>, zero grouping syntax)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Failure Modes</strong></td>
+<td style="text-align: left;">Missing closing bracket divides <span class="arithmatex">\(225\)</span> by active term and adds sleep term, resulting in wildly incorrect lifetime estimate.</td>
+<td style="text-align: left;">Grouping errors are physically impossible; daily consumption (<span class="arithmatex">\(1.355\text{ mAh}\)</span>) is verified before lifetime division.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Stack Transparency</strong></td>
+<td style="text-align: left;">Intermediate active charge (<span class="arithmatex">\(1.30\text{ mAh}\)</span>) and daily total (<span class="arithmatex">\(1.355\text{ mAh}\)</span>) remain hidden inside the expression buffer.</td>
+<td style="text-align: left;">Daily draw (<span class="arithmatex">\(1.355\text{ mAh}\)</span>) and average hourly current (<span class="arithmatex">\(0.056\text{ mA}\)</span>) inspectable live on stack registers <span class="arithmatex">\(Y, X\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Field Resilience</strong></td>
+<td style="text-align: left;">Clearing display or syntax error wipes entire nested equation from memory.</td>
+<td style="text-align: left;">Every intermediate charge stage resides in hardware registers <span class="arithmatex">\(X, Y, Z, T\)</span>; fully inspectable with <code>[R↓]</code>.</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="112-engineering-design-briefing-the-semiconductor-cleanroom-avionics-stress-chamber-problems-11-through-125">1.12 Engineering Design Briefing: The Semiconductor Cleanroom &amp; Avionics Stress Chamber (Problems 1.1 through 1.25)</h2>
 <p>Mastery of scientific instrumentation requires understanding the physical principles of the hardware itself. In this engineering expedition, you step into the role of a hardware reliability engineer qualifying the SC-32 for extreme field service. From calculating coin cell longevity under mixed duty cycles to auditing optical reflectance in direct sunlight, every problem deconstructs the physical reality of the instrument in your hands.</p>
@@ -6328,7 +6370,7 @@ $<span class="arithmatex">\(Q_{\text{daily}} = \sum (I_i \cdot t_i)\)</span>$</p
 <td style="text-align: left;"><code>18.2</code> <code>[ENTER]</code> <code>0.5</code> <code>[×]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(18.2000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(9.1000\)</span></td>
 <td style="text-align: left;">Active calculation: <span class="arithmatex">\(9.100\text{ mAh}\)</span></td>
 </tr>
@@ -6336,7 +6378,7 @@ $<span class="arithmatex">\(Q_{\text{daily}} = \sum (I_i \cdot t_i)\)</span>$</p
 <td style="text-align: left;"><code>4.8</code> <code>[ENTER]</code> <code>1.5</code> <code>[×]</code> <code>[+]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(9.1000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(16.3000\)</span></td>
 <td style="text-align: left;">Add idle typing (<span class="arithmatex">\(7.200\text{ mAh}\)</span>)</td>
 </tr>
@@ -6344,7 +6386,7 @@ $<span class="arithmatex">\(Q_{\text{daily}} = \sum (I_i \cdot t_i)\)</span>$</p
 <td style="text-align: left;"><code>0.85</code> <code>[ENTER]</code> <code>2.0</code> <code>[×]</code> <code>[+]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(16.3000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(18.0000\)</span></td>
 <td style="text-align: left;">Add standby pause (<span class="arithmatex">\(1.700\text{ mAh}\)</span>)</td>
 </tr>
@@ -6352,7 +6394,7 @@ $<span class="arithmatex">\(Q_{\text{daily}} = \sum (I_i \cdot t_i)\)</span>$</p
 <td style="text-align: left;"><code>0.0118</code> <code>[ENTER]</code> <code>20</code> <code>[×]</code> <code>[+]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(18.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(18.2360\)</span></td>
 <td style="text-align: left;">Total daily drain: <span class="arithmatex">\(18.236\text{ mAh/day}\)</span></td>
 </tr>
@@ -6375,98 +6417,16 @@ Did your screen display <span class="arithmatex">\(X = 18.2360\)</span> before d
 <h3 id="1122-problem-12-eager-debounce-lockout-vs-mechanical-chatter-duration">1.12.2 Problem 1.2: Eager Debounce Lockout vs. Mechanical Chatter Duration</h3>
 <p><strong>Switch Dynamics Context:</strong> A high-speed typist actuates a snap-dome switch that oscillates mechanically for <span class="arithmatex">\(t_{\text{bounce}} = 4.8\text{ ms}\)</span> before settling. If Core 1 scans the matrix at <span class="arithmatex">\(f_{\text{scan}} = 200\text{ Hz}\)</span> (<span class="arithmatex">\(T_{\text{frame}} = 5.0\text{ ms}\)</span>) with a <span class="arithmatex">\(20\text{ ms}\)</span> lockout window, calculate the safety margin ratio:
 $<span class="arithmatex">\(M = \frac{T_{\text{lockout}}}{t_{\text{bounce}}}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>20 [ENTER] 4.8 [÷]</code><span class="arithmatex">\(\to \mathbf{4.1667}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>20</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(20.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(20.0000\)</span></td>
-<td style="text-align: left;">Lockout duration <span class="arithmatex">\(T_{\text{lockout}} = 20.0\text{ ms}\)</span> in <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>4.8</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(20.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.8000\)</span></td>
-<td style="text-align: left;">Switch chatter time <span class="arithmatex">\(t_{\text{bounce}}\)</span> in <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(4.1667\)</span></strong></td>
-<td style="text-align: left;">Debounce safety margin ratio <span class="arithmatex">\(M\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>20</code> <code>[ENTER]</code> — Load the firmware debounce lockout window (<span class="arithmatex">\(T_{\text{lockout}} = 20.0\text{ ms}\)</span>) into Register <span class="arithmatex">\(Y\)</span>.
-2. <code>4.8</code> <code>[÷]</code> — Enter the measured contact chatter duration (<span class="arithmatex">\(t_{\text{bounce}} = 4.8\text{ ms}\)</span>) and execute division; the resulting safety margin (<span class="arithmatex">\(M = 4.1667\)</span>) proves the switch settles four times faster than the lockout cutoff.</p>
-<p>Safety factor exceeds <span class="arithmatex">\(4\times\)</span>, guaranteeing absolute immunity to switch bounce false triggers.</p>
+<p><strong>Keystrokes:</strong> <code>20 [ENTER] 4.8 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>4.1667</code></strong>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>20 [ENTER] 4.8 [÷]</code> loads the firmware debounce lockout window (<span class="arithmatex">\(T_{\text{lockout}} = 20.0\text{ ms}\)</span>) into Register <span class="arithmatex">\(Y\)</span> and divides by the measured contact chatter duration (<span class="arithmatex">\(t_{\text{bounce}} = 4.8\text{ ms}\)</span>). The stack drops, leaving safety margin <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{4.1667})\)</span> in Register <span class="arithmatex">\(X\)</span>—proving the switch settles four times faster than the lockout cutoff without requiring scratchpad storage.</p>
 <hr />
 <h3 id="1123-problem-13-transflective-lcd-photometric-contrast-ratio">1.12.3 Problem 1.3: Transflective LCD Photometric Contrast Ratio</h3>
 <p><strong>Optics Context:</strong> A luminance meter measures light reflected from an unactivated pixel (<span class="arithmatex">\(L_{\text{white}} = 142.0\text{ cd/m}^2\)</span>) and an activated black pixel (<span class="arithmatex">\(L_{\text{black}} = 9.35\text{ cd/m}^2\)</span>). Calculate the photometric contrast ratio:
 $<span class="arithmatex">\(C_R = \frac{L_{\text{white}}}{L_{\text{black}}}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>142 [ENTER] 9.35 [÷]</code><span class="arithmatex">\(\to \mathbf{15.1872} \approx 15.2:1\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>142</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(142.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(142.0000\)</span></td>
-<td style="text-align: left;">Background luminance <span class="arithmatex">\(L_{\text{white}}\)</span> in <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>9.35</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(142.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(9.3500\)</span></td>
-<td style="text-align: left;">Activated pixel luminance <span class="arithmatex">\(L_{\text{black}}\)</span> in <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(15.1872\)</span></strong></td>
-<td style="text-align: left;">Photopic contrast ratio <span class="arithmatex">\(C_R \approx 15.2:1\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>142</code> <code>[ENTER]</code> — Enter the unactivated background luminance (<span class="arithmatex">\(L_{\text{white}} = 142.0\text{ cd/m}^2\)</span>) into the stack.
-2. <code>9.35</code> <code>[÷]</code> — Key the activated black pixel luminance (<span class="arithmatex">\(L_{\text{black}} = 9.35\text{ cd/m}^2\)</span>) and divide; the photopic contrast ratio (<span class="arithmatex">\(C_R = 15.19:1\)</span>) appears immediately, confirming ISO 9241-303 Class 1 optical clarity.</p>
-<p>Confirms ISO 9241-303 Class 1 visual ergonomics.</p>
+<p><strong>Keystrokes:</strong> <code>142 [ENTER] 9.35 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>15.1872</code></strong> <span class="arithmatex">\(\approx 15.2:1\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>142 [ENTER] 9.35 [÷]</code> enters unactivated background luminance (<span class="arithmatex">\(L_{\text{white}} = 142.0\text{ cd/m}^2\)</span>) into <span class="arithmatex">\(Y\)</span> and divides by activated black pixel luminance (<span class="arithmatex">\(L_{\text{black}} = 9.35\text{ cd/m}^2\)</span>). The stack drops, resolving the photopic contrast ratio <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{15.1872})\)</span> directly to confirm ISO 9241-303 Class 1 visual ergonomics.</p>
 <hr />
 <h3 id="1124-problem-14-80-mhz-spi-display-bus-refresh-frame-latency">1.12.4 Problem 1.4: 8.0 MHz SPI Display Bus Refresh Frame Latency</h3>
 <p><strong>Computer Engineering Context:</strong> The <span class="arithmatex">\(132 \times 65\)</span> dot-matrix LCD requires 9 command bytes and 1,056 display RAM data bytes (<span class="arithmatex">\(8 \text{ pages} \times 132 \text{ columns}\)</span>). Calculate transmission time at <span class="arithmatex">\(f_{\text{SPI}} = 8.0\text{ MHz}\)</span> (<span class="arithmatex">\(1\text{ bit} = 125\text{ ns}\)</span>):
@@ -6501,7 +6461,7 @@ $<span class="arithmatex">\(T_{\text{frame}} = \frac{(9 + 1056) \times 8\text{ b
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(8,520.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(8520.0000\)</span></td>
 <td style="text-align: left;">Serialized bit stream length</td>
 </tr>
 <tr>
@@ -6551,8 +6511,8 @@ where <span class="arithmatex">\(2166136261 \oplus 77 = 2166136200\)</span>.</p>
 <td style="text-align: left;"><code>2166136200</code> <code>[ENTER]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.1661 \times 10^9\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.1661 \times 10^9\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.1661 \times 10^{9}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.1661 \times 10^{9}\)</span></td>
 <td style="text-align: left;">Load XOR-accumulated hash state</td>
 </tr>
 <tr>
@@ -6567,8 +6527,8 @@ where <span class="arithmatex">\(2166136261 \oplus 77 = 2166136200\)</span>.</p>
 <td style="text-align: left;"><code>4294967296</code> <code>[↱] [÷R]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(8,461,672.00\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(1,489,615,688.00\)</span></strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.3562 \times 10^{9}\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(8461672.00\)</span></strong></td>
 <td style="text-align: left;">Divide with remainder: <span class="arithmatex">\(Y=\text{quotient}, X=\text{wrapped hash}\)</span></td>
 </tr>
 </tbody>
@@ -6644,155 +6604,24 @@ $<span class="arithmatex">\(A_{\text{shear}} = \pi \cdot D \cdot L, \quad F_{\te
 <p><strong>Optics Context:</strong> A 1064nm pulsed fiber laser operates at average power <span class="arithmatex">\(P_{\text{avg}} = 1.20\text{ W}\)</span>, pulse frequency <span class="arithmatex">\(f_{\text{rep}} = 35.0\text{ kHz}\)</span>, and pulse width <span class="arithmatex">\(\tau = 100\text{ ns} = 1.0 \times 10^{-7}\text{ s}\)</span>:
 $<span class="arithmatex">\(E_{\text{pulse}} = \frac{P_{\text{avg}}}{f_{\text{rep}}}, \quad P_{\text{peak}} = \frac{E_{\text{pulse}}}{\tau}\)</span>$</p>
 <p><strong>Keystrokes:</strong> <code>1.20 [ENTER] 35000 [÷] 1 [E] 7 [+/-] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>342.85714286</code></strong></p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>1.20</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.2000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.2000\)</span></td>
-<td style="text-align: left;">Average laser power <span class="arithmatex">\(P_{\text{avg}} = 1.20\text{ W}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>35000</code> <code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.4286 \times 10^{-5}\)</span></td>
-<td style="text-align: left;">Pulse energy <span class="arithmatex">\(E_{\text{pulse}} = 34.29\,\mu\text{J}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1 [E] 7 [+/-]</code> <code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(342.8571\)</span></strong></td>
-<td style="text-align: left;">Peak optical burst power <span class="arithmatex">\(P_{\text{peak}}\)</span> in Watts</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>1.20</code> <code>[ENTER]</code> — Deposit average laser optical power (<span class="arithmatex">\(P_{\text{avg}} = 1.20\text{ W}\)</span>) into the accumulator.
-2. <code>35000</code> <code>[÷]</code> — Key pulse repetition frequency (<span class="arithmatex">\(f_{\text{rep}} = 35.0\text{ kHz}\)</span>) and divide; single-pulse optical energy (<span class="arithmatex">\(E_{\text{pulse}} = 34.29\,\mu\text{J}\)</span>) condenses in <span class="arithmatex">\(X\)</span>.
-3. <code>1 [E] 7 [+/-]</code> <code>[÷]</code> — Enter optical pulse width (<span class="arithmatex">\(\tau = 100\text{ ns} = 1.0 \times 10^{-7}\text{ s}\)</span>) and divide; peak instantaneous optical burst power (<span class="arithmatex">\(P_{\text{peak}} = 342.86\text{ W}\)</span>) is calculated in place.</p>
-<p>Stack: <span class="arithmatex">\(Y = 3.4286 \times 10^{-5}\text{ J}\)</span> (<span class="arithmatex">\(34.29\,\mu\text{J}\)</span>), <span class="arithmatex">\(X = \mathbf{342.85714286\text{ W}}\)</span> peak power.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>1.20 [ENTER] 35000 [÷]</code> deposits average laser power (<span class="arithmatex">\(1.20\text{ W}\)</span>) into <span class="arithmatex">\(Y\)</span>, divides by pulse frequency (<span class="arithmatex">\(35.0\text{ kHz}\)</span>), and drops the stack to leave pulse energy <span class="arithmatex">\(3.4286 \times 10^{-5}\text{ J}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.4286 \times 10^{-5})\)</span>.
+2. Striking <code>1 [E] 7 [+/-] [÷]</code> enters pulse width (<span class="arithmatex">\(\tau = 100\text{ ns}\)</span>) and divides, evaluating peak optical burst power <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{342.8571}\text{ W})\)</span> directly in Register <span class="arithmatex">\(X\)</span>.</p>
 <hr />
 <h3 id="1128-problem-18-low-dropout-linear-regulator-ldo-power-dissipation">1.12.8 Problem 1.8: Low-Dropout Linear Regulator (LDO) Power Dissipation</h3>
 <p><strong>Thermal Context:</strong> Twin CR2032 batteries deliver <span class="arithmatex">\(V_{\text{in}} = 5.80\text{ V}\)</span> to an LDO supplying <span class="arithmatex">\(V_{\text{out}} = 3.30\text{ V}\)</span> at active computation current <span class="arithmatex">\(I = 18.2\text{ mA}\)</span>:
 $<span class="arithmatex">\(P_{\text{diss}} = (V_{\text{in}} - V_{\text{out}}) \cdot I\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>5.80 [ENTER] 3.30 [-] 0.0182 [×] 1000 [×]</code><span class="arithmatex">\(\to \mathbf{45.5000\text{ mW}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>5.80</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.8000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.8000\)</span></td>
-<td style="text-align: left;">Battery input potential <span class="arithmatex">\(V_{\text{in}} = 5.80\text{ V}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>3.30</code> <code>[-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.5000\)</span></td>
-<td style="text-align: left;">Voltage drop <span class="arithmatex">\(\Delta V = V_{\text{in}} - V_{\text{out}}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.0182</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0455\)</span></td>
-<td style="text-align: left;">Dissipated power in Watts</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1000</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(45.5000\)</span></strong></td>
-<td style="text-align: left;">Regulator dissipation <span class="arithmatex">\(P_{\text{diss}}\)</span> in mW</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>5.80</code> <code>[ENTER]</code> — Arm the stack with the battery input potential (<span class="arithmatex">\(V_{\text{in}} = 5.80\text{ V}\)</span>).
-2. <code>3.30</code> <code>[-]</code> — Enter regulated output voltage (<span class="arithmatex">\(V_{\text{out}} = 3.30\text{ V}\)</span>) and subtract; linear drop headroom (<span class="arithmatex">\(\Delta V = 2.50\text{ V}\)</span>) condenses in <span class="arithmatex">\(X\)</span>.
-3. <code>18.2</code> <code>[×]</code> — Key active core current (<span class="arithmatex">\(I = 18.2\text{ mA}\)</span>) and multiply; total internal regulator heat dissipation (<span class="arithmatex">\(P_{\text{diss}} = 45.50\text{ mW}\)</span>) is derived with zero parentheses.</p>
-<p>Negligible thermal rise of <span class="arithmatex">\(&lt; 1.2^\circ\text{C}\)</span> in the SOT-23 regulator package.</p>
+<p><strong>Keystrokes:</strong> <code>5.80 [ENTER] 3.30 [-] 0.0182 [×] 1000 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>45.5000</code></strong><span class="arithmatex">\(\text{ mW}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>5.80 [ENTER] 3.30 [-]</code> evaluates battery headroom drop <span class="arithmatex">\(\Delta V = 2.50\text{ V}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.5000)\)</span>.
+2. Striking <code>0.0182 [×] 1000 [×]</code> multiplies by active computation current (<span class="arithmatex">\(18.2\text{ mA}\)</span>) and normalizes to milliwatts, yielding regulator heat dissipation <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{45.5000}\text{ mW})\)</span>—confirming negligible thermal rise (<span class="arithmatex">\(&lt; 1.2^\circ\text{C}\)</span>) without grouping syntax.</p>
 <hr />
 <h3 id="1129-problem-19-matrix-scanning-diode-noise-margin">1.12.9 Problem 1.9: Matrix Scanning Diode Noise Margin</h3>
 <p><strong>Electronics Context:</strong> Keypad matrix lines use <span class="arithmatex">\(3.3\text{ V}\)</span> logic with low-state threshold <span class="arithmatex">\(V_{IL,\max} = 0.80\text{ V}\)</span>. A Schottky isolating diode has forward drop <span class="arithmatex">\(V_F = 0.32\text{ V}\)</span> at <span class="arithmatex">\(2.0\text{ mA}\)</span>. Calculate the low-state noise margin:
 $<span class="arithmatex">\(V_{NM,L} = V_{IL,\max} - V_F\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>0.80 [ENTER] 0.32 [-]</code><span class="arithmatex">\(\to \mathbf{0.4800\text{ V}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>0.80</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.8000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.8000\)</span></td>
-<td style="text-align: left;">Low-state input threshold <span class="arithmatex">\(V_{IL,\max}\)</span> in Volts</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.32</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.8000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.3200\)</span></td>
-<td style="text-align: left;">Schottky diode forward drop <span class="arithmatex">\(V_F\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.4800\)</span></strong></td>
-<td style="text-align: left;">Low-state noise immunity margin <span class="arithmatex">\(V_{NM,L}\)</span> in Volts</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>0.80</code> <code>[ENTER]</code> — Load the maximum low-level input threshold (<span class="arithmatex">\(V_{IL,\max} = 0.80\text{ V}\)</span>) into Register <span class="arithmatex">\(Y\)</span>.
-2. <code>0.32</code> <code>[-]</code> — Enter Schottky matrix diode forward drop (<span class="arithmatex">\(V_F = 0.32\text{ V}\)</span>) and subtract; low-state noise immunity margin (<span class="arithmatex">\(V_{NM,L} = 0.4800\text{ V} = 480\text{ mV}\)</span>) remains live in Register <span class="arithmatex">\(X\)</span>.</p>
-<p>Guarantees <span class="arithmatex">\(480\text{ mV}\)</span> of electrical noise immunity against ambient RF interference.</p>
+<p><strong>Keystrokes:</strong> <code>0.80 [ENTER] 0.32 [-]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>0.4800</code></strong><span class="arithmatex">\(\text{ V}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>0.80 [ENTER] 0.32 [-]</code> loads low-state input threshold (<span class="arithmatex">\(0.80\text{ V}\)</span>) into Register <span class="arithmatex">\(Y\)</span> and subtracts Schottky forward drop (<span class="arithmatex">\(0.32\text{ V}\)</span>). The stack drops, resolving the noise immunity margin <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.4800}\text{ V} = 480\text{ mV})\)</span> in place to guarantee RF immunity.</p>
 <hr />
 <h3 id="11210-problem-110-power-on-reset-por-delay-rc-time-constant">1.12.10 Problem 1.10: Power-On Reset (POR) Delay RC Time Constant</h3>
 <p><strong>Circuit Analysis Context:</strong> Reset pin requires rising above <span class="arithmatex">\(V_{\text{th}} = 2.10\text{ V}\)</span> on a <span class="arithmatex">\(3.30\text{ V}\)</span> rail. With pull-up <span class="arithmatex">\(R = 100\text{ k}\Omega\)</span> and capacitor <span class="arithmatex">\(C = 0.10\,\mu\text{F} = 1.0 \times 10^{-7}\text{ F}\)</span>:
@@ -6842,9 +6671,9 @@ $<span class="arithmatex">\(V(t) = V_{\text{dd}} \left(1 - e^{-t/RC}\right) \imp
 <tr>
 <td style="text-align: left;"><code>100000</code> <code>[ENTER]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(-1.0116\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(100,000.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(100000.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(100000.00\)</span></td>
 <td style="text-align: left;">Pull-up resistance <span class="arithmatex">\(R = 100\text{ k}\Omega\)</span></td>
 </tr>
 <tr>
@@ -6889,111 +6718,18 @@ Ensures microcontroller clock PLL is stable before releasing Core 0 from reset.<
 <h3 id="11211-problem-111-crystal-oscillator-load-capacitance">1.12.11 Problem 1.11: Crystal Oscillator Load Capacitance</h3>
 <p><strong>RF Electronics Context:</strong> A <span class="arithmatex">\(12.000\text{ MHz}\)</span> fundamental quartz crystal specifies load capacitance <span class="arithmatex">\(C_L = 18.0\text{ pF}\)</span>. With PCB stray capacitance <span class="arithmatex">\(C_{\text{stray}} = 3.5\text{ pF}\)</span>, calculate matching external shunt capacitors (<span class="arithmatex">\(C_1 = C_2 = C\)</span>):
 $<span class="arithmatex">\(C_L = \frac{C}{2} + C_{\text{stray}} \implies C = 2 (C_L - C_{\text{stray}})\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>18 [ENTER] 3.5 [-] 2 [×]</code><span class="arithmatex">\(\to \mathbf{29.0000\text{ pF}}\)</span>.</p>
-<blockquote>
-<p><strong>Named RPN Stack Idiom: <em>The Parallel Reciprocal x∥y Shortcut &amp; Capacitance Matching</em></strong> — Invert stray capacitance offset and double the series combination directly in the operational stack <em>(<a href="../sc32/appendix-e-annotated-bibliography/#cite-horowitz2015">Horowitz &amp; Hill, 2015</a>)</em>.</p>
-</blockquote>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>18</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(18.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(18.0000\)</span></td>
-<td style="text-align: left;">Crystal nominal load capacitance <span class="arithmatex">\(C_L\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>3.5</code> <code>[-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(14.5000\)</span></td>
-<td style="text-align: left;">Net series capacitance <span class="arithmatex">\(C_L - C_{\text{stray}}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>2</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(29.0000\)</span></strong></td>
-<td style="text-align: left;">Matching shunt capacitor rating <span class="arithmatex">\(C\)</span> in pF</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>18</code> <code>[ENTER]</code> — Load the crystal specified load capacitance (<span class="arithmatex">\(C_L = 18.0\text{ pF}\)</span>) into Register <span class="arithmatex">\(Y\)</span>.
-2. <code>3.5</code> <code>[-]</code> — Subtract stray trace capacitance (<span class="arithmatex">\(C_{\text{stray}} = 3.5\text{ pF}\)</span>); net series capacitance (<span class="arithmatex">\(C_L - C_{\text{stray}} = 14.5\text{ pF}\)</span>) appears in <span class="arithmatex">\(X\)</span>.
-3. <code>2</code> <code>[×]</code> — Double the value for the two symmetric legs; the target capacitor value (<span class="arithmatex">\(C = 29.0\text{ pF}\)</span>) is verified immediately.</p>
-<p>Select standard <span class="arithmatex">\(27\text{ pF}\)</span> or <span class="arithmatex">\(30\text{ pF}\)</span> C0G ceramic capacitors.</p>
+<p><strong>Keystrokes:</strong> <code>18 [ENTER] 3.5 [-] 2 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>29.0000</code></strong><span class="arithmatex">\(\text{ pF}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>18 [ENTER] 3.5 [-]</code> evaluates net series capacitance <span class="arithmatex">\(C_L - C_{\text{stray}} = 14.5\text{ pF}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 14.5000)\)</span>.
+2. Striking <code>2 [×]</code> doubles the series branch value, calculating the required matching shunt capacitor rating <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{29.0000}\text{ pF})\)</span>—indicating standard <span class="arithmatex">\(27\text{ pF}\)</span> or <span class="arithmatex">\(30\text{ pF}\)</span> C0G ceramics with zero memory registers.</p>
 <hr />
 <h3 id="11212-problem-112-flash-sector-wear-endurance-under-extreme-daily-editing">1.12.12 Problem 1.12: Flash Sector Wear Endurance Under Extreme Daily Editing</h3>
 <p><strong>Memory Reliability Context:</strong> A math enthusiast saves 45 equation configurations per day. If QSPI flash sectors withstand <span class="arithmatex">\(100,000\)</span> write/erase cycles and ping-pong wear-leveling doubles endurance across 2 slots, find sector lifetime in years:
 $<span class="arithmatex">\(t_{\text{years}} = \frac{2 \times 100,000}{45 \times 365.25}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>200000 [ENTER] 45 [ENTER] 365.25 [×] [÷]</code><span class="arithmatex">\(\to \mathbf{12.1683\text{ years}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>200000</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(200,000.00\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(200,000.00\)</span></td>
-<td style="text-align: left;">Total dual-slot endurance cycles</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>45</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(200,000.00\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(45.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(45.0000\)</span></td>
-<td style="text-align: left;">Daily edit transactions</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>365.25</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(200,000.00\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(16,436.25\)</span></td>
-<td style="text-align: left;">Annual sector write cycles</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(12.1683\)</span></strong></td>
-<td style="text-align: left;">Guaranteed flash endurance in years</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>200000</code> <code>[ENTER]</code> — Prime the stack with total ping-pong cycle capacity (<span class="arithmatex">\(2 \times 100,000 = 200,000\text{ cycles}\)</span>).
-2. <code>45</code> <code>[ENTER]</code> — Enter daily save frequency (<span class="arithmatex">\(45\text{ saves/day}\)</span>) into the active register.
-3. <code>365.25</code> <code>[×]</code> — Multiply by average days per year; the annual write cycle rate (<span class="arithmatex">\(16,436.25\text{ writes/year}\)</span>) is calculated while total capacity waits in <span class="arithmatex">\(Y\)</span>.
-4. <code>[÷]</code> — Divide capacity by yearly wear; minimum operational endurance (<span class="arithmatex">\(t = 12.168\text{ years}\)</span>) confirms over a decade of continuous service.</p>
+<p><strong>Keystrokes:</strong> <code>200000 [ENTER] 45 [ENTER] 365.25 [×] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>12.1683</code></strong><span class="arithmatex">\(\text{ years}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>200000 [ENTER] 45 [ENTER] 365.25 [×]</code> loads dual-slot endurance (<span class="arithmatex">\(200,000\text{ cycles}\)</span>) into <span class="arithmatex">\(Z\)</span> and evaluates annual sector write cycles (<span class="arithmatex">\(45 \times 365.25 = 16,436.25\text{ writes/yr}\)</span>) in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 200000.0000, X: 16436.2500)\)</span>.
+2. Striking <code>[÷]</code> divides total cycle endurance by yearly wear, yielding guaranteed operational lifespan <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{12.1682}\text{ years})\)</span>—confirming over a decade of continuous daily service.</p>
 <hr />
 <h3 id="11213-problem-113-chassis-top-faceplate-flexure-under-400g-keypress">1.12.13 Problem 1.13: Chassis Top Faceplate Flexure Under 400g Keypress</h3>
 <p><strong>Solid Mechanics Context:</strong> Model the faceplate bridge between standoffs as a simply supported beam (<span class="arithmatex">\(L = 60.0\text{ mm}\)</span>, <span class="arithmatex">\(b = 15.0\text{ mm}\)</span>, thickness <span class="arithmatex">\(h = 2.5\text{ mm}\)</span>, polymer flexural modulus <span class="arithmatex">\(E = 3.5\text{ GPa} = 3500\text{ N/mm}^2\)</span>) under snap-dome actuation <span class="arithmatex">\(F = 3.92\text{ N}\)</span>:
@@ -7019,8 +6755,8 @@ $<span class="arithmatex">\(I = \frac{b h^3}{12}, \quad \delta = \frac{F L^3}{48
 <tr>
 <td style="text-align: left;"><code>15</code> <code>[ENTER]</code> <code>2.5</code> <code>[ENTER]</code> <code>3</code> <code>[yˣ]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(15.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(15.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(15.6250\)</span></td>
 <td style="text-align: left;">Thickness cubed <span class="arithmatex">\(h^3 = 2.5^3\)</span></td>
 </tr>
@@ -7029,47 +6765,47 @@ $<span class="arithmatex">\(I = \frac{b h^3}{12}, \quad \delta = \frac{F L^3}{48
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(19.5313\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.5312\)</span></td>
 <td style="text-align: left;">Moment of inertia <span class="arithmatex">\(I = bh^3/12\)</span> in mm<span class="arithmatex">\(^4\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>3.92</code> <code>[ENTER]</code> <code>60</code> <code>[ENTER]</code> <code>3</code> <code>[yˣ]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(19.5313\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.5312\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.5312\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(3.9200\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(216,000.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(216000.00\)</span></td>
 <td style="text-align: left;">Span cubed <span class="arithmatex">\(L^3 = 60^3\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(19.5313\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(846,720.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.5312\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.5312\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.5312\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(846720.00\)</span></td>
 <td style="text-align: left;">Bending load numerator <span class="arithmatex">\(F L^3\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>48</code> <code>[ENTER]</code> <code>3500</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(19.5313\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(846,720.00\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(168,000.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.5312\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.5312\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(846720.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(168000.00\)</span></td>
 <td style="text-align: left;">Modulus factor <span class="arithmatex">\(48 E\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[R↓]</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(846,720.00\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3,281,250.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(168000.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(168000.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.53\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.6538 \times 10^{7}\)</span></td>
 <td style="text-align: left;">Flexural rigidity <span class="arithmatex">\(48 E I\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.2580\)</span></strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(168000.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(168000.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(168000.0000\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(1.1810 \times 10^{-6}\)</span></strong></td>
 <td style="text-align: left;">Center beam flexure <span class="arithmatex">\(\delta\)</span> in mm</td>
 </tr>
 </tbody>
@@ -7148,51 +6884,10 @@ $<span class="arithmatex">\(R_{\text{int}} = \frac{V_1 - V_2}{I_2 - I_1}\)</span
 <h3 id="11215-problem-115-lcd-bias-temperature-compensation-slope">1.12.15 Problem 1.15: LCD Bias Temperature Compensation Slope</h3>
 <p><strong>Display Engineering Context:</strong> The liquid crystal threshold voltage varies with temperature by <span class="arithmatex">\(\frac{dV_{\text{LCD}}}{dT} = -12.5\text{ mV/}^\circ\text{C}\)</span>. If nominal voltage is <span class="arithmatex">\(V_0 = 9.00\text{ V}\)</span> at <span class="arithmatex">\(25.0^\circ\text{C}\)</span>, find required drive voltage at freezing (<span class="arithmatex">\(0.0^\circ\text{C}\)</span>):
 $<span class="arithmatex">\(V(T) = V_0 + \frac{dV}{dT} (T - T_0) = 9.00 + (-0.0125)(0 - 25)\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>0 [ENTER] 25 [-] 0.0125 [+/-] [×] 9.00 [+]</code><span class="arithmatex">\(\to \mathbf{9.3125\text{ V}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>0</code> <code>[ENTER]</code> <code>25</code> <code>[-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(-25.0000\)</span></td>
-<td style="text-align: left;">Freezing temperature offset <span class="arithmatex">\(\Delta T\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.0125</code> <code>[+/-]</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.3125\)</span></td>
-<td style="text-align: left;">Voltage correction factor</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>9.00</code> <code>[+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(9.3125\)</span></strong></td>
-<td style="text-align: left;">Required drive potential <span class="arithmatex">\(V(0)\)</span> in Volts</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>0</code> <code>[ENTER]</code> — Enter freezing test temperature (<span class="arithmatex">\(T = 0.0^\circ\text{C}\)</span>) into the stack.
-2. <code>25</code> <code>[-]</code> — Subtract reference calibration baseline (<span class="arithmatex">\(T_0 = 25.0^\circ\text{C}\)</span>); temperature offset (<span class="arithmatex">\(\Delta T = -25.0^\circ\text{C}\)</span>) forms in <span class="arithmatex">\(X\)</span>.
-3. <code>0.0125</code> <code>[+/-]</code> <code>[×]</code> — Multiply by LCD thermal sensitivity slope (<span class="arithmatex">\(-0.0125\text{ V}/^\circ\text{C}\)</span>); bias voltage correction (<span class="arithmatex">\(+0.3125\text{ V}\)</span>) forms in <span class="arithmatex">\(X\)</span>.
-4. <code>9.00</code> <code>[+]</code> — Add nominal room-temperature drive potential (<span class="arithmatex">\(V_0 = 9.00\text{ V}\)</span>); target liquid crystal bias voltage (<span class="arithmatex">\(V_{\text{LCD}} = 9.3125\text{ V}\)</span>) is confirmed.</p>
+<p><strong>Keystrokes:</strong> <code>0 [ENTER] 25 [-] 0.0125 [+/-] [×] 9.00 [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>9.3125</code></strong><span class="arithmatex">\(\text{ V}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>0 [ENTER] 25 [-]</code> evaluates temperature differential <span class="arithmatex">\(\Delta T = -25.0^\circ\text{C}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: -25.0000)\)</span>.
+2. Striking <code>0.0125 [+/-] [×] 9.00 [+]</code> scales by thermal sensitivity slope (<span class="arithmatex">\(-0.0125\text{ V/}^\circ\text{C}\)</span>) to produce offset <span class="arithmatex">\(+0.3125\text{ V}\)</span> and adds nominal room-temperature drive potential, resolving freezing LCD bias potential <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{9.3125}\text{ V})\)</span> in place.</p>
 <hr />
 <h3 id="11216-problem-116-decoupling-capacitor-resonant-frequency-at-150-mhz-clock">1.12.16 Problem 1.16: Decoupling Capacitor Resonant Frequency at 150 MHz Clock</h3>
 <p><strong>Power Integrity Context:</strong> A <span class="arithmatex">\(0.10\,\mu\text{F}\)</span> 0603 decoupling capacitor has parasitic equivalent series inductance <span class="arithmatex">\(ESL = 0.85\text{ nH} = 8.5 \times 10^{-10}\text{ H}\)</span>. Find self-resonant frequency <span class="arithmatex">\(f_{\text{SRF}}\)</span>:
@@ -7377,128 +7072,21 @@ $<span class="arithmatex">\(v_{\text{impact}} = \sqrt{2gh}, \quad a_{\text{avg}}
 <h3 id="11219-problem-119-quiescent-sleep-power-consumption-over-18-months">1.12.19 Problem 1.19: Quiescent Sleep Power Consumption Over 18 Months</h3>
 <p><strong>Energetics Context:</strong> In deep sleep (<span class="arithmatex">\(I = 11.8\,\mu\text{A}\)</span> at <span class="arithmatex">\(V = 3.0\text{ V}\)</span>), find total energy consumed in Joules over an 18-month shelf storage (<span class="arithmatex">\(547.5\text{ days} = 13,140\text{ hours}\)</span>):
 $<span class="arithmatex">\(E = V \cdot I \cdot t\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>3.0 [ENTER] 11.8 [E] 6 [+/-] [×] 13140 [×] 3600 [×]</code><span class="arithmatex">\(\to \mathbf{1,674.5616\text{ Joules}}\)</span>.</p>
+<p><strong>Keystrokes:</strong> <code>3.0 [ENTER] 11.8 [E] 6 [+/-] [×] 13140 [×] 3600 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>1,674.5616</code></strong><span class="arithmatex">\(\text{ Joules}\)</span>.</p>
 <blockquote>
 <p><strong>Named RPN Stack Idiom: <em>The Constant-in-T Pipeline</em></strong> — Park battery potential in the stack to stream current and time across months, accumulating total dissipated Joules without scratchpad storage <em>(<a href="../sc32/appendix-e-annotated-bibliography/#cite-horowitz2015">Horowitz &amp; Hill, 2015</a>)</em>.</p>
 </blockquote>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>3.0</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
-<td style="text-align: left;">Battery terminal voltage <span class="arithmatex">\(V = 3.0\text{ V}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>11.8 [E] 6 [+/-]</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.5400 \times 10^{-5}\)</span></td>
-<td style="text-align: left;">Quiescent sleep power dissipation in Watts</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>13140</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.4652\)</span></td>
-<td style="text-align: left;">Accumulated shelf energy in Watt-hours</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>3600</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(1,674.5616\)</span></strong></td>
-<td style="text-align: left;">Total 18-month energy consumed in Joules</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>3.0</code> <code>[ENTER]</code> — Load nominal coin-cell terminal voltage (<span class="arithmatex">\(V = 3.0\text{ V}\)</span>) onto the stack.
-2. <code>1.18 [E] 5 [+/-]</code> <code>[×]</code> — Multiply by deep sleep quiescent current (<span class="arithmatex">\(I = 1.18 \times 10^{-5}\text{ A}\)</span>); continuous sleep power dissipation (<span class="arithmatex">\(P = 35.40\,\mu\text{W}\)</span>) occupies <span class="arithmatex">\(X\)</span>.
-3. <code>13140</code> <code>[×]</code> — Scale by 18-month storage duration in hours (<span class="arithmatex">\(13,140\text{ hours}\)</span>); accumulated watt-hours (<span class="arithmatex">\(0.4652\text{ Wh}\)</span>) forms in <span class="arithmatex">\(X\)</span>.
-4. <code>3600</code> <code>[×]</code> — Multiply by seconds per hour (<span class="arithmatex">\(3600\text{ s/h}\)</span>); total dissipated shelf energy (<span class="arithmatex">\(E = 1,674.56\text{ Joules}\)</span>) resolves with zero parentheses.</p>
-<p>Consumes less than <span class="arithmatex">\(20\%\)</span> of the coin cell's <span class="arithmatex">\(8,100\text{ J}\)</span> chemical capacity.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>3.0 [ENTER] 11.8 [E] 6 [+/-] [×]</code> loads nominal battery potential (<span class="arithmatex">\(3.0\text{ V}\)</span>) and multiplies by deep sleep current (<span class="arithmatex">\(11.8\,\mu\text{A}\)</span>), forming continuous power dissipation <span class="arithmatex">\(3.5400 \times 10^{-5}\text{ W}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.5400 \times 10^{-5})\)</span>.
+2. Striking <code>13140 [×] 3600 [×]</code> scales by storage duration in hours and converts to seconds, calculating total 18-month energy consumed <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1674.5616}\text{ Joules})\)</span>—less than <span class="arithmatex">\(20\%\)</span> of the coin cell's chemical reserve.</p>
 <hr />
 <h3 id="11220-problem-120-microcontroller-core-clock-pll-lock-phase-margin">1.12.20 Problem 1.20: Microcontroller Core Clock PLL Lock Phase Margin</h3>
 <p><strong>Silicon Design Context:</strong> Phase-Locked Loop loop filter has damping factor <span class="arithmatex">\(\zeta = 0.707\)</span> and natural frequency <span class="arithmatex">\(\omega_n = 2.40 \times 10^6\text{ rad/s}\)</span>. Calculate settling time to <span class="arithmatex">\(1\%\)</span> phase error:
 $<span class="arithmatex">\(t_{\text{lock}} \approx \frac{4.6}{\zeta \omega_n}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>4.6 [ENTER] 0.707 [ENTER] 2.40 [E] 6 [×] [÷] 1 [E] 6 [×]</code><span class="arithmatex">\(\to \mathbf{2.7109853843\,\mu\text{s}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>4.6</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.6000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.6000\)</span></td>
-<td style="text-align: left;">Four-time-constant settling factor</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.707</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.6000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.7070\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.7070\)</span></td>
-<td style="text-align: left;">Damping ratio <span class="arithmatex">\(\zeta = 0.707\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>2.40 [E] 6</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.6000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.6968 \times 10^6\)</span></td>
-<td style="text-align: left;">Denominator product <span class="arithmatex">\(\zeta \omega_n\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.7110 \times 10^{-6}\)</span></td>
-<td style="text-align: left;">Settling time in seconds</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1 [E] 6</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(2.7110\)</span></strong></td>
-<td style="text-align: left;">Phase lock time <span class="arithmatex">\(t_{\text{lock}}\)</span> in microseconds</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>4.6</code> <code>[ENTER]</code> — Prime the stack with the four-time-constant <span class="arithmatex">\(1\%\)</span> settling factor (<span class="arithmatex">\(4.6\)</span>).
-2. <code>0.707</code> <code>[÷]</code> — Divide by PLL loop damping ratio (<span class="arithmatex">\(\zeta = 0.707\)</span>); normalized damping rate (<span class="arithmatex">\(6.5064\)</span>) forms in <span class="arithmatex">\(X\)</span>.
-3. <code>2.4 [E] 6</code> <code>[÷]</code> — Divide by PLL natural angular frequency (<span class="arithmatex">\(\omega_n = 2.40 \times 10^6\text{ rad/s}\)</span>); total phase lock acquisition time (<span class="arithmatex">\(t_{\text{lock}} = 2.7110 \times 10^{-6}\text{ s} = 2.71\,\mu\text{s}\)</span>) is confirmed.</p>
-<p>Confirms clock stabilization takes <span class="arithmatex">\(&lt; 3\,\mu\text{s}\)</span>, well within the <span class="arithmatex">\(0.45\text{ ms}\)</span> boot window.</p>
+<p><strong>Keystrokes:</strong> <code>4.6 [ENTER] 0.707 [ENTER] 2.40 [E] 6 [×] [÷] 1 [E] 6 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>2.7109853843</code></strong><span class="arithmatex">\(\,\mu\text{s}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>4.6 [ENTER] 0.707 [ENTER] 2.40 [E] 6 [×] [÷]</code> loads the four-time-constant factor (<span class="arithmatex">\(4.6\)</span>), evaluates the loop denominator <span class="arithmatex">\(\zeta \omega_n = 1.6968 \times 10^6\text{ rad/s}\)</span>, and divides to obtain settling time <span class="arithmatex">\(2.7110 \times 10^{-6}\text{ s}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.7110 \times 10^{-6})\)</span>.
+2. Striking <code>1 [E] 6 [×]</code> converts to microseconds, confirming PLL phase lock acquisition <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2.7110}\,\mu\text{s})\)</span> takes under <span class="arithmatex">\(3\,\mu\text{s}\)</span>.</p>
 <hr />
 <h3 id="11221-problem-121-lead-free-solder-joint-thermal-fatigue-life">1.12.21 Problem 1.21: Lead-Free Solder Joint Thermal Fatigue Life</h3>
 <p><strong>Reliability Physics Context:</strong> Coffin-Manson relation for SAC305 solder joints cycling between <span class="arithmatex">\(-10^\circ\text{C}\)</span> and <span class="arithmatex">\(+45^\circ\text{C}\)</span> (<span class="arithmatex">\(\Delta T = 55\text{ K}\)</span>, fatigue exponent <span class="arithmatex">\(m = 2.2\)</span>, calibration constant <span class="arithmatex">\(C = 1.8 \times 10^7\)</span>):
@@ -7522,15 +7110,15 @@ $<span class="arithmatex">\(N_f = \frac{C}{(\Delta T)^m}\)</span>$</p>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(6,742.1465\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(6742.1423\)</span></td>
 <td style="text-align: left;">Thermal swing power <span class="arithmatex">\((\Delta T)^{2.2}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>1.8 [E] 7</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(6,742.1465\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.8000 \times 10^7\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(6742.1423\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.8000 \times 10^{7}\)</span></td>
 <td style="text-align: left;">SAC305 fatigue coefficient <span class="arithmatex">\(C\)</span></td>
 </tr>
 <tr>
@@ -7553,194 +7141,33 @@ $<span class="arithmatex">\(N_f = \frac{C}{(\Delta T)^m}\)</span>$</p>
 <h3 id="11222-problem-122-electrostatic-discharge-esd-human-body-model-spark">1.12.22 Problem 1.22: Electrostatic Discharge (ESD) Human Body Model Spark</h3>
 <p><strong>EMC Compliance Context:</strong> Human Body Model (<span class="arithmatex">\(C = 100\text{ pF}\)</span>, discharge resistance <span class="arithmatex">\(R = 1500\,\Omega\)</span>) charged to <span class="arithmatex">\(V_0 = 8000\text{ V}\)</span> (IEC 61000-4-2 contact discharge). Find peak instantaneous current:
 $<span class="arithmatex">\(I_{\text{peak}} = \frac{V_0}{R}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>8000 [ENTER] 1500 [÷]</code><span class="arithmatex">\(\to \mathbf{5.3333\text{ Amperes}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>8000</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(8000.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(8000.0000\)</span></td>
-<td style="text-align: left;">HBM electrostatic potential <span class="arithmatex">\(V_0 = 8000\text{ V}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1500</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(8000.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1500.0000\)</span></td>
-<td style="text-align: left;">Discharge series resistance <span class="arithmatex">\(R = 1500\,\Omega\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(5.3333\)</span></strong></td>
-<td style="text-align: left;">Peak instantaneous spark current in Amperes</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>8000</code> <code>[ENTER]</code> — Load Human Body Model electrostatic test potential (<span class="arithmatex">\(V_0 = 8000\text{ V}\)</span>) into the stack.
-2. <code>1500</code> <code>[÷]</code> — Divide by discharge series resistance (<span class="arithmatex">\(R = 1500\,\Omega\)</span>); peak instantaneous discharge current (<span class="arithmatex">\(I_{\text{peak}} = 5.3333\text{ A}\)</span>) appears on the display.</p>
-<p>Explains why dedicated TVS clamping diodes (clamping to <span class="arithmatex">\(&lt; 6.5\text{ V}\)</span>) guard all external I/O pins.</p>
+<p><strong>Keystrokes:</strong> <code>8000 [ENTER] 1500 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>5.3333</code></strong><span class="arithmatex">\(\text{ Amperes}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>8000 [ENTER] 1500 [÷]</code> loads HBM electrostatic potential (<span class="arithmatex">\(8000\text{ V}\)</span>) into Register <span class="arithmatex">\(Y\)</span> and divides by discharge resistance (<span class="arithmatex">\(1500\,\Omega\)</span>). The stack drops, evaluating peak instantaneous spark current <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{5.3333}\text{ A})\)</span> directly—explaining why dedicated TVS diodes guard all external I/O pins.</p>
 <hr />
 <h3 id="11223-problem-123-keypad-matrix-phantom-key-sneak-current-analysis">1.12.23 Problem 1.23: Keypad Matrix Phantom Key Sneak Current Analysis</h3>
 <p><strong>Circuit Design Context:</strong> Three keys are pressed simultaneously forming three corners of a rectangle in a matrix without diodes. With row pull-up <span class="arithmatex">\(R_{\text{pu}} = 10\text{ k}\Omega\)</span> to <span class="arithmatex">\(3.3\text{ V}\)</span>, trace the sneak path current that causes a false "ghost" key:
 $<span class="arithmatex">\(I_{\text{sneak}} = \frac{V_{\text{cc}}}{R_{\text{pu}} + 3 R_{\text{contact}}} \approx \frac{3.3}{10000} = 0.33\text{ mA}\)</span>$
 Because Schottky diodes are placed in series with every keycap in the SC-32, the reverse-biased diode blocks sneak current completely (<span class="arithmatex">\(I_{\text{leak}} &lt; 0.1\,\mu\text{A}\)</span>), providing 100% anti-ghosting rollover.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>3.3</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.3000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.3000\)</span></td>
-<td style="text-align: left;">Logic supply rail <span class="arithmatex">\(V_{\text{cc}} = 3.3\text{ V}\)</span> in <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>10000</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.3000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(10,000.00\)</span></td>
-<td style="text-align: left;">Row pull-up resistance <span class="arithmatex">\(R_{\text{pu}} = 10\text{ k}\Omega\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.00033\)</span></strong></td>
-<td style="text-align: left;">Sneak path current in Amperes (<span class="arithmatex">\(0.33\text{ mA}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>3.3</code> <code>[ENTER]</code> — Load logic supply voltage (<span class="arithmatex">\(V_{\text{cc}} = 3.3\text{ V}\)</span>) into Register <span class="arithmatex">\(Y\)</span>.
-2. <code>10000</code> <code>[÷]</code> — Divide by pull-up resistance (<span class="arithmatex">\(10\text{ k}\Omega\)</span>); sneak current resolves to <span class="arithmatex">\(\mathbf{0.33\text{ mA}}\)</span> in Register <span class="arithmatex">\(X\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>3.3 [ENTER] 10000 [÷]</code> loads logic supply potential (<span class="arithmatex">\(3.3\text{ V}\)</span>) into Register <span class="arithmatex">\(Y\)</span> and divides by row pull-up resistance (<span class="arithmatex">\(10,000\,\Omega\)</span>). The stack drops, resolving the unmitigated sneak current <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{3.3000 \times 10^{-4}}\text{ A} = 0.33\text{ mA})\)</span> in Register <span class="arithmatex">\(X\)</span>.</p>
 <hr />
 <h3 id="11224-problem-124-ambient-light-sensor-adc-resolution-and-lux-mapping">1.12.24 Problem 1.24: Ambient Light Sensor ADC Resolution and Lux Mapping</h3>
 <p><strong>Sensor Interface Context:</strong> An ambient light photodiode produces current <span class="arithmatex">\(I_{\text{photo}} = 0.25\,\mu\text{A} / 100\text{ lux}\)</span> through transimpedance resistor <span class="arithmatex">\(R_f = 2.4\text{ M}\Omega\)</span>. The 12-bit ADC (<span class="arithmatex">\(4096\text{ counts}\)</span>) measures against a <span class="arithmatex">\(3.30\text{ V}\)</span> reference. Calculate lux per ADC count:
 $<span class="arithmatex">\(V_{\text{out}} = I_{\text{photo}} \cdot R_f = \left(\frac{0.25 \times 10^{-6}\text{ A}}{100\text{ lux}}\right) \times 2.4 \times 10^6\,\Omega = 0.0060\text{ V/lux} = 6.0\text{ mV/lux}\)</span>$
 $<span class="arithmatex">\(V_{\text{LSB}} = \frac{3.30\text{ V}}{4096} \approx 0.80566\text{ mV}\)</span>$
 $<span class="arithmatex">\(\text{Resolution} = \frac{V_{\text{LSB}}}{0.0060\text{ V/lux}} = \frac{0.80566}{6.0} \approx \mathbf{0.1343\text{ lux/count}}.\)</span>$</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>3.3</code> <code>[ENTER]</code> <code>4096</code> <code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0008057\)</span></td>
-<td style="text-align: left;">Quantization voltage step <span class="arithmatex">\(V_{\text{LSB}} \approx 0.8057\text{ mV}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.006</code> <code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.1343\)</span></strong></td>
-<td style="text-align: left;">Ambient lux measurement resolution in lux/count</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>3.3</code> <code>[ENTER] 4096 [÷]</code> — Evaluate 12-bit ADC quantization step (<span class="arithmatex">\(V_{\text{LSB}} = 0.80566\text{ mV}\)</span>) directly in Register <span class="arithmatex">\(X\)</span>.
-2. <code>.006</code> <code>[÷]</code> — Enter sensor transimpedance transfer factor (<span class="arithmatex">\(6.0\text{ mV/lux}\)</span>) and divide; measurement resolution resolves to <span class="arithmatex">\(\mathbf{0.1343\text{ lux/count}}\)</span> in Register <span class="arithmatex">\(X\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>3.3 [ENTER] 4096 [÷]</code> evaluates 12-bit ADC voltage step <span class="arithmatex">\(V_{\text{LSB}} = 8.0566 \times 10^{-4}\text{ V}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 8.0566 \times 10^{-4})\)</span>.
+2. Striking <code>0.006 [÷]</code> divides by the transimpedance transfer factor (<span class="arithmatex">\(6.0\text{ mV/lux}\)</span>), resolving optical measurement resolution <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.1343}\text{ lux/count})\)</span> directly.</p>
 <hr />
 <h3 id="11225-problem-125-chassis-thermal-equilibrium-temperature-rise">1.12.25 Problem 1.25: Chassis Thermal Equilibrium Temperature Rise</h3>
 <p><strong>Thermodynamics Context:</strong> At full continuous 150 MHz dual-core computation, the board dissipates <span class="arithmatex">\(P = 60.0\text{ mW} = 0.060\text{ W}\)</span>. The chassis has total heat radiating area <span class="arithmatex">\(A = 0.024\text{ m}^2\)</span> with natural convection heat transfer coefficient <span class="arithmatex">\(h_c = 6.5\text{ W/m}^2\text{K}\)</span>:
 $<span class="arithmatex">\(\Delta T = \frac{P}{h_c \cdot A}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>0.060 [ENTER] 6.5 [ENTER] 0.024 [×] [÷]</code><span class="arithmatex">\(\to \mathbf{0.3846\text{ K}} \approx 0.38^\circ\text{C}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>0.060</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0600\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0600\)</span></td>
-<td style="text-align: left;">Continuous dissipation <span class="arithmatex">\(P = 60.0\text{ mW}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>6.5</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0600\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(6.5000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(6.5000\)</span></td>
-<td style="text-align: left;">Convection coefficient <span class="arithmatex">\(h_c = 6.5\text{ W/m}^2\text{K}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.024</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0600\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.1560\)</span></td>
-<td style="text-align: left;">Dissipation conductance <span class="arithmatex">\(h_c A\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.3846\)</span></strong></td>
-<td style="text-align: left;">Steady-state temperature rise <span class="arithmatex">\(\Delta T\)</span> in K (<span class="arithmatex">\(0.38^\circ\text{C}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>0.060</code> <code>[ENTER]</code> — Arm the stack with continuous computing thermal dissipation (<span class="arithmatex">\(P = 0.060\text{ W}\)</span>).
-2. <code>6.5</code> <code>[÷]</code> — Divide by natural convection coefficient (<span class="arithmatex">\(h_c = 6.5\text{ W/(m}^2\cdot\text{K)}\)</span>); intermediate thermal impedance (<span class="arithmatex">\(9.2308 \times 10^{-3}\text{ K}\cdot\text{m}^2\)</span>) forms in <span class="arithmatex">\(X\)</span>.
-3. <code>0.024</code> <code>[÷]</code> — Divide by effective surface area (<span class="arithmatex">\(A = 0.024\text{ m}^2\)</span>); steady-state equilibrium temperature rise (<span class="arithmatex">\(\Delta T = 0.3846\text{ K} \approx 0.38^\circ\text{C}\)</span>) is verified.</p>
-<p>Confirms the SC-32 remains completely cool to the touch with zero thermal throttling under indefinite continuous computing.</p>
+<p><strong>Keystrokes:</strong> <code>0.060 [ENTER] 6.5 [ENTER] 0.024 [×] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>0.3846</code></strong><span class="arithmatex">\(\text{ K} \approx 0.38^\circ\text{C}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>0.060 [ENTER] 6.5 [ENTER] 0.024 [×]</code> loads continuous thermal dissipation (<span class="arithmatex">\(0.060\text{ W}\)</span>) into <span class="arithmatex">\(Z\)</span> and evaluates convection conductance <span class="arithmatex">\(h_c A = 0.1560\text{ W/K}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0600, X: 0.1560)\)</span>.
+2. Striking <code>[÷]</code> divides dissipation by conductance, determining steady-state equilibrium temperature rise <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.3846}\text{ K} \approx 0.38^\circ\text{C})\)</span>—proving the chassis remains cool to the touch with zero throttling.</p>
 <hr />
 <h2 id="113-instrument-architecture-diagnostic-verification-notes">1.13 Instrument Architecture &amp; Diagnostic Verification Notes</h2>
 <h3 id="1131-physical-hardware-determinism-tactile-switch-dynamics">1.13.1 Physical Hardware Determinism &amp; Tactile Switch Dynamics</h3>
@@ -10905,35 +10332,35 @@ $<span class="arithmatex">\(\Phi = 2.5^{3.8}\)</span>$</p>
 <td style="text-align: left;"><code>[2] [.] [5]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5000\)</span></td>
 <td style="text-align: left;">Enter base <span class="arithmatex">\(y\)</span></td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
 <td style="text-align: left;"><code>[ENTER]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5000\)</span></td>
 <td style="text-align: left;">Stack lift disabled; <span class="arithmatex">\(y\)</span> pushed to <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
 <td style="text-align: left;"><code>[3] [.] [8]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(8.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.8000\)</span></td>
 <td style="text-align: left;">Overwrite <span class="arithmatex">\(X\)</span> with exponent <span class="arithmatex">\(x\)</span></td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
 <td style="text-align: left;"><code>[yˣ]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(6561.0000000000\)</span></strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(32.5216096641\)</span></strong></td>
 <td style="text-align: left;">Evaluates <span class="arithmatex">\(2.5^{3.8}\)</span>; Stack lift armed</td>
 </tr>
 </tbody>
@@ -11073,18 +10500,18 @@ $<span class="arithmatex">\(t = -\frac{\ln(N(t)/N_0)}{\lambda} = -\frac{\ln(0.23
 <td style="text-align: center;">1</td>
 <td style="text-align: left;"><code>[.] [2] [3] [4]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.2340\)</span></td>
 <td style="text-align: left;">Remaining proportion</td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
 <td style="text-align: left;"><code>[LN]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.386294\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-1.452434\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(\ln(0.234)\)</span> evaluated</td>
 </tr>
 <tr>
@@ -16992,6 +16419,29 @@ $<span class="arithmatex">\(A_{\text{total}} = (2 \times L \times W) + (2 \times
 4. If you make a mistake on any face, pressing <code>[↰] [Σ-]</code> immediately subtracts that erroneous face from the accumulator.
 5. When all faces are entered, pressing <code>[↱] [SUMS]</code> → <code>Σx</code> recalls the exact grand total surface area.</p>
 <p><strong>Zero parentheses, zero named memory variables, and zero scratch paper!</strong></p>
+<h3 id="642-the-algebraic-trap-vs-stackcalc-superpower-showdown">6.4.2 The Algebraic Trap vs. StackCalc Superpower Showdown</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Challenge / Metric</th>
+<th style="text-align: left;">Algebraic Trap (TI-84 / Infix)</th>
+<th style="text-align: center;">Algebraic Strokes</th>
+<th style="text-align: left;">StackCalc SC-32 Superpower</th>
+<th style="text-align: center;">SC-32 Strokes</th>
+<th style="text-align: left;">Superpower Advantage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Multi-Face Solid Surface Area</strong>: 6 Faces</td>
+<td style="text-align: left;">String calculation: <code>12 * 8 + 12 * 5 + 8 * 5 + 0.5 * 8 * 6 + ...</code> (38 strokes). Typo requires retyping entire 38 characters.</td>
+<td style="text-align: center;">38</td>
+<td style="text-align: left;"><strong>Master Surface Area (<code>[Σ+]</code>)</strong>: Key each face on stack, press <code>[Σ+]</code> (22 strokes). Screen tracks face count <span class="arithmatex">\(n\)</span> and accumulated area <span class="arithmatex">\(\Sigma x\)</span>. Tap <code>[↰] [Σ-]</code> to pull back any error!</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: left;"><strong>42% fewer strokes + 100% face visibility</strong></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">The Master Surface Area Statistical Accumulator Bus</p>
 <ol>
@@ -17308,105 +16758,14 @@ Before summing polygonal face areas and complex moments of inertia on the SC-32,
 <p><strong>Mechanical Context:</strong> A neoprene flange gasket has outer radius <span class="arithmatex">\(R = 85.0\text{ mm}\)</span> and inner bore radius <span class="arithmatex">\(r = 50.0\text{ mm}\)</span>. Calculate face surface area:
 $<span class="arithmatex">\(A = \pi (R^2 - r^2) = \pi (85^2 - 50^2) = \pi (7225 - 2500) = 4725\pi \approx \mathbf{14,844.0253\text{ mm}^2}\)</span>$</p>
 <p><strong>Keystrokes:</strong> <code>85 [↰] [x²] 50 [↰] [x²] [-] [↱] [π] [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>14,844.02529</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>85 [x²]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(7225.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(R^2\)</span> evaluated</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>50 [x²]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(7225.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2500.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(r^2\)</span> evaluated</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4725.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(R^2 - r^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>[π] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(14844.025289\)</span></strong></td>
-<td style="text-align: left;">Annulus Area in mm²</td>
-</tr>
-</tbody>
-</table>
+<p>Compute the squared outer radius <span class="arithmatex">\(R^2 = 7225\)</span> with <code>85 [x²]</code>, subtract inner bore <span class="arithmatex">\(r^2 = 2500\)</span> via <code>50 [x²] [-]</code>, leaving differential area factor <span class="arithmatex">\(4725.0\)</span> in Register <span class="arithmatex">\(X\)</span>. Scaling by circle constant <code>[π] [×]</code> delivers the annular gasket face area, bringing the stack to <span class="arithmatex">\((T:0, Z:0, Y:0, X:14844.0253)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(14,844.03\text{ mm}^2\)</span></strong> (<span class="arithmatex">\(148.44\text{ cm}^2\)</span>).</p>
 <hr />
 <h3 id="6112-problem-62-regular-octagon-enclosure-face-area">6.11.2 Problem 6.2: Regular Octagon Enclosure Face Area</h3>
 <p><strong>Manufacturing Context:</strong> An octagonal equipment enclosure is fabricated from sheet metal with edge length <span class="arithmatex">\(s = 65.0\text{ mm}\)</span>:
 $<span class="arithmatex">\(A = 2 (1 + \sqrt{2}) s^2 \approx 4.828427 \times 65^2 = 4.828427 \times 4225 = \mathbf{20,400.1047\text{ mm}^2}\)</span>$</p>
 <p><strong>Keystrokes:</strong> <code>2 [√x] 1 [+] 2 [×] 65 [↰] [x²] [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>20,400.1046</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>2 [√x] 1 [+] 2 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.828427\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(2(1 + \sqrt{2})\)</span> factor</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>65 [x²]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.828427\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4225.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(s^2\)</span> evaluated</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(20400.104684\)</span></strong></td>
-<td style="text-align: left;">Octagon Area in mm²</td>
-</tr>
-</tbody>
-</table>
+<p>Form the regular octagonal geometry coefficient <span class="arithmatex">\(2(1 + \sqrt{2}) \approx 4.828427\)</span> directly on the stack via <code>2 [√x] 1 [+] 2 [×]</code>. Then square facet edge length <span class="arithmatex">\(s = 65\text{ mm}\)</span> via <code>65 [x²]</code> and evaluate the product with <code>[×]</code>, establishing total sheet metal enclosure area at <span class="arithmatex">\((T:0, Z:0, Y:0, X:20400.1047)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(20,400.10\text{ mm}^2\)</span></strong>.</p>
 <hr />
 <h3 id="6113-problem-63-elliptical-pressure-vessel-manway-area-perimeter">6.11.3 Problem 6.3: Elliptical Pressure Vessel Manway Area &amp; Perimeter</h3>
@@ -17415,105 +16774,14 @@ $<span class="arithmatex">\(A = 2 (1 + \sqrt{2}) s^2 \approx 4.828427 \times 65^
 2. Ramanujan's approximate perimeter <span class="arithmatex">\(P \approx \pi [3(a+b) - \sqrt{(3a+b)(a+3b)}]\)</span>:
    <span class="arithmatex">\(h = \frac{(a-b)^2}{(a+b)^2} = \frac{100^2}{400^2} = 0.0625 \implies P \approx \pi(a+b)(1 + \frac{3h}{10 + \sqrt{4 - 3h}}) \approx \mathbf{1,276.26\text{ mm}}\)</span></p>
 <p><strong>Keystrokes (Area):</strong> <code>250 [ENTER] 150 [×] [↱] [π] [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>117,809.7245</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>250 [ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(250.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(250.0000\)</span></td>
-<td style="text-align: left;">Semimajor axis <span class="arithmatex">\(a\)</span> pushed</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>150 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(37500.0000\)</span></td>
-<td style="text-align: left;">Product <span class="arithmatex">\(a \times b\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[π] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(117809.724510\)</span></strong></td>
-<td style="text-align: left;">Area <span class="arithmatex">\(A = \pi a b\)</span> in mm²</td>
-</tr>
-</tbody>
-</table>
+<p>Push semimajor axis <span class="arithmatex">\(a = 250\)</span> via <code>250 [ENTER]</code>, multiply by semiminor axis <span class="arithmatex">\(b = 150\)</span> via <code>150 [×]</code> to obtain planar product <span class="arithmatex">\(37,500.0\)</span>, and apply <code>[π] [×]</code> to resolve exact manway opening area at <span class="arithmatex">\((T:0, Z:0, Y:0, X:117809.7245)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(117,809.72\text{ mm}^2\)</span></strong> (<span class="arithmatex">\(1,178.10\text{ cm}^2\)</span>).</p>
 <hr />
 <h3 id="6114-problem-64-conical-frustum-storage-hopper-volume">6.11.4 Problem 6.4: Conical Frustum Storage Hopper Volume</h3>
 <p><strong>Bulk Handling Context:</strong> A grain hopper has upper radius <span class="arithmatex">\(R = 1.80\text{ m}\)</span>, lower discharge radius <span class="arithmatex">\(r = 0.40\text{ m}\)</span>, and height <span class="arithmatex">\(h = 2.50\text{ m}\)</span>:
 $<span class="arithmatex">\(V = \frac{1}{3} \pi h (R^2 + R r + r^2) = \frac{2.5\pi}{3} (1.8^2 + 1.8(0.4) + 0.4^2) = \frac{2.5\pi}{3} (3.24 + 0.72 + 0.16) = \frac{2.5\pi}{3} (4.12) = \mathbf{10.7861\text{ m}^3}\)</span>$</p>
 <p><strong>Keystrokes:</strong> <code>1.8 [↰] [x²] 1.8 [ENTER] 0.4 [×] [+] 0.4 [↰] [x²] [+] [↱] [π] [×] 2.5 [×] 3 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>10.786134777</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>1.8 [x²]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.2400\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(R^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>1.8 [ENTER] 0.4 [×] [+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.9600\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(R^2 + Rr\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>0.4 [x²] [+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.1200\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(R^2 + Rr + r^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>[π] [×] 2.5 [×] 3 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(10.786135\)</span></strong></td>
-<td style="text-align: left;">Frustum volume in m³</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate upper radius squared <span class="arithmatex">\(R^2 = 3.24\)</span> with <code>1.8 [x²]</code>, accumulate cross-product <span class="arithmatex">\(R \cdot r = 0.72\)</span> via <code>1.8 [ENTER] 0.4 [×] [+]</code>, and add lower base squared <span class="arithmatex">\(r^2 = 0.16\)</span> via <code>0.4 [x²] [+]</code> for sum <span class="arithmatex">\(4.12\)</span>. Finally, multiply by height and conical scale factor via <code>[π] [×] 2.5 [×] 3 [÷]</code>, leaving frustum storage volume at <span class="arithmatex">\((T:0, Z:0, Y:0, X:10.7861)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(10.7861\text{ m}^3\)</span></strong> (<span class="arithmatex">\(10,786.1\text{ liters}\)</span>).</p>
 <hr />
 <h3 id="6115-problem-65-torus-volume-and-surface-area-hydraulic-o-ring">6.11.5 Problem 6.5: Torus Volume and Surface Area (Hydraulic O-Ring)</h3>
@@ -17521,138 +16789,16 @@ $<span class="arithmatex">\(V = \frac{1}{3} \pi h (R^2 + R r + r^2) = \frac{2.5\
 1. Volume <span class="arithmatex">\(V = 2\pi^2 R r^2 = 2 \pi^2 (45) (3.5^2) = 2 \pi^2 (45) (12.25) \approx \mathbf{10,880.89\text{ mm}^3}\)</span>
 2. Surface Area <span class="arithmatex">\(A = 4\pi^2 R r = 4 \pi^2 (45) (3.5) \approx \mathbf{6,217.65\text{ mm}^2}\)</span></p>
 <p><strong>Keystrokes (Volume):</strong> <code>[↱] [π] [↰] [x²] 2 [×] 45 [×] 3.5 [↰] [x²] [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>10,881.23885</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>[π] [x²] 2 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(19.739209\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(2\pi^2\)</span> evaluated</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>45 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(888.264396\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(2\pi^2 R\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>3.5 [x²] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(10880.887208\)</span></strong></td>
-<td style="text-align: left;">Torus Volume <span class="arithmatex">\(V\)</span> in mm³</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate <span class="arithmatex">\(2\pi^2\)</span> via <code>[π] [x²] 2 [×]</code>, scale by major centerline radius <span class="arithmatex">\(R = 45\text{ mm}\)</span> via <code>45 [×]</code>, and multiply by cross-sectional radius squared <span class="arithmatex">\(r^2 = 3.5^2\)</span> via <code>3.5 [x²] [×]</code>, establishing torus body volume at <span class="arithmatex">\((T:0, Z:0, Y:0, X:10880.8872)\)</span>.</p>
 <p><strong>Keystrokes (Surface Area):</strong> <code>[↱] [π] [↰] [x²] 4 [×] 45 [×] 3.5 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>6217.6500</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>[π] [x²] 4 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(39.478418\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(4\pi^2\)</span> evaluated</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>45 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1776.528792\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(4\pi^2 R\)</span> with <span class="arithmatex">\(R = 45\text{ mm}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>3.5 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(6217.850773\)</span></strong></td>
-<td style="text-align: left;">Torus Surface Area <span class="arithmatex">\(A = 4\pi^2 R r\)</span> in mm²</td>
-</tr>
-</tbody>
-</table>
+<p>Compute the <span class="arithmatex">\(4\pi^2\)</span> envelope constant via <code>[π] [x²] 4 [×]</code>, then chain major and minor radii via <code>45 [×] 3.5 [×]</code> to yield total contact surface area at <span class="arithmatex">\((T:0, Z:0, Y:0, X:6217.8508)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(V = 10,880.89\text{ mm}^3\)</span></strong>, <strong><span class="arithmatex">\(A = 6,217.85\text{ mm}^2\)</span></strong>.</p>
 <hr />
 <h3 id="6116-problem-66-spherical-storage-tank-segment-cap-volume">6.11.6 Problem 6.6: Spherical Storage Tank Segment (Cap) Volume</h3>
 <p><strong>Chemical Context:</strong> A spherical chemical tank of radius <span class="arithmatex">\(R = 4.0\text{ m}\)</span> is filled with liquid to depth <span class="arithmatex">\(h = 1.5\text{ m}\)</span>. Calculate liquid volume:
 $<span class="arithmatex">\(V = \frac{1}{3} \pi h^2 (3R - h) = \frac{\pi (1.5^2)}{3} (3(4.0) - 1.5) = \frac{2.25\pi}{3} (10.5) = 0.75\pi \times 10.5 = \mathbf{24.7400\text{ m}^3}\)</span>$</p>
 <p><strong>Keystrokes:</strong> <code>4 [ENTER] 3 [×] 1.5 [-] 1.5 [↰] [x²] [×] [↱] [π] [×] 3 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>24.740042147</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>4 [ENTER] 3 [×] 1.5 [-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(10.5000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(3R - h\)</span> term</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>1.5 [x²] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(23.6250\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(h^2(3R - h)\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[π] [×] 3 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(24.740042\)</span></strong></td>
-<td style="text-align: left;">Liquid volume in m³</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate diameter difference factor <span class="arithmatex">\((3R - h) = 10.5\)</span> via <code>4 [ENTER] 3 [×] 1.5 [-]</code>. Multiply by depth squared <span class="arithmatex">\(h^2 = 2.25\)</span> via <code>1.5 [x²] [×]</code>, and scale by spherical sector factor <code>[π] [×] 3 [÷]</code>, resolving liquid charge volume at <span class="arithmatex">\((T:0, Z:0, Y:0, X:24.7400)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(24.7400\text{ m}^3\)</span></strong> (<span class="arithmatex">\(24,740.0\text{ liters}\)</span>).</p>
 <hr />
 <h3 id="6117-problem-67-truncated-pyramidal-monument-volume">6.11.7 Problem 6.7: Truncated Pyramidal Monument Volume</h3>
@@ -17660,66 +16806,7 @@ $<span class="arithmatex">\(V = \frac{1}{3} \pi h^2 (3R - h) = \frac{\pi (1.5^2)
 Base areas: <span class="arithmatex">\(A_1 = 3.2^2 = 10.24\text{ m}^2\)</span>, <span class="arithmatex">\(A_2 = 1.8^2 = 3.24\text{ m}^2\)</span>:
 $<span class="arithmatex">\(V = \frac{h}{3} (A_1 + A_2 + \sqrt{A_1 A_2}) = \frac{4.5}{3} (10.24 + 3.24 + \sqrt{33.1776}) = 1.5 \times (13.48 + 5.76) = 1.5 \times 19.24 = \mathbf{28.86\text{ m}^3}\)</span>$</p>
 <p><strong>Keystrokes:</strong> <code>3.2 [↰] [x²] [STO] 1  1.8 [↰] [x²] [STO] 2  [+] [RCL] 1 [RCL] 2 [×] [√x] [+] 4.5 [×] 3 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>28.86</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>3.2 [x²] [STO] 1</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(10.2400\)</span></td>
-<td style="text-align: left;">Base 1 area stored in Reg 1</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>1.8 [x²] [STO] 2</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(10.2400\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.2400\)</span></td>
-<td style="text-align: left;">Base 2 area stored in Reg 2</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(13.4800\)</span></td>
-<td style="text-align: left;">Sum <span class="arithmatex">\(A_1 + A_2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>[RCL] 1 [RCL] 2 [×] [√x]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(13.4800\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.7600\)</span></td>
-<td style="text-align: left;">Geometric mean <span class="arithmatex">\(\sqrt{A_1 A_2}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">5</td>
-<td style="text-align: left;"><code>[+] 4.5 [×] 3 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(28.860000\)</span></strong></td>
-<td style="text-align: left;">Pyramidal frustum volume <span class="arithmatex">\(V\)</span></td>
-</tr>
-</tbody>
-</table>
+<p>Store lower base <span class="arithmatex">\(A_1 = 10.24\)</span> into Register 1 via <code>3.2 [x²] [STO] 1</code>, and upper base <span class="arithmatex">\(A_2 = 3.24\)</span> into Register 2 via <code>1.8 [x²] [STO] 2</code>. Add them via <code>[+]</code> for sum <span class="arithmatex">\(13.48\)</span>. Compute geometric mean <span class="arithmatex">\(\sqrt{A_1 A_2} = 5.76\)</span> via <code>[RCL] 1 [RCL] 2 [×] [√x]</code>, sum with base areas via <code>[+]</code>, and multiply by <span class="arithmatex">\(h/3\)</span> via <code>4.5 [×] 3 [÷]</code>, yielding pedestal volume at <span class="arithmatex">\((T:0, Z:0, Y:0, X:28.8600)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(28.8600\text{ m}^3\)</span></strong>.</p>
 <hr />
 <h3 id="6118-problem-68-regular-icosahedron-dice-volume-and-area">6.11.8 Problem 6.8: Regular Icosahedron Dice Volume and Area</h3>
@@ -17727,96 +16814,14 @@ $<span class="arithmatex">\(V = \frac{h}{3} (A_1 + A_2 + \sqrt{A_1 A_2}) = \frac
 1. Surface Area <span class="arithmatex">\(A = 5\sqrt{3} a^2 = 5 \sqrt{3} (18^2) = 5\sqrt{3}(324) \approx \mathbf{2,805.9223\text{ mm}^2}\)</span>
 2. Volume <span class="arithmatex">\(V = \frac{5(3 + \sqrt{5})}{12} a^3 = \frac{5(5.236068)}{12} (5832) \approx \mathbf{12,713.41\text{ mm}^3}\)</span></p>
 <p><strong>Keystrokes (Volume):</strong> <code>5 [√x] 3 [+] 5 [×] 12 [÷] 18 [ENTER] 3 [yˣ] [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>12,723.64519</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>5 [√x] 3 [+] 5 [×] 12 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.181695\)</span></td>
-<td style="text-align: left;">Volume coefficient evaluated</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>18 [ENTER] 3 [yˣ]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.181695\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5832.0000\)</span></td>
-<td style="text-align: left;">Edge cubed <span class="arithmatex">\(a^3\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(12713.409324\)</span></strong></td>
-<td style="text-align: left;">Icosahedron Volume in mm³</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate icosahedral volume factor <span class="arithmatex">\(\frac{5(3+\sqrt{5})}{12} \approx 2.181695\)</span> via <code>5 [√x] 3 [+] 5 [×] 12 [÷]</code>. Cube die edge <span class="arithmatex">\(a = 18\text{ mm}\)</span> via <code>18 [ENTER] 3 [yˣ]</code> and multiply via <code>[×]</code>, arriving at total polyhedron volume at <span class="arithmatex">\((T:0, Z:0, Y:0, X:12713.4093)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(V = 12,713.41\text{ mm}^3\)</span></strong>, <strong><span class="arithmatex">\(A = 2,805.92\text{ mm}^2\)</span></strong>.</p>
 <hr />
 <h3 id="6119-problem-69-regular-dodecahedron-volume">6.11.9 Problem 6.9: Regular Dodecahedron Volume</h3>
 <p><strong>Mathematics Context:</strong> 12-sided solid with edge <span class="arithmatex">\(a = 12.0\text{ mm}\)</span>:
 $<span class="arithmatex">\(V = \frac{15 + 7\sqrt{5}}{4} a^3 \approx \frac{15 + 15.652476}{4} (1728) = 7.663119 \times 1728 = \mathbf{13,241.87\text{ mm}^3}\)</span>$</p>
 <p><strong>Keystrokes:</strong> <code>5 [√x] 7 [×] 15 [+] 4 [÷] 12 [ENTER] 3 [yˣ] [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>13,241.86956</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>5 [√x] 7 [×] 15 [+] 4 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(7.663119\)</span></td>
-<td style="text-align: left;">Volume coefficient evaluated</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>12 [ENTER] 3 [yˣ]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(7.663119\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1728.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(a^3 = 12^3\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(13241.869389\)</span></strong></td>
-<td style="text-align: left;">Dodecahedron Volume in mm³</td>
-</tr>
-</tbody>
-</table>
+<p>Compute the dodecahedral volume constant <span class="arithmatex">\(\frac{15+7\sqrt{5}}{4} \approx 7.663119\)</span> via <code>5 [√x] 7 [×] 15 [+] 4 [÷]</code>. Cube facet edge <span class="arithmatex">\(a = 12\text{ mm}\)</span> via <code>12 [ENTER] 3 [yˣ]</code> and multiply with <code>[×]</code>, yielding <span class="arithmatex">\((T:0, Z:0, Y:0, X:13241.8694)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(13,241.87\text{ mm}^3\)</span></strong>.</p>
 <hr />
 <h3 id="61110-problem-610-regular-tetrahedron-height-area-volume">6.11.10 Problem 6.10: Regular Tetrahedron Height, Area &amp; Volume</h3>
@@ -17825,48 +16830,7 @@ $<span class="arithmatex">\(V = \frac{15 + 7\sqrt{5}}{4} a^3 \approx \frac{15 + 
 * Surface Area: <span class="arithmatex">\(A = \sqrt{3} a^2 = \sqrt{3}(2500) = \mathbf{4,330.1270\text{ mm}^2}\)</span>
 * Volume: <span class="arithmatex">\(V = \frac{\sqrt{2}}{12} a^3 = \frac{\sqrt{2}}{12} (125,000) = \mathbf{14,731.3913\text{ mm}^3}\)</span></p>
 <p><strong>Keystrokes (Volume):</strong> <code>2 [√x] 12 [÷] 50 [ENTER] 3 [yˣ] [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>14,731.39127</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>2 [√x] 12 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.117851\)</span></td>
-<td style="text-align: left;">Coefficient <span class="arithmatex">\(\sqrt{2}/12\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>50 [ENTER] 3 [yˣ]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.117851\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(125000.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(a^3 = 50^3\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(14731.391275\)</span></strong></td>
-<td style="text-align: left;">Tetrahedron Volume in mm³</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate coefficient <span class="arithmatex">\(\sqrt{2}/12 \approx 0.117851\)</span> via <code>2 [√x] 12 [÷]</code>. Cube edge length <span class="arithmatex">\(a = 50\text{ mm}\)</span> via <code>50 [ENTER] 3 [yˣ]</code> for <span class="arithmatex">\(125,000.0\)</span>, and multiply via <code>[×]</code> to resolve tetrahedron volume at <span class="arithmatex">\((T:0, Z:0, Y:0, X:14731.3913)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(h = 40.82\text{ mm}\)</span></strong>, <strong><span class="arithmatex">\(A = 4,330.13\text{ mm}^2\)</span></strong>, <strong><span class="arithmatex">\(V = 14,731.39\text{ mm}^3\)</span></strong>.</p>
 <hr />
 <h3 id="61111-problem-611-multi-face-machine-casting-surface-area-via">6.11.11 Problem 6.11: Multi-Face Machine Casting Surface Area via <code>[Σ+]</code></h3>
@@ -17989,7 +16953,7 @@ Accumulate all 4 elements via <code>[Σ+]</code> <span class="arithmatex">\(\imp
 <td style="text-align: left;"><code>[CLΣ] 16 [ENTER] 100 [×] 35 [×] [Σ+]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1600.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(1.0000\)</span></td>
 <td style="text-align: left;">16 fin sides (<span class="arithmatex">\(56,000.0\text{ mm}^2\)</span>) accumulated (<span class="arithmatex">\(n=1\)</span>)</td>
 </tr>
@@ -17998,7 +16962,7 @@ Accumulate all 4 elements via <code>[Σ+]</code> <span class="arithmatex">\(\imp
 <td style="text-align: left;"><code>8 [ENTER] 100 [×] 2 [×] [Σ+]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(800.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(2.0000\)</span></td>
 <td style="text-align: left;">8 fin tips (<span class="arithmatex">\(1,600.0\text{ mm}^2\)</span>) accumulated (<span class="arithmatex">\(n=2\)</span>)</td>
 </tr>
@@ -18007,7 +16971,7 @@ Accumulate all 4 elements via <code>[Σ+]</code> <span class="arithmatex">\(\imp
 <td style="text-align: left;"><code>100 [ENTER] 100 [×] 1600 [-] [Σ+]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(100.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
 <td style="text-align: left;">Base exposed top (<span class="arithmatex">\(8,400.0\text{ mm}^2\)</span>) accumulated (<span class="arithmatex">\(n=3\)</span>)</td>
 </tr>
@@ -18016,7 +16980,7 @@ Accumulate all 4 elements via <code>[Σ+]</code> <span class="arithmatex">\(\imp
 <td style="text-align: left;"><code>100 [ENTER] 100 [×] [Σ+]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(100.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(4.0000\)</span></td>
 <td style="text-align: left;">Base flat bottom (<span class="arithmatex">\(10,000.0\text{ mm}^2\)</span>) accumulated (<span class="arithmatex">\(n=4\)</span>)</td>
 </tr>
@@ -18037,66 +17001,7 @@ Accumulate all 4 elements via <code>[Σ+]</code> <span class="arithmatex">\(\imp
 $<span class="arithmatex">\(\Delta x = 2100 - 1250 = 850\text{ m}, \quad \Delta y = 680 - (-420) = 1100\text{ m}, \quad \Delta z = 1400 - 850 = 550\text{ m}\)</span>$
 $<span class="arithmatex">\(d = \sqrt{850^2 + 1100^2 + 550^2} = \sqrt{722500 + 1210000 + 302500} = \sqrt{2235000} \approx \mathbf{1,494.9916\text{ meters}}\)</span>$</p>
 <p><strong>Keystrokes:</strong> <code>2100 [ENTER] 1250 [-] [↰] [x²]  680 [ENTER] 420 [+/-] [-] [↰] [x²] [+]  1400 [ENTER] 850 [-] [↰] [x²] [+] [√x]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>1,494.991639</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>2100 [ENTER] 1250 [-] [x²]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(722500.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(\Delta x^2 = 850^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>680 [ENTER] 420 [+/-] [-] [x²]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(722500.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1210000.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(\Delta y^2 = 1100^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1932500.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(\Delta x^2 + \Delta y^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>1400 [ENTER] 850 [-] [x²]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1932500.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(302500.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(\Delta z^2 = 550^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">5</td>
-<td style="text-align: left;"><code>[+] [√x]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(1494.991639\)</span></strong></td>
-<td style="text-align: left;">3D Distance <span class="arithmatex">\(d\)</span> in meters</td>
-</tr>
-</tbody>
-</table>
+<p>Compute the squared coordinate deltas along each orthogonal axis: evaluate <span class="arithmatex">\(\Delta x^2 = 850^2 = 722,500\)</span> via <code>2100 [ENTER] 1250 [-] [x²]</code>, accumulate <span class="arithmatex">\(\Delta y^2 = 1100^2 = 1,210,000\)</span> with <code>680 [ENTER] 420 [+/-] [-] [x²] [+]</code>, and add <span class="arithmatex">\(\Delta z^2 = 550^2 = 302,500\)</span> via <code>1400 [ENTER] 850 [-] [x²] [+]</code>. Extract the square root via <code>[√x]</code> to resolve 3D spatial separation at <span class="arithmatex">\((T:0, Z:0, Y:0, X:1494.9916)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(1,494.99\text{ meters}\)</span></strong>.</p>
 <hr />
 <h3 id="61114-problem-614-direction-cosines-of-3d-vector">6.11.14 Problem 6.14: Direction Cosines of 3D Vector</h3>
@@ -18105,57 +17010,7 @@ $<span class="arithmatex">\(d = \sqrt{850^2 + 1100^2 + 550^2} = \sqrt{722500 + 1
 * <span class="arithmatex">\(\cos\beta = 1100 / 1494.9916 = \mathbf{0.735790} \implies \beta = 42.63^\circ\)</span>
 * <span class="arithmatex">\(\cos\gamma = 550 / 1494.9916 = \mathbf{0.367895} \implies \gamma = 68.41^\circ\)</span></p>
 <p><strong>Keystrokes:</strong> <code>1494.9916 [STO] [D] 850 [RCL] [D] [÷] 1100 [RCL] [D] [÷] 550 [RCL] [D] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>0.3678950437</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>1494.9916 [STO] D</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1494.9916\)</span></td>
-<td style="text-align: left;">Vector magnitude saved</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>850 [RCL] D [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.568565\)</span></strong></td>
-<td style="text-align: left;"><span class="arithmatex">\(\cos\alpha\)</span> (X-direction cosine)</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>1100 [RCL] D [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.568565\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.735790\)</span></strong></td>
-<td style="text-align: left;"><span class="arithmatex">\(\cos\beta\)</span> (Y-direction cosine)</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>550 [RCL] D [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.568565\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.735790\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.367895\)</span></strong></td>
-<td style="text-align: left;"><span class="arithmatex">\(\cos\gamma\)</span> (Z-direction cosine)</td>
-</tr>
-</tbody>
-</table>
+<p>Store the vector magnitude in variable <code>D</code> via <code>1494.9916 [STO] D</code>. Compute <span class="arithmatex">\(\cos\alpha = 850 / D = 0.568565\)</span> via <code>850 [RCL] D [÷]</code>, followed by <span class="arithmatex">\(\cos\beta = 0.735790\)</span> via <code>1100 [RCL] D [÷]</code> and <span class="arithmatex">\(\cos\gamma = 0.367895\)</span> via <code>550 [RCL] D [÷]</code>, leaving the directional cosines arrayed across the stack as <span class="arithmatex">\((T:0, Z:0.568565, Y:0.735790, X:0.367895)\)</span>.</p>
 <p>Check: <span class="arithmatex">\(0.568565^2 + 0.735790^2 + 0.367895^2 \equiv \mathbf{1.000000}\)</span>.</p>
 <hr />
 <h3 id="61115-problem-615-vector-cross-product-in-3-space-veca-times-vecb">6.11.15 Problem 6.15: Vector Cross Product in 3-Space (<span class="arithmatex">\(\vec{A} \times \vec{B}\)</span>)</h3>
@@ -18166,57 +17021,7 @@ $<span class="arithmatex">\(\vec{C} = \vec{A} \times \vec{B} = (A_y B_z - A_z B_
 * <span class="arithmatex">\(C_z = (3)(5) - (-2)(1) = 15 - (-2) = \mathbf{17}\)</span>
 $<span class="arithmatex">\(\vec{C} = (-16, 10, 17) \implies |\vec{C}| = \sqrt{256 + 100 + 289} = \sqrt{645} \approx \mathbf{25.3969}\)</span>$</p>
 <p><strong>Keystrokes (Magnitude):</strong> <code>16 [↰] [x²] 10 [↰] [x²] [+] 17 [↰] [x²] [+] [√x]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>25.396850198</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>16 [x²]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(256.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(C_x^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>10 [x²] [+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(356.0000\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(C_x^2 + C_y^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>17 [x²] [+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(645.0000\)</span></td>
-<td style="text-align: left;">Sum of squares</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>[√x]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(25.396850\)</span></strong></td>
-<td style="text-align: left;">Cross product magnitude $</td>
-</tr>
-</tbody>
-</table>
+<p>Square each Cartesian cross-product component sequentially: <code>16 [x²] 10 [x²] [+] 17 [x²] [+]</code> produces sum of squares <span class="arithmatex">\(645.0\)</span> in Register <span class="arithmatex">\(X\)</span>. Taking the square root via <code>[√x]</code> delivers vector magnitude <span class="arithmatex">\(|\vec{C}|\)</span> at <span class="arithmatex">\((T:0, Z:0, Y:0, X:25.3969)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(\vec{C} = (-16, 10, 17), |\vec{C}| = 25.40\)</span></strong>.</p>
 <hr />
 <h3 id="61116-problem-616-dihedral-angle-between-two-intersecting-planes">6.11.16 Problem 6.16: Dihedral Angle Between Two Intersecting Planes</h3>
@@ -18224,39 +17029,7 @@ $<span class="arithmatex">\(\vec{C} = (-16, 10, 17) \implies |\vec{C}| = \sqrt{2
 $<span class="arithmatex">\(\cos\theta = \frac{|\vec{n}_1 \cdot \vec{n}_2|}{|\vec{n}_1| |\vec{n}_2|} = \frac{|(2)(1) + (1)(-2) + (-2)(2)|}{\sqrt{4+1+4} \sqrt{1+4+4}} = \frac{|2 - 2 - 4|}{3 \times 3} = \frac{4}{9} \approx 0.444444\)</span>$
 $<span class="arithmatex">\(\theta = \arccos(4/9) \approx \mathbf{63.6122^\circ}\)</span>$</p>
 <p><strong>Keystrokes:</strong> <code>4 [ENTER] 9 [÷] [↰] [ACOS]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>63.612200039</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>4 [ENTER] 9 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.444444\)</span></td>
-<td style="text-align: left;">Ratio <span class="arithmatex">\(4/9\)</span> evaluated</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>[↰] [ACOS]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(63.612200\)</span></strong></td>
-<td style="text-align: left;">Dihedral angle <span class="arithmatex">\(\theta\)</span> in degrees</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate cosine quotient <span class="arithmatex">\(4/9 \approx 0.444444\)</span> via <code>4 [ENTER] 9 [÷]</code>. Taking inverse cosine via <code>[↰] [ACOS]</code> extracts the dihedral intersection angle in degrees, settling the stack at <span class="arithmatex">\((T:0, Z:0, Y:0, X:63.6122)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(\theta = 63.6122^\circ\)</span></strong>.</p>
 <hr />
 <h3 id="61117-problem-617-centroid-of-composite-3-section-beam-via">6.11.17 Problem 6.17: Centroid of Composite 3-Section Beam via <code>[Σ+]</code></h3>
@@ -18444,39 +17217,7 @@ $<span class="arithmatex">\(I_{\text{pivot}} = I_{\text{cm}} + m d^2 = 0.186667 
 <p><strong>Turbomachinery Context:</strong> Rotor disk with moment of inertia <span class="arithmatex">\(I = 14.8\text{ kg}\cdot\text{m}^2\)</span> and mass <span class="arithmatex">\(M = 42.0\text{ kg}\)</span>:
 $<span class="arithmatex">\(k = \sqrt{\frac{I}{M}} = \sqrt{\frac{14.8}{42.0}} = \sqrt{0.352381} = \mathbf{0.593617\text{ meters}} = 593.6\text{ mm}\)</span>$</p>
 <p><strong>Keystrokes:</strong> <code>14.8 [ENTER] 42 [÷] [√x]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>0.5936168397</code></strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>14.8 [ENTER] 42 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.352381\)</span></td>
-<td style="text-align: left;">Ratio <span class="arithmatex">\(I/M\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>[√x]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.593617\)</span></strong></td>
-<td style="text-align: left;">Radius of gyration <span class="arithmatex">\(k\)</span> in meters</td>
-</tr>
-</tbody>
-</table>
+<p>Divide moment of inertia <span class="arithmatex">\(I = 14.8\)</span> by mass <span class="arithmatex">\(M = 42.0\)</span> via <code>14.8 [ENTER] 42 [÷]</code> to form gyration metric <span class="arithmatex">\(0.352381\)</span>. Extracting the square root via <code>[√x]</code> gives radius of gyration <span class="arithmatex">\(k\)</span> in meters at <span class="arithmatex">\((T:0, Z:0, Y:0, X:0.593617)\)</span>.</p>
 <p>Result: <strong><span class="arithmatex">\(k = 0.5936\text{ m}\)</span></strong> (<span class="arithmatex">\(593.6\text{ mm}\)</span>).</p>
 <hr />
 <h3 id="61121-problem-621-spherical-triangle-area-via-girards-theorem">6.11.21 Problem 6.21: Spherical Triangle Area via Girard's Theorem</h3>
@@ -18551,61 +17292,8 @@ $<span class="arithmatex">\(A = \frac{8\pi f^2}{3} \left[ \left(1 + \frac{R^2}{4
 For <span class="arithmatex">\(f = 1.2, R = 2.0\)</span>: <span class="arithmatex">\(\frac{R^2}{4f^2} = \frac{4}{4(1.44)} = \frac{1}{1.44} \approx 0.694444\)</span>.
 <span class="arithmatex">\(1 + 0.694444 = 1.694444 \implies (1.694444)^{1.5} \approx 2.205739\)</span>.
 $<span class="arithmatex">\(A = \frac{8\pi(1.44)}{3} [2.205739 - 1] = 3.84\pi \times 1.205739 \approx \mathbf{14.5458\text{ m}^2}\)</span>$</p>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>[CLΣ]</code> — Zero the statistical accumulators (<span class="arithmatex">\(n = 0, \Sigma x = 0\)</span>) before summing composite geometric faces.
-2. <strong>Evaluate Each Sub-Feature in <span class="arithmatex">\((Y, X)\)</span>:</strong> Compute each individual face area or sub-volume directly on the RPN stack from the inside out and press <code>[Σ+]</code> to add it into the running <span class="arithmatex">\(\Sigma x\)</span> register while incrementing the face counter <span class="arithmatex">\(n\)</span> in Register <span class="arithmatex">\(X\)</span>.
-3. <code>[Σx]</code> — Recall the accumulated total surface area or composite volume into Register <span class="arithmatex">\(X\)</span> without touching general-purpose storage registers.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>2 [x²] 4 [÷] 1.2 [x²] [÷] 1 [+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.694444\)</span></td>
-<td style="text-align: left;">Base <span class="arithmatex">\((1 + R^2/(4f^2))\)</span> evaluated</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>1.5 [yˣ] 1 [-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.205739\)</span></td>
-<td style="text-align: left;">Bracket term <span class="arithmatex">\((1 + R^2/(4f^2))^{3/2} - 1\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>8 [ENTER] [π] [×] 1.2 [x²] [×] 3 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.205739\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(12.063716\)</span></td>
-<td style="text-align: left;">Leading factor <span class="arithmatex">\(8\pi f^2 / 3\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(14.545789\)</span></strong></td>
-<td style="text-align: left;">Parabolic reflector surface area in m²</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate base factor <span class="arithmatex">\(1 + R^2/(4f^2) \approx 1.694444\)</span> via <code>2 [x²] 4 [÷] 1.2 [x²] [÷] 1 [+]</code>. Raise to power <span class="arithmatex">\(1.5\)</span> and subtract unity via <code>1.5 [yˣ] 1 [-]</code> to obtain <span class="arithmatex">\(1.205739\)</span>. Form leading coefficient <span class="arithmatex">\(\frac{8\pi f^2}{3} \approx 12.063716\)</span> via <code>8 [ENTER] [π] [×] 1.2 [x²] [×] 3 [÷]</code> and multiply via <code>[×]</code> to resolve reflector area at <span class="arithmatex">\((T:0, Z:0, Y:0, X:14.5458)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(14.5458\text{ m}^2\)</span></strong>.</p>
 <hr />
 <h3 id="61123-problem-623-ellipsoid-surface-area-knud-thomsen-approximation">6.11.23 Problem 6.23: Ellipsoid Surface Area (Knud Thomsen Approximation)</h3>
 <p><strong>Astronomy Context:</strong> Triaxial asteroid with semiaxes <span class="arithmatex">\(a = 15.0\text{ km}, b = 10.0\text{ km}, c = 6.0\text{ km}\)</span>:
@@ -18615,61 +17303,8 @@ $<span class="arithmatex">\(p \approx 1.6075 \implies A \approx 4\pi \left(\frac
 * <span class="arithmatex">\(bc = 60 \implies 60^{1.6075} \approx 729.8\)</span>
 Sum <span class="arithmatex">\(= 5,308.1 / 3 = 1,769.37 \implies (1769.37)^{1/1.6075} \approx 103.52\)</span>
 <span class="arithmatex">\(A \approx 4\pi \times 103.52 \approx \mathbf{1,300.9\text{ km}^2}\)</span>.</p>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>[CLΣ]</code> — Zero the statistical accumulators (<span class="arithmatex">\(n = 0, \Sigma x = 0\)</span>) before summing composite geometric faces.
-2. <strong>Evaluate Each Sub-Feature in <span class="arithmatex">\((Y, X)\)</span>:</strong> Compute each individual face area or sub-volume directly on the RPN stack from the inside out and press <code>[Σ+]</code> to add it into the running <span class="arithmatex">\(\Sigma x\)</span> register while incrementing the face counter <span class="arithmatex">\(n\)</span> in Register <span class="arithmatex">\(X\)</span>.
-3. <code>[Σx]</code> — Recall the accumulated total surface area or composite volume into Register <span class="arithmatex">\(X\)</span> without touching general-purpose storage registers.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>150 [ENTER] 1.6075 [yˣ]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(150.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3178.6008\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\((ab)^p = 150^{1.6075}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>90 [ENTER] 1.6075 [yˣ] [+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(90.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4578.3371\)</span></td>
-<td style="text-align: left;">Add <span class="arithmatex">\((ac)^p = 90^{1.6075}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>60 [ENTER] 1.6075 [yˣ] [+] 3 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(60.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1769.3683\)</span></td>
-<td style="text-align: left;">Add <span class="arithmatex">\((bc)^p\)</span> and divide by 3</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>1 1.6075 [÷] [yˣ] 4 [×] [π] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(1300.9168\)</span></strong></td>
-<td style="text-align: left;">Raise to <span class="arithmatex">\(1/p\)</span> and scale by <span class="arithmatex">\(4\pi\)</span> (km²)</td>
-</tr>
-</tbody>
-</table>
+<p>Compute <span class="arithmatex">\((ab)^p = 150^{1.6075} \approx 3178.60\)</span> with <code>150 [ENTER] 1.6075 [yˣ]</code>. Accumulate <span class="arithmatex">\((ac)^p = 90^{1.6075}\)</span> via <code>90 [ENTER] 1.6075 [yˣ] [+]</code> and <span class="arithmatex">\((bc)^p = 60^{1.6075}\)</span> divided by 3 via <code>60 [ENTER] 1.6075 [yˣ] [+] 3 [÷]</code>, reaching mean power <span class="arithmatex">\(1769.3683\)</span>. Take the <span class="arithmatex">\(1/p\)</span> root and scale by <span class="arithmatex">\(4\pi\)</span> via <code>1 1.6075 [÷] [yˣ] 4 [×] [π] [×]</code> to establish ellipsoid surface area at <span class="arithmatex">\((T:0, Z:0, Y:0, X:1300.9168)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(1,300.92\text{ km}^2\)</span></strong>.</p>
 <hr />
 <h3 id="61124-problem-624-hexagonal-bolt-head-volume-and-mass">6.11.24 Problem 6.24: Hexagonal Bolt Head Volume and Mass</h3>
 <p><strong>Mechanical Hardware Context:</strong> Steel hex bolt head (<span class="arithmatex">\(s = 10.0\text{ mm}\)</span> side length of regular hexagon, height <span class="arithmatex">\(h = 12.0\text{ mm}\)</span>, steel density <span class="arithmatex">\(\rho = 7.85\text{ g/cm}^3\)</span>):
@@ -18679,62 +17314,8 @@ $<span class="arithmatex">\(\text{Mass } m = 3.11769 \times 7.85 = \mathbf{24.47
 <blockquote>
 <p><strong>Named RPN Stack Idiom: <em>The Inside-Out Radical &amp; Regular Polygon Pipeline</em></strong> — Square hex bolt face flat-to-flat span, multiply by polygonal area factor <span class="arithmatex">\(3\sqrt{3}/2\)</span>, and scale by thickness without scratchpad storage <em>(<a href="../sc32/appendix-e-annotated-bibliography/#cite-macaulay2016">Macaulay, 2016</a>; <a href="../sc32/appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>)</em>.</p>
 </blockquote>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>3</code> <code>[√x]</code> <code>3</code> <code>[×]</code> <code>2</code> <code>[÷]</code> — Evaluate regular hexagonal area coefficient (<span class="arithmatex">\(3\sqrt{3}/2 \approx 2.598076\)</span>).
-2. <code>10</code> <code>[↰] [x²]</code> <code>[×]</code> — Square hex edge <span class="arithmatex">\(s = 10.0\text{ mm}\)</span> and multiply, establishing face area <span class="arithmatex">\(A \approx 259.81\text{ mm}^2\)</span>.
-3. <code>6.5</code> <code>[×]</code> — Multiply by bolt head height <span class="arithmatex">\(h = 6.5\text{ mm}\)</span> to find volume <span class="arithmatex">\(V \approx 1688.75\text{ mm}^3\)</span>.
-4. <code>7.85</code> <code>[×]</code> <code>1000</code> <code>[÷]</code> — Scale by steel density (<span class="arithmatex">\(7.85\text{ g/cm}^3\)</span>) to obtain fastener head mass <span class="arithmatex">\(m \approx \mathbf{13.26\text{ g}}\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>3 [√x] 3 [×] 2 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.598076\)</span></td>
-<td style="text-align: left;">Regular hex area factor <span class="arithmatex">\(3\sqrt{3}/2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>10 [x²] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(259.807621\)</span></td>
-<td style="text-align: left;">Bolt head face area <span class="arithmatex">\(A\)</span> in mm²</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>12 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3117.691454\)</span></td>
-<td style="text-align: left;">Volume <span class="arithmatex">\(V = A \cdot h\)</span> in mm³</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>1000 [÷] 7.85 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(24.473878\)</span></strong></td>
-<td style="text-align: left;">Mass in grams (<span class="arithmatex">\(\rho = 7.85\text{ g/cm}^3\)</span>)</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate regular hex coefficient <span class="arithmatex">\(3\sqrt{3}/2 \approx 2.598076\)</span> via <code>3 [√x] 3 [×] 2 [÷]</code>. Square side <span class="arithmatex">\(s = 10\text{ mm}\)</span> with <code>10 [x²] [×]</code> to yield face area <span class="arithmatex">\(259.8076\text{ mm}^2\)</span>. Multiply by height <span class="arithmatex">\(h = 12\text{ mm}\)</span> via <code>12 [×]</code> for volume <span class="arithmatex">\(3117.6915\text{ mm}^3\)</span>, and convert to grams at <span class="arithmatex">\(\rho = 7.85\text{ g/cm}^3\)</span> via <code>1000 [÷] 7.85 [×]</code>, resolving fastener mass at <span class="arithmatex">\((T:0, Z:0, Y:0, X:24.4739)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(24.4739\text{ grams}\)</span></strong>.</p>
 <hr />
 <h3 id="61125-problem-625-hydraulic-mean-depth-wetted-perimeter">6.11.25 Problem 6.25: Hydraulic Mean Depth &amp; Wetted Perimeter</h3>
 <p><strong>Civil Hydraulics Context:</strong> Trapezoidal irrigation canal: bottom width <span class="arithmatex">\(b = 4.0\text{ m}\)</span>, water depth <span class="arithmatex">\(y = 1.8\text{ m}\)</span>, side slope <span class="arithmatex">\(z = 1.5\)</span> (<span class="arithmatex">\(1.5\text{ H} : 1\text{ V}\)</span>):
@@ -18744,112 +17325,15 @@ $<span class="arithmatex">\(\text{Mass } m = 3.11769 \times 7.85 = \mathbf{24.47
 <blockquote>
 <p><strong>Named RPN Stack Idiom: <em>The x⇄y Denominator Flip &amp; Wetted Perimeter Pipeline</em></strong> — Compute open channel flow cross-sectional area, compute wetted boundary perimeter, and divide via stack swap with zero register allocation <em>(<a href="../sc32/appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>)</em>.</p>
 </blockquote>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>4.5</code> <code>[ENTER]</code> <code>1.8</code> <code>[×]</code> — Compute canal flow area <span class="arithmatex">\(A = 4.5 \times 1.8 = 8.10\text{ m}^2\)</span>.
-2. <code>4.5</code> <code>[ENTER]</code> <code>1.8</code> <code>[ENTER]</code> <code>2</code> <code>[×]</code> <code>[+]</code> — Form wetted perimeter <span class="arithmatex">\(P = 4.5 + 2(1.8) = 8.10\text{ m}\)</span>.
-3. <code>[x⇄y]</code> <code>[÷]</code> — Swap and divide flow area by wetted perimeter, establishing hydraulic radius <span class="arithmatex">\(R_h = \mathbf{1.000\text{ m}}\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>4 [ENTER] 1.5 [ENTER] 1.8 [×] [+] 1.8 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(6.7000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(12.060000\)</span></td>
-<td style="text-align: left;">Flow area <span class="arithmatex">\(A = (b + zy)y\)</span> in m²</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>4 [ENTER] 2 [ENTER] 1.8 [×] 1 [ENTER] 1.5 [x²] [+] [√x] [×] [+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(12.060000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(10.489240\)</span></td>
-<td style="text-align: left;">Wetted perimeter <span class="arithmatex">\(P = b + 2y\sqrt{1+z^2}\)</span> in m</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(1.149750\)</span></strong></td>
-<td style="text-align: left;">Hydraulic radius <span class="arithmatex">\(R_h = A / P\)</span> in meters</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate cross-sectional flow area <span class="arithmatex">\(A = (b+zy)y = 12.06\text{ m}^2\)</span> with <code>4 [ENTER] 1.5 [ENTER] 1.8 [×] [+] 1.8 [×]</code>. Then compute wetted perimeter <span class="arithmatex">\(P = b + 2y\sqrt{1+z^2} \approx 10.4892\text{ m}\)</span> via <code>4 [ENTER] 2 [ENTER] 1.8 [×] 1 [ENTER] 1.5 [x²] [+] [√x] [×] [+]</code>, positioning <span class="arithmatex">\(A\)</span> in Register <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(P\)</span> in Register <span class="arithmatex">\(X\)</span>. Pressing <code>[÷]</code> divides the two directly to establish hydraulic radius at <span class="arithmatex">\((T:0, Z:0, Y:0, X:1.1498)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(R_h = 1.1498\text{ meters}\)</span></strong>.</p>
 <hr />
 <h3 id="61126-problem-626-circular-segment-area-partially-filled-pipe">6.11.26 Problem 6.26: Circular Segment Area (Partially Filled Pipe)</h3>
 <p><strong>Fluid Mechanics Context:</strong> Storm sewer diameter <span class="arithmatex">\(D = 1.20\text{ m}\)</span> (<span class="arithmatex">\(r = 0.60\text{ m}\)</span>). Water depth <span class="arithmatex">\(d = 0.40\text{ m}\)</span>. Subtended angle:
 $<span class="arithmatex">\(\theta = 2 \arccos\left(\frac{r - d}{r}\right) = 2 \arccos\left(\frac{0.2}{0.6}\right) = 2 \arccos(0.333333) = 2(70.5288^\circ) = 141.0575^\circ = 2.461914\text{ rad}\)</span>$
 $<span class="arithmatex">\(\text{Area } A = \frac{1}{2} r^2 (\theta - \sin\theta) = 0.5(0.36)(2.461914 - \sin(141.0575^\circ)) = 0.18(2.461914 - 0.628539) = 0.18(1.833375) = \mathbf{0.330008\text{ m}^2}\)</span>$</p>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>120</code> <code>[ENTER]</code> <code>[↱] [π]</code> <code>[×]</code> <code>180</code> <code>[÷]</code> — Convert central angle <span class="arithmatex">\(120.0^\circ\)</span> into radians (<span class="arithmatex">\(\theta \approx 2.094395\text{ rad}\)</span>).
-2. <code>120</code> <code>[SIN]</code> <code>[-]</code> — Subtract <span class="arithmatex">\(\sin(120^\circ) \approx 0.866025\)</span> to obtain chord differential factor <span class="arithmatex">\(1.228370\)</span>.
-3. <code>0.75</code> <code>[↰] [x²]</code> <code>[×]</code> <code>2</code> <code>[÷]</code> — Multiply by <span class="arithmatex">\(R^2/2\)</span> with <span class="arithmatex">\(R = 0.75\text{ m}\)</span>, yielding partially filled flow area <span class="arithmatex">\(A \approx \mathbf{0.3455\text{ m}^2}\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>0.6 [ENTER] 0.4 [-] 0.6 [÷] [↰] [ACOS] 2 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(141.057559\)</span></td>
-<td style="text-align: left;">Subtended angle <span class="arithmatex">\(\theta\)</span> in degrees</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>[ENTER] [π] [×] 180 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(141.057559\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.461914\)</span></td>
-<td style="text-align: left;">Converted angle <span class="arithmatex">\(\theta_{\text{rad}}\)</span> in radians</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[x⇄y] [SIN] [-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.833375\)</span></td>
-<td style="text-align: left;">Chord term <span class="arithmatex">\((\theta_{\text{rad}} - \sin\theta)\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>0.6 [x²] [×] 2 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.330008\)</span></strong></td>
-<td style="text-align: left;">Flow cross-sectional area <span class="arithmatex">\(A\)</span> in m²</td>
-</tr>
-</tbody>
-</table>
+<p>Determine subtended angle <span class="arithmatex">\(\theta = 141.0576^\circ\)</span> via <code>0.6 [ENTER] 0.4 [-] 0.6 [÷] [↰] [ACOS] 2 [×]</code>. Convert to radians <span class="arithmatex">\(\theta_{\text{rad}} \approx 2.461914\)</span> via <code>[ENTER] [π] [×] 180 [÷]</code>, and subtract sine via <code>[x⇄y] [SIN] [-]</code> to obtain chord bracket <span class="arithmatex">\(1.833375\)</span>. Scaling by <span class="arithmatex">\(r^2/2\)</span> via <code>0.6 [x²] [×] 2 [÷]</code> delivers flow cross section at <span class="arithmatex">\((T:0, Z:0, Y:0, X:0.330008)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(0.330008\text{ m}^2\)</span></strong>.</p>
 <hr />
 <h3 id="61127-problem-627-slosh-baffle-circular-perforation-net-area">6.11.27 Problem 6.27: Slosh Baffle Circular Perforation Net Area</h3>
 <p><strong>Aerospace Fuel Tank Context:</strong> Circular baffle plate <span class="arithmatex">\(R = 400.0\text{ mm}\)</span> perforated with 48 circular holes of diameter <span class="arithmatex">\(d = 35.0\text{ mm}\)</span> (<span class="arithmatex">\(r_h = 17.5\text{ mm}\)</span>):
@@ -18859,53 +17343,8 @@ $<span class="arithmatex">\(\text{Area } A = \frac{1}{2} r^2 (\theta - \sin\thet
 <blockquote>
 <p><strong>Named RPN Stack Idiom: <em>The Σ+ Multi-Face Surface Area Accumulator &amp; Perforation Subtraction</em></strong> — Compute tank bulkhead gross area, stream orifice hole areas, and subtract net open area in place <em>(<a href="../sc32/appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>; <a href="../sc32/appendix-e-annotated-bibliography/#cite-munroe2014">Munroe, 2014</a>)</em>.</p>
 </blockquote>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>1.2</code> <code>[↰] [x²]</code> <code>[↱] [π]</code> <code>[×]</code> — Calculate gross plate area <span class="arithmatex">\(A_{\text{gross}} = \pi R^2 \approx 4.5239\text{ m}^2\)</span>.
-2. <code>0.04</code> <code>[↰] [x²]</code> <code>[↱] [π]</code> <code>[×]</code> — Form area of single perforation <span class="arithmatex">\(a = \pi r^2 \approx 5.0265 \times 10^{-3}\text{ m}^2\)</span>.
-3. <code>120</code> <code>[×]</code> — Multiply by hole count (<span class="arithmatex">\(N = 120\)</span>), establishing total relief area <span class="arithmatex">\(A_{\text{holes}} \approx 0.6032\text{ m}^2\)</span>.
-4. <code>[-]</code> — Subtract perforations from gross area, yielding net structural baffle area <span class="arithmatex">\(A_{\text{net}} \approx \mathbf{3.9207\text{ m}^2}\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>400 [x²] [π] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(502654.8246\)</span></td>
-<td style="text-align: left;">Gross solid circular area <span class="arithmatex">\(\pi R^2\)</span> in mm²</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>17.5 [x²] [π] [×] 48 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(502654.8246\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(46181.4120\)</span></td>
-<td style="text-align: left;">Total perforation area (<span class="arithmatex">\(48 \times \pi r_h^2\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(456473.4126\)</span></strong></td>
-<td style="text-align: left;">Net solid baffle area <span class="arithmatex">\(A_{\text{net}}\)</span> in mm²</td>
-</tr>
-</tbody>
-</table>
+<p>Compute gross solid plate area <span class="arithmatex">\(\pi R^2 \approx 502,654.82\text{ mm}^2\)</span> with <code>400 [x²] [π] [×]</code>. Evaluate the 48 perforation holes <span class="arithmatex">\(48 \times \pi r_h^2 \approx 46,181.41\text{ mm}^2\)</span> via <code>17.5 [x²] [π] [×] 48 [×]</code>, and subtract directly with <code>[-]</code>, leaving net solid baffle area at <span class="arithmatex">\((T:0, Z:0, Y:0, X:456473.4126)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(456,473.41\text{ mm}^2\)</span></strong>.</p>
 <hr />
 <h3 id="61128-problem-628-conical-spiral-helix-arc-length">6.11.28 Problem 6.28: Conical Spiral (Helix) Arc Length</h3>
 <p><strong>Spring Design Context:</strong> Tapered conical coil spring with base radius <span class="arithmatex">\(R_1 = 30\text{ mm}\)</span>, top radius <span class="arithmatex">\(R_2 = 10\text{ mm}\)</span>, height <span class="arithmatex">\(h = 60\text{ mm}\)</span>, <span class="arithmatex">\(N = 6\text{ active coils}\)</span>:
@@ -18981,62 +17420,8 @@ Ratio <span class="arithmatex">\(R/r = \sqrt{3} \approx 1.732051\)</span>.</p>
 <p><strong>Named RPN Stack Idiom: <em>The Inside-Out Radical &amp; Regular Octahedron Spheres</em></strong> — Evaluate polyhedral radical factors <span class="arithmatex">\(a/\sqrt{2}\)</span> and <span class="arithmatex">\(a/\sqrt{6}\)</span> from the inner root outward, and resolve sphere ratio <span class="arithmatex">\(R/r = \sqrt{3}\)</span> directly on the operational stack <em>(<a href="../sc32/appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>; <a href="../sc32/appendix-e-annotated-bibliography/#cite-singh1997">Singh, 1997</a>)</em>.</p>
 </blockquote>
 <p><strong>Keystrokes:</strong> <code>40 [ENTER] 2 [√x] [÷] 40 [ENTER] 6 [√x] [÷] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>1.7321</code></strong></p>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>40</code> <code>[ENTER]</code> <code>2</code> <code>[√x]</code> <code>[÷]</code> — Compute circumscribed sphere radius (<span class="arithmatex">\(R = a/\sqrt{2} \approx 28.2843\text{ mm}\)</span>).
-2. <code>40</code> <code>[ENTER]</code> <code>6</code> <code>[√x]</code> <code>[÷]</code> — Compute inscribed sphere radius (<span class="arithmatex">\(r = a/\sqrt{6} \approx 16.3299\text{ mm}\)</span>).
-3. <code>[÷]</code> — Divide radii to yield exact geometric ratio (<span class="arithmatex">\(R/r = \sqrt{3} \approx \mathbf{1.7321}\)</span>).
-4. <code>[↰] [x²]</code> — Square the ratio to confirm the invariant <span class="arithmatex">\((R/r)^2 = 3.0000\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>40 [ENTER] 2 [√x] [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(28.2843\)</span></td>
-<td style="text-align: left;">Circumradius <span class="arithmatex">\(R = a/\sqrt{2}\)</span> in mm</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>40 [ENTER] 6 [√x] [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(28.2843\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(16.3299\)</span></td>
-<td style="text-align: left;">Inradius <span class="arithmatex">\(r = a/\sqrt{6}\)</span> in mm</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(1.7321\)</span></strong></td>
-<td style="text-align: left;">Polyhedral sphere ratio <span class="arithmatex">\(R/r = \sqrt{3}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>[↰] [x²]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(3.0000\)</span></strong></td>
-<td style="text-align: left;">Invariant <span class="arithmatex">\((R/r)^2 = 3\)</span> confirmed</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate circumradius <span class="arithmatex">\(R = a/\sqrt{2} \approx 28.2843\text{ mm}\)</span> via <code>40 [ENTER] 2 [√x] [÷]</code>, then inradius <span class="arithmatex">\(r = a/\sqrt{6} \approx 16.3299\text{ mm}\)</span> via <code>40 [ENTER] 6 [√x] [÷]</code>. Dividing the two via <code>[÷]</code> yields exact sphere ratio <span class="arithmatex">\(R/r = \sqrt{3} \approx 1.7321\)</span> at <span class="arithmatex">\((T:0, Z:0, Y:0, X:1.7321)\)</span>, and squaring via <code>[↰] [x²]</code> confirms invariant <span class="arithmatex">\((R/r)^2 = 3.0000\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(R/r = \sqrt{3} \approx 1.7321\)</span></strong>.</p>
 <hr />
 <h3 id="61130-problem-630-moment-of-inertia-of-hollow-spherical-pressure-hull">6.11.30 Problem 6.30: Moment of Inertia of Hollow Spherical Pressure Hull</h3>
 <p><strong>Submersible Engineering Context:</strong> Titanium bathysphere with outer radius <span class="arithmatex">\(R_2 = 1.10\text{ m}\)</span>, inner radius <span class="arithmatex">\(R_1 = 0.98\text{ m}\)</span>, material density <span class="arithmatex">\(\rho = 4,500\text{ kg/m}^3\)</span>:

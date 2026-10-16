@@ -34,19 +34,19 @@
     <rect x="24" y="44" width="17" height="6" rx="2" fill="#0f172a" opacity="0.55" />
   </g>
 
-  <!-- Header Typography with Bifurcated Teacher Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">TEACHER ANCHOR: CCSS.1.OA.C.6 • TEKS 111.3.b.3.C • UNSPSC 60101700 • TITLE I / IV GRANT ELIGIBLE • MODEL: SC6</text>
+  <!-- Header Typography with Series & Mathematical Domain Anchor -->
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 01 OF 09 • DOMAIN: PLACE VALUE & 5-ANCHOR SUBITIZING • 7.00mm 1U PITCH • 10-FRAME STACKING SLOTS</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: MAKE-A-TEN BRIDGE &amp; 5-ANCHOR SUBITIZING</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: 8 + 5 = 13 via Bridging to 10</text>
   <text x="130" y="117" class="font-mono badge-box">Grades K–3 Subitizing, Place Value &amp; Addition • Hands-On Classroom &amp; Home STEM Studio Series</text>
 
-  <!-- Top-Right SKU Badges -->
+  <!-- Top-Right Series & SKU Badges -->
   <g transform="translate(1025, 48)">
     <rect x="0" y="0" width="180" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-    <text x="90" y="19" class="font-mono badge-txt" text-anchor="middle">SKU: BASE-10</text>
+    <text x="90" y="19" class="font-mono badge-txt" text-anchor="middle">CARD 01 / 09 • BASE-10</text>
     
     <rect x="0" y="34" width="180" height="26" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-    <text x="90" y="52" class="font-mono badge-txt" text-anchor="middle">LESSON TUTORIAL</text>
+    <text x="90" y="52" class="font-mono badge-txt" text-anchor="middle">MATHEMATICAL GUIDE</text>
   </g>
 
   <!-- LEFT COLUMN: SCAN FOR VIDEO DEMO, STANDARDS & GUIDING QUESTION -->
@@ -69,15 +69,15 @@
     <!-- Standards Box -->
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-      <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULUM STANDARDS</text>
+      <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
       <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades K–3 Subitizing, Place Value &amp; Addition</text>
     </g>
 
-    <!-- Parent / Teacher Guiding Question Box -->
+    <!-- Mathematical Inquiry Box -->
     <g transform="translate(12, 375)">
       <rect x="0" y="0" width="276" height="88" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1" />
-      <text x="10" y="17" class="font-mono" font-size="8.8px" font-weight="700" fill="#0369a1">💡 GUIDING QUESTION (ASK, DON'T TELL)</text>
+      <text x="10" y="17" class="font-mono" font-size="8.8px" font-weight="700" fill="#0369a1">💡 MATHEMATICAL INQUIRY</text>
       <text x="10" y="34" class="font-mono" font-size="8.2px" fill="#0f172a">
         <tspan x="10" dy="0">How many empty spots are left in Frame A b</tspan>
         <tspan x="10" dy="13">efore you start moving counters from Frame </tspan>
@@ -87,7 +87,7 @@
     </g>
   </g>
 
-  <!-- RIGHT AREA: 5 STEP TUTORIAL CARDS + NOW YOU TRY CHALLENGE -->
+  <!-- RIGHT AREA: 5 STEP TUTORIAL CARDS + EXTENSION INVESTIGATION -->
   <g transform="translate(350, 148)">
     
     <!-- STEP 1 CARD -->
@@ -142,17 +142,17 @@
       </text>
     </g>
 
-    <!-- NOW YOU TRY! ACTIVE STUDENT CHALLENGE BOX -->
+    <!-- EXTENSION INVESTIGATION BOX -->
     <g transform="translate(0, 385)">
       <rect x="0" y="0" width="875" height="90" rx="8" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="4,3" />
       <rect x="0" y="0" width="875" height="24" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-      <text x="16" y="16" class="font-mono" font-size="9.5px" font-weight="700" fill="#0369a1">★ NOW YOU TRY! (STUDENT PRACTICE CHALLENGE): BRIDGE TO 10: 7 + 6</text>
+      <text x="16" y="16" class="font-mono" font-size="9.5px" font-weight="700" fill="#0369a1">★ EXTENSION INVESTIGATION: BRIDGE TO 10: 7 + 6</text>
       
       <text x="16" y="44" class="font-mono" font-size="8.8px" fill="#0f172a">
         <tspan x="16" dy="0">Put 7 in Frame A (3 empty). Put 6 in Frame B. Move 3 to make a ten. How many are left in B? 10 + 3 = 13! (Scan QR for 3D animated solution!)</tspan>
       </text>
       <text x="16" y="74" class="font-mono" font-size="8.5px" font-weight="700" fill="#059669">
-        → Build with your blocks, then scan the QR code to watch the animated 3D solution on your screen!
+        → Assemble with your physical blocks, then scan the QR code to verify with the 3D step-by-step vector model.
       </text>
     </g>
   </g>
@@ -162,21 +162,21 @@
     <rect x="0" y="0" width="1190" height="115" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
     
     <g transform="translate(25, 24)">
-      <text x="0" y="0" class="font-mono th" fill="#0f172a">KINUX LAB KINESTHETIC CURRICULUM</text>
+      <text x="0" y="0" class="font-mono th" fill="#0f172a">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
       <text x="0" y="18" class="font-mono footer-txt">Interactive Mathematics Manipulative Ecosystem.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates (10x / 30x Stations): stackcalc.io/schools</text>
+      <text x="0" y="32" class="font-mono footer-txt">Designed in Mountain View, California • Archival BPA-Free POM/PETG.</text>
     </g>
 
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">CROSS-REFERENCED CALCULATOR VERIFICATION</text>
       <text x="0" y="18" class="font-mono footer-txt">Every keystroke sequence verified with RPNCore CalculatorEngine.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Title I &amp; IV STEM Grants • UNSPSC 60101700 • Net-30 District POs: sales@stackcalc.io</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Pitch • stackcalc.io</text>
     </g>
 
     <g transform="translate(980, 24)">
-      <text x="0" y="0" class="font-mono th" fill="#0f172a">TEACHER &amp; REFILL PORTAL</text>
-      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#0284c7">stackcalc.io/education</text>
-      <text x="0" y="32" class="font-mono footer-txt">Single Refills: stackcalc.io/parts</text>
+      <text x="0" y="0" class="font-mono th" fill="#0f172a">PARTS &amp; SCHOOL REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#0284c7">stackcalc.io/parts</text>
+      <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates: stackcalc.io/schools</text>
     </g>
   </g>
   <metadata id="stackcalc-book-macro-manifest" data-kit="BASE-10">

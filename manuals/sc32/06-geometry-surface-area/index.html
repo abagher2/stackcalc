@@ -3877,61 +3877,8 @@ $<span class="arithmatex">\(A = \frac{8\pi f^2}{3} \left[ \left(1 + \frac{R^2}{4
 For <span class="arithmatex">\(f = 1.2, R = 2.0\)</span>: <span class="arithmatex">\(\frac{R^2}{4f^2} = \frac{4}{4(1.44)} = \frac{1}{1.44} \approx 0.694444\)</span>.
 <span class="arithmatex">\(1 + 0.694444 = 1.694444 \implies (1.694444)^{1.5} \approx 2.205739\)</span>.
 $<span class="arithmatex">\(A = \frac{8\pi(1.44)}{3} [2.205739 - 1] = 3.84\pi \times 1.205739 \approx \mathbf{14.5458\text{ m}^2}\)</span>$</p>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>[CLΣ]</code> — Zero the statistical accumulators (<span class="arithmatex">\(n = 0, \Sigma x = 0\)</span>) before summing composite geometric faces.
-2. <strong>Evaluate Each Sub-Feature in <span class="arithmatex">\((Y, X)\)</span>:</strong> Compute each individual face area or sub-volume directly on the RPN stack from the inside out and press <code>[Σ+]</code> to add it into the running <span class="arithmatex">\(\Sigma x\)</span> register while incrementing the face counter <span class="arithmatex">\(n\)</span> in Register <span class="arithmatex">\(X\)</span>.
-3. <code>[Σx]</code> — Recall the accumulated total surface area or composite volume into Register <span class="arithmatex">\(X\)</span> without touching general-purpose storage registers.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>2 [x²] 4 [÷] 1.2 [x²] [÷] 1 [+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.694444\)</span></td>
-<td style="text-align: left;">Base <span class="arithmatex">\((1 + R^2/(4f^2))\)</span> evaluated</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>1.5 [yˣ] 1 [-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.205739\)</span></td>
-<td style="text-align: left;">Bracket term <span class="arithmatex">\((1 + R^2/(4f^2))^{3/2} - 1\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>8 [ENTER] [π] [×] 1.2 [x²] [×] 3 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.205739\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(12.063716\)</span></td>
-<td style="text-align: left;">Leading factor <span class="arithmatex">\(8\pi f^2 / 3\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(14.545789\)</span></strong></td>
-<td style="text-align: left;">Parabolic reflector surface area in m²</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate base factor <span class="arithmatex">\(1 + R^2/(4f^2) \approx 1.694444\)</span> via <code>2 [x²] 4 [÷] 1.2 [x²] [÷] 1 [+]</code>. Raise to power <span class="arithmatex">\(1.5\)</span> and subtract unity via <code>1.5 [yˣ] 1 [-]</code> to obtain <span class="arithmatex">\(1.205739\)</span>. Form leading coefficient <span class="arithmatex">\(\frac{8\pi f^2}{3} \approx 12.063716\)</span> via <code>8 [ENTER] [π] [×] 1.2 [x²] [×] 3 [÷]</code> and multiply via <code>[×]</code> to resolve reflector area at <span class="arithmatex">\((T:0, Z:0, Y:0, X:14.5458)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(14.5458\text{ m}^2\)</span></strong>.</p>
 <hr />
 <h3 id="61123-problem-623-ellipsoid-surface-area-knud-thomsen-approximation">6.11.23 Problem 6.23: Ellipsoid Surface Area (Knud Thomsen Approximation)</h3>
 <p><strong>Astronomy Context:</strong> Triaxial asteroid with semiaxes <span class="arithmatex">\(a = 15.0\text{ km}, b = 10.0\text{ km}, c = 6.0\text{ km}\)</span>:
@@ -3941,61 +3888,8 @@ $<span class="arithmatex">\(p \approx 1.6075 \implies A \approx 4\pi \left(\frac
 * <span class="arithmatex">\(bc = 60 \implies 60^{1.6075} \approx 729.8\)</span>
 Sum <span class="arithmatex">\(= 5,308.1 / 3 = 1,769.37 \implies (1769.37)^{1/1.6075} \approx 103.52\)</span>
 <span class="arithmatex">\(A \approx 4\pi \times 103.52 \approx \mathbf{1,300.9\text{ km}^2}\)</span>.</p>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>[CLΣ]</code> — Zero the statistical accumulators (<span class="arithmatex">\(n = 0, \Sigma x = 0\)</span>) before summing composite geometric faces.
-2. <strong>Evaluate Each Sub-Feature in <span class="arithmatex">\((Y, X)\)</span>:</strong> Compute each individual face area or sub-volume directly on the RPN stack from the inside out and press <code>[Σ+]</code> to add it into the running <span class="arithmatex">\(\Sigma x\)</span> register while incrementing the face counter <span class="arithmatex">\(n\)</span> in Register <span class="arithmatex">\(X\)</span>.
-3. <code>[Σx]</code> — Recall the accumulated total surface area or composite volume into Register <span class="arithmatex">\(X\)</span> without touching general-purpose storage registers.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>150 [ENTER] 1.6075 [yˣ]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(150.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3178.6008\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\((ab)^p = 150^{1.6075}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>90 [ENTER] 1.6075 [yˣ] [+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(90.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4578.3371\)</span></td>
-<td style="text-align: left;">Add <span class="arithmatex">\((ac)^p = 90^{1.6075}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>60 [ENTER] 1.6075 [yˣ] [+] 3 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(60.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1769.3683\)</span></td>
-<td style="text-align: left;">Add <span class="arithmatex">\((bc)^p\)</span> and divide by 3</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>1 1.6075 [÷] [yˣ] 4 [×] [π] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(1300.9168\)</span></strong></td>
-<td style="text-align: left;">Raise to <span class="arithmatex">\(1/p\)</span> and scale by <span class="arithmatex">\(4\pi\)</span> (km²)</td>
-</tr>
-</tbody>
-</table>
+<p>Compute <span class="arithmatex">\((ab)^p = 150^{1.6075} \approx 3178.60\)</span> with <code>150 [ENTER] 1.6075 [yˣ]</code>. Accumulate <span class="arithmatex">\((ac)^p = 90^{1.6075}\)</span> via <code>90 [ENTER] 1.6075 [yˣ] [+]</code> and <span class="arithmatex">\((bc)^p = 60^{1.6075}\)</span> divided by 3 via <code>60 [ENTER] 1.6075 [yˣ] [+] 3 [÷]</code>, reaching mean power <span class="arithmatex">\(1769.3683\)</span>. Take the <span class="arithmatex">\(1/p\)</span> root and scale by <span class="arithmatex">\(4\pi\)</span> via <code>1 1.6075 [÷] [yˣ] 4 [×] [π] [×]</code> to establish ellipsoid surface area at <span class="arithmatex">\((T:0, Z:0, Y:0, X:1300.9168)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(1,300.92\text{ km}^2\)</span></strong>.</p>
 <hr />
 <h3 id="61124-problem-624-hexagonal-bolt-head-volume-and-mass">6.11.24 Problem 6.24: Hexagonal Bolt Head Volume and Mass</h3>
 <p><strong>Mechanical Hardware Context:</strong> Steel hex bolt head (<span class="arithmatex">\(s = 10.0\text{ mm}\)</span> side length of regular hexagon, height <span class="arithmatex">\(h = 12.0\text{ mm}\)</span>, steel density <span class="arithmatex">\(\rho = 7.85\text{ g/cm}^3\)</span>):
@@ -4005,62 +3899,8 @@ $<span class="arithmatex">\(\text{Mass } m = 3.11769 \times 7.85 = \mathbf{24.47
 <blockquote>
 <p><strong>Named RPN Stack Idiom: <em>The Inside-Out Radical &amp; Regular Polygon Pipeline</em></strong> — Square hex bolt face flat-to-flat span, multiply by polygonal area factor <span class="arithmatex">\(3\sqrt{3}/2\)</span>, and scale by thickness without scratchpad storage <em>(<a href="../appendix-e-annotated-bibliography/#cite-macaulay2016">Macaulay, 2016</a>; <a href="../appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>)</em>.</p>
 </blockquote>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>3</code> <code>[√x]</code> <code>3</code> <code>[×]</code> <code>2</code> <code>[÷]</code> — Evaluate regular hexagonal area coefficient (<span class="arithmatex">\(3\sqrt{3}/2 \approx 2.598076\)</span>).
-2. <code>10</code> <code>[↰] [x²]</code> <code>[×]</code> — Square hex edge <span class="arithmatex">\(s = 10.0\text{ mm}\)</span> and multiply, establishing face area <span class="arithmatex">\(A \approx 259.81\text{ mm}^2\)</span>.
-3. <code>6.5</code> <code>[×]</code> — Multiply by bolt head height <span class="arithmatex">\(h = 6.5\text{ mm}\)</span> to find volume <span class="arithmatex">\(V \approx 1688.75\text{ mm}^3\)</span>.
-4. <code>7.85</code> <code>[×]</code> <code>1000</code> <code>[÷]</code> — Scale by steel density (<span class="arithmatex">\(7.85\text{ g/cm}^3\)</span>) to obtain fastener head mass <span class="arithmatex">\(m \approx \mathbf{13.26\text{ g}}\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>3 [√x] 3 [×] 2 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.598076\)</span></td>
-<td style="text-align: left;">Regular hex area factor <span class="arithmatex">\(3\sqrt{3}/2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>10 [x²] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(259.807621\)</span></td>
-<td style="text-align: left;">Bolt head face area <span class="arithmatex">\(A\)</span> in mm²</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>12 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3117.691454\)</span></td>
-<td style="text-align: left;">Volume <span class="arithmatex">\(V = A \cdot h\)</span> in mm³</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>1000 [÷] 7.85 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(24.473878\)</span></strong></td>
-<td style="text-align: left;">Mass in grams (<span class="arithmatex">\(\rho = 7.85\text{ g/cm}^3\)</span>)</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate regular hex coefficient <span class="arithmatex">\(3\sqrt{3}/2 \approx 2.598076\)</span> via <code>3 [√x] 3 [×] 2 [÷]</code>. Square side <span class="arithmatex">\(s = 10\text{ mm}\)</span> with <code>10 [x²] [×]</code> to yield face area <span class="arithmatex">\(259.8076\text{ mm}^2\)</span>. Multiply by height <span class="arithmatex">\(h = 12\text{ mm}\)</span> via <code>12 [×]</code> for volume <span class="arithmatex">\(3117.6915\text{ mm}^3\)</span>, and convert to grams at <span class="arithmatex">\(\rho = 7.85\text{ g/cm}^3\)</span> via <code>1000 [÷] 7.85 [×]</code>, resolving fastener mass at <span class="arithmatex">\((T:0, Z:0, Y:0, X:24.4739)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(24.4739\text{ grams}\)</span></strong>.</p>
 <hr />
 <h3 id="61125-problem-625-hydraulic-mean-depth-wetted-perimeter">6.11.25 Problem 6.25: Hydraulic Mean Depth &amp; Wetted Perimeter</h3>
 <p><strong>Civil Hydraulics Context:</strong> Trapezoidal irrigation canal: bottom width <span class="arithmatex">\(b = 4.0\text{ m}\)</span>, water depth <span class="arithmatex">\(y = 1.8\text{ m}\)</span>, side slope <span class="arithmatex">\(z = 1.5\)</span> (<span class="arithmatex">\(1.5\text{ H} : 1\text{ V}\)</span>):
@@ -4070,112 +3910,15 @@ $<span class="arithmatex">\(\text{Mass } m = 3.11769 \times 7.85 = \mathbf{24.47
 <blockquote>
 <p><strong>Named RPN Stack Idiom: <em>The x⇄y Denominator Flip &amp; Wetted Perimeter Pipeline</em></strong> — Compute open channel flow cross-sectional area, compute wetted boundary perimeter, and divide via stack swap with zero register allocation <em>(<a href="../appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>)</em>.</p>
 </blockquote>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>4.5</code> <code>[ENTER]</code> <code>1.8</code> <code>[×]</code> — Compute canal flow area <span class="arithmatex">\(A = 4.5 \times 1.8 = 8.10\text{ m}^2\)</span>.
-2. <code>4.5</code> <code>[ENTER]</code> <code>1.8</code> <code>[ENTER]</code> <code>2</code> <code>[×]</code> <code>[+]</code> — Form wetted perimeter <span class="arithmatex">\(P = 4.5 + 2(1.8) = 8.10\text{ m}\)</span>.
-3. <code>[x⇄y]</code> <code>[÷]</code> — Swap and divide flow area by wetted perimeter, establishing hydraulic radius <span class="arithmatex">\(R_h = \mathbf{1.000\text{ m}}\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>4 [ENTER] 1.5 [ENTER] 1.8 [×] [+] 1.8 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(6.7000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(12.060000\)</span></td>
-<td style="text-align: left;">Flow area <span class="arithmatex">\(A = (b + zy)y\)</span> in m²</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>4 [ENTER] 2 [ENTER] 1.8 [×] 1 [ENTER] 1.5 [x²] [+] [√x] [×] [+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(12.060000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(10.489240\)</span></td>
-<td style="text-align: left;">Wetted perimeter <span class="arithmatex">\(P = b + 2y\sqrt{1+z^2}\)</span> in m</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(1.149750\)</span></strong></td>
-<td style="text-align: left;">Hydraulic radius <span class="arithmatex">\(R_h = A / P\)</span> in meters</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate cross-sectional flow area <span class="arithmatex">\(A = (b+zy)y = 12.06\text{ m}^2\)</span> with <code>4 [ENTER] 1.5 [ENTER] 1.8 [×] [+] 1.8 [×]</code>. Then compute wetted perimeter <span class="arithmatex">\(P = b + 2y\sqrt{1+z^2} \approx 10.4892\text{ m}\)</span> via <code>4 [ENTER] 2 [ENTER] 1.8 [×] 1 [ENTER] 1.5 [x²] [+] [√x] [×] [+]</code>, positioning <span class="arithmatex">\(A\)</span> in Register <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(P\)</span> in Register <span class="arithmatex">\(X\)</span>. Pressing <code>[÷]</code> divides the two directly to establish hydraulic radius at <span class="arithmatex">\((T:0, Z:0, Y:0, X:1.1498)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(R_h = 1.1498\text{ meters}\)</span></strong>.</p>
 <hr />
 <h3 id="61126-problem-626-circular-segment-area-partially-filled-pipe">6.11.26 Problem 6.26: Circular Segment Area (Partially Filled Pipe)</h3>
 <p><strong>Fluid Mechanics Context:</strong> Storm sewer diameter <span class="arithmatex">\(D = 1.20\text{ m}\)</span> (<span class="arithmatex">\(r = 0.60\text{ m}\)</span>). Water depth <span class="arithmatex">\(d = 0.40\text{ m}\)</span>. Subtended angle:
 $<span class="arithmatex">\(\theta = 2 \arccos\left(\frac{r - d}{r}\right) = 2 \arccos\left(\frac{0.2}{0.6}\right) = 2 \arccos(0.333333) = 2(70.5288^\circ) = 141.0575^\circ = 2.461914\text{ rad}\)</span>$
 $<span class="arithmatex">\(\text{Area } A = \frac{1}{2} r^2 (\theta - \sin\theta) = 0.5(0.36)(2.461914 - \sin(141.0575^\circ)) = 0.18(2.461914 - 0.628539) = 0.18(1.833375) = \mathbf{0.330008\text{ m}^2}\)</span>$</p>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>120</code> <code>[ENTER]</code> <code>[↱] [π]</code> <code>[×]</code> <code>180</code> <code>[÷]</code> — Convert central angle <span class="arithmatex">\(120.0^\circ\)</span> into radians (<span class="arithmatex">\(\theta \approx 2.094395\text{ rad}\)</span>).
-2. <code>120</code> <code>[SIN]</code> <code>[-]</code> — Subtract <span class="arithmatex">\(\sin(120^\circ) \approx 0.866025\)</span> to obtain chord differential factor <span class="arithmatex">\(1.228370\)</span>.
-3. <code>0.75</code> <code>[↰] [x²]</code> <code>[×]</code> <code>2</code> <code>[÷]</code> — Multiply by <span class="arithmatex">\(R^2/2\)</span> with <span class="arithmatex">\(R = 0.75\text{ m}\)</span>, yielding partially filled flow area <span class="arithmatex">\(A \approx \mathbf{0.3455\text{ m}^2}\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>0.6 [ENTER] 0.4 [-] 0.6 [÷] [↰] [ACOS] 2 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(141.057559\)</span></td>
-<td style="text-align: left;">Subtended angle <span class="arithmatex">\(\theta\)</span> in degrees</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>[ENTER] [π] [×] 180 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(141.057559\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.461914\)</span></td>
-<td style="text-align: left;">Converted angle <span class="arithmatex">\(\theta_{\text{rad}}\)</span> in radians</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[x⇄y] [SIN] [-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.833375\)</span></td>
-<td style="text-align: left;">Chord term <span class="arithmatex">\((\theta_{\text{rad}} - \sin\theta)\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>0.6 [x²] [×] 2 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.330008\)</span></strong></td>
-<td style="text-align: left;">Flow cross-sectional area <span class="arithmatex">\(A\)</span> in m²</td>
-</tr>
-</tbody>
-</table>
+<p>Determine subtended angle <span class="arithmatex">\(\theta = 141.0576^\circ\)</span> via <code>0.6 [ENTER] 0.4 [-] 0.6 [÷] [↰] [ACOS] 2 [×]</code>. Convert to radians <span class="arithmatex">\(\theta_{\text{rad}} \approx 2.461914\)</span> via <code>[ENTER] [π] [×] 180 [÷]</code>, and subtract sine via <code>[x⇄y] [SIN] [-]</code> to obtain chord bracket <span class="arithmatex">\(1.833375\)</span>. Scaling by <span class="arithmatex">\(r^2/2\)</span> via <code>0.6 [x²] [×] 2 [÷]</code> delivers flow cross section at <span class="arithmatex">\((T:0, Z:0, Y:0, X:0.330008)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(0.330008\text{ m}^2\)</span></strong>.</p>
 <hr />
 <h3 id="61127-problem-627-slosh-baffle-circular-perforation-net-area">6.11.27 Problem 6.27: Slosh Baffle Circular Perforation Net Area</h3>
 <p><strong>Aerospace Fuel Tank Context:</strong> Circular baffle plate <span class="arithmatex">\(R = 400.0\text{ mm}\)</span> perforated with 48 circular holes of diameter <span class="arithmatex">\(d = 35.0\text{ mm}\)</span> (<span class="arithmatex">\(r_h = 17.5\text{ mm}\)</span>):
@@ -4185,53 +3928,8 @@ $<span class="arithmatex">\(\text{Area } A = \frac{1}{2} r^2 (\theta - \sin\thet
 <blockquote>
 <p><strong>Named RPN Stack Idiom: <em>The Σ+ Multi-Face Surface Area Accumulator &amp; Perforation Subtraction</em></strong> — Compute tank bulkhead gross area, stream orifice hole areas, and subtract net open area in place <em>(<a href="../appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>; <a href="../appendix-e-annotated-bibliography/#cite-munroe2014">Munroe, 2014</a>)</em>.</p>
 </blockquote>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>1.2</code> <code>[↰] [x²]</code> <code>[↱] [π]</code> <code>[×]</code> — Calculate gross plate area <span class="arithmatex">\(A_{\text{gross}} = \pi R^2 \approx 4.5239\text{ m}^2\)</span>.
-2. <code>0.04</code> <code>[↰] [x²]</code> <code>[↱] [π]</code> <code>[×]</code> — Form area of single perforation <span class="arithmatex">\(a = \pi r^2 \approx 5.0265 \times 10^{-3}\text{ m}^2\)</span>.
-3. <code>120</code> <code>[×]</code> — Multiply by hole count (<span class="arithmatex">\(N = 120\)</span>), establishing total relief area <span class="arithmatex">\(A_{\text{holes}} \approx 0.6032\text{ m}^2\)</span>.
-4. <code>[-]</code> — Subtract perforations from gross area, yielding net structural baffle area <span class="arithmatex">\(A_{\text{net}} \approx \mathbf{3.9207\text{ m}^2}\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>400 [x²] [π] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(502654.8246\)</span></td>
-<td style="text-align: left;">Gross solid circular area <span class="arithmatex">\(\pi R^2\)</span> in mm²</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>17.5 [x²] [π] [×] 48 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(502654.8246\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(46181.4120\)</span></td>
-<td style="text-align: left;">Total perforation area (<span class="arithmatex">\(48 \times \pi r_h^2\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(456473.4126\)</span></strong></td>
-<td style="text-align: left;">Net solid baffle area <span class="arithmatex">\(A_{\text{net}}\)</span> in mm²</td>
-</tr>
-</tbody>
-</table>
+<p>Compute gross solid plate area <span class="arithmatex">\(\pi R^2 \approx 502,654.82\text{ mm}^2\)</span> with <code>400 [x²] [π] [×]</code>. Evaluate the 48 perforation holes <span class="arithmatex">\(48 \times \pi r_h^2 \approx 46,181.41\text{ mm}^2\)</span> via <code>17.5 [x²] [π] [×] 48 [×]</code>, and subtract directly with <code>[-]</code>, leaving net solid baffle area at <span class="arithmatex">\((T:0, Z:0, Y:0, X:456473.4126)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(456,473.41\text{ mm}^2\)</span></strong>.</p>
 <hr />
 <h3 id="61128-problem-628-conical-spiral-helix-arc-length">6.11.28 Problem 6.28: Conical Spiral (Helix) Arc Length</h3>
 <p><strong>Spring Design Context:</strong> Tapered conical coil spring with base radius <span class="arithmatex">\(R_1 = 30\text{ mm}\)</span>, top radius <span class="arithmatex">\(R_2 = 10\text{ mm}\)</span>, height <span class="arithmatex">\(h = 60\text{ mm}\)</span>, <span class="arithmatex">\(N = 6\text{ active coils}\)</span>:
@@ -4307,62 +4005,8 @@ Ratio <span class="arithmatex">\(R/r = \sqrt{3} \approx 1.732051\)</span>.</p>
 <p><strong>Named RPN Stack Idiom: <em>The Inside-Out Radical &amp; Regular Octahedron Spheres</em></strong> — Evaluate polyhedral radical factors <span class="arithmatex">\(a/\sqrt{2}\)</span> and <span class="arithmatex">\(a/\sqrt{6}\)</span> from the inner root outward, and resolve sphere ratio <span class="arithmatex">\(R/r = \sqrt{3}\)</span> directly on the operational stack <em>(<a href="../appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>; <a href="../appendix-e-annotated-bibliography/#cite-singh1997">Singh, 1997</a>)</em>.</p>
 </blockquote>
 <p><strong>Keystrokes:</strong> <code>40 [ENTER] 2 [√x] [÷] 40 [ENTER] 6 [√x] [÷] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>1.7321</code></strong></p>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>40</code> <code>[ENTER]</code> <code>2</code> <code>[√x]</code> <code>[÷]</code> — Compute circumscribed sphere radius (<span class="arithmatex">\(R = a/\sqrt{2} \approx 28.2843\text{ mm}\)</span>).
-2. <code>40</code> <code>[ENTER]</code> <code>6</code> <code>[√x]</code> <code>[÷]</code> — Compute inscribed sphere radius (<span class="arithmatex">\(r = a/\sqrt{6} \approx 16.3299\text{ mm}\)</span>).
-3. <code>[÷]</code> — Divide radii to yield exact geometric ratio (<span class="arithmatex">\(R/r = \sqrt{3} \approx \mathbf{1.7321}\)</span>).
-4. <code>[↰] [x²]</code> — Square the ratio to confirm the invariant <span class="arithmatex">\((R/r)^2 = 3.0000\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>40 [ENTER] 2 [√x] [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(28.2843\)</span></td>
-<td style="text-align: left;">Circumradius <span class="arithmatex">\(R = a/\sqrt{2}\)</span> in mm</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>40 [ENTER] 6 [√x] [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(28.2843\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(16.3299\)</span></td>
-<td style="text-align: left;">Inradius <span class="arithmatex">\(r = a/\sqrt{6}\)</span> in mm</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(1.7321\)</span></strong></td>
-<td style="text-align: left;">Polyhedral sphere ratio <span class="arithmatex">\(R/r = \sqrt{3}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>[↰] [x²]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(3.0000\)</span></strong></td>
-<td style="text-align: left;">Invariant <span class="arithmatex">\((R/r)^2 = 3\)</span> confirmed</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate circumradius <span class="arithmatex">\(R = a/\sqrt{2} \approx 28.2843\text{ mm}\)</span> via <code>40 [ENTER] 2 [√x] [÷]</code>, then inradius <span class="arithmatex">\(r = a/\sqrt{6} \approx 16.3299\text{ mm}\)</span> via <code>40 [ENTER] 6 [√x] [÷]</code>. Dividing the two via <code>[÷]</code> yields exact sphere ratio <span class="arithmatex">\(R/r = \sqrt{3} \approx 1.7321\)</span> at <span class="arithmatex">\((T:0, Z:0, Y:0, X:1.7321)\)</span>, and squaring via <code>[↰] [x²]</code> confirms invariant <span class="arithmatex">\((R/r)^2 = 3.0000\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(R/r = \sqrt{3} \approx 1.7321\)</span></strong>.</p>
 <hr />
 <h3 id="61130-problem-630-moment-of-inertia-of-hollow-spherical-pressure-hull">6.11.30 Problem 6.30: Moment of Inertia of Hollow Spherical Pressure Hull</h3>
 <p><strong>Submersible Engineering Context:</strong> Titanium bathysphere with outer radius <span class="arithmatex">\(R_2 = 1.10\text{ m}\)</span>, inner radius <span class="arithmatex">\(R_1 = 0.98\text{ m}\)</span>, material density <span class="arithmatex">\(\rho = 4,500\text{ kg/m}^3\)</span>:
@@ -4432,52 +4076,8 @@ $<span class="arithmatex">\(I = \frac{2}{5} M \frac{R_2^5 - R_1^5}{R_2^3 - R_1^3
 <p><strong>Mathematics Context:</strong> Two perpendicular intersecting cylinders of equal radius <span class="arithmatex">\(r = 15.0\text{ mm}\)</span>:
 $<span class="arithmatex">\(V = \frac{16}{3} r^3 = \frac{16}{3} (3375) = 16 \times 1125 = \mathbf{18,000.0\text{ mm}^3}\)</span>$
 Surface area: <span class="arithmatex">\(A = 16 r^2 = 16(225) = \mathbf{3,600.0\text{ mm}^2}\)</span>.</p>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>16</code> <code>[ENTER]</code> <code>3</code> <code>[÷]</code> — Enter Steinmetz geometric constant (<span class="arithmatex">\(16/3 \approx 5.333333\)</span>).
-2. <code>0.25</code> <code>[ENTER]</code> <code>3</code> <code>[yˣ]</code> — Cube cylinder radius (<span class="arithmatex">\(r = 0.25\text{ m}\)</span>), giving <span class="arithmatex">\(r^3 = 0.015625\text{ m}^3\)</span>.
-3. <code>[×]</code> — Multiply to establish intersection volume <span class="arithmatex">\(V \approx \mathbf{0.083333\text{ m}^3}\)</span> (<span class="arithmatex">\(83.33\text{ L}\)</span>).</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>16 [ENTER] 3 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(16.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.333333\)</span></td>
-<td style="text-align: left;">Factor <span class="arithmatex">\(16/3\)</span> evaluated</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>15 [ENTER] 3 [yˣ] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.333333\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(18000.0000\)</span></strong></td>
-<td style="text-align: left;">Steinmetz volume <span class="arithmatex">\(V = \frac{16}{3}r^3\)</span> in mm³</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>15 [x²] 16 [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(18000.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(3600.0000\)</span></strong></td>
-<td style="text-align: left;">Surface area <span class="arithmatex">\(A = 16 r^2\)</span> in mm²</td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate Steinmetz coefficient <span class="arithmatex">\(16/3 \approx 5.333333\)</span> via <code>16 [ENTER] 3 [÷]</code>. Cube radius <span class="arithmatex">\(r = 15\text{ mm}\)</span> with <code>15 [ENTER] 3 [yˣ] [×]</code> to yield solid volume <span class="arithmatex">\(18,000.0\text{ mm}^3\)</span> at <span class="arithmatex">\((T:0, Z:0, Y:0, X:18000.0000)\)</span>, and evaluate surface area <span class="arithmatex">\(16 r^2 = 3600.0\text{ mm}^2\)</span> via <code>15 [x²] 16 [×]</code>.</p>
+<p>Result: <strong><span class="arithmatex">\(V = 18,000.0\text{ mm}^3\)</span></strong>, <strong><span class="arithmatex">\(A = 3,600.0\text{ mm}^2\)</span></strong>.</p>
 <hr />
 <h3 id="61132-problem-632-prolate-spheroid-volume-and-eccentricity">6.11.32 Problem 6.32: Prolate Spheroid Volume and Eccentricity</h3>
 <p><strong>Aerodynamics Context:</strong> Streamlined airship envelope with semimajor axis <span class="arithmatex">\(a = 60.0\text{ m}\)</span>, equatorial radius <span class="arithmatex">\(b = 15.0\text{ m}\)</span>:
@@ -4487,62 +4087,8 @@ $<span class="arithmatex">\(e = \sqrt{1 - \frac{b^2}{a^2}} = \sqrt{1 - \frac{225
 <p><strong>Named RPN Stack Idiom: <em>The Inside-Out Radical &amp; Spheroidal Metric Pipeline</em></strong> — Compute semi-axis ratio squared <span class="arithmatex">\(b^2/a^2\)</span>, subtract from unity, and extract square root in place to find orbital/geometric eccentricity <em>(<a href="../appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>)</em>.</p>
 </blockquote>
 <p><strong>Keystrokes:</strong> <code>4 [ENTER] 3 [÷] [↱] [π] [×] 60 [×] 15 [↰] [x²] [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>56548.6678</code></strong>; <code>15 [↰] [x²] 60 [↰] [x²] [÷] 1 [x⇄y] [-] [√x]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>0.9682</code></strong></p>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>4</code> <code>[ENTER]</code> <code>3</code> <code>[÷]</code> <code>[↱] [π]</code> <code>[×]</code> — Form geometric sphere-volume constant (<span class="arithmatex">\(4\pi/3 \approx 4.188790\)</span>).
-2. <code>60</code> <code>[×]</code> <code>15</code> <code>[↰] [x²]</code> <code>[×]</code> — Multiply by semimajor axis (<span class="arithmatex">\(a = 60.0\text{ m}\)</span>) and <span class="arithmatex">\(b^2 = 225.0\text{ m}^2\)</span>, giving volume (<span class="arithmatex">\(V \approx \mathbf{56,548.67\text{ m}^3}\)</span>).
-3. <code>15</code> <code>[↰] [x²]</code> <code>60</code> <code>[↰] [x²]</code> <code>[÷]</code> — Form squared axis ratio (<span class="arithmatex">\(b^2/a^2 = 225/3600 = 0.0625\)</span>).
-4. <code>1</code> <code>[x⇄y]</code> <code>[-]</code> <code>[√x]</code> — Subtract from unity and extract square root to determine prolate eccentricity (<span class="arithmatex">\(e \approx \mathbf{0.9682}\)</span>).</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>4 [ENTER] 3 [÷] [↱] [π] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.1888\)</span></td>
-<td style="text-align: left;">Factor <span class="arithmatex">\(4\pi/3\)</span> in Register <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>60 [×] 15 [↰] [x²] [×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(56548.6678\)</span></strong></td>
-<td style="text-align: left;">Prolate volume <span class="arithmatex">\(V\)</span> in m³</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>15 [↰] [x²] 60 [↰] [x²] [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(56548.6678\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0625\)</span></td>
-<td style="text-align: left;">Axis squared ratio <span class="arithmatex">\(b^2/a^2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>1 [x⇄y] [-] [√x]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(56548.6678\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.9682\)</span></strong></td>
-<td style="text-align: left;">Prolate eccentricity <span class="arithmatex">\(e = \sqrt{1 - b^2/a^2}\)</span></td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate volume constant <span class="arithmatex">\(\frac{4\pi}{3} \approx 4.188790\)</span> via <code>4 [ENTER] 3 [÷] [↱] [π] [×]</code> and multiply by <span class="arithmatex">\(a \cdot b^2 = 60 \times 15^2\)</span> via <code>60 [×] 15 [↰] [x²] [×]</code>, establishing envelope volume <span class="arithmatex">\(56,548.67\text{ m}^3\)</span> in Register <span class="arithmatex">\(X\)</span>. For eccentricity, form squared ratio <span class="arithmatex">\(b^2/a^2 = 0.0625\)</span> with <code>15 [↰] [x²] 60 [↰] [x²] [÷]</code>, subtract from unity, and extract the square root via <code>1 [x⇄y] [-] [√x]</code> to settle prolate eccentricity at <span class="arithmatex">\((T:0, Z:0, Y:56548.6678, X:0.9682)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(V = 56,548.67\text{ m}^3\)</span></strong>, <strong><span class="arithmatex">\(e = 0.9682\)</span></strong>.</p>
 <hr />
 <h3 id="61133-problem-633-oblate-spheroid-planet-planetary-flattening">6.11.33 Problem 6.33: Oblate Spheroid Planet Planetary Flattening</h3>
 <p><strong>Geophysics Context:</strong> Earth reference ellipsoid: equatorial radius <span class="arithmatex">\(a = 6,378.137\text{ km}\)</span>, polar radius <span class="arithmatex">\(b = 6,356.752\text{ km}\)</span>:
@@ -4551,52 +4097,8 @@ Keystrokes: <code>6378.137 [ENTER] 6356.752 [-] 6378.137 [÷] [1/x]</code><span 
 <blockquote>
 <p><strong>Named RPN Stack Idiom: <em>The x⇄y Denominator Flip &amp; Planetary Geodesy</em></strong> — Compute equatorial minus polar radius difference, enter equatorial radius, and divide via stack swap <em>(<a href="../appendix-e-annotated-bibliography/#cite-gauss1809">Gauss, 1809</a>; <a href="../appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>)</em>.</p>
 </blockquote>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>
-1. <code>6378.137</code> <code>[ENTER]</code> — Enter equatorial radius (<span class="arithmatex">\(a = 6378.137\text{ km}\)</span>).
-2. <code>6356.752</code> <code>[-]</code> — Subtract polar radius (<span class="arithmatex">\(b = 6356.752\text{ km}\)</span>) to obtain difference (<span class="arithmatex">\(a - b = 21.385\text{ km}\)</span>).
-3. <code>6378.137</code> <code>[x⇄y]</code> <code>[÷]</code> — Exchange registers and divide by <span class="arithmatex">\(a\)</span> to yield flattening factor (<span class="arithmatex">\(f \approx \mathbf{1/298.257}\)</span>).</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Step</th>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Notes &amp; State Analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>6378.137 [ENTER] 6356.752 [-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(6378.1370\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(21.3850\)</span></td>
-<td style="text-align: left;">Equatorial minus polar delta <span class="arithmatex">\((a - b)\)</span> in km</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>6378.137 [÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.003353\)</span></td>
-<td style="text-align: left;">Flattening factor <span class="arithmatex">\(f = (a - b)/a\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>[1/x]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(298.2572\)</span></strong></td>
-<td style="text-align: left;">Reciprocal flattening index <span class="arithmatex">\(1/f\)</span></td>
-</tr>
-</tbody>
-</table>
+<p>Evaluate radius difference <span class="arithmatex">\((a - b) = 21.385\text{ km}\)</span> via <code>6378.137 [ENTER] 6356.752 [-]</code>. Divide by equatorial radius <span class="arithmatex">\(a\)</span> via <code>6378.137 [÷]</code> for flattening factor <span class="arithmatex">\(f \approx 0.003353\)</span>, and invert via <code>[1/x]</code> to determine inverse flattening <span class="arithmatex">\(1/f\)</span> at <span class="arithmatex">\((T:0, Z:0, Y:0, X:298.2572)\)</span>.</p>
+<p>Result: <strong><span class="arithmatex">\(1/f = 298.2572\)</span></strong>.</p>
 <hr />
 <h3 id="61134-problem-634-frustum-of-pyramidal-roofing-pavilion-surface-area-via">6.11.34 Problem 6.34: Frustum of Pyramidal Roofing Pavilion Surface Area via <code>[Σ+]</code></h3>
 <p><strong>Architecture Context:</strong> Pavilion roof with square bottom <span class="arithmatex">\(12\text{ m}\)</span>, square top <span class="arithmatex">\(4\text{ m}\)</span>, slant height <span class="arithmatex">\(s = 6.5\text{ m}\)</span>.

@@ -4729,48 +4729,8 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li><strong>Word Problem:</strong> Decompose the lunar distance <span class="arithmatex">\(384,400\text{ km}\)</span>. If a rocket flies at <span class="arithmatex">\(4,000\text{ km/h}\)</span>, find transit hours.</li>
 <li><strong>Keystrokes:</strong></li>
 <li>Digits: <code>384400 [ENTER] 100000 [PV] 10000 [PV] 1000 [PV] 100 [PV]</code></li>
-<li>Travel time: <code>384400 [ENTER] 4000 [÷]</code></li>
-<li><strong>Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>384400</code> [ENTER]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">384400</td>
-<td style="text-align: left;">384400</td>
-<td style="text-align: left;">Enter lunar orbital distance in kilometers</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>4000</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">384400</td>
-<td style="text-align: left;">4000</td>
-<td style="text-align: left;">Key in spacecraft velocity (<span class="arithmatex">\(4,000\text{ km/h}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;">[÷]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">96.1</td>
-<td style="text-align: left;">Compute transit duration: 96.1 hours (<span class="arithmatex">\(\approx 4\)</span> days)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li>Travel time: <code>384400 [ENTER] 4000 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>96.1</code></strong></li>
+<li><strong>Stack Flow:</strong> Tap <code>384400 [ENTER] 4000 [÷]</code> -&gt; (T=0, Z=0, Y=0, X=96.1), calculating 96.1 transit hours (<span class="arithmatex">\(\approx 4\)</span> days) to reach the Moon.</li>
 <li><strong>Result:</strong> <span class="arithmatex">\(X = 96.1\text{ hours}\)</span> (<span class="arithmatex">\(\approx 4\text{ days}\)</span>).</li>
 </ul>
 <hr />
@@ -4778,50 +4738,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <ul>
 <li><strong>Word Problem:</strong> If your heart beats <span class="arithmatex">\(42,048,000\)</span> times in 1 year, how many beats occur across a 10-year decade?</li>
 <li><strong>Keystrokes:</strong> <code>42048000 [ENTER] 10 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>420480000</code></strong></li>
-<li><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong></li>
-<li><code>42048000</code> <code>[ENTER]</code> — Set the annual count of <span class="arithmatex">\(42,048,000\text{ beats}\)</span> onto the upper mezzanine shelf (<span class="arithmatex">\(Y = 42048000\)</span>).</li>
-<li><code>10</code> <code>[×]</code> — Scale by 10 years: the decade multiplier shifts every digit one place value left <span class="arithmatex">\(\rightarrow\)</span> (<span class="arithmatex">\(X = 420480000\)</span>).</li>
-<li><strong>Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>42048000</code> [ENTER]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">42048000</td>
-<td style="text-align: left;">42048000</td>
-<td style="text-align: left;">Enter annual heartbeat baseline into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>10</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">42048000</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">Enter decade multiplier (10 years)</td>
-</tr>
-<tr>
-<td style="text-align: left;">[×]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">420480000</td>
-<td style="text-align: left;">Decimal scale shifts digits left: 420,480,000 beats</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>42048000 [ENTER] 10 [×]</code> -&gt; (T=0, Z=0, Y=0, X=420480000), scaling annual heartbeats across a 10-year decade to <span class="arithmatex">\(420,480,000\)</span> beats.</li>
 <li><strong>Result:</strong> <span class="arithmatex">\(X = 420,480,000\text{ beats}\)</span> (420 million beats!).</li>
 <li><strong>Decompose Hundred-Millions:</strong> <code>[ENTER] 100000000 [PV]</code> <span class="arithmatex">\(\longrightarrow X = \mathbf{4}\)</span> (4 hundred-million beats).</li>
 </ul>
@@ -4830,50 +4747,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <ul>
 <li><strong>Word Problem:</strong> An Olympic pool holds <span class="arithmatex">\(2,500,000\text{ liters}\)</span>. Each liter has <span class="arithmatex">\(20,000\text{ drops}\)</span> of water. Compute the total drops.</li>
 <li><strong>Keystrokes:</strong> <code>2500000 [ENTER] 20000 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>50000000000</code></strong></li>
-<li><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong></li>
-<li><code>2500000</code> <code>[ENTER]</code> — Place the <span class="arithmatex">\(2,500,000\text{ liter}\)</span> water volume on the mezzanine shelf (<span class="arithmatex">\(Y = 2500000\)</span>).</li>
-<li><code>20000</code> <code>[×]</code> — Fold in <span class="arithmatex">\(20,000\text{ drops/liter}\)</span> to find the total liquid drops in the pool <span class="arithmatex">\(\rightarrow\)</span> (<span class="arithmatex">\(X = 50000000000\)</span>).</li>
-<li><strong>Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>2500000</code> [ENTER]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">2500000</td>
-<td style="text-align: left;">2500000</td>
-<td style="text-align: left;">Enter Olympic pool volume in liters</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>20000</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">2500000</td>
-<td style="text-align: left;">20000</td>
-<td style="text-align: left;">Enter drop density (<span class="arithmatex">\(20,000\text{ drops/liter}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;">[×]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">50000000000</td>
-<td style="text-align: left;">Direct multiplication yields 50 billion drops</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Stack Flow:</strong> Tap <code>2500000 [ENTER] 20000 [×]</code> -&gt; (T=0, Z=0, Y=0, X=50000000000), computing 50 billion water drops in the Olympic pool.</li>
 <li><strong>Result:</strong> <span class="arithmatex">\(X = 50,000,000,000\text{ drops}\)</span> (50 billion drops!).</li>
 <li><strong>Decompose Ten-Billions:</strong> <code>[ENTER] 10000000000 [PV]</code> <span class="arithmatex">\(\longrightarrow X = \mathbf{5}\)</span> (5 ten-billion drops).</li>
 </ul>
@@ -4882,60 +4756,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <ul>
 <li><strong>Word Problem:</strong> Saturn's main ring system spans <span class="arithmatex">\(282,000\text{ kilometers}\)</span>. Decompose into Hundred-Thousands, Ten-Thousands, and Thousands.</li>
 <li><strong>Keystrokes:</strong> <code>282000 [ENTER] 100000 [PV] 10000 [PV] 1000 [PV]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>2</code></strong></li>
-<li><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong></li>
-<li><code>282000</code> <code>[ENTER]</code> — Set Saturn's <span class="arithmatex">\(282,000\text{ km}\)</span> ring diameter onto the mezzanine shelf (<span class="arithmatex">\(Y = 282000\)</span>).</li>
-<li><code>100000</code> <code>[PV]</code> — Query hundred-thousands: isolates <span class="arithmatex">\(2\)</span> hundred-thousand km blocks (<span class="arithmatex">\(200,000\text{ km}\)</span>).</li>
-<li><code>10000</code> <code>[PV]</code> — Query ten-thousands: isolates <span class="arithmatex">\(8\)</span> ten-thousand km blocks (<span class="arithmatex">\(80,000\text{ km}\)</span>).</li>
-<li><code>1000</code> <code>[PV]</code> — Query thousands: isolates <span class="arithmatex">\(2\)</span> thousand km blocks (<span class="arithmatex">\(2,000\text{ km}\)</span>).</li>
-<li><strong>Stack Trace Table:</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>282000</code> [ENTER]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">282000</td>
-<td style="text-align: left;">282000</td>
-<td style="text-align: left;">Enter Saturn ring span into Register <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>100000</code> [PV]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">282000</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Query hundred-thousands: isolates 2 units (<span class="arithmatex">\(X = 2\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>10000</code> [PV]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">282000</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">Query ten-thousands: isolates 8 units (<span class="arithmatex">\(X = 8\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1000</code> [PV]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">282000</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Query thousands: isolates 2 units (<span class="arithmatex">\(X = 2\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<ul>
+<li><strong>Place Value Interrogation:</strong> Park 282,000 in Register <span class="arithmatex">\(Y\)</span> with <code>282000 [ENTER]</code>. Query each decimal place: <code>100000 [PV]</code> yields 2 hundred-thousands, <code>10000 [PV]</code> yields 8 ten-thousands, and <code>1000 [PV]</code> yields 2 thousands (<span class="arithmatex">\(Y: 282000, X: 2\)</span>).</li>
 <li><strong>Results:</strong> Hundred-Thousands <span class="arithmatex">\(= 2\)</span>, Ten-Thousands <span class="arithmatex">\(= 8\)</span>, Thousands <span class="arithmatex">\(= 2\)</span>.</li>
 </ul>
 <hr />
@@ -4943,13 +4764,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <ul>
 <li><strong>Word Problem:</strong> A school district has 14 elementary schools. Each school serves 450 cartons of milk per day over a 180-day school year. Calculate total annual milk cartons and extract the millions and hundred-thousands digits.</li>
 <li><strong>Keystrokes:</strong> <code>14 [ENTER] 450 [×] 180 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>1134000</code></strong></li>
-<li><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong></li>
-<li><code>14</code> <code>[ENTER]</code> — Place the 14 elementary schools onto the mezzanine shelf (<span class="arithmatex">\(Y = 14\)</span>).</li>
-<li><code>450</code> <code>[×]</code> — Multiply by 450 cartons/school to find the daily milk consumption (<span class="arithmatex">\(6,300\text{ cartons/day}\)</span> in <span class="arithmatex">\(X\)</span>).</li>
-<li><code>180</code> <code>[×]</code> — Multiply by 180 school days to calculate the annual district total (<span class="arithmatex">\(1,134,000\text{ cartons/year}\)</span> on the stack).</li>
-<li>Intermediate 1 (<span class="arithmatex">\(14 \times 450\)</span>): <span class="arithmatex">\(6,300\text{ cartons/day}\)</span>.</li>
-<li>Intermediate 2 (<span class="arithmatex">\(6,300 \times 180\)</span>): <span class="arithmatex">\(1,134,000\text{ cartons/year}\)</span>.</li>
-<li><strong>Stack Trace Table:</strong></li>
+<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
 </ul>
 <table>
 <thead>
@@ -5004,56 +4819,15 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <li>If each branch holds an equal share on average, compute the average books per branch.</li>
 <li><strong>Keystrokes:</strong></li>
 <li>Digits: <code>875420 [ENTER] 10000 [PV]</code> <span class="arithmatex">\(\longrightarrow X = \mathbf{7}\)</span>.</li>
-<li>Division: <code>875420 [ENTER] 12 [÷]</code> <span class="arithmatex">\(\longrightarrow X = \mathbf{72,951.67\text{ books}}\)</span>.</li>
-<li><strong>Stack Trace Table:</strong></li>
+<li>Division: <code>875420 [ENTER] 12 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>72,951.66667</code></strong></li>
+<li><strong>Stack Flow:</strong> Tap <code>875420 [ENTER] 12 [÷]</code> -&gt; (T=0, Z=0, Y=0, X=72951.66667), computing the average branch circulation of <span class="arithmatex">\(72,951.67\text{ books}\)</span>.</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: left;">Register T</th>
-<th style="text-align: left;">Register Z</th>
-<th style="text-align: left;">Register Y</th>
-<th style="text-align: left;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>875420</code> [ENTER]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">875420</td>
-<td style="text-align: left;">875420</td>
-<td style="text-align: left;">Enter total cataloged books into stack</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>12</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">875420</td>
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">Key in 12 branch locations</td>
-</tr>
-<tr>
-<td style="text-align: left;">[÷]</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">72951.67</td>
-<td style="text-align: left;">Compute branch average: <span class="arithmatex">\(72,951.67\text{ books/branch}\)</span></td>
-</tr>
-</tbody>
-</table>
 <hr />
 <h4 id="problem-345-solar-transit-distance-of-voyager-1">Problem 3.45: Solar Transit Distance of Voyager 1</h4>
 <ul>
 <li><strong>Word Problem:</strong> Space probe Voyager 1 travels at approximately <span class="arithmatex">\(17\text{ km/second}\)</span>. How many kilometers does it travel in a full 24-hour day (<span class="arithmatex">\(86,400\text{ seconds}\)</span>)?</li>
 <li><strong>Keystrokes:</strong> <code>86400 [ENTER] 17 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>1468800</code></strong></li>
-<li><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong></li>
-<li><code>86400</code> <code>[ENTER]</code> — Place the <span class="arithmatex">\(86,400\text{ seconds}\)</span> of a complete solar day onto the mezzanine shelf (<span class="arithmatex">\(Y = 86400\)</span>).</li>
-<li><code>17</code> <code>[×]</code> — Multiply by Voyager 1's speed of <span class="arithmatex">\(17\text{ km/s}\)</span> to compute the daily distance traversed <span class="arithmatex">\(\rightarrow\)</span> (<span class="arithmatex">\(X = 1468800\)</span>).</li>
-<li><strong>Stack Trace Table:</strong></li>
+<li><strong>4-Register Stack Trace Table (<span class="arithmatex">\(T, Z, Y, X\)</span>):</strong></li>
 </ul>
 <table>
 <thead>
@@ -5076,15 +4850,7 @@ Such an approach is cognitively inaccessible to elementary students. The SC-6 im
 <td style="text-align: left;">Enter seconds per solar day into Register <span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>17</code></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">86400</td>
-<td style="text-align: left;">17</td>
-<td style="text-align: left;">Key in probe velocity (<span class="arithmatex">\(17\text{ km/s}\)</span>)</td>
-</tr>
-<tr>
-<td style="text-align: left;">[×]</td>
+<td style="text-align: left;"><code>17</code> [×]</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
