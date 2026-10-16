@@ -835,14 +835,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** An Australian red kangaroo rests at survey marker 14 near a dry creek bed. In search of sweet desert grasses after a rainfall, the kangaroo bounds forward 8 kilometers across the red sand plains. At which survey marker does the kangaroo arrive?
 - **Manipulative:** On your Open Number Line, place your marker at tick 14. Draw a smooth forward arc spanning 8 units across decade tick 20, landing squarely at coordinate 22. Label the leap `+8`.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_18:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_18:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `14` {{keycap:LINE}} | 0 | 0 | 0 | 14 | Pin starting survey marker 14 into Register $X$ and activate Number Line Studio |
-| `8` | 0 | 0 | 14 | 8 | Stack lifts; starting coordinate 14 rises to $Y$, key 8-kilometer forward leap into $X$ |
-| {{key:+}} | 0 | 0 | 0 | 22 | Kangaroo leap executes; forward arc bridges decade 20 and lands on marker 22 ($X = 22$) |
-
+- **Stack Flow:** Tap `14 {{key:ENTER}} 8 {{key:+}}` -> (T=0, Z=0, Y=0, X=22), leaping forward across decade marker 20 to land on coordinate 22.
 - **Diagnostic Check:** Jump arc displayed from 14 to 22. Total $X = 22$.
 
 ---
@@ -851,14 +844,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** An expedition scout stands atop a towering red sand dune at elevation marker 23 meters. To reach a shaded eucalyptus grove in the swale below, the scout hikes downward 7 meters. What is the scout's new elevation marker on the dune slope?
 - **Manipulative:** On your Open Number Line, pin the starting point at tick 23. Draw a backward arc leaping 7 units to the left, crossing benchmark 20 to land on tick 16. Label the arc `-7`.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_19:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_19:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `23` {{keycap:LINE}} | 0 | 0 | 0 | 23 | Set dune crest elevation 23 into Register $X$ and activate Number Line Studio |
-| `7` | 0 | 0 | 23 | 7 | Stack lifts; starting marker 23 rises to $Y$, key 7-meter descent into Ground $X$ |
-| {{key:-}} | 0 | 0 | 0 | 16 | Descent executes; backward arc steps down across decade 20 to eucalyptus grove marker 16 ($X = 16$) |
-
+- **Stack Flow:** Tap `23 {{key:ENTER}} 7 {{key:-}}` -> (T=0, Z=0, Y=0, X=16), descending across decade 20 to eucalyptus grove marker 16.
 - **Diagnostic Check:** Backward arc lands on 16. Total $X = 16$.
 
 ---
@@ -871,11 +857,9 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` {{keycap:LINE}} | 0 | 0 | 0 | 18 | Pin spinifex ridge distance 18 into Register $X$ and activate Number Line Studio |
-| `5` | 0 | 0 | 18 | 5 | Stack lifts; 18 rises to $Y$, key second leg of 5 km into Ground $X$ |
-| {{key:+}} | 0 | 0 | 0 | 23 | First hop completes; first arc lands on eucalyptus landmark marker 23 ($X = 23$) |
-| `7` | 0 | 0 | 23 | 7 | Stack lifts; subtotal 23 rises to $Y$, key final billabong leg of 7 km into $X$ |
-| {{key:+}} | 0 | 0 | 0 | 30 | Final hop completes; second arc lands cleanly on milestone 30 at billabong ($X = 30$) |
+| `18` {{key:ENTER}} | 0 | 0 | 18 | 18 | Pin spinifex ridge distance 18 into $X$ and duplicate to Mezzanine $Y$ |
+| `5` {{key:+}} | 0 | 0 | 0 | 23 | First hop completes; first arc lands on landmark marker 23 ($X = 23$) |
+| `7` {{key:+}} | 0 | 0 | 0 | 30 | Final hop completes; second arc lands cleanly on milestone 30 ($X = 30$) |
 
 - **Diagnostic Check:** Consecutive arcs: $18 \to 23 \to 30$. Total $X = 30$.
 
@@ -885,14 +869,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** On your outback expedition survey map, a prominent Ghost Gum tree landmark stands at trail coordinate 15 kilometers, while the Red Sand Gap escarpment is located at coordinate 42 kilometers. What is the total trail distance between these two desert waypoints?
 - **Manipulative:** On your Open Number Line, plot markers at 15 and 42. Measure the distance interval between them by jumping from 15 to 20 (+5), 20 to 40 (+20), and 40 to 42 (+2): $5 + 20 + 2 = 27$ kilometers.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_21:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_21:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `42` {{keycap:LINE}} | 0 | 0 | 0 | 42 | Set Red Sand Gap coordinate 42 into Register $X$ and activate Number Line Studio |
-| `15` | 0 | 0 | 42 | 15 | Stack lifts; coordinate 42 rises to Mezzanine $Y$, key Ghost Gum marker 15 into Ground $X$ |
-| {{key:-}} | 0 | 0 | 0 | 27 | Compute trail distance interval; difference yields 27 kilometers between landmarks ($X = 27$) |
-
+- **Stack Flow:** Tap `42 {{key:ENTER}} 15 {{key:-}}` -> (T=0, Z=0, Y=0, X=27), measuring the trail interval of 27 km between waypoints.
 - **Diagnostic Check:** $X = 27$ kilometers difference between waypoints.
 
 ---
@@ -901,14 +878,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** An expedition survey rover travels 35 kilometers past a dry salt lake bed in the morning, then pushes another 18 kilometers through red sand dunes in the afternoon to reach a fresh billabong. What is the total odometer distance logged for the day?
 - **Manipulative:** On your Open Number Line, start at tick 35. Decompose 18 into $+5$ (reaching benchmark 40) and $+13$ (jumping to 53). Draw the forward arc spanning across decades 40 and 50 to land at 53.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_22:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_22:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `35` {{keycap:LINE}} | 0 | 0 | 0 | 35 | Enter morning distance 35 km into Register $X$ and open Number Line Studio |
-| `18` | 0 | 0 | 35 | 18 | Stack lifts; 35 km rises to $Y$, key afternoon trek 18 km into Ground $X$ |
-| {{key:+}} | 0 | 0 | 0 | 53 | Add distances; jump arc crosses decade ticks 40 and 50, landing on billabong camp 53 ($X = 53$) |
-
+- **Stack Flow:** Tap `35 {{key:ENTER}} 18 {{key:+}}` -> (T=0, Z=0, Y=0, X=53), bridging decades 40 and 50 to log 53 km.
 - **Diagnostic Check:** Arc crosses tick 40 and 50. Total $X = 53$.
 
 ---
@@ -917,14 +887,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** The expedition party carries a main reservoir tank filled with 50 liters of fresh water at the start of a multi-day desert crossing. Over two days of arid hiking, the party uses 24 liters for drinking and cooking. How many liters of drinking water remain in the reservoir tank?
 - **Manipulative:** On your Open Number Line, locate round milestone 50. Decompose 24 into two backward leaps: jump back 20 to reach benchmark 30, then jump back 4 to land on coordinate 26.
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_23:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_23:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `50` {{keycap:LINE}} | 0 | 0 | 0 | 50 | Load initial water reserve 50 liters into Register $X$ and activate Number Line Studio |
-| `24` | 0 | 0 | 50 | 24 | Stack lifts; starting volume 50 liters rises to $Y$, key 24 liters consumed into Ground $X$ |
-| {{key:-}} | 0 | 0 | 0 | 26 | Backward jump leaps past decade 30, landing on 26 liters remaining ($X = 26$) |
-
+- **Stack Flow:** Tap `50 {{key:ENTER}} 24 {{key:-}}` -> (T=0, Z=0, Y=0, X=26), crossing decade 30 to leave 26 liters in the reservoir.
 - **Diagnostic Check:** Backward leap crosses decade 30. Remaining water $X = 26$.
 
 ---
@@ -933,14 +896,7 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** An expedition field botanist surveys native trees across two desert exploration zones: 28 marked river red gums along the northern dry creek bed and 36 marked ghost gum trees across the southern rocky gorge. How many native desert trees are cataloged in total?
 - **Manipulative:** On your Open Number Line, start at tick 28. Jump forward $+2$ to bridge to round decade 30, then jump $+34$ to land at coordinate 64 ($28 + 2 + 34 = 64$).
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_24:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_24:value}}`**
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `28` {{keycap:LINE}} | 0 | 0 | 0 | 28 | Pin northern creek tree count 28 into Register $X$ and open Number Line Studio |
-| `36` | 0 | 0 | 28 | 36 | Stack lifts; 28 trees rise to Mezzanine $Y$, key southern gorge count 36 into Ground $X$ |
-| {{key:+}} | 0 | 0 | 0 | 64 | Add tree counts; forward leap crosses decades 30, 40, 50, and 60, landing on total 64 ($X = 64$) |
-
+- **Stack Flow:** Tap `28 {{key:ENTER}} 36 {{key:+}}` -> (T=0, Z=0, Y=0, X=64), leaping across decades 30, 40, 50, and 60 to catalog 64 native trees.
 - **Diagnostic Check:** Multi-decade leap lands on 64. Total $X = 64$.
 
 ---
@@ -949,18 +905,12 @@ Rather than completing isolated rote worksheets, you join four mathematical expe
 - **Outback Trailblazer Mission:** An outback cartographer surveys the distance between desert escarpment marker 63 kilometers and dry riverbed base camp marker 27 kilometers. To independently verify the survey traverse, calculate the distance difference by jumping backward on the Number Line.
 - **Manipulative:** On your Open Number Line, locate milestone 63. Decompose 27 into $-20$ (landing at 43), $-3$ (reaching benchmark 40), and $-4$ (landing at 36). Verify that the backward jump lands squarely on tick 36 ($63 - 27 = 36$).
 - **Keystrokes:** `{{res:sc6_03_counting_place_value_seq_25:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_25:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `63` — Pin starting escarpment landmark 63 onto Ground Floor Register $X$ ($X = 63$).
-  2. `{{keycap:LINE}}` — Open the interactive Number Line Studio on the LCD, displaying the labeled tick ruler.
-  3. `27` — Enter base camp coordinate 27 into Register $X$; landmark 63 auto-lifts to Mezzanine $Y$ ($Y = 63, X = 27$).
-  4. `{{key:-}}` — Leap backward by 27 units: a smooth parabolic backward jump arc lands directly on tick 36 ($X = 36$).
 - **4-Register Stack Trace Table ($T, Z, Y, X$):**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `63` {{keycap:LINE}} | 0 | 0 | 0 | 63 | Pin escarpment marker 63 into Register $X$ and activate Number Line Studio |
-| `27` | 0 | 0 | 63 | 27 | Stack lifts; marker 63 rises to Mezzanine $Y$, key base camp distance 27 into Ground $X$ |
-| {{key:-}} | 0 | 0 | 0 | 36 | Leap backward by 27 units; arc lands squarely on tick 36 ($X = 36$) |
+| `63` {{key:ENTER}} | 0 | 0 | 63 | 63 | Pin escarpment marker 63 into Register $X$ and duplicate to Mezzanine $Y$ |
+| `27` {{key:-}} | 0 | 0 | 0 | 36 | Leap backward by 27 units; arc lands squarely on tick 36 ($X = 36$) |
 
 - **Diagnostic Check:** Backward arc lands on 36. Total $X = 36$.
 

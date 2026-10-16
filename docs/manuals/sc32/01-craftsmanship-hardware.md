@@ -429,6 +429,17 @@ where $R_0 \approx 15\,\Omega$ for fresh cells and $DOD$ is the depth of dischar
 
 To prevent voltage sag below the $2.10\text{ V}$ brownout threshold during high-speed Romberg integration bursts, the power rail incorporates an array of low-ESR ceramic decoupling capacitors ($3 \times 22\,\mu\text{F}$ X7R) acting as an energy reservoir, supplying instantaneous pulse current without stressing the high-impedance lithium chemistry.
 
+### Algebraic Trap vs. StackCalc Superpower Showdown
+
+| Evaluation Dimension | The Algebraic Calculator Trap (`TI-30X` / `TI-84` / App) | The StackCalc SC-32 Hardware Superpower |
+| :--- | :--- | :--- |
+| **Signature Problem** | **Coin Cell Operational Life:** $T_{\text{life}} = \frac{225}{(0.65 \times 2 + 0.0025 \times 22) / 24}$ | **Inside-Out Stack Integration:** Evaluates daily active/sleep draw, normalizes hourly, and divides capacity. |
+| **Keystroke Sequence** | `2 2 5 / ( ( 0 . 6 5 * 2 + 0 . 0 0 2 5 * 2 2 ) / 2 4 ) =` | `0.65 {{key:ENTER}} 2 {{key:×}} 0.0025 {{key:ENTER}} 22 {{key:×}} {{key:+}} 24 {{key:÷}} 225 {{key:x⇄y}} {{key:÷}}` |
+| **Stroke Count & Penalty**| **27 keystrokes** (Triple nested parentheses, operator precedence overhead) | **21 keystrokes** (**22% fewer strokes**, zero grouping syntax) |
+| **Failure Modes** | Missing closing bracket divides $225$ by active term and adds sleep term, resulting in wildly incorrect lifetime estimate. | Grouping errors are physically impossible; daily consumption ($1.355\text{ mAh}$) is verified before lifetime division. |
+| **Stack Transparency** | Intermediate active charge ($1.30\text{ mAh}$) and daily total ($1.355\text{ mAh}$) remain hidden inside the expression buffer. | Daily draw ($1.355\text{ mAh}$) and average hourly current ($0.056\text{ mA}$) inspectable live on stack registers $Y, X$. |
+| **Field Resilience** | Clearing display or syntax error wipes entire nested equation from memory. | Every intermediate charge stage resides in hardware registers $X, Y, Z, T$; fully inspectable with `{{key:R↓}}`. |
+
 ---
 
 ## Engineering Design Briefing: The Semiconductor Cleanroom & Avionics Stress Chamber (Problems 1.1 through 1.25)
