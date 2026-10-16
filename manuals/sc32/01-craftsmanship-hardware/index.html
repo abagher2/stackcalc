@@ -2469,6 +2469,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#1112-algebraic-trap-vs-stackcalc-superpower-showdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.11.2 Algebraic Trap vs. StackCalc Superpower Showdown
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3679,6 +3688,48 @@ To confirm that all snap-domes and Schottky diodes are functioning with zero ele
 $<span class="arithmatex">\(R_{\text{int}}(DOD) = R_0 + k \cdot \left(\frac{DOD}{1 - DOD}\right)\)</span>$
 where <span class="arithmatex">\(R_0 \approx 15\,\Omega\)</span> for fresh cells and <span class="arithmatex">\(DOD\)</span> is the depth of discharge (<span class="arithmatex">\(0.0 \le DOD &lt; 1.0\)</span>). </p>
 <p>To prevent voltage sag below the <span class="arithmatex">\(2.10\text{ V}\)</span> brownout threshold during high-speed Romberg integration bursts, the power rail incorporates an array of low-ESR ceramic decoupling capacitors (<span class="arithmatex">\(3 \times 22\,\mu\text{F}\)</span> X7R) acting as an energy reservoir, supplying instantaneous pulse current without stressing the high-impedance lithium chemistry.</p>
+<h3 id="1112-algebraic-trap-vs-stackcalc-superpower-showdown">1.11.2 Algebraic Trap vs. StackCalc Superpower Showdown</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Evaluation Dimension</th>
+<th style="text-align: left;">The Algebraic Calculator Trap (<code>TI-30X</code> / <code>TI-84</code> / App)</th>
+<th style="text-align: left;">The StackCalc SC-32 Hardware Superpower</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Signature Problem</strong></td>
+<td style="text-align: left;"><strong>Coin Cell Operational Life:</strong> <span class="arithmatex">\(T_{\text{life}} = \frac{225}{(0.65 \times 2 + 0.0025 \times 22) / 24}\)</span></td>
+<td style="text-align: left;"><strong>Inside-Out Stack Integration:</strong> Evaluates daily active/sleep draw, normalizes hourly, and divides capacity.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Keystroke Sequence</strong></td>
+<td style="text-align: left;"><code>2 2 5 / ( ( 0 . 6 5 * 2 + 0 . 0 0 2 5 * 2 2 ) / 2 4 ) =</code></td>
+<td style="text-align: left;"><code>0.65 [ENTER] 2 [×] 0.0025 [ENTER] 22 [×] [+] 24 [÷] 225 [x⇄y] [÷]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Stroke Count &amp; Penalty</strong></td>
+<td style="text-align: left;"><strong>27 keystrokes</strong> (Triple nested parentheses, operator precedence overhead)</td>
+<td style="text-align: left;"><strong>21 keystrokes</strong> (<strong>22% fewer strokes</strong>, zero grouping syntax)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Failure Modes</strong></td>
+<td style="text-align: left;">Missing closing bracket divides <span class="arithmatex">\(225\)</span> by active term and adds sleep term, resulting in wildly incorrect lifetime estimate.</td>
+<td style="text-align: left;">Grouping errors are physically impossible; daily consumption (<span class="arithmatex">\(1.355\text{ mAh}\)</span>) is verified before lifetime division.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Stack Transparency</strong></td>
+<td style="text-align: left;">Intermediate active charge (<span class="arithmatex">\(1.30\text{ mAh}\)</span>) and daily total (<span class="arithmatex">\(1.355\text{ mAh}\)</span>) remain hidden inside the expression buffer.</td>
+<td style="text-align: left;">Daily draw (<span class="arithmatex">\(1.355\text{ mAh}\)</span>) and average hourly current (<span class="arithmatex">\(0.056\text{ mA}\)</span>) inspectable live on stack registers <span class="arithmatex">\(Y, X\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Field Resilience</strong></td>
+<td style="text-align: left;">Clearing display or syntax error wipes entire nested equation from memory.</td>
+<td style="text-align: left;">Every intermediate charge stage resides in hardware registers <span class="arithmatex">\(X, Y, Z, T\)</span>; fully inspectable with <code>[R↓]</code>.</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="112-engineering-design-briefing-the-semiconductor-cleanroom-avionics-stress-chamber-problems-11-through-125">1.12 Engineering Design Briefing: The Semiconductor Cleanroom &amp; Avionics Stress Chamber (Problems 1.1 through 1.25)</h2>
 <p>Mastery of scientific instrumentation requires understanding the physical principles of the hardware itself. In this engineering expedition, you step into the role of a hardware reliability engineer qualifying the SC-32 for extreme field service. From calculating coin cell longevity under mixed duty cycles to auditing optical reflectance in direct sunlight, every problem deconstructs the physical reality of the instrument in your hands.</p>
@@ -3765,98 +3816,16 @@ Did your screen display <span class="arithmatex">\(X = 18.2360\)</span> before d
 <h3 id="1122-problem-12-eager-debounce-lockout-vs-mechanical-chatter-duration">1.12.2 Problem 1.2: Eager Debounce Lockout vs. Mechanical Chatter Duration</h3>
 <p><strong>Switch Dynamics Context:</strong> A high-speed typist actuates a snap-dome switch that oscillates mechanically for <span class="arithmatex">\(t_{\text{bounce}} = 4.8\text{ ms}\)</span> before settling. If Core 1 scans the matrix at <span class="arithmatex">\(f_{\text{scan}} = 200\text{ Hz}\)</span> (<span class="arithmatex">\(T_{\text{frame}} = 5.0\text{ ms}\)</span>) with a <span class="arithmatex">\(20\text{ ms}\)</span> lockout window, calculate the safety margin ratio:
 $<span class="arithmatex">\(M = \frac{T_{\text{lockout}}}{t_{\text{bounce}}}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>20 [ENTER] 4.8 [÷]</code><span class="arithmatex">\(\to \mathbf{4.1667}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>20</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(20.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(20.0000\)</span></td>
-<td style="text-align: left;">Lockout duration <span class="arithmatex">\(T_{\text{lockout}} = 20.0\text{ ms}\)</span> in <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>4.8</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(20.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.8000\)</span></td>
-<td style="text-align: left;">Switch chatter time <span class="arithmatex">\(t_{\text{bounce}}\)</span> in <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(4.1667\)</span></strong></td>
-<td style="text-align: left;">Debounce safety margin ratio <span class="arithmatex">\(M\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>20</code> <code>[ENTER]</code> — Load the firmware debounce lockout window (<span class="arithmatex">\(T_{\text{lockout}} = 20.0\text{ ms}\)</span>) into Register <span class="arithmatex">\(Y\)</span>.
-2. <code>4.8</code> <code>[÷]</code> — Enter the measured contact chatter duration (<span class="arithmatex">\(t_{\text{bounce}} = 4.8\text{ ms}\)</span>) and execute division; the resulting safety margin (<span class="arithmatex">\(M = 4.1667\)</span>) proves the switch settles four times faster than the lockout cutoff.</p>
-<p>Safety factor exceeds <span class="arithmatex">\(4\times\)</span>, guaranteeing absolute immunity to switch bounce false triggers.</p>
+<p><strong>Keystrokes:</strong> <code>20 [ENTER] 4.8 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>4.1667</code></strong>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>20 [ENTER] 4.8 [÷]</code> loads the firmware debounce lockout window (<span class="arithmatex">\(T_{\text{lockout}} = 20.0\text{ ms}\)</span>) into Register <span class="arithmatex">\(Y\)</span> and divides by the measured contact chatter duration (<span class="arithmatex">\(t_{\text{bounce}} = 4.8\text{ ms}\)</span>). The stack drops, leaving safety margin <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{4.1667})\)</span> in Register <span class="arithmatex">\(X\)</span>—proving the switch settles four times faster than the lockout cutoff without requiring scratchpad storage.</p>
 <hr />
 <h3 id="1123-problem-13-transflective-lcd-photometric-contrast-ratio">1.12.3 Problem 1.3: Transflective LCD Photometric Contrast Ratio</h3>
 <p><strong>Optics Context:</strong> A luminance meter measures light reflected from an unactivated pixel (<span class="arithmatex">\(L_{\text{white}} = 142.0\text{ cd/m}^2\)</span>) and an activated black pixel (<span class="arithmatex">\(L_{\text{black}} = 9.35\text{ cd/m}^2\)</span>). Calculate the photometric contrast ratio:
 $<span class="arithmatex">\(C_R = \frac{L_{\text{white}}}{L_{\text{black}}}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>142 [ENTER] 9.35 [÷]</code><span class="arithmatex">\(\to \mathbf{15.1872} \approx 15.2:1\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>142</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(142.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(142.0000\)</span></td>
-<td style="text-align: left;">Background luminance <span class="arithmatex">\(L_{\text{white}}\)</span> in <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>9.35</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(142.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(9.3500\)</span></td>
-<td style="text-align: left;">Activated pixel luminance <span class="arithmatex">\(L_{\text{black}}\)</span> in <span class="arithmatex">\(X\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(15.1872\)</span></strong></td>
-<td style="text-align: left;">Photopic contrast ratio <span class="arithmatex">\(C_R \approx 15.2:1\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>142</code> <code>[ENTER]</code> — Enter the unactivated background luminance (<span class="arithmatex">\(L_{\text{white}} = 142.0\text{ cd/m}^2\)</span>) into the stack.
-2. <code>9.35</code> <code>[÷]</code> — Key the activated black pixel luminance (<span class="arithmatex">\(L_{\text{black}} = 9.35\text{ cd/m}^2\)</span>) and divide; the photopic contrast ratio (<span class="arithmatex">\(C_R = 15.19:1\)</span>) appears immediately, confirming ISO 9241-303 Class 1 optical clarity.</p>
-<p>Confirms ISO 9241-303 Class 1 visual ergonomics.</p>
+<p><strong>Keystrokes:</strong> <code>142 [ENTER] 9.35 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>15.1872</code></strong> <span class="arithmatex">\(\approx 15.2:1\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>142 [ENTER] 9.35 [÷]</code> enters unactivated background luminance (<span class="arithmatex">\(L_{\text{white}} = 142.0\text{ cd/m}^2\)</span>) into <span class="arithmatex">\(Y\)</span> and divides by activated black pixel luminance (<span class="arithmatex">\(L_{\text{black}} = 9.35\text{ cd/m}^2\)</span>). The stack drops, resolving the photopic contrast ratio <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{15.1872})\)</span> directly to confirm ISO 9241-303 Class 1 visual ergonomics.</p>
 <hr />
 <h3 id="1124-problem-14-80-mhz-spi-display-bus-refresh-frame-latency">1.12.4 Problem 1.4: 8.0 MHz SPI Display Bus Refresh Frame Latency</h3>
 <p><strong>Computer Engineering Context:</strong> The <span class="arithmatex">\(132 \times 65\)</span> dot-matrix LCD requires 9 command bytes and 1,056 display RAM data bytes (<span class="arithmatex">\(8 \text{ pages} \times 132 \text{ columns}\)</span>). Calculate transmission time at <span class="arithmatex">\(f_{\text{SPI}} = 8.0\text{ MHz}\)</span> (<span class="arithmatex">\(1\text{ bit} = 125\text{ ns}\)</span>):
@@ -4034,155 +4003,24 @@ $<span class="arithmatex">\(A_{\text{shear}} = \pi \cdot D \cdot L, \quad F_{\te
 <p><strong>Optics Context:</strong> A 1064nm pulsed fiber laser operates at average power <span class="arithmatex">\(P_{\text{avg}} = 1.20\text{ W}\)</span>, pulse frequency <span class="arithmatex">\(f_{\text{rep}} = 35.0\text{ kHz}\)</span>, and pulse width <span class="arithmatex">\(\tau = 100\text{ ns} = 1.0 \times 10^{-7}\text{ s}\)</span>:
 $<span class="arithmatex">\(E_{\text{pulse}} = \frac{P_{\text{avg}}}{f_{\text{rep}}}, \quad P_{\text{peak}} = \frac{E_{\text{pulse}}}{\tau}\)</span>$</p>
 <p><strong>Keystrokes:</strong> <code>1.20 [ENTER] 35000 [÷] 1 [E] 7 [+/-] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>342.85714286</code></strong></p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>1.20</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.2000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1.2000\)</span></td>
-<td style="text-align: left;">Average laser power <span class="arithmatex">\(P_{\text{avg}} = 1.20\text{ W}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>35000</code> <code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.4286 \times 10^{-5}\)</span></td>
-<td style="text-align: left;">Pulse energy <span class="arithmatex">\(E_{\text{pulse}} = 34.29\,\mu\text{J}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1 [E] 7 [+/-]</code> <code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(342.8571\)</span></strong></td>
-<td style="text-align: left;">Peak optical burst power <span class="arithmatex">\(P_{\text{peak}}\)</span> in Watts</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>1.20</code> <code>[ENTER]</code> — Deposit average laser optical power (<span class="arithmatex">\(P_{\text{avg}} = 1.20\text{ W}\)</span>) into the accumulator.
-2. <code>35000</code> <code>[÷]</code> — Key pulse repetition frequency (<span class="arithmatex">\(f_{\text{rep}} = 35.0\text{ kHz}\)</span>) and divide; single-pulse optical energy (<span class="arithmatex">\(E_{\text{pulse}} = 34.29\,\mu\text{J}\)</span>) condenses in <span class="arithmatex">\(X\)</span>.
-3. <code>1 [E] 7 [+/-]</code> <code>[÷]</code> — Enter optical pulse width (<span class="arithmatex">\(\tau = 100\text{ ns} = 1.0 \times 10^{-7}\text{ s}\)</span>) and divide; peak instantaneous optical burst power (<span class="arithmatex">\(P_{\text{peak}} = 342.86\text{ W}\)</span>) is calculated in place.</p>
-<p>Stack: <span class="arithmatex">\(Y = 3.4286 \times 10^{-5}\text{ J}\)</span> (<span class="arithmatex">\(34.29\,\mu\text{J}\)</span>), <span class="arithmatex">\(X = \mathbf{342.85714286\text{ W}}\)</span> peak power.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>1.20 [ENTER] 35000 [÷]</code> deposits average laser power (<span class="arithmatex">\(1.20\text{ W}\)</span>) into <span class="arithmatex">\(Y\)</span>, divides by pulse frequency (<span class="arithmatex">\(35.0\text{ kHz}\)</span>), and drops the stack to leave pulse energy <span class="arithmatex">\(3.4286 \times 10^{-5}\text{ J}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.4286 \times 10^{-5})\)</span>.
+2. Striking <code>1 [E] 7 [+/-] [÷]</code> enters pulse width (<span class="arithmatex">\(\tau = 100\text{ ns}\)</span>) and divides, evaluating peak optical burst power <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{342.8571}\text{ W})\)</span> directly in Register <span class="arithmatex">\(X\)</span>.</p>
 <hr />
 <h3 id="1128-problem-18-low-dropout-linear-regulator-ldo-power-dissipation">1.12.8 Problem 1.8: Low-Dropout Linear Regulator (LDO) Power Dissipation</h3>
 <p><strong>Thermal Context:</strong> Twin CR2032 batteries deliver <span class="arithmatex">\(V_{\text{in}} = 5.80\text{ V}\)</span> to an LDO supplying <span class="arithmatex">\(V_{\text{out}} = 3.30\text{ V}\)</span> at active computation current <span class="arithmatex">\(I = 18.2\text{ mA}\)</span>:
 $<span class="arithmatex">\(P_{\text{diss}} = (V_{\text{in}} - V_{\text{out}}) \cdot I\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>5.80 [ENTER] 3.30 [-] 0.0182 [×] 1000 [×]</code><span class="arithmatex">\(\to \mathbf{45.5000\text{ mW}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>5.80</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.8000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(5.8000\)</span></td>
-<td style="text-align: left;">Battery input potential <span class="arithmatex">\(V_{\text{in}} = 5.80\text{ V}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>3.30</code> <code>[-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.5000\)</span></td>
-<td style="text-align: left;">Voltage drop <span class="arithmatex">\(\Delta V = V_{\text{in}} - V_{\text{out}}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.0182</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0455\)</span></td>
-<td style="text-align: left;">Dissipated power in Watts</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1000</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(45.5000\)</span></strong></td>
-<td style="text-align: left;">Regulator dissipation <span class="arithmatex">\(P_{\text{diss}}\)</span> in mW</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>5.80</code> <code>[ENTER]</code> — Arm the stack with the battery input potential (<span class="arithmatex">\(V_{\text{in}} = 5.80\text{ V}\)</span>).
-2. <code>3.30</code> <code>[-]</code> — Enter regulated output voltage (<span class="arithmatex">\(V_{\text{out}} = 3.30\text{ V}\)</span>) and subtract; linear drop headroom (<span class="arithmatex">\(\Delta V = 2.50\text{ V}\)</span>) condenses in <span class="arithmatex">\(X\)</span>.
-3. <code>18.2</code> <code>[×]</code> — Key active core current (<span class="arithmatex">\(I = 18.2\text{ mA}\)</span>) and multiply; total internal regulator heat dissipation (<span class="arithmatex">\(P_{\text{diss}} = 45.50\text{ mW}\)</span>) is derived with zero parentheses.</p>
-<p>Negligible thermal rise of <span class="arithmatex">\(&lt; 1.2^\circ\text{C}\)</span> in the SOT-23 regulator package.</p>
+<p><strong>Keystrokes:</strong> <code>5.80 [ENTER] 3.30 [-] 0.0182 [×] 1000 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>45.5000</code></strong><span class="arithmatex">\(\text{ mW}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>5.80 [ENTER] 3.30 [-]</code> evaluates battery headroom drop <span class="arithmatex">\(\Delta V = 2.50\text{ V}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.5000)\)</span>.
+2. Striking <code>0.0182 [×] 1000 [×]</code> multiplies by active computation current (<span class="arithmatex">\(18.2\text{ mA}\)</span>) and normalizes to milliwatts, yielding regulator heat dissipation <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{45.5000}\text{ mW})\)</span>—confirming negligible thermal rise (<span class="arithmatex">\(&lt; 1.2^\circ\text{C}\)</span>) without grouping syntax.</p>
 <hr />
 <h3 id="1129-problem-19-matrix-scanning-diode-noise-margin">1.12.9 Problem 1.9: Matrix Scanning Diode Noise Margin</h3>
 <p><strong>Electronics Context:</strong> Keypad matrix lines use <span class="arithmatex">\(3.3\text{ V}\)</span> logic with low-state threshold <span class="arithmatex">\(V_{IL,\max} = 0.80\text{ V}\)</span>. A Schottky isolating diode has forward drop <span class="arithmatex">\(V_F = 0.32\text{ V}\)</span> at <span class="arithmatex">\(2.0\text{ mA}\)</span>. Calculate the low-state noise margin:
 $<span class="arithmatex">\(V_{NM,L} = V_{IL,\max} - V_F\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>0.80 [ENTER] 0.32 [-]</code><span class="arithmatex">\(\to \mathbf{0.4800\text{ V}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>0.80</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.8000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.8000\)</span></td>
-<td style="text-align: left;">Low-state input threshold <span class="arithmatex">\(V_{IL,\max}\)</span> in Volts</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.32</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.8000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.3200\)</span></td>
-<td style="text-align: left;">Schottky diode forward drop <span class="arithmatex">\(V_F\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.4800\)</span></strong></td>
-<td style="text-align: left;">Low-state noise immunity margin <span class="arithmatex">\(V_{NM,L}\)</span> in Volts</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>0.80</code> <code>[ENTER]</code> — Load the maximum low-level input threshold (<span class="arithmatex">\(V_{IL,\max} = 0.80\text{ V}\)</span>) into Register <span class="arithmatex">\(Y\)</span>.
-2. <code>0.32</code> <code>[-]</code> — Enter Schottky matrix diode forward drop (<span class="arithmatex">\(V_F = 0.32\text{ V}\)</span>) and subtract; low-state noise immunity margin (<span class="arithmatex">\(V_{NM,L} = 0.4800\text{ V} = 480\text{ mV}\)</span>) remains live in Register <span class="arithmatex">\(X\)</span>.</p>
-<p>Guarantees <span class="arithmatex">\(480\text{ mV}\)</span> of electrical noise immunity against ambient RF interference.</p>
+<p><strong>Keystrokes:</strong> <code>0.80 [ENTER] 0.32 [-]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>0.4800</code></strong><span class="arithmatex">\(\text{ V}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>0.80 [ENTER] 0.32 [-]</code> loads low-state input threshold (<span class="arithmatex">\(0.80\text{ V}\)</span>) into Register <span class="arithmatex">\(Y\)</span> and subtracts Schottky forward drop (<span class="arithmatex">\(0.32\text{ V}\)</span>). The stack drops, resolving the noise immunity margin <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.4800}\text{ V} = 480\text{ mV})\)</span> in place to guarantee RF immunity.</p>
 <hr />
 <h3 id="11210-problem-110-power-on-reset-por-delay-rc-time-constant">1.12.10 Problem 1.10: Power-On Reset (POR) Delay RC Time Constant</h3>
 <p><strong>Circuit Analysis Context:</strong> Reset pin requires rising above <span class="arithmatex">\(V_{\text{th}} = 2.10\text{ V}\)</span> on a <span class="arithmatex">\(3.30\text{ V}\)</span> rail. With pull-up <span class="arithmatex">\(R = 100\text{ k}\Omega\)</span> and capacitor <span class="arithmatex">\(C = 0.10\,\mu\text{F} = 1.0 \times 10^{-7}\text{ F}\)</span>:
@@ -4279,111 +4117,18 @@ Ensures microcontroller clock PLL is stable before releasing Core 0 from reset.<
 <h3 id="11211-problem-111-crystal-oscillator-load-capacitance">1.12.11 Problem 1.11: Crystal Oscillator Load Capacitance</h3>
 <p><strong>RF Electronics Context:</strong> A <span class="arithmatex">\(12.000\text{ MHz}\)</span> fundamental quartz crystal specifies load capacitance <span class="arithmatex">\(C_L = 18.0\text{ pF}\)</span>. With PCB stray capacitance <span class="arithmatex">\(C_{\text{stray}} = 3.5\text{ pF}\)</span>, calculate matching external shunt capacitors (<span class="arithmatex">\(C_1 = C_2 = C\)</span>):
 $<span class="arithmatex">\(C_L = \frac{C}{2} + C_{\text{stray}} \implies C = 2 (C_L - C_{\text{stray}})\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>18 [ENTER] 3.5 [-] 2 [×]</code><span class="arithmatex">\(\to \mathbf{29.0000\text{ pF}}\)</span>.</p>
-<blockquote>
-<p><strong>Named RPN Stack Idiom: <em>The Parallel Reciprocal x∥y Shortcut &amp; Capacitance Matching</em></strong> — Invert stray capacitance offset and double the series combination directly in the operational stack <em>(<a href="../appendix-e-annotated-bibliography/#cite-horowitz2015">Horowitz &amp; Hill, 2015</a>)</em>.</p>
-</blockquote>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>18</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(18.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(18.0000\)</span></td>
-<td style="text-align: left;">Crystal nominal load capacitance <span class="arithmatex">\(C_L\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>3.5</code> <code>[-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(14.5000\)</span></td>
-<td style="text-align: left;">Net series capacitance <span class="arithmatex">\(C_L - C_{\text{stray}}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>2</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(29.0000\)</span></strong></td>
-<td style="text-align: left;">Matching shunt capacitor rating <span class="arithmatex">\(C\)</span> in pF</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>18</code> <code>[ENTER]</code> — Load the crystal specified load capacitance (<span class="arithmatex">\(C_L = 18.0\text{ pF}\)</span>) into Register <span class="arithmatex">\(Y\)</span>.
-2. <code>3.5</code> <code>[-]</code> — Subtract stray trace capacitance (<span class="arithmatex">\(C_{\text{stray}} = 3.5\text{ pF}\)</span>); net series capacitance (<span class="arithmatex">\(C_L - C_{\text{stray}} = 14.5\text{ pF}\)</span>) appears in <span class="arithmatex">\(X\)</span>.
-3. <code>2</code> <code>[×]</code> — Double the value for the two symmetric legs; the target capacitor value (<span class="arithmatex">\(C = 29.0\text{ pF}\)</span>) is verified immediately.</p>
-<p>Select standard <span class="arithmatex">\(27\text{ pF}\)</span> or <span class="arithmatex">\(30\text{ pF}\)</span> C0G ceramic capacitors.</p>
+<p><strong>Keystrokes:</strong> <code>18 [ENTER] 3.5 [-] 2 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>29.0000</code></strong><span class="arithmatex">\(\text{ pF}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>18 [ENTER] 3.5 [-]</code> evaluates net series capacitance <span class="arithmatex">\(C_L - C_{\text{stray}} = 14.5\text{ pF}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 14.5000)\)</span>.
+2. Striking <code>2 [×]</code> doubles the series branch value, calculating the required matching shunt capacitor rating <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{29.0000}\text{ pF})\)</span>—indicating standard <span class="arithmatex">\(27\text{ pF}\)</span> or <span class="arithmatex">\(30\text{ pF}\)</span> C0G ceramics with zero memory registers.</p>
 <hr />
 <h3 id="11212-problem-112-flash-sector-wear-endurance-under-extreme-daily-editing">1.12.12 Problem 1.12: Flash Sector Wear Endurance Under Extreme Daily Editing</h3>
 <p><strong>Memory Reliability Context:</strong> A math enthusiast saves 45 equation configurations per day. If QSPI flash sectors withstand <span class="arithmatex">\(100,000\)</span> write/erase cycles and ping-pong wear-leveling doubles endurance across 2 slots, find sector lifetime in years:
 $<span class="arithmatex">\(t_{\text{years}} = \frac{2 \times 100,000}{45 \times 365.25}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>200000 [ENTER] 45 [ENTER] 365.25 [×] [÷]</code><span class="arithmatex">\(\to \mathbf{12.1683\text{ years}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>200000</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(200000.00\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(200000.00\)</span></td>
-<td style="text-align: left;">Total dual-slot endurance cycles</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>45</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(200000.00\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(45.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(45.0000\)</span></td>
-<td style="text-align: left;">Daily edit transactions</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>365.25</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(200000.00\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(16436.25\)</span></td>
-<td style="text-align: left;">Annual sector write cycles</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(12.1682\)</span></strong></td>
-<td style="text-align: left;">Guaranteed flash endurance in years</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>200000</code> <code>[ENTER]</code> — Prime the stack with total ping-pong cycle capacity (<span class="arithmatex">\(2 \times 100,000 = 200,000\text{ cycles}\)</span>).
-2. <code>45</code> <code>[ENTER]</code> — Enter daily save frequency (<span class="arithmatex">\(45\text{ saves/day}\)</span>) into the active register.
-3. <code>365.25</code> <code>[×]</code> — Multiply by average days per year; the annual write cycle rate (<span class="arithmatex">\(16,436.25\text{ writes/year}\)</span>) is calculated while total capacity waits in <span class="arithmatex">\(Y\)</span>.
-4. <code>[÷]</code> — Divide capacity by yearly wear; minimum operational endurance (<span class="arithmatex">\(t = 12.168\text{ years}\)</span>) confirms over a decade of continuous service.</p>
+<p><strong>Keystrokes:</strong> <code>200000 [ENTER] 45 [ENTER] 365.25 [×] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>12.1683</code></strong><span class="arithmatex">\(\text{ years}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>200000 [ENTER] 45 [ENTER] 365.25 [×]</code> loads dual-slot endurance (<span class="arithmatex">\(200,000\text{ cycles}\)</span>) into <span class="arithmatex">\(Z\)</span> and evaluates annual sector write cycles (<span class="arithmatex">\(45 \times 365.25 = 16,436.25\text{ writes/yr}\)</span>) in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 200000.0000, X: 16436.2500)\)</span>.
+2. Striking <code>[÷]</code> divides total cycle endurance by yearly wear, yielding guaranteed operational lifespan <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{12.1682}\text{ years})\)</span>—confirming over a decade of continuous daily service.</p>
 <hr />
 <h3 id="11213-problem-113-chassis-top-faceplate-flexure-under-400g-keypress">1.12.13 Problem 1.13: Chassis Top Faceplate Flexure Under 400g Keypress</h3>
 <p><strong>Solid Mechanics Context:</strong> Model the faceplate bridge between standoffs as a simply supported beam (<span class="arithmatex">\(L = 60.0\text{ mm}\)</span>, <span class="arithmatex">\(b = 15.0\text{ mm}\)</span>, thickness <span class="arithmatex">\(h = 2.5\text{ mm}\)</span>, polymer flexural modulus <span class="arithmatex">\(E = 3.5\text{ GPa} = 3500\text{ N/mm}^2\)</span>) under snap-dome actuation <span class="arithmatex">\(F = 3.92\text{ N}\)</span>:
@@ -4538,51 +4283,10 @@ $<span class="arithmatex">\(R_{\text{int}} = \frac{V_1 - V_2}{I_2 - I_1}\)</span
 <h3 id="11215-problem-115-lcd-bias-temperature-compensation-slope">1.12.15 Problem 1.15: LCD Bias Temperature Compensation Slope</h3>
 <p><strong>Display Engineering Context:</strong> The liquid crystal threshold voltage varies with temperature by <span class="arithmatex">\(\frac{dV_{\text{LCD}}}{dT} = -12.5\text{ mV/}^\circ\text{C}\)</span>. If nominal voltage is <span class="arithmatex">\(V_0 = 9.00\text{ V}\)</span> at <span class="arithmatex">\(25.0^\circ\text{C}\)</span>, find required drive voltage at freezing (<span class="arithmatex">\(0.0^\circ\text{C}\)</span>):
 $<span class="arithmatex">\(V(T) = V_0 + \frac{dV}{dT} (T - T_0) = 9.00 + (-0.0125)(0 - 25)\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>0 [ENTER] 25 [-] 0.0125 [+/-] [×] 9.00 [+]</code><span class="arithmatex">\(\to \mathbf{9.3125\text{ V}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>0</code> <code>[ENTER]</code> <code>25</code> <code>[-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(-25.0000\)</span></td>
-<td style="text-align: left;">Freezing temperature offset <span class="arithmatex">\(\Delta T\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.0125</code> <code>[+/-]</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.3125\)</span></td>
-<td style="text-align: left;">Voltage correction factor</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>9.00</code> <code>[+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(9.3125\)</span></strong></td>
-<td style="text-align: left;">Required drive potential <span class="arithmatex">\(V(0)\)</span> in Volts</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>0</code> <code>[ENTER]</code> — Enter freezing test temperature (<span class="arithmatex">\(T = 0.0^\circ\text{C}\)</span>) into the stack.
-2. <code>25</code> <code>[-]</code> — Subtract reference calibration baseline (<span class="arithmatex">\(T_0 = 25.0^\circ\text{C}\)</span>); temperature offset (<span class="arithmatex">\(\Delta T = -25.0^\circ\text{C}\)</span>) forms in <span class="arithmatex">\(X\)</span>.
-3. <code>0.0125</code> <code>[+/-]</code> <code>[×]</code> — Multiply by LCD thermal sensitivity slope (<span class="arithmatex">\(-0.0125\text{ V}/^\circ\text{C}\)</span>); bias voltage correction (<span class="arithmatex">\(+0.3125\text{ V}\)</span>) forms in <span class="arithmatex">\(X\)</span>.
-4. <code>9.00</code> <code>[+]</code> — Add nominal room-temperature drive potential (<span class="arithmatex">\(V_0 = 9.00\text{ V}\)</span>); target liquid crystal bias voltage (<span class="arithmatex">\(V_{\text{LCD}} = 9.3125\text{ V}\)</span>) is confirmed.</p>
+<p><strong>Keystrokes:</strong> <code>0 [ENTER] 25 [-] 0.0125 [+/-] [×] 9.00 [+]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>9.3125</code></strong><span class="arithmatex">\(\text{ V}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>0 [ENTER] 25 [-]</code> evaluates temperature differential <span class="arithmatex">\(\Delta T = -25.0^\circ\text{C}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: -25.0000)\)</span>.
+2. Striking <code>0.0125 [+/-] [×] 9.00 [+]</code> scales by thermal sensitivity slope (<span class="arithmatex">\(-0.0125\text{ V/}^\circ\text{C}\)</span>) to produce offset <span class="arithmatex">\(+0.3125\text{ V}\)</span> and adds nominal room-temperature drive potential, resolving freezing LCD bias potential <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{9.3125}\text{ V})\)</span> in place.</p>
 <hr />
 <h3 id="11216-problem-116-decoupling-capacitor-resonant-frequency-at-150-mhz-clock">1.12.16 Problem 1.16: Decoupling Capacitor Resonant Frequency at 150 MHz Clock</h3>
 <p><strong>Power Integrity Context:</strong> A <span class="arithmatex">\(0.10\,\mu\text{F}\)</span> 0603 decoupling capacitor has parasitic equivalent series inductance <span class="arithmatex">\(ESL = 0.85\text{ nH} = 8.5 \times 10^{-10}\text{ H}\)</span>. Find self-resonant frequency <span class="arithmatex">\(f_{\text{SRF}}\)</span>:
@@ -4767,128 +4471,21 @@ $<span class="arithmatex">\(v_{\text{impact}} = \sqrt{2gh}, \quad a_{\text{avg}}
 <h3 id="11219-problem-119-quiescent-sleep-power-consumption-over-18-months">1.12.19 Problem 1.19: Quiescent Sleep Power Consumption Over 18 Months</h3>
 <p><strong>Energetics Context:</strong> In deep sleep (<span class="arithmatex">\(I = 11.8\,\mu\text{A}\)</span> at <span class="arithmatex">\(V = 3.0\text{ V}\)</span>), find total energy consumed in Joules over an 18-month shelf storage (<span class="arithmatex">\(547.5\text{ days} = 13,140\text{ hours}\)</span>):
 $<span class="arithmatex">\(E = V \cdot I \cdot t\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>3.0 [ENTER] 11.8 [E] 6 [+/-] [×] 13140 [×] 3600 [×]</code><span class="arithmatex">\(\to \mathbf{1,674.5616\text{ Joules}}\)</span>.</p>
+<p><strong>Keystrokes:</strong> <code>3.0 [ENTER] 11.8 [E] 6 [+/-] [×] 13140 [×] 3600 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>1,674.5616</code></strong><span class="arithmatex">\(\text{ Joules}\)</span>.</p>
 <blockquote>
 <p><strong>Named RPN Stack Idiom: <em>The Constant-in-T Pipeline</em></strong> — Park battery potential in the stack to stream current and time across months, accumulating total dissipated Joules without scratchpad storage <em>(<a href="../appendix-e-annotated-bibliography/#cite-horowitz2015">Horowitz &amp; Hill, 2015</a>)</em>.</p>
 </blockquote>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>3.0</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
-<td style="text-align: left;">Battery terminal voltage <span class="arithmatex">\(V = 3.0\text{ V}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>11.8 [E] 6 [+/-]</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.5400 \times 10^{-5}\)</span></td>
-<td style="text-align: left;">Quiescent sleep power dissipation in Watts</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>13140</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.4652\)</span></td>
-<td style="text-align: left;">Accumulated shelf energy in Watt-hours</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>3600</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(1674.5616\)</span></strong></td>
-<td style="text-align: left;">Total 18-month energy consumed in Joules</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>3.0</code> <code>[ENTER]</code> — Load nominal coin-cell terminal voltage (<span class="arithmatex">\(V = 3.0\text{ V}\)</span>) onto the stack.
-2. <code>1.18 [E] 5 [+/-]</code> <code>[×]</code> — Multiply by deep sleep quiescent current (<span class="arithmatex">\(I = 1.18 \times 10^{-5}\text{ A}\)</span>); continuous sleep power dissipation (<span class="arithmatex">\(P = 35.40\,\mu\text{W}\)</span>) occupies <span class="arithmatex">\(X\)</span>.
-3. <code>13140</code> <code>[×]</code> — Scale by 18-month storage duration in hours (<span class="arithmatex">\(13,140\text{ hours}\)</span>); accumulated watt-hours (<span class="arithmatex">\(0.4652\text{ Wh}\)</span>) forms in <span class="arithmatex">\(X\)</span>.
-4. <code>3600</code> <code>[×]</code> — Multiply by seconds per hour (<span class="arithmatex">\(3600\text{ s/h}\)</span>); total dissipated shelf energy (<span class="arithmatex">\(E = 1,674.56\text{ Joules}\)</span>) resolves with zero parentheses.</p>
-<p>Consumes less than <span class="arithmatex">\(20\%\)</span> of the coin cell's <span class="arithmatex">\(8,100\text{ J}\)</span> chemical capacity.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>3.0 [ENTER] 11.8 [E] 6 [+/-] [×]</code> loads nominal battery potential (<span class="arithmatex">\(3.0\text{ V}\)</span>) and multiplies by deep sleep current (<span class="arithmatex">\(11.8\,\mu\text{A}\)</span>), forming continuous power dissipation <span class="arithmatex">\(3.5400 \times 10^{-5}\text{ W}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.5400 \times 10^{-5})\)</span>.
+2. Striking <code>13140 [×] 3600 [×]</code> scales by storage duration in hours and converts to seconds, calculating total 18-month energy consumed <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1674.5616}\text{ Joules})\)</span>—less than <span class="arithmatex">\(20\%\)</span> of the coin cell's chemical reserve.</p>
 <hr />
 <h3 id="11220-problem-120-microcontroller-core-clock-pll-lock-phase-margin">1.12.20 Problem 1.20: Microcontroller Core Clock PLL Lock Phase Margin</h3>
 <p><strong>Silicon Design Context:</strong> Phase-Locked Loop loop filter has damping factor <span class="arithmatex">\(\zeta = 0.707\)</span> and natural frequency <span class="arithmatex">\(\omega_n = 2.40 \times 10^6\text{ rad/s}\)</span>. Calculate settling time to <span class="arithmatex">\(1\%\)</span> phase error:
 $<span class="arithmatex">\(t_{\text{lock}} \approx \frac{4.6}{\zeta \omega_n}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>4.6 [ENTER] 0.707 [ENTER] 2.40 [E] 6 [×] [÷] 1 [E] 6 [×]</code><span class="arithmatex">\(\to \mathbf{2.7109853843\,\mu\text{s}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>4.6</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.6000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.6000\)</span></td>
-<td style="text-align: left;">Four-time-constant settling factor</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.707</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.6000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.7070\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.7070\)</span></td>
-<td style="text-align: left;">Damping ratio <span class="arithmatex">\(\zeta = 0.707\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>2.40 [E] 6</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(4.6000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1696800.0000\)</span></td>
-<td style="text-align: left;">Denominator product <span class="arithmatex">\(\zeta \omega_n\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(2.7110 \times 10^{-6}\)</span></td>
-<td style="text-align: left;">Settling time in seconds</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1 [E] 6</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(2.7110\)</span></strong></td>
-<td style="text-align: left;">Phase lock time <span class="arithmatex">\(t_{\text{lock}}\)</span> in microseconds</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>4.6</code> <code>[ENTER]</code> — Prime the stack with the four-time-constant <span class="arithmatex">\(1\%\)</span> settling factor (<span class="arithmatex">\(4.6\)</span>).
-2. <code>0.707</code> <code>[÷]</code> — Divide by PLL loop damping ratio (<span class="arithmatex">\(\zeta = 0.707\)</span>); normalized damping rate (<span class="arithmatex">\(6.5064\)</span>) forms in <span class="arithmatex">\(X\)</span>.
-3. <code>2.4 [E] 6</code> <code>[÷]</code> — Divide by PLL natural angular frequency (<span class="arithmatex">\(\omega_n = 2.40 \times 10^6\text{ rad/s}\)</span>); total phase lock acquisition time (<span class="arithmatex">\(t_{\text{lock}} = 2.7110 \times 10^{-6}\text{ s} = 2.71\,\mu\text{s}\)</span>) is confirmed.</p>
-<p>Confirms clock stabilization takes <span class="arithmatex">\(&lt; 3\,\mu\text{s}\)</span>, well within the <span class="arithmatex">\(0.45\text{ ms}\)</span> boot window.</p>
+<p><strong>Keystrokes:</strong> <code>4.6 [ENTER] 0.707 [ENTER] 2.40 [E] 6 [×] [÷] 1 [E] 6 [×]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>2.7109853843</code></strong><span class="arithmatex">\(\,\mu\text{s}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>4.6 [ENTER] 0.707 [ENTER] 2.40 [E] 6 [×] [÷]</code> loads the four-time-constant factor (<span class="arithmatex">\(4.6\)</span>), evaluates the loop denominator <span class="arithmatex">\(\zeta \omega_n = 1.6968 \times 10^6\text{ rad/s}\)</span>, and divides to obtain settling time <span class="arithmatex">\(2.7110 \times 10^{-6}\text{ s}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.7110 \times 10^{-6})\)</span>.
+2. Striking <code>1 [E] 6 [×]</code> converts to microseconds, confirming PLL phase lock acquisition <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2.7110}\,\mu\text{s})\)</span> takes under <span class="arithmatex">\(3\,\mu\text{s}\)</span>.</p>
 <hr />
 <h3 id="11221-problem-121-lead-free-solder-joint-thermal-fatigue-life">1.12.21 Problem 1.21: Lead-Free Solder Joint Thermal Fatigue Life</h3>
 <p><strong>Reliability Physics Context:</strong> Coffin-Manson relation for SAC305 solder joints cycling between <span class="arithmatex">\(-10^\circ\text{C}\)</span> and <span class="arithmatex">\(+45^\circ\text{C}\)</span> (<span class="arithmatex">\(\Delta T = 55\text{ K}\)</span>, fatigue exponent <span class="arithmatex">\(m = 2.2\)</span>, calibration constant <span class="arithmatex">\(C = 1.8 \times 10^7\)</span>):
@@ -4943,194 +4540,33 @@ $<span class="arithmatex">\(N_f = \frac{C}{(\Delta T)^m}\)</span>$</p>
 <h3 id="11222-problem-122-electrostatic-discharge-esd-human-body-model-spark">1.12.22 Problem 1.22: Electrostatic Discharge (ESD) Human Body Model Spark</h3>
 <p><strong>EMC Compliance Context:</strong> Human Body Model (<span class="arithmatex">\(C = 100\text{ pF}\)</span>, discharge resistance <span class="arithmatex">\(R = 1500\,\Omega\)</span>) charged to <span class="arithmatex">\(V_0 = 8000\text{ V}\)</span> (IEC 61000-4-2 contact discharge). Find peak instantaneous current:
 $<span class="arithmatex">\(I_{\text{peak}} = \frac{V_0}{R}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>8000 [ENTER] 1500 [÷]</code><span class="arithmatex">\(\to \mathbf{5.3333\text{ Amperes}}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>8000</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(8000.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(8000.0000\)</span></td>
-<td style="text-align: left;">HBM electrostatic potential <span class="arithmatex">\(V_0 = 8000\text{ V}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>1500</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(8000.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(1500.0000\)</span></td>
-<td style="text-align: left;">Discharge series resistance <span class="arithmatex">\(R = 1500\,\Omega\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(5.3333\)</span></strong></td>
-<td style="text-align: left;">Peak instantaneous spark current in Amperes</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>8000</code> <code>[ENTER]</code> — Load Human Body Model electrostatic test potential (<span class="arithmatex">\(V_0 = 8000\text{ V}\)</span>) into the stack.
-2. <code>1500</code> <code>[÷]</code> — Divide by discharge series resistance (<span class="arithmatex">\(R = 1500\,\Omega\)</span>); peak instantaneous discharge current (<span class="arithmatex">\(I_{\text{peak}} = 5.3333\text{ A}\)</span>) appears on the display.</p>
-<p>Explains why dedicated TVS clamping diodes (clamping to <span class="arithmatex">\(&lt; 6.5\text{ V}\)</span>) guard all external I/O pins.</p>
+<p><strong>Keystrokes:</strong> <code>8000 [ENTER] 1500 [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>5.3333</code></strong><span class="arithmatex">\(\text{ Amperes}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>8000 [ENTER] 1500 [÷]</code> loads HBM electrostatic potential (<span class="arithmatex">\(8000\text{ V}\)</span>) into Register <span class="arithmatex">\(Y\)</span> and divides by discharge resistance (<span class="arithmatex">\(1500\,\Omega\)</span>). The stack drops, evaluating peak instantaneous spark current <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{5.3333}\text{ A})\)</span> directly—explaining why dedicated TVS diodes guard all external I/O pins.</p>
 <hr />
 <h3 id="11223-problem-123-keypad-matrix-phantom-key-sneak-current-analysis">1.12.23 Problem 1.23: Keypad Matrix Phantom Key Sneak Current Analysis</h3>
 <p><strong>Circuit Design Context:</strong> Three keys are pressed simultaneously forming three corners of a rectangle in a matrix without diodes. With row pull-up <span class="arithmatex">\(R_{\text{pu}} = 10\text{ k}\Omega\)</span> to <span class="arithmatex">\(3.3\text{ V}\)</span>, trace the sneak path current that causes a false "ghost" key:
 $<span class="arithmatex">\(I_{\text{sneak}} = \frac{V_{\text{cc}}}{R_{\text{pu}} + 3 R_{\text{contact}}} \approx \frac{3.3}{10000} = 0.33\text{ mA}\)</span>$
 Because Schottky diodes are placed in series with every keycap in the SC-32, the reverse-biased diode blocks sneak current completely (<span class="arithmatex">\(I_{\text{leak}} &lt; 0.1\,\mu\text{A}\)</span>), providing 100% anti-ghosting rollover.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>3.3</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.3000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.3000\)</span></td>
-<td style="text-align: left;">Logic supply rail <span class="arithmatex">\(V_{\text{cc}} = 3.3\text{ V}\)</span> in <span class="arithmatex">\(Y\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>10000</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3.3000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(10000.00\)</span></td>
-<td style="text-align: left;">Row pull-up resistance <span class="arithmatex">\(R_{\text{pu}} = 10\text{ k}\Omega\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(3.3000 \times 10^{-4}\)</span></strong></td>
-<td style="text-align: left;">Sneak path current in Amperes (<span class="arithmatex">\(0.33\text{ mA}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>3.3</code> <code>[ENTER]</code> — Load logic supply voltage (<span class="arithmatex">\(V_{\text{cc}} = 3.3\text{ V}\)</span>) into Register <span class="arithmatex">\(Y\)</span>.
-2. <code>10000</code> <code>[÷]</code> — Divide by pull-up resistance (<span class="arithmatex">\(10\text{ k}\Omega\)</span>); sneak current resolves to <span class="arithmatex">\(\mathbf{0.33\text{ mA}}\)</span> in Register <span class="arithmatex">\(X\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>3.3 [ENTER] 10000 [÷]</code> loads logic supply potential (<span class="arithmatex">\(3.3\text{ V}\)</span>) into Register <span class="arithmatex">\(Y\)</span> and divides by row pull-up resistance (<span class="arithmatex">\(10,000\,\Omega\)</span>). The stack drops, resolving the unmitigated sneak current <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{3.3000 \times 10^{-4}}\text{ A} = 0.33\text{ mA})\)</span> in Register <span class="arithmatex">\(X\)</span>.</p>
 <hr />
 <h3 id="11224-problem-124-ambient-light-sensor-adc-resolution-and-lux-mapping">1.12.24 Problem 1.24: Ambient Light Sensor ADC Resolution and Lux Mapping</h3>
 <p><strong>Sensor Interface Context:</strong> An ambient light photodiode produces current <span class="arithmatex">\(I_{\text{photo}} = 0.25\,\mu\text{A} / 100\text{ lux}\)</span> through transimpedance resistor <span class="arithmatex">\(R_f = 2.4\text{ M}\Omega\)</span>. The 12-bit ADC (<span class="arithmatex">\(4096\text{ counts}\)</span>) measures against a <span class="arithmatex">\(3.30\text{ V}\)</span> reference. Calculate lux per ADC count:
 $<span class="arithmatex">\(V_{\text{out}} = I_{\text{photo}} \cdot R_f = \left(\frac{0.25 \times 10^{-6}\text{ A}}{100\text{ lux}}\right) \times 2.4 \times 10^6\,\Omega = 0.0060\text{ V/lux} = 6.0\text{ mV/lux}\)</span>$
 $<span class="arithmatex">\(V_{\text{LSB}} = \frac{3.30\text{ V}}{4096} \approx 0.80566\text{ mV}\)</span>$
 $<span class="arithmatex">\(\text{Resolution} = \frac{V_{\text{LSB}}}{0.0060\text{ V/lux}} = \frac{0.80566}{6.0} \approx \mathbf{0.1343\text{ lux/count}}.\)</span>$</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>3.3</code> <code>[ENTER]</code> <code>4096</code> <code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(8.0566 \times 10^{-4}\)</span></td>
-<td style="text-align: left;">Quantization voltage step <span class="arithmatex">\(V_{\text{LSB}} \approx 0.8057\text{ mV}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.006</code> <code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.1343\)</span></strong></td>
-<td style="text-align: left;">Ambient lux measurement resolution in lux/count</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>3.3</code> <code>[ENTER] 4096 [÷]</code> — Evaluate 12-bit ADC quantization step (<span class="arithmatex">\(V_{\text{LSB}} = 0.80566\text{ mV}\)</span>) directly in Register <span class="arithmatex">\(X\)</span>.
-2. <code>.006</code> <code>[÷]</code> — Enter sensor transimpedance transfer factor (<span class="arithmatex">\(6.0\text{ mV/lux}\)</span>) and divide; measurement resolution resolves to <span class="arithmatex">\(\mathbf{0.1343\text{ lux/count}}\)</span> in Register <span class="arithmatex">\(X\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>3.3 [ENTER] 4096 [÷]</code> evaluates 12-bit ADC voltage step <span class="arithmatex">\(V_{\text{LSB}} = 8.0566 \times 10^{-4}\text{ V}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: 8.0566 \times 10^{-4})\)</span>.
+2. Striking <code>0.006 [÷]</code> divides by the transimpedance transfer factor (<span class="arithmatex">\(6.0\text{ mV/lux}\)</span>), resolving optical measurement resolution <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.1343}\text{ lux/count})\)</span> directly.</p>
 <hr />
 <h3 id="11225-problem-125-chassis-thermal-equilibrium-temperature-rise">1.12.25 Problem 1.25: Chassis Thermal Equilibrium Temperature Rise</h3>
 <p><strong>Thermodynamics Context:</strong> At full continuous 150 MHz dual-core computation, the board dissipates <span class="arithmatex">\(P = 60.0\text{ mW} = 0.060\text{ W}\)</span>. The chassis has total heat radiating area <span class="arithmatex">\(A = 0.024\text{ m}^2\)</span> with natural convection heat transfer coefficient <span class="arithmatex">\(h_c = 6.5\text{ W/m}^2\text{K}\)</span>:
 $<span class="arithmatex">\(\Delta T = \frac{P}{h_c \cdot A}\)</span>$</p>
-<p><strong>Keystrokes:</strong> <code>0.060 [ENTER] 6.5 [ENTER] 0.024 [×] [÷]</code><span class="arithmatex">\(\to \mathbf{0.3846\text{ K}} \approx 0.38^\circ\text{C}\)</span>.</p>
-<p><strong>4-Level Stack Trace:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Keystroke</th>
-<th style="text-align: center;">Register T</th>
-<th style="text-align: center;">Register Z</th>
-<th style="text-align: center;">Register Y</th>
-<th style="text-align: center;">Register X</th>
-<th style="text-align: left;">Operational Commentary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>0.060</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0600\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0600\)</span></td>
-<td style="text-align: left;">Continuous dissipation <span class="arithmatex">\(P = 60.0\text{ mW}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>6.5</code> <code>[ENTER]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0600\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(6.5000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(6.5000\)</span></td>
-<td style="text-align: left;">Convection coefficient <span class="arithmatex">\(h_c = 6.5\text{ W/m}^2\text{K}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>0.024</code> <code>[×]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0600\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.1560\)</span></td>
-<td style="text-align: left;">Dissipation conductance <span class="arithmatex">\(h_c A\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[÷]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(0.3846\)</span></strong></td>
-<td style="text-align: left;">Steady-state temperature rise <span class="arithmatex">\(\Delta T\)</span> in K (<span class="arithmatex">\(0.38^\circ\text{C}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step-by-Step RPN Reasoning &amp; Stack Logic:</strong>**
-1. <code>0.060</code> <code>[ENTER]</code> — Arm the stack with continuous computing thermal dissipation (<span class="arithmatex">\(P = 0.060\text{ W}\)</span>).
-2. <code>6.5</code> <code>[÷]</code> — Divide by natural convection coefficient (<span class="arithmatex">\(h_c = 6.5\text{ W/(m}^2\cdot\text{K)}\)</span>); intermediate thermal impedance (<span class="arithmatex">\(9.2308 \times 10^{-3}\text{ K}\cdot\text{m}^2\)</span>) forms in <span class="arithmatex">\(X\)</span>.
-3. <code>0.024</code> <code>[÷]</code> — Divide by effective surface area (<span class="arithmatex">\(A = 0.024\text{ m}^2\)</span>); steady-state equilibrium temperature rise (<span class="arithmatex">\(\Delta T = 0.3846\text{ K} \approx 0.38^\circ\text{C}\)</span>) is verified.</p>
-<p>Confirms the SC-32 remains completely cool to the touch with zero thermal throttling under indefinite continuous computing.</p>
+<p><strong>Keystrokes:</strong> <code>0.060 [ENTER] 6.5 [ENTER] 0.024 [×] [÷]</code> <span class="arithmatex">\(\rightarrow\)</span> <strong><code>0.3846</code></strong><span class="arithmatex">\(\text{ K} \approx 0.38^\circ\text{C}\)</span>.</p>
+<p><strong>Step-by-Step RPN Reasoning &amp; Stack Dynamics:</strong>
+1. Keying <code>0.060 [ENTER] 6.5 [ENTER] 0.024 [×]</code> loads continuous thermal dissipation (<span class="arithmatex">\(0.060\text{ W}\)</span>) into <span class="arithmatex">\(Z\)</span> and evaluates convection conductance <span class="arithmatex">\(h_c A = 0.1560\text{ W/K}\)</span> in Register <span class="arithmatex">\(X\)</span> <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0600, X: 0.1560)\)</span>.
+2. Striking <code>[÷]</code> divides dissipation by conductance, determining steady-state equilibrium temperature rise <span class="arithmatex">\((T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.3846}\text{ K} \approx 0.38^\circ\text{C})\)</span>—proving the chassis remains cool to the touch with zero throttling.</p>
 <hr />
 <h2 id="113-instrument-architecture-diagnostic-verification-notes">1.13 Instrument Architecture &amp; Diagnostic Verification Notes</h2>
 <h3 id="1131-physical-hardware-determinism-tactile-switch-dynamics">1.13.1 Physical Hardware Determinism &amp; Tactile Switch Dynamics</h3>
