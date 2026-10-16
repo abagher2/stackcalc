@@ -592,7 +592,6 @@ Result: $n_i \approx \mathbf{1.045 \times 10^{10}\text{ cm}^{-3}}$.
 ---
 
 ### Problem 3.11: Arrhenius Diffusion Coefficient in Austenite Steel
-### Problem 3.11: Arrhenius Diffusion Coefficient in Austenite Steel
 **Metallurgy Context:** Carbon diffusion in FCC iron at $T = 1200\text{ K}$ ($D_0 = 2.3 \times 10^{-5}\text{ m}^2/\text{s}$, activation energy $Q = 148\text{ kJ/mol} = 148,000\text{ J/mol}$, $R = 8.31446\text{ J/mol}\cdot\text{K}$):
 $$D = D_0 \exp\left(-\frac{Q}{R T}\right)$$
 
@@ -676,22 +675,12 @@ Result: $P \approx \mathbf{19.923\text{ kPa}}$.
 **Physical Chemistry Context:** Standard Gibbs free energy change $\Delta G^\circ = -33.3\text{ kJ/mol} = -33300\text{ J/mol}$ at $T = 298.15\text{ K}$:
 $$K = \exp\left(-\frac{\Delta G^\circ}{R T}\right)$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_20:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_20:value}}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_20:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_20:value}}`**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `33300` `{{key:ENTER}}` — Enter reaction Gibbs free energy change ($\Delta G^\circ = 33,300\text{ J/mol}$) into $Y$.
-2. `8.31446` `{{key:ENTER}}` — Key universal gas constant ($R = 8.31446\text{ J/(mol}\cdot\text{K)}$) into $Y$.
-3. `298.15` `{{key:×}}` — Multiply by standard temperature ($T = 298.15\text{ K}$); thermal energy denominator ($RT = 2478.96\text{ J/mol}$) forms in $X$.
-4. `{{key:÷}}` — Divide free energy by thermal denominator; dimensionless reaction parameter ($-\Delta G^\circ/RT = 13.4331$) forms in $X$.
-5. `{{key:eˣ}}` — Exponentiate in place; chemical equilibrium constant ($K = 6.8222 \times 10^5$) is determined directly.
-
-Enormous equilibrium constant confirms the reaction proceeds virtually to completion.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `33300 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $33300.0000$ | $33300.0000$ | Load standard free energy $\Delta G^\circ$ (J/mol) |
-| 2 | `8.31446 {{key:ENTER}} 298.15 {{key:×}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $13.4331$ | Thermal energy $R T$ denominator at $298.15\text{ K}$ |
-| 3 | `{{key:eˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$682196.4168$** | Equilibrium constant $K_{\text{eq}} = \exp(\Delta G^\circ/RT)$ |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `33300 {{key:ENTER}}` loads the standard reaction Gibbs free energy change $\Delta G^\circ = 33,300\text{ J/mol}$ into Register $Y$ and replicates into $X$ $(T: 0.0000, Z: 0.0000, Y: 33300.0000, X: 33300.0000)$.
+2. Keying `8.31446 {{key:ENTER}} 298.15 {{key:×}} {{key:÷}}` evaluates the ambient thermal energy denominator $R T \approx 2478.96\text{ J/mol}$ and divides into $\Delta G^\circ$, yielding dimensionless reaction exponent $13.4331$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 13.4331)$.
+3. Striking `{{key:eˣ}}` exponentiates in place, producing equilibrium constant $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{6.8220 \times 10^5})$—confirming the reaction runs to near completion with zero auxiliary memory.
 
 ---
 
@@ -699,17 +688,11 @@ Enormous equilibrium constant confirms the reaction proceeds virtually to comple
 **Architectural Acoustics Context:** Hall volume $V = 4500\text{ m}^3$ with total acoustic absorption $A = 320.0\text{ m}^2\text{ Sabins}$:
 $$T_{60} = \frac{0.161 \cdot V}{A}$$
 
-**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_21:keys}}`$\to \mathbf{{{res:sc32_03_algebra_transcendentals_seq_21:value}}\text{ seconds}}$.
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_21:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_21:value}}`**$\text{ seconds}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0.161` `{{key:ENTER}}` — Load Sabine architectural acoustics metric constant ($0.161\text{ s/m}$) into $Y$.
-2. `4500` `{{key:×}}` — Enter auditorium enclosed volume ($V = 4500.0\text{ m}^3$) and multiply; volumetric acoustic numerator ($724.50\text{ m}^3\cdot\text{s/m}$) forms in $X$.
-3. `320.0` `{{key:÷}}` — Enter total room absorption ($A = 320.0\text{ m}^2\text{ Sabins}$) and divide directly; reverberation time ($T_{60} = 2.2641\text{ seconds}$) is calculated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.161 {{key:ENTER}} 4500 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $724.5000$ | Sabine acoustic numerator $0.161 \times V$ |
-| 2 | `320 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.2641$** | Divide by total metric absorption area $A$ for reverberation time $T_{60}$ (s) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.161 {{key:ENTER}} 4500 {{key:×}}` primes the architectural constant and scales by auditorium volume, producing volumetric absorption numerator $724.5000\text{ m}^3\cdot\text{s/m}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 724.5000)$.
+2. Striking `320 {{key:÷}}` divides directly by room absorption area $A = 320\text{ Sabins}$, evaluating Sabine reverberation time $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2.2641}\text{ s})$ without scratchpad memory.
 
 ---
 
@@ -717,27 +700,16 @@ $$T_{60} = \frac{0.161 \cdot V}{A}$$
 **Structural Engineering Context:** Deflection at $x = 2.0\text{ m}$ on a simply supported beam ($L = 6.0\text{ m}$, uniform load $w = 8.5\text{ kN/m} = 8500\text{ N/m}$, $E I = 1.2 \times 10^7\text{ N}\cdot\text{m}^2$):
 $$\delta(x) = \frac{w x}{24 E I} (L^3 - 2 L x^2 + x^3)$$
 
-**Keystrokes:**
-`{{res:sc32_03_algebra_transcendentals_seq_22:keys}}`
+**Keystrokes:** `{{res:sc32_03_algebra_transcendentals_seq_22:keys}}` $\rightarrow$ **`{{res:sc32_03_algebra_transcendentals_seq_22:value}}`**$\text{ m}$.
 
 > **Named RPN Stack Idiom: *The Polynomial Inside-Out Evaluation*** — Evaluate nested beam geometry $(L^3 - 2Lx^2 + x^3)$ inside-out and scale by uniform distributed load without parenthesis nesting {{cite:hp32sii1991}}.
 
-Result: $\delta \approx \mathbf{0.010389\text{ m}} = 10.39\text{ mm}$.
-
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `6 {{key:ENTER}} 3 {{key:yˣ}}` — Key beam span $L = 6.0\text{ m}$ and cube ($L^3 = 216.0$) in $X$.
-2. `2 {{key:ENTER}} 6 {{key:×}} 2 {{key:x²}} {{key:×}} {{key:-}}` — Compute quadratic term $2Lx^2 = 48.0$ and subtract from $L^3$, yielding $168.0$.
-3. `2 {{key:ENTER}} 3 {{key:yˣ}} {{key:+}}` — Add coordinate cubic term $x^3 = 8.0$, forming geometric bracket $(L^3 - 2Lx^2 + x^3) = 176.0$.
-4. `8500 {{key:ENTER}} 2 {{key:×}} {{key:×}}` — Scale by uniform distributed load $w = 8500\text{ N/m}$ and coordinate $x = 2.0\text{ m}$.
-5. `24 {{key:ENTER}} 1.2 {{key:E}} 7 {{key:×}} {{key:÷}}` — Divide by flexural stiffness denominator $24EI = 2.88 \times 10^8\text{ N}\cdot\text{m}^2$ to evaluate deflection $\delta \approx \mathbf{0.010389\text{ m}}$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `6 {{key:ENTER}} 3 {{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $216.0000$ | Span cubed $L^3 = 6^3 = 216$ |
-| 2 | `2 {{key:ENTER}} 6 {{key:×}} 2 {{key:x²}} {{key:×}} {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $168.0000$ | Subtract quadratic term $2 L x^2 = 48$ |
-| 3 | `2 {{key:ENTER}} 3 {{key:yˣ}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $176.0000$ | Add cubic coordinate term $x^3 = 8$ for geometric bracket $176$ |
-| 4 | `8500 {{key:ENTER}} 2 {{key:×}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.9920 \times 10^{6}$ | Multiply by distributed load $w$ and coordinate $x$ |
-| 5 | `24 {{key:ENTER}} 1.2 {{key:E}} 7 {{key:×}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.0104$** | Divide by flexural rigidity factor $24 E I$ for deflection $\delta$ (m) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `6 {{key:ENTER}} 3 {{key:yˣ}}` evaluates span cube $L^3 = 216.0000$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 216.0000)$.
+2. Keying `2 {{key:ENTER}} 6 {{key:×}} 2 {{key:x²}} {{key:×}} {{key:-}}` evaluates quadratic term $2 L x^2 = 48.0000$ and subtracts from $L^3$, leaving $168.0000$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 168.0000)$.
+3. Striking `2 {{key:ENTER}} 3 {{key:yˣ}} {{key:+}}` adds cubic term $x^3 = 8.0000$, resolving geometric bracket $(L^3 - 2 L x^2 + x^3) = 176.0000$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 176.0000)$.
+4. Striking `8500 {{key:ENTER}} 2 {{key:×}} {{key:×}}` multiplies by distributed load $w = 8500\text{ N/m}$ and coordinate $x = 2.0\text{ m}$, forming $2.9920 \times 10^6\text{ N}\cdot\text{m}^2$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.9920 \times 10^6)$.
+5. Striking `24 {{key:ENTER}} 1.2 {{key:E}} 7 {{key:×}} {{key:÷}}` builds flexural stiffness denominator $24 E I = 2.88 \times 10^8\text{ N}\cdot\text{m}^2$ and divides, yielding elastic deflection $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.0104}\text{ m} \approx 10.39\text{ mm})$.
 
 ---
 

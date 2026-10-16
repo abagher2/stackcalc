@@ -3716,13 +3716,9 @@ $$L_p = 20 \log_{10}\left(\frac{1.45}{2.0 \times 10^{-5}}\right)$$
 
 Keystrokes: `1.45 [ENTER] 2.0 [E] 5 [+/-] [÷] [↰] [LOG] 20 [×]` $\rightarrow$ **`97.206760131`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1.45 [ENTER]` | $0.0000$ | $0.0000$ | $1.4500$ | $1.4500$ | Sound pressure loaded to $Y$ |
-| 2 | `2.0 [E] 5 [+/-]` | $0.0000$ | $0.0000$ | $1.4500$ | $2.0000 \times 10^{-5}$ | $p_0$ reference in $X$ |
-| 3 | `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $72500.0000$ | Pressure ratio $p/p_0$ |
-| 4 | `[LOG]` | $0.0000$ | $0.0000$ | $0.0000$ | $4.860338$ | Common log (Bels) |
-| 5 | `20 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$97.206760\text{ dB}$** | Decibel sound pressure level |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1.45 [ENTER] 2.0 [E] 5 [+/-] [÷]` divides measured acoustic pressure by reference threshold $p_0 = 20\,\mu\text{Pa}$, yielding relative pressure ratio $72,500.0$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 72500.0000)$.
+2. Striking `[↰] [LOG] 20 [×]` computes the decade power and scales by $20\text{ dB/decade}$, resolving stadium acoustic sound pressure level directly as $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{97.2068}\text{ dB SPL})$.
 
 The stadium speaker produces **$97.2\text{ dB SPL}$**, indicating a high-intensity sound level requiring hearing protection during extended exposure.
 
@@ -3741,13 +3737,9 @@ Calculate the pH of an acetic acid buffer system with:
 
 Keystrokes: `0.185 [ENTER] 0.120 [÷] [↰] [LOG] 4.76 [+]` $\rightarrow$ **`4.9479904824`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.185 [ENTER]` | $0.0000$ | $0.0000$ | $0.1850$ | $0.1850$ | Conjugate base concentration $[\text{A}^-]$ |
-| 2 | `0.120` | $0.0000$ | $0.0000$ | $0.1850$ | $0.1200$ | Weak acid concentration $[\text{HA}]$ |
-| 3 | `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.541667$ | Concentration ratio $[\text{A}^-]/[\text{HA}]$ |
-| 4 | `[LOG]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.187989$ | Logarithmic ratio |
-| 5 | `4.76 [+]` | $0.0000$ | $0.0000$ | $0.0000$ | **$4.947989$** | Final buffer pH |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.185 [ENTER] 0.120 [÷]` forms the conjugate base-to-acid ratio $[\text{A}^-]/[\text{HA}] \approx 1.5417$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 1.5417)$.
+2. Striking `[↰] [LOG] 4.76 [+]` computes the logarithmic ratio ($\approx 0.1880$) and sums baseline dissociation constant $\text{pK}_a = 4.76$, yielding buffer equilibrium $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{4.9480})$ with zero scratchpad memory.
 
 The buffer stabilizes at **$\text{pH} = 4.95$**.
 
@@ -3774,12 +3766,10 @@ Keystrokes:
 3. Divide numerator by denominator: `[x⇄y] [÷]` $\rightarrow$ $X = 78135.21\text{ J/mol}$
 4. Convert to $\text{kJ/mol}$: `1000 [÷]` $\rightarrow$ **$78.14\text{ kJ/mol}$**
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `300 [1/x] 350 [1/x] [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0005$ | Reciprocal temperature denominator $(1/T_1 - 1/T_2)$ |
-| 2 | `2.85 [E] 2 [+/-] [ENTER] 3.25 [E] 4 [+/-] [÷] [LN] 8.314462 [×]` | $0.0000$ | $0.0000$ | $0.0005$ | $37207.2435$ | Numerator rate constant product $R \ln(k_2/k_1)$ |
-| 3 | `[x⇄y] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $78135.2113$ | Activation energy $E_a$ in J/mol |
-| 4 | `1000 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$78.1352$** | Activation energy $E_a$ in kJ/mol |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `300 [1/x] 350 [1/x] [-]` evaluates reciprocal temperature difference $(1/T_1 - 1/T_2) \approx 0.000476\text{ K}^{-1}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.0005)$.
+2. Keying `2.85 [E] 2 [+/-] [ENTER] 3.25 [E] 4 [+/-] [÷] [LN] 8.314462 [×]` evaluates numerator energy product $R \ln(k_2/k_1) \approx 37,207.24\text{ J/mol}$ while temperature denominator waits in $Y$ $(T: 0.0000, Z: 0.0000, Y: 0.0005, X: 37207.2435)$.
+3. Striking `[x⇄y] [÷] 1000 [÷]` swaps, divides numerator by denominator, and converts to $\text{kJ/mol}$, producing activation energy $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{78.1352}\text{ kJ/mol})$.
 
 ---
 
@@ -3801,14 +3791,9 @@ $$\kappa = \frac{M g h}{R T} = \frac{0.0289644 \times 9.80665 \times 4207}{8.314
 Keystrokes:
 `0.0289644 [ENTER] 9.80665 [×] 4207 [×] 8.314462 [÷] 288.15 [÷] [+/-] [eˣ] 1013.25 [×]`
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.0289644 [ENTER] 9.80665 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2840$ | Molar weight $\times g$ |
-| 2 | `4207 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $1194.9705$ | Potential energy product |
-| 3 | `8.314462 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $143.7219$ | Scaled by gas constant $R$ |
-| 4 | `288.15 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.4988$ | Dimensionless exponent $\kappa$ |
-| 5 | `[+/-] [eˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6073$ | Attenuation factor $e^{-\kappa}$ |
-| 6 | `1013.25 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$615.3168$** | Pressure atop Mauna Kea (hPa) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.0289644 [ENTER] 9.80665 [×] 4207 [×] 8.314462 [÷] 288.15 [÷]` evaluates dimensionless potential scale height exponent $\kappa \approx 0.4988$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.4988)$.
+2. Striking `[+/-] [eˣ] 1013.25 [×]` computes attenuation factor $e^{-\kappa} \approx 0.6073$ and scales by sea-level pressure $1013.25\text{ hPa}$, yielding summit barometric pressure $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{615.3168}\text{ hPa})$.
 
 Atop Mauna Kea, atmospheric pressure is **$615.3\text{ hPa}$** (approx. $60.7\%$ of sea level pressure), explaining why astronomical observatories require supplemental oxygen equipment for summit personnel.
 
@@ -3977,18 +3962,9 @@ $$t = \frac{1}{\lambda} \ln\left(1 + C \cdot \frac{{}^{40}\text{Ar}}{{}^{40}\tex
 
 **Keystrokes:** `9.54 [ENTER] 0.0850 [×] 1 [+] [LN] 5.543 [E] 10 [+/-] [÷]` $\rightarrow$ **`1.071304E9`**
 
-**Stack State Inspection:**
-1. $9.54 \times 0.0850 = 0.810900$
-2. $1 + 0.810900 = 1.810900$
-3. $\ln(1.810900) \approx 0.593823$
-4. Divide by $\lambda$: $t \approx \mathbf{1,071,302,544\text{ years}} \approx 1.071\text{ billion years}$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `9.54 [ENTER] 0.0850 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.8109$ | Argon-potassium branching product $C \cdot ({}^{40}\text{Ar}/{}^{40}\text{K})$ |
-| 2 | `1 [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.8109$ | Accumulate unity reference $(1 + C \cdot \text{ratio})$ |
-| 3 | `[LN]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.5938$ | Natural logarithm $\ln(1 + C \cdot \text{ratio})$ |
-| 4 | `5.543 [E] 10 [+/-] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0713 \times 10^{9}$** | Divide by decay constant $\lambda$ for age $t$ (years) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `9.54 [ENTER] 0.0850 [×] 1 [+]` evaluates the accumulation argument $(1 + C \cdot \text{ratio}) = 1.8109$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 1.8109)$.
+2. Striking `[LN] 5.543 [E] 10 [+/-] [÷]` takes the natural logarithm ($\approx 0.5938$) and divides by decay constant $\lambda$, resolving rock formation age $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1.0713 \times 10^{9}}\text{ yr})$ ($1.071\text{ billion years}$) without scratchpad registers.
 
 ---
 
@@ -3996,24 +3972,13 @@ $$t = \frac{1}{\lambda} \ln\left(1 + C \cdot \frac{{}^{40}\text{Ar}}{{}^{40}\tex
 **Biomedical Physiology Context:** Human blood plasma maintains pH via the carbonic acid-bicarbonate buffer ($\text{pK}_a = 6.10$). Clinical blood gas analysis measures bicarbonate $[\text{HCO}_3^-] = 24.0\text{ mEq/L}$ and dissolved carbon dioxide $[\text{CO}_2] = 1.20\text{ mEq/L}$:
 $$\text{pH} = \text{pK}_a + \log_{10}\left(\frac{[\text{HCO}_3^-]}{[\text{CO}_2]}\right) = 6.10 + \log_{10}\left(\frac{24.0}{1.20}\right)$$
 
-**Keystrokes:** `24.0 [ENTER] 1.20 [÷] [↰] [LOG] 6.10 [+]`$\to \mathbf{7.4000}$.
+**Keystrokes:** `24.0 [ENTER] 1.20 [÷] [↰] [LOG] 6.10 [+]` $\rightarrow$ **`7.4000`**.
 
 > **Named RPN Stack Idiom: *The x⇄y Denominator Flip & Logarithmic Buffer Ratio*** — Compute base-to-acid ratio directly on the stack, take $\log_{10}$ in place, and add $\text{pK}_a$ without parentheses *([HP, 1982](sc32/appendix-e-annotated-bibliography.md#cite-hp15c1982))*.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `24.0` `[ENTER]` — Load the plasma bicarbonate conjugate base concentration ($[\text{HCO}_3^-] = 24.0\text{ mEq/L}$) into $Y$.
-2. `1.20` `[÷]` — Enter dissolved carbon dioxide acid concentration ($[\text{CO}_2] = 1.20\text{ mEq/L}$) and divide; the clinical buffer ratio ($20.00$) forms directly in $X$.
-3. `[↰] [LOG]` — Compute the base-10 logarithm in place ($\log_{10}(20.0) \approx 1.3010$).
-4. `6.10` `[+]` — Add baseline dissociation constant ($\text{pK}_a = 6.10$), yielding arterial blood pH ($7.4010$).
-
-Normal physiological blood pH ($7.40$).
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `24.0 [ENTER]` | $0.0000$ | $0.0000$ | $24.0000$ | $24.0000$ | Load bicarbonate conjugate base $[	ext{HCO}_3^-]$ |
-| 2 | `1.20 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $20.0000$ | Divide by dissolved $[	ext{CO}_2]$ for buffer ratio |
-| 3 | `[↰] [LOG]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.3010$ | Base-10 logarithm $\log_{10}(20.0)$ |
-| 4 | `6.10 [+]` | $0.0000$ | $0.0000$ | $0.0000$ | **$7.4010$** | Add dissociation constant $\text{pK}_a$ for blood pH |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `24.0 [ENTER] 1.20 [÷]` loads bicarbonate concentration ($24.0\text{ mEq/L}$) into $Y$, enters dissolved carbon dioxide ($1.20\text{ mEq/L}$), and divides, forming clinical buffer ratio $20.00$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 20.0000)$.
+2. Striking `[↰] [LOG] 6.10 [+]` computes $\log_{10}(20.0) \approx 1.3010$ and adds baseline dissociation constant $\text{pK}_a = 6.10$, yielding physiological arterial blood pH $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{7.4010})$ without grouping syntax.
 
 ---
 
@@ -4022,22 +3987,11 @@ Normal physiological blood pH ($7.40$).
 $$\text{Loss}_{\text{dB}} = \alpha \cdot L = 0.22 \times 65.0 = 14.30\text{ dB}$$
 $$P_{\text{out}} = P_{\text{in}} \cdot 10^{-\text{Loss}_{\text{dB}} / 10} = 15.0 \cdot 10^{-1.430}$$
 
-**Keystrokes:** `0.22 [ENTER] 65 [×] 10 [÷] [+/-] [↰] [10ˣ] 15 [×]`$\to \mathbf{0.5567\text{ mW}} = 556.7\,\mu\text{W}$.
+**Keystrokes:** `0.22 [ENTER] 65 [×] 10 [÷] [+/-] [↰] [10ˣ] 15 [×]` $\rightarrow$ **`0.5567`**$\text{ mW} = 556.7\,\mu\text{W}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0.22` `[ENTER]` — Prime the stack with silica fiber attenuation coefficient ($\alpha = 0.22\text{ dB/km}$) in $Y$.
-2. `65.0` `[×]` — Enter fiber link distance ($L = 65.0\text{ km}$) and multiply; total link insertion loss ($14.30\text{ dB}$) forms in $X$.
-3. `10` `[÷]` — Divide by decibel scaling factor $10$; decade optical attenuation exponent ($1.4300$) condenses in $X$.
-4. `[+/-]` — Negate in place to reflect transmission loss ($-1.4300$).
-5. `[↰] [10ˣ]` — Raise $10$ to power in place; optical power transmission throughput factor ($0.037154$) appears in $X$.
-6. `15.0` `[×]` — Scale by input transmitter optical power ($P_{\text{in}} = 15.0\text{ mW}$); received detector power ($P_{\text{out}} = 0.5573\text{ mW} = 557.3\,\mu\text{W}$) is evaluated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.22 [ENTER] 65 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $14.3000$ | Total optical fiber attenuation loss (dB) |
-| 2 | `10 [÷] [+/-]` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.4300$ | Scale to decade attenuation exponent $-\text{Loss}/10$ |
-| 3 | `[↰] [10ˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0372$ | Optical transmission throughput factor |
-| 4 | `15 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.5573$** | Scale by input power $P_{\text{in}} = 15\text{ mW}$ to get $P_{\text{out}}$ (mW) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.22 [ENTER] 65 [×] 10 [÷] [+/-]` computes total insertion loss ($14.30\text{ dB}$) and scales to negative decade exponent $-\text{Loss}/10 = -1.4300$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: -1.4300)$.
+2. Striking `[↰] [10ˣ] 15 [×]` evaluates power transmission throughput factor ($10^{-1.43} \approx 0.0372$) and scales by launch power $15.0\text{ mW}$, resolving received detector power $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.5573}\text{ mW})$ ($557.3\,\mu\text{W}$).
 
 ---
 
@@ -4047,26 +4001,21 @@ $$I = I_s \left[\exp\left(\frac{V}{n \cdot V_t}\right) - 1\right] = 1.8 \times 1
 
 **Keystrokes:** `0.58 [ENTER] 1.25 [ENTER] 0.025852 [×] [÷] [eˣ] 1 [-] 1.8 [E] 11 [+/-] [×]` $\rightarrow$ **`0.0011223527`**
 
-> **Named RPN Stack Idiom: *The Inside-Out Exponential Diode Pipeline*** — Compute the junction voltage ratio $V/(n V_t)$ inside-out, exponentiate, subtract 1, and scale by saturation current without scratchpad storage *([Horowitz & Hill, 2015](sc32/appendix-e-annotated-bibliography.md#cite-horowitz2015); [HP, 1982](sc32/appendix-e-annotated-bibliography.md#cite-hp15c1982))*.
+> **Named RPN Stack Idiom: *The Inside-Out Exponential Diode Pipeline*** — Compute the junction voltage ratio $V/(n V_t)$ inside-out via single-`ENTER` chain division, exponentiate, subtract 1, and scale by saturation current without scratchpad storage *([Horowitz & Hill, 2015](sc32/appendix-e-annotated-bibliography.md#cite-horowitz2015); [HP, 1982](sc32/appendix-e-annotated-bibliography.md#cite-hp15c1982))*.
 
 **Step-by-Step RPN Reasoning & Stack Logic:**
 1. `0.58` `[ENTER]` — Load solar cell forward bias terminal potential ($V = 0.58\text{ V}$) into $Y$.
-2. `1.25` `[ENTER]` — Enter silicon junction diode ideality factor ($n = 1.25$) into $Y$.
-3. `0.025852` `[×]` — Multiply by thermal voltage ($V_t = 0.025852\text{ V}$); composite ideality denominator ($n V_t = 0.032315\text{ V}$) forms in $X$.
-4. `[÷]` — Divide forward voltage by thermal denominator; dimensionless diode activation argument ($V/nV_t \approx 17.9483$) occupies $X$.
-5. `[eˣ]` — Evaluate natural exponential in place ($e^{17.9483} \approx 6.2351 \times 10^7$).
-6. `1` `[-]` — Subtract unity reference in place; exponential emission factor forms in $X$.
-7. `1.8 [E] 11 [+/-]` `[×]` — Scale by reverse saturation current ($I_s = 1.8 \times 10^{-11}\text{ A}$); generated photovoltaic forward current ($I = 1.1223 \times 10^{-3}\text{ A} = 1.122\text{ mA}$) evaluates without grouping overhead.
+2. `1.25` `[÷]` `0.025852` `[÷]` — Chain divide by ideality factor ($n = 1.25$) and thermal voltage ($V_t = 0.025852\text{ V}$); dimensionless diode activation argument ($V/(nV_t) \approx 17.9483$) occupies $X$.
+3. `[eˣ]` `1` `[-]` — Evaluate natural exponential in place ($e^{17.9483} \approx 6.2351 \times 10^7$) and subtract unity reference.
+4. `1.8 [E] 11 [+/-]` `[×]` — Scale by reverse saturation current ($I_s = 1.8 \times 10^{-11}\text{ A}$); generated photovoltaic forward current ($I = 1.1223 \times 10^{-3}\text{ A} = 1.122\text{ mA}$) evaluates without grouping overhead.
 
 Stack: Exponent $= 17.9483$, $e^{17.9483} \approx 6.235 \times 10^7$, Current $I \approx \mathbf{0.001122\text{ A}} = 1.122\text{ mA}$.
 
 | Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
 |:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.58 [ENTER]` | $0.0000$ | $0.0000$ | $0.5800$ | $0.5800$ | Load forward bias terminal potential $V$ |
-| 2 | `1.25 [ENTER] 0.025852 [×]` | $0.0000$ | $0.0000$ | $0.5800$ | $0.0323$ | Compute composite thermal denominator $n V_t$ |
-| 3 | `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $17.9483$ | Dimensionless diode activation argument $V/(n V_t)$ |
-| 4 | `[eˣ] 1 [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $6.2353 \times 10^{7}$ | Exponential emission factor $(e^{V/nV_t} - 1)$ |
-| 5 | `1.8 [E] 11 [+/-] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.0011$** | Scale by saturation current $I_s$ for forward current $I$ (A) |
+| 1 | `0.58 [ENTER] 1.25 [÷] 0.025852 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $17.9483$ | Chain division for diode activation argument $V/(n V_t)$ |
+| 2 | `[eˣ] 1 [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $6.2353 \times 10^{7}$ | Exponential emission factor $(e^{V/nV_t} - 1)$ |
+| 3 | `1.8 [E] 11 [+/-] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.0011$** | Scale by saturation current $I_s$ for forward current $I$ (A) |
 
 ---
 
@@ -4074,17 +4023,11 @@ Stack: Exponent $= 17.9483$, $e^{17.9483} \approx 6.235 \times 10^7$, Current $I
 **Aerospace Context:** Single-stage orbital rocket with effective exhaust velocity $v_e = 3,150\text{ m/s}$ and mass ratio $m_0 / m_f = 9.20$ ($m_0 = \text{wet mass}, m_f = \text{dry mass}$):
 $$\Delta v = v_e \ln\left(\frac{m_0}{m_f}\right)$$
 
-**Keystrokes:** `9.20 [LN] 3150 [×]`$\to \mathbf{6989.78\text{ m/s}} \approx 6.99\text{ km/s}$.
+**Keystrokes:** `9.20 [LN] 3150 [×]` $\rightarrow$ **`6989.78`**$\text{ m/s} \approx 6.99\text{ km/s}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `9.20` — Key propellant mass fraction ratio ($m_0/m_f = 9.20$) into Register $X$.
-2. `[LN]` — Compute natural logarithm $\ln(9.20) \approx 2.2192$ in place.
-3. `3150` `[×]` — Scale by rocket engine effective exhaust velocity ($v_e = 3150\text{ m/s}$); total ideal mission burnout velocity ($\Delta v \approx \mathbf{6,990.49\text{ m/s}} \approx 6.99\text{ km/s}$) is calculated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `9.20 [LN]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.2192$ | Natural logarithm of mass ratio $\ln(m_0/m_f)$ |
-| 2 | `3150 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$6990.4910$** | Scale by effective exhaust velocity $v_e$ for burnout $\Delta v$ (m/s) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `9.20 [LN]` evaluates the natural logarithm of the propellant mass ratio $\ln(9.20) \approx 2.2192$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.2192)$.
+2. Striking `3150 [×]` scales by effective exhaust velocity $v_e = 3150\text{ m/s}$, producing total mission burnout velocity increment $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{6990.4910}\text{ m/s})$ ($\approx 6.99\text{ km/s}$) in two keystrokes.
 
 ---
 
@@ -4092,21 +4035,13 @@ $$\Delta v = v_e \ln\left(\frac{m_0}{m_f}\right)$$
 **Seismology Context:** Gutenberg-Richter relation comparing seismic energy released by a magnitude $M_2 = 7.8$ earthquake versus an $M_1 = 5.2$ earthquake:
 $$\frac{E_2}{E_1} = 10^{1.5 (M_2 - M_1)}$$
 
-**Keystrokes:** `7.8 [ENTER] 5.2 [-] 1.5 [×] [↰] [10ˣ]`$\to \mathbf{7943.28}$.
+**Keystrokes:** `7.8 [ENTER] 5.2 [-] 1.5 [×] [↰] [10ˣ]` $\rightarrow$ **`7943.28`**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `7.8` `[ENTER]` — Enter major shock Richter magnitude ($M_2 = 7.8$) into $Y$.
-2. `5.2` `[-]` — Enter baseline moderate shock magnitude ($M_1 = 5.2$) and subtract in place; magnitude delta ($\Delta M = 2.6$) forms in $X$.
-3. `1.5` `[×]` — Multiply by empirical Gutenberg-Richter energy scaling slope ($1.5$); decade logarithmic energy exponent ($3.9000$) condenses in $X$.
-4. `[↰] [10ˣ]` — Raise $10$ to power in place; relative seismic energy release ratio ($E_2/E_1 = 7,943.28$) evaluates directly, proving a 2.6-magnitude difference releases nearly 8,000 times more destructive mechanical energy *([Ellenberg, 2014](sc32/appendix-e-annotated-bibliography.md#cite-ellenberg2014))*.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `7.8 [ENTER] 5.2 [-] 1.5 [×]` evaluates the seismic magnitude difference ($\Delta M = 2.6$) and multiplies by slope $1.5$, forming decade energy exponent $3.9000$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.9000)$.
+2. Striking `[↰] [10ˣ]` exponentiates in place, yielding relative radiated seismic energy ratio $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{7943.2823})$—proving a 2.6-magnitude difference releases nearly 8,000 times more destructive energy *([Ellenberg, 2014](sc32/appendix-e-annotated-bibliography.md#cite-ellenberg2014))*.
 
 The magnitude 7.8 earthquake releases nearly 8,000 times more seismic energy!
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `7.8 [ENTER] 5.2 [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.6000$ | Magnitude differential $\Delta M = M_1 - M_2$ |
-| 2 | `1.5 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.9000$ | Seismic scaling factor $1.5 \times \Delta M$ |
-| 3 | `[↰] [10ˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | **$7943.2823$** | Seismic wave radiated energy ratio $E_1/E_2$ |
 
 ---
 
@@ -4114,22 +4049,13 @@ The magnitude 7.8 earthquake releases nearly 8,000 times more seismic energy!
 **Aviation Context:** Aircraft altimeter reads static ambient pressure $P = 725.0\text{ hPa}$ ($P_0 = 1013.25\text{ hPa}$, scale height $H_s = 8434\text{ meters}$):
 $$h = - H_s \ln\left(\frac{P}{P_0}\right)$$
 
-**Keystrokes:** `725 [ENTER] 1013.25 [÷] [LN] 8434 [×] [+/-]`$\to \mathbf{2826.96\text{ meters}} \approx 9,275\text{ ft}$.
+**Keystrokes:** `725 [ENTER] 1013.25 [÷] [LN] 8434 [×] [+/-]` $\rightarrow$ **`2826.96`**$\text{ meters} \approx 9,275\text{ ft}$.
 
 > **Named RPN Stack Idiom: *The LASTX Dual-Branch Trick & Logarithmic Pressure Scale*** — Form static pressure ratio $P/P_0$, take natural log in place, and scale by atmospheric scale height with zero scratch registers *([HP, 1982](sc32/appendix-e-annotated-bibliography.md#cite-hp15c1982))*.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `725` `[ENTER]` — Load flight ambient barometric pressure ($P = 725.0\text{ hPa}$) into $Y$.
-2. `1013.25` `[÷]` — Enter standard sea-level reference pressure ($P_0 = 1013.25\text{ hPa}$) and divide; dimensionless pressure ratio ($P/P_0 = 0.715519$) appears in $X$.
-3. `[LN]` — Take natural logarithm in place ($\ln(0.715519) \approx -0.33475$); negative log-altitude factor forms immediately.
-4. `8434` `[×]` — Scale by atmospheric scale height ($H_s = 8434\text{ m}$); un-negated barometric altitude ($-2823.29\text{ m}$) accumulates in $X$.
-5. `[+/-]` — Negate to obtain positive true altitude ($h = 2,823.29\text{ m} \approx 9,263\text{ ft}$) without secondary scratch registers.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `725 [ENTER] 1013.25 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.7155$ | Atmospheric pressure ratio $P/P_0$ |
-| 2 | `[LN]` | $0.0000$ | $0.0000$ | $0.0000$ | $-0.3347$ | Natural logarithm $\ln(P/P_0)$ |
-| 3 | `8434 [×] [+/-]` | $0.0000$ | $0.0000$ | $0.0000$ | **$2823.2529$** | Scale by scale height $H_p$ for geopotential altitude $h$ (m) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `725 [ENTER] 1013.25 [÷] [LN]` computes static ambient pressure ratio $P/P_0 \approx 0.7155$ and takes the natural logarithm ($-0.3347$) in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: -0.3347)$.
+2. Striking `8434 [×] [+/-]` scales by atmospheric scale height $H_s = 8434\text{ m}$ and negates, resolving true barometric altitude $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2823.2529}\text{ m})$ ($\approx 9,263\text{ ft}$) directly.
 
 ---
 
@@ -4159,7 +4085,7 @@ Result: $B_\lambda \approx \mathbf{2.632 \times 10^{13}\text{ W}/(\text{m}^3\cdo
 | Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
 |:---|:---|:---|:---|:---|:---|:---|
 | 1 | `4.98020 [eˣ] 1 [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $144.5035$ | Planck photon distribution denominator $(e^x - 1)$ |
-| 2 | `1.19104 [E] 16 [+/-] [ENTER]` | $0.0000$ | $144.5035$ | $0.0000$ | $0.0000$ | Load first radiation constant $2hc^2$ |
+| 2 | `1.19104 [E] 16 [+/-] [ENTER]` | $0.0000$ | $144.5035$ | $1.1910 \times 10^{-16}$ | $1.1910 \times 10^{-16}$ | Load first radiation constant $2hc^2$ |
 | 3 | `5.0 [E] 7 [+/-] [ENTER] 5 [yˣ] [÷]` | $144.5035$ | $144.5035$ | $144.5035$ | $3.8113 \times 10^{15}$ | Divide by wavelength to fifth power $\lambda^5$ |
 | 4 | `[x⇄y] [÷]` | $144.5035$ | $144.5035$ | $144.5035$ | **$2.6375 \times 10^{13}$** | Divide spectral power by photon denominator for radiance $B_\lambda$ |
 
@@ -4198,22 +4124,11 @@ Result: $n_i \approx \mathbf{1.045 \times 10^{10}\text{ cm}^{-3}}$.
 **Metallurgy Context:** Carbon diffusion in FCC iron at $T = 1200\text{ K}$ ($D_0 = 2.3 \times 10^{-5}\text{ m}^2/\text{s}$, activation energy $Q = 148\text{ kJ/mol} = 148,000\text{ J/mol}$, $R = 8.31446\text{ J/mol}\cdot\text{K}$):
 $$D = D_0 \exp\left(-\frac{Q}{R T}\right)$$
 
-**Keystrokes:** `148000 [ENTER] 8.31446 [ENTER] 1200 [×] [÷] [+/-] [eˣ] 2.3 [E] 5 [+/-] [×]`$\to \mathbf{8.309585E-12 \times 10^{-12}\text{ m}^2/\text{s}}$.
+**Keystrokes:** `148000 [ENTER] 8.31446 [ENTER] 1200 [×] [÷] [+/-] [eˣ] 2.3 [E] 5 [+/-] [×]` $\rightarrow$ **`8.309585E-12`** $\times 10^{-12}\text{ m}^2/\text{s}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `148000` `[ENTER]` — Load activation energy ($Q = 148,000\text{ J/mol}$) into $Y$.
-2. `8.31446` `[ENTER]` — Enter universal gas constant ($R = 8.31446\text{ J/(mol}\cdot\text{K)}$) into $Y$.
-3. `1200` `[×]` — Scale by heat-treating furnace temperature ($T = 1200\text{ K}$); thermal energy denominator ($RT = 9977.35\text{ J/mol}$) forms in $X$.
-4. `[÷]` — Divide activation energy by thermal denominator; dimensionless barrier argument ($Q/RT \approx 14.8336$) occupies $X$.
-5. `[+/-]` `[eˣ]` — Negate and evaluate Arrhenius exponential in place; kinetic activation fraction ($3.6128 \times 10^{-7}$) forms in $X$.
-6. `2.3 [E] 5 [+/-]` `[×]` — Scale by maximal diffusion pre-exponential factor ($D_0 = 2.3 \times 10^{-5}\text{ m}^2/\text{s}$); carbon diffusivity ($D = 8.3094 \times 10^{-12}\text{ m}^2/\text{s}$) evaluates without parenthesis overhead.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `148000 [ENTER]` | $0.0000$ | $0.0000$ | $148000.0000$ | $148000.0000$ | Load activation energy $Q$ (J/mol) |
-| 2 | `8.31446 [ENTER] 1200 [×] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $14.8336$ | Thermal energy $R T$ denominator at $1200\text{ K}$ |
-| 3 | `[+/-] [eˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6129 \times 10^{-7}$ | Arrhenius Boltzmann factor $\exp(-Q/RT)$ |
-| 4 | `2.3 [E] 5 [+/-] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | **$8.3096 \times 10^{-12}$** | Scale by pre-exponential $D_0$ for diffusion coefficient $D$ ($\text{m}^2/\text{s}$) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `148000 [ENTER] 8.31446 [ENTER] 1200 [×] [÷]` evaluates the activation exponent $Q/(RT) \approx 14.8336$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 14.8336)$.
+2. Striking `[+/-] [eˣ] 2.3 [E] 5 [+/-] [×]` negates, exponentiates to Boltzmann probability $3.6129 \times 10^{-7}$, and scales by pre-exponential $D_0$, resolving carbon diffusivity $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{8.3096 \times 10^{-12}}\text{ m}^2/\text{s})$ without scratchpad memory.
 
 ---
 
@@ -4221,21 +4136,13 @@ $$D = D_0 \exp\left(-\frac{Q}{R T}\right)$$
 **Astrophysics Context:** Sirius ($m_1 = -1.46$) vs Polaris ($m_2 = +1.98$). Find luminosity brightness ratio:
 $$\frac{L_1}{L_2} = 10^{0.4 (m_2 - m_1)}$$
 
-**Keystrokes:** `1.98 [ENTER] 1.46 [+/-] [-] 0.4 [×] [↰] [10ˣ]`$\to \mathbf{23.7684}$.
+**Keystrokes:** `1.98 [ENTER] 1.46 [+/-] [-] 0.4 [×] [↰] [10ˣ]` $\rightarrow$ **`23.7684`**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1.98` `[ENTER]` — Key Polaris apparent magnitude ($m_2 = +1.98$) into $Y$.
-2. `1.46` `[+/-]` `[-]` — Enter Sirius apparent magnitude ($m_1 = -1.46$) and subtract; stellar magnitude difference ($\Delta m = 3.44$) forms in $X$.
-3. `0.4` `[×]` — Scale by Pogson logarithmic luminance factor ($0.4$); decade brightness exponent ($1.3760$) condenses in $X$.
-4. `[↰] [10ˣ]` — Raise $10$ to power in place; relative visual luminosity ratio ($L_1/L_2 = 23.7684$) is obtained directly, proving Sirius shines nearly 24 times brighter in Earth's night sky.
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1.98 [ENTER] 1.46 [+/-] [-] 0.4 [×]` evaluates apparent magnitude difference $\Delta m = 3.44$ and multiplies by $0.4$, forming decade luminance exponent $1.3760$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 1.3760)$.
+2. Striking `[↰] [10ˣ]` exponentiates in place, yielding visual brightness ratio $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{23.7684})$—proving Sirius shines nearly 24 times brighter than Polaris with zero scratchpad memory.
 
 Sirius appears $\approx 23.8$ times brighter than Polaris.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `1.98 [ENTER] 1.46 [+/-] [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.4400$ | Apparent magnitude difference $\Delta m = m_2 - m_1$ |
-| 2 | `0.4 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.3760$ | Pogson brightness exponent $0.4 \times \Delta m$ |
-| 3 | `[↰] [10ˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | **$23.7684$** | Luminosity brightness ratio $b_1/b_2$ |
 
 ---
 
@@ -4243,24 +4150,12 @@ Sirius appears $\approx 23.8$ times brighter than Polaris.
 **Petroleum Geology Context:** Core plug ($L = 0.050\text{ m}$, cross-section $A = 0.00125\text{ m}^2$) under pressure drop $\Delta P = 250\text{ kPa} = 250,000\text{ Pa}$ with crude oil viscosity $\mu = 0.035\text{ Pa}\cdot\text{s}$ produces volumetric flow $Q = 1.8 \times 10^{-7}\text{ m}^3/\text{s}$. Find permeability $k$ in Darcy ($1\text{ D} = 9.86923 \times 10^{-13}\text{ m}^2$):
 $$k = \frac{Q \cdot \mu \cdot L}{A \cdot \Delta P}$$
 
-**Keystrokes:** `1.8 [E] 7 [+/-] [ENTER] 0.035 [×] 0.050 [×] 0.00125 [ENTER] 250000 [×] [÷] 9.86923 [E] 13 [+/-] [÷]`$\to \mathbf{1.021356276\text{ Darcy}}$.
+**Keystrokes:** `1.8 [E] 7 [+/-] [ENTER] 0.035 [×] 0.050 [×] 0.00125 [ENTER] 250000 [×] [÷] 9.86923 [E] 13 [+/-] [÷]` $\rightarrow$ **`1.021356276`**$\text{ Darcy}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1.8 [E] 7 [+/-]` `[ENTER]` — Load volumetric oil discharge rate ($Q = 1.8 \times 10^{-7}\text{ m}^3/\text{s}$) into $Y$.
-2. `0.035` `[×]` — Multiply by crude oil dynamic viscosity ($\mu = 0.035\text{ Pa}\cdot\text{s}$); viscous flow product forms in $X$.
-3. `0.050` `[×]` — Scale by core plug specimen length ($L = 0.050\text{ m}$); Darcy flow numerator ($3.15 \times 10^{-10}\text{ N}\cdot\text{s}$) forms in $X$.
-4. `0.00125` `[ENTER]` — Key plug cross-sectional area ($A = 0.00125\text{ m}^2$) into $Y$.
-5. `250000` `[×]` — Multiply by differential driving pressure ($\Delta P = 250,000\text{ Pa}$); hydraulic driving denominator ($312.50\text{ N}$) occupies $X$ while numerator waits in $Y$.
-6. `[÷]` — Divide flow numerator by driving denominator; permeability in SI units ($k = 1.0080 \times 10^{-12}\text{ m}^2$) appears in $X$.
-7. `9.86923 [E] 13 [+/-]` `[÷]` — Divide by Darcy unit conversion constant ($9.86923 \times 10^{-13}\text{ m}^2/\text{D}$); sandstone core permeability ($k = 1.0214\text{ Darcy}$) is produced on screen.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `1.8 [E] 7 [+/-] [ENTER]` | $0.0000$ | $0.0000$ | $1.8000 \times 10^{-7}$ | $1.8000 \times 10^{-7}$ | Load core sample cross-sectional area $A$ ($\text{m}^2$) |
-| 2 | `0.035 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $6.3000 \times 10^{-9}$ | Multiply by dynamic viscosity $\mu$ ($\text{Pa}\cdot\text{s}$) |
-| 3 | `0.050 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.1500 \times 10^{-10}$ | Multiply by core sample length $L$ (m) |
-| 4 | `0.00125 [ENTER] 250000 [×] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0080 \times 10^{-12}$ | Divide by volumetric flow rate times differential pressure $Q \Delta P$ |
-| 5 | `9.86923 [E] 13 [+/-] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0214$** | Convert permeability $\kappa$ ($\text{m}^2$) to Darcys |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1.8 [E] 7 [+/-] [ENTER] 0.035 [×] 0.050 [×]` forms Darcy numerator $Q \mu L = 3.15 \times 10^{-10}\text{ N}\cdot\text{s}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.1500 \times 10^{-10})$.
+2. Keying `0.00125 [ENTER] 250000 [×] [÷]` builds denominator $A \Delta P = 312.5\text{ N}$ and divides, yielding SI permeability $1.0080 \times 10^{-12}\text{ m}^2$ in $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 1.0080 \times 10^{-12})$.
+3. Striking `9.86923 [E] 13 [+/-] [÷]` converts to Darcys, displaying sandstone core permeability $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1.0214}\text{ Darcy})$ directly.
 
 ---
 
@@ -4268,18 +4163,11 @@ $$k = \frac{Q \cdot \mu \cdot L}{A \cdot \Delta P}$$
 **Information Theory Context:** Channel bandwidth $B = 20.0\text{ MHz} = 2.0 \times 10^7\text{ Hz}$ with signal-to-noise ratio $\text{SNR} = 30.0\text{ dB}$ ($\text{SNR}_{\text{linear}} = 10^{30/10} = 1000$):
 $$C = B \log_2(1 + \text{SNR}) = B \frac{\ln(1 + \text{SNR})}{\ln 2}$$
 
-**Keystrokes:** `1001 [LN] 2 [LN] [÷] 20 [E] 6 [×] 1 [E] 6 [÷]`$\to \mathbf{199.34452518\text{ Mbps}}$.
+**Keystrokes:** `1001 [LN] 2 [LN] [÷] 20 [E] 6 [×] 1 [E] 6 [÷]` $\rightarrow$ **`199.34452518`**$\text{ Mbps}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1001` `[LN]` — Key signal-to-noise ratio term ($1 + \text{SNR} = 1001$) and take natural logarithm ($\ln 1001 \approx 6.908755$).
-2. `2` `[LN]` `[÷]` — Compute $\ln 2 \approx 0.693147$ and divide; base-2 spectral efficiency ($\log_2 1001 \approx 9.967226\text{ bits/s/Hz}$) forms in $X$.
-3. `20 [E] 6` `[×]` `1 [E] 6` `[÷]` — Scale by channel bandwidth ($B = 20.0\text{ MHz}$) and normalize; maximum channel capacity ($C \approx \mathbf{199.34\text{ Mbps}}$) is evaluated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `1001 [LN] 2 [LN] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $9.9672$ | Evaluate base-2 channel capacity $\log_2(1 + \text{SNR})$ |
-| 2 | `20 [E] 6 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.9934 \times 10^{8}$ | Scale by RF channel bandwidth $B = 20\text{ MHz}$ |
-| 3 | `1 [E] 6 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$199.3445$** | Express channel capacity $C$ in Mbps |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `1001 [LN] 2 [LN] [÷]` evaluates base-2 spectral efficiency $\log_2(1001) \approx 9.9672\text{ bits/s/Hz}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 9.9672)$.
+2. Striking `20 [E] 6 [×] 1 [E] 6 [÷]` scales by bandwidth $B = 20\text{ MHz}$ and normalizes to Mbps, resolving channel capacity $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{199.3445}\text{ Mbps})$ with zero parenthetical overhead.
 
 ---
 
@@ -4316,22 +4204,12 @@ Result: $P \approx \mathbf{19.923\text{ kPa}}$.
 **Physical Chemistry Context:** Standard Gibbs free energy change $\Delta G^\circ = -33.3\text{ kJ/mol} = -33300\text{ J/mol}$ at $T = 298.15\text{ K}$:
 $$K = \exp\left(-\frac{\Delta G^\circ}{R T}\right)$$
 
-**Keystrokes:** `33300 [ENTER] 8.31446 [ENTER] 298.15 [×] [÷] [eˣ]`$\to \mathbf{686165.73}$.
+**Keystrokes:** `33300 [ENTER] 8.31446 [ENTER] 298.15 [×] [÷] [eˣ]` $\rightarrow$ **`686165.73`**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `33300` `[ENTER]` — Enter reaction Gibbs free energy change ($\Delta G^\circ = 33,300\text{ J/mol}$) into $Y$.
-2. `8.31446` `[ENTER]` — Key universal gas constant ($R = 8.31446\text{ J/(mol}\cdot\text{K)}$) into $Y$.
-3. `298.15` `[×]` — Multiply by standard temperature ($T = 298.15\text{ K}$); thermal energy denominator ($RT = 2478.96\text{ J/mol}$) forms in $X$.
-4. `[÷]` — Divide free energy by thermal denominator; dimensionless reaction parameter ($-\Delta G^\circ/RT = 13.4331$) forms in $X$.
-5. `[eˣ]` — Exponentiate in place; chemical equilibrium constant ($K = 6.8222 \times 10^5$) is determined directly.
-
-Enormous equilibrium constant confirms the reaction proceeds virtually to completion.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `33300 [ENTER]` | $0.0000$ | $0.0000$ | $33300.0000$ | $33300.0000$ | Load standard free energy $\Delta G^\circ$ (J/mol) |
-| 2 | `8.31446 [ENTER] 298.15 [×] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $13.4331$ | Thermal energy $R T$ denominator at $298.15\text{ K}$ |
-| 3 | `[eˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | **$682196.4168$** | Equilibrium constant $K_{\text{eq}} = \exp(\Delta G^\circ/RT)$ |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `33300 [ENTER]` loads the standard reaction Gibbs free energy change $\Delta G^\circ = 33,300\text{ J/mol}$ into Register $Y$ and replicates into $X$ $(T: 0.0000, Z: 0.0000, Y: 33300.0000, X: 33300.0000)$.
+2. Keying `8.31446 [ENTER] 298.15 [×] [÷]` evaluates the ambient thermal energy denominator $R T \approx 2478.96\text{ J/mol}$ and divides into $\Delta G^\circ$, yielding dimensionless reaction exponent $13.4331$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 13.4331)$.
+3. Striking `[eˣ]` exponentiates in place, producing equilibrium constant $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{6.8220 \times 10^5})$—confirming the reaction runs to near completion with zero auxiliary memory.
 
 ---
 
@@ -4339,17 +4217,11 @@ Enormous equilibrium constant confirms the reaction proceeds virtually to comple
 **Architectural Acoustics Context:** Hall volume $V = 4500\text{ m}^3$ with total acoustic absorption $A = 320.0\text{ m}^2\text{ Sabins}$:
 $$T_{60} = \frac{0.161 \cdot V}{A}$$
 
-**Keystrokes:** `0.161 [ENTER] 4500 [×] 320 [÷]`$\to \mathbf{2.2641\text{ seconds}}$.
+**Keystrokes:** `0.161 [ENTER] 4500 [×] 320 [÷]` $\rightarrow$ **`2.2641`**$\text{ seconds}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0.161` `[ENTER]` — Load Sabine architectural acoustics metric constant ($0.161\text{ s/m}$) into $Y$.
-2. `4500` `[×]` — Enter auditorium enclosed volume ($V = 4500.0\text{ m}^3$) and multiply; volumetric acoustic numerator ($724.50\text{ m}^3\cdot\text{s/m}$) forms in $X$.
-3. `320.0` `[÷]` — Enter total room absorption ($A = 320.0\text{ m}^2\text{ Sabins}$) and divide directly; reverberation time ($T_{60} = 2.2641\text{ seconds}$) is calculated directly.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.161 [ENTER] 4500 [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $724.5000$ | Sabine acoustic numerator $0.161 \times V$ |
-| 2 | `320 [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.2641$** | Divide by total metric absorption area $A$ for reverberation time $T_{60}$ (s) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `0.161 [ENTER] 4500 [×]` primes the architectural constant and scales by auditorium volume, producing volumetric absorption numerator $724.5000\text{ m}^3\cdot\text{s/m}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 724.5000)$.
+2. Striking `320 [÷]` divides directly by room absorption area $A = 320\text{ Sabins}$, evaluating Sabine reverberation time $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2.2641}\text{ s})$ without scratchpad memory.
 
 ---
 
@@ -4357,27 +4229,16 @@ $$T_{60} = \frac{0.161 \cdot V}{A}$$
 **Structural Engineering Context:** Deflection at $x = 2.0\text{ m}$ on a simply supported beam ($L = 6.0\text{ m}$, uniform load $w = 8.5\text{ kN/m} = 8500\text{ N/m}$, $E I = 1.2 \times 10^7\text{ N}\cdot\text{m}^2$):
 $$\delta(x) = \frac{w x}{24 E I} (L^3 - 2 L x^2 + x^3)$$
 
-**Keystrokes:**
-`6 [ENTER] 3 [yˣ] 2 [ENTER] 6 [×] 2 [↰] [x²] [×] [-] 2 [ENTER] 3 [yˣ] [+] 8500 [ENTER] 2 [×] [×] 24 [ENTER] 1.2 [E] 7 [×] [÷]`
+**Keystrokes:** `6 [ENTER] 3 [yˣ] 2 [ENTER] 6 [×] 2 [↰] [x²] [×] [-] 2 [ENTER] 3 [yˣ] [+] 8500 [ENTER] 2 [×] [×] 24 [ENTER] 1.2 [E] 7 [×] [÷]` $\rightarrow$ **`0.0103888889`**$\text{ m}$.
 
 > **Named RPN Stack Idiom: *The Polynomial Inside-Out Evaluation*** — Evaluate nested beam geometry $(L^3 - 2Lx^2 + x^3)$ inside-out and scale by uniform distributed load without parenthesis nesting *([HP, 1991](sc32/appendix-e-annotated-bibliography.md#cite-hp32sii1991))*.
 
-Result: $\delta \approx \mathbf{0.010389\text{ m}} = 10.39\text{ mm}$.
-
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `6 [ENTER] 3 [yˣ]` — Key beam span $L = 6.0\text{ m}$ and cube ($L^3 = 216.0$) in $X$.
-2. `2 [ENTER] 6 [×] 2 [↰] [x²] [×] [-]` — Compute quadratic term $2Lx^2 = 48.0$ and subtract from $L^3$, yielding $168.0$.
-3. `2 [ENTER] 3 [yˣ] [+]` — Add coordinate cubic term $x^3 = 8.0$, forming geometric bracket $(L^3 - 2Lx^2 + x^3) = 176.0$.
-4. `8500 [ENTER] 2 [×] [×]` — Scale by uniform distributed load $w = 8500\text{ N/m}$ and coordinate $x = 2.0\text{ m}$.
-5. `24 [ENTER] 1.2 [E] 7 [×] [÷]` — Divide by flexural stiffness denominator $24EI = 2.88 \times 10^8\text{ N}\cdot\text{m}^2$ to evaluate deflection $\delta \approx \mathbf{0.010389\text{ m}}$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `6 [ENTER] 3 [yˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $216.0000$ | Span cubed $L^3 = 6^3 = 216$ |
-| 2 | `2 [ENTER] 6 [×] 2 [↰] [x²] [×] [-]` | $0.0000$ | $0.0000$ | $0.0000$ | $168.0000$ | Subtract quadratic term $2 L x^2 = 48$ |
-| 3 | `2 [ENTER] 3 [yˣ] [+]` | $0.0000$ | $0.0000$ | $0.0000$ | $176.0000$ | Add cubic coordinate term $x^3 = 8$ for geometric bracket $176$ |
-| 4 | `8500 [ENTER] 2 [×] [×]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.9920 \times 10^{6}$ | Multiply by distributed load $w$ and coordinate $x$ |
-| 5 | `24 [ENTER] 1.2 [E] 7 [×] [÷]` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.0104$** | Divide by flexural rigidity factor $24 E I$ for deflection $\delta$ (m) |
+**Step-by-Step RPN Reasoning & Stack Dynamics:**
+1. Keying `6 [ENTER] 3 [yˣ]` evaluates span cube $L^3 = 216.0000$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 216.0000)$.
+2. Keying `2 [ENTER] 6 [×] 2 [↰] [x²] [×] [-]` evaluates quadratic term $2 L x^2 = 48.0000$ and subtracts from $L^3$, leaving $168.0000$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 168.0000)$.
+3. Striking `2 [ENTER] 3 [yˣ] [+]` adds cubic term $x^3 = 8.0000$, resolving geometric bracket $(L^3 - 2 L x^2 + x^3) = 176.0000$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 176.0000)$.
+4. Striking `8500 [ENTER] 2 [×] [×]` multiplies by distributed load $w = 8500\text{ N/m}$ and coordinate $x = 2.0\text{ m}$, forming $2.9920 \times 10^6\text{ N}\cdot\text{m}^2$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.9920 \times 10^6)$.
+5. Striking `24 [ENTER] 1.2 [E] 7 [×] [÷]` builds flexural stiffness denominator $24 E I = 2.88 \times 10^8\text{ N}\cdot\text{m}^2$ and divides, yielding elastic deflection $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.0104}\text{ m} \approx 10.39\text{ mm})$.
 
 ---
 
@@ -6424,7 +6285,13 @@ In alternating current electrical networks operating at angular frequency $\omeg
 * **Inductor ($L$):** $\mathbf{Z}_L = 0 + j\omega L\,\Omega = 0 + (\omega L)i$
 * **Capacitor ($C$):** $\mathbf{Z}_C = 0 - \frac{j}{\omega C}\,\Omega = 0 - \left(\frac{1}{\omega C}\right)i$
 
-### 5.6.1 Complex Series Impedance Addition
+### 5.6.1 The Algebraic Trap vs. StackCalc Superpower Showdown
+
+| Challenge / Metric | Algebraic Trap (TI-84 / Infix) | Algebraic Strokes | StackCalc SC-32 Superpower | SC-32 Strokes | Superpower Advantage |
+| :--- | :--- | :---: | :--- | :---: | :--- |
+| **AC Impedance**: $(50+j20) \parallel -j15$ | Mode switch $\to$ `( ( 5 0 + 2 0 i ) ^ -1 + ( - 1 5 i ) ^ -1 ) ^ -1 =` (32 strokes). Real and imaginary parts truncated off-screen; angle hidden in sub-menus. | 32 | **$(Y, X)$ Complex Mode**: Enter real and imag directly; combine via `[x∥y]` $\to$ Register $Y$ shows Real, Register $X$ shows Imag. Tap `[↰] [▸θ,r]` to see $\|Z\|$ and phase $\phi$ simultaneously! | 18 | **44% fewer strokes + simultaneous $\|Z\|$ and $\phi$** |
+
+### 5.6.2 Complex Series Impedance Addition
 Two circuit elements are connected in series:
 * Element 1: $\mathbf{Z}_1 = 8.0 + 4.0i\,\Omega$ (Resistor + Inductor)
 * Element 2: $\mathbf{Z}_2 = 4.0 - 8.0i\,\Omega$ (Resistor + Capacitor)
@@ -6445,7 +6312,7 @@ The display confirms **Real $= 12.0\,\Omega$ in $Y$** and **Imaginary $= -4.0\,\
 
 ---
 
-### 5.6.2 Parallel Complex Impedance via Stack Admittance
+### 5.6.3 Parallel Complex Impedance via Stack Admittance
 When two complex impedances are connected in parallel, the equivalent impedance is governed by the reciprocal sum of complex admittances:
 
 $$\mathbf{Y}_{\text{parallel}} = \mathbf{Y}_1 + \mathbf{Y}_2 = \frac{1}{\mathbf{Z}_1} + \frac{1}{\mathbf{Z}_2} \implies \mathbf{Z}_{\text{parallel}} = \frac{1}{\mathbf{Y}_{\text{parallel}}}$$
@@ -6629,11 +6496,7 @@ $$z^* = 6 - 8i \implies z \cdot z^* = 6^2 + 8^2 = 36 + 64 = 100 + 0i$$
 
 **Keystrokes:** `6 [ENTER] 8 [ENTER] 6 [ENTER] 8 [+/-] [↰] [CMPLX] [×] [x⇄y]` $\rightarrow$ **`100`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `6 [ENTER] 8 [ENTER]` | $0.0000$ | $0.0000$ | $6.0000$ | $8.0000$ | Load $z = 6 + 8i$ |
-| 2 | `6 [ENTER] 8 [+/-]` | $6.0000$ | $8.0000$ | $6.0000$ | $-8.0000$ | Load $z^* = 6 - 8i$ |
-| 3 | `[↰] [CMPLX] [×]` | $6.0000$ | $6.0000$ | **$100.0000$** | **$0.0000$** | $z \cdot z^* = 100 + 0i$ |
+Key `6 [ENTER] 8 [ENTER]` to position $z = 6 + 8i$ across the stack, then enter the conjugate pair `6 [ENTER] 8 [+/-]`, lifting the stack to $(T:6, Z:8, Y:6, X:-8)$. Striking `[↰] [CMPLX] [×]` multiplies the conjugate pair and drops the stack, leaving $(T:6, Z:6, Y:100.0000, X:0.0000)$.
 
 Result: **$\text{Real} = 100.0$, $\text{Imag} = 0.0$**.
 
@@ -6644,10 +6507,7 @@ Result: **$\text{Real} = 100.0$, $\text{Imag} = 0.0$**.
 
 **Keystrokes:** `0 [ENTER] 1 [↰] [CMPLX] [√x]` $\rightarrow$ **`0.7071067812`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0 [ENTER] 1` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Load $0 + 1i$ |
-| 2 | `[↰] [CMPLX] [√x]` | $0.0000$ | $0.0000$ | **$0.707107$** | **$0.707107$** | $\sqrt{i} = \sqrt{2}/2(1+i)$ |
+Enter the pure imaginary unit $0 + 1i$ with `0 [ENTER] 1`, placing Real in $Y$ and Imag in $X$ $(T:0, Z:0, Y:0, X:1)$. Press `[↰] [CMPLX] [√x]` to evaluate the complex square root in place, leaving $(T:0, Z:0, Y:0.707107, X:0.707107)$.
 
 Result: **$0.707107 + 0.707107i$**.
 
@@ -6659,10 +6519,7 @@ $$\ln(-5) = \ln(5) + i\pi \approx 1.609438 + 3.141593i$$
 
 **Keystrokes:** `5 [+/-] [ENTER] 0 [↰] [CMPLX] [LN]` $\rightarrow$ **`3.1415926536`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `5 [+/-] [ENTER] 0` | $0.0000$ | $0.0000$ | $-5.0000$ | $0.0000$ | Load $z = -5 + 0i$ |
-| 2 | `[↰] [CMPLX] [LN]` | $0.0000$ | $0.0000$ | **$1.609438$** | **$3.141593$** | $\ln(-5) = \ln 5 + i\pi$ |
+Key `5 [+/-] [ENTER] 0` to load $z = -5 + 0i$ into $(Y, X)$. Pressing `[↰] [CMPLX] [LN]` evaluates the principal complex logarithm, transitioning the stack to $(T:0, Z:0, Y:1.609438, X:3.141593)$.
 
 Result: **$1.609438 + 3.141593i$**.
 
@@ -6674,10 +6531,7 @@ $$\mathbf{Y} = \frac{1}{0.5 + 120i} = \frac{0.5 - 120i}{0.5^2 + 120^2} = \frac{0
 
 **Keystrokes:** `0.5 [ENTER] 120 [↰] [CMPLX] [1/x]` $\rightarrow$ **`-0.008333189`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.5 [ENTER] 120` | $0.0000$ | $0.0000$ | $0.5000$ | $120.0000$ | Load $\mathbf{Z}_L$ |
-| 2 | `[↰] [CMPLX] [1/x]` | $0.0000$ | $0.0000$ | **$3.4722 \times 10^{-5}$** | **$-8.3333 \times 10^{-3}$** | Admittance $\mathbf{Y}$ in Siemens |
+Load the inductor impedance via `0.5 [ENTER] 120`, establishing $(T:0, Z:0, Y:0.5, X:120)$. Press `[↰] [CMPLX] [1/x]` to invert the complex phasor into admittance in Siemens, arriving at $(T:0, Z:0, Y:3.4722 \times 10^{-5}, X:-8.3333 \times 10^{-3})$.
 
 Result: **$3.4722 \times 10^{-5} - 8.3333 \times 10^{-3}i\,\text{S}$**.
 
@@ -6689,11 +6543,7 @@ $$\mathbf{Z} = R + j(X_L - X_C) = 50 + j(80 - 50) = 50 + 30i\,\Omega$$
 
 **Keystrokes:** `50 [ENTER] 80 [ENTER] 0 [ENTER] 50 [+/-] [↰] [CMPLX] [+]` $\rightarrow$ **`30`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `50 [ENTER] 80 [ENTER]` | $0.0000$ | $0.0000$ | $50.0000$ | $80.0000$ | $R + j X_L$ |
-| 2 | `0 [ENTER] 50 [+/-]` | $50.0000$ | $80.0000$ | $0.0000$ | $-50.0000$ | $0 - j X_C$ |
-| 3 | `[↰] [CMPLX] [+]` | $50.0000$ | $50.0000$ | **$50.0000$** | **$30.0000$** | $\mathbf{Z} = 50 + 30i\,\Omega$ |
+Load the series branch $\mathbf{Z}_1$ with `50 [ENTER] 80 [ENTER]`, then key $\mathbf{Z}_2$ with `0 [ENTER] 50 [+/-]`, priming the 4-level stack to $(T:50, Z:80, Y:0, X:-50)$. Tap `[↰] [CMPLX] [+]` to execute dyadic phasor addition, leaving $(T:50, Z:50, Y:50.0000, X:30.0000)$.
 
 Result: **$50.0 + 30.0i\,\Omega$**.
 
@@ -6705,11 +6555,7 @@ $$\mathbf{I} = \frac{120}{50 + 30i} = \frac{120(50 - 30i)}{2500 + 900} = \frac{6
 
 **Keystrokes:** `50 [ENTER] 30 [ENTER] 120 [ENTER] 0 [↰] [CMPLX] [÷]` $\rightarrow$ **`0.25`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `50 [ENTER] 30 [ENTER]` | $0.0000$ | $0.0000$ | $50.0000$ | $30.0000$ | Denominator $\mathbf{Z}$ |
-| 2 | `120 [ENTER] 0` | $50.0000$ | $30.0000$ | $120.0000$ | $0.0000$ | Numerator $\mathbf{V}$ |
-| 3 | `[↰] [CMPLX] [÷]` | $50.0000$ | $50.0000$ | **$1.764706$** | **$-1.058824$** | Current $\mathbf{I}$ (A) |
+Enter denominator $\mathbf{Z}$ via `50 [ENTER] 30 [ENTER]` followed by numerator $\mathbf{V}$ via `120 [ENTER] 0`, giving $(T:50, Z:30, Y:120, X:0)$. Press `[↰] [CMPLX] [÷]` to evaluate complex Ohm's law, yielding current phasor $(T:50, Z:50, Y:1.764706, X:-1.058824)$.
 
 Result: **$1.7647 - 1.0588i\text{ Amperes}$** ($|\mathbf{I}| = 2.058\text{ A}\angle -30.96^\circ$).
 
@@ -6722,11 +6568,7 @@ Real power $P = 211.76\text{ Watts}$, Reactive power $Q = 127.06\text{ VAR}$.
 
 **Keystrokes:** `120 [ENTER] 0 [ENTER] 1.764706 [ENTER] 1.058824 [↰] [CMPLX] [×]` $\rightarrow$ **`127.05888`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `120 [ENTER] 0 [ENTER]` | $0.0000$ | $0.0000$ | $120.0000$ | $0.0000$ | Voltage $\mathbf{V}$ |
-| 2 | `1.764706 [ENTER] 1.058824` | $120.0000$ | $0.0000$ | $1.764706$ | $1.058824$ | Conjugate current $\mathbf{I}^*$ |
-| 3 | `[↰] [CMPLX] [×]` | $120.0000$ | $120.0000$ | **$211.7647$** | **$127.0589$** | Complex power $\mathbf{S}$ |
+Enter voltage $\mathbf{V}$ via `120 [ENTER] 0 [ENTER]` and conjugate current $\mathbf{I}^*$ via `1.764706 [ENTER] 1.058824`, loading $(T:120, Z:0, Y:1.764706, X:1.058824)$. Press `[↰] [CMPLX] [×]` to evaluate apparent power vector $\mathbf{S}$, resulting in $(T:120, Z:120, Y:211.7647, X:127.0589)$.
 
 Result: **$P = 211.76\text{ W}, Q = 127.06\text{ VAR}$**.
 
@@ -6738,11 +6580,7 @@ $$|\mathbf{S}| = \sqrt{P^2 + Q^2} \approx 247.0\text{ VA}, \quad \text{PF} = \fr
 
 **Keystrokes:** `211.7647 [ENTER] 127.0589 [↰] [▸θ,r] [x⇄y] [COS]` $\rightarrow$ **`0.5144959936`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `211.7647 [ENTER] 127.0589` | $0.0000$ | $0.0000$ | $211.7647$ | $127.0589$ | $P$ in $Y$, $Q$ in $X$ |
-| 2 | `[↰] [▸θ,r]` | $0.0000$ | $0.0000$ | $0.540420$ | $247.0588$ | Phase angle $\theta$ (rad) in $Y$, $|\mathbf{S}|$ in $X$ |
-| 3 | `[x⇄y] [COS]` | $0.0000$ | $0.0000$ | $247.0588$ | **$0.857187$** | Power Factor $\cos\theta$ |
+Key `211.7647 [ENTER] 127.0589` into $(Y, X)$, then tap `[↰] [▸θ,r]` to convert to polar form $(T:0, Z:0, Y:0.540420, X:247.0588)$, revealing phase angle in $Y$ and apparent power $|\mathbf{S}|$ in $X$. Tap `[x⇄y] [COS]` to extract the lagging power factor, ending with $(T:0, Z:0, Y:247.0588, X:0.857187)$.
 
 Result: **$\text{PF} = 0.8572\text{ (lagging)}$**.
 
@@ -6755,11 +6593,7 @@ $$\text{RL} = -20 \log_{10}(0.471699) = 6.527\text{ dB}$$
 
 **Keystrokes:** `0.25 [ENTER] 0.40 [+/-] [↰] [▸θ,r] [↰] [LOG] 20 [×] [+/-]` $\rightarrow$ **`6.5266998468`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.25 [ENTER] 0.40 [+/-]` | $0.0000$ | $0.0000$ | $0.2500$ | $-0.4000$ | $S_{11}$ rectangular |
-| 2 | `[↰] [▸θ,r]` | $0.0000$ | $0.0000$ | $-1.012197$ | $0.471699$ | $|S_{11}|$ in $X$ |
-| 3 | `[LOG] 20 [×] [+/-]` | $0.0000$ | $0.0000$ | $-1.012197$ | **$6.5269$** | Return loss in dB |
+Load $S_{11}$ via `0.25 [ENTER] 0.40 [+/-]`, then convert to polar magnitude with `[↰] [▸θ,r]`, leaving $(T:0, Z:0, Y:-1.012197, X:0.471699)$. Complete the return loss calculation with `[LOG] 20 [×] [+/-]`, producing $(T:0, Z:0, Y:-1.012197, X:6.5269)$.
 
 Result: **$6.5269\text{ dB}$**.
 
@@ -6796,11 +6630,7 @@ $$z_0 = 8^{1/3} e^{i\pi/3} = 2 \left(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\righ
 (Using $z_2 = -8$, exponent $z_1 = 1/3 = 0.3333333333$):
 Keystrokes: `8 [+/-] [ENTER] 0 [ENTER] 0.333333333333 [ENTER] 0 [↰] [CMPLX] [yˣ]` $\rightarrow$ **`1.7320508075`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `8 [+/-] [ENTER] 0 [ENTER]` | $0.0000$ | $0.0000$ | $-8.0000$ | $0.0000$ | Base $z_2 = -8 + 0i$ |
-| 2 | `0.333333333333 [ENTER] 0` | $-8.0000$ | $0.0000$ | $0.333333$ | $0.0000$ | Exponent $z_1 = 1/3 + 0i$ |
-| 3 | `[↰] [CMPLX] [yˣ]` | $-8.0000$ | $-8.0000$ | **$1.000000$** | **$1.732051$** | $z_0 = 1 + \sqrt{3}i$ |
+Load base $z_2 = -8 + 0i$ with `8 [+/-] [ENTER] 0 [ENTER]`, then enter exponent $1/3$ via `0.333333333333 [ENTER] 0`, establishing $(T:-8, Z:0, Y:0.333333, X:0)$. Tap `[↰] [CMPLX] [yˣ]` to extract the principal complex cube root, yielding $(T:-8, Z:-8, Y:1.000000, X:1.732051)$.
 
 Result: **$1.000000 + 1.732051i$**.
 
@@ -6810,18 +6640,7 @@ Result: **$1.000000 + 1.732051i$**.
 **Theoretical Context:** From Problem 5.11, the real root is $z_1 = -2.0 + 0.0i$, and the third root is $z_2 = 1.0 - 1.732051i$. Confirm $z_1^3$:
 Keystrokes: `2 [+/-] [ENTER] 0 [ENTER] 3 [ENTER] 0 [↰] [CMPLX] [yˣ]`$\implies$ **$-8.0000 + 0.0000i$**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `2 [+/-]` `[ENTER]` — Enter real component $\text{Re}(z_1) = -2.0$ into Register $Y$.
-2. `0` `[ENTER]` — Supply zero imaginary component, lifting $-2.0$ into $Z$.
-3. `3` `[ENTER]` — Load integer exponent 3 into $Y$.
-4. `0` — Supply zero imaginary part in $X$.
-5. `[↰] [CMPLX]` `[yˣ]` — Execute complex exponentiation to confirm the original cube root $(-8 + 0i)$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2 [+/-] [ENTER] 0 [ENTER]` | $0.0000$ | $-2.0000$ | $0.0000$ | $0.0000$ | Base $z_1 = -2.0 + 0.0i$ pushed into stack |
-| 2 | `3 [ENTER] 0` | $-2.0000$ | $0.0000$ | $3.0000$ | $0.0000$ | Exponent $3.0 + 0.0i$ loaded into $(Y, X)$ |
-| 3 | `[↰] [CMPLX] [yˣ]` | $-2.0000$ | $-2.0000$ | **$-8.0000$** | **$0.0000$** | Root cubed: $(-2+0i)^3 = -8.0 + 0.0i$ |
+Enter the candidate root $z_1 = -2.0 + 0.0i$ into $(T, Z)$ and the power $3.0 + 0.0i$ into $(Y, X)$ via `2 [+/-] [ENTER] 0 [ENTER] 3 [ENTER] 0`, creating $(T:-2, Z:0, Y:3, X:0)$. Executing `[↰] [CMPLX] [yˣ]` confirms $(-2+0i)^3 = -8.0 + 0.0i$, leaving $(T:-2, Z:-2, Y:-8.0000, X:0.0000)$.
 
 Result: **$-8.0000 + 0.0000i$**.
 
@@ -6835,10 +6654,7 @@ $$\cos(1) \approx 0.540302, \quad \sinh(2) \approx 3.626860 \implies \text{Imag}
 
 **Keystrokes:** `1 [ENTER] 2 [↰] [CMPLX] [SIN]` $\rightarrow$ **`1.9596010414`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1 [ENTER] 2` | $0.0000$ | $0.0000$ | $1.0000$ | $2.0000$ | Load $1 + 2i$ |
-| 2 | `[↰] [CMPLX] [SIN]` | $0.0000$ | $0.0000$ | **$3.165779$** | **$1.959601$** | $\sin(1+2i)$ evaluated |
+Key `1 [ENTER] 2` to load $1 + 2i$ into $(Y, X)$ $(T:0, Z:0, Y:1, X:2)$. Press `[↰] [CMPLX] [SIN]` to evaluate complex sine in place, producing $(T:0, Z:0, Y:3.165779, X:1.959601)$.
 
 Result: **$3.165779 + 1.959601i$**.
 
@@ -6851,10 +6667,7 @@ $$\text{Imag} = -\sin(1)\sinh(2) = -0.841471 \times 3.626860 = -3.051898$$
 
 **Keystrokes:** `1 [ENTER] 2 [↰] [CMPLX] [COS]` $\rightarrow$ **`-3.051897799`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1 [ENTER] 2` | $0.0000$ | $0.0000$ | $1.0000$ | $2.0000$ | Load $1 + 2i$ |
-| 2 | `[↰] [CMPLX] [COS]` | $0.0000$ | $0.0000$ | **$2.032723$** | **$-3.051898$** | $\cos(1+2i)$ evaluated |
+Enter $1 + 2i$ with `1 [ENTER] 2` $(T:0, Z:0, Y:1, X:2)$ and tap `[↰] [CMPLX] [COS]`, yielding $(T:0, Z:0, Y:2.032723, X:-3.051898)$.
 
 Result: **$2.032723 - 3.051898i$**.
 
@@ -6890,14 +6703,7 @@ $$H(j) = \frac{1}{0 + 1.414214i} = 0 - \frac{1}{\sqrt{2}}i = 0 - 0.707107i \impl
 
 **Keystrokes:** `0 [ENTER] 1.414214 [↰] [CMPLX] [1/x]`$\implies$ **$0.000000 - 0.707107i$**.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0 [ENTER] 1.414214` — Load normalized frequency denominator $B_2(j) = 0 + 1.414214i$ into Registers $(Y, X)$.
-2. `[↰] [CMPLX] [1/x]` — Evaluate complex reciprocal in place; transfer function response converges to $H(j) = 0.000000 - 0.707107i$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0 [ENTER] 1.414214` | $0.0000$ | $0.0000$ | $0.0000$ | $1.414214$ | Load denominator $B_2(j) = 0 + 1.414214i$ |
-| 2 | `[↰] [CMPLX] [1/x]` | $0.0000$ | $0.0000$ | **$0.000000$** | **$-0.707107$** | Invert complex polynomial: $H(j) = 0 - 0.707107i$ |
+Load the normalized frequency polynomial $B_2(j) = 0 + 1.414214i$ into $(Y, X)$ via `0 [ENTER] 1.414214` $(T:0, Z:0, Y:0, X:1.414214)$. Inverting via `[↰] [CMPLX] [1/x]` directly evaluates the frequency response $H(j) = 0 - 0.707107i$, leaving $(T:0, Z:0, Y:0.000000, X:-0.707107)$.
 
 Result: **$0.000000 - 0.707107i$** ($|H| = 0.707107 \implies \mathbf{-3.01\text{ dB}}$).
 
@@ -6928,11 +6734,7 @@ $$z = \frac{1 + \Gamma}{1 - \Gamma} = \frac{1 + 0.2 + 0.4i}{1 - 0.2 - 0.4i} = \f
 
 **Keystrokes:** `0.8 [ENTER] 0.4 [+/-] [ENTER] 1.2 [ENTER] 0.4 [↰] [CMPLX] [÷]` $\rightarrow$ **`-0.5`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.8 [ENTER] 0.4 [+/-] [ENTER]` | $0.0000$ | $0.0000$ | $0.8000$ | $-0.4000$ | Denominator $1 - \Gamma$ |
-| 2 | `1.2 [ENTER] 0.4` | $0.8000$ | $-0.4000$ | $1.2000$ | $0.4000$ | Numerator $1 + \Gamma$ |
-| 3 | `[↰] [CMPLX] [÷]` | $0.8000$ | $0.8000$ | **$1.000000$** | **$1.000000$** | $z = 1.0 + 1.0i$ |
+Load denominator $1 - \Gamma = 0.8 - 0.4i$ via `0.8 [ENTER] 0.4 [+/-] [ENTER]` and numerator $1 + \Gamma = 1.2 + 0.4i$ via `1.2 [ENTER] 0.4`, loading $(T:0.8, Z:-0.4, Y:1.2, X:0.4)$. Striking `[↰] [CMPLX] [÷]` evaluates the Möbius transformation to $z = 1.0 + 1.0i$, with the stack resting at $(T:0.8, Z:0.8, Y:1.000000, X:1.000000)$.
 
 Result: **$z = 1.0 + 1.0i$** ($R = Z_0, X = Z_0$).
 
@@ -6972,16 +6774,7 @@ $$\Gamma_a = \frac{Z_2 - Z_1}{Z_2 + Z_1} = \frac{(600 - 415) - 450i}{(600 + 415)
 
 **Keystrokes:** `185 [ENTER] 450 [+/-] [ENTER] 1015 [ENTER] 450 [+/-] [↰] [CMPLX] [÷]` $\rightarrow$ **`-0.3023940363`**
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `185 [ENTER] 450 [+/-] [ENTER]` — Load numerator differential impedance $(Z_2 - Z_1) = 185 - 450i$ and elevate into upper stack memory.
-2. `1015 [ENTER] 450 [+/-]` — Key denominator sum impedance $(Z_2 + Z_1) = 1015 - 450i$ into Registers $(Y, X)$.
-3. `[↰] [CMPLX] [÷]` — Execute complex division; acoustic reflection coefficient resolves to $\Gamma_a = 0.316823 - 0.302394i$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `185 [ENTER] 450 [+/-] [ENTER]` | $0.0000$ | $185.0000$ | $-450.0000$ | $-450.0000$ | Numerator $(Z_2 - Z_1) = 185 - 450i$ pushed |
-| 2 | `1015 [ENTER] 450 [+/-]` | $185.0000$ | $-450.0000$ | $1015.0000$ | $-450.0000$ | Denominator $(Z_2 + Z_1) = 1015 - 450i$ in $(Y, X)$ |
-| 3 | `[↰] [CMPLX] [÷]` | $185.0000$ | $185.0000$ | **$0.316823$** | **$-0.302394$** | Complex reflection coefficient $\Gamma_a$ |
+Key numerator differential impedance $(Z_2 - Z_1) = 185 - 450i$ with `185 [ENTER] 450 [+/-] [ENTER]` and denominator $(Z_2 + Z_1) = 1015 - 450i$ with `1015 [ENTER] 450 [+/-]`, yielding $(T:185, Z:-450, Y:1015, X:-450)$. Press `[↰] [CMPLX] [÷]` to resolve acoustic reflection coefficient $(T:185, Z:185, Y:0.316823, X:-0.302394)$.
 
 Result: **$0.316823 - 0.302394i$** ($|\Gamma_a| = 0.4379 \implies \text{Absorption coefficient } \alpha = 1 - |\Gamma_a|^2 = 0.8082$).
 

@@ -653,11 +653,7 @@ $$z = \frac{1 + \Gamma}{1 - \Gamma} = \frac{1 + 0.2 + 0.4i}{1 - 0.2 - 0.4i} = \f
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_24:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_24:value}}`**
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.8 {{key:ENTER}} 0.4 {{key:+/-}} {{key:ENTER}}` | $0.0000$ | $0.0000$ | $0.8000$ | $-0.4000$ | Denominator $1 - \Gamma$ |
-| 2 | `1.2 {{key:ENTER}} 0.4` | $0.8000$ | $-0.4000$ | $1.2000$ | $0.4000$ | Numerator $1 + \Gamma$ |
-| 3 | `{{key:CMPLX}} {{key:÷}}` | $0.8000$ | $0.8000$ | **$1.000000$** | **$1.000000$** | $z = 1.0 + 1.0i$ |
+Load denominator $1 - \Gamma = 0.8 - 0.4i$ via `0.8 {{key:ENTER}} 0.4 {{key:+/-}} {{key:ENTER}}` and numerator $1 + \Gamma = 1.2 + 0.4i$ via `1.2 {{key:ENTER}} 0.4`, loading $(T:0.8, Z:-0.4, Y:1.2, X:0.4)$. Striking `{{key:CMPLX}} {{key:÷}}` evaluates the Möbius transformation to $z = 1.0 + 1.0i$, with the stack resting at $(T:0.8, Z:0.8, Y:1.000000, X:1.000000)$.
 
 Result: **$z = 1.0 + 1.0i$** ($R = Z_0, X = Z_0$).
 
@@ -697,16 +693,7 @@ $$\Gamma_a = \frac{Z_2 - Z_1}{Z_2 + Z_1} = \frac{(600 - 415) - 450i}{(600 + 415)
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_26:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_26:value}}`**
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `185 {{key:ENTER}} 450 {{key:+/-}} {{key:ENTER}}` — Load numerator differential impedance $(Z_2 - Z_1) = 185 - 450i$ and elevate into upper stack memory.
-2. `1015 {{key:ENTER}} 450 {{key:+/-}}` — Key denominator sum impedance $(Z_2 + Z_1) = 1015 - 450i$ into Registers $(Y, X)$.
-3. `{{key:CMPLX}} {{key:÷}}` — Execute complex division; acoustic reflection coefficient resolves to $\Gamma_a = 0.316823 - 0.302394i$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `185 {{key:ENTER}} 450 {{key:+/-}} {{key:ENTER}}` | $0.0000$ | $185.0000$ | $-450.0000$ | $-450.0000$ | Numerator $(Z_2 - Z_1) = 185 - 450i$ pushed |
-| 2 | `1015 {{key:ENTER}} 450 {{key:+/-}}` | $185.0000$ | $-450.0000$ | $1015.0000$ | $-450.0000$ | Denominator $(Z_2 + Z_1) = 1015 - 450i$ in $(Y, X)$ |
-| 3 | `{{key:CMPLX}} {{key:÷}}` | $185.0000$ | $185.0000$ | **$0.316823$** | **$-0.302394$** | Complex reflection coefficient $\Gamma_a$ |
+Key numerator differential impedance $(Z_2 - Z_1) = 185 - 450i$ with `185 {{key:ENTER}} 450 {{key:+/-}} {{key:ENTER}}` and denominator $(Z_2 + Z_1) = 1015 - 450i$ with `1015 {{key:ENTER}} 450 {{key:+/-}}`, yielding $(T:185, Z:-450, Y:1015, X:-450)$. Press `{{key:CMPLX}} {{key:÷}}` to resolve acoustic reflection coefficient $(T:185, Z:185, Y:0.316823, X:-0.302394)$.
 
 Result: **$0.316823 - 0.302394i$** ($|\Gamma_a| = 0.4379 \implies \text{Absorption coefficient } \alpha = 1 - |\Gamma_a|^2 = 0.8082$).
 
@@ -741,17 +728,7 @@ Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_27:keys}}`$\implies$ **$2
 
 > **Named RPN Stack Idiom: *The Inside-Out Radical & Mutual Inductance Pipeline*** — Multiply primary and secondary inductances directly in the stack, extract square root in place, and scale by coupling coefficient without register allocation {{cite:horowitz2015,hp15c1982}}.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `50` `{{key:ENTER}}` — Key primary winding inductance ($L_1 = 50.0\,\mu\text{H}$) into $Y$.
-2. `20` `{{key:×}}` — Multiply by secondary winding inductance ($L_2 = 20.0\,\mu\text{H}$) to form inductive product ($1000.0\,\mu\text{H}^2$).
-3. `{{key:√x}}` — Take square root to obtain geometric mean inductance ($\sqrt{L_1 L_2} \approx 31.6228\,\mu\text{H}$).
-4. `0.8` `{{key:×}}` — Scale by magnetic coupling coefficient ($k = 0.80$), establishing mutual inductance $M \approx \mathbf{25.2982\,\mu\text{H}}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `50 {{key:ENTER}} 20 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1000.0000$ | Inductive product $L_1 L_2$ in $\mu\text{H}^2$ |
-| 2 | `{{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $31.6228$ | Geometric mean $\sqrt{L_1 L_2}$ |
-| 3 | `0.8 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$25.2982$** | Mutual inductance $M = k\sqrt{L_1 L_2}$ in $\mu\text{H}$ |
+Enter `50 {{key:ENTER}} 20 {{key:×}}` to form the inductive product $1000\,\mu\text{H}^2$ in $X$ $(T:0, Z:0, Y:0, X:1000)$, take the square root with `{{key:√x}}` $(T:0, Z:0, Y:0, X:31.6228)$, and scale by coupling coefficient with `0.8 {{key:×}}`, resolving $(T:0, Z:0, Y:0, X:25.2982)$.
 
 Result: **$25.2982\,\mu\text{H}$**.
 
@@ -807,15 +784,7 @@ Result: **$-2.000000 \pm 4.582576i$**.
 **Electromagnetics Context:** Propagation constant $\gamma = \alpha + j\beta$. In cutoff band: $\alpha = 14.5\text{ Np/m}, \beta = 0\text{ rad/m}$. Attenuation in decibels per meter:
 $$\text{Atten} = 20 \log_{10}(e) \times \alpha = 8.68589 \times 14.5 = \mathbf{125.945\text{ dB/m}}$$
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `1` `{{key:eˣ}}` `{{key:LOG}}` `20` `{{key:×}}` — Compute the Nepers-to-decibels conversion factor $20 \log_{10}(e) \approx 8.685890\text{ dB/Np}$ in Register $X$.
-2. `14.5` `{{key:×}}` — Multiply by attenuation coefficient $\alpha = 14.5\text{ Np/m}$; total cutoff attenuation evaluates to $\mathbf{125.945\text{ dB/m}}$.
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1 {{key:eˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.718282$ | Natural exponential base $e$ |
-| 2 | `{{key:LOG}} 20 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.685890$ | Nepers-to-dB factor $20\log_{10}(e)$ |
-| 3 | `14.5 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$125.945405$** | Total attenuation $= 125.945\text{ dB/m}$ |
+Key `1 {{key:eˣ}} {{key:LOG}} 20 {{key:×}}` to calculate the Nepers-to-dB conversion factor ($8.685890\text{ dB/Np}$) in $X$ $(T:0, Z:0, Y:0, X:8.685890)$, then multiply by attenuation coefficient with `14.5 {{key:×}}`, resolving total attenuation $(T:0, Z:0, Y:0, X:125.945405)$.
 
 Result: **$125.945\text{ dB/m}$**.
 

@@ -383,7 +383,7 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
 | `[C]` | 0 | 0 | 0 | 0 | Clean baseline stack in `[NUM]` mode. |
-| `1` `0` | 0 | 0 | 0 | 10 | Key target capacity ($10$) into Ground Floor $X$. |
+| 10 | 0 | 0 | 0 | 10 | Key target capacity ($10$) into Ground Floor $X$. |
 | `[ENTER]` | 0 | 0 | 10 | 10 | Target capacity lifts smoothly into Mezzanine Floor $Y$. |
 | `7` | 0 | 0 | 10 | 7 | Enter red counters into Ground Floor $X$. |
 | `[-]` | 0 | 0 | 0 | 3 | Subtraction combines $Y - X = 3$. Result in $X$! |
@@ -436,8 +436,8 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `2` `4` `[ENTER]` | 0 | 0 | 24 | 24 | First number committed to Mezzanine Floor $Y$. |
-| `1` `5` `[+]` | 0 | 0 | 0 | 39 | Addition completed; `LAST x` preserves $15$ in hardware. |
+| 24 [ENTER] | 0 | 0 | 24 | 24 | First number committed to Mezzanine Floor $Y$. |
+| 15 [+] | 0 | 0 | 0 | 39 | Addition completed; `LAST x` preserves $15$ in hardware. |
 | `[f] [LASTX]` | 0 | 0 | 39 | 15 | Prior number ($15$) recalled into $X$; sum lifts to $Y$! |
 | `[-]` | 0 | 0 | 0 | 24 | Inverse check: $39 - 15 = 24$. Starting number verified! |
 
@@ -457,9 +457,9 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 |:---|:---:|:---:|:---:|:---:|:---|
 | `9` | 0 | 0 | 0 | 9 | Box A quantity entered into Ground Floor $X$. |
 | `[ENTER]` | 0 | 0 | 9 | 9 | Box A lifts to Mezzanine Floor $Y$. |
-| `1` `2` | 0 | 0 | 9 | 12 | Box B quantity entered into Ground Floor $X$. |
+| 12 | 0 | 0 | 9 | 12 | Box B quantity entered into Ground Floor $X$. |
 | `[≠]` | 0 | 0 | 9 | 12 | Test displays `NO (9 ≠ 12)`; values preserved on stack. |
-| `[-]` | 0 | 0 | 0 | 3 | $12 - 9 = 3$ apples difference. Stack drops cleanly. |
+| `[-]` | 0 | 0 | 0 | -3 | $12 - 9 = 3$ apples difference. Stack drops cleanly. |
 
 ---
 
@@ -475,10 +475,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `4` `5` `2` `0` | 0 | 0 | 0 | 4520 | Full number entered into Ground Floor $X$. |
+| 4520 | 0 | 0 | 0 | 4520 | Full number entered into Ground Floor $X$. |
 | `[ENTER]` | 0 | 0 | 4520 | 4520 | Full number lifts to Mezzanine Floor $Y$. |
-| `1` `0` `0` | 0 | 0 | 4520 | 100 | Place value target ($100$) entered into Ground Floor $X$. |
-| `[PV]` | 0 | 0 | 0 | 5 | Hardware extracts hundreds digit: 5 hundreds! |
+| 10 `0` | 0 | 4520 | 10 | 0 | Place value target ($100$) entered into Ground Floor $X$. |
+| `[PV]` | 0 | 4520 | 10 | 0 | Hardware extracts hundreds digit: 5 hundreds! |
 
 ---
 
@@ -495,7 +495,7 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | `[ENTER]` | 0 | 0 | 8 | 8 | Box count lifts to Mezzanine Floor $Y$. |
 | `4` | 0 | 0 | 8 | 4 | Additional 4 boxes entered into Ground Floor $X$. |
 | `[+]` | 0 | 0 | 0 | 12 | Total boxes calculated: $12$ tens. |
-| `1` `0` | 0 | 0 | 12 | 10 | Pencils per box ($10$) entered into $X$. |
+| 10 | 0 | 0 | 12 | 10 | Pencils per box ($10$) entered into $X$. |
 | `[×]` | 0 | 0 | 0 | 120 | $12 \times 10 = 120$ total pencils! |
 
 ---
@@ -532,9 +532,9 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `5` `2` `3` | 0 | 0 | 0 | 523 | Starting number entered into Ground Floor $X$. |
+| 523 | 0 | 0 | 0 | 523 | Starting number entered into Ground Floor $X$. |
 | `[ENTER]` | 0 | 0 | 523 | 523 | Starting number lifts to Mezzanine Floor $Y$. |
-| `2` `8` `7` | 0 | 0 | 523 | 287 | Second number entered into Ground Floor $X$. |
+| 287 | 0 | 0 | 523 | 287 | Second number entered into Ground Floor $X$. |
 | `[-]` | 0 | 0 | 0 | 236 | Subtraction evaluates: $523 - 287 = 236$. |
 | `[f] [LASTX]` | 0 | 0 | 236 | 287 | Superpower 4 recalls prior number ($287$) into $X$! |
 | `[+]` | 0 | 0 | 0 | 523 | Inverse check: $236 + 287 = 523$ verified! |
@@ -556,10 +556,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | `5` | 0 | 0 | 0 | 5 | Step constant ($5$) entered into Ground Floor $X$. |
 | `[ENTER]` | 0 | 0 | 5 | 5 | Constant lifts to Register $Y$. |
 | `0` | 0 | 0 | 5 | 0 | Starting origin ($0$) entered into Register $X$. |
-| `[+]` | 0 | 0 | 5 | 5 | $5 + 0 = 5$; Register $Y$ preserves constant $5$! |
-| `[+]` | 0 | 0 | 5 | 10 | Next tap of `+` adds constant: $5 + 5 = 10$. |
-| `[+]` | 0 | 0 | 5 | 15 | Next tap of `+` adds constant: $10 + 5 = 15$. |
-| `[+]` | 0 | 0 | 5 | 20 | Next tap of `+` adds constant: $15 + 5 = 20$. |
+| `[+]` | 0 | 0 | 0 | 5 | $5 + 0 = 5$; Register $Y$ preserves constant $5$! |
+| `[+]` | 0 | 0 | 0 | 5 | Next tap of `+` adds constant: $5 + 5 = 10$. |
+| `[+]` | 0 | 0 | 0 | 5 | Next tap of `+` adds constant: $10 + 5 = 15$. |
+| `[+]` | 0 | 0 | 0 | 5 | Next tap of `+` adds constant: $15 + 5 = 20$. |
 
 ---
 
@@ -626,8 +626,8 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `3` `.` `3` `0` | 0 | 0 | 0 | 3.30 | Time string `3.30` entered into Ground Floor $X$. |
-| `[🕒]` | 0 | 0 | 0 | 3:30:00 | Clock sandbox launches: continuous hands display! |
+| 3.30 | 0 | 0 | 0 | $3.30$ | Time string `3.30` entered into Ground Floor $X$. |
+| `[🕒]` | 0 | 0 | 0 | $3.3000$ | Clock sandbox launches: continuous hands display! |
 
 ---
 
@@ -643,10 +643,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `.` `1` `.` `4` | 0 | 0 | 0 | 1/4 | Two-dot notation builds fraction $1/4$ in $X$. |
-| `[ENTER]` | 0 | 0 | 1/4 | 1/4 | Fraction committed and lifts to Mezzanine Floor $Y$. |
-| `[FDISP]` | 0 | 0 | 1/4 | 0.25 | Instant decimal conversion: $1/4 = 0.25$! |
-| `[FDISP]` | 0 | 0 | 1/4 | 1/4 | Instant toggle back to fraction representation! |
+| `.` `1` `.` `4` | 0 | 0 | 0 | $0.2500$ | Two-dot notation builds fraction $1/4$ in $X$. |
+| `[ENTER]` | 0 | 0 | $0.2500$ | $0.2500$ | Fraction committed and lifts to Mezzanine Floor $Y$. |
+| `[FDISP]` | 0 | 0 | $0.2500$ | $0.25$ | Instant decimal conversion: $1/4 = 0.25$! |
+| `[FDISP]` | 0 | 0 | $0.2500$ | $0.2500$ | Instant toggle back to fraction representation! |
 
 ---
 
@@ -663,10 +663,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `1` `2` `5` | 0 | 0 | 0 | 125 | Total passengers entered into Ground Floor $X$. |
-| `[ENTER]` | 0 | 0 | 125 | 125 | 125 committed and copied to Mezzanine Floor $Y$. |
-| `8` | 0 | 0 | 125 | 8 | Capacity per van keyed into $X$. |
-| `[g] [÷R]` | 0 | 0 | 5 | 15 | Integer division with remainder: $X = 15$ full vans, $Y = 5$ leftover passengers! |
+| 12 `5` | 0 | 0 | 12 | 5 | Total passengers entered into Ground Floor $X$. |
+| `[ENTER]` | 0 | 12 | 5 | 5 | 125 committed and copied to Mezzanine Floor $Y$. |
+| `8` | 0 | 12 | 5 | 8 | Capacity per van keyed into $X$. |
+| `[g] [÷R]` | 0 | 12 | 5 | 0 | Integer division with remainder: $X = 15$ full vans, $Y = 5$ leftover passengers! |
 
 ---
 
@@ -682,10 +682,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `.` `1` `2` `.` `1` `8` | 0 | 0 | 0 | 12/18 | Enter fraction $12/18$ into Ground Floor $X$. |
-| `[ENTER]` | 0 | 0 | 12/18 | 12/18 | Fraction committed to stack. |
-| `[g] [SIMP]` | 0 | 0 | 12/18 | 2/3 | Reduced by common factor: $12/18$ simplifies to $2/3$! |
-| `[g] [SIMP]` | 0 | 0 | 12/18 | 2/3 | Flashes `"LOWEST TERMS"`; fraction is already irreducible! |
+| `.` 12 `.` `1` `8` | 0 | 0 | 12 | $8.0000$ | Enter fraction $12/18$ into Ground Floor $X$. |
+| `[ENTER]` | 0 | 12 | $8.0000$ | $8.0000$ | Fraction committed to stack. |
+| `[g] [SIMP]` | 0 | 12 | $8.0000$ | $8.0000$ | Reduced by common factor: $12/18$ simplifies to $2/3$! |
+| `[g] [SIMP]` | 0 | 12 | $8.0000$ | $8.0000$ | Flashes `"LOWEST TERMS"`; fraction is already irreducible! |
 
 ---
 
@@ -701,10 +701,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `2` `.` `3` `.` `4` | 0 | 0 | 0 | 2 3/4 | Mixed number $2\ 3/4$ keyed into Ground Floor $X$. |
-| `[ENTER]` | 0 | 0 | 2 3/4 | 2 3/4 | Mixed number committed to stack. |
-| `[f] [d/c]` | 0 | 0 | 2 3/4 | 11/4 | Converted to improper fraction: $11/4$. |
-| `[a ᵇ/c]` | 0 | 0 | 2 3/4 | 2 3/4 | Converted back to mixed fraction: $2\ 3/4$. |
+| `2` `.` `3` `.` `4` | 0 | 0 | 2 | $0.7500$ | Mixed number $2\ 3/4$ keyed into Ground Floor $X$. |
+| `[ENTER]` | 0 | 2 | $0.7500$ | $0.7500$ | Mixed number committed to stack. |
+| `[f] [d/c]` | 0 | 2 | $0.7500$ | $0.7500$ | Converted to improper fraction: $11/4$. |
+| `[a ᵇ/c]` | 0 | 2 | $0.7500$ | $0.7500$ | Converted back to mixed fraction: $2\ 3/4$. |
 
 ---
 
@@ -720,10 +720,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `1` `7` `.` `5` `0` | 0 | 0 | 0 | 17.50 | Total car wash earnings $\$17.50$ entered into $X$. |
-| `[ENTER]` | 0 | 0 | 17.50 | 17.50 | Committed and lifted to Mezzanine Floor $Y$. |
-| `4` | 0 | 0 | 17.50 | 4 | Number of children keyed into $X$. |
-| `[g] [÷R]` | 0 | 0 | 1.50 | 4.00 | $X = \$4.00$ whole dollars each, $Y = \$1.50$ remaining change! |
+| 17.50 | 0 | 0 | 0 | $17.50$ | Total car wash earnings $\$17.50$ entered into $X$. |
+| `[ENTER]` | 0 | 0 | $17.50$ | $17.50$ | Committed and lifted to Mezzanine Floor $Y$. |
+| `4` | 0 | 0 | $17.50$ | 4 | Number of children keyed into $X$. |
+| `[g] [÷R]` | 0 | 0 | $1.50$ | $4.00$ | $X = \$4.00$ whole dollars each, $Y = \$1.50$ remaining change! |
 
 ---
 
@@ -738,10 +738,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `.` `2` `.` `4` | 0 | 0 | 0 | 2/4 | First fraction $2/4$ keyed into Ground Floor $X$. |
-| `[ENTER]` | 0 | 0 | 2/4 | 2/4 | First fraction committed to Floor $Y$. |
-| `.` `2` `.` `4` | 0 | 0 | 2/4 | 2/4 | Second fraction $2/4$ keyed into Ground Floor $X$. |
-| `[+]` | 0 | 0 | 0 | 4/4 | Unreduced invariant preserved: displays $4/4$! |
+| `.` `2` `.` `4` | 0 | 0 | 0 | $0.5000$ | First fraction $2/4$ keyed into Ground Floor $X$. |
+| `[ENTER]` | 0 | 0 | $0.5000$ | $0.5000$ | First fraction committed to Floor $Y$. |
+| `.` `2` `.` `4` | 0 | 0 | $0.5000$ | $0.5000$ | Second fraction $2/4$ keyed into Ground Floor $X$. |
+| `[+]` | 0 | 0 | 0 | $1.0000$ | Unreduced invariant preserved: displays $4/4$! |
 | `[g] [SIMP]` | 0 | 0 | 0 | 1 | Manual simplification reduces $4/4$ to whole number $1$! |
 
 ---
@@ -756,12 +756,12 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `8` `[ENTER]` `1` `2` | 0 | 0 | 8 | 12 | Denominators 8 and 12 loaded into stack. |
+| `8` `[ENTER]` 12 | 0 | 0 | 8 | 12 | Denominators 8 and 12 loaded into stack. |
 | `[f] [LCM]` | 0 | 0 | 0 | 24 | Least common denominator found: $\text{LCM}(8, 12) = 24$. |
-| `.` `3` `.` `8` | 0 | 0 | 24 | 3/8 | First fraction $3/8$ entered into $X$. |
-| `[ENTER]` | 0 | 24 | 3/8 | 3/8 | Pushed to Mezzanine Floor $Y$. |
-| `.` `5` `.` `1` `2` | 0 | 24 | 3/8 | 5/12 | Second fraction $5/12$ entered into $X$. |
-| `[+]` | 0 | 0 | 24 | 19/24 | Added with common denominator: $3/8 + 5/12 = 19/24$! |
+| `.` `3` `.` `8` | 0 | 0 | 24 | $0.3750$ | First fraction $3/8$ entered into $X$. |
+| `[ENTER]` | 0 | 24 | $0.3750$ | $0.3750$ | Pushed to Mezzanine Floor $Y$. |
+| `.` `5` `.` 12 | 0 | 24 | $0.3750$ | $0.4167$ | Second fraction $5/12$ entered into $X$. |
+| `[+]` | 0 | 0 | 24 | $0.7917$ | Added with common denominator: $3/8 + 5/12 = 19/24$! |
 
 ---
 
@@ -778,7 +778,7 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `1` `5` `[ENTER]` `3` `[-]` | 0 | 0 | 0 | 12 | First group evaluated: $15 - 3 = 12$. |
+| 15 [ENTER] 3 [-] | 0 | 0 | 0 | 12 | First group evaluated: $15 - 3 = 12$. |
 | `4` `[ENTER]` `2` `[+]` | 0 | 0 | 12 | 6 | Second group evaluated: $4 + 2 = 6$, subtotal 1 rests safely on $Y$! |
 | `[×]` | 0 | 0 | 0 | 72 | Multiplied together: $12 \times 6 = 72$. |
 | `6` `[÷]` | 0 | 0 | 0 | 12 | Divided by 6: $72 \div 6 = 12$, zero parenthesis keys required! |
@@ -808,7 +808,7 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | `5` `[ENTER]` `4` `[×]` `2` `[×]` `[Σ+]` | 0 | 0 | 0 | 1 | Face Pair 1 ($40$) accumulated into $\Sigma$. Register $X$ shows sample count $N=1$. |
 | `5` `[ENTER]` `3` `[×]` `2` `[×]` `[Σ+]` | 0 | 0 | 0 | 2 | Face Pair 2 ($30$) accumulated into $\Sigma$. Register $X$ shows $N=2$. |
 | `4` `[ENTER]` `3` `[×]` `2` `[×]` `[Σ+]` | 0 | 0 | 0 | 3 | Face Pair 3 ($24$) accumulated into $\Sigma$. Register $X$ shows $N=3$. |
-| `[f] [Σx]` | 0 | 0 | 0 | 94.0 | Recall sum $\Sigma x$: total surface area $94\text{ cm}^2$ without scratch paper! |
+| `[f] [Σx]` | 0 | 0 | 0 | $94.0$ | Recall sum $\Sigma x$: total surface area $94\text{ cm}^2$ without scratch paper! |
 
 ---
 
@@ -826,11 +826,11 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `9` `.` `4` `5` `[f] [▸HR]` | 0 | 0 | 0 | 9.75 | 9 hr 45 min converted to decimal hours ($9.75$). |
-| `[ENTER]` | 0 | 0 | 9.75 | 9.75 | Pushed to Mezzanine Floor $Y$. |
-| `2` `.` `3` `5` `[f] [▸HR]` | 0 | 0 | 9.75 | 2.5833 | 2 hr 35 min converted to decimal hours ($2.5833$). |
-| `[+]` | 0 | 0 | 0 | 12.3333 | Hours added: total elapsed time $12.3333\text{ hr}$. |
-| `[g] [▸HMS]` | 0 | 0 | 0 | 12.20 | Converted back to clock time: 12:20 PM arrival! |
+| 9.45 [f] [▸HR] | 0 | 0 | 0 | $9.45$ | 9 hr 45 min converted to decimal hours ($9.75$). |
+| `[ENTER]` | 0 | 0 | $9.45$ | $9.45$ | Pushed to Mezzanine Floor $Y$. |
+| 2.35 [f] [▸HR] | 0 | 0 | $9.45$ | $2.3500$ | 2 hr 35 min converted to decimal hours ($2.5833$). |
+| `[+]` | 0 | 0 | 0 | $11.8000$ | Hours added: total elapsed time $12.3333\text{ hr}$. |
+| `[g] [▸HMS]` | 0 | 0 | 0 | $11.80$ | Converted back to clock time: 12:20 PM arrival! |
 
 ---
 
@@ -847,11 +847,11 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `.` `1` `5` `.` `2` `5` `[g] [a:b]` | 0 | 0 | 0 | 15:25 | Ratio $15:25$ formatted into Ground Floor $X$. |
-| `[g] [SIMP]` | 0 | 0 | 0 | 3:5 | Simplified to lowest ratio terms: $3:5$. |
-| `2` | 0 | 0 | 3:5 | 2 | Batch multiplier 2 keyed into $X$. |
-| `[×]` | 0 | 0 | 0 | 6:10 | Ratio multiplied: $6:10$ for double batch! |
-| `[g] [SIMP]` | 0 | 0 | 0 | 3:5 | Reduced back to base proportions $3:5$. |
+| .15.25 [g] [a:b] | 0 | 0 | 0 | $0.0000$ | Ratio $15:25$ formatted into Ground Floor $X$. |
+| `[g] [SIMP]` | 0 | 0 | 0 | $0.0000$ | Simplified to lowest ratio terms: $3:5$. |
+| `2` | 0 | 0 | $0.0000$ | 2 | Batch multiplier 2 keyed into $X$. |
+| `[×]` | 0 | 0 | 0 | $0.0000$ | Ratio multiplied: $6:10$ for double batch! |
+| `[g] [SIMP]` | 0 | 0 | 0 | $0.0000$ | Reduced back to base proportions $3:5$. |
 
 ---
 
@@ -867,8 +867,8 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `3` `6` `0` | 0 | 0 | 0 | 360 | Value 360 entered into Ground Floor $X$. |
-| `[g] [FACT]` | 0 | 0 | 0 | 2³ × 3² × 5 | Dedicated factoring hardware displays prime decomposition: $2^3 \times 3^2 \times 5$! |
+| 360 | 0 | 0 | 0 | 360 | Value 360 entered into Ground Floor $X$. |
+| `[g] [FACT]` | 0 | 0 | 0 | $0.0000$ | Dedicated factoring hardware displays prime decomposition: $2^3 \times 3^2 \times 5$! |
 
 ---
 
@@ -885,11 +885,11 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `2` `4` `[ENTER]` `3` `6` `[GCF]` | 0 | 0 | 0 | 12 | Compute $\text{GCF}(24, 36) = 12$. |
-| `[ENTER]` | 0 | 0 | 12 | 12 | GCF lifted to Floor $Y$. |
-| `2` `4` `[ENTER]` `3` `6` `[f] [LCM]` | 0 | 12 | 12 | 72 | Compute $\text{LCM}(24, 36) = 72$; earlier GCF pushed safely to $Z$. |
-| `[×]` | 0 | 0 | 12 | 864 | $\text{GCF} \times \text{LCM} = 12 \times 72 = 864$. |
-| `2` `4` `[ENTER]` `3` `6` `[×]` | 0 | 864 | 24 | 864 | Direct product $24 \times 36 = 864$, confirming $\text{GCF} \times \text{LCM} = a \times b$! |
+| 24 [ENTER] `3` `6` `[GCF]` | 0 | 0 | 24 | 3 | Compute $\text{GCF}(24, 36) = 12$. |
+| `[ENTER]` | 0 | 24 | 3 | 3 | GCF lifted to Floor $Y$. |
+| 24 [ENTER] `3` `6` `[f] [LCM]` | 3 | 3 | 24 | 6 | Compute $\text{LCM}(24, 36) = 72$; earlier GCF pushed safely to $Z$. |
+| `[×]` | 3 | 3 | 3 | 144 | $\text{GCF} \times \text{LCM} = 12 \times 72 = 864$. |
+| 24 [ENTER] `3` `6` `[×]` | 144 | 144 | 24 | 18 | Direct product $24 \times 36 = 864$, confirming $\text{GCF} \times \text{LCM} = a \times b$! |
 
 ---
 
@@ -912,10 +912,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
 | `[g] [CLΣ]` | 0 | 0 | 0 | 0 | Reset statistics registers. |
-| 10 scores keyed with `[Σ+]` | 0 | 0 | 0 | 10 | 10 scores accumulated; sample size $N=10$. |
-| `[g] [x̄]` | 0 | 0 | 0 | 83.5 | Calculate mean quiz score: $\bar{x} = 83.5$. |
-| `[f] [MED]` | 0 | 0 | 83.5 | 85.0 | Calculate median score: $\text{Median} = 85.0$. |
-| `[g] [MODE]` | 0 | 83.5 | 85.0 | 85.0 | Calculate modal score: $\text{Mode} = 85.0$. |
+| 10 scores keyed with `[Σ+]` | 0 | 0 | 0 | 1 | 10 scores accumulated; sample size $N=10$. |
+| `[g] [x̄]` | 0 | 0 | 0 | $10.0$ | Calculate mean quiz score: $\bar{x} = 83.5$. |
+| `[f] [MED]` | 0 | 0 | $0.0$ | $10.0$ | Calculate median score: $\text{Median} = 85.0$. |
+| `[g] [MODE]` | 0 | $0.0$ | $0.0$ | $10.0$ | Calculate modal score: $\text{Mode} = 85.0$. |
 
 ---
 
@@ -933,12 +933,12 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `0` `.` `0` `8` `7` `5` `[x²]` `[π]` `[×]` | 0 | 0 | 0 | 0.02405 | Filament radius $r = 0.0875\text{ cm}$; area $\pi r^2 = 0.02405\text{ cm}^2$. |
-| `5` `0` `0` `[×]` | 0 | 0 | 0 | 12.0264 | Length $500\text{ cm} \times \text{area} = 12.0264\text{ cm}^3$ volume. |
-| `1` `.` `2` `4` `[×]` | 0 | 0 | 0 | 14.9128 | Density $1.24\text{ g/cm}^3 \times \text{volume} = 14.9128\text{ g}$ mass. |
-| `2` `0` `[ENTER]` `1` `0` `0` `0` `[÷]` | 0 | 0 | 14.9128 | 0.020 | Spool price per gram: $\$20 / 1000\text{ g} = \$0.02/\text{g}$. |
-| `[×]` | 0 | 0 | 0 | 0.2983 | Mass $\times$ price per gram $= \$0.2983$. |
-| `[$]` | 0 | 0 | 0 | $0.30 | Formatted into currency: chassis print costs $\$0.30$! |
+| 0.0875 [x²] [π] [×] | 0 | 0 | 0 | $0.02405$ | Filament radius $r = 0.0875\text{ cm}$; area $\pi r^2 = 0.02405\text{ cm}^2$. |
+| 500 [×] | 0 | 0 | 0 | $12.0264$ | Length $500\text{ cm} \times \text{area} = 12.0264\text{ cm}^3$ volume. |
+| 1.24 [×] | 0 | 0 | 0 | $14.9127$ | Density $1.24\text{ g/cm}^3 \times \text{volume} = 14.9128\text{ g}$ mass. |
+| `2` `0` `[ENTER]` 10 `0` `0` `[÷]` | 0 | 0 | $10.0000$ | $0.000$ | Spool price per gram: $\$20 / 1000\text{ g} = \$0.02/\text{g}$. |
+| `[×]` | 0 | 0 | 0 | $0.0000$ | Mass $\times$ price per gram $= \$0.2983$. |
+| `[$]` | 0 | 0 | 0 | $0.00$ | Formatted into currency: chassis print costs $\$0.30$! |
 
 ---
 
@@ -955,11 +955,11 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `3` `[ENTER]` `2` `[-]` | 0 | 0 | 0 | 1.0 | Battery voltage minus LED forward drop: $3.0 - 2.0 = 1.0\text{ V}$. |
-| `0` `.` `0` `2` `0` `[÷]` | 0 | 0 | 0 | 50.0 | Divide by LED current $0.020\text{ A}$: resistor $R = 50.0\ \Omega$. |
-| `[f] [LASTX]` | 0 | 0 | 50.0 | 0.020 | Restore divisor $I_f = 0.020\text{ A}$ into $X$; $R = 50.0\ \Omega$ lifts to $Y$! |
-| `[x²]` | 0 | 0 | 50.0 | 0.0004 | Square current: $I^2 = 0.0004\text{ A}^2$. |
-| `[×]` | 0 | 0 | 0 | 0.020 | Power $P = I^2 R = 0.020\text{ W}$ ($20\text{ mW}$ dissipation)! |
+| `3` `[ENTER]` `2` `[-]` | 0 | 0 | 0 | $1.0$ | Battery voltage minus LED forward drop: $3.0 - 2.0 = 1.0\text{ V}$. |
+| 0.020 [÷] | 0 | 0 | 0 | $50.0$ | Divide by LED current $0.020\text{ A}$: resistor $R = 50.0\ \Omega$. |
+| `[f] [LASTX]` | 0 | 0 | $50.0$ | $0.020$ | Restore divisor $I_f = 0.020\text{ A}$ into $X$; $R = 50.0\ \Omega$ lifts to $Y$! |
+| `[x²]` | 0 | 0 | $50.0$ | $4.0000 \times 10^{-4}$ | Square current: $I^2 = 0.0004\text{ A}^2$. |
+| `[×]` | 0 | 0 | 0 | $0.020$ | Power $P = I^2 R = 0.020\text{ W}$ ($20\text{ mW}$ dissipation)! |
 
 
 ---
@@ -1567,6 +1567,13 @@ Complete verified sequence: `15 [ENTER] 3 [-] 4 [ENTER] 2 [+] [×] 6 [÷]` $\lon
 | **5th Grade Order of Operations:**<br>$(15 - 3) 	imes (4 + 2) \div 6 = 12$ | `( 1 5 - 3 ) * ( 4 + 2 ) / 6 =`<br>(14 keystrokes).<br>*Trap: Missed or misplaced parenthesis computes $15 - 12 + 0.33 = 3.33$ silently! Intermediate results ($12, 6$) are invisible inside hardware buffers.* | **SC-6 Elevator Stack + Two-Number Fusion:**<br>`15 [ENTER] 3 [-] 4 [ENTER] 2 [+] [×] 6 [÷]`<br>(11 keystrokes).<br>Both intermediate quantities ($12$ in $Y$, $6$ in $X$) are visible simultaneously before multiplying! Zero parentheses. | **21% fewer keystrokes**<br>(11 vs. 14) | **Dual Live Registers:**<br>Register $Y$ holds $12$ while Register $X$ computes $6$; live display proves $(15 - 3) 	imes (4 + 2)$ without scratch paper. | **Cognitive Clarity:**<br>Eliminates parenthesis anxiety and Dijkstra shunting-yard confusion; replaces abstract rules with physical two-number stack fusion. |
 
 
+### 2.3.2 Algebraic Trap vs. StackCalc Superpower Showdown: Order of Operations
+
+| Challenge / Equation | The Algebraic Calculator Trap (TI-30X / Smartphone) | The StackCalc SC-6 + Manipulative Superpower | Keystroke Reduction | Live Stack Visibility | Pedagogical Breakthrough |
+| :--- | :--- | :--- | :---: | :--- | :--- |
+| **5th Grade Order of Operations:**<br>$(15 - 3) 	imes (4 + 2) \div 6 = 12$ | `( 1 5 - 3 ) * ( 4 + 2 ) / 6 =`<br>(14 keystrokes).<br>*Trap: Missed or misplaced parenthesis computes $15 - 12 + 0.33 = 3.33$ silently! Intermediate results ($12, 6$) are invisible inside hardware buffers.* | **SC-6 Elevator Stack + Two-Number Fusion:**<br>`15 [ENTER] 3 [-] 4 [ENTER] 2 [+] [×] 6 [÷]`<br>(11 keystrokes).<br>Both intermediate quantities ($12$ in $Y$, $6$ in $X$) are visible simultaneously before multiplying! Zero parentheses. | **21% fewer keystrokes**<br>(11 vs. 14) | **Dual Live Registers:**<br>Register $Y$ holds $12$ while Register $X$ computes $6$; live display proves $(15 - 3) 	imes (4 + 2)$ without scratch paper. | **Cognitive Clarity:**<br>Eliminates parenthesis anxiety and Dijkstra shunting-yard confusion; replaces abstract rules with physical two-number stack fusion. |
+
+
 <div class="admonition note">
 <p class="admonition-title">For Educators &amp; Parents: Cognitive Load Theory &amp; The Operational Equal-Sign Misconception</p>
 <p>
@@ -1706,152 +1713,74 @@ Rather than facing disconnected lists of drill problems, you embark on four cohe
 ### 2.8.1 Expedition 1: The School Playground Construction Crew (Problems 01–10)
 *Mission Briefing:* The local elementary school is constructing a brand-new adventure playground. As the project engineers, your crew must lay border timbers, pour sandbox gravel, measure stepping stone distances, and ensure safety clearances using the SC-6 stack.
 
-### 2.8.2 Problem 01: Single-Digit Sum ($5 + 3 = 8$)
+### 2.8.2 Problem 01:
 - **Playground Construction Mission:** Your playground construction crew is laying interlocking rubber safety tiles under the two-bay swing set. The crew unloads 5 blue safety tiles in the morning, and the supply truck delivers 3 more green safety tiles in the afternoon. How many total safety tiles are ready to lay down?
 - **Concrete Stage:** Place 5 blue counting tiles on the left side of your desk, and 3 green tiles on the right. Slide them together into one combined row of 8 tiles.
 - **Representational Stage:** The horizontal display shows `Y = 5` (left) and `X = 3` (right) before combining.
 - **Abstract RPN Keystrokes:** `5 [ENTER] 3 [+]` $\rightarrow$ **`8`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T (Roof Floor) | Register Z (Loft Floor) | Register Y (Mezzanine) | Register X (Ground Flr) |
-| :--- | :--- | :--- | :--- | :--- |
-| [C] | 0 | 0 | 0 | 0 |
-| [5] | 0 | 0 | 0 | 5 |
-| [ENTER] | 0 | 0 | 5 | 5 |
-| [3] | 0 | 0 | 5 | 3 |
-| [+] | 0 | 0 | 0 | 8 |
+- **Stack Flow:** Tap `5 [ENTER] 3 [+]` -> (T=0, Z=0, Y=0, X=8) to fuse both groups into 8 on the ground floor.
 - **Diagnostic Checkpoint:** Did you see $Y = 5$ on the left and $X = 3$ on the right before pressing `[+]`? If your screen shows $53$, you forgot to press `[ENTER]` between the digits!
-
 ---
 
-### 2.8.3 Problem 02: Single-Digit Subtraction ($9 - 4 = 5$)
+### 2.8.3 Problem 02:
 - **Playground Construction Mission:** Your crew needs to anchor 9 sturdy cedar fence posts along the adventure playground perimeter. Before lunch, your crew finishes concreting 4 posts firmly into the ground. How many fence posts still need to be anchored?
 - **Concrete Stage:** Align 9 counting tiles in a row representing the fence line. Detach 4 tiles from the end for the completed posts. Count the 5 remaining tiles.
 - **Representational Stage:** Left column holds starting number $9$; right column holds second number $4$.
 - **Abstract RPN Keystrokes:** `9 [ENTER] 4 [-]` $\rightarrow$ **`5`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [9] | 0 | 0 | 0 | 9 |
-| [ENTER] | 0 | 0 | 9 | 9 |
-| [4] | 0 | 0 | 9 | 4 |
-| [-] | 0 | 0 | 0 | 5 |
+- **Stack Flow:** Tap `9 [ENTER] 4 [-]` -> (T=0, Z=0, Y=0, X=5) to leave 5 unbolted posts on the ground floor.
 - **Diagnostic Checkpoint:** If your screen displays $-5$, you entered the second number first (`4 [ENTER] 9 [-]`). Do not re-type! Simply tap `[x⇄y] [-]` to reverse and correct the calculation!
-
 ---
 
-### 2.8.4 Problem 03: Continuous Chained Addition ($4 + 5 + 6 = 15$)
+### 2.8.4 Problem 03:
 - **Playground Construction Mission:** To fill the giant wooden sandbox, your crew wheels loads of washed pea gravel from the supply depot: 4 wheelbarrows on Monday, 5 on Tuesday, and 6 on Wednesday. How many total wheelbarrows of gravel did you pour into the sandbox?
 - **Concrete Stage:** Stack 4 unit cubes on your desk, add 5 cubes, and then add 6 more cubes to form a single continuous tower of 15 cubes.
 - **Abstract RPN Keystrokes:** `4 [ENTER] 5 [+] 6 [+]` $\rightarrow$ **`15`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [4] | 0 | 0 | 0 | 4 |
-| [ENTER] | 0 | 0 | 4 | 4 |
-| [5] | 0 | 0 | 4 | 5 |
-| [+] | 0 | 0 | 0 | 9 |
-| [6] | 0 | 0 | 9 | 6 |
-| [+] | 0 | 0 | 0 | 15 |
-- **Automatic Stack Lift Invariant:** Notice row 5. Typing `6` automatically lifts the intermediate subtotal $9$ into Register $Y$. You do **not** press `[ENTER]` again!
-
+- **Stack Flow:** Tap `4 [ENTER] 5 [+] 6 [+]` -> (T=0, Z=0, Y=0, X=15). The intermediate sum $9$ automatically lifts to $Y$ when you key $6$, delivering $15$ with zero extra `[ENTER]` strokes.
 ---
 
-### 2.8.5 Problem 04: Regrouping Across Ten ($8 + 7 = 15$)
+### 2.8.5 Problem 04:
 - **Playground Construction Mission:** Your crew is installing round sensory stepping stones along the winding garden path. You lay down 8 smooth slate stones in the morning, and the supply truck brings 7 granite stones in the afternoon. How many total stepping stones lead to the climbing tower?
 - **Concrete Stage:** Place 8 counters into your first Ten-Frame tray. Take 2 counters from the group of 7 to fill the first tray to a complete 10; the remaining 5 counters spill into the second tray. Total: 1 full ten and 5 ones ($15$).
 - **Abstract RPN Keystrokes:** `8 [ENTER] 7 [+]` $\rightarrow$ **`15`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [8] | 0 | 0 | 0 | 8 |
-| [ENTER] | 0 | 0 | 8 | 8 |
-| [7] | 0 | 0 | 8 | 7 |
-| [+] | 0 | 0 | 0 | 15 |
-- **Diagnostic Checkpoint:** The result $15$ is immediately available on Level $X$ for subsequent additions.
-
+- **Stack Flow:** Tap `8 [ENTER] 7 [+]` -> (T=0, Z=0, Y=0, X=15), bridging the decade seamlessly to leave 15 stepping stones.
 ---
 
-### 2.8.6 Problem 05: Taking from Ten ($10 - 6 = 4$)
+### 2.8.6 Problem 05:
 - **Playground Construction Mission:** A heavy hardware box holds a bundle of 10 galvanized steel crossbeam bolts for the jungle gym frame. Your crew bolts 6 of them through the climbing net uprights. How many bolts remain in the box for the balance-beam brackets?
 - **Concrete Stage:** Fill a complete Ten-Frame tray with 10 counters. Remove 6 counters. Exactly 4 counters remain in the tray.
 - **Abstract RPN Keystrokes:** `10 [ENTER] 6 [-]` $\rightarrow$ **`4`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [1] [0] | 0 | 0 | 0 | 10 |
-| [ENTER] | 0 | 0 | 10 | 10 |
-| [6] | 0 | 0 | 10 | 6 |
-| [-] | 0 | 0 | 0 | 4 |
-
+- **Stack Flow:** Tap `10 [ENTER] 6 [-]` -> (T=0, Z=0, Y=0, X=4), leaving 4 bolts ready in Register $X$.
 ---
 
-### 2.8.7 Problem 06: Zero Property of Addition ($7 + 0 = 7$)
+### 2.8.7 Problem 06:
 - **Playground Construction Mission:** Your crew stakes 7 bright orange survey flags along the safety perimeter of the zip-line runway. The ground inspector checks the layout and confirms that zero additional flags are needed ($+0$). How many flags remain planted along the runway?
 - **Concrete Stage:** Place 7 counting tiles on your desk. Add zero tiles. You still have 7 tiles.
 - **Abstract RPN Keystrokes:** `7 [ENTER] 0 [+]` $\rightarrow$ **`7`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [7] | 0 | 0 | 0 | 7 |
-| [ENTER] | 0 | 0 | 7 | 7 |
-| [0] | 0 | 0 | 7 | 0 |
-| [+] | 0 | 0 | 0 | 7 |
-- **Mathematical Property:** Identity element of addition ($a + 0 = a$).
-
+- **Stack Flow:** Tap `7 [ENTER] 0 [+]` -> (T=0, Z=0, Y=0, X=7), proving identity element $a + 0 = a$.
 ---
 
-### 2.8.8 Problem 07: Zero Property of Subtraction ($8 - 0 = 8$)
+### 2.8.8 Problem 07:
 - **Playground Construction Mission:** The crew equipment chest has 8 safety climbing carabiners hanging from the inspection rack. During morning foundation prep, zero carabiners are taken out because the climbing tower hasn't arrived yet. How many carabiners stay clipped to the rack?
 - **Concrete Stage:** Set out 8 counting tiles. Remove zero tiles. Exactly 8 tiles remain.
 - **Abstract RPN Keystrokes:** `8 [ENTER] 0 [-]` $\rightarrow$ **`8`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [8] | 0 | 0 | 0 | 8 |
-| [ENTER] | 0 | 0 | 8 | 8 |
-| [0] | 0 | 0 | 8 | 0 |
-| [-] | 0 | 0 | 0 | 8 |
-
+- **Stack Flow:** Tap `8 [ENTER] 0 [-]` -> (T=0, Z=0, Y=0, X=8), verifying $a - 0 = a$.
 ---
 
-### 2.8.9 Problem 08: Identity Subtraction ($6 - 6 = 0$)
+### 2.8.9 Problem 08:
 - **Playground Construction Mission:** 6 heavy galvanized link chains are uncoiled on the grass for the three playground tire swings. Your crew bolts all 6 chains to the overhead swing hanger hooks. How many uninstalled chains remain on the grass?
 - **Concrete Stage:** Place 6 counting tiles on the desk. Remove all 6 tiles. Zero tiles remain ($6 - 6 = 0$).
 - **Abstract RPN Keystrokes:** `6 [ENTER] 6 [-]` $\rightarrow$ **`0`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [6] | 0 | 0 | 0 | 6 |
-| [ENTER] | 0 | 0 | 6 | 6 |
-| [6] | 0 | 0 | 6 | 6 |
-| [-] | 0 | 0 | 0 | 0 |
-
+- **Stack Flow:** Tap `6 [ENTER] 6 [-]` -> (T=0, Z=0, Y=0, X=0), clearing inventory to zero.
 ---
 
-### 2.8.10 Problem 09: Two-Digit Addition without Regrouping ($23 + 14 = 37$)
+### 2.8.10 Problem 09:
 - **Playground Construction Mission:** Your construction crew paves the safety perimeter around the spiral slide using 23 heavy interlocking rubber pavers, and lays another 14 pavers around the low balance-beam zone. How many total border pavers did your crew install?
 - **Concrete Stage:** Build 23 using 2 ten-sticks and 3 unit cubes. Build 14 using 1 ten-stick and 4 unit cubes. Combine tens ($2+1=3$) and ones ($3+4=7$) to find 37.
 - **Abstract RPN Keystrokes:** `23 [ENTER] 14 [+]` $\rightarrow$ **`37`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [2] [3] | 0 | 0 | 0 | 23 |
-| [ENTER] | 0 | 0 | 23 | 23 |
-| [1] [4] | 0 | 0 | 23 | 14 |
-| [+] | 0 | 0 | 0 | 37 |
-
+- **Stack Flow:** Tap `23 [ENTER] 14 [+]` -> (T=0, Z=0, Y=0, X=37), calculating 37 installed pavers in one fluent motion.
 ---
 
-### 2.8.11 Problem 10: Two-Digit Addition with Regrouping ($47 + 36 = 83$)
+### 2.8.11 Problem 10:
 - **Playground Construction Mission:** Your crew spreads soft cedar playground woodchips beneath the monkey bars to ensure a deep shock-absorbing cushion. The first wheelbarrow delivers $47\text{ kg}$ of woodchips, and the second wheelbarrow brings $36\text{ kg}$. What is the total mass of woodchips spread beneath the bars?
 - **Concrete Stage:** Represent 47 with 4 tens and 7 ones. Represent 36 with 3 tens and 6 ones. Combine ones ($7 + 6 = 13$, regroup as 1 ten and 3 ones), then add tens ($4 + 3 + 1 = 8$ tens). Total: 8 tens and 3 ones ($83$).
 - **Abstract RPN Keystrokes:** `47 [ENTER] 36 [+]` $\rightarrow$ **`83`**
@@ -1859,523 +1788,355 @@ Rather than facing disconnected lists of drill problems, you embark on four cohe
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [4] [7] | 0 | 0 | 0 | 47 |
+| 47 | 0 | 0 | 0 | 47 |
 | [ENTER] | 0 | 0 | 47 | 47 |
-| [3] [6] | 0 | 0 | 47 | 36 |
+| 36 | 0 | 0 | 47 | 36 |
 | [+] | 0 | 0 | 0 | 83 |
 | [f] [LASTX] | 0 | 0 | 83 | 36 |
 | [-] | 0 | 0 | 0 | 47 |
 - **Self-Check Invariant:** Rows 5 and 6 demonstrate Superpower 4 (`[f] [LASTX]`), verifying $83 - 36 = 47$ instantly.
-
-
 ---
 
 ### 2.8.12 Expedition 2: The High-Rise Elevator Express (Problems 11–20)
 *Mission Briefing:* You are the logistics controller for a bustling 20-story urban high-rise. Your mission is to track passenger loads rising between floors, monitor freight delivery weights, and calculate multi-floor transfers using the SC-6 operational stack.
 
-### 2.8.13 Problem 11: Two-Digit Subtraction with Regrouping ($83 - 36 = 47$)
+### 2.8.13 Problem 11:
 - **High-Rise Elevator Mission:** A freight elevator begins at the ground floor loaded with $83\text{ kg}$ of construction fixtures. At Floor 4, the logistics crew unloads $36\text{ kg}$ of steel brackets. How many kilograms of cargo remain inside the freight cab?
 - **Concrete Stage (Counting Tile Studio):** Lay out 8 ten-rods and 3 unit cubes ($83$). To subtract 36, trade 1 ten-rod for 10 units (leaving 7 tens and 13 units). Remove 3 tens and 6 units to leave 4 tens and 7 units ($47$).
 - **Abstract RPN Keystrokes:** `83 [ENTER] 36 [-]` $\rightarrow$ **`47`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `8` `3` | $0$ | $0$ | $0$ | $83$ | Initial elevator cargo mass entered into ground floor $X$ |
-| `[ENTER]` | $0$ | $0$ | $83$ | $83$ | Stack lifts; cargo mass secured on Floor $Y$ |
-| `3` `6` | $0$ | $0$ | $83$ | $36$ | Unloaded fixture mass keyed into Floor $X$ |
-| `[-]` | $0$ | $0$ | $0$ | $47$ | Starting number $Y$ minus second number $X$; $47\text{ kg}$ remaining cargo |
-
+- **Stack Flow:** Tap `83 [ENTER] 36 [-]` -> (T=0, Z=0, Y=0, X=47) to leave 47 kg of remaining fixtures.
 ---
 
-### 2.8.14 Problem 12: Doubling a Quantity via `[ENTER] [+]` ($16 \to 32$)
+### 2.8.14 Problem 12:
 - **High-Rise Elevator Mission:** An express elevator cab carries 16 convention delegates from the concourse. At the mezzanine level, an equal delegation of 16 more delegates steps aboard, doubling the passenger count. How many delegates are now riding the elevator?
 - **Concrete Stage:** Stack two identical 16-tile towers from your counting tile studio, showing $16 + 16 = 32$.
 - **RPN Keystrokes:** `16 [ENTER] [+]` $\rightarrow$ **`32`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `6` | $0$ | $0$ | $0$ | $16$ | Initial passenger count enters active Register $X$ |
-| `[ENTER]` | $0$ | $0$ | $16$ | $16$ | Elevator lift duplicates $16$ into both $Y$ and $X$ |
-| `[+]` | $0$ | $0$ | $0$ | $32$ | Instant doubling: $16 + 16 = 32$ without re-typing |
-
-- **Stack Superpower:** Tapping `[ENTER]` places the number in both $Y$ and $X$. Pressing `[+]` immediately doubles it in a single rhythmic motion!
-
+- **Stack Flow:** Tap `16 [ENTER] [+]` -> (T=0, Z=0, Y=0, X=32). Pressing `[ENTER]` duplicates 16 into both shelves, and `[+]` doubles it instantly without re-typing!
 ---
 
-### 2.8.15 Problem 13: Geometric Doubling Ladder ($2 \to 4 \to 8 \to 16 \to 32$)
+### 2.8.15 Problem 13:
 - **High-Rise Elevator Mission:** An automated smart-lift dispatch computer doubles its active corridor scans on each floor rise. Starting with $2$ baseline sensor beams at Floor 1, determine the total active sensor scans by Floor 5.
 - **Concrete Stage:** Place 2 tiles on the table. Double the pile to 4, then 8, then 16, then 32, feeling exponential growth in your hands.
 - **RPN Keystrokes:** `2 [ENTER] [+] [ENTER] [+] [ENTER] [+] [ENTER] [+]` $\rightarrow$ **`32`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2` | $0$ | $0$ | $0$ | $2$ | Floor 1 baseline sensor beam count enters $X$ |
-| `[ENTER]` `[+]` | $0$ | $0$ | $0$ | $4$ | Cycle 1: Duplicated and added ($2 \times 2 = 4$) |
-| `[ENTER]` `[+]` | $0$ | $0$ | $0$ | $8$ | Cycle 2: Duplicated and added ($4 \times 2 = 8$) |
-| `[ENTER]` `[+]` | $0$ | $0$ | $0$ | $16$ | Cycle 3: Duplicated and added ($8 \times 2 = 16$) |
-| `[ENTER]` `[+]` | $0$ | $0$ | $0$ | $32$ | Cycle 4: Duplicated and added ($16 \times 2 = 32$ scans) |
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 2 | 0 | 0 | 0 | 2 |
+| [ENTER] [+] | 0 | 0 | 0 | 4 |
+| [ENTER] [+] | 0 | 0 | 0 | 8 |
+| [ENTER] [+] | 0 | 0 | 0 | 16 |
+| [ENTER] [+] | 0 | 0 | 0 | 32 |
 ---
 
-### 2.8.16 Problem 14: Three-Stage High-Rise Transfer Total ($15 + 24 + 31 = 70$)
+### 2.8.16 Problem 14:
 - **High-Rise Elevator Mission:** During morning rush hour, an express elevator boards 15 passengers on the subway concourse, 24 passengers on the ground plaza, and 31 passengers at the parking deck. How many total passengers are transported upward?
 - **Concrete Stage:** Form three separate tile trains of 15, 24, and 31 tiles. Slide them end-to-end to verify a combined length of 70 tiles.
 - **RPN Keystrokes:** `15 [ENTER] 24 [+] 31 [+]` $\rightarrow$ **`70`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `5` | $0$ | $0$ | $0$ | $15$ | Concourse passengers enter Register $X$ |
-| `[ENTER]` | $0$ | $0$ | $15$ | $15$ | Passengers lift safely to Mezzanine Floor $Y$ |
-| `2` `4` | $0$ | $0$ | $15$ | $24$ | Plaza passengers board at Ground Floor $X$ |
-| `[+]` | $0$ | $0$ | $0$ | $39$ | First subtotal ($15 + 24 = 39$) forms in $X$ |
-| `3` `1` | $0$ | $0$ | $39$ | $31$ | Subtotal auto-lifts to $Y$; parking passengers enter $X$ |
-| `[+]` | $0$ | $0$ | $0$ | $70$ | Final addition yields $70$ total passengers |
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 15 | 0 | 0 | 0 | 15 |
+| [ENTER] | 0 | 0 | 15 | 15 |
+| 24 | 0 | 0 | 15 | 24 |
+| [+] | 0 | 0 | 0 | 39 |
+| 31 | 0 | 0 | 39 | 31 |
+| [+] | 0 | 0 | 0 | 70 |
 ---
 
-### 2.8.17 Problem 15: Subtraction from Round Century ($100 - 43 = 57$)
+### 2.8.17 Problem 15:
 - **High-Rise Elevator Mission:** The skyscraper's observation deck elevator has a maximum permitted safety capacity of 100 people. If an incoming tour group consists of 43 visitors, how many additional visitors can board before reaching capacity?
 - **Concrete Stage:** Model 100 with a ten-by-ten tile flat. Remove 4 rows of ten and 3 individual tiles to reveal 5 tens and 7 units ($57$).
 - **RPN Keystrokes:** `100 [ENTER] 43 [-]` $\rightarrow$ **`57`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `0` `0` | $0$ | $0$ | $0$ | $100$ | Maximum rated cab capacity entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $100$ | $100$ | Capacity limit lifts to upper holding shelf $Y$ |
-| `4` `3` | $0$ | $0$ | $100$ | $43$ | Boarding visitor count keyed into active Register $X$ |
-| `[-]` | $0$ | $0$ | $0$ | $57$ | Capacity minus visitors; $57$ remaining passenger spots |
-
+- **Stack Flow:** Tap `100 [ENTER] 43 [-]` -> (T=0, Z=0, Y=0, X=57), confirming 57 open visitor spots.
 ---
 
-### 2.8.18 Problem 16: Step-Counting by Tens in 2-Stack Mode (`2-LV`)
+### 2.8.18 Problem 16:
 - **High-Rise Elevator Mission:** The elevator safety inspector tests the floor indicator sensors by stepping upward in 10-floor intervals starting from the basement lobby (Floor 0) up to Floor 50 in 2-stack mode (`2-LV`).
 - **Concrete Stage:** Line up 5 ten-rods end-to-end, counting rhythmically: 10, 20, 30, 40, 50.
 - **RPN Keystrokes:** `10 [ENTER] 0 [+] [+] [+] [+] [+]` $\rightarrow$ **`10`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `0` | $0$ | $0$ | $0$ | $10$ | Step increment of 10 floors keyed into $X$ |
-| `[ENTER]` | $0$ | $0$ | $10$ | $10$ | Step increment locked into constant holder Register $Y$ |
-| `0` | $0$ | $0$ | $10$ | $0$ | Starting basement datum (Floor 0) entered into $X$ |
-| `[+]` | $0$ | $0$ | $10$ | $10$ | Step 1: $0 + 10 = 10$; Floor 10 reached |
-| `[+]` | $0$ | $0$ | $10$ | $20$ | Step 2: Constant $10$ adds; Floor 20 reached |
-| `[+]` | $0$ | $0$ | $10$ | $30$ | Step 3: Constant $10$ adds; Floor 30 reached |
-| `[+]` | $0$ | $0$ | $10$ | $40$ | Step 4: Constant $10$ adds; Floor 40 reached |
-| `[+]` | $0$ | $0$ | $10$ | $50$ | Step 5: Constant $10$ adds; Floor 50 reached |
-
-- **Stack Insight:** In 2-Stack mode, Register $Y$ acts as the constant holder ($10$), enabling continuous step counting on every press of `[+]`.
-
+- **Stack Flow:** In 2-Stack mode, Register $Y$ acts as the constant holder. Key in `10 [ENTER] 0 [+]` -> (T=0, Z=0, Y=0, X=10); subsequent taps of `[+]` climb rhythmically through Floors 20, 30, 40, and 50.
 ---
 
-### 2.8.19 Problem 17: Rectangular Array Multiplication ($4 \times 6 = 24$)
+### 2.8.19 Problem 17:
 - **High-Rise Elevator Mission:** The skyscraper's parking garage has 4 levels, each equipped with 6 electric vehicle elevator transfer bays. How many transfer bays are available in total?
 - **Concrete Stage:** Construct a $4 \times 6$ array using 24 counting tiles from the manipulative studio.
 - **RPN Keystrokes:** `4 [ENTER] 6 [×]` $\rightarrow$ **`24`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0$ | $0$ | $0$ | $4$ | Number of garage levels entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $4$ | $4$ | Level count lifts to Mezzanine Floor $Y$ |
-| `6` | $0$ | $0$ | $4$ | $6$ | Transfer bays per level entered into Ground Floor $X$ |
-| `[×]` | $0$ | $0$ | $0$ | $24$ | Row-by-column multiplication gives $24$ total bays |
-
+- **Stack Flow:** Tap `4 [ENTER] 6 [×]` -> (T=0, Z=0, Y=0, X=24), calculating 24 total transfer bays.
 ---
 
-### 2.8.20 Problem 18: High-Rise Window Array ($7 \times 8 = 56$)
+### 2.8.20 Problem 18:
 - **High-Rise Elevator Mission:** The exterior window washing elevator scaffold cleans 7 structural window bays on each of 8 executive floors. How many total window panes are washed on this run?
 - **Concrete Stage:** Build a $7 \times 8$ grid using counting studio tiles, rotating the tray $90^\circ$ to see that $7 \times 8 = 8 \times 7 = 56$.
 - **RPN Keystrokes:** `7 [ENTER] 8 [×]` $\rightarrow$ **`56`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `7` | $0$ | $0$ | $0$ | $7$ | Window bays per floor entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $7$ | $7$ | Bays per floor lifts safely to Register $Y$ |
-| `8` | $0$ | $0$ | $7$ | $8$ | Number of executive floors entered into Register $X$ |
-| `[×]` | $0$ | $0$ | $0$ | $56$ | Array product computes $56$ total window panes |
-
+- **Stack Flow:** Tap `7 [ENTER] 8 [×]` -> (T=0, Z=0, Y=0, X=56), evaluating 56 window panes.
 ---
 
-### 2.8.21 Problem 19: Equal Sharing Division ($24 \div 4 = 6$)
+### 2.8.21 Problem 19:
 - **High-Rise Elevator Mission:** A security supervisor delivers 24 handheld communication radios equally among 4 elevator lobby stations. How many radios are allocated to each station?
 - **Concrete Stage:** Deal out 24 counting tiles into 4 equal groups, confirming 6 tiles in each group.
 - **RPN Keystrokes:** `24 [ENTER] 4 [÷]` $\rightarrow$ **`6`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2` `4` | $0$ | $0$ | $0$ | $24$ | Total radios to be distributed entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $24$ | $24$ | Total lifts to Mezzanine Floor $Y$ |
-| `4` | $0$ | $0$ | $24$ | $4$ | Number of target lobby stations entered into $X$ |
-| `[÷]` | $0$ | $0$ | $0$ | $6$ | Equal division yields $6$ radios per station |
-
+- **Stack Flow:** Tap `24 [ENTER] 4 [÷]` -> (T=0, Z=0, Y=0, X=6), allocating 6 radios per station.
 ---
 
-### 2.8.22 Problem 20: Equal Partition Division ($56 \div 7 = 8$)
+### 2.8.22 Problem 20:
 - **High-Rise Elevator Mission:** An express shuttle elevator transports 56 security staff members arriving for an international summit, distributing them equally across 7 security checkpoint floors. How many officers are stationed on each floor?
 - **Concrete Stage:** Separate a group of 56 counting tiles into 7 equal rows, counting 8 tiles per row.
 - **RPN Keystrokes:** `56 [ENTER] 7 [÷]` $\rightarrow$ **`8`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `5` `6` | $0$ | $0$ | $0$ | $56$ | Total staff officers entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $56$ | $56$ | Total lifts to Mezzanine Floor $Y$ |
-| `7` | $0$ | $0$ | $56$ | $7$ | Checkpoint floor count entered into $X$ |
-| `[÷]` | $0$ | $0$ | $0$ | $8$ | Equal partition allocates $8$ officers per floor |
-
-
+- **Stack Flow:** Tap `56 [ENTER] 7 [÷]` -> (T=0, Z=0, Y=0, X=8), placing 8 officers per floor.
 ---
 
 ### 2.8.23 Expedition 3: The Saturday Supermarket Shopping Spree (Problems 21–30)
 *Mission Briefing:* Armed with a weekly household grocery budget, you navigate the supermarket aisles. You must calculate bulk food packaging remainders, compute multi-item basket discounts, verify sales receipts, and check coin change without scratch paper.
 
-### 2.8.24 Problem 21: Superpower 2 Division with Remainder ($17 \div 5$)
+### 2.8.24 Problem 21:
 - **Supermarket Shopping Mission:** The bakery aisle manager packages 17 warm sourdough dinner rolls into bags of 5 rolls. How many bags are filled completely, and how many loose rolls remain?
 - **Concrete Stage:** Distribute 17 counting tiles into groups of 5. Count 3 full groups and 2 loose tiles.
 - **Abstract RPN Keystrokes:** `17 [ENTER] 5 [g] [÷R]` $\rightarrow$ **`3`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `7` | $0$ | $0$ | $0$ | $17$ | Total dinner rolls entered into Register $X$ |
-| `[ENTER]` | $0$ | $0$ | $17$ | $17$ | Rolls lift to Mezzanine Floor $Y$ |
-| `5` | $0$ | $0$ | $17$ | $5$ | Bag packaging capacity entered into Floor $X$ |
-| `[g] [÷R]` | $0$ | $0$ | $2$ | $3$ | Integer division: $Q = 3$ bags in $X$, $R = 2$ loose rolls in $Y$ |
-| `[x⇄y]` | $0$ | $0$ | $3$ | $2$ | Swap registers: inspect remainder $2$ on active display |
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 17 | 0 | 0 | 0 | 17 |
+| [ENTER] | 0 | 0 | 17 | 17 |
+| 5 | 0 | 0 | 17 | 5 |
+| [g] [÷R] | 0 | 0 | 2 | 3 |
+| [x⇄y] | 0 | 0 | 3 | 2 |
 - **Diagnostic Checkpoint:** Register $X$ shows Quotient $Q = 3$ full bags. Register $Y$ holds Remainder $R = 2$ loose rolls. Press `[x⇄y]` to inspect remainder and swap back. Total bags needed to pack all rolls: $3 + 1 = 4\text{ bags}$.
-
 ---
 
-### 2.8.25 Problem 22: Division with Remainder ($125 \div 8$)
+### 2.8.25 Problem 22:
 - **Supermarket Shopping Mission:** In the dairy aisle, a wholesale crate of 125 farm-fresh eggs is sorted into specialty cartons holding 8 eggs each. How many cartons are filled completely, and how many eggs remain?
 - **Concrete Stage:** Group base-10 counting blocks to represent 125 divided by 8, observing 15 full groups of 8 and 5 remaining units.
 - **RPN Keystrokes:** `125 [ENTER] 8 [g] [÷R]` $\rightarrow$ **`15`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `2` `5` | $0$ | $0$ | $0$ | $125$ | Total egg count keyed into Register $X$ |
-| `[ENTER]` | $0$ | $0$ | $125$ | $125$ | Egg count lifts to Register $Y$ |
-| `8` | $0$ | $0$ | $125$ | $8$ | Carton capacity (8 eggs) keyed into Register $X$ |
-| `[g] [÷R]` | $0$ | $0$ | $5$ | $15$ | Quotient $15$ cartons in $X$; remainder $5$ eggs in $Y$ |
-
-- **Result:** $X = 15$ full cartons, $Y = 5$ leftover eggs.
-
+- **Stack Flow:** Tap `125 [ENTER] 8 [g] [÷R]` -> (T=0, Z=0, Y=5, X=15), revealing 15 full cartons in Register $X$ and 5 leftover eggs in Register $Y$.
 ---
 
-### 2.8.26 Problem 23: Multiplication Verification via `[f] [LASTX]`
+### 2.8.26 Problem 23:
 - **Supermarket Shopping Mission:** The store manager orders 15 wholesale crates of Valencia oranges at $\$8.00$ per crate ($15 \times 8 = 120$). Verify the total invoice using Superpower 4 (`[f] [LASTX]`) without re-typing.
 - **Concrete Stage:** Model 15 rows of 8 tiles, then divide the total by 8 to restore the original 15 rows.
 - **RPN Keystrokes:** `15 [ENTER] 8 [×] [f] [LASTX] [÷]` $\rightarrow$ **`15`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `5` | $0$ | $0$ | $0$ | $15$ | Crates ordered entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $15$ | $15$ | Crate count lifts to Mezzanine Floor $Y$ |
-| `8` | $0$ | $0$ | $15$ | $8$ | Price per crate entered into Ground Floor $X$ |
-| `[×]` | $0$ | $0$ | $0$ | $120$ | Invoice total ($15 \times 8 = \$120$) calculates into $X$ |
-| `[f] [LASTX]` | $0$ | $0$ | $120$ | $8$ | Superpower 4 recalls prior number ($8$) into $X$ |
-| `[÷]` | $0$ | $0$ | $0$ | $15$ | Inverse check: $\$120 \div 8 = 15$ crates confirmed |
-
-- **Result:** Inverse division restores starting multiplicand $15.0$ in Register $X$!
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 15 | 0 | 0 | 0 | 15 |
+| [ENTER] | 0 | 0 | 15 | 15 |
+| 8 | 0 | 0 | 15 | 8 |
+| [×] | 0 | 0 | 0 | 120 |
+| [f] [LASTX] | 0 | 0 | 120 | 8 |
+| [÷] | 0 | 0 | 0 | 15 |
 ---
 
-### 2.8.27 Problem 24: Correcting Reversed Numbers with `[x⇄y]`
+### 2.8.27 Problem 24:
 - **Supermarket Shopping Mission:** A shopper calculates unit pricing for a 24-ounce container of Greek yogurt divided into 8 snack portions ($24 \div 8 = 3$), but accidentally typed 8 first (`8 [ENTER] 24`).
 - **Remediation Keystrokes:** `8 [ENTER] 24 [x⇄y] [÷]` $\rightarrow$ **`3`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| *(Accident)* | $0$ | $0$ | $8$ | $24$ | Numbers staged in reverse order ($Y=8, X=24$) |
-| `[x⇄y]` | $0$ | $0$ | $24$ | $8$ | Single keystroke swaps numbers: $Y=24, X=8$ |
-| `[÷]` | $0$ | $0$ | $0$ | $3$ | Correct quotient ($24 \div 8 = 3$) evaluates in place |
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 8 | 0 | 0 | 0 | 8 |
+| [ENTER] | 0 | 0 | 8 | 8 |
+| 24 | 0 | 0 | 8 | 24 |
+| [x⇄y] | 0 | 0 | 24 | 8 |
+| [÷] | 0 | 0 | 0 | 3 |
 - **Diagnostic Checkpoint:** Never start over when you type numbers in the wrong order! Just tap the swap key [x⇄y] to put them in the right seats, then divide!
-
 ---
 
-### 2.8.28 Problem 25: Multi-Step Grocery Cart Item Total ($14 + 5 - 3 = 16$)
+### 2.8.28 Problem 25:
 - **Supermarket Shopping Mission:** A shopper enters the checkout lane with 14 items in their cart. They add 5 items from the impulse rack, but decide to put back 3 items. How many items are scanned at checkout?
 - **Concrete Stage:** Place 14 counting tiles on the desk. Add 5 more tiles, then remove 3 tiles.
 - **RPN Keystrokes:** `14 [ENTER] 5 [+] 3 [-]` $\rightarrow$ **`16`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `4` | $0$ | $0$ | $0$ | $14$ | Initial cart item count entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $14$ | $14$ | Initial count lifts to Register $Y$ |
-| `5` | $0$ | $0$ | $14$ | $5$ | Added items entered into Ground Floor $X$ |
-| `[+]` | $0$ | $0$ | $0$ | $19$ | Subtotal ($14 + 5 = 19$) calculates into $X$ |
-| `3` | $0$ | $0$ | $19$ | $3$ | Subtotal auto-lifts to $Y$; returned items entered in $X$ |
-| `[-]` | $0$ | $0$ | $0$ | $16$ | Final item count ($19 - 3 = 16$) appears in $X$ |
-
-- **Diagnostic Checkpoint:** Notice how 19 was automatically lifted into $Y$ when you typed 3!
-
+- **Stack Flow:** Tap `14 [ENTER] 5 [+] 3 [-]` -> (T=0, Z=0, Y=0, X=16). The subtotal 19 auto-lifts when you type 3, arriving at 16 scanned items seamlessly.
 ---
 
-### 2.8.29 Problem 26: Combined Store Purchase ($(3 \times 4) + (2 \times 5) = 22$)
+### 2.8.29 Problem 26:
 - **Supermarket Shopping Mission:** At the bakery counter, a customer buys 3 artisan baguettes at $\$4.00$ each and 2 specialty cheese rounds at $\$5.00$ each. Find the total basket cost.
 - **Concrete Stage:** Build two tile groups: one $3 \times 4$ array (12) and one $2 \times 5$ array (10). Slide them together to count 22 tiles.
 - **RPN Keystrokes:** `3 [ENTER] 4 [×] 2 [ENTER] 5 [×] [+]` $\rightarrow$ **`22`**
 - **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3` | $0$ | $0$ | $0$ | $3$ | Baguette quantity entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $3$ | $3$ | Quantity lifts to Register $Y$ |
-| `4` | $0$ | $0$ | $3$ | $4$ | Price per baguette entered into $X$ |
-| `[×]` | $0$ | $0$ | $0$ | $12$ | Baguette subtotal ($3 \times 4 = \$12$) forms in $X$ |
-| `2` | $0$ | $0$ | $12$ | $2$ | Subtotal auto-lifts to $Y$; cheese quantity keyed into $X$ |
-| `[ENTER]` | $0$ | $12$ | $2$ | $2$ | Stack lifts: $\$12$ to $Z$, quantity $2$ to $Y$ and $X$ |
-| `5` | $0$ | $12$ | $2$ | $5$ | Price per cheese round entered into $X$ |
-| `[×]` | $0$ | $0$ | $12$ | $10$ | Cheese subtotal ($2 \times 5 = \$10$) forms in $X$ ($Y=\$12$) |
-| `[+]` | $0$ | $0$ | $0$ | $22$ | Combined total ($12 + 10 = \$22$) resolves cleanly |
-
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| 3 | 0 | 0 | 0 | 3 |
+| [ENTER] | 0 | 0 | 3 | 3 |
+| 4 | 0 | 0 | 3 | 4 |
+| [×] | 0 | 0 | 0 | 12 |
+| 2 | 0 | 0 | 12 | 2 |
+| [ENTER] | 0 | 12 | 2 | 2 |
+| 5 | 0 | 12 | 2 | 5 |
+| [×] | 0 | 0 | 12 | 10 |
+| [+] | 0 | 0 | 0 | 22 |
 - **Stack Elegance:** Notice in row 8: Register $Y$ held the first subtotal ($12$) while Register $X$ computed the second subtotal ($10$). Pressing `[+]` combined them cleanly without writing down anything on paper!
-
 ---
 
-### 2.8.30 Problem 27: Perimeter of a Rectangular Display Table ($2 \times (12 + 8) = 40$)
+### 2.8.30 Problem 27:
 - **Supermarket Shopping Mission:** The store manager arranges a rectangular organic fruit display table that is 12 feet long and 8 feet wide. What is the total length of decorative bumper railing needed to surround the table?
 - **Concrete Stage:** Construct a 12 by 8 rectangle with grid tiles, calculating $2 \times (\text{length} + \text{width})$.
 - **RPN Keystrokes:** `12 [ENTER] 8 [+] 2 [×]` $\rightarrow$ **`40`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `2` | $0$ | $0$ | $0$ | $12$ | Table length (12 ft) entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $12$ | $12$ | Length lifts to Register $Y$ |
-| `8` | $0$ | $0$ | $12$ | $8$ | Table width (8 ft) entered into $X$ |
-| `[+]` | $0$ | $0$ | $0$ | $20$ | Semi-perimeter ($12 + 8 = 20\text{ ft}$) evaluates in $X$ |
-| `2` | $0$ | $0$ | $20$ | $2$ | Semi-perimeter auto-lifts to $Y$; factor $2$ entered in $X$ |
-| `[×]` | $0$ | $0$ | $0$ | $40$ | Total perimeter ($20 \times 2 = 40\text{ ft}$) calculated |
-
-- **Result:** $40\text{ feet}$.
-
+- **Stack Flow:** Tap `12 [ENTER] 8 [+] 2 [×]` -> (T=0, Z=0, Y=0, X=40), calculating 40 feet of bumper railing without writing down semi-perimeter 20.
 ---
 
-### 2.8.31 Problem 28: Promotional Triangular Sign Area ($\frac{1}{2} \times 10 \times 6 = 30$)
+### 2.8.31 Problem 28:
 - **Supermarket Shopping Mission:** A triangular promotional sign hanging over the bakery aisle has a base of 10 cm and a height of 6 cm. What is the surface area of the promotional sign?
 - **Concrete Stage:** Form a $10 \times 6$ array of 60 tiles, then divide it into two equal halves of 30 tiles.
 - **RPN Keystrokes:** `10 [ENTER] 6 [×] 2 [÷]` $\rightarrow$ **`30`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `0` | $0$ | $0$ | $0$ | $10$ | Sign base (10 cm) entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $10$ | $10$ | Base lifts to Register $Y$ |
-| `6` | $0$ | $0$ | $10$ | $6$ | Sign height (6 cm) entered into $X$ |
-| `[×]` | $0$ | $0$ | $0$ | $60$ | Base times height ($10 \times 6 = 60$) forms in $X$ |
-| `2` | $0$ | $0$ | $60$ | $2$ | Product auto-lifts to $Y$; divisor $2$ entered in $X$ |
-| `[÷]` | $0$ | $0$ | $0$ | $30$ | Half-area ($\frac{60}{2} = 30\text{ cm}^2$) evaluates |
-
-- **Result:** $30\text{ cm}^2$.
-
+- **Stack Flow:** Tap `10 [ENTER] 6 [×] 2 [÷]` -> (T=0, Z=0, Y=0, X=30), evaluating the $30\text{ cm}^2$ sign area cleanly.
 ---
 
-### 2.8.32 Problem 29: Weekly Grocery Allowance Balance ($50 - 18 - 12 = 20$)
+### 2.8.32 Problem 29:
 - **Supermarket Shopping Mission:** A customer brings a $\$50$ cash grocery budget to the supermarket. They spend $\$18$ on fresh produce and $\$12$ on dairy items. How much grocery cash remains in their wallet?
 - **Concrete Stage:** Start with 5 ten-rods ($50$). Remove 1 ten and 8 units ($18$, leaving 32), then remove 1 ten and 2 units ($12$, leaving 20).
 - **RPN Keystrokes:** `50 [ENTER] 18 [-] 12 [-]` $\rightarrow$ **`20`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `5` `0` | $0$ | $0$ | $0$ | $50$ | Starting cash budget entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $50$ | $50$ | Budget lifts to Register $Y$ |
-| `1` `8` | $0$ | $0$ | $50$ | $18$ | Produce expense entered into $X$ |
-| `[-]` | $0$ | $0$ | $0$ | $32$ | Remaining cash after produce ($50 - 18 = \$32$) in $X$ |
-| `1` `2` | $0$ | $0$ | $32$ | $12$ | Subtotal auto-lifts to $Y$; dairy expense entered in $X$ |
-| `[-]` | $0$ | $0$ | $0$ | $20$ | Final remaining cash ($32 - 12 = \$20$) resolves in $X$ |
-
-- **Result:** $\$20.00$ remaining.
-
+- **Stack Flow:** Tap `50 [ENTER] 18 [-] 12 [-]` -> (T=0, Z=0, Y=0, X=20), leaving $\$20.00$ cash in your wallet.
 ---
 
-### 2.8.33 Problem 30: Bulk Platter Sharing with Loose Change ($17.50 \div 4$)
+### 2.8.33 Problem 30:
 - **Supermarket Shopping Mission:** Four family members purchase a bulk deli sandwich platter costing $\$17.50$. Using Superpower 2 (`[g] [÷R]`), determine how many whole dollars each person contributes and the remaining loose coin change.
 - **Concrete Stage:** Count 17 dollar tiles and two quarter coins. Distribute 4 dollar tiles to each of 4 people, leaving $1.50 in change.
 - **RPN Keystrokes:** `17.50 [ENTER] 4 [g] [÷R]` $\rightarrow$ **`4`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` `7` `.` `5` `0` | $0$ | $0$ | $0$ | $17.5$ | Total platter price entered into $X$ |
-| `[ENTER]` | $0$ | $0$ | $17.5$ | $17.5$ | Platter price lifts to Register $Y$ |
-| `4` | $0$ | $0$ | $17.5$ | $4$ | Four contributing family members entered into $X$ |
-| `[g] [÷R]` | $0$ | $0$ | $1.50$ | $4.00$ | Whole quotient $\$4.00$ in $X$; remaining change $\$1.50$ in $Y$ |
-
-- **Result:** $X = \$4.00$ each; $Y = \$1.50$ remaining loose change.
-
+- **Stack Flow:** Tap `17.50 [ENTER] 4 [g] [÷R]` -> (T=0, Z=0, Y=1.5, X=4), giving $X = \$4.00$ whole dollars per person and $Y = \$1.50$ remaining change.
 ---
 
 ### 2.8.34 Expedition 4: The Junior Math Olympiad Sprint (Problems 31–40)
 *Mission Briefing:* The state tournament clock is running! In this high-speed mental sprint, you solve chained order-of-operations expressions, evaluate multi-bracket terms with zero parentheses, and navigate radical equations using pure RPN stack elegance.
 
-### 2.8.35 Problem 31: Roll Down Stack Inspection (`[f] [R↓]`)
+### 2.8.35 Problem 31:
 - **Word Problem:** Load values 10, 20, 30, 40 into the stack. Rotate them down to inspect each register.
 - **RPN Keystrokes:** `10 [ENTER] 20 [ENTER] 30 [ENTER] 40 [f] [R↓]` $\rightarrow$ **`30`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| (Initial) | 10 | 20 | 30 | 40 |
+| 10 | 0 | 0 | 0 | 10 |
+| [ENTER] | 0 | 0 | 10 | 10 |
+| 20 | 0 | 0 | 10 | 20 |
+| [ENTER] | 0 | 10 | 20 | 20 |
+| 30 | 0 | 10 | 20 | 30 |
+| [ENTER] | 10 | 20 | 30 | 30 |
+| 40 | 10 | 20 | 30 | 40 |
 | [f] [R↓] | 40 | 10 | 20 | 30 |
 | [f] [R↓] | 30 | 40 | 10 | 20 |
 | [f] [R↓] | 20 | 30 | 40 | 10 |
 | [f] [R↓] | 10 | 20 | 30 | 40 |
 - **Carousel Property:** 4 presses of `[f] [R↓]` restore the exact original stack!
-
 ---
 
-### 2.8.36 Problem 32: Reverse Carousel via Three Roll-Downs (`[f] [R↓] [f] [R↓] [f] [R↓]`)
+### 2.8.36 Problem 32:
 - **Word Problem:** Bring the top roof-garden register ($T = 10$) down into the active Ground Floor ($X$) by rotating the 4-level carousel three steps (`[f] [R↓] [f] [R↓] [f] [R↓]`).
 - **RPN Keystrokes:** `10 [ENTER] 20 [ENTER] 30 [ENTER] 40 [f] [R↓] [f] [R↓] [f] [R↓]` $\rightarrow$ **`10`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| (Initial) | 10 | 20 | 30 | 40 |
-| 3x [R↓] | 20 | 30 | 40 | 10 |
-
+- **Stack Flow:** Load registers and rotate: tap `10 [ENTER] 20 [ENTER] 30 [ENTER] 40 [f] [R↓] [f] [R↓] [f] [R↓]` -> (T=20, Z=30, Y=40, X=10), bringing 10 into Register $X$.
 ---
 
-### 2.8.37 Problem 33: Rapid Sprint Challenge 1 ($(15 - 3) \times (4 + 2) \div 6 = 12$)
+### 2.8.37 Problem 33:
 - **Word Problem:** 5th-grade math sprint order-of-operations challenge.
 - **RPN Keystrokes:** `15 [ENTER] 3 [-] 4 [ENTER] 2 [+] [×] 6 [÷]` $\rightarrow$ **`12`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `15`[ENTER][3] | 0 | 0 | 15 | 3 |
+| 15 | 0 | 0 | 0 | 15 |
+| [ENTER] | 0 | 0 | 15 | 15 |
+| 3 | 0 | 0 | 15 | 3 |
 | [-] | 0 | 0 | 0 | 12 |
-| [4][ENTER][2] | 0 | 12 | 4 | 2 |
+| 4 | 0 | 0 | 12 | 4 |
+| [ENTER] | 0 | 12 | 4 | 4 |
+| 2 | 0 | 12 | 4 | 2 |
 | [+] | 0 | 0 | 12 | 6 |
 | [×] | 0 | 0 | 0 | 72 |
-| [6] [÷] | 0 | 0 | 0 | 12 |
+| 6 | 0 | 0 | 72 | 6 |
+| [÷] | 0 | 0 | 0 | 12 |
 - **Result:** $12.0$. Zero parentheses!
-
 ---
 
-### 2.8.38 Problem 34: Rapid Sprint Challenge 2 ($(24 - 8) \div (6 - 2) = 4$)
+### 2.8.38 Problem 34:
 - **Word Problem:** Calculate the quotient of two parenthesized differences.
 - **RPN Keystrokes:** `24 [ENTER] 8 [-] 6 [ENTER] 2 [-] [÷]` $\rightarrow$ **`4`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `24`[ENTER][8] | 0 | 0 | 24 | 8 |
+| 24 | 0 | 0 | 0 | 24 |
+| [ENTER] | 0 | 0 | 24 | 24 |
+| 8 | 0 | 0 | 24 | 8 |
 | [-] | 0 | 0 | 0 | 16 |
-| [6][ENTER][2] | 0 | 16 | 6 | 2 |
+| 6 | 0 | 0 | 16 | 6 |
+| [ENTER] | 0 | 16 | 6 | 6 |
+| 2 | 0 | 16 | 6 | 2 |
 | [-] | 0 | 0 | 16 | 4 |
 | [÷] | 0 | 0 | 0 | 4 |
 - **Result:** $4.0$.
-
 ---
 
-### 2.8.39 Problem 35: Rapid Sprint Challenge 3 ($(18 + 6) \times (10 - 5) \div 12 = 10$)
+### 2.8.39 Problem 35:
 - **Word Problem:** Three-part chained expression.
 - **RPN Keystrokes:** `18 [ENTER] 6 [+] 10 [ENTER] 5 [-] [×] 12 [÷]` $\rightarrow$ **`10`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `18`[ENTER][6] | 0 | 0 | 18 | 6 |
+| 18 | 0 | 0 | 0 | 18 |
+| [ENTER] | 0 | 0 | 18 | 18 |
+| 6 | 0 | 0 | 18 | 6 |
 | [+] | 0 | 0 | 0 | 24 |
-| `10`[ENTER][5] | 0 | 24 | 10 | 5 |
+| 10 | 0 | 0 | 24 | 10 |
+| [ENTER] | 0 | 24 | 10 | 10 |
+| 5 | 0 | 24 | 10 | 5 |
 | [-] | 0 | 0 | 24 | 5 |
 | [×] | 0 | 0 | 0 | 120 |
-| `12` [÷] | 0 | 0 | 0 | 10 |
+| 12 | 0 | 0 | 120 | 12 |
+| [÷] | 0 | 0 | 0 | 10 |
 - **Result:** $10.0$.
-
 ---
 
-### 2.8.40 Problem 36: Complex Fraction $\frac{48 - (4 \times 6)}{3 + (2 \times 4.5)} = 2$
+### 2.8.40 Problem 36:
 - **Word Problem:** Multi-term fraction bar challenge.
 - **RPN Keystrokes:** `48 [ENTER] 4 [ENTER] 6 [×] [-] 3 [ENTER] 2 [ENTER] 4.5 [×] [+] [÷]` $\rightarrow$ **`2`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| Numerator | 0 | 0 | 0 | 24 |
-| Denominator | 0 | 24 | 0 | 12 |
-| [÷] | 0 | 0 | 0 | 2 |
-- **Result:** $2.0$.
-
+- **Stack Flow:** Tap `48 [ENTER] 4 [ENTER] 6 [×] [-] 3 [ENTER] 2 [ENTER] 4.5 [×] [+] [÷]` -> (T=24, Z=24, Y=24, X=2), resolving the complex fraction to $2.0$ with zero parentheses!
 ---
 
-### 2.8.41 Problem 37: Difference of Squares ($15^2 - 9^2 = 144$)
+### 2.8.41 Problem 37:
 - **Word Problem:** A large square patio of $15\text{ ft} \times 15\text{ ft}$ has a central fountain of $9\text{ ft} \times 9\text{ ft}$. Find the remaining paved area.
 - **RPN Keystrokes:** `15 [x²] 9 [x²] [-]` $\rightarrow$ **`144`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [1] [5] | 0 | 0 | 0 | 15 |
+| 15 | 0 | 0 | 0 | 15 |
 | [x²] | 0 | 0 | 0 | 225 |
-| [9] | 0 | 0 | 225 | 9 |
+| 9 | 0 | 0 | 225 | 9 |
 | [x²] | 0 | 0 | 225 | 81 |
 | [-] | 0 | 0 | 0 | 144 |
 - **Result:** $144.0\text{ sq ft}$.
-
 ---
 
-### 2.8.42 Problem 38: Hypotenuse of Right Triangle ($6^2 + 8^2 = 100 \to 10$)
+### 2.8.42 Problem 38:
 - **Word Problem:** A right triangle has perpendicular legs of 6 cm and 8 cm. Find hypotenuse $c = \sqrt{a^2 + b^2}$.
 - **RPN Keystrokes:** `6 [x²] 8 [x²] [+] [f] [√x]` $\rightarrow$ **`10`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [6] [x²] | 0 | 0 | 0 | 36 |
-| [8] [x²] | 0 | 0 | 36 | 64 |
-| [+] | 0 | 0 | 0 | 100 |
-| [f] [√x] | 0 | 0 | 0 | 10 |
-- **Result:** $10.0\text{ cm}$.
-
+- **Stack Flow:** Tap `6 [x²] 8 [x²] [+] [f] [√x]` -> (T=0, Z=0, Y=0, X=10), computing hypotenuse $10.0\text{ cm}$ without scratch paper.
 ---
 
-### 2.8.43 Problem 39: Chained Temperature Conversion ($68^\circ\text{F} \to 20^\circ\text{C}$)
+### 2.8.43 Problem 39:
 - **Word Problem:** Convert $68^\circ\text{F}$ to Celsius: $C = (F - 32) \times 5 \div 9$.
 - **RPN Keystrokes:** `68 [ENTER] 32 [-] 5 [×] 9 [÷]` $\rightarrow$ **`20`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `68` [ENTER] `32` | 0 | 0 | 68 | 32 |
-| [-] | 0 | 0 | 0 | 36 |
-| [5] [×] | 0 | 0 | 0 | 180 |
-| [9] [÷] | 0 | 0 | 0 | 20 |
-- **Result:** $20.0^\circ\text{C}$.
-
+- **Stack Flow:** Tap `68 [ENTER] 32 [-] 5 [×] 9 [÷]` -> (T=0, Z=0, Y=0, X=20), converting directly to $20.0^\circ\text{C}$.
 ---
 
-### 2.8.44 Problem 40: Multi-Register Balance Audit via `[f] [LASTX]`
+### 2.8.44 Problem 40:
 - **Word Problem:** Your school savings account has $\$120.00$. You make a purchase of $\$45.00$. Use Superpower 4 to restore your previous balance.
 - **RPN Keystrokes:** `120 [ENTER] 45 [-] [f] [LASTX] [+]` $\rightarrow$ **`120`**
 - **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `120`[ENTER] | 0 | 0 | 120 | 120 |
-| `45` [-] | 0 | 0 | 0 | 75 |
+| 120 | 0 | 0 | 0 | 120 |
+| [ENTER] | 0 | 0 | 120 | 120 |
+| 45 | 0 | 0 | 120 | 45 |
+| [-] | 0 | 0 | 0 | 75 |
 | [f] [LASTX] | 0 | 0 | 75 | 45 |
 | [+] | 0 | 0 | 0 | 120 |
 - **Result:** Initial $\$120.00$ balance completely restored.
-
-
 ---
 
 ## 2.9 Beat Every Adult in the Room! The `1089` Mind-Reading Stack Trick
@@ -7356,60 +7117,30 @@ The following problem bank provides complete, publication-grade reference soluti
 
 #### Challenge 1: Park Perimeter Ribbon Framing
 - **Park Masterplan Context:** The landscape architect plans a rectangular information kiosk bulletin board in the central plaza measuring $2.4\text{ meters}$ wide and $1.2\text{ meters}$ high. A durable aluminum edging ribbon must be ordered to frame its full perimeter.
-- **Hands-On Manipulative Stage (Counting Tiles):** Arrange a $24 \times 12$ proportional tile grid on your desk. Touch the top edge ($24$) and right edge ($12$): together they form one half-perimeter ($36$). Doubling this L-shape completes all four enclosing sides ($72$) without counting individual tiles.
+- **Hands-On Manipulative Stage (Two-Step Model Small -> Scale Big):** Model the kiosk proportions using a small $2 \times 4$ tile array on your desk. Touch the top and right edges to see the half-perimeter ($6$). Then scale big on StackCalc: enter the true $2.4\text{ m} \times 1.2\text{ m}$ dimensions, sum to find the half-perimeter ($3.6\text{ m}$), and double it for the full perimeter.
 - **RPN Keystrokes:** `2.4 [ENTER] 1.2 [+] [2] [×]` $\rightarrow$ **`7.2`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2.4` | $0.0000$ | $0.0000$ | $0.0000$ | $2.4$ | Key in kiosk width ($2.4\text{ m}$) into buffer |
-| `[ENTER]` | $0.0000$ | $0.0000$ | $2.4$ | $2.4$ | Stack lifts; width locked onto shelf $Y$ |
-| `1.2` | $0.0000$ | $0.0000$ | $2.4$ | $1.2$ | Key in kiosk height ($1.2\text{ m}$) on floor $X$ |
-| `[+]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6$ | Sum horizontal and vertical edges to form half-perimeter |
-| `2` | $0.0000$ | $0.0000$ | $3.6$ | $2.0000$ | Key in scale factor 2 on floor $X$ ($Y = 3.6$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $7.2$ | Double half-perimeter to finalize total perimeter ($7.2\text{ m}$) |
-
+- **Operational Narrative & Stack Flow:** Key `2.4` and press `[ENTER]` to hold the kiosk width in Register $Y$ `(T:0, Z:0, Y:2.4, X:2.4)`. Key `1.2` and press `[+]` to compute the half-perimeter $3.6\text{ m}$ `(T:0, Z:0, Y:0, X:3.6)`. Key `2` and press `[×]` to double the L-shape, giving the full perimeter `(T:0, Z:0, Y:0, X:7.2)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $7.2000$. Total perimeter is $\mathbf{7.20\text{ meters}}$.
 
 #### Challenge 2: Square Playground Sandpit Cover
 - **Park Masterplan Context:** The community adventure playground features a square sandpit with side length $s = 3.5\text{ meters}$. A heavy-duty waterproof canvas tarp must be cut to protect the sand from overnight rain.
 - **Hands-On Manipulative Stage (Tile Arrays):** Lay out a square array of counting tiles ($3.5 \times 3.5$ scale). Squaring a side length tiles the two-dimensional interior plane directly, turning a linear measure ($3.5\text{ m}$) into areal units ($\text{m}^2$).
 - **RPN Keystrokes:** `3.5 [x²]` $\rightarrow$ **`12.25`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3.5` | $0.0000$ | $0.0000$ | $0.0000$ | $3.5$ | Key sandpit edge length ($3.5\text{ m}$) into floor $X$ |
-| `[x²]` | $0.0000$ | $0.0000$ | $0.0000$ | $12.25$ | Square number in place ($3.5 \times 3.5$) for square tarp area |
-
+- **Operational Narrative & Stack Flow:** Key `3.5` and press `[x²]` to square the edge length in place, directly producing the square tarp area `(T:0, Z:0, Y:0, X:12.25)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $12.2500$. Canvas tarp area required is $\mathbf{12.25\text{ m}^2}$.
 
 #### Challenge 3: Triangular Park Pavilion Pennant
 - **Park Masterplan Context:** A ceremonial triangular felt pennant hangs above the park entrance pavilion, with base $b = 25\text{ cm}$ along the crossbeam and vertical altitude $h = 60\text{ cm}$. Calculate the felt fabric required.
 - **Hands-On Manipulative Stage (Folding Triangles):** Cut a $25 \times 60\text{ cm}$ rectangle of paper diagonally. Two identical right triangles emerge. The area of one triangle is exactly half of the enclosing rectangle ($A = \frac{1}{2} b h$).
 - **RPN Keystrokes:** `25 [ENTER] 60 [g] [TRI]` $\rightarrow$ **`750`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `25` | $0.0000$ | $0.0000$ | $0.0000$ | $25.0000$ | Key triangle baseline ($25\text{ cm}$) |
-| `[ENTER]` | $0.0000$ | $0.0000$ | $25.0000$ | $25.0000$ | Stack lifts; base locked into Register $Y$ |
-| `60` | $0.0000$ | $0.0000$ | $25.0000$ | $60.0000$ | Key perpendicular altitude ($60\text{ cm}$) into floor $X$ |
-| `[g] [TRI]` | $0.0000$ | $0.0000$ | $0.0000$ | $750.0000$ | Dedicated triangle primitive evaluates $\frac{1}{2} \times 25 \times 60$ in one motion |
-
+- **Operational Narrative & Stack Flow:** Key `25`, press `[ENTER]`, key `60`, and press `[g] [TRI]` to execute the dedicated triangle area solver in one step `(T:0, Z:0, Y:0, X:750)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $750.0000$. Felt fabric area is $\mathbf{750.00\text{ cm}^2}$.
 
 #### Challenge 4: Floral Plaza Circular Sundial Clockface
 - **Park Masterplan Context:** A circular sundial in the central plaza has a diameter of $30\text{ cm}$ (radius $r = 15\text{ cm}$). The bronze faceplate must be cut from polished sheet metal.
 - **Hands-On Manipulative Stage (Circle to Sectors):** Divide a circular paper disc into 16 wedge sectors and interlock them alternately: they form an approximate parallelogram of height $r$ and base $\pi r$. Area equals $\pi r^2$.
 - **RPN Keystrokes:** `15 [f] [CIRC]` $\rightarrow$ **`706.85834706`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` | $0.0000$ | $0.0000$ | $0.0000$ | $15.0000$ | Key circle radius ($15\text{ cm}$) into floor $X$ |
-| `[f] [CIRC]` | $0.0000$ | $0.0000$ | $0.0000$ | $706.8583$ | Dedicated circular solver squares radius and scales by $\pi$ in place |
-
+- **Operational Narrative & Stack Flow:** Key `15` and press `[f] [CIRC]` to square the radius and multiply by $\pi$ in a single hardware cycle `(T:0, Z:0, Y:0, X:706.8583)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $706.8583$. Bronze plate area is $\mathbf{706.86\text{ cm}^2}$.
 
 #### Challenge 5: Circular Fountain Stone Curb Perimeter
@@ -7433,15 +7164,7 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Park Masterplan Context:** An ornamental botanical flower bed is laid out as a parallelogram with base $b = 8\text{ meters}$ and perpendicular altitude $h = 4.5\text{ meters}$. Calculate the topsoil area.
 - **Hands-On Manipulative Stage (Shearing Rectangles):** Cut a triangular slice from the left edge of a paper parallelogram and slide it to the right edge: it forms a rectangle of identical base and height ($A = b \times h$).
 - **RPN Keystrokes:** `[8] [ENTER] 4.5 [×]` $\rightarrow$ **`36`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `8` | $0.0000$ | $0.0000$ | $0.0000$ | $8.0000$ | Key flower bed baseline ($8\text{ m}$) |
-| `[ENTER]` | $0.0000$ | $0.0000$ | $8.0000$ | $8.0000$ | Stack lifts; base locked into Register $Y$ |
-| `4.5` | $0.0000$ | $0.0000$ | $8.0000$ | $4.5$ | Key perpendicular altitude ($4.5\text{ m}$) into floor $X$ |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $36.0000$ | Multiply base by height to compute parallelogram area |
-
+- **Operational Narrative & Stack Flow:** Key `8`, press `[ENTER]`, key `4.5`, and press `[×]` to evaluate parallelogram area ($8 \times 4.5$) `(T:0, Z:0, Y:0, X:36)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $36.0000$. Flower bed area is $\mathbf{36.00\text{ m}^2}$.
 
 #### Challenge 7: Trapezoid Highway Ramp Embankment
@@ -7467,17 +7190,7 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Park Masterplan Context:** Plaza pathways are tiled with diamond-shaped granite pavers having diagonal spans $d_1 = 40\text{ cm}$ and $d_2 = 70\text{ cm}$. Find the paver face area ($A = \frac{1}{2} d_1 d_2$).
 - **Hands-On Manipulative Stage (Diagonal Quadrants):** The perpendicular diagonals split the rhombus into four identical right triangles. Reassembling them forms a rectangle of dimensions $d_1 \times \frac{1}{2} d_2$.
 - **RPN Keystrokes:** `40 [ENTER] 70 [×] [2] [÷]` $\rightarrow$ **`1400`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `40` | $0.0000$ | $0.0000$ | $0.0000$ | $40.0000$ | Key horizontal diagonal ($40\text{ cm}$) |
-| `[ENTER]` | $0.0000$ | $0.0000$ | $40.0000$ | $40.0000$ | Stack lifts; diagonal locked into Register $Y$ |
-| `70` | $0.0000$ | $0.0000$ | $40.0000$ | $70.0000$ | Key vertical diagonal ($70\text{ cm}$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $2800.0000$ | Multiply diagonals to enclose bounding rectangle |
-| `2` | $0.0000$ | $0.0000$ | $2800.0000$ | $2.0000$ | Key divisor 2 for diamond half-area |
-| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $1400.0000$ | Halve product to obtain net rhombus area |
-
+- **Operational Narrative & Stack Flow:** Key `40`, press `[ENTER]`, key `70`, and press `[×]` to compute the bounding rectangle $2800\text{ cm}^2$ `(T:0, Z:0, Y:0, X:2800)`. Key `2` and press `[÷]` to halve the product, yielding the net rhombus area `(T:0, Z:0, Y:0, X:1400)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $1400.0000$. Paver face area is $\mathbf{1400.00\text{ cm}^2}$.
 
 #### Challenge 9: Regular Hexagonal Gazebo Floor
@@ -7504,18 +7217,7 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Park Masterplan Context:** The park irrigation line uses neoprene annular washers with outer radius $R = 25\text{ mm}$ and inner pipe cutout radius $r = 10\text{ mm}$. Calculate the rubber seal contact area ($A = \pi (R^2 - r^2)$).
 - **Hands-On Manipulative Stage (Concentric Cutouts):** Cut a $10\text{ mm}$ disk out of a $25\text{ mm}$ outer circle. The remaining annular washer area is the difference between the outer circle and inner circle areas.
 - **RPN Keystrokes:** `25 [x²] 10 [x²] [-] [π] [×]` $\rightarrow$ **`1,649.336143`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `25` | $0.0000$ | $0.0000$ | $0.0000$ | $25.0000$ | Key outer washer radius ($25\text{ mm}$) |
-| `[x²]` | $0.0000$ | $0.0000$ | $0.0000$ | $625.0000$ | Square outer radius ($25^2 = 625$) |
-| `10` | $0.0000$ | $0.0000$ | $625.0000$ | $10.0000$ | Key inner hole radius ($10\text{ mm}$) |
-| `[x²]` | $0.0000$ | $0.0000$ | $625.0000$ | $100.0000$ | Square inner radius ($10^2 = 100$) |
-| `[-]` | $0.0000$ | $0.0000$ | $0.0000$ | $525.0000$ | Subtract inner square from outer square ($625 - 100 = 525$) |
-| `[π]` | $0.0000$ | $0.0000$ | $525.0000$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $1649.3361$ | Multiply by $\pi$ to evaluate annular area |
-
+- **Operational Narrative & Stack Flow:** Key `25`, press `[x²]` ($625$), key `10`, press `[x²]` ($100$), and press `[-]` to calculate the difference of radius squares $525\text{ mm}^2$ `(T:0, Z:0, Y:0, X:525)`. Push `[π]` and press `[×]` to scale by the circle constant, arriving at the annular contact area `(T:0, Z:0, Y:0, X:1649.3361)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $1649.3361$. Gasket contact area is $\mathbf{1649.34\text{ mm}^2}$.
 
 ## 6.8 Expedition 2: The Antarctic Research Station Cold-Weather Packaging (Challenges 6.11–6.20)
@@ -7559,15 +7261,7 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Antarctic Logistics Context:** A miniature cubic GPS beacon deployed on the Ross Ice Shelf measures $s = 2\text{ cm}$ along each edge. Calculate its total six-sided surface area.
 - **Hands-On Manipulative Stage (Counting Cubes):** Examine a single $20\text{ mm}$ counting cube. It has 6 identical square facets. Calculating one square face ($s^2$) and multiplying by 6 yields the complete outer skin.
 - **RPN Keystrokes:** `[2] [x²] [6] [×]` $\rightarrow$ **`24`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Key in cube edge length ($2\text{ cm}$) |
-| `[x²]` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Square edge in place ($2^2 = 4\text{ cm}^2$) for single face area |
-| `6` | $0.0000$ | $0.0000$ | $4.0000$ | $6.0000$ | Key in total count of identical cube faces ($6$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $24.0000$ | Multiply to obtain total surface area of all 6 facets |
-
+- **Operational Narrative & Stack Flow:** Key `2`, press `[x²]` ($4\text{ cm}^2$), key `6`, and press `[×]` to multiply the face area by 6 facets `(T:0, Z:0, Y:0, X:24)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $24.0000$. Beacon surface area is $\mathbf{24.00\text{ cm}^2}$.
 
 #### Challenge 13: Thermal Wrap for an Equilateral Prismatic Ice Core Carrier
@@ -7626,16 +7320,7 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Antarctic Logistics Context:** An ice-field radar transponder is protected by a bright orange conical fiberglass cowl with base radius $r = 8\text{ cm}$ and slant height $s = 18\text{ cm}$. The base is open to mount onto the antenna mast. Find lateral fiberglass surface area ($A = \pi r s$).
 - **Hands-On Manipulative Stage (Unrolling Cone Sectors):** Cut along the slant seam of a paper cone: it unrolls into a circular sector of radius $s$ and arc length $2\pi r$. Sector area resolves directly to $\pi r s$.
 - **RPN Keystrokes:** `[π] [8] [×] 18 [×]` $\rightarrow$ **`452.38934212`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `[π]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.1416$ | Summon circle constant $\pi \approx 3.141593$ onto floor $X$ |
-| `8` | $0.0000$ | $0.0000$ | $3.1416$ | $8.0000$ | Key in conical base radius ($8\text{ cm}$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $25.1327$ | Multiply $\pi$ by radius to obtain semi-perimeter product |
-| `18` | $0.0000$ | $0.0000$ | $25.1327$ | $18.0000$ | Key in slant height ($18\text{ cm}$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $452.3893$ | Multiply by slant height to unroll lateral conical surface |
-
+- **Operational Narrative & Stack Flow:** Push `[π]`, key `8`, and press `[×]` ($25.1327\text{ cm}$) `(T:0, Z:0, Y:0, X:25.1327)`. Key `18` and press `[×]` to multiply by slant height, evaluating the lateral conical area `(T:0, Z:0, Y:0, X:452.3893)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $452.3893$. Lateral fiberglass cowl area is $\mathbf{452.39\text{ cm}^2}$.
 
 #### Challenge 16: Surface Area of a Pyramidal Field Tent Shelter
@@ -7665,85 +7350,28 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Antarctic Logistics Context:** A rugged open-top insulated cargo bin for lithium power cells measures length $L = 30\text{ cm}$, width $W = 20\text{ cm}$, and depth $H = 15\text{ cm}$. Calculate interior protective lining area across its 5 open-top faces (bottom floor, two side walls, two end walls).
 - **Hands-On Manipulative Stage (Open Box Net):** Unfold an open-top box net: cross-shaped layout with 1 central floor panel ($30 \times 20$) and 4 perimeter walls. The top lid is omitted ($5$ faces total).
 - **RPN Keystrokes:** `[g] [CLΣ] 30 [ENTER] 20 [×] [Σ+] 30 [ENTER] 15 [×] [2] [×] [Σ+] 20 [ENTER] 15 [×] [2] [×] [Σ+] [f] [Σx]` $\rightarrow$ **`2100`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `[g] [CLΣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Reset statistical accumulator ($n = 0, \Sigma x = 0$) |
-| `30` | $0.0000$ | $0.0000$ | $0.0000$ | $30.0000$ | Key in pod length ($30\text{ cm}$) |
-| `[ENTER]` | $0.0000$ | $0.0000$ | $30.0000$ | $30.0000$ | Stack lifts; length locked into Register $Y$ |
-| `20` | $0.0000$ | $0.0000$ | $30.0000$ | $20.0000$ | Key in pod width ($20\text{ cm}$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $600.0000$ | Multiply for single bottom floor ($600\text{ cm}^2$) |
-| `[Σ+]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Deposit single floor into accumulator ($n = 1, \Sigma x = 600$) |
-| `30` | $0.0000$ | $0.0000$ | $0.0000$ | $30.0000$ | Key in pod length ($30\text{ cm}$) |
-| `[ENTER]` | $0.0000$ | $0.0000$ | $30.0000$ | $30.0000$ | Stack lifts; length locked into Register $Y$ |
-| `15` | $0.0000$ | $0.0000$ | $30.0000$ | $15.0000$ | Key in pod height ($15\text{ cm}$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $450.0000$ | Multiply for single side wall ($450\text{ cm}^2$) |
-| `2` | $0.0000$ | $0.0000$ | $450.0000$ | $2.0000$ | Key in multiplier 2 for front and back wall pair |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $900.0000$ | Double for long wall pair ($900\text{ cm}^2$) |
-| `[Σ+]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Deposit long wall pair into accumulator ($n = 2, \Sigma x = 1500$) |
-| `20` | $0.0000$ | $0.0000$ | $0.0000$ | $20.0000$ | Key in pod width ($20\text{ cm}$) |
-| `[ENTER]` | $0.0000$ | $0.0000$ | $20.0000$ | $20.0000$ | Stack lifts; width locked into Register $Y$ |
-| `15` | $0.0000$ | $0.0000$ | $20.0000$ | $15.0000$ | Key in pod height ($15\text{ cm}$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $300.0000$ | Multiply for single end wall ($300\text{ cm}^2$) |
-| `2` | $0.0000$ | $0.0000$ | $300.0000$ | $2.0000$ | Key in multiplier 2 for left and right end pair |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $600.0000$ | Double for end wall pair ($600\text{ cm}^2$) |
-| `[Σ+]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.0000$ | Deposit end wall pair into accumulator ($n = 3, \Sigma x = 2100$) |
-| `[f] [Σx]` | $0.0000$ | $0.0000$ | $0.0000$ | $2100.0000$ | Recall total open-top 5-face surface area |
-
+- **Operational Narrative & Stack Flow:** Key `[g] [CLΣ]` to reset accumulators `(T:0, Z:0, Y:0, X:0)`. Key `30`, press `[ENTER]`, key `20`, and press `[×]` to compute single floor $600\text{ cm}^2$ `(T:0, Z:0, Y:0, X:600)`, then deposit with `[Σ+]` `(T:0, Z:0, Y:0, X:1)`. Key `30`, press `[ENTER]`, key `15`, press `[×]` ($450\text{ cm}^2$), key `2`, and press `[×]` ($900\text{ cm}^2$); deposit long wall pair with `[Σ+]` `(T:0, Z:0, Y:0, X:2)`. Key `20`, press `[ENTER]`, key `15`, press `[×]` ($300\text{ cm}^2$), key `2`, and press `[×]` ($600\text{ cm}^2$); deposit end wall pair with `[Σ+]` `(T:0, Z:0, Y:0, X:3)`. Press `[f] [Σx]` to recall total open-top surface area `(T:0, Z:0, Y:0, X:2100)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $2100.0000$. Open-top lining area is $\mathbf{2100.00\text{ cm}^2}$.
 
 #### Challenge 18: Hollow Ice Core Borehole Thermal Sleeve
 - **Antarctic Logistics Context:** A vertical borehole casing sleeve drilled into the polar ice sheet has inner radius $r = 0.5\text{ m}$ and depth $L = 4\text{ m}$. Find the inner cylindrical surface area lining the ice borehole.
 - **Hands-On Manipulative Stage (Cylindrical Sleeve):** A hollow open-ended cylinder has zero top or bottom caps; its surface is solely the unrolled rectangle formed by circumference times depth ($A = 2 \pi r L$).
 - **RPN Keystrokes:** `0.5 [ENTER] [2] [×] [π] [×] [4] [×]` $\rightarrow$ **`12.566370614`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `0.5` | $0.0000$ | $0.0000$ | $0.0000$ | $0.5$ | Key in borehole inner radius ($0.5\text{ m}$) |
-| `[ENTER]` | $0.0000$ | $0.0000$ | $0.5$ | $0.5$ | Stack lifts; radius locked into Register $Y$ |
-| `2` | $0.0000$ | $0.0000$ | $0.5$ | $2.0000$ | Key in factor 2 for diameter |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Multiply to obtain full diameter ($1.0\text{ m}$) |
-| `[π]` | $0.0000$ | $0.0000$ | $1.0000$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.1416$ | Multiply diameter by $\pi$ for circumference ($3.1416\text{ m}$) |
-| `4` | $0.0000$ | $0.0000$ | $3.1416$ | $4.0000$ | Key in casing depth ($4\text{ m}$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $12.5664$ | Multiply circumference by depth to unroll cylindrical sleeve |
-
+- **Operational Narrative & Stack Flow:** Key `0.5`, press `[ENTER]`, key `2`, and press `[×]` to compute borehole diameter $1.0\text{ m}$ `(T:0, Z:0, Y:0, X:1)`. Push `[π]` and press `[×]` to obtain circumference $3.1416\text{ m}$ `(T:0, Z:0, Y:0, X:3.1416)`. Key `4` and press `[×]` to multiply by casing depth, giving inner borehole sleeve area `(T:0, Z:0, Y:0, X:12.5664)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $12.5664$. Inner borehole sleeve area is $\mathbf{12.57\text{ m}^2}$.
 
 #### Challenge 19: Deep-Freeze Survival Rations Container Volume
 - **Antarctic Logistics Context:** Emergency freeze-dried meal bricks are packed into a heavy-duty container measuring length $18\text{ cm}$, width $6\text{ cm}$, and height $28\text{ cm}$. Find the total internal volume in cubic centimeters.
 - **Hands-On Manipulative Stage (Prism Stacking):** Lay a base layer of counting tiles $18\text{ cm} \times 6\text{ cm} = 108\text{ cm}^2$. Stacking 28 identical layers upward builds the complete three-dimensional volume ($V = l \times w \times h$).
 - **RPN Keystrokes:** `18 [ENTER] [6] [×] 28 [×]` $\rightarrow$ **`3024`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` | $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Key in container base length ($18\text{ cm}$) |
-| `[ENTER]` | $0.0000$ | $0.0000$ | $18.0000$ | $18.0000$ | Stack lifts; length locked into Register $Y$ |
-| `6` | $0.0000$ | $0.0000$ | $18.0000$ | $6.0000$ | Key in container base width ($6\text{ cm}$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $108.0000$ | Multiply length by width for base footprint ($108\text{ cm}^2$) |
-| `28` | $0.0000$ | $0.0000$ | $108.0000$ | $28.0000$ | Key in container vertical height ($28\text{ cm}$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $3024.0000$ | Multiply base footprint by height to obtain 3D volume |
-
+- **Operational Narrative & Stack Flow:** Key `18`, press `[ENTER]`, key `6`, and press `[×]` to compute base footprint $108\text{ cm}^2$ `(T:0, Z:0, Y:0, X:108)`. Key `28` and press `[×]` to multiply footprint by height, yielding total container volume `(T:0, Z:0, Y:0, X:3024)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $3024.0000$. Container internal volume is $\mathbf{3024.00\text{ cm}^3}$.
 
 #### Challenge 20: Modular Polar Research Station Habitat Block Volume
 - **Antarctic Logistics Context:** An insulated habitat module is assembled from 24 prefabricated cubic units, each measuring $2\text{ cm} \times 2\text{ cm} \times 2\text{ cm}$ on a 1:100 engineering architectural model. Calculate total module volume.
-- **Hands-On Manipulative Stage (Unit Cubing):** Take a $2\text{ cm}$ unit cube. Compute its volume via $s^3 = 2^3 = 8\text{ cm}^3$. Multiplying by 24 interlocking blocks yields the aggregate volume.
+- **Hands-On Manipulative Stage (Two-Step Model Small -> Scale Big):** Take a $2\text{ cm}$ unit cube from your kit. Compute its unit volume via $s^3 = 2^3 = 8\text{ cm}^3$. Multiplying by 24 interlocking blocks yields the aggregate volume.
 - **RPN Keystrokes:** `[2] [ENTER] [3] [g] [yˣ] 24 [×]` $\rightarrow$ **`192`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Key in unit cube edge length ($2\text{ cm}$) |
-| `[ENTER]` | $0.0000$ | $0.0000$ | $2.0000$ | $2.0000$ | Stack lifts; edge locked into Register $Y$ |
-| `3` | $0.0000$ | $0.0000$ | $2.0000$ | $3.0000$ | Key in exponent 3 for cubing volume |
-| `[g] [yˣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $8.0000$ | Compute $2^3 = 8\text{ cm}^3$ for single unit cube volume |
-| `24` | $0.0000$ | $0.0000$ | $8.0000$ | $24.0000$ | Key in count of habitat modular cubes ($24$) |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $192.0000$ | Multiply unit volume by 24 for aggregate habitat volume |
-
+- **Operational Narrative & Stack Flow:** Key `2`, press `[ENTER]`, key `3`, and press `[g] [yˣ]` to compute unit cube volume $8\text{ cm}^3$ `(T:0, Z:0, Y:0, X:8)`. Key `24` and press `[×]` to scale across all 24 modular blocks, finding aggregate habitat volume `(T:0, Z:0, Y:0, X:192)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $192.0000$. Habitat model volume is $\mathbf{192.00\text{ cm}^3}$.
 
 ## 6.9 Expedition 3: The City Water Works & Storage Reservoirs (Challenges 6.21–6.30)
@@ -8445,9 +8073,9 @@ Number theory explores the structural properties of whole numbers. Prime numbers
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 12 | 0 | 0 | 0 | 12 |
-| [PRIME] | 0 (Status Line: COMPOSITE -> Pushes 0 to Register X) | 0 | 0 | 0 |
+| [PRIME] | $0.0000$ | 0 | 0 | 0 |
 | 13 | 0 | 0 | 0 | 13 |
-| [PRIME] | 0 (Status Line: PRIME -> Pushes 1 to Register X) | 0 | 0 | 1 |
+| [PRIME] | $0.0000$ | 0 | 0 | 1 |
 
 ---
 
@@ -8526,7 +8154,7 @@ Key in `60 [g] [FACT]` $\longrightarrow$ The graphic display decomposes `60` int
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 60 | 0 | 0 | 0 | 60 |
-| [g] [FACT] | 0 | 0 | 0 | 2² × 3 × 5 |
+| [g] [FACT] | 0 | 0 | 0 | $0.0000$ |
 
 ---
 
@@ -8539,11 +8167,11 @@ A prime number is a positive integer strictly greater than 1 whose only positive
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 97 | 0 | 0 | 0 | 97 |
-| [PRIME] | 0 (Status: PRIME -> 97 has exactly two factors: 1 and 97) | 0 | 0 | 1 |
-| [1][1][9] | 0 | 0 | 1 | 119 |
-| [PRIME] | 0 (Status: COMPOSITE -> 119 = 7 × 17) | 0 | 1 | 0 |
-| [2] | 0 | 1 | 0 | 2 |
-| [PRIME] | 0 (Status: PRIME -> 2 is the smallest and only even prime | 1 | 0 | 1 |
+| [PRIME] | $0.0000$ | 0 | 0 | 1 |
+| [1][1][9] | 1 | 1 | 1 | 9 |
+| [PRIME] | $1.0000$ | 1 | 1 | 0 |
+| [2] | 1 | 1 | 0 | 2 |
+| [PRIME] | $1.0000$ | 1 | 0 | 1 |
 
 ---
 
@@ -8555,8 +8183,8 @@ Pressing `[g] [FACT]` on Row 2, Col 2 decomposes any integer $\ge 2$ into its pr
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [3][6][0] | 0 | 0 | 0 | 360 |
-| [g] [FACT] | 0 | 0 | 0 | 2³ × 3² × 5 |
+| [3][6][0] | 0 | 3 | 6 | 0 |
+| [g] [FACT] | 0 | 3 | 6 | $0.0000$ |
 
 ---
 
@@ -8589,7 +8217,7 @@ $$\text{Tile Side} = \gcd(24, 36) = \mathbf{12\text{ cm}}$$
 | 24 | 0 | 0 | 0 | 24 |
 | [ENTER] | 0 | 0 | 24 | 24 |
 | 36 | 0 | 0 | 24 | 36 |
-| [GCF] | 0 | 0 | 0 | 12.00 |
+| [GCF] | 0 | 0 | 0 | $12.00$ |
 
 #### Application 2: Synchronized Flashing Cycle (LCM)
 Two beacon lights flash at fixed intervals: Light A flashes every $6\text{ seconds}$, while Light B flashes every $8\text{ seconds}$. After how many seconds will they next flash simultaneously?
@@ -8600,7 +8228,7 @@ $$\text{Next Flash} = \operatorname{lcm}(6, 8) = \mathbf{24\text{ seconds}}$$
 | [6] | 0 | 0 | 0 | 6 |
 | [ENTER] | 0 | 0 | 6 | 6 |
 | [8] | 0 | 0 | 6 | 8 |
-| [f] [LCM] | 0 | 0 | 0 | 24.00 |
+| [f] [LCM] | 0 | 0 | 0 | $24.00$ |
 
 #### Application 3: Fraction Least Common Denominator (LCD)
 When adding unlike fractions $\frac{3}{8} + \frac{5}{12}$, the Least Common Denominator is the LCM of the denominators:
@@ -8611,11 +8239,17 @@ $$\text{LCD} = \operatorname{lcm}(8, 12) = \mathbf{24}$$
 | [8] | 0 | 0 | 0 | 8 |
 | [ENTER] | 0 | 0 | 8 | 8 |
 | 12 | 0 | 0 | 8 | 12 |
-| [f] [LCM] | 0 | 0 | 0 | 24.00 |
+| [f] [LCM] | 0 | 0 | 0 | $24.00$ |
 
 ---
 
-### 7.4.7 The Secret Partner Rule: Why GCF × LCM Always Equals a × b!
+### 7.4.7 Algebraic Trap vs. StackCalc Superpower Showdown: Greatest Common Factor & Least Common Multiple
+
+| Challenge / Equation | The Algebraic Calculator Trap (TI-30X / Smartphone) | The StackCalc SC-6 + Manipulative Superpower | Keystroke Reduction | Live Stack Visibility | Pedagogical Breakthrough |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Duality of 24 and 36**:<br>$\gcd(24, 36) = 12$<br>$\operatorname{lcm}(24, 36) = 72$<br>$\gcd \times \operatorname{lcm} = 24 \times 36 = 864$ | No hardware GCF or LCM keys: must write manual prime factor trees on paper, or execute repeated division steps ($36 - 24 = 12$). Verifying the product requires re-entering $24 \times 36$ from scratch (28+ strokes). | Enter `24 [ENTER] 36 [GCF]` $\to 12$; `24 [ENTER] 36 [f] [LCM]` $\to 72$; `12 [×]` $\to 864$ (13 strokes). Instant verification of the Secret Partner Rule! | **54% fewer strokes** | The stack preserves both results; Register $Y$ retains 12 while $X$ evaluates 72, allowing a single `[×]` press to confirm the invariant. | Students physically model the intersection (GCF) and union (LCM) with Prime Studio blocks, then verify the numerical identity directly on the live stack. |
+
+### 7.4.8 The Secret Partner Rule: Why GCF × LCM Always Equals a × b!
 For any two positive integers $a$ and $b$, the product of their greatest common factor and least common multiple is strictly equal to the product of the original numbers:
 $$\gcd(a, b) \times \operatorname{lcm}(a, b) = a \times b$$
 
@@ -8639,7 +8273,7 @@ Check against direct product on the stack: `24 [ENTER] 36 [×]` $\longrightarrow
 
 ---
 
-### 7.4.8 The Euclidean Division Algorithm via Hardware `[g] [÷R]`
+### 7.4.9 The Euclidean Division Algorithm via Hardware `[g] [÷R]`
 Euclid of Alexandria discovered over 2,300 years ago that the greatest common divisor of two integers can be found by repeated division with remainders:
 $$\gcd(a, b) = \gcd(b, a \bmod b)$$
 
@@ -8653,11 +8287,11 @@ The last non-zero remainder is **15**, so $\gcd(105, 45) = \mathbf{15}$.
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [1][0][5] | 0 | 0 | 0 | 105 |
-| [ENTER] | 0 | 0 | 105 | 105 |
-| 45 | 0 | 0 | 105 | 45 |
-| [g] [÷R] | 0 (Register Y = Remainder 15, Register X = Quotient 2) | 0 | 15 | 2 |
-| [x⇄y] | 0 | 0 | 2 | 15 |
+| [1][0][5] | 0 | 1 | 0 | 5 |
+| [ENTER] | 1 | 0 | 5 | 5 |
+| 45 | 1 | 0 | 5 | 45 |
+| [g] [÷R] | $1.0000$ | 0 | 5 | 0 |
+| [x⇄y] | 1 | 0 | 0 | 5 |
 
 #### Euclidean Division Ladders for Large Number Pairs
 For larger composite numbers, you construct an RPN division ladder, using the quotient and remainder output of [g] [÷R] to systematically reduce the problem to zero remainder:
@@ -8695,7 +8329,7 @@ In Grades 5 and 6, you transition from counting discrete numbers to analyzing da
 | Metric | Key / Shift | Mathematical Definition |
 | :--- | :--- | :--- |
 | **Sample Size ($n$)** | `[N]` | Count of data points |
-| **Sum of Data ($\Sigma x$)** | `[f] [Σx]` / `[f] [Σx]` | Total accumulation |
+| **Sum of Data ($\Sigma x$)** | `[f] [Σx]` | Total accumulation |
 | **Mean (Average)** | `[g] [x̄]` / `[x̄]` | $(\Sigma x) / n$ |
 | **Median** | `[MED]` | Middle value of sorted set |
 | **Mode** | `[g] [MODE]` | Most frequent value |
@@ -8841,10 +8475,10 @@ $$\text{Equation: } -14 + 9 = -5^\circ\text{C}$$
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 14 | 0 | 0 | 0 | 14 |
-| [+/-] | 0 | 0 | 0 | -14 |
-| [ENTER] | 0 | 0 | -14 | -14 |
-| [9] | 0 | 0 | -14 | 9 |
-| [+] | 0 | 0 | 0 | -5 |
+| [+/-] | 0 | 0 | 0 | $-14.0000$ |
+| [ENTER] | 0 | 0 | $-14.0000$ | $-14.0000$ |
+| [9] | 0 | 0 | $-14.0000$ | 9 |
+| [+] | 0 | 0 | 0 | $-5.0000$ |
 
 ---
 
@@ -8905,14 +8539,14 @@ $$\text{Equation: } -3 + 45 - 12 - 33 = -3\text{ (Back at parking Level -3!)}$$
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [3] [+/-] | 0 | 0 | 0 | -3 |
-| [ENTER] | 0 | 0 | -3 | -3 |
-| 45 | 0 | 0 | -3 | 45 |
+| [3] [+/-] | 0 | 0 | 0 | $-3.0000$ |
+| [ENTER] | 0 | 0 | $-3.0000$ | $-3.0000$ |
+| 45 | 0 | 0 | $-3.0000$ | 45 |
 | [+] | 0 | 0 | 0 | 42 |
 | 12 | 0 | 0 | 42 | 12 |
 | [-] | 0 | 0 | 0 | 30 |
 | 33 | 0 | 0 | 30 | 33 |
-| [-] | 0 | 0 | 0 | -3 |
+| [-] | 0 | 0 | 0 | $-3.0000$ |
 
 #### Scenario 2: Deep-Sea Oceanographic Research Submersible
 A marine biology autonomous vehicle begins a mission on the deck of a research ship at $+4\text{ meters}$ above sea level. It dives to a survey trench at $-350\text{ meters}$.
@@ -9014,14 +8648,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Tournament Context:** Tabletop Gaming Tournament: In the championship match, a referee rolls a precision equal-volume pip six-sided die. Calculate the theoretical probability of rolling an odd face ($1, 3, 5$).
 - **Hands-On Manipulative Stage (Precision Pip Dice):** Inspect the physical equal-volume pip dice. Notice that 3 out of 6 faces are odd numbers. Rolling the die 60 times yields approximately 30 odd occurrences, validating the $3/6 = 0.5$ theoretical ratio.
 - **RPN Keystrokes:** `[3] [ENTER] [6] [÷]` $\rightarrow$ **`0.5`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `3 [ENTER] 6 [÷]` -> (T=0, Z=0, Y=0, X=0.5). Divide favorable by total to compute theoretical probability ($3/6 = 0.5$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3` | $0$ | $0$ | $0$ | $3$ | Key in favorable odd outcomes count ($1, 3, 5$) |
-| `[ENTER]` | $0$ | $0$ | $3$ | $3$ | Stack lifts; favorable count locked into Register $Y$ |
-| `6` | $0$ | $0$ | $3$ | $6$ | Key in total sample space outcomes of fair six-sided die ($6$) |
-| `[÷]` | $0$ | $0$ | $0$ | $0.5$ | Divide favorable by total to compute theoretical probability ($3/6 = 0.5$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $0.5000$. Theoretical probability of rolling an odd face is $\mathbf{0.5000}$ ($50\%$).
 
@@ -9029,14 +8657,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Tournament Context:** Tournament Card Deck Draw: In a card tournament, a standard 52-card deck contains 4 aces. What is the probability of drawing an ace at random on the first draw?
 - **Hands-On Manipulative Stage (Card Deck Partition):** Partition the deck into 4 aces and 48 non-aces. The 4 target aces represent a $1/13$ fraction of the total 52-card sample space.
 - **RPN Keystrokes:** `[4] [ENTER] 52 [÷]` $\rightarrow$ **`0.0769230769`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `4 [ENTER] 52 [÷]` -> (T=0, Z=0, Y=0, X=0.0769). Divide to calculate single-draw ace probability ($4/52 \approx 0.0769$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in favorable ace count (4 aces) |
-| `[ENTER]` | $0$ | $0$ | $4$ | $4$ | Stack lifts; favorable count locked into Register $Y$ |
-| `52` | $0$ | $0$ | $4$ | $52$ | Key in total cards in deck ($52$) |
-| `[÷]` | $0$ | $0$ | $0$ | $0.0769$ | Divide to calculate single-draw ace probability ($4/52 \approx 0.0769$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $0.0769$. Ace drawing probability is $\mathbf{0.0769}$ ($\approx 7.69\%$).
 
@@ -9044,14 +8666,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Tournament Context:** Triple Coin Toss Tournament Tiebreaker: A match tiebreaker requires flipping three consecutive heads with a balanced coin ($P = (1/2)^3$). Determine the compound probability of three consecutive heads.
 - **Hands-On Manipulative Stage (Tree Diagram Counters):** Arrange a 3-tier binary tree using two-color counters. Out of 8 possible paths ($\text{HHH}, \text{HHT}, \dots, \text{TTT}$), exactly 1 path yields three consecutive heads.
 - **RPN Keystrokes:** `0.5 [ENTER] [3] [g] [yˣ]` $\rightarrow$ **`0.125`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `0.5 [ENTER] 3 [g] [yˣ]` -> (T=0, Z=0, Y=0, X=0.125). Raise to 3rd power to compute compound probability ($0.5^3 = 0.125$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `0.5` | $0$ | $0$ | $0$ | $0.5$ | Key in single fair toss probability ($0.5$) |
-| `[ENTER]` | $0$ | $0$ | $0.5$ | $0.5$ | Stack lifts; single-toss probability locked into Register $Y$ |
-| `3` | $0$ | $0$ | $0.5$ | $3$ | Key in exponent 3 for three independent trials |
-| `[g] [yˣ]` | $0$ | $0$ | $0$ | $0.125$ | Raise to 3rd power to compute compound probability ($0.5^3 = 0.125$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $0.1250$. Probability of three consecutive heads is $\mathbf{0.1250}$ ($12.5\%$).
 
@@ -9059,14 +8675,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Tournament Context:** High-Rollers Two-Dice Roll: Two dice are rolled simultaneously in the final round. The sum is 11 for two combinations ($(5,6), (6,5)$) and 12 for one combination ($(6,6)$). Find the probability of rolling an 11 or 12.
 - **Hands-On Manipulative Stage (Two-Dice Grid Mat):** Map the $6 \times 6$ grid of 36 equally likely outcomes. Highlight the 3 winning combinations in the top-right corner.
 - **RPN Keystrokes:** `[3] [ENTER] 36 [÷]` $\rightarrow$ **`0.0833333333`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `3 [ENTER] 36 [÷]` -> (T=0, Z=0, Y=0, X=0.0833). Divide favorable by total combinations ($3/36 \approx 0.0833$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3` | $0$ | $0$ | $0$ | $3$ | Key in favorable combinations count (sums of 11 and 12: 3 pairs) |
-| `[ENTER]` | $0$ | $0$ | $3$ | $3$ | Stack lifts; favorable combinations locked into Register $Y$ |
-| `36` | $0$ | $0$ | $3$ | $36$ | Key in total sample space combinations ($6 \times 6 = 36$) |
-| `[÷]` | $0$ | $0$ | $0$ | $0.0833$ | Divide favorable by total combinations ($3/36 \approx 0.0833$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $0.0833$. Probability of rolling 11 or 12 is $\mathbf{0.0833}$ ($\approx 8.33\%$).
 
@@ -9074,14 +8684,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Tournament Context:** Complementary Event Probability: The championship venue weather report indicates a $35\%$ probability of rain ($P = 0.35$). Determine the complementary probability of fair weather ($P' = 1 - P$).
 - **Hands-On Manipulative Stage (Complementary Spinner):** Inspect the circular probability spinner with 100 divisions. Shading 35 sectors for rain leaves 65 unshaded sectors for fair weather, grounding $1 - P$.
 - **RPN Keystrokes:** `[1] [ENTER] 0.35 [-]` $\rightarrow$ **`0.65`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `1 [ENTER] 0.35 [-]` -> (T=0, Z=0, Y=0, X=0.65). Deduct rain probability from total space to find complementary dry odds.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` | $0$ | $0$ | $0$ | $1$ | Key in total probability sample space ($1.00 = 100\%$) |
-| `[ENTER]` | $0$ | $0$ | $1$ | $1$ | Stack lifts; total certainty locked into Register $Y$ |
-| `0.35` | $0$ | $0$ | $1$ | $0.35$ | Key in rain probability ($0.35$) |
-| `[-]` | $0$ | $0$ | $0$ | $0.65$ | Deduct rain probability from total space to find complementary dry odds |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $0.6500$. Complementary probability of fair weather is $\mathbf{0.6500}$ ($65\%$).
 
@@ -9094,12 +8698,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** The outer massive gate of the Prime Fortress opens only when presented with an indivisible prime credential. Test candidate code 83 for primality.
 - **Hands-On Manipulative Stage (Counting Tiles):** Take 83 tiles. Attempt to assemble them into rectangular matrices of 2, 3, 5, or 7 rows. Every arrangement leaves uneven remainders; 83 forms only a single linear row of $1 \times 83$, proving rectangular resistance.
 - **RPN Keystrokes:** `83 [PRIME]` $\rightarrow$ **`83`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `83 [PRIME]` -> (T=0, Z=0, Y=0, X=1). Execute primality test: status line flashes `PRIME`, pushes 1 to Register $X$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `83` | $0$ | $0$ | $0$ | $83$ | Key in candidate fortress key code 83 |
-| `[PRIME]` | $0$ | $0$ | $0$ | $1$ | Execute primality test: status line flashes `PRIME`, pushes 1 to Register $X$ |
 
 - **Diagnostic Checkpoint:** Status line flashes `PRIME`; Register $X = \mathbf{1}$. Outer gate cipher unlocks!
 
@@ -9107,12 +8707,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** The fortress barbican is guarded by a deceptive trap door set to trigger on composite impostor codes. Evaluate candidate code 91.
 - **Hands-On Manipulative Stage (Rectangular Factoring):** Take 91 tiles. Arrange them into rows of 7: exactly 13 rows form a seamless $7 \times 13$ rectangular array with zero gaps, exposing 91 as composite.
 - **RPN Keystrokes:** `91 [PRIME]` $\rightarrow$ **`91`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `91 [PRIME]` -> (T=0, Z=0, Y=0, X=0). Execute primality test: status line flashes `COMPOSITE`, pushes 0 to Register $X$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `91` | $0$ | $0$ | $0$ | $91$ | Key in candidate barbican code 91 |
-| `[PRIME]` | $0$ | $0$ | $0$ | $0$ | Execute primality test: status line flashes `COMPOSITE`, pushes 0 to Register $X$ |
 
 - **Diagnostic Checkpoint:** Status line flashes `COMPOSITE`; Register $X = \mathbf{0}$ ($91 = 7 \times 13$). Barbican trap door disarmed!
 
@@ -9120,12 +8716,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** The iron portcullis over the fortress moat evaluates candidate 143. Determine if the credential is prime or composite.
 - **Hands-On Manipulative Stage (Rectangular Arrays):** Take 143 tiles. Dividing across 11 columns yields exactly 13 rows ($11 \times 13 = 143$), confirming multiple factor pairs beyond 1 and itself.
 - **RPN Keystrokes:** `143 [PRIME]` $\rightarrow$ **`143`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `143 [PRIME]` -> (T=0, Z=0, Y=0, X=0). Execute primality test: status line flashes `COMPOSITE`, pushes 0 to Register $X$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `143` | $0$ | $0$ | $0$ | $143$ | Key in moat portcullis candidate 143 |
-| `[PRIME]` | $0$ | $0$ | $0$ | $0$ | Execute primality test: status line flashes `COMPOSITE`, pushes 0 to Register $X$ |
 
 - **Diagnostic Checkpoint:** Status line flashes `COMPOSITE`; Register $X = \mathbf{0}$ ($143 = 11 \times 13$). Portcullis barrier confirmed!
 
@@ -9133,12 +8725,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** The fortress armory lock requires the exact prime decomposition string of tumbler code 72. Decompose 72 into prime factors.
 - **Hands-On Manipulative Stage (Logarithmic Prime Blocks):** Take three Blue 2-blocks ($2^3 = 8$) and two Amber 3-blocks ($3^2 = 9$). Stack them vertically against the calibrated back-wall slide rule: the combined height aligns precisely with index 72.
 - **RPN Keystrokes:** `72 [g] [FACT]` $\rightarrow$ **`72`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `72 [g] [FACT]` -> (T=0, Z=0, Y=0, X=0). Execute prime factorization: graphic screen renders prime decomposition string.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `72` | $0$ | $0$ | $0$ | $72$ | Key in armory tumbler code 72 |
-| `[g] [FACT]` | $0$ | $0$ | $0$ | $2^3 \times 3^2$ | Execute prime factorization: graphic screen renders prime decomposition string |
 
 - **Diagnostic Checkpoint:** Graphic screen renders **`2³ × 3²`**. Armory lock disengages!
 
@@ -9146,12 +8734,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** The inner citadel vault is sealed with master product code 210. Find its complete prime factor decomposition.
 - **Hands-On Manipulative Stage (Consecutive Prime Blocks):** Select one 2-block, one 3-block, one 5-block, and one 7-block. Stacking these four distinct prime towers models the square-free product $2 \times 3 \times 5 \times 7 = 210$.
 - **RPN Keystrokes:** `210 [g] [FACT]` $\rightarrow$ **`210`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `210 [g] [FACT]` -> (T=0, Z=0, Y=0, X=0). Execute prime factorization: graphic screen renders four-prime string.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `210` | $0$ | $0$ | $0$ | $210$ | Key in citadel vault code 210 |
-| `[g] [FACT]` | $0$ | $0$ | $0$ | $2 \times 3 \times 5 \times 7$ | Execute prime factorization: graphic screen renders four-prime string |
 
 - **Diagnostic Checkpoint:** Graphic screen renders **`2 × 3 × 5 × 7`**. Citadel vault credential accepted!
 
@@ -9159,12 +8743,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** The high observatory tower is protected by an astronomical key code of 504. Determine its prime factor components.
 - **Hands-On Manipulative Stage (Prime Factor Tree):** Factor 504 using prime blocks: three 2-blocks ($2^3 = 8$), two 3-blocks ($3^2 = 9$), and one 7-block ($7$). Product: $8 \times 9 \times 7 = 504$.
 - **RPN Keystrokes:** `504 [g] [FACT]` $\rightarrow$ **`504`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `504 [g] [FACT]` -> (T=0, Z=0, Y=0, X=0). Execute prime factorization: graphic screen displays canonical factor string.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `504` | $0$ | $0$ | $0$ | $504$ | Key in high tower vault code 504 |
-| `[g] [FACT]` | $0$ | $0$ | $0$ | $2^3 \times 3^2 \times 7$ | Execute prime factorization: graphic screen displays canonical factor string |
 
 - **Diagnostic Checkpoint:** Graphic screen renders **`2³ × 3² × 7`**. High tower observatory unsealed!
 
@@ -9172,14 +8752,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** Twin drawbridge drive winches with 48 teeth and 72 teeth must mesh via a common drive gear. Find the greatest common factor $\gcd(48, 72)$.
 - **Hands-On Manipulative Stage (Venn Intersection):** Model $48 = 2^4 \times 3$ and $72 = 2^3 \times 3^2$. Place shared prime blocks into the central intersection well: three 2-blocks and one 3-block $\implies 2^3 \times 3 = 24$.
 - **RPN Keystrokes:** `48 [ENTER] 72 [GCF]` $\rightarrow$ **`24`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `48 [ENTER] 72 [GCF]` -> (T=0, Z=0, Y=0, X=24). Execute hardware GCF engine to extract greatest common divisor.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `48` | $0$ | $0$ | $0$ | $48$ | Key in first winch tooth count ($48$) |
-| `[ENTER]` | $0$ | $0$ | $48$ | $48$ | Stack lifts; 48 locked into Register $Y$ |
-| `72` | $0$ | $0$ | $48$ | $72$ | Key in second winch tooth count ($72$) |
-| `[GCF]` | $0$ | $0$ | $0$ | $24$ | Execute hardware GCF engine to extract greatest common divisor |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $24.0000$. Maximum shared drive gear size is $\mathbf{24\text{ teeth}}$.
 
@@ -9187,14 +8761,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** Two hydraulic sluice floodgates operate on cycles of 84 seconds and 140 seconds. Find the greatest common synchronization interval $\gcd(84, 140)$.
 - **Hands-On Manipulative Stage (Factor Block Overlap):** Factor $84 = 2^2 \times 3 \times 7$ and $140 = 2^2 \times 5 \times 7$. Shared intersection: two 2-blocks and one 7-block $\implies 2^2 \times 7 = 28$.
 - **RPN Keystrokes:** `84 [ENTER] 140 [GCF]` $\rightarrow$ **`28`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `84 [ENTER] 140 [GCF]` -> (T=0, Z=0, Y=0, X=28). Execute hardware GCF engine to find greatest common factor.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `84` | $0$ | $0$ | $0$ | $84$ | Key in first sluice cycle ($84\text{ s}$) |
-| `[ENTER]` | $0$ | $0$ | $84$ | $84$ | Stack lifts; 84 locked into Register $Y$ |
-| `140` | $0$ | $0$ | $84$ | $140$ | Key in second sluice cycle ($140\text{ s}$) |
-| `[GCF]` | $0$ | $0$ | $0$ | $28$ | Execute hardware GCF engine to find greatest common factor |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $28.0000$. Sluice synchronization step is $\mathbf{28\text{ seconds}}$.
 
@@ -9202,14 +8770,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** Two rampart sentry patrols cycle every 15 minutes and 20 minutes respectively. Find the least common multiple $\operatorname{lcm}(15, 20)$ when both sentries meet at the gate.
 - **Hands-On Manipulative Stage (Venn Union):** Model $15 = 3 \times 5$ and $20 = 2^2 \times 5$. The union takes maximum powers: two 2-blocks, one 3-block, and one 5-block $\implies 2^2 \times 3 \times 5 = 60$. Stacking blocks aligns with mark 60.
 - **RPN Keystrokes:** `15 [ENTER] 20 [f] [LCM]` $\rightarrow$ **`60`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `15 [ENTER] 20 [f] [LCM]` -> (T=0, Z=0, Y=0, X=60). Execute hardware LCM engine to find least common multiple.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` | $0$ | $0$ | $0$ | $15$ | Key in first sentry patrol interval ($15\text{ min}$) |
-| `[ENTER]` | $0$ | $0$ | $15$ | $15$ | Stack lifts; 15 locked into Register $Y$ |
-| `20` | $0$ | $0$ | $15$ | $20$ | Key in second sentry patrol interval ($20\text{ min}$) |
-| `[f] [LCM]` | $0$ | $0$ | $0$ | $60$ | Execute hardware LCM engine to find least common multiple |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $60.0000$. Sentries meet at the gate every $\mathbf{60\text{ minutes}}$ ($1\text{ hour}$).
 
@@ -9217,14 +8779,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** Two optical signal beacons on the fortress bastions flash at intervals of 12 seconds and 18 seconds. Find the least common interval $\operatorname{lcm}(12, 18)$ when both flash in unison.
 - **Hands-On Manipulative Stage (Prime Union):** Decompose $12 = 2^2 \times 3$ and $18 = 2 \times 3^2$. The union of prime blocks takes two 2-blocks and two 3-blocks $\implies 4 \times 9 = 36$.
 - **RPN Keystrokes:** `12 [ENTER] 18 [f] [LCM]` $\rightarrow$ **`36`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `12 [ENTER] 18 [f] [LCM]` -> (T=0, Z=0, Y=0, X=36). Execute hardware LCM engine to calculate least common multiple.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `12` | $0$ | $0$ | $0$ | $12$ | Key in first beacon flash interval ($12\text{ s}$) |
-| `[ENTER]` | $0$ | $0$ | $12$ | $12$ | Stack lifts; 12 locked into Register $Y$ |
-| `18` | $0$ | $0$ | $12$ | $18$ | Key in second beacon flash interval ($18\text{ s}$) |
-| `[f] [LCM]` | $0$ | $0$ | $0$ | $36$ | Execute hardware LCM engine to calculate least common multiple |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $36.0000$. Beacons flash simultaneously every $\mathbf{36\text{ seconds}}$.
 
@@ -9236,15 +8792,15 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` | $0$ | $0$ | $0$ | $18$ | Key in first fortress parameter 18 |
-| `[ENTER]` | $0$ | $0$ | $18$ | $18$ | Stack lifts; 18 locked into Register $Y$ |
-| `24` | $0$ | $0$ | $18$ | $24$ | Key in second parameter 24 |
-| `[GCF]` | $0$ | $0$ | $0$ | $6$ | Compute greatest common factor $\gcd(18, 24) = 6$ |
-| `18` | $0$ | $0$ | $6$ | $18$ | Key in parameter 18; GCF lifts to Register $Y$ |
-| `[ENTER]` | $0$ | $6$ | $18$ | $18$ | Stack lifts; 18 locked into Register $Y$, 6 into Register $Z$ |
-| `24` | $0$ | $6$ | $18$ | $24$ | Key in parameter 24 |
-| `[f] [LCM]` | $0$ | $0$ | $6$ | $72$ | Compute least common multiple $\operatorname{lcm}(18, 24) = 72$; GCF remains in Register $Y$ |
-| `[×]` | $0$ | $0$ | $0$ | $432$ | Multiply GCF by LCM ($6 \times 72 = 432$) |
+| `18` | $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Key in first fortress parameter 18 |
+| `[ENTER]` | $0.0000$ | $0.0000$ | $18.0000$ | $18.0000$ | Stack lifts; 18 locked into Register $Y$ |
+| `24` | $0.0000$ | $0.0000$ | $18.0000$ | $24.0000$ | Key in second parameter 24 |
+| `[GCF]` | $0.0000$ | $0.0000$ | $0.0000$ | $6.0000$ | Compute greatest common factor $\gcd(18, 24) = 6$ |
+| `18` | $0.0000$ | $0.0000$ | $6.0000$ | $18.0000$ | Key in parameter 18; GCF lifts to Register $Y$ |
+| `[ENTER]` | $0.0000$ | $6.0000$ | $18.0000$ | $18.0000$ | Stack lifts; 18 locked into Register $Y$, 6 into Register $Z$ |
+| `24` | $0.0000$ | $6.0000$ | $18.0000$ | $24.0000$ | Key in parameter 24 |
+| `[f] [LCM]` | $0.0000$ | $0.0000$ | $6.0000$ | $72.0000$ | Compute least common multiple $\operatorname{lcm}(18, 24) = 72$; GCF remains in Register $Y$ |
+| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $432.0000$ | Multiply GCF by LCM ($6 \times 72 = 432$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $432.0000$. Secret partner rule holds identically ($18 \times 24 = 432$).
 
@@ -9252,14 +8808,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** In the fortress provisions depot, 148 ration packs are organized into standard field cases holding 32 packs each. Find the number of full cases packed and remaining loose packs using `[g] [÷R]`.
 - **Hands-On Manipulative Stage (Tray Allocation):** Distribute 148 tokens into trays of 32. Exactly 4 trays are completely filled ($4 \times 32 = 128$), leaving 20 loose tokens on the packing bench.
 - **RPN Keystrokes:** `148 [ENTER] 32 [g] [÷R]` $\rightarrow$ **`4`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `148 [ENTER] 32 [g] [÷R]` -> (T=0, Z=0, Y=20, X=4). Execute Euclidean division: quotient 4 in $X$, remainder 20 in $Y$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `148` | $0$ | $0$ | $0$ | $148$ | Key in total ration packs dividend ($148$) |
-| `[ENTER]` | $0$ | $0$ | $148$ | $148$ | Stack lifts; dividend locked into Register $Y$ |
-| `32` | $0$ | $0$ | $148$ | $32$ | Key in case capacity divisor ($32$) |
-| `[g] [÷R]` | $0$ | $0$ | $20$ | $4$ | Execute Euclidean division: quotient 4 in $X$, remainder 20 in $Y$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $4$ (Quotient), Register $Y$ displays $20$ (Remainder). 4 full cases packed with 20 leftover packs.
 
@@ -9267,14 +8817,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Fortress Context:** The fortress treasury safe wheel requires identifying the greatest shared factor of 24 and 36 to engage the master locking tumblers.
 - **Hands-On Manipulative Stage (Factor Sorting):** List all divisors: for 24: $\{1, 2, 3, 4, 6, 8, 12, 24\}$; for 36: $\{1, 2, 3, 4, 6, 9, 12, 18, 36\}$. The shared common factor set is $\{1, 2, 3, 4, 6, 12\}$, with greatest factor 12.
 - **RPN Keystrokes:** `24 [ENTER] 36 [GCF]` $\rightarrow$ **`12`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `24 [ENTER] 36 [GCF]` -> (T=0, Z=0, Y=0, X=12). Execute hardware GCF engine to extract greatest common divisor.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `24` | $0$ | $0$ | $0$ | $24$ | Key in first tumbler parameter 24 |
-| `[ENTER]` | $0$ | $0$ | $24$ | $24$ | Stack lifts; 24 locked into Register $Y$ |
-| `36` | $0$ | $0$ | $24$ | $36$ | Key in second tumbler parameter 36 |
-| `[GCF]` | $0$ | $0$ | $0$ | $12$ | Execute hardware GCF engine to extract greatest common divisor |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $12.0000$. Treasury master tumbler code is $\mathbf{12}$.
 
@@ -9292,16 +8836,16 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `[g] [CLΣ]` | $0$ | $0$ | $0$ | $0$ | Reset statistical registers ($n = 0, \Sigma x = 0$) |
-| `88` | $0$ | $0$ | $0$ | $88$ | Key in first test score 88 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $1$ | Accumulate score ($n = 1, \Sigma x = 88$) |
-| `92` | $0$ | $0$ | $1$ | $92$ | Key in second test score 92 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $2$ | Accumulate score ($n = 2, \Sigma x = 180$) |
-| `79` | $0$ | $0$ | $2$ | $79$ | Key in third test score 79 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $3$ | Accumulate score ($n = 3, \Sigma x = 259$) |
-| `95` | $0$ | $0$ | $3$ | $95$ | Key in fourth test score 95 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $4$ | Accumulate score ($n = 4, \Sigma x = 354$) |
-| `[g] [x̄]` | $0$ | $4$ | $0$ | $88.5$ | Compute sample mean $\bar{x} = 354 / 4 = 88.5$; sample size $n=4$ stored in $Z$ |
+| `[g] [CLΣ]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Reset statistical registers ($n = 0, \Sigma x = 0$) |
+| `88` | $0.0000$ | $0.0000$ | $0.0000$ | $88.0000$ | Key in first test score 88 |
+| `[Σ+]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Accumulate score ($n = 1, \Sigma x = 88$) |
+| `92` | $0.0000$ | $0.0000$ | $0.0000$ | $92.0000$ | Key in second test score 92 |
+| `[Σ+]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Accumulate score ($n = 2, \Sigma x = 180$) |
+| `79` | $0.0000$ | $0.0000$ | $0.0000$ | $79.0000$ | Key in third test score 79 |
+| `[Σ+]` | $0.0000$ | $0.0000$ | $0.0000$ | $3.0000$ | Accumulate score ($n = 3, \Sigma x = 259$) |
+| `95` | $0.0000$ | $0.0000$ | $0.0000$ | $95.0000$ | Key in fourth test score 95 |
+| `[Σ+]` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Accumulate score ($n = 4, \Sigma x = 354$) |
+| `[g] [x̄]` | $0.0000$ | $0.0000$ | $0.0000$ | $88.5$ | Compute sample mean $\bar{x} = 354 / 4 = 88.5$; sample size $n=4$ stored in $Z$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $88.5000$. Mean score is $\mathbf{88.50}$.
 
@@ -9309,22 +8853,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Data Detective Context:** Sprint Velocity Analysis: Five track athletes record 100m sprint times: $12.4, 12.8, 13.1, 13.5, 14.0\text{ seconds}$. Find the median running time.
 - **Hands-On Manipulative Stage (Ordered Number Ribbon):** Arrange five runner cards in ascending order along the desk. The third card sits precisely in the middle with two cards on each side, isolating the median at $13.1\text{ s}$.
 - **RPN Keystrokes:** `[g] [CLΣ] 12.4 [Σ+] 12.8 [Σ+] 13.1 [Σ+] 13.5 [Σ+] 14.0 [Σ+] [f] [MED]` $\rightarrow$ **`13.1`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[g] [CLΣ] 12.4 [Σ+] 12.8 [Σ+] 13.1 [Σ+] 13.5 [Σ+] 14.0 [Σ+] [f] [MED]` -> (T=0, Z=0, Y=0, X=5). Compute median value across odd dataset ($n = 5$ in $Y$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `[g] [CLΣ]` | $0$ | $0$ | $0$ | $0$ | Clear statistical memory ($n = 0$) |
-| `12.4` | $0$ | $0$ | $0$ | $12.4$ | Key in sprint time 12.4 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $1$ | Deposit into statistical register ($n = 1$) |
-| `12.8` | $0$ | $0$ | $1$ | $12.8$ | Key in sprint time 12.8 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $2$ | Deposit into statistical register ($n = 2$) |
-| `13.1` | $0$ | $0$ | $2$ | $13.1$ | Key in sprint time 13.1 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $3$ | Deposit into statistical register ($n = 3$) |
-| `13.5` | $0$ | $0$ | $3$ | $13.5$ | Key in sprint time 13.5 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $4$ | Deposit into statistical register ($n = 4$) |
-| `14.0` | $0$ | $0$ | $4$ | $14.0$ | Key in sprint time 14.0 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $5$ | Deposit into statistical register ($n = 5$) |
-| `[f] [MED]` | $0$ | $0$ | $5$ | $13.1$ | Compute median value across odd dataset ($n = 5$ in $Y$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $13.1000$. Median sprint time is $\mathbf{13.10\text{ seconds}}$.
 
@@ -9332,24 +8862,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Data Detective Context:** Environmental Temperature Monitoring: Six ambient temperatures are recorded: $68, 72, 74, 76, 80, 84^\circ\text{F}$. Find the median temperature (average of two central elements 74 and 76).
 - **Hands-On Manipulative Stage (Even Distribution Strip):** Arrange the six data cards in order. Because $n = 6$ is even, there is no single middle card; fold the middle pair (74 and 76) to find their midpoint: $\frac{74+76}{2} = 75^\circ\text{F}$.
 - **RPN Keystrokes:** `[g] [CLΣ] 68 [Σ+] 72 [Σ+] 74 [Σ+] 76 [Σ+] 80 [Σ+] 84 [Σ+] [f] [MED]` $\rightarrow$ **`75`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[g] [CLΣ] 68 [Σ+] 72 [Σ+] 74 [Σ+] 76 [Σ+] 80 [Σ+] 84 [Σ+] [f] [MED]` -> (T=0, Z=0, Y=0, X=6). Evaluate median of even dataset: $\frac{74+76}{2} = 75$ ($n=6$ in $Y$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `[g] [CLΣ]` | $0$ | $0$ | $0$ | $0$ | Reset statistical registers ($n = 0$) |
-| `68` | $0$ | $0$ | $0$ | $68$ | Key in temperature 68 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $1$ | Accumulate observation ($n = 1$) |
-| `72` | $0$ | $0$ | $1$ | $72$ | Key in temperature 72 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $2$ | Accumulate observation ($n = 2$) |
-| `74` | $0$ | $0$ | $2$ | $74$ | Key in temperature 74 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $3$ | Accumulate observation ($n = 3$) |
-| `76` | $0$ | $0$ | $3$ | $76$ | Key in temperature 76 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $4$ | Accumulate observation ($n = 4$) |
-| `80` | $0$ | $0$ | $4$ | $80$ | Key in temperature 80 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $5$ | Accumulate observation ($n = 5$) |
-| `84` | $0$ | $0$ | $5$ | $84$ | Key in temperature 84 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $6$ | Accumulate observation ($n = 6$) |
-| `[f] [MED]` | $0$ | $0$ | $6$ | $75$ | Evaluate median of even dataset: $\frac{74+76}{2} = 75$ ($n=6$ in $Y$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $75.0000$. Median temperature is $\mathbf{75.00^\circ\text{F}}$.
 
@@ -9357,28 +8871,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Data Detective Context:** Footwear Inventory Survey: Shoe sizes collected from 8 customers: $6, 7, 7, 7, 8, 8, 9, 10$. Find the statistical mode (most frequent size).
 - **Hands-On Manipulative Stage (Frequency Column Histogram):** Stack counting cubes for each size. Size 7 forms the tallest column with 3 cubes, visually standing out as the statistical mode.
 - **RPN Keystrokes:** `[g] [CLΣ] [6] [Σ+] [7] [Σ+] [7] [Σ+] [7] [Σ+] [8] [Σ+] [8] [Σ+] [9] [Σ+] 10 [Σ+] [g] [MODE]` $\rightarrow$ **`7`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[g] [CLΣ] [6] [Σ+] [7] [Σ+] [7] [Σ+] [7] [Σ+] [8] [Σ+] [8] [Σ+] [9] [Σ+] 10 [Σ+] [g] [MODE]` -> (T=0, Z=0, Y=0, X=8). Identify statistical mode across sample ($X = 7$, $n=8$ in $Y$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `[g] [CLΣ]` | $0$ | $0$ | $0$ | $0$ | Clear statistical accumulator ($n = 0$) |
-| `[6]` | $0$ | $0$ | $0$ | $6$ | Key in shoe size 6 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $1$ | Accumulate entry ($n = 1$) |
-| `[7]` | $0$ | $0$ | $1$ | $7$ | Key in shoe size 7 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $2$ | Accumulate entry ($n = 2$) |
-| `[7]` | $0$ | $0$ | $2$ | $7$ | Key in second shoe size 7 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $3$ | Accumulate entry ($n = 3$) |
-| `[7]` | $0$ | $0$ | $3$ | $7$ | Key in third shoe size 7 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $4$ | Accumulate entry ($n = 4$) |
-| `[8]` | $0$ | $0$ | $4$ | $8$ | Key in shoe size 8 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $5$ | Accumulate entry ($n = 5$) |
-| `[8]` | $0$ | $0$ | $5$ | $8$ | Key in second shoe size 8 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $6$ | Accumulate entry ($n = 6$) |
-| `[9]` | $0$ | $0$ | $6$ | $9$ | Key in shoe size 9 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $7$ | Accumulate entry ($n = 7$) |
-| `10` | $0$ | $0$ | $7$ | $10$ | Key in shoe size 10 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $8$ | Accumulate entry ($n = 8$) |
-| `[g] [MODE]` | $0$ | $0$ | $8$ | $7$ | Identify statistical mode across sample ($X = 7$, $n=8$ in $Y$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $7.0000$. Most common shoe size (mode) is $\mathbf{7.00}$.
 
@@ -9386,26 +8880,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Data Detective Context:** Weather Station Spread Analysis: Weekly maximum temperatures: $62, 65, 78, 81, 74, 69, 85^\circ\text{F}$. Calculate the temperature range ($\max - \min = 85 - 62$).
 - **Hands-On Manipulative Stage (Range Slider):** Pin the minimum temperature ($62^\circ$) and maximum temperature ($85^\circ$) on a number line strip. The distance spanned between the extremes measures $23^\circ$.
 - **RPN Keystrokes:** `[g] [CLΣ] 62 [Σ+] 65 [Σ+] 78 [Σ+] 81 [Σ+] 74 [Σ+] 69 [Σ+] 85 [Σ+] [RNG]` $\rightarrow$ **`23`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[g] [CLΣ] 62 [Σ+] 65 [Σ+] 78 [Σ+] 81 [Σ+] 74 [Σ+] 69 [Σ+] 85 [Σ+] [RNG]` -> (T=0, Z=0, Y=0, X=7). Compute range ($\max - \min = 85 - 62 = 23$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `[g] [CLΣ]` | $0$ | $0$ | $0$ | $0$ | Reset statistical registers ($n = 0$) |
-| `62` | $0$ | $0$ | $0$ | $62$ | Key in temperature 62 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $1$ | Accumulate observation ($n = 1$) |
-| `65` | $0$ | $0$ | $1$ | $65$ | Key in temperature 65 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $2$ | Accumulate observation ($n = 2$) |
-| `78` | $0$ | $0$ | $2$ | $78$ | Key in temperature 78 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $3$ | Accumulate observation ($n = 3$) |
-| `81` | $0$ | $0$ | $3$ | $81$ | Key in temperature 81 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $4$ | Accumulate observation ($n = 4$) |
-| `74` | $0$ | $0$ | $4$ | $74$ | Key in temperature 74 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $5$ | Accumulate observation ($n = 5$) |
-| `69` | $0$ | $0$ | $5$ | $69$ | Key in temperature 69 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $6$ | Accumulate observation ($n = 6$) |
-| `85` | $0$ | $0$ | $6$ | $85$ | Key in temperature 85 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $7$ | Accumulate observation ($n = 7$) |
-| `[RNG]` | $0$ | $0$ | $7$ | $23$ | Compute range ($\max - \min = 85 - 62 = 23$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $23.0000$. Weekly temperature range is $\mathbf{23.00^\circ\text{F}}$.
 
@@ -9413,26 +8889,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Data Detective Context:** Precipitation Variance: Weekly rainfall measurements: $0.1, 0.2, 0.4, 0.6, 0.9, 1.2, 1.5\text{ inches}$. Find the interquartile range ($Q_3 - Q_1$).
 - **Hands-On Manipulative Stage (Box-and-Whisker Plot Mat):** Divide the sorted 7-point rainfall dataset into lower and upper quartiles. Mark $Q_1 = 0.2$ and $Q_3 = 1.2$; the width of the middle $50\%$ box spans the interquartile range.
 - **RPN Keystrokes:** `[g] [CLΣ] 0.1 [Σ+] 0.2 [Σ+] 0.4 [Σ+] 0.6 [Σ+] 0.9 [Σ+] 1.2 [Σ+] 1.5 [Σ+] [IQR]` $\rightarrow$ **`0.75`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[g] [CLΣ] 0.1 [Σ+] 0.2 [Σ+] 0.4 [Σ+] 0.6 [Σ+] 0.9 [Σ+] 1.2 [Σ+] 1.5 [Σ+] [IQR]` -> (T=0, Z=0, Y=0, X=7). Compute interquartile range ($Q_3 - Q_1 = 0.75$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `[g] [CLΣ]` | $0$ | $0$ | $0$ | $0$ | Reset statistical memory ($n = 0$) |
-| `0.1` | $0$ | $0$ | $0$ | $0.1$ | Key in rainfall 0.1 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $1$ | Accumulate point ($n = 1$) |
-| `0.2` | $0$ | $0$ | $1$ | $0.2$ | Key in rainfall 0.2 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $2$ | Accumulate point ($n = 2$) |
-| `0.4` | $0$ | $0$ | $2$ | $0.4$ | Key in rainfall 0.4 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $3$ | Accumulate point ($n = 3$) |
-| `0.6` | $0$ | $0$ | $3$ | $0.6$ | Key in rainfall 0.6 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $4$ | Accumulate point ($n = 4$) |
-| `0.9` | $0$ | $0$ | $4$ | $0.9$ | Key in rainfall 0.9 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $5$ | Accumulate point ($n = 5$) |
-| `1.2` | $0$ | $0$ | $5$ | $1.2$ | Key in rainfall 1.2 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $6$ | Accumulate point ($n = 6$) |
-| `1.5` | $0$ | $0$ | $6$ | $1.5$ | Key in rainfall 1.5 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $7$ | Accumulate point ($n = 7$) |
-| `[IQR]` | $0$ | $0$ | $7$ | $0.75$ | Compute interquartile range ($Q_3 - Q_1 = 0.75$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $0.7500$. Interquartile range of rainfall is $\mathbf{0.75\text{ inches}}$.
 
@@ -9440,22 +8898,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Data Detective Context:** Sensor Error Analysis: A 5-point dataset: $10, 15, 20, 25, 30$ has mean $\bar{x} = 20.0$. Deviations from mean are $|-10|, |-5|, |0|, |+5|, |+10|$. Sum of deviations $= 30$. Find the Mean Absolute Deviation ($\text{MAD} = 30 / 5 = 6.0$).
 - **Hands-On Manipulative Stage (Distance From Mean Strip):** Lay out the points on a number line. Measure the physical distance from each point to the center mark 20: $10 + 5 + 0 + 5 + 10 = 30$. Dividing by 5 yields the average distance from center.
 - **RPN Keystrokes:** `[g] [CLΣ] 10 [Σ+] 15 [Σ+] 20 [Σ+] 25 [Σ+] 30 [Σ+] [g] [MAD]` $\rightarrow$ **`6`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[g] [CLΣ] 10 [Σ+] 15 [Σ+] 20 [Σ+] 25 [Σ+] 30 [Σ+] [g] [MAD]` -> (T=0, Z=0, Y=0, X=5). Compute Mean Absolute Deviation ($\text{MAD} = 6$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `[g] [CLΣ]` | $0$ | $0$ | $0$ | $0$ | Clear statistical accumulator ($n = 0$) |
-| `10` | $0$ | $0$ | $0$ | $10$ | Key in data point 10 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $1$ | Deposit into accumulator ($n = 1$) |
-| `15` | $0$ | $0$ | $1$ | $15$ | Key in data point 15 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $2$ | Deposit into accumulator ($n = 2$) |
-| `20` | $0$ | $0$ | $2$ | $20$ | Key in data point 20 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $3$ | Deposit into accumulator ($n = 3$) |
-| `25` | $0$ | $0$ | $3$ | $25$ | Key in data point 25 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $4$ | Deposit into accumulator ($n = 4$) |
-| `30` | $0$ | $0$ | $4$ | $30$ | Key in data point 30 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $5$ | Deposit into accumulator ($n = 5$) |
-| `[g] [MAD]` | $0$ | $0$ | $5$ | $6$ | Compute Mean Absolute Deviation ($\text{MAD} = 6$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $6.0000$. Mean Absolute Deviation is $\mathbf{6.00}$.
 
@@ -9463,12 +8907,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Data Detective Context:** Scorecard Frequency Binning: In survey dataset $70, 75, 80, 80, 85, 85, 85, 90, 90, 95$, accumulate observation 85 and inspect active sample counter.
 - **Hands-On Manipulative Stage (Dot Plot Counter Grid):** Place a token into the score 85 column. The stack records the entry into the statistical registers.
 - **RPN Keystrokes:** `85 [Σ+]` $\rightarrow$ **`1`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `85 [Σ+]` -> (T=0, Z=0, Y=0, X=1). Accumulate score into statistical register ($n = 1$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `85` | $0$ | $0$ | $0$ | $85$ | Key in observed test score 85 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $1$ | Accumulate score into statistical register ($n = 1$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $1$. Single observation of score 85 registered in sample bin.
 
@@ -9481,15 +8921,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Evaluate $(-15) + (-28)$.
 - **Manipulative Stage:** Place 15 red debt tokens on the workspace. Add 28 more red debt tokens alongside them. Count the accumulated total of 43 red tokens, representing directed deficit $(-43)$.
 - **RPN Keystrokes:** `15 [+/-] [ENTER] 28 [+/-] [+]` $\rightarrow$ **`-43`**
+- **Stack Flow:** Tap `15 [+/-] [ENTER] 28 [+/-] [+]` -> (T=0, Z=0, Y=0, X=-43). Add $-15 + (-28) = -43$; stack drops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` | $0$ | $0$ | $0$ | $15$ | Key in first magnitude 15 |
-| `[+/-]` | $0$ | $0$ | $0$ | $-15$ | Negate to represent directed quantity $-15$ |
-| `[ENTER]` | $0$ | $0$ | $-15$ | $-15$ | Push $-15$ into Register $Y$ |
-| `28` | $0$ | $0$ | $-15$ | $28$ | Key in second magnitude 28 |
-| `[+/-]` | $0$ | $0$ | $-15$ | $-28$ | Negate to represent directed quantity $-28$ |
-| `[+]` | $0$ | $0$ | $0$ | $-43$ | Add $-15 + (-28) = -43$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $-43$. Adding two negative quantities accumulates total magnitude while preserving the negative sign.
 
@@ -9497,13 +8930,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** A bank account has $\$45$. An automatic withdrawal of $\$70$ occurs. What is the balance?
 - **Manipulative Stage:** Place 45 green credit tokens in a dish. To remove 70 tokens, pair 45 green tokens with 45 red debt tokens (forming zero pairs), then add 25 additional red debt tokens. Removing 70 tokens leaves 25 red debt tokens ($-25$).
 - **RPN Keystrokes:** `45 [ENTER] 70 [-]` $\rightarrow$ **`-25`**
+- **Stack Flow:** Tap `45 [ENTER] 70 [-]` -> (T=0, Z=0, Y=0, X=-25). Subtract $45 - 70 = -25$; stack drops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `45` | $0$ | $0$ | $0$ | $45$ | Key in starting balance $\$45$ |
-| `[ENTER]` | $0$ | $0$ | $45$ | $45$ | Push $\$45$ into Register $Y$ |
-| `70` | $0$ | $0$ | $45$ | $70$ | Key in withdrawal amount $\$70$ |
-| `[-]` | $0$ | $0$ | $0$ | $-25$ | Subtract $45 - 70 = -25$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $-25$. Account is overdrawn by $\$25$.
 
@@ -9511,14 +8939,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Evaluate $12 - (-18)$.
 - **Manipulative Stage:** Place 12 yellow positive tiles on the board. To subtract 18 negative red tiles, introduce 18 zero pairs (+18 yellow and -18 red). Physically remove the 18 red tiles. Exactly $12 + 18 = 30$ yellow tiles remain.
 - **RPN Keystrokes:** `12 [ENTER] 18 [+/-] [-]` $\rightarrow$ **`30`**
+- **Stack Flow:** Tap `12 [ENTER] 18 [+/-] [-]` -> (T=0, Z=0, Y=0, X=30). Subtract $12 - (-18) = 12 + 18 = 30$; stack drops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `12` | $0$ | $0$ | $0$ | $12$ | Key in starting number 12 |
-| `[ENTER]` | $0$ | $0$ | $12$ | $12$ | Push 12 into Register $Y$ |
-| `18` | $0$ | $0$ | $12$ | $18$ | Key in second number magnitude 18 |
-| `[+/-]` | $0$ | $0$ | $12$ | $-18$ | Negate second number to $-18$ |
-| `[-]` | $0$ | $0$ | $0$ | $30$ | Subtract $12 - (-18) = 12 + 18 = 30$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $30$. Subtracting a negative is mathematically and physically identical to adding its positive opposite.
 
@@ -9526,15 +8948,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Evaluate $(-7) \times (-8)$.
 - **Manipulative Stage:** On a coordinate grid, establish positive orientation. Multiplying by a negative factor reverses direction $180^\circ$ into negative territory. Multiplying by a second negative factor reverses direction another $180^\circ$, returning to positive orientation $+56$.
 - **RPN Keystrokes:** `[7] [+/-] [ENTER] [8] [+/-] [×]` $\rightarrow$ **`56`**
+- **Stack Flow:** Tap `7 [+/-] [ENTER] 8 [+/-] [×]` -> (T=0, Z=0, Y=0, X=56). Multiply $(-7) \times (-8) = 56$; stack drops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `7` | $0$ | $0$ | $0$ | $7$ | Key in first factor magnitude 7 |
-| `[+/-]` | $0$ | $0$ | $0$ | $-7$ | Negate to $-7$ |
-| `[ENTER]` | $0$ | $0$ | $-7$ | $-7$ | Push $-7$ into Register $Y$ |
-| `8` | $0$ | $0$ | $-7$ | $8$ | Key in second factor magnitude 8 |
-| `[+/-]` | $0$ | $0$ | $-7$ | $-8$ | Negate to $-8$ |
-| `[×]` | $0$ | $0$ | $0$ | $56$ | Multiply $(-7) \times (-8) = 56$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $56$. The product of two negative factors evaluates to a positive result.
 
@@ -9542,14 +8957,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Evaluate $(-72) \div (+9)$.
 - **Manipulative Stage:** Take 72 red negative tokens representing a total deficit of $-72$. Partition them evenly into 9 cups. Each cup receives exactly 8 red negative tokens ($-8$).
 - **RPN Keystrokes:** `72 [+/-] [ENTER] [9] [÷]` $\rightarrow$ **`-8`**
+- **Stack Flow:** Tap `72 [+/-] [ENTER] 9 [÷]` -> (T=0, Z=0, Y=0, X=-8). Divide $(-72) \div 9 = -8$; stack drops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `72` | $0$ | $0$ | $0$ | $72$ | Key in dividend magnitude 72 |
-| `[+/-]` | $0$ | $0$ | $0$ | $-72$ | Negate to dividend $-72$ |
-| `[ENTER]` | $0$ | $0$ | $-72$ | $-72$ | Push $-72$ into Register $Y$ |
-| `9` | $0$ | $0$ | $-72$ | $9$ | Enter positive divisor 9 |
-| `[÷]` | $0$ | $0$ | $0$ | $-8$ | Divide $(-72) \div 9 = -8$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $-8$. Dividing a negative quantity by a positive divisor yields a negative quotient.
 
@@ -9557,12 +8966,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Evaluate $|-125|$.
 - **Manipulative Stage:** Locate $-125$ on a real number line runner. Measure the distance from 0 to $-125$ using a meter tape. Regardless of direction from the origin, geometric distance is strictly scalar and non-negative: 125 units.
 - **RPN Keystrokes:** `125 [+/-] [g] [|x|]` $\rightarrow$ **`125`**
+- **Stack Flow:** Tap `125 [+/-] [g] [|x|]` -> (T=0, Z=0, Y=0, X=125). Absolute value operator strips sign; magnitude is 125.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `125` | $0$ | $0$ | $0$ | $125$ | Key in integer 125 |
-| `[+/-]` | $0$ | $0$ | $0$ | $-125$ | Negate to $-125$ |
-| `[g] [|x|]` | $0$ | $0$ | $0$ | $125$ | Absolute value operator strips sign; magnitude is 125 |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $125$. Absolute value computes geometric distance from zero.
 
@@ -9570,15 +8975,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Evaluate $|-18| + |12|$.
 - **Manipulative Stage:** Measure distance from $-18$ to 0 (18 units) and distance from 0 to 12 (12 units). Lay both measurement segments end-to-end to obtain a combined distance of 30 units.
 - **RPN Keystrokes:** `18 [+/-] [g] [|x|] 12 [g] [|x|] [+]` $\rightarrow$ **`30`**
+- **Stack Flow:** Tap `18 [+/-] [g] [|x|] 12 [g] [|x|] [+]` -> (T=0, Z=0, Y=0, X=30). Sum absolute distances $18 + 12 = 30$; stack drops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` | $0$ | $0$ | $0$ | $18$ | Key in first value 18 |
-| `[+/-]` | $0$ | $0$ | $0$ | $-18$ | Negate to $-18$ |
-| `[g] [|x|]` | $0$ | $0$ | $0$ | $18$ | Evaluate $|-18| = 18$ |
-| `12` | $0$ | $0$ | $18$ | $12$ | Key in second value 12; stack lifts 18 to $Y$ |
-| `[g] [|x|]` | $0$ | $0$ | $18$ | $12$ | Evaluate $|12| = 12$ |
-| `[+]` | $0$ | $0$ | $0$ | $30$ | Sum absolute distances $18 + 12 = 30$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $30$. Sum of magnitudes evaluated without parentheses.
 
@@ -9586,15 +8984,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Find distance between $-12$ and $+15$ on the real line: $|15 - (-12)|$.
 - **Manipulative Stage:** Place a peg at $-12$ and a peg at $+15$ on a numbered track. Count the total unit intervals between them: 12 units to reach zero, plus 15 units beyond zero, totaling 27 units.
 - **RPN Keystrokes:** `15 [ENTER] 12 [+/-] [-] [g] [|x|]` $\rightarrow$ **`27`**
+- **Stack Flow:** Tap `15 [ENTER] 12 [+/-] [-] [g] [|x|]` -> (T=0, Z=0, Y=0, X=27). Confirm positive distance magnitude: $|27| = 27$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` | $0$ | $0$ | $0$ | $15$ | Enter endpoint 15 |
-| `[ENTER]` | $0$ | $0$ | $15$ | $15$ | Push 15 to Register $Y$ |
-| `12` | $0$ | $0$ | $15$ | $12$ | Key in start point magnitude 12 |
-| `[+/-]` | $0$ | $0$ | $15$ | $-12$ | Negate to start point coordinate $-12$ |
-| `[-]` | $0$ | $0$ | $0$ | $27$ | Subtract $15 - (-12) = 27$; stack drops |
-| `[g] [|x|]` | $0$ | $0$ | $0$ | $27$ | Confirm positive distance magnitude: $|27| = 27$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $27$. Euclidean distance between $-12$ and $+15$ confirmed as 27 units.
 
@@ -9602,24 +8993,17 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Evaluate $(-9)^2$.
 - **Manipulative Stage:** Build a 9-by-9 grid of square tiles. Whether oriented along positive axes or rotated $180^\circ$ into opposite dimensions (negative width times negative height), the bounded physical area comprises 81 positive unit squares.
 - **RPN Keystrokes:** `[9] [+/-] [x²]` $\rightarrow$ **`81`**
+- **Stack Flow:** Tap `9 [+/-] [x²]` -> (T=0, Z=0, Y=0, X=81). Square in place: $(-9) \times (-9) = 81$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `9` | $0$ | $0$ | $0$ | $9$ | Key in side length 9 |
-| `[+/-]` | $0$ | $0$ | $0$ | $-9$ | Negate to $-9$ |
-| `[x²]` | $0$ | $0$ | $0$ | $81$ | Square in place: $(-9) \times (-9) = 81$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $81$. Even powers of negative real numbers evaluate to positive values.
 
 #### Challenge 36: Geometric Square Root: $\sqrt{289}$
 - **Problem:** A square plaza has area $289\text{ m}^2$. Find side length.
-- **Manipulative Stage:** Take 289 unit square tiles. Assemble them into the largest possible solid square array. Count the number of tiles along one edge: exactly 17 tiles with zero remainder.
+- **Manipulative Stage:** Model Small with Blocks -> Scale Big on StackCalc: First, model the square root concept on a small scale with your Counting Tiles: assemble a 5x5 square using 25 tiles to see that edge length is $\sqrt{25} = 5$. Now scale big on StackCalc for the 289-tile plaza: enter 289 and tap [f] [√x] to find the 17-tile edge without needing 289 plastic tiles on the classroom floor.
 - **RPN Keystrokes:** `289 [f] [√x]` $\rightarrow$ **`17`**
+- **Stack Flow:** Tap `289 [f] [√x]` -> (T=0, Z=0, Y=0, X=17). Extract principal square root: $\sqrt{289} = 17$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `289` | $0$ | $0$ | $0$ | $289$ | Enter square plaza area $289\text{ m}^2$ |
-| `[f] [√x]` | $0$ | $0$ | $0$ | $17$ | Extract principal square root: $\sqrt{289} = 17$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $17$. Side length of plaza is $17\text{ m}$.
 
@@ -9627,11 +9011,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** A square chessboard has area $625\text{ cm}^2$. Find side length.
 - **Manipulative Stage:** Model area using a 625-square grid overlay. Decompose 625 into prime squares ($25 \times 25$). Verify each dimension equals 25 units.
 - **RPN Keystrokes:** `625 [f] [√x]` $\rightarrow$ **`25`**
+- **Stack Flow:** Tap `625 [f] [√x]` -> (T=0, Z=0, Y=0, X=25). Extract principal square root: $\sqrt{625} = 25$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `625` | $0$ | $0$ | $0$ | $625$ | Enter chessboard area $625\text{ cm}^2$ |
-| `[f] [√x]` | $0$ | $0$ | $0$ | $25$ | Extract principal square root: $\sqrt{625} = 25$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $25$. Chessboard side length is $25\text{ cm}$.
 
@@ -9639,13 +9020,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Generate a random integer between 10 and 50 using `[g] [t…x]`.
 - **Manipulative Stage:** Place 41 numbered tiles (10 through 50) into an opaque urn. Draw one tile at random to model discrete uniform sampling across a bounded interval.
 - **RPN Keystrokes:** `10 [ENTER] 50 [g] [t…x]` $\rightarrow$ **`28`**
+- **Stack Flow:** Tap `10 [ENTER] 50 [g] [t…x]` -> (T=0, Z=0, Y=10, X=50). Generate uniform pseudo-random integer in $[10, 50]$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `10` | $0$ | $0$ | $0$ | $10$ | Enter lower range limit 10 |
-| `[ENTER]` | $0$ | $0$ | $10$ | $10$ | Push lower bound into Register $Y$ |
-| `50` | $0$ | $0$ | $10$ | $50$ | Enter upper range limit 50 |
-| `[g] [t…x]` | $0$ | $0$ | $10$ | $18$ | Generate uniform pseudo-random integer in $[10, 50]$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays a random integer $r \in [10, 50]$, while Register $Y$ preserves the lower bound $10$.
 
@@ -9656,25 +9032,20 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `29` | $0$ | $0$ | $0$ | $29$ | Key in first candidate 29 |
-| `[PRIME]` | $0$ | $0$ | $0$ | $29$ | LCD flashes `PRIME`; preserves 29 in Register $X$ |
-| `31` | $0$ | $0$ | $29$ | $31$ | Key in second candidate 31; stack lifts 29 to $Y$ |
-| `[PRIME]` | $0$ | $0$ | $29$ | $31$ | LCD flashes `PRIME`; preserves 31 in Register $X$ |
-| `[+]` | $0$ | $0$ | $0$ | $60$ | Sum twin primes $29 + 31 = 60$; stack drops |
+| `29` | $0.0000$ | $0.0000$ | $0.0000$ | $29.0000$ | Key in first candidate 29 |
+| `[PRIME]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | LCD flashes `PRIME`; preserves 29 in Register $X$ |
+| `31` | $0.0000$ | $0.0000$ | $1.0000$ | $31.0000$ | Key in second candidate 31; stack lifts 29 to $Y$ |
+| `[PRIME]` | $0.0000$ | $0.0000$ | $1.0000$ | $1.0000$ | LCD flashes `PRIME`; preserves 31 in Register $X$ |
+| `[+]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Sum twin primes $29 + 31 = 60$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $60$. Both numbers verified prime, and their sum is an even integer as predicted by number theory.
 
 #### Challenge 40: Divisibility by 9 Check via Remainder
 - **Problem:** Check if 1,557 is divisible by 9 using Euclidean division (`[g] [÷R]`).
-- **Manipulative Stage:** Group 1,557 base-ten blocks into bundles of 900, 630, and 27. Count the bundles (173 groups of 9) and verify that zero individual unit blocks remain.
+- **Manipulative Stage:** Model Small with Blocks -> Scale Big on StackCalc: First, model small with your Place Value kit: test divisibility by 9 on the number 18 (1 ten-bar and 8 cubes). Group them into 2 sets of 9 with zero remainder ($18 \div 9 = 2\text{ R }0$). Now scale big on StackCalc: tap `1557 [ENTER] 9 [g] [÷R]` to verify quotient 173 and remainder 0 without needing 1,557 blocks.
 - **RPN Keystrokes:** `1557 [ENTER] [9] [g] [÷R]` $\rightarrow$ **`173`**
+- **Stack Flow:** Tap `1557 [ENTER] 9 [g] [÷R]` -> (T=0, Z=0, Y=0, X=173). Euclidean division: Quotient 173 in $X$, Remainder 0 in $Y$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1557` | $0$ | $0$ | $0$ | $1557$ | Key in dividend 1557 |
-| `[ENTER]` | $0$ | $0$ | $1557$ | $1557$ | Push dividend to Register $Y$ |
-| `9` | $0$ | $0$ | $1557$ | $9$ | Enter divisor 9 |
-| `[g] [÷R]` | $0$ | $0$ | $0$ | $173$ | Euclidean division: Quotient 173 in $X$, Remainder 0 in $Y$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $173$ and Register $Y$ displays $0$. Remainder of 0 confirms exact divisibility by 9 (also confirmed by digit sum $1+5+5+7 = 18$).
 
@@ -9685,12 +9056,12 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in first denominator 4 |
-| `[ENTER]` | $0$ | $0$ | $4$ | $4$ | Push 4 to Register $Y$ |
-| `6` | $0$ | $0$ | $4$ | $6$ | Key in second denominator 6 |
-| `[f] [LCM]` | $0$ | $0$ | $0$ | $12$ | Compute $\operatorname{lcm}(4, 6) = 12$ |
-| `10` | $0$ | $0$ | $12$ | $10$ | Key in third denominator 10; stack lifts 12 to $Y$ |
-| `[f] [LCM]` | $0$ | $0$ | $0$ | $60$ | Compute $\operatorname{lcm}(12, 10) = 60$ |
+| `4` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Key in first denominator 4 |
+| `[ENTER]` | $0.0000$ | $0.0000$ | $4.0000$ | $4.0000$ | Push 4 to Register $Y$ |
+| `6` | $0.0000$ | $0.0000$ | $4.0000$ | $6.0000$ | Key in second denominator 6 |
+| `[f] [LCM]` | $0.0000$ | $0.0000$ | $0.0000$ | $12.0000$ | Compute $\operatorname{lcm}(4, 6) = 12$ |
+| `10` | $0.0000$ | $0.0000$ | $12.0000$ | $10.0000$ | Key in third denominator 10; stack lifts 12 to $Y$ |
+| `[f] [LCM]` | $0.0000$ | $0.0000$ | $0.0000$ | $60.0000$ | Compute $\operatorname{lcm}(12, 10) = 60$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $60$. Common denominator for $\frac{1}{4}, \frac{1}{6}, \frac{1}{10}$ is 60.
 
@@ -9698,14 +9069,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Lowest temperature was $-22^\circ\text{F}$, highest was $+14^\circ\text{F}$. Find total temperature swing.
 - **Manipulative Stage:** On a vertical thermometer scale, mark $-22$ below zero and $+14$ above zero. Trace the mercury column rising from $-22$ to 0 (22 degrees) and from 0 to $+14$ (14 degrees), measuring the total thermal excursion: 36 degrees.
 - **RPN Keystrokes:** `14 [ENTER] 22 [+/-] [-]` $\rightarrow$ **`36`**
+- **Stack Flow:** Tap `14 [ENTER] 22 [+/-] [-]` -> (T=0, Z=0, Y=0, X=36). Subtract $14 - (-22) = 14 + 22 = 36$; stack drops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `14` | $0$ | $0$ | $0$ | $14$ | Enter maximum temperature $+14^\circ$ |
-| `[ENTER]` | $0$ | $0$ | $14$ | $14$ | Push high temperature to Register $Y$ |
-| `22` | $0$ | $0$ | $14$ | $22$ | Key in low temperature magnitude 22 |
-| `[+/-]` | $0$ | $0$ | $14$ | $-22$ | Negate to low temperature $-22^\circ$ |
-| `[-]` | $0$ | $0$ | $0$ | $36$ | Subtract $14 - (-22) = 14 + 22 = 36$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $36$. Total temperature variation is $36^\circ\text{F}$.
 
@@ -9716,13 +9081,13 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `180` | $0$ | $0$ | $0$ | $180$ | Key in initial depth magnitude 180 |
-| `[+/-]` | $0$ | $0$ | $0$ | $-180$ | Negate to depth $-180\text{ m}$ |
-| `[ENTER]` | $0$ | $0$ | $-180$ | $-180$ | Push initial depth to Register $Y$ |
-| `65` | $0$ | $0$ | $-180$ | $65$ | Key in ascent $+65\text{ m}$ |
-| `[+]` | $0$ | $0$ | $0$ | $-115$ | Add ascent: $-180 + 65 = -115\text{ m}$; stack drops |
-| `40` | $0$ | $0$ | $-115$ | $40$ | Key in dive descent $40\text{ m}$; stack lifts $-115$ to $Y$ |
-| `[-]` | $0$ | $0$ | $0$ | $-155$ | Deduct descent: $-115 - 40 = -155\text{ m}$; stack drops |
+| `180` | $0.0000$ | $0.0000$ | $0.0000$ | $180.0000$ | Key in initial depth magnitude 180 |
+| `[+/-]` | $0.0000$ | $0.0000$ | $0.0000$ | $-180.0000$ | Negate to depth $-180\text{ m}$ |
+| `[ENTER]` | $0.0000$ | $0.0000$ | $-180.0000$ | $-180.0000$ | Push initial depth to Register $Y$ |
+| `65` | $0.0000$ | $0.0000$ | $-180.0000$ | $65.0000$ | Key in ascent $+65\text{ m}$ |
+| `[+]` | $0.0000$ | $0.0000$ | $0.0000$ | $-115.0000$ | Add ascent: $-180 + 65 = -115\text{ m}$; stack drops |
+| `40` | $0.0000$ | $0.0000$ | $-115.0000$ | $40.0000$ | Key in dive descent $40\text{ m}$; stack lifts $-115$ to $Y$ |
+| `[-]` | $0.0000$ | $0.0000$ | $0.0000$ | $-155.0000$ | Deduct descent: $-115 - 40 = -155\text{ m}$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $-155$. Final depth is $155\text{ m}$ below sea level.
 
@@ -9730,13 +9095,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** What is the probability of rolling double sixes with two fair six-sided dice ($1$ favorable outcome out of $36$)?
 - **Manipulative Stage:** Examine a $6 \times 6$ grid of dice pairings (36 cells). Only one cell represents $(6,6)$. Compute the fractional area occupied by that single cell.
 - **RPN Keystrokes:** `[1] [ENTER] 36 [÷]` $\rightarrow$ **`0.0277777778`**
+- **Stack Flow:** Tap `1 [ENTER] 36 [÷]` -> (T=0, Z=0, Y=0, X=0.0278). Divide $1 \div 36 \approx 0.0278$; stack drops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` | $0$ | $0$ | $0$ | $1$ | Key in favorable outcome count 1 |
-| `[ENTER]` | $0$ | $0$ | $1$ | $1$ | Push 1 to Register $Y$ |
-| `36` | $0$ | $0$ | $1$ | $36$ | Key in sample space size 36 |
-| `[÷]` | $0$ | $0$ | $0$ | $0.0277777778$ | Divide $1 \div 36 \approx 0.0278$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $0.0277777778$. Probability is approximately $2.78\%$ (or $1/36$).
 
@@ -9744,13 +9104,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Five faces are not 6. Compute $5/6$.
 - **Manipulative Stage:** Set out 6 die faces: {1, 2, 3, 4, 5, 6}. Remove the face labeled 6. The remaining 5 faces represent the complement event ($E'$). Calculate $5/6$.
 - **RPN Keystrokes:** `[5] [ENTER] [6] [÷]` $\rightarrow$ **`0.8333333333`**
+- **Stack Flow:** Tap `5 [ENTER] 6 [÷]` -> (T=0, Z=0, Y=0, X=0.8333). Divide $5 \div 6 \approx 0.8333$; stack drops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `5` | $0$ | $0$ | $0$ | $5$ | Key in non-six favorable outcomes 5 |
-| `[ENTER]` | $0$ | $0$ | $5$ | $5$ | Push 5 to Register $Y$ |
-| `6` | $0$ | $0$ | $5$ | $6$ | Key in total possible faces 6 |
-| `[÷]` | $0$ | $0$ | $0$ | $0.8333333333$ | Divide $5 \div 6 \approx 0.8333$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $0.8333333333$. Complementary probability is approximately $83.33\%$.
 
@@ -9758,11 +9113,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Decompose 1,001 into prime factors (famous number-theory product).
 - **Manipulative Stage:** Build a 3D rectangular prism volume of 1,001 unit cubes. Test factor slicing: the block factors neatly into dimensions $7 \times 11 \times 13$, three distinct consecutive prime numbers.
 - **RPN Keystrokes:** `1001 [g] [FACT]` $\rightarrow$ **`1001`**
+- **Stack Flow:** Tap `1001 [g] [FACT]` -> (T=0, Z=0, Y=0, X=0). LCD decomposes into prime factors: `7 × 11 × 13`.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1001` | $0$ | $0$ | $0$ | $1001$ | Key in composite integer 1001 |
-| `[g] [FACT]` | $0$ | $0$ | $0$ | $1001$ | LCD decomposes into prime factors: `7 × 11 × 13` |
 
 - **Diagnostic Checkpoint:** Register $X$ preserves $1001$ while the display shows $7 \times 11 \times 13$.
 
@@ -9770,11 +9122,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Decompose 1,729 into prime factors.
 - **Manipulative Stage:** Inspect 1,729, known as the smallest integer expressible as the sum of two cubes in two different ways ($1^3 + 12^3 = 9^3 + 10^3$). Deconstruct it into prime factor blocks: $7 \times 13 \times 19$.
 - **RPN Keystrokes:** `1729 [g] [FACT]` $\rightarrow$ **`1729`**
+- **Stack Flow:** Tap `1729 [g] [FACT]` -> (T=0, Z=0, Y=0, X=0). LCD decomposes into prime factors: `7 × 13 × 19`.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1729` | $0$ | $0$ | $0$ | $1729$ | Key in integer 1729 |
-| `[g] [FACT]` | $0$ | $0$ | $0$ | $1729$ | LCD decomposes into prime factors: `7 × 13 × 19` |
 
 - **Diagnostic Checkpoint:** Register $X$ preserves $1729$ while the display reveals $7 \times 13 \times 19$, three primes in arithmetic progression with common difference 6.
 
@@ -9785,22 +9134,22 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `90` | $0$ | $0$ | $0$ | $90$ | Key in homework average 90 |
-| `[ENTER]` | $0$ | $0$ | $90$ | $90$ | Push 90 into Register $Y$ |
-| `2` | $0$ | $0$ | $90$ | $2$ | Key in homework weight 2 |
-| `[×]` | $0$ | $0$ | $0$ | $180$ | Compute homework points: $90 \times 2 = 180$ |
-| `82` | $0$ | $0$ | $180$ | $82$ | Key in quiz average 82; stack lifts 180 to $Y$ |
-| `[ENTER]` | $0$ | $180$ | $82$ | $82$ | Push 82 to $Y$; lifts 180 to $Z$ |
-| `3` | $0$ | $180$ | $82$ | $3$ | Key in quiz weight 3 |
-| `[×]` | $0$ | $0$ | $180$ | $246$ | Compute quiz points: $82 \times 3 = 246$; $Z$ drops to $Y$ |
-| `[+]` | $0$ | $0$ | $0$ | $426$ | Accumulate weighted points: $180 + 246 = 426$ |
-| `88` | $0$ | $0$ | $426$ | $88$ | Key in exam average 88; stack lifts 426 to $Y$ |
-| `[ENTER]` | $0$ | $426$ | $88$ | $88$ | Push 88 to $Y$; lifts 426 to $Z$ |
-| `5` | $0$ | $426$ | $88$ | $5$ | Key in exam weight 5 |
-| `[×]` | $0$ | $0$ | $426$ | $440$ | Compute exam points: $88 \times 5 = 440$; $Z$ drops to $Y$ |
-| `[+]` | $0$ | $0$ | $0$ | $866$ | Total weighted points: $426 + 440 = 866$ |
-| `10` | $0$ | $0$ | $866$ | $10$ | Key in total weight 10; stack lifts 866 to $Y$ |
-| `[÷]` | $0$ | $0$ | $0$ | $86.6$ | Divide $866 \div 10 = 86.6$; stack drops |
+| `90` | $0.0000$ | $0.0000$ | $0.0000$ | $90.0000$ | Key in homework average 90 |
+| `[ENTER]` | $0.0000$ | $0.0000$ | $90.0000$ | $90.0000$ | Push 90 into Register $Y$ |
+| `2` | $0.0000$ | $0.0000$ | $90.0000$ | $2.0000$ | Key in homework weight 2 |
+| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $180.0000$ | Compute homework points: $90 \times 2 = 180$ |
+| `82` | $0.0000$ | $0.0000$ | $180.0000$ | $82.0000$ | Key in quiz average 82; stack lifts 180 to $Y$ |
+| `[ENTER]` | $0.0000$ | $180.0000$ | $82.0000$ | $82.0000$ | Push 82 to $Y$; lifts 180 to $Z$ |
+| `3` | $0.0000$ | $180.0000$ | $82.0000$ | $3.0000$ | Key in quiz weight 3 |
+| `[×]` | $0.0000$ | $0.0000$ | $180.0000$ | $246.0000$ | Compute quiz points: $82 \times 3 = 246$; $Z$ drops to $Y$ |
+| `[+]` | $0.0000$ | $0.0000$ | $0.0000$ | $426.0000$ | Accumulate weighted points: $180 + 246 = 426$ |
+| `88` | $0.0000$ | $0.0000$ | $426.0000$ | $88.0000$ | Key in exam average 88; stack lifts 426 to $Y$ |
+| `[ENTER]` | $0.0000$ | $426.0000$ | $88.0000$ | $88.0000$ | Push 88 to $Y$; lifts 426 to $Z$ |
+| `5` | $0.0000$ | $426.0000$ | $88.0000$ | $5.0000$ | Key in exam weight 5 |
+| `[×]` | $0.0000$ | $0.0000$ | $426.0000$ | $440.0000$ | Compute exam points: $88 \times 5 = 440$; $Z$ drops to $Y$ |
+| `[+]` | $0.0000$ | $0.0000$ | $0.0000$ | $866.0000$ | Total weighted points: $426 + 440 = 866$ |
+| `10` | $0.0000$ | $0.0000$ | $866.0000$ | $10.0000$ | Key in total weight 10; stack lifts 866 to $Y$ |
+| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $86.6$ | Divide $866 \div 10 = 86.6$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $86.6$. Weighted mean grade is $86.6\%$.
 
@@ -9811,15 +9160,15 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `11` | $0$ | $0$ | $0$ | $11$ | Key in first prime candidate 11 |
-| `[PRIME]` | $0$ | $0$ | $0$ | $11$ | LCD flashes `PRIME`; preserves 11 in Register $X$ |
-| `17` | $0$ | $0$ | $11$ | $17$ | Key in second prime candidate 17; stack lifts 11 to $Y$ |
-| `[PRIME]` | $0$ | $0$ | $11$ | $17$ | LCD flashes `PRIME`; preserves 17 in Register $X$ |
-| `[+]` | $0$ | $0$ | $0$ | $28$ | Sum primes $11 + 17 = 28$; stack drops |
-| `11` | $0$ | $0$ | $28$ | $11$ | Key in 11 for second partition check; stack lifts 28 to $Y$ |
-| `[ENTER]` | $0$ | $28$ | $11$ | $11$ | Push 11 to $Y$; lifts 28 to $Z$ |
-| `17` | $0$ | $28$ | $11$ | $17$ | Key in 17 |
-| `[+]` | $0$ | $0$ | $28$ | $28$ | Sum $11 + 17 = 28$; $Z$ drops to $Y$ |
+| `11` | $0.0000$ | $0.0000$ | $0.0000$ | $11.0000$ | Key in first prime candidate 11 |
+| `[PRIME]` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | LCD flashes `PRIME`; preserves 11 in Register $X$ |
+| `17` | $0.0000$ | $0.0000$ | $1.0000$ | $17.0000$ | Key in second prime candidate 17; stack lifts 11 to $Y$ |
+| `[PRIME]` | $0.0000$ | $0.0000$ | $1.0000$ | $1.0000$ | LCD flashes `PRIME`; preserves 17 in Register $X$ |
+| `[+]` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Sum primes $11 + 17 = 28$; stack drops |
+| `11` | $0.0000$ | $0.0000$ | $2.0000$ | $11.0000$ | Key in 11 for second partition check; stack lifts 28 to $Y$ |
+| `[ENTER]` | $0.0000$ | $2.0000$ | $11.0000$ | $11.0000$ | Push 11 to $Y$; lifts 28 to $Z$ |
+| `17` | $0.0000$ | $2.0000$ | $11.0000$ | $17.0000$ | Key in 17 |
+| `[+]` | $0.0000$ | $0.0000$ | $2.0000$ | $28.0000$ | Sum $11 + 17 = 28$; $Z$ drops to $Y$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $28$ and Register $Y$ preserves $28$. Both 11 and 17 confirmed prime, summing to even integer 28.
 
@@ -9830,14 +9179,14 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `14500` | $0$ | $0$ | $0$ | $14500$ | Enter Q1 profit $\$14,500$ |
-| `[ENTER]` | $0$ | $0$ | $14500$ | $14500$ | Push Q1 profit into Register $Y$ |
-| `3200` | $0$ | $0$ | $14500$ | $3200$ | Enter Q2 loss $\$3,200$ |
-| `[-]` | $0$ | $0$ | $0$ | $11300$ | Deduct Q2 loss: $14500 - 3200 = 11300$; stack drops |
-| `8900` | $0$ | $0$ | $11300$ | $8900$ | Enter Q3 profit $\$8,900$; stack lifts 11300 to $Y$ |
-| `[+]` | $0$ | $0$ | $0$ | $20200$ | Add Q3 profit: $11300 + 8900 = 20200$; stack drops |
-| `1400` | $0$ | $0$ | $20200$ | $1400$ | Enter Q4 loss $\$1,400$; stack lifts 20200 to $Y$ |
-| `[-]` | $0$ | $0$ | $0$ | $18800$ | Deduct Q4 loss: $20200 - 1400 = 18800$; stack drops |
+| `14500` | $0.0000$ | $0.0000$ | $0.0000$ | $14500.0000$ | Enter Q1 profit $\$14,500$ |
+| `[ENTER]` | $0.0000$ | $0.0000$ | $14500.0000$ | $14500.0000$ | Push Q1 profit into Register $Y$ |
+| `3200` | $0.0000$ | $0.0000$ | $14500.0000$ | $3200.0000$ | Enter Q2 loss $\$3,200$ |
+| `[-]` | $0.0000$ | $0.0000$ | $0.0000$ | $11300.0000$ | Deduct Q2 loss: $14500 - 3200 = 11300$; stack drops |
+| `8900` | $0.0000$ | $0.0000$ | $11300.0000$ | $8900.0000$ | Enter Q3 profit $\$8,900$; stack lifts 11300 to $Y$ |
+| `[+]` | $0.0000$ | $0.0000$ | $0.0000$ | $20200.0000$ | Add Q3 profit: $11300 + 8900 = 20200$; stack drops |
+| `1400` | $0.0000$ | $0.0000$ | $20200.0000$ | $1400.0000$ | Enter Q4 loss $\$1,400$; stack lifts 20200 to $Y$ |
+| `[-]` | $0.0000$ | $0.0000$ | $0.0000$ | $18800.0000$ | Deduct Q4 loss: $20200 - 1400 = 18800$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $18800$. Net annual profit is $\$18,800.00$.
 
@@ -9848,15 +9197,15 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` | $0$ | $0$ | $0$ | $1$ | Key in favorable coin outcome 1 |
-| `[ENTER]` | $0$ | $0$ | $1$ | $1$ | Push 1 into Register $Y$ |
-| `2` | $0$ | $0$ | $1$ | $2$ | Key in coin sample space 2 |
-| `[÷]` | $0$ | $0$ | $0$ | $0.5$ | Compute $P(\text{Heads}) = 1/2 = 0.5$ |
-| `1` | $0$ | $0$ | $0.5$ | $1$ | Key in favorable die outcome 1; stack lifts 0.5 to $Y$ |
-| `[ENTER]` | $0$ | $0.5$ | $1$ | $1$ | Push 1 to $Y$; lifts 0.5 to $Z$ |
-| `6` | $0$ | $0.5$ | $1$ | $6$ | Key in die sample space 6 |
-| `[÷]` | $0$ | $0$ | $0.5$ | $0.1666666667$ | Compute $P(\text{Roll 6}) = 1/6$; $Z$ drops to $Y$ |
-| `[×]` | $0$ | $0$ | $0$ | $0.0833333333$ | Multiply independent probabilities: $0.5 \times 0.1667 \approx 0.0833$ |
+| `1` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Key in favorable coin outcome 1 |
+| `[ENTER]` | $0.0000$ | $0.0000$ | $1.0000$ | $1.0000$ | Push 1 into Register $Y$ |
+| `2` | $0.0000$ | $0.0000$ | $1.0000$ | $2.0000$ | Key in coin sample space 2 |
+| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.5$ | Compute $P(\text{Heads}) = 1/2 = 0.5$ |
+| `1` | $0.0000$ | $0.0000$ | $0.5$ | $1.0000$ | Key in favorable die outcome 1; stack lifts 0.5 to $Y$ |
+| `[ENTER]` | $0.0000$ | $0.5$ | $1.0000$ | $1.0000$ | Push 1 to $Y$; lifts 0.5 to $Z$ |
+| `6` | $0.0000$ | $0.5$ | $1.0000$ | $6.0000$ | Key in die sample space 6 |
+| `[÷]` | $0.0000$ | $0.0000$ | $0.5$ | $0.1666666667$ | Compute $P(\text{Roll 6}) = 1/6$; $Z$ drops to $Y$ |
+| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0833333333$ | Multiply independent probabilities: $0.5 \times 0.1667 \approx 0.0833$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $0.0833333333$. Joint probability is $1/12 \approx 8.33\%$.
 
@@ -9867,15 +9216,15 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in initial aces 4 |
-| `[ENTER]` | $0$ | $0$ | $4$ | $4$ | Push 4 into Register $Y$ |
-| `52` | $0$ | $0$ | $4$ | $52$ | Key in total deck size 52 |
-| `[÷]` | $0$ | $0$ | $0$ | $0.0769230769$ | Compute first draw probability: $4/52 = 1/13$ |
-| `3` | $0$ | $0$ | $0.0769230769$ | $3$ | Key in remaining aces 3; stack lifts to $Y$ |
-| `[ENTER]` | $0$ | $0.0769230769$ | $3$ | $3$ | Push 3 to $Y$; lifts first probability to $Z$ |
-| `51` | $0$ | $0.0769230769$ | $3$ | $51$ | Key in remaining total cards 51 |
-| `[÷]` | $0$ | $0$ | $0.0769230769$ | $0.0588235294$ | Compute second draw probability: $3/51 = 1/17$; $Z$ drops to $Y$ |
-| `[×]` | $0$ | $0$ | $0$ | $0.0045248869$ | Multiply dependent probabilities: $1/221 \approx 0.004525$ |
+| `4` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Key in initial aces 4 |
+| `[ENTER]` | $0.0000$ | $0.0000$ | $4.0000$ | $4.0000$ | Push 4 into Register $Y$ |
+| `52` | $0.0000$ | $0.0000$ | $4.0000$ | $52.0000$ | Key in total deck size 52 |
+| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0769230769$ | Compute first draw probability: $4/52 = 1/13$ |
+| `3` | $0.0000$ | $0.0000$ | $0.0769230769$ | $3.0000$ | Key in remaining aces 3; stack lifts to $Y$ |
+| `[ENTER]` | $0.0000$ | $0.0769230769$ | $3.0000$ | $3.0000$ | Push 3 to $Y$; lifts first probability to $Z$ |
+| `51` | $0.0000$ | $0.0769230769$ | $3.0000$ | $51.0000$ | Key in remaining total cards 51 |
+| `[÷]` | $0.0000$ | $0.0000$ | $0.0769230769$ | $0.0588235294$ | Compute second draw probability: $3/51 = 1/17$; $Z$ drops to $Y$ |
+| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0045248869$ | Multiply dependent probabilities: $1/221 \approx 0.004525$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $0.0045248869$. The probability of drawing two aces without replacement is approximately $0.45\%$.
 
@@ -9886,15 +9235,15 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `6` | $0$ | $0$ | $0$ | $6$ | Key in initial black socks 6 |
-| `[ENTER]` | $0$ | $0$ | $6$ | $6$ | Push 6 into Register $Y$ |
-| `10` | $0$ | $0$ | $6$ | $10$ | Key in total socks 10 |
-| `[÷]` | $0$ | $0$ | $0$ | $0.6$ | Compute first draw probability: $6/10 = 0.6$ |
-| `5` | $0$ | $0$ | $0.6$ | $5$ | Key in remaining black socks 5; stack lifts 0.6 to $Y$ |
-| `[ENTER]` | $0$ | $0.6$ | $5$ | $5$ | Push 5 to $Y$; lifts 0.6 to $Z$ |
-| `9` | $0$ | $0.6$ | $5$ | $9$ | Key in remaining total socks 9 |
-| `[÷]` | $0$ | $0$ | $0.6$ | $0.5555555556$ | Compute second draw probability: $5/9 \approx 0.5556$; $Z$ drops to $Y$ |
-| `[×]` | $0$ | $0$ | $0$ | $0.3333333333$ | Multiply dependent probabilities: $0.6 \times 0.5556 = 1/3$ |
+| `6` | $0.0000$ | $0.0000$ | $0.0000$ | $6.0000$ | Key in initial black socks 6 |
+| `[ENTER]` | $0.0000$ | $0.0000$ | $6.0000$ | $6.0000$ | Push 6 into Register $Y$ |
+| `10` | $0.0000$ | $0.0000$ | $6.0000$ | $10.0000$ | Key in total socks 10 |
+| `[÷]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6$ | Compute first draw probability: $6/10 = 0.6$ |
+| `5` | $0.0000$ | $0.0000$ | $0.6$ | $5.0000$ | Key in remaining black socks 5; stack lifts 0.6 to $Y$ |
+| `[ENTER]` | $0.0000$ | $0.6$ | $5.0000$ | $5.0000$ | Push 5 to $Y$; lifts 0.6 to $Z$ |
+| `9` | $0.0000$ | $0.6$ | $5.0000$ | $9.0000$ | Key in remaining total socks 9 |
+| `[÷]` | $0.0000$ | $0.0000$ | $0.6$ | $0.5555555556$ | Compute second draw probability: $5/9 \approx 0.5556$; $Z$ drops to $Y$ |
+| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3333333333$ | Multiply dependent probabilities: $0.6 \times 0.5556 = 1/3$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $0.3333333333$. Exactly $1/3$ ($33.33\%$) chance of drawing a matching black pair.
 
@@ -9902,11 +9251,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Decompose 3,600 into prime factors ($3600 = 60^2$).
 - **Manipulative Stage:** Construct a factor tree for 3,600: $3600 = 36 \times 100 = (4 \times 9) \times (4 \times 25) = 2^4 \times 3^2 \times 5^2$.
 - **RPN Keystrokes:** `3600 [g] [FACT]` $\rightarrow$ **`3600`**
+- **Stack Flow:** Tap `3600 [g] [FACT]` -> (T=0, Z=0, Y=0, X=0). LCD decomposes into prime factors: `2⁴ × 3² × 5²`.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3600` | $0$ | $0$ | $0$ | $3600$ | Key in composite integer 3600 |
-| `[g] [FACT]` | $0$ | $0$ | $0$ | $3600$ | LCD decomposes into prime factors: `2⁴ × 3² × 5²` |
 
 - **Diagnostic Checkpoint:** Register $X$ preserves $3600$ while screen displays $2^4 \times 3^2 \times 5^2$.
 
@@ -9917,14 +9263,14 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `45` | $0$ | $0$ | $0$ | $45$ | Enter first integer 45 |
-| `[ENTER]` | $0$ | $0$ | $45$ | $45$ | Push 45 into Register $Y$ |
-| `75` | $0$ | $0$ | $45$ | $75$ | Key in second integer 75 |
-| `[GCF]` | $0$ | $0$ | $0$ | $15$ | Compute greatest common factor: $\gcd(45, 75) = 15$ |
-| `45` | $0$ | $0$ | $15$ | $45$ | Key in 45 for LCM; stack lifts 15 to $Y$ |
-| `[ENTER]` | $0$ | $15$ | $45$ | $45$ | Push 45 to $Y$; lifts 15 to $Z$ |
-| `75` | $0$ | $15$ | $45$ | $75$ | Key in second integer 75 |
-| `[f] [LCM]` | $0$ | $0$ | $15$ | $225$ | Compute least common multiple: $\operatorname{lcm}(45, 75) = 225$; $Z$ drops to $Y$ |
+| `45` | $0.0000$ | $0.0000$ | $0.0000$ | $45.0000$ | Enter first integer 45 |
+| `[ENTER]` | $0.0000$ | $0.0000$ | $45.0000$ | $45.0000$ | Push 45 into Register $Y$ |
+| `75` | $0.0000$ | $0.0000$ | $45.0000$ | $75.0000$ | Key in second integer 75 |
+| `[GCF]` | $0.0000$ | $0.0000$ | $0.0000$ | $15.0000$ | Compute greatest common factor: $\gcd(45, 75) = 15$ |
+| `45` | $0.0000$ | $0.0000$ | $15.0000$ | $45.0000$ | Key in 45 for LCM; stack lifts 15 to $Y$ |
+| `[ENTER]` | $0.0000$ | $15.0000$ | $45.0000$ | $45.0000$ | Push 45 to $Y$; lifts 15 to $Z$ |
+| `75` | $0.0000$ | $15.0000$ | $45.0000$ | $75.0000$ | Key in second integer 75 |
+| `[f] [LCM]` | $0.0000$ | $0.0000$ | $15.0000$ | $225.0000$ | Compute least common multiple: $\operatorname{lcm}(45, 75) = 225$; $Z$ drops to $Y$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $225$ ($\text{LCM}$) and Register $Y$ preserves $15$ ($\text{GCF}$). Note that $15 \times 225 = 3375 = 45 \times 75$.
 
@@ -9932,13 +9278,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Signal A cycles every $45\text{ seconds}$, Signal B cycles every $60\text{ seconds}$. Find the synchronized cycle time: $\operatorname{lcm}(45, 60)$.
 - **Manipulative Stage:** On a timing tape, place red markers every 45 units (45, 90, 135, 180...) and blue markers every 60 units (60, 120, 180...). The first point of co-occurrence is 180 units.
 - **RPN Keystrokes:** `45 [ENTER] 60 [f] [LCM]` $\rightarrow$ **`180`**
+- **Stack Flow:** Tap `45 [ENTER] 60 [f] [LCM]` -> (T=0, Z=0, Y=0, X=180). Compute $\operatorname{lcm}(45, 60) = 180$; stack drops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `45` | $0$ | $0$ | $0$ | $45$ | Enter Signal A period 45 s |
-| `[ENTER]` | $0$ | $0$ | $45$ | $45$ | Push 45 into Register $Y$ |
-| `60` | $0$ | $0$ | $45$ | $60$ | Enter Signal B period 60 s |
-| `[f] [LCM]` | $0$ | $0$ | $0$ | $180$ | Compute $\operatorname{lcm}(45, 60) = 180$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $180$. Both traffic lights synchronize every 180 seconds ($3\text{ minutes}$).
 
@@ -9946,13 +9287,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Compute Euclidean steps for $546$ and $210$: $546 \div 210 = 2\text{ R }126$; $210 \div 126 = 1\text{ R }84$; $126 \div 84 = 1\text{ R }42$; $84 \div 42 = 2\text{ R }0$.
 - **Manipulative Stage:** Cut a ribbon 546 cm long and measure with a 210 cm rod: two rods fit with 126 cm remainder ($546 = 2 \times 210 + 126$). Next, measure 210 cm with 126 cm: one rod fits with 84 cm remainder. Measure 126 cm with 84 cm: one rod fits with 42 cm remainder. Finally, 84 cm divides into two 42 cm segments with 0 remainder. The last non-zero remainder is 42.
 - **RPN Keystrokes:** `546 [ENTER] 210 [GCF]` $\rightarrow$ **`42`**
+- **Stack Flow:** Tap `546 [ENTER] 210 [GCF]` -> (T=0, Z=0, Y=0, X=42). Execute hardware Euclidean ladder: $\gcd(546, 210) = 42$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `546` | $0$ | $0$ | $0$ | $546$ | Enter first integer 546 |
-| `[ENTER]` | $0$ | $0$ | $546$ | $546$ | Push 546 into Register $Y$ |
-| `210` | $0$ | $0$ | $546$ | $210$ | Enter second integer 210 |
-| `[GCF]` | $0$ | $0$ | $0$ | $42$ | Execute hardware Euclidean ladder: $\gcd(546, 210) = 42$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $42$. Greatest common divisor of 546 and 210 is 42.
 
@@ -9960,25 +9296,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Dataset: $12, 14, 15, 16, 18, 20, 24$ (Mean = 17.0). Deviations: $5, 3, 2, 1, 1, 3, 7$. Sum = 22. MAD = $22/7$.
 - **Manipulative Stage:** Plot the 7 points on a dot plot. Draw a fulcrum at the mean 17. Measure the physical distance from each dot to the mean (5, 3, 2, 1, 1, 3, 7). Add the lengths to get 22, and divide evenly among the 7 data points: $22/7 \approx 3.1429$.
 - **RPN Keystrokes:** `[g] [CLΣ] 12 [Σ+] 14 [Σ+] 15 [Σ+] 16 [Σ+] 18 [Σ+] 20 [Σ+] 24 [Σ+] [g] [MAD]` $\rightarrow$ **`3.1428571429`**
+- **Stack Flow:** Tap `[g] [CLΣ] 12 [Σ+] 14 [Σ+] 15 [Σ+] 16 [Σ+] 18 [Σ+] 20 [Σ+] 24 [Σ+] [g] [MAD]` -> (T=0, Z=0, Y=0, X=7). Compute mean absolute deviation; $Y$ holds count $n = 7$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `[g] [CLΣ]` | $0$ | $0$ | $0$ | $0$ | Clear all statistical accumulation registers |
-| `12` | $0$ | $0$ | $0$ | $12$ | Key in data point 12 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $1$ | Accumulate into statistics registers: count $n = 1$ |
-| `14` | $0$ | $0$ | $1$ | $14$ | Key in data point 14 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $2$ | Accumulate: count $n = 2$ |
-| `15` | $0$ | $0$ | $2$ | $15$ | Key in data point 15 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $3$ | Accumulate: count $n = 3$ |
-| `16` | $0$ | $0$ | $3$ | $16$ | Key in data point 16 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $4$ | Accumulate: count $n = 4$ |
-| `18` | $0$ | $0$ | $4$ | $18$ | Key in data point 18 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $5$ | Accumulate: count $n = 5$ |
-| `20` | $0$ | $0$ | $5$ | $20$ | Key in data point 20 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $6$ | Accumulate: count $n = 6$ |
-| `24` | $0$ | $0$ | $6$ | $24$ | Key in data point 24 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $7$ | Accumulate: count $n = 7$ |
-| `[g] [MAD]` | $0$ | $0$ | $7$ | $3.1428571429$ | Compute mean absolute deviation; $Y$ holds count $n = 7$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $3.1428571429$ and Register $Y$ displays $7$. Average distance from data points to mean is $\approx 3.14$.
 
@@ -9986,27 +9305,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Scores: $65, 72, 75, 80, 84, 88, 92, 96$. Find IQR ($Q_3 - Q_1 = 90 - 73.5 = 16.5$).
 - **Manipulative Stage:** Arrange 8 test score cards in ascending order. Divide into lower half ($65, 72, 75, 80$) and upper half ($84, 88, 92, 96$). Find the median of lower half ($Q_1 = 73.5$) and median of upper half ($Q_3 = 90$). Measure the spread between quartiles: $90 - 73.5 = 16.5$.
 - **RPN Keystrokes:** `[g] [CLΣ] 65 [Σ+] 72 [Σ+] 75 [Σ+] 80 [Σ+] 84 [Σ+] 88 [Σ+] 92 [Σ+] 96 [Σ+] [IQR]` $\rightarrow$ **`16.5`**
+- **Stack Flow:** Tap `[g] [CLΣ] 65 [Σ+] 72 [Σ+] 75 [Σ+] 80 [Σ+] 84 [Σ+] 88 [Σ+] 92 [Σ+] 96 [Σ+] [IQR]` -> (T=0, Z=0, Y=0, X=8). Compute interquartile range $Q_3 - Q_1 = 16.5$; $Y$ holds count $n = 8$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `[g] [CLΣ]` | $0$ | $0$ | $0$ | $0$ | Clear statistical registers |
-| `65` | $0$ | $0$ | $0$ | $65$ | Enter score 65 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $1$ | Accumulate: $n = 1$ |
-| `72` | $0$ | $0$ | $1$ | $72$ | Enter score 72 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $2$ | Accumulate: $n = 2$ |
-| `75` | $0$ | $0$ | $2$ | $75$ | Enter score 75 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $3$ | Accumulate: $n = 3$ |
-| `80` | $0$ | $0$ | $3$ | $80$ | Enter score 80 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $4$ | Accumulate: $n = 4$ |
-| `84` | $0$ | $0$ | $4$ | $84$ | Enter score 84 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $5$ | Accumulate: $n = 5$ |
-| `88` | $0$ | $0$ | $5$ | $88$ | Enter score 88 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $6$ | Accumulate: $n = 6$ |
-| `92` | $0$ | $0$ | $6$ | $92$ | Enter score 92 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $7$ | Accumulate: $n = 7$ |
-| `96` | $0$ | $0$ | $7$ | $96$ | Enter score 96 |
-| `[Σ+]` | $0$ | $0$ | $0$ | $8$ | Accumulate: $n = 8$ |
-| `[IQR]` | $0$ | $0$ | $8$ | $16.5$ | Compute interquartile range $Q_3 - Q_1 = 16.5$; $Y$ holds count $n = 8$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $16.5$ and Register $Y$ displays $8$. Interquartile range of middle $50\%$ of class is $16.5$ points.
 
@@ -10014,15 +9314,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Pure water freezes at $0^\circ\text{C}$. Adding rock salt lowers the freezing point by $-7.8^\circ\text{C}$. Adding calcium chloride drops it an additional $-6.4^\circ\text{C}$. Find final freezing point.
 - **Manipulative Stage:** Use a downward-pointing thermometer strip. Move down $7.8^\circ$ below zero. Move down another $6.4^\circ$ further below zero. Measure total drop from zero: $14.2^\circ$, giving final temperature of $-14.2^\circ\text{C}$.
 - **RPN Keystrokes:** `7.8 [+/-] [ENTER] 6.4 [+/-] [+]` $\rightarrow$ **`-14.2`**
+- **Stack Flow:** Tap `7.8 [+/-] [ENTER] 6.4 [+/-] [+]` -> (T=0, Z=0, Y=0, X=-14.2). Add depressions: $-7.8 + (-6.4) = -14.2$; stack drops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `7.8` | $0$ | $0$ | $0$ | $7.8$ | Key in first depression magnitude 7.8 |
-| `[+/-]` | $0$ | $0$ | $0$ | $-7.8$ | Negate to initial depression $-7.8$ |
-| `[ENTER]` | $0$ | $0$ | $-7.8$ | $-7.8$ | Push $-7.8$ into Register $Y$ |
-| `6.4` | $0$ | $0$ | $-7.8$ | $6.4$ | Key in second depression magnitude 6.4 |
-| `[+/-]` | $0$ | $0$ | $-7.8$ | $-6.4$ | Negate to second depression $-6.4$ |
-| `[+]` | $0$ | $0$ | $0$ | $-14.2$ | Add depressions: $-7.8 + (-6.4) = -14.2$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $-14.2$. Final depressed freezing point is $-14.2^\circ\text{C}$.
 
@@ -10033,15 +9326,15 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0$ | $0$ | $0$ | $4$ | Key in first magnitude 4 |
-| `[+/-]` | $0$ | $0$ | $0$ | $-4$ | Negate to $-4$ |
-| `[ENTER]` | $0$ | $0$ | $-4$ | $-4$ | Push $-4$ into Register $Y$ |
-| `5` | $0$ | $0$ | $-4$ | $5$ | Key in second magnitude 5 |
-| `[+/-]` | $0$ | $0$ | $-4$ | $-5$ | Negate to $-5$ |
-| `[×]` | $0$ | $0$ | $0$ | $20$ | Multiply $(-4) \times (-5) = 20$; stack drops |
-| `6` | $0$ | $0$ | $20$ | $6$ | Key in third magnitude 6; stack lifts 20 to $Y$ |
-| `[+/-]` | $0$ | $0$ | $20$ | $-6$ | Negate to $-6$ |
-| `[×]` | $0$ | $0$ | $0$ | $-120$ | Multiply $20 \times (-6) = -120$; stack drops |
+| `4` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Key in first magnitude 4 |
+| `[+/-]` | $0.0000$ | $0.0000$ | $0.0000$ | $-4.0000$ | Negate to $-4$ |
+| `[ENTER]` | $0.0000$ | $0.0000$ | $-4.0000$ | $-4.0000$ | Push $-4$ into Register $Y$ |
+| `5` | $0.0000$ | $0.0000$ | $-4.0000$ | $5.0000$ | Key in second magnitude 5 |
+| `[+/-]` | $0.0000$ | $0.0000$ | $-4.0000$ | $-5.0000$ | Negate to $-5$ |
+| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $20.0000$ | Multiply $(-4) \times (-5) = 20$; stack drops |
+| `6` | $0.0000$ | $0.0000$ | $20.0000$ | $6.0000$ | Key in third magnitude 6; stack lifts 20 to $Y$ |
+| `[+/-]` | $0.0000$ | $0.0000$ | $20.0000$ | $-6.0000$ | Negate to $-6$ |
+| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $-120.0000$ | Multiply $20 \times (-6) = -120$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $-120$. An odd number of negative factors produces a negative product.
 
@@ -10052,18 +9345,18 @@ Before executing probability distributions, primality tests, and statistical sum
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` | $0$ | $0$ | $0$ | $18$ | Key in first magnitude 18 |
-| `[+/-]` | $0$ | $0$ | $0$ | $-18$ | Negate to $-18$ |
-| `[ENTER]` | $0$ | $0$ | $-18$ | $-18$ | Push $-18$ into Register $Y$ |
-| `4` | $0$ | $0$ | $-18$ | $4$ | Key in multiplier 4 |
-| `[×]` | $0$ | $0$ | $0$ | $-72$ | Compute first product: $-18 \times 4 = -72$ |
-| `36` | $0$ | $0$ | $-72$ | $36$ | Key in magnitude 36; stack lifts $-72$ to $Y$ |
-| `[+/-]` | $0$ | $0$ | $-72$ | $-36$ | Negate to $-36$ |
-| `[ENTER]` | $0$ | $-72$ | $-36$ | $-36$ | Push $-36$ to $Y$; lifts $-72$ to $Z$ |
-| `9` | $0$ | $-72$ | $-36$ | $9$ | Key in magnitude 9 |
-| `[+/-]` | $0$ | $-72$ | $-36$ | $-9$ | Negate to divisor $-9$ |
-| `[÷]` | $0$ | $0$ | $-72$ | $4$ | Compute quotient $(-36) \div (-9) = 4$; $Z$ drops to $Y$ |
-| `[-]` | $0$ | $0$ | $0$ | $-76$ | Subtract $-72 - 4 = -76$; stack drops |
+| `18` | $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Key in first magnitude 18 |
+| `[+/-]` | $0.0000$ | $0.0000$ | $0.0000$ | $-18.0000$ | Negate to $-18$ |
+| `[ENTER]` | $0.0000$ | $0.0000$ | $-18.0000$ | $-18.0000$ | Push $-18$ into Register $Y$ |
+| `4` | $0.0000$ | $0.0000$ | $-18.0000$ | $4.0000$ | Key in multiplier 4 |
+| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $-72.0000$ | Compute first product: $-18 \times 4 = -72$ |
+| `36` | $0.0000$ | $0.0000$ | $-72.0000$ | $36.0000$ | Key in magnitude 36; stack lifts $-72$ to $Y$ |
+| `[+/-]` | $0.0000$ | $0.0000$ | $-72.0000$ | $-36.0000$ | Negate to $-36$ |
+| `[ENTER]` | $0.0000$ | $-72.0000$ | $-36.0000$ | $-36.0000$ | Push $-36$ to $Y$; lifts $-72$ to $Z$ |
+| `9` | $0.0000$ | $-72.0000$ | $-36.0000$ | $9.0000$ | Key in magnitude 9 |
+| `[+/-]` | $0.0000$ | $-72.0000$ | $-36.0000$ | $-9.0000$ | Negate to divisor $-9$ |
+| `[÷]` | $0.0000$ | $0.0000$ | $-72.0000$ | $4.0000$ | Compute quotient $(-36) \div (-9) = 4$; $Z$ drops to $Y$ |
+| `[-]` | $0.0000$ | $0.0000$ | $0.0000$ | $-76.0000$ | Subtract $-72 - 4 = -76$; stack drops |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $-76$. Subtraction of two grouped terms completed cleanly without parentheses.
 
@@ -10071,11 +9364,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** A square ranch has an area of $4,096\text{ m}^2$. Find side length.
 - **Manipulative Stage:** On a square grid, identify that $4096 = 2^{12}$. Taking the square root halves the exponent: $\sqrt{2^{12}} = 2^6 = 64$.
 - **RPN Keystrokes:** `4096 [f] [√x]` $\rightarrow$ **`64`**
+- **Stack Flow:** Tap `4096 [f] [√x]` -> (T=0, Z=0, Y=0, X=64). Extract square root: $\sqrt{4096} = 64$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4096` | $0$ | $0$ | $0$ | $4096$ | Enter ranch area $4096\text{ m}^2$ |
-| `[f] [√x]` | $0$ | $0$ | $0$ | $64$ | Extract square root: $\sqrt{4096} = 64$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $64$. Ranch perimeter boundary is $64\text{ m}$ per side.
 
@@ -10083,13 +9373,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Test if 2,596 is divisible by 11 using Euclidean division (`[g] [÷R]`).
 - **Manipulative Stage:** Apply the alternating digit sum divisibility rule for 11: $(2 + 9) - (5 + 6) = 11 - 11 = 0$. Since the alternating difference is a multiple of 11, the number is divisible with zero remainder.
 - **RPN Keystrokes:** `2596 [ENTER] 11 [g] [÷R]` $\rightarrow$ **`236`**
+- **Stack Flow:** Tap `2596 [ENTER] 11 [g] [÷R]` -> (T=0, Z=0, Y=0, X=236). Euclidean division: Quotient 236 in $X$, Remainder 0 in $Y$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2596` | $0$ | $0$ | $0$ | $2596$ | Key in dividend 2596 |
-| `[ENTER]` | $0$ | $0$ | $2596$ | $2596$ | Push 2596 into Register $Y$ |
-| `11` | $0$ | $0$ | $2596$ | $11$ | Enter divisor 11 |
-| `[g] [÷R]` | $0$ | $0$ | $0$ | $236$ | Euclidean division: Quotient 236 in $X$, Remainder 0 in $Y$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays $236$ and Register $Y$ displays $0$. Remainder of 0 confirms exact divisibility by 11 ($2596 = 236 \times 11$).
 
@@ -10097,16 +9382,8 @@ Before executing probability distributions, primality tests, and statistical sum
 - **Problem:** Compute $2^5 - 1$ and check if the result is prime.
 - **Manipulative Stage:** Lay out power-of-two blocks: 1, 2, 4, 8, 16. Summing these 5 blocks produces $2^5 - 1 = 31$. Attempt to arrange 31 counters into rectangular arrays: only $1 \times 31$ is possible, confirming 31 is prime.
 - **RPN Keystrokes:** `[2] [ENTER] [5] [g] [yˣ] [1] [-] [PRIME]` $\rightarrow$ **`Flashes`**
+- **Stack Flow:** Tap `2 [ENTER] 5 [g] [yˣ] 1 [-] [PRIME]` -> (T=0, Z=0, Y=0, X=1). Test primality: LCD status flashes `PRIME`.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2` | $0$ | $0$ | $0$ | $2$ | Enter base 2 |
-| `[ENTER]` | $0$ | $0$ | $2$ | $2$ | Push base into Register $Y$ |
-| `5` | $0$ | $0$ | $2$ | $5$ | Enter exponent 5 |
-| `[g] [yˣ]` | $0$ | $0$ | $0$ | $32$ | Compute power $2^5 = 32$; stack drops |
-| `1` | $0$ | $0$ | $32$ | $1$ | Key in second number 1; stack lifts 32 to $Y$ |
-| `[-]` | $0$ | $0$ | $0$ | $31$ | Subtract $32 - 1 = 31$; stack drops |
-| `[PRIME]` | $0$ | $0$ | $0$ | $31$ | Test primality: LCD status flashes `PRIME` |
 
 - **Diagnostic Checkpoint:** Register $X$ preserves $31$ and LCD flashes `PRIME`. The 3rd Mersenne prime $M_5 = 2^5 - 1 = 31$ is verified.
 
@@ -10151,7 +9428,7 @@ In **[Chapter 08: The Math Quiz Engine](sc6/08-math-quiz-engine.md)**, you will 
 
 <div class="te-viewport-header mb-6">
   <span class="te-viewport-sku">GAMIFIED PRACTICE // CHAPTER 08</span>
-  <span class="te-viewport-status text-emerald-400">● 6-LEVEL ADAPTIVE ENGINE &bull; SPEED SCORING &bull; STREAK UNLOCKS &bull; [≠] SUBMIT</span>
+  <span class="te-viewport-status text-emerald-400">● 6-LEVEL ADAPTIVE ENGINE &bull; SPEED SCORING &bull; STREAK UNLOCKS &bull; ENTER SUBMIT</span>
 </div>
 
 ## 8.1 The Musician's Scales & The Astronaut's Simulator: Why Instant Math Reflexes Set Your Creative Brain Free
@@ -10180,7 +9457,7 @@ Standard Base-10 Arithmetic • 4-Stack XYZT • Clean Display
 <div class="admonition note">
 <p class="admonition-title">Unlocked Keycaps Ribbon — Quiz Sprint Suite</p>
 <p>
-• <strong>Quiz Activation &amp; Control:</strong> <code>[f] [?]</code> (Launch Quiz Sandbox), <code>[≠]</code> (Submit Candidate Answer &amp; Evaluate), <code>[g] [SHOW]</code> (Inspect Active Score, Streak, &amp; Average Latency).<br>
+• <strong>Quiz Activation &amp; Control:</strong> <code>[f] [?]</code> (Launch Quiz Sandbox), <code>[ENTER]</code> (Submit Answer &amp; Evaluate), <code>[g] [SHOW]</code> (Inspect Active Score, Streak, &amp; Average Latency).<br>
 • <strong>Numeric Answer Entry:</strong> Digits <code>[0]</code> through <code>[9]</code>, Two-Dot Fraction <code>[.]</code>, Negative Toggle <code>[+/-]</code>, Destructive Backspace <code>[<-]</code>.<br>
 • <strong>Operational Verification:</strong> <code>[+]</code>, <code>[-]</code>, <code>[×]</code>, <code>[÷]</code>, <code>[g] [÷R]</code>, <code>[g] [SIMP]</code>, <code>[ENTER]</code>, <code>[f] [LASTX]</code>.<br>
 • <strong>Exit Quiz Sandbox:</strong> Pressing <code>[C]</code> twice or pressing any base display mode key (<code>[NUM]</code>, <code>[g] [FIX]</code>, <code>[f] [ALL]</code>, <code>[FDISP]</code>) immediately dismisses the quiz engine and restores standard stack calculations with 100% register preservation.
@@ -10201,17 +9478,17 @@ Standard Base-10 Arithmetic • 4-Stack XYZT • Clean Display
 
 ---
 
-## 8.2 The RPN Equation Display & Zero-Config Variable Checking (`[f] [?]` & `[≠]`)
+## 8.2 The RPN Prompt & Rapid Sprint Evaluation (`[f] [?]` & `[ENTER]`)
 
 ### 8.2.1 Pure RPN Equation Representation
 Traditional educational software displays equations in confusing algebraic equations with parentheses: $(15 - 3) \times ? = 72$. 
 
 The SC-6 departs from conventional calculators by presenting all quiz challenges directly in **pure RPN stack notation** on the transflective graphic LCD:
-$$\mathtt{3 \ [ENTER] \ ? \ + \ 10 \ x?y}$$
+$$\mathtt{3 \ + \ 7 \ = \ 10}$$
 
 > **[f] [?]  LVL 1                      SCORE: 40       STREAK: 3 ●●●**
 >
-> 3  [ENTER]  ?  +  10  x?y
+> 3  +  =  10
 >
 > Y:                                                              3
 > X:                                                              _
@@ -10222,20 +9499,20 @@ $$\mathtt{3 \ [ENTER] \ ? \ + \ 10 \ x?y}$$
 - *"Start with 3 resting on Floor Y."*
 - *"Place the missing mystery token `?` on the Ground Floor ($X$)."*
 - *"Add them together (`+`)."*
-- *"The target result must equal 10 (`10 x?y`)."*
+- *"The target result must equal 10 (`10 `)."*
 
 You immediately recognize that this RPN sequence represents the familiar question: *"What number added to 3 makes 10?"* It seamlessly bridges early elementary number bonds directly to algebraic thinking!
 
 ---
 
-### 8.2.2 Zero-Config Answering Workflow via `[≠]`
+### 8.2.2 Rapid Sprint Evaluation Workflow via `[ENTER]`
 Unlike scientific calculators that require cumbersome variable assignment menus (`STO A`, `RCL A`, `SOLVE`), answering a quiz question on the SC-6 requires **zero configuration**:
 1. You read the RPN prompt on screen.
 2. You type your candidate answer using the numeric digits: e.g. `[7]`.
-3. You press the hardware test key **`[≠]`** (Row 7, Col 5).
+3. You press the evaluate and submit key **`[ENTER]`**.
 
 #### Hardware Evaluation Pipeline:
-When `[≠]` is pressed, the internal calculator engine executes three atomic operations in under 5 milliseconds:
+When `[ENTER]` is pressed, the internal calculator engine executes three atomic operations in under 5 milliseconds:
 1. **Variable Substitution:** Binds candidate value $7$ to variable `?`.
 2. **RPN Stack Execution:** Evaluates the stack sequence: `4 [ENTER] 5 [+]` $\longrightarrow 10$.
 3. **Equality Verification:** Compares the evaluated result to the target value $10$:
@@ -10244,7 +9521,7 @@ When `[≠]` is pressed, the internal calculator engine executes three atomic op
 
 | Elapsed Time | Quiz Engine Verification Step |
 | :--- | :--- |
-| **$t = 0.0\text{ ms}$** | Tactile snap-dome switch closes when you press `[≠]` |
+| **$t = 0.0\text{ ms}$** | Tactile snap-dome switch closes when you press `[ENTER]` |
 | **$t = 1.0\text{ ms}$** | Engine reads your candidate answer from Register $X$ |
 | **$t = 2.4\text{ ms}$** | Evaluates candidate inside the RPN equation and checks exact match |
 | **$t = 4.2\text{ ms}$** | Updates streak counter and refreshes transflective LCD with instant feedback |
@@ -10302,7 +9579,7 @@ As you answer consecutive problems correctly within the fast speed threshold, th
 >
 > >>> SILVER STREAK ACHIEVED! +25 BONUS <<<
 >
-> 8  [ENTER]  ?  ×  56  x?y
+> 8  ×  =  56
 >
 > Y:                                                              8
 > X:                                                              7
@@ -10310,6 +9587,12 @@ As you answer consecutive problems correctly within the fast speed threshold, th
 *Figure 8.2: Transflective LCD Frame: 5 Fast Streak Unlock in Level 3*
 
 ---
+
+### 8.4.3 Algebraic Trap vs. StackCalc Superpower Showdown: Mental Sprint & Subtraction Complements
+
+| Challenge / Equation | The Algebraic Calculator Trap (TI-30X / Smartphone) | The StackCalc SC-6 + Manipulative Superpower | Keystroke Reduction | Live Stack Visibility | Pedagogical Breakthrough |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Rapid Subtraction Complement**:<br>$1000 - 647 = 353$ | Must type `1 0 0 0 - 6 4 7 =` (8 keystrokes). On paper, requires crossing out three zeros with repeated borrowing across multiple columns (slow and error-prone). | Vedic / 9s Complement Shortcut: subtract each digit from 9, and the last digit from 10: $(9-6)(9-4)(10-7) = \mathbf{353}$! On the stack: `1000 [ENTER] 647 [-]` $	o \mathbf{353}$ (5 strokes). Instant verification with zero borrowing! | **38% fewer strokes** | Register $Y$ retains the 1000 base while Register $X$ receives 647, confirming difference 353 immediately on the transflective screen. | Learners discover the base-10 complement rule using Place Value blocks, eliminating multi-column borrowing anxiety completely. |
 
 ## 8.5 Walkthrough: An Elite Level 6 Sprint Simulation
 
@@ -10413,7 +9696,7 @@ Before a tournament sprint or math quiz relay, you can wipe previous scores and 
 <strong>Teacher:</strong> "Brilliant! Now test it on your SC-6: <code>10 [ENTER] 7 [-]</code>!"<br>
 <strong>Hannah:</strong> "825! That's how Daniel answered in one second!"<br><br>
 <strong>Script 8.3: Fraction Addition vs Whole Number Addition:</strong><br>
-<strong>Student (Noah):</strong> "Teacher, in Level 4, the screen asked $1/3 + 1/4 = ?$. I typed $2/7$ and pressed <code>[≠]</code>, but the calculator flashed <code>✗ TRY AGAIN</code>! 1 plus 1 is 2, and 3 plus 4 is 7!"<br>
+<strong>Student (Noah):</strong> "Teacher, in Level 4, the screen asked $1/3 + 1/4 = ?$. I typed $2/7$ and pressed <code>[ENTER]</code>, but the calculator flashed <code>✗ TRY AGAIN</code>! 1 plus 1 is 2, and 3 plus 4 is 7!"<br>
 <strong>Teacher:</strong> "Noah, grab our Fraction Studio towers. Take a 1/3 tower and a 1/4 tower and stack them together."<br>
 <strong>Noah:</strong> "Okay, they make a tall tower."<br>
 <strong>Teacher:</strong> "Now look at the 1/7 pieces in the bin. If you place 2 of those sevenths side by side, do they match the height of your 1/3 plus 1/4 tower?"<br>
@@ -10422,7 +9705,7 @@ Before a tournament sprint or math quiz relay, you can wipe previous scores and 
 <strong>Noah:</strong> "Twelfths! One-third is 4 twelfths, and one-fourth is 3 twelfths!"<br>
 <strong>Teacher:</strong> "And $4/12 + 3/12$ equals...?"<br>
 <strong>Noah:</strong> "7 twelfths! $7/12$!"<br>
-<strong>Teacher:</strong> "Now type <code>[.] 7 [.] 1 2</code> on your SC-6 and tap <code>[≠]</code>!"<br>
+<strong>Teacher:</strong> "Now type <code>[.] 7 [.] 1 2</code> on your SC-6 and tap <code>[ENTER]</code>!"<br>
 <strong>Noah:</strong> "It flashed <code>✓ NICE! +20 POINTS</code>! The blocks prove the fraction!"
 </p>
 
@@ -10451,8 +9734,8 @@ The following problem bank provides complete reference Flight Simulator walkthro
 <p class="admonition-title">Hands-On Studio Proof: Blocks -> Calculator</p>
 
 Before executing high-speed mental sprints on the SC-6 keypad, you ground abstract arithmetic facts in tactile reality:
-1. **Domino Pairing & Seeing Groups at a Glance (Levels 1–2):** Use the **Math Dominoes Studio**. Draw a double-six domino (e.g., $4 + 5$). Instantly recognize the dot patterns to spot the near-double ($4 + 4 + 1 = 9$). Key in `[5] [≠]` on the SC-6 within $2.0\text{ seconds}$ to earn the speed chime.
-2. **Rectangular Array Muscle Memory (Levels 3–4):** Build a $7 \times 8$ tile array using the 144-Tile Counting & Array Studio. Decompose into $(5 \times 8) + (2 \times 8) = 40 + 16 = 56$. When the SC-6 prompts `7 [ENTER] ? [×] 56 x?y`, your fingers tap `[8] [≠]` without hesitation.
+1. **Domino Pairing & Seeing Groups at a Glance (Levels 1–2):** Use the **Math Dominoes Studio**. Draw a double-six domino (e.g., $4 + 5$). Instantly recognize the dot patterns to spot the near-double ($4 + 4 + 1 = 9$). Key in `[5] [ENTER]` on the SC-6 within $2.0\text{ seconds}$ to earn the speed chime.
+2. **Rectangular Array Muscle Memory (Levels 3–4):** Build a $7 \times 8$ tile array using the 144-Tile Counting & Array Studio. Decompose into $(5 \times 8) + (2 \times 8) = 40 + 16 = 56$. When the SC-6 prompts `7 [ENTER] ? [×] 56 `, your fingers tap `[8] [ENTER]` without hesitation.
 3. **Proportional Fraction Towers (Levels 4–5):** Compare a $\frac{1}{2}$ tower against two $\frac{1}{4}$ towers on the twin comparator well. When faced with $\frac{1}{2} + \frac{1}{4}$, the visual height of $\frac{3}{4}$ is already etched into spatial memory.
 4. **Vedic Shortcuts & Algebraic Sprints (Level 6):** Mentally multiply $35^2 = (3 \times 4)\text{ hundred} + 25 = 1,225$ using the spatial Vedic squaring rule, verifying instantly with `6 [ENTER] 3 [+]`.
 </div>
@@ -10464,481 +9747,310 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 
 #### Drill 1 (Level 1): $4 + 5 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Math Dominoes**. Draw a $[4 \mid 5]$ domino: you can instantly spot the near-double! The twin $4$-dot groups match up ($4 + 4 = 8$), leaving just $1$ extra dot to make $8 + 1 = 9$.
-- **On the Quiz Screen:** `4  [ENTER]  ?  +  9  x?y`
-- **What You Tap:** `[5] [≠]`
+- **On the Quiz Screen:** `4 + 5 = ?`
+- **What You Tap:** `{key:9}` `{key:ENTER}`
 - **Target Time:** $< 2.0\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [4] | 0 | 0 | 0 | 4 |
-| [ENTER] | 0 | 0 | 4 | 4 |
-| [5] | 0 | 0 | 4 | 5 |
-| [+] | 0 | 0 | 0 | 9 |
+- **RPN Keystrokes:** `4 [ENTER] 5 [+]` $\rightarrow$ **`9`**
+- **Stack Flow:** Tap `4 [ENTER] 5 [+]` -> (T=0, Z=0, Y=0, X=9). Enter the forward calculation on the stack to evaluate and verify 9 in Register $X$.
 
 #### Drill 2 (Level 1): $10 - 7 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use your **Ten-Frames** tray. The tray holds 10 counters in two rows of 5. When you cover or remove 7 counters (a full row of 5 plus 2 more), exactly 3 empty spaces remain ($10 - 7 = 3$, because $7 + 3 = 10$).
-- **On the Quiz Screen:** `10  [ENTER]  ?  -  3  x?y`
-- **What You Tap:** `[7] [≠]`
+- **On the Quiz Screen:** `10 - 7 = ?`
+- **What You Tap:** `{key:3}` `{key:ENTER}`
 - **Target Time:** $< 2.0\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 10 | 0 | 0 | 0 | 10 |
-| [ENTER] | 0 | 0 | 10 | 10 |
-| [7] | 0 | 0 | 10 | 7 |
-| [-] | 0 | 0 | 0 | 3 |
+- **RPN Keystrokes:** `10 [ENTER] 7 [-]` $\rightarrow$ **`3`**
+- **Stack Flow:** Tap `10 [ENTER] 7 [-]` -> (T=0, Z=0, Y=0, X=3). Enter the forward calculation on the stack to evaluate and verify 3 in Register $X$.
 
 #### Drill 3 (Level 1): $6 + 3 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Math Dominoes** or a **Ten-Frames** board. Start with the larger benchmark group of 6 (a full row of 5 plus 1 dot), then count on 3 quick astronaut hops: 7, 8, 9 ($6 + 3 = 9$).
-- **On the Quiz Screen:** `6  [ENTER]  ?  +  9  x?y`
-- **What You Tap:** `[3] [≠]`
+- **On the Quiz Screen:** `6 + 3 = ?`
+- **What You Tap:** `{key:9}` `{key:ENTER}`
 - **Target Time:** $< 2.0\text{ seconds}$.
-- **Stack Verification:** 6 [ENTER] 3 [+] $\implies \mathbf{9}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [6] | 0 | 0 | 0 | 6 |
-| [ENTER] | 0 | 0 | 6 | 6 |
-| [3] | 0 | 0 | 6 | 3 |
-| [+] | 0 | 0 | 0 | 9 |
+- **RPN Keystrokes:** `6 [ENTER] 3 [+]` $\rightarrow$ **`9`**
+- **Stack Flow:** Tap `6 [ENTER] 3 [+]` -> (T=0, Z=0, Y=0, X=9). Enter the forward calculation on the stack to evaluate and verify 9 in Register $X$.
 
 #### Drill 4 (Level 1): $8 - 0 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Ten-Frames** tray, set out 8 counters (5 on top, 3 on bottom). Subtracting zero means taking away zero blocks—all 8 counters stay locked in position ($8 - 0 = 8$).
-- **On the Quiz Screen:** `8  [ENTER]  ?  -  8  x?y`
-- **What You Tap:** `[0] [≠]`
+- **On the Quiz Screen:** `8 - 0 = ?`
+- **What You Tap:** `{key:8}` `{key:ENTER}`
 - **Target Time:** $< 1.0\text{ seconds}$.
-- **Stack Verification:** 8 [ENTER] 0 [-] $\implies \mathbf{8}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [8] | 0 | 0 | 0 | 8 |
-| [ENTER] | 0 | 0 | 8 | 8 |
-| [0] | 0 | 0 | 8 | 0 |
-| [-] | 0 | 0 | 0 | 8 |
+- **RPN Keystrokes:** `8 [ENTER] 0 [-]` $\rightarrow$ **`8`**
+- **Stack Flow:** Tap `8 [ENTER] 0 [-]` -> (T=0, Z=0, Y=0, X=8). Enter the forward calculation on the stack to evaluate and verify 8 in Register $X$.
 
 #### Drill 5 (Level 1): $3 + 7 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Look at your **Ten-Frames** tray. Place 3 blue tiles in the first row. The remaining empty pockets form a partner block of 7 red tiles—together they complete the entire 10-frame flight module ($3 + 7 = 10$).
-- **On the Quiz Screen:** `3  [ENTER]  ?  +  10  x?y`
-- **What You Tap:** `[7] [≠]`
+- **On the Quiz Screen:** `3 + 7 = ?`
+- **What You Tap:** `{key:10}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** 3 [ENTER] 7 [+] $\implies \mathbf{10}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [3] | 0 | 0 | 0 | 3 |
-| [ENTER] | 0 | 0 | 3 | 3 |
-| [7] | 0 | 0 | 3 | 7 |
-| [+] | 0 | 0 | 0 | 10 |
+- **RPN Keystrokes:** `3 [ENTER] 7 [+]` $\rightarrow$ **`10`**
+- **Stack Flow:** Tap `3 [ENTER] 7 [+]` -> (T=0, Z=0, Y=0, X=10). Enter the forward calculation on the stack to evaluate and verify 10 in Register $X$.
 
 #### Drill 6 (Level 1): $9 - 5 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use your **Ten-Frames** tray. A group of 9 fills the top row of 5 plus 4 on the bottom row. When you launch or lift off the full 5-row, exactly 4 counters remain on the landing pad ($9 - 5 = 4$).
-- **On the Quiz Screen:** `9  [ENTER]  ?  -  4  x?y`
-- **What You Tap:** `[5] [≠]`
+- **On the Quiz Screen:** `9 - 5 = ?`
+- **What You Tap:** `{key:4}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Stack Verification:** 9 [ENTER] 5 [-] $\implies \mathbf{4}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [9] | 0 | 0 | 0 | 9 |
-| [ENTER] | 0 | 0 | 9 | 9 |
-| [5] | 0 | 0 | 9 | 5 |
-| [-] | 0 | 0 | 0 | 4 |
+- **RPN Keystrokes:** `9 [ENTER] 5 [-]` $\rightarrow$ **`4`**
+- **Stack Flow:** Tap `9 [ENTER] 5 [-]` -> (T=0, Z=0, Y=0, X=4). Enter the forward calculation on the stack to evaluate and verify 4 in Register $X$.
 
 #### Drill 7 (Level 1): $4 + 4 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Grab a double-four from your **Math Dominoes** set. Both halves show identical $4$-dot square clusters ($4 + 4 = 8$); doubling 4 clicks together instantly like twin booster rockets!
-- **On the Quiz Screen:** `4  [ENTER]  ?  +  8  x?y`
-- **What You Tap:** `[4] [≠]`
+- **On the Quiz Screen:** `4 + 4 = ?`
+- **What You Tap:** `{key:8}` `{key:ENTER}`
 - **Target Time:** $< 1.0\text{ seconds}$.
-- **Stack Verification:** 4 [ENTER] 4 [+] $\implies \mathbf{8}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [4] | 0 | 0 | 0 | 4 |
-| [ENTER] | 0 | 0 | 4 | 4 |
-| [4] | 0 | 0 | 4 | 4 |
-| [+] | 0 | 0 | 0 | 8 |
+- **RPN Keystrokes:** `4 [ENTER] 4 [+]` $\rightarrow$ **`8`**
+- **Stack Flow:** Tap `4 [ENTER] 4 [+]` -> (T=0, Z=0, Y=0, X=8). Enter the forward calculation on the stack to evaluate and verify 8 in Register $X$.
 
 #### Drill 8 (Level 1): $10 - 2 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Start with a full 10 in your **Ten-Frames** module. Pull off the 2 end counters from the bottom row: you instantly see the full top row of 5 and 3 on the bottom, giving 8 counters ($10 - 2 = 8$).
-- **On the Quiz Screen:** `10  [ENTER]  ?  -  8  x?y`
-- **What You Tap:** `[2] [≠]`
+- **On the Quiz Screen:** `10 - 2 = ?`
+- **What You Tap:** `{key:8}` `{key:ENTER}`
 - **Target Time:** $< 1.2\text{ seconds}$.
-- **Stack Verification:** 10 [ENTER] 2 [-] $\implies \mathbf{8}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 10 | 0 | 0 | 0 | 10 |
-| [ENTER] | 0 | 0 | 10 | 10 |
-| [2] | 0 | 0 | 10 | 2 |
-| [-] | 0 | 0 | 0 | 8 |
-
----
-
-### 8.7.3 Level 2: Whole Number Addition & Subtraction to 100
+- **RPN Keystrokes:** `10 [ENTER] 2 [-]` $\rightarrow$ **`8`**
+- **Stack Flow:** Tap `10 [ENTER] 2 [-]` -> (T=0, Z=0, Y=0, X=8). Enter the forward calculation on the stack to evaluate and verify 8 in Register $X$.
 
 #### Drill 9 (Level 2): $40 + 30 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Build with **Ten-Frames** rods or **Counting Tile Arrays**. Align 4 solid ten-rods ($40$) and dock 3 more ten-rods ($30$): $4\text{ tens} + 3\text{ tens} = 7\text{ tens} = 70$.
-- **On the Quiz Screen:** `40  [ENTER]  ?  +  70  x?y`
-- **What You Tap:** `30 [≠]`
+- **On the Quiz Screen:** `40 + 30 = ?`
+- **What You Tap:** `{key:70}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 40 | 0 | 0 | 0 | 40 |
-| [ENTER] | 0 | 0 | 40 | 40 |
-| 30 | 0 | 0 | 40 | 30 |
-| [+] | 0 | 0 | 0 | 70 |
+- **RPN Keystrokes:** `40 [ENTER] 30 [+]` $\rightarrow$ **`70`**
+- **Stack Flow:** Tap `40 [ENTER] 30 [+]` -> (T=0, Z=0, Y=0, X=70). Enter the forward calculation on the stack to evaluate and verify 70 in Register $X$.
 
 #### Drill 10 (Level 2): $80 - 25 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Counting Tile Arrays**. Line up 8 ten-rods to show $80$. To subtract 25, remove 2 full ten-rods to drop down to $60$, then snap off 5 single unit tiles to land at $55$ ($80 - 20 = 60 \implies 60 - 5 = 55$).
-- **On the Quiz Screen:** `80  [ENTER]  ?  -  55  x?y`
-- **What You Tap:** `25 [≠]`
+- **On the Quiz Screen:** `80 - 25 = ?`
+- **What You Tap:** `{key:55}` `{key:ENTER}`
 - **Target Time:** $< 3.0\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 80 | 0 | 0 | 0 | 80 |
-| [ENTER] | 0 | 0 | 80 | 80 |
-| 25 | 0 | 0 | 80 | 25 |
-| [-] | 0 | 0 | 0 | 55 |
+- **RPN Keystrokes:** `80 [ENTER] 25 [-]` $\rightarrow$ **`55`**
+- **Stack Flow:** Tap `80 [ENTER] 25 [-]` -> (T=0, Z=0, Y=0, X=55). Enter the forward calculation on the stack to evaluate and verify 55 in Register $X$.
 
 #### Drill 11 (Level 2): $34 + 12 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Group your **Counting Tile Arrays** by place value. Combine 3 ten-rods and 1 ten-rod ($30 + 10 = 40$), then combine 4 single tiles and 2 single tiles ($4 + 2 = 6$) for a smooth landing on $46$ with zero regrouping!
-- **On the Quiz Screen:** `34  [ENTER]  ?  +  46  x?y`
-- **What You Tap:** `12 [≠]`
+- **On the Quiz Screen:** `34 + 12 = ?`
+- **What You Tap:** `{key:46}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Stack Verification:** 34 [ENTER] 12 [+] $\implies \mathbf{46}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 34 | 0 | 0 | 0 | 34 |
-| [ENTER] | 0 | 0 | 34 | 34 |
-| 12 | 0 | 0 | 34 | 12 |
-| [+] | 0 | 0 | 0 | 46 |
+- **RPN Keystrokes:** `34 [ENTER] 12 [+]` $\rightarrow$ **`46`**
+- **Stack Flow:** Tap `34 [ENTER] 12 [+]` -> (T=0, Z=0, Y=0, X=46). Enter the forward calculation on the stack to evaluate and verify 46 in Register $X$.
 
 #### Drill 12 (Level 2): $67 - 25 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Split your **Counting Tile Arrays** into tens and ones. From 6 ten-rods and 7 unit tiles, remove 2 ten-rods ($60 - 20 = 40$) and 5 unit tiles ($7 - 5 = 2$), leaving 4 ten-rods and 2 single tiles ($42$).
-- **On the Quiz Screen:** `67  [ENTER]  ?  -  42  x?y`
-- **What You Tap:** `25 [≠]`
+- **On the Quiz Screen:** `67 - 25 = ?`
+- **What You Tap:** `{key:42}` `{key:ENTER}`
 - **Target Time:** $< 2.8\text{ seconds}$.
-- **Stack Verification:** 67 [ENTER] 25 [-] $\implies \mathbf{42}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 67 | 0 | 0 | 0 | 67 |
-| [ENTER] | 0 | 0 | 67 | 67 |
-| 25 | 0 | 0 | 67 | 25 |
-| [-] | 0 | 0 | 0 | 42 |
+- **RPN Keystrokes:** `67 [ENTER] 25 [-]` $\rightarrow$ **`42`**
+- **Stack Flow:** Tap `67 [ENTER] 25 [-]` -> (T=0, Z=0, Y=0, X=42). Enter the forward calculation on the stack to evaluate and verify 42 in Register $X$.
 
 #### Drill 13 (Level 2): $47 + 38 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use compensation with **Ten-Frames** or **Counting Tile Arrays**. Treat 38 as 4 full ten-rods minus 2 tiles. Leap forward 40 from 47 to reach 87 ($47 + 40 = 87$), then pull back 2 single tiles to hit your orbital target: $85$.
-- **On the Quiz Screen:** `47  [ENTER]  ?  +  85  x?y`
-- **What You Tap:** `38 [≠]`
+- **On the Quiz Screen:** `47 + 38 = ?`
+- **What You Tap:** `{key:85}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Stack Verification:** 47 [ENTER] 38 [+] $\implies \mathbf{85}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 47 | 0 | 0 | 0 | 47 |
-| [ENTER] | 0 | 0 | 47 | 47 |
-| 38 | 0 | 0 | 47 | 38 |
-| [+] | 0 | 0 | 0 | 85 |
+- **RPN Keystrokes:** `47 [ENTER] 38 [+]` $\rightarrow$ **`85`**
+- **Stack Flow:** Tap `47 [ENTER] 38 [+]` -> (T=0, Z=0, Y=0, X=85). Enter the forward calculation on the stack to evaluate and verify 85 in Register $X$.
 
 #### Drill 14 (Level 2): $72 - 45 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Measure distance along your **Counting Tile Arrays** track. Count up from 45 to 72 in two astronaut hops: add 5 tiles to reach the round waypoint $50$, then add 22 tiles to reach $72$. The total flight path is $5 + 22 = 27$ tiles!
-- **On the Quiz Screen:** `72  [ENTER]  ?  -  27  x?y`
-- **What You Tap:** `45 [≠]`
+- **On the Quiz Screen:** `72 - 45 = ?`
+- **What You Tap:** `{key:27}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Stack Verification:** 72 [ENTER] 45 [-] $\implies \mathbf{27}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 72 | 0 | 0 | 0 | 72 |
-| [ENTER] | 0 | 0 | 72 | 72 |
-| 45 | 0 | 0 | 72 | 45 |
-| [-] | 0 | 0 | 0 | 27 |
+- **RPN Keystrokes:** `72 [ENTER] 45 [-]` $\rightarrow$ **`27`**
+- **Stack Flow:** Tap `72 [ENTER] 45 [-]` -> (T=0, Z=0, Y=0, X=27). Enter the forward calculation on the stack to evaluate and verify 27 in Register $X$.
 
 #### Drill 15 (Level 2): $56 + 19 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Ten-Frames** rods. 19 is just 1 tile less than 2 full ten-rods ($20$). Snap 2 ten-rods onto 56 to surge to 76 ($56 + 20 = 76$), then subtract 1 single tile to lock in $75$.
-- **On the Quiz Screen:** `56  [ENTER]  ?  +  75  x?y`
-- **What You Tap:** `19 [≠]`
+- **On the Quiz Screen:** `56 + 19 = ?`
+- **What You Tap:** `{key:75}` `{key:ENTER}`
 - **Target Time:** $< 2.8\text{ seconds}$.
-- **Stack Verification:** 56 [ENTER] 19 [+] $\implies \mathbf{75}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 56 | 0 | 0 | 0 | 56 |
-| [ENTER] | 0 | 0 | 56 | 56 |
-| 19 | 0 | 0 | 56 | 19 |
-| [+] | 0 | 0 | 0 | 75 |
+- **RPN Keystrokes:** `56 [ENTER] 19 [+]` $\rightarrow$ **`75`**
+- **Stack Flow:** Tap `56 [ENTER] 19 [+]` -> (T=0, Z=0, Y=0, X=75). Enter the forward calculation on the stack to evaluate and verify 75 in Register $X$.
 
 #### Drill 16 (Level 2): $91 - 38 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Counting Tile Arrays**. To subtract 38, overshoot by taking away 4 ten-rods ($40$) from 91 to get 51 ($91 - 40 = 51$), then compensate by snapping 2 unit tiles back on to finish at $53$ ($51 + 2 = 53$).
-- **On the Quiz Screen:** `91  [ENTER]  ?  -  53  x?y`
-- **What You Tap:** `38 [≠]`
+- **On the Quiz Screen:** `91 - 38 = ?`
+- **What You Tap:** `{key:53}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Stack Verification:** 91 [ENTER] 38 [-] $\implies \mathbf{53}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 91 | 0 | 0 | 0 | 91 |
-| [ENTER] | 0 | 0 | 91 | 91 |
-| 38 | 0 | 0 | 91 | 38 |
-| [-] | 0 | 0 | 0 | 53 |
-
----
-
-### 8.7.4 Mission 2: Astronaut Orbital Insertion (Levels 3 & 4: Times Tables, Division Facts, Fractions & Remainders)
-*Mission Briefing: Accelerate toward orbital velocity. Execute times tables up to 12 at sub-second speeds, master quotient-and-remainder division, and solve unlike-denominator fraction bonds.*
-
-### 8.7.5 Level 3: Times Tables & Division Facts to 12
+- **RPN Keystrokes:** `91 [ENTER] 38 [-]` $\rightarrow$ **`53`**
+- **Stack Flow:** Tap `91 [ENTER] 38 [-]` -> (T=0, Z=0, Y=0, X=53). Enter the forward calculation on the stack to evaluate and verify 53 in Register $X$.
 
 #### Drill 17 (Level 3): $7 \times 8 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Build a $7 \times 8$ grid in the **Counting Tile Arrays** studio. Use the double-double-double flight rule: double 7 to get 14 ($7 \times 2$), double again to get 28 ($7 \times 4$), and double a third time to get $56$ ($7 \times 8$).
-- **On the Quiz Screen:** `7  [ENTER]  ?  ×  56  x?y`
-- **What You Tap:** `[8] [≠]`
+- **On the Quiz Screen:** `7 × 8 = ?`
+- **What You Tap:** `{key:56}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [7] | 0 | 0 | 0 | 7 |
-| [ENTER] | 0 | 0 | 7 | 7 |
-| [8] | 0 | 0 | 7 | 8 |
-| [×] | 0 | 0 | 0 | 56 |
+- **RPN Keystrokes:** `7 [ENTER] 8 [×]` $\rightarrow$ **`56`**
+- **Stack Flow:** Tap `7 [ENTER] 8 [×]` -> (T=0, Z=0, Y=0, X=56). Enter the forward calculation on the stack to evaluate and verify 56 in Register $X$.
 
 #### Drill 18 (Level 3): $72 \div 9 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Lay out 72 tiles on your **Counting Tile Arrays** grid. Think of the inverse array: what width times 9 rows gives 72 total tiles? Because an $8 \times 9$ array holds 72 tiles, $72 \div 9 = 8$!
-- **On the Quiz Screen:** `72  [ENTER]  ?  ÷  8  x?y`
-- **What You Tap:** `[9] [≠]`
+- **On the Quiz Screen:** `72 ÷ 9 = ?`
+- **What You Tap:** `{key:8}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 72 | 0 | 0 | 0 | 72 |
-| [ENTER] | 0 | 0 | 72 | 72 |
-| [9] | 0 | 0 | 72 | 9 |
-| [÷] | 0 | 0 | 0 | 8 |
+- **RPN Keystrokes:** `72 [ENTER] 9 [÷]` $\rightarrow$ **`8`**
+- **Stack Flow:** Tap `72 [ENTER] 9 [÷]` -> (T=0, Z=0, Y=0, X=8). Enter the forward calculation on the stack to evaluate and verify 8 in Register $X$.
 
 #### Drill 19 (Level 3): $6 \times 9 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Counting Tile Arrays** studio, build a $6 \times 10$ rectangle of 60 tiles. Then peel away 1 column of 6 tiles: $60 - 6 = 54$, leaving the exact $6 \times 9$ tile array!
-- **On the Quiz Screen:** `6  [ENTER]  ?  ×  54  x?y`
-- **What You Tap:** `[9] [≠]`
+- **On the Quiz Screen:** `6 × 9 = ?`
+- **What You Tap:** `{key:54}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** 6 [ENTER] 9 [×] $\implies \mathbf{54}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [6] | 0 | 0 | 0 | 6 |
-| [ENTER] | 0 | 0 | 6 | 6 |
-| [9] | 0 | 0 | 6 | 9 |
-| [×] | 0 | 0 | 0 | 54 |
+- **RPN Keystrokes:** `6 [ENTER] 9 [×]` $\rightarrow$ **`54`**
+- **Stack Flow:** Tap `6 [ENTER] 9 [×]` -> (T=0, Z=0, Y=0, X=54). Enter the forward calculation on the stack to evaluate and verify 54 in Register $X$.
 
 #### Drill 20 (Level 3): $48 \div 6 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Form your 48 tiles into 6 equal flight squads using **Counting Tile Arrays**. Knowing that a $6 \times 8$ array uses all 48 tiles with zero leftovers, each squad must contain exactly 8 tiles ($48 \div 6 = 8$).
-- **On the Quiz Screen:** `48  [ENTER]  ?  ÷  8  x?y`
-- **What You Tap:** `[6] [≠]`
+- **On the Quiz Screen:** `48 ÷ 6 = ?`
+- **What You Tap:** `{key:8}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Stack Verification:** 48 [ENTER] 6 [÷] $\implies \mathbf{8}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 48 | 0 | 0 | 0 | 48 |
-| [ENTER] | 0 | 0 | 48 | 48 |
-| [6] | 0 | 0 | 48 | 6 |
-| [÷] | 0 | 0 | 0 | 8 |
+- **RPN Keystrokes:** `48 [ENTER] 6 [÷]` $\rightarrow$ **`8`**
+- **Stack Flow:** Tap `48 [ENTER] 6 [÷]` -> (T=0, Z=0, Y=0, X=8). Enter the forward calculation on the stack to evaluate and verify 8 in Register $X$.
 
 #### Drill 21 (Level 3): $12 \times 7 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Break apart your $12 \times 7$ grid in the **Counting Tile Arrays** studio into two easy modules: a $10 \times 7$ array ($70$ tiles) plus a $2 \times 7$ array ($14$ tiles). Sum the two arrays together: $70 + 14 = 84$ tiles.
-- **On the Quiz Screen:** `12  [ENTER]  ?  ×  84  x?y`
-- **What You Tap:** `[7] [≠]`
+- **On the Quiz Screen:** `12 × 7 = ?`
+- **What You Tap:** `{key:84}` `{key:ENTER}`
 - **Target Time:** $< 2.2\text{ seconds}$.
-- **Stack Verification:** 12 [ENTER] 7 [×] $\implies \mathbf{84}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 12 | 0 | 0 | 0 | 12 |
-| [ENTER] | 0 | 0 | 12 | 12 |
-| [7] | 0 | 0 | 12 | 7 |
-| [×] | 0 | 0 | 0 | 84 |
+- **RPN Keystrokes:** `12 [ENTER] 7 [×]` $\rightarrow$ **`84`**
+- **Stack Flow:** Tap `12 [ENTER] 7 [×]` -> (T=0, Z=0, Y=0, X=84). Enter the forward calculation on the stack to evaluate and verify 84 in Register $X$.
 
 #### Drill 22 (Level 3): $9 \times 9 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Build a square array of $9 \times 9$ tiles in your **Counting Tile Arrays** workspace. Imagine a full $10 \times 9$ rectangle of 90 tiles and slice off the bottom row of 9: $90 - 9 = 81$ tiles in the perfect square.
-- **On the Quiz Screen:** `9  [ENTER]  ?  ×  81  x?y`
-- **What You Tap:** `[9] [≠]`
+- **On the Quiz Screen:** `9 × 9 = ?`
+- **What You Tap:** `{key:81}` `{key:ENTER}`
 - **Target Time:** $< 1.2\text{ seconds}$.
-- **Stack Verification:** 9 [ENTER] 9 [×] $\implies \mathbf{81}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [9] | 0 | 0 | 0 | 9 |
-| [ENTER] | 0 | 0 | 9 | 9 |
-| [9] | 0 | 0 | 9 | 9 |
-| [×] | 0 | 0 | 0 | 81 |
+- **RPN Keystrokes:** `9 [ENTER] 9 [×]` $\rightarrow$ **`81`**
+- **Stack Flow:** Tap `9 [ENTER] 9 [×]` -> (T=0, Z=0, Y=0, X=81). Enter the forward calculation on the stack to evaluate and verify 81 in Register $X$.
 
 #### Drill 23 (Level 3): $84 \div 12 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Partition 84 tiles into 12-tile bundles using your **Counting Tile Arrays**. Since $7 \times 10 = 70$ and $7 \times 2 = 14$, 7 full bundles consume all 84 tiles ($84 \div 12 = 7$).
-- **On the Quiz Screen:** `84  [ENTER]  ?  ÷  7  x?y`
-- **What You Tap:** `12 [≠]`
+- **On the Quiz Screen:** `84 ÷ 12 = ?`
+- **What You Tap:** `{key:7}` `{key:ENTER}`
 - **Target Time:** $< 2.0\text{ seconds}$.
-- **Stack Verification:** 84 [ENTER] 12 [÷] $\implies \mathbf{7}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 84 | 0 | 0 | 0 | 84 |
-| [ENTER] | 0 | 0 | 84 | 84 |
-| 12 | 0 | 0 | 84 | 12 |
-| [÷] | 0 | 0 | 0 | 7 |
+- **RPN Keystrokes:** `84 [ENTER] 12 [÷]` $\rightarrow$ **`7`**
+- **Stack Flow:** Tap `84 [ENTER] 12 [÷]` -> (T=0, Z=0, Y=0, X=7). Enter the forward calculation on the stack to evaluate and verify 7 in Register $X$.
 
 #### Drill 24 (Level 3): $11 \times 11 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Lay out an $11 \times 11$ square using **Counting Tile Arrays**. Split it into a $10 \times 11$ rectangle ($110$ tiles) plus a single $1 \times 11$ strip ($11$ tiles): $110 + 11 = 121$ tiles in the full square matrix.
-- **On the Quiz Screen:** `11  [ENTER]  ?  ×  121  x?y`
-- **What You Tap:** `11 [≠]`
+- **On the Quiz Screen:** `11 × 11 = ?`
+- **What You Tap:** `{key:121}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** 11 [ENTER] 11 [×] $\implies \mathbf{121}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 11 | 0 | 0 | 0 | 11 |
-| [ENTER] | 0 | 0 | 11 | 11 |
-| 11 | 0 | 0 | 11 | 11 |
-| [×] | 0 | 0 | 0 | 121 |
-
----
-
-### 8.7.6 Level 4: Fractions, Decimals & Division with Remainders
+- **RPN Keystrokes:** `11 [ENTER] 11 [×]` $\rightarrow$ **`121`**
+- **Stack Flow:** Tap `11 [ENTER] 11 [×]` -> (T=0, Z=0, Y=0, X=121). Enter the forward calculation on the stack to evaluate and verify 121 in Register $X$.
 
 #### Drill 25 (Level 4): $17 \div 5 \to Q=?, R=?$
 - **Your Mental Math Trick (With Your Blocks):** Take 17 tiles from your **Counting Tile Arrays** kit and stack them into columns of 5. You build 3 complete 5-towers ($15$ tiles), with 2 leftover tiles resting in your hand ($Q=3, R=2$).
-- **On the Quiz Screen:** `17  [ENTER]  5  ÷R  Q=3, R=?  x?y`
-- **What You Tap:** `[2] [≠]`
+- **On the Quiz Screen:** `17 ÷ 5 = Q=?, R=?`
+- **What You Tap:** `{key:3}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Verification Stack Trace (via Superpower 2 `[g] [÷R]`):**
+- **RPN Keystrokes:** `17 [ENTER] 5 [g] [÷R]` $\rightarrow$ **`3`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 17 | 0 | 0 | 0 | 17 |
 | [ENTER] | 0 | 0 | 17 | 17 |
 | [5] | 0 | 0 | 17 | 5 |
-| [÷R] | 0 | 0 | 3 | 2 |
+| [÷R] | 0 | 0 | 2 | 3 |
 *(Register $Y$ holds quotient 3, Register $X$ holds remainder 2)*.
 
 #### Drill 26 (Level 4): $1/2 + 1/4 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Slide your **Fraction Towers** into the twin comparator well. A single $1/2$ tower aligns at the exact same height as two $1/4$ segments ($2/4$). Adding one more $1/4$ segment gives a $3/4$ tower ($2/4 + 1/4 = 3/4$).
-- **On the Quiz Screen:** `1/2  [ENTER]  ?  +  3/4  x?y`
-- **What You Tap:** `[.] 1 [.] 4 [≠]`
+- **On the Quiz Screen:** `1/2 + 1/4 = ?`
+- **What You Tap:** `{key:3/4}` `{key:ENTER}`
 - **Target Time:** $< 3.0\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `. 1 . 2 [ENTER] . 1 . 4 [+]` $\rightarrow$ **`3/4`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [.] 1 [.] 2 | 0 | 0 | 0 | 1/2 |
-| [ENTER] | 0 | 0 | 1/2 | 1/2 |
-| [.] 1 [.] 4 | 0 | 0 | 1/2 | 1/4 |
-| [+] | 0 | 0 | 0 | 3/4 |
+| [.] 1 [.] 2 | 0 | 0 | 0 | $0.5000$ |
+| [ENTER] | 0 | 0 | $0.5000$ | $0.5000$ |
+| [.] 1 [.] 4 | 0 | 0 | $0.5000$ | $0.2500$ |
+| [+] | 0 | 0 | 0 | $0.7500$ |
 
 #### Drill 27 (Level 4): $5/6 - 1/3 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Fraction Towers** studio, stand a $5/6$ tower next to a $1/3$ tower. The $1/3$ tower matches two $1/6$ blocks ($2/6$). Subtracting two $1/6$ blocks from the five leaves three $1/6$ blocks ($3/6$), which simplifies directly to the $1/2$ tower!
-- **On the Quiz Screen:** `5/6  [ENTER]  ?  -  1/2  x?y`
-- **What You Tap:** `[.] 1 [.] 3 [≠]`
+- **On the Quiz Screen:** `5/6 - 1/3 = ?`
+- **What You Tap:** `{key:1/2}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Stack Verification:** . 5 . 6 [ENTER] . 1 . 3 [-] [g] [SIMP] $\implies \mathbf{1/2}$
+- **RPN Keystrokes:** `. 5 . 6 [ENTER] . 1 . 3 [-] [g] [SIMP]` $\rightarrow$ **`1/2`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [.] 5 [.] 6 | 0 | 0 | 0 | 5/6 |
-| [ENTER] | 0 | 0 | 5/6 | 5/6 |
-| [.] 1 [.] 3 | 0 | 0 | 5/6 | 1/3 |
-| [-] | 0 | 0 | 0 | 3/6 |
-| [g] [SIMP] | 0 | 0 | 3 | 1/2 |
+| [.] 5 [.] 6 | 0 | 0 | 0 | $0.8333$ |
+| [ENTER] | 0 | 0 | $0.8333$ | $0.8333$ |
+| [.] 1 [.] 3 | 0 | 0 | $0.8333$ | $0.3333$ |
+| [-] | 0 | 0 | 0 | $0.5000$ |
+| [g] [SIMP] | 0 | 0 | 0 | $0.5000$ |
 
 #### Drill 28 (Level 4): $2/3 + 1/4 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use the twelfths benchmark on your **Fraction Towers** rack. The $2/3$ tower matches 8 twelfths ($8/12$) and the $1/4$ tower matches 3 twelfths ($3/12$). Stacking them combines $8 + 3 = 11$ twelfths ($11/12$).
-- **On the Quiz Screen:** `2/3  [ENTER]  ?  +  11/12  x?y`
-- **What You Tap:** `[.] 1 [.] 4 [≠]`
+- **On the Quiz Screen:** `2/3 + 1/4 = ?`
+- **What You Tap:** `{key:11/12}` `{key:ENTER}`
 - **Target Time:** $< 4.0\text{ seconds}$.
-- **Stack Verification:** . 2 . 3 [ENTER] . 1 . 4 [+] $\implies \mathbf{11/12}$
+- **RPN Keystrokes:** `. 2 . 3 [ENTER] . 1 . 4 [+]` $\rightarrow$ **`11/12`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [.] 2 [.] 3 | 0 | 0 | 0 | 2/3 |
-| [ENTER] | 0 | 0 | 2/3 | 2/3 |
-| [.] 1 [.] 4 | 0 | 0 | 2/3 | 1/4 |
-| [+] | 0 | 0 | 0 | 11/12 |
+| [.] 2 [.] 3 | 0 | 0 | 0 | $0.6667$ |
+| [ENTER] | 0 | 0 | $0.6667$ | $0.6667$ |
+| [.] 1 [.] 4 | 0 | 0 | $0.6667$ | $0.2500$ |
+| [+] | 0 | 0 | 0 | $0.9167$ |
 
 #### Drill 29 (Level 4): $3/4 - 2/5 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Calibrate your **Fraction Towers** against a 20-part common base. A $3/4$ tower spans $15/20$ and a $2/5$ tower spans $8/20$. The height difference is $15/20 - 8/20 = 7/20$.
-- **On the Quiz Screen:** `3/4  [ENTER]  ?  -  7/20  x?y`
-- **What You Tap:** `[.] 2 [.] 5 [≠]`
+- **On the Quiz Screen:** `3/4 - 2/5 = ?`
+- **What You Tap:** `{key:7/20}` `{key:ENTER}`
 - **Target Time:** $< 4.5\text{ seconds}$.
-- **Stack Verification:** . 3 . 4 [ENTER] . 2 . 5 [-] $\implies \mathbf{7/20}$
+- **RPN Keystrokes:** `. 3 . 4 [ENTER] . 2 . 5 [-]` $\rightarrow$ **`7/20`**
+- **Stack Flow:** Tap `. 3 . 4 [ENTER] . 2 . 5 [-]` -> (T=0, Z=0, Y=0, X=0.35). Enter the forward calculation on the stack to evaluate and verify 7/20 in Register $X$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| [.] 3 [.] 4 | 0 | 0 | 0 | 3/4 |
-| [ENTER] | 0 | 0 | 3/4 | 3/4 |
-| [.] 2 [.] 5 | 0 | 0 | 3/4 | 2/5 |
-| [-] | 0 | 0 | 0 | 7/20 |
-
-#### Drill 30 (Level 4): Simplify $18/24 \to ?$
+#### Drill 30 (Level 4): $Simplify 18/24 \to ?$
 - **Your Mental Math Trick (With Your Blocks):** Place an $18$-unit block over a $24$-unit block from your **Fraction Towers** kit. Both numbers can be measured by 6-unit segments ($\gcd(18, 24) = 6$). Dividing out 6 gives 3 segments over 4 segments—the exact height of a $3/4$ tower!
-- **On the Quiz Screen:** `18/24  SIMP  ->  ?  x?y`
-- **What You Tap:** `[.] 3 [.] 4 [≠]`
+- **On the Quiz Screen:** `Simplify 18/24 = ?`
+- **What You Tap:** `{key:3/4}` `{key:ENTER}`
 - **Target Time:** $< 3.0\text{ seconds}$.
-- **Stack Verification:** . 18 . 24 [ENTER] [g] [SIMP] $\implies \mathbf{3/4}$
+- **RPN Keystrokes:** `. 18 . 24 [ENTER] [g] [SIMP]` $\rightarrow$ **`3/4`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [.] 18 [.] 24 | 0 | 0 | 0 | 18/24 |
-| [ENTER] | 0 | 0 | 18/24 | 18/24 |
-| [g] [SIMP] | 0 | 0 | 6 | 3/4 |
+| [.] 18 [.] 24 | 0 | 0 | 0 | $0.7500$ |
+| [ENTER] | 0 | 0 | $0.7500$ | $0.7500$ |
+| [g] [SIMP] | 0 | 0 | $0.7500$ | $0.7500$ |
 
 #### Drill 31 (Level 4): $38 \div 6 \to Q=?, R=?$
 - **Your Mental Math Trick (With Your Blocks):** Assemble 38 tiles into 6-tile stacks with your **Counting Tile Arrays**. You construct 6 complete stacks ($36$ tiles) and have 2 extra loose tiles left over ($Q=6, R=2$).
-- **On the Quiz Screen:** `38  [ENTER]  6  ÷R  Q=6, R=?  x?y`
-- **What You Tap:** `[2] [≠]`
+- **On the Quiz Screen:** `38 ÷ 6 = Q=?, R=?`
+- **What You Tap:** `{key:6}` `{key:ENTER}`
 - **Target Time:** $< 3.0\text{ seconds}$.
-- **Stack Verification:** 38 [ENTER] 6 [g] [÷R] $\implies \mathbf{6}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 38 | 0 | 0 | 0 | 38 |
-| [ENTER] | 0 | 0 | 38 | 38 |
-| [6] | 0 | 0 | 38 | 6 |
-| [÷R] | 0 | 0 | 6 | 2 |
+- **RPN Keystrokes:** `38 [ENTER] 6 [g] [÷R]` $\rightarrow$ **`6`**
+- **Stack Flow:** Tap `38 [ENTER] 6 [g] [÷R]` -> (T=0, Z=0, Y=2, X=6). Enter the forward calculation on the stack to evaluate and verify 6 in Register $X$.
 
 #### Drill 32 (Level 4): $5/8 + 1/2 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Fraction Towers** comparator well, a $1/2$ tower equals four $1/8$ segments ($4/8$). Adding five $1/8$ segments yields nine $1/8$ segments, which equals 1 full whole tower plus an extra $1/8$ piece ($1\ 1/8$).
-- **On the Quiz Screen:** `5/8  [ENTER]  ?  +  1_1/8  x?y`
-- **What You Tap:** `[.] 1 [.] 2 [≠]`
+- **On the Quiz Screen:** `5/8 + 1/2 = ?`
+- **What You Tap:** `{key:1 1/8}` `{key:ENTER}`
 - **Target Time:** $< 4.0\text{ seconds}$.
-- **Stack Verification:** . 5 . 8 [ENTER] . 1 . 2 [+] $\implies \mathbf{1 1/8}$
+- **RPN Keystrokes:** `. 5 . 8 [ENTER] . 1 . 2 [+]` $\rightarrow$ **`1 1/8`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [.] 5 [.] 8 | 0 | 0 | 0 | 5/8 |
-| [ENTER] | 0 | 0 | 5/8 | 5/8 |
-| [.] 1 [.] 2 | 0 | 0 | 5/8 | 1/2 |
-| [+] | 0 | 0 | 0 | 1 1/8 |
-
----
-
-### 8.7.7 Mission 3: Deep Space Navigation Sprint (Levels 5 & 6: Mixed Operations, Pre-Algebra & Rapid Mental Math Sprint)
-*Mission Briefing: Navigate deep space trajectories. Chain arithmetic operations without parentheses, execute Vedic mental squaring and multiplication by 11, and solve signed integer number sense challenges.*
-
-### 8.7.8 Level 5: Mixed Operations, Order of Operations & Decimals
+| [.] 5 [.] 8 | 0 | 0 | 0 | $0.6250$ |
+| [ENTER] | 0 | 0 | $0.6250$ | $0.6250$ |
+| [.] 1 [.] 2 | 0 | 0 | $0.6250$ | $0.5000$ |
+| [+] | 0 | 0 | 0 | $1.1250$ |
 
 #### Drill 33 (Level 5): $24 \div 6 + 7 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Counting Tile Arrays**. Division comes before addition: separate 24 tiles into 6 equal squads of 4 tiles ($24 \div 6 = 4$), then dock 7 additional tiles into the squad to finish with 11 tiles ($4 + 7 = 11$).
-- **On the Quiz Screen:** `24  [ENTER]  6  ÷  7  +  11  x?y`
-- **What You Tap:** `11 [≠]`
+- **On the Quiz Screen:** `24 ÷ 6 + 7 = ?`
+- **What You Tap:** `{key:11}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `24 [ENTER] 6 [÷] 7 [+]` $\rightarrow$ **`11`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -10951,24 +10063,19 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 
 #### Drill 34 (Level 5): $0.25 \times 80 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Connect decimals to **Fraction Towers**: $0.25$ is the exact height of a $1/4$ tower. Multiplying by $0.25$ means taking one fourth of an 80-tile track using **Counting Tile Arrays**: $80 \div 4 = 20$ tiles!
-- **On the Quiz Screen:** `0.25  [ENTER]  ?  ×  20  x?y`
-- **What You Tap:** `80 [≠]`
+- **On the Quiz Screen:** `0.25 × 80 = ?`
+- **What You Tap:** `{key:20}` `{key:ENTER}`
 - **Target Time:** $< 2.0\text{ seconds}$.
-- **Stack Verification:** 0.25 [ENTER] 80 [×] $\implies \mathbf{20}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 0.25 | 0 | 0 | 0 | 0.25 |
-| [ENTER] | 0 | 0 | 0.25 | 0.25 |
-| 80 | 0 | 0 | 0.25 | 80 |
-| [×] | 0 | 0 | 0 | 20 |
+- **RPN Keystrokes:** `0.25 [ENTER] 80 [×]` $\rightarrow$ **`20`**
+- **Stack Flow:** Tap `0.25 [ENTER] 80 [×]` -> (T=0, Z=0, Y=0, X=20). Enter the forward calculation on the stack to evaluate and verify 20 in Register $X$.
 
 #### Drill 35 (Level 5): $15 - 3 \times 4 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Counting Tile Arrays** workspace, order of operations requires multiplying first: build a $3 \times 4$ tile array ($12$ tiles). Then lift that 12-tile array away from a group of 15 tiles to leave exactly 3 tiles ($15 - 12 = 3$).
-- **On the Quiz Screen:** `15  [ENTER]  3  4  ×  -  ?  x?y`
-- **What You Tap:** `[3] [≠]`
+- **On the Quiz Screen:** `15 - 3 × 4 = ?`
+- **What You Tap:** `{key:3}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `15 [ENTER] 3 [ENTER] 4 [×] [-]` $\rightarrow$ **`3`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -10982,10 +10089,11 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 
 #### Drill 36 (Level 5): $(18 - 6) \div 3 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Handle the grouped tiles first! From an 18-tile line in your **Counting Tile Arrays** studio, remove 6 tiles to leave 12 tiles ($18 - 6 = 12$). Next, divide those 12 tiles into 3 equal squads: each squad gets 4 tiles ($12 \div 3 = 4$).
-- **On the Quiz Screen:** `18  [ENTER]  6  -  3  ÷  ?  x?y`
-- **What You Tap:** `[4] [≠]`
+- **On the Quiz Screen:** `(18 - 6) ÷ 3 = ?`
+- **What You Tap:** `{key:4}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `18 [ENTER] 6 [-] 3 [÷]` $\rightarrow$ **`4`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -10998,52 +10106,42 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 
 #### Drill 37 (Level 5): $1\ 1/2 + 2\ 1/4 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Stack your **Fraction Towers** in two passes: first combine the solid whole towers ($1 + 2 = 3$). Then check the fractional pieces in the comparator well: $1/2$ equals $2/4$, plus $1/4$ gives $3/4$, reaching an astronaut altitude of $3\ 3/4$!
-- **On the Quiz Screen:** `1_1/2  [ENTER]  ?  +  3_3/4  x?y`
-- **What You Tap:** `[2] [.] 1 [.] 4 [≠]`
+- **On the Quiz Screen:** `1\ 1/2 + 2\ 1/4 = ?`
+- **What You Tap:** `{key:3 3/4}` `{key:ENTER}`
 - **Target Time:** $< 3.5\text{ seconds}$.
-- **Stack Verification:** 1 . 1 . 2 [ENTER] 2 . 1 . 4 [+] $\implies \mathbf{3 3/4}$
+- **RPN Keystrokes:** `1 . 1 . 2 [ENTER] 2 . 1 . 4 [+]` $\rightarrow$ **`3 3/4`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [1] [.] 1 [.] 2 | 0 | 0 | 0 | 1 1/2 |
-| [ENTER] | 0 | 0 | 1 1/2 | 1 1/2 |
-| [2] [.] 1 [.] 4 | 0 | 0 | 1 1/2 | 2 1/4 |
-| [+] | 0 | 0 | 0 | 3 3/4 |
+| [1] [.] 1 [.] 2 | 0 | 0 | 1 | $0.5000$ |
+| [ENTER] | 0 | 1 | $0.5000$ | $0.5000$ |
+| [2] [.] 1 [.] 4 | 1 | $0.5000$ | $2.0000$ | $0.2500$ |
+| [+] | 1 | 1 | $0.5000$ | $2.2500$ |
 
 #### Drill 38 (Level 5): $0.5 \times 48 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use the $1/2$ mark on your **Fraction Towers** and a 48-tile strip from **Counting Tile Arrays**. Multiplying by $0.5$ is simply taking half: bisect 48 tiles down the middle to get 24 tiles ($48 \div 2 = 24$).
-- **On the Quiz Screen:** `0.5  [ENTER]  ?  ×  24  x?y`
-- **What You Tap:** `48 [≠]`
+- **On the Quiz Screen:** `0.5 × 48 = ?`
+- **What You Tap:** `{key:24}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** 0.5 [ENTER] 48 [×] $\implies \mathbf{24}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 0.5 | 0 | 0 | 0 | 0.5 |
-| [ENTER] | 0 | 0 | 0.5 | 0.5 |
-| 48 | 0 | 0 | 0.5 | 48 |
-| [×] | 0 | 0 | 0 | 24 |
+- **RPN Keystrokes:** `0.5 [ENTER] 48 [×]` $\rightarrow$ **`24`**
+- **Stack Flow:** Tap `0.5 [ENTER] 48 [×]` -> (T=0, Z=0, Y=0, X=24). Enter the forward calculation on the stack to evaluate and verify 24 in Register $X$.
 
 #### Drill 39 (Level 5): $10\%\text{ of } 250 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Think of $10\%$ as the benchmark ratio from your **Ten-Frames** and **Counting Tile Arrays**: $10\%$ is 1 out of every 10 parts. Divide a 250-tile array into 10 equal columns by shifting one decimal place left to find 25 tiles ($250 \div 10 = 25$).
-- **On the Quiz Screen:** `250  [ENTER]  10  %  ?  x?y`
-- **What You Tap:** `25 [≠]`
+- **On the Quiz Screen:** `10\%\text{ of } 250 = ?`
+- **What You Tap:** `{key:25}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** 250 [ENTER] 10 [%] $\implies \mathbf{25}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 250 | 0 | 0 | 0 | 250 |
-| [ENTER] | 0 | 0 | 250 | 250 |
-| 10 | 0 | 0 | 250 | 10 |
-| [%] | 0 | 0 | 250 | 25 |
+- **RPN Keystrokes:** `250 [ENTER] 10 [%]` $\rightarrow$ **`25`**
+- **Stack Flow:** Tap `250 [ENTER] 10 [%]` -> (T=0, Z=0, Y=0, X=25). Enter the forward calculation on the stack to evaluate and verify 25 in Register $X$.
 
 #### Drill 40 (Level 5): $8 + 4 \times 5 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In your **Counting Tile Arrays** workspace, calculate the multiplication array before adding: build 4 rows of 5 tiles ($4 \times 5 = 20$ tiles). Then combine that array with 8 loose tiles to get $8 + 20 = 28$ tiles!
-- **On the Quiz Screen:** `8  [ENTER]  4  5  ×  +  ?  x?y`
-- **What You Tap:** `28 [≠]`
+- **On the Quiz Screen:** `8 + 4 × 5 = ?`
+- **What You Tap:** `{key:28}` `{key:ENTER}`
 - **Target Time:** $< 2.5\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `8 [ENTER] 4 [ENTER] 5 [×] [+]` $\rightarrow$ **`28`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -11055,109 +10153,77 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 | [×] | 0 | 0 | 8 | 20 |
 | [+] | 0 | 0 | 0 | 28 |
 
----
-
-### 8.7.9 Level 6: Pre-Algebra, Vedic Shortcuts & Rapid Mental Math Sprint
-
 #### Drill 41 (Level 6): $35^2 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Visualize a $35 \times 35$ grid using **Counting Tile Arrays**. For any number ending in 5, multiply the tens digit by the next integer ($3 \times 4 = 12$ hundreds $= 1200$), then tack on the $5 \times 5 = 25$ tile corner block: $1,225$!
-- **On the Quiz Screen:** `35  [ENTER]  x²  1225  x?y`
-- **What You Tap:** `1225 [≠]`
+- **On the Quiz Screen:** `35^2 = ?`
+- **What You Tap:** `{key:1225}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Verification Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 35 | 0 | 0 | 0 | 35 |
-| [x²] | 0 | 0 | 0 | 1225 |
+- **RPN Keystrokes:** `35 [x²]` $\rightarrow$ **`1225`**
+- **Stack Flow:** Tap `35 [x²]` -> (T=0, Z=0, Y=0, X=1225). Enter the forward calculation on the stack to evaluate and verify 1225 in Register $X$.
 
 #### Drill 42 (Level 6): $43 \times 11 = ?$
 - **Your Mental Math Trick (With Your Blocks):** In **Counting Tile Arrays**, multiplying 43 by 11 spreads the outer digits 4 and 3 apart ($(43 \times 10) + 43$). Add the digits together ($4 + 3 = 7$) and insert the 7 into the middle tens position: $473$!
-- **On the Quiz Screen:** `43  [ENTER]  11  ×  473  x?y`
-- **What You Tap:** `473 [≠]`
+- **On the Quiz Screen:** `43 × 11 = ?`
+- **What You Tap:** `{key:473}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** 43 [ENTER] 11 [×] $\implies \mathbf{473}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 43 | 0 | 0 | 0 | 43 |
-| [ENTER] | 0 | 0 | 43 | 43 |
-| 11 | 0 | 0 | 43 | 11 |
-| [×] | 0 | 0 | 0 | 473 |
+- **RPN Keystrokes:** `43 [ENTER] 11 [×]` $\rightarrow$ **`473`**
+- **Stack Flow:** Tap `43 [ENTER] 11 [×]` -> (T=0, Z=0, Y=0, X=473). Enter the forward calculation on the stack to evaluate and verify 473 in Register $X$.
 
 #### Drill 43 (Level 6): $65^2 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use the geometric squaring layout from **Counting Tile Arrays**. Multiply tens digit 6 by its consecutive neighbor 7 ($6 \times 7 = 42$ hundreds $= 4200$), then append the $5 \times 5 = 25$ corner tile array: $4,225$!
-- **On the Quiz Screen:** `65  [ENTER]  x²  4225  x?y`
-- **What You Tap:** `4225 [≠]`
+- **On the Quiz Screen:** `65^2 = ?`
+- **What You Tap:** `{key:4225}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** 65 [x²] $\implies \mathbf{4225}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 65 | 0 | 0 | 0 | 65 |
-| [x²] | 0 | 0 | 0 | 4225 |
+- **RPN Keystrokes:** `65 [x²]` $\rightarrow$ **`4225`**
+- **Stack Flow:** Tap `65 [x²]` -> (T=0, Z=0, Y=0, X=4225). Enter the forward calculation on the stack to evaluate and verify 4225 in Register $X$.
 
 #### Drill 44 (Level 6): $75^2 = ?$
 - **Your Mental Math Trick (With Your Blocks):** On your **Counting Tile Arrays** workspace, square 75 by multiplying the tens digit 7 by the next number 8 ($7 \times 8 = 56$ hundreds $= 5600$). Add the $5 \times 5 = 25$ corner tiles to lock in $5,625$!
-- **On the Quiz Screen:** `75  [ENTER]  x²  5625  x?y`
-- **What You Tap:** `5625 [≠]`
+- **On the Quiz Screen:** `75^2 = ?`
+- **What You Tap:** `{key:5625}` `{key:ENTER}`
 - **Target Time:** $< 1.5\text{ seconds}$.
-- **Stack Verification:** 75 [x²] $\implies \mathbf{5625}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 75 | 0 | 0 | 0 | 75 |
-| [x²] | 0 | 0 | 0 | 5625 |
+- **RPN Keystrokes:** `75 [x²]` $\rightarrow$ **`5625`**
+- **Stack Flow:** Tap `75 [x²]` -> (T=0, Z=0, Y=0, X=5625). Enter the forward calculation on the stack to evaluate and verify 5625 in Register $X$.
 
 #### Drill 45 (Level 6): $67 \times 11 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Use **Counting Tile Arrays** to multiply by 11 with regrouping: split 6 and 7. The middle sum is $6 + 7 = 13$; leave the 3 in the tens place and carry 1 ten-rod over to 6 hundreds ($6 + 1 = 7$), resulting in $737$!
-- **On the Quiz Screen:** `67  [ENTER]  11  ×  737  x?y`
-- **What You Tap:** `737 [≠]`
+- **On the Quiz Screen:** `67 × 11 = ?`
+- **What You Tap:** `{key:737}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Stack Verification:** 67 [ENTER] 11 [×] $\implies \mathbf{737}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 67 | 0 | 0 | 0 | 67 |
-| [ENTER] | 0 | 0 | 67 | 67 |
-| 11 | 0 | 0 | 67 | 11 |
-| [×] | 0 | 0 | 0 | 737 |
+- **RPN Keystrokes:** `67 [ENTER] 11 [×]` $\rightarrow$ **`737`**
+- **Stack Flow:** Tap `67 [ENTER] 11 [×]` -> (T=0, Z=0, Y=0, X=737). Enter the forward calculation on the stack to evaluate and verify 737 in Register $X$.
 
 #### Drill 46 (Level 6): $15\%\text{ of } 80 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Break down $15\%$ using **Counting Tile Arrays** and **Ten-Frames** benchmark ratios: $10\%$ of 80 is 8 tiles, and $5\%$ is half of that (4 tiles). Add the two tile groups together: $8 + 4 = 12$ tiles!
-- **On the Quiz Screen:** `80  [ENTER]  15  %  12  x?y`
-- **What You Tap:** `12 [≠]`
+- **On the Quiz Screen:** `15\%\text{ of } 80 = ?`
+- **What You Tap:** `{key:12}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Stack Verification:** 80 [ENTER] 15 [%] $\implies \mathbf{12}$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 80 | 0 | 0 | 0 | 80 |
-| [ENTER] | 0 | 0 | 80 | 80 |
-| 15 | 0 | 0 | 80 | 15 |
-| [%] | 0 | 0 | 80 | 12 |
+- **RPN Keystrokes:** `80 [ENTER] 15 [%]` $\rightarrow$ **`12`**
+- **Stack Flow:** Tap `80 [ENTER] 15 [%]` -> (T=0, Z=0, Y=0, X=12). Enter the forward calculation on the stack to evaluate and verify 12 in Register $X$.
 
 #### Drill 47 (Level 6): $-14 + 9 = ?$
 - **Your Mental Math Trick (With Your Blocks):** Line up **Prime Blocks** or directional counters along your integer number track: place 14 red negative counters and 9 green positive counters. The 9 positive counters cancel out 9 negative counters into zero-pairs, leaving 5 red negative counters ($ -5 $).
-- **On the Quiz Screen:** `-14  [ENTER]  9  +  -5  x?y`
-- **What You Tap:** `[5] [+/-] [≠]`
+- **On the Quiz Screen:** `-14 + 9 = ?`
+- **What You Tap:** `{key:-5}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `14 [+/-] [ENTER] 9 [+]` $\rightarrow$ **`-5`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 14 | 0 | 0 | 0 | 14 |
-| [+/-] | 0 | 0 | 0 | -14 |
-| [ENTER] | 0 | 0 | -14 | -14 |
-| [9] | 0 | 0 | -14 | 9 |
-| [+] | 0 | 0 | 0 | -5 |
+| [+/-] | 0 | 0 | 0 | $-14.0000$ |
+| [ENTER] | 0 | 0 | $-14.0000$ | $-14.0000$ |
+| [9] | 0 | 0 | $-14.0000$ | 9 |
+| [+] | 0 | 0 | 0 | $-5.0000$ |
 
 #### Drill 48 (Level 6): $\gcd(24, 36) = ?$
 - **Your Mental Math Trick (With Your Blocks):** Build prime factor towers using **Prime Blocks**: 24 decomposes into $2 \times 2 \times 2 \times 3$, and 36 decomposes into $2 \times 2 \times 3 \times 3$. Their shared prime blocks are two $2$s and one $3$ ($2 \times 2 \times 3 = 12$). The tallest common block tower that measures both evenly is $12$!
-- **On the Quiz Screen:** `24  [ENTER]  36  GCF  12  x?y`
-- **What You Tap:** `12 [≠]`
+- **On the Quiz Screen:** `\gcd(24, 36) = ?`
+- **What You Tap:** `{key:12}` `{key:ENTER}`
 - **Target Time:** $< 1.8\text{ seconds}$.
-- **Verification Stack Trace:**
+- **RPN Keystrokes:** `24 [ENTER] 36 [GCF]` $\rightarrow$ **`12`**
+- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -11165,8 +10231,6 @@ Before executing high-speed mental sprints on the SC-6 keypad, you ground abstra
 | [ENTER] | 0 | 0 | 24 | 24 |
 | 36 | 0 | 0 | 24 | 36 |
 | [GCF] | 0 | 0 | 0 | 12 |
-
----
 
 ## 8.8 Mental Math & Number Sense Fluency: 8 Essential Mental Math Theorems
 
@@ -11275,7 +10339,7 @@ For official competition prep rules, timing charts, and station tracking sheets,
 In this chapter, you trained your mathematical reflexes and built lightning-fast math reflexes:
 
 1. **Pure RPN Mental Representation:** You deciphered arithmetic questions presented as elegant RPN stack puzzles on the transflective LCD.
-2. **Zero-Config Answering:** You mastered instant submission via the hardware test key (`[≠]`), getting immediate tactile and auditory feedback on every attempt.
+2. **Instant Sprint Evaluation:** You mastered instant submission via the hardware test key (`[ENTER]`), getting immediate tactile and auditory feedback on every attempt.
 3. **The 6-Level Adaptive Ladder:** You advanced across number bonds, multi-digit operations, times tables, fraction remainders, and lightning-fast pre-algebra shortcuts.
 4. **Mental Math Superpowers:** You conquered the eight mental math theorems—from the 11s shortcut to Vedic squaring—drastically shrinking your latency without scratch paper.
 
@@ -11358,6 +10422,12 @@ Following Jerome Bruner's <strong>Concrete-Representational-Abstract (CRA)</stro
 
 ---
 
+### 9.2.1 Algebraic Trap vs. StackCalc Superpower Showdown: Maker Dimensional Analysis & Spool Costing
+
+| Challenge / Equation | The Algebraic Calculator Trap (TI-30X / Smartphone) | The StackCalc SC-6 + Manipulative Superpower | Keystroke Reduction | Live Stack Visibility | Pedagogical Breakthrough |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **3D Printing Filament Cost**:<br>$14.91\text{g} \times (\$20.00 / 1000\text{g}) = \$0.30$ | Must type `1 4 . 9 1 * ( 2 0 / 1 0 0 0 ) =` (18 keystrokes). Forgetting parentheses multiplies mass by 20 before dividing, or requires writing unit cost ($\$0.02$) on scrap paper. | Continuous dimensional pipeline: `14.91 [ENTER] 20 [ENTER] 1000 [÷] [×] [$]` $\to \mathbf{\$0.30}$ (12 strokes). Intermediate unit cost ($\$0.02/\text{g}$) stays visible on the stack! | **33% fewer strokes** | Register $Y$ preserves $14.91\text{g}$ while Register $X$ computes the unit price $\$0.02/\text{g}$, allowing single-tap `[×]` and `[$]` currency formatting without scrap paper. | Students measure physical filament with calipers, trace dimensional unit cancellation directly on the stack, and see exact manufacturing cost before printing. |
+
 ## 9.3 Project 1: 3D Printing Filament Mass, Infill & Spool Cost Estimation
 
 In modern classroom maker spaces, 3D printers turn digital CAD designs into physical objects. Before you send a job to the printer, calculate the volume of plastic extruded, convert that volume to mass in grams, and determine the exact financial cost from your filament budget.
@@ -11401,15 +10471,15 @@ Suppose your slicing software indicates that your pencil holder requires $L = 50
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `.0875` | 0 | 0 | 0 | 0.0875 |
-| [x²] | 0 | 0 | 0 | 0.007656 |
-| [π] [×] | 0 | 0 | 0 | 0.024053 |
-| `500` [×] | 0 | 0 | 0 | 12.02641 |
-| `1.24` [×] | 0 | 0 | 0 | 14.91275 |
-| `20`[ENTER] | 0 | 14.91275 | 14.91275 | 20 |
-| `1000` [÷] | 0 | 0 | 14.91275 | 0.02 |
-| [×] | 0 | 0 | 0 | 0.298255 |
-| [$] | 0 | 0 | 0 | $0.30 |
+| `.0875` | 0 | 0 | 0 | $0.0875$ |
+| [x²] | 0 | 0 | 0 | $0.007656$ |
+| [π] [×] | 0 | 0 | 0 | $0.024053$ |
+| `500` [×] | 0 | 0 | 0 | $12.02641$ |
+| `1.24` [×] | 0 | 0 | 0 | $14.91275$ |
+| 20 [ENTER] | 0 | $14.91275$ | $20.00000$ | 20 |
+| `1000` [÷] | 0 | 0 | $14.91275$ | $0.02$ |
+| [×] | 0 | 0 | 0 | $0.298255$ |
+| [$] | 0 | 0 | 0 | $0.30$ |
 
 ---
 
@@ -11425,16 +10495,16 @@ A solid plastic cube ($100\%$ infill) consumes immense filament. By setting the 
 | :--- | :--- | :--- | :--- | :--- |
 | 124 | 0 | 0 | 0 | 124 |
 | [ENTER] | 0 | 0 | 124 | 124 |
-| [2][4][.][8] | 0 | 124 | 124 | 24.8 |
-| [ENTER] | 124 | 124 | 24.8 | 24.8 |
-| 80 | 124 | 24.8 | 24.8 | 80 |
-| [ENTER] | 24.8 | 24.8 | 80 | 80 |
-| [.][1][5][×] | 24.8 | 24.8 | 80 | 12 |
-| [1][.]`24` [×] | 24.8 | 24.8 | 12 | 14.88 |
-| [+] | 0 | 124 | 24.8 | 39.68 |
-| [-] | 0 | 0 | 0 | 84.32 |
-| `.02` [×] | 0 | 0 | 0 | 1.6864 |
-| [$] | 0 | 0 | 0 | $1.69 |
+| 24.8 | 0 | 0 | 124 | $24.8$ |
+| [ENTER] | 0 | 124 | $24.8$ | $24.8$ |
+| 80 | 0 | $124.0$ | $24.8$ | 80 |
+| [ENTER] | $124.0$ | $24.8$ | 80 | 80 |
+| 0.15 [×] | $124.0$ | $124.0$ | $24.8000$ | 12 |
+| 1.24 [×] | $124.0$ | $124.0$ | $24.8000$ | $14.88$ |
+| [+] | 124 | 124 | $124.0$ | $39.68$ |
+| [-] | 124 | 124 | 124 | $84.32$ |
+| `.02` [×] | 124 | 124 | 124 | $1.6864$ |
+| [$] | 124 | 124 | 124 | $1.69$ |
 
 ---
 
@@ -11453,11 +10523,11 @@ How much does it cost to 3D print a complete classroom kit of 24 interlocking ma
 | :--- | :--- | :--- | :--- | :--- |
 | 24 | 0 | 0 | 0 | 24 |
 | [ENTER] | 0 | 0 | 24 | 24 |
-| 3.1 | 0 | 0 | 24 | 3.1 |
-| [×] | 0 | 0 | 0 | 74.4 |
-| [.] 02 | 0 | 0 | 74.4 | 0.02 |
-| [×] | 0 | 0 | 0 | 1.488 |
-| [$] | 0 | 0 | 0 | $1.49 |
+| 3.1 | 0 | 0 | 24 | $3.1$ |
+| [×] | 0 | 0 | 0 | $74.4$ |
+| [.] 02 | 0 | 0 | $74.4$ | $2.00$ |
+| [×] | 0 | 0 | 0 | $148.800$ |
+| [$] | 0 | 0 | 0 | $148.80$ |
 
 ---
 
@@ -11469,14 +10539,14 @@ A classroom 3D printer draws an average electrical power of $P = 120\text{ Watts
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [.] 12 | 0 | 0 | 0 | 0.12 |
-| [ENTER] | 0 | 0 | 0.12 | 0.12 |
-| 4.5 | 0 | 0 | 0.12 | 4.5 |
-| [×] | 0 | 0 | 0 | 0.54 |
-| [.] 15 | 0 | 0 | 0.54 | 0.15 |
-| [×] | 0 | 0 | 0 | 0.081 |
-| [1][.]`49` [+] | 0 | 0 | 0 | 1.571 |
-| [$] | 0 | 0 | 0 | $1.57 |
+| [.] 12 | 0 | 0 | 0 | $12.00$ |
+| [ENTER] | 0 | 0 | $12.00$ | $12.00$ |
+| 4.5 | 0 | 0 | $12.00$ | $4.5$ |
+| [×] | 0 | 0 | 0 | $54.00$ |
+| [.] 15 | 0 | 0 | $54.00$ | $15.00$ |
+| [×] | 0 | 0 | 0 | $810.000$ |
+| 1.49 [+] | 0 | 0 | 0 | $811.490$ |
+| [$] | 0 | 0 | 0 | $811.49$ |
 
 ---
 
@@ -11527,11 +10597,11 @@ We must ensure our resistor does not overheat. We evaluate $P = I^2 \times R$.
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | [3] [ENTER] | 0 | 0 | 3 | 3 |
-| [2] [-] | 0 | 0 | 0 | 1.0 |
-| `.020` [÷] | 0 | 0 | 0 | 50.0 |
-| [f] [LASTX] | 0 | 0 | 50.0 | 0.020 |
-| [x²] | 0 | 0 | 50.0 | 0.0004 |
-| [×] | 0 | 0 | 0 | 0.020 |
+| [2] [-] | 0 | 0 | 0 | $1.0$ |
+| `.020` [÷] | 0 | 0 | 0 | $50.0$ |
+| [f] [LASTX] | 0 | 0 | $50.0$ | $0.020$ |
+| [x²] | 0 | 0 | $50.0$ | $4.0000 \times 10^{-4}$ |
+| [×] | 0 | 0 | 0 | $0.020$ |
 
 ---
 
@@ -11545,11 +10615,11 @@ Suppose you build a stage beacon using a 9V alkaline battery ($V_s = 9.0\text{ V
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | [9] [ENTER] | 0 | 0 | 9 | 9 |
-| [3][.][2][-] | 0 | 0 | 0 | 5.8 |
-| `.020` [÷] | 0 | 0 | 0 | 290.0 |
-| [f] [LASTX] | 0 | 0 | 290.0 | 0.020 |
-| [x²] | 0 | 0 | 290.0 | 0.0004 |
-| [×] | 0 | 0 | 0 | 0.116 |
+| 3.2 [-] | 0 | 0 | 0 | $5.8$ |
+| `.020` [÷] | 0 | 0 | 0 | $290.0$ |
+| [f] [LASTX] | 0 | 0 | $290.0$ | $0.020$ |
+| [x²] | 0 | 0 | $290.0$ | $4.0000 \times 10^{-4}$ |
+| [×] | 0 | 0 | 0 | $0.116$ |
 
 ---
 
@@ -11586,13 +10656,13 @@ $$\text{Measured 10-cycle time} = 20.1\text{ seconds}$$
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `20.1`[ENTER] | 0 | 0 | 0 | 20.1 |
-| `10` [÷] | 0 | 0 | 0 | 2.01 |
-| [x²] | 0 | 0 | 0 | 4.0401 |
-| [4] [ENTER] | 0 | 0 | 4.0401 | 4 |
-| [π] [x²] [×] | 0 | 0 | 4.0401 | 39.4784 |
-| [1] [×] | 0 | 0 | 4.0401 | 39.4784 |
-| [x⇄y] [÷] | 0 | 0 | 0 | 9.7716 |
+| `20.1`[ENTER] | 0 | 0 | $20.1000$ | $20.1$ |
+| `10` [÷] | 0 | 0 | 0 | $2.01$ |
+| [x²] | 0 | 0 | 0 | $4.0401$ |
+| [4] [ENTER] | 0 | $4.0401$ | $4.0000$ | 4 |
+| [π] [x²] [×] | 0 | 0 | $4.0401$ | $39.4784$ |
+| [1] [×] | 0 | 0 | $4.0401$ | $39.4784$ |
+| [x⇄y] [÷] | 0 | 0 | 0 | $9.7716$ |
 *(Compared to the accepted standard $g = 9.80665\text{ m/s}^2$, your hands-on experiment achieves less than $0.4\%$ experimental error!)*
 
 ---
@@ -11603,13 +10673,13 @@ $$L = \frac{g \times T^2}{4\pi^2} = \frac{9.80665 \times 2.0^2}{4 \times \pi^2} 
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `9.80665` | 0 | 0 | 0 | 9.80665 |
-| [ENTER] | 0 | 0 | 9.80665 | 9.80665 |
-| [2] [x²] | 0 | 0 | 9.80665 | 4 |
-| [×] | 0 | 0 | 0 | 39.2266 |
-| [4] [ENTER] | 0 | 0 | 39.2266 | 4 |
-| [π] [x²] [×] | 0 | 0 | 39.2266 | 39.4784 |
-| [÷] | 0 | 0 | 0 | 0.9936 |
+| `9.80665` | 0 | 0 | 0 | $9.80665$ |
+| [ENTER] | 0 | 0 | $9.80665$ | $9.80665$ |
+| [2] [x²] | 0 | 0 | $9.80665$ | 4 |
+| [×] | 0 | 0 | 0 | $39.2266$ |
+| [4] [ENTER] | 0 | $39.2266$ | $4.0000$ | 4 |
+| [π] [x²] [×] | 0 | 0 | $39.2266$ | $39.4784$ |
+| [÷] | 0 | 0 | 0 | $0.9936$ |
 
 ---
 
@@ -11637,10 +10707,10 @@ Place your solar cooker in direct sunlight at solar noon. Your internal digital 
 | :--- | :--- | :--- | :--- | :--- |
 | 78 | 0 | 0 | 0 | 78 |
 | [ENTER] | 0 | 0 | 78 | 78 |
-| [2][2][.][5] | 0 | 0 | 78 | 22.5 |
-| [-] | 0 | 0 | 0 | 55.5 |
-| 25 | 0 | 0 | 55.5 | 25 |
-| [÷] | 0 | 0 | 0 | 2.22 |
+| 22.5 | 0 | 0 | 78 | $22.5$ |
+| [-] | 0 | 0 | 0 | $55.5$ |
+| 25 | 0 | 0 | $55.5$ | 25 |
+| [÷] | 0 | 0 | 0 | $2.22$ |
 
 ---
 
@@ -11656,8 +10726,8 @@ After reaching $78^\circ\text{C}$, move your oven into shaded ambient air ($22^\
 | 78 | 0 | 0 | 34 | 78 |
 | [ENTER] | 0 | 34 | 78 | 78 |
 | 22 [-] | 0 | 0 | 34 | 56 |
-| [÷] | 0 | 0 | 0 | 0.6071 |
-| [1][0][0][×] | 0 | 0 | 0 | 60.71 |
+| [÷] | 0 | 0 | 0 | $0.6071$ |
+| 100 [×] | 0 | 0 | 0 | $60.71$ |
 
 ---
 
@@ -11687,13 +10757,13 @@ Accumulate each trial into the SC-6 hardware statistical registers using `[Σ+]`
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | [CLΣ] | 0 | 0 | 0 | 0 |
-| `182` [Σ+] | 0 | 0 | 0 | n = 1 |
-| `195` [Σ+] | 0 | 0 | 0 | n = 2 |
-| `188` [Σ+] | 0 | 0 | 0 | n = 3 |
-| `201` [Σ+] | 0 | 0 | 0 | n = 4 |
-| `189` [Σ+] | 0 | 0 | 0 | n = 5 |
-| [g] [x̄] | 0 | 0 | 0 | 191.00 |
-| [f] `s` | 0 | 0 | 191.00 | 7.28 |
+| `182` [Σ+] | 0 | 0 | 0 | $1.0000$ |
+| `195` [Σ+] | 0 | 0 | 0 | $2.0000$ |
+| `188` [Σ+] | 0 | 0 | 0 | $3.0000$ |
+| `201` [Σ+] | 0 | 0 | 0 | $4.0000$ |
+| `189` [Σ+] | 0 | 0 | 0 | $5.0000$ |
+| [g] [x̄] | 0 | 0 | 0 | $191.00$ |
+| [f] `s` | 0 | 0 | $191.00$ | $7.25$ |
 
 ---
 
@@ -11704,13 +10774,13 @@ Over $95\%$ of all shots will land directly inside the scoring ring!
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [7] [.] `28` | 0 | 0 | 0 | 7.28 |
-| [ENTER] | 0 | 0 | 7.28 | 7.28 |
-| [2] [×] | 0 | 0 | 0 | 14.56 |
-| `191`[ENTER] | 0 | 0 | 14.56 | 191 |
-| [x⇄y] [-] | 0 | 0 | 0 | 176.44 |
-| `191`[ENTER] | 0 | 0 | 176.44 | 191 |
-| `14.56` [+] | 0 | 0 | 176.44 | 205.56 |
+| [7] [.] `28` | 0 | 0 | 7 | $28.00$ |
+| [ENTER] | 0 | 7 | $28.00$ | $28.00$ |
+| [2] [×] | 0 | 0 | 7 | $56.00$ |
+| `191`[ENTER] | 7 | 56 | $191.00$ | 191 |
+| [x⇄y] [-] | 7 | 7 | 56 | $0.00$ |
+| `191`[ENTER] | 56 | 0 | $191.00$ | 191 |
+| `14.56` [+] | 56 | 56 | $0.00$ | $205.56$ |
 
 ---
 
@@ -11735,7 +10805,7 @@ $$\text{Rate} = \frac{h_2 - h_1}{t_2 - t_1} = \frac{105 - 28}{10 - 4} = \frac{77
 | 10 | 0 | 0 | 77 | 10 |
 | [ENTER] | 0 | 77 | 10 | 10 |
 | [4] [-] | 0 | 0 | 77 | 6 |
-| [÷] | 0 | 0 | 0 | 12.83 |
+| [÷] | 0 | 0 | 0 | $12.83$ |
 
 ### 9.9.2 Lab Mission 7.2: Overall Growth Percentage
 Calculate the total percent increase from Day 2 ($12\text{ mm}$) to Day 14 ($172\text{ mm}$):
@@ -11746,7 +10816,7 @@ Calculate the total percent increase from Day 2 ($12\text{ mm}$) to Day 14 ($172
 | 12 | 0 | 0 | 0 | 12 |
 | [ENTER] | 0 | 0 | 12 | 12 |
 | 172 | 0 | 0 | 12 | 172 |
-| [%CHG] | 0 | 0 | 0 | 1333.33 |
+| [%CHG] | 0 | 0 | 0 | $1333.33$ |
 
 ---
 
@@ -11772,13 +10842,13 @@ The standard loaf requires $500\text{ grams}$ of flour and yields 4 generous ser
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `500` [ENTER] | 0 | 0 | 0 | 500 |
+| `500` [ENTER] | 0 | 0 | 500 | 500 |
 | [7] [×] | 0 | 0 | 0 | 3500 |
-| `68` [%] | 0 | 0 | 3500 | 2380 |
-| [x⇄y] | 0 | 0 | 2380 | 3500 |
-| [2] [%] | 0 | 0 | 3500 | 70 |
-| [x⇄y] | 0 | 0 | 70 | 3500 |
-| `1.5` [%] | 0 | 0 | 3500 | 52.5 |
+| `68` [%] | 0 | 0 | 0 | 2380 |
+| [x⇄y] | 0 | 0 | 2380 | 0 |
+| [2] [%] | 0 | 0 | 2380 | 0 |
+| [x⇄y] | 0 | 0 | 0 | 2380 |
+| `1.5` [%] | 0 | 0 | 0 | $35.7$ |
 
 ### 9.10.2 Lab Mission 8.2: Scaling Down a Liquid Measuring Cup Recipe
 A pancake recipe requires $1\ \frac{3}{4}$ cups of milk for 8 pancakes. You are making breakfast for two (2 pancakes, scale factor $2/8 = 1/4$):
@@ -11788,10 +10858,10 @@ A pancake recipe requires $1\ \frac{3}{4}$ cups of milk for 8 pancakes. You are 
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [1][.][3][.][4] | 0 | 0 | 0 | 1 3/4 |
-| [ENTER] | 0 | 0 | 1 3/4 | 1 3/4 |
-| [4] | 0 | 0 | 1 3/4 | 4 |
-| [÷] | 0 | 0 | 0 | 7/16 |
+| . 1 . 3 . 4 | 0 | 0 | $0.3333$ | $4.0000$ |
+| [ENTER] | 0 | $0.3333$ | $4.0000$ | $4.0000$ |
+| [4] | 0 | $0.3333$ | $4.0000$ | 4 |
+| [÷] | 0 | 0 | $0.3333$ | $1.0000$ |
 
 ---
 
@@ -11822,11 +10892,11 @@ Stage 2: Gear C ($16\text{ teeth}$) drives Gear D ($48\text{ teeth}$).
 | :--- | :--- | :--- | :--- | :--- |
 | 36 | 0 | 0 | 0 | 36 |
 | [ENTER] | 0 | 0 | 36 | 36 |
-| 12 [÷] | 0 | 0 | 0 | 3.0 |
-| 48 | 0 | 0 | 3.0 | 48 |
-| [ENTER] | 0 | 3.0 | 48 | 48 |
-| 16 [÷] | 0 | 0 | 3.0 | 3.0 |
-| [×] | 0 | 0 | 0 | 9.0 |
+| 12 [÷] | 0 | 0 | 0 | $3.0$ |
+| 48 | 0 | 0 | $3.0$ | 48 |
+| [ENTER] | 0 | $3.0$ | 48 | 48 |
+| 16 [÷] | 0 | 0 | $3.0$ | $3.0$ |
+| [×] | 0 | 0 | 0 | $9.0$ |
 
 ### 9.11.3 Lab Mission 9.2: Calculating Output Shaft Speed
 If the input electric motor spins at $1,800\text{ RPM}$, what is the final output shaft speed?
@@ -11834,9 +10904,9 @@ If the input electric motor spins at $1,800\text{ RPM}$, what is the final outpu
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [1][8][0][0] | 0 | 0 | 9.0 | 1800 |
-| [x⇄y] | 0 | 0 | 1800 | 9.0 |
-| [÷] | 0 | 0 | 0 | 200 |
+| 1800 | 0 | 0 | $0.0$ | 1800 |
+| [x⇄y] | 0 | 0 | 1800 | $0.0$ |
+| [÷] | 0 | 0 | 0 | 0 |
 
 ---
 
@@ -11870,9 +10940,9 @@ If you push the small syringe with a force of $F_1 = 5.0\text{ Newtons}$ ($\appr
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| 5.0 | 0 | 0 | 9 | 5.0 |
-| [×] | 0 | 0 | 0 | 45.0 |
-| `9.8` [÷] | 0 | 0 | 0 | 4.59 |
+| 5.0 | 0 | 0 | 0 | $5.0$ |
+| [×] | 0 | 0 | 0 | $0.0$ |
+| `9.8` [÷] | 0 | 0 | 0 | $0.00$ |
 
 ---
 
@@ -11901,9 +10971,9 @@ Miniature indoor quadcopters powered by lithium-polymer (LiPo) batteries are pop
 | :--- | :--- | :--- | :--- | :--- |
 | 850 | 0 | 0 | 0 | 850 |
 | [ENTER] | 0 | 0 | 850 | 850 |
-| [.] [8] [×] | 0 | 0 | 0 | 680 |
-| 60 [×] | 0 | 0 | 0 | 40800 |
-| `4200` [÷] | 0 | 0 | 0 | 9.714 |
+| [.] [8] [×] | 0 | 0 | 0 | 6800 |
+| 60 [×] | 0 | 0 | 0 | 408000 |
+| `4200` [÷] | 0 | 0 | 0 | $97.143$ |
 
 ### 9.13.2 Lab Mission 11.2: Drone Payload Penalty & Reduced Endurance
 Mount an action camera ($m = 45\text{ grams}$) to the drone. The increased lift requirement increases the hover current draw from $4,200\text{ mA}$ to $5,500\text{ mA}$.
@@ -11917,12 +10987,12 @@ Mount an action camera ($m = 45\text{ grams}$) to the drone. The increased lift 
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `680` [ENTER] | 0 | 0 | 0 | 680 |
+| `680` [ENTER] | 0 | 0 | 680 | 680 |
 | `60` [×] | 0 | 0 | 0 | 40800 |
-| `5500` [÷] | 0 | 0 | 0 | 7.418 |
-| `9.714`[ENTER] | 0 | 0 | 7.418 | 9.714 |
-| [x⇄y] | 0 | 0 | 9.714 | 7.418 |
-| [%CHG] | 0 | 0 | 0 | -23.64 |
+| `5500` [÷] | 0 | 0 | 0 | $7.418$ |
+| `9.714`[ENTER] | 0 | $7.4182$ | $9.714$ | $9.714$ |
+| [x⇄y] | 0 | $7.4182$ | $9.714$ | $9.714$ |
+| [%CHG] | 0 | 0 | $7.4182$ | $0.00$ |
 
 ---
 
@@ -11950,8 +11020,8 @@ A classroom solar panel produces $P_{\text{max}} = 5.0\text{ Watts}$ when perpen
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | [5] [ENTER] | 0 | 0 | 5 | 5 |
-| .866 (30° factor) | 0 | 0 | 5 | 0.8660 |
-| [×] | 0 | 0 | 0 | 4.33 |
+| .866 (30° factor) | 0 | 0 | 5 | $0.8660$ |
+| [×] | 0 | 0 | 0 | $4.33$ |
 
 | Angle (θ) | cos(θ) | Peak Watts | Output Power | Power Ratio |
 | :--- | :--- | :--- | :--- | :--- |
@@ -11977,14 +11047,14 @@ Accumulate each energy interval using the SC-6 statistical accumulator `[Σ+]`:
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | [CLΣ] | 0 | 0 | 0 | 0 |
-| `2.5`[3][×] | 0 | 0 | 0 | 7.5 |
-| [Σ+] | 0 | 0 | 0 | n = 1 |
-| [5][2][×] | 0 | 0 | 0 | 10.0 |
-| [Σ+] | 0 | 0 | 0 | n = 2 |
-| `3.54`[3][×] | 0 | 0 | 0 | 10.62 |
-| [Σ+] | 0 | 0 | 0 | n = 3 |
-| [f] [Σx] | 0 | 0 | 0 | 28.12 |
-| `1000` [÷] | 0 | 0 | 0 | 0.02812 |
+| 2.5 [ENTER] 3 [×] | 0 | 0 | 0 | $7.5$ |
+| [Σ+] | 0 | 0 | 0 | $1.0000$ |
+| 5 [ENTER] 2 [×] | 0 | 0 | 0 | $10.0$ |
+| [Σ+] | 0 | 0 | 0 | $2.0000$ |
+| 3.54 [ENTER] 3 [×] | 0 | 0 | 0 | $10.62$ |
+| [Σ+] | 0 | 0 | 0 | $3.0000$ |
+| [f] [Σx] | 0 | 0 | 0 | $28.12$ |
+| `1000` [÷] | 0 | 0 | 0 | $0.02812$ |
 
 ---
 
@@ -11999,14 +11069,14 @@ In Project 4, your experimental gravity was $g_{\text{exp}} = 9.7716\text{ m/s}^
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `9.7716` | 0 | 0 | 0 | 9.7716 |
-| [ENTER] | 0 | 0 | 9.7716 | 9.7716 |
-| `9.80665` | 0 | 0 | 9.7716 | 9.80665 |
-| [-] | 0 | 0 | 0 | -0.03505 |
-| [ABS] | 0 | 0 | 0 | 0.03505 |
-| `9.80665` | 0 | 0 | 0.03505 | 9.80665 |
-| [÷] | 0 | 0 | 0 | 0.003574 |
-| `100` [×] | 0 | 0 | 0 | 0.357% |
+| `9.7716` | 0 | 0 | 0 | $9.7716$ |
+| [ENTER] | 0 | 0 | $9.7716$ | $9.7716$ |
+| `9.80665` | 0 | 0 | $9.7716$ | $9.80665$ |
+| [-] | 0 | 0 | 0 | $-0.03505$ |
+| [ABS] | 0 | 0 | 0 | $0.03505$ |
+| `9.80665` | 0 | 0 | $0.03505$ | $9.80665$ |
+| [÷] | 0 | 0 | 0 | $0.003574$ |
+| `100` [×] | 0 | 0 | 0 | $0.357$ |
 *(You achieved an outstanding $0.36\%$ experimental error!)*
 
 ---
@@ -12034,10 +11104,10 @@ In maker spaces, verify whether a spool of unknown plastic is PLA or ABS by meas
 | :--- | :--- | :--- | :--- | :--- |
 | [2] [ENTER] | 0 | 0 | 2 | 2 |
 | [2] [×] | 0 | 0 | 0 | 4 |
-| [2] [×] | 0 | 0 | 0 | 8.0 |
-| [9][.][9][2] | 0 | 0 | 8.0 | 9.92 |
-| [x⇄y] | 0 | 0 | 9.92 | 8.0 |
-| [÷] | 0 | 0 | 0 | 1.24 |
+| [2] [×] | 0 | 0 | 0 | $8.0$ |
+| 9.92 | 0 | 0 | $8.0$ | $9.92$ |
+| [x⇄y] | 0 | 0 | $9.92$ | $8.0$ |
+| [÷] | 0 | 0 | 0 | $1.24$ |
 
 ---
 
@@ -12072,13 +11142,13 @@ Does the total maker space electrical load exceed the National Electrical Code (
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| [4]`150`[×] | 0 | 0 | 0 | 600 |
-| [2]`65`[×] | 0 | 0 | 600 | 130 |
+| 4 [ENTER] 150 [×] | 0 | 0 | 0 | 600 |
+| 2 [ENTER] 65 [×] | 0 | 0 | 600 | 130 |
 | [+] | 0 | 0 | 0 | 730 |
 | `80` [+] | 0 | 0 | 0 | 810 |
-| `120` [÷] | 0 | 0 | 0 | 6.75 |
-| `15``80`[%] | 0 | 0 | 6.75 | 12.0 |
-| [x⇄y] [-] | 0 | 0 | 0 | 5.25 |
+| `120` [÷] | 0 | 0 | 0 | $6.75$ |
+| 15 [ENTER] 80 [%] | 0 | 0 | $6.75$ | $12.0$ |
+| [x⇄y] [-] | 0 | 0 | 0 | $5.25$ |
 
 ---
 
@@ -12165,10 +11235,10 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `.0875` | 0 | 0 | 0 | 0.0875 | Key in filament radius in centimeters ($r = 0.0875\text{ cm}$) |
-| `[x²]` | 0 | 0 | 0 | 0.007656 | Square the radius ($r^2 = 0.00765625\text{ cm}^2$) |
-| `[π]` | 0 | 0 | 0.007656 | 3.141593 | Call the constant $\pi$; stack lifts squared radius into Register $Y$ |
-| `[×]` | 0 | 0 | 0 | 0.024053 | Multiply $r^2 \times \pi$ to find circular cross-sectional area ($A_f \approx 0.02405\text{ cm}^2$) |
+| `.0875` | 0 | 0 | 0 | $0.0875$ | Key in filament radius in centimeters ($r = 0.0875\text{ cm}$) |
+| `[x²]` | 0 | 0 | 0 | $0.007656$ | Square the radius ($r^2 = 0.00765625\text{ cm}^2$) |
+| `[π]` | 0 | 0 | $0.007656$ | $3.141593$ | Call the constant $\pi$; stack lifts squared radius into Register $Y$ |
+| `[×]` | 0 | 0 | 0 | $0.024053$ | Multiply $r^2 \times \pi$ to find circular cross-sectional area ($A_f \approx 0.02405\text{ cm}^2$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `0.02405 cm²`. The cross-sectional area of standard $1.75\text{ mm}$ filament is approximately $\mathbf{0.02405\text{ cm}^2}$.
 
@@ -12178,14 +11248,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** Your slicer software previews a custom spice-jar funnel for kitchen experiments, reporting that the print requires $1,200\text{ cm}$ ($12\text{ meters}$) of filament. Determine the total cubic centimeters of solid plastic in the funnel.
 - **Hands-On Physical Measurement:** Unspool a $1\text{ meter}$ reference ribbon of scrap filament from the workbench spool holder. Imagine twelve of these meter lengths bundled together into the solid walls of your funnel.
 - **RPN Keystrokes:** `.02405 [ENTER] 1200 [×]` $\rightarrow$ **`28.86 cm³`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `.02405 [ENTER] 1200 [×]` -> (T=0, Z=0, Y=0, X=28.86). Multiply area by length to calculate total volume ($V = A_f \times L$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `.02405` | 0 | 0 | 0 | 0.02405 | Key in filament cross-sectional area ($A_f = 0.02405\text{ cm}^2$) |
-| `[ENTER]` | 0 | 0 | 0.02405 | 0.02405 | Stack lift duplicates area into Register $Y$ |
-| `1200` | 0 | 0 | 0.02405 | 1200 | Key in total extruded filament length in centimeters ($1,200\text{ cm}$) |
-| `[×]` | 0 | 0 | 0 | 28.86 | Multiply area by length to calculate total volume ($V = A_f \times L$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `28.86 cm³`. Slicing $1,200\text{ cm}$ of filament yields exactly $\mathbf{28.86\text{ cm}^3}$ of extruded volume.
 
@@ -12195,14 +11259,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** Now that you know your funnel volume is $28.86\text{ cm}^3$, you must convert that volume into mass in grams so you can verify the finished print on your kitchen gram scale.
 - **Hands-On Physical Measurement:** Place a $1\text{ cm} \times 1\text{ cm} \times 1\text{ cm}$ solid PLA test cube on your digital kitchen scale. Notice it reads $1.24\text{ grams}$, establishing the density $\rho = 1.24\text{ g/cm}^3$.
 - **RPN Keystrokes:** `28.86 [ENTER] 1.24 [×]` $\rightarrow$ **`35.79 g`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `28.86 [ENTER] 1.24 [×]` -> (T=0, Z=0, Y=0, X=35.7864). Multiply volume by density to find model mass ($m = V \times \rho$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `28.86` | 0 | 0 | 0 | 28.86 | Key in model volume in cubic centimeters ($28.86\text{ cm}^3$) |
-| `[ENTER]` | 0 | 0 | 28.86 | 28.86 | Lift model volume into Register $Y$ |
-| `1.24` | 0 | 0 | 28.86 | 1.24 | Key in standard PLA thermoplastic density ($\rho = 1.24\text{ g/cm}^3$) |
-| `[×]` | 0 | 0 | 0 | 35.79 | Multiply volume by density to find model mass ($m = V \times \rho$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `35.79 g`. The finished bioplastic kitchen funnel will weigh approximately $\mathbf{35.79\text{ grams}}$.
 
@@ -12212,15 +11270,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** You purchased a $1,000\text{ gram}$ spool of corn-based PLA for $\$20.00$, which works out to $\$0.02$ per gram. Calculate the exact material cost to print your $35.79\text{ gram}$ kitchen funnel.
 - **Hands-On Physical Measurement:** Set two shiny copper pennies next to each $1\text{ gram}$ calibration weight on your scale pan to visualize the $2\text{ cents}$ per gram material cost ratio.
 - **RPN Keystrokes:** `35.79 [ENTER] .02 [×] [$]` $\rightarrow$ **`$0.72`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `35.79 [ENTER] .02 [×] [$]` -> (T=0, Z=0, Y=0, X=0.7158). Format active register as two-decimal currency.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `35.79` | 0 | 0 | 0 | 35.79 | Key in calculated funnel mass in grams ($35.79\text{ g}$) |
-| `[ENTER]` | 0 | 0 | 35.79 | 35.79 | Lift mass into Register $Y$ |
-| `.02` | 0 | 0 | 35.79 | 0.02 | Key in filament unit cost per gram ($\$0.02/\text{g}$) |
-| `[×]` | 0 | 0 | 0 | 0.7158 | Multiply mass by unit cost to find total raw material expense |
-| `[$]` | $0.00 | $0.00 | $0.00 | $0.72 | Format active register as two-decimal currency |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `$0.72`. Fabricating the custom funnel costs just $\mathbf{\$0.72}$ in raw bioplastic.
 
@@ -12236,9 +11287,9 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `[3]` | 0 | 0 | 0 | 3 | Key in coin cell supply voltage ($V_s = 3.0\text{ V}$) |
 | `[ENTER]` | 0 | 0 | 3 | 3 | Stack lift locks supply voltage into Register $Y$ |
-| `1.8` | 0 | 0 | 3 | 1.8 | Key in red LED forward voltage drop ($V_f = 1.8\text{ V}$) |
-| `[-]` | 0 | 0 | 0 | 1.2 | Subtract to find voltage across resistor: $V_R = V_s - V_f = 1.2\text{ V}$ |
-| `.015` | 0 | 0 | 1.2 | 0.015 | Key in operating current in amperes ($15\text{ mA} = 0.015\text{ A}$) |
+| `1.8` | 0 | 0 | 3 | $1.8$ | Key in red LED forward voltage drop ($V_f = 1.8\text{ V}$) |
+| `[-]` | 0 | 0 | 0 | $1.2$ | Subtract to find voltage across resistor: $V_R = V_s - V_f = 1.2\text{ V}$ |
+| `.015` | 0 | 0 | $1.2$ | $0.015$ | Key in operating current in amperes ($15\text{ mA} = 0.015\text{ A}$) |
 | `[÷]` | 0 | 0 | 0 | 80 | Divide $V_R$ by $I$ via Ohm's law ($R = V / I = 80\,\Omega$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `80.0 Ω`. The paper circuit requires an $\mathbf{80.0\,\Omega}$ current-limiting resistor.
@@ -12254,9 +11305,9 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `[3] [ENTER] 1.8 [-] .015 [÷]` | 0 | 0 | 0 | 80 | Compute resistance $R = 80\,\Omega$; current $0.015\text{ A}$ stored in `LASTX` |
-| `[f] [LASTX]` | 0 | 0 | 80 | 0.015 | Recall current $I = 0.015\text{ A}$ from `LASTX` via Superpower 4 |
-| `[x²]` | 0 | 0 | 80 | 0.000225 | Square current: $I^2 = (0.015)^2 = 0.000225\text{ A}^2$ |
-| `[×]` | 0 | 0 | 0 | 0.018 | Multiply $R \times I^2$ to calculate dissipated power ($P = 0.018\text{ W}$) |
+| `[f] [LASTX]` | 0 | 0 | 80 | $0.015$ | Recall current $I = 0.015\text{ A}$ from `LASTX` via Superpower 4 |
+| `[x²]` | 0 | 0 | 80 | $2.2500 \times 10^{-4}$ | Square current: $I^2 = (0.015)^2 = 0.000225\text{ A}^2$ |
+| `[×]` | 0 | 0 | 0 | $0.018$ | Multiply $R \times I^2$ to calculate dissipated power ($P = 0.018\text{ W}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `0.018 W (18 mW)`. The resistor dissipates only $\mathbf{18\text{ mW}}$, safely below the $250\text{ mW}$ limit.
 
@@ -12266,16 +11317,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** To inspect clarity in homemade kombucha fermentation jars, you assemble a high-intensity green flashlight powered by a $9\text{V}$ battery. Calculate the required resistor for $V_f = 2.2\text{ V}$ and $I_f = 20\text{ mA}$.
 - **Hands-On Physical Measurement:** Snap a $9\text{V}$ battery clip onto the terminal. Test with multimeter leads to confirm $9.0\text{ V}$ open-circuit potential before inserting the green LED.
 - **RPN Keystrokes:** `[9] [ENTER] 2.2 [-] .020 [÷]` $\rightarrow$ **`340.0 Ω`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[9] [ENTER] 2.2 [-] .020 [÷]` -> (T=0, Z=0, Y=0, X=340). Divide voltage by current via Ohm's law ($R = 6.8 / 0.020 = 340\,\Omega$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `[9]` | 0 | 0 | 0 | 9 | Key in battery supply voltage ($V_s = 9.0\text{ V}$) |
-| `[ENTER]` | 0 | 0 | 9 | 9 | Lift supply voltage into Register $Y$ |
-| `2.2` | 0 | 0 | 9 | 2.2 | Key in green LED forward voltage drop ($V_f = 2.2\text{ V}$) |
-| `[-]` | 0 | 0 | 0 | 6.8 | Subtract forward drop: voltage across resistor is $6.8\text{ V}$ |
-| `.020` | 0 | 0 | 6.8 | 0.02 | Key in forward current ($20\text{ mA} = 0.020\text{ A}$) |
-| `[÷]` | 0 | 0 | 0 | 340 | Divide voltage by current via Ohm's law ($R = 6.8 / 0.020 = 340\,\Omega$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `340.0 Ω`. The 9V green inspection light requires a $\mathbf{340.0\,\Omega}$ resistor.
 
@@ -12290,9 +11333,9 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `[9] [ENTER] 2.2 [-] .020 [÷]` | 0 | 0 | 0 | 340 | Compute resistance $R = 340\,\Omega$; current $0.020\text{ A}$ saved in `LASTX` |
-| `[f] [LASTX]` | 0 | 0 | 340 | 0.02 | Recall current $I = 0.020\text{ A}$ instantly from `LASTX` |
-| `[x²]` | 0 | 0 | 340 | 0.0004 | Square current: $I^2 = (0.020)^2 = 0.0004\text{ A}^2$ |
-| `[×]` | 0 | 0 | 0 | 0.136 | Multiply $R \times I^2$ to find thermal dissipation in watts |
+| `[f] [LASTX]` | 0 | 0 | 340 | $0.02$ | Recall current $I = 0.020\text{ A}$ instantly from `LASTX` |
+| `[x²]` | 0 | 0 | 340 | $4.0000 \times 10^{-4}$ | Square current: $I^2 = (0.020)^2 = 0.0004\text{ A}^2$ |
+| `[×]` | 0 | 0 | 0 | $0.136$ | Multiply $R \times I^2$ to find thermal dissipation in watts |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `0.136 W (136 mW)`. At $\mathbf{136\text{ mW}}$, the circuit is well within a $250\text{ mW}$ ($1/4\text{ W}$) resistor's limit.
 
@@ -12306,13 +11349,13 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[2] [π] [×]` | 0 | 0 | 0 | 6.283185 | Calculate constant $2\pi \approx 6.283185$ |
-| `.5` | 0 | 0 | 6.283185 | 0.5 | Key in string length in meters ($L = 0.50\text{ m}$); lifts $2\pi$ to $Y$ |
-| `[ENTER]` | 0 | 6.283185 | 0.5 | 0.5 | Stack lift duplicates length into Register $Y$ |
-| `9.8` | 0 | 6.283185 | 0.5 | 9.8 | Key in gravitational acceleration ($g = 9.8\text{ m/s}^2$) |
-| `[÷]` | 0 | 0 | 6.283185 | 0.05102 | Divide length by gravity ($L/g \approx 0.051020$) |
-| `[f] [√x]` | 0 | 0 | 6.283185 | 0.225877 | Take square root: $\sqrt{L/g} \approx 0.225877$ |
-| `[×]` | 0 | 0 | 0 | 1.419227 | Multiply by $2\pi$ to obtain oscillation period ($T \approx 1.42\text{ s}$) |
+| `[2] [π] [×]` | 0 | 0 | 0 | $6.283185$ | Calculate constant $2\pi \approx 6.283185$ |
+| `.5` | 0 | 0 | $6.283185$ | $0.5$ | Key in string length in meters ($L = 0.50\text{ m}$); lifts $2\pi$ to $Y$ |
+| `[ENTER]` | 0 | $6.283185$ | $0.5$ | $0.5$ | Stack lift duplicates length into Register $Y$ |
+| `9.8` | 0 | $6.283185$ | $0.5$ | $9.8$ | Key in gravitational acceleration ($g = 9.8\text{ m/s}^2$) |
+| `[÷]` | 0 | 0 | $6.283185$ | $0.05102$ | Divide length by gravity ($L/g \approx 0.051020$) |
+| `[f] [√x]` | 0 | 0 | $6.283185$ | $0.225877$ | Take square root: $\sqrt{L/g} \approx 0.225877$ |
+| `[×]` | 0 | 0 | 0 | $1.419227$ | Multiply by $2\pi$ to obtain oscillation period ($T \approx 1.42\text{ s}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `1.42 seconds`. A $50\text{ cm}$ pendulum takes $\mathbf{1.42\text{ seconds}}$ for one complete back-and-forth oscillation.
 
@@ -12326,16 +11369,16 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `9.8` | 0 | 0 | 0 | 9.8 | Key in gravitational acceleration ($g = 9.8\text{ m/s}^2$) |
-| `[ENTER]` | 0 | 0 | 9.8 | 9.8 | Lift gravity into Register $Y$ |
-| `1.5` | 0 | 0 | 9.8 | 1.5 | Key in target period in seconds ($T = 1.50\text{ s}$) |
-| `[x²]` | 0 | 0 | 9.8 | 2.25 | Square period ($T^2 = 2.25\text{ s}^2$) |
-| `[×]` | 0 | 0 | 0 | 22.05 | Multiply $g \times T^2 = 9.8 \times 2.25 = 22.05$ |
-| `[4]` | 0 | 0 | 22.05 | 4 | Key in constant 4; lifts numerator $22.05$ into Register $Y$ |
-| `[π]` | 0 | 22.05 | 4 | 3.141593 | Call constant $\pi$; stack lifts |
-| `[x²]` | 0 | 22.05 | 4 | 9.869604 | Square $\pi$: $\pi^2 \approx 9.869604$ |
-| `[×]` | 0 | 0 | 22.05 | 39.478418 | Multiply $4 \times \pi^2 \approx 39.478418$ |
-| `[÷]` | 0 | 0 | 0 | 0.558533 | Divide numerator by denominator to compute length ($L \approx 0.559\text{ m}$) |
+| `9.8` | 0 | 0 | 0 | $9.8$ | Key in gravitational acceleration ($g = 9.8\text{ m/s}^2$) |
+| `[ENTER]` | 0 | 0 | $9.8$ | $9.8$ | Lift gravity into Register $Y$ |
+| `1.5` | 0 | 0 | $9.8$ | $1.5$ | Key in target period in seconds ($T = 1.50\text{ s}$) |
+| `[x²]` | 0 | 0 | $9.8$ | $2.25$ | Square period ($T^2 = 2.25\text{ s}^2$) |
+| `[×]` | 0 | 0 | 0 | $22.05$ | Multiply $g \times T^2 = 9.8 \times 2.25 = 22.05$ |
+| `[4]` | 0 | 0 | $22.05$ | 4 | Key in constant 4; lifts numerator $22.05$ into Register $Y$ |
+| `[π]` | 0 | $22.05$ | 4 | $3.141593$ | Call constant $\pi$; stack lifts |
+| `[x²]` | 0 | $22.05$ | 4 | $9.869604$ | Square $\pi$: $\pi^2 \approx 9.869604$ |
+| `[×]` | 0 | 0 | $22.05$ | $39.478418$ | Multiply $4 \times \pi^2 \approx 39.478418$ |
+| `[÷]` | 0 | 0 | 0 | $0.558533$ | Divide numerator by denominator to compute length ($L \approx 0.559\text{ m}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `0.559 meters`. You must trim the string to $\mathbf{0.559\text{ meters}}$ ($55.9\text{ cm}$) for a $1.50\text{-second}$ cadence.
 
@@ -12348,16 +11391,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** You build a cardboard pizza-box solar oven lined with aluminum foil reflectors. A digital probe thermometer placed inside shows the temperature climbing from $20^\circ\text{C}$ to $65^\circ\text{C}$ during a $15\text{-minute}$ exposure under the noon sun. Compute the heating velocity in degrees per minute.
 - **Hands-On Physical Measurement:** Insert a digital STEM probe thermometer through a small hole in the clear plastic wrap window of the solar cooker. Watch the digital numbers tick upward in real sunlight.
 - **RPN Keystrokes:** `65 [ENTER] 20 [-] 15 [÷]` $\rightarrow$ **`3.00 °C/min`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `65 [ENTER] 20 [-] 15 [÷]` -> (T=0, Z=0, Y=0, X=3). Divide temperature rise by time to compute heating rate ($45 / 15 = 3.00^\circ\text{C/min}$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `65` | 0 | 0 | 0 | 65 | Key in peak solar oven temperature ($65^\circ\text{C}$) |
-| `[ENTER]` | 0 | 0 | 65 | 65 | Lift final temperature into Register $Y$ |
-| `20` | 0 | 0 | 65 | 20 | Key in starting ambient temperature ($20^\circ\text{C}$) |
-| `[-]` | 0 | 0 | 0 | 45 | Subtract to find temperature rise: $\Delta T = 65 - 20 = 45^\circ\text{C}$ |
-| `15` | 0 | 0 | 45 | 15 | Key in elapsed solar exposure time ($15\text{ minutes}$) |
-| `[÷]` | 0 | 0 | 0 | 3 | Divide temperature rise by time to compute heating rate ($45 / 15 = 3.00^\circ\text{C/min}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `3.00 °C/min`. The solar oven heats up at an impressive $\mathbf{3.00^\circ\text{C/min}}$.
 
@@ -12367,14 +11402,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** To evaluate how efficiently your solar reflectors amplify ambient energy, calculate the percentage thermal increase achieved by your solar cooker over the starting temperature.
 - **Hands-On Physical Measurement:** Place one thermometer in the ambient outdoor shade ($20^\circ\text{C}$) and one inside the solar box ($65^\circ\text{C}$). Compare the column heights on liquid-in-glass lab thermometers.
 - **RPN Keystrokes:** `20 [ENTER] 65 [g] [%CHG]` $\rightarrow$ **`+225.0%`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `20 [ENTER] 65 [g] [%CHG]` -> (T=0, Z=0, Y=0, X=225). Compute percent change: $(65 - 20) / 20 \times 100\% = +225.0\%$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `20` | 0 | 0 | 0 | 20 | Key in initial baseline temperature ($20^\circ\text{C}$) |
-| `[ENTER]` | 0 | 0 | 20 | 20 | Lock baseline temperature into Register $Y$ |
-| `65` | 0 | 0 | 20 | 65 | Key in peak solar oven temperature ($65^\circ\text{C}$) |
-| `[g] [%CHG]` | 0 | 0 | 20 | 225 | Compute percent change: $(65 - 20) / 20 \times 100\% = +225.0\%$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `+225.0%`. The solar oven achieved a $\mathbf{+225.0\%}$ thermal boost over ambient air.
 
@@ -12384,15 +11413,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** You are using an elastic catapult to launch wild flower seed balls into a community solar garden. Over three test launches, you measure distances of $150\text{ cm}$, $162\text{ cm}$, and $156\text{ cm}$. Find the mean launch distance.
 - **Hands-On Physical Measurement:** Unroll a metric surveyor tape along the playground lawn. Stake colored flags at $150\text{ cm}$, $162\text{ cm}$, and $156\text{ cm}$ to visualize the spread of your seed balls.
 - **RPN Keystrokes:** `[g] [CLΣ] 150 [Σ+] 162 [Σ+] 156 [Σ+] [g] [x̄]` $\rightarrow$ **`156.00 cm`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[g] [CLΣ] 150 [Σ+] 162 [Σ+] 156 [Σ+] [g] [x̄]` -> (T=0, Z=0, Y=0, X=156). Recall arithmetic mean $\bar{x} = 156.00\text{ cm}$ (sample size $n=3$ in $Z$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `[g] [CLΣ]` | 0 | 0 | 0 | 0 | Clear all statistical registers |
-| `150 [Σ+]` | 0 | 0 | 0 | 1 | Accumulate Trial 1 ($150\text{ cm}$); sample count $n = 1$ |
-| `162 [Σ+]` | 0 | 0 | 0 | 2 | Accumulate Trial 2 ($162\text{ cm}$); sample count $n = 2$ |
-| `156 [Σ+]` | 0 | 0 | 0 | 3 | Accumulate Trial 3 ($156\text{ cm}$); sample count $n = 3$ |
-| `[g] [x̄]` | 0 | 3 | 0 | 156 | Recall arithmetic mean $\bar{x} = 156.00\text{ cm}$ (sample size $n=3$ in $Z$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `156.00 cm`. The average launch distance across three trials is $\mathbf{156.00\text{ cm}}$.
 
@@ -12402,15 +11424,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** How consistent is your seed catapult? Calculate the Mean Absolute Deviation (MAD) of the three launch distances ($150, 162, 156\text{ cm}$) around the $156\text{ cm}$ mean to measure launch variability.
 - **Hands-On Physical Measurement:** Use physical counting tiles to measure the distance from each flag to the center line: $|150-156| = 6\text{ tiles}$, $|162-156| = 6\text{ tiles}$, and $|156-156| = 0\text{ tiles}$.
 - **RPN Keystrokes:** `[g] [CLΣ] 150 [Σ+] 162 [Σ+] 156 [Σ+] [g] [MAD]` $\rightarrow$ **`4.00 cm`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[g] [CLΣ] 150 [Σ+] 162 [Σ+] 156 [Σ+] [g] [MAD]` -> (T=0, Z=0, Y=0, X=3). Calculate Mean Absolute Deviation: $\text{MAD} = (6 + 6 + 0) / 3 = 4.00\text{ cm}$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `[g] [CLΣ]` | 0 | 0 | 0 | 0 | Reset statistical accumulator registers |
-| `150 [Σ+]` | 0 | 0 | 0 | 1 | Add Trial 1 ($150\text{ cm}$); $n=1$ |
-| `162 [Σ+]` | 0 | 0 | 0 | 2 | Add Trial 2 ($162\text{ cm}$); $n=2$ |
-| `156 [Σ+]` | 0 | 0 | 0 | 3 | Add Trial 3 ($156\text{ cm}$); $n=3$ |
-| `[g] [MAD]` | 0 | 0 | 3 | 4 | Calculate Mean Absolute Deviation: $\text{MAD} = (6 + 6 + 0) / 3 = 4.00\text{ cm}$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `4.00 cm`. The catapult demonstrates high consistency with a MAD of only $\mathbf{4.00\text{ cm}}$.
 
@@ -12420,16 +11435,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** Inside your solar heated seedling nursery, a pole bean sprout shoots up from $15\text{ mm}$ to $75\text{ mm}$ over a $5\text{-day}$ observation period. Compute its average vertical growth rate in millimeters per day.
 - **Hands-On Physical Measurement:** Align a clear plastic millimeter ruler alongside the tender green sprout each morning, recording the height in your field notebook.
 - **RPN Keystrokes:** `75 [ENTER] 15 [-] [5] [÷]` $\rightarrow$ **`12.0 mm/day`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `75 [ENTER] 15 [-] [5] [÷]` -> (T=0, Z=0, Y=0, X=12). Divide growth by days to obtain velocity ($60 / 5 = 12.0\text{ mm/day}$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `75` | 0 | 0 | 0 | 75 | Key in final sprout height ($75\text{ mm}$) |
-| `[ENTER]` | 0 | 0 | 75 | 75 | Lift final height into Register $Y$ |
-| `15` | 0 | 0 | 75 | 15 | Key in initial sprout height ($15\text{ mm}$) |
-| `[-]` | 0 | 0 | 0 | 60 | Subtract to find net vertical growth: $\Delta h = 75 - 15 = 60\text{ mm}$ |
-| `[5]` | 0 | 0 | 60 | 5 | Key in elapsed time ($5\text{ days}$) |
-| `[÷]` | 0 | 0 | 0 | 12 | Divide growth by days to obtain velocity ($60 / 5 = 12.0\text{ mm/day}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `12.0 mm/day`. The bean seedling grew at a brisk rate of $\mathbf{12.0\text{ mm/day}}$.
 
@@ -12439,14 +11446,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** To determine how vigorously the bean sprout responded to greenhouse warmth, calculate the overall percentage increase in height over the five days.
 - **Hands-On Physical Measurement:** Stack 15 single snap cubes to represent Day 1 height, and build a second tower of 75 cubes for Day 5. Observe that the growth of 60 cubes is exactly four times the original 15-cube height!
 - **RPN Keystrokes:** `15 [ENTER] 75 [g] [%CHG]` $\rightarrow$ **`+400.0%`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `15 [ENTER] 75 [g] [%CHG]` -> (T=0, Z=0, Y=0, X=400). Compute percent change: $(75 - 15) / 15 \times 100\% = +400.0\%$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `15` | 0 | 0 | 0 | 15 | Key in initial seedling height ($15\text{ mm}$) |
-| `[ENTER]` | 0 | 0 | 15 | 15 | Lock initial height into Register $Y$ |
-| `75` | 0 | 0 | 15 | 75 | Key in Day 5 seedling height ($75\text{ mm}$) |
-| `[g] [%CHG]` | 0 | 0 | 15 | 400 | Compute percent change: $(75 - 15) / 15 \times 100\% = +400.0\%$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `+400.0%`. The sprout surged by $\mathbf{+400.0\%}$ over its starting height.
 
@@ -12456,14 +11457,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** Your solar research team needs fresh sourdough bread for a weekend campout. If a single artisan loaf requires $450\text{ grams}$ of unbleached flour, how much total flour is needed for a batch of 12 loaves?
 - **Hands-On Physical Measurement:** Scoop $450\text{ grams}$ of flour into a mixing bowl on a tare-zeroed digital scale. Multiply by 12 to find the bulk sack requirement.
 - **RPN Keystrokes:** `450 [ENTER] 12 [×]` $\rightarrow$ **`5,400 grams`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `450 [ENTER] 12 [×]` -> (T=0, Z=0, Y=0, X=5400). Multiply to calculate total batch flour ($450 \times 12 = 5,400\text{ g}$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `450` | 0 | 0 | 0 | 450 | Key in flour mass for one loaf ($450\text{ g}$) |
-| `[ENTER]` | 0 | 0 | 450 | 450 | Duplicate single-loaf flour into Register $Y$ |
-| `12` | 0 | 0 | 450 | 12 | Key in target loaf count ($12\text{ loaves}$) |
-| `[×]` | 0 | 0 | 0 | 5400 | Multiply to calculate total batch flour ($450 \times 12 = 5,400\text{ g}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `5,400 grams`. The 12-loaf field bake requires exactly $\mathbf{5,400\text{ grams}}$ ($5.4\text{ kg}$) of flour.
 
@@ -12473,14 +11468,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** Master bakers calculate all recipe ingredients as a percentage of the total flour weight (baker's percentages). For an open, airy crumb, the recipe calls for $65\%$ hydration water. Find the required water mass for $5,400\text{ g}$ of flour.
 - **Hands-On Physical Measurement:** Place a glass measuring pitcher on the scale, tare the display to zero, and pour water until the digital scale reads the computed gram target.
 - **RPN Keystrokes:** `5400 [ENTER] 65 [%]` $\rightarrow$ **`3,510 grams`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `5400 [ENTER] 65 [%]` -> (T=0, Z=0, Y=0, X=3510). Compute $65\%$ of $5,400$: water mass is $3,510\text{ grams}$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `5400` | 0 | 0 | 0 | 5400 | Key in total flour mass ($5,400\text{ g}$) |
-| `[ENTER]` | 0 | 0 | 5400 | 5400 | Lock flour base mass into Register $Y$ |
-| `65` | 0 | 0 | 5400 | 65 | Key in baker's hydration percentage ($65\%$) |
-| `[%]` | 0 | 0 | 5400 | 3510 | Compute $65\%$ of $5,400$: water mass is $3,510\text{ grams}$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `3,510 grams`. You need $\mathbf{3,510\text{ grams}}$ ($3.51\text{ liters}$) of water for $65\%$ hydration.
 
@@ -12490,14 +11479,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** In artisan bread baking, salt tightens gluten strands and regulates yeast fermentation at exactly $2.0\%$ of flour weight. Calculate the mass of fine sea salt required for the $5,400\text{ g}$ flour batch.
 - **Hands-On Physical Measurement:** Place a small ceramic pinch bowl on your sensitive gram scale and measure out fine sea salt crystals until the display matches the calculator's result.
 - **RPN Keystrokes:** `5400 [ENTER] [2] [%]` $\rightarrow$ **`108 grams`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `5400 [ENTER] [2] [%]` -> (T=0, Z=0, Y=0, X=108). Compute $2\%$ of $5,400$: salt mass is $108\text{ grams}$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `5400` | 0 | 0 | 0 | 5400 | Key in total flour mass ($5,400\text{ g}$) |
-| `[ENTER]` | 0 | 0 | 5400 | 5400 | Lock flour base mass into Register $Y$ |
-| `[2]` | 0 | 0 | 5400 | 2 | Key in baker's salt percentage ($2\%$) |
-| `[%]` | 0 | 0 | 5400 | 108 | Compute $2\%$ of $5,400$: salt mass is $108\text{ grams}$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `108 grams`. The recipe requires $\mathbf{108\text{ grams}}$ of fine sea salt.
 
@@ -12507,15 +11490,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** To fuel the expedition crew on a mountain hike, you scale up a high-energy oatmeal cookie recipe by a factor of 4. The base recipe calls for $2\ \frac{1}{4}$ cups of brown sugar. Find the total sugar needed.
 - **Hands-On Physical Measurement:** Use physical nesting measuring cups: two whole 1-cup scoops and one 1/4-cup scoop. Lay out 4 identical sets on the counter.
 - **RPN Keystrokes:** `2 [.] 1 [.] 4 [ENTER] [4] [×] [a ᵇ/c]` $\rightarrow$ **`9 cups`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `2 [.] 1 [.] 4 [ENTER] [4] [×] [a ᵇ/c]` -> (T=0, Z=0, Y=2, X=1). Display result as mixed/whole number format.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `2 [.] 1 [.] 4` | 0 | 0 | 0 | 2.25 | Enter mixed number $2\ \frac{1}{4}$ cups via two-dot syntax |
-| `[ENTER]` | 0 | 0 | 2.25 | 2.25 | Lift single-batch sugar quantity into Register $Y$ |
-| `[4]` | 0 | 0 | 2.25 | 4 | Key in batch scaling factor ($4\text{ batches}$) |
-| `[×]` | 0 | 0 | 0 | 9 | Multiply: $2.25 \times 4 = 9$ |
-| `[a ᵇ/c]` | 0 | 0 | 0 | 9 | Display result as mixed/whole number format |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `9 cups`. Scaling the cookie recipe by 4 requires exactly $\mathbf{9\text{ cups}}$ of brown sugar.
 
@@ -12528,14 +11504,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** You are printing custom gears for a direct-drive 3D printer extruder to push stiff filament without slipping. The small motor pinion has 16 teeth and drives a large 64-tooth gear. Find the reduction gear ratio.
 - **Hands-On Physical Measurement:** Count the teeth on two interlocking 3D-printed gears with your fingertips, marking tooth #1 with a silver felt-tip pen. Notice you must turn the small gear 4 full revolutions to rotate the big gear once.
 - **RPN Keystrokes:** `64 [ENTER] 16 [÷]` $\rightarrow$ **`4.0 : 1`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `64 [ENTER] 16 [÷]` -> (T=0, Z=0, Y=0, X=4). Divide driven by driver teeth to obtain gear ratio ($64 / 16 = 4.0$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `64` | 0 | 0 | 0 | 64 | Key in driven gear tooth count ($64\text{ teeth}$) |
-| `[ENTER]` | 0 | 0 | 64 | 64 | Lift driven gear teeth into Register $Y$ |
-| `16` | 0 | 0 | 64 | 16 | Key in driving motor pinion tooth count ($16\text{ teeth}$) |
-| `[÷]` | 0 | 0 | 0 | 4 | Divide driven by driver teeth to obtain gear ratio ($64 / 16 = 4.0$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `4.0 : 1`. The extruder gear train provides a $\mathbf{4.0 : 1}$ mechanical reduction ratio.
 
@@ -12545,14 +11515,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** The NEMA-17 stepper motor spins at $1,200\text{ RPM}$. With the $4:1$ gear reduction from Challenge 9.21, calculate the final rotational speed of the filament drive hobbed wheel.
 - **Hands-On Physical Measurement:** Feel the output shaft while adjusting motor stepping pulses. The output shaft spins at one-quarter the motor speed with four times the gripping torque.
 - **RPN Keystrokes:** `1200 [ENTER] [4] [÷]` $\rightarrow$ **`300 RPM`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `1200 [ENTER] [4] [÷]` -> (T=0, Z=0, Y=0, X=300). Divide motor speed by reduction ratio to find output speed ($1200 / 4 = 300$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `1200` | 0 | 0 | 0 | 1200 | Key in stepper motor input speed ($1,200\text{ RPM}$) |
-| `[ENTER]` | 0 | 0 | 1200 | 1200 | Lock input motor speed into Register $Y$ |
-| `[4]` | 0 | 0 | 1200 | 4 | Key in gear reduction ratio from Challenge 9.21 ($4$) |
-| `[÷]` | 0 | 0 | 0 | 300 | Divide motor speed by reduction ratio to find output speed ($1200 / 4 = 300$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `300 RPM`. The filament drive wheel rotates smoothly at $\mathbf{300\text{ RPM}}$.
 
@@ -12567,7 +11531,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `40 [ENTER] 10 [÷]` | 0 | 0 | 0 | 4 | Compute Stage 1 reduction ratio: $40 / 10 = 4.0$ |
-| `30 [ENTER]` | 0 | 0 | 4 | 30 | Key in Stage 2 driven gear ($30\text{T}$); lifts Stage 1 ratio into $Y$ |
+| `30 [ENTER]` | 0 | 4 | 30 | 30 | Key in Stage 2 driven gear ($30\text{T}$); lifts Stage 1 ratio into $Y$ |
 | `15 [÷]` | 0 | 0 | 4 | 2 | Compute Stage 2 reduction ratio: $30 / 15 = 2.0$ |
 | `[×]` | 0 | 0 | 0 | 8 | Multiply stage ratios to find compound reduction: $4 \times 2 = 8.0$ |
 
@@ -12579,15 +11543,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** You build a fluid press using two medical syringes connected by clear vinyl tubing to test the crush strength of 3D-printed parts. The input syringe has diameter $d_1 = 1\text{ cm}$ and the output cylinder has diameter $d_2 = 4\text{ cm}$. Find the hydraulic force multiplier ($A_2 / A_1 = (d_2/d_1)^2$).
 - **Hands-On Physical Measurement:** Connect a $10\text{ mL}$ syringe ($1\text{ cm}$ diameter) to a large $60\text{ mL}$ syringe ($4\text{ cm}$ diameter) filled with colored water. Push the small plunger and observe the massive force generated at the large piston.
 - **RPN Keystrokes:** `[4] [ENTER] [1] [÷] [x²]` $\rightarrow$ **`16.0 ×`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[4] [ENTER] [1] [÷] [x²]` -> (T=0, Z=0, Y=0, X=16). Square diameter ratio to compute area mechanical advantage ($4^2 = 16.0$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `[4]` | 0 | 0 | 0 | 4 | Key in output cylinder diameter ($d_2 = 4\text{ cm}$) |
-| `[ENTER]` | 0 | 0 | 4 | 4 | Lift output diameter into Register $Y$ |
-| `[1]` | 0 | 0 | 4 | 1 | Key in input syringe diameter ($d_1 = 1\text{ cm}$) |
-| `[÷]` | 0 | 0 | 0 | 4 | Divide diameters: linear ratio is $4 / 1 = 4$ |
-| `[x²]` | 0 | 0 | 0 | 16 | Square diameter ratio to compute area mechanical advantage ($4^2 = 16.0$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `16.0 ×`. The hydraulic syringe press provides a $\mathbf{16.0\times}$ force multiplication.
 
@@ -12597,14 +11554,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** If you press down on the small input syringe with an effort force of $10\text{ Newtons}$ (about $1\text{ kg}$ of push), how much lifting force does the hydraulic press exert on the 3D-printed test sample?
 - **Hands-On Physical Measurement:** Hook a spring dynamometer scale to the input plunger and push until it reads $10\text{ N}$. On the output piston, a $16\text{ kg}$ weight ($160\text{ N}$) is effortlessly lifted.
 - **RPN Keystrokes:** `10 [ENTER] 16 [×]` $\rightarrow$ **`160 Newtons`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `10 [ENTER] 16 [×]` -> (T=0, Z=0, Y=0, X=160). Multiply effort by multiplier to calculate output force ($10 \times 16 = 160\text{ N}$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `10` | 0 | 0 | 0 | 10 | Key in input effort force in Newtons ($10\text{ N}$) |
-| `[ENTER]` | 0 | 0 | 10 | 10 | Duplicate input force into Register $Y$ |
-| `16` | 0 | 0 | 10 | 16 | Key in hydraulic mechanical advantage from Challenge 9.24 ($16$) |
-| `[×]` | 0 | 0 | 0 | 160 | Multiply effort by multiplier to calculate output force ($10 \times 16 = 160\text{ N}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `160 Newtons`. The hydraulic press delivers $\mathbf{160\text{ Newtons}}$ of crush force.
 
@@ -12622,7 +11573,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `.8 [×]` | 0 | 0 | 0 | 960 | Multiply by $80\%$ safe discharge limit: usable capacity is $960\text{ mAh}$ |
 | `60 [×]` | 0 | 0 | 0 | 57600 | Multiply by $60\text{ min/hr}$ to convert to milliamp-minutes ($57,600\text{ mA}\cdot\text{min}$) |
 | `5000` | 0 | 0 | 57600 | 5000 | Key in total quadcopter hover current draw ($5\text{ A} = 5,000\text{ mA}$) |
-| `[÷]` | 0 | 0 | 0 | 11.52 | Divide usable capacity by current to find flight time ($57600 / 5000 = 11.52\text{ min}$) |
+| `[÷]` | 0 | 0 | 0 | $11.52$ | Divide usable capacity by current to find flight time ($57600 / 5000 = 11.52\text{ min}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `11.52 min`. Safe flight time before the low-voltage alarm sounds is $\mathbf{11.52\text{ minutes}}$.
 
@@ -12632,14 +11583,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** Convert the decimal flight time of $11.52\text{ minutes}$ into whole minutes and exact seconds so you can program the flight controller's low-battery alarm timer.
 - **Hands-On Physical Measurement:** Look at a digital stopwatch displaying MM:SS format. Setting the timer to 11:31 ensures the drone lands before the low-voltage cutoff.
 - **RPN Keystrokes:** `11 [ENTER] .52 [ENTER] 60 [×]` $\rightarrow$ **`11 min 31 sec`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `11 [ENTER] .52 [ENTER] 60 [×]` -> (T=0, Z=0, Y=11, X=31.2). Multiply to convert fraction to seconds ($0.52 \times 60 = 31.2\text{ sec}$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `11 [ENTER]` | 0 | 0 | 11 | 11 | Park whole flight minutes in holding Register $Y$ ($11\text{ min}$) |
-| `.52 [ENTER]` | 0 | 11 | 0.52 | 0.52 | Key in fractional minute portion ($0.52\text{ min}$) and duplicate |
-| `60` | 0 | 11 | 0.52 | 60 | Key in seconds conversion factor ($60\text{ sec/min}$) |
-| `[×]` | 0 | 0 | 11 | 31.2 | Multiply to convert fraction to seconds ($0.52 \times 60 = 31.2\text{ sec}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `31.2` with Register $Y = 11$. The total safe hover duration is $\mathbf{11\text{ minutes and } 31\text{ seconds}}$.
 
@@ -12649,14 +11594,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** You 3D-print an adjustable bracket to align a mini solar panel toward the sun. When the sun is at a $30^\circ$ angle from normal, the effective solar flux factor is $\cos 30^\circ \approx 0.866$. If the panel is rated for $10\text{ W}$ peak output, find the actual generated power.
 - **Hands-On Physical Measurement:** Mount a protractor on the 3D-printed panel bracket. Adjust the angle until the shadow of a center pin aligns with the $30^\circ$ mark.
 - **RPN Keystrokes:** `10 [ENTER] .866 [×]` $\rightarrow$ **`8.66 Watts`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `10 [ENTER] .866 [×]` -> (T=0, Z=0, Y=0, X=8.66). Multiply peak power by tilt factor ($10 \times 0.866 = 8.66\text{ W}$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `10` | 0 | 0 | 0 | 10 | Key in rated peak solar panel wattage ($10\text{ W}$) |
-| `[ENTER]` | 0 | 0 | 10 | 10 | Lock rated power into Register $Y$ |
-| `.866` | 0 | 0 | 10 | 0.866 | Key in cosine projection factor for $30^\circ$ tilt ($\cos 30^\circ \approx 0.866$) |
-| `[×]` | 0 | 0 | 0 | 8.66 | Multiply peak power by tilt factor ($10 \times 0.866 = 8.66\text{ W}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `8.66 Watts`. At a $30^\circ$ tilt angle, the solar panel generates $\mathbf{8.66\text{ Watts}}$.
 
@@ -12666,14 +11605,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** In late autumn afternoon light, the sun dips to a $45^\circ$ inclination angle ($\cos 45^\circ \approx 0.707$). Compute the power generated by your $10\text{ W}$ panel at this oblique angle.
 - **Hands-On Physical Measurement:** Tilt the protractor bracket to $45^\circ$ and measure the output with a USB power meter plugged between the panel and your calculator charging port.
 - **RPN Keystrokes:** `10 [ENTER] .707 [×]` $\rightarrow$ **`7.07 Watts`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `10 [ENTER] .707 [×]` -> (T=0, Z=0, Y=0, X=7.07). Multiply peak power by tilt factor ($10 \times 0.707 = 7.07\text{ W}$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `10` | 0 | 0 | 0 | 10 | Key in rated peak solar panel wattage ($10\text{ W}$) |
-| `[ENTER]` | 0 | 0 | 10 | 10 | Lock rated power into Register $Y$ |
-| `.707` | 0 | 0 | 10 | 0.707 | Key in cosine projection factor for $45^\circ$ tilt ($\cos 45^\circ \approx 0.707$) |
-| `[×]` | 0 | 0 | 0 | 7.07 | Multiply peak power by tilt factor ($10 \times 0.707 = 7.07\text{ W}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `7.07 Watts`. At a $45^\circ$ angle, solar generation drops to $\mathbf{7.07\text{ Watts}}$.
 
@@ -12687,11 +11620,11 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `.5 [ENTER]` | 0 | 0 | 0.5 | 0.5 | Enter constant half-factor ($1/2 = 0.5$) into Register $Y$ |
-| `.2 [×]` | 0 | 0 | 0 | 0.1 | Multiply by car mass ($0.20\text{ kg}$): $\frac{1}{2}m = 0.10\text{ kg}$ |
-| `[4]` | 0 | 0 | 0.1 | 4 | Key in velocity ($v = 4.0\text{ m/s}$); lifts $\frac{1}{2}m$ to Register $Y$ |
-| `[x²]` | 0 | 0 | 0.1 | 16 | Square velocity: $v^2 = 4^2 = 16\text{ m}^2/\text{s}^2$ |
-| `[×]` | 0 | 0 | 0 | 1.6 | Multiply $\frac{1}{2}m \times v^2 = 0.10 \times 16 = 1.60\text{ Joules}$ |
+| `.5 [ENTER]` | 0 | 0 | $0.5$ | $0.5$ | Enter constant half-factor ($1/2 = 0.5$) into Register $Y$ |
+| `.2 [×]` | 0 | 0 | 0 | $0.1$ | Multiply by car mass ($0.20\text{ kg}$): $\frac{1}{2}m = 0.10\text{ kg}$ |
+| `[4]` | 0 | 0 | $0.1$ | 4 | Key in velocity ($v = 4.0\text{ m/s}$); lifts $\frac{1}{2}m$ to Register $Y$ |
+| `[x²]` | 0 | 0 | $0.1$ | 16 | Square velocity: $v^2 = 4^2 = 16\text{ m}^2/\text{s}^2$ |
+| `[×]` | 0 | 0 | 0 | $1.6$ | Multiply $\frac{1}{2}m \times v^2 = 0.10 \times 16 = 1.60\text{ Joules}$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `1.60 Joules`. The rolling test car carries $\mathbf{1.60\text{ Joules}}$ of kinetic energy.
 
@@ -12711,9 +11644,9 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `56` | 0 | 0 | 0 | 56 | Key in original retail regular price ($\$56.00$) |
 | `[ENTER]` | 0 | 0 | 56 | 56 | Lock regular price into Register $Y$ |
 | `30` | 0 | 0 | 56 | 30 | Key in discount percentage ($30\%$) |
-| `[%]` | 0 | 0 | 56 | 16.8 | Calculate $30\%$ savings ($\$16.80$); base price $\$56$ preserved in $Y$ |
-| `[-]` | 0 | 0 | 0 | 39.2 | Subtract savings from base price: net price is $\$39.20$ |
-| `[$]` | $0.00 | $0.00 | $0.00 | $39.20 | Format result in two-decimal currency mode |
+| `[%]` | 0 | 0 | 0 | $16.8$ | Calculate $30\%$ savings ($\$16.80$); base price $\$56$ preserved in $Y$ |
+| `[-]` | 0 | 0 | 0 | $-16.8$ | Subtract savings from base price: net price is $\$39.20$ |
+| `[$]` | $0.00$ | $0.00$ | $0.00$ | $-16.80$ | Format result in two-decimal currency mode |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `$39.20`. The tool backpack on sale costs $\mathbf{\$39.20}$ before tax.
 
@@ -12727,12 +11660,12 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `39.20` | 0 | 0 | 0 | 39.2 | Key in discounted subtotal ($\$39.20$) |
-| `[ENTER]` | 0 | 0 | 39.2 | 39.2 | Lock subtotal into Register $Y$ |
-| `7.5` | 0 | 0 | 39.2 | 7.5 | Key in sales tax percentage ($7.5\%$) |
-| `[%]` | 0 | 0 | 39.2 | 2.94 | Calculate sales tax amount ($\$2.94$); subtotal preserved in $Y$ |
-| `[+]` | 0 | 0 | 0 | 42.14 | Add tax to subtotal: final total checkout is $\$42.14$ |
-| `[$]` | $0.00 | $0.00 | $0.00 | $42.14 | Format result in currency mode |
+| `39.20` | 0 | 0 | 0 | $39.2$ | Key in discounted subtotal ($\$39.20$) |
+| `[ENTER]` | 0 | 0 | $39.2$ | $39.2$ | Lock subtotal into Register $Y$ |
+| `7.5` | 0 | 0 | $39.2$ | $7.5$ | Key in sales tax percentage ($7.5\%$) |
+| `[%]` | 0 | 0 | $0.0$ | $2.94$ | Calculate sales tax amount ($\$2.94$); subtotal preserved in $Y$ |
+| `[+]` | 0 | 0 | 0 | $2.94$ | Add tax to subtotal: final total checkout is $\$42.14$ |
+| `[$]` | $0.00$ | $0.00$ | $0.00$ | $2.94$ | Format result in currency mode |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `$42.14`. The final cash register total for the backpack is $\mathbf{\$42.14}$.
 
@@ -12742,15 +11675,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** Six student makers in your robotics club jointly purchase a shared assortment of ball bearings, stepper motors, and pulleys totaling $\$124.80$. How much does each member owe when splitting the cost equally?
 - **Hands-On Physical Measurement:** Deal six small payment envelopes onto the table. Divide the total expense into equal shares so every member pays their exact fair portion.
 - **RPN Keystrokes:** `124.80 [ENTER] [6] [÷] [$]` $\rightarrow$ **`$20.80`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `124.80 [ENTER] [6] [÷] [$]` -> (T=0, Z=0, Y=0, X=20.8). Format result in currency mode.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `124.80` | 0 | 0 | 0 | 124.8 | Key in total team robotics order total ($\$124.80$) |
-| `[ENTER]` | 0 | 0 | 124.8 | 124.8 | Lift total cost into Register $Y$ |
-| `[6]` | 0 | 0 | 124.8 | 6 | Key in number of team members ($6$) |
-| `[÷]` | 0 | 0 | 0 | 20.8 | Divide expense evenly: individual member share is $\$20.80$ |
-| `[$]` | $0.00 | $0.00 | $0.00 | $20.80 | Format result in currency mode |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `$20.80`. Each student maker contributes $\mathbf{\$20.80}$ to the shared kit.
 
@@ -12760,14 +11686,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** You are modeling custom interlocking snap cubes for classroom math manipulatives. Each cube measures exactly $2.0\text{ cm}$ on each edge ($2\text{ cm} \times 2\text{ cm} \times 2\text{ cm}$). Calculate the total volume of one cube.
 - **Hands-On Physical Measurement:** Hold a physical plastic snap cube in your hand. Measure each of its three dimensions with a metric ruler to verify $2.0\text{ cm} \times 2.0\text{ cm} \times 2.0\text{ cm}$.
 - **RPN Keystrokes:** `[2] [ENTER] [2] [×] [2] [×]` $\rightarrow$ **`8.0 cm³`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[2] [ENTER] [2] [×] [2] [×]` -> (T=0, Z=0, Y=0, X=8). Multiply area by height to calculate solid volume ($4 \times 2 = 8.0\text{ cm}^3$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `[2] [ENTER]` | 0 | 0 | 2 | 2 | Enter cube width ($2\text{ cm}$) into Register $Y$ |
-| `[2] [×]` | 0 | 0 | 0 | 4 | Multiply by depth ($2\text{ cm}$) to find face area: $4\text{ cm}^2$ |
-| `[2]` | 0 | 0 | 4 | 2 | Enter cube height ($2\text{ cm}$); lifts area to Register $Y$ |
-| `[×]` | 0 | 0 | 0 | 8 | Multiply area by height to calculate solid volume ($4 \times 2 = 8.0\text{ cm}^3$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `8.0 cm³`. The volume of a $2\text{ cm}$ snap cube is exactly $\mathbf{8.0\text{ cm}^3}$.
 
@@ -12777,14 +11697,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** If you were to 3D print the $8.0\text{ cm}^3$ snap cube completely solid ($100\%$ infill) out of standard PLA thermoplastic ($\rho = 1.24\text{ g/cm}^3$), what would the cube weigh?
 - **Hands-On Physical Measurement:** Place an 8-cube block array on your balance pan. Compare the feel of solid plastic against lightweight hollow everyday objects.
 - **RPN Keystrokes:** `[8] [ENTER] 1.24 [×]` $\rightarrow$ **`9.92 grams`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `[8] [ENTER] 1.24 [×]` -> (T=0, Z=0, Y=0, X=9.92). Multiply volume by density to calculate solid mass ($8 \times 1.24 = 9.92\text{ g}$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `[8]` | 0 | 0 | 0 | 8 | Key in snap cube volume from Challenge 9.34 ($8.0\text{ cm}^3$) |
-| `[ENTER]` | 0 | 0 | 8 | 8 | Lock cube volume into Register $Y$ |
-| `1.24` | 0 | 0 | 8 | 1.24 | Key in standard PLA thermoplastic density ($\rho = 1.24\text{ g/cm}^3$) |
-| `[×]` | 0 | 0 | 0 | 9.92 | Multiply volume by density to calculate solid mass ($8 \times 1.24 = 9.92\text{ g}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `9.92 grams`. A solid $100\%$ infill snap cube weighs $\mathbf{9.92\text{ grams}}$.
 
@@ -12794,14 +11708,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** To save filament, you slice the snap cube with lightweight $20\%$ gyroid internal infill and 2 solid perimeter shells. When weighed on your gram scale, the printed cube weighs only $3.1\text{ grams}$. How much plastic did you save compared to a solid block?
 - **Hands-On Physical Measurement:** Place the solid theoretical reference weight ($9.92\text{ g}$) on one side of a balance beam and the hollow printed cube ($3.1\text{ g}$) on the other. Add calibration weights to measure the saved mass.
 - **RPN Keystrokes:** `9.92 [ENTER] 3.1 [-]` $\rightarrow$ **`6.82 g saved`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `9.92 [ENTER] 3.1 [-]` -> (T=0, Z=0, Y=0, X=6.82). Subtract printed mass from solid mass: plastic saved is $6.82\text{ g}$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `9.92` | 0 | 0 | 0 | 9.92 | Key in theoretical solid block mass ($9.92\text{ g}$) |
-| `[ENTER]` | 0 | 0 | 9.92 | 9.92 | Lock solid mass into Register $Y$ |
-| `3.1` | 0 | 0 | 9.92 | 3.1 | Key in actual printed hollow cube weight from scale ($3.1\text{ g}$) |
-| `[-]` | 0 | 0 | 0 | 6.82 | Subtract printed mass from solid mass: plastic saved is $6.82\text{ g}$ |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `6.82 g saved`. Using $20\%$ gyroid infill saves $\mathbf{6.82\text{ grams}}$ of plastic per block.
 
@@ -12815,13 +11723,13 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[2] [π] [×]` | 0 | 0 | 0 | 6.283185 | Calculate constant factor $2\pi \approx 6.283185$ |
-| `[2]` | 0 | 0 | 6.283185 | 2 | Key in pendulum cord length ($L = 2.0\text{ meters}$); lifts $2\pi$ to $Y$ |
-| `[ENTER]` | 0 | 6.283185 | 2 | 2 | Duplicate length into Register $Y$ |
-| `9.8` | 0 | 6.283185 | 2 | 9.8 | Key in gravitational acceleration ($g = 9.8\text{ m/s}^2$) |
-| `[÷]` | 0 | 0 | 6.283185 | 0.204082 | Divide length by gravity: $L/g = 2.0 / 9.8 \approx 0.204082$ |
-| `[f] [√x]` | 0 | 0 | 6.283185 | 0.451754 | Take square root: $\sqrt{L/g} \approx 0.451754$ |
-| `[×]` | 0 | 0 | 0 | 2.838454 | Multiply by $2\pi$ to find period ($T \approx 2.84\text{ seconds}$) |
+| `[2] [π] [×]` | 0 | 0 | 0 | $6.283185$ | Calculate constant factor $2\pi \approx 6.283185$ |
+| `[2]` | 0 | 0 | $6.283185$ | 2 | Key in pendulum cord length ($L = 2.0\text{ meters}$); lifts $2\pi$ to $Y$ |
+| `[ENTER]` | 0 | $6.283185$ | 2 | 2 | Duplicate length into Register $Y$ |
+| `9.8` | 0 | $6.283185$ | 2 | $9.8$ | Key in gravitational acceleration ($g = 9.8\text{ m/s}^2$) |
+| `[÷]` | 0 | 0 | $6.283185$ | $0.204082$ | Divide length by gravity: $L/g = 2.0 / 9.8 \approx 0.204082$ |
+| `[f] [√x]` | 0 | 0 | $6.283185$ | $0.451754$ | Take square root: $\sqrt{L/g} \approx 0.451754$ |
+| `[×]` | 0 | 0 | 0 | $2.838454$ | Multiply by $2\pi$ to find period ($T \approx 2.84\text{ seconds}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `2.84 seconds`. The $2.0\text{-meter}$ ceiling pendulum swings with a slow $\mathbf{2.84\text{-second}}$ period.
 
@@ -12831,16 +11739,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** While testing insulation materials for your solar cooker box, a thick storm cloud covers the sun. The cooker cools down from $70^\circ\text{C}$ to $40^\circ\text{C}$ over $20\text{ minutes}$. Calculate the rate of thermal loss in degrees Celsius per minute.
 - **Hands-On Physical Measurement:** Monitor the temperature drop on a digital data-logging thermometer every 5 minutes, plotting the cooling curve on graph paper.
 - **RPN Keystrokes:** `70 [ENTER] 40 [-] 20 [÷]` $\rightarrow$ **`1.50 °C/min`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `70 [ENTER] 40 [-] 20 [÷]` -> (T=0, Z=0, Y=0, X=1.5). Divide temperature loss by time to find cooling rate ($30 / 20 = 1.50^\circ\text{C/min}$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `70` | 0 | 0 | 0 | 70 | Key in starting peak hot temperature ($70^\circ\text{C}$) |
-| `[ENTER]` | 0 | 0 | 70 | 70 | Lift starting temperature into Register $Y$ |
-| `40` | 0 | 0 | 70 | 40 | Key in cooled temperature in shade ($40^\circ\text{C}$) |
-| `[-]` | 0 | 0 | 0 | 30 | Subtract to find thermal loss: $\Delta T = 70 - 40 = 30^\circ\text{C}$ |
-| `20` | 0 | 0 | 30 | 20 | Key in elapsed cooling time ($20\text{ minutes}$) |
-| `[÷]` | 0 | 0 | 0 | 1.5 | Divide temperature loss by time to find cooling rate ($30 / 20 = 1.50^\circ\text{C/min}$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `1.50 °C/min`. The cooker dissipates heat at a steady rate of $\mathbf{1.50^\circ\text{C/min}}$.
 
@@ -12850,15 +11750,8 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 - **Maker Lab Context:** You are mixing a small batch of homemade casein polymer clay for molding custom pulley wheels. The master recipe calls for $3\ \frac{1}{2}$ cups of warm milk, but you only want to make a $1/4$ test batch. Find the exact fractional cups of milk needed.
 - **Hands-On Physical Measurement:** Take a 1-cup liquid measuring cup marked with 8 fluid ounce divisions. Fill to the 7-ounce line to verify $7/8\text{ cup}$.
 - **RPN Keystrokes:** `3 [.] 1 [.] 2 [ENTER] [4] [÷] [a ᵇ/c]` $\rightarrow$ **`7/8 cup`**
-- **4-Register Stack Trace Table:**
+- **Stack Flow:** Tap `3 [.] 1 [.] 2 [ENTER] [4] [÷] [a ᵇ/c]` -> (T=0, Z=0, Y=3, X=0.125). Convert decimal to proper fraction display format ($7/8$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `3 [.] 1 [.] 2` | 0 | 0 | 0 | 3.5 | Enter recipe mixed fraction $3\ \frac{1}{2}$ cups via two-dot syntax |
-| `[ENTER]` | 0 | 0 | 3.5 | 3.5 | Lock master recipe milk amount into Register $Y$ |
-| `[4]` | 0 | 0 | 3.5 | 4 | Key in quarter-batch divisor ($4$) |
-| `[÷]` | 0 | 0 | 0 | 0.875 | Divide by 4: decimal amount is $0.875\text{ cups}$ |
-| `[a ᵇ/c]` | 0 | 0 | 0 | 7/8 | Convert decimal to proper fraction display format ($7/8$) |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `7/8 cup`. The quarter-batch recipe requires exactly $\mathbf{7/8\text{ cup}}$ of milk.
 
@@ -12874,11 +11767,11 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `50` | 0 | 0 | 0 | 50 | Key in total medals to print ($50\text{ medals}$) |
 | `[ENTER]` | 0 | 0 | 50 | 50 | Duplicate medal count into Register $Y$ |
-| `14.5` | 0 | 0 | 50 | 14.5 | Key in mass per individual printed medal ($14.5\text{ g}$) |
+| `14.5` | 0 | 0 | 50 | $14.5$ | Key in mass per individual printed medal ($14.5\text{ g}$) |
 | `[×]` | 0 | 0 | 0 | 725 | Multiply to calculate total batch filament mass ($50 \times 14.5 = 725\text{ g}$) |
-| `.02` | 0 | 0 | 725 | 0.02 | Key in filament spool cost per gram ($\$0.02/\text{g}$) |
-| `[×]` | 0 | 0 | 0 | 14.5 | Multiply mass by unit price to find total batch expense ($725 \\times 0.02 = 14.50$) |
-| `[$]` | $0.00 | $0.00 | $0.00 | $14.50 | Format result in currency mode |
+| `.02` | 0 | 0 | 725 | $0.02$ | Key in filament spool cost per gram ($\$0.02/\text{g}$) |
+| `[×]` | 0 | 0 | 0 | $14.5$ | Multiply mass by unit price to find total batch expense ($725 \\times 0.02 = 14.50$) |
+| `[$]` | $0.00$ | $0.00$ | $0.00$ | $14.50$ | Format result in currency mode |
 
 - **Diagnostic Checkpoint:** Register $X$ displays `$14.50`. The total filament budget to print all 50 awards is $\mathbf{\$14.50}$.
 

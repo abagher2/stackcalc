@@ -317,7 +317,7 @@ Rather than facing disconnected lists of drill problems, you embark on four cohe
 - **Playground Construction Mission:** To fill the giant wooden sandbox, your crew wheels loads of washed pea gravel from the supply depot: 4 wheelbarrows on Monday, 5 on Tuesday, and 6 on Wednesday. How many total wheelbarrows of gravel did you pour into the sandbox?
 - **Concrete Stage:** Stack 4 unit cubes on your desk, add 5 cubes, and then add 6 more cubes to form a single continuous tower of 15 cubes.
 - **Abstract RPN Keystrokes:** `{{res:sc6_02_rpn_for_young_learners_seq_03:keys}}` $\rightarrow$ **`{{res:sc6_02_rpn_for_young_learners_seq_03:value}}`**
-- **Stack Flow:** Tap `4 {{key:ENTER}} 5 {{key:+}} 6 {{key:+}}` -> (T=0, Z=0, Y=0, X=15). The intermediate sum $9$ automatically lifts to $Y$ when you key $6$, delivering $15$ with zero extra `[ENTER]` strokes.
+- **Stack Flow:** Tap `4 {{key:ENTER}} 5 {{key:+}} 6 {{key:+}}` -> (T=0, Z=0, Y=0, X=15). The intermediate sum $9$ automatically lifts to $Y$ when you key $6$, delivering $15$ with zero extra `{{key:ENTER}}` strokes.
 ---
 
 ### Problem 04:

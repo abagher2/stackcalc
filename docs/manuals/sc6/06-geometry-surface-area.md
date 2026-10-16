@@ -1033,16 +1033,7 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Antarctic Logistics Context:** An ice-field radar transponder is protected by a bright orange conical fiberglass cowl with base radius $r = 8\text{ cm}$ and slant height $s = 18\text{ cm}$. The base is open to mount onto the antenna mast. Find lateral fiberglass surface area ($A = \pi r s$).
 - **Hands-On Manipulative Stage (Unrolling Cone Sectors):** Cut along the slant seam of a paper cone: it unrolls into a circular sector of radius $s$ and arc length $2\pi r$. Sector area resolves directly to $\pi r s$.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_15:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_15:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:π}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.1416$ | Summon circle constant $\pi \approx 3.141593$ onto floor $X$ |
-| `8` | $0.0000$ | $0.0000$ | $3.1416$ | $8.0000$ | Key in conical base radius ($8\text{ cm}$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $25.1327$ | Multiply $\pi$ by radius to obtain semi-perimeter product |
-| `18` | $0.0000$ | $0.0000$ | $25.1327$ | $18.0000$ | Key in slant height ($18\text{ cm}$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $452.3893$ | Multiply by slant height to unroll lateral conical surface |
-
+- **Operational Narrative & Stack Flow:** Push `{{key:π}}`, key `8`, and press `{{key:×}}` ($25.1327\text{ cm}$) `(T:0, Z:0, Y:0, X:25.1327)`. Key `18` and press `{{key:×}}` to multiply by slant height, evaluating the lateral conical area `(T:0, Z:0, Y:0, X:452.3893)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $452.3893$. Lateral fiberglass cowl area is $\mathbf{452.39\text{ cm}^2}$.
 
 #### Challenge 16: Surface Area of a Pyramidal Field Tent Shelter
@@ -1072,85 +1063,28 @@ The following problem bank provides complete, publication-grade reference soluti
 - **Antarctic Logistics Context:** A rugged open-top insulated cargo bin for lithium power cells measures length $L = 30\text{ cm}$, width $W = 20\text{ cm}$, and depth $H = 15\text{ cm}$. Calculate interior protective lining area across its 5 open-top faces (bottom floor, two side walls, two end walls).
 - **Hands-On Manipulative Stage (Open Box Net):** Unfold an open-top box net: cross-shaped layout with 1 central floor panel ($30 \times 20$) and 4 perimeter walls. The top lid is omitted ($5$ faces total).
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_17:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_17:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:CLΣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Reset statistical accumulator ($n = 0, \Sigma x = 0$) |
-| `30` | $0.0000$ | $0.0000$ | $0.0000$ | $30.0000$ | Key in pod length ($30\text{ cm}$) |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $30.0000$ | $30.0000$ | Stack lifts; length locked into Register $Y$ |
-| `20` | $0.0000$ | $0.0000$ | $30.0000$ | $20.0000$ | Key in pod width ($20\text{ cm}$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $600.0000$ | Multiply for single bottom floor ($600\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Deposit single floor into accumulator ($n = 1, \Sigma x = 600$) |
-| `30` | $0.0000$ | $0.0000$ | $0.0000$ | $30.0000$ | Key in pod length ($30\text{ cm}$) |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $30.0000$ | $30.0000$ | Stack lifts; length locked into Register $Y$ |
-| `15` | $0.0000$ | $0.0000$ | $30.0000$ | $15.0000$ | Key in pod height ($15\text{ cm}$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $450.0000$ | Multiply for single side wall ($450\text{ cm}^2$) |
-| `2` | $0.0000$ | $0.0000$ | $450.0000$ | $2.0000$ | Key in multiplier 2 for front and back wall pair |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $900.0000$ | Double for long wall pair ($900\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Deposit long wall pair into accumulator ($n = 2, \Sigma x = 1500$) |
-| `20` | $0.0000$ | $0.0000$ | $0.0000$ | $20.0000$ | Key in pod width ($20\text{ cm}$) |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $20.0000$ | $20.0000$ | Stack lifts; width locked into Register $Y$ |
-| `15` | $0.0000$ | $0.0000$ | $20.0000$ | $15.0000$ | Key in pod height ($15\text{ cm}$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $300.0000$ | Multiply for single end wall ($300\text{ cm}^2$) |
-| `2` | $0.0000$ | $0.0000$ | $300.0000$ | $2.0000$ | Key in multiplier 2 for left and right end pair |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $600.0000$ | Double for end wall pair ($600\text{ cm}^2$) |
-| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.0000$ | Deposit end wall pair into accumulator ($n = 3, \Sigma x = 2100$) |
-| `{{key:Σx}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2100.0000$ | Recall total open-top 5-face surface area |
-
+- **Operational Narrative & Stack Flow:** Key `{{key:CLΣ}}` to reset accumulators `(T:0, Z:0, Y:0, X:0)`. Key `30`, press `{{key:ENTER}}`, key `20`, and press `{{key:×}}` to compute single floor $600\text{ cm}^2$ `(T:0, Z:0, Y:0, X:600)`, then deposit with `{{key:Σ+}}` `(T:0, Z:0, Y:0, X:1)`. Key `30`, press `{{key:ENTER}}`, key `15`, press `{{key:×}}` ($450\text{ cm}^2$), key `2`, and press `{{key:×}}` ($900\text{ cm}^2$); deposit long wall pair with `{{key:Σ+}}` `(T:0, Z:0, Y:0, X:2)`. Key `20`, press `{{key:ENTER}}`, key `15`, press `{{key:×}}` ($300\text{ cm}^2$), key `2`, and press `{{key:×}}` ($600\text{ cm}^2$); deposit end wall pair with `{{key:Σ+}}` `(T:0, Z:0, Y:0, X:3)`. Press `{{key:Σx}}` to recall total open-top surface area `(T:0, Z:0, Y:0, X:2100)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $2100.0000$. Open-top lining area is $\mathbf{2100.00\text{ cm}^2}$.
 
 #### Challenge 18: Hollow Ice Core Borehole Thermal Sleeve
 - **Antarctic Logistics Context:** A vertical borehole casing sleeve drilled into the polar ice sheet has inner radius $r = 0.5\text{ m}$ and depth $L = 4\text{ m}$. Find the inner cylindrical surface area lining the ice borehole.
 - **Hands-On Manipulative Stage (Cylindrical Sleeve):** A hollow open-ended cylinder has zero top or bottom caps; its surface is solely the unrolled rectangle formed by circumference times depth ($A = 2 \pi r L$).
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_18:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_18:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `0.5` | $0.0000$ | $0.0000$ | $0.0000$ | $0.5$ | Key in borehole inner radius ($0.5\text{ m}$) |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $0.5$ | $0.5$ | Stack lifts; radius locked into Register $Y$ |
-| `2` | $0.0000$ | $0.0000$ | $0.5$ | $2.0000$ | Key in factor 2 for diameter |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Multiply to obtain full diameter ($1.0\text{ m}$) |
-| `{{key:π}}` | $0.0000$ | $0.0000$ | $1.0000$ | $3.1416$ | Push circle constant $\pi \approx 3.141593$ |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.1416$ | Multiply diameter by $\pi$ for circumference ($3.1416\text{ m}$) |
-| `4` | $0.0000$ | $0.0000$ | $3.1416$ | $4.0000$ | Key in casing depth ($4\text{ m}$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $12.5664$ | Multiply circumference by depth to unroll cylindrical sleeve |
-
+- **Operational Narrative & Stack Flow:** Key `0.5`, press `{{key:ENTER}}`, key `2`, and press `{{key:×}}` to compute borehole diameter $1.0\text{ m}$ `(T:0, Z:0, Y:0, X:1)`. Push `{{key:π}}` and press `{{key:×}}` to obtain circumference $3.1416\text{ m}$ `(T:0, Z:0, Y:0, X:3.1416)`. Key `4` and press `{{key:×}}` to multiply by casing depth, giving inner borehole sleeve area `(T:0, Z:0, Y:0, X:12.5664)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $12.5664$. Inner borehole sleeve area is $\mathbf{12.57\text{ m}^2}$.
 
 #### Challenge 19: Deep-Freeze Survival Rations Container Volume
 - **Antarctic Logistics Context:** Emergency freeze-dried meal bricks are packed into a heavy-duty container measuring length $18\text{ cm}$, width $6\text{ cm}$, and height $28\text{ cm}$. Find the total internal volume in cubic centimeters.
 - **Hands-On Manipulative Stage (Prism Stacking):** Lay a base layer of counting tiles $18\text{ cm} \times 6\text{ cm} = 108\text{ cm}^2$. Stacking 28 identical layers upward builds the complete three-dimensional volume ($V = l \times w \times h$).
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_19:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_19:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` | $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Key in container base length ($18\text{ cm}$) |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $18.0000$ | $18.0000$ | Stack lifts; length locked into Register $Y$ |
-| `6` | $0.0000$ | $0.0000$ | $18.0000$ | $6.0000$ | Key in container base width ($6\text{ cm}$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $108.0000$ | Multiply length by width for base footprint ($108\text{ cm}^2$) |
-| `28` | $0.0000$ | $0.0000$ | $108.0000$ | $28.0000$ | Key in container vertical height ($28\text{ cm}$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3024.0000$ | Multiply base footprint by height to obtain 3D volume |
-
+- **Operational Narrative & Stack Flow:** Key `18`, press `{{key:ENTER}}`, key `6`, and press `{{key:×}}` to compute base footprint $108\text{ cm}^2$ `(T:0, Z:0, Y:0, X:108)`. Key `28` and press `{{key:×}}` to multiply footprint by height, yielding total container volume `(T:0, Z:0, Y:0, X:3024)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $3024.0000$. Container internal volume is $\mathbf{3024.00\text{ cm}^3}$.
 
 #### Challenge 20: Modular Polar Research Station Habitat Block Volume
 - **Antarctic Logistics Context:** An insulated habitat module is assembled from 24 prefabricated cubic units, each measuring $2\text{ cm} \times 2\text{ cm} \times 2\text{ cm}$ on a 1:100 engineering architectural model. Calculate total module volume.
-- **Hands-On Manipulative Stage (Unit Cubing):** Take a $2\text{ cm}$ unit cube. Compute its volume via $s^3 = 2^3 = 8\text{ cm}^3$. Multiplying by 24 interlocking blocks yields the aggregate volume.
+- **Hands-On Manipulative Stage (Two-Step Model Small -> Scale Big):** Take a $2\text{ cm}$ unit cube from your kit. Compute its unit volume via $s^3 = 2^3 = 8\text{ cm}^3$. Multiplying by 24 interlocking blocks yields the aggregate volume.
 - **RPN Keystrokes:** `{{res:sc6_06_geometry_surface_area_seq_20:keys}}` $\rightarrow$ **`{{res:sc6_06_geometry_surface_area_seq_20:value}}`**
-- **4-Register Stack Trace Table:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Key in unit cube edge length ($2\text{ cm}$) |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.0000$ | $2.0000$ | Stack lifts; edge locked into Register $Y$ |
-| `3` | $0.0000$ | $0.0000$ | $2.0000$ | $3.0000$ | Key in exponent 3 for cubing volume |
-| `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.0000$ | Compute $2^3 = 8\text{ cm}^3$ for single unit cube volume |
-| `24` | $0.0000$ | $0.0000$ | $8.0000$ | $24.0000$ | Key in count of habitat modular cubes ($24$) |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $192.0000$ | Multiply unit volume by 24 for aggregate habitat volume |
-
+- **Operational Narrative & Stack Flow:** Key `2`, press `{{key:ENTER}}`, key `3`, and press `{{key:yˣ}}` to compute unit cube volume $8\text{ cm}^3$ `(T:0, Z:0, Y:0, X:8)`. Key `24` and press `{{key:×}}` to scale across all 24 modular blocks, finding aggregate habitat volume `(T:0, Z:0, Y:0, X:192)`.
 - **Diagnostic Checkpoint:** Register $X$ displays $192.0000$. Habitat model volume is $\mathbf{192.00\text{ cm}^3}$.
 
 ## Expedition 3: The City Water Works & Storage Reservoirs (Challenges 6.21–6.30)
