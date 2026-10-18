@@ -55,6 +55,7 @@ The physical keypad comprises 43 mechanical switch positions organized into thre
 | **Row 5** | `{{key:f}}` (f-Shift) | `{{key:4}}` | `{{key:5}}` | `{{key:6}}` | `{{key:×}}` |
 | **Row 6** | `{{key:g}}` (g-Shift) | `{{key:1}}` | `{{key:2}}` | `{{key:3}}` | `{{key:-}}` |
 | **Row 7** | `{{key:C}}` (ON) | `{{key:0}}` | `{{key:.}}` | `{{key:≠}}` | `{{key:+}}` |
+
 </div>
 
 ### Tactile Snap-Dome Mechanics & Debouncing Algorithm
@@ -91,14 +92,14 @@ The table below catalogs every physical switch position, electrical matrix coord
 | **9** | R1, C2 | `{{key:GCF}}` | `{{keycap:LCM}}` Multiple | `{{keycap:a:b}}` Ratio | Gr 5–6 | `0x12` | [Ch 7.3 Number Theory GCF/LCM](07-data-probability-primes.md) &bull; [Ch 5.4 Ratios & Rates](05-fractions-decimals-ratios.md) |
 | **10**| R1, C3 | `{{key:PRIME}}` | `{{keycap:C.FAC}}` ComFac | `{{keycap:FACT}}` Tree | Gr 5–6 | `0x13` | [Ch 7.3 Prime Studio & Factorization](07-data-probability-primes.md) |
 | **11**| R1, C4 | `{{key:x⇄y}}` | `{{keycap:R↓}}` Roll Down | `{{keycap:REP}}` Ladder | Gr 2–4 | `0x14` | [Ch 2.3 Stack Swapping](02-rpn-for-young-learners.md) &bull; [Ch 4.1 Superpower 1: REP Skip-Counting](04-operations-skip-counting.md) |
-| **12**| R1, C5 | `{{key:+/-}}` | `{{keycap:E}}` Exponent | `[\|x\|]` Abs | Gr 5–6 | `0x15` | [Ch 2.4 Negative Numbers](02-rpn-for-young-learners.md) &bull; [Ch 3.3 Scientific Exponents](03-counting-place-value.md) &bull; [Ch 2.4 Absolute Value](02-rpn-for-young-learners.md) |
+| **12**| R1, C5 | `{{key:+/-}}` | `{{keycap:E}}` Exponent | `[&#124;x&#124;]` Abs | Gr 5–6 | `0x15` | [Ch 2.4 Negative Numbers](02-rpn-for-young-learners.md) &bull; [Ch 3.3 Scientific Exponents](03-counting-place-value.md) &bull; [Ch 2.4 Absolute Value](02-rpn-for-young-learners.md) |
 | **13**| R2, C0 | `{{key:FRQ}}` | `{{keycap:MED}}` Median | `{{keycap:MODE}}` Mode | Gr 5–6 | `0x20` | [Ch 7.1 Frequency Tables & Dot Plots](07-data-probability-primes.md) &bull; [Ch 7.2 Median & Mode](07-data-probability-primes.md) |
 | **14**| R2, C1 | `{{key:RNG}}` | `{{keycap:MIN}}` Minimum | `{{keycap:MAX}}` Maximum | Gr 5–6 | `0x21` | [Ch 7.2 Data Spread & Extremes](07-data-probability-primes.md) |
 | **15**| R2, C2 | `{{key:IQR}}` | `{{keycap:1Q}}` Quartile 1| `{{keycap:3Q}}` Quartile 3| Gr 6+ | `0x22` | [Ch 7.2 Quartiles & Box Plots](07-data-probability-primes.md) |
 | **16**| R2, C3 | `{{key:Σ+}}` | `{{keycap:Σ-}}` Remove | `{{keycap:MAD}}` MeanDev | Gr 4–6 | `0x23` | [Ch 6.2 Master Surface Area via Stats](06-geometry-surface-area.md) &bull; [Ch 7.2 Mean Absolute Deviation](07-data-probability-primes.md) |
 | **17**| R2, C4 | `{{key:N}}` | `{{keycap:Σx}}` Total Sum | `{{keycap:x̄}}` Mean Avg | Gr 5–6 | `0x24` | [Ch 7.1 Sample Count & Arithmetic Mean](07-data-probability-primes.md) |
 | **18**| R2, C5 | `{{key:%}}` | `{{keycap:▸%}}` Dec to Pct | `{{keycap:%CHG}}` Change | Gr 5–6 | `0x25` | [Ch 5.5 Percentages & Discounts](05-fractions-decimals-ratios.md) |
-| **19**| R3, C0-1| `{{key:ENTER}}` | `{{key:LASTX}}` Check | `{{keycap:SHOW}}` 15-Dig | Gr K–6 | `0x30` | [Ch 2.1 The Elevator Push](02-rpn-for-young-learners.md) &bull; [Ch 4.2 Superpower 4: LASTX Error Check](04-operations-skip-counting.md) &bull; [Ch 3.3 Full Precision](03-counting-place-value.md) |
+| **19**| R3, C0-1| `{{key:ENTER}}` | `{{key:LASTX}}` Check | `{{keycap:SHOW}}` 15-Dig | Gr K–6 | `0x30` | [Ch 2.1 The Elevator Push](02-rpn-for-young-learners.md) &bull; [Ch 8.2 Quiz Answer Submit](08-math-quiz-engine.md) &bull; [Ch 4.2 Superpower 4: LASTX Error Check](04-operations-skip-counting.md) &bull; [Ch 3.3 Full Precision](03-counting-place-value.md) |
 | **20**| R3, C2 | `{{key:🕒}}` | `{{keycap:▸HR}}` Decimal | `{{keycap:▸HMS}}` Clock | Gr 3–5 | `0x32` | [Ch 6.7 Planetary Geared Clock Modulo-60](06-geometry-surface-area.md) |
 | **21**| R3, C3 | `{{key:▦}}` | `{{keycap:LINE}}` Line | `{{keycap:COUNT}}` Step | Gr K–2 | `0x33` | [Ch 3.1 Ten-Frame Mode](03-counting-place-value.md) &bull; [Ch 3.2 Number Line](03-counting-place-value.md) &bull; [Ch 3.1 Step Counter](03-counting-place-value.md) |
 | **22**| R3, C4 | `{{key:NUM}}` | `{{keycap:SCI}}` Sci Not | `{{keycap:FIX}}` Dec Dec | Gr K–6 | `0x34` | [Ch 2.2 Numerical 4-Stack Mode](02-rpn-for-young-learners.md) &bull; [Ch 3.3 Scientific Display](03-counting-place-value.md) |
@@ -121,7 +122,7 @@ The table below catalogs every physical switch position, electrical matrix coord
 | **39**| R7, C0 | `{{key:C}}` (ON) | `{{keycap:?}}` Quiz Sprint| `{{keycap:OFF}}` Sleep | Gr K–6 | `0x70` | [Ch 1.1 Cold Boot & Sleep](01-hardware-architecture.md) &bull; [Ch 8.1 Math Quiz Engine](08-math-quiz-engine.md) |
 | **40**| R7, C1 | `{{key:0}}` | `{{keycap:REGS}}` Viewer | *(Unassigned)* | Gr K–6 | `0x71` | [Ch 3.1 Digit Entry](03-counting-place-value.md) &bull; [Ch 2.2 Memory Registers](02-rpn-for-young-learners.md) |
 | **41**| R7, C2 | `{{key:.}}` | `{{keycap:0.3̄}}` Repeat | *(Unassigned)* | Gr 3–5 | `0x72` | [Ch 5.1 Decimal & Repeating Notation](05-fractions-decimals-ratios.md) |
-| **42**| R7, C3 | `{{key:≠}}` | `{{keycap:>}}` Greater | `{{keycap:<}}` Less | Gr 1–4 | `0x73` | [Ch 8.2 Quiz Answer Submit](08-math-quiz-engine.md) &bull; [Ch 4.3 Inequality Comparisons](04-operations-skip-counting.md) |
+| **42**| R7, C3 | `{{key:≠}}` | `{{keycap:>}}` Greater | `{{keycap:<}}` Less | Gr 1–4 | `0x73` | [Ch 4.3 Inequality Comparisons](04-operations-skip-counting.md) |
 | **43**| R7, C4 | `{{key:+}}` | `{{keycap:≥}}` Greater/Eq | `{{keycap:≤}}` Less/Eq | Gr K–4 | `0x74` | [Ch 2.1 Addition](02-rpn-for-young-learners.md) &bull; [Ch 4.3 Inequality Comparisons](04-operations-skip-counting.md) |
 
 ---
@@ -137,13 +138,10 @@ The SC-6 physical keyboard supports the full elementary-to-middle school progres
 | **Grade 3: Arrays, Area & Fractions** | Grid arrays, time arithmetic, and unit fraction exploration | `{{key:×}}`, `{{key:÷}}`, `{{keycap:RECT}}`, `{{key:🕒}}` Planetary Clock, `{{key:FDISP}}`, `[. n . d]` |
 | **Grade 4: Division & Fraction Mastery** | Division with remainders and step-by-step fraction reduction | `{{keycap:÷R}}` Quotient & Remainder, `{{key:a ᵇ/c}}`, `{{keycap:d/c}}`, `{{keycap:SIMP}}`, `{{key:LASTX}}` |
 | **Grade 5: Unlike Fractions & Surface Area** | Common denominators, 3D volume, and ledger accumulation | `{{key:GCF}}`, `{{keycap:LCM}}`, `{{keycap:PRISM}}`, `{{key:Σ+}}` Surface Area Ledger, `{{key:FRQ}}` Tables |
-| **Grade 6+: Number Theory & Sprint** | Negatives, primes, descriptive statistics, and rapid mental math sprints | `{{key:+/-}}`, `[\|x\|]`, `{{key:PRIME}}`, `{{keycap:FACT}}`, `{{keycap:a:b}}`, `{{key:x²}}`, `{{keycap:√x}}`, `{{key:IQR}}`, `{{keycap:MAD}}` |
+| **Grade 6+: Number Theory & Sprint** | Negatives, primes, descriptive statistics, and rapid mental math sprints | `{{key:+/-}}`, `[&#124;x&#124;]`, `{{key:PRIME}}`, `{{keycap:FACT}}`, `{{keycap:a:b}}`, `{{key:x²}}`, `{{keycap:√x}}`, `{{key:IQR}}`, `{{keycap:MAD}}` |
 
 ---
 
 ## Verification & Firmware Implementation Reference
 
-The 43-key matrix pinouts, electrical scanning bus, and shift mappings are verified in:
-* The SC-6 Core Keymap Specification (`StackCalc6KeyMap`)
-* The SC-6 Laser Topography Generator (`generate_laser_svg.py --sc6`)
-* The SC-6 Decal Topography Matrix (`layout_data_sc6.json`)
+The 43-key matrix pinouts, row-column electrical scanning bus, and progressive K–6 shift mappings are verified against the SC-6 hardware keymap specification, faceplate laser-topography blueprints, and classroom durability standards.

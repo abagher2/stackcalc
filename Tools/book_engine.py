@@ -777,7 +777,7 @@ def expand_key_macros(markdown: str, is_sc32: bool, file_path: Optional[Path] = 
                 raise ValueError(f"Unknown {{{{{kind}:{item_id}}}}} macro (not in sequences_registry.json){loc}")
             entry = sequences[item_id]
             seq_is_sc32 = entry.get("model", "sc32") == "sc32"
-            raw_seq = entry["seqKeys"] if kind == "seq_keys" else entry["seq"]
+            raw_seq = (entry["seqKeys"] if kind == "seq_keys" else entry["seq"]).replace("`", "")
             return _expand_only_keys(raw_seq, is_sc32=seq_is_sc32, file_path=file_path)
 
         if kind == "res":
@@ -801,11 +801,11 @@ def expand_key_macros(markdown: str, is_sc32: bool, file_path: Optional[Path] = 
             if op in ("value", "number", "res"):
                 return res_str
             if op in ("keys", "keystrokes", "seq"):
-                return _expand_only_keys(entry["seq"], is_sc32=seq_is_sc32, file_path=file_path)
+                return _expand_only_keys(entry["seq"].replace("`", ""), is_sc32=seq_is_sc32, file_path=file_path)
             if op == "seq_keys":
-                return _expand_only_keys(entry["seqKeys"], is_sc32=seq_is_sc32, file_path=file_path)
+                return _expand_only_keys(entry["seqKeys"].replace("`", ""), is_sc32=seq_is_sc32, file_path=file_path)
             if op in ("both", "inline"):
-                expanded_seq = _expand_only_keys(entry["seq"], is_sc32=seq_is_sc32, file_path=file_path)
+                expanded_seq = _expand_only_keys(entry["seq"].replace("`", ""), is_sc32=seq_is_sc32, file_path=file_path)
                 return f"`{expanded_seq}` → **`{res_str}`**"
             if op == "stack":
                 st = entry.get("stack") or {"T": "0", "Z": "0", "Y": "0", "X": res_str}

@@ -10,10 +10,8 @@ description: "Comprehensive catalog of all 12 hardware error codes, mathematical
   <span class="te-viewport-status text-sky-400">● 12 HARDWARE ERROR CODES &bull; MATHEMATICAL SINGULARITIES &bull; NON-DESTRUCTIVE RECOVERY</span>
 </div>
 
-
 {{blocks:sc32_exploded_assembly|StackCalc SC-32 Internal Hardware Assembly}}
 *Figure B.1: Exploded hardware assembly showing dual-slot non-volatile EEPROM and power-fail protection circuits.*
-
 
 <div class="p-4 rounded-xl bg-slate-900 border border-sky-500/30 mb-8 font-mono text-xs text-sky-300">
   <strong>CHAPTER BASELINE MODE:</strong> <code>{{key:ALL}}</code> (Full 12-digit scientific mantissa; Standard Base-10 Arithmetic; Degrees angular mode default).
@@ -180,12 +178,12 @@ Compute $\frac{450}{15}$, but mistakenly key $0$ as the divisor:
 ### Code 07: `A ≠ 0`
 * **Mathematical Classification:** Cubic polynomial degeneracy.
 * **Triggering Conditions:**
-  * Characteristic cubic polynomial solver (`{{key:XEQ}}` -> `POLY`) is executed (`EXEC`) with leading coefficient $A = 0$ ($0x^3 + Bx^2 + Cx + D = 0$).
+  * Characteristic cubic polynomial solver (`{{key:XEQ}}` $\to$ `POLY`) is executed (`EXEC`) without entering leading coefficient $A$, or with $A = 0$ ($0x^3 + Bx^2 + Cx + D = 0$).
 * **Stack State upon Error:** Stored coefficients in registers $A, B, C, D$ remain intact.
 * **Keystroke Recovery Procedure:**
   1. Press `{{key:C}}` to dismiss.
-  2. If solving a true cubic, press `A`, enter the non-zero leading coefficient, and press `EXEC`.
-  3. If solving a quadratic equation $Bx^2 + Cx + D = 0$, solve using Brent's root solver ({{key:SOLVE}}) or the standard quadratic formula.
+  2. If solving a cubic, enter the non-zero leading coefficient into `A` and press `EXEC` (omitted coefficients $B, C, D$ assume $0$ by default).
+  3. If solving a quadratic equation $a x^2 + b x + c = 0$, enter $A=a, B=b, C=c$ and press `EXEC` (where $D$ automatically defaults to $0$). Roots are deposited in variables `3` and `5`.
 
 ---
 
@@ -217,7 +215,7 @@ Compute $\frac{450}{15}$, but mistakenly key $0$ as the divisor:
 ### Code 10: `TIMEOUT`
 * **Mathematical Classification:** Numerical algorithm cycle exhaustion.
 * **Triggering Conditions:**
-  * Romberg numerical quadrature (`{{key:XEQ}}` -> `{{key:∫}}`) exceeds 100,000 sub-interval function evaluations without reaching Richardson extrapolation tolerance.
+  * Romberg numerical quadrature (`{{key:XEQ}}` $\to$ `{{key:∫}}`) exceeds 100,000 sub-interval function evaluations without reaching Richardson extrapolation tolerance.
   * Occurs with functions possessing infinite derivatives, sharp step discontinuities, or high-frequency oscillations (e.g., $\sin(1/x)$ near $x = 0$).
 * **Stack State upon Error:** Current best numerical approximation preserved in $X$.
 * **Keystroke Recovery Procedure:**
@@ -264,5 +262,4 @@ For standardized collegiate exams (such as AP, SAT, or FE exams), laboratory bas
 
 ## Verification & Implementation Parity
 
-The 12 hardware error codes and non-destructive recovery mechanisms are verified in the engine unit tests:
-* The Calculator Engine Error Handling Test Suite (`CalculatorEngineTests_Errors`)
+All 12 hardware error traps, non-destructive register preservation guarantees, and dual-slot FNV-1a non-volatile memory rollback protocols are continuously verified across the SC-32 hardware and firmware verification suites.

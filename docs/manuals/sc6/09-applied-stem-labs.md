@@ -41,7 +41,7 @@ Standard Base-10 Arithmetic • 4-Stack XYZT • Clean Display
 <p>
 • <strong>Engineering Math Keys:</strong> <code>{{key:x²}}</code> Square, <code>{{key:√x}}</code> Square Root, <code>{{key:π}}</code> Constant Pi, <code>{{key:+}}</code>, <code>{{key:-}}</code>, <code>{{key:×}}</code>, <code>{{key:÷}}</code>.<br>
 • <strong>RPN Superpower 4:</strong> <code>{{key:LASTX}}</code> (Prior Number Recall for Chained Electrical Power, Ratio Scaling, and Kinetic Energy).<br>
-• <strong>Statistical Accumulator:</strong> <code>{{key:Σ+}}</code> Coordinate Accumulation, <code>{{key:x̄}}</code> Mean, <code>`s`</code> Sample Standard Deviation, <code>{{key:CLΣ}}</code> Reset Statistics.<br>
+• <strong>Statistical Accumulator:</strong> <code>{{key:Σ+}}</code> Data Entry, <code>{{key:Σx}}</code> Total Sum, <code>{{key:x̄}}</code> Mean, <code>{{key:MED}}</code> Median, <code>{{key:RNG}}</code> Range, <code>{{key:CLΣ}}</code> Reset Statistics.<br>
 • <strong>Everyday Carry Percent &amp; Money:</strong> <code>{{key:%}}</code> Percentage, <code>{{key:%CHG}}</code> Percent Change, <code>{{key:$}}</code> Currency Formatting.<br>
 • <strong>Proportional Scaling &amp; Fractions:</strong> <code>{{key:a:b}}</code> Ratio Mode, <code>{{key:SIMP}}</code> Factor Reduction, <code>{{key:a ᵇ/c}}</code> Mixed Numbers, <code>{{key:LCM}}</code>.<br>
 • <strong>Time &amp; Angles:</strong> <code>{{key:▸HR}}</code> (HMS to Decimal Hours), <code>{{key:▸HMS}}</code> (Decimal Hours to HMS), <code>{{key:🕒}}</code> Clock Sandbox.
@@ -65,7 +65,6 @@ Before we calculate on the keypad, we measure real things in the real world:
 Following Jerome Bruner's <strong>Concrete-Representational-Abstract (CRA)</strong> framework {{cite:bruner1966}}, the SC-6 embeds computational mathematics directly into hands-on science and fabrication labs.
 </p>
 </div>
-
 
 <div class="admonition note">
 <p class="admonition-title">The Maker Math Workshop Paradigm</p>
@@ -110,19 +109,19 @@ Suppose your slicing software indicates that your pencil holder requires $L = 50
 3. Multiply by $\pi$: Press `{{key:π}} {{key:×}}` $\longrightarrow X \approx \mathbf{0.0240528\text{ cm}^2}$.
 
 #### Step 2: Compute Extruded Volume ($V = A_f \times L$)
-4. Enter sliced model length $500\text{ cm}$: `500`.
-5. Multiply: Press `{{key:×}}` $\longrightarrow X \approx \mathbf{12.02641\text{ cm}^3}$.
+1. Enter sliced model length $500\text{ cm}$: `500`.
+2. Multiply: Press `{{key:×}}` $\longrightarrow X \approx \mathbf{12.02641\text{ cm}^3}$.
 
 #### Step 3: Compute Part Mass ($m = V \times \rho$)
-6. Enter PLA density ($1.24\text{ g/cm}^3$): `1.24`.
-7. Multiply: Press `{{key:×}}`:
+1. Enter PLA density ($1.24\text{ g/cm}^3$): `1.24`.
+2. Multiply: Press `{{key:×}}`:
    - Register $X$ displays: **`14.91275`** (The pencil holder weighs **$14.91\text{ grams}$**)!
 
 #### Step 4: Compute Part Cost from $\$20 / 1000\text{ g}$ Spool
-8. Calculate cost per gram: `{{res:sc6_09_applied_stem_labs_seq_01:keys}}` $\longrightarrow X = 0.02$ ($\$0.02\text{ per gram}$).
-9. Multiply mass by unit cost: Press `{{key:×}}`:
+1. Calculate cost per gram: `{{res:sc6_09_applied_stem_labs_seq_01:keys}}` $\longrightarrow X = 0.02$ ($\$0.02\text{ per gram}$).
+2. Multiply mass by unit cost: Press `{{key:×}}`:
    - Register $X$ displays: **`0.298255`** ($\sim \$0.30$).
-10. Format as currency: Press `{{key:$}}`:
+3. Format as currency: Press `{{key:$}}`:
     - Screen displays: **`$0.30`**!
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
@@ -172,7 +171,7 @@ Classroom maker spaces often fabricate complete manipulative sets using 3D print
 How much does it cost to 3D print a complete classroom kit of 24 interlocking math cubes?
 - Each $20\text{ mm}$ cube consumes approximately $3.1\text{ grams}$ of PLA.
 - Total Kit Mass: `{{res:sc6_09_applied_stem_labs_seq_02:keys}}` $\longrightarrow \mathbf{74.4\text{ grams}}$.
-- Total Kit Cost at $\$0.02/\text{g}$: `[.] [0] [2] {{key:×}}` $\longrightarrow 1.488$.
+- Total Kit Cost at $\$0.02/\text{g}$: `.02 {{key:×}}` $\longrightarrow 1.488$.
 - Currency Mode: Press `{{key:$}}` $\longrightarrow$ **`$1.49`**!
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
@@ -236,18 +235,18 @@ Where:
    - Headroom: $3.0 - 2.0 = \mathbf{1.0\text{ V}}$ in Register $X$.
 
 #### Step 2: Apply Ohm's Law ($R = V / I$)
-3. Enter safe current in amperes ($0.020\text{ A}$): `{{key:.}} 020`.
-4. Divide: Press `{{key:÷}}`:
+1. Enter safe current in amperes ($0.020\text{ A}$): `{{key:.}} 020`.
+2. Divide: Press `{{key:÷}}`:
    - Register $X$ displays: **`50.0`** (We need a **$50\,\Omega$ resistor**)!
 
 #### Step 3: Compute Resistor Power Dissipation ($P = I^2 \times R$)
 We must ensure our resistor does not overheat. We evaluate $P = I^2 \times R$.
 **We use Superpower 4: `{{key:LASTX}}` to recall the current without re-typing!**
-5. Press {{key:LASTX}}:
+1. Press {{key:LASTX}}:
    - $0.020$ is instantly recalled into Register $X$!
    - The resistance ($50.0\,\Omega$) is automatically lifted into Register $Y$!
-6. Square the current ($I^2$): Press `{{key:x²}}` $\longrightarrow X = 0.0004\text{ A}^2$.
-7. Multiply by resistance ($R$): Press `{{key:×}}`:
+2. Square the current ($I^2$): Press `{{key:x²}}` $\longrightarrow X = 0.0004\text{ A}^2$.
+3. Multiply by resistance ($R$): Press `{{key:×}}`:
    - Register $X$ displays: **`0.020`** ($0.020\text{ W} = \mathbf{20\text{ mW}}$)!
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
@@ -304,21 +303,22 @@ $$\text{Measured 10-cycle time} = 20.1\text{ seconds}$$
 2. Divide by 10 swings: `10 {{key:÷}}` $\longrightarrow X = \mathbf{2.01\text{ seconds per period}}$.
 
 #### Step 2: Compute Local Gravitational Acceleration ($g = 4\pi^2 L / T^2$)
-3. Square the period: Press `{{key:x²}}` $\longrightarrow X = 4.0401\text{ s}^2$.
-4. Calculate $4\pi^2$: Press `{{res:sc6_09_applied_stem_labs_seq_04:keys}}` $\longrightarrow X \approx 39.4784$.
-5. Multiply by length ($L = 1.0\text{ m}$): Press `{{key:1}} {{key:×}}`.
-6. Exchange and divide by $T^2$: Press `{{key:x⇄y}} {{key:÷}}`:
+1. Square the period: Press `{{key:x²}}` $\longrightarrow X = 4.0401\text{ s}^2$.
+2. Calculate $4\pi^2$: Press `{{res:sc6_09_applied_stem_labs_seq_04:keys}}` $\longrightarrow X \approx 39.4784$.
+3. Multiply by length ($L = 1.0\text{ m}$): Press `{{key:1}} {{key:×}}`.
+4. Exchange and divide by $T^2$: Press `{{key:x⇄y}} {{key:÷}}`:
    - Register $X$ displays: **`9.7716`** ($\sim \mathbf{9.77\text{ m/s}^2}$)!
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| `20.1`{{key:ENTER}} | 0 | 0 | $20.1000$ | $20.1$ |
+| `20.1` {{key:ENTER}} | 0 | 0 | $20.1000$ | $20.1$ |
 | `10` {{key:÷}} | 0 | 0 | 0 | $2.01$ |
 | {{key:x²}} | 0 | 0 | 0 | $4.0401$ |
-| {{key:4}} {{key:ENTER}} | 0 | $4.0401$ | $4.0000$ | 4 |
+| {{key:4}} | 0 | 0 | $4.0401$ | 4 |
 | {{key:π}} {{key:x²}} {{key:×}} | 0 | 0 | $4.0401$ | $39.4784$ |
 | {{key:1}} {{key:×}} | 0 | 0 | $4.0401$ | $39.4784$ |
 | {{key:x⇄y}} {{key:÷}} | 0 | 0 | 0 | $9.7716$ |
+
 *(Compared to the accepted standard $g = 9.80665\text{ m/s}^2$, your hands-on experiment achieves less than $0.4\%$ experimental error!)*
 
 ---
@@ -333,7 +333,7 @@ $$L = \frac{g \times T^2}{4\pi^2} = \frac{9.80665 \times 2.0^2}{4 \times \pi^2} 
 | {{key:ENTER}} | 0 | 0 | $9.80665$ | $9.80665$ |
 | {{key:2}} {{key:x²}} | 0 | 0 | $9.80665$ | 4 |
 | {{key:×}} | 0 | 0 | 0 | $39.2266$ |
-| {{key:4}} {{key:ENTER}} | 0 | $39.2266$ | $4.0000$ | 4 |
+| {{key:4}} | 0 | 0 | $39.2266$ | 4 |
 | {{key:π}} {{key:x²}} {{key:×}} | 0 | 0 | $39.2266$ | $39.4784$ |
 | {{key:÷}} | 0 | 0 | 0 | $0.9936$ |
 
@@ -412,7 +412,7 @@ Accumulate each trial into the SC-6 hardware statistical registers using `{{key:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{keycap:CLΣ}} | 0 | 0 | 0 | 0 |
+| {{key:CLΣ}} | 0 | 0 | 0 | 0 |
 | `182` {{key:Σ+}} | 0 | 0 | 0 | $1.0000$ |
 | `195` {{key:Σ+}} | 0 | 0 | 0 | $2.0000$ |
 | `188` {{key:Σ+}} | 0 | 0 | 0 | $3.0000$ |
@@ -425,17 +425,17 @@ Accumulate each trial into the SC-6 hardware statistical registers using `{{key:
 
 ### Lab Mission 6.2: Target Ring Landing Probability
 If a circular scoring target has radius $R = 15\text{ cm}$ centered at $190\text{ cm}$, the target spans $175\text{ cm}$ to $205\text{ cm}$. 
-Since the mean is $191.00\text{ cm}$ and $2s = 14.56\text{ cm}$, the $2\sigma$ interval is $[176.44\text{ cm}, 205.56\text{ cm}]$. 
+Since the mean is $191.00\text{ cm}$ and $2s = 14.50\text{ cm}$ ($2 \times 7.25\text{ cm}$), the $2\sigma$ interval is $[176.50\text{ cm}, 205.50\text{ cm}]$. 
 Over $95\%$ of all shots will land directly inside the scoring ring!
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | `191` {{key:ENTER}} | 0 | 0 | 191 | 191 |
-| `7.28` {{key:ENTER}} | 0 | 191 | $7.28$ | $7.28$ |
-| `2` {{key:×}} | 0 | 0 | 191 | $14.56$ |
-| {{key:-}} | 0 | 0 | 0 | $176.44$ |
-| `191` {{key:ENTER}} | 0 | 0 | 191 | 191 |
-| `14.56` {{key:+}} | 0 | 0 | 0 | $205.56$ |
+| `7.25` {{key:ENTER}} | 0 | 191 | $7.25$ | $7.25$ |
+| `2` {{key:×}} | 0 | 0 | 191 | $14.50$ |
+| {{key:-}} | 0 | 0 | 0 | $176.50$ |
+| `191` {{key:ENTER}} | 0 | $176.50$ | 191 | 191 |
+| `14.50` {{key:+}} | 0 | 0 | $176.50$ | $205.50$ |
 
 ---
 
@@ -443,10 +443,9 @@ Over $95\%$ of all shots will land directly inside the scoring ring!
 
 In life science experiments, you grow bean sprouts under different light conditions (natural sunlight vs. red LED growth lamp), measuring stem height in millimeters every two days for two weeks.
 
-> **14-DAY BOTANY GROWTH TRACKING LOG**
->
-> Day (t):    2     4     6     8    10    12    14
-> Height h:  12    28    49    74   105   138   172  (mm)
+| **14-Day Botany Log** | **Day 2** | **Day 4** | **Day 6** | **Day 8** | **Day 10** | **Day 12** | **Day 14** |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Stem Height $h$ ($\text{mm}$)** | $12$ | $28$ | $49$ | $74$ | $105$ | $138$ | $172$ |
 
 ### Lab Mission 7.1: Daily Growth Velocity
 What was the sprout's average daily growth rate between Day 4 ($28\text{ mm}$) and Day 10 ($105\text{ mm}$)?
@@ -471,7 +470,7 @@ Calculate the total percent increase from Day 2 ($12\text{ mm}$) to Day 14 ($172
 | 12 | 0 | 0 | 0 | 12 |
 | {{key:ENTER}} | 0 | 0 | 12 | 12 |
 | 172 | 0 | 0 | 12 | 172 |
-| {{keycap:%CHG}} | 0 | 0 | 0 | $1333.33$ |
+| {{key:%CHG}} | 0 | 0 | 12 | $1333.33$ |
 
 ---
 
@@ -495,28 +494,24 @@ The standard loaf requires $500\text{ grams}$ of flour and yields 4 generous ser
 3. Salt ($2.0\%$): `{{res:sc6_09_applied_stem_labs_seq_10:keys}}` $\longrightarrow X = \mathbf{70\text{ grams}}$.
 4. Yeast ($1.5\%$): `{{res:sc6_09_applied_stem_labs_seq_11:keys}}` $\longrightarrow X = \mathbf{52.5\text{ grams}}$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `500` {{key:ENTER}} | 0 | 0 | 500 | 500 |
-| {{key:7}} {{key:×}} | 0 | 0 | 0 | 3500 |
-| `68` {{key:%}} | 0 | 0 | 0 | 2380 |
-| {{key:x⇄y}} | 0 | 0 | 2380 | 0 |
-| {{key:2}} {{key:%}} | 0 | 0 | 2380 | 0 |
-| {{key:x⇄y}} | 0 | 0 | 0 | 2380 |
-| `1.5` {{key:%}} | 0 | 0 | 0 | $35.7$ |
+| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes |
+| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
+| 01 | `500 {{key:ENTER}} 7 {{key:×}}` | 0 | 0 | 0 | 3500 | Total Flour base: $500\text{g} \times 7 = 3,500\text{g}$ |
+| 02 | `68 {{key:%}}` | 0 | 0 | 3500 | 2380 | Water: $68\%$ of $3,500\text{g} = 2,380\text{g}$ ($Y$ holds base $3,500\text{g}$) |
+| 03 | `{{key:C}} 2 {{key:%}}` | 0 | 0 | 3500 | 70 | Clear $X$ (`CLx`, lift disabled) then $2.0\%$ of $3,500\text{g} = 70\text{g}$ ($Y$ base preserved!) |
+| 04 | `{{key:C}} 1.5 {{key:%}}` | 0 | 0 | 3500 | 52.5 | Clear $X$ (`CLx`, lift disabled) then $1.5\%$ of $3,500\text{g} = 52.5\text{g}$ ($Y$ base preserved!) |
 
 ### Lab Mission 8.2: Scaling Down a Liquid Measuring Cup Recipe
 A pancake recipe requires $1\ \frac{3}{4}$ cups of milk for 8 pancakes. You are making breakfast for two (2 pancakes, scale factor $2/8 = 1/4$):
-- Enter milk: `{{key:1}} {{key:.}} 3 {{key:.}} 4 {{key:ENTER}}`.
+- Enter milk: `1 {{key:.}} 3 {{key:.}} 4 {{key:ENTER}}` ($1\ \frac{3}{4} = 7/4 = 1.75$).
 - Divide by 4: `{{key:4}} {{key:÷}}`.
-- Result: **`7/16`** cup of milk!
+- Result: **`7/16`** cup of milk ($0.4375$)!
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| . 1 . 3 . 4 | 0 | 0 | $0.3333$ | $4.0000$ |
-| {{key:ENTER}} | 0 | $0.3333$ | $4.0000$ | $4.0000$ |
-| {{key:4}} | 0 | $0.3333$ | $4.0000$ | 4 |
-| {{key:÷}} | 0 | 0 | $0.3333$ | $1.0000$ |
+| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes |
+| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
+| 01 | `1 . 3 . 4` | 0 | 0 | 0 | $1\ \frac{3}{4}$ | Enter mixed fraction $1\ \frac{3}{4}$ cups ($1.75$) |
+| 02 | `{{key:ENTER}}` | 0 | 0 | $1\ \frac{3}{4}$ | $1\ \frac{3}{4}$ | Push to operational stack |
+| 03 | `{{key:4}} {{key:÷}}` | 0 | 0 | 0 | **`7/16`** | Divide by 4; yields exact $\frac{7}{16}$ cup ($0.4375$) |
 
 ---
 
@@ -646,7 +641,7 @@ Mount an action camera ($m = 45\text{ grams}$) to the drone. The increased lift 
 | `5500` {{key:÷}} | 0 | 0 | 0 | $7.418$ |
 | `9.714` | 0 | 0 | $7.418$ | $9.714$ |
 | {{key:x⇄y}} | 0 | 0 | $9.714$ | $7.418$ |
-| {{keycap:%CHG}} | 0 | 0 | $9.714$ | $-23.64$ |
+| {{key:%CHG}} | 0 | 0 | $9.714$ | $-23.64$ |
 
 ---
 
@@ -700,7 +695,7 @@ Accumulate each energy interval using the SC-6 statistical accumulator `{{key:Σ
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{keycap:CLΣ}} | 0 | 0 | 0 | 0 |
+| {{key:CLΣ}} | 0 | 0 | 0 | 0 |
 | 2.5 {{key:ENTER}} 3 {{key:×}} | 0 | 0 | 0 | $7.5$ |
 | {{key:Σ+}} | 0 | 0 | 0 | $1.0000$ |
 | 5 {{key:ENTER}} 2 {{key:×}} | 0 | 0 | 0 | $10.0$ |
@@ -727,10 +722,11 @@ In Project 4, your experimental gravity was $g_{\text{exp}} = 9.7716\text{ m/s}^
 | {{key:ENTER}} | 0 | 0 | $9.7716$ | $9.7716$ |
 | `9.80665` | 0 | 0 | $9.7716$ | $9.80665$ |
 | {{key:-}} | 0 | 0 | 0 | $-0.03505$ |
-| {{key:ABS}} | 0 | 0 | 0 | $0.03505$ |
+| `{{key:|x|}}` | 0 | 0 | 0 | $0.03505$ |
 | `9.80665` | 0 | 0 | $0.03505$ | $9.80665$ |
 | {{key:÷}} | 0 | 0 | 0 | $0.003574$ |
 | `100` {{key:×}} | 0 | 0 | 0 | $0.357$ |
+
 *(You achieved an outstanding $0.36\%$ experimental error!)*
 
 ---
@@ -741,7 +737,7 @@ If a peg has diameter $d_{\text{peg}} = 10.00\text{ mm}$, what is the minimum ho
 $$d_{\text{hole}} = 10.00\text{ mm} + 2 \times 0.15\text{ mm} = 10.30\text{ mm}$$
 
 > **RPN Keystrokes:**
-> 10 {{key:ENTER}} {{key:.}} 15 {{key:ENTER}} {{key:2}} {{key:×}} {{key:+}}  ->  10.30 mm
+> `10 {{key:ENTER}} .15 {{key:ENTER}} 2 {{key:×}} {{key:+}}` $\to$ **$10.30\text{ mm}$**
 
 ---
 
@@ -801,7 +797,7 @@ Does the total maker space electrical load exceed the National Electrical Code (
 | {{key:+}} | 0 | 0 | 0 | 730 |
 | `80` {{key:+}} | 0 | 0 | 0 | 810 |
 | `120` {{key:÷}} | 0 | 0 | 0 | $6.75$ |
-| 15 {{key:ENTER}} 80 {{key:%}} | 0 | 0 | $6.75$ | $12.0$ |
+| 15 {{key:ENTER}} .80 {{key:×}} | 0 | 0 | $6.75$ | $12.0$ |
 | {{key:x⇄y}} {{key:-}} | 0 | 0 | 0 | $5.25$ |
 
 ---
@@ -860,6 +856,7 @@ This two-step sequence demonstrates optimal register reuse without memory spill.
 | **Scaling recipes by adding instead of multiplying** | Additive vs. multiplicative reasoning confusion. | *"If you make 7 loaves of bread instead of 1, you must MULTIPLY every single ingredient by 7, not add 7 cups!"* |
 | **Dividing gear ratios in reverse order** | Confusing driver gear (input) with driven gear (output). | *"Gear ratio is always Driven teeth divided by Driver teeth ($\text{Out} / \text{In}$)! Large driven gear means slower speed and more torque."* |
 | **Ignoring battery reserve safety margin** | Draining a LiPo battery down to 0% capacity. | *"Discharging a lithium battery below 20% permanently damages its chemistry! Always multiply capacity by 0.80 to find safe flight time."* |
+
 </div>
 
 ---
@@ -869,7 +866,7 @@ This two-step sequence demonstrates optimal register reuse without memory spill.
 The following 40 fully worked STEM challenges are organized across four cohesive Maker Expeditions covering physics, engineering, botany, culinary arts, and renewable energy. Every keystroke sequence assumes the SC-6 baseline mode `{{key:NUM}}`.
 
 <div class="admonition note">
-<p class="admonition-title">Hands-On Studio Proof: Blocks -> Calculator</p>
+<p class="admonition-title">Hands-On Studio Proof: Blocks $\to$ Calculator</p>
 
 Before calculating electrical power, pendulum periods, or recipe scaling factors, young makers verify formulas through physical instruments:
 1. **Vernier Calipers & 3D Extrusion (Station 1):** Use digital vernier calipers to measure real 1.75 mm filament across three points. Derive cross-sectional area $A_f = \pi r^2 = 0.02405\text{ cm}^2$ before estimating print mass ($m = V \times 1.24$) and checking spool costs with `{{key:$}}`.
@@ -882,10 +879,10 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 *You are the lead investigator in the Kitchen Invention Studio! In this expedition, you explore material density, circular cross-sections, LED indicator paper circuits, and precision pendulum timing—turning kitchen-table curiosity into rigorous physical measurements.*
 
 #### Challenge 9.1: PLA Filament Cross-Sectional Area ($r = 0.0875\text{ cm}$)
-- **Maker Lab Context:** You are calibrating your kitchen tabletop 3D printer for a new roll of bioplastic filament. Before you can calculate how much molten plastic squirts through the heated nozzle, you need to find the exact circular cross-sectional area of the solid plastic strand.
-- **Hands-On Physical Measurement:** Grip a digital vernier caliper and close the metal jaws gently across the midnight navy PLA filament. The digital readout confirms the diameter is exactly $1.75\text{ mm}$, giving a radius of $0.875\text{ mm} = 0.0875\text{ cm}$.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p01:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p01:value}}`**
-- **4-Register Stack Trace Table:**
+
+Calibrating a tabletop 3D printer for a new roll of Midnight Navy bioplastic filament begins with precision physical measurement. Before calculating how much molten plastic squirts through the heated $0.4\text{ mm}$ brass nozzle, you must determine the exact circular cross-sectional area of the solid plastic strand. Grip a digital vernier caliper and close the ground steel jaws gently across the filament; the digital readout confirms an outer diameter of exactly $1.75\text{ mm}$, giving a radius of $0.875\text{ mm} = 0.0875\text{ cm}$.
+
+Enter the radius, square it, and multiply by $\pi$ using the dedicated hardware constant key: `{{res:sc6_09_applied_stem_labs_p01:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p01:value}}`**. Notice how the four-register stack maintains complete intermediate visibility without scratch paper:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -894,48 +891,39 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `{{key:π}}` | 0 | 0 | $0.007656$ | $3.141593$ | Call the constant $\pi$; stack lifts squared radius into Register $Y$ |
 | `{{key:×}}` | 0 | 0 | 0 | $0.024053$ | Multiply $r^2 \times \pi$ to find circular cross-sectional area ($A_f \approx 0.02405\text{ cm}^2$) |
 
-- **Diagnostic Checkpoint:** Register $X$ displays `0.02405 cm²`. The cross-sectional area of standard $1.75\text{ mm}$ filament is approximately $\mathbf{0.02405\text{ cm}^2}$.
+Register $X$ confirms $A_f \approx \mathbf{0.02405\text{ cm}^2}$. This cross-sectional area serves as the fundamental dimensional multiplier for all subsequent extrusion volume calculations in your workshop.
 
 ---
 
 #### Challenge 9.2: Extruded Volume for Sliced Model ($L = 1,200\text{ cm}$)
-- **Maker Lab Context:** Your slicer software previews a custom spice-jar funnel for kitchen experiments, reporting that the print requires $1,200\text{ cm}$ ($12\text{ meters}$) of filament. Determine the total cubic centimeters of solid plastic in the funnel.
-- **Hands-On Physical Measurement:** Unspool a $1\text{ meter}$ reference ribbon of scrap filament from the workbench spool holder. Imagine twelve of these meter lengths bundled together into the solid walls of your funnel.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p02:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p02:value}}`**
-- **Stack Flow:** Tap `.02405 {{key:ENTER}} 1200 {{key:×}}` -> (T=0, Z=0, Y=0, X=28.86). Multiply area by length to calculate total volume ($V = A_f \times L$).
 
+Your slicing software previews a custom spice-jar funnel for kitchen experiments, reporting that the print requires $1,200\text{ cm}$ ($12\text{ meters}$) of extruded filament. To conceptualize this physical length, unspool a $1\text{ meter}$ reference ribbon of scrap filament from the workbench spool holder and imagine twelve of these meter ribbons bundled together into the solid walls of your funnel.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `28.86 cm³`. Slicing $1,200\text{ cm}$ of filament yields exactly $\mathbf{28.86\text{ cm}^3}$ of extruded volume.
+Evaluate the extruded volume with `{{res:sc6_09_applied_stem_labs_p02:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p02:value}}`** `(T=0, Z=0, Y=0, X=28.86)`. Multiplying cross-sectional area by length ($V = A_f \times L$) produces exactly $\mathbf{28.86\text{ cm}^3}$ of extruded volume, establishing the solid volume of plastic required for the print.
 
 ---
 
 #### Challenge 9.3: Kitchen Model Mass from Density ($\rho = 1.24\text{ g/cm}^3$)
-- **Maker Lab Context:** Now that you know your funnel volume is $28.86\text{ cm}^3$, you must convert that volume into mass in grams so you can verify the finished print on your kitchen gram scale.
-- **Hands-On Physical Measurement:** Place a $1\text{ cm} \times 1\text{ cm} \times 1\text{ cm}$ solid PLA test cube on your digital kitchen scale. Notice it reads $1.24\text{ grams}$, establishing the density $\rho = 1.24\text{ g/cm}^3$.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p03:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p03:value}}`**
-- **Stack Flow:** Tap `28.86 {{key:ENTER}} 1.24 {{key:×}}` -> (T=0, Z=0, Y=0, X=35.7864). Multiply volume by density to find model mass ($m = V \times \rho$).
 
+With the funnel volume established at $28.86\text{ cm}^3$, you must convert that cubic volume into mass in grams so you can verify the finished print on your kitchen gram scale. Placing a $1\text{ cm} \times 1\text{ cm} \times 1\text{ cm}$ solid PLA calibration cube on your digital balance yields $1.24\text{ grams}$, establishing the density $\rho = 1.24\text{ g/cm}^3$.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `35.79 g`. The finished bioplastic kitchen funnel will weigh approximately $\mathbf{35.79\text{ grams}}$.
+Calculate the total part mass using `{{res:sc6_09_applied_stem_labs_p03:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p03:value}}`** `(T=0, Z=0, Y=0, X=35.7864)`. Multiplying volume by polymer density ($m = V \times \rho$) shows that the finished bioplastic funnel will weigh approximately $\mathbf{35.79\text{ grams}}$.
 
 ---
 
 #### Challenge 9.4: Spool Material Cost for Kitchen Print ($\$0.02/\text{g}$)
-- **Maker Lab Context:** You purchased a $1,000\text{ gram}$ spool of corn-based PLA for $\$20.00$, which works out to $\$0.02$ per gram. Calculate the exact material cost to print your $35.79\text{ gram}$ kitchen funnel.
-- **Hands-On Physical Measurement:** Set two shiny copper pennies next to each $1\text{ gram}$ calibration weight on your scale pan to visualize the $2\text{ cents}$ per gram material cost ratio.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p04:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p04:value}}`**
-- **Stack Flow:** Tap `35.79 {{key:ENTER}} .02 {{key:×}} {{key:$}}` -> (T=0, Z=0, Y=0, X=0.7158). Format active register as two-decimal currency.
 
+Your maker space purchased a $1,000\text{ gram}$ spool of corn-based PLA for $\$20.00$, establishing an exact material cost ratio of $\$0.02$ per gram. Setting two shiny copper pennies next to each $1\text{ gram}$ calibration weight on your scale pan provides a concrete visual of this unit cost before committing the print job.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `$0.72`. Fabricating the custom funnel costs just $\mathbf{\$0.72}$ in raw bioplastic.
+Compute the fabrication expense with `{{res:sc6_09_applied_stem_labs_p04:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p04:value}}`** `(T=0, Z=0, Y=0, X=0.7158)`. Formatting the result in two-decimal currency mode confirms that fabricating the custom spice funnel costs just $\mathbf{\$0.72}$ in raw bioplastic.
 
 ---
 
 #### Challenge 9.5: Red Indicator LED Current-Limiting Resistor on 3V ($V_f = 1.8\text{V}, I_f = 15\text{mA}$)
-- **Maker Lab Context:** You are building a backlit density-column stage for your kitchen test tubes. A red indicator LED has a forward voltage drop of $1.8\text{ V}$ and draws $15\text{ mA}$. Calculate the protective series resistor needed on a $3.0\text{ V}$ CR2032 coin cell.
-- **Hands-On Physical Measurement:** Place a CR2032 coin cell on the desk and touch your multimeter test probes to its terminals. The meter reads $3.0\text{ V}$, while the LED datasheet specifies $1.8\text{ V}$ forward drop.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p05:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p05:value}}`**
-- **4-Register Stack Trace Table:**
+
+To build a backlit density-column stage for kitchen test tubes, you construct a paper circuit using self-adhesive copper tape and a CR2032 lithium coin cell. Touching multimeter test leads across the battery terminals confirms a supply potential of $3.0\text{ V}$, while the red indicator LED datasheet specifies a forward drop of $1.8\text{ V}$ at an operating current of $15\text{ mA}$ ($0.015\text{ A}$).
+
+Apply Ohm's Law to calculate the required series resistor: `{{res:sc6_09_applied_stem_labs_p05:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p05:value}}`**. The stack first determines the excess headroom voltage before dividing by current:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -946,15 +934,15 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `.015` | 0 | 0 | $1.2$ | $0.015$ | Key in operating current in amperes ($15\text{ mA} = 0.015\text{ A}$) |
 | `{{key:÷}}` | 0 | 0 | 0 | 80 | Divide $V_R$ by $I$ via Ohm's law ($R = V / I = 80\,\Omega$) |
 
-- **Diagnostic Checkpoint:** Register $X$ displays `80.0 Ω`. The paper circuit requires an $\mathbf{80.0\,\Omega}$ current-limiting resistor.
+Register $X$ displays $80.0\,\Omega$, proving that the paper circuit requires an $\mathbf{80.0\,\Omega}$ current-limiting resistor to protect the semiconductor diode junction from burning out.
 
 ---
 
 #### Challenge 9.6: Thermal Power Dissipation in $80\,\Omega$ Resistor ($15\text{mA}$)
-- **Maker Lab Context:** Before taping the resistor down onto paper, verify that it will not overheat. Using Joule's Law ($P = I^2 R$), calculate the power dissipated as heat in the $80\,\Omega$ resistor at $15\text{ mA}$.
-- **Hands-On Physical Measurement:** Examine a tiny $1/4\text{-watt}$ ($250\text{ mW}$) through-hole resistor. As long as our dissipated power stays well below $250\text{ mW}$, the paper circuit remains cool to the touch.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p06:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p06:value}}`**
-- **4-Register Stack Trace Table:**
+
+Before taping the small carbon-film resistor down to construction paper, you must verify that it will not dissipate excessive heat. Examining a standard miniature through-hole resistor confirms it has a $1/4\text{-watt}$ ($250\text{ mW}$) thermal rating; as long as dissipated power remains safely below this threshold, the paper project stays cool to the touch.
+
+Evaluate Joule's Law ($P = I^2 R$) using Superpower 4 (`{{key:LASTX}}`) to recall the operating current without re-typing: `{{res:sc6_09_applied_stem_labs_p06:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p06:value}}`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -963,43 +951,31 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `{{key:x²}}` | 0 | 0 | 80 | $2.2500 \times 10^{-4}$ | Square current: $I^2 = (0.015)^2 = 0.000225\text{ A}^2$ |
 | `{{key:×}}` | 0 | 0 | 0 | $0.018$ | Multiply $R \times I^2$ to calculate dissipated power ($P = 0.018\text{ W}$) |
 
-- **Diagnostic Checkpoint:** Register $X$ displays `0.018 W (18 mW)`. The resistor dissipates only $\mathbf{18\text{ mW}}$, safely below the $250\text{ mW}$ limit.
+Register $X$ displays $0.018\text{ W}$ ($\mathbf{18\text{ mW}}$). Because $18\text{ mW}$ is less than a tenth of the $250\text{ mW}$ ceiling, the resistor will stay completely safe and cool against the paper card.
 
 ---
 
 #### Challenge 9.7: High-Intensity Green Inspection LED on 9V ($V_f = 2.2\text{V}, I_f = 20\text{mA}$)
-- **Maker Lab Context:** To inspect clarity in homemade kombucha fermentation jars, you assemble a high-intensity green flashlight powered by a $9\text{V}$ battery. Calculate the required resistor for $V_f = 2.2\text{ V}$ and $I_f = 20\text{ mA}$.
-- **Hands-On Physical Measurement:** Snap a $9\text{V}$ battery clip onto the terminal. Test with multimeter leads to confirm $9.0\text{ V}$ open-circuit potential before inserting the green LED.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p07:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p07:value}}`**
-- **Stack Flow:** Tap `{{key:9}} {{key:ENTER}} 2.2 {{key:-}} .020 {{key:÷}}` -> (T=0, Z=0, Y=0, X=340). Divide voltage by current via Ohm's law ($R = 6.8 / 0.020 = 340\,\Omega$).
 
+To inspect clarity in homemade kombucha fermentation jars, you assemble a high-intensity green flashlight powered by a $9\text{V}$ alkaline battery. Snapping a heavy-duty battery clip onto the terminal and probing with multimeter leads confirms a $9.0\text{ V}$ open-circuit potential, while the green LED specifies a forward drop of $2.2\text{ V}$ at an operating current of $20\text{ mA}$ ($0.020\text{ A}$).
 
-- **Diagnostic Checkpoint:** Register $X$ displays `340.0 Ω`. The 9V green inspection light requires a $\mathbf{340.0\,\Omega}$ resistor.
+Determine the required current-limiting resistor with `{{res:sc6_09_applied_stem_labs_p07:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p07:value}}`** `(T=0, Z=0, Y=0, X=340)`. Subtracting the forward drop isolates the $6.8\text{ V}$ resistor voltage headroom, and dividing by current yields an exact required resistance of $\mathbf{340.0\,\Omega}$.
 
 ---
 
 #### Challenge 9.8: Power Rating for $340\,\Omega$ Resistor at $20\text{mA}$
-- **Maker Lab Context:** Calculate the power rating for the $340\,\Omega$ inspection light resistor to decide whether a standard $1/4\text{ W}$ ($0.25\text{ W}$) resistor will handle the load.
-- **Hands-On Physical Measurement:** Compare the size of a $1/4\text{ W}$ resistor to a larger $1/2\text{ W}$ ceramic resistor. Check if the computed wattage fits inside the $0.25\text{ W}$ thermal threshold.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p08:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p08:value}}`**
-- **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `{{key:9}} {{key:ENTER}} 2.2 {{key:-}} .020 {{key:÷}}` | 0 | 0 | 0 | 340 | Compute resistance $R = 340\,\Omega$; current $0.020\text{ A}$ saved in `LASTX` |
-| `{{key:LASTX}}` | 0 | 0 | 340 | $0.02$ | Recall current $I = 0.020\text{ A}$ instantly from `LASTX` |
-| `{{key:x²}}` | 0 | 0 | 340 | $4.0000 \times 10^{-4}$ | Square current: $I^2 = (0.020)^2 = 0.0004\text{ A}^2$ |
-| `{{key:×}}` | 0 | 0 | 0 | $0.136$ | Multiply $R \times I^2$ to find thermal dissipation in watts |
+With the inspection light resistance established at $340\,\Omega$, check whether a standard $1/4\text{ W}$ ($0.25\text{ W} = 250\text{ mW}$) resistor can safely handle the thermal load under continuous operation. Comparing the tiny $1/4\text{ W}$ package against a larger ceramic power resistor underscores the importance of pre-flight thermal budgeting.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `0.136 W (136 mW)`. At $\mathbf{136\text{ mW}}$, the circuit is well within a $250\text{ mW}$ ($1/4\text{ W}$) resistor's limit.
+Evaluate dissipated power using `{{key:LASTX}}`: `{{res:sc6_09_applied_stem_labs_p08:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p08:value}}`** `(T=0, Z=0, Y=0, X=0.136)`. The calculation yields $0.136\text{ W}$ ($\mathbf{136\text{ mW}}$); because this is comfortably below $250\text{ mW}$, a standard $1/4\text{ W}$ resistor handles the inspection beam with ample margin.
 
 ---
 
 #### Challenge 9.9: Kitchen Timer Pendulum Period ($L = 0.50\text{ m}, g = 9.8\text{ m/s}^2$)
-- **Maker Lab Context:** You are building a mechanical egg timer using a weighted string pendulum suspended from a cabinet knob. Find the swing period $T = 2\pi \sqrt{L/g}$ for a string length of $0.50\text{ meters}$ under standard gravity ($9.8\text{ m/s}^2$).
-- **Hands-On Physical Measurement:** Suspend a steel washer from a $50\text{ cm}$ piece of baker's twine. Pull it back $10^\circ$ and release, timing 10 swings with a stopwatch to compare against your stack calculation.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p09:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p09:value}}`**
-- **4-Register Stack Trace Table:**
+
+You are building an escapement for a mechanical kitchen egg timer using a weighted string pendulum suspended from a cabinet knob. Suspending a steel washer from a $50\text{ cm}$ ($0.50\text{ m}$) strand of baker's twine and timing 10 swings with a stopwatch provides an empirical benchmark to compare against Galileo's theoretical period $T = 2\pi\sqrt{L/g}$.
+
+Calculate the oscillation period using the SC-6 square root primitive: `{{res:sc6_09_applied_stem_labs_p09:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p09:value}}`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -1011,15 +987,15 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `{{key:√x}}` | 0 | 0 | $6.283185$ | $0.225877$ | Take square root: $\sqrt{L/g} \approx 0.225877$ |
 | `{{key:×}}` | 0 | 0 | 0 | $1.419227$ | Multiply by $2\pi$ to obtain oscillation period ($T \approx 1.42\text{ s}$) |
 
-- **Diagnostic Checkpoint:** Register $X$ displays `1.42 seconds`. A $50\text{ cm}$ pendulum takes $\mathbf{1.42\text{ seconds}}$ for one complete back-and-forth oscillation.
+Register $X$ confirms an oscillation period of $\mathbf{1.42\text{ seconds}}$. One full cycle takes $1.42\text{ s}$, meaning each single half-swing tick advances the escapement gear every $0.71\text{ seconds}$.
 
 ---
 
 #### Challenge 9.10: Engineering a Bread-Kneading Metronome Pendulum ($T = 1.50\text{ s}$)
-- **Maker Lab Context:** To keep an even rhythm while kneading sourdough bread, you want a metronome pendulum that ticks with a period of exactly $1.50\text{ seconds}$. Rearranging the pendulum formula gives $L = g T^2 / (4\pi^2)$. Find required string length $L$.
-- **Hands-On Physical Measurement:** Measure baker's twine against a wooden meter stick. Cut the twine slightly longer than the computed length so you can tie a loop around your plumb bob.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p10:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p10:value}}`**
-- **4-Register Stack Trace Table:**
+
+To maintain a steady rhythmic cadence while hand-kneading sourdough loaves, you decide to construct a metronome pendulum that ticks with a period of exactly $1.50\text{ seconds}$. Rearranging the pendulum harmonic formula to solve for cord length gives $L = g T^2 / (4\pi^2)$. Measuring baker's twine against a meter stick allows you to cut the line to the precise theoretical dimension.
+
+Execute the inverted formula on the stack: `{{res:sc6_09_applied_stem_labs_p10:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p10:value}}`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -1034,7 +1010,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `{{key:×}}` | 0 | 0 | $22.05$ | $39.478418$ | Multiply $4 \times \pi^2 \approx 39.478418$ |
 | `{{key:÷}}` | 0 | 0 | 0 | $0.558533$ | Divide numerator by denominator to compute length ($L \approx 0.559\text{ m}$) |
 
-- **Diagnostic Checkpoint:** Register $X$ displays `0.559 meters`. You must trim the string to $\mathbf{0.559\text{ meters}}$ ($55.9\text{ cm}$) for a $1.50\text{-second}$ cadence.
+Register $X$ displays $0.559\text{ meters}$, confirming that trimming your suspension twine to exactly $\mathbf{0.559\text{ meters}}$ ($55.9\text{ cm}$) delivers the desired $1.50\text{-second}$ baker's tempo.
 
 ---
 
@@ -1042,112 +1018,82 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 *You are deploying field equipment for the Solar Power & Renewable Energy Lab! In this expedition, you track thermal gains in solar cookers, calibrate seed-launching catapult trajectories, measure greenhouse sprout velocities, and scale high-energy bakery nutrition for field researchers.*
 
 #### Challenge 9.11: Pizza-Box Solar Oven Heating Rate ($20^\circ \to 65^\circ\text{C}$ in $15\text{ min}$)
-- **Maker Lab Context:** You build a cardboard pizza-box solar oven lined with aluminum foil reflectors. A digital probe thermometer placed inside shows the temperature climbing from $20^\circ\text{C}$ to $65^\circ\text{C}$ during a $15\text{-minute}$ exposure under the noon sun. Compute the heating velocity in degrees per minute.
-- **Hands-On Physical Measurement:** Insert a digital STEM probe thermometer through a small hole in the clear plastic wrap window of the solar cooker. Watch the digital numbers tick upward in real sunlight.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p11:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p11:value}}`**
-- **Stack Flow:** Tap `65 {{key:ENTER}} 20 {{key:-}} 15 {{key:÷}}` -> (T=0, Z=0, Y=0, X=3). Divide temperature rise by time to compute heating rate ($45 / 15 = 3.00^\circ\text{C/min}$).
 
+Your field crew builds a cardboard pizza-box solar oven lined with crumpled newspaper insulation and reflective aluminum foil wings. Inserting a digital probe thermometer through the clear plastic glazing at solar noon reveals the interior absorber temperature climbing from $20^\circ\text{C}$ to $65^\circ\text{C}$ over a $15\text{-minute}$ exposure.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `3.00 °C/min`. The solar oven heats up at an impressive $\mathbf{3.00^\circ\text{C/min}}$.
+Calculate the heating velocity using `{{res:sc6_09_applied_stem_labs_p11:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p11:value}}`** `(T=0, Z=0, Y=0, X=3)`. Subtracting ambient temperature isolates the $45^\circ\text{C}$ thermal gain, and dividing by 15 minutes yields a brisk heating rate of $\mathbf{3.00^\circ\text{C/min}}$.
 
 ---
 
 #### Challenge 9.12: Solar Oven Temperature Percent Increase ($20^\circ \to 65^\circ\text{C}$)
-- **Maker Lab Context:** To evaluate how efficiently your solar reflectors amplify ambient energy, calculate the percentage thermal increase achieved by your solar cooker over the starting temperature.
-- **Hands-On Physical Measurement:** Place one thermometer in the ambient outdoor shade ($20^\circ\text{C}$) and one inside the solar box ($65^\circ\text{C}$). Compare the column heights on liquid-in-glass lab thermometers.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p12:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p12:value}}`**
-- **Stack Flow:** Tap `20 {{key:ENTER}} 65 {{key:%CHG}}` -> (T=0, Z=0, Y=0, X=225). Compute percent change: $(65 - 20) / 20 \times 100\% = +225.0\%$.
 
+To measure how effectively your foil reflectors concentrate sunlight compared to ambient shade, calculate the percentage thermal increase achieved by the cooker over its starting temperature. Comparing side-by-side thermometers placed in outdoor shade ($20^\circ\text{C}$) and inside the solar cooker ($65^\circ\text{C}$) visually highlights this solar amplification.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `+225.0%`. The solar oven achieved a $\mathbf{+225.0\%}$ thermal boost over ambient air.
+Evaluate the percentage surge with `{{res:sc6_09_applied_stem_labs_p12:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p12:value}}`** `(T=0, Z=0, Y=20, X=225)`. In RPN, `{{key:%CHG}}` computes $(X_{\text{new}} - Y_{\text{base}}) / Y_{\text{base}} \times 100\%$ while preserving the baseline temperature in Register $Y$, confirming an outstanding $\mathbf{+225.0\%}$ thermal boost.
 
 ---
 
 #### Challenge 9.13: Seed-Bomber Catapult Mean Launch Distance ($150, 162, 156\text{ cm}$)
-- **Maker Lab Context:** You are using an elastic catapult to launch wild flower seed balls into a community solar garden. Over three test launches, you measure distances of $150\text{ cm}$, $162\text{ cm}$, and $156\text{ cm}$. Find the mean launch distance.
-- **Hands-On Physical Measurement:** Unroll a metric surveyor tape along the playground lawn. Stake colored flags at $150\text{ cm}$, $162\text{ cm}$, and $156\text{ cm}$ to visualize the spread of your seed balls.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p13:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p13:value}}`**
-- **Stack Flow:** Tap `{{key:CLΣ}} 150 {{key:Σ+}} 162 {{key:Σ+}} 156 {{key:Σ+}} {{key:x̄}}` -> (T=0, Z=0, Y=0, X=156). Recall arithmetic mean $\bar{x} = 156.00\text{ cm}$ (sample size $n=3$ in $Z$).
 
+To reseed a barren community garden plot, you deploy an elastic lever catapult that launches clay wildflower seed balls. Staking colored survey flags along the playground lawn marks landing coordinates across three test launches at $150\text{ cm}$, $162\text{ cm}$, and $156\text{ cm}$.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `156.00 cm`. The average launch distance across three trials is $\mathbf{156.00\text{ cm}}$.
+Accumulate the launches into hardware statistical registers with `{{res:sc6_09_applied_stem_labs_p13:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p13:value}}`** `(T=0, Z=0, Y=0, X=156)`. Tapping the mean key recalls the average launch distance of exactly $\mathbf{156.00\text{ cm}}$ across the three trials.
 
 ---
 
 #### Challenge 9.14: Catapult Consistency & Mean Absolute Deviation (MAD)
-- **Maker Lab Context:** How consistent is your seed catapult? Calculate the Mean Absolute Deviation (MAD) of the three launch distances ($150, 162, 156\text{ cm}$) around the $156\text{ cm}$ mean to measure launch variability.
-- **Hands-On Physical Measurement:** Use physical counting tiles to measure the distance from each flag to the center line: $|150-156| = 6\text{ tiles}$, $|162-156| = 6\text{ tiles}$, and $|156-156| = 0\text{ tiles}$.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p14:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p14:value}}`**
-- **Stack Flow:** Tap `{{key:CLΣ}} 150 {{key:Σ+}} 162 {{key:Σ+}} 156 {{key:Σ+}} {{key:MAD}}` -> (T=0, Z=0, Y=0, X=3). Calculate Mean Absolute Deviation: $\text{MAD} = (6 + 6 + 0) / 3 = 4.00\text{ cm}$.
 
+Field accuracy requires understanding launch dispersion around the target line. By placing counting tiles along a tape measure, you find the distances from each landing flag to the $156\text{ cm}$ center: $|150-156| = 6\text{ cm}$, $|162-156| = 6\text{ cm}$, and $|156-156| = 0\text{ cm}$.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `4.00 cm`. The catapult demonstrates high consistency with a MAD of only $\mathbf{4.00\text{ cm}}$.
+Evaluate catapult consistency using `{{res:sc6_09_applied_stem_labs_p14:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p14:value}}`** `(T=0, Z=0, Y=3, X=4)`. Averaging the deviations demonstrates high mechanical consistency, with a Mean Absolute Deviation of only $\mathbf{4.00\text{ cm}}$ around the center target.
 
 ---
 
 #### Challenge 9.15: Solar Nursery Bean Sprout Growth Velocity ($15\text{ mm} \to 75\text{ mm}$ in $5\text{ days}$)
-- **Maker Lab Context:** Inside your solar heated seedling nursery, a pole bean sprout shoots up from $15\text{ mm}$ to $75\text{ mm}$ over a $5\text{-day}$ observation period. Compute its average vertical growth rate in millimeters per day.
-- **Hands-On Physical Measurement:** Align a clear plastic millimeter ruler alongside the tender green sprout each morning, recording the height in your field notebook.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p15:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p15:value}}`**
-- **Stack Flow:** Tap `75 {{key:ENTER}} 15 {{key:-}} {{key:5}} {{key:÷}}` -> (T=0, Z=0, Y=0, X=12). Divide growth by days to obtain velocity ($60 / 5 = 12.0\text{ mm/day}$).
 
+Inside the solar heated greenhouse nursery, tender pole bean seedlings are monitored daily. Aligning a clear millimeter ruler against the main stem confirms that a test sprout grew from an initial height of $15\text{ mm}$ to $75\text{ mm}$ over a five-day growth trial.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `12.0 mm/day`. The bean seedling grew at a brisk rate of $\mathbf{12.0\text{ mm/day}}$.
+Compute the daily growth rate using `{{res:sc6_09_applied_stem_labs_p15:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p15:value}}`** `(T=0, Z=0, Y=0, X=12)`. The stack subtracts baseline height to reveal $60\text{ mm}$ of total expansion, and dividing by 5 days yields an average vertical growth velocity of $\mathbf{12.0\text{ mm/day}}$.
 
 ---
 
 #### Challenge 9.16: Total Seedling Height Percentage Surge ($15\text{ mm} \to 75\text{ mm}$)
-- **Maker Lab Context:** To determine how vigorously the bean sprout responded to greenhouse warmth, calculate the overall percentage increase in height over the five days.
-- **Hands-On Physical Measurement:** Stack 15 single snap cubes to represent Day 1 height, and build a second tower of 75 cubes for Day 5. Observe that the growth of 60 cubes is exactly four times the original 15-cube height!
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p16:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p16:value}}`**
-- **Stack Flow:** Tap `15 {{key:ENTER}} 75 {{key:%CHG}}` -> (T=0, Z=0, Y=0, X=400). Compute percent change: $(75 - 15) / 15 \times 100\% = +400.0\%$.
 
+To assess vegetative vigor under passive solar heating, you calculate the overall percentage surge in seedling height. Modeling at a $1:5$ scale with your 24-tile kit—placing a 3-tile stack ($15\text{ mm}$ at $5\text{ mm/tile}$) beside a 15-tile stack ($75\text{ mm}$)—provides an immediate physical proof that the $60\text{ mm}$ gain is four times the starting height.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `+400.0%`. The sprout surged by $\mathbf{+400.0\%}$ over its starting height.
+Determine the percentage expansion with `{{res:sc6_09_applied_stem_labs_p16:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p16:value}}`** `(T=0, Z=0, Y=15, X=400)`. The single-tap percent change evaluation shows that the seedling surged by $\mathbf{+400.0\%}$ over its initial height.
 
 ---
 
 #### Challenge 9.17: Field Bakery Scaling: Flour for 12 Loaves ($450\text{ g}$ per loaf)
-- **Maker Lab Context:** Your solar research team needs fresh sourdough bread for a weekend campout. If a single artisan loaf requires $450\text{ grams}$ of unbleached flour, how much total flour is needed for a batch of 12 loaves?
-- **Hands-On Physical Measurement:** Scoop $450\text{ grams}$ of flour into a mixing bowl on a tare-zeroed digital scale. Multiply by 12 to find the bulk sack requirement.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p17:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p17:value}}`**
-- **Stack Flow:** Tap `450 {{key:ENTER}} 12 {{key:×}}` -> (T=0, Z=0, Y=0, X=5400). Multiply to calculate total batch flour ($450 \times 12 = 5,400\text{ g}$).
 
+Your solar research expedition needs hearty fresh sourdough bread for a weekend field encampment. A single artisan loaf formulation requires $450\text{ grams}$ of stone-ground flour; you need to scale the recipe to bake a 12-loaf batch for the entire team. Scooping flour into a large mixing tub on a tare-zeroed scale connects bulk pantry purchasing directly to recipe scaling.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `5,400 grams`. The 12-loaf field bake requires exactly $\mathbf{5,400\text{ grams}}$ ($5.4\text{ kg}$) of flour.
+Compute the bulk flour requirement with `{{res:sc6_09_applied_stem_labs_p17:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p17:value}}`** `(T=0, Z=0, Y=0, X=5400)`. Multiplying loaf flour by batch size yields exactly $\mathbf{5,400\text{ grams}}$ ($5.4\text{ kg}$) of flour for the field bake.
 
 ---
 
 #### Challenge 9.18: Artisan Hydration: Water at $65\%$ for $5,400\text{ g}$ Flour
-- **Maker Lab Context:** Master bakers calculate all recipe ingredients as a percentage of the total flour weight (baker's percentages). For an open, airy crumb, the recipe calls for $65\%$ hydration water. Find the required water mass for $5,400\text{ g}$ of flour.
-- **Hands-On Physical Measurement:** Place a glass measuring pitcher on the scale, tare the display to zero, and pour water until the digital scale reads the computed gram target.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p18:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p18:value}}`**
-- **Stack Flow:** Tap `5400 {{key:ENTER}} 65 {{key:%}}` -> (T=0, Z=0, Y=0, X=3510). Compute $65\%$ of $5,400$: water mass is $3,510\text{ grams}$.
 
+Professional bakers express all ingredient quantities as a percentage of total flour weight (baker's percentages). To achieve an open, tender crumb structure without a sticky dough, the sourdough recipe specifies $65\%$ hydration water. Pouring water into a tared measuring pitcher on your digital gram scale lets you match the exact water weight.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `3,510 grams`. You need $\mathbf{3,510\text{ grams}}$ ($3.51\text{ liters}$) of water for $65\%$ hydration.
+Calculate hydration water using `{{res:sc6_09_applied_stem_labs_p18:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p18:value}}`** `(T=0, Z=0, Y=5400, X=3510)`. Tapping `{{key:%}}` calculates $65\%$ of $5,400$ while preserving the flour base in Register $Y$, confirming you need $\mathbf{3,510\text{ grams}}$ ($3.51\text{ liters}$) of water.
 
 ---
 
 #### Challenge 9.19: Baker's Salt Percentage at $2\%$ for $5,400\text{ g}$ Flour
-- **Maker Lab Context:** In artisan bread baking, salt tightens gluten strands and regulates yeast fermentation at exactly $2.0\%$ of flour weight. Calculate the mass of fine sea salt required for the $5,400\text{ g}$ flour batch.
-- **Hands-On Physical Measurement:** Place a small ceramic pinch bowl on your sensitive gram scale and measure out fine sea salt crystals until the display matches the calculator's result.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p19:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p19:value}}`**
-- **Stack Flow:** Tap `5400 {{key:ENTER}} {{key:2}} {{key:%}}` -> (T=0, Z=0, Y=0, X=108). Compute $2\%$ of $5,400$: salt mass is $108\text{ grams}$.
 
+In artisan bread chemistry, fine salt tightens gluten proteins and moderates wild yeast activity, standardizing at exactly $2.0\%$ of flour mass. Weighing out salt crystals into a small pinch bowl on a sensitive gram scale provides a concrete lesson in precision chemical formulation.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `108 grams`. The recipe requires $\mathbf{108\text{ grams}}$ of fine sea salt.
+Find the salt mass with `{{res:sc6_09_applied_stem_labs_p19:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p19:value}}`** `(T=0, Z=0, Y=5400, X=108)`. Register $X$ confirms you need $\mathbf{108\text{ grams}}$ of salt, while Register $Y$ continues to hold the $5,400\text{ g}$ flour base ready for further recipe scaling.
 
 ---
 
 #### Challenge 9.20: High-Energy Trail Cookies: Scaling $2\ \frac{1}{4}$ Cups Sugar $\times 4$
-- **Maker Lab Context:** To fuel the expedition crew on a mountain hike, you scale up a high-energy oatmeal cookie recipe by a factor of 4. The base recipe calls for $2\ \frac{1}{4}$ cups of brown sugar. Find the total sugar needed.
-- **Hands-On Physical Measurement:** Use physical nesting measuring cups: two whole 1-cup scoops and one 1/4-cup scoop. Lay out 4 identical sets on the counter.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p20:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p20:value}}`**
-- **Stack Flow:** Tap `2 {{key:.}} 1 {{key:.}} 4 {{key:ENTER}} {{key:4}} {{key:×}} {{key:a ᵇ/c}}` -> (T=0, Z=0, Y=2, X=1). Display result as mixed/whole number format.
 
+To supply high-energy snacks for an uphill ridge hike, you quadruple an energy cookie recipe. The base recipe requires $2\ \frac{1}{4}$ cups of dark brown sugar. Stacking four sets of nesting dry measuring cups (two 1-cup scoops and one 1/4-cup scoop each) visually demonstrates the fourfold scaling factor.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `9 cups`. Scaling the cookie recipe by 4 requires exactly $\mathbf{9\text{ cups}}$ of brown sugar.
+Execute mixed-fraction multiplication on the stack: `{{res:sc6_09_applied_stem_labs_p20:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p20:value}}`** `(T=0, Z=0, Y=0, X=9)`. The SC-6 evaluates the mixed numeral and displays the scaled batch amount as exactly $\mathbf{9\text{ cups}}$ of brown sugar.
 
 ---
 
@@ -1155,32 +1101,26 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 *You are the chief mechanical engineer in the 3D Printing & Rapid Prototyping Workshop! In this expedition, you design reduction gear trains, calibrate stepper motor speeds, test hydraulic syringe multipliers, size drone battery flight times, and angle solar tracker brackets for peak wattage.*
 
 #### Challenge 9.21: Direct-Drive Extruder Gear Reduction ($16\text{T} \to 64\text{T}$)
-- **Maker Lab Context:** You are printing custom gears for a direct-drive 3D printer extruder to push stiff filament without slipping. The small motor pinion has 16 teeth and drives a large 64-tooth gear. Find the reduction gear ratio.
-- **Hands-On Physical Measurement:** Count the teeth on two interlocking 3D-printed gears with your fingertips, marking tooth #1 with a silver felt-tip pen. Notice you must turn the small gear 4 full revolutions to rotate the big gear once.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p21:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p21:value}}`**
-- **Stack Flow:** Tap `64 {{key:ENTER}} 16 {{key:÷}}` -> (T=0, Z=0, Y=0, X=4). Divide driven by driver teeth to obtain gear ratio ($64 / 16 = 4.0$).
 
+To push stiff specialty filaments through a 3D printer hotend without stripping the plastic, you 3D-print a custom gear reduction for the direct-drive extruder. The small motor pinion gear has 16 teeth and meshes into a large 64-tooth driven gear. Marking tooth #1 with a silver felt-tip pen reveals that the motor must turn 4 complete revolutions to turn the large gear once.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `4.0 : 1`. The extruder gear train provides a $\mathbf{4.0 : 1}$ mechanical reduction ratio.
+Calculate the mechanical reduction ratio: `{{res:sc6_09_applied_stem_labs_p21:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p21:value}}`** `(T=0, Z=0, Y=0, X=4)`. Dividing driven teeth by driver teeth delivers an exact $\mathbf{4.0 : 1}$ gear reduction ratio, trading rotational speed for filament-gripping torque.
 
 ---
 
 #### Challenge 9.22: Stepper Motor Output RPM ($1,200\text{ RPM} \div 4$)
-- **Maker Lab Context:** The NEMA-17 stepper motor spins at $1,200\text{ RPM}$. With the $4:1$ gear reduction from Challenge 9.21, calculate the final rotational speed of the filament drive hobbed wheel.
-- **Hands-On Physical Measurement:** Feel the output shaft while adjusting motor stepping pulses. The output shaft spins at one-quarter the motor speed with four times the gripping torque.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p22:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p22:value}}`**
-- **Stack Flow:** Tap `1200 {{key:ENTER}} {{key:4}} {{key:÷}}` -> (T=0, Z=0, Y=0, X=300). Divide motor speed by reduction ratio to find output speed ($1200 / 4 = 300$).
 
+The NEMA-17 stepper motor driving the extruder spins at an operational speed of $1,200\text{ RPM}$. With the $4:1$ mechanical reduction from Challenge 9.21 installed, you must find the final rotational speed of the hobbed filament feed pulley to program the slicer's microstepping firmware.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `300 RPM`. The filament drive wheel rotates smoothly at $\mathbf{300\text{ RPM}}$.
+Evaluate final shaft speed with `{{res:sc6_09_applied_stem_labs_p22:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p22:value}}`** `(T=0, Z=0, Y=0, X=300)`. Dividing motor speed by the reduction ratio reveals that the filament drive wheel turns smoothly at $\mathbf{300\text{ RPM}}$.
 
 ---
 
 #### Challenge 9.23: Two-Stage Compound Gear Reduction ($(40/10) \times (30/15)$)
-- **Maker Lab Context:** For an ultra-high-torque filament puller, you mount two gear pairs on compound axles: Stage 1 has a 10-tooth driver turning a 40-tooth gear; Stage 2 has a 15-tooth driver turning a 30-tooth gear. Compute the compound gear ratio.
-- **Hands-On Physical Measurement:** Assemble the two pairs on a dual-axle test rig. Count how many revolutions of the input crank are required for one revolution of the final output spool.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p23:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p23:value}}`**
-- **4-Register Stack Trace Table:**
+
+For an ultra-high-torque filament spool winding machine, you assemble two gear reduction stages on compound axles: Stage 1 pairs a 10-tooth driver with a 40-tooth gear, while Stage 2 pairs a 15-tooth driver with a 30-tooth gear on the secondary shaft. Turning the input crank by hand demonstrates the cumulative mechanical multiplication across both stages.
+
+Calculate the compound gear reduction on the 4-register stack: `{{res:sc6_09_applied_stem_labs_p23:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p23:value}}`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -1189,37 +1129,31 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `15 {{key:÷}}` | 0 | 0 | 4 | 2 | Compute Stage 2 reduction ratio: $30 / 15 = 2.0$ |
 | `{{key:×}}` | 0 | 0 | 0 | 8 | Multiply stage ratios to find compound reduction: $4 \times 2 = 8.0$ |
 
-- **Diagnostic Checkpoint:** Register $X$ displays `8.0 : 1`. The compound gear assembly produces an overall reduction of $\mathbf{8.0 : 1}$.
+Register $X$ displays $8.0$, confirming that the compound gear train provides an overall $\mathbf{8.0 : 1}$ mechanical advantage. Eight motor turns produce one turn of the heavy spool shaft with eight times the driving torque.
 
 ---
 
 #### Challenge 9.24: Hydraulic Syringe Mechanical Advantage ($d_2 = 4\text{ cm}, d_1 = 1\text{ cm}$)
-- **Maker Lab Context:** You build a fluid press using two medical syringes connected by clear vinyl tubing to test the crush strength of 3D-printed parts. The input syringe has diameter $d_1 = 1\text{ cm}$ and the output cylinder has diameter $d_2 = 4\text{ cm}$. Find the hydraulic force multiplier ($A_2 / A_1 = (d_2/d_1)^2$).
-- **Hands-On Physical Measurement:** Connect a $10\text{ mL}$ syringe ($1\text{ cm}$ diameter) to a large $60\text{ mL}$ syringe ($4\text{ cm}$ diameter) filled with colored water. Push the small plunger and observe the massive force generated at the large piston.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p24:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p24:value}}`**
-- **Stack Flow:** Tap `{{key:4}} {{key:ENTER}} {{key:1}} {{key:÷}} {{key:x²}}` -> (T=0, Z=0, Y=0, X=16). Square diameter ratio to compute area mechanical advantage ($4^2 = 16.0$).
 
+To evaluate the crush resistance of 3D-printed hollow structures, you construct a hydraulic test press using two fluid-filled syringes linked by vinyl tubing. The small input syringe has an internal diameter of $d_1 = 1.0\text{ cm}$, while the heavy output cylinder has a diameter of $d_2 = 4.0\text{ cm}$. By Pascal's Principle, hydraulic force scales with the cross-sectional area ratio: $A_2 / A_1 = (d_2 / d_1)^2$.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `16.0 ×`. The hydraulic syringe press provides a $\mathbf{16.0\times}$ force multiplication.
+Evaluate the hydraulic force multiplier with `{{res:sc6_09_applied_stem_labs_p24:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p24:value}}`** `(T=0, Z=0, Y=0, X=16)`. Squaring the diameter ratio reveals that the hydraulic press delivers a remarkable $\mathbf{16.0\times}$ force multiplication.
 
 ---
 
 #### Challenge 9.25: Hydraulic Press Lift Capacity ($10\text{ N input} \times 16$)
-- **Maker Lab Context:** If you press down on the small input syringe with an effort force of $10\text{ Newtons}$ (about $1\text{ kg}$ of push), how much lifting force does the hydraulic press exert on the 3D-printed test sample?
-- **Hands-On Physical Measurement:** Hook a spring dynamometer scale to the input plunger and push until it reads $10\text{ N}$. On the output piston, a $16\text{ kg}$ weight ($160\text{ N}$) is effortlessly lifted.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p25:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p25:value}}`**
-- **Stack Flow:** Tap `10 {{key:ENTER}} 16 {{key:×}}` -> (T=0, Z=0, Y=0, X=160). Multiply effort by multiplier to calculate output force ($10 \times 16 = 160\text{ N}$).
 
+With the $16\times$ hydraulic multiplier calibrated, calculate the crushing force exerted on a 3D-printed test bracket when an operator applies an effort force of $10\text{ Newtons}$ (approximately $1\text{ kg}$ of thumb pressure) to the small plunger. Hooking a spring scale to the input plunger confirms the $10\text{ N}$ applied effort.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `160 Newtons`. The hydraulic press delivers $\mathbf{160\text{ Newtons}}$ of crush force.
+Calculate the output crush force with `{{res:sc6_09_applied_stem_labs_p25:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p25:value}}`** `(T=0, Z=0, Y=0, X=160)`. Multiplying input effort by the mechanical advantage confirms an output force of $\mathbf{160\text{ Newtons}}$, capable of lifting a $16\text{ kg}$ test mass.
 
 ---
 
 #### Challenge 9.26: Quadcopter Drone Battery Flight Time ($1,200\text{ mAh}, 80\%\text{ safe}, 5\text{ A}$)
-- **Maker Lab Context:** You design a lightweight 3D-printed drone airframe powered by a $1,200\text{ mAh}$ LiPo battery. To prevent battery damage, you never discharge past $80\%$ of capacity ($0.80$). If the four motors draw a total of $5\text{ A}$ ($5,000\text{ mA}$) during hover, calculate the safe flight time in minutes ($t = C_{\text{usable}} \times 60 / I$).
-- **Hands-On Physical Measurement:** Check the LiPo battery label with a battery voltage checker. Notice the $1,200\text{ mAh}$ rating and cell telemetry.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p26:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p26:value}}`**
-- **4-Register Stack Trace Table:**
+
+You design an ultra-lightweight 3D-printed airframe for an indoor quadcopter powered by a $1,200\text{ mAh}$ LiPo battery. To preserve the battery chemistry and prevent irreversible voltage collapse, you restrict discharge to an $80\%$ usable margin ($0.80$). Telemetry logs show that all four brushless motors draw a combined current of $5\text{ A}$ ($5,000\text{ mA}$) during hover.
+
+Calculate the safe flight duration in minutes on the 4-register stack: `{{res:sc6_09_applied_stem_labs_p26:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p26:value}}`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -1229,48 +1163,39 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `5000` | 0 | 0 | 57600 | 5000 | Key in total quadcopter hover current draw ($5\text{ A} = 5,000\text{ mA}$) |
 | `{{key:÷}}` | 0 | 0 | 0 | $11.52$ | Divide usable capacity by current to find flight time ($57600 / 5000 = 11.52\text{ min}$) |
 
-- **Diagnostic Checkpoint:** Register $X$ displays `11.52 min`. Safe flight time before the low-voltage alarm sounds is $\mathbf{11.52\text{ minutes}}$.
+Register $X$ displays $11.52\text{ minutes}$, indicating that the quadcopter can safely hover for $\mathbf{11.52\text{ minutes}}$ before sounding the low-voltage telemetry alarm.
 
 ---
 
 #### Challenge 9.27: Drone Flight Duration in Minutes and Seconds
-- **Maker Lab Context:** Convert the decimal flight time of $11.52\text{ minutes}$ into whole minutes and exact seconds so you can program the flight controller's low-battery alarm timer.
-- **Hands-On Physical Measurement:** Look at a digital stopwatch displaying MM:SS format. Setting the timer to 11:31 ensures the drone lands before the low-voltage cutoff.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p27:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p27:value}}`**
-- **Stack Flow:** Tap `11 {{key:ENTER}} .52 {{key:ENTER}} 60 {{key:×}}` -> (T=0, Z=0, Y=11, X=31.2). Multiply to convert fraction to seconds ($0.52 \times 60 = 31.2\text{ sec}$).
 
+To configure the countdown timer on the drone's radio transmitter, convert the decimal flight duration of $11.52\text{ minutes}$ into whole minutes and exact seconds. Watching the flight telemetry timer on an LCD transmitter display requires setting the alarm to an exact MM:SS boundary before touchdown.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `31.2` with Register $Y = 11$. The total safe hover duration is $\mathbf{11\text{ minutes and } 31\text{ seconds}}$.
+Extract whole minutes and convert the fractional portion: `{{res:sc6_09_applied_stem_labs_p27:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p27:value}}`** `(T=0, Z=0, Y=11, X=31.2)`. Multiplying the $0.52\text{ min}$ decimal fraction by 60 reveals that the safe mission timer should be set to $\mathbf{11\text{ minutes and } 31\text{ seconds}}$.
 
 ---
 
 #### Challenge 9.28: Solar Tracker Bracket: Power at $30^\circ$ Morning Tilt ($10\text{ W peak} \times 0.866$)
-- **Maker Lab Context:** You 3D-print an adjustable bracket to align a mini solar panel toward the sun. When the sun is at a $30^\circ$ angle from normal, the effective solar flux factor is $\cos 30^\circ \approx 0.866$. If the panel is rated for $10\text{ W}$ peak output, find the actual generated power.
-- **Hands-On Physical Measurement:** Mount a protractor on the 3D-printed panel bracket. Adjust the angle until the shadow of a center pin aligns with the $30^\circ$ mark.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p28:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p28:value}}`**
-- **Stack Flow:** Tap `10 {{key:ENTER}} .866 {{key:×}}` -> (T=0, Z=0, Y=0, X=8.66). Multiply peak power by tilt factor ($10 \times 0.866 = 8.66\text{ W}$).
 
+You 3D-print an articulated mounting bracket to align a mini solar panel toward the morning sun. When the sun is oriented at a $30^\circ$ incident angle relative to the panel normal, Lambert's Cosine Law reduces the effective solar flux factor to $\cos 30^\circ \approx 0.866$. The panel carries a rated peak output of $10\text{ W}$ under perpendicular light.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `8.66 Watts`. At a $30^\circ$ tilt angle, the solar panel generates $\mathbf{8.66\text{ Watts}}$.
+Calculate actual morning electrical power with `{{res:sc6_09_applied_stem_labs_p28:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p28:value}}`** `(T=0, Z=0, Y=0, X=8.66)`. Multiplying peak power by the projection coefficient shows the panel delivers $\mathbf{8.66\text{ Watts}}$ at a $30^\circ$ tilt angle.
 
 ---
 
 #### Challenge 9.29: Solar Tracker Bracket: Power at $45^\circ$ Autumn Tilt ($10\text{ W peak} \times 0.707$)
-- **Maker Lab Context:** In late autumn afternoon light, the sun dips to a $45^\circ$ inclination angle ($\cos 45^\circ \approx 0.707$). Compute the power generated by your $10\text{ W}$ panel at this oblique angle.
-- **Hands-On Physical Measurement:** Tilt the protractor bracket to $45^\circ$ and measure the output with a USB power meter plugged between the panel and your calculator charging port.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p29:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p29:value}}`**
-- **Stack Flow:** Tap `10 {{key:ENTER}} .707 {{key:×}}` -> (T=0, Z=0, Y=0, X=7.07). Multiply peak power by tilt factor ($10 \times 0.707 = 7.07\text{ W}$).
 
+During late autumn afternoon testing, the sun drops lower in the sky to an oblique $45^\circ$ angle of incidence ($\cos 45^\circ \approx 0.707$). Measuring the output current and voltage with an inline USB tester plugged into the charging port confirms the reduced solar harvesting rate.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `7.07 Watts`. At a $45^\circ$ angle, solar generation drops to $\mathbf{7.07\text{ Watts}}$.
+Compute the lower sun angle generation with `{{res:sc6_09_applied_stem_labs_p29:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p29:value}}`** `(T=0, Z=0, Y=0, X=7.07)`. The calculation reveals that output drops to $\mathbf{7.07\text{ Watts}}$ at $45^\circ$, demonstrating why automated two-axis solar tracking increases daily energy capture.
 
 ---
 
 #### Challenge 9.30: Kinetic Energy of Derby Test Car ($m = 0.20\text{ kg}, v = 4\text{ m/s}$)
-- **Maker Lab Context:** You print a streamlined derby race car to test wheel bearing friction on an aluminum ramp. At the bottom of the ramp, the $0.20\text{ kg}$ ($200\text{ g}$) car passes a photogate at $4.0\text{ m/s}$. Find its kinetic energy: $KE = \frac{1}{2} m v^2$.
-- **Hands-On Physical Measurement:** Place the derby car on a balance to verify its mass is $0.20\text{ kg}$. Line up a photogate timer at the foot of the inclined track.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p30:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p30:value}}`**
-- **4-Register Stack Trace Table:**
+
+You 3D-print a streamlined soapbox derby racer equipped with low-friction miniature ball bearings to evaluate ramp rolling friction. Placing the car on your balance verifies a mass of $m = 0.20\text{ kg}$ ($200\text{ g}$). As the car crosses a photogate at the base of an inclined aluminum track, the timer clocks its terminal velocity at $v = 4.0\text{ m/s}$.
+
+Evaluate kinetic energy on the stack using the classical formula $KE = \frac{1}{2}mv^2$: `{{res:sc6_09_applied_stem_labs_p30:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p30:value}}`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -1280,7 +1205,7 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `{{key:x²}}` | 0 | 0 | $0.1$ | 16 | Square velocity: $v^2 = 4^2 = 16\text{ m}^2/\text{s}^2$ |
 | `{{key:×}}` | 0 | 0 | 0 | $1.6$ | Multiply $\frac{1}{2}m \times v^2 = 0.10 \times 16 = 1.60\text{ Joules}$ |
 
-- **Diagnostic Checkpoint:** Register $X$ displays `1.60 Joules`. The rolling test car carries $\mathbf{1.60\text{ Joules}}$ of kinetic energy.
+Register $X$ displays $1.60\text{ Joules}$, confirming that the rolling test car carries $\mathbf{1.60\text{ Joules}}$ of kinetic energy ready to be transferred to the arrestor stop.
 
 ---
 
@@ -1288,92 +1213,58 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 *You are the master builder in the Mechanics & Fabrication Workshop! In this expedition, you audit workshop tool purchases, split material expenses across team members, optimize hollow infill on interlocking snap cubes, rig tall ceiling pulley pendulums, and budget commemorative STEM medal manufacturing.*
 
 #### Challenge 9.31: Outfitting the Workshop: Tool Backpack $30\%$ Discount ($\$56.00$)
-- **Maker Lab Context:** To carry your SC-6 calculator, calipers, multimeter, and 3D printing tools between home and school, you purchase an engineering backpack with a regular retail price of $\$56.00$, on sale for $30\%$ off. Compute the discounted price.
-- **Hands-On Physical Measurement:** Lay out play money or five $\$10$ bills and six $\$1$ bills on the desk. Group $30\%$ of the bills to visualize the store savings before checkout.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p31:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p31:value}}`**
-- **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `56` | 0 | 0 | 0 | 56 | Key in original retail regular price ($\$56.00$) |
-| `{{key:ENTER}}` | 0 | 0 | 56 | 56 | Lock regular price into Register $Y$ |
-| `30` | 0 | 0 | 56 | 30 | Key in discount percentage ($30\%$) |
-| `{{key:%}}` | 0 | 0 | 0 | $16.8$ | Calculate $30\%$ savings ($\$16.80$); base price $\$56$ preserved in $Y$ |
-| `{{key:-}}` | 0 | 0 | 0 | $-16.8$ | Subtract savings from base price: net price is $\$39.20$ |
-| `{{key:$}}` | $0.00$ | $0.00$ | $0.00$ | $-16.80$ | Format result in two-decimal currency mode |
+To carry your SC-6 calculator, calipers, multimeter, and 3D printing tools between home and school, you select an engineering field backpack with a regular retail price of $\$56.00$, currently on sale for $30\%$ off. Laying out play money or counting bills on the workbench helps visualize the $30\%$ savings before walking to the hardware register.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `$39.20`. The tool backpack on sale costs $\mathbf{\$39.20}$ before tax.
+In RPN, tapping `{{key:%}}` computes the discount dollar savings while preserving the base price in Register $Y$, allowing a single subsequent tap of `{{key:-}}` to find the net discounted price: `{{res:sc6_09_applied_stem_labs_p31:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p31:value}}`** `(T=0, Z=0, Y=0, X=39.2)`. The stack reveals the discounted sale price of $\mathbf{\$39.20}$ before taxes.
 
 ---
 
 #### Challenge 9.32: Workshop Equipment Sales Tax ($7.5\%$ on $\$39.20$)
-- **Maker Lab Context:** At the hardware store cash register, state and municipal sales tax of $7.5\%$ is applied to your $\$39.20$ discounted backpack purchase. Find the final total register receipt.
-- **Hands-On Physical Measurement:** Inspect a real store receipt showing subtotal, tax line, and total. Notice how the tax adds a fractional charge to every dollar spent.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p32:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p32:value}}`**
-- **4-Register Stack Trace Table:**
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `39.20` | 0 | 0 | 0 | $39.2$ | Key in discounted subtotal ($\$39.20$) |
-| `{{key:ENTER}}` | 0 | 0 | $39.2$ | $39.2$ | Lock subtotal into Register $Y$ |
-| `7.5` | 0 | 0 | $39.2$ | $7.5$ | Key in sales tax percentage ($7.5\%$) |
-| `{{key:%}}` | 0 | 0 | $0.0$ | $2.94$ | Calculate sales tax amount ($\$2.94$); subtotal preserved in $Y$ |
-| `{{key:+}}` | 0 | 0 | 0 | $2.94$ | Add tax to subtotal: final total checkout is $\$42.14$ |
-| `{{key:$}}` | $0.00$ | $0.00$ | $0.00$ | $2.94$ | Format result in currency mode |
+At the cash register, state and municipal sales tax of $7.5\%$ is applied to your $\$39.20$ discounted backpack purchase. Inspecting a printed store receipt shows how sales tax adds a fractional charge to every dollar spent.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `$42.14`. The final cash register total for the backpack is $\mathbf{\$42.14}$.
+Evaluate the final receipt total with `{{res:sc6_09_applied_stem_labs_p32:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p32:value}}`** `(T=0, Z=0, Y=0, X=42.14)`. Tapping `{{key:%}}` computes the exact tax amount ($\$2.94$) while keeping $\$39.20$ in Register $Y$, and tapping `{{key:+}}` totals the purchase at $\mathbf{\$42.14}$.
 
 ---
 
 #### Challenge 9.33: Team Material Budget Split ($\$124.80 \div 6$ members)
-- **Maker Lab Context:** Six student makers in your robotics club jointly purchase a shared assortment of ball bearings, stepper motors, and pulleys totaling $\$124.80$. How much does each member owe when splitting the cost equally?
-- **Hands-On Physical Measurement:** Deal six small payment envelopes onto the table. Divide the total expense into equal shares so every member pays their exact fair portion.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p33:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p33:value}}`**
-- **Stack Flow:** Tap `124.80 {{key:ENTER}} {{key:6}} {{key:÷}} {{key:$}}` -> (T=0, Z=0, Y=0, X=20.8). Format result in currency mode.
 
+Six student builders in your school robotics club jointly order a shared assortment of stainless ball bearings, pulleys, and stepper motors totaling $\$124.80$. To settle the group hardware invoice fairly, you divide the total expense into six equal shares so every team member contributes their exact portion.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `$20.80`. Each student maker contributes $\mathbf{\$20.80}$ to the shared kit.
+Calculate the individual contribution using `{{res:sc6_09_applied_stem_labs_p33:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p33:value}}`** `(T=0, Z=0, Y=0, X=20.8)`. Formatting the result in currency mode confirms that each student maker owes $\mathbf{\$20.80}$ toward the team parts kit.
 
 ---
 
 #### Challenge 9.34: Interlocking Snap Cube Sliced Volume ($2\text{ cm} \times 2\text{ cm} \times 2\text{ cm}$)
-- **Maker Lab Context:** You are modeling custom interlocking snap cubes for classroom math manipulatives. Each cube measures exactly $2.0\text{ cm}$ on each edge ($2\text{ cm} \times 2\text{ cm} \times 2\text{ cm}$). Calculate the total volume of one cube.
-- **Hands-On Physical Measurement:** Hold a physical plastic snap cube in your hand. Measure each of its three dimensions with a metric ruler to verify $2.0\text{ cm} \times 2.0\text{ cm} \times 2.0\text{ cm}$.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p34:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p34:value}}`**
-- **Stack Flow:** Tap `{{key:2}} {{key:ENTER}} {{key:2}} {{key:×}} {{key:2}} {{key:×}}` -> (T=0, Z=0, Y=0, X=8). Multiply area by height to calculate solid volume ($4 \times 2 = 8.0\text{ cm}^3$).
 
+You are modeling custom interlocking snap cubes for classroom math manipulatives. Holding a physical plastic snap cube in your hand and measuring each of its three orthogonal edges with a millimeter ruler confirms dimensions of exactly $2.0\text{ cm} \times 2.0\text{ cm} \times 2.0\text{ cm}$.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `8.0 cm³`. The volume of a $2\text{ cm}$ snap cube is exactly $\mathbf{8.0\text{ cm}^3}$.
+Compute the solid cube volume with `{{res:sc6_09_applied_stem_labs_p34:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p34:value}}`** `(T=0, Z=0, Y=0, X=8)`. Multiplying base area by height on the stack confirms an overall volume of exactly $\mathbf{8.0\text{ cm}^3}$.
 
 ---
 
 #### Challenge 9.35: Snap Cube Theoretical Solid Mass ($\rho = 1.24\text{ g/cm}^3$)
-- **Maker Lab Context:** If you were to 3D print the $8.0\text{ cm}^3$ snap cube completely solid ($100\%$ infill) out of standard PLA thermoplastic ($\rho = 1.24\text{ g/cm}^3$), what would the cube weigh?
-- **Hands-On Physical Measurement:** Place an 8-cube block array on your balance pan. Compare the feel of solid plastic against lightweight hollow everyday objects.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p35:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p35:value}}`**
-- **Stack Flow:** Tap `{{key:8}} {{key:ENTER}} 1.24 {{key:×}}` -> (T=0, Z=0, Y=0, X=9.92). Multiply volume by density to calculate solid mass ($8 \times 1.24 = 9.92\text{ g}$).
 
+If you were to 3D-print the $8.0\text{ cm}^3$ snap cube completely solid ($100\%$ infill) out of standard corn-based PLA thermoplastic ($\rho = 1.24\text{ g/cm}^3$), what would the block weigh? Placing an eight-cube block array on your balance pan provides a physical feel for solid plastic density before optimizing the internal slicer infill.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `9.92 grams`. A solid $100\%$ infill snap cube weighs $\mathbf{9.92\text{ grams}}$.
+Calculate theoretical solid mass with `{{res:sc6_09_applied_stem_labs_p35:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p35:value}}`** `(T=0, Z=0, Y=0, X=9.92)`. Multiplying volume by density confirms that a $100\%$ solid snap cube weighs $\mathbf{9.92\text{ grams}}$.
 
 ---
 
 #### Challenge 9.36: Material Savings with $20\%$ Gyroid Infill ($3.1\text{ g actual}$)
-- **Maker Lab Context:** To save filament, you slice the snap cube with lightweight $20\%$ gyroid internal infill and 2 solid perimeter shells. When weighed on your gram scale, the printed cube weighs only $3.1\text{ grams}$. How much plastic did you save compared to a solid block?
-- **Hands-On Physical Measurement:** Place the solid theoretical reference weight ($9.92\text{ g}$) on one side of a balance beam and the hollow printed cube ($3.1\text{ g}$) on the other. Add calibration weights to measure the saved mass.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p36:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p36:value}}`**
-- **Stack Flow:** Tap `9.92 {{key:ENTER}} 3.1 {{key:-}}` -> (T=0, Z=0, Y=0, X=6.82). Subtract printed mass from solid mass: plastic saved is $6.82\text{ g}$.
 
+To conserve filament and speed up batch fabrication, you slice the snap cube with lightweight $20\%$ gyroid internal infill and 2 solid perimeter shells. Placing the printed cube on your sensitive digital scale reveals that it weighs only $3.1\text{ grams}$. Comparing the printed cube against the $9.92\text{ g}$ solid benchmark on a two-pan balance highlights the significant material savings.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `6.82 g saved`. Using $20\%$ gyroid infill saves $\mathbf{6.82\text{ grams}}$ of plastic per block.
+Find the mass of filament saved with `{{res:sc6_09_applied_stem_labs_p36:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p36:value}}`** `(T=0, Z=0, Y=0, X=6.82)`. The subtraction confirms that using $20\%$ gyroid infill saves $\mathbf{6.82\text{ grams}}$ of plastic per block while preserving structural rigidity.
 
 ---
 
 #### Challenge 9.37: Workshop Ceiling Pulley Pendulum ($L = 2.0\text{ meters}$)
-- **Maker Lab Context:** You rig a long pendulum from an eye-hook in the tall workshop ceiling ($L = 2.0\text{ meters}$) through a low-friction pulley to study slow harmonic oscillation. Find the swing period $T = 2\pi \sqrt{L/g}$.
-- **Hands-On Physical Measurement:** Suspend a heavy brass weight from a $2.0\text{-meter}$ braided cord. Release it and time its sweeping motion with a digital stopwatch.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p37:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p37:value}}`**
-- **4-Register Stack Trace Table:**
+
+In the mechanics workshop, you rig a long pendulum cord from a heavy eye-hook in the tall ceiling ($L = 2.0\text{ meters}$) through a low-friction swivel pulley to observe slow harmonic oscillation. Suspending a solid brass plumb bob and releasing it from an initial $5^\circ$ deflection allows you to time its sweeping, deliberate swings with a digital stopwatch.
+
+Determine the oscillation period using the harmonic period formula: `{{res:sc6_09_applied_stem_labs_p37:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p37:value}}`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -1385,37 +1276,31 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `{{key:√x}}` | 0 | 0 | $6.283185$ | $0.451754$ | Take square root: $\sqrt{L/g} \approx 0.451754$ |
 | `{{key:×}}` | 0 | 0 | 0 | $2.838454$ | Multiply by $2\pi$ to find period ($T \approx 2.84\text{ seconds}$) |
 
-- **Diagnostic Checkpoint:** Register $X$ displays `2.84 seconds`. The $2.0\text{-meter}$ ceiling pendulum swings with a slow $\mathbf{2.84\text{-second}}$ period.
+Register $X$ confirms an oscillation period of $\mathbf{2.84\text{ seconds}}$. The tall ceiling rig swings at roughly half the frequency of a tabletop pendulum, illustrating the square-root relationship between length and time.
 
 ---
 
 #### Challenge 9.38: Solar Cooker Thermal Dissipation in Cloud Shade ($70^\circ \to 40^\circ\text{C}$ in $20\text{ min}$)
-- **Maker Lab Context:** While testing insulation materials for your solar cooker box, a thick storm cloud covers the sun. The cooker cools down from $70^\circ\text{C}$ to $40^\circ\text{C}$ over $20\text{ minutes}$. Calculate the rate of thermal loss in degrees Celsius per minute.
-- **Hands-On Physical Measurement:** Monitor the temperature drop on a digital data-logging thermometer every 5 minutes, plotting the cooling curve on graph paper.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p38:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p38:value}}`**
-- **Stack Flow:** Tap `70 {{key:ENTER}} 40 {{key:-}} 20 {{key:÷}}` -> (T=0, Z=0, Y=0, X=1.5). Divide temperature loss by time to find cooling rate ($30 / 20 = 1.50^\circ\text{C/min}$).
 
+While testing thermal insulation materials on your solar cooker box, a dense afternoon storm cloud covers the sun. Logging the cooker's internal temperature drop over a $20\text{-minute}$ shading period shows the absorber cooling from $70^\circ\text{C}$ down to $40^\circ\text{C}$. Plotting the data points on graph paper generates a smooth exponential cooling curve.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `1.50 °C/min`. The cooker dissipates heat at a steady rate of $\mathbf{1.50^\circ\text{C/min}}$.
+Compute the rate of thermal dissipation with `{{res:sc6_09_applied_stem_labs_p38:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p38:value}}`** `(T=0, Z=0, Y=0, X=1.5)`. Subtracting temperatures yields a $30^\circ\text{C}$ thermal loss, and dividing by 20 minutes indicates a steady cooling rate of $\mathbf{1.50^\circ\text{C/min}}$.
 
 ---
 
 #### Challenge 9.39: Quarter-Batch Polymer Clay Recipe ($3\ \frac{1}{2}\text{ cups milk} \div 4$)
-- **Maker Lab Context:** You are mixing a small batch of homemade casein polymer clay for molding custom pulley wheels. The master recipe calls for $3\ \frac{1}{2}$ cups of warm milk, but you only want to make a $1/4$ test batch. Find the exact fractional cups of milk needed.
-- **Hands-On Physical Measurement:** Take a 1-cup liquid measuring cup marked with 8 fluid ounce divisions. Fill to the 7-ounce line to verify $7/8\text{ cup}$.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p39:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p39:value}}`**
-- **Stack Flow:** Tap `3 {{key:.}} 1 {{key:.}} 2 {{key:ENTER}} {{key:4}} {{key:÷}} {{key:a ᵇ/c}}` -> (T=0, Z=0, Y=3, X=0.125). Convert decimal to proper fraction display format ($7/8$).
 
+You are mixing a small experimental batch of homemade casein polymer clay using warm milk and vinegar to cast custom pulley wheels. The master studio recipe calls for $3\ \frac{1}{2}$ cups of milk, but you only want to mix a $1/4$ test batch. Filling an 8-fluid-ounce measuring cup to the 7-ounce mark provides a physical benchmark for $7/8\text{ cup}$.
 
-- **Diagnostic Checkpoint:** Register $X$ displays `7/8 cup`. The quarter-batch recipe requires exactly $\mathbf{7/8\text{ cup}}$ of milk.
+Calculate the scaled liquid volume using mixed fraction division: `{{res:sc6_09_applied_stem_labs_p39:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p39:value}}`** `(T=0, Z=0, Y=0, X=0.875)`. Tapping `{{key:a ᵇ/c}}` formats the result into a proper fraction, confirming that the quarter-batch requires exactly $\mathbf{7/8\text{ cup}}$ of milk.
 
 ---
 
 #### Challenge 9.40: Batch Award Medals Production Cost ($50 \times 14.5\text{ g} \times 0.02/\text{g}$)
-- **Maker Lab Context:** Your maker team is 3D-printing 50 commemorative medals for the school STEM fair. Each medal weighs $14.5\text{ grams}$, and bulk spool filament costs $\$0.02\text{ per gram}$. Calculate the total budget needed to produce the entire batch.
-- **Hands-On Physical Measurement:** Place 10 completed award medals on the gram scale to verify the average $14.5\text{ g}$ mass before multiplying out the 50-unit production run.
-- **RPN Keystrokes:** `{{res:sc6_09_applied_stem_labs_p40:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p40:value}}`**
-- **4-Register Stack Trace Table:**
+
+To celebrate the culmination of the Maker Expedition, your team 3D-prints 50 commemorative medals for the school STEM fair. Placing 10 sample medals on the digital scale verifies an average mass of $14.5\text{ grams}$ each. With bulk spool filament priced at $\$0.02$ per gram, you must compute the total material budget required to manufacture all 50 awards.
+
+Evaluate the multi-step batch manufacturing equation on the 4-register stack: `{{res:sc6_09_applied_stem_labs_p40:keys}}` $\rightarrow$ **`{{res:sc6_09_applied_stem_labs_p40:value}}`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -1424,10 +1309,10 @@ Before calculating electrical power, pendulum periods, or recipe scaling factors
 | `14.5` | 0 | 0 | 50 | $14.5$ | Key in mass per individual printed medal ($14.5\text{ g}$) |
 | `{{key:×}}` | 0 | 0 | 0 | 725 | Multiply to calculate total batch filament mass ($50 \times 14.5 = 725\text{ g}$) |
 | `.02` | 0 | 0 | 725 | $0.02$ | Key in filament spool cost per gram ($\$0.02/\text{g}$) |
-| `{{key:×}}` | 0 | 0 | 0 | $14.5$ | Multiply mass by unit price to find total batch expense ($725 \\times 0.02 = 14.50$) |
+| `{{key:×}}` | 0 | 0 | 0 | $14.5$ | Multiply mass by unit price to find total batch expense ($725 \times 0.02 = 14.50$) |
 | `{{key:$}}` | $0.00$ | $0.00$ | $0.00$ | $14.50$ | Format result in currency mode |
 
-- **Diagnostic Checkpoint:** Register $X$ displays `$14.50`. The total filament budget to print all 50 awards is $\mathbf{\$14.50}$.
+Register $X$ displays $\$14.50$, proving that fabricating all 50 commemorative STEM fair medals requires exactly $\mathbf{\$14.50}$ in raw bioplastic.
 
 ---
 <div class="admonition note">

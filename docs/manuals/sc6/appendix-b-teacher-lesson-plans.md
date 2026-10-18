@@ -37,6 +37,7 @@ The StackCalc SC-6 curriculum follows the **Math Workshop Rotation Model**, grou
 | **05:00 – 20:00** | Station Investigation | Hands-on physical manipulative build at studio stations. |
 | **20:00 – 35:00** | Representational & Abstract | SC-6 four-register stack verification and keystroke logging. |
 | **35:00 – 45:00** | Discourse & Exit Ticket | Mathematical reflection, diagnostic check, and notebook log. |
+
 </div>
 
 ### Four-Register Stack Elevator Mental Model
@@ -57,34 +58,34 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 - **Tactile Warm-Up (5 min):** "Place 4 yellow counters in the top row. Count them with your finger: one, two, three, four. Now tap one red counter into the next space. How many now?"
 
 #### Verbatim Teacher Dialogue Script
-> **Teacher:** "Hold up your SC-6 calculator. Tap the Ten-Frame key `{{key:▦}}`. Look at the glass screen. Do you see the two empty rows of five boxes, just like your wooden tray?"  
+> **Teacher:** "Hold up your SC-6 calculator. Tap the Number Rack key `{{key:COUNT}}`. Look at the glass screen. Do you see the two empty rows of five boxes, just like your wooden tray?"  
 > **Students:** "Yes! It looks like our tray!"  
-> **Teacher:** "Now, let us drop one counter into both trays at the same time. Place one yellow counter on your tray. At the same time, tap the point key `{{key:.}}` once on your calculator. What popped onto your screen?"  
+> **Teacher:** "Now, let us drop one counter into both trays at the same time. Place one yellow counter on your tray. At the same time, tap `1 {{key:+}}` on your calculator. What popped onto your screen?"  
 > **Student (Leo):** "A little dot filled the first box!"  
-> **Teacher:** "Tap `{{key:.}}` again. And again. Stop when your top row is full. How many counters are in the top row?"  
+> **Teacher:** "Tap `1 {{key:+}}` again. And again. Stop when your top row is full. How many counters are in the top row?"  
 > **Students:** "Five!"  
 > **Teacher:** "What number shows in the corner?"  
 > **Students:** "5!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:▦}} | 0 | 0 | 0 | 0 (10F) |
-| {{key:.}} | 0 | 0 | 0 | 1 (10F) |
-| {{key:.}} | 0 | 0 | 0 | 2 (10F) |
-| {{key:.}} | 0 | 0 | 0 | 3 (10F) |
-| {{key:.}} | 0 | 0 | 0 | 4 (10F) |
-| {{key:.}} | 0 | 0 | 0 | 5 (10F) |
+| {{key:COUNT}} | 0 | 0 | 0 | 0 (10F) |
+| 1 {{key:+}} | 0 | 0 | 0 | 1 (10F) |
+| 1 {{key:+}} | 0 | 0 | 0 | 2 (10F) |
+| 1 {{key:+}} | 0 | 0 | 0 | 3 (10F) |
+| 1 {{key:+}} | 0 | 0 | 0 | 4 (10F) |
+| 1 {{key:+}} | 0 | 0 | 0 | 5 (10F) |
 
 #### Student Practice Problems
-1. Count out 7 counters on the tray and match with 7 dots on the SC-6 (`{{key:▦}} {{key:.}} × 7`).
+1. Count out 7 counters on the tray and match with 7 dots on the SC-6 (`{{key:COUNT}} 7`).
 2. Show 10 full dots on the screen. How many rows are filled? (Both rows, answer: 10).
-3. Clear the frame (`{{key:C}} {{key:▦}}`). Enter 3 dots. How many empty boxes remain? (7 boxes).
+3. Clear the frame (`{{key:C}} {{key:COUNT}}`). Enter 3 dots. How many empty boxes remain? (7 boxes).
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
-| Student taps `{{key:.}}` rapidly, overshooting the physical counter count. | Motor impulsivity without one-to-one correspondence pairing. | "One touch on the block, one tap on the key. Say 'click' for each." |
+| Student taps keys rapidly, overshooting the physical counter count. | Motor impulsivity without one-to-one correspondence pairing. | "One touch on the block, one tap on the key. Say 'click' for each." |
 | Student starts filling the bottom row first. | Lacks left-to-right, top-to-bottom reading orientation. | "The top row is the attic. Fill the attic from left to right first!" |
 
 ---
@@ -105,7 +106,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Teacher:** "Type `{{key:4}} {{key:ENTER}} {{key:1}} {{key:+}}`. What do you get?"  
 > **Students:** "Still 5!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:3}} | 0 | 0 | 0 | 3 |
@@ -119,6 +119,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 3. Enter $5 + 0$: `{{key:5}} {{key:ENTER}} {{key:0}} {{key:+}}`. Display shows `5`.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student types `32 {{key:+}}` without `{{key:ENTER}}`, getting 32. | Forgets stack lift separator. | "Press `{{key:ENTER}}` so the 3 can climb into the balcony before 2 enters the lobby!" |
@@ -140,7 +141,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Teacher:** "Add 3 tiles to the gold pan. What happens to the balance beam?"  
 > **Students:** "It levels out! They are equal!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:7}} | 0 | 0 | 0 | 7 |
@@ -154,6 +154,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 3. Compare 6 and 2: `{{key:6}} {{key:ENTER}} {{key:2}} {{key:-}}`. Difference is `4`.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student enters `{{key:4}} {{key:ENTER}} {{key:7}} {{key:-}}` and gets `-3`. | Operates with smaller number first. | "In subtraction, the heavy tower enters the elevator first!" |
@@ -178,7 +179,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "13!"  
 > **Teacher:** "Now press `{{key:▦}}`. See the two frames on screen: one completely full (10), and the second has 3 dots!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:8}} | 0 | 0 | 0 | 8 |
@@ -193,6 +193,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 3. Solve $8 + 7$: `{{key:8}} {{key:ENTER}} {{key:7}} {{key:+}} {{key:▦}}`. Display shows 10 + 5 = 15.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student counts on fingers starting from 1 ($1, 2, 3 \dots 13$). | Lacks ten-structuring automaticity. | "Lock the 8 in your mind. How many to 10? Two! Now add the rest." |
@@ -213,7 +214,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "10!"  
 > **Teacher:** "Press `{{key:LASTX}} {{key:3}} {{key:+}}`. It is still 10! Flipping the order never changes the sum!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:3}} | 0 | 0 | 0 | 3 |
@@ -228,6 +228,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 3. Test $6 + 5$ vs. $5 + 6$: both equal 11.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student assumes subtraction is also commutative ($7-3 = 3-7$). | Overgeneralizes additive symmetry to non-symmetric operations. | "Try `{{key:3}} {{key:ENTER}} {{key:7}} {{key:-}}` on your calculator. Do you get 4 or -4?" |
@@ -247,7 +248,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "8!"  
 > **Teacher:** "Lift the cup! Count the tiles! Exactly 8!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 14 | 0 | 0 | 0 | 14 |
@@ -261,6 +261,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 3. $? + 8 = 15$: `15 {{key:ENTER}} {{key:8}} {{key:-}}` = 7.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student adds $14 + 6$ to get 20. | Keywords trigger addition without spatial whole-part analysis. | "Can the hidden part be bigger than the whole train?" |
@@ -280,7 +281,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "One ten and three ones!"  
 > **Teacher:** "Type `13` on the SC-6. The digit 1 means 1 full rod of ten. The digit 3 means 3 loose ones!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 10 | 0 | 0 | 0 | 10 |
@@ -294,6 +294,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 3. Model 4 tens and 0 ones: `40 {{key:ENTER}} {{key:0}} {{key:+}}` = 40.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student writes '103' for thirteen. | Writes numbers concatenating 10 and 3. | "The 1 ten already carries the 0 inside it until the 3 sits in its seat!" |
@@ -317,7 +318,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "15! 20! 25! 30!"  
 > **Teacher:** "Floor $T$ at the top of the elevator keeps dispensing a fresh 5 every time you add!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:5}} | 0 | 0 | 0 | 5 |
@@ -332,6 +332,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 3. Skip-count by 3 up to 21: `{{key:3}} {{key:REP}} {{key:+}} ...`
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student taps `{{key:ENTER}}` instead of `{{key:+}}`. | Confuses stack replication with arithmetic operation. | "`{{key:ENTER}}` lifts passengers up; `{{key:+}}` brings the top passenger down to combine!" |
@@ -350,7 +351,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Teacher:** "Now count your rods: 3 rods + 2 rods + 1 traded rod = 6 rods. And 5 loose cubes remain. That is 65! Let us confirm on SC-6: `38 {{key:ENTER}} 27 {{key:+}}`."  
 > **Students:** "65!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 38 | 0 | 0 | 0 | 38 |
@@ -364,6 +364,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 3. $19 + 64$: `19 {{key:ENTER}} 64 {{key:+}}` = 83.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student adds tens and ones separately on paper and writes '515' ($3+2=5, 8+7=15$). | Fails to carry regrouped ten into the tens column. | "15 cubes has a ten inside it! Trade the 10 cubes for a rod first!" |
@@ -384,7 +385,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Teacher:** "Do it! Now you have 4 rods and 12 cubes. Take away 6 cubes: 6 remain. Take away 2 rods: 2 remain. Answer: 26! Key it in: `52 {{key:ENTER}} 26 {{key:-}}`."  
 > **Students:** "26!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 52 | 0 | 0 | 0 | 52 |
@@ -398,6 +398,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 3. $80 - 45$: `80 {{key:ENTER}} 45 {{key:-}}` = 35.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student subtracts smaller from larger digit on paper ($6-2=4$, writing 34). | Avoidance of regrouping by inverting digit roles. | "The top number is what you have in the bank. You cannot steal from the bottom number!" |
@@ -418,7 +419,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "1! The remainder is 1!"  
 > **Teacher:** "Any number with a remainder of 1 when divided by 2 is ODD! If the remainder is 0, it is EVEN!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 11 | 0 | 0 | 0 | 11 |
@@ -428,11 +428,12 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 | {{key:x⇄y}} | 0 | 0 | 5 (Quot) | 1 (Rem) |
 
 #### Student Practice Problems
-1. Test 14: `14 {{key:ENTER}} {{key:2}} {{key:÷R}} {{key:x⇄y}}` -> Remainder 0 (EVEN).
-2. Test 17: `17 {{key:ENTER}} {{key:2}} {{key:÷R}} {{key:x⇄y}}` -> Remainder 1 (ODD).
-3. Test 20: `20 {{key:ENTER}} {{key:2}} {{key:÷R}} {{key:x⇄y}}` -> Remainder 0 (EVEN).
+1. Test 14: `14 {{key:ENTER}} {{key:2}} {{key:÷R}} {{key:x⇄y}}` $\to$ Remainder 0 (EVEN).
+2. Test 17: `17 {{key:ENTER}} {{key:2}} {{key:÷R}} {{key:x⇄y}}` $\to$ Remainder 1 (ODD).
+3. Test 20: `20 {{key:ENTER}} {{key:2}} {{key:÷R}} {{key:x⇄y}}` $\to$ Remainder 0 (EVEN).
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student looks only at first digit of two-digit number (e.g. thinking 16 is odd because 1 is odd). | Ignores place value significance of ones digit. | "Look only at the ones place! Can 6 ones be shared equally?" |
@@ -457,7 +458,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "24!"  
 > **Teacher:** "Turn the tray sideways. Now it is 4 columns of 6. Test: `{{key:4}} {{key:ENTER}} {{key:6}} {{key:RECT}}`. Still 24!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:6}} | 0 | 0 | 0 | 6 |
@@ -476,6 +476,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 * **The Four-Color Challenge Rule:** Placed rectangles of the same color cannot touch along a side! The SC-6 calculator serves as the referee: if a challenged player computes an area incorrectly, they forfeit their turn.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student confuses perimeter with area. | Conflates boundary fence with surface tiles. | "Trace the fence with your finger—that is perimeter. Lay your hand over the blocks—that is area!" |
@@ -498,7 +499,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Teacher:** "Press `{{key:x⇄y}}`. What is in Register $Y$?"  
 > **Students:** "3! The remainder!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 23 | 0 | 0 | 0 | 23 |
@@ -508,9 +508,9 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 | {{key:x⇄y}} | 0 | 0 | 5 (Quot) | 3 (Rem) |
 
 #### Student Practice Problems
-1. 19 markers shared among 3 pencil cases: `19 {{key:ENTER}} {{key:3}} {{key:÷R}}` -> $Q=6, R=1$.
-2. 31 apples packed into bags of 6: `31 {{key:ENTER}} {{key:6}} {{key:÷R}}` -> $Q=5, R=1$.
-3. 35 tiles partitioned into teams of 4: `35 {{key:ENTER}} {{key:4}} {{key:÷R}}` -> $Q=8, R=3$.
+1. 19 markers shared among 3 pencil cases: `19 {{key:ENTER}} {{key:3}} {{key:÷R}}` $\to$ $Q=6, R=1$.
+2. 31 apples packed into bags of 6: `31 {{key:ENTER}} {{key:6}} {{key:÷R}}` $\to$ $Q=5, R=1$.
+3. 35 tiles partitioned into teams of 4: `35 {{key:ENTER}} {{key:4}} {{key:÷R}}` $\to$ $Q=8, R=3$.
 
 #### Classroom Station Partner Game: "Remainder Race to Bank"
 * **Materials:** 36 Counting Tiles, 1 Die, SC-6 Calculator.
@@ -518,6 +518,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 * **Winning:** Players alternate turns with the remaining tiles. The player who banks the most remainder tiles wins the round.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student writes $23 \div 4 = 5.75$ and doesn't know what to do with the leftover cookies. | Standard decimal division obscures integer remainder context. | "Can you hand a guest $0.75$ of an unwrapped cookie at a party? Give them 5 cookies and keep 3 in the box!" |
@@ -535,22 +536,22 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "The $\frac{1}{2}$ block is much taller!"  
 > **Teacher:** "Why is $\frac{1}{8}$ smaller if 8 is a bigger number than 2?"  
 > **Student (David):** "Because you had to cut the same candy bar into 8 pieces instead of just 2 pieces! Each slice is tiny!"  
-> **Teacher:** "Brilliant! The denominator tells us how many equal pieces the whole was cut into. Enter $\frac{1}{2}$ on the SC-6: `1.2 {{key:ENTER}}`. Enter $\frac{1}{8}$: `1.8`. Now press `{{key:-}}`. The difference is positive: $\frac{1}{2}$ is $\frac{3}{8}$ larger!"
+> **Teacher:** "Brilliant! The denominator tells us how many equal pieces the whole was cut into. Enter $\frac{1}{2}$ on the SC-6: `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}}`. Enter $\frac{1}{8}$: `{{key:.}} 1 {{key:.}} 8`. Now press `{{key:-}}`. The difference is positive: $\frac{1}{2}$ is $\frac{3}{8}$ larger!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| 1.2 | 0 | 0 | 0 | 1/2 |
+| `{{key:.}} 1 {{key:.}} 2` | 0 | 0 | 0 | 1/2 |
 | {{key:ENTER}} | 0 | 0 | 1/2 | 1/2 |
-| 1.8 | 0 | 0 | 1/2 | 1/8 |
+| `{{key:.}} 1 {{key:.}} 8` | 0 | 0 | 1/2 | 1/8 |
 | {{key:-}} | 0 | 0 | 0 | 3/8 |
 
 #### Student Practice Problems
-1. Show that three $\frac{1}{3}$ blocks equal 1 whole: `1.3 {{key:ENTER}} {{key:3}} {{key:×}}` = 1.
-2. Compare $\frac{1}{4}$ and $\frac{1}{2}$: `1.2 {{key:ENTER}} 1.4 {{key:-}}` = $\frac{1}{4}$.
-3. Show that four $\frac{1}{8}$ blocks equal $\frac{1}{2}$: `1.8 {{key:ENTER}} {{key:4}} {{key:×}}` = $\frac{1}{2}$.
+1. Show that three $\frac{1}{3}$ blocks equal 1 whole: `{{key:.}} 1 {{key:.}} 3 {{key:ENTER}} {{key:3}} {{key:×}}` = 1.
+2. Compare $\frac{1}{4}$ and $\frac{1}{2}$: `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}} {{key:.}} 1 {{key:.}} 4 {{key:-}}` = $\frac{1}{4}$.
+3. Show that four $\frac{1}{8}$ blocks equal $\frac{1}{2}$: `{{key:.}} 1 {{key:.}} 8 {{key:ENTER}} {{key:4}} {{key:×}}` = $\frac{1}{2}$.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student believes $\frac{1}{8} > \frac{1}{4}$ because $8 > 4$. | Whole-number bias applied to denominators. | "Place the physical $\frac{1}{8}$ tower next to the $\frac{1}{4}$ tower. Which one touches the ceiling first?" |
@@ -569,7 +570,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Teacher:** "How many sides did we measure? $n = 5$! Now press `{{key:Σx}}`. What is the total perimeter?"  
 > **Students:** "22.4 centimeters!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:CLΣ}} | 0 | 0 | 0 | 0 |
@@ -581,11 +581,12 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 | {{key:Σx}} | 0 | 0 | 0 | 22.4 |
 
 #### Student Practice Problems
-1. Triangle with sides 5, 7, 8: {{key:CLΣ}} {{key:5}}{{key:Σ+}} {{key:7}}{{key:Σ+}} {{key:8}}{{key:Σ+}} {{key:Σx}} = 20.
+1. Triangle with sides 5, 7, 8: `{{key:CLΣ}} {{key:5}} {{key:Σ+}} {{key:7}} {{key:Σ+}} {{key:8}} {{key:Σ+}} {{key:Σx}}` = 20.
 2. Rectangle perimeter ($8 + 5 + 8 + 5$): `{{key:Σx}}` = 26.
 3. Hexagon with sides 3, 3, 4, 4, 5, 5: `{{key:Σx}}` = 24.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student forgets to clear statistical memory before starting problem 2. | Persistent accumulator contamination. | "Always check $n$. If $n$ is not zero, press {{key:CLΣ}} before walking your fence!" |
@@ -609,7 +610,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "9! 9 ounces left over!"  
 > **Teacher:** "Check your answer: 5 bottles times 16 oz is 80 oz, plus 9 oz equals 89 oz! Perfect!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 89 | 0 | 0 | 0 | 89 |
@@ -619,11 +619,12 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 | {{key:x⇄y}} | 0 | 0 | 5 (Quot) | 9 (Rem) |
 
 #### Student Practice Problems
-1. 145 campers into cabins of 12: `145 {{key:ENTER}} 12 {{key:÷R}}` -> $Q=12$ cabins, $R=1$ camper.
-2. 250 eggs packed in cartons of 12: `250 {{key:ENTER}} 12 {{key:÷R}}` -> $Q=20$ cartons, $R=10$ eggs.
-3. 500 pencils in packs of 24: `500 {{key:ENTER}} 24 {{key:÷R}}` -> $Q=20$ packs, $R=20$ pencils.
+1. 145 campers into cabins of 12: `145 {{key:ENTER}} 12 {{key:÷R}}` $\to$ $Q=12$ cabins, $R=1$ camper.
+2. 250 eggs packed in cartons of 12: `250 {{key:ENTER}} 12 {{key:÷R}}` $\to$ $Q=20$ cartons, $R=10$ eggs.
+3. 500 pencils in packs of 24: `500 {{key:ENTER}} 24 {{key:÷R}}` $\to$ $Q=20$ packs, $R=20$ pencils.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student interprets remainder 9 as $0.9$ bottles. | Confuses integer discrete leftovers with decimal fraction. | "Is that 9 tenths of a bottle, or 9 whole ounces in the bottom of the pot? Remember the units!" |
@@ -639,27 +640,27 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 #### Verbatim Teacher Dialogue Script
 > **Teacher:** "How many $\frac{1}{4}$ blocks match six $\frac{1}{8}$ blocks?"  
 > **Students:** "Three $\frac{1}{4}$ blocks!"  
-> **Teacher:** "So $\frac{6}{8}$ is equivalent to $\frac{3}{4}$. Now let us watch the SC-6 simplify it step-by-step. Enter six-eighths: `6.8 {{key:ENTER}}`. Press blue `{{key:g}}` and `{{key:SIMP}}`. What does the screen show?"  
+> **Teacher:** "So $\frac{6}{8}$ is equivalent to $\frac{3}{4}$. Now let us watch the SC-6 simplify it step-by-step. Enter six-eighths: `{{key:.}} 6 {{key:.}} 8 {{key:ENTER}}`. Press blue `{{key:g}}` and `{{key:SIMP}}`. What does the screen show?"  
 > **Students:** "`3/4`!"  
 > **Teacher:** "What factor did the calculator divide out from top and bottom?"  
 > **Student (Leo):** "It divided both numbers by 2!"  
 > **Teacher:** "Now press {{key:SIMP}} again. What does it say?"  
 > **Students:** "`LOWEST TERMS`! It cannot be simplified any further because 3 is prime!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| 6.8 | 0 | 0 | 0 | 6/8 |
+| `{{key:.}} 6 {{key:.}} 8` | 0 | 0 | 0 | 6/8 |
 | {{key:ENTER}} | 0 | 0 | 6/8 | 6/8 |
 | {{key:SIMP}} | 0 | 0 | 6/8 | 3/4 |
 | {{key:SIMP}} | 0 | 0 | 6/8 | 3/4 (LOWEST) |
 
 #### Student Practice Problems
-1. Simplify $\frac{8}{12}$: `8.12 {{key:ENTER}} {{key:SIMP}}` = $\frac{2}{3}$.
-2. Simplify $\frac{10}{25}$: `10.25 {{key:ENTER}} {{key:SIMP}}` = $\frac{2}{5}$.
-3. Simplify $\frac{18}{24}$: `18.24 {{key:ENTER}} {{key:SIMP}}` = $\frac{3}{4}$.
+1. Simplify $\frac{8}{12}$: `{{key:.}} 8 {{key:.}} 12 {{key:ENTER}} {{key:SIMP}}` = $\frac{2}{3}$.
+2. Simplify $\frac{10}{25}$: `{{key:.}} 10 {{key:.}} 25 {{key:ENTER}} {{key:SIMP}}` = $\frac{2}{5}$.
+3. Simplify $\frac{18}{24}$: `{{key:.}} 18 {{key:.}} 24 {{key:ENTER}} {{key:SIMP}}` = $\frac{3}{4}$.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student divides numerator by 2 and denominator by 3 ($\frac{6 \div 2}{8 \div 4}$). | Fails to recognize that scaling requires multiplying or dividing by $\frac{n}{n} = 1$. | "You must treat the top and bottom with equal justice! Divide both by the exact same number!" |
@@ -675,25 +676,25 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 #### Verbatim Teacher Dialogue Script
 > **Teacher:** "How many fourths fit across $\frac{1}{2} + \frac{1}{4}$?"  
 > **Students:** "Three fourths!"  
-> **Teacher:** "Enter it on the SC-6: `1.2 {{key:ENTER}} 1.4 {{key:+}}`. What is the result?"  
+> **Teacher:** "Enter it on the SC-6: `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}} {{key:.}} 1 {{key:.}} 4 {{key:+}}`. What is the result?"  
 > **Students:** "`3/4`!"  
-> **Teacher:** "Now try a subtraction: $\frac{5}{6} - \frac{1}{3}$. Key: `5.6 {{key:ENTER}} 1.3 {{key:-}}`. What do you get?"  
+> **Teacher:** "Now try a subtraction: $\frac{5}{6} - \frac{1}{3}$. Key: `{{key:.}} 5 {{key:.}} 6 {{key:ENTER}} {{key:.}} 1 {{key:.}} 3 {{key:-}}`. What do you get?"  
 > **Students:** "`1/2`!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| 1.2 | 0 | 0 | 0 | 1/2 |
+| `{{key:.}} 1 {{key:.}} 2` | 0 | 0 | 0 | 1/2 |
 | {{key:ENTER}} | 0 | 0 | 1/2 | 1/2 |
-| 1.4 | 0 | 0 | 1/2 | 1/4 |
+| `{{key:.}} 1 {{key:.}} 4` | 0 | 0 | 1/2 | 1/4 |
 | {{key:+}} | 0 | 0 | 0 | 3/4 |
 
 #### Student Practice Problems
-1. $\frac{1}{3} + \frac{1}{6}$: `{{key:1}}{{key:.}}{{key:3}} {{key:ENTER}} {{key:1}}{{key:.}}{{key:6}} {{key:+}}` = $\frac{1}{2}$.
-2. $\frac{3}{4} - \frac{1}{8}$: `{{key:3}}{{key:.}}{{key:4}} {{key:ENTER}} {{key:1}}{{key:.}}{{key:8}} {{key:-}}` = $\frac{5}{8}$.
-3. $\frac{2}{5} + \frac{3}{10}$: `{{key:2}}{{key:.}}{{key:5}} {{key:ENTER}} {{key:3}}{{key:.}}{{key:1}}{{key:0}} {{key:+}}` = $\frac{7}{10}$.
+1. $\frac{1}{3} + \frac{1}{6}$: `{{key:.}} 1 {{key:.}} 3 {{key:ENTER}} {{key:.}} 1 {{key:.}} 6 {{key:+}}` = $\frac{1}{2}$.
+2. $\frac{3}{4} - \frac{1}{8}$: `{{key:.}} 3 {{key:.}} 4 {{key:ENTER}} {{key:.}} 1 {{key:.}} 8 {{key:-}}` = $\frac{5}{8}$.
+3. $\frac{2}{5} + \frac{3}{10}$: `{{key:.}} 2 {{key:.}} 5 {{key:ENTER}} {{key:.}} 3 {{key:.}} 10 {{key:+}}` = $\frac{7}{10}$.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student adds across numerators and denominators ($\frac{1}{2} + \frac{1}{4} = \frac{2}{6}$). | Treats numerator and denominator as independent whole numbers. | "Look at your blocks! Is $\frac{2}{6}$ bigger than $\frac{1}{2}$? No! You cannot add pieces of different sizes until they share a common name!" |
@@ -713,7 +714,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "60 degrees!"  
 > **Teacher:** "Check with your green triangle corner: it fits the $60^\circ$ gap perfectly!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 180 | 0 | 0 | 0 | 180 |
@@ -722,11 +722,12 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 | {{key:-}} | 0 | 0 | 0 | 60 |
 
 #### Student Practice Problems
-1. Complement of $35^\circ$ ($90 - 35$): `{{key:9}}{{key:0}} {{key:ENTER}} {{key:3}}{{key:5}} {{key:-}}` = $55^\circ$.
-2. Supplement of $45^\circ$ ($180 - 45$): `{{key:1}}{{key:8}}{{key:0}} {{key:ENTER}} {{key:4}}{{key:5}} {{key:-}}` = $135^\circ$.
-3. Sum of four angles meeting at a point ($90 + 120 + 80 + ?$): `{{key:3}}{{key:6}}{{key:0}} {{key:ENTER}} ...` = $70^\circ$.
+1. Complement of $35^\circ$ ($90 - 35$): `{{key:9}} {{key:0}} {{key:ENTER}} {{key:3}} {{key:5}} {{key:-}}` = $55^\circ$.
+2. Supplement of $45^\circ$ ($180 - 45$): `{{key:1}} {{key:8}} {{key:0}} {{key:ENTER}} {{key:4}} {{key:5}} {{key:-}}` = $135^\circ$.
+3. Sum of four angles meeting at a point ($90 + 120 + 80 + ?$): `{{key:3}} {{key:6}} {{key:0}} {{key:ENTER}} ...` = $70^\circ$.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student reads outer scale instead of inner scale on standard protractor, reporting $60^\circ$ for an obtuse angle. | Dual-scale confusion on semi-circular protractors. | "Look at the corner: is it sharper than a book corner or wider than a book corner? Obtuse must be $> 90^\circ$!" |
@@ -744,21 +745,20 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 #### Verbatim Teacher Dialogue Script
 > **Teacher:** "First, let us calculate volume: Length $\times$ Width $\times$ Height. Key: `{{key:5}} {{key:ENTER}} {{key:4}} {{key:×}} {{key:3}} {{key:×}}`. Volume is $60\text{ cm}^3$."  
 > **Teacher:** "Now, total surface area! We must add the areas of all 6 faces. We will use the SC-6 statistical accumulator memory: `{{key:Σ+}}`! Clear memory first: {{key:CLΣ}}."  
-> **Teacher:** "Pair 1 (Top/Bottom, $5 \times 4$, two faces): `{{key:5}} {{key:ENTER}} {{key:4}} {{key:×}} {{key:2}} {{key:×}}` -> 40. Press `{{key:Σ+}}`!"  
-> **Teacher:** "Pair 2 (Front/Back, $5 \times 3$, two faces): `{{key:5}} {{key:ENTER}} {{key:3}} {{key:×}} {{key:2}} {{key:×}}` -> 30. Press `{{key:Σ+}}`!"  
-> **Teacher:** "Pair 3 (Left/Right, $4 \times 3$, two faces): `{{key:4}} {{key:ENTER}} {{key:3}} {{key:×}} {{key:2}} {{key:×}}` -> 24. Press `{{key:Σ+}}`!"  
+> **Teacher:** "Pair 1 (Top/Bottom, $5 \times 4$, two faces): `{{key:5}} {{key:ENTER}} {{key:4}} {{key:×}} {{key:2}} {{key:×}}` $\to$ 40. Press `{{key:Σ+}}`!"  
+> **Teacher:** "Pair 2 (Front/Back, $5 \times 3$, two faces): `{{key:5}} {{key:ENTER}} {{key:3}} {{key:×}} {{key:2}} {{key:×}}` $\to$ 30. Press `{{key:Σ+}}`!"  
+> **Teacher:** "Pair 3 (Left/Right, $4 \times 3$, two faces): `{{key:4}} {{key:ENTER}} {{key:3}} {{key:×}} {{key:2}} {{key:×}}` $\to$ 24. Press `{{key:Σ+}}`!"  
 > **Teacher:** "Screen shows $n = 3$. Now press yellow `{{key:f}}` and `{{key:Σx}}`. What is the total surface area?"  
 > **Students:** "94 square centimeters!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:CLΣ}} | 0 | 0 | 0 | 0 |
-| {{key:5}}{{key:4}}{{key:×}}2 {{key:×}} | 0 | 0 | 0 | 40 |
+| `{{key:5}} {{key:ENTER}} {{key:4}} {{key:×}} {{key:2}} {{key:×}}` | 0 | 0 | 0 | 40 |
 | {{key:Σ+}} | 0 | 0 | 0 | n = 1 |
-| {{key:5}}{{key:3}}{{key:×}}2 {{key:×}} | 0 | 0 | 0 | 30 |
+| `{{key:5}} {{key:ENTER}} {{key:3}} {{key:×}} {{key:2}} {{key:×}}` | 0 | 0 | 0 | 30 |
 | {{key:Σ+}} | 0 | 0 | 0 | n = 2 |
-| {{key:4}}{{key:3}}{{key:×}}2 {{key:×}} | 0 | 0 | 0 | 24 |
+| `{{key:4}} {{key:ENTER}} {{key:3}} {{key:×}} {{key:2}} {{key:×}}` | 0 | 0 | 0 | 24 |
 | {{key:Σ+}} | 0 | 0 | 0 | n = 3 |
 | {{key:Σx}} | 0 | 0 | 0 | 94 |
 
@@ -768,6 +768,7 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 3. Storage crate $10 \times 8 \times 5\text{ cm}$: Volume = $400\text{ cm}^3$, Surface Area = $340\text{ cm}^2$.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student calculates only 3 faces and forgets to multiply by 2. | Confuses the three unique face orientations with total face count. | "Every room has a ceiling AND a floor. Multiply each face pair by 2!" |
@@ -781,28 +782,28 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 - **Tactile Warm-Up:** Shade $\frac{3}{4}$ of a square vertically. Shade $\frac{2}{3}$ horizontally. Count overlapping squares: $\frac{6}{12} = \frac{1}{2}$.
 
 #### Verbatim Teacher Dialogue Script
-> **Teacher:** "Enter $\frac{2}{3} \times \frac{3}{4}$ on SC-6: `2.3 {{key:ENTER}} 3.4 {{key:×}}`. What is the result?"  
+> **Teacher:** "Enter $\frac{2}{3} \times \frac{3}{4}$ on SC-6: `{{key:.}} 2 {{key:.}} 3 {{key:ENTER}} {{key:.}} 3 {{key:.}} 4 {{key:×}}`. What is the result?"  
 > **Students:** "`1/2`!"  
-> **Teacher:** "Now let us divide: $\frac{3}{4} \div \frac{2}{5}$. Dividing by a fraction is the same as multiplying by its flipped upside-down twin—the reciprocal! Enter $\frac{3}{4}$: `3.4 {{key:ENTER}}`. Enter $\frac{2}{5}$: `2.5`. Now tap yellow `{{key:f}}` and reciprocal `{{key:1/x}}`. What did $\frac{2}{5}$ turn into?"  
+> **Teacher:** "Now let us divide: $\frac{3}{4} \div \frac{2}{5}$. Dividing by a fraction is the same as multiplying by its flipped upside-down twin—the reciprocal! Enter $\frac{3}{4}$: `{{key:.}} 3 {{key:.}} 4 {{key:ENTER}}`. Enter $\frac{2}{5}$: `{{key:.}} 2 {{key:.}} 5`. Now tap yellow `{{key:f}}` and reciprocal `{{key:1/x}}`. What did $\frac{2}{5}$ turn into?"  
 > **Students:** "`5/2`!"  
 > **Teacher:** "Now press `{{key:×}}`! What is the final quotient?"  
 > **Students:** "`15/8` or $1\frac{7}{8}$!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| 3.4 | 0 | 0 | 0 | 3/4 |
+| `{{key:.}} 3 {{key:.}} 4` | 0 | 0 | 0 | 3/4 |
 | {{key:ENTER}} | 0 | 0 | 3/4 | 3/4 |
-| 2.5 | 0 | 0 | 3/4 | 2/5 |
+| `{{key:.}} 2 {{key:.}} 5` | 0 | 0 | 3/4 | 2/5 |
 | {{key:1/x}} | 0 | 0 | 3/4 | 5/2 |
 | {{key:×}} | 0 | 0 | 0 | 15/8 |
 
 #### Student Practice Problems
-1. $\frac{4}{5} \times \frac{5}{8}$: `{{key:4}}{{key:.}}{{key:5}} {{key:ENTER}} {{key:5}}{{key:.}}{{key:8}} {{key:×}}` = $\frac{1}{2}$.
-2. $\frac{1}{2} \div \frac{1}{6}$: `{{key:1}}{{key:.}}{{key:2}} {{key:ENTER}} {{key:1}}{{key:.}}{{key:6}} {{key:1/x}} {{key:×}}` = 3.
-3. $\frac{2}{3} \div \frac{4}{9}$: `{{key:2}}{{key:.}}{{key:3}} {{key:ENTER}} {{key:4}}{{key:.}}{{key:9}} {{key:1/x}} {{key:×}}` = $\frac{3}{2} = 1\frac{1}{2}$.
+1. $\frac{4}{5} \times \frac{5}{8}$: `{{key:.}} 4 {{key:.}} 5 {{key:ENTER}} {{key:.}} 5 {{key:.}} 8 {{key:×}}` = $\frac{1}{2}$.
+2. $\frac{1}{2} \div \frac{1}{6}$: `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}} {{key:.}} 1 {{key:.}} 6 {{key:1/x}} {{key:×}}` = 3.
+3. $\frac{2}{3} \div \frac{4}{9}$: `{{key:.}} 2 {{key:.}} 3 {{key:ENTER}} {{key:.}} 4 {{key:.}} 9 {{key:1/x}} {{key:×}}` = $\frac{3}{2} = 1\frac{1}{2}$.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student reciprocates the first fraction instead of the second fraction ($\frac{4}{3} \times \frac{2}{5}$). | Rote mnemonic "keep-change-flip" memorized without structural meaning. | "The divisor (the second passenger) is the one doing the dividing. That is the one that flips!" |
@@ -816,13 +817,12 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 - **Tactile Warm-Up:** Analyze $(8 + 4) \times (9 - 3)$. What must be solved first? The two parenthetical groups!
 
 #### Verbatim Teacher Dialogue Script
-> **Teacher:** "On ordinary calculators, students get lost in tangled parentheses like `( ( 8 + 4 ) * ( 9 - 3 ) )`. If you forget one parenthesis, you get a syntax error. On the SC-6 RPN elevator, we solve inside-out naturally! Evaluate group 1: `{{key:8}} {{key:ENTER}} {{key:4}} {{key:+}}` -> 12. Keep it in the elevator! Now evaluate group 2: `{{key:9}} {{key:ENTER}} {{key:3}} {{key:-}}` -> 6. Look at your screen: Register $Y$ holds 12, Register $X$ holds 6. What operation combines them?"  
+> **Teacher:** "On ordinary calculators, students get lost in tangled parentheses like `( ( 8 + 4 ) * ( 9 - 3 ) )`. If you forget one parenthesis, you get a syntax error. On the SC-6 RPN elevator, we solve inside-out naturally! Evaluate group 1: `{{key:8}} {{key:ENTER}} {{key:4}} {{key:+}}` $\to$ 12. Keep it in the elevator! Now evaluate group 2:`{{key:9}} {{key:ENTER}} {{key:3}} {{key:-}}` $\to$ 6. Look at your screen: Register $Y$ holds 12, Register $X$ holds 6. What operation combines them?"  
 > **Students:** "Multiplication! Press `{{key:×}}`!"  
 > **Teacher:** "Tap `{{key:×}}`. What is the answer?"  
 > **Students:** "72!"  
 > **Teacher:** "Zero parentheses keys used! The stack holds intermediate answers automatically!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:8}} {{key:ENTER}} {{key:4}} | 0 | 0 | 8 | 4 |
@@ -834,11 +834,12 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 | {{key:×}} | 0 | 0 | 0 | 72 |
 
 #### Student Practice Problems
-1. $(14 + 6) \div (7 - 2)$: ``14`{{key:ENTER}}{{key:6}}{{key:+}} {{key:7}}{{key:ENTER}}{{key:2}}{{key:-}} {{key:÷}}` = 4.
-2. $50 - (4 \times 8) + 6$: ``50`{{key:ENTER}} {{key:4}}{{key:ENTER}}{{key:8}}{{key:×}} {{key:-}} {{key:6}}{{key:+}}` = 24.
-3. $(3 + 5)^2 - 10$: `{{key:3}}{{key:ENTER}}{{key:5}}{{key:+}} {{key:x²}} `10` {{key:-}}` = 54.
+1. $(14 + 6) \div (7 - 2)$: `14 {{key:ENTER}} {{key:6}} {{key:+}} {{key:7}} {{key:ENTER}} {{key:2}} {{key:-}} {{key:÷}}` = 4.
+2. $50 - (4 \times 8) + 6$: `50 {{key:ENTER}} {{key:4}} {{key:ENTER}} {{key:8}} {{key:×}} {{key:-}} {{key:6}} {{key:+}}` = 24.
+3. $(3 + 5)^2 - 10$: `{{key:3}} {{key:ENTER}} {{key:5}} {{key:+}} {{key:x²}} 10 {{key:-}}` = 54.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student keys in numbers sequentially from left to right without respecting operator precedence. | Linear reading habit overriding algebraic hierarchy. | "RPN processes operators from the inside out. Build your building blocks first, then combine them!" |
@@ -861,7 +862,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Teacher:** "Now key it into the SC-6. Type `{{key:8}}`. To make it negative, press the sign toggle key `{{key:+/-}}`. Look at the screen—a minus sign appears before the 8. Press `{{key:ENTER}}`. Now type `{{key:5}}` and press `{{key:+}}`. What is the result?"  
 > **Students:** "$-3$!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:8}} | 0 | 0 | 0 | 8 |
@@ -871,11 +871,12 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 | {{key:+}} | 0 | 0 | 0 | -3 |
 
 #### Student Practice Problems
-1. Solve $-12 + (-7)$: `{{key:1}}{{key:2}}{{key:+/-}} {{key:ENTER}} {{key:7}}{{key:+/-}} {{key:+}}` = $-19$.
-2. Solve $15 - (-6)$: `{{key:1}}{{key:5}} {{key:ENTER}} {{key:6}}{{key:+/-}} {{key:-}}` = 21.
-3. Solve $(-4) \times (-8)$: `{{key:4}}{{key:+/-}} {{key:ENTER}} {{key:8}}{{key:+/-}} {{key:×}}` = 32.
+1. Solve $-12 + (-7)$: `{{key:1}} {{key:2}} {{key:+/-}} {{key:ENTER}} {{key:7}} {{key:+/-}} {{key:+}}` = $-19$.
+2. Solve $15 - (-6)$: `{{key:1}} {{key:5}} {{key:ENTER}} {{key:6}} {{key:+/-}} {{key:-}}` = 21.
+3. Solve $(-4) \times (-8)$: `{{key:4}} {{key:+/-}} {{key:ENTER}} {{key:8}} {{key:+/-}} {{key:×}}` = 32.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student presses the operation key `{{key:-}}` instead of sign toggle key `{{key:+/-}}`. | Conflates binary subtraction operator with unary negative sign. | "`{{key:-}}` is an action combining two numbers. `{{key:+/-}}` is a label stuck onto one number!" |
@@ -905,19 +906,19 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "No! It still hits 60 exactly! Multiplication is commutative!"  
 > **Teacher:** "Now multiply them back on the SC-6: `{{key:2}} {{key:x²}} {{key:3}} {{key:×}} {{key:5}} {{key:×}}`. You get exactly 60!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 60 | 0 | 0 | 0 | 60 |
 | {{key:PRIME}} | 0 | 0 | 0 | NOT PRIME |
-| {{key:FACT}} | 0 | 0 | 0 | 2^2 * 3 * 5 |
+| {{key:FACT}} | 0 | 0 | 0 | 60 (2² × 3 × 5) |
 
 #### Student Practice Problems
-1. Prime factorize 84: `{{key:8}}{{key:4}} {{key:FACT}}` -> $2^2 \times 3 \times 7$.
-2. Prime factorize 180: `{{key:1}}{{key:8}}{{key:0}} {{key:FACT}}` -> $2^2 \times 3^2 \times 5$.
+1. Prime factorize 84: `{{key:8}} {{key:4}} {{key:FACT}}` $\to$ $2^2 \times 3 \times 7$.
+2. Prime factorize 180: `{{key:1}} {{key:8}} {{key:0}} {{key:FACT}}` $\to$ $2^2 \times 3^2 \times 5$.
 3. Find GCF of 84 and 180: Shared prime factors $= 2^2 \times 3 = 12$.
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student claims 1 is a prime number. | Misunderstands definition of prime (must have exactly two distinct factors). | "A prime number must have *exactly two* factors: 1 and itself. How many factors does 1 have? Only one!" |
@@ -939,7 +940,6 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 > **Students:** "1.61818...!"  
 > **Teacher:** "That is Phi ($\phi$), the Golden Ratio found in sunflower spirals, nautilus shells, and classical architecture!"
 
-#### Stack Trace Table ($T, Z, Y, X$)
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | 372 | 0 | 0 | 0 | 372 |
@@ -948,11 +948,12 @@ For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as
 | {{key:÷}} | 0 | 0 | 0 | 31 |
 
 #### Student Practice Problems
-1. Unit price: $\$18.60$ for 6 pairs of socks: ``18.60`{{key:ENTER}}[6]{{key:÷}}` = $\$3.10$ per pair.
-2. Typing rate: 385 words in 7 minutes: ``385`{{key:ENTER}}{{key:7}}{{key:÷}}` = 55 wpm.
-3. Fibonacci ratio $144 \div 89$: `144`{{key:ENTER}}89`{{key:÷}}` = $1.61797...$
+1. Unit price: $\$18.60$ for 6 pairs of socks: `18.60 {{key:ENTER}} {{key:6}} {{key:÷}}` = $\$3.10$ per pair.
+2. Typing rate: 385 words in 7 minutes: `385 {{key:ENTER}} {{key:7}} {{key:÷}}` = 55 wpm.
+3. Fibonacci ratio $144 \div 89$: `144` {{key:ENTER}} `89` `{{key:÷}}` = $1.61797...$
 
 #### Misconception Diagnostic Table
+
 | Observable Student Error | Cognitive Root Cause | Targeted Remediation Prompt |
 |:---|:---|:---|
 | Student divides gallons by miles ($12 \div 372 = 0.032$) when asked for miles per gallon. | Ignores unit dimensional grammar. | "Say the units out loud: *miles* PER *gallon*. Miles goes in first, gallons goes in second!" |
@@ -1010,7 +1011,6 @@ The SC-6 Quiz Engine (`{{key:?}}`) incorporates a modified **Leitner Spaced Retr
 
 ### Quiz PRNG, Keypress Entropy & Continuous EEPROM Partitioning
 To guarantee unpredictable practice drills across classroom stations, the quiz engine uses a 32-bit Linear Congruential Generator ($X_{n+1} = (1664525 \cdot X_n + 1013904223) \pmod{2^{32}}$) continuously re-seeded by microsecond timing jitter from the student's physical keystrokes on the $400\text{ g}$ snap-dome matrix. A dedicated 64-byte EEPROM partition preserves unlocked levels (`0x01`), active session scores (`0x02`), high scores per level (`0x06`), fastest latencies (`0x1E`), and the 26-byte Leitner active defect re-queue ring (`0x2A`) across power cycles.
-
 
 ---
 

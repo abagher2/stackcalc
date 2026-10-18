@@ -47,6 +47,7 @@ Following Jerome Bruner's **Concrete-Representational-Abstract (CRA)** framework
 | **Tier 1: FDM 3D Printing** | 0.2 mm PLA / PETG | Zero support structures, $45^\circ$ overhangs, snap joints |
 | **Tier 2: Laser Cutting** | 3 mm Baltic birch plywood / acrylic | 0.15 mm kerf compensation, finger-joint assembly |
 | **Tier 3: Cardstock Cutouts** | 110 lb archival paper | Folding tabs, classroom scissors, glue sticks |
+
 </div>
 
 ---
@@ -69,6 +70,7 @@ All physical math manipulatives in the StackCalc Learning Lab are engineered to 
 | **Total Enclosure Height** | **53.4 mm** | Exact standardized 7U specification |
 | **Standard Footprint 1 (3×1×7U)** | $125.5 \times 41.5 \times 53.4\text{ mm}$ | Compact bin for arrays, counters, and dominos |
 | **Standard Footprint 2 (3×2×7U)** | $125.5 \times 84.0 \times 53.4\text{ mm}$ | Double-wide bin for base-ten blocks and balance scales |
+
 </div>
 
 ### Gridfinity Base Geometry & Dimensional Clearances
@@ -155,6 +157,7 @@ The Ten-Frame Studio provides a tactile bridge for early elementary counting, su
 | **Well Pitch** | $20.0\text{ mm}$ center-to-center | Ergonomic spacing for small fingers |
 | **Bridge Separation** | $5.0\text{ mm}$ raised central rib | Distinguishes first 5 from second 5 (make-ten landmark) |
 | **Interlocking Lugs** | Octagonal MultiBuild dovetails | Links two trays to form a 20-frame matrix |
+
 </div>
 
 ### Two-Color Flip Counters
@@ -405,6 +408,7 @@ The balance scale is the premier physical model for algebraic equality, solving 
 | **Graduated Notches** | 10 slots per arm | Exactly $10.0\text{ mm}$ rider intervals for torque labs |
 | **Pan Diameter** | 60.0 mm | Suspended dish with three $120^\circ$ string anchor holes |
 | **Suspension Line** | 100.0 mm | High-tensile braided Dacron cord |
+
 </div>
 
 ### OpenSCAD Parametric Code: Balance Beam & Fulcrum
@@ -487,6 +491,7 @@ Students transition from elementary clock reading (modulo-60) to angular geometr
 | **Degree Graduations** | $1^\circ, 5^\circ, 10^\circ$ ticks | $1^\circ$ ticks ($0.8\text{ mm}$), $5^\circ$ ($1.8\text{ mm}$), $10^\circ$ major labeled |
 | **Quadrant Badges** | Compass cardinal points | $0^\circ$ (East), $90^\circ$ (North), $180^\circ$ (West), $270^\circ$ (South) |
 | **Radian Equivalence** | Concentric inner track | Direct angular landmarks ($0, \pi/2, \pi, 3\pi/2, 2\pi$) |
+
 </div>
 
 ### OpenSCAD Parametric Code: $360^\circ$ Protractor Wheel
@@ -540,6 +545,7 @@ Geoboards allow students to explore polygon perimeters, coordinate graphing, and
 | **Pin Matrix** | $5 \times 5$ square grid | 25 retention pegs spanning coordinates $(0,0)$ to $(4,4)$ |
 | **Pin Pitch** | 20.0 mm | Standard center-to-center Euclidean unit spacing |
 | **Pin Geometry** | 6.0 mm height, 4.0 mm shank | Undercut mushroom head ($6.0\text{ mm}$ dia) securely traps bands |
+
 </div>
 
 ### The Mushroom Retention Peg Profile
@@ -691,20 +697,11 @@ Conventional injection-molded dice possess an inherent mathematical defect: the 
 
 The SC-6 probability dice solve this by utilizing a **compensated spherical segment volume algorithm**:
 
-> **EQUAL-VOLUME PIP SPHERICAL SEGMENT MODEL**
->
-> Spherical Segment Cavity Volume:
->
-> π × h
-> V  =  ------- × ( 3 × a² + h² )
-> 6
->
-> Where:
-> a = Pip cavity radius at surface
-> h = Pip cavity depth
->
-> Volume Invariance Condition:
-> Total Displaced Volume per Face = V_total = Constant = 8.42 mm³
+$$V = \frac{\pi h}{6}\left(3a^2 + h^2\right)$$
+
+- **$a$:** Pip spherical cavity radius at the die face surface ($\text{mm}$).
+- **$h$:** Pip spherical segment cavity depth ($\text{mm}$).
+- **Volume Invariance Condition:** Total displaced volume per face $V_{\text{total}} = n \cdot V = \mathbf{8.42\text{ mm}^3}$ (constant across all 6 faces).
 
 ### Compensated Pip Dimensions per Face
 
@@ -734,7 +731,7 @@ Every manipulative set in the StackCalc Learning Lab stores into a standardized 
 | **Interior Floor** | 12 Recessed Miniblock Sockets ($6 \times 2$ grid, $19.60\text{ mm}$ center-to-center pitch) |
 | **Tile Geometry** | $19.0 \times 19.0 \times 8.85\text{ mm}$ ($7.0\text{ mm}$ visible 1U unit height) |
 | **Harmonized Standard** | Matches $1/12\text{th}$ Fraction Studio ($12\text{ stacked tiles} = 84.0\text{ mm}$ exact 1-whole datum) |
-| **Total Tile Count** | 144 Tiles across 4 colors ($36\text{ tiles}$ per color) |
+| **Total Tile Count** | 24 Tiles per student kit across 4 colors ($6\text{ tiles}$ per color; $144\text{ tiles}$ per 6-kit classroom caddy) |
 | **Color Palette** | 1. **Archival White** (Sunlu White PLA 2.0+ / White PETG)<br>2. **Cobalt Blue** (Red+Blue Dual Silk PLA, `#2563EB`)<br>3. **Radiant Gold** (Red+Gold Dual Silk PLA, `#BC2626`)<br>4. **Slate Gray** (Sunlu Blue-Gray PLA 2.0+, `#5B6579`) |
 | **Stacking Mechanics** | Gridfinity blocks **do not snap**. Gravity docking with $45^\circ$ chamfers & $0.40\text{ mm}$ slip-fit clearance (zero wear) |
 
@@ -820,7 +817,7 @@ module counting_studio_box() {
             translate([tray_w/2, tray_h/2, bin_h])
                 rounded_square([tray_w, tray_h], r=3.75, h=lip_h);
         }
-        // Inner cavity: 118.0 x 39.2 mm (holds 12 stacks of 12 tiles = 144 tiles)
+        // Inner cavity: 118.0 x 39.2 mm (holds 24 student kit tiles in 4 color-sorted columns, with expansion headroom)
         translate([tray_w/2, tray_h/2, floor_h])
             rounded_square([118.0, 39.2], r=1.0, h=bin_h - floor_h + 0.1);
         // 12 Recessed miniblock sockets in 6x2 grid inside floor
@@ -1181,7 +1178,7 @@ A standard classroom math workshop (4 teams of 6 students = 24 students total) r
 | **Two-Color Flip Counters** | 150 Counters | 3D Print PETG | $0.25\text{ kg}$ Glow Red/Yellow |
 | **Base-10 Station Sets** | 4 Complete Sets | 3D Print / Injection | $0.86\text{ kg}$ PLA & PETG |
 | **Fraction Tower Boxes (13U)** | 6 Boxes | 3D Print Silk PLA | $0.71\text{ kg}$ Dual-Color Silk |
-| **Counting Studio Boxes (13U)**| 6 Boxes (144 tiles ea)| 3D Print PLA/Silk (4 colors)| $1.15\text{ kg}$ White/Blue/Gold/Slate |
+| **Counting Studio Boxes (13U)**| 6 Boxes (24 tiles ea; 144 total)| 3D Print PLA/Silk (4 colors)| $1.15\text{ kg}$ White/Blue/Gold/Slate |
 | **Prime Studio Boxes (13U)**   | 4 Boxes (29 blocks ea)| 3D Print Multi-Color PLA | $0.85\text{ kg}$ White & 5-Color Primes |
 | **Equal-Arm Balance Scales**| 4 Scales | Laser Cut Birch Plywood| 4 sheets $300 \times 300\text{ mm}$ |
 | **$360^\circ$ Angle Volvelles** | 12 Units | Laser Acrylic / Paper | Cardstock & Split Brads |
@@ -1245,7 +1242,7 @@ The 43 tactile switches are mapped into an 8-row by 6-column matrix scanned by C
 | **Flag 2** | `0` (4-Stack) | Stack Depth Mode: `0` = 4-Stack XYZT, `1` = 2-Stack |
 | **Flag 3** | `0` (Degrees) | Angular Mode: `0` = DEG, `1` = RAD (Pre-Algebra) |
 | **Flag 4** | `0` (12-Hour) | Clock Format: `0` = 12h (AM/PM), `1` = 24h Military |
-| **Flag 5** | `0` (Dual Stack) | Stack Layout: `0` = Dual `Y | X`, `1` = Single `X` |
+| **Flag 5** | `0` (Dual Stack) | Stack Layout: `0` = Dual `Y &#124; X`, `1` = Single `X` |
 | **Flag 6** | `0` (Standard) | Sound Chime: `0` = Silent, `1` = Audio click/beeps |
 | **Flag 7** | `0` (Decimal) | Fraction Display: `0` = Decimal, `1` = Fraction |
 | **Flag 8** | `0` (Unreduced) | Fraction Auto-Reduce: `0` = Unreduced, `1` = Auto |
@@ -1293,7 +1290,7 @@ To ensure survivability in high-turnover elementary classrooms and active studen
 Classroom sets are provisioned from an integrated fabrication batch engineered to equip a 30-student STEM laboratory:
 
 - **Total Filament Pool:** $19.0\text{ kg}$ virgin-grade, heavy-metal-free thermoplastic filament (10.0 kg Clean Lab White PLA 2.0+, 4.0 kg Midnight Navy PLA 2.0+, 2.0 kg Cobalt Blue Silk PLA, 2.0 kg Radiant Gold Silk PLA, 1.0 kg Slate Gray PETG).
-- **Batch Output Capacity:** Complete fabrication of 15 Ten-Frame trays with 150 counters, 15 complete Fraction Studio sets with comparator wells, 8 Four-Color Counting Studios (1,152 tiles total), 4 Planetary Geared Clocks, and 4 Prime Factor Studios.
+- **Batch Output Capacity:** Complete fabrication of 15 Ten-Frame trays with 150 counters, 15 complete Fraction Studio sets with comparator wells, 15 Four-Color Counting Studios (24 tiles per student kit, 360 tiles total), 4 Planetary Geared Clocks, and 4 Prime Factor Studios.
 - **Safety Certification:** All finished components meet **16 CFR § 1501 / ASTM F963-17** physical and mechanical toy safety standards and **EN 71-3** chemical migration limits for classroom manipulatives.
 
 ---

@@ -10,10 +10,8 @@ description: "The definitive 43-key tabular audit of the StackCalc SC-32 Stack L
   <span class="te-viewport-status text-sky-400">● 43-KEY HARDWARE MATRIX AUDIT &bull; LASTX TRANSITIONS &bull; REGISTER DELTA ALGEBRA</span>
 </div>
 
-
 {{blocks:sc32_utility_ortho|StackCalc SC-32 Hardware Architecture}}
 *Figure A.1: Orthogonal engineering projection of the StackCalc SC-32 hardware architecture and operational interface.*
-
 
 <div class="p-4 rounded-xl bg-slate-900 border border-sky-500/30 mb-8 font-mono text-xs text-sky-300">
   <strong>CHAPTER BASELINE MODE:</strong> <code>{{key:ALL}}</code> (Full 12-digit scientific mantissa; Standard Base-10 Arithmetic; Degrees angular mode default).
@@ -36,6 +34,7 @@ Unlike algebraic calculators that require dynamic operator precedence stacks and
 | **EDIT BUFFER** (In Progress) | Any function/operator (`{{key:+}}`, `{{key:×}}`, `{{key:√x}}`) | **LIFT ARMED** (`Lift = TRUE`) | Terminates digit entry, evaluates result into `X`, and arms stack lift |
 | **EDIT BUFFER** or **LIFT ARMED** | `{{key:ENTER}}`, `{{key:CLx}}`, `{{key:Σ+}}` | **LIFT DISABLED** (`Lift = FALSE`) | Next digit typed will overwrite `X` in place without lifting `Y` |
 | **LIFT DISABLED** (`Lift = FALSE`) | `{{key:x⇄y}}`, `{{key:R↓}}`, `{{key:R↑}}`, or operator | **LIFT ARMED** (`Lift = TRUE`) | Re-arms stack lift for subsequent numeric entry |
+
 </div>
 
 ### The Three State Categories
@@ -46,7 +45,7 @@ At any discrete operational moment, the calculator's internal control register h
    * Subsequent numeric keypresses (digits `0`–`9`, decimal point `.`, or `E`) push the entire stack upward before writing the new digit into Register $X$.
    * Register movement: $T \leftarrow Z$, $Z \leftarrow Y$, $Y \leftarrow X$, and $X \leftarrow \text{digit}$.
    * The former Top register ($T$) is discarded off the top of the stack.
-   * This is the default armed state produced by nearly all mathematical functions (`+`, `-`, `×`, `÷`, `√x`, `SIN`, `LN`, etc.) and stack rolls (`{{key:R↓}}`, `{{keycap:R↑}}`, `{{key:x⇄y}}`).
+   * This is the default armed state produced by nearly all mathematical functions (`+`, `-`, `×`, `÷`, `√x`, `SIN`, `LN`, etc.) and stack rolls (`{{key:R↓}}`, `{{key:R↑}}`, `{{key:x⇄y}}`).
 
 2. **Disables Stack Lift (`stackLiftEnabled = false`):**
    * Subsequent numeric keypresses overwrite Register $X$ directly **without** pushing the upper registers upward.
@@ -118,7 +117,9 @@ The table below catalogs all 43 physical switch positions of the SC-32 hardware 
 
 ## Shifted Operations & Menu Audit
 
-Every shifted key on the SC-32 adheres strictly to the Stack Lift Automaton. The table below catalogs all left-shifted (`{{key:↰}}`) (`{{key:↰}}`) and right-shifted (`{{key:↱}}`) (`{{key:↱}}`) operations, noting intentional deviations from the vintage HP-32SII:
+Every shifted key on the SC-32 adheres strictly to the Stack Lift Automaton. The tables below catalog all left-shifted (`{{key:↰}}`, Yellow Primary) and right-shifted (`{{key:↱}}`, Blue Secondary) operations, noting intentional deviations from the vintage HP-32SII:
+
+### Table A.1: Left-Shifted Operations (`{{key:↰}}`, Yellow Primary)
 
 | Shifted Combination | Function Name | Stack Lift Status | Updates LASTX? | Register Delta Transformation | Notes & Deviations |
 | :--- | :--- | :---: | :---: | :--- | :--- |
@@ -142,6 +143,11 @@ Every shifted key on the SC-32 adheres strictly to the Stack Lift Automaton. The
 | `{{key:0}}` | `REGS` | Preserves | No | Displays register viewer table | Restored intentional deviation |
 | `{{key:.}}` | `FDISP` | Preserves | No | Toggles fraction display mode (Flag 7) | Educational fraction representation |
 | `{{key:x∥y}}` | `TVM` | Preserves | No | Opens 5-variable TVM workspace | `YELLOW + x∥y` deviation |
+
+### Table A.2: Right-Shifted Operations (`{{key:↱}}`, Blue Secondary)
+
+| Shifted Combination | Function Name | Stack Lift Status | Updates LASTX? | Register Delta Transformation | Notes & Deviations |
+| :--- | :--- | :---: | :---: | :--- | :--- |
 | `{{key:√x}}` | `PARTS` | Preserves | No | Menu: `IP`, `FP`, `ABS`, `SGN`, `GCD`, `LCM` | Number theory and decomposition |
 | `{{key:eˣ}}` | `PROB` | Preserves | No | Menu: `Cn,r`, `Pn,r`, `x!`, `RAND` | Combinatorics and probability |
 | `{{key:LN}}` | `L.R.` | Preserves | No | Menu: `ŷ`, `x̂`, `r`, `m`, `b` | Linear regression estimates & slope |
@@ -151,8 +157,8 @@ Every shifted key on the SC-32 adheres strictly to the Stack Lift Automaton. The
 | `{{key:R↓}}` | `R↑` | **Enables** | No | $X \leftarrow T; Y \leftarrow X; Z \leftarrow Y; T \leftarrow Z$ | Circular roll stack upward |
 | `{{key:SIN}}` | `HYP` | Preserves | No | Sets hyperbolic prefix flag | Arms hyperbolic evaluation |
 | `{{key:x⇄y}}` | `SHOW` | Preserves | No | Renders 15-digit internal mantissa | Non-destructive temporary peek |
-| `{{key:+/-}}` | `\|x\|` | **Enables** | **Yes** | $X \leftarrow \|X\|; Y, Z, T \text{ unch}$ | Absolute value (HP32SII deviation) |
-| `{{key:E}}` | `÷R` | **Enables** | **Yes** | $X \leftarrow \text{rem}(Y, X); Y \leftarrow \lfloor Y/X \rfloor; Z \leftarrow T; T \leftarrow T$ | Integer division & remainder (Deviation) |
+| `{{key:+/-}}` | `&#124;x&#124;` | **Enables** | **Yes** | $X \leftarrow \lvert X\rvert; Y, Z, T \text{ unch}$ | Absolute value (HP32SII deviation) |
+| `{{key:E}}` | `÷R` | **Enables** | **Yes** | $X \leftarrow \lfloor Y/X \rfloor; Y \leftarrow \text{rem}(Y, X); Z \leftarrow T; T \leftarrow T$ | Integer division & remainder (Deviation) |
 | `{{key:<-}}` | *(None)* | Preserves | No | Unassigned | Deliberate blank slot (Deviation) |
 | `{{key:XEQ}}` | `POLY` | Preserves | No | Dynamic cubic solver workspace (`A B C D EXEC CLR`)| Restored intentional deviation |
 | `{{key:÷}}` | `x?0` | Preserves | No | Comparison menu: `x=0`, `x≠0`, `x>0`, etc. | Zero-relative comparison tests |
@@ -169,11 +175,11 @@ Every shifted key on the SC-32 adheres strictly to the Stack Lift Automaton. The
 To verify calculation pipelines with mathematical certainty, the effect of any operator $\Omega$ on the four-register stack $\mathbf{S} = [X, Y, Z, T]^T$ is expressed as a matrix or functional transformation $\mathbf{S}' = \mathbf{f}_\Omega(\mathbf{S})$.
 
 ### Unary Operators ($f(X)$)
-Unary functions include `{{key:√x}}`, `{{key:1/x}}`, `{{key:eˣ}}`, `{{key:LN}}`, `{{key:SIN}}`, `{{key:COS}}`, `{{key:TAN}}`, `{{keycap:x²}}`, `{{keycap:10ˣ}}`, `{{keycap:LOG}}`, `{{keycap:x!}}`, and `{{keycap:|x|}}`:
+Unary functions include `{{key:√x}}`, `{{key:1/x}}`, `{{key:eˣ}}`, `{{key:LN}}`, `{{key:SIN}}`, `{{key:COS}}`, `{{key:TAN}}`, `{{key:x²}}`, `{{key:10ˣ}}`, `{{key:LOG}}`, `{{key:x!}}`, and `{{key:|x|}}`:
 $$\begin{bmatrix} X' \\ Y' \\ Z' \\ T' \end{bmatrix} = \begin{bmatrix} f(X) \\ Y \\ Z \\ T \end{bmatrix}, \quad \text{LASTX}' = X, \quad \text{Lift}' = \text{TRUE}$$
 
 ### Dyadic Operators ($f(Y, X)$)
-Standard binary operators include `{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷}}`, `{{key:yˣ}}`, `{{keycap:ˣ√y}}`, and `{{key:x∥y}}`:
+Standard binary operators include `{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷}}`, `{{key:yˣ}}`, `{{key:ˣ√y}}`, and `{{key:x∥y}}`:
 $$\begin{bmatrix} X' \\ Y' \\ Z' \\ T' \end{bmatrix} = \begin{bmatrix} f(Y, X) \\ Z \\ T \\ T \end{bmatrix}, \quad \text{LASTX}' = X, \quad \text{Lift}' = \text{TRUE}$$
 
 > [!IMPORTANT]
@@ -227,7 +233,7 @@ Demonstrating why pressing `{{key:ENTER}}` prevents accidental stack duplication
 
 ---
 
-### Trace 3: `{{keycap:LASTX}}` Dyadic Operator Correction
+### Trace 3: `{{key:LASTX}}` Dyadic Operator Correction
 The user intends to compute $100 \times 8 = 800$, but accidentally hits `{{key:÷}}`, producing $12.5$. The error is corrected instantly without re-keying $100$ or $8$:
 
 | Step | Keystroke | Stack Lift Flag | Register X | Register Y | LASTX | Pedagogical Notes |
@@ -273,9 +279,9 @@ Compute sales tax ($8.25\%$, multiplier $1.0825$) on three amounts: $\$15.00$, $
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
 | 1 | `{{key:1}} {{key:.}} {{key:0}} {{key:8}} {{key:2}} {{key:5}}` | `1.0825` | `0` | `0` | `0` | Tax factor keyed |
 | 2 | `{{key:ENTER}} {{key:ENTER}} {{key:ENTER}}` | `1.0825` | `1.0825` | `1.0825` | `1.0825` | Stack flooded with factor |
-| 3 | `{{key:1}} {{key:5}} {{key:×}}` | `16.2375` | `1.0825` | `1.0825` | **`1.0825`**| $15 \times 1.0825$; $T$ replicates into $T$! |
-| 4 | `{{key:2}} {{key:4}} {{key:.}} {{key:5}} {{key:×}}` | `26.5213` | `1.0825` | `1.0825` | **`1.0825`**| $24.5 \times 1.0825$; $T$ replicates again! |
-| 5 | `{{key:8}} {{key:0}} {{key:×}}` | `86.6000` | `1.0825` | `1.0825` | **`1.0825`**| $80 \times 1.0825$; constant remains active! |
+| 3 | `{{key:1}} {{key:5}} {{key:×}}` | `16.2375` | `1.0825` | `1.0825` | **`1.0825`**| $15 \times 1.0825$; $T$ replicates into $Z$ and $Y$! |
+| 4 | `{{key:C}} {{key:2}} {{key:4}} {{key:.}} {{key:5}} {{key:×}}` | `26.5213` | `1.0825` | `1.0825` | **`1.0825`**| `C` clears $X$ (disabling lift); $24.5 \times 1.0825$; $T$ replicates! |
+| 5 | `{{key:C}} {{key:8}} {{key:0}} {{key:×}}` | `86.6000` | `1.0825` | `1.0825` | **`1.0825`**| `C` clears $X$; $80 \times 1.0825$; constant remains active! |
 
 ---
 
@@ -296,10 +302,10 @@ Compute $(3 + 4i) + (5 - 2i)$:
 
 | Step | Keystroke | Register X | Register Y | Register Z | Register T | Pedagogical Notes |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{key:3}} {{key:ENTER}} {{key:4}}` | `4` (Imag) | `3` (Real) | `0` | `0` | First complex number staged |
-| 2 | `{{key:ENTER}} {{key:ENTER}}` | `4` | `3` | `4` | `3` | Pushed into upper stack registers |
-| 3 | `{{key:5}} {{key:ENTER}} {{key:2}} {{key:+/-}}`| `-2` | `5` | `4` | `3` | Second complex number in $X$ and $Y$ |
-| 4 | `{{key:CMPLX}} {{key:+}}` | `2` (Imag) | `8` (Real) | `0` | `0` | Vector sum: $(3+5) + (4-2)i = 8 + 2i$ |
+| 1 | `{{key:3}} {{key:ENTER}} {{key:4}}` | `4` (Imag) | `3` (Real) | `0` | `0` | First complex number staged in $(Y, X)$ |
+| 2 | `{{key:ENTER}}` | `4` | `4` | `3` | `0` | Single `ENTER` lifts $(3, 4)$ to $(Z, Y)$ and disables lift |
+| 3 | `{{key:5}} {{key:ENTER}} {{key:2}} {{key:+/-}}`| `-2` | `5` | `4` | `3` | `5` overwrites $X$; `ENTER 2 +/-` lifts $(3, 4)$ to $(T, Z)$! |
+| 4 | `{{key:CMPLX}} {{key:+}}` | `2` (Imag) | `8` (Real) | `3` | `3` | Vector sum: $(3+5) + (4-2)i = 8 + 2i$; $T$ replicates into $Z, T$ |
 
 ---
 
@@ -321,7 +327,7 @@ Divide $29$ by $6$ to find quotient and integer remainder:
 | :---: | :--- | :---: | :---: | :---: | :--- |
 | 1 | `{{key:2}} {{key:9}} {{key:ENTER}}` | `29` | `29` | `0` | Dividend staged in $Y$ |
 | 2 | `{{key:6}}` | `6` | `29` | `0` | Divisor in $X$ |
-| 3 | `{{key:E}}` (` {{key:÷}} R`) | `5` (Remainder) | `4` (Quotient) | `0` | $29 = 4 \times 6 + 5$; quotient in $Y$, remainder in $X$ |
+| 3 | `{{key:E}}` (` {{key:÷}} R`) | `4` (Quotient) | `5` (Remainder) | `0` | $29 = 4 \times 6 + 5$; quotient in $X$, remainder in $Y$ |
 
 ---
 
@@ -331,7 +337,7 @@ Compute $|-45.75|$:
 | Step | Keystroke | Register X | Register Y | Pedagogical Notes |
 | :---: | :--- | :---: | :---: | :--- |
 | 1 | `{{key:4}} {{key:5}} {{key:.}} {{key:7}} {{key:5}} {{key:+/-}}`| `-45.75` | `0` | Negative operand entered |
-| 2 | `{{key:+/-}}` (`|x|`) | `45.75` | `0` | Instant absolute value; stack lift armed |
+| 2 | `{{key:+/-}}` (`&#124;x&#124;`) | `45.75` | `0` | Instant absolute value; stack lift armed |
 | 3 | `{{key:1}} {{key:0}} {{key:×}}` | `457.50` | `0` | Multiplies without needing `{{key:ENTER}}` |
 
 ---
@@ -355,13 +361,11 @@ Under extended system flags (`{{key:FLAGS}}`), the user can expand the stack bey
 | **Level 3** | `Z:` Third Operative | `Z:` Level 3 Register | Level 2 Register |
 | **Level 2** | `Y:` Second Operative | `Y:` Level 2 Register | Level 1 Register |
 | **Level 1 (Display)** | `X:` Primary Display | `X:` Level 1 (Display) | Level 0 (Primary Display) |
+
 </div>
 
 ---
 
 ## Verification & Implementation Invariants
 
-The Stack Lift Automaton is verified across 51 continuous test suites in the calculator firmware and core engine:
-* The Core Stack State Engine (`CalculatorEngine+Stack`)
-* The Key Routing Matrix Suite (`KeyRoutingTests`)
-* The Nuanced Parity Test Suite (`NuancedParityTests`)
+Every state transition of the Stack Lift Automaton—including `Neutral`, `LiftEnabled`, `LiftDisabled`, and `BuildingNumber` transitions across all 43 physical keys and shifted operations—is continuously verified against classical Hewlett-Packard RPN register semantics and deterministic firmware regression suites.

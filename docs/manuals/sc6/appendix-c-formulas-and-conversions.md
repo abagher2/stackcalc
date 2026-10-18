@@ -44,33 +44,52 @@ On the **StackCalc SC-6**, grounded in Jan Łukasiewicz’s parenthesis-free not
 | **Register Z** | Second Balcony | Holds intermediate sub-expressions |
 | **Register Y** | First Balcony | Holds waiting number for binary operation |
 | **Register X** | Ground Lobby | Active entry and current computed result |
+
 </div>
 
 ---
 
-## Table 1: Elementary Geometric Formulas Directory
+## Table 1: Elementary Mathematical & Geometric Formulas Directory
+
+### Foundational Arithmetic Properties & Identity Matrix
+
+Elementary mathematics is anchored in fundamental structural symmetries. The following master matrix pairs each property with its physical manipulative proof, chapter reference, and validated SC-6 stack verification:
+
+| Mathematical Property | Formal Algebraic Identity | Manipulative Model (CRA) | Curriculum Reference | SC-6 RPN Verification |
+|:---|:---|:---|:---|:---|
+| **Commutative (Addition)** | $a + b = b + a$ | Number rack bead grouping (slide left vs. right) | [Chapter 4.1](04-operations-skip-counting.md) | `a {{key:ENTER}} b {{key:+}}` $=$ `b {{key:ENTER}} a {{key:+}}` |
+| **Commutative (Multiplication)** | $a \times b = b \times a$ | 144-tile rectangular array rotated $90^\circ$ | [Chapter 4.1](04-operations-skip-counting.md) | `a {{key:ENTER}} b {{key:×}}` $=$ `b {{key:ENTER}} a {{key:×}}` |
+| **Associative (Addition)** | $(a + b) + c = a + (b + c)$ | Combining 3 color segments of snap cubes | [Chapter 4.1](04-operations-skip-counting.md) | Chained `{{key:+}}` collapses identically in stack |
+| **Associative (Multiplication)** | $(a \times b) \times c = a \times (b \times c)$ | Regrouping 3D unit block prism layers | [Chapter 4.1](04-operations-skip-counting.md) | `a {{key:ENTER}} b {{key:×}} c {{key:×}}` |
+| **Distributive Property** | $a(b + c) = ab + ac$ | Splitting 4-color array mat along color seam | [Chapter 4.1](04-operations-skip-counting.md) | `b {{key:ENTER}} c {{key:+}} a {{key:×}}` |
+| **Identity Elements** | $a + 0 = a, \quad a \times 1 = a$ | Zero tiles added; 1 group of $a$ tiles | [Chapter 4.1](04-operations-skip-counting.md) | Stack preserves operand unmodified |
+| **Division Algorithm** | $a = b \times q + r \ (0 \le r < b)$ | Distributing counters into $b$ equal cups | [Chapter 4.2](04-operations-skip-counting.md) & [Ch 7](07-data-probability-primes.md) | `a {{key:ENTER}} b {{key:÷R}}` $\to (Y: q, X: r)$ |
+| **Fundamental GCD/LCM Duality** | $\gcd(a, b) \times \operatorname{lcm}(a, b) = a \times b$ | Overlapping prime factor studio rods | [Chapter 7.3](07-data-probability-primes.md) | `a {{key:ENTER}} b {{key:GCF}} a {{key:ENTER}} b {{key:LCM}} {{key:×}}` |
+| **Fraction-to-Decimal Bridge** | $\frac{a}{b} = a \div b$ | Fraction studio rods scaled to unit 1-tower | [Chapter 5.1](05-fractions-decimals-ratios.md) | `a {{key:ENTER}} b {{key:÷}}` |
+
+---
 
 ### Two-Dimensional Perimeter & Area Formulas
 
-The following table summarizes 2D geometric formulas, standard metric and customary units, and their validated SC-6 RPN keystroke sequences:
+The following table summarizes 2D geometric formulas, standard metric and customary units, chapter cross-references, and their validated SC-6 RPN keystroke sequences:
 
-| Shape | Metric / Customary Formula | SC-6 RPN Keystroke Sequence | Stack Registers Used |
-|:---|:---|:---|:---:|
-| **Square (Perimeter)** | $P = 4s$ | `s {{key:ENTER}} {{key:4}} {{key:×}}` | $Y, X$ |
-| **Square (Area)** | $A = s^2$ | `s {{key:x²}}` | $X$ (Unary) |
-| **Rectangle (Perimeter)** | $P = 2(l + w)$ | `l {{key:ENTER}} w {{key:+}} {{key:2}} {{key:×}}` | $Y, X$ |
-| **Rectangle (Area)** | $A = l \times w$ | `l {{key:ENTER}} w {{key:RECT}}` | $Y, X$ |
-| **Triangle (Perimeter)** | $P = a + b + c$ | `a {{key:ENTER}} b {{key:+}} [c] {{key:+}}` | $Z, Y, X$ |
-| **Triangle (Area)** | $A = \frac{1}{2} b h$ | `b {{key:ENTER}} h {{key:×}} {{key:2}} {{key:÷}}` | $Y, X$ |
-| **Parallelogram (Area)** | $A = b \times h$ | `b {{key:ENTER}} h {{key:×}}` | $Y, X$ |
-| **Trapezoid (Area)** | $A = \frac{a + b}{2} \times h$ | `a {{key:ENTER}} b {{key:+}} {{key:2}} {{key:÷}} h {{key:×}}` | $Z, Y, X$ |
-| **Circle (Circumference)** | $C = 2\pi r = \pi d$ | `d {{key:ENTER}} {{key:π}} {{key:×}}` | $Y, X$ |
-| **Circle (Area)** | $A = \pi r^2$ | `r {{key:x²}} {{key:π}} {{key:×}}` | $Y, X$ |
-| **Circle Sector (Area)** | $A = \frac{\theta}{360} \pi r^2$ | `r {{key:x²}} {{key:π}} {{key:×}} [θ] {{key:×}} 360 {{key:÷}}` | $Z, Y, X$ |
-| **Circle Arc Length** | $s = \frac{\theta}{360} \pi d$ | `d {{key:π}} {{key:×}} [θ] {{key:×}} 360 {{key:÷}}` | $Z, Y, X$ |
-| **Regular Polygon (Area)** | $A = \frac{1}{2} P \times a$ | `[P] {{key:ENTER}} `a` {{key:×}} {{key:2}} {{key:÷}}` | $Y, X$ |
-| **Regular Hexagon (Area)** | $A = \frac{3\sqrt{3}}{2} s^2$ | `s {{key:x²}} {{key:3}} {{key:×}} {{key:3}} {{keycap:√x}} {{key:×}} {{key:2}} {{key:÷}}` | $Z, Y, X$ |
-| **Ellipse (Area)** | $A = \pi \times a \times b$ | `a {{key:ENTER}} b {{key:×}} {{key:π}} {{key:×}}` | $Y, X$ |
+| Shape | Metric / Customary Formula | Curriculum Reference | SC-6 RPN Keystroke Sequence | Stack Registers Used |
+|:---|:---|:---|:---|:---:|
+| **Square (Perimeter)** | $P = 4s$ | [Chapter 6.2](06-geometry-surface-area.md) | `s {{key:ENTER}} {{key:4}} {{key:×}}` | $Y, X$ |
+| **Square (Area)** | $A = s^2$ | [Chapter 6.2](06-geometry-surface-area.md) | `s {{key:x²}}` | $X$ (Unary) |
+| **Rectangle (Perimeter)** | $P = 2(l + w)$ | [Chapter 6.2](06-geometry-surface-area.md) | `l {{key:ENTER}} w {{key:+}} {{key:2}} {{key:×}}` | $Y, X$ |
+| **Rectangle (Area)** | $A = l \times w$ | [Chapter 6.2](06-geometry-surface-area.md) | `l {{key:ENTER}} w {{key:RECT}}` | $Y, X$ |
+| **Triangle (Perimeter)** | $P = a + b + c$ | [Chapter 6.2](06-geometry-surface-area.md) | `a {{key:ENTER}} b {{key:+}} c {{key:+}}` | $Z, Y, X$ |
+| **Triangle (Area)** | $A = \frac{1}{2} b h$ | [Chapter 6.2](06-geometry-surface-area.md) | `b {{key:ENTER}} h {{key:×}} {{key:2}} {{key:÷}}` | $Y, X$ |
+| **Parallelogram (Area)** | $A = b \times h$ | [Chapter 6.2](06-geometry-surface-area.md) | `b {{key:ENTER}} h {{key:×}}` | $Y, X$ |
+| **Trapezoid (Area)** | $A = \frac{a + b}{2} \times h$ | [Chapter 6.2](06-geometry-surface-area.md) | `a {{key:ENTER}} b {{key:+}} {{key:2}} {{key:÷}} h {{key:×}}` | $Z, Y, X$ |
+| **Circle (Circumference)** | $C = 2\pi r = \pi d$ | [Chapter 6.2](06-geometry-surface-area.md) | `d {{key:π}} {{key:×}}` | $Y, X$ |
+| **Circle (Area)** | $A = \pi r^2$ | [Chapter 6.2](06-geometry-surface-area.md) | `r {{key:x²}} {{key:π}} {{key:×}}` | $Y, X$ |
+| **Circle Sector (Area)** | $A = \frac{\theta}{360} \pi r^2$ | [Chapter 6.2](06-geometry-surface-area.md) | `r {{key:x²}} {{key:π}} {{key:×}} θ {{key:×}} 360 {{key:÷}}` | $Z, Y, X$ |
+| **Circle Arc Length** | $s = \frac{\theta}{360} \pi d$ | [Chapter 6.2](06-geometry-surface-area.md) | `d {{key:π}} {{key:×}} θ {{key:×}} 360 {{key:÷}}` | $Z, Y, X$ |
+| **Regular Polygon (Area)** | $A = \frac{1}{2} P \times a$ | [Chapter 6.2](06-geometry-surface-area.md) | `P {{key:ENTER}} a {{key:×}} {{key:2}} {{key:÷}}` | $Y, X$ |
+| **Regular Hexagon (Area)** | $A = \frac{3\sqrt{3}}{2} s^2$ | [Chapter 6.2](06-geometry-surface-area.md) | `s {{key:x²}} {{key:3}} {{key:×}} {{key:3}} {{key:√x}} {{key:×}} {{key:2}} {{key:÷}}` | $Z, Y, X$ |
+| **Ellipse (Area)** | $A = \pi \times a \times b$ | [Chapter 6.2](06-geometry-surface-area.md) | `a {{key:ENTER}} b {{key:×}} {{key:π}} {{key:×}}` | $Y, X$ |
 
 ---
 
@@ -87,6 +106,7 @@ Formula: $A = \frac{1}{2} \times 14 \times 9 = 63\text{ cm}^2$.
 | {{key:×}} | 0 | 0 | 0 | 126 |
 | {{key:2}} | 0 | 0 | 126 | 2 |
 | {{key:÷}} | 0 | 0 | 0 | 63 |
+
 *Stack Inspection:* The product $14 \times 9 = 126$ is evaluated first, then 2 enters Register $X$, pushing 126 to $Y$. Tapping `{{key:÷}}` divides $Y \div X = 126 \div 2 = 63$.
 
 ---
@@ -114,7 +134,6 @@ Formula: $A = \pi \times 3.5^2 = \pi \times 12.25 \approx 38.48451\text{ m}^2$.
 | :--- | :--- | :--- | :--- | :--- |
 | 3.5 | 0 | 0 | 0 | 3.5 |
 | {{key:x²}} | 0 | 0 | 0 | 12.25 |
-| {{key:ENTER}} | 0 | 0 | 12.25 | 12.25 |
 | {{key:π}} | 0 | 0 | 12.25 | 3.1415926 |
 | {{key:×}} | 0 | 0 | 0 | 38.484510 |
 
@@ -130,7 +149,7 @@ Formula: $A = \frac{3\sqrt{3}}{2} s^2 = \frac{3 \times 1.7320508}{2} \times 64 =
 | {{key:3}} | 0 | 0 | 64 | 3 |
 | {{key:×}} | 0 | 0 | 0 | 192 |
 | {{key:3}} | 0 | 0 | 192 | 3 |
-| {{keycap:√x}} | 0 | 0 | 192 | 1.7320508 |
+| {{key:√x}} | 0 | 0 | 192 | 1.7320508 |
 | {{key:×}} | 0 | 0 | 0 | 332.553759 |
 | {{key:2}} | 0 | 0 | 332.553759 | 2 |
 | {{key:÷}} | 0 | 0 | 0 | 166.276879 |
@@ -149,16 +168,17 @@ Keystrokes for Sector Area:
 
 ### Three-Dimensional Solid Volume & Surface Area Formulas
 
-| Solid | Volume Formula ($V$) | Total Surface Area Formula ($A$) | SC-6 Volume Keystrokes |
-|:---|:---|:---|:---|
-| **Cube** ($s$) | $V = s^3$ | $A = 6s^2$ | `s {{key:ENTER}} {{key:3}} {{keycap:yˣ}}` |
-| **Rectangular Prism** ($l, w, h$) | $V = l \times w \times h$ | $A = 2(lw + lh + wh)$ | `l {{key:ENTER}} w {{key:×}} h {{key:×}}` |
-| **Right Cylinder** ($r, h$) | $V = \pi r^2 h$ | $A = 2\pi rh + 2\pi r^2$ | `r {{key:x²}} {{key:π}} {{key:×}} h {{key:×}}` |
-| **Right Cone** ($r, h$) | $V = \frac{1}{3}\pi r^2 h$ | $A = \pi r(r + \sqrt{h^2 + r^2})$ | `r {{key:x²}} {{key:π}} {{key:×}} h {{key:×}} {{key:3}} {{key:÷}}` |
-| **Square Pyramid** ($b, h$) | $V = \frac{1}{3}b^2 h$ | $A = b^2 + 2b\sqrt{(b/2)^2 + h^2}$ | `b {{key:x²}} h {{key:×}} {{key:3}} {{key:÷}}` |
-| **Sphere** ($r$) | $V = \frac{4}{3}\pi r^3$ | $A = 4\pi r^2$ | `{{key:4}} {{key:ENTER}} {{key:3}} {{key:÷}} {{key:π}} {{key:×}} `r` {{key:3}} {{keycap:yˣ}} {{key:×}}` |
-| **Hemisphere** ($r$) | $V = \frac{2}{3}\pi r^3$ | $A = 3\pi r^2$ (solid) | `{{key:2}} {{key:ENTER}} {{key:3}} {{key:÷}} {{key:π}} {{key:×}} `r` {{key:3}} {{keycap:yˣ}} {{key:×}}` |
-| **Torus** ($R, r$) | $V = 2\pi^2 R r^2$ | $A = 4\pi^2 R r$ | `{{key:2}} {{key:ENTER}} {{key:π}} {{key:x²}} {{key:×}} [R] {{key:×}} `r` {{key:x²}} {{key:×}}` |
+| Solid | Volume Formula ($V$) | Total Surface Area Formula ($A$) | Curriculum Reference | SC-6 Volume Keystrokes |
+|:---|:---|:---|:---|:---|
+| **Cube** ($s$) | $V = s^3$ | $A = 6s^2$ | [Chapter 6.3](06-geometry-surface-area.md) | `s {{key:ENTER}} {{key:3}} {{key:yˣ}}` |
+| **Rectangular Prism** ($l, w, h$) | $V = l \times w \times h$ | $A = 2(lw + lh + wh)$ | [Chapter 6.3](06-geometry-surface-area.md) | `l {{key:ENTER}} w {{key:×}} h {{key:×}}` |
+| **Triangular Prism** ($b, h_{\text{tri}}, L$) | $V = \frac{1}{2} b h_{\text{tri}} L$ | $A = b h_{\text{tri}} + (s_1 + s_2 + s_3) L$ | [Chapter 6.3](06-geometry-surface-area.md) | `b {{key:ENTER}} h {{key:×}} 2 {{key:÷}} L {{key:×}}` |
+| **Right Cylinder** ($r, h$) | $V = \pi r^2 h$ | $A = 2\pi rh + 2\pi r^2$ | [Chapter 6.3](06-geometry-surface-area.md) | `r {{key:x²}} {{key:π}} {{key:×}} h {{key:×}}` |
+| **Right Cone** ($r, h$) | $V = \frac{1}{3}\pi r^2 h$ | $A = \pi r(r + \sqrt{h^2 + r^2})$ | [Chapter 6.3](06-geometry-surface-area.md) | `r {{key:x²}} {{key:π}} {{key:×}} h {{key:×}} {{key:3}} {{key:÷}}` |
+| **Square Pyramid** ($b, h$) | $V = \frac{1}{3}b^2 h$ | $A = b^2 + 2b\sqrt{(b/2)^2 + h^2}$ | [Chapter 6.3](06-geometry-surface-area.md) | `b {{key:x²}} h {{key:×}} {{key:3}} {{key:÷}}` |
+| **Sphere** ($r$) | $V = \frac{4}{3}\pi r^3$ | $A = 4\pi r^2$ | [Chapter 6.3](06-geometry-surface-area.md) | `{{key:4}} {{key:ENTER}} {{key:3}} {{key:÷}} {{key:π}} {{key:×}} r {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:×}}` |
+| **Hemisphere** ($r$) | $V = \frac{2}{3}\pi r^3$ | $A = 3\pi r^2$ (solid) | [Chapter 6.3](06-geometry-surface-area.md) | `{{key:2}} {{key:ENTER}} {{key:3}} {{key:÷}} {{key:π}} {{key:×}} r {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:×}}` |
+| **Torus** ($R, r$) | $V = 2\pi^2 R r^2$ | $A = 4\pi^2 R r$ | [Chapter 6.3](06-geometry-surface-area.md) | `{{key:2}} {{key:π}} {{key:x²}} {{key:×}} R {{key:×}} r {{key:x²}} {{key:×}}` |
 
 ---
 
@@ -169,6 +189,7 @@ Keystrokes for Sector Area:
 - Surface Area: $A = 2\pi(4)(10) + 2\pi(4^2) = 80\pi + 32\pi = 112\pi \approx 351.8584\text{ m}^2$.
 
 Volume Stack Trace:
+
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:4}} | 0 | 0 | 0 | 4 |
@@ -179,15 +200,16 @@ Volume Stack Trace:
 | {{key:×}} | 0 | 0 | 0 | 502.654824 |
 
 Total Surface Area Stack Trace:
+
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:2}} {{key:ENTER}} | 0 | 0 | 2 | 2 |
+| {{key:2}} | 0 | 0 | 0 | 2 |
 | {{key:π}} {{key:×}} | 0 | 0 | 0 | 6.2831853 |
 | {{key:4}} {{key:×}} | 0 | 0 | 0 | 25.132741 |
 | 10 {{key:×}} | 0 | 0 | 0 | 251.327412 |
-| {{key:2}} {{key:ENTER}} | 0 | 251.327412 | 2 | 2 |
-| {{key:π}} {{key:×}} | 0 | 251.327412 | 0 | 6.2831853 |
-| {{key:4}} {{key:x²}} {{key:×}} | 0 | 251.327412 | 0 | 100.530964 |
+| {{key:2}} | 0 | 0 | 251.327412 | 2 |
+| {{key:π}} {{key:×}} | 0 | 0 | 251.327412 | 6.2831853 |
+| {{key:4}} {{key:x²}} {{key:×}} | 0 | 0 | 251.327412 | 100.530964 |
 | {{key:+}} | 0 | 0 | 0 | 351.858376 |
 
 ---
@@ -198,6 +220,7 @@ Slant height: $s = \sqrt{r^2 + h^2} = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{
 - Surface Area: $A = \pi r (r + s) = \pi (6) (6 + 10) = 96\pi \approx 301.59289\text{ cm}^2$.
 
 Cone Volume Stack Trace:
+
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:6}} {{key:x²}} | 0 | 0 | 0 | 36 |
@@ -235,6 +258,7 @@ For multi-faceted polyhedra (prisms, pyramids, and irregular engineering enclosu
 | **Step 3: Face Pair 2 ($L \times H$)** | Front & Back | `l {{key:ENTER}} h {{key:×}} 2 {{key:×}} {{key:Σ+}}` | Stored ($n = 2$) |
 | **Step 4: Face Pair 3 ($W \times H$)** | Left & Right | `w {{key:ENTER}} h {{key:×}} 2 {{key:×}} {{key:Σ+}}` | Stored ($n = 3$) |
 | **Step 5: Recall Total Area** | Sum all faces | `{{key:Σx}}` | Total Area on $X$ |
+
 </div>
 
 ### Worked Prism Example ($l = 12\text{ cm}, w = 7\text{ cm}, h = 5\text{ cm}$)
@@ -424,6 +448,7 @@ $$C = (F - 32) \times \frac{5}{9} \qquad F = \left(C \times \frac{9}{5}\right) +
 | **Celsius to Fahrenheit** | $F = (C \times \frac{9}{5}) + 32$ | `{{key:C}} {{key:ENTER}} {{key:9}} {{key:×}} {{key:5}} {{key:÷}} 32 {{key:+}}` |
 | **Celsius to Kelvin** | $K = C + 273.15$ | `{{key:C}} {{key:ENTER}} 273.15 {{key:+}}` |
 | **Kelvin to Celsius** | $C = K - 273.15$ | `[K] {{key:ENTER}} 273.15 {{key:-}}` |
+
 </div>
 
 #### Worked Temperature Conversion Stack Trace: Normal Body Temp ($98.6^\circ\text{F} \to ^\circ\text{C}$)
@@ -438,6 +463,7 @@ $$C = (F - 32) \times \frac{5}{9} \qquad F = \left(C \times \frac{9}{5}\right) +
 | {{key:×}} | 0 | 0 | 0 | 333.0 |
 | {{key:9}} | 0 | 0 | 333.0 | 9 |
 | {{key:÷}} | 0 | 0 | 0 | 37.0 |
+
 Result: Normal human body temperature is exactly **$37.0^\circ\text{C}$** (or on the SC-6 keypad, `98.6 {{key:▸°C}}` $\to$ `37.00`).
 
 ---
@@ -450,12 +476,13 @@ $$\text{Distance in km} = 26.2 \times 1.609344 \approx 42.1648128\text{ km}$$
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
-| {{key:2}}{{key:6}}{{key:.}}{{key:2}} | 0 | 0 | 0 | 26.2 |
+| {{key:2}} {{key:6}} {{key:.}} {{key:2}} | 0 | 0 | 0 | 26.2 |
 | {{key:ENTER}} | 0 | 0 | 26.2 | 26.2 |
 | `1.609344` | 0 | 0 | 26.2 | 1.609344 |
 | {{key:×}} | 0 | 0 | 0 | 42.164813 |
 | 1000 | 0 | 0 | 42.164813 | 1000 |
 | {{key:×}} | 0 | 0 | 0 | 42164.81280 |
+
 *Stack Inspection:* Register $X$ now holds the exact Olympic marathon distance: **$42,164.81\text{ meters}$**.
 
 ---
@@ -471,6 +498,7 @@ Conversion factor: $1\text{ foot} = 0.3048\text{ meters}$ exact.
 | {{key:×}} | 0 | 0 | 0 | 10972.8 |
 | 1000 | 0 | 0 | 10972.8 | 1000 |
 | {{key:÷}} | 0 | 0 | 0 | 10.9728 |
+
 Cruising altitude: **$10,972.8\text{ meters}$** or **$10.97\text{ km}$** (stratosphere).
 
 ---
@@ -485,6 +513,7 @@ $$\text{L/100km} = \frac{235.215}{\text{MPG}}$$
 | {{key:ENTER}} | 0 | 0 | 235.215 | 235.215 |
 | 35 | 0 | 0 | 235.215 | 35 |
 | {{key:÷}} | 0 | 0 | 0 | 6.720429 |
+
 A vehicle rated at $35\text{ MPG}$ consumes **$6.72\text{ liters of gasoline per 100 kilometers}$**.
 
 ---
@@ -504,10 +533,10 @@ Absolute zero in Fahrenheit is $-459.67^\circ\text{F}$.
 | {{key:÷}} | 0 | 0 | 0 | -273.15 |
 | `273.15` | 0 | 0 | -273.15 | 273.15 |
 | {{key:+}} | 0 | 0 | 0 | 0.00 |
+
 Result: Exactly **$-273.15^\circ\text{C}$** and **$0.00\text{ K}$** (absolute zero).
 
 ---
-
 
 ## Table 3: Prime Number Catalog & Factorization Directory
 
@@ -579,12 +608,12 @@ Before testing large integers with `{{key:PRIME}}`, mental mathletes and student
 | **4** | Last two digits form number divisible by 4. | `[last2] {{key:ENTER}} {{key:4}} {{key:÷R}} {{key:x⇄y}}` $\to 0$ | $3,728 \to 28 \div 4 \to R = 0$ |
 | **5** | Last digit is 0 or 5. | Inspect last digit on LCD display. | $95 \to$ Ends in 5 (Div by 5) |
 | **6** | Divisible by both 2 and 3. | Test 2 (even) and test 3 (digit sum). | $78 \to$ Even, and $7+8=15$ (Div by 6) |
-| **7** | Double last digit, subtract from remaining part. | `[rem] {{key:ENTER}} [last] {{key:2}} {{key:×}} {{key:-}} {{key:7}} {{keycap:÷R}}` | $203 \to 20 - (2 \times 3) = 14$ (Div by 7) |
+| **7** | Double last digit, subtract from remaining part. | `[rem] {{key:ENTER}} [last] {{key:2}} {{key:×}} {{key:-}} {{key:7}} {{key:÷R}}` | $203 \to 20 - (2 \times 3) = 14$ (Div by 7) |
 | **8** | Last three digits form number divisible by 8. | `[last3] {{key:ENTER}} {{key:8}} {{key:÷R}} {{key:x⇄y}}` $\to 0$ | $5,128 \to 128 \div 8 = 16, R = 0$ |
 | **9** | Sum of digits is divisible by 9. | `[d1] {{key:ENTER}} [d2] {{key:+}} ... {{key:9}} {{key:÷R}}` | $423 \to 4+2+3=9 \div 9 \to R = 0$ |
 | **10** | Last digit is 0. | Inspect Register $X$ display. | $340 \to$ Ends in 0 |
 | **11** | Alternating sum of digits is multiple of 11. | `[d1] {{key:ENTER}} [d2] {{key:-}} [d3] {{key:+}} ...` | $913 \to 9 - 1 + 3 = 11$ (Div by 11) |
-| **13** | Add 4 times last digit to remaining part. | `[rem] {{key:ENTER}} [last] {{key:4}} {{key:×}} {{key:+}} `13` {{keycap:÷R}}`| $299 \to 29 + (4 \times 9) = 65 = 5 \times 13$ |
+| **13** | Add 4 times last digit to remaining part. | `[rem] {{key:ENTER}} [last] {{key:4}} {{key:×}} {{key:+}} 13 {{key:÷R}}`| $299 \to 29 + (4 \times 9) = 65 = 5 \times 13$ |
 
 ---
 
@@ -598,22 +627,22 @@ The table below shows 10 foundational composite numbers, their canonical prime f
 
 | Composite Number ($N$) | Canonical Factorization | SC-6 Hardware {{key:FACT}} LCD Output | RPN Reconstruction Keystroke Sequence |
 |:---:|:---:|:---|:---|
-| **72** | $2^3 \times 3^2$ | `2^3 * 3^2` | `{{key:2}} {{key:ENTER}} {{key:3}} {{keycap:yˣ}} {{key:3}} {{key:x²}} {{key:×}}` $\to 72$ |
+| **72** | $2^3 \times 3^2$ | `2^3 * 3^2` | `{{key:2}} {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:3}} {{key:x²}} {{key:×}}` $\to 72$ |
 | **84** | $2^2 \times 3 \times 7$ | `2^2 * 3 * 7` | `{{key:2}} {{key:x²}} {{key:3}} {{key:×}} {{key:7}} {{key:×}}` $\to 84$ |
 | **180** | $2^2 \times 3^2 \times 5$ | `2^2 * 3^2 * 5` | `{{key:2}} {{key:x²}} {{key:3}} {{key:x²}} {{key:×}} {{key:5}} {{key:×}}` $\to 180$ |
 | **252** | $2^2 \times 3^2 \times 7$ | `2^2 * 3^2 * 7` | `{{key:2}} {{key:x²}} {{key:3}} {{key:x²}} {{key:×}} {{key:7}} {{key:×}}` $\to 252$ |
-| **360** | $2^3 \times 3^2 \times 5$ | `2^3 * 3^2 * 5` | `{{key:2}} {{key:ENTER}} {{key:3}} {{keycap:yˣ}} {{key:3}} {{key:x²}} {{key:×}} {{key:5}} {{key:×}}` $\to 360$ |
-| **504** | $2^3 \times 3^2 \times 7$ | `2^3 * 3^2 * 7` | `{{key:2}} {{key:ENTER}} {{key:3}} {{keycap:yˣ}} {{key:3}} {{key:x²}} {{key:×}} {{key:7}} {{key:×}}` $\to 504$ |
-| **720** | $2^4 \times 3^2 \times 5$ | `2^4 * 3^2 * 5` | `{{key:2}} {{key:ENTER}} {{key:4}} {{keycap:yˣ}} {{key:3}} {{key:x²}} {{key:×}} {{key:5}} {{key:×}}` $\to 720$ |
-| **1,000** | $2^3 \times 5^3$ | `2^3 * 5^3` | `{{key:2}} {{key:ENTER}} {{key:3}} {{keycap:yˣ}} {{key:5}} {{key:ENTER}} {{key:3}} {{keycap:yˣ}} {{key:×}}` $\to 1000$ |
-| **1,024** | $2^{10}$ | `2^10` | `{{key:2}} {{key:ENTER}} 10 {{keycap:yˣ}}` $\to 1024$ |
+| **360** | $2^3 \times 3^2 \times 5$ | `2^3 * 3^2 * 5` | `{{key:2}} {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:3}} {{key:x²}} {{key:×}} {{key:5}} {{key:×}}` $\to 360$ |
+| **504** | $2^3 \times 3^2 \times 7$ | `2^3 * 3^2 * 7` | `{{key:2}} {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:3}} {{key:x²}} {{key:×}} {{key:7}} {{key:×}}` $\to 504$ |
+| **720** | $2^4 \times 3^2 \times 5$ | `2^4 * 3^2 * 5` | `{{key:2}} {{key:ENTER}} {{key:4}} {{key:yˣ}} {{key:3}} {{key:x²}} {{key:×}} {{key:5}} {{key:×}}` $\to 720$ |
+| **1,000** | $2^3 \times 5^3$ | `2^3 * 5^3` | `{{key:2}} {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:5}} {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:×}}` $\to 1000$ |
+| **1,024** | $2^{10}$ | `2^10` | `{{key:2}} {{key:ENTER}} 10 {{key:yˣ}}` $\to 1024$ |
 | **1,729** | $7 \times 13 \times 19$ | `7 * 13 * 19` | `{{key:7}} {{key:ENTER}} 13 {{key:×}} 19 {{key:×}}` $\to 1729$ |
 
 *Note on 1,729 (Hardy-Ramanujan Taxicab Number):* It is the smallest integer expressible as the sum of two positive cubes in two different ways:
 $$1729 = 1^3 + 12^3 = 9^3 + 10^3$$
 Verify on SC-6:
-- Pair 1: `{{key:1}} {{key:ENTER}} {{key:3}} {{keycap:yˣ}} 12 {{key:ENTER}} {{key:3}} {{keycap:yˣ}} {{key:+}}` $\to 1 + 1728 = 1729$.
-- Pair 2: `{{key:9}} {{key:ENTER}} {{key:3}} {{keycap:yˣ}} 10 {{key:ENTER}} {{key:3}} {{keycap:yˣ}} {{key:+}}` $\to 729 + 1000 = 1729$.
+- Pair 1: `{{key:1}} {{key:ENTER}} {{key:3}} {{key:yˣ}} 12 {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:+}}` $\to 1 + 1728 = 1729$.
+- Pair 2: `{{key:9}} {{key:ENTER}} {{key:3}} {{key:yˣ}} 10 {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:+}}` $\to 729 + 1000 = 1729$.
 
 ---
 
@@ -632,6 +661,7 @@ The table below catalogs 10 number pairs, their step-by-step Euclidean quotient 
 | **$(144, 96)$**| $144 = 1(96) + 48$; $96 = 2(48) + 0$ | **48** | 13,824 | **288** |
 | **$(210, 165)$**| $210 = 1(165) + 45$; $165 = 3(45) + 30$; $45 = 1(30) + 15$; $30 = 2(15) + 0$| **15** | 34,650 | **2,310** |
 | **$(252, 105)$**| $252 = 2(105) + 42$; $105 = 2(42) + 21$; $42 = 2(21) + 0$ | **21** | 26,460 | **1,260** |
+
 ---
 
 ### Goldbach's Conjecture Verification Matrix (Evens 4 to 60)
@@ -699,12 +729,13 @@ Formula: $N = 2^{5-1} \times (2^5 - 1) = 16 \times 31 = 496$.
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
 | {{key:2}} {{key:ENTER}} | 0 | 0 | 2 | 2 |
-| {{key:5}} {{keycap:yˣ}} | 0 | 0 | 0 | 32 |
+| {{key:5}} {{key:yˣ}} | 0 | 0 | 0 | 32 |
 | {{key:1}} {{key:-}} | 0 | 0 | 0 | 31 |
 | {{key:PRIME}} | 0 | 0 | 0 | 31 IS PRIME |
 | {{key:2}} {{key:ENTER}} | 0 | 31 | 2 | 2 |
-| {{key:4}} {{keycap:yˣ}} | 0 | 31 | 0 | 16 |
+| {{key:4}} {{key:yˣ}} | 0 | 0 | 31 | 16 |
 | {{key:×}} | 0 | 0 | 0 | 496 |
+
 Result: **$496$** confirmed prime-constructed perfect integer.
 
 ---
@@ -738,7 +769,6 @@ Verify factor on SC-6:
 
 ### Geometric & Physical Quick Matrix
 
-
 | Mathematical Problem | Known Inputs | Target Output | RPN Key Sequence Template |
 |:---|:---|:---|:---|
 | **Area of Circle** | Radius $r$ | Area $A$ | `r {{key:x²}} {{key:π}} {{key:×}}` |
@@ -748,10 +778,10 @@ Verify factor on SC-6:
 | **Area of Trapezoid** | Bases $a, b$, Height $h$| Area $A$ | `a {{key:ENTER}} b {{key:+}} {{key:2}} {{key:÷}} h {{key:×}}` |
 | **Volume of Cylinder** | Radius $r$, Height $h$ | Volume $V$ | `r {{key:x²}} {{key:π}} {{key:×}} h {{key:×}}` |
 | **Volume of Cone** | Radius $r$, Height $h$ | Volume $V$ | `r {{key:x²}} {{key:π}} {{key:×}} h {{key:×}} {{key:3}} {{key:÷}}` |
-| **Volume of Sphere** | Radius $r$ | Volume $V$ | `{{key:4}} {{key:ENTER}} {{key:3}} {{key:÷}} {{key:π}} {{key:×}} `r` {{key:3}} {{keycap:yˣ}} {{key:×}}` |
+| **Volume of Sphere** | Radius $r$ | Volume $V$ | `{{key:4}} {{key:ENTER}} {{key:3}} {{key:÷}} {{key:π}} {{key:×}} [r] {{key:3}} {{keycap:yˣ}} {{key:×}}` |
 | **Volume of Rectangular Box** | Length $l$, Width $w$, Height $h$| Volume $V$ | `l {{key:ENTER}} w {{key:×}} h {{key:×}}` |
 | **Surface Area of Cube** | Side $s$ | Surface Area $A$| `s {{key:x²}} {{key:6}} {{key:×}}` |
-| **Percent of a Number** | Whole $W$, Rate $r\%$ | Part $P$ | `[W] {{key:ENTER}} `r` {{key:%}}` |
+| **Percent of a Number** | Whole $W$, Rate $r\%$ | Part $P$ | `[W] {{key:ENTER}} r {{key:%}}` |
 | **Percent Increase / Decrease**| Old $O$, New $N$ | Change $\% \Delta$ | `[O] {{key:ENTER}} {{key:N}} [Δ%]` |
 | **Fahrenheit to Celsius** | Temp $F$ | Temp $C$ | `[F] {{key:ENTER}} 32 {{key:-}} {{key:5}} {{key:×}} {{key:9}} {{key:÷}}` |
 | **Celsius to Fahrenheit** | Temp $C$ | Temp $F$ | `{{key:C}} {{key:ENTER}} {{key:9}} {{key:×}} {{key:5}} {{key:÷}} 32 {{key:+}}` |
@@ -769,14 +799,14 @@ Everyday consumer mathematics problems (interest, taxes, tips, unit cost compari
 
 | Financial Operation | Mathematical Formula | SC-6 RPN Execution Template |
 |:---|:---|:---|
-| **Simple Interest ($I$)** | $I = P \times r \times t$ | `[P] {{key:ENTER}} `r` {{key:%}} [t] {{key:×}}` |
-| **Total Amount ($A$)** | $A = P + I = P(1 + rt)$ | `[P] {{key:ENTER}} `r` {{key:%}} [t] {{key:×}} {{key:+}}` |
-| **Sales Tax ($T$)** | $T = P \times r$ | `[P] {{key:ENTER}} `r` {{key:%}}` |
-| **Total with Tax** | $Total = P \times (1 + r)$ | `[P] {{key:ENTER}} `r` {{key:%}} {{key:+}}` |
-| **Discount Amount ($D$)** | $D = P \times d$ | `[P] {{key:ENTER}} `d` {{key:%}}` |
-| **Sale Price** | $Sale = P \times (1 - d)$ | `[P] {{key:ENTER}} `d` {{key:%}} {{key:-}}` |
+| **Simple Interest ($I$)** | $I = P \times r \times t$ | `[P] {{key:ENTER}} [r] {{key:%}} [t] {{key:×}}` |
+| **Total Amount ($A$)** | $A = P + I = P(1 + rt)$ | `[P] {{key:ENTER}} [r] {{key:%}} [t] {{key:×}} {{key:+}}` |
+| **Sales Tax ($T$)** | $T = P \times r$ | `[P] {{key:ENTER}} r {{key:%}}` |
+| **Total with Tax** | $Total = P \times (1 + r)$ | `[P] {{key:ENTER}} [r] {{key:%}} {{key:+}}` |
+| **Discount Amount ($D$)** | $D = P \times d$ | `[P] {{key:ENTER}} d {{key:%}}` |
+| **Sale Price** | $Sale = P \times (1 - d)$ | `[P] {{key:ENTER}} [d] {{key:%}} {{key:-}}` |
 | **Restaurant Tip ($18\%$)**| $Tip = Bill \times 0.18$ | `[Bill] {{key:ENTER}} 18 {{key:%}}` |
-| **Compound Interest ($A$)**| $A = P(1 + r)^t$ (annual) | `{{key:1}} {{key:ENTER}} `r` {{key:+}} [t] {{keycap:yˣ}} [P] {{key:×}}` |
+| **Compound Interest ($A$)**| $A = P(1 + r)^t$ (annual) | `{{key:1}} {{key:ENTER}} [r] {{key:+}} [t] {{keycap:yˣ}} [P] {{key:×}}` |
 
 #### Worked Financial Stack Trace: 3-Year Certificate of Deposit ($P = 500\text{ USD}, r = 4\%, t = 3\text{ years}$)
 Formula: $A = 500 \times (1 + 0.04)^3 = 500 \times (1.04)^3 = 500 \times 1.124864 = \$562.43$.
@@ -789,6 +819,7 @@ Formula: $A = 500 \times (1 + 0.04)^3 = 500 \times (1.04)^3 = 500 \times 1.12486
 | {{keycap:yˣ}} | 0 | 0 | 0 | 1.124864 |
 | 500 | 0 | 0 | 1.124864 | 500 |
 | {{key:×}} | 0 | 0 | 0 | 562.43 |
+
 Result: **$\$562.43$** total balance (yielding $\$62.43$ compound interest).
 
 ---

@@ -99,7 +99,6 @@ Unlike consumer graphing calculators that rely on general-purpose microprocessor
 | **On-Chip SRAM** | 520 KiB Multi-Bank RAM | System Bus | 64 KiB tightly coupled data RAM, 350 KiB heap (stack & history), 106 KiB dual-core shared buffers |
 | **Non-Volatile QSPI Flash** | 4 MiB High-Speed Flash | 66 MHz QSPI | 3.936 MiB firmware & vector font bitmaps, 64 KiB continuous ping-pong state slots |
 
-
 ### Symmetric Task Partitioning
 The twin processing cores divide system responsibilities with zero thread contention:
 * **Core 0 (Computational Engine):** Dedicated strictly to mathematical evaluation, RPN stack mechanics, arbitrary precision floating-point algorithms, polynomial root extraction, numerical quadrature, and bivariate regression. Core 0 executes the deterministic Embedded Swift runtime (`RPNCore`), where arithmetic operations are compiled into direct machine code with soft-float whole-module optimization.
@@ -179,7 +178,6 @@ The SC-32 is offered in seven specialized Color, Material, and Finish (CMF) edit
 | **CMF-05** | **Heritage Pioneer** | Dark Chestnut PETG | Classic Corvallis Pioneer brown with high-contrast laser-foamed legends | Calculator historians, vintage collectors, scholars |
 | **CMF-06** | **Earth-Tone Espresso** | Bio-Polymer Dark Roast | Impact-resistant organic bio-composite satin finish | Environmental fieldwork, forestry, civil surveying |
 | **CMF-07** | **Synthwave Purple** | Royal Silk Purple | Vibrant dual-color shell with high-contrast white markings | Creative makerspaces, embedded firmware benches |
-
 
 ### Digital Twin Heritage Themes
 Within the StackCalc iOS, iPadOS, and macOS companion applications, three digital themes mirror classic physical instruments:
@@ -305,7 +303,7 @@ The SC-32 visual subsystem features a high-density $132 \times 65$ pixel monochr
 | **Line Z** | `Z:        45.5000000000_` | Deep subtotal and intermediate holding register |
 | **Line Y** | `Y:         8.0000000000_` | Second operand in dyadic arithmetic ($Y \text{ op } X$) |
 | **Line X** | `X:       128.0000000000_` | Primary accumulator, active input line, and displayed result |
-| **Status Bar** | `{{key:DEG}}  {{keycap:CMPLX}}  {{key:ALL}}  [BAT]` | Active trigonometric mode, complex flag, precision, battery |
+| **Status Bar** | `{{key:DEG}}  {{key:CMPLX}}  {{key:ALL}}  [BAT]` | Active trigonometric mode, complex flag, precision, battery |
 
 ### Multi-Layer Optical Polarization Sandwich
 Understanding the optical physics explains why the screen remains legible across extreme ambient lighting conditions from dim study desks to direct desert sunlight:
@@ -351,7 +349,6 @@ The SC-32 provides true non-volatile **Continuous Memory**. When the calculator 
 | **Integrity Algorithm** | 32-bit FNV-1a Hash Checksum | Validated on every boot; invalid CRC forces automatic fallback |
 | **Endurance Rating** | 200,000 ping-pong erase cycles | Over 27 years of lifetime under 20 full power-downs daily |
 
-
 ### Ping-Pong Power-Loss Immunity
 To guarantee absolute protection against data corruption, the memory system utilizes a **dual-slot ping-pong architecture** across the upper 64 KiB of QSPI Flash:
 1. **Magic Header:** Every state record begins with the 4-byte signature `0x5743324D` (`"WC2M"`).
@@ -393,7 +390,7 @@ For classroom instructors, homeschoolers, and lab technicians, the SC-32 provide
 > **Diagnostic Checkpoint 1.1: Power Rail & Battery Inspection**
 > To verify internal battery voltage:
 > 1. Press `{{key:↰}}` followed by `{{key:FLAGS}}`.
-> 2. Use the arrow keys `{{keycap:↓}}` to navigate to `SYSTEM INFO`.
+> 2. Use the arrow keys `{{key:↓}}` to navigate to `SYSTEM INFO`.
 > 3. Verify that `VBAT` displays between `2.70V` and `3.05V` (for fresh coin cells) or `3.60V` to `4.20V` (for LiPo).
 > *If `VBAT` reads below $2.20\text{ V}$, install fresh CR2032 cells to avoid unexpected shutdowns.*
 
@@ -429,506 +426,12 @@ where $R_0 \approx 15\,\Omega$ for fresh cells and $DOD$ is the depth of dischar
 
 To prevent voltage sag below the $2.10\text{ V}$ brownout threshold during high-speed Romberg integration bursts, the power rail incorporates an array of low-ESR ceramic decoupling capacitors ($3 \times 22\,\mu\text{F}$ X7R) acting as an energy reservoir, supplying instantaneous pulse current without stressing the high-impedance lithium chemistry.
 
-### Algebraic Trap vs. StackCalc Superpower Showdown
-
-| Evaluation Dimension | The Algebraic Calculator Trap (`TI-30X` / `TI-84` / App) | The StackCalc SC-32 Hardware Superpower |
-| :--- | :--- | :--- |
-| **Signature Problem** | **Coin Cell Operational Life:** $T_{\text{life}} = \frac{225}{(0.65 \times 2 + 0.0025 \times 22) / 24}$ | **Inside-Out Stack Integration:** Evaluates daily active/sleep draw, normalizes hourly, and divides capacity. |
-| **Keystroke Sequence** | `2 2 5 / ( ( 0 . 6 5 * 2 + 0 . 0 0 2 5 * 2 2 ) / 2 4 ) =` | `0.65 {{key:ENTER}} 2 {{key:×}} 0.0025 {{key:ENTER}} 22 {{key:×}} {{key:+}} 24 {{key:÷}} 225 {{key:x⇄y}} {{key:÷}}` |
-| **Stroke Count & Penalty**| **27 keystrokes** (Triple nested parentheses, operator precedence overhead) | **21 keystrokes** (**22% fewer strokes**, zero grouping syntax) |
-| **Failure Modes** | Missing closing bracket divides $225$ by active term and adds sleep term, resulting in wildly incorrect lifetime estimate. | Grouping errors are physically impossible; daily consumption ($1.355\text{ mAh}$) is verified before lifetime division. |
-| **Stack Transparency** | Intermediate active charge ($1.30\text{ mAh}$) and daily total ($1.355\text{ mAh}$) remain hidden inside the expression buffer. | Daily draw ($1.355\text{ mAh}$) and average hourly current ($0.056\text{ mA}$) inspectable live on stack registers $Y, X$. |
-| **Field Resilience** | Clearing display or syntax error wipes entire nested equation from memory. | Every intermediate charge stage resides in hardware registers $X, Y, Z, T$; fully inspectable with `{{key:R↓}}`. |
-
----
-
-## Engineering Design Briefing: The Semiconductor Cleanroom & Avionics Stress Chamber (Problems 1.1 through 1.25)
-
-Mastery of scientific instrumentation requires understanding the physical principles of the hardware itself. In this engineering expedition, you step into the role of a hardware reliability engineer qualifying the SC-32 for extreme field service. From calculating coin cell longevity under mixed duty cycles to auditing optical reflectance in direct sunlight, every problem deconstructs the physical reality of the instrument in your hands.
-
-<div class="admonition warning">
-<p class="admonition-title">Inside-Out Stack Architecture: Algebraic Trap vs. RPN Shortcut — Hardware Energy Budgets &amp; Multi-Rail Power Envelopes</p>
-<p><strong>The Algebraic Parenthesis Trap:</strong> When qualifying an embedded instrument for field service, an avionics or reliability engineer must integrate multi-term power budgets across heterogeneous operating duty cycles {{cite:horowitz2015}}:</p>
-<pre><code>Q_daily = ( 18.2 * 0.5 ) + ( 4.8 * 1.5 ) + ( 0.85 * 2.0 ) + ( 0.0118 * 20.0 )</code></pre>
-<p>On an algebraic calculator, evaluating this sum forces the engineer to manage four separate sets of parenthesis pairs or continuously write down intermediate values onto scratch paper. If a field technician misses a single closing parenthesis or accidentally clears the display halfway through the four-term entry, the entire multi-rail integration must be restarted from the beginning, introducing transcription latency and operational error {{cite:miller1956,sweller1988}}.</p>
-<p><strong>The RPN Stack Shortcut:</strong> On the StackCalc SC-32, hardware energy equations resolve from the inside out with zero parentheses and zero scratchpad memory {{cite:hp15c1982,hp32sii1991}}. The engineer keys current and duration for the first state, multiplies in place ($18.2 \times 0.5 = 9.10\text{ mAh}$), enters the second rail, multiplies, and taps <code>{{key:+}}</code>. The running total accumulates continuously in Register $X$. Intermediate sub-rail totals remain visible in Registers $Y, Z, T$, enabling instant verification of each subsystem's contribution before committing the final battery lifetime division.</p>
-</div>
-
-
----
-
-### Problem 1.1: Coin Cell Operational Lifetime Under Mixed Duty Cycle
-**Electrical Engineering Context:** An engineering student uses the SC-32 under a daily duty cycle:
-* Active calculation ($150\text{ MHz}$, $18.2\text{ mA}$): $0.5\text{ hours/day}$.
-* Idle typing ($48\text{ MHz}$, $4.8\text{ mA}$): $1.5\text{ hours/day}$.
-* Standby pause ($12\text{ MHz}$, $0.85\text{ mA}$): $2.0\text{ hours/day}$.
-* Deep sleep ($32.768\text{ kHz}$, $0.0118\text{ mA}$): $20.0\text{ hours/day}$.
-Calculate daily charge consumption in milliampere-hours ($\text{mAh/day}$) and total operating lifetime on a $225\text{ mAh}$ CR2032 cell:
-$$Q_{\text{daily}} = \sum (I_i \cdot t_i)$$
-
-**Keystrokes:**
-`{{res:sc32_01_craftsmanship_hardware_seq_01:keys}}`
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18.2` `{{key:ENTER}}` `0.5` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $9.1000$ | Active calculation: $9.100\text{ mAh}$ |
-| `4.8` `{{key:ENTER}}` `1.5` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $0.0000$ | $16.3000$ | Add idle typing ($7.200\text{ mAh}$) |
-| `0.85` `{{key:ENTER}}` `2.0` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Add standby pause ($1.700\text{ mAh}$) |
-| `0.0118` `{{key:ENTER}}` `20` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $0.0000$ | $18.2360$ | Total daily drain: $18.236\text{ mAh/day}$ |
-| `225` `{{key:x⇄y}}` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12.3382$** | Expected battery life: **$12.34\text{ days}$** continuous heavy school use |
-
-> **Homeschooler Diagnostic Checkpoint:**
-> Did your screen display $X = 18.2360$ before dividing by 225?
-> *If you see $X = 236.00$,* verify you keyed $0.0118$ rather than $11.8$. Quiescent sleep current is measured in microamperes ($11.8\,\mu\text{A} = 0.0118\text{ mA}$).
-
----
-
-### Problem 1.2: Eager Debounce Lockout vs. Mechanical Chatter Duration
-**Switch Dynamics Context:** A high-speed typist actuates a snap-dome switch that oscillates mechanically for $t_{\text{bounce}} = 4.8\text{ ms}$ before settling. If Core 1 scans the matrix at $f_{\text{scan}} = 200\text{ Hz}$ ($T_{\text{frame}} = 5.0\text{ ms}$) with a $20\text{ ms}$ lockout window, calculate the safety margin ratio:
-$$M = \frac{T_{\text{lockout}}}{t_{\text{bounce}}}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_02:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_02:value}}`**.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `20 {{key:ENTER}} 4.8 {{key:÷}}` loads the firmware debounce lockout window ($T_{\text{lockout}} = 20.0\text{ ms}$) into Register $Y$ and divides by the measured contact chatter duration ($t_{\text{bounce}} = 4.8\text{ ms}$). The stack drops, leaving safety margin $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{4.1667})$ in Register $X$—proving the switch settles four times faster than the lockout cutoff without requiring scratchpad storage.
-
----
-
-### Problem 1.3: Transflective LCD Photometric Contrast Ratio
-**Optics Context:** A luminance meter measures light reflected from an unactivated pixel ($L_{\text{white}} = 142.0\text{ cd/m}^2$) and an activated black pixel ($L_{\text{black}} = 9.35\text{ cd/m}^2$). Calculate the photometric contrast ratio:
-$$C_R = \frac{L_{\text{white}}}{L_{\text{black}}}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_03:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_03:value}}`** $\approx 15.2:1$.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `142 {{key:ENTER}} 9.35 {{key:÷}}` enters unactivated background luminance ($L_{\text{white}} = 142.0\text{ cd/m}^2$) into $Y$ and divides by activated black pixel luminance ($L_{\text{black}} = 9.35\text{ cd/m}^2$). The stack drops, resolving the photopic contrast ratio $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{15.1872})$ directly to confirm ISO 9241-303 Class 1 visual ergonomics.
-
----
-
-### Problem 1.4: 8.0 MHz SPI Display Bus Refresh Frame Latency
-**Computer Engineering Context:** The $132 \times 65$ dot-matrix LCD requires 9 command bytes and 1,056 display RAM data bytes ($8 \text{ pages} \times 132 \text{ columns}$). Calculate transmission time at $f_{\text{SPI}} = 8.0\text{ MHz}$ ($1\text{ bit} = 125\text{ ns}$):
-$$T_{\text{frame}} = \frac{(9 + 1056) \times 8\text{ bits}}{8.0 \times 10^6\text{ bits/s}}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_04:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_04:value}}\text{ ms}}$.
-
-> **Named RPN Stack Idiom: *The x⇄y Denominator Flip* & Bus Bandwidth Pipeline** — Scale payload bit count directly in the stack, divide by transmission clock frequency, and convert to milliseconds with zero intermediate storage {{cite:horowitz2015}}.
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1065` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $1065.0000$ | $1065.0000$ | Frame payload: 9 command + 1056 data bytes |
-| `8` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8520.0000$ | Serialized bit stream length |
-| `8 {{key:E}} 6` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.001065$ | Clock transmission duration in seconds |
-| `1000` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0650$** | Frame refresh period $T_{\text{frame}}$ in milliseconds |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `1065` `{{key:ENTER}}` — Load the total SPI transmission payload ($9\text{ command} + 1056\text{ data} = 1065\text{ bytes}$) onto the working stack.
-2. `8` `{{key:×}}` — Multiply by $8\text{ bits/byte}$ to obtain the full serialized stream length ($8520\text{ bits}$).
-3. `8 {{key:E}} 6` `{{key:÷}}` — Divide by the SPI bus clock frequency ($8.0 \times 10^6\text{ bits/s}$), yielding raw transfer time ($1.065 \times 10^{-3}\text{ s}$).
-4. `1000` `{{key:×}}` — Scale by $1000\text{ ms/s}$; the net frame refresh time ($T_{\text{frame}} = 1.065\text{ ms}$) confirms the display updates over 50 times per second without graphic lag.
-
-Display refreshes completely in just $1.065\text{ ms}$, permitting smooth 60 Hz visual plotting.
-
----
-
-### Problem 1.5: FNV-1a Checksum Calculation for Flash State Integrity
-**Software Systems Context:** Compute the 32-bit FNV-1a hash update for the single byte value $b = 0x4D$ ($77$ decimal) from initial state $\text{hash} = 2166136261$:
-$$\text{hash}' = (\text{hash} \oplus b) \times 16777619 \pmod{2^{32}}$$
-where $2166136261 \oplus 77 = 2166136200$.
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_05:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_05:value}}`**
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2166136200` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.1661 \times 10^{9}$ | $2.1661 \times 10^{9}$ | Load XOR-accumulated hash state |
-| `16777619` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6343 \times 10^{16}$ | Multiply by 32-bit FNV prime |
-| `4294967296` `{{key:÷R}}` | $0.0000$ | $0.0000$ | $3.3562 \times 10^{9}$ | **$8461672.00$** | Divide with remainder: $Y=\text{quotient}, X=\text{wrapped hash}$ |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `2166136200` `{{key:ENTER}}` — Arm the operational stack with the XOR-accumulated hash state ($2,166,136,200$).
-2. `16777619` `{{key:×}}` — Multiply by the 32-bit FNV prime constant ($16,777,619$), generating the expanded 64-bit product ($3.6343 \times 10^{16}$) in Register $X$.
-3. `4294967296` `{{key:÷R}}` — Divide with remainder by the 32-bit modulus ($2^{32} = 4,294,967,296$); Register $X$ isolates the updated 32-bit state $\text{hash}' = 1,489,615,688$ with zero bitwise masking instructions.
-
-Stack: $Y = 8,462,810$ (quotient), $X = \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_05:value}}}$ (32-bit wrapped hash result).
-
----
-
-### Problem 1.6: Heat-Set Brass Threaded Insert Pull-Out Force
-**Mechanical Engineering Context:** An M2.5 threaded brass insert has external diameter $D = 3.6\text{ mm}$ and embedment depth $L = 5.0\text{ mm}$ in technical polymer with shear strength $\tau = 42.0\text{ MPa} = 42.0\text{ N/mm}^2$:
-$$A_{\text{shear}} = \pi \cdot D \cdot L, \quad F_{\text{pull}} = A_{\text{shear}} \cdot \tau$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_06:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_06:value}}\text{ N}} \approx 242.1\text{ kgf}$.
-
-> **Named RPN Stack Idiom: *The Cylindrical Shear Stress Pipeline*** — Stream geometric diameter, embedment depth, and material shear strength continuously, resolving ultimate mechanical pull-out force without parentheses {{cite:hp15c1982}}.
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `3.6` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $3.6000$ | $3.6000$ | Insert outer knurled diameter $D$ in mm |
-| `{{key:π}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $11.3097$ | Circumference $\pi D$ in mm |
-| `5.0` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $56.5487$ | Cylindrical shear area $A_{\text{shear}}$ in mm$^2$ |
-| `42.0` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2375.0440$** | Ultimate retention force $F_{\text{pull}}$ in Newtons |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `3.6` `{{key:ENTER}}` — Enter insert outer knurled diameter ($D = 3.6\text{ mm}$) and press `{{key:ENTER}}` to begin geometry synthesis.
-2. `{{key:π}}` `{{key:×}}` — Multiply by $\pi$; circular circumference ($11.3097\text{ mm}$) condenses directly in $X$.
-3. `5.0` `{{key:×}}` — Scale by axial embedment depth ($L = 5.0\text{ mm}$); total cylindrical shear interface area ($A_{\text{shear}} = 56.5487\text{ mm}^2$) forms on the display.
-4. `42.0` `{{key:×}}` — Multiply by polymer ultimate shear strength ($\tau = 42.0\text{ N/mm}^2$); ultimate insert retention force ($F_{\text{pull}} = 2375.04\text{ N} \approx 242.1\text{ kgf}$) resolves without external memory.
-
-Demonstrates that the chassis brass threads withstand over $240\text{ kg}$ of direct tension before failure.
-
----
-
-### Problem 1.7: Laser Pulse Energy and Peak Optical Power
-**Optics Context:** A 1064nm pulsed fiber laser operates at average power $P_{\text{avg}} = 1.20\text{ W}$, pulse frequency $f_{\text{rep}} = 35.0\text{ kHz}$, and pulse width $\tau = 100\text{ ns} = 1.0 \times 10^{-7}\text{ s}$:
-$$E_{\text{pulse}} = \frac{P_{\text{avg}}}{f_{\text{rep}}}, \quad P_{\text{peak}} = \frac{E_{\text{pulse}}}{\tau}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_07:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_07:value}}`**
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `1.20 {{key:ENTER}} 35000 {{key:÷}}` deposits average laser power ($1.20\text{ W}$) into $Y$, divides by pulse frequency ($35.0\text{ kHz}$), and drops the stack to leave pulse energy $3.4286 \times 10^{-5}\text{ J}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.4286 \times 10^{-5})$.
-2. Striking `1 {{key:E}} 7 {{key:+/-}} {{key:÷}}` enters pulse width ($\tau = 100\text{ ns}$) and divides, evaluating peak optical burst power $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{342.8571}\text{ W})$ directly in Register $X$.
-
----
-
-### Problem 1.8: Low-Dropout Linear Regulator (LDO) Power Dissipation
-**Thermal Context:** Twin CR2032 batteries deliver $V_{\text{in}} = 5.80\text{ V}$ to an LDO supplying $V_{\text{out}} = 3.30\text{ V}$ at active computation current $I = 18.2\text{ mA}$:
-$$P_{\text{diss}} = (V_{\text{in}} - V_{\text{out}}) \cdot I$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_08:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_08:value}}`**$\text{ mW}$.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `5.80 {{key:ENTER}} 3.30 {{key:-}}` evaluates battery headroom drop $\Delta V = 2.50\text{ V}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.5000)$.
-2. Striking `0.0182 {{key:×}} 1000 {{key:×}}` multiplies by active computation current ($18.2\text{ mA}$) and normalizes to milliwatts, yielding regulator heat dissipation $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{45.5000}\text{ mW})$—confirming negligible thermal rise ($< 1.2^\circ\text{C}$) without grouping syntax.
-
----
-
-### Problem 1.9: Matrix Scanning Diode Noise Margin
-**Electronics Context:** Keypad matrix lines use $3.3\text{ V}$ logic with low-state threshold $V_{IL,\max} = 0.80\text{ V}$. A Schottky isolating diode has forward drop $V_F = 0.32\text{ V}$ at $2.0\text{ mA}$. Calculate the low-state noise margin:
-$$V_{NM,L} = V_{IL,\max} - V_F$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_09:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_09:value}}`**$\text{ V}$.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `0.80 {{key:ENTER}} 0.32 {{key:-}}` loads low-state input threshold ($0.80\text{ V}$) into Register $Y$ and subtracts Schottky forward drop ($0.32\text{ V}$). The stack drops, resolving the noise immunity margin $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.4800}\text{ V} = 480\text{ mV})$ in place to guarantee RF immunity.
-
----
-
-### Problem 1.10: Power-On Reset (POR) Delay RC Time Constant
-**Circuit Analysis Context:** Reset pin requires rising above $V_{\text{th}} = 2.10\text{ V}$ on a $3.30\text{ V}$ rail. With pull-up $R = 100\text{ k}\Omega$ and capacitor $C = 0.10\,\mu\text{F} = 1.0 \times 10^{-7}\text{ F}$:
-$$V(t) = V_{\text{dd}} \left(1 - e^{-t/RC}\right) \implies t = - R C \ln\left(1 - \frac{V_{\text{th}}}{V_{\text{dd}}}\right)$$
-
-**Keystrokes:**
-`{{res:sc32_01_craftsmanship_hardware_seq_10:keys}}`
-
-> **Named RPN Stack Idiom: *The Inside-Out Exponential Decay & Inverted RC Constant*** — Evaluate the voltage switching ratio from the inside, take natural logarithm in place, and scale by RC product without parenthesis nesting {{cite:horowitz2015}}.
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2.10` `{{key:ENTER}}` `3.30` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6364$ | Normalized threshold $V_{\text{th}} / V_{\text{dd}}$ |
-| `{{key:+/-}}` `1` `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3636$ | Uncharged voltage headroom ($1 - V_{\text{th}}/V_{\text{dd}}$) |
-| `{{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.0116$ | Natural logarithm of voltage headroom |
-| `100000` `{{key:ENTER}}` | $0.0000$ | $-1.0116$ | $100000.0000$ | $100000.00$ | Pull-up resistance $R = 100\text{ k}\Omega$ |
-| `1 {{key:E}} 7 {{key:+/-}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $-1.0116$ | $0.0100$ | Circuit time constant $RC = 0.01\text{ s}$ |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-0.010116$ | Negative elapsed delay in seconds |
-| `{{key:+/-}}` `1000` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$10.1160$** | POR reset lockout time in milliseconds |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `2.10` `{{key:ENTER}}` — Prime the stack with the reset trigger potential ($V_{\text{th}} = 2.10\text{ V}$).
-2. `3.30` `{{key:÷}}` — Enter digital supply rail voltage ($V_{\text{dd}} = 3.30\text{ V}$) and divide; charging fraction ($V_{\text{th}} / V_{\text{dd}} \approx 0.6364$) condenses in $X$.
-3. `1` — Key unity reference into $X$, lifting the charging fraction to $Y$.
-4. `{{key:x⇄y}}` — Swap registers using *The x⇄y Denominator Flip*; Register $Y$ holds $1$ and $X$ holds $0.6364$.
-5. `{{key:-}}` — Subtract charging fraction from unity; uncharged voltage headroom ($1 - V_{\text{th}}/V_{\text{dd}} \approx 0.3636$) is isolated in $X$.
-6. `{{key:LN}}` — Take natural logarithm in place ($\ln(0.3636) \approx -1.0116$).
-7. `100000` `{{key:×}}` — Scale by pull-up resistance ($R = 100\text{ k}\Omega = 1.0 \times 10^5\,\Omega$).
-8. `1 {{key:E}} 7 {{key:+/-}}` `{{key:×}}` — Scale by timing capacitance ($C = 0.10\,\mu\text{F} = 1.0 \times 10^{-7}\text{ F}$).
-9. `{{key:+/-}}` — Negate to obtain positive elapsed power-on reset lockout time ($t_{\text{por}} = 0.0101\text{ s} = 10.12\text{ ms}$) without syntax error risk.
-
-Result: $\mathbf{{{res:sc32_01_craftsmanship_hardware_seq_10:value}}\text{ ms}}$.
-Ensures microcontroller clock PLL is stable before releasing Core 0 from reset.
-
----
-
-### Problem 1.11: Crystal Oscillator Load Capacitance
-**RF Electronics Context:** A $12.000\text{ MHz}$ fundamental quartz crystal specifies load capacitance $C_L = 18.0\text{ pF}$. With PCB stray capacitance $C_{\text{stray}} = 3.5\text{ pF}$, calculate matching external shunt capacitors ($C_1 = C_2 = C$):
-$$C_L = \frac{C}{2} + C_{\text{stray}} \implies C = 2 (C_L - C_{\text{stray}})$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_11:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_11:value}}`**$\text{ pF}$.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `18 {{key:ENTER}} 3.5 {{key:-}}` evaluates net series capacitance $C_L - C_{\text{stray}} = 14.5\text{ pF}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 14.5000)$.
-2. Striking `2 {{key:×}}` doubles the series branch value, calculating the required matching shunt capacitor rating $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{29.0000}\text{ pF})$—indicating standard $27\text{ pF}$ or $30\text{ pF}$ C0G ceramics with zero memory registers.
-
----
-
-### Problem 1.12: Flash Sector Wear Endurance Under Extreme Daily Editing
-**Memory Reliability Context:** A math enthusiast saves 45 equation configurations per day. If QSPI flash sectors withstand $100,000$ write/erase cycles and ping-pong wear-leveling doubles endurance across 2 slots, find sector lifetime in years:
-$$t_{\text{years}} = \frac{2 \times 100,000}{45 \times 365.25}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_12:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_12:value}}`**$\text{ years}$.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `200000 {{key:ENTER}} 45 {{key:ENTER}} 365.25 {{key:×}}` loads dual-slot endurance ($200,000\text{ cycles}$) into $Z$ and evaluates annual sector write cycles ($45 \times 365.25 = 16,436.25\text{ writes/yr}$) in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 200000.0000, X: 16436.2500)$.
-2. Striking `{{key:÷}}` divides total cycle endurance by yearly wear, yielding guaranteed operational lifespan $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{12.1682}\text{ years})$—confirming over a decade of continuous daily service.
-
----
-
-### Problem 1.13: Chassis Top Faceplate Flexure Under 400g Keypress
-**Solid Mechanics Context:** Model the faceplate bridge between standoffs as a simply supported beam ($L = 60.0\text{ mm}$, $b = 15.0\text{ mm}$, thickness $h = 2.5\text{ mm}$, polymer flexural modulus $E = 3.5\text{ GPa} = 3500\text{ N/mm}^2$) under snap-dome actuation $F = 3.92\text{ N}$:
-$$I = \frac{b h^3}{12}, \quad \delta = \frac{F L^3}{48 E I}$$
-
-**Keystrokes:**
-`{{res:sc32_01_craftsmanship_hardware_seq_13:keys}}`
-
-> **Named RPN Stack Idiom: *The Rational Expression Inside-Out Collapse*** — Calculate cross-section moment of inertia $I = bh^3/12$ and structural flexure $\delta = FL^3/48EI$ across stack levels without parentheses {{cite:hp32sii1991}}.
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15` `{{key:ENTER}}` `2.5` `{{key:ENTER}}` `3` `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $15.0000$ | $15.6250$ | Thickness cubed $h^3 = 2.5^3$ |
-| `{{key:×}}` `12` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $19.5312$ | Moment of inertia $I = bh^3/12$ in mm$^4$ |
-| `3.92` `{{key:ENTER}}` `60` `{{key:ENTER}}` `3` `{{key:yˣ}}` | $19.5312$ | $19.5312$ | $3.9200$ | $216000.00$ | Span cubed $L^3 = 60^3$ |
-| `{{key:×}}` | $19.5312$ | $19.5312$ | $19.5312$ | $846720.00$ | Bending load numerator $F L^3$ |
-| `48` `{{key:ENTER}}` `3500` `{{key:×}}` | $19.5312$ | $19.5312$ | $846720.00$ | $168000.00$ | Modulus factor $48 E$ |
-| `{{key:R↓}}` `{{key:×}}` | $168000.0000$ | $168000.0000$ | $19.53$ | $1.6538 \times 10^{7}$ | Flexural rigidity $48 E I$ |
-| `{{key:÷}}` | $168000.0000$ | $168000.0000$ | $168000.0000$ | **$1.1810 \times 10^{-6}$** | Center beam flexure $\delta$ in mm |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `15` `{{key:ENTER}}` — Enter faceplate bridge width ($b = 15.0\text{ mm}$) and press `{{key:ENTER}}` to begin beam cross-section calculations.
-2. `2.5` `{{key:ENTER}}` — Push faceplate thickness ($h = 2.5\text{ mm}$) onto the stack.
-3. `3` `{{key:yˣ}}` — Cube plate thickness in place ($h^3 = 15.625\text{ mm}^3$), keeping width $b$ intact in Register $Y$.
-4. `{{key:×}}` — Multiply width by cubed thickness ($b h^3 = 234.375\text{ mm}^4$).
-5. `12` `{{key:÷}}` — Divide by the rectangular section constant 12, establishing second moment of area ($I = 19.5313\text{ mm}^4$) in Register $X$.
-6. `3.92` `{{key:ENTER}}` — Key snap-dome actuation force ($F = 3.92\text{ N}$) into $Y$, holding $I$ safely in $Z$.
-7. `60` `{{key:ENTER}}` — Enter unsupported span length ($L = 60.0\text{ mm}$).
-8. `3` `{{key:yˣ}}` — Cube the span length ($L^3 = 216,000\text{ mm}^3$).
-9. `{{key:×}}` — Multiply force by cubed span; bending numerator ($F L^3 = 846,720\text{ N}\cdot\text{mm}^3$) forms in $X$.
-10. `48` `{{key:ENTER}}` — Key simply supported beam deflection constant 48.
-11. `3500` `{{key:×}}` — Scale by technical polymer flexural modulus ($E = 3500\text{ N/mm}^2$), yielding the baseline rigidity factor ($48 E = 168,000\text{ N/mm}^2$).
-12. `{{key:x⇄y}}` — Bring moment of inertia $I$ into $X$ and multiply; composite beam stiffness ($48 E I = 3,281,250\text{ N}\cdot\text{mm}^2$) forms in $X$.
-13. `{{key:÷}}` — Divide bending load by stiffness; tactile faceplate deflection ($\delta = 0.2580\text{ mm}$) is established directly.
-
-Stack: $I = 19.53125\text{ mm}^4$, deflection $\delta = \mathbf{0.2581\text{ mm}}$.
-Flexure is under $0.26\text{ mm}$, guaranteeing rigid tactile response without mushiness.
-
----
-
-### Problem 1.14: Battery Internal Resistance via Delta-Voltage Load Step
-**Metrology Context:** Battery voltage measures $V_1 = 2.940\text{ V}$ at idle ($I_1 = 4.8\text{ mA}$) and drops to $V_2 = 2.685\text{ V}$ during active calculation ($I_2 = 18.2\text{ mA}$):
-$$R_{\text{int}} = \frac{V_1 - V_2}{I_2 - I_1}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_14:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_14:value}}\,\Omega}$.
-
-> **Named RPN Stack Idiom: *The LASTX Dual-Branch Trick & Delta-Impedance Ratio*** — Compute differential voltage and differential current across stack levels, resolving cell internal impedance without scratchpad storage {{cite:horowitz2015,hp15c1982}}.
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2.940` `{{key:ENTER}}` `2.685` `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2550$ | Active voltage drop $\Delta V$ in Volts |
-| `0.0182` `{{key:ENTER}}` `0.0048` `{{key:-}}` | $0.0000$ | $0.0000$ | $0.2550$ | $0.0134$ | Dynamic step current $\Delta I$ in Amperes |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$19.0299$** | Coin cell internal dynamic impedance in $\Omega$ |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `2.940` `{{key:ENTER}}` — Enter open-circuit idle battery potential ($V_1 = 2.940\text{ V}$) into the stack.
-2. `2.685` `{{key:-}}` — Key loaded active potential ($V_2 = 2.685\text{ V}$) and subtract; active voltage sag ($\Delta V = 0.2550\text{ V}$) forms in $X$.
-3. `18.2` `{{key:ENTER}}` — Arm Register $Y$ with active calculation current ($I_2 = 18.2\text{ mA}$), elevating $\Delta V$ to $Z$.
-4. `4.8` `{{key:-}}` — Subtract idle current ($I_1 = 4.8\text{ mA}$); dynamic step current ($\Delta I = 13.4\text{ mA}$) forms in $X$.
-5. `1000` `{{key:÷}}` — Convert milliamperes to amperes ($\Delta I = 0.0134\text{ A}$), keeping voltage sag ready in $Y$.
-6. `{{key:÷}}` — Divide voltage delta by current delta; coin cell internal dynamic impedance ($R_{\text{int}} = 19.03\,\Omega$) appears on the display.
-
----
-
-### Problem 1.15: LCD Bias Temperature Compensation Slope
-**Display Engineering Context:** The liquid crystal threshold voltage varies with temperature by $\frac{dV_{\text{LCD}}}{dT} = -12.5\text{ mV/}^\circ\text{C}$. If nominal voltage is $V_0 = 9.00\text{ V}$ at $25.0^\circ\text{C}$, find required drive voltage at freezing ($0.0^\circ\text{C}$):
-$$V(T) = V_0 + \frac{dV}{dT} (T - T_0) = 9.00 + (-0.0125)(0 - 25)$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_15:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_15:value}}`**$\text{ V}$.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `0 {{key:ENTER}} 25 {{key:-}}` evaluates temperature differential $\Delta T = -25.0^\circ\text{C}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: -25.0000)$.
-2. Striking `0.0125 {{key:+/-}} {{key:×}} 9.00 {{key:+}}` scales by thermal sensitivity slope ($-0.0125\text{ V/}^\circ\text{C}$) to produce offset $+0.3125\text{ V}$ and adds nominal room-temperature drive potential, resolving freezing LCD bias potential $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{9.3125}\text{ V})$ in place.
-
----
-
-### Problem 1.16: Decoupling Capacitor Resonant Frequency at 150 MHz Clock
-**Power Integrity Context:** A $0.10\,\mu\text{F}$ 0603 decoupling capacitor has parasitic equivalent series inductance $ESL = 0.85\text{ nH} = 8.5 \times 10^{-10}\text{ H}$. Find self-resonant frequency $f_{\text{SRF}}$:
-$$f_{\text{SRF}} = \frac{1}{2\pi \sqrt{L C}}$$
-
-**Keystrokes:**
-`{{res:sc32_01_craftsmanship_hardware_seq_16:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_16:value}}\text{ MHz}}$.
-
-> **Named RPN Stack Idiom: *The Inside-Out Radical & LC Resonance Pipeline*** — Multiply equivalent series inductance and decoupling capacitance directly in the stack, take square root in place, and invert to find self-resonant frequency without parentheses {{cite:horowitz2015,hp15c1982}}.
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `8.5 {{key:E}} 10 {{key:+/-}}` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $8.5000 \times 10^{-10}$ | $8.5000 \times 10^{-10}$ | Parasitic inductance $ESL$ in Henries |
-| `1 {{key:E}} 7 {{key:+/-}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.5000 \times 10^{-17}$ | Reactive product $L C$ in s$^2$ |
-| `{{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $9.2195 \times 10^{-9}$ | Time constant $\sqrt{LC}$ in seconds |
-| `2` `{{key:×}}` `{{key:π}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $5.7928 \times 10^{-8}$ | Period divisor $2\pi\sqrt{LC}$ |
-| `{{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.7263 \times 10^{7}$ | Self-resonant frequency in Hertz |
-| `1 {{key:E}} 6` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$17.2628$** | Self-resonant frequency $f_{\text{SRF}}$ in MHz |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `8.5 {{key:E}} 10 {{key:+/-}}` `{{key:ENTER}}` — Arm the stack with parasitic inductance ($ESL = 8.5 \times 10^{-10}\text{ H}$).
-2. `1 {{key:E}} 7 {{key:+/-}}` `{{key:×}}` — Multiply by decoupling capacitance ($C = 1.0 \times 10^{-7}\text{ F}$); reactive product ($LC = 8.5 \times 10^{-17}\text{ s}^2$) forms in $X$.
-3. `{{key:√x}}` — Extract square root in place; resonant time constant ($\sqrt{LC} = 9.2195 \times 10^{-9}\text{ s}$) occupies $X$.
-4. `2` `{{key:×}}` `{{key:π}}` `{{key:×}}` — Scale by angular circle factor $2\pi$ ($2\pi\sqrt{LC} = 5.7928 \times 10^{-8}\text{ s}$).
-5. `{{key:1/x}}` — Invert in place; self-resonant frequency ($f_{\text{SRF}} = 1.7263 \times 10^7\text{ Hz} \approx 17.26\text{ MHz}$) is evaluated with zero rounding error.
-
----
-
-### Problem 1.17: Laser Foaming Absorption Depth via Beer-Lambert Law
-**Optical Physics Context:** Carbon black pigmented polymer has absorption coefficient $\alpha = 450\text{ cm}^{-1}$ at $1064\text{ nm}$. Calculate depth $z$ where beam intensity drops to $10\%$ ($I/I_0 = 0.10$):
-$$I(z) = I_0 e^{-\alpha z} \implies z = - \frac{\ln(0.10)}{\alpha}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_17:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_17:value}}\,\mu\text{m}}$.
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `0.10` `{{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-2.3026$ | Natural logarithm of beam ratio $I/I_0$ |
-| `450` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-0.005117$ | Absorption depth in centimeters |
-| `{{key:+/-}}` `10000` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$51.1686$** | Laser penetration depth $z$ in $\mu\text{m}$ |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `0.10` — Key normalized transmitted laser beam intensity fraction ($I/I_0 = 0.10$).
-2. `{{key:LN}}` — Compute natural logarithm $\ln(0.10) \approx -2.3026$ in place.
-3. `450` `{{key:÷}}` — Divide by polymer laser absorption coefficient ($\alpha = 450.0\text{ cm}^{-1}$); negative penetration depth in centimeters ($-5.1169 \times 10^{-3}\text{ cm}$) occupies $X$.
-4. `{{key:+/-}}` — Negate value in place to obtain positive physical depth ($5.1169 \times 10^{-3}\text{ cm}$).
-5. `10000` `{{key:×}}` — Scale by metric conversion factor ($10,000\,\mu\text{m/cm}$); laser marking penetration depth ($d \approx \mathbf{51.17\,\mu\text{m}}$) is confirmed.
-
-Matches the physical target depth of $50\text{--}100\,\mu\text{m}$ beneath the keycap surface.
-
----
-
-### Problem 1.18: Chassis Drop Impact Deceleration
-**Structural Dynamics Context:** The calculator drops from height $h = 1.20\text{ m}$ onto concrete. The elastomeric TPU bumper compresses by $\Delta y = 2.2\text{ mm} = 0.0022\text{ m}$. Calculate average impact deceleration in G's ($g = 9.80665\text{ m/s}^2$):
-$$v_{\text{impact}} = \sqrt{2gh}, \quad a_{\text{avg}} = \frac{v^2}{2 \Delta y} = \frac{g h}{\Delta y}, \quad G = \frac{h}{\Delta y}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_18:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_18:value}}\,G}$.
-
-> **Named RPN Stack Idiom: *The Inside-Out Radical & Dynamic Deceleration Pipeline*** — Calculate kinetic velocity squared $2gh$ and divide by bumper cushion deflection $\Delta y$ directly in the operational stack {{cite:strogatz2019}}.
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1.20` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $1.2000$ | $1.2000$ | Freefall drop height $h = 1.20\text{ m}$ |
-| `0.0022` | $0.0000$ | $0.0000$ | $1.2000$ | $0.0022$ | Bumper deflection $\Delta y = 2.2\text{ mm}$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$545.4545$** | Average shock deceleration $G = h/\Delta y$ |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `1.20` `{{key:ENTER}}` — Deposit freefall drop height ($h = 1.20\text{ m}$) into the stack.
-2. `0.0022` `{{key:÷}}` — Divide by TPU corner bumper deflection ($\Delta y = 0.0022\text{ m}$); mean impact shock factor ($G = h/\Delta y = 545.45\,G$) is obtained directly.
-
-Demonstrates why all internal solder joints and SMD inductors are epoxy underfilled.
-
----
-
-### Problem 1.19: Quiescent Sleep Power Consumption Over 18 Months
-**Energetics Context:** In deep sleep ($I = 11.8\,\mu\text{A}$ at $V = 3.0\text{ V}$), find total energy consumed in Joules over an 18-month shelf storage ($547.5\text{ days} = 13,140\text{ hours}$):
-$$E = V \cdot I \cdot t$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_19:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_19:value}}`**$\text{ Joules}$.
-
-> **Named RPN Stack Idiom: *The Constant-in-T Pipeline*** — Park battery potential in the stack to stream current and time across months, accumulating total dissipated Joules without scratchpad storage {{cite:horowitz2015}}.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `3.0 {{key:ENTER}} 11.8 {{key:E}} 6 {{key:+/-}} {{key:×}}` loads nominal battery potential ($3.0\text{ V}$) and multiplies by deep sleep current ($11.8\,\mu\text{A}$), forming continuous power dissipation $3.5400 \times 10^{-5}\text{ W}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.5400 \times 10^{-5})$.
-2. Striking `13140 {{key:×}} 3600 {{key:×}}` scales by storage duration in hours and converts to seconds, calculating total 18-month energy consumed $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1674.5616}\text{ Joules})$—less than $20\%$ of the coin cell's chemical reserve.
-
----
-
-### Problem 1.20: Microcontroller Core Clock PLL Lock Phase Margin
-**Silicon Design Context:** Phase-Locked Loop loop filter has damping factor $\zeta = 0.707$ and natural frequency $\omega_n = 2.40 \times 10^6\text{ rad/s}$. Calculate settling time to $1\%$ phase error:
-$$t_{\text{lock}} \approx \frac{4.6}{\zeta \omega_n}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_20:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_20:value}}`**$\,\mu\text{s}$.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `4.6 {{key:ENTER}} 0.707 {{key:ENTER}} 2.40 {{key:E}} 6 {{key:×}} {{key:÷}}` loads the four-time-constant factor ($4.6$), evaluates the loop denominator $\zeta \omega_n = 1.6968 \times 10^6\text{ rad/s}$, and divides to obtain settling time $2.7110 \times 10^{-6}\text{ s}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.7110 \times 10^{-6})$.
-2. Striking `1 {{key:E}} 6 {{key:×}}` converts to microseconds, confirming PLL phase lock acquisition $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{2.7110}\,\mu\text{s})$ takes under $3\,\mu\text{s}$.
-
----
-
-### Problem 1.21: Lead-Free Solder Joint Thermal Fatigue Life
-**Reliability Physics Context:** Coffin-Manson relation for SAC305 solder joints cycling between $-10^\circ\text{C}$ and $+45^\circ\text{C}$ ($\Delta T = 55\text{ K}$, fatigue exponent $m = 2.2$, calibration constant $C = 1.8 \times 10^7$):
-$$N_f = \frac{C}{(\Delta T)^m}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_21:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_21:value}}\text{ thermal shock cycles}}$.
-
-**4-Level Stack Trace:**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `55` `{{key:ENTER}}` `2.2` `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6742.1423$ | Thermal swing power $(\Delta T)^{2.2}$ |
-| `1.8 {{key:E}} 7` | $0.0000$ | $0.0000$ | $6742.1423$ | $1.8000 \times 10^{7}$ | SAC305 fatigue coefficient $C$ |
-| `{{key:x⇄y}}` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2669.7745$** | Thermal shock endurance cycles $N_f$ |
-
-**Step-by-Step RPN Reasoning & Stack Logic:****
-1. `55` `{{key:ENTER}}` — Enter thermal shock swing ($\Delta T = 55\text{ K}$) into the stack.
-2. `2.2` `{{key:yˣ}}` — Raise to Coffin-Manson plastic fatigue exponent ($m = 2.2$), yielding thermal severity factor ($(\Delta T)^{2.2} \approx 6710.23$) in $X$.
-3. `1.8 {{key:E}} 7` — Key SAC305 empirical fatigue constant ($C = 1.8 \times 10^7$).
-4. `{{key:x⇄y}}` — Swap registers so constant $C$ occupies $Y$ and severity factor occupies $X$.
-5. `{{key:÷}}` — Divide constant by severity factor; expected joint survival ($N_f = 2682\text{ cycles}$) is established.
-
----
-
-### Problem 1.22: Electrostatic Discharge (ESD) Human Body Model Spark
-**EMC Compliance Context:** Human Body Model ($C = 100\text{ pF}$, discharge resistance $R = 1500\,\Omega$) charged to $V_0 = 8000\text{ V}$ (IEC 61000-4-2 contact discharge). Find peak instantaneous current:
-$$I_{\text{peak}} = \frac{V_0}{R}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_22:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_22:value}}`**$\text{ Amperes}$.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `8000 {{key:ENTER}} 1500 {{key:÷}}` loads HBM electrostatic potential ($8000\text{ V}$) into Register $Y$ and divides by discharge resistance ($1500\,\Omega$). The stack drops, evaluating peak instantaneous spark current $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{5.3333}\text{ A})$ directly—explaining why dedicated TVS diodes guard all external I/O pins.
-
----
-
-### Problem 1.23: Keypad Matrix Phantom Key Sneak Current Analysis
-**Circuit Design Context:** Three keys are pressed simultaneously forming three corners of a rectangle in a matrix without diodes. With row pull-up $R_{\text{pu}} = 10\text{ k}\Omega$ to $3.3\text{ V}$, trace the sneak path current that causes a false "ghost" key:
-$$I_{\text{sneak}} = \frac{V_{\text{cc}}}{R_{\text{pu}} + 3 R_{\text{contact}}} \approx \frac{3.3}{10000} = 0.33\text{ mA}$$
-Because Schottky diodes are placed in series with every keycap in the SC-32, the reverse-biased diode blocks sneak current completely ($I_{\text{leak}} < 0.1\,\mu\text{A}$), providing 100% anti-ghosting rollover.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `3.3 {{key:ENTER}} 10000 {{key:÷}}` loads logic supply potential ($3.3\text{ V}$) into Register $Y$ and divides by row pull-up resistance ($10,000\,\Omega$). The stack drops, resolving the unmitigated sneak current $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{3.3000 \times 10^{-4}}\text{ A} = 0.33\text{ mA})$ in Register $X$.
-
----
-
-### Problem 1.24: Ambient Light Sensor ADC Resolution and Lux Mapping
-**Sensor Interface Context:** An ambient light photodiode produces current $I_{\text{photo}} = 0.25\,\mu\text{A} / 100\text{ lux}$ through transimpedance resistor $R_f = 2.4\text{ M}\Omega$. The 12-bit ADC ($4096\text{ counts}$) measures against a $3.30\text{ V}$ reference. Calculate lux per ADC count:
-$$V_{\text{out}} = I_{\text{photo}} \cdot R_f = \left(\frac{0.25 \times 10^{-6}\text{ A}}{100\text{ lux}}\right) \times 2.4 \times 10^6\,\Omega = 0.0060\text{ V/lux} = 6.0\text{ mV/lux}$$
-$$V_{\text{LSB}} = \frac{3.30\text{ V}}{4096} \approx 0.80566\text{ mV}$$
-$$\text{Resolution} = \frac{V_{\text{LSB}}}{0.0060\text{ V/lux}} = \frac{0.80566}{6.0} \approx \mathbf{0.1343\text{ lux/count}}.$$
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `3.3 {{key:ENTER}} 4096 {{key:÷}}` evaluates 12-bit ADC voltage step $V_{\text{LSB}} = 8.0566 \times 10^{-4}\text{ V}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 8.0566 \times 10^{-4})$.
-2. Striking `0.006 {{key:÷}}` divides by the transimpedance transfer factor ($6.0\text{ mV/lux}$), resolving optical measurement resolution $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.1343}\text{ lux/count})$ directly.
-
----
-
-### Problem 1.25: Chassis Thermal Equilibrium Temperature Rise
-**Thermodynamics Context:** At full continuous 150 MHz dual-core computation, the board dissipates $P = 60.0\text{ mW} = 0.060\text{ W}$. The chassis has total heat radiating area $A = 0.024\text{ m}^2$ with natural convection heat transfer coefficient $h_c = 6.5\text{ W/m}^2\text{K}$:
-$$\Delta T = \frac{P}{h_c \cdot A}$$
-
-**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_23:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_23:value}}`**$\text{ K} \approx 0.38^\circ\text{C}$.
-
-**Step-by-Step RPN Reasoning & Stack Dynamics:**
-1. Keying `0.060 {{key:ENTER}} 6.5 {{key:ENTER}} 0.024 {{key:×}}` loads continuous thermal dissipation ($0.060\text{ W}$) into $Z$ and evaluates convection conductance $h_c A = 0.1560\text{ W/K}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0600, X: 0.1560)$.
-2. Striking `{{key:÷}}` divides dissipation by conductance, determining steady-state equilibrium temperature rise $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.3846}\text{ K} \approx 0.38^\circ\text{C})$—proving the chassis remains cool to the touch with zero throttling.
+### The Algebraic Trap vs. StackCalc Superpower Showdown
+
+| Challenge / Engineering Task | The Algebraic Calculator Trap (TI-84 / Infix) | Algebraic Keystrokes & Clutter | The StackCalc Superpower (RPN Stack + Visual Studio) | StackCalc Keystrokes | The Stack Advantage |
+| :--- | :--- | :---: | :--- | :---: | :--- |
+| **Coin Cell Operational Life**:<br>$T_{\text{life}} = \frac{225}{(0.65 \times 2 + 0.0025 \times 22) / 24}$ | `2 2 5 / ( ( 0 . 6 5 * 2 + 0 . 0 0 2 5 * 2 2 ) / 2 4 ) =`<br>*Trap: Triple-nested parentheses; missing bracket divides 225 by active term and adds sleep term. Daily draw ($1.355\text{ mAh}$) is completely hidden.* | 27 | **Inside-Out Stack Integration**:<br>`0.65 {{key:ENTER}} 2 {{key:×}} 0.0025 {{key:ENTER}} 22 {{key:×}} {{key:+}} 24 {{key:÷}} 225 {{key:x⇄y}} {{key:÷}}`<br>Evaluates daily active/sleep draw, normalizes hourly, and divides capacity directly. | 21 | **22% fewer strokes + 100% register transparency & zero grouping syntax errors** |
+| **Multi-Rail Energy Envelope**:<br>$Q_{\text{daily}} = \sum (I_i \cdot t_i)$ across 4 operational states | `( 1 8 . 2 * 0 . 5 ) + ( 4 . 8 * 1 . 5 ) + ( 0 . 8 5 * 2 . 0 ) + ( 0 . 0 1 1 8 * 2 0 ) =`<br>*Trap: Four parenthesis pairs; typing error or accidental clear destroys entire entry stream.* | 46 | **Chained Running Total Accumulation**:<br>`18.2 {{key:ENTER}} 0.5 {{key:×}} 4.8 {{key:ENTER}} 1.5 {{key:×}} {{key:+}} 0.85 {{key:ENTER}} 2 {{key:×}} {{key:+}} 0.0118 {{key:ENTER}} 20 {{key:×}} {{key:+}}`<br>Each rail multiplies in place; running draw accumulates continuously in Register $X$. | 34 | **26% fewer strokes + live sub-rail visibility in Registers $Y, Z, T$** |
 
 ---
 
@@ -946,6 +449,379 @@ The transflective graphic liquid-crystal display relies on ambient light reflect
 
 ### Continuous Non-Volatile State Preservation
 An instrument must maintain readiness without state loss across battery replacement cycles. The SC-32 employs dual ping-pong flash sectors protected by 32-bit FNV-1a checksums. Upon cold boot, Core 0 verifies sector integrity and restores the four operational stack registers ($X, Y, Z, T$), `LASTX`, all 26 storage registers ($A\dots Z$), and statistical accumulators in under 5 milliseconds. If battery terminal voltage drops below $2.15\text{ V}$, the brownout supervisor safely commits all active registers to non-volatile memory before suspending execution.
+
+---
+
+## Engineering Design Briefing: The Semiconductor Cleanroom & Avionics Stress Chamber (Problems 1.1 through 1.25)
+
+Mastery of scientific instrumentation requires understanding the physical principles of the hardware itself. In this engineering expedition, you step into the role of a hardware reliability engineer qualifying the SC-32 for extreme field service. From calculating coin cell longevity under mixed duty cycles to auditing optical reflectance in direct sunlight, every problem deconstructs the physical reality of the instrument in your hands.
+
+<div class="admonition warning">
+<p class="admonition-title">Inside-Out Stack Architecture: Algebraic Trap vs. RPN Shortcut — Hardware Energy Budgets &amp; Multi-Rail Power Envelopes</p>
+<p><strong>The Algebraic Parenthesis Trap:</strong> When qualifying an embedded instrument for field service, an avionics or reliability engineer must integrate multi-term power budgets across heterogeneous operating duty cycles {{cite:horowitz2015}}:</p>
+<pre><code>Q_daily = ( 18.2 * 0.5 ) + ( 4.8 * 1.5 ) + ( 0.85 * 2.0 ) + ( 0.0118 * 20.0 )</code></pre>
+<p>On an algebraic calculator, evaluating this sum forces the engineer to manage four separate sets of parenthesis pairs or continuously write down intermediate values onto scratch paper. If a field technician misses a single closing parenthesis or accidentally clears the display halfway through the four-term entry, the entire multi-rail integration must be restarted from the beginning, introducing transcription latency and operational error {{cite:miller1956,sweller1988}}.</p>
+<p><strong>The RPN Stack Shortcut:</strong> On the StackCalc SC-32, hardware energy equations resolve from the inside out with zero parentheses and zero scratchpad memory {{cite:hp15c1982,hp32sii1991}}. The engineer keys current and duration for the first state, multiplies in place ($18.2 \times 0.5 = 9.10\text{ mAh}$), enters the second rail, multiplies, and taps <code>{{key:+}}</code>. The running total accumulates continuously in Register $X$. Intermediate sub-rail totals remain visible in Registers $Y, Z, T$, enabling instant verification of each subsystem's contribution before committing the final battery lifetime division.</p>
+</div>
+
+---
+
+> **Thematic Arc I — Embedded Power Budgets, Tactile Mechanics & Display Optics (Problems 1.1–1.10):** We begin at the physical interface of the SC-32—auditing lithium coin-cell duty cycles, dome-switch actuation energy, and transflective LCD contrast physics directly on the 4-level stack.
+
+### Problem 1.1: Coin Cell Operational Lifetime Under Mixed Duty Cycle
+An engineering student uses the SC-32 under a daily duty cycle:
+* Active calculation ($150\text{ MHz}$, $18.2\text{ mA}$): $0.5\text{ hours/day}$.
+* Idle typing ($48\text{ MHz}$, $4.8\text{ mA}$): $1.5\text{ hours/day}$.
+* Standby pause ($12\text{ MHz}$, $0.85\text{ mA}$): $2.0\text{ hours/day}$.
+* Deep sleep ($32.768\text{ kHz}$, $0.0118\text{ mA}$): $20.0\text{ hours/day}$.
+Calculate daily charge consumption in milliampere-hours ($\text{mAh/day}$) and total operating lifetime on a $225\text{ mAh}$ CR2032 cell:
+$$Q_{\text{daily}} = \sum (I_i \cdot t_i)$$
+
+**Keystrokes:**
+`{{res:sc32_01_craftsmanship_hardware_seq_01:keys}}`
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `18.2` `{{key:ENTER}}` `0.5` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $9.1000$ | Active calculation: $9.100\text{ mAh}$ |
+| `4.8` `{{key:ENTER}}` `1.5` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $0.0000$ | $16.3000$ | Add idle typing ($7.200\text{ mAh}$) |
+| `0.85` `{{key:ENTER}}` `2.0` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Add standby pause ($1.700\text{ mAh}$) |
+| `0.0118` `{{key:ENTER}}` `20` `{{key:×}}` `{{key:+}}`| $0.0000$ | $0.0000$ | $0.0000$ | $18.2360$ | Total daily drain: $18.236\text{ mAh/day}$ |
+| `225` `{{key:x⇄y}}` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12.3382$** | Expected battery life: **$12.34\text{ days}$** continuous heavy school use |
+
+> **Homeschooler Diagnostic Checkpoint:**
+> Did your screen display $X = 18.2360$ before dividing by 225?
+> *If you see $X = 236.00$,* verify you keyed $0.0118$ rather than $11.8$. Quiescent sleep current is measured in microamperes ($11.8\,\mu\text{A} = 0.0118\text{ mA}$).
+
+---
+
+### Problem 1.2: Eager Debounce Lockout vs. Mechanical Chatter Duration
+A high-speed typist actuates a snap-dome switch that oscillates mechanically for $t_{\text{bounce}} = 4.8\text{ ms}$ before settling. If Core 1 scans the matrix at $f_{\text{scan}} = 200\text{ Hz}$ ($T_{\text{frame}} = 5.0\text{ ms}$) with a $20\text{ ms}$ lockout window, calculate the safety margin ratio:
+$$M = \frac{T_{\text{lockout}}}{t_{\text{bounce}}}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_02:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_02:value}}`**.
+
+This sequence loads the firmware debounce lockout window ($T_{\text{lockout}} = 20.0\text{ ms}$) into Register $Y$ and divides by the measured contact chatter duration ($t_{\text{bounce}} = 4.8\text{ ms}$). The stack drops, leaving safety margin $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{4.1667})$ in Register $X$—proving the switch settles four times faster than the lockout cutoff without requiring scratchpad storage.
+
+---
+
+### Problem 1.3: Transflective LCD Photometric Contrast Ratio
+A luminance meter measures light reflected from an unactivated pixel ($L_{\text{white}} = 142.0\text{ cd/m}^2$) and an activated black pixel ($L_{\text{black}} = 9.35\text{ cd/m}^2$). Calculate the photometric contrast ratio:
+$$C_R = \frac{L_{\text{white}}}{L_{\text{black}}}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_03:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_03:value}}`** $\approx 15.2:1$.
+
+This sequence enters unactivated background luminance ($L_{\text{white}} = 142.0\text{ cd/m}^2$) into $Y$ and divides by activated black pixel luminance ($L_{\text{black}} = 9.35\text{ cd/m}^2$). The stack drops, resolving the photopic contrast ratio $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{15.1872})$ directly to confirm ISO 9241-303 Class 1 visual ergonomics.
+
+---
+
+### Problem 1.4: 8.0 MHz SPI Display Bus Refresh Frame Latency
+The $132 \times 65$ dot-matrix LCD requires 9 command bytes and 1,056 display RAM data bytes ($8 \text{ pages} \times 132 \text{ columns}$). Calculate transmission time at $f_{\text{SPI}} = 8.0\text{ MHz}$ ($1\text{ bit} = 125\text{ ns}$):
+$$T_{\text{frame}} = \frac{(9 + 1056) \times 8\text{ bits}}{8.0 \times 10^6\text{ bits/s}}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_04:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_04:value}}\text{ ms}}$.
+
+> ***The x⇄y Denominator Flip & Bus Bandwidth Pipeline*** — Scale payload bit count directly in the stack, divide by transmission clock frequency, and convert to milliseconds with zero intermediate storage {{cite:horowitz2015}}.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `1065` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $1065.0000$ | $1065.0000$ | Frame payload: 9 command + 1056 data bytes |
+| `8` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8520.0000$ | Serialized bit stream length |
+| `8 {{key:E}} 6` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.001065$ | Clock transmission duration in seconds |
+| `1000` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0650$** | Frame refresh period $T_{\text{frame}}$ in milliseconds |
+
+Display refreshes completely in just $1.065\text{ ms}$, permitting smooth 60 Hz visual plotting.
+
+---
+
+### Problem 1.5: FNV-1a Checksum Calculation for Flash State Integrity
+Compute the 32-bit FNV-1a hash update for the single byte value $b = 0x4D$ ($77$ decimal) from initial state $\text{hash} = 2166136261$:
+$$\text{hash}' = (\text{hash} \oplus b) \times 16777619 \pmod{2^{32}}$$
+where $2166136261 \oplus 77 = 2166136200$.
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_05:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_05:value}}`**
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `2166136200` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.1661 \times 10^{9}$ | $2.1661 \times 10^{9}$ | Load XOR-accumulated hash state |
+| `16777619` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6343 \times 10^{16}$ | Multiply by 32-bit FNV prime |
+| `4294967296` `{{key:÷R}}` | $0.0000$ | $0.0000$ | $3.3562 \times 10^{9}$ | **$8461672.00$** | Divide with remainder: $Y=\text{32-bit wrapped hash}, X=\text{quotient}$ |
+
+Register $Y$ retains the 32-bit modulo-wrapped hash remainder ($3.3562 \times 10^9$), while Register $X$ displays the integer overflow quotient ($\mathbf{{{res:sc32_01_craftsmanship_hardware_seq_05:value}}}$).
+
+---
+
+### Problem 1.6: Heat-Set Brass Threaded Insert Pull-Out Force
+An M2.5 threaded brass insert has external diameter $D = 3.6\text{ mm}$ and embedment depth $L = 5.0\text{ mm}$ in technical polymer with shear strength $\tau = 42.0\text{ MPa} = 42.0\text{ N/mm}^2$:
+$$A_{\text{shear}} = \pi \cdot D \cdot L, \quad F_{\text{pull}} = A_{\text{shear}} \cdot \tau$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_06:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_06:value}}\text{ N}} \approx 242.1\text{ kgf}$.
+
+> ***The Cylindrical Shear Stress Pipeline*** — Stream geometric diameter, embedment depth, and material shear strength continuously, resolving ultimate mechanical pull-out force without parentheses {{cite:hp15c1982}}.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `3.6` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6000$ | Insert outer knurled diameter $D$ in mm |
+| `{{key:π}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $11.3097$ | Circumference $\pi D$ in mm |
+| `5.0` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $56.5487$ | Cylindrical shear area $A_{\text{shear}}$ in mm$^2$ |
+| `42.0` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2375.0440$** | Ultimate retention force $F_{\text{pull}}$ in Newtons |
+
+Demonstrates that the chassis brass threads withstand over $240\text{ kg}$ of direct tension before failure.
+
+---
+
+### Problem 1.7: Laser Pulse Energy and Peak Optical Power
+A 1064nm pulsed fiber laser operates at average power $P_{\text{avg}} = 1.20\text{ W}$, pulse frequency $f_{\text{rep}} = 35.0\text{ kHz}$, and pulse width $\tau = 100\text{ ns} = 1.0 \times 10^{-7}\text{ s}$:
+$$E_{\text{pulse}} = \frac{P_{\text{avg}}}{f_{\text{rep}}}, \quad P_{\text{peak}} = \frac{E_{\text{pulse}}}{\tau}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_07:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_07:value}}`**
+
+Executing `1.20 {{key:ENTER}} 35000 {{key:÷}}` deposits average laser power ($1.20\text{ W}$) into $Y$, divides by pulse frequency ($35.0\text{ kHz}$), and drops the stack to leave pulse energy $3.4286 \times 10^{-5}\text{ J}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.4286 \times 10^{-5})$. Striking `1 {{key:E}} 7 {{key:+/-}} {{key:÷}}` enters pulse width ($\tau = 100\text{ ns}$) and divides, evaluating peak optical burst power $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{342.8571}\text{ W})$ directly in Register $X$.
+
+---
+
+### Problem 1.8: Low-Dropout Linear Regulator (LDO) Power Dissipation
+Twin CR2032 batteries deliver $V_{\text{in}} = 5.80\text{ V}$ to an LDO supplying $V_{\text{out}} = 3.30\text{ V}$ at active computation current $I = 18.2\text{ mA}$:
+$$P_{\text{diss}} = (V_{\text{in}} - V_{\text{out}}) \cdot I$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_08:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_08:value}}`**$\text{ mW}$.
+
+Pushing `5.80 {{key:ENTER}} 3.30 {{key:-}}` evaluates battery headroom drop $\Delta V = 2.50\text{ V}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.5000)$. Striking `0.0182 {{key:×}} 1000 {{key:×}}` multiplies by active computation current ($18.2\text{ mA}$) and normalizes to milliwatts, yielding regulator heat dissipation $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{45.5000}\text{ mW})$—confirming negligible thermal rise ($< 1.2^\circ\text{C}$) without grouping syntax.
+
+---
+
+### Problem 1.9: Matrix Scanning Diode Noise Margin
+Keypad matrix lines use $3.3\text{ V}$ logic with low-state threshold $V_{IL,\max} = 0.80\text{ V}$. A Schottky isolating diode has forward drop $V_F = 0.32\text{ V}$ at $2.0\text{ mA}$. Calculate the low-state noise margin:
+$$V_{NM,L} = V_{IL,\max} - V_F$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_09:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_09:value}}`**$\text{ V}$.
+
+This sequence loads low-state input threshold ($0.80\text{ V}$) into Register $Y$ and subtracts Schottky forward drop ($0.32\text{ V}$). The stack drops, resolving the noise immunity margin $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.4800}\text{ V} = 480\text{ mV})$ in place to guarantee RF immunity.
+
+---
+
+### Problem 1.10: Power-On Reset (POR) Delay RC Time Constant
+Reset pin requires rising above $V_{\text{th}} = 2.10\text{ V}$ on a $3.30\text{ V}$ rail. With pull-up $R = 100\text{ k}\Omega$ and capacitor $C = 0.10\,\mu\text{F} = 1.0 \times 10^{-7}\text{ F}$:
+$$V(t) = V_{\text{dd}} \left(1 - e^{-t/RC}\right) \implies t = - R C \ln\left(1 - \frac{V_{\text{th}}}{V_{\text{dd}}}\right)$$
+
+**Keystrokes:**
+`{{res:sc32_01_craftsmanship_hardware_seq_10:keys}}`
+
+> ***The Inside-Out Exponential Decay & Inverted RC Constant*** — Evaluate the voltage switching ratio from the inside, take natural logarithm in place, and scale by RC product without parenthesis nesting {{cite:horowitz2015}}.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `2.10` `{{key:ENTER}}` `3.30` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6364$ | Normalized threshold $V_{\text{th}} / V_{\text{dd}}$ |
+| `{{key:+/-}}` `1` `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3636$ | Uncharged voltage headroom ($1 - V_{\text{th}}/V_{\text{dd}}$) |
+| `{{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.0116$ | Natural logarithm of voltage headroom |
+| `100000` `{{key:ENTER}}` | $0.0000$ | $-1.0116$ | $100000.0000$ | $100000.00$ | Pull-up resistance $R = 100\text{ k}\Omega$ |
+| `1 {{key:E}} 7 {{key:+/-}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $-1.0116$ | $0.0100$ | Circuit time constant $RC = 0.01\text{ s}$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-0.010116$ | Negative elapsed delay in seconds |
+| `{{key:+/-}}` `1000` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$10.1160$** | POR reset lockout time in milliseconds |
+
+The stack resolves to $\mathbf{{{res:sc32_01_craftsmanship_hardware_seq_10:value}}\text{ ms}}$.
+Ensures microcontroller clock PLL is stable before releasing Core 0 from reset.
+
+---
+
+> **Thematic Arc II — Mixed-Signal Board Design, Timing & Structural Metrology (Problems 1.11–1.20):** Moving from the user interface into the FR-4 circuit carrier, these ten problems evaluate quartz oscillator stability, copper trace impedance, and enclosure structural tolerances.
+
+### Problem 1.11: Crystal Oscillator Load Capacitance
+A $12.000\text{ MHz}$ fundamental quartz crystal specifies load capacitance $C_L = 18.0\text{ pF}$. With PCB stray capacitance $C_{\text{stray}} = 3.5\text{ pF}$, calculate matching external shunt capacitors ($C_1 = C_2 = C$):
+$$C_L = \frac{C}{2} + C_{\text{stray}} \implies C = 2 (C_L - C_{\text{stray}})$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_11:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_11:value}}`**$\text{ pF}$.
+
+Loading `18 {{key:ENTER}} 3.5 {{key:-}}` evaluates net series capacitance $C_L - C_{\text{stray}} = 14.5\text{ pF}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 14.5000)$. Striking `2 {{key:×}}` doubles the series branch value, calculating the required matching shunt capacitor rating $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{29.0000}\text{ pF})$—indicating standard $27\text{ pF}$ or $30\text{ pF}$ C0G ceramics with zero memory registers.
+
+---
+
+### Problem 1.12: Flash Sector Wear Endurance Under Extreme Daily Editing
+A math enthusiast saves 45 equation configurations per day. If QSPI flash sectors withstand $100,000$ write/erase cycles and ping-pong wear-leveling doubles endurance across 2 slots, find sector lifetime in years:
+$$t_{\text{years}} = \frac{2 \times 100,000}{45 \times 365.25}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_12:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_12:value}}`**$\text{ years}$.
+
+Evaluating `200000 {{key:ENTER}} 45 {{key:ENTER}} 365.25 {{key:×}}` loads dual-slot endurance ($200,000\text{ cycles}$) into $Z$ and evaluates annual sector write cycles ($45 \times 365.25 = 16,436.25\text{ writes/yr}$) in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 200000.0000, X: 16436.2500)$. Striking `{{key:÷}}` divides total cycle endurance by yearly wear, yielding guaranteed operational lifespan $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{12.1682}\text{ years})$—confirming over a decade of continuous daily service.
+
+---
+
+### Problem 1.13: Chassis Top Faceplate Flexure Under 400g Keypress
+Model the faceplate bridge between standoffs as a simply supported beam ($L = 60.0\text{ mm}$, $b = 15.0\text{ mm}$, thickness $h = 2.5\text{ mm}$, polymer flexural modulus $E = 3.5\text{ GPa} = 3500\text{ N/mm}^2$) under snap-dome actuation $F = 3.92\text{ N}$:
+$$I = \frac{b h^3}{12}, \quad \delta = \frac{F L^3}{48 E I}$$
+
+**Keystrokes:**
+`{{res:sc32_01_craftsmanship_hardware_seq_13:keys}}`
+
+> ***The Rational Expression Inside-Out Collapse*** — Calculate cross-section moment of inertia $I = bh^3/12$ and structural flexure $\delta = FL^3/48EI$ across stack levels without parentheses {{cite:hp32sii1991}}.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `15` `{{key:ENTER}}` `2.5` `{{key:ENTER}}` `3` `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $15.0000$ | $15.6250$ | Thickness cubed $h^3 = 2.5^3$ |
+| `{{key:×}}` `12` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $19.5312$ | Moment of inertia $I = bh^3/12$ in mm$^4$ |
+| `3.92` `{{key:ENTER}}` `60` `{{key:ENTER}}` `3` `{{key:yˣ}}` | $19.5312$ | $19.5312$ | $3.9200$ | $216000.00$ | Span cubed $L^3 = 60^3$ |
+| `{{key:×}}` | $19.5312$ | $19.5312$ | $19.5312$ | $846720.00$ | Bending load numerator $F L^3$ |
+| `48` `{{key:ENTER}}` `3500` `{{key:×}}` | $19.5312$ | $19.5312$ | $846720.00$ | $168000.00$ | Modulus factor $48 E$ |
+| `{{key:÷}}` | $19.5312$ | $19.5312$ | $19.5312$ | $5.0400$ | Divide bending load $F L^3$ by modulus factor $48 E$ |
+| `{{key:x⇄y}}` `{{key:÷}}` | $19.5312$ | $19.5312$ | $19.5312$ | **$0.2580$** | Swap $I$ into $X$ and divide to resolve center flexure $\delta$ in mm |
+
+With area moment of inertia $I = 19.53125\text{ mm}^4$, the center deflection resolves to $\delta = \mathbf{0.2580\text{ mm}}$—well under $0.26\text{ mm}$, guaranteeing a rigid tactile response without mushiness.
+
+---
+
+### Problem 1.14: Battery Internal Resistance via Delta-Voltage Load Step
+Battery voltage measures $V_1 = 2.940\text{ V}$ at idle ($I_1 = 4.8\text{ mA}$) and drops to $V_2 = 2.685\text{ V}$ during active calculation ($I_2 = 18.2\text{ mA}$):
+$$R_{\text{int}} = \frac{V_1 - V_2}{I_2 - I_1}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_14:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_14:value}}\,\Omega}$.
+
+> ***The LASTX Dual-Branch Trick & Delta-Impedance Ratio*** — Compute differential voltage and differential current across stack levels, resolving cell internal impedance without scratchpad storage {{cite:horowitz2015,hp15c1982}}.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `2.940` `{{key:ENTER}}` `2.685` `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2550$ | Active voltage drop $\Delta V$ in Volts |
+| `0.0182` `{{key:ENTER}}` `0.0048` `{{key:-}}` | $0.0000$ | $0.0000$ | $0.2550$ | $0.0134$ | Dynamic step current $\Delta I$ in Amperes |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$19.0299$** | Coin cell internal dynamic impedance in $\Omega$ |
+
+---
+
+### Problem 1.15: LCD Bias Temperature Compensation Slope
+The liquid crystal threshold voltage varies with temperature by $\frac{dV_{\text{LCD}}}{dT} = -12.5\text{ mV/}^\circ\text{C}$. If nominal voltage is $V_0 = 9.00\text{ V}$ at $25.0^\circ\text{C}$, find required drive voltage at freezing ($0.0^\circ\text{C}$):
+$$V(T) = V_0 + \frac{dV}{dT} (T - T_0) = 9.00 + (-0.0125)(0 - 25)$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_15:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_15:value}}`**$\text{ V}$.
+
+Typing `0 {{key:ENTER}} 25 {{key:-}}` evaluates temperature differential $\Delta T = -25.0^\circ\text{C}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: -25.0000)$. Striking `0.0125 {{key:+/-}} {{key:×}} 9.00 {{key:+}}` scales by thermal sensitivity slope ($-0.0125\text{ V/}^\circ\text{C}$) to produce offset $+0.3125\text{ V}$ and adds nominal room-temperature drive potential, resolving freezing LCD bias potential $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{9.3125}\text{ V})$ in place.
+
+---
+
+### Problem 1.16: Decoupling Capacitor Resonant Frequency at 150 MHz Clock
+A $0.10\,\mu\text{F}$ 0603 decoupling capacitor has parasitic equivalent series inductance $ESL = 0.85\text{ nH} = 8.5 \times 10^{-10}\text{ H}$. Find self-resonant frequency $f_{\text{SRF}}$:
+$$f_{\text{SRF}} = \frac{1}{2\pi \sqrt{L C}}$$
+
+**Keystrokes:**
+`{{res:sc32_01_craftsmanship_hardware_seq_16:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_16:value}}\text{ MHz}}$.
+
+***The Inside-Out Radical & LC Resonance Pipeline*** — Multiply equivalent series inductance and decoupling capacitance directly in the stack, take square root in place, and invert to find self-resonant frequency without parentheses {{cite:horowitz2015,hp15c1982}}.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `8.5 {{key:E}} 10 {{key:+/-}}` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $8.5000 \times 10^{-10}$ | $8.5000 \times 10^{-10}$ | Parasitic inductance $ESL$ in Henries |
+| `1 {{key:E}} 7 {{key:+/-}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.5000 \times 10^{-17}$ | Reactive product $L C$ in s$^2$ |
+| `{{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $9.2195 \times 10^{-9}$ | Time constant $\sqrt{LC}$ in seconds |
+| `2` `{{key:×}}` `{{key:π}}` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $5.7928 \times 10^{-8}$ | Period divisor $2\pi\sqrt{LC}$ |
+| `{{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.7263 \times 10^{7}$ | Self-resonant frequency in Hertz |
+| `1 {{key:E}} 6` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$17.2628$** | Self-resonant frequency $f_{\text{SRF}}$ in MHz |
+
+---
+
+### Problem 1.17: Laser Foaming Absorption Depth via Beer-Lambert Law
+Carbon black pigmented polymer has absorption coefficient $\alpha = 450\text{ cm}^{-1}$ at $1064\text{ nm}$. Calculate depth $z$ where beam intensity drops to $10\%$ ($I/I_0 = 0.10$):
+$$I(z) = I_0 e^{-\alpha z} \implies z = - \frac{\ln(0.10)}{\alpha}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_17:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_17:value}}\,\mu\text{m}}$.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `0.10` `{{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-2.3026$ | Natural logarithm of beam ratio $I/I_0$ |
+| `450` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-0.005117$ | Absorption depth in centimeters |
+| `{{key:+/-}}` `10000` `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$51.1686$** | Laser penetration depth $z$ in $\mu\text{m}$ |
+
+Matches the physical target depth of $50\text{--}100\,\mu\text{m}$ beneath the keycap surface.
+
+---
+
+### Problem 1.18: Chassis Drop Impact Deceleration
+The calculator drops from height $h = 1.20\text{ m}$ onto concrete. The elastomeric TPU bumper compresses by $\Delta y = 2.2\text{ mm} = 0.0022\text{ m}$. Calculate average impact deceleration in G's ($g = 9.80665\text{ m/s}^2$):
+$$v_{\text{impact}} = \sqrt{2gh}, \quad a_{\text{avg}} = \frac{v^2}{2 \Delta y} = \frac{g h}{\Delta y}, \quad G = \frac{h}{\Delta y}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_18:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_18:value}}\,G}$.
+
+***The Inside-Out Radical & Dynamic Deceleration Pipeline*** — Calculate kinetic velocity squared $2gh$ and divide by bumper cushion deflection $\Delta y$ directly in the operational stack {{cite:strogatz2019}}.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `1.20` `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $1.2000$ | $1.2000$ | Freefall drop height $h = 1.20\text{ m}$ |
+| `0.0022` | $0.0000$ | $0.0000$ | $1.2000$ | $0.0022$ | Bumper deflection $\Delta y = 2.2\text{ mm}$ |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$545.4545$** | Average shock deceleration $G = h/\Delta y$ |
+
+Demonstrates why all internal solder joints and SMD inductors are epoxy underfilled.
+
+---
+
+### Problem 1.19: Quiescent Sleep Power Consumption Over 18 Months
+In deep sleep ($I = 11.8\,\mu\text{A}$ at $V = 3.0\text{ V}$), find total energy consumed in Joules over an 18-month shelf storage ($547.5\text{ days} = 13,140\text{ hours}$):
+$$E = V \cdot I \cdot t$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_19:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_19:value}}`**$\text{ Joules}$.
+
+***The Constant-in-T Pipeline*** — Park battery potential in the stack to stream current and time across months, accumulating total dissipated Joules without scratchpad storage {{cite:horowitz2015}}.
+
+Inputting `3.0 {{key:ENTER}} 11.8 {{key:E}} 6 {{key:+/-}} {{key:×}}` loads nominal battery potential ($3.0\text{ V}$) and multiplies by deep sleep current ($11.8\,\mu\text{A}$), forming continuous power dissipation $3.5400 \times 10^{-5}\text{ W}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 3.5400 \times 10^{-5})$. Striking `13140 {{key:×}} 3600 {{key:×}}` scales by storage duration in hours and converts to seconds, calculating total 18-month energy consumed $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{1674.5616}\text{ Joules})$—less than $20\%$ of the coin cell's chemical reserve.
+
+---
+
+### Problem 1.20: Microcontroller Core Clock PLL Lock Phase Margin
+Phase-Locked Loop loop filter has damping factor $\zeta = 0.707$ and natural frequency $\omega_n = 2.40 \times 10^6\text{ rad/s}$. Calculate settling time to $1\%$ phase error:
+$$t_{\text{lock}} \approx \frac{4.6}{\zeta \omega_n}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_20:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_20:value}}`**$\,\mu\text{s}$.
+
+Pressing `4.6 {{key:ENTER}} 0.707 {{key:ENTER}} 2.40 {{key:E}} 6 {{key:×}} {{key:÷}}` loads the four-time-constant factor ($4.6$), evaluates the loop denominator $\zeta \omega_n = 1.6968 \times 10^6\text{ rad/s}$, and divides to obtain settling time $2.7110 \times 10^{-6}\text{ s}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 2.7110 \times 10^{-6})$. Striking `1 {{key:E}} 6 {{key:×}}` converts to microseconds.
+
+---
+
+> **Thematic Arc III — Manufacturing Reliability & Environmental Qualification (Problems 1.21–1.25):** The closing hardware arc subjects the finished instrument to thermal cycling fatigue, vibration resonance, and long-term calibration drift audits.
+
+### Problem 1.21: Lead-Free Solder Joint Thermal Fatigue Life
+Coffin-Manson relation for SAC305 solder joints cycling between $-10^\circ\text{C}$ and $+45^\circ\text{C}$ ($\Delta T = 55\text{ K}$, fatigue exponent $m = 2.2$, calibration constant $C = 1.8 \times 10^7$):
+$$N_f = \frac{C}{(\Delta T)^m}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_21:keys}}`$\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_21:value}}\text{ thermal shock cycles}}$.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `55` `{{key:ENTER}}` `2.2` `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6742.1423$ | Thermal swing power $(\Delta T)^{2.2}$ |
+| `1.8 {{key:E}} 7` | $0.0000$ | $0.0000$ | $6742.1423$ | $1.8000 \times 10^{7}$ | SAC305 fatigue coefficient $C$ |
+| `{{key:x⇄y}}` `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2669.7745$** | Thermal shock endurance cycles $N_f$ |
+
+---
+
+### Problem 1.22: Electrostatic Discharge (ESD) Human Body Model Spark
+Human Body Model ($C = 100\text{ pF}$, discharge resistance $R = 1500\,\Omega$) charged to $V_0 = 8000\text{ V}$ (IEC 61000-4-2 contact discharge). Find peak instantaneous current:
+$$I_{\text{peak}} = \frac{V_0}{R}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_22:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_22:value}}`**$\text{ Amperes}$.
+
+This sequence loads HBM electrostatic potential ($8000\text{ V}$) into Register $Y$ and divides by discharge resistance ($1500\,\Omega$). The stack drops, evaluating peak instantaneous spark current $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{5.3333}\text{ A})$ directly—explaining why dedicated TVS diodes guard all external I/O pins.
+
+---
+
+### Problem 1.23: Keypad Matrix Phantom Key Sneak Current Analysis
+Three keys are pressed simultaneously forming three corners of a rectangle in a matrix without diodes. With row pull-up $R_{\text{pu}} = 10\text{ k}\Omega$ to $3.3\text{ V}$, trace the sneak path current that causes a false "ghost" key:
+$$I_{\text{sneak}} = \frac{V_{\text{cc}}}{R_{\text{pu}} + 3 R_{\text{contact}}} \approx \frac{3.3}{10000} = 0.33\text{ mA}$$
+Because Schottky diodes are placed in series with every keycap in the SC-32, the reverse-biased diode blocks sneak current completely ($I_{\text{leak}} < 0.1\,\mu\text{A}$), providing 100% anti-ghosting rollover.
+
+Entering `3.3 {{key:ENTER}} 10000 {{key:÷}}` loads logic supply potential ($3.3\text{ V}$) into Register $Y$ and divides by row pull-up resistance ($10,000\,\Omega$). The stack drops, resolving the unmitigated sneak current $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{3.3000 \times 10^{-4}}\text{ A} = 0.33\text{ mA})$ in Register $X$.
+
+---
+
+### Problem 1.24: Ambient Light Sensor ADC Resolution and Lux Mapping
+An ambient light photodiode produces current $I_{\text{photo}} = 0.25\,\mu\text{A} / 100\text{ lux}$ through transimpedance resistor $R_f = 2.4\text{ M}\Omega$. The 12-bit ADC ($4096\text{ counts}$) measures against a $3.30\text{ V}$ reference. Calculate lux per ADC count:
+$$V_{\text{out}} = I_{\text{photo}} \cdot R_f = \left(\frac{0.25 \times 10^{-6}\text{ A}}{100\text{ lux}}\right) \times 2.4 \times 10^6\,\Omega = 0.0060\text{ V/lux} = 6.0\text{ mV/lux}$$
+$$V_{\text{LSB}} = \frac{3.30\text{ V}}{4096} \approx 0.80566\text{ mV}$$
+$$\text{Resolution} = \frac{V_{\text{LSB}}}{0.0060\text{ V/lux}} = \frac{0.80566}{6.0} \approx \mathbf{0.1343\text{ lux/count}}.$$
+
+Executing `3.3 {{key:ENTER}} 4096 {{key:÷}}` evaluates 12-bit ADC voltage step $V_{\text{LSB}} = 8.0566 \times 10^{-4}\text{ V}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 8.0566 \times 10^{-4})$. Striking `0.006 {{key:÷}}` divides by the transimpedance transfer factor ($6.0\text{ mV/lux}$), resolving optical measurement resolution $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.1343}\text{ lux/count})$ directly.
+
+---
+
+### Problem 1.25: Chassis Thermal Equilibrium Temperature Rise
+At full continuous 150 MHz dual-core computation, the board dissipates $P = 60.0\text{ mW} = 0.060\text{ W}$. The chassis has total heat radiating area $A = 0.024\text{ m}^2$ with natural convection heat transfer coefficient $h_c = 6.5\text{ W/m}^2\text{K}$:
+$$\Delta T = \frac{P}{h_c \cdot A}$$
+
+**Keystrokes:** `{{res:sc32_01_craftsmanship_hardware_seq_23:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_23:value}}`**$\text{ K} \approx 0.38^\circ\text{C}$.
+
+Pushing `0.060 {{key:ENTER}} 6.5 {{key:ENTER}} 0.024 {{key:×}}` loads continuous thermal dissipation ($0.060\text{ W}$) into $Z$ and evaluates convection conductance $h_c A = 0.1560\text{ W/K}$ in Register $X$ $(T: 0.0000, Z: 0.0000, Y: 0.0600, X: 0.1560)$. Striking `{{key:÷}}` divides dissipation by conductance, determining steady-state equilibrium temperature rise $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{0.3846}\text{ K} \approx 0.38^\circ\text{C})$—proving the chassis remains cool to the touch with zero throttling.
 
 ---
 

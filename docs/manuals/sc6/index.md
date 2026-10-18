@@ -52,7 +52,7 @@ You don't need to learn all 43 keys at once! As you level up from Kindergarten t
 • <strong>Grade 4:</strong> <code>{{key:÷R}}</code> Quotient &amp; Remainder, <code>{{key:SIMP}}</code> Factor Reduction, Mixed Numbers <code>{{key:a ᵇ/c}}</code>, Improper Fractions <code>{{key:d/c}}</code>, Decimals.<br>
 • <strong>Grade 5:</strong> Unlike Fractions, <code>{{key:LCM}}</code> Least Common Denominator, <code>{{key:PRISM}}</code> Volume, <code>{{key:Σ+}}</code> Surface Area Accumulation, Unit Conversions.<br>
 • <strong>Grade 6 (Pre-Algebra &amp; Rapid Math Sprint):</strong> <code>{{key:+/-}}</code> Signed Numbers, <code>{{key:|x|}}</code> Absolute Value, <code>{{key:FACT}}</code> Prime Decomposition, <code>{{key:GCF}}</code>, <code>{{key:LCM}}</code>, Ratios (<code>{{key:a:b}}</code>), Geometric <code>{{key:x²}}</code> and <code>{{key:√x}}</code> Inverses, Descriptive Statistics (<code>{{key:x̄}}</code>, <code>{{key:MED}}</code>, <code>{{key:MODE}}</code>, <code>{{key:IQR}}</code>, <code>{{key:MAD}}</code>).<br>
-<em>Strict Gatekeeping Directive: 5th graders and younger NEVER see logarithms (<code>LOG</code>, <code>LN</code>) or abstract powers (<code>yˣ</code>). Advanced functions are segregated exclusively into secondary advanced math extensions.</em>
+<em>Every keycap unlocks gradually as young mathematicians grow, keeping the keypad welcoming and intuitive while saving advanced scientific functions for secondary exploration on the SC-32.</em>
 </p>
 </div>
 
@@ -72,6 +72,7 @@ The <strong>StackCalc SC-6 Elementary Calculator &amp; Classroom Companion</stro
 |---|---|---|
 | **Traditional Algebraic (Infix)** | `7` `+` `5` `=` $\longrightarrow 12$ | The `+` key hides `7` in invisible memory while waiting for `5`. The `=` key destroys the problem structure. The learner never sees where intermediate numbers live. |
 | **Reverse Polish Notation (RPN)** | `7` `{{key:ENTER}}` `5` `{{key:+}}` $\longrightarrow 12$ | `7` rises visibly to Register $Y$; `5` enters Register $X$; `{{key:+}}` fuses them visibly into `12`. Every number is a visible object; zero hidden buffers; zero syntax errors. |
+
 </div>
 
 ### For the Skeptical Parent: Why Not Just Use a \$10 Calculator or Tablet App?
@@ -119,8 +120,8 @@ Jerome Bruner's foundational cognitive research established that deep mathematic
 
 | CRA Stage | Physical / Digital Medium | Classroom & Studio Examples |
 |---|---|---|
-| **Stage 1: Concrete (Hands-On Manipulatives)** | 3D-Printed Gridfinity Studio Kits | Ten-Frame Trays, $84\text{ mm}$ Fraction Towers & Comparator Well, 144 Four-Color Counting Tiles, Prime Factor Studio, Planetary Geared Clock. |
-| **Stage 2: Representational (LCD Sandboxes)** | Transflective Dot-Matrix Visual Modes | Ten-Frame Studio `{{key:▦}}`, Step Counter & Bead Rack `{{key:COUNT}}`, Number Line Jump Arcs `{{keycap:LINE}}`, Place Value `{{key:PV}}`, Geared Clock Dial `{{key:🕒}}`. |
+| **Stage 1: Concrete (Hands-On Manipulatives)** | 3D-Printed Gridfinity Studio Kits | Ten-Frame Trays, $84\text{ mm}$ Fraction Towers & Comparator Well, 24 Four-Color Counting & Array Tiles, Prime Factor Studio, Planetary Geared Clock. |
+| **Stage 2: Representational (LCD Sandboxes)** | Transflective Dot-Matrix Visual Modes | Ten-Frame Studio `{{key:▦}}`, Step Counter & Bead Rack `{{key:COUNT}}`, Number Line Jump Arcs `{{key:LINE}}`, Place Value `{{key:PV}}`, Geared Clock Dial `{{key:🕒}}`. |
 | **Stage 3: Abstract (RPN Stack Dynamics)** | Multi-Register Stack-Order (RPN) Stack ($X, Y, Z, T$) | Two-Number stack drop, $T$-register constant replication, parenthesis-free order of operations `(15-3)×(4+2)÷6`, multi-face surface area accumulation via `{{key:Σ+}}`. |
 
 <p>
@@ -140,15 +141,14 @@ To make sure every number on the screen connects directly to something you can h
 
 | Studio Kit | Physical Manipulative Object | SC-6 Visual Mode / Key | 1-to-1 Stack Register Mapping & Mathematical Bridge |
 | :--- | :--- | :---: | :--- |
-| **1. The Ten-Frame Tray** | Dual $2 \times 5$ compartmentalized tray with 10 two-color (coral/gold) counters | `{{key:▦}}` Ten-Frame Mode | Register $Y$ shows the upper ten-frame; Register $X$ shows the lower ten-frame. Tapping `{{key:+}}` physically combines counters, grouping them into one full ten and extras ($7 + 5 = 12$) right on the stack! |
-| **2. The Four-Color Tile Studio** | 144 smooth-docking counting tiles in four colors (white, blue, gold, slate) | `{{key:NUM}}` Standard Mode | Build rectangular tile arrays. Row count sits on Level $Y$, column count sits on Level $X$; tapping `{{key:×}}` calculates total tiles in $X$. Spin the tray sideways: it is still 24—proving that switching the order doesn't change the answer! |
+| **1. The Ten-Frame Tray** | Dual $2 \times 5$ compartmentalized trays with 20 two-color (coral/gold) counters | `{{key:▦}}` Ten-Frame Mode | Register $Y$ shows the upper ten-frame; Register $X$ shows the lower ten-frame. Tapping `{{key:+}}` physically combines counters, grouping them into one full ten and extras ($7 + 5 = 12$) right on the stack! |
+| **2. The Four-Color Tile Studio** | 24 smooth-docking counting & array tiles in four colors (white, blue, gold, slate) | `{{key:NUM}}` Standard Mode | Build rectangular tile arrays up to $4 \times 6 = 24$ (and scale larger arrays on the stack). Row count sits on Level $Y$, column count sits on Level $X$; tapping `{{key:×}}` calculates total tiles in $X$. Spin the tray sideways: it is still 24—proving that switching the order doesn't change the answer! |
 | **3. The 84 mm Fraction Towers** | $84.0\text{ mm}$ master tower ($1\text{ Whole}$) with proportional sub-towers ($1/2, 1/3, 1/4, 1/6, 1/12$) & comparator well | `{{key:FDISP}}` & `{{key:SIMP}}` | Snap two $1/4$ towers together and feel with your finger how their top edge matches the $1/2$ tower exactly! On the SC-6, enter `. 2 . 4`, tap `{{key:SIMP}}`, and watch the numbers shrink to $1/2$ while the towers stay locked flush in the tray. |
 | **4. The Prime Factor Studio** | 29 proportional prime factor blocks ($2, 3, 5, 7, \dots$) with logarithmic heights & slide-rule scale | `{{key:PRIME}}` & `{{key:FACT}}` | Secret puzzle blocks for prime numbers ($2, 3, 5, 7, \dots$). Stacking block 2 on block 3 reaches the exact height of 6! On the SC-6, type `60` and tap `{{key:FACT}}` to reveal its secret prime building blocks: $2^2 \times 3 \times 5$. |
 | **5. The Planetary Geared Clock** | Functional 3D-printed clock with 12:1 compound planetary reduction gears and linked hands | `{{key:🕒}}` Clock Sandbox | Turn the minute hand and watch the hour hand glide automatically. On the SC-6, enter start time in $Y$ (`9.30`) and minutes in $X$ (`2.45`), then tap `{{key:+}}` to calculate arrival time without 60-minute confusion! |
 | **6. The Polyhedral Dice & Spinner Studio** | Precision polyhedral dice ($d4, d6, d8, d10, d12, d20$) with equal-volume excavated pips & balanced spinner | `{{key:🎲}}` Dice Sandbox | Roll physical dice on your desk, then tap `{{key:🎲}}` to roll digital dice into Level $X$, saving prior rolls in $Y, Z, T$ to build live dot plots and frequency tables. |
 | **7. The Place Value Studio** | Proportional base-10 unit cubes ($1$), ten-rods ($10$), hundred-flats ($100$), and thousand-cubes ($1000$) | `{{key:PV}}` Place Value Mode | Group blocks into tens and hundreds. Type `347` and tap `{{key:PV}}` to split the number across the stack shelves: $300 + 40 + 7$ with matching visual block counters! |
 | **8. The Number Rack (Rekenrek)** | Dual horizontal stainless rails with 10 beads each ($5\text{ red} + 5\text{ white}$) | `{{key:COUNT}}` Number Rack Mode | Top rail links to Level $Y$, bottom rail links to Level $X$. Slide beads with your fingers to see friend numbers that make 5 and 10 at a glance before doing arithmetic on the keys! |
-
 
 ---
 
@@ -173,11 +173,11 @@ The StackCalc SC-6 equips you with four unique operational tools—referred to t
 
 **THE FOUR SC-6 RPN SUPERPOWERS**
 
-| SUPERPOWER 1: {{key:REP}} / {{keycap:REP}} | Rhythmic Skip-Counting & Times Tables Replicates X into all registers; rhythmic {{key:+}} builds times tables (7, 14, 21, 28...). |
+| SUPERPOWER 1: {{key:REP}} | Rhythmic Skip-Counting & Times Tables Replicates X into all registers; rhythmic {{key:+}} builds times tables (7, 14, 21, 28...). |
 | :--- | :--- |
-| SUPERPOWER 2: {{key:÷R}} / {{keycap:÷R}} | Simultaneous Whole Quotient & Remainder Divides in 1 stroke: Quotient in X, Remainder in Y. {{key:x⇄y}} swaps to inspect. |
-| SUPERPOWER 3: {{keycap:SIMP}} | Step-by-Step Fraction Factor Reduction Divides out prime factors one at a time; announces "LOWEST TERMS" when irreducible. |
-| SUPERPOWER 4: {{key:LASTX}} | Self-Checking Inverse Arithmetic Recalls the prior number into X to verify operations via inverse math (add -> sub). |
+| SUPERPOWER 2: {{key:÷R}} | Simultaneous Whole Quotient & Remainder Divides in 1 stroke: Quotient in X, Remainder in Y. {{key:x⇄y}} swaps to inspect. |
+| SUPERPOWER 3: {{key:SIMP}} | Step-by-Step Fraction Factor Reduction Divides out prime factors one at a time; announces "LOWEST TERMS" when irreducible. |
+| SUPERPOWER 4: {{key:LASTX}} | Self-Checking Inverse Arithmetic Recalls the prior number into X to verify operations via inverse math (add $\to$ sub). |
 
 ### Superpower 1: Rhythmic Skip-Counting Ladders (`{{key:REP}}`)
 - **Keycap:** Row 3, Col 5 (`{{key:REP}}`, mapped to `executeRep()`)
@@ -230,7 +230,7 @@ The SC-6 integrates five dedicated visual manipulative sandboxes directly into t
 > • Number bond complement readout: e.g. "7 (10-3)" and "3 (10-7)".
 > • Tap {{key:.}} to add counters one-by-one; tap digits (7) to set directly.
 > • Press {{key:+}} to combine frames: 7 + 3 fills a complete 10-frame!
-> 2. NUMBER LINE JUMPING TOOL {{keycap:LINE}}
+> 2. NUMBER LINE JUMPING TOOL {{key:LINE}}
 > • Horizontal integer axis with dynamic tick window and numeral labels.
 > • Start point dot at Y; forward hop arcs for {{key:+}}, backward arcs for {{key:-}}.
 > • Full support for negative numbers: hops left of zero naturally.
@@ -244,7 +244,7 @@ The SC-6 integrates five dedicated visual manipulative sandboxes directly into t
 > • Continuous hour hand angles: at 3:30, hour hand is at 105°, not 90°!
 > • Modulo-60 elapsed time arithmetic via native HP-32SII H.MMSS format.
 > • Instant conversion to pure decimal hours via {{key:▸HR}} (strictly no units).
-> 5. CLASSROOM DICE {{key:🎲}} & RPN EQUATION QUIZ ENGINE {{keycap:?}}
+> 5. CLASSROOM DICE {{key:🎲}} & RPN EQUATION QUIZ ENGINE {{key:?}}
 > • 32x32 pixel die face with authentic pip patterns (1 to 6).
 > • Discrete PRNG tools for probability labs: {{key:1…x}} and {{key:t…x}}.
 > • Gamified Math Quiz Engine: 6 levels of rapid arithmetic sprints with streak scoring.
@@ -256,7 +256,7 @@ Whenever a visual sandbox is active, the top LCD status bar displays a high-cont
 |:---|:---|:---|
 | **Regular Number Mode (Default)** | *(None)* | Standard 41+ px digits ($Y \mid X$ dual or $X$ single) |
 | **Ten-Frame Mode** | `{{key:▦}}` | $2 \times 5$ concrete grid frames with nearest-10 overflow |
-| **Number Line Mode** | `{{keycap:LINE}}` | Horizontal axis with jumping parabolic arcs |
+| **Number Line Mode** | `{{key:LINE}}` | Horizontal axis with jumping parabolic arcs |
 | **Number Rack / Rekenrek** | `{{key:COUNT}}` | 10 beads along wires (5 solid, 5 hollow) |
 | **Analog Clock Face Mode** | `{{key:🕒}}` | 12-hour analog clock dials with hour/minute hands |
 | **Digital Time Mode** | `{{key:🕒}}` | Colon-separated digital time (`H:MM:SS`) |
@@ -293,18 +293,19 @@ The SC-6 manual is organized into nine instructional chapters and two exhaustive
 | Chapter | Title | Grades | Primary Keycaps & Tools | Curriculum Standards Alignment |
 |:---|:---|:---|:---|:---|
 | **[Chapter 01](01-hardware-architecture.md)** | Hardware Architecture & Industrial Craftsmanship | All / Teachers | Dark thermoplastics, $400\text{g}$ snap-domes, transflective LCD, sliding cowl, coin cell reserve | Lab safety, ergonomic grip standards, durable classroom tools |
-| **[Chapter 02](02-rpn-for-young-learners.md)** | RPN for Young Learners & The Elevator Metaphor | K–2 | `{{key:ENTER}}`, `{{key:+}}`, `{{key:-}}`, `{{key:x⇄y}}`, `{{keycap:FLAGS}}` (2-LV, 4-LV, 8-LV) | Eliminating equals sign misconception, working memory preservation |
-| **[Chapter 03](03-counting-place-value.md)** | Counting, Number Lines & Place Value Studio | K–2 | `{{key:▦}}`, `{{key:COUNT}}`, `{{keycap:LINE}}`, `{{key:PV}}` | Singapore Dimensions Grade 1 Unit 2; Bridges Unit 1; CCSS.MATH.1.NBT |
+| **[Chapter 02](02-rpn-for-young-learners.md)** | RPN for Young Learners & The Elevator Metaphor | K–2 | `{{key:ENTER}}`, `{{key:+}}`, `{{key:-}}`, `{{key:x⇄y}}`, `{{key:FLAGS}}` (2-LV, 4-LV, 8-LV) | Eliminating equals sign misconception, working memory preservation |
+| **[Chapter 03](03-counting-place-value.md)** | Counting, Number Lines & Place Value Studio | K–2 | `{{key:▦}}`, `{{key:COUNT}}`, `{{key:LINE}}`, `{{key:PV}}` | Singapore Dimensions Grade 1 Unit 2; Bridges Unit 1; CCSS.MATH.1.NBT |
 | **[Chapter 04](04-operations-skip-counting.md)** | Whole Number Operations & Skip-Counting Ladders | 2–4 | `{{key:REP}}`, `{{key:×}}`, `{{key:÷}}`, `{{key:÷R}}`, `{{key:LASTX}}` | Singapore Dimensions Grade 3 Unit 3; Bridges Unit 2; CCSS.MATH.3.OA |
-| **[Chapter 05](05-fractions-decimals-ratios.md)** | Fractions, Decimals & Proportional Towers | 3–5 | `. n . d`, `{{keycap:SIMP}}`, `{{key:a ᵇ/c}}`, `{{key:d/c}}`, `{{keycap:LCM}}`, `{{key:GCF}}`, `{{key:a:b}}` | Singapore Dimensions Grade 4 Unit 5; Bridges Unit 4; CCSS.MATH.4.NF |
-| **[Chapter 06](06-geometry-surface-area.md)** | Geometry, Surface Area & Planetary Geared Time | 3–5 | `{{keycap:RECT}}`, `{{keycap:PRISM}}`, `{{key:Σ+}}`, `{{key:🕒}}`, `{{key:🕒}}`, `{{key:▸HR}}` | Singapore Dimensions Grade 5 Unit 8; Bridges Unit 6; CCSS.MATH.5.MD |
-| **[Chapter 07](07-data-probability-primes.md)** | Discrete Probability, Primes & Pre-Algebra | 5–6 | `{{key:🎲}}`, `{{key:PRIME}}`, `{{key:FACT}}`, `{{keycap:MED}}`, `{{keycap:MODE}}`, `{{key:IQR}}`, `{{keycap:MAD}}`, `{{key:+/-}}` | Singapore Dimensions Grade 6 Unit 1; Big Ideas Math 6; CCSS.MATH.6.SP |
-| **[Chapter 08](08-math-quiz-engine.md)** | The Gamified Math Quiz Engine | 1–6 | `{{keycap:?}}` / `{{key:?}}`, Levels 1–6 sprint modes | Mental math fact fluency, automated diagnostic assessment |
+| **[Chapter 05](05-fractions-decimals-ratios.md)** | Fractions, Decimals & Proportional Towers | 3–5 | `. n . d`, `{{key:SIMP}}`, `{{key:a ᵇ/c}}`, `{{key:d/c}}`, `{{key:LCM}}`, `{{key:GCF}}`, `{{key:a:b}}` | Singapore Dimensions Grade 4 Unit 5; Bridges Unit 4; CCSS.MATH.4.NF |
+| **[Chapter 06](06-geometry-surface-area.md)** | Geometry, Surface Area & Planetary Geared Time | 3–5 | `{{key:RECT}}`, `{{key:PRISM}}`, `{{key:Σ+}}`, `{{key:🕒}}`, `{{key:🕒}}`, `{{key:▸HR}}` | Singapore Dimensions Grade 5 Unit 8; Bridges Unit 6; CCSS.MATH.5.MD |
+| **[Chapter 07](07-data-probability-primes.md)** | Discrete Probability, Primes & Pre-Algebra | 5–6 | `{{key:🎲}}`, `{{key:PRIME}}`, `{{key:FACT}}`, `{{key:MED}}`, `{{key:MODE}}`, `{{key:IQR}}`, `{{key:MAD}}`, `{{key:+/-}}` | Singapore Dimensions Grade 6 Unit 1; Big Ideas Math 6; CCSS.MATH.6.SP |
+| **[Chapter 08](08-math-quiz-engine.md)** | The Gamified Math Quiz Engine | 1–6 | `{{key:?}}`, Levels 1–6 sprint modes | Mental math fact fluency, automated diagnostic assessment |
 | **[Chapter 09](09-applied-stem-labs.md)** | Applied Elementary STEM & Maker Labs | 4–6 | Maker projects: 3D printing filament mass, paper circuits, LED Ohm's law | NGSS Engineering Design; maker education integration |
 | **[Appendix A](appendix-a-manipulative-blueprints.md)** | Manipulative Blueprints & CAD Specifications | Teachers / Makers | 3D print specs, Gridfinity footprints, PLA selection, CAD files | Physical classroom manipulatives fabrication |
 | **[Appendix B](appendix-b-teacher-lesson-plans.md)** | Teacher Facilitator Guide & Station Lesson Plans | Teachers / Specialists | Turnkey 45-minute station lesson scripts, dialogue, diagnostics | Professional development, classroom station deployment |
 | **[Appendix C](appendix-c-formulas-and-conversions.md)** | Formulas, Surface Area via Stats & Conversions Directory | All Grades | Elementary formulas, surface area accumulation, unit conversion tables | Quick desk reference & formula catalog |
 | **[Appendix D](appendix-d-keycap-directory.md)** | Keycap Matrix, Developmental Ribbon & Shift Directory | All Grades | Complete 43-key matrix directory, hardware scan pins, grade unlock ribbon | Authoritative hardware keycap reference |
+
 </div>
 
 ---
@@ -323,13 +324,12 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 > Adventures 26–30 : Grade 6 Mixed Operations, Time & Surface Area Memory (Explore in [Chapters 06, 07 & 09](09-applied-stem-labs.md))
 
 ### Adventure 01: The Ten-Frame Number Bond (Making 10)
-- **Grade Band:** Kindergarten – Grade 1
-- **Chapter Pointer:** [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
-- **Problem Statement:** Maya has 7 red counters in her ten-frame tray. How many more blue counters does she need to fill the frame of 10?
+*Kindergarten – Grade 1* — [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
+
+Maya has 7 red counters in her ten-frame tray. How many more blue counters does she need to fill the frame of 10?
 - **Hands-On Manipulative:** Place 7 red counters into the physical wooden Ten-Frame tray (fill top row of 5, then 2 in bottom row). Notice 3 empty cells.
 - **Visual Sandbox Keystrokes:** Press `{{key:▦}}`, then enter `7`.
-- **Abstract RPN Keystrokes:** `10 {{key:ENTER}} 7 {{key:-}}` $\implies \mathbf{3}$
-- **4-Register Stack Trace Table:**
+**On Your SC-6:** `10 {{key:ENTER}} 7 {{key:-}}` $\implies \mathbf{3}$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -339,17 +339,15 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | `7` | 0 | 0 | 10 | 7 | Enter red counters into Ground Floor $X$. |
 | `{{key:-}}` | 0 | 0 | 0 | 3 | Subtraction combines $Y - X = 3$. Result in $X$! |
 
-- **Diagnostic Checkpoint:** Did you see $Y = 10$ and $X = 7$ before pressing `{{key:-}}`? If your display shows $17$, you pressed `{{key:+}}` instead of `{{key:-}}`. Press `{{key:LASTX}}` to recall $7$, then press `{{key:-}}` twice!
+- Did you see $Y = 10$ and $X = 7$ before pressing `{{key:-}}`? If your display shows $17$, you pressed `{{key:+}}` instead of `{{key:-}}`. Press `{{key:LASTX}} {{key:-}}` to undo the addition and restore $10$, then press `{{key:LASTX}} {{key:-}}` (or `7 {{key:-}}`) to subtract $7$, reaching $\mathbf{3}$!
 
 ---
 
 ### Adventure 02: Number Line Addition (Hopping Forward)
-- **Grade Band:** Grade 1
-- **Chapter Pointer:** [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
-- **Problem Statement:** A grasshopper sits on tick mark 6 of a number line. It makes a forward leap of 5 units. Where does it land?
-- **Visual Sandbox Keystrokes:** Press `{{key:LINE}}`, key `{{res:sc6_index_seq_01:keys}}`.
-- **Abstract RPN Keystrokes:** `{{res:sc6_index_seq_01:keys}}` $\implies \mathbf{{{res:sc6_index_seq_01:value}}}$
-- **4-Register Stack Trace Table:**
+*Grade 1* — [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
+
+A grasshopper sits on tick mark 6 of a number line. It makes a forward leap of 5 units. Where does it land?
+- **Keystrokes (in `{{key:LINE}}` Sandbox or RPN Mode):** `{{res:sc6_index_seq_01:keys}}` $\implies \mathbf{{{res:sc6_index_seq_01:value}}}$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -361,13 +359,12 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 03: Seeing Groups at a Glance (5-Grouping on the Bead Rack)
-- **Grade Band:** Kindergarten – Grade 1
-- **Chapter Pointer:** [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
-- **Problem Statement:** Show 8 beads on a Rekenrek rack. How many are dark and how many are light?
+*Kindergarten – Grade 1* — [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
+
+Show 8 beads on a Rekenrek rack. How many are dark and how many are light?
 - **Visual Sandbox Keystrokes:** Press `{{key:COUNT}}`, then press `8`.
 - **LCD Display Output:** The left column shows 5 solid beads (`●●●●●`) and 3 light beads (`○○○`) slid across to the active left rail. The rest rail holds 2 light beads (`○○`).
 - **Abstract RPN Check:** Decompose 8 into $5 + 3$: `8 {{key:ENTER}} 5 {{key:-}}` $\implies \mathbf{3}$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -379,11 +376,10 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 04: Self-Checking Inverse Addition (`{{key:LASTX}}`)
-- **Grade Band:** Grade 1 – Grade 2
-- **Chapter Pointer:** [Chapter 02: RPN for Young Learners](02-rpn-for-young-learners.md) & [Chapter 04: Whole Number Operations](04-operations-skip-counting.md)
-- **Problem Statement:** Solve $24 + 15 = 39$. Immediately verify your result using Superpower 4 without re-entering any numbers.
-- **Abstract RPN Keystrokes:** `24 {{key:ENTER}} 15 {{key:+}}` $\to$ `{{key:LASTX}} {{key:-}}`
-- **4-Register Stack Trace Table:**
+*Grade 1 – Grade 2* — [Chapter 02: RPN for Young Learners](02-rpn-for-young-learners.md) & [Chapter 04: Whole Number Operations](04-operations-skip-counting.md)
+
+Solve $24 + 15 = 39$. Immediately verify your result using Superpower 4 without re-entering any numbers.
+**On Your SC-6:** `24 {{key:ENTER}} 15 {{key:+}}` $\to$ `{{key:LASTX}} {{key:-}}`
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -395,29 +391,28 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 05: Comparing Two Sets (`{{key:≠}}`)
-- **Grade Band:** Kindergarten – Grade 1
-- **Chapter Pointer:** [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
-- **Problem Statement:** Box A has 9 apples. Box B has 12 apples. Test whether the two boxes have the same number of apples.
-- **Abstract RPN Keystrokes:** `9 {{key:ENTER}} 12 {{key:≠}}`
-- **LCD Display Output:** Screen displays `NO (9 ≠ 12)`. Register $X$ retains $12$; Register $Y$ retains $9$.
+*Kindergarten – Grade 1* — [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
+
+Box A has 9 apples. Box B has 12 apples. Test whether the two boxes have the same number of apples.
+**On Your SC-6:** `12 {{key:ENTER}} 9 {{key:≠}}`
+- **LCD Display Output:** Screen displays `NO (12 ≠ 9)`. Register $X$ retains $9$; Register $Y$ retains $12$.
 - **Follow-Up Difference:** Press `{{key:-}}` immediately to find the difference:
   $$12 - 9 = 3 \text{ apples more in Box B!}$$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `9` | 0 | 0 | 0 | 9 | Box A quantity entered into Ground Floor $X$. |
-| `{{key:ENTER}}` | 0 | 0 | 9 | 9 | Box A lifts to Mezzanine Floor $Y$. |
-| 12 | 0 | 0 | 9 | 12 | Box B quantity entered into Ground Floor $X$. |
-| `{{key:≠}}` | 0 | 0 | 9 | 12 | Test displays `NO (9 ≠ 12)`; values preserved on stack. |
-| `{{key:-}}` | 0 | 0 | 0 | -3 | $12 - 9 = 3$ apples difference. Stack drops cleanly. |
+| 12 | 0 | 0 | 0 | 12 | Box B quantity entered into Ground Floor $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 12 | 12 | Box B lifts to Mezzanine Floor $Y$. |
+| `9` | 0 | 0 | 12 | 9 | Box A quantity entered into Ground Floor $X$. |
+| `{{key:≠}}` | 0 | 0 | 12 | 9 | Test displays `NO (12 ≠ 9)`; values preserved on stack. |
+| `{{key:-}}` | 0 | 0 | 0 | 3 | Box B has 3 more apples than Box A ($12 - 9 = 3$). Stack drops cleanly. |
 
 ---
 
 ### Adventure 06: Place Value Digit Extraction (`{{key:PV}}`)
-- **Grade Band:** Grade 2
-- **Chapter Pointer:** [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
-- **Problem Statement:** In the number $4,520$, identify the digit occupying the hundreds place and the tens place using the hardware `{{key:PV}}` key.
+*Grade 2* — [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
+
+In the number $4,520$, identify the digit occupying the hundreds place and the tens place using the hardware `{{key:PV}}` key.
 - **Hardware Formula:** $\lfloor (|Y| \bmod (10 \times X)) / X \rfloor$
 - **Abstract RPN Keystrokes:**
   - `4520 {{key:ENTER}} 100 {{key:PV}}` $\implies \mathbf{5}$ (hundreds digit)
@@ -428,17 +423,16 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 |:---|:---:|:---:|:---:|:---:|:---|
 | 4520 | 0 | 0 | 0 | 4520 | Full number entered into Ground Floor $X$. |
 | `{{key:ENTER}}` | 0 | 0 | 4520 | 4520 | Full number lifts to Mezzanine Floor $Y$. |
-| 10 `0` | 0 | 4520 | 10 | 0 | Place value target ($100$) entered into Ground Floor $X$. |
-| `{{key:PV}}` | 0 | 4520 | 10 | 0 | Hardware extracts hundreds digit: 5 hundreds! |
+| 100 | 0 | 0 | 4520 | 100 | Place value target ($100$) entered into Ground Floor $X$. |
+| `{{key:PV}}` | 0 | 0 | 4520 | 5 | Hardware extracts hundreds digit: 5 hundreds! |
 
 ---
 
 ### Adventure 07: Bundling Tens into Hundreds (Regrouping)
-- **Grade Band:** Grade 2
-- **Chapter Pointer:** [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
-- **Problem Statement:** A school supply closet has 8 boxes of 10 pencils, and an educator brings in 4 more boxes of 10 pencils. How many total pencils are there?
-- **RPN Keystrokes:** `8 {{key:ENTER}} 4 {{key:+}} 10 {{key:×}}` $\implies \mathbf{120}$
-- **4-Register Stack Trace Table:**
+*Grade 2* — [Chapter 03: Counting, Number Lines & Place Value Studio](03-counting-place-value.md)
+
+A school supply closet has 8 boxes of 10 pencils, and an educator brings in 4 more boxes of 10 pencils. How many total pencils are there?
+**On Your SC-6:** `8 {{key:ENTER}} 4 {{key:+}} 10 {{key:×}}` $\implies \mathbf{120}$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -452,12 +446,11 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 08: Doubling Ladders via `{{key:ENTER}} {{key:+}}`
-- **Grade Band:** Grade 2
-- **Chapter Pointer:** [Chapter 04: Whole Number Operations & Skip-Counting](04-operations-skip-counting.md)
-- **Problem Statement:** Generate the sequence of geometric powers of 2 starting from 1: $1, 2, 4, 8, 16, 32, 64$.
-- **RPN Keystrokes:** `1 {{key:ENTER}} {{key:+}} {{key:ENTER}} {{key:+}} {{key:ENTER}} {{key:+}}`
+*Grade 2* — [Chapter 04: Whole Number Operations & Skip-Counting](04-operations-skip-counting.md)
+
+Generate the sequence of geometric powers of 2 starting from 1: $1, 2, 4, 8, 16, 32, 64$.
+**On Your SC-6:** `1 {{key:ENTER}} {{key:+}} {{key:ENTER}} {{key:+}} {{key:ENTER}} {{key:+}}`
 - **Mechanics:** Pressing `{{key:ENTER}}` duplicates Register $X$ into Register $Y$. Pressing `{{key:+}}` immediately doubles the value!
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -472,14 +465,13 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 09: Three-Digit Subtraction with Regrouping Check
-- **Grade Band:** Grade 2
-- **Chapter Pointer:** [Chapter 04: Whole Number Operations & Skip-Counting](04-operations-skip-counting.md)
-- **Problem Statement:** Calculate $523 - 287 = 236$. Verify via `{{key:LASTX}} {{key:+}}`.
+*Grade 2* — [Chapter 04: Whole Number Operations & Skip-Counting](04-operations-skip-counting.md)
+
+Calculate $523 - 287 = 236$. Verify via `{{key:LASTX}} {{key:+}}`.
 - **RPN Keystrokes:**
   - `523 {{key:ENTER}} 287 {{key:-}}` $\implies \mathbf{236}$
   - `{{key:LASTX}} {{key:+}}` $\implies \mathbf{523}$
 - **Verification:** Adding the second number back to the difference restores the starting number ($523$) with zero re-typing.
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -493,34 +485,32 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 10: Step-Counting by Fives (`2-LV` Stack Mode)
-- **Grade Band:** Grade 2
-- **Chapter Pointer:** [Chapter 02: RPN for Young Learners](02-rpn-for-young-learners.md) & [Chapter 04: Whole Number Operations](04-operations-skip-counting.md)
-- **Problem Statement:** In 2-Stack mode (`2-LV`), configure a constant step counter of 5 starting from 0.
+*Grade 2* — [Chapter 02: RPN for Young Learners](02-rpn-for-young-learners.md) & [Chapter 04: Whole Number Operations](04-operations-skip-counting.md)
+
+In 2-Stack mode (`2-LV`), configure a constant step counter of 5 starting from 0.
 - **RPN Keystrokes:**
-  - `5 {{key:ENTER}} 0 {{key:+}}` $\implies \mathbf{5}$
+  - `5 {{key:REP}} 0 {{key:+}}` $\implies \mathbf{5}$
   - `{{key:+}}` $\implies \mathbf{10}$, `{{key:+}}` $\implies \mathbf{15}$, `{{key:+}}` $\implies \mathbf{20}$, `{{key:+}}` $\implies \mathbf{25}$
-- **Mechanics:** In 2-stack mode, Register $Y$ preserves the top constant ($5$) upon every two-number drop, creating an automatic step counter.
-- **4-Register Stack Trace Table (2-LV Mode):**
+- **Mechanics:** Pressing `{{key:REP}}` fills all stack floors $(T, Z, Y, X)$ with the step constant ($5$). Because Top Floor $T$ replicates downward on every dyadic drop, each press of `{{key:+}}` adds $5$ automatically!
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
 | `5` | 0 | 0 | 0 | 5 | Step constant ($5$) entered into Ground Floor $X$. |
-| `{{key:ENTER}}` | 0 | 0 | 5 | 5 | Constant lifts to Register $Y$. |
-| `0` | 0 | 0 | 5 | 0 | Starting origin ($0$) entered into Register $X$. |
-| `{{key:+}}` | 0 | 0 | 0 | 5 | $5 + 0 = 5$; Register $Y$ preserves constant $5$! |
-| `{{key:+}}` | 0 | 0 | 0 | 5 | Next tap of `+` adds constant: $5 + 5 = 10$. |
-| `{{key:+}}` | 0 | 0 | 0 | 5 | Next tap of `+` adds constant: $10 + 5 = 15$. |
-| `{{key:+}}` | 0 | 0 | 0 | 5 | Next tap of `+` adds constant: $15 + 5 = 20$. |
+| `{{key:REP}}` | 5 | 5 | 5 | 5 | Replicates constant $5$ across all stack floors (lift disabled). |
+| `0` | 5 | 5 | 5 | 0 | Starting origin ($0$) overwrites Register $X$. |
+| `{{key:+}}` | 5 | 5 | 5 | 5 | $5 + 0 = 5$; Top Floor $T$ replicates $5$ downward! |
+| `{{key:+}}` | 5 | 5 | 5 | 10 | Next tap of `+` adds constant: $5 + 5 = 10$. |
+| `{{key:+}}` | 5 | 5 | 5 | 15 | Next tap of `+` adds constant: $10 + 5 = 15$. |
+| `{{key:+}}` | 5 | 5 | 5 | 20 | Next tap of `+` adds constant: $15 + 5 = 20$. |
 
 ---
 
 ### Adventure 11: Array Multiplication (Rectangular Garden)
-- **Grade Band:** Grade 3
-- **Chapter Pointer:** [Chapter 04: Whole Number Operations & Skip-Counting](04-operations-skip-counting.md)
-- **Problem Statement:** A community garden has 6 rows of tomato plants with 8 plants in each row. How many total plants are in the garden?
-- **Hands-On Manipulative:** Build a $6 \times 8$ grid using $20\text{ mm}$ interlocking cubes.
-- **RPN Keystrokes:** `6 {{key:ENTER}} 8 {{key:×}}` $\implies \mathbf{48}$
-- **4-Register Stack Trace Table:**
+*Grade 3* — [Chapter 04: Whole Number Operations & Skip-Counting](04-operations-skip-counting.md)
+
+A community garden has 6 rows of tomato plants with 8 plants in each row. How many total plants are in the garden?
+- **Hands-On Manipulative:** Build half the garden ($3 \times 8 = 24$) using all **24 Array Tiles** from your kit, then double it on your stack calculator for $6 \times 8 = 48$!
+**On Your SC-6:** `6 {{key:ENTER}} 8 {{key:×}}` $\implies \mathbf{48}$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -532,13 +522,12 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 12: Superpower 1 — Skip-Counting Times Tables (`{{key:REP}}`)
-- **Grade Band:** Grade 3
-- **Chapter Pointer:** [Chapter 04: Whole Number Operations & Skip-Counting](04-operations-skip-counting.md)
-- **Problem Statement:** Practice the 7-times table up to $7 \times 10 = 70$ using Superpower 1.
+*Grade 3* — [Chapter 04: Whole Number Operations & Skip-Counting](04-operations-skip-counting.md)
+
+Practice the 7-times table up to $7 \times 10 = 70$ using Superpower 1.
 - **RPN Keystrokes:**
   - `7 {{key:REP}}`
   - Rhythmic Taps: `{{key:+}}` $\to 14$, `{{key:+}}` $\to 21$, `{{key:+}}` $\to 28$, `{{key:+}}` $\to 35$, `{{key:+}}` $\to 42$, `{{key:+}}` $\to 49$, `{{key:+}}` $\to 56$, `{{key:+}}` $\to 63$, `{{key:+}}` $\to 70$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -551,12 +540,11 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 13: Area of a Rectangle (`{{key:RECT}}`)
-- **Grade Band:** Grade 3
-- **Chapter Pointer:** [Chapter 06: Geometry, Surface Area & Planetary Time](06-geometry-surface-area.md)
-- **Problem Statement:** Find the area of a classroom rug measuring $9\text{ ft}$ long by $7\text{ ft}$ wide.
-- **RPN Keystrokes:** `9 {{key:ENTER}} 7 {{key:RECT}}`
+*Grade 3* — [Chapter 06: Geometry, Surface Area & Planetary Time](06-geometry-surface-area.md)
+
+Find the area of a classroom rug measuring $9\text{ ft}$ long by $7\text{ ft}$ wide.
+**On Your SC-6:** `9 {{key:ENTER}} 7 {{key:RECT}}`
 - **Display Output:** Displays `AREA: 63 SQ FT`. Register $X$ holds $63.0$.
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -568,12 +556,11 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 14: Planetary Clock Continuous Hands (`{{key:🕒}}`)
-- **Grade Band:** Grade 3
-- **Chapter Pointer:** [Chapter 06: Geometry, Surface Area & Planetary Time](06-geometry-surface-area.md)
-- **Problem Statement:** Display 3:30 on the analog clock face. Confirm the continuous hour hand angle.
-- **RPN Keystrokes:** `3.30 {{key:🕒}}`
+*Grade 3* — [Chapter 06: Geometry, Surface Area & Planetary Time](06-geometry-surface-area.md)
+
+Display 3:30 on the analog clock face. Confirm the continuous hour hand angle.
+**On Your SC-6:** `3.30 {{key:🕒}}`
 - **LCD Verification:** The analog clock dial renders the minute hand pointing directly at 6 ($180^\circ$). The hour hand points halfway between 3 and 4 ($105^\circ$, or $1.8326\text{ rad}$), confirming that the hour hand moves continuously between numbers rather than staying frozen at 3:00.
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -583,91 +570,86 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 15: Unit Fraction Entry (`. n . d`)
-- **Grade Band:** Grade 3
-- **Chapter Pointer:** [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
-- **Problem Statement:** Enter the unit fraction $1/4$ into Register $X$ and convert it to decimal format.
+*Grade 3* — [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
+
+Enter the unit fraction $1/4$ into Register $X$ and convert it to decimal format.
 - **RPN Keystrokes:**
   - `. 1 . 4 {{key:ENTER}}` $\implies \mathbf{1/4}$
   - `{{key:FDISP}}` $\implies \mathbf{0.25}$
   - `{{key:FDISP}}` $\implies \mathbf{1/4}$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `.` `1` `.` `4` | 0 | 0 | 0 | $0.2500$ | Two-dot notation builds fraction $1/4$ in $X$. |
-| `{{key:ENTER}}` | 0 | 0 | $0.2500$ | $0.2500$ | Fraction committed and lifts to Mezzanine Floor $Y$. |
-| `{{key:FDISP}}` | 0 | 0 | $0.2500$ | $0.25$ | Instant decimal conversion: $1/4 = 0.25$! |
-| `{{key:FDISP}}` | 0 | 0 | $0.2500$ | $0.2500$ | Instant toggle back to fraction representation! |
+| `.` `1` `.` `4` | 0 | 0 | 0 | 1/4 | Two-dot notation builds fraction $1/4$ in $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 1/4 | 1/4 | Fraction committed and lifts to Mezzanine Floor $Y$. |
+| `{{key:FDISP}}` | 0 | 0 | 1/4 | $0.2500$ | Instant decimal conversion: $1/4 = 0.25$! |
+| `{{key:FDISP}}` | 0 | 0 | 1/4 | 1/4 | Instant toggle back to fraction representation! |
 
 ---
 
 ### Adventure 16: Superpower 2 — Field Trip Bus Division (`{{key:÷R}}`)
-- **Grade Band:** Grade 4
-- **Chapter Pointer:** [Chapter 04: Operations, Skip-Counting & Number Sense](04-operations-skip-counting.md)
-- **Problem Statement:** 125 students and chaperones are going on a science museum field trip. Each school van holds 8 passengers. How many vans will be completely filled, and how many passengers will be in the final partial van?
-- **RPN Keystrokes:** `125 {{key:ENTER}} 8 {{key:÷R}}`
+*Grade 4* — [Chapter 04: Operations, Skip-Counting & Number Sense](04-operations-skip-counting.md)
+
+125 students and chaperones are going on a science museum field trip. Each school van holds 8 passengers. How many vans will be completely filled, and how many passengers will be in the final partial van?
+**On Your SC-6:** `125 {{key:ENTER}} 8 {{key:÷R}}`
 - **Dual-Stack Output:**
   - **Register $X$:** $15$ (Quotient: 15 full vans).
   - **Register $Y$:** $5$ (Remainder: 5 passengers in the remaining van).
   - Total vans needed: $15 + 1 = 16\text{ vans}$.
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| 12 `5` | 0 | 0 | 12 | 5 | Total passengers entered into Ground Floor $X$. |
-| `{{key:ENTER}}` | 0 | 12 | 5 | 5 | 125 committed and copied to Mezzanine Floor $Y$. |
-| `8` | 0 | 12 | 5 | 8 | Capacity per van keyed into $X$. |
-| `{{key:÷R}}` | 0 | 12 | 5 | 0 | Integer division with remainder: $X = 15$ full vans, $Y = 5$ leftover passengers! |
+| 125 | 0 | 0 | 0 | 125 | Total passengers entered into Ground Floor $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 125 | 125 | 125 committed and copied to Mezzanine Floor $Y$. |
+| `8` | 0 | 0 | 125 | 8 | Capacity per van keyed into $X$. |
+| `{{key:÷R}}` | 0 | 0 | 5 | 15 | Integer division with remainder: $X = 15$ full vans, $Y = 5$ leftover passengers! |
 
 ---
 
 ### Adventure 17: Superpower 3 — Step-by-Step Fraction Simplification (`{{key:SIMP}}`)
-- **Grade Band:** Grade 4
-- **Chapter Pointer:** [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
-- **Problem Statement:** Simplify the unreduced fraction $12/18$ step-by-step.
+*Grade 4* — [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
+
+Simplify the unreduced fraction $12/18$ step-by-step.
 - **RPN Keystrokes:**
   - `. 12 . 18 {{key:ENTER}}` $\implies \mathbf{12/18}$
   - `{{key:SIMP}}` $\implies \mathbf{2/3}$
   - `{{key:SIMP}}` $\implies$ Flashes `"LOWEST TERMS"`, display remains $\mathbf{2/3}$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `.` 12 `.` `1` `8` | 0 | 0 | 12 | $8.0000$ | Enter fraction $12/18$ into Ground Floor $X$. |
-| `{{key:ENTER}}` | 0 | 12 | $8.0000$ | $8.0000$ | Fraction committed to stack. |
-| `{{key:SIMP}}` | 0 | 12 | $8.0000$ | $8.0000$ | Reduced by common factor: $12/18$ simplifies to $2/3$! |
-| `{{key:SIMP}}` | 0 | 12 | $8.0000$ | $8.0000$ | Flashes `"LOWEST TERMS"`; fraction is already irreducible! |
+| `.` 12 `.` 18 | 0 | 0 | 0 | $12/18$ | Enter fraction $12/18$ into Ground Floor $X$. |
+| `{{key:ENTER}}` | 0 | 0 | $12/18$ | $12/18$ | Fraction committed to stack. |
+| `{{key:SIMP}}` | 0 | 0 | $12/18$ | $2/3$ | Reduced by common factor: $12/18$ simplifies to $2/3$! |
+| `{{key:SIMP}}` | 0 | 0 | $12/18$ | $2/3$ | Flashes `"LOWEST TERMS"`; fraction is already irreducible! |
 
 ---
 
 ### Adventure 18: Mixed Number to Improper Fraction Conversion (`{{key:d/c}}` / `{{key:a ᵇ/c}}`)
-- **Grade Band:** Grade 4
-- **Chapter Pointer:** [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
-- **Problem Statement:** A recipe calls for $2\ 3/4$ cups of flour. Convert this quantity to an improper fraction for bulk measuring, then restore mixed notation.
+*Grade 4* — [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
+
+A recipe calls for $2\ 3/4$ cups of flour. Convert this quantity to an improper fraction for bulk measuring, then restore mixed notation.
 - **RPN Keystrokes:**
   - `2 . 3 . 4 {{key:ENTER}}` $\implies \mathbf{2\ 3/4}$
   - `{{key:d/c}}` $\implies \mathbf{11/4}$
   - `{{key:a ᵇ/c}}` $\implies \mathbf{2\ 3/4}$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `2` `.` `3` `.` `4` | 0 | 0 | 2 | $0.7500$ | Mixed number $2\ 3/4$ keyed into Ground Floor $X$. |
-| `{{key:ENTER}}` | 0 | 2 | $0.7500$ | $0.7500$ | Mixed number committed to stack. |
-| `{{key:d/c}}` | 0 | 2 | $0.7500$ | $0.7500$ | Converted to improper fraction: $11/4$. |
-| `{{key:a ᵇ/c}}` | 0 | 2 | $0.7500$ | $0.7500$ | Converted back to mixed fraction: $2\ 3/4$. |
+| `2` `.` `3` `.` `4` | 0 | 0 | 0 | $2\ 3/4$ | Mixed number $2\ 3/4$ keyed into Ground Floor $X$. |
+| `{{key:ENTER}}` | 0 | 0 | $2\ 3/4$ | $2\ 3/4$ | Mixed number committed to stack. |
+| `{{key:d/c}}` | 0 | 0 | $2\ 3/4$ | $11/4$ | Converted to improper fraction: $11/4$. |
+| `{{key:a ᵇ/c}}` | 0 | 0 | $2\ 3/4$ | $2\ 3/4$ | Converted back to mixed fraction: $2\ 3/4$. |
 
 ---
 
 ### Adventure 19: Currency Division with Remaining Cents
-- **Grade Band:** Grade 4
-- **Chapter Pointer:** [Chapter 04: Operations, Skip-Counting & Number Sense](04-operations-skip-counting.md)
-- **Problem Statement:** Four children earn $\$17.50$ washing cars together. How much whole money does each child receive, and what is the remaining loose change?
-- **RPN Keystrokes:** `17.50 {{key:ENTER}} 4 {{key:÷R}}`
+*Grade 4* — [Chapter 04: Operations, Skip-Counting & Number Sense](04-operations-skip-counting.md)
+
+Four children earn $\$17.50$ washing cars together. How much whole money does each child receive, and what is the remaining loose change?
+**On Your SC-6:** `17.50 {{key:ENTER}} 4 {{key:÷R}}`
 - **Result:**
   - Register $X$: $\$4.00$ each.
   - Register $Y$: $\$1.50$ remaining change ($37.5\text{¢}$ each when divided further).
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -679,53 +661,50 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 20: Adding Like Denominators (Unreduced Invariant)
-- **Grade Band:** Grade 4
-- **Chapter Pointer:** [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
-- **Problem Statement:** Calculate $2/4 + 2/4$. Verify that the SC-6 preserves the unreduced sum of $4/4$ before manual reduction.
-- **RPN Keystrokes:** `. 2 . 4 {{key:ENTER}} . 2 . 4 {{key:+}}`
+*Grade 4* — [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
+
+Calculate $2/4 + 2/4$. Verify that the SC-6 preserves the unreduced sum of $4/4$ before manual reduction.
+**On Your SC-6:** `. 2 . 4 {{key:ENTER}} . 2 . 4 {{key:+}}`
 - **Display Output:** Displays `4/4` (does **not** auto-reduce to 1).
 - **Simplification:** Press `{{key:SIMP}}` $\implies \mathbf{1}$.
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| `.` `2` `.` `4` | 0 | 0 | 0 | $0.5000$ | First fraction $2/4$ keyed into Ground Floor $X$. |
-| `{{key:ENTER}}` | 0 | 0 | $0.5000$ | $0.5000$ | First fraction committed to Floor $Y$. |
-| `.` `2` `.` `4` | 0 | 0 | $0.5000$ | $0.5000$ | Second fraction $2/4$ keyed into Ground Floor $X$. |
-| `{{key:+}}` | 0 | 0 | 0 | $1.0000$ | Unreduced invariant preserved: displays $4/4$! |
+| `.` `2` `.` `4` | 0 | 0 | 0 | 2/4 | First fraction $2/4$ keyed into Ground Floor $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 2/4 | 2/4 | First fraction committed to Floor $Y$. |
+| `.` `2` `.` `4` | 0 | 0 | 2/4 | 2/4 | Second fraction $2/4$ keyed into Ground Floor $X$. |
+| `{{key:+}}` | 0 | 0 | 0 | 4/4 | Unreduced invariant preserved: displays $4/4$! |
 | `{{key:SIMP}}` | 0 | 0 | 0 | 1 | Manual simplification reduces $4/4$ to whole number $1$! |
 
 ---
 
 ### Adventure 21: Unlike Fraction Addition via LCD (`{{key:LCM}}`)
-- **Grade Band:** Grade 5
-- **Chapter Pointer:** [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
-- **Problem Statement:** Add $3/8 + 5/12$. Find the least common denominator using the hardware `{{key:LCM}}` key before evaluating.
+*Grade 5* — [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
+
+Add $3/8 + 5/12$. Find the least common denominator using the hardware `{{key:LCM}}` key before evaluating.
 - **RPN Keystrokes (Finding LCD):** `8 {{key:ENTER}} 12 {{key:LCM}}` $\implies \mathbf{24}$
 - **RPN Keystrokes (Direct Sum):** `. 3 . 8 {{key:ENTER}} . 5 . 12 {{key:+}}` $\implies \mathbf{19/24}$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
 | `8` `{{key:ENTER}}` 12 | 0 | 0 | 8 | 12 | Denominators 8 and 12 loaded into stack. |
 | `{{key:LCM}}` | 0 | 0 | 0 | 24 | Least common denominator found: $\text{LCM}(8, 12) = 24$. |
-| `.` `3` `.` `8` | 0 | 0 | 24 | $0.3750$ | First fraction $3/8$ entered into $X$. |
-| `{{key:ENTER}}` | 0 | 24 | $0.3750$ | $0.3750$ | Pushed to Mezzanine Floor $Y$. |
-| `.` `5` `.` 12 | 0 | 24 | $0.3750$ | $0.4167$ | Second fraction $5/12$ entered into $X$. |
-| `{{key:+}}` | 0 | 0 | 24 | $0.7917$ | Added with common denominator: $3/8 + 5/12 = 19/24$! |
+| `.` `3` `.` `8` | 0 | 0 | 24 | 3/8 | First fraction $3/8$ entered into $X$. |
+| `{{key:ENTER}}` | 0 | 24 | 3/8 | 3/8 | Pushed to Mezzanine Floor $Y$. |
+| `.` `5` `.` 12 | 0 | 24 | 3/8 | 5/12 | Second fraction $5/12$ entered into $X$. |
+| `{{key:+}}` | 0 | 0 | 24 | 19/24 | Added with common denominator: $3/8 + 5/12 = 19/24$! |
 
 ---
 
 ### Adventure 22: Parenthesis-Free Order of Operations
-- **Grade Band:** Grade 5
-- **Chapter Pointer:** [Chapter 02: RPN for Young Learners: The Tower Elevator](02-rpn-for-young-learners.md)
-- **Problem Statement:** Evaluate the multi-step expression $(15 - 3) \times (4 + 2) \div 6 = 12$ without parentheses.
+*Grade 5* — [Chapter 02: RPN for Young Learners: The Tower Elevator](02-rpn-for-young-learners.md)
+
+Evaluate the multi-step expression $(15 - 3) \times (4 + 2) \div 6 = 12$ without parentheses.
 - **RPN Keystrokes:**
   - `15 {{key:ENTER}} 3 {{key:-}}` $\implies \mathbf{12.0}$ (subtotal 1)
   - `4 {{key:ENTER}} 2 {{key:+}}` $\implies \mathbf{6.0}$ (subtotal 2)
   - `{{key:×}}` $\implies \mathbf{72.0}$ ($12 \times 6$)
   - `6 {{key:÷}}` $\implies \mathbf{12.0}$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -737,9 +716,9 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 23: Master Surface Area via Stats Mode (`{{key:Σ+}}`)
-- **Grade Band:** Grade 5
-- **Chapter Pointer:** [Chapter 06: Geometry, Surface Area & Planetary Time](06-geometry-surface-area.md)
-- **Problem Statement:** Find the total surface area of a rectangular wooden jewelry box measuring $5\text{ cm}$ long, $4\text{ cm}$ wide, and $3\text{ cm}$ high without scratch paper.
+*Grade 5* — [Chapter 06: Geometry, Surface Area & Planetary Time](06-geometry-surface-area.md)
+
+Find the total surface area of a rectangular wooden jewelry box measuring $5\text{ cm}$ long, $4\text{ cm}$ wide, and $3\text{ cm}$ high without scratch paper.
 - **Mathematical Decomposition:**
   $$\text{Face Pair 1 (Top/Bottom): } 2 \times (5 \times 4) = 40\text{ cm}^2$$
   $$\text{Face Pair 2 (Front/Back): } 2 \times (5 \times 3) = 30\text{ cm}^2$$
@@ -751,7 +730,6 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
   - `5 {{key:ENTER}} 3 {{key:×}} 2 {{key:×}} {{key:Σ+}}` ($N=2$, subtotal $30$)
   - `4 {{key:ENTER}} 3 {{key:×}} 2 {{key:×}} {{key:Σ+}}` ($N=3$, subtotal $24$)
   - `{{key:Σx}}` $\implies \mathbf{94.0\text{ cm}^2}$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -764,90 +742,83 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 ---
 
 ### Adventure 24: Modulo-60 Flight Elapsed Time Arithmetic
-- **Grade Band:** Grade 5
-- **Chapter Pointer:** [Chapter 06: Geometry, Surface Area & Planetary Time](06-geometry-surface-area.md)
-- **Problem Statement:** A flight departs at 9:45 AM and has a flight duration of 2 hours and 35 minutes. Calculate the arrival time.
+*Grade 5* — [Chapter 06: Geometry, Surface Area & Planetary Time](06-geometry-surface-area.md)
+
+A flight departs at 9:45 AM and has a flight duration of 2 hours and 35 minutes. Calculate the arrival time.
 - **RPN Keystrokes:**
-  - `9.45 {{key:▸HR}}` $\implies \mathbf{9.75\text{ hr}}$
-  - `{{key:ENTER}}`
-  - `2.35 {{key:▸HR}}` $\implies \mathbf{2.5833\text{ hr}}$
+  - `9.45 {{key:▸HR}}` $\implies \mathbf{9.75\text{ hr}}$ (stack lift armed)
+  - `2.35 {{key:▸HR}}` $\implies \mathbf{2.5833\text{ hr}}$ ($9.75$ lifts automatically to $Y$)
   - `{{key:+}}` $\implies \mathbf{12.3333\text{ hr}}$
   - `{{key:▸HMS}}` $\implies \mathbf{12.20}$ ($12:20\text{ PM}$)
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| 9.45 {{key:▸HR}} | 0 | 0 | 0 | $9.45$ | 9 hr 45 min converted to decimal hours ($9.75$). |
-| `{{key:ENTER}}` | 0 | 0 | $9.45$ | $9.45$ | Pushed to Mezzanine Floor $Y$. |
-| 2.35 {{key:▸HR}} | 0 | 0 | $9.45$ | $2.3500$ | 2 hr 35 min converted to decimal hours ($2.5833$). |
-| `{{key:+}}` | 0 | 0 | 0 | $11.8000$ | Hours added: total elapsed time $12.3333\text{ hr}$. |
-| `{{key:▸HMS}}` | 0 | 0 | 0 | $11.80$ | Converted back to clock time: 12:20 PM arrival! |
+| 9.45 {{key:▸HR}} | 0 | 0 | 0 | $9.75$ | 9 hr 45 min converted to decimal hours ($9.75$; stack lift armed). |
+| 2.35 {{key:▸HR}} | 0 | 0 | $9.75$ | $2.5833$ | 2 hr 35 min lifts $9.75$ to $Y$ and converts to decimal hours ($2.5833$). |
+| `{{key:+}}` | 0 | 0 | 0 | $12.3333$ | Hours added: total elapsed time $12.3333\text{ hr}$. |
+| `{{key:▸HMS}}` | 0 | 0 | 0 | $12.20$ | Converted back to clock time: 12:20 PM arrival! |
 
 ---
 
 ### Adventure 25: Ratio Mode Entry and Scaling (`{{key:a:b}}`)
-- **Grade Band:** Grade 6
-- **Chapter Pointer:** [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
-- **Problem Statement:** A shade of green paint requires 15 parts yellow to 25 parts blue ($15:25$). Simplify the ratio to simplest terms, then scale it to mix a double batch.
+*Grade 6* — [Chapter 05: Fractions, Decimals & Proportional Towers](05-fractions-decimals-ratios.md)
+
+A shade of green paint requires 15 parts yellow to 25 parts blue ($15:25$). Simplify the ratio to simplest terms, then scale it to mix a double batch.
 - **RPN Keystrokes:**
   - `. 15 . 25 {{key:a:b}}` $\implies \mathbf{15:25}$
   - `{{key:SIMP}}` $\implies \mathbf{3:5}$
   - `2 {{key:×}}` $\implies \mathbf{6:10}$
   - `{{key:SIMP}}` $\implies \mathbf{3:5}$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| .15.25 {{key:a:b}} | 0 | 0 | 0 | $0.0000$ | Ratio $15:25$ formatted into Ground Floor $X$. |
-| `{{key:SIMP}}` | 0 | 0 | 0 | $0.0000$ | Simplified to lowest ratio terms: $3:5$. |
-| `2` | 0 | 0 | $0.0000$ | 2 | Batch multiplier 2 keyed into $X$. |
-| `{{key:×}}` | 0 | 0 | 0 | $0.0000$ | Ratio multiplied: $6:10$ for double batch! |
-| `{{key:SIMP}}` | 0 | 0 | 0 | $0.0000$ | Reduced back to base proportions $3:5$. |
+| . 15 . 25 {{key:a:b}} | 0 | 0 | 0 | $15:25$ | Ratio $15:25$ formatted into Ground Floor $X$. |
+| `{{key:SIMP}}` | 0 | 0 | 0 | $3:5$ | Simplified to lowest ratio terms: $3:5$. |
+| `2` | 0 | 0 | $3:5$ | 2 | Batch multiplier 2 keyed into $X$; ratio lifts to $Y$. |
+| `{{key:×}}` | 0 | 0 | 0 | $6:10$ | Ratio multiplied: $6:10$ for double batch! |
+| `{{key:SIMP}}` | 0 | 0 | 0 | $3:5$ | Reduced back to base proportions $3:5$. |
 
 ---
 
 ### Adventure 26: Prime Factorization List (`{{key:FACT}}`)
-- **Grade Band:** Grade 6
-- **Chapter Pointer:** [Chapter 07: Data, Probability & Prime Explorations](07-data-probability-primes.md)
-- **Problem Statement:** Find the prime factorization of $360$ in canonical exponential notation.
-- **RPN Keystrokes:** `360 {{key:FACT}}`
+*Grade 6* — [Chapter 07: Data, Probability & Prime Explorations](07-data-probability-primes.md)
+
+Find the prime factorization of $360$ in canonical exponential notation.
+**On Your SC-6:** `360 {{key:FACT}}`
 - **LCD Display Output:**
   > PRIME FACTORS  
   > 2³ × 3² × 5
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
 | 360 | 0 | 0 | 0 | 360 | Value 360 entered into Ground Floor $X$. |
-| `{{key:FACT}}` | 0 | 0 | 0 | $0.0000$ | Dedicated factoring hardware displays prime decomposition: $2^3 \times 3^2 \times 5$! |
+| `{{key:FACT}}` | 0 | 0 | 0 | 360 ($2^3 \times 3^2 \times 5$) | Dedicated factoring hardware displays prime decomposition: $2^3 \times 3^2 \times 5$! |
 
 ---
 
 ### Adventure 27: The Secret Partner Rule ($\text{GCF} \times \text{LCM} = a \times b$)
-- **Grade Band:** Grade 6
-- **Chapter Pointer:** [Chapter 07: Data, Probability & Prime Explorations](07-data-probability-primes.md)
-- **Problem Statement:** For the numbers $24$ and $36$, verify that $\gcd(24, 36) \times \operatorname{lcm}(24, 36) = 24 \times 36$.
+*Grade 6* — [Chapter 07: Data, Probability & Prime Explorations](07-data-probability-primes.md)
+
+For the numbers $24$ and $36$, verify that $\gcd(24, 36) \times \operatorname{lcm}(24, 36) = 24 \times 36$.
 - **RPN Keystrokes:**
   - `24 {{key:ENTER}} 36 {{key:GCF}}` $\implies \mathbf{12}$
   - `24 {{key:ENTER}} 36 {{key:LCM}}` $\implies \mathbf{72}$
   - `12 {{key:ENTER}} 72 {{key:×}}` $\implies \mathbf{864}$
   - `24 {{key:ENTER}} 36 {{key:×}}` $\implies \mathbf{864}$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
-| 24 {{key:ENTER}} `3` `6` `{{key:GCF}}` | 0 | 0 | 24 | 3 | Compute $\text{GCF}(24, 36) = 12$. |
-| `{{key:ENTER}}` | 0 | 24 | 3 | 3 | GCF lifted to Floor $Y$. |
-| 24 {{key:ENTER}} `3` `6` `{{key:LCM}}` | 3 | 3 | 24 | 6 | Compute $\text{LCM}(24, 36) = 72$; earlier GCF pushed safely to $Z$. |
-| `{{key:×}}` | 3 | 3 | 3 | 144 | $\text{GCF} \times \text{LCM} = 12 \times 72 = 864$. |
-| 24 {{key:ENTER}} `3` `6` `{{key:×}}` | 144 | 144 | 24 | 18 | Direct product $24 \times 36 = 864$, confirming $\text{GCF} \times \text{LCM} = a \times b$! |
+| 24 {{key:ENTER}} 36 `{{key:GCF}}` | 0 | 0 | 0 | 12 | Compute $\text{GCF}(24, 36) = 12$ (stack lift armed). |
+| 24 {{key:ENTER}} 36 `{{key:LCM}}` | 0 | 0 | 12 | 72 | Compute $\text{LCM}(24, 36) = 72$; dyadic drop leaves GCF ($12$) in $Y$. |
+| `{{key:×}}` | 0 | 0 | 0 | 864 | $\text{GCF} \times \text{LCM} = 12 \times 72 = 864$. |
+| 24 {{key:ENTER}} 36 `{{key:×}}` | 0 | 0 | 864 | 864 | Direct product $24 \times 36 = 864$, confirming $\text{GCF} \times \text{LCM} = a \times b$! |
 
 ---
 
 ### Adventure 28: Grade 5 Frequency Table & Descriptive Statistics
-- **Grade Band:** Grade 5 – Grade 6
-- **Chapter Pointer:** [Chapter 07: Data, Probability & Prime Explorations](07-data-probability-primes.md)
-- **Problem Statement:** A class of 10 students records the following math quiz scores: $70, 75, 80, 80, 85, 85, 85, 90, 90, 95$. Compute the sample size $N$, mean $\bar{x}$, median, mode, and range.
+*Grade 5 – Grade 6* — [Chapter 07: Data, Probability & Prime Explorations](07-data-probability-primes.md)
+
+A class of 10 students records the following math quiz scores: $70, 75, 80, 80, 85, 85, 85, 90, 90, 95$. Compute the sample size $N$, mean $\bar{x}$, median, mode, and range.
 - **RPN Keystrokes:**
   - `{{key:CLΣ}}`
   - Enter each score followed by `{{key:Σ+}}`
@@ -858,51 +829,48 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
   - $\text{Median} = 85.0$ (`{{key:MED}}`)
   - $\text{Mode} = 85.0$ (`{{key:MODE}}`)
   - $\text{Range} = 95 - 70 = 25.0$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
 | `{{key:CLΣ}}` | 0 | 0 | 0 | 0 | Reset statistics registers. |
-| 10 scores keyed with `{{key:Σ+}}` | 0 | 0 | 0 | 1 | 10 scores accumulated; sample size $N=10$. |
-| `{{key:x̄}}` | 0 | 0 | 0 | $10.0$ | Calculate mean quiz score: $\bar{x} = 83.5$. |
-| `{{key:MED}}` | 0 | 0 | $0.0$ | $10.0$ | Calculate median score: $\text{Median} = 85.0$. |
-| `{{key:MODE}}` | 0 | $0.0$ | $0.0$ | $10.0$ | Calculate modal score: $\text{Mode} = 85.0$. |
+| `70 {{key:Σ+}} 75 {{key:Σ+}} 80 {{key:Σ+}} 80 {{key:Σ+}} 85 {{key:Σ+}} 85 {{key:Σ+}} 85 {{key:Σ+}} 90 {{key:Σ+}} 90 {{key:Σ+}} 95 {{key:Σ+}}` | 0 | 0 | 0 | 10 | 10 scores accumulated; sample size $N=10$. |
+| `{{key:x̄}}` | 0 | 0 | 0 | $83.50$ | Calculate mean quiz score: $\bar{x} = 83.5$. |
+| `{{key:MED}}` | 0 | 0 | $83.50$ | $85.00$ | Calculate median score: $\text{Median} = 85.0$ (lifts $\bar{x}$ to $Y$). |
+| `{{key:MODE}}` | 0 | $83.50$ | $85.00$ | $85.00$ | Calculate modal score: $\text{Mode} = 85.0$. |
 
 ---
 
 ### Adventure 29: Maker Lab — 3D Printing Filament Mass & Cost
-- **Grade Band:** Grades 4–6 STEM Lab
-- **Chapter Pointer:** [Chapter 09: Applied STEM Labs: Rocketry, Robotics & Solar Energy](09-applied-stem-labs.md)
-- **Problem Statement:** You are designing a customized robot chassis in your school maker lab. Slicing software reports that printing the chassis requires $500\text{ cm}$ of $1.75\text{ mm}$ PLA filament ($\rho = 1.24\text{ g/cm}^3$). If a $1,000\text{ g}$ spool costs $\$20.00$, find the part mass in grams and total print cost formatted in currency.
+*Grades 4–6 STEM Lab* — [Chapter 09: Applied STEM Labs: Rocketry, Robotics & Solar Energy](09-applied-stem-labs.md)
+
+You are designing a customized robot chassis in your school maker lab. Slicing software reports that printing the chassis requires $500\text{ cm}$ of $1.75\text{ mm}$ PLA filament ($\rho = 1.24\text{ g/cm}^3$). If a $1,000\text{ g}$ spool costs $\$20.00$, find the part mass in grams and total print cost formatted in currency.
 - **RPN Keystrokes:**
   - `0.0875 {{key:x²}} {{key:π}} {{key:×}}` $\implies \mathbf{0.02405\text{ cm}^2}$ (cross-section)
   - `500 {{key:×}}` $\implies \mathbf{12.0264\text{ cm}^3}$ (volume)
   - `1.24 {{key:×}}` $\implies \mathbf{14.9128\text{ g}}$ (mass)
   - `20 {{key:ENTER}} 1000 {{key:÷}} {{key:×}}` $\implies \mathbf{\$0.2983}$
   - `{{key:$}}` $\implies \mathbf{\$0.30}$
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
 | 0.0875 {{key:x²}} {{key:π}} {{key:×}} | 0 | 0 | 0 | $0.02405$ | Filament radius $r = 0.0875\text{ cm}$; area $\pi r^2 = 0.02405\text{ cm}^2$. |
 | 500 {{key:×}} | 0 | 0 | 0 | $12.0264$ | Length $500\text{ cm} \times \text{area} = 12.0264\text{ cm}^3$ volume. |
-| 1.24 {{key:×}} | 0 | 0 | 0 | $14.9127$ | Density $1.24\text{ g/cm}^3 \times \text{volume} = 14.9128\text{ g}$ mass. |
-| `2` `0` `{{key:ENTER}}` 10 `0` `0` `{{key:÷}}` | 0 | 0 | $10.0000$ | $0.000$ | Spool price per gram: $\$20 / 1000\text{ g} = \$0.02/\text{g}$. |
-| `{{key:×}}` | 0 | 0 | 0 | $0.0000$ | Mass $\times$ price per gram $= \$0.2983$. |
-| `{{key:$}}` | 0 | 0 | 0 | $0.00$ | Formatted into currency: chassis print costs $\$0.30$! |
+| 1.24 {{key:×}} | 0 | 0 | 0 | $14.9128$ | Density $1.24\text{ g/cm}^3 \times \text{volume} = 14.9128\text{ g}$ mass. |
+| 20 `{{key:ENTER}}` 1000 `{{key:÷}}` | 0 | 0 | $14.9128$ | $0.0200$ | Spool price per gram: $\$20 / 1000\text{ g} = \$0.02/\text{g}$; mass waits in $Y$. |
+| `{{key:×}}` | 0 | 0 | 0 | $0.2983$ | Mass $\times$ price per gram $= \$0.2983$. |
+| `{{key:$}}` | 0 | 0 | 0 | $0.30$ | Formatted into currency: chassis print costs $\$0.30$! |
 
 ---
 
 ### Adventure 30: Paper Circuit LED Resistor & Power via `{{key:LASTX}}`
-- **Grade Band:** Grades 4–6 STEM Lab
-- **Chapter Pointer:** [Chapter 09: Applied STEM Labs: Rocketry, Robotics & Solar Energy](09-applied-stem-labs.md)
-- **Problem Statement:** You are building a paper greeting card circuit using a $3.0\text{ V}$ CR2032 coin cell and a red LED ($V_f = 2.0\text{ V}$, $I_f = 20\text{ mA} = 0.020\text{ A}$). Calculate the required current-limiting resistor $R$, then recall $I_f$ via `{{key:LASTX}}` to calculate power dissipation $P = I^2 R$.
+*Grades 4–6 STEM Lab* — [Chapter 09: Applied STEM Labs: Rocketry, Robotics & Solar Energy](09-applied-stem-labs.md)
+
+You are building a paper greeting card circuit using a $3.0\text{ V}$ CR2032 coin cell and a red LED ($V_f = 2.0\text{ V}$, $I_f = 20\text{ mA} = 0.020\text{ A}$). Calculate the required current-limiting resistor $R$, then recall $I_f$ via `{{key:LASTX}}` to calculate power dissipation $P = I^2 R$.
 - **RPN Keystrokes:**
   - `3 {{key:ENTER}} 2 {{key:-}}` $\implies \mathbf{1.0\text{ V}}$ headroom
   - `0.020 {{key:÷}}` $\implies \mathbf{50.0\ \Omega}$ (resistor value)
   - `{{key:LASTX}}` $\implies \mathbf{0.020\text{ A}}$ recalled into $X$, $50.0\ \Omega$ lifted to $Y$
   - `{{key:x²}} {{key:×}}` $\implies \mathbf{0.020\text{ W}}$ ($20\text{ mW}$ power)
-- **4-Register Stack Trace Table:**
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -911,7 +879,6 @@ To show you the fun, speed, and superpower clarity of Stack Math across your ent
 | `{{key:LASTX}}` | 0 | 0 | $50.0$ | $0.020$ | Restore divisor $I_f = 0.020\text{ A}$ into $X$; $R = 50.0\ \Omega$ lifts to $Y$! |
 | `{{key:x²}}` | 0 | 0 | $50.0$ | $4.0000 \times 10^{-4}$ | Square current: $I^2 = 0.0004\text{ A}^2$. |
 | `{{key:×}}` | 0 | 0 | 0 | $0.020$ | Power $P = I^2 R = 0.020\text{ W}$ ($20\text{ mW}$ dissipation)! |
-
 
 ---
 
@@ -926,7 +893,7 @@ When children first encounter a calculator, they bring intuitive habits formed f
 | Observable Screen State | Probable Misconception | Exact Remediation Steps |
 | :--- | :--- | :--- |
 | Register $X$ shows `0` after entering numbers | Student pressed `{{key:C}}` expecting "Confirm" instead of `{{key:ENTER}}`. | Explain that `{{key:C}}` clears active input. Use `{{key:ENTER}}` to commit! |
-| Register $X$ shows `16` instead of `8` on $12 - 4$ problem | Pressed `{{key:+}}` instead of `{{key:-}}` on minuend/subtrahend. | Press `{{key:LASTX}}` to restore subtrahend ($4$), then press `{{key:-}}` twice! |
+| Register $X$ shows `16` instead of `8` on $12 - 4$ problem | Pressed `{{key:+}}` instead of `{{key:-}}` on minuend/subtrahend. | Press `{{key:LASTX}} {{key:-}}` to undo the addition and restore $12$, then press `{{key:LASTX}} {{key:-}}` to subtract $4$, reaching $\mathbf{8}$! |
 | Screen displays `3.4` instead of `Q: 3, R: 2` on $17 \div 5$ | Student used regular division `{{key:÷}}` instead of integer `{{key:÷R}}`. | Remind student to use `{{key:÷R}}` for whole division with remainder. |
 | Fraction displays unreduced `12/18` after addition | Wondering why $12/18$ did not simplify automatically. | Explain SC-6 unreduced default: student deliberately presses `{{key:SIMP}}`. |
 | Transient display flashes `LOWEST TERMS` | Student pressed `{{key:SIMP}}` on an irreducible fraction (e.g. $2/3$). | Celebrate! Fraction is in irreducible form ($\gcd(\text{num}, \text{den}) = 1$). |
@@ -964,7 +931,7 @@ To see how Reverse Polish Notation eliminates clutter and speeds up calculation,
 | :--- | :--- | :--- | :--- |
 | **1. Inverse Check** $(47 + 36) - 36 = 47$ | `47 + 36 = - 36 =` (re-types number) | `47` `{{key:ENTER}}` `36` `{{key:+}}` `{{key:LASTX}}` `{{key:-}}` | **6 strokes** vs. 9 |
 | **2. Order of Operations** $(15 - 3) \times (4 + 2) \div 6$ | `( 15 - 3 ) × ( 4 + 2 ) ÷ 6 =` | `{{res:sc6_order_of_ops:keys}}` $\to$ **`{{res:sc6_order_of_ops:value}}`** | **11 strokes** vs. 18 (zero parens) |
-| **3. Division with Remainder** $125 \div 8 = 15\text{ R }5$ | `125 ÷ 8 =` ($15.625$), then `15 × 8 = 120`, `125 - 120 =` | `125` `{{key:ENTER}}` `8` `{{key:÷R}}` $\to$ `15` ($Y$) & `5` ($X$) | **5 strokes** vs. 21 + paper |
+| **3. Division with Remainder** $125 \div 8 = 15\text{ R }5$ | `125 ÷ 8 =` ($15.625$), then `15 × 8 = 120`, `125 - 120 =` | `125` `{{key:ENTER}}` `8` `{{key:÷R}}` $\to$ `15` ($X$, Quotient) & `5` ($Y$, Remainder) | **5 strokes** vs. 21 + paper |
 | **4. Adding Unlike Fractions** $\frac{3}{8} + \frac{5}{12} = \frac{19}{24}$ | `( 3 ÷ 8 ) + ( 5 ÷ 12 ) =` (yields decimal `0.79167`) | `. 3 . 8` `{{key:ENTER}}` `. 5 . 12` `{{key:+}}` $\to$ **`19/24`** | **8 strokes** vs. 17 |
 | **5. Surface Area of $5 \times 4 \times 3$ Prism** | `2 × 5 × 4 + 2 × 5 × 3 + 2 × 4 × 3 =` | Accumulate face pairs with `{{key:Σ+}}`, then `{{key:Σx}}` $\to$ **`94`** | Zero scratch paper |
 

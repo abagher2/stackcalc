@@ -48,7 +48,6 @@ description: "Official operating manuals, button rubrics, numerical solver guide
         "url": "https://www.etsy.com/shop/StackCalc"
       }
     }
-  ]
 }
 </script>
 

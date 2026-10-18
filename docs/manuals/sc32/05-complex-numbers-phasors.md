@@ -46,7 +46,7 @@ Press `{{key:CMPLX}} {{key:+}}`, and the SC-32 evaluates full 2D vector phasor a
 
 ---
 
-{{res:sc32_phasor_polar:screenshot|Impedance phasor 3 + j4 rectangular-to-polar conversion -> r = 5, theta = 53.1301 deg}}
+{{res:sc32_phasor_polar:screenshot|Impedance phasor 3 + j4 rectangular-to-polar conversion → r = 5, theta = 53.1301 deg}}
 
 ## The Concrete-Representational-Abstract (CRA) Architecture of Complex Numbers
 
@@ -145,8 +145,8 @@ With the SC-32 set to its baseline **Radians mode (`{{key:RAD}}`)**, execute thi
 | Step | Keystroke | Register T | Register Z | Register Y (Real) | Register X (Imag) | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
 | 1 | `0 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Real exponent $0.0$ entered in $Y$ |
-| 2 | `{{keycap:π}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.14159265359$ | Imaginary exponent $\pi$ entered in $X$ |
-| 3 | {{key:CMPLX}} | $0.0000$ | $0.0000$ | $0.0000$ | $3.14159265359$ | `{{keycap:CMPLX}}` annunciator illuminated |
+| 2 | `{{key:π}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.14159265359$ | Imaginary exponent $\pi$ entered in $X$ |
+| 3 | {{key:CMPLX}} | $0.0000$ | $0.0000$ | $0.0000$ | $3.14159265359$ | `{{key:CMPLX}}` annunciator illuminated |
 | 4 | `{{key:eˣ}}` | $0.0000$ | $0.0000$ | **-1.0000000000** | **0.0000000000** | $e^{0 + \pi i} = -1.0 + 0.0i$ |
 
 | Stack Register | Value After `{{key:CMPLX}}` `{{key:eˣ}}` | Mathematical Meaning |
@@ -179,25 +179,31 @@ $$x = \operatorname{Re}(z) = r\cos\theta, \quad y = \operatorname{Im}(z) = r\sin
 | **Polar to Cartesian** | `{{key:▸y,x}}` | $Y = \theta$ (Phase angle)<br>$X = r$ (Modulus / Magnitude) | $Y = y$ (Imaginary part)<br>$X = x$ (Real part) | $x = r\cos\theta, \quad y = r\sin\theta$ |
 
 ### Demonstration: Complex Conversion of $z = 3 + 4i$
-1. Load $z = 3 + 4i$: `3 {{key:ENTER}} 4`
-2. Convert to Polar: `{{key:▸θ,r}}`
+1. Load $z = 3 + 4i$ in Gaussian $(Y=\text{Real}, X=\text{Imag})$ format: `3 {{key:ENTER}} 4`
+2. Align with Euclidean $(Y=y, X=x)$ and convert to Polar: `{{key:x⇄y}} {{key:▸θ,r}}`
    * **Register X (Magnitude $r$):** **$5.0000000000$**
    * **Register Y (Phase $\theta$):** **$0.9272952180\text{ rad}$** ($53.1301^\circ$)
 3. Convert back to Rectangular: `{{key:▸y,x}}`
-   * **Register X (Real part):** **$3.0000000000$**
-   * **Register Y (Imaginary part):** **$4.0000000000$**
+   * **Register X (Real part $x$):** **$3.0000000000$**
+   * **Register Y (Imaginary part $y$):** **$4.0000000000$**
+4. Realign with Gaussian Complex Convention ($Y=\text{Real}, X=\text{Imag}$): `{{key:x⇄y}}`
+   * **Register Y (Real part):** **$3.0000000000$**
+   * **Register X (Imaginary part):** **$4.0000000000$**
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `3 {{key:ENTER}} 4` | $0.0000$ | $0.0000$ | $3.0000$ | $4.0000$ | Rectangular coordinates loaded |
-| 2 | `{{key:▸θ,r}}` | $0.0000$ | $0.0000$ | $0.927295$ | **$5.000000$** | Polar conversion: $\theta$ in $Y$, magnitude $r$ in $X$ |
-| 3 | `{{key:▸y,x}}` | $0.0000$ | $0.0000$ | $4.000000$ | **$3.000000$** | Rectangular conversion: Real in $X$, Imag in $Y$ |
+| 1 | `3 {{key:ENTER}} 4` | $0.0000$ | $0.0000$ | $3.0000$ | $4.0000$ | Gaussian complex coordinates $(Y=\text{Real}, X=\text{Imag})$ |
+| 2 | `{{key:x⇄y}} {{key:▸θ,r}}` | $0.0000$ | $0.0000$ | $0.927295$ | **$5.000000$** | Polar conversion: $\theta$ in $Y$, magnitude $r$ in $X$ |
+| 3 | `{{key:▸y,x}}` | $0.0000$ | $0.0000$ | $4.000000$ | **$3.000000$** | Rectangular conversion: horizontal $x$ in $X$, vertical $y$ in $Y$ |
+| 4 | `{{key:x⇄y}}` | $0.0000$ | $0.0000$ | **$3.000000$** | **$4.000000$** | Realign to Gaussian complex format: Real in $Y$, Imag in $X$ |
 
+> [!NOTE]
+> **The `{{key:x⇄y}}` Bridge Between Cartesian Vectors and Gaussian Complex Numbers:**
+> The Euclidean coordinate transformations `{{key:▸θ,r}}` and `{{key:▸y,x}}` map horizontal abscissa $x = r\cos\theta$ to Register $X$ and vertical ordinate $y = r\sin\theta$ to Register $Y$. Because the Gaussian complex standard places Real in $Y$ and Imag in $X$ ($\mathbf{z} = Y + Xi$), pressing `{{key:x⇄y}}` bridges between Gaussian complex ordering and Euclidean $(Y=y, X=x)$ polar/rectangular transformations.
 
 ---
 
 ## AC Circuit Analysis: Series & Parallel Complex Impedance
-
 
 In alternating current electrical networks operating at angular frequency $\omega = 2\pi f$:
 * **Resistor ($R$):** $\mathbf{Z}_R = R + 0i\,\Omega$
@@ -208,7 +214,7 @@ In alternating current electrical networks operating at angular frequency $\omeg
 
 | Challenge / Metric | Algebraic Trap (TI-84 / Infix) | Algebraic Strokes | StackCalc SC-32 Superpower | SC-32 Strokes | Superpower Advantage |
 | :--- | :--- | :---: | :--- | :---: | :--- |
-| **AC Impedance**: $(50+j20) \parallel -j15$ | Mode switch $\to$ `( ( 5 0 + 2 0 i ) ^ -1 + ( - 1 5 i ) ^ -1 ) ^ -1 =` (32 strokes). Real and imaginary parts truncated off-screen; angle hidden in sub-menus. | 32 | **$(Y, X)$ Complex Mode**: Enter real and imag directly; combine via `{{key:x∥y}}` $\to$ Register $Y$ shows Real, Register $X$ shows Imag. Tap `{{key:▸θ,r}}` to see $\|Z\|$ and phase $\phi$ simultaneously! | 18 | **44% fewer strokes + simultaneous $\|Z\|$ and $\phi$** |
+| **AC Impedance**: $(50+j20) \parallel -j15$ | Mode switch $\to$ `( ( 5 0 + 2 0 i ) ^ -1 + ( - 1 5 i ) ^ -1 ) ^ -1 =` (32 strokes). Real and imaginary parts truncated off-screen; angle hidden in sub-menus. | 32 | **$(Y, X)$ Complex Mode**: Enter real and imag directly; combine via `{{key:x∥y}}` $\to$ Register $Y$ shows Real, Register $X$ shows Imag. Tap `{{key:▸θ,r}}` to see $\lvert Z\rvert$ and phase $\phi$ simultaneously! | 18 | **44% fewer strokes + simultaneous $\lvert Z\rvert$ and $\phi$** |
 
 ### Complex Series Impedance Addition
 Two circuit elements are connected in series:
@@ -240,19 +246,19 @@ Consider two parallel branches:
 * Branch 1: $\mathbf{Z}_1 = 20.0 + 15.0i\,\Omega$
 * Branch 2: $\mathbf{Z}_2 = 10.0 - 25.0i\,\Omega$
 
-**Step 1: Compute Admittance $\mathbf{Y}_1 = 1/\mathbf{Z}_1$:**
+**Step 1: Compute Admittance $\mathbf{Y}_1 = 1/\mathbf{Z}_1$ in $(Y, X)$:**
 Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_03:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_03:value}}`**
 * Register $Y$ (Real): **$0.032000\,\text{S}$**
 * Register $X$ (Imag): **$-0.024000\,\text{S}$**
-Store into memory: `{{key:x⇄y}} {{key:STO}} 1 {{key:x⇄y}} {{key:STO}} 2` (Reg 1 = Imag, Reg 2 = Real).
 
-**Step 2: Compute Admittance $\mathbf{Y}_2 = 1/\mathbf{Z}_2$:**
+**Step 2: Compute Admittance $\mathbf{Y}_2 = 1/\mathbf{Z}_2$ (Automatically Lifting $\mathbf{Y}_1$ into $(T, Z)$):**
+Because `{{key:CMPLX}} {{key:1/x}}` operates on $(Y, X)$ in-place without disturbing $(T, Z)$, keying the second branch automatically lifts $\mathbf{Y}_1$ into $(T = 0.032000, Z = -0.024000)$ with **zero memory storage registers**:
 Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_04:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_04:value}}`**
-* Register $Y$ (Real): **$0.013793\,\text{S}$**
-* Register $X$ (Imag): **$+0.034483\,\text{S}$**
+* Register $T$ ($\operatorname{Re}\mathbf{Y}_1$): **$0.032000\,\text{S}$**, Register $Z$ ($\operatorname{Im}\mathbf{Y}_1$): **$-0.024000\,\text{S}$**
+* Register $Y$ ($\operatorname{Re}\mathbf{Y}_2$): **$0.013793\,\text{S}$**, Register $X$ ($\operatorname{Im}\mathbf{Y}_2$): **$+0.034483\,\text{S}$**
 
-**Step 3: Sum Admittances:**
-Load $\mathbf{Y}_1$ into $(T, Z)$: `{{key:RCL}} 2 {{key:ENTER}} {{key:RCL}} 1 {{key:CMPLX}} {{key:+}}`
+**Step 3: Sum Admittances Directly on the 4-Register Stack:**
+Execute `{{key:CMPLX}} {{key:+}}` to add $(T, Z) + (Y, X)$:
 * Register $Y$ (Real): **$0.045793\,\text{S}$**
 * Register $X$ (Imag): **$+0.010483\,\text{S}$**
 
@@ -265,11 +271,10 @@ $$\mathbf{Z}_{\text{parallel}} = 20.7516 - 4.7507i\,\Omega$$
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `20 {{key:ENTER}} 15 {{key:CMPLX}} {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.032000$ | $-0.024000$ | Branch 1 admittance $\mathbf{Y}_1$ in Siemens |
-| 2 | `{{key:x⇄y}} {{key:STO}} 1 {{key:x⇄y}} {{key:STO}} 2` | $0.0000$ | $0.0000$ | $0.032000$ | $-0.024000$ | Store $\mathbf{Y}_1$ in Reg 1 (Imag) and Reg 2 (Real) |
-| 3 | `10 {{key:ENTER}} 25 {{key:+/-}} {{key:CMPLX}} {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.013793$ | $0.034483$ | Branch 2 admittance $\mathbf{Y}_2$ in Siemens |
-| 4 | `{{key:RCL}} 2 {{key:ENTER}} {{key:RCL}} 1 {{key:CMPLX}} {{key:+}}` | $0.013793$ | $0.013793$ | $0.045793$ | $0.010483$ | Sum admittances: $\mathbf{Y}_{\text{parallel}} = \mathbf{Y}_1 + \mathbf{Y}_2$ |
-| 5 | `{{key:CMPLX}} {{key:1/x}}` | $0.013793$ | $0.013793$ | **$20.7516$** | **$-4.7507$** | Invert admittance: $\mathbf{Z}_{\text{parallel}} = 20.75 - 4.75i\,\Omega$ |
+| 1 | `20 {{key:ENTER}} 15 {{key:CMPLX}} {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.032000$ | $-0.024000$ | Branch 1 admittance $\mathbf{Y}_1$ in $(Y, X)$ |
+| 2 | `10 {{key:ENTER}} 25 {{key:+/-}} {{key:CMPLX}} {{key:1/x}}` | $0.032000$ | $-0.024000$ | $0.013793$ | $0.034483$ | $\mathbf{Y}_1$ lifts to $(T, Z)$; $\mathbf{Y}_2$ in $(Y, X)$ |
+| 3 | `{{key:CMPLX}} {{key:+}}` | $0.032000$ | $0.032000$ | $0.045793$ | $0.010483$ | Sum admittances: $\mathbf{Y}_{\text{parallel}} = \mathbf{Y}_1 + \mathbf{Y}_2$ |
+| 4 | `{{key:CMPLX}} {{key:1/x}}` | $0.032000$ | $0.032000$ | **$20.7516$** | **$-4.7507$** | Invert admittance: $\mathbf{Z}_{\text{parallel}} = 20.75 - 4.75i\,\Omega$ |
 
 ---
 
@@ -304,33 +309,33 @@ An antenna with measured feedpoint impedance $\mathbf{Z}_L = 75.0 + 40.0i\,\Omeg
 **Step 1: Compute Complex Reflection Coefficient $\mathbf{\Gamma}$:**
 $$\mathbf{\Gamma} = \frac{(75 + 40i) - 50}{(75 + 40i) + 50} = \frac{25 + 40i}{125 + 40i}$$
 
-1. Load denominator ($125 + 40i$) into $(T, Z)$: `125 {{key:ENTER}} 40 {{key:ENTER}}`
-2. Load numerator ($25 + 40i$) into $(Y, X)$: `25 {{key:ENTER}} 40`
+1. Load numerator ($25 + 40i$) into $(T, Z)$: `25 {{key:ENTER}} 40 {{key:ENTER}}`
+2. Load denominator ($125 + 40i$) into $(Y, X)$: `125 {{key:ENTER}} 40`
 3. Execute complex division: `{{key:CMPLX}} {{key:÷}}`
-   * **Register Y (Real):** **$0.276274$**
-   * **Register X (Imag):** **$0.231713$**
-   $$\mathbf{\Gamma} = 0.2763 + 0.2317i$$
+   * **Register Y (Real):** **$0.274311$**
+   * **Register X (Imag):** **$0.232221$**
+   $$\mathbf{\Gamma} = 0.2743 + 0.2322i$$
 
 **Step 2: Reflection Magnitude $|\Gamma|$ & Phase Angle:**
-Press `{{key:▸θ,r}}`
-* **Register X ($|\Gamma|$):** **$0.360578$**
-* **Register Y ($\theta_\Gamma$):** **$0.697072\text{ rad}$** ($39.94^\circ$)
+Press `{{key:x⇄y}} {{key:▸θ,r}}`
+* **Register X ($|\Gamma|$):** **$0.359406$**
+* **Register Y ($\theta_\Gamma$):** **$0.702494\text{ rad}$** ($40.25^\circ$)
 
 **Step 3: Voltage Standing Wave Ratio (VSWR):**
-$$\text{VSWR} = \frac{1 + 0.360578}{1 - 0.360578} = \frac{1.360578}{0.639422} = \mathbf{2.1278}$$
-Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_06:keys}}`$\implies$ **$2.1278$**.
+$$\text{VSWR} = \frac{1 + 0.359406}{1 - 0.359406} = \frac{1.359406}{0.640594} = \mathbf{2.1221}$$
+Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_06:keys}}`$\implies$ **$2.1221$**.
 
 **Step 4: Return Loss (dB):**
-$$\text{RL} = -20 \log_{10}(0.360578) = \mathbf{8.86\text{ dB}}$$
-Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_07:keys}}`$\implies$ **$8.8601\text{ dB}$**.
+$$\text{RL} = -20 \log_{10}(0.359406) = \mathbf{8.89\text{ dB}}$$
+Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_07:keys}}`$\implies$ **$8.8883\text{ dB}$**.
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `125 {{key:ENTER}} 40 {{key:ENTER}}` | $0.0000$ | $125.0000$ | $40.0000$ | $40.0000$ | Denominator $(Z_L + Z_0)$ pushed |
-| 2 | `25 {{key:ENTER}} 40` | $125.0000$ | $40.0000$ | $25.0000$ | $40.0000$ | Numerator $(Z_L - Z_0)$ loaded into $(Y, X)$ |
-| 3 | `{{key:CMPLX}} {{key:÷}}` | $125.0000$ | $125.0000$ | **$0.276274$** | **$0.231713$** | Reflection coefficient $\mathbf{\Gamma} = 0.2763 + 0.2317i$ |
-| 4 | `{{key:▸θ,r}}` | $125.0000$ | $125.0000$ | $0.697072$ | **$0.360578$** | Polar: Phase $\theta = 39.94^\circ$, magnitude $|\mathbf{\Gamma}| = 0.3606$ |
-| 5 | `1 {{key:ENTER}} {{key:LASTX}} {{key:+}} 1 {{key:ENTER}} {{key:LASTX}} {{key:-}} {{key:÷}}` | $0.0000$ | $0.0000$ | $1.360578$ | **$2.1278$** | VSWR $= (1+|\mathbf{\Gamma}|)/(1-|\mathbf{\Gamma}|) = 2.1278$ |
+| 1 | `25 {{key:ENTER}} 40 {{key:ENTER}}` | $0.0000$ | $25.0000$ | $40.0000$ | $40.0000$ | Numerator $(Z_L - Z_0)$ pushed |
+| 2 | `125 {{key:ENTER}} 40` | $25.0000$ | $40.0000$ | $125.0000$ | $40.0000$ | Denominator $(Z_L + Z_0)$ loaded into $(Y, X)$ |
+| 3 | `{{key:CMPLX}} {{key:÷}}` | $25.0000$ | $25.0000$ | **$0.274311$** | **$0.232221$** | Reflection coefficient $\mathbf{\Gamma} = 0.2743 + 0.2322i$ |
+| 4 | `{{key:x⇄y}} {{key:▸θ,r}}` | $25.0000$ | $25.0000$ | $0.702494$ | **$0.359406$** | Polar: Phase $\theta = 40.25^\circ$, magnitude $\lvert\mathbf{\Gamma}\rvert = 0.3594$ |
+| 5 | `{{key:ENTER}} {{key:ENTER}} 1 {{key:+}} {{key:x⇄y}} 1 {{key:x⇄y}} {{key:-}} {{key:÷}}` | $0.702494$ | $0.702494$ | $0.702494$ | **$2.1221$** | VSWR $= (1+\lvert\mathbf{\Gamma}\rvert)/(1-\lvert\mathbf{\Gamma}\rvert) = 2.1221$ |
 
 ---
 
@@ -347,14 +352,14 @@ On the SC-32, the binary complex power operator `{{key:CMPLX}} {{key:yˣ}}` eval
 1. Load base $z_2 = 1 + i$ into $(T, Z)$: `1 {{key:ENTER}} 1 {{key:ENTER}}`
 2. Load exponent $z_1 = 1 - i$ into $(Y, X)$: `1 {{key:ENTER}} 1 {{key:+/-}}`
 3. Execute: `{{key:CMPLX}} {{key:yˣ}}`
-   * **Register Y (Real):** **$2.818047$**
-   * **Register X (Imag):** **$1.317855$**
+   * **Register Y (Real):** **$2.807879$**
+   * **Register X (Imag):** **$1.317865$**
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
 | 1 | `1 {{key:ENTER}} 1 {{key:ENTER}}` | $0.0000$ | $1.0000$ | $1.0000$ | $1.0000$ | Base $z_2 = 1 + i$ loaded into $(T, Z)$ |
 | 2 | `1 {{key:ENTER}} 1 {{key:+/-}}` | $1.0000$ | $1.0000$ | $1.0000$ | $-1.0000$ | Exponent $z_1 = 1 - i$ loaded into $(Y, X)$ |
-| 3 | `{{key:CMPLX}} {{key:yˣ}}` | $1.0000$ | $1.0000$ | **$2.818047$** | **$1.317855$** | General complex power $z_2^{z_1}$ evaluated |
+| 3 | `{{key:CMPLX}} {{key:yˣ}}` | $1.0000$ | $1.0000$ | **$2.807879$** | **$1.317865$** | General complex power $z_2^{z_1}$ evaluated |
 
 ---
 
@@ -383,9 +388,9 @@ Unlike calculators that force the instrument into a modal complex environment—
 > [!CHECKPOINT]
 > **Diagnostic Checkpoint 5.2: Complex Division Operand Alignment**  
 > When calculating $\mathbf{z}_{\text{num}} / \mathbf{z}_{\text{den}}$:
-> * The **denominator** $\mathbf{z}_{\text{den}}$ must be loaded into Registers $(T, Z)$ first.
-> * The **numerator** $\mathbf{z}_{\text{num}}$ must be loaded into Registers $(Y, X)$ second.
-> * If the resulting quotient is inverted, recall operands using `{{key:LASTX}}` or swap pairs.
+> * The **numerator** $\mathbf{z}_{\text{num}}$ must be loaded into Registers $(T, Z)$ first.
+> * The **denominator** $\mathbf{z}_{\text{den}}$ must be loaded into Registers $(Y, X)$ second.
+> * If the resulting quotient is inverted, press `{{key:CMPLX}} {{key:1/x}}` to take the complex reciprocal in place.
 
 > [!CHECKPOINT]
 > **Diagnostic Checkpoint 5.3: Singularity Handling (Division by Zero Complex)**  
@@ -393,7 +398,7 @@ Unlike calculators that force the instrument into a modal complex environment—
 
 > [!CHECKPOINT]
 > **Diagnostic Checkpoint 5.4: Hyperbolic and Inverse Trig Boundary Guards**  
-> Under SC-32 firmware specifications, complex domain operations are supported for algebraic powers, roots, exponentials, logs, and direct trigonometric functions (`SIN`, `COS`, `TAN`). Attempting {{key:CMPLX}} {{key:ASIN}}` or {{key:CMPLX}} {{key:HYP}}` raises `Error 01: INVALID DATA`, directing the user to logarithmic conformal mappings.
+> Under SC-32 firmware specifications, complex domain operations are supported for algebraic powers, roots, exponentials, logs, and direct trigonometric functions (`SIN`, `COS`, `TAN`). Attempting {{key:CMPLX}} `{{key:ASIN}}` or {{key:CMPLX}} `{{key:HYP}}` raises `Error 01: INVALID DATA`, directing the user to logarithmic conformal mappings.
 
 ## Engineering Design Briefing: Precision Audio Crossover & RF Antenna Synthesis (Problems 5.1 through 5.40)
 
@@ -409,127 +414,106 @@ Every problem below includes real-world engineering context, mathematical govern
 
 ---
 
+> **Thematic Arc I — Complex Arithmetic Primitives & De Moivre Roots in `CMPLX` Mode (Problems 5.1–5.10):** We begin by exercising the dual-stack $(X_r, X_i)$ architecture on conjugate products, complex reciprocals, and principal branches.
+
 ### Problem 5.1: Complex Conjugate Multiplication & Modulus Squared
-**Theoretical Context:** For $z = 6 + 8i$, compute the complex conjugate product $z \cdot z^* = |z|^2$:
+For $z = 6 + 8i$, compute the complex conjugate product $z \cdot z^* = |z|^2$:
 $$z^* = 6 - 8i \implies z \cdot z^* = 6^2 + 8^2 = 36 + 64 = 100 + 0i$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_08:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_08:value}}`**
 
-Key `6 {{key:ENTER}} 8 {{key:ENTER}}` to position $z = 6 + 8i$ across the stack, then enter the conjugate pair `6 {{key:ENTER}} 8 {{key:+/-}}`, lifting the stack to $(T:6, Z:8, Y:6, X:-8)$. Striking `{{key:CMPLX}} {{key:×}}` multiplies the conjugate pair and drops the stack, leaving $(T:6, Z:6, Y:100.0000, X:0.0000)$.
-
-Result: **$\text{Real} = 100.0$, $\text{Imag} = 0.0$**.
+Key `6 {{key:ENTER}} 8 {{key:ENTER}}` to position $z = 6 + 8i$ across the stack, then enter the conjugate pair `6 {{key:ENTER}} 8 {{key:+/-}}`, lifting the stack to $(T: 6, Z: 8, Y: 6, X: -8)$. Striking `{{key:CMPLX}} {{key:×}}` multiplies the conjugate pair and drops the stack, leaving $(T: 6, Z: 6, Y: 100.0000, X: 0.0000)$, confirming **$\text{Real} = 100.0$, $\text{Imag} = 0.0$**.
 
 ---
 
 ### Problem 5.2: Complex Square Root of Pure Imaginary Unit: $\sqrt{i}$
-**Theoretical Context:** Evaluate $\sqrt{i} = \sqrt{0 + 1i} = e^{i\pi/4} = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i \approx 0.707107 + 0.707107i$:
+Evaluate $\sqrt{i} = \sqrt{0 + 1i} = e^{i\pi/4} = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i \approx 0.707107 + 0.707107i$:
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_09:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_09:value}}`**
 
-Enter the pure imaginary unit $0 + 1i$ with `0 {{key:ENTER}} 1`, placing Real in $Y$ and Imag in $X$ $(T:0, Z:0, Y:0, X:1)$. Press `{{key:CMPLX}} {{key:√x}}` to evaluate the complex square root in place, leaving $(T:0, Z:0, Y:0.707107, X:0.707107)$.
-
-Result: **$0.707107 + 0.707107i$**.
+Enter the pure imaginary unit $0 + 1i$ with `0 {{key:ENTER}} 1`, placing Real in $Y$ and Imag in $X$ $(T: 0, Z: 0, Y: 0, X: 1)$. Press `{{key:CMPLX}} {{key:√x}}` to evaluate the complex square root in place, leaving $(T: 0, Z: 0, Y: 0.707107, X: 0.707107)$.
 
 ---
 
 ### Problem 5.3: Principal Value of Natural Logarithm of Negative Real: $\ln(-5)$
-**Theoretical Context:** In complex analysis, $\ln(z) = \ln|z| + i \operatorname{Arg}(z)$. For $z = -5 + 0i$, $|z| = 5$ and $\operatorname{Arg}(z) = \pi$:
+In complex analysis, $\ln(z) = \ln|z| + i \operatorname{Arg}(z)$. For $z = -5 + 0i$, $|z| = 5$ and $\operatorname{Arg}(z) = \pi$:
 $$\ln(-5) = \ln(5) + i\pi \approx 1.609438 + 3.141593i$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_10:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_10:value}}`**
 
-Key `5 {{key:+/-}} {{key:ENTER}} 0` to load $z = -5 + 0i$ into $(Y, X)$. Pressing `{{key:CMPLX}} {{key:LN}}` evaluates the principal complex logarithm, transitioning the stack to $(T:0, Z:0, Y:1.609438, X:3.141593)$.
-
-Result: **$1.609438 + 3.141593i$**.
+Key `5 {{key:+/-}} {{key:ENTER}} 0` to load $z = -5 + 0i$ into $(Y, X)$. Pressing `{{key:CMPLX}} {{key:LN}}` evaluates the principal complex logarithm, transitioning the stack to $(T: 0, Z: 0, Y: 1.609438, X: 3.141593)$.
 
 ---
 
 ### Problem 5.4: Complex Reciprocal of High-Q Inductor Admittance
-**Theoretical Context:** An RF inductor has impedance $\mathbf{Z}_L = 0.5 + 120.0i\,\Omega$. Calculate its complex admittance $\mathbf{Y} = 1/\mathbf{Z}$:
+An RF inductor has impedance $\mathbf{Z}_L = 0.5 + 120.0i\,\Omega$. Calculate its complex admittance $\mathbf{Y} = 1/\mathbf{Z}$:
 $$\mathbf{Y} = \frac{1}{0.5 + 120i} = \frac{0.5 - 120i}{0.5^2 + 120^2} = \frac{0.5 - 120i}{0.25 + 14400} = 3.4722 \times 10^{-5} - 8.3333 \times 10^{-3}i\,\text{S}$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_11:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_11:value}}`**
 
-Load the inductor impedance via `0.5 {{key:ENTER}} 120`, establishing $(T:0, Z:0, Y:0.5, X:120)$. Press `{{key:CMPLX}} {{key:1/x}}` to invert the complex phasor into admittance in Siemens, arriving at $(T:0, Z:0, Y:3.4722 \times 10^{-5}, X:-8.3333 \times 10^{-3})$.
-
-Result: **$3.4722 \times 10^{-5} - 8.3333 \times 10^{-3}i\,\text{S}$**.
+Load the inductor impedance via `0.5 {{key:ENTER}} 120`, establishing $(T: 0, Z: 0, Y: 0.5, X: 120)$. Press `{{key:CMPLX}} {{key:1/x}}` to invert the complex phasor into admittance in Siemens, arriving at $(T: 0, Z: 0, Y: 3.4722 \times 10^{-5}, X: -8.3333 \times 10^{-3})$.
 
 ---
 
 ### Problem 5.5: Series RLC Circuit Total Impedance
-**Electrical Context:** At angular frequency $\omega = 1,000\text{ rad/s}$, a series circuit has $R = 50\,\Omega$, $L = 80\text{ mH}$ ($X_L = \omega L = 80\,\Omega$), and $C = 20\,\mu\text{F}$ ($X_C = 1/(\omega C) = 50\,\Omega$):
+At angular frequency $\omega = 1,000\text{ rad/s}$, a series circuit has $R = 50\,\Omega$, $L = 80\text{ mH}$ ($X_L = \omega L = 80\,\Omega$), and $C = 20\,\mu\text{F}$ ($X_C = 1/(\omega C) = 50\,\Omega$):
 $$\mathbf{Z} = R + j(X_L - X_C) = 50 + j(80 - 50) = 50 + 30i\,\Omega$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_12:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_12:value}}`**
 
-Load the series branch $\mathbf{Z}_1$ with `50 {{key:ENTER}} 80 {{key:ENTER}}`, then key $\mathbf{Z}_2$ with `0 {{key:ENTER}} 50 {{key:+/-}}`, priming the 4-level stack to $(T:50, Z:80, Y:0, X:-50)$. Tap `{{key:CMPLX}} {{key:+}}` to execute dyadic phasor addition, leaving $(T:50, Z:50, Y:50.0000, X:30.0000)$.
-
-Result: **$50.0 + 30.0i\,\Omega$**.
+Load the series branch $\mathbf{Z}_1$ with `50 {{key:ENTER}} 80 {{key:ENTER}}`, then key $\mathbf{Z}_2$ with `0 {{key:ENTER}} 50 {{key:+/-}}`, priming the 4-level stack to $(T: 50, Z: 80, Y: 0, X: -50)$. Tap `{{key:CMPLX}} {{key:+}}` to execute dyadic phasor addition, leaving $(T: 50, Z: 50, Y: 50.0000, X: 30.0000)$, confirming **$50.0 + 30.0i\,\Omega$**.
 
 ---
 
 ### Problem 5.6: RLC Circuit Current Phasor via Ohm's Law
-**Electrical Context:** The circuit from Problem 5.5 ($\mathbf{Z} = 50 + 30i\,\Omega$) is driven by voltage $\mathbf{V} = 120 + 0i\text{ V}$. Find current phasor $\mathbf{I} = \mathbf{V} / \mathbf{Z}$:
+The circuit from Problem 5.5 ($\mathbf{Z} = 50 + 30i\,\Omega$) is driven by voltage $\mathbf{V} = 120 + 0i\text{ V}$. Find current phasor $\mathbf{I} = \mathbf{V} / \mathbf{Z}$:
 $$\mathbf{I} = \frac{120}{50 + 30i} = \frac{120(50 - 30i)}{2500 + 900} = \frac{6000 - 3600i}{3400} = 1.7647 - 1.0588i\text{ A}$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_13:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_13:value}}`**
 
-Enter denominator $\mathbf{Z}$ via `50 {{key:ENTER}} 30 {{key:ENTER}}` followed by numerator $\mathbf{V}$ via `120 {{key:ENTER}} 0`, giving $(T:50, Z:30, Y:120, X:0)$. Press `{{key:CMPLX}} {{key:÷}}` to evaluate complex Ohm's law, yielding current phasor $(T:50, Z:50, Y:1.764706, X:-1.058824)$.
-
-Result: **$1.7647 - 1.0588i\text{ Amperes}$** ($|\mathbf{I}| = 2.058\text{ A}\angle -30.96^\circ$).
+Enter numerator $\mathbf{V}$ via `120 {{key:ENTER}} 0 {{key:ENTER}}` followed by denominator $\mathbf{Z}$ via `50 {{key:ENTER}} 30`, giving $(T: 120, Z: 0, Y: 50, X: 30)$. Press `{{key:CMPLX}} {{key:÷}}` to evaluate complex Ohm's law, yielding current phasor $(T: 120, Z: 120, Y: 1.764706, X: -1.058824)$, confirming **$1.7647 - 1.0588i\text{ Amperes}$** ($|\mathbf{I}| = 2.058\text{ A}\angle -30.96^\circ$).
 
 ---
 
 ### Problem 5.7: AC Apparent, Real, and Reactive Power Complex Vector
-**Electrical Context:** Complex apparent power is $\mathbf{S} = \mathbf{V} \cdot \mathbf{I}^*$. For $\mathbf{V} = 120 + 0i\text{ V}$ and $\mathbf{I} = 1.7647 - 1.0588i\text{ A} \implies \mathbf{I}^* = 1.7647 + 1.0588i\text{ A}$:
+Complex apparent power is $\mathbf{S} = \mathbf{V} \cdot \mathbf{I}^*$. For $\mathbf{V} = 120 + 0i\text{ V}$ and $\mathbf{I} = 1.7647 - 1.0588i\text{ A} \implies \mathbf{I}^* = 1.7647 + 1.0588i\text{ A}$:
 $$\mathbf{S} = 120 \times (1.7647 + 1.0588i) = 211.7647 + 127.0560i\text{ VA}$$
 Real power $P = 211.76\text{ Watts}$, Reactive power $Q = 127.06\text{ VAR}$.
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_14:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_14:value}}`**
 
-Enter voltage $\mathbf{V}$ via `120 {{key:ENTER}} 0 {{key:ENTER}}` and conjugate current $\mathbf{I}^*$ via `1.764706 {{key:ENTER}} 1.058824`, loading $(T:120, Z:0, Y:1.764706, X:1.058824)$. Press `{{key:CMPLX}} {{key:×}}` to evaluate apparent power vector $\mathbf{S}$, resulting in $(T:120, Z:120, Y:211.7647, X:127.0589)$.
-
-Result: **$P = 211.76\text{ W}, Q = 127.06\text{ VAR}$**.
+Enter voltage $\mathbf{V}$ via `120 {{key:ENTER}} 0 {{key:ENTER}}` and conjugate current $\mathbf{I}^*$ via `1.764706 {{key:ENTER}} 1.058824`, loading $(T: 120, Z: 0, Y: 1.764706, X: 1.058824)$. Press `{{key:CMPLX}} {{key:×}}` to evaluate apparent power vector $\mathbf{S}$, resulting in $(T: 120, Z: 120, Y: 211.7647, X: 127.0589)$, confirming **$P = 211.76\text{ W}, Q = 127.06\text{ VAR}$**.
 
 ---
 
 ### Problem 5.8: Power Factor from Complex Apparent Power
-**Power Engineering Context:** For complex power $\mathbf{S} = 211.7647 + 127.0589i\text{ VA}$, compute magnitude $|\mathbf{S}|$ and power factor $\cos\theta$:
+For complex power $\mathbf{S} = 211.7647 + 127.0589i\text{ VA}$, compute magnitude $|\mathbf{S}|$ and power factor $\cos\theta$:
 $$|\mathbf{S}| = \sqrt{P^2 + Q^2} \approx 247.0\text{ VA}, \quad \text{PF} = \frac{P}{|\mathbf{S}|} = \frac{211.7647}{247.0588} \approx 0.8572$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_15:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_15:value}}`**
 
-Key `211.7647 {{key:ENTER}} 127.0589` into $(Y, X)$, then tap `{{key:▸θ,r}}` to convert to polar form $(T:0, Z:0, Y:0.540420, X:247.0588)$, revealing phase angle in $Y$ and apparent power $|\mathbf{S}|$ in $X$. Tap `{{key:x⇄y}} {{key:COS}}` to extract the lagging power factor, ending with $(T:0, Z:0, Y:247.0588, X:0.857187)$.
-
-Result: **$\text{PF} = 0.8572\text{ (lagging)}$**.
+Key `211.7647 {{key:ENTER}} 127.0589` into $(Y, X)$, swap to Euclidean $(Y=Q, X=P)$ and convert to polar form via `{{key:x⇄y}} {{key:▸θ,r}}` $(T: 0, Z: 0, Y: 0.540420, X: 247.0588)$, revealing phase angle in $Y$ and apparent power $|\mathbf{S}|$ in $X$. Tap `{{key:x⇄y}} {{key:COS}}` to extract the lagging power factor, ending with $(T: 0, Z: 0, Y: 247.0588, X: 0.857167)$, confirming **$\text{PF} = 0.8572\text{ (lagging)}$**.
 
 ---
 
 ### Problem 5.9: Two-Port S-Parameter Reflection Coefficient Transformation
-**RF Engineering Context:** S-parameter $S_{11} = 0.25 - 0.40i$. Calculate return loss in dB:
+S-parameter $S_{11} = 0.25 - 0.40i$. Calculate return loss in dB:
 $$|S_{11}| = \sqrt{0.25^2 + (-0.40)^2} = \sqrt{0.0625 + 0.1600} = \sqrt{0.2225} \approx 0.471699$$
 $$\text{RL} = -20 \log_{10}(0.471699) = 6.527\text{ dB}$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_16:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_16:value}}`**
 
-Load $S_{11}$ via `0.25 {{key:ENTER}} 0.40 {{key:+/-}}`, then convert to polar magnitude with `{{key:▸θ,r}}`, leaving $(T:0, Z:0, Y:-1.012197, X:0.471699)$. Complete the return loss calculation with `{{keycap:LOG}} 20 {{key:×}} {{key:+/-}}`, producing $(T:0, Z:0, Y:-1.012197, X:6.5269)$.
-
-Result: **$6.5269\text{ dB}$**.
+Load $S_{11}$ via `0.25 {{key:ENTER}} 0.40 {{key:+/-}}`, then convert to polar magnitude with `{{key:▸θ,r}}`, leaving $(T: 0, Z: 0, Y: 2.582993, X: 0.471699)$. Complete the return loss calculation with `{{key:LOG}} 20 {{key:×}} {{key:+/-}}`, producing $(T: 0, Z: 0, Y: 2.582993, X: 6.5269)$.
 
 ---
 
 ### Problem 5.10: Quarter-Wave Transmission Line Impedance Inverter
-**RF Context:** A quarter-wave transformer of characteristic impedance $Z_{\text{line}} = 70.71\,\Omega$ terminates in load $Z_L = 100 + 0i\,\Omega$. Calculate input impedance $Z_{\text{in}} = Z_{\text{line}}^2 / Z_L$:
+A quarter-wave transformer of characteristic impedance $Z_{\text{line}} = 70.71\,\Omega$ terminates in load $Z_L = 100 + 0i\,\Omega$. Calculate input impedance $Z_{\text{in}} = Z_{\text{line}}^2 / Z_L$:
 $$Z_{\text{in}} = \frac{70.7107^2}{100.0} = \frac{5000.0}{100.0} = 50.00\,\Omega$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_17:keys}}`$\implies$ **$50.0000\,\Omega$**. Perfect match to a $50\,\Omega$ line.
 
-> **Named RPN Stack Idiom: *The Inside-Out Radical & Transmission Line Pipeline*** — Square characteristic impedance in place and divide load resistance directly without scratchpad memory {{cite:horowitz2015,hp15c1982}}.
-
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `70.7107` — Enter line characteristic impedance ($Z_0 = 70.7107\,\Omega$) into $X$.
-2. `{{key:x²}}` — Square characteristic impedance ($Z_0^2 = 5000.00\,\Omega^2$).
-3. `100` `{{key:÷}}` — Divide by load resistance ($Z_L = 100.0\,\Omega$), yielding matched input impedance $Z_{\text{in}} = \mathbf{50.00\,\Omega}$.
+> ***The Inside-Out Radical & Transmission Line Pipeline*** — Square characteristic impedance in place and divide load resistance directly without scratchpad memory {{cite:horowitz2015,hp15c1982}}.
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -537,71 +521,59 @@ $$Z_{\text{in}} = \frac{70.7107^2}{100.0} = \frac{5000.0}{100.0} = 50.00\,\Omega
 | 2 | `{{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $5000.0031$ | Square characteristic impedance $Z_0^2$ |
 | 3 | `100 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$50.0000$** | Divide by load resistance $Z_L$; matched $Z_{\text{in}} = 50.0\,\Omega$ |
 
-Result: **$50.0000\,\Omega$**.
+Register $X$ settles at **$50.0000\,\Omega$**.
 
 ---
 
+> **Thematic Arc II — AC Impedance Ladders, Admittance & Resonance Networks (Problems 5.11–5.20):** Here the complex `1/x` key transforms parallel RLC impedance formulas into effortless sum-of-admittances chains.
+
 ### Problem 5.11: Complex Cube Roots of $-8$: $\sqrt[3]{-8}$
-**Theoretical Context:** Solve $z^3 = -8 = 8 e^{i\pi}$. Principal root:
+Solve $z^3 = -8 = 8 e^{i\pi}$. Principal root:
 $$z_0 = 8^{1/3} e^{i\pi/3} = 2 \left(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\right) = 2(0.5 + 0.866025i) = 1.0 + 1.732051i$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_18:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_18:value}}`**
 (Using $z_2 = -8$, exponent $z_1 = 1/3 = 0.3333333333$):
 Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_19:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_19:value}}`**
 
-Load base $z_2 = -8 + 0i$ with `8 {{key:+/-}} {{key:ENTER}} 0 {{key:ENTER}}`, then enter exponent $1/3$ via `0.333333333333 {{key:ENTER}} 0`, establishing $(T:-8, Z:0, Y:0.333333, X:0)$. Tap `{{key:CMPLX}} {{key:yˣ}}` to extract the principal complex cube root, yielding $(T:-8, Z:-8, Y:1.000000, X:1.732051)$.
-
-Result: **$1.000000 + 1.732051i$**.
+Load base $z_2 = -8 + 0i$ with `8 {{key:+/-}} {{key:ENTER}} 0 {{key:ENTER}}`, then enter exponent $1/3$ via `0.333333333333 {{key:ENTER}} 0`, establishing $(T: -8, Z: 0, Y: 0.333333, X: 0)$. Tap `{{key:CMPLX}} {{key:yˣ}}` to extract the principal complex cube root, yielding $(T: -8, Z: -8, Y: 1.000000, X: 1.732051)$.
 
 ---
 
 ### Problem 5.12: Second Root of Unity from de Moivre
-**Theoretical Context:** From Problem 5.11, the real root is $z_1 = -2.0 + 0.0i$, and the third root is $z_2 = 1.0 - 1.732051i$. Confirm $z_1^3$:
+From Problem 5.11, the real root is $z_1 = -2.0 + 0.0i$, and the third root is $z_2 = 1.0 - 1.732051i$. Confirm $z_1^3$:
 Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_20:keys}}`$\implies$ **$-8.0000 + 0.0000i$**.
 
-Enter the candidate root $z_1 = -2.0 + 0.0i$ into $(T, Z)$ and the power $3.0 + 0.0i$ into $(Y, X)$ via `2 {{key:+/-}} {{key:ENTER}} 0 {{key:ENTER}} 3 {{key:ENTER}} 0`, creating $(T:-2, Z:0, Y:3, X:0)$. Executing `{{key:CMPLX}} {{key:yˣ}}` confirms $(-2+0i)^3 = -8.0 + 0.0i$, leaving $(T:-2, Z:-2, Y:-8.0000, X:0.0000)$.
-
-Result: **$-8.0000 + 0.0000i$**.
+Enter the candidate root $z_1 = -2.0 + 0.0i$ into $(T, Z)$ and the power $3.0 + 0.0i$ into $(Y, X)$ via `2 {{key:+/-}} {{key:ENTER}} 0 {{key:ENTER}} 3 {{key:ENTER}} 0`, creating $(T: -2, Z: 0, Y: 3, X: 0)$. Executing `{{key:CMPLX}} {{key:yˣ}}` confirms $(-2+0i)^3 = -8.0 + 0.0i$, leaving $(T: -2, Z: -2, Y: -8.0000, X: 0.0000)$.
 
 ---
 
 ### Problem 5.13: Complex Sine Evaluation: $\sin(1 + 2i)$
-**Theoretical Context:** $\sin(x + iy) = \sin x \cosh y + i \cos x \sinh y$.
+$\sin(x + iy) = \sin x \cosh y + i \cos x \sinh y$.
 For $x = 1.0\text{ rad}, y = 2.0$:
 $$\sin(1) \approx 0.841471, \quad \cosh(2) \approx 3.762196 \implies \text{Real} = 0.841471 \times 3.762196 = 3.165779$$
 $$\cos(1) \approx 0.540302, \quad \sinh(2) \approx 3.626860 \implies \text{Imag} = 0.540302 \times 3.626860 = 1.959601$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_21:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_21:value}}`**
 
-Key `1 {{key:ENTER}} 2` to load $1 + 2i$ into $(Y, X)$ $(T:0, Z:0, Y:1, X:2)$. Press `{{key:CMPLX}} {{key:SIN}}` to evaluate complex sine in place, producing $(T:0, Z:0, Y:3.165779, X:1.959601)$.
-
-Result: **$3.165779 + 1.959601i$**.
+Key `1 {{key:ENTER}} 2` to load $1 + 2i$ into $(Y, X)$ $(T: 0, Z: 0, Y: 1, X: 2)$. Press `{{key:CMPLX}} {{key:SIN}}` to evaluate complex sine in place, producing $(T: 0, Z: 0, Y: 3.165779, X: 1.959601)$.
 
 ---
 
 ### Problem 5.14: Complex Cosine Evaluation: $\cos(1 + 2i)$
-**Theoretical Context:** $\cos(x + iy) = \cos x \cosh y - i \sin x \sinh y$.
+$\cos(x + iy) = \cos x \cosh y - i \sin x \sinh y$.
 $$\text{Real} = \cos(1)\cosh(2) = 0.540302 \times 3.762196 = 2.032723$$
 $$\text{Imag} = -\sin(1)\sinh(2) = -0.841471 \times 3.626860 = -3.051898$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_22:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_22:value}}`**
 
-Enter $1 + 2i$ with `1 {{key:ENTER}} 2` $(T:0, Z:0, Y:1, X:2)$ and tap `{{key:CMPLX}} {{key:COS}}`, yielding $(T:0, Z:0, Y:2.032723, X:-3.051898)$.
-
-Result: **$2.032723 - 3.051898i$**.
+Enter $1 + 2i$ with `1 {{key:ENTER}} 2` $(T: 0, Z: 0, Y: 1, X: 2)$ and tap `{{key:CMPLX}} {{key:COS}}`, yielding $(T: 0, Z: 0, Y: 2.032723, X: -3.051898)$.
 
 ---
 
 ### Problem 5.15: Fundamental Identity Verification: $\sin^2(z) + \cos^2(z) = 1$
-**Theoretical Context:** Using results from 5.13 and 5.14, square both complex numbers and add them:
+Using results from 5.13 and 5.14, square both complex numbers and add them:
 $$\sin^2(1+2i) + \cos^2(1+2i) = 1.000000 + 0.000000i$$
 Verified live on the stack with zero drift!
-
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. **Load Complex Trigonometric Operand:** Key in $\operatorname{Re}(\sin z)$ and $\operatorname{Im}(\sin z)$ onto the operational stack.
-2. `{{key:CMPLX}}` `{{key:x²}}` — Square complex sine in place; $(\sin z)^2$ occupies Registers $(Y, X)$.
-3. **Load Complex Cosine Component:** Key in $\operatorname{Re}(\cos z)$ and $\operatorname{Im}(\cos z)$ into $(T, Z)$ and square in place via `{{key:CMPLX}}` `{{key:x²}}`.
-4. `{{key:CMPLX}}` `{{key:+}}` — Sum both squared complex phasors; the fundamental identity collapses to $1.000000 + 0.000000i$ with zero numerical drift.
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -611,70 +583,57 @@ Verified live on the stack with zero drift!
 | 4 | `{{key:CMPLX}} {{key:x²}}` | $6.182115$ | $12.407147$ | $-5.182115$ | $-12.407147$ | Square complex cosine $(\cos z)^2$ |
 | 5 | `{{key:CMPLX}} {{key:+}}` | $6.182115$ | $6.182115$ | **$1.000000$** | **$0.000000$** | Sum squares: $\sin^2 z + \cos^2 z = 1 + 0i$ |
 
-Result: **$1.000000 + 0.000000i$**.
+This confirms a final value of **$1.000000 + 0.000000i$**.
 
 ---
 
 ### Problem 5.16: Butterworth 2nd-Order Low-Pass Filter Transfer Function
-**Acoustics Context:** At cutoff frequency $f_c = 2,500\text{ Hz}$, normalized frequency is $s = j\omega / \omega_c = 0 + 1i$. The 2nd-order Butterworth denominator is $B_2(s) = s^2 + \sqrt{2} s + 1$:
+At cutoff frequency $f_c = 2,500\text{ Hz}$, normalized frequency is $s = j\omega / \omega_c = 0 + 1i$. The 2nd-order Butterworth denominator is $B_2(s) = s^2 + \sqrt{2} s + 1$:
 $$s^2 = -1 + 0i, \quad \sqrt{2} s = 0 + 1.414214i \implies B_2(j) = (-1 + 1) + 1.414214i = 0 + 1.414214i$$
 $$H(j) = \frac{1}{0 + 1.414214i} = 0 - \frac{1}{\sqrt{2}}i = 0 - 0.707107i \implies |H| = \frac{1}{\sqrt{2}} \approx -3.01\text{ dB}$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_23:keys}}`$\implies$ **$0.000000 - 0.707107i$**.
 
-Load the normalized frequency polynomial $B_2(j) = 0 + 1.414214i$ into $(Y, X)$ via `0 {{key:ENTER}} 1.414214` $(T:0, Z:0, Y:0, X:1.414214)$. Inverting via `{{key:CMPLX}} {{key:1/x}}` directly evaluates the frequency response $H(j) = 0 - 0.707107i$, leaving $(T:0, Z:0, Y:0.000000, X:-0.707107)$.
-
-Result: **$0.000000 - 0.707107i$** ($|H| = 0.707107 \implies \mathbf{-3.01\text{ dB}}$).
+Load the normalized frequency polynomial $B_2(j) = 0 + 1.414214i$ into $(Y, X)$ via `0 {{key:ENTER}} 1.414214` $(T: 0, Z: 0, Y: 0, X: 1.414214)$. Inverting via `{{key:CMPLX}} {{key:1/x}}` directly evaluates the frequency response $H(j) = 0 - 0.707107i$, leaving $(T: 0, Z: 0, Y: 0.000000, X: -0.707107)$ ($|H| = 0.707107 \implies \mathbf{-3.01\text{ dB}}$).
 
 ---
 
 ### Problem 5.17: Linkwitz-Riley 4th-Order Filter (Cascaded Butterworth)
-**Audio Context:** $H_{\text{LR4}}(s) = [H_{\text{Butter2}}(s)]^2 = (-0.707107i)^2 = -0.500000 + 0.000000i$.
+$H_{\text{LR4}}(s) = [H_{\text{Butter2}}(s)]^2 = (-0.707107i)^2 = -0.500000 + 0.000000i$.
 Magnitude $|H| = 0.5000 \implies 20 \log_{10}(0.5) = -6.02\text{ dB}$ (the acoustic crossover standard).
 
-#### Keystrokes:
-`0 {{key:ENTER}} 0.707107 {{key:+/-}} {{key:CMPLX}} {{key:x²}}` $\rightarrow$ Real: **`-0.500000`**, Imag: **`0.000000`**.
+**Keystrokes:** `0 {{key:ENTER}} 0.707107 {{key:+/-}} {{key:CMPLX}} {{key:x²}}` $\rightarrow$ Real: **`-0.500000`**, Imag: **`0.000000`**.
 
-#### Stack Trace Table:
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
 | 1 | `0 {{key:ENTER}} 0.707107 {{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-0.707107$ | Load Butterworth response $0 - 0.707107i$ |
 | 2 | `{{key:CMPLX}} {{key:x²}}` | $0.0000$ | $0.0000$ | **$-0.500000$** | **$0.000000$** | Evaluate $[H_{\text{Butter2}}]^2$; Real in $Y$, Imag in $X$ |
-| 3 | `{{key:x⇄y}} {{key:ABS}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.500000$ | Inspect Real component magnitude $|H| = 0.5$ |
+| 3 | `{{key:x⇄y}} {{key:ABS}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.500000$ | Inspect Real component magnitude $\lvert H\rvert = 0.5$ |
 | 4 | `{{key:LOG}} 20 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$-6.020600$** | Calculate $-6.02\text{ dB}$ acoustic crossover attenuation |
 
-Result: **$-0.500000 + 0.000000i$** ($|H| = 0.5000 \implies \mathbf{-6.02\text{ dB}}$).
+The stack resolves to **$-0.500000 + 0.000000i$** ($|H| = 0.5000 \implies \mathbf{-6.02\text{ dB}}$).
 
 ---
 
 ### Problem 5.18: Smith Chart Bilinear Transformation
-**Microwave Context:** Compute normalized load $z = r + jx$ from reflection coefficient $\Gamma = 0.2 + 0.4i$:
+Compute normalized load $z = r + jx$ from reflection coefficient $\Gamma = 0.2 + 0.4i$:
 $$z = \frac{1 + \Gamma}{1 - \Gamma} = \frac{1 + 0.2 + 0.4i}{1 - 0.2 - 0.4i} = \frac{1.2 + 0.4i}{0.8 - 0.4i}$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_24:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_24:value}}`**
 
-Load denominator $1 - \Gamma = 0.8 - 0.4i$ via `0.8 {{key:ENTER}} 0.4 {{key:+/-}} {{key:ENTER}}` and numerator $1 + \Gamma = 1.2 + 0.4i$ via `1.2 {{key:ENTER}} 0.4`, loading $(T:0.8, Z:-0.4, Y:1.2, X:0.4)$. Striking `{{key:CMPLX}} {{key:÷}}` evaluates the Möbius transformation to $z = 1.0 + 1.0i$, with the stack resting at $(T:0.8, Z:0.8, Y:1.000000, X:1.000000)$.
-
-Result: **$z = 1.0 + 1.0i$** ($R = Z_0, X = Z_0$).
+Load numerator $1 + \Gamma = 1.2 + 0.4i$ via `1.2 {{key:ENTER}} 0.4 {{key:ENTER}}` and denominator $1 - \Gamma = 0.8 - 0.4i$ via `0.8 {{key:ENTER}} 0.4 {{key:+/-}}`, loading $(T: 1.2, Z: 0.4, Y: 0.8, X: -0.4)$. Striking `{{key:CMPLX}} {{key:÷}}` evaluates the Möbius transformation to $z = 1.0 + 1.0i$, with the stack resting at $(T: 1.2, Z: 1.2, Y: 1.000000, X: 1.000000)$ ($R = Z_0, X = Z_0$).
 
 ---
 
 ### Problem 5.19: Operational Amplifier Inverting Bandpass Gain
-**Analog Electronics Context:** $Z_f = 10\text{ k}\Omega \parallel (C_f = 10\text{ nF})$, $Z_{\text{in}} = 1\text{ k}\Omega + (C_{\text{in}} = 100\text{ nF})$. At $f = 1,591.55\text{ Hz}$ ($\omega = 10,000\text{ rad/s}$):
+$Z_f = 10\text{ k}\Omega \parallel (C_f = 10\text{ nF})$, $Z_{\text{in}} = 1\text{ k}\Omega + (C_{\text{in}} = 100\text{ nF})$. At $f = 1,591.55\text{ Hz}$ ($\omega = 10,000\text{ rad/s}$):
 $$Z_f = \frac{10000}{1 + j(10000)(10^4)(10^{-8})} = \frac{10000}{1 + j} = 5000 - 5000i\,\Omega$$
 $$Z_{\text{in}} = 1000 - j\frac{1}{10000 \times 10^{-7}} = 1000 - 1000i\,\Omega$$
 $$\text{Gain } A_v = -\frac{Z_f}{Z_{\text{in}}} = -\frac{5000(1 - i)}{1000(1 - i)} = -5.0 + 0i$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_25:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_25:value}}`**
 
-> **Named RPN Stack Idiom: *The Parallel Reciprocal x∥y Shortcut & Complex Branch Reduction*** — Collapse parallel feedback RC admittance and series input impedance across stack registers without scratchpad memory {{cite:horowitz2015,hp15c1982}}.
-
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `5000` `{{key:ENTER}}` — Enter feedback resistance real component ($R_f' = 5000.0\,\Omega$) into $Y$.
-2. `5000 {{key:+/-}}` `{{key:ENTER}}` — Key capacitive feedback reactance ($X_f' = -5000.0\,\Omega$), elevating the real part.
-3. `1000` `{{key:ENTER}}` — Load input resistance ($R_{\text{in}} = 1000.0\,\Omega$) into $Y$.
-4. `1000 {{key:+/-}}` — Enter input capacitive reactance ($X_{\text{in}} = -1000.0\,\Omega$) into $X$.
-5. `{{key:CMPLX}}` `{{key:÷}}` — Execute complex division $Z_f / Z_{\text{in}}$ directly, resolving bandpass gain $A_v = -5.0000 + 0.0000i$.
+> ***The Parallel Reciprocal x∥y Shortcut & Complex Branch Reduction*** — Collapse parallel feedback RC admittance and series input impedance across stack registers without scratchpad memory {{cite:horowitz2015,hp15c1982}}.
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -683,301 +642,244 @@ $$\text{Gain } A_v = -\frac{Z_f}{Z_{\text{in}}} = -\frac{5000(1 - i)}{1000(1 - i
 | 3 | `{{key:CMPLX}} {{key:÷}}` | $5000.0000$ | $5000.0000$ | $5.000000$ | $0.000000$ | Complex ratio $Z_f / Z_{\text{in}} = 5.0 + 0i$ |
 | 4 | `{{key:CMPLX}} {{key:+/-}}` | $5000.0000$ | $5000.0000$ | **$-5.000000$** | **$0.000000$** | Negate gain: $A_v = -5.0 + 0i$ |
 
-Result: **$-5.000000 + 0.000000i$**.
+This confirms a final value of **$-5.000000 + 0.000000i$**.
 
 ---
 
 ### Problem 5.20: Acoustic Wave Impedance at Boundary
-**Acoustics Context:** Characteristic impedance of air $Z_1 = 415\text{ Pa}\cdot\text{s/m}$, porous fiberglass absorber $Z_2 = 600 - 450i\text{ Pa}\cdot\text{s/m}$. Find acoustic reflection coefficient:
+Characteristic impedance of air $Z_1 = 415\text{ Pa}\cdot\text{s/m}$, porous fiberglass absorber $Z_2 = 600 - 450i\text{ Pa}\cdot\text{s/m}$. Find acoustic reflection coefficient:
 $$\Gamma_a = \frac{Z_2 - Z_1}{Z_2 + Z_1} = \frac{(600 - 415) - 450i}{(600 + 415) - 450i} = \frac{185 - 450i}{1015 - 450i}$$
 
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_26:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_26:value}}`**
 
-Key numerator differential impedance $(Z_2 - Z_1) = 185 - 450i$ with `185 {{key:ENTER}} 450 {{key:+/-}} {{key:ENTER}}` and denominator $(Z_2 + Z_1) = 1015 - 450i$ with `1015 {{key:ENTER}} 450 {{key:+/-}}`, yielding $(T:185, Z:-450, Y:1015, X:-450)$. Press `{{key:CMPLX}} {{key:÷}}` to resolve acoustic reflection coefficient $(T:185, Z:185, Y:0.316823, X:-0.302394)$.
-
-Result: **$0.316823 - 0.302394i$** ($|\Gamma_a| = 0.4379 \implies \text{Absorption coefficient } \alpha = 1 - |\Gamma_a|^2 = 0.8082$).
+Key numerator differential impedance $(Z_2 - Z_1) = 185 - 450i$ with `185 {{key:ENTER}} 450 {{key:+/-}} {{key:ENTER}}` and denominator $(Z_2 + Z_1) = 1015 - 450i$ with `1015 {{key:ENTER}} 450 {{key:+/-}}`, yielding $(T: 185, Z: -450, Y: 1015, X: -450)$. Press `{{key:CMPLX}} {{key:÷}}` to resolve acoustic reflection coefficient $(T: 185, Z: 185, Y: 0.316595, X: -0.302987)$ ($|\Gamma_a| = 0.4379 \implies \text{Absorption coefficient } \alpha = 1 - |\Gamma_a|^2 = 0.8082$).
 
 ---
 
-### Problem 5.21: Thevenin Equivalent Impedance of Bridge Circuit
-**Circuit Context:** A bridge network has branch impedances $Z_A = 10 + 20i$, $Z_B = 30 - 10i$, $Z_C = 20 + 0i$, $Z_D = 0 - 25i$. Thevenin impedance between nodes:
-$$Z_{\text{th}} = (Z_A \parallel Z_C) + (Z_B \parallel Z_D)$$
-Evaluated using the parallel reciprocal pipeline into Register $Y$ and $X$.
+> **Thematic Arc III — Bridge Circuits, Three-Phase Power & Conformal Mapping (Problems 5.21–5.30):** Extending phasor algebra to Wheatstone/Wien bridges, symmetrical components, and Joukowsky airfoil transformations.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. **Load Complex Operand $z_1$:** Key in $\text{Re}(z_1)$ `{{key:ENTER}}` $\text{Im}(z_1)$ `{{key:ENTER}}` to position the real component in deeper stack memory and the imaginary component in Register $Y$/$Z$.
-2. **Load Complex Operand $z_2$ (or Apply Unary `{{key:CMPLX}}`):** Key in $\text{Re}(z_2)$ `{{key:ENTER}}` $\text{Im}(z_2)$ so the complex pair occupies $(Y, X)$ while $z_1$ rests in $(T, Z)$.
-3. **Execute `{{key:CMPLX}}` Operation:** Invoke `{{key:CMPLX}}` followed by the target arithmetic/transcendental key; the 4-register stack evaluates both real and imaginary components simultaneously, returning $\text{Re}(\text{result})$ in Register $Y$ and $\text{Im}(\text{result})$ in Register $X$ (swap via `{{key:x⇄y}}` to inspect either axis).
+### Problem 5.21: Thevenin Equivalent Impedance of Bridge Circuit
+A bridge network has branch impedances $Z_A = 10 + 20i\,\Omega$, $Z_B = 30 - 10i\,\Omega$, $Z_C = 20 + 0i\,\Omega$, and $Z_D = 0 - 25i\,\Omega$. Thevenin impedance between nodes:
+$$Z_{\text{th}} = (Z_A \parallel Z_C) + (Z_B \parallel Z_D) = \left(\frac{140 + 80i}{13}\right) + \left(\frac{150 - 250i}{17}\right) \approx 19.5928 - 8.5520i\,\Omega$$
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
 | 1 | `10 {{key:ENTER}} 20 {{key:ENTER}} 20 {{key:ENTER}} 0` | $10.0000$ | $20.0000$ | $20.0000$ | $0.0000$ | Load branch impedances $Z_A$ and $Z_C$ |
-| 2 | `{{key:CMPLX}} {{key:x∥y}}` | $10.0000$ | $10.0000$ | $8.5714$ | $5.7143$ | Parallel branch $Z_{AC} = Z_A \parallel Z_C$ |
+| 2 | `{{key:CMPLX}} {{key:x∥y}}` | $10.0000$ | $10.0000$ | $10.7692$ | $6.1538$ | Parallel branch $Z_{AC} = Z_A \parallel Z_C$ |
 | 3 | `30 {{key:ENTER}} 10 {{key:+/-}} {{key:ENTER}} 0 {{key:ENTER}} 25 {{key:+/-}}` | $30.0000$ | $-10.0000$ | $0.0000$ | $-25.0000$ | Load branch impedances $Z_B$ and $Z_D$ |
-| 4 | `{{key:CMPLX}} {{key:x∥y}}` | $30.0000$ | $30.0000$ | $5.7143$ | $-2.1429$ | Parallel branch $Z_{BD} = Z_B \parallel Z_D$ |
-| 5 | `{{key:CMPLX}} {{key:+}}` | $8.5714$ | $8.5714$ | **$14.2857$** | **$3.5714$** | Thevenin impedance $Z_{\text{th}} = Z_{AC} + Z_{BD}$ |
+| 4 | `{{key:CMPLX}} {{key:x∥y}}` | $30.0000$ | $30.0000$ | $8.8235$ | $-14.7059$ | Parallel branch $Z_{BD} = Z_B \parallel Z_D$ |
+| 5 | `10.7692 {{key:ENTER}} 6.1538 {{key:CMPLX}} {{key:+}}` | $8.8235$ | $8.8235$ | **$19.5928$** | **$-8.5520$** | Sum branches: $Z_{\text{th}} = Z_{BD} + Z_{AC}$ |
 
-Result: **$14.2857 + 3.5714i\,\Omega$**.
+The stack resolves to **$19.5928 - 8.5520i\,\Omega$**.
 
 ---
 
 ### Problem 5.22: Mutual Inductive Coupling in Transformer
-**RF Context:** Primary inductance $L_1 = 50\,\mu\text{H}$, secondary $L_2 = 20\,\mu\text{H}$, coupling factor $k = 0.8$. Mutual inductance $M = k\sqrt{L_1 L_2}$:
+Primary inductance $L_1 = 50\,\mu\text{H}$, secondary $L_2 = 20\,\mu\text{H}$, coupling factor $k = 0.8$. Mutual inductance $M = k\sqrt{L_1 L_2}$:
 $$M = 0.8 \sqrt{50 \times 20} = 0.8 \sqrt{1000} \approx 25.2982\,\mu\text{H}$$
 Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_27:keys}}`$\implies$ **$25.2982\,\mu\text{H}$**.
 
-> **Named RPN Stack Idiom: *The Inside-Out Radical & Mutual Inductance Pipeline*** — Multiply primary and secondary inductances directly in the stack, extract square root in place, and scale by coupling coefficient without register allocation {{cite:horowitz2015,hp15c1982}}.
+> ***The Inside-Out Radical & Mutual Inductance Pipeline*** — Multiply primary and secondary inductances directly in the stack, extract square root in place, and scale by coupling coefficient without register allocation {{cite:horowitz2015,hp15c1982}}.
 
-Enter `50 {{key:ENTER}} 20 {{key:×}}` to form the inductive product $1000\,\mu\text{H}^2$ in $X$ $(T:0, Z:0, Y:0, X:1000)$, take the square root with `{{key:√x}}` $(T:0, Z:0, Y:0, X:31.6228)$, and scale by coupling coefficient with `0.8 {{key:×}}`, resolving $(T:0, Z:0, Y:0, X:25.2982)$.
-
-Result: **$25.2982\,\mu\text{H}$**.
+Enter `50 {{key:ENTER}} 20 {{key:×}}` to form the inductive product $1000\,\mu\text{H}^2$ in $X$ $(T: 0, Z: 0, Y: 0, X: 1000)$, take the square root with `{{key:√x}}` $(T: 0, Z: 0, Y: 0, X: 31.6228)$, and scale by coupling coefficient with `0.8 {{key:×}}`, resolving $(T: 0, Z: 0, Y: 0, X: 25.2982)$.
 
 ---
 
 ### Problem 5.23: Polyphase 3-Phase Symmetrical Components ($a$-Operator)
-**Power Systems Context:** The symmetrical component operator is $a = e^{i 120^\circ} = \cos(120^\circ) + i\sin(120^\circ) = -0.5 + 0.866025i$.
+The symmetrical component operator is $a = e^{i 120^\circ} = \cos(120^\circ) + i\sin(120^\circ) = -0.5 + 0.866025i$.
 Calculate $a^2$:
 $$a^2 = e^{i 240^\circ} = -0.5 - 0.866025i$$
 Calculate $1 + a + a^2$:
 $$1 + (-0.5 + 0.866025i) + (-0.5 - 0.866025i) = \mathbf{0.000000 + 0.000000i}$$
 Zero-sequence summation holds exactly!
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `120` `{{key:ENTER}}` `1` `{{key:▸y,x}}` — Convert polar unit phasor ($1\angle 120^\circ$) to rectangular components; real component $-0.5$ forms in $X$ and imaginary component $0.866025$ in $Y$.
-2. `240` `{{key:ENTER}}` `1` `{{key:▸y,x}}` — Convert second phasor ($1\angle 240^\circ$) to rectangular coordinates $(-0.5, -0.866025)$.
-3. Sum rectangular components and add unit real reference $1.0$; real and imaginary components sum to $\mathbf{0.000000 + 0.000000i}$, verifying symmetrical zero-sequence balance.
+Convert the first unit phasor ($1\angle 120^\circ$) to Gaussian complex coordinates with `120 {{key:ENTER}} 1 {{key:▸y,x}} {{key:x⇄y}}` ($Y = -0.5, X = 0.866025$), then convert the second phasor ($1\angle 240^\circ$) with `240 {{key:ENTER}} 1 {{key:▸y,x}} {{key:x⇄y}}` ($Y = -0.5, X = -0.866025$). Sum the two complex operators via `{{key:CMPLX}} {{key:+}}` and add the real reference $1 + 0i$ via `1 {{key:ENTER}} 0 {{key:CMPLX}} {{key:+}}` to verify exact zero-sequence balance.
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `120 {{key:ENTER}} 1 {{key:▸y,x}}` | $0.0000$ | $0.0000$ | $0.866025$ | $-0.500000$ | Polar to rectangular: $a = -0.5 + 0.8660i$ |
-| 2 | `240 {{key:ENTER}} 1 {{key:▸y,x}}` | $0.866025$ | $-0.500000$ | $-0.866025$ | $-0.500000$ | Polar to rectangular: $a^2 = -0.5 - 0.8660i$ |
-| 3 | `{{key:x⇄y}} {{key:R↓}} {{key:+}}` | $0.0000$ | $0.866025$ | $-0.866025$ | $-1.000000$ | Real sum: $-0.5 + (-0.5) = -1.0$ |
-| 4 | `{{key:x⇄y}} {{key:+}}` | $0.0000$ | $0.0000$ | $-1.000000$ | $0.000000$ | Imaginary sum: $0.8660 - 0.8660 = 0.0$ |
-| 5 | `{{key:x⇄y}} 1 {{key:+}} {{key:x⇄y}}` | $0.0000$ | $0.0000$ | **$0.000000$** | **$0.000000$** | Add $+1$ reference: $1 + a + a^2 = 0 + 0i$ |
+| 1 | `120 {{key:ENTER}} 1 {{key:▸y,x}} {{key:x⇄y}}` | $0.0000$ | $0.0000$ | $-0.500000$ | $0.866025$ | Polar to Gaussian: $a = -0.5 + 0.8660i$ |
+| 2 | `240 {{key:ENTER}} 1 {{key:▸y,x}} {{key:x⇄y}}` | $-0.500000$ | $0.866025$ | $-0.500000$ | $-0.866025$ | Polar to Gaussian: $a^2 = -0.5 - 0.8660i$ |
+| 3 | `{{key:CMPLX}} {{key:+}}` | $-0.500000$ | $-0.500000$ | $-1.000000$ | $0.000000$ | Complex sum: $a + a^2 = -1.0 + 0.0i$ |
+| 4 | `1 {{key:ENTER}} 0 {{key:CMPLX}} {{key:+}}` | $-1.000000$ | $-1.000000$ | **$0.000000$** | **$0.000000$** | Add $+1$ reference: $1 + a + a^2 = 0 + 0i$ |
 
-Result: **$0.000000 + 0.000000i$**.
+This confirms a final value of **$0.000000 + 0.000000i$**.
 
 ---
 
 ### Problem 5.24: Damped Harmonic Oscillator Complex Eigenvalues
-**Mechanics Context:** Mass $m = 2\text{ kg}$, damping $c = 8\text{ N}\cdot\text{s/m}$, stiffness $k = 50\text{ N/m}$:
+Mass $m = 2\text{ kg}$, damping $c = 8\text{ N}\cdot\text{s/m}$, stiffness $k = 50\text{ N/m}$:
 $$\lambda = -\frac{c}{2m} \pm \sqrt{\left(\frac{c}{2m}\right)^2 - \frac{k}{m}} = -2.0 \pm \sqrt{4 - 25} = -2.0 \pm \sqrt{-21} = -2.0 \pm 4.582576i$$
 Natural damped frequency $\omega_d = 4.5826\text{ rad/s}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `8` `{{key:ENTER}}` `4` `{{key:÷}}` `{{key:+/-}}` — Compute real damping attenuation factor $\alpha = -c/(2m) = -8 / 4 = -2.0\text{ s}^{-1}$ in Register $X$.
-2. `4` `{{key:ENTER}}` `25` `{{key:-}}` `{{key:+/-}}` `{{key:√x}}` — Evaluate discriminant magnitude $|4 - 25| = 21$ and extract square root, producing damped angular frequency $\omega_d = \sqrt{21} \approx 4.582576\text{ rad/s}$.
-3. `{{key:x⇄y}}` — Pair with real component $-2.0$ in Register $Y$ to display the complete conjugate eigenvalue pair $\lambda = -2.0 \pm 4.582576i$.
+Compute the real damping attenuation factor $\alpha = -c/(2m) = -8 / 4 = -2.0\text{ s}^{-1}$ in Register $X$ with `8 {{key:ENTER}} 4 {{key:÷}} {{key:+/-}}`. Next, evaluate the discriminant magnitude $|4 - 25| = 21$ via `4 {{key:ENTER}} 25 {{key:-}} {{key:+/-}}` and extract its square root with `{{key:√x}}`, pairing $\alpha = -2.0$ in Register $Y$ with damped angular frequency $\omega_d = \sqrt{21} \approx 4.582576\text{ rad/s}$ in Register $X$.
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
 | 1 | `8 {{key:ENTER}} 4 {{key:÷}} {{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-2.0000$ | Real damping factor $\alpha = -c/(2m) = -2.0\text{ s}^{-1}$ |
-| 2 | `4 {{key:ENTER}} 25 {{key:-}} {{key:+/-}}` | $0.0000$ | $0.0000$ | $-2.0000$ | $21.0000$ | Discriminant magnitude $|\Delta| = 21.0$ |
+| 2 | `4 {{key:ENTER}} 25 {{key:-}} {{key:+/-}}` | $0.0000$ | $0.0000$ | $-2.0000$ | $21.0000$ | Discriminant magnitude $\lvert\Delta\rvert = 21.0$ |
 | 3 | `{{key:√x}}` | $0.0000$ | $0.0000$ | $-2.0000$ | **$4.582576$** | Damped angular frequency $\omega_d = 4.5826\text{ rad/s}$ |
 | 4 | `{{key:SHOW}}` | $0.0000$ | $0.0000$ | **$-2.000000$** | **$4.582576$** | Complex conjugate eigenvalues $\lambda = -2.0 \pm 4.5826i$ |
 
-Result: **$-2.000000 \pm 4.582576i$**.
+The calculation yields **$-2.000000 \pm 4.582576i$**.
 
 ---
 
 ### Problem 5.25: Waveguide Attenuation and Propagation Constant ($\gamma$)
-**Electromagnetics Context:** Propagation constant $\gamma = \alpha + j\beta$. In cutoff band: $\alpha = 14.5\text{ Np/m}, \beta = 0\text{ rad/m}$. Attenuation in decibels per meter:
+Propagation constant $\gamma = \alpha + j\beta$. In cutoff band: $\alpha = 14.5\text{ Np/m}, \beta = 0\text{ rad/m}$. Attenuation in decibels per meter:
 $$\text{Atten} = 20 \log_{10}(e) \times \alpha = 8.68589 \times 14.5 = \mathbf{125.945\text{ dB/m}}$$
 
-Key `1 {{key:eˣ}} {{key:LOG}} 20 {{key:×}}` to calculate the Nepers-to-dB conversion factor ($8.685890\text{ dB/Np}$) in $X$ $(T:0, Z:0, Y:0, X:8.685890)$, then multiply by attenuation coefficient with `14.5 {{key:×}}`, resolving total attenuation $(T:0, Z:0, Y:0, X:125.945405)$.
-
-Result: **$125.945\text{ dB/m}$**.
+Key `1 {{key:eˣ}} {{key:LOG}} 20 {{key:×}}` to calculate the Nepers-to-dB conversion factor ($8.685890\text{ dB/Np}$) in $X$ $(T: 0, Z: 0, Y: 0, X: 8.685890)$, then multiply by attenuation coefficient with `14.5 {{key:×}}`, resolving total attenuation $(T: 0, Z: 0, Y: 0, X: 125.945405)$, confirming **$125.945\text{ dB/m}$**.
 
 ---
 
 ### Problem 5.26: Plasma Physics Dielectric Permittivity
-**Ionosphere Context:** Cold plasma relative permittivity $\epsilon_r = 1 - \frac{\omega_p^2}{\omega(\omega - j\nu)}$.
+Cold plasma relative permittivity $\epsilon_r = 1 - \frac{\omega_p^2}{\omega(\omega - j\nu)}$.
 For $\omega_p = 10^7\text{ rad/s}, \omega = 2 \times 10^7\text{ rad/s}, \nu = 5 \times 10^6\text{ s}^{-1}$:
-Denominator $z = 2\cdot 10^7 (2\cdot 10^7 - 5\cdot 10^6 i) = 4\cdot 10^{14} - 1\cdot 10^{14} i$.
-Evaluated via `{{key:CMPLX}} {{key:1/x}}` $\implies \epsilon_r = \mathbf{0.7647 - 0.0588i}$.
-
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. Scale frequency by $10^7$ so $\omega_p = 1, \omega = 2, \nu = 0.5$; denominator becomes $z = 2(2 - 0.5i) = 4.0 - 1.0i$.
-2. `4` `{{key:ENTER}}` `1 {{key:+/-}}` — Load denominator components into Registers $(Y = 4.0, X = -1.0)$.
-3. `{{key:CMPLX}}` `{{key:1/x}}` — Evaluate complex reciprocal $1/(4-i) = (4+i)/17 = 0.235294 + 0.058824i$.
-4. Multiply by $\omega_p^2 = 1.0$ and subtract from unity; relative permittivity converges to $\epsilon_r = \mathbf{0.7647 - 0.0588i}$.
+Scaling frequency by $10^7$ gives $\omega_p = 1, \omega = 2, \nu = 0.5$, so the normalized denominator is $z = 2(2 - 0.5i) = 4.0 - 1.0i$. Load `4 {{key:ENTER}} 1 {{key:+/-}}` into $(Y, X)$, take the complex reciprocal via `{{key:CMPLX}} {{key:1/x}}` to obtain $1/(4-i) = 0.235294 + 0.058824i$, negate it with `{{key:CMPLX}} {{key:+/-}}`, and add unity via `1 {{key:ENTER}} 0 {{key:CMPLX}} {{key:+}}` to resolve $\epsilon_r = 0.764706 - 0.058824i$.
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
 | 1 | `4 {{key:ENTER}} 1 {{key:+/-}}` | $0.0000$ | $0.0000$ | $4.0000$ | $-1.0000$ | Scaled denominator $z = 4.0 - 1.0i$ |
-| 2 | `{{key:CMPLX}} {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.235294$ | $0.058824$ | Invert: $1/(4-i) = 0.2353 + 0.0588i$ |
-| 3 | `1 {{key:ENTER}} 0` | $0.235294$ | $0.058824$ | $1.0000$ | $0.0000$ | Unit real reference $1.0 + 0i$ in $(Y, X)$ |
-| 4 | `{{key:CMPLX}} {{key:-}}` | $0.235294$ | $0.235294$ | **$0.764706$** | **$-0.058824$** | Subtract from unity: $\epsilon_r = 0.7647 - 0.0588i$ |
+| 2 | `{{key:CMPLX}} {{key:1/x}} {{key:CMPLX}} {{key:+/-}}` | $0.0000$ | $0.0000$ | $-0.235294$ | $-0.058824$ | Negated reciprocal $-1/(4-i)$ |
+| 3 | `1 {{key:ENTER}} 0` | $-0.235294$ | $-0.058824$ | $1.0000$ | $0.0000$ | Unit real reference $1.0 + 0i$ in $(Y, X)$ |
+| 4 | `{{key:CMPLX}} {{key:+}}` | $-0.235294$ | $-0.235294$ | **$0.764706$** | **$-0.058824$** | Add unity: $\epsilon_r = 0.7647 - 0.0588i$ |
 
-Result: **$0.764706 - 0.058824i$**.
+Register $X$ settles at **$0.764706 - 0.058824i$**.
 
 ---
 
 ### Problem 5.27: Complex Impedance of Parallel RLC Tank at Resonance
-**RF Context:** Tank circuit with $R = 10\text{ k}\Omega, L = 10\,\mu\text{H}, C = 100\text{ pF}$. Resonant frequency $\omega_0 = 1/\sqrt{LC} = 31.6228\text{ Mrad/s}$. At resonance, reactive admittances cancel ($j\omega C + 1/(j\omega L) = 0$), leaving pure resistance:
+Tank circuit with $R = 10\text{ k}\Omega, L = 10\,\mu\text{H}, C = 100\text{ pF}$. Resonant frequency $\omega_0 = 1/\sqrt{LC} = 31.6228\text{ Mrad/s}$. At resonance, reactive admittances cancel ($j\omega C + 1/(j\omega L) = 0$), leaving pure resistance:
 $$\mathbf{Z}_{\text{tank}} = R = 10,000.0 + 0.0i\,\Omega$$
 
-Evaluate the reactive product with `10 {{key:E}} 6 {{key:+/-}} {{key:ENTER}} 100 {{key:E}} 12 {{key:+/-}} {{key:×}}` $(T:0, Z:0, Y:0, X:1.0 \times 10^{-15})$, extract the resonant frequency with `{{key:√x}} {{key:1/x}}` $(T:0, Z:0, Y:0, X:3.1623 \times 10^7)$, then load the resonant tank impedance `10000 {{key:ENTER}} 0` across $(Y, X)$, confirming purely resistive impedance $(T:0, Z:3.1623 \times 10^7, Y:10000.0000, X:0.0000)$.
-
-Result: **$10,000.0 + 0.0i\,\Omega$**.
+Evaluate the reactive product with `10 {{key:E}} 6 {{key:+/-}} {{key:ENTER}} 100 {{key:E}} 12 {{key:+/-}} {{key:×}}` $(T: 0, Z: 0, Y: 0, X: 1.0 \times 10^{-15})$, extract the resonant frequency with `{{key:√x}} {{key:1/x}}` $(T: 0, Z: 0, Y: 0, X: 3.1623 \times 10^7)$, then load the resonant tank impedance `10000 {{key:ENTER}} 0` across $(Y, X)$, confirming purely resistive impedance $(T: 0, Z: 3.1623 \times 10^7, Y: 10000.0000, X: 0.0000)$, confirming **$10,000.0 + 0.0i\,\Omega$**.
 
 ---
 
 ### Problem 5.28: Conformal Mapping: Joukowsky Airfoil Transformation
-**Aerodynamics Context:** Joukowsky transform maps cylinder to airfoil: $\zeta = z + \frac{c^2}{z}$.
+Joukowsky transform maps cylinder to airfoil: $\zeta = z + \frac{c^2}{z}$.
 For cylinder point $z = 1.1 + 0.2i$ and $c = 1.0$:
 $$\frac{1}{z} = \frac{1.1 - 0.2i}{1.21 + 0.04} = \frac{1.1 - 0.2i}{1.25} = 0.88 - 0.16i$$
 $$\zeta = (1.1 + 0.2i) + (0.88 - 0.16i) = \mathbf{1.980000 + 0.040000i}$$
 
-Load $z = 1.1 + 0.2i$ via `1.1 {{key:ENTER}} 0.2` $(T:0, Z:0, Y:1.1, X:0.2)$ and invert with `{{key:CMPLX}} {{key:1/x}}` to find $1/z$ $(T:0, Z:0, Y:0.880000, X:-0.160000)$. Reload $z$ into $(Y, X)$ via `1.1 {{key:ENTER}} 0.2` and sum with `{{key:CMPLX}} {{key:+}}`, mapping the airfoil boundary to $(T:0.88, Z:0.88, Y:1.980000, X:0.040000)$.
-
-Result: **$1.980000 + 0.040000i$**.
+Load $z = 1.1 + 0.2i$ via `1.1 {{key:ENTER}} 0.2` $(T: 0, Z: 0, Y: 1.1, X: 0.2)$ and invert with `{{key:CMPLX}} {{key:1/x}}` to find $1/z$ $(T: 0, Z: 0, Y: 0.880000, X: -0.160000)$. Reload $z$ into $(Y, X)$ via `1.1 {{key:ENTER}} 0.2` and sum with `{{key:CMPLX}} {{key:+}}`, mapping the airfoil boundary to $(T: 0.88, Z: 0.88, Y: 1.980000, X: 0.040000)$.
 
 ---
 
 ### Problem 5.29: Complex Root Extraction via de Moivre ($z^4 = -16$)
-**Algebra Context:** Roots of $z^4 = -16 = 16 e^{i\pi}$:
+Roots of $z^4 = -16 = 16 e^{i\pi}$:
 $r = 16^{1/4} = 2.0$. First root $\theta = \pi/4 = 45^\circ$:
 $$z_0 = 2(\cos 45^\circ + i\sin 45^\circ) = \sqrt{2} + i\sqrt{2} \approx 1.414214 + 1.414214i$$
 Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_28:keys}}`$\implies$ **$1.414214$ in $X$ and $Y$**.
 
-Key the angle and radial modulus `45 {{key:ENTER}} 2` into $(Y, X)$ $(T:0, Z:0, Y:45, X:2)$, then convert from polar to rectangular via `{{key:▸y,x}}`, extracting principal root $z_0 = 1.414214 + 1.414214i$ across $(T:0, Z:0, Y:1.414214, X:1.414214)$.
-
-Result: **$1.414214 + 1.414214i$**.
+Key the angle and radial modulus `45 {{key:ENTER}} 2` into $(Y, X)$ $(T: 0, Z: 0, Y: 45, X: 2)$, then convert from polar to rectangular via `{{key:▸y,x}}`, extracting principal root $z_0 = 1.414214 + 1.414214i$ across $(T: 0, Z: 0, Y: 1.414214, X: 1.414214)$.
 
 ---
 
 ### Problem 5.30: Skin Effect in Solid Copper Conductor
-**Electromagnetics Context:** Skin depth $\delta = \sqrt{2/(\omega \mu \sigma)}$. For copper ($\sigma = 5.8 \times 10^7\text{ S/m}$) at $f = 10\text{ MHz}$ ($\omega = 6.283185 \times 10^7\text{ rad/s}$):
+Skin depth $\delta = \sqrt{2/(\omega \mu \sigma)}$. For copper ($\sigma = 5.8 \times 10^7\text{ S/m}$) at $f = 10\text{ MHz}$ ($\omega = 6.283185 \times 10^7\text{ rad/s}$):
 $$\delta = \sqrt{\frac{2}{6.283185\cdot 10^7 \times 4\pi\cdot 10^{-7} \times 5.8\cdot 10^7}} \approx 2.089 \times 10^{-5}\text{ m} = \mathbf{20.89\,\mu\text{m}}$$
 
-Form permeability with `4 {{key:π}} {{key:×}} 1 {{key:E}} 7 {{key:+/-}} {{key:×}}` $(T:0, Z:0, Y:0, X:1.2566 \times 10^{-6})$, multiply by frequency and conductivity `6.283185 {{key:E}} 7 {{key:×}} 5.8 {{key:E}} 7 {{key:×}}` $(T:0, Z:0, Y:0, X:4.5828 \times 10^9)$, invert into ratio $2/(\omega\mu\sigma)$ with `2 {{key:x⇄y}} {{key:÷}}` $(T:0, Z:0, Y:0, X:4.3639 \times 10^{-10})$, and take the square root `{{key:√x}}`, arriving at skin depth $(T:0, Z:0, Y:0, X:2.0890 \times 10^{-5})$.
-
-Result: **$\delta = 20.89\,\mu\text{m}$**.
+Form permeability with `4 {{key:π}} {{key:×}} 1 {{key:E}} 7 {{key:+/-}} {{key:×}}` $(T: 0, Z: 0, Y: 0, X: 1.2566 \times 10^{-6})$, multiply by frequency and conductivity `6.283185 {{key:E}} 7 {{key:×}} 5.8 {{key:E}} 7 {{key:×}}` $(T: 0, Z: 0, Y: 0, X: 4.5795 \times 10^9)$, invert into ratio $2/(\omega\mu\sigma)$ with `2 {{key:x⇄y}} {{key:÷}}` $(T: 0, Z: 0, Y: 0, X: 4.3639 \times 10^{-10})$, and take the square root `{{key:√x}}`, arriving at skin depth $(T: 0, Z: 0, Y: 0, X: 2.0890 \times 10^{-5})$, confirming **$\delta = 20.89\,\mu\text{m}$**.
 
 ---
 
-### Problem 5.31: Lossy Transmission Line Complex Characteristic Impedance ($Z_0$)
-**RF Context:** $R' = 0.1\,\Omega/\text{m}, L' = 0.25\,\mu\text{H/m}, G' = 1\,\mu\text{S/m}, C' = 100\,\text{pF/m}$. At $\omega = 10^7\text{ rad/s}$:
-$$Z_0 = \sqrt{\frac{R' + j\omega L'}{G' + j\omega C'}} = \sqrt{\frac{0.1 + 2.5i}{10^{-6} + 10^{-3}i}} \approx \mathbf{49.9985 - 0.9995i\,\Omega}$$
+> **Thematic Arc IV — RF Transmission Lines, Smith Chart Matching & Wave Propagation (Problems 5.31–5.40):** The closing arc evaluates complex propagation constants, reflection coefficients $\Gamma$, and standing-wave ratios along high-frequency waveguides.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `0.1` `{{key:ENTER}}` `2.5` — Load transmission line series impedance $Z' = 0.1 + 2.5i$ across Registers $(Y, X)$.
-2. `1 {{key:E}} 6 {{key:+/-}}` `{{key:ENTER}}` `1 {{key:E}} 3 {{key:+/-}}` — Load shunt admittance $Y' = 10^{-6} + 10^{-3}i$ into $(Y, X)$, lifting $Z'$ to $(T, Z)$.
-3. `{{key:CMPLX}}` `{{key:÷}}` — Execute complex division $Z'/Y' \approx 2499.00 - 99.96i$.
-4. `{{key:CMPLX}}` `{{key:√x}}` — Extract complex square root in place; characteristic impedance evaluates to $Z_0 = \mathbf{49.9985 - 0.9995i\,\Omega}$.
+### Problem 5.31: Lossy Transmission Line Complex Characteristic Impedance ($Z_0$)
+$R' = 0.1\,\Omega/\text{m}, L' = 0.25\,\mu\text{H/m}, G' = 1\,\mu\text{S/m}, C' = 100\,\text{pF/m}$. At $\omega = 10^7\text{ rad/s}$:
+$$Z_0 = \sqrt{\frac{R' + j\omega L'}{G' + j\omega C'}} = \sqrt{\frac{0.1 + 2.5i}{10^{-6} + 10^{-3}i}} \approx \mathbf{50.0095 - 0.9748i\,\Omega}$$
+
+Load the series impedance $Z' = 0.1 + 2.5i$ across $(Y, X)$ via `0.1 {{key:ENTER}} 2.5 {{key:ENTER}}`, then enter the shunt admittance $Y' = 10^{-6} + 10^{-3}i$ via `1 {{key:E}} 6 {{key:+/-}} {{key:ENTER}} 1 {{key:E}} 3 {{key:+/-}}`. Execute `{{key:CMPLX}} {{key:÷}}` to compute $Z'/Y' = 2499.9975 - 97.4999i$, and extract the complex square root in place with `{{key:CMPLX}} {{key:√x}}` to resolve $Z_0 = 50.0095 - 0.9748i\,\Omega$.
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.1 {{key:ENTER}} 2.5` | $0.0000$ | $0.0000$ | $0.1000$ | $2.5000$ | Load series impedance $Z' = 0.1 + 2.5i$ |
+| 1 | `0.1 {{key:ENTER}} 2.5 {{key:ENTER}}` | $0.0000$ | $0.1000$ | $2.5000$ | $2.5000$ | Load series impedance $Z' = 0.1 + 2.5i$ |
 | 2 | `1 {{key:E}} 6 {{key:+/-}} {{key:ENTER}} 1 {{key:E}} 3 {{key:+/-}}` | $0.1000$ | $2.5000$ | $1.0000 \times 10^{-6}$ | $1.0000 \times 10^{-3}$ | Load shunt admittance $Y'$ into $(Y, X)$ |
-| 3 | `{{key:CMPLX}} {{key:÷}}` | $0.1000$ | $0.1000$ | $2499.0010$ | $-99.9575$ | Complex impedance ratio $Z'/Y'$ |
-| 4 | `{{key:CMPLX}} {{key:√x}}` | $0.1000$ | $0.1000$ | **$49.9985$** | **$-0.9995$** | Characteristic impedance $Z_0 = \sqrt{Z'/Y'}$ |
+| 3 | `{{key:CMPLX}} {{key:÷}}` | $0.1000$ | $0.1000$ | $2499.9975$ | $-97.4999$ | Complex impedance ratio $Z'/Y'$ |
+| 4 | `{{key:CMPLX}} {{key:√x}}` | $0.1000$ | $0.1000$ | **$50.0095$** | **$-0.9748$** | Characteristic impedance $Z_0 = \sqrt{Z'/Y'}$ |
 
-Result: **$49.9985 - 0.9995i\,\Omega$**.
+This confirms a final value of **$50.0095 - 0.9748i\,\Omega$**.
 
 ---
 
 ### Problem 5.32: Dispersion Relation in Fiber Optics (Group Velocity Dispersion)
-**Photonics Context:** Complex propagation constant $\beta(\omega) = \beta_0 + \beta_1(\omega - \omega_0) + \frac{1}{2}\beta_2(\omega - \omega_0)^2$. Pulse dispersion parameter $D = -2\pi c \beta_2 / \lambda^2$. For $\beta_2 = -20\text{ ps}^2/\text{km}$ at $\lambda = 1.55\,\mu\text{m}$:
+Complex propagation constant $\beta(\omega) = \beta_0 + \beta_1(\omega - \omega_0) + \frac{1}{2}\beta_2(\omega - \omega_0)^2$. Pulse dispersion parameter $D = -2\pi c \beta_2 / \lambda^2$. For $\beta_2 = -20\text{ ps}^2/\text{km}$ at $\lambda = 1.55\,\mu\text{m}$:
 $$D = \frac{-2\pi(3\cdot 10^8)(-20\cdot 10^{-27})}{(1.55\cdot 10^{-6})^2} \approx \mathbf{15.68\text{ ps/(nm}\cdot\text{km)}}$$
 
-Compute numerator $2\pi c |\beta_2|$ with `2 {{key:π}} {{key:×}} 3 {{key:E}} 8 {{key:×}} 20 {{key:E}} 27 {{key:+/-}} {{key:×}}` $(T:0, Z:0, Y:0, X:3.7699 \times 10^{-17})$, square wavelength with `1.55 {{key:E}} 6 {{key:+/-}} {{key:x²}}` $(T:0, Z:0, Y:3.7699 \times 10^{-17}, X:2.4025 \times 10^{-12})$, and divide and scale via `{{key:÷}} 1 {{key:E}} 6 {{key:×}}`, arriving at dispersion parameter $(T:0, Z:0, Y:0, X:15.6841)$.
-
-Result: **$15.68\text{ ps/(nm}\cdot\text{km)}$**.
+Compute numerator $2\pi c |\beta_2|$ with `2 {{key:π}} {{key:×}} 3 {{key:E}} 8 {{key:×}} 20 {{key:E}} 27 {{key:+/-}} {{key:×}}` $(T: 0, Z: 0, Y: 0, X: 3.7699 \times 10^{-17})$, square wavelength with `1.55 {{key:E}} 6 {{key:+/-}} {{key:x²}}` $(T: 0, Z: 0, Y: 3.7699 \times 10^{-17}, X: 2.4025 \times 10^{-12})$, and divide and scale via `{{key:÷}} 1 {{key:E}} 6 {{key:×}}`, arriving at dispersion parameter $(T: 0, Z: 0, Y: 0, X: 15.6841)$, confirming **$15.68\text{ ps/(nm}\cdot\text{km)}$**.
 
 ---
 
 ### Problem 5.33: Fractional Pole Filter: $s^{0.5}$ Fractional Calculus Impedance
-**Control Theory Context:** Warburg impedance in electrochemistry: $\mathbf{Z}_W = \frac{A_W}{\sqrt{\omega}} (1 - j)$.
+Warburg impedance in electrochemistry: $\mathbf{Z}_W = \frac{A_W}{\sqrt{\omega}} (1 - j)$.
 For $A_W = 200\,\Omega\cdot\text{s}^{-1/2}$ at $\omega = 100\text{ rad/s}$:
 $$\mathbf{Z}_W = \frac{200}{10} (1 - j) = \mathbf{20.0000 - 20.0000i\,\Omega}$$
 
-Evaluate $\sqrt{\omega}$ with `100 {{key:√x}}` $(T:0, Z:0, Y:0, X:10)$, compute scale factor $A_W/\sqrt{\omega} = 20\,\Omega$ with `200 {{key:x⇄y}} {{key:÷}}` $(T:0, Z:0, Y:0, X:20)$, and enter resistance and reactance directly `20 {{key:ENTER}} 20 {{key:+/-}}`, confirming Warburg impedance $(T:0, Z:20, Y:20.0000, X:-20.0000)$.
-
-Result: **$20.0000 - 20.0000i\,\Omega$**.
+Evaluate $\sqrt{\omega}$ with `100 {{key:√x}}` $(T: 0, Z: 0, Y: 0, X: 10)$, compute scale factor $A_W/\sqrt{\omega} = 20\,\Omega$ with `200 {{key:x⇄y}} {{key:÷}}` $(T: 0, Z: 0, Y: 0, X: 20)$, and enter resistance and reactance directly `20 {{key:ENTER}} 20 {{key:+/-}}`, confirming Warburg impedance $(T: 0, Z: 20, Y: 20.0000, X: -20.0000)$.
 
 ---
 
 ### Problem 5.34: Complex Poynting Vector & Electromagnetic Radiation Density
-**Antenna Physics Context:** $\mathbf{S}_{\text{cpx}} = \frac{1}{2} \mathbf{E} \times \mathbf{H}^*$. For $\mathbf{E} = 10.0 + 5.0i\text{ V/m}$ and $\mathbf{H} = 0.02 + 0.01i\text{ A/m}$:
+$\mathbf{S}_{\text{cpx}} = \frac{1}{2} \mathbf{E} \times \mathbf{H}^*$. For $\mathbf{E} = 10.0 + 5.0i\text{ V/m}$ and $\mathbf{H} = 0.02 + 0.01i\text{ A/m}$:
 $$\mathbf{H}^* = 0.02 - 0.01i \implies \mathbf{E} \cdot \mathbf{H}^* = (10+5i)(0.02-0.01i) = (0.2 + 0.05) + (-0.1 + 0.1)i = 0.25 + 0i$$
 Average radiated power: $\text{Re}(\mathbf{S}_{\text{cpx}}) = 0.5 \times 0.25 = \mathbf{0.125\text{ W/m}^2}$.
 
-Load electric field $\mathbf{E}$ via `10 {{key:ENTER}} 5 {{key:ENTER}}` and conjugate magnetic field $\mathbf{H}^*$ via `0.02 {{key:ENTER}} 0.01 {{key:+/-}}`, placing $(T:10, Z:5, Y:0.02, X:-0.01)$. Execute `{{key:CMPLX}} {{key:×}}` to obtain $0.25 + 0i$ $(T:10, Z:10, Y:0.25, X:0)$, and divide by 2 with `2 {{key:÷}}`, giving average radiation density $(T:10, Z:10, Y:0.25, X:0.1250)$.
-
-Result: **$0.125\text{ W/m}^2$**.
+Load electric field $\mathbf{E}$ via `10 {{key:ENTER}} 5 {{key:ENTER}}` and conjugate magnetic field $\mathbf{H}^*$ via `0.02 {{key:ENTER}} 0.01 {{key:+/-}}`, placing $(T: 10, Z: 5, Y: 0.02, X: -0.01)$. Execute `{{key:CMPLX}} {{key:×}}` to obtain $0.25 + 0i$ $(T: 10, Z: 10, Y: 0.25, X: 0)$, swap the real part into Register $X$, and divide by 2 with `{{key:x⇄y}} 2 {{key:÷}}`, giving average radiation density $(T: 10, Z: 10, Y: 0, X: 0.1250)$, confirming **$0.125\text{ W/m}^2$**.
 
 ---
 
 ### Problem 5.35: Sagnac Ring Interferometer Phase Shift
-**Avionics Context:** Fiber optic gyroscope: $\Delta\Phi = \frac{8\pi A N}{c \lambda} \Omega$. For coil area $A = 0.01\text{ m}^2$, $N = 1000\text{ turns}$, $\lambda = 1.31\,\mu\text{m}$, rotation rate $\Omega = 1.0\text{ rad/s}$:
-$$\Delta\Phi = \frac{8\pi(0.01)(1000)}{(3\cdot 10^8)(1.31\cdot 10^{-6})} \approx \mathbf{0.6402\text{ radians}}$$
+Fiber optic gyroscope: $\Delta\Phi = \frac{8\pi A N}{c \lambda} \Omega$. For coil area $A = 0.01\text{ m}^2$, $N = 1000\text{ turns}$, $\lambda = 1.31\,\mu\text{m}$, rotation rate $\Omega = 1.0\text{ rad/s}$:
+$$\Delta\Phi = \frac{8\pi(0.01)(1000)}{(3\cdot 10^8)(1.31\cdot 10^{-6})} \approx \mathbf{0.6395\text{ radians}}$$
 
-Form optical area-turns product with `8 {{key:π}} {{key:×}} 0.01 {{key:×}} 1000 {{key:×}}` $(T:0, Z:0, Y:0, X:251.3274)$, compute $c\lambda$ with `3 {{key:E}} 8 {{key:ENTER}} 1.31 {{key:E}} 6 {{key:+/-}} {{key:×}}` $(T:0, Z:0, Y:251.3274, X:393.0000)$, and divide with `{{key:÷}}`, resolving Sagnac phase shift $(T:0, Z:0, Y:0, X:0.6402)$.
-
-Result: **$0.6402\text{ radians}$**.
+Form optical area-turns product with `8 {{key:π}} {{key:×}} 0.01 {{key:×}} 1000 {{key:×}}` $(T: 0, Z: 0, Y: 0, X: 251.3274)$, compute $c\lambda$ with `3 {{key:E}} 8 {{key:ENTER}} 1.31 {{key:E}} 6 {{key:+/-}} {{key:×}}` $(T: 0, Z: 0, Y: 251.3274, X: 393.0000)$, and divide with `{{key:÷}}`, resolving Sagnac phase shift $(T: 0, Z: 0, Y: 0, X: 0.6395)$.
 
 ---
 
 ### Problem 5.36: Transformer T-Model Core Loss Branch
-**Power Systems Context:** Parallel magnetizing branch: $R_c = 50\text{ k}\Omega \parallel X_m = 15\text{ k}\Omega$. Total complex excitation admittance:
+Parallel magnetizing branch: $R_c = 50\text{ k}\Omega \parallel X_m = 15\text{ k}\Omega$. Total complex excitation admittance:
 $$\mathbf{Y}_m = \frac{1}{50000} - j\frac{1}{15000} = 2.0 \times 10^{-5} - 6.6667 \times 10^{-5}i\,\text{S}$$
-Impedance: $\mathbf{Z}_m = 1/\mathbf{Y}_m = \mathbf{4,137.93 + 13,793.10i\,\Omega}$.
+Impedance: $\mathbf{Z}_m = 1/\mathbf{Y}_m = \mathbf{4,128.44 + 13,761.47i\,\Omega}$.
 
-Key core conductance `50000 {{key:1/x}}` $(T:0, Z:0, Y:0, X:2.0 \times 10^{-5})$ and susceptance `15000 {{key:1/x}} {{key:+/-}}` $(T:0, Z:0, Y:2.0 \times 10^{-5}, X:-6.6667 \times 10^{-5})$, then take complex reciprocal with `{{key:CMPLX}} {{key:1/x}}`, arriving at equivalent branch impedance $(T:0, Z:0, Y:4137.9310, X:13793.1034)$.
-
-Result: **$4,137.93 + 13,793.10i\,\Omega$**.
+Key core conductance `50000 {{key:1/x}}` $(T: 0, Z: 0, Y: 0, X: 2.0 \times 10^{-5})$ and susceptance `15000 {{key:1/x}} {{key:+/-}}` $(T: 0, Z: 0, Y: 2.0 \times 10^{-5}, X: -6.6667 \times 10^{-5})$, then take complex reciprocal with `{{key:CMPLX}} {{key:1/x}}`, arriving at equivalent branch impedance $(T: 0, Z: 0, Y: 4128.4404, X: 13761.4679)$, confirming **$4,128.44 + 13,761.47i\,\Omega$**.
 
 ---
 
 ### Problem 5.37: Elliptical Polarization Axial Ratio from Orthogonal E-Phasors
-**RF Context:** $\mathbf{E}_x = 10\angle 0^\circ = 10 + 0i$, $\mathbf{E}_y = 6\angle 90^\circ = 0 + 6i$.
+$\mathbf{E}_x = 10\angle 0^\circ = 10 + 0i$, $\mathbf{E}_y = 6\angle 90^\circ = 0 + 6i$.
 Major axis $a = 10.0$, minor axis $b = 6.0$. Axial ratio:
 $$\text{AR} = \frac{10.0}{6.0} = 1.6667 \implies \text{AR}_{\text{dB}} = 20 \log_{10}(1.6667) = \mathbf{4.4370\text{ dB}}$$
 
-Key `10 {{key:ENTER}} 6 {{key:÷}}` $(T:0, Z:0, Y:0, X:1.666667)$ to divide the axes, take the base-10 logarithm with `{{key:LOG}}` $(T:0, Z:0, Y:0, X:0.221849)$, and scale with `20 {{key:×}}` to determine polarization axial ratio in decibels $(T:0, Z:0, Y:0, X:4.436975)$.
-
-Result: **$4.4370\text{ dB}$**.
+Key `10 {{key:ENTER}} 6 {{key:÷}}` $(T: 0, Z: 0, Y: 0, X: 1.666667)$ to divide the axes, take the base-10 logarithm with `{{key:LOG}}` $(T: 0, Z: 0, Y: 0, X: 0.221849)$, and scale with `20 {{key:×}}` to determine polarization axial ratio in decibels $(T: 0, Z: 0, Y: 0, X: 4.436975)$, confirming **$4.4370\text{ dB}$**.
 
 ---
 
 ### Problem 5.38: Complex Root Finding of Quadratic with Real Coefficients
-**Algebra Context:** $z^2 - 4z + 13 = 0$. Roots: $z = \frac{4 \pm \sqrt{16 - 52}}{2} = 2 \pm \sqrt{-9} = 2 \pm 3i$.
+$z^2 - 4z + 13 = 0$. Roots: $z = \frac{4 \pm \sqrt{16 - 52}}{2} = 2 \pm \sqrt{-9} = 2 \pm 3i$.
 Verify root $2 + 3i$: $(2+3i)^2 - 4(2+3i) + 13 = (-5 + 12i) - (8 + 12i) + 13 = \mathbf{0.0 + 0.0i}$.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `2` `{{key:ENTER}}` `3` — Load candidate complex root $z_1 = 2.0 + 3.0i$ across Registers $(Y, X)$.
-2. `{{key:CMPLX}}` `{{key:ENTER}}` — Duplicate the complex number into $(T, Z)$ so both $(T, Z)$ and $(Y, X)$ contain $2.0 + 3.0i$.
-3. `{{key:CMPLX}}` `{{key:×}}` — Execute complex square, yielding $z_1^2 = -5.0000 + 12.0000i$ across $(Y, X)$.
-4. `8` `{{key:ENTER}}` `12` `{{key:CMPLX}}` `{{key:-}}` `13` `{{key:+}}` — Deduct $4z_1 = 8 + 12i$ and add scalar constant 13; polynomial residual verifies to $\mathbf{0.0000 + 0.0000i}$.
+Key the candidate root $z_1 = 2 + 3i$ via `2 {{key:ENTER}} 3` and square it in place with `{{key:CMPLX}} {{key:x²}}` to form $z_1^2 = -5 + 12i$ across $(Y, X)$. Subtract the linear term $4z_1 = 8 + 12i$ via `8 {{key:ENTER}} 12 {{key:CMPLX}} {{key:-}}`, and add the real constant $13 + 0i$ via `13 {{key:ENTER}} 0 {{key:CMPLX}} {{key:+}}` to verify that the polynomial residual vanishes to $0.0000 + 0.0000i$.
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2 {{key:ENTER}} 3 {{key:ENTER}}` | $0.0000$ | $2.0000$ | $3.0000$ | $3.0000$ | Candidate complex root $z_1 = 2 + 3i$ pushed |
-| 2 | `2 {{key:ENTER}} 3` | $2.0000$ | $3.0000$ | $2.0000$ | $3.0000$ | Duplicate complex pair into $(Y, X)$ |
-| 3 | `{{key:CMPLX}} {{key:×}}` | $2.0000$ | $2.0000$ | $-5.0000$ | $12.0000$ | Complex square $z_1^2 = -5 + 12i$ |
-| 4 | `8 {{key:ENTER}} 12 {{key:CMPLX}} {{key:-}}` | $-5.0000$ | $-5.0000$ | $-13.0000$ | $0.0000$ | Subtract $4z_1 = 8 + 12i$ |
-| 5 | `13 {{key:+}}` | $-5.0000$ | $-5.0000$ | **$0.0000$** | **$0.0000$** | Add scalar 13; residual $= 0.0 + 0.0i$ |
+| 1 | `2 {{key:ENTER}} 3` | $0.0000$ | $0.0000$ | $2.0000$ | $3.0000$ | Candidate complex root $z_1 = 2 + 3i$ loaded |
+| 2 | `{{key:CMPLX}} {{key:x²}}` | $0.0000$ | $0.0000$ | $-5.0000$ | $12.0000$ | Complex square $z_1^2 = -5 + 12i$ in place |
+| 3 | `8 {{key:ENTER}} 12 {{key:CMPLX}} {{key:-}}` | $-5.0000$ | $-5.0000$ | $-13.0000$ | $0.0000$ | Subtract $4z_1 = 8 + 12i$ |
+| 4 | `13 {{key:ENTER}} 0 {{key:CMPLX}} {{key:+}}` | $-13.0000$ | $-13.0000$ | **$0.0000$** | **$0.0000$** | Add $13 + 0i$; residual $= 0.0 + 0.0i$ |
 
-Result: **$0.0000 + 0.0000i$**.
+Register $X$ settles at **$0.0000 + 0.0000i$**.
 
 ---
 
 ### Problem 5.39: High-Speed Sprint: Chained Complex Admittance Evaluation
-**Rapid Calculation Context:** Compute the equivalent impedance of $Z_1 = 3 + 4i$ and $Z_2 = 3 - 4i$ in parallel:
+Compute the equivalent impedance of $Z_1 = 3 + 4i$ and $Z_2 = 3 - 4i$ in parallel:
 $$\frac{1}{Z_{\text{parallel}}} = \frac{1}{3+4i} + \frac{1}{3-4i} = \frac{3-4i}{25} + \frac{3+4i}{25} = \frac{6}{25} \implies Z_{\text{parallel}} = \frac{25}{6} = \mathbf{4.166667\,\Omega}$$
 Imaginary parts cancel completely! Keystrokes: `{{res:sc32_05_complex_numbers_phasors_seq_32:keys}}` $\implies$ **$4.166667$**.
 
-> **Named RPN Stack Idiom: *The Parallel Reciprocal x∥y Shortcut & Admittance Sprint*** — Invert conjugate impedances $Z_1 = 3+4i$ and $Z_2 = 3-4i$ directly in the stack; imaginary components cancel automatically, yielding exact parallel resistance in one step {{cite:hp15c1982}}.
+> ***The Parallel Reciprocal x∥y Shortcut & Admittance Sprint*** — Invert conjugate impedances $Z_1 = 3+4i$ and $Z_2 = 3-4i$ directly in the stack; imaginary components cancel automatically, yielding exact parallel resistance in one step {{cite:hp15c1982}}.
 
-**Step-by-Step RPN Reasoning & Stack Logic:**
-1. `3` `{{key:ENTER}}` `4` — Place complex branch impedance $Z_1 = 3 + 4i$ across Registers $(Y, X)$.
-2. `{{key:CMPLX}}` `{{key:1/x}}` — Take complex reciprocal to obtain admittance $Y_1 = 0.12 - 0.16i\,\text{S}$.
-3. `3` `{{key:ENTER}}` `4 {{key:+/-}}` — Enter second impedance branch $Z_2 = 3 - 4i$.
-4. `{{key:CMPLX}}` `{{key:1/x}}` — Take complex reciprocal to yield admittance $Y_2 = 0.12 + 0.16i\,\text{S}$.
-5. `{{key:CMPLX}}` `{{key:+}}` — Sum admittances; conjugate imaginary reactances cancel, leaving conductance $G = 0.24\,\text{S}$.
-6. `{{key:1/x}}` — Invert conductance to obtain net parallel resistance $Z_{\text{parallel}} = \mathbf{4.166667\,\Omega}$.
+Place the first branch impedance $Z_1 = 3 + 4i$ across $(Y, X)$ via `3 {{key:ENTER}} 4` and take its complex reciprocal with `{{key:CMPLX}} {{key:1/x}}` to obtain admittance $Y_1 = 0.12 - 0.16i\,\text{S}$. Because the conjugate branch $Z_2 = 3 - 4i$ has admittance $Y_2 = 0.12 + 0.16i\,\text{S}$, their imaginary susceptances cancel; swap real conductance $G = 0.12\,\text{S}$ to Register $X$ with `{{key:x⇄y}}`, double it via `2 {{key:×}}`, and invert with `{{key:1/x}}` to resolve net parallel resistance $Z_{\text{parallel}} = 4.166667\,\Omega$.
 
 | Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -987,7 +889,7 @@ Imaginary parts cancel completely! Keystrokes: `{{res:sc32_05_complex_numbers_ph
 | 4 | `2 {{key:×}}` | $0.0000$ | $0.0000$ | $-0.160000$ | $0.240000$ | Double conductance (imag parts cancel) |
 | 5 | `{{key:1/x}}` | $0.0000$ | $0.0000$ | $-0.160000$ | **$4.166667$** | Invert net conductance: $Z_{\text{parallel}} = 4.1667\,\Omega$ |
 
-Result: **$4.166667\,\Omega$**.
+This confirms a final value of **$4.166667\,\Omega$**.
 
 ---
 
@@ -996,11 +898,9 @@ Result: **$4.166667\,\Omega$**.
 $$e^{i\pi/2} = i \implies \sqrt{i} = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i \approx 0.707107 + 0.707107i$$
 **Keystrokes:** `{{res:sc32_05_complex_numbers_phasors_seq_29:keys}}` $\rightarrow$ **`{{res:sc32_05_complex_numbers_phasors_seq_29:value}}`**
 
-> **Named RPN Stack Idiom: *The Inside-Out Radical & Euler Polar Identity*** — Load Euler imaginary exponent $e^{i\pi/2} = i$, extract complex square root directly, and resolve $\sqrt{i} = \sqrt{2}/2 + i\sqrt{2}/2$ without scratchpad memory {{cite:strogatz2019,hp15c1982}}.
+> ***The Inside-Out Radical & Euler Polar Identity*** — Load Euler imaginary exponent $e^{i\pi/2} = i$, extract complex square root directly, and resolve $\sqrt{i} = \sqrt{2}/2 + i\sqrt{2}/2$ without scratchpad memory {{cite:strogatz2019,hp15c1982}}.
 
-Enter imaginary exponent $\pi/2$ via `0 {{key:ENTER}} {{key:π}} 2 {{key:÷}}` $(T:0, Z:0, Y:0, X:1.570796)$, evaluate complex exponential with `{{key:CMPLX}} {{key:eˣ}}` $(T:0, Z:0, Y:0.000000, X:1.000000)$, and extract the square root with `{{key:CMPLX}} {{key:√x}}`, producing $(T:0, Z:0, Y:0.707107, X:0.707107)$ in 4 seconds flat!
-
-Result: **$0.707107 + 0.707107i$**.
+Enter imaginary exponent $\pi/2$ via `0 {{key:π}} 2 {{key:÷}}` $(T: 0, Z: 0, Y: 0, X: 1.570796)$, evaluate complex exponential with `{{key:CMPLX}} {{key:eˣ}}` $(T: 0, Z: 0, Y: 0.000000, X: 1.000000)$, and extract the square root with `{{key:CMPLX}} {{key:√x}}`, producing $(T: 0, Z: 0, Y: 0.707107, X: 0.707107)$ in 4 seconds flat!
 
 Stack outputs: **$Y = 0.707107$**, **$X = 0.707107$** in 4 seconds flat!
 

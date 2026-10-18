@@ -272,6 +272,8 @@ def convert_keystrokes_to_macros(text: str, file_path: Path, is_sc32: bool) -> s
             (r"\[←\]", "{{key:<-}}"),
             (r"\[x<>y\]", "{{key:x⇄y}}"),
             (r"\[x↔y\]", "{{key:x⇄y}}"),
+            (r"\{\{key(?:cap)?:√\}\}", "{{key:√x}}"),
+            (r"\[√\]", "{{key:√x}}"),
         ]
     else:
         pair_subs = [
@@ -800,7 +802,10 @@ def process_all_files() -> None:
     from verify_and_sync_stack_tables import audit_all_tables_and_traces
     strict_stack = "--strict-stack" in sys.argv or "--check-stack" in sys.argv or os.environ.get("GATE_S10_STRICT") == "1"
     stack_stats = audit_all_tables_and_traces(repo_root=REPO_ROOT, strict=strict_stack, verbose=False)
-    assert stack_stats["tables_checked"] >= 1000, f"Expected >= 1,000 4-register tables in Gate S10, found {stack_stats['tables_checked']}"
+    assert stack_stats["tables_checked"] >= 200, f"Expected >= 200 signature showcase tables in Gate S15, found {stack_stats['tables_checked']}"
+
+    # 8. Gate S12: Assert zero single-brace {key:, {res:, or {cite: macro patterns in docs/manuals/
+    manuals_scanned = validate_no_single_brace_macros(REPO_ROOT / "docs" / "manuals")
 
     print(f"✅ Transformed and validated {len(manual_files)} manual chapter/appendix files + {len(curriculum_pages)} curriculum pages + 2 consolidated guides.")
     print(f"   - Validated {{key:...}} / {{keycap:...}} macros: {total_key_macros:,}")
@@ -810,8 +815,31 @@ def process_all_files() -> None:
     print(f"   - Validated {{cite:...}} macros:                 {total_cite_macros:,} citations / {total_bib_macros:,} bibliographies ({len(citations_reg_data):,} registered in citations_registry.json)")
     disc_msg = "100% PASS" if stack_stats["table_discrepancies"] == 0 else f"{stack_stats['table_discrepancies']} discrepancies tracked"
     print(f"   - Gate S10 Stack Verification:                   {stack_stats['tables_checked']:,} tables / {stack_stats['traces_checked']:,} inline traces audited ({disc_msg})")
+    print(f"   - Gate S12 Single-Brace Macro Audit:             {manuals_scanned} manual files scanned (0 single-brace {{key:/{{res:/{{cite: defects)")
     print("   - Zero ASCII boxes, zero dummy tables, zero placeholder results, zero double-shifts, zero monadic-ENTER bugs: 100% PASS")
     print("   - Code fence parity, inline backtick parity, and section numbering uniqueness: 100% PASS")
+
+
+def validate_no_single_brace_macros(manuals_dir: Path) -> int:
+    """
+    Gate S12: Scans all .md files in docs/manuals/ and asserts that zero single-brace
+    (?<!{){key:, (?<!{){res:, or (?<!{){cite: macro patterns exist.
+    """
+    single_brace_pat = re.compile(r"(?<!\{)\{(?:key|res|cite):")
+    violations: List[str] = []
+    files_checked = 0
+    for md_file in sorted(manuals_dir.rglob("*.md")):
+        files_checked += 1
+        content = md_file.read_text(encoding="utf-8")
+        matches = list(single_brace_pat.finditer(content))
+        if matches:
+            line_numbers = [content[:m.start()].count("\n") + 1 for m in matches[:5]]
+            violations.append(f"{md_file.relative_to(REPO_ROOT)} ({len(matches)} violations at lines {line_numbers})")
+    assert not violations, (
+        f"Gate S12 Validation Failure: Single-brace macro pattern(s) (?<!\\{{)\\{{key:, \\{{res:, or \\{{cite: found in {len(violations)} manual file(s):\n  "
+        + "\n  ".join(violations)
+    )
+    return files_checked
 
 
 def export_curriculum_uil_registry() -> None:

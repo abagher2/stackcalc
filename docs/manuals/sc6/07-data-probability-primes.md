@@ -82,7 +82,7 @@ Standard Base-10 Arithmetic &bull; 4-Stack XYZT &bull; Clean Transflective Displ
 <p>
 • <strong>Probability &amp; Randomness:</strong> <code>{{key:🎲}}</code> Polyhedral Dice Sandbox, <code>{{key:1…x}}</code> (Random 1 to X), <code>{{key:t…x}}</code> (Random Y to X).<br>
 • <strong>Number Theory Keys:</strong> <code>{{key:PRIME}}</code> Primality Test, <code>{{key:FACT}}</code> Prime Factor Decomposition, <code>{{key:C.FAC}}</code> Common Factors, <code>{{key:GCF}}</code> Greatest Common Factor, <code>{{key:LCM}}</code> Least Common Multiple, <code>y⟌x</code> (Quotient &amp; Remainder).<br>
-• <strong>Descriptive Statistics:</strong> <code>{{key:Σ+}}</code> Accumulator, <code>{{key:Σ-}}</code> Correction, <code>{{key:N}}</code> Sample Count, <code>{{key:Σx}}</code> / <code>{{key:Σx}}</code> Sum, <code>{{key:x̄}}</code> Mean $\bar{x}$, <code>{{key:MED}}</code> Median, <code>{{key:MODE}}</code> Mode, <code>{{key:MIN}}</code> Minimum, <code>{{key:MAX}}</code> Maximum, <code>{{key:IQR}}</code> Interquartile Range, <code>{{key:MAD}}</code> Mean Absolute Deviation, <code>{{key:FRQ}}</code> Frequency of X.<br>
+• <strong>Descriptive Statistics:</strong> <code>{{key:Σ+}}</code> Accumulator, <code>{{key:Σ-}}</code> Correction, <code>{{key:N}}</code> Sample Count, <code>{{key:Σx}}</code> Sum, <code>{{key:Σx²}}</code> Sum of Squares, <code>{{key:x̄}}</code> Mean $\bar{x}$, <code>{{key:MED}}</code> Median, <code>{{key:MODE}}</code> Mode, <code>{{key:MIN}}</code> Minimum, <code>{{key:MAX}}</code> Maximum, <code>{{key:IQR}}</code> Interquartile Range, <code>{{key:MAD}}</code> Mean Absolute Deviation, <code>{{key:FRQ}}</code> Frequency of X.<br>
 • <strong>Grade 6 Pre-Algebra:</strong> <code>{{key:+/-}}</code> Signed Numbers (Zero Pairs), <code>{{key:|x|}}</code> Absolute Value (Number Line Distance), Geometric <code>{{key:x²}}</code> and <code>{{key:√x}}</code> (Area-to-Side Inverses).<br>
 <em>Strict Pedagogical Gatekeeping: In accordance with developmental cognitive standards, 5th graders and younger NEVER see logarithms (<code>LOG</code>, <code>LN</code>) or abstract powers (<code>yˣ</code>). Advanced functions are segregated exclusively into secondary advanced math extensions.</em>
 </p>
@@ -93,7 +93,6 @@ Standard Base-10 Arithmetic &bull; 4-Stack XYZT &bull; Clean Transflective Displ
 ## Concrete Foundations: Two-Color Counters, Polyhedral Dice & The Sieve Grid
 
 Before we tap keys on the calculator, we roll real dice, balance counters, and build number arrays with our hands. When you understand what the numbers look like on your desk, the calculator becomes your ultimate math assistant.
-
 
 <div class="admonition note">
 <p class="admonition-title">Concrete Probability &amp; Number Theory Manipulatives</p>
@@ -171,8 +170,8 @@ $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73,
 </div>
 
 You verify each standing tile on the SC-6:
-- `{{res:sc6_07_data_probability_primes_seq_68:keys}}` $\longrightarrow$ Flashes `PRIME` ($X = 1$).
-- `{{res:sc6_07_data_probability_primes_seq_69:keys}}` $\longrightarrow$ Flashes `COMPOSITE` ($X = 0$, $91 = 7 \times 13$).
+- `{{res:sc6_07_data_probability_primes_seq_68:keys}}` $\longrightarrow$ Flashes `PRIME` (preserving 97 on display).
+- `{{res:sc6_07_data_probability_primes_seq_69:keys}}` $\longrightarrow$ Flashes `COMPOSITE` (preserving 91 on display; $91 = 7 \times 13$).
 - The sieve makes it visually obvious why $91$ is composite while $97$ is prime!
 
 ---
@@ -222,40 +221,37 @@ $$\text{Theoretical Probability: } P(4) = \frac{1}{6} \approx 0.1667 \ (16.67\%)
 $$\text{Expected Frequency: } 60 \times \frac{1}{6} = 10\text{ times}$$
 
 > **RPN Evaluation of Experimental Probability:**
-> 12 {{key:ENTER}} 60 {{key:÷}}  -> 0.2000 (20.0%)
+> 12 {{key:ENTER}} 60 {{key:÷}}  $\to$ 0.2000 (20.0%)
 >
 > Percentage Difference:
-> 0.20 {{key:ENTER}} {{key:1}} {{key:ENTER}} {{key:6}} {{key:÷}} {{key:-}}  -> 0.0333 (+3.33% deviation)
+> 0.20 {{key:ENTER}} {{key:1}} {{key:ENTER}} {{key:6}} {{key:÷}} {{key:-}}  $\to$ 0.0333 (+3.33% deviation)
 
 ---
 
 ### Compound Probability: Rolling Two Dice (36 Outcomes)
 When two standard dice are rolled simultaneously, the sample space consists of $6 \times 6 = 36$ equally likely ordered pairs $(D_1, D_2)$. The sum $S = D_1 + D_2$ ranges from $2$ to $12$, forming a symmetric triangular probability distribution:
 
-> **TWO-DICE SUM DISTRIBUTION (36 OUTCOMES)**
->
-> Sum (S)   Favorable Outcomes (D1, D2)                     Count   Prob P(S)
-> -------------------------------------------------------------------------
-> 2       (1,1)                                             1      1/36
-> 3       (1,2), (2,1)                                      2      2/36
-> 4       (1,3), (2,2), (3,1)                               3      3/36
-> 5       (1,4), (2,3), (3,2), (4,1)                        4      4/36
-> 6       (1,5), (2,4), (3,3), (4,2), (5,1)                 5      5/36
-> 7       (1,6), (2,5), (3,4), (4,3), (5,2), (6,1)         6      6/36
-> 8       (2,6), (3,5), (4,4), (5,3), (6,2)                 5      5/36
-> 9       (3,6), (4,5), (5,4), (6,3)                        4      4/36
-> 10       (4,6), (5,5), (6,4)                               3      3/36
-> 11       (5,6), (6,5)                                      2      2/36
-> 12       (6,6)                                             1      1/36
-> -------------------------------------------------------------------------
-> Total Possible Outcomes:                                    36     36/36
+| Sum ($S$) | Favorable Ordered Pairs $(D_1, D_2)$ | Count | Probability $P(S)$ |
+| :---: | :--- | :---: | :---: |
+| **$2$** | $(1,1)$ | $1$ | $1/36$ |
+| **$3$** | $(1,2), (2,1)$ | $2$ | $2/36 = 1/18$ |
+| **$4$** | $(1,3), (2,2), (3,1)$ | $3$ | $3/36 = 1/12$ |
+| **$5$** | $(1,4), (2,3), (3,2), (4,1)$ | $4$ | $4/36 = 1/9$ |
+| **$6$** | $(1,5), (2,4), (3,3), (4,2), (5,1)$ | $5$ | $5/36$ |
+| **$7$** | $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)$ | **$6$** | **$6/36 = 1/6$** |
+| **$8$** | $(2,6), (3,5), (4,4), (5,3), (6,2)$ | $5$ | $5/36$ |
+| **$9$** | $(3,6), (4,5), (5,4), (6,3)$ | $4$ | $4/36 = 1/9$ |
+| **$10$** | $(4,6), (5,5), (6,4)$ | $3$ | $3/36 = 1/12$ |
+| **$11$** | $(5,6), (6,5)$ | $2$ | $2/36 = 1/18$ |
+| **$12$** | $(6,6)$ | $1$ | $1/36$ |
+| **Total** | **All $6 \times 6$ Outcomes** | **$36$** | **$36/36 = 1.00$** |
 
 #### Worked Example 7.2: Probability of Rolling a Lucky 7
 Find the exact fractional and decimal probability of rolling a sum of 7 with two dice.
 
 > **Keystrokes:**
-> {{key:6}} {{key:ENTER}} 36 {{key:÷}}       -> 0.166667
-> {{key:FDISP}}                       -> 1/6 (Simplified mixed/proper display)
+> {{key:6}} {{key:ENTER}} 36 {{key:÷}}       $\to$ 0.166667
+> {{key:FDISP}}                       $\to$ 1/6 (Simplified mixed/proper display)
 The probability is exactly $1/6 \approx \mathbf{16.67\%}$.
 
 ### Probability Trees & Sampling Without Replacement
@@ -273,8 +269,8 @@ You reach into a cloth bag containing 5 Red and 3 Blue marbles and draw two marb
 $$P(\text{Both Blue}) = P(\text{Blue}_1) \times P(\text{Blue}_2 \mid \text{Blue}_1) = \frac{3}{8} \times \frac{2}{7} = \frac{6}{56} = \frac{3}{28}$$
 
 > **RPN Evaluation:**
-> {{key:3}} {{key:ENTER}} {{key:8}} {{key:÷}} {{key:2}} {{key:ENTER}} {{key:7}} {{key:÷}} {{key:×}}  -> 0.107143
-> {{key:FDISP}}                                       -> 3/28
+> {{key:3}} {{key:ENTER}} {{key:8}} {{key:÷}} {{key:2}} {{key:ENTER}} {{key:7}} {{key:÷}} {{key:×}}  $\to$ 0.107143
+> {{key:FDISP}}                                       $\to$ 3/28
 The probability of drawing two consecutive blue marbles is $3/28 \approx \mathbf{10.71\%}$.
 
 #### Worked Example 7.4: Probability of At Least One Red Marble
@@ -282,8 +278,8 @@ Using the complement rule, the probability of drawing *at least one* red marble 
 $$P(\text{At least one Red}) = 1 - P(\text{Both Blue}) = 1 - \frac{3}{28} = \frac{25}{28}$$
 
 > **Keystrokes:**
-> {{key:1}} {{key:ENTER}} {{key:3}} {{key:ENTER}} 28 {{key:÷}} {{key:-}}  -> 0.892857
-> {{key:FDISP}}                                   -> 25/28
+> {{key:1}} {{key:ENTER}} {{key:3}} {{key:ENTER}} 28 {{key:÷}} {{key:-}}  $\to$ 0.892857
+> {{key:FDISP}}                                   $\to$ 25/28
 The probability is $\mathbf{25/28} \approx \mathbf{89.29\%}$.
 
 ---
@@ -297,14 +293,15 @@ Number theory explores the structural properties of whole numbers. Prime numbers
 
 | Stage | Modality | Classroom Experience & Manipulatives | SC-6 Calculator Bridge |
 | :--- | :--- | :--- | :--- |
-| **Concrete** | Physical Manipulatives | • **144-Tile Array Test:** Primes form only $1 \times N$ straight lines; composites form 2D matrices.<br>• **Prime Factor Studio:** Proportional prime towers where stacking prime blocks physically multiplies their values!<br>• Height(2) + Height(3) = Height(6) on the comparator stage! | Physical verification before keystrokes |
+| **Concrete** | Physical Manipulatives | • **24-Tile Array Test:** Primes form only $1 \times N$ straight lines; composites form 2D matrices.<br>• **Prime Factor Studio:** Proportional prime towers where stacking prime blocks physically multiplies their values!<br>• Height(2) + Height(3) = Height(6) on the comparator stage! | Physical verification before keystrokes |
 | **Representational** | Graphic Sandboxes | • Screen Factor Tree View: exponents and prime dots ($2^3 \times 3^2 \times 5$).<br>• Dual Frame Counter `{{key:▦}}`.<br>• Interactive LCD Sieve: survivor primes highlighted on display. | Transflective LCD dot matrix |
-| **Abstract** | RPN Symbolic Engines | • {{key:PRIME}} test pushes 1 (Prime) or 0 (Composite).<br>• `{{key:FACT}}` displays prime factorization string.<br>• {{key:GCF}} and {{key:LCM}} execute Euclidean and Duality engines. | Stack execution ($T, Z, Y, X$) |
+| **Abstract** | RPN Symbolic Engines | • `{{key:PRIME}}` test flashes `PRIME` or `COMPOSITE` on the graphic status line, preserving the number on $X$.<br>• `{{key:FACT}}` displays prime factorization string.<br>• `{{key:GCF}}` and `{{key:LCM}}` execute Euclidean and Duality engines. | Stack execution ($T, Z, Y, X$) |
+
 </div>
 
 ### Station Lesson 7.1: The Rectangular Array Primality Test
-- **Your Mission:** Physically investigate primality using the Counting & Array Studio, proving that prime numbers resist 2D rectangular factorization, and verify outcomes on the SC-6 via the dedicated primality key {{key:PRIME}}.
-- **Physical Manipulatives:** 144-Tile Four-Color Counting Studio.
+- **Your Mission:** Physically investigate primality using the Counting & Array Studio, proving that prime numbers resist 2D rectangular factorization, and verify outcomes on the SC-6 via the dedicated primality key `{{key:PRIME}}`.
+- **Physical Manipulatives:** 24-Tile Four-Color Counting Studio.
 
 | Number Classification | Tile Count | Complete Rectangular Factor Arrays | Positive Divisors |
 | :--- | :--- | :--- | :--- |
@@ -323,39 +320,38 @@ Number theory explores the structural properties of whole numbers. Prime numbers
 </div>
 
 #### Calculator Keystrokes & Stack Trace ($T, Z, Y, X$)
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 12 | 0 | 0 | 0 | 12 |
-| {{key:PRIME}} | $0.0000$ | 0 | 0 | 0 |
-| 13 | 0 | 0 | 0 | 13 |
-| {{key:PRIME}} | $0.0000$ | 0 | 0 | 1 |
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Status / Screen |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 12 | 0 | 0 | 0 | 12 | Number entered |
+| `{{key:PRIME}}` | 0 | 0 | 0 | 12 | Flashes `COMPOSITE` |
+| 13 | 0 | 0 | 12 | 13 | Stack lifts; 13 entered |
+| `{{key:PRIME}}` | 0 | 0 | 12 | 13 | Flashes `PRIME` |
 
 ---
 
-### Station Lesson 7.2: The Four-Color Sieve of Eratosthenes (144 Tiles)
-- **Your Mission:** Construct the complete $12 \times 12$ matrix of 144 counting tiles, systematically eliminate composite multiples using the four distinct color palettes, and isolate all 34 primes $\le 144$.
-- **Manipulatives:** 144 Stacking Tiles across four colors: Archival White (36), Cobalt Blue (36), Radiant Gold (36), Slate Gray (36).
+### Station Lesson 7.2: The Four-Color Sieve of Eratosthenes (24-Tile Kit & 144-Tile Classroom Pool)
+- **Your Mission:** Build a $4 \times 6$ sieve for numbers $1\text{–}24$ with your individual 24-tile kit to isolate all 9 primes $\le 24$—or pool 6 kits across your classroom table ($6 \times 24 = 144$ tiles) to construct the complete $12 \times 12$ matrix and isolate all 34 primes $\le 144$.
+- **Manipulatives:** 24 Stacking Tiles per student kit (6 Archival White, 6 Cobalt Blue, 6 Radiant Gold, 6 Slate Gray), or 6 kits pooled ($144$ tiles: 36 of each color).
 
 <div class="admonition note">
-<p class="admonition-title">The 144-Tile Four-Color Map Sieve of Eratosthenes</p>
+<p class="admonition-title">The Four-Color Map Sieve of Eratosthenes (Individual 24-Tile Kit or 6-Kit Classroom Pool)</p>
 
 - **Step 1:** Tile 1 (White) is set aside. 1 is a unit (neither prime nor composite).
 - **Step 2: Prime 2 (Blue).** Replace every even multiple $\ge 4$ with Blue tiles ($4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, \dots$).
 - **Step 3: Prime 3 (Gold).** Replace uncolored multiples of 3 with Gold tiles ($9, 15, 21, 27, 33, 39, 45, 51, 57, 63, \dots$).
-- **Step 4: Primes 5 & 7 (White/Pattern).** Replace remaining multiples of 5 and 7 ($25, 35, 49, 55, 65, 77, 85, 91, 95, 115, 119, 121, 125, \dots$).
-- **Step 5: Prime Survivors (Slate Gray).** Tiles surviving all 4 rounds are **THE PRIMES**:  
-  $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139$ (Exactly 34 Primes $\le 144$!).
+- **Step 4: Primes 5 & 7 (White/Pattern).** In the 6-kit classroom pool, replace remaining multiples of 5 and 7 ($25, 35, 49, 55, 65, 77, 85, 91, 95, 115, 119, 121, 125, \dots$).
+- **Step 5: Prime Survivors (Slate Gray).** In a single 24-tile kit, the 9 survivor tiles are **$2, 3, 5, 7, 11, 13, 17, 19, 23$**. Across a 6-kit classroom pool ($144$ tiles), all 34 primes $\le 144$ survive:  
+  $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139$.
 </div>
 
 #### Hands-On Verification on SC-6:
 You test survivor tiles and border cases on the calculator:
-- Test 91: `{{res:sc6_07_data_probability_primes_seq_70:keys}}` $\longrightarrow$ Flashes `COMPOSITE`, pushes `0` ($91 = 7 \times 13$).
-- Test 97: `{{res:sc6_07_data_probability_primes_seq_71:keys}}` $\longrightarrow$ Flashes `PRIME`, pushes `1`.
-- Test 119: `{{res:sc6_07_data_probability_primes_seq_72:keys}}` $\longrightarrow$ Flashes `COMPOSITE`, pushes `0` ($119 = 7 \times 17$).
-- Test 137: `{{res:sc6_07_data_probability_primes_seq_73:keys}}` $\longrightarrow$ Flashes `PRIME`, pushes `1`.
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. Seat the target candidate integer onto the display floor ($X$).
-  2. Tap `{{key:FACT}}` to inspect its prime factor building blocks on the LCD shelves, verifying divisors without manual trial division.
+- Test 91: `{{res:sc6_07_data_probability_primes_seq_70:keys}}` $\longrightarrow$ Flashes `COMPOSITE`, leaves 91 on display ($91 = 7 \times 13$).
+- Test 97: `{{res:sc6_07_data_probability_primes_seq_71:keys}}` $\longrightarrow$ Flashes `PRIME`, leaves 97 on display.
+- Test 119: `{{res:sc6_07_data_probability_primes_seq_72:keys}}` $\longrightarrow$ Flashes `COMPOSITE`, leaves 119 on display ($119 = 7 \times 17$).
+- Test 137: `{{res:sc6_07_data_probability_primes_seq_73:keys}}` $\longrightarrow$ Flashes `PRIME`, leaves 137 on display.
+- Seat the target candidate integer onto the display floor ($X$). Tap `{{key:FACT}}` to inspect its prime factor building blocks on the LCD shelves, verifying divisors without manual trial division.
 
 ---
 
@@ -403,28 +399,27 @@ Key in `{{res:sc6_fact_60:keys}}` $\longrightarrow$ The graphic display decompos
 
 {{res:sc6_fact_60:screenshot|SC-6 Prime Factorization Mode: 60 = 2 x 2 x 3 x 5}}
 
-#### Stack Trace Table ($T, Z, Y, X$):
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 60 | 0 | 0 | 0 | 60 |
-| {{key:FACT}} | 0 | 0 | 0 | $0.0000$ |
+| Keystroke | Register T | Register Z | Register Y | Register X | Status / Screen |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 60 | 0 | 0 | 0 | 60 | Number entered |
+| `{{key:FACT}}` | 0 | 0 | 0 | 60 | Displays `2² × 3 × 5` |
 
 ---
 
-### The Primality Testing Engine ({{key:PRIME}})
-A prime number is a positive integer strictly greater than 1 whose only positive divisors are 1 and itself. On the SC-6, pressing the primary key {{key:PRIME}} (Row 2, Col 2) executes a deterministic primality test on Register $X$:
+### The Primality Testing Engine (`{{key:PRIME}}`)
+A prime number is a positive integer strictly greater than 1 whose only positive divisors are 1 and itself. On the SC-6, pressing the primary key `{{key:PRIME}}` (Row 2, Col 2) executes a deterministic primality test on Register $X$:
 - Momentarily flashes `PRIME` or `COMPOSITE` on the graphic status line.
-- Sets Register $X$ to truth flag `1` (if prime) or `0` (if composite).
-- If $X \le 1$ or non-integer, flashes `INVALID DATA`.
+- Preserves Register $X$ intact so you can immediately continue calculations with your candidate number.
+- If $X \le 1$ or non-integer, flashes `INVALID DATA` (or `NEITHER` for 0 and 1).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 97 | 0 | 0 | 0 | 97 |
-| {{key:PRIME}} | $0.0000$ | 0 | 0 | 1 |
-| {{key:1}}{{key:1}}{{key:9}} | 1 | 1 | 1 | 9 |
-| {{key:PRIME}} | $1.0000$ | 1 | 1 | 0 |
-| {{key:2}} | 1 | 1 | 0 | 2 |
-| {{key:PRIME}} | $1.0000$ | 1 | 0 | 1 |
+| Keystroke | Register T | Register Z | Register Y | Register X | Status / Screen |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 97 | 0 | 0 | 0 | 97 | Number entered |
+| `{{key:PRIME}}` | 0 | 0 | 0 | 97 | Flashes `PRIME` |
+| 119 | 0 | 0 | 97 | 119 | Stack lifts; 119 entered |
+| `{{key:PRIME}}` | 0 | 0 | 97 | 119 | Flashes `COMPOSITE` |
+| 2 | 0 | 97 | 119 | 2 | Stack lifts; 2 entered |
+| `{{key:PRIME}}` | 0 | 97 | 119 | 2 | Flashes `PRIME` |
 
 ---
 
@@ -434,10 +429,10 @@ Pressing `{{key:FACT}}` on Row 2, Col 2 decomposes any integer $\ge 2$ into its 
 - Enter $360$: `360` `{{key:FACT}}` $\longrightarrow$ Displays: **`2³ × 3² × 5`**
 - Enter $2,639$: `2639` `{{key:FACT}}` $\longrightarrow$ Displays: **`7 × 13 × 29`**
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:3}}{{key:6}}{{key:0}} | 0 | 3 | 6 | 0 |
-| {{key:FACT}} | 0 | 3 | 6 | $0.0000$ |
+| Keystroke | Register T | Register Z | Register Y | Register X | Status / Screen |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 360 | 0 | 0 | 0 | 360 | Number entered |
+| `{{key:FACT}}` | 0 | 0 | 0 | 360 | Displays `2³ × 3² × 5` |
 
 ---
 
@@ -445,9 +440,7 @@ Pressing `{{key:FACT}}` on Row 2, Col 2 decomposes any integer $\ge 2$ into its 
 
 The SC-6 promotes Greatest Common Divisor (GCD/GCF) and Least Common Multiple (LCM) to dedicated keys on **Row 2, Col 1**:
 - **Primary Key {{key:GCF}}:** Evaluates $\gcd(Y, X)$ (e.g., `{{res:sc6_gcf_12_18:keys}}` $\longrightarrow$ `{{res:sc6_gcf_12_18:value}}`).
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `12` `{{key:ENTER}}` — Stage first integer 12 onto the upper shelf ($Y = 12$).
-  2. `18` `{{key:GCF}}` — Place second integer 18 on the floor ($X = 18$) and trigger `{{key:GCF}}`: the hardware Euclidean engine extracts the greatest common factor $\gcd(12, 18) = 6$ ($X = 6$).
+- Keying `12` `{{key:ENTER}}` stages the first integer $12$ onto Floor $Y$ ($Y = 12$), and keying `18` `{{key:GCF}}` places $18$ on Floor $X$ ($X = 18$) and triggers the Euclidean engine to extract $\gcd(12, 18) = 6$ ($X = 6$).
 - **`{{key:f}}`-Shifted Key {{key:LCM}}:** Evaluates $\operatorname{lcm}(Y, X)$ (e.g., `{{res:sc6_lcm_12_18:keys}}` $\longrightarrow$ `{{res:sc6_lcm_12_18:value}}`).
 
 #### Tactile Venn Intersection with Prime Studio Blocks:
@@ -462,45 +455,24 @@ Take $a = 48$ and $b = 72$:
 {{blocks:prime_lcm_gcd_venn|Prime Factor Studio: Prime Factorization and Venn Intersection Model}}
 
 #### Application 1: Rectangle Tiling (GCF)
-A maker lab needs to tile a tabletop measuring $24\text{ cm} \times 36\text{ cm}$ using the largest possible congruent square tiles with zero waste or cutting.
-$$\text{Tile Side} = \gcd(24, 36) = \mathbf{12\text{ cm}}$$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 24 | 0 | 0 | 0 | 24 |
-| {{key:ENTER}} | 0 | 0 | 24 | 24 |
-| 36 | 0 | 0 | 24 | 36 |
-| {{key:GCF}} | 0 | 0 | 0 | $12.00$ |
+A maker lab needs to tile a tabletop measuring $24\text{ cm} \times 36\text{ cm}$ using the largest possible congruent square tiles with zero waste or cutting. Key `24 {{key:ENTER}} 36 {{key:GCF}}` $\to (T: 0, Z: 0, Y: 0, X: 12)$, instantly revealing that the optimal tile dimension is $\text{Tile Side} = \gcd(24, 36) = \mathbf{12\text{ cm}}$.
 
 #### Application 2: Synchronized Flashing Cycle (LCM)
-Two beacon lights flash at fixed intervals: Light A flashes every $6\text{ seconds}$, while Light B flashes every $8\text{ seconds}$. After how many seconds will they next flash simultaneously?
-$$\text{Next Flash} = \operatorname{lcm}(6, 8) = \mathbf{24\text{ seconds}}$$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:6}} | 0 | 0 | 0 | 6 |
-| {{key:ENTER}} | 0 | 0 | 6 | 6 |
-| {{key:8}} | 0 | 0 | 6 | 8 |
-| {{key:LCM}} | 0 | 0 | 0 | $24.00$ |
+Two beacon lights flash at fixed intervals: Light A flashes every $6\text{ seconds}$, while Light B flashes every $8\text{ seconds}$. Key `6 {{key:ENTER}} 8 {{key:LCM}}` $\to (T: 0, Z: 0, Y: 0, X: 24)$, confirming that the beacons flash in unison every $\text{Next Flash} = \operatorname{lcm}(6, 8) = \mathbf{24\text{ seconds}}$.
 
 #### Application 3: Fraction Least Common Denominator (LCD)
-When adding unlike fractions $\frac{3}{8} + \frac{5}{12}$, the Least Common Denominator is the LCM of the denominators:
-$$\text{LCD} = \operatorname{lcm}(8, 12) = \mathbf{24}$$
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:8}} | 0 | 0 | 0 | 8 |
-| {{key:ENTER}} | 0 | 0 | 8 | 8 |
-| 12 | 0 | 0 | 8 | 12 |
-| {{key:LCM}} | 0 | 0 | 0 | $24.00$ |
+When adding unlike fractions $\frac{3}{8} + \frac{5}{12}$, the Least Common Denominator is the LCM of the denominators. Key `8 {{key:ENTER}} 12 {{key:LCM}}` $\to (T: 0, Z: 0, Y: 0, X: 24)$, providing the exact denominator bridge $\text{LCD} = \operatorname{lcm}(8, 12) = \mathbf{24}$ in a single keystroke.
 
 ---
 
-### Algebraic Trap vs. StackCalc Superpower Showdown: Greatest Common Factor & Least Common Multiple
+### Algebraic Trap vs. StackCalc Superpower Showdown: Number Theory, Statistics & Probability
 
-| Challenge / Equation | The Algebraic Calculator Trap (TI-30X / Smartphone) | The StackCalc SC-6 + Manipulative Superpower | Keystroke Reduction | Live Stack Visibility | Pedagogical Breakthrough |
+| Challenge / Real-World Task | The Algebraic Calculator Trap (TI-84 / Infix) | Algebraic Keystrokes & Clutter | The StackCalc Superpower (RPN Stack + Visual Studio) | StackCalc Keystrokes | The Stack Advantage |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Duality of 24 and 36**:<br>$\gcd(24, 36) = 12$<br>$\operatorname{lcm}(24, 36) = 72$<br>$\gcd \times \operatorname{lcm} = 24 \times 36 = 864$ | No hardware GCF or LCM keys: must write manual prime factor trees on paper, or execute repeated division steps ($36 - 24 = 12$). Verifying the product requires re-entering $24 \times 36$ from scratch (28+ strokes). | Enter `24 {{key:ENTER}} 36 {{key:GCF}}` $\to 12$; `24 {{key:ENTER}} 36 {{key:LCM}}` $\to 72$; `12 {{key:×}}` $\to 864$ (13 strokes). Instant verification of the Secret Partner Rule! | **54% fewer strokes** | The stack preserves both results; Register $Y$ retains 12 while $X$ evaluates 72, allowing a single `{{key:×}}` press to confirm the invariant. | Students physically model the intersection (GCF) and union (LCM) with Prime Studio blocks, then verify the numerical identity directly on the live stack. |
+| **GCF & LCM Duality:**<br>Secret Partner Rule verification:<br>$\gcd(24, 36) \times \operatorname{lcm}(24, 36) = 864$ | No hardware GCF or LCM keys: students must sketch manual factor trees on scratch paper, find prime powers, and re-enter multi-step arithmetic from scratch. Intermediate products vanish. | `2 4 * 3 6 =`<br>Manual scratch work factor trees<br>(28+ keystrokes, zero live factors) | **Hardware `{{key:GCF}}` & `{{key:LCM}}` Stack Duality:**<br>Single-tap prime engines extract GCF (12) and LCM (72). The 4-register stack preserves the GCF in Register $Y$ while computing LCM in $X$, verifying $12 \times 72 = 864$ with one keystroke. | `24 {{key:ENTER}} 36 {{key:GCF}} 18 {{key:ENTER}} 24 {{key:LCM}} {{key:×}}`<br>(13 keystrokes) | **54% fewer keystrokes**<br>Zero scratch paper; the stack proves the Secret Partner Rule invariant live on screen. |
+| **Euclidean Division:**<br>Hydraulic gate synchronization:<br>$105 \div 45 \implies Q = 2, R = 15$ | Infix division yields decimal $2.3333333$. Finding integer quotient and remainder requires rounding down, re-multiplying $2 \times 45 = 90$, and subtracting $105 - 90 = 15$ across multiple steps. | `1 0 5 / 4 5 =` $\to 2.333$<br>`1 0 5 - ( 2 * 4 5 ) =`<br>(18 keystrokes, modal confusion) | **Single-Tap Euclidean `{{key:÷R}}`:**<br>Hardware integer division deposits integer quotient $Q = 2$ in Register $X$ and exact remainder $R = 15$ in Register $Y$ simultaneously in one step. | `105 {{key:ENTER}} 45 {{key:÷R}}`<br>(8 keystrokes) | **56% fewer keystrokes**<br>Simultaneous quotient and remainder display matches physical token tray distribution. |
+| **Prime Factorization:**<br>Cryptographic vault key factoring:<br>$2,639 = 7 \times 13 \times 29$ | Standard algebraic calculators provide no hardware factoring. Students must manually test trial divisors on scratch paper ($2,639 \div 3, \div 7, \dots$) through tedious, error-prone trial division. | `2 6 3 9 / 3 =`<br>`2 6 3 9 / 7 =` $\to 377$<br>`3 7 7 / 1 1 =` $\dots$<br>(35+ keystrokes, manual logging) | **Hardware Prime Engine `{{key:FACT}}`:**<br>Dedicated factoring co-processor parses composite numbers instantly into prime components, rendering $7 \times 13 \times 29$ across the transflective dot-matrix display. | `2639 {{key:FACT}}`<br>(5 keystrokes) | **85% fewer keystrokes**<br>Instant canonical decomposition; flashes `PRIME` or renders prime tower strings without guesswork. |
+| **Statistical Mean:**<br>Four test scores averaging:<br>$88, 92, 79, 95 \implies \bar{x} = 88.5$ | Must enter chained addition with parentheses `( 88 + 92 + 79 + 95 ) / 4 =`. Forgetting outer brackets divides only 95 by 4, creating an undetected order-of-operations error ($283.75$). | `( 8 8 + 9 2 + 7 9 + 9 5 ) / 4 =`<br>(23 keystrokes, bracket risk) | **Hardware Statistical Accumulator (`{{key:Σ+}}`):**<br>Each data point accumulates into dedicated $\Sigma$ registers with running sample count $n$. Pressing `{{key:x̄}}` extracts the exact mean with zero syntax parentheses. | `{{key:CLΣ}} 88 {{key:Σ+}} 92 {{key:Σ+}} 79 {{key:Σ+}} 95 {{key:Σ+}} {{key:x̄}}`<br>(16 keystrokes) | **Zero Parentheses Clutter**<br>Running sample count protects data entry; enables instant standard deviation and $\Sigma x$ queries. |
 
 ### The Secret Partner Rule: Why GCF × LCM Always Equals a × b!
 For any two positive integers $a$ and $b$, the product of their greatest common factor and least common multiple is strictly equal to the product of the original numbers:
@@ -538,16 +510,16 @@ Find $\gcd(105, 45)$ using Euclidean division:
 2. $45 \div 15 = 3$ with remainder $0 \implies \gcd(45, 15) = 15$.
 The last non-zero remainder is **15**, so $\gcd(105, 45) = \mathbf{15}$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:1}}{{key:0}}{{key:5}} | 0 | 1 | 0 | 5 |
-| {{key:ENTER}} | 1 | 0 | 5 | 5 |
-| 45 | 1 | 0 | 5 | 45 |
-| {{key:÷R}} | $1.0000$ | 0 | 5 | 0 |
-| {{key:x⇄y}} | 1 | 0 | 0 | 5 |
+| Keystroke | Register T | Register Z | Register Y | Register X | Status / Commentary |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 105 | 0 | 0 | 0 | 105 | Dividend entered |
+| `{{key:ENTER}}` | 0 | 0 | 105 | 105 | Stack lifts; 105 staged to $Y$ |
+| 45 | 0 | 0 | 105 | 45 | Divisor 45 entered on floor $X$ |
+| `{{key:÷R}}` | 0 | 0 | 15 | 2 | Integer quotient $Q = 2$ in $X$, remainder $R = 15$ in $Y$ |
+| `{{key:x⇄y}}` | 0 | 0 | 2 | 15 | Swap: remainder 15 now in $X$ |
 
 #### Euclidean Division Ladders for Large Number Pairs
-For larger composite numbers, you construct an RPN division ladder, using the quotient and remainder output of {{key:÷R}} to systematically reduce the problem to zero remainder:
+For larger composite numbers, you construct an RPN division ladder, using the quotient and remainder output of `{{key:÷R}}` to systematically reduce the problem to zero remainder:
 
 #### Worked Example 7.5: Euclidean Ladder for $\gcd(252, 105)$
 1. $252 \div 105 = 2$ with remainder $42$ ($252 = 2 \times 105 + 42$)
@@ -557,13 +529,13 @@ The last non-zero remainder is **21**, so $\gcd(252, 105) = \mathbf{21}$.
 
 | Step / Key | Dividend (Y) | Divisor (X) | Quotient (X) | Remainder (Y) |
 | :--- | :--- | :--- | :--- | :--- |
-| 252 {{keycap:E}} 105 | 252 | 105 | - | - |
-| {{key:÷R}} | - | - | 2 | 42 |
-| {{key:x⇄y}} | 2 | 42 | 42 | 2 |
-| 105 {{key:x⇄y}} | 105 | 42 | - | - |
-| {{key:÷R}} | - | - | 2 | 21 |
-| 42 {{key:x⇄y}} | 42 | 21 | - | - |
-| {{key:÷R}} | - | - | 2 | 0 |
+| 252 `{{key:ENTER}}` 105 | 252 | 105 | - | - |
+| `{{key:÷R}}` | - | - | 2 | 42 |
+| `{{key:x⇄y}}` | 2 | 42 | 42 | 2 |
+| 105 `{{key:x⇄y}}` | 105 | 42 | - | - |
+| `{{key:÷R}}` | - | - | 2 | 21 |
+| 42 `{{key:x⇄y}}` | 42 | 21 | - | - |
+| `{{key:÷R}}` | - | - | 2 | 0 |
 
 You can directly verify this result in a single step using the hardware key:
 `{{res:sc6_07_data_probability_primes_seq_75:keys}}` $\longrightarrow X = \mathbf{21.00}$!
@@ -583,12 +555,12 @@ In Grades 5 and 6, you transition from counting discrete numbers to analyzing da
 | :--- | :--- | :--- |
 | **Sample Size ($n$)** | `{{key:N}}` | Count of data points |
 | **Sum of Data ($\Sigma x$)** | `{{key:Σx}}` | Total accumulation |
-| **Mean (Average)** | `{{key:x̄}}` / `{{keycap:x̄}}` | $(\Sigma x) / n$ |
-| **Median** | `{{keycap:MED}}` | Middle value of sorted set |
+| **Mean (Average)** | `{{key:x̄}}` | $(\Sigma x) / n$ |
+| **Median** | `{{key:MED}}` | Middle value of sorted set |
 | **Mode** | `{{key:MODE}}` | Most frequent value |
 | **Range** | `{{key:RNG}}` | $\text{Maximum} - \text{Minimum}$ |
 | **Interquartile Range** | `{{key:IQR}}` | $Q_3 - Q_1$ |
-| **Mean Absolute Deviation** | `{{key:MAD}}` | $\frac{1}{n} \sum |x_i - \bar{x}|$ |
+| **Mean Absolute Deviation** | `{{key:MAD}}` | $\frac{1}{n} \sum \lvert x_i - \bar{x}\rvert$ |
 
 ### Dataset 1: The 10-Quiz Score Frequency Table & The Seed of Distributions
 
@@ -597,29 +569,29 @@ $$70, \ 75, \ 80, \ 80, \ 85, \ 85, \ 85, \ 90, \ 90, \ 95$$
 
 | Score ($x$) | Tally | Frequency ($f$) | Dot Plot Visual Representation |
 | :---: | :---: | :---: | :--- |
-| 70 | \| | 1 | ● |
-| 75 | \| | 1 | ● |
-| 80 | \|\| | 2 | ● ● |
-| 85 | \|\|\| | 3 | ● ● ● *(Peak Mode!)* |
-| 90 | \|\| | 2 | ● ● |
-| 95 | \| | 1 | ● |
+| 70 | I | 1 | ● |
+| 75 | I | 1 | ● |
+| 80 | II | 2 | ● ● |
+| 85 | III | 3 | ● ● ● *(Peak Mode!)* |
+| 90 | II | 2 | ● ● |
+| 95 | I | 1 | ● |
 | **Total Count ($n = \sum f$)** | — | **10** | $10$ total observations |
 
 #### The Intellectual Bridge to Distributions:
 Notice the shape of the dot plot! The data rises smoothly from $70$ to a central peak at $85$, and then descends symmetrically down to $95$. This bell-shaped mound is your first intuitive encounter with **symmetric distributions**. In middle and high school, this exact visual symmetry develops into the continuous Gaussian Normal Distribution curve!
 
 #### Complete SC-6 Statistical Evaluation:
-> {{keycap:CLΣ}}                               -> Clears all stats registers (n = 0)
-> 70 {{key:Σ+}}                        -> n = 1
-> 75 {{key:Σ+}}                        -> n = 2
-> 80 {{key:Σ+}} 80 {{key:Σ+}}           -> n = 4
-> 85 {{key:Σ+}} 85 {{key:Σ+}} 85 {{key:Σ+}} -> n = 7
-> 90 {{key:Σ+}} 90 {{key:Σ+}}           -> n = 9
-> 95 {{key:Σ+}}                        -> n = 10
+> {{key:CLΣ}}                               $\to$ Clears all stats registers (n = 0)
+> 70 {{key:Σ+}}                        $\to$ n = 1
+> 75 {{key:Σ+}}                        $\to$ n = 2
+> 80 {{key:Σ+}} 80 {{key:Σ+}}           $\to$ n = 4
+> 85 {{key:Σ+}} 85 {{key:Σ+}} 85 {{key:Σ+}} $\to$ n = 7
+> 90 {{key:Σ+}} 90 {{key:Σ+}}           $\to$ n = 9
+> 95 {{key:Σ+}}                        $\to$ n = 10
 
 1. **Sample Size ($n$):** `{{key:N}}` $\longrightarrow X = \mathbf{10}$.
 2. **Sum of Scores ($\Sigma x$):** `{{key:Σx}}` $\longrightarrow X = \mathbf{835.0}$.
-3. **Mean Score ($\bar{x}$):** {{key:x̄}} $\longrightarrow X = \mathbf{83.5}$.
+3. **Mean Score ($\bar{x}$):** `{{key:x̄}}` $\longrightarrow X = \mathbf{83.5}$.
 4. **Median Score ($\text{Med}$):** `{{key:MED}}` $\longrightarrow X = \mathbf{85.0}$.
 5. **Mode Score ($\text{Mode}$):** `{{key:MODE}}` $\longrightarrow X = \mathbf{85.0}$.
 6. **Range ($\text{Max} - \text{Min}$):** `{{key:RNG}}` $\longrightarrow X = \mathbf{25.0}$ ($95 - 70 = 25$).
@@ -641,7 +613,7 @@ A smaller study group records five scores: $85, 90, 75, 90, 100$.
 6. **Mode:** Most frequent value = $\mathbf{90.0}$.
 7. **Minimum:** $\mathbf{75.0}$, **Maximum:** $\mathbf{100.0}$.
 8. **Range:** $100 - 75 = \mathbf{25.0}$.
-9. **Interquartile Range (IQR):** In RPNCore, inclusive-median quartiles yield $Q_1 = 85.0$ and $Q_3 = 90.0$:
+9. **Interquartile Range (IQR):** On the SC-6, inclusive-median quartiles yield $Q_1 = 85.0$ and $Q_3 = 90.0$:
    $$\text{IQR} = Q_3 - Q_1 = 90.0 - 85.0 = \mathbf{5.0}$$
 10. **Mean Absolute Deviation (MAD):** Measures the average distance between each data point and the mean ($\bar{x} = 88.0$):
     $$|75 - 88| = 13, \quad |85 - 88| = 3, \quad |90 - 88| = 2, \quad |90 - 88| = 2, \quad |100 - 88| = 12$$
@@ -649,14 +621,14 @@ A smaller study group records five scores: $85, 90, 75, 90, 100$.
     $$\text{MAD} = \frac{32.0}{5} = \mathbf{6.4}$$
 
 > **Keystrokes:**
-> {{keycap:CLΣ}}
+> {{key:CLΣ}}
 > 85 {{key:Σ+}} 90 {{key:Σ+}} 75 {{key:Σ+}} 90 {{key:Σ+}} 100 {{key:Σ+}}
-> {{key:Σx}}    -> 440.00
-> {{key:x̄}}  -> 88.00
-> {{keycap:MED}}       -> 90.00
-> {{key:MODE}}  -> 90.00
-> {{key:IQR}}   -> 5.00
-> {{key:MAD}}   -> 6.40
+> {{key:Σx}}    $\to$ 440.00
+> {{key:x̄}}  $\to$ 88.00
+> {{key:MED}}       $\to$ 90.00
+> {{key:MODE}}  $\to$ 90.00
+> {{key:IQR}}   $\to$ 5.00
+> {{key:MAD}}   $\to$ 6.40
 
 ### The Five-Number Summary, Box Plots & Outlier Analysis
 In data science, you represent distributions graphically using **Box-and-Whisker Plots**. A box plot partitions any ordered dataset into four quartiles using five milestone numbers:
@@ -691,7 +663,7 @@ A group of 8 runners complete a race in the following minutes: $25, 28, 30, 32, 
 > IQR = 36.5 - 29.0 = 7.5
 >
 > Step 2: Compute Upper Fence via RPN:
-> 36.5 {{key:ENTER}} 7.5 {{key:ENTER}} 1.5 {{key:×}} {{key:+}}  -> 47.75 minutes
+> 36.5 {{key:ENTER}} 7.5 {{key:ENTER}} 1.5 {{key:×}} {{key:+}}  $\to$ 47.75 minutes
 - `{{res:sc6_07_data_probability_primes_seq_76:keys}}` $\longrightarrow 11.25$ ($1.5 \times \text{IQR}$)
 - `36.5 {{key:+}}` $\longrightarrow \mathbf{47.75\text{ minutes}}$ (Upper Fence).
 
@@ -722,16 +694,7 @@ At 6:00 AM, the outdoor temperature in Chicago is $-14^\circ\text{C}$. By 2:00 P
 
 $$\text{Equation: } -14 + 9 = -5^\circ\text{C}$$
 
-> **RPN Evaluation:**
-> 14 {{key:+/-}} {{key:ENTER}} {{key:9}} {{key:+}}  -> -5.00 °C
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| 14 | 0 | 0 | 0 | 14 |
-| {{key:+/-}} | 0 | 0 | 0 | $-14.0000$ |
-| {{key:ENTER}} | 0 | 0 | $-14.0000$ | $-14.0000$ |
-| {{key:9}} | 0 | 0 | $-14.0000$ | 9 |
-| {{key:+}} | 0 | 0 | 0 | $-5.0000$ |
+On the stack, key `14 {{key:+/-}} {{key:ENTER}} 9 {{key:+}}` $\to (T: 0, Z: 0, Y: 0, X: -5)$, confirming an afternoon temperature of $-5^\circ\text{C}$ directly on the LCD.
 
 ---
 
@@ -749,7 +712,7 @@ A hiker descends to Badwater Basin in Death Valley at an elevation of $-86\text{
 $$\text{Vertical Climb: } |3366 - (-86)| = |3366 + 86| = 3,452\text{ meters}$$
 
 > **RPN Evaluation:**
-> 3366 {{key:ENTER}} 86 {{key:+/-}} {{key:-}} {{key:|x|}}  -> 3452.00 meters
+> 3366 {{key:ENTER}} 86 {{key:+/-}} {{key:-}} {{key:|x|}}  $\to$ 3452.00 meters
 
 ---
 
@@ -768,10 +731,10 @@ A horse pasture has an exact square area of $1,225\text{ square meters}$.
 2. What is the total length of fencing required to surround all four sides?
 
 > **Step 1: Compute side length s = √A:**
-> 1225 {{key:√x}}       -> 35.00 meters
+> 1225 {{key:√x}}       $\to$ 35.00 meters
 >
 > Step 2: Compute perimeter P = 4 * s:
-> {{key:4}} {{key:×}}                         -> 140.00 meters
+> {{key:4}} {{key:×}}                         $\to$ 140.00 meters
 Each side is $\mathbf{35\text{ meters}}$, requiring $\mathbf{140\text{ meters}}$ of fence.
 
 ### Real-World Pre-Algebra Word Problems: Directed Integers in Motion
@@ -779,27 +742,11 @@ To master pre-algebra, you can solve multi-step signed integer problems reflecti
 
 #### Scenario 1: Skyscraper Elevator Traversal
 A high-rise tower features 3 subterranean parking levels (Floors $-3, -2, -1$), a ground lobby (Floor $0$), and 60 tower floors (Floors $1 \dots 60$).
-- An elevator starts at subterranean parking Level $-3$.
-- It travels up $+45$ floors to deliver office supplies.
-- It then descends $-12$ floors to the cafeteria.
-- Finally, it descends $-33$ floors.
-Where does the elevator finish?
+An elevator starts at subterranean parking Level $-3$, travels up $+45$ floors to deliver office supplies, descends $-12$ floors to the cafeteria, and finally descends $-33$ floors:
 
 $$\text{Equation: } -3 + 45 - 12 - 33 = -3\text{ (Back at parking Level -3!)}$$
 
-> **RPN Execution:**
-> {{key:3}} {{key:+/-}} {{key:ENTER}} 45 {{key:+}} 12 {{key:-}} 33 {{key:-}}  -> -3.00 (Level -3)
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| {{key:3}} {{key:+/-}} | 0 | 0 | 0 | $-3.0000$ |
-| {{key:ENTER}} | 0 | 0 | $-3.0000$ | $-3.0000$ |
-| 45 | 0 | 0 | $-3.0000$ | 45 |
-| {{key:+}} | 0 | 0 | 0 | 42 |
-| 12 | 0 | 0 | 42 | 12 |
-| {{key:-}} | 0 | 0 | 0 | 30 |
-| 33 | 0 | 0 | 30 | 33 |
-| {{key:-}} | 0 | 0 | 0 | $-3.0000$ |
+Key `3 {{key:+/-}} {{key:ENTER}} 45 {{key:+}} 12 {{key:-}} 33 {{key:-}}` $\to (T: 0, Z: 0, Y: 0, X: -3)$, returning the elevator precisely to subterranean parking Level $-3$ with zero register overflow!
 
 #### Scenario 2: Deep-Sea Oceanographic Research Submersible
 A marine biology autonomous vehicle begins a mission on the deck of a research ship at $+4\text{ meters}$ above sea level. It dives to a survey trench at $-350\text{ meters}$.
@@ -807,10 +754,10 @@ A marine biology autonomous vehicle begins a mission on the deck of a research s
 2. The vehicle then ascends $+125\text{ meters}$ to sample a hydrothermal vent, before descending an additional $-45\text{ meters}$. Find its final depth.
 
 > **Step 1: Total vertical descent distance:**
-> {{key:4}} {{key:ENTER}} 350 {{key:+/-}} {{key:-}} {{key:|x|}}  -> 354.00 meters
+> {{key:4}} {{key:ENTER}} 350 {{key:+/-}} {{key:-}} {{key:|x|}}  $\to$ 354.00 meters
 >
 > Step 2: Final depth:
-> 350 {{key:+/-}} {{key:ENTER}} 125 {{key:+}} 45 {{key:-}}  -> -270.00 meters
+> 350 {{key:+/-}} {{key:ENTER}} 125 {{key:+}} 45 {{key:-}}  $\to$ -270.00 meters
 The vehicle surveyed the vent at a final depth of **$-270\text{ meters}$**.
 
 #### Scenario 3: Bank Account Ledger with Overdraft Fees
@@ -855,7 +802,7 @@ Calculate your net account balance using the SC-6 currency formatter `{{key:$}}`
 <strong>Teacher:</strong> "Exactly! 1 is called a unit. Now test it on your SC-6: type <code>{{res:sc6_07_data_probability_primes_seq_79:keys}}</code>. What does the screen say?"<br>
 <strong>Liam:</strong> "It flashes <code>INVALID DATA</code>! It won't let me call 1 a prime!"<br>
 <strong>Teacher:</strong> "Now try the number 2: <code>{{res:sc6_07_data_probability_primes_seq_80:keys}}</code>."<br>
-<strong>Liam:</strong> "It flashes <code>PRIME</code>! And pushes 1 to the stack!"<br>
+<strong>Liam:</strong> "It flashes <code>PRIME</code>! And preserves 2 right on the display!"<br>
 <strong>Teacher:</strong> "2 is the smallest prime number, and the only even prime in the entire universe!"<br><br>
 <strong>Script 7.2: Subtracting a Negative Number:</strong><br>
 <strong>Student (Chloe):</strong> "Teacher, I don't understand why $7 - (-3)$ equals $10$. When you subtract, shouldn't the number get smaller?"<br>
@@ -871,7 +818,7 @@ Calculate your net account balance using the SC-6 currency formatter `{{key:$}}`
 | :--- | :--- | :--- |
 | **Claiming 1 is prime** | Conflating "divisible only by 1" with "having exactly two distinct factors." | *"A prime must have exactly two distinct factors: 1 and itself. 1 only has one factor. The SC-6 classifies 1 as a unit, neither prime nor composite."* |
 | **Confusing GCF and LCM** | Assuming "Greatest" must yield a larger number than "Least." | *"A factor divides INTO a number, so it must be smaller than or equal to the number. A multiple MULTIPLIES the number, so it grows larger! GCF $\le$ numbers $\le$ LCM."* |
-| **Treating `$|x|$` as 'change the sign'** | Believing absolute value turns positive numbers into negative numbers. | *"Absolute value is distance on a number line. Distance is never negative! The distance from 5 to 0 is 5; the distance from -5 to 0 is also 5. `$|5| = 5$` and `$|-5| = 5$`."* |
+| **Treating $\lvert x\rvert$ as 'change the sign'** | Believing absolute value turns positive numbers into negative numbers. | *"Absolute value is distance on a number line. Distance is never negative! The distance from 5 to 0 is 5; the distance from -5 to 0 is also 5. $\lvert 5\rvert = 5$ and $\lvert -5\rvert = 5$."* |
 | **Adding negatives: $-4 + (-3) = -1$** | Subtracting magnitudes instead of accumulating directed negative quantities. | *"If you take 4 steps backward ($-4$), and then take 3 more steps backward ($-3$), you are 7 steps backward ($-7$), not 1 step! Use Crimson tokens to model the sum."* |
 | **Expecting Mean = Median always** | Assuming all datasets are perfectly symmetrical. | *"In skewed datasets (like home prices or quiz scores with an outlier), extreme values pull the mean away from the center. The median stays fixed in the middle."* |
 | **Confusing `{{key:+/-}}` with `{{key:-}}`** | Using the binary subtraction operator to enter negative values. | *"The `{{key:-}}` key subtracts two numbers ($Y - X$). The `{{key:+/-}}` key changes the sign of the single number you are actively typing."* |
@@ -880,168 +827,117 @@ Calculate your net account balance using the SC-6 currency formatter `{{key:$}}`
 
 ---
 
-## Comprehensive Problem Bank: 50 Worked Reference Problems
+## Comprehensive Problem Bank: 65 Worked Reference Problems
 
 The following problem bank provides complete, publication-grade reference solutions spanning Grade 5 and Grade 6 discrete probability, number theory, descriptive statistics, and pre-algebra. Every keystroke sequence assumes the SC-6 baseline mode `{{key:NUM}}`.
 
 <div class="admonition note">
-<p class="admonition-title">Hands-On Studio Proof: Blocks -> Calculator</p>
+<p class="admonition-title">Hands-On Studio Proof: Blocks $\to$ Calculator</p>
 
 Before executing probability distributions, primality tests, and statistical summaries symbolically, you ground each mathematical principle in physical manipulatives:
 1. **Discrete Probability & Geometry (The Dice Studio):** Roll the 3D-printed equal-volume pip dice 60 times. Record outcomes on the dot plot board. Compare empirical frequencies against theoretical fractions on the SC-6 (`{{key:FDISP}}`), proving why $P(\text{Odd}) = 3/6 = 1/2$.
-2. **Primality & Rectangular Factoring (The 144-Tile Studio):** Take 83 tiles. Attempt to form rectangular grids of 2, 3, 5, or 7 rows. When every attempt leaves leftover tiles, confirm the number is prime by pressing `{{res:sc6_07_data_probability_primes_seq_82:keys}}`, watching the LCD illuminate `PRIME` ($X = 1$). Repeat with 91 tiles to discover $7 \times 13 = 91$ (`COMPOSITE`, $X = 0$).
+2. **Primality & Rectangular Factoring (The 24-Tile Studio):** Model small with 13 tiles from your 24-Tile Counting & Array Studio—attempt to form rectangular grids of 2 or 3 rows and watch every attempt leave leftover tiles—then scale big to 83 tiles on your SC-6 by pressing `{{res:sc6_07_data_probability_primes_seq_82:keys}}`, watching the LCD illuminate `PRIME` (preserving 83 on display). Repeat with 91 on the calculator to discover $7 \times 13 = 91$ (`COMPOSITE`, preserving 91 on display).
 3. **Tactile Venn Intersections (The Prime Factor Studio):** Model 48 and 72 using proportional logarithmic blocks. Physically place common factor blocks ($2^3 \times 3$) into the central comparator well to verify $\gcd(48, 72) = 24$ (`{{res:sc6_07_data_probability_primes_seq_83:keys}}`).
 4. **Zero-Pair Balances (Two-Color Counters):** Pair Sun Yellow ($+1$) and Signal Crimson ($-1$) tokens to eliminate zero pairs before executing signed integer arithmetic on the stack (`{{key:+/-}}`).
 </div>
 
-### Expedition 1: The High-Rollers Tabletop & Spinner Tournament (Challenges 1–5)
+### Expedition 1: The High-Rollers Tabletop & Spinner Tournament (Problems 7.1–7.5)
 *Mission Briefing: You are the chief statistician for a tabletop gaming tournament. Compute exact single-event probabilities, compound die throws, and complementary odds using RPN stack division and fraction displays.*
 
-#### Challenge 1: Single Die Roll Probability
-- **Tournament Context:** Tabletop Gaming Tournament: In the championship match, a referee rolls a precision equal-volume pip six-sided die. Calculate the theoretical probability of rolling an odd face ($1, 3, 5$).
-- **Hands-On Manipulative Stage (Precision Pip Dice):** Inspect the physical equal-volume pip dice. Notice that 3 out of 6 faces are odd numbers. Rolling the die 60 times yields approximately 30 odd occurrences, validating the $3/6 = 0.5$ theoretical ratio.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_01:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_01:value}}`**
-- **Stack Flow:** Tap `3 {{key:ENTER}} 6 {{key:÷}}` -> (T=0, Z=0, Y=0, X=0.5). Divide favorable by total to compute theoretical probability ($3/6 = 0.5$).
+#### Problem 7.1: Single Die Roll Probability
+Tabletop Gaming Tournament: In the championship match, a referee rolls a precision equal-volume pip six-sided die. Calculate the theoretical probability of rolling an odd face ($1, 3, 5$). Inspect the physical equal-volume pip dice. Notice that 3 out of 6 faces are odd numbers. Rolling the die 60 times yields approximately 30 odd occurrences, validating the $3/6 = 0.5$ theoretical ratio. 
 
+On your SC-6, key in `{{res:sc6_07_data_probability_primes_seq_01:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_01:value}}`** `(T=0, Z=0, Y=0, X=0.5)`. Divide favorable by total to compute theoretical probability ($3/6 = 0.5$). Register $X$ displays $0.5000$. Theoretical probability of rolling an odd face is $\mathbf{0.5000}$ ($50\%$).
 
-- **Diagnostic Checkpoint:** Register $X$ displays $0.5000$. Theoretical probability of rolling an odd face is $\mathbf{0.5000}$ ($50\%$).
+#### Problem 7.2: Tournament Card Deck Draw
+Tournament Card Deck Draw: In a card tournament, a standard 52-card deck contains 4 aces. What is the probability of drawing an ace at random on the first draw? Partition the deck into 4 aces and 48 non-aces. The 4 target aces represent a $1/13$ fraction of the total 52-card sample space. 
 
-#### Challenge 2: Tournament Card Deck Draw
-- **Tournament Context:** Tournament Card Deck Draw: In a card tournament, a standard 52-card deck contains 4 aces. What is the probability of drawing an ace at random on the first draw?
-- **Hands-On Manipulative Stage (Card Deck Partition):** Partition the deck into 4 aces and 48 non-aces. The 4 target aces represent a $1/13$ fraction of the total 52-card sample space.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_02:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_02:value}}`**
-- **Stack Flow:** Tap `4 {{key:ENTER}} 52 {{key:÷}}` -> (T=0, Z=0, Y=0, X=0.0769). Divide to calculate single-draw ace probability ($4/52 \approx 0.0769$).
+On the SC-6 keypad, enter `{{res:sc6_07_data_probability_primes_seq_02:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_02:value}}`** `(T=0, Z=0, Y=0, X=0.0769)`. Divide to calculate single-draw ace probability ($4/52 \approx 0.0769$). Register $X$ displays $0.0769$. Ace drawing probability is $\mathbf{0.0769}$ ($\approx 7.69\%$).
 
+#### Problem 7.3: Compound Coin Toss: Three Consecutive Heads
+Triple Coin Toss Tournament Tiebreaker: A match tiebreaker requires flipping three consecutive heads with a balanced coin ($P = (1/2)^3$). Determine the compound probability of three consecutive heads. Arrange a 3-tier binary tree using two-color counters. Out of 8 possible paths ($\text{HHH}, \text{HHT}, \dots, \text{TTT}$), exactly 1 path yields three consecutive heads. 
 
-- **Diagnostic Checkpoint:** Register $X$ displays $0.0769$. Ace drawing probability is $\mathbf{0.0769}$ ($\approx 7.69\%$).
+Turning to your SC-6, key in `{{res:sc6_07_data_probability_primes_seq_03:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_03:value}}`** `(T=0, Z=0, Y=0, X=0.125)`. Raise to 3rd power to compute compound probability ($0.5^3 = 0.125$). Register $X$ displays $0.1250$. Probability of three consecutive heads is $\mathbf{0.1250}$ ($12.5\%$).
 
-#### Challenge 3: Compound Coin Toss: Three Consecutive Heads
-- **Tournament Context:** Triple Coin Toss Tournament Tiebreaker: A match tiebreaker requires flipping three consecutive heads with a balanced coin ($P = (1/2)^3$). Determine the compound probability of three consecutive heads.
-- **Hands-On Manipulative Stage (Tree Diagram Counters):** Arrange a 3-tier binary tree using two-color counters. Out of 8 possible paths ($\text{HHH}, \text{HHT}, \dots, \text{TTT}$), exactly 1 path yields three consecutive heads.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_03:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_03:value}}`**
-- **Stack Flow:** Tap `0.5 {{key:ENTER}} 3 {{key:yˣ}}` -> (T=0, Z=0, Y=0, X=0.125). Raise to 3rd power to compute compound probability ($0.5^3 = 0.125$).
+#### Problem 7.4: Sum of Two Dice: Rolling an 11 or 12
+High-Rollers Two-Dice Roll: Two dice are rolled simultaneously in the final round. The sum is 11 for two combinations ($(5,6), (6,5)$) and 12 for one combination ($(6,6)$). Find the probability of rolling an 11 or 12. Map the $6 \times 6$ grid of 36 equally likely outcomes. Highlight the 3 winning combinations in the top-right corner. 
 
+With your SC-6 ready, enter `{{res:sc6_07_data_probability_primes_seq_04:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_04:value}}`** `(T=0, Z=0, Y=0, X=0.0833)`. Divide favorable by total combinations ($3/36 \approx 0.0833$). Register $X$ displays $0.0833$. Probability of rolling 11 or 12 is $\mathbf{0.0833}$ ($\approx 8.33\%$).
 
-- **Diagnostic Checkpoint:** Register $X$ displays $0.1250$. Probability of three consecutive heads is $\mathbf{0.1250}$ ($12.5\%$).
+#### Problem 7.5: Complementary Probability
+Complementary Event Probability: The championship venue weather report indicates a $35\%$ probability of rain ($P = 0.35$). Determine the complementary probability of fair weather ($P' = 1 - P$). Inspect the circular probability spinner with 100 divisions. Shading 35 sectors for rain leaves 65 unshaded sectors for fair weather, grounding $1 - P$. 
 
-#### Challenge 4: Sum of Two Dice: Rolling an 11 or 12
-- **Tournament Context:** High-Rollers Two-Dice Roll: Two dice are rolled simultaneously in the final round. The sum is 11 for two combinations ($(5,6), (6,5)$) and 12 for one combination ($(6,6)$). Find the probability of rolling an 11 or 12.
-- **Hands-On Manipulative Stage (Two-Dice Grid Mat):** Map the $6 \times 6$ grid of 36 equally likely outcomes. Highlight the 3 winning combinations in the top-right corner.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_04:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_04:value}}`**
-- **Stack Flow:** Tap `3 {{key:ENTER}} 36 {{key:÷}}` -> (T=0, Z=0, Y=0, X=0.0833). Divide favorable by total combinations ($3/36 \approx 0.0833$).
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $0.0833$. Probability of rolling 11 or 12 is $\mathbf{0.0833}$ ($\approx 8.33\%$).
-
-#### Challenge 5: Complementary Probability
-- **Tournament Context:** Complementary Event Probability: The championship venue weather report indicates a $35\%$ probability of rain ($P = 0.35$). Determine the complementary probability of fair weather ($P' = 1 - P$).
-- **Hands-On Manipulative Stage (Complementary Spinner):** Inspect the circular probability spinner with 100 divisions. Shading 35 sectors for rain leaves 65 unshaded sectors for fair weather, grounding $1 - P$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_05:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_05:value}}`**
-- **Stack Flow:** Tap `1 {{key:ENTER}} 0.35 {{key:-}}` -> (T=0, Z=0, Y=0, X=0.65). Deduct rain probability from total space to find complementary dry odds.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $0.6500$. Complementary probability of fair weather is $\mathbf{0.6500}$ ($65\%$).
+Step over to your SC-6 and key in `{{res:sc6_07_data_probability_primes_seq_05:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_05:value}}`** `(T=0, Z=0, Y=0, X=0.65)`. Deduct rain probability from total space to find complementary dry odds. Register $X$ displays $0.6500$. Complementary probability of fair weather is $\mathbf{0.6500}$ ($65\%$).
 
 ---
 
-### Expedition 2: The Prime Number Fortress & Sieve (Challenges 6–18)
+### Expedition 2: The Prime Number Fortress & Sieve (Problems 7.6–7.18)
 *Mission Briefing: Journey into the heart of number theory. Test for prime numbers using rectangular resistance, unlock prime factor trees, find greatest common factors and least common multiples, and verify the Secret Partner Rule across the ancient Prime Number Fortress.*
 
-#### Challenge 6: Prime Fortress Outer Gate Cipher: Primality of 83
-- **Fortress Context:** The outer massive gate of the Prime Fortress opens only when presented with an indivisible prime credential. Test candidate code 83 for primality.
-- **Hands-On Manipulative Stage (Counting Tiles):** Take 83 tiles. Attempt to assemble them into rectangular matrices of 2, 3, 5, or 7 rows. Every arrangement leaves uneven remainders; 83 forms only a single linear row of $1 \times 83$, proving rectangular resistance.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_06:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_06:value}}`**
-- **Stack Flow:** Tap `83 {{key:PRIME}}` -> (T=0, Z=0, Y=0, X=1). Execute primality test: status line flashes `PRIME`, pushes 1 to Register $X$.
+#### Problem 7.6: Prime Fortress Outer Gate Cipher: Primality of 83
+The outer massive gate of the Prime Fortress opens only when presented with an indivisible prime credential. Test candidate code 83 for primality. Modeling small with blocks before scaling up on your SC-6, take 13 tiles from your kit and attempt to assemble them into rectangles of 2, 3, or 5 rows. Every attempt leaves uneven remainders—13 forms only a single linear row of $1 \times 13$, proving rectangular resistance. Now scale big to 83 on your StackCalc: test divisibility by primes 2, 3, 5, and 7 to verify rectangular resistance without needing 83 loose tiles. 
 
+Now compute it on your SC-6: `{{res:sc6_07_data_probability_primes_seq_06:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_06:value}}`** `(T=0, Z=0, Y=0, X=83)`. Execute primality test: status line flashes `PRIME`, preserving candidate 83 in Register $X$.
 
-- **Diagnostic Checkpoint:** Status line flashes `PRIME`; Register $X = \mathbf{1}$. Outer gate cipher unlocks!
+Status line flashes `PRIME`; Register $X$ preserves $\mathbf{83}$. Outer gate cipher unlocks!
 
-#### Challenge 7: Prime Fortress Barbican Trap Door: Primality of 91
-- **Fortress Context:** The fortress barbican is guarded by a deceptive trap door set to trigger on composite impostor codes. Evaluate candidate code 91.
-- **Hands-On Manipulative Stage (Rectangular Factoring):** Take 91 tiles. Arrange them into rows of 7: exactly 13 rows form a seamless $7 \times 13$ rectangular array with zero gaps, exposing 91 as composite.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_07:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_07:value}}`**
-- **Stack Flow:** Tap `91 {{key:PRIME}}` -> (T=0, Z=0, Y=0, X=0). Execute primality test: status line flashes `COMPOSITE`, pushes 0 to Register $X$.
+#### Problem 7.7: Prime Fortress Barbican Trap Door: Primality of 91
+The fortress barbican is guarded by a deceptive trap door set to trigger on composite impostor codes. Evaluate candidate code 91. Modeling small with blocks before scaling up on your SC-6, take 21 tiles ($7 \times 3$) and arrange them into 3 rows of 7 with zero gaps to demonstrate composite grouping. Then scale big to 91 on your StackCalc: test 91 against prime factor 7 ($91 \div 7 = 13$), exposing 91 as composite. 
 
+Run the sequence on your SC-6: `{{res:sc6_07_data_probability_primes_seq_07:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_07:value}}`** `(T=0, Z=0, Y=0, X=91)`. Execute primality test: status line flashes `COMPOSITE`, preserving candidate 91 in Register $X$.
 
-- **Diagnostic Checkpoint:** Status line flashes `COMPOSITE`; Register $X = \mathbf{0}$ ($91 = 7 \times 13$). Barbican trap door disarmed!
+Status line flashes `COMPOSITE`; Register $X$ preserves $\mathbf{91}$ ($91 = 7 \times 13$). Barbican trap door disarmed!
 
-#### Challenge 8: Prime Fortress Moat Portcullis: Primality of 143
-- **Fortress Context:** The iron portcullis over the fortress moat evaluates candidate 143. Determine if the credential is prime or composite.
-- **Hands-On Manipulative Stage (Rectangular Arrays):** Take 143 tiles. Dividing across 11 columns yields exactly 13 rows ($11 \times 13 = 143$), confirming multiple factor pairs beyond 1 and itself.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_08:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_08:value}}`**
-- **Stack Flow:** Tap `143 {{key:PRIME}}` -> (T=0, Z=0, Y=0, X=0). Execute primality test: status line flashes `COMPOSITE`, pushes 0 to Register $X$.
+#### Problem 7.8: Prime Fortress Moat Portcullis: Primality of 143
+The iron portcullis over the fortress moat evaluates candidate 143. Determine if the credential is prime or composite. Modeling small with blocks before scaling up on your SC-6, take 22 tiles ($11 \times 2$) to see how groups of 11 assemble into neat rectangles. Then scale big to 143 on your StackCalc: test $143 \div 11 = 13$, confirming factor pairs beyond 1 and itself. 
 
+Verify the calculation on your SC-6: `{{res:sc6_07_data_probability_primes_seq_08:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_08:value}}`** `(T=0, Z=0, Y=0, X=143)`. Execute primality test: status line flashes `COMPOSITE`, preserving candidate 143 in Register $X$.
 
-- **Diagnostic Checkpoint:** Status line flashes `COMPOSITE`; Register $X = \mathbf{0}$ ($143 = 11 \times 13$). Portcullis barrier confirmed!
+Status line flashes `COMPOSITE`; Register $X$ preserves $\mathbf{143}$ ($143 = 11 \times 13$). Portcullis barrier confirmed!
 
-#### Challenge 9: Prime Fortress Armory Key: Prime Factorization of 72
-- **Fortress Context:** The fortress armory lock requires the exact prime decomposition string of tumbler code 72. Decompose 72 into prime factors.
-- **Hands-On Manipulative Stage (Logarithmic Prime Blocks):** Take three Blue 2-blocks ($2^3 = 8$) and two Amber 3-blocks ($3^2 = 9$). Stack them vertically against the calibrated back-wall slide rule: the combined height aligns precisely with index 72.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_09:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_09:value}}`**
-- **Stack Flow:** Tap `72 {{key:FACT}}` -> (T=0, Z=0, Y=0, X=0). Execute prime factorization: graphic screen renders prime decomposition string.
+#### Problem 7.9: Prime Fortress Armory Key: Prime Factorization of 72
+The fortress armory lock requires the exact prime decomposition string of tumbler code 72. Decompose 72 into prime factors. Take three Blue 2-blocks ($2^3 = 8$) and two Amber 3-blocks ($3^2 = 9$). Stack them vertically against the calibrated back-wall slide rule: the combined height aligns precisely with index 72. 
 
+Test this directly on your SC-6: `{{res:sc6_07_data_probability_primes_seq_09:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_09:value}}`** `(T=0, Z=0, Y=0, X=72)`. Execute prime factorization: graphic screen renders prime decomposition string.
 
-- **Diagnostic Checkpoint:** Graphic screen renders **`2³ × 3²`**. Armory lock disengages!
+Graphic screen renders **`2³ × 3²`**. Armory lock disengages!
 
-#### Challenge 10: Prime Fortress Citadel Key: Prime Factorization of 210
-- **Fortress Context:** The inner citadel vault is sealed with master product code 210. Find its complete prime factor decomposition.
-- **Hands-On Manipulative Stage (Consecutive Prime Blocks):** Select one 2-block, one 3-block, one 5-block, and one 7-block. Stacking these four distinct prime towers models the square-free product $2 \times 3 \times 5 \times 7 = 210$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_10:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_10:value}}`**
-- **Stack Flow:** Tap `210 {{key:FACT}}` -> (T=0, Z=0, Y=0, X=0). Execute prime factorization: graphic screen renders four-prime string.
+#### Problem 7.10: Prime Fortress Citadel Key: Prime Factorization of 210
+The inner citadel vault is sealed with master product code 210. Find its complete prime factor decomposition. Select one 2-block, one 3-block, one 5-block, and one 7-block. Stacking these four distinct prime towers models the square-free product $2 \times 3 \times 5 \times 7 = 210$. 
 
+Bring this to the SC-6 stack: `{{res:sc6_07_data_probability_primes_seq_10:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_10:value}}`** `(T=0, Z=0, Y=0, X=210)`. Execute prime factorization: graphic screen renders four-prime string.
 
-- **Diagnostic Checkpoint:** Graphic screen renders **`2 × 3 × 5 × 7`**. Citadel vault credential accepted!
+Graphic screen renders **`2 × 3 × 5 × 7`**. Citadel vault credential accepted!
 
-#### Challenge 11: Prime Fortress High Tower Vault Key: Prime Factorization of 504
-- **Fortress Context:** The high observatory tower is protected by an astronomical key code of 504. Determine its prime factor components.
-- **Hands-On Manipulative Stage (Prime Factor Tree):** Factor 504 using prime blocks: three 2-blocks ($2^3 = 8$), two 3-blocks ($3^2 = 9$), and one 7-block ($7$). Product: $8 \times 9 \times 7 = 504$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_11:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_11:value}}`**
-- **Stack Flow:** Tap `504 {{key:FACT}}` -> (T=0, Z=0, Y=0, X=0). Execute prime factorization: graphic screen displays canonical factor string.
+#### Problem 7.11: Prime Fortress High Tower Vault Key: Prime Factorization of 504
+The high observatory tower is protected by an astronomical key code of 504. Determine its prime factor components. Factor 504 using prime blocks: three 2-blocks ($2^3 = 8$), two 3-blocks ($3^2 = 9$), and one 7-block ($7$). Product: $8 \times 9 \times 7 = 504$. 
 
+On your SC-6, enter `{{res:sc6_07_data_probability_primes_seq_11:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_11:value}}`** `(T=0, Z=0, Y=0, X=504)`. Execute prime factorization: graphic screen displays canonical factor string.
 
-- **Diagnostic Checkpoint:** Graphic screen renders **`2³ × 3² × 7`**. High tower observatory unsealed!
+Graphic screen renders **`2³ × 3² × 7`**. High tower observatory unsealed!
 
-#### Challenge 12: Fortress Twin Bastions Gear Synchronization: $\gcd(48, 72)$
-- **Fortress Context:** Twin drawbridge drive winches with 48 teeth and 72 teeth must mesh via a common drive gear. Find the greatest common factor $\gcd(48, 72)$.
-- **Hands-On Manipulative Stage (Venn Intersection):** Model $48 = 2^4 \times 3$ and $72 = 2^3 \times 3^2$. Place shared prime blocks into the central intersection well: three 2-blocks and one 3-block $\implies 2^3 \times 3 = 24$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_12:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_12:value}}`**
-- **Stack Flow:** Tap `48 {{key:ENTER}} 72 {{key:GCF}}` -> (T=0, Z=0, Y=0, X=24). Execute hardware GCF engine to extract greatest common divisor.
+#### Problem 7.12: Fortress Twin Bastions Gear Synchronization: $\gcd(48, 72)$
+Twin drawbridge drive winches with 48 teeth and 72 teeth must mesh via a common drive gear. Find the greatest common factor $\gcd(48, 72)$. Model $48 = 2^4 \times 3$ and $72 = 2^3 \times 3^2$. Place shared prime blocks into the central intersection well: three 2-blocks and one 3-block $\implies 2^3 \times 3 = 24$. 
 
+Execute the sequence on your SC-6: `{{res:sc6_07_data_probability_primes_seq_12:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_12:value}}`** `(T=0, Z=0, Y=0, X=24)`. Execute hardware GCF engine to extract greatest common divisor. Register $X$ displays $24.0000$. Maximum shared drive gear size is $\mathbf{24\text{ teeth}}$.
 
-- **Diagnostic Checkpoint:** Register $X$ displays $24.0000$. Maximum shared drive gear size is $\mathbf{24\text{ teeth}}$.
+#### Problem 7.13: Fortress Water Gate Sluice Synchronization: $\gcd(84, 140)$
+Two hydraulic sluice floodgates operate on cycles of 84 seconds and 140 seconds. Find the greatest common synchronization interval $\gcd(84, 140)$. Factor $84 = 2^2 \times 3 \times 7$ and $140 = 2^2 \times 5 \times 7$. Shared intersection: two 2-blocks and one 7-block $\implies 2^2 \times 7 = 28$. 
 
-#### Challenge 13: Fortress Water Gate Sluice Synchronization: $\gcd(84, 140)$
-- **Fortress Context:** Two hydraulic sluice floodgates operate on cycles of 84 seconds and 140 seconds. Find the greatest common synchronization interval $\gcd(84, 140)$.
-- **Hands-On Manipulative Stage (Factor Block Overlap):** Factor $84 = 2^2 \times 3 \times 7$ and $140 = 2^2 \times 5 \times 7$. Shared intersection: two 2-blocks and one 7-block $\implies 2^2 \times 7 = 28$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_13:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_13:value}}`**
-- **Stack Flow:** Tap `84 {{key:ENTER}} 140 {{key:GCF}}` -> (T=0, Z=0, Y=0, X=28). Execute hardware GCF engine to find greatest common factor.
+On your SC-6, key in `{{res:sc6_07_data_probability_primes_seq_13:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_13:value}}`** `(T=0, Z=0, Y=0, X=28)`. Execute hardware GCF engine to find greatest common factor. Register $X$ displays $28.0000$. Sluice synchronization step is $\mathbf{28\text{ seconds}}$.
 
+#### Problem 7.14: Fortress Sentry Patrol Synchronization: $\operatorname{lcm}(15, 20)$
+Two rampart sentry patrols cycle every 15 minutes and 20 minutes respectively. Find the least common multiple $\operatorname{lcm}(15, 20)$ when both sentries meet at the gate. Model $15 = 3 \times 5$ and $20 = 2^2 \times 5$. The union takes maximum powers: two 2-blocks, one 3-block, and one 5-block $\implies 2^2 \times 3 \times 5 = 60$. Stacking blocks aligns with mark 60. 
 
-- **Diagnostic Checkpoint:** Register $X$ displays $28.0000$. Sluice synchronization step is $\mathbf{28\text{ seconds}}$.
+On the SC-6 keypad, enter `{{res:sc6_07_data_probability_primes_seq_14:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_14:value}}`** `(T=0, Z=0, Y=0, X=60)`. Execute hardware LCM engine to find least common multiple. Register $X$ displays $60.0000$. Sentries meet at the gate every $\mathbf{60\text{ minutes}}$ ($1\text{ hour}$).
 
-#### Challenge 14: Fortress Sentry Patrol Synchronization: $\operatorname{lcm}(15, 20)$
-- **Fortress Context:** Two rampart sentry patrols cycle every 15 minutes and 20 minutes respectively. Find the least common multiple $\operatorname{lcm}(15, 20)$ when both sentries meet at the gate.
-- **Hands-On Manipulative Stage (Venn Union):** Model $15 = 3 \times 5$ and $20 = 2^2 \times 5$. The union takes maximum powers: two 2-blocks, one 3-block, and one 5-block $\implies 2^2 \times 3 \times 5 = 60$. Stacking blocks aligns with mark 60.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_14:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_14:value}}`**
-- **Stack Flow:** Tap `15 {{key:ENTER}} 20 {{key:LCM}}` -> (T=0, Z=0, Y=0, X=60). Execute hardware LCM engine to find least common multiple.
+#### Problem 7.15: Fortress Signal Beacon Cycle: $\operatorname{lcm}(12, 18)$
+Two optical signal beacons on the fortress bastions flash at intervals of 12 seconds and 18 seconds. Find the least common interval $\operatorname{lcm}(12, 18)$ when both flash in unison. Decompose $12 = 2^2 \times 3$ and $18 = 2 \times 3^2$. The union of prime blocks takes two 2-blocks and two 3-blocks $\implies 4 \times 9 = 36$. 
 
+Turning to your SC-6, key in `{{res:sc6_07_data_probability_primes_seq_15:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_15:value}}`** `(T=0, Z=0, Y=0, X=36)`. Execute hardware LCM engine to calculate least common multiple. Register $X$ displays $36.0000$. Beacons flash simultaneously every $\mathbf{36\text{ seconds}}$.
 
-- **Diagnostic Checkpoint:** Register $X$ displays $60.0000$. Sentries meet at the gate every $\mathbf{60\text{ minutes}}$ ($1\text{ hour}$).
-
-#### Challenge 15: Fortress Signal Beacon Cycle: $\operatorname{lcm}(12, 18)$
-- **Fortress Context:** Two optical signal beacons on the fortress bastions flash at intervals of 12 seconds and 18 seconds. Find the least common interval $\operatorname{lcm}(12, 18)$ when both flash in unison.
-- **Hands-On Manipulative Stage (Prime Union):** Decompose $12 = 2^2 \times 3$ and $18 = 2 \times 3^2$. The union of prime blocks takes two 2-blocks and two 3-blocks $\implies 4 \times 9 = 36$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_15:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_15:value}}`**
-- **Stack Flow:** Tap `12 {{key:ENTER}} 18 {{key:LCM}}` -> (T=0, Z=0, Y=0, X=36). Execute hardware LCM engine to calculate least common multiple.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $36.0000$. Beacons flash simultaneously every $\mathbf{36\text{ seconds}}$.
-
-#### Challenge 16: Fortress Archival Seal: The Secret Partner Rule for 18 and 24
-- **Fortress Context:** The grand seal of the Prime Fortress verifies that for any pair $a = 18, b = 24$, the product of their greatest common factor and least common multiple equals their arithmetic product: $\gcd(a,b) \times \operatorname{lcm}(a,b) = a \times b$.
-- **Hands-On Manipulative Stage (Secret Partner Rule with Blocks):** Compute $18 \times 24 = 432$. The shared intersection ($\gcd = 6$) multiplied by the total union ($\operatorname{lcm} = 72$) yields $6 \times 72 = 432$, proving conservation of prime factors.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_16:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_16:value}}`**
-- **4-Register Stack Trace Table:**
+#### Problem 7.16: Fortress Archival Seal: The Secret Partner Rule for 18 and 24
+The grand seal of the Prime Fortress verifies that for any pair $a = 18, b = 24$, the product of their greatest common factor and least common multiple equals their arithmetic product: $\gcd(a,b) \times \operatorname{lcm}(a,b) = a \times b$. Compute $18 \times 24 = 432$. The shared intersection ($\gcd = 6$) multiplied by the total union ($\operatorname{lcm} = 72$) yields $6 \times 72 = 432$, proving conservation of prime factors. With your SC-6 ready, enter `{{res:sc6_07_data_probability_primes_seq_16:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_16:value}}`**.
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -1055,37 +951,25 @@ Before executing probability distributions, primality tests, and statistical sum
 | `{{key:LCM}}` | $0.0000$ | $0.0000$ | $6.0000$ | $72.0000$ | Compute least common multiple $\operatorname{lcm}(18, 24) = 72$; GCF remains in Register $Y$ |
 | `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $432.0000$ | Multiply GCF by LCM ($6 \times 72 = 432$) |
 
-- **Diagnostic Checkpoint:** Register $X$ displays $432.0000$. Secret partner rule holds identically ($18 \times 24 = 432$).
+Register $X$ displays $432.0000$. Secret partner rule holds identically ($18 \times 24 = 432$).
 
-#### Challenge 17: Fortress Supply Depot Allocation: Euclidean Division $148 \div 32$
-- **Fortress Context:** In the fortress provisions depot, 148 ration packs are organized into standard field cases holding 32 packs each. Find the number of full cases packed and remaining loose packs using `{{key:÷R}}`.
-- **Hands-On Manipulative Stage (Tray Allocation):** Distribute 148 tokens into trays of 32. Exactly 4 trays are completely filled ($4 \times 32 = 128$), leaving 20 loose tokens on the packing bench.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_17:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_17:value}}`**
-- **Stack Flow:** Tap `148 {{key:ENTER}} 32 {{key:÷R}}` -> (T=0, Z=0, Y=20, X=4). Execute Euclidean division: quotient 4 in $X$, remainder 20 in $Y$.
+#### Problem 7.17: Fortress Supply Depot Allocation: Euclidean Division $148 \div 32$
+In the fortress provisions depot, 148 ration packs are organized into standard field cases holding 32 packs each. Find the number of full cases packed and remaining loose packs using `{{key:÷R}}`. Distribute 148 tokens into trays of 32. Exactly 4 trays are completely filled ($4 \times 32 = 128$), leaving 20 loose tokens on the packing bench. 
 
+Step over to your SC-6 and key in `{{res:sc6_07_data_probability_primes_seq_17:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_17:value}}`** `(T=0, Z=0, Y=20, X=4)`. Execute Euclidean division: quotient 4 in $X$, remainder 20 in $Y$. Register $X$ displays $4$ (Quotient), Register $Y$ displays $20$ (Remainder). 4 full cases packed with 20 leftover packs.
 
-- **Diagnostic Checkpoint:** Register $X$ displays $4$ (Quotient), Register $Y$ displays $20$ (Remainder). 4 full cases packed with 20 leftover packs.
+#### Problem 7.18: Fortress Treasury Safe Cipher Wheel: $\gcd(24, 36)$
+The fortress treasury safe wheel requires identifying the greatest shared factor of 24 and 36 to engage the master locking tumblers. List all divisors: for 24: $\{1, 2, 3, 4, 6, 8, 12, 24\}$; for 36: $\{1, 2, 3, 4, 6, 9, 12, 18, 36\}$. The shared common factor set is $\{1, 2, 3, 4, 6, 12\}$, with greatest factor 12. 
 
-#### Challenge 18: Fortress Treasury Safe Cipher Wheel: $\gcd(24, 36)$
-- **Fortress Context:** The fortress treasury safe wheel requires identifying the greatest shared factor of 24 and 36 to engage the master locking tumblers.
-- **Hands-On Manipulative Stage (Factor Sorting):** List all divisors: for 24: $\{1, 2, 3, 4, 6, 8, 12, 24\}$; for 36: $\{1, 2, 3, 4, 6, 9, 12, 18, 36\}$. The shared common factor set is $\{1, 2, 3, 4, 6, 12\}$, with greatest factor 12.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_18:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_18:value}}`**
-- **Stack Flow:** Tap `24 {{key:ENTER}} 36 {{key:GCF}}` -> (T=0, Z=0, Y=0, X=12). Execute hardware GCF engine to extract greatest common divisor.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $12.0000$. Treasury master tumbler code is $\mathbf{12}$.
+Now compute it on your SC-6: `{{res:sc6_07_data_probability_primes_seq_18:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_18:value}}`** `(T=0, Z=0, Y=0, X=12)`. Execute hardware GCF engine to extract greatest common divisor. Register $X$ displays $12.0000$. Treasury master tumbler code is $\mathbf{12}$.
 
 ---
 
-
-### Expedition 3: The Data Detective & Bell-Curve Mystery (Challenges 19–26)
+### Expedition 3: The Data Detective & Bell-Curve Mystery (Problems 7.19–7.26)
 *Mission Briefing: Accumulate datasets into the statistical memory registers. Compute measures of center (mean, median, mode) and measures of spread (range, IQR, MAD) to characterize real-world measurements.*
 
-#### Challenge 19: Mean of 4 Test Scores
-- **Data Detective Context:** Science Evaluation Analysis: You score 88, 92, 79, and 95 on four consecutive science tests. Calculate your arithmetic mean $\bar{x}$.
-- **Hands-On Manipulative Stage (Balance Beam Pegs):** Place pegs at marks 88, 92, 79, and 95 on the numerical balance beam. The beam balances in perfect horizontal equilibrium at the fulcrum point $88.5$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_19:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_19:value}}`**
-- **4-Register Stack Trace Table:**
+#### Problem 7.19: Mean of 4 Test Scores
+Science Evaluation Analysis: You score 88, 92, 79, and 95 on four consecutive science tests. Calculate your arithmetic mean $\bar{x}$. Place pegs at marks 88, 92, 79, and 95 on the numerical balance beam. The beam balances in perfect horizontal equilibrium at the fulcrum point $88.5$. Run the sequence on your SC-6: `{{res:sc6_07_data_probability_primes_seq_19:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_19:value}}`**.
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -1100,237 +984,138 @@ Before executing probability distributions, primality tests, and statistical sum
 | `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Accumulate score ($n = 4, \Sigma x = 354$) |
 | `{{key:x̄}}` | $0.0000$ | $0.0000$ | $0.0000$ | $88.5$ | Compute sample mean $\bar{x} = 354 / 4 = 88.5$; sample size $n=4$ stored in $Z$ |
 
-- **Diagnostic Checkpoint:** Register $X$ displays $88.5000$. Mean score is $\mathbf{88.50}$.
+Register $X$ displays $88.5000$. Mean score is $\mathbf{88.50}$.
 
-#### Challenge 20: Median of an Odd Dataset
-- **Data Detective Context:** Sprint Velocity Analysis: Five track athletes record 100m sprint times: $12.4, 12.8, 13.1, 13.5, 14.0\text{ seconds}$. Find the median running time.
-- **Hands-On Manipulative Stage (Ordered Number Ribbon):** Arrange five runner cards in ascending order along the desk. The third card sits precisely in the middle with two cards on each side, isolating the median at $13.1\text{ s}$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_20:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_20:value}}`**
-- **Stack Flow:** Tap `{{key:CLΣ}} 12.4 {{key:Σ+}} 12.8 {{key:Σ+}} 13.1 {{key:Σ+}} 13.5 {{key:Σ+}} 14.0 {{key:Σ+}} {{key:MED}}` -> (T=0, Z=0, Y=0, X=5). Compute median value across odd dataset ($n = 5$ in $Y$).
+#### Problem 7.20: Median of an Odd Dataset
+Sprint Velocity Analysis: Five track athletes record 100m sprint times: $12.4, 12.8, 13.1, 13.5, 14.0\text{ seconds}$. Find the median running time. Arrange five runner cards in ascending order along the desk. The third card sits precisely in the middle with two cards on each side, isolating the median at $13.1\text{ s}$. 
 
+Verify the calculation on your SC-6: `{{res:sc6_07_data_probability_primes_seq_20:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_20:value}}`** `(T=0, Z=0, Y=5, X=13.1)`. Compute median value across odd dataset ($n = 5$ in $Y$). Register $X$ displays $13.1000$. Median sprint time is $\mathbf{13.10\text{ seconds}}$.
 
-- **Diagnostic Checkpoint:** Register $X$ displays $13.1000$. Median sprint time is $\mathbf{13.10\text{ seconds}}$.
+#### Problem 7.21: Median of an Even Dataset
+Environmental Temperature Monitoring: Six ambient temperatures are recorded: $68, 72, 74, 76, 80, 84^\circ\text{F}$. Find the median temperature (average of two central elements 74 and 76). Arrange the six data cards in order. Because $n = 6$ is even, there is no single middle card; fold the middle pair (74 and 76) to find their midpoint: $\frac{74+76}{2} = 75^\circ\text{F}$. 
 
-#### Challenge 21: Median of an Even Dataset
-- **Data Detective Context:** Environmental Temperature Monitoring: Six ambient temperatures are recorded: $68, 72, 74, 76, 80, 84^\circ\text{F}$. Find the median temperature (average of two central elements 74 and 76).
-- **Hands-On Manipulative Stage (Even Distribution Strip):** Arrange the six data cards in order. Because $n = 6$ is even, there is no single middle card; fold the middle pair (74 and 76) to find their midpoint: $\frac{74+76}{2} = 75^\circ\text{F}$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_21:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_21:value}}`**
-- **Stack Flow:** Tap `{{key:CLΣ}} 68 {{key:Σ+}} 72 {{key:Σ+}} 74 {{key:Σ+}} 76 {{key:Σ+}} 80 {{key:Σ+}} 84 {{key:Σ+}} {{key:MED}}` -> (T=0, Z=0, Y=0, X=6). Evaluate median of even dataset: $\frac{74+76}{2} = 75$ ($n=6$ in $Y$).
+Test this directly on your SC-6: `{{res:sc6_07_data_probability_primes_seq_21:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_21:value}}`** `(T=0, Z=0, Y=6, X=75)`. Evaluate median of even dataset: $\frac{74+76}{2} = 75$ ($n=6$ in $Y$). Register $X$ displays $75.0000$. Median temperature is $\mathbf{75.00^\circ\text{F}}$.
 
+#### Problem 7.22: Mode of a Shoe Size Survey
+Footwear Inventory Survey: Shoe sizes collected from 8 customers: $6, 7, 7, 7, 8, 8, 9, 10$. Find the statistical mode (most frequent size). Stack counting cubes for each size. Size 7 forms the tallest column with 3 cubes, visually standing out as the statistical mode. 
 
-- **Diagnostic Checkpoint:** Register $X$ displays $75.0000$. Median temperature is $\mathbf{75.00^\circ\text{F}}$.
+Bring this to the SC-6 stack: `{{res:sc6_07_data_probability_primes_seq_22:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_22:value}}`** `(T=0, Z=0, Y=8, X=7)`. Identify statistical mode across sample ($X = 7$, $n=8$ in $Y$). Register $X$ displays $7.0000$. Most common shoe size (mode) is $\mathbf{7.00}$.
 
-#### Challenge 22: Mode of a Shoe Size Survey
-- **Data Detective Context:** Footwear Inventory Survey: Shoe sizes collected from 8 customers: $6, 7, 7, 7, 8, 8, 9, 10$. Find the statistical mode (most frequent size).
-- **Hands-On Manipulative Stage (Frequency Column Histogram):** Stack counting cubes for each size. Size 7 forms the tallest column with 3 cubes, visually standing out as the statistical mode.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_22:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_22:value}}`**
-- **Stack Flow:** Tap `{{key:CLΣ}} {{key:6}} {{key:Σ+}} {{key:7}} {{key:Σ+}} {{key:7}} {{key:Σ+}} {{key:7}} {{key:Σ+}} {{key:8}} {{key:Σ+}} {{key:8}} {{key:Σ+}} {{key:9}} {{key:Σ+}} 10 {{key:Σ+}} {{key:MODE}}` -> (T=0, Z=0, Y=0, X=8). Identify statistical mode across sample ($X = 7$, $n=8$ in $Y$).
+#### Problem 7.23: Range of High Temperatures
+Weather Station Spread Analysis: Weekly maximum temperatures: $62, 65, 78, 81, 74, 69, 85^\circ\text{F}$. Calculate the temperature range ($\max - \min = 85 - 62$). Pin the minimum temperature ($62^\circ$) and maximum temperature ($85^\circ$) on a number line strip. The distance spanned between the extremes measures $23^\circ$. 
 
+On your SC-6, enter `{{res:sc6_07_data_probability_primes_seq_23:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_23:value}}`** `(T=0, Z=0, Y=7, X=23)`. Compute range ($\max - \min = 85 - 62 = 23$). Register $X$ displays $23.0000$. Weekly temperature range is $\mathbf{23.00^\circ\text{F}}$.
 
-- **Diagnostic Checkpoint:** Register $X$ displays $7.0000$. Most common shoe size (mode) is $\mathbf{7.00}$.
+#### Problem 7.24: Interquartile Range of Daily Rainfall
+Precipitation Variance: Weekly rainfall measurements: $0.1, 0.2, 0.4, 0.6, 0.9, 1.2, 1.5\text{ inches}$. Find the interquartile range ($Q_3 - Q_1$). Divide the sorted 7-point rainfall dataset into lower and upper quartiles. Mark $Q_1 = 0.2$ and $Q_3 = 1.2$; the width of the middle $50\%$ box spans the interquartile range. 
 
-#### Challenge 23: Range of High Temperatures
-- **Data Detective Context:** Weather Station Spread Analysis: Weekly maximum temperatures: $62, 65, 78, 81, 74, 69, 85^\circ\text{F}$. Calculate the temperature range ($\max - \min = 85 - 62$).
-- **Hands-On Manipulative Stage (Range Slider):** Pin the minimum temperature ($62^\circ$) and maximum temperature ($85^\circ$) on a number line strip. The distance spanned between the extremes measures $23^\circ$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_23:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_23:value}}`**
-- **Stack Flow:** Tap `{{key:CLΣ}} 62 {{key:Σ+}} 65 {{key:Σ+}} 78 {{key:Σ+}} 81 {{key:Σ+}} 74 {{key:Σ+}} 69 {{key:Σ+}} 85 {{key:Σ+}} {{key:RNG}}` -> (T=0, Z=0, Y=0, X=7). Compute range ($\max - \min = 85 - 62 = 23$).
+Execute the sequence on your SC-6: `{{res:sc6_07_data_probability_primes_seq_24:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_24:value}}`** `(T=0, Z=0, Y=7, X=0.75)`. Compute interquartile range ($Q_3 - Q_1 = 0.75$). Register $X$ displays $0.7500$. Interquartile range of rainfall is $\mathbf{0.75\text{ inches}}$.
 
+#### Problem 7.25: Mean Absolute Deviation of a 5-Point Dataset
+Sensor Error Analysis: A 5-point dataset: $10, 15, 20, 25, 30$ has mean $\bar{x} = 20.0$. Deviations from mean are $|-10|, |-5|, |0|, |+5|, |+10|$. Sum of deviations $= 30$. Find the Mean Absolute Deviation ($\text{MAD} = 30 / 5 = 6.0$). Lay out the points on a number line. Measure the physical distance from each point to the center mark 20: $10 + 5 + 0 + 5 + 10 = 30$. Dividing by 5 yields the average distance from center. 
 
-- **Diagnostic Checkpoint:** Register $X$ displays $23.0000$. Weekly temperature range is $\mathbf{23.00^\circ\text{F}}$.
+On your SC-6, key in `{{res:sc6_07_data_probability_primes_seq_25:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_25:value}}`** `(T=0, Z=0, Y=5, X=6)`. Compute Mean Absolute Deviation ($\text{MAD} = 6$). Register $X$ displays $6.0000$. Mean Absolute Deviation is $\mathbf{6.00}$.
 
-#### Challenge 24: Interquartile Range of Daily Rainfall
-- **Data Detective Context:** Precipitation Variance: Weekly rainfall measurements: $0.1, 0.2, 0.4, 0.6, 0.9, 1.2, 1.5\text{ inches}$. Find the interquartile range ($Q_3 - Q_1$).
-- **Hands-On Manipulative Stage (Box-and-Whisker Plot Mat):** Divide the sorted 7-point rainfall dataset into lower and upper quartiles. Mark $Q_1 = 0.2$ and $Q_3 = 1.2$; the width of the middle $50\%$ box spans the interquartile range.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_24:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_24:value}}`**
-- **Stack Flow:** Tap `{{key:CLΣ}} 0.1 {{key:Σ+}} 0.2 {{key:Σ+}} 0.4 {{key:Σ+}} 0.6 {{key:Σ+}} 0.9 {{key:Σ+}} 1.2 {{key:Σ+}} 1.5 {{key:Σ+}} {{key:IQR}}` -> (T=0, Z=0, Y=0, X=7). Compute interquartile range ($Q_3 - Q_1 = 0.75$).
+#### Problem 7.26: Frequency of Score 85
+Scorecard Frequency Binning: In survey dataset $70, 75, 80, 80, 85, 85, 85, 90, 90, 95$, accumulate observation 85 and inspect active sample counter. Place a token into the score 85 column. The stack records the entry into the statistical registers. 
 
-
-- **Diagnostic Checkpoint:** Register $X$ displays $0.7500$. Interquartile range of rainfall is $\mathbf{0.75\text{ inches}}$.
-
-#### Challenge 25: Mean Absolute Deviation of a 5-Point Dataset
-- **Data Detective Context:** Sensor Error Analysis: A 5-point dataset: $10, 15, 20, 25, 30$ has mean $\bar{x} = 20.0$. Deviations from mean are $|-10|, |-5|, |0|, |+5|, |+10|$. Sum of deviations $= 30$. Find the Mean Absolute Deviation ($\text{MAD} = 30 / 5 = 6.0$).
-- **Hands-On Manipulative Stage (Distance From Mean Strip):** Lay out the points on a number line. Measure the physical distance from each point to the center mark 20: $10 + 5 + 0 + 5 + 10 = 30$. Dividing by 5 yields the average distance from center.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_25:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_25:value}}`**
-- **Stack Flow:** Tap `{{key:CLΣ}} 10 {{key:Σ+}} 15 {{key:Σ+}} 20 {{key:Σ+}} 25 {{key:Σ+}} 30 {{key:Σ+}} {{key:MAD}}` -> (T=0, Z=0, Y=0, X=5). Compute Mean Absolute Deviation ($\text{MAD} = 6$).
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $6.0000$. Mean Absolute Deviation is $\mathbf{6.00}$.
-
-#### Challenge 26: Frequency of Score 85
-- **Data Detective Context:** Scorecard Frequency Binning: In survey dataset $70, 75, 80, 80, 85, 85, 85, 90, 90, 95$, accumulate observation 85 and inspect active sample counter.
-- **Hands-On Manipulative Stage (Dot Plot Counter Grid):** Place a token into the score 85 column. The stack records the entry into the statistical registers.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_26:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_26:value}}`**
-- **Stack Flow:** Tap `85 {{key:Σ+}}` -> (T=0, Z=0, Y=0, X=1). Accumulate score into statistical register ($n = 1$).
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $1$. Single observation of score 85 registered in sample bin.
+On the SC-6 keypad, enter `{{res:sc6_07_data_probability_primes_seq_26:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_26:value}}`** `(T=0, Z=0, Y=0, X=1)`. Accumulate score into statistical register ($n = 1$). Register $X$ displays $1$. Single observation of score 85 registered in sample bin.
 
 ---
 
-### Expedition 4: The Zero-Pair Vault & Pre-Algebra Ascent (Challenges 27–65)
+### Expedition 4: The Zero-Pair Vault & Pre-Algebra Ascent (Problems 7.27–65)
 *Mission Briefing: Model positive and negative integers with two-color zero pairs, master spatial sign negation, and solve pre-algebra expressions across powers, roots, and randomized ranges.*
 
-#### Challenge 27: Adding Directed Negative Numbers
-- **Problem:** Evaluate $(-15) + (-28)$.
-- **Manipulative Stage:** Place 15 red debt tokens on the workspace. Add 28 more red debt tokens alongside them. Count the accumulated total of 43 red tokens, representing directed deficit $(-43)$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_27:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_27:value}}`**
-- **Stack Flow:** Tap `15 {{key:+/-}} {{key:ENTER}} 28 {{key:+/-}} {{key:+}}` -> (T=0, Z=0, Y=0, X=-43). Add $-15 + (-28) = -43$; stack drops.
+#### Problem 7.27: Adding Directed Negative Numbers
+Evaluate $(-15) + (-28)$. Place 15 red debt tokens on the workspace. Add 28 more red debt tokens alongside them. Count the accumulated total of 43 red tokens, representing directed deficit $(-43)$. 
 
+Turning to your SC-6, key in `{{res:sc6_07_data_probability_primes_seq_27:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_27:value}}`** `(T=0, Z=0, Y=0, X=-43)`. Add $-15 + (-28) = -43$; stack drops. Register $X$ displays $-43$. Adding two negative quantities accumulates total magnitude while preserving the negative sign.
 
-- **Diagnostic Checkpoint:** Register $X$ displays $-43$. Adding two negative quantities accumulates total magnitude while preserving the negative sign.
+#### Problem 7.28: Subtracting a Larger Positive Number
+A bank account has $\$45$. An automatic withdrawal of $\$70$ occurs. What is the balance? Place 45 green credit tokens in a dish. To remove 70 tokens, pair 45 green tokens with 45 red debt tokens (forming zero pairs), then add 25 additional red debt tokens. Removing 70 tokens leaves 25 red debt tokens ($-25$). 
 
-#### Challenge 28: Subtracting a Larger Positive Number
-- **Problem:** A bank account has $\$45$. An automatic withdrawal of $\$70$ occurs. What is the balance?
-- **Manipulative Stage:** Place 45 green credit tokens in a dish. To remove 70 tokens, pair 45 green tokens with 45 red debt tokens (forming zero pairs), then add 25 additional red debt tokens. Removing 70 tokens leaves 25 red debt tokens ($-25$).
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_28:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_28:value}}`**
-- **Stack Flow:** Tap `45 {{key:ENTER}} 70 {{key:-}}` -> (T=0, Z=0, Y=0, X=-25). Subtract $45 - 70 = -25$; stack drops.
+With your SC-6 ready, enter `{{res:sc6_07_data_probability_primes_seq_28:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_28:value}}`** `(T=0, Z=0, Y=0, X=-25)`. Subtract $45 - 70 = -25$; stack drops. Register $X$ displays $-25$. Account is overdrawn by $\$25$.
 
+#### Problem 7.29: Subtracting a Negative Number
+Evaluate $12 - (-18)$. Place 12 yellow positive tiles on the board. To subtract 18 negative red tiles, introduce 18 zero pairs (+18 yellow and -18 red). Physically remove the 18 red tiles. Exactly $12 + 18 = 30$ yellow tiles remain. 
 
-- **Diagnostic Checkpoint:** Register $X$ displays $-25$. Account is overdrawn by $\$25$.
+Step over to your SC-6 and key in `{{res:sc6_07_data_probability_primes_seq_29:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_29:value}}`** `(T=0, Z=0, Y=0, X=30)`. Subtract $12 - (-18) = 12 + 18 = 30$; stack drops. Register $X$ displays $30$. Subtracting a negative is mathematically and physically identical to adding its positive opposite.
 
-#### Challenge 29: Subtracting a Negative Number
-- **Problem:** Evaluate $12 - (-18)$.
-- **Manipulative Stage:** Place 12 yellow positive tiles on the board. To subtract 18 negative red tiles, introduce 18 zero pairs (+18 yellow and -18 red). Physically remove the 18 red tiles. Exactly $12 + 18 = 30$ yellow tiles remain.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_29:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_29:value}}`**
-- **Stack Flow:** Tap `12 {{key:ENTER}} 18 {{key:+/-}} {{key:-}}` -> (T=0, Z=0, Y=0, X=30). Subtract $12 - (-18) = 12 + 18 = 30$; stack drops.
+#### Problem 7.30: Multiplying Signed Numbers (Negative times Negative)
+Evaluate $(-7) \times (-8)$. On a coordinate grid, establish positive orientation. Multiplying by a negative factor reverses direction $180^\circ$ into negative territory. Multiplying by a second negative factor reverses direction another $180^\circ$, returning to positive orientation $+56$. 
 
+Now compute it on your SC-6: `{{res:sc6_07_data_probability_primes_seq_30:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_30:value}}`** `(T=0, Z=0, Y=0, X=56)`. Multiply $(-7) \times (-8) = 56$; stack drops. Register $X$ displays $56$. The product of two negative factors evaluates to a positive result.
 
-- **Diagnostic Checkpoint:** Register $X$ displays $30$. Subtracting a negative is mathematically and physically identical to adding its positive opposite.
+#### Problem 7.31: Dividing Signed Numbers (Negative divided by Positive)
+Evaluate $(-72) \div (+9)$. Take 72 red negative tokens representing a total deficit of $-72$. Partition them evenly into 9 cups. Each cup receives exactly 8 red negative tokens ($-8$). 
 
-#### Challenge 30: Multiplying Signed Numbers (Negative times Negative)
-- **Problem:** Evaluate $(-7) \times (-8)$.
-- **Manipulative Stage:** On a coordinate grid, establish positive orientation. Multiplying by a negative factor reverses direction $180^\circ$ into negative territory. Multiplying by a second negative factor reverses direction another $180^\circ$, returning to positive orientation $+56$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_30:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_30:value}}`**
-- **Stack Flow:** Tap `7 {{key:+/-}} {{key:ENTER}} 8 {{key:+/-}} {{key:×}}` -> (T=0, Z=0, Y=0, X=56). Multiply $(-7) \times (-8) = 56$; stack drops.
+Run the sequence on your SC-6: `{{res:sc6_07_data_probability_primes_seq_31:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_31:value}}`** `(T=0, Z=0, Y=0, X=-8)`. Divide $(-72) \div 9 = -8$; stack drops. Register $X$ displays $-8$. Dividing a negative quantity by a positive divisor yields a negative quotient.
 
+#### Problem 7.32: Absolute Value of Negative Integer
+Evaluate $|-125|$. Locate $-125$ on a real number line runner. Measure the distance from 0 to $-125$ using a meter tape. Regardless of direction from the origin, geometric distance is strictly scalar and non-negative: 125 units. 
 
-- **Diagnostic Checkpoint:** Register $X$ displays $56$. The product of two negative factors evaluates to a positive result.
+Verify the calculation on your SC-6: `{{res:sc6_07_data_probability_primes_seq_32:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_32:value}}`** `(T=0, Z=0, Y=0, X=125)`. Absolute value operator strips sign; magnitude is 125. Register $X$ displays $125$. Absolute value computes geometric distance from zero.
 
-#### Challenge 31: Dividing Signed Numbers (Negative divided by Positive)
-- **Problem:** Evaluate $(-72) \div (+9)$.
-- **Manipulative Stage:** Take 72 red negative tokens representing a total deficit of $-72$. Partition them evenly into 9 cups. Each cup receives exactly 8 red negative tokens ($-8$).
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_31:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_31:value}}`**
-- **Stack Flow:** Tap `72 {{key:+/-}} {{key:ENTER}} 9 {{key:÷}}` -> (T=0, Z=0, Y=0, X=-8). Divide $(-72) \div 9 = -8$; stack drops.
+#### Problem 7.33: Absolute Value Expression: $|-18| + |+12|$
+Evaluate $|-18| + |12|$. Measure distance from $-18$ to 0 (18 units) and distance from 0 to 12 (12 units). Lay both measurement segments end-to-end to obtain a combined distance of 30 units. 
 
+Test this directly on your SC-6: `{{res:sc6_07_data_probability_primes_seq_33:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_33:value}}`** `(T=0, Z=0, Y=0, X=30)`. Sum absolute distances $18 + 12 = 30$; stack drops. Register $X$ displays $30$. Sum of magnitudes evaluated without parentheses.
 
-- **Diagnostic Checkpoint:** Register $X$ displays $-8$. Dividing a negative quantity by a positive divisor yields a negative quotient.
+#### Problem 7.34: Number Line Distance: Between $-12$ and $+15$
+Find distance between $-12$ and $+15$ on the real line: $|15 - (-12)|$. Place a peg at $-12$ and a peg at $+15$ on a numbered track. Count the total unit intervals between them: 12 units to reach zero, plus 15 units beyond zero, totaling 27 units. 
 
-#### Challenge 32: Absolute Value of Negative Integer
-- **Problem:** Evaluate $|-125|$.
-- **Manipulative Stage:** Locate $-125$ on a real number line runner. Measure the distance from 0 to $-125$ using a meter tape. Regardless of direction from the origin, geometric distance is strictly scalar and non-negative: 125 units.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_32:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_32:value}}`**
-- **Stack Flow:** Tap `125 {{key:+/-}} {{key:|x|}}` -> (T=0, Z=0, Y=0, X=125). Absolute value operator strips sign; magnitude is 125.
+Bring this to the SC-6 stack: `{{res:sc6_07_data_probability_primes_seq_34:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_34:value}}`** `(T=0, Z=0, Y=0, X=27)`. Confirm positive distance magnitude: $|27| = 27$. Register $X$ displays $27$. Euclidean distance between $-12$ and $+15$ confirmed as 27 units.
 
+#### Problem 7.35: Square of Negative Number: $(-9)^2$
+Evaluate $(-9)^2$. Modeling small with blocks before scaling up on your SC-6, take 9 tiles from your kit and assemble a $3 \times 3$ grid ($(-3)^2 = +9$) to see that squaring a negative magnitude yields a positive area. Now scale big to $(-9)^2$ on your StackCalc: tap 9, negate, and square to confirm 81 positive unit squares without needing 81 loose tiles. 
 
-- **Diagnostic Checkpoint:** Register $X$ displays $125$. Absolute value computes geometric distance from zero.
+On your SC-6, enter `{{res:sc6_07_data_probability_primes_seq_35:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_35:value}}`** `(T=0, Z=0, Y=0, X=81)`. Square in place: $(-9) \times (-9) = 81$. Register $X$ displays $81$. Even powers of negative real numbers evaluate to positive values.
 
-#### Challenge 33: Absolute Value Expression: $|-18| + |+12|$
-- **Problem:** Evaluate $|-18| + |12|$.
-- **Manipulative Stage:** Measure distance from $-18$ to 0 (18 units) and distance from 0 to 12 (12 units). Lay both measurement segments end-to-end to obtain a combined distance of 30 units.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_33:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_33:value}}`**
-- **Stack Flow:** Tap `18 {{key:+/-}} {{key:|x|}} 12 {{key:|x|}} {{key:+}}` -> (T=0, Z=0, Y=0, X=30). Sum absolute distances $18 + 12 = 30$; stack drops.
+#### Problem 7.36: Geometric Square Root: $\sqrt{289}$
+A square plaza has area $289\text{ m}^2$. Find side length. Modeling small with blocks before scaling up on your SC-6, first, model the square root concept on a small scale with your Counting Tiles: assemble a $4 \times 4$ square using 16 tiles to see that edge length is $\sqrt{16} = 4$. Now scale big on StackCalc for the 289-tile plaza: enter 289 and tap {{key:√x}} to find the 17-tile edge without needing 289 plastic tiles on the classroom floor. 
 
+Execute the sequence on your SC-6: `{{res:sc6_07_data_probability_primes_seq_36:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_36:value}}`** `(T=0, Z=0, Y=0, X=17)`. Extract principal square root: $\sqrt{289} = 17$. Register $X$ displays $17$. Side length of plaza is $17\text{ m}$.
 
-- **Diagnostic Checkpoint:** Register $X$ displays $30$. Sum of magnitudes evaluated without parentheses.
+#### Problem 7.37: Geometric Square Root: $\sqrt{625}$
+A square chessboard has area $625\text{ cm}^2$. Find side length. Model area using a 625-square grid overlay. Decompose 625 into prime squares ($25 \times 25$). Verify each dimension equals 25 units. 
 
-#### Challenge 34: Number Line Distance: Between $-12$ and $+15$
-- **Problem:** Find distance between $-12$ and $+15$ on the real line: $|15 - (-12)|$.
-- **Manipulative Stage:** Place a peg at $-12$ and a peg at $+15$ on a numbered track. Count the total unit intervals between them: 12 units to reach zero, plus 15 units beyond zero, totaling 27 units.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_34:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_34:value}}`**
-- **Stack Flow:** Tap `15 {{key:ENTER}} 12 {{key:+/-}} {{key:-}} {{key:|x|}}` -> (T=0, Z=0, Y=0, X=27). Confirm positive distance magnitude: $|27| = 27$.
+On your SC-6, key in `{{res:sc6_07_data_probability_primes_seq_37:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_37:value}}`** `(T=0, Z=0, Y=0, X=25)`. Extract principal square root: $\sqrt{625} = 25$. Register $X$ displays $25$. Chessboard side length is $25\text{ cm}$.
 
+#### Problem 7.38: Random Number in Range 10 to 50
+Generate a random integer between 10 and 50 using `{{key:t…x}}`. Place 41 numbered tiles (10 through 50) into an opaque urn. Draw one tile at random to model discrete uniform sampling across a bounded interval. 
 
-- **Diagnostic Checkpoint:** Register $X$ displays $27$. Euclidean distance between $-12$ and $+15$ confirmed as 27 units.
+On the SC-6 keypad, enter `{{res:sc6_07_data_probability_primes_seq_38:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_38:value}}`** `(T=0, Z=0, Y=10, X=28)`. Generate uniform pseudo-random integer in $[10, 50]$. Register $X$ displays a random integer $r \in [10, 50]$, while Register $Y$ preserves the lower bound $10$.
 
-#### Challenge 35: Square of Negative Number: $(-9)^2$
-- **Problem:** Evaluate $(-9)^2$.
-- **Manipulative Stage:** Build a 9-by-9 grid of square tiles. Whether oriented along positive axes or rotated $180^\circ$ into opposite dimensions (negative width times negative height), the bounded physical area comprises 81 positive unit squares.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_35:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_35:value}}`**
-- **Stack Flow:** Tap `9 {{key:+/-}} {{key:x²}}` -> (T=0, Z=0, Y=0, X=81). Square in place: $(-9) \times (-9) = 81$.
+### Expedition 5: Number Theory Challenges & Directed Integer Navigation (Problems 7.39–7.50)
 
+> **Thematic Arc:** Combining `PRIME`, `FACT`, `÷R`, and `LCM` with signed-integer elevation and ledger tracking.
 
-- **Diagnostic Checkpoint:** Register $X$ displays $81$. Even powers of negative real numbers evaluate to positive values.
+#### Problem 7.39: Prime Twin Pair Verification: $(29, 31)$
+Model small with your 24-tile kit by testing twin primes $(11, 13)$—neither 11 tiles nor 13 tiles can form a multi-row rectangle without a leftover tile. Now scale up on your SC-6 to test the larger twin prime pair $(29, 31)$ and compute their sum. Turning to your SC-6, key in `{{res:sc6_07_data_probability_primes_seq_39:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_39:value}}`**.
 
-#### Challenge 36: Geometric Square Root: $\sqrt{289}$
-- **Problem:** A square plaza has area $289\text{ m}^2$. Find side length.
-- **Manipulative Stage:** Model Small with Blocks -> Scale Big on StackCalc: First, model the square root concept on a small scale with your Counting Tiles: assemble a 5x5 square using 25 tiles to see that edge length is $\sqrt{25} = 5$. Now scale big on StackCalc for the 289-tile plaza: enter 289 and tap {{key:√x}} to find the 17-tile edge without needing 289 plastic tiles on the classroom floor.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_36:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_36:value}}`**
-- **Stack Flow:** Tap `289 {{key:√x}}` -> (T=0, Z=0, Y=0, X=17). Extract principal square root: $\sqrt{289} = 17$.
+Running this sequence $\to (T: 0, Z: 0, Y: 0, X: 60)$, confirming both candidates flash `PRIME` on the transflective LCD and sum to the even integer 60.
 
+---
 
-- **Diagnostic Checkpoint:** Register $X$ displays $17$. Side length of plaza is $17\text{ m}$.
+#### Problem 7.40: Divisibility by 9 Check via Remainder
+Check if 1,557 is divisible by 9 using Euclidean division (`{{key:÷R}}`). First, model small with your Place Value kit: test divisibility by 9 on 18 (1 ten-bar and 8 cubes), grouping into 2 sets of 9 with zero remainder ($18 \div 9 = 2\text{ R }0$). Now scale big on StackCalc without needing 1,557 blocks: 
 
-#### Challenge 37: Geometric Square Root: $\sqrt{625}$
-- **Problem:** A square chessboard has area $625\text{ cm}^2$. Find side length.
-- **Manipulative Stage:** Model area using a 625-square grid overlay. Decompose 625 into prime squares ($25 \times 25$). Verify each dimension equals 25 units.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_37:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_37:value}}`**
-- **Stack Flow:** Tap `625 {{key:√x}}` -> (T=0, Z=0, Y=0, X=25). Extract principal square root: $\sqrt{625} = 25$.
+With your SC-6 ready, enter `{{res:sc6_07_data_probability_primes_seq_40:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_40:value}}`** `(T=0, Z=0, Y=0, X=173)`. Euclidean division yields quotient 173 in $X$ and remainder 0 in $Y$, confirming exact divisibility by 9.
 
+---
 
-- **Diagnostic Checkpoint:** Register $X$ displays $25$. Chessboard side length is $25\text{ cm}$.
+#### Problem 7.41: LCD of Three Denominators: $\frac{1}{4}, \frac{1}{6}, \frac{1}{10}$
+Model small with your kit by aligning 4-unit and 6-unit tile rows until their edges meet flush at 12 units ($\operatorname{lcm}(4,6)=12$), then scale up on your SC-6 to include a third period of 10. Step over to your SC-6 and key in `{{res:sc6_07_data_probability_primes_seq_41:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_41:value}}`**.
 
-#### Challenge 38: Random Number in Range 10 to 50
-- **Problem:** Generate a random integer between 10 and 50 using `{{key:t…x}}`.
-- **Manipulative Stage:** Place 41 numbered tiles (10 through 50) into an opaque urn. Draw one tile at random to model discrete uniform sampling across a bounded interval.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_38:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_38:value}}`**
-- **Stack Flow:** Tap `10 {{key:ENTER}} 50 {{key:t…x}}` -> (T=0, Z=0, Y=10, X=50). Generate uniform pseudo-random integer in $[10, 50]$.
+Running this sequence $\to (T: 0, Z: 0, Y: 0, X: 60)$, chaining the two LCM operations directly to establish the common denominator of 60.
 
+#### Problem 7.42: Temperature Range Across a Sub-Zero Week
+Lowest temperature was $-22^\circ\text{F}$, highest was $+14^\circ\text{F}$. Find total temperature swing. On a vertical thermometer scale, mark $-22$ below zero and $+14$ above zero. Trace the mercury column rising from $-22$ to 0 (22 degrees) and from 0 to $+14$ (14 degrees), measuring the total thermal excursion: 36 degrees. 
 
-- **Diagnostic Checkpoint:** Register $X$ displays a random integer $r \in [10, 50]$, while Register $Y$ preserves the lower bound $10$.
+Now compute it on your SC-6: `{{res:sc6_07_data_probability_primes_seq_42:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_42:value}}`** `(T=0, Z=0, Y=0, X=36)`. Subtract $14 - (-22) = 14 + 22 = 36$; stack drops. Register $X$ displays $36$. Total temperature variation is $36^\circ\text{F}$.
 
-#### Challenge 39: Prime Twin Pair Verification: $(29, 31)$
-- **Problem:** Verify that 29 and 31 are twin primes and find their sum.
-- **Manipulative Stage:** Attempt to arrange 29 unit tiles into rectangular arrays with 2 or more rows; only $1 \times 29$ forms. Repeat with 31 tiles; only $1 \times 31$ forms. Both are prime, separated by 2 units.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_39:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_39:value}}`**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `29` | $0.0000$ | $0.0000$ | $0.0000$ | $29.0000$ | Key in first candidate 29 |
-| `{{key:PRIME}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | LCD flashes `PRIME`; preserves 29 in Register $X$ |
-| `31` | $0.0000$ | $0.0000$ | $1.0000$ | $31.0000$ | Key in second candidate 31; stack lifts 29 to $Y$ |
-| `{{key:PRIME}}` | $0.0000$ | $0.0000$ | $1.0000$ | $1.0000$ | LCD flashes `PRIME`; preserves 31 in Register $X$ |
-| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Sum twin primes $29 + 31 = 60$; stack drops |
-
-- **Diagnostic Checkpoint:** Register $X$ displays $60$. Both numbers verified prime, and their sum is an even integer as predicted by number theory.
-
-#### Challenge 40: Divisibility by 9 Check via Remainder
-- **Problem:** Check if 1,557 is divisible by 9 using Euclidean division (`{{key:÷R}}`).
-- **Manipulative Stage:** Model Small with Blocks -> Scale Big on StackCalc: First, model small with your Place Value kit: test divisibility by 9 on the number 18 (1 ten-bar and 8 cubes). Group them into 2 sets of 9 with zero remainder ($18 \div 9 = 2\text{ R }0$). Now scale big on StackCalc: tap `1557 {{key:ENTER}} 9 {{key:÷R}}` to verify quotient 173 and remainder 0 without needing 1,557 blocks.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_40:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_40:value}}`**
-- **Stack Flow:** Tap `1557 {{key:ENTER}} 9 {{key:÷R}}` -> (T=0, Z=0, Y=0, X=173). Euclidean division: Quotient 173 in $X$, Remainder 0 in $Y$.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $173$ and Register $Y$ displays $0$. Remainder of 0 confirms exact divisibility by 9 (also confirmed by digit sum $1+5+5+7 = 18$).
-
-#### Challenge 41: LCD of Three Denominators: $\frac{1}{4}, \frac{1}{6}, \frac{1}{10}$
-- **Problem:** Find common denominator: $\operatorname{lcm}(\operatorname{lcm}(4, 6), 10)$.
-- **Manipulative Stage:** Build towers using colored interlocking cubes: length 4 (red), length 6 (blue), and length 10 (yellow). Extend each train until all three match at identical length: 60 cubes.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_41:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_41:value}}`**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Key in first denominator 4 |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $4.0000$ | $4.0000$ | Push 4 to Register $Y$ |
-| `6` | $0.0000$ | $0.0000$ | $4.0000$ | $6.0000$ | Key in second denominator 6 |
-| `{{key:LCM}}` | $0.0000$ | $0.0000$ | $0.0000$ | $12.0000$ | Compute $\operatorname{lcm}(4, 6) = 12$ |
-| `10` | $0.0000$ | $0.0000$ | $12.0000$ | $10.0000$ | Key in third denominator 10; stack lifts 12 to $Y$ |
-| `{{key:LCM}}` | $0.0000$ | $0.0000$ | $0.0000$ | $60.0000$ | Compute $\operatorname{lcm}(12, 10) = 60$ |
-
-- **Diagnostic Checkpoint:** Register $X$ displays $60$. Common denominator for $\frac{1}{4}, \frac{1}{6}, \frac{1}{10}$ is 60.
-
-#### Challenge 42: Temperature Range Across a Sub-Zero Week
-- **Problem:** Lowest temperature was $-22^\circ\text{F}$, highest was $+14^\circ\text{F}$. Find total temperature swing.
-- **Manipulative Stage:** On a vertical thermometer scale, mark $-22$ below zero and $+14$ above zero. Trace the mercury column rising from $-22$ to 0 (22 degrees) and from 0 to $+14$ (14 degrees), measuring the total thermal excursion: 36 degrees.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_42:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_42:value}}`**
-- **Stack Flow:** Tap `14 {{key:ENTER}} 22 {{key:+/-}} {{key:-}}` -> (T=0, Z=0, Y=0, X=36). Subtract $14 - (-22) = 14 + 22 = 36$; stack drops.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $36$. Total temperature variation is $36^\circ\text{F}$.
-
-#### Challenge 43: Submarine Depth Change
-- **Problem:** A submarine at depth $-180\text{ m}$ ascends $+65\text{ m}$, then dives $-40\text{ m}$. Find final depth.
-- **Manipulative Stage:** Move a depth marker on a vertical bathymetric track: start at $-180\text{ m}$, slide upward $+65\text{ m}$ to $-115\text{ m}$, then slide downward $-40\text{ m}$ to settle at $-155\text{ m}$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_43:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_43:value}}`**
+#### Problem 7.43: Submarine Depth Change
+A submarine at depth $-180\text{ m}$ ascends $+65\text{ m}$, then dives $-40\text{ m}$. Find final depth. Move a depth marker on a vertical bathymetric track: start at $-180\text{ m}$, slide upward $+65\text{ m}$ to $-115\text{ m}$, then slide downward $-40\text{ m}$ to settle at $-155\text{ m}$. Run the sequence on your SC-6: `{{res:sc6_07_data_probability_primes_seq_43:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_43:value}}`**.
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -1342,306 +1127,145 @@ Before executing probability distributions, primality tests, and statistical sum
 | `40` | $0.0000$ | $0.0000$ | $-115.0000$ | $40.0000$ | Key in dive descent $40\text{ m}$; stack lifts $-115$ to $Y$ |
 | `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-155.0000$ | Deduct descent: $-115 - 40 = -155\text{ m}$; stack drops |
 
-- **Diagnostic Checkpoint:** Register $X$ displays $-155$. Final depth is $155\text{ m}$ below sea level.
+Register $X$ displays $-155$. Final depth is $155\text{ m}$ below sea level.
 
-#### Challenge 44: Rolling Double Sixes with Two Dice
-- **Problem:** What is the probability of rolling double sixes with two fair six-sided dice ($1$ favorable outcome out of $36$)?
-- **Manipulative Stage:** Examine a $6 \times 6$ grid of dice pairings (36 cells). Only one cell represents $(6,6)$. Compute the fractional area occupied by that single cell.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_44:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_44:value}}`**
-- **Stack Flow:** Tap `1 {{key:ENTER}} 36 {{key:÷}}` -> (T=0, Z=0, Y=0, X=0.0278). Divide $1 \div 36 \approx 0.0278$; stack drops.
+#### Problem 7.44: Rolling Double Sixes with Two Dice
+What is the probability of rolling double sixes with two fair six-sided dice ($1$ favorable outcome out of $36$)? Examine a $6 \times 6$ grid of dice pairings (36 cells). Only one cell represents $(6,6)$. Compute the fractional area occupied by that single cell. 
 
+Verify the calculation on your SC-6: `{{res:sc6_07_data_probability_primes_seq_44:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_44:value}}`** `(T=0, Z=0, Y=0, X=0.0278)`. Divide $1 \div 36 \approx 0.0278$; stack drops. Register $X$ displays $0.0277777778$. Probability is approximately $2.78\%$ (or $1/36$).
 
-- **Diagnostic Checkpoint:** Register $X$ displays $0.0277777778$. Probability is approximately $2.78\%$ (or $1/36$).
+#### Problem 7.45: Probability of Not Rolling a 6 on a Die
+Five faces are not 6. Compute $5/6$. Set out 6 die faces: {1, 2, 3, 4, 5, 6}. Remove the face labeled 6. The remaining 5 faces represent the complement event ($E'$). Calculate $5/6$. 
 
-#### Challenge 45: Probability of Not Rolling a 6 on a Die
-- **Problem:** Five faces are not 6. Compute $5/6$.
-- **Manipulative Stage:** Set out 6 die faces: {1, 2, 3, 4, 5, 6}. Remove the face labeled 6. The remaining 5 faces represent the complement event ($E'$). Calculate $5/6$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_45:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_45:value}}`**
-- **Stack Flow:** Tap `5 {{key:ENTER}} 6 {{key:÷}}` -> (T=0, Z=0, Y=0, X=0.8333). Divide $5 \div 6 \approx 0.8333$; stack drops.
+Test this directly on your SC-6: `{{res:sc6_07_data_probability_primes_seq_45:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_45:value}}`** `(T=0, Z=0, Y=0, X=0.8333)`. Divide $5 \div 6 \approx 0.8333$; stack drops. Register $X$ displays $0.8333333333$. Complementary probability is approximately $83.33\%$.
 
+#### Problem 7.46: Prime Factor Decomposition of 1,001
+Decompose 1,001 into prime factors (famous number-theory product). Modeling small with blocks before scaling up on your SC-6, take 12 unit cubes from your kit and build a $2 \times 2 \times 3$ prism to see how three prime dimensions multiply into a single volume. Now scale big to 1,001 on your StackCalc: enter 1001 and tap {{key:FACT}} to discover the beautiful prime dimensions $7 \times 11 \times 13$ without needing 1,001 physical cubes! 
 
-- **Diagnostic Checkpoint:** Register $X$ displays $0.8333333333$. Complementary probability is approximately $83.33\%$.
+Bring this to the SC-6 stack: `{{res:sc6_07_data_probability_primes_seq_46:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_46:value}}`** `(T=0, Z=0, Y=0, X=1001)`. LCD decomposes into prime factors: `7 × 11 × 13`. Register $X$ preserves $1001$ while the display shows $7 \times 11 \times 13$.
 
-#### Challenge 46: Prime Factor Decomposition of 1,001
-- **Problem:** Decompose 1,001 into prime factors (famous number-theory product).
-- **Manipulative Stage:** Build a 3D rectangular prism volume of 1,001 unit cubes. Test factor slicing: the block factors neatly into dimensions $7 \times 11 \times 13$, three distinct consecutive prime numbers.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_46:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_46:value}}`**
-- **Stack Flow:** Tap `1001 {{key:FACT}}` -> (T=0, Z=0, Y=0, X=0). LCD decomposes into prime factors: `7 × 11 × 13`.
+#### Problem 7.47: Prime Factor Decomposition of 1,729 (Hardy-Ramanujan Number)
+Decompose 1,729 into prime factors. Inspect 1,729, known as the smallest integer expressible as the sum of two cubes in two different ways ($1^3 + 12^3 = 9^3 + 10^3$). Deconstruct it into prime factor blocks: $7 \times 13 \times 19$. 
 
+On your SC-6, enter `{{res:sc6_07_data_probability_primes_seq_47:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_47:value}}`** `(T=0, Z=0, Y=0, X=1729)`. LCD decomposes into prime factors: `7 × 13 × 19`. Register $X$ preserves $1729$ while the display reveals $7 \times 13 \times 19$, three primes in arithmetic progression with common difference 6.
 
-- **Diagnostic Checkpoint:** Register $X$ preserves $1001$ while the display shows $7 \times 11 \times 13$.
+#### Problem 7.48: Weighted Mean of Classroom Grades
+A grading syllabus weights homework (average 90, weight 2), quizzes (average 82, weight 3), and exams (average 88, weight 5) for a total weight of 10. Accumulate the weighted points directly on the stack by executing the sequence on your SC-6: `{{res:sc6_07_data_probability_primes_seq_48:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_48:value}}`**.
 
-#### Challenge 47: Prime Factor Decomposition of 1,729 (Hardy-Ramanujan Number)
-- **Problem:** Decompose 1,729 into prime factors.
-- **Manipulative Stage:** Inspect 1,729, known as the smallest integer expressible as the sum of two cubes in two different ways ($1^3 + 12^3 = 9^3 + 10^3$). Deconstruct it into prime factor blocks: $7 \times 13 \times 19$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_47:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_47:value}}`**
-- **Stack Flow:** Tap `1729 {{key:FACT}}` -> (T=0, Z=0, Y=0, X=0). LCD decomposes into prime factors: `7 × 13 × 19`.
+Running this sequence $\to (T: 0, Z: 0, Y: 0, X: 86.6)$, computing the weighted grade average of $86.6\%$ without scratch paper or order-of-operations ambiguity.
 
-
-- **Diagnostic Checkpoint:** Register $X$ preserves $1729$ while the display reveals $7 \times 13 \times 19$, three primes in arithmetic progression with common difference 6.
-
-#### Challenge 48: Weighted Mean of Classroom Grades
-- **Problem:** Homework (avg 90, weight 2), Quizzes (avg 82, weight 3), Exam (avg 88, weight 5). Total weight = 10.
-- **Manipulative Stage:** On a balance beam, place two 90-gram weights at position 1, three 82-gram weights at position 2, and five 88-gram weights at position 3. Find the center of mass balancing the 10 weights.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_48:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_48:value}}`**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `90` | $0.0000$ | $0.0000$ | $0.0000$ | $90.0000$ | Key in homework average 90 |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $90.0000$ | $90.0000$ | Push 90 into Register $Y$ |
-| `2` | $0.0000$ | $0.0000$ | $90.0000$ | $2.0000$ | Key in homework weight 2 |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $180.0000$ | Compute homework points: $90 \times 2 = 180$ |
-| `82` | $0.0000$ | $0.0000$ | $180.0000$ | $82.0000$ | Key in quiz average 82; stack lifts 180 to $Y$ |
-| `{{key:ENTER}}` | $0.0000$ | $180.0000$ | $82.0000$ | $82.0000$ | Push 82 to $Y$; lifts 180 to $Z$ |
-| `3` | $0.0000$ | $180.0000$ | $82.0000$ | $3.0000$ | Key in quiz weight 3 |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $180.0000$ | $246.0000$ | Compute quiz points: $82 \times 3 = 246$; $Z$ drops to $Y$ |
-| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $426.0000$ | Accumulate weighted points: $180 + 246 = 426$ |
-| `88` | $0.0000$ | $0.0000$ | $426.0000$ | $88.0000$ | Key in exam average 88; stack lifts 426 to $Y$ |
-| `{{key:ENTER}}` | $0.0000$ | $426.0000$ | $88.0000$ | $88.0000$ | Push 88 to $Y$; lifts 426 to $Z$ |
-| `5` | $0.0000$ | $426.0000$ | $88.0000$ | $5.0000$ | Key in exam weight 5 |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $426.0000$ | $440.0000$ | Compute exam points: $88 \times 5 = 440$; $Z$ drops to $Y$ |
-| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $866.0000$ | Total weighted points: $426 + 440 = 866$ |
-| `10` | $0.0000$ | $0.0000$ | $866.0000$ | $10.0000$ | Key in total weight 10; stack lifts 866 to $Y$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $86.6$ | Divide $866 \div 10 = 86.6$; stack drops |
-
-- **Diagnostic Checkpoint:** Register $X$ displays $86.6$. Weighted mean grade is $86.6\%$.
-
-#### Challenge 49: Goldbach Conjecture Sample Check: $28 = 11 + 17$
-- **Problem:** Test if 11 and 17 are both prime and sum to 28.
-- **Manipulative Stage:** Lay out 11 yellow unit tiles (prime length) and 17 yellow unit tiles (prime length). Verify neither can be factored into non-trivial rectangles. Join them end-to-end to form a single train of 28 units, demonstrating that even integer 28 decomposes into the sum of two primes.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_49:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_49:value}}`**
+#### Problem 7.49: Goldbach Conjecture Sample Check: $28 = 11 + 17$
+Test if 11 and 17 are both prime and sum to 28. Lay out 11 yellow unit tiles (prime length) and 17 yellow unit tiles (prime length). Verify neither can be factored into non-trivial rectangles. Join them end-to-end to form a single train of 28 units, demonstrating that even integer 28 decomposes into the sum of two primes. On your SC-6, key in `{{res:sc6_07_data_probability_primes_seq_49:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_49:value}}`**.
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `11` | $0.0000$ | $0.0000$ | $0.0000$ | $11.0000$ | Key in first prime candidate 11 |
-| `{{key:PRIME}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | LCD flashes `PRIME`; preserves 11 in Register $X$ |
-| `17` | $0.0000$ | $0.0000$ | $1.0000$ | $17.0000$ | Key in second prime candidate 17; stack lifts 11 to $Y$ |
-| `{{key:PRIME}}` | $0.0000$ | $0.0000$ | $1.0000$ | $1.0000$ | LCD flashes `PRIME`; preserves 17 in Register $X$ |
-| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Sum primes $11 + 17 = 28$; stack drops |
-| `11` | $0.0000$ | $0.0000$ | $2.0000$ | $11.0000$ | Key in 11 for second partition check; stack lifts 28 to $Y$ |
-| `{{key:ENTER}}` | $0.0000$ | $2.0000$ | $11.0000$ | $11.0000$ | Push 11 to $Y$; lifts 28 to $Z$ |
-| `17` | $0.0000$ | $2.0000$ | $11.0000$ | $17.0000$ | Key in 17 |
-| `{{key:+}}` | $0.0000$ | $0.0000$ | $2.0000$ | $28.0000$ | Sum $11 + 17 = 28$; $Z$ drops to $Y$ |
+| `{{key:PRIME}}` | $0.0000$ | $0.0000$ | $0.0000$ | $11.0000$ | LCD flashes `PRIME`; preserves 11 in Register $X$ |
+| `17` | $0.0000$ | $0.0000$ | $11.0000$ | $17.0000$ | Key in second candidate 17; stack lifts 11 to $Y$ |
+| `{{key:PRIME}}` | $0.0000$ | $0.0000$ | $11.0000$ | $17.0000$ | LCD flashes `PRIME`; preserves 17 in Register $X$ |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $28.0000$ | Sum primes $11 + 17 = 28$; stack drops |
+| `11` | $0.0000$ | $0.0000$ | $28.0000$ | $11.0000$ | Key in 11 for second partition check; stack lifts 28 to $Y$ |
+| `{{key:ENTER}}` | $0.0000$ | $28.0000$ | $11.0000$ | $11.0000$ | Push 11 to $Y$; lifts 28 to $Z$ (stack lift disabled) |
+| `17` | $0.0000$ | $28.0000$ | $11.0000$ | $17.0000$ | Key in 17; overwrites $X$ since `ENTER` disabled lift |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $28.0000$ | $28.0000$ | Sum $11 + 17 = 28$; stack drops, preserving first sum in $Y$ |
 
-- **Diagnostic Checkpoint:** Register $X$ displays $28$ and Register $Y$ preserves $28$. Both 11 and 17 confirmed prime, summing to even integer 28.
+Register $X$ displays $28$ and Register $Y$ preserves $28$. Both 11 and 17 confirmed prime, summing to even integer 28.
 
-#### Challenge 50: Net Profit Across 4 Business Quarters
-- **Problem:** Q1: $+\$14,500$; Q2: $-\$3,200$; Q3: $+\$8,900$; Q4: $-\$1,400$. Find net annual profit.
-- **Manipulative Stage:** On a ledger balance board, place green tokens for credits and red tokens for debits: $+14,500$ green, $-3,200$ red, $+8,900$ green, $-1,400$ red. Pair and cancel red tokens against green tokens to leave net surplus.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_50:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_50:value}}`**
+#### Problem 7.50: Net Profit Across 4 Business Quarters
+Tracking corporate financial performance across four business quarters records Q1 profit $+\$14,500$, Q2 loss $-\$3,200$, Q3 profit $+\$8,900$, and Q4 loss $-\$1,400$. Pair credits and debits on the stack—on the SC-6 keypad, enter `{{res:sc6_07_data_probability_primes_seq_50:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_50:value}}`**.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `14500` | $0.0000$ | $0.0000$ | $0.0000$ | $14500.0000$ | Enter Q1 profit $\$14,500$ |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $14500.0000$ | $14500.0000$ | Push Q1 profit into Register $Y$ |
-| `3200` | $0.0000$ | $0.0000$ | $14500.0000$ | $3200.0000$ | Enter Q2 loss $\$3,200$ |
-| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $11300.0000$ | Deduct Q2 loss: $14500 - 3200 = 11300$; stack drops |
-| `8900` | $0.0000$ | $0.0000$ | $11300.0000$ | $8900.0000$ | Enter Q3 profit $\$8,900$; stack lifts 11300 to $Y$ |
-| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $20200.0000$ | Add Q3 profit: $11300 + 8900 = 20200$; stack drops |
-| `1400` | $0.0000$ | $0.0000$ | $20200.0000$ | $1400.0000$ | Enter Q4 loss $\$1,400$; stack lifts 20200 to $Y$ |
-| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $18800.0000$ | Deduct Q4 loss: $20200 - 1400 = 18800$; stack drops |
-
-- **Diagnostic Checkpoint:** Register $X$ displays $18800$. Net annual profit is $\$18,800.00$.
-
-#### Challenge 51: Compound Probability: Coin Flip and Die Roll
-- **Problem:** What is the probability of flipping Heads on a coin AND rolling a 6 on a die? ($P = 1/2 \times 1/6$)
-- **Manipulative Stage:** Set up a 2-by-6 grid: 2 coin states (Heads, Tails) times 6 die faces (1 to 6) produces 12 mutually exclusive outcomes. Exactly 1 outcome is (Heads, 6).
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_51:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_51:value}}`**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Key in favorable coin outcome 1 |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $1.0000$ | $1.0000$ | Push 1 into Register $Y$ |
-| `2` | $0.0000$ | $0.0000$ | $1.0000$ | $2.0000$ | Key in coin sample space 2 |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.5$ | Compute $P(\text{Heads}) = 1/2 = 0.5$ |
-| `1` | $0.0000$ | $0.0000$ | $0.5$ | $1.0000$ | Key in favorable die outcome 1; stack lifts 0.5 to $Y$ |
-| `{{key:ENTER}}` | $0.0000$ | $0.5$ | $1.0000$ | $1.0000$ | Push 1 to $Y$; lifts 0.5 to $Z$ |
-| `6` | $0.0000$ | $0.5$ | $1.0000$ | $6.0000$ | Key in die sample space 6 |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.5$ | $0.1666666667$ | Compute $P(\text{Roll 6}) = 1/6$; $Z$ drops to $Y$ |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0833333333$ | Multiply independent probabilities: $0.5 \times 0.1667 \approx 0.0833$ |
-
-- **Diagnostic Checkpoint:** Register $X$ displays $0.0833333333$. Joint probability is $1/12 \approx 8.33\%$.
-
-#### Challenge 52: Drawing Two Aces Without Replacement
-- **Problem:** A player draws two cards from a 52-card deck without replacement. Probability that both are aces: $\frac{4}{52} \times \frac{3}{51}$.
-- **Manipulative Stage:** From a deck of 52 cards, there are 4 aces ($4/52$). After drawing one ace without replacing it, 51 cards remain, of which 3 are aces ($3/51$).
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_52:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_52:value}}`**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Key in initial aces 4 |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $4.0000$ | $4.0000$ | Push 4 into Register $Y$ |
-| `52` | $0.0000$ | $0.0000$ | $4.0000$ | $52.0000$ | Key in total deck size 52 |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0769230769$ | Compute first draw probability: $4/52 = 1/13$ |
-| `3` | $0.0000$ | $0.0000$ | $0.0769230769$ | $3.0000$ | Key in remaining aces 3; stack lifts to $Y$ |
-| `{{key:ENTER}}` | $0.0000$ | $0.0769230769$ | $3.0000$ | $3.0000$ | Push 3 to $Y$; lifts first probability to $Z$ |
-| `51` | $0.0000$ | $0.0769230769$ | $3.0000$ | $51.0000$ | Key in remaining total cards 51 |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0769230769$ | $0.0588235294$ | Compute second draw probability: $3/51 = 1/17$; $Z$ drops to $Y$ |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0045248869$ | Multiply dependent probabilities: $1/221 \approx 0.004525$ |
-
-- **Diagnostic Checkpoint:** Register $X$ displays $0.0045248869$. The probability of drawing two aces without replacement is approximately $0.45\%$.
-
-#### Challenge 53: Drawing Consecutive Matching Socks
-- **Problem:** A drawer has 6 black socks and 4 blue socks (10 total). Probability of drawing two matching black socks without replacement: $\frac{6}{10} \times \frac{5}{9}$.
-- **Manipulative Stage:** Place 6 black tokens and 4 blue tokens in a bag (10 total). Drawing the first black token has probability $6/10$. Without replacing it, 5 black tokens remain out of 9 total ($5/9$).
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_53:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_53:value}}`**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `6` | $0.0000$ | $0.0000$ | $0.0000$ | $6.0000$ | Key in initial black socks 6 |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $6.0000$ | $6.0000$ | Push 6 into Register $Y$ |
-| `10` | $0.0000$ | $0.0000$ | $6.0000$ | $10.0000$ | Key in total socks 10 |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6$ | Compute first draw probability: $6/10 = 0.6$ |
-| `5` | $0.0000$ | $0.0000$ | $0.6$ | $5.0000$ | Key in remaining black socks 5; stack lifts 0.6 to $Y$ |
-| `{{key:ENTER}}` | $0.0000$ | $0.6$ | $5.0000$ | $5.0000$ | Push 5 to $Y$; lifts 0.6 to $Z$ |
-| `9` | $0.0000$ | $0.6$ | $5.0000$ | $9.0000$ | Key in remaining total socks 9 |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.6$ | $0.5555555556$ | Compute second draw probability: $5/9 \approx 0.5556$; $Z$ drops to $Y$ |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3333333333$ | Multiply dependent probabilities: $0.6 \times 0.5556 = 1/3$ |
-
-- **Diagnostic Checkpoint:** Register $X$ displays $0.3333333333$. Exactly $1/3$ ($33.33\%$) chance of drawing a matching black pair.
-
-#### Challenge 54: Prime Factorization of 3,600
-- **Problem:** Decompose 3,600 into prime factors ($3600 = 60^2$).
-- **Manipulative Stage:** Construct a factor tree for 3,600: $3600 = 36 \times 100 = (4 \times 9) \times (4 \times 25) = 2^4 \times 3^2 \times 5^2$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_54:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_54:value}}`**
-- **Stack Flow:** Tap `3600 {{key:FACT}}` -> (T=0, Z=0, Y=0, X=0). LCD decomposes into prime factors: `2⁴ × 3² × 5²`.
-
-
-- **Diagnostic Checkpoint:** Register $X$ preserves $3600$ while screen displays $2^4 \times 3^2 \times 5^2$.
-
-#### Challenge 55: GCD and LCM of 45 and 75
-- **Problem:** Find $\gcd(45, 75)$ and $\operatorname{lcm}(45, 75)$.
-- **Manipulative Stage:** Factor both numbers: $45 = 3^2 \times 5$, $75 = 3 \times 5^2$. The intersection of prime factors is $3 \times 5 = 15$ ($\gcd$). The union of prime factors with highest powers is $3^2 \times 5^2 = 225$ ($\operatorname{lcm}$).
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_55:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_55:value}}`**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `45` | $0.0000$ | $0.0000$ | $0.0000$ | $45.0000$ | Enter first integer 45 |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $45.0000$ | $45.0000$ | Push 45 into Register $Y$ |
-| `75` | $0.0000$ | $0.0000$ | $45.0000$ | $75.0000$ | Key in second integer 75 |
-| `{{key:GCF}}` | $0.0000$ | $0.0000$ | $0.0000$ | $15.0000$ | Compute greatest common factor: $\gcd(45, 75) = 15$ |
-| `45` | $0.0000$ | $0.0000$ | $15.0000$ | $45.0000$ | Key in 45 for LCM; stack lifts 15 to $Y$ |
-| `{{key:ENTER}}` | $0.0000$ | $15.0000$ | $45.0000$ | $45.0000$ | Push 45 to $Y$; lifts 15 to $Z$ |
-| `75` | $0.0000$ | $15.0000$ | $45.0000$ | $75.0000$ | Key in second integer 75 |
-| `{{key:LCM}}` | $0.0000$ | $0.0000$ | $15.0000$ | $225.0000$ | Compute least common multiple: $\operatorname{lcm}(45, 75) = 225$; $Z$ drops to $Y$ |
-
-- **Diagnostic Checkpoint:** Register $X$ displays $225$ ($\text{LCM}$) and Register $Y$ preserves $15$ ($\text{GCF}$). Note that $15 \times 225 = 3375 = 45 \times 75$.
-
-#### Challenge 56: Synchronized Municipal Traffic Signal Cycles
-- **Problem:** Signal A cycles every $45\text{ seconds}$, Signal B cycles every $60\text{ seconds}$. Find the synchronized cycle time: $\operatorname{lcm}(45, 60)$.
-- **Manipulative Stage:** On a timing tape, place red markers every 45 units (45, 90, 135, 180...) and blue markers every 60 units (60, 120, 180...). The first point of co-occurrence is 180 units.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_56:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_56:value}}`**
-- **Stack Flow:** Tap `45 {{key:ENTER}} 60 {{key:LCM}}` -> (T=0, Z=0, Y=0, X=180). Compute $\operatorname{lcm}(45, 60) = 180$; stack drops.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $180$. Both traffic lights synchronize every 180 seconds ($3\text{ minutes}$).
-
-#### Challenge 57: Euclidean Division Ladder for $\gcd(546, 210)$
-- **Problem:** Compute Euclidean steps for $546$ and $210$: $546 \div 210 = 2\text{ R }126$; $210 \div 126 = 1\text{ R }84$; $126 \div 84 = 1\text{ R }42$; $84 \div 42 = 2\text{ R }0$.
-- **Manipulative Stage:** Cut a ribbon 546 cm long and measure with a 210 cm rod: two rods fit with 126 cm remainder ($546 = 2 \times 210 + 126$). Next, measure 210 cm with 126 cm: one rod fits with 84 cm remainder. Measure 126 cm with 84 cm: one rod fits with 42 cm remainder. Finally, 84 cm divides into two 42 cm segments with 0 remainder. The last non-zero remainder is 42.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_57:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_57:value}}`**
-- **Stack Flow:** Tap `546 {{key:ENTER}} 210 {{key:GCF}}` -> (T=0, Z=0, Y=0, X=42). Execute hardware Euclidean ladder: $\gcd(546, 210) = 42$.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $42$. Greatest common divisor of 546 and 210 is 42.
-
-#### Challenge 58: Mean Absolute Deviation of a 7-Element Dataset
-- **Problem:** Dataset: $12, 14, 15, 16, 18, 20, 24$ (Mean = 17.0). Deviations: $5, 3, 2, 1, 1, 3, 7$. Sum = 22. MAD = $22/7$.
-- **Manipulative Stage:** Plot the 7 points on a dot plot. Draw a fulcrum at the mean 17. Measure the physical distance from each dot to the mean (5, 3, 2, 1, 1, 3, 7). Add the lengths to get 22, and divide evenly among the 7 data points: $22/7 \approx 3.1429$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_58:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_58:value}}`**
-- **Stack Flow:** Tap `{{key:CLΣ}} 12 {{key:Σ+}} 14 {{key:Σ+}} 15 {{key:Σ+}} 16 {{key:Σ+}} 18 {{key:Σ+}} 20 {{key:Σ+}} 24 {{key:Σ+}} {{key:MAD}}` -> (T=0, Z=0, Y=0, X=7). Compute mean absolute deviation; $Y$ holds count $n = 7$.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $3.1428571429$ and Register $Y$ displays $7$. Average distance from data points to mean is $\approx 3.14$.
-
-#### Challenge 59: Interquartile Range Across Grade 6 Science Scores
-- **Problem:** Scores: $65, 72, 75, 80, 84, 88, 92, 96$. Find IQR ($Q_3 - Q_1 = 90 - 73.5 = 16.5$).
-- **Manipulative Stage:** Arrange 8 test score cards in ascending order. Divide into lower half ($65, 72, 75, 80$) and upper half ($84, 88, 92, 96$). Find the median of lower half ($Q_1 = 73.5$) and median of upper half ($Q_3 = 90$). Measure the spread between quartiles: $90 - 73.5 = 16.5$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_59:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_59:value}}`**
-- **Stack Flow:** Tap `{{key:CLΣ}} 65 {{key:Σ+}} 72 {{key:Σ+}} 75 {{key:Σ+}} 80 {{key:Σ+}} 84 {{key:Σ+}} 88 {{key:Σ+}} 92 {{key:Σ+}} 96 {{key:Σ+}} {{key:IQR}}` -> (T=0, Z=0, Y=0, X=8). Compute interquartile range $Q_3 - Q_1 = 16.5$; $Y$ holds count $n = 8$.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $16.5$ and Register $Y$ displays $8$. Interquartile range of middle $50\%$ of class is $16.5$ points.
-
-#### Challenge 60: Chemical Freezing Point Depression
-- **Problem:** Pure water freezes at $0^\circ\text{C}$. Adding rock salt lowers the freezing point by $-7.8^\circ\text{C}$. Adding calcium chloride drops it an additional $-6.4^\circ\text{C}$. Find final freezing point.
-- **Manipulative Stage:** Use a downward-pointing thermometer strip. Move down $7.8^\circ$ below zero. Move down another $6.4^\circ$ further below zero. Measure total drop from zero: $14.2^\circ$, giving final temperature of $-14.2^\circ\text{C}$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_60:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_60:value}}`**
-- **Stack Flow:** Tap `7.8 {{key:+/-}} {{key:ENTER}} 6.4 {{key:+/-}} {{key:+}}` -> (T=0, Z=0, Y=0, X=-14.2). Add depressions: $-7.8 + (-6.4) = -14.2$; stack drops.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $-14.2$. Final depressed freezing point is $-14.2^\circ\text{C}$.
-
-#### Challenge 61: Product of Three Signed Integers
-- **Problem:** Evaluate $(-4) \times (-5) \times (-6)$.
-- **Manipulative Stage:** On a number ray, multiplying negative by negative flips the orientation to positive: $(-4) \times (-5) = +20$. Multiplying by a third negative flips the direction back into negative territory: $+20 \times (-6) = -120$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_61:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_61:value}}`**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Key in first magnitude 4 |
-| `{{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-4.0000$ | Negate to $-4$ |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $-4.0000$ | $-4.0000$ | Push $-4$ into Register $Y$ |
-| `5` | $0.0000$ | $0.0000$ | $-4.0000$ | $5.0000$ | Key in second magnitude 5 |
-| `{{key:+/-}}` | $0.0000$ | $0.0000$ | $-4.0000$ | $-5.0000$ | Negate to $-5$ |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $20.0000$ | Multiply $(-4) \times (-5) = 20$; stack drops |
-| `6` | $0.0000$ | $0.0000$ | $20.0000$ | $6.0000$ | Key in third magnitude 6; stack lifts 20 to $Y$ |
-| `{{key:+/-}}` | $0.0000$ | $0.0000$ | $20.0000$ | $-6.0000$ | Negate to $-6$ |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-120.0000$ | Multiply $20 \times (-6) = -120$; stack drops |
-
-- **Diagnostic Checkpoint:** Register $X$ displays $-120$. An odd number of negative factors produces a negative product.
-
-#### Challenge 62: Order of Operations with Negative Numbers
-- **Problem:** Evaluate $(-18) \times 4 - (-36) \div (-9) = -72 - 4 = -76$.
-- **Manipulative Stage:** Model the two terms separately: Term 1 is 4 groups of $-18$ red chips ($-72$). Term 2 is $-36$ divided into $-9$ parts ($+4$). Deducting 4 positive units from 72 red debt units leaves 76 red debt units ($-76$).
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_62:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_62:value}}`**
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` | $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Key in first magnitude 18 |
-| `{{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-18.0000$ | Negate to $-18$ |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $-18.0000$ | $-18.0000$ | Push $-18$ into Register $Y$ |
-| `4` | $0.0000$ | $0.0000$ | $-18.0000$ | $4.0000$ | Key in multiplier 4 |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-72.0000$ | Compute first product: $-18 \times 4 = -72$ |
-| `36` | $0.0000$ | $0.0000$ | $-72.0000$ | $36.0000$ | Key in magnitude 36; stack lifts $-72$ to $Y$ |
-| `{{key:+/-}}` | $0.0000$ | $0.0000$ | $-72.0000$ | $-36.0000$ | Negate to $-36$ |
-| `{{key:ENTER}}` | $0.0000$ | $-72.0000$ | $-36.0000$ | $-36.0000$ | Push $-36$ to $Y$; lifts $-72$ to $Z$ |
-| `9` | $0.0000$ | $-72.0000$ | $-36.0000$ | $9.0000$ | Key in magnitude 9 |
-| `{{key:+/-}}` | $0.0000$ | $-72.0000$ | $-36.0000$ | $-9.0000$ | Negate to divisor $-9$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $-72.0000$ | $4.0000$ | Compute quotient $(-36) \div (-9) = 4$; $Z$ drops to $Y$ |
-| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-76.0000$ | Subtract $-72 - 4 = -76$; stack drops |
-
-- **Diagnostic Checkpoint:** Register $X$ displays $-76$. Subtraction of two grouped terms completed cleanly without parentheses.
-
-#### Challenge 63: Geometric Square Root of a Square Ranch
-- **Problem:** A square ranch has an area of $4,096\text{ m}^2$. Find side length.
-- **Manipulative Stage:** On a square grid, identify that $4096 = 2^{12}$. Taking the square root halves the exponent: $\sqrt{2^{12}} = 2^6 = 64$.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_63:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_63:value}}`**
-- **Stack Flow:** Tap `4096 {{key:√x}}` -> (T=0, Z=0, Y=0, X=64). Extract square root: $\sqrt{4096} = 64$.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $64$. Ranch perimeter boundary is $64\text{ m}$ per side.
-
-#### Challenge 64: Divisibility by 11 Verification
-- **Problem:** Test if 2,596 is divisible by 11 using Euclidean division (`{{key:÷R}}`).
-- **Manipulative Stage:** Apply the alternating digit sum divisibility rule for 11: $(2 + 9) - (5 + 6) = 11 - 11 = 0$. Since the alternating difference is a multiple of 11, the number is divisible with zero remainder.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_64:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_64:value}}`**
-- **Stack Flow:** Tap `2596 {{key:ENTER}} 11 {{key:÷R}}` -> (T=0, Z=0, Y=0, X=236). Euclidean division: Quotient 236 in $X$, Remainder 0 in $Y$.
-
-
-- **Diagnostic Checkpoint:** Register $X$ displays $236$ and Register $Y$ displays $0$. Remainder of 0 confirms exact divisibility by 11 ($2596 = 236 \times 11$).
-
-#### Challenge 65: Mersenne Number Primality Check: $2^5 - 1 = 31$
-- **Problem:** Compute $2^5 - 1$ and check if the result is prime.
-- **Manipulative Stage:** Lay out power-of-two blocks: 1, 2, 4, 8, 16. Summing these 5 blocks produces $2^5 - 1 = 31$. Attempt to arrange 31 counters into rectangular arrays: only $1 \times 31$ is possible, confirming 31 is prime.
-- **RPN Keystrokes:** `{{res:sc6_07_data_probability_primes_seq_65:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_65:value}}`**
-- **Stack Flow:** Tap `2 {{key:ENTER}} 5 {{key:yˣ}} 1 {{key:-}} {{key:PRIME}}` -> (T=0, Z=0, Y=0, X=1). Test primality: LCD status flashes `PRIME`.
-
-
-- **Diagnostic Checkpoint:** Register $X$ preserves $31$ and LCD flashes `PRIME`. The 3rd Mersenne prime $M_5 = 2^5 - 1 = 31$ is verified.
+Running this sequence $\to (T: 0, Z: 0, Y: 0, X: 18800)$, yielding net annual earnings of $\$18,800.00$.
 
 ---
 
+### Expedition 6: Compound Probability & Pre-Algebra Mastery Sprints (Problems 7.51–7.65)
+
+> **Thematic Arc:** Evaluating dependent and independent multi-stage probabilities, prime factor trees, and algebraic integer expressions.
+
+#### Problem 7.51: Compound Probability: Coin Flip and Die Roll
+Flipping Heads on a fair coin ($1/2$) and rolling a 6 on a six-sided die ($1/6$) forms a $2 \times 6$ outcome grid with 12 equal cells. Compute the joint probability of the independent events on the stack: key in `{{res:sc6_07_data_probability_primes_seq_51:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_51:value}}`**.
+
+Running this sequence $\to (T: 0, Z: 0, Y: 0, X: 0.0833333333)$, yielding $P(\text{Heads and } 6) = 1/12 \approx 8.33\%$.
+
+---
+
+#### Problem 7.52: Drawing Two Aces Without Replacement
+Drawing two cards sequentially from a standard 52-card deck without replacement yields $4/52$ on the first draw, leaving 3 aces among 51 remaining cards ($3/51$) on the second draw. Multiply the dependent probabilities on the stack: enter `{{res:sc6_07_data_probability_primes_seq_52:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_52:value}}`**.
+
+Running this sequence $\to (T: 0, Z: 0, Y: 0, X: 0.0045248869)$, giving a joint probability of $1/221 \approx 0.45\%$.
+
+---
+
+#### Problem 7.53: Drawing Consecutive Matching Socks
+A drawer holds 6 black socks and 4 blue socks (10 total). The probability of drawing a first black sock is $6/10$, and drawing a second black sock without replacement is $5/9$. Evaluate the dependent pair probability on the stack: key in `{{res:sc6_07_data_probability_primes_seq_53:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_53:value}}`**.
+
+Running this sequence $\to (T: 0, Z: 0, Y: 0, X: 0.3333333333)$, proving an exact $1/3$ ($33.33\%$) chance of drawing a matching pair.
+
+---
+
+#### Problem 7.54: Prime Factorization of 3,600
+Decompose 3,600 into prime factors ($3600 = 60^2$). Constructing a factor tree shows $3600 = 36 \times 100 = 2^4 \times 3^2 \times 5^2$: 
+
+Now compute it on your SC-6: `{{res:sc6_07_data_probability_primes_seq_54:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_54:value}}`** `(T=0, Z=0, Y=0, X=3600)`. LCD decomposes into prime factors: `2⁴ × 3² × 5²`.
+
+---
+
+#### Problem 7.55: GCD and LCM of 45 and 75
+Decomposing $45 = 3^2 \times 5$ and $75 = 3 \times 5^2$ reveals their prime intersection $3 \times 5 = 15$ ($\gcd$) and prime union $3^2 \times 5^2 = 225$ ($\operatorname{lcm}$). Compute both dual parameters on the stack by running the sequence on your SC-6: `{{res:sc6_07_data_probability_primes_seq_55:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_55:value}}`**.
+
+Running this sequence $\to (T: 0, Z: 0, Y: 15, X: 225)$, displaying $\text{LCM} = 225$ and preserving $\text{GCF} = 15$ in Register $Y$ ($15 \times 225 = 3,375 = 45 \times 75$).
+
+#### Problem 7.56: Synchronized Municipal Traffic Signal Cycles
+Signal A cycles every $45\text{ seconds}$, Signal B cycles every $60\text{ seconds}$. Find the synchronized cycle time: $\operatorname{lcm}(45, 60)$. On a timing tape, place red markers every 45 units (45, 90, 135, 180...) and blue markers every 60 units (60, 120, 180...). The first point of co-occurrence is 180 units. 
+
+Verify the calculation on your SC-6: `{{res:sc6_07_data_probability_primes_seq_56:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_56:value}}`** `(T=0, Z=0, Y=0, X=180)`. Compute $\operatorname{lcm}(45, 60) = 180$; stack drops. Register $X$ displays $180$. Both traffic lights synchronize every 180 seconds ($3\text{ minutes}$).
+
+#### Problem 7.57: Euclidean Division Ladder for $\gcd(546, 210)$
+Compute Euclidean steps for $546$ and $210$: $546 \div 210 = 2\text{ R }126$; $210 \div 126 = 1\text{ R }84$; $126 \div 84 = 1\text{ R }42$; $84 \div 42 = 2\text{ R }0$. Cut a ribbon 546 cm long and measure with a 210 cm rod: two rods fit with 126 cm remainder ($546 = 2 \times 210 + 126$). Next, measure 210 cm with 126 cm: one rod fits with 84 cm remainder. Measure 126 cm with 84 cm: one rod fits with 42 cm remainder. Finally, 84 cm divides into two 42 cm segments with 0 remainder. The last non-zero remainder is 42. 
+
+Test this directly on your SC-6: `{{res:sc6_07_data_probability_primes_seq_57:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_57:value}}`** `(T=0, Z=0, Y=0, X=42)`. Execute hardware Euclidean ladder: $\gcd(546, 210) = 42$. Register $X$ displays $42$. Greatest common divisor of 546 and 210 is 42.
+
+#### Problem 7.58: Mean Absolute Deviation of a 7-Element Dataset
+Dataset: $12, 14, 15, 16, 18, 20, 24$ (Mean = 17.0). Deviations: $5, 3, 2, 1, 1, 3, 7$. Sum = 22. MAD = $22/7$. Plot the 7 points on a dot plot. Draw a fulcrum at the mean 17. Measure the physical distance from each dot to the mean (5, 3, 2, 1, 1, 3, 7). Add the lengths to get 22, and divide evenly among the 7 data points: $22/7 \approx 3.1429$. 
+
+Bring this to the SC-6 stack: `{{res:sc6_07_data_probability_primes_seq_58:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_58:value}}`** `(T=0, Z=0, Y=7, X=3.1428571429)`. Compute mean absolute deviation; $Y$ holds count $n = 7$. Register $X$ displays $3.1428571429$ and Register $Y$ displays $7$. Average distance from data points to mean is $\approx 3.14$.
+
+#### Problem 7.59: Interquartile Range Across Grade 6 Science Scores
+Scores: $65, 72, 75, 80, 84, 88, 92, 96$. Find IQR ($Q_3 - Q_1 = 90 - 73.5 = 16.5$). Arrange 8 test score cards in ascending order. Divide into lower half ($65, 72, 75, 80$) and upper half ($84, 88, 92, 96$). Find the median of lower half ($Q_1 = 73.5$) and median of upper half ($Q_3 = 90$). Measure the spread between quartiles: $90 - 73.5 = 16.5$. 
+
+On your SC-6, enter `{{res:sc6_07_data_probability_primes_seq_59:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_59:value}}`** `(T=0, Z=0, Y=8, X=16.5)`. Compute interquartile range $Q_3 - Q_1 = 16.5$; $Y$ holds count $n = 8$. Register $X$ displays $16.5$ and Register $Y$ displays $8$. Interquartile range of middle $50\%$ of class is $16.5$ points.
+
+#### Problem 7.60: Chemical Freezing Point Depression
+Pure water freezes at $0^\circ\text{C}$. Adding rock salt lowers the freezing point by $-7.8^\circ\text{C}$. Adding calcium chloride drops it an additional $-6.4^\circ\text{C}$. Find final freezing point. Use a downward-pointing thermometer strip. Move down $7.8^\circ$ below zero. Move down another $6.4^\circ$ further below zero. Measure total drop from zero: $14.2^\circ$, giving final temperature of $-14.2^\circ\text{C}$. 
+
+Execute the sequence on your SC-6: `{{res:sc6_07_data_probability_primes_seq_60:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_60:value}}`** `(T=0, Z=0, Y=0, X=-14.2)`. Add depressions: $-7.8 + (-6.4) = -14.2$; stack drops. Register $X$ displays $-14.2$. Final depressed freezing point is $-14.2^\circ\text{C}$.
+
+#### Problem 7.61: Product of Three Signed Integers
+Evaluate $(-4) \times (-5) \times (-6)$. On a number ray, multiplying negative by negative flips the orientation to positive: $(-4) \times (-5) = +20$. Multiplying by a third negative flips the direction back into negative territory: $+20 \times (-6) = -120$. On your SC-6, key in `{{res:sc6_07_data_probability_primes_seq_61:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_61:value}}`**.
+
+Tap `4 {{key:+/-}} {{key:ENTER}} 5 {{key:+/-}} {{key:×}}` $\to$ (T=0, Z=0, Y=0, X=20). Multiply $(-4) \times (-5) = 20$. Tap `6 {{key:+/-}} {{key:×}}` $\to$ (T=0, Z=0, Y=0, X=-120). Multiply $20 \times (-6) = -120$; stack drops. Register $X$ displays $-120$. An odd number of negative factors produces a negative product.
+
+#### Problem 7.62: Order of Operations with Negative Numbers
+Evaluate $(-18) \times 4 - (-36) \div (-9) = -72 - 4 = -76$. Model the two terms separately: Term 1 is 4 groups of $-18$ red chips ($-72$). Term 2 is $-36$ divided into $-9$ parts ($+4$). Deducting 4 positive units from 72 red debt units leaves 76 red debt units ($-76$). On the SC-6 keypad, enter `{{res:sc6_07_data_probability_primes_seq_62:keys}}` $\rightarrow$ **`{{res:sc6_07_data_probability_primes_seq_62:value}}`**.
+
+Tap `18 {{key:+/-}} {{key:ENTER}} 4 {{key:×}}` $\to$ (T=0, Z=0, Y=0, X=-72). Compute first product $-18 \times 4 = -72$. Tap `36 {{key:+/-}} {{key:ENTER}} 9 {{key:+/-}} {{key:÷}}` $\to$ (T=0, Z=0, Y=-72, X=4). Compute quotient $(-36) \div (-9) = 4$ while $-72$ is preserved in $Y$. Tap `{{key:-}}` $\to$ (T=0, Z=0, Y=0, X=-76). Subtract $-72 - 4 = -76$; stack drops. Register $X$ displays $-76$. Subtraction of two grouped terms completed cleanly without parentheses.
+
+#### Problem 7.63: Geometric Square Root of a Square Ranch
+A square ranch has an area of $4,096\text{ m}^2$. Find side length. On a square grid, identify that $4096 = 2^{12}$. Taking the square root halves the exponent: $\sqrt{2^{12}} = 2^6 = 64$. 
+
+Turning to your SC-6, key in `{{res:sc6_07_data_probability_primes_seq_63:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_63:value}}`** `(T=0, Z=0, Y=0, X=64)`. Extract square root: $\sqrt{4096} = 64$. Register $X$ displays $64$. Ranch perimeter boundary is $64\text{ m}$ per side.
+
+#### Problem 7.64: Divisibility by 11 Verification
+Test if 2,596 is divisible by 11 using Euclidean division (`{{key:÷R}}`). Apply the alternating digit sum divisibility rule for 11: $(2 + 9) - (5 + 6) = 11 - 11 = 0$. Since the alternating difference is a multiple of 11, the number is divisible with zero remainder. 
+
+With your SC-6 ready, enter `{{res:sc6_07_data_probability_primes_seq_64:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_64:value}}`** `(T=0, Z=0, Y=0, X=236)`. Euclidean division: Quotient 236 in $X$, Remainder 0 in $Y$. Register $X$ displays $236$ and Register $Y$ displays $0$. Remainder of 0 confirms exact divisibility by 11 ($2596 = 236 \times 11$).
+
+#### Problem 7.65: Mersenne Number Primality Check: $2^5 - 1 = 31$
+Compute $2^5 - 1$ and check if the result is prime. Lay out power-of-two blocks: 1, 2, 4, 8, 16. Summing these 5 blocks produces $2^5 - 1 = 31$. Just as 7 or 13 tiles from your 24-tile kit can only form a single $1 \times p$ row, scaling up to $2^5 - 1 = 31$ on your SC-6 confirms that 31 has no rectangular factors. 
+
+Step over to your SC-6 and key in `{{res:sc6_07_data_probability_primes_seq_65:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_65:value}}`** `(T=0, Z=0, Y=0, X=31)`. Test primality: LCD status flashes `PRIME`. Register $X$ preserves $31$ and LCD flashes `PRIME`. The 3rd Mersenne prime $M_5 = 2^5 - 1 = 31$ is verified.
+
+---
 
 <div class="admonition note">
 <p class="admonition-title">For Parents &amp; Teachers: Standards Alignment Matrix</p>

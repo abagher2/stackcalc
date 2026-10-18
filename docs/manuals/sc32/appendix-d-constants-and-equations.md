@@ -10,10 +10,8 @@ description: "Authoritative reference directory of immutable mathematical consta
   <span class="te-viewport-status text-sky-400">● IMMUTABLE MATHEMATICAL CONSTANTS &bull; 58 STEM EQUATIONS &bull; PARENTHESIS-FREE RPN SEQUENCING</span>
 </div>
 
-
 {{blocks:sc32_hero_keynote|StackCalc SC-32 Bench Reference}}
 *Figure D.1: The StackCalc SC-32 technical reference bench instrument: rapid parenthesis-free evaluation of fundamental engineering and mathematical equations.*
-
 
 <div class="p-4 rounded-xl bg-slate-900 border border-sky-500/30 mb-8 font-mono text-xs text-sky-300">
   <strong>DIRECTORY BASELINE:</strong> Immutable mathematical constants; Complete BIPM SI prefixes (10³⁰ to 10⁻³⁰); Exact international unit conversions; Scientific notation entry syntax via <code>{{key:E}}</code>; Full 12-digit mantissa stack precision.
@@ -47,7 +45,6 @@ A scientific calculator is not merely a tool for performing isolated arithmetic 
 3. **Abstract (Parenthesis-Free Formula Decomposition):** Equations with complex nesting (such as blackbody radiation laws or relativistic Lorentz transformations) are evaluated inside-out or bottom-up, completely avoiding algebraic parentheses.
 
 ---
-
 
 ## Fundamental Mathematical Constants
 
@@ -110,9 +107,9 @@ The table below provides the complete set of International Bureau of Weights and
 
 ---
 
-## Master STEM Equation Directory: 58 Essential Bench Equations
+## Master STEM Equation Directory: 77 Essential Bench & Contest Equations
 
-Every equation in this directory is presented with its formal mathematical definition, variable descriptions, optimal parenthesis-free RPN keystroke sequence, verified numerical benchmark, and a four-register stack trace.
+Every equation in this directory is presented with its formal mathematical definition, curriculum cross-reference, variable descriptions, physical/geometric motivation, optimal parenthesis-free RPN keystroke sequence, verified numerical benchmark, and a four-register stack trace.
 
 | Discipline / Subject | Benchmark Equations |
 |:---|:---|
@@ -122,7 +119,9 @@ Every equation in this directory is presented with its formal mathematical defin
 | 4. Electricity, Magnetism & AC Circuit Analysis | Equations E.27 – E.36 |
 | 5. Wave Mechanics, Acoustics & Physical Optics | Equations E.37 – E.44 |
 | 6. Nuclear, Atomic & Relativistic Physics | Equations E.45 – E.51 |
-| 7. Coordinate Geometry, Mensuration & Solid Geometry | Equations E.52 – E.58 |
+| 7. Coordinate Geometry, Mensuration & 2D Curved Sections | Equations E.52 – E.66 |
+| 8. 3D Solid Geometry & Mensuration Master Compendium | Equations E.67 – E.72 |
+| 9. Contest Financial Mathematics, Amortization & TVM | Equations E.73 – E.77 |
 
 ---
 
@@ -135,9 +134,10 @@ $$v_f = \sqrt{v_i^2 + 2 a \Delta x}$$
 *Benchmark:* $v_i = 12.0\text{ m/s}, a = 4.5\text{ m/s}^2, \Delta x = 25.0\text{ m}$.  
 *Target Value:* **`19.209373`** $\text{m/s}$.  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
-| 01 | 12 {{keycap:x²}} | 0.00 | 0.00 | 0.00 | 144.0000 | 144.0000 |
+| 01 | 12 {{key:x²}} | 0.00 | 0.00 | 0.00 | 144.0000 | 144.0000 |
 | 02 | 2 {{key:ENTER}} 4.5 {{key:×}} | 0.00 | 0.00 | 144.0000 | 9.0000 | 9.0000 |
 | 03 | 25 {{key:×}} {{key:+}} | 0.00 | 0.00 | 0.00 | 369.0000 | 369.0000 |
 | 04 | {{key:√x}} | 0.00 | 0.00 | 0.00 | 19.209373 | 19.2094 |
@@ -151,9 +151,10 @@ $$R = \frac{v_0^2 \sin(2\theta)}{g}$$
 *Benchmark:* $v_0 = 45.0\text{ m/s}, \theta = 35.0^\circ$.  
 *Target Value:* **`194.0435`** $\text{m}$.  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
-| 01 | 45 {{keycap:x²}} | 0.00 | 0.00 | 0.00 | 2025.0000 | 2025.0000 |
+| 01 | 45 {{key:x²}} | 0.00 | 0.00 | 0.00 | 2025.0000 | 2025.0000 |
 | 02 | 35 {{key:ENTER}} 2 {{key:×}} | 0.00 | 0.00 | 2025.0000 | 70.0000 | 70.0000 |
 | 03 | {{key:SIN}} {{key:×}} | 0.00 | 0.00 | 0.00 | 1902.8711 | 1902.8711 |
 | 04 | 9.80665 {{key:÷}} | 0.00 | 0.00 | 0.00 | 194.0435 | 194.0435 |
@@ -177,11 +178,12 @@ $$F_g = G \frac{m_1 m_2}{r^2}$$
 *Benchmark:* $m_1 = 5.9722 \times 10^{24}, m_2 = 1500, r = 6.771 \times 10^6$.  
 *Target Value:* **`13038.58`** $\text{N}$.  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
-| 01 | G m1 {{key:×}} m2 {{key:×}} | 0.00 | 0.00 | 0.00 | 5.9791E17 | 5.97910E17 |
-| 02 | r {{keycap:x²}} | 0.00 | 0.00 | 5.9791E17 | 4.5846E13 | 4.58464E13 |
-| 03 | {{key:÷}} | 0.00 | 0.00 | 0.00 | 13038.58 | 1.30386E4 |
+| 01 | `6.67430 {{key:E}} 11 {{key:+/-}} {{key:ENTER}} 5.9722 {{key:E}} 24 {{key:×}} 1500 {{key:×}}` | 0.00 | 0.00 | 0.00 | 5.9791E17 | 5.97910E17 |
+| 02 | `6.771 {{key:E}} 6 {{key:x²}}` | 0.00 | 0.00 | 5.9791E17 | 4.5846E13 | 4.58464E13 |
+| 03 | `{{key:÷}}` | 0.00 | 0.00 | 0.00 | 13038.58 | 1.30386E4 |
 
 ---
 
@@ -249,6 +251,7 @@ $$v = \sqrt{2 g h}$$
 *Benchmark:* $h = 5.0\text{ m}$.  
 *Target Value:* **`9.90285`** $\text{m/s}$.  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
 | 01 | 2 {{key:ENTER}} 9.80665 {{key:×}} | 0.00 | 0.00 | 0.00 | 19.613300 | 19.613300 |
@@ -329,11 +332,12 @@ $$P = \frac{n R T}{V}$$
 *Benchmark:* $n = 4.5\text{ mol}, T = 350.0\text{ K}, V = 0.035\text{ m}^3$.  
 *Target Value:* **`374150.8`** $\text{Pa}$ ($374.15\text{ kPa}$).  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
-| 01 | 4.5 {{key:ENTER}} R {{key:×}} | 0.00 | 0.00 | 0.00 | 37.415082 | 37.415082 |
-| 02 | 350 {{key:×}} | 0.00 | 0.00 | 0.00 | 13095.279 | 13095.279 |
-| 03 | .035 {{key:÷}} | 0.00 | 0.00 | 0.00 | 374150.82 | 374150.8 |
+| 01 | `4.5 {{key:ENTER}} 8.314462618 {{key:×}}` | 0.00 | 0.00 | 0.00 | 37.415082 | 37.415082 |
+| 02 | `350 {{key:×}}` | 0.00 | 0.00 | 0.00 | 13095.279 | 13095.279 |
+| 03 | `.035 {{key:÷}}` | 0.00 | 0.00 | 0.00 | 374150.82 | 374150.8 |
 
 ---
 
@@ -418,6 +422,7 @@ $$R_{\text{eq}} = R_1 \parallel R_2 \parallel R_3 = \frac{1}{\frac{1}{R_1} + \fr
 *Benchmark:* $R_1 = 100.0\,\Omega, R_2 = 150.0\,\Omega, R_3 = 300.0\,\Omega$.  
 *Target Value:* **`50.0`** $\Omega$.  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
 | 01 | 100 {{key:ENTER}} | 0.00 | 0.00 | 100.0000 | 100.0000 | 100.0000_ |
@@ -469,6 +474,7 @@ $$f_0 = \frac{1}{2 \pi \sqrt{L C}}$$
 *Benchmark:* $L = 10.0 \times 10^{-3}\text{ H}, C = 100.0 \times 10^{-12}\text{ F}$.  
 *Target Value:* **`159154.9`** $\text{Hz}$ ($159.15\text{ kHz}$).  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
 | 01 | 10E-3 100E-12 {{key:×}} | 0.00 | 0.00 | 0.00 | 1.0000E-12 | 1.0000E-12 |
@@ -480,7 +486,7 @@ $$f_0 = \frac{1}{2 \pi \sqrt{L C}}$$
 #### Equation E.34: RLC Series AC Total Impedance
 $$Z = \sqrt{R^2 + \left(2 \pi f L - \frac{1}{2 \pi f C}\right)^2}$$
 *Variables:* $R (\Omega)$, $L (\text{H})$, $C (\text{F})$, $f (\text{Hz})$.  
-*RPN Sequence:* `2 {{key:ENTER}} {{key:π}} {{key:×}} f {{key:×}} {{key:STO}} 1 L {{key:×}} {{key:RCL}} 1 C {{key:×}} {{key:1/x}} {{key:-}} {{key:x²}} R {{key:x²}} {{key:+}} {{key:√x}}`  
+*RPN Sequence:* `2 {{key:π}} {{key:×}} f {{key:×}} {{key:STO}} A L {{key:×}} {{key:RCL}} A C {{key:×}} {{key:1/x}} {{key:-}} {{key:x²}} R {{key:x²}} {{key:+}} {{key:√x}}`  
 *Benchmark:* $R = 50.0\,\Omega, L = 0.05\text{ H}, C = 10.0 \times 10^{-6}\text{ F}, f = 120.0\text{ Hz}$.  
 *Target Value:* **`107.412`** $\Omega$.
 
@@ -523,6 +529,7 @@ $$f = \frac{d_o \cdot d_i}{d_o + d_i} = d_o \parallel d_i$$
 *Benchmark:* $d_o = 30.0\text{ cm}, d_i = 60.0\text{ cm}$.  
 *Target Value:* **`20.0`** $\text{cm}$.  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
 | 01 | 30 {{key:ENTER}} | 0.00 | 0.00 | 30.0000 | 30.0000 | 30.0000_ |
@@ -593,6 +600,7 @@ $$E = m c^2$$
 *Benchmark:* $m = 1.0 \times 10^{-3}\text{ kg}$ ($1\text{ gram}$).  
 *Target Value:* **`8.98755 × 10¹³`** $\text{J}$ ($89.88\text{ TJ}$).  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
 | 01 | 299792458 {{key:x²}} | 0.00 | 0.00 | 0.00 | 8.9876E16 | 8.98755E16 |
@@ -625,9 +633,10 @@ $$\gamma = \frac{1}{\sqrt{1 - \beta^2}} = \frac{1}{\sqrt{1 - (v/c)^2}}$$
 *Benchmark:* $\beta = 0.95$.  
 *Target Value:* **`3.20256`**.  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
-| 01 | 0.95 {{keycap:x²}} | 0.00 | 0.00 | 0.00 | 0.902500 | 0.902500 |
+| 01 | 0.95 {{key:x²}} | 0.00 | 0.00 | 0.00 | 0.902500 | 0.902500 |
 | 02 | 1 {{key:x⇄y}} {{key:-}} | 0.00 | 0.00 | 0.00 | 0.097500 | 0.097500 |
 | 03 | {{key:√x}} {{key:1/x}} | 0.00 | 0.00 | 0.00 | 3.202563 | 3.202563 |
 
@@ -671,10 +680,11 @@ $$V = \frac{4}{3} \pi r^3, \quad A = 4 \pi r^2$$
 *Benchmark:* $r = 7.50\text{ cm}$.  
 *Target Values:* Volume = **`1767.146`** $\text{cm}^3$; Area = **`706.858`** $\text{cm}^2$.  
 *Stack Trace Table (Volume):*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
 | 01 | 7.5 {{key:ENTER}} 3 {{key:yˣ}} | 0.00 | 0.00 | 0.00 | 421.8750 | 421.8750 |
-| 02 | {{keycap:π}} {{key:×}} | 0.00 | 0.00 | 0.00 | 1325.3594 | 1325.359 |
+| 02 | {{key:π}} {{key:×}} | 0.00 | 0.00 | 0.00 | 1325.3594 | 1325.359 |
 | 03 | 4 {{key:×}} 3 {{key:÷}} | 0.00 | 0.00 | 0.00 | 1767.1459 | 1767.146 |
 
 ---
@@ -697,12 +707,13 @@ $$V = \frac{1}{3} \pi h (R^2 + R r + r^2)$$
 *Benchmark:* $R = 8.0\text{ cm}, r = 3.0\text{ cm}, h = 12.0\text{ cm}$.  
 *Target Value:* **`1218.938`** $\text{cm}^3$.  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
-| 01 | 8 {{keycap:x²}} | 0.00 | 0.00 | 0.00 | 64.0000 | 64.0000 |
+| 01 | 8 {{key:x²}} | 0.00 | 0.00 | 0.00 | 64.0000 | 64.0000 |
 | 02 | 8 {{key:ENTER}} 3 {{key:×}} {{key:+}} | 0.00 | 0.00 | 0.00 | 88.0000 | 88.0000 |
-| 03 | 3 {{keycap:x²}} {{key:+}} | 0.00 | 0.00 | 0.00 | 97.0000 | 97.0000 |
-| 04 | 12 {{key:×}} 3 {{key:÷}} π {{key:×}} | 0.00 | 0.00 | 0.00 | 1218.9380 | 1218.938 |
+| 03 | 3 {{key:x²}} {{key:+}} | 0.00 | 0.00 | 0.00 | 97.0000 | 97.0000 |
+| 04 | 12 {{key:×}} 3 {{key:÷}} {{key:π}} {{key:×}} | 0.00 | 0.00 | 0.00 | 1218.9380 | 1218.938 |
 
 ---
 
@@ -720,17 +731,18 @@ $$V = 2 \pi^2 R r^2, \quad A = 4 \pi^2 R r$$
 #### Equation E.56: Heron's Formula for Arbitrary Triangle Area
 $$A = \sqrt{s(s - a)(s - b)(s - c)}, \quad s = \frac{a + b + c}{2}$$
 *Variables:* Side lengths $a, b, c$.  
-*RPN Sequence:* `a {{key:ENTER}} b {{key:+}} c {{key:+}} 2 {{key:÷}} {{key:STO}} 1 a {{key:-}} {{key:RCL}} 1 b {{key:-}} {{key:×}} {{key:RCL}} 1 c {{key:-}} {{key:×}} {{key:RCL}} 1 {{key:×}} {{key:√x}}`  
+*RPN Sequence:* `a {{key:ENTER}} b {{key:+}} c {{key:+}} 2 {{key:÷}} {{key:STO}} S a {{key:-}} {{key:RCL}} S b {{key:-}} {{key:×}} {{key:RCL}} S c {{key:-}} {{key:×}} {{key:RCL}} S {{key:×}} {{key:√x}}`  
 *Benchmark:* $a = 13.0, b = 14.0, c = 15.0$ (semiperimeter $s = 21.0$).  
 *Target Value:* **`84.000`**.  
 *Stack Trace Table:*
+
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
 |:---|:---|:---|:---|:---|:---|:---|
-| 01 | a b {{key:+}} c {{key:+}} 2 {{key:÷}} | 0.00 | 0.00 | 0.00 | 21.0000(s) | 21.0000 |
-| 02 | {{key:STO}} 1 a {{key:-}} | 0.00 | 0.00 | 0.00 | 8.0000(s-a) | 8.0000 |
-| 03 | {{key:RCL}} 1 b {{key:-}} {{key:×}} | 0.00 | 0.00 | 0.00 | 56.0000 | 56.0000 |
-| 04 | {{key:RCL}} 1 c {{key:-}} {{key:×}} | 0.00 | 0.00 | 0.00 | 336.0000 | 336.0000 |
-| 05 | {{key:RCL}} 1 {{key:×}} {{key:√x}} | 0.00 | 0.00 | 0.00 | 84.0000 | 84.0000 |
+| 01 | `13 {{key:ENTER}} 14 {{key:+}} 15 {{key:+}} 2 {{key:÷}}` | 0.00 | 0.00 | 0.00 | 21.0000(s) | 21.0000 |
+| 02 | `{{key:STO}} S 13 {{key:-}}` | 0.00 | 0.00 | 0.00 | 8.0000(s-a) | 8.0000 |
+| 03 | `{{key:RCL}} S 14 {{key:-}} {{key:×}}` | 0.00 | 0.00 | 0.00 | 56.0000 | 56.0000 |
+| 04 | `{{key:RCL}} S 15 {{key:-}} {{key:×}}` | 0.00 | 0.00 | 0.00 | 336.0000 | 336.0000 |
+| 05 | `{{key:RCL}} S {{key:×}} {{key:√x}}` | 0.00 | 0.00 | 0.00 | 84.0000 | 84.0000 |
 
 ---
 
@@ -750,6 +762,225 @@ $$d = 2 R \arcsin\left(\sqrt{\sin^2\left(\frac{\Delta\phi}{2}\right) + \cos\phi_
 `phi2 {{key:ENTER}} phi1 {{key:-}} 2 {{key:÷}} {{key:SIN}} {{key:x²}} phi1 {{key:COS}} phi2 {{key:COS}} {{key:×}} lam2 {{key:ENTER}} lam1 {{key:-}} 2 {{key:÷}} {{key:SIN}} {{key:x²}} {{key:×}} {{key:+}} {{key:√x}} {{key:ASIN}} 2 {{key:×}} 6371.0 {{key:×}}`  
 *Benchmark:* New York ($40.7128^\circ\text{N}, 74.0060^\circ\text{W}$) to London ($51.5074^\circ\text{N}, 0.1278^\circ\text{W}$).  
 *Target Value:* **`5570.2`** $\text{km}$ ($3461.2\text{ miles}$).
+
+---
+
+#### Equation E.59: Circular Sector Area and Arc Length
+*Curriculum Cross-Reference:* [Chapter 6.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md) & [Chapter 14.3](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/14-uil-contest-playbook.md)  
+$$s = r \theta, \quad A = \frac{1}{2} r^2 \theta \quad (\theta\text{ in radians})$$
+*Variables:* Radius $r$, central angle $\theta$.  
+*Physical & Geometric Motivation:* Direct scaling of circle perimeter ($2\pi r$) and disk area ($\pi r^2$) by aperture fraction $(\theta / 2\pi)$.  
+*RPN Sequences:*  
+- Arc Length: `r {{key:ENTER}} theta {{key:×}}`  
+- Sector Area: `r {{key:x²}} theta {{key:×}} 2 {{key:÷}}`  
+*Benchmark:* $r = 12.0\text{ cm}, \theta = 1.047198\text{ rad}$ ($60.0^\circ$).  
+*Target Values:* Arc Length = **`12.566`** $\text{cm}$; Area = **`75.398`** $\text{cm}^2$.
+
+---
+
+#### Equation E.60: Circular Segment Area
+*Curriculum Cross-Reference:* [Chapter 6.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$A = \frac{1}{2} r^2 (\theta - \sin\theta) \quad (\theta\text{ in radians})$$
+*Variables:* Radius $r$, central angle $\theta$.  
+*Physical & Geometric Motivation:* Area of the circular sector minus the internal triangular chord core ($\frac{1}{2} r^2 \sin\theta$). Essential in hydraulic pipe fill levels and pressure vessel liquid volumes.  
+*RPN Sequence in `RAD` Mode:* `theta {{key:ENTER}} {{key:SIN}} {{key:-}} r {{key:x²}} {{key:×}} 2 {{key:÷}}`  
+*Benchmark:* $r = 8.0\text{ m}, \theta = 1.250\text{ rad}$.  
+*Target Value:* **`9.633`** $\text{m}^2$.
+
+---
+
+#### Equation E.61: Circular Annulus & Annular Sector Area
+*Curriculum Cross-Reference:* [Chapter 6.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$A = \pi (R^2 - r^2) = \pi (R - r)(R + r), \quad A_{\text{sector}} = \frac{\theta}{2} (R - r)(R + r)$$
+*Variables:* Outer radius $R$, inner bore radius $r$, central angle $\theta$ (radians).  
+*Physical & Geometric Motivation:* Difference between concentric disks. Evaluated in RPN via difference-of-squares factorization to preserve precision for thin-walled gaskets ($R \approx r$).  
+*RPN Sequence:* `R {{key:ENTER}} r {{key:-}} R {{key:ENTER}} r {{key:+}} {{key:×}} {{key:π}} {{key:×}}`  
+*Benchmark:* $R = 15.0\text{ cm}, r = 10.0\text{ cm}$.  
+*Target Value:* **`392.699`** $\text{cm}^2$.
+
+---
+
+#### Equation E.62: Ellipse Area & Ramanujan's Second Perimeter Approximation
+*Curriculum Cross-Reference:* [Chapter 6.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$A = \pi a b, \quad h = \frac{(a - b)^2}{(a + b)^2}, \quad P \approx \pi (a + b) \left[ 1 + \frac{3h}{10 + \sqrt{4 - 3h}} \right]$$
+*Variables:* Semimajor axis $a$, semiminor axis $b$.  
+*Physical & Geometric Motivation:* 2D affine dilation of the unit circle. Ramanujan's second formula approximates the complete elliptic integral with sub-ppm accuracy.  
+*RPN Sequences:*  
+- Area: `a {{key:ENTER}} b {{key:×}} {{key:π}} {{key:×}}`  
+- Perimeter: `a {{key:ENTER}} b {{key:-}} a {{key:ENTER}} b {{key:+}} {{key:÷}} {{key:x²}} {{key:STO}} A 3 {{key:×}} 4 {{key:x⇄y}} {{key:-}} {{key:√x}} 10 {{key:+}} {{key:1/x}} 3 {{key:×}} {{key:RCL}} A {{key:×}} 1 {{key:+}} a {{key:ENTER}} b {{key:+}} {{key:×}} {{key:π}} {{key:×}}`  
+*Benchmark:* $a = 10.0\text{ cm}, b = 6.0\text{ cm}$.  
+*Target Values:* Area = **`188.496`** $\text{cm}^2$; Perimeter = **`51.054`** $\text{cm}$.
+
+---
+
+#### Equation E.63: Parabolic Segment Area (Archimedes' Quadrature)
+*Curriculum Cross-Reference:* [Chapter 6.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$A = \frac{2}{3} b h$$
+*Variables:* Base chord width $b$, perpendicular vertex altitude $h$.  
+*Physical & Geometric Motivation:* Archimedes' mechanical quadrature: the area under a parabolic arch is exactly $\frac{4}{3}$ of the inscribed triangle ($\frac{1}{2}bh$). Fundamental for beam bending moment diagrams and solar trough reflectors.  
+*RPN Sequence:* `b {{key:ENTER}} h {{key:×}} 2 {{key:×}} 3 {{key:÷}}`  
+*Benchmark:* $b = 18.0\text{ m}, h = 6.0\text{ m}$.  
+*Target Value:* **`72.000`** $\text{m}^2$.
+
+---
+
+#### Equation E.64: Regular $n$-gon Area, Inradius & Circumradius
+*Curriculum Cross-Reference:* [Chapter 6.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$A = \frac{1}{4} n s^2 \cot\left(\frac{\pi}{n}\right), \quad r = \frac{s}{2 \tan(\pi/n)}, \quad R = \frac{s}{2 \sin(\pi/n)}$$
+*Variables:* Number of sides $n$, side length $s$.  
+*Physical & Geometric Motivation:* Symmetric decomposition into $n$ central isosceles triangles. Dictates bolt head profiles, polygonal extrusions, and crystal lattices.  
+*RPN Sequence (Area):* `{{key:π}} n {{key:÷}} {{key:TAN}} {{key:1/x}} s {{key:x²}} {{key:×}} n {{key:×}} 4 {{key:÷}}`  
+*Benchmark:* Regular Hexagon ($n = 6$), side $s = 5.0\text{ cm}$.  
+*Target Value:* **`64.952`** $\text{cm}^2$.
+
+---
+
+#### Equation E.65: Brahmagupta's Formula & Ptolemy's Theorem for Cyclic Quadrilaterals
+*Curriculum Cross-Reference:* [Chapter 6.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$A = \sqrt{(s-a)(s-b)(s-c)(s-d)}, \quad s = \frac{a+b+c+d}{2}, \quad a c + b d = e f$$
+*Variables:* Sides $a, b, c, d$, diagonals $e, f$.  
+*Physical & Geometric Motivation:* 4-sided cyclic generalization of Heron's formula. Yields maximum enclosure area for any quadrilateral with fixed side lengths.  
+*RPN Sequence:* Compute $s \to$ store $\to$ multiply $(s-a)(s-b)(s-c)(s-d) \to$ `{{key:√x}}`.  
+*Benchmark:* $a = 3.0, b = 4.0, c = 5.0, d = 6.0$ ($s = 9.0$).  
+*Target Value:* **`18.974`**.
+
+---
+
+#### Equation E.66: Stewart's Theorem for Triangle Cevians
+*Curriculum Cross-Reference:* [Chapter 6.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$m a n + d^2 a = b^2 m + c^2 n \implies d = \sqrt{\frac{b^2 m + c^2 n - m a n}{a}}$$
+*Variables:* Triangle sides $a, b, c$; cevian of length $d$ dividing side $a$ into segments $m$ and $n$ ($m + n = a$).  
+*Physical & Geometric Motivation:* Rotational moment of inertia balance across a triangular plate; resolves medians, angle bisectors, and structural truss struts.  
+*Benchmark:* $a = 10.0, b = 8.0, c = 6.0$ (right triangle), median to hypotenuse ($m = 5.0, n = 5.0$).  
+*Target Value:* **`5.000`**.
+
+---
+
+### Section 8: 3D Solid Geometry & Mensuration Master Compendium
+
+#### Equation E.67: Spherical Cap (Dome) & Spherical Zone Volume
+*Curriculum Cross-Reference:* [Chapter 6.3](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md) & [Chapter 14.4](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/14-uil-contest-playbook.md)  
+$$V_{\text{cap}} = \frac{1}{3} \pi h^2 (3 R - h), \quad A_{\text{dome}} = 2 \pi R h$$
+$$V_{\text{zone}} = \frac{\pi h}{6} (3 r_1^2 + 3 r_2^2 + h^2)$$
+*Variables:* Sphere radius $R$, cap height $h$, zone radii $r_1, r_2$.  
+*Physical & Geometric Motivation:* Disk integration of spherical layers via Archimedes' cylinder balance. Essential for liquid propellant tanks, geodesic domes, and acoustic lenses.  
+*RPN Sequence (Cap Volume):* `3 {{key:ENTER}} R {{key:×}} h {{key:-}} h {{key:x²}} {{key:×}} {{key:π}} {{key:×}} 3 {{key:÷}}`  
+*Benchmark:* Sphere $R = 10.0\text{ cm}$, cap height $h = 3.0\text{ cm}$.  
+*Target Values:* Volume = **`254.469`** $\text{cm}^3$; Dome Area = **`188.496`** $\text{cm}^2$.
+
+---
+
+#### Equation E.68: Frustum of Regular Pyramid Volume
+*Curriculum Cross-Reference:* [Chapter 6.3](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$V = \frac{h}{3} (A_1 + A_2 + \sqrt{A_1 A_2})$$
+*Variables:* Lower base area $A_1$, upper base area $A_2$, perpendicular height $h$.  
+*Physical & Geometric Motivation:* Heronian mean of cross-sectional areas; models architectural monuments, concrete foundations, and hopper bins.  
+*RPN Sequence:* `A1 {{key:ENTER}} A2 {{key:×}} {{key:√x}} A1 {{key:+}} A2 {{key:+}} h {{key:×}} 3 {{key:÷}}`  
+*Benchmark:* $A_1 = 36.0\text{ m}^2, A_2 = 16.0\text{ m}^2, h = 9.0\text{ m}$.  
+*Target Value:* **`228.000`** $\text{m}^3$.
+
+---
+
+#### Equation E.69: Ellipsoid Volume
+*Curriculum Cross-Reference:* [Chapter 6.3](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$V = \frac{4}{3} \pi a b c$$
+*Variables:* Semimajor axes $a, b, c$.  
+*Physical & Geometric Motivation:* 3D affine dilation of the unit sphere. Models oblate and prolate planetary bodies, optical ellipsoidal reflectors, and aerodynamic radomes.  
+*RPN Sequence:* `a {{key:ENTER}} b {{key:×}} c {{key:×}} {{key:π}} {{key:×}} 4 {{key:×}} 3 {{key:÷}}`  
+*Benchmark:* $a = 6.0\text{ cm}, b = 4.0\text{ cm}, c = 3.0\text{ cm}$.  
+*Target Value:* **`301.593`** $\text{cm}^3$.
+
+---
+
+#### Equation E.70: Paraboloid of Revolution Volume
+*Curriculum Cross-Reference:* [Chapter 6.3](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$V = \frac{1}{2} \pi r^2 h$$
+*Variables:* Base radius $r$, central depth $h$.  
+*Physical & Geometric Motivation:* Archimedes' law of paraboloids: volume is exactly half of the bounding cylinder. Primary profile for radar dishes, headlamp reflectors, and liquid mirror telescopes.  
+*RPN Sequence:* `r {{key:x²}} h {{key:×}} {{key:π}} {{key:×}} 2 {{key:÷}}`  
+*Benchmark:* $r = 4.0\text{ m}, h = 3.0\text{ m}$.  
+*Target Value:* **`75.398`** $\text{m}^3$.
+
+---
+
+#### Equation E.71: Cylindrical Ungula (Hoof) Volume
+*Curriculum Cross-Reference:* [Chapter 6.3](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$V = \frac{2}{3} r^3 \tan\alpha$$
+*Variables:* Cylinder radius $r$, cutting plane angle $\alpha$ passing through base diameter.  
+*Physical & Geometric Motivation:* Slicing a circular cylinder with an inclined plane passing directly through its base diameter. Models mitered pipe junctions and fluid flow deflectors.  
+*RPN Sequence in `DEG` Mode:* `r {{key:ENTER}} 3 {{key:yˣ}} alpha {{key:TAN}} {{key:×}} 2 {{key:×}} 3 {{key:÷}}`  
+*Benchmark:* $r = 6.0\text{ cm}, \alpha = 45.0^\circ$.  
+*Target Value:* **`144.000`** $\text{cm}^3$.
+
+---
+
+#### Equation E.72: Universal Prismoidal Formula (Simpson's 3D Rule)
+*Curriculum Cross-Reference:* [Chapter 6.3](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/06-geometry-surface-area.md)  
+$$V = \frac{h}{6} (A_{\text{top}} + 4 A_{\text{mid}} + A_{\text{bot}})$$
+*Variables:* Extrusion height $h$, top area $A_{\text{top}}$, mid-height area $A_{\text{mid}}$, base area $A_{\text{bot}}$.  
+*Physical & Geometric Motivation:* Simpson's cubic quadrature along height: exact for any solid whose cross-sectional area varies as a quadratic or cubic polynomial in $z$ (prisms, pyramids, cones, spheres, paraboloids).  
+*RPN Sequence:* `Amid {{key:ENTER}} 4 {{key:×}} Atop {{key:+}} Abot {{key:+}} h {{key:×}} 6 {{key:÷}}`  
+*Benchmark:* Frustum with $A_{\text{top}} = 16.0, A_{\text{mid}} = 36.0, A_{\text{bot}} = 64.0, h = 6.0$.  
+*Target Value:* **`224.000`**.
+
+---
+
+### Section 9: Contest Financial Mathematics, Amortization & TVM
+
+#### Equation E.73: Present Value of an Ordinary Annuity
+*Curriculum Cross-Reference:* [Chapter 11.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/11-financial-tvm.md)  
+$$PV = PMT \left[ \frac{1 - (1 + i)^{-N}}{i} \right]$$
+*Variables:* Periodic payment $PMT$, rate per period $i$, total periods $N$.  
+*Physical & Geometric Motivation:* Sum of discounted future cash flow geometric series. Determines loan balances, actuarial pension reserves, and bond valuation.  
+*RPN Sequence:* `1 {{key:ENTER}} i {{key:+}} N {{key:+/-}} {{key:yˣ}} 1 {{key:x⇄y}} {{key:-}} i {{key:÷}} PMT {{key:×}}`  
+*Benchmark:* $PMT = 500\text{ USD}, i = 0.005$ ($6\%$ APR monthly), $N = 36\text{ months}$.  
+*Target Value:* **`16,429.62`** $\text{USD}$.
+
+---
+
+#### Equation E.74: Future Value of an Ordinary Annuity
+*Curriculum Cross-Reference:* [Chapter 11.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/11-financial-tvm.md)  
+$$FV = PMT \left[ \frac{(1 + i)^N - 1}{i} \right]$$
+*Variables:* Periodic savings deposit $PMT$, rate per period $i$, total periods $N$.  
+*Physical & Geometric Motivation:* Compound growth accumulation of periodic deposits. Solves retirement nest-egg and university savings goals.  
+*RPN Sequence:* `1 {{key:ENTER}} i {{key:+}} N {{key:yˣ}} 1 {{key:-}} i {{key:÷}} PMT {{key:×}}`  
+*Benchmark:* $PMT = 250\text{ USD}, i = 0.006$ ($7.2\%$ APR monthly), $N = 60\text{ months}$.  
+*Target Value:* **`17,984.66`** $\text{USD}$.
+
+---
+
+#### Equation E.75: Loan Amortization Periodic Payment
+*Curriculum Cross-Reference:* [Chapter 11.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/11-financial-tvm.md)  
+$$PMT = PV \left[ \frac{i}{1 - (1 + i)^{-N}} \right]$$
+*Variables:* Principal loan amount $PV$, interest rate per period $i$, total payment periods $N$.  
+*Physical & Geometric Motivation:* Capital recovery factor: inverts annuity PV to find fixed monthly installment liquidating principal and interest.  
+*RPN Sequence:* `1 {{key:ENTER}} i {{key:+}} N {{key:+/-}} {{key:yˣ}} 1 {{key:x⇄y}} {{key:-}} i {{key:x⇄y}} {{key:÷}} PV {{key:×}}`  
+*Benchmark:* $PV = 25,000\text{ USD}, i = 0.0045$ ($5.4\%$ APR monthly), $N = 48\text{ months}$.  
+*Target Value:* **`579.98`** $\text{USD}$.
+
+---
+
+#### Equation E.76: Sinking Fund Periodic Savings Payment
+*Curriculum Cross-Reference:* [Chapter 11.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/11-financial-tvm.md)  
+$$PMT = FV \left[ \frac{i}{(1 + i)^N - 1} \right]$$
+*Variables:* Target future balance $FV$, interest rate per period $i$, total saving periods $N$.  
+*Physical & Geometric Motivation:* Periodic contribution required to accumulate a predetermined future balloon payment or capital equipment replacement fund.  
+*RPN Sequence:* `1 {{key:ENTER}} i {{key:+}} N {{key:yˣ}} 1 {{key:-}} i {{key:x⇄y}} {{key:÷}} FV {{key:×}}`  
+*Benchmark:* Target $FV = 50,000\text{ USD}, i = 0.005$ ($6\%$ APR monthly), $N = 120\text{ months}$.  
+*Target Value:* **`305.10`** $\text{USD}$.
+
+---
+
+#### Equation E.77: Flat & Growing Perpetuities
+*Curriculum Cross-Reference:* [Chapter 11.2](file:///Users/abagher/Documents/GitHub/stackcalc/docs/manuals/sc32/11-financial-tvm.md)  
+$$PV_{\text{flat}} = \frac{PMT}{i}, \quad PV_{\text{growing}} = \frac{PMT}{i - g}$$
+*Variables:* Annual dividend payment $PMT$, discount rate $i$, constant dividend growth rate $g$ ($i > g$).  
+*Physical & Geometric Motivation:* Gordon growth model; sum of infinite geometric cash flow series with continuous compounding. Dictates preferred stock and endowment valuations.  
+*RPN Sequences:*  
+- Flat: `PMT {{key:ENTER}} i {{key:÷}}`  
+- Growing: `PMT {{key:ENTER}} i {{key:ENTER}} g {{key:-}} {{key:÷}}`  
+*Benchmark:* $PMT = 1,200\text{ USD/yr}, i = 0.06, g = 0.02$.  
+*Target Values:* Flat Perpetuity = **`20,000.00`** $\text{USD}$; Growing Perpetuity = **`30,000.00`** $\text{USD}$.
 
 ---
 
@@ -782,16 +1013,15 @@ When evaluating a formula with a repeated scalar factor $K$ across multiple vari
 
 ## Equation Bank Programming & Automatic Variable Prompting
 
-
 The StackCalc SC-32 provides a non-volatile **Equation Bank** accessed via **`{{key:EQN}}`**. Any standard formula can be stored as a symbolic expression and evaluated repeatedly, solved numerically via Brent's root finder, or integrated via Romberg quadrature.
 
 <div class="admonition note">
-<p class="admonition-title">Equation Bank Workflow: Entry, Solving &amp; Integration</p>
+<p class="admonition-title">Equation Bank Workflow: Postfix Entry, Solving &amp; Integration</p>
 <ol>
-  <li><strong>Create Equation:</strong> <code>{{key:EQN}}</code> &rarr; Type formula using named variables $A$–$Z$. Example: <code>Y = A × X² + B × X + C</code></li>
-  <li><strong>Evaluate (Prompt):</strong> <code>{{key:XEQ}}</code> &rarr; SC-32 sequentially prompts: <code>A?</code> &rarr; enter value &rarr; <code>[R/S]</code>, <code>X?</code> &rarr; enter value &rarr; <code>[R/S]</code>, <code>B?</code> &rarr; enter value &rarr; <code>[R/S]</code>, <code>C?</code> &rarr; enter value &rarr; <code>[R/S]</code>. Result displays in Register $X$.</li>
-  <li><strong>Numerical Root:</strong> <code>{{key:SOLVE}} X</code> &rarr; Solves for $X$ when $Y = 0$ using Richard Brent's hybrid algorithm.</li>
-  <li><strong>Numerical Integral:</strong> <code>{{key:∫}}</code> &rarr; Prompts for variable, lower, upper. Evaluates Romberg adaptive quadrature.</li>
+  <li><strong>Create Postfix Equation:</strong> <code>{{key:EQN}}</code> &rarr; Key the formula in postfix RPN using named variables $A$–$Z$. Example ($A X^2 + B X + C$): <code>A {{key:ENTER}} X {{key:x²}} {{key:×}} B {{key:ENTER}} X {{key:×}} {{key:+}} C {{key:+}}</code>, then press <code>{{key:EQN}}</code> or <code>{{key:ENTER}}</code> to save.</li>
+  <li><strong>Evaluate (Prompt):</strong> <code>{{key:XEQ}}</code> &rarr; Select the equation label; for any unbound variable, SC-32 sequentially prompts: <code>A?</code> &rarr; key value &rarr; <code>{{key:ENTER}}</code>, <code>X?</code> &rarr; key value &rarr; <code>{{key:ENTER}}</code>, etc. Result displays in Register $X$.</li>
+  <li><strong>Numerical Root:</strong> <code>{{key:SOLVE}} X</code> &rarr; Solves for $X$ where $f(X) = 0$ using Richard Brent's hybrid IQI/secant/bisection algorithm.</li>
+  <li><strong>Numerical Integral:</strong> Place limits $a$ in $Y$ and $b$ in $X$, then press <code>{{key:∫}} X</code> &rarr; Evaluates Romberg adaptive quadrature, returning the integral in $X$ and the truncation error bound in $Y$.</li>
 </ol>
 </div>
 

@@ -319,6 +319,12 @@ MATH_REPLACEMENTS = [
     (r"\partial", "∂"),
     (r"\nabla", "∇"),
     (r"\angle", "∠"),
+    (r"\lVert", "‖"),
+    (r"\rVert", "‖"),
+    (r"\Vert", "‖"),
+    (r"\lvert", "|"),
+    (r"\rvert", "|"),
+    (r"\vert", "|"),
     (r"\Box", "□"),
     (r"\oplus", "⊕"),
     (r"\prime", "′"),
@@ -460,6 +466,14 @@ def clean_latex_math(text: str) -> str:
     text = re.sub(r'`\[([^`]+)\]`', r'[\1]', text)
     text = text.replace('`', '')
 
+    # Handle \begin{...} / \end{...} environments (aligned, cases, pmatrix, bmatrix) and \\ BEFORE r"\ "
+    if r"\begin{" in text:
+        text = re.sub(r'\s*&\s*=', ' = ', text)
+        text = re.sub(r'\s*&\s*', '  ', text)
+    text = re.sub(r'\\begin\{[^}]*\}', '', text)
+    text = re.sub(r'\\end\{[^}]*\}', '', text)
+    text = text.replace(r"\\", "; ")
+
     # Unescape LaTeX literal escapes before XML escaping
     text = text.replace(r"\%", "%").replace(r"\$", "$").replace(r"\_", "_")
     text = text.replace(r"\{", "(").replace(r"\}", ")")
@@ -467,11 +481,6 @@ def clean_latex_math(text: str) -> str:
 
     # Escape XML special characters FIRST so < and > in inequalities never corrupt ReportLab tags
     text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-
-    # Handle \begin{...} / \end{...} environments (aligned, cases, pmatrix)
-    text = re.sub(r'\\begin\{[^}]*\}', '', text)
-    text = re.sub(r'\\end\{[^}]*\}', '', text)
-    text = text.replace(r"\\", "; ")
 
     # 1. Strip \left and \right delimiters FIRST so \le does not corrupt \left to ≤ft
     text = re.sub(r'\\left\s*([(\[{|.])', r'\1', text)
@@ -484,6 +493,12 @@ def clean_latex_math(text: str) -> str:
     text = re.sub(r'\\rfloor\b', '⌋', text)
     text = re.sub(r'\\lceil\b', '⌈', text)
     text = re.sub(r'\\rceil\b', '⌉', text)
+    text = re.sub(r'\\lVert\b', '‖', text)
+    text = re.sub(r'\\rVert\b', '‖', text)
+    text = re.sub(r'\\Vert\b', '‖', text)
+    text = re.sub(r'\\lvert\b', '|', text)
+    text = re.sub(r'\\rvert\b', '|', text)
+    text = re.sub(r'\\vert\b', '|', text)
 
     # 3. Handle fractions, binomials, roots, and bold macros with balanced braces
     text = replace_latex_frac(text)
@@ -1056,29 +1071,41 @@ def parse_markdown_file(
                 i += 1
                 if div_depth <= 0 and ("</div>" in cur_l or "</span>" in cur_l):
                     break
-            div_text = " ".join(div_lines)
+            div_text = "\n".join(div_lines)
             if "te-viewport-header" in div_text:
                 continue
-            # Convert inline HTML tags to markdown before stripping block HTML tags
+            # Convert inline HTML tags to markdown before splitting into structured lines
             div_text = re.sub(r'<code>(.*?)</code>', r'`\1`', div_text)
             div_text = re.sub(r'<(?:strong|b)>(.*?)</(?:strong|b)>', r'**\1**', div_text)
             div_text = re.sub(r'<(?:em|i)>(.*?)</(?:em|i)>', r'*\1*', div_text)
-            div_text = re.sub(r'<li>\s*', ' • ', div_text)
+            div_text = re.sub(r'<p\s+class=["\']admonition-title["\']>\s*(.*?)\s*</p>', r'**\1**\n', div_text, flags=re.IGNORECASE | re.DOTALL)
+            div_text = re.sub(r'<li>\s*', '\n• ', div_text, flags=re.IGNORECASE)
+            div_text = re.sub(r'(?:<br\s*/?>|</p>|</li>|</ul>|</ol>)', '\n', div_text, flags=re.IGNORECASE)
             # Only strip valid HTML tags starting with </?[a-zA-Z] so math inequalities like < 10 are never eaten!
             clean_text = re.sub(r'</?[a-zA-Z][^>]*>', ' ', div_text)
-            clean_text = re.sub(r'\s+', ' ', clean_text).strip()
-            if clean_text:
-                sanitized = sanitize_inline_markdown(clean_text, is_sc32)
-                callout_p = make_paragraph(sanitized, styles["CalloutText"])
-                callout_tbl = Table([[callout_p]], colWidths=[PRINTABLE_WIDTH])
+            clean_text = re.sub(
+                r'\$\$([^\$]+)\$\$',
+                lambda m: '$$' + ' '.join(s.strip() for s in m.group(1).splitlines() if s.strip()) + '$$',
+                clean_text,
+            )
+            div_rows = []
+            for raw_dl in clean_text.split("\n"):
+                dl_clean = re.sub(r'\s+', ' ', raw_dl).strip()
+                if dl_clean:
+                    dl_san = sanitize_inline_markdown(dl_clean, is_sc32)
+                    div_rows.append([make_paragraph(dl_san, styles["CalloutText"])])
+            if div_rows:
+                callout_tbl = Table(div_rows, colWidths=[PRINTABLE_WIDTH], splitByRow=1)
                 callout_tbl.setStyle(TableStyle([
                     ('BACKGROUND', (0,0), (-1,-1), to_color(CALLOUT_BG_SC32 if is_sc32 else CALLOUT_BG_SC6)),
                     ('LINEBEFORE', (0,0), (0,-1), 2.5, to_color(primary_hex)),
                     ('BOX', (0,0), (-1,-1), 0.5, to_color(DIVIDER_HEX)),
                     ('LEFTPADDING', (0,0), (-1,-1), 8),
                     ('RIGHTPADDING', (0,0), (-1,-1), 8),
-                    ('TOPPADDING', (0,0), (-1,-1), 4),
-                    ('BOTTOMPADDING', (0,0), (-1,-1), 4),
+                    ('TOPPADDING', (0,0), (-1,-1), 2),
+                    ('BOTTOMPADDING', (0,0), (-1,-1), 2),
+                    ('TOPPADDING', (0,0), (-1,0), 5),
+                    ('BOTTOMPADDING', (0,-1), (-1,-1), 5),
                 ]))
                 elements.append(Spacer(1, 3))
                 elements.append(callout_tbl)
@@ -1091,55 +1118,88 @@ def parse_markdown_file(
             while i < num_lines and lines[i].startswith(">"):
                 quote_lines.append(lines[i].lstrip("> ").strip())
                 i += 1
-            raw_quote = " ".join(quote_lines)
 
-            # Detect callout badge
-            badge_match = re.match(r'^\[!(NOTE|IMPORTANT|TIP|WARNING|CHECKPOINT|TEACHER)\]\s*(.*)$', raw_quote, flags=re.IGNORECASE)
+            # Detect callout badge on first non-empty line
+            while quote_lines and not quote_lines[0]:
+                quote_lines.pop(0)
             badge_title = ""
             badge_color = primary_hex
-            if badge_match:
-                tag = badge_match.group(1).upper()
-                raw_quote = badge_match.group(2)
-                if tag == "IMPORTANT":
-                    badge_title = "CRITICAL CHECKPOINT // ARCHITECTURAL INVARIANT"
-                    badge_color = primary_hex
-                elif tag == "NOTE":
-                    badge_title = "OPERATIONAL NOTE // RPN STACK INSIGHT"
-                    badge_color = accent_hex
-                elif tag == "TIP":
-                    badge_title = "PRO TIP // KEYSTROKE ACCELERATOR"
-                    badge_color = accent_hex
-                elif tag == "WARNING":
-                    badge_title = "SINGULARITY WARNING // HARDWARE RECOVERY"
-                    badge_color = "#b91c1c"
-                elif tag == "CHECKPOINT":
-                    badge_title = "DIAGNOSTIC CHECKPOINT // VERIFY YOUR STACK"
-                    badge_color = primary_hex
-                elif tag == "TEACHER":
-                    badge_title = "TEACHER / HOMESCHOOLER SCRIPT // CRA MODEL"
-                    badge_color = primary_hex
-                else:
-                    badge_title = f"{tag} // STACKCALC REFERENCE"
-                    badge_color = primary_hex
+            if quote_lines:
+                badge_match = re.match(r'^\[!(NOTE|IMPORTANT|TIP|WARNING|CHECKPOINT|TEACHER)\]\s*(.*)$', quote_lines[0], flags=re.IGNORECASE)
+                if badge_match:
+                    tag = badge_match.group(1).upper()
+                    rem = badge_match.group(2).strip()
+                    if rem:
+                        quote_lines[0] = rem
+                    else:
+                        quote_lines.pop(0)
+                    if tag == "IMPORTANT":
+                        badge_title = "CRITICAL CHECKPOINT // ARCHITECTURAL INVARIANT"
+                        badge_color = primary_hex
+                    elif tag == "NOTE":
+                        badge_title = "OPERATIONAL NOTE // RPN STACK INSIGHT"
+                        badge_color = accent_hex
+                    elif tag == "TIP":
+                        badge_title = "PRO TIP // KEYSTROKE ACCELERATOR"
+                        badge_color = accent_hex
+                    elif tag == "WARNING":
+                        badge_title = "SINGULARITY WARNING // HARDWARE RECOVERY"
+                        badge_color = "#b91c1c"
+                    elif tag == "CHECKPOINT":
+                        badge_title = "DIAGNOSTIC CHECKPOINT // VERIFY YOUR STACK"
+                        badge_color = primary_hex
+                    elif tag == "TEACHER":
+                        badge_title = "TEACHER / HOMESCHOOLER SCRIPT // CRA MODEL"
+                        badge_color = primary_hex
+                    else:
+                        badge_title = f"{tag} // STACKCALC REFERENCE"
+                        badge_color = primary_hex
 
-            sanitized = sanitize_inline_markdown(raw_quote, is_sc32)
+            quote_joined = "\n".join(quote_lines)
+            quote_joined = re.sub(
+                r'\$\$([^\$]+)\$\$',
+                lambda m: '$$' + ' '.join(s.strip() for s in m.group(1).splitlines() if s.strip()) + '$$',
+                quote_joined,
+            )
+            quote_lines = quote_joined.split("\n") if quote_joined else []
+
+            quote_rows = []
+            extra_top_rows = []
             if badge_title:
-                sanitized = f"<b><font size='8.5' face='{FONT_BODY_BOLD}' color='{badge_color}'>{badge_title}</font></b><br/><br/>{sanitized}"
+                badge_html = f"<b><font size='8.5' face='{FONT_BODY_BOLD}' color='{badge_color}'>{badge_title}</font></b>"
+                quote_rows.append([make_paragraph(badge_html, styles["CalloutText"])])
 
-            callout_p = make_paragraph(sanitized, styles["CalloutText"])
-            callout_tbl = Table([[callout_p]], colWidths=[PRINTABLE_WIDTH])
-            callout_tbl.setStyle(TableStyle([
-                ('BACKGROUND', (0,0), (-1,-1), to_color(CALLOUT_BG_SC32 if is_sc32 else CALLOUT_BG_SC6)),
-                ('LINEBEFORE', (0,0), (0,-1), 3.5, to_color(badge_color)),
-                ('BOX', (0,0), (-1,-1), 0.5, to_color(DIVIDER_HEX)),
-                ('LEFTPADDING', (0,0), (-1,-1), 10),
-                ('RIGHTPADDING', (0,0), (-1,-1), 10),
-                ('TOPPADDING', (0,0), (-1,-1), 6),
-                ('BOTTOMPADDING', (0,0), (-1,-1), 6),
-            ]))
-            elements.append(Spacer(1, 4))
-            elements.append(callout_tbl)
-            elements.append(Spacer(1, 6))
+            prev_blank = bool(badge_title)
+            for ql in quote_lines:
+                if not ql:
+                    prev_blank = True
+                else:
+                    ql_norm = re.sub(r'^[\*\-]\s+', '• ', ql)
+                    ql_san = sanitize_inline_markdown(ql_norm, is_sc32)
+                    if prev_blank and quote_rows:
+                        extra_top_rows.append(len(quote_rows))
+                    quote_rows.append([make_paragraph(ql_san, styles["CalloutText"])])
+                    prev_blank = False
+
+            if quote_rows:
+                q_style = [
+                    ('BACKGROUND', (0,0), (-1,-1), to_color(CALLOUT_BG_SC32 if is_sc32 else CALLOUT_BG_SC6)),
+                    ('LINEBEFORE', (0,0), (0,-1), 3.5, to_color(badge_color)),
+                    ('BOX', (0,0), (-1,-1), 0.5, to_color(DIVIDER_HEX)),
+                    ('LEFTPADDING', (0,0), (-1,-1), 10),
+                    ('RIGHTPADDING', (0,0), (-1,-1), 10),
+                    ('TOPPADDING', (0,0), (-1,-1), 1.5),
+                    ('BOTTOMPADDING', (0,0), (-1,-1), 1.5),
+                    ('TOPPADDING', (0,0), (-1,0), 6),
+                    ('BOTTOMPADDING', (0,-1), (-1,-1), 6),
+                ]
+                for r_idx in extra_top_rows:
+                    q_style.append(('TOPPADDING', (0, r_idx), (-1, r_idx), 5))
+                callout_tbl = Table(quote_rows, colWidths=[PRINTABLE_WIDTH], splitByRow=1)
+                callout_tbl.setStyle(TableStyle(q_style))
+                elements.append(Spacer(1, 4))
+                elements.append(callout_tbl)
+                elements.append(Spacer(1, 6))
             continue
 
         # Code Block or ASCII Art Diagram (``` ... ```)
@@ -1196,10 +1256,13 @@ def parse_markdown_file(
             continue
 
         # Markdown Table (| col 1 | col 2 |)
-        if line.startswith("|") and line.endswith("|"):
+        if line.startswith("|"):
             table_lines = []
-            while i < num_lines and lines[i].strip().startswith("|") and lines[i].strip().endswith("|"):
-                table_lines.append(lines[i].strip())
+            while i < num_lines and lines[i].strip().startswith("|"):
+                t_l = lines[i].strip()
+                if not t_l.endswith("|"):
+                    t_l += " |"
+                table_lines.append(t_l)
                 i += 1
 
             if len(table_lines) >= 2:
@@ -1455,6 +1518,8 @@ def parse_markdown_file(
                 para_p._index_terms = terms
             elements.append(para_p)
             elements.append(Spacer(1, 3))
+        elif i < num_lines:
+            i += 1
 
     return elements
 

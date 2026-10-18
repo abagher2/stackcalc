@@ -59,7 +59,6 @@ The physical keypad comprises 43 mechanical switch positions organized into thre
 
 ---
 
-
 ## Electrical Matrix & Keypad Scanning Bus
 
 The switch matrix is wired as an $8 \times 6$ crossbar scanned by the dual-core 32-bit microcontroller:
@@ -96,7 +95,7 @@ The table below catalogs every physical switch position, electrical matrix coord
 | **18**| R2, C5 | `{{key:TAN}}` | `{{keycap:ATAN}}` | `{{keycap:%CHG}}` Pct Chg| `L` | `0x25` | [Ch 4.2 Trig](04-trig-vectors-polar.md#42-direct-inverse-trigonometric-functions) &bull; [Ch 11.3 Percent Change](11-financial-tvm.md#113-period-over-period-year-over-year-performance-chg) |
 | **19**| R3, C0-1| `{{key:ENTER}}` | `{{keycap:LASTX}}` | `{{keycap:SHOW}}` | `M` | `0x30` | [Ch 2.3 Elevator Lift](02-rpn-stack-dynamics.md#23-stack-lift-mechanics-the-elevator-metaphor) &bull; [Ch 2.7 LASTX](02-rpn-stack-dynamics.md#27-the-lastx-register-error-recovery-archetypes) &bull; [Ch 2.8 SHOW](02-rpn-stack-dynamics.md#28-the-show-key-15-digit-precision-inspection) |
 | **20**| R3, C2 | `{{key:x⇄y}}` | `MEM` Specs | `[x⇄?]` Swap Reg| `N` | `0x32` | [Ch 2.6 Swap XY](02-rpn-stack-dynamics.md#26-stack-manipulation-keys-architectural-elegance) &bull; [Ch 1.7 Memory Map](01-craftsmanship-hardware.md#17-dual-slot-ping-pong-continuous-flash-memory-nvm) |
-| **21**| R3, C3 | `{{key:+/-}}` | `MODES` Menu | `[\|x\|]` Abs | `O` | `0x33` | [Ch 2.1 Sign Change](02-rpn-stack-dynamics.md#21-the-core-axiom-operands-precede-operators) &bull; [Ch 4.1 Angular Modes](04-trig-vectors-polar.md#41-the-unit-circle-volvelle-angular-modes) &bull; [Ch 3.3 Abs](03-algebra-transcendentals.md#33-number-parts-functions-g-parts) |
+| **21**| R3, C3 | `{{key:+/-}}` | `MODES` Menu | `[&#124;x&#124;]` Abs | `O` | `0x33` | [Ch 2.1 Sign Change](02-rpn-stack-dynamics.md#21-the-core-axiom-operands-precede-operators) &bull; [Ch 4.1 Angular Modes](04-trig-vectors-polar.md#41-the-unit-circle-volvelle-angular-modes) &bull; [Ch 3.3 Abs](03-algebra-transcendentals.md#33-number-parts-functions-g-parts) |
 | **22**| R3, C4 | `{{key:E}}` | `DISP` Menu | `{{keycap:÷R}}` Div/Rem | `P` | `0x34` | [Ch 3.5 Scientific Notation](03-algebra-transcendentals.md#35-display-formatting-modes-fix-sci-eng-all) &bull; [Ch 10.1 Div/Rem](10-computer-science-bases.md#101-the-36-bit-twos-complement-integer-architecture) |
 | **23**| R3, C5 | `{{key:<-}}` | `CLEAR` Menu | *(Unassigned)*| — | `0x35` | [Ch 2.1 Backspace](02-rpn-stack-dynamics.md#21-the-core-axiom-operands-precede-operators) &bull; [Ch 2.6 Clear Stack](02-rpn-stack-dynamics.md#26-stack-manipulation-keys-architectural-elegance) |
 | **24**| R4, C0 | `{{key:XEQ}}` | `FN=` Define | `POLY` Solver | — | `0x40` | [Ch 8.1 EQN Execute](08-calculus-romberg-quadrature.md#81-the-cra-pedagogical-progression-for-numerical-calculus) &bull; [Ch 7.2 Cubic Solver](07-polynomials-brent-solver.md#72-characteristic-polynomial-solver-g-poly) |
@@ -131,7 +130,7 @@ The SC-32 intentionally deviates from the 1988 vintage HP-32SII in exact alignme
    * *SC-32 Rationale:* Parentheses are redundant in direct RPN mode; direct absolute value is far more useful in applied engineering.
 2. **`{{key:↱}}` + `E` = `÷R` (Integer Division & Remainder):**
    * *HP32SII Original:* `)` (close parenthesis for algebraic equation editor).
-   * *SC-32 Rationale:* Returns integer quotient in $Y$ and remainder in $X$ in a single keystroke.
+   * *SC-32 Rationale:* Returns integer quotient in $X$ and remainder in $Y$ in a single keystroke.
 3. **`{{key:↱}}` + `<-` = Unassigned:**
    * *HP32SII Original:* `=` (equals for algebraic equation editor).
    * *SC-32 Rationale:* Equality comparison belongs in the `x?y` and `x?0` menus; left unassigned.
@@ -175,8 +174,4 @@ The six top keys (`{{key:LFU0}}` through `{{key:LFU5}}`) automatically remap dep
 
 ## Verification & Firmware Implementation Reference
 
-The 43-key matrix pinouts, electrical scanning bus, and shift mappings are verified in:
-* `Hardware/sc32_faceplate.kicad_pcb`
-* `Hardware/sc32_schematic.kicad_sch`
-* `Firmware/hardware_wrapper.c`
-* `watch-calc-32/documentation/button_rubric.md`
+The 43-key matrix pinouts, row-column diode scanning bus, tactile dome actuation profiles, and primary/`{{key:f}}`/`{{key:g}}` shift legends are verified against the SC-32 printed circuit board layout, electrical schematic, and laser-etched faceplate metrology specifications.

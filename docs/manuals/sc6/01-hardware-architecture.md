@@ -22,10 +22,18 @@ Now look at the other side of your desk: the **StackCalc SC-6**. Molded from tou
 The SC-6 is built like an astronaut's pocket instrument. Nothing on it is flimsy or disposable. Every button, shelf, and angle helps your brain focus on what math really is: building, discovering, and exploring with your hands.
 
 <div class="admonition note">
-<p class="admonition-title">For Parents &amp; Teachers: Cognitive Load &amp; Working Memory Limits</p>
+<p class="admonition-title">For Parents &amp; Teachers: Cognitive Load, Working Memory &amp; Grade-Band Pacing (Grades K–6)</p>
 <p>
 In John Sweller’s Cognitive Load Theory {{cite:sweller1988}}, extraneous mental load from glowing tablets and split attention destroys mathematical understanding. George A. Miller’s foundational research on working memory limits ($7 \pm 2$ items) {{cite:miller1956}} explains why young minds drown under notification-heavy operating systems. The SC-6 four-register operational stack aligns naturally with working memory bandwidth. Following David Macaulay’s cutaway architecture of physical machines {{cite:macaulay2016}}, every radius, wall thickness, and micro-foamed snap-dome was engineered to anchor the child’s wandering attention in the tactile reality of mathematical thought.
 </p>
+<p>
+<strong>How to Navigate This Book by Grade Band (Ages 5–12):</strong> Because this handbook accompanies learners from Kindergarten through Grade 6, <strong>Chapters 1 and 2</strong> serve as the universal orientation to the physical instrument and the 4-level stack, while <strong>Chapters 3 through 9</strong> follow the developmental K–6 curriculum spiral:
+</p>
+<ul>
+<li><strong>Grades K–2 (Ages 5–8):</strong> Explore the buttons and blocks in Chapter 1, treat the Maker Bench below as a fun parent-assisted button test drive (or skip straight ahead), complete <strong>Expedition 1 (Problems 2.1–2.10)</strong> in <a href="02-rpn-for-young-learners.md">Chapter 2</a>, and then dive directly into <a href="03-counting-place-value.md">Chapter 3: Counting, Number Sense &amp; Place Value</a>.</li>
+<li><strong>Grades 3–4 (Ages 8–10):</strong> Complete Expeditions 1–3 of Chapter 2, master multi-digit place value, arrays, and integer division with remainder (<code>{{key:÷R}}</code>) in Chapters 3–4, and advance into <a href="05-fractions-ratios-proportions.md">Chapter 5: Fractions &amp; Ratios</a> and <a href="06-geometry-measurement-time.md">Chapter 6: Geometry, Measurement &amp; Time</a>.</li>
+<li><strong>Grades 5–6 (Ages 10–12):</strong> Complete all expeditions in Chapters 1–2 (including multi-branch order of operations and square roots) and progress through <a href="07-statistics-probability-primes.md">Chapter 7: Data, Probability &amp; Prime Numbers</a>, <a href="08-math-quiz-engine.md">Chapter 8: The Math Quiz Engine</a>, and <a href="09-stem-discovery-labs.md">Chapter 9: Applied STEM Labs</a>.</li>
+</ul>
 </div>
 
 > CHAPTER BASELINE MODE: {{key:NUM}}  
@@ -35,7 +43,7 @@ In John Sweller’s Cognitive Load Theory {{cite:sweller1988}}, extraneous menta
 <p class="admonition-title">Unlocked Keycaps Ribbon — Hardware &amp; Instrument Control</p>
 <p>
 • <strong>Instrument Controls:</strong> <code>{{key:C}}</code> Clear / Reset, <code>{{key:<-}}</code> Destructive Backspace, <code>{{key:OFF}}</code> Low-Power Deep Standby, <code>{{key:FLAGS}}</code> Hardware System Flags.<br>
-• <strong>Hardware Status Display:</strong> Four-register active stack (<code>T</code>, <code>Z</code>, <code>Y</code>, <code>X</code>), Battery Reserve Indicator, Active Visual Sandbox Header Badge (<code>{{key:▦}}</code>, <code>{{key:LINE}}</code>, <code>{{key:PV}}</code>, <code>{{key:🕒}}</code>, <code>{{key:🎲}}</code>, <code>{{key:?}}</code>).<br>
+• <strong>Hardware Status Display:</strong> Four-register active stack (<code>T</code>, <code>Z</code>, <code>Y</code>, <code>X</code>), Battery Reserve Indicator, Active Visual Sandbox Header Badge (<code>{{key:▦}}</code>, <code>{{key:COUNT}}</code>, <code>{{key:LINE}}</code>, <code>{{key:PV}}</code>, <code>{{key:🕒}}</code>, <code>{{key:🎲}}</code>, <code>{{key:?}}</code>).<br>
 • <strong>Classroom Safety Envelope:</strong> Recessed display window with 1.2 mm raised protective avionics bezel, bi-directional sliding 15° easel desk-stand cowl.
 </p>
 </div>
@@ -77,15 +85,14 @@ Your SC-6 includes a rugged, bi-directional **sliding protective cowl**. At the 
 2. Flip the calculator over and slide the cover onto the rear dovetail rails until a gentle snap locks it in place.
 3. Set the SC-6 on your desk—it now rests at a stable **$15^\circ$ reading angle**, right beside your manipulative block tray, keeping both hands completely free: your left hand can build a fraction tower or place counters in a ten-frame, while your right hand taps keys into the stack!
 
-### The Tool Showdown: Glass Screen Confusion vs. Tactile Stack Precision
+### Algebraic Trap vs. StackCalc Superpower Showdown: Hardware Architecture & Desktop Ergonomics
 
-| Challenge / Dimension | The Glowing Tablet & Smartphone Trap | The StackCalc SC-6 + Physical Studio Superpower | Keystrokes & Efficiency | Live Stack Visibility |
-| :--- | :--- | :--- | :--- | :--- |
-| **First Number Entry ($347$)** | **Phone/Tablet**: Unlock $\to$ swipe $\to$ open app $\to$ dismiss ad $\to$ tap glass screen with zero feedback ($12+$ steps). Screen washes out in classroom daylight ($1,000\text{ lux}$). | **SC-6 + Base-10 Blocks**: Slide cowl to 15° easel $\to$ lay 3 hundreds flats, 4 ten-rods, 7 unit cubes $\to$ tap `347 {{key:ENTER}}` on 400g snap-domes. Sunlight transflective LCD has infinite contrast. | **4 strokes vs. 12+ steps (67% reduction)** | Level $X = 347$ rests visible on the ground shelf; previous results wait upstairs in $Y, Z, T$. |
-| **Tactile Confirmation** | Smooth flat glass: no physical boundary between digits, zero tactile click, high error rate from accidental adjacent touches. | 400-gram stainless snap-domes provide an audible click and physical snap; fingers know instantly that the stroke committed. | **1 mechanical snap per digit** | Zero missed or doubled keystrokes; visual and haptic verification. |
-| **Optical Ergonomics & Daylight** | Harsh $450\text{ cd/m}^2$ blue-light backlight causes eye fatigue and pupil constriction after 20 minutes; unreadable outdoors. | Transflective ambient LCD ($0\text{ mW}$ self-emission) reflects room light like printed paper; contrast increases with brighter sunlight. | **0 mW light emitted into eyes** | Crisp 15.2:1 contrast in full daylight; reads effortlessly for hours. |
-| **Intermediate Step Visibility** | Single-line algebraic display: numbers disappear the moment an operation or `=` is pressed; intermediate totals are hidden. | Four visible shelves ($T, Z, Y, X$): every operand and intermediate result remains in plain sight on the screen. | **Zero scratch paper required** | $Y \mid X$ split screen displays both active number and waiting partner simultaneously. |
-| **Focus & Classroom Distractions** | Social media notifications, game badges, and web pop-ups interrupt mathematical working memory every 90 seconds. | Zero Wi-Fi, zero radios, zero notifications. Dedicated tactile environment engineered for sustained mathematical focus. | **100% focused attention** | Working memory dedicated entirely to problem solving and block patterns. |
+| Challenge / Real-World Task | The Algebraic Calculator Trap (TI-84 / Infix) | Algebraic Keystrokes & Clutter | The StackCalc Superpower (RPN Stack + Visual Studio) | StackCalc Keystrokes | The Stack Advantage |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Multi-Step Battery Consumption:**<br>Daily power draw across active and standby hours:<br>$(0.65 \times 2) + (0.0025 \times 22)$ | Chained infix entry requires parentheses. A misplaced bracket or missing operator defaults to left-to-right evaluation, computing $0.65 \times 2 + 0.0025 = 1.3025 \times 22 = 28.655\text{ mAh}$, silently overstating power consumption by 21×! | `( 0 . 6 5 * 2 ) + ( 0 . 0 0 2 5 * 2 2 ) =`<br>(27 keystrokes, nested brackets, invisible intermediate steps) | **RPN Elevator Stack:**<br>Computes active draw ($1.30\text{ mAh}$) and standby draw ($0.055\text{ mAh}$) into visible registers $Y$ and $X$, then combines them with a single `{{key:+}}` press. | `0.65 {{key:ENTER}} 2 {{key:×}} 0.0025 {{key:ENTER}} 22 {{key:×}} {{key:+}}`<br>(17 keystrokes) | **37% fewer keystrokes**<br>Zero parentheses, zero order-of-operations traps; active and sleep subtotals both visible on screen before summing. |
+| **First Place-Value Number Entry:**<br>Seating 347 with physical Base-10 blocks | Numbers vanish or lock into pending operator states the moment an operation key is pressed. No visual connection to physical hundred-flats, ten-rods, or unit cubes on the desk. | `3 4 7 +`<br>(Single-line display clears or freezes; intermediate numbers hidden) | **Live Register Retention:**<br>Pressing `{{key:ENTER}}` pushes $347$ to Level $Y$, keeping the quantity anchored on screen while student lays out 3 flats, 4 rods, and 7 cubes. | `347 {{key:ENTER}}`<br>(4 keystrokes on 400g snap-domes) | **Zero Scratch Paper:**<br>Level $X = 347$ rests visible on the ground shelf; previous results wait upstairs in $Y, Z, T$ with audible click feedback. |
+| **Photometric Display Readability:**<br>Classroom daylight contrast ratio ($142.0 \div 9.35$) | Backlit LCD emits harsh $450\text{ cd/m}^2$ blue light directly into eyes, causing pupil fatigue after 20 minutes; screen washes out completely under bright classroom sunlight ($1,000\text{ lux}$). | `1 4 2 . 0 / 9 . 3 5 =`<br>(12 keystrokes; battery depleted after 15 hours of backlight draw) | **Transflective Ambient Display:**<br>Zero self-emission ($0\text{ mW}$); reflects room daylight like printed paper. Higher ambient light creates deeper, crisper contrast ($15.2:1$ AAA readability). | `142 {{key:ENTER}} 9.35 {{key:÷}}`<br>(9 keystrokes) | **Zero Eye Fatigue:**<br>Reads effortlessly for hours without blue light; single CR2032 coin cell provides $350+\text{ hours}$ of active classroom discovery. |
+| **Gridfinity Desktop Footprint:**<br>Total unit modules for studio trays:<br>$(2 \times 1) + (3 \times 1) + (3 \times 2)$ | Chained sum of three modular well products requires multi-level parentheses. Missing a single closing bracket yields syntax errors right in the middle of workshop assembly. | `( 2 * 1 ) + ( 3 * 1 ) + ( 3 * 2 ) =`<br>(21 keystrokes, syntax overhead) | **Progressive Stack Accumulation:**<br>Each tray area ($2, 3, 6$) collapses cleanly on the stack, maintaining running totals without parentheses or syntax modes. | `2 {{key:ENTER}} 1 {{key:×}} 3 {{key:ENTER}} 1 {{key:×}} {{key:+}} 3 {{key:ENTER}} 2 {{key:×}} {{key:+}}`<br>(16 keystrokes) | **24% fewer keystrokes**<br>Zero parentheses; each tray footprint verified on the live stack as physical blocks dock into the desktop Gridfinity base. |
 
 ---
 
@@ -168,7 +175,7 @@ To make sure every number on the screen connects directly to something you can h
 - **How It Works with the SC-6:** Tap `{{key:▦}}` to mirror your trays right on the screen! Register $Y$ shows the top tray, and Register $X$ shows the bottom tray. Flip counters to find friend pairs that make 10 ($7 \text{ red} + 3 \text{ gold} = 10$). Tap `{{key:+}}`, and watch the counters group into a full ten with extras left over ($7 + 5 = 12$) right on the stack!
 
 ### The Four-Color Counting & Array Studio
-- **The Physical Tool:** 144 smooth-docking counting tiles in four colors: clean white, cobalt blue, radiant gold, and slate gray. Unlike stiff snap cubes that pinch your fingers, these tiles slide smoothly into place and rest flat under their own weight.
+- **The Physical Tool:** 24 smooth-docking counting tiles per student kit in four colors (6 clean white, 6 cobalt blue, 6 radiant gold, and 6 slate gray—or 144 tiles when 6 kits are pooled at a classroom table). Unlike stiff snap cubes that pinch your fingers, these tiles slide smoothly into place and rest flat under their own weight.
 - **How It Works with the SC-6:** Arrange tiles into rows and columns to build rectangular arrays for multiplication ($4 \times 6 = 24$). Row count sits on Level $Y$, column count sits on Level $X$, and tapping `{{key:×}}` calculates the total tiles. Spin the tray sideways: it is now 6 rows of 4 tiles and still makes 24—proving that changing the order doesn't change the answer!
 
 ### The 84 mm Fraction Towers & Comparator Tray
@@ -258,18 +265,12 @@ If your screen is showing clock dials (`{{key:🕒}}`), ten-frames (`{{key:▦}}
 
 ### Expedition 1: The Calculator Workshop & Maker Bench (Problems 1.1–1.6)
 
-*Mission Briefing:* Before heading out into the field with your manipulative studio, you step into the Maker Bench workshop. Here, engineers test battery reserves, calculate dot-matrix screen frame buffers, measure photometric contrast, verify stainless snap-dome tactile forces, design Gridfinity modular desktop footprints, and measure drafting easel angles. Using your StackCalc SC-6 and RPN stack math, you verify every physical parameter of your instrument.
+*Mission Briefing:* Before heading out into the field with your manipulative studio, step up to the Maker Bench workshop! Here, young engineers test battery reserves, calculate dot-matrix screen frame buffers, measure daylight contrast, check the spring force of stainless snap-domes, lay out Gridfinity desktop trays, and set up the reading easel. Using your StackCalc SC-6 and RPN stack math, you can verify every physical measurement of the instrument in your hands.
 
 #### Problem 1.1: Battery Reserve Life on the Kitchen Table
-- **Workshop Mission:** The SC-6 operates on a single CR2032 lithium coin cell with a nominal reserve capacity of $225\text{ mAh}$. During an active school day, the calculator operates for 2 hours in active classroom calculation mode (consuming $0.65\text{ mA}$) and spends 22 hours in low-power sleep mode (consuming $0.0025\text{ mA}$). Calculate the total daily battery consumption in milliampere-hours, then calculate how many school days the calculator runs before requiring a fresh coin cell.
-- **Manipulative Studio Connection:** The rear tool-secured bayonet hatch protects the CR2032 coin cell, while non-volatile EEPROM memory safeguards all stack registers and quiz records across battery replacements.
-- **Keystrokes:** `{{res:sc6_01_hardware_architecture_seq_01:keys}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_01:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `0.65` `{{key:ENTER}}` `2` `{{key:×}}` — Active daily power consumption: $0.65\text{ mA} \times 2\text{ h} = 1.30\text{ mAh}$.
-  2. `0.0025` `{{key:ENTER}}` `22` `{{key:×}}` — Sleep standby power consumption: $0.0025\text{ mA} \times 22\text{ h} = 0.055\text{ mAh}$.
-  3. `{{key:+}}` — Combine active and standby draw: $1.30 + 0.055 = 1.355\text{ mAh/day}$ daily consumption.
-  4. `225` `{{key:x⇄y}}` `{{key:÷}}` — Load the $225\text{ mAh}$ battery capacity and divide by daily consumption: $225 \div 1.355 \approx 166.05\text{ school days}$ (well over a full academic year!).
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
+Inside the rear tool-secured bayonet hatch of your SC-6 sits a single CR2032 lithium coin cell with a reserve capacity of $225\text{ mAh}$ (backed by non-volatile memory that keeps your stack registers and quiz scores safe even during a battery swap). During an active school day, your calculator runs for $2\text{ hours}$ in active classroom calculation mode (drawing $0.65\text{ mA}$) and spends the remaining $22\text{ hours}$ in deep sleep mode (drawing just $0.0025\text{ mA}$). How much battery capacity does it use in a full day, and how many school days will a single coin cell last?
+
+To find out on the stack (`{{res:sc6_01_hardware_architecture_seq_01:keys}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_01:value}}`**), first multiply the active draw (`0.65 {{key:ENTER}} 2 {{key:×}}` $\to 1.30\text{ mAh}$), then multiply the sleep draw (`0.0025 {{key:ENTER}} 22 {{key:×}}` $\to 0.055\text{ mAh}$, while $1.30$ waits on Floor $Y$), and tap `{{key:+}}` to combine them into $1.355\text{ mAh/day}$. Finally, type the $225\text{ mAh}$ total capacity, tap `{{key:x⇄y}}` so $225$ sits on Floor $Y$ above $1.355$ on Floor $X$, and press `{{key:÷}}` to reveal **`166.05` school days**—nearly an entire school year on one tiny coin cell!
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -281,70 +282,43 @@ If your screen is showing clock dials (`{{key:🕒}}`), ten-frames (`{{key:▦}}
 | `225` {{key:x⇄y}} | 0 | 0 | $225.0000$ | $1.3550$ | Enter $225\text{ mAh}$ total capacity and swap: 225 in $Y$, daily draw in $X$ |
 | {{key:÷}} | 0 | 0 | 0 | $166.0517$ | Divide total reserve by daily draw: $\approx 166.05\text{ school days}$ of power |
 
-- **Diagnostic Check:** Register $X \approx 166.05\text{ days}$. A single coin cell powers the entire school year.
-
 ---
 
 #### Problem 1.2: Screen Memory (Dot-Matrix Frame Buffer)
-- **Workshop Mission:** The transflective daylight LCD features a graphic dot-matrix resolution of 132 columns by 65 rows. Each pixel corresponds to one single memory bit in the microcontroller's display frame buffer (1 bit per pixel: black or clear). If 8 bits make 1 byte of memory, how many bytes of RAM are required to store a complete screen image?
-- **Manipulative Studio Connection:** The 8,580 individual display pixels render high-contrast vector ten-frames, number line jump arcs, and bold numbers without a power-hungry backlight.
-- **Keystrokes:** `{{res:sc6_01_hardware_architecture_seq_02:keys}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_02:value}}`**
-- **Narrative Stack Analysis:**  
-  Key `132 {{key:ENTER}} 65 {{key:×}}` to calculate the total pixel count: the stack multiplies the horizontal columns by vertical rows, placing $8,580\text{ pixels}$ in Register $X$. Now key `8 {{key:÷}}` to pack bits into bytes: the display drops the stack, revealing exactly **`1072.5`** bytes (allocated as $1,073\text{ bytes}$ of continuous frame buffer memory) with $(T: 0, Z: 0, Y: 0, X: 1072.5)$.
+Look closely at your SC-6's transflective daylight screen: it is a crisp grid of $132$ columns by $65$ rows of tiny square pixels that draw ten-frames, number-line jump arcs, and bold numbers without needing a battery-draining backlight. Each pixel uses 1 bit of memory (`1` for ink-black, `0` for silver-white), and $8\text{ bits}$ pack into $1\text{ byte}$ of RAM. How many bytes of memory does it take to hold one full screen picture? Key in `{{res:sc6_01_hardware_architecture_seq_02:keys}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_02:value}}`**: multiplying `132 {{key:ENTER}} 65 {{key:×}}` finds all $8,580\text{ pixels}$ in Register $X$, and tapping `8 {{key:÷}}` packs those bits into **`1072.5` bytes** ($1,073\text{ whole bytes}$ of screen memory) with $(T: 1, Z: 1, Y: 0, X: 1072.5)$.
 
 ---
 
 #### Problem 1.3: Daylight Transflective Screen Contrast
-- **Workshop Mission:** In optoelectronics quality assurance, screen readability is measured by the photometric contrast ratio: the luminance of the reflective background compared to the luminance of the black active liquid crystal segments. Under bright classroom ambient light ($500\text{ lux}$), a calibrated photometer measures the white screen background at $142.0\text{ cd/m}^2$ and the activated black pixels at $9.35\text{ cd/m}^2$. Calculate the contrast ratio and verify that it meets the AAA $15:1$ optical readability standard.
-- **Manipulative Studio Connection:** Just like dark ink on bright white paper, higher ambient room light increases screen contrast naturally without glare or eye strain.
-- **Keystrokes:** `{{res:sc6_01_hardware_architecture_seq_03:keys}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_03:value}}`**
-- **Narrative Stack Analysis:**  
-  Key `142 {{key:ENTER}} 9.35 {{key:÷}}`: the stack lifts the white background luminance $142.0\text{ cd/m}^2$ to Register $Y$, inputs the black segment luminance $9.35\text{ cd/m}^2$ into Register $X$, and divides in a single stroke to yield a contrast ratio of **`15.19:1`** $(T: 0, Z: 0, Y: 0, X: 15.1872)$, successfully surpassing the rigorous 15:1 AAA standard!
+Why does your SC-6 screen look *sharper* when you sit by a sunny window instead of washing out like a tablet? Because ambient room light bounces off the silver reflector behind the liquid crystal! Under bright classroom lighting ($500\text{ lux}$), a light meter measures the bright background at $142.0\text{ cd/m}^2$ and the dark ink pixels at $9.35\text{ cd/m}^2$. To check whether the screen beats the $15:1$ AAA readability standard, key in `{{res:sc6_01_hardware_architecture_seq_03:keys}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_03:value}}`**: `142 {{key:ENTER}}` lifts the background brightness to Floor $Y$, `9.35` enters the dark-pixel reading on Floor $X$, and `{{key:÷}}` divides them in one stroke to confirm a crisp **`15.19:1`** contrast ratio $(T: 0, Z: 0, Y: 0, X: 15.1872)$!
 
 ---
 
 #### Problem 1.4: Clicking Button Snap-Dome Spring Rate
-- **Workshop Mission:** The tactile snap-dome switches under every SC-6 keycap are engineered from spring-tempered stainless steel. To trigger a clean electrical contact, a key requires an actuation force of $400.0\text{ grams}$ over a tactile key travel distance of $1.6\text{ mm}$. Calculate the mechanical spring rate $k$ in grams per millimeter ($k = F \div \Delta x$).
-- **Manipulative Studio Connection:** The 400g snap force prevents accidental double-strokes while giving the child unmistakable tactile and audible confirmation that a digit has committed to the stack.
-- **Keystrokes:** `{{res:sc6_01_hardware_architecture_seq_04:keys}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_04:value}}`**
-- **Narrative Stack Analysis:**  
-  Enter the actuation force and stroke distance: key `400 {{key:ENTER}} 1.6 {{key:÷}}`. Register $Y$ holds the $400.0\text{ g}$ downward load while Register $X$ takes the $1.6\text{ mm}$ travel. Tapping `{{key:÷}}` divides the quantities, leaving a spring rate of exactly **`250.0`** $\text{g/mm}$ $(T: 0, Z: 0, Y: 0, X: 250)$.
+Every time you press a button on the SC-6, a tiny stainless-steel snap-dome underneath clicks with $400.0\text{ grams}$ of force over a $1.6\text{ mm}$ downward travel—preventing accidental double-taps and letting your fingers feel each number lock onto the stack. Engineers measure a switch's crispness by its spring rate $k = F \div \Delta x$ in grams per millimeter. Key in `{{res:sc6_01_hardware_architecture_seq_04:keys}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_04:value}}`**: this sequence places the $400.0\text{ g}$ force on Floor $Y$, divides by the $1.6\text{ mm}$ travel on Floor $X$, and lands on an exact spring rate of **`250.0` g/mm** $(T: 0, Z: 0, Y: 3756, X: 250)$.
 
 ---
 
 #### Problem 1.5: Manipulative Studio Gridfinity Footprint
-- **Workshop Mission:** On the maker bench, modular 3D-printed manipulative studio trays are organized using the standardized Gridfinity system ($42\text{ mm}$ grid units). A complete elementary desktop math station includes: 2 Ten-Frame Trays ($2 \times 1\text{ units}$ each), 1 Fraction Studio Well ($3 \times 1\text{ units}$), and 1 Counting & Array Box ($3 \times 2\text{ units}$). Calculate the total Gridfinity base unit footprint area required on the student workbench.
-- **Manipulative Studio Connection:** Organizing blocks in modular Gridfinity trays keeps student desks orderly, prevents lost counters, and models area arithmetic through modular storage units.
-- **Keystrokes:** `{{res:sc6_01_hardware_architecture_seq_05:keys}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_05:value}}`**
-- **Step-by-Step RPN Reasoning & Stack Logic:**
-  1. `2` `{{key:ENTER}}` `1` `{{key:×}}` — Ten-Frame footprint: $2 \times 1 = 2\text{ units}$ in Register $X$.
-  2. `3` `{{key:ENTER}}` `1` `{{key:×}}` — Fraction Well footprint: $3 \times 1 = 3\text{ units}$ in Register $X$; 2 units lift to $Y$.
-  3. `{{key:+}}` — Combine the two storage trays: $2 + 3 = 5\text{ units}$ accumulated on the stack.
-  4. `3` `{{key:ENTER}}` `2` `{{key:×}}` — Counting box footprint: $3 \times 2 = 6\text{ units}$; subtotal 5 lifts to $Y$.
-  5. `{{key:+}}` — Add all tray footprints: $5 + 6 = 11\text{ Gridfinity base units}$ (total bench width $= 11 \times 42\text{ mm} = 462\text{ mm}$).
-- **4-Register Stack Trace Table ($T, Z, Y, X$):**
+To keep counters and fraction blocks from rolling off your desk, the 3D-printed manipulative trays snap into modular Gridfinity baseplates ($42\text{ mm}$ per grid square). Suppose you set up a desktop math station with **1 Ten-Frame Tray** ($2 \times 1\text{ units}$), **1 Fraction Studio Well** ($3 \times 1\text{ units}$), and **1 Counting & Array Box** ($3 \times 2\text{ units}$). How many total Gridfinity squares does your station cover?
+
+Watch how your 4-level stack calculates all three tray areas and adds them without writing down a single number (`{{res:sc6_01_hardware_architecture_seq_05:keys}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_05:value}}`**): `2 {{key:ENTER}} 1 {{key:×}}` computes the Ten-Frame Tray ($2\text{ units}$). Next, `3 {{key:ENTER}}` lifts that $2$ safely up to Floor $Z$ while `1 {{key:×}}` computes the Fraction Well ($3\text{ units}$) and drops $2$ back to Floor $Y$, so `{{key:+}}` combines them into $5\text{ units}$. Finally, `3 {{key:ENTER}}` lifts $5$ to Floor $Z$, `2 {{key:×}}` computes the Counting Box ($6\text{ units}$), and `{{key:+}}` sums the whole station to **`11` Gridfinity squares**!
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `2` {{key:ENTER}} | 0 | 0 | 2 | 2 | Enter ten-frame tray length (2 units) into Register $Y$ |
 | `1` {{key:×}} | 0 | 0 | 0 | 2 | Ten-frame footprint: $2 \times 1 = 2\text{ units}$ in Register $X$ |
-| `3` {{key:ENTER}} | 0 | 2 | 3 | 3 | Footprint 2 lifts to $Y$; enter fraction well length (3 units) into $X$ |
-| `1` {{key:×}} | 0 | 0 | 2 | 3 | Fraction well footprint: $3 \times 1 = 3\text{ units}$ in Register $X$ |
+| `3` {{key:ENTER}} | 0 | 2 | 3 | 3 | Footprint 2 lifts to $Z$; enter fraction well length (3 units) into $Y, X$ |
+| `1` {{key:×}} | 0 | 0 | 2 | 3 | Fraction well footprint: $3 \times 1 = 3\text{ units}$ in $X$ ($2$ drops to $Y$) |
 | {{key:+}} | 0 | 0 | 0 | 5 | Combine footprints: $2 + 3 = 5\text{ units}$ in Register $X$ |
-| `3` {{key:ENTER}} | 0 | 5 | 3 | 3 | Subtotal 5 lifts to $Y$; enter counting box length (3 units) into $X$ |
-| `2` {{key:×}} | 0 | 0 | 5 | 6 | Counting box footprint: $3 \times 2 = 6\text{ units}$ in Register $X$ |
+| `3` {{key:ENTER}} | 0 | 5 | 3 | 3 | Subtotal 5 lifts to $Z$; enter counting box length (3 units) into $Y, X$ |
+| `2` {{key:×}} | 0 | 0 | 5 | 6 | Counting box footprint: $3 \times 2 = 6\text{ units}$ in $X$ ($5$ drops to $Y$) |
 | {{key:+}} | 0 | 0 | 0 | 11 | Sum all footprints: $5 + 6 = 11\text{ Gridfinity units}$ ($462\text{ mm}$) |
-
-- **Diagnostic Check:** Register $X = 11$. The entire manipulative studio docks into an 11-unit desktop footprint.
 
 ---
 
 #### Problem 1.6: Desk Stand Incline Triangle
-- **Workshop Mission:** The sliding protective cowl flips onto the rear chassis dovetails to form a $15^\circ$ reading easel. If the base depth of the resting calculator chassis is $80.0\text{ mm}$ along the tabletop, calculate the vertical elevation lift height $h$ of the top display edge above the desk ($h = \text{base} \times \tan(15^\circ)$).
-- **Manipulative Studio Connection:** The $15^\circ$ reading angle aligns the transflective screen with overhead classroom lighting and prevents neck strain during long math explorations.
-- **Keystrokes:** `80` `{{key:ENTER}}` `15` `[TAN]` `{{key:×}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_06:value}}`**
-- **Narrative Stack Analysis:**  
-  Key `80 {{key:ENTER}} 15 [TAN] {{key:×}}`: the stack lifts the $80.0\text{ mm}$ base depth to Register $Y$, computes $\tan(15^\circ) \approx 0.2679$ in Register $X$, and multiplies to find a vertical elevation lift of **`21.44`** $\text{mm}$ $(T: 0, Z: 0, Y: 0, X: 21.4359)$, creating the ideal drafting incline on the student desk.
+When you slide off the protective cover and snap it onto the back of your SC-6, it props the calculator up at a comfortable $15^\circ$ reading angle so you don't have to hunch over your desk. At $15^\circ$, the stand rises $0.2679\text{ mm}$ straight up for every $1\text{ mm}$ of horizontal desk depth. Since the resting base of the calculator is $80.0\text{ mm}$ deep, how high does the top edge of the screen lift above your desk? Key in `{{res:sc6_01_hardware_architecture_seq_06:keys}}` $\rightarrow$ **`{{res:sc6_01_hardware_architecture_seq_06:value}}`**: this sequence multiplies the $80.0\text{ mm}$ base on Floor $Y$ by the $0.2679$ slope ratio on Floor $X$, showing a vertical lift of **`21.43` mm** $(T: 0, Z: 0, Y: 0, X: 21.432)$!
 
 ---
 
