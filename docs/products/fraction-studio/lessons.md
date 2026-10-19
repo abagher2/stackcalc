@@ -42,7 +42,7 @@ hide:
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
       <div class="ec-video-wrapper">
         <div class="ec-video-player">
-          <video controls playsinline preload="metadata" poster="../../../assets/renders/fraction-studio-gauge-comparison.png">
+          <video controls playsinline preload="metadata" poster="../../assets/renders/fraction-studio-gauge-comparison.png">
             <source src="/assets/videos/fraction-studio-lesson.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
@@ -79,7 +79,7 @@ hide:
 
       <!-- Concept Illustration Card -->
       <div class="mb-6 rounded-lg overflow-hidden border border-slate-700/80 bg-slate-950/60 p-4">
-        <img src="../../../assets/renders/fraction-studio-gauge-comparison.png" alt="Fraction Studio Benchmark Gauge Comparison Showing 1/2 = 2/4 = 4/8" class="rounded w-full mb-3" />
+        <img src="../../assets/renders/fraction-studio-gauge-comparison.png" alt="Fraction Studio Benchmark Gauge Comparison Showing 1/2 = 2/4 = 4/8" class="rounded w-full mb-3" />
         <div class="text-xs text-gray-300 flex items-center justify-between">
           <span><strong>Physical Alignment:</strong> The \(1/2\) tower (\(42.0\text{ mm}\)), two \(1/4\) blocks, and four \(1/8\) blocks line up flush with the \(1/2\) benchmark waterline.</span>
           <span class="text-sky-400 font-mono">Tolerance: &plusmn;0.05 mm</span>
@@ -236,7 +236,7 @@ hide:
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
         <div class="rounded-lg overflow-hidden border border-slate-700/80 bg-slate-950/60 p-2">
-          <img src="../../../assets/renders/fraction-studio-craftsmanship-macro.png" alt="Fraction Studio Archival Debossed Typography Macro" class="rounded w-full" />
+          <img src="../../assets/renders/fraction-studio-craftsmanship-macro.png" alt="Fraction Studio Archival Debossed Typography Macro" class="rounded w-full" />
         </div>
         <div class="space-y-3 text-sm text-gray-300">
           <div class="p-3 bg-slate-800/60 rounded border border-slate-700/40">

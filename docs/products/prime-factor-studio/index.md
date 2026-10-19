@@ -1,6 +1,6 @@
 ---
-title: "Prime Factor Studio & Logarithmic Slide Rule Comparator | Math Manipulatives"
-description: "Tactile number theory manipulative with 29 proportional logarithmic prime factor blocks and a 3x1 Gridfinity box featuring a bilateral slide rule scale (1 to 100). Proves the Fundamental Theorem of Arithmetic through tangible height. Grades 3–9."
+title: "Prime Factor Studio & Logarithmic Factor Towers | Math Manipulatives"
+description: "Tactile number theory manipulative with 29 proportional logarithmic prime factor blocks and a 3x1x13U Snapfinity Gridfinity box. Proves the Fundamental Theorem of Arithmetic and prime factorization through tangible height. Grades 3–9."
 hide:
   - navigation
   - toc
@@ -13,13 +13,13 @@ hide:
   "@graph": [
     {
       "@type": "Product",
-      "name": "Prime Factor Studio & Logarithmic Slide Rule Comparator - 29 Proportional Stacking Blocks",
+      "name": "Prime Factor Studio & Logarithmic Factor Towers - 29 Proportional Stacking Blocks",
       "image": [
         "https://www.stackcalc.io/assets/renders/prime-studio-hero.png",
         "https://www.stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
       ],
-      "keywords": "prime factorization manipulatives, prime factor blocks, logarithmic slide rule manipulative, prime vs composite, Fundamental Theorem of Arithmetic, GCF LCM hands on math, tactile number theory, CCSS.MATH.CONTENT.4.OA.B.4, CCSS.MATH.CONTENT.6.NS.B.4",
-      "description": "29 precision proportional logarithmic prime factor blocks with a 3x1x13U Gridfinity box featuring an engraved bilateral logarithmic slide rule scale (1 to 100). Stacking prime factors physically multiplies them, landing exactly on their product on the scale.",
+      "keywords": "prime factorization manipulatives, prime factor blocks, logarithmic factor towers, prime vs composite, Fundamental Theorem of Arithmetic, GCF LCM hands on math, tactile number theory, CCSS.MATH.CONTENT.4.OA.B.4, CCSS.MATH.CONTENT.6.NS.B.4",
+      "description": "29 precision proportional logarithmic prime factor blocks with a 3x1x13U Snapfinity Gridfinity box with prime power storage sockets. Stacking prime factors physically multiplies them, proving the Fundamental Theorem of Arithmetic with 0.000mm error.",
       "sku": "PRIME-01",
       "mpn": "PRIME-01",
       "brand": {
@@ -76,7 +76,7 @@ hide:
           "name": "How does stacking prime blocks physically multiply numbers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Every prime block has a visible height equal to 42.0 * log10(p) mm. Because logarithms convert multiplication into addition (log(a * b) = log(a) + log(b)), stacking a [2] block (12.64mm) and a [3] block (20.04mm) creates a total visible height of 32.68mm—which aligns with 0.000mm error against the '6' mark on the box's slide rule scale."
+            "text": "Every prime block has a visible height equal to 42.0 * log10(p) mm. Because logarithms convert multiplication into addition (log(a * b) = log(a) + log(b)), stacking a [2] block (12.64mm) and a [3] block (20.04mm) creates a total visible height of 32.68mm—which matches Composite Factor Tower [6] with 0.000mm error."
           }
         },
         {
@@ -84,7 +84,7 @@ hide:
           "name": "How does the kit prove the Fundamental Theorem of Arithmetic?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Fundamental Theorem states that every integer greater than 1 has a unique prime factorization. Students discover this physically: to construct a tower that matches height '12' on the box scale, only one unique combination of prime blocks works: two [2]s and one [3] (2 x 2 x 3 = 12). No other prime blocks can ever reach that height."
+            "text": "The Fundamental Theorem states that every integer greater than 1 has a unique prime factorization. Students discover this physically: whether building 36 from 4 x 9 or 6 x 6, both factor trees decompose into the exact same prime blocks: two [2]s and two [3]s (2^2 x 3^2 = 36). No other combination of prime blocks can ever match that height."
           }
         },
         {
@@ -109,7 +109,7 @@ hide:
     <span class="ec-breadcrumb-separator">/</span>
     <a href="../">Products &amp; Manipulatives</a>
     <span class="ec-breadcrumb-separator">/</span>
-    <span class="ec-breadcrumb-current">Prime Factor Studio &amp; Slide Rule Scale</span>
+    <span class="ec-breadcrumb-current">Prime Factor Studio</span>
   </nav>
 
   <!-- ==========================================================================
@@ -120,13 +120,13 @@ hide:
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
       <div class="ec-gallery-main">
-        <img id="main-product-image" src="../../assets/renders/prime-studio-hero.png" alt="StackCalc Prime Factor Studio 29 Blocks with Bilateral Slide Rule Scale" loading="eager">
+        <img id="main-product-image" src="../../assets/renders/prime-studio-hero.png" alt="StackCalc Prime Factor Studio 29 Blocks with Snapfinity Box" loading="eager">
       </div>
 
       <!-- Thumbnail Selector Strip -->
       <div class="ec-gallery-thumbs">
         <div class="ec-gallery-thumb active" onclick="document.getElementById('main-product-image').src='../../assets/renders/prime-studio-hero.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
-          <img src="../../assets/renders/prime-studio-hero.png" alt="Prime Factor Towers standing against 1-100 Slide Rule Scale">
+          <img src="../../assets/renders/prime-studio-hero.png" alt="Prime Factor Towers with Snapfinity Storage Box">
         </div>
         <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/infographic-gridfinity-system-square.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
           <img src="../../assets/renders/etsy/infographic-gridfinity-system-square.png" alt="Gridfinity 42mm Standard">
@@ -136,7 +136,7 @@ hide:
 
     <!-- Right Column: Buy Box & Product Info -->
     <div class="ec-buybox">
-      <h1 class="ec-product-title">Prime Factor Studio &amp; Slide Rule Comparator</h1>
+      <h1 class="ec-product-title">Prime Factor Studio &amp; Factor Towers</h1>
 
       <!-- Educational Architecture & Tactile Standard -->
       <div class="flex items-center gap-2 mb-3">
@@ -151,14 +151,14 @@ hide:
       </div>
 
       <p class="ec-short-summary">
-        The world's first physical logarithmic manipulative for prime factorization, prime vs. composite numbers, and early number theory. Contains <strong>29 proportional stacking prime factor blocks</strong> (powers of 2, 3, 5, 7, and higher prime markers) paired with a 3&times;1&times;13U Gridfinity box featuring an engraved <strong>bilateral logarithmic slide rule scale (1 to 100)</strong>. Stacking prime blocks physically multiplies them, landing on the exact product with 0.000mm error.
+        The world's first physical logarithmic manipulative for prime factorization, prime vs. composite numbers, and early number theory. Contains <strong>29 proportional stacking prime factor blocks</strong> (powers of 2, 3, 5, 7, and higher prime markers) paired with a 3&times;1&times;13U Snapfinity Gridfinity box with integrated prime power lid sockets. Stacking prime blocks physically multiplies them, matching composite factor heights with 0.000mm error.
       </p>
 
       <!-- Highlights Checklist -->
       <div class="ec-highlights-list">
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Physical Proof of \(a \times b = b \times a\):</strong> Stacking [2] then [5] reaches exactly the same height as [5] then [2] (both reach 10 on the scale), physically proving the commutative property of multiplication.</span>
+          <span><strong>Physical Proof of \(a \times b = b \times a\):</strong> Stacking [2] then [5] reaches exactly the same height as [5] then [2] (both reach 42.00mm, representing product 10), physically proving the commutative property of multiplication.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
@@ -166,7 +166,7 @@ hide:
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Bilateral Slide Rule Box Scale (1 to 100):</strong> Precision engraved marks (2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100) align flush with factor towers standing on the desk.</span>
+          <span><strong>Fundamental Theorem of Arithmetic:</strong> Any composite number decomposes into a single unique set of prime blocks (e.g. \(36 = 2^2 \times 3^2\)), eliminating abstract factoring confusion.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
@@ -231,7 +231,7 @@ hide:
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
             <h3 class="text-sm font-bold text-slate-100 mb-1">Fundamental Theorem of Arithmetic</h3>
-            <p class="text-xs text-slate-400">Step-by-step physical multiplication: stacking logarithmic prime blocks [2] and [3] to hit the exact [6] line on the slide-rule scale.</p>
+            <p class="text-xs text-slate-400">Step-by-step physical multiplication: stacking logarithmic prime blocks [2] and [3] to match the exact height of composite factor tower [6].</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-cyan-400 flex items-center justify-between">
             <span>CCSS 6.NS.B.4</span>
@@ -261,23 +261,23 @@ hide:
         </div>
       </div>
 
-      <!-- 3. Proportional CAD Kinematics -->
+      <!-- 3. Lesson 3: Unique Prime Factorization & Commutativity -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/prime-factor-studio-hero.png">
-            <source src="/assets/videos/fraction-studio-assembly.mp4" type="video/mp4">
+            <source src="/assets/videos/prime-factor-lesson-factorization.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CAD KINEMATICS</span>
+          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CURRICULUM LESSON 03</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Modular Gridfinity Architecture</h3>
-            <p class="text-xs text-slate-400">Exploded 3D view showing logarithmic block nestings, engraved scale box walls, and friction-locking acrylic cover.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">Unique Prime Factorization: 36 = 2&sup2; &times; 3&sup2;</h3>
+            <p class="text-xs text-slate-400">Building 36 along two distinct branching paths (4 &times; 9 vs. 6 &times; 6). Both towers level to the exact same 36.00mm summit (0.000mm error), proving factorization is unique and commutative.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-emerald-300 flex items-center justify-between">
-            <span>&plusmn;0.05mm Precision</span>
-            <span>Rattle-Free Stacking</span>
+            <span>CCSS 4.OA.B.4 &bull; 6.NS.B.4</span>
+            <span>Summit = 36 Flush</span>
           </div>
         </div>
       </div>
@@ -325,7 +325,7 @@ hide:
             <th class="p-3">Prime Blocks Stacked</th>
             <th class="p-3">Visible Height \(\sum h_{\text{vis}}\)</th>
             <th class="p-3">Desk Stacking Top \(Z_{\text{top}}\)</th>
-            <th class="p-3">Box Scale Mark \(Z_{\text{mark}}\)</th>
+            <th class="p-3">Target Height \(Z_{\text{target}}\)</th>
             <th class="p-3 text-emerald-400">Alignment Delta</th>
           </tr>
         </thead>
@@ -401,7 +401,7 @@ hide:
           <li><strong>5&times; Higher Primes:</strong> 1 each of [11], [13], [17], [19], [23]</li>
           <li><strong>Footprint:</strong> 19.0 &times; 19.0 mm square 0.5U Gridfinity miniblock</li>
           <li><strong>Socket Nesting Depth:</strong> 1.85 mm (cancels identically on every joint)</li>
-          <li><strong>Enclosure Box:</strong> 3&times;1&times;13U Gridfinity Bin (125.5 &times; 42.0 &times; 91.0 mm)</li>
+          <li><strong>Enclosure Box:</strong> 3&times;1&times;13U Gridfinity Bin (125.5 &times; 42.0 &times; 91.0 mm) with prime power lid sockets (Snap-on TPU non-skid feet sold separately)</li>
         </ul>
       </div>
 
@@ -412,7 +412,7 @@ hide:
           <li><strong>Commutative Property:</strong> \([3] + [5] = [5] + [3] = 15\) (stacking order does not change height).</li>
           <li><strong>Greatest Common Divisor:</strong> Find \(\gcd(18, 24)\) by comparing overlapping blocks \([2] \times [3] = 6\).</li>
           <li><strong>Least Common Multiple:</strong> Extend stacks until heights equalize; \(\text{lcm}(4, 6) = 12\).</li>
-          <li><strong>Slide Rule Principles:</strong> Concrete precursor to Napierian logarithms and engineering slide rules.</li>
+          <li><strong>Logarithmic Multiplication:</strong> Concrete precursor to Napierian logarithms, where adding block heights executes multiplication.</li>
         </ul>
       </div>
     </div>

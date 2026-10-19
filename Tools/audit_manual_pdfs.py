@@ -25,7 +25,12 @@ from typing import Dict, List, Tuple
 import pypdf
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-MANUALS_DIR = REPO_ROOT / "docs" / "downloads" / "manuals"
+WATCH_CALC_ROOT = REPO_ROOT if (REPO_ROOT / "documentation" / "manuals").exists() else (REPO_ROOT.parent / "watch-calc-32")
+MANUALS_DIR = (
+    WATCH_CALC_ROOT / "documentation" / "manuals" / "output"
+    if (WATCH_CALC_ROOT / "documentation" / "manuals" / "output").exists()
+    else (REPO_ROOT / "docs" / "downloads" / "manuals")
+)
 
 TARGET_PDFS = [
     "sc6-elementary-manual.pdf",
@@ -83,6 +88,41 @@ AUDIT_RULES: List[Tuple[str, re.Pattern, str]] = [
         "SEC_CLASS_HEADERS",
         re.compile(r"\bSEC CLASS\b", re.IGNORECASE),
         "Security classification header tag",
+    ),
+    (
+        "UNEXPANDED_MACROS",
+        re.compile(r"\{\{[a-zA-Z_]+:[^\}]+\}\}"),
+        "Unexpanded book_engine macro (e.g. {{key:...}}, {{res:...}}, {{blocks:...}})",
+    ),
+    (
+        "LEAKED_FILE_URIS",
+        re.compile(r"file:///"),
+        "Leaked local filesystem URI (file:///)",
+    ),
+    (
+        "RAW_HTML_TAGS",
+        re.compile(r"</?(?:div|span|p|br|strong|em|ul|li|table|tr|td)\b[^>]*>"),
+        "Unparsed raw HTML tag in PDF text",
+    ),
+    (
+        "UNPARSED_MD_BOLD",
+        re.compile(r"\*\*[^\*]+\*\*"),
+        "Unparsed Markdown bold syntax (**...**)",
+    ),
+    (
+        "UNPARSED_MD_LINKS",
+        re.compile(r"\]\([^\)\s]+\.md[^\)]*\)"),
+        "Unparsed Markdown link syntax ([...](....md))",
+    ),
+    (
+        "EXPLICIT_CRA_SCAFFOLDING",
+        re.compile(r"\b(?:CRA Pedagogical|Concrete-Representational-Abstract|Concrete Level|Representational Level|Abstract Level|Homeschooler Diagnostic Checkpoint)\b", re.IGNORECASE),
+        "Explicit pedagogical scaffolding label instead of integrated narrative",
+    ),
+    (
+        "SWALLOWED_HRULE",
+        re.compile(r"[.!?\"”)]\s+---\s*(?:\n|$)"),
+        "Swallowed markdown horizontal rule (---) at end of paragraph",
     ),
 ]
 

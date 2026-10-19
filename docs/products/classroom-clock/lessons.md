@@ -42,7 +42,7 @@ hide:
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
       <div class="ec-video-wrapper">
         <div class="ec-video-player">
-          <video controls playsinline preload="metadata" poster="../../../assets/renders/clock-classroom-hero.png">
+          <video controls playsinline preload="metadata" poster="../../assets/renders/clock-classroom-hero.png">
             <source src="/assets/videos/classroom-clock-lesson.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
@@ -79,7 +79,7 @@ hide:
 
       <!-- Concept Illustration Card -->
       <div class="mb-6 rounded-lg overflow-hidden border border-slate-700/80 bg-slate-950/60 p-4">
-        <img src="../../../assets/renders/clock-gear-stages-macro.png" alt="Classroom Clock 2-Stage Clear PETG Planetary Gearing Cutaway" class="rounded w-full mb-3" />
+        <img src="../../assets/renders/clock-gear-stages-macro.png" alt="Classroom Clock 2-Stage Clear PETG Planetary Gearing Cutaway" class="rounded w-full mb-3" />
         <div class="text-xs text-gray-300 flex items-center justify-between">
           <span><strong>2-Stage Clear PETG Kinematics:</strong> White PLA dial face conceals the Stage 1 base gear, while the Stage 2 planetary gears advance the hour ring in a pure 12:1 reduction ratio.</span>
           <span class="text-sky-400 font-mono">12:1 Epicyclic Mesh</span>
@@ -158,7 +158,7 @@ hide:
 
       <!-- Concept Illustration Card -->
       <div class="mb-6 rounded-lg overflow-hidden border border-slate-700/80 bg-slate-950/60 p-4">
-        <img src="../../../assets/renders/clock-quadrant-concept.png" alt="Classroom Clock 15-Minute Translucent Emerald Quadrant Block" class="rounded w-full mb-3" />
+        <img src="../../assets/renders/clock-quadrant-concept.png" alt="Classroom Clock 15-Minute Translucent Emerald Quadrant Block" class="rounded w-full mb-3" />
         <div class="text-xs text-gray-300 flex items-center justify-between">
           <span><strong>Physical Elapsed Time Wedge:</strong> Translucent emerald PETG quadrant block seated in the 12:00–3:00 dial sector physically marks 15 minutes of duration.</span>
           <span class="text-emerald-400 font-mono">1/4 Turn = 15 Min</span>

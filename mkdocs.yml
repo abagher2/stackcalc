@@ -105,10 +105,7 @@ nav:
     - RPN Elementary Power Guide: curriculum/rpn-elementary-guide.md
     - Competitive STEM & Speed Calculation: curriculum/uil-competition.md
   - Books & Reference Manuals:
-    - Reference Manuals Hub: manuals/index.md
-    - SC-32 Scientific Companion ($16 Print Edition): manuals/sc32-user-guide.md
-    - 14. High-Speed Equation Entry: manuals/sc32/14-uil-contest-playbook.md
-    - SC-6 Elementary Companion ($16 Print Edition): manuals/sc6-user-guide.md
+    - Official Manuals & Reference Books ($16): manuals/index.md
     - Bestseller Rubric & Editorial Guide: manuals/bestseller-rubric-and-editorial-guide.md
     - Critical Editorial Review: manuals/critical-editorial-review-and-school-adoption.md
     - Agent & OpenAPI Spec: api/index.md
@@ -130,8 +127,6 @@ nav:
 
 not_in_nav: |
   hackaday/**
-  manuals/sc32/**
-  manuals/sc6/**
 
 validation:
   nav:

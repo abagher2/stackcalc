@@ -443,23 +443,23 @@ hide:
         </div>
       </div>
 
-      <!-- 3. Kinematic Tray & Lid Architecture -->
+      <!-- 3. Lesson 3: 12-Frame Tray Regrouping -->
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/dominoes-studio-hero.png">
-            <source src="/assets/videos/dice-spinner-lesson-sum-dist.mp4" type="video/mp4">
+            <source src="/assets/videos/math-dominoes-lesson-bridging.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. SUM DISTRIBUTION</span>
+          <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CURRICULUM LESSON 03</span>
         </div>
         <div class="p-4 flex-1 flex flex-col justify-between">
           <div>
-            <h3 class="text-sm font-bold text-slate-100 mb-1">Discrete Sum Combinations</h3>
-            <p class="text-xs text-slate-400">Mapping the 28-tile sum distribution from 0 to 12, discovering why sum 6 and sum 7 occur with peak frequency across the set.</p>
+            <h3 class="text-sm font-bold text-slate-100 mb-1">12-Frame Tray Regrouping (10 + 2 Anchor)</h3>
+            <p class="text-xs text-slate-400">Loading double tiles into the 6&times;2 regrouping tray. Tactile ridge isolates 10 base pips from 2 carry pips to cement base-ten mental addition.</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] font-mono text-emerald-300 flex items-center justify-between">
-            <span>28 Distinct Tiles</span>
-            <span>Triangular Frequencies</span>
+            <span>CCSS 1.OA.C.6</span>
+            <span>10 + 2 = 12 Base-Ten</span>
           </div>
         </div>
       </div>
@@ -817,7 +817,7 @@ hide:
     <div class="ec-box-grid">
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">3x1x7U Gridfinity Storage Box with Architectural Louvers (Matte Black PLA)</span>
+        <span class="ec-box-text">3x1x13U Gridfinity Enclosure Box with Snapfinity Bi-Directional Sliding Hard Lid and Architectural Louvers (Snap-on TPU non-skid feet sold separately)</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>

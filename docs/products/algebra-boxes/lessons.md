@@ -42,7 +42,7 @@ hide:
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
       <div class="ec-video-wrapper">
         <div class="ec-video-player">
-          <video controls playsinline preload="metadata" poster="../../../assets/renders/algebra-lframe-grid-hero.png">
+          <video controls playsinline preload="metadata" poster="../../assets/renders/algebra-lframe-grid-hero.png">
             <source src="/assets/videos/algebra-boxes-lesson.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
@@ -79,7 +79,7 @@ hide:
 
       <!-- Concept Illustration Card -->
       <div class="mb-6 rounded-lg overflow-hidden border border-slate-700/80 bg-slate-950/60 p-4">
-        <img src="../../../assets/renders/algebra-lframe-grid-hero.png" alt="Algebra Boxes 90-Degree Interlocking L-Frame Factoring Grid" class="rounded w-full mb-3" />
+        <img src="../../assets/renders/algebra-lframe-grid-hero.png" alt="Algebra Boxes 90-Degree Interlocking L-Frame Factoring Grid" class="rounded w-full mb-3" />
         <div class="text-xs text-gray-300 flex items-center justify-between">
           <span><strong>90&deg; Interlocking L-Frame Stage:</strong> Base Rail and Height Rail join via puzzle mortise-and-tenon, framing the complete continuous rectangle: \(1(x^2) + 3(x) + 2(1)\).</span>
           <span class="text-emerald-400 font-mono">Area = x&sup2; + 3x + 2</span>
@@ -245,7 +245,7 @@ hide:
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
         <div class="rounded-lg overflow-hidden border border-slate-700/80 bg-slate-950/60 p-2">
-          <img src="../../../assets/renders/algebra-tiles-craftsmanship.png" alt="Algebra Tiles Craftsmanship Macro Showing Debossed Labels and Silk Finish" class="rounded w-full" />
+          <img src="../../assets/renders/algebra-tiles-craftsmanship.png" alt="Algebra Tiles Craftsmanship Macro Showing Debossed Labels and Silk Finish" class="rounded w-full" />
         </div>
         <div class="space-y-3 text-sm text-gray-300">
           <div class="p-3 bg-slate-800/60 rounded border border-slate-700/40">

@@ -24,8 +24,19 @@ from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DOCS_DIR = REPO_ROOT / "docs"
-MANUALS_ASSETS_DIR = DOCS_DIR / "assets" / "manuals"
+WATCH_CALC_ROOT = REPO_ROOT if (REPO_ROOT / "documentation" / "manuals").exists() else (REPO_ROOT.parent / "watch-calc-32")
+STACKCALC_ROOT = REPO_ROOT if (REPO_ROOT / "docs").exists() else (REPO_ROOT.parent / "stackcalc")
+DOCS_DIR = STACKCALC_ROOT / "docs"
+MANUALS_ROOT = (
+    WATCH_CALC_ROOT / "documentation" / "manuals"
+    if (WATCH_CALC_ROOT / "documentation" / "manuals" / "sc32").exists()
+    else DOCS_DIR / "manuals"
+)
+MANUALS_ASSETS_DIR = (
+    MANUALS_ROOT / "assets"
+    if (MANUALS_ROOT / "assets" / "layout_data.json").exists()
+    else DOCS_DIR / "assets" / "manuals"
+)
 
 SC32_JSON_PATH = MANUALS_ASSETS_DIR / "layout_data.json"
 SC6_JSON_PATH = MANUALS_ASSETS_DIR / "layout_data_sc6.json"
@@ -337,11 +348,11 @@ def get_chapter_label(file_path: Path) -> str:
 
 def scan_citation_backreferences(volume: str) -> Dict[str, List[Tuple[str, str]]]:
     """
-    Scans all .md files in docs/manuals/{volume}/ (excluding the bibliography page itself)
+    Scans all .md files in manuals/{volume}/ (excluding the bibliography page itself)
     for {{cite:...}} macros.
     Returns a mapping: cite_id (canonical) -> list of unique (chapter_label, relative_md_filename).
     """
-    manuals_dir = DOCS_DIR / "manuals" / volume
+    manuals_dir = MANUALS_ROOT / volume
     bib_file = "appendix-e-annotated-bibliography.md" if volume == "sc32" else "appendix-c-formulas-and-conversions.md"
     backrefs: Dict[str, List[Tuple[str, str]]] = {}
 
@@ -1006,7 +1017,9 @@ def auto_number_headings(markdown: str, file_path: Path) -> str:
         if line.startswith("### ") and not line.startswith("#### "):
             raw_title = line[4:].strip()
             clean_title = strip_manual_section_number(raw_title)
-            if h2_count > 0:
+            if re.match(r"^(?:Problem|Adventure|Challenge|Equation|Case Study|Station|Drill)\s+[A-Z0-9]", clean_title):
+                out_lines.append(f"### {clean_title}")
+            elif h2_count > 0:
                 h3_count += 1
                 if prefix == "":
                     numbered = f"### {h2_count}.{h3_count} {clean_title}"
@@ -1015,6 +1028,12 @@ def auto_number_headings(markdown: str, file_path: Path) -> str:
                 out_lines.append(numbered)
             else:
                 out_lines.append(f"### {clean_title}")
+            continue
+
+        if line.startswith("#### ") and not line.startswith("##### "):
+            raw_title = line[5:].strip()
+            clean_title = strip_manual_section_number(raw_title)
+            out_lines.append(f"#### {clean_title}")
             continue
 
         out_lines.append(line)

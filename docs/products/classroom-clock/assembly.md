@@ -42,7 +42,7 @@ hide:
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
       <div class="ec-video-wrapper">
         <div class="ec-video-player">
-          <video controls playsinline preload="metadata" poster="../../../assets/renders/clock-classroom-hero.png">
+          <video controls playsinline preload="metadata" poster="../../assets/renders/clock-classroom-hero.png">
             <source src="/assets/videos/classroom-clock-assembly.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>

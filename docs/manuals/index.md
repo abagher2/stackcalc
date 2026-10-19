@@ -1,20 +1,21 @@
 ---
-title: "Calculator Owner's Manuals & Technical Reference Hub"
-description: "Official operating manuals, button rubrics, numerical solver guides, and living documentation for StackCalc SC-32 Scientific and SC-6 Elementary handheld calculators. Available online, as free downloadable PDFs, and in spiral-bound print editions."
+title: "Official Reference Books & Field Manuals"
+description: "Official publication-grade spiral-bound reference manuals ($16.00) for StackCalc SC-32 Scientific and SC-6 Elementary handheld calculators. Comprehensive table of contents, sample excerpts, and institutional procurement guide."
 ---
 
-<!-- Schema.org Structured Data for Books & Field Guides -->
+<!-- Schema.org Structured Data for Commercial Reference Books -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Book",
-      "name": "StackCalc SC-32 Scientific Calculator Owner's Manual & STEM Handbook",
-      "description": "Comprehensive operational manual and technical reference for the StackCalc SC-32 Scientific RPN Calculator. Covers 4-stack mechanics, numerical solvers, Romberg integration, basic plotting, polynomial roots, complex arithmetic, and high-speed equation entry.",
-      "bookFormat": "https://schema.org/Hardcover",
+      "name": "StackCalc SC-32 Scientific Calculator Reference Manual & STEM Handbook",
+      "description": "Comprehensive operational manual and technical STEM reference for the StackCalc SC-32 Scientific RPN Calculator. 370 pages covering 4-stack XYZT mechanics, Brent's root solver, adaptive Romberg quadrature, complex phasors, TVM, 64-point vector LCD plotting, and competition speed entry.",
+      "bookFormat": "https://schema.org/SpiralBound",
       "genre": "Mathematics / Engineering / Handbooks",
       "inLanguage": "en",
+      "numberOfPages": 370,
       "publisher": {
         "@type": "Organization",
         "name": "StackCalc",
@@ -30,11 +31,12 @@ description: "Official operating manuals, button rubrics, numerical solver guide
     },
     {
       "@type": "Book",
-      "name": "StackCalc SC-6 Elementary Calculator Owner's Manual & Classroom Companion",
-      "description": "Comprehensive operational manual and teacher classroom guide for the StackCalc SC-6 Elementary RPN Calculator. Covers default 4-stack XYZT display, skip-counting [REP], [÷R] division remainders, manipulative modes, geometry formulas, and math quiz engine.",
-      "bookFormat": "https://schema.org/Hardcover",
+      "name": "StackCalc SC-6 Elementary Calculator Companion & Classroom Guide",
+      "description": "Comprehensive operational manual and educator companion for the StackCalc SC-6 Elementary RPN Calculator. 387 pages covering 4-stack XYZT operational display, skip-counting fact ladders [REP], integer division with remainders [÷R], fraction simplification [SIMP], and the built-in Math Quiz engine.",
+      "bookFormat": "https://schema.org/SpiralBound",
       "genre": "Mathematics / Elementary Education / Teaching Guides",
       "inLanguage": "en",
+      "numberOfPages": 387,
       "publisher": {
         "@type": "Organization",
         "name": "StackCalc",
@@ -48,121 +50,52 @@ description: "Official operating manuals, button rubrics, numerical solver guide
         "url": "https://www.etsy.com/shop/StackCalc"
       }
     }
+  ]
 }
 </script>
 
-# Calculator Owner's Manuals &amp; Documentation
+# Official Reference Books &amp; Field Manuals
 
 <div class="te-viewport-header mb-6">
-  <span class="te-viewport-sku">LIVING DOCUMENTATION // OFFICIAL TECHNICAL REFERENCE</span>
-  <span class="te-viewport-status text-emerald-400">● WORK IN PROGRESS &bull; FIRMWARE v1.2 &bull; PRINT EDITIONS AVAILABLE</span>
+  <span class="te-viewport-sku">PUBLICATIONS // OFFICIAL TECHNICAL REFERENCE BOOKS</span>
+  <span class="te-viewport-status text-emerald-400">● 100% BENCH FLAT-LAY WIRE-O &bull; 757 PAGES TOTAL &bull; $16.00 PRINT EDITIONS</span>
 </div>
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Manuals Navigation">
-  <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">📖 Manuals Hub</a>
-  <a href="sc32/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ SC-32 Scientific Manual</a>
-  <a href="sc6/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎒 SC-6 Elementary Manual</a>
-  <a href="../api/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🤖 Agent &amp; OpenAPI Spec</a>
-  <a href="../downloads/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📥 Download Center</a>
+  <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">📖 Reference Books Hub</a>
+  <a href="#sc-32-scientific" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ SC-32 Scientific Manual ($16)</a>
+  <a href="#sc-6-elementary" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎒 SC-6 Elementary Companion ($16)</a>
+  <a href="#school-district-procurement" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🏛️ District PO Procurement</a>
+  <a href="bestseller-rubric-and-editorial-guide.md" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📊 Editorial Quality Rubric</a>
+  <a href="../curriculum/index.md" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎓 Free Curriculum &amp; Worksheets</a>
 </nav>
 
-Welcome to the **StackCalc Calculator Documentation Hub**. Our owner's manuals are maintained as **living, open-source technical reference documents**. Rather than static paper pamphlets frozen at manufacturing time, these guides are continuously updated alongside firmware improvements, examination standards, and educational classroom feedback.
+Welcome to the **StackCalc Publications &amp; Reference Books Hub**. Engineered in the tradition of classic Corvallis engineering field manuals, our reference books are published as **durable, spiral-bound lay-flat print editions ($16.00)** designed specifically for laboratory benches, maker spaces, and classroom desks.
 
-> [!NOTE] **Living Documentation Notice (Work in Progress):**  
-> Both manuals are actively developed and maintained in tandem with the StackCalc firmware repository. We invite teachers, engineers, and competitive math coaches to submit feedback, edge cases, and suggested practice problems via our GitHub repository or community channels.
+Every single problem, formula, and keystroke sequence in both volumes has been mechanically verified against the dual-core **RPNCore execution engine** across hundreds of unit tests.
 
----
-
-## Choose Your Format: Web, Print, or PDF
-
-Every StackCalc manual is available in three complementary formats to suit your working environment:
-
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-
-  <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
-    <div>
-      <div class="flex items-center gap-2 mb-2">
-        <span class="font-mono text-xs text-sky-400 font-bold uppercase">FORMAT 01</span>
-        <span class="text-xs text-slate-400">&bull; Interactive Web</span>
-      </div>
-      <h3 class="text-lg font-bold text-white mb-2">Living Web Documentation</h3>
-      <p class="text-xs text-slate-300 leading-relaxed mb-4">
-        Searchable online manual with interactive keystroke logs, display screen diagrams, copyable syntax examples, and one-click in-browser printing.
-      </p>
-    </div>
-    <div class="space-y-2">
-      <a href="sc32/" class="w-full py-2 text-center rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-mono text-xs font-bold transition block">
-        Read SC-32 Web Manual &rarr;
-      </a>
-      <a href="sc6/" class="w-full py-2 text-center rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-mono text-xs font-bold transition block">
-        Read SC-6 Web Manual &rarr;
-      </a>
-    </div>
-  </div>
-
-  <div class="p-6 rounded-xl bg-slate-900/60 border border-amber-500/40 flex flex-col justify-between shadow-lg shadow-amber-950/20">
-    <div>
-      <div class="flex items-center gap-2 mb-2">
-        <span class="font-mono text-xs text-amber-400 font-bold uppercase">FORMAT 02</span>
-        <span class="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20 font-mono font-bold">Print-on-Demand</span>
-      </div>
-      <h3 class="text-lg font-bold text-white mb-2">Spiral-Bound Print Edition ($19)</h3>
-      <p class="text-xs text-slate-300 leading-relaxed mb-4">
-        Durable coil-bound bench manual that lays 100% flat on laboratory desks. Printed on heavy 32lb synthetic paper with grease-resistant laminated covers.
-      </p>
-    </div>
-    <div class="space-y-2">
-      <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="w-full py-2 text-center rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition block shadow-md">
-        Order on Etsy Store ($19.00) ↗
-      </a>
-      <a href="../#school-po" class="w-full py-2 text-center rounded bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 font-mono text-xs font-bold transition block">
-        School District PO Requisition &rarr;
-      </a>
-    </div>
-  </div>
-
-  <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
-    <div>
-      <div class="flex items-center gap-2 mb-2">
-        <span class="font-mono text-xs text-purple-400 font-bold uppercase">FORMAT 03</span>
-        <span class="text-xs text-slate-400">&bull; 100% Free Download</span>
-      </div>
-      <h3 class="text-lg font-bold text-white mb-2">Classroom Printable PDF</h3>
-      <p class="text-xs text-slate-300 leading-relaxed mb-4">
-        High-resolution Letter and A4 PDF files licensed under Creative Commons with unlimited perpetual classroom photocopy and reproduction rights.
-      </p>
-    </div>
-    <div class="space-y-2">
-      <a href="../downloads/manuals/sc32-scientific-manual.pdf" download class="w-full py-2 text-center rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition block">
-        Download SC-32 PDF (.PDF) &darr;
-      </a>
-      <a href="../downloads/manuals/sc6-elementary-manual.pdf" download class="w-full py-2 text-center rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition">
-        Download SC-6 PDF (.PDF) &darr;
-      </a>
-    </div>
-  </div>
-
-</div>
+> [!NOTE] **Commercial Books &amp; Free Open-Source Curriculum:**  
+> Our comprehensive 757-page reference manuals are premium commercial publications available in spiral-bound print ($16.00). However, the complete 43-page **Master Curriculum Guide**, **Standards Alignment Matrix**, **Printable Student Station Worksheets**, and **3MF 3D Print Blueprints** remain **100% free and open-source** in our [Curriculum Center](../curriculum/index.md) and [Download Center](../downloads.md).
 
 ---
 
-## Featured Calculator Manuals
+## Featured Reference Books
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
 
-  <!-- SC-32 Scientific Calculator Showcase -->
-  <div class="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-[#0F141D] border border-sky-500/30 shadow-xl flex flex-col justify-between">
+  <!-- SC-32 Scientific Manual Showcase -->
+  <div id="sc-32-scientific" class="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-[#0F141D] border border-sky-500/30 shadow-xl flex flex-col justify-between">
     <div>
       <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="font-mono text-xs text-sky-400 font-bold uppercase tracking-wider">// FLAGSHIP SCIENTIFIC</span>
-        <span class="text-xs px-2.5 py-0.5 rounded bg-sky-500/10 text-sky-300 border border-sky-500/20 font-mono font-bold">DUAL-CORE SILICON &bull; 4-STACK XYZT</span>
+        <span class="font-mono text-xs text-sky-400 font-bold uppercase tracking-wider">// VOLUME II &bull; FLAGSHIP SCIENTIFIC</span>
+        <span class="text-xs px-2.5 py-0.5 rounded bg-sky-500/10 text-sky-300 border border-sky-500/20 font-mono font-bold">370 PAGES &bull; $16.00 PRINT</span>
       </div>
       
       <h2 class="text-2xl font-bold text-white mb-2">
-        <a href="sc32/" class="hover:text-sky-300 transition">SC-32 Scientific Calculator Manual &amp; STEM Companion</a>
+        SC-32 Scientific Reference Manual &amp; Applied STEM Handbook
       </h2>
       <p class="text-sm text-slate-300 leading-relaxed mb-6">
-        Comprehensive STEM reference manual and mathematical companion for university engineering students, physics labs, and high-speed calculation practitioners. Pairs the 4-stack XYZT engine with applied mathematical derivations: surface area via statistical accumulation, Brent's root solver, adaptive Romberg quadrature, complex phasors, and live LCD vector plotting. Aligned directly to our 120 secondary and AP station worksheets.
+        The definitive operational reference and applied STEM companion for university engineering students, physics laboratories, and competitive calculation practitioners. Couples 4-stack XYZT postfix dynamics with rigorous mathematical derivations: Brent's hybrid root solver (`[SOLVE]`), adaptive Romberg quadrature (`[∫fn dx]`), cubic/quadratic closed-form polynomials (`[POLY]`), complex phasors for AC network analysis, 5-variable Time Value of Money (`[TVM]`), and live 64-point LCD vector plotting (`[PLOT]`).
       </p>
 
       <div class="grid grid-cols-2 gap-3 mb-6 font-mono text-xs text-slate-300">
@@ -175,47 +108,65 @@ Every StackCalc manual is available in three complementary formats to suit your 
           <span>[SOLVE], [∫fn dx], [POLY] Cubic/Quad, [TVM]</span>
         </div>
         <div class="p-3 rounded-lg bg-white/5 border border-white/5">
-          <strong class="text-white block mb-1">📦 Surface Area &amp; Geom</strong>
-          <span>Running face sums via [Σ+], 3D Volumes</span>
+          <strong class="text-white block mb-1">📊 Vector Plotting</strong>
+          <span>64-point LCD viewport, auto-scaling, trace</span>
         </div>
         <div class="p-3 rounded-lg bg-white/5 border border-white/5">
-          <strong class="text-white block mb-1">🏆 Exam Compliance</strong>
-          <span>Non-CAS rules, radio bans, instant proctor reset</span>
+          <strong class="text-white block mb-1">🏆 Contest Playbook</strong>
+          <span>Texas UIL shortcuts, parentheses-free speed</span>
         </div>
+      </div>
+
+      <h4 class="text-xs font-mono uppercase tracking-wider text-sky-400 font-bold mb-3">// COMPLETE TABLE OF CONTENTS (14 CHAPTERS + 5 APPENDICES)</h4>
+      <div class="bg-black/50 p-4 rounded-xl border border-white/10 text-xs font-mono space-y-1.5 text-slate-300 mb-6 max-h-56 overflow-y-auto">
+        <div><strong>Chapter 01:</strong> Craftsmanship, Hardware Architecture &amp; Dual-Core Silicon</div>
+        <div><strong>Chapter 02:</strong> Thinking in Stacks: XYZT Dynamics &amp; Register Lift Rules</div>
+        <div><strong>Chapter 03:</strong> Real Numbers, Scientific Powers &amp; Transcendental Functions</div>
+        <div><strong>Chapter 04:</strong> Trigonometry, Polar/Rectangular Transforms &amp; Vector Dot Products</div>
+        <div><strong>Chapter 05:</strong> Complex Numbers, Phasors &amp; Steinmetz AC Circuit Analysis</div>
+        <div><strong>Chapter 06:</strong> Geometry, Mensuration &amp; Running Surface Area via [Σ+]</div>
+        <div><strong>Chapter 07:</strong> Polynomial Roots &amp; Brent's Hybrid Numerical Solver ([SOLVE])</div>
+        <div><strong>Chapter 08:</strong> Calculus, Numerical Integration &amp; Adaptive Romberg Quadrature</div>
+        <div><strong>Chapter 09:</strong> Statistics, Curve Fitting &amp; Two-Variable Regression Models</div>
+        <div><strong>Chapter 10:</strong> Computer Science, Word Sizes (8–64 bit), Bases &amp; Bitwise Logic</div>
+        <div><strong>Chapter 11:</strong> Financial Mathematics, TVM, Cash Flows &amp; Amortization</div>
+        <div><strong>Chapter 12:</strong> Function &amp; Scatter Plotting on the 64-Point LCD Viewport</div>
+        <div><strong>Chapter 13:</strong> Applied STEM Case Studies (Satellite Orbits, Heat Pipes, Aerodynamics)</div>
+        <div><strong>Chapter 14:</strong> High-Speed Equation Entry &amp; Texas UIL Contest Playbook</div>
+        <div><strong>Appendix A:</strong> Stack Lift State Machine &amp; Register Drop Formal Invariants</div>
+        <div><strong>Appendix B:</strong> Error Catalog, Hardware Diagnostic Faults &amp; Recovery</div>
+        <div><strong>Appendix C:</strong> Keycap Directory, Primary, Shift-f &amp; Shift-g Operations</div>
+        <div><strong>Appendix D:</strong> Fundamental Physical Constants &amp; Engineering Formulae</div>
+        <div><strong>Appendix E:</strong> Annotated Bibliography, RPN Pedagogy &amp; Numerical Analysis</div>
       </div>
     </div>
 
     <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
       <div class="flex flex-wrap gap-2">
-        <a href="sc32/" class="px-4 py-2 rounded bg-sky-500 hover:bg-sky-400 text-slate-950 font-mono text-xs font-bold transition shadow-md">
-          Explore 18-Chapter Book &rarr;
+        <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition shadow-md">
+          Order Spiral Book ($16.00) ↗
         </a>
-        <a href="sc32-user-guide/" class="px-3 py-2 rounded bg-white/10 hover:bg-white/20 text-sky-300 font-mono text-xs font-bold transition">
-          Quick Guide &rarr;
-        </a>
-        <a href="../downloads/manuals/sc32-scientific-manual.pdf" download class="px-3 py-2 rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition">
-          PDF &darr;
+        <a href="#school-district-procurement" class="px-3 py-2 rounded bg-white/10 hover:bg-white/20 text-sky-300 font-mono text-xs font-bold transition">
+          District PO Quote &rarr;
         </a>
       </div>
-      <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-amber-400 hover:underline font-bold">
-        Order Spiral Print Copy ($16) ↗
-      </a>
+      <span class="text-xs font-mono text-slate-400 font-bold">ISBN: 979-8-9912040-1-0</span>
     </div>
   </div>
 
-  <!-- SC-6 Elementary Calculator Showcase -->
-  <div class="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-[#0F141D] border border-emerald-500/30 shadow-xl flex flex-col justify-between">
+  <!-- SC-6 Elementary Companion Showcase -->
+  <div id="sc-6-elementary" class="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-[#0F141D] border border-emerald-500/30 shadow-xl flex flex-col justify-between">
     <div>
       <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-        <span class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider">// ELEMENTARY FOUNDATION</span>
-        <span class="text-xs px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono font-bold">GRADES K–6 &bull; CRA BRIDGE</span>
+        <span class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider">// VOLUME I &bull; ELEMENTARY FOUNDATION</span>
+        <span class="text-xs px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono font-bold">387 PAGES &bull; $16.00 PRINT</span>
       </div>
       
       <h2 class="text-2xl font-bold text-white mb-2">
-        <a href="sc6/" class="hover:text-emerald-300 transition">SC-6 Elementary Calculator &amp; Math Companion</a>
+        SC-6 Elementary Reference Manual &amp; Manipulative Companion
       </h2>
       <p class="text-sm text-slate-300 leading-relaxed mb-6">
-        Illustrated elementary math companion and classroom reference for Grades K&ndash;6. Connects concrete math blocks (Ten-Frames, Fraction Studio 84mm towers, 144-tile four-color arrays, planetary clock) directly to the 4-stack XYZT display. Teaches rhythmic skip-counting ladders with [REP], integer division with remainders [÷R], step-by-step fraction reduction [SIMP], and surface area via stats mode. Aligned directly to our 120 elementary station worksheets.
+        The complete classroom companion and teacher guidebook for primary and intermediate mathematics (Grades K&ndash;6). Bridges tactile Gridfinity manipulatives (Ten-Frames, 84mm Fraction Towers, 144-tile 4-color arrays, planetary gear clocks, prime factor blocks) directly into the 4-line XYZT operational stack. Teaches rhythmic skip-counting fact ladders (`[REP]`), integer division with remainders (`[÷R]`), step-by-step fraction reduction (`[SIMP]`), and the interactive 6-level Math Quiz engine.
       </p>
 
       <div class="grid grid-cols-2 gap-3 mb-6 font-mono text-xs text-slate-300">
@@ -225,34 +176,46 @@ Every StackCalc manual is available in three complementary formats to suit your 
         </div>
         <div class="p-3 rounded-lg bg-white/5 border border-white/5">
           <strong class="text-white block mb-1">➗ [÷R] Integer Division</strong>
-          <span>Simultaneous Line X quotient &amp; Line Y remainder</span>
+          <span>Line X quotient &amp; Line Y remainder simultaneous</span>
         </div>
         <div class="p-3 rounded-lg bg-white/5 border border-white/5">
-          <strong class="text-white block mb-1">🧱 Concrete Block Bridge</strong>
+          <strong class="text-white block mb-1">🧱 Concrete CRA Bridge</strong>
           <span>Ten-Frames, Fraction Studio, Math Dominoes</span>
         </div>
         <div class="p-3 rounded-lg bg-white/5 border border-white/5">
           <strong class="text-white block mb-1">❓ Interactive Quiz Engine</strong>
-          <span>Levels 1–6 arithmetic challenges with instant scoring</span>
+          <span>Levels 1–6 arithmetic drills with instant scoring</span>
         </div>
+      </div>
+
+      <h4 class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold mb-3">// COMPLETE TABLE OF CONTENTS (9 CHAPTERS + 4 APPENDICES)</h4>
+      <div class="bg-black/50 p-4 rounded-xl border border-white/10 text-xs font-mono space-y-1.5 text-slate-300 mb-6 max-h-56 overflow-y-auto">
+        <div><strong>Chapter 01:</strong> Hardware Architecture, Screen Contrast &amp; Tactile Key Ergonomics</div>
+        <div><strong>Chapter 02:</strong> RPN for Young Learners: The Stack Elevator Metaphor &amp; Order of Operations</div>
+        <div><strong>Chapter 03:</strong> Counting, Place Value Studio &amp; Base-10 Bundling Mechanics</div>
+        <div><strong>Chapter 04:</strong> Four Basic Operations, Array Area Models &amp; Skip-Counting Fact Ladders ([REP])</div>
+        <div><strong>Chapter 05:</strong> Fractions, Decimals, Ratios &amp; 84mm Fraction Studio Towers ([SIMP], [FDISP])</div>
+        <div><strong>Chapter 06:</strong> Geometry, Perimeter, Running Surface Area via [Σ+] &amp; Planetary Clock Time</div>
+        <div><strong>Chapter 07:</strong> Data, Probability, Prime Factor Towers &amp; The Fundamental Theorem of Arithmetic</div>
+        <div><strong>Chapter 08:</strong> The Built-in Math Quiz Engine (Levels 1–6 Fact Mastery &amp; Assessment)</div>
+        <div><strong>Chapter 09:</strong> Applied STEM Explorations &amp; Micro-Experiments for the Elementary Classroom</div>
+        <div><strong>Appendix A:</strong> Gridfinity Educational Manipulative Blueprints &amp; Tolerances</div>
+        <div><strong>Appendix B:</strong> 25 Turnkey 45-Minute Teacher Lesson Plans &amp; Activity Sheets</div>
+        <div><strong>Appendix C:</strong> Elementary Math Formulas, Metric/Customary Conversions &amp; Constants</div>
+        <div><strong>Appendix D:</strong> Diagnostic Troubleshooting, Error Codes &amp; Proctor Exam Reset</div>
       </div>
     </div>
 
     <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
       <div class="flex flex-wrap gap-2">
-        <a href="sc6/" class="px-4 py-2 rounded bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono text-xs font-bold transition shadow-md">
-          Explore 12-Chapter Book &rarr;
+        <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition shadow-md">
+          Order Spiral Book ($16.00) ↗
         </a>
-        <a href="sc6-user-guide/" class="px-3 py-2 rounded bg-white/10 hover:bg-white/20 text-emerald-300 font-mono text-xs font-bold transition">
-          Quick Guide &rarr;
-        </a>
-        <a href="../downloads/manuals/sc6-elementary-manual.pdf" download class="px-3 py-2 rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition">
-          PDF &darr;
+        <a href="#school-district-procurement" class="px-3 py-2 rounded bg-white/10 hover:bg-white/20 text-emerald-300 font-mono text-xs font-bold transition">
+          District PO Quote &rarr;
         </a>
       </div>
-      <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-amber-400 hover:underline font-bold">
-        Order Spiral Print Copy ($16) ↗
-      </a>
+      <span class="text-xs font-mono text-slate-400 font-bold">ISBN: 979-8-9912040-0-3</span>
     </div>
   </div>
 
@@ -260,17 +223,18 @@ Every StackCalc manual is available in three complementary formats to suit your 
 
 ---
 
-## Look Inside the Physical Bench Editions
+## Look Inside: Worked Mathematical Excerpts
 
-Designed in the heritage of Corvallis technical handbooks, our spiral-bound field books are engineered to live permanently on workshop benches and classroom desks:
+To give educators, parents, and engineers an unvarnished preview of the typographic rigor and pedagogical clarity inside our bench books, here are two authentic excerpts from the print editions:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8 font-mono text-xs">
 
+  <!-- SC-32 Worked Excerpt -->
   <div class="p-6 rounded-2xl bg-[#0B0E14] border border-sky-500/30 flex flex-col justify-between shadow-xl">
     <div>
       <div class="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-white/10">
-        <span class="text-sky-400 font-bold uppercase tracking-wider">// SAMPLE SPREAD: SC-32 HANDBOOK</span>
-        <span class="text-slate-400">PAGES 42–43 &bull; ROMBERG SOLVER</span>
+        <span class="text-sky-400 font-bold uppercase tracking-wider">// EXCERPT: SC-32 REFERENCE MANUAL</span>
+        <span class="text-slate-400">CH. 8 &bull; ADAPTIVE ROMBERG QUADRATURE</span>
       </div>
       <div class="bg-black/60 p-4 rounded-xl border border-white/5 text-[11px] leading-relaxed text-slate-300 mb-4 font-mono">
 <pre class="text-sky-300 text-[10px] leading-tight mb-2">
@@ -289,25 +253,24 @@ Designed in the heritage of Corvallis technical handbooks, our spiral-bound fiel
 +=======================================================+
 </pre>
         <p class="text-slate-400 text-xs">
-          Crisp right-aligned Terminus typography with exact register stack lift traces, inside-out equation shortcuts, and step-by-step keystroke sequences.
+          Clear, monospaced register stack traces showing every step of the Richardson extrapolation, ensuring complete algorithmic transparency for students and engineers.
         </p>
       </div>
     </div>
     <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-white/10">
-      <a href="../downloads/manuals/sc32-scientific-manual.pdf" download class="px-3 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-bold transition flex items-center gap-1.5">
-        <span>Download Sample Ch. 1 (.PDF) &darr;</span>
-      </a>
+      <span class="text-sky-400 font-bold">Volume II &bull; 370 Pages</span>
       <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition shadow-md">
-        Order Spiral Copy ($16) ↗
+        Order Print Edition ($16) ↗
       </a>
     </div>
   </div>
 
+  <!-- SC-6 Worked Excerpt -->
   <div class="p-6 rounded-2xl bg-[#0B0E14] border border-emerald-500/30 flex flex-col justify-between shadow-xl">
     <div>
       <div class="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-white/10">
-        <span class="text-emerald-400 font-bold uppercase tracking-wider">// SAMPLE SPREAD: SC-6 COMPANION</span>
-        <span class="text-slate-400">PAGES 28–29 &bull; INTEGER DIVISION</span>
+        <span class="text-emerald-400 font-bold uppercase tracking-wider">// EXCERPT: SC-6 ELEMENTARY COMPANION</span>
+        <span class="text-slate-400">CH. 3 &bull; INTEGER DIVISION WITH REMAINDERS</span>
       </div>
       <div class="bg-black/60 p-4 rounded-xl border border-white/5 text-[11px] leading-relaxed text-slate-300 mb-4 font-mono">
 <pre class="text-emerald-300 text-[10px] leading-tight mb-2">
@@ -326,16 +289,14 @@ Designed in the heritage of Corvallis technical handbooks, our spiral-bound fiel
 +=======================================================+
 </pre>
         <p class="text-slate-400 text-xs">
-          Concrete manipulatives (ten-frames, fraction towers) paired 1:1 with live stack operations so children understand *why* arithmetic works.
+          Concrete manipulatives paired 1:1 with live stack operations so children understand the algebraic symmetry between division quotients, remainders, and inverse multiplication.
         </p>
       </div>
     </div>
     <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-white/10">
-      <a href="../downloads/manuals/sc6-elementary-manual.pdf" download class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-bold transition flex items-center gap-1.5">
-        <span>Download Sample Ch. 1 (.PDF) &darr;</span>
-      </a>
+      <span class="text-emerald-400 font-bold">Volume I &bull; 387 Pages</span>
       <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition shadow-md">
-        Order Spiral Copy ($16) ↗
+        Order Print Edition ($16) ↗
       </a>
     </div>
   </div>
@@ -346,51 +307,78 @@ Designed in the heritage of Corvallis technical handbooks, our spiral-bound fiel
 
 ## Physical Bench Book Craftsmanship &amp; Specifications
 
-In high-density STEM classrooms, maker spaces, and electronics labs, screens compete with open breadboards, soldering irons, and math manipulatives. Our **Spiral-Bound Print Edition ($19.00)** is engineered specifically for physical workbenches:
+In high-density STEM classrooms, maker spaces, and electronics labs, screens compete with open breadboards, soldering irons, and math manipulatives. Our **Spiral-Bound Print Editions ($16.00)** are engineered specifically for physical workbenches:
 
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6 font-mono text-xs">
   <div class="p-4 rounded-xl bg-slate-900/60 border border-white/10">
     <div class="text-amber-400 text-lg mb-2">⭕</div>
     <strong class="text-white block mb-1">100% Lay-Flat Coil Binding</strong>
-    <p class="text-slate-400 text-[11px] leading-relaxed">Continuous wire-o mechanical coil stays wide open on any page without paperweights or broken spines.</p>
+    <p class="text-slate-400 text-[11px] leading-relaxed">Continuous twin-loop mechanical wire coil stays wide open on any page without paperweights, hand pressure, or broken book spines.</p>
   </div>
   <div class="p-4 rounded-xl bg-slate-900/60 border border-white/10">
     <div class="text-sky-400 text-lg mb-2">📄</div>
     <strong class="text-white block mb-1">Heavy 32lb Synthetic Stock</strong>
-    <p class="text-slate-400 text-[11px] leading-relaxed">Opaque, tear-resistant laser-grade paper accepts pencil calculations and resists graphite smudges.</p>
+    <p class="text-slate-400 text-[11px] leading-relaxed">Opaque, tear-resistant laser-grade paper accepts student pencil calculations, withstands repeated classroom handling, and resists graphite smudges.</p>
   </div>
   <div class="p-4 rounded-xl bg-slate-900/60 border border-white/10">
     <div class="text-emerald-400 text-lg mb-2">🛡️</div>
     <strong class="text-white block mb-1">Spill-Proof Matte Lamination</strong>
-    <p class="text-slate-400 text-[11px] leading-relaxed">Splash-resistant protective poly cover wipes clean from accidental coffee, water, or lab chemical drips.</p>
+    <p class="text-slate-400 text-[11px] leading-relaxed">Splash-resistant protective poly soft-touch cover wipes completely clean from accidental coffee, water, or science lab chemical drips.</p>
   </div>
 </div>
 
 ---
 
-## School District Fleet Pricing &amp; Volume Bundling
+## School District Procurement &amp; Institutional Purchasing {: #school-district-procurement }
 
-We support school mathematics departments, STEM academies, and homeschool co-ops with institutional volume discounts:
+We support school mathematics departments, STEM academies, CTE coordinators, and homeschool co-ops with direct institutional purchasing.
+
+### Institutional Ordering Architecture: Email &amp; Purchase Orders (Net-30)
+
+For school districts and government educational agencies, **all institutional orders are processed directly via Purchase Order and Email requisition** (`orders@stackcalc.io`), rather than consumer web storefronts.
+
+```mermaid
+flowchart LR
+    A["School District / CTE Dept"] -->|"Email RFP / Quote Request"| B["orders@stackcalc.io"]
+    B -->|"Itemized Formal Quote + W-9 + Sole Source"| C["District Purchasing Dept"]
+    C -->|"Approved Net-30 Purchase Order (PO)"| D["StackCalc Fulfillment"]
+    D -->|"Priority Freight + Net-30 Invoice"| E["District Receives Order"]
+```
+
+#### Why We Process District Orders via Formal PO Requisition:
+1. **Public Procurement Law Compliance:** US public school districts and state universities operate under state procurement codes requiring vendor approval, formal Net-30 purchase orders, and payment via district check or direct ACH, rather than consumer credit cards.
+2. **Vendor Packet &amp; Paperwork:** We furnish complete vendor registration packets upon request:
+   - Form W-9 (Signed Taxpayer Identification Number)
+   - EFT / ACH Direct Deposit authorization form
+   - Certificate of Insurance (COI)
+   - State vendor portal registration (Munis, Skyward, Texas BuyBoard, SAM.gov UEI)
+3. **Sole-Source Justification:** StackCalc RPN calculators and patented tactile manipulatives are proprietary educational apparatus. We provide signed **Sole Source Justification Letters** enabling districts to bypass mandatory multi-vendor competitive bidding.
+4. **Zero Hidden Transaction Surcharges:** Direct PO purchasing saves school districts credit card processing fees and allows educational tax-exempt certification.
+
+### Institutional Fleet Pricing &amp; Volume Discounts
 
 <div class="te-table-wrapper my-6">
 | Tier | Order Quantity | Unit Price | Total Savings | Benefits Included |
 | :--- | :---: | :---: | :---: | :--- |
-| **Individual Bench Copy** | 1–4 copies | **$19.00** | Standard Retail | Fast 48h priority shipping via Etsy or web store. |
+| **Individual Bench Copy** | 1–4 copies | **$16.00** | Standard Retail | Fast 48h priority shipping via Etsy or web store. |
 | **Classroom Lab Pack** | 5–19 copies | **$13.50** | **Save 15%** | Includes 1× Free Laminated Wall Key Reference Chart. |
-| **Department / District Fleet** | 20+ copies | **$11.00** | **Save 31%** | Free Teacher Guide, signed W-9, and Net-30 district invoicing. |
+| **Department / District Fleet** | 20+ copies | **$11.00** | **Save 31%** | Free Teacher Facilitator Guide, signed W-9, and Net-30 district invoicing. |
 </div>
 
-<div class="p-4 rounded-xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-xs">
+<div class="p-6 rounded-xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 font-mono text-xs my-6">
   <div>
-    <span class="text-amber-400 font-bold uppercase tracking-wider">// EQUIPPING A CLASSROOM OR TOURNAMENT SQUAD?</span>
-    <p class="text-slate-300 text-xs mt-1">Submit your school purchase order with Net-30 payment terms and signed vendor paperwork.</p>
+    <span class="text-amber-400 font-bold uppercase tracking-wider">// REQUEST FORMAL DISTRICT QUOTE</span>
+    <h4 class="text-base font-bold text-white mt-1">Submit Your Requisition or RFP</h4>
+    <p class="text-slate-300 text-xs mt-1 max-w-xl">
+      Email your school address, tax exemption certificate, and requested quantities to our institutional procurement desk. We reply with a binding quote and vendor packet within 1 business day.
+    </p>
   </div>
-  <div class="flex gap-2 shrink-0">
-    <a href="../#school-po" class="px-4 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition shadow-md whitespace-nowrap">
-      Interactive PO Form &rarr;
+  <div class="flex flex-col sm:flex-row gap-2 shrink-0">
+    <a href="mailto:orders@stackcalc.io?subject=District%20Quote%20Request%20-%20StackCalc%20Manuals" class="px-5 py-2.5 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition shadow-md whitespace-nowrap text-center">
+      Email orders@stackcalc.io &rarr;
     </a>
-    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded bg-white/10 hover:bg-white/20 text-white font-bold transition whitespace-nowrap">
-      Order on Etsy ↗
+    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold transition whitespace-nowrap text-center">
+      Order Single Copy on Etsy ($16) ↗
     </a>
   </div>
 </div>

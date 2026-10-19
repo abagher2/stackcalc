@@ -179,13 +179,13 @@ Free downloadable teaching guides, pre-generated station companions, competition
 
 ---
 
-## 2. Official Calculator Manuals &amp; Machine-Readable Specs (.PDF, Print &amp; .JSON)
+## 2. Official Calculator Manuals &amp; Machine-Readable Specs (Print &amp; .JSON)
 
-Official publication-grade PDF Owner's Manuals, structured JSON operational datasets, and view-only OpenAPI 3.1 specifications. All manuals are also available as **$19.00 coil-bound spiral print editions** that lay 100% flat on lab desks.
+Official spiral-bound bench reference manuals, structured JSON operational datasets, and view-only OpenAPI 3.1 specifications. Both manuals are published as **$16.00 coil-bound spiral print editions** engineered to lay 100% flat on laboratory desks.
 
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
   <div>
-    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #F59E0B; text-transform: uppercase;">// SPIRAL-BOUND BENCH EDITIONS ($19.00)</span>
+    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #F59E0B; text-transform: uppercase;">// SPIRAL-BOUND BENCH EDITIONS ($16.00)</span>
     <p style="margin: 0.2rem 0 0 0; font-size: 0.8rem; color: #CBD5E1;">Tear-resistant 32lb synthetic stock, water-resistant laminated covers, and continuous lay-flat wire coil binding.</p>
   </div>
   <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -193,7 +193,7 @@ Official publication-grade PDF Owner's Manuals, structured JSON operational data
       EXPLORE MANUALS HUB &rarr;
     </a>
     <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background: #F59E0B; color: #0F172A; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
-      ORDER SPIRAL MANUAL ($19) ↗
+      ORDER SPIRAL MANUAL ($16) ↗
     </a>
   </div>
 </div>
@@ -203,15 +203,15 @@ Official publication-grade PDF Owner's Manuals, structured JSON operational data
   <div style="background: #11141A; border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
       <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700;">OFFICIAL MANUAL &bull; SC-32</span>
-      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">SC-32 Scientific Owner's Manual</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Complete operational reference: 4-stack XYZT, numerical solvers (SOLVE, ∫, POLY, TVM), basic plotting engine, and Texas UIL contest guidelines.</p>
+      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">SC-32 Scientific Reference Manual ($16)</h3>
+      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Complete operational reference: 4-stack XYZT, numerical solvers (SOLVE, ∫, POLY, TVM), vector plotting engine, and Texas UIL contest speed tactics. 370 pages, spiral-bound flat-lay bench edition.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
-      <a href="manuals/sc32-scientific-manual.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>PDF &darr;</span>
+      <a href="../manuals/#sc-32-scientific" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>PREVIEW &amp; TOC &rarr;</span>
       </a>
-      <a href="../manuals/sc32/" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>WEB DOCS &rarr;</span>
+      <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>ORDER ($16) ↗</span>
       </a>
     </div>
   </div>
@@ -219,15 +219,15 @@ Official publication-grade PDF Owner's Manuals, structured JSON operational data
   <div style="background: #11141A; border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
       <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #10B981; font-weight: 700;">OFFICIAL MANUAL &bull; SC-6</span>
-      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">SC-6 Elementary Owner's Manual</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Classroom and family companion: 4-stack XYZT secret, skip-counting [REP], [÷R] division remainders, manipulative modes, and math quiz engine.</p>
+      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">SC-6 Elementary Companion ($16)</h3>
+      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Classroom and family companion: 4-stack XYZT secret, skip-counting [REP], [÷R] division remainders, concrete math block bridge, and math quiz engine. 387 pages, spiral-bound flat-lay bench edition.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
-      <a href="manuals/sc6-elementary-manual.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>PDF &darr;</span>
+      <a href="../manuals/#sc-6-elementary" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>PREVIEW &amp; TOC &rarr;</span>
       </a>
-      <a href="../manuals/sc6/" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>WEB DOCS &rarr;</span>
+      <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>ORDER ($16) ↗</span>
       </a>
     </div>
   </div>
@@ -302,7 +302,7 @@ Targeted STL archives for individual stations, replacement parts, or classroom p
 | :--- | :--- | :--- | :--- |
 | **Fraction Studio Proportional Towers** | Grades 3–8 &bull; Equivalence &amp; Decimals | 3x1 Bin + Workbench Lid | <a href="fraction-studio-open-source-stls.zip" download>Download fraction-studio.zip (4.2 MB) &darr;</a> |
 | **Counting Tiles &amp; Planar Array Studio** | Grades K–6 &bull; Cardinality, Arrays &amp; Maps | 3x1 Bin + 12-Miniblock Lid | <a href="counting-tiles-open-source-stls.zip" download>Download counting-tiles.zip (783 KB) &darr;</a> |
-| **Prime Factor Studio &amp; Slide Rule Scale** | Grades 3–9 &bull; Factorization &amp; Logarithms | 3x1 Bin + 1-100 Slide Rule | <a href="prime-factor-studio-open-source-stls.zip" download>Download prime-factor-studio.zip (2.1 MB) &darr;</a> |
+| **Prime Factor Studio &amp; Factor Towers** | Grades 3–9 &bull; Factorization &amp; Logarithms | 3x1 Bin + Factor Lid Sockets | <a href="prime-factor-studio-open-source-stls.zip" download>Download prime-factor-studio.zip (2.1 MB) &darr;</a> |
 | **Sectional Classroom Planetary Clock** | Grades K–5 &bull; 12:1 Gear Kinematics | 2x1 Stand + Quadrants | <a href="classroom-clock-open-source-stls.zip" download>Download classroom-clock.zip (12.5 MB) &darr;</a> |
 | **Ten-Frame Dual Stage &amp; Carry Shelf** | Grades K–3 &bull; Base-10 &amp; Regrouping | 3x1 Bin + 2U Carry Cube | <a href="ten-frames-open-source-stls.zip" download>Download ten-frames.zip (1.3 MB) &darr;</a> |
 | **Math Domino Studio &amp; 12-Frame Set** | Grades Pre-K–4 &bull; Doubles &amp; Pips | 3x1 Bin + Doubling Lid | <a href="math-dominoes-open-source-stls.zip" download>Download math-dominoes.zip (772 KB) &darr;</a> |

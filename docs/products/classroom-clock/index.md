@@ -680,7 +680,7 @@ hide:
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">Modular 2x1 Gridfinity Desk Stand &amp; Elapsed Time Guide</span>
+        <span class="ec-box-text">2x1x13U Gridfinity Enclosure Box &amp; Workstation Stand with Snapfinity Bi-Directional Sliding Hard Lid and 4&times; Color-Coded 15-Minute Quadrant Wedges (Snap-on TPU non-skid feet sold separately)</span>
       </div>
     </div>
   </section>

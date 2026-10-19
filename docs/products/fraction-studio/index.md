@@ -87,7 +87,7 @@ hide:
           "name": "How does the height ratio mathematically prove equivalence?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The whole unit is exactly 80mm tall. Each fraction block has a height reciprocal to its value (1/2 is 40mm, 1/4 is 20mm, 1/8 is 10mm). Placing two 1/4 blocks next to a 1/2 block creates a perfectly flush surface with zero visual gap."
+            "text": "The whole unit is exactly 84.0mm tall. Each fraction block has a height strictly reciprocal to its value (1/2 is 42.0mm, 1/4 is 21.0mm, 1/8 is 10.5mm, 1/12 is 7.0mm). Placing two 1/4 blocks next to a 1/2 block creates a perfectly flush surface with zero visual gap."
           }
         },
         {
@@ -686,7 +686,7 @@ hide:
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">Heavy-Duty Canvas Storage Pouch with Drawstring Closure</span>
+        <span class="ec-box-text">Snapfinity 3x2x13U Gridfinity Enclosure Box with Bi-Directional Sliding Hard Lid and Integrated Workstation Miniblock Lid (Snap-on TPU non-skid feet sold separately)</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>

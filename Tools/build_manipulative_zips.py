@@ -103,7 +103,7 @@ CONTENTS:
      standing against the comparator scale.
 
 PRINT SETTINGS:
-- Layer Height: 0.20 mm Standard (0.12 mm for slide rule ticks and numbers)
+- Layer Height: 0.20 mm Standard (0.12 mm for fine prime block legends)
 - Infill: 15% - 20% Gyroid
 - Supports: NONE (100% Support-Free)
 - Material: PLA 2.0+ or PETG

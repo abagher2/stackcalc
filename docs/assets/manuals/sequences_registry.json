@@ -916,8 +916,8 @@
     "id" : "sc6_02_rpn_for_young_learners_seq_16",
     "model" : "sc6",
     "res" : "10",
-    "seq" : "10 {{key:ENTER}} 0 {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}}",
-    "seqKeys" : "{{key:1}} {{key:0}} {{key:ENTER}} {{key:0}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}}",
+    "seq" : "10 {{key:ENTER}} 0 {{key:+}}",
+    "seqKeys" : "{{key:1}} {{key:0}} {{key:ENTER}} {{key:0}} {{key:+}}",
     "stack" : {
       "T" : "0",
       "X" : "10",
@@ -1196,13 +1196,13 @@
     "id" : "sc6_02_rpn_for_young_learners_seq_36",
     "model" : "sc6",
     "res" : "2",
-    "seq" : "48 {{key:ENTER}} 4 {{key:ENTER}} 6 {{key:×}} {{key:-}} 3 {{key:ENTER}} 2 {{key:ENTER}} 4.5 {{key:×}} {{key:+}} {{key:÷}}",
-    "seqKeys" : "{{key:4}} {{key:8}} {{key:ENTER}} {{key:4}} {{key:ENTER}} {{key:6}} {{key:×}} {{key:-}} {{key:3}} {{key:ENTER}} {{key:2}} {{key:ENTER}} {{key:4}} {{key:.}} {{key:5}} {{key:×}} {{key:+}} {{key:÷}}",
+    "seq" : "48 {{key:ENTER}} 4 {{key:ENTER}} 6 {{key:×}} {{key:-}} 2 {{key:ENTER}} 4.5 {{key:×}} 3 {{key:+}} {{key:÷}}",
+    "seqKeys" : "{{key:4}} {{key:8}} {{key:ENTER}} {{key:4}} {{key:ENTER}} {{key:6}} {{key:×}} {{key:-}} {{key:2}} {{key:ENTER}} {{key:4}} {{key:.}} {{key:5}} {{key:×}} {{key:3}} {{key:+}} {{key:÷}}",
     "stack" : {
-      "T" : "24",
+      "T" : "0",
       "X" : "2",
-      "Y" : "24",
-      "Z" : "24"
+      "Y" : "0",
+      "Z" : "0"
     }
   },
   "sc6_02_rpn_for_young_learners_seq_37" : {
@@ -1933,8 +1933,8 @@
     "description" : "Verified calculation in sc6\/03-counting-place-value.md",
     "model" : "sc6",
     "res" : "4",
-    "seq" : "2 {{key:ENTER}} 2 {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}}",
-    "seqKeys" : "{{key:2}} {{key:ENTER}} {{key:2}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}} {{key:+}}",
+    "seq" : "2 {{key:ENTER}} 2 {{key:+}}",
+    "seqKeys" : "{{key:2}} {{key:ENTER}} {{key:2}} {{key:+}}",
     "stack" : {
       "T" : "0",
       "X" : "4",
@@ -4999,7 +4999,7 @@
     "seqKeys" : "{{key:1}} {{key:0}} {{key:ENTER}} {{key:5}} {{key:0}} {{key:t…x}}",
     "stack" : {
       "T" : "0",
-      "X" : "39",
+      "X" : "31",
       "Y" : "10",
       "Z" : "0"
     }
@@ -10854,12 +10854,12 @@
     "id" : "sc32_05_complex_numbers_phasors_seq_29",
     "model" : "sc32",
     "res" : "0.7071067812",
-    "seq" : "0 {{key:π}} 2 {{key:÷}} {{key:CMPLX}} {{key:SIN}}",
-    "seqKeys" : "{{key:0}} {{key:ENTER}} {{key:π}} {{key:2}} {{key:÷}} {{key:CMPLX}} {{key:eˣ}} {{key:CMPLX}} {{key:√x}}",
+    "seq" : "0 {{key:π}} 2 {{key:÷}} {{key:CMPLX}} {{key:eˣ}} {{key:CMPLX}} {{key:√x}}",
+    "seqKeys" : "{{key:0}} {{key:π}} {{key:2}} {{key:÷}} {{key:CMPLX}} {{key:eˣ}} {{key:CMPLX}} {{key:√x}}",
     "stack" : {
       "T" : "0",
-      "X" : "2.3012989023",
-      "Y" : "0",
+      "X" : "0.7071067812",
+      "Y" : "0.7071067812",
       "Z" : "0"
     }
   },
@@ -10867,13 +10867,13 @@
     "description" : "Verified calculation in sc32\/05-complex-numbers-phasors.md",
     "model" : "sc32",
     "res" : "0",
-    "seq" : "0 {{key:π}} {{key:CMPLX}} {{key:eˣ}} 1 {{key:+}}",
-    "seqKeys" : "{{key:1}} {{key:ENTER}} {{key:0}} {{key:CMPLX}} {{key:+}}",
+    "seq" : "0 {{key:π}} {{key:CMPLX}} {{key:eˣ}} 1 {{key:ENTER}} 0 {{key:CMPLX}} {{key:+}}",
+    "seqKeys" : "{{key:0}} {{key:π}} {{key:CMPLX}} {{key:eˣ}} {{key:1}} {{key:ENTER}} {{key:0}} {{key:CMPLX}} {{key:+}}",
     "stack" : {
-      "T" : "0",
-      "X" : "1",
-      "Y" : "-1",
-      "Z" : "0"
+      "T" : "-1",
+      "X" : "1.224647E-16",
+      "Y" : "0",
+      "Z" : "-1"
     }
   },
   "sc32_05_complex_numbers_phasors_seq_31" : {
@@ -13810,11 +13810,11 @@
     "description" : "Verified calculation in sc32\/14-uil-contest-playbook.md",
     "model" : "sc32",
     "res" : "16.427248327",
-    "seq" : "65 {{key:π}} {{key:×}} 180 {{key:÷}} 12.4 {{key:x²}} {{key:×}} 2 {{key:÷}}",
-    "seqKeys" : "{{key:6}} {{key:5}} {{key:ENTER}} {{key:π}} {{key:×}} {{key:1}} {{key:8}} {{key:0}} {{key:÷}} {{key:6}} {{key:5}} {{key:SIN}} {{key:-}} {{key:1}} {{key:2}} {{key:x²}} {{key:×}} {{key:2}} {{key:÷}}",
+    "seq" : "65 {{key:π}} {{key:×}} 180 {{key:÷}} 65 {{key:SIN}} {{key:-}} 12 {{key:x²}} {{key:×}} 2 {{key:÷}}",
+    "seqKeys" : "{{key:6}} {{key:5}} {{key:π}} {{key:×}} {{key:1}} {{key:8}} {{key:0}} {{key:÷}} {{key:6}} {{key:5}} {{key:SIN}} {{key:-}} {{key:1}} {{key:2}} {{key:x²}} {{key:×}} {{key:2}} {{key:÷}}",
     "stack" : {
       "T" : "0",
-      "X" : "87.217593381",
+      "X" : "16.427248327",
       "Y" : "0",
       "Z" : "0"
     }

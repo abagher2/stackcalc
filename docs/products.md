@@ -375,8 +375,8 @@ hide:
           <a href="sc32-calculator/" class="te-btn-primary">
             <span>Explore Hardware &amp; 4K Videos &rarr;</span>
           </a>
-          <a href="../manuals/sc32/" class="te-btn-secondary">
-            <span>Owner's Manual &amp; Print ($19) &rarr;</span>
+          <a href="../manuals/#sc-32-scientific" class="te-btn-secondary">
+            <span>Reference Manual &amp; Print ($16) &rarr;</span>
           </a>
           <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary">
             <span>Order on Etsy Storefront ↗</span>
@@ -421,7 +421,7 @@ hide:
           <div class="te-card-category">Fractions &amp; Equivalence</div>
           <h3 class="te-card-title"><a href="fraction-studio/">Fraction Studio Proportional Towers</a></h3>
           <p class="te-card-desc">
-            Single-color precision proportional blocks with debossed 4-face notation (fraction, decimal, percent, degree). Halves, quarters, and eighths physically align flush on any classroom table with zero loose trays required.
+            Single-color precision proportional blocks with debossed 4-face notation (fraction, decimal, percent, degree). Halves, quarters, and eighths physically align flush on any classroom table with zero loose trays required. Housed in a modular 3x2x13U Snapfinity Gridfinity enclosure with bi-directional sliding hard lid. (Optional snap-on TPU non-skid feet sold separately.)
           </p>
         </div>
         <div class="te-card-footer">
@@ -458,7 +458,7 @@ hide:
           <div class="te-card-category">Time &amp; Gear Mechanics</div>
           <h3 class="te-card-title"><a href="classroom-clock/">Sectional Classroom Planetary Clock</a></h3>
           <p class="te-card-desc">
-            Internal 12:1 herringbone planetary gear core with synchronized hour and minute hands. Removable 5-minute quadrant wedges fit standard 2x1 Gridfinity stands for kinesthetic elapsed-time discovery.
+            Internal 12:1 planetary gear core with synchronized hour and minute hands. Removable 15-minute quadrant wedges fit standard 2x1x13U Snapfinity Gridfinity workstation box and desk stand for kinesthetic elapsed-time discovery. (Optional snap-on TPU feet sold separately.)
           </p>
         </div>
         <div class="te-card-footer">
@@ -495,7 +495,7 @@ hide:
           <div class="te-card-category">Algebra &amp; Factoring</div>
           <h3 class="te-card-title"><a href="algebra-boxes/">Algebra Factoring Studio &amp; Tiles</a></h3>
           <p class="te-card-desc">
-            Chamfered polynomial tiles for \(x^2\), \(x\), and \(1\) paired with slotted stage factoring rails. Concrete visual-spatial modeling for binomial multiplication, trinomial factoring, and completing the square.
+            Chamfered polynomial tiles for \(x^2\), \(x\), and \(1\) paired with slotted stage factoring rails. Housed in a 3x1x13U Snapfinity Gridfinity box for binomial multiplication, trinomial factoring, and completing the square. (Optional snap-on TPU feet sold separately.)
           </p>
         </div>
         <div class="te-card-footer">
@@ -532,7 +532,7 @@ hide:
           <div class="te-card-category">Place Value &amp; Counting</div>
           <h3 class="te-card-title"><a href="ten-frames/">Ten-Frame Dual Stage &amp; Carry Shelf</a></h3>
           <p class="te-card-desc">
-            Dual 2x5 counting stage with an elevated carry shelf, 20 square miniblock counters (19&times;19mm), and a 2U cube "10" carry block. Tactile base-ten regrouping and make-a-ten mental arithmetic with instant classroom inventory check.
+            Dual 2x5 counting stage with an elevated carry shelf, 20 square miniblock counters (19&times;19mm), and a 2U cube "10" carry block. Housed in a 3x1x13U Snapfinity Gridfinity enclosure with integrated carry shelf for base-ten regrouping and make-a-ten mental arithmetic. (Optional snap-on TPU feet sold separately.)
           </p>
         </div>
         <div class="te-card-footer">
@@ -569,7 +569,7 @@ hide:
           <div class="te-card-category">Early Numeracy &amp; Doubles</div>
           <h3 class="te-card-title"><a href="math-dominoes/">Math Domino Studio &amp; 12-Frame Set</a></h3>
           <p class="te-card-desc">
-            30 miniblock domino tiles (28 double-six + 2 blanks) with direct 1064nm IR laser-foamed pips, a 12-frame regrouping tray (10+2 divider), and a stackable doubling snap lid in a 3x1 Gridfinity fuzzy-skin box.
+            30 miniblock domino tiles (28 double-six + 2 blanks) with direct 1064nm IR laser-foamed pips, a 12-frame regrouping tray (10+2 divider), and a stackable doubling snap lid in a 3x1x13U Snapfinity Gridfinity box. (Optional snap-on TPU feet sold separately.)
           </p>
         </div>
         <div class="te-card-footer">
@@ -606,7 +606,7 @@ hide:
           <div class="te-card-category">Probability &amp; Data</div>
           <h3 class="te-card-title"><a href="dice-and-spinner/">Probability Dice &amp; Spinner Pack</a></h3>
           <p class="te-card-desc">
-            Ultra-low-friction centered spinner with interchangeable 4, 6, 8, and 12-sector discs and polyhedral dice pack. Houses in a standard 1x1 Gridfinity box for empirical probability experiments.
+            Ultra-low-friction centered spinner with interchangeable 4, 6, 8, and 12-sector discs and mass-compensated polyhedral dice pack. Housed in a 1x1x13U Snapfinity Gridfinity box for empirical probability experiments. (Optional snap-on TPU feet sold separately.)
           </p>
         </div>
         <div class="te-card-footer">
@@ -680,7 +680,7 @@ hide:
           <div class="te-card-category">Cardinality &amp; Multiplication Arrays</div>
           <h3 class="te-card-title"><a href="counting-tiles/">Counting Tiles &amp; Planar Array Studio</a></h3>
           <p class="te-card-desc">
-            144 precision stacking tiles (4 colors &times; 36) in a 3x1x13U Gridfinity box with docking lid grid. Bridges one-to-one counting, the 12&times;12 multiplication matrix, partial-product area models, and the Four-Color Map Theorem.
+            144 precision stacking tiles (4 colors &times; 36) in a 3x1x13U Snapfinity Gridfinity box with 12-miniblock array docking lid. Bridges one-to-one counting, the 12&times;12 multiplication matrix, partial-product area models, and the Four-Color Map Theorem. (Optional snap-on TPU feet sold separately.)
           </p>
         </div>
         <div class="te-card-footer">
@@ -697,7 +697,7 @@ hide:
         </div>
       </article>
 
-      <!-- 8. Prime Factor Studio & Slide Rule Comparator -->
+      <!-- 8. Prime Factor Studio & Factor Towers -->
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">PRIME-01 // NUMBER THEORY</span>
@@ -705,19 +705,19 @@ hide:
         </div>
         <div class="te-card-viewport">
           <a href="prime-factor-studio/">
-            <img src="../assets/renders/prime-studio-hero.png" alt="Prime Factor Studio &amp; Slide Rule Scale" loading="lazy">
+            <img src="../assets/renders/prime-studio-hero.png" alt="Prime Factor Studio &amp; Factor Towers" loading="lazy">
           </a>
         </div>
         <div class="te-card-specs">
           <span class="te-card-spec-item">BLOCKS: 29 PROPORTIONAL</span>
           <span class="te-card-spec-item">GRADES: 3&ndash;9</span>
-          <span class="te-card-spec-item">SCALE: 1 TO 100 SLIDE RULE</span>
+          <span class="te-card-spec-item">STAGE: FACTOR WELLS</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Prime Factorization &amp; Logarithms</div>
-          <h3 class="te-card-title"><a href="prime-factor-studio/">Prime Factor Studio &amp; Slide Rule Scale</a></h3>
+          <h3 class="te-card-title"><a href="prime-factor-studio/">Prime Factor Studio &amp; Factor Towers</a></h3>
           <p class="te-card-desc">
-            29 proportional logarithmic prime factor blocks with a 3x1x13U Gridfinity box and bilateral slide rule scale (1 to 100). Stacking prime blocks physically multiplies them, proving the Fundamental Theorem of Arithmetic.
+            29 proportional logarithmic prime factor blocks with a 3x1x13U Snapfinity Gridfinity box featuring prime power storage lid sockets. Stacking prime blocks physically multiplies them, proving the Fundamental Theorem of Arithmetic. (Optional snap-on TPU feet sold separately.)
           </p>
         </div>
         <div class="te-card-footer">
@@ -793,7 +793,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="sc32-calculator/" class="te-card-btn">Specs &rarr;</a>
-            <a href="../manuals/sc32/" class="te-card-btn" title="Owner's Manual & Spiral Print Edition">Manual 📖</a>
+            <a href="../manuals/#sc-32-scientific" class="te-card-btn" title="Reference Manual & Spiral Print Edition ($16)">Manual 📖</a>
             <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/sc32-calculator-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
@@ -831,7 +831,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="sc6-elementary/" class="te-card-btn">Specs &rarr;</a>
-            <a href="../manuals/sc6/" class="te-card-btn" title="Owner's Manual & Spiral Print Edition">Manual 📖</a>
+            <a href="../manuals/#sc-6-elementary" class="te-card-btn" title="Reference Manual & Spiral Print Edition ($16)">Manual 📖</a>
             <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/sc6-elementary-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>

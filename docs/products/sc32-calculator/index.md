@@ -243,8 +243,8 @@ hide:
         <a href="lessons/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/30 hover:bg-slate-700">
           &bull; RPN Operational Stack Lessons (1 &amp; 2) &rarr;
         </a>
-        <a href="../../manuals/sc32/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
-          &bull; Official Owner's Manual &amp; Spiral Print ($16) &rarr;
+        <a href="../../manuals/#sc-32-scientific" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
+          &bull; Reference Manual &amp; TOC Preview &rarr;
         </a>
       </div>
 
@@ -1184,19 +1184,19 @@ FORCE (g)
       <div class="space-y-2">
         <div class="flex items-center gap-2">
           <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">// OFFICIAL DOCUMENTATION</span>
-          <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono font-bold">Print Edition Available ($19.00)</span>
+          <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono font-bold">Print Edition Available ($16.00)</span>
         </div>
-        <h3 class="text-xl font-bold text-white">SC-32 Scientific Calculator Owner's Manual</h3>
+        <h3 class="text-xl font-bold text-white">SC-32 Scientific Calculator Reference Manual</h3>
         <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
-          The definitive operational handbook: 4-level XYZT stack mechanics, Romberg numerical solver (SOLVE, ∫, POLY, TVM), basic plotting engine, and Texas UIL contest guidelines. Available online, as a free printable PDF, and as a 100% lay-flat spiral-bound bench handbook.
+          The definitive operational handbook: 4-level XYZT stack mechanics, numerical solvers (SOLVE, ∫, POLY, TVM), vector plotting engine, and Texas UIL contest guidelines. Available as a 100% lay-flat spiral-bound bench handbook ($16) and school district classroom pack.
         </p>
       </div>
       <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
-        <a href="../../manuals/sc32/" class="px-4 py-2.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-mono text-xs font-bold transition text-center whitespace-nowrap">
-          Read Online Manual &rarr;
+        <a href="../../manuals/#sc-32-scientific" class="px-4 py-2.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-mono text-xs font-bold transition text-center whitespace-nowrap">
+          Preview &amp; Table of Contents &rarr;
         </a>
         <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition text-center shadow-md whitespace-nowrap">
-          Order Spiral Manual ($19) ↗
+          Order Spiral Manual ($16) ↗
         </a>
       </div>
     </div>

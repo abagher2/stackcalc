@@ -345,6 +345,46 @@ def render_domino_near_doubles(draw, fonts, t):
         draw.text((140, 505), "NEAR-DOUBLES: 6 + 7 = (6+6) + 1 = 13", fill=(255, 255, 255), font=fonts['sub'])
 
 
+def render_domino_bridging(draw, fonts, t):
+    # 6x2 12-Frame Regrouping Tray (10+2 Divider)
+    ox, oy = 110, 240
+    cw, ch = 85, 85
+    
+    # Outer Tray
+    draw.rectangle([(ox - 8, oy - 8), (ox + 6 * cw + 8, oy + 2 * ch + 8)], fill=(17, 24, 38), outline=(71, 85, 105), width=2)
+    
+    # Divider between column 5 and column 6 (10-frame anchor + 2 carry pocket)
+    div_x = ox + 5 * cw
+    draw.line([(div_x, oy - 8), (div_x, oy + 2 * ch + 8)], fill=(245, 158, 11), width=4)
+    draw.text((ox + 2 * cw - 30, oy - 30), "10-FRAME BASE ZONE", fill=(56, 189, 248), font=fonts['tag'])
+    draw.text((div_x + 10, oy - 30), "+2 CARRY", fill=(245, 158, 11), font=fonts['tag'])
+    
+    # 6x2 cells
+    for r in range(2):
+        for c in range(6):
+            draw.rectangle([(ox + c * cw, oy + r * ch), (ox + (c + 1) * cw, oy + (r + 1) * ch)], outline=(30, 41, 59), width=1)
+
+    # Place [6|6] domino: 6 counters in top row, 6 counters in bottom row
+    num_pips_top = min(6, int(t * 3))
+    for c in range(num_pips_top):
+        cx = ox + c * cw + cw // 2
+        cy = oy + ch // 2
+        col = (245, 158, 11) if c == 5 else (2, 132, 199)
+        draw.ellipse([(cx - 26, cy - 26), (cx + 26, cy + 26)], fill=col)
+
+    if t > 2.0:
+        num_pips_bot = min(6, int((t - 2.0) * 3))
+        for c in range(num_pips_bot):
+            cx = ox + c * cw + cw // 2
+            cy = oy + ch + ch // 2
+            col = (245, 158, 11) if c == 5 else (2, 132, 199)
+            draw.ellipse([(cx - 26, cy - 26), (cx + 26, cy + 26)], fill=col)
+
+    if t > 5.0:
+        draw.rectangle([(120, 470), (580, 520)], fill=(5, 150, 105))
+        draw.text((140, 485), "10 IN BASE ZONE + 2 CARRY = 12", fill=(255, 255, 255), font=fonts['sub'])
+
+
 def render_tiles_scaling(draw, fonts, t):
     # 12 tiles in a row equaling 84.0mm whole
     draw.line([(60, 360), (660, 360)], fill=(71, 85, 105), width=2)
@@ -435,6 +475,57 @@ def render_prime_lcm_gcd(draw, fonts, t):
     if t > 4.5:
         draw.rectangle([(100, 540), (520, 585)], fill=(5, 150, 105))
         draw.text((120, 552), "INTERSECTION (GCD): 2 x 3 = 6", fill=(255, 255, 255), font=fonts['sub'])
+
+
+def render_prime_unique_factorization(draw, fonts, t):
+    # Base desk datum
+    draw.line([(60, 540), (680, 540)], fill=(71, 85, 105), width=2)
+    draw.text((150, 550), "PATH A: 4 x 9", fill=(148, 163, 184), font=fonts['tag'])
+    draw.text((400, 550), "PATH B: 6 x 6", fill=(148, 163, 184), font=fonts['tag'])
+
+    # Tower A blocks: [2], [2], [3], [3] (y goes from 540 up to 260)
+    tower_a_defs = [
+        ("[2]", 54, 486, 540, (2, 132, 199), (56, 189, 248), 0.5),
+        ("[2]", 54, 432, 486, (2, 132, 199), (56, 189, 248), 1.0),
+        ("[3]", 86, 346, 432, (217, 119, 6), (251, 191, 36), 1.5),
+        ("[3]", 86, 260, 346, (217, 119, 6), (251, 191, 36), 2.0),
+    ]
+    for lbl, h, target_top, target_bot, col, border, start_t in tower_a_defs:
+        if t < start_t:
+            continue
+        prog = min(1.0, (t - start_t) * 2.5)
+        drop_offset = int((1.0 - ease_out_cubic(prog)) * 120)
+        top = target_top - drop_offset
+        bot = target_bot - drop_offset
+        draw.rectangle([(150, top), (260, bot)], fill=col, outline=border, width=2)
+        draw.text((190, top + (h - 20) // 2), lbl, fill=(255, 255, 255), font=fonts['mono'])
+
+    # Tower B blocks: [3], [2], [3], [2] (y goes from 540 up to 260)
+    tower_b_defs = [
+        ("[3]", 86, 454, 540, (217, 119, 6), (251, 191, 36), 2.6),
+        ("[2]", 54, 400, 454, (2, 132, 199), (56, 189, 248), 3.1),
+        ("[3]", 86, 314, 400, (217, 119, 6), (251, 191, 36), 3.6),
+        ("[2]", 54, 260, 314, (2, 132, 199), (56, 189, 248), 4.1),
+    ]
+    for lbl, h, target_top, target_bot, col, border, start_t in tower_b_defs:
+        if t < start_t:
+            continue
+        prog = min(1.0, (t - start_t) * 2.5)
+        drop_offset = int((1.0 - ease_out_cubic(prog)) * 120)
+        top = target_top - drop_offset
+        bot = target_bot - drop_offset
+        draw.rectangle([(400, top), (510, bot)], fill=col, outline=border, width=2)
+        draw.text((440, top + (h - 20) // 2), lbl, fill=(255, 255, 255), font=fonts['mono'])
+
+    if t > 4.7:
+        # Emerald alignment datum line across both summits at y = 260
+        draw.line([(100, 260), (560, 260)], fill=(52, 211, 153), width=3)
+        draw.text((570, 252), "36 FLUSH", fill=(52, 211, 153), font=fonts['tag'])
+        # Banner
+        draw.rectangle([(90, 160), (570, 210)], fill=(5, 150, 105))
+        draw.text((105, 172), "TOWER A == TOWER B == 36 FLUSH (0.000mm)", fill=(255, 255, 255), font=fonts['sub'])
+        draw.text((105, 192), "Fundamental Theorem: 36 = 2^2 x 3^2 is unique", fill=(209, 250, 229), font=fonts['tag'])
+
 
 
 def render_clock_gearing(draw, fonts, t):
@@ -769,6 +860,21 @@ LESSONS = [
         'cue': 'Prevents counting up 7 fingers; builds relational decomposition thinking.',
         'render': render_domino_near_doubles
     },
+    {
+        'id': 'math-dominoes-lesson-bridging',
+        'sku': 'DOMI-01',
+        'kit_name': 'MATH DOMINOES',
+        'lesson_num': 'LESSON 03',
+        'title': '12-Frame Tray Regrouping: 10 + 2 Base-Ten Anchor',
+        'standard': 'CCSS 1.OA.C.6 • 2.NBT.B.5',
+        'steps': [
+            'Place [6|6] domino tiles in the 6x2 12-frame tray.',
+            'Observe the tactile divider line separating 10-zone from +2 carry.',
+            'Fill 10 spaces to anchor make-a-ten mental arithmetic: 10 + 2 = 12.'
+        ],
+        'cue': 'Anchors the 10+2 structure, visually separating the ten-frame from the carry pocket.',
+        'render': render_domino_bridging
+    },
 
     # 4. Counting Tiles (TILE-01)
     {
@@ -832,6 +938,21 @@ LESSONS = [
         ],
         'cue': 'Replaces abstract factor trees with tactile union and intersection sets.',
         'render': render_prime_lcm_gcd
+    },
+    {
+        'id': 'prime-factor-lesson-factorization',
+        'sku': 'PRIME-01',
+        'kit_name': 'PRIME FACTOR',
+        'lesson_num': 'LESSON 03',
+        'title': 'Unique Prime Factorization: 36 = 2^2 x 3^2',
+        'standard': 'CCSS 4.OA.B.4 • 6.NS.B.4',
+        'steps': [
+            'Build Tower A from 4 x 9 factor path: [2][2][3][3].',
+            'Build Tower B from 6 x 6 factor path: [3][2][3][2].',
+            'Laser-level line proves both towers level flush at 36 (0.000mm).'
+        ],
+        'cue': 'Proves the Fundamental Theorem of Arithmetic: prime decomposition is unique regardless of factoring order.',
+        'render': render_prime_unique_factorization
     },
 
     # 6. Classroom Clock (TIME-01)

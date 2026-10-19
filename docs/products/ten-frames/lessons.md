@@ -42,7 +42,7 @@ hide:
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
       <div class="ec-video-wrapper">
         <div class="ec-video-player">
-          <video controls playsinline preload="metadata" poster="../../../assets/renders/ten-frames-make-ten-concept.png">
+          <video controls playsinline preload="metadata" poster="../../assets/renders/ten-frames-make-ten-concept.png">
             <source src="/assets/videos/ten-frames-lesson.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
@@ -145,7 +145,7 @@ hide:
 
       <!-- Concept Illustration Card -->
       <div class="mb-6 rounded-lg overflow-hidden border border-slate-700/80 bg-slate-950/60 p-4">
-        <img src="../../../assets/renders/ten-frames-make-ten-concept.png" alt="Ten Frames Make-Ten Addition Strategy 8 + 5 = 10 + 3 = 13" class="rounded w-full mb-3" />
+        <img src="../../assets/renders/ten-frames-make-ten-concept.png" alt="Ten Frames Make-Ten Addition Strategy 8 + 5 = 10 + 3 = 13" class="rounded w-full mb-3" />
         <div class="text-xs text-gray-300 flex items-center justify-between">
           <span><strong>Physical Make-Ten Regrouping:</strong> 8 archival white tokens in Frame 1 receive 2 terracotta counters to complete the ten (making 10!), while 3 remaining terracotta counters occupy Frame 2. Total: \(10 + 3 = 13\).</span>
           <span class="text-emerald-400 font-mono">8 + 5 = 10 + 3 = 13</span>

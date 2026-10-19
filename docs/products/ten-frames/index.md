@@ -764,7 +764,7 @@ hide:
     <div class="ec-box-grid">
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">3x1 Gridfinity Storage Box with Integrated Carry Shelf</span>
+        <span class="ec-box-text">3x1x13U Gridfinity Enclosure Box with Snapfinity Bi-Directional Sliding Hard Lid and Integrated Carry Shelf (Snap-on TPU non-skid feet sold separately)</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>

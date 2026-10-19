@@ -42,7 +42,7 @@ hide:
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
       <div class="ec-video-wrapper">
         <div class="ec-video-player">
-          <video controls playsinline preload="metadata" poster="../../../assets/renders/dice-spinner-craftsmanship.png">
+          <video controls playsinline preload="metadata" poster="../../assets/renders/dice-spinner-craftsmanship.png">
             <source src="/assets/videos/dice-spinner-lesson.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
@@ -79,7 +79,7 @@ hide:
 
       <!-- Concept Illustration Card -->
       <div class="mb-6 rounded-lg overflow-hidden border border-slate-700/80 bg-slate-950/60 p-4">
-        <img src="../../../assets/renders/dice-spinner-craftsmanship.png" alt="Precision 18mm Die Pips and Low-Friction Spinner Dial" class="rounded w-full mb-3" />
+        <img src="../../assets/renders/dice-spinner-craftsmanship.png" alt="Precision 18mm Die Pips and Low-Friction Spinner Dial" class="rounded w-full mb-3" />
         <div class="text-xs text-gray-300 flex items-center justify-between">
           <span><strong>Empirical Precision Instruments:</strong> 18 mm precision chamfered d6 die with centered pips paired with a low-friction balanced pointer needle.</span>
           <span class="text-amber-400 font-mono">Fair Randomization</span>

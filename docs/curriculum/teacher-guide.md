@@ -75,7 +75,7 @@ When a student raises their hand during a StackCalc lab, use this rapid 3-step d
 * **What Happens:** When working with Prime Factor Studio, a student stacks a 2 block and a 3 block and expects the height to measure $5$ on the scale rather than $6$.
 * **The Cause:** Habituation to linear addition rods (like Counting Tiles or Cuisenaire rods) rather than logarithmic factor scaling.
 * **The 5-Second Teacher Cue:**  
-  > *"Remember: prime blocks do not add—they multiply! When you stack a 2 block on a 3 block, you are physically multiplying: $2 \times 3 = 6$. Look at the engraved slide rule scale on your box wall: the stack top hits exactly 6.0! Press `6 {{key:FACT}}` on your SC-6 to see your factors verified on the LCD."*
+  > *"Remember: prime blocks do not add—they multiply! When you stack a 2 block on a 3 block, you are physically multiplying: $2 \times 3 = 6$. Compare your stack to the Composite 6 height or Factor Lid socket: the stack levels perfectly flush! Press `6 {{key:FACT}}` on your SC-6 to see your factors verified on the LCD."*
 
 ---
 
