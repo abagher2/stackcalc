@@ -128,6 +128,14 @@ AUDIT_RULES: List[Tuple[str, re.Pattern, str]] = [
         "Design-persona bleed callout label in reader-facing text (Gate S16)",
     ),
     (
+        "AI_SLOP_TELLTALES",
+        re.compile(
+            r"(?:Thematic Arc|Mission Briefing:|Scale Big on StackCalc|Model(?:ing)? small with blocks|Teaching & Instrument Architecture|Automated Engine Reliability|100% Engine Grounding|Physical & Geometric Motivation:|Curriculum Cross-Reference:|Superpower Showdown|Superpower [1-4]|Hands-On Studio Proof|Deviation Rubric|button rubric|publication-grade|Without nested parentheses or temporary memory registers, we stage|On the RPN stack, we evaluate this relationship|Classroom Script \d|Verbatim Teacher Dialogue)",
+            re.IGNORECASE,
+        ),
+        "AI-slop tell-tale or prompt-to-prose bleed in compiled PDF (Gate S16)",
+    ),
+    (
         "SWALLOWED_HRULE",
         re.compile(r"[.!?\"”)]\s+---\s*(?:\n|$)"),
         "Swallowed markdown horizontal rule (---) at end of paragraph",

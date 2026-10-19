@@ -866,8 +866,9 @@ def validate_no_single_brace_macros(manuals_dir: Path) -> int:
 
 def validate_no_persona_or_cra_bleed(manuals_dir: Path) -> None:
     """
-    Gate S16: Asserts that zero design-persona labels or explicit CRA scaffolding tags
-    bleed into the chapter manuscripts or consolidated user guides.
+    Gate S16: Asserts that zero design-persona labels, explicit CRA scaffolding tags,
+    prompt-to-prose echoes, or AI-slop templates bleed into the chapter manuscripts
+    or consolidated user guides.
     """
     banned_patterns = [
         r"Homeschooler Diagnostic Checkpoint",
@@ -885,6 +886,30 @@ def validate_no_persona_or_cra_bleed(manuals_dir: Path) -> None:
         r"\*Concrete:\*",
         r"\*Representational:\*",
         r"\*Abstract:\*",
+        r"Thematic Arc",
+        r"Mission Briefing:",
+        r"Scale Big on (?:StackCalc|your SC-6)",
+        r"Model(?:ing)? small with blocks",
+        r"\\le 24\$\s*tiles",
+        r"\(\$\\le 24\$\)",
+        r"Teaching & Instrument Architecture",
+        r"Instrument Architecture & Diagnostic",
+        r"Automated Engine Reliability",
+        r"100% Engine Grounding",
+        r"\*Physical & Geometric Motivation:\*",
+        r"\*Curriculum Cross-Reference:\*",
+        r"Superpower Showdown",
+        r"Superpower [1-4]",
+        r"Hands-On Studio Proof",
+        r"Deviation Rubric",
+        r"button rubric",
+        r"publication-grade",
+        r"masterwork",
+        r"To evaluate [^\n]+ without nested parentheses",
+        r"On the RPN stack, we evaluate this relationship",
+        r"Classroom Script \d",
+        r"Script \d+\.\d+:",
+        r"Verbatim Teacher Dialogue",
     ]
     combined_pat = re.compile("|".join(banned_patterns), flags=re.IGNORECASE)
     target_files = [
@@ -900,7 +925,7 @@ def validate_no_persona_or_cra_bleed(manuals_dir: Path) -> None:
             line_no = txt[:m.start()].count("\n") + 1
             violations.append(f"{fpath.relative_to(REPO_ROOT)}:{line_no} -> {m.group(0)!r}")
     assert not violations, (
-        f"Gate S16 Persona-Bleed / Explicit CRA Scaffolding Failure ({len(violations)} violation(s)):\n  "
+        f"Gate S16 Anti-AI-Slop / Persona-Bleed / Explicit CRA Scaffolding Failure ({len(violations)} violation(s)):\n  "
         + "\n  ".join(violations[:15])
     )
 
