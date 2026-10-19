@@ -2073,6 +2073,10 @@
                                         <span>Direct PO Desk:</span>
                                         <a href="mailto:quotes@stackcalc.io" class="text-white hover:underline">quotes@stackcalc.io</a>
                                     </div>
+                                    <div class="flex items-center justify-between">
+                                        <span>Airtable Order Portal:</span>
+                                        <a href="https://airtable.com/appYhkU9LnDyADu9c/shryXkWkwiBlljTVv" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">Open Live Form ↗</a>
+                                    </div>
                                     <div class="text-slate-500">
                                         Net-30 Vendor Ready &bull; Signed W-9 &bull; Direct Parcel Drop-Ship
                                     </div>
@@ -2113,14 +2117,17 @@
                                 </div>
 
                                 <div class="space-y-2 pt-2">
+                                    <a id="po-conf-airtable-link" href="https://airtable.com/appYhkU9LnDyADu9c/shryXkWkwiBlljTVv" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3 rounded bg-[#FF5500] hover:bg-[#FF6611] text-white font-bold text-center block transition text-[11px] shadow-lg shadow-orange-950/20">
+                                        SUBMIT VIA AIRTABLE ORDER FORM ↗
+                                    </a>
                                     <button type="button" onclick="printPOQuote()" class="w-full py-2.5 px-3 rounded bg-emerald-600/30 hover:bg-emerald-600/40 text-emerald-200 font-bold text-center border border-emerald-500/50 transition text-[11px] flex items-center justify-center gap-1.5">
                                         <span>📄</span>
                                         <span>PRINT OFFICIAL NET-30 QUOTE (PDF)</span>
                                     </button>
-                                    <a id="po-conf-email-link" href="#" class="w-full py-2.5 px-3 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-center block transition text-[11px]">
+                                    <a id="po-conf-email-link" href="#" class="w-full py-2 px-3 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-center block transition text-[11px]">
                                         OPEN COPY IN EMAIL CLIENT ↗
                                     </a>
-                                    <button type="button" onclick="resetPOForm()" class="w-full py-2 text-slate-400 hover:text-white text-center block transition text-[10px]">
+                                    <button type="button" onclick="resetPOForm()" class="w-full py-1 text-slate-400 hover:text-white text-center block transition text-[10px]">
                                         &larr; Modify Requisition / Select Other Items
                                     </button>
                                 </div>
@@ -3304,6 +3311,31 @@
                 confMailLink.href = `mailto:quotes@stackcalc.io?subject=Official%20School%20Purchase%20Order%20Requisition%20-%20${encodeURIComponent(schoolName)}%20(${refCode})&body=${mailBody}`;
             }
 
+            // Build Prefilled Airtable Requisition Form URL
+            const rawTotalNum = parseFloat(total.replace(/[^0-9.]/g, '')) || 0;
+            const airtableParams = new URLSearchParams();
+            airtableParams.append('prefill_Name', `${schoolName} - ${refCode}`);
+            airtableParams.append('prefill_School / Organization', schoolName);
+            if (contactName) airtableParams.append('prefill_Contact Name', contactName);
+            if (schoolEmail) airtableParams.append('prefill_Contact Email', schoolEmail);
+            if (schoolAddress) airtableParams.append('prefill_Delivery Address', schoolAddress);
+            if (itemsSummary.length) airtableParams.append('prefill_Items Ordered', itemsSummary.join('\n'));
+            if (rawTotalNum > 0) airtableParams.append('prefill_Total Amount', rawTotalNum.toFixed(2));
+            airtableParams.append('prefill_PO Number', refCode);
+            airtableParams.append('prefill_Payment Terms', 'Net-30 Invoice');
+            if (notes) airtableParams.append('prefill_Notes', notes);
+
+            const airtableUrl = `https://airtable.com/appYhkU9LnDyADu9c/shryXkWkwiBlljTVv?${airtableParams.toString()}`;
+            const confAirtableLink = document.getElementById('po-conf-airtable-link');
+            if (confAirtableLink) {
+                confAirtableLink.href = airtableUrl;
+            }
+
+            // Auto-open prefilled Airtable order form in new tab
+            try {
+                window.open(airtableUrl, '_blank', 'noopener,noreferrer');
+            } catch (e) {}
+
             // Asynchronous submission to FormSubmit endpoint (silent fallback)
             try {
                 fetch('https://formsubmit.co/ajax/quotes@stackcalc.io', {
@@ -3318,7 +3350,8 @@
                         delivery_address: schoolAddress,
                         notes: notes,
                         selected_items: itemsSummary.join('; '),
-                        estimated_total: total
+                        estimated_total: total,
+                        airtable_portal: airtableUrl
                     })
                 }).catch(() => {});
             } catch (err) {}
