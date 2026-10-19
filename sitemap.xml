@@ -2,550 +2,406 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.stackcalc.io/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/downloads/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/etsy-publishing-guide/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/exam-compliance/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/firmware/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hardware/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/ios_app/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/learning-lab/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/press/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/privacy/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/shipping-and-packaging/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/support/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/terms/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/tutorials/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/api/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/08/26/what-the-firmware-simulator-can-tell-us-before-board-bring-up/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/what-the-first-printed-stackcalc-prototype-can-teach-us/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/from-an-origami-box-to-a-puzzle-stand/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/fuzzing-the-firmware-path-in-an-rp2350-emulator/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/how-the-pcb-design-shapes-a-printed-calculator-before-it-arrives/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/making-the-four-level-stack-visible-before-the-first-keypress/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/one-calculator-core-for-watch-phone-and-rp2350/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/profiling-the-emulated-firmware-loop-before-board-bring-up/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/reading-an-expression-tree-as-a-postfix-program/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/teaching-fractions-as-an-rpn-sequence/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/a-tool-free-calculator-built-around-a-sliding-assembly/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/why-rpn-needs-an-ecosystem-not-another-retro-replica/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/22/why-we-started-with-the-apple-watch/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/24/the-tpu-button-video-is-a-design-review-not-a-slow-motion-test/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/09/24/we-pressed-one-tpu-key-280-ways-before-the-pcb-arrived/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/2026/10/12/the-postfix-manifesto/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/curriculum/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/curriculum/alignment-matrix/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/curriculum/rpn-elementary-guide/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/curriculum/teacher-guide/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/curriculum/uil-competition/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/curriculum/worksheets/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/assets/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/board-arrival/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/build-instructions/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/files/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/launch-cadence/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/launch-gate/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/logs/log-01-the-watch-constraint/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/logs/log-02-one-calculator-core/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/logs/log-03-tool-free-sliding-assembly/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/logs/log-04-tpu-membrane-fea-study/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/logs/log-05-learning-lab-and-stack-stage/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/logs/log-06-cross-surface-fuzzing-and-emulation/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/logs/log-07-origami-to-puzzle-stand/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/hackaday/logs/log-08-pcb-envelope-and-fabrication/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/manuals/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/manuals/bestseller-rubric-and-editorial-guide/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/manuals/critical-editorial-review-and-school-adoption/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32-user-guide/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6-user-guide/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/01-craftsmanship-hardware/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/02-rpn-stack-dynamics/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/03-algebra-transcendentals/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/04-trig-vectors-polar/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/05-complex-numbers-phasors/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/06-geometry-surface-area/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/07-polynomials-brent-solver/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/08-calculus-romberg-quadrature/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/09-statistics-curve-fitting/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/10-computer-science-bases/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/11-financial-tvm/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/12-function-scatter-plotting/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/13-applied-stem-case-studies/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/14-uil-contest-playbook/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/appendix-a-stack-lift-state-machine/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/appendix-b-error-catalog/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/appendix-c-keycap-directory/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/appendix-d-constants-and-equations/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc32/appendix-e-annotated-bibliography/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/01-hardware-architecture/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/02-rpn-for-young-learners/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/03-counting-place-value/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/04-operations-skip-counting/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/05-fractions-decimals-ratios/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/06-geometry-surface-area/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/07-data-probability-primes/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/08-math-quiz-engine/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/09-applied-stem-labs/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/appendix-a-manipulative-blueprints/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/appendix-b-teacher-lesson-plans/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/appendix-c-formulas-and-conversions/</loc>
-         <lastmod>2026-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://www.stackcalc.io/manuals/sc6/appendix-d-keycap-directory/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/curriculum-and-decks/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/sc6-elementary/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/stands-and-pouches/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/unit-circle-volvelle/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/algebra-boxes/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/algebra-boxes/assembly/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/algebra-boxes/lessons/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/classroom-clock/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/classroom-clock/assembly/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/classroom-clock/lessons/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/counting-tiles/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/dice-and-spinner/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/dice-and-spinner/assembly/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/dice-and-spinner/lessons/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/fraction-studio/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/fraction-studio/assembly/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/fraction-studio/lessons/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/math-dominoes/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/math-dominoes/assembly/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/math-dominoes/lessons/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/prime-factor-studio/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/sc32-calculator/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/sc32-calculator/assembly/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/sc32-calculator/lessons/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/ten-frames/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/ten-frames/assembly/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/products/ten-frames/lessons/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/archive/2026/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/pedagogy/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/hardware/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/rpn/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/design/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/simulation/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/3d-printing/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/testing/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/product-design/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/firmware/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/pcb/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/education/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/ios/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/performance/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/category/mathematics/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/page/2/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
     <url>
          <loc>https://www.stackcalc.io/blog/archive/2026/page/2/</loc>
-         <lastmod>2026-10-16</lastmod>
+         <lastmod>2026-10-19</lastmod>
     </url>
 </urlset>
