@@ -120,6 +120,14 @@ AUDIT_RULES: List[Tuple[str, re.Pattern, str]] = [
         "Explicit pedagogical scaffolding label instead of integrated narrative",
     ),
     (
+        "PERSONA_BLEED_LABELS",
+        re.compile(
+            r"(?:Homeschooler Diagnostic Checkpoint|Stack Verification Checkpoint|Diagnostic Checkpoint \d|Calculator Enthusiast Note|Note for HP Purists|HP Purist Tip|For Parents & Teachers:|For Educators & Parents:|Parent's De-Stressing Guide:|For the Skeptical Parent:|Contest Quick-Lookup Cross-Reference:)",
+            re.IGNORECASE,
+        ),
+        "Design-persona bleed callout label in reader-facing text (Gate S16)",
+    ),
+    (
         "SWALLOWED_HRULE",
         re.compile(r"[.!?\"”)]\s+---\s*(?:\n|$)"),
         "Swallowed markdown horizontal rule (---) at end of paragraph",

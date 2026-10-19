@@ -1154,7 +1154,11 @@ def expand_res_macros(text: str) -> str:
         return text
     if _SEQUENCES_REGISTRY is None:
         import json
-        reg_path = REPO_ROOT / "docs" / "assets" / "manuals" / "sequences_registry.json"
+        reg_path = (
+            REPO_ROOT / "documentation" / "manuals" / "assets" / "sequences_registry.json"
+            if (REPO_ROOT / "documentation" / "manuals" / "assets" / "sequences_registry.json").exists()
+            else REPO_ROOT / "docs" / "assets" / "manuals" / "sequences_registry.json"
+        )
         if reg_path.exists():
             _SEQUENCES_REGISTRY = json.loads(reg_path.read_text(encoding="utf-8"))
         else:
@@ -1987,8 +1991,13 @@ def get_manual_files(repo_root: Path, target_file: Optional[Path] = None) -> Lis
         return [target_file]
 
     files: List[Path] = []
+    manuals_base = (
+        repo_root / "documentation" / "manuals"
+        if (repo_root / "documentation" / "manuals").exists()
+        else repo_root / "docs" / "manuals"
+    )
     for sub in ("sc32", "sc6"):
-        dir_path = repo_root / "docs" / "manuals" / sub
+        dir_path = manuals_base / sub
         if dir_path.exists():
             files.extend(sorted(dir_path.glob("*.md")))
     return files

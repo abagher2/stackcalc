@@ -28,6 +28,21 @@ from typing import List, Set, Tuple
 
 TOOLS_DIR = Path(__file__).resolve().parent
 REPO_ROOT = TOOLS_DIR.parent
+MANUALS_DIR = (
+    REPO_ROOT / "documentation" / "manuals"
+    if (REPO_ROOT / "documentation" / "manuals").exists()
+    else REPO_ROOT / "docs" / "manuals"
+)
+ASSETS_MANUALS_DIR = (
+    MANUALS_DIR / "assets"
+    if (MANUALS_DIR / "assets").exists()
+    else REPO_ROOT / "docs" / "assets" / "manuals"
+)
+STACKCALC_DOCS_DIR = (
+    REPO_ROOT / "docs"
+    if (REPO_ROOT / "docs").exists()
+    else REPO_ROOT.parent / "stackcalc" / "docs"
+)
 if str(TOOLS_DIR) not in sys.path:
     sys.path.insert(0, str(TOOLS_DIR))
 
@@ -574,7 +589,7 @@ def convert_images_and_sequences_to_macros(text: str, file_path: Path, is_sc32: 
                 out_lines.append(f"{{{{blocks:{bid}|{clean_caption}}}}}")
                 continue
 
-            if img_name.endswith(".png") and (REPO_ROOT / "docs" / "assets" / "manuals" / "screenshots" / img_name).exists():
+            if img_name.endswith(".png") and (ASSETS_MANUALS_DIR / "screenshots" / img_name).exists():
                 shot_id = img_name[:-4]
                 out_lines.append(f"{{{{res:{shot_id}:screenshot|{clean_caption}}}}}")
                 continue
@@ -586,14 +601,14 @@ def convert_images_and_sequences_to_macros(text: str, file_path: Path, is_sc32: 
 
 def sync_consolidated_user_guides() -> None:
     """
-    Synchronizes the single-page web manuals (`docs/manuals/sc32-user-guide.md` and
-    `docs/manuals/sc6-user-guide.md`) directly from the rendered chapter files so
+    Synchronizes the single-page web manuals (`sc32-user-guide.md` and
+    `sc6-user-guide.md`) directly from the rendered chapter files so
     they never drift from the chapter sources.
     """
     for is_sc32 in (True, False):
         sub = "sc32" if is_sc32 else "sc6"
         guide_name = "sc32-user-guide.md" if is_sc32 else "sc6-user-guide.md"
-        guide_path = REPO_ROOT / "docs" / "manuals" / guide_name
+        guide_path = MANUALS_DIR / guide_name
         if not guide_path.exists():
             continue
 
@@ -602,7 +617,7 @@ def sync_consolidated_user_guides() -> None:
         m_fm = re.match(r"^(---\n.*?\n---\n.*?---\n)", orig_guide, flags=re.DOTALL)
         header = m_fm.group(1) if m_fm else ""
 
-        chapter_files = sorted((REPO_ROOT / "docs" / "manuals" / sub).glob("*.md"))
+        chapter_files = sorted((MANUALS_DIR / sub).glob("*.md"))
         ordered = [p for p in chapter_files if p.name == "index.md"] + [
             p for p in chapter_files if p.name != "index.md"
         ]
@@ -627,9 +642,9 @@ def sync_consolidated_user_guides() -> None:
 
 def process_all_files() -> None:
     manual_files: List[Tuple[Path, bool]] = []
-    for p in sorted((REPO_ROOT / "docs" / "manuals" / "sc32").glob("*.md")):
+    for p in sorted((MANUALS_DIR / "sc32").glob("*.md")):
         manual_files.append((p, True))
-    for p in sorted((REPO_ROOT / "docs" / "manuals" / "sc6").glob("*.md")):
+    for p in sorted((MANUALS_DIR / "sc6").glob("*.md")):
         manual_files.append((p, False))
 
     total_fences_fixed = 0
@@ -750,7 +765,7 @@ def process_all_files() -> None:
 
     # 4. Validate all entries in sequences_registry.json for monadic-ENTER, double-shift, or placeholder res defects
     import json
-    seq_reg_path = REPO_ROOT / "docs" / "assets" / "manuals" / "sequences_registry.json"
+    seq_reg_path = ASSETS_MANUALS_DIR / "sequences_registry.json"
     seq_reg_data = json.loads(seq_reg_path.read_text(encoding="utf-8"))
     assert len(seq_reg_data) >= 650, f"Expected >= 650 sequences in sequences_registry.json, found {len(seq_reg_data)}"
     for seq_id, seq_entry in seq_reg_data.items():
@@ -769,7 +784,7 @@ def process_all_files() -> None:
             assert shift_k not in s_txt, f"Duplicate shift macro in sequences_registry.json[{seq_id}]: {s_txt}"
 
     # 4b. Validate citations_registry.json and bibliography.bib
-    citations_reg_path = REPO_ROOT / "docs" / "assets" / "manuals" / "citations_registry.json"
+    citations_reg_path = ASSETS_MANUALS_DIR / "citations_registry.json"
     assert citations_reg_path.exists(), f"Missing {citations_reg_path}"
     citations_reg_data = json.loads(citations_reg_path.read_text(encoding="utf-8"))
     assert len(citations_reg_data) >= 30, f"Expected >= 30 citations in citations_registry.json, found {len(citations_reg_data)}"
@@ -780,11 +795,14 @@ def process_all_files() -> None:
         assert c_entry.get("annotation"), f"Missing annotation in citations_registry.json[{cid}]"
         assert c_entry.get("volume_scope") in ("sc32", "sc6", "both"), f"Invalid volume_scope in citations_registry.json[{cid}]"
 
-    # 5. Validate website curriculum, tutorial, and learning-lab pages
+    # 5. Validate website curriculum, tutorial, and learning-lab pages (if present)
     curriculum_pages = [
-        REPO_ROOT / "docs" / "learning-lab.md",
-        REPO_ROOT / "docs" / "tutorials.md",
-        *sorted((REPO_ROOT / "docs" / "curriculum").glob("*.md")),
+        p for p in [
+            STACKCALC_DOCS_DIR / "learning-lab.md",
+            STACKCALC_DOCS_DIR / "tutorials.md",
+            *(sorted((STACKCALC_DOCS_DIR / "curriculum").glob("*.md")) if (STACKCALC_DOCS_DIR / "curriculum").exists() else []),
+        ]
+        if p.exists()
     ]
     for cpath in curriculum_pages:
         ctxt = cpath.read_text(encoding="utf-8")
@@ -804,8 +822,11 @@ def process_all_files() -> None:
     stack_stats = audit_all_tables_and_traces(repo_root=REPO_ROOT, strict=strict_stack, verbose=False)
     assert stack_stats["tables_checked"] >= 200, f"Expected >= 200 signature showcase tables in Gate S15, found {stack_stats['tables_checked']}"
 
-    # 8. Gate S12: Assert zero single-brace {key:, {res:, or {cite: macro patterns in docs/manuals/
-    manuals_scanned = validate_no_single_brace_macros(REPO_ROOT / "docs" / "manuals")
+    # 8. Gate S12: Assert zero single-brace {key:, {res:, or {cite: macro patterns in manuals/
+    manuals_scanned = validate_no_single_brace_macros(MANUALS_DIR)
+
+    # 9. Gate S16: Assert zero persona-bleed callout labels or explicit CRA scaffolding in chapter files & consolidated guides
+    validate_no_persona_or_cra_bleed(MANUALS_DIR)
 
     print(f"✅ Transformed and validated {len(manual_files)} manual chapter/appendix files + {len(curriculum_pages)} curriculum pages + 2 consolidated guides.")
     print(f"   - Validated {{key:...}} / {{keycap:...}} macros: {total_key_macros:,}")
@@ -816,13 +837,14 @@ def process_all_files() -> None:
     disc_msg = "100% PASS" if stack_stats["table_discrepancies"] == 0 else f"{stack_stats['table_discrepancies']} discrepancies tracked"
     print(f"   - Gate S10 Stack Verification:                   {stack_stats['tables_checked']:,} tables / {stack_stats['traces_checked']:,} inline traces audited ({disc_msg})")
     print(f"   - Gate S12 Single-Brace Macro Audit:             {manuals_scanned} manual files scanned (0 single-brace {{key:/{{res:/{{cite: defects)")
+    print("   - Gate S16 Persona-Bleed & CRA Scaffolding:      0 persona labels / 0 explicit CRA bullets: 100% PASS")
     print("   - Zero ASCII boxes, zero dummy tables, zero placeholder results, zero double-shifts, zero monadic-ENTER bugs: 100% PASS")
     print("   - Code fence parity, inline backtick parity, and section numbering uniqueness: 100% PASS")
 
 
 def validate_no_single_brace_macros(manuals_dir: Path) -> int:
     """
-    Gate S12: Scans all .md files in docs/manuals/ and asserts that zero single-brace
+    Gate S12: Scans all .md files in manuals_dir and asserts that zero single-brace
     (?<!{){key:, (?<!{){res:, or (?<!{){cite: macro patterns exist.
     """
     single_brace_pat = re.compile(r"(?<!\{)\{(?:key|res|cite):")
@@ -842,10 +864,55 @@ def validate_no_single_brace_macros(manuals_dir: Path) -> int:
     return files_checked
 
 
+def validate_no_persona_or_cra_bleed(manuals_dir: Path) -> None:
+    """
+    Gate S16: Asserts that zero design-persona labels or explicit CRA scaffolding tags
+    bleed into the chapter manuscripts or consolidated user guides.
+    """
+    banned_patterns = [
+        r"Homeschooler Diagnostic Checkpoint",
+        r"Stack Verification Checkpoint",
+        r"Diagnostic Checkpoint \d",
+        r"Calculator Enthusiast Note",
+        r"Note for HP Purists",
+        r"HP Purist Tip",
+        r"For Parents &(?:amp;)? Teachers:",
+        r"For Educators &(?:amp;)? Parents:",
+        r"Parent's De-Stressing Guide:",
+        r"For the Skeptical Parent:",
+        r"Contest Quick-Lookup Cross-Reference:",
+        r"CRA Pedagogical Sequence",
+        r"\*Concrete:\*",
+        r"\*Representational:\*",
+        r"\*Abstract:\*",
+    ]
+    combined_pat = re.compile("|".join(banned_patterns), flags=re.IGNORECASE)
+    target_files = [
+        *sorted((manuals_dir / "sc32").glob("*.md")),
+        *sorted((manuals_dir / "sc6").glob("*.md")),
+        *([manuals_dir / "sc32-user-guide.md"] if (manuals_dir / "sc32-user-guide.md").exists() else []),
+        *([manuals_dir / "sc6-user-guide.md"] if (manuals_dir / "sc6-user-guide.md").exists() else []),
+    ]
+    violations: List[str] = []
+    for fpath in target_files:
+        txt = fpath.read_text(encoding="utf-8")
+        for m in combined_pat.finditer(txt):
+            line_no = txt[:m.start()].count("\n") + 1
+            violations.append(f"{fpath.relative_to(REPO_ROOT)}:{line_no} -> {m.group(0)!r}")
+    assert not violations, (
+        f"Gate S16 Persona-Bleed / Explicit CRA Scaffolding Failure ({len(violations)} violation(s)):\n  "
+        + "\n  ".join(violations[:15])
+    )
+
+
 def export_curriculum_uil_registry() -> None:
     """Export all 650 UIL competition problems and 452 curriculum items to curriculum_uil_registry.json."""
     import json
-    edu_tools = REPO_ROOT.parent / "watch-calc-32" / "Education" / "tools"
+    edu_tools = (
+        REPO_ROOT / "Education" / "tools"
+        if (REPO_ROOT / "Education" / "tools").exists()
+        else REPO_ROOT.parent / "watch-calc-32" / "Education" / "tools"
+    )
     if not edu_tools.exists():
         return
     if str(edu_tools) not in sys.path:
@@ -959,7 +1026,7 @@ def export_curriculum_uil_registry() -> None:
                 "prompt": f"{ch.curriculum} {ch.grade_level} {ch.chapter_number} B{p_idx}: {wp}",
             }
 
-    out_path = REPO_ROOT / "docs" / "assets" / "manuals" / "curriculum_uil_registry.json"
+    out_path = ASSETS_MANUALS_DIR / "curriculum_uil_registry.json"
     out_path.write_text(json.dumps(registry, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
