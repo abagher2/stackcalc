@@ -42,44 +42,50 @@ description: "A 45-day, chapter-by-chapter middle school math catch-up curriculu
 
 ---
 
-## 1. Why Kids Hate Middle School Math—And How We Fix It
+## 1. Breaking the "I'm Bad at Math → I Hate It → I Won't Try" Cycle
 
-When a middle schooler says *"I'm bad at math"* or *"I hate math,"* they almost never hate actual patterns, building things, or figuring out puzzles. What they hate are **three artificial barriers** built into traditional middle school math homework:
+The biggest barrier for struggling middle schoolers isn't the math itself—it's **protective shutdown**:
+$$\text{"I'm not good at math"} \longrightarrow \text{"I hate math"} \longrightarrow \text{"If I don't try, I can't fail."}$$
+Traditional remedial worksheets fail these students in two opposite ways: if the page looks hard or wordy, they freeze and refuse to start; if the page looks like 2nd-grade "baby math," they feel insulted, get bored, and tune out.
 
-### Barrier 1: The "Show Your Work" Handwriting Trap
-In traditional classrooms, "showing your work" means rewriting an entire line of numbers five times in a row just to change one piece at a time:
+This 45-day program is engineered around **Four Confidence &amp; Focus Mechanics** that get reluctant students winning within 30 seconds while keeping their brains locked in:
+
+### Mechanic 1: The 30-Second "Zero-Fail Starter" + The 3-Speed Daily Ramp
+Every lesson begins with a **30-Second Zero-Fail Starter**—a physical block build + 2-button SC-6 press that is *impossible to fail* because you literally watch the answer happen in your hands before solving a single problem. Then, instead of 3 repetitive drill problems, each day's 3-problem workout follows a **3-Speed Confidence &amp; Variety Ramp**:
+1. **🟢 Problem 1 — The 60-Second Quick Win ("Wait, That Was Easy"):** Friendly numbers, one physical build, one button sequence. Guarantees an immediate green-light dopamine win in under a minute so the student drops their guard and starts trying.
+2. **🟡 Problem 2 — The Rotating Variety Game (High Focus, Zero Boredom):** Never a repetitive drill! Problem 2 rotates across **5 Game Modes** (*Spot the Glitch*, *Mystery Target*, *Human vs. Screen*, *2-Second Shortcut*, and *Live Dice/Custom Roll*) so every day feels like a fresh puzzle.
+3. **🔴 Problem 3 — The "Secret Genius" Boss + `★★ Twin-Way Bonus`:** A real Grade 6/7 boss problem that *looks* impressive—the kind of problem the "math kids" do—but because the student just mastered the blocks and SC-6 elevator on Problems 1 &amp; 2, they crush it in 90 seconds!
+
+### Mechanic 2: The "Show Your Work" Fix — Your 2-Number Elevator Snapshot IS Your Work
+In traditional classrooms, "showing your work" means rewriting an entire line of numbers five times in a row:
 $$\begin{aligned}
 50 - (4 \times 8) + 6 &= 50 - 32 + 6 \\
 &= 18 + 6 \\
 &= 24
 \end{aligned}$$
-For a student with handwriting fatigue, ADHD, dysgraphia, or working-memory overload, copying the same numbers over and over is torture. One miscopied digit ruins the answer, or the student simply computes it mentally, writes `24`, and gets marked wrong for *"not showing steps."*
+For a student with handwriting fatigue, ADHD, or working-memory overload, recopying lines is torture.
 
-> **The StackCalc Fix — Your 2-Number "Elevator Snapshot" IS Your Work:**  
-> On the **SC-6 Calculator**, intermediate steps don't vanish into thin air—they sit visibly on **Floor 2 (`Y`)** and **Floor 1 (`X`)** of the 4-line LCD screen! Instead of rewriting 5 lines of algebra, students fill in one tiny **Elevator Snapshot box (`Y: ___ | X: ___`)** right before pressing the final operation key. Writing **two numbers** proves they did the intermediate steps, with zero recopying busywork!
+> **The StackCalc Fix — Write 2 Numbers, Not 5 Lines:**  
+> On the **SC-6 Calculator**, intermediate steps sit visibly on **Floor 2 (`Y`)** and **Floor 1 (`X`)** of the 4-line LCD screen! Students simply jot down the **two numbers in the Elevator Snapshot box (`Y: ___ | X: ___`)** right before pressing the final key. Writing **two numbers** proves they did the steps, with zero recopying busywork!
 
-### Barrier 2: The "Solve the Same Problem 4 Different Ways" Frustration
-The *Big Ideas Math* textbook routinely asks students to perform the **exact same operation in three or four different ways**:
-- *"Find the GCF of 18 and 24 using (a) a list of factors, (b) factor trees, AND (c) a Venn diagram."*
-- *"Divide $\frac{3}{4} \div \frac{1}{8}$ using (a) a tape diagram, (b) common denominators, AND (c) the reciprocal."*
-- *"Find the equivalent ratio using (a) a tape diagram, (b) a ratio table, (c) a double number line, AND (d) unit rates."*
+### Mechanic 3: Why Kids Hate "Multiple Ways"—And How the 3-Visit Spiral Fixes It
+The *Big Ideas Math* textbook routinely asks students to perform the **exact same operation in three or four different ways on the same page** (e.g., Factor Tree + List + Venn Diagram; Tape Diagram + Ratio Table + Double Number Line). Why do students hate this? Because **when a teacher forces all 3 approaches on Day 1 with small, easy numbers, Approach #1 already gave the answer!** Approaches #2 and #3 feel like pointless busywork.
 
-Kids who dislike math feel like the textbook is playing a trick on them: *"Why do I have to do four times the drawing if I already know the answer?!"*
+> **The StackCalc Fix — The 3-Visit Spiral Path &amp; "Try-Another-Way" Rewards:**  
+> Instead of dumping three methods on a student on the same day, we **revisit the same core idea multiple times** across the chapter and across later chapters. Each revisit stretches the numbers so the student *feels* why the new approach is a rescue tool:
+> 1. **Visit 1 — 🔨 The Hands-On Builder Way (Small Numbers):** Use **only 1 way**—physical blocks on the desk. Zero rules to memorize.
+> 2. **Visit 2 — ⚡ The Pattern / Visual Model Way (Revisit When Blocks Get Crowded):** Two days later, we revisit the same idea with bigger numbers where counting plastic blocks would take too long. Now the Pattern/Table way feels like a smart upgrade!
+> 3. **Visit 3 — 🚀 The Stack Hacker Way (Boss Revisit &amp; Cross-Chapter Boomerang):** When the numbers get messy or multi-step, we revisit the idea a third time and unlock the 2-button SC-6 Stack Shortcut (`{{key:1/x}}`, `{{key:GCF}}`, `{{key:%CHG}}`, `{{key:Σ+}}`).
+> 4. **Real Rewards for Trying Different Ways (`★★` $\to$ `🛡️ Skip Shield` + `🪪 Dealer's Choice`):** Problems 1 and 2 require **only 1 way**. Only **🔴 Problem 3** offers the **Twin-Way Revisit Bonus (`★★`)**: if a student solves Problem 3 with today's way AND confirms the same answer using an earlier visit's way, they earn a **Twin-Way Star (`★★`)**. Every 3 Twin-Way Stars unlocks a **`🛡️ Skip-1-Problem Shield`** (legally cross out any 1 problem on a future day!) and stamping all 3 ways (`🔨 + ⚡ + 🚀`) unlocks the chapter's **`🪪 Dealer's Choice License`** (use *only* your favorite method on Friday tests!).
 
-> **The StackCalc Fix — "One Build, Three Camera Angles":**  
-> We never make a student draw three separate procedures from scratch. Instead, the student builds the problem **ONCE** with physical StackCalc blocks on their desk. Every lesson includes a **"Multiple-Ways Decoder"** proving that the textbook's "different methods" are literally just **three camera angles of the single block build** already sitting in front of them—and one button press on the SC-6 (`{{key:FDISP}}`, `{{key:SIMP}}`, `{{key:FACT}}`, `{{key:÷R}}`) switches between those exact views instantly!
-
-### Barrier 3: Waiting Until Tomorrow to Find Out You Got It Wrong
-Nothing kills motivation faster than struggling through a worksheet, handing it in, and getting it back 24 hours later covered in red ink.
-
-> **The StackCalc Fix — Instant Green-Light Self-Checking (`{{key:LASTX}}`):**  
-> In this program, **the calculator is your personal referee**. Students build with blocks first, then use the SC-6's dedicated `{{key:LASTX}}`, `{{key:SIMP}}`, `{{key:FACT}}`, and `{{key:÷R}}` keys to **prove their own answer in 3 seconds**. When the screen bounces back to the starting number, the student gets an immediate dopamine win—*they know they nailed it before anyone else even looks at the page.*
+### Mechanic 4: Instant Green-Light Self-Checking (`{{key:LASTX}}`)
+Nothing kills confidence faster than handing in a page and getting it back tomorrow covered in red ink. In this program, **the SC-6 calculator is the student's private referee**. Pressing `{{key:LASTX}}` (or `{{key:SIMP}}`, `{{key:FACT}}`, `{{key:÷R}}`) bounces the answer right back to the starting number in 2 seconds—giving the student an instant private win before anyone else even looks at the page.
 
 ---
 
-## 2. The Daily 15-Minute "Touch • Stack • Prove" Protocol
+## 2. The Daily 15-Minute Routine, Variety Game Modes &amp; Reward Rules
 
-Every single day in this 45-day catch-up program uses the exact same predictable, low-stress **15-minute routine** and the **3-Box Work Ticket**:
+Every single day in this 45-day catch-up program uses the exact same predictable, low-stress **15-minute routine**, the **3-Box Work Ticket**, and the **5 Rotating Game Modes**:
 
 ```
 +===================================================================================+
@@ -89,37 +95,63 @@ Every single day in this 45-day catch-up program uses the exact same predictable
 | (10-Second Block Build)       (2-Number LCD Snapshot)      (Instant Green Light)  |
 |                                                                                   |
 | Build it once on your desk    Look at your SC-6 screen     Press [f][LASTX] (or   |
-| with the physical blocks.     right BEFORE the last key.   the lesson check key). |
-| Check the box & circle how    Write what sits on Y and X:  Did your starting      |
-| your 1 build shows all the    +------------------------+   number bounce back?    |
-| textbook's "ways" at once!    | Floor 2 (Y):  _______  |                          |
-|                               | Floor 1 (X):  _______  |   FINAL ANSWER: _______  |
-| [x] Built with Blocks!        +------------------------+   [x] Proven on SC-6!    |
+| with the physical blocks.     right BEFORE the last key.   compare 2 approaches   |
+| On Problem 3, check 2 ways    Write what sits on Y and X:  on Problem 3 for ★★!). |
+| ([ ]🔨 [ ]⚡ [ ]🚀) to earn   +------------------------+                          |
+| a Twin-Way Star (★★) toward   | Floor 2 (Y):  _______  |   FINAL ANSWER: _______  |
+| a Skip-1-Problem Shield 🛡️!   | Floor 1 (X):  _______  |   [x] Proven on SC-6!    |
+| [x] Built with Blocks!        +------------------------+   [x] ★★ Twin-Way Bonus! |
 +===================================================================================+
 ```
 
-### The 15-Minute Daily Clock
-1. **Minutes 0–2 | The "Why Should I Care?" Hook:** A fast, real-life maker, gaming, sports, food, or skateboarding scenario—zero dry textbook lecture.
-2. **Minutes 2–6 | Hands-On Build & "Multiple-Ways Decoder":** Build one physical model on the desk and see how it simultaneously answers every representation the *Big Ideas* textbook asks for.
-3. **Minutes 6–12 | The Daily 3-Problem Workout:** Just **three problems** per day (1 Warm-Up, 1 "Multiple-Ways" Core Target, 1 Boss Challenge) using the 3-Box Ticket.
-4. **Minutes 12–15 | 60-Second Speed Check & Streak Stamp:** Run a 60-second `{{key:?}}` Quiz Sprint or `{{key:LASTX}}` proof and check off today's box on the **45-Day Catch-Up Map**.
+### The 5 Rotating Daily Variety Game Modes (Why Kids Never Lose Focus)
+To make sure no two days feel like repetitive worksheet drudgery, **🟡 Problem 2** rotates through **5 High-Focus Game Modes** across every chapter:
+
+| Game Mode Badge | How the Game Works | Why Reluctant Kids Love It |
+| :--- | :--- | :--- |
+| **🕵️ Mode A: Spot the Glitch ("Who's Right?")** | Two characters argue over a common math trap (e.g., *"Leo says $2^3=6$; Maya says $2^3=8$"* or *"Does $-18$ beat $-5$?"*). Build it or stack it to bust the myth! | Kids who are scared of being wrong **love catching someone else's mistake**! |
+| **🎯 Mode B: Mystery Target ("Unlock the Vault")** | You know the final screen number (`X`), and you have to work backward or find the missing block/key to hit the target! | Turns dry arithmetic into a detective lock-picking puzzle. |
+| **⚡ Mode C: Human vs. Screen Prediction** | Look at the physical blocks and place a 2-second bet (*Bigger or Smaller? Whole or Leftover?*) **before** pressing the SC-6 operator key! | Builds real number sense and makes every button press feel like a game show reveal. |
+| **🔄 Mode D: 2-Second Shortcut Race** | Take a problem that would take 60 seconds by hand and race the SC-6's dedicated shortcut key (`{{key:FACT}}`, `{{key:GCF}}`, `{{key:1/x}}`, `{{key:Σ+}}`, `{{key:MAD}}`)! | Lets students *feel* why the new method is a superpower instead of busywork. |
+| **🎲 Mode E: Live Roll / Custom Number Lab** | Roll the physical **Probability Dice (`PROB-01`)** or press `{{key:🎲}}` on the SC-6 to generate your own live numbers! | Gives students ownership—no two worksheets in the room have the exact same numbers! |
+
+### How the "Try-Another-Way" Reward Economy Works
+| Daily Workout Tier | What the Student Does | XP &amp; Privileges Earned |
+| :--- | :--- | :--- |
+| **⚡ 30-Sec Zero-Fail Starter** | Do one 30-second hands-on build + keypress before starting the workout. | **`+5 Spark XP`** (Breaks the "I won't try" freeze immediately!) |
+| **🟢 Problem 1 &amp; 🟡 Problem 2 (`★`)** | Solve using **ONLY 1 way** (today's featured method) + write the 2-number `Y \| X` stack snapshot. | **`+10 XP` each** (Fast confidence win + variety puzzle!) |
+| **🔴 Problem 3: Secret-Genius Boss + Twin-Way Jackpot (`★★`)** | Solve Problem 3 using **Way A** (today's method) AND verify you get the exact same number using **Way B** (an earlier visit's method). Check off which 2 ways you used (`[ ] 🔨 Builder`, `[ ] ⚡ Pattern`, `[ ] 🚀 Stack Key`) and circle which way felt faster! | **`+25 Bonus XP`** + **1 Twin-Way Star (`★★`)** + stamps your Chapter Method Passport! |
+| **Reward 1: Skip-1-Problem Shield (`🛡️`)** | Collect **3 Twin-Way Stars (`★★`)** on Problem 3 across any 3 days. | Unlocks **1 `🛡️ Skip Shield`**—spend it on any future day to **legally cross out and skip 1 workout problem** with 100% credit! *(Trying a 2nd way today literally saves you a problem tomorrow!)* |
+| **Reward 2: Dealer's Choice License (`🪪`)** | Stamp all 3 method badges (`🔨 Builder` + `⚡ Pattern` + `🚀 Stack Hacker`) at least once during a chapter's revisit loop. | Unlocks the **`🪪 Dealer's Choice License`** for that chapter—on chapter quizzes or homework reviews, you are officially licensed to ignore "use method X" prompts and use **whichever single method you like best**! |
+
+### The 6 Cross-Chapter "Boomerang Threads" (Revisiting Every Big Idea 4+ Times)
+Students only appreciate a second or third approach when they see an idea **return** in a tougher disguise where the new approach saves the day. Every lesson in this workbook belongs to one of **6 Boomerang Threads** that spiral across all 10 chapters:
+
+| Boomerang Thread | Core Mathematical Idea | Visit 1: 🔨 Hands-On Builder Way | Visit 2: ⚡ Pattern / Model Way | Visit 3: 🚀 SC-6 Stack Hacker Way | Visit 4+: 🔄 Cross-Chapter Boomerang Returns |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Thread A: Factor &amp; Split** | Breaking quantities into equal prime or group building blocks | **Day 1 &amp; Day 4:** Tile Remainder Rows (`COUNT-01`) &amp; Prime Towers (`PRIME-01`) | **Day 5:** Shared Prime Tower Venn Overlap for GCF &amp; LCM | **Day 5:** Direct `{{key:FACT}}`, `{{key:GCF}}`, `{{key:LCM}}` keys | **Day 6** (Fraction `{{key:SIMP}}`), **Day 19** (Factoring Algebra $12x+18$), **Day 31** (Equation Division) |
+| **Thread B: Flip &amp; Inverse** | Every math operation has a reverse gear that undoes it | **Day 6 &amp; Day 7:** Swapping 84mm Fraction Towers (`FRAC-01`) | **Day 8:** Common-Denominator Tower Partitioning | **Day 8:** Reciprocal Flip `{{key:1/x}}` &amp; `{{key:LASTX}}` Proof | **Day 13** (Unit Rate `{{key:x⇄y}}` Flip), **Day 30–31** (1-Step Equations), **Day 44** (2-Step Equations) |
+| **Thread C: Scale &amp; Ratio** | Growing or shrinking linked quantities at a constant rate | **Day 11:** 2-Row Counting Tile Tape Diagrams (`COUNT-01`) | **Day 12:** `{{key:REP}}` Skip-Counting Ratio Tables | **Day 13–15:** Unit Rate `{{key:÷}}`, `{{key:▸%}}`, and `{{key:%CHG}}` | **Day 33** ($y = kx$ Tables &amp; Graphs), **Day 37** ($\pi$ Circle Scaling), **Day 45** (Spinner Odds) |
+| **Thread D: Inside-Out Chunking** | Solving complex shapes or expressions room-by-room | **Day 3:** 2-Room Tile Grouping on the 4-Line Stack | **Day 16–18:** Algebra Tile Substitution &amp; Split Area Rectangles $a(b+c)$ | **Day 20–22:** Polygon `{{key:RECT}}`/`{{key:TRI}}` + `{{key:Σ+}}` Memory Sum | **Day 34–36** (3D Surface Area Nets via `{{key:Σ+}}` &amp; `{{key:PRISM}}`), **Day 44** (Unwrapping $ax+b=c$) |
+| **Thread E: Zero-Pair &amp; Distance** | Opposites cancel to zero; distance is always positive | **Day 24:** Yellow/Red Bicolor Counter Zero Pairs (`BASE-10`) | **Day 25–26:** Number Rack Jumps &amp; Mirror Distance `[&#124;x&#124;]` | **Day 27–28:** 4-Quadrant Coordinate Distance via `[&#124;x&#124;]` | **Day 41** (Mean Absolute Deviation `{{key:MAD}}`), **Day 42–43** (Grade 7 Signed Arithmetic) |
+| **Thread F: Balance &amp; Fair Share** | Keeping two sides equal or leveling unequal towers | **Day 29:** Physical Algebra Stage Balance Scale (`ALGB-01`) | **Day 38:** Leveling Cube Towers to Find the Mean (`{{key:x̄}}`) | **Day 39–40:** Median &amp; Quartile Slicing (`{{key:MED}}`, `{{key:IQR}}`) | **Day 32** (Inequality Balance), **Day 44** (2-Step Balance), **Day 45** (`{{key:nCr}}` Combinations) |
 
 ---
 
 ## 3. Master 45-Day Pacing Map (Big Ideas Grade 6 + Grade 7 Bridge)
 
-| Chapter | Big Ideas Math Topic | Days | Physical Block Kit | Core SC-6 Keys Unlocked |
+| Chapter | Big Ideas Math Topic | Days | Spiral Visits (`🔨 -> ⚡ -> 🚀 -> 🔄`) | Core SC-6 Keys Unlocked |
 | :---: | :--- | :---: | :--- | :--- |
-| **Ch. 1** | **Numerical Expressions &amp; Factors** | Days 1–5 | Counting Tiles (`COUNT-01`) &amp; Prime Studio (`PRIME-01`) | `{{key:ENTER}}`, `{{key:÷R}}`, `{{key:LASTX}}`, `{{key:x²}}`, `{{key:x³}}`, `{{key:yˣ}}`, `{{key:PRIME}}`, `{{key:FACT}}`, `{{key:GCF}}`, `{{key:LCM}}` |
-| **Ch. 2** | **Fractions &amp; Decimals** | Days 6–10 | Fraction Studio 84mm (`FRAC-01`) &amp; Place Value (`PLACE-01`) | `{{key:FDISP}}`, `{{key:a ᵇ/c}}`, `{{key:d/c}}`, `{{key:SIMP}}`, `{{key:1/x}}`, `{{key:PV}}`, `{{key:IP}}`, `{{key:FP}}`, `{{key:$}}` |
-| **Ch. 3** | **Ratios, Rates &amp; Percents** | Days 11–15 | Counting Tiles (`COUNT-01`), Dominoes (`DOMI-01`), Fraction Towers | `{{key:a:b}}`, `{{key:REP}}`, `{{key:x⇄y}}`, `{{key:%}}`, `{{key:▸%}}`, `{{key:%CHG}}`, `{{key:▸cm}}`, `{{key:▸in}}`, `{{key:▸kg}}`, `{{key:▸lb}}` |
-| **Ch. 4** | **Algebraic Expressions &amp; Properties** | Days 16–19 | Algebra Boxes &amp; Stage (`ALGB-01`) &amp; Counting Tiles | 4-Stack `X,Y,Z,T`, `{{key:x⇄y}}`, `{{key:R↓}}`, `{{key:GCF}}`, `{{key:x²}}` |
-| **Ch. 5** | **Areas of Polygons &amp; Elapsed Time** | Days 20–23 | Counting Tiles (`COUNT-01`), Algebra Stage, Planetary Clock (`TIME-01`) | `{{key:RECT}}`, `{{key:TRI}}`, `{{key:Σ+}}`, `{{key:Σx}}`, `{{key:CLΣ}}`, `{{key:🕒}}`, `{{key:▸HMS}}`, `{{key:▸HR}}` |
-| **Ch. 6** | **Integers &amp; The Coordinate Plane** | Days 24–28 | Ten-Frame Bicolor Counters (`BASE-10`) &amp; Number Rack (`RACK-01`) | `{{key:+/-}}`, `[&#124;x&#124;]`, `{{key:LINE}}`, `{{key:≠}}`, `{{key:>}}`, `{{key:<}}`, `{{key:≥}}`, `{{key:≤}}` |
-| **Ch. 7** | **Equations &amp; Inequalities** | Days 29–33 | Algebra Stage (`ALGB-01`) &amp; Bicolor Counters (`BASE-10`) | `{{key:LASTX}}`, `{{key:REP}}`, `{{key:≠}}`, `{{key:>}}`, `{{key:<}}`, `{{key:≥}}`, `{{key:≤}}` |
-| **Ch. 8** | **Surface Area &amp; Volume of 3D Solids** | Days 34–37 | Counting Cubes (`COUNT-01`) &amp; Gridfinity Enclosures | `{{key:RECT}}`, `{{key:TRI}}`, `{{key:Σ+}}`, `{{key:Σx}}`, `{{key:PRISM}}`, `{{key:CONE}}`, `{{key:π}}`, `{{key:CIRC}}`, `{{key:HYP}}` |
-| **Ch. 9** | **Statistical Measures &amp; Data Displays** | Days 38–41 | Probability Dice &amp; Spinner (`PROB-01`) &amp; Counting Tiles | `{{key:Σ+}}`, `{{key:N}}`, `{{key:x̄}}`, `{{key:MED}}`, `{{key:MODE}}`, `{{key:RNG}}`, `{{key:MIN}}`, `{{key:MAX}}`, `{{key:1Q}}`, `{{key:3Q}}`, `{{key:IQR}}`, `{{key:MAD}}`, `{{key:FRQ}}` |
-| **Ch. 10** | **Grade 7 Bridge: Signed Math, 2-Step Equations &amp; Probability** | Days 42–45 | Bicolor Counters, Algebra Stage (`ALGB-01`), Dice &amp; Spinner (`PROB-01`) | `{{key:+/-}}`, `{{key:LASTX}}`, `{{key:🎲}}`, `{{key:1…x}}`, `{{key:x!}}`, `{{key:nCr}}`, `{{key:nPr}}`, `{{key:?}}` |
+| **Ch. 1** | **Numerical Expressions &amp; Factors** | Days 1–5 | **Threads A &amp; D:** Tile Rows (`🔨`) $\to$ Power Arrays (`⚡`) $\to$ 4-Stack Inside-Out (`🚀`) $\to$ Prime Towers &amp; `GCF/LCM` (`🔄`) | `{{key:ENTER}}`, `{{key:÷R}}`, `{{key:LASTX}}`, `{{key:x²}}`, `{{key:x³}}`, `{{key:yˣ}}`, `{{key:PRIME}}`, `{{key:FACT}}`, `{{key:GCF}}`, `{{key:LCM}}` |
+| **Ch. 2** | **Fractions &amp; Decimals** | Days 6–10 | **Threads A &amp; B:** 84mm Tower Swap (`🔨`) $\to$ Area Overlap (`⚡`) $\to$ Reciprocal `1/x` Flip (`🚀`) $\to$ 3-Way `FDISP` (`🔄`) | `{{key:FDISP}}`, `{{key:a ᵇ/c}}`, `{{key:d/c}}`, `{{key:SIMP}}`, `{{key:1/x}}`, `{{key:PV}}`, `{{key:IP}}`, `{{key:FP}}`, `{{key:$}}` |
+| **Ch. 3** | **Ratios, Rates &amp; Percents** | Days 11–15 | **Thread C:** Tile Tape Diagram (`🔨`) $\to$ `REP` Ratio Table (`⚡`) $\to$ Unit Rate `x⇄y` (`🚀`) $\to$ `%CHG` &amp; Units (`🔄`) | `{{key:a:b}}`, `{{key:REP}}`, `{{key:x⇄y}}`, `{{key:%}}`, `{{key:▸%}}`, `{{key:%CHG}}`, `{{key:▸cm}}`, `{{key:▸in}}`, `{{key:▸kg}}`, `{{key:▸lb}}` |
+| **Ch. 4** | **Algebraic Expressions &amp; Properties** | Days 16–19 | **Threads D &amp; A:** Tile Tray Swap (`🔨`) $\to$ Like-Term Sort (`⚡`) $\to$ Split Rectangle $a(b+c)$ (`🚀`) $\to$ `GCF` Factor Undo (`🔄`) | 4-Stack `X,Y,Z,T`, `{{key:x⇄y}}`, `{{key:R↓}}`, `{{key:GCF}}`, `{{key:x²}}` |
+| **Ch. 5** | **Areas of Polygons &amp; Elapsed Time** | Days 20–23 | **Thread D:** Grid Array (`🔨`) $\to$ Half-Rectangle Triangle (`⚡`) $\to$ `Σ+` Multi-Room Sum (`🚀`) $\to$ Base-60 Clock (`🔄`) | `{{key:RECT}}`, `{{key:TRI}}`, `{{key:Σ+}}`, `{{key:Σx}}`, `{{key:CLΣ}}`, `{{key:🕒}}`, `{{key:▸HMS}}`, `{{key:▸HR}}` |
+| **Ch. 6** | **Integers &amp; The Coordinate Plane** | Days 24–28 | **Thread E:** Zero-Pair Discs (`🔨`) $\to$ Number Rack `LINE` (`⚡`) $\to$ Mirror `[&#124;x&#124;]` (`🚀`) $\to$ Quadrant Distance (`🔄`) | `{{key:+/-}}`, `[&#124;x&#124;]`, `{{key:LINE}}`, `{{key:≠}}`, `{{key:>}}`, `{{key:<}}`, `{{key:≥}}`, `{{key:≤}}` |
+| **Ch. 7** | **Equations &amp; Inequalities** | Days 29–33 | **Threads F, B &amp; C:** Balance Pan (`🔨`) $\to$ Inverse `+` / `-` (`⚡`) $\to$ Inverse `×` / `÷` (`🚀`) $\to$ `y=kx` Ratio Boomerang (`🔄`) | `{{key:LASTX}}`, `{{key:REP}}`, `{{key:≠}}`, `{{key:>}}`, `{{key:<}}`, `{{key:≥}}`, `{{key:≤}}` |
+| **Ch. 8** | **Surface Area &amp; Volume of 3D Solids** | Days 34–37 | **Threads D &amp; C:** 6-Face Net (`🔨`) $\to$ Pyramid `TRI` + `Σ+` (`⚡`) $\to$ `PRISM` Volume (`🚀`) $\to$ `CIRC/CONE/HYP` (`🔄`) | `{{key:RECT}}`, `{{key:TRI}}`, `{{key:Σ+}}`, `{{key:Σx}}`, `{{key:PRISM}}`, `{{key:CONE}}`, `{{key:π}}`, `{{key:CIRC}}`, `{{key:HYP}}` |
+| **Ch. 9** | **Statistical Measures &amp; Data Displays** | Days 38–41 | **Threads F &amp; E:** Leveling Cube Towers (`🔨`) $\to$ Ordered Median/Mode (`⚡`) $\to$ Box-Plot `IQR` (`🚀`) $\to$ `MAD` Distance (`🔄`) | `{{key:Σ+}}`, `{{key:N}}`, `{{key:x̄}}`, `{{key:MED}}`, `{{key:MODE}}`, `{{key:RNG}}`, `{{key:MIN}}`, `{{key:MAX}}`, `{{key:1Q}}`, `{{key:3Q}}`, `{{key:IQR}}`, `{{key:MAD}}`, `{{key:FRQ}}` |
+| **Ch. 10** | **Grade 7 Bridge: Signed Math, 2-Step Equations &amp; Probability** | Days 42–45 | **All Threads Boss Boomerang:** Zero-Pair Add/Sub (`🔨`) $\to$ Sign-Flip `×/÷` (`⚡`) $\to$ 2-Step Unwrap (`🚀`) $\to$ `🎲/nCr/?` (`🔄`) | `{{key:+/-}}`, `{{key:LASTX}}`, `{{key:🎲}}`, `{{key:1…x}}`, `{{key:x!}}`, `{{key:nCr}}`, `{{key:nPr}}`, `{{key:?}}` |
 
 ---
 
@@ -133,7 +165,11 @@ Every single day in this 45-day catch-up program uses the exact same predictable
 ### Day 1 (Lesson 1.1): Whole Number Division &amp; Leftovers That Actually Make Sense
 - **Big Ideas Lesson 1.1:** Whole Number Operations (Multi-Digit Division &amp; Interpreting Remainders)
 - **The Real Question:** *When you divide things up in real life, what happens to the leftovers—and how can you prove your division is right in 3 button clicks without doing long division twice?*
+- **Spiral Revisit Path:** Thread A (Factor & Split) • [🔨 VISIT 1: BUILDER WAY — Launch of Thread A]
+- **🎮 Today's Variety Game Mode:** ⚡ Mode C: Human vs. Screen Prediction
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Grab **7 Counting Tiles** and make groups of **2**. You see **3 pairs** and **1 leftover**! Now press `7 {{key:ENTER}} 2 {{key:÷R}}` on your SC-6—watch `X: 3` and `Y: 1` pop up together! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Imagine you have 135 skateboard bearings and each board needs 8 bearings (2 per wheel). If you type $135 \div 8$ into a phone calculator, it spits out `16.875`. What on earth is `0.875` of a steel bearing?! You can't saw a bearing into `.875` pieces! You want to know two real numbers: **How many full skateboards can I build?** and **How many bearings are sitting left over in the tray?**
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Phone calculators spit out ugly decimals like `16.875` that hide the real leftover items. Building tile rows (`🔨`) shows what a remainder actually is, and `{{key:÷R}}` (`🚀`) handles huge numbers in 1 click!
 
 #### The "One Build, Multiple Ways" Decoder
 Your textbook asks you to interpret division leftovers in three different ways: **(1) Quotient with Remainder ($Q\text{ R }R$)**, **(2) Mixed Number ($Q\frac{R}{D}$)**, and **(3) Check via Multiplication ($(Q \times D) + R = \text{Total}$)**. Here is how **one tray build + one SC-6 sequence** gives you all three at once:
@@ -167,13 +203,18 @@ Your textbook asks you to interpret division leftovers in three different ways: 
 3. **Problem 3 (Boss Level — "Do We Need an Extra Van?"):** **115 middle schoolers** are going to a robotics tournament. Each van holds **14 students**. How many vans must the school book so *nobody* gets left behind?
    - **📟 Stack It (`115 {{key:ENTER}} 14 {{key:÷R}}`):** Snapshot `Y (Students Left): 3` | `X (Full Vans): 8`
    - **✅ Prove It:** 8 vans hold $8 \times 14 = 112$ kids, leaving `3` kids standing in the parking lot! So you need **9 vans** total.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` `{{key:÷R}}` Key):** `115 {{key:ENTER}} 14 {{key:÷R}}` -> `8 R 3` (so **9 vans**). **Way B (`⚡` Multiply-Up Table):** `14 {{key:ENTER}} 8 {{key:×}}` = `112` (3 kids left!) vs `14 {{key:ENTER}} 9 {{key:×}}` = `126` (all 115 fit -> **9 vans**)!
 
 ---
 
 ### Day 2 (Lesson 1.2): Powers &amp; Exponents — Squares, Cubes, and Tower Growth
 - **Big Ideas Lesson 1.2:** Powers and Exponents
 - **The Real Question:** *Why does $3^4$ mean $3 \times 3 \times 3 \times 3 = 81$ instead of $3 \times 4 = 12$—and how can you see the difference with physical tiles in 5 seconds?*
+- **Spiral Revisit Path:** Thread C (Scale & Growth) • [🔨 VISIT 1: BUILDER WAY — 2D/3D Tile Arrays -> REP Ladder]
+- **🎮 Today's Variety Game Mode:** 🕵️ Mode A: Spot the Glitch ('2^3 = 6 or 8?')
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Leo says $2^3 = 6$. Snap a $2 \times 2 \times 2$ cube of blocks (8 blocks!) and press `2 {{key:x³}}` (`[g][x²]`). Screen says **`8`**! You just busted the #1 6th-grade math myth in 15 seconds! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** The #1 trap in 6th-grade math is seeing $2^3$ and writing $6$. If you fold a piece of paper in half 3 times ($2^3$), you don't get 6 layers—you get $2 \times 2 \times 2 = 8$ layers! Exponents are how viral videos, bacteria, and Minecraft slime splits explode in size.
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Building a 2D square ($4^2=16$) or 3D cube ($4^3=64$) with physical tiles (`🔨`) cures the '$4^3=12$' trap forever, while the `{{key:REP}}` ladder (`⚡`) and `{{key:yˣ}}` (`🚀`) take over when powers grow too huge for your desk!
 
 #### The "One Build, Multiple Ways" Decoder
 The textbook asks for three forms of every power: **(1) Exponential Form ($4^3$)**, **(2) Repeated Multiplication / Factor Form ($4 \times 4 \times 4$)**, and **(3) Standard Value ($64$)**.
@@ -195,13 +236,18 @@ The textbook asks for three forms of every power: **(1) Exponential Form ($4^3$)
    - **✅ Prove It (`2 {{key:REP}} {{key:×}} {{key:×}} {{key:×}} {{key:×}}`):** Steps through `4 -> 8 -> 16 -> 32`!
 3. **Problem 3 (Boss Level — Perfect Cube Mystery):** A giant Rubik's cube is made of **216** small cubes. How many small cubes wide is one edge? (Test with `{{key:x³}}` or `{{key:ˣ√y}}`: `216 {{key:ENTER}} 3 {{key:ˣ√y}}`).
    - **📟 Stack It (`6 {{key:x³}}`):** `X: 216`. **Final Answer:** `6 cubes wide` ($6^3 = 216$).
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`⚡` `{{key:REP}}` Cube Ladder):** `6 {{key:REP}} {{key:×}} {{key:×}}` = `216` (edge = **6**). **Way B (`🚀` Cube Root `{{key:ˣ√y}}`):** `216 {{key:ENTER}} 3 {{key:ˣ√y}}` = **6**!
 
 ---
 
 ### Day 3 (Lesson 1.3): Order of Operations Without Parentheses Torture
 - **Big Ideas Lesson 1.3:** Order of Operations (PEMDAS / GEMDAS)
 - **The Real Question:** *How can you solve a huge multi-step math problem without copying 6 lines of scratch work or losing points to parentheses errors?*
+- **Spiral Revisit Path:** Thread D (Inside-Out Chunking) • [🔨 VISIT 1: BUILDER WAY — Launch of Thread D]
+- **🎮 Today's Variety Game Mode:** 🎯 Mode B: Mystery Target (2-Room Elevator)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Put **5 tiles** on the left of your desk and **2 rows of 3 tiles** ($6$) on the right. Total is **11**! Now type `5 {{key:ENTER}} 2 {{key:ENTER}} 3 {{key:×}}`—see `Y: 5` waiting while `X: 6` finishes! Press `{{key:+}}` -> **`11`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Why do kids hate Order of Operations? Because your teacher makes you copy the whole line over and over, and if you type it into a regular calculator, forgetting one parenthesis gives the wrong answer. On the SC-6, **there are no parentheses keys at all**—because the 4-story glass elevator ($X, Y, Z, T$) automatically holds your pieces while you work from the inside out!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Rewriting 5 lines of PEMDAS by hand causes copying mistakes. Grouping tiles into separate 'rooms' (`🔨`) and solving inside-out on the 4-line elevator (`🚀`) lets Floor 2 (`Y`) hold Room 1 while you solve Room 2 on Floor 1 (`X`)!
 
 #### The "One Build, Multiple Ways" Decoder
 To evaluate $50 - (4 \times 8) + 6$ or $(8 + 4) \times (9 - 3)$, the textbook wants to see your intermediate steps. On the SC-6, **your `Y` and `X` registers hold the intermediate steps for you!**
@@ -233,13 +279,18 @@ To evaluate $50 - (4 \times 8) + 6$ or $(8 + 4) \times (9 - 3)$, the textbook wa
 3. **Problem 3 (Boss Level — Fraction Bar Grouping):** Evaluate $\frac{3^3 + 9}{15 - 3 \times 2}$. *(Hint: A fraction bar is just Top Room divided by Bottom Room!)*
    - **📟 Stack It:** Top Room: `3 {{key:x³}} 9 {{key:+}}` ($\to 36$). Bottom Room: `15 {{key:ENTER}} 3 {{key:ENTER}} 2 {{key:×}} {{key:-}}` ($\to 9$). Snapshot before `{{key:÷}}`: `Y: 36 | X: 9`.
    - **✅ Prove It (`{{key:÷}}`):** **Final Answer:** `4`.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Inside-Out 4-Stack):** `10 {{key:ENTER}} 15 {{key:ENTER}} 3 {{key:-}} {{key:x²}} 9 {{key:÷}} {{key:+}}` = **26**. **Way B (`🔨` 2-Room Chunking):** Room 1 = `10`, Room 2 = `144 ÷ 9 = 16` -> `10 + 16` = **26**!
 
 ---
 
 ### Day 4 (Lesson 1.4): Prime Factorization — Why Factor Trees Are Just Stacked Blocks
 - **Big Ideas Lesson 1.4:** Prime Factorization
 - **The Real Question:** *What makes a number "Prime," and why do you always get the exact same prime blocks at the bottom of a factor tree no matter how you split the number first?*
+- **Spiral Revisit Path:** Thread A (Factor & Split) • [⚡ VISIT 2: PATTERN WAY — Revisits Day 1 Tile Splitting]
+- **🎮 Today's Variety Game Mode:** 🔄 Mode D: 2-Second Shortcut Race (`{{key:FACT}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Stack a red **`2` block** (`12.6mm`), another **`2` block**, and a green **`3` block** (`20.0mm`). Their height matches the **`12` tower** ($2 \times 2 \times 3 = 12$)! Now type `12 {{key:ENTER}} {{key:FACT}}` -> screen says **`2^2 × 3`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Kids hate drawing factor trees because if your friend splits $60$ into $6 \times 10$ and you split $60$ into $4 \times 15$, your trees look completely different in the middle—and you worry yours is wrong! With the **Prime Factor Studio (`PRIME-01`)**, you can physically see and hold the "atomic LEGO bricks" of any number.
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** On Day 1 we split numbers into equal rows one divisor at a time. When you want the deepest 'DNA building blocks' of a number without drawing lopsided paper factor trees, snap Prime Towers (`🔨`) or press `{{key:FACT}}` (`🚀`)!
 
 {{blocks:prime_studio_commutativity|Prime Factor Studio: Commutative Factor Stacking 2×5 = 10 and 5×2 = 10 on the 12-Socket Lid Tray}}
 
@@ -264,13 +315,18 @@ The textbook asks for **(1) Factor Pairs**, **(2) Different Factor Tree Branches
 3. **Problem 3 (Boss Level — Mystery Tower):** What number has the prime factorization $2^2 \times 3 \times 7$? Build it on the stack first, then verify with `{{key:FACT}}`.
    - **📟 Stack It (`2 {{key:x²}} 3 {{key:×}} 7 {{key:×}}`):** Snapshot `Y: 12 | X: 7` $\to$ **`84`**.
    - **✅ Prove It (`{{key:FACT}}`):** `84` decomposes right back into `2² × 3 × 7`!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`⚡` Split-in-Chunks Tree):** $180 = 18 \times 10 = (2 \cdot 3^2) \times (2 \cdot 5) = 2^2 \cdot 3^2 \cdot 5$. **Way B (`🚀` SC-6 `{{key:FACT}}` Key):** `180 {{key:ENTER}} {{key:FACT}}` -> **`2^2 × 3^2 × 5`**!
 
 ---
 
 ### Day 5 (Lesson 1.5): GCF &amp; LCM in One Look — Lists, Trees, and Venn Diagrams
 - **Big Ideas Lessons 1.5 &amp; 1.6:** Greatest Common Factor (GCF) and Least Common Multiple (LCM)
 - **The Real Question:** *Why does the textbook make you find GCF and LCM using lists, trees, AND Venn diagrams—and how do two side-by-side block towers show both GCF and LCM at the same time?*
+- **Spiral Revisit Path:** Thread A (Factor & Split) • [🚀 VISIT 3: STACK HACKER WAY — Boss Revisit of Days 1 & 4]
+- **🎮 Today's Variety Game Mode:** 🎲 Mode E: Speed Pack Challenge (`{{key:GCF}}` & `{{key:LCM}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Stand the Prime Towers for **`12`** ($2,2,3$) and **`18`** ($2,3,3$) next to each other. Both share one `2` and one `3` ($2 \times 3 = 6$)! Now press `12 {{key:ENTER}} 18 {{key:GCF}}` -> **`6`** in 1 second! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Usually, GCF and LCM take half a page of tedious factor lists and multiple lists, and kids constantly mix up which one is which. When you stand two **Prime Factor Studio** towers next to each other on the 12-socket lid, **GCF is the blocks they share in common** (the overlap), and **LCM is the tallest tower needed to cover both**!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Listing every factor by hand works for `6` and `8`, but for `36` and `48` you'll miss factors and waste 10 minutes! Laying Day 4's Prime Towers side-by-side (`🔨`) shows *why* GCF is the shared overlap, and `{{key:GCF}}`/`{{key:LCM}}` (`🚀`) solves it in 2 clicks!
 
 {{blocks:prime_lcm_gcd_venn|Prime Factor Studio: Simultaneous GCD (10) and LCM (100) Tower Comparison for 20 and 50 on the 12-Socket Lid Tray}}
 
@@ -304,6 +360,7 @@ Let's check `12` and `18`:
 3. **Problem 3 (Boss Level — Kit Packaging):** You have **36** red counters and **48** yellow counters to pack into identical station bags with none left over. What is the **greatest number of bags** you can make, and how many of each color go in a bag?
    - **📟 Stack It (`36 {{key:ENTER}} 48 {{key:GCF}}`):** Snapshot `Y: 36 | X: 48` $\to$ **`12` bags**.
    - **✅ Prove It:** `36 {{key:ENTER}} 12 {{key:÷}}` $\to$ `3 red`; `48 {{key:ENTER}} 12 {{key:÷}}` $\to$ `4 yellow` per bag!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`⚡` `{{key:REP}}` Skip-Count Race):** Step `12 {{key:REP}} {{key:+}}...` (`12, 24, 36, 48, 60`) vs `15 {{key:REP}} {{key:+}}...` (`15, 30, 45, 60`). **Way B (`🚀` `{{key:LCM}}` Key):** `12 {{key:ENTER}} 15 {{key:LCM}}` = **60**!
 
 ---
 
@@ -317,7 +374,11 @@ Let's check `12` and `18`:
 ### Day 6 (Lesson 2.1): Equivalent Fractions, Mixed Numbers &amp; Improper Fractions — Same Height, Different Outfits
 - **Big Ideas Chapter 2 Foundations:** Equivalent Fractions, Simplifying, Mixed Numbers &amp; Improper Fractions
 - **The Real Question:** *Why does $\frac{12}{18}$ equal $\frac{2}{3}$, and why are $1\frac{3}{4}$, $\frac{7}{4}$, and $1.75$ literally the exact same height?*
+- **Spiral Revisit Path:** Thread B (Flip & Inverse) + Thread A Boomerang • [🔨 VISIT 1: BUILDER WAY — Revisits Day 5 GCF]
+- **🎮 Today's Variety Game Mode:** ⚡ Mode C: Same-Height Tower Match (`{{key:SIMP}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Hold one **`1/2` tower** (`42mm`) next to three **`1/6` blocks** (`3 × 14mm = 42mm`). Exact same height! Now type `{{key:.}} 3 {{key:.}} 6 {{key:ENTER}} {{key:SIMP}}`—watch `3/6` snap into **`1/2`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Fractions are where most middle schoolers decide they hate math—because teachers ask you to reduce fractions, convert mixed numbers to improper fractions, AND convert them to decimals, making it feel like three unrelated rules. In the **Fraction Studio (`FRAC-01`)**, every single block is engineered to an **84.0 mm Whole**. When two towers stand at the exact same millimeter height, **they are equal—period!**
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** In Chapter 1 (`Day 5`), you learned `{{key:GCF}}`. Today that exact skill boomerangs back! Simplifying a fraction is just dividing top and bottom by their GCF—or matching 84mm Fraction Towers (`🔨`) side-by-side and pressing `{{key:SIMP}}` (`🚀`)!
 
 #### The "One Build, Multiple Ways" Decoder
 How to enter any fraction on SC-6 using **Two-Dot Syntax (`{{key:.}}`)**:
@@ -342,13 +403,18 @@ How to enter any fraction on SC-6 using **Two-Dot Syntax (`{{key:.}}`)**:
    - **🧱 Touch It:** `[ ]` $28\text{ mm} (\frac{1}{3}) + 21\text{ mm} (\frac{1}{4}) = 49\text{ mm}$ (matches seven $\frac{1}{12}$ blocks!).
    - **📟 Stack It (`{{key:.}} 1 {{key:.}} 3 {{key:ENTER}} {{key:.}} 1 {{key:.}} 4 {{key:+}}`):** Snapshot `Y: 1/3 | X: 1/4` $\to$ **`7/12`**.
    - **✅ Prove It (`{{key:LASTX}} {{key:-}}`):** Subtracts `1/4` and returns to `1/3`!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🔨` 84mm Tower Swap):** Swap $1/3$ (`28mm`) for four $1/12$ blocks and $1/4$ (`21mm`) for three $1/12$ blocks -> **`7/12`**. **Way B (`🚀` SC-6 Fraction Stack):** `{{key:.}} 1 {{key:.}} 3 {{key:ENTER}} {{key:.}} 1 {{key:.}} 4 {{key:+}}` = **`7/12`**!
 
 ---
 
 ### Day 7 (Lesson 2.2): Multiplying Fractions &amp; Mixed Numbers — Taking a Fraction OF a Fraction
 - **Big Ideas Lesson 2.1:** Multiplying Fractions and Mixed Numbers
 - **The Real Question:** *When you multiply two proper fractions, why does the answer get SMALLER instead of bigger?*
+- **Spiral Revisit Path:** Thread B (Flip & Inverse) • [⚡ VISIT 2: PATTERN WAY — Revisits Day 6 Fraction Towers]
+- **🎮 Today's Variety Game Mode:** 🕵️ Mode A: Prediction Bet ('Does × Make It Bigger or Smaller?')
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Take two **`1/3` blocks** ($2/3$). Hand **half** of them ($1/2$ of $2/3$) to a friend—you're holding just **one `1/3` block**! Key `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}} {{key:.}} 2 {{key:.}} 3 {{key:×}}` -> **`1/3`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** In elementary school, multiplying always made numbers bigger. So when a 6th grader sees $\frac{1}{2} \times \frac{3}{4} = \frac{3}{8}$, their brain says *"Wait, $\frac{3}{8}$ is smaller than $\frac{3}{4}$!"* Replace the `×` symbol with the word **"OF"**: if there is $\frac{3}{4}$ of a pizza left in the fridge and you eat $\frac{1}{2}$ **OF** it, of course your slice is smaller than what was in the box!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Adding fractions (`Day 6`) required common denominators. Multiplying fractions is way faster once you see with 84mm blocks (`🔨`) that '$1/2$ of $2/3$' just means taking 1 of the 2 thirds—and cross-canceling (`⚡`) shrinks big numbers before you even multiply!
 
 #### The "One Build, Multiple Ways" Decoder
 The textbook asks for **(1) A Bar / Tower Model**, **(2) Cross-Canceling / Simplifying Before Multiplying**, and **(3) Multiplying Mixed Numbers via Improper Fractions**.
@@ -368,13 +434,18 @@ The textbook asks for **(1) A Bar / Tower Model**, **(2) Cross-Canceling / Simpl
    - **✅ Prove It (`{{key:LASTX}} {{key:÷}}`):** Restores `1 3/4`!
 3. **Problem 3 (Boss Level — Triple Fraction Chain):** Evaluate $\frac{4}{5} \times \frac{5}{6} \times \frac{3}{4}$.
    - **📟 Stack It (`{{key:.}} 4 {{key:.}} 5 {{key:ENTER}} {{key:.}} 5 {{key:.}} 6 {{key:×}} {{key:.}} 3 {{key:.}} 4 {{key:×}}`):** Snapshot before second `{{key:×}}`: `Y: 2/3 | X: 3/4` $\to$ **`1/2`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`⚡` Cross-Cancel Pattern):** In $\frac{4}{5} \times \frac{5}{6} \times \frac{3}{4}$, cancel the `5`s and `4`s first -> $3/6 =$ **`1/2`**. **Way B (`🚀` Direct Stack Multiply):** Multiply all three on the SC-6 -> **`1/2`**!
 
 ---
 
 ### Day 8 (Lesson 2.3): Dividing Fractions — Why "Keep-Change-Flip" Works Physically
 - **Big Ideas Lessons 2.2 &amp; 2.3:** Dividing Fractions and Mixed Numbers
 - **The Real Question:** *Why does dividing by a fraction mean multiplying by its upside-down reciprocal (`{{key:1/x}}`)—and why do Common Denominators and Reciprocals always give the exact same answer?*
+- **Spiral Revisit Path:** Thread B (Flip & Inverse) • [🚀 VISIT 3: STACK HACKER WAY — Boss Revisit of Days 1, 6 & 7]
+- **🎮 Today's Variety Game Mode:** 🔄 Mode D: 2-Second Shortcut Race (`{{key:1/x}}` Flip)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** How many **`1/4` blocks** fit next to one **`1/2` block**? Lay them down: **2 fit**! Now type `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}} {{key:.}} 1 {{key:.}} 4 {{key:÷}}` -> **`2`**! Dividing by $1/4$ is the same as multiplying by $4$! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Every middle schooler has heard *"Keep, Change, Flip!"*—and then immediately forgets *which* fraction to flip, or why on earth you're flipping anything! With the **84 mm Fraction Towers**, $\frac{3}{4} \div \frac{1}{8}$ simply asks: **"How many $\frac{1}{8}$ blocks fit alongside a $\frac{3}{4}$ tower?"**
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** On small problems like $\frac{3}{4} \div \frac{1}{8}$, laying $\frac{1}{8}$ blocks (`🔨`) along a $\frac{3}{4}$ bar is super clear (6 fit!). But for $6\frac{3}{4} \div \frac{3}{4}$, you don't want to count 27 plastic fourths—flipping the divisor with `{{key:1/x}}` (`🚀`) turns division into Day 7's fast multiplication!
 
 #### The "One Build, Multiple Ways" Decoder ($\frac{3}{4} \div \frac{1}{8} = 6$)
 Your textbook asks you to solve fraction division three ways: **(1) Tape/Tower Model**, **(2) Common Denominator Method**, and **(3) Reciprocal Multiplication**. Watch how they are all identical:
@@ -405,13 +476,18 @@ Your textbook asks you to solve fraction division three ways: **(1) Tape/Tower M
 3. **Problem 3 (Boss Level — Mixed Number Board Cutting):** You have a board that is $6\frac{3}{4}$ feet long. You are cutting it into shelves that are $1\frac{1}{8}$ feet long each. How many shelves can you cut?
    - **📟 Stack It (`6 {{key:.}} 3 {{key:.}} 4 {{key:ENTER}} 1 {{key:.}} 1 {{key:.}} 8 {{key:÷}}`):** Snapshot `Y: 6 3/4 (27/4) | X: 1 1/8 (9/8)` $\to$ **`6` shelves**.
    - **✅ Prove It (`{{key:LASTX}} {{key:×}}`):** $6 \times 1\frac{1}{8} = 6\frac{3}{4}$!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`⚡` Common-Denominator Fourths):** $6\frac{3}{4} = \frac{27}{4}$, and $27 \text{ fourths} \div 3 \text{ fourths} =$ **9**. **Way B (`🚀` Reciprocal Flip `{{key:1/x}}`):** `6 {{key:.}} 3 {{key:.}} 4 {{key:ENTER}} {{key:.}} 3 {{key:.}} 4 {{key:1/x}} {{key:×}}` = **9 shelves**!
 
 ---
 
 ### Day 9 (Lesson 2.4): Adding, Subtracting &amp; Multiplying Decimals Without Crooked Columns
 - **Big Ideas Lessons 2.4 &amp; 2.5:** Adding, Subtracting, and Multiplying Decimals
 - **The Real Question:** *How do you keep whole parts (`{{key:IP}}`) and decimal parts (`{{key:FP}}`) straight so you never put the decimal point in the wrong spot?*
+- **Spiral Revisit Path:** Thread B (Flip & Inverse) • [⚡ VISIT 2: PATTERN WAY — Revisits Day 6 Mixed Numbers]
+- **🎮 Today's Variety Game Mode:** 🎯 Mode B: Split the Whole & Decimal (`{{key:IP}}` & `{{key:FP}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Type `14.75 {{key:ENTER}}` and press `{{key:IP}}` (`[f][PV]`)—it grabs the whole **`14`**! Press `{{key:LASTX}} {{key:FP}}` (`[g][PV]`)—it grabs the decimal **`.75`**! Zero crooked paper columns! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** On paper, if you compute $14.6 + 3.85$ and line up the right edge instead of the decimal point, you get the whole problem wrong. And when you multiply $2.4 \times 0.15$, counting decimal jumps by hand is a magnet for silly mistakes. Let's use the **Place Value Studio (`PLACE-01`)** and the SC-6 `{{key:IP}}` (Integer Part), `{{key:FP}}` (Fractional Part), and `{{key:$}}` (Currency) keys to make decimal place value bulletproof!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Lining up decimal points by hand on lined paper is frustrating when columns drift. Splitting wholes and tenths with `{{key:IP}}` and `{{key:FP}}` (`🔨`) or entering decimals directly on the stack (`🚀`) keeps place value locked automatically!
 
 {{blocks:place_value_regrouping|Place Value Studio: 3x1 Enclosure and 4x2 Tray Decomposing Place Value Units}}
 
@@ -434,13 +510,18 @@ The textbook asks you to **(1) Estimate with Whole Numbers First**, **(2) Split 
    - **✅ Prove It (`{{key:LASTX}} {{key:÷}}`):** $8.1 \div 2.25 = 3.6$!
 3. **Problem 3 (Boss Level — Fraction-Decimal Twin Check):** Solve $4.75 \times 1.2$ as decimals, then press `{{key:FDISP}}` to see the exact fraction equivalent!
    - **📟 Stack It (`4.75 {{key:ENTER}} 1.2 {{key:×}}`):** Result `5.70` (`5.7`). Press `{{key:FDISP}}` $\to$ **`5 7/10`**!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Decimal Stack):** `4.75 {{key:ENTER}} 1.2 {{key:×}}` = **`5.7`**. **Way B (`⚡` Fraction Costume via `{{key:FDISP}}`):** $4\frac{3}{4} \times 1\frac{1}{5} = \frac{19}{4} \times \frac{6}{5} = \frac{57}{10} =$ **`5 7/10`**!
 
 ---
 
 ### Day 10 (Lesson 2.5): Dividing Decimals &amp; The 3-Way Fraction-Decimal-Remainder Translator
 - **Big Ideas Lesson 2.6:** Dividing Whole Numbers and Decimals
 - **The Real Question:** *Why are $15 \div 4 = 3\text{ R }3$, $3\frac{3}{4}$, and $3.75$ all the exact same answer—and how do you divide by a decimal like $0.25$?*
+- **Spiral Revisit Path:** Thread A & B Boomerang • [🔄 VISIT 4: CROSS-CHAPTER BOOMERANG — Revisits Days 1, 6, 8 & 9]
+- **🎮 Today's Variety Game Mode:** 🔄 Mode D: 1-Thumb Costume Change (`{{key:FDISP}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Type `15 {{key:ENTER}} 4 {{key:÷}}` (`3.75`). Now tap `{{key:FDISP}}` three times: watch **`3.75`** morph into **`3 3/4`**, then **`15/4`**, then **`3 R 3`**! Four textbook answers with 1 thumb! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** On paper, dividing $6.75 \div 0.25$ requires sliding decimal points and long division houses. In real life, $0.25$ is just a **quarter** ($\frac{1}{4}$)! Asking *"What is $6.75 \div 0.25$?"* is literally asking *"How many quarters are in $\$6.75$?"*
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Moving the decimal scoop in long division is easy to mess up. Today connects **4 earlier days at once**: decimal division (`Day 10`), fraction division (`Day 8`), mixed numbers (`Day 6`), and remainders (`Day 1`)—using `{{key:FDISP}}` to switch between them in 1 click!
 
 #### The "One Build, Multiple Ways" Decoder
 Watch how the SC-6 translates any division problem across all three textbook formats without redoing the math:
@@ -461,6 +542,7 @@ Watch how the SC-6 translates any division problem across all three textbook for
    - **✅ Prove It (`{{key:LASTX}} {{key:×}}`):** 45 quarters $\times \$0.25 = \$11.25$!
 3. **Problem 3 (Boss Level — Track Lap Split):** A runner completes a **4.5-mile** race in **0.75-mile** laps, taking **6.3 minutes** per lap. How many laps is the race, and what is the total time?
    - **📟 Stack It (`4.5 {{key:ENTER}} 0.75 {{key:÷}} 6.3 {{key:×}}`):** Laps: `6`. Snapshot before `{{key:×}}`: `Y: 6 | X: 6.3` $\to$ **`37.8` minutes**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Decimal Division):** `4.5 {{key:ENTER}} 0.75 {{key:÷}}` = **6 laps**. **Way B (`🔨` Fraction Tower Equivalent from Day 8):** $4\frac{1}{2} \div \frac{3}{4} = \frac{9}{2} \times \frac{4}{3} =$ **6 laps**!
 
 ---
 
@@ -474,7 +556,11 @@ Watch how the SC-6 translates any division problem across all three textbook for
 ### Day 11 (Lesson 3.1): Ratios &amp; Tape Diagrams — Part-to-Part vs. Part-to-Whole
 - **Big Ideas Lessons 3.1 &amp; 3.2:** Ratios and Using Tape Diagrams
 - **The Real Question:** *When a problem gives you a ratio like $3:2$, how do physical color tile bars keep you from mixing up "Part-to-Part" and "Part-to-Whole"?*
+- **Spiral Revisit Path:** Thread C (Scale & Ratio) • [🔨 VISIT 1: BUILDER WAY — Revisits Day 6 Fraction Bars]
+- **🎮 Today's Variety Game Mode:** 🎯 Mode B: Mystery Box Weight (Tape Diagram)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Put **2 Blue tiles** and **3 Gold tiles** on your desk ($5$ tiles total). If all $5$ tiles weigh $20\text{g}$, each tile is **$4\text{g}$**! Now type `12 {{key:ENTER}} 18 {{key:a:b}}` -> watch it simplify to **`2:3`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** The *Big Ideas* textbook loves **Tape Diagrams**. Kids hate drawing them because their boxes come out uneven on paper. With the **Counting &amp; Array Tiles (`COUNT-01`)**, you don't draw boxes—you snap 3 Blue tiles and 2 Gold tiles onto your desk! Each tile is an equal "chunk" (box) of the tape diagram!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Students often confuse Part-to-Part ($3:2$) with Part-to-Whole ($3/5$). Building 2 rows of colored Counting Tiles (`🔨`) lets you physically see both the two parts AND the combined total bar before pressing `{{key:a:b}}` (`🚀`)!
 
 #### The "One Build, Multiple Ways" Decoder
 Suppose you mix paint in a ratio of **3 parts Blue to 2 parts Yellow**, and you use **20 cups total**. How many cups of each color did you use?
@@ -498,13 +584,18 @@ Suppose you mix paint in a ratio of **3 parts Blue to 2 parts Yellow**, and you 
    - **🧱 Touch It:** 5 Gold tiles minus 2 Blue tiles $= 3$ extra tiles. Those 3 extra tiles equal 18 guitars!
    - **📟 Stack It (`18 {{key:ENTER}} 5 {{key:ENTER}} 2 {{key:-}} {{key:÷}} 5 {{key:×}}`):** `18 ÷ 3 = 6` guitars per tile $\to 6 \times 5 =$ **`30 electric guitars`** (and $12$ acoustic).
    - **✅ Prove It:** $30 - 12 = 18$, and `12 {{key:ENTER}} 30 {{key:a:b}}` $\to$ **`2:5`**!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🔨` Tile Gap Model):** $7 \text{ parts} - 4 \text{ parts} = 3 \text{ extra parts} = 18 \to 1 \text{ part} = 6 \to 11 \text{ parts} =$ **66**. **Way B (`🚀` Stack Ratio):** `18 {{key:ENTER}} 3 {{key:÷}} 11 {{key:×}}` = **66 guitars**!
 
 ---
 
 ### Day 12 (Lesson 3.2): Ratio Tables &amp; Double Number Lines via Rhythmic Skip-Counting (`{{key:REP}}`)
 - **Big Ideas Lesson 3.3:** Using Ratio Tables and Double Number Lines
 - **The Real Question:** *Why does the textbook make you fill out Ratio Tables AND Double Number Lines—and how does the SC-6 `{{key:REP}}` key generate every column in rhythm?*
+- **Spiral Revisit Path:** Thread C (Scale & Ratio) • [⚡ VISIT 2: PATTERN WAY — Revisits Day 2 REP & Day 11 Tape Diagrams]
+- **🎮 Today's Variety Game Mode:** 🔄 Mode D: 5-Second Ratio Table Sprint (`{{key:REP}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Type `4 {{key:REP}}` (`[g][ENTER]`) and tap `{{key:+}}` four times: watch **`8 -> 12 -> 16 -> 20`** march across the screen! You just built a 5-column ratio row in 3 seconds! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** A Ratio Table and a Double Number Line are the **exact same thing**: one is written in boxes, and the other has arrows on a line! Both are just **two skip-counting ladders running side by side**. And the SC-6 has a dedicated **Skip-Counting Ladder key (`{{key:REP}}`, `[g][x⇄y]`)** that steps through multiples with every click of `{{key:+}}`!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** On Day 11, laying out tiles (`🔨`) worked great for small numbers. But if a ratio table jumps to 10 or 15 batches, you don't want to count 90 plastic tiles! Using Day 2's `{{key:REP}}` constant key (`⚡`) lets you skip-count an entire ratio table in 5 seconds!
 
 #### The "One Build, Multiple Ways" Decoder
 To make fizzing bath bombs, you mix **3 spoons of citric acid** for every **7 spoons of baking soda**. Let's fill out the Ratio Table AND Double Number Line for 1, 2, 3, 4, and 5 batches:
@@ -525,13 +616,18 @@ To make fizzing bath bombs, you mix **3 spoons of citric acid** for every **7 sp
 3. **Problem 3 (Boss Level — Scaling Down then Up):** 6 tickets to a skate park cost $\$45$. How much do 10 tickets cost? *(Hint: Divide by 2 to get 3 tickets, or divide by 6 to get 1 ticket, then multiply by 10!)*
    - **📟 Stack It (`45 {{key:ENTER}} 6 {{key:÷}} 10 {{key:×}}`):** Snapshot `Y: 7.50 | X: 10` $\to$ **`$75.00`**.
    - **✅ Prove It (`{{key:LASTX}} {{key:÷}} 6 {{key:×}}`):** Returns `45`!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`⚡` Scale Down to 2 Tickets):** $6 \text{ tickets} = \$45 \to 2 \text{ tickets} = \$15 \to 10 \text{ tickets} (5 \times 2) =$ **$75**. **Way B (`🚀` Unit Rate Stack):** `45 {{key:ENTER}} 6 {{key:÷}} 10 {{key:×}}` = **$75**!
 
 ---
 
 ### Day 13 (Lesson 3.3): Unit Rates &amp; Best-Buy Showdowns (Plus the `{{key:x⇄y}}` Swap Rescue!)
 - **Big Ideas Lessons 3.4 &amp; 3.5:** Rates, Unit Rates, and Comparing Prices
 - **The Real Question:** *When comparing two store deals, how do you know which number goes in first for "Dollars PER Ounce"—and how does `{{key:x⇄y}}` save you if you typed them backwards?*
+- **Spiral Revisit Path:** Thread C & B Boomerang • [🚀 VISIT 3: STACK HACKER WAY — Revisits Days 8, 11 & 12]
+- **🎮 Today's Variety Game Mode:** 🕵️ Mode A: Best-Buy Store Showdown (`{{key:x⇄y}}` Rescue)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Oops—you typed `5 {{key:ENTER}} 15` instead of `15 {{key:ENTER}} 5`! Don't clear it—just press `{{key:x⇄y}}` (`[f][R↓]`) to swap Floors 1 & 2, then press `{{key:÷}}` -> **`3`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Stores try to trick you with weird package sizes: a **12 oz** bag of chips for **$\$4.20$** vs. a **16 oz** bag for **$\$5.12$**. Which one is actually cheaper per ounce? And if you accidentally type ounces first and dollars second, you don't have to clear and retype—just hit the **Swap key `{{key:x⇄y}}`** to flip Floor 1 and Floor 2 before hitting `{{key:÷}}`!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Tape diagrams (`Day 11`) and skip-counting tables (`Day 12`) get stuck when comparing weird pack sizes like `8 oz for $3.60` vs `12 oz for $5.04`. Dividing down to **1 single unit** (`🚀` Unit Rate) works on *any* two numbers—and `{{key:x⇄y}}` rescues you if you enter them upside-down!
 
 #### The "One Build, Multiple Ways" Decoder
 The word **"PER"** means **Divide (`{{key:÷}}`)** in the exact order you say the words:
@@ -552,13 +648,18 @@ The word **"PER"** means **Divide (`{{key:÷}}`)** in the exact order you say th
    - **✅ Prove It:** **Pack B (`$1.40/battery`)** beats Pack A (`$1.45/battery`) by `$0.05` per battery!
 3. **Problem 3 (Boss Level — Rate Prediction):** A 3D printer extrudes **45 millimeters** of filament in **15 seconds**. At this rate, how many millimeters will it extrude in **120 seconds** (2 minutes)?
    - **📟 Stack It (`45 {{key:ENTER}} 15 {{key:÷}} 120 {{key:×}}`):** Snapshot `Y (Unit Rate): 3 mm/s | X: 120` $\to$ **`360 mm`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Unit Rate `mm/s`):** `45 {{key:ENTER}} 15 {{key:÷}}` = $3\text{ mm/s} \times 60\text{ s} =$ **180 mm**. **Way B (`⚡` Ratio Table Scaling from Day 12):** $60\text{ s}$ is $4 \times 15\text{ s}$, so $4 \times 45\text{ mm} =$ **180 mm**!
 
 ---
 
 ### Day 14 (Lesson 3.4): Percents, Fractions &amp; Decimals — The 3-Way Costume Change
 - **Big Ideas Chapter 4/5 (Percents):** Percents and Fractions, Percents and Decimals
 - **The Real Question:** *Why are $\frac{3}{4}$, $0.75$, and $75\%$ literally the exact same battery charge—and how do you switch between all three on the SC-6?*
+- **Spiral Revisit Path:** Thread C (Scale & Ratio) • [🔄 VISIT 4: CROSS-CHAPTER BOOMERANG — Revisits Day 10 FDISP & Day 11 Ratios]
+- **🎮 Today's Variety Game Mode:** ⚡ Mode C: 3-Costume Instant Reveal (`{{key:▸%}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Hold up the **`1/4` Fraction Tower**. You know 1 quarter is **25 cents** ($25\%$). Now type `{{key:.}} 1 {{key:.}} 4 {{key:ENTER}} {{key:▸%}}` (`[f][%]`)—screen says **`25%`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Think of your phone or tablet battery bar: when it's **$\frac{3}{4}$ full**, the corner says **`75%`**, which as a decimal is **`0.75`**. *"Per-cent"* literally means *"out of 100"* (like 100 cents in a dollar!). They aren't three different math topics—they are one single amount wearing three different outfits!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Percents aren't a brand-new topic—they are just Day 11 ratios locked to a denominator of `100`! Instead of memorizing 6 rules for moving decimal points left or right, use `{{key:▸%}}` and `{{key:FDISP}}` (`🚀`) to see all 3 costumes of the same number!
 
 #### The "One Build, Multiple Ways" Decoder
 On the SC-6, row 2 column 5 gives you dedicated percent keys: `{{key:%}}` (converts `75` $\to$ `0.75` or computes percent of a number in `Y`) and `{{key:▸%}}` (`[f][%]`, converts decimal `0.75` $\to$ `75%`), paired with `{{key:FDISP}}`!
@@ -581,13 +682,18 @@ On the SC-6, row 2 column 5 gives you dedicated percent keys: `{{key:%}}` (conve
 3. **Problem 3 (Boss Level — Ordering Mixed Formats):** Put $\frac{5}{8}$, $60\%$, and $0.61$ in order from least to greatest by converting all three to decimals on the stack.
    - **📟 Stack It:** `{{key:.}} 5 {{key:.}} 8 {{key:ENTER}} {{key:FDISP}}` $\to$ `0.625`; `60 {{key:%}}` $\to$ `0.60`; `0.61`.
    - **✅ Prove It:** **`60% (0.60) < 0.61 < 5/8 (0.625)`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`⚡` All-Decimals Lineup):** $60\% = 0.60$, $0.61$, $\frac{5}{8} = 0.625$. **Way B (`🚀` All-Percents via `{{key:▸%}}`):** $60\% < 61\% < 62.5\%$. Both prove **`60%, 0.61, 5/8`**!
 
 ---
 
 ### Day 15 (Lesson 3.5): Discounts, Tips, Percent Change &amp; Unit Conversions
 - **Big Ideas Chapter 4/5 (Percents &amp; Measurement):** Percent of a Quantity, Discounts, Percent Change &amp; Converting Units
 - **The Real Question:** *How do you find a sale price, calculate percent change (`{{key:%CHG}}`), or convert inches to centimeters (`{{key:▸cm}}`) in two button presses?*
+- **Spiral Revisit Path:** Thread C (Scale & Ratio) • [🚀 VISIT 5: BOSS BOOMERANG — Revisits Days 11–14]
+- **🎮 Today's Variety Game Mode:** 🔄 Mode D: 2-Key Sale Price Hack (`{{key:%}}` & `{{key:%CHG}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** A $\$50$ hoodie is **$20\%$ off**. Type `50 {{key:ENTER}} 20 {{key:%}}`—Floor 1 shows the **`$10`** discount while **`$50`** waits on Floor 2! Press `{{key:-}}` -> **`$40`** sale price! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Whether you're buying a $\$60$ video game at **$25\%$ off** or converting a 3D print from inches to millimeters/centimeters, this is the math you actually use every week of your life.
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Finding a sale price usually takes two separate steps (find discount, then subtract). Today you compare two pro ways: subtracting the `{{key:%}}` discount on `Y | X` (`🚀`) vs multiplying by the remaining percent (`⚡`), plus 1-click unit conversions (`{{key:▸cm}}`, `{{key:▸kg}}`)!
 
 #### The "One Build, Multiple Ways" Decoder
 1. **Sale Discount in 3 Clicks:** On the SC-6, when a price is on Floor 2 (`Y: 60`) and you type `25 {{key:%}}`, the calculator computes $25\%$ **OF** $60$ (`X: 15`) while **keeping the original `60` on Floor 2 (`Y`)**! That means pressing `{{key:-}}` immediately gives the sale price (`45`), or pressing `{{key:+}}` gives price + tip/tax!
@@ -615,6 +721,7 @@ On the SC-6, row 2 column 5 gives you dedicated percent keys: `{{key:%}}` (conve
 3. **Problem 3 (Boss Level — Metric/Customary Lab Conversion):** A skateboard deck is **32 inches** long and weighs **5 pounds**. Convert its length to centimeters (`{{key:▸cm}}`) and its weight to kilograms (`{{key:▸kg}}`).
    - **📟 Stack It:** `32 {{key:▸cm}}` $\to$ **`81.28 cm`**. `5 {{key:▸kg}}` $\to$ **`2.27 kg`**.
    - **✅ Prove It:** Press `{{key:▸in}}` on `81.28` $\to$ returns to **`32`**! Press `{{key:▸lb}}` on `2.268` $\to$ returns to **`5`**!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` 1-Click Converter Keys):** `32 {{key:▸cm}}` = **`81.28 cm`** and `5 {{key:▸kg}}` = **`2.27 kg`**. **Way B (`⚡` Unit-Rate Multiply from Day 13):** `32 {{key:ENTER}} 2.54 {{key:×}}` = **`81.28 cm`**!
 
 
 ---
@@ -629,7 +736,11 @@ On the SC-6, row 2 column 5 gives you dedicated percent keys: `{{key:%}}` (conve
 ### Day 16 (Lesson 4.1): Evaluating Algebraic Expressions — Plugging Numbers Into the Stack Elevator
 - **Big Ideas Lesson:** Algebraic Expressions (Evaluating Expressions with One or Two Variables)
 - **The Real Question:** *What is a variable like $x$ really doing—and how do you plug a number into an expression like $3x^2 - 5y$ without writing 4 lines of substitution steps?*
+- **Spiral Revisit Path:** Thread D (Inside-Out Chunking) • [⚡ VISIT 2: PATTERN WAY — Revisits Day 3 4-Stack Order of Operations]
+- **🎮 Today's Variety Game Mode:** 🎲 Mode E: Secret Variable Box Drop (`ALGB-01`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Drop **4 unit cubes** into the green **`x` box**. Now 'read' $2x + 3$: two boxes ($8$) plus $3$ = **`11`**! Key `2 {{key:ENTER}} 4 {{key:×}} 3 {{key:+}}` -> **`11`**! Algebra is just a box with a number inside! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Kids get scared the moment letters show up in math. Here is the secret: **a letter like $x$ is just an empty slot on the SC-6 elevator waiting for you to drop a number block into it!** And when you see `3x` stuck together with no symbol between them, it just means `3 × x`!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Algebra letters (`x`, `y`) look scary until you realize a variable is just an empty green box (`ALGB-01`) waiting for a number! Once you drop the number into the box (`🔨`), evaluating $3x^2 - 5$ is literally just Day 3's elevator math (`🚀`)!
 
 #### The "One Build, Multiple Ways" Decoder
 Evaluate $4x + 7$ when $x = 5$:
@@ -650,17 +761,22 @@ Evaluate $4x + 7$ when $x = 5$:
    - **✅ Prove It (`{{key:LASTX}} {{key:-}}`):** Subtracts `24` and restores `75`!
 3. **Problem 3 (Boss Level — Skate Park Rental Formula):** Renting a helmet costs $\$8$ flat plus $\$4.50$ per hour ($8 + 4.50h$). How much does a **3.5-hour** session cost?
    - **📟 Stack It (`8 {{key:ENTER}} 4.50 {{key:ENTER}} 3.5 {{key:×}}`):** Snapshot before `{{key:+}}`: `Y: 8.00 | X: 15.75`. Press `{{key:+}}` $\to$ **`$23.75`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Inside-Out Formula Stack):** `4.5 {{key:ENTER}} 4 {{key:×}} 8 {{key:+}}` = **$26**. **Way B (`🔨` Repeat Addition Table from Day 12):** $\$8 + \$4.50 + \$4.50 + \$4.50 + \$4.50 = \$8 + \$18 =$ **$26**!
 
 ---
 
 ### Day 17 (Lesson 4.2): Combining Like Terms — Why $x^2$ Flats, $x$ Rods, and $1$ Cubes Never Mix
 - **Big Ideas Lesson:** Properties of Operations &amp; Combining Like Terms
 - **The Real Question:** *Why does $3x + 2x = 5x$, while $3x + 2$ CANNOT be combined into $5x$—and why can't $x^2$ and $x$ combine?*
+- **Spiral Revisit Path:** Thread D (Inside-Out Chunking) • [🔨 VISIT 1: BUILDER WAY — Tactile Like-Term Sorting]
+- **🎮 Today's Variety Game Mode:** 🕵️ Mode A: Spot the Glitch ('Does 3x + 2 = 5x?')
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Put **3 green $x$-rods** and **2 yellow unit cubes** on your desk. Are there 5 green rods? **NO!** Now test $x=10$ on your SC-6: $3(10)+2 = 32$, while $5(10) = 50$! Different shapes never merge! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** The biggest mistake in middle school algebra is writing $3x + 2 = 5x$ or $2x^2 + 4x = 6x^3$. When you open the **Algebra Boxes &amp; Tiles (`ALGB-01`)**, you see why immediately:
   - An **$x^2$ tile** is a big flat **Square**.
   - An **$x$ tile** is a long skinny **Rod**.
   - A **$1$ tile** is a tiny **Unit Cube**.
   You can count how many Squares you have, how many Rods you have, and how many Cubes you have—but you can't call a Rod plus a Cube "two Rods"!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** On paper, kids constantly add $3x + 5$ and write $8x$. Once you hold a green $x$-rod ($42\text{ mm}$) and a small yellow $1$-cube ($14\text{ mm}$) (`🔨`), your hands see why they can't merge—and plugging a test number into the SC-6 (`🚀`) proves your simplified expression matches!
 
 #### The "One Build, Multiple Ways" Decoder
 Simplify $4x + 5 + 2x + 3$:
@@ -682,13 +798,18 @@ Simplify $4x + 5 + 2x + 3$:
    - **✅ Prove It (Plug in $x = 2$):** $5(4) + 4(2) + 6 = 34$, matching $3(4)+5(2)+2(4)-2+6 = 34$!
 3. **Problem 3 (Boss Level — Perimeter of a Tile Rectangle):** A rectangle has two sides of length $(2x + 3)$ and two sides of length $(x + 5)$. Write the simplified perimeter expression.
    - **📟 Stack It:** $x$-rods: `2 {{key:ENTER}} 2 {{key:+}} 1 {{key:+}} 1 {{key:+}}` ($\to 6$). Units: `3 {{key:ENTER}} 3 {{key:+}} 5 {{key:+}} 5 {{key:+}}` ($\to 16$). Snapshot `Y: 6 | X: 16` $\to$ **`6x + 16`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🔨` Sort All 4 Sides by Tile Shape):** $(2x+2x+x+x) + (3+3+5+5) =$ **`6x + 16`**. **Way B (`🚀` Numerical Twin Proof at $x=10$):** Original $2(23) + 2(15) = 76$ == Simplified $6(10) + 16 =$ **76**!
 
 ---
 
 ### Day 18 (Lesson 4.3): The Distributive Property — One Split Rectangle, Two Equivalent Ways
 - **Big Ideas Lesson:** The Distributive Property ($a(b + c) = ab + ac$)
 - **The Real Question:** *Why does the textbook force you to calculate $6(10 + 4)$ two different ways—and how does one split rectangle of tiles prove they are identical?*
+- **Spiral Revisit Path:** Thread D (Inside-Out Chunking) • [⚡ VISIT 2: PATTERN WAY — Revisits Day 3 Grouping & Day 17 Tiles]
+- **🎮 Today's Variety Game Mode:** ⚡ Mode C: Split-Rectangle Twin Match ($a(b+c)$)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Build **2 rows** of **(1 green $x$-rod + 3 yellow cubes)**. Count by rows: $2(x+3)$. Count by color piles: **`2x + 6`**! Same blocks on your desk, two ways to name them! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Few things annoy middle schoolers more than a problem that says: *"Use the Distributive Property to find $6 \times 14$."* The kid thinks: *"Why can't I just multiply $6 \times 14 = 84$?!"* Here is why: when an expression has a variable inside like $6(x + 4)$, you *can't* add $x + 4$ first! The **4-Color Array Tiles (`COUNT-01`)** and **Algebra Stage (`ALGB-01`)** show that multiplying the whole width at once or multiplying the two split rooms separately builds the **exact same rectangle**!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Why does $3(x + 4) = 3x + 12$? Because whether you measure the whole rectangle at once (`Way A`) or split it into two rooms (`Way B`), the total tile count never changes! This is the #1 place in middle school where two approaches prove each other.
 
 {{blocks:counting_tiles_distributive_4color|Counting & Array Studio: 4-Color Distributive Area Model}}
 
@@ -712,13 +833,18 @@ Model $3(x + 4) = 3x + 12$ (and with numbers, $3(10 + 4) = 30 + 12 = 42$):
    - **✅ Prove It (Plug in $x = 3$):** $4(3 + 5) = 4(8) = 32$, and $4(3) + 20 = 12 + 20 = 32$!
 3. **Problem 3 (Boss Level — Distribute &amp; Combine):** Simplify $5(2x + 3) + 4x$.
    - **📟 Stack It:** Distribute 5: `5 {{key:ENTER}} 2 {{key:×}}` ($\to 10x$) and `5 {{key:ENTER}} 3 {{key:×}}` ($\to 15$). Add `4x` to `10x`: `10 {{key:ENTER}} 4 {{key:+}}` $\to 14$. Snapshot `Y: 14 | X: 15` $\to$ **`14x + 15`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🔨` Distribute & Sort Tiles):** $5(2x+3) + 4x = 10x + 15 + 4x =$ **`14x + 15`**. **Way B (`🚀` Numerical Twin Proof at $x=2$):** Original $5(7) + 8 =$ **43** == Simplified $14(2) + 15 =$ **43**!
 
 ---
 
 ### Day 19 (Lesson 4.4): Factoring Expressions with GCF — Running the Distributive Property in Reverse
 - **Big Ideas Lesson:** Factoring Expressions (Undoing the Distributive Property using `{{key:GCF}}`)
 - **The Real Question:** *How do you factor an expression like $18x + 24$ into $6(3x + 4)$ without guessing—using the `{{key:GCF}}` key?*
+- **Spiral Revisit Path:** Thread A & D Boomerang • [🔄 VISIT 4: CROSS-CHAPTER BOOMERANG — Revisits Day 5 GCF & Day 18 Distributive]
+- **🎮 Today's Variety Game Mode:** 🎯 Mode B: Reverse the Rectangle (`{{key:GCF}}` Unlock)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Take **4 green $x$-rods** and **6 yellow cubes** ($4x + 6$). Arrange them into **2 identical rows**—each row has **`2x + 3`**! Now press `4 {{key:ENTER}} 6 {{key:GCF}}` -> **`2`** (the number of rows)! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** "Factoring" sounds scary, but it is literally just **putting the tiles back into equal rows**! Yesterday you multiplied the row count into the parentheses: $6(3x + 4) \to 18x + 24$. Today, you use the SC-6 **`{{key:GCF}}`** button to find the biggest number of equal rows you can stack $18x + 24$ into!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Remember `{{key:GCF}}` from Chapter 1 (`Day 5`)? Today it boomerangs back to unlock Algebra! Factoring $45x - 30$ isn't a brand-new process—it's just running Day 18's Distributive Property in reverse using Day 5's `{{key:GCF}}` key (`🚀`)!
 
 #### The "One Build, Multiple Ways" Decoder
 Factor $18x + 24$ using the **3-Step SC-6 GCF Recipe**:
@@ -737,6 +863,7 @@ Factor $18x + 24$ using the **3-Step SC-6 GCF Recipe**:
    - **✅ Prove It:** Distribute $12 \times 2 = 24x$ and $12 \times 3 = 36$!
 3. **Problem 3 (Boss Level — Subtraction Factoring):** Factor $45x - 30$ completely.
    - **📟 Stack It (`45 {{key:ENTER}} 30 {{key:GCF}}`):** GCF is **`15`**. Inside: $45 \div 15 = 3x$ and $30 \div 15 = 2$. **Final Answer:** **`15(3x - 2)`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` SC-6 `{{key:GCF}}` Pull-Out):** `45 {{key:ENTER}} 30 {{key:GCF}}` = `15` -> **`15(3x - 2)`**. **Way B (`⚡` Multiply Back Out from Day 18):** $15 \times 3x = 45x$ and $15 \times 2 = 30 \to$ **`45x - 30`**!
 
 ---
 
@@ -748,7 +875,11 @@ Factor $18x + 24$ using the **3-Step SC-6 GCF Recipe**:
 ### Day 20 (Lesson 5.1): Areas of Parallelograms &amp; Rectangles — Sliding the Corner Triangle (`{{key:RECT}}`)
 - **Big Ideas Lesson 4.1:** Areas of Parallelograms
 - **The Real Question:** *Why does a slanted parallelogram have the exact same area formula ($A = b \times h$) as a straight rectangle—and why do you ignore the slanted side length?*
+- **Spiral Revisit Path:** Thread D (Inside-Out Chunking) • [🔨 VISIT 1: BUILDER WAY — Geometric Area Arrays]
+- **🎮 Today's Variety Game Mode:** 🕵️ Mode A: Slant-Side Trap Detector (`{{key:RECT}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Snap a **5 by 3 rectangle** of tiles (15 tiles). Press `5 {{key:ENTER}} 3 {{key:RECT}}` (`[f][1]`) -> **`15`**! Even if you slant the stack sideways into a parallelogram, did the number of plastic tiles change? **Never!** (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Textbooks always put a **trap number** on parallelogram problems: they label the base ($10\text{ cm}$), the straight vertical height ($6\text{ cm}$), AND the slanted side ($7\text{ cm}$). Kids who guess which numbers to multiply pick the slanted $7\text{ cm}$ and get it wrong! With physical tiles, you see that chopping the triangle off one slanted end and sliding it to the other end turns every parallelogram into a straight **Rectangle (`{{key:RECT}}`)**!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Kids accidentally multiply the slanted side of a parallelogram instead of the straight height. Sliding the corner triangle on the grid (`🔨`) proves every parallelogram is a disguised rectangle—so `{{key:RECT}}` (`🚀`) solves both!
 
 #### The "One Build, Multiple Ways" Decoder
 Find the area of a parallelogram with base $b = 12\text{ cm}$, vertical height $h = 8\text{ cm}$, and slanted side $s = 9\text{ cm}$:
@@ -769,16 +900,21 @@ Find the area of a parallelogram with base $b = 12\text{ cm}$, vertical height $
    - **✅ Prove It (`{{key:LASTX}} {{key:÷}}`):** Restores `8.5`!
 3. **Problem 3 (Boss Level — Missing Base):** A parallelogram banner has an area of **$168\text{ in}^2$** and a vertical height of **$14\text{ in}$**. How long is its base?
    - **📟 Stack It (`168 {{key:ENTER}} 14 {{key:÷}}`):** Snapshot `Y: 168 | X: 14` $\to$ **`12 inches`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Inverse Division):** `168 {{key:ENTER}} 12 {{key:÷}}` = **`14 in`**. **Way B (`⚡` Forward `{{key:RECT}}` Proof):** `14 {{key:ENTER}} 12 {{key:RECT}}` = **`168 in²`**!
 
 ---
 
 ### Day 21 (Lesson 5.2): Areas of Triangles — Why Every Triangle Is Half a Rectangle (`{{key:TRI}}`)
 - **Big Ideas Lesson 4.2:** Areas of Triangles ($A = \frac{1}{2}bh$)
 - **The Real Question:** *Why do you always divide by 2 for a triangle's area—and how does the SC-6 `{{key:TRI}}` key (`[g][7]`) keep you from ever forgetting the $\frac{1}{2}$?*
+- **Spiral Revisit Path:** Thread D (Inside-Out Chunking) • [⚡ VISIT 2: PATTERN WAY — Revisits Day 20 Parallelogram/Rectangle]
+- **🎮 Today's Variety Game Mode:** 🔄 Mode D: Half-a-Rectangle Shortcut (`{{key:TRI}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** A **6 by 4 rectangle** has area **`24`** (`6 {{key:ENTER}} 4 {{key:RECT}}`). Cut it corner-to-corner into two identical triangles—each triangle is half of 24 = **`12`**! Now press `6 {{key:ENTER}} 4 {{key:TRI}}` (`[g][1]`) -> **`12`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** The #1 mistake on 6th-grade geometry tests is multiplying $b \times h$ for a triangle and forgetting to divide by 2! Look at your SC-6 keypad on key **`7`**:
   - Yellow shift `{{key:RECT}}` (`[f][7]`) computes **Rectangle Area** ($b \times h$).
   - Blue shift `{{key:TRI}}` (`[g][7]`) computes **Triangle Area** ($\frac{1}{2} \times b \times h$)!
   They live on the **same button** so your thumb remembers: a triangle is literally a rectangle cut in half diagonally!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Why does a triangle have a $\div 2$ in its formula when a rectangle (`Day 20`) doesn't? Putting two identical triangles together on the tray (`🔨`) always forms a Day 20 parallelogram! You can use `{{key:RECT}} 2 {{key:÷}}` (`⚡`) OR the 1-click `{{key:TRI}}` key (`🚀`)!
 
 #### The "One Build, Multiple Ways" Decoder
 Find the area of a triangle with base $b = 10\text{ cm}$ and height $h = 6\text{ cm}$:
@@ -799,13 +935,18 @@ Find the area of a triangle with base $b = 10\text{ cm}$ and height $h = 6\text{
 3. **Problem 3 (Boss Level — Missing Triangle Height):** A triangular pennant flag has an area of **$60\text{ in}^2$** and a base of **$15\text{ in}$**. What is its height? *(Remember: double the area to rebuild the full rectangle first!)*
    - **📟 Stack It (`60 {{key:ENTER}} 2 {{key:×}} 15 {{key:÷}}`):** Full rectangle area is `120` (`Y: 120 | X: 15`) $\to$ **`8 inches`**.
    - **✅ Prove It (`15 {{key:ENTER}} 8 {{key:TRI}}`):** Returns **`60`**!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Double-Area Then Divide):** `60 {{key:ENTER}} 2 {{key:×}} 15 {{key:÷}}` = **`8 in`**. **Way B (`⚡` `{{key:TRI}}` Key Verification):** `15 {{key:ENTER}} 8 {{key:TRI}}` = **`60 in²`**!
 
 ---
 
 ### Day 22 (Lesson 5.3): Trapezoids &amp; Composite Figures Using the `{{key:Σ+}}` Running Ledger
 - **Big Ideas Lessons 4.3 &amp; 4.4:** Areas of Trapezoids and Composite Figures
 - **The Real Question:** *How do you find the area of a weird L-shaped room or a trapezoid without losing track of 4 different mini-calculations on scratch paper?*
+- **Spiral Revisit Path:** Thread D (Inside-Out Chunking) • [🚀 VISIT 3: STACK HACKER WAY — Boss Revisit of Days 3, 20 & 21]
+- **🎮 Today's Variety Game Mode:** 🎯 Mode B: Multi-Room Memory Vault (`{{key:Σ+}}` & `{{key:Σx}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Press `{{key:CLΣ}}` (`[g][÷]`). Toss a rectangle `4 {{key:ENTER}} 5 {{key:RECT}} {{key:Σ+}}` (`20`) and a triangle `4 {{key:ENTER}} 3 {{key:TRI}} {{key:Σ+}}` (`6`) into memory. Press `{{key:Σx}}` (`[f][7]`) -> **`26`** total area! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Kids hate "Composite Figures" (weird shapes made of rectangles and triangles stuck together) and Trapezoids because you have to calculate 2 or 3 separate areas, write them all down, and add them at the end. On the SC-6, you have a **Running Area Adder (`{{key:Σ+}}`)**! Every time you finish one chunk of the shape, tap `{{key:Σ+}}` to toss it into the statistical bucket (`n = 1`, `n = 2`, `n = 3`...), then tap `{{key:Σx}}` (`[f][N]`) to read the grand total!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Memorizing the trapezoid formula is annoying—and what if an L-shape has 4 rooms? Instead of writing a giant equation, chop any weird shape into simple rectangles (`Day 20`) and triangles (`Day 21`) and toss each piece into `{{key:Σ+}}` (`🚀`)!
 
 #### The "One Build, Multiple Ways" Decoder
 **Method A — Trapezoid Formula vs. Chunking ($b_1 = 6, b_2 = 10, h = 4$):**
@@ -825,13 +966,18 @@ Find the area of a triangle with base $b = 10\text{ cm}$ and height $h = 6\text{
    - **📟 Stack It:** `{{key:CLΣ}}` $\to$ `12 {{key:ENTER}} 8 {{key:RECT}} {{key:Σ+}}` (`n = 1`) $\to$ `12 {{key:ENTER}} 5 {{key:TRI}} {{key:Σ+}}` (`n = 2`) $\to$ `{{key:Σx}}` = **`126 ft²`**.
 3. **Problem 3 (Boss Level — Frame with Cutout Hole):** A rectangular picture frame is **$10\text{ in}$ by $8\text{ in}$** on the outside, with a **$6\text{ in}$ by $4\text{ in}$** glass cutout in the middle. Use `{{key:Σ+}}` for the outside and `{{key:Σ-}}` (`[f][Σ+]`) to subtract the hole!
    - **📟 Stack It:** `{{key:CLΣ}}` $\to$ `10 {{key:ENTER}} 8 {{key:RECT}} {{key:Σ+}}` ($+80$) $\to$ `6 {{key:ENTER}} 4 {{key:RECT}} {{key:Σ-}}` ($-24$) $\to$ `{{key:Σx}}` = **`56 in²`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Outer Minus Cutout Hole):** `10 {{key:ENTER}} 8 {{key:RECT}}` (`80`) minus `6 {{key:ENTER}} 4 {{key:RECT}}` (`24`) = **`56 in²`**. **Way B (`🔨` 4 Border Strips Sum via `{{key:Σ+}}`):** $20 + 20 + 8 + 8 =$ **`56 in²`**!
 
 ---
 
 ### Day 23 (Lesson 5.4): Coordinate Polygons &amp; Planetary Clock Base-60 Time (`{{key:🕒}}`)
 - **Big Ideas Lesson 4.4 + Measurement Bridge:** Polygons in the Coordinate Plane &amp; Elapsed Time / Angle Rates
 - **The Real Question:** *How do you measure rectangles on a coordinate grid by subtracting coordinates—and how does the SC-6 Clock key (`{{key:🕒}}`) add and subtract hours and minutes without base-10 mistakes?*
+- **Spiral Revisit Path:** Thread A & C Boomerang • [🔄 VISIT 4: CROSS-CHAPTER BOOMERANG — Revisits Day 1 Modulo-60 & Day 10 Decimals]
+- **🎮 Today's Variety Game Mode:** ⚡ Mode C: Planetary Clock Gear Spin (`{{key:🕒}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Spin the minute hand on your **Planetary Clock (`TIME-01`)** by **30 minutes** ($1/2$ turn). Type `1.30 {{key:▸HR}}` (`[g][9]`) on the SC-6—watch `1 hr 30 min` turn into **`1.5 hours`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** If a movie starts at `1:45` and lasts `1 hour 35 minutes`, you can't type `1.45 + 1.35 = 2.80` on a normal calculator because there are **60 minutes in an hour**, not 100! The **Classroom Planetary Clock (`TIME-01`)** uses a real 12:1 gear train, and the SC-6 **`{{key:🕒}}`** key calculates directly in `H.MMSS` base-60 time!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Subtracting time on paper (`1:20 PM - 11:45 AM`) fails if you borrow `100` instead of `60`. Spinning the Planetary Geared Clock (`🔨`) shows the 60-minute gear ratio physically, while `{{key:🕒}}` and `{{key:▸HR}}` (`🚀`) convert `3 hr 15 min` into `3.25 hr` automatically!
 
 {{blocks:planetary_geared_clock_330|Planetary Geared Clock: 12:1 Epicyclic Gear Train at 3:30}}
 
@@ -853,6 +999,7 @@ Add `1 hour 45 minutes` + `1 hour 35 minutes` two ways:
    - **✅ Prove It (`{{key:LASTX}} {{key:-}}`):** Subtracts `2.50` and returns to `9.40`!
 3. **Problem 3 (Boss Level — Hours to Decimal Paycheck):** You tutor math for **3 hours and 15 minutes** (`3.15` in `H.MM`) at **$\$16.00$ per hour**. Convert `3.15` to decimal hours (`{{key:▸HR}}`) and multiply by `16`.
    - **📟 Stack It (`3.15 {{key:▸HR}} 16 {{key:×}}`):** `3.15` converts to `3.25 hours` (`Y: 3.25 | X: 16`) $\to$ **`$52.00`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` `{{key:▸HR}}` Paycheck Shortcut):** `3.15 {{key:▸HR}}` = `3.25 hr` $\times \$16 =$ **$52.00**. **Way B (`🔨` Split Hours + Quarter-Hour from Day 6):** $3(\$$16) = \$48$ plus $\frac{1}{4}(\$$16) = \$4 \to$ **$52.00**!
 
 ---
 
@@ -866,9 +1013,13 @@ Add `1 hour 45 minutes` + `1 hour 35 minutes` two ways:
 ### Day 24 (Lesson 6.1): Positive &amp; Negative Integers — Bicolor Counters &amp; The `{{key:+/-}}` Sign Flipper
 - **Big Ideas Lesson 6.1:** Integers (Opposites, Zero Pairs, and Representing Real-World Quantities)
 - **The Real Question:** *What is the difference between the subtraction action key `{{key:-}}` and the negative sign-flipper key `{{key:+/-}}`?*
+- **Spiral Revisit Path:** Thread E (Zero-Pair & Distance) • [🔨 VISIT 1: BUILDER WAY — Launch of Thread E]
+- **🎮 Today's Variety Game Mode:** 🎲 Mode E: Zero-Pair Battle Royale (`{{key:+/-}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Put **3 Yellow ($+1$)** and **3 Red ($-1$)** counters on your tray—each Yellow+Red pair cancels to **0**! Now type `3 {{key:ENTER}} 3 {{key:+/-}} {{key:+}}` -> **`0`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** On regular calculators, kids constantly get `SYNTAX ERROR` because they mix up the minus button and the negative button. On the SC-6, the difference is physical:
   - **`{{key:-}}` (Bottom-Right Corner)** is an **Action** that subtracts Floor 1 from Floor 2.
   - **`{{key:+/-}}` (Row 1, Col 5)** is a **Coin Flip**: just like flipping a two-sided **Ten-Frame Counter (`BASE-10`)** from Yellow ($+$) to Red ($-$) and back again! Type the number first (`8`), then tap `{{key:+/-}}` to flip it to `-8`! Tap `{{key:+/-}}` again and it flips right back to `+8` (its **opposite**)!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Negative numbers feel abstract until you hold Yellow ($+1$) and Red ($-1$) counters (`🔨`) that physically cancel in **Zero Pairs**, paired with the SC-6's dedicated `{{key:+/-}}` sign-flipper key (`🚀`)!
 
 #### The "One Build, Multiple Ways" Decoder
 Represent real-world quantities, their opposites, and Zero Pairs:
@@ -888,13 +1039,18 @@ Represent real-world quantities, their opposites, and Zero Pairs:
    - **✅ Prove It (`{{key:LASTX}} {{key:-}}`):** Returns to `-18`!
 3. **Problem 3 (Boss Level — Bank Account Ledger):** You start at $\$0$, deposit $\$35$, spend $\$50$ (`50 {{key:+/-}}`), and deposit $\$15$. What is your final balance?
    - **📟 Stack It (`35 {{key:ENTER}} 50 {{key:+/-}} {{key:+}} 15 {{key:+}}`):** After first `{{key:+}}`: `-15`. Snapshot before final `{{key:+}}`: `Y: -15 | X: 15` $\to$ **`$0.00`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Running Stack Ledger):** `35 {{key:ENTER}} 50 {{key:+/-}} {{key:+}} 20 {{key:+}}` = **`+$5`**. **Way B (`⚡` Group Positives vs Negatives):** Deposits ($\$35+\$20=\$55$) minus Spend ($\$50$) = **`+$5`**!
 
 ---
 
 ### Day 25 (Lesson 6.2): Comparing &amp; Ordering Integers and Rational Numbers on the Number Line
 - **Big Ideas Lessons 6.2 &amp; 6.3:** Comparing and Ordering Integers, Fractions, and Decimals
 - **The Real Question:** *Why is $-3$ GREATER than $-8$ even though $8$ is bigger than $3$—and how do the SC-6 comparison keys (`{{key:>}}`, `{{key:<}}`) test inequalities for you?*
+- **Spiral Revisit Path:** Thread E (Zero-Pair & Distance) • [⚡ VISIT 2: PATTERN WAY — Revisits Day 14 Ordering & Day 24 Integers]
+- **🎮 Today's Variety Game Mode:** 🕵️ Mode A: Spot the Glitch ('Is -18 Bigger Than -5?')
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Which is warmer: **$-5^\circ$** or **$-18^\circ$**? Type `5 {{key:+/-}} {{key:ENTER}} 18 {{key:+/-}} {{key:>}}` (`[f][+]`)—the SC-6 outputs **`1` (TRUE)**! $-5$ is to the right of $-18$, so $-5 > -18$! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** When kids see $-8$ and $-3$, their instinct says $-8$ is bigger. Think about **temperature** or **owing money**: would you rather it be $-3^\circ\text{F}$ outside or $-8^\circ\text{F}$? Would you rather owe your friend $\$3$ (`-3`) or owe $\$8$ (`-8`)? On a number line (`{{key:LINE}}`, `[f][▦]`), **further to the RIGHT is ALWAYS greater**!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** On the negative side of zero, bigger digits mean *colder/smaller* numbers ($-18 < -5$), which tricks your brain! Sliding beads on the Number Rack (`🔨`), checking `{{key:LINE}}` (`⚡`), and testing with `{{key:<}}`/`{{key:>}}` (`🚀`) gives you 3 ways to never get tricked!
 
 #### The "One Build, Multiple Ways" Decoder
 How to compare two negative fractions or decimals like $-\frac{3}{4}$ and $-\frac{5}{8}$:
@@ -910,15 +1066,20 @@ How to compare two negative fractions or decimals like $-\frac{3}{4}$ and $-\fra
 3. **Problem 3 (Boss Level — Line Up From Least to Greatest):** Order **$-1.5$, $1\frac{1}{4}$, $-1\frac{3}{4}$, and $-0.5$** from least (coldest/leftmost) to greatest (warmest/rightmost).
    - **📟 Stack It (Convert to Decimals):** `-1.50`, `+1.25`, `-1.75`, `-0.50`.
    - **✅ Prove It:** **`-1 3/4 (-1.75) < -1.5 < -0.5 < 1 1/4 (+1.25)`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🔨` Number Line Position `{{key:LINE}}`):** Left-to-right order is **`-1 3/4, -1.5, -0.5, 1 1/4`**. **Way B (`🚀` Pairwise `{{key:<}}` Truth Check):** `1.75 {{key:+/-}} {{key:ENTER}} 1.5 {{key:+/-}} {{key:<}}` -> `1` (True)!
 
 ---
 
 ### Day 26 (Lesson 6.3): Absolute Value — Distance From Zero Is Always Positive (`[|x|]`)
 - **Big Ideas Lesson 6.4:** Absolute Value
 - **The Real Question:** *Why does $|-9|$ equal $+9$, while the opposite of $+9$ is $-9$?*
+- **Spiral Revisit Path:** Thread E (Zero-Pair & Distance) • [🚀 VISIT 3: STACK HACKER WAY — Boss Revisit of Days 24 & 25]
+- **🎮 Today's Variety Game Mode:** ⚡ Mode C: Positive Mirror Test (`[|x|]` vs `{{key:+/-}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Walk **6 steps backward** ($-6$). How many steps did your feet take? **6 steps** (you can't walk negative steps!). Type `6 {{key:+/-}}` and press `[|x|]` (`[f][+/-]`) -> **`6`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Students constantly confuse **Opposite (`{{key:+/-}}`)** with **Absolute Value (`[|x|]`, `[g][+/-]`)**:
   - **`{{key:+/-}}` (Opposite)** flips the sign: $+9 \to -9$, and $-9 \to +9$.
   - **`[|x|]` (Absolute Value, `[g][+/-]`)** measures **how many steps from zero** the number is on the sidewalk! Whether you walk 9 steps forward (`+9`) or 9 steps backward (`-9`), your step counter says **9 steps**! Distance is never negative.
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Counting steps to zero on a number line (`Day 25`) is easy for $|-4|$, but in multi-step expressions like $50 - |-18|$, kids confuse 'opposite' (`{{key:+/-}}`) with 'distance from zero' (`[|x|]`). Using `[|x|]` on Floor 1 (`X`) while `50` waits on Floor 2 (`Y`) keeps them crystal clear!
 
 #### The "One Build, Multiple Ways" Decoder
 
@@ -937,13 +1098,18 @@ How to compare two negative fractions or decimals like $-\frac{3}{4}$ and $-\fra
    - **📟 Stack It (`32 {{key:+/-}} {{key:|x|}} {{key:ENTER}} 25 {{key:|x|}}`):** Snapshot `Y (Diver dist): 32 | X (Gull dist): 25`. Press `{{key:-}}` $\to$ **`7 ft`**. The **seagull** is closer to sea level (25 ft vs. 32 ft)!
 3. **Problem 3 (Boss Level — Outside Negative Trap):** Evaluate $50 - |-18|$. *(Careful: does `|-18|` turn into $+18$ BEFORE you subtract from $50$?)*
    - **📟 Stack It (`50 {{key:ENTER}} 18 {{key:+/-}} {{key:|x|}}`):** Snapshot before `{{key:-}}`: `Y: 50 | X: 18`. Press `{{key:-}}` $\to$ **`32`** (NOT $68$!).
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Elevator Stack):** `50 {{key:ENTER}} 18 {{key:+/-}}` `[|x|]` (`Y: 50 | X: 18`) `{{key:-}}` = **32**. **Way B (`🔨` Distance-First Rewrite):** Distance from $-18$ to $0$ is $+18$, so $50 - 18 =$ **32**!
 
 ---
 
 ### Day 27 (Lesson 6.4): The Four-Quadrant Coordinate Plane &amp; Axis Reflections
 - **Big Ideas Lesson 6.5:** The Coordinate Plane (Plotting in Quadrants I–IV &amp; Reflecting Points)
 - **The Real Question:** *How do you remember whether $(x, y)$ goes sideways or up-and-down first—and what happens to the signs when a point reflects across an axis?*
+- **Spiral Revisit Path:** Thread E (Zero-Pair & Distance) • [⚡ VISIT 2: PATTERN WAY — Revisits Day 24 Sign Flipping in 2D]
+- **🎮 Today's Variety Game Mode:** 🎯 Mode B: 4-Quadrant Mirror Treasure Hunt
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Start at $(3, 4)$ in Quadrant I. Flip the $x$-sign with `{{key:+/-}}` to $(-3, 4)$—you just jumped across the $y$-axis into Quadrant II! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Every 2D video game map, Minecraft coordinate (`X, Z`), and 3D printer bed uses a $(x, y)$ coordinate grid. To never mix up $x$ and $y$, remember the **Elevator Rule**: **You have to walk ACROSS the lobby ($x$, left/right) BEFORE you can ride UP/DOWN the elevator ($y$)!**
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Plotting 4 quadrants on paper gets messy when you mix up $(x,y)$ order or reflection signs. Snapping pegs on the Coordinate Baseplate (`🔨`) shows that reflecting across an axis is just pressing `{{key:+/-}}` (`🚀`) on one coordinate!
 
 #### The "One Build, Multiple Ways" Decoder
 Lay 4 colors of Counting Tiles (`COUNT-01`) around a center cross $(0,0)$ to see the 4 Quadrants and Reflections of $(4, 3)$:
@@ -963,16 +1129,21 @@ Lay 4 colors of Counting Tiles (`COUNT-01`) around a center cross $(0,0)$ to see
    - **📟 Stack It:** Across $x$-axis flips the $y$-coordinate (`8 {{key:+/-}}` $\to -8$): **`(-5, -8)`**. Across $y$-axis flips the $x$-coordinate (`5 {{key:+/-}} {{key:+/-}}` $\to +5$): **`(5, -8)`**.
 3. **Problem 3 (Boss Level — On the Fence):** Which axis does $(0, -9)$ sit on, and which axis does $(-7, 0)$ sit on?
    - **✅ Prove It:** $(0, -9)$ goes $0$ sideways and $-9$ down $\to$ **`y-axis`**. $(-7, 0)$ goes $-7$ left and $0$ up/down $\to$ **`x-axis`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🔨` Baseplate Peg Walk):** $(0,-9)$ goes $0$ sideways, $9$ down (**y-axis**); $(-7,0)$ goes $7$ left, $0$ up/down (**x-axis**). **Way B (`⚡` Zero-Coordinate Rule):** $x=0 \to$ **y-axis**; $y=0 \to$ **x-axis**!
 
 ---
 
 ### Day 28 (Lesson 6.5): Distance Between Points on the Coordinate Plane
 - **Big Ideas Lesson 6.5 Extension:** Finding Distances on the Coordinate Plane using Absolute Value
 - **The Real Question:** *When finding the distance between $(-6, 4)$ and $(9, 4)$, why do you ADD $|-6| + |9| = 15$ when they are in different quadrants, but SUBTRACT when they are in the same quadrant?*
+- **Spiral Revisit Path:** Thread E & D Boomerang • [🔄 VISIT 4: CROSS-CHAPTER BOOMERANG — Revisits Day 20 Perimeter & Day 26 |x|]
+- **🎮 Today's Variety Game Mode:** 🔄 Mode D: Bridge Builder Distance Race (`[|x|]`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** How far is $-3$ from $+4$? It's **3 steps** to zero plus **4 steps** past zero = **`7`**! Now type `3 {{key:+/-}} {{key:ENTER}} 4 {{key:-}}` `[|x|]` -> **`7`** in 2 clicks! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Imagine walking from **6 blocks West of Main Street (`-6`)** to **9 blocks East of Main Street (`+9`)**. First you walk 6 blocks to reach Main Street (`0`), and then you walk 9 *more* blocks East ($6 + 9 = 15$ blocks)!
   - **Crossed an Axis (Opposite Signs)?** **ADD** their absolute values (`[|x|]`)!
   - **Same Side of the Axis (Same Signs)?** **SUBTRACT** their absolute values (`[|x|]`)!
   - **Or use the Universal SC-6 Formula that works 100% of the time:** Subtract the coordinates and hit **`{{key:|x|}}`** (`[g][+/-]`)!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Counting grid squares one by one works when points are 4 units apart, but what if a bridge spans from $(-45, 12)$ to $(80, 12)$? Using Day 26's absolute value distance (`[|x|]`) finds the span across *any* two coordinates in 2 clicks!
 
 #### Guided SC-6 Elevator Trace: Universal Distance Formula (`Coordinate 1 [ENTER] Coordinate 2 [-] [g][|x|]`)
 
@@ -991,6 +1162,7 @@ Lay 4 colors of Counting Tiles (`COUNT-01`) around a center cross $(0,0)$ to see
 3. **Problem 3 (Boss Level — 4-Quadrant Treasure Map Perimeter):** A rectangle has vertices at $(-4, 6)$, $(5, 6)$, $(5, -2)$, and $(-4, -2)$. Find its width, height, perimeter, and area!
    - **📟 Stack It:** Width: $|-4| + |5| = 9$. Height: $|6| + |-2| = 8$. Snapshot `Y: 9 | X: 8`.
    - **✅ Prove It:** Area (`9 {{key:ENTER}} 8 {{key:RECT}}`) = **`72 sq units`**; Perimeter ($9+9+8+8$) = **`34 units`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🔨` Add Distances to Axis):** Width $= |-4| + |5| = 9$; Height $= |6| + |-2| = 8 \to P = 2(9+8) =$ **34**. **Way B (`🚀` Coordinate Subtraction + `[|x|]`):** `|-4 - 5| = 9` and `|6 - (-2)| = 8` -> Perimeter = **34**!
 
 
 ---
@@ -1003,7 +1175,11 @@ Lay 4 colors of Counting Tiles (`COUNT-01`) around a center cross $(0,0)$ to see
 ### Day 29 (Lesson 7.1): Writing Equations &amp; Testing Solutions — The Balance Scale Rule
 - **Big Ideas Lessons 7.1 &amp; 7.2:** Writing Equations in One Variable and Testing Solutions
 - **The Real Question:** *What does the `=` sign actually mean—and how can you tell in 3 seconds if a number is the true solution to an equation?*
+- **Spiral Revisit Path:** Thread F (Balance & Fair Share) • [🔨 VISIT 1: BUILDER WAY — Launch of Thread F]
+- **🎮 Today's Variety Game Mode:** 🕵️ Mode A: Balance Scale Lie Detector (`{{key:≠}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Does $x = 5$ solve $x + 4 = 9$? Type `5 {{key:ENTER}} 4 {{key:+}}` (`9`), then `9 {{key:≠}}` (`[g][-]`). The screen says **`0`** (Zero difference = Perfectly Balanced)! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** From Grade 1, kids think `=` means *"Write the answer next."* In algebra, `=` does NOT mean "here comes the answer"—it is the center pivot of a **Balance Scale**! Whatever sits on the Left Tray must weigh the **exact same** as whatever sits on the Right Tray. And on the SC-6, **Floor 2 (`Y`) is the Left Tray** and **Floor 1 (`X`) is the Right Tray**!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Before learning formal equation-solving steps, you can test whether a number is the solution just by dropping it onto the Algebra Stage (`🔨`) or checking `{{key:≠}}` (`🚀`) to see if both sides weigh the exact same!
 
 #### The "One Build, Multiple Ways" Decoder
 Test whether $x = 6$ or $x = 8$ is the solution to $3x - 5 = 19$:
@@ -1025,15 +1201,20 @@ Test whether $x = 6$ or $x = 8$ is the solution to $3x - 5 = 19$:
 3. **Problem 3 (Boss Level — "Less Than" Flip Trap):** Translate *"8 less than a number $n$ is 25"* into an equation and solve it. *(Careful: "8 less than $n$" means start with $n$ and take 8 away: $n - 8 = 25$, NOT $8 - n$!)*
    - **📟 Stack It (`25 {{key:ENTER}} 8 {{key:+}}`):** Snapshot `Y: 25 | X: 8` $\to$ **`n = 33`**.
    - **✅ Prove It (`{{key:LASTX}} {{key:-}}`):** $33 - 8 = 25$!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Inverse Undo):** Equation is $n - 8 = 25 \to$ `25 {{key:ENTER}} 8 {{key:+}}` = **33**. **Way B (`🔨` Plug-In Balance Proof from Day 16):** Test $n=33 \to 33 - 8 = 25$ (Balanced!)!
 
 ---
 
 ### Day 30 (Lesson 7.2): Solving One-Step Addition &amp; Subtraction Equations — Inverse Undo &amp; `{{key:LASTX}}`
 - **Big Ideas Lesson 7.2:** Solving Equations Using Addition or Subtraction ($x + a = b$ and $x - a = b$)
 - **The Real Question:** *Why do teachers make you write $- 14$ under both sides of $x + 14 = 39$ when you can already see the answer is $39 - 14$?*
+- **Spiral Revisit Path:** Thread F & B Boomerang • [⚡ VISIT 2: PATTERN WAY — Revisits Day 8 Inverse & Day 29 Balance]
+- **🎮 Today's Variety Game Mode:** 🎯 Mode B: Mystery Box Unwrap + `{{key:LASTX}}` Bounce-Back
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** A mystery box plus **5 cubes** weighs **12 cubes** ($x + 5 = 12$). Take **5 cubes off both sides**: `12 {{key:ENTER}} 5 {{key:-}}` -> **`x = 7`**! Now press `{{key:LASTX}} {{key:+}}`—watch **`12`** bounce right back! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Kids with fast number sense *hate* one-step equations because teachers dock points if they don't write:
   $$\begin{aligned} x + 14 &= 39 \\ -14 &\quad -14 \\ \hline x &= 25 \end{aligned}$$
   With the **Touch • Stack • Prove Ticket**, you don't write vertical columns! You enter the **Inverse Operation** on the SC-6 (`39 {{key:ENTER}} 14 {{key:-}}` $\to 25$) and then hit **`{{key:LASTX}} {{key:+}}`** to prove that $25 + 14 = 39$! Your `Y | X` snapshot IS your inverse operation step!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Guessing-and-checking (`Day 29`) works for easy whole numbers, but good luck guessing $m + \frac{3}{8} = \frac{5}{6}$! Sweeping blocks off both pans (`🔨`) shows *why* the inverse operation (`{{key:-}}` or `{{key:+}}`) isolates the variable in 1 step, and `{{key:LASTX}}` (`🚀`) proves it!
 
 #### The "One Build, Multiple Ways" Decoder
 
@@ -1053,13 +1234,18 @@ Test whether $x = 6$ or $x = 8$ is the solution to $3x - 5 = 19$:
 3. **Problem 3 (Boss Level — Fraction One-Step Equation):** Solve $m + \frac{3}{8} = \frac{5}{6}$ on the SC-6 and prove with `{{key:LASTX}}`.
    - **📟 Stack It (`{{key:.}} 5 {{key:.}} 6 {{key:ENTER}} {{key:.}} 3 {{key:.}} 8 {{key:-}}`):** Snapshot `Y: 5/6 | X: 3/8` $\to$ **`m = 11/24`**.
    - **✅ Prove It (`{{key:LASTX}} {{key:+}}`):** $\frac{11}{24} + \frac{3}{8} = \frac{5}{6}$!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Fraction Stack Undo):** `{{key:.}} 5 {{key:.}} 6 {{key:ENTER}} {{key:.}} 3 {{key:.}} 8 {{key:-}}` = **`11/24`**. **Way B (`⚡` Common-Denominator 24ths from Day 6):** $\frac{20}{24} - \frac{9}{24} =$ **`11/24`**!
 
 ---
 
 ### Day 31 (Lesson 7.3): Solving One-Step Multiplication &amp; Division Equations — Equal Groups on the Stage
 - **Big Ideas Lesson 7.3:** Solving Equations Using Multiplication or Division ($ax = b$ and $\frac{x}{a} = b$)
 - **The Real Question:** *How do you undo multiplication ($6x = 84$), division ($\frac{x}{5} = 13$), or a fraction coefficient ($\frac{3}{4}x = 18$) in one clean stack move?*
+- **Spiral Revisit Path:** Thread F, A & B Boomerang • [🚀 VISIT 3: STACK HACKER WAY — Boss Revisit of Days 8, 29 & 30]
+- **🎮 Today's Variety Game Mode:** 🔄 Mode D: Twin-Method Showdown (`{{key:÷}}` vs `{{key:1/x}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** **3 identical $x$-rods** weigh **15 cubes** ($3x = 15$). Split 15 into 3 equal piles: `15 {{key:ENTER}} 3 {{key:÷}}` -> **`x = 5`**! Press `{{key:LASTX}} {{key:×}}` -> **`15`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** On the Algebra Stage (`ALGB-01`), $6x = 84$ literally means **6 identical $x$-rods weigh 84 units total**. To find the weight of **one** $x$-rod, you deal the 84 units into 6 equal piles (`84 ÷ 6 = 14`)! And if a fraction is stuck to $x$ like $\frac{3}{4}x = 18$, you either divide by $\frac{3}{4}$ OR multiply by its reciprocal `{{key:1/x}}` ($\frac{4}{3}$)!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** When an equation has a fraction coefficient like $\frac{2}{5}n = 16$, kids freeze up. Today you discover two awesome ways that give the exact same answer: dividing by $\frac{2}{5}$ (`Way A`) OR using Day 8's Reciprocal Flip `{{key:1/x}}` (`Way B`)!
 
 #### The "One Build, Multiple Ways" Decoder
 
@@ -1080,15 +1266,20 @@ Test whether $x = 6$ or $x = 8$ is the solution to $3x - 5 = 19$:
 3. **Problem 3 (Boss Level — Fraction Coefficient Both Ways):** Solve $\frac{2}{5}n = 16$ using BOTH division (`{{key:÷}}`) and reciprocal multiplication (`{{key:1/x}} {{key:×}}`).
    - **📟 Stack It (`16 {{key:ENTER}} {{key:.}} 2 {{key:.}} 5 {{key:1/x}}`):** Snapshot before `{{key:×}}`: `Y: 16 | X: 5/2 (2 1/2)`. Press `{{key:×}}` $\to$ **`n = 40`**.
    - **✅ Prove It (`40 {{key:ENTER}} {{key:.}} 2 {{key:.}} 5 {{key:×}}`):** Returns **`16`**!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Direct Fraction Divide):** `16 {{key:ENTER}} {{key:.}} 2 {{key:.}} 5 {{key:÷}}` = **40**. **Way B (`⚡` Reciprocal Flip `{{key:1/x}}` from Day 8):** `16 {{key:ENTER}} {{key:.}} 2 {{key:.}} 5 {{key:1/x}} {{key:×}}` ($16 \times \frac{5}{2}$) = **40**!
 
 ---
 
 ### Day 32 (Lesson 7.4): Writing, Graphing &amp; Solving Inequalities (`{{key:>}}`, `{{key:<}}`, `{{key:≥}}`, `{{key:≤}}`)
 - **Big Ideas Lessons 7.5–7.7:** Writing, Graphing, and Solving Inequalities
 - **The Real Question:** *How do you know whether the circle on the number line is OPEN (`○`) or SOLID (`●`), which way the arrow points, and how to test your answer on the SC-6?*
+- **Spiral Revisit Path:** Thread F & E Boomerang • [🔄 VISIT 4: CROSS-CHAPTER BOOMERANG — Revisits Day 25 Number Line & Day 29 Balance]
+- **🎮 Today's Variety Game Mode:** ⚡ Mode C: Coaster Height Truth Detector (`{{key:≥}}` & `{{key:≤}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** You need **at least 54 inches** ($h \ge 54$) to ride. Are 54 inches enough? Type `54 {{key:ENTER}} 54 {{key:≥}}` (`[f][×]`) -> **`1` (TRUE, Ride On!)** (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Roller coaster height signs ("Must be **at least** $48$ inches tall": $h \ge 48$) and elevator weight limits ("**At most** $2,000$ pounds": $w \le 2000$) are inequalities! Look at the bottom-right corner of your SC-6 (`{{key:≠}}` and `{{key:+}}`):
   - Strict inequalities (`{{key:>}}` `[f][≠]` and `{{key:<}}` `[g][≠]`) have **no line underneath** $\to$ **OPEN circle (`○`)** (the boundary number itself is NOT allowed!).
   - Inclusive inequalities (`{{key:≥}}` `[f][+]` and `{{key:≤}}` `[g][+]`) have **an `=` bar underneath** $\to$ **SOLID dot (`●`)** (the boundary number IS included!).
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Inequalities ($>, <, \ge, \le$) have infinitely many solutions! Combining Day 30–31's Balance Undo (`⚡`) with Day 25's SC-6 Truth Detector keys (`{{key:≥}}`, `{{key:≤}}` `🚀`) lets you solve AND test boundary numbers in seconds!
 
 #### The "One Build, Multiple Ways" Decoder
 
@@ -1108,15 +1299,20 @@ Test whether $x = 6$ or $x = 8$ is the solution to $3x - 5 = 19$:
 3. **Problem 3 (Boss Level — Inequality Truth Detector):** Which numbers from the set $\{4, 5, 6\}$ are solutions to $4n + 3 > 23$?
    - **📟 Stack It:** Solve boundary: `23 {{key:ENTER}} 3 {{key:-}} 4 {{key:÷}}` $\to n > 5$ (**Open circle `○` at 5!**).
    - **✅ Prove It:** At $n = 5$, $4(5)+3 = 23$, and `23 {{key:ENTER}} 23 {{key:>}}` returns **`0` (FALSE!)** because $23$ is not strictly greater than $23$! Only **`6`** is a solution!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Truth-Detector Plug-In):** Test $x=4,5,6$ in $4x - 3 \ge 17$: at $x=5$, `17 >= 17` (`1 = True`). **Way B (`⚡` Balance Solve First):** $4x \ge 20 \to x \ge 5$, so **`{5, 6}`** work!
 
 ---
 
 ### Day 33 (Lesson 7.5): Two-Variable Relationships ($y = kx$ and $y = x + b$) — Tables &amp; Graphs
 - **Big Ideas Lesson 7.4:** Writing Equations in Two Variables (Independent vs. Dependent Variables)
 - **The Real Question:** *How do you tell right away whether a table of $(x, y)$ numbers is an ADDITION rule ($y = x + b$) or a MULTIPLICATION rule ($y = kx$)—and how do you fill out the whole table in 5 seconds?*
+- **Spiral Revisit Path:** Thread C & F Boomerang • [🔄 VISIT 5: CROSS-CHAPTER BOOMERANG — Revisits Day 12 REP, Day 16 Formulas & Day 27 Graphs]
+- **🎮 Today's Variety Game Mode:** 🎲 Mode E: Function Machine Table Builder (`{{key:REP}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Each level gives **6 gold coins** ($y = 6x$). Type `6 {{key:REP}}` and tap `{{key:+}}` three times: **`6 -> 12 -> 18 -> 24`**! You just generated 4 $(x,y)$ graph points in 3 seconds! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Filling out input-output tables by hand is tedious. Here is the 2-second detector:
   - Subtract $y - x$ on the first two rows. If the **difference** stays constant, it's an **Additive Rule (`y = x + b`)**!
   - Divide $y \div x$ on the first two rows. If the **quotient** stays constant, it's a **Multiplicative Rule (`y = kx`)**!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Today ties together three whole chapters: a two-variable equation like $y = 12.5x$ is simultaneously a Day 12 Ratio Table (`⚡`), a Day 16 Formula (`🚀`), and a Day 27 Coordinate Line (`🔨`)!
 
 #### The "One Build, Multiple Ways" Decoder
 
@@ -1133,6 +1329,7 @@ Test whether $x = 6$ or $x = 8$ is the solution to $3x - 5 = 19$:
    - **📟 Stack It (`10 {{key:ENTER}} 6 {{key:-}} 15 {{key:ENTER}} 11 {{key:-}}`):** Snapshot `Y: 4 | X: 4` (Always $\$4$ less!). Equation: **`y = x - 4`**.
 3. **Problem 3 (Boss Level — Independent vs. Dependent):** You earn **$\$12.50$ per hour ($h$)** mowing lawns, for total pay $p = 12.50h$. Which variable is **Independent** (the input you choose) and which is **Dependent** (the output that depends on it)? Find $p$ for $h = 6.5$ hours.
    - **📟 Stack It (`12.50 {{key:ENTER}} 6.5 {{key:×}}`):** Independent = **`h` (hours)**; Dependent = **`p` (pay)**. Total pay = **`$81.25`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Inverse Equation Undo for $p=\$100$):** `100 {{key:ENTER}} 12.5 {{key:÷}}` = **8 hours**. **Way B (`⚡` Double-Up Ratio Table from Day 12):** $1\text{ hr}=\$12.50 \to 2\text{ hr}=\$25 \to 4\text{ hr}=\$50 \to 8\text{ hr}=$ **$100**!
 
 ---
 
@@ -1144,8 +1341,12 @@ Test whether $x = 6$ or $x = 8$ is the solution to $3x - 5 = 19$:
 ### Day 34 (Lesson 8.1): 3D Solids, Nets &amp; Surface Area of Rectangular Prisms Without Losing Count
 - **Big Ideas Lessons 8.1 &amp; 8.2:** Three-Dimensional Figures and Surface Area of Prisms
 - **The Real Question:** *How do you find the surface area of a 6-sided box without losing track of the 6 rectangles or forgetting to double the 3 pairs of faces?*
+- **Spiral Revisit Path:** Thread D (Inside-Out Chunking) • [🔄 VISIT 4: CROSS-CHAPTER BOOMERANG — Revisits Day 20 RECT & Day 22 Σ+]
+- **🎮 Today's Variety Game Mode:** 🎯 Mode B: Unfold the 6-Wall Box (`{{key:RECT}}` + `{{key:Σ+}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Look at a **2 by 2 by 2 cube** of blocks. Each square wall has area $2 \times 2 = 4$, and a cube has **6 walls** ($6 \times 4 = 24$)! Key `4 {{key:ENTER}} 6 {{key:×}}` -> **`24`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Surface area of a rectangular prism is a classic "show your work" nightmare: kids have to calculate 6 different rectangles (Top, Bottom, Front, Back, Left, Right), write them all down, and add them up—and 80% of mistakes happen from forgetting one face or adding wrong at the end!
   With your physical **Gridfinity Manipulative Box** on your desk and the SC-6 **`{{key:Σ+}}` Surface Area Ledger**, the calculator **counts the face pairs (`n = 1`, `n = 2`, `n = 3`)** and totals them (`{{key:Σx}}`) automatically!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Finding the surface area of a 3D box by writing $2(lw + lh + wh)$ on paper is a magnet for arithmetic mistakes. Unfolding the 6 faces (`🔨`) and feeding the 3 pairs into Day 22's `{{key:RECT}}` + `{{key:Σ+}}` ledger (`🚀`) never drops a face!
 
 #### The "One Build, Multiple Ways" Decoder
 Find the surface area of a rectangular box with length $l = 8\text{ cm}$, width $w = 5\text{ cm}$, and height $h = 3\text{ cm}$:
@@ -1167,13 +1368,18 @@ Find the surface area of a rectangular box with length $l = 8\text{ cm}$, width 
    - **✅ Prove It (`{{key:LASTX}} {{key:÷}} {{key:√x}}`):** Restores side length **`7`**!
 3. **Problem 3 (Boss Level — Open-Top Storage Bin):** You are 3D printing an **open-top** Gridfinity bin ($10\text{ cm}$ long, $8\text{ cm}$ wide, $5\text{ cm}$ tall). Because there is NO lid, there is only **1 bottom** ($10 \times 8$), plus 2 front/back walls and 2 left/right walls! Find the outer surface area.
    - **📟 Stack It:** `{{key:CLΣ}}` $\to$ Bottom (only 1!): `10 {{key:ENTER}} 8 {{key:RECT}} {{key:Σ+}}` (`80`) $\to$ Front/Back: `10 {{key:ENTER}} 5 {{key:RECT}} 2 {{key:×}} {{key:Σ+}}` (`100`) $\to$ Left/Right: `8 {{key:ENTER}} 5 {{key:RECT}} 2 {{key:×}} {{key:Σ+}}` (`80`) $\to$ `{{key:Σx}}` = **`260 cm²`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Add 5 Faces via `{{key:Σ+}}`):** Bottom ($80$) + 2 F/B ($100$) + 2 L/R ($80$) -> `{{key:Σx}}` = **`260 cm²`**. **Way B (`⚡` Full 6-Face Box Minus Missing Top):** $340 - 80 =$ **`260 cm²`**!
 
 ---
 
 ### Day 35 (Lesson 8.2): Surface Area of Triangular Prisms &amp; Pyramids (`{{key:RECT}}` + `{{key:TRI}}` + `{{key:Σ+}}`)
 - **Big Ideas Lessons 8.2 &amp; 8.3:** Surface Area of Triangular Prisms and Pyramids
 - **The Real Question:** *How do you keep a triangular prism (2 triangles + 3 rectangles) separated from a square pyramid (1 square base + 4 triangles) without mixing up their formulas?*
+- **Spiral Revisit Path:** Thread D (Inside-Out Chunking) • [🔄 VISIT 5: CROSS-CHAPTER BOOMERANG — Revisits Day 21 TRI & Day 34 Nets]
+- **🎮 Today's Variety Game Mode:** ⚡ Mode C: Pyramid Tent Builder (`{{key:TRI}}` + `{{key:Σ+}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** A square pyramid has **1 square floor** (`4 by 4 = 16`) and **4 triangle roofs** (`each area 6 -> 24`). Total is $16 + 24 =$ **`40`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** You don't need to memorize scary surface area formulas for prisms and pyramids! Just **count the flat shapes on the net** and feed them into `{{key:Σ+}}` using `{{key:RECT}}` (`[f][7]`) for rectangular faces and `{{key:TRI}}` (`[g][7]`) for triangular faces!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Pyramids and triangular prisms mix rectangles and triangles. Instead of tangling two formulas together, use `{{key:RECT}}` for flat walls and `{{key:TRI}}` for sloped roofs, tossing each into `{{key:Σ+}}` (`🚀`)!
 
 #### The "One Build, Multiple Ways" Decoder
 
@@ -1190,13 +1396,18 @@ Find the surface area of a rectangular box with length $l = 8\text{ cm}$, width 
    - **📟 Stack It:** `{{key:CLΣ}}` $\to$ 2 Triangles: `6 {{key:ENTER}} 8 {{key:TRI}} 2 {{key:×}} {{key:Σ+}}` (`48`) $\to$ Rect 1: `10 {{key:ENTER}} 6 {{key:RECT}} {{key:Σ+}}` (`60`) $\to$ Rect 2: `10 {{key:ENTER}} 8 {{key:RECT}} {{key:Σ+}}` (`80`) $\to$ Rect 3: `10 {{key:ENTER}} 10 {{key:RECT}} {{key:Σ+}}` (`100`) $\to$ `{{key:Σx}}` = **`288 ft²`**.
 3. **Problem 3 (Boss Level — Triangular Pyramid / Tetrahedron):** A regular tetrahedron is made of **4 identical equilateral triangles**, each with base $8\text{ cm}$ and height $6.93\text{ cm}$. Find its total surface area!
    - **📟 Stack It (`8 {{key:ENTER}} 6.93 {{key:TRI}} 4 {{key:×}}`):** Snapshot `Y (1 Triangle): 27.72 | X: 4` $\to$ **`110.88 cm²`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` One Triangle $\times 4$):** `6 {{key:ENTER}} 5.2 {{key:TRI}}` (`15.6`) `4 {{key:×}}` = **`62.4 cm²`**. **Way B (`⚡` Repeat `{{key:Σ+}}` 4 Times):** Add `15.6` four times into `{{key:Σ+}}` -> `{{key:Σx}}` = **`62.4 cm²`**!
 
 ---
 
 ### Day 36 (Lesson 8.3): Volume of Rectangular Prisms with Whole &amp; Fractional Edges (`{{key:PRISM}}`)
 - **Big Ideas Lesson 8.4:** Volume of Rectangular Prisms ($V = l \cdot w \cdot h = B \cdot h$)
 - **The Real Question:** *Why do $V = l \times w \times h$ and $V = (\text{Base Area } B) \times h$ give the exact same volume—and how does the SC-6 `{{key:PRISM}}` key (`[f][9]`) compute volume from 3 stack floors at once?*
+- **Spiral Revisit Path:** Thread D & B Boomerang • [🚀 VISIT 3: STACK HACKER WAY — Revisits Day 2 Cubes, Day 7 Fractions & Day 20 Area]
+- **🎮 Today's Variety Game Mode:** 🔄 Mode D: 1-Click 3D Volume (`{{key:PRISM}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Build a **3 by 2 layer** of cubes ($6$ cubes) and stack **4 layers** high ($24$ cubes). Now type `3 {{key:ENTER}} 2 {{key:ENTER}} 4 {{key:PRISM}}` (`[f][2]`) -> **`24`** in 1 click! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Look at key **`9`** on your SC-6: its yellow shift is **`{{key:PRISM}}`** (`[f][9]`)! When you push Length ($l$), Width ($w$), and Height ($h$) onto Floors `Z`, `Y`, and `X` of the elevator (`l {{key:ENTER}} w {{key:ENTER}} h`) and tap `{{key:PRISM}}`, the SC-6 multiplies all three dimensions in a single click!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Packing physical unit cubes (`🔨`) shows why Volume is 3D space ($l \times w \times h$), while `{{key:PRISM}}` (`🚀`) computes volume even when the edge lengths are fractions or decimals!
 
 #### The "One Build, Multiple Ways" Decoder
 Find the volume of a prism measuring $4\frac{1}{2}\text{ in} \times 3\text{ in} \times 2\text{ in}$:
@@ -1215,13 +1426,18 @@ Find the volume of a prism measuring $4\frac{1}{2}\text{ in} \times 3\text{ in} 
    - **📟 Stack It (`3 {{key:.}} 1 {{key:.}} 2 {{key:ENTER}} 1 {{key:.}} 1 {{key:.}} 2 {{key:ENTER}} 2 {{key:PRISM}}`):** Snapshot `Z: 3 1/2 | Y: 1 1/2 | X: 2` $\to$ **`10 1/2 ft³`** (`10.5 ft³`).
 3. **Problem 3 (Boss Level — Missing Water Depth):** A rectangular planter has a base area of **$B = 45\text{ in}^2$** ($9\text{ in} \times 5\text{ in}$) and holds **$360\text{ in}^3$** of soil. How deep ($h$) is the soil?
    - **📟 Stack It (`360 {{key:ENTER}} 9 {{key:ENTER}} 5 {{key:RECT}} {{key:÷}}`):** Snapshot `Y (Volume): 360 | X (Base Area): 45` $\to$ **`8 inches deep`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Base-Area Division):** Since $V = B \times h$, key `270 {{key:ENTER}} 45 {{key:÷}}` = **`6 in`**. **Way B (`⚡` Forward `{{key:PRISM}}` Proof with $9 \times 5 \times 6$):** `9 {{key:ENTER}} 5 {{key:ENTER}} 6 {{key:PRISM}}` = **`270 in³`**!
 
 ---
 
 ### Day 37 (Lesson 8.4): Circles, Cones &amp; Right-Triangle Hypotenuse (`{{key:π}}`, `{{key:CIRC}}`, `{{key:CONE}}`, `{{key:HYP}}`)
 - **Big Ideas Middle School Geometry Bridge:** Circle Area, Cone Volume &amp; Right-Triangle Slant Heights
 - **The Real Question:** *What are those cool geometry keys on `8` (`{{key:CIRC}}`, `{{key:HYP}}`) and `9` (`{{key:CONE}}`)—and how do they give you superpowers in 7th and 8th grade geometry?*
+- **Spiral Revisit Path:** Thread C & D Boomerang • [🚀 VISIT 4: CROSS-CHAPTER BOOMERANG — Revisits Day 2 Squares & Day 36 Volume]
+- **🎮 Today's Variety Game Mode:** 🕵️ Mode A: 3-4-5 Right Triangle Magic (`{{key:HYP}}` & `{{key:CONE}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Lay a **3-tile row** and a **4-tile column** at a right angle. Measure the diagonal: it's **5 tiles** ($3^2+4^2=5^2$)! Now press `3 {{key:ENTER}} 4 {{key:HYP}}` (`[g][3]`) -> **`5`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Most middle schoolers dread circles ($\pi r^2$), cones ($\frac{1}{3}\pi r^2 h$), and the Pythagorean Theorem ($\sqrt{a^2 + b^2}$) because of all the squaring and $\pi$ decimals. Your SC-6 has **built-in 1-click geometry solvers** right on keys `8` and `9`!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Typing `3.14` by hand causes rounding drift, and cones/right triangles take 4 steps on a basic calculator. Today you compare manual formula steps (`⚡`) against the SC-6's 1-click `{{key:CIRC}}`, `{{key:CONE}}`, and `{{key:HYP}}` keys (`🚀`)!
 
 #### The "One Build, Multiple Ways" Decoder
 
@@ -1240,6 +1456,7 @@ Find the volume of a prism measuring $4\frac{1}{2}\text{ in} \times 3\text{ in} 
    - **✅ Prove It (`12 {{key:x²}} 5 {{key:x²}} {{key:+}} {{key:√x}}`):** $144 + 25 = 169 \to \sqrt{169} = 13$!
 3. **Problem 3 (Boss Level — Waffle Cone Volume):** An ice cream cone has radius **$r = 3\text{ cm}$** and height **$h = 12\text{ cm}$**. Find its volume using `{{key:CONE}}`!
    - **📟 Stack It (`3 {{key:ENTER}} 12 {{key:CONE}}`):** Snapshot `Y (Radius): 3 | X (Height): 12` $\to$ **`113.10 cm³`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` 1-Click `{{key:CONE}}`):** `3 {{key:ENTER}} 10 {{key:CONE}}` = **`94.25 cm³`**. **Way B (`⚡` Cylinder $\div 3$ Formula):** `{{key:π}} 3 {{key:x²}} {{key:×}} 10 {{key:×}} 3 {{key:÷}}` = **`94.25 cm³`**!
 
 ---
 
@@ -1253,10 +1470,14 @@ Find the volume of a prism measuring $4\frac{1}{2}\text{ in} \times 3\text{ in} 
 ### Day 38 (Lesson 9.1): Dot Plots, Frequency &amp; Mean as "Fair Share Leveling" (`{{key:Σ+}}`, `{{key:x̄}}`, `{{key:FRQ}}`)
 - **Big Ideas Lessons 9.1 &amp; 9.2:** Statistical Questions, Dot Plots, and the Mean
 - **The Real Question:** *What does the "Mean" (average) physically look like with blocks—and how do you enter a whole data set into `{{key:Σ+}}` without losing your place?*
+- **Spiral Revisit Path:** Thread F (Balance & Fair Share) • [⚡ VISIT 2: PATTERN WAY — Revisits Day 1 Division & Day 22 Σ+]
+- **🎮 Today's Variety Game Mode:** ⚡ Mode C: Level the Cube Towers (`{{key:Σ+}}` & `{{key:x̄}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Build 3 cube towers of heights **`2`**, **`4`**, and **`6`**. Move **2 cubes** from the `6`-tower to the `2`-tower—now all three towers are height **`4`**! Press `{{key:CLΣ}} 2 {{key:Σ+}} 4 {{key:Σ+}} 6 {{key:Σ+}} {{key:x̄}}` -> **`4`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** On paper, finding the Mean of 8 numbers means adding them all up, hoping you didn't skip one, and dividing by 8. On the SC-6:
   1. Press `{{key:CLΣ}}` (`[g][<-]`) to clear the bucket.
   2. Type each number and tap **`{{key:Σ+}}`**. The screen tells you **`n = 1`**, **`n = 2`**, **`n = 3`**... so you *always* know which number you're on! (If you make a typo, tap `{{key:Σ-}}` `[f][Σ+]` to pull it right back out!)
   3. Tap **`{{key:x̄}}`** (`[g][N]`) for the **Mean**, **`{{key:Σx}}`** (`[f][N]`) for the **Total Sum**, or **`{{key:FRQ}}`** for the **Frequency Table**!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** What *is* an average (Mean)? If you build unequal towers of cubes (`🔨`) and move cubes from tall towers to short ones until every tower is the **same height**, that leveled height is the Mean! And for big lists, `{{key:Σ+}}` + `{{key:x̄}}` (`🚀`) levels them in 1 click!
 
 #### The "One Build, Multiple Ways" Decoder
 Find the Mean of five towers of Counting Tiles: `3, 7, 5, 9, 6`:
@@ -1276,18 +1497,23 @@ Find the Mean of five towers of Counting Tiles: `3, 7, 5, 9, 6`:
    - **📟 Stack It:** Type `35 {{key:Σ-}}` (`[f][Σ+]`, removes `35` so `n = 2`), then type `25 {{key:Σ+}}` (`n = 3`). Press `{{key:x̄}}` $\to$ **`18.33`** ($\frac{55}{3}$).
 3. **Problem 3 (Boss Level — Missing Test Score for an A):** You need a **Mean of $90$** across **4 quizzes** ($4 \times 90 = 360$ total points). Your first 3 quizzes are **86, 92, and 88**. What score do you need on Quiz 4?
    - **📟 Stack It:** `{{key:CLΣ}}` $\to$ `86 {{key:Σ+}} 92 {{key:Σ+}} 88 {{key:Σ+}}` $\to$ `90 {{key:ENTER}} 4 {{key:×}} {{key:Σx}} {{key:-}}` (`360 - 266`) $\to$ **`94`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Target Total Minus `{{key:Σx}}`):** Need $4 \times 90 = 360$ pts; current `{{key:Σx}}` $= 265 \to 360 - 265 =$ **95**. **Way B (`🔨` Fair-Share Points Above/Below 90):** $(-6) + (-2) + (+3) = -5$ deficit, so Quiz 4 needs $90 + 5 =$ **95**!
 
 ---
 
 ### Day 39 (Lesson 9.2): Median, Mode &amp; Range — One Data Entry, Five Instant Answers!
 - **Big Ideas Lesson 9.3:** Measures of Center (Median &amp; Mode) and Range
 - **The Real Question:** *Why does the textbook make you sort all the numbers from least to greatest just to find the Median, Mode, Min, Max, and Range—and how does the SC-6 give you all 5 from the exact same `{{key:Σ+}}` list?*
+- **Spiral Revisit Path:** Thread F (Balance & Fair Share) • [🚀 VISIT 3: STACK HACKER WAY — Revisits Day 38 Mean]
+- **🎮 Today's Variety Game Mode:** 🎲 Mode E: Live Dice Roll Stats Lab (`{{key:MED}}`, `{{key:MODE}}`, `{{key:RNG}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** With `2, 4, 6` still in memory from yesterday, press `{{key:MED}}` (`[g][7]`) -> **`4`** (middle number) and `{{key:RNG}}` (`[g][8]`) -> **`4`** ($6 - 2$)! Zero re-typing! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Here is the best part of Row 2 on the SC-6: once you enter your data list with `{{key:Σ+}}` **in ANY order** (you don't even have to sort them by hand first!), the calculator sorts them inside its chip and unlocks **every single measure of center and spread** with one tap:
   - **`{{key:MED}}`** (`[f][FRQ]`): **Median** (the middle number!)
   - **`{{key:MODE}}`** (`[g][FRQ]`): **Mode** (the most frequent number!)
   - **`{{key:MIN}}`** (`[f][RNG]`): **Minimum** (smallest value!)
   - **`{{key:MAX}}`** (`[g][RNG]`): **Maximum** (largest value!)
   - **`{{key:RNG}}`**: **Range** ($\text{Max} - \text{Min}$!)
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** On Day 38 we leveled towers to find the Mean (`{{key:x̄}}`). Why do we also need the **Median (`{{key:MED}}`)**? Because one crazy outlier (like a $\$450$ console in a list of $\$20$ games) drags the Mean way up, while the middle number (`{{key:MED}}`) stays rock-solid!
 
 #### The "One Build, Multiple Ways" Decoder
 Enter the dataset `12, 8, 15, 12, 10, 95, 13` once with `{{key:Σ+}}`, then look at **Mean vs. Median when there is an Outlier (`95`)**:
@@ -1304,12 +1530,16 @@ Enter the dataset `12, 8, 15, 12, 10, 95, 13` once with `{{key:Σ+}}`, then look
    - **📟 Stack It:** `Mean ({{key:x̄}})`: **`$29.17`** | `Median ({{key:MED}})`: **`$17.50`**.
    - **✅ Prove It:** **`Median ($17.50)`** is much better because the `$90` outlier makes `$29.17` higher than 5 out of the 6 days!
 3. **Problem 3 (Boss Level — Dice Roll Experiment):** Roll your physical **Probability Die (`PROB-01`)** (or press `{{key:🎲}}`) 7 times, log each roll with `{{key:Σ+}}`, and write your `{{key:MED}}`, `{{key:MODE}}`, and `{{key:RNG}}`!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🔨` Line Up Physical Tiles in Order):** Sort your 5 rolls from least to greatest to spot the middle tile (`Median`) and `Max - Min` (`Range`). **Way B (`🚀` SC-6 `{{key:MED}}` & `{{key:RNG}}` Keys):** Load into `{{key:Σ+}}` and press `{{key:MED}}` and `{{key:RNG}}`—100% match!
 
 ---
 
 ### Day 40 (Lesson 9.3): Quartiles, Interquartile Range (`{{key:IQR}}`) &amp; Box-and-Whisker Plots in 5 Seconds
 - **Big Ideas Lessons 9.4 &amp; 10.4:** Quartiles, Interquartile Range (IQR), and Box-and-Whisker Plots
 - **The Real Question:** *How do you draw a Box-and-Whisker Plot (5-Number Summary) without getting confused about Q1, Median, and Q3?*
+- **Spiral Revisit Path:** Thread F (Balance & Fair Share) • [🚀 VISIT 4: BOSS REVISIT — Revisits Day 6 Quarters & Day 39 Median]
+- **🎮 Today's Variety Game Mode:** 🔄 Mode D: 3-Second Box-Plot Builder (`{{key:1Q}}`, `{{key:3Q}}`, `{{key:IQR}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Load `10, 20, 30, 40, 50` into `{{key:Σ+}}`. Tap `{{key:MIN}}` (`10`), `{{key:1Q}}` (`15`), `{{key:MED}}` (`30`), `{{key:3Q}}` (`45`), `{{key:MAX}}` (`50`), and `{{key:IQR}}` (`30`)! Whole Box Plot in 5 seconds! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** A Box-and-Whisker Plot only needs **5 numbers** (called the **5-Number Summary**):
   1. **Left Whisker Dot:** `{{key:MIN}}` (`[f][RNG]`)
   2. **Left Edge of Box (First Quartile $Q_1$):** `{{key:1Q}}` (`[f][IQR]`)
@@ -1317,6 +1547,7 @@ Enter the dataset `12, 8, 15, 12, 10, 95, 13` once with `{{key:Σ+}}`, then look
   4. **Right Edge of Box (Third Quartile $Q_3$):** `{{key:3Q}}` (`[g][IQR]`)
   5. **Right Whisker Dot:** `{{key:MAX}}` (`[g][RNG]`)
   And the width of the box itself ($Q_3 - Q_1$) is the **`{{key:IQR}}`** key! Once your data is in `{{key:Σ+}}`, you get all 5 numbers and the IQR in 5 seconds!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Finding $Q_1$, $Q_3$, and $\text{IQR}$ by hand requires splitting a sorted list in half and finding medians of each half. Once your data is in `{{key:Σ+}}` from Day 39, pressing `{{key:1Q}}`, `{{key:3Q}}`, and `{{key:IQR}}` (`🚀`) builds your entire Box Plot in 3 seconds!
 
 ```
    MIN [f][RNG]      1Q [f][IQR]    MED [f][FRQ]    3Q [g][IQR]      MAX [g][RNG]
@@ -1335,18 +1566,23 @@ Enter the dataset `12, 8, 15, 12, 10, 95, 13` once with `{{key:Σ+}}`, then look
    - **✅ Answer:** The middle box (from `1Q` to `3Q`) holds **$25\% + 25\% = 50\%$** of the data!
 3. **Problem 3 (Boss Level — Comparing Consistency with `{{key:IQR}}`):** Player A has an `IQR` of **4 points** and Player B has an `IQR` of **19 points**. Which player is **more consistent** (less spread out)?
    - **✅ Answer:** **Player A** (smaller `IQR` = tighter box = much more consistent!).
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🔨` Box-Plot Width Visual):** A narrower middle box (`IQR = 4` vs `18`) means the middle $50\%$ of scores are tightly clustered (**Player A**). **Way B (`🚀` `3Q - 1Q` Stack Check):** Verify `{{key:3Q}}` minus `{{key:1Q}}` equals `{{key:IQR}}`!
 
 ---
 
 ### Day 41 (Lesson 9.4): Mean Absolute Deviation (`{{key:MAD}}`) Without the 20-Minute Subtraction Nightmare
 - **Big Ideas Lesson 9.5:** Mean Absolute Deviation (MAD)
 - **The Real Question:** *Why is MAD the most dreaded homework problem in 6th grade—and how does the SC-6 `{{key:MAD}}` key (`[g][Σ+]`) turn 20 minutes of tedious subtraction into a 3-second check?*
+- **Spiral Revisit Path:** Thread E & F Boomerang • [🔄 VISIT 5: CROSS-CHAPTER BOOMERANG — Revisits Day 26 |x| & Day 38 Mean]
+- **🎮 Today's Variety Game Mode:** 🔄 Mode D: Beat the 20-Minute Homework Monster (`{{key:MAD}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Towers `2, 4, 6` have Mean `4`. Their distances from `4` are `2, 0, 2` (average distance = $4 \div 3 = 1.33$). Now press `{{key:MAD}}` (`[g][5]`) on your SC-6 -> **`1.33`** in 1 click! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Be honest: **every 6th grader on Earth hates Mean Absolute Deviation (MAD)**. Why? Because to find the MAD of 6 numbers by hand, the textbook makes you:
   1. Add all 6 numbers and divide by 6 to get the Mean ($\bar{x}$).
   2. Subtract the Mean from *every single number* and take the absolute value $|x_i - \bar{x}|$ six times.
   3. Add all 6 distances together and divide by 6 *again*!
   If you make one tiny arithmetic slip in step 1, all 14 calculations after it are wrong!
   Look at key **`{{key:Σ+}}`** on your SC-6: its blue shift **`{{key:MAD}}` (`[g][Σ+]`)** computes the exact Mean Absolute Deviation automatically!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Mean Absolute Deviation (`MAD`) is the most dreaded calculation in 6th grade because doing it by hand takes 15 steps (find mean, subtract every number, take `[|x|]` from Day 26, and average again). Today you see *how* Day 26's `[|x|]` + Day 38's `{{key:x̄}}` build `MAD`—and unlock the 1-click `{{key:MAD}}` key (`🚀`)!
 
 #### The "One Build, Multiple Ways" Decoder
 Let's see what `{{key:MAD}}` actually means using 4 towers of Counting Tiles: **`2, 4, 6, 8`**:
@@ -1367,6 +1603,7 @@ Let's see what `{{key:MAD}}` actually means using 4 towers of Counting Tiles: **
    - **✅ Prove It:** Distances from `13.0` are `0.6, 0.0, 0.4, 0.2, 0.2, 1.0` (Sum $= 2.4 \div 6 = 0.40$)!
 3. **Problem 3 (Boss Level — Full Stats Sweep):** For the data **`5, 8, 8, 10, 14`**, record `{{key:x̄}}`, `{{key:MED}}`, `{{key:MODE}}`, `{{key:RNG}}`, `{{key:IQR}}`, and `{{key:MAD}}` from a single `{{key:Σ+}}` entry!
    - **📟 Stack It:** `x̄`: **`9.00`** | `MED`: **`8.00`** | `MODE`: **`8.00`** | `RNG`: **`9.00`** | `IQR`: **`5.50`** (`1Q=6.5, 3Q=12`) | `MAD`: **`2.40`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` 1-Click `{{key:MAD}}` Key):** Load `5, 8, 8, 10, 14` into `{{key:Σ+}}` and press `{{key:MAD}}` = **`2.4`**. **Way B (`⚡` Distance-from-Mean Check using Day 26 `[|x|]`):** Mean $= 9$; distances $4+1+1+1+5 = 12 \to 12 \div 5 =$ **`2.4`**!
 
 ---
 
@@ -1380,9 +1617,13 @@ Let's see what `{{key:MAD}}` actually means using 4 towers of Counting Tiles: **
 ### Day 42 (Lesson 10.1): Adding &amp; Subtracting Signed Numbers — Zero Pairs &amp; Why "Minus a Negative" Adds!
 - **Big Ideas Grade 7 Chapter 1:** Adding and Subtracting Integers and Rational Numbers
 - **The Real Question:** *Why does $-8 + 5 = -3$, and why does subtracting a negative like $10 - (-4)$ turn into $+14$?*
+- **Spiral Revisit Path:** Thread E (Zero-Pair & Distance) • [🔄 VISIT 5: GRADE 7 BRIDGE BOOMERANG — Revisits Days 7, 24 & 26]
+- **🎮 Today's Variety Game Mode:** 🕵️ Mode A: Penalty Cancellation Trick ($10 - (-4) = 14$)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Your game score is **`10`**, and the ref **erases a $-4$ penalty** ($10 - (-4)$). Erasing a penalty makes your score go **UP to `14`**! Key `10 {{key:ENTER}} 4 {{key:+/-}} {{key:-}}` -> **`14`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** In 7th grade, almost every math error comes from negative sign rules. With your **Two-Color Counters (`BASE-10`)** (Yellow $= +1$, Red $= -1$):
   1. **Adding (`{{key:+}}`)** means **dropping counters onto the tray** and canceling any Yellow-Red **Zero Pairs**.
   2. **Subtracting (`{{key:-}}`)** means **taking counters OFF the tray**! If you have `10` points and the ref **takes away a $-4$ penalty** ($10 - (-4)$), taking away a negative penalty makes your score go **UP by 4** to **`14`**!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** In Chapter 6 (`Day 24`), you met Yellow ($+1$) and Red ($-1$) counters. Today they boomerang back for 7th-grade signed arithmetic: removing red debt counters (`🔨`) proves *why* subtracting a negative ($10 - (-4)$) is the exact same as adding a positive ($10 + 4 = 14$)!
 
 #### The "One Build, Multiple Ways" Decoder
 
@@ -1401,17 +1642,22 @@ Let's see what `{{key:MAD}}` actually means using 4 towers of Counting Tiles: **
    - **✅ Prove It (`{{key:LASTX}} {{key:+}}`):** $-4 + (-8) = -12$!
 3. **Problem 3 (Boss Level — Signed Fractions):** Solve $-\frac{3}{4} - (-\frac{5}{8})$.
    - **📟 Stack It (`{{key:.}} 3 {{key:.}} 4 {{key:+/-}} {{key:ENTER}} {{key:.}} 5 {{key:.}} 8 {{key:+/-}} {{key:-}}`):** Snapshot `Y: -3/4 | X: -5/8` $\to$ **`-1/8`**.
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Signed Fraction Stack):** `{{key:.}} 3 {{key:.}} 4 {{key:+/-}} {{key:ENTER}} {{key:.}} 5 {{key:.}} 8 {{key:+/-}} {{key:-}}` = **`-1/8`**. **Way B (`⚡` Add-the-Opposite + Common 8ths):** $-\frac{6}{8} + (+\frac{5}{8}) =$ **`-1/8`**!
 
 ---
 
 ### Day 43 (Lesson 10.2): Multiplying &amp; Dividing Signed Rational Numbers — The Light-Switch Flip Rule
 - **Big Ideas Grade 7 Chapter 2:** Multiplying and Dividing Rational Numbers
 - **The Real Question:** *Why does a Negative times a Negative equal a POSITIVE—and how do you tell the sign of any multiplication or division problem in 1 second?*
+- **Spiral Revisit Path:** Thread E & B Boomerang • [🔄 VISIT 6: GRADE 7 BRIDGE BOOMERANG — Revisits Days 8, 24 & 42]
+- **🎮 Today's Variety Game Mode:** ⚡ Mode C: Light-Switch Double-Flip (`{{key:+/-}}` × `{{key:+/-}}`)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Type `5` on your SC-6. Tap `{{key:+/-}}` **twice**: `5 -> -5 -> +5`! Two negative flips always bring you back to **POSITIVE**! Now key `3 {{key:+/-}} {{key:ENTER}} 4 {{key:+/-}} {{key:×}}` -> **`+12`**! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Think of a **negative sign (`-`) as flipping a light switch** ( just like the `{{key:+/-}}` key!):
   - Start with the light **ON ($+$)**.
   - **1 negative sign** flips the switch **OFF ($-$)** $\to (+) \times (-) = (-)$.
   - **2 negative signs** flip the switch OFF and then **right back ON ($+$)** $\to (-) \times (-) = (+)$!
   Even simpler: **Same signs $\to$ Positive ($+$). Different signs $\to$ Negative ($-$)!**
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Why does $(-)\times(-) = (+)$? Pressing `{{key:+/-}}` twice (`🔨`) flips a negative right back to positive! Combining Day 8's Reciprocal Flip (`{{key:1/x}}`) with today's Even/Odd Sign-Flip rule (`⚡`) lets you predict the sign of any product or quotient before touching a key!
 
 #### Daily 3-Problem Workout
 1. **Problem 1 (The 4 Sign Combos):** Compute $6 \times (-4)$, $(-6) \times 4$, and $(-6) \times (-4)$ on the SC-6.
@@ -1422,14 +1668,19 @@ Let's see what `{{key:MAD}}` actually means using 4 towers of Counting Tiles: **
 3. **Problem 3 (Boss Level — Signed Fraction Division):** Solve $-\frac{5}{6} \div (-\frac{5}{12})$.
    - **📟 Stack It (`{{key:.}} 5 {{key:.}} 6 {{key:+/-}} {{key:ENTER}} {{key:.}} 5 {{key:.}} 12 {{key:+/-}} {{key:÷}}`):** Negative divided by negative = Positive **`+2`**!
    - **✅ Prove It (`{{key:LASTX}} {{key:×}}`):** $2 \times (-\frac{5}{12}) = -\frac{10}{12} = -\frac{5}{6}$!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Signed Fraction Stack):** `{{key:.}} 5 {{key:.}} 6 {{key:+/-}} {{key:ENTER}} {{key:.}} 5 {{key:.}} 12 {{key:+/-}} {{key:÷}}` = **`+2`**. **Way B (`⚡` Sign-Flip Rule + Day 8 Reciprocal):** 2 negatives = $(+)$, and $\frac{5}{6} \times \frac{12}{5} =$ **`+2`**!
 
 ---
 
 ### Day 44 (Lesson 10.3): Solving Two-Step Equations ($ax + b = c$) — Unwrapping the Present in Reverse!
 - **Big Ideas Grade 7 Chapter 3:** Solving Two-Step Equations
 - **The Real Question:** *In a two-step equation like $3x + 7 = 28$, how do you know whether to undo the $+7$ or the $\times 3$ FIRST—and how do you show your work in a 2-number stack snapshot?*
+- **Spiral Revisit Path:** Thread F, B & D Boomerang • [🚀 VISIT 6: GRADE 7 BOSS BOOMERANG — Revisits Days 3, 30, 31 & 42]
+- **🎮 Today's Variety Game Mode:** 🎯 Mode B: Unwrap the Present in Reverse ($ax + b = c$)
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** To Solve $2x + 3 = 11$: first untie the loose ribbon (`11 {{key:ENTER}} 3 {{key:-}}` -> `8`), then open the 2 boxes (`2 {{key:÷}}` -> **`x = 4`**)! Two clicks, zero algebra rewrites! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** Think about wrapping a birthday gift: first you put the toy in a **box** ($\times 3$), and then you tie a **ribbon** ($+ 7$) around the outside. When you open the gift, what do you undo first? **You untie the loose ribbon (`- 7`) FIRST, and open the box (`÷ 3`) SECOND!**
   On the **Algebra Stage (`ALGB-01`)**, you sweep away the loose unit cubes (`+7` or `-7`) FIRST so the $x$-rods stand alone, and divide by the number of $x$-rods SECOND!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** Two-step equations ($ax + b = c$) combine Day 30 (Addition/Subtraction Undo), Day 31 (Multiplication/Division Undo), and Day 42 (Signed Numbers) into one reverse unwrap! Solve by sweeping blocks off the Algebra Stage (`🔨`) OR running the 2-step reverse stack (`🚀`)!
 
 #### The "One Build, Multiple Ways" Decoder
 Solve $3x + 7 = 28$ without writing 5 lines of algebra:
@@ -1452,13 +1703,18 @@ Solve $3x + 7 = 28$ without writing 5 lines of algebra:
 3. **Problem 3 (Boss Level — Negative Coefficient Two-Step):** Solve $-3x + 14 = 2$.
    - **📟 Stack It (`2 {{key:ENTER}} 14 {{key:-}} 3 {{key:+/-}} {{key:÷}}`):** Step 1: $2 - 14 = -12$ (`-3x = -12`). Snapshot before `{{key:÷}}`: `Y: -12 | X: -3` $\to$ **`x = 4`**.
    - **✅ Prove It (`3 {{key:+/-}} {{key:×}} 14 {{key:+}}`):** $-3(4) + 14 = -12 + 14 = 2$!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` 2-Step Reverse Stack):** `2 {{key:ENTER}} 14 {{key:-}}` (`-12`) `3 {{key:+/-}} {{key:÷}}` = **`x = 4`**. **Way B (`🔨` Plug-In Forward Check from Day 16):** Substitute $x=4$ into $-3(4) + 14 = -12 + 14 =$ **`2`**!
 
 ---
 
 ### Day 45 (Lesson 10.4): Probability, Combinatorics &amp; The Graduation Boss Sprint (`{{key:🎲}}`, `{{key:x!}}`, `{{key:nCr}}`, `{{key:?}}`)
 - **Big Ideas Grade 7 Chapter 7 + Competition Bridge:** Probability, Factorials, Combinations, Permutations &amp; The SC-6 Quiz Engine
 - **The Real Question:** *How do you calculate the odds of winning a game (`{{key:🎲}}`), count how many teams or passwords are possible (`{{key:x!}}`, `{{key:nCr}}`, `{{key:nPr}}`), and prove you've mastered middle school math on the SC-6 Quiz Engine (`{{key:?}}`)?*
+- **Spiral Revisit Path:** All 6 Threads Finale • [🏆 GRADUATION BOSS SPRINT — Revisits Fractions (Ch. 2), Percents (Ch. 3) & Stats (Ch. 9)]
+- **🎮 Today's Variety Game Mode:** 🎲 Mode E: Graduation Live Dice & `{{key:?}}` Quiz Sprint
+- **⚡ 30-Second Zero-Fail Starter (Instant Win #1):** Press `6 {{key:1…x}}` (`[f][🎲]`) three times to roll a digital 6-sided die, then press `3 {{key:x!}}` (`[g][🎲]`) -> **`6`** ways to arrange 3 trophies! (`[ ] +5 Spark XP!`)
 - **Why Should I Care? (2-Min Hook):** You made it to **Day 45**! Today you unlock the top-left superpower keys on the SC-6 (`{{key:🎲}}`, `{{key:x!}}`, `{{key:nCr}}`, `{{key:nPr}}`) and take the **Graduation Boss Sprint** on the built-in **Math Quiz Engine (`{{key:?}}`, `[f][C]`)**!
+- **Why Try a New Way Today? (When the Old Way Gets Annoying):** On Graduation Day, you combine physical dice/spinner trials (`🔨`), 3-way fraction/decimal/percent probability (`⚡`), and the SC-6's combinatorics (`{{key:x!}}`, `{{key:nCr}}`, `{{key:nPr}}`) and Quiz Engine (`{{key:?}}` `🚀`)!
 
 {{blocks:dice_spinner_d20_and_polyhedra|Probability Dice & Spinner Studio: Independent 2d6 Pairs and 10-Sector Hub}}
 
@@ -1480,37 +1736,42 @@ Solve $3x + 7 = 28$ without writing 5 lines of algebra:
    - **🧱 Touch It:** `[ ]` Arranged 5 physical kit badges in a row.
    - **📟 Stack It (`5 {{key:x!}}`):** Snapshot `X: 120` ways ($5 \times 4 \times 3 \times 2 \times 1 = 120$).
    - **✅ Prove It (`{{key:?}}`):** Completed 10-question SC-6 Quiz Engine Graduation Streak!
+   - **★★ Twin-Way Bonus (+25 XP toward 🛡️ Skip Shield):** **Way A (`🚀` Factorial Key `{{key:x!}}`):** `5 {{key:x!}}` = **120 ways**. **Way B (`⚡` Permutation Key `{{key:nPr}}`):** Choosing all 5 badges in order is `5 {{key:ENTER}} 5 {{key:nPr}}` = **120 ways** ($5\times 4\times 3\times 2\times 1$)!
 
 ---
 
-## 4. The 45-Day Student Streak &amp; Boss Badge Tracker
+## 4. The 45-Day Student Streak, 3-Way Method Passport &amp; Skip-Shield Tracker
 
-Print this tracker or check off each day as you finish its 15-minute **Touch • Stack • Prove** mission. Every 5 days unlocks a **Chapter Boss Badge**:
+Print this tracker or check off each day as you finish its 15-minute **Touch • Stack • Prove** mission.
+- **How to Earn a `🛡️ Skip-1-Problem Shield`:** Every time you complete the **`★★ Twin-Way Revisit Bonus`** on **Problem 3** (by verifying that two different approaches give the exact same number), check off a `★★` box below. Every **3 Twin-Way Stars (`★★`)** unlocks a **`🛡️ Skip Shield`** that lets you legally cross out any 1 workout problem on a future day!
+- **How to Earn Your `🪪 Dealer's Choice License`:** Check off all 3 approaches (`[ ] 🔨 Builder`, `[ ] ⚡ Pattern`, `[ ] 🚀 Stack`) in a chapter to earn the right to use **ONLY your #1 favorite method** on that chapter's test!
 
-| Chapter | Daily 15-Minute Missions (Check Off Each Win!) | Chapter Boss Badge Unlocked |
-| :--- | :--- | :--- |
-| **Ch. 1: Expressions &amp; Factors** | `[ ]` Day 1 (`÷R`) &bull; `[ ]` Day 2 (`x²/x³`) &bull; `[ ]` Day 3 (4-Stack) &bull; `[ ]` Day 4 (`FACT`) &bull; `[ ]` Day 5 (`GCF/LCM`) | 🏆 **Badge 1: Prime Architect** |
-| **Ch. 2: Fractions &amp; Decimals** | `[ ]` Day 6 (`SIMP`) &bull; `[ ]` Day 7 (Frac `×`) &bull; `[ ]` Day 8 (`1/x` Flip) &bull; `[ ]` Day 9 (`IP/FP`) &bull; `[ ]` Day 10 (3-Way `FDISP`) | 🏆 **Badge 2: Tower Master** |
-| **Ch. 3: Ratios, Rates &amp; Percents** | `[ ]` Day 11 (`a:b`) &bull; `[ ]` Day 12 (`REP`) &bull; `[ ]` Day 13 (`x⇄y` Rate) &bull; `[ ]` Day 14 (`▸%`) &bull; `[ ]` Day 15 (`%CHG` &amp; Units) | 🏆 **Badge 3: Ratio Navigator** |
-| **Ch. 4: Algebraic Expressions** | `[ ]` Day 16 (Plug-In) &bull; `[ ]` Day 17 (Like Terms) &bull; `[ ]` Day 18 (Distribute) &bull; `[ ]` Day 19 (Factor `GCF`) | 🏆 **Badge 4: Tile Alchemist** |
-| **Ch. 5: Area &amp; Base-60 Time** | `[ ]` Day 20 (`RECT`) &bull; `[ ]` Day 21 (`TRI`) &bull; `[ ]` Day 22 (`Σ+` Area) &bull; `[ ]` Day 23 (`🕒` Clock) | 🏆 **Badge 5: Polygon Engineer** |
-| **Ch. 6: Integers &amp; Coordinates** | `[ ]` Day 24 (`+/-`) &bull; `[ ]` Day 25 (`LINE` `>/<`) &bull; `[ ]` Day 26 (`ABS`) &bull; `[ ]` Day 27 (4 Quads) &bull; `[ ]` Day 28 (Distance) | 🏆 **Badge 6: Zero-Pair Commander** |
-| **Ch. 7: Equations &amp; Inequalities** | `[ ]` Day 29 (Balance) &bull; `[ ]` Day 30 (1-Step `+/-`) &bull; `[ ]` Day 31 (1-Step `×/÷`) &bull; `[ ]` Day 32 (`≥/≤`) &bull; `[ ]` Day 33 (`y=kx`) | 🏆 **Badge 7: Balance Breaker** |
-| **Ch. 8: Surface Area &amp; Volume** | `[ ]` Day 34 (Box `Σ+`) &bull; `[ ]` Day 35 (Pyramid `Σ+`) &bull; `[ ]` Day 36 (`PRISM`) &bull; `[ ]` Day 37 (`CIRC/CONE/HYP`) | 🏆 **Badge 8: 3D Solid Builder** |
-| **Ch. 9: Statistics &amp; Box Plots** | `[ ]` Day 38 (`x̄/FRQ`) &bull; `[ ]` Day 39 (`MED/MODE/RNG`) &bull; `[ ]` Day 40 (`1Q/3Q/IQR`) &bull; `[ ]` Day 41 (`MAD`) | 🏆 **Badge 9: Data Scientist** |
-| **Ch. 10: Grade 7 Bridge** | `[ ]` Day 42 (Signed `+/-`) &bull; `[ ]` Day 43 (Sign Flip `×/÷`) &bull; `[ ]` Day 44 (2-Step Eq) &bull; `[ ]` Day 45 (`🎲/nCr/?`) | 🏆 **Badge 10: Stack Champion** |
+| Chapter | Daily 15-Minute Missions (Check Off Each Win!) | 3-Way Method Passport | Twin-Way Stars (`★★`) &amp; Rewards Unlocked |
+| :--- | :--- | :---: | :--- |
+| **Ch. 1: Expressions &amp; Factors** | `[ ]` Day 1 (`÷R`) &bull; `[ ]` Day 2 (`x²/x³`) &bull; `[ ]` Day 3 (4-Stack) &bull; `[ ]` Day 4 (`FACT`) &bull; `[ ]` Day 5 (`GCF/LCM`) | `[ ]🔨` `[ ]⚡` `[ ]🚀` | `[ ]★★` `[ ]★★` `[ ]★★` $\to$ `[ ]🛡️ Skip Shield` &bull; `[ ]🪪 Dealer's Choice` &bull; 🏆 **Prime Architect** |
+| **Ch. 2: Fractions &amp; Decimals** | `[ ]` Day 6 (`SIMP`) &bull; `[ ]` Day 7 (Frac `×`) &bull; `[ ]` Day 8 (`1/x` Flip) &bull; `[ ]` Day 9 (`IP/FP`) &bull; `[ ]` Day 10 (3-Way `FDISP`) | `[ ]🔨` `[ ]⚡` `[ ]🚀` | `[ ]★★` `[ ]★★` `[ ]★★` $\to$ `[ ]🛡️ Skip Shield` &bull; `[ ]🪪 Dealer's Choice` &bull; 🏆 **Tower Master** |
+| **Ch. 3: Ratios, Rates &amp; Percents** | `[ ]` Day 11 (`a:b`) &bull; `[ ]` Day 12 (`REP`) &bull; `[ ]` Day 13 (`x⇄y` Rate) &bull; `[ ]` Day 14 (`▸%`) &bull; `[ ]` Day 15 (`%CHG` &amp; Units) | `[ ]🔨` `[ ]⚡` `[ ]🚀` | `[ ]★★` `[ ]★★` `[ ]★★` $\to$ `[ ]🛡️ Skip Shield` &bull; `[ ]🪪 Dealer's Choice` &bull; 🏆 **Ratio Navigator** |
+| **Ch. 4: Algebraic Expressions** | `[ ]` Day 16 (Plug-In) &bull; `[ ]` Day 17 (Like Terms) &bull; `[ ]` Day 18 (Distribute) &bull; `[ ]` Day 19 (Factor `GCF`) | `[ ]🔨` `[ ]⚡` `[ ]🚀` | `[ ]★★` `[ ]★★` `[ ]★★` $\to$ `[ ]🛡️ Skip Shield` &bull; `[ ]🪪 Dealer's Choice` &bull; 🏆 **Tile Alchemist** |
+| **Ch. 5: Area &amp; Base-60 Time** | `[ ]` Day 20 (`RECT`) &bull; `[ ]` Day 21 (`TRI`) &bull; `[ ]` Day 22 (`Σ+` Area) &bull; `[ ]` Day 23 (`🕒` Clock) | `[ ]🔨` `[ ]⚡` `[ ]🚀` | `[ ]★★` `[ ]★★` `[ ]★★` $\to$ `[ ]🛡️ Skip Shield` &bull; `[ ]🪪 Dealer's Choice` &bull; 🏆 **Polygon Engineer** |
+| **Ch. 6: Integers &amp; Coordinates** | `[ ]` Day 24 (`+/-`) &bull; `[ ]` Day 25 (`LINE` `>/<`) &bull; `[ ]` Day 26 (`ABS`) &bull; `[ ]` Day 27 (4 Quads) &bull; `[ ]` Day 28 (Distance) | `[ ]🔨` `[ ]⚡` `[ ]🚀` | `[ ]★★` `[ ]★★` `[ ]★★` $\to$ `[ ]🛡️ Skip Shield` &bull; `[ ]🪪 Dealer's Choice` &bull; 🏆 **Zero-Pair Commander** |
+| **Ch. 7: Equations &amp; Inequalities** | `[ ]` Day 29 (Balance) &bull; `[ ]` Day 30 (1-Step `+/-`) &bull; `[ ]` Day 31 (1-Step `×/÷`) &bull; `[ ]` Day 32 (`≥/≤`) &bull; `[ ]` Day 33 (`y=kx`) | `[ ]🔨` `[ ]⚡` `[ ]🚀` | `[ ]★★` `[ ]★★` `[ ]★★` $\to$ `[ ]🛡️ Skip Shield` &bull; `[ ]🪪 Dealer's Choice` &bull; 🏆 **Balance Breaker** |
+| **Ch. 8: Surface Area &amp; Volume** | `[ ]` Day 34 (Box `Σ+`) &bull; `[ ]` Day 35 (Pyramid `Σ+`) &bull; `[ ]` Day 36 (`PRISM`) &bull; `[ ]` Day 37 (`CIRC/CONE/HYP`) | `[ ]🔨` `[ ]⚡` `[ ]🚀` | `[ ]★★` `[ ]★★` `[ ]★★` $\to$ `[ ]🛡️ Skip Shield` &bull; `[ ]🪪 Dealer's Choice` &bull; 🏆 **3D Solid Builder** |
+| **Ch. 9: Statistics &amp; Box Plots** | `[ ]` Day 38 (`x̄/FRQ`) &bull; `[ ]` Day 39 (`MED/MODE/RNG`) &bull; `[ ]` Day 40 (`1Q/3Q/IQR`) &bull; `[ ]` Day 41 (`MAD`) | `[ ]🔨` `[ ]⚡` `[ ]🚀` | `[ ]★★` `[ ]★★` `[ ]★★` $\to$ `[ ]🛡️ Skip Shield` &bull; `[ ]🪪 Dealer's Choice` &bull; 🏆 **Data Scientist** |
+| **Ch. 10: Grade 7 Bridge** | `[ ]` Day 42 (Signed `+/-`) &bull; `[ ]` Day 43 (Sign Flip `×/÷`) &bull; `[ ]` Day 44 (2-Step Eq) &bull; `[ ]` Day 45 (`🎲/nCr/?`) | `[ ]🔨` `[ ]⚡` `[ ]🚀` | `[ ]★★` `[ ]★★` `[ ]★★` $\to$ `[ ]🛡️ Skip Shield` &bull; `[ ]🪪 Dealer's Choice` &bull; 🏆 **Stack Champion** |
 
 ---
 
 ## 5. Parent &amp; Teacher "No-Battle" Coaching Guide
 
-If you are coaching a student who has developed math anxiety or shuts down during homework, follow these **Four Golden Rules**:
+If you are coaching a student who has developed math anxiety, hates writing steps, or shuts down when told to "solve it 3 ways," follow these **Five Golden Rules**:
 
 1. **Never Demand Multi-Line Handwriting When the 2-Number Snapshot Works:**
    If a student fills in `Y: 36 | X: 4` before dividing to get `x = 9` on $4x + 9 = 45$, **celebrate it as 100% full credit for showing work**. They have proven they performed $45 - 9 = 36$ first and divided by $4$ second.
-2. **Use the Physical Blocks as a Translator, Not a Baby Toy:**
+2. **Never Force Multiple Approaches on the Same Problem—Let the 3-Visit Spiral Do the Work:**
+   Students resent alternative methods when they are forced to use a slow diagram on a problem they already solved. In this curriculum, **Problems 1 &amp; 2 only ever require ONE approach**. When the concept returns 2 days later with larger or messier numbers, the student naturally experiences *why* the new approach is an upgrade.
+3. **Honor the `★★ Twin-Way Stars`, `🛡️ Skip Shields`, and `🪪 Dealer's Choice Licenses`:**
+   On **Problem 3** each day, students can earn a **Twin-Way Star (`★★`)** by solving with today's approach and proving it matches an earlier approach. Always honor their earned **`🛡️ Skip-1-Problem Shield`** (3 Twin-Way Stars = skip any 1 problem on a future day) and their **`🪪 Dealer's Choice License`** (once they've tried all 3 approaches in a chapter, let them use *only* their favorite approach on tests!). Nothing motivates a reluctant student to try a second approach faster than knowing it buys them freedom tomorrow.
+4. **Use the Physical Blocks as a CAD Translator, Not a Baby Toy:**
    Middle schoolers hate feeling "babied." Remind them that our blocks (`PRIME-01`, `FRAC-01`, `ALGB-01`, `TIME-01`) are **precision millimeter CAD instruments** engineered with logarithmic heights ($42\log_{10} p$), 84.0 mm datums, and epicyclic planetary gears—and that building **once** on the desk lets them skip drawing 3 separate textbook diagrams.
-3. **Let the Student Catch Their Own Mistakes with `{{key:LASTX}}`:**
-   When a student gets a wrong answer, resist jumping in with a pencil. Instead ask: *"What happens when you press `{{key:LASTX}}` and run the operation in reverse? Did your starting number bounce back?"* When the calculator acts as an impartial, non-judgmental referee, defensiveness disappears.
-4. **Stop at 15 Minutes—Leave Them Wanting More:**
-   Consistency beats marathon cramming every time. One 15-minute daily mission with 3 problems and a green-light check builds unstoppable momentum across 45 days.
+5. **Let the Student Catch Their Own Mistakes with `{{key:LASTX}}` &amp; Stop at 15 Minutes:**
+   When a student gets a wrong answer, resist jumping in with a pencil. Ask: *"What happens when you press `{{key:LASTX}}` and run the operation in reverse?"* When the calculator acts as an impartial referee and the session ends promptly at 15 minutes, defensiveness disappears and daily momentum takes over.

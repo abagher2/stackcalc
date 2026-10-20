@@ -130,8 +130,8 @@ hide:
         <div class="ec-gallery-thumb active" onclick="document.getElementById('main-product-image').src='../../assets/renders/algebra-boxes-hero.png'">
           <img src="../../assets/renders/algebra-boxes-hero.png" alt="Algebra Boxes Desktop Perspective">
         </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/algebra-boxes-interaction-01.jpg'">
-          <img src="../../assets/renders/algebra-boxes-interaction-01.jpg" alt="Tactile Hand Placing Polynomial Tile on Stage">
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/algebra-boxes-hero-square.png'">
+          <img src="../../assets/renders/etsy/algebra-boxes-hero-square.png" alt="Algebra Boxes Factoring Studio Square View">
         </div>
         <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/algebra-lframe-grid-hero.png'">
           <img src="../../assets/renders/algebra-lframe-grid-hero.png" alt="90-Degree Interlocking L-Frame Grid">

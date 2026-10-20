@@ -1,7 +1,7 @@
 ---
 title: "The Postfix Manifesto: Why Human Thought Calculates in Stacks, Not Parentheses"
 description: "Why legacy in-fix notation creates cognitive friction, parentheses syntax errors, and working memory fatigue—and how tactile RPN restores spatial mathematical intuition."
-image: assets/renders/sc32-calculator-interaction-01.jpg
+image: assets/renders/sc32-hero-keynote.png
 date: 2026-10-12
 authors:
   - abagher

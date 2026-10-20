@@ -136,11 +136,11 @@ hide:
         <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/dominoes-studio-hero-4x3.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
           <img src="../../assets/renders/etsy/dominoes-studio-hero-4x3.png" alt="Domino Array Classroom Context">
         </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/math-dominoes-interaction-01.jpg'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
-          <img src="../../assets/renders/math-dominoes-interaction-01.jpg" alt="Pose 1: Snapping Double Tile into Doubling Lid Socket">
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/dominoes-studio-space_gray-square.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img src="../../assets/renders/etsy/dominoes-studio-space_gray-square.png" alt="Space Gray Laser-Foamed Edition">
         </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/math-dominoes-interaction-02.jpg'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
-          <img src="../../assets/renders/math-dominoes-interaction-02.jpg" alt="Pose 2: Arranging Dominoes Across 12-Frame Bridge-Through-10 Divider">
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/dominoes-studio-coffee_brown-square.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img src="../../assets/renders/etsy/dominoes-studio-coffee_brown-square.png" alt="Coffee Brown Laser-Foamed Edition">
         </div>
         <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/dominoes-studio-midnight_navy-square.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
           <img src="../../assets/renders/etsy/dominoes-studio-midnight_navy-square.png" alt="Midnight Navy Laser-Foamed Edition">

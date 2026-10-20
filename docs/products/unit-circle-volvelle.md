@@ -130,8 +130,8 @@ hide:
         <div class="ec-gallery-thumb active" onclick="document.getElementById('main-product-image').src='../../assets/renders/unit-circle-volvelle-hero.png'">
           <img src="../../assets/renders/unit-circle-volvelle-hero.png" alt="Unit Circle Volvelle Primary Perspective">
         </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/volvelle-interaction-01.jpg'">
-          <img src="../../assets/renders/volvelle-interaction-01.jpg" alt="Tactile Fingertips Rotating Coordinate Angle Disc">
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/unit-circle-volvelle-hero-square.png'">
+          <img src="../../assets/renders/etsy/unit-circle-volvelle-hero-square.png" alt="Unit Circle Trigonometry Volvelle Square View">
         </div>
         <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/unit-circle-volvelle-hero-4x3.png'">
           <img src="../../assets/renders/etsy/unit-circle-volvelle-hero-4x3.png" alt="Wide Angle Optical Alignment Windows">

@@ -139,8 +139,8 @@ hide:
         <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/sc32-craftsmanship-pureblack.png', this)">
           <img src="../../assets/renders/sc32-craftsmanship-pureblack.png" alt="Pure Black Craftsmanship Macro">
         </div>
-        <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/sc32-calculator-interaction-01.jpg', this)">
-          <img src="../../assets/renders/sc32-calculator-interaction-01.jpg" alt="In-Hand Tactile Ergonomics &amp; Laboratory Scale">
+        <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/etsy/puzzle-stand-seated-square.png', this)">
+          <img src="../../assets/renders/etsy/puzzle-stand-seated-square.png" alt="Ergonomic 22° Folding Desktop Puzzle Stand">
         </div>
         <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/etsy/sc32-specs-infographic-square.png', this)">
           <img src="../../assets/renders/etsy/sc32-specs-infographic-square.png" alt="SC-32 Hardware Specs Infographic">
