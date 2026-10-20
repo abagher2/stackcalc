@@ -12,6 +12,7 @@ description: "Comprehensive K-12 STEM curriculum guide connecting tactile Gridfi
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
   <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">📖 Master Guide</a>
+  <a href="big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🚀 Big Ideas 45-Day Catch-Up (SC-6)</a>
   <a href="rpn-elementary-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ RPN Power Guide</a>
   <a href="worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 120 Station Worksheets</a>
   <a href="alignment-matrix/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎯 Standards Matrix</a>
@@ -61,13 +62,16 @@ StackCalc literature is built to drop directly into existing school district pac
   <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-700/60">
     <div class="flex items-center gap-2 mb-2">
       <span class="font-mono text-xs text-amber-400 font-bold uppercase">FRAMEWORK 03</span>
-      <span class="text-xs text-slate-400">&bull; Inquiry &amp; Exploration</span>
+      <span class="text-xs text-slate-400">&bull; Inquiry &amp; Daily Catch-Up</span>
     </div>
     <h3 class="text-xl font-bold text-white mb-2">Big Ideas Math (Larson &amp; Boswell)</h3>
     <p class="text-xs text-slate-300 leading-relaxed mb-4">
-      Aligned with Big Ideas "Essential Questions" and exploratory investigations. Students use physical manipulatives to discover geometric and algebraic properties before transitioning to procedural calculator fluency.
+      Aligned with Big Ideas "Essential Questions" and exploratory investigations. Includes our complete <strong>45-Day Middle School Catch-Up Workbook (SC-6)</strong> with the 3-Box "Touch &bull; Stack &bull; Prove" ticket for students who hate multi-line rewrites.
     </p>
-    <a href="alignment-matrix/#big-ideas-math" class="text-xs font-mono text-amber-400 hover:underline font-bold">Explore Big Ideas Units &rarr;</a>
+    <div class="flex flex-wrap gap-4">
+      <a href="big-ideas-middle-school-sc6-workbook/" class="text-xs font-mono text-amber-400 hover:underline font-bold">Open 45-Day SC-6 Workbook &rarr;</a>
+      <a href="alignment-matrix/#big-ideas-math" class="text-xs font-mono text-slate-400 hover:underline font-bold">Standards Matrix &rarr;</a>
+    </div>
   </div>
 
   <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-700/60">

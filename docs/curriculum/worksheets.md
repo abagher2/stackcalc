@@ -179,6 +179,13 @@ Bridges in Mathematics (The Math Learning Center) uses visual models including t
 
 Big Ideas Math (Ron Larson & Laurie Boswell) and Advanced Placement standards bridge middle school conceptual mastery into formal secondary algebra, calculus, and computer science. Visual models feature the **Balance Scale**, **Polynomial Algebra Tiles**, **Area Matrices**, **Unit Circle Volvelles**, and **Expression Tree Boards**.
 
+!!! tip "New: 45-Day Big Ideas Middle School Catch-Up Workbook (SC-6 & Manipulatives)"
+    Designed specifically for middle schoolers who struggle with multi-line handwritten work, resent "showing the same problem 3 ways," or feel behind in math:
+
+    - **[Read the Full 45-Day Interactive Curriculum & Lesson Guide &rarr;](big-ideas-middle-school-sc6-workbook.md)**
+    - **[Download 45-Day Student Catch-Up Workbook (Fillable 3-Box Tickets PDF) &darr;](../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf)**
+    - **[Download Parent & Teacher "No-Battle" Coach Key (PDF) &darr;](../downloads/worksheets/bigideas_middle_school_sc6_teacher_coach_guide.pdf)**
+
 | Grade Level | Chapter / Unit & Topic | Target Calculator | Primary Manipulative & CAD Blueprint | Form A (Classroom Master) | Form B (Retake / HW Variant) |
 | :--- | :--- | :--- | :--- | :---: | :---: |
 | **Grade 6** | Chapter 1: Numerical Expressions & Factors: Prime Factorisation & GCF | **SC-6 Elementary** | Prime Factor Studio & Logarithmic Blocks (`prime_studio_box`) | [Download Form A &darr;](../downloads/worksheets/bigideas_grade_6_chapter_1_form_a.pdf) | [Download Form B &darr;](../downloads/worksheets/bigideas_grade_6_chapter_1_form_b.pdf) |
