@@ -644,7 +644,7 @@ hide:
         </tr>
         <tr>
           <td class="ec-spec-k">Industrial Design &amp; CMF</td>
-          <td class="ec-spec-v">Monolithic farm additive manufacturing (Slant3D) &bull; Print-in-place captive planetary gearing &bull; 15&deg; desktop easel angle &bull; Standard 2x1 Gridfinity footprint with removable 15-minute quadrant sectors</td>
+          <td class="ec-spec-v">Captive 12:1 planetary gear mechanism &bull; 15&deg; desktop easel angle &bull; Standard 2x1 Gridfinity footprint with removable 15-minute quadrant sectors</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Curriculum Standards</td>
@@ -722,10 +722,10 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-700/60 text-sm">
         <strong class="text-indigo-400 flex items-center gap-2 mb-1">
-          <span>&#9881;</span> US Additive Farm Production
+          <span>&#9881;</span> Made in California, USA
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          Designed by StackCalc in California; manufactured with precision American 3D print farms (Slant3D) under strict gear mesh tolerances.
+          Designed and manufactured by StackCalc in California under strict gear mesh tolerances and quality control.
         </p>
       </div>
     </div>

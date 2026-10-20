@@ -235,12 +235,12 @@ hide:
   <section class="ec-section">
     <div class="p-6 bg-slate-900/60 border border-slate-700/60 rounded-xl">
       <div class="flex items-center gap-2 mb-2">
-        <span class="ec-pill ec-pill-category">Tactile Craftsmanship</span>
-        <span class="text-xs text-gray-400">Archimedean Dual-Tone Silk &bull; Gridfinity Underside</span>
+        <span class="ec-pill ec-pill-category">Tactile Geometry</span>
+        <span class="text-xs text-gray-400">High-Contrast Biopolymer &bull; Gridfinity Modularity</span>
       </div>
-      <h2 class="text-2xl font-bold text-white mb-2">Heirloom Quality &amp; Precision Modularity</h2>
+      <h2 class="text-2xl font-bold text-white mb-2">Classroom Durability &amp; Precision Modularity</h2>
       <p class="text-sm text-gray-300 mb-6">
-        All algebraic tiles are printed with concentric Archimedean spiral infill in high-contrast silk colors (Emerald green \(x^2\), Terracotta gold \(x\), Archival white unit \(1\)). The underside features self-aligning 0.5U Gridfinity miniblock registration pockets for stable nesting.
+        All algebraic tiles are manufactured from high-contrast classroom biopolymer (Emerald green \(x^2\), Terracotta gold \(x\), Archival white unit \(1\)). The underside features self-aligning 0.5U Gridfinity registration pockets for stable nesting.
       </p>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">

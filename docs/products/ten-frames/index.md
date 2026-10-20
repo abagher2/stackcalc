@@ -737,7 +737,7 @@ hide:
         </tr>
         <tr>
           <td class="ec-spec-k">Industrial Design &amp; CMF</td>
-          <td class="ec-spec-v">Monolithic farm additive manufacturing (Slant3D) &bull; Dished concave finger-lift wells &bull; 45&deg; edge relief &bull; Standard 3x1 42 mm Gridfinity footprint with interlocking dovetails</td>
+          <td class="ec-spec-v">Tactile square tiles with dished finger wells &bull; 45&deg; edge relief &bull; Standard 3x1 42 mm Gridfinity footprint with interlocking dovetails</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Curriculum Standards</td>
@@ -815,10 +815,10 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-700/60 text-sm">
         <strong class="text-indigo-400 flex items-center gap-2 mb-1">
-          <span>&#9881;</span> US Additive Farm Production
+          <span>&#9881;</span> Made in California, USA
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          Designed by StackCalc in California; produced in high-volume American 3D print farms (Slant3D) under strict dimensional tolerances and quality control.
+          Designed and manufactured by StackCalc in California under strict dimensional tolerances and quality control.
         </p>
       </div>
     </div>

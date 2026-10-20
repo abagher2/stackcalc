@@ -371,18 +371,18 @@ hide:
         <div>
           <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg mb-3">🎒</div>
           <h4 class="font-bold text-white text-sm mb-1">SC-6 Handheld Instrument</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">Impact-resistant Sunlu White PLA 2.0+ chassis, 28 tactile snap-domes, ST7567A display, and math quiz engine.</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Technical matte black biopolymer chassis, tactile light gray Shore 95A elastomer keycaps, 28 stainless snap-domes, ST7567A display, and math quiz engine.</p>
         </div>
         <span class="text-[10px] font-mono text-emerald-400 mt-3 block font-bold">GRADES K–6 TESTED</span>
       </div>
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-white/10 flex flex-col justify-between">
         <div>
-          <div class="w-10 h-10 rounded-lg bg-slate-700/30 border border-white/10 flex items-center justify-center text-slate-300 text-lg mb-3">🛡️</div>
-          <h4 class="font-bold text-white text-sm mb-1">Sliding Dovetail Cowl</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">Durable Slate Gray sliding protective cover snaps over the keyboard for backpack transport and flips into a classroom desk stand.</p>
+          <div class="w-10 h-10 rounded-lg bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-lg mb-3">🛡️</div>
+          <h4 class="font-bold text-white text-sm mb-1">Shore 95A TPU Travel Pouch</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Flexible protective travel sleeve included by default with every unit to protect screen and keys in student backpacks.</p>
         </div>
-        <span class="text-[10px] font-mono text-slate-400 mt-3 block font-bold">TOOL-FREE SLIDE</span>
+        <span class="text-[10px] font-mono text-teal-400 mt-3 block font-bold">SHORE 95A ELASTOMER</span>
       </div>
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-white/10 flex flex-col justify-between">
