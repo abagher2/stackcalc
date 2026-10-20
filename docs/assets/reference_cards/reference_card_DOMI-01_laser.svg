@@ -5,7 +5,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #ffffff; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #e2e8f0; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #ffffff; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #ffffff; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #cccccc; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #ffffff; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -137,7 +137,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">MODULAR 28.0 × 14.0 MM TILE DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#cccccc">• Tile Proportions: 28.00 mm length × 14.00 mm width × 7.00 mm height</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#cccccc">• Tactile Pips: 3.20 mm ⌀ recessed hemispherical cups with high contrast</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#cccccc">• Center Divider: Recessed 1.20 mm scoring groove separating halves</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#cccccc">• Universal Pitch: 14.0 mm square half matches Ten-Frame counter cell</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -239,7 +243,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">HIGH-CONTRAST PIPS &amp; TEXTURE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#cccccc">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">• Stealth Black Matte: Low glare, fingerprint resistant polymer.</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#cccccc">• Brilliant White Pips: Standard dice quincunx configurations.</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#cccccc">• Doubles Spine: Labeled slots [0|0] to [6|6] for quick organizing.</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#cccccc">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -299,7 +307,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#ffffff">TRIANGULAR NUMBER COMBINATORIAL THEOREM</text>
       <text x="0" y="18" class="font-mono footer-txt">The number of unordered pairs chosen with replacement from n elements is T(n) = n(n+1)/2.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | MONOCHROME WHITE LASER ABLATION</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | LASER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">

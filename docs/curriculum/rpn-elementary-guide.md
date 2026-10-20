@@ -13,6 +13,7 @@ description: "Pedagogical master guide for elementary educators: Leveraging the 
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
   <a href="../" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📖 Master Guide</a>
+  <a href="../big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🚀 Big Ideas 45-Day Catch-Up (SC-6)</a>
   <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">⚡ RPN Power Guide</a>
   <a href="../worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 120 Station Worksheets</a>
   <a href="../alignment-matrix/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎯 Standards Matrix</a>
@@ -317,7 +318,24 @@ $$\text{Total} = (3 \times 4.50) + (2 \times 1.25) + (4 \times 0.75)$$
 | **5** | &mdash; | `{{key:+}}` | **$X: {{res:curr_sc6_stem_order:value}}$** (Final total verified!) |
 
 **The Pedagogical Difference:**
-On the SC-6, students never type a parenthesis. Every sub-calculation is evaluated immediately, and the intermediate products wait patiently on the stack. The child can pause at Step 2 and see both \$13.50 and \$2.50 resting on the screen.
+On the SC-6, students never type a parenthesis. Every sub-calculation is evaluated immediately, and the intermediate products wait patiently on the screen. The child can pause at Step 2 and see both \$13.50 and \$2.50 resting on the screen.
+
+---
+
+## 5.5 Curricular Module 5: SC-6 Tutorial Mode (`?`) &amp; The `QUEST-01` Scoreboard
+
+<div class="p-4 rounded-xl bg-slate-900/80 border border-emerald-500/30 mb-6 font-mono text-xs">
+  <span class="text-emerald-400 font-bold uppercase">// HARDWARE &amp; WORKBOOK INTEGRATION</span><br>
+  <strong>Kit SKU:</strong> <code>QUEST-01</code> (3&times;1&times;7U 2-Piece Box + Lid + 60&times; <code>+10</code> Tokens) &bull; <strong>Tutorial Keycap:</strong> <code>[↰] [C]</code> (Question Mark in a Circle <code>?</code>)
+</div>
+
+Many upper-elementary and middle-school learners resist solving the same problem in multiple ways because traditional worksheets punish extra strategies with twice the handwriting. The **[SC-6 Quest Scoreboard & `+10` Token Kit (`QUEST-01`)](../products/quest-scoreboard/index.md)** and the **[46-Page Big Ideas Math Daily Supplement](big-ideas-middle-school-sc6-workbook.md)** invert that dynamic by turning multi-method verification into a physical game:
+
+* **2-Piece Snapfinity Box + Lid (`3x1x7U`):** The lid serves directly as the student's 10-question desk scoreboard, featuring 10 numbered quarter-sockets (**`1`–`10`**), a **`100` Mastery Tower** socket, and the **Question Mark in a Circle (`?`)** tutorial keycap badge (`[↰] [C]`).
+* **Universal `+10` Tokens (`60x` Included):**
+  * **1st Way (`1 Token = +10 pts`):** Solve Question $N$ using your favorite method (Big Ideas textbook method, physical block kit, or SC-6 RPN) and snap **1 `+10` token** into Socket $N$.
+  * **2nd Way (`2 Stacked Tokens = +20 pts`):** Verify the same question using a second method and stack a **2nd `+10` token** right on top!
+  * **100-Point Mastery Tower (`10 Stacked Tokens = 100 pts`):** Every 10 tokens earned stack into a 10-block tower (`84.0 mm` Whole datum height) in the **`100`** socket.
 
 ---
 
@@ -337,6 +355,7 @@ Print this reference card for classroom math station desks:
 | **Step Through Multiples** | Press `{{key:+}}` repeatedly | $2\times, 3\times, 4\times, 5\times \dots$ with acoustic snap clicks |
 | **Powers of 2 (Doubling)** | `2 {{key:REP}} {{key:×}} {{key:×}} {{key:×}} ...` | Generates $4, 8, 16, 32, 64, 128, 256, 512, 1024$ |
 | **Simplify Fraction Step-by-Step** | `{{key:.}} N {{key:.}} D {{key:SIMP}}` | Reduces fraction by smallest common factor; flashes factor |
+| **Launch SC-6 Tutorial &amp; Quiz (`?`)** | `{{key:QUIZ}}` (`[↰] [C]`) | Launches interactive `+10` / `+20` point challenges paired with `QUEST-01` |
 | **Toggle Stack Depth (4-Stack / 2-Stack)** | `{{key:FLAGS}}` &bull; `{{key:5}}` (`DEP`) &bull; `{{key:C}}` | Toggles between default 4-stack XYZT (`4-LV`) and simplified 2-stack (`2-LV`) for early learners |
 </div>
 

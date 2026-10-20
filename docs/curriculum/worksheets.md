@@ -12,6 +12,7 @@ description: "Pre-generated, publication-grade 2-page classroom station guides a
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
   <a href="../" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📖 Master Guide</a>
+  <a href="../big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🚀 Big Ideas 45-Day Catch-Up (SC-6)</a>
   <a href="../rpn-elementary-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ RPN Power Guide</a>
   <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">📝 120 Station Worksheets</a>
   <a href="../alignment-matrix/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎯 Standards Matrix</a>
@@ -179,12 +180,13 @@ Bridges in Mathematics (The Math Learning Center) uses visual models including t
 
 Big Ideas Math (Ron Larson & Laurie Boswell) and Advanced Placement standards bridge middle school conceptual mastery into formal secondary algebra, calculus, and computer science. Visual models feature the **Balance Scale**, **Polynomial Algebra Tiles**, **Area Matrices**, **Unit Circle Volvelles**, and **Expression Tree Boards**.
 
-!!! tip "New: 45-Day Big Ideas Middle School Catch-Up Workbook (SC-6 & Manipulatives)"
-    Designed specifically for middle schoolers who struggle with multi-line handwritten work, resent "showing the same problem 3 ways," or feel behind in math:
+!!! tip "New: 91-Page Big Ideas Middle School Practice Supplement (90 Worksheets • 900 Problems) & `QUEST-01` Scoreboard"
+    Aligned section-by-section with **Big Ideas Math Units 1–10 (Sections 1.1–10.4)**—featuring 2 full worksheets per section (**Practice A: Key Ideas & Two-Method Practice** + **Practice B: Modeling Real Life Applications**), 90 Two-Method Worked Examples (`Method 1: +10 pts` vs. `Method 2: +20 pts DOUBLE`), step-by-step physical block kit instructions, 900 clean open-workspace practice problems, and gamified `+10` / `+20` token scoring on the 2-piece **[SC-6 Quest Scoreboard (`QUEST-01`)](../products/quest-scoreboard/index.md)**:
 
-    - **[Read the Full 45-Day Interactive Curriculum & Lesson Guide &rarr;](big-ideas-middle-school-sc6-workbook.md)**
-    - **[Download 45-Day Student Catch-Up Workbook (Fillable 3-Box Tickets PDF) &darr;](../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf)**
-    - **[Download Parent & Teacher "No-Battle" Coach Key (PDF) &darr;](../downloads/worksheets/bigideas_middle_school_sc6_teacher_coach_guide.pdf)**
+    - **[Read the Full 45-Section Interactive Curriculum & Lesson Guide &rarr;](big-ideas-middle-school-sc6-workbook.md)**
+    - **[Download 91-Page Student Practice Supplement (90 Worksheets • 900 Practice Problems PDF) &darr;](../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf)**
+    - **[Download 10-Page Chapter Coach's Guide (1 Page / Chapter PDF) &darr;](../downloads/worksheets/bigideas_middle_school_sc6_teacher_coach_guide.pdf)**
+    - **[Explore SC-6 Quest Scoreboard & `+10` Token Kit (`QUEST-01`) &rarr;](../products/quest-scoreboard/index.md)**
 
 | Grade Level | Chapter / Unit & Topic | Target Calculator | Primary Manipulative & CAD Blueprint | Form A (Classroom Master) | Form B (Retake / HW Variant) |
 | :--- | :--- | :--- | :--- | :---: | :---: |

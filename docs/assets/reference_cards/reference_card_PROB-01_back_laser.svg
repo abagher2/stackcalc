@@ -35,7 +35,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 07 OF 10 • DOMAIN: SAMPLE SPACES & PROBABILITY DISTRIBUTIONS • 2d6 36-OUTCOME MATRIX • WEIGHTED HARMONIC SPINNER</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 07 OF 10 • DOMAIN: SAMPLE SPACES &amp; PROBABILITY DISTRIBUTIONS • 2d6 36-OUTCOME MATRIX • WEIGHTED HARMONIC SPINNER</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: 2d6 SAMPLE SPACES &amp; INDEPENDENT EVENTS</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: Why 7 is the Most Likely Roll (P = 6/36)</text>
   <text x="130" y="117" class="font-mono badge-box">Grades 5–10 Probability, Statistics &amp; Random Variables • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -761,7 +761,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#cccccc">• CCSS.MATH.CONTENT.7.SP.C.8 (Compound Events)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">• CCSS.MATH.CONTENT.HSS.CP.A.2 (Independence)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">• TEKS 111.27.b.6.B (Representations)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#ffffff" font-weight="700">Grades 5–10 Probability, Statistics &amp; Random Variables</text>
     </g>
 

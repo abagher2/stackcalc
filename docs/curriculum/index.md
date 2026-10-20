@@ -62,14 +62,15 @@ StackCalc literature is built to drop directly into existing school district pac
   <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-700/60">
     <div class="flex items-center gap-2 mb-2">
       <span class="font-mono text-xs text-amber-400 font-bold uppercase">FRAMEWORK 03</span>
-      <span class="text-xs text-slate-400">&bull; Inquiry &amp; Daily Catch-Up</span>
+      <span class="text-xs text-slate-400">&bull; Section-by-Section Supplement &amp; Scoreboard</span>
     </div>
     <h3 class="text-xl font-bold text-white mb-2">Big Ideas Math (Larson &amp; Boswell)</h3>
     <p class="text-xs text-slate-300 leading-relaxed mb-4">
-      Aligned with Big Ideas "Essential Questions" and exploratory investigations. Includes our complete <strong>45-Day Middle School Catch-Up Workbook (SC-6)</strong> with the 3-Box "Touch &bull; Stack &bull; Prove" ticket for students who hate multi-line rewrites.
+      Aligned section-by-section with Big Ideas Math concepts, vocabulary, and methods across 10 units and 45 sections. Includes our <strong>91-Page Student Practice Supplement</strong> (90 worksheets = Practice A &amp; B per section, 90 Two-Method Worked Examples showing how to earn <code>+10</code> vs. <code>+20</code> Double Points, step-by-step physical block kit instructions, and 900 open-workspace practice problems), the <strong>10-Page Chapter Coach's Guide</strong>, and the 2-piece <strong>SC-6 Quest Scoreboard &amp; +10 Token Kit (<code>QUEST-01</code>)</strong> with the <code>(?)</code> tutorial keycap badge.
     </p>
     <div class="flex flex-wrap gap-4">
-      <a href="big-ideas-middle-school-sc6-workbook/" class="text-xs font-mono text-amber-400 hover:underline font-bold">Open 45-Day SC-6 Workbook &rarr;</a>
+      <a href="big-ideas-middle-school-sc6-workbook/" class="text-xs font-mono text-amber-400 hover:underline font-bold">Open 91-Page Big Ideas Supplement (900 Problems) &rarr;</a>
+      <a href="../products/quest-scoreboard/" class="text-xs font-mono text-emerald-400 hover:underline font-bold">Explore QUEST-01 Scoreboard &rarr;</a>
       <a href="alignment-matrix/#big-ideas-math" class="text-xs font-mono text-slate-400 hover:underline font-bold">Standards Matrix &rarr;</a>
     </div>
   </div>

@@ -35,7 +35,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 06 OF 10 • DOMAIN: POLYNOMIAL GEOMETRY & BINOMIAL FACTORING • CARTESIAN L-RAILS • ZERO-PAIR TEXTURE CONTRAST</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 06 OF 10 • DOMAIN: POLYNOMIAL GEOMETRY &amp; BINOMIAL FACTORING • CARTESIAN L-RAILS • ZERO-PAIR TEXTURE CONTRAST</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: FACTORING TRINOMIALS &amp; BINOMIAL ARRAYS</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: Factoring x² + 5x + 6 = (x+2)(x+3)</text>
   <text x="130" y="117" class="font-mono badge-box">Grades 7–11 Pre-Algebra &amp; Algebra II • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -752,7 +752,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#cccccc">• CCSS.MATH.CONTENT.HSA.SSE.A.2 (Structure)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">• CCSS.MATH.CONTENT.HSA.APR.A.1 (Arithmetic)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">• TEKS 111.39.c.10.E (Factoring Trinomials)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#ffffff" font-weight="700">Grades 7–11 Pre-Algebra &amp; Algebra II</text>
     </g>
 

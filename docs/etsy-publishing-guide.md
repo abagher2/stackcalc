@@ -68,6 +68,7 @@ All 8 launch listings have complete, pre-validated copy-paste Markdown packages 
 | `DOMI-01` | Math Domino Studio | \$38.00 | `dominoes-studio-hero-square.png` | `dominoes-studio-hero-4x3.png` |
 | `BASE-10` | Ten-Frames & Counters | \$36.00 | `ten-frames-hero-square.png` | `ten-frames-hero-4x3.png` |
 | `PROB-01` | Probability Dice & Spinner | \$36.00 | `dice-spinner-hero-square.png` | `dice-spinner-hero-4x3.png` |
+| `QUEST-01` | SC-6 Quest Scoreboard & +10 Token Kit | \$24.00 | `quest_scoreboard_lid.png` | `quest_scoreboard_box.png` |
 | `TRIG-01` | Unit Circle Trig Volvelle | \$19.00 | `unit-circle-volvelle-hero-square.png` | `unit-circle-volvelle-hero-4x3.png` |
 | `DIGI-01` | Complete 3D Print STL Library | \$19.00 | `algebra-tiles-craftsmanship-square.png` | `algebra-boxes-hero-4x3.png` |
 | `REPLACE-01` | Lifetime Replacement Parts Service | \$2.49+ | `infographic-guarantee-safety-square.png` | `infographic-guarantee-safety-square.png` |

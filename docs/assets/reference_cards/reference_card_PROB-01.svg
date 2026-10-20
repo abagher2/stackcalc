@@ -5,7 +5,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -137,7 +137,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CALIBRATED 16.00 MM FAIR DICE DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Fair d6 Cubes: 16.00 mm precision cube, volume-equalized pips</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• Polyhedral d20: 20-sided regular icosahedron for uniform 1/20 odds</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• Low-Friction Spinner: Precision brass bushing pivot with zero cogging</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Modular Dial Plates: 10-sector uniform, binary coin-flip &amp; custom</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -236,7 +240,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">PROBABILITY DISTRIBUTION PALETTE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• 4 Color-Separated d6 Dice: Enables independent event tracking.</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• Emerald d20 Die: High-visibility prime number distribution testing.</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• High-Spin Brass Bushing: Ultra-low friction for truly random spins.</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -296,7 +304,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">CENTRAL LIMIT THEOREM &amp; LAW OF LARGE NUMBERS</text>
       <text x="0" y="18" class="font-mono footer-txt">The sum of independent random variables tends toward a normal distribution as sample size grows.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">

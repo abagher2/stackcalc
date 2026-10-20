@@ -12,6 +12,7 @@ description: "Classroom facilitation guide for teachers using StackCalc manipula
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
   <a href="../" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📖 Master Guide</a>
+  <a href="../big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🚀 Big Ideas 45-Day Catch-Up (SC-6)</a>
   <a href="../rpn-elementary-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ RPN Power Guide</a>
   <a href="../worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 120 Station Worksheets</a>
   <a href="../alignment-matrix/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎯 Standards Matrix</a>
@@ -84,9 +85,9 @@ When a student raises their hand during a StackCalc lab, use this rapid 3-step d
 In the latest system revisions, the **StackCalc SC-6 Elementary Calculator** standardizes on a **default 4-stack XYZT live operational display**. Unlike cheap algebraic calculators that force children to grapple with parentheses or hide intermediate steps, the 4-level stack makes mathematics visible and concrete. 
 
 > [!TIP] **Two-Stack Mode for Number Racks &amp; Dice (Plus Teacher Toggle):**  
-> While standard number mode defaults to the 4-level XYZT stack, special entry modes automatically switch to a focused **2-Stack Mode ($Y, X$)** for paired concrete manipulatives—such as 2-row rekenrek counting racks (`{{key:▦}}` or `{{key:COUNT}}`) and two-dice probability stations (`{{key:🎲}}`). Pressing `{{key:NUM}}` immediately returns to 4-stack mode. Kindergarten and Grade 1 teachers can also manually set the calculator into 2-stack mode across all operations via the configuration rubric: press **`{{key:FLAGS}}` &rarr; `{{key:5}}` (`5:DEP`) &rarr; `{{key:C}}`** to reduce visual complexity for early learners.
+> While standard number marks default to the 4-level XYZT stack, special entry modes automatically switch to a focused **2-Stack Mode ($Y, X$)** for paired concrete manipulatives—such as 2-row rekenrek counting racks (`{{key:▦}}` or `{{key:COUNT}}`) and two-dice probability stations (`{{key:🎲}}`). Pressing `{{key:NUM}}` immediately returns to 4-stack mode. Kindergarten and Grade 1 teachers can also manually set the calculator into 2-stack mode across all operations via the configuration rubric: press **`{{key:FLAGS}}` &rarr; `{{key:5}}` (`5:DEP`) &rarr; `{{key:C}}`** to reduce visual complexity for early learners.
 
-For the complete curricular framework, see the **[RPN Elementary Power Guide &rarr;](rpn-elementary-guide.md)**. Here are the four essential classroom techniques to introduce to your students:
+For the complete curricular framework, see the **[RPN Elementary Power Guide &rarr;](rpn-elementary-guide.md)**. Here are the five essential classroom techniques to introduce to your students:
 
 ### Superpower 1: Rhythmic Skip-Counting &amp; Multiplication Fact Ladders (`{{keycap:REP}}`)
 * **The Math Concept:** Multiplication is repeated equal groups ($7 \times 4 = 7 + 7 + 7 + 7$).
@@ -129,6 +130,14 @@ For the complete curricular framework, see the **[RPN Elementary Power Guide &ra
 * **The 5-Second Teacher Cue:**  
   > *"Notice how the stack holds your first answer safely on Line 2 while you solve Line 1. When both parts are ready, just press `{{keycap:+}}` to snap them together."*
 
+### Superpower 5: Gamified Multi-Method Mastery with the `QUEST-01` Scoreboard &amp; Tutorial Mode (`[↰] [C]`)
+* **The Math Concept:** Building mathematical confidence and rewarding multiple solution pathways without punishing struggling students with tedious rewrites.
+* **How to Do It:**
+  1. Place the **[SC-6 Quest Scoreboard & `+10` Token Kit (`QUEST-01`)](../products/quest-scoreboard/index.md)** on the desk. The 2-piece Snapfinity lid features 10 numbered sockets (**`1`–`10`**), a **`100` Mastery Tower** socket, and the **Question Mark in a Circle (`?`)** tutorial keycap badge (`[↰] [C]`).
+  2. **1st Way (`+10 pts`):** When a student solves Question $N$ using any valid method (Big Ideas textbook method, physical block kit, or SC-6 RPN), they snap **1 `+10` token** into Socket $N$.
+  3. **2nd Way (`+20 pts`):** If the student checks or proves the same problem using a second method, they stack a **2nd `+10` token** directly on top (`2 blocks = +20 pts`), matching the `SC-6 Tutorial Mode` (`[↰] [C]`) scoring engine.
+  4. **100-Point Mastery Tower:** Collecting 10 tokens stacks into a flush 10-block tower (`84.0 mm` Whole height) in the **`100`** socket!
+
 ---
 
 ## Classroom Storage & Desk Management
@@ -163,6 +172,12 @@ A 36-week laboratory schedule replacing routine textbook homework with hands-on 
 * **Q2 (Weeks 10–18):** Fractions, Prime Factor Studio & Modulo Time (Units 05–07).
 * **Q3 (Weeks 19–27):** Expressions, Pre-Algebra & Polynomial Factoring (Units 08–09).
 * **Q4 (Weeks 28–36):** Probability, Coordinate Geometry, Vectors & Trig (Units 10–11).
+
+### Pacing Option D: The 45-Section Big Ideas Math Daily Supplement &amp; 10-Page Coach's Guide
+Designed for middle school transition, summer bridge, or daily 15-minute skill reinforcement alongside **Big Ideas Math (Grades 5–7)**:
+* **1 Page Per Textbook Section (46-Page Student Supplement):** Each page covers one specific Big Ideas section across **Units 1–10 (Sections 1.1–10.4)** with **1 Worked Example** (showing the exact manipulative kit, step-by-step physical block instructions, Big Ideas textbook method, and SC-6 keystrokes) followed by **10 Practice Problems (`Q1`–`Q10`)** with open workspace and answer lines—and **zero stack-register write-ins** (since live stack contents depend on prior calculations).
+* **1 Page Per Chapter (10-Page Coach's Guide):** Compact 10-page facilitator answer key (`1 page per chapter`) listing all 450 answers, SC-6 keystrokes, textbook methods, and block kits in one low-ink packet.
+* **[Explore the 45-Section Big Ideas Supplement &amp; Download PDFs &rarr;](big-ideas-middle-school-sc6-workbook.md)**
 
 ---
 

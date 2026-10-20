@@ -164,6 +164,22 @@ Free downloadable teaching guides, pre-generated station companions, competition
     </div>
   </div>
 
+  <div style="background: #11141A; border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700;">BIG IDEAS SUPPLEMENT &bull; 91P + 10P</span>
+      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Big Ideas Middle School Workbook &amp; Coach's Guide</h3>
+      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">91-page Two-Method Student Practice Workbook (90 Practice A &amp; B worksheets, 900 problems across 45 sections with step-by-step block instructions) + 10-page Teacher Coach Guide.</p>
+    </div>
+    <div style="display: flex; gap: 0.5rem;">
+      <a href="worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>Workbook (91p) &darr;</span>
+      </a>
+      <a href="worksheets/bigideas_middle_school_sc6_teacher_coach_guide.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>Coach Guide (10p) &darr;</span>
+      </a>
+    </div>
+  </div>
+
   <div style="background: #11141A; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
       <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700;">STANDARDS MAPPING &bull; CCSS &amp; TEKS</span>
@@ -266,7 +282,7 @@ Complete repository archives containing all models, stages, boxes, and lids in a
       </div>
       <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem; color: #FFFFFF;">Learning Lab 0.2.0 Master STL Pack</h3>
       <p style="font-size: 0.85rem; color: #94A3B8; line-height: 1.5; margin-bottom: 1rem;">
-        Contains all 10 physical manipulative kits: Ten-Frames, Math Dominoes, Counting Tiles, Fraction Studio, Planetary Clock, Algebra Boxes, Prime Factor Studio, Probability Dice, Unit Circle Volvelle, and Desk Stands. Includes pre-sliced PrusaSlicer 3MFs.
+        Contains all physical manipulative kits: Ten-Frames, Math Dominoes, Counting Tiles, Fraction Studio, Planetary Clock, Algebra Boxes, Prime Factor Studio, Probability Dice, Unit Circle Volvelle, SC-6 Quest Scoreboard, and Desk Stands. Includes pre-sliced PrusaSlicer 3MFs.
       </p>
     </div>
     <a href="stackcalc-learning-lab-0.2.0-stl-pack.zip" download style="display: block; text-align: center; padding: 0.75rem 1rem; background: #10B981; color: #080B10; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 800; text-decoration: none;">
@@ -303,6 +319,7 @@ Targeted STL archives for individual stations, replacement parts, or classroom p
 | **Fraction Studio Proportional Towers** | Grades 3–8 &bull; Equivalence &amp; Decimals | 3x1 Bin + Workbench Lid | <a href="fraction-studio-open-source-stls.zip" download>Download fraction-studio.zip (4.2 MB) &darr;</a> |
 | **Counting Tiles &amp; Planar Array Studio** | Grades K–6 &bull; Cardinality, Arrays &amp; Maps | 3x1 Bin + 12-Miniblock Lid | <a href="counting-tiles-open-source-stls.zip" download>Download counting-tiles.zip (783 KB) &darr;</a> |
 | **Prime Factor Studio &amp; Factor Towers** | Grades 3–9 &bull; Factorization &amp; Logarithms | 3x1 Bin + Factor Lid Sockets | <a href="prime-factor-studio-open-source-stls.zip" download>Download prime-factor-studio.zip (2.1 MB) &darr;</a> |
+| **SC-6 Quest Scoreboard &amp; +10 Token Kit** | Grades K–8 &bull; Multi-Method Mastery (`?`) | 3x1x7U Open Bin + Scoreboard Lid | <a href="quest-scoreboard-open-source-stls.zip" download>Download quest-scoreboard.zip (3.7 MB) &darr;</a> |
 | **Sectional Classroom Planetary Clock** | Grades K–5 &bull; 12:1 Gear Kinematics | 2x1 Stand + Quadrants | <a href="classroom-clock-open-source-stls.zip" download>Download classroom-clock.zip (12.5 MB) &darr;</a> |
 | **Ten-Frame Dual Stage &amp; Carry Shelf** | Grades K–3 &bull; Base-10 &amp; Regrouping | 3x1 Bin + 2U Carry Cube | <a href="ten-frames-open-source-stls.zip" download>Download ten-frames.zip (1.3 MB) &darr;</a> |
 | **Math Domino Studio &amp; 12-Frame Set** | Grades Pre-K–4 &bull; Doubles &amp; Pips | 3x1 Bin + Doubling Lid | <a href="math-dominoes-open-source-stls.zip" download>Download math-dominoes.zip (772 KB) &darr;</a> |

@@ -634,7 +634,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#cccccc">• CCSS.MATH.CONTENT.6.NS.B.4 (LCM &amp; GCD)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">• CCSS.MATH.CONTENT.4.OA.B.4 (Factor Pairs)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">• TEKS 111.26.B.6.7.A (Prime Factorization)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#ffffff" font-weight="700">Grades 4–9 Math &amp; Pre-Algebra</text>
     </g>
 

@@ -77,6 +77,12 @@ hide:
         "position": 10,
         "name": "Prime Factor Studio & Slide Rule Comparator",
         "url": "https://www.stackcalc.io/products/prime-factor-studio/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "name": "SC-6 Quest Scoreboard & +10 Token Kit",
+        "url": "https://www.stackcalc.io/products/quest-scoreboard/"
       }
     ]
   }
@@ -730,6 +736,43 @@ hide:
             <a href="prime-factor-studio/" class="te-card-btn">Specs &rarr;</a>
             <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/prime-factor-studio-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9. SC-6 Quest Scoreboard & +10 Token Kit -->
+      <article class="te-card">
+        <div class="te-card-header">
+          <span class="te-card-sku">QUEST-01 // MULTI-METHOD SCOREBOARD</span>
+          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
+        </div>
+        <div class="te-card-viewport">
+          <a href="quest-scoreboard/">
+            <img src="../assets/manuals/quest_scoreboard_lid.png" alt="SC-6 Quest Scoreboard &amp; +10 Token Kit" loading="lazy">
+          </a>
+        </div>
+        <div class="te-card-specs">
+          <span class="te-card-spec-item">TOKENS: 60x (+10)</span>
+          <span class="te-card-spec-item">SOCKETS: 1&ndash;10 &amp; 100</span>
+          <span class="te-card-spec-item">BADGE: (?) QUIZ</span>
+        </div>
+        <div class="te-card-body">
+          <div class="te-card-category">Multi-Method Fluency &amp; Confidence</div>
+          <h3 class="te-card-title"><a href="quest-scoreboard/">SC-6 Quest Scoreboard &amp; +10 Token Kit</a></h3>
+          <p class="te-card-desc">
+            Simplified 2-piece 3x1x7U Gridfinity open storage bin and Snapfinity Scoreboard Lid with 60 universal +10 quarter-block tokens. Seat 1 block in Sockets 1&ndash;10 for your 1st Way (+10 pts), stack a 2nd block on top when verified a 2nd Way (+20 pts), and build a 10-block tower in the [100] Mastery socket! Matches SC-6 [↰][C] (?) Tutorial Mode.
+          </p>
+        </div>
+        <div class="te-card-footer">
+          <div>
+            <span class="te-card-price">$24.00</span>
+            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
+          </div>
+          
+          <div class="te-card-actions">
+            <a href="quest-scoreboard/" class="te-card-btn">Specs &rarr;</a>
+            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="../downloads/quest-scoreboard-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
       </article>

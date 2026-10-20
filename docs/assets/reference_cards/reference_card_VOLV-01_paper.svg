@@ -5,7 +5,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -137,7 +137,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CALIBRATED 84.00 MM RADIUS DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Outer Ring Radius: 84.00 mm ⌀ (Matches Fraction Studio 1 Whole)</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• Dual-Scale Engraving: Degrees (0°–360°) and Radians (0–2π) aligned</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• Special Triangles: Exact radical cutouts for 30°, 45°, and 60°</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Center Bushing: 4.00 mm solid brass precision low-friction rivet</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -228,7 +232,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">QUADRANT SIGN CONVENTION</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• Quadrant I (+, +): All functions positive (0° to 90°).</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• Quadrant II (-, +): Sine positive, Cosine negative (90° to 180°).</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• Quadrant III (-, -): Tangent positive, Sine/Cos negative (180° to 270°).</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -288,7 +296,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">PYTHAGOREAN TRIGONOMETRIC IDENTITY</text>
       <text x="0" y="18" class="font-mono footer-txt">For any real angle θ on the unit circle: cos²(θ) + sin²(θ) = 1 identically.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">

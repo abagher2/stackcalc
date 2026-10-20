@@ -35,7 +35,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 02 OF 10 • DOMAIN: DISCRETE COMBINATORICS & PARTITIONS • 7.00mm 1U PITCH • T(7)=28 TRIANGULAR TILES</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 02 OF 10 • DOMAIN: DISCRETE COMBINATORICS &amp; PARTITIONS • 7.00mm 1U PITCH • T(7)=28 TRIANGULAR TILES</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: TRIANGULAR COMBINATORICS &amp; PART-WHOLE SUMS</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: T(7) = 28 Tiles &amp; [5|4] + [3|2] = 14</text>
   <text x="130" y="117" class="font-mono badge-box">Grades K–5 Addition, Part-Whole &amp; Combinatorics • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -779,7 +779,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.K.OA.A.3 (Decompose to 10)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.1.OA.B.4 (Unknown Addend)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• TEKS 111.3.b.3.A (Model Addition)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades K–5 Addition, Part-Whole &amp; Combinatorics</text>
     </g>
 

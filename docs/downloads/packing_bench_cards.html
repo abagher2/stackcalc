@@ -44,7 +44,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -176,7 +176,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CALIBRATED POLYNOMIAL DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Unit Datum: +1 Constant Tile = 1U = 7.00 mm visible pitch</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• Linear Rod: +x Tile = 5U × 1U = 35.00 × 7.00 mm</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• Quadratic Tile: +x² Tile = 5U × 5U = 35.00 × 35.00 mm</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Connector Spec: 1.85mm base plug &amp; recessed stacking socket</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -300,7 +304,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">DUAL-COLOR SIGN CONVENTION (+ / -)</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• Emerald Green / Gold: Positive mathematical values (+x², +x, +1).</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• Royal Purple / Crimson: Negative mathematical values (-x², -x, -1).</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• Zero-Pair Rule: Stacking positive &amp; negative tiles cancels them out.</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -360,7 +368,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">FUNDAMENTAL THEOREM OF ALGEBRA</text>
       <text x="0" y="18" class="font-mono footer-txt">Every degree-n polynomial has exactly n complex roots counted with multiplicity.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">
@@ -424,7 +432,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 06 OF 10 • DOMAIN: POLYNOMIAL GEOMETRY & BINOMIAL FACTORING • CARTESIAN L-RAILS • ZERO-PAIR TEXTURE CONTRAST</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 06 OF 10 • DOMAIN: POLYNOMIAL GEOMETRY &amp; BINOMIAL FACTORING • CARTESIAN L-RAILS • ZERO-PAIR TEXTURE CONTRAST</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: FACTORING TRINOMIALS &amp; BINOMIAL ARRAYS</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: Factoring x² + 5x + 6 = (x+2)(x+3)</text>
   <text x="130" y="117" class="font-mono badge-box">Grades 7–11 Pre-Algebra &amp; Algebra II • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -1141,7 +1149,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.HSA.SSE.A.2 (Structure)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.HSA.APR.A.1 (Arithmetic)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• TEKS 111.39.c.10.E (Factoring Trinomials)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 7–11 Pre-Algebra &amp; Algebra II</text>
     </g>
 
@@ -1284,7 +1295,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -1416,7 +1427,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">UNIVERSAL 84.00 MM WHOLE DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Unit Datum: 1 Whole [1/1] = 12U = 84.00 mm visible height</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• 1/12th Base Unit: [1/12] = 1U = 7.00 mm (Matches Prime 2-Block)</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• Sub-Divisions: [1/2]=42mm, [1/3]=28mm, [1/4]=21mm, [1/6]=14mm</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Connector Spec: 1.85mm base plug &amp; recessed stacking socket</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -1541,7 +1556,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">FAMILY COLOR CODING SCHEME</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• Denominator Families share matching or complementary hues.</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• Halves &amp; Fourths: Warm Gold / Royal Purple (Binary family).</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• Thirds &amp; Sixths: Emerald Green / Coral Orange (Ternary family).</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Twelfths: Slate Gray (Common universal denominator).</text>
+
     </g>
   </g>
 
@@ -1601,7 +1620,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">FUNDAMENTAL THEOREM OF RATIONAL ARITHMETIC</text>
       <text x="0" y="18" class="font-mono footer-txt">Proportional height is strictly preserved under common denominator fraction addition.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">
@@ -1665,7 +1684,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 04 OF 10 • DOMAIN: PROPORTIONAL TOWERS & MULTI-NOTATION EQUIVALENCE • 84.0mm 1/1 WHOLE • 4-WAY COMPARISON FACES</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 04 OF 10 • DOMAIN: PROPORTIONAL TOWERS &amp; MULTI-NOTATION EQUIVALENCE • 84.0mm 1/1 WHOLE • 4-WAY COMPARISON FACES</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: COMMON DENOMINATOR ADDITION &amp; EQUIVALENCE</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: 1/3 + 1/4 = 7/12 &amp; 4-Way Multi-Notation</text>
   <text x="130" y="117" class="font-mono badge-box">Grades 3–8 Fractions &amp; Proportional Reasoning • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -2380,7 +2399,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.5.NF.A.1 (Unlike Denominators)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.4.NF.A.2 (Fraction Comparisons)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• TEKS 111.7.b.3.H (Rational Operations)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 3–8 Fractions &amp; Proportional Reasoning</text>
     </g>
 
@@ -2523,7 +2545,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -2655,7 +2677,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CALIBRATED 60-MINUTE / 12-HOUR DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Minute Unit Datum: 1 Minute = 6° angular sector on outer dial</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• 5-Minute Sector: 1 Hour Mark = 30° angular sector (12 sectors)</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• 15-Minute Quadrant: 1/4 Hour Wedge = 90° right-angle sector</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Gear Reduction: Internal epicyclic ratio 12.000:1 with zero backlash</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -2755,7 +2781,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">FRACTION-ALIGNED TIME PALETTE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• Sky Blue (15-Min Wedges): Aligns with Fraction Studio fourths [1/4].</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• Royal Purple (30-Min Wedges): Aligns with Fraction Studio halves [1/2].</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• Emerald Green (5-Min Wedges): 1/12th hour sector = 30° arc.</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -2815,7 +2845,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">MODULO ARITHMETIC &amp; CONTINUOUS RATIOS</text>
       <text x="0" y="18" class="font-mono footer-txt">Clock arithmetic is modulo 12 and modulo 60 governed by strict continuous gear kinematics.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">
@@ -2879,7 +2909,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 03 OF 10 • DOMAIN: KINEMATIC GEAR RATIOS & MODULAR ARITHMETIC • 12:1 EPICYCLIC REDUCTION • 15-MIN QUADRANT WEDGES</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 03 OF 10 • DOMAIN: KINEMATIC GEAR RATIOS &amp; MODULAR ARITHMETIC • 12:1 EPICYCLIC REDUCTION • 15-MIN QUADRANT WEDGES</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: ELAPSED TIME &amp; PLANETARY GEAR RATIOS</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: 3:30 + 0:45 = 4:15 &amp; Modular Time</text>
   <text x="130" y="117" class="font-mono badge-box">Grades 2–6 Measurement, Time &amp; Modular Math • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -3629,7 +3659,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.3.MD.A.1 (Elapsed Time)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.4.MD.A.2 (Time Intervals)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• TEKS 111.5.b.7.C (Elapsed Time Solutions)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 2–6 Measurement, Time &amp; Modular Math</text>
     </g>
 
@@ -3772,7 +3805,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -3904,7 +3937,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CALIBRATED 14.00 MM SUBITIZING GRID</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Counter Diameter: 14.00 mm (2U pitch) with dual-color face</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• Stacking Datum: 1.85mm base plug &amp; recessed stacking socket</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• Ten-Frame Grid: 2 × 5 array with 14.00 mm centered wells</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Base-10 Rods: 10U = 70.00 mm length (Ten 7.00mm units in 1 rod)</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -4001,7 +4038,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">DUAL-COLOR HIGH-CONTRAST PALETTE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• Blue Face: First addend or positive value.</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• Red Face: Second addend or negative value.</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• Warm Gold Rods: 10-unit place-value regrouping rods.</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -4061,7 +4102,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">DECIMAL PLACE-VALUE REGROUPING THEOREM</text>
       <text x="0" y="18" class="font-mono footer-txt">Base-10 positional notation decomposes any integer into powers of 10 with digits 0 through 9.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">
@@ -4125,7 +4166,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 01 OF 10 • DOMAIN: PLACE VALUE & 5-ANCHOR SUBITIZING • 7.00mm 1U PITCH • 10-FRAME STACKING SLOTS</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 01 OF 10 • DOMAIN: PLACE VALUE &amp; 5-ANCHOR SUBITIZING • 7.00mm 1U PITCH • 10-FRAME STACKING SLOTS</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: MAKE-A-TEN BRIDGE &amp; 5-ANCHOR SUBITIZING</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: 8 + 5 = 13 via Bridging to 10</text>
   <text x="130" y="117" class="font-mono badge-box">Grades K–3 Subitizing, Place Value &amp; Addition • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -4719,7 +4760,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.1.OA.C.6 (Make Ten)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.2.NBT.B.5 (Place Value)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• TEKS 111.3.b.3.C (Compose/Decompose)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades K–3 Subitizing, Place Value &amp; Addition</text>
     </g>
 
@@ -4862,7 +4906,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -4994,7 +5038,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">MODULAR 28.0 × 14.0 MM TILE DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Tile Proportions: 28.00 mm length × 14.00 mm width × 7.00 mm height</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• Tactile Pips: 3.20 mm ⌀ recessed hemispherical cups with high contrast</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• Center Divider: Recessed 1.20 mm scoring groove separating halves</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Universal Pitch: 14.0 mm square half matches Ten-Frame counter cell</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -5096,7 +5144,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">HIGH-CONTRAST PIPS &amp; TEXTURE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• Stealth Black Matte: Low glare, fingerprint resistant polymer.</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• Brilliant White Pips: Standard dice quincunx configurations.</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• Doubles Spine: Labeled slots [0|0] to [6|6] for quick organizing.</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -5156,7 +5208,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">TRIANGULAR NUMBER COMBINATORIAL THEOREM</text>
       <text x="0" y="18" class="font-mono footer-txt">The number of unordered pairs chosen with replacement from n elements is T(n) = n(n+1)/2.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">
@@ -5220,7 +5272,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 02 OF 10 • DOMAIN: DISCRETE COMBINATORICS & PARTITIONS • 7.00mm 1U PITCH • T(7)=28 TRIANGULAR TILES</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 02 OF 10 • DOMAIN: DISCRETE COMBINATORICS &amp; PARTITIONS • 7.00mm 1U PITCH • T(7)=28 TRIANGULAR TILES</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: TRIANGULAR COMBINATORICS &amp; PART-WHOLE SUMS</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: T(7) = 28 Tiles &amp; [5|4] + [3|2] = 14</text>
   <text x="130" y="117" class="font-mono badge-box">Grades K–5 Addition, Part-Whole &amp; Combinatorics • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -5964,7 +6016,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.K.OA.A.3 (Decompose to 10)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.1.OA.B.4 (Unknown Addend)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• TEKS 111.3.b.3.A (Model Addition)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades K–5 Addition, Part-Whole &amp; Combinatorics</text>
     </g>
 
@@ -6107,7 +6162,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -6239,7 +6294,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CALIBRATED 16.00 MM FAIR DICE DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Fair d6 Cubes: 16.00 mm precision cube, volume-equalized pips</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• Polyhedral d20: 20-sided regular icosahedron for uniform 1/20 odds</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• Low-Friction Spinner: Precision brass bushing pivot with zero cogging</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Modular Dial Plates: 10-sector uniform, binary coin-flip &amp; custom</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -6338,7 +6397,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">PROBABILITY DISTRIBUTION PALETTE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• 4 Color-Separated d6 Dice: Enables independent event tracking.</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• Emerald d20 Die: High-visibility prime number distribution testing.</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• High-Spin Brass Bushing: Ultra-low friction for truly random spins.</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -6398,7 +6461,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">CENTRAL LIMIT THEOREM &amp; LAW OF LARGE NUMBERS</text>
       <text x="0" y="18" class="font-mono footer-txt">The sum of independent random variables tends toward a normal distribution as sample size grows.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">
@@ -6461,7 +6524,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 07 OF 10 • DOMAIN: SAMPLE SPACES & PROBABILITY DISTRIBUTIONS • 2d6 36-OUTCOME MATRIX • WEIGHTED HARMONIC SPINNER</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 07 OF 10 • DOMAIN: SAMPLE SPACES &amp; PROBABILITY DISTRIBUTIONS • 2d6 36-OUTCOME MATRIX • WEIGHTED HARMONIC SPINNER</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: 2d6 SAMPLE SPACES &amp; INDEPENDENT EVENTS</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: Why 7 is the Most Likely Roll (P = 6/36)</text>
   <text x="130" y="117" class="font-mono badge-box">Grades 5–10 Probability, Statistics &amp; Random Variables • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -7187,7 +7250,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.7.SP.C.8 (Compound Events)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.HSS.CP.A.2 (Independence)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• TEKS 111.27.b.6.B (Representations)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 5–10 Probability, Statistics &amp; Random Variables</text>
     </g>
 
@@ -7329,7 +7395,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -7461,7 +7527,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CALIBRATED 84.00 MM RADIUS DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Outer Ring Radius: 84.00 mm ⌀ (Matches Fraction Studio 1 Whole)</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• Dual-Scale Engraving: Degrees (0°–360°) and Radians (0–2π) aligned</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• Special Triangles: Exact radical cutouts for 30°, 45°, and 60°</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Center Bushing: 4.00 mm solid brass precision low-friction rivet</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -7552,7 +7622,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">QUADRANT SIGN CONVENTION</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• Quadrant I (+, +): All functions positive (0° to 90°).</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• Quadrant II (-, +): Sine positive, Cosine negative (90° to 180°).</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• Quadrant III (-, -): Tangent positive, Sine/Cos negative (180° to 270°).</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -7612,7 +7686,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">PYTHAGOREAN TRIGONOMETRIC IDENTITY</text>
       <text x="0" y="18" class="font-mono footer-txt">For any real angle θ on the unit circle: cos²(θ) + sin²(θ) = 1 identically.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">
@@ -7675,7 +7749,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 08 OF 10 • DOMAIN: UNIT CIRCLE TRIGONOMETRY & PROJECTIONS • DUAL ROTATING CURSOR • (X, Y) PROJECTION WINDOWS</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 08 OF 10 • DOMAIN: UNIT CIRCLE TRIGONOMETRY &amp; PROJECTIONS • DUAL ROTATING CURSOR • (X, Y) PROJECTION WINDOWS</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: UNIT CIRCLE TRIGONOMETRY &amp; PROJECTIONS</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: Angle 30° -&gt; (cos 30° = √3/2, sin 30° = 1/2)</text>
   <text x="130" y="117" class="font-mono badge-box">Grades 9–12 Trigonometry, Pre-Calculus &amp; Physics • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -8403,7 +8477,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.HSF.TF.A.2 (Unit Circle)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.HSF.TF.A.3 (Special Triangles)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• TEKS 111.42.c.2.P (Trig Functions)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 9–12 Trigonometry, Pre-Calculus &amp; Physics</text>
     </g>
 
@@ -8545,7 +8622,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -8677,7 +8754,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CALIBRATED 32-KEYCAP TACTILE HARDWARE</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Display: 128 × 64 high-contrast OLED with 4-line stack viewing</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• Tactile Keycaps: Double-shot 9.5 mm pitch with audible snap domes</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• Automatic Stack: Push on [ENTER], pop on operator, LastX preserved</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Battery System: USB-C rechargeable LiPo with low-power sleep mode</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -8777,7 +8858,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">OPTICAL STATUS ANNUNCIATORS</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• [f] Gold Annunciator: Shifts keys to primary upper mathematical functions.</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• [g] Blue Annunciator: Shifts keys to secondary statistics &amp; mode controls.</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• RAD / DEG Indicator: Displays angular mode at top right of OLED screen.</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside your travel caddy!</text>
+
     </g>
   </g>
 
@@ -8837,7 +8922,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">POSTFIX EXPRESSION EQUIVALENCE THEOREM</text>
       <text x="0" y="18" class="font-mono footer-txt">Any algebraic expression can be evaluated unambiguously without parentheses using a postfix stack.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">
@@ -8902,7 +8987,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 09 OF 10 • DOMAIN: 4-REGISTER RPN COMPUTING & EXPRESSION TREES • HARDWARE TACTILE KEYS • DUAL LED BAR GRAPH STACK</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 09 OF 10 • DOMAIN: 4-REGISTER RPN COMPUTING &amp; EXPRESSION TREES • HARDWARE TACTILE KEYS • DUAL LED BAR GRAPH STACK</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: 4-REGISTER RPN STACK &amp; EXPRESSION TREES</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: Pythagorean Hypotenuse √(3² + 4²) = 5</text>
   <text x="130" y="117" class="font-mono badge-box">Grades 8–16 STEM, AP Physics, Engineering &amp; Mathematics • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -9652,7 +9737,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.PRACTICE.MP5 (Use Tools Strategically)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.PRACTICE.MP6 (Attend to Precision)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• TEKS 111.39.c.1.C (Manipulatives &amp; Technology)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 8–16 STEM, AP Physics, Engineering &amp; Mathematics</text>
     </g>
 
@@ -9796,7 +9884,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -9928,7 +10016,11 @@
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CALIBRATED LOGARITHMIC DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Unit Datum: Block [2] = 1U = 7.00 mm visible height</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• Log Modulus: K_log = 23.2535 mm / decade</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• Prime Formula: h_vis(p) = K_log × log10(p)</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Connector Spec: 1.85mm base plug &amp; recessed stacking socket</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -10065,7 +10157,11 @@
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">4-COLOR HIGH-CONTRAST PALETTE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• Thoughtful 4-color palette ensures neighboring prime columns</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">  in the box have distinct colors for instant visual sorting.</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• Enables fast tactile identification across the 70-block set.</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -10125,7 +10221,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">FUNDAMENTAL THEOREM OF ARITHMETIC</text>
       <text x="0" y="18" class="font-mono footer-txt">Every integer &gt; 1 has a unique prime factorization decomposition.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">
@@ -10787,7 +10883,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.6.NS.B.4 (LCM &amp; GCD)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.CONTENT.4.OA.B.4 (Factor Pairs)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• TEKS 111.26.B.6.7.A (Prime Factorization)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 4–9 Math &amp; Pre-Algebra</text>
     </g>
 
@@ -11877,7 +11976,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -12002,14 +12101,18 @@
 
     <!-- Concept principle text -->
     <text x="16" y="76" class="font-mono" font-size="9.3px" fill="#0f172a">
-      <tspan x="16" dy="0" font-weight="400" fill="#0f172a">Real mathematical confidence comes from seeing that the</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">same answer appears whether you use physical blocks,</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">   1 Block = +10 (1st Way) • 2 Blocks = +20 (2nd Way)</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">mental math, or the SC-6 RPN stack! Stacking a second +10</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">token physically rewards trying a second approach.</tspan>
+      <tspan x="16" dy="0" font-weight="400" fill="#0f172a">Real mathematical confidence comes from seeing that the</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">same answer appears whether you use physical blocks,</tspan><tspan x="16" dy="15" font-weight="700" fill="#0284c7">   1 Block = +10 (1st Way) • 2 Blocks = +20 (2nd Way)</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">mental math, or the SC-6 RPN stack! Stacking a second +10</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">token physically rewards trying a second approach.</tspan>
     </text>
 
     <!-- Calibration Datum Box -->
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">UNIVERSAL +10 QUARTER-BLOCK DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Token Spec: Universal +10 Quarter-Block = 10.25 × 10.25 × 7.00 mm</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• 1st Way Solved: Seat 1 token in socket 1–10 (+10 points)</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• 2nd Way Bonus: Stack 2nd token right on top (+20 points total)</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Mastery Tower: Trade 10 tokens into the [100] socket (70.0 mm)</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -12072,39 +12175,43 @@
     <line x1="12" y1="58" x2="373" y2="58" stroke="#cbd5e1" stroke-width="1" />
 
     
-    <text x="16" y="74" class="font-mono td" font-weight="700">+10 Token (1st Way)</text>
+    <text x="16" y="74" class="font-mono td" font-weight="700">1st-Way +10 Token</text>
     <text x="125" y="74" class="font-mono td" font-weight="700" fill="#0284c7">30x</text>
-    <text x="160" y="74" class="font-mono td">10.25 × 10.25 × 7.00 mm (1U)</text>
+    <text x="160" y="74" class="font-mono td">10.25x10.25x7.0mm</text>
     <text x="275" y="74" class="font-mono td" fill="#475569">Red+Gold Silk</text>
     <line x1="12" y1="80" x2="373" y2="80" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
 
-    <text x="16" y="97" class="font-mono td" font-weight="700">+10 Token (2nd Way)</text>
+    <text x="16" y="97" class="font-mono td" font-weight="700">2nd-Way +10 Token</text>
     <text x="125" y="97" class="font-mono td" font-weight="700" fill="#0284c7">30x</text>
-    <text x="160" y="97" class="font-mono td">10.25 × 10.25 × 7.00 mm (1U)</text>
+    <text x="160" y="97" class="font-mono td">10.25x10.25x7.0mm</text>
     <text x="275" y="97" class="font-mono td" fill="#475569">Glow Yellow</text>
     <line x1="12" y1="103" x2="373" y2="103" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
 
-    <text x="16" y="120" class="font-mono td" font-weight="700">3x1x7U Storage Bin</text>
+    <text x="16" y="120" class="font-mono td" font-weight="700">3x1x7U Open Bin</text>
     <text x="125" y="120" class="font-mono td" font-weight="700" fill="#0284c7">1x</text>
-    <text x="160" y="120" class="font-mono td">125.5 × 42.0 × 56.4 mm (7U)</text>
+    <text x="160" y="120" class="font-mono td">125.5x42.0x56.4mm</text>
     <text x="275" y="120" class="font-mono td" fill="#475569">Technical White</text>
     <line x1="12" y1="126" x2="373" y2="126" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="143" class="font-mono td" font-weight="700">Scoreboard Lid</text>
     <text x="125" y="143" class="font-mono td" font-weight="700" fill="#0284c7">1x</text>
-    <text x="160" y="143" class="font-mono td">Sockets 1–10, 100 &amp; (?) Badge</text>
+    <text x="160" y="143" class="font-mono td">Sockets 1-10, 100</text>
     <text x="275" y="143" class="font-mono td" fill="#475569">Technical White</text>
     <line x1="12" y1="149" x2="373" y2="149" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
 
 
     <!-- Total Pieces Summary -->
-    <text x="16" y="334" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">TOTAL: 60 Universal +10 Score Tokens + 7U Storage Bin + Scoreboard Lid = 62 Parts</text>
+    <text x="16" y="334" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">TOTAL: 60 Universal +10 Tokens + 7U Bin + Lid = 62 Parts</text>
 
     <!-- Palette Box -->
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">DUAL-TONE +10 TOKEN PALETTE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• All 60 quarter-blocks are 100% interchangeable (+10 pts each).</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• Red+Gold Silk (30x): Seat for your 1st Way solution (+10 pts).</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• Glow-in-the-Dark Yellow (30x): Stack on top for 2nd Way (+20 pts)!</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -12164,7 +12271,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">PÓLYA'S MULTIPLE-PATH PRINCIPLE</text>
       <text x="0" y="18" class="font-mono footer-txt">Solving one problem in two independent ways builds deeper mastery than solving ten by rote.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">
@@ -12221,7 +12328,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 10 OF 10 • DOMAIN: MULTI-METHOD MASTERY & DAILY FLUENCY • 60x +10 QUARTER-BLOCK TOKENS • SOCKETS 1–10 & 100</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 10 OF 10 • DOMAIN: MULTI-METHOD MASTERY &amp; DAILY FLUENCY • 60x +10 QUARTER-BLOCK TOKENS • SOCKETS 1–10 &amp; 100</text>
   <text x="130" y="78" class="font-mono title">DAILY PROTOCOL: 10 QUESTIONS, 2 WAYS &amp; THE 100 MASTERY TOWER</text>
   <text x="130" y="98" class="font-mono subtitle">How to Use Your SC-6 Quest Scoreboard with Daily Practice &amp; Left-Shift [C] (?) Tutorial Mode</text>
   <text x="130" y="117" class="font-mono badge-box">Grades 3–8 Daily Math &amp; Big Ideas Supplement • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -12969,7 +13076,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.PRACTICE.MP1 (Persevere &amp; Verify)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.PRACTICE.MP5 (Use Strategic Tools)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• SC-6 Built-In Scoring (+10 / +20 / 100 Mastery)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 3–8 Daily Math &amp; Big Ideas Supplement</text>
     </g>
 

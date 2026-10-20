@@ -66,6 +66,7 @@ def normalize_key_token(raw: str) -> str:
         "x≶y": "x⇄y",
         "123": "PV",
         "CLK": "🕒",
+        "QUIZ": "?",
         "<--": "<-",
         "&lt;-": "<-",
         "&lt;--": "<-",

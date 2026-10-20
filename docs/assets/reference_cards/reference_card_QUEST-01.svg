@@ -5,7 +5,7 @@
       .font-mono { font-family: 'Space Mono', monospace; }
       .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
       .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
       .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
@@ -130,14 +130,18 @@
 
     <!-- Concept principle text -->
     <text x="16" y="76" class="font-mono" font-size="9.3px" fill="#0f172a">
-      <tspan x="16" dy="0" font-weight="400" fill="#0f172a">Real mathematical confidence comes from seeing that the</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">same answer appears whether you use physical blocks,</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">   1 Block = +10 (1st Way) • 2 Blocks = +20 (2nd Way)</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">mental math, or the SC-6 RPN stack! Stacking a second +10</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">token physically rewards trying a second approach.</tspan>
+      <tspan x="16" dy="0" font-weight="400" fill="#0f172a">Real mathematical confidence comes from seeing that the</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">same answer appears whether you use physical blocks,</tspan><tspan x="16" dy="15" font-weight="700" fill="#0284c7">   1 Block = +10 (1st Way) • 2 Blocks = +20 (2nd Way)</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">mental math, or the SC-6 RPN stack! Stacking a second +10</tspan><tspan x="16" dy="15" font-weight="400" fill="#0f172a">token physically rewards trying a second approach.</tspan>
     </text>
 
     <!-- Calibration Datum Box -->
     <g transform="translate(14, 158)">
       <rect x="0" y="0" width="377" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">UNIVERSAL +10 QUARTER-BLOCK DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(dl)}</text>\n
+      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#475569">• Token Spec: Universal +10 Quarter-Block = 10.25 × 10.25 × 7.00 mm</text>
+<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#475569">• 1st Way Solved: Seat 1 token in socket 1–10 (+10 points)</text>
+<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#475569">• 2nd Way Bonus: Stack 2nd token right on top (+20 points total)</text>
+<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#475569">• Mastery Tower: Trade 10 tokens into the [100] socket (70.0 mm)</text>
+
     </g>
 
     <!-- Lid Feature -->
@@ -200,39 +204,43 @@
     <line x1="12" y1="58" x2="373" y2="58" stroke="#cbd5e1" stroke-width="1" />
 
     
-    <text x="16" y="74" class="font-mono td" font-weight="700">+10 Token (1st Way)</text>
+    <text x="16" y="74" class="font-mono td" font-weight="700">1st-Way +10 Token</text>
     <text x="125" y="74" class="font-mono td" font-weight="700" fill="#0284c7">30x</text>
-    <text x="160" y="74" class="font-mono td">10.25 × 10.25 × 7.00 mm (1U)</text>
+    <text x="160" y="74" class="font-mono td">10.25x10.25x7.0mm</text>
     <text x="275" y="74" class="font-mono td" fill="#475569">Red+Gold Silk</text>
     <line x1="12" y1="80" x2="373" y2="80" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
 
-    <text x="16" y="97" class="font-mono td" font-weight="700">+10 Token (2nd Way)</text>
+    <text x="16" y="97" class="font-mono td" font-weight="700">2nd-Way +10 Token</text>
     <text x="125" y="97" class="font-mono td" font-weight="700" fill="#0284c7">30x</text>
-    <text x="160" y="97" class="font-mono td">10.25 × 10.25 × 7.00 mm (1U)</text>
+    <text x="160" y="97" class="font-mono td">10.25x10.25x7.0mm</text>
     <text x="275" y="97" class="font-mono td" fill="#475569">Glow Yellow</text>
     <line x1="12" y1="103" x2="373" y2="103" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
 
-    <text x="16" y="120" class="font-mono td" font-weight="700">3x1x7U Storage Bin</text>
+    <text x="16" y="120" class="font-mono td" font-weight="700">3x1x7U Open Bin</text>
     <text x="125" y="120" class="font-mono td" font-weight="700" fill="#0284c7">1x</text>
-    <text x="160" y="120" class="font-mono td">125.5 × 42.0 × 56.4 mm (7U)</text>
+    <text x="160" y="120" class="font-mono td">125.5x42.0x56.4mm</text>
     <text x="275" y="120" class="font-mono td" fill="#475569">Technical White</text>
     <line x1="12" y1="126" x2="373" y2="126" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="143" class="font-mono td" font-weight="700">Scoreboard Lid</text>
     <text x="125" y="143" class="font-mono td" font-weight="700" fill="#0284c7">1x</text>
-    <text x="160" y="143" class="font-mono td">Sockets 1–10, 100 &amp; (?) Badge</text>
+    <text x="160" y="143" class="font-mono td">Sockets 1-10, 100</text>
     <text x="275" y="143" class="font-mono td" fill="#475569">Technical White</text>
     <line x1="12" y1="149" x2="373" y2="149" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
 
 
     <!-- Total Pieces Summary -->
-    <text x="16" y="334" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">TOTAL: 60 Universal +10 Score Tokens + 7U Storage Bin + Scoreboard Lid = 62 Parts</text>
+    <text x="16" y="334" class="font-mono" font-size="9px" font-weight="700" fill="#0f172a">TOTAL: 60 Universal +10 Tokens + 7U Bin + Lid = 62 Parts</text>
 
     <!-- Palette Box -->
     <g transform="translate(12, 350)">
       <rect x="0" y="0" width="361" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">DUAL-TONE +10 TOKEN PALETTE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="53" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="68" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n<text x="12" y="83" class="font-mono" font-size="8.8px" fill="#475569">{xml_escape(pl)}</text>\n
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">• All 60 quarter-blocks are 100% interchangeable (+10 pts each).</text>
+<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#475569">• Red+Gold Silk (30x): Seat for your 1st Way solution (+10 pts).</text>
+<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#475569">• Glow-in-the-Dark Yellow (30x): Stack on top for 2nd Way (+20 pts)!</text>
+<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#475569">• Keep this reference card stored inside the box lid!</text>
+
     </g>
   </g>
 
@@ -292,7 +300,7 @@
     <g transform="translate(450, 24)">
       <text x="0" y="0" class="font-mono th" fill="#0f172a">PÓLYA'S MULTIPLE-PATH PRINCIPLE</text>
       <text x="0" y="18" class="font-mono footer-txt">Solving one problem in two independent ways builds deeper mastery than solving ten by rote.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (9 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER COMPANION GUIDE | OFFICE LASER PAPER SPEC</text>
+      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | PAPER SPEC</text>
     </g>
 
     <g transform="translate(980, 24)">

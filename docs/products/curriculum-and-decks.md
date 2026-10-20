@@ -98,11 +98,12 @@ hide:
       <span style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">// 100% FREE DIGITAL CURRICULUM PORTAL</span>
       <h3 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.25rem; font-weight: 800; color: #FFFFFF;">Looking for Immediate Pre-Generated Printables?</h3>
       <p style="margin: 0; font-size: 0.85rem; color: #CBD5E1; max-width: 650px;">
-        Explore our complete digital catalog: 120 pre-generated classroom station guides (Singapore Math, Bridges, Big Ideas) and 12 official Texas UIL &amp; TMSCA tournament practice exams with complete 3-sig-fig scoring keys.
+        Explore our complete digital catalog: 120 pre-generated classroom station guides (Singapore Math, Bridges, Big Ideas), the 91-page Big Ideas Middle School Practice Supplement (90 Worksheets &bull; 900 Problems) + 10-page Coach's Guide, and 12 official Texas UIL &amp; TMSCA tournament practice exams with complete 3-sig-fig scoring keys.
       </p>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
       <a href="../../curriculum/worksheets/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #38BDF8; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">120 STATION GUIDES &rarr;</a>
+      <a href="../../curriculum/big-ideas-middle-school-sc6-workbook/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #F59E0B; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">91-PAGE BIG IDEAS SUPPLEMENT &rarr;</a>
       <a href="../../curriculum/uil-competition/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #10B981; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">24 UIL EXAMS &amp; KEYS &rarr;</a>
     </div>
   </div>
@@ -548,6 +549,26 @@ hide:
           </div>
           <a href="/products/algebra-boxes/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
             View Algebra Boxes &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Cross-Sell 4: SC-6 Quest Scoreboard -->
+      <div class="cross-sell-card">
+        <div>
+          <img src="../../assets/reference_cards/reference_card_QUEST-01.png" alt="SC-6 Quest Scoreboard & +10 Token Kit" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">SC-6 Quest Scoreboard &amp; +10 Token Kit</h3>
+          <p class="cross-sell-card-desc">
+            2-piece Snapfinity scoreboard (`3x1x7U`) with sockets `1`&ndash;`10`, `100` Mastery Tower, `?` tutorial keycap badge, and 60 stackable `+10` tokens for multi-method mastery.
+          </p>
+        </div>
+        <div>
+          <div class="cross-sell-price-row">
+            <span class="cross-sell-price">$29.00</span>
+            <span class="text-xs font-mono text-emerald-400">QUEST-01</span>
+          </div>
+          <a href="/products/quest-scoreboard/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
+            View Quest Scoreboard &rarr;
           </a>
         </div>
       </div>

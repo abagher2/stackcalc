@@ -7,11 +7,12 @@ description: "Cross-reference index aligning StackCalc authentic physical manipu
 
 <div class="te-viewport-header mb-6">
   <span class="te-viewport-sku">STANDARDS INDEX // CROSS-FRAMEWORK HARMONIZATION</span>
-  <span class="te-viewport-status text-sky-400">● 11 AUTHENTIC HARDWARE UNITS (K–12)</span>
+  <span class="te-viewport-status text-sky-400">● 12 AUTHENTIC HARDWARE UNITS (K–12)</span>
 </div>
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
   <a href="../" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📖 Master Guide</a>
+  <a href="../big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🚀 Big Ideas 45-Day Catch-Up (SC-6)</a>
   <a href="../rpn-elementary-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ RPN Power Guide</a>
   <a href="../worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 120 Station Worksheets</a>
   <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">🎯 Standards Matrix</a>
@@ -40,6 +41,7 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 | **09** | **Discrete Probability & Statistics** | Grades 7 – 9 | Probability Dice & Modular Spinner | `{{keycap:🎲}}`, `{{key:Σ+}}`, `{{key:x̄}}`, `{{key:s,σ}}` Accumulators | **SC-6 Manual, Ch. 7** & **SC-32 Manual, Ch. 9** | CCSS.MATH.7.SP.C.5, 7.SP.C.7 |
 | **10** | **Trigonometric Coordinates & Radians** | Grades 11 – 12 | Precision Acrylic Trig Volvelle | `{{key:SIN}}`, `{{key:COS}}`, `{{key:RAD}}`, `{{key:▸θ,r}}` | **SC-32 Manual, Ch. 4** & **SC-32 Manual, Ch. 5** | CCSS.MATH.HSF.TF.A.1, HSF.TF.A.2 |
 | **11** | **Parenthesis-Free Multi-Step Math** | Grades 5 – 8 | SC-6 & SC-32 4-Line Hardware LCD Stack | 4-Line Live Registers ($X, Y, Z, T$) & `{{key:LASTX}}` | **SC-6 Manual, Ch. 2** & **SC-32 Manual, Ch. 2** | CCSS.MATH.5.OA.A.1, 6.EE.A.2 |
+| **12** | **Gamified Multi-Method Mastery (`QUEST-01`)** | Grades 4 – 8 | [SC-6 Quest Scoreboard & `+10` Token Kit](../products/quest-scoreboard/index.md) | `{{key:QUIZ}}` (`[↰] [C]` / `?`) Tutorial Mode (`+10` / `+20` pts) | **[46-Page Big Ideas Supplement](big-ideas-middle-school-sc6-workbook.md)** & **10-Page Coach's Guide** | CCSS.MATH.PRACTICE.MP1, MP3, MP5 |
 
 ---
 
@@ -87,6 +89,9 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 
 ### 2.3 Big Ideas Math (Larson &amp; Boswell) {: #big-ideas-math }
 
+> [!TIP] **Complete 45-Section Middle School Practice Supplement &amp; `QUEST-01` Scoreboard:**  
+> For section-by-section coverage of **Big Ideas Math Units 1–10 (Sections 1.1–10.4)**—complete with 1 worked example per section, step-by-step physical block kit instructions, open workspace for 450 practice problems, the **10-Page Chapter Coach's Guide**, and the 2-piece **[SC-6 Quest Scoreboard & `+10` Token Kit (`QUEST-01`)](../products/quest-scoreboard/index.md)**—visit the **[Big Ideas 45-Section SC-6 Practice Supplement &rarr;](big-ideas-middle-school-sc6-workbook.md)**.
+
 <div class="te-table-wrapper">
 | Big Ideas Grade &amp; Book | Chapter / Topic | StackCalc Manipulative | Exploratory Activity, Keystroke Flow &amp; Book Chapter |
 | :--- | :--- | :--- | :--- |
@@ -96,6 +101,7 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 | **Grade 3** | Chapter 2: Multiplication Concepts | Counting Tiles (144-Tile Studio) | Exploration: "Four-Quadrant Array Area Models". Build 12x12 grid, evaluate `12 {{key:ENTER}} 12 {{key:×}} = 144` (**SC-6 Manual, Ch. 4**). |
 | **Grade 3** | Chapter 12: Time and Measurement | Clock &amp; Interval Timer | Exploration: "Elapsed Time on a Clock". Rotate bezel to measure elapsed minutes, verify with `{{keycap:🕒}}` (**SC-6 Manual, Ch. 9**). |
 | **Grade 4** | Chapter 7: Understand Fractions | Fraction Studio Towers | Exploration: "Decomposing Fractions". Match three 1/8 blocks to 3/8, verify with `3 {{key:.}} 8` (**SC-6 Manual, Ch. 5**). |
+| **Grades 5–7 (Units 1–10)** | Sections 1.1–10.4 (45 Sections) | `QUEST-01` Scoreboard + All 9 Block Kits | **46-Page Student Practice Supplement** &amp; **10-Page Coach's Guide**: `+10` (1st Way) / `+20` (2nd Way) token scoring &amp; `{{key:QUIZ}}` (`?`) Tutorial Mode (**[View Supplement &rarr;](big-ideas-middle-school-sc6-workbook.md)**). |
 | **Grade 6** | Chapter 1: Numerical Expressions &amp; Factors | Prime Factor Studio | Exploration: "Prime Factor Trees &amp; Factor Sockets". Stack factor blocks in towers, verify with `{{key:FACT}}` (**SC-6 Manual, Ch. 7**). |
 | **Grade 6** | Chapter 3: Algebraic Expressions | SC-32 4-Line Hardware LCD Stack | Exploration: "Parentheses-Free Operations". Evaluate multi-step arithmetic via RPN stack (**SC-32 Manual, Ch. 2**). |
 | **Algebra 1** | Chapter 7: Polynomials &amp; Factoring | Algebra Studio &amp; Factoring Stage | Exploration: "Area Models for Quadratic Factoring". Form rectangle with $x^2 + 5x + 6$, solve roots with `{{key:POLY}}` / `{{key:SOLVE}}` (**SC-32 Manual, Ch. 7**). |

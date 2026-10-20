@@ -35,7 +35,7 @@
   </g>
 
   <!-- Header Typography with Series & Mathematical Domain Anchor -->
-  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 10 OF 10 • DOMAIN: MULTI-METHOD MASTERY & DAILY FLUENCY • 60x +10 QUARTER-BLOCK TOKENS • SOCKETS 1–10 & 100</text>
+  <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 10 OF 10 • DOMAIN: MULTI-METHOD MASTERY &amp; DAILY FLUENCY • 60x +10 QUARTER-BLOCK TOKENS • SOCKETS 1–10 &amp; 100</text>
   <text x="130" y="78" class="font-mono title">DAILY PROTOCOL: 10 QUESTIONS, 2 WAYS &amp; THE 100 MASTERY TOWER</text>
   <text x="130" y="98" class="font-mono subtitle">How to Use Your SC-6 Quest Scoreboard with Daily Practice &amp; Left-Shift [C] (?) Tutorial Mode</text>
   <text x="130" y="117" class="font-mono badge-box">Grades 3–8 Daily Math &amp; Big Ideas Supplement • Hands-On Classroom &amp; Home STEM Studio Series</text>
@@ -783,7 +783,10 @@
     <g transform="translate(12, 282)">
       <rect x="0" y="0" width="276" height="85" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="10" y="16" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">CURRICULAR ALIGNMENT</text>
-      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">{xml_escape(st)}</text>\n
+      <text x="10" y="30" class="font-mono" font-size="8.3px" fill="#cccccc">• CCSS.MATH.PRACTICE.MP1 (Persevere &amp; Verify)</text>
+<text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">• CCSS.MATH.PRACTICE.MP5 (Use Strategic Tools)</text>
+<text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">• SC-6 Built-In Scoring (+10 / +20 / 100 Mastery)</text>
+
       <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#ffffff" font-weight="700">Grades 3–8 Daily Math &amp; Big Ideas Supplement</text>
     </g>
 
