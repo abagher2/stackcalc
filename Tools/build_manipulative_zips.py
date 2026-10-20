@@ -19,6 +19,7 @@ STL_DIR = WATCH_CALC_ROOT / "Education" / "build" / "stl"
 
 COUNTING_ZIP = DOWNLOADS_DIR / "counting-tiles-open-source-stls.zip"
 PRIME_ZIP = DOWNLOADS_DIR / "prime-factor-studio-open-source-stls.zip"
+QUEST_ZIP = DOWNLOADS_DIR / "quest-scoreboard-open-source-stls.zip"
 
 def build_counting_tiles_zip():
     readme = """================================================================================
@@ -129,6 +130,63 @@ Etsy Store: https://www.etsy.com/shop/StackCalc
 
     print(f"Built Prime Factor Studio ZIP: {PRIME_ZIP} ({PRIME_ZIP.stat().st_size} bytes)")
 
+def build_quest_scoreboard_zip():
+    readme = """================================================================================
+STACKCALC LEARNING LAB // SC-6 QUEST SCOREBOARD & +10 TOKEN KIT (QUEST-01)
+================================================================================
+Open-Source 3D Printable STL & OpenSCAD Source Pack
+Standard: Zack Freedman 42mm Gridfinity Ecosystem (3x1x7U Compact Height)
+Target Grades: K - 8 (Multi-Method Problem Solving, SC-6 [↰][C] (?) Tutorial Mode)
+
+CONTENTS:
+1. quest_scoreboard_parts.stl / quest_scoreboard_parts.scad
+   - 60 Universal +10 Quarter-Block Tokens (9.10 x 9.10 x 7.00 mm visible 1U height):
+     Plate 1 (30x): 1st-Way Gold/Red Silk PLA (#EAB308)
+     Plate 2 (30x): 2nd-Way Glow-in-the-Dark Yellow PLA (#84CC16)
+   - Every token is an identical +10 Quarter-Block:
+     • 1 block in a Question Socket = +10 pts (Solved 1st Way!)
+     • 2 stacked blocks in the SAME Question Socket = +20 pts (Solved 2nd Way!)
+     • 10 stacked blocks in the 100 Socket = 100-Point Mastery Tower!
+
+2. quest_scoreboard_box.stl / quest_scoreboard_box.scad
+   - 2-Piece Assembly (3x1x7U Gridfinity Box + Snapfinity Lid, no inner tray needed).
+   - Open interior vault holds all 60 +10 tokens directly for instant grab-and-go access.
+   - Front debossed instrument plaque: "SC-6 QUEST"
+   - Rear & Lid Tutorial Keycap Badge: Question Mark in a Circle (?) matching SC-6 [↰][C]
+   - Lid features 10 Question Sockets (labeled 1 to 10) + 1 Mastery Tower Socket (labeled 100).
+
+PRINT SETTINGS:
+- Layer Height: 0.20 mm Standard
+- Infill: 15% - 20% Gyroid
+- Supports: NONE (100% Support-Free)
+- Material: White PETG (Box & Lid) + Dual Silk / Glow PLA (Tokens)
+
+License: CERN Open Hardware License v2 - Strongly Reciprocal
+Web: https://stackcalc.io/products/quest-scoreboard/
+Etsy Store: https://www.etsy.com/shop/StackCalc
+================================================================================
+"""
+    models_stl = WATCH_CALC_ROOT / "Education" / "models" / "stl"
+    scratch_stl = WATCH_CALC_ROOT / "scratch" / "stl" / "education"
+    with zipfile.ZipFile(QUEST_ZIP, 'w', zipfile.ZIP_DEFLATED) as zf:
+        zf.writestr("README.txt", readme)
+        box_scad = SCAD_DIR / "quest_scoreboard_box.scad"
+        parts_scad = SCAD_DIR / "quest_scoreboard_parts.scad"
+        box_stl = models_stl / "boxes" / "quest_scoreboard_box.stl"
+        parts_stl = models_stl / "parts" / "quest_scoreboard_parts.stl"
+        lid_stl = scratch_stl / "quest_scoreboard_lid.stl"
+        body_stl = scratch_stl / "quest_scoreboard_box.stl"
+
+        if box_scad.exists(): zf.write(box_scad, arcname="quest_scoreboard_box.scad")
+        if parts_scad.exists(): zf.write(parts_scad, arcname="quest_scoreboard_parts.scad")
+        if box_stl.exists(): zf.write(box_stl, arcname="quest_scoreboard_box_and_lid.stl")
+        if body_stl.exists(): zf.write(body_stl, arcname="quest_scoreboard_box_only.stl")
+        if lid_stl.exists(): zf.write(lid_stl, arcname="quest_scoreboard_lid_only.stl")
+        if parts_stl.exists(): zf.write(parts_stl, arcname="quest_scoreboard_parts.stl")
+
+    print(f"Built Quest Scoreboard ZIP: {QUEST_ZIP} ({QUEST_ZIP.stat().st_size} bytes)")
+
 if __name__ == '__main__':
     build_counting_tiles_zip()
     build_prime_factor_zip()
+    build_quest_scoreboard_zip()

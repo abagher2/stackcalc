@@ -669,6 +669,15 @@ ICON_REGISTRY: Dict[str, dict] = {
         "model": "sc6",
         "label": "Number Rack Subitizing Icon ([▦])",
     },
+    "button_quiz": {
+        "id": "button_quiz",
+        "svg": "Education/scad/lib/icons/button_quiz.svg",
+        "scad": "Education/scad/quest_scoreboard_box.scad",
+        "kit": "QUEST-01",
+        "key": "?",
+        "model": "sc6",
+        "label": "Tutorial & Quiz Mode Icon ([↰][C] (?) Question Mark in a Circle)",
+    },
 }
 
 
