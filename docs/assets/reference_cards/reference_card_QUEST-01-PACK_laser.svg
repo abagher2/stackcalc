@@ -48,54 +48,54 @@
     <text x="16" y="22" class="font-mono section-hdr">PACKING BENCH MANIFEST &amp; REFILL REPLACEMENT PRICING</text>
     <text x="16" y="52" class="font-mono th">#</text>
     <text x="45" y="52" class="font-mono th">COMPONENT DESCRIPTION</text>
-    <text x="285" y="52" class="font-mono th">QTY</text>
-    <text x="340" y="52" class="font-mono th">COLOR / SPEC</text>
-    <text x="490" y="52" class="font-mono th">CONTENT-ADDRESSED ID</text>
+    <text x="315" y="52" class="font-mono th">QTY</text>
+    <text x="365" y="52" class="font-mono th">COLOR / SPEC</text>
+    <text x="515" y="52" class="font-mono th">CONTENT-ADDRESSED ID</text>
     <text x="745" y="52" class="font-mono th" text-anchor="end">REFILL</text>
     <line x1="12" y1="58" x2="753" y2="58" stroke="#ffffff" stroke-width="1" />
 
     <circle cx="21" cy="71" r="8.5" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="21" y="74" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
     <text x="45" y="74" class="font-mono td" font-weight="700">+10 Score Token — 1st Way (10.25×10.25×7mm)</text>
-    <text x="285" y="74" class="font-mono td" font-weight="700">30x</text>
-    <text x="340" y="74" class="font-mono td">Red+Gold Silk</text>
-    <text x="490" y="74" class="font-mono td-id">QUEST-TOKN-GOLD</text>
+    <text x="315" y="74" class="font-mono td" font-weight="700">30x</text>
+    <text x="365" y="74" class="font-mono td">Red+Gold Silk</text>
+    <text x="515" y="74" class="font-mono td-id">QUEST-TOKN-GOLD</text>
     <text x="745" y="74" class="font-mono td-price">$1.88</text>
     <line x1="12" y1="80" x2="753" y2="80" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <circle cx="21" cy="95" r="8.5" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="21" y="98" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
     <text x="45" y="98" class="font-mono td" font-weight="700">+10 Score Token — 2nd Way (10.25×10.25×7mm)</text>
-    <text x="285" y="98" class="font-mono td" font-weight="700">30x</text>
-    <text x="340" y="98" class="font-mono td">Glow Yellow</text>
-    <text x="490" y="98" class="font-mono td-id">QUEST-TOKN-GLOW</text>
+    <text x="315" y="98" class="font-mono td" font-weight="700">30x</text>
+    <text x="365" y="98" class="font-mono td">Glow Yellow</text>
+    <text x="515" y="98" class="font-mono td-id">QUEST-TOKN-GLOW</text>
     <text x="745" y="98" class="font-mono td-price">$1.88</text>
     <line x1="12" y1="104" x2="753" y2="104" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <circle cx="21" cy="119" r="8.5" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="21" y="122" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
     <text x="45" y="122" class="font-mono td" font-weight="700">+10 Score Token Refill Pack (10x)</text>
-    <text x="285" y="122" class="font-mono td" font-weight="700">1x</text>
-    <text x="340" y="122" class="font-mono td">Assorted</text>
-    <text x="490" y="122" class="font-mono td-id">QUEST-PACK-10</text>
+    <text x="315" y="122" class="font-mono td" font-weight="700">1x</text>
+    <text x="365" y="122" class="font-mono td">Assorted</text>
+    <text x="515" y="122" class="font-mono td-id">QUEST-PACK-10</text>
     <text x="745" y="122" class="font-mono td-price">$6.75</text>
     <line x1="12" y1="128" x2="753" y2="128" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <circle cx="21" cy="143" r="8.5" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="21" y="146" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#ffffff">4</text>
     <text x="45" y="146" class="font-mono td" font-weight="700">3x1 Snapfinity Scoreboard Lid (1–10, 100, ?)</text>
-    <text x="285" y="146" class="font-mono td" font-weight="700">1x</text>
-    <text x="340" y="146" class="font-mono td">Technical White</text>
-    <text x="490" y="146" class="font-mono td-id">QUEST-LID-a793ddd</text>
+    <text x="315" y="146" class="font-mono td" font-weight="700">1x</text>
+    <text x="365" y="146" class="font-mono td">Technical White</text>
+    <text x="515" y="146" class="font-mono td-id">QUEST-LID-a793ddd</text>
     <text x="745" y="146" class="font-mono td-price">$9.00</text>
     <line x1="12" y1="152" x2="753" y2="152" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <circle cx="21" cy="167" r="8.5" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="21" y="170" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#ffffff">5</text>
     <text x="45" y="170" class="font-mono td" font-weight="700">3x1x7U Gridfinity Storage Enclosure Body</text>
-    <text x="285" y="170" class="font-mono td" font-weight="700">1x</text>
-    <text x="340" y="170" class="font-mono td">Technical White</text>
-    <text x="490" y="170" class="font-mono td-id">QUEST-BOX-a793ddd</text>
+    <text x="315" y="170" class="font-mono td" font-weight="700">1x</text>
+    <text x="365" y="170" class="font-mono td">Technical White</text>
+    <text x="515" y="170" class="font-mono td-id">QUEST-BOX-a793ddd</text>
     <text x="745" y="170" class="font-mono td-price">$12.00</text>
     <line x1="12" y1="176" x2="753" y2="176" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
@@ -139,8 +139,8 @@
       <rect x="0" y="0" width="382" height="130" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
       <rect x="0" y="0" width="382" height="26" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="12" y="17" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">PACKING WATERLINE NOTICE</text>
-      <text x="12" y="44" class="font-mono" font-size="8.8px" fill="#ffffff">
-        <tspan x="12" dy="0">SIMPLIFIED 2-PIECE DESIGN (NO INNER TRAY): Pour all 60 universal +10 tokens into the open 3x1x7U storage bin, place this card on top, and snap the Scoreboard Lid shut.</tspan>
+      <text x="12" y="44" class="font-mono" font-size="8.5px" fill="#ffffff">
+        <tspan x="12" dy="0">SIMPLIFIED 2-PIECE DESIGN (NO INNER TRAY): Pour all 60</tspan><tspan x="12" dy="13">universal +10 tokens into the open 3x1x7U storage bin,</tspan><tspan x="12" dy="13">place this card on top, and snap the Scoreboard Lid</tspan><tspan x="12" dy="13">shut.</tspan>
       </text>
     </g>
 

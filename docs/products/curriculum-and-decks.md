@@ -499,7 +499,7 @@ hide:
           <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Maker Kit" class="cross-sell-thumb" />
           <h3 class="cross-sell-card-title">SC-32 Scientific RPN Maker Kit</h3>
           <p class="cross-sell-card-desc">
-            Tactile 43-key snap-dome instrument with RP2350 silicon, sunlight-readable reflective LCD, 4-line live operational stack, and SAT/ACT testing compliance. 100% pre-soldered, 5-min assembly.
+            Tactile 43-key instrument with RP2350 silicon, high-contrast reflective LCD, 4-line live operational stack, and SAT/ACT testing compliance. 100% pre-soldered, 5-min assembly.
           </p>
         </div>
         <div>

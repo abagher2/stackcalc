@@ -131,7 +131,7 @@ Testing coordinators and teachers may print this verification statement for stud
     The SC-32 includes 26 general-purpose numerical storage registers ($R_0 \dots R_{25}$) for intermediate floating-point numbers. It does not possess a text editor, notes app, or file storage system. Proctors can verify a clean state by having students execute the `CLEAR` &rarr; `CLREGS` routine upon entering the examination hall.
 
 ??? question "Does the calculator have a sound or audio beeper that could distract other examinees?"
-    **No.** The SC-32 contains no speaker, buzzer, or piezo element. Keystrokes are completely silent mechanical tactile clicks (400g snap-dome actuation).
+    **No.** The SC-32 contains no speaker, buzzer, or piezo element. Keystrokes are quiet mechanical tactile clicks (tactile microswitch actuation under flexible TPU keys).
 
 ---
 

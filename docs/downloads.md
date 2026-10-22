@@ -334,7 +334,7 @@ Targeted STL archives for individual stations, replacement parts, or classroom p
 
 Printed your own plastic parts? You can purchase the official factory fastener and decal pack on Etsy for **$19.00**, including:
 * Custom laser-engraved anodized faceplates with micro-grooves
-* 400g snap-dome click switches and pre-soldered silicone feet
+* Tactile microswitch arrays and pre-soldered silicone feet
 * Pre-cut transflective LCD optical adhesive gaskets
 * High-tack reference card decals and archival kraft packaging
 

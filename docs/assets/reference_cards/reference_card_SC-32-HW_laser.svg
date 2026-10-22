@@ -8,9 +8,9 @@
       .badge-sku { font-size: 12.5px; font-weight: 700; fill: #ffffff; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #ffffff; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #cccccc; }
-      .section-hdr { font-size: 11.5px; font-weight: 700; fill: #ffffff; letter-spacing: 0.8px; text-transform: uppercase; }
-      .th { font-size: 10px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
-      .td { font-size: 10px; font-weight: 400; fill: #ffffff; }
+      .section-hdr { font-size: 11px; font-weight: 700; fill: #ffffff; letter-spacing: 0.8px; text-transform: uppercase; }
+      .th { font-size: 9px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
+      .td { font-size: 8.5px; font-weight: 400; fill: #ffffff; }
       .footer-txt { font-size: 9.3px; font-weight: 400; fill: #cccccc; }
     </style>
   </defs>
@@ -46,7 +46,7 @@
 
   <!-- Header Typography -->
   <text x="215" y="60" class="font-mono title">STACKCALC SC-32 SCIENTIFIC RPN CALCULATOR</text>
-  <text x="215" y="78" class="font-mono subtitle">4-Register RPN Stack Engine, Transcendentals &amp; Physical Hardware Guide</text>
+  <text x="215" y="78" class="font-mono subtitle">4-Register RPN Stack Engine, Dual Stand Modes &amp; Hardware Guide</text>
 
   <!-- Studio Continuum Ribbon -->
   <text x="215.0" y="109.0" class="font-mono" font-size="8.2px" font-weight="700" fill="#ffffff">STUDIO CONTINUUM:</text>
@@ -106,8 +106,14 @@
 <text x="881.5" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
 
     <g transform="translate(887.5, 98.0)">
+      <rect x="0" y="0" width="43.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="21.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">10·Rack</text>
+    </g>
+<text x="932.0" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
+
+    <g transform="translate(938.0, 98.0)">
       <rect x="0" y="0" width="48.0" height="15" rx="3.5" fill="#ffffff" stroke="#ffffff" stroke-width="0.8" />
-      <text x="24.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="700" text-anchor="middle" fill="#000000">10·SC-32</text>
+      <text x="24.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="700" text-anchor="middle" fill="#000000">11·SC-32</text>
     </g>
 
   <!-- Top-Right Series & SKU Badges -->
@@ -121,173 +127,203 @@
 
   <!-- COLUMN 1: WHAT IS THIS MANIPULATIVE? -->
   <g transform="translate(35, 148)">
-    <rect x="0" y="0" width="405" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="405" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="16" y="22" class="font-mono section-hdr">1. WHAT IS THIS MANIPULATIVE?</text>
+    <rect x="0" y="0" width="370" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="370" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">1. HARDWARE ARCHITECTURE &amp; STANDS</text>
 
     <!-- Headline -->
-    <text x="16" y="56" class="font-mono" font-size="11.5px" font-weight="700" fill="#ffffff">4-REGISTER RPN AUTOMATIC STACK ENGINE</text>
+    <text x="16" y="52" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">4-REGISTER RPN ENGINE &amp; DUAL STANDS</text>
 
     <!-- Concept principle text -->
-    <text x="16" y="76" class="font-mono" font-size="9.3px" fill="#ffffff">
-      <tspan x="16" dy="0" font-weight="400" fill="#ffffff">The SC-32 uses Reverse Polish Notation (RPN) with a 4-register stack.</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">Numbers are pushed onto the stack; operations consume them immediately:</tspan><tspan x="16" dy="15" font-weight="700" fill="#ffffff">   Stack Architecture: Registers T, Z, Y, X (Display)</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">Zero parentheses, zero operator precedence confusion, and zero syntax errors.</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">Intermediate calculations wait safely on the stack until an operator needs them!</tspan>
+    <text x="16" y="66" class="font-mono" font-size="8.8px" fill="#ffffff">
+      <tspan x="16" dy="0" font-weight="400" fill="#ffffff">Reverse Polish Notation (RPN) with 4 registers.</tspan><tspan x="16" dy="12" font-weight="400" fill="#ffffff">Numbers push onto stack; operators evaluate at once:</tspan><tspan x="16" dy="12" font-weight="700" fill="#ffffff">   Stack Architecture: Registers T, Z, Y, X</tspan><tspan x="16" dy="12" font-weight="400" fill="#ffffff">Zero parentheses, zero ambiguity, zero errors.</tspan>
     </text>
 
     <!-- Calibration Datum Box -->
-    <g transform="translate(14, 158)">
-      <rect x="0" y="0" width="377" height="72" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">CALIBRATED 32-KEYCAP TACTILE HARDWARE</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#cccccc">• Display: 128 × 64 high-contrast OLED with 4-line stack viewing</text>
-<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#cccccc">• Tactile Keycaps: Double-shot 9.5 mm pitch with audible snap domes</text>
-<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#cccccc">• Automatic Stack: Push on [ENTER], pop on operator, LastX preserved</text>
-<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#cccccc">• Battery System: USB-C rechargeable LiPo with low-power sleep mode</text>
+    <g transform="translate(14, 114)">
+      <rect x="0" y="0" width="342" height="84" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="18" class="font-mono" font-size="9.2px" font-weight="700" fill="#ffffff">CALIBRATED 32-KEYCAP TACTILE HARDWARE</text>
+      <text x="12" y="32" class="font-mono" font-size="8.2px" fill="#cccccc">• Display: 128×64 OLED with live 4-stack view</text>
+<text x="12" y="44" class="font-mono" font-size="8.2px" fill="#cccccc">• Keycaps: 43 sculpted Shore 90A TPU keys over tactile switches</text>
+<text x="12" y="56" class="font-mono" font-size="8.2px" fill="#cccccc">• Stack: Push on [ENTER], pop on op, LastX saved</text>
+<text x="12" y="68" class="font-mono" font-size="8.2px" fill="#cccccc">• Power: USB-C LiPo with &lt;15 µA ultra-low sleep</text>
 
     </g>
 
     <!-- Lid Feature -->
-    <text x="16" y="252" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">TRAVEL CADDY DESK STAND LID</text>
-    <text x="16" y="270" class="font-mono" font-size="9.3px" fill="#cccccc">
-      <tspan x="16" dy="0">The modular travel caddy features an angled desk operating stand</tspan><tspan x="16" dy="14">and TPU protective membrane cushion. Keep your calculator propped</tspan><tspan x="16" dy="14">at the optimal viewing angle beside your blocks while calculating!</tspan>
+    <text x="16" y="210" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">DUAL-MODE DESK &amp; PUZZLE STANDS</text>
+    <text x="16" y="224" class="font-mono" font-size="8.5px" fill="#cccccc">
+      <tspan x="16" dy="0">• Desk Stand: 11.6° forward incline for typing.</tspan><tspan x="16" dy="12">• Puzzle Stand: 3-piece easel docks unit at 78°.</tspan><tspan x="16" dy="12">Knocks flat to 6mm to slip into travel caddy.</tspan>
     </text>
 
     <!-- Visual Diagram of Geometry / Stacking -->
-    <g transform="translate(14, 318)">
-      <rect x="0" y="0" width="377" height="144" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <g transform="translate(14, 324)">
+      <rect x="0" y="0" width="342" height="138" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       
-      <text x="12" y="18" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">4-REGISTER RPN STACK: √(3² + 4²) = 5.0000</text>
-      <g transform="translate(35, 30)">
-        <rect x="0" y="0" width="130" height="22" rx="2" fill="#000000" stroke="#ffffff" stroke-width="1" />
-        <text x="8" y="15" class="font-mono" font-size="8.5px" font-weight="700" fill="#cccccc">T:</text>
-        <text x="120" y="15" class="font-mono" font-size="9px" text-anchor="end" fill="#ffffff">0.0000</text>
+      <text x="12" y="18" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">OPERATING MODES: 11.6° DESK INCLINE &amp; 78° PUZZLE EASEL</text>
+      
+      <!-- Mode 1: 11.6° Desk Incline (Seated Typing) -->
+      <g transform="translate(14, 28)">
+        <!-- Desk Surface Line -->
+        <line x1="0" y1="88" x2="165" y2="88" stroke="#ffffff" stroke-width="1.2" />
+        
+        <!-- Angled Desk Stand Wedge (11.6 deg rise) -->
+        <polygon points="15,88 150,88 150,62" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+        <!-- Calculator Body on Incline -->
+        <polygon points="10,84 148,56 145,46 7,74" fill="#000000" stroke="#ffffff" stroke-width="1.5" />
+        <!-- OLED Display Representation -->
+        <polygon points="105,65 142,57 140,51 103,59" fill="#ffffff" />
+        <!-- 32 Keycaps Representation -->
+        <line x1="20" y1="80" x2="98" y2="64" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="4,3" />
 
-        <rect x="0" y="24" width="130" height="22" rx="2" fill="#000000" stroke="#ffffff" stroke-width="1" />
-        <text x="8" y="39" class="font-mono" font-size="8.5px" font-weight="700" fill="#cccccc">Z:</text>
-        <text x="120" y="39" class="font-mono" font-size="9px" text-anchor="end" fill="#ffffff">0.0000</text>
+        <!-- Dimension & Angle Annotations -->
+        <path d="M 45 88 A 30 30 0 0 0 42 77" fill="none" stroke="#ffffff" stroke-width="1.4" />
+        <text x="50" y="82" class="font-mono" font-size="8px" font-weight="700" fill="#ffffff">11.6°</text>
+        <line x1="156" y1="62" x2="156" y2="88" stroke="#ffffff" stroke-width="1" />
+        <text x="160" y="77" class="font-mono" font-size="7.5px" font-weight="700" fill="#ffffff">25.4mm</text>
 
-        <rect x="0" y="48" width="130" height="22" rx="2" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-        <text x="8" y="63" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">Y:</text>
-        <text x="120" y="63" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="end" fill="#ffffff">16.0000</text>
-
-        <rect x="0" y="72" width="130" height="24" rx="2" fill="#ffffff" opacity="0.15" stroke="#ffffff" stroke-width="1.6" />
-        <text x="8" y="88" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">X:</text>
-        <text x="120" y="88" class="font-mono" font-size="10.5px" font-weight="700" text-anchor="end" fill="#ffffff">9.0000</text>
+        <text x="5" y="102" class="font-mono" font-size="8.8px" font-weight="700" fill="#ffffff">DESK STAND (11.6°)</text>
+        <text x="5" y="114" class="font-mono" font-size="7.8px" fill="#cccccc">Seated typing • Glare-free OLED</text>
       </g>
 
-      <text x="180" y="48" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">STACK DYNAMICS</text>
-      <text x="180" y="64" class="font-mono" font-size="8.5px" fill="#cccccc">Press [+]: Drops Y into X</text>
-      <text x="180" y="78" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">→ X = 25.0000</text>
-      <text x="180" y="94" class="font-mono" font-size="8.5px" fill="#cccccc">Press [√x]:</text>
-      <text x="180" y="108" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">→ X = 5.0000 (Hypotenuse)</text>
-      <text x="180" y="124" class="font-mono" font-size="8px" fill="#cccccc">Zero parentheses needed!</text>
+      <!-- Vertical Divider -->
+      <line x1="190" y1="26" x2="190" y2="136" stroke="#ffffff" stroke-width="1" stroke-dasharray="3,3" />
+
+      <!-- Mode 2: 78° Puzzle Stand (Upright Easel) -->
+      <g transform="translate(202, 28)">
+        <!-- Desk Surface Line -->
+        <line x1="0" y1="88" x2="165" y2="88" stroke="#ffffff" stroke-width="1.2" />
+        
+        <!-- Interlocking Base Plate with Dovetail Notch -->
+        <rect x="25" y="80" width="115" height="8" rx="1.5" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+        <rect x="75" y="77" width="16" height="5" rx="1" fill="#ffffff" />
+        <text x="83" y="74" class="font-mono" font-size="6.8px" font-weight="700" text-anchor="middle" fill="#ffffff">Dovetail</text>
+
+        <!-- Upright Calculator at 78° -->
+        <g transform="translate(68, 80) rotate(-78)">
+          <rect x="0" y="-12" width="62" height="12" rx="2" fill="#000000" stroke="#ffffff" stroke-width="1.5" />
+          <rect x="36" y="-10" width="22" height="8" rx="1" fill="#ffffff" />
+          <!-- Keycap dots -->
+          <line x1="6" y1="-6" x2="32" y2="-6" stroke="#ffffff" stroke-width="2" stroke-dasharray="3,2" />
+        </g>
+        <!-- Rear TPU Sleeve Docked Behind -->
+        <g transform="translate(82, 80) rotate(-78)">
+          <rect x="0" y="-8" width="56" height="8" rx="2" fill="#000000" stroke="#ffffff" stroke-width="1" stroke-dasharray="2,2" />
+        </g>
+
+        <!-- Angle Annotation -->
+        <path d="M 85 88 A 20 20 0 0 0 81 72" fill="none" stroke="#ffffff" stroke-width="1.4" />
+        <text x="92" y="78" class="font-mono" font-size="8px" font-weight="700" fill="#ffffff">78°</text>
+
+        <text x="5" y="102" class="font-mono" font-size="8.8px" font-weight="700" fill="#ffffff">PUZZLE STAND (78°)</text>
+        <text x="5" y="114" class="font-mono" font-size="7.8px" fill="#cccccc">3-pc easel • Knocks flat to 6mm</text>
+      </g>
 
     </g>
   </g>
 
   <!-- COLUMN 2: KIT PARTS INVENTORY -->
-  <g transform="translate(455, 148)">
-    <rect x="0" y="0" width="385" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="385" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+  <g transform="translate(420, 148)">
+    <rect x="0" y="0" width="450" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="450" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="16" y="22" class="font-mono section-hdr">2. KIT PARTS INVENTORY (6 PIECES)</text>
 
     <!-- Table Header -->
     <text x="16" y="52" class="font-mono th">COMPONENT</text>
-    <text x="125" y="52" class="font-mono th">QTY</text>
-    <text x="160" y="52" class="font-mono th">SPEC / DIMENSION</text>
-    <text x="275" y="52" class="font-mono th">PALETTE COLOR</text>
-    <line x1="12" y1="58" x2="373" y2="58" stroke="#ffffff" stroke-width="1" />
+    <text x="150" y="52" class="font-mono th">QTY</text>
+    <text x="190" y="52" class="font-mono th">SPEC / DIMENSION</text>
+    <text x="340" y="52" class="font-mono th">PALETTE COLOR</text>
+    <line x1="12" y1="58" x2="438" y2="58" stroke="#ffffff" stroke-width="1" />
 
     
-    <text x="16" y="74" class="font-mono td" font-weight="700">SC-32 Calculator Unit</text>
-    <text x="125" y="74" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="74" class="font-mono td">128×64 OLED, 32 Keycaps</text>
-    <text x="275" y="74" class="font-mono td" fill="#cccccc">Matte Obsidian</text>
-    <line x1="12" y1="80" x2="373" y2="80" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="16" y="74" class="font-mono td" font-weight="700">SC-32 Scientific Unit</text>
+    <text x="150" y="74" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="74" class="font-mono td">128×64 OLED, 32 Keycaps</text>
+    <text x="340" y="74" class="font-mono td" fill="#cccccc">Matte Obsidian</text>
+    <line x1="12" y1="80" x2="438" y2="80" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="97" class="font-mono td" font-weight="700">TPU Protective Sleeve</text>
-    <text x="125" y="97" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="97" class="font-mono td">Shock-Absorbing Cushion</text>
-    <text x="275" y="97" class="font-mono td" fill="#cccccc">Flexible Black TPU</text>
-    <line x1="12" y1="103" x2="373" y2="103" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="97" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="97" class="font-mono td">Shore 95A Bumper Cushion</text>
+    <text x="340" y="97" class="font-mono td" fill="#cccccc">Flexible Black TPU</text>
+    <line x1="12" y1="103" x2="438" y2="103" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
-    <text x="16" y="120" class="font-mono td" font-weight="700">Travel Caddy Chassis</text>
-    <text x="125" y="120" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="120" class="font-mono td">Crush-Proof Enclosure</text>
-    <text x="275" y="120" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
-    <line x1="12" y1="126" x2="373" y2="126" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="16" y="120" class="font-mono td" font-weight="700">Interlocking Puzzle Stand</text>
+    <text x="150" y="120" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="120" class="font-mono td">3-Piece 78° Portrait Easel</text>
+    <text x="340" y="120" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
+    <line x1="12" y1="126" x2="438" y2="126" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
-    <text x="16" y="143" class="font-mono td" font-weight="700">USB-C Charging Cable</text>
-    <text x="125" y="143" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="143" class="font-mono td">Braided 1.0m Power Cable</text>
-    <text x="275" y="143" class="font-mono td" fill="#cccccc">Stealth Black</text>
-    <line x1="12" y1="149" x2="373" y2="149" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="16" y="143" class="font-mono td" font-weight="700">Desk Stand Caddy</text>
+    <text x="150" y="143" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="143" class="font-mono td">11.6° Incline Operating Dock</text>
+    <text x="340" y="143" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
+    <line x1="12" y1="149" x2="438" y2="149" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
-    <text x="16" y="166" class="font-mono td" font-weight="700">Display Stand Lid</text>
-    <text x="125" y="166" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="166" class="font-mono td">Desk Operating Stand</text>
-    <text x="275" y="166" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
-    <line x1="12" y1="172" x2="373" y2="172" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="16" y="166" class="font-mono td" font-weight="700">USB-C Charging Cable</text>
+    <text x="150" y="166" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="166" class="font-mono td">Braided 1.0m Power Cable</text>
+    <text x="340" y="166" class="font-mono td" fill="#cccccc">Stealth Black</text>
+    <line x1="12" y1="172" x2="438" y2="172" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="189" class="font-mono td" font-weight="700">Mailer Storage Box</text>
-    <text x="125" y="189" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="189" class="font-mono td">6×4 Inch Protective Case</text>
-    <text x="275" y="189" class="font-mono td" fill="#cccccc">Kraft Cardboard</text>
-    <line x1="12" y1="195" x2="373" y2="195" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="189" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="189" class="font-mono td">6×4 Inch Protective Case</text>
+    <text x="340" y="189" class="font-mono td" fill="#cccccc">Kraft Cardboard</text>
+    <line x1="12" y1="195" x2="438" y2="195" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
 
     <!-- Total Pieces Summary -->
-    <text x="16" y="334" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">TOTAL: SC-32 Unit + TPU Sleeve + Travel Caddy + Cable + Stand + Box = 6 Parts</text>
+    <text x="16" y="334" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">TOTAL: Calculator + TPU Sleeve + Puzzle Stand + Desk Caddy + Cable + Box = 6 Parts</text>
 
     <!-- Palette Box -->
     <g transform="translate(12, 350)">
-      <rect x="0" y="0" width="361" height="112" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">OPTICAL STATUS ANNUNCIATORS</text>
-      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">• [f] Gold Annunciator: Shifts keys to primary upper mathematical functions.</text>
-<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#cccccc">• [g] Blue Annunciator: Shifts keys to secondary statistics &amp; mode controls.</text>
-<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#cccccc">• RAD / DEG Indicator: Displays angular mode at top right of OLED screen.</text>
-<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#cccccc">• Keep this reference card stored inside your travel caddy!</text>
+      <rect x="0" y="0" width="426" height="112" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">POWER CONTROL &amp; ANNUNCIATORS</text>
+      <text x="12" y="36" class="font-mono" font-size="8.3px" fill="#cccccc">• Instant Power Off: Tap [f] then [ON/OFF] to shut down.</text>
+<text x="12" y="49" class="font-mono" font-size="8.3px" fill="#cccccc">• Auto-Sleep Standby: Sleeps after 5 min idle (&lt;15 µA).</text>
+<text x="12" y="62" class="font-mono" font-size="8.3px" fill="#cccccc">• Non-Volatile Memory: Registers (X, Y, Z, T) persist.</text>
+<text x="12" y="75" class="font-mono" font-size="8.3px" fill="#cccccc">• Annunciators: RAD/DEG, [f], [g], battery on OLED header.</text>
 
     </g>
   </g>
 
   <!-- COLUMN 3: WHY KEEP THIS REFERENCE CARD? -->
-  <g transform="translate(855, 148)">
-    <rect x="0" y="0" width="370" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="370" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+  <g transform="translate(885, 148)">
+    <rect x="0" y="0" width="340" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="340" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="16" y="22" class="font-mono section-hdr">3. WHY KEEP THIS REFERENCE CARD?</text>
 
-    <!-- Reason 1: No Lost Piece Guarantee -->
+    <!-- Reason 1: No Lost Piece Guarantee / Hardware Support -->
     <g transform="translate(14, 48)">
-      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ NO LOST PIECE LEFT BEHIND</text>
-      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
-        <tspan x="12" dy="0">Classroom manipulatives get lost. Never abandon</tspan>
-        <tspan x="12" dy="13">an incomplete set! Every individual math component</tspan>
-        <tspan x="12" dy="13">is permanently stocked for single replacements.</tspan>
+      <rect x="0" y="0" width="312" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ REPLACEMENT STAND &amp; HARDWARE</text>
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
+        <tspan x="12" dy="0">Need replacement puzzle stand trusses, a fresh</tspan><tspan x="12" dy="12">TPU sleeve, keycaps, or braided USB-C cable?</tspan><tspan x="12" dy="12">All physical hardware components are stocked.</tspan>
       </text>
-      <rect x="12" y="84" width="318" height="28" rx="4" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
-      <text x="171" y="98" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">Scan back QR or visit stackcalc.io/parts</text>
-      <text x="171" y="108" class="font-mono" font-size="8px" text-anchor="middle" fill="#cccccc">Order individual replacement pieces anytime</text>
+      <rect x="12" y="84" width="288" height="28" rx="4" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <text x="156" y="98" class="font-mono" font-size="8.8px" font-weight="700" text-anchor="middle" fill="#ffffff">Scan back QR or visit stackcalc.io/parts</text>
+      <text x="156" y="108" class="font-mono" font-size="7.8px" text-anchor="middle" fill="#cccccc">Order individual replacement pieces anytime</text>
     </g>
 
-    <!-- Reason 2: Self-Auditing Sockets -->
+    <!-- Reason 2: Self-Auditing Sockets / Instant Off -->
     <g transform="translate(14, 186)">
-      <rect x="0" y="0" width="342" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ 10-SECOND SELF-CHECKING PACK-UP</text>
-      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
-        <tspan x="12" dy="0">Pack-up is a built-in math game! Slip the calculator into its TPU</tspan><tspan x="12" dy="13">membrane cushion, seat into the travel caddy recess, and coil the</tspan><tspan x="12" dy="13">braided USB-C cable in the rear storage trough. Stand lid snaps shut.</tspan><tspan x="12" dy="13">Magnetic latches hold firmly for silent, crush-proof protection.</tspan>
+      <rect x="0" y="0" width="312" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ NO LOOSE BLOCKS — JUST TURN IT OFF!</text>
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
+        <tspan x="12" dy="0">Unlike manipulative block kits, you don't</tspan><tspan x="12" dy="12">need to count or pack up 70 pieces!</tspan><tspan x="12" dy="12">Simply press [f] [OFF] to turn off, or let</tspan><tspan x="12" dy="12">auto-sleep preserve your stack.</tspan><tspan x="12" dy="12">Dock in the Desk Stand or slip into the TPU</tspan><tspan x="12" dy="12">sleeve and drop in your backpack.</tspan><tspan x="12" dy="12">Your calculation state waits in memory until</tspan><tspan x="12" dy="12">your next keystroke!</tspan>
       </text>
     </g>
 
     <!-- Reason 3: Quick Lesson Guide -->
     <g transform="translate(14, 334)">
-      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ HANDS-ON TUTORIAL ON REVERSE</text>
-      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+      <rect x="0" y="0" width="312" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ HANDS-ON TUTORIAL ON REVERSE</text>
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
         <tspan x="12" dy="0">Flip this card over for a complete step-by-step</tspan>
-        <tspan x="12" dy="13">hands-on lesson with concrete numbers, stage</tspan>
-        <tspan x="12" dy="13">arrangements, calculator cross-references, and</tspan>
-        <tspan x="12" dy="13">core mathematical principle breakthrough!</tspan>
-        <tspan x="12" dy="16" font-weight="700" fill="#ffffff">Keep this card stored inside the box lid!</tspan>
+        <tspan x="12" dy="12">hands-on lesson with concrete numbers, stage</tspan>
+        <tspan x="12" dy="12">arrangements, and calculator cross-references!</tspan>
+        <tspan x="12" dy="15" font-weight="700" fill="#ffffff">Keep this card stored inside the box lid!</tspan>
       </text>
     </g>
   </g>
@@ -302,16 +338,18 @@
       <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates (10x / 30x Stations): stackcalc.io/schools</text>
     </g>
 
-    <g transform="translate(450, 24)">
+    <g transform="translate(450, 18)">
       <text x="0" y="0" class="font-mono th" fill="#ffffff">POSTFIX EXPRESSION EQUIVALENCE THEOREM</text>
-      <text x="0" y="18" class="font-mono footer-txt">Any algebraic expression can be evaluated unambiguously without parentheses using a postfix stack.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | LASER SPEC</text>
+      <text x="0" y="15" class="font-mono footer-txt" font-size="8.3px">
+        <tspan x="0" dy="0">Any algebraic expression can be evaluated unambiguously</tspan><tspan x="0" dy="12">without parentheses using a postfix stack.</tspan>
+      </text>
+      <text x="0" y="44" class="font-mono footer-txt" font-size="8px" opacity="0.85">Universal 7.00mm Datum • Classroom Continuum (10 Kits)</text>
     </g>
 
     <g transform="translate(980, 24)">
       <text x="0" y="0" class="font-mono th" fill="#ffffff">OFFICIAL REFILL PORTAL</text>
       <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#ffffff">stackcalc.io/parts</text>
-      <text x="0" y="32" class="font-mono footer-txt">Order individual replacement pieces anytime</text>
+      <text x="0" y="32" class="font-mono footer-txt">Order replacement parts anytime</text>
     </g>
   </g>
   <metadata id="stackcalc-book-macro-manifest" data-kit="SC-32-HW">

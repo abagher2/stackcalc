@@ -38,7 +38,7 @@
   <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 03 OF 10 • DOMAIN: KINEMATIC GEAR RATIOS &amp; MODULAR ARITHMETIC • 12:1 EPICYCLIC REDUCTION • 15-MIN QUADRANT WEDGES</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: ELAPSED TIME &amp; PLANETARY GEAR RATIOS</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: 3:30 + 0:45 = 4:15 &amp; Modular Time</text>
-  <text x="130" y="117" class="font-mono badge-box">Grades 2–6 Measurement, Time &amp; Modular Math • Hands-On Classroom &amp; Home STEM Studio Series</text>
+  <text x="130" y="117" class="font-mono badge-box">Grades 2–6 Elapsed Time &amp; Modular Math • Hands-On Classroom &amp; Home STEM Studio Series</text>
 
   <!-- Top-Right Series & SKU Badges -->
   <g transform="translate(1025, 48)">
@@ -789,7 +789,7 @@
 <text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">• CCSS.MATH.CONTENT.4.MD.A.2 (Time Intervals)</text>
 <text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">• TEKS 111.5.b.7.C (Elapsed Time Solutions)</text>
 
-      <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#ffffff" font-weight="700">Grades 2–6 Measurement, Time &amp; Modular Math</text>
+      <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#ffffff" font-weight="700">Grades 2–6 Elapsed Time &amp; Modular Math</text>
     </g>
 
     <!-- Mathematical Inquiry Box -->
@@ -797,10 +797,7 @@
       <rect x="0" y="0" width="276" height="88" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="10" y="17" class="font-mono" font-size="8.8px" font-weight="700" fill="#ffffff">💡 MATHEMATICAL INQUIRY</text>
       <text x="10" y="34" class="font-mono" font-size="8.2px" fill="#ffffff">
-        <tspan x="10" dy="0">How far does the hour hand travel when the</tspan>
-        <tspan x="10" dy="13"> minute hand turns one full circle around t</tspan>
-        <tspan x="10" dy="13">he dial?</tspan>
-        <tspan x="10" dy="13"></tspan>
+        <tspan x="10" dy="0">How far does the hour hand travel when</tspan><tspan x="10" dy="13">the minute hand turns one full circle</tspan><tspan x="10" dy="13">around the dial?</tspan>
       </text>
     </g>
   </g>
@@ -830,7 +827,7 @@
       <text x="34" y="18" class="font-mono section-hdr">STEP 2: INSERT 15-MINUTE WEDGES</text>
 
       <text x="16" y="46" class="font-mono" font-size="9px" fill="#ffffff">
-        <tspan x="16" dy="0" font-weight="700" fill="#ffffff">We need to add 45 minutes of elapsed time.</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">Insert three 15-minute quadrant wedges (3 × 15 min = 45 min).</tspan><tspan x="16" dy="13" font-weight="400" fill="#ffffff">The 3 wedges cover 3 × 90° = 270° of angular arc around the dial.</tspan><tspan x="16" dy="13" font-weight="400" fill="#ffffff">The wedges clearly bridge past the 12 o'clock hour boundary!</tspan>
+        <tspan x="16" dy="0" font-weight="700" fill="#ffffff">We need to add 45 minutes of elapsed time.</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">Insert three 15-minute wedges (3 × 15 min = 45 min).</tspan><tspan x="16" dy="13" font-weight="400" fill="#ffffff">Wedges cover 3 × 90° = 270° angular arc around dial.</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">Notice: The wedges bridge past the 12 o'clock mark!</tspan>
       </text>
     </g>
 
@@ -843,7 +840,7 @@
       <text x="34" y="18" class="font-mono section-hdr">STEPS 3 &amp; 4: ADVANCE GEARS &amp; READ RESULT</text>
 
       <text x="16" y="46" class="font-mono" font-size="9.1px" fill="#ffffff">
-        <tspan x="16" dy="0" font-weight="700" fill="#ffffff">3. ADVANCE MINUTE HAND: Turn hand clockwise across the 3 wedges past 4:00 to 4:15!</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">4. READ FINAL TIME: Hour hand at 4:15; minute hand at 3 (15 min).</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">Calculator Verification: Press Clock HMS Icon ([🕒] / [g][▸HMS] / [f][▸HR]) and run 3.30 [f] [▸HR] 0.45 [f] [▸HR] [+] [g] [▸HMS] → 4.15.</tspan>
+        <tspan x="16" dy="0" font-weight="700" fill="#ffffff">3. ADVANCE MINUTE HAND: Turn hand clockwise across the 3 wedges past 4:00 to 4:15!</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">4. READ FINAL TIME: Hour hand at 4:15; minute hand at 3 (15 min).</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">Calculator Verification: Press Clock HMS Icon ([🕒] / [g][▸HMS] / [f][▸HR]) and run 3.30 [f] [▸HR] 0.45</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">[f] [▸HR] [+] [g] [▸HMS] → 4.15.</tspan>
       </text>
     </g>
 
@@ -867,7 +864,7 @@
       <text x="16" y="16" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">★ EXTENSION INVESTIGATION: ELAPSED TIME: 8:45 + 1:30</text>
       
       <text x="16" y="44" class="font-mono" font-size="8.8px" fill="#ffffff">
-        <tspan x="16" dy="0">Set clock to 8:45. Add two 45-minute wedges (90 min). Where does the planetary gear place the hour hand? (Scan QR for 3D animated solution!)</tspan>
+        <tspan x="16" dy="0">Set clock to 8:45. Add two 45-minute wedges (90 min). Where does the planetary gear place the</tspan><tspan x="16" dy="14">hour hand? (Scan QR for 3D animated solution!)</tspan>
       </text>
       <text x="16" y="74" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">
         → Assemble with your physical blocks, then scan the QR code to verify with the 3D step-by-step vector model.

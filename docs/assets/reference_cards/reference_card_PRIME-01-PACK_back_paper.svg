@@ -625,9 +625,8 @@
       <circle cx="28" cy="28" r="14" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
       <text x="28" y="33" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">1</text>
       <text x="54" y="32" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">1. VERIFY TOWER HEIGHTS</text>
-      <text x="54" y="60" class="font-mono" font-size="10.5px" fill="#475569">
-        <tspan x="54" dy="0">Seat all 70 blocks into the 12 floor sockets. Ensure every tower matches its floor product badge (2048, 2187, 1875, 2401</tspan>
-        <tspan x="54" dy="18">, 2662...).</tspan>
+      <text x="54" y="60" class="font-mono" font-size="10px" fill="#475569">
+        <tspan x="54" dy="0">Seat all 70 blocks into the 12 floor sockets. Ensure every tower matches its floor product</tspan><tspan x="54" dy="16">badge (2048, 2187, 1875, 2401, 2662...).</tspan>
       </text>
     </g>
 
@@ -636,9 +635,8 @@
       <circle cx="28" cy="28" r="14" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
       <text x="28" y="33" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">2</text>
       <text x="54" y="32" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">2. CHECK THE 84.0MM WATERLINE</text>
-      <text x="54" y="60" class="font-mono" font-size="10.5px" fill="#475569">
-        <tspan x="54" dy="0">Confirm all 12 packed towers level off at the interior 84.0mm summit waterline near the top rim of the box.</tspan>
-        <tspan x="54" dy="18"></tspan>
+      <text x="54" y="60" class="font-mono" font-size="10px" fill="#475569">
+        <tspan x="54" dy="0">Confirm all 12 packed towers level off at the interior 84.0mm summit waterline near the top rim</tspan><tspan x="54" dy="16">of the box.</tspan>
       </text>
     </g>
 
@@ -647,9 +645,8 @@
       <circle cx="28" cy="28" r="14" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
       <text x="28" y="33" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">3</text>
       <text x="54" y="32" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">3. TUCK CARD &amp; SNAP LID SHUT</text>
-      <text x="54" y="60" class="font-mono" font-size="10.5px" fill="#475569">
-        <tspan x="54" dy="0">Place your folded guide on top and snap the stage lid onto the rim for rattle-free storage.</tspan>
-        <tspan x="54" dy="18"></tspan>
+      <text x="54" y="60" class="font-mono" font-size="10px" fill="#475569">
+        <tspan x="54" dy="0">Place your reference card on top and snap the stage lid onto the rim for rattle-free storage.</tspan>
       </text>
     </g>
 

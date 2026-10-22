@@ -38,7 +38,7 @@
   <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 09 OF 10 • DOMAIN: 4-REGISTER RPN COMPUTING &amp; EXPRESSION TREES • HARDWARE TACTILE KEYS • DUAL LED BAR GRAPH STACK</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: 4-REGISTER RPN STACK &amp; EXPRESSION TREES</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: Pythagorean Hypotenuse √(3² + 4²) = 5</text>
-  <text x="130" y="117" class="font-mono badge-box">Grades 8–16 STEM, AP Physics, Engineering &amp; Mathematics • Hands-On Classroom &amp; Home STEM Studio Series</text>
+  <text x="130" y="117" class="font-mono badge-box">Grades 8–16 STEM, Physics &amp; Engineering • Hands-On Classroom &amp; Home STEM Studio Series</text>
 
   <!-- Top-Right Series & SKU Badges -->
   <g transform="translate(1025, 48)">
@@ -789,7 +789,7 @@
 <text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.PRACTICE.MP6 (Attend to Precision)</text>
 <text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• TEKS 111.39.c.1.C (Manipulatives &amp; Technology)</text>
 
-      <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 8–16 STEM, AP Physics, Engineering &amp; Mathematics</text>
+      <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 8–16 STEM, Physics &amp; Engineering</text>
     </g>
 
     <!-- Mathematical Inquiry Box -->
@@ -797,10 +797,7 @@
       <rect x="0" y="0" width="276" height="88" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1" />
       <text x="10" y="17" class="font-mono" font-size="8.8px" font-weight="700" fill="#0369a1">💡 MATHEMATICAL INQUIRY</text>
       <text x="10" y="34" class="font-mono" font-size="8.2px" fill="#0f172a">
-        <tspan x="10" dy="0">Where does the first number wait safely on</tspan>
-        <tspan x="10" dy="13"> the stack while you are entering the secon</tspan>
-        <tspan x="10" dy="13">d number?</tspan>
-        <tspan x="10" dy="13"></tspan>
+        <tspan x="10" dy="0">Where does the first number wait</tspan><tspan x="10" dy="13">safely on the stack while you are</tspan><tspan x="10" dy="13">entering the second number?</tspan>
       </text>
     </g>
   </g>
@@ -867,7 +864,7 @@
       <text x="16" y="16" class="font-mono" font-size="9.5px" font-weight="700" fill="#0369a1">★ EXTENSION INVESTIGATION: KINETIC ENERGY: E = ½ m v²</text>
       
       <text x="16" y="44" class="font-mono" font-size="8.8px" fill="#0f172a">
-        <tspan x="16" dy="0">Calculate kinetic energy for mass m=12 and velocity v=5: 0.5 [ENTER] 12 [×] 5 [↰] [x²] [×] → 150.0000! Zero parentheses! (Scan QR for 3D animated solution!)</tspan>
+        <tspan x="16" dy="0">Calculate kinetic energy for mass m=12 and velocity v=5: 0.5 [ENTER] 12 [×] 5 [↰] [x²] [×] →</tspan><tspan x="16" dy="14">150.0000! Zero parentheses! (Scan QR for 3D animated solution!)</tspan>
       </text>
       <text x="16" y="74" class="font-mono" font-size="8.5px" font-weight="700" fill="#059669">
         → Assemble with your physical blocks, then scan the QR code to verify with the 3D step-by-step vector model.

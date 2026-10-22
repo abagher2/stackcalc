@@ -66,8 +66,8 @@ description: "Official publication-grade spiral-bound reference manuals ($16.00)
   <a href="#sc-32-scientific" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ SC-32 Scientific Manual ($16)</a>
   <a href="#sc-6-elementary" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎒 SC-6 Elementary Companion ($16)</a>
   <a href="#school-district-procurement" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🏛️ District PO Procurement</a>
-  <a href="bestseller-rubric-and-editorial-guide.md" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📊 Editorial Quality Rubric</a>
-  <a href="../curriculum/index.md" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎓 Free Curriculum &amp; Worksheets</a>
+  <a href="bestseller-rubric-and-editorial-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📊 Editorial Quality Rubric</a>
+  <a href="../curriculum/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎓 Free Curriculum &amp; Worksheets</a>
 </nav>
 
 Welcome to the **StackCalc Publications &amp; Reference Books Hub**. Engineered in the tradition of classic Corvallis engineering field manuals, our reference books are published as **durable, spiral-bound lay-flat print editions ($16.00)** designed specifically for laboratory benches, maker spaces, and classroom desks.

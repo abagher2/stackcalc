@@ -8,9 +8,9 @@
       .badge-sku { font-size: 12.5px; font-weight: 700; fill: #ffffff; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #ffffff; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #cccccc; }
-      .section-hdr { font-size: 11.5px; font-weight: 700; fill: #ffffff; letter-spacing: 0.8px; text-transform: uppercase; }
-      .th { font-size: 10px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
-      .td { font-size: 10px; font-weight: 400; fill: #ffffff; }
+      .section-hdr { font-size: 11px; font-weight: 700; fill: #ffffff; letter-spacing: 0.8px; text-transform: uppercase; }
+      .th { font-size: 9px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
+      .td { font-size: 8.5px; font-weight: 400; fill: #ffffff; }
       .footer-txt { font-size: 9.3px; font-weight: 400; fill: #cccccc; }
     </style>
   </defs>
@@ -106,8 +106,14 @@
 <text x="881.5" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
 
     <g transform="translate(887.5, 98.0)">
+      <rect x="0" y="0" width="43.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="21.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">10·Rack</text>
+    </g>
+<text x="932.0" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
+
+    <g transform="translate(938.0, 98.0)">
       <rect x="0" y="0" width="48.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="24.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">10·SC-32</text>
+      <text x="24.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">11·SC-32</text>
     </g>
 
   <!-- Top-Right Series & SKU Badges -->
@@ -121,38 +127,38 @@
 
   <!-- COLUMN 1: WHAT IS THIS MANIPULATIVE? -->
   <g transform="translate(35, 148)">
-    <rect x="0" y="0" width="405" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="405" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="370" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="370" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="16" y="22" class="font-mono section-hdr">1. WHAT IS THIS MANIPULATIVE?</text>
 
     <!-- Headline -->
-    <text x="16" y="56" class="font-mono" font-size="11.5px" font-weight="700" fill="#ffffff">ONE PROBLEM. MULTIPLE WAYS. SCORE YOUR MASTERY.</text>
+    <text x="16" y="52" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">ONE PROBLEM. MULTIPLE WAYS. SCORE YOUR MASTERY.</text>
 
     <!-- Concept principle text -->
-    <text x="16" y="76" class="font-mono" font-size="9.3px" fill="#ffffff">
-      <tspan x="16" dy="0" font-weight="400" fill="#ffffff">Real mathematical confidence comes from seeing that the</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">same answer appears whether you use physical blocks,</tspan><tspan x="16" dy="15" font-weight="700" fill="#ffffff">   1 Block = +10 (1st Way) • 2 Blocks = +20 (2nd Way)</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">mental math, or the SC-6 RPN stack! Stacking a second +10</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">token physically rewards trying a second approach.</tspan>
+    <text x="16" y="66" class="font-mono" font-size="8.8px" fill="#ffffff">
+      <tspan x="16" dy="0" font-weight="400" fill="#ffffff">Confidence grows by solving in multiple ways.</tspan><tspan x="16" dy="12" font-weight="400" fill="#ffffff">Reward each approach with tactile score tokens:</tspan><tspan x="16" dy="12" font-weight="700" fill="#ffffff">   1 Block = +10 (1st Way) • 2 Blocks = +20 (2nd Way)</tspan><tspan x="16" dy="12" font-weight="400" fill="#ffffff">Stacking a 2nd token rewards a 2nd solution method!</tspan>
     </text>
 
     <!-- Calibration Datum Box -->
-    <g transform="translate(14, 158)">
-      <rect x="0" y="0" width="377" height="72" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">UNIVERSAL +10 QUARTER-BLOCK DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#cccccc">• Token Spec: Universal +10 Quarter-Block = 10.25 × 10.25 × 7.00 mm</text>
-<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#cccccc">• 1st Way Solved: Seat 1 token in socket 1–10 (+10 points)</text>
-<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#cccccc">• 2nd Way Bonus: Stack 2nd token right on top (+20 points total)</text>
-<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#cccccc">• Mastery Tower: Trade 10 tokens into the [100] socket (70.0 mm)</text>
+    <g transform="translate(14, 114)">
+      <rect x="0" y="0" width="342" height="84" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="18" class="font-mono" font-size="9.2px" font-weight="700" fill="#ffffff">UNIVERSAL +10 QUARTER-BLOCK DATUM</text>
+      <text x="12" y="32" class="font-mono" font-size="8.2px" fill="#cccccc">• Token: Universal +10 Block = 10.25×10.25×7.0mm</text>
+<text x="12" y="44" class="font-mono" font-size="8.2px" fill="#cccccc">• 1st Way: Seat 1 token in socket 1–10 (+10 pts)</text>
+<text x="12" y="56" class="font-mono" font-size="8.2px" fill="#cccccc">• 2nd Way: Stack 2nd token on top (+20 pts total)</text>
+<text x="12" y="68" class="font-mono" font-size="8.2px" fill="#cccccc">• Mastery: Trade 10 tokens into [100] socket (70mm)</text>
 
     </g>
 
     <!-- Lid Feature -->
-    <text x="16" y="252" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">2-PIECE SNAPFINITY SCOREBOARD LID (NO INNER TRAY)</text>
-    <text x="16" y="270" class="font-mono" font-size="9.3px" fill="#cccccc">
-      <tspan x="16" dy="0">Pop off the 3x1 Snapfinity lid to reveal the open storage bin</tspan><tspan x="16" dy="14">holding all 60 tokens. Use the lid's 12 sockets (1–10, 100, and</tspan><tspan x="16" dy="14">Question Mark in a Circle ? badge) for daily 10-question practice!</tspan>
+    <text x="16" y="210" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">2-PIECE SNAPFINITY SCOREBOARD LID (NO INNER TRAY)</text>
+    <text x="16" y="224" class="font-mono" font-size="8.5px" fill="#cccccc">
+      <tspan x="16" dy="0">Storage bin holds all 60 tokens under Snapfinity lid.</tspan><tspan x="16" dy="12">Use 12 lid sockets (1–10, 100, ?) for daily practice!</tspan>
     </text>
 
     <!-- Visual Diagram of Geometry / Stacking -->
-    <g transform="translate(14, 318)">
-      <rect x="0" y="0" width="377" height="144" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <g transform="translate(14, 324)">
+      <rect x="0" y="0" width="342" height="138" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       
       <text x="12" y="18" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">LID SOCKETS 1–10 &amp; 100: 1 BLOCK = +10, 2 STACKED = +20</text>
       <g transform="translate(22, 32)">
@@ -191,98 +197,95 @@
   </g>
 
   <!-- COLUMN 2: KIT PARTS INVENTORY -->
-  <g transform="translate(455, 148)">
-    <rect x="0" y="0" width="385" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="385" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+  <g transform="translate(420, 148)">
+    <rect x="0" y="0" width="450" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="450" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="16" y="22" class="font-mono section-hdr">2. KIT PARTS INVENTORY (62 PIECES)</text>
 
     <!-- Table Header -->
     <text x="16" y="52" class="font-mono th">COMPONENT</text>
-    <text x="125" y="52" class="font-mono th">QTY</text>
-    <text x="160" y="52" class="font-mono th">SPEC / DIMENSION</text>
-    <text x="275" y="52" class="font-mono th">PALETTE COLOR</text>
-    <line x1="12" y1="58" x2="373" y2="58" stroke="#ffffff" stroke-width="1" />
+    <text x="150" y="52" class="font-mono th">QTY</text>
+    <text x="190" y="52" class="font-mono th">SPEC / DIMENSION</text>
+    <text x="340" y="52" class="font-mono th">PALETTE COLOR</text>
+    <line x1="12" y1="58" x2="438" y2="58" stroke="#ffffff" stroke-width="1" />
 
     
     <text x="16" y="74" class="font-mono td" font-weight="700">1st-Way +10 Token</text>
-    <text x="125" y="74" class="font-mono td" font-weight="700" fill="#ffffff">30x</text>
-    <text x="160" y="74" class="font-mono td">10.25x10.25x7.0mm</text>
-    <text x="275" y="74" class="font-mono td" fill="#cccccc">Red+Gold Silk</text>
-    <line x1="12" y1="80" x2="373" y2="80" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="74" class="font-mono td" font-weight="700" fill="#ffffff">30x</text>
+    <text x="190" y="74" class="font-mono td">10.25x10.25x7.0mm</text>
+    <text x="340" y="74" class="font-mono td" fill="#cccccc">Red+Gold Silk</text>
+    <line x1="12" y1="80" x2="438" y2="80" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="97" class="font-mono td" font-weight="700">2nd-Way +10 Token</text>
-    <text x="125" y="97" class="font-mono td" font-weight="700" fill="#ffffff">30x</text>
-    <text x="160" y="97" class="font-mono td">10.25x10.25x7.0mm</text>
-    <text x="275" y="97" class="font-mono td" fill="#cccccc">Glow Yellow</text>
-    <line x1="12" y1="103" x2="373" y2="103" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="97" class="font-mono td" font-weight="700" fill="#ffffff">30x</text>
+    <text x="190" y="97" class="font-mono td">10.25x10.25x7.0mm</text>
+    <text x="340" y="97" class="font-mono td" fill="#cccccc">Glow Yellow</text>
+    <line x1="12" y1="103" x2="438" y2="103" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="120" class="font-mono td" font-weight="700">3x1x7U Open Bin</text>
-    <text x="125" y="120" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="120" class="font-mono td">125.5x42.0x56.4mm</text>
-    <text x="275" y="120" class="font-mono td" fill="#cccccc">Technical White</text>
-    <line x1="12" y1="126" x2="373" y2="126" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="120" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="120" class="font-mono td">125.5x42.0x56.4mm</text>
+    <text x="340" y="120" class="font-mono td" fill="#cccccc">Technical White</text>
+    <line x1="12" y1="126" x2="438" y2="126" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="143" class="font-mono td" font-weight="700">Scoreboard Lid</text>
-    <text x="125" y="143" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="143" class="font-mono td">Sockets 1-10, 100</text>
-    <text x="275" y="143" class="font-mono td" fill="#cccccc">Technical White</text>
-    <line x1="12" y1="149" x2="373" y2="149" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="143" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="143" class="font-mono td">Sockets 1-10, 100</text>
+    <text x="340" y="143" class="font-mono td" fill="#cccccc">Technical White</text>
+    <line x1="12" y1="149" x2="438" y2="149" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
 
     <!-- Total Pieces Summary -->
-    <text x="16" y="334" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">TOTAL: 60 Universal +10 Tokens + 7U Bin + Lid = 62 Parts</text>
+    <text x="16" y="334" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">TOTAL: 60 Universal +10 Tokens + 7U Bin + Lid = 62 Parts</text>
 
     <!-- Palette Box -->
     <g transform="translate(12, 350)">
-      <rect x="0" y="0" width="361" height="112" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">DUAL-TONE +10 TOKEN PALETTE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">• All 60 quarter-blocks are 100% interchangeable (+10 pts each).</text>
-<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#cccccc">• Red+Gold Silk (30x): Seat for your 1st Way solution (+10 pts).</text>
-<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#cccccc">• Glow-in-the-Dark Yellow (30x): Stack on top for 2nd Way (+20 pts)!</text>
-<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#cccccc">• Keep this reference card stored inside the box lid!</text>
+      <rect x="0" y="0" width="426" height="112" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">DUAL-TONE +10 TOKEN PALETTE</text>
+      <text x="12" y="36" class="font-mono" font-size="8.3px" fill="#cccccc">• Interchangeable Tokens: All 60 quarter-blocks are +10 pts.</text>
+<text x="12" y="49" class="font-mono" font-size="8.3px" fill="#cccccc">• Red+Gold Silk (30x): Seat for 1st Way solution (+10 pts).</text>
+<text x="12" y="62" class="font-mono" font-size="8.3px" fill="#cccccc">• Glow-in-the-Dark Yellow (30x): Stack on top for 2nd Way (+20 pts)!</text>
+<text x="12" y="75" class="font-mono" font-size="8.3px" fill="#cccccc">• High Visibility: Easy to tally scores at a glance.</text>
 
     </g>
   </g>
 
   <!-- COLUMN 3: WHY KEEP THIS REFERENCE CARD? -->
-  <g transform="translate(855, 148)">
-    <rect x="0" y="0" width="370" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="370" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+  <g transform="translate(885, 148)">
+    <rect x="0" y="0" width="340" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="340" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="16" y="22" class="font-mono section-hdr">3. WHY KEEP THIS REFERENCE CARD?</text>
 
-    <!-- Reason 1: No Lost Piece Guarantee -->
+    <!-- Reason 1: No Lost Piece Guarantee / Hardware Support -->
     <g transform="translate(14, 48)">
-      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ NO LOST PIECE LEFT BEHIND</text>
-      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
-        <tspan x="12" dy="0">Classroom manipulatives get lost. Never abandon</tspan>
-        <tspan x="12" dy="13">an incomplete set! Every individual math component</tspan>
-        <tspan x="12" dy="13">is permanently stocked for single replacements.</tspan>
+      <rect x="0" y="0" width="312" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ NO LOST PIECE LEFT BEHIND</text>
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
+        <tspan x="12" dy="0">Classroom manipulatives get lost. Never abandon</tspan><tspan x="12" dy="12">an incomplete set! Every individual math component</tspan><tspan x="12" dy="12">is permanently stocked for single replacements.</tspan>
       </text>
-      <rect x="12" y="84" width="318" height="28" rx="4" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
-      <text x="171" y="98" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">Scan back QR or visit stackcalc.io/parts</text>
-      <text x="171" y="108" class="font-mono" font-size="8px" text-anchor="middle" fill="#cccccc">Order individual replacement pieces anytime</text>
+      <rect x="12" y="84" width="288" height="28" rx="4" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <text x="156" y="98" class="font-mono" font-size="8.8px" font-weight="700" text-anchor="middle" fill="#ffffff">Scan back QR or visit stackcalc.io/parts</text>
+      <text x="156" y="108" class="font-mono" font-size="7.8px" text-anchor="middle" fill="#cccccc">Order individual replacement pieces anytime</text>
     </g>
 
-    <!-- Reason 2: Self-Auditing Sockets -->
+    <!-- Reason 2: Self-Auditing Sockets / Instant Off -->
     <g transform="translate(14, 186)">
-      <rect x="0" y="0" width="342" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ 5-SECOND OPEN-BIN PACK-UP</text>
-      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
-        <tspan x="12" dy="0">No inner sorting tray needed! Sweep all 60 universal +10</tspan><tspan x="12" dy="13">tokens directly into the open 3x1x7U Gridfinity bin, lay</tspan><tspan x="12" dy="13">this reference card on top, and snap the Scoreboard Lid</tspan><tspan x="12" dy="13">shut for silent, zero-rattle classroom storage.</tspan>
+      <rect x="0" y="0" width="312" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ 5-SECOND OPEN-BIN PACK-UP</text>
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
+        <tspan x="12" dy="0">No inner sorting tray needed! Sweep all 60</tspan><tspan x="12" dy="12">universal +10</tspan><tspan x="12" dy="12">tokens directly into the open 3x1x7U</tspan><tspan x="12" dy="12">Gridfinity bin, lay</tspan><tspan x="12" dy="12">this reference card on top, and snap the</tspan><tspan x="12" dy="12">Scoreboard Lid</tspan><tspan x="12" dy="12">shut for silent, zero-rattle classroom</tspan><tspan x="12" dy="12">storage.</tspan>
       </text>
     </g>
 
     <!-- Reason 3: Quick Lesson Guide -->
     <g transform="translate(14, 334)">
-      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ HANDS-ON TUTORIAL ON REVERSE</text>
-      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+      <rect x="0" y="0" width="312" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ HANDS-ON TUTORIAL ON REVERSE</text>
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
         <tspan x="12" dy="0">Flip this card over for a complete step-by-step</tspan>
-        <tspan x="12" dy="13">hands-on lesson with concrete numbers, stage</tspan>
-        <tspan x="12" dy="13">arrangements, calculator cross-references, and</tspan>
-        <tspan x="12" dy="13">core mathematical principle breakthrough!</tspan>
-        <tspan x="12" dy="16" font-weight="700" fill="#ffffff">Keep this card stored inside the box lid!</tspan>
+        <tspan x="12" dy="12">hands-on lesson with concrete numbers, stage</tspan>
+        <tspan x="12" dy="12">arrangements, and calculator cross-references!</tspan>
+        <tspan x="12" dy="15" font-weight="700" fill="#ffffff">Keep this card stored inside the box lid!</tspan>
       </text>
     </g>
   </g>
@@ -297,16 +300,18 @@
       <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates (10x / 30x Stations): stackcalc.io/schools</text>
     </g>
 
-    <g transform="translate(450, 24)">
+    <g transform="translate(450, 18)">
       <text x="0" y="0" class="font-mono th" fill="#ffffff">PÓLYA'S MULTIPLE-PATH PRINCIPLE</text>
-      <text x="0" y="18" class="font-mono footer-txt">Solving one problem in two independent ways builds deeper mastery than solving ten by rote.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | LASER SPEC</text>
+      <text x="0" y="15" class="font-mono footer-txt" font-size="8.3px">
+        <tspan x="0" dy="0">Solving one problem in two independent ways builds deeper</tspan><tspan x="0" dy="12">mastery than solving ten by rote.</tspan>
+      </text>
+      <text x="0" y="44" class="font-mono footer-txt" font-size="8px" opacity="0.85">Universal 7.00mm Datum • Classroom Continuum (10 Kits)</text>
     </g>
 
     <g transform="translate(980, 24)">
       <text x="0" y="0" class="font-mono th" fill="#ffffff">OFFICIAL REFILL PORTAL</text>
       <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#ffffff">stackcalc.io/parts</text>
-      <text x="0" y="32" class="font-mono footer-txt">Order individual replacement pieces anytime</text>
+      <text x="0" y="32" class="font-mono footer-txt">Order replacement parts anytime</text>
     </g>
   </g>
   <metadata id="stackcalc-book-macro-manifest" data-kit="QUEST-01">

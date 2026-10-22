@@ -124,7 +124,7 @@ Unlike companion calculator apps that rely on a paired iPhone or reduce the wris
 * **True `#000000` OLED Canvas & Wayfinding Beacons:** Subtle directional color beacons (Burnt Orange, Electric Blue, Cyan) orient your thumb across key pages without visual clutter, paired with native Watch Face Complications and Smart Stack widgets.
 
 ### B. Continuous Tactile Field (`CoreHaptics`)
-Physical calculators are revered for the crisp snap of their keys. StackCalc’s custom `CoreHaptics` engine simulates both **key-seam boundary pulses** (so your finger can feel button edges when sliding across glass) and **mechanical snap-dome actuation** with distinct physical weight for numbers, shift modifiers, and `ENTER`.
+Physical calculators are revered for the crisp snap of their keys. StackCalc’s custom `CoreHaptics` engine simulates both **key-seam boundary pulses** (so your finger can feel button edges when sliding across glass) and **mechanical tactile switch actuation** with distinct physical weight for numbers, shift modifiers, and `ENTER`.
 
 ![Tactile Key Engineering](assets/materials/macro_enter_key.png)
 

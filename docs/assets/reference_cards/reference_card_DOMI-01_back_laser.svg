@@ -38,7 +38,7 @@
   <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 02 OF 10 • DOMAIN: DISCRETE COMBINATORICS &amp; PARTITIONS • 7.00mm 1U PITCH • T(7)=28 TRIANGULAR TILES</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: TRIANGULAR COMBINATORICS &amp; PART-WHOLE SUMS</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: T(7) = 28 Tiles &amp; [5|4] + [3|2] = 14</text>
-  <text x="130" y="117" class="font-mono badge-box">Grades K–5 Addition, Part-Whole &amp; Combinatorics • Hands-On Classroom &amp; Home STEM Studio Series</text>
+  <text x="130" y="117" class="font-mono badge-box">Grades K–5 Addition &amp; Combinatorics • Hands-On Classroom &amp; Home STEM Studio Series</text>
 
   <!-- Top-Right Series & SKU Badges -->
   <g transform="translate(1025, 48)">
@@ -783,7 +783,7 @@
 <text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">• CCSS.MATH.CONTENT.1.OA.B.4 (Unknown Addend)</text>
 <text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">• TEKS 111.3.b.3.A (Model Addition)</text>
 
-      <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#ffffff" font-weight="700">Grades K–5 Addition, Part-Whole &amp; Combinatorics</text>
+      <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#ffffff" font-weight="700">Grades K–5 Addition &amp; Combinatorics</text>
     </g>
 
     <!-- Mathematical Inquiry Box -->
@@ -791,10 +791,7 @@
       <rect x="0" y="0" width="276" height="88" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="10" y="17" class="font-mono" font-size="8.8px" font-weight="700" fill="#ffffff">💡 MATHEMATICAL INQUIRY</text>
       <text x="10" y="34" class="font-mono" font-size="8.2px" fill="#ffffff">
-        <tspan x="10" dy="0">If you flip a domino end-for-end, does the</tspan>
-        <tspan x="10" dy="13"> total pip sum change? Why or why not?</tspan>
-        <tspan x="10" dy="13"></tspan>
-        <tspan x="10" dy="13"></tspan>
+        <tspan x="10" dy="0">If you flip a domino end-for-end, does</tspan><tspan x="10" dy="13">the total pip sum change? Why or why</tspan><tspan x="10" dy="13">not?</tspan>
       </text>
     </g>
   </g>
@@ -837,7 +834,7 @@
       <text x="34" y="18" class="font-mono section-hdr">STEPS 3 &amp; 4: COMBINE TILES &amp; REGROUP</text>
 
       <text x="16" y="46" class="font-mono" font-size="9.1px" fill="#ffffff">
-        <tspan x="16" dy="0" font-weight="700" fill="#ffffff">3. COMBINE TWO TILES: Take tile [5|4] (sum 9) and [3|2] (sum 5). Seat in 12-frame tray.</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">4. CALCULATE SUM: 9 + 5 = 14! (1 full 10-frame + 4 ones).</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">Calculator Verification: Press Domino Pip Pattern Icon ([g][COUNT] &amp; [g][a:b]) and run 5 [ENTER] 4 [+] 3 [ENTER] 2 [+] [+] → 14.</tspan>
+        <tspan x="16" dy="0" font-weight="700" fill="#ffffff">3. COMBINE TWO TILES: Take tile [5|4] (sum 9) and [3|2] (sum 5). Seat in 12-frame tray.</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">4. CALCULATE SUM: 9 + 5 = 14! (1 full 10-frame + 4 ones).</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">Calculator Verification: Press Domino Pip Pattern Icon ([g][COUNT] &amp; [g][a:b]) and run 5 [ENTER] 4 [+] 3</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">[ENTER] 2 [+] [+] → 14.</tspan>
       </text>
     </g>
 
@@ -861,7 +858,7 @@
       <text x="16" y="16" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">★ EXTENSION INVESTIGATION: FIND ALL SUM-TO-7 TILES</text>
       
       <text x="16" y="44" class="font-mono" font-size="8.8px" fill="#ffffff">
-        <tspan x="16" dy="0">Can you find all 3 tiles that sum to 7: [1|6], [2|5], and [3|4]? Why is there no [0|7] tile in a double-six set? (Scan QR for 3D animated solution!)</tspan>
+        <tspan x="16" dy="0">Can you find all 3 tiles that sum to 7: [1|6], [2|5], and [3|4]? Why is there no [0|7] tile in</tspan><tspan x="16" dy="14">a double-six set? (Scan QR for 3D animated solution!)</tspan>
       </text>
       <text x="16" y="74" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">
         → Assemble with your physical blocks, then scan the QR code to verify with the 3D step-by-step vector model.

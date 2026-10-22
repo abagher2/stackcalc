@@ -342,7 +342,7 @@ hide:
             </div>
             <div class="te-spec-row">
               <span class="te-spec-key">Keypad Switches</span>
-              <span class="te-spec-val">43 stainless steel tactile snap-domes (400g actuation force)</span>
+              <span class="te-spec-val">43 tactile microswitches with sculpted Shore 90A TPU keys</span>
             </div>
             <div class="te-spec-row">
               <span class="te-spec-key">Chassis Mechanics</span>
@@ -363,7 +363,7 @@ hide:
             <div class="te-tier-options">
               <div class="te-tier-opt">
                 <strong>Pre-Soldered Logic Board</strong>
-                <span>RP2350 silicon + 43 mechanical snap domes</span>
+                <span>RP2350 silicon + 43 tactile microswitches with TPU keys</span>
               </div>
               <div class="te-tier-opt">
                 <strong>Sliding Dovetail Housing</strong>
@@ -825,7 +825,7 @@ hide:
           <div class="te-card-category">Flagship RPN Hardware</div>
           <h3 class="te-card-title"><a href="sc32-calculator/">SC-32 Scientific RPN Maker Kit</a></h3>
           <p class="te-card-desc">
-            The definitive dedicated physical RPN calculator. Raspberry Pi RP2350 silicon, 43 snap-dome tactile switches (400g actuation), transflective graphic LCD, and tool-free sliding dovetail chassis with 8 interchangeable faceplate finishes. 100% pre-soldered, 5-minute snap assembly. SAT/ACT/AP approved.
+            The definitive dedicated physical RPN calculator. Raspberry Pi RP2350 silicon, 43 tactile microswitches with sculpted TPU keys, transflective graphic LCD, and tool-free sliding dovetail chassis with 8 interchangeable faceplate finishes. 100% pre-soldered, 5-minute snap assembly. SAT/ACT/AP approved.
           </p>
         </div>
         <div class="te-card-footer">
@@ -857,13 +857,13 @@ hide:
         <div class="te-card-specs">
           <span class="te-card-spec-item">STACK: 4-LINE XYZT</span>
           <span class="te-card-spec-item">GRADES: 1&ndash;6</span>
-          <span class="te-card-spec-item">KEYS: TACTILE DOMES</span>
+          <span class="te-card-spec-item">KEYS: TACTILE TPU</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Elementary RPN Calculator</div>
           <h3 class="te-card-title"><a href="sc6-elementary/">SC-6 Elementary Edition</a></h3>
           <p class="te-card-desc">
-            Tactile arithmetic calculator designed for primary and intermediate students. Clean White PLA 2.0+ lab chassis, Slate Gray tool-free sliding cowl, 400g snap-dome keys, and default 4-line XYZT operational stack (with toggleable 2-stack mode for counting racks and dice) using crisp right-aligned Terminus font.
+            Tactile arithmetic calculator designed for primary and intermediate students. Clean White PLA 2.0+ lab chassis, Slate Gray tool-free sliding cowl, tactile switches with sculpted 90A TPU keypads, and default 4-line XYZT operational stack (with toggleable 2-stack mode for counting racks and dice) using crisp right-aligned Terminus font.
           </p>
         </div>
         <div class="te-card-footer">
@@ -1253,7 +1253,7 @@ hide:
             <td style="padding: 1rem 1.25rem; color: #94A3B8;">Flimsy injection plastic, mushy membrane keys, battery acid leaks</td>
             <td style="padding: 1rem 1.25rem; color: #94A3B8;">Thin brittle polystyrene, pastel colors that chip</td>
             <td style="padding: 1rem 1.25rem; color: #94A3B8;">Softwood, chips easily, moisture expansion</td>
-            <td style="padding: 1rem 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 2px solid #38BDF8; border-right: 2px solid #38BDF8; font-weight: 700; color: #FFFFFF;">High-rigidity technical polymers (PETG/PLA 2.0+), 400g metal snap-dome keys.</td>
+            <td style="padding: 1rem 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 2px solid #38BDF8; border-right: 2px solid #38BDF8; font-weight: 700; color: #FFFFFF;">High-rigidity technical polymers (PETG/PLA 2.0+), tactile microswitches with sculpted TPU keys.</td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
             <td style="padding: 1rem 1.25rem; font-family: 'Space Mono', monospace; font-weight: 700; color: #FFFFFF;">Modularity &amp; Storage</td>

@@ -646,10 +646,7 @@
       <rect x="0" y="0" width="276" height="88" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1" />
       <text x="10" y="17" class="font-mono" font-size="8.8px" font-weight="700" fill="#0369a1">💡 MATHEMATICAL INQUIRY</text>
       <text x="10" y="34" class="font-mono" font-size="8.2px" fill="#0f172a">
-        <tspan x="10" dy="0">Which prime blocks are shared by both towe</tspan>
-        <tspan x="10" dy="13">rs, and which blocks are unique to one towe</tspan>
-        <tspan x="10" dy="13">r?</tspan>
-        <tspan x="10" dy="13"></tspan>
+        <tspan x="10" dy="0">Which prime blocks are shared by both</tspan><tspan x="10" dy="13">towers, and which blocks are unique to</tspan><tspan x="10" dy="13">one tower?</tspan>
       </text>
     </g>
   </g>
@@ -692,7 +689,7 @@
       <text x="34" y="18" class="font-mono section-hdr">STEPS 3 &amp; 4: ASSEMBLE THE LCM TOWER</text>
 
       <text x="16" y="46" class="font-mono" font-size="9.1px" fill="#0f172a">
-        <tspan x="16" dy="0" font-weight="700" fill="#0284c7">3. TAKE PRIME UNION: Take highest power of each prime: two [2]s, two [3]s.</tspan><tspan x="16" dy="13" font-weight="700" fill="#059669">4. STACK LCM TOWER: [2] + [2] + [3] + [3] = 36 (Summit: 36.19 mm)!</tspan><tspan x="16" dy="13" font-weight="700" fill="#0284c7">Calculator Verification: Press Factor Tree Icon ([PRIME] / [g][FACT]) and run 12 [ENTER] 18 [GCF] 12 [ENTER] 18 [f] [LCM] → 36.</tspan>
+        <tspan x="16" dy="0" font-weight="700" fill="#0284c7">3. TAKE PRIME UNION: Take highest power of each prime: two [2]s, two [3]s.</tspan><tspan x="16" dy="13" font-weight="700" fill="#059669">4. STACK LCM TOWER: [2] + [2] + [3] + [3] = 36 (Summit: 36.19 mm)!</tspan><tspan x="16" dy="13" font-weight="700" fill="#0284c7">Calculator Verification: Press Factor Tree Icon ([PRIME] / [g][FACT]) and run 12 [ENTER] 18 [GCF] 12</tspan><tspan x="16" dy="13" font-weight="700" fill="#0284c7">[ENTER] 18 [f] [LCM] → 36.</tspan>
       </text>
     </g>
 
@@ -716,7 +713,7 @@
       <text x="16" y="16" class="font-mono" font-size="9.5px" font-weight="700" fill="#0369a1">★ EXTENSION INVESTIGATION: FIND LCM(8, 12)</text>
       
       <text x="16" y="44" class="font-mono" font-size="8.8px" fill="#0f172a">
-        <tspan x="16" dy="0">Build Tower 8: [2]+[2]+[2] and Tower 12: [2]+[2]+[3]. Prime union takes three [2]s and one [3] → LCM = 24 (28.09mm)! (Scan QR for 3D animated solution!)</tspan>
+        <tspan x="16" dy="0">Build Tower 8: [2]+[2]+[2] and Tower 12: [2]+[2]+[3]. Prime union takes three [2]s and one [3]</tspan><tspan x="16" dy="14">→ LCM = 24 (28.09mm)! (Scan QR for 3D animated solution!)</tspan>
       </text>
       <text x="16" y="74" class="font-mono" font-size="8.5px" font-weight="700" fill="#059669">
         → Assemble with your physical blocks, then scan the QR code to verify with the 3D step-by-step vector model.

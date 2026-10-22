@@ -1,6 +1,6 @@
 ---
 title: "SC-32 Scientific RPN Calculator"
-description: "Tactile handheld Reverse Polish Notation scientific calculator. Raspberry Pi RP2350 silicon, 43 mechanical snap-dome keys, sunlight-readable reflective ST7567A LCD, and SAT/ACT exam compliance."
+description: "Tactile handheld Reverse Polish Notation scientific calculator. Raspberry Pi RP2350 silicon, 43 tactile microswitches with sculpted TPU keys, high-contrast reflective ST7567A LCD, and SAT/ACT exam compliance."
 hide:
   - navigation
   - toc
@@ -19,7 +19,7 @@ hide:
         "https://www.stackcalc.io/assets/renders/etsy/sc32-specs-infographic-square.png",
         "https://www.stackcalc.io/assets/renders/sc32-rpn-calculation.png"
       ],
-      "description": "Tactile handheld Reverse Polish Notation scientific calculator. Raspberry Pi RP2350 silicon, 43 mechanical snap-dome keys, sunlight-readable reflective ST7567A monochrome LCD, and SAT/ACT exam compliance.",
+      "description": "Tactile handheld Reverse Polish Notation scientific calculator. Raspberry Pi RP2350 silicon, 43 tactile microswitches with sculpted TPU keys, high-contrast reflective ST7567A monochrome LCD, and SAT/ACT exam compliance.",
       "sku": "SC-32-HW",
       "mpn": "SC32-RP2350",
       "brand": {
@@ -198,7 +198,7 @@ hide:
       </div>
 
       <p class="ec-short-summary">
-        The dedicated tactile handheld Reverse Polish Notation scientific instrument engineered for STEM students and technical professionals. Features Raspberry Pi RP2350 silicon, 43 mechanical snap-dome keys (400g actuation), a transflective sunlight-readable ST7567A monochrome LCD with native Terminus typography, and a 4-part tool-free sliding dovetail chassis.
+        The dedicated tactile handheld Reverse Polish Notation scientific instrument engineered for STEM students and technical professionals. Features Raspberry Pi RP2350 silicon, 43 tactile microswitches with sculpted Shore 90A TPU keys, a high-contrast reflective ST7567A monochrome LCD with native Terminus typography, and a 4-part tool-free sliding dovetail chassis.
       </p>
 
       <!-- Highlights Checklist -->

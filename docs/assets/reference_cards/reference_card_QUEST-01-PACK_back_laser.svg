@@ -774,9 +774,8 @@
       <circle cx="28" cy="28" r="14" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
       <text x="28" y="33" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
       <text x="54" y="32" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1. VERIFY 60 UNIVERSAL +10 TOKENS</text>
-      <text x="54" y="60" class="font-mono" font-size="10.5px" fill="#cccccc">
-        <tspan x="54" dy="0">Confirm 30x Red+Gold Silk tokens and 30x Glow-in-the-Dark Yellow tokens rest inside the open 3x1x7U storage bin.</tspan>
-        <tspan x="54" dy="18"></tspan>
+      <text x="54" y="60" class="font-mono" font-size="10px" fill="#cccccc">
+        <tspan x="54" dy="0">Confirm 30x Red+Gold Silk tokens and 30x Glow-in-the-Dark Yellow tokens rest inside the open</tspan><tspan x="54" dy="16">3x1x7U storage bin.</tspan>
       </text>
     </g>
 
@@ -785,9 +784,8 @@
       <circle cx="28" cy="28" r="14" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
       <text x="28" y="33" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
       <text x="54" y="32" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">2. INSPECT SCOREBOARD LID SOCKETS</text>
-      <text x="54" y="60" class="font-mono" font-size="10.5px" fill="#cccccc">
-        <tspan x="54" dy="0">Verify sockets 1–10, the 100 Mastery Tower socket, and the Question Mark in a Circle (?) tutorial keycap badge.</tspan>
-        <tspan x="54" dy="18"></tspan>
+      <text x="54" y="60" class="font-mono" font-size="10px" fill="#cccccc">
+        <tspan x="54" dy="0">Verify sockets 1–10, the 100 Mastery Tower socket, and the Question Mark in a Circle (?)</tspan><tspan x="54" dy="16">tutorial keycap badge.</tspan>
       </text>
     </g>
 
@@ -796,9 +794,8 @@
       <circle cx="28" cy="28" r="14" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
       <text x="28" y="33" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
       <text x="54" y="32" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">3. TUCK CARD &amp; SNAP LID SHUT</text>
-      <text x="54" y="60" class="font-mono" font-size="10.5px" fill="#cccccc">
+      <text x="54" y="60" class="font-mono" font-size="10px" fill="#cccccc">
         <tspan x="54" dy="0">Place this reference card over the tokens and snap the 3x1 Scoreboard Lid onto the rim.</tspan>
-        <tspan x="54" dy="18"></tspan>
       </text>
     </g>
 

@@ -218,7 +218,7 @@ StackCalc32's 16 guided lessons are not limited to touchscreens—they are imple
 - **Instant Event Interception**: The firmware event loop intercepts matrix scanning, suspends the standard operational stack, and loads the active tutorial state machine directly into the display buffer.
 
 ### Physical Display & Dynamic Softkeys
-- **ST7567A Transflective LCD**: The 132×65 pixel monochrome display renders a 4-line terminal transcript using the sharp 6×8 pixel Terminus font. High contrast ensures clear legibility under harsh laboratory lighting or direct sunlight.
+- **ST7567A Transflective LCD**: The 132×65 pixel monochrome display renders a 4-line terminal transcript using the sharp 6×8 pixel Terminus font. High contrast ensures clear legibility in classroom and laboratory lighting without backlight glare.
 - **Tactile Softkey Integration**: The top row of 6 tactile keys dynamically maps to contextual controls:
   - **Key 1 (`[PREV]`)**: Revisit the previous instruction step.
   - **Key 2 (`[NEXT]`)**: Advance to the next step once target preconditions are verified.

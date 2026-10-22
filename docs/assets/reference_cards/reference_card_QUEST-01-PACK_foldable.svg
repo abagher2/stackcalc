@@ -1,0 +1,1239 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11in" height="8.5in" viewBox="0 0 2200 1700">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', monospace, -apple-system, sans-serif; }
+    </style>
+  </defs>
+  
+  <!-- Sheet Base Canvas (11.0 x 8.5 in US Letter Landscape) -->
+  <rect x="0" y="0" width="2200" height="1700" fill="#ffffff" />
+
+  <!-- Quadrant 1 (Top-Left): Side A (Front In-Box Guide) -->
+  <g transform="translate(35, 45)">
+    <svg width="1030" height="770" viewBox="0 0 1260 820">
+      
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', monospace; }
+      .title { font-size: 22px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
+      .subtitle { font-size: 13px; font-weight: 400; fill: #475569; }
+      .badge-sku { font-size: 14px; font-weight: 700; fill: #0f172a; }
+      .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
+      .badge-box { font-size: 11px; font-weight: 400; fill: #64748b; }
+      .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
+      .th { font-size: 10px; font-weight: 700; fill: #475569; text-transform: uppercase; }
+      .td { font-size: 10px; font-weight: 400; fill: #0f172a; }
+      .td-id { font-size: 9.5px; font-weight: 700; fill: #0284c7; }
+      .td-price { font-size: 10px; font-weight: 700; fill: #059669; text-anchor: end; }
+      .footer-txt { font-size: 9.5px; font-weight: 400; fill: #475569; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1260" height="820" fill="#ffffff" />
+  <rect x="15" y="15" width="1230" height="790" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+  <rect x="25" y="25" width="1210" height="770" rx="8" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+
+  <rect x="35" y="35" width="1190" height="100" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.2" />
+  <g transform="translate(55, 52)">
+    <rect x="0" y="0" width="65" height="65" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.4" />
+    <rect x="12" y="14" width="41" height="6" rx="2" fill="#0f172a" />
+    <rect x="16" y="24" width="33" height="6" rx="2" fill="#0f172a" opacity="0.85" />
+    <rect x="20" y="34" width="25" height="6" rx="2" fill="#0f172a" opacity="0.70" />
+    <rect x="24" y="44" width="17" height="6" rx="2" fill="#0f172a" opacity="0.55" />
+  </g>
+
+  <text x="135" y="66" class="font-mono title">SC-6 QUEST SCOREBOARD — PACKING BENCH &amp; QC SPEC</text>
+  <text x="135" y="88" class="font-mono subtitle">2-Piece Enclosure &amp; Lid Inspection, 60-Token Count &amp; Replacement Manifest</text>
+  <text x="135" y="110" class="font-mono badge-box">WAREHOUSE FULFILLMENT &amp; PACKING BENCH REFERENCE • REV a793ddd • 3x1x7U Gridfinity Storage Bin (No Inner Tray) + Snapfinity Scoreboard Lid</text>
+
+  <g transform="translate(1025, 52)">
+    <rect x="0" y="0" width="180" height="30" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="90" y="20" class="font-mono badge-sku" text-anchor="middle">SKU: QUEST-01-PACK</text>
+    <rect x="0" y="36" width="180" height="28" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2" />
+    <text x="90" y="55" class="font-mono badge-rev" text-anchor="middle">REV a793ddd</text>
+  </g>
+
+  <!-- Left: Parts Table -->
+  <g transform="translate(35, 150)">
+    <rect x="0" y="0" width="765" height="475" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="765" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">PACKING BENCH MANIFEST &amp; REFILL REPLACEMENT PRICING</text>
+    <text x="16" y="52" class="font-mono th">#</text>
+    <text x="45" y="52" class="font-mono th">COMPONENT DESCRIPTION</text>
+    <text x="315" y="52" class="font-mono th">QTY</text>
+    <text x="365" y="52" class="font-mono th">COLOR / SPEC</text>
+    <text x="515" y="52" class="font-mono th">CONTENT-ADDRESSED ID</text>
+    <text x="745" y="52" class="font-mono th" text-anchor="end">REFILL</text>
+    <line x1="12" y1="58" x2="753" y2="58" stroke="#cbd5e1" stroke-width="1" />
+
+    <circle cx="21" cy="71" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="74" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">1</text>
+    <text x="45" y="74" class="font-mono td" font-weight="700">+10 Score Token — 1st Way (10.25×10.25×7mm)</text>
+    <text x="315" y="74" class="font-mono td" font-weight="700">30x</text>
+    <text x="365" y="74" class="font-mono td">Red+Gold Silk</text>
+    <text x="515" y="74" class="font-mono td-id">QUEST-TOKN-GOLD</text>
+    <text x="745" y="74" class="font-mono td-price">$1.88</text>
+    <line x1="12" y1="80" x2="753" y2="80" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="95" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="98" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">2</text>
+    <text x="45" y="98" class="font-mono td" font-weight="700">+10 Score Token — 2nd Way (10.25×10.25×7mm)</text>
+    <text x="315" y="98" class="font-mono td" font-weight="700">30x</text>
+    <text x="365" y="98" class="font-mono td">Glow Yellow</text>
+    <text x="515" y="98" class="font-mono td-id">QUEST-TOKN-GLOW</text>
+    <text x="745" y="98" class="font-mono td-price">$1.88</text>
+    <line x1="12" y1="104" x2="753" y2="104" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="119" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="122" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">3</text>
+    <text x="45" y="122" class="font-mono td" font-weight="700">+10 Score Token Refill Pack (10x)</text>
+    <text x="315" y="122" class="font-mono td" font-weight="700">1x</text>
+    <text x="365" y="122" class="font-mono td">Assorted</text>
+    <text x="515" y="122" class="font-mono td-id">QUEST-PACK-10</text>
+    <text x="745" y="122" class="font-mono td-price">$6.75</text>
+    <line x1="12" y1="128" x2="753" y2="128" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="143" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="146" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">4</text>
+    <text x="45" y="146" class="font-mono td" font-weight="700">3x1 Snapfinity Scoreboard Lid (1–10, 100, ?)</text>
+    <text x="315" y="146" class="font-mono td" font-weight="700">1x</text>
+    <text x="365" y="146" class="font-mono td">Technical White</text>
+    <text x="515" y="146" class="font-mono td-id">QUEST-LID-a793ddd</text>
+    <text x="745" y="146" class="font-mono td-price">$9.00</text>
+    <line x1="12" y1="152" x2="753" y2="152" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="167" r="8.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" />
+    <text x="21" y="170" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">5</text>
+    <text x="45" y="170" class="font-mono td" font-weight="700">3x1x7U Gridfinity Storage Enclosure Body</text>
+    <text x="315" y="170" class="font-mono td" font-weight="700">1x</text>
+    <text x="365" y="170" class="font-mono td">Technical White</text>
+    <text x="515" y="170" class="font-mono td-id">QUEST-BOX-a793ddd</text>
+    <text x="745" y="170" class="font-mono td-price">$12.00</text>
+    <line x1="12" y1="176" x2="753" y2="176" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+
+    <text x="16" y="340" class="font-mono" font-size="9.5px" font-weight="700" fill="#0f172a">TOTAL: 62 VERIFIED WORKING COMPONENTS</text>
+    <g transform="translate(12, 355)">
+      <rect x="0" y="0" width="741" height="105" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.2" />
+      <text x="16" y="24" class="font-mono" font-size="11.5px" font-weight="700" fill="#166534">WAREHOUSE NO LOST PIECE GUARANTEE</text>
+      <text x="16" y="44" class="font-mono" font-size="9.5px" fill="#475569">
+        <tspan x="16" dy="0">Individual replacement blocks are permanently stocked in Mountain View, California.</tspan>
+        <tspan x="16" dy="15">Anti-arbitrage pricing: Order single replacement components anytime at stackcalc.io/parts.</tspan>
+        <tspan x="16" dy="16">Never retire an educational classroom kit due to a single misplaced component.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Right: QC Checks & Waterline Notice -->
+  <g transform="translate(815, 150)">
+    <rect x="0" y="0" width="410" height="475" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="410" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">PACKING QC &amp; WATERLINE PROTOCOL</text>
+
+    <g transform="translate(14, 48)">
+      <rect x="0" y="0" width="382" height="142" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1" />
+      <text x="12" y="20" class="font-mono section-hdr">FINAL BENCH INSPECTION</text>
+
+      <text x="14" y="40" class="font-mono" font-size="10px" font-weight="700" fill="#16a34a">✓</text>
+      <text x="28" y="40" class="font-mono" font-size="8.8px" fill="#1e293b">60 universal +10 tokens verified (30x Gold + 30x Glow Yellow)</text>
+
+      <text x="14" y="64" class="font-mono" font-size="10px" font-weight="700" fill="#16a34a">✓</text>
+      <text x="28" y="64" class="font-mono" font-size="8.8px" fill="#1e293b">Lid sockets 1–10 &amp; 100 tested for smooth 0.40mm slip-fit</text>
+
+      <text x="14" y="88" class="font-mono" font-size="10px" font-weight="700" fill="#16a34a">✓</text>
+      <text x="28" y="88" class="font-mono" font-size="8.8px" fill="#1e293b">Question Mark in a Circle (?) badge crisp on lid &amp; rear wall</text>
+
+      <text x="14" y="112" class="font-mono" font-size="10px" font-weight="700" fill="#16a34a">✓</text>
+      <text x="28" y="112" class="font-mono" font-size="8.8px" fill="#1e293b">2-piece Snapfinity lid clicks firmly onto 3x1x7U open bin</text>
+
+    </g>
+
+    <g transform="translate(14, 202)">
+      <rect x="0" y="0" width="382" height="130" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.2" />
+      <rect x="0" y="0" width="382" height="26" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1" />
+      <text x="12" y="17" class="font-mono" font-size="10px" font-weight="700" fill="#0369a1">PACKING WATERLINE NOTICE</text>
+      <text x="12" y="44" class="font-mono" font-size="8.5px" fill="#0c4a6e">
+        <tspan x="12" dy="0">SIMPLIFIED 2-PIECE DESIGN (NO INNER TRAY): Pour all 60</tspan><tspan x="12" dy="13">universal +10 tokens into the open 3x1x7U storage bin,</tspan><tspan x="12" dy="13">place this card on top, and snap the Scoreboard Lid</tspan><tspan x="12" dy="13">shut.</tspan>
+      </text>
+    </g>
+
+    <g transform="translate(14, 345)">
+      <rect x="0" y="0" width="382" height="115" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="18" class="font-mono th" fill="#475569">CALIFORNIA LAB QC AUDIT</text>
+      <text x="12" y="38" class="font-mono" font-size="13px" font-weight="700" fill="#166534">INSPECTION: PASSED</text>
+      <text x="12" y="56" class="font-mono" font-size="8.8px" fill="#0284c7">Inspector: Station 04 • Mountain View, CA</text>
+      <text x="12" y="70" class="font-mono" font-size="8.8px" fill="#0284c7">Lot Release: 2026-Q4-ARCHIVAL</text>
+      <text x="12" y="84" class="font-mono" font-size="8.8px" fill="#0284c7">Standards: ASTM F963 / EN71 / RoHS Lead-Free</text>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(35, 640)">
+    <rect x="0" y="0" width="1190" height="110" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <g transform="translate(25, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#0f172a">FACTORY SPECIFICATION</text>
+      <text x="0" y="18" class="font-mono footer-txt">Harmonized Modular Mathematics Manipulative System.</text>
+      <text x="0" y="32" class="font-mono footer-txt">Manufactured with Pride in California, USA.</text>
+    </g>
+    <g transform="translate(450, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#0f172a">PARTS REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono footer-txt">Official Parts Portal: stackcalc.io/parts</text>
+      <text x="0" y="32" class="font-mono footer-txt">SIDE A: WAREHOUSE PACKING BENCH &amp; QC MANIFEST | PAPER SPEC</text>
+    </g>
+    <g transform="translate(980, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#0f172a">INSTITUTIONAL DIRECT</text>
+      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#0284c7">sales@stackcalc.io</text>
+      <text x="0" y="32" class="font-mono footer-txt">Direct Invoicing • Net-30 Terms</text>
+    </g>
+  </g>
+  <metadata id="stackcalc-book-macro-manifest" data-kit="PRIME-01">
+    <stackcalc-macros>
+      <macro-ref token="{{blocks:prime_studio_comparator_stage}}" kind="blocks" id="prime_studio_comparator_stage" png="prime_studio_comparator_stage.png" svg="prime_studio_comparator_stage.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_comparator_stage.scad" scad="book_prime_comparator_stage.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_3_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_lcm_gcd_venn}}" kind="blocks" id="prime_lcm_gcd_venn" png="prime_lcm_gcd_venn.png" svg="prime_lcm_gcd_venn.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_lcm_gcd_venn.scad" scad="book_prime_lcm_gcd_venn.scad" scad-sources="Education/scad/prime_lcm_gcd_assembly.scad,Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_studio_commutativity}}" kind="blocks" id="prime_studio_commutativity" png="prime_studio_commutativity.png" svg="prime_studio_commutativity.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_studio_commutativity.scad" scad="book_prime_studio_commutativity.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{blocks:sc32_hero_keynote}}" kind="blocks" id="sc32_hero_keynote" png="sc32-hero-keynote.png" svg="sc32-hero-keynote.png" scene="Tools/rendering/render_product_stills.py::render_sc32_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{seq:refcard_prime01_ex1}}" res-token="{{res:refcard_prime01_ex1}}" stack-token="{{res:refcard_prime01_ex1:stack}}" kind="sequence" id="refcard_prime01_ex1" model="sc6" expanded-seq="12 [g] [FACT] 18 [g] [FACT]" res="18" stack="T:0|Z:0|Y:12|X:18" />
+      <macro-ref token="{{seq:refcard_prime01_ex2}}" res-token="{{res:refcard_prime01_ex2}}" stack-token="{{res:refcard_prime01_ex2:stack}}" kind="sequence" id="refcard_prime01_ex2" model="sc6" expanded-seq="12 [ENTER] 18 [GCF] 12 [ENTER] 18 [f] [LCM]" res="36" stack="T:0|Z:0|Y:6|X:36" />
+      <macro-ref token="{{seq:refcard_prime01_ex3}}" res-token="{{res:refcard_prime01_ex3}}" stack-token="{{res:refcard_prime01_ex3:stack}}" kind="sequence" id="refcard_prime01_ex3" model="sc6" expanded-seq="2 [ENTER] 3 [×] 5 [×] [g] [FACT]" res="30" stack="T:0|Z:0|Y:0|X:30" />
+      <macro-ref token="{{icon:button_prime}}" kind="icon" id="button_prime" svg="Education/scad/lib/icons/button_prime.svg" scad="Education/scad/prime_studio_box.scad" key="FACT" model="sc6" />
+    </stackcalc-macros>
+  </metadata>
+
+    </svg>
+  </g>
+
+  <!-- Quadrant 2 (Top-Right): Side B (Back Lesson Guide & Video QR) -->
+  <g transform="translate(1135, 45)">
+    <svg width="1030" height="770" viewBox="0 0 1260 820">
+      
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', monospace; }
+      .title { font-size: 21px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
+      .subtitle { font-size: 13px; font-weight: 400; fill: #475569; }
+      .badge-txt { font-size: 13px; font-weight: 700; fill: #0f172a; }
+      .section-hdr { font-size: 11.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
+      .txt-bold { font-size: 11px; font-weight: 700; fill: #0f172a; }
+      .txt-muted { font-size: 9.5px; font-weight: 400; fill: #475569; }
+      .footer-txt { font-size: 9.5px; font-weight: 400; fill: #475569; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1260" height="820" fill="#ffffff" />
+  <rect x="15" y="15" width="1230" height="790" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+  <rect x="25" y="25" width="1210" height="770" rx="8" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+
+  <rect x="35" y="35" width="1190" height="100" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.2" />
+  <g transform="translate(55, 52)">
+    <rect x="0" y="0" width="65" height="65" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1.4" />
+    <rect x="12" y="14" width="41" height="6" rx="2" fill="#0f172a" />
+    <rect x="16" y="24" width="33" height="6" rx="2" fill="#0f172a" opacity="0.85" />
+    <rect x="20" y="34" width="25" height="6" rx="2" fill="#0f172a" opacity="0.70" />
+    <rect x="24" y="44" width="17" height="6" rx="2" fill="#0f172a" opacity="0.55" />
+  </g>
+
+  <text x="135" y="68" class="font-mono title">SC-6 QUEST SCOREBOARD — PACKING BENCH &amp; QC SPEC</text>
+  <text x="135" y="90" class="font-mono subtitle">WAREHOUSE PACKING BENCH REFERENCE • 3D VIDEO QR • REFILL LOGISTICS</text>
+  <text x="135" y="112" class="font-mono txt-muted">Classroom Pack-Up &amp; Inventory Reference</text>
+
+  <g transform="translate(1025, 52)">
+    <rect x="0" y="0" width="180" height="30" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="90" y="20" class="font-mono badge-txt" text-anchor="middle">SKU: QUEST-01-PACK</text>
+    <rect x="0" y="36" width="180" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="90" y="55" class="font-mono badge-txt" text-anchor="middle">PACKING PROTOCOL</text>
+  </g>
+
+  <!-- Left: Video QR Code -->
+  <g transform="translate(35, 150)">
+    <rect x="0" y="0" width="300" height="475" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="300" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="22" class="font-mono section-hdr">PACK-UP DEMO VIDEO</text>
+    <rect x="40" y="48" width="220" height="220" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="55.0" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="80.68" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="183.38" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="63.0" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="68.14" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="73.27" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="183.38" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="78.41" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="183.38" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="83.54" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="183.38" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="88.68" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="80.68" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="93.81" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="98.95" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="98.95" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="98.95" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="98.95" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="98.95" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="98.95" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="98.95" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="98.95" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="98.95" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="98.95" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="104.08" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="109.22" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="80.68" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="183.38" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="114.35" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="119.49" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="124.62" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="129.76" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="134.89" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="140.03" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="145.16" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="183.38" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="150.3" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="183.38" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="155.43" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="160.57" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="80.68" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="165.7" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="80.68" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="183.38" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="170.84" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="183.38" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="175.97" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="80.68" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="181.11" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="80.68" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="186.24" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="183.38" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="191.38" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="196.51" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="201.65" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="80.68" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="90.95" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="206.78" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="211.92" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="80.68" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="217.05" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="222.19" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="126.89" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="227.32" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="198.78" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="232.46" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="157.7" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="188.51" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="209.05" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="237.59" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="101.22" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="106.35" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="121.76" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="147.43" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="173.11" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="203.92" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="219.32" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="242.73" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="55.0" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="60.14" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="65.27" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="70.41" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="75.54" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="80.68" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="85.81" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="96.08" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="111.49" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="116.62" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="132.03" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="137.16" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="142.3" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="152.57" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="162.84" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="167.97" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="178.24" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="193.65" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="214.19" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="224.46" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="229.59" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="234.73" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+<rect x="239.86" y="247.86" width="5.19" height="5.19" fill="#0f172a" />
+    <text x="150" y="292" class="font-mono txt-bold" text-anchor="middle" font-size="11px">OPEN CAMERA &amp; SCAN</text>
+    <text x="150" y="310" class="font-mono" text-anchor="middle" font-size="10.5px" font-weight="700" fill="#0284c7">stackcalc.io/products/quest-scoreboard/</text>
+    <text x="150" y="332" class="font-mono txt-muted" text-anchor="middle" font-size="9px">Watch 3D video demonstration</text>
+    <text x="150" y="347" class="font-mono txt-muted" text-anchor="middle" font-size="8.5px">Zero app install required</text>
+  </g>
+
+  <!-- Right: Quick Start Steps -->
+  <g transform="translate(350, 150)">
+    <rect x="0" y="0" width="875" height="475" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="875" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="20" y="22" class="font-mono section-hdr">WAREHOUSE PACKING BENCH &amp; BOX FLOOR WATERLINE AUDIT</text>
+
+    <g transform="translate(18, 50)">
+      <rect x="0" y="0" width="839" height="120" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+      <circle cx="28" cy="28" r="14" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <text x="28" y="33" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">1</text>
+      <text x="54" y="32" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">1. VERIFY 60 UNIVERSAL +10 TOKENS</text>
+      <text x="54" y="60" class="font-mono" font-size="10px" fill="#475569">
+        <tspan x="54" dy="0">Confirm 30x Red+Gold Silk tokens and 30x Glow-in-the-Dark Yellow tokens rest inside the open</tspan><tspan x="54" dy="16">3x1x7U storage bin.</tspan>
+      </text>
+    </g>
+
+    <g transform="translate(18, 185)">
+      <rect x="0" y="0" width="839" height="120" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+      <circle cx="28" cy="28" r="14" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <text x="28" y="33" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">2</text>
+      <text x="54" y="32" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">2. INSPECT SCOREBOARD LID SOCKETS</text>
+      <text x="54" y="60" class="font-mono" font-size="10px" fill="#475569">
+        <tspan x="54" dy="0">Verify sockets 1–10, the 100 Mastery Tower socket, and the Question Mark in a Circle (?)</tspan><tspan x="54" dy="16">tutorial keycap badge.</tspan>
+      </text>
+    </g>
+
+    <g transform="translate(18, 320)">
+      <rect x="0" y="0" width="839" height="120" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+      <circle cx="28" cy="28" r="14" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <text x="28" y="33" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">3</text>
+      <text x="54" y="32" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">3. TUCK CARD &amp; SNAP LID SHUT</text>
+      <text x="54" y="60" class="font-mono" font-size="10px" fill="#475569">
+        <tspan x="54" dy="0">Place this reference card over the tokens and snap the 3x1 Scoreboard Lid onto the rim.</tspan>
+      </text>
+    </g>
+
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(35, 640)">
+    <rect x="0" y="0" width="1190" height="110" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <g transform="translate(25, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#0f172a">FULFILLMENT PORTAL</text>
+      <text x="0" y="18" class="font-mono footer-txt">Interactive Packaging Bench Station.</text>
+      <text x="0" y="32" class="font-mono footer-txt">Warehouse Fulfillment Rev a793ddd.</text>
+    </g>
+    <g transform="translate(450, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#0f172a">REPLACEMENT MANIFEST</text>
+      <text x="0" y="18" class="font-mono footer-txt">Single Component Replacements: stackcalc.io/parts</text>
+      <text x="0" y="32" class="font-mono footer-txt">SIDE B: WAREHOUSE PACK-UP PROTOCOL &amp; VIDEO QR | PAPER SPEC</text>
+    </g>
+    <g transform="translate(980, 25)">
+      <text x="0" y="0" class="font-mono th" fill="#0f172a">DIRECT INVOICING</text>
+      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#0284c7">sales@stackcalc.io</text>
+      <text x="0" y="32" class="font-mono footer-txt">W-9 Form &amp; Net-30 Vendor Packets</text>
+    </g>
+  </g>
+  <metadata id="stackcalc-book-macro-manifest" data-kit="PRIME-01">
+    <stackcalc-macros>
+      <macro-ref token="{{blocks:prime_studio_comparator_stage}}" kind="blocks" id="prime_studio_comparator_stage" png="prime_studio_comparator_stage.png" svg="prime_studio_comparator_stage.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_comparator_stage.scad" scad="book_prime_comparator_stage.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_3_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_lcm_gcd_venn}}" kind="blocks" id="prime_lcm_gcd_venn" png="prime_lcm_gcd_venn.png" svg="prime_lcm_gcd_venn.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_lcm_gcd_venn.scad" scad="book_prime_lcm_gcd_venn.scad" scad-sources="Education/scad/prime_lcm_gcd_assembly.scad,Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_studio_commutativity}}" kind="blocks" id="prime_studio_commutativity" png="prime_studio_commutativity.png" svg="prime_studio_commutativity.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_studio_commutativity.scad" scad="book_prime_studio_commutativity.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{blocks:sc32_hero_keynote}}" kind="blocks" id="sc32_hero_keynote" png="sc32-hero-keynote.png" svg="sc32-hero-keynote.png" scene="Tools/rendering/render_product_stills.py::render_sc32_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{seq:refcard_prime01_ex1}}" res-token="{{res:refcard_prime01_ex1}}" stack-token="{{res:refcard_prime01_ex1:stack}}" kind="sequence" id="refcard_prime01_ex1" model="sc6" expanded-seq="12 [g] [FACT] 18 [g] [FACT]" res="18" stack="T:0|Z:0|Y:12|X:18" />
+      <macro-ref token="{{seq:refcard_prime01_ex2}}" res-token="{{res:refcard_prime01_ex2}}" stack-token="{{res:refcard_prime01_ex2:stack}}" kind="sequence" id="refcard_prime01_ex2" model="sc6" expanded-seq="12 [ENTER] 18 [GCF] 12 [ENTER] 18 [f] [LCM]" res="36" stack="T:0|Z:0|Y:6|X:36" />
+      <macro-ref token="{{seq:refcard_prime01_ex3}}" res-token="{{res:refcard_prime01_ex3}}" stack-token="{{res:refcard_prime01_ex3:stack}}" kind="sequence" id="refcard_prime01_ex3" model="sc6" expanded-seq="2 [ENTER] 3 [×] 5 [×] [g] [FACT]" res="30" stack="T:0|Z:0|Y:0|X:30" />
+      <macro-ref token="{{icon:button_prime}}" kind="icon" id="button_prime" svg="Education/scad/lib/icons/button_prime.svg" scad="Education/scad/prime_studio_box.scad" key="FACT" model="sc6" />
+    </stackcalc-macros>
+  </metadata>
+
+    </svg>
+  </g>
+
+  <!-- Crop / Trim Tick Marks for Side A & Side B (Optional 135x90mm Scissors / Rotary Trim) -->
+  <g stroke="#cbd5e1" stroke-width="1.0">
+    <!-- Top-Left Side A -->
+    <line x1="20" y1="45" x2="35" y2="45" />
+    <line x1="35" y1="30" x2="35" y2="45" />
+    <!-- Top-Right Side A -->
+    <line x1="1065" y1="45" x2="1080" y2="45" />
+    <line x1="1065" y1="30" x2="1065" y2="45" />
+    <!-- Bottom-Left Side A -->
+    <line x1="20" y1="815" x2="35" y2="815" />
+    <line x1="35" y1="815" x2="35" y2="830" />
+    <!-- Bottom-Right Side A -->
+    <line x1="1065" y1="815" x2="1080" y2="815" />
+    <line x1="1065" y1="815" x2="1065" y2="830" />
+
+    <!-- Top-Left Side B -->
+    <line x1="1120" y1="45" x2="1135" y2="45" />
+    <line x1="1135" y1="30" x2="1135" y2="45" />
+    <!-- Top-Right Side B -->
+    <line x1="2165" y1="45" x2="2180" y2="45" />
+    <line x1="2165" y1="30" x2="2165" y2="45" />
+    <!-- Bottom-Left Side B -->
+    <line x1="1120" y1="815" x2="1135" y2="815" />
+    <line x1="1135" y1="815" x2="1135" y2="830" />
+    <!-- Bottom-Right Side B -->
+    <line x1="2165" y1="815" x2="2180" y2="815" />
+    <line x1="2165" y1="815" x2="2165" y2="830" />
+  </g>
+
+  <!-- Subtle Center Hairline Guides (Zero Text, Neutral Gray) -->
+  <line x1="15" y1="850" x2="2185" y2="850" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="6,6" />
+  <line x1="1100" y1="15" x2="1100" y2="1685" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="6,6" />
+
+  <!-- Quadrant 3 (Bottom-Left): Pedagogy & Architecture -->
+  <g transform="translate(35, 880)">
+    <rect x="0" y="0" width="1030" height="770" rx="12" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8" />
+    
+    <!-- Header -->
+    <rect x="20" y="20" width="990" height="60" rx="8" fill="#0f172a" />
+    <text x="40" y="58" class="font-mono" font-size="18px" font-weight="700" fill="#38bdf8">STACKCALC STEM PEDAGOGY &amp; PHYSICAL COMPUTING</text>
+    <text x="680" y="58" class="font-mono" font-size="12px" font-weight="700" fill="#10b981">CONCRETE • REPRESENTATIONAL • ABSTRACT</text>
+
+    <!-- 3 Columns -->
+    <g transform="translate(30, 105)">
+      <rect x="0" y="0" width="295" height="350" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="15" y="15" width="220" height="26" rx="4" fill="#0284c7" />
+      <text x="125" y="32" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#ffffff">1. TACTILE CONCRETE</text>
+      <text x="18" y="68" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">7.00mm 1U PITCH</text>
+      <text x="18" y="82" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Every physical block dimension is</tspan><tspan x="18" dy="11">locked to an exact integer ratio,</tspan><tspan x="18" dy="11">providing tactile feedback of</tspan><tspan x="18" dy="11">quantity.</tspan></text>
+      <text x="18" y="136" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">MOTOR KINESTHETIC</text>
+      <text x="18" y="150" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Sliding, stacking, and interlocking</tspan><tspan x="18" dy="11">builds spatial memory and intuitive</tspan><tspan x="18" dy="11">number sense before symbols appear.</tspan></text>
+      <text x="18" y="193" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CONSERVATION OF QUANTITY</text>
+      <text x="18" y="207" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Mass, area, and volume remain</tspan><tspan x="18" dy="11">invariant regardless of how blocks are</tspan><tspan x="18" dy="11">grouped or rotated.</tspan></text>
+      <text x="18" y="250" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">SELF-CORRECTING</text>
+      <text x="18" y="264" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Precision mechanical detents seat</tspan><tspan x="18" dy="11">flush only when arithmetic identities</tspan><tspan x="18" dy="11">and geometric proofs are correct.</tspan></text>
+      <text x="18" y="307" class="font-mono" font-size="10px" font-weight="700" fill="#0284c7">CCSS.MATH.PRACTICE.MP5</text>
+      <text x="18" y="321" class="font-mono" font-size="8.3px" fill="#64748b"><tspan x="18" dy="0">Use appropriate tools strategically.</tspan></text>
+    </g>
+
+    <g transform="translate(365, 105)">
+      <rect x="0" y="0" width="295" height="350" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="15" y="15" width="220" height="26" rx="4" fill="#0284c7" />
+      <text x="125" y="32" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#ffffff">2. HARDWARE RPN STACK</text>
+      <text x="18" y="68" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">POSTFIX ARITHMETIC</text>
+      <text x="18" y="82" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">[ARG 1] [ENTER] [ARG 2] [OP]. Zero</tspan><tspan x="18" dy="11">operator ambiguity, zero parentheses,</tspan><tspan x="18" dy="11">and zero hidden precedence rules.</tspan></text>
+      <text x="18" y="125" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">X, Y, Z, T REGISTERS</text>
+      <text x="18" y="139" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Every intermediate result is visible</tspan><tspan x="18" dy="11">on the display stack. What is stacked</tspan><tspan x="18" dy="11">on the desk is preserved in memory.</tspan></text>
+      <text x="18" y="182" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">DIGITAL TWIN OF TOWERS</text>
+      <text x="18" y="196" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Physically stacking blocks onto a</tspan><tspan x="18" dy="11">stage lid directly mirrors pushing</tspan><tspan x="18" dy="11">values into the digital stack</tspan><tspan x="18" dy="11">registers.</tspan></text>
+      <text x="18" y="250" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">STEP-BY-STEP REASONING</text>
+      <text x="18" y="264" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Students observe each operator execute</tspan><tspan x="18" dy="11">in real time, making compound</tspan><tspan x="18" dy="11">calculations completely transparent.</tspan></text>
+      <text x="18" y="307" class="font-mono" font-size="10px" font-weight="700" fill="#0284c7">CCSS.MATH.PRACTICE.MP1</text>
+      <text x="18" y="321" class="font-mono" font-size="8.3px" fill="#64748b"><tspan x="18" dy="0">Make sense of problems &amp;amp;</tspan><tspan x="18" dy="11">persevere.</tspan></text>
+    </g>
+
+    <g transform="translate(700, 105)">
+      <rect x="0" y="0" width="295" height="350" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="15" y="15" width="220" height="26" rx="4" fill="#059669" />
+      <text x="125" y="32" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#ffffff">3. LEARNING CONTINUUM</text>
+      <text x="18" y="68" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">GRADES K–2: FOUNDATION</text>
+      <text x="18" y="82" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Ten-Frames, Number Rack &amp;amp; Dominoes</tspan><tspan x="18" dy="11">for subitizing, counting, 5-and-10</tspan><tspan x="18" dy="11">anchors, and place value fluency.</tspan></text>
+      <text x="18" y="125" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">GRADES 3–5: FRACTIONS</text>
+      <text x="18" y="139" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Fraction bars, prime factorization</tspan><tspan x="18" dy="11">towers, time gears, and discrete</tspan><tspan x="18" dy="11">combinatorics with probability dice.</tspan></text>
+      <text x="18" y="182" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">GRADES 6–12: ADVANCED</text>
+      <text x="18" y="196" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Algebraic factoring rails, unit circle</tspan><tspan x="18" dy="11">volvelles, complex numbers, and</tspan><tspan x="18" dy="11">professional scientific RPN workflows.</tspan></text>
+      <text x="18" y="239" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">DIFFERENTIATED TIERS</text>
+      <text x="18" y="253" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Tactile physical manipulates bridge</tspan><tspan x="18" dy="11">English language learners, visual</tspan><tspan x="18" dy="11">learners, and accelerated STEM</tspan><tspan x="18" dy="11">students.</tspan></text>
+      <text x="18" y="307" class="font-mono" font-size="10px" font-weight="700" fill="#059669">CCSS.MATH.PRACTICE.MP4</text>
+      <text x="18" y="321" class="font-mono" font-size="8.3px" fill="#64748b"><tspan x="18" dy="0">Model with mathematics.</tspan></text>
+    </g>
+
+    <!-- Bottom Feature Callout -->
+    <g transform="translate(30, 480)">
+      <rect x="0" y="0" width="965" height="255" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="18" y="16" width="310" height="26" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <text x="173" y="33" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#0f172a">CLASSROOM CARE &amp; SANITIZATION</text>
+      <text x="20" y="66" class="font-mono" font-size="9.8px" font-weight="700" fill="#0284c7">1. FOOD-SAFE RECYCLED POLYMERS:</text>
+      <text x="20" y="80" class="font-mono" font-size="8.4px" fill="#475569"><tspan x="20" dy="0">Manufactured from high-purity virgin polymer (PLA / PETG). Non-toxic, odorless, BPA-free,</tspan><tspan x="20" dy="11">and compliant with RoHS, EN71-3, and ASTM F963 safety standards.</tspan></text>
+      <text x="20" y="112" class="font-mono" font-size="9.8px" font-weight="700" fill="#059669">2. CLASSROOM CLEANING &amp;amp; DISINFECTION:</text>
+      <text x="20" y="126" class="font-mono" font-size="8.4px" fill="#475569"><tspan x="20" dy="0">Wash blocks in warm water with mild liquid dish soap (up to 55°C / 130°F) or wipe with</tspan><tspan x="20" dy="11">standard classroom disinfectant wipes. Allow to air dry flat before storage.</tspan></text>
+      <text x="20" y="158" class="font-mono" font-size="9.8px" font-weight="700" fill="#d97706">3. MODULAR SNAPFINITY STORAGE DETENTS:</text>
+      <text x="20" y="172" class="font-mono" font-size="8.4px" fill="#475569"><tspan x="20" dy="0">Stackable 3x1 and 3x3 stage lids feature multi-axis detents tested to 10,000+ opening</tspan><tspan x="20" dy="11">cycles. Trays pack rattle-free for classroom mobile cart transport.</tspan></text>
+      <text x="20" y="204" class="font-mono" font-size="9.8px" font-weight="700" fill="#0f172a">4. SOCRATIC CLASSROOM DISCUSSION:</text>
+      <text x="20" y="218" class="font-mono" font-size="8.4px" fill="#475569"><tspan x="20" dy="0">Encourage students to physically construct models to test hypotheses before executing</tspan><tspan x="20" dy="11">calculator calculations: "What invariant property did your physical model prove?"</tspan></text>
+    </g>
+  </g>
+
+  <!-- Quadrant 4 (Bottom-Right): QC & In-Box Specification -->
+  <g transform="translate(1135, 880)">
+    <rect x="0" y="0" width="1030" height="770" rx="12" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8" />
+    
+    <!-- Header -->
+    <rect x="20" y="20" width="990" height="60" rx="8" fill="#0f172a" />
+    <text x="40" y="58" class="font-mono" font-size="18px" font-weight="700" fill="#38bdf8">QUEST-01-PACK: IN-BOX SPECIFICATION &amp; QC AUDIT</text>
+    <text x="820" y="58" class="font-mono" font-size="12px" font-weight="700" fill="#f59e0b">CALIFORNIA LAB QC</text>
+
+    <!-- Content Sections -->
+    <g transform="translate(30, 105)">
+      <!-- Left Column: Verification Checklist -->
+      <rect x="0" y="0" width="470" height="630" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <text x="20" y="32" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">CALIFORNIA LAB QC AUDIT CHECKLIST</text>
+      <line x1="20" y1="42" x2="450" y2="42" stroke="#e2e8f0" stroke-width="1" />
+      
+      <text x="20" y="68" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] MITUTOYO DIGITAL CALIPER DATUM:</text>
+      <text x="20" y="82" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">All block dimensions conform to ±0.05 mm tolerance</tspan><tspan x="20" dy="11">across universal 7.00 mm 1U visible height system.</tspan></text>
+      <text x="20" y="112" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] 1.85 MM RETENTION SOCKET INTERFERENCE:</text>
+      <text x="20" y="126" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">Stacking plugs seat flush with 0.15 mm diametral</tspan><tspan x="20" dy="11">interference for zero-wobble tower verticality.</tspan></text>
+      <text x="20" y="156" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] SNAPFINITY ZERO-RATTLE DETENT LOCK:</text>
+      <text x="20" y="170" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">Multi-axis lid detents lock securely over 3x1 bin</tspan><tspan x="20" dy="11">perimeter rim. Audible snap with 1.4 N retention.</tspan></text>
+      <text x="20" y="200" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] CONTINUOUS 360° MICRO-FLUTING &amp;amp; SEAM TRAP:</text>
+      <text x="20" y="214" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">2.0 mm pitch, 0.50 mm flutes. Slicer seam locked into</tspan><tspan x="20" dy="11">rear-left corner seam trap notch.</tspan></text>
+      <text x="20" y="244" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] FOOD-SAFE RECYCLED POLYMER:</text>
+      <text x="20" y="258" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">100% virgin PLA / PETG. RoHS and EN71-3 compliant,</tspan><tspan x="20" dy="11">non-toxic, odorless, child-safe.</tspan></text>
+      <text x="20" y="288" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] IN-BOX COLLATERAL PLACEMENT:</text>
+      <text x="20" y="302" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">Place this reference card inside the box lid or inside</tspan><tspan x="20" dy="11">the storage tray.</tspan></text>
+
+      <line x1="20" y1="344" x2="450" y2="344" stroke="#e2e8f0" stroke-width="1" />
+      <text x="20" y="368" class="font-mono" font-size="11px" font-weight="700" fill="#0284c7">RPN HARDWARE COMPATIBILITY</text>
+      <text x="20" y="388" class="font-mono" font-size="8.8px" fill="#475569">• Compatible with StackCalc SC-6 (Early STEM)</text>
+      <text x="20" y="406" class="font-mono" font-size="8.8px" fill="#475569">• Compatible with StackCalc SC-32 (Scientific RPN)</text>
+      <text x="20" y="424" class="font-mono" font-size="8.8px" fill="#475569">• Zero parentheses, zero operator precedence errors</text>
+      <text x="20" y="442" class="font-mono" font-size="8.8px" fill="#475569">• Physical towers are the exact digital twin of the stack!</text>
+
+      <line x1="20" y1="458" x2="450" y2="458" stroke="#e2e8f0" stroke-width="1" />
+      <text x="20" y="480" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">TOTAL KIT INVENTORY: 62 PIECES</text>
+      <text x="20" y="500" class="font-mono" font-size="8.8px" fill="#64748b">Verified by Assembly Tech &amp; Machine Vision at Packing Bench.</text>
+      <text x="20" y="520" class="font-mono" font-size="9px" font-weight="700" fill="#059669">Inspection Pass • Mountain View, CA</text>
+    </g>
+
+    <!-- Right Column: Support & District Procurement -->
+    <g transform="translate(530, 105)">
+      <rect x="0" y="0" width="470" height="630" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      
+      <!-- Guarantee Box -->
+      <g transform="translate(20, 20)">
+        <rect x="0" y="0" width="430" height="160" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.2" />
+        <text x="20" y="32" class="font-mono" font-size="12px" font-weight="700" fill="#166534">LIFETIME REPLACEMENT GUARANTEE</text>
+        <text x="20" y="52" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">NO LOST PIECE LEFT BEHIND™</text>
+        <text x="20" y="74" class="font-mono" font-size="8.3px" fill="#475569">
+          <tspan x="20" dy="0">Classrooms lose blocks. We understand. Every</tspan><tspan x="20" dy="12">individual manipulative block has a permanent part</tspan><tspan x="20" dy="12">number. Visit stackcalc.io/parts to order exact</tspan><tspan x="20" dy="12">replacement pieces with same-day dispatch</tspan><tspan x="20" dy="12">($1.99–$2.99/piece).</tspan>
+        </text>
+        <text x="20" y="145" class="font-mono" font-size="9.5px" font-weight="700" fill="#166534">PORTAL: stackcalc.io/parts</text>
+      </g>
+
+      <!-- District Procurement Box -->
+      <g transform="translate(20, 205)">
+        <rect x="0" y="0" width="430" height="175" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <text x="20" y="32" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">DISTRICT &amp; CLASSROOM PROCUREMENT</text>
+        <text x="20" y="54" class="font-mono" font-size="9px" fill="#475569">• Net-30 Invoicing for US Public &amp; Private School Districts.</text>
+        <text x="20" y="74" class="font-mono" font-size="9px" fill="#475569">• Volume Classroom Bundles (10-packs &amp; 30-packs).</text>
+        <text x="20" y="94" class="font-mono" font-size="9px" fill="#475569">• Free Teacher Activity Books &amp; Lesson Blueprints.</text>
+        <text x="20" y="114" class="font-mono" font-size="9px" fill="#475569">• Title I STEM &amp; Carl D. Perkins Grant eligible.</text>
+        <text x="20" y="136" class="font-mono" font-size="9px" fill="#475569">Email: procurement@stackcalc.io</text>
+        <text x="20" y="156" class="font-mono" font-size="9.5px" font-weight="700" fill="#0284c7">stackcalc.io/schools</text>
+      </g>
+
+      <!-- 3D Video Demonstration Portal -->
+      <g transform="translate(20, 405)">
+        <rect x="0" y="0" width="430" height="205" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.2" />
+        <text x="20" y="32" class="font-mono" font-size="12px" font-weight="700" fill="#0369a1">3D INTERACTIVE VIDEO DEMOS</text>
+        <text x="20" y="54" class="font-mono" font-size="9px" fill="#475569">Scan the QR code on the back of this card (Side B) to access:</text>
+        <text x="20" y="78" class="font-mono" font-size="9px" fill="#475569">• 60fps 3D animated walkthrough of each lesson</text>
+        <text x="20" y="98" class="font-mono" font-size="9px" fill="#475569">• Interactive web 3D model with explode view</text>
+        <text x="20" y="118" class="font-mono" font-size="9px" fill="#475569">• Step-by-step calculator keystroke simulations</text>
+        <text x="20" y="138" class="font-mono" font-size="9px" fill="#475569">• Printable student worksheets and answer keys</text>
+        <text x="20" y="165" class="font-mono" font-size="9px" font-weight="700" fill="#0284c7">VIDEOS: stackcalc.io/products</text>
+        <text x="20" y="188" class="font-mono" font-size="8.5px" fill="#64748b">Designed &amp; Engineered in Mountain View, California</text>
+      </g>
+    </g>
+  </g>
+</svg>

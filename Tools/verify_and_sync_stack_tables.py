@@ -1866,6 +1866,16 @@ def audit_table(table: StackTableLocation) -> List[TableDiscrepancy]:
     if any(re.search(r"^\s*[\$`\*]*0[0-9A-Fa-f]*h[\$`\*]*\s*$", r[1].split("|")[table.col_t + 1]) for r in table.row_lines if len(r[1].split("|")) > table.col_t + 1):
         sim.base_mode = "hex"
 
+    def _is_numeric_literal_token(tok: str) -> bool:
+        try:
+            float(tok)
+            return True
+        except ValueError:
+            return bool(re.match(r"^[0-9A-Fa-f]+h$", tok))
+
+    prev_was_numeric = False
+    prev_numeric_tok = ""
+
     for line_num, raw_line in table.row_lines:
         safe_line = raw_line.replace("|x|", "__ABS_KEY__")
         cells = [c.replace("__ABS_KEY__", "|x|").strip() for c in safe_line.split("|")[1:-1]]
@@ -1873,6 +1883,42 @@ def audit_table(table: StackTableLocation) -> List[TableDiscrepancy]:
             continue
 
         keystrokes = cells[table.col_k]
+        if not (keystrokes.startswith("`") and keystrokes.endswith("`") and keystrokes.count("`") == 2):
+            discrepancies.append(
+                TableDiscrepancy(
+                    file_path=table.file_path,
+                    line_num=line_num,
+                    step_keystrokes=f"Unbackticked keystroke cell: {keystrokes!r}",
+                    reg_name="Keystrokes (Backtick Audit)",
+                    expected_val=1.0,
+                    actual_val=0.0,
+                    raw_cell=keystrokes,
+                )
+            )
+
+        toks = tokenize_keystrokes(keystrokes)
+        for tok_idx, tok in enumerate(toks):
+            if _is_numeric_literal_token(tok):
+                # Ignore two-dot fraction parts (where '.' precedes or succeeds)
+                prev_raw = toks[tok_idx - 1] if tok_idx > 0 else ""
+                if prev_was_numeric and prev_raw != ".":
+                    discrepancies.append(
+                        TableDiscrepancy(
+                            file_path=table.file_path,
+                            line_num=line_num,
+                            step_keystrokes=f"Missing {{{{key:ENTER}}}} between '{prev_numeric_tok}' and '{tok}' in {keystrokes!r}",
+                            reg_name="Keystrokes (Missing ENTER Audit)",
+                            expected_val=1.0,
+                            actual_val=0.0,
+                            raw_cell=keystrokes,
+                        )
+                    )
+                prev_was_numeric = True
+                prev_numeric_tok = tok
+            else:
+                prev_was_numeric = False
+                prev_numeric_tok = ""
+
         step_x = parse_register_cell(cells[table.col_x])
         step_y = parse_register_cell(cells[table.col_y])
         execute_keystroke_sequence(sim, keystrokes, step_x=step_x, step_y=step_y)

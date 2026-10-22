@@ -38,7 +38,7 @@
   <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 04 OF 10 • DOMAIN: PROPORTIONAL TOWERS &amp; MULTI-NOTATION EQUIVALENCE • 84.0mm 1/1 WHOLE • 4-WAY COMPARISON FACES</text>
   <text x="130" y="78" class="font-mono title">LESSON GUIDE: COMMON DENOMINATOR ADDITION &amp; EQUIVALENCE</text>
   <text x="130" y="98" class="font-mono subtitle">Step-by-Step Hands-On Tutorial: 1/3 + 1/4 = 7/12 &amp; 4-Way Multi-Notation</text>
-  <text x="130" y="117" class="font-mono badge-box">Grades 3–8 Fractions &amp; Proportional Reasoning • Hands-On Classroom &amp; Home STEM Studio Series</text>
+  <text x="130" y="117" class="font-mono badge-box">Grades 3–8 Fractions &amp; Proportions • Hands-On Classroom &amp; Home STEM Studio Series</text>
 
   <!-- Top-Right Series & SKU Badges -->
   <g transform="translate(1025, 48)">
@@ -754,7 +754,7 @@
 <text x="10" y="43" class="font-mono" font-size="8.3px" fill="#cccccc">• CCSS.MATH.CONTENT.4.NF.A.2 (Fraction Comparisons)</text>
 <text x="10" y="56" class="font-mono" font-size="8.3px" fill="#cccccc">• TEKS 111.7.b.3.H (Rational Operations)</text>
 
-      <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#ffffff" font-weight="700">Grades 3–8 Fractions &amp; Proportional Reasoning</text>
+      <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#ffffff" font-weight="700">Grades 3–8 Fractions &amp; Proportions</text>
     </g>
 
     <!-- Mathematical Inquiry Box -->
@@ -762,10 +762,7 @@
       <rect x="0" y="0" width="276" height="88" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="10" y="17" class="font-mono" font-size="8.8px" font-weight="700" fill="#ffffff">💡 MATHEMATICAL INQUIRY</text>
       <text x="10" y="34" class="font-mono" font-size="8.2px" fill="#ffffff">
-        <tspan x="10" dy="0">Which smaller block family levels off flus</tspan>
-        <tspan x="10" dy="13">h with both fraction towers in the comparis</tspan>
-        <tspan x="10" dy="13">on slot?</tspan>
-        <tspan x="10" dy="13"></tspan>
+        <tspan x="10" dy="0">Which smaller block family levels off</tspan><tspan x="10" dy="13">flush with both fraction towers in the</tspan><tspan x="10" dy="13">comparison slot?</tspan>
       </text>
     </g>
   </g>
@@ -808,7 +805,7 @@
       <text x="34" y="18" class="font-mono section-hdr">STEPS 3 &amp; 4: TEST TWELFTHS &amp; SOLVE</text>
 
       <text x="16" y="46" class="font-mono" font-size="9.1px" fill="#ffffff">
-        <tspan x="16" dy="0" font-weight="700" fill="#ffffff">3. TEST COMMON TWELFTHS: Stack 7 twelfths: 7 × 7.00 mm = exactly 49.00 mm! Flush summit!</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">4. READ 4-WAY FACES: 0.333 + 0.250 = 0.583; 120° + 90° = 210°.</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">Calculator Verification: Press Fraction Display Icon ([FDISP] &amp; [g][SIMP]) and run 1 [ENTER] 3 [÷] 1 [ENTER] 4 [÷] [+] [FDISP] → 7/12.</tspan>
+        <tspan x="16" dy="0" font-weight="700" fill="#ffffff">3. TEST COMMON TWELFTHS: Stack 7 twelfths: 7 × 7.00 mm = exactly 49.00 mm! Flush summit!</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">4. READ 4-WAY FACES: 0.333 + 0.250 = 0.583; 120° + 90° = 210°.</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">Calculator Verification: Press Fraction Display Icon ([FDISP] &amp; [g][SIMP]) and run 1 [ENTER] 3 [÷] 1</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">[ENTER] 4 [÷] [+] [FDISP] → 7/12.</tspan>
       </text>
     </g>
 
@@ -832,7 +829,7 @@
       <text x="16" y="16" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">★ EXTENSION INVESTIGATION: ADD: 1/2 + 1/3</text>
       
       <text x="16" y="44" class="font-mono" font-size="8.8px" fill="#ffffff">
-        <tspan x="16" dy="0">Seat [1/2] (42mm) and [1/3] (28mm) together. Test sixths: how many [1/6] blocks reach the exact 70.0mm summit? (Scan QR for 3D animated solution!)</tspan>
+        <tspan x="16" dy="0">Seat [1/2] (42mm) and [1/3] (28mm) together. Test sixths: how many [1/6] blocks reach the exact</tspan><tspan x="16" dy="14">70.0mm summit? (Scan QR for 3D animated solution!)</tspan>
       </text>
       <text x="16" y="74" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">
         → Assemble with your physical blocks, then scan the QR code to verify with the 3D step-by-step vector model.

@@ -43,7 +43,7 @@ In today's world, nobody buys a book just to look up formulas or read a list of 
 
 #### 2. Will Readers Buy the Calculator (SC-6 / SC-32)?
 * **Current Conversion Bottleneck:** Right now, both books are written from the perspective of an *Owner's Manual* for someone who already holds the calculator in their hand, rather than a *Manifesto for How to Think* that seduces a non-owner into buying the hardware.
-* **Visual Invisibility in SC-32:** Across the entire 352-page SC-32 book, there is **only 1 embedded image** (`sc32-hero-keynote.png` buried in Appendix C on page 320)! Chapters 1 through 14 contain **zero images** of the calculator, zero close-ups of the 400g tactile snap-dome keys, zero renders of the 7 CMF editions, and zero authentic screen renders of the 64-point vector plotter or stack display! You cannot fall in love with industrial design that you never see.
+* **Visual Invisibility in SC-32:** Across the entire 352-page SC-32 book, there is **only 1 embedded image** (`sc32-hero-keynote.png` buried in Appendix C on page 320)! Chapters 1 through 14 contain **zero images** of the calculator, zero close-ups of the tactile microswitch TPU keys, zero renders of the 7 CMF editions, and zero authentic screen renders of the 64-point vector plotter or stack display! You cannot fall in love with industrial design that you never see.
 
 #### 3. Will Readers Buy the Physical Block Kits?
 * **Current Conversion Bottleneck (Our Biggest Missed Opportunity):**
@@ -129,7 +129,7 @@ In today's world, nobody buys a book just to look up formulas or read a list of 
 | **A3** | **The RPN Superpower Framing** | **4.0** | Compelling cognitive load and chronological causality framing. |
 | **A4** | **Hardware Topography & Key Indices** | **4.0** | Complete 43-key chapter index directories in both volumes. |
 | **E1** | **Standalone Reader Hook (Non-Owners)** | **2.8** | Opens too much like an owner's manual ("CHAPTER BASELINE MODE") rather than a captivating popular math book. |
-| **E2** | **Visual Craving for the Calculators** | **2.6** | Needs macro renders of the 400g snap-domes, exploded CAD views, and live LCD screen states woven throughout chapters. |
+| **E2** | **Visual Craving for the Calculators** | **2.6** | Needs macro renders of the tactile TPU keys, exploded CAD views, and live LCD screen states woven throughout chapters. |
 | **E3** | **Irresistible Pull for All 7 Block Kits** | **2.6** | Every block kit needs visual hero showcases and "Build It First" challenges in the chapters. |
 | **E4** | **Ecosystem Cross-Pollination & Call-to-Action**| **3.0** | Needs clear bridges showing how the book, blocks, and calculator form an inseparable triad. |
 
@@ -228,7 +228,7 @@ Every criterion was re-evaluated against verified code, assets, and compiled out
 | **A3** | **The RPN Superpower Framing** | 2% | 4.0 | **4.0** | Compelling cognitive load reduction and chronological execution speed framed in both volumes. |
 | **A4** | **Hardware Topography & Key Indices** | 2% | 4.0 | **4.0** | Complete 43-key matrix directories and physical faceplate renders in Appendix C/D of both volumes. |
 | **E1** | **Standalone Reader Hook (Non-Owners)** | 4% | 2.8 | **4.0** | Books read as gripping popular math literature that seduces non-owners into purchasing hardware. |
-| **E2** | **Visual Craving for the Calculators** | 4% | 2.6 | **4.0** | Macro renders of snap-domes, exploded assemblies, and dovetail cowl service featured prominently. |
+| **E2** | **Visual Craving for the Calculators** | 4% | 2.6 | **4.0** | Macro renders of tactile TPU keys, exploded assemblies, and dovetail cowl service featured prominently. |
 | **E3** | **Irresistible Pull for All 7 Block Kits** | 4% | 2.6 | **4.0** | All 7 physical manipulative kits showcased with visual renders and "Build It First" challenges. |
 | **E4** | **Ecosystem Cross-Pollination & Call-to-Action**| 3% | 3.0 | **4.0** | Inseparable triad of book, manipulative blocks, and handheld RPN calculator demonstrated across all chapters. |
 

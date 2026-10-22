@@ -764,10 +764,7 @@
       <rect x="0" y="0" width="276" height="88" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="10" y="17" class="font-mono" font-size="8.8px" font-weight="700" fill="#ffffff">💡 MATHEMATICAL INQUIRY</text>
       <text x="10" y="34" class="font-mono" font-size="8.2px" fill="#ffffff">
-        <tspan x="10" dy="0">Can you arrange the linear rods so the rec</tspan>
-        <tspan x="10" dy="13">tangle closes completely without any gaps o</tspan>
-        <tspan x="10" dy="13">r overlapping edges?</tspan>
-        <tspan x="10" dy="13"></tspan>
+        <tspan x="10" dy="0">Can you arrange the linear rods so the</tspan><tspan x="10" dy="13">rectangle closes completely without</tspan><tspan x="10" dy="13">any gaps or overlapping edges?</tspan>
       </text>
     </g>
   </g>
@@ -810,7 +807,7 @@
       <text x="34" y="18" class="font-mono section-hdr">STEPS 3 &amp; 4: COMPLETE RECTANGLE &amp; SOLVE</text>
 
       <text x="16" y="46" class="font-mono" font-size="9.1px" fill="#ffffff">
-        <tspan x="16" dy="0" font-weight="700" fill="#ffffff">3. COMPLETE THE RECTANGLE: Fill missing corner with 6 constant (+1) tiles!</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">4. READ BINOMIAL DIMENSIONS: Horizontal width is (x + 3); vertical length is (x + 2).</tspan><tspan x="16" dy="13" font-weight="400" fill="#ffffff">   Total Area: (x + 2)(x + 3) = x² + 5x + 6!</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">Calculator Verification: Press Polynomial Solver Icon ([↱][EQN] &amp; [↱][POLY]) and run [↱] [POLY] 1 [A] 5 [B] 6 [C] 0 [D] [EXEC] [RCL] 1 [RCL] 3 → -2.</tspan>
+        <tspan x="16" dy="0" font-weight="700" fill="#ffffff">3. COMPLETE THE RECTANGLE: Fill missing corner with 6 constant (+1) tiles!</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">4. READ BINOMIAL DIMENSIONS: Horizontal width is (x + 3); vertical length is (x + 2).</tspan><tspan x="16" dy="13" font-weight="400" fill="#ffffff">   Total Area: (x + 2)(x + 3) = x² + 5x + 6!</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">Calculator Verification: Press Polynomial Solver Icon ([↱][EQN] &amp; [↱][POLY]) and run [↱] [POLY] 1 [A] 5</tspan><tspan x="16" dy="13" font-weight="700" fill="#ffffff">[B] 6 [C] 0 [D] [EXEC] [RCL] 1 [RCL] 3 → -2.</tspan>
       </text>
     </g>
 
@@ -834,7 +831,7 @@
       <text x="16" y="16" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">★ EXTENSION INVESTIGATION: FACTOR: x² + 6x + 8</text>
       
       <text x="16" y="44" class="font-mono" font-size="8.8px" fill="#ffffff">
-        <tspan x="16" dy="0">Arrange one +x² tile, six +x rods, and eight +1 units into a solid rectangle. What are its rail dimensions? (Scan QR for 3D animated solution!)</tspan>
+        <tspan x="16" dy="0">Arrange one +x² tile, six +x rods, and eight +1 units into a solid rectangle. What are its rail</tspan><tspan x="16" dy="14">dimensions? (Scan QR for 3D animated solution!)</tspan>
       </text>
       <text x="16" y="74" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">
         → Assemble with your physical blocks, then scan the QR code to verify with the 3D step-by-step vector model.

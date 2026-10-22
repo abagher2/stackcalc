@@ -66,7 +66,6 @@ def normalize_key_token(raw: str) -> str:
         "x≶y": "x⇄y",
         "123": "PV",
         "CLK": "🕒",
-        "QUIZ": "?",
         "<--": "<-",
         "&lt;-": "<-",
         "&lt;--": "<-",
@@ -252,9 +251,12 @@ class KeyRegistry:
                 rec_entry = self.entries["▸y,x"]
                 for alias in ("->REC", "→REC", "▸REC", "->y,x", "→y,x"):
                     self.entries[alias] = rec_entry
+        else:
+            if "?" in self.entries:
+                self.entries["QUIZ"] = self.entries["?"]
 
     def resolve(self, key_name: str) -> KeyEntry:
-        clean = key_name.strip()
+        clean = key_name.strip().replace("&#124;", "|")
         norm = normalize_key_token(clean)
         for candidate in (clean, norm, clean.upper(), norm.upper()):
             if candidate in self.entries:
@@ -464,13 +466,20 @@ def generate_bibliography_markdown(volume: str, target_format: str = "web", file
                 else:
                     cited_str = ", ".join(lbl for lbl, _ in refs_sorted)
             else:
-                cited_str = "*Foundational reference & curriculum background*"
+                cited_str = "*Foundational reference & curriculum background*" if target_format == "web" else "Foundational reference & curriculum background"
 
-            pub_part = f" *{pub}*." if pub else ""
-            lines.append(f"<a id=\"cite-{eid}\"></a>")
-            lines.append(f"**[{eid}] {author} ({year})** — *{title}*.{pub_part}")
-            lines.append(f"> **Annotation:** {annotation}  ")
-            lines.append(f"> **Cited in Chapters:** {cited_str}")
+            pub_clean = pub.replace("--", "–") if pub else ""
+            title_clean = title.replace("--", "–") if title else ""
+            pub_part = f" *{pub_clean}*." if pub_clean else ""
+            if target_format == "web":
+                lines.append(f"<a id=\"cite-{eid}\"></a>")
+                lines.append(f"**[{eid}] {author} ({year})** — *{title}*.{pub_part}")
+                lines.append(f"> **Annotation:** {annotation}  ")
+                lines.append(f"> **Cited in Chapters:** {cited_str}")
+            else:
+                lines.append(f"**{author} ({year})** — *{title_clean}*.{pub_part}")
+                lines.append(f"> {annotation}  ")
+                lines.append(f"> *Cited in: {cited_str}*")
             lines.append("")
 
     if other_entries:
@@ -491,23 +500,30 @@ def generate_bibliography_markdown(volume: str, target_format: str = "web", file
                 else:
                     cited_str = ", ".join(lbl for lbl, _ in refs_sorted)
             else:
-                cited_str = "*Foundational reference & curriculum background*"
+                cited_str = "*Foundational reference & curriculum background*" if target_format == "web" else "Foundational reference & curriculum background"
 
-            lines.append(f"<a id=\"cite-{eid}\"></a>")
-            lines.append(f"**[{eid}] {author} ({year})** — *{title}*.")
-            lines.append(f"> **Annotation:** {annotation}  ")
-            lines.append(f"> **Cited in Chapters:** {cited_str}")
+            title_clean = title.replace("--", "–") if title else ""
+            if target_format == "web":
+                lines.append(f"<a id=\"cite-{eid}\"></a>")
+                lines.append(f"**[{eid}] {author} ({year})** — *{title}*.")
+                lines.append(f"> **Annotation:** {annotation}  ")
+                lines.append(f"> **Cited in Chapters:** {cited_str}")
+            else:
+                lines.append(f"**{author} ({year})** — *{title_clean}*.")
+                lines.append(f"> {annotation}  ")
+                lines.append(f"> *Cited in: {cited_str}*")
             lines.append("")
 
-    bibtex_content = get_bibtex_blocks_for_volume(volume)
-    if bibtex_content:
-        vol_label = "StackCalc SC-32 Scientific" if volume == "sc32" else "StackCalc SC-6 Elementary"
-        lines.append(f"### Complete BibTeX Catalog ({vol_label})")
-        lines.append("")
-        lines.append("```bibtex")
-        lines.append(bibtex_content)
-        lines.append("```")
-        lines.append("")
+    if target_format == "web":
+        bibtex_content = get_bibtex_blocks_for_volume(volume)
+        if bibtex_content:
+            vol_label = "StackCalc SC-32 Scientific" if volume == "sc32" else "StackCalc SC-6 Elementary"
+            lines.append(f"### Complete BibTeX Catalog ({vol_label})")
+            lines.append("")
+            lines.append("```bibtex")
+            lines.append(bibtex_content)
+            lines.append("```")
+            lines.append("")
 
     return "\n".join(lines)
 
@@ -677,7 +693,7 @@ ICON_REGISTRY: Dict[str, dict] = {
         "kit": "QUEST-01",
         "key": "?",
         "model": "sc6",
-        "label": "Tutorial & Quiz Mode Icon ([↰][C] (?) Question Mark in a Circle)",
+        "label": "Question Mark in a Circle Tutorial Icon ([f][?])",
     },
 }
 
@@ -713,24 +729,35 @@ def _expand_only_keys(markdown: str, is_sc32: bool, file_path: Optional[Path] = 
     def _repl(match: re.Match) -> str:
         kind = match.group(1)
         raw_name = match.group(2).strip()
-        try:
-            entry = registry.resolve(raw_name)
-        except ValueError as err:
-            if not is_strict_manual:
-                try:
-                    entry = get_registry(not is_sc32).resolve(raw_name)
-                except ValueError:
+        if raw_name.lower().startswith("sc6:"):
+            entry = get_registry(False).resolve(raw_name[4:].strip())
+        elif raw_name.lower().startswith("sc32:"):
+            entry = get_registry(True).resolve(raw_name[5:].strip())
+        else:
+            try:
+                entry = registry.resolve(raw_name)
+            except ValueError as err:
+                if not is_strict_manual:
+                    try:
+                        entry = get_registry(not is_sc32).resolve(raw_name)
+                    except ValueError:
+                        loc = f" in {file_path}" if file_path else ""
+                        raise ValueError(f"{err}{loc}") from err
+                else:
                     loc = f" in {file_path}" if file_path else ""
                     raise ValueError(f"{err}{loc}") from err
-            else:
-                loc = f" in {file_path}" if file_path else ""
-                raise ValueError(f"{err}{loc}") from err
         if kind == "keycap":
             return entry.format_keycap()
         return entry.format_keystroke()
 
     expanded = KEY_MACRO_PATTERN.sub(_repl, markdown)
     expanded = re.sub(r"\[(↰|↱|f|g)\](\s*`?\s*`?)\[\1\]", r"[\1]\2", expanded)
+    expanded = re.sub(
+        r"(\[(↰|↱|f|g)\]`?(?:\s+(?:followed\s+by|then|and(?:\s+press|\s+tap)?)\s+)`?)\[\2\]\s*",
+        r"\1",
+        expanded,
+        flags=re.IGNORECASE,
+    )
     return expanded
 
 
@@ -1145,7 +1172,14 @@ def process_manual_markdown(
     """
     if is_sc32 is None:
         is_sc32 = "sc32" in str(file_path)
-    step0 = expand_bibliography_macros(markdown, file_path=file_path, target_format=target_format)
+    # Strip any GitHub-style [!NOTE]/[!TIP]/[!IMPORTANT]/[!WARNING] alert markers so they never render literally in MkDocs
+    cleaned_md = re.sub(
+        r"^(\s*>\s*)\[!(?:NOTE|TIP|IMPORTANT|WARNING|CAUTION|CHECKPOINT|TEACHER)\]\s*\n?",
+        lambda m: "" if m.group(0).endswith("\n") else m.group(1),
+        markdown,
+        flags=re.MULTILINE,
+    )
+    step0 = expand_bibliography_macros(cleaned_md, file_path=file_path, target_format=target_format)
     step1 = auto_number_headings(step0, file_path)
     step2 = sync_cross_reference_anchors(step1, file_path, is_sc32=is_sc32)
     step3 = expand_key_macros(step2, is_sc32=is_sc32, file_path=file_path, target_format=target_format)

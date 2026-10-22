@@ -38,7 +38,7 @@
   <text x="130" y="55" class="font-mono teacher-anchor">SERIES 1 • CARD 10 OF 10 • DOMAIN: MULTI-METHOD MASTERY &amp; DAILY FLUENCY • 60x +10 QUARTER-BLOCK TOKENS • SOCKETS 1–10 &amp; 100</text>
   <text x="130" y="78" class="font-mono title">DAILY PROTOCOL: 10 QUESTIONS, 2 WAYS &amp; THE 100 MASTERY TOWER</text>
   <text x="130" y="98" class="font-mono subtitle">How to Use Your SC-6 Quest Scoreboard with Daily Practice &amp; Left-Shift [C] (?) Tutorial Mode</text>
-  <text x="130" y="117" class="font-mono badge-box">Grades 3–8 Daily Math &amp; Big Ideas Supplement • Hands-On Classroom &amp; Home STEM Studio Series</text>
+  <text x="130" y="117" class="font-mono badge-box">Grades 3–8 Daily Math Fluency • Hands-On Classroom &amp; Home STEM Studio Series</text>
 
   <!-- Top-Right Series & SKU Badges -->
   <g transform="translate(1025, 48)">
@@ -787,7 +787,7 @@
 <text x="10" y="43" class="font-mono" font-size="8.3px" fill="#475569">• CCSS.MATH.PRACTICE.MP5 (Use Strategic Tools)</text>
 <text x="10" y="56" class="font-mono" font-size="8.3px" fill="#475569">• SC-6 Built-In Scoring (+10 / +20 / 100 Mastery)</text>
 
-      <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 3–8 Daily Math &amp; Big Ideas Supplement</text>
+      <text x="10" y="78" class="font-mono" font-size="8.3px" fill="#059669" font-weight="700">Grades 3–8 Daily Math Fluency</text>
     </g>
 
     <!-- Mathematical Inquiry Box -->
@@ -795,10 +795,7 @@
       <rect x="0" y="0" width="276" height="88" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1" />
       <text x="10" y="17" class="font-mono" font-size="8.8px" font-weight="700" fill="#0369a1">💡 MATHEMATICAL INQUIRY</text>
       <text x="10" y="34" class="font-mono" font-size="8.2px" fill="#0f172a">
-        <tspan x="10" dy="0">Can you verify your textbook calculation u</tspan>
-        <tspan x="10" dy="13">sing physical blocks or the SC-6 RPN stack </tspan>
-        <tspan x="10" dy="13">to earn a second +10 token?</tspan>
-        <tspan x="10" dy="13"></tspan>
+        <tspan x="10" dy="0">Can you verify your textbook</tspan><tspan x="10" dy="13">calculation using physical blocks or</tspan><tspan x="10" dy="13">the SC-6 RPN stack to earn a second</tspan><tspan x="10" dy="13">+10 token?</tspan>
       </text>
     </g>
   </g>
@@ -841,7 +838,7 @@
       <text x="34" y="18" class="font-mono section-hdr">STEPS 3 &amp; 4: BUILD THE [100] MASTERY TOWER</text>
 
       <text x="16" y="46" class="font-mono" font-size="9.1px" fill="#0f172a">
-        <tspan x="16" dy="0" font-weight="700" fill="#0284c7">3. TRADE 10 TOKENS FOR 100: Every 10 tokens (100 points), stack them into a 10-block tower in Socket [100]!</tspan><tspan x="16" dy="13" font-weight="700" fill="#059669">4. LAUNCH SC-6 QUEST MODE: Press Left-Shift [f] then [C] (?) matching the Question Mark in a Circle socket.</tspan><tspan x="16" dy="13" font-weight="700" fill="#0284c7">Calculator Verification: Press Tutorial &amp; Quiz Mode Icon ([↰][C] (?) Question Mark in a Circle) and run 8 [ENTER] 2 [+] 5 [+] [▦] → 15.</tspan>
+        <tspan x="16" dy="0" font-weight="700" fill="#0284c7">3. TRADE 10 TOKENS FOR 100: Every 10 tokens (100 points), stack them into a 10-block tower in Socket</tspan><tspan x="16" dy="13" font-weight="700" fill="#0284c7">[100]!</tspan><tspan x="16" dy="13" font-weight="700" fill="#059669">4. LAUNCH SC-6 QUEST MODE: Press Left-Shift [f] then [C] (?) matching the Question Mark in a Circle</tspan><tspan x="16" dy="13" font-weight="700" fill="#059669">socket.</tspan><tspan x="16" dy="13" font-weight="700" fill="#0284c7">Calculator Verification: Press Question Mark in a Circle Tutorial Icon ([f][?]) and run 8 [ENTER] 2 [+] 5</tspan><tspan x="16" dy="13" font-weight="700" fill="#0284c7">[+] [▦] → 15.</tspan>
       </text>
     </g>
 
@@ -865,7 +862,7 @@
       <text x="16" y="16" class="font-mono" font-size="9.5px" font-weight="700" fill="#0369a1">★ EXTENSION INVESTIGATION: EARN A 200-POINT DOUBLE MASTERY DAY</text>
       
       <text x="16" y="44" class="font-mono" font-size="8.8px" fill="#0f172a">
-        <tspan x="16" dy="0">Solve all 10 daily problems using your 1st Way (100 pts), then verify 10 problems using a 2nd Way to stack 20 tokens (200 pts total)!</tspan>
+        <tspan x="16" dy="0">Solve all 10 daily problems using your 1st Way (100 pts), then verify 10 problems using a 2nd</tspan><tspan x="16" dy="14">Way to stack 20 tokens (200 pts total)!</tspan>
       </text>
       <text x="16" y="74" class="font-mono" font-size="8.5px" font-weight="700" fill="#059669">
         → Assemble with your physical blocks, then scan the QR code to verify with the 3D step-by-step vector model.

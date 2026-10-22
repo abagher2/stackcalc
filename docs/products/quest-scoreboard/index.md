@@ -194,8 +194,11 @@ hide:
 
       <!-- Quick Subpage & Curriculum Links -->
       <div class="flex flex-wrap gap-2 my-4">
+        <a href="../../downloads/worksheets/sc6_quest_token_scoring_guide.pdf" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/30 hover:bg-slate-700">
+          &bull; Free 1-Page Token Scoring Guide (PDF) &darr;
+        </a>
         <a href="../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-cyan-400 border border-cyan-500/30 hover:bg-slate-700">
-          &bull; Free 91-Page Student Workbook (PDF) &darr;
+          &bull; Free 102-Page Student Workbook (PDF) &darr;
         </a>
         <a href="../../downloads/worksheets/bigideas_middle_school_sc6_teacher_coach_guide.pdf" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
           &bull; Free 10-Page Coach's Guide (PDF) &darr;
@@ -288,7 +291,7 @@ hide:
           <li><strong>Units 1&ndash;2:</strong> Number Sense, Order of Operations, Prime Factorization (<code>COUNT-01</code>, <code>PRIME-01</code>)</li>
           <li><strong>Units 3&ndash;4:</strong> Fractions, Mixed Numbers &amp; Decimal Place Value (<code>FRAC-01</code>, <code>PLACE-01</code>)</li>
           <li><strong>Units 5&ndash;6:</strong> Ratios, Rates, Percents &amp; Integer Zero-Pairs (<code>FRAC-01</code>, <code>BASE-10</code>, <code>ALGB-01</code>)</li>
-          <li><strong>Units 7&ndash;8:</strong> Algebraic Expressions, One-Step Equations &amp; Inequalities (<code>ALGB-01</code>, <code>RACK-01</code>)</li>
+          <li><strong>Units 7&ndash;8:</strong> Equations, Inequalities, Surface Area &amp; Volume (<code>ALGB-01</code>, <code>COUNT-01</code>)</li>
           <li><strong>Units 9&ndash;10:</strong> Polygons, Area, Volume, Surface Area &amp; Statistics (<code>COUNT-01</code>, <code>TIME-01</code>, <code>PROB-01</code>)</li>
         </ul>
       </div>

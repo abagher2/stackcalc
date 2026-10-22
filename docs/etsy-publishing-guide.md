@@ -239,7 +239,7 @@ Before sealing each mailer, warehouse fulfillment must execute the specific chec
   - [ ] 1x Power & Safety Slip: *"Requires 1x CR2032 coin cell (battery omitted per USPS/ICAO air safety)"*
 - **Pre-Sealing QA Gate:**
   - [ ] Sliding faceplate dovetail glide test (smooth engagement, no binding)
-  - [ ] All 43 tactile snap-domes actuate cleanly with distinct audible snap
+  - [ ] All 43 tactile switches actuate cleanly under sculpted TPU keys
   - [ ] ST7567A transflective LCD bezel centered in cowl aperture
   - [ ] Underside inspection plaque verified: Mirrored `Space Mono Bold` deboss on chassis bottom
 
@@ -266,7 +266,7 @@ Before sealing each mailer, warehouse fulfillment must execute the specific chec
 - **Packaging:** Profile B Mailer ($8 \times 6 \times 3\text{ in}$ Heavyweight Mailer Box)
 - **Target Weight:** ~290 g (10.2 oz) packed
 - **Physical Contents:**
-  - [ ] 1x SC-6 Elementary Calculator (Impact-resistant Elegoo Space Gray / Midnight Navy PLA 2.0+ chassis, Slate Gray sliding cowl, tactile snap-dome keypad)
+  - [ ] 1x SC-6 Elementary Calculator (Impact-resistant Elegoo Space Gray / Midnight Navy PLA 2.0+ chassis, Slate Gray sliding cowl, tactile TPU keypad)
   - [ ] 1x 2-Piece Folding Desk Wedge Stand
   - [ ] **NO BATTERY VERIFICATION:** Confirmed battery cavity is empty.
 - **Printed Collateral & Cards:**

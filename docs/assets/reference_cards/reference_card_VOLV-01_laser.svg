@@ -8,9 +8,9 @@
       .badge-sku { font-size: 12.5px; font-weight: 700; fill: #ffffff; }
       .badge-rev { font-size: 12px; font-weight: 700; fill: #ffffff; }
       .badge-box { font-size: 10.5px; font-weight: 400; fill: #cccccc; }
-      .section-hdr { font-size: 11.5px; font-weight: 700; fill: #ffffff; letter-spacing: 0.8px; text-transform: uppercase; }
-      .th { font-size: 10px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
-      .td { font-size: 10px; font-weight: 400; fill: #ffffff; }
+      .section-hdr { font-size: 11px; font-weight: 700; fill: #ffffff; letter-spacing: 0.8px; text-transform: uppercase; }
+      .th { font-size: 9px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
+      .td { font-size: 8.5px; font-weight: 400; fill: #ffffff; }
       .footer-txt { font-size: 9.3px; font-weight: 400; fill: #cccccc; }
     </style>
   </defs>
@@ -106,8 +106,14 @@
 <text x="881.5" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
 
     <g transform="translate(887.5, 98.0)">
+      <rect x="0" y="0" width="43.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+      <text x="21.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">10·Rack</text>
+    </g>
+<text x="932.0" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
+
+    <g transform="translate(938.0, 98.0)">
       <rect x="0" y="0" width="48.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="24.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">10·SC-32</text>
+      <text x="24.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">11·SC-32</text>
     </g>
 
   <!-- Top-Right Series & SKU Badges -->
@@ -121,38 +127,38 @@
 
   <!-- COLUMN 1: WHAT IS THIS MANIPULATIVE? -->
   <g transform="translate(35, 148)">
-    <rect x="0" y="0" width="405" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="405" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="370" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="370" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="16" y="22" class="font-mono section-hdr">1. WHAT IS THIS MANIPULATIVE?</text>
 
     <!-- Headline -->
-    <text x="16" y="56" class="font-mono" font-size="11.5px" font-weight="700" fill="#ffffff">CIRCULAR COORDINATES &amp; DYNAMIC PROJECTIONS</text>
+    <text x="16" y="52" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">CIRCULAR COORDINATES &amp; DYNAMIC PROJECTIONS</text>
 
     <!-- Concept principle text -->
-    <text x="16" y="76" class="font-mono" font-size="9.3px" fill="#ffffff">
-      <tspan x="16" dy="0" font-weight="400" fill="#ffffff">Trigonometry is not memorizing tables of static right triangles.</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">On a unit circle of radius r = 1, circular coordinates are trig functions:</tspan><tspan x="16" dy="15" font-weight="700" fill="#ffffff">   (X, Y) = (cos θ, sin θ)</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">Rotating the volvelle disc projects an angle θ directly onto</tspan><tspan x="16" dy="15" font-weight="400" fill="#ffffff">horizontal cosine and vertical sine windows with continuous precision!</tspan>
+    <text x="16" y="66" class="font-mono" font-size="8.8px" fill="#ffffff">
+      <tspan x="16" dy="0" font-weight="400" fill="#ffffff">Trigonometry is circular motion, not triangles.</tspan><tspan x="16" dy="12" font-weight="400" fill="#ffffff">On unit circle (r = 1), coordinates are trig values:</tspan><tspan x="16" dy="12" font-weight="700" fill="#ffffff">   (X, Y) = (cos θ, sin θ)</tspan><tspan x="16" dy="12" font-weight="400" fill="#ffffff">Rotating disc projects angle θ onto cos/sin!</tspan>
     </text>
 
     <!-- Calibration Datum Box -->
-    <g transform="translate(14, 158)">
-      <rect x="0" y="0" width="377" height="72" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="18" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">CALIBRATED 84.00 MM RADIUS DATUM</text>
-      <text x="12" y="34" class="font-mono" font-size="8.8px" fill="#cccccc">• Outer Ring Radius: 84.00 mm ⌀ (Matches Fraction Studio 1 Whole)</text>
-<text x="12" y="48" class="font-mono" font-size="8.8px" fill="#cccccc">• Dual-Scale Engraving: Degrees (0°–360°) and Radians (0–2π) aligned</text>
-<text x="12" y="62" class="font-mono" font-size="8.8px" fill="#cccccc">• Special Triangles: Exact radical cutouts for 30°, 45°, and 60°</text>
-<text x="12" y="76" class="font-mono" font-size="8.8px" fill="#cccccc">• Center Bushing: 4.00 mm solid brass precision low-friction rivet</text>
+    <g transform="translate(14, 114)">
+      <rect x="0" y="0" width="342" height="84" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="18" class="font-mono" font-size="9.2px" font-weight="700" fill="#ffffff">CALIBRATED 84.00 MM RADIUS DATUM</text>
+      <text x="12" y="32" class="font-mono" font-size="8.2px" fill="#cccccc">• Outer Ring: 84.00 mm ⌀ (Matches Fraction 1 Whole)</text>
+<text x="12" y="44" class="font-mono" font-size="8.2px" fill="#cccccc">• Dual Scales: Degrees (0°–360°) and Radians (0–2π)</text>
+<text x="12" y="56" class="font-mono" font-size="8.2px" fill="#cccccc">• Special Angles: Exact cutouts for 30°, 45°, and 60°</text>
+<text x="12" y="68" class="font-mono" font-size="8.2px" fill="#cccccc">• Center Bushing: 4.00 mm solid brass precision rivet</text>
 
     </g>
 
     <!-- Lid Feature -->
-    <text x="16" y="252" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">DESK DISPLAY STAND LID &amp; CADDY BAY</text>
-    <text x="16" y="270" class="font-mono" font-size="9.3px" fill="#cccccc">
-      <tspan x="16" dy="0">The 7U storage lid features an angled desktop easel stand with a</tspan><tspan x="16" dy="14">precision alignment cursor. Stand the volvelle on your desk while</tspan><tspan x="16" dy="14">working through trigonometry, calculus, and physics assignments!</tspan>
+    <text x="16" y="210" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">DESK DISPLAY STAND LID &amp; CADDY BAY</text>
+    <text x="16" y="224" class="font-mono" font-size="8.5px" fill="#cccccc">
+      <tspan x="16" dy="0">Lid features desktop easel with alignment cursor.</tspan><tspan x="16" dy="12">Stand volvelle upright while solving problems!</tspan>
     </text>
 
     <!-- Visual Diagram of Geometry / Stacking -->
-    <g transform="translate(14, 318)">
-      <rect x="0" y="0" width="377" height="144" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <g transform="translate(14, 324)">
+      <rect x="0" y="0" width="342" height="138" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       
       <text x="12" y="18" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">UNIT CIRCLE: 30° -> (cos = √3/2 ≈ 0.866, sin = 1/2)</text>
       <line x1="30" y1="80" x2="160" y2="80" stroke="#ffffff" stroke-width="1.2" />
@@ -175,110 +181,107 @@
   </g>
 
   <!-- COLUMN 2: KIT PARTS INVENTORY -->
-  <g transform="translate(455, 148)">
-    <rect x="0" y="0" width="385" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="385" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+  <g transform="translate(420, 148)">
+    <rect x="0" y="0" width="450" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="450" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="16" y="22" class="font-mono section-hdr">2. KIT PARTS INVENTORY (6 PIECES)</text>
 
     <!-- Table Header -->
     <text x="16" y="52" class="font-mono th">COMPONENT</text>
-    <text x="125" y="52" class="font-mono th">QTY</text>
-    <text x="160" y="52" class="font-mono th">SPEC / DIMENSION</text>
-    <text x="275" y="52" class="font-mono th">PALETTE COLOR</text>
-    <line x1="12" y1="58" x2="373" y2="58" stroke="#ffffff" stroke-width="1" />
+    <text x="150" y="52" class="font-mono th">QTY</text>
+    <text x="190" y="52" class="font-mono th">SPEC / DIMENSION</text>
+    <text x="340" y="52" class="font-mono th">PALETTE COLOR</text>
+    <line x1="12" y1="58" x2="438" y2="58" stroke="#ffffff" stroke-width="1" />
 
     
     <text x="16" y="74" class="font-mono td" font-weight="700">Base Unit Circle Disc</text>
-    <text x="125" y="74" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="74" class="font-mono td">84.0 mm ⌀ (Deg &amp; Rad)</text>
-    <text x="275" y="74" class="font-mono td" fill="#cccccc">High-Contrast White</text>
-    <line x1="12" y1="80" x2="373" y2="80" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="74" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="74" class="font-mono td">84.0 mm ⌀ (Deg &amp; Rad)</text>
+    <text x="340" y="74" class="font-mono td" fill="#cccccc">High-Contrast White</text>
+    <line x1="12" y1="80" x2="438" y2="80" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="97" class="font-mono td" font-weight="700">Rotating Radian Overlay</text>
-    <text x="125" y="97" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="97" class="font-mono td">Transparent Radial Cursor</text>
-    <text x="275" y="97" class="font-mono td" fill="#cccccc">Laser-Etched PETG</text>
-    <line x1="12" y1="103" x2="373" y2="103" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="97" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="97" class="font-mono td">Transparent Radial Cursor</text>
+    <text x="340" y="97" class="font-mono td" fill="#cccccc">Laser-Etched PETG</text>
+    <line x1="12" y1="103" x2="438" y2="103" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="120" class="font-mono td" font-weight="700">Projection Cursor Arm</text>
-    <text x="125" y="120" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="120" class="font-mono td">X/Y Coordinate Windows</text>
-    <text x="275" y="120" class="font-mono td" fill="#cccccc">Clear Polycarbonate</text>
-    <line x1="12" y1="126" x2="373" y2="126" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="120" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="120" class="font-mono td">X/Y Coordinate Windows</text>
+    <text x="340" y="120" class="font-mono td" fill="#cccccc">Clear Polycarbonate</text>
+    <line x1="12" y1="126" x2="438" y2="126" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="143" class="font-mono td" font-weight="700">Center Brass Pivot</text>
-    <text x="125" y="143" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="143" class="font-mono td">Low-Friction Precision Bushing</text>
-    <text x="275" y="143" class="font-mono td" fill="#cccccc">Solid Brass</text>
-    <line x1="12" y1="149" x2="373" y2="149" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="143" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="143" class="font-mono td">Low-Friction Precision Bushing</text>
+    <text x="340" y="143" class="font-mono td" fill="#cccccc">Solid Brass</text>
+    <line x1="12" y1="149" x2="438" y2="149" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="166" class="font-mono td" font-weight="700">Stand &amp; Caddy Lid</text>
-    <text x="125" y="166" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="166" class="font-mono td">Angled Desk Display Stand</text>
-    <text x="275" y="166" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
-    <line x1="12" y1="172" x2="373" y2="172" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="166" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="166" class="font-mono td">Angled Desk Display Stand</text>
+    <text x="340" y="166" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
+    <line x1="12" y1="172" x2="438" y2="172" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
     <text x="16" y="189" class="font-mono td" font-weight="700">3x1 Storage Bin</text>
-    <text x="125" y="189" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="160" y="189" class="font-mono td">49.0 mm Height (7U)</text>
-    <text x="275" y="189" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
-    <line x1="12" y1="195" x2="373" y2="195" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+    <text x="150" y="189" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
+    <text x="190" y="189" class="font-mono td">49.0 mm Height (7U)</text>
+    <text x="340" y="189" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
+    <line x1="12" y1="195" x2="438" y2="195" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
 
 
     <!-- Total Pieces Summary -->
-    <text x="16" y="334" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">TOTAL: 4 Volvelle Components + Storage Bin + Stand Lid = 6 Parts</text>
+    <text x="16" y="334" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">TOTAL: 4 Volvelle Components + Storage Bin + Stand Lid = 6 Parts</text>
 
     <!-- Palette Box -->
     <g transform="translate(12, 350)">
-      <rect x="0" y="0" width="361" height="112" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">QUADRANT SIGN CONVENTION</text>
-      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">• Quadrant I (+, +): All functions positive (0° to 90°).</text>
-<text x="12" y="53" class="font-mono" font-size="8.5px" fill="#cccccc">• Quadrant II (-, +): Sine positive, Cosine negative (90° to 180°).</text>
-<text x="12" y="68" class="font-mono" font-size="8.5px" fill="#cccccc">• Quadrant III (-, -): Tangent positive, Sine/Cos negative (180° to 270°).</text>
-<text x="12" y="83" class="font-mono" font-size="8.5px" fill="#cccccc">• Keep this reference card stored inside the box lid!</text>
+      <rect x="0" y="0" width="426" height="112" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">QUADRANT SIGN CONVENTION</text>
+      <text x="12" y="36" class="font-mono" font-size="8.3px" fill="#cccccc">• Quadrant I (+, +): All functions positive (0° to 90°).</text>
+<text x="12" y="49" class="font-mono" font-size="8.3px" fill="#cccccc">• Quadrant II (-, +): Sine positive, Cosine negative (90°–180°).</text>
+<text x="12" y="62" class="font-mono" font-size="8.3px" fill="#cccccc">• Quadrant III (-, -): Tangent positive, Sine/Cos negative.</text>
+<text x="12" y="75" class="font-mono" font-size="8.3px" fill="#cccccc">• Quadrant IV (+, -): Cosine positive, Sine negative.</text>
 
     </g>
   </g>
 
   <!-- COLUMN 3: WHY KEEP THIS REFERENCE CARD? -->
-  <g transform="translate(855, 148)">
-    <rect x="0" y="0" width="370" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="370" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+  <g transform="translate(885, 148)">
+    <rect x="0" y="0" width="340" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="340" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <text x="16" y="22" class="font-mono section-hdr">3. WHY KEEP THIS REFERENCE CARD?</text>
 
-    <!-- Reason 1: No Lost Piece Guarantee -->
+    <!-- Reason 1: No Lost Piece Guarantee / Hardware Support -->
     <g transform="translate(14, 48)">
-      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ NO LOST PIECE LEFT BEHIND</text>
-      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
-        <tspan x="12" dy="0">Classroom manipulatives get lost. Never abandon</tspan>
-        <tspan x="12" dy="13">an incomplete set! Every individual math component</tspan>
-        <tspan x="12" dy="13">is permanently stocked for single replacements.</tspan>
+      <rect x="0" y="0" width="312" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ NO LOST PIECE LEFT BEHIND</text>
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
+        <tspan x="12" dy="0">Classroom manipulatives get lost. Never abandon</tspan><tspan x="12" dy="12">an incomplete set! Every individual math component</tspan><tspan x="12" dy="12">is permanently stocked for single replacements.</tspan>
       </text>
-      <rect x="12" y="84" width="318" height="28" rx="4" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
-      <text x="171" y="98" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">Scan back QR or visit stackcalc.io/parts</text>
-      <text x="171" y="108" class="font-mono" font-size="8px" text-anchor="middle" fill="#cccccc">Order individual replacement pieces anytime</text>
+      <rect x="12" y="84" width="288" height="28" rx="4" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <text x="156" y="98" class="font-mono" font-size="8.8px" font-weight="700" text-anchor="middle" fill="#ffffff">Scan back QR or visit stackcalc.io/parts</text>
+      <text x="156" y="108" class="font-mono" font-size="7.8px" text-anchor="middle" fill="#cccccc">Order individual replacement pieces anytime</text>
     </g>
 
-    <!-- Reason 2: Self-Auditing Sockets -->
+    <!-- Reason 2: Self-Auditing Sockets / Instant Off -->
     <g transform="translate(14, 186)">
-      <rect x="0" y="0" width="342" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ 10-SECOND SELF-CHECKING PACK-UP</text>
-      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
-        <tspan x="12" dy="0">Pack-up is a built-in math game! Align the transparent cursor to</tspan><tspan x="12" dy="13">0° / 360°, slip the volvelle into its protective velvet caddy sleeve,</tspan><tspan x="12" dy="13">and lay it flat into the box recess. Snap the stand lid shut.</tspan><tspan x="12" dy="13">Lid latches firmly for silent, rattle-free carry.</tspan>
+      <rect x="0" y="0" width="312" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ 10-SECOND SELF-CHECKING PACK-UP</text>
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
+        <tspan x="12" dy="0">Pack-up is a built-in math game! Align the</tspan><tspan x="12" dy="12">transparent cursor to</tspan><tspan x="12" dy="12">0° / 360°, slip the volvelle into its</tspan><tspan x="12" dy="12">protective velvet caddy sleeve,</tspan><tspan x="12" dy="12">and lay it flat into the box recess. Snap</tspan><tspan x="12" dy="12">the stand lid shut.</tspan><tspan x="12" dy="12">Lid latches firmly for silent, rattle-free</tspan><tspan x="12" dy="12">carry.</tspan>
       </text>
     </g>
 
     <!-- Reason 3: Quick Lesson Guide -->
     <g transform="translate(14, 334)">
-      <rect x="0" y="0" width="342" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">✓ HANDS-ON TUTORIAL ON REVERSE</text>
-      <text x="12" y="38" class="font-mono" font-size="9px" fill="#cccccc">
+      <rect x="0" y="0" width="312" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ HANDS-ON TUTORIAL ON REVERSE</text>
+      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
         <tspan x="12" dy="0">Flip this card over for a complete step-by-step</tspan>
-        <tspan x="12" dy="13">hands-on lesson with concrete numbers, stage</tspan>
-        <tspan x="12" dy="13">arrangements, calculator cross-references, and</tspan>
-        <tspan x="12" dy="13">core mathematical principle breakthrough!</tspan>
-        <tspan x="12" dy="16" font-weight="700" fill="#ffffff">Keep this card stored inside the box lid!</tspan>
+        <tspan x="12" dy="12">hands-on lesson with concrete numbers, stage</tspan>
+        <tspan x="12" dy="12">arrangements, and calculator cross-references!</tspan>
+        <tspan x="12" dy="15" font-weight="700" fill="#ffffff">Keep this card stored inside the box lid!</tspan>
       </text>
     </g>
   </g>
@@ -293,16 +296,18 @@
       <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates (10x / 30x Stations): stackcalc.io/schools</text>
     </g>
 
-    <g transform="translate(450, 24)">
+    <g transform="translate(450, 18)">
       <text x="0" y="0" class="font-mono th" fill="#ffffff">PYTHAGOREAN TRIGONOMETRIC IDENTITY</text>
-      <text x="0" y="18" class="font-mono footer-txt">For any real angle θ on the unit circle: cos²(θ) + sin²(θ) = 1 identically.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Modular Hardware Continuum (10 Kits) • Universal 7.00mm Datum • SIDE A: IN-BOX USER GUIDE | LASER SPEC</text>
+      <text x="0" y="15" class="font-mono footer-txt" font-size="8.3px">
+        <tspan x="0" dy="0">For any real angle θ on the unit circle: cos²(θ) + sin²(θ) = 1</tspan><tspan x="0" dy="12">identically.</tspan>
+      </text>
+      <text x="0" y="44" class="font-mono footer-txt" font-size="8px" opacity="0.85">Universal 7.00mm Datum • Classroom Continuum (10 Kits)</text>
     </g>
 
     <g transform="translate(980, 24)">
       <text x="0" y="0" class="font-mono th" fill="#ffffff">OFFICIAL REFILL PORTAL</text>
       <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#ffffff">stackcalc.io/parts</text>
-      <text x="0" y="32" class="font-mono footer-txt">Order individual replacement pieces anytime</text>
+      <text x="0" y="32" class="font-mono footer-txt">Order replacement parts anytime</text>
     </g>
   </g>
   <metadata id="stackcalc-book-macro-manifest" data-kit="VOLV-01">

@@ -526,8 +526,7 @@ def add_faceplate_color_note(text: str, file_path: Path, is_sc32: bool) -> str:
 
     if is_sc32 and file_path.name == "01-craftsmanship-hardware.md":
         note = (
-            "\n> [!NOTE]\n"
-            "> **Faceplate Themes & Shift Legend Conventions:**  \n"
+            "\n> **Faceplate Themes & Shift Legend Conventions:**  \n"
             "> Because both the physical StackCalc SC-32 faceplate editions and the companion software app support multiple interchangeable faceplate themes (`Pure Black`, `Retro Futurism`, `Pioneer Brown`, `Pioneer Black`, `Stealth`, `Supernova`, `Deep Space`, `Voyager`, `Synthwave`, and `Arcade`), shift accent colors adapt dynamically to the active faceplate palette. Throughout this manual, shifted functions are referenced independent of color using the hardware directional shift symbols: **Left Shift `{{key:↰}}`** (Row 5, Col 0) and **Right Shift `{{key:↱}}`** (Row 6, Col 0).\n"
         )
         idx = text.find("\n---\n", fm_end)
@@ -536,8 +535,7 @@ def add_faceplate_color_note(text: str, file_path: Path, is_sc32: bool) -> str:
 
     if not is_sc32 and file_path.name == "01-hardware-architecture.md":
         note = (
-            "\n> [!NOTE]\n"
-            "> **Faceplate Themes & Shift Legend Conventions:**  \n"
+            "\n> **Faceplate Themes & Shift Legend Conventions:**  \n"
             "> Because the StackCalc SC-6 hardware faceplates and companion app support multiple visual themes (`Pure Black`, `Retro Futurism`, `Pioneer`, `Stealth`, `Supernova`, `Voyager`, and `Arcade`), keycap and shift accent colors vary by faceplate. Throughout this textbook, shifted operations are always referenced by their functional shift symbols rather than color: **`{{key:f}}` Shift** (Row 5, Col 0) and **`{{key:g}}` Shift** (Row 6, Col 0).\n"
         )
         idx = text.find("\n---\n", fm_end)
@@ -612,16 +610,26 @@ def sync_consolidated_user_guides() -> None:
         if not guide_path.exists():
             continue
 
-        orig_guide = guide_path.read_text(encoding="utf-8")
-        # Preserve frontmatter and header banner up to first `---`
-        m_fm = re.match(r"^(---\n.*?\n---\n.*?---\n)", orig_guide, flags=re.DOTALL)
-        header = m_fm.group(1) if m_fm else ""
+        if is_sc32:
+            header = (
+                "---\n"
+                'title: "Thinking in the Stack: The Art of Reverse Polish Notation (SC-32 Complete Edition)"\n'
+                'description: "Complete single-page edition of Thinking in the Stack: Scientific Computing, Engineering Analysis & the StackCalc SC-32."\n'
+                "---\n"
+            )
+        else:
+            header = (
+                "---\n"
+                'title: "From Blocks to the Stack: Hands-On Math & the SC-6 Stack Calculator (Complete Edition)"\n'
+                'description: "Complete single-page edition of From Blocks to the Stack: Hands-On Math & the SC-6 Stack Calculator."\n'
+                "---\n"
+            )
 
         chapter_files = sorted((MANUALS_DIR / sub).glob("*.md"))
         ordered = [p for p in chapter_files if p.name == "index.md"] + [
             p for p in chapter_files if p.name != "index.md"
         ]
-        parts = [header]
+        parts: List[str] = []
         for ch_path in ordered:
             ch_raw = ch_path.read_text(encoding="utf-8")
             ch_body = re.sub(r"^---\n.*?\n---\n", "", ch_raw, flags=re.DOTALL)
@@ -637,7 +645,7 @@ def sync_consolidated_user_guides() -> None:
             )
             parts.append(ch_rendered.strip())
 
-        guide_path.write_text("\n\n---\n\n".join(parts) + "\n", encoding="utf-8")
+        guide_path.write_text(header + "\n" + "\n\n---\n\n".join(parts) + "\n", encoding="utf-8")
 
 
 def process_all_files() -> None:
@@ -806,7 +814,7 @@ def process_all_files() -> None:
     ]
     for cpath in curriculum_pages:
         ctxt = cpath.read_text(encoding="utf-8")
-        crendered = expand_key_macros(ctxt, is_sc32=("elementary" not in cpath.name), file_path=cpath)
+        crendered = expand_key_macros(ctxt, is_sc32=("elementary" not in cpath.name and "sc6" not in cpath.name), file_path=cpath)
         for m_kind in ("key", "keycap", "seq", "seq_keys", "res", "screenshot", "blocks", "cite", "bibliography"):
             assert f"{{{{{m_kind}:" not in crendered, f"Unexpanded {{{{{m_kind}:...}}}} macro in {cpath}"
 
@@ -910,6 +918,10 @@ def validate_no_persona_or_cra_bleed(manuals_dir: Path) -> None:
         r"Classroom Script \d",
         r"Script \d+\.\d+:",
         r"Verbatim Teacher Dialogue",
+        r"```(?:openscad|scad|python|swift|c|cpp)\b",
+        r"<div\b",
+        r"\[!(?:NOTE|TIP|IMPORTANT|WARNING|CAUTION|CHECKPOINT|TEACHER)\]",
+        r"&(?:amp|bull|rarr|theta);",
     ]
     combined_pat = re.compile("|".join(banned_patterns), flags=re.IGNORECASE)
     target_files = [

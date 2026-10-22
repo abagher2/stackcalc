@@ -43,14 +43,25 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT / "Tools") not in sys.path:
     sys.path.insert(0, str(REPO_ROOT / "Tools"))
 
+from big_ideas_sc6_diagrams import (
+    COMMON_TRAPS,
+    draw_problem_workspace_organizer,
+    draw_section_concept_diagram,
+    format_tutor_solution_step,
+    parse_tutor_setup_and_keys,
+)
 from big_ideas_sc6_pedagogy import SECTION_PEDAGOGY
 from big_ideas_sc6_sections_data import CHAPTERS_DATA
 from big_ideas_sc6_sheet_b_data import (
     MULTI_METHOD_BLOCK_NOTES,
     SHEET_B_PROBLEMS,
+    clean_ex1_ans,
+    clean_ex1_problem,
     clean_section_title,
     clean_sheet_a_prompt,
+    get_starter_scaffold,
 )
+from big_ideas_sc6_stories import SC6_SECTION_CHECK_GUIDE, SECTION_STORY_PARAGRAPHS, UNIT_STORIES
 
 DOCS_DIR = REPO_ROOT / "docs"
 ASSETS_MANUALS_DIR = DOCS_DIR / "assets" / "manuals"
@@ -65,6 +76,7 @@ SOURCE_MD = DOCS_DIR / "curriculum" / "big-ideas-middle-school-sc6-workbook.md"
 OUT_DIR = DOCS_DIR / "downloads" / "worksheets"
 STUDENT_PDF = OUT_DIR / "bigideas_middle_school_sc6_daily_student_workbook.pdf"
 TEACHER_PDF = OUT_DIR / "bigideas_middle_school_sc6_teacher_coach_guide.pdf"
+SCORING_GUIDE_PDF = OUT_DIR / "sc6_quest_token_scoring_guide.pdf"
 
 FONT_SANS = "Helvetica"
 FONT_SANS_BOLD = "Helvetica-Bold"
@@ -125,6 +137,13 @@ def clean_pdf_text(txt: str) -> str:
         "₂": "2",
         "₃": "3",
         "≟": "=",
+        "a ᵇ/c": "a b/c",
+        "0.3̄": "0.3-rep",
+        "🕒": "CLK",
+        "▦": "10F",
+        "🎲": "DICE",
+        "1…x": "1..x",
+        "t…x": "t..x",
         "x̄": "x-bar",
         "X̄": "x-bar",
     }
@@ -142,7 +161,7 @@ class CanvasPage:
         self.h = size[1] / mm
 
     def _pick_font(self, txt: str, bold: bool, italic: bool, mono: bool) -> str:
-        if mono and "Σ" not in txt and "π" not in txt:
+        if mono and not any(ch in txt for ch in ("Σ", "π", "≠", "≥", "≤", "√")):
             return FONT_MONO_BOLD if bold else FONT_MONO
         return FONT_SANS_BOLD if bold else (FONT_SANS_ITALIC if italic else FONT_SANS)
 
@@ -169,9 +188,13 @@ class CanvasPage:
         max_w: Optional[float] = None,
     ) -> float:
         s = clean_pdf_text(txt)
-        if max_w is not None:
-            s = self.fit_text(s, max_w, size, bold=bold, italic=italic, mono=mono)
         font = self._pick_font(s, bold, italic, mono)
+        if max_w is not None:
+            actual_w = self.c.stringWidth(s, font, size * mm) / mm
+            if actual_w > max_w and actual_w > 0:
+                min_sz = max(1.08, size * 0.62)
+                size = max(min_sz, size * (max_w / actual_w) * 0.99)
+            s = self.fit_text(s, max_w, size, bold=bold, italic=italic, mono=mono)
         self.c.setFillColor(HexColor(color))
         self.c.setFont(font, size * mm)
         py = (self.h - y) * mm
@@ -199,10 +222,15 @@ class CanvasPage:
     ) -> float:
         s = clean_pdf_text(txt)
         font = self._pick_font(s, bold, italic, mono)
-        lines: List[str] = []
-        for raw_ln in s.split("\n"):
-            wrapped = simpleSplit(raw_ln, font, size * mm, max_w * mm)
-            lines.extend(wrapped if wrapped else [""])
+        min_sz = size * 0.72
+        while True:
+            lines: List[str] = []
+            for raw_ln in s.split("\n"):
+                wrapped = simpleSplit(raw_ln, font, size * mm, max_w * mm)
+                lines.extend(wrapped if wrapped else [""])
+            if max_lines is None or len(lines) <= max_lines or size <= min_sz:
+                break
+            size = max(min_sz, size * 0.93)
         if max_lines is not None and len(lines) > max_lines:
             lines = lines[:max_lines]
         cur_y = y
@@ -369,12 +397,12 @@ class CanvasPage:
         h: float = 3.5,
         gap: float = 0.75,
     ) -> float:
-        if len(keys) > 10:
-            h = 3.1
-            gap = 0.55
+        if len(keys) > 12:
+            h = min(h, 2.55)
+            gap = min(gap, 0.42)
         elif len(keys) > 8:
-            h = 3.3
-            gap = 0.65
+            h = min(h, 2.95)
+            gap = min(gap, 0.55)
         cur_x = x
         cur_y = y
         for k in keys:
@@ -382,7 +410,7 @@ class CanvasPage:
             est_w = max(h * 1.12, len(lbl) * 1.62 + 2.1)
             if cur_x + est_w > x + max_w and cur_x > x:
                 cur_x = x
-                cur_y += h + 0.8
+                cur_y += h + 0.45
             kw = self.draw_keycap(k, cur_x, cur_y, h=h)
             cur_x += kw + gap
         return cur_y + h
@@ -504,18 +532,18 @@ class CanvasPage:
             num_str = ddata.get("num", "14.85")
             ip_str = ddata.get("ip", "14")
             fp_str = ddata.get("fp", "0.85")
-            self.text(x + w / 2.0, y + 4.0, f"Input: {num_str}", size=2.0, bold=True, mono=True, color=INK, align="center")
+            self.text(x + w / 2.0, y + 4.0, f"Value: {num_str}", size=2.0, bold=True, mono=True, color=INK, align="center")
             bw = (w - 5.6) / 2.0
             self.rect(x + 1.8, y + 6.0, bw, 13.6, fill="#F1F5F9", stroke=INK, r=0.8, line_w=0.25)
-            self.text(x + 1.8 + bw / 2.0, y + 9.8, "M1: Whole", size=1.7, bold=True, color=SLATE, align="center")
+            self.text(x + 1.8 + bw / 2.0, y + 9.8, "Whole Part", size=1.7, bold=True, color=SLATE, align="center")
             self.text(x + 1.8 + bw / 2.0, y + 14.2, ip_str, size=2.0, bold=True, mono=True, color=INK, align="center", max_w=bw - 1.5)
-            self.text(x + 1.8 + bw / 2.0, y + 17.8, "[f] [IP]", size=1.65, mono=True, color=MUTED, align="center")
+            self.text(x + 1.8 + bw / 2.0, y + 17.8, "Tens & Ones", size=1.55, mono=True, color=MUTED, align="center")
 
             rx = x + 3.8 + bw
             self.rect(rx, y + 6.0, bw, 13.6, fill="#E2E8F0", stroke=INK, r=0.8, line_w=0.25)
-            self.text(rx + bw / 2.0, y + 9.8, "M2: Decimal", size=1.7, bold=True, color=TEAL_ACCENT, align="center")
+            self.text(rx + bw / 2.0, y + 9.8, "Decimal Part", size=1.7, bold=True, color=TEAL_ACCENT, align="center")
             self.text(rx + bw / 2.0, y + 14.2, fp_str, size=2.0, bold=True, mono=True, color=INK, align="center", max_w=bw - 1.5)
-            self.text(rx + bw / 2.0, y + 17.8, "[g] [FP]", size=1.65, mono=True, color=MUTED, align="center")
+            self.text(rx + bw / 2.0, y + 17.8, "0.1 & 0.01", size=1.55, mono=True, color=MUTED, align="center")
 
         elif dtype == "ratio_tape":
             a = min(5, int(ddata.get("a", 3)))
@@ -563,7 +591,7 @@ class CanvasPage:
                 for c in range(2):
                     self.rect(ux + c * 3.8, gy + r * 3.8, 3.2, 3.2, fill="#FEF3C7", stroke=INK, r=0.3, line_w=0.2)
                     self.text(ux + c * 3.8 + 1.6, gy + r * 3.8 + 2.2, "1", size=1.55, bold=True, mono=True, color=INK, align="center")
-            self.text(x + w / 2.0, y + 18.0, "M1: Sort Shapes | M2: Sub x", size=1.7, bold=True, color=SLATE, align="center")
+            self.text(x + w / 2.0, y + 18.0, "M1: Like Terms | M2: Sub x", size=1.7, bold=True, color=SLATE, align="center")
             self.text(x + w / 2.0, y + 21.2, "x²-Flats | x-Rods | 1-Cubes", size=1.7, bold=True, mono=True, color=INK, align="center")
 
         elif dtype == "polygon_area":
@@ -605,7 +633,7 @@ class CanvasPage:
                 )
             self.line(cx, cy, cx + 4.0, cy - 1.7, color=INK, width=0.45)
             self.line(cx, cy, cx - 5.6, cy, color=TEAL_ACCENT, width=0.35)
-            self.text(cx, y + 21.8, "M1: Base-60 | M2: [f][CLK]", size=1.72, bold=True, mono=True, color=INK, align="center")
+            self.text(cx, y + 21.8, "M1: Jump Line | M2: 1 hr = 60 min", size=1.65, bold=True, mono=True, color=INK, align="center")
 
         elif dtype == "zero_pairs":
             gx = x + 5.2
@@ -753,12 +781,12 @@ def draw_student_cover_page(p: CanvasPage, chapters: List[Dict[str, Any]]) -> No
     cw = (uw - 6.0) / 3.0
     cards = [
         (
-            "1. AUTHENTIC BIG IDEAS METHODS",
-            "Every worksheet uses the exact vocabulary and two core methods taught in Big Ideas Math: Factor Trees & Division Ladders, LCD Fraction Towers & Reciprocals, Tape Diagrams & Ratio Tables, Area Models & Balance Scales.",
+            "1. HOW THE BOOK TEACHES IT",
+            "Every worksheet teaches the exact vocabulary, algorithms, and two core solution methods from Big Ideas Math so students master the exact concepts they are tested on in class.",
         ),
         (
             "2. TWO WAYS = DOUBLE POINTS (+20)",
-            "Every Worked Example models TWO ways to solve: Method 1 (+10 pts — 1st Token) and Method 2 (+20 pts DOUBLE — 2nd Token) alongside step-by-step physical Block Kit instructions and SC-6 verification.",
+            "Every Worked Example models TWO textbook ways to solve: Method 1 (+10 pts — 1st Token) and Method 2 (+20 pts DOUBLE — 2nd Token), reinforced by hands-on blocks where applicable and SC-6 check.",
         ),
         (
             "3. 2 SHEETS PER SECTION (900 PROBLEMS)",
@@ -778,8 +806,8 @@ def draw_student_cover_page(p: CanvasPage, chapters: List[Dict[str, Any]]) -> No
     p.text(
         margin + 3.0,
         64.0,
-        "HANDS-ON MANIPULATIVE BLOCK KITS & SIMPLIFIED 2-PIECE QUEST-01 SCOREBOARD (+10 / +20 TOKENS)",
-        size=2.2,
+        "HANDS-ON BLOCK KITS REINFORCE TEXTBOOK CONCEPTS & SIMPLIFIED 2-PIECE QUEST-01 SCOREBOARD (+10 / +20 TOKENS)",
+        size=2.12,
         bold=True,
         mono=True,
         color=INK,
@@ -788,8 +816,8 @@ def draw_student_cover_page(p: CanvasPage, chapters: List[Dict[str, Any]]) -> No
     showcase = [
         ("counting_tiles_array_3x8.png", "COUNT-01: Array Tiles"),
         ("prime_lcm_gcd_venn.png", "PRIME-01: Prime Towers"),
-        ("fraction_studio_common_denominator.png", "FRAC-01: 84mm Fractions"),
-        ("algebra_factoring_area.png", "ALGB-01: Algebra Stage"),
+        ("fraction_studio_common_denominator.png", "FRAC-01: Fraction Strips"),
+        ("algebra_factoring_area.png", "ALGB-01: Algebra Tiles"),
         ("planetary_geared_clock_330.png", "TIME-01: Geared Clock"),
     ]
     sw_w = (uw - 10.0) / 5.0
@@ -807,14 +835,14 @@ def draw_student_cover_page(p: CanvasPage, chapters: List[Dict[str, Any]]) -> No
 
     unit_methods_summary = {
         1: "Arrays vs Div Check; Trees vs Ladders",
-        2: "LCD Towers vs Cross-Mult; Reciprocals",
+        2: "LCD Strips vs Cross-Mult; Reciprocals",
         3: "Tape Diagrams vs Ratio Tables & Rates",
         4: "Substitution, Like Terms & Area vs GCF",
         5: "Cut-and-Slide Grids vs Polygon Formulas",
         6: "Number Lines vs Opposites & |x| Sums",
         7: "Mental Inspection vs Inverse Operations",
         8: "Unfolded 2D Nets vs Prism/Cone Formulas",
-        9: "Fair-Share Leveling vs IQR & MAD Sums",
+        9: "Fair-Share Leveling vs IQR & MAD Tables",
         10: "Zero-Pair Chips vs Rules & Sample Space",
     }
     row_h = 16.2
@@ -825,11 +853,12 @@ def draw_student_cover_page(p: CanvasPage, chapters: List[Dict[str, Any]]) -> No
         p.line(margin + 70.0, ry, margin + 70.0, ry + row_h, color=LIGHT_BORDER, width=0.2)
         p.line(margin + 142.0, ry, margin + 142.0, ry + row_h, color=LIGHT_BORDER, width=0.2)
 
-        p.text(margin + 2.2, ry + 4.3, f"Unit {ch['num']}: {ch['title']}", size=2.3, bold=True, color=INK, max_w=66.0)
+        unit_story_pg = 3 + (ch["num"] - 1) + (ch["sections"][0]["day_num"] - 1) * 2
+        p.text(margin + 2.2, ry + 4.3, f"Unit {ch['num']} (p.{unit_story_pg}): {ch['title']}", size=2.22, bold=True, color=INK, max_w=66.0)
         p.para(margin + 2.2, ry + 7.8, f"{ch['big_ideas_book']} • {ch['kit_summary']}", max_w=66.0, size=1.9, color=SLATE, max_lines=2)
 
         for li, s in enumerate(ch["sections"]):
-            pg_a = 2 + (s["day_num"] - 1) * 2
+            pg_a = 3 + ch["num"] + (s["day_num"] - 1) * 2
             pg_b = pg_a + 1
             stitle = clean_section_title(s["sec_num"], s["title"])
             sl = f"[ ] Sec {s['sec_num']} (pp.{pg_a}-{pg_b}): {stitle}"
@@ -839,28 +868,733 @@ def draw_student_cover_page(p: CanvasPage, chapters: List[Dict[str, Any]]) -> No
         n_probs = len(ch["sections"]) * 20
         p.text(margin + 143.5, ry + 5.0, m_sum, size=1.85, bold=True, color=INK, max_w=46.0)
         p.text(margin + 143.5, ry + 9.4, f"Kit: {ch['kit_summary'].split('+')[0].strip()}", size=1.78, mono=True, color=SLATE, max_w=46.0)
-        p.text(margin + 143.5, ry + 13.7, f"[ ] {len(ch['sections'])*2} Sheets ({n_probs} Problems)", size=1.82, bold=True, color=TEAL_ACCENT)
+        p.text(margin + 143.5, ry + 13.7, f"[ ] Story + {len(ch['sections'])*2} Sheets ({n_probs} Probs)", size=1.78, bold=True, color=TEAL_ACCENT, max_w=46.0)
 
     p.text(
         margin,
         p.h - 6.0,
-        "StackCalc Learning Systems  •  Big Ideas Math Middle School Supplement (10 Units • 45 Sections • 90 Worksheets • 900 Problems)",
-        size=2.0,
+        "StackCalc Learning Systems  •  Big Ideas Math Middle School Supplement (Token Scoring Guide p.2 • 10 Unit Stories • 45 Sections • 90 Worksheets)",
+        size=1.92,
         mono=True,
         color=MUTED,
+        max_w=uw - 28.0,
     )
-    p.text(margin + uw, p.h - 6.0, "Page 1 of 91", size=2.0, bold=True, mono=True, color=INK, align="right")
+    p.text(margin + uw, p.h - 6.0, "Page 1 of 102", size=2.0, bold=True, mono=True, color=INK, align="right")
+
+
+def draw_token_scoring_guide_page(p: CanvasPage, chapters: List[Dict[str, Any]], page_label: str = "Page 2 of 102") -> None:
+    """Renders the 1-Page QUEST-01 Token Scoring & SC-6 Work-Check Guide."""
+    margin = 11.0
+    uw = p.w - 2 * margin
+
+    # 1. Top Header (y = 9.0 .. 24.8 mm)
+    p.text(
+        margin,
+        12.2,
+        "STACKCALC LEARNING LAB  •  QUEST-01 SCOREBOARD & SC-6 WORK-CHECK PROTOCOL",
+        size=2.0,
+        bold=True,
+        mono=True,
+        color=TEAL_ACCENT,
+        max_w=120.0,
+    )
+    p.rect(margin + uw - 72.0, 9.0, 72.0, 4.6, fill=SUBTLE_HDR, stroke=INK, r=0.8, line_w=0.25)
+    p.text(
+        margin + uw - 36.0,
+        12.1,
+        "KIT: QUEST-01 • 3x1x7U SCOREBOARD & 60 (+10) TOKENS",
+        size=1.72,
+        bold=True,
+        mono=True,
+        color=INK,
+        align="center",
+        max_w=69.0,
+    )
+
+    p.text(
+        margin,
+        18.2,
+        "1-Page Token Scoring & SC-6 Work-Check Guide",
+        size=4.2,
+        bold=True,
+        color=INK,
+        max_w=uw,
+    )
+    p.text(
+        margin,
+        23.2,
+        "How to Solve by Hand First, Earn +10 Single-Way & +20 Double-Points Tokens, Check Your Work on the SC-6, and Reach 100 Points",
+        size=1.92,
+        bold=True,
+        color=SLATE,
+        max_w=uw,
+    )
+    p.line(margin, 24.8, margin + uw, 24.8, color=INK, width=0.45)
+
+    # 2. The 4-Step "Learn First, Then Check" Daily Loop (y = 26.2 .. 68.2 mm, height = 42.0 mm)
+    step_y = 26.2
+    step_h = 42.0
+    col_w = (uw - 7.5) / 4.0
+    step_cards = [
+        (
+            "STEP 1: 1ST WAY (+10 PTS)",
+            INK,
+            "Study the Worked Example first. Solve a problem by hand in your open workspace using your 1st Textbook Way. Drop 1 Gold [+10] token into that problem's socket (1-10) and check off [x] +10 (1 Way).",
+        ),
+        (
+            "STEP 2: 2ND WAY (+20 PTS)",
+            TEAL_ACCENT,
+            "Solve the SAME problem a 2nd independent way (the 2nd Textbook Way or hands-on block model). When both ways give the exact same answer, stack a 2nd [+10] token right on top (+20 pts DOUBLE)!",
+        ),
+        (
+            "STEP 3: CHECK ON SC-6",
+            INK,
+            "Never guess! Use the section's 'Check Your Work on the SC-6 Calculator' box to verify your hand-written answer—using Two-Dot fractions ([.] n [.] d), [≠] equality tests, and [f][LINE] mode.",
+        ),
+        (
+            "STEP 4: 100-PT TOWER!",
+            "#854D0E",
+            "As soon as you earn 10 tokens (100 points) on a worksheet—or in the SC-6 [f][?] Tutorial Quiz—transfer all 10 tokens into the [100] socket to build your 70 mm tall 100-Point Mastery Tower!",
+        ),
+    ]
+
+    for s_idx, (stitle, shdr_col, sbody) in enumerate(step_cards):
+        sx = margin + s_idx * (col_w + 2.5)
+        p.rect(sx, step_y, col_w, step_h, fill=WHITE, stroke=INK, r=0.9, line_w=0.28)
+        p.rect(sx, step_y, col_w, 4.4, fill=shdr_col, stroke=shdr_col, r=0.7, line_w=0.2)
+        p.text(sx + 2.0, step_y + 3.1, stitle, size=1.72, bold=True, mono=True, color=WHITE, max_w=col_w - 4.0)
+
+        # Mini graphic box inside each step card (y = 31.6 .. 44.6 mm)
+        gy = step_y + 5.4
+        gh = 13.0
+        p.rect(sx + 2.0, gy, col_w - 4.0, gh, fill=SUBTLE_HDR, stroke=LIGHT_BORDER, r=0.6, line_w=0.2)
+        gcx = sx + col_w / 2.0
+
+        if s_idx == 0:
+            # Socket [1] with 1 Gold +10 Token
+            p.rect(gcx - 15.0, gy + 7.8, 12.0, 3.6, fill="#CBD5E1", stroke=INK, r=0.4, line_w=0.22)
+            p.text(gcx - 9.0, gy + 10.4, "Socket 1", size=1.45, bold=True, mono=True, color=INK, align="center")
+            p.rect(gcx - 13.5, gy + 2.6, 9.0, 5.2, fill="#FDE047", stroke=INK, r=0.45, line_w=0.26)
+            p.text(gcx - 9.0, gy + 6.0, "+10", size=1.95, bold=True, mono=True, color=INK, align="center")
+            p.text(gcx + 8.0, gy + 5.8, "1 Block =", size=1.65, bold=True, color=SLATE, align="center")
+            p.text(gcx + 8.0, gy + 9.2, "+10 PTS", size=2.1, bold=True, mono=True, color=INK, align="center")
+        elif s_idx == 1:
+            # Socket [1] with 2 Stacked +10 Tokens = +20 DOUBLE!
+            p.rect(gcx - 15.0, gy + 9.0, 12.0, 2.8, fill="#CBD5E1", stroke=INK, r=0.4, line_w=0.22)
+            p.rect(gcx - 13.5, gy + 5.2, 9.0, 3.8, fill="#FDE047", stroke=INK, r=0.35, line_w=0.24)
+            p.text(gcx - 9.0, gy + 7.8, "+10", size=1.55, bold=True, mono=True, color=INK, align="center")
+            p.rect(gcx - 13.5, gy + 1.4, 9.0, 3.8, fill="#86EFAC", stroke=INK, r=0.35, line_w=0.24)
+            p.text(gcx - 9.0, gy + 4.0, "+10", size=1.55, bold=True, mono=True, color=INK, align="center")
+            p.text(gcx + 8.0, gy + 5.6, "2 Stacked =", size=1.60, bold=True, color=TEAL_ACCENT, align="center")
+            p.text(gcx + 8.0, gy + 9.0, "+20 PTS!", size=2.1, bold=True, mono=True, color=TEAL_ACCENT, align="center")
+        elif s_idx == 2:
+            # SC-6 2-Line LCD + Keycaps
+            p.rect(sx + 3.5, gy + 1.4, col_w - 7.0, 6.0, fill="#E2E8F0", stroke=INK, r=0.4, line_w=0.22)
+            p.text(sx + 5.0, gy + 3.9, "Y: 5 (Quotient)", size=1.42, bold=True, mono=True, color=SLATE)
+            p.text(sx + 5.0, gy + 6.4, "X: 3 (Remainder)", size=1.42, bold=True, mono=True, color=TEAL_ACCENT)
+            p.draw_keycap_sequence(["23", "ENTER", "4", "g", "÷R"], sx + 4.2, gy + 8.4, max_w=col_w - 8.4, h=3.2, gap=0.5)
+        else:
+            # 10-Token Mastery Tower in [100] Socket
+            p.rect(gcx - 14.5, gy + 10.2, 11.0, 2.0, fill="#FDE047", stroke=INK, r=0.3, line_w=0.22)
+            for t_i in range(5):
+                ty_blk = gy + 8.4 - t_i * 1.6
+                b_fill = "#FDE047" if t_i % 2 == 0 else "#86EFAC"
+                p.rect(gcx - 13.0, ty_blk, 8.0, 1.55, fill=b_fill, stroke=INK, line_w=0.18)
+            p.text(gcx + 7.5, gy + 5.6, "10 Blocks =", size=1.60, bold=True, color="#854D0E", align="center")
+            p.text(gcx + 7.5, gy + 9.0, "100 PTS!", size=2.1, bold=True, mono=True, color="#854D0E", align="center")
+
+        p.para(
+            sx + 2.2,
+            step_y + 20.6,
+            sbody,
+            max_w=col_w - 4.4,
+            size=1.80,
+            color=INK,
+            leading=1.18,
+            max_lines=9,
+        )
+
+    # 3. Middle Split: Anatomy of QUEST-01 Scoreboard (Left) & Three Flexible Paths to 100 Points (Right) (y = 70.0 .. 144.0 mm)
+    mid_y = 70.0
+    mid_h = 74.0
+    left_w = 102.0
+    right_w = uw - left_w - 2.5
+    right_x = margin + left_w + 2.5
+
+    # --- Left Panel: Scoreboard Lid Schematic + 3 Hardware Photos ---
+    p.rect(margin, mid_y, left_w, mid_h, fill=WHITE, stroke=INK, r=1.0, line_w=0.3)
+    p.rect(margin, mid_y, left_w, 4.6, fill=INK, stroke=INK, r=0.8, line_w=0.2)
+    p.text(
+        margin + 2.5,
+        mid_y + 3.2,
+        "ANATOMY OF THE 2-PIECE 3x1x7U QUEST-01 SCOREBOARD KIT",
+        size=1.80,
+        bold=True,
+        mono=True,
+        color=WHITE,
+        max_w=left_w - 9.0,
+    )
+    p.draw_tutorial_keycap(margin + left_w - 5.5, mid_y + 0.5, w=4.0, h=3.5)
+
+    # Top-Down Vector Diagram of 6×2 Snapfinity Scoreboard Lid
+    lid_x = margin + 2.5
+    lid_y = mid_y + 6.2
+    lid_w = 60.0
+    lid_h = 24.5
+    p.rect(lid_x, lid_y, lid_w, lid_h, fill="#1E293B", stroke=INK, r=1.2, line_w=0.32)
+    p.text(lid_x + lid_w / 2.0, lid_y + 2.9, "3x1 SNAPFINITY SCOREBOARD LID (6×2 SOCKET GRID)", size=1.42, bold=True, mono=True, color="#E2E8F0", align="center")
+
+    sock_w = 8.4
+    sock_h = 8.4
+    sgap_x = 1.15
+    sgap_y = 1.4
+    sx0 = lid_x + 2.2
+    sy0 = lid_y + 4.2
+
+    # Sample score state showing 5 problems solved in 2 Ways (+20 each = 100 pts!)
+    sample_tokens = {1: 2, 2: 2, 3: 2, 5: 2, 9: 2}
+    for r_i in range(2):
+        for c_i in range(6):
+            cell_x = sx0 + c_i * (sock_w + sgap_x)
+            cell_y = sy0 + r_i * (sock_h + sgap_y)
+            if c_i < 5:
+                q_num = r_i * 5 + (c_i + 1)
+                ntok = sample_tokens.get(q_num, 0)
+                s_fill = "#DCFCE7" if ntok == 2 else "#F8FAFC"
+                s_stroke = TEAL_ACCENT if ntok == 2 else BORDER
+                p.rect(cell_x, cell_y, sock_w, sock_h, fill=s_fill, stroke=s_stroke, r=0.5, line_w=0.22)
+                p.text(cell_x + sock_w / 2.0, cell_y + 3.2, f"#{q_num}", size=1.45, bold=True, mono=True, color=INK, align="center")
+                if ntok == 2:
+                    p.rect(cell_x + 1.0, cell_y + 4.1, sock_w - 2.0, 3.4, fill="#FDE047", stroke=INK, r=0.3, line_w=0.18)
+                    p.text(cell_x + sock_w / 2.0, cell_y + 6.5, "+20", size=1.35, bold=True, mono=True, color=INK, align="center")
+                else:
+                    p.text(cell_x + sock_w / 2.0, cell_y + 6.5, "10/20", size=1.18, mono=True, color=MUTED, align="center")
+            else:
+                if r_i == 0:
+                    # Top-right [100] Mastery Tower Socket
+                    p.rect(cell_x, cell_y, sock_w, sock_h, fill="#FEF08A", stroke="#CA8A04", r=0.5, line_w=0.28)
+                    p.text(cell_x + sock_w / 2.0, cell_y + 3.4, "100", size=1.65, bold=True, mono=True, color="#854D0E", align="center")
+                    p.text(cell_x + sock_w / 2.0, cell_y + 6.6, "TOWER", size=1.15, bold=True, mono=True, color="#854D0E", align="center")
+                else:
+                    # Bottom-right (?) Tutorial Keycap Badge
+                    p.draw_tutorial_keycap(cell_x, cell_y, w=sock_w, h=sock_h)
+
+    # Callout descriptions to the right of the Lid Diagram
+    call_x = lid_x + lid_w + 2.2
+    call_w = left_w - lid_w - 6.8
+    callouts = [
+        ("Sockets #1–#10:", "Match Problems #1–#10. 1 token = +10 (1st Way); 2 stacked = +20 (2nd Way)."),
+        ("Socket [100]:", "Stack 10 tokens here to build your 100-Point Mastery Tower!"),
+        ("(?) Keycap Badge:", "Matches [f][C] (?) on the SC-6 to launch built-in Tutorial Quiz Mode."),
+    ]
+    cy_call = lid_y + 1.8
+    for c_head, c_desc in callouts:
+        p.text(call_x, cy_call, c_head, size=1.55, bold=True, color=TEAL_ACCENT, max_w=call_w)
+        cy_call = p.para(call_x, cy_call + 2.1, c_desc, max_w=call_w, size=1.45, color=INK, leading=1.12, max_lines=3)
+        cy_call += 1.0
+
+    # Bottom half of Left Panel: 3 Hardware Photos
+    photos = [
+        ("quest_scoreboard_lid.png", "1. Snapfinity Lid (#1-#10, 100, ?)"),
+        ("quest_scoreboard_box.png", "2. 3x1x7U Open Token Bank"),
+        ("quest_scoreboard_parts.png", "3. 60 Universal [+10] Tokens"),
+    ]
+    ph_w = (left_w - 8.0) / 3.0
+    ph_y = mid_y + 33.0
+    for p_idx, (png_name, p_cap) in enumerate(photos):
+        px = margin + 2.5 + p_idx * (ph_w + 1.5)
+        p.rect(px, ph_y, ph_w, 34.5, fill=SUBTLE_HDR, stroke=LIGHT_BORDER, r=0.7, line_w=0.2)
+        p.image(ASSETS_MANUALS_DIR / png_name, px + 1.2, ph_y + 1.2, ph_w - 2.4, 28.0)
+        p.text(px + ph_w / 2.0, ph_y + 32.4, p_cap, size=1.52, bold=True, color=INK, align="center", max_w=ph_w - 1.5)
+
+    p.text(
+        margin + left_w / 2.0,
+        mid_y + mid_h - 2.2,
+        "No inner sorting tray needed: grab [+10] tokens straight from the open 7U bin and sweep all 60 back in when done!",
+        size=1.55,
+        bold=True,
+        color=TEAL_ACCENT,
+        align="center",
+        max_w=left_w - 4.0,
+    )
+
+    # --- Right Panel: Three Flexible Paths to the 100-Point Daily Goal ---
+    p.rect(right_x, mid_y, right_w, mid_h, fill=WHITE, stroke=INK, r=1.0, line_w=0.3)
+    p.rect(right_x, mid_y, right_w, 4.6, fill=TEAL_ACCENT, stroke=TEAL_ACCENT, r=0.8, line_w=0.2)
+    p.text(
+        right_x + 2.5,
+        mid_y + 3.2,
+        "3 FLEXIBLE PATHS TO THE 100-POINT DAILY GOAL",
+        size=1.80,
+        bold=True,
+        mono=True,
+        color=WHITE,
+        max_w=right_w - 5.0,
+    )
+
+    paths = [
+        (
+            "PATH A: DEEP MASTERY — ANY 5 PROBLEMS IN 2 WAYS = 100 PTS",
+            "5 Problems × 2 Ways (+20 pts each) = 10 Tokens (100 Points)",
+            "Best when a 10-problem page feels overwhelming! Pick any 5 problems (for example: Warm-Ups #1-#2, Core #3-#4, and Challenge #9), solve each using BOTH Textbook Ways, and verify on your SC-6. You do half as many problems, but understand them twice as deeply!",
+            M2_BG,
+            TEAL_ACCENT,
+            TEAL_ACCENT,
+        ),
+        (
+            "PATH B: FULL SHEET — ALL 10 PROBLEMS IN 1 WAY = 100 PTS",
+            "10 Problems × 1 Way (+10 pts each) = 10 Tokens (100 Points)",
+            "Best for building speed and accuracy across every problem type on the worksheet. Solve all 10 problems (#1-#10) using your favorite Textbook Way, drop 1 [+10] token in each socket, and check every answer on your SC-6.",
+            M1_BG,
+            BORDER,
+            INK,
+        ),
+        (
+            "PATH C: MIX & MATCH — ANY COMBINATION OF 10 TOKENS = 100 PTS",
+            "Example: 3 Problems in 2 Ways (60 pts) + 4 Problems in 1 Way (40 pts) = 100 Points",
+            "You are in control! Combine 2-Way (+20) and 1-Way (+10) solutions in any order until you collect 10 tokens to build your [100] Mastery Tower. Want a Super-Boss Challenge? Solve all 10 problems in 2 Ways for a 200-Point Double Tower!",
+            "#FEFCE8",
+            "#CA8A04",
+            "#854D0E",
+        ),
+    ]
+    py0 = mid_y + 6.0
+    ph_box = 21.2
+    pgap = 1.4
+    for path_idx, (ptitle, pformula, pdesc, pbg, pstroke, ptcol) in enumerate(paths):
+        py_cur = py0 + path_idx * (ph_box + pgap)
+        p.rect(right_x + 2.2, py_cur, right_w - 4.4, ph_box, fill=pbg, stroke=pstroke, r=0.7, line_w=0.24)
+        p.text(right_x + 3.6, py_cur + 3.1, ptitle, size=1.68, bold=True, color=ptcol, max_w=right_w - 7.2)
+        p.text(right_x + 3.6, py_cur + 5.8, pformula, size=1.62, bold=True, mono=True, color=INK, max_w=right_w - 7.2)
+        p.para(
+            right_x + 3.6,
+            py_cur + 8.5,
+            pdesc,
+            max_w=right_w - 7.2,
+            size=1.62,
+            color=SLATE,
+            leading=1.14,
+            max_lines=5,
+        )
+
+    # 4. Master SC-6 Calculator Work-Check Reference Table (Units 1–10) (y = 145.8 .. 232.2 mm)
+    tbl_y = 145.8
+    p.rect(margin, tbl_y, uw, 4.6, fill=INK, stroke=INK, r=0.7, line_w=0.2)
+    p.text(
+        margin + 2.4,
+        tbl_y + 3.2,
+        "MASTER SC-6 CALCULATOR WORK-CHECK CHEAT SHEET (UNITS 1–10: SOLVE BY HAND FIRST, THEN VERIFY!)",
+        size=1.80,
+        bold=True,
+        mono=True,
+        color=WHITE,
+        max_w=uw - 4.8,
+    )
+
+    col_hdr_y = tbl_y + 4.6
+    col_hdr_h = 3.8
+    c1_w, c2_w, c3_w = 40.0, 42.0, 58.0
+    c4_w = uw - c1_w - c2_w - c3_w
+    p.rect(margin, col_hdr_y, uw, col_hdr_h, fill=SUBTLE_HDR, stroke=INK, line_w=0.22)
+    p.text(margin + 1.8, col_hdr_y + 2.7, "UNIT & TOPIC", size=1.55, bold=True, mono=True, color=INK)
+    p.text(margin + c1_w + 1.8, col_hdr_y + 2.7, "SOLVE BY HAND FIRST (2 WAYS)", size=1.55, bold=True, mono=True, color=INK)
+    p.text(margin + c1_w + c2_w + 1.8, col_hdr_y + 2.7, "SC-6 WORK-CHECK KEYSTROKES", size=1.55, bold=True, mono=True, color=TEAL_ACCENT)
+    p.text(margin + c1_w + c2_w + c3_w + 1.8, col_hdr_y + 2.7, "WHAT TO VERIFY ON THE SC-6 DISPLAY", size=1.55, bold=True, mono=True, color=INK)
+
+    unit_check_rows = [
+        ("Unit 1: Whole Numbers & Factors", "Long Div / Tree vs. Array / Venn", ["23", "ENTER", "4", "g", "÷R"], "Line Y = Quotient, Line X = Remainder; [PRIME], [g][FACT], [GCF], [f][LCM], [x²], [x³]"),
+        ("Unit 2: Fractions & Decimals", "LCD Strips & Reciprocals vs. Cross-Mult", [".", "2", ".", "3", "ENTER", ".", "1", ".", "4", "+"], "HP-32 Two-Dot fraction entry ([.] n [.] d & w [.] n [.] d); [g][SIMP], [FDISP], [a b/c], [f][d/c], [PV], [$]"),
+        ("Unit 3: Ratios, Rates & Percents", "Tape Diagrams vs. Ratio Tables & % Prop", ["12", "ENTER", "8", "g", "a:b"], "[g][a:b] Ratio Mode (+ [10F] table), [g][REP], [%] part of whole, [g][%CHG], [f][▸cm]/[g][▸in]"),
+        ("Unit 4: Algebraic Expressions", "Area Model / Like Terms vs. GCF Factor", ["4", "ENTER", "5", "×", "7", "+"], "Evaluate at x = 5 in both original & simplified forms and press [≠] (flashes NO when equal!)"),
+        ("Unit 5: Area & Elapsed Time", "Cut-and-Slide Grid vs. Polygon Formulas", ["12", "ENTER", "8", "f", "RECT"], "[f][RECT] area/perim, [g][TRI] ½bh, [Σ+]/[f][Σx] composite sum, [CLK] + [f][▸HR]/[g][▸HMS]"),
+        ("Unit 6: Integers & Coord Plane", "Number Line Jumps vs. Absolute Value |x|", ["f", "LINE", "18", "+/-", "5", "+/-", "f", ">"], "[f][LINE] Number Line jumps, [+/-] sign, [g][|x|] distance, [f][>]/[g][<] (flashes YES/NO!)"),
+        ("Unit 7: Equations & Inequalities", "Balance Scale vs. Inverse Operations", ["41", "ENTER", "4", "ENTER", "9", "×", "5", "+", "≠"], "Equality test [≠] flashes NO when Left = Right (balanced!); [f][≥] & [g][≤] flash YES/NO"),
+        ("Unit 8: 3D Surface Area & Volume", "Unfolded 2D Net vs. Prism/Cone Formulas", ["12", "ENTER", "8", "ENTER", "5", "f", "PRISM"], "[f][PRISM] 3D volume, [g][CLΣ]+[Σ+]+[f][Σx] 2D net surface area, [f][CIRC], [g][HYP], [g][CONE]"),
+        ("Unit 9: Statistics & Distributions", "Fair-Share Leveling / Peel vs. IQR & MAD", ["g", "CLΣ", "18", "Σ+", "24", "Σ+", "g", "x̄"], "Enter list with [Σ+] (or [FRQ]): check [g][x̄], [f][MED], [g][MODE], [RNG], [f][1Q], [g][3Q], [IQR], [g][MAD]"),
+        ("Unit 10: Signed Ops & Probability", "Zero-Pair Chips & Trees vs. Sign Rules", ["f", "LINE", "10", "ENTER", "4", "+/-", "-"], "[f][LINE] signed hops, [+/-], [≠] 2-step equation check, [DICE]/[f][1..x], [x!], [f][nCr], [g][nPr]"),
+    ]
+    r_y0 = col_hdr_y + col_hdr_h
+    r_h = 7.75
+    for u_idx, (u_name, u_hand, u_keys, u_verify) in enumerate(unit_check_rows):
+        ry = r_y0 + u_idx * r_h
+        r_bg = WHITE if u_idx % 2 == 0 else SUBTLE_HDR
+        p.rect(margin, ry, uw, r_h, fill=r_bg, stroke=LIGHT_BORDER, line_w=0.18)
+        p.line(margin + c1_w, ry, margin + c1_w, ry + r_h, color=LIGHT_BORDER, width=0.18)
+        p.line(margin + c1_w + c2_w, ry, margin + c1_w + c2_w, ry + r_h, color=LIGHT_BORDER, width=0.18)
+        p.line(margin + c1_w + c2_w + c3_w, ry, margin + c1_w + c2_w + c3_w, ry + r_h, color=LIGHT_BORDER, width=0.18)
+
+        p.text(margin + 1.6, ry + 4.8, u_name, size=1.58, bold=True, color=INK, max_w=c1_w - 3.0)
+        p.text(margin + c1_w + 1.6, ry + 4.8, u_hand, size=1.52, color=SLATE, max_w=c2_w - 3.0)
+        p.draw_keycap_sequence(u_keys, margin + c1_w + c2_w + 1.6, ry + 2.35, max_w=c3_w - 3.0, h=3.0, gap=0.45)
+        p.para(
+            margin + c1_w + c2_w + c3_w + 1.6,
+            ry + 3.0,
+            u_verify,
+            max_w=c4_w - 3.0,
+            size=1.48,
+            color=INK,
+            leading=1.12,
+            max_lines=2,
+        )
+
+    # 5. Bottom Tracker: 45-Section 100-Point Mastery Tower Log (y = 233.5 .. 268.5 mm, height = 35.0 mm)
+    bot_y = 233.5
+    bot_h = 35.0
+    p.rect(margin, bot_y, uw, bot_h, fill=WHITE, stroke=INK, r=0.9, line_w=0.28)
+    p.rect(margin, bot_y, uw, 4.5, fill=SUBTLE_HDR, stroke=INK, r=0.7, line_w=0.22)
+    p.text(
+        margin + 2.4,
+        bot_y + 3.1,
+        "45-SECTION 100-POINT MASTERY TOWER LOG (CHECK OFF EACH SECTION AS YOU EARN 100 POINTS ON PRACTICE A & B!)",
+        size=1.74,
+        bold=True,
+        mono=True,
+        color=TEAL_ACCENT,
+        max_w=uw - 10.0,
+    )
+    p.draw_tutorial_keycap(margin + uw - 5.5, bot_y + 0.45, w=4.0, h=3.5)
+
+    # 2 Columns × 5 Rows of Units inside the bottom log
+    u_col_w = (uw - 6.0) / 2.0
+    u_row_h = 5.6
+    for idx, ch in enumerate(chapters):
+        uc = idx // 5
+        ur = idx % 5
+        ux = margin + 2.2 + uc * (u_col_w + 1.6)
+        uy = bot_y + 5.8 + ur * u_row_h
+        p.rect(ux, uy, u_col_w, u_row_h - 0.5, fill=SUBTLE_HDR if ur % 2 == 0 else WHITE, stroke=LIGHT_BORDER, r=0.4, line_w=0.16)
+        p.text(ux + 1.4, uy + 3.4, f"Unit {ch['num']}:", size=1.58, bold=True, color=INK)
+        sec_checks = "   ".join(f"[ ] {s['sec_num']}" for s in ch["sections"])
+        p.text(ux + 16.5, uy + 3.4, sec_checks, size=1.58, bold=True, mono=True, color=TEAL_ACCENT, max_w=u_col_w - 18.0)
+
+    p.text(
+        margin,
+        p.h - 5.2,
+        "StackCalc SC-6 Textbook Supplement  •  1-Page Token Scoring & SC-6 Work-Check Guide (QUEST-01)",
+        size=1.88,
+        mono=True,
+        color=MUTED,
+        max_w=uw - 28.0,
+    )
+    p.text(margin + uw, p.h - 5.2, page_label, size=1.88, bold=True, mono=True, color=INK, align="right")
+
+
+def generate_token_scoring_guide_pdf(chapters: List[Dict[str, Any]], output_path: Path) -> None:
+    """Generates the standalone 1-page printable Token Scoring & SC-6 Work-Check Guide PDF."""
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    c = canvas.Canvas(str(output_path), pagesize=letter)
+    c.setTitle("StackCalc SC-6 & QUEST-01 1-Page Token Scoring & Work-Check Guide")
+    c.setAuthor("StackCalc Learning Lab")
+    p = CanvasPage(c, letter)
+    draw_token_scoring_guide_page(p, chapters, page_label="1-Page Reference Guide")
+    c.showPage()
+    c.save()
+    print(f"[OK] Built 1-Page Token Scoring Guide: {output_path} ({output_path.stat().st_size / 1024:.1f} KB, 1 page)")
+
+
+def draw_unit_story_page(p: CanvasPage, ch: Dict[str, Any], page_num: int, total_pages: int) -> None:
+    """Renders a 1-page Unit Introduction & Story Opener before each Unit (zero metadata banners, no section paragraphs here)."""
+    margin = 11.0
+    uw = p.w - 2 * margin
+    ch_num = ch["num"]
+    story = UNIT_STORIES[ch_num]
+
+    # 1. Clean Top Header (y = 9.0 .. 24.8 mm)
+    p.text(
+        margin,
+        12.2,
+        f"UNIT {ch_num} INTRODUCTION  •  {ch['big_ideas_book'].upper()}",
+        size=2.0,
+        bold=True,
+        mono=True,
+        color=TEAL_ACCENT,
+        max_w=122.0,
+    )
+    p.rect(margin + uw - 70.0, 9.0, 70.0, 4.6, fill=SUBTLE_HDR, stroke=INK, r=0.8, line_w=0.25)
+    p.text(
+        margin + uw - 35.0,
+        12.1,
+        f"KITS: {ch['kit_summary']}",
+        size=1.78,
+        bold=True,
+        mono=True,
+        color=INK,
+        align="center",
+        max_w=67.0,
+    )
+
+    p.text(
+        margin,
+        18.2,
+        f"Unit {ch_num}: {ch['title']} — {story['story_title']}",
+        size=3.75,
+        bold=True,
+        color=INK,
+        max_w=uw,
+    )
+    p.text(
+        margin,
+        23.2,
+        ch["subtitle"],
+        size=1.92,
+        bold=True,
+        color=SLATE,
+        max_w=uw,
+    )
+    p.line(margin, 24.8, margin + uw, 24.8, color=INK, width=0.45)
+
+    # 2. Multi-Paragraph Unit Story (y = 26.2 .. 124.0 mm, no metadata title bar)
+    box_y = 26.2
+    box_h = 97.8
+    p.rect(margin, box_y, uw, box_h, fill=WHITE, stroke=LIGHT_BORDER, r=1.0, line_w=0.25)
+
+    essay_w = uw - 62.0
+    cur_ey = box_y + 5.2
+    for p_idx, para_txt in enumerate(story["paragraphs"]):
+        cur_ey = p.para(
+            margin + 3.4,
+            cur_ey,
+            para_txt,
+            max_w=essay_w,
+            size=2.52,
+            bold=(p_idx == 2),
+            color=INK if p_idx < 2 else TEAL_ACCENT,
+            leading=1.26,
+            max_lines=8,
+        )
+        cur_ey += 2.6
+
+    rc_x = margin + essay_w + 5.2
+    rc_w = uw - essay_w - 7.4
+    p.rect(rc_x, box_y + 4.0, rc_w, box_h - 8.0, fill=SUBTLE_HDR, stroke=LIGHT_BORDER, r=0.8, line_w=0.22)
+    p.image(ASSETS_MANUALS_DIR / ch["hero_png"], rc_x + 1.8, box_y + 5.8, rc_w - 3.6, box_h - 11.6)
+
+    # 3. Unit Lesson & SC-6 Work-Check Directory (y = 126.5 .. 268.2 mm)
+    hdr_y = 126.5
+    p.rect(margin, hdr_y, uw, 5.0, fill=INK, stroke=INK, r=0.7, line_w=0.2)
+    p.text(
+        margin + 2.6,
+        hdr_y + 3.4,
+        f"UNIT {ch_num} LESSONS — LEARN TWO TEXTBOOK WAYS FIRST, THEN CHECK YOUR WORK ON THE SC-6 CALCULATOR",
+        size=1.84,
+        bold=True,
+        mono=True,
+        color=WHITE,
+        max_w=uw - 10.0,
+    )
+    p.draw_tutorial_keycap(margin + uw - 5.6, hdr_y + 0.65, w=4.2, h=3.6)
+
+    secs = ch["sections"]
+    n_secs = len(secs)
+    cards_y0 = 132.8
+    avail_h = 268.2 - cards_y0
+    c_gap = 1.8
+    card_h = (avail_h - (n_secs - 1) * c_gap) / n_secs
+
+    for idx, sec in enumerate(secs):
+        snum = sec["sec_num"]
+        stitle = clean_section_title(snum, sec["title"])
+        ped = SECTION_PEDAGOGY[snum]
+        check_info = SC6_SECTION_CHECK_GUIDE[snum]
+        ex1_keys = sec["examples"][0]["keys"]
+        pg_a = 3 + ch_num + (sec["day_num"] - 1) * 2
+        pg_b = pg_a + 1
+        cy = cards_y0 + idx * (card_h + c_gap)
+
+        p.rect(margin, cy, uw, card_h, fill=WHITE, stroke=SLATE, r=0.9, line_w=0.26)
+        p.rect(margin, cy, uw, 4.8, fill=SUBTLE_HDR, stroke=LIGHT_BORDER, r=0.7, line_w=0.2)
+        p.rect(margin + 1.8, cy + 0.65, 25.0, 3.5, fill=TEAL_ACCENT, stroke=TEAL_ACCENT, r=0.5, line_w=0.15)
+        p.text(
+            margin + 14.3,
+            cy + 3.0,
+            f"SEC {snum} (pp.{pg_a}-{pg_b})",
+            size=1.62,
+            bold=True,
+            mono=True,
+            color=WHITE,
+            align="center",
+            max_w=24.0,
+        )
+        p.text(
+            margin + 28.6,
+            cy + 3.3,
+            stitle,
+            size=1.95,
+            bold=True,
+            color=INK,
+            max_w=96.0,
+        )
+        p.text(
+            margin + uw - 2.4,
+            cy + 3.3,
+            f"Textbook Ways: {ped['big_ideas_method']}",
+            size=1.62,
+            bold=True,
+            color=TEAL_ACCENT,
+            align="right",
+            max_w=uw - 127.0,
+        )
+
+        # Left column: What You Will Learn (Paper-and-Pencil + Block Concept)
+        left_col_w = 104.0
+        intro_sent = sec["concept"]
+        p.para(
+            margin + 2.8,
+            cy + 7.6,
+            f"Learn by Hand: {intro_sent}",
+            max_w=left_col_w,
+            size=1.78,
+            color=INK,
+            leading=1.16,
+            max_lines=4,
+        )
+
+        # Right column: How to Check Your Work on SC-6
+        rx = margin + left_col_w + 5.5
+        rw = uw - left_col_w - 7.5
+        p.line(rx - 2.2, cy + 5.6, rx - 2.2, cy + card_h - 1.2, color=LIGHT_BORDER, width=0.22)
+        p.text(
+            rx,
+            cy + 7.4,
+            "Check Your Work on the SC-6 Calculator:",
+            size=1.68,
+            bold=True,
+            color=TEAL_ACCENT,
+            max_w=rw,
+        )
+        after_keys_y = p.draw_keycap_sequence(ex1_keys, rx, cy + 8.3, max_w=rw, h=2.6, gap=0.42)
+        check_short = check_info["check_a"].split(":", 1)[-1].strip()
+        if check_short:
+            check_short = check_short[0].upper() + check_short[1:]
+        p.para(
+            rx,
+            after_keys_y + 2.3,
+            check_short,
+            max_w=rw,
+            size=1.62,
+            color=SLATE,
+            leading=1.13,
+            max_lines=3,
+        )
+
+    p.text(
+        margin,
+        p.h - 5.2,
+        f"StackCalc SC-6 Textbook Supplement  •  Unit {ch_num}: {ch['title']}",
+        size=1.88,
+        mono=True,
+        color=MUTED,
+        max_w=uw - 28.0,
+    )
+    p.text(margin + uw, p.h - 5.2, f"Page {page_num} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+
+
+def draw_sc6_check_box(
+    p: CanvasPage,
+    sec_num: str,
+    keys: List[str],
+    check_text: str,
+    x: float,
+    y: float,
+    w: float,
+    h: float,
+    sheet_label: str,
+) -> None:
+    """Renders a dedicated, separate SC-6 Calculator Work-Check section with hardware keycaps and step-by-step instructions."""
+    p.rect(x, y, w, h, fill="#F0F9FF", stroke=TEAL_ACCENT, r=0.85, line_w=0.28)
+    p.rect(x, y, w, 3.7, fill=TEAL_ACCENT, stroke=TEAL_ACCENT, r=0.65, line_w=0.2)
+    p.text(
+        x + 2.5,
+        y + 2.65,
+        f"CHECK YOUR WORK ON THE SC-6 CALCULATOR — {sheet_label} (SOLVE BY HAND FIRST, THEN VERIFY!)",
+        size=1.74,
+        bold=True,
+        mono=True,
+        color=WHITE,
+        max_w=w - 10.0,
+    )
+    p.draw_tutorial_keycap(x + w - 5.2, y + 0.25, w=3.8, h=3.2)
+
+    # Left Keycap Tray (w = 81.2 mm)
+    tray_x = x + 1.8
+    tray_w = 81.2
+    p.rect(tray_x, y + 4.2, tray_w, h - 4.8, fill=WHITE, stroke=LIGHT_BORDER, r=0.6, line_w=0.2)
+    if len(keys) > 10:
+        p.text(
+            tray_x + 1.6,
+            y + 5.7,
+            "Worked Example SC-6 Check Keystrokes:",
+            size=1.38,
+            bold=True,
+            mono=True,
+            color=SLATE,
+            max_w=tray_w - 3.2,
+        )
+        p.draw_keycap_sequence(keys, tray_x + 1.6, y + 6.3, max_w=tray_w - 3.2, h=2.55, gap=0.42)
+    else:
+        p.text(
+            tray_x + 1.8,
+            y + 6.4,
+            "Worked Example SC-6 Check Keystrokes:",
+            size=1.52,
+            bold=True,
+            mono=True,
+            color=SLATE,
+            max_w=tray_w - 3.6,
+        )
+        p.draw_keycap_sequence(keys, tray_x + 1.8, y + 7.4, max_w=tray_w - 3.6, h=3.25, gap=0.58)
+
+    # Right Step-by-Step Verification Instructions
+    rx = x + tray_w + 4.8
+    rw = w - tray_w - 6.8
+    if ":" in check_text:
+        lead_lbl, rest_txt = check_text.split(":", 1)
+        rest_clean = rest_txt.strip()
+        if rest_clean:
+            rest_clean = rest_clean[0].upper() + rest_clean[1:]
+        p.text(
+            rx,
+            y + 5.9,
+            lead_lbl.strip() + ":",
+            size=1.72,
+            bold=True,
+            color=TEAL_ACCENT,
+            max_w=rw,
+        )
+        p.para(
+            rx,
+            y + 8.1,
+            rest_clean,
+            max_w=rw,
+            size=1.72,
+            color=INK,
+            leading=1.15,
+            max_lines=3,
+        )
+    else:
+        p.para(
+            rx,
+            y + 6.2,
+            check_text,
+            max_w=rw,
+            size=1.72,
+            color=INK,
+            leading=1.15,
+            max_lines=4,
+        )
 
 
 def draw_student_section_page_a(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str, Any], page_num: int, total_pages: int) -> None:
-    """Renders Worksheet A for a section: Key Ideas, Step-by-Step Blocks, 2-Method Worked Example, and 10 Clean Problems."""
+    """Renders Worksheet A for a section: Key Ideas, Textbook Concept & Visual/Block Model, 2-or-3-Way Worked Example, Separate SC-6 Work-Check Part, and 10 Clean Problems."""
     margin = 11.0
     uw = p.w - 2 * margin
     sec_num = sec["sec_num"]
     stitle = clean_section_title(sec_num, sec["title"])
     ped = SECTION_PEDAGOGY[sec_num]
+    uses_blocks = ped.get("uses_blocks", True)
+    check_info = SC6_SECTION_CHECK_GUIDE[sec_num]
 
-    # 1. Clean Textbook Header (y = 9.0 .. 24.8 mm)
+    # 1. Clean Textbook Header (y = 9.0 .. 24.5 mm)
     p.text(
         margin,
         12.2,
@@ -871,83 +1605,82 @@ def draw_student_section_page_a(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
         color=TEAL_ACCENT,
         max_w=122.0,
     )
-    kit_badge = f"BLOCK KIT: {sec['kit_id']} • {sec['kit_name']}"
+    kit_name_clean = sec["kit_name"].replace("84mm Fraction Studio", "Fraction Strips Studio")
+    kit_badge = f"BLOCK KIT: {sec['kit_id']} • {kit_name_clean}" if uses_blocks else "TEXTBOOK MODEL: PAPER / GRAPH / FORMULA"
     p.rect(margin + uw - 70.0, 9.0, 70.0, 4.6, fill=SUBTLE_HDR, stroke=INK, r=0.8, line_w=0.25)
     p.text(margin + uw - 35.0, 12.1, kit_badge, size=1.82, bold=True, mono=True, color=INK, align="center", max_w=67.0)
 
-    p.text(margin, 18.2, f"Section {sec_num} — Practice A: {stitle}", size=4.0, bold=True, color=INK, max_w=uw)
+    p.text(margin, 18.0, f"Section {sec_num} — Practice A: {stitle}", size=3.95, bold=True, color=INK, max_w=uw)
 
     p.text(
         margin,
-        23.2,
+        22.9,
         f"Key Vocabulary: {ped['key_vocab']}",
-        size=1.92,
+        size=1.90,
         bold=True,
         color=SLATE,
         max_w=115.0,
     )
     p.text(
         margin + uw,
-        23.2,
-        "Name: ______________________   Date: __________   Score: ____ / 10",
-        size=1.92,
+        22.9,
+        "Name: ____________________   Date: ________   Quest Score: ____ / 100",
+        size=1.90,
         bold=True,
         color=INK,
         align="right",
     )
-    p.line(margin, 24.8, margin + uw, 24.8, color=INK, width=0.45)
+    p.line(margin, 24.4, margin + uw, 24.4, color=INK, width=0.45)
 
-    # 2. Top Instruction & Worked Example Band (y = 26.0 .. 83.5 mm, height = 57.5 mm)
+    # 2. Top Instruction & Worked Example Band (y = 25.4 .. 78.4 mm, height = 53.0 mm)
     left_w = 90.0
     right_w = uw - left_w - 2.5
     right_x = margin + left_w + 2.5
-    band_y = 26.0
-    band_h = 57.5
+    band_y = 25.4
+    band_h = 53.0
 
-    # --- LEFT PANEL: Block Kit & Two-Method Physical Demonstration ---
+    # --- LEFT PANEL: Textbook Concept, Custom Section Visual/Block Diagram & Reinforcement ---
     bm = MULTI_METHOD_BLOCK_NOTES[sec_num]
     p.rect(margin, band_y, left_w, band_h, fill=WHITE, stroke=INK, r=1.0, line_w=0.3)
-    p.rect(margin, band_y, left_w, 4.8, fill=INK, stroke=INK, r=0.8, line_w=0.2)
+    p.rect(margin, band_y, left_w, 4.5, fill=INK, stroke=INK, r=0.8, line_w=0.2)
+    left_hdr_title = (
+        f"TEXTBOOK CONCEPT & BLOCK DIAGRAM ({sec['kit_id']})"
+        if uses_blocks
+        else "TEXTBOOK CONCEPT & VISUAL DIAGRAM"
+    )
     p.text(
         margin + 2.4,
-        band_y + 3.4,
-        f"BLOCK KIT: 2 WAYS TO BUILD IT ({sec['kit_id']}: {sec['kit_name'].upper()})",
-        size=1.82,
+        band_y + 3.2,
+        left_hdr_title,
+        size=1.78,
         bold=True,
         mono=True,
         color=WHITE,
         max_w=left_w - 4.8,
     )
 
-    img_box_x = margin + 2.0
-    img_box_y = band_y + 5.6
-    img_box_w = 39.0
-    img_box_h = 24.2
-    p.rect(img_box_x, img_box_y, img_box_w, img_box_h, fill=WHITE, stroke=LIGHT_BORDER, r=0.8, line_w=0.2)
-    p.image(ASSETS_MANUALS_DIR / sec["asset_png"], img_box_x + 0.8, img_box_y + 0.8, img_box_w - 1.6, img_box_h - 1.6)
+    # Full-width section-specific concept & block diagram (86.0 mm × 24.2 mm)
+    draw_section_concept_diagram(p, sec_num, sec, ped, margin + 2.0, band_y + 5.0, left_w - 4.0, 24.2)
 
-    sch_x = img_box_x + img_box_w + 1.5
-    sch_w = left_w - img_box_w - 5.5
-    p.draw_block_schematic(sec["diagram_type"], sec["diagram_data"], sch_x, img_box_y, sch_w, img_box_h)
-
-    steps_box_y = band_y + 30.6
-    steps_box_h = band_h - 32.0
+    steps_box_y = band_y + 29.8
+    steps_box_h = band_h - 30.8
     p.rect(margin + 2.0, steps_box_y, left_w - 4.0, steps_box_h, fill=SUBTLE_HDR, stroke=BORDER, r=0.8, line_w=0.22)
     p.text(
         margin + 3.5,
-        steps_box_y + 3.1,
-        f"DEMONSTRATE BOTH METHODS WITH {sec['kit_id']} BLOCKS:",
-        size=1.78,
+        steps_box_y + 2.9,
+        "HOW THE TEXTBOOK & VISUAL MODEL WORK TOGETHER:",
+        size=1.72,
         bold=True,
         mono=True,
         color=TEAL_ACCENT,
         max_w=left_w - 7.0,
     )
-    sy_cur = steps_box_y + 5.9
+    sy_cur = steps_box_y + 5.4
+    trap_txt = COMMON_TRAPS.get(sec_num, bm["block_compare"])
     block_demo_lines = [
         (bm["block_m1"], True, INK),
         (bm["block_m2"], True, TEAL_ACCENT),
-        (bm["block_compare"], False, SLATE),
+        (trap_txt, True, "#B91C1C"),
     ]
     for btext, bbold, bcol in block_demo_lines:
         sy_cur = p.para(
@@ -955,149 +1688,211 @@ def draw_student_section_page_a(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
             sy_cur,
             btext,
             max_w=left_w - 7.0,
-            size=1.82,
+            size=1.74,
             bold=bbold,
             color=bcol,
-            leading=1.15,
+            leading=1.12,
             max_lines=2,
         )
-        sy_cur += 0.38
+        sy_cur += 0.3
 
-    # --- RIGHT PANEL: Two-Method Worked Example (+10 pts vs. +20 pts Double Points) ---
+    # --- RIGHT PANEL: Worked Example (2 or 3 Authentic Textbook Ways) ---
     ex1 = sec["examples"][0]
+    ex1_prob_txt = clean_ex1_problem(sec_num, ex1["problem"])
+    ex1_ans_txt = clean_ex1_ans(sec_num, ex1["ans"])
+    has_m3 = bool(ped.get("ex1_m3_title"))
+
     p.rect(right_x, band_y, right_w, band_h, fill=WHITE, stroke=INK, r=1.0, line_w=0.3)
-    p.rect(right_x, band_y, right_w, 4.8, fill=SUBTLE_HDR, stroke=INK, r=0.8, line_w=0.25)
+    p.rect(right_x, band_y, right_w, 4.5, fill=SUBTLE_HDR, stroke=INK, r=0.8, line_w=0.25)
+    we_hdr = (
+        "WORKED EXAMPLE — 3 TEXTBOOK WAYS (ANY 2 WAYS = +20 PTS)"
+        if has_m3
+        else "WORKED EXAMPLE — 2 TEXTBOOK WAYS FOR DOUBLE POINTS (+20)"
+    )
     p.text(
         right_x + 2.5,
-        band_y + 3.4,
-        "WORKED EXAMPLE — 2 TEXTBOOK WAYS FOR DOUBLE POINTS (+20)",
-        size=1.85,
+        band_y + 3.2,
+        we_hdr,
+        size=1.80,
         bold=True,
         mono=True,
         color=INK,
         max_w=right_w - 10.0,
     )
-    p.draw_tutorial_keycap(right_x + right_w - 5.8, band_y + 0.55, w=4.4, h=3.7)
+    p.draw_tutorial_keycap(right_x + right_w - 5.6, band_y + 0.45, w=4.2, h=3.5)
 
     # Problem Statement
     p.para(
         right_x + 2.6,
-        band_y + 7.8,
-        f"Problem: {ex1['problem']}",
+        band_y + 7.1,
+        f"Problem: {ex1_prob_txt}",
         max_w=right_w - 5.2,
-        size=2.12,
+        size=2.02,
         bold=True,
         color=INK,
-        leading=1.16,
+        leading=1.14,
         max_lines=2,
     )
 
-    # Method 1 Box (+10 pts — 1st Token)
-    m1_y = band_y + 13.6
-    m1_h = 13.4
-    p.rect(right_x + 2.2, m1_y, right_w - 4.4, m1_h, fill=M1_BG, stroke=BORDER, r=0.7, line_w=0.22)
-    m1_hdr = ped["ex1_m1_title"].replace("METHOD 1 (+10 pts):", "METHOD 1 (+10 pts — 1st Token):")
-    p.text(
-        right_x + 3.8,
-        m1_y + 3.1,
-        m1_hdr,
-        size=1.82,
-        bold=True,
-        color=INK,
-        max_w=right_w - 7.6,
-    )
-    p.para(
-        right_x + 3.8,
-        m1_y + 6.0,
-        ped["ex1_m1_steps"],
-        max_w=right_w - 7.6,
-        size=1.82,
-        color=SLATE,
-        leading=1.16,
-        max_lines=3,
-    )
+    if has_m3:
+        # Render 3 Authentic Textbook Ways stacked cleanly
+        way_boxes = [
+            (ped["ex1_m1_title"], ped["ex1_m1_steps"], M1_BG, BORDER, INK, SLATE),
+            (ped["ex1_m2_title"], ped["ex1_m2_steps"], M2_BG, TEAL_ACCENT, TEAL_ACCENT, INK),
+            (ped["ex1_m3_title"], ped["ex1_m3_steps"], "#FEFCE8", "#CA8A04", "#854D0E", INK),
+        ]
+        wy0 = band_y + 12.1
+        wh = 10.9
+        wgap = 0.70
+        for w_idx, (w_title, w_steps, w_bg, w_stroke, w_tcol, w_scol) in enumerate(way_boxes):
+            wy = wy0 + w_idx * (wh + wgap)
+            p.rect(right_x + 2.2, wy, right_w - 4.4, wh, fill=w_bg, stroke=w_stroke, r=0.65, line_w=0.22)
+            p.text(
+                right_x + 3.6,
+                wy + 2.7,
+                w_title,
+                size=1.70,
+                bold=True,
+                color=w_tcol,
+                max_w=right_w - 7.2,
+            )
+            p.para(
+                right_x + 3.6,
+                wy + 5.0,
+                w_steps,
+                max_w=right_w - 7.2,
+                size=1.66,
+                color=w_scol,
+                leading=1.11,
+                max_lines=2,
+            )
+    else:
+        # Render 2 Authentic Textbook Ways
+        m1_y = band_y + 12.3
+        m1_h = 16.2
+        p.rect(right_x + 2.2, m1_y, right_w - 4.4, m1_h, fill=M1_BG, stroke=BORDER, r=0.7, line_w=0.22)
+        p.text(
+            right_x + 3.8,
+            m1_y + 3.1,
+            ped["ex1_m1_title"],
+            size=1.80,
+            bold=True,
+            color=INK,
+            max_w=right_w - 7.6,
+        )
+        p.para(
+            right_x + 3.8,
+            m1_y + 6.0,
+            ped["ex1_m1_steps"],
+            max_w=right_w - 7.6,
+            size=1.78,
+            color=SLATE,
+            leading=1.14,
+            max_lines=3,
+        )
 
-    # Method 2 Box (+20 pts DOUBLE — 2nd Token)
-    m2_y = band_y + 28.0
-    m2_h = 13.4
-    p.rect(right_x + 2.2, m2_y, right_w - 4.4, m2_h, fill=M2_BG, stroke=TEAL_ACCENT, r=0.7, line_w=0.24)
-    m2_hdr = ped["ex1_m2_title"].replace("METHOD 2 (+20 pts DOUBLE):", "METHOD 2 (+20 pts DOUBLE — 2nd Token):")
-    p.text(
-        right_x + 3.8,
-        m2_y + 3.1,
-        m2_hdr,
-        size=1.82,
-        bold=True,
-        color=TEAL_ACCENT,
-        max_w=right_w - 7.6,
-    )
-    p.para(
-        right_x + 3.8,
-        m2_y + 6.0,
-        ped["ex1_m2_steps"],
-        max_w=right_w - 7.6,
-        size=1.82,
-        color=INK,
-        leading=1.16,
-        max_lines=3,
-    )
-
-    # SC-6 Keystrokes
-    ky = band_y + 42.6
-    p.text(right_x + 2.6, ky + 2.6, "SC-6 Keystrokes:", size=1.88, bold=True, mono=True, color=INK)
-    p.draw_keycap_sequence(ex1["keys"], right_x + 25.5, ky + 0.1, max_w=right_w - 28.0, h=3.45, gap=0.7)
+        m2_y = band_y + 29.6
+        m2_h = 16.2
+        p.rect(right_x + 2.2, m2_y, right_w - 4.4, m2_h, fill=M2_BG, stroke=TEAL_ACCENT, r=0.7, line_w=0.24)
+        p.text(
+            right_x + 3.8,
+            m2_y + 3.1,
+            ped["ex1_m2_title"],
+            size=1.80,
+            bold=True,
+            color=TEAL_ACCENT,
+            max_w=right_w - 7.6,
+        )
+        p.para(
+            right_x + 3.8,
+            m2_y + 6.0,
+            ped["ex1_m2_steps"],
+            max_w=right_w - 7.6,
+            size=1.78,
+            color=INK,
+            leading=1.14,
+            max_lines=3,
+        )
 
     # Final Answer Bar
-    bar_y = band_y + band_h - 6.8
+    bar_y = band_y + band_h - 6.0
     p.line(right_x + 2.2, bar_y, right_x + right_w - 2.2, bar_y, color=INK, width=0.25)
-    p.text(
-        right_x + 2.6,
-        bar_y + 4.3,
-        f"Answer: {ex1['ans']}",
-        size=2.15,
-        bold=True,
-        mono=True,
-        color=TEAL_ACCENT,
-        max_w=right_w * 0.56,
-    )
-    p.text(
-        right_x + right_w - 2.6,
-        bar_y + 4.3,
-        "1 Method = +10 pts  |  Both Methods = +20 pts!",
-        size=1.75,
-        bold=True,
-        color=SLATE,
-        align="right",
-        max_w=right_w * 0.43,
+    if len(ex1_ans_txt) > 30:
+        ans_sz = 1.66 if len(ex1_ans_txt) > 48 else 1.78
+        p.text(
+            right_x + 2.6,
+            bar_y + 3.9,
+            f"Answer: {ex1_ans_txt}",
+            size=ans_sz,
+            bold=True,
+            mono=True,
+            color=TEAL_ACCENT,
+            max_w=right_w - 5.2,
+        )
+    else:
+        p.text(
+            right_x + 2.6,
+            bar_y + 3.9,
+            f"Answer: {ex1_ans_txt}",
+            size=2.0,
+            bold=True,
+            mono=True,
+            color=TEAL_ACCENT,
+            max_w=right_w * 0.62,
+        )
+        p.text(
+            right_x + right_w - 2.6,
+            bar_y + 3.9,
+            "1 Way = +10  |  2 Ways = +20!",
+            size=1.68,
+            bold=True,
+            color=SLATE,
+            align="right",
+            max_w=right_w * 0.36,
+        )
+
+    # 3. Separate Part: How to Use the SC-6 Calculator to Check Your Work (y = 79.2 .. 92.8 mm, height = 13.6 mm)
+    draw_sc6_check_box(
+        p,
+        sec_num,
+        ex1["keys"],
+        check_info["check_a"],
+        margin,
+        79.2,
+        uw,
+        13.6,
+        f"SECTION {sec_num} PRACTICE A",
     )
 
-    # 3. Practice A Grid (y = 84.8 .. 269.0 mm, 10 Clean Textbook Problems in 5 Rows × 2 Columns)
-    hdr_y = 84.8
-    p.rect(margin, hdr_y, uw, 4.6, fill=INK, stroke=INK, r=0.7, line_w=0.2)
+    # 4. Practice A Grid (y = 93.8 .. 268.5 mm, 10 Clean Textbook Problems in 5 Rows × 2 Columns)
+    hdr_y = 93.8
+    p.rect(margin, hdr_y, uw, 4.4, fill=INK, stroke=INK, r=0.7, line_w=0.2)
     p.text(
         margin + 2.5,
-        hdr_y + 3.2,
-        f"SECTION {sec_num} PRACTICE A — SOLVE USING METHOD 1 (+10 PTS) OR BOTH METHODS (+20 PTS DOUBLE)",
-        size=1.9,
+        hdr_y + 3.1,
+        f"SECTION {sec_num} PRACTICE A — KEY IDEAS & MULTI-METHOD PRACTICE",
+        size=1.84,
         bold=True,
         mono=True,
         color=WHITE,
+        max_w=105.0,
     )
     p.text(
         margin + uw - 2.5,
-        hdr_y + 3.2,
-        f"Methods: {ped['big_ideas_method']}",
-        size=1.75,
+        hdr_y + 3.1,
+        "100-PT GOAL: Any 5 in 2 Ways (+20) OR All 10 in 1 Way (+10)!",
+        size=1.70,
+        bold=True,
         mono=True,
         color="#E2E8F0",
         align="right",
-        max_w=78.0,
+        max_w=86.0,
     )
 
-    grid_y0 = 90.5
+    grid_y0 = 99.1
     col_w = (uw - 3.0) / 2.0
-    row_h = 34.6
-    row_gap = 1.15
+    row_h = 33.0
+    row_gap = 1.1
 
     probs = sec["problems"]
     for idx, prob in enumerate(probs[:10]):
@@ -1114,26 +1909,54 @@ def draw_student_section_page_a(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
         p.rect(px + 2.0, py + 1.8, 5.0, 4.4, fill=badge_fill, stroke=badge_fill, r=0.65, line_w=0.2)
         p.text(px + 4.5, py + 4.8, str(p_num), size=2.15, bold=True, mono=True, color=WHITE, align="center")
 
-        # Clean textbook prompt directly at top of card — zero boilerplate header line!
+        # Clean textbook prompt directly at top of card
         cleaned_prompt = clean_sheet_a_prompt(sec_num, p_num, prob["prompt"])
-        p.para(
+        after_prompt = p.para(
             px + 8.2,
             py + 4.4,
             cleaned_prompt,
             max_w=col_w - 10.2,
-            size=2.12,
+            size=2.08,
             bold=True,
             color=INK,
-            leading=1.18,
+            leading=1.15,
             max_lines=3,
         )
 
-        # Clean, unobstructed open workspace for working out the problem!
+        # Warm-Up Starter Step 1 scaffold on Problems #1 and #2
+        starter_txt = get_starter_scaffold(sec_num, "A", p_num)
+        if starter_txt:
+            p.para(
+                px + 8.2,
+                after_prompt + 0.35,
+                starter_txt,
+                max_w=col_w - 10.2,
+                size=1.70,
+                italic=True,
+                color=TEAL_ACCENT,
+                leading=1.12,
+                max_lines=1,
+            )
+
+        # Light ready-to-use graphic organizer in lower-right workspace where applicable
+        draw_problem_workspace_organizer(p, sec_num, "A", p_num, px, py, col_w, row_h, cleaned_prompt)
+
+        # Bottom-left tier & token checkoffs + Bottom-right Ans line (leaves middle workspace 100% open!)
+        tier_lbl = "WARM-UP" if p_num <= 2 else ("CORE" if p_num <= 8 else "CHALLENGE")
+        p.text(
+            px + 2.4,
+            py + row_h - 1.8,
+            f"{tier_lbl} • [ ] +10 (1 Way)  [ ] +20 (2 Ways)",
+            size=1.55,
+            mono=True,
+            color=MUTED,
+            max_w=col_w - 43.0,
+        )
         p.text(
             px + col_w - 2.4,
             py + row_h - 1.8,
-            "Ans: ____________________________",
-            size=1.95,
+            "Ans: ________________________",
+            size=1.92,
             bold=True,
             mono=True,
             color=INK,
@@ -1153,17 +1976,19 @@ def draw_student_section_page_a(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
 
 
 def draw_student_section_page_b(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str, Any], page_num: int, total_pages: int) -> None:
-    """Renders Worksheet B for a section: Modeling Real Life 2-Method Worked Example + 10 Engaging Real-World Applications."""
+    """Renders Worksheet B for a section: Modeling Real Life 2-or-3-Way Worked Example + Separate SC-6 Check Box + Section Story Paragraph right before the 10 Word Problems."""
     margin = 11.0
     uw = p.w - 2 * margin
     sec_num = sec["sec_num"]
     stitle = clean_section_title(sec_num, sec["title"])
     ped = SECTION_PEDAGOGY[sec_num]
+    uses_blocks = ped.get("uses_blocks", True)
     bm = MULTI_METHOD_BLOCK_NOTES[sec_num]
     ex2 = ped["ex2"]
     b_probs = SHEET_B_PROBLEMS[sec_num]
+    check_info = SC6_SECTION_CHECK_GUIDE[sec_num]
 
-    # 1. Clean Textbook Header (y = 9.0 .. 24.8 mm)
+    # 1. Clean Textbook Header (y = 9.0 .. 24.4 mm)
     p.text(
         margin,
         12.2,
@@ -1174,179 +1999,265 @@ def draw_student_section_page_b(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
         color=TEAL_ACCENT,
         max_w=122.0,
     )
-    kit_badge = f"BLOCK KIT: {sec['kit_id']} • {sec['kit_name']}"
+    kit_name_clean = sec["kit_name"].replace("84mm Fraction Studio", "Fraction Strips Studio")
+    kit_badge = f"BLOCK KIT: {sec['kit_id']} • {kit_name_clean}" if uses_blocks else "TEXTBOOK MODEL: PAPER / GRAPH / FORMULA"
     p.rect(margin + uw - 70.0, 9.0, 70.0, 4.6, fill=SUBTLE_HDR, stroke=INK, r=0.8, line_w=0.25)
     p.text(margin + uw - 35.0, 12.1, kit_badge, size=1.82, bold=True, mono=True, color=INK, align="center", max_w=67.0)
 
-    p.text(margin, 18.2, f"Section {sec_num} — Practice B: Modeling Real Life ({stitle})", size=3.85, bold=True, color=INK, max_w=uw)
+    p.text(margin, 18.0, f"Section {sec_num} — Practice B: Modeling Real Life ({stitle})", size=3.85, bold=True, color=INK, max_w=uw)
 
+    compact_methods = (
+        ped["big_ideas_method"]
+        .replace("Way 1: ", "")
+        .replace("Way 2: ", "")
+        .replace("Way 3: ", "")
+        .replace("Method 1: ", "")
+        .replace("Method 2: ", "")
+    )
     p.text(
         margin,
-        23.2,
-        f"Textbook Methods: {ped['big_ideas_method']}",
-        size=1.92,
+        22.9,
+        f"Textbook Ways: {compact_methods}",
+        size=1.90,
         bold=True,
         color=SLATE,
-        max_w=115.0,
+        max_w=112.0,
     )
     p.text(
         margin + uw,
-        23.2,
-        "Name: ______________________   Date: __________   Score: ____ / 10",
-        size=1.92,
+        22.9,
+        "Name: ____________________   Date: ________   Quest Score: ____ / 100",
+        size=1.90,
         bold=True,
         color=INK,
         align="right",
     )
-    p.line(margin, 24.8, margin + uw, 24.8, color=INK, width=0.45)
+    p.line(margin, 24.4, margin + uw, 24.4, color=INK, width=0.45)
 
-    # 2. Top Modeling Real Life Two-Method Worked Example (y = 26.0 .. 67.5 mm, height = 41.5 mm)
-    band_y = 26.0
-    band_h = 41.5
+    # 2. Top Modeling Real Life Worked Example (y = 25.4 .. 62.2 mm, height = 36.8 mm)
+    band_y = 25.4
+    band_h = 36.8
+    has_m3 = bool(ex2.get("m3_title"))
+
     p.rect(margin, band_y, uw, band_h, fill=WHITE, stroke=INK, r=1.0, line_w=0.3)
-    p.rect(margin, band_y, uw, 4.8, fill=SUBTLE_HDR, stroke=INK, r=0.8, line_w=0.25)
+    p.rect(margin, band_y, uw, 4.4, fill=SUBTLE_HDR, stroke=INK, r=0.8, line_w=0.25)
+    ex2_clean_title = ex2["title"].replace("Modeling Real Life: ", "").upper()
+    b_hdr = (
+        f"WORKED EXAMPLE — {ex2_clean_title} (3 TEXTBOOK WAYS • ANY 2 = +20 PTS)"
+        if has_m3
+        else f"WORKED EXAMPLE — {ex2_clean_title} (2 TEXTBOOK WAYS = +20 PTS DOUBLE)"
+    )
     p.text(
         margin + 2.5,
-        band_y + 3.4,
-        f"MODELING REAL LIFE WORKED EXAMPLE — {ex2['title'].upper()} (SOLVE 2 WAYS = +20 PTS DOUBLE)",
-        size=1.88,
+        band_y + 3.1,
+        b_hdr,
+        size=1.82,
         bold=True,
         mono=True,
         color=INK,
         max_w=uw - 10.0,
     )
-    p.draw_tutorial_keycap(margin + uw - 5.8, band_y + 0.55, w=4.4, h=3.7)
+    p.draw_tutorial_keycap(margin + uw - 5.6, band_y + 0.45, w=4.2, h=3.5)
 
     # Real-Life Problem Statement
     p.para(
         margin + 2.6,
-        band_y + 7.8,
+        band_y + 7.1,
         f"Problem: {ex2['problem']}",
         max_w=uw - 5.2,
-        size=2.12,
+        size=2.02,
         bold=True,
         color=INK,
-        leading=1.18,
+        leading=1.14,
         max_lines=2,
     )
 
-    # Side-by-Side Method 1 (+10 pts) & Method 2 (+20 pts DOUBLE) with explicit Block Kit builds for BOTH methods
-    half_w = (uw - 6.8) / 2.0
-    m_box_y = band_y + 13.6
-    m_box_h = 19.2
+    m_box_y = band_y + 12.1
+    m_box_h = 18.8
 
-    # Left Half: Method 1 (+10 pts — 1st Token) + Block Kit Way 1
-    p.rect(margin + 2.2, m_box_y, half_w, m_box_h, fill=M1_BG, stroke=BORDER, r=0.7, line_w=0.22)
-    m1_b_hdr = ex2["m1_title"].replace("METHOD 1 (+10 pts):", "METHOD 1 (+10 pts — 1st Token):")
-    p.text(
-        margin + 3.8,
-        m_box_y + 3.2,
-        m1_b_hdr,
-        size=1.82,
-        bold=True,
-        color=INK,
-        max_w=half_w - 3.2,
-    )
-    after_m1 = p.para(
-        margin + 3.8,
-        m_box_y + 6.0,
-        ex2["m1_steps"],
-        max_w=half_w - 3.2,
-        size=1.80,
-        color=SLATE,
-        leading=1.15,
-        max_lines=3,
-    )
+    if has_m3:
+        # 3 Side-by-Side Textbook Ways
+        col3_w = (uw - 7.6) / 3.0
+        way3_cols = [
+            (ex2["m1_title"], ex2["m1_steps"], M1_BG, BORDER, INK, SLATE),
+            (ex2["m2_title"], ex2["m2_steps"], M2_BG, TEAL_ACCENT, TEAL_ACCENT, INK),
+            (ex2["m3_title"], ex2["m3_steps"], "#FEFCE8", "#CA8A04", "#854D0E", INK),
+        ]
+        for c_idx, (w_title, w_steps, w_bg, w_stroke, w_tcol, w_scol) in enumerate(way3_cols):
+            cx = margin + 2.2 + c_idx * (col3_w + 1.6)
+            p.rect(cx, m_box_y, col3_w, m_box_h, fill=w_bg, stroke=w_stroke, r=0.7, line_w=0.22)
+            p.text(
+                cx + 1.5,
+                m_box_y + 2.9,
+                w_title,
+                size=1.68,
+                bold=True,
+                color=w_tcol,
+                max_w=col3_w - 3.0,
+            )
+            p.para(
+                cx + 1.5,
+                m_box_y + 5.4,
+                w_steps,
+                max_w=col3_w - 3.0,
+                size=1.64,
+                color=w_scol,
+                leading=1.12,
+                max_lines=5,
+            )
+    else:
+        # 2 Side-by-Side Textbook Ways
+        half_w = (uw - 6.8) / 2.0
+        p.rect(margin + 2.2, m_box_y, half_w, m_box_h, fill=M1_BG, stroke=BORDER, r=0.7, line_w=0.22)
+        p.text(
+            margin + 3.8,
+            m_box_y + 2.9,
+            ex2["m1_title"],
+            size=1.78,
+            bold=True,
+            color=INK,
+            max_w=half_w - 3.2,
+        )
+        after_m1 = p.para(
+            margin + 3.8,
+            m_box_y + 5.5,
+            ex2["m1_steps"],
+            max_w=half_w - 3.2,
+            size=1.74,
+            color=SLATE,
+            leading=1.13,
+            max_lines=3,
+        )
+        p.para(
+            margin + 3.8,
+            max(after_m1 + 0.35, m_box_y + 12.1),
+            bm["ex2_block_m1"],
+            max_w=half_w - 3.2,
+            size=1.66,
+            italic=True,
+            color=TEAL_ACCENT,
+            leading=1.11,
+            max_lines=2,
+        )
+
+        m2_x = margin + 4.6 + half_w
+        p.rect(m2_x, m_box_y, half_w, m_box_h, fill=M2_BG, stroke=TEAL_ACCENT, r=0.7, line_w=0.24)
+        p.text(
+            m2_x + 1.6,
+            m_box_y + 2.9,
+            ex2["m2_title"],
+            size=1.78,
+            bold=True,
+            color=TEAL_ACCENT,
+            max_w=half_w - 3.2,
+        )
+        after_m2 = p.para(
+            m2_x + 1.6,
+            m_box_y + 5.5,
+            ex2["m2_steps"],
+            max_w=half_w - 3.2,
+            size=1.74,
+            color=INK,
+            leading=1.13,
+            max_lines=3,
+        )
+        p.para(
+            m2_x + 1.6,
+            max(after_m2 + 0.35, m_box_y + 12.1),
+            bm["ex2_block_m2"],
+            max_w=half_w - 3.2,
+            size=1.66,
+            italic=True,
+            color=TEAL_ACCENT,
+            leading=1.11,
+            max_lines=2,
+        )
+
+    # Bottom Bar: Common Trap Alert (left) + Final Answer (right)
+    ky = band_y + 31.3
+    ex2_ans_txt = ex2["ans"]
+    ans_b_w = min(82.0, max(44.0, (len(ex2_ans_txt) + 8) * 1.18))
+    ans_b_sz = 1.72 if len(ex2_ans_txt) > 44 else 1.88
+    trap_b_txt = COMMON_TRAPS.get(sec_num, bm["ex2_block_m1"])
     p.para(
-        margin + 3.8,
-        max(after_m1 + 0.45, m_box_y + 12.8),
-        bm["ex2_block_m1"],
-        max_w=half_w - 3.2,
-        size=1.74,
-        italic=True,
-        color=TEAL_ACCENT,
-        leading=1.13,
-        max_lines=2,
-    )
-
-    # Right Half: Method 2 (+20 pts DOUBLE — 2nd Token) + Block Kit Way 2
-    m2_x = margin + 4.6 + half_w
-    p.rect(m2_x, m_box_y, half_w, m_box_h, fill=M2_BG, stroke=TEAL_ACCENT, r=0.7, line_w=0.24)
-    m2_b_hdr = ex2["m2_title"].replace("METHOD 2 (+20 pts DOUBLE):", "METHOD 2 (+20 pts DOUBLE — 2nd Token):")
-    p.text(
-        m2_x + 1.6,
-        m_box_y + 3.2,
-        m2_b_hdr,
-        size=1.82,
+        margin + 2.6,
+        ky + 1.9,
+        trap_b_txt,
+        max_w=uw - ans_b_w - 6.0,
+        size=1.50,
         bold=True,
-        color=TEAL_ACCENT,
-        max_w=half_w - 3.2,
-    )
-    after_m2 = p.para(
-        m2_x + 1.6,
-        m_box_y + 6.0,
-        ex2["m2_steps"],
-        max_w=half_w - 3.2,
-        size=1.80,
-        color=INK,
-        leading=1.15,
-        max_lines=3,
-    )
-    p.para(
-        m2_x + 1.6,
-        max(after_m2 + 0.45, m_box_y + 12.8),
-        bm["ex2_block_m2"],
-        max_w=half_w - 3.2,
-        size=1.74,
-        italic=True,
-        color=TEAL_ACCENT,
-        leading=1.13,
+        color="#B91C1C",
+        leading=1.08,
         max_lines=2,
     )
-
-    # Bottom Bar: SC-6 Keystrokes (left) + Final Answer (right)
-    ky = band_y + 34.0
-    p.text(margin + 2.6, ky + 2.7, "SC-6 Keystrokes:", size=1.88, bold=True, mono=True, color=INK)
-    p.draw_keycap_sequence(ex2["keys"], margin + 25.5, ky + 0.2, max_w=92.0, h=3.45, gap=0.7)
     p.text(
         margin + uw - 2.6,
-        ky + 2.8,
-        f"Answer: {ex2['ans']}",
-        size=2.05,
+        ky + 3.2,
+        f"Answer: {ex2_ans_txt}",
+        size=ans_b_sz,
         bold=True,
         mono=True,
         color=TEAL_ACCENT,
         align="right",
-        max_w=85.0,
+        max_w=ans_b_w,
     )
 
-    # 3. Practice B Application Grid (y = 69.0 .. 269.0 mm, 10 Engaging Applications in 5 Rows × 2 Columns)
-    hdr_y = 69.0
-    p.rect(margin, hdr_y, uw, 4.6, fill=INK, stroke=INK, r=0.7, line_w=0.2)
+    # 3. Separate Part: How to Use the SC-6 Calculator to Check Your Work (y = 63.0 .. 76.6 mm, height = 13.6 mm)
+    draw_sc6_check_box(
+        p,
+        sec_num,
+        ex2["keys"],
+        check_info["check_b"],
+        margin,
+        63.0,
+        uw,
+        13.6,
+        f"SECTION {sec_num} PRACTICE B",
+    )
+
+    # 4. Section Story Paragraph right before the Word Problems (y = 77.4 .. 93.0 mm, height = 15.6 mm, zero metadata banners)
+    story_para = SECTION_STORY_PARAGRAPHS[sec_num]
+    p.rect(margin, 77.4, uw, 15.6, fill=SUBTLE_HDR, stroke=LIGHT_BORDER, r=0.8, line_w=0.22)
+    p.para(
+        margin + 2.6,
+        80.2,
+        story_para,
+        max_w=uw - 5.2,
+        size=1.82,
+        color=INK,
+        leading=1.16,
+        max_lines=5,
+    )
+
+    # 5. Practice B Application Grid (y = 93.8 .. 268.5 mm, 10 Engaging Applications in 5 Rows × 2 Columns, matching Practice A!)
+    hdr_y = 93.8
+    p.rect(margin, hdr_y, uw, 4.4, fill=INK, stroke=INK, r=0.7, line_w=0.2)
     p.text(
         margin + 2.5,
-        hdr_y + 3.2,
-        f"SECTION {sec_num} PRACTICE B — MODELING REAL LIFE & MULTI-METHOD APPLICATIONS",
-        size=1.9,
+        hdr_y + 3.1,
+        f"SECTION {sec_num} PRACTICE B — MODELING REAL LIFE & APPLICATIONS",
+        size=1.84,
         bold=True,
         mono=True,
         color=WHITE,
+        max_w=105.0,
     )
     p.text(
         margin + uw - 2.5,
-        hdr_y + 3.2,
-        "1 Way = +10 pts  |  2 Ways = +20 pts Double",
-        size=1.75,
+        hdr_y + 3.1,
+        "100-PT GOAL: Any 5 in 2 Ways (+20) OR All 10 in 1 Way (+10)!",
+        size=1.70,
+        bold=True,
         mono=True,
         color="#E2E8F0",
         align="right",
-        max_w=76.0,
+        max_w=86.0,
     )
 
-    grid_y0 = 74.8
+    grid_y0 = 99.1
     col_w = (uw - 3.0) / 2.0
-    row_h = 37.8
-    row_gap = 1.15
+    row_h = 33.0
+    row_gap = 1.1
 
     for idx, prob in enumerate(b_probs[:10]):
         r = idx // 2
@@ -1360,23 +2271,51 @@ def draw_student_section_page_b(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
         p.rect(px + 2.0, py + 1.8, 5.0, 4.4, fill=TEAL_ACCENT, stroke=TEAL_ACCENT, r=0.65, line_w=0.2)
         p.text(px + 4.5, py + 4.8, str(p_num), size=2.15, bold=True, mono=True, color=WHITE, align="center")
 
-        p.para(
+        after_prompt = p.para(
             px + 8.2,
             py + 4.4,
             prob["prompt"],
             max_w=col_w - 10.2,
-            size=2.08,
+            size=2.06,
             bold=True,
             color=INK,
-            leading=1.18,
+            leading=1.16,
             max_lines=3,
         )
 
+        # Warm-Up Starter Step 1 scaffold on Problems #1 and #2
+        starter_txt = get_starter_scaffold(sec_num, "B", p_num)
+        if starter_txt:
+            p.para(
+                px + 8.2,
+                after_prompt + 0.35,
+                starter_txt,
+                max_w=col_w - 10.2,
+                size=1.72,
+                italic=True,
+                color=TEAL_ACCENT,
+                leading=1.12,
+                max_lines=1,
+            )
+
+        # Light ready-to-use graphic organizer in lower-right workspace where applicable
+        draw_problem_workspace_organizer(p, sec_num, "B", p_num, px, py, col_w, row_h, prob["prompt"])
+
+        tier_lbl = "WARM-UP" if p_num <= 2 else ("CORE" if p_num <= 8 else "CHALLENGE")
+        p.text(
+            px + 2.4,
+            py + row_h - 1.8,
+            f"{tier_lbl} • [ ] +10 (1 Way)  [ ] +20 (2 Ways)",
+            size=1.55,
+            mono=True,
+            color=MUTED,
+            max_w=col_w - 43.0,
+        )
         p.text(
             px + col_w - 2.4,
             py + row_h - 1.8,
-            "Ans: ____________________________",
-            size=1.95,
+            "Ans: ________________________",
+            size=1.92,
             bold=True,
             mono=True,
             color=INK,
@@ -1398,18 +2337,29 @@ def draw_student_section_page_b(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
 def generate_student_workbook_pdf(chapters: List[Dict[str, Any]], output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     c = canvas.Canvas(str(output_path), pagesize=letter)
-    c.setTitle("StackCalc SC-6 Big Ideas Math Middle School Section-by-Section Supplement Workbook (90 Worksheets)")
+    c.setTitle("StackCalc SC-6 Big Ideas Math Middle School Section-by-Section Supplement Workbook (102 Pages)")
     c.setAuthor("StackCalc Learning Lab")
 
     total_secs = sum(len(ch["sections"]) for ch in chapters)
-    total_pages = 1 + total_secs * 2
+    total_pages = 2 + len(chapters) + total_secs * 2
 
     p = CanvasPage(c, letter)
     draw_student_cover_page(p, chapters)
     c.showPage()
 
-    page_num = 2
+    # Page 2: 1-Page QUEST-01 Token Scoring & SC-6 Work-Check Guide
+    pg_score = CanvasPage(c, letter)
+    draw_token_scoring_guide_page(pg_score, chapters, page_label=f"Page 2 of {total_pages}")
+    c.showPage()
+
+    page_num = 3
     for ch in chapters:
+        # Unit "How Things Work" Multi-Paragraph Story & Application Opener Page
+        pu = CanvasPage(c, letter)
+        draw_unit_story_page(pu, ch, page_num, total_pages)
+        c.showPage()
+        page_num += 1
+
         for sec in ch["sections"]:
             # Worksheet A: Key Ideas & Two-Method Practice
             pa = CanvasPage(c, letter)
@@ -1480,7 +2430,7 @@ def draw_coach_chapter_page(p: CanvasPage, ch: Dict[str, Any], total_chapters: i
     p.text(
         margin + 2.2,
         38.0,
-        "QUEST-01 Double-Points Scoring: 1 '+10' token = Method 1 (1st Way); stack a 2nd '+10' token (+20 pts) = Method 2 (2nd Way + SC-6 Check)!",
+        "QUEST-01 Double-Points Scoring: 1 '+10' token = Textbook Method 1 (1st Way); stack a 2nd '+10' token (+20 pts) = Textbook Method 2 (2nd Way)!",
         size=1.78,
         bold=True,
         mono=True,
@@ -1505,54 +2455,85 @@ def draw_coach_chapter_page(p: CanvasPage, ch: Dict[str, Any], total_chapters: i
         # Section Header Bar (4.6 mm tall)
         p.rect(margin, sy, uw, 4.6, fill=INK, stroke=INK, r=0.6, line_w=0.2)
         ex1 = sec["examples"][0]
+        ex1_ans_txt = clean_ex1_ans(sec_num, ex1["ans"])
         ped = SECTION_PEDAGOGY[sec_num]
         ex2 = ped["ex2"]
-        pg_a = 2 + (sec["day_num"] - 1) * 2
+        pg_a = 3 + ch_num + (sec["day_num"] - 1) * 2
         pg_b = pg_a + 1
+        compact_ways = (
+            ped["big_ideas_method"]
+            .replace("Way 1: ", "W1: ")
+            .replace("Way 2: ", "W2: ")
+            .replace("Way 3: ", "W3: ")
+        )
         p.text(
             margin + 2.0,
             sy + 3.2,
             f"SEC {sec_num} (pp.{pg_a}-{pg_b}): {stitle.upper()} [{sec['kit_id']}]",
-            size=1.82,
+            size=1.80,
             bold=True,
             mono=True,
             color=WHITE,
-            max_w=98.0,
+            max_w=99.0,
         )
         p.text(
             margin + uw - 2.0,
             sy + 3.2,
-            f"Methods: {ped['big_ideas_method']} | ExA: {ex1['ans']} | ExB: {ex2['ans']}",
-            size=1.68,
+            f"Methods: {compact_ways}",
+            size=1.64,
             mono=True,
             color="#E2E8F0",
             align="right",
-            max_w=95.0,
+            max_w=94.0,
         )
 
-        # Sub-header strip (3.4 mm tall) for Practice A (Left) vs. Practice B (Right)
+        # Sub-header strip (3.4 mm tall) for Practice A (Left) vs. Practice B (Right) + Worked Example Keys
         sub_y = sy + 4.6
         sub_h = 3.4
         half_w = uw / 2.0
         p.rect(margin, sub_y, half_w, sub_h, fill=M1_BG, stroke=LIGHT_BORDER, line_w=0.18)
         p.rect(margin + half_w, sub_y, half_w, sub_h, fill=M2_BG, stroke=LIGHT_BORDER, line_w=0.18)
         p.text(
-            margin + 2.0,
+            margin + 1.8,
             sub_y + 2.45,
-            f"PRACTICE A (p.{pg_a}): KEY IDEAS & TWO-METHOD PRACTICE (#1-#10)",
-            size=1.62,
+            f"PRACTICE A (p.{pg_a}): KEY IDEAS (#1-#10)",
+            size=1.55,
             bold=True,
             mono=True,
             color=INK,
+            max_w=46.0,
         )
         p.text(
-            margin + half_w + 2.0,
+            margin + half_w - 1.8,
             sub_y + 2.45,
-            f"PRACTICE B (p.{pg_b}): MODELING REAL LIFE APPLICATIONS (#1-#10)",
-            size=1.62,
+            f"ExA: {ex1_ans_txt}",
+            size=1.50,
             bold=True,
             mono=True,
             color=TEAL_ACCENT,
+            align="right",
+            max_w=48.0,
+        )
+        p.text(
+            margin + half_w + 1.8,
+            sub_y + 2.45,
+            f"PRACTICE B (p.{pg_b}): REAL LIFE (#1-#10)",
+            size=1.55,
+            bold=True,
+            mono=True,
+            color=TEAL_ACCENT,
+            max_w=46.0,
+        )
+        p.text(
+            margin + uw - 1.8,
+            sub_y + 2.45,
+            f"ExB: {ex2['ans']}",
+            size=1.50,
+            bold=True,
+            mono=True,
+            color=INK,
+            align="right",
+            max_w=48.0,
         )
 
         # 5 Rows × 4 Columns Grid:
@@ -1580,49 +2561,69 @@ def draw_coach_chapter_page(p: CanvasPage, ch: Dict[str, Any], total_chapters: i
                 # --- Practice A cell ---
                 pa_prob = a_probs[p_idx]
                 ax = margin + c * qcol_w
-                p.text(ax + 1.4, cy + row_h * 0.43, f"A{pa_prob['num']}:", size=1.68, bold=True, mono=True, color=INK)
+                pa_setup, pa_keys = parse_tutor_setup_and_keys(sec_num, pa_prob)
+                p.text(ax + 1.3, cy + row_h * 0.32, f"A{pa_prob['num']}:", size=1.60, bold=True, mono=True, color=INK)
                 p.text(
-                    ax + 6.8,
-                    cy + row_h * 0.43,
+                    ax + 6.4,
+                    cy + row_h * 0.32,
                     pa_prob["ans"],
-                    size=1.68,
+                    size=1.60,
                     bold=True,
                     mono=True,
                     color=TEAL_ACCENT,
-                    max_w=qcol_w - 8.0,
+                    max_w=qcol_w - 7.6,
                 )
                 p.text(
-                    ax + 1.4,
-                    cy + row_h * 0.85,
-                    f"Keys: {pa_prob['keys']}",
-                    size=1.48,
-                    mono=True,
+                    ax + 1.3,
+                    cy + row_h * 0.62,
+                    f"Setup: {pa_setup}",
+                    size=1.35,
+                    bold=True,
                     color=SLATE,
-                    max_w=qcol_w - 2.6,
+                    max_w=qcol_w - 2.4,
+                )
+                p.text(
+                    ax + 1.3,
+                    cy + row_h * 0.90,
+                    f"SC-6: {pa_keys}",
+                    size=1.28,
+                    mono=True,
+                    color=MUTED,
+                    max_w=qcol_w - 2.4,
                 )
 
                 # --- Practice B cell ---
                 pb_prob = b_probs[p_idx]
                 bx = margin + half_w + c * qcol_w
-                p.text(bx + 1.4, cy + row_h * 0.43, f"B{pb_prob['num']}:", size=1.68, bold=True, mono=True, color=TEAL_ACCENT)
+                pb_setup, pb_keys = parse_tutor_setup_and_keys(sec_num, pb_prob)
+                p.text(bx + 1.3, cy + row_h * 0.32, f"B{pb_prob['num']}:", size=1.60, bold=True, mono=True, color=TEAL_ACCENT)
                 p.text(
-                    bx + 6.8,
-                    cy + row_h * 0.43,
+                    bx + 6.4,
+                    cy + row_h * 0.32,
                     pb_prob["ans"],
-                    size=1.68,
+                    size=1.60,
                     bold=True,
                     mono=True,
                     color=INK,
-                    max_w=qcol_w - 8.0,
+                    max_w=qcol_w - 7.6,
                 )
                 p.text(
-                    bx + 1.4,
-                    cy + row_h * 0.85,
-                    f"Keys: {pb_prob['keys']}",
-                    size=1.48,
-                    mono=True,
+                    bx + 1.3,
+                    cy + row_h * 0.62,
+                    f"Setup: {pb_setup}",
+                    size=1.35,
+                    bold=True,
                     color=SLATE,
-                    max_w=qcol_w - 2.6,
+                    max_w=qcol_w - 2.4,
+                )
+                p.text(
+                    bx + 1.3,
+                    cy + row_h * 0.90,
+                    f"SC-6: {pb_keys}",
+                    size=1.28,
+                    mono=True,
+                    color=MUTED,
+                    max_w=qcol_w - 2.4,
                 )
 
     p.text(
@@ -1660,37 +2661,59 @@ def sync_curriculum_markdown(chapters: List[Dict[str, Any]], md_path: Path) -> N
     lines: List[str] = [
         "# Big Ideas Math Middle School: Two-Method Hands-On Block & SC-6 Supplement",
         "",
-        "**Grade 6 Complete + Grade 7 Bridge • 10 Units • 45 Textbook Sections • 90 Printable Worksheets (Practice A & B) • 90 Two-Method Worked Examples • 900 Practice Problems**",
+        "<div class=\"te-viewport-header mb-6\">",
+        "  <span class=\"te-viewport-sku\">BIG IDEAS MATH SUPPLEMENT // 10 UNITS &bull; 45 SECTIONS &bull; 90 WORKSHEETS</span>",
+        "  <span class=\"te-viewport-status text-amber-400\">● 900 MULTI-METHOD PRACTICE PROBLEMS &bull; 100-POINT DAILY GOAL</span>",
+        "</div>",
+        "",
+        "<nav class=\"curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs\" aria-label=\"Curriculum Navigation\">",
+        "  <a href=\"../\" class=\"px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold\">📖 Master Guide</a>",
+        "  <a href=\"../sc6-elementary-companion-workbook/\" class=\"px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold\">📗 SC-6 Companion Workbook (253 Problems)</a>",
+        "  <a href=\"../sc32-scientific-companion-workbook/\" class=\"px-3 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 transition font-bold\">📘 SC-32 Companion Casebook (339 Problems)</a>",
+        "  <a href=\"./\" class=\"px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition\">🚀 Big Ideas 45-Day Catch-Up (SC-6)</a>",
+        "  <a href=\"../rpn-elementary-guide/\" class=\"px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold\">⚡ RPN Power Guide</a>",
+        "  <a href=\"../worksheets/\" class=\"px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold\">📝 120 Station Worksheets</a>",
+        "  <a href=\"../alignment-matrix/\" class=\"px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold\">🎯 Standards Matrix</a>",
+        "  <a href=\"../teacher-guide/\" class=\"px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold\">🧑‍🏫 Teacher Guide</a>",
+        "  <a href=\"../uil-competition/\" class=\"px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold\">🏆 UIL Competition</a>",
+        "</nav>",
+        "",
+        "**Grade 6 Complete + Grade 7 Bridge • 1-Page Token Scoring Guide • 10 Unit Introductions • 45 Textbook Sections • 90 Printable Worksheets (Practice A & B) • 90 Multi-Way Worked Examples • 900 Practice Problems**",
         "",
         "<div class=\"hero-buttons\" style=\"margin: 1.25rem 0 1.75rem 0;\">",
-        "  <a href=\"../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf\" class=\"md-button md-button--primary\">📄 Download Student Supplement Workbook PDF (91 Pages • 90 Worksheets & 900 Problems)</a>",
+        "  <a href=\"../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf\" class=\"md-button md-button--primary\">📄 Download Student Supplement Workbook PDF (102 Pages • 45 Sections, 90 Worksheets & 900 Problems)</a>",
+        "  <a href=\"../../downloads/worksheets/sc6_quest_token_scoring_guide.pdf\" class=\"md-button\">🏆 Download 1-Page Token Scoring & SC-6 Work-Check Guide PDF</a>",
         "  <a href=\"../../downloads/worksheets/bigideas_middle_school_sc6_teacher_coach_guide.pdf\" class=\"md-button\">🔑 Download Compact 10-Page Coach & Answer Key PDF (1 Page Per Unit)</a>",
         "</div>",
         "",
-        "!!! abstract \"Built for Students Who Need Extra Practice: Authentic Big Ideas Methods, Two-Method Double Points & Clean Workspaces\"",
-        "    - **100% Authentic *Big Ideas Math* Concepts & Vocabulary:** Every section tracks the exact textbook vocabulary (*dividend, divisor, quotient, prime factorization, GCF, LCM, reciprocal, tape diagram, ratio table, unit rate, equivalent expressions, Distributive Property, inverse operations, net, interquartile range (IQR), mean absolute deviation (MAD)*) and exercise formats (*Error Analysis*, *Modeling Real Life*, *Different Words, Same Question*).",
-        "    - **Two-Method Worked Examples for Double Points (`+10` vs. `+20`):** Every Worked Example explicitly teaches the **two distinct methods from the *Big Ideas Math* textbook** side-by-side—**Method 1 (`+10 pts` — 1st Token)** and **Method 2 (`+20 pts DOUBLE` — 2nd Token)**—alongside step-by-step physical Block Kit instructions and SC-6 verification.",
-        "    - **2 Full Worksheets Per Section (90 Worksheets • 900 Problems):** Each of the 45 textbook sections includes **Practice A (*Key Ideas & Two-Method Practice*)** and **Practice B (*Modeling Real Life & Multi-Method Applications*)** with generous, uncluttered white space to work out each problem and write the final answer.",
-        "    - **Compact 10-Page Coach Guide:** The **Coach & Solution Guide PDF** fits every unit's misconception coaching, manipulative setup, and all 80–100 section answers (`Practice A #1–#10` and `Practice B #1–#10`) onto **1 single page per unit (10 pages total)**.",
+        "!!! abstract \"Built for Students Who Need Extra Practice: Two Textbook Ways, Hands-On Block Models & 100-Point Daily Goal\"",
+        "    - **Relatable Real-World Stories & Honest Student Perspectives:** Every Unit and lesson connects the math to real-world situations—from packing drone batteries, building skate ramps, and comparing bicycle gear sprockets to 3D-printer slicers, Antarctic penguin huddles, and wildlife puzzles—showing how students who initially doubt themselves discover why each mathematical concept works.",
+        "    - **100% Focused on How *Big Ideas Math* Teaches & Tests Each Concept:** Every section tracks the exact paper-and-pencil algorithms, conceptual models, and vocabulary (*dividend, divisor, quotient, prime factorization, GCF, LCM, reciprocal, tape diagram, ratio table, unit rate, equivalent expressions, Distributive Property, inverse operations, net, interquartile range (IQR), mean absolute deviation (MAD)*) that students are tested on in school.",
+        "    - **2 or 3 Authentic Textbook Ways & 100-Point Daily Goal:** Every Worked Example explicitly teaches the **distinct textbook solution pathways from *Big Ideas Math*** (`WAY 1`, `WAY 2`, and `WAY 3` where applicable). Students reach the **100-Point Daily Goal** either by solving **any 5 problems in 2 Ways (`5 × 20 = 100 pts`)** OR **all 10 problems in 1 Way (`10 × 10 = 100 pts`)**.",
+        "    - **Warm-Up Step 1 Starter Scaffolds (`#1–#2`), Common-Trap Alerts & Graphic Organizers:** Every worksheet includes a section-specific **`⚠️ WATCH OUT:`** misconception alert, a 1-line **Starter Step 1** prompt on Problems `#1–#2` to eliminate blank-page anxiety, and faint ready-to-use graphic organizers (number lines, ratio tables, mini coordinate grids, Venn diagrams, and box-plot axes) right inside the problem cards.",
+        "    - **Blocks Reinforce Textbook Concepts Where Applicable:** Physical manipulatives (`COUNT-01`, `PRIME-01`, `FRAC-01`, `ALGB-01`, `BASE-10` Two-Tone Zero-Pair Counters, `TIME-01`, `STAT-01`, `PROB-01`) are used purely to reinforce the textbook concepts where they naturally fit (such as arrays, factor towers, Prime Factor Venn Diagrams, fraction strips, tape diagrams, algebra tiles, two-tone zero-pair counters, balance scales, and 2D nets), while paper/number-line/graph/table/formula sections focus directly on the textbook strategy.",
+        "    - **2 Full Worksheets Per Section (90 Worksheets • 900 Problems):** Each of the 45 textbook sections includes **Practice A (*Key Ideas & Multi-Method Practice*)** and **Practice B (*Modeling Real Life & Applications*)** with generous, uncluttered white space to work out each problem.",
         "",
         "---",
         "",
         "## 🏆 Optional Desk Companion: The Simplified 2-Piece `3x1x7U` SC-6 Scoreboard (`QUEST-01`)",
         "",
-        "To motivate students to master both textbook methods on every worksheet, pair the workbook with the **`3x1x7U` Gridfinity SC-6 Scoreboard & Token Kit (`QUEST-01`)**:",
+        "To motivate students to master multiple textbook methods on every worksheet, pair the workbook with the **`3x1x7U` Gridfinity SC-6 Scoreboard & Token Kit (`QUEST-01`)**:",
         "",
         "| Hardware Component | Dimensions & Gridfinity Standard | How Double-Points Scoring Works |",
         "| :--- | :--- | :--- |",
         "| **1. Snapfinity Scoreboard Lid (`1–10` + `100` + `(?)`)** | `125.5 × 42.0 mm` (`3x1` Stackable Lid, `6×2 = 12` sockets) | **Left 5×2 Grid:** Numbered **`1`–`5`** (top row) and **`6`–`10`** (bottom row), matching **Problems `#1–#10`**. **Rightmost Column:** Top socket **`100`** (for a 10-block Mastery Tower) and bottom **Question Mark in a Circle (`?`)** tutorial keycap badge. |",
         "| **2. `3x1x7U` Token Bank Box (`QUEST BOARD`)** | `125.5 × 42.0 × 49.0 mm` (`7U` height, `(?` tutorial badge) | Holds all **60 universal `+10` Quarter-Block tokens** in 5 neat layers of 12 (`6×2`) directly on its Gridfinity floor—no separate inner tray needed! |",
-        "| **3. 60 Identical `+10` Quarter-Block Tokens** | `19.0 × 19.0 × 8.85 mm` (`7.0 mm` visible `1U` height) | Every token is identical (`+10` on top and all 4 sides):<br>• **1 Block (`+10 pts`)** = Solved with **Textbook Method 1**<br>• **2 Stacked Blocks (`+20 pts DOUBLE`)** = Verified with **Textbook Method 2** + Blocks/SC-6<br>• **10 Blocks (`100 pts`)** = **100% Worksheet Mastery!** |",
+        "| **3. 60 Identical `+10` Quarter-Block Tokens** | `19.0 × 19.0 × 8.85 mm` (`7.0 mm` visible `1U` height) | Every token is identical (`+10` on top and all 4 sides):<br>• **1 Block (`+10 pts`)** = Solved with **1st Textbook Way**<br>• **2 Stacked Blocks (`+20 pts DOUBLE`)** = Verified with **2nd Textbook Way**<br>• **10 Blocks (`100 pts`)** = **100-Point Daily Goal** (any 5 problems in 2 Ways OR all 10 in 1 Way)! |",
         "",
         "---",
         "",
     ]
 
     for ch in chapters:
-        lines.append(f"## Unit {ch['num']}: {ch['title']}")
+        unit_story_pg = 3 + (ch["num"] - 1) + (ch["sections"][0]["day_num"] - 1) * 2
+        story = UNIT_STORIES[ch["num"]]
+        lines.append(f"## Unit {ch['num']}: {ch['title']} — {story['story_title']} (p. {unit_story_pg})")
         lines.append("")
         lines.append(f"*{ch['big_ideas_book']} — {ch['subtitle']}*")
         lines.append("")
@@ -1698,18 +2721,25 @@ def sync_curriculum_markdown(chapters: List[Dict[str, Any]], md_path: Path) -> N
         lines.append(f"- **Target Misconception:** {ch['coach_misconception']}")
         lines.append(f"- **Hands-On Remediation:** {ch['coach_remediation']}")
         lines.append("")
+        for para_txt in story["paragraphs"]:
+            lines.append(para_txt)
+            lines.append("")
 
         for sec in ch["sections"]:
             sec_num = sec["sec_num"]
             stitle = clean_section_title(sec_num, sec["title"])
             ped = SECTION_PEDAGOGY[sec_num]
             bm = MULTI_METHOD_BLOCK_NOTES[sec_num]
+            story_para = SECTION_STORY_PARAGRAPHS[sec_num]
+            check_info = SC6_SECTION_CHECK_GUIDE[sec_num]
             bi_method = ped["big_ideas_method"]
             ex1 = sec["examples"][0]
+            ex1_prob_txt = clean_ex1_problem(sec_num, ex1["problem"])
+            ex1_ans_txt = clean_ex1_ans(sec_num, ex1["ans"])
             ex2 = ped["ex2"]
             keys1_fmt = " ".join(f"`[{k}]`" for k in ex1["keys"])
             keys2_fmt = " ".join(f"`[{k}]`" for k in ex2["keys"])
-            pg_a = 2 + (sec["day_num"] - 1) * 2
+            pg_a = 3 + ch["num"] + (sec["day_num"] - 1) * 2
             pg_b = pg_a + 1
 
             lines.append(f"### Section {sec_num}: {stitle} (Workbook pp. {pg_a}–{pg_b})")
@@ -1720,39 +2750,56 @@ def sync_curriculum_markdown(chapters: List[Dict[str, Any]], md_path: Path) -> N
             lines.append("")
             lines.append(f"![{stitle}](../assets/manuals/{sec['asset_png']}){{ width=\"320\" }}")
             lines.append("")
-            lines.append(f"> **Key Concept:** {sec['concept']}")
+            lines.append(sec["concept"])
             lines.append("")
-            lines.append(f"#### Demonstrate Both Textbook Methods with `{sec['kit_id']}` Blocks ({sec['kit_name']})")
+            lines.append(f"> **⚠️ {COMMON_TRAPS[sec_num]}**")
+            lines.append("")
+            lines.append(f"#### Textbook Concepts & Hands-On Reinforcement (`{sec['kit_id']}`: {sec['kit_name']})")
             lines.append("")
             lines.append(f"1. **{bm['block_m1'].split(':', 1)[0]}:**{bm['block_m1'].split(':', 1)[1]}")
             lines.append(f"2. **{bm['block_m2'].split(':', 1)[0]}:**{bm['block_m2'].split(':', 1)[1]}")
             lines.append(f"3. **{bm['block_compare'].split(':', 1)[0]}:**{bm['block_compare'].split(':', 1)[1]}")
             lines.append("")
-            lines.append("#### Two-Method Worked Examples (`Method 1: +10 pts` vs. `Method 2: +20 pts DOUBLE`)")
+            lines.append("#### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)")
             lines.append("")
-            lines.append("| Worksheet | Problem | Method 1 (`+10 pts` — 1st Token) | Method 2 (`+20 pts DOUBLE` — 2nd Token) | SC-6 Keystrokes | Final Answer |")
-            lines.append("| :--- | :--- | :--- | :--- | :--- | :--- |")
+            ex1_ways_col2 = f"**{ped['ex1_m2_title']}:** {ped['ex1_m2_steps']}"
+            if ped.get("ex1_m3_title"):
+                ex1_ways_col2 += f"<br>**{ped['ex1_m3_title']}:** {ped['ex1_m3_steps']}"
+            ex2_ways_col2 = f"**{ex2['m2_title']}:** {ex2['m2_steps']}<br>*{bm['ex2_block_m2']}*"
+            if ex2.get("m3_title"):
+                ex2_ways_col2 += f"<br>**{ex2['m3_title']}:** {ex2['m3_steps']}"
+            lines.append("| Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |")
+            lines.append("| :--- | :--- | :--- | :--- | :--- |")
             lines.append(
-                f"| **Practice A** (`p.{pg_a}`) | **{ex1['problem']}** | **{ped['ex1_m1_title']}:** {ped['ex1_m1_steps']}<br>*(See `{sec['kit_id']}` Block Way 1 above)* | **{ped['ex1_m2_title']}:** {ped['ex1_m2_steps']}<br>*(See `{sec['kit_id']}` Block Way 2 above)* | {keys1_fmt} | **{ex1['ans']}** |"
+                f"| **Practice A** (`p.{pg_a}`) | **{ex1_prob_txt}** | **{ped['ex1_m1_title']}:** {ped['ex1_m1_steps']} | {ex1_ways_col2} | **{ex1_ans_txt}** |"
             )
             lines.append(
-                f"| **Practice B** (`p.{pg_b}`) | **{ex2['problem']}** | **{ex2['m1_title']}:** {ex2['m1_steps']}<br>*{bm['ex2_block_m1']}* | **{ex2['m2_title']}:** {ex2['m2_steps']}<br>*{bm['ex2_block_m2']}* | {keys2_fmt} | **{ex2['ans']}** |"
+                f"| **Practice B** (`p.{pg_b}`) | **{ex2['problem']}** | **{ex2['m1_title']}:** {ex2['m1_steps']}<br>*{bm['ex2_block_m1']}* | {ex2_ways_col2} | **{ex2['ans']}** |"
             )
             lines.append("")
-            lines.append(f"#### Practice A (p. {pg_a}): Key Ideas & Two-Method Practice (10 Exercises)")
+            lines.append("#### How to Use the SC-6 Calculator to Check Your Work")
             lines.append("")
-            lines.append("| # | Problem Prompt | Coach Key: SC-6 Keystrokes | Final Answer |")
+            lines.append(f"- **Practice A Work-Check (`p.{pg_a}`):** {check_info['check_a']} *(Worked Example Keystrokes: {keys1_fmt} → **`{ex1_ans_txt}`**)*")
+            lines.append(f"- **Practice B Real-Life Work-Check (`p.{pg_b}`):** {check_info['check_b']} *(Worked Example Keystrokes: {keys2_fmt} → **`{ex2['ans']}`**)*")
+            lines.append("")
+            lines.append(f"#### Practice A (p. {pg_a}): Key Ideas & Multi-Method Practice (10 Exercises)")
+            lines.append("")
+            lines.append("| # | Problem Prompt | Tutor Setup & SC-6 Check | Final Answer |")
             lines.append("| :---: | :--- | :--- | :--- |")
             for prob in sec["problems"][:10]:
                 cprompt = clean_sheet_a_prompt(sec_num, prob["num"], prob["prompt"])
-                lines.append(f"| **A{prob['num']}** | {cprompt} | `{prob['keys']}` | **{prob['ans']}** |")
+                tstep = format_tutor_solution_step(sec_num, prob)
+                lines.append(f"| **A{prob['num']}** | {cprompt} | `{tstep}` | **{prob['ans']}** |")
             lines.append("")
             lines.append(f"#### Practice B (p. {pg_b}): Modeling Real Life & Multi-Method Applications (10 Exercises)")
             lines.append("")
-            lines.append("| # | Modeling Real Life Application Prompt | Coach Key: SC-6 Keystrokes | Final Answer |")
+            lines.append(story_para)
+            lines.append("")
+            lines.append("| # | Modeling Real Life Application Prompt | Tutor Setup & SC-6 Check | Final Answer |")
             lines.append("| :---: | :--- | :--- | :--- |")
             for bprob in SHEET_B_PROBLEMS[sec_num][:10]:
-                lines.append(f"| **B{bprob['num']}** | {bprob['prompt']} | `{bprob['keys']}` | **{bprob['ans']}** |")
+                tstep_b = format_tutor_solution_step(sec_num, bprob)
+                lines.append(f"| **B{bprob['num']}** | {bprob['prompt']} | `{tstep_b}` | **{bprob['ans']}** |")
             lines.append("")
             lines.append("---")
             lines.append("")
@@ -1769,6 +2816,7 @@ def main() -> None:
         f"Loaded {len(CHAPTERS_DATA)} units, {total_secs} sections, "
         f"{total_secs * 2} worksheets, {total_a_probs + total_b_probs} practice problems."
     )
+    generate_token_scoring_guide_pdf(CHAPTERS_DATA, SCORING_GUIDE_PDF)
     generate_student_workbook_pdf(CHAPTERS_DATA, STUDENT_PDF)
     generate_coach_guide_pdf(CHAPTERS_DATA, TEACHER_PDF)
     sync_curriculum_markdown(CHAPTERS_DATA, SOURCE_MD)

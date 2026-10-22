@@ -13,7 +13,7 @@ The watchOS application is designed for instant, glanceable number crunching dir
 - **True OLED #000000 Background**: Preserves battery life and blends invisibly with Apple Watch Series 10/11 edges.
 - **Edge-Glow Wayfinding Beacons**: Directional boundary pulses (Burnt Orange on the left, Blue on the right, Cyan on top) guide your finger across the keypad without looking.
 - **Macro Screen-Tap ENTER**: Tap anywhere on the upper display to execute an instant stack-lift `ENTER` without targeting a tiny button.
-- **Continuous Tactile Feedback**: Powered by Apple's Taptic Engine to simulate physical snap-dome switches.
+- **Continuous Tactile Feedback**: Powered by Apple's Taptic Engine to simulate physical tactile switches.
 
 ---
 

@@ -12,6 +12,8 @@ description: "Comprehensive K-12 STEM curriculum guide connecting tactile Gridfi
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
   <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">📖 Master Guide</a>
+  <a href="sc6-elementary-companion-workbook/" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">📗 SC-6 Companion Workbook (253 Problems)</a>
+  <a href="sc32-scientific-companion-workbook/" class="px-3 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 transition font-bold">📘 SC-32 Companion Casebook (339 Problems)</a>
   <a href="big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🚀 Big Ideas 45-Day Catch-Up (SC-6)</a>
   <a href="rpn-elementary-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ RPN Power Guide</a>
   <a href="worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 120 Station Worksheets</a>
@@ -202,24 +204,27 @@ All StackCalc educational literature is licensed under Creative Commons with **u
 
 ## Flagship Reference Books & Classroom Companion Manuals
 
-Every curriculum unit, manipulative studio, and station worksheet is anchored by our two comprehensive, engine-verified **Reference Manuals & Textbooks** (`858 combined pages`, `1,078 verified RPN keystroke sequences`, and `431 four-register stack tables`):
+Every curriculum unit, manipulative studio, and station worksheet is anchored by our two comprehensive, engine-verified **Bookstore Edition Reference Manuals & Textbooks** (`836 combined pages`, `1,078 verified RPN keystroke sequences`, `431 four-register stack tables`, plus `592 extended problems` in the Companion Workbooks):
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
 
   <div class="p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-[#11141A] border border-emerald-500/30 flex flex-col justify-between shadow-lg">
     <div>
       <div class="flex items-center gap-2 mb-2">
-        <span class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider">VOLUME I // GRADES K–6</span>
-        <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono font-bold">403 Pages &bull; 9 Chapters + 4 Appendices</span>
+        <span class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider">VOLUME I // GRADES K–7</span>
+        <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono font-bold">388 Pages &bull; 9 Chapters + 4 Appendices</span>
       </div>
       <h3 class="text-xl font-bold text-white mb-2">SC-6 Elementary Manual &amp; Manipulative Companion</h3>
       <p class="text-xs text-slate-300 leading-relaxed mb-4">
-        Pairs every physical Gridfinity manipulative (Ten-Frames, 84mm Fraction Towers, 144-Tile Arrays, Dominoes, Prime Factor Blocks, Planetary Clock) with the 4-stack elevator model, 25 turnkey 45-minute Teacher Lesson Plans (Appendix B), and 3D-printable OpenSCAD blueprints (Appendix A).
+        Pairs every physical Gridfinity manipulative (Ten-Frames, 84mm Fraction Towers, 24-Tile Starter &amp; 144-Tile Classroom Arrays, Dominoes, Prime Factor Blocks, Planetary Clock) with the 4-stack elevator model, 141 signature showcase adventures, 25 turnkey 45-minute Teacher Lesson Plans (Appendix B), and 3D-printable blueprints (Appendix A).
       </p>
     </div>
     <div class="flex flex-wrap gap-2">
       <a href="../manuals/#sc-6-elementary" class="px-3 py-2 rounded bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono text-xs font-bold transition">
         Book Showcase &amp; TOC &rarr;
+      </a>
+      <a href="sc6-elementary-companion-workbook/" class="px-3 py-2 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono text-xs font-bold transition">
+        Companion Workbook (253 Problems) &rarr;
       </a>
       <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition">
         Order Spiral Book ($16) ↗
@@ -231,16 +236,19 @@ Every curriculum unit, manipulative studio, and station worksheet is anchored by
     <div>
       <div class="flex items-center gap-2 mb-2">
         <span class="font-mono text-xs text-sky-400 font-bold uppercase tracking-wider">VOLUME II // GRADES 7–12, AP &amp; UNIVERSITY</span>
-        <span class="text-xs px-2 py-0.5 rounded bg-sky-500/10 text-sky-300 border border-sky-500/20 font-mono font-bold">370 Pages &bull; 14 Chapters + 5 Appendices</span>
+        <span class="text-xs px-2 py-0.5 rounded bg-sky-500/10 text-sky-300 border border-sky-500/20 font-mono font-bold">448 Pages &bull; 14 Chapters + 5 Appendices</span>
       </div>
       <h3 class="text-xl font-bold text-white mb-2">SC-32 Scientific Manual &amp; Applied STEM Handbook</h3>
       <p class="text-xs text-slate-300 leading-relaxed mb-4">
-        Complete engineering, AP Calculus/Physics/Statistics, and competition speedcraft reference: inside-out RPN stack dynamics, Cardano/Viète cubic &amp; quadratic solver (`POLY`), Brent's hybrid root-finder (`SOLVE`), adaptive Romberg quadrature (`∫`), complex phasors, 5-variable TVM, and vector plotting (`PLOT`).
+        Complete engineering, AP Calculus/Physics/Statistics, and competition speedcraft reference: inside-out RPN stack dynamics, 237 flagship showcase applications, Cardano/Viète cubic &amp; quadratic solver (`POLY`), Brent's hybrid root-finder (`SOLVE`), adaptive Romberg quadrature (`∫`), complex phasors, 5-variable TVM, and vector plotting (`PLOT`).
       </p>
     </div>
     <div class="flex flex-wrap gap-2">
       <a href="../manuals/#sc-32-scientific" class="px-3 py-2 rounded bg-sky-500 hover:bg-sky-400 text-slate-950 font-mono text-xs font-bold transition">
         Book Showcase &amp; TOC &rarr;
+      </a>
+      <a href="sc32-scientific-companion-workbook/" class="px-3 py-2 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 font-mono text-xs font-bold transition">
+        Companion Casebook (339 Problems) &rarr;
       </a>
       <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition">
         Order Spiral Book ($16) ↗
@@ -252,11 +260,13 @@ Every curriculum unit, manipulative studio, and station worksheet is anchored by
 
 ---
 
-## The Five Pillars of the StackCalc Curriculum Portal
+## The Pillars of the StackCalc Curriculum Portal
 
 Explore the comprehensive sub-sections of our curriculum and competition ecosystem:
 
-* **[RPN Elementary Power Guide (4-Stack XYZT, LastX & REP) &rarr;](rpn-elementary-guide.md):** The definitive pedagogical manual on why 4-stack XYZT RPN accelerates elementary math: default 4-stack XYZT operational display (with toggleable 2-stack mode for counting racks and dice), `{{keycap:÷R}}` simultaneous quotient and remainder division, `{{keycap:LASTX}}` instant inverse verification, and `{{keycap:REP}}` rhythmic skip-counting fact ladders.
+* **[SC-6 Elementary Companion Problem Workbook (253 Worked Problems) &rarr;](sc6-elementary-companion-workbook.md):** Chapter-by-chapter extended problem sets, physical Gridfinity manipulative setups, fluency drills, and applied STEM lab challenges accompanying the Bookstore Edition of *From Blocks to the Stack*.
+* **[SC-32 Scientific Companion Problem & Casebook Workbook (339 Worked Problems) &rarr;](sc32-scientific-companion-workbook.md):** Chapter-by-chapter extended engineering, scientific, corporate finance, and UIL competition problem sets accompanying the Bookstore Edition of *Thinking in the Stack*.
+* **[RPN Elementary Power Guide (4-Stack XYZT, LastX & REP) &rarr;](rpn-elementary-guide.md):** The definitive pedagogical manual on why 4-stack XYZT RPN accelerates elementary math: default 4-stack XYZT operational display (with toggleable 2-stack mode for counting racks and dice), `{{key:÷R}}` simultaneous quotient and remainder division, `{{key:LASTX}}` instant inverse verification, and `{{key:REP}}` rhythmic skip-counting fact ladders.
 * **[Pre-Generated Classroom Station Guides & Worksheets (120 Editions) &rarr;](worksheets.md):** 2-page visual companions with CPA CAD diagrams, step-by-step LCD stack traces, authentic math workspace, and teacher rubrics for Singapore Dimensions, Bridges in Mathematics, and Big Ideas Math.
 * **[Texas UIL & TMSCA Calculator Applications Competition Center &rarr;](uil-competition.md):** 12 authentic 30-minute tournament practice exams and official 3-sig-fig scoring keys for High School (SC-32), Junior High (Grades 7–8 & 26MS/PSIA), and Elementary (Grades 3–6 on SC-6).
 * **[Comprehensive Curriculum & Standards Alignment Matrix &rarr;](alignment-matrix.md):** Detailed cross-reference tables matching each StackCalc manipulative, calculator key sequence, and **SC-6 / SC-32 textbook chapter** to units in Bridges, Big Ideas, Singapore Dimensions, and CCSS-M standards.

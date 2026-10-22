@@ -51,7 +51,7 @@ StackCalc includes an arbitrary-precision rational fractions engine:
 
 ### 4. How do I switch between the Hardware Digital Twin and Modern App interfaces?
 StackCalc offers two distinct user interfaces on iPhone and iPad:
-- **Hardware Replica (Default):** An authentic, brutalist digital twin of our physical open-source hardware, featuring the high-contrast icy silver-blue ST7567A dot-matrix screen, trapezoidal snap-dome key caps, and laser-marked legends.
+- **Hardware Replica (Default):** An authentic, brutalist digital twin of our physical open-source hardware, featuring the high-contrast icy silver-blue ST7567A dot-matrix screen, trapezoidal tactile TPU key caps, and laser-marked legends.
 - **Modern App:** An expansive, glassmorphism-free touch interface with dynamic softkeys and high-resolution TUI graph rendering.
 - **To Switch Interface:** Press **Left Shift** + `FLAGS` (or tap `FLAGS` in the menu catalog) &rarr; `HW` &rarr; select `APP` or `REPLICA`.
 - **Faceplate Themes:** You can also customize faceplate aesthetics in the same menu via `FLAGS` &rarr; `FACE` (`RETRO`, `STEALTH`, `NOVA`, `SPACE`, or `VOYAGER`).
@@ -82,7 +82,7 @@ StackCalc includes an equation solver based on classic Romberg numerical integra
 
 ### 7. Physical Calculator and printable materials
 
-- **Current physical status:** The SC-32 is offered as a tool-free Maker Kit with a 100% pre-soldered RP2350 logic board, sliding dovetail chassis, snap-dome keycaps, and transflective monochrome LCD. Tool-free 5-minute snap assembly with zero soldering required.
+- **Current physical status:** The SC-32 is offered as a tool-free Maker Kit with a 100% pre-soldered RP2350 logic board, sliding dovetail chassis, tactile TPU keycaps, and transflective monochrome LCD. Tool-free 5-minute snap assembly with zero soldering required.
 - **Public printable release:** Download the matching four-part STL/3MF set from the [hardware guide](hardware.md). It is intended for mechanical exploration and community fabrication.
 - **Teaching materials:** The [Learning Lab](learning-lab.md#download-the-prototype-materials) provides printable curriculum materials and teacher PDFs.
 - **What is not public:** Electronics source, firmware source, CAD generators, manufacturing artwork, and production documentation are not public downloads.
