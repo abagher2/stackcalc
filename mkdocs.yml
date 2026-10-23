@@ -71,6 +71,8 @@ nav:
         - Product Overview: products/fraction-studio/index.md
         - Assembly Guide: products/fraction-studio/assembly.md
         - Classroom Lessons: products/fraction-studio/lessons.md
+    - Prime Factor Studio: products/prime-factor-studio/index.md
+    - Place Value Studio & Regrouping Trays: products/place-value/index.md
     - Classroom Planetary Clock:
         - Product Overview: products/classroom-clock/index.md
         - Assembly Guide: products/classroom-clock/assembly.md
@@ -84,7 +86,6 @@ nav:
         - Product Overview: products/math-dominoes/index.md
         - Assembly Guide: products/math-dominoes/assembly.md
         - Classroom Lessons: products/math-dominoes/lessons.md
-    - Prime Factor Studio: products/prime-factor-studio/index.md
     - SC-6 Quest Scoreboard: products/quest-scoreboard/index.md
     - Algebra Boxes & Tiles:
         - Product Overview: products/algebra-boxes/index.md

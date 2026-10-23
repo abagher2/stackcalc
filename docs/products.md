@@ -27,62 +27,26 @@ hide:
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "SC-6 Elementary RPN Calculator",
+        "url": "https://www.stackcalc.io/products/sc6-elementary/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "Fraction Studio Proportional Towers",
         "url": "https://www.stackcalc.io/products/fraction-studio/"
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Algebra Factoring Studio & Tiles",
-        "url": "https://www.stackcalc.io/products/algebra-boxes/"
-      },
-      {
-        "@type": "ListItem",
         "position": 4,
-        "name": "Sectional Classroom Planetary Clock",
-        "url": "https://www.stackcalc.io/products/classroom-clock/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "name": "Ten-Frame Dual Stage & Carry Shelf",
-        "url": "https://www.stackcalc.io/products/ten-frames/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "name": "Probability Dice & Modular Spinner Pack",
-        "url": "https://www.stackcalc.io/products/dice-and-spinner/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 7,
-        "name": "Unit Circle Trigonometry Volvelle",
-        "url": "https://www.stackcalc.io/products/unit-circle-volvelle/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 8,
-        "name": "Math Domino Studio & 12-Frame Set",
-        "url": "https://www.stackcalc.io/products/math-dominoes/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 9,
-        "name": "Counting Tiles & Planar Array Studio",
-        "url": "https://www.stackcalc.io/products/counting-tiles/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 10,
         "name": "Prime Factor Studio & Slide Rule Comparator",
         "url": "https://www.stackcalc.io/products/prime-factor-studio/"
       },
       {
         "@type": "ListItem",
-        "position": 11,
-        "name": "SC-6 Quest Scoreboard & +10 Token Kit",
-        "url": "https://www.stackcalc.io/products/quest-scoreboard/"
+        "position": 5,
+        "name": "Place Value Blocks & Regrouping Trays",
+        "url": "https://www.stackcalc.io/products/place-value/"
       }
     ]
   }
@@ -402,7 +366,7 @@ hide:
         <h2 class="te-section-title">Classroom Physical Manipulatives</h2>
         <p class="text-sm text-gray-400 m-0">Hands-on architectural math tools designed for standard tabletop and desk use.</p>
       </div>
-      <span class="te-section-badge">8 KITS &bull; 42MM GRIDFINITY STANDARD &bull; NON-TOXIC PLA 2.0+</span>
+      <span class="te-section-badge">★ TOP 3 CORE KITS &bull; 42MM GRIDFINITY STANDARD &bull; NON-TOXIC PLA 2.0+</span>
     </div>
 
     <div class="te-grid-3">
@@ -427,7 +391,7 @@ hide:
           <div class="te-card-category">Fractions &amp; Equivalence</div>
           <h3 class="te-card-title"><a href="fraction-studio/">Fraction Studio Proportional Towers</a></h3>
           <p class="te-card-desc">
-            Single-color precision proportional blocks with debossed 4-face notation (fraction, decimal, percent, degree). Halves, quarters, and eighths physically align flush on any classroom table with zero loose trays required. Housed in a modular 3x2x13U Snapfinity Gridfinity enclosure with bi-directional sliding hard lid. (Optional snap-on TPU non-skid feet sold separately.)
+            Single-color precision proportional blocks with debossed 4-face notation (fraction, decimal, percent, degree). Halves, quarters, and eighths physically align flush on any classroom table with zero loose trays required. Housed in a modular 3x2x13U Snapfinity Gridfinity enclosure with bi-directional sliding hard lid. Pairs directly with SC-6 stacked fraction display mode.
           </p>
         </div>
         <div class="te-card-footer">
@@ -444,11 +408,97 @@ hide:
         </div>
       </article>
 
+      <!-- 2. Prime Factor Studio -->
+      <article class="te-card">
+        <div class="te-card-header">
+          <span class="te-card-sku">PRIME-01 // NUMBER THEORY</span>
+          <span class="te-card-status status-instock">● IN STOCK [SHIPS 24H]</span>
+        </div>
+        <div class="te-card-viewport">
+          <a href="prime-factor-studio/">
+            <img src="../assets/renders/etsy/prime-factor-studio-hero-square.png" alt="Prime Factor Studio &amp; Factor Towers" loading="lazy">
+          </a>
+        </div>
+        <div class="te-card-specs">
+          <span class="te-card-spec-item">BLOCKS: 29 PROPORTIONAL</span>
+          <span class="te-card-spec-item">GRADES: 3&ndash;9</span>
+          <span class="te-card-spec-item">HEIGHT: k·log(p)</span>
+        </div>
+        <div class="te-card-body">
+          <div class="te-card-category">Prime Factorization &amp; Logarithms</div>
+          <h3 class="te-card-title"><a href="prime-factor-studio/">Prime Factor Studio &amp; Factor Towers</a></h3>
+          <p class="te-card-desc">
+            Proportional logarithmic prime factor blocks with a 3x1x13U Snapfinity Gridfinity box. Stacking prime blocks physically multiplies them ($2 \times 3 = 6$, $2 \times 2 \times 3 = 12$) to prove the Fundamental Theorem of Arithmetic and solve GCF/LCM on the bilateral comparator stage. Direct twin to SC-6 prime engine.
+          </p>
+        </div>
+        <div class="te-card-footer">
+          <div>
+            <span class="te-card-price">$46.00</span>
+            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
+          </div>
+          <div class="te-card-actions">
+            <a href="prime-factor-studio/" class="te-card-btn">Specs &rarr;</a>
+            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="../downloads/prime-factor-studio-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Place Value Studio -->
+      <article class="te-card">
+        <div class="te-card-header">
+          <span class="te-card-sku">PLAC-01 // REGROUPING TRAYS</span>
+          <span class="te-card-status status-instock">● IN STOCK [SHIPS 24H]</span>
+        </div>
+        <div class="te-card-viewport">
+          <a href="place-value/">
+            <img src="../assets/renders/etsy/place-value-studio-hero-square.png" alt="Place Value Studio Dual Trays & 53 Blocks" loading="lazy">
+          </a>
+        </div>
+        <div class="te-card-specs">
+          <span class="te-card-spec-item">GRID: 42mm</span>
+          <span class="te-card-spec-item">GRADES: 1&ndash;5</span>
+          <span class="te-card-spec-item">BLOCKS: 53 TOTAL</span>
+        </div>
+        <div class="te-card-body">
+          <div class="te-card-category">Place Value, Addition &amp; Decimals</div>
+          <h3 class="te-card-title"><a href="place-value/">Place Value Studio &amp; Regrouping Trays</a></h3>
+          <p class="te-card-desc">
+            Dual 6&times;2 desktop activity trays (Whole Numbers 100k–1 and Decimals 0.1–0.000001) with 44 contoured digit blocks and 9 stackable +1 regrouping tokens. Two operational rows provide physical column alignment for multi-digit addition, subtraction, carries, borrows, and decimal conversions.
+          </p>
+        </div>
+        <div class="te-card-footer">
+          <div>
+            <span class="te-card-price">$38.00</span>
+            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
+          </div>
+          <div class="te-card-actions">
+            <a href="place-value/" class="te-card-btn">Specs &rarr;</a>
+            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="../downloads/" class="te-btn-stl-sm">3MF ↓</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- On Hold / Open-Source Archive Section -->
+    <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 1.25rem;">
+        <div>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: #94A3B8; margin: 0;">Production On Hold // Open-Source 3MF Lab Archive</h3>
+          <p style="font-size: 0.78rem; color: #64748B; margin: 0;">These physical kits are temporarily on hold for commercial batch production while we prioritize our Top 5 SKUs. 100% free CAD and 3MF print files remain freely downloadable below.</p>
+        </div>
+        <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #F59E0B; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); padding: 3px 8px; border-radius: 4px;">⏸ PRODUCTION ON HOLD • FREE STLs ACTIVE</span>
+      </div>
+
+      <div class="te-grid-3" style="opacity: 0.85;">
+
       <!-- 2. Sectional Planetary Clock -->
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">TIME-01 // PLANETARY GEARS</span>
-          <span class="te-card-status status-preorder">○ PRE-ORDER</span>
+          <span class="te-card-status" style="background: rgba(245, 158, 11, 0.15); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.3);">⏸ ON HOLD (3MF ACTIVE)</span>
         </div>
         <div class="te-card-viewport">
           <a href="classroom-clock/">
@@ -485,7 +535,7 @@ hide:
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">ALGB-01 // POLYNOMIAL STAGE</span>
-          <span class="te-card-status status-preorder">○ PRE-ORDER</span>
+          <span class="te-card-status" style="background: rgba(245, 158, 11, 0.15); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.3);">⏸ ON HOLD (3MF ACTIVE)</span>
         </div>
         <div class="te-card-viewport">
           <a href="algebra-boxes/">
@@ -522,7 +572,7 @@ hide:
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">BASE-10 // REGROUPING STAGE</span>
-          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
+          <span class="te-card-status" style="background: rgba(245, 158, 11, 0.15); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.3);">⏸ ON HOLD (3MF ACTIVE)</span>
         </div>
         <div class="te-card-viewport">
           <a href="ten-frames/">
@@ -559,7 +609,7 @@ hide:
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">DOMI-01 // MATH DOMINOES</span>
-          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
+          <span class="te-card-status" style="background: rgba(245, 158, 11, 0.15); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.3);">⏸ ON HOLD (3MF ACTIVE)</span>
         </div>
         <div class="te-card-viewport">
           <a href="math-dominoes/">
@@ -592,11 +642,11 @@ hide:
         </div>
       </article>
 
-      <!-- 5. Probability Dice & Spinner Pack -->
+      <!-- 6. Probability Dice & Spinner Pack -->
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">STAT-01 // PROBABILITY LAB</span>
-          <span class="te-card-status status-instock">● IN STOCK [SHIPS 24H]</span>
+          <span class="te-card-status" style="background: rgba(245, 158, 11, 0.15); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.3);">⏸ ON HOLD (3MF ACTIVE)</span>
         </div>
         <div class="te-card-viewport">
           <a href="dice-and-spinner/">
@@ -629,11 +679,11 @@ hide:
         </div>
       </article>
 
-      <!-- 6. Unit Circle & Trig Volvelle -->
+      <!-- 7. Unit Circle & Trig Volvelle -->
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">TRIG-01 // VOLVELLE DIAL</span>
-          <span class="te-card-status status-instock">● IN STOCK [SHIPS 24H]</span>
+          <span class="te-card-status" style="background: rgba(245, 158, 11, 0.15); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.3);">⏸ ON HOLD (3MF ACTIVE)</span>
         </div>
         <div class="te-card-viewport">
           <a href="unit-circle-volvelle/">
@@ -666,11 +716,11 @@ hide:
         </div>
       </article>
 
-      <!-- 7. Counting Tiles & Planar Array Studio -->
+      <!-- 8. Counting Tiles & Planar Array Studio -->
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">TILE-01 // ARRAYS &amp; MAPS</span>
-          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
+          <span class="te-card-status" style="background: rgba(245, 158, 11, 0.15); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.3);">⏸ ON HOLD (3MF ACTIVE)</span>
         </div>
         <div class="te-card-viewport">
           <a href="counting-tiles/">
@@ -703,48 +753,11 @@ hide:
         </div>
       </article>
 
-      <!-- 8. Prime Factor Studio & Factor Towers -->
-      <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">PRIME-01 // NUMBER THEORY</span>
-          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
-        </div>
-        <div class="te-card-viewport">
-          <a href="prime-factor-studio/">
-            <img src="../assets/renders/prime-studio-hero.png" alt="Prime Factor Studio &amp; Factor Towers" loading="lazy">
-          </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">BLOCKS: 29 PROPORTIONAL</span>
-          <span class="te-card-spec-item">GRADES: 3&ndash;9</span>
-          <span class="te-card-spec-item">STAGE: FACTOR WELLS</span>
-        </div>
-        <div class="te-card-body">
-          <div class="te-card-category">Prime Factorization &amp; Logarithms</div>
-          <h3 class="te-card-title"><a href="prime-factor-studio/">Prime Factor Studio &amp; Factor Towers</a></h3>
-          <p class="te-card-desc">
-            29 proportional logarithmic prime factor blocks with a 3x1x13U Snapfinity Gridfinity box featuring prime power storage lid sockets. Stacking prime blocks physically multiplies them, proving the Fundamental Theorem of Arithmetic. (Optional snap-on TPU feet sold separately.)
-          </p>
-        </div>
-        <div class="te-card-footer">
-          <div>
-            <span class="te-card-price">$46.00</span>
-            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
-          </div>
-          
-          <div class="te-card-actions">
-            <a href="prime-factor-studio/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
-            <a href="../downloads/prime-factor-studio-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
-          </div>
-        </div>
-      </article>
-
       <!-- 9. SC-6 Quest Scoreboard & +10 Token Kit -->
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">QUEST-01 // MULTI-METHOD SCOREBOARD</span>
-          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
+          <span class="te-card-status" style="background: rgba(245, 158, 11, 0.15); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.3);">⏸ ON HOLD (3MF ACTIVE)</span>
         </div>
         <div class="te-card-viewport">
           <a href="quest-scoreboard/">
@@ -777,6 +790,7 @@ hide:
         </div>
       </article>
 
+      </div>
     </div>
   </section>
 

@@ -417,10 +417,10 @@
                     <!-- Showcase Mode Selector (Sleek Segmented Instrument Toolbar) -->
                     <div class="w-full max-w-[440px] bg-[#11141A] p-1 rounded-xl border border-white/10 grid grid-cols-6 gap-1 mb-3 font-mono select-none">
                         <button type="button" class="hero-tab-btn active" id="hero-tab-sc32" onclick="switchHeroShowcase('sc32')">SC-32</button>
-                        <button type="button" class="hero-tab-btn" id="hero-tab-tenframe" onclick="switchHeroShowcase('tenframe')">10-FRAME</button>
-                        <button type="button" class="hero-tab-btn" id="hero-tab-domino" onclick="switchHeroShowcase('domino')">DOMINO</button>
+                        <button type="button" class="hero-tab-btn" id="hero-tab-sc6" onclick="switchHeroShowcase('sc6')">SC-6</button>
                         <button type="button" class="hero-tab-btn" id="hero-tab-fraction" onclick="switchHeroShowcase('fraction')">FRACTION</button>
-                        <button type="button" class="hero-tab-btn" id="hero-tab-clock" onclick="switchHeroShowcase('clock')">CLOCK</button>
+                        <button type="button" class="hero-tab-btn" id="hero-tab-prime" onclick="switchHeroShowcase('prime')">PRIME</button>
+                        <button type="button" class="hero-tab-btn" id="hero-tab-placevalue" onclick="switchHeroShowcase('placevalue')">PLACE VAL</button>
                         <button type="button" class="hero-tab-btn" id="hero-tab-digital" onclick="switchHeroShowcase('digital')">SIMULATOR</button>
                     </div>
 
@@ -436,7 +436,7 @@
                                 </div>
                                 <div id="hero-photo-title" class="font-mono text-xs sm:text-sm font-bold text-white leading-tight mt-0.5 whitespace-nowrap">StackCalc SC-32 Maker Kit</div>
                                 <div id="hero-photo-price" class="font-mono text-[11px] text-slate-300 font-semibold mt-0.5">$89.00 USD <span class="text-[10px] text-slate-500 font-normal">(100% Pre-Soldered &bull; 5-Min Assembly)</span></div>
-                                <div id="hero-photo-dims" class="font-mono text-[10px] text-cyan-400 font-semibold mt-0.5">135&times;90&times;16mm &bull; 142g &bull; 400g Snap-Domes &bull; 0.0s Boot</div>
+                                <div id="hero-photo-dims" class="font-mono text-[10px] text-cyan-400 font-semibold mt-0.5">135&times;90&times;16mm &bull; 142g &bull; Tactile Switches &amp; TPU Keys &bull; 0.0s Boot</div>
                             </div>
                             <div class="flex items-center gap-1.5 shrink-0">
                                 <a id="hero-photo-link" href="products/sc32-calculator/" class="px-2.5 py-1.5 rounded border border-white/20 hover:border-white text-white font-mono text-[11px] font-bold transition">Specs &rarr;</a>
@@ -577,11 +577,11 @@
                                 <span class="font-mono text-[11px] text-slate-400 font-bold uppercase tracking-wider block mb-1">CONCRETE MANIPULATIVES</span>
                                 <h3 class="text-xl font-bold text-white mb-2">Desk Workbench Lids</h3>
                                 <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                                    Every Gridfinity storage box features a snap-in workbench lid. 19mm square miniblocks, 1064nm laser-foamed dominoes, and proportional fraction towers seat with tactile certainty.
+                                    Every Gridfinity storage box features a snap-in workbench lid. 42mm Gridfinity trays, logarithmic prime blocks, and proportional fraction towers seat with tactile certainty.
                                 </p>
                             </div>
                             <div class="pt-4 border-t border-white/5 font-mono text-xs text-slate-400 flex items-center justify-between">
-                                <span>Ten-Frames &bull; Dominoes &bull; Towers</span>
+                                <span>Place Value &bull; Fractions &bull; Prime Towers</span>
                                 <span class="text-slate-500 font-bold">&rarr;</span>
                             </div>
                         </div>
@@ -593,9 +593,9 @@
                                     <!-- Mini Bridge Mode Tabs -->
                                     <div class="flex items-center justify-between gap-1 z-10 font-mono text-[9px]">
                                         <div class="flex gap-1">
-                                            <button type="button" id="cra-tab-tenframe" onclick="switchCRABridge('tenframe')" class="cra-bridge-tab px-2 py-0.5 rounded bg-white text-slate-950 font-bold transition">10-FRAME</button>
+                                            <button type="button" id="cra-tab-placevalue" onclick="switchCRABridge('placevalue')" class="cra-bridge-tab px-2 py-0.5 rounded bg-white text-slate-950 font-bold transition">PLACE VALUE</button>
                                             <button type="button" id="cra-tab-fraction" onclick="switchCRABridge('fraction')" class="cra-bridge-tab px-2 py-0.5 rounded bg-white/5 text-slate-400 hover:text-white font-bold transition">FRACTION</button>
-                                            <button type="button" id="cra-tab-clock" onclick="switchCRABridge('clock')" class="cra-bridge-tab px-2 py-0.5 rounded bg-white/5 text-slate-400 hover:text-white font-bold transition">CLOCK</button>
+                                            <button type="button" id="cra-tab-prime" onclick="switchCRABridge('prime')" class="cra-bridge-tab px-2 py-0.5 rounded bg-white/5 text-slate-400 hover:text-white font-bold transition">PRIME</button>
                                         </div>
                                         <span class="text-slate-400 font-bold text-[9px]">1:1 PARITY</span>
                                     </div>
@@ -605,22 +605,22 @@
                                         <!-- Concrete Block Representation -->
                                         <div class="flex flex-col items-center gap-1">
                                             <div id="cra-bridge-block-visual">
-                                                <div class="w-12 h-12 rounded bg-emerald-600/30 border border-emerald-400/60 flex items-center justify-center font-mono font-bold text-emerald-300 text-sm shadow-inner">10</div>
+                                                <div class="w-12 h-12 rounded bg-emerald-600/30 border border-emerald-400/60 flex flex-col items-center justify-center font-mono font-bold text-emerald-300 text-xs shadow-inner"><span>100</span><span class="text-[8px] text-emerald-400">+1 CARRY</span></div>
                                             </div>
-                                            <span id="cra-bridge-block-label" class="font-mono text-[9px] text-slate-400 font-bold">10-FRAME CARRY</span>
+                                            <span id="cra-bridge-block-label" class="font-mono text-[9px] text-slate-400 font-bold">REGROUP TRAY</span>
                                         </div>
 
                                         <!-- Transfer Key & Direction -->
                                         <div class="flex flex-col items-center gap-1">
                                             <span class="font-mono text-xs text-slate-400">&rarr;&rarr;</span>
-                                            <span id="cra-bridge-key" class="font-mono text-[9px] px-1.5 py-0.5 rounded bg-white/10 border border-white/20 text-white font-bold">[▦] BASE-10</span>
+                                            <span id="cra-bridge-key" class="font-mono text-[9px] px-1.5 py-0.5 rounded bg-white/10 border border-white/20 text-white font-bold">[PV] REGROUP</span>
                                         </div>
 
                                         <!-- Stack LCD Register Visual -->
                                         <div class="flex flex-col items-center gap-1">
                                             <div class="px-3 py-2 rounded bg-[#DCE2EC] border border-slate-700 shadow-inner font-terminus text-slate-950 text-left min-w-[95px]">
-                                                <div id="cra-bridge-lcd-tag" class="text-[8px] text-slate-700 font-tiny5 pb-0.5 border-b border-slate-400/30">RAD &bull; FIX 4 &bull; STACK PUSH</div>
-                                                <div id="cra-bridge-lcd-reg" class="text-xs font-bold tracking-wider mt-0.5">X: 10.0000_</div>
+                                                <div id="cra-bridge-lcd-tag" class="text-[8px] text-slate-700 font-tiny5 pb-0.5 border-b border-slate-400/30">RAD &bull; FIX 4 &bull; REGROUP</div>
+                                                <div id="cra-bridge-lcd-reg" class="text-xs font-bold tracking-wider mt-0.5">X: 100.0000_</div>
                                             </div>
                                             <span class="font-mono text-[9px] text-slate-400 font-bold">REGISTER X</span>
                                         </div>
@@ -628,13 +628,13 @@
 
                                     <!-- Live Caption Note -->
                                     <div id="cra-bridge-caption" class="text-[9px] font-mono text-slate-300 text-center leading-tight min-h-[22px] flex items-center justify-center px-1">
-                                        10 miniblocks regroup into solid 2U Carry Cube &rarr; pushes 10 onto Register X
+                                        Dual 6&times;2 activity trays model carries and borrows &rarr; pushes base-10 value onto Register X
                                     </div>
                                 </div>
                                 <span class="font-mono text-[11px] text-slate-400 font-bold uppercase tracking-wider block mb-1">THE POSTFIX BRIDGE</span>
                                 <h3 class="text-xl font-bold text-white mb-2">1:1 Concrete-to-Stack Parity</h3>
                                 <p class="text-xs text-slate-300 leading-relaxed mb-4">
-                                    Each physical manipulative kit directly unlocks a dedicated button on the calculator: <span class="font-mono text-white font-bold">[FDISP]</span> for Fractions, <span class="font-mono text-white font-bold">[CLK]</span> for Planetary Clock, <span class="font-mono text-white font-bold">[▦]</span> for Ten-Frames, and <span class="font-mono text-white font-bold">[EQN]</span> for Algebra.
+                                    Each physical manipulative kit directly unlocks a dedicated button on the calculator: <span class="font-mono text-white font-bold">[FDISP]</span> for Fractions, <span class="font-mono text-white font-bold">[PRIME]</span> for Prime Towers, and <span class="font-mono text-white font-bold">[PV]</span> for Place Value Regrouping.
                                 </p>
                             </div>
                             <div class="pt-4 border-t border-white/5 font-mono text-xs text-slate-300 flex items-center justify-between">
@@ -1014,20 +1014,166 @@
 
                 <!-- Category Filter Bar -->
                 <div class="flex flex-wrap gap-2 mb-8" role="tablist">
-                    <button type="button" class="filter-tab-pill active" onclick="filterHomeProducts('all', this)">ALL SYSTEMS (9)</button>
-                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('early', this)">EARLY NUMERACY (2)</button>
-                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('fractions', this)">FRACTIONS &amp; TIME (2)</button>
-                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('higher', this)">ALGEBRA &amp; PROBABILITY (3)</button>
+                    <button type="button" class="filter-tab-pill active" onclick="filterHomeProducts('core', this)">★ TOP 5 CORE (5)</button>
                     <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('calc', this)">RPN HARDWARE (2)</button>
+                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('manip', this)">CORE MANIPULATIVES (3)</button>
+                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('archive', this)">⏸ ON-HOLD 3MF LAB (7)</button>
+                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('all', this)">ALL CATALOG (12)</button>
                 </div>
 
-                <!-- 9-Product Showcase Grid -->
+                <!-- Product Showcase Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="home-product-grid">
 
-                    <!-- 1. Ten-Frame Dual Stage -->
-                    <article class="home-product-card" data-cat="early">
+                    <!-- 1. SC-32 Scientific RPN Calculator -->
+                    <article class="home-product-card" data-cat="core calc">
                         <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400">TF-01 // REGROUP</span>
+                            <span class="text-slate-400">SC32 // SILICON RPN</span>
+                            <span class="text-emerald-400 font-bold">● IN STOCK</span>
+                        </div>
+                        <div class="home-card-viewport">
+                            <a href="products/sc32-calculator/">
+                                <img src="assets/renders/sc32-hero-keynote.png" alt="SC-32 Scientific RPN Calculator Desktop View" loading="eager" decoding="async">
+                            </a>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">High School &bull; College &bull; Pro</div>
+                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/sc32-calculator/" class="hover:text-white">SC-32 Scientific RPN Maker Kit</a></h3>
+                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                                    Pre-soldered RP2350 logic board, tactile microswitches, sculpted TPU keys, transflective ST7567A LCD, and dovetail chassis. 5-min snap assembly. SAT/ACT legal.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                                <span class="font-mono text-base font-bold text-white">$89.00</span>
+                                <div class="flex gap-2">
+                                    <a href="products/sc32-calculator/" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Specs</a>
+                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2. SC-6 Elementary Edition Calculator -->
+                    <article class="home-product-card" data-cat="core calc">
+                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
+                            <span class="text-slate-400">SC6 // ELEMENTARY RPN</span>
+                            <span class="text-emerald-400 font-bold">● IN STOCK</span>
+                        </div>
+                        <div class="home-card-viewport">
+                            <a href="products/sc6-elementary/">
+                                <img src="assets/renders/etsy/sc6-elementary-hero-square.png" alt="SC-6 Elementary Edition Calculator" loading="eager" decoding="async">
+                            </a>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades K&ndash;6 &bull; Concrete to Symbolic</div>
+                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/sc6-elementary/" class="hover:text-white">SC-6 Elementary RPN Calculator</a></h3>
+                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                                    Kid-proof big-button tactile RPN computing engine with dedicated [PV] Place Value, [FDISP] Fraction, and [PRIME] Factor keys.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                                <span class="font-mono text-base font-bold text-white">$79.00</span>
+                                <div class="flex gap-2">
+                                    <a href="products/sc6-elementary/" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Specs</a>
+                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3. Fraction Tower Studio -->
+                    <article class="home-product-card" data-cat="core manip">
+                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
+                            <span class="text-slate-400">FRAC-01 // EQUIVALENCE</span>
+                            <span class="text-emerald-400 font-bold">● IN STOCK</span>
+                        </div>
+                        <div class="home-card-viewport">
+                            <a href="products/fraction-studio/">
+                                <img src="assets/renders/fraction-studio-hero.png" alt="Fraction Studio Proportional Towers" loading="eager" decoding="async">
+                            </a>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 3&ndash;8 &bull; Equivalence</div>
+                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/fraction-studio/" class="hover:text-white">Fraction Studio Proportional Towers</a></h3>
+                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                                    Freestanding proportional towers and debossed 4-face fraction blocks proving 1/2 = 2/4 = 4/8 through tangible height parity. 3x2 Gridfinity box.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                                <span class="font-mono text-base font-bold text-white">$48.00</span>
+                                <div class="flex gap-2">
+                                    <a href="products/fraction-studio/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
+                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 4. Prime Factor Studio -->
+                    <article class="home-product-card" data-cat="core manip">
+                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
+                            <span class="text-slate-400">PRIME-01 // NUMBER THEORY</span>
+                            <span class="text-emerald-400 font-bold">● IN STOCK</span>
+                        </div>
+                        <div class="home-card-viewport">
+                            <a href="products/prime-factor-studio/">
+                                <img src="assets/renders/etsy/prime-factor-studio-hero-square.png" alt="Prime Factor Studio &amp; Factor Towers" loading="eager" decoding="async">
+                            </a>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 3&ndash;9 &bull; Logarithmic Towers</div>
+                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/prime-factor-studio/" class="hover:text-white">Prime Factor Studio &amp; Factor Towers</a></h3>
+                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                                    29 proportional logarithmic prime blocks ($h = k \cdot \log p$) in a 3x1 Gridfinity box with bilateral comparator stage. Stacking primes physically multiplies them.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                                <span class="font-mono text-base font-bold text-white">$46.00</span>
+                                <div class="flex gap-2">
+                                    <a href="products/prime-factor-studio/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
+                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 5. Place Value Studio & Regrouping Trays -->
+                    <article class="home-product-card" data-cat="core manip">
+                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
+                            <span class="text-slate-400">PLAC-01 // REGROUPING TRAYS</span>
+                            <span class="text-emerald-400 font-bold">● IN STOCK</span>
+                        </div>
+                        <div class="home-card-viewport">
+                            <a href="products/place-value/">
+                                <img src="assets/renders/etsy/place-value-studio-hero-square.png" alt="Place Value Studio Dual Trays &amp; 53 Blocks" loading="eager" decoding="async">
+                            </a>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 1&ndash;5 &bull; Regrouping &amp; Decimals</div>
+                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/place-value/" class="hover:text-white">Place Value Studio &amp; Regrouping Trays</a></h3>
+                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                                    Dual 6&times;2 desktop activity trays (Whole Numbers 100k–1 and Decimals 0.1–0.000001) with 44 digit blocks and 9 stackable +1 regrouping tokens in a 3x1 Gridfinity box.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                                <span class="font-mono text-base font-bold text-white">$38.00</span>
+                                <div class="flex gap-2">
+                                    <a href="products/place-value/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
+                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 6. Ten-Frame Dual Stage (On Hold) -->
+                    <article class="home-product-card hidden" data-cat="archive">
+                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
+                            <span class="text-slate-400">BASE-10 // REGROUP</span>
+                            <span class="text-amber-400 font-bold">⏸ ON HOLD // 3MF ACTIVE</span>
                         </div>
                         <div class="home-card-viewport">
                             <a href="products/ten-frames/">
@@ -1043,19 +1189,20 @@
                                 </p>
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$36.00</span>
+                                <span class="font-mono text-base font-bold text-slate-400">$36.00</span>
                                 <div class="flex gap-2">
                                     <a href="products/ten-frames/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="downloads/ten-frames-open-source-stls.zip" download class="px-3 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-mono text-xs font-bold rounded transition">3MF ↓</a>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- 2. Math Domino Studio -->
-                    <article class="home-product-card" data-cat="early">
+                    <!-- 7. Math Domino Studio (On Hold) -->
+                    <article class="home-product-card hidden" data-cat="archive">
                         <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
                             <span class="text-slate-400">DOMI-01 // ARITHMETIC</span>
+                            <span class="text-amber-400 font-bold">⏸ ON HOLD // 3MF ACTIVE</span>
                         </div>
                         <div class="home-card-viewport">
                             <a href="products/math-dominoes/">
@@ -1071,47 +1218,20 @@
                                 </p>
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$38.00</span>
+                                <span class="font-mono text-base font-bold text-slate-400">$38.00</span>
                                 <div class="flex gap-2">
                                     <a href="products/math-dominoes/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="downloads/math-dominoes-open-source-stls.zip" download class="px-3 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-mono text-xs font-bold rounded transition">3MF ↓</a>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- 3. Fraction Tower Studio -->
-                    <article class="home-product-card" data-cat="fractions">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400">FRAC-01 // PROPORTIONS</span>
-                        </div>
-                        <div class="home-card-viewport">
-                            <a href="products/fraction-studio/">
-                                <img src="assets/renders/fraction-studio-hero.png" alt="Fraction Studio Proportional Towers" loading="eager" decoding="async">
-                            </a>
-                        </div>
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 3&ndash;8 &bull; Equivalence</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/fraction-studio/" class="hover:text-white">Fraction Studio Proportional Towers</a></h3>
-                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    Freestanding proportional towers and debossed fraction blocks proving 1/2 = 2/4 = 4/8 through tangible height parity.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$48.00</span>
-                                <div class="flex gap-2">
-                                    <a href="products/fraction-studio/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 4. Classroom Planetary Clock -->
-                    <article class="home-product-card" data-cat="fractions">
+                    <!-- 8. Classroom Planetary Clock (On Hold) -->
+                    <article class="home-product-card hidden" data-cat="archive">
                         <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
                             <span class="text-slate-400">TIME-01 // KINEMATICS</span>
+                            <span class="text-amber-400 font-bold">⏸ ON HOLD // 3MF ACTIVE</span>
                         </div>
                         <div class="home-card-viewport">
                             <a href="products/classroom-clock/">
@@ -1127,19 +1247,20 @@
                                 </p>
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$44.00</span>
+                                <span class="font-mono text-base font-bold text-slate-400">$44.00</span>
                                 <div class="flex gap-2">
                                     <a href="products/classroom-clock/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="downloads/classroom-clock-open-source-stls.zip" download class="px-3 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-mono text-xs font-bold rounded transition">3MF ↓</a>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- 5. Algebra Factoring Studio -->
-                    <article class="home-product-card" data-cat="higher">
+                    <!-- 9. Algebra Factoring Studio (On Hold) -->
+                    <article class="home-product-card hidden" data-cat="archive">
                         <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
                             <span class="text-slate-400">ALGB-01 // POLYNOMIALS</span>
+                            <span class="text-amber-400 font-bold">⏸ ON HOLD // 3MF ACTIVE</span>
                         </div>
                         <div class="home-card-viewport">
                             <a href="products/algebra-boxes/">
@@ -1155,19 +1276,20 @@
                                 </p>
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$42.00</span>
+                                <span class="font-mono text-base font-bold text-slate-400">$42.00</span>
                                 <div class="flex gap-2">
                                     <a href="products/algebra-boxes/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="downloads/algebra-boxes-open-source-stls.zip" download class="px-3 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-mono text-xs font-bold rounded transition">3MF ↓</a>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- 6. Probability Dice & Spinner Pack -->
-                    <article class="home-product-card" data-cat="higher">
+                    <!-- 10. Probability Dice & Spinner Pack (On Hold) -->
+                    <article class="home-product-card hidden" data-cat="archive">
                         <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
                             <span class="text-slate-400">PROB-01 // DISTRIBUTIONS</span>
+                            <span class="text-amber-400 font-bold">⏸ ON HOLD // 3MF ACTIVE</span>
                         </div>
                         <div class="home-card-viewport">
                             <a href="products/dice-and-spinner/">
@@ -1179,23 +1301,24 @@
                                 <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 4&ndash;12 &bull; Probability</div>
                                 <h3 class="font-bold text-base text-white mb-1.5"><a href="products/dice-and-spinner/" class="hover:text-white">Probability Dice &amp; Spinner Pack</a></h3>
                                 <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    4 mass-balanced 18mm dice and a continuous needle dial spinner in a compact 1x1 Gridfinity modular box.
+                                    4 mass-balanced polyhedral dice and an ultra-low-friction plastic spinner in a compact 1x1 Gridfinity modular box.
                                 </p>
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$36.00</span>
+                                <span class="font-mono text-base font-bold text-slate-400">$36.00</span>
                                 <div class="flex gap-2">
                                     <a href="products/dice-and-spinner/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="downloads/dice-and-spinner-open-source-stls.zip" download class="px-3 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-mono text-xs font-bold rounded transition">3MF ↓</a>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- 7. Unit Circle Volvelle -->
-                    <article class="home-product-card" data-cat="higher">
+                    <!-- 11. Unit Circle Volvelle (On Hold) -->
+                    <article class="home-product-card hidden" data-cat="archive">
                         <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
                             <span class="text-slate-400">VOLV-01 // TRIGONOMETRY</span>
+                            <span class="text-amber-400 font-bold">⏸ ON HOLD // 3MF ACTIVE</span>
                         </div>
                         <div class="home-card-viewport">
                             <a href="products/unit-circle-volvelle/">
@@ -1211,19 +1334,20 @@
                                 </p>
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$19.00</span>
+                                <span class="font-mono text-base font-bold text-slate-400">$19.00</span>
                                 <div class="flex gap-2">
                                     <a href="products/unit-circle-volvelle/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="downloads/unit-circle-volvelle-open-source-stls.zip" download class="px-3 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-mono text-xs font-bold rounded transition">3MF ↓</a>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- 8. Counting Tiles & Planar Array Studio -->
-                    <article class="home-product-card" data-cat="early">
+                    <!-- 12. Counting Tiles & Planar Array Studio (On Hold) -->
+                    <article class="home-product-card hidden" data-cat="archive">
                         <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
                             <span class="text-slate-400">TILE-01 // ARRAYS</span>
+                            <span class="text-amber-400 font-bold">⏸ ON HOLD // 3MF ACTIVE</span>
                         </div>
                         <div class="home-card-viewport">
                             <a href="products/counting-tiles/">
@@ -1235,99 +1359,14 @@
                                 <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades K&ndash;6 &bull; Arrays &amp; Maps</div>
                                 <h3 class="font-bold text-base text-white mb-1.5"><a href="products/counting-tiles/" class="hover:text-white">Counting Tiles &amp; Planar Array Studio</a></h3>
                                 <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    144 precision stacking tiles (4 colors &times; 36) in a 3x1x13U Gridfinity box. Bridges 1-to-1 counting, 12&times;12 multiplication, and the Four-Color Map Theorem.
+                                    144 precision stacking tiles (4 colors &times; 36) in a 3x1x13U Gridfinity box. Bridges 1-to-1 counting, 12&times;12 multiplication, and planar maps.
                                 </p>
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$44.00</span>
+                                <span class="font-mono text-base font-bold text-slate-400">$44.00</span>
                                 <div class="flex gap-2">
                                     <a href="products/counting-tiles/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 9. Prime Factor Studio & Slide Rule Comparator -->
-                    <article class="home-product-card" data-cat="higher">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400">PRIME-01 // NUMBER THEORY</span>
-                        </div>
-                        <div class="home-card-viewport">
-                            <a href="products/prime-factor-studio/">
-                                <img src="assets/renders/prime-studio-hero.png" alt="Prime Factor Studio &amp; Slide Rule Scale" loading="eager" decoding="async">
-                            </a>
-                        </div>
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 3&ndash;9 &bull; Prime Factorization</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/prime-factor-studio/" class="hover:text-white">Prime Factor Studio &amp; Slide Rule Scale</a></h3>
-                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    29 proportional logarithmic prime factor blocks with a 3x1x13U Gridfinity box and bilateral slide rule scale (1 to 100). Stacking primes physically multiplies them.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$46.00</span>
-                                <div class="flex gap-2">
-                                    <a href="products/prime-factor-studio/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 10. SC-32 Scientific RPN Calculator -->
-                    <article class="home-product-card" data-cat="calc">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400">SC32 // SILICON RPN</span>
-                        </div>
-                        <div class="home-card-viewport">
-                            <a href="products/sc32-calculator/">
-                                <img src="assets/renders/sc32-hero-keynote.png" alt="SC-32 Calculator Desktop View" loading="eager" decoding="async">
-                            </a>
-                        </div>
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">High School &bull; College &bull; Pro</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/sc32-calculator/" class="hover:text-white">SC-32 Scientific RPN Maker Kit</a></h3>
-                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    Pre-soldered RP2350 logic board, 43 snap-domes, transflective ST7567A LCD, and dovetail chassis. 5-min tool-free snap assembly. SAT/ACT legal.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$89.00</span>
-                                <div class="flex gap-2">
-                                    <a href="products/sc32-calculator/" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 9. SC-6 Elementary Edition Calculator -->
-                    <article class="home-product-card" data-cat="calc">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400">SC6 // ELEMENTARY RPN</span>
-                            <span class="text-slate-400 font-bold">&bull; PROTOTYPING</span>
-                        </div>
-                        <div class="home-card-viewport">
-                            <a href="products/sc6-elementary/">
-                                <img src="assets/renders/sc6-elementary-hero.png" alt="SC-6 Elementary Edition Calculator" loading="eager" decoding="async">
-                            </a>
-                        </div>
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades K&ndash;6 &bull; Concrete to Symbolic</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/sc6-elementary/" class="hover:text-white">SC-6 Elementary Edition Calculator</a></h3>
-                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    Kid-proof tactile RPN calculator with default 4-stack XYZT display (toggleable 2-stack for racks &amp; dice), [÷R] remainder division, and [SIMP] fraction key.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$49.00 &ndash; $59.00</span>
-                                <div class="flex gap-2">
-                                    <a href="products/sc6-elementary/" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="downloads/counting-tiles-open-source-stls.zip" download class="px-3 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-mono text-xs font-bold rounded transition">3MF ↓</a>
                                 </div>
                             </div>
                         </div>
@@ -1913,53 +1952,25 @@
                                 </label>
 
                                 <label class="flex items-start gap-3 p-2 rounded hover:bg-white/5 cursor-pointer">
-                                    <input type="checkbox" id="po-item-tenframe" checked onchange="updatePOCalculator()" class="mt-1 accent-white">
+                                    <input type="checkbox" id="po-item-prime" checked onchange="updatePOCalculator()" class="mt-1 accent-white">
                                     <div class="flex-1 flex justify-between">
                                         <div>
-                                            <strong class="text-white">Ten-Frame Dual Stage Fleet (30 Sets)</strong>
-                                            <div class="text-slate-400 text-[11px]">30 counting trays, 600 counters, 30 carry shelves</div>
+                                            <strong class="text-white">Prime Factor Studio Fleet (30 Sets)</strong>
+                                            <div class="text-slate-400 text-[11px]">30 logarithmic tower sets, bilateral comparators, 870 factor blocks</div>
                                         </div>
                                         <div class="text-right">
-                                            <span class="text-white font-bold">$918.00</span>
-                                            <div class="text-[10px] text-slate-400 line-through">$1,080.00</div>
+                                            <span class="text-white font-bold">$1,173.00</span>
+                                            <div class="text-[10px] text-slate-400 line-through">$1,380.00</div>
                                         </div>
                                     </div>
                                 </label>
 
                                 <label class="flex items-start gap-3 p-2 rounded hover:bg-white/5 cursor-pointer">
-                                    <input type="checkbox" id="po-item-domino" onchange="updatePOCalculator()" class="mt-1 accent-white">
+                                    <input type="checkbox" id="po-item-placevalue" onchange="updatePOCalculator()" class="mt-1 accent-white">
                                     <div class="flex-1 flex justify-between">
                                         <div>
-                                            <strong class="text-white">Math Domino Studio Fleet (30 Sets)</strong>
-                                            <div class="text-slate-400 text-[11px]">30 12-frame trays, 900 laser-foamed dominoes</div>
-                                        </div>
-                                        <div class="text-right">
-                                            <span class="text-white font-bold">$969.00</span>
-                                            <div class="text-[10px] text-slate-400 line-through">$1,140.00</div>
-                                        </div>
-                                    </div>
-                                </label>
-
-                                <label class="flex items-start gap-3 p-2 rounded hover:bg-white/5 cursor-pointer">
-                                    <input type="checkbox" id="po-item-algebra" onchange="updatePOCalculator()" class="mt-1 accent-white">
-                                    <div class="flex-1 flex justify-between">
-                                        <div>
-                                            <strong class="text-white">Algebra Factoring Studio Fleet (30 Sets)</strong>
-                                            <div class="text-slate-400 text-[11px]">30 geometric factoring stages &amp; trinomial tile sets</div>
-                                        </div>
-                                        <div class="text-right">
-                                            <span class="text-white font-bold">$918.00</span>
-                                            <div class="text-[10px] text-slate-400 line-through">$1,080.00</div>
-                                        </div>
-                                    </div>
-                                </label>
-
-                                <label class="flex items-start gap-3 p-2 rounded hover:bg-white/5 cursor-pointer">
-                                    <input type="checkbox" id="po-item-clock" onchange="updatePOCalculator()" class="mt-1 accent-white">
-                                    <div class="flex-1 flex justify-between">
-                                        <div>
-                                            <strong class="text-white">Classroom Planetary Clock Fleet (30 Sets)</strong>
-                                            <div class="text-slate-400 text-[11px]">30 12:1 geared clocks with angle quadrant blocks</div>
+                                            <strong class="text-white">Place Value Studio &amp; Regrouping Trays Fleet (30 Sets)</strong>
+                                            <div class="text-slate-400 text-[11px]">60 dual 6&times;2 activity trays, 1,590 contoured digit blocks &amp; carry tokens</div>
                                         </div>
                                         <div class="text-right">
                                             <span class="text-white font-bold">$969.00</span>
@@ -2527,11 +2538,10 @@
                     <ul class="space-y-2 text-slate-400">
                         <li><a href="products/sc32-calculator/" class="hover:text-white transition">SC-32 Hardware</a></li>
                         <li><a href="products/sc6-elementary/" class="hover:text-white transition">SC-6 Elementary</a></li>
-                        <li><a href="products/ten-frames/" class="hover:text-white transition">Ten-Frames</a></li>
-                        <li><a href="products/math-dominoes/" class="hover:text-white transition">Math Dominoes</a></li>
                         <li><a href="products/fraction-studio/" class="hover:text-white transition">Fraction Towers</a></li>
-                        <li><a href="products/classroom-clock/" class="hover:text-white transition">Planetary Clock</a></li>
-                        <li><a href="products/algebra-boxes/" class="hover:text-white transition">Algebra Boxes</a></li>
+                        <li><a href="products/prime-factor-studio/" class="hover:text-white transition">Prime Factor Studio</a></li>
+                        <li><a href="products/place-value/" class="hover:text-white transition">Place Value Studio</a></li>
+                        <li><a href="products/#downloads" class="hover:text-white transition">Open-Source 3MF Lab</a></li>
                     </ul>
                 </div>
 
@@ -2674,55 +2684,55 @@
                 title: 'StackCalc SC-32 Maker Kit',
                 price: '$89.00 USD',
                 subtitle: '100% Pre-Soldered • 5-Min Assembly',
-                dims: '135×90×16mm • 142g • 400g Snap-Domes • 0.0s Boot',
+                dims: '135×90×16mm • 142g • Tactile Switches & TPU Keys • 0.0s Boot',
                 badge: 'Batch 04 In Stock',
                 btnText: 'Order $89',
                 src: 'assets/renders/sc32-hero-keynote.png',
                 link: 'products/sc32-calculator/'
             },
-            'tenframe': {
-                tag: 'BASE-10 // REGROUPING',
-                title: 'Ten-Frame Dual Stage Set',
-                price: '$36.00 USD',
-                subtitle: 'Gridfinity 3x1 System',
-                dims: '18mm Square Miniblocks • 2U Carry Cube • 42mm Gridfinity • Shore 95A',
+            'sc6': {
+                tag: 'RP2040 // ELEMENTARY RPN',
+                title: 'StackCalc SC-6 Elementary Edition',
+                price: '$79.00 USD',
+                subtitle: 'Big-Button Tactile Computing',
+                dims: '142×92×18mm • 155g • Tactile Switches & Big TPU Keys • 0.0s Boot',
                 badge: 'In Stock',
-                btnText: 'Order $36',
-                src: 'assets/renders/ten-frames-hero.png',
-                link: 'products/ten-frames/'
-            },
-            'domino': {
-                tag: 'ARITHMETIC // 12-FRAME',
-                title: 'Math Domino Studio Set',
-                price: '$38.00 USD',
-                subtitle: 'Laser Subitizing Pips',
-                dims: '1064nm Laser Pips • 12-Frame Tray • Mil-Spec PLA 2.0+',
-                badge: 'In Stock',
-                btnText: 'Order $38',
-                src: 'assets/renders/dominoes-studio-hero.png',
-                link: 'products/math-dominoes/'
+                btnText: 'Order $79',
+                src: 'assets/renders/etsy/sc6-elementary-hero-square.png',
+                link: 'products/sc6-elementary/'
             },
             'fraction': {
                 tag: 'PROPORTIONS // HEIGHT PARITY',
                 title: 'Fraction Studio Towers',
                 price: '$48.00 USD',
                 subtitle: 'Dual-Color 1 to 1/12',
-                dims: '1/1 to 1/12 Heights • Proportional Scale • Zero Warpage',
+                dims: '1/1 to 1/12 Heights • Proportional Scale • Zero Loose Trays',
                 badge: 'In Stock',
                 btnText: 'Order $48',
                 src: 'assets/renders/fraction-studio-hero.png',
                 link: 'products/fraction-studio/'
             },
-            'clock': {
-                tag: 'KINEMATICS // 12:1 GEARS',
-                title: 'Classroom Planetary Clock',
-                price: '$44.00 USD',
-                subtitle: 'Epicyclic Geartrain',
-                dims: '12:1 Epicyclic Gear • Dual-Color Quadrants • 60T Sun Gear',
+            'prime': {
+                tag: 'NUMBER THEORY // LOGARITHMIC TOWERS',
+                title: 'Prime Factor Studio & Towers',
+                price: '$46.00 USD',
+                subtitle: 'h = k·log(p) Fundamental Theorem',
+                dims: '29 Proportional Blocks • Bilateral Comparator • Gridfinity 3x1',
                 badge: 'In Stock',
-                btnText: 'Order $44',
-                src: 'assets/renders/clock-classroom-hero.png',
-                link: 'products/classroom-clock/'
+                btnText: 'Order $46',
+                src: 'assets/renders/etsy/prime-factor-studio-hero-square.png',
+                link: 'products/prime-factor-studio/'
+            },
+            'placevalue': {
+                tag: 'PLACE VALUE // REGROUPING TRAYS',
+                title: 'Place Value Studio & Regrouping Trays',
+                price: '$38.00 USD',
+                subtitle: 'Dual 6×2 Desktop Trays',
+                dims: 'Dual 6×2 Trays • 53 Blocks • Whole (100k-1) & Decimals (0.1-10^-6)',
+                badge: 'In Stock',
+                btnText: 'Order $38',
+                src: 'assets/renders/etsy/place-value-studio-hero-square.png',
+                link: 'products/place-value/'
             }
         };
 
@@ -2997,10 +3007,8 @@
             'sc32': { name: 'SC-32 Scientific RPN Maker Kit Fleet (10 Kits)', sku: 'SC32-HW-STD', regPrice: 890.00, discPrice: 801.00 },
             'sc6': { name: 'SC-6 Elementary Arithmetic STEM Fleet (10 Kits)', sku: 'SC6-HW-STD', regPrice: 790.00, discPrice: 711.00 },
             'fraction': { name: 'Fraction Tower Studio Fleet (30 Sets)', sku: 'SC-FRAC-STD', regPrice: 1440.00, discPrice: 1224.00 },
-            'tenframe': { name: 'Ten-Frame Dual Stage Fleet (30 Sets)', sku: 'SC-TEN-STD', regPrice: 1080.00, discPrice: 918.00 },
-            'domino': { name: 'Math Domino Studio Fleet (30 Sets)', sku: 'SC-DOMI-STD', regPrice: 1140.00, discPrice: 969.00 },
-            'algebra': { name: 'Algebra Factoring Studio Fleet (30 Sets)', sku: 'SC-ALG-STD', regPrice: 1080.00, discPrice: 918.00 },
-            'clock': { name: 'Classroom Planetary Clock Fleet (30 Sets)', sku: 'SC-TIME-STD', regPrice: 1140.00, discPrice: 969.00 },
+            'prime': { name: 'Prime Factor Studio Fleet (30 Sets)', sku: 'SC-PRIME-STD', regPrice: 1380.00, discPrice: 1173.00 },
+            'placevalue': { name: 'Place Value Studio & Regrouping Trays Fleet (30 Sets)', sku: 'SC-PLAC-STD', regPrice: 1140.00, discPrice: 969.00 },
             'manuals': { name: 'Official Spiral Field Manuals (Class Pack of 10 Books)', sku: 'SC32-BOOK-01', regPrice: 160.00, discPrice: 160.00 },
             'tpufeet': { name: 'Non-Slip Vibration TPU Feet (Class Pack of 10 Sets)', sku: 'SC-TPU-FEET', regPrice: 60.00, discPrice: 60.00 }
         };
@@ -3429,8 +3437,9 @@
 
             const cards = document.querySelectorAll('.home-product-card');
             cards.forEach(card => {
-                const cat = card.getAttribute('data-cat');
-                if (category === 'all' || cat === category) {
+                const catStr = card.getAttribute('data-cat') || '';
+                const cats = catStr.split(' ');
+                if (category === 'all' || cats.includes(category)) {
                     card.classList.remove('hidden');
                 } else {
                     card.classList.add('hidden');
@@ -3582,13 +3591,13 @@
 
         // Interactive CRA Bridge Switcher (Stage 02)
         const craBridgeData = {
-            'tenframe': {
-                blockLabel: '10-FRAME CARRY',
-                blockVisual: '<div class="w-12 h-12 rounded bg-emerald-600/30 border border-emerald-400/60 flex items-center justify-center font-mono font-bold text-emerald-300 text-sm shadow-inner">10</div>',
-                keyName: '[▦] BASE-10',
-                lcdReg: 'X: 10.0000_',
-                lcdTag: 'RAD • FIX 4 • STACK PUSH',
-                caption: '10 miniblocks regroup into solid 2U Carry Cube &rarr; pushes 10 onto Register X'
+            'placevalue': {
+                blockLabel: 'REGROUP TRAY',
+                blockVisual: '<div class="w-12 h-12 rounded bg-emerald-600/30 border border-emerald-400/60 flex flex-col items-center justify-center font-mono font-bold text-emerald-300 text-xs shadow-inner"><span>100</span><span class="text-[8px] text-emerald-400">+1 CARRY</span></div>',
+                keyName: '[PV] REGROUP',
+                lcdReg: 'X: 100.0000_',
+                lcdTag: 'RAD • FIX 4 • REGROUP',
+                caption: 'Dual 6&times;2 activity trays model carries and borrows &rarr; pushes base-10 value onto Register X'
             },
             'fraction': {
                 blockLabel: 'PROPORTION TOWER',
@@ -3598,13 +3607,13 @@
                 lcdTag: 'RAD • FIX 4 • D/C 3/4',
                 caption: 'Height parity proves 1/2 + 1/4 = 3/4 &rarr; [FDISP] displays exact fraction'
             },
-            'clock': {
-                blockLabel: 'PLANETARY GEAR',
-                blockVisual: '<div class="w-12 h-12 rounded-full bg-cyan-600/20 border border-cyan-400/60 flex items-center justify-center font-mono font-bold text-cyan-300 text-xs shadow-inner">90&deg;</div>',
-                keyName: '[CLK] 12:1',
-                lcdReg: 'X: 15.0000_',
-                lcdTag: 'RAD • FIX 4 • 15 MIN',
-                caption: '90° quadrant rotation turns planetary sun gear &rarr; pushes 15 elapsed minutes'
+            'prime': {
+                blockLabel: 'FACTOR TOWER',
+                blockVisual: '<div class="w-12 h-12 rounded bg-purple-600/20 border border-purple-400/60 flex flex-col items-center justify-center font-mono font-bold text-purple-300 text-xs shadow-inner leading-tight"><span>2 &times; 3</span><span class="text-[10px] text-purple-400/80">= 6</span></div>',
+                keyName: '[PRIME] FACTOR',
+                lcdReg: 'X: 6.0000_',
+                lcdTag: '2^1 • 3^1 • GCF/LCM',
+                caption: 'Stacking prime blocks h = k·log(p) physically multiplies factors &rarr; SC-6 prime engine'
             }
         };
 
