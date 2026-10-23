@@ -76,10 +76,10 @@ hide:
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Why are Fraction Studio towers designed for direct tabletop use without trays?",
+          "name": "How are Fraction Studio towers stored and organized?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Loose trays and wooden organizer frames take up excessive student desk space and restrict comparison. Our proportional towers stand upright with weighted bases and 45° chamfered bottoms directly on any table."
+            "text": "Every Fraction Studio set includes a precision 12-column caddy chassis with anti-scrape vertical runner glides and debossed fraction socket floors inside a 3x1x13U Snapfinity Gridfinity storage enclosure. For hands-on learning, the towers stand freely on any flat desk for direct reciprocal height comparisons."
           }
         },
         {
@@ -166,7 +166,7 @@ hide:
       <div class="flex items-center gap-2 mb-3">
         <span class="text-xs font-mono font-semibold text-cyan-400">PEDAGOGICAL STANDARD</span>
         <span class="text-xs text-gray-400">&bull; Self-Correcting Proportional Geometry</span>
-        <span class="text-xs text-emerald-400 font-medium ml-2">&check; Tray-Free Universal Tabletop</span>
+        <span class="text-xs text-emerald-400 font-medium ml-2">&check; 12-Column Caddy &amp; Desktop Modularity</span>
       </div>
 
       <div class="ec-price-box">
@@ -175,18 +175,18 @@ hide:
       </div>
 
       <p class="ec-short-summary">
-        The tactile STEM learning system for mastering fractional quantities, equivalent ratios, and common denominators directly on any classroom desk or tabletop. Proportional vertical towers enable students to physically feel and see mathematical equivalence before encountering abstract notation. Zero trays or specialized boards needed.
+        The tactile STEM learning system for mastering fractional quantities, equivalent ratios, and common denominators directly on any classroom desk or tabletop. Proportional vertical towers enable students to physically feel and see mathematical equivalence before encountering abstract notation. Housed in a dedicated 12-column caddy chassis within a 3x1x13U Snapfinity Gridfinity enclosure.
       </p>
 
       <!-- Highlights Checklist -->
       <div class="ec-highlights-list">
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Universal Tabletop Use:</strong> Stands upright on any flat surface or school desk without requiring loose wooden boards or trays.</span>
+          <span><strong>12-Column Caddy Chassis:</strong> Features anti-scrape vertical runner glides, continuous central spine, and debossed socket floors for 100% horizontal hand access and rapid 3-second visual inventory audits.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Self-Correcting Math:</strong> Exact inverse height ratios ensure two halves (\(40\,\text{mm}\)) match the whole (\(80\,\text{mm}\)) perfectly flush.</span>
+          <span><strong>Self-Correcting Math:</strong> Exact inverse height ratios ensure two halves match the whole tower perfectly flush.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
@@ -686,15 +686,15 @@ hide:
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">Snapfinity 3x2x13U Gridfinity Enclosure Box with Bi-Directional Sliding Hard Lid and Integrated Workstation Miniblock Lid (Snap-on TPU non-skid feet sold separately)</span>
+        <span class="ec-box-text">3&times;1&times;13U Snapfinity Gridfinity Storage Enclosure Box with Snapfinity Stackable Fraction Stage Lid</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">12 Laminated Hands-On Fraction Investigation Activity Cards</span>
+        <span class="ec-box-text">Removable 12-Column Caddy Chassis with anti-scrape vertical runner glides and debossed fraction socket floors</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">Teacher / Parent Implementation Guide (CRA Method)</span>
+        <span class="ec-box-text">12 Laminated Hands-On Fraction Investigation Activity Cards &bull; Teacher / Parent Implementation Guide</span>
       </div>
     </div>
   </section>
@@ -789,13 +789,13 @@ hide:
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
           <span class="font-mono text-xs uppercase text-slate-400 font-bold">// WORKSPACE EFFICIENCY</span>
-          <h3 class="font-bold text-base text-white mt-1 mb-2">Tray-Free Universal Tabletop</h3>
+          <h3 class="font-bold text-base text-white mt-1 mb-2">12-Column Caddy &amp; Desktop Freedom</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
-            Engineered with broad, low center-of-gravity footing that stands freely on standard student desks. No cumbersome trays, alignment pegs, or fragile latches required.
+            Engineered with a removable 12-column caddy chassis featuring anti-scrape runner glides and debossed socket floors. During lessons, towers stand freely on any student desk with zero wobble for multi-tower comparisons.
           </p>
         </div>
         <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
-          Base: Freeform &bull; Footprint: Desk Optimized
+          Base: 3x1 Gridfinity &bull; Footprint: Desk Optimized
         </div>
       </div>
     </div>
@@ -811,11 +811,11 @@ hide:
     <div class="space-y-4">
       <details class="p-4 rounded-lg bg-slate-900/50 border border-slate-700/60 group">
         <summary class="font-semibold text-gray-100 cursor-pointer flex justify-between items-center">
-          <span>Why are the towers designed for tabletop use without wooden trays?</span>
+          <span>How does the 12-column caddy keep classroom pieces organized?</span>
           <span class="text-cyan-400 text-lg group-open:rotate-45 transition-transform">+</span>
         </summary>
         <p class="mt-3 text-sm text-gray-300 leading-relaxed">
-          Traditional fraction tiles rely on bulky wooden trays that consume precious desk space and limit students to one-dimensional horizontal comparisons. Fraction Studio towers feature weighted bases and 45° chamfers so students can stand them upright, stack them, and line them up anywhere on a table.
+          The 12-column caddy chassis slides smoothly into the 3&times;1&times;13U Gridfinity enclosure on anti-scrape vertical runner glides. Every socket floor features permanently debossed fraction numerals (Row 0: 1/7 to 1/12; Row 1: 1 to 1/6), allowing teachers and students to complete a full visual inventory audit in under 3 seconds before packing away.
         </p>
       </details>
 

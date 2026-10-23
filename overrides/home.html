@@ -1708,18 +1708,18 @@
                                         04 // EXPLODED SILICON
                                     </button>
                                 </div>
-                                <span class="hidden sm:inline-block text-[10px] text-slate-400 pr-2">400g TACTILE DOMES</span>
+                                <span class="hidden sm:inline-block text-[10px] text-slate-400 pr-2">TACTILE MICROSWITCHES</span>
                             </div>
 
                             <!-- Main Viewport Display Frame -->
                             <div class="relative bg-[#0A0D13] aspect-[16/10] flex items-center justify-center overflow-hidden p-3 sm:p-6">
-                                <img id="hardware-main-img" src="assets/renders/edition_retrofuturism.png" alt="StackCalc SC-32 Retrofuturism Edition" class="w-full h-full object-contain transition-opacity duration-200">
+                                <img id="hardware-main-img" src="assets/renders/etsy/combo_sc32_cosmos-square.png" alt="StackCalc SC-32 Cosmos Champion Edition" class="w-full h-full object-contain transition-opacity duration-200">
                                 
                                 <!-- Floating Telemetry Readout in Viewport -->
                                 <div class="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-black/85 backdrop-blur-md border border-white/10 flex items-center justify-between pointer-events-none">
                                     <div>
-                                        <div id="hardware-edition-tag" class="font-mono text-[10px] text-white/70 uppercase tracking-widest font-bold">EDITION 01 // RETROFUTURISM</div>
-                                        <div id="hardware-edition-cmf" class="font-mono text-[11px] text-slate-400 line-clamp-1">Warm Cream Faceplate &bull; Safety Orange Accent Keys &bull; Shore 95A Bumper</div>
+                                        <div id="hardware-edition-tag" class="font-mono text-[10px] text-white/70 uppercase tracking-widest font-bold">EDITION 01 // COSMOS (CHAMPION)</div>
+                                        <div id="hardware-edition-cmf" class="font-mono text-[11px] text-slate-400 line-clamp-1">Sunlu Midnight PLA 2.0+ &bull; Tactile Light Gray TPU Keys &bull; 1064nm Stark White Foam (15.2:1 AAA)</div>
                                     </div>
                                     <span class="font-mono text-[10px] text-emerald-400 font-bold hidden sm:inline-block">● READY FOR DISPATCH</span>
                                 </div>
@@ -1729,80 +1729,80 @@
                             <div id="hw-palette-container" class="p-3 bg-black/90 backdrop-blur border-t border-white/10">
                                 <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-2 px-1">
                                     <span class="font-bold uppercase tracking-wider text-[10px] text-slate-400">// SELECT YOUR CMF FINISH:</span>
-                                    <span class="text-[10px] text-slate-400">400g Snap-Dome Click</span>
+                                    <span class="text-[10px] text-slate-400">Tactile Microswitches &amp; Sculpted TPU Keys</span>
                                 </div>
                                 
                                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                                    <!-- Swatch 1: Retrofuturism -->
-                                    <button type="button" onclick="setHwEdition('retrofuturism', this)" class="hw-chip-btn active p-2 rounded-lg border border-white/40 bg-white/10 text-left transition flex items-center gap-2.5 hover:border-white">
+                                    <!-- Swatch 1: Cosmos -->
+                                    <button type="button" onclick="setHwEdition('cosmos', this)" class="hw-chip-btn active p-2 rounded-lg border border-white/40 bg-white/10 text-left transition flex items-center gap-2.5 hover:border-white">
                                         <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
-                                            <div class="w-1/2 h-full bg-[#E7E0D3]"></div>
-                                            <div class="w-1/2 h-full bg-[#FF5500]"></div>
+                                            <div class="w-1/2 h-full bg-[#28334A]"></div>
+                                            <div class="w-1/2 h-full bg-[#38BDF8]"></div>
                                         </div>
-                                        <span class="font-mono text-[11px] font-bold text-white truncate">Retrofuturism</span>
+                                        <span class="font-mono text-[11px] font-bold text-white truncate">Cosmos</span>
                                     </button>
 
-                                    <!-- Swatch 2: Voyager -->
-                                    <button type="button" onclick="setHwEdition('voyager', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
+                                    <!-- Swatch 2: Pure Black -->
+                                    <button type="button" onclick="setHwEdition('pure_black', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
                                         <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
-                                            <div class="w-1/2 h-full bg-[#1E293B]"></div>
-                                            <div class="w-1/2 h-full bg-[#EAB308]"></div>
+                                            <div class="w-1/2 h-full bg-[#101114]"></div>
+                                            <div class="w-1/2 h-full bg-[#52525B]"></div>
                                         </div>
-                                        <span class="font-mono text-[11px] font-bold text-white truncate">Voyager</span>
+                                        <span class="font-mono text-[11px] font-bold text-white truncate">Pure Black</span>
                                     </button>
 
-                                    <!-- Swatch 3: Stealth -->
+                                    <!-- Swatch 3: Grayscale -->
+                                    <button type="button" onclick="setHwEdition('grayscale', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
+                                        <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
+                                            <div class="w-1/2 h-full bg-[#101114]"></div>
+                                            <div class="w-1/2 h-full bg-[#94999E]"></div>
+                                        </div>
+                                        <span class="font-mono text-[11px] font-bold text-white truncate">Grayscale</span>
+                                    </button>
+
+                                    <!-- Swatch 4: Synthwave -->
+                                    <button type="button" onclick="setHwEdition('synthwave', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
+                                        <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
+                                            <div class="w-1/2 h-full bg-[#695CC7]"></div>
+                                            <div class="w-1/2 h-full bg-[#1D1C1B]"></div>
+                                        </div>
+                                        <span class="font-mono text-[11px] font-bold text-white truncate">Synthwave</span>
+                                    </button>
+
+                                    <!-- Swatch 5: Earth-Tone -->
+                                    <button type="button" onclick="setHwEdition('earth_tone', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
+                                        <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
+                                            <div class="w-1/2 h-full bg-[#4A2E1B]"></div>
+                                            <div class="w-1/2 h-full bg-[#E9B44C]"></div>
+                                        </div>
+                                        <span class="font-mono text-[11px] font-bold text-white truncate">Earth-Tone</span>
+                                    </button>
+
+                                    <!-- Swatch 6: Two-Tone -->
+                                    <button type="button" onclick="setHwEdition('pure_black_white', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
+                                        <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
+                                            <div class="w-1/2 h-full bg-[#F8F9FA]"></div>
+                                            <div class="w-1/2 h-full bg-[#101114]"></div>
+                                        </div>
+                                        <span class="font-mono text-[11px] font-bold text-white truncate">Two-Tone</span>
+                                    </button>
+
+                                    <!-- Swatch 7: Stealth Industrial -->
                                     <button type="button" onclick="setHwEdition('stealth', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
                                         <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
-                                            <div class="w-1/2 h-full bg-[#09090B]"></div>
-                                            <div class="w-1/2 h-full bg-[#52525B]"></div>
+                                            <div class="w-1/2 h-full bg-[#101114]"></div>
+                                            <div class="w-1/2 h-full bg-[#028CE3]"></div>
                                         </div>
                                         <span class="font-mono text-[11px] font-bold text-white truncate">Stealth</span>
                                     </button>
 
-                                    <!-- Swatch 4: Arcade -->
-                                    <button type="button" onclick="setHwEdition('arcade', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
+                                    <!-- Swatch 8: Voyager -->
+                                    <button type="button" onclick="setHwEdition('voyager', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
                                         <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
-                                            <div class="w-1/2 h-full bg-[#1D4ED8]"></div>
-                                            <div class="w-1/2 h-full bg-[#F43F5E]"></div>
+                                            <div class="w-1/2 h-full bg-[#4B4E54]"></div>
+                                            <div class="w-1/2 h-full bg-[#28334A]"></div>
                                         </div>
-                                        <span class="font-mono text-[11px] font-bold text-white truncate">Arcade</span>
-                                    </button>
-
-                                    <!-- Swatch 5: Clear Lab -->
-                                    <button type="button" onclick="setHwEdition('clear_lab', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
-                                        <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
-                                            <div class="w-1/2 h-full bg-[#94A3B8]"></div>
-                                            <div class="w-1/2 h-full bg-[#10B981]"></div>
-                                        </div>
-                                        <span class="font-mono text-[11px] font-bold text-white truncate">Clear Lab</span>
-                                    </button>
-
-                                    <!-- Swatch 6: Supernova -->
-                                    <button type="button" onclick="setHwEdition('supernova', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
-                                        <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
-                                            <div class="w-1/2 h-full bg-[#EA580C]"></div>
-                                            <div class="w-1/2 h-full bg-[#DC2626]"></div>
-                                        </div>
-                                        <span class="font-mono text-[11px] font-bold text-white truncate">Supernova</span>
-                                    </button>
-
-                                    <!-- Swatch 7: Deep Space -->
-                                    <button type="button" onclick="setHwEdition('deep_space', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
-                                        <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
-                                            <div class="w-1/2 h-full bg-[#312E81]"></div>
-                                            <div class="w-1/2 h-full bg-[#06B6D4]"></div>
-                                        </div>
-                                        <span class="font-mono text-[11px] font-bold text-white truncate">Deep Space</span>
-                                    </button>
-
-                                    <!-- Swatch 8: Synthwave -->
-                                    <button type="button" onclick="setHwEdition('synthwave', this)" class="hw-chip-btn p-2 rounded-lg border border-white/10 bg-white/[0.02] text-left transition flex items-center gap-2.5 hover:border-white/40">
-                                        <div class="w-4 h-4 rounded-full flex overflow-hidden shrink-0 border border-white/30">
-                                            <div class="w-1/2 h-full bg-[#86198F]"></div>
-                                            <div class="w-1/2 h-full bg-[#22D3EE]"></div>
-                                        </div>
-                                        <span class="font-mono text-[11px] font-bold text-white truncate">Synthwave</span>
+                                        <span class="font-mono text-[11px] font-bold text-white truncate">Voyager</span>
                                     </button>
                                 </div>
                             </div>
@@ -2777,55 +2777,55 @@
             }
         }
 
-        // SC-32 Hardware Studio Editions & View Modes
+        // SC-32 Hardware Studio Editions & View Modes (MATERIAL_AND_MARKING_SPEC.md Rev 3.3)
         const sc32Editions = {
-            'retrofuturism': {
-                name: 'Retrofuturism',
-                tag: 'EDITION 01 // RETROFUTURISM',
-                cmf: 'Warm Cream Faceplate • Safety Orange Accent Keys • Shore 95A Bumper',
-                src: 'assets/renders/edition_retrofuturism.png'
+            'cosmos': {
+                name: 'Cosmos',
+                tag: 'EDITION 01 // COSMOS (CHAMPION)',
+                cmf: 'Sunlu Midnight PLA 2.0+ • Tactile Light Gray TPU Keys • 1064nm Stark White Foam (15.2:1 AAA)',
+                src: 'assets/renders/etsy/combo_sc32_cosmos-square.png'
             },
-            'voyager': {
-                name: 'Voyager',
-                tag: 'EDITION 02 // VOYAGER',
-                cmf: 'Deep Navy Blue Faceplate • Brushed Brass & Gold Legends • Interstellar Telemetry',
-                src: 'assets/renders/edition_voyager.png'
+            'pure_black': {
+                name: 'Pure Black',
+                tag: 'EDITION 02 // PURE BLACK MONOLITH',
+                cmf: 'Technical Matte Black PLA • Black PETG Chassis • Black TPU Keys • Right-Shift Pill Outline',
+                src: 'assets/renders/etsy/combo_sc32_pure_black-square.png'
             },
-            'stealth': {
-                name: 'Stealth Industrial',
-                tag: 'EDITION 03 // STEALTH INDUSTRIAL',
-                cmf: 'Matte Obsidian Soldermask • Charcoal Keycaps • Low-Reflectance Legends',
-                src: 'assets/renders/edition_stealth_industrial.png'
-            },
-            'arcade': {
-                name: 'Arcade',
-                tag: 'EDITION 04 // ARCADE',
-                cmf: 'Electric Cobalt Faceplate • Neon Magenta & Cyber Yellow Tactile Domes',
-                src: 'assets/renders/edition_arcade.png'
-            },
-            'clear_lab': {
-                name: 'Clear Lab',
-                tag: 'EDITION 05 // CLEAR LAB',
-                cmf: 'Translucent Frosted Chassis • Visible Gold Trace Routes • White Screen Silk',
-                src: 'assets/renders/edition_clear_lab.png'
-            },
-            'supernova': {
-                name: 'Supernova',
-                tag: 'EDITION 06 // SUPERNOVA',
-                cmf: 'High-Luminance Solar Orange • Signal Red Secondary Domes • White Enamel',
-                src: 'assets/renders/edition_supernova.png'
-            },
-            'deep_space': {
-                name: 'Deep Space',
-                tag: 'EDITION 07 // DEEP SPACE',
-                cmf: 'Cosmic Midnight Violet • Electric Cyan Keycap Legends • Starfield Enamel',
-                src: 'assets/renders/edition_deep_space.png'
+            'grayscale': {
+                name: 'Grayscale',
+                tag: 'EDITION 03 // GRAYSCALE',
+                cmf: 'Technical Matte Black PLA • Elegoo Black PLA • Tactile Light Gray TPU Keys • Clean White Foam (12.8:1 AAA)',
+                src: 'assets/renders/etsy/combo_sc32_pure_black-square.png'
             },
             'synthwave': {
                 name: 'Synthwave',
-                tag: 'EDITION 08 // SYNTHWAVE',
-                cmf: 'Outrun Ultraviolet Faceplate • Hot Neon Magenta & Cyan Dual-Layer Legends',
-                src: 'assets/renders/edition_synthwave.png'
+                tag: 'EDITION 04 // SYNTHWAVE DUAL SILK',
+                cmf: 'Purple+Black Dual Silk PLA • Archimedean Sheen • Light Gray TPU Keys • Silver-Frost Foam (7.5:1 AA)',
+                src: 'assets/renders/etsy/combo_sc32_synthwave-square.png'
+            },
+            'earth_tone': {
+                name: 'Earth-Tone',
+                tag: 'EDITION 05 // EARTH-TONE ESPRESSO',
+                cmf: 'Sunlu Coffee Brown PLA • Light Gray TPU Keys • Warm Chalk White Foam (13.0:1 AAA)',
+                src: 'assets/renders/etsy/combo_sc32_earth_tone-square.png'
+            },
+            'pure_black_white': {
+                name: 'Two-Tone',
+                tag: 'EDITION 06 // PURE BLACK & WHITE',
+                cmf: 'White PETG Chassis • Technical Matte Black PLA Faceplate • Black TPU Keys • Modular Contrast',
+                src: 'assets/renders/etsy/combo_sc32_pure_black_white-square.png'
+            },
+            'stealth': {
+                name: 'Stealth Industrial',
+                tag: 'EDITION 07 // STEALTH INDUSTRIAL',
+                cmf: 'Technical Matte Black PLA • Elegoo Black Chassis • Cobalt Azure TPU Keys • Silver Chrome & Gold Badges',
+                src: 'assets/renders/etsy/combo_sc32_stealth_industrial-square.png'
+            },
+            'voyager': {
+                name: 'Voyager',
+                tag: 'EDITION 08 // VOYAGER',
+                cmf: 'Elegoo Space Gray PLA Faceplate • Sunlu Midnight PLA 2.0+ Chassis • Light Gray TPU Keys • Stark White Foam (12.4:1 AAA)',
+                src: 'assets/renders/etsy/combo_sc32_voyager-square.png'
             }
         };
 

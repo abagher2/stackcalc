@@ -186,7 +186,7 @@ hide:
 
         <!-- Clean Media Viewport -->
         <div class="te-spotlight-viewport">
-          <img id="sc32-showcase-image" src="../assets/renders/edition_stealth_industrial.png" alt="StackCalc SC-32 Scientific RPN Calculator - Stealth Industrial Edition" loading="eager">
+          <img id="sc32-showcase-image" src="../assets/renders/etsy/combo_sc32_cosmos-square.png" alt="StackCalc SC-32 Scientific RPN Calculator - Cosmos Champion Edition" loading="eager">
         </div>
 
         <!-- Interactive Tactile Faceplate Swatch Selector -->
@@ -197,64 +197,64 @@ hide:
           </div>
 
           <div class="te-swatches-grid">
-            <!-- 1. Stealth Industrial -->
-            <button type="button" class="te-swatch-btn active" id="btn-swatch-stealth" onclick="selectFaceplate('stealth', '../assets/renders/edition_stealth_industrial.png', 'Black PLA 2.0+ (Concentric Micro-Grooves)', 'Black PETG', 'Electric Azure TPU 95A', 'Laser Silver Chrome &amp; Gold Foil')">
-              <span class="te-swatch-chip chip-stealth"></span>
-              <span class="te-swatch-name">Stealth</span>
+            <!-- 1. Cosmos (Champion Edition) -->
+            <button type="button" class="te-swatch-btn active" id="btn-swatch-cosmos" onclick="selectFaceplate('cosmos', '../assets/renders/etsy/combo_sc32_cosmos-square.png', 'Sunlu Midnight PLA 2.0+ (15.2:1 AAA Champion)', 'Midnight Navy PLA 2.0+', 'Tactile Light Gray TPU 95A', 'Direct 1064nm IR Micro-Foam Stark White')">
+              <span class="te-swatch-chip chip-cosmos"></span>
+              <span class="te-swatch-name">Cosmos</span>
             </button>
 
-            <!-- 2. Retrofuturism -->
-            <button type="button" class="te-swatch-btn" id="btn-swatch-retro" onclick="selectFaceplate('retro', '../assets/renders/edition_retrofuturism.png', 'Polar White PLA 2.0+ (Ivory Matte)', 'Polar White PLA 2.0+', 'Polar White TPU 95A', 'Deep Navy &amp; Antique Bronze Foil')">
-              <span class="te-swatch-chip chip-retro"></span>
-              <span class="te-swatch-name">Retro</span>
+            <!-- 2. Pure Black Monolith -->
+            <button type="button" class="te-swatch-btn" id="btn-swatch-pureblack" onclick="selectFaceplate('pureblack', '../assets/renders/etsy/combo_sc32_pure_black-square.png', 'Technical Matte Black PLA', 'Black PETG Monolith', 'Technical Black TPU 95A', 'Direct 1064nm IR Micro-Foam Stark White (Right-Shift Pill Outline)')">
+              <span class="te-swatch-chip chip-pureblack"></span>
+              <span class="te-swatch-name">Pure Black</span>
             </button>
 
-            <!-- 3. Voyager -->
-            <button type="button" class="te-swatch-btn" id="btn-swatch-voyager" onclick="selectFaceplate('voyager', '../assets/renders/edition_voyager.png', 'Optical Frosted Translucent PETG', 'Midnight Navy PLA 2.0+', 'Electric Azure TPU 95A', 'Deep Navy &amp; Sky Blue Foil')">
-              <span class="te-swatch-chip chip-voyager"></span>
-              <span class="te-swatch-name">Voyager</span>
+            <!-- 3. Grayscale -->
+            <button type="button" class="te-swatch-btn" id="btn-swatch-grayscale" onclick="selectFaceplate('grayscale', '../assets/renders/etsy/combo_sc32_pure_black-square.png', 'Technical Matte Black PLA', 'Elegoo Black PLA', 'Tactile Light Gray TPU 95A', 'Direct 1064nm IR Clean White Micro-Foam (12.8:1 AAA)')">
+              <span class="te-swatch-chip chip-grayscale"></span>
+              <span class="te-swatch-name">Grayscale</span>
             </button>
 
-            <!-- 4. Supernova -->
-            <button type="button" class="te-swatch-btn" id="btn-swatch-supernova" onclick="selectFaceplate('supernova', '../assets/renders/edition_supernova.png', 'Dichromatic Red+Gold Silk PLA', 'Midnight Navy PLA 2.0+', 'Light Gray TPU 95A', 'Mirror Silver &amp; Gold Foil')">
-              <span class="te-swatch-chip chip-supernova"></span>
-              <span class="te-swatch-name">Supernova</span>
-            </button>
-
-            <!-- 5. Deep Space -->
-            <button type="button" class="te-swatch-btn" id="btn-swatch-deepspace" onclick="selectFaceplate('deepspace', '../assets/renders/edition_deep_space.png', 'Trichromatic Purple+Green+Blue Silk PLA', 'Black PLA 2.0+', 'Electric Azure TPU 95A', 'Laser-Foamed White &amp; Gold Foil')">
-              <span class="te-swatch-chip chip-deepspace"></span>
-              <span class="te-swatch-name">Deep Space</span>
-            </button>
-
-            <!-- 6. Synthwave -->
-            <button type="button" class="te-swatch-btn" id="btn-swatch-synthwave" onclick="selectFaceplate('synthwave', '../assets/renders/edition_synthwave.png', 'Dichromatic Neon Purple+Black Silk PLA', 'Black PLA 2.0+', 'Electric Azure TPU 95A', 'Laser-Foamed White &amp; Cyan Foil')">
+            <!-- 4. Synthwave -->
+            <button type="button" class="te-swatch-btn" id="btn-swatch-synthwave" onclick="selectFaceplate('synthwave', '../assets/renders/etsy/combo_sc32_synthwave-square.png', 'Purple+Black Dual Silk PLA (Archimedean Sheen)', 'Elegoo Black PLA', 'Tactile Light Gray TPU 95A', 'Direct 1064nm IR Silver-Frost Micro-Foam (7.5:1 AA)')">
               <span class="te-swatch-chip chip-synthwave"></span>
               <span class="te-swatch-name">Synthwave</span>
             </button>
 
-            <!-- 7. Arcade -->
-            <button type="button" class="te-swatch-btn" id="btn-swatch-arcade" onclick="selectFaceplate('arcade', '../assets/renders/edition_arcade.png', 'Dichromatic Red+Blue Silk PLA', 'Blue Gray PLA 2.0+', 'Polar White TPU 95A', 'Laser Mirror Silver &amp; Navy Foil')">
-              <span class="te-swatch-chip chip-arcade"></span>
-              <span class="te-swatch-name">Arcade</span>
+            <!-- 5. Earth-Tone Espresso -->
+            <button type="button" class="te-swatch-btn" id="btn-swatch-earthtone" onclick="selectFaceplate('earthtone', '../assets/renders/etsy/combo_sc32_earth_tone-square.png', 'Sunlu Coffee Brown PLA (Rich Espresso)', 'Sunlu Coffee Brown PLA', 'Tactile Light Gray TPU 95A', 'Direct 1064nm IR Warm Chalk White Foam (13.0:1 AAA)')">
+              <span class="te-swatch-chip chip-earthtone"></span>
+              <span class="te-swatch-name">Earth-Tone</span>
             </button>
 
-            <!-- 8. Clear Lab -->
-            <button type="button" class="te-swatch-btn" id="btn-swatch-clearlab" onclick="selectFaceplate('clearlab', '../assets/renders/edition_clear_lab.png', 'Optical Polished Clear PETG', 'Black PETG', 'Polar White TPU 95A', 'Sub-Surface Direct PCB View')">
-              <span class="te-swatch-chip chip-clearlab"></span>
-              <span class="te-swatch-name">Clear Lab</span>
+            <!-- 6. Pure Black & White (Two-Tone) -->
+            <button type="button" class="te-swatch-btn" id="btn-swatch-pureblackwhite" onclick="selectFaceplate('pureblackwhite', '../assets/renders/etsy/combo_sc32_pure_black_white-square.png', 'Technical Matte Black PLA', 'Clean White PETG', 'Technical Black TPU 95A', 'Direct 1064nm IR Laser Foamed Stark White (Modular Contrast)')">
+              <span class="te-swatch-chip chip-pureblackwhite"></span>
+              <span class="te-swatch-name">Two-Tone</span>
+            </button>
+
+            <!-- 7. Stealth Industrial -->
+            <button type="button" class="te-swatch-btn" id="btn-swatch-stealth" onclick="selectFaceplate('stealth', '../assets/renders/etsy/combo_sc32_stealth_industrial-square.png', 'Technical Matte Black PLA', 'Elegoo Black PLA', 'Cobalt Azure TPU 95A', 'Carbon Black Inset on Azure TPU &amp; Silver Chrome Badges')">
+              <span class="te-swatch-chip chip-stealth"></span>
+              <span class="te-swatch-name">Stealth</span>
+            </button>
+
+            <!-- 8. Voyager -->
+            <button type="button" class="te-swatch-btn" id="btn-swatch-voyager" onclick="selectFaceplate('voyager', '../assets/renders/etsy/combo_sc32_voyager-square.png', 'Elegoo Space Gray PLA', 'Sunlu Midnight PLA 2.0+', 'Tactile Light Gray TPU 95A', 'Direct 1064nm IR Stark White Micro-Foam (12.4:1 AAA)')">
+              <span class="te-swatch-chip chip-voyager"></span>
+              <span class="te-swatch-name">Voyager</span>
             </button>
           </div>
 
           <!-- Dynamic CMF Material Readout Strip -->
           <div class="te-cmf-readout" id="sc32-cmf-panel">
-            <strong>[ACTIVE CMF]</strong> <span id="cmf-faceplate">FACEPLATE: Black PLA 2.0+ (Concentric Micro-Grooves)</span> &bull; <span id="cmf-chassis">CHASSIS: Black PETG</span> &bull; <span id="cmf-keys">KEYS: Electric Azure TPU 95A</span> &bull; <span id="cmf-foil">FOIL: Laser Silver Chrome &amp; Gold Foil</span>
+            <strong>[ACTIVE CMF]</strong> <span id="cmf-faceplate">FACEPLATE: Sunlu Midnight PLA 2.0+ (15.2:1 AAA Champion)</span> &bull; <span id="cmf-chassis">CHASSIS: Midnight Navy PLA 2.0+</span> &bull; <span id="cmf-keys">KEYS: Tactile Light Gray TPU 95A</span> &bull; <span id="cmf-foil">MARKING: Direct 1064nm IR Micro-Foam Stark White</span>
           </div>
 
           <!-- Quick Thumbnails Strip -->
           <div class="te-spotlight-thumbs">
-            <div class="te-thumb-item active" onclick="switchMainImage('../assets/renders/edition_stealth_industrial.png', this)">
-              <img src="../assets/renders/edition_stealth_industrial.png" alt="Stealth Assembly">
+            <div class="te-thumb-item active" onclick="switchMainImage('../assets/renders/etsy/combo_sc32_cosmos-square.png', this)">
+              <img src="../assets/renders/etsy/combo_sc32_cosmos-square.png" alt="Cosmos Edition">
             </div>
             <div class="te-thumb-item" onclick="switchMainImage('../assets/renders/sc32-hero-keynote.png', this)">
               <img src="../assets/renders/sc32-hero-keynote.png" alt="Keynote Turntable">
@@ -391,7 +391,7 @@ hide:
           <div class="te-card-category">Fractions &amp; Equivalence</div>
           <h3 class="te-card-title"><a href="fraction-studio/">Fraction Studio Proportional Towers</a></h3>
           <p class="te-card-desc">
-            Single-color precision proportional blocks with debossed 4-face notation (fraction, decimal, percent, degree). Halves, quarters, and eighths physically align flush on any classroom table with zero loose trays required. Housed in a modular 3x2x13U Snapfinity Gridfinity enclosure with bi-directional sliding hard lid. Pairs directly with SC-6 stacked fraction display mode.
+            Single-color precision proportional towers with debossed 4-face notation (fraction, decimal, percent, degree). Halves, quarters, and eighths physically align flush on any classroom table. Features a removable 12-column caddy chassis with anti-scrape vertical runner glides and debossed socket floors inside a 3x1x13U Snapfinity Gridfinity storage enclosure with stackable lid. Pairs directly with SC-6 stacked fraction display mode.
           </p>
         </div>
         <div class="te-card-footer">
@@ -428,7 +428,7 @@ hide:
           <div class="te-card-category">Prime Factorization &amp; Logarithms</div>
           <h3 class="te-card-title"><a href="prime-factor-studio/">Prime Factor Studio &amp; Factor Towers</a></h3>
           <p class="te-card-desc">
-            Proportional logarithmic prime factor blocks with a 3x1x13U Snapfinity Gridfinity box. Stacking prime blocks physically multiplies them ($2 \times 3 = 6$, $2 \times 2 \times 3 = 12$) to prove the Fundamental Theorem of Arithmetic and solve GCF/LCM on the bilateral comparator stage. Direct twin to SC-6 prime engine.
+            Proportional logarithmic prime factor blocks housed in a 3x1x13U Snapfinity Gridfinity enclosure with a removable 12-column caddy chassis. Stepped floor pedestals elevate larger primes ([11], [13], [17], [19], [23], [29]), bringing every column summit to the uniform 84.00mm waterline flush against the Snapfinity stackable lid. Stacking prime blocks physically multiplies them ($2 \times 3 = 6$, $2 \times 2 \times 3 = 12$) to prove the Fundamental Theorem of Arithmetic and solve GCF/LCM. Direct twin to SC-6 prime engine.
           </p>
         </div>
         <div class="te-card-footer">
@@ -816,7 +816,7 @@ hide:
         </div>
         <div class="te-card-viewport">
           <a href="sc32-calculator/">
-            <img id="grid-sc32-img" src="../assets/renders/edition_stealth_industrial.png" alt="StackCalc SC-32 Scientific RPN Calculator" loading="lazy">
+            <img id="grid-sc32-img" src="../assets/renders/etsy/combo_sc32_cosmos-square.png" alt="StackCalc SC-32 Scientific RPN Calculator - Cosmos Champion Edition" loading="lazy">
           </a>
         </div>
         <div class="te-card-specs">
@@ -826,14 +826,14 @@ hide:
         </div>
         <div class="te-card-swatches">
           <span class="te-card-swatches-label">Finish:</span>
-          <span class="te-card-swatch-dot chip-stealth active" title="Stealth Industrial" onclick="switchGridSC32('../assets/renders/edition_stealth_industrial.png', this)"></span>
-          <span class="te-card-swatch-dot chip-retro" title="Retrofuturism" onclick="switchGridSC32('../assets/renders/edition_retrofuturism.png', this)"></span>
-          <span class="te-card-swatch-dot chip-voyager" title="Voyager Translucent" onclick="switchGridSC32('../assets/renders/edition_voyager.png', this)"></span>
-          <span class="te-card-swatch-dot chip-supernova" title="Supernova Silk" onclick="switchGridSC32('../assets/renders/edition_supernova.png', this)"></span>
-          <span class="te-card-swatch-dot chip-deepspace" title="Deep Space Silk" onclick="switchGridSC32('../assets/renders/edition_deep_space.png', this)"></span>
-          <span class="te-card-swatch-dot chip-synthwave" title="Synthwave Silk" onclick="switchGridSC32('../assets/renders/edition_synthwave.png', this)"></span>
-          <span class="te-card-swatch-dot chip-arcade" title="Arcade Silk" onclick="switchGridSC32('../assets/renders/edition_arcade.png', this)"></span>
-          <span class="te-card-swatch-dot chip-clearlab" title="Clear Lab" onclick="switchGridSC32('../assets/renders/edition_clear_lab.png', this)"></span>
+          <span class="te-card-swatch-dot chip-cosmos active" title="Cosmos Champion" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_cosmos-square.png', this)"></span>
+          <span class="te-card-swatch-dot chip-pureblack" title="Pure Black Monolith" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_pure_black-square.png', this)"></span>
+          <span class="te-card-swatch-dot chip-grayscale" title="Grayscale" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_pure_black-square.png', this)"></span>
+          <span class="te-card-swatch-dot chip-synthwave" title="Synthwave Dual Silk" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_synthwave-square.png', this)"></span>
+          <span class="te-card-swatch-dot chip-earthtone" title="Earth-Tone Espresso" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_earth_tone-square.png', this)"></span>
+          <span class="te-card-swatch-dot chip-pureblackwhite" title="Pure Black &amp; White" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_pure_black_white-square.png', this)"></span>
+          <span class="te-card-swatch-dot chip-stealth" title="Stealth Industrial" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_stealth_industrial-square.png', this)"></span>
+          <span class="te-card-swatch-dot chip-voyager" title="Voyager Two-Tone" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_voyager-square.png', this)"></span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Flagship RPN Hardware</div>

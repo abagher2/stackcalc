@@ -151,11 +151,15 @@ hide:
       </div>
 
       <p class="ec-short-summary">
-        The world's first physical logarithmic manipulative for prime factorization, prime vs. composite numbers, and early number theory. Contains <strong>29 proportional stacking prime factor blocks</strong> (powers of 2, 3, 5, 7, and higher prime markers) paired with a 3&times;1&times;13U Snapfinity Gridfinity box with integrated prime power lid sockets. Stacking prime blocks physically multiplies them, matching composite factor heights with 0.000mm error.
+        The world's first physical logarithmic manipulative for prime factorization, prime vs. composite numbers, and early number theory. Contains <strong>29 proportional stacking prime factor blocks</strong> (powers of 2, 3, 5, 7, and higher prime markers) housed in a 3&times;1&times;13U Snapfinity Gridfinity enclosure with a removable 12-column caddy chassis and Snapfinity stackable lid. Stepped floor pedestals elevate larger primes ([11], [13], [17], [19], [23], [29]), bringing every column summit to the uniform 84.00mm waterline flush against the lid. Stacking prime blocks physically multiplies them, matching composite factor heights with 0.000mm error.
       </p>
 
       <!-- Highlights Checklist -->
       <div class="ec-highlights-list">
+        <div class="ec-highlight-item">
+          <span class="ec-highlight-icon">&check;</span>
+          <span><strong>12-Column Caddy &amp; Stepped Pedestals:</strong> Removable 12-column caddy chassis features anti-scrape vertical runner glides and individual cell dividers. Stepped floor pedestals in Row 1 elevate larger primes ([11], [13], [17], [19], [23], [29]) so every column summit reaches the uniform 84.00mm waterline flush under the Snapfinity lid.</span>
+        </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
           <span><strong>Physical Proof of \(a \times b = b \times a\):</strong> Stacking [2] then [5] reaches exactly the same height as [5] then [2] (both reach 42.00mm, representing product 10), physically proving the commutative property of multiplication.</span>
@@ -401,7 +405,7 @@ hide:
           <li><strong>5&times; Higher Primes:</strong> 1 each of [11], [13], [17], [19], [23]</li>
           <li><strong>Footprint:</strong> 19.0 &times; 19.0 mm square 0.5U Gridfinity miniblock</li>
           <li><strong>Socket Nesting Depth:</strong> 1.85 mm (cancels identically on every joint)</li>
-          <li><strong>Enclosure Box:</strong> 3&times;1&times;13U Gridfinity Bin (125.5 &times; 42.0 &times; 91.0 mm) with prime power lid sockets (Snap-on TPU non-skid feet sold separately)</li>
+          <li><strong>Enclosure &amp; Caddy:</strong> 3&times;1&times;13U Gridfinity Bin (125.5 &times; 42.0 &times; 91.0 mm) with removable 12-column caddy chassis (anti-scrape runner glides, stepped pedestals for primes 11–29, and 84mm waterline) and Snapfinity stackable lid with prime power sockets</li>
         </ul>
       </div>
 
