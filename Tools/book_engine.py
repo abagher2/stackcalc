@@ -977,8 +977,6 @@ def get_chapter_prefix(file_path: Path) -> Optional[str]:
     m_app = re.match(r"^appendix-([a-z])-.*\.md$", name, flags=re.IGNORECASE)
     if m_app:
         return m_app.group(1).upper()
-    if name == "index.md" and file_path.parent.name in ("sc32", "sc6"):
-        return ""
     return None
 
 

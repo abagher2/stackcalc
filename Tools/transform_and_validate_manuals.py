@@ -210,7 +210,7 @@ def strip_all_manual_heading_numbers(text: str, file_path: Path) -> str:
     the markdown source file so `book_engine.auto_number_headings` is the single
     deterministic numbering source.
     """
-    if get_chapter_prefix(file_path) is None:
+    if get_chapter_prefix(file_path) is None and file_path.name != "index.md":
         return text
 
     lines = text.split("\n")

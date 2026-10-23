@@ -34,15 +34,15 @@ Elementary math is built on simple, reliable patterns. The table below pairs eac
 
 | Math Rule | Rule in Words & Numbers | Physical Block Model | Chapter Link | SC-6 Stack Check (`Example`) |
 |:---|:---|:---|:---|:---|
-| **Turn-Around Rule (Addition)** | $\text{First} + \text{Second} = \text{Second} + \text{First}$ ($3 + 5 = 5 + 3$) | Sliding Number Rack beads left vs. right | [Ch. 4.1](04-operations-skip-counting.md) | `3 {{key:ENTER}} 5 {{key:+}}` equals `5 {{key:ENTER}} 3 {{key:+}}` |
-| **Turn-Around Rule (Multiplication)** | $\text{Rows} \times \text{Columns} = \text{Columns} \times \text{Rows}$ ($4 \times 6 = 6 \times 4$) | Turning a 24-tile rectangle $90^\circ$ on the desk | [Ch. 4.1](04-operations-skip-counting.md) | `4 {{key:ENTER}} 6 {{key:×}}` equals `6 {{key:ENTER}} 4 {{key:×}}` |
-| **Grouping Rule (Addition)** | $(\text{First} + \text{Second}) + \text{Third} = \text{First} + (\text{Second} + \text{Third})$ | Joining 3 color trains of snap cubes | [Ch. 4.1](04-operations-skip-counting.md) | `2 {{key:ENTER}} 3 {{key:+}} 4 {{key:+}}` |
-| **Grouping Rule (Multiplication)** | $(\text{Length} \times \text{Width}) \times \text{Height}$ in any order | Stacking 3D layers of unit cubes | [Ch. 4.1](04-operations-skip-counting.md) | `2 {{key:ENTER}} 3 {{key:×}} 4 {{key:×}}` |
-| **Break-Apart Rule (Distributive)** | $4 \times (10 + 3) = (4 \times 10) + (4 \times 3)$ | Splitting a 4-color tile rectangle along a color seam | [Ch. 4.1](04-operations-skip-counting.md) | `10 {{key:ENTER}} 3 {{key:+}} 4 {{key:×}}` |
-| **Zero and One Rules** | Adding $0$ or multiplying by $1$ leaves a number unchanged | Adding zero tiles; taking 1 group of tiles | [Ch. 4.1](04-operations-skip-counting.md) | `7 {{key:ENTER}} 0 {{key:+}}` $\to 7$; `7 {{key:ENTER}} 1 {{key:×}}` $\to 7$ |
-| **Division with Remainder Check** | $\text{Total} = (\text{Divisor} \times \text{Quotient}) + \text{Remainder}$ | Sharing counters equally into cups with leftovers | [Ch. 4.2](04-operations-skip-counting.md) | `29 {{key:ENTER}} 4 {{key:÷R}}` $\to$ Remainder `1` in $Y$, Quotient `7` in $X$ |
-| **GCF and LCM Partner Rule** | $\text{GCF} \times \text{LCM} = \text{First Number} \times \text{Second Number}$ | Comparing Prime Factor Studio towers side by side | [Ch. 7.3](07-data-probability-primes.md) | `12 {{key:ENTER}} 18 {{key:GCF}} 12 {{key:ENTER}} 18 {{key:LCM}} {{key:×}}` $\to 216$ |
-| **Fraction-to-Decimal Bridge** | $\text{Top Number} \div \text{Bottom Number} = \text{Decimal}$ | Comparing Fraction Towers to the $1\text{-Whole}$ tower | [Ch. 5.1](05-fractions-decimals-ratios.md) | `3 {{key:ENTER}} 4 {{key:÷}}` $\to 0.75$ |
+| **Turn-Around Rule (Addition)** | $\text{First} + \text{Second} = \text{Second} + \text{First}$ ($3 + 5 = 5 + 3$) | Sliding Number Rack beads left vs. right | [Chapter 4](04-operations-skip-counting.md) | `3 {{key:ENTER}} 5 {{key:+}}` equals `5 {{key:ENTER}} 3 {{key:+}}` |
+| **Turn-Around Rule (Multiplication)** | $\text{Rows} \times \text{Columns} = \text{Columns} \times \text{Rows}$ ($4 \times 6 = 6 \times 4$) | Turning a 24-tile rectangle $90^\circ$ on the desk | [Chapter 4](04-operations-skip-counting.md) | `4 {{key:ENTER}} 6 {{key:×}}` equals `6 {{key:ENTER}} 4 {{key:×}}` |
+| **Grouping Rule (Addition)** | $(\text{First} + \text{Second}) + \text{Third} = \text{First} + (\text{Second} + \text{Third})$ | Joining 3 color trains of snap cubes | [Chapter 4](04-operations-skip-counting.md) | `2 {{key:ENTER}} 3 {{key:+}} 4 {{key:+}}` |
+| **Grouping Rule (Multiplication)** | $(\text{Length} \times \text{Width}) \times \text{Height}$ in any order | Stacking 3D layers of unit cubes | [Chapter 4](04-operations-skip-counting.md) | `2 {{key:ENTER}} 3 {{key:×}} 4 {{key:×}}` |
+| **Break-Apart Rule (Distributive)** | $4 \times (10 + 3) = (4 \times 10) + (4 \times 3)$ | Splitting a 4-color tile rectangle along a color seam | [Chapter 4](04-operations-skip-counting.md) | `10 {{key:ENTER}} 3 {{key:+}} 4 {{key:×}}` |
+| **Zero and One Rules** | Adding $0$ or multiplying by $1$ leaves a number unchanged | Adding zero tiles; taking 1 group of tiles | [Chapter 4](04-operations-skip-counting.md) | `7 {{key:ENTER}} 0 {{key:+}}` $\to 7$; `7 {{key:ENTER}} 1 {{key:×}}` $\to 7$ |
+| **Division with Remainder Check** | $\text{Total} = (\text{Divisor} \times \text{Quotient}) + \text{Remainder}$ | Sharing counters equally into cups with leftovers | [Chapter 4](04-operations-skip-counting.md) | `29 {{key:ENTER}} 4 {{key:÷R}}` $\to$ Remainder `1` in $Y$, Quotient `7` in $X$ |
+| **GCF and LCM Partner Rule** | $\text{GCF} \times \text{LCM} = \text{First Number} \times \text{Second Number}$ | Comparing Prime Factor Studio towers side by side | [Chapter 7](07-data-probability-primes.md) | `12 {{key:ENTER}} 18 {{key:GCF}} 12 {{key:ENTER}} 18 {{key:LCM}} {{key:×}}` $\to 216$ |
+| **Fraction-to-Decimal Bridge** | $\text{Top Number} \div \text{Bottom Number} = \text{Decimal}$ | Comparing Fraction Towers to the $1\text{-Whole}$ tower | [Chapter 5](05-fractions-decimals-ratios.md) | `3 {{key:ENTER}} 4 {{key:÷}}` $\to 0.75$ |
 
 ---
 
@@ -52,25 +52,22 @@ The table below summarizes 2D flat shape rules in plain words alongside their ch
 
 | Flat Shape | Word Rule | Chapter Link | SC-6 RPN Keystroke Sequence | Stack Floors Used |
 |:---|:---|:---|:---|:---:|
-| **Square (Perimeter)** | $\text{Perimeter} = 4 \times \text{Side}$ | [Ch. 6.2](06-geometry-surface-area.md) | `[Side] {{key:ENTER}} {{key:4}} {{key:×}}` | $Y, X$ |
-| **Square (Area)** | $\text{Area} = \text{Side} \times \text{Side}$ | [Ch. 6.2](06-geometry-surface-area.md) | `[Side] {{key:x²}}` | $X$ |
-| **Rectangle (Perimeter)** | $\text{Perimeter} = 2 \times (\text{Length} + \text{Width})$ | [Ch. 6.2](06-geometry-surface-area.md) | `[Length] {{key:ENTER}} [Width] {{key:+}} {{key:2}} {{key:×}}` | $Y, X$ |
-| **Rectangle (Area)** | $\text{Area} = \text{Length} \times \text{Width}$ | [Ch. 6.2](06-geometry-surface-area.md) | `[Length] {{key:ENTER}} [Width] {{key:RECT}}` | $Y, X$ |
-| **Triangle (Perimeter)** | $\text{Perimeter} = \text{Side 1} + \text{Side 2} + \text{Side 3}$ | [Ch. 6.2](06-geometry-surface-area.md) | `[Side 1] {{key:ENTER}} [Side 2] {{key:+}} [Side 3] {{key:+}}` | $Z, Y, X$ |
-| **Triangle (Area)** | $\text{Area} = (\text{Base} \times \text{Height}) \div 2$ | [Ch. 6.2](06-geometry-surface-area.md) | `[Base] {{key:ENTER}} [Height] {{key:×}} {{key:2}} {{key:÷}}` | $Y, X$ |
-| **Parallelogram (Area)** | $\text{Area} = \text{Base} \times \text{Height}$ | [Ch. 6.2](06-geometry-surface-area.md) | `[Base] {{key:ENTER}} [Height] {{key:×}}` | $Y, X$ |
-| **Trapezoid (Area)** | $\text{Area} = (\text{Top} + \text{Bottom}) \div 2 \times \text{Height}$ | [Ch. 6.2](06-geometry-surface-area.md) | `[Top] {{key:ENTER}} [Bottom] {{key:+}} {{key:2}} {{key:÷}} [Height] {{key:×}}` | $Z, Y, X$ |
-| **Circle (Circumference)** | $\text{Distance Around} = \pi \times \text{Width (Diameter)}$ | [Ch. 6.2](06-geometry-surface-area.md) | `[Diameter] {{key:π}} {{key:×}}` | $Y, X$ |
-| **Circle (Area)** | $\text{Area} = \pi \times \text{Radius} \times \text{Radius}$ | [Ch. 6.2](06-geometry-surface-area.md) | `[Radius] {{key:x²}} {{key:π}} {{key:×}}` | $Y, X$ |
+| **Square (Perimeter)** | $\text{Perimeter} = 4 \times \text{Side}$ | [Chapter 6](06-geometry-surface-area.md) | `[Side] {{key:ENTER}} {{key:4}} {{key:×}}` | $Y, X$ |
+| **Square (Area)** | $\text{Area} = \text{Side} \times \text{Side}$ | [Chapter 6](06-geometry-surface-area.md) | `[Side] {{key:x²}}` | $X$ |
+| **Rectangle (Perimeter)** | $\text{Perimeter} = 2 \times (\text{Length} + \text{Width})$ | [Chapter 6](06-geometry-surface-area.md) | `[Length] {{key:ENTER}} [Width] {{key:+}} {{key:2}} {{key:×}}` | $Y, X$ |
+| **Rectangle (Area)** | $\text{Area} = \text{Length} \times \text{Width}$ | [Chapter 6](06-geometry-surface-area.md) | `[Length] {{key:ENTER}} [Width] {{key:RECT}}` | $Y, X$ |
+| **Triangle (Perimeter)** | $\text{Perimeter} = \text{Side 1} + \text{Side 2} + \text{Side 3}$ | [Chapter 6](06-geometry-surface-area.md) | `[Side 1] {{key:ENTER}} [Side 2] {{key:+}} [Side 3] {{key:+}}` | $Z, Y, X$ |
+| **Triangle (Area)** | $\text{Area} = (\text{Base} \times \text{Height}) \div 2$ | [Chapter 6](06-geometry-surface-area.md) | `[Base] {{key:ENTER}} [Height] {{key:×}} {{key:2}} {{key:÷}}` | $Y, X$ |
+| **Parallelogram (Area)** | $\text{Area} = \text{Base} \times \text{Height}$ | [Chapter 6](06-geometry-surface-area.md) | `[Base] {{key:ENTER}} [Height] {{key:×}}` | $Y, X$ |
+| **Trapezoid (Area)** | $\text{Area} = (\text{Top} + \text{Bottom}) \div 2 \times \text{Height}$ | [Chapter 6](06-geometry-surface-area.md) | `[Top] {{key:ENTER}} [Bottom] {{key:+}} {{key:2}} {{key:÷}} [Height] {{key:×}}` | $Z, Y, X$ |
+| **Circle (Circumference)** | $\text{Distance Around} = \pi \times \text{Width (Diameter)}$ | [Chapter 6](06-geometry-surface-area.md) | `[Diameter] {{key:π}} {{key:×}}` | $Y, X$ |
+| **Circle (Area)** | $\text{Area} = \pi \times \text{Radius} \times \text{Radius}$ | [Chapter 6](06-geometry-surface-area.md) | `[Radius] {{key:x²}} {{key:π}} {{key:×}}` | $Y, X$ |
 
 ---
 
 ### Flat Shapes in Action: 2D Stack Traces
 
-The examples below show how Registers $T, Z, Y,$ and $X$ update step by step when finding the perimeter and area of flat shapes.
-
-#### Area of a Triangle ($\text{Base} = 14\text{ cm}, \text{Height} = 9\text{ cm}$)
-By the triangle word rule, $\text{Area} = (\text{Base} \times \text{Height}) \div 2 = (14 \times 9) \div 2 = 63\text{ cm}^2$.
+To see how Registers $T, Z, Y,$ and $X$ update step by step when measuring flat shapes, let's trace five classic two-dimensional shapes on the stack. Suppose you start with a **triangle** whose base is $14\text{ cm}$ and height is $9\text{ cm}$. Because any triangle is half of a bounding rectangle, the triangle word rule tells us that $\text{Area} = (\text{Base} \times \text{Height}) \div 2 = (14 \times 9) \div 2 = 63\text{ cm}^2$:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -81,10 +78,9 @@ By the triangle word rule, $\text{Area} = (\text{Base} \times \text{Height}) \di
 | `{{key:2}}` | 0 | 0 | 126 | 2 |
 | `{{key:÷}}` | 0 | 0 | 0 | 63 |
 
-First multiply $14 \times 9 = 126$ for the full bounding rectangle, then type `2` and tap `{{key:÷}}` to slice the rectangle in half: $126 \div 2 = 63$.
+Notice how you first multiply $14 \times 9 = 126$ for the full bounding rectangle, and then type `2` and tap `{{key:÷}}` to slice that rectangle in half: $126 \div 2 = 63$.
 
-#### Area of a Trapezoid ($\text{Top} = 8\text{ in}, \text{Bottom} = 14\text{ in}, \text{Height} = 6\text{ in}$)
-Averaging the top and bottom widths and multiplying by the height gives $\text{Area} = (\text{Top} + \text{Bottom}) \div 2 \times \text{Height} = (8 + 14) \div 2 \times 6 = 11 \times 6 = 66\text{ sq in}$.
+What if the top of the shape isn't a sharp point, but a flat roof—making a **trapezoid** with a top width of $8\text{ in}$, a bottom width of $14\text{ in}$, and a height of $6\text{ in}$? Averaging the top and bottom widths first gives the middle width ($(8 + 14) \div 2 = 11\text{ in}$), and multiplying by the height gives $\text{Area} = (\text{Top} + \text{Bottom}) \div 2 \times \text{Height} = 11 \times 6 = 66\text{ sq in}$:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -97,8 +93,7 @@ Averaging the top and bottom widths and multiplying by the height gives $\text{A
 | `{{key:6}}` | 0 | 0 | 11 | 6 |
 | `{{key:×}}` | 0 | 0 | 0 | 66 |
 
-#### Area of a Circular Splash Pad ($\text{Radius} = 3.5\text{ m}$)
-Squaring the radius first and scaling by $\pi$ yields $\text{Area} = \pi \times \text{Radius} \times \text{Radius} = \pi \times 3.5^2 = \pi \times 12.25 \approx 38.48451\text{ m}^2$.
+When straight edges curve into a circle—such as a **circular splash pad** with a radius of $3.5\text{ m}$—squaring the radius first (`3.5 {{key:x²}}` $\to 12.25$) and scaling by `{{key:π}}` yields $\text{Area} = \pi \times \text{Radius} \times \text{Radius} = \pi \times 3.5^2 \approx 38.48451\text{ m}^2$:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -107,8 +102,7 @@ Squaring the radius first and scaling by $\pi$ yields $\text{Area} = \pi \times 
 | `{{key:π}}` | 0 | 0 | 12.25 | 3.1415926 |
 | `{{key:×}}` | 0 | 0 | 0 | 38.484510 |
 
-#### Perimeter of a Rectangular Garden ($\text{Length} = 14\text{ m}, \text{Width} = 9\text{ m}$)
-Adding the two adjacent sides into an L-shape and doubling gives $\text{Perimeter} = 2 \times (\text{Length} + \text{Width}) = 2 \times (14 + 9) = 2 \times 23 = 46\text{ m}$.
+For the distance around the outside of a shape, we walk its perimeter. Around a **rectangular garden** of length $14\text{ m}$ and width $9\text{ m}$, adding the two adjacent sides into an L-shape ($14 + 9 = 23\text{ m}$) and doubling gives $\text{Perimeter} = 2 \times (\text{Length} + \text{Width}) = 2 \times 23 = 46\text{ m}$:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -119,8 +113,7 @@ Adding the two adjacent sides into an L-shape and doubling gives $\text{Perimete
 | `{{key:2}}` | 0 | 0 | 23 | 2 |
 | `{{key:×}}` | 0 | 0 | 0 | 46 |
 
-#### Distance Around a Bicycle Wheel ($\text{Diameter} = 24\text{ inches}$)
-To find how far a $24\text{-inch}$ bicycle tire rolls in one revolution ($\text{Circumference} = \pi \times 24$), type `24 {{key:π}} {{key:×}}`. Register $X$ immediately displays **$75.39822\text{ inches}$** per turn of the wheel.
+And to find how far a $24\text{-inch}$ **bicycle wheel** rolls in one full turn ($\text{Circumference} = \pi \times 24$), typing `24 {{key:π}} {{key:×}}` on the stack immediately displays **$75.39822\text{ inches}$** per revolution.
 
 ---
 
@@ -128,21 +121,16 @@ To find how far a $24\text{-inch}$ bicycle tire rolls in one revolution ($\text{
 
 | 3D Solid Shape | Volume Word Rule | Total Surface Area Word Rule | Chapter Link | SC-6 Volume Keystrokes |
 |:---|:---|:---|:---|:---|
-| **Cube** | $\text{Volume} = \text{Side} \times \text{Side} \times \text{Side}$ | $\text{Surface Area} = 6 \times (\text{Side} \times \text{Side})$ | [Chapter 6.3](06-geometry-surface-area.md) | `[Side] {{key:ENTER}} {{key:3}} {{key:yˣ}}` |
-| **Rectangular Box (Prism)** | $\text{Volume} = \text{Length} \times \text{Width} \times \text{Height}$ | Add all $6$ rectangular faces ($2\text{ Top/Bottom} + 2\text{ Front/Back} + 2\text{ Sides}$) | [Chapter 6.3](06-geometry-surface-area.md) | `[Length] {{key:ENTER}} [Width] {{key:×}} [Height] {{key:×}}` |
-| **Triangular Tent (Prism)** | $\text{Volume} = (\text{Base} \times \text{Height} \div 2) \times \text{Length}$ | Add the $2$ triangle ends plus the $3$ rectangular side panels | [Chapter 6.3](06-geometry-surface-area.md) | `[Base] {{key:ENTER}} [Height] {{key:×}} 2 {{key:÷}} [Length] {{key:×}}` |
-| **Cylinder (Can)** | $\text{Volume} = (\pi \times \text{Radius}^2) \times \text{Height}$ | $\text{Curved Side} \ (2 \times \pi \times \text{Radius} \times \text{Height}) + 2\text{ Circle Ends} \ (2 \times \pi \times \text{Radius}^2)$ | [Chapter 6.3](06-geometry-surface-area.md) | `[Radius] {{key:x²}} {{key:π}} {{key:×}} [Height] {{key:×}}` |
+| **Cube** | $\text{Volume} = \text{Side} \times \text{Side} \times \text{Side}$ | $\text{Surface Area} = 6 \times (\text{Side} \times \text{Side})$ | [Chapter 6](06-geometry-surface-area.md) | `[Side] {{key:ENTER}} {{key:3}} {{key:yˣ}}` |
+| **Rectangular Box (Prism)** | $\text{Volume} = \text{Length} \times \text{Width} \times \text{Height}$ | Add all $6$ rectangular faces ($2\text{ Top/Bottom} + 2\text{ Front/Back} + 2\text{ Sides}$) | [Chapter 6](06-geometry-surface-area.md) | `[Length] {{key:ENTER}} [Width] {{key:×}} [Height] {{key:×}}` |
+| **Triangular Tent (Prism)** | $\text{Volume} = (\text{Base} \times \text{Height} \div 2) \times \text{Length}$ | Add the $2$ triangle ends plus the $3$ rectangular side panels | [Chapter 6](06-geometry-surface-area.md) | `[Base] {{key:ENTER}} [Height] {{key:×}} 2 {{key:÷}} [Length] {{key:×}}` |
+| **Cylinder (Can)** | $\text{Volume} = (\pi \times \text{Radius}^2) \times \text{Height}$ | $\text{Curved Side} \ (2 \times \pi \times \text{Radius} \times \text{Height}) + 2\text{ Circle Ends} \ (2 \times \pi \times \text{Radius}^2)$ | [Chapter 6](06-geometry-surface-area.md) | `[Radius] {{key:x²}} {{key:π}} {{key:×}} [Height] {{key:×}}` |
 
 ---
 
 ### Solid Shapes in Action: 3D Stack Traces
 
-These step-by-step 4-register traces show how to find the volume and surface area of 3D cans and boxes without parentheses or scratch paper.
-
-#### Volume & Surface Area of a Storage Silo Cylinder ($\text{Radius} = 4\text{ m}, \text{Height} = 10\text{ m}$)
-For a cylindrical silo, the volume stacks the circular base area across the height: $(\pi \times 4^2) \times 10 = 160\pi \approx 502.6548\text{ m}^3$. Its total surface area adds the unrolled side wrapper to the two circular lids: $(2 \times \pi \times 4 \times 10) + (2 \times \pi \times 4^2) \approx 351.8584\text{ m}^2$.
-
-Here is the volume trace on the stack:
+When a flat base is lifted upward into three dimensions, the stack lets you find both volume and surface area without parentheses or scratch paper. Consider a **cylindrical farm storage silo** with a radius of $4\text{ m}$ and a height of $10\text{ m}$. Its volume stacks the circular base area across the height: $(\pi \times 4^2) \times 10 = 160\pi \approx 502.6548\text{ m}^3$:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -153,7 +141,7 @@ Here is the volume trace on the stack:
 | `10` | 0 | 0 | 50.265482 | 10 |
 | `{{key:×}}` | 0 | 0 | 0 | 502.654824 |
 
-And here is the total surface area trace, where Register $Y$ holds the curved side area while you build the two circular lids in $X$:
+To paint that same silo's outer shell and both circular lids, we add the unrolled side wrapper to the two circular ends, $(2 \times \pi \times 4 \times 10) + (2 \times \pi \times 4^2) \approx 351.8584\text{ m}^2$, letting Register $Y$ hold the curved side area ($251.33\text{ m}^2$) while we build the two circular lids ($100.53\text{ m}^2$) in $X$:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -166,8 +154,7 @@ And here is the total surface area trace, where Register $Y$ holds the curved si
 | `{{key:4}} {{key:x²}} {{key:×}}` | 0 | 0 | 251.327412 | 100.530964 |
 | `{{key:+}}` | 0 | 0 | 0 | 351.858376 |
 
-#### Volume of a Square-Base Storage Box ($\text{Base Side} = 6\text{ cm}, \text{Height} = 8\text{ cm}$)
-Squaring the $6\text{ cm}$ base side builds a $36\text{ cm}^2$ bottom layer, and multiplying by $8$ stacks up the layers ($36 \times 8 = 288\text{ cm}^3$):
+The same layer-stacking idea works for boxes and cubes. For a **square-base storage box** with a $6\text{ cm}$ base side and an $8\text{ cm}$ height, squaring the $6\text{ cm}$ side builds a $36\text{ cm}^2$ bottom layer, and multiplying by $8$ stacks up the layers ($36 \times 8 = 288\text{ cm}^3$):
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -175,8 +162,7 @@ Squaring the $6\text{ cm}$ base side builds a $36\text{ cm}^2$ bottom layer, and
 | `{{key:8}}` | 0 | 0 | 36 | 8 |
 | `{{key:×}}` | 0 | 0 | 0 | 288 |
 
-#### Volume & Surface Area of a 9 cm Cube ($\text{Side} = 9\text{ cm}$)
-A $9\text{ cm}$ cube holds $\text{Side}^3 = 9^3 = 729\text{ cm}^3$ of space inside and is wrapped by six identical $9 \times 9$ square faces ($6 \times 81 = 486\text{ cm}^2$). On the SC-6, key in `{{key:9}} {{key:ENTER}} {{key:3}} {{key:yˣ}}` to find the volume (**`729`** $\text{cm}^3$), or `{{key:9}} {{key:x²}} {{key:6}} {{key:×}}` to find the total surface area (**`486`** $\text{cm}^2$).
+And when all three dimensions match—such as a **$9\text{ cm}$ cube**—it holds $\text{Side}^3 = 9^3 = 729\text{ cm}^3$ of space inside (`{{key:9}} {{key:ENTER}} {{key:3}} {{key:yˣ}}` $\to \mathbf{729}\text{ cm}^3$) and is wrapped by six identical $9 \times 9$ square faces (`{{key:9}} {{key:x²}} {{key:6}} {{key:×}}` $\to \mathbf{486}\text{ cm}^2$).
 
 ---
 
@@ -225,8 +211,7 @@ Unit conversions multiply or divide by a fixed conversion number.
 | **Centimeters (cm)**| **Millimeters (mm)**| $10.0$ | `[cm] {{key:ENTER}} 10 {{key:×}}` | $\div 10$ |
 | **Kilometers (km)**| **Meters (m)** | $1000.0$ | `[km] {{key:ENTER}} 1000 {{key:×}}` | $\div 1000$ |
 
-#### Measuring a Football Field in Meters
-To convert a $100\text{-yard}$ football field into meters, key in `{{res:sc6_appendix_c_formulas_and_conversions_seq_01:keys}}` to obtain **$91.44\text{ meters}$**. Dividing right back with `{{key:.}} 9144 {{key:÷}}` restores the original **$100.00\text{ yards}$**.
+For example, to convert a $100\text{-yard}$ football field into meters, key in `{{res:sc6_appendix_c_formulas_and_conversions_seq_01:keys}}` to obtain **$91.44\text{ meters}$**—and dividing right back with `{{key:.}} 9144 {{key:÷}}` restores the original **$100.00\text{ yards}$**.
 
 ---
 
@@ -242,8 +227,7 @@ To convert a $100\text{-yard}$ football field into meters, key in `{{res:sc6_app
 | **Square Miles ($\text{mi}^2$)**| **Acres (ac)** | $640.0$ | `[sq mi] {{key:ENTER}} 640 {{key:×}}` | $\div 640$ |
 | **Square Meters ($\text{m}^2$)**| **Square Feet (sq ft)**| $\approx 10.76391$ | `[m²] {{key:ENTER}} 10.764 {{key:×}}`| $\div 10.764$ |
 
-#### Surveying a Neighborhood Park
-To find how many square feet lie inside a $2.5\text{-acre}$ neighborhood park, enter `{{res:sc6_appendix_c_formulas_and_conversions_seq_02:keys}}`, which reveals **$108,900\text{ sq ft}$**.
+For instance, to find how many square feet lie inside a $2.5\text{-acre}$ neighborhood park, enter `{{res:sc6_appendix_c_formulas_and_conversions_seq_02:keys}}`, which reveals **$108,900\text{ sq ft}$**.
 
 ---
 
@@ -260,7 +244,6 @@ To find how many square feet lie inside a $2.5\text{-acre}$ neighborhood park, e
 | **Kilograms (kg)** | **Grams (g)** | $1000.0$ | `[kg] {{key:ENTER}} 1000 {{key:×}}` | $\div 1000$ |
 | **Grams (g)** | **Milligrams (mg)** | $1000.0$ | `{{key:ENTER}} 1000 {{key:×}}` | $\div 1000$ |
 
-#### Weighing a Bicycle Shipping Crate
 To convert a $65\text{ lb}$ bicycle shipping crate into kilograms, press `{{res:sc6_appendix_c_formulas_and_conversions_seq_03:keys}}` to read **$29.483\text{ kg}$** on the display.
 
 ---
@@ -279,7 +262,6 @@ To convert a $65\text{ lb}$ bicycle shipping crate into kilograms, press `{{res:
 | **Liters (L)** | **Milliliters (mL)** | $1000.0$ | `[L] {{key:ENTER}} 1000 {{key:×}}` | $\div 1000$ |
 | **Cubic Meters ($\text{m}^3$)**| **Liters (L)** | $1000.0$ | `[m³] {{key:ENTER}} 1000 {{key:×}}` | $\div 1000$ |
 
-#### Filling a Fifteen-Gallon Water Tank
 To convert a $15\text{-gallon}$ camp water tank into liters, run `{{res:sc6_appendix_c_formulas_and_conversions_seq_04:keys}}` to find **$56.781\text{ liters}$**.
 
 ---
@@ -294,7 +276,6 @@ To convert a $15\text{-gallon}$ camp water tank into liters, run `{{res:sc6_appe
 | **Knots (kt)** | **Miles per Hour (mph)**| $\approx 1.150779$ | `[kt] {{key:ENTER}} 1.151 {{key:×}}` |
 | **Knots (kt)** | **Kilometers per Hour (km/h)**| $1.852$ | `[kt] {{key:ENTER}} 1.852 {{key:×}}` |
 
-#### Tracking a Racing Drone in Flight
 When a quadcopter drone flies at $45\text{ mph}$, you can find how many feet it covers each second by keying in `{{res:sc6_appendix_c_formulas_and_conversions_seq_05:keys}}`, which lands on **$66.0\text{ ft/s}$**.
 
 ---
@@ -308,7 +289,6 @@ When a quadcopter drone flies at $45\text{ mph}$, you can find how many feet it 
 | **Bar (bar)** | **Kilopascals (kPa)** | $100.0$ | `[bar] {{key:ENTER}} 100 {{key:×}}` |
 | **Pounds per Sq Inch (psi)**| **Kilopascals (kPa)**| $6.894757$ | `[psi] {{key:ENTER}} 6.895 {{key:×}}` |
 
-#### Pumping Up a Road Bike Tire
 If a road bicycle tire is inflated to $85\text{ psi}$, keying in `{{res:sc6_appendix_c_formulas_and_conversions_seq_06:keys}}` converts that pressure to **$586.05\text{ kPa}$**.
 
 ---
@@ -325,7 +305,6 @@ If a road bicycle tire is inflated to $85\text{ psi}$, keying in `{{res:sc6_appe
 | **Years (yr standard)**| **Days (d)** | $365.0$ | `[yr] {{key:ENTER}} 365 {{key:×}}` |
 | **Years (yr leap)**| **Days (d)** | $366.0$ | `[yr] {{key:ENTER}} 366 {{key:×}}` |
 
-#### Counting the Seconds in a Day
 To count how many seconds tick by in a full 24-hour day, enter `{{res:sc6_appendix_c_formulas_and_conversions_seq_07:keys}}` to reach **$86,400\text{ seconds}$**.
 
 ---
@@ -341,7 +320,7 @@ $$\text{Celsius} = (\text{Fahrenheit} - 32) \times 5 \div 9 \qquad \text{Fahrenh
 | **Fahrenheit to Celsius** | $(\text{Fahrenheit} - 32) \times 5 \div 9$ | `[Temp F] {{key:ENTER}} 32 {{key:-}} {{key:5}} {{key:×}} {{key:9}} {{key:÷}}` (or `[Temp F] {{key:▸°C}}`) |
 | **Celsius to Fahrenheit** | $(\text{Celsius} \times 9 \div 5) + 32$ | `[Temp C] {{key:ENTER}} {{key:9}} {{key:×}} {{key:5}} {{key:÷}} 32 {{key:+}}` (or `[Temp C] {{key:▸°F}}`) |
 
-#### Normal Body Temperature on the Stack ($98.6^\circ\text{F} \to ^\circ\text{C}$)
+Here is how normal human body temperature ($98.6^\circ\text{F}$) converts to Celsius step by step on the stack:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -360,10 +339,7 @@ Normal human body temperature is **$37.0^\circ\text{C}$** (or in one tap on the 
 
 ### Chaining Multi-Step Unit Conversions on the Stack
 
-The examples below chain two conversion steps directly on the stack without parentheses or scratch paper.
-
-#### Marathon Footrace Distance ($26.2\text{ miles} \to \text{kilometers} \to \text{meters}$)
-Since $1\text{ mile} = 1.609344\text{ kilometers}$ and $1\text{ kilometer} = 1,000\text{ meters}$, a $26.2\text{-mile}$ marathon covers $26.2 \times 1.609344 \approx 42.1648128\text{ km}$:
+When a real-world measurement needs two conversion steps in a row, the stack lets you chain them without parentheses or scratch paper. For a **marathon footrace** ($26.2\text{ miles} \to \text{kilometers} \to \text{meters}$), since $1\text{ mile} = 1.609344\text{ kilometers}$ and $1\text{ kilometer} = 1,000\text{ meters}$, multiplying $26.2 \times 1.609344$ first gives $42.164813\text{ km}$ and multiplying by $1,000$ converts to meters:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -376,8 +352,7 @@ Since $1\text{ mile} = 1.609344\text{ kilometers}$ and $1\text{ kilometer} = 1,0
 
 Register $X$ shows the full Olympic marathon distance in meters: **$42,164.81\text{ meters}$**.
 
-#### Airplane Cruising Height ($36,000\text{ ft} \to \text{meters} \to \text{kilometers}$)
-Using $1\text{ foot} = 0.3048\text{ meters}$, we convert $36,000\text{ ft}$ to meters and then divide by $1,000$ for kilometers:
+Next, consider an **airliner cruising at $36,000\text{ ft}$** ($36,000\text{ ft} \to \text{meters} \to \text{kilometers}$). Using $1\text{ foot} = 0.3048\text{ meters}$, we multiply $36,000 \times 0.3048$ to get meters and immediately divide by $1,000$ for kilometers:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -390,8 +365,7 @@ Using $1\text{ foot} = 0.3048\text{ meters}$, we convert $36,000\text{ ft}$ to m
 
 Cruising height is **$10,972.8\text{ meters}$**, or **$10.97\text{ km}$** above sea level.
 
-#### Family Car Fuel Mileage ($35.0\text{ Miles per Gallon} \to \text{Liters per 100 km}$)
-To convert Miles per Gallon (MPG) into Liters per 100 kilometers, divide $235.215$ by the Miles per Gallon ($\text{Liters per 100 km} = 235.215 \div \text{MPG}$):
+What about comparing **family car fuel mileage** ($35.0\text{ Miles per Gallon} \to \text{Liters per 100 km}$)? Dividing the conversion constant $235.215$ by the Miles per Gallon ($\text{Liters per 100 km} = 235.215 \div \text{MPG}$) flips American mileage into metric fuel consumption:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -402,8 +376,7 @@ To convert Miles per Gallon (MPG) into Liters per 100 kilometers, divide $235.21
 
 A car rated at $35\text{ MPG}$ burns **$6.72\text{ liters of fuel per 100 kilometers}$**.
 
-#### Snowy Winter Day Temperature Check ($14^\circ\text{F} \to -10^\circ\text{C} \to 14^\circ\text{F}$)
-Convert a cold $14^\circ\text{F}$ winter morning into Celsius, and then convert it right back to Fahrenheit on the stack to verify:
+Finally, we can test a **snowy winter morning temperature** ($14^\circ\text{F} \to -10^\circ\text{C} \to 14^\circ\text{F}$) by converting $14^\circ\text{F}$ into Celsius and then running the inverse steps right on the stack to return to $14^\circ\text{F}$:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -517,9 +490,9 @@ Every composite whole number greater than 1 breaks down into a unique product of
 
 *Fun Fact about 1,729 (The Taxicab Number):* $1,729$ is the smallest whole number that can be built by adding two cubes in two different ways:
 $$1,729 = 1^3 + 12^3 = 9^3 + 10^3$$
-Verify on your SC-6:
-- Way 1: `{{key:1}} {{key:ENTER}} {{key:3}} {{key:yˣ}} 12 {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:+}}` $\to 1 + 1728 = 1729$.
-- Way 2: `{{key:9}} {{key:ENTER}} {{key:3}} {{key:yˣ}} 10 {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:+}}` $\to 729 + 1000 = 1729$.
+You can verify both cube sums on your SC-6:
+- **First Cube Pair ($1^3 + 12^3$):** `{{key:1}} {{key:ENTER}} {{key:3}} {{key:yˣ}} 12 {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:+}}` $\to 1 + 1728 = 1729$.
+- **Second Cube Pair ($9^3 + 10^3$):** `{{key:9}} {{key:ENTER}} {{key:3}} {{key:yˣ}} 10 {{key:ENTER}} {{key:3}} {{key:yˣ}} {{key:+}}` $\to 729 + 1000 = 1729$.
 
 ---
 
@@ -592,8 +565,7 @@ A **Perfect Number** is a special whole number whose smaller factors add up to t
 | **496** | $16 \times 31$ | $1 + 2 + 4 + 8 + 16 + 31 + 62 + 124 + 248 = \mathbf{496}$ |
 | **8,128** | $64 \times 127$ | $1 + 2 + 4 + 8 + 16 + 32 + 64 + 127 + \dots = \mathbf{8,128}$ |
 
-#### Building the Third Perfect Number ($496$)
-Following Euclid's recipe, multiply $2^4$ ($16$) by the prime number $2^5 - 1$ ($31$) to reach $16 \times 31 = 496$:
+You can build the third perfect number ($496$) right on the stack by following Euclid's ancient recipe: multiply $2^4$ ($16$) by the prime number $2^5 - 1$ ($31$) to reach $16 \times 31 = 496$:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -605,10 +577,7 @@ Following Euclid's recipe, multiply $2^4$ ($16$) by the prime number $2^5 - 1$ (
 | `{{key:4}} {{key:yˣ}}` | 0 | 0 | 31 | 16 |
 | `{{key:×}}` | 0 | 0 | 0 | 496 |
 
-Register $X$ lands on **$496$**, the third perfect number!
-
-#### Giant Factor Puzzle: Euler's Famous Division Check
-For over a hundred years, mathematicians wondered whether $4,294,967,297$ was a prime number. Then Leonhard Euler discovered that $641$ divides into it evenly with zero remainder:
+Register $X$ lands on **$496$**, the third perfect number! That same curiosity about giant powers of two led to one of history's most famous division checks: for over a hundred years, mathematicians wondered whether $4,294,967,297$ was a prime number, until Leonhard Euler discovered that $641$ divides into it evenly with zero remainder:
 $$4,294,967,297 = 641 \times 6,700,417$$
 You can test Euler's discovery right on your SC-6 by keying in `{{res:sc6_appendix_c_formulas_and_conversions_seq_08:keys}}`, which lands cleanly on **$6,700,417.00$** with no decimal remainder!
 
@@ -656,8 +625,7 @@ Because `{{key:%}}` on the SC-6 keeps the starting dollar amount sitting in Regi
 | **Sale Price After Discount** | $\text{Regular Price} - \text{Discount}$ | `[Price] {{key:ENTER}} [Discount] {{key:%}} {{key:-}} {{key:$}}` |
 | **Restaurant Tip ($18\%$)**| $\text{Bill} \times 18\%$ | `[Bill] {{key:ENTER}} 18 {{key:%}} {{key:$}}` |
 
-#### Growing a Three-Year Savings Account ($\text{Starting Money} = \$500, \text{Rate} = 4\%\text{ per year}, 3\text{ Years}$)
-To grow $\$500$ at $4\%$ interest compounded yearly for $3$ years, multiply $\$500$ by $1.04$ three times ($1.04^3 \times \$500 = \$562.43$):
+When money stays in a savings account for several years, the interest itself starts earning interest! For example, to watch a $\$500$ savings account grow at $4\%$ interest compounded yearly for $3$ years, multiply $\$500$ by $1.04$ three times ($1.04^3 \times \$500 = \$562.43$):
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -681,7 +649,7 @@ The word rules, conversion tables, and prime patterns in this appendix support:
   - `5.MD.C.5`: Relate volume to the operations of multiplication and addition and solve real-world and mathematical problems involving volume.
   - `6.G.A.1, 6.G.A.2, 6.G.A.4`: Find area of right triangles, other triangles, special quadrilaterals, and polygons; represent three-dimensional figures using nets; apply techniques in context of real-world problems.
   - `6.NS.B.4`: Find the greatest common factor of two whole numbers less than or equal to 100 and the least common multiple of two whole numbers less than or equal to 12.
-- **National & State Mathematics Standards (Grades 4–7):**
+- **National & State Mathematics Standards (Grades 3–6):**
   - `4.5.C, 4.5.D`: Solve problems related to perimeter and area of rectangles.
   - `5.4.A`: Identify prime and composite numbers using concrete objects, pictorial models, and patterns in factor pairs.
   - `5.6.A, 5.6.B`: Recognize volume as an attribute of three-dimensional space; determine the volume of a rectangular prism.
@@ -699,4 +667,4 @@ The word rules, conversion tables, and prime patterns in this appendix support:
 
 ---
 
-For detailed hands-on lesson plans implementing these rules in classroom workshop stations, see [Appendix B: Teacher Lesson Plans & Diagnostic Protocols](appendix-b-teacher-lesson-plans.md). For physical fabrication of geometric models and calibration gauges, see [Appendix A: Manipulative Blueprints & Physical Fabrication Guide](appendix-a-manipulative-blueprints.md).
+For detailed hands-on lesson plans implementing these rules in classroom workshop stations, see [Appendix B: Teacher Lesson Plans & Diagnostic Protocols](appendix-b-teacher-lesson-plans.md). For physical fabrication of geometric models and calibration gauges, see [Appendix A: Manipulative Blueprints & 3D Printing Fabrication Guide](appendix-a-manipulative-blueprints.md).

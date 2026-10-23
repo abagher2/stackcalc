@@ -12,7 +12,7 @@ description: "Overview of the eight StackCalc 3D-printed and cardstock math mani
 > - **Open Engineering Logs & Build Story:** [Hackaday.io — StackCalc Tactile RPN Calculator Project](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)
 
 > **CHOKING HAZARD — SMALL PARTS & 3D PRINTING SAFETY (16 CFR § 1501 / ASTM F963):**  
-> The physical manipulative studios documented in this appendix (including the $19.0 \times 19.0 \times 7.0\,\text{mm}$ visible $1\text{U}$ Counting Tiles [$8.85\,\text{mm}$ overall height with stacking lip], Ten-Frame Counters, $\frac{1}{12}$ Fraction Studio blocks, Prime Factor blocks, and Polyhedral Dice) contain small parts that fit within the CPSC small-parts test cylinder ($31.7\,\text{mm}$ diameter). **Not for children under 3 years of age.** Recommended for supervised educational use in Grades 4–7 (ages 9+, or supervised elementary classrooms ages 6+).  
+> The physical manipulative studios documented in this appendix (including the $19.0 \times 19.0 \times 7.0\,\text{mm}$ visible $1\text{U}$ Counting Tiles [$8.85\,\text{mm}$ overall height with stacking lip], Ten-Frame Counters, $\frac{1}{12}$ Fraction Studio blocks, Prime Factor blocks, and Polyhedral Dice) contain small parts that fit within the CPSC small-parts test cylinder ($31.7\,\text{mm}$ diameter). **Not for children under 3 years of age.** Recommended for supervised educational use in Grades 3–6 (ages 8–12).  
 > **Classroom Print Check:** Always print classroom manipulatives using certified non-toxic PLA or PETG filament. Before handing newly printed parts to students, an adult should inspect each piece and remove any loose filament wisps or brims.
 
 ---
@@ -33,12 +33,12 @@ Grounded in Jerome Bruner's hands-on learning research {{cite:bruner1966}}, Zolt
 All 3D-printable `.stl` and `.3mf` files for these eight studios can be downloaded free of charge at **[stackcalc.io/downloads](https://stackcalc.io/downloads/)**:
 
 ### The Ten-Frame Studio
-- **What It Teaches:** Early counting, spotting groups of 5 and 10 at a glance (subitizing), and make-ten addition (CCSS 1.OA.C.6).
+- **What It Teaches:** Early counting, spotting groups of 5 and 10 at a glance (subitizing), and make-ten addition (CCSS 3.OA.C.7).
 - **How the Math Is Built In:** Each tray holds two $2 \times 5$ rows of two-color flip counters ($16.5\text{ mm} \times 3.5\text{ mm}$, red on one side and yellow on the other). A raised **5-anchor divider rib** right down the middle splits each row of 10 into two clear groups of 5, matching `{{key:▦}}` Ten-Frame Mode on your SC-6 screen.
 - **Download:** **[stackcalc.io/downloads/ten-frames-open-source-stls.zip](https://stackcalc.io/downloads/ten-frames-open-source-stls.zip)**
 
 ### Place Value Studio
-- **What It Teaches:** Multi-digit place value, 10-for-1 carrying and borrowing (regrouping), and decimal place value (CCSS 2.NBT.A.1, 5.NBT.A.1).
+- **What It Teaches:** Multi-digit place value, 10-for-1 carrying and borrowing (regrouping), and decimal place value (CCSS 3.NBT.A.2, 5.NBT.A.1).
 - **How the Math Is Built In:** Stored in a $3 \times 1 \times 7\text{U}$ Gridfinity box (`"PLACE VALUE"` plaque, `{{key:PV}}` lid badge), every component is engineered around the unified $19.0 \times 19.0 \times 7.0\text{ mm}$ visible $1\text{U}$ Miniblock standard:
   - **$4 \times 2$ Whole Numbers Activity Tray (`77.8 × 38.6 × 8.85 mm`):** Four recessed column sockets labeled `THOUSANDS | HUNDREDS | TENS | ONES` (`1000 | 100 | 10 | 1`) across two rows (matching Registers $Y$ and $X$).
   - **$4 \times 2$ Decimal Numbers Activity Tray (`77.8 × 38.6 × 8.85 mm`):** Four recessed column sockets labeled `ONES • TENTHS | HUNDREDTHS | THOUSANDTHS` (`1 • 0.1 | 0.01 | 0.001`) with a raised tactile decimal point (`•`).
@@ -57,9 +57,9 @@ All 3D-printable `.stl` and `.3mf` files for these eight studios can be download
 - **Download:** **[stackcalc.io/downloads/algebra-boxes-open-source-stls.zip](https://stackcalc.io/downloads/algebra-boxes-open-source-stls.zip)**
 
 ### Planetary Geared Clock & $360^\circ$ Unit Circle Volvelle
-- **What It Teaches:** Telling time across the 60-minute boundary (`{{key:🕒}}`), fractions of an hour using 4 removable $90^\circ$ dial quadrants, and measuring angles around a $360^\circ$ circle (CCSS 2.MD.C.7, 4.MD.C.5).
-- **How the Math Is Built In:** Inside the clock sits a two-stage planetary gear train with a $12\text{-tooth}$ sun gear, three $18\text{-tooth}$ planet gears, and a $48\text{-tooth}$ ring gear:
-  $$\text{Stage 1 Ratio} = \frac{48 + 12}{12} = 5 : 1, \qquad \text{Overall Reduction} = 5 \times 2.4 = \mathbf{12 : 1\text{ Exact}}$$
+- **What It Teaches:** Telling time across the 60-minute boundary (`{{key:🕒}}`), fractions of an hour using 4 removable $90^\circ$ dial quadrants, and measuring angles around a $360^\circ$ circle (CCSS 3.MD.A.1, 4.MD.C.5).
+- **How the Math Is Built In:** Inside the clock sits a planetary gear train with a **12-tooth center sun gear, three 60-tooth planet gears, and a 132-tooth outer ring gear** ($12 + 2 \times 60 = 132$):
+  $$\text{Clock Gear Ratio} = 1 + (132 \div 12) = 1 + 11 = \mathbf{12 : 1\text{ Exact Reduction}}$$
   Every full $360^\circ$ turn of the minute hand advances the hour hand by $\frac{1}{12}$ of a circle ($30^\circ$, or 1 hour).
 - **Download:** **[stackcalc.io/downloads/classroom-clock-open-source-stls.zip](https://stackcalc.io/downloads/classroom-clock-open-source-stls.zip)** and **[stackcalc.io/downloads/unit-circle-volvelle-open-source-stls.zip](https://stackcalc.io/downloads/unit-circle-volvelle-open-source-stls.zip)**
 
@@ -150,20 +150,20 @@ Teachers and parents can customize classroom settings anytime via the `{{key:FLA
 
 ### Complete Manipulative Studio Quick-Reference
 
-| Manipulative Kit Name | Tray Size | What's Inside the Box | Grade Focus |
+| Manipulative Kit Name | Tray Size | What's Inside the Box | Target Grades |
 | :--- | :---: | :--- | :--- |
-| **Ten-Frame Studio** | $3 \times 1 \times 7\text{U}$ | Dual $2 \times 5$ tray with 5-anchor rib & two-color counters | Foundational & Grades 4–6 |
-| **Number Rack Studio** | $3 \times 1 \times 7\text{U}$ | Two horizontal rows of sliding subitizing blocks grouped $5+5$ by color | Foundational & Grades 4–6 |
-| **Math Dominoes Studio** | $3 \times 1 \times 7\text{U}$ | Tactile math dominoes with 12-frame subitizing divider tray | Foundational & Grades 4–6 |
+| **Ten-Frame Studio** | $3 \times 1 \times 7\text{U}$ | Dual $2 \times 5$ tray with 5-anchor rib & two-color counters | Foundational & Grades 3–6 |
+| **Number Rack Studio** | $3 \times 1 \times 7\text{U}$ | Two horizontal rows of sliding subitizing blocks grouped $5+5$ by color | Foundational & Grades 3–6 |
+| **Math Dominoes Studio** | $3 \times 1 \times 7\text{U}$ | Tactile math dominoes with 12-frame subitizing divider tray | Foundational & Grades 3–6 |
 | **Place Value Studio** | $3 \times 1 \times 7\text{U}$ | $4 \times 2$ Whole & Decimal Place Value Trays, 44 digit miniblocks (`0`–`9`), and 9 `+1` regrouping blocks | Grades 3–6 |
 | **Counting & Array Studio** | Desktop Case ($3 \times 1$) | 24 four-color $1\text{U}$ stacking tiles per student kit (144 per drop-front classroom box) | Grades 3–6 |
 | **Planetary Geared Clock** | $3 \times 2 \times 7\text{U}$ | $12:1$ geared hands, 4 removable $90^\circ$ dial quadrants, and time blocks | Grades 3–6 |
-| **84 mm Fraction Studio** | Desktop Case ($3 \times 1$) | 78 proportional fraction blocks ($1$ down to $1/12$, $84\text{ mm}$ datum) & lid comparator | Grades 3–7 |
-| **Probability Dice & Spinner** | $1 \times 1 \times 7\text{U}$ | 4 fair $d6$ dice, polyhedral dice ($d4 \dots d20$), and 10-sector + 3 drop-in spinner dials | Grades 3–7 |
-| **Unit Circle Volvelle** | $120\text{ mm}$ | Dual-ring rotary protractor and shadow-factor sight-window wheel | Grades 4–7 |
-| **Prime Factor Studio** | Desktop Case ($3 \times 1$) | Stackable prime factor blocks ($[2] \dots [29]$) & comparator scale box | Grades 4–7 |
-| **Algebra Factoring Studio** | $3 \times 1 \times 7\text{U}$ | 40 area-model tiles (squares, rods, and $\pm 1$ unit tiles) and interlocking $90^\circ$ L-Frame Stage | Grades 5–7 |
-| **Quest Scoreboard** | $3 \times 1 \times 7\text{U}$ | 60 universal `+10` $1\text{U}$ tokens and 10-problem + 100-Point Mastery scoreboard lid | Grades 3–7 |
+| **84 mm Fraction Studio** | Desktop Case ($3 \times 1$) | 78 proportional fraction blocks ($1$ down to $1/12$, $84\text{ mm}$ datum) & lid comparator | Grades 3–6 |
+| **Probability Dice & Spinner** | $1 \times 1 \times 7\text{U}$ | 4 fair $d6$ dice, polyhedral dice ($d4 \dots d20$), and 10-sector + 3 drop-in spinner dials | Grades 3–6 |
+| **Unit Circle Volvelle** | $120\text{ mm}$ | Dual-ring rotary protractor and shadow-factor sight-window wheel | Grades 3–6 |
+| **Prime Factor Studio** | Desktop Case ($3 \times 1$) | Stackable prime factor blocks ($[2] \dots [29]$) & comparator scale box | Grades 3–6 |
+| **Algebra Factoring Studio** | $3 \times 1 \times 7\text{U}$ | 40 area-model tiles (squares, rods, and $\pm 1$ unit tiles) and interlocking $90^\circ$ L-Frame Stage | Grades 3–6 |
+| **Quest Scoreboard** | $3 \times 1 \times 7\text{U}$ | 60 universal `+10` $1\text{U}$ tokens and 10-problem + 100-Point Mastery scoreboard lid | Grades 3–6 |
 
 > **Companion Workbook Studio Mapping:** Every one of the **10 Units (45 Sections, 90 Two-Way Worksheets)** in the [Big Ideas Math Middle School Supplement](../../curriculum/big-ideas-middle-school-sc6-workbook.md) pairs directly with these 3D-printed kits and the **Quest Scoreboard**—from **Counting Tiles** and **Prime Factor Blocks** in Unit 1 (Exponents, Factor Trees & GCF/LCM Venn Diagrams), **84 mm Fraction Towers** and **Place Value Trays** in Units 2–3 (Fractions, Decimals, Tape Diagrams & Percents), **Algebra Tiles** in Units 4, 7 & 10 (Algebraic Expressions & Balance-Scale Equations), the **Planetary Geared Clock** and **Unit Circle Volvelle** in Units 5 & 8 (2D Polygons, 3D Nets, Fractional Cube Packing & Elapsed Time), **Ten-Frame** two-color zero-pairs in Unit 6 (Signed Integers & Coordinate Plane), to **Polyhedral Dice & Spinners** in Units 9 & 10 (Fair-Share Mean, MAD & Experimental Probability).
 
@@ -171,26 +171,23 @@ Teachers and parents can customize classroom settings anytime via the `{{key:FLA
 
 ## How We Built the StackCalc Learning Lab: Open-Source Hardware & Hackaday Build Logs
 
-Curious how a calculator, eight 3D-printed block kits, and this math book were invented together? We documented every step of our journey on our open-source **[Hackaday Engineering Blog](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)** and at **[stackcalc.io](https://stackcalc.io)**. Here is the behind-the-scenes story of how open-source hardware engineering, cross-surface simulation, and automated testing came together to build StackCalc:
+Curious how a calculator, nine 3D-printed block kits, and this math book were invented together? We documented every step of our journey on our open-source **[Hackaday Engineering Blog](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)** and at **[stackcalc.io](https://stackcalc.io)**. Here is the behind-the-scenes story of how open-source hardware engineering, physical block design, and screen simulation came together to build StackCalc:
 
 ### Starting on a Tiny Apple Watch Screen—and Sharing One Math Brain
-StackCalc began on a wristwatch. When you try to do math on an Apple Watch screen that is barely $40\text{ millimeters}$ wide, there is no room for tiny `( )` parenthesis buttons or long scrolling formulas. Reverse Polish Notation (RPN)—the 4-story Number Elevator you use in this book—made watch math direct and practical: you type your two numbers, see them sitting right on Floor $Y$ and Floor $X$, and tap the operation key.
+StackCalc began on a wristwatch. When you try to do math on an Apple Watch screen that is barely $40\text{ millimeters}$ wide, there is no room for tiny `( )` parenthesis buttons or long scrolling formulas. Reverse Polish Notation (RPN)—the 4-story Number Elevator you use in this book—made watch math direct and practical: you type your two numbers, see them sitting right on Shelf $Y$ and Shelf $X$, and tap the operation key.
 
-As we expanded from the watch to the iPhone, the web browser, and our physical handheld calculators (`SC-6` and `SC-32`), we made a strict rule: **we would never write two separate copies of the math engine.** Instead, every version of StackCalc shares the exact same core calculation engine. Whether you tap `{{key:SIMP}}` on a handheld SC-6 at your desk or click it in the web simulator at **[stackcalc.io](https://stackcalc.io)**, the exact same code runs underneath.
+As we expanded from the watch to the iPhone, the web browser, and our physical handheld calculators (`SC-6` and `SC-32`), we made a strict rule: **every device would share the exact same mathematical brain.** Whether you tap `{{key:SIMP}}` on a handheld SC-6 at your desk or click it in the web simulator at **[stackcalc.io](https://stackcalc.io)**, every shelf of the stack behaves the exact same way.
 
-### Automated Engine Verification: Fuzz-Testing Every Keystroke and Table
-How can you be sure that a calculator and a math book contain zero arithmetic errors or broken button combinations? By testing every single keystroke directly against the live hardware math engine:
-
-- **Fuzz-Testing Thousands of Edge-Case Sequences:** When people test their own inventions by hand, they usually type polite, ordinary numbers like `2 ENTER 3 +`. To catch hidden bugs, our engineering team built automated fuzz-testing harnesses that simulate thousands of tricky edge-case button sequences—like dividing by zero, pressing `{{key:ENTER}}` twice in a row, typing mixed fractions, rolling the 4-level stack upside down, and undoing steps with `{{key:LASTX}}`—confirming that every surface behaves identically.
-- **The Calculator Engine as the Strict Referee:** Rather than typing answers into this book by hand, we built an automated verification program that reads every single keystroke sequence and 4-register stack table in this manuscript, feeds the exact button presses into the real `RPNCore` calculator engine, and checks that every number in Registers $T, Z, Y,$ and $X$ matches to the last decimal place. If a single number in a table does not match the live calculator engine, the build script halts until the table is verified!
+### Calibrating Physical Blocks to Match the Screen
+Why are the Counting Tiles $7.0\text{ mm}$ tall and the Whole Fraction Tower $84.0\text{ mm}$ tall? Because $84 = 12 \times 7$! By choosing a height that divides evenly by $1, 2, 3, 4, 6,$ and $12$, every fraction block—halves ($42\text{ mm}$), thirds ($28\text{ mm}$), fourths ($21\text{ mm}$), sixths ($14\text{ mm}$), and twelfths ($7\text{ mm}$)—can be printed to an exact whole-millimeter height without messy decimal fractions of a millimeter. When you stack three $\frac{1}{4}$ blocks ($63\text{ mm}$) beside two $\frac{1}{3}$ blocks ($56\text{ mm}$), your fingertips feel the $1\frac{5}{12}$ tower height before you even type `. 3 . 4 {{key:ENTER}} . 2 . 3 {{key:+}}` on the keypad.
 
 ### Testing a Virtual Calculator Before Building the Real One
 Before we ever ordered a physical circuit board or soldered a single button, we built a **virtual hardware simulator** that runs right on a computer screen. It draws the exact $132 \times 65$ pixel display—including the live Ten-Frame dots (`{{key:▦}}`), Number Line jump arcs (`{{key:LINE}}`), and Geared Clock hands (`{{key:🕒}}`)—so teachers and students could test every button and Math Quiz sprint (`{{key:?}}`) while the physical parts were still being 3D-printed.
 
 ### 3D Printing Directly from the Circuit Board & Snap-Together Assembly
-Have you ever opened a toy or calculator and found tiny metal screws that strip out the plastic or roll off the table and get lost? In our Hackaday build logs (*"How the PCB Design Shapes the Printed Calculator"* and *"Tool-Free Sliding Assembly"*), we showed how we eliminated screws completely:
+Have you ever opened a toy or calculator and found tiny metal screws that strip out the plastic or roll off the table and get lost? In our Hackaday build logs (*"How the Circuit Board Design Shapes the Printed Calculator"* and *"Tool-Free Sliding Assembly"*), we showed how we eliminated external case screws:
 - **Circuit-Board-Driven 3D Models:** Instead of measuring the circuit board with a ruler and guessing where the buttons and screen holes should go, our 3D-printing program reads the exact button coordinates directly from the circuit board design file. Every keycap hole lines up automatically.
-- **4-Piece Sliding Lock:** The calculator case prints in four interlocking pieces (bottom shell, button frame, top faceplate, and a side-locking rail) that slide together like a puzzle box and lock tight with a single click—and all eight of your desktop math block trays print on any classroom 3D printer with zero support plastic to peel off.
+- **4-Piece Sliding Lock:** The calculator case prints in four interlocking pieces (bottom shell, button frame, top faceplate, and a side-locking rail) that slide together like a puzzle box and lock tight with a single click, which locks the internal circuit board and battery contacts securely in place—and all of your desktop math block trays print on any classroom 3D printer with zero support plastic to peel off.
 
 For complete classroom lesson scripts and station activities that use these manipulatives, turn to **[Appendix B: Teacher Lesson Plans & Diagnostic Protocols](appendix-b-teacher-lesson-plans.md)**.
 

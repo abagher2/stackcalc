@@ -1,118 +1,92 @@
 ---
-title: "SC-32 Scientific Calculator: Collegiate STEM Textbook & Owner's Manual"
-description: "The authoritative collegiate STEM textbook, reference manual, and applied calculation handbook for the StackCalc SC-32 Scientific RPN Calculator. Covers 4-stack XYZT dynamics, advanced transcendentals, complex phasors, Brent's root solver, Romberg quadrature, bivariate statistics, 36-bit computer science, TVM finance, vector plotting, and applied STEM engineering."
+title: "Thinking in the Stack: The Art of Calculating Without Parentheses (SC-32)"
+description: "A popular mathematics and engineering guide to parenthesis-free thinking, historical breakthroughs, and scientific problem-solving on the StackCalc SC-32."
 ---
 
-# Thinking in the Stack: The Art of Reverse Polish Notation
-## Scientific Computing, Engineering Analysis & the StackCalc SC-32
+# Prologue: Why We Write Equations One Way, Yet Solve Them Another
+
+*The Art of Calculating Without Parentheses on the StackCalc SC-32*
 
 {{blocks:sc32_hero_keynote|StackCalc SC-32 Handheld Scientific Computer}}
 *Figure 0.1: The StackCalc SC-32 handheld RPN scientific computer: monolithic brutalist chassis, tactile TPU keypad, and transflective vector display.*
 
 ---
 
-## Prologue: Why Your Hands Already Think in a Stack
+## What Is a Stack, and Why Does It Change How You Think?
 
-Think about how you build or measure anything in a physical workshop.
+Think about how you build or measure anything with your hands in a physical workshop.
 
 When a carpenter builds a frame, they do not shout *"Multiply!"* into an empty room and then go searching for lumber. First they lay the first board on the workbench, then they lay the second board beside it, and then they join the two pieces together. When a chemist prepares a buffer solution, they weigh the first reagent onto the bench, measure the second reagent beside it, and pour them together. In the physical world, **you always gather your materials before you apply the tool**.
 
-Yet for the past forty years, standard algebraic calculators have forced students, scientists, and engineers to work backward. Suppose you want to evaluate a simple two-part expression:
-$$(14 + 6) \times (9 - 4) = 100$$
+Now think about what happens when you type `14 + 6 =` on an ordinary pocket or smartphone calculator. You type `14`, and then the moment you press `+` and `6`, your `14` vanishes from the screen. Then you press `=`, and `6` vanishes too, replaced by `20`. Why did your numbers disappear? Because a conventional calculator only gives you a single active line—a tiny keyhole—and forces you to speak in **infix notation**, wedging operators (`+`, `×`, `÷`) between numbers and deferring the work until you press `=`.
 
-On an ordinary algebraic (infix) calculator, you cannot simply add `14` and `6`, set that `20` aside, subtract `9` minus `4` to get `5`, and multiply them. Instead, you are forced to play a game of punctuation bookkeeping: you must open a left parenthesis `(`, type `14 + 6`, close `)`, press `×`, open a second parenthesis `(`, type `9 - 4`, close `)`, and finally press `=`. While you are typing that string, the calculator hides every intermediate subtotal inside an invisible buffer. On a deeper engineering formula—such as `(3 × (4 + 5)) / (2 × (7 - 1))`—missing a single bracket triggers a `SYNTAX ERROR` or, far worse, silently divides by the wrong term without warning.
+For a one-step sum like $14 + 6$, that keyhole is merely inconvenient. For a real engineering or scientific formula, it becomes a cognitive trap. As psychologist George A. Miller showed in 1956, human working memory can hold only about five to seven items at once {{cite:miller1956,sweller1988}}. When a calculator hides your intermediate numbers and forces you to wrap multi-part formulas in nested parentheses `( ( ... ) / ( ... ) )`, your working memory is hijacked by punctuation bookkeeping rather than the physics of the problem {{cite:strogatz2019,ellenberg2014}}.
 
-### What Is a Stack? Meet the Four Shelves ($X, Y, Z, T$)
+### Meet the Concept of a Stack: Four Visible Shelves ($X, Y, Z, T$)
 
-Now look at the keypad of the **StackCalc SC-32**. Just like the classic Hewlett-Packard instruments that sent astronauts into orbit, **there is no equals (`=`) key**. In its place sits a wide central bar labeled **`{{key:ENTER}}`**, and the daylight-reflective screen above it is organized into **four visible horizontal shelves**—known in computer science and mathematics as a **Stack**:
+Look at the keypad of the **StackCalc SC-32**. Just like the classic Hewlett-Packard instruments carried aboard Skylab and the Space Shuttle, **there is no equals (`=`) key**, and **there are no parenthesis keys**.
 
-- **Register $X$ (The Workbench at the Bottom):** The bottom line of the screen. Every number you type appears right here on the Workbench, and every mathematical function or operation leaves its immediate result here.
+In place of an `=` key sits a wide central bar labeled **`{{key:ENTER}}`**, and the daylight-reflective screen above it is organized into **four visible horizontal shelves**—known in mathematics and computer science as a **Stack**:
+
+- **Register $X$ (The Workbench at the Bottom):** The bottom line of the screen. Every number you type appears right here on the Workbench, and every operation or function leaves its immediate result here.
 - **Register $Y$ (The Staging Shelf):** The line directly above $X$. When you finish typing your first number on the Workbench ($X$) and press **`{{key:ENTER}}`**, that number lifts up onto Shelf $Y$, clearing the Workbench for your second number.
 - **Registers $Z$ and $T$ (The Upper Holding Shelves):** The third and fourth lines above $Y$. Whenever a calculation has multiple branches, finished subtotals from earlier steps automatically ride up to Shelves $Z$ and $T$ to wait for you—and automatically drop back down into Shelf $Y$ the moment you are ready to combine them.
 
-### Walking Through Your First Stack Calculation: $(14 + 6) \times (9 - 4)$
+Why is a **stack** such a useful concept? Think of a stack of trays in a cafeteria or a stack of books on your desk: you always work with the items at the active front of your bench, while items you set aside wait in exact order right behind them. When you combine the bottom two shelves ($Y$ and $X$), they fuse into a single answer on Shelf $X$, and everything waiting upstairs ($Z$ and $T$) drops down one shelf so the next piece of your problem is already in position!
 
-Let's watch how those four shelves evaluate $(14 + 6) \times (9 - 4) = 100$ from the inside out without a single parenthesis:
+### Your First Three Moves on the Stack
 
-1. **Build the first group ($14 + 6 = 20$):**  
-   Type `14` on the Workbench ($X$). Press **`{{key:ENTER}}`** to lift `14` onto the Staging Shelf ($Y$). Now type `6` on the Workbench ($X$). Both numbers (`14` in $Y$, `6` in $X$) sit in plain sight on the screen. Tap **`{{key:+}}`**—and *click!* Shelf $Y$ drops down and fuses with Shelf $X$ into **`20`**.
-2. **Build the second group ($9 - 4 = 5$) while `20` waits upstairs:**  
-   What happens to your `20` when you start typing the second group? You don't have to write `20` on scrap paper, and you don't even have to press `{{key:ENTER}}`! The moment your finger taps `9`, the SC-32 recognizes that `20` is a completed subtotal and **automatically lifts `20` up to Shelf $Y$** so `9` can take its place on the Workbench ($X$).  
-   Now press **`{{key:ENTER}}`** to lift `9` to Shelf $Y$ (which pushes `20` safely upstairs to Shelf $Z$) and type `4` on Shelf $X$. When you tap **`{{key:-}}`**, two things happen in the same instant: `9` minus `4` collapses into **`5`** on Shelf $X$, and your waiting `20` drops down from Shelf $Z$ into Shelf $Y$!
-3. **Multiply the two finished groups ($20 \times 5 = 100$):**  
-   Look at your screen: `20` is waiting in Shelf $Y$, and `5` is sitting in Shelf $X$. Tap **`{{key:×}}`**, and the two subtotals fuse into **`100`**.
+Before we look at a multi-story equation, let's feel how three simple moves—**`{{key:ENTER}}`**, **automatic stack lift**, and **two-branch drops**—work under your thumb:
 
-In nine keystrokes:
-> `14 {{key:ENTER}} 6 {{key:+}} 9 {{key:ENTER}} 4 {{key:-}} {{key:×}}`
+1. **Adding Two Numbers (`14` and `6`):**  
+   Type `14` on the Workbench ($X$). Press **`{{key:ENTER}}`** to tell the calculator, *"My first number is finished—lift `14` up to Shelf $Y$."* Now type `6` on the Workbench ($X$). Look at the screen: both `14` (in $Y$) and `6` (in $X$) sit in plain sight at the same time. Tap **`{{key:+}}`**—and Shelf $Y$ drops down and fuses with Shelf $X$ into **`20`**. You never needed an `=` key, because **pressing `{{key:+}}` *is* the action that combines them**.
 
-you solved both parts of the problem, saw every intermediate value (`20` and `5`) verified on the screen, and never touched a parenthesis or memory key.
+2. **Automatic Stack Lift (Chaining Without Pressing `{{key:ENTER}}` Again):**  
+   What if you want to multiply three physical dimensions in a row—like the volumetric melt flow rate $\dot{Q} = w \times h \times v$ of a 3D printer hotend extruding a $w = 0.45\text{ mm}$ bead width at a $h = 0.20\text{ mm}$ layer height and $v = 180\text{ mm/s}$ printhead speed (*Figure 0.2*)?  
+   First you type `0.45 {{key:ENTER}} 0.20 {{key:×}}`, and the screen immediately shows the cross-sectional area of the plastic bead, **`0.09`** $\text{mm}^2$, on Shelf $X$.  
+   Now, to multiply that `0.09` by `180`, **you do not press `{{key:ENTER}}`!** Why? Because the SC-32 knows that `0.09` is a finished result. The instant your finger touches `1` to start typing `180`, **automatic stack lift** moves `0.09` up to Shelf $Y$ for you. You simply type `180` and tap **`{{key:×}}`** to see **`16.2`** $\text{mm}^3/\text{s}$ on Shelf $X$. *(Rule of thumb: you only press `{{key:ENTER}}` to separate two numbers that you type back-to-back without an operator between them!)*
 
 {{res:sc32_hero_stack:screenshot|3D printing volumetric flow rate Q = 0.45 * 0.20 * 180 = 16.2 mm^3/s}}
-*Figure 0.2: A physical manufacturing pipeline on the live 4-register stack: evaluating the volumetric melt flow rate $\dot{Q} = w \times h \times v = 0.45\text{ mm} \times 0.20\text{ mm} \times 180\text{ mm/s} = 16.2\text{ mm}^3/\text{s}$ of the 3D printer hotend extruding the SC-32's own enclosure and companion $42.0\text{ mm}$ studio blocks. Multiplying road width ($0.45\text{ mm}$) by layer height ($0.20\text{ mm}$) first reveals the exact bead cross-sectional area ($0.090\text{ mm}^2$) on the stack before scaling by printhead speed ($180\text{ mm/s}$). We will unpack this $0.20\text{ mm}$ layer-slicing datum in [Chapter 1](01-craftsmanship-hardware.md) and return to the full thermal-fluid hotend analysis in [Chapter 13 (Case Study 1)](13-applied-stem-case-studies.md).*
+*Figure 0.2: Chaining three measurements on the live 4-register stack: evaluating the volumetric melt flow rate $\dot{Q} = w \times h \times v = 0.45\text{ mm} \times 0.20\text{ mm} \times 180\text{ mm/s} = 16.2\text{ mm}^3/\text{s}$ of the 3D printer hotend extruding the SC-32's own enclosure and companion $42.0\text{ mm}$ studio blocks.*
 
-This postfix workflow—pioneered in formal logic by Jan Łukasiewicz in 1924 and brought to handheld engineering reality by Hewlett-Packard in the HP-35 (1972), HP-15C Voyager (1982), and HP-32SII Pioneer (1991)—matches the way physical systems work:
-1. **Load Physical Inputs:** You place measurements onto the visible shelves of the stack.
-2. **Apply Immediate Transformations:** Every operator (`+`, `×`, `SIN`, `LN`, `√x`, `x∥y`) acts immediately on the numbers in front of you.
-3. **Inspect Every Intermediate State:** You see the numerator, the denominator, the phase angle, or the cross-sectional area in real time before taking the next step.
-4. **Evaluate from the Inside Out:** Even deeply nested fractions and radicals collapse step by step without brackets.
-
-*(Unless a chapter or problem specifies otherwise, worked sequences across this book start in standard decimal floating-point mode (`{{key:DEC}}`, `{{key:ALL}}`) and degree angle mode (`{{key:DEG}}`).)*
-
----
-
-## Historical Lineage & Architecture of the Stack
-
-How did a Polish philosopher's 1924 logic notation become the native operating language of modern compilers, spacecraft navigation computers, and scientific handhelds?
-
-### The Chronological Evolution of Stack-Based Computation
-
-* **1924: Jan Łukasiewicz (Warsaw University) {{cite:lukasiewicz1924}}** — Demonstrates that placing operators before or after their operands encodes the entire hierarchy of any mathematical expression by position alone, eliminating parentheses from formal logic.
-* **1954: Arthur Burks, Don Warren & Jesse Wright {{cite:burks1954}}** — Formalize postfix notation (**Reverse Polish Notation**) for digital computer evaluation.
-* **1957: Charles Hamblin (University of New South Wales) {{cite:hamblin1957}}** — Invents the hardware **push-down store (the operational stack)**, proving that a small last-in, first-out stack of registers can evaluate any postfix formula without address pointers or syntactic backtracking.
-* **1972: William Hewlett, David Cochran & The Palo Alto Engineering Team {{cite:hewlett1972,cochran1972}}** — Introduce the **HP-35**, the world's first pocket scientific calculator, replacing the slide rule with a 4-register operational stack ($X, Y, Z, T$).
-* **1982: HP-15C Voyager Series {{cite:hp15c1982,kahan1979}}** — Extends the 4-level stack to complex numbers, matrix algebra, root finding, and numerical integration with William Kahan's floating-point algorithms.
-* **1991: HP-32SII Pioneer Series (succeeding the 1988 HP-32S) {{cite:hp32sii1991}}** — Combines a dual-line display, algebraic equation storage, exact fraction reduction, numerical root finding, and Romberg integration in a fast, tactile RPN package.
-* **Today: StackCalc SC-32 Scientific** — Brings the 4-register RPN architecture to a daylight-reflective vector LCD with tactile TPU keys, dedicated parallel-impedance (`{{key:x∥y}}`) and quotient-remainder (`{{key:÷R}}`) keys, Richard Brent's root solver, adaptive Romberg quadrature, and companion 3D-printed mathematical manipulative studios.
-
-### Working Memory & Inside-Out Evaluation: Why You Never Need Parentheses
-
-Psychologist George A. Miller (1956) demonstrated that human short-term working memory holds only about $7 \pm 2$ distinct items at once {{cite:miller1956,sweller1988}}. When a calculator forces you to count nested open parentheses and remember deferred operator precedence, your working memory is spent on punctuation rather than physics {{cite:strogatz2019,ellenberg2014}}.
-
-Suppose you need to evaluate an expression where the complicated part sits in the **denominator**—for instance, dividing $100$ by $(12 + 8)$:
-$$\frac{100}{12 + 8} = 5$$
-
-On an algebraic calculator, because you are forced to type from left to right, you have to type `100 ÷ (` first and remember to close `)` at the end. On a stack calculator, you always have a choice: you can start at the **most complicated inner piece of the formula first** ($12 + 8 = 20$) and then bring in the outer number ($100$) using either of two simple, intuitive keys {{cite:hp15c1982,horowitz2015}}:
-* **The Swap Key (`{{key:x⇄y}}`):** After you add `12 {{key:ENTER}} 8 {{key:+}}` to get `20` on the Workbench (Shelf $X$), type `100`. Automatic stack lift moves `20` up to Shelf $Y$ while `100` sits on Shelf $X$. Since division always computes $\text{Shelf } Y \div \text{Shelf } X$, a single tap of **`{{key:x⇄y}}`** swaps their shelves (`100` in $Y$, `20` in $X$) so **`{{key:÷}}`** divides $100 \div 20 = \mathbf{5}$.
-* **The Reciprocal Key (`{{key:1/x}}`):** Or, right after computing the denominator `20` on Shelf $X$, tap **`{{key:1/x}}`** to flip it upside down into $\frac{1}{20} = 0.05$, and then multiply by `100` (`100 {{key:×}}` $\to \mathbf{5}$).
-
-With `{{key:ENTER}}`, automatic stack lift, `{{key:x⇄y}}`, and `{{key:1/x}}`, even the deepest multi-story engineering formula unpeels calmly from the inside out—one two-number step at a time.
-
----
-
-## Five Guided Tours on the 4-Register Stack
-
-Before turning to Chapter 1, let's walk through **five practical scientific and engineering stories** on the 4-level stack. Watch the **4-Register Stack Table** ($T, Z, Y, X$) beneath each story to see how numbers lift, drop, and combine at every step. (For **25 additional Executive Warm-Up Problems**, see the companion **[SC-32 Scientific Companion Problem & Casebook Workbook](../../curriculum/sc32-scientific-companion-workbook.md#executive-warm-up-problems)**.)
-
-### Dividing a Pump Output by a Sum of Manifolds Without Parentheses
-Imagine testing a hydraulic pump operating at $12.4\text{ bar}$ with a specific delivery capacity of $8.6\text{ L/bar}\cdot\text{min}$ that feeds two parallel intake manifolds of cross-sectional areas $3.2\text{ cm}^2$ and $4.9\text{ cm}^2$. Finding the net fluid transfer rate $Q$ requires dividing the pump's output product by the combined manifold area (see Chapter 2):
-
-$$Q = \frac{12.4 \times 8.6}{3.2 + 4.9} \quad \text{[L/min]}$$
-
-On an algebraic calculator, forgetting parentheses around $(3.2 + 4.9)$ silently divides $12.4 \times 8.6$ by $3.2$ first and adds $4.9$ to the answer. On the SC-32 stack, you simply compute the top of the fraction first ($12.4 \times 8.6 = 106.64$). Then, as you type `3.2 {{key:ENTER}} 4.9 {{key:+}}` to add the bottom of the fraction ($8.1$), automatic stack lift carries `106.64` up to Shelf $Z$ and drops it right back down to Shelf $Y$—sitting directly above `8.1` in Shelf $X$, ready for a single tap of `{{key:÷}}` (`{{res:sc32_index_seq_01:keys}}` $\to \mathbf{{{res:sc32_index_seq_01:value}}\text{ L/min}}$):
+3. **How Shelves $Z$ and $Y$ Eliminate Parentheses:**  
+   Now watch what happens when a calculation has **two separate groups**—such as $(14 + 6) \times (9 - 4) = 100$, or dividing a hydraulic pump's output product by the combined area of two parallel intake manifolds ($3.2\text{ cm}^2$ and $4.9\text{ cm}^2$):
+   $$Q = \frac{12.4 \times 8.6}{3.2 + 4.9} \quad \text{[L/min]}$$
+   On an algebraic calculator, forgetting parentheses around $(3.2 + 4.9)$ silently divides $12.4 \times 8.6$ by $3.2$ first and adds $4.9$ to the answer. On the SC-32 stack, you never touch a parenthesis:
+   - First, multiply the top of the fraction: `12.4 {{key:ENTER}} 8.6 {{key:×}}` puts **`106.64`** on Shelf $X$.
+   - Next, just start typing the bottom of the fraction (`3.2 {{key:ENTER}} 4.9 {{key:+}}`). Watch the **4-Register Stack Table** below to see where `106.64` goes: typing `3.2` automatically lifts `106.64` to Shelf $Y$; pressing `{{key:ENTER}}` lifts `106.64` to Shelf $Z$ while `3.2` and `4.9` occupy $Y$ and $X$; and tapping `{{key:+}}` collapses $3.2 + 4.9$ into **`8.1`** on Shelf $X$ while `106.64` drops right back down into Shelf $Y$!
+   - Now your numerator (`106.64` in $Y$) and denominator (`8.1` in $X$) sit face to face. One tap of **`{{key:÷}}`** (`{{res:sc32_index_seq_01:keys}}` $\to \mathbf{{{res:sc32_index_seq_01:value}}\text{ L/min}}$) divides them:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `12.4` | $0.0000$ | $0.0000$ | $0.0000$ | $12.4000$ | Keying first numerator factor |
 | `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $12.4000$ | $12.4000$ | Stack lift: pushes $12.4$ into $Y$ |
-| `8.6` | $0.0000$ | $0.0000$ | $12.4000$ | $8.6000$ | Overwriting $X$ with second factor |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $106.6400$ | Dyadic product: $12.4 \times 8.6$ |
-| `3.2` | $0.0000$ | $0.0000$ | $106.6400$ | $3.2000$ | Implicit stack lift: numerator preserved in $Y$ |
+| `8.6` | $0.0000$ | $0.0000$ | $12.4000$ | $8.6000$ | Entering second factor into $X$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $106.6400$ | Numerator product: $12.4 \times 8.6$ |
+| `3.2` | $0.0000$ | $0.0000$ | $106.6400$ | $3.2000$ | Automatic stack lift: numerator preserved in $Y$ |
 | `{{key:ENTER}}` | $0.0000$ | $106.6400$ | $3.2000$ | $3.2000$ | Numerator elevated to $Z$; $3.2$ in $Y$ |
 | `4.9` | $0.0000$ | $106.6400$ | $3.2000$ | $4.9000$ | Loading second denominator term |
 | `{{key:+}}` | $0.0000$ | $0.0000$ | $106.6400$ | $8.1000$ | Denominator summed in $X$; numerator drops to $Y$ |
 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$13.1654$** | Final quotient $106.64 / 8.1$ |
 
-### Three Resistors in Parallel: Two Ways to See the Physics
+*(Unless a chapter or problem specifies otherwise, worked sequences across this book start in standard decimal floating-point mode (`{{key:DEC}}`, `{{key:ALL}}`) and degree angle mode (`{{key:DEG}}`).)*
+
+---
+
+## Inside-Out Thinking: How Four Keys Unpeel Any Formula
+
+Once you see how the stack holds numbers on visible shelves, a natural question arises: *What if the complicated part of an equation is on the bottom of a fraction, or buried deep inside a logarithm or a square root?*
+
+On an algebraic calculator, because you are forced to type strictly from left to right, you have to type the outer numbers first, open parentheses `( ( (`, and hope you close them all in the right places at the end. On a stack calculator, **you always start at the deepest, most complicated inner piece of the formula first**, and work outward using four intuitive keys {{cite:hp15c1982,horowitz2015}}:
+
+- **The Reciprocal Key (`{{key:1/x}}`) & Parallel Key (`{{key:x∥y}}`):** Flip any number in Shelf $X$ upside down ($1/X$) in a single tap, or combine two reciprocal pathways ($\frac{X \cdot Y}{X + Y}$) directly.
+- **The Swap Key (`{{key:x⇄y}}`):** Trade the numbers in Shelf $Y$ and Shelf $X$ whenever you compute a denominator or subtracted term *before* the outer number.
+- **In-Place Functions (`{{key:√x}}`, `{{key:LN}}`, `{{key:SIN}}`):** Transform the number currently sitting in Shelf $X$ immediately without disturbing anything waiting upstairs.
+- **The Last-Argument Key (`{{key:LASTX}}`):** Recall the exact number that was in Shelf $X$ right before the last operation, so you never have to type the same measurement twice.
+
+Let's watch those keys turn four classic scientific and engineering formulas into effortless inside-out conversations:
+
+### Three Resistors in Parallel (`{{key:1/x}}` and `{{key:x∥y}}`)
 When three resistors—$R_1 = 100\,\Omega$, $R_2 = 220\,\Omega$, and $R_3 = 470\,\Omega$—are wired side by side in parallel across a voltage source {{cite:horowitz2015}}, electricity has three pathways to flow through at once. Because each extra pathway makes it *easier* for current to flow, the combined resistance $R_{\text{eq}}$ is always smaller than the smallest individual resistor ($R_{\text{eq}} < 100\,\Omega$):
 
 $$\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} \quad (R_1=100\,\Omega,\; R_2=220\,\Omega,\; R_3=470\,\Omega)$$
@@ -145,16 +119,16 @@ Look at that formula: the thin-lens equation has the exact same reciprocal-sum s
 
 Whether you are combining resistors in parallel, capacitors in series, springs in series, or distances across a lens, `{{key:x∥y}}` computes their harmonic combination directly on the stack.
 
-### Unpacking a Chemical Battery from the Inside Out (The Nernst Equation)
+### Peeling an Equation from the Inside Out (`{{key:LN}}` and `{{key:x⇄y}}`)
 What happens when a formula has a fraction tucked inside a logarithm, subtracted from a starting constant? Consider a zinc-copper galvanic battery cell whose standard voltage is $E^\circ = 1.100\text{ V}$ ($n = 2$ electrons transferred, thermal voltage $RT/F = 0.025693\text{ V}$ at $298.15\text{ K}$) when the anode ion concentration is $[\text{Zn}^{2+}] = 0.015\text{ M}$ and the cathode concentration is $[\text{Cu}^{2+}] = 0.850\text{ M}$:
 
 $$E = E^\circ - \frac{R T}{n F} \ln Q = 1.100 - \frac{0.025693}{2} \ln\left(\frac{0.015}{0.850}\right)$$
 
-Instead of typing `1.100 - ...` first and opening parentheses, watch how naturally you evaluate this from the **inside out**:
+Instead of typing `1.100 - ...` first and opening parentheses, watch how naturally you peel this formula from the **inside out**:
 1. Start at the deepest inner fraction (`0.015 {{key:ENTER}} 0.850 {{key:÷}}` $\to 0.017647$).
 2. Take its natural logarithm in place by tapping **`{{key:LN}}`** ($\to -4.0372$).
 3. Multiply by `0.025693` and divide by `2` ($\to -0.05186\text{ V}$).
-4. Now type the starting voltage `1.100` (which lifts $-0.05186$ into Shelf $Y$), tap **`{{key:x⇄y}}`** so `1.100` sits in Shelf $Y$ and $-0.05186$ sits in Shelf $X$, and tap **`{{key:-}}`** (`{{res:sc32_index_seq_25:keys}}`$\to \mathbf{{{res:sc32_index_seq_25:value}}\text{ V}}$):
+4. Now type the starting voltage `1.100` (which automatically lifts $-0.05186$ into Shelf $Y$). Because subtraction always computes $\text{Shelf } Y - \text{Shelf } X$, a single tap of **`{{key:x⇄y}}`** swaps their shelves so `1.100` sits in Shelf $Y$ and $-0.05186$ sits in Shelf $X$, and **`{{key:-}}`** (`{{res:sc32_index_seq_25:keys}}`$\to \mathbf{{{res:sc32_index_seq_25:value}}\text{ V}}$) finishes the calculation:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -164,7 +138,7 @@ Instead of typing `1.100 - ...` first and opening parentheses, watch how natural
 | `1.100` | $0.0000$ | $0.0000$ | $-0.05186$ | $1.1000$ | Standard cell potential $E^\circ$ |
 | `{{key:x⇄y}} {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.1519$** | Working cell electromotive force $E$ in Volts |
 
-### Collapsing a Nested Square-Root Pyramid in Four Seconds
+### Collapsing a Nested Square-Root Pyramid in Four Seconds (`{{key:√x}}`)
 Nested square-root pyramids look intimidating on paper because each root sits inside another root:
 
 $$x = \sqrt{7 + \sqrt{13 + \sqrt{29 + \sqrt{41}}}}$$
@@ -178,18 +152,26 @@ On an algebraic calculator, you have to open four sets of left parentheses befor
 | `13 {{key:+}} {{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.3532$ | $\sqrt{13 + 5.9501} = \sqrt{18.9501}$ |
 | `7 {{key:+}} {{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$3.3694$** | Final outermost root $\sqrt{7 + 4.3532}$ |
 
-Why wasn't `{{key:ENTER}}` needed after `41 {{key:√x}}`? Because `{{key:√x}}` finished computing `6.4031`, so the moment you typed `29`, the stack *automatically lifted* `6.4031` into Shelf $Y$ so `{{key:+}}` could add them right away.
+Notice how each `{{key:+}} {{key:√x}}` pair collapses one story of the radical pyramid in place inside Register $X$ without ever waking Registers $Z$ or $T$.
 
 ---
 
-## Four Generations of Handheld RPN Instruments
+## Historical Lineage: How a 1924 Logic Breakthrough Reached Your Workbench
 
-The table below traces how the four-register operational stack evolved from Hewlett-Packard's 1972 pocket breakthrough to the StackCalc SC-32:
+How did a Polish philosopher's 1924 logic notation become the native operating language of modern compilers, spacecraft navigation computers, and scientific handhelds?
+
+* **1924: Jan Łukasiewicz (Warsaw University) {{cite:lukasiewicz1924}}** — Demonstrates that placing operators before or after their operands encodes the entire hierarchy of any mathematical expression by position alone, eliminating parentheses from formal logic.
+* **1954: Arthur Burks, Don Warren & Jesse Wright {{cite:burks1954}}** — Formalize postfix notation (**Reverse Polish Notation**) for digital computer evaluation.
+* **1957: Charles Hamblin (University of New South Wales) {{cite:hamblin1957}}** — Invents the hardware **push-down store (the operational stack)**, proving that a small last-in, first-out stack of registers can evaluate any postfix formula without address pointers or syntactic backtracking.
+* **1972: William Hewlett, David Cochran & The Palo Alto Engineering Team {{cite:hewlett1972,cochran1972}}** — Introduce the **HP-35**, the world's first pocket scientific calculator, replacing the slide rule with a 4-register operational stack ($X, Y, Z, T$).
+* **1982: HP-15C Voyager Series {{cite:hp15c1982,kahan1979}}** — Extends the 4-level stack to complex numbers, matrix algebra, root finding, and numerical integration with William Kahan's floating-point algorithms.
+* **1991: HP-32SII Pioneer Series (succeeding the 1988 HP-32S) {{cite:hp32sii1991}}** — Combines a dual-line display, algebraic equation storage, exact fraction reduction, numerical root finding, and Romberg integration in a fast, tactile RPN package.
+* **Today: StackCalc SC-32 Scientific** — Brings the 4-register RPN architecture to a daylight-reflective vector LCD with tactile TPU keys, dedicated parallel-impedance (`{{key:x∥y}}`) and quotient-remainder (`{{key:÷R}}`) keys, Richard Brent's root solver, adaptive Romberg quadrature, and companion 3D-printed mathematical manipulative studios.
 
 | Architectural Feature | HP-35 (1972) | HP-15C Voyager (1982) | HP-32SII Pioneer (1991) | StackCalc SC-32 (Present) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Processor Silicon** | 5-chip bit-serial PMOS (196 kHz) | 56-bit bit-serial Nut CMOS (220 kHz) | 4-bit Saturn CMOS (640 kHz) | **32-bit IEEE-754 floating-point core** |
-| **Cold-Boot Latency** | $\sim 50\text{ ms}$ | $\sim 20\text{ ms}$ | $\sim 15\text{ ms}$ | **$< 5.0\text{ ms}$** |
+| **Processor Architecture** | Bit-serial PMOS | 56-bit Nut CMOS | 4-bit Saturn CMOS | **32-bit IEEE-754 floating-point core** |
+| **Wake Latency** | $\sim 50\text{ ms}$ | $\sim 20\text{ ms}$ | $\sim 15\text{ ms}$ | **$< 5.0\text{ ms}$** |
 | **Display Technology** | 15-digit red LED bubble | Segmented reflective LCD | 2-line dot-matrix / segment LCD | **Transflective 132×65 vector LCD** |
 | **Operational Stack** | 4-level XYZT | 4-level XYZT | 4-level XYZT | **Configurable 4-LVL / 8-LVL / INF** |
 | **Dynamic Softkeys** | None | None | Top row numeric remapping | **Dedicated 6-key LFU softkey strip** |
@@ -263,6 +245,6 @@ The mathematical equations, structural mechanics formulas, fluid dynamics models
 
 ## Turning the Page: From Palo Alto to Your Workbench
 
-Whether you are reading *Thinking in the Stack* cover to cover as a collegiate STEM textbook or keeping it beside your soldering iron and 3D printer as a daily engineering handbook, every equation in this book begins with a physical question: *How does the machine or biological system actually work, and how can we verify its behavior in two independent ways on the four-level stack?*
+Whether you are reading *Thinking in the Stack* cover to cover as a collegiate STEM textbook or keeping it beside your soldering iron and 3D printer as a daily engineering handbook, every equation in this book begins with a physical question: *How does the machine or natural system actually work, and how can we explore its behavior step by step on the four-level stack?*
 
-Turn the page to **[Chapter 1: Craftsmanship, Hardware Architecture & The Tactile Philosophy](01-craftsmanship-hardware.md)**, where our story opens in 1970 Palo Alto with Bill Hewlett's famous shirt-pocket challenge—and steps directly onto your workbench to explore the mechanics, optics, and 3D-printed $42.0\text{ mm}$ studio geometry of the instrument in your hands.
+Turn the page to **[Chapter 1: Hardware Architecture & Instrument Craftsmanship](01-craftsmanship-hardware.md)**, where our story opens in 1970 Palo Alto with Bill Hewlett's famous shirt-pocket challenge—and brings you along from your very first stack operations to the mechanics, optics, and 3D-printed $42.0\text{ mm}$ studio geometry of the instrument in your hands.

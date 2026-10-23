@@ -218,6 +218,90 @@
     ],
     "svg": "counting_tiles_fraction_datum_84mm.svg"
   },
+  "diagram_3d_printer_slicer_pendulum": {
+    "alt": "Maker Science: Slicing a 3 cm 3D Print into 50 Horizontal 0.02 cm Layers and Galileo's Quarter-Length Pendulum Law",
+    "camera": "2d-diagram",
+    "id": "diagram_3d_printer_slicer_pendulum",
+    "png": "diagram_3d_printer_slicer_pendulum.png",
+    "renderer": "matplotlib",
+    "scad": "Tools/generate_sc6_concept_diagrams.py",
+    "scad_sources": [
+      "Tools/generate_sc6_concept_diagrams.py"
+    ],
+    "scene": "Tools/generate_sc6_concept_diagrams.py::diagram_3d_printer_slicer_pendulum",
+    "stls": [],
+    "svg": "diagram_3d_printer_slicer_pendulum.png"
+  },
+  "diagram_compound_gear_train": {
+    "alt": "Two-Stage Compound Gear Train: Stage 1 (36 \u00f7 12 = 3:1) Driving Stage 2 (48 \u00f7 16 = 3:1) on a Shared Axle for 9:1 Lifting Force",
+    "camera": "2d-diagram",
+    "id": "diagram_compound_gear_train",
+    "png": "diagram_compound_gear_train.png",
+    "renderer": "matplotlib",
+    "scad": "Tools/generate_sc6_concept_diagrams.py",
+    "scad_sources": [
+      "Tools/generate_sc6_concept_diagrams.py"
+    ],
+    "scene": "Tools/generate_sc6_concept_diagrams.py::diagram_compound_gear_train",
+    "stls": [],
+    "svg": "diagram_compound_gear_train.png"
+  },
+  "diagram_elevator_stack_concept": {
+    "alt": "The 4-Story Number Elevator (Shelves T, Z, Y, X) Solving (15 - 3) x (4 + 2) = 72 Without Parentheses",
+    "camera": "2d-diagram",
+    "id": "diagram_elevator_stack_concept",
+    "png": "diagram_elevator_stack_concept.png",
+    "renderer": "matplotlib",
+    "scad": "Tools/generate_sc6_concept_diagrams.py",
+    "scad_sources": [
+      "Tools/generate_sc6_concept_diagrams.py"
+    ],
+    "scene": "Tools/generate_sc6_concept_diagrams.py::diagram_elevator_stack_concept",
+    "stls": [],
+    "svg": "diagram_elevator_stack_concept.png"
+  },
+  "diagram_gear_teeth_lcm": {
+    "alt": "How Gear Teeth Work: Bicycle 48:16 Speed Ratio (3:1) and Meshing 14-Tooth & 21-Tooth Gears Meeting Every LCM = 42 Teeth",
+    "camera": "2d-diagram",
+    "id": "diagram_gear_teeth_lcm",
+    "png": "diagram_gear_teeth_lcm.png",
+    "renderer": "matplotlib",
+    "scad": "Tools/generate_sc6_concept_diagrams.py",
+    "scad_sources": [
+      "Tools/generate_sc6_concept_diagrams.py"
+    ],
+    "scene": "Tools/generate_sc6_concept_diagrams.py::diagram_gear_teeth_lcm",
+    "stls": [],
+    "svg": "diagram_gear_teeth_lcm.png"
+  },
+  "diagram_hydraulic_solar_catapult": {
+    "alt": "Hydraulic Syringe Force Multiplier (3x Width = 9x Circle Area = 9x Push) and Solar Panel Tilt Shadow Width",
+    "camera": "2d-diagram",
+    "id": "diagram_hydraulic_solar_catapult",
+    "png": "diagram_hydraulic_solar_catapult.png",
+    "renderer": "matplotlib",
+    "scad": "Tools/generate_sc6_concept_diagrams.py",
+    "scad_sources": [
+      "Tools/generate_sc6_concept_diagrams.py"
+    ],
+    "scene": "Tools/generate_sc6_concept_diagrams.py::diagram_hydraulic_solar_catapult",
+    "stls": [],
+    "svg": "diagram_hydraulic_solar_catapult.png"
+  },
+  "diagram_submarine_elevation": {
+    "alt": "Positive and Negative Numbers Above and Below 0 m Sea Level: Seabird Dive, Submarine Depth, and Hot-Air Balloon Sandbags",
+    "camera": "2d-diagram",
+    "id": "diagram_submarine_elevation",
+    "png": "diagram_submarine_elevation.png",
+    "renderer": "matplotlib",
+    "scad": "Tools/generate_sc6_concept_diagrams.py",
+    "scad_sources": [
+      "Tools/generate_sc6_concept_diagrams.py"
+    ],
+    "scene": "Tools/generate_sc6_concept_diagrams.py::diagram_submarine_elevation",
+    "stls": [],
+    "svg": "diagram_submarine_elevation.png"
+  },
   "dice_spinner_craftsmanship": {
     "alt": "Dice Spinner Mechanical Craftsmanship",
     "camera": "lens=55mm,elev=36,azim=16",

@@ -1,5 +1,5 @@
 ---
-title: "Appendix A: Formal Stack-Lift State Machine | SC-32 Manual"
+title: "Appendix A: Formal Stack-Lift State Machine | Thinking in the Stack (SC-32)"
 description: "The definitive 43-key tabular reference for the StackCalc SC-32 Stack Lift State Machine, categorizing Stack Lift enablement, LASTX updates, and register delta effects."
 ---
 
@@ -337,17 +337,17 @@ Compute $|-45.75|$:
 ### Trace 12: Dynamic Stack Depth Expansion (`4-LVL` vs `8-LVL` vs `INF`)
 Under extended system flags (`{{key:FLAGS}}`), the user can expand the stack beyond 4 levels:
 * **`4-LVL` (Classic HP):** 4 registers ($X, Y, Z, T$). $T$ replicated on drop; values pushed off $T$ are discarded.
-* **`8-LVL` (Extended STEM):** 8 registers ($X, Y, Z, T, A, B, C, D$). Deeper parenthetical evaluations can occur without variable storage. $D$ replicated on drop.
+* **`8-LVL` (Extended STEM):** 8 registers ($X, Y, Z, T, R_5, R_6, R_7, R_8$). Deeper parenthetical evaluations can occur without variable storage. $R_8$ replicated on drop.
 * **`INF` (Infinite Dynamic):** Dynamic heap allocation. Stack grows unboundedly until system memory limit. Stack drop pulls previous elements down without replication.
 
 **Stack Depth Architecture Comparison:**
 
 | Level | 4-Level Stack (`4-LVL`) | 8-Level Stack (`8-LVL`) | Infinite Stack (`INF`) |
 | :--- | :--- | :--- | :--- |
-| **Top / Level 8** | — | `D:` Level 8 Register | Dynamic Heap Top ($N$) |
-| **Level 7** | — | `C:` Level 7 Register | $\dots$ |
-| **Level 6** | — | `B:` Level 6 Register | Level 5 Register |
-| **Level 5** | — | `A:` Level 5 Register | Level 4 Register |
+| **Top / Level 8** | — | `R8:` Level 8 Register | Dynamic Heap Top ($N$) |
+| **Level 7** | — | `R7:` Level 7 Register | $\dots$ |
+| **Level 6** | — | `R6:` Level 6 Register | Level 5 Register |
+| **Level 5** | — | `R5:` Level 5 Register | Level 4 Register |
 | **Level 4** | `T:` Constant Replicator | `T:` Level 4 Register | Level 3 Register |
 | **Level 3** | `Z:` Third Operative | `Z:` Level 3 Register | Level 2 Register |
 | **Level 2** | `Y:` Second Operative | `Y:` Level 2 Register | Level 1 Register |

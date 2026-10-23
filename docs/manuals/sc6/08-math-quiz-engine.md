@@ -1,9 +1,9 @@
 ---
-title: "Chapter 8: The Gamified Math Quiz Engine"
+title: "Chapter 8: Mental Math Tricks & The Quiz Game"
 description: "Mastering mental math fluency on the SC-6: the built-in 6-Level adaptive arithmetic sprint engine, speed scoring, mastery thresholds, spaced retrieval practice, and rapid mental math sprint readiness."
 ---
 
-# Chapter 8: The Gamified Math Quiz Engine
+# Chapter 8: Mental Math Tricks & The Quiz Game
 
 ## The Musician's Scales & The Astronaut's Simulator: Why Instant Math Reflexes Set Your Creative Brain Free
 
@@ -21,21 +21,13 @@ The StackCalc SC-6 does not replace your human brain—it coaches it. By integra
 
 ---
 
-> **Keys & Tools in This Chapter**
-> - **Quiz Activation & Control:** `{{key:?}}` (Launch Quiz Sandbox), `{{key:ENTER}}` (Submit Answer & Evaluate), `{{key:SHOW}}` (Inspect Active Score, Streak, & Average Latency).
-> - **Numeric Answer Entry:** Digits `{{key:0}}`–`{{key:9}}`, Two-Dot Fraction `{{key:.}}`, Negative Toggle `{{key:+/-}}`, Backspace `{{key:<-}}`.
-> - **Operational Verification:** `{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷}}`, `{{key:÷R}}`, `{{key:SIMP}}`, `{{key:ENTER}}`, `{{key:LASTX}}`.
-> - **Exit Quiz Sandbox:** Pressing `{{key:C}}` twice or any base display mode key (`{{key:NUM}}`, `{{key:FIX}}`, `{{key:ALL}}`, `{{key:FDISP}}`) exits the quiz engine and restores your stack registers.
-
----
-
 {{res:sc6_quiz_engine_mode:screenshot|Launch SC-6 Gamified Arithmetic Sprint Quiz Engine}}
 
 ---
 
 ## Stepping into the Rhythm Game: How the Quiz Engine Works (`{{key:?}}` & `{{key:ENTER}}`)
 
-Have you ever played a musical rhythm game where notes glide down the screen and you tap the beat right on time, or climbed into an arcade flight simulator where each checkpoint unlocks a faster, higher-altitude course? Tapping `{{key:?}}` (`{{key:f}}` + `{{key:C}}`) transforms the SC-6 screen into an interactive mental-math flight deck where every puzzle is answered with a single rhythmic press of `{{key:ENTER}}`.
+Have you ever played a musical rhythm game where notes glide down the screen and you tap the beat right on time, or climbed into an arcade flight simulator where each checkpoint unlocks a faster course? Tapping **`{{key:?}}`** (`{{key:f}}` + `{{key:C}}`) turns your SC-6 screen into an interactive mental-math game: a puzzle flashes on screen, you type the answer using the number keys (plus `.` for fractions or `{{key:<-}}` if you want to fix a digit), and you lock it in with one tap of **`{{key:ENTER}}`**. Whenever you want to check your score and average speed during a game, tap **`{{key:SHOW}}`**; when you are ready to return to your normal calculator stack, just tap **`{{key:C}}`** twice (or tap `{{key:NUM}}`).
 
 ### Two Ways to Play: RPN Mystery Puzzles & Classic Mental Sprints
 Most quiz apps lock you into multiple-choice guessing games—where you can often spot the right answer just by looking at the last digit without actually doing the math. On the SC-6, there are no multiple-choice buttons to guess from. Instead, the Quiz Engine challenges your brain with two complementary prompt styles on the daylight LCD:
@@ -50,14 +42,13 @@ Most quiz apps lock you into multiple-choice guessing games—where you can ofte
 
 *Figure 8.1: Graphic LCD Layout in Quiz Mode: Solving for Missing Value `?`*
 
-#### Reading the Flight Instruments:
-Look at the puzzle `3  ?  +  =  10` in Figure 8.1 as a four-step story on the stack:
+Look at the puzzle `3  ?  +  =  10` in Figure 8.1 as a four-step story on the flight instruments:
 - *"Start with `3` resting on Floor $Y$."*
 - *"Place the missing mystery number `?` on the Ground Floor ($X$)."*
 - *"Press `+` to combine them."*
 - *"Your total must land on `10`."*
 
-In a heartbeat, your brain translates that stack story into a familiar number bond: *"What number added to 3 makes 10?"* Better yet, after any quiz sprint, you can test every single puzzle right in `{{key:NUM}}` mode using the exact RPN stack sequences shown in the expeditions at the end of this chapter.
+In a heartbeat, your brain translates that stack story into a familiar number bond: *"What number added to 3 makes 10?"* Better yet, after any quiz sprint, you can test every single puzzle right in `{{key:NUM}}` mode using the exact RPN stack sequences shown in each level below.
 
 ---
 
@@ -67,8 +58,7 @@ Answering a puzzle in Quiz Mode is designed to keep your fingers in a smooth, un
 2. Type your answer using the number keys (for example, `{{key:7}}`).
 3. Tap **`{{key:ENTER}}`** to lock it in!
 
-#### Instant Feedback & The 4-Second Speed Target:
-The moment you press `{{key:ENTER}}`, the calculator checks your work and measures how fast you solved it:
+The moment you press `{{key:ENTER}}`, the calculator checks your work and measures how fast you solved it against the 4-second speed target:
 1. **Smart Fraction & Decimal Check:** The engine reads your whole number, decimal, or fraction from Register $X$—and automatically simplifies fractions so equivalent answers like `2/4` or `0.5` match `1/2`.
 2. **Speed & Streak Scoring:** Just like hitting a "Perfect!" beat in a rhythm game, the engine checks how many seconds you took from the moment the puzzle appeared:
    - **Fast Match (Under 4 seconds):** Flashes `★ FAST!  <ans> (<time>s)`, awards **`+20` mastery points**, adds points to your session score, and lights up one more dot on your fast streak (`+1`).
@@ -99,6 +89,143 @@ Every level is directly paired with your physical **StackCalc Manipulative Studi
 
 {{blocks:dominoes_studio_hero|Dominoes Studio: Modular Enclosure and Tactile Training Tiles}}
 
+Let's step into the simulator cockpit and fly through all six levels of the curriculum ladder to see how each physical manipulative studio powers your mental reflexes and how every quiz prompt can be verified on the 4-register stack in `{{key:NUM}}` mode.
+
+### Level 1: Single-Digit Number Bonds (Sums & Differences to 10)
+Strap into the simulator cockpit and check your instrument panel! Level 1 is your runway warm-up: instead of counting on your fingers, your goal is to train your eyes to recognize number bonds up to 10 in a single glance using your **Math Dominoes** and **Ten-Frame Tray**.
+
+Our first runway prompt flashes a classic near-double: $4 + 5 = {?}$. Draw the $[4 \mid 5]$ tile from your **Math Dominoes**: you don't need to count nine dots one by one because the twin $4$-dot patterns leap right out at your eyes ($4 + 4 = 8$), with $1$ extra center dot making $8 + 1 = 9$. When the quiz prompt `4 {{key:ENTER}} 5 {{key:+}} ?` flashes on screen, tap `9 {{key:ENTER}}` (aim for under $< 2.0\text{ seconds}$ to light your first streak pip `●○○○○`). In `{{key:NUM}}` mode, keying `{{res:sc6_08_drill_01:keys}}` produces **`{{res:sc6_08_drill_01:value}}`**, as pushing `4` onto Floor $Y$ and adding `5` on Floor $X$ merges both domino halves into `9`.
+
+Right on the heels of that near-double, the flight deck flips addition around into a ten-frame complement puzzle: $10 - 7 = {?}$. Your **Ten-Frame Tray** holds 10 counters in two rows of 5. When you lift away 7 counters (one full row of 5 plus 2 more), your eyes immediately see 3 empty sockets waiting to be filled ($10 - 7 = 3$, because $7$ and $3$ are ten-partners). On the quiz puzzle `10 {{key:ENTER}} 7 {{key:-}} ?` (or Missing-Value Puzzle `10 ? - = 3`), enter `3 {{key:ENTER}}` within $< 2.0\text{ seconds}$. Checking on the stack with `{{res:sc6_08_drill_02:keys}}` confirms **`{{res:sc6_08_drill_02:value}}`**: starting with a full `10` in Register $Y$ and taking away `7` in Register $X$ leaves its ten-partner `3`.
+
+---
+
+### Level 2: Two-Digit Mental Addition & Subtraction (To 100)
+With five fast answers in Level 1, the screen flashes `★ NEXT LEVEL UNLOCKED! ★` and promotes your flight simulator to Level 2! Notice how every number bond you just mastered in Level 1 now scales up tenfold to let you leap across tens and ones up to 100.
+
+First, watch how single-digit bonds turn into tens bonds when the cockpit displays $40 + 30 = {?}$. Place 4 counters and 3 counters in your **Ten-Frame Tray** to see $4 + 3 = 7$. Now imagine each counter is a 10-rod: $4\text{ tens} + 3\text{ tens} = 7\text{ tens} = 70$. When `40 {{key:ENTER}} 30 {{key:+}} ?` appears, tap `70 {{key:ENTER}}` (aim for under $< 2.5\text{ seconds}$). You can verify the sum on the stack via `{{res:sc6_08_drill_09:keys}}` to reach **`{{res:sc6_08_drill_09:value}}`**—adding tens works just like adding ones, with a zero holding the ones place.
+
+What if the second number has both tens and ones, like our next checkpoint prompt $80 - 25 = {?}$? Instead of trying to borrow on imaginary paper in the air, jump in two clean steps: start with 8 tens ($80$) in your **Ten-Frame Tray**, hop back 2 tens to land on $60$ ($80 - 20 = 60$), and then hop back 5 more to land on $55$ ($60 - 5 = 55$). For `80 {{key:ENTER}} 25 {{key:-}} ?` (or Missing-Value Puzzle `80 ? - = 55`), enter `55 {{key:ENTER}}` within $< 3.0\text{ seconds}$. Evaluating `{{res:sc6_08_drill_10:keys}}` on the stack yields **`{{res:sc6_08_drill_10:value}}`**, showing how subtracting in two mental jumps ($80 \to 60 \to 55$) matches the stack result `55` with zero paper borrowing.
+
+---
+
+### Level 3: Multiplication & Division Mastery (Up to $12 \times 12$)
+Now you lift off into orbital flight! Level 3 turns the rectangular tile grids you built in Chapter 02 into lightning-fast multiplication and missing-factor reflexes up to $12 \times 12$.
+
+Many kids find our first orbital prompt—$7 \times 8 = {?}$—the trickiest fact in the times table, until they slice the rectangle in two! Split 7 rows of 8 into $(5 \times 8) + (2 \times 8)$. Build the $2 \times 8 = 16$ rectangle using 16 of your **24 Array Tiles**, then add the friendly five-times fact $5 \times 8 = 40$ in your head: $40 + 16 = 56$. For `7 {{key:ENTER}} 8 {{key:×}} ?` (or Missing-Value Puzzle `7 ? × = 56`), tap `56 {{key:ENTER}}` (aim for under $< 1.5\text{ seconds}$). Multiplying on the stack with `{{res:sc6_08_drill_17:keys}}` lands on **`{{res:sc6_08_drill_17:value}}`**. Bonus memory hook: count four digits in a row—$5, 6, 7, 8 \implies 56 = 7 \times 8$!
+
+Division puzzles in Level 3 ask you to spot the missing side of a rectangle, like $72 \div 9 = {?}$. Test the 9s pattern with 18 of your **24 Array Tiles** ($2 \times 9 = 18$—notice how the digits $1 + 8 = 9$ always add up to $9$, and the tens digit $1$ is always $1$ less than the multiplier $2$). So when you see $72 \div 9$, look at the tens digit $7$ and add $1$: $7 + 1 = 8$ rows of 9 ($8 \times 9 = 72 \implies 72 \div 9 = 8$)! When `72 {{key:ENTER}} 9 {{key:÷}} ?` appears, enter `8 {{key:ENTER}}` within $< 1.8\text{ seconds}$. Confirming in `{{key:NUM}}` mode via `{{res:sc6_08_drill_18:keys}}` returns **`{{res:sc6_08_drill_18:value}}`**, as dividing `72` in Register $Y$ by `9` in Register $X$ reveals the missing side length `8`.
+
+---
+
+### Level 4: Remainder Division & Fraction Benchmarks
+Welcome to Level 4! Here the Quiz Engine shifts from whole-number rectangles into leftover tiles (`{{key:÷R}}`) and your 84 mm **Fraction Towers** (`{{key:SIMP}}`), training you to combine and simplify fractions in your head as smoothly as whole numbers.
+
+Let's start with a division puzzle that doesn't come out even: $17 \div 5$. Take 17 tiles from your **24-Tile Counting & Array Studio** and stack them into columns of 5. You build 3 complete 5-towers ($15$ tiles), with 2 leftover tiles resting in your hand ($\text{Quotient} = 3, \text{Remainder} = 2$). For `17 {{key:ENTER}} 5 {{key:÷R}} ?`, tap `3 {{key:ENTER}}` (aim for under $< 3.5\text{ seconds}$). Running `{{res:sc6_08_drill_25:keys}}` on the stack produces **`{{res:sc6_08_drill_25:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| `17` | 0 | 0 | 0 | 17 |
+| `{{key:ENTER}}` | 0 | 0 | 17 | 17 |
+| `{{key:5}}` | 0 | 0 | 17 | 5 |
+| `{{key:÷R}}` | 0 | 0 | 2 | 3 |
+
+*(Register $X$ holds quotient 3, Register $Y$ holds remainder 2; tap `{{key:x⇄y}}` to inspect the remainder).*
+
+Next, the flight deck switches to fraction towers with $1/2 + 1/4 = {?}$. Bring out your **Fraction Towers** and slide them into the twin comparator well: a single $1/2$ tower stands at the exact same height as two $1/4$ pieces ($2/4$). Stacking one more $1/4$ piece on top builds a $3/4$ tower ($2/4 + 1/4 = 3/4$). When `1/2 {{key:ENTER}} 1/4 {{key:+}} ?` is shown, enter `{{key:.}} 3 {{key:.}} 4 {{key:ENTER}}` within $< 3.0\text{ seconds}$. You can verify that fraction tower height in `{{key:NUM}}` mode on the stack with `{{res:sc6_08_drill_26:keys}}`, which yields **`{{res:sc6_08_drill_26:value}}`**: keying `{{key:.}} 1 {{key:.}} 2` places `1/2` into Ground Shelf $X$, pressing `{{key:ENTER}}` lifts `1/2` onto Waiting Shelf $Y$, typing `{{key:.}} 1 {{key:.}} 4` loads `1/4` onto Ground Shelf $X$ ($Y = 1/2,\; X = 1/4$), and tapping `{{key:+}}` fuses the half and quarter into `3/4` on Ground Shelf $X$.
+
+What happens when you subtract two fractions and the leftover tower can be traded for a simpler block, as in $5/6 - 1/3 = {?}$? Stand five $1/6$ pieces ($5/6$) next to a $1/3$ piece in your **Fraction Towers** studio. Because the $1/3$ piece matches two $1/6$ blocks ($2/6$), taking away two sixths from five sixths leaves three $1/6$ blocks ($3/6$)—which stands the exact same height as a single $1/2$ tower! For `5/6 {{key:ENTER}} 1/3 {{key:-}} ?`, key in `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}}` in under $< 3.5\text{ seconds}$. Evaluating `{{res:sc6_08_drill_27:keys}}` on the stack reduces the difference to **`{{res:sc6_08_drill_27:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| `{{key:.}} 5 {{key:.}} 6` | 0 | 0 | 0 | 5/6 |
+| `{{key:ENTER}}` | 0 | 0 | 5/6 | 5/6 |
+| `{{key:.}} 1 {{key:.}} 3` | 0 | 0 | 5/6 | 1/3 |
+| `{{key:-}}` | 0 | 0 | 0 | 3/6 |
+| `{{key:SIMP}}` | 0 | 0 | 0 | 1/2 |
+
+With two fast answers in Band 1, the simulator promotes you to Band 2 of Level 4, where neither denominator divides evenly into the other: $2/3 + 1/4 = {?}$. Reach for the twelfths pieces in your **Fraction Towers** kit: two $1/3$ pieces match eight $1/12$ pieces ($8/12$), and one $1/4$ piece matches three $1/12$ pieces ($3/12$). Stacking them together gives $8 + 3 = 11$ twelfths ($11/12$). On `2/3 {{key:ENTER}} 1/4 {{key:+}} ?`, press `{{key:.}} 11 {{key:.}} 12 {{key:ENTER}}` (target time: $< 4.0\text{ seconds}$). Checking on the stack with `{{res:sc6_08_drill_28:keys}}` confirms **`{{res:sc6_08_drill_28:value}}`** as `{{key:.}} 2 {{key:.}} 3 {{key:ENTER}}` parks `2/3` on Shelf $Y$, `{{key:.}} 1 {{key:.}} 4` loads `1/4` onto Shelf $X$, and `{{key:+}}` aligns both fractions over their common denominator of 12 to display `11/12` on Ground Shelf $X$.
+
+Sometimes the fastest move in Level 4 is shrinking a big fraction down to its simplest building blocks, like $\text{Simplify } 18/24 \to {?}$. Build two **Prime Factor Block** towers or group your **24 Array Tiles**: 18 is three groups of 6 ($3 \times 6$), and 24 is four groups of 6 ($4 \times 6$). Dividing both top and bottom by their Greatest Common Factor ($\text{GCF} = 6$) simplifies $18/24$ right down to $3/4$. For `18/24 {{key:SIMP}} ?`, enter `{{key:.}} 3 {{key:.}} 4 {{key:ENTER}}` within $< 3.0\text{ seconds}$. Pressing `{{res:sc6_08_drill_30:keys}}` on the stack simplifies the ratio directly to **`{{res:sc6_08_drill_30:value}}`**—keying `{{key:.}} 18 {{key:.}} 24 {{key:ENTER}}` copies `18/24` into both $Y$ and $X$, and tapping `{{key:SIMP}}` divides out the shared factor of 6 so Ground Shelf $X$ shows `3/4` right alongside the original `18/24` on Waiting Shelf $Y$.
+
+For our final Level 4 challenge before level-up, watch what happens when two fraction towers grow taller than $1$ whole in $5/8 + 1/2 = {?}$! In your **Fraction Towers** comparator well, a $1/2$ tower matches four $1/8$ pieces ($4/8$). Adding five $1/8$ pieces makes nine $1/8$ pieces ($9/8$), which stands 1 full whole tower tall plus 1 extra eighth ($1\ 1/8$). On `5/8 {{key:ENTER}} 1/2 {{key:+}} ?`, press `1 {{key:.}} 1 {{key:.}} 8 {{key:ENTER}}` (target time: $< 4.0\text{ seconds}$). Verifying on the stack with `{{res:sc6_08_drill_32:keys}}` yields **`{{res:sc6_08_drill_32:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| `{{key:.}} 5 {{key:.}} 8` | 0 | 0 | 0 | 5/8 |
+| `{{key:ENTER}}` | 0 | 0 | 5/8 | 5/8 |
+| `{{key:.}} 1 {{key:.}} 2` | 0 | 0 | 5/8 | 1/2 |
+| `{{key:+}}` | 0 | 0 | 0 | 1 1/8 |
+
+---
+
+### Level 5: Multi-Step Order of Operations, Decimals & Percents
+You have reached Level 5! Now the Quiz Engine mixes two-step expressions with mixed numbers so your brain learns to spot which operation must happen *first* before combining the pieces.
+
+Look at our first Level 5 prompt, $24 \div 6 + 7 = {?}$: if you added $6 + 7 = 13$ first, you wouldn't even be able to divide $24$ evenly! Use all **24 Array Tiles** from your kit: because division happens before addition, first split the 24 tiles into 6 equal rows of 4 tiles ($24 \div 6 = 4$), and then bring in 7 counters from your **Ten-Frame Tray** to finish with 11 ($4 + 7 = 11$). When `24 ÷ 6 + 7 = ?` appears, tap `11 {{key:ENTER}}` (aim for under $< 2.5\text{ seconds}$). Evaluating `{{res:sc6_08_drill_33:keys}}` on the stack confirms **`{{res:sc6_08_drill_33:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| `24` | 0 | 0 | 0 | 24 |
+| `{{key:ENTER}}` | 0 | 0 | 24 | 24 |
+| `{{key:6}}` | 0 | 0 | 24 | 6 |
+| `{{key:÷}}` | 0 | 0 | 0 | 4 |
+| `{{key:7}}` | 0 | 0 | 4 | 7 |
+| `{{key:+}}` | 0 | 0 | 0 | 11 |
+
+Next comes the classic trap that catches anyone who reads strictly left-to-right: $15 - 3 \times 4 = {?}$ (where reading left-to-right gives $15 - 3 = 12$, times $4 = 48$—wrong!). Set out 15 tiles from your **24 Array Tiles**: because multiplication is a package deal, you must first group $3 \times 4 = 12$ of those tiles into a rectangle and lift that whole rectangle away from the 15 tiles, leaving $15 - 12 = 3$ tiles! Notice how the RPN stack handles this naturally without parentheses: for `15 - 3 × 4 = ?`, key in `3 {{key:ENTER}}` in under $< 2.5\text{ seconds}$, and verify in `{{key:NUM}}` mode by running `{{res:sc6_08_drill_35:keys}}` on the stack to land on **`{{res:sc6_08_drill_35:value}}`**. As you type `15 {{key:ENTER}} 3 {{key:ENTER}} 4`, your starting `15` rides safely up to Floor $Z$ while `3` and `4` sit on Floors $Y$ and $X$; tapping `{{key:×}}` fuses $3 \times 4$ into `12` on Floor $X$ and drops `15` back down into Floor $Y$, so one final tap of `{{key:-}}` subtracts $15 - 12$ to leave `3` on Ground Shelf $X$.
+
+What happens when parentheses wrap around the subtraction, like $(18 - 6) \div 3 = {?}$? Parentheses mean *"handle this box of tiles first!"* From 18 of your **24 Array Tiles**, remove 6 tiles to leave 12 tiles ($18 - 6 = 12$), and then share those 12 tiles equally into 3 rows of 4 ($12 \div 3 = 4$). On `(18 - 6) ÷ 3 = ?`, press `4 {{key:ENTER}}` (target time: $< 2.5\text{ seconds}$). In `{{key:NUM}}` mode, keying `{{res:sc6_08_drill_36:keys}}` produces **`{{res:sc6_08_drill_36:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| `18` | 0 | 0 | 0 | 18 |
+| `{{key:ENTER}}` | 0 | 0 | 18 | 18 |
+| `{{key:6}}` | 0 | 0 | 18 | 6 |
+| `{{key:-}}` | 0 | 0 | 0 | 12 |
+| `{{key:3}}` | 0 | 0 | 12 | 3 |
+| `{{key:÷}}` | 0 | 0 | 0 | 4 |
+
+Level 5 also mixes whole numbers and fractions together, like $1\ 1/2 + 2\ 1/4 = {?}$. When you see mixed numbers on the flight display, stack your **Fraction Towers** in two quick steps: first combine the whole towers ($1 + 2 = 3$), then combine the fractional pieces ($1/2 = 2/4$, plus $1/4$ gives $3/4$) to reach $3\ 3/4$. When `1 1/2 {{key:ENTER}} 2 1/4 {{key:+}} ?` is shown, tap `3 {{key:.}} 3 {{key:.}} 4 {{key:ENTER}}` (aim for under $< 3.5\text{ seconds}$). Verifying on the stack with `{{res:sc6_08_drill_37:keys}}` yields **`{{res:sc6_08_drill_37:value}}`**: keying `{{key:1}} {{key:.}} 1 {{key:.}} 2 {{key:ENTER}}` lifts `1 1/2` onto Waiting Shelf $Y$, typing `{{key:2}} {{key:.}} 1 {{key:.}} 4` loads `2 1/4` onto Ground Shelf $X$, and pressing `{{key:+}}` unites the whole units and fourths into `3 3/4` on Ground Shelf $X$.
+
+One more order-of-operations check locks in your Level 5 promotion: $8 + 4 \times 5 = {?}$! Resist the urge to add $8 + 4$ first: build the $4 \times 5 = 20$ rectangle using 20 of your **24 Array Tiles** (or fill both **Ten-Frame Trays**), then add 8 more counters to get $20 + 8 = 28$. For `8 + 4 × 5 = ?`, press `28 {{key:ENTER}}` (target time: $< 2.5\text{ seconds}$). Evaluating `{{res:sc6_08_drill_40:keys}}` on the stack confirms **`{{res:sc6_08_drill_40:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| `{{key:8}}` | 0 | 0 | 0 | 8 |
+| `{{key:ENTER}}` | 0 | 0 | 8 | 8 |
+| `{{key:4}}` | 0 | 0 | 8 | 4 |
+| `{{key:ENTER}}` | 0 | 8 | 4 | 4 |
+| `{{key:5}}` | 0 | 8 | 4 | 5 |
+| `{{key:×}}` | 0 | 0 | 8 | 20 |
+| `{{key:+}}` | 0 | 0 | 0 | 28 |
+
+---
+
+### Level 6: Pre-Algebra & Competitive Speed Sprints
+Congratulations—you have unlocked **Level 6 (`L6: Math Champ`)**, the highest tier on the SC-6! Here signed integer zero-pairs (`{{key:+/-}}`), prime factor intersections (`{{key:GCF}}` and `{{key:LCM}}`), and mental math number-sense shortcuts come together for championship-speed sprints.
+
+First, the championship deck tests your signed-number reflexes with $-14 + 9 = {?}$. Picture the hot-air balloon and sandbags (or two-color counters) from Chapter 07! Place 14 red negative counters (`-1` sandbags) and 9 yellow positive counters (`+1` flame puffs) in your two **Ten-Frame Trays**. Nine positive counters cancel 9 negative counters into zero-pairs, leaving 5 red negative counters ($-5$). On `-14 {{key:ENTER}} 9 {{key:+}} ?`, key in `5 {{key:+/-}} {{key:ENTER}}` in under $< 1.8\text{ seconds}$. Running `{{res:sc6_08_drill_47:keys}}` on the stack lands on **`{{res:sc6_08_drill_47:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| `14` | 0 | 0 | 0 | 14 |
+| `{{key:+/-}}` | 0 | 0 | 0 | $-14.0000$ |
+| `{{key:ENTER}}` | 0 | 0 | $-14.0000$ | $-14.0000$ |
+| `{{key:9}}` | 0 | 0 | $-14.0000$ | 9 |
+| `{{key:+}}` | 0 | 0 | 0 | $-5.0000$ |
+
+For our final championship sprint challenge, find the largest shared building block between $24$ and $36$ when the screen prompts for the GCF of $24$ and $36$. Stand up two prime factor towers using your **Prime Factor Blocks**: $24 = 2 \times 2 \times 2 \times 3$ and $36 = 2 \times 2 \times 3 \times 3$. Pull out the blocks both towers share—two $2$-blocks and one $3$-block—and multiply them in your head: $2 \times 2 \times 3 = 12$. For `24 {{key:ENTER}} 36 {{key:GCF}} ?`, press `12 {{key:ENTER}}` (target time: $< 1.8\text{ seconds}$). Verifying on the stack with `{{res:sc6_08_drill_48:keys}}` confirms **`{{res:sc6_08_drill_48:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X |
+| :--- | :--- | :--- | :--- | :--- |
+| `24` | 0 | 0 | 0 | 24 |
+| `{{key:ENTER}}` | 0 | 0 | 24 | 24 |
+| `36` | 0 | 0 | 24 | 36 |
+| `{{key:GCF}}` | 0 | 0 | 0 | 12 |
+
+*(Bonus `{{key:LASTX}}` move: Because `{{key:GCF}}` saved `36` inside `LASTX`, tapping `24 {{key:LASTX}} {{key:LCM}}` right afterward checks the matching Least Common Multiple `72` without re-typing `36`—completing your six-level simulator flight with every streak dot glowing across the cockpit display!)*
+
 ---
 
 ## How Streaks, Mastery Bars & Automatic Level-Ups Work
@@ -126,14 +253,6 @@ Notice something wonderful about the table above: you don't have to be the faste
 *Figure 8.2: Daylight LCD Frame: 5 Fast Streak Level Promotion in Level 3*
 
 ---
-
-### Why Typing Less Means Thinking More (`{{key:?}}`)
-
-Watch what happens when you solve a big subtraction puzzle like $1,000 - 647$ on an ordinary calculator versus solving it with a mental complement in `{{key:?}}` Quiz Mode:
-
-| Challenge / Equation | The Algebraic Calculator Trap (Standard Entry) | The StackCalc SC-6 + Manipulative Method | Keystroke Reduction | Live Stack Visibility | Learning Breakthrough |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Rapid Subtraction Complement**: $1000 - 647 = 353$ | Keying the full subtraction `1 0 0 0 - 6 4 7 =` takes **8 physical keystrokes**—and on paper, crossing out three zeros requires three separate column borrows. | **9s Complement Mental Shortcut:** subtract the hundreds and tens digits from 9, and the ones digit from 10: $(9-6)(9-4)(10-7) = \mathbf{353}$. In Quiz Mode, you type `3 5 3 {{key:ENTER}}` (**4 physical keystrokes**)—and in `{{key:NUM}}` mode, `1 0 0 0 {{key:ENTER}} 6 4 7 {{key:-}}` (8 physical keystrokes) verifies both numbers side by side. | **50% fewer strokes in Quiz Mode (4 vs. 8)** | In `{{key:NUM}}` verification, Register $Y$ holds `1000` while Register $X$ holds `647` before `{{key:-}}` confirms `353`. | Learners discover the base-10 complement rule ($999 + 1 = 1000$) using Place Value blocks, eliminating multi-column borrowing across zeros completely. |
 
 ## Walkthrough: Riding a 5-Streak Wave in Level 6
 
@@ -203,7 +322,7 @@ Before a head-to-head race or team relay, you can clear out old scores and regis
 2. **The One-Second $\times 11$ Shortcut:** To multiply any two-digit number like $53 \times 11$ in your head, split the digits apart (`5 _ 3`) and put their sum ($5 + 3 = 8$) right in the middle: **$583$**. For $42 \times 11$, $4 + 2 = 6$ gives **$462$**. If the middle sum is $10$ or more—like $75 \times 11$ where $7 + 5 = 12$—place the `2` in the middle and carry the `1` to the left digit ($7 + 1 = 8$) to get **$825$** (verify with `{{res:sc6_08_math_quiz_engine_seq_02:keys}}`).
 3. **Adding Fractions in Level 4 ($\frac{1}{3} + \frac{1}{4}$):** Never add denominators straight across ($\frac{1}{3} + \frac{1}{4} \ne \frac{2}{7}$). Stack a $\frac{1}{3}$ tower and a $\frac{1}{4}$ tower in your Fraction Studio: both convert cleanly into twelfths ($\frac{4}{12} + \frac{3}{12} = \frac{7}{12}$). Enter `{{key:.}} 7 {{key:.}} 1 2 {{key:ENTER}}` to score the full $+20$ points.
 
-#### Quick Troubleshooting Guide
+If a tricky quiz prompt ever catches you by surprise, this quick reference table shows the physical block picture behind each common pitfall:
 
 | What Happened on Your Screen | Why It Happened | How to Fix It |
 | :--- | :--- | :--- |
@@ -212,7 +331,7 @@ Before a head-to-head race or team relay, you can clear out old scores and regis
 | **Squaring numbers ending in 5: $35^2 = 3025$** | Multiplying the tens digit by itself ($3 \times 3 = 9$) instead of the next integer ($3 \times 4 = 12$). | *"Remember the rule: multiply the tens digit by the NEXT whole number ($3 \times 4 = 12$), then append 25 to get 1,225."* |
 | **Order of operations violation: $24 \div 6 + 7 = 24 \div 13$** | Reading left-to-right and adding before dividing. | *"Division and multiplication always happen before addition and subtraction. First compute $24 \div 6 = 4$. Then add $4 + 7 = 11$."* |
 | **Sign confusion: $-15 + 8 = -23$** | Adding absolute values instead of moving toward zero on the number line. | *"You are at $-15$ in the basement. Going up $+8$ floors moves you CLOSER to ground level: you end at Floor $-7$."* |
-| **Remainder as decimal: $17 \div 5 \to 3.2$ instead of $Q=3, R=2$** | Confusing base-10 tenths with fractional parts ($2/5 = 0.4$, not $0.2$). | *"In whole number division with remainder, $17 \div 5$ gives 3 groups of 5 with 2 left over. On the SC-6, use `{{key:÷R}}` to see quotient $3$ and remainder $2$ separated."* |
+| **Remainder as decimal: $17 \div 5 \to 3.2$ instead of $\text{Quotient} = 3, \text{Remainder} = 2$** | Confusing base-10 tenths with fractional parts ($2/5 = 0.4$, not $0.2$). | *"In whole number division with remainder, $17 \div 5$ gives 3 groups of 5 with 2 left over. On the SC-6, use `{{key:÷R}}` to see quotient $3$ and remainder $2$ separated."* |
 | **Doubles error: $7 + 8 \to 16$** | Misapplying double of the upper addend ($8 + 8 = 16$) instead of double plus one ($7 + 7 + 1 = 15$). | *"Think of 8 as $7 + 1$. Double 7 is 14, plus 1 is 15. Double plus one always gives an odd sum."* |
 | **Percentage of number: $10\%\text{ of } 250 = 2500$** | Multiplying by 10 instead of dividing by 10 (or moving decimal wrong way). | *"Ten percent means ten out of one hundred—one tenth. To take one tenth of 250, shift the decimal point ONE space to the LEFT: $25.0$."* |
 
@@ -230,6 +349,7 @@ When two numbers start with the **same tens digit** (like the $4$ in $43$ and $4
   - Multiply the tens digit $4$ by the next whole number $5$: $4 \times 5 = 20$ ($20\text{ hundreds} = 2,000$).
   - Multiply the ones digits together: $3 \times 7 = 21$.
   - Put them side by side: **2,021**, which you can verify in an instant on the stack with `43 {{key:ENTER}} 47 {{key:×}}` $\to \mathbf{2021.00}$.
+  - *Special Case — Squaring Any Number Ending in 5 (like $35^2$):* Because $35 \times 35$ has the same tens digit ($3$) and its ones digits add up to $5 + 5 = 10$, the exact same rule applies! Multiply $3$ by the next whole number $4$ ($3 \times 4 = 12\text{ hundreds} = 1,200$) and attach $5 \times 5 = 25$ to get **1,225**—which you can verify on the stack via `{{res:sc6_08_math_quiz_engine_seq_03:keys}}`.
 
 ### Fast Multiplication by 25 (The Four-Quarters Trick)
 Because $4$ quarters make $100$ cents ($25 = 100 \div 4$), multiplying any number by $25$ is the same as **dividing by 4 and multiplying by 100**:
@@ -289,214 +409,13 @@ To check whether a big number divides evenly by $11$, add every other digit in t
   - Second team of alternating digits (tens + thousands): $2 + 8 = 10$.
   - Subtract the two teams: $10 - 10 = 0$. Because $0$ divides evenly by $11$, $8,426$ is a multiple of $11$, which `8426 {{key:ENTER}} 11 {{key:÷R}}` confirms with quotient $X = \mathbf{766}$ and remainder $Y = \mathbf{0}$.
 
----
+### Why Typing Less Means Thinking More (`{{key:?}}`)
 
-## Stepping Into the Cockpit: Six Guided Quiz Flights ({{key:?}})
+Now that you have seen how mental math shortcuts rearrange blocks in your head, watch what happens when you solve a big subtraction puzzle like $1,000 - 647$ on an ordinary calculator versus solving it with a mental complement in `{{key:?}}` Quiz Mode:
 
-Ready to climb all six levels of the mental-math flight simulator? Each stop on this guided tour pairs a physical manipulative strategy with the live quiz prompt, shows the target speed-streak time, and verifies the result in standard numeric mode (`{{key:NUM}}`—for example, checking the Vedic squaring rule $35^2 = (3 \times 4)\text{ hundred} + 25 = 1,225$ with `{{res:sc6_08_math_quiz_engine_seq_03:keys}}`).
-
-### Level 1: Single-Digit Number Bonds (Sums & Differences to 10)
-Strap into the simulator cockpit! Level 1 is your runway warm-up: instead of counting on your fingers, your goal is to train your eyes to recognize number bonds up to 10 in a single glance using your **Math Dominoes** and **Ten-Frame Tray**.
-
-#### Domino Near-Doubles: $4 + 5 = ?$
-We start with a classic near-double. Draw the $[4 \mid 5]$ tile from your **Math Dominoes**: you don't need to count nine dots one by one because the twin $4$-dot patterns leap right out at your eyes ($4 + 4 = 8$), with $1$ extra center dot making $8 + 1 = 9$. When the quiz prompt `4 {{key:ENTER}} 5 {{key:+}} ?` flashes on screen, tap `9 {{key:ENTER}}` (aim for under $< 2.0\text{ seconds}$ to light your first streak pip `●○○○○`).
-
-In `{{key:NUM}}` mode, keying `{{res:sc6_08_drill_01:keys}}` produces **`{{res:sc6_08_drill_01:value}}`**, as pushing `4` onto Floor $Y$ and adding `5` on Floor $X$ merges both domino halves into `9`.
-
-#### Ten-Frame Complements: $10 - 7 = ?$
-Next, let's flip addition around into a ten-frame complement puzzle. Your **Ten-Frame Tray** holds 10 counters in two rows of 5. When you lift away 7 counters (one full row of 5 plus 2 more), your eyes immediately see 3 empty sockets waiting to be filled ($10 - 7 = 3$, because $7$ and $3$ are ten-partners). On the quiz puzzle `10 {{key:ENTER}} 7 {{key:-}} ?` (or Missing-Value Puzzle `10 ? - = 3`), enter `3 {{key:ENTER}}` within $< 2.0\text{ seconds}$.
-
-Checking on the stack with `{{res:sc6_08_drill_02:keys}}` confirms **`{{res:sc6_08_drill_02:value}}`**: starting with a full `10` in Register $Y$ and taking away `7` in Register $X$ leaves its ten-partner `3`.
-
----
-
-### Level 2: Two-Digit Mental Addition & Subtraction (To 100)
-With five fast answers in Level 1, the screen flashes `★ NEXT LEVEL UNLOCKED! ★` and promotes you to Level 2! Notice how every number bond you just mastered in Level 1 now scales up tenfold to let you leap across tens and ones up to 100.
-
-#### Scaling Up to Tens Bonds: $40 + 30 = ?$
-First, watch how single-digit bonds turn into tens bonds. Place 4 counters and 3 counters in your **Ten-Frame Tray** to see $4 + 3 = 7$. Now imagine each counter is a 10-rod: $4\text{ tens} + 3\text{ tens} = 7\text{ tens} = 70$. When `40 {{key:ENTER}} 30 {{key:+}} ?` appears, tap `70 {{key:ENTER}}` (aim for under $< 2.5\text{ seconds}$).
-
-You can verify the sum on the stack via `{{res:sc6_08_drill_09:keys}}` to reach **`{{res:sc6_08_drill_09:value}}`**—adding tens works just like adding ones, with a zero holding the ones place.
-
-#### Two-Jump Mental Subtraction: $80 - 25 = ?$
-What if the second number has both tens and ones, like $80 - 25$? Instead of trying to borrow on imaginary paper in the air, jump in two clean steps: start with 8 tens ($80$) in your **Ten-Frame Tray**, hop back 2 tens to land on $60$ ($80 - 20 = 60$), and then hop back 5 more to land on $55$ ($60 - 5 = 55$). For `80 {{key:ENTER}} 25 {{key:-}} ?` (or Missing-Value Puzzle `80 ? - = 55`), enter `55 {{key:ENTER}}` within $< 3.0\text{ seconds}$.
-
-Evaluating `{{res:sc6_08_drill_10:keys}}` on the stack yields **`{{res:sc6_08_drill_10:value}}`**, showing how subtracting in two mental jumps ($80 \to 60 \to 55$) matches the stack result `55` with zero paper borrowing.
-
----
-
-### Level 3: Multiplication & Division Mastery (Up to $12 \times 12$)
-Now you lift off into orbital flight! Level 3 turns the rectangular tile grids you built in Chapter 02 into lightning-fast multiplication and missing-factor reflexes up to $12 \times 12$.
-
-#### Slicing the $7 \times 8$ Rectangle: $7 \times 8 = ?$
-Many kids find $7 \times 8$ the trickiest fact in the times table—until they slice the rectangle in two! Split 7 rows of 8 into $(5 \times 8) + (2 \times 8)$. Build the $2 \times 8 = 16$ rectangle using 16 of your **24 Array Tiles**, then add the friendly five-times fact $5 \times 8 = 40$ in your head: $40 + 16 = 56$. For `7 {{key:ENTER}} 8 {{key:×}} ?` (or Missing-Value Puzzle `7 ? × = 56`), tap `56 {{key:ENTER}}` (aim for under $< 1.5\text{ seconds}$).
-
-Multiplying on the stack with `{{res:sc6_08_drill_17:keys}}` lands on **`{{res:sc6_08_drill_17:value}}`**. Bonus memory hook: count four digits in a row—$5, 6, 7, 8 \implies 56 = 7 \times 8$!
-
-#### Spotting the Missing Side in the 9s Pattern: $72 \div 9 = ?$
-Division puzzles in Level 3 ask you to spot the missing side of a rectangle. Test the 9s pattern with 18 of your **24 Array Tiles** ($2 \times 9 = 18$—notice how the digits $1 + 8 = 9$ always add up to $9$, and the tens digit $1$ is always $1$ less than the multiplier $2$). So when you see $72 \div 9$, look at the tens digit $7$ and add $1$: $7 + 1 = 8$ rows of 9 ($8 \times 9 = 72 \implies 72 \div 9 = 8$)! When `72 {{key:ENTER}} 9 {{key:÷}} ?` appears, enter `8 {{key:ENTER}}` within $< 1.8\text{ seconds}$.
-
-Confirming in `{{key:NUM}}` mode via `{{res:sc6_08_drill_18:keys}}` returns **`{{res:sc6_08_drill_18:value}}`**, as dividing `72` in Register $Y$ by `9` in Register $X$ reveals the missing side length `8`.
-
----
-
-### Level 4: Remainder Division & Fraction Benchmarks
-Welcome to Level 4! Here the Quiz Engine shifts from whole-number rectangles into leftover tiles (`{{key:÷R}}`) and your 84 mm **Fraction Towers** (`{{key:SIMP}}`), training you to combine and simplify fractions in your head.
-
-#### Five-Tile Towers with Leftovers: $17 \div 5 \to Q=?, R=?$
-Let's start with a division puzzle that doesn't come out even. Take 17 tiles from your **24-Tile Counting & Array Studio** and stack them into columns of 5. You build 3 complete 5-towers ($15$ tiles), with 2 leftover tiles resting in your hand ($Q=3, R=2$). For `17 {{key:ENTER}} 5 {{key:÷R}} ?`, tap `3 {{key:ENTER}}` (aim for under $< 3.5\text{ seconds}$). Running `{{res:sc6_08_drill_25:keys}}` on the stack produces **`{{res:sc6_08_drill_25:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `17` | 0 | 0 | 0 | 17 |
-| `{{key:ENTER}}` | 0 | 0 | 17 | 17 |
-| `{{key:5}}` | 0 | 0 | 17 | 5 |
-| `{{key:÷R}}` | 0 | 0 | 2 | 3 |
-
-*(Register $X$ holds quotient 3, Register $Y$ holds remainder 2; tap `{{key:x⇄y}}` to inspect remainder)*.
-
-#### Stacking Halves and Quarters: $1/2 + 1/4 = ?$
-Now bring out your **Fraction Towers** and slide them into the twin comparator well. A single $1/2$ tower stands at the exact same height as two $1/4$ pieces ($2/4$). Stacking one more $1/4$ piece on top builds a $3/4$ tower ($2/4 + 1/4 = 3/4$). When `1/2 {{key:ENTER}} 1/4 {{key:+}} ?` is shown, enter `{{key:.}} 3 {{key:.}} 4 {{key:ENTER}}` within $< 3.0\text{ seconds}$. You can verify that fraction tower height on the stack with `{{res:sc6_08_drill_26:keys}}`, which yields **`{{res:sc6_08_drill_26:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 1 {{key:.}} 2` | 0 | 0 | 0 | 1/2 |
-| `{{key:ENTER}}` | 0 | 0 | 1/2 | 1/2 |
-| `{{key:.}} 1 {{key:.}} 4` | 0 | 0 | 1/2 | 1/4 |
-| `{{key:+}}` | 0 | 0 | 0 | 3/4 |
-
-#### Trading Sixths Down to a Half: $5/6 - 1/3 = ?$
-What happens when you subtract two fractions and the leftover tower can be traded for a simpler block? Stand five $1/6$ pieces ($5/6$) next to a $1/3$ piece in your **Fraction Towers** studio. Because the $1/3$ piece matches two $1/6$ blocks ($2/6$), taking away two sixths from five sixths leaves three $1/6$ blocks ($3/6$)—which stands the exact same height as a single $1/2$ tower! For `5/6 {{key:ENTER}} 1/3 {{key:-}} ?`, key in `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}}` in under $< 3.5\text{ seconds}$. Evaluating `{{res:sc6_08_drill_27:keys}}` on the stack reduces the difference to **`{{res:sc6_08_drill_27:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 5 {{key:.}} 6` | 0 | 0 | 0 | 5/6 |
-| `{{key:ENTER}}` | 0 | 0 | 5/6 | 5/6 |
-| `{{key:.}} 1 {{key:.}} 3` | 0 | 0 | 5/6 | 1/3 |
-| `{{key:-}}` | 0 | 0 | 0 | 3/6 |
-| `{{key:SIMP}}` | 0 | 0 | 0 | 1/2 |
-
-#### Meeting at Twelfths: $2/3 + 1/4 = ?$
-Now let's advance to Band 2 of Level 4, where neither denominator divides evenly into the other ($3$ and $4$). Reach for the twelfths pieces in your **Fraction Towers** kit: two $1/3$ pieces match eight $1/12$ pieces ($8/12$), and one $1/4$ piece matches three $1/12$ pieces ($3/12$). Stacking them together gives $8 + 3 = 11$ twelfths ($11/12$). On `2/3 {{key:ENTER}} 1/4 {{key:+}} ?`, press `{{key:.}} 11 {{key:.}} 12 {{key:ENTER}}` (target time: $< 4.0\text{ seconds}$). Checking on the stack with `{{res:sc6_08_drill_28:keys}}` confirms **`{{res:sc6_08_drill_28:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 2 {{key:.}} 3` | 0 | 0 | 0 | 2/3 |
-| `{{key:ENTER}}` | 0 | 0 | 2/3 | 2/3 |
-| `{{key:.}} 1 {{key:.}} 4` | 0 | 0 | 2/3 | 1/4 |
-| `{{key:+}}` | 0 | 0 | 0 | 11/12 |
-
-#### Shrinking a Fraction by Its Greatest Common Factor: $\text{Simplify } 18/24 \to ?$
-Sometimes the fastest move in Level 4 is shrinking a big fraction down to its simplest building blocks. Build two **Prime Factor Block** towers or group your **24 Array Tiles**: 18 is three groups of 6 ($3 \times 6$), and 24 is four groups of 6 ($4 \times 6$). Dividing both top and bottom by their Greatest Common Factor ($\text{GCF} = 6$) simplifies $18/24$ right down to $3/4$. For `18/24 {{key:SIMP}} ?`, enter `{{key:.}} 3 {{key:.}} 4 {{key:ENTER}}` within $< 3.0\text{ seconds}$. Pressing `{{res:sc6_08_drill_30:keys}}` on the stack simplifies the ratio directly to **`{{res:sc6_08_drill_30:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 18 {{key:.}} 24` | 0 | 0 | 0 | 18/24 |
-| `{{key:ENTER}}` | 0 | 0 | 18/24 | 18/24 |
-| `{{key:SIMP}}` | 0 | 0 | 18/24 | 3/4 |
-
-#### Crossing One Whole Tower: $5/8 + 1/2 = ?$
-For our final Level 4 challenge, watch what happens when two fraction towers grow taller than $1$ whole! In your **Fraction Towers** comparator well, a $1/2$ tower matches four $1/8$ pieces ($4/8$). Adding five $1/8$ pieces makes nine $1/8$ pieces ($9/8$), which stands 1 full whole tower tall plus 1 extra eighth ($1\ 1/8$). On `5/8 {{key:ENTER}} 1/2 {{key:+}} ?`, press `1 {{key:.}} 1 {{key:.}} 8 {{key:ENTER}}` (target time: $< 4.0\text{ seconds}$). Verifying on the stack with `{{res:sc6_08_drill_32:keys}}` yields **`{{res:sc6_08_drill_32:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 5 {{key:.}} 8` | 0 | 0 | 0 | 5/8 |
-| `{{key:ENTER}}` | 0 | 0 | 5/8 | 5/8 |
-| `{{key:.}} 1 {{key:.}} 2` | 0 | 0 | 5/8 | 1/2 |
-| `{{key:+}}` | 0 | 0 | 0 | 1 1/8 |
-
----
-
-### Level 5: Multi-Step Order of Operations, Decimals & Percents
-You have reached Level 5! Now the Quiz Engine mixes two-step expressions with mixed numbers so your brain learns to spot which operation must happen *first* before combining the pieces.
-
-#### Dividing Before Adding: $24 \div 6 + 7 = ?$
-Look at $24 \div 6 + 7$: if you added $6 + 7 = 13$ first, you wouldn't even be able to divide $24$ evenly! Use all **24 Array Tiles** from your kit: because division happens before addition, first split the 24 tiles into 6 equal rows of 4 tiles ($24 \div 6 = 4$), and then bring in 7 counters from your **Ten-Frame Tray** to finish with 11 ($4 + 7 = 11$). When `24 ÷ 6 + 7 = ?` appears, tap `11 {{key:ENTER}}` (aim for under $< 2.5\text{ seconds}$). Evaluating `{{res:sc6_08_drill_33:keys}}` on the stack confirms **`{{res:sc6_08_drill_33:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `24` | 0 | 0 | 0 | 24 |
-| `{{key:ENTER}}` | 0 | 0 | 24 | 24 |
-| `{{key:6}}` | 0 | 0 | 24 | 6 |
-| `{{key:÷}}` | 0 | 0 | 0 | 4 |
-| `{{key:7}}` | 0 | 0 | 4 | 7 |
-| `{{key:+}}` | 0 | 0 | 0 | 11 |
-
-#### Dodging the Left-to-Right Trap: $15 - 3 \times 4 = ?$
-Here is the classic trap that catches anyone who reads strictly left-to-right ($15 - 3 = 12$, times $4 = 48$—wrong!). Set out 15 tiles from your **24 Array Tiles**: because multiplication is a package deal, you must first group $3 \times 4 = 12$ of those tiles into a rectangle and lift that whole rectangle away from the 15 tiles, leaving $15 - 12 = 3$ tiles! Notice how the RPN stack handles this naturally: `15` waits patiently on Floor $Z$ while `3` and `4` multiply on Floors $Y$ and $X$. For `15 - 3 × 4 = ?`, key in `3 {{key:ENTER}}` in under $< 2.5\text{ seconds}$. Running `{{res:sc6_08_drill_35:keys}}` on the stack lands on **`{{res:sc6_08_drill_35:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `15` | 0 | 0 | 0 | 15 |
-| `{{key:ENTER}}` | 0 | 0 | 15 | 15 |
-| `{{key:3}}` | 0 | 0 | 15 | 3 |
-| `{{key:ENTER}}` | 0 | 15 | 3 | 3 |
-| `{{key:4}}` | 0 | 15 | 3 | 4 |
-| `{{key:×}}` | 0 | 0 | 15 | 12 |
-| `{{key:-}}` | 0 | 0 | 0 | 3 |
-
-#### Unboxing Parentheses First: $(18 - 6) \div 3 = ?$
-What when parentheses wrap around the subtraction, like $(18 - 6) \div 3$? Parentheses mean *"handle this box of tiles first!"* From 18 of your **24 Array Tiles**, remove 6 tiles to leave 12 tiles ($18 - 6 = 12$), and then share those 12 tiles equally into 3 rows of 4 ($12 \div 3 = 4$). On `(18 - 6) ÷ 3 = ?`, press `4 {{key:ENTER}}` (target time: $< 2.5\text{ seconds}$). In `{{key:NUM}}` mode, keying `{{res:sc6_08_drill_36:keys}}` produces **`{{res:sc6_08_drill_36:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `18` | 0 | 0 | 0 | 18 |
-| `{{key:ENTER}}` | 0 | 0 | 18 | 18 |
-| `{{key:6}}` | 0 | 0 | 18 | 6 |
-| `{{key:-}}` | 0 | 0 | 0 | 12 |
-| `{{key:3}}` | 0 | 0 | 12 | 3 |
-| `{{key:÷}}` | 0 | 0 | 0 | 4 |
-
-#### Combining Mixed-Number Towers: $1\ 1/2 + 2\ 1/4 = ?$
-Level 5 also mixes whole numbers and fractions together. When you see $1\ 1/2 + 2\ 1/4$, stack your **Fraction Towers** in two quick steps: first combine the whole towers ($1 + 2 = 3$), then combine the fractional pieces ($1/2 = 2/4$, plus $1/4$ gives $3/4$) to reach $3\ 3/4$. When `1 1/2 {{key:ENTER}} 2 1/4 {{key:+}} ?` is shown, tap `3 {{key:.}} 3 {{key:.}} 4 {{key:ENTER}}` (aim for under $< 3.5\text{ seconds}$). Verifying on the stack with `{{res:sc6_08_drill_37:keys}}` yields **`{{res:sc6_08_drill_37:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:1}} {{key:.}} 1 {{key:.}} 2` | 0 | 0 | 0 | 1 1/2 |
-| `{{key:ENTER}}` | 0 | 0 | 1 1/2 | 1 1/2 |
-| `{{key:2}} {{key:.}} 1 {{key:.}} 4` | 0 | 0 | 1 1/2 | 2 1/4 |
-| `{{key:+}}` | 0 | 0 | 0 | 3 3/4 |
-
-#### Multiplying on the Upper Shelves Before Adding: $8 + 4 \times 5 = ?$
-One more order-of-operations check to lock in your Level 5 promotion! In $8 + 4 \times 5$, resist the urge to add $8 + 4$ first: build the $4 \times 5 = 20$ rectangle using 20 of your **24 Array Tiles** (or fill both **Ten-Frame Trays**), then add 8 more counters to get $20 + 8 = 28$. For `8 + 4 × 5 = ?`, press `28 {{key:ENTER}}` (target time: $< 2.5\text{ seconds}$). Evaluating `{{res:sc6_08_drill_40:keys}}` on the stack confirms **`{{res:sc6_08_drill_40:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:8}}` | 0 | 0 | 0 | 8 |
-| `{{key:ENTER}}` | 0 | 0 | 8 | 8 |
-| `{{key:4}}` | 0 | 0 | 8 | 4 |
-| `{{key:ENTER}}` | 0 | 8 | 4 | 4 |
-| `{{key:5}}` | 0 | 8 | 4 | 5 |
-| `{{key:×}}` | 0 | 0 | 8 | 20 |
-| `{{key:+}}` | 0 | 0 | 0 | 28 |
-
----
-
-### Level 6: Pre-Algebra & Competitive Speed Sprints
-Congratulations—you have unlocked **Level 6 (`L6: Math Champ`)**, the highest tier on the SC-6! Here signed integer zero-pairs (`{{key:+/-}}`), prime factor intersections (`{{key:GCF}}` and `{{key:LCM}}`), and the 8 Mental Math Shortcuts come together for championship-speed sprints.
-
-#### Canceling Zero-Pairs in Your Head: $-14 + 9 = ?$
-Picture the hot-air balloon and sandbags (or two-color counters) from Chapter 07! Place 14 red negative counters (`-1` sandbags) and 9 yellow positive counters (`+1` flame puffs) in your two **Ten-Frame Trays**. Nine positive counters cancel 9 negative counters into zero-pairs, leaving 5 red negative counters ($-5$). On `-14 {{key:ENTER}} 9 {{key:+}} ?`, key in `5 {{key:+/-}} {{key:ENTER}}` in under $< 1.8\text{ seconds}$. Running `{{res:sc6_08_drill_47:keys}}` on the stack lands on **`{{res:sc6_08_drill_47:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `14` | 0 | 0 | 0 | 14 |
-| `{{key:+/-}}` | 0 | 0 | 0 | $-14.0000$ |
-| `{{key:ENTER}}` | 0 | 0 | $-14.0000$ | $-14.0000$ |
-| `{{key:9}}` | 0 | 0 | $-14.0000$ | 9 |
-| `{{key:+}}` | 0 | 0 | 0 | $-5.0000$ |
-
-#### Championship Factor Intersection: GCF of $24$ and $36 = ?$
-For our final championship sprint challenge, find the largest shared building block between $24$ and $36$. Stand up two prime factor towers using your **Prime Factor Blocks**: $24 = 2 \times 2 \times 2 \times 3$ and $36 = 2 \times 2 \times 3 \times 3$. Pull out the blocks both towers share—two $2$-blocks and one $3$-block—and multiply them in your head: $2 \times 2 \times 3 = 12$. For `24 {{key:ENTER}} 36 {{key:GCF}} ?`, press `12 {{key:ENTER}}` (target time: $< 1.8\text{ seconds}$). Verifying on the stack with `{{res:sc6_08_drill_48:keys}}` confirms **`{{res:sc6_08_drill_48:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `24` | 0 | 0 | 0 | 24 |
-| `{{key:ENTER}}` | 0 | 0 | 24 | 24 |
-| `36` | 0 | 0 | 24 | 36 |
-| `{{key:GCF}}` | 0 | 0 | 0 | 12 |
-
-*(Bonus `{{key:LASTX}}` move: Because `{{key:GCF}}` saved `36` inside `LASTX`, tapping `24 {{key:LASTX}} {{key:LCM}}` right afterward checks the matching Least Common Multiple `72` without re-typing `36`.)*
+| Challenge / Equation | The Algebraic Calculator Trap (Standard Entry) | The StackCalc SC-6 + Manipulative Method | Keystroke Reduction | Live Stack Visibility | Learning Breakthrough |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Rapid Subtraction Complement**: $1000 - 647 = 353$ | Keying the full subtraction `1 0 0 0 - 6 4 7 =` takes **8 physical keystrokes**—and on paper, crossing out three zeros requires three separate column borrows. | **9s Complement Mental Shortcut:** subtract the hundreds and tens digits from 9, and the ones digit from 10: $(9-6)(9-4)(10-7) = \mathbf{353}$. In Quiz Mode, you type `3 5 3 {{key:ENTER}}` (**4 physical keystrokes**)—and in `{{key:NUM}}` mode, `1 0 0 0 {{key:ENTER}} 6 4 7 {{key:-}}` (8 physical keystrokes) verifies both numbers side by side. | **50% fewer strokes in Quiz Mode (4 vs. 8)** | In `{{key:NUM}}` verification, Register $Y$ holds `1000` while Register $X$ holds `647` before `{{key:-}}` confirms `353`. | Learners discover the base-10 complement rule ($999 + 1 = 1000$) using Place Value blocks, eliminating multi-column borrowing across zeros completely. |
 
 ---
 
@@ -505,7 +424,7 @@ For our final championship sprint challenge, find the largest shared building bl
 > *For 29 additional worked problems with full 4-register stack tables, see Chapter 8 of the [SC-6 Elementary Companion Problem & Activity Workbook](../../curriculum/sc6-elementary-companion-workbook.md).*
 
 Ready to take your mental-math flight simulator skills into friendly competition? Here is how to pair the SC-6 Quiz Engine (`{{key:?}}`) and your **Quest Scoreboard** with the [Big Ideas Math Middle School Supplement](../../curriculum/big-ideas-middle-school-sc6-workbook.md) (**Units 1–10**), *Timed Proficiency Trials*, and *12-Unit Curriculum Guide*:
-- **Workbook-to-Quiz Level Alignment:** Every worksheet in the [Big Ideas Math Middle School Supplement](../../curriculum/big-ideas-middle-school-sc6-workbook.md) pairs physical block proofs with RPN stack verification. Warm up with **Quiz Levels 1–3** for Whole-Number Operations & Factoring (**Unit 1**), **Level 4** for Remainder Division & Fraction Towers (**Unit 2**), **Level 5** for Order of Operations, Decimals, Ratios & Percents (**Units 1, 2 & 3**), and **Levels 6–8** for Signed Integers, GCF/LCM, Algebraic Expressions, Geometry, and Statistics (**Units 4–10**).
+- **Workbook-to-Quiz Level Alignment:** Every worksheet in the [Big Ideas Math Middle School Supplement](../../curriculum/big-ideas-middle-school-sc6-workbook.md) pairs physical block proofs with RPN stack verification. Warm up with **Quiz Levels 1–3** for Whole-Number Operations & Factoring (**Unit 1**), **Level 4** for Remainder Division & Fraction Towers (**Unit 2**), **Level 5** for Order of Operations, Decimals, Ratios & Percents (**Units 1, 2 & 3**), and **Level 6** for Signed Integers, GCF/LCM, Algebraic Expressions, Geometry, and Statistics (**Units 4–10**).
 
 1. **The Synchronized Seed-Code Duel (Timed Proficiency Trials — Head-to-Head Sprint):** Grab a partner or family member with a second SC-6 (or take turns on one calculator after a reset). Both players enter the same Classroom Seed Code—try `42 {{key:?}}`—so the Quiz Engine deals the exact same sequence of shuffled puzzles. Who can hit a 5-Fast-Streak (`●●●●●`) and advance to the next level first without a single `-10` penalty?
 2. **The Ends-in-5 Beat-the-Calculator Trick (Big Ideas Middle School Supplement):** Challenge an adult at the dinner table: let them use a smartphone calculator while you solve $25^2, 35^2, 45^2, 65^2, 75^2,$ and $85^2$ purely in your head using the tens-partner rule: multiply the tens digit by the next higher whole number and attach $25$ at the end ($6 \times 7 = 42 \to 4,225$). Verify each win in one tap on your SC-6 with `{{key:x²}}`!
@@ -522,4 +441,4 @@ Combining the hardware quiz mode (`{{key:?}}`) with mental math strategies build
 3. **The 6-Level Adaptive Ladder:** You advanced across number bonds, multi-digit operations, times tables, fraction remainders, and rapid pre-algebra shortcuts.
 4. **Mental Math Signature Keys:** You applied the eight mental math shortcuts—from the 11s trick to squaring numbers that end in 5—reducing response times without scratch paper.
 
-In **[Chapter 09: Applied STEM Labs & Real-World Projects](09-applied-stem-labs.md)**, you will take all your computational speed, geometric visualization, and fractional precision out into the real world. You will weigh 3D-printed blocks and slice $0.20\text{ mm}$ nozzle layers, time a swinging clock pendulum to find its 10-swing average, track solar-oven heating rates and bean sprout growth, scale kitchen recipes, launch tabletop catapults, compound bicycle and clock gear trains, and lift loads with hydraulic syringes. Grab your safety goggles—it's time to build!
+In **[Chapter 9: Kitchen-Table Inventions & Maker Projects](09-applied-stem-labs.md)**, you will take all your math skills out into the real world. You will weigh 3D-printed blocks and count $0.20\text{ mm}$ printer layers, time a swinging pendulum to find its 10-swing average, cook s'mores in a pizza-box solar oven, measure bean sprout growth, scale bakery recipes, launch tabletop catapults, test bicycle and robot gears, and lift heavy books with water syringes. Grab your safety glasses—it's time to build!

@@ -1,9 +1,9 @@
 ---
-title: "Chapter 3: Counting, Number Lines & Place Value Studio"
+title: "Chapter 3: Ten-Frames, Number Lines & Place Value"
 description: "Concrete manipulative integration on the SC-6: Ten-Frame Studio, Step Counter dynamics, Number Line jump arcs, Rekenrek bead racks, Place Value decomposition, and Big Numbers in Nature."
 ---
 
-# Chapter 3: Counting, Number Lines & Place Value Studio
+# Chapter 3: Ten-Frames, Number Lines & Place Value
 
 ## The Greatest Invention in Human History: How Ten Fingers and an Empty Shell Created Zero and Place Value
 
@@ -17,12 +17,7 @@ In ancient India and among the classic Maya of Mesoamerica {{cite:ifrah2000}}, t
 
 The decimal system was born of our anatomy: ten fleshy fingers resting on a tabletop.
 
-On the **StackCalc SC-6**, this five-thousand-year evolution is not an abstract lecture; it is a living tactile laboratory. When you touch the precision-milled **Ten-Frame Studio** or slide the vivid dual-color beads of the **Number Rack**, you recreate the ancient counting table with your own fingers. And when you press `{{key:PV}}` Place Value mode or watch numbers leap across the open number line (`{{key:LINE}}`), you see the machinery of base-10 decomposition come alive.
-
-> **Keys & Tools in This Chapter**
-> - **Visual Sandbox Keys:** `{{key:▦}}` Ten-Frame Studio, `{{key:LINE}}` Number Line, `{{key:COUNT}}` Step Counter / Number Rack, `{{key:PV}}` Place Value Mode, and `{{key:.}}` (drops counters / steps by one).
-> - **Core Operations:** `{{key:+}}`, `{{key:-}}`, `{{key:ENTER}}`, `{{key:C}}`, `{{key:<-}}`, Digits `{{key:0}}`–`{{key:9}}`.
-> - **Stack & Mode Navigation:** Switch between a simple 2-shelf view or 4-shelf view with `{{key:FLAGS}}`, use `{{key:REP}}` for skip-counting, and press `{{key:NUM}}` or `{{key:C}}` to return cleanly to standard numbers.
+On the **StackCalc SC-6**, this five-thousand-year evolution is not an abstract lecture; it is a living tactile laboratory. When you touch the precision-milled **Ten-Frame Studio** or slide the vivid dual-color beads of the **Number Rack**, you recreate the ancient counting table with your own fingers. Throughout this chapter, you will open four visual picture windows right on your keypad—`{{key:▦}}` (Ten-Frame Studio), `{{key:COUNT}}` (Number Rack), `{{key:LINE}}` (Open Number Line), and `{{key:PV}}` (Place Value X-Ray)—using `{{key:.}}` to drop single counters, combining and separating numbers on the stack, and returning to standard numbers anytime with `{{key:NUM}}`.
 
 ---
 
@@ -144,6 +139,35 @@ Now watch the exact same bridge happen on your Ten-Frame screen: press `{{key:8}
 | `{{key:2}} {{key:+}}` | 0 | 0 | 0 | 10 |
 | `{{key:3}} {{key:+}}` | 0 | 0 | 0 | 13 |
 
+### The Bioluminescent Nature Lab: Ten-Frames & Bridging Ten in Action
+To see how Ten-Frames and Bridging Ten help real scientists in the field, step into the shoes of a junior field biologist inside a glowing rainforest nature dome! Researchers bring in firefly terrariums, meteorite fragments, crystal geodes, weather sensors, and glowing algae tubes. Using your Ten-Frame trays (`{{key:▦}}`) and the SC-6 stack, you will spot groups at a glance, bridge across 10 without counting on your fingers, and step back across 10 with ease.
+
+Your first stop in the rainforest dome is a glass terrarium where 5 glowing lantern fireflies rest on the top branch. Just after dusk, 3 more fireflies land on the lower fern branch, and your lab partner asks how many fireflies are glowing in the terrarium altogether. On your Ten-Frame tray, fill the top row of Frame 1 with 5 counters and place 3 counters on the bottom row. Because the top row of a ten-frame always holds 5, your eyes immediately see *"5 on top and 3 on the bottom makes 8"*—zero finger-counting needed! When you lift the 5 upper fireflies onto Shelf $Y$ and add the 3 lower fireflies by pressing `{{res:sc6_03_counting_place_value_seq_02:keys}}`, the stack combines both branches to show **`{{res:sc6_03_counting_place_value_seq_02:value}}`** glowing fireflies on Ground Shelf $X$.
+
+Right beside the firefly habitat, a planetary geologist is sorting magnetic iron meteorite pebbles into 10-slot specimen trays. The first tray already holds 9 pebbles, and a rover scoop delivers 4 more pebbles from a crater rim. What happens when we add $9 + 4$ across the 10-boundary? Look at your Ten-Frame tray: with 9 counters in Frame 1, there is only **1 empty pocket** left. Instead of counting upward by ones, split your 4 new pebbles into **$1 + 3$** so 1 pebble snaps the first tray shut at 10, and the other 3 pebbles land in Frame 2: pressing `{{res:sc6_03_counting_place_value_seq_03:keys}}` bridges cleanly through $10$ and lands on **`{{res:sc6_03_counting_place_value_seq_03:value}}`** pebbles.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `9 {{key:ENTER}}` | 0 | 0 | 9 | 9 | Load 9 meteorite pebbles into $X$ and duplicate to Mezzanine $Y$ |
+| `1 {{key:+}}` | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 completely fills and flashes ($X = 10$) |
+| `3 {{key:+}}` | 0 | 0 | 0 | 13 | Combine ten and three; Frame 2 holds 3 dots, giving total $X = 13$ pebbles |
+
+Once Frame 1 locks in at 10, adding the remaining 3 pebbles is an instant visual snap ($10 + 3 = 13$).
+
+Walking deeper into the geology alcove, a cave explorer cracks open a limestone boulder and finds 7 purple amethyst crystals in the first pocket and 6 sparkling quartz crystals in the second pocket. How does that same Bridging Ten trick work when we start at 7 instead of 9? On your Ten-Frame tray, 7 counters fill the top row of 5 plus 2 on the bottom row, leaving **3 empty pockets** in Frame 1—which invites you to split the 6 quartz crystals into twin halves ($3 + 3$). Watch how the shelves and the Ten-Frame screen move in lockstep as you key in `{{res:sc6_03_counting_place_value_seq_05:keys}}` to reach **`{{res:sc6_03_counting_place_value_seq_05:value}}`**: first, `7 {{key:ENTER}}` loads the 7 amethyst crystals into Ground Shelf $X$ and duplicates them onto Waiting Shelf $Y$. Next, typing `3 {{key:+}}` drops the first 3 quartz crystals into those 3 empty pockets—snapping Frame 1 completely full so the display flashes the clean benchmark `10` ($X = 10$). Then a second `3 {{key:+}}` places the remaining 3 quartz crystals into the top row of Frame 2, uniting 1 full ten-frame with 3 loose crystals to display `13` ($X = 13$). Even better, notice that right after the first `3 {{key:+}}` reaches 10, the number `3` is already sitting in your `LASTX` backup memory—so you can also tap `{{key:LASTX}} {{key:+}}` to add the second 3 without even typing the digit again!
+
+From the crystal alcove, you step out onto the dome's canopy deck carrying a foam launch case that holds a full set of 10 micro-weather sensors. Your team clips 4 sensors onto kite strings and launches them into the rainforest wind, leaving the rest in the case. Fill Frame 1 with all 10 counters and pop 4 counters out to see the full top row of 5 plus 1 counter on the bottom row ($6$). When you load the full crate onto Shelf $Y$ and subtract the 4 launched sensors by pressing `{{res:sc6_03_counting_place_value_seq_07:keys}}`, Ground Shelf $X$ immediately shows **`{{res:sc6_03_counting_place_value_seq_07:value}}`** sensors still nestled in the foam case. *(Want to prove none were lost when you reel the kites back in? Tap `{{key:LASTX}} {{key:+}}` and watch the 4 launched sensors reunite with the 6 in the crate to restore `10`!)*
+
+Back inside the wet lab, a bioluminescence rack holds 14 glowing algae test tubes—1 full rack of 10 plus 4 extra tubes in the second rack—and a student scientist takes 6 tubes to the microscope station. Just as we bridged *forward* across 10 with the meteorite pebbles and geode crystals, we can bridge *backward* across 10 when subtracting $14 - 6$! Instead of counting backward one by one, hop back to the landmark 10 first by splitting the 6 tubes you are removing into **$4 + 2$**: first remove all 4 tubes from Frame 2 (leaving a clean 10 in Frame 1), then take 2 more tubes from Frame 1. Pressing `{{res:sc6_03_counting_place_value_seq_08:keys}}` steps back to `10` and then down to **`{{res:sc6_03_counting_place_value_seq_08:value}}`** glowing tubes.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `14 {{key:ENTER}}` | 0 | 0 | 14 | 14 | Load 14 glow-tubes into $X$ and duplicate to Mezzanine $Y$ |
+| `4 {{key:-}}` | 0 | 0 | 0 | 10 | First subtraction empties Frame 2, leaving clean benchmark ten ($X = 10$) |
+| `2 {{key:-}}` | 0 | 0 | 0 | 8 | Second subtraction takes 2 from Frame 1, leaving 8 glow-tubes ($X = 8$) |
+
+Splitting $-6$ into $-4$ and $-2$ turns a tricky teen subtraction into two effortless mental hops ($14 \to 10 \to 8$).
+
 ---
 
 ## Step-Counter Towers & Stacking Tile Heights
@@ -165,9 +189,7 @@ Every interlocking Counting Tile adds exactly $7.0\text{ mm}$ of visible height.
 | **Tile 6 (`X = 6`)** | $42.0\text{ mm}$ | Halfway datum $= 1/2$ Fraction Tower |
 | **Tile 12 (`X = 12`)** | $84.0\text{ mm}$ | Full $1\text{-Whole}$ Master Fraction Tower |
 
-#### Three Ways to Climb (and Count Down) Your Tile Tower
-
-First, try climbing in **2-Shelf Mode (`{{key:FLAGS}}` $\to$ `2-LV`)**: place 1 white tile on your desk ($7.0\text{ mm}$) and press `{{res:sc6_03_counting_place_value_seq_39:keys}}` to reach $X = 2$ as you snap a second tile on top ($14.0\text{ mm}$). Because Shelf $Y$ is the top shelf in `2-LV` mode, it keeps `1` locked in place—so every time you snap another tile onto your tower and tap `{{key:+}}`, the screen climbs in lockstep ($3, 4, 5 \dots 12$). When you snap the 12th tile on top, stand your 12-tile stack next to the white **1-Whole Fraction Tower**: both stand at the exact same **$84.0\text{ mm}$** height!
+You can climb—and count down—that 12-story tile tower on your calculator in three different ways, depending on how many shelves your elevator is using. First, try climbing in **2-Shelf Mode (`{{key:FLAGS}}` $\to$ `2-LV`)**: place 1 white tile on your desk ($7.0\text{ mm}$) and press `{{res:sc6_03_counting_place_value_seq_39:keys}}` to reach $X = 2$ as you snap a second tile on top ($14.0\text{ mm}$). Because Shelf $Y$ is the top shelf in `2-LV` mode, it keeps `1` locked in place—so every time you snap another tile onto your tower and tap `{{key:+}}`, the screen climbs in lockstep ($3, 4, 5 \dots 12$). When you snap the 12th tile on top, stand your 12-tile stack next to the white **1-Whole Fraction Tower**: both stand at the exact same **$84.0\text{ mm}$** height!
 
 | Keystroke | Register Y (Constant) | Register X (Display) | Physical Tile Height on Desk (7.0 mm per Tile) |
 | :--- | :--- | :--- | :--- |
@@ -213,6 +235,24 @@ Third, you can run a **Rocket Launch Countdown** by unstacking a 10-tile tower (
 | `{{key:-}}` | 10 | 1 |
 | `{{key:-}}` | 10 | 0 |
 
+### Observatory Step Ladders & Rhythmic Countdowns
+Now let's take those step-counting ladders up to a mountaintop astronomical observatory! Inside the optics and planetary motion labs, technicians calibrate paired sensors, launch weather balloons, and track orbiting moons using rhythmic step-counting ladders in 2-Shelf (`2-LV`) and 4-Shelf (`4-LV`) modes.
+
+In the observatory optics lab, technicians calibrate paired star sensors by counting by 2s up to 20. Remember our step-counter discovery from Chapter 2: in **2-Shelf mode (`2-LV`)**, Shelf $Y$ is the roof of the stack, so it holds onto your step size (`2`) across every single tap of `{{key:+}}`! Switch to `{{key:FLAGS}} 2-LV` and climb the twos ladder by pressing `{{res:sc6_03_counting_place_value_seq_44:keys}}`, which steps evenly by twos all the way to **`{{res:sc6_03_counting_place_value_seq_44:value}}`**. After `2 {{key:ENTER}} 2 {{key:+}}` shows $Y = 2,\; X = 4$, each rhythmic tap of `{{key:+}}` advances through $6, 8, 10, 12, 14, 16, 18,$ up to $20$ while Shelf $Y$ keeps the constant `2` locked in place.
+
+Once the star sensors are calibrated, you step out onto the observatory roof deck, where the flight director prepares to launch a high-altitude weather balloon by counting down from 50 to 0 by 5s. Each `5 {{key:-}}` step drops the countdown by 5 in a steady rhythm until liftoff at zero: keying in `{{res:sc6_03_counting_place_value_seq_47:keys}}` steps down five meters of cable at a time until Ground Shelf $X$ reaches **`{{res:sc6_03_counting_place_value_seq_47:value}}`**. Starting with `50 {{key:ENTER}} 5 {{key:-}}` $\to$ $45$, nine more steps count down through $40, 35, 30, \dots, 0$ to reach liftoff at $X = 0$! *(Tip: You can also press `{{key:LASTX}} {{key:-}}` to reuse the `5` from `LASTX`.)*
+
+What if you want a one-tap skip-counting ladder with `{{key:REP}}` while staying in standard **4-Shelf mode (`4-LV`)**? Back inside the planetary motion lab, astronomers track Jupiter's three locked Galilean moons (Io, Europa, and Ganymede) by generating multiples of 3. Pressing Constant Repeat (`{{key:REP}}`) fills all four floors ($T, Z, Y, X$) with `3`, so every tap of `{{key:+}}` automatically feeds a fresh `3` down from the Penthouse roof: `3 {{key:REP}} {{key:+}} {{key:+}} {{key:+}}`.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `3 {{key:REP}}` | 3 | 3 | 3 | 3 | The `{{key:REP}}` repeat key replicates 3 across all registers ($T, Z, Y, X$) |
+| `{{key:+}}` | 3 | 3 | 3 | 6 | First addition yields 6; register $T$ preserves constant 3 |
+| `{{key:+}}` | 3 | 3 | 3 | 9 | Stack drop supplies 3 automatically; total reaches 9 |
+| `{{key:+}}` | 3 | 3 | 3 | 12 | Constant replicates from top of stack ($X = 12$) |
+
+Because Penthouse $T$ copies itself every time the stack drops, you never run out of 3s!
+
 ---
 
 ### Why Adding Odd Numbers Always Builds a Square (The L-Shape Pattern)
@@ -235,12 +275,7 @@ You can solve this mystery with your own hands in thirty seconds! Grab 16 Counti
 
 Now you see the secret: **every odd number is really two matching side arms plus one corner tile!** Whenever you wrap that L-shaped border around a square, it grows the width by 1 and the height by 1 at the exact same time.
 
-Let's build those growing squares on the SC-6 stack and check the side length at the end with the square-root key (`{{key:√x}}`):
-- Start with `{{res:sc6_03_counting_place_value_seq_40:keys}}` $\longrightarrow \mathbf{4}$ ($2^2$), matching your 1 white center tile ($Y = 1$) wrapped by a 3-tile blue L-border ($X = 4$).
-- Tap `{{key:5}} {{key:+}}` to wrap the 5-tile gold border around the corner $\longrightarrow \mathbf{9}$ ($3 \times 3$ square).
-- Tap `{{key:7}} {{key:+}}` to wrap the 7-tile gray border $\longrightarrow \mathbf{16}$ ($4 \times 4$ square).
-- Tap `{{key:9}} {{key:+}}` to wrap a 9-tile border $\longrightarrow \mathbf{25}$ ($5 \times 5$ square).
-- Tap `{{res:sc6_03_counting_place_value_seq_41:keys}}` to wrap an 11-tile border $\longrightarrow \mathbf{36}$ ($6 \times 6$ square), then press `{{key:√x}}` $\longrightarrow \mathbf{6}$ to reveal the side length of your $6 \times 6$ square!
+You can watch those growing squares form right on the SC-6 stack—and even go beyond the 16 tiles on your desk to build $5 \times 5$ and $6 \times 6$ squares before checking the final side length with the square-root key (`{{key:√x}}`). Start by pressing `{{res:sc6_03_counting_place_value_seq_40:keys}}` to reach $\mathbf{4}$ ($2^2$), matching your 1 white center tile ($Y = 1$) wrapped by a 3-tile blue L-border ($X = 4$). Next, tap `{{key:5}} {{key:+}}` to wrap the 5-tile gold border around the corner and reach $\mathbf{9}$ ($3 \times 3$ square), then tap `{{key:7}} {{key:+}}` to wrap the 7-tile gray border and lock in $\mathbf{16}$ ($4 \times 4$ square). Keep the pattern rolling by tapping `{{key:9}} {{key:+}}` to wrap a 9-tile border into $\mathbf{25}$ ($5 \times 5$ square), and finally tap `{{res:sc6_03_counting_place_value_seq_41:keys}}` to wrap an 11-tile border into $\mathbf{36}$ ($6 \times 6$ square) before pressing `{{key:√x}}` to reveal $\mathbf{6}$—the exact side length of your $6 \times 6$ square!
 
 ---
 
@@ -287,14 +322,43 @@ Watching the arc leap across the screen connects three ideas at once—where you
 - **Backward Jump (Subtraction):** When you key in `9 {{key:ENTER}} 4 {{key:-}}` (or `22 {{key:ENTER}} 5 {{key:-}}` $\to 17$), an arc leaps **to the left**, labeled `-4` (or `-5`), showing you walking back down the trail.
 - **The `{{key:LASTX}}` Return-Trip Trick:** Want to hop right back to your starting milepost without re-typing your jump size? Right after `14 {{key:ENTER}} 8 {{key:+}}` lands on `22`, tap `{{key:LASTX}} {{key:-}}`—`LASTX` remembers your `8`-step jump and arcs straight back to `14`!
 
+### The Kangaroo Trailblazer: Tracking Hops Across the Outback
+To see how the Open Number Line (`{{key:LINE}}`) turns real-world distances and elevations into visual jump arcs, join a wildlife tracking team mapping the Australian Outback trail!
+
+At the start of the trail, an Australian red kangaroo rests at kilometer marker 14 near a dry creek bed, then bounds forward 8 kilometers across the red sand plains to reach fresh desert grass. Which trail marker does the kangaroo reach? On your Open Number Line (`{{key:LINE}}`), start at tick 14 and launch a forward arc of `+8`. Just like bridging across 10 on a ten-frame, your mind can hop $+6$ to land on milestone 20 and $+2$ more to reach marker 22: when you press `{{res:sc6_03_counting_place_value_seq_18:keys}}`, the jump arc sweeps across the twenty mark and lands squarely on kilometer **`{{res:sc6_03_counting_place_value_seq_18:value}}`**.
+
+A little farther along the trail, an outback scout stands atop a towering red sand dune at elevation 23 meters, then hikes down 7 meters into a shaded eucalyptus grove. To find the grove's elevation on the number line, pin tick 23 on your Open Number Line and launch a backward arc of `-7` across benchmark 20—stepping back 3 meters to hit 20, and 4 more meters to land on 16: pressing `{{res:sc6_03_counting_place_value_seq_19:keys}}` traces the downward hike to **`{{res:sc6_03_counting_place_value_seq_19:value}}`** meters. *(Now try the **Instant Reverse-Hop Check**: press `{{key:LASTX}} {{key:+}}` and watch the `-7` hike sitting in `LASTX` reverse into a `+7` climb right back to `23`!)*
+
+From that shaded eucalyptus grove, your survey team maps a three-part trek across the bush: 18 kilometers from base camp to Spinifex Ridge, 5 kilometers to the Giant Boab Tree, and 7 kilometers to the Emerald Billabong. Watch how automatic stack lift chains the two forward jump arcs (`+5` then `+7`, which together add $+12$ onto $18$) to land right on a round decade milestone: keying in `{{res:sc6_03_counting_place_value_seq_20:keys}}` advances from marker `18` to `23` and then lands on **`{{res:sc6_03_counting_place_value_seq_20:value}}`** kilometers.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `18 {{key:ENTER}}` | 0 | 0 | 18 | 18 | Pin Spinifex Ridge distance 18 into $X$ and duplicate to Mezzanine $Y$ |
+| `5 {{key:+}}` | 0 | 0 | 0 | 23 | First hop completes; first arc lands on Boab Tree marker 23 ($X = 23$) |
+| `7 {{key:+}}` | 0 | 0 | 0 | 30 | Final hop completes; second arc lands cleanly on milestone 30 ($X = 30$) |
+
+Those two consecutive arcs trace $18 \to 23 \to 30$, confirming a total trail length of $30\text{ km}$.
+
+At the end of the outback hike, the team cartographer measures the span between Escarpment Overlook (kilometer 63) and Riverbed Base Camp (kilometer 27) to see how far apart the two camps sit. On the Open Number Line, jump backward from 63 by splitting $-27$ into friendly mental hops ($-20$ to 43, $-3$ to 40, and $-4$ to 36), then verify on the stack by pressing `{{res:sc6_03_counting_place_value_seq_25:keys}}` to find a camp separation of **`{{res:sc6_03_counting_place_value_seq_25:value}}`** kilometers.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `63 {{key:ENTER}}` | 0 | 0 | 63 | 63 | Pin Escarpment marker 63 into Register $X$ and duplicate to Mezzanine $Y$ |
+| `27 {{key:-}}` | 0 | 0 | 0 | 36 | Leap backward by 27 units; arc lands squarely on tick 36 ($X = 36$) |
+
+Want to verify that starting at camp $36$ and hiking $+27\text{ km}$ brings you right back to marker $63$? Don't re-type `27`—just press `{{key:LASTX}} {{key:+}}` and watch `63` reappear on the ground floor!
+
 ### What Happens When You Hop Left Past Zero? (`{{key:LINE}}` & Zero-Pair Counters Preview)
 
 What happens on the Open Number Line (`{{key:LINE}}`) if you start at **$+3$** and subtract **$5$** (`3 {{key:ENTER}} 5 {{key:-}}`)? Does the number line stop at a brick wall at $0$?
 
 Not at all! The mark $0$ is simply the mirror line (like sea level at the beach or freezing point on a thermometer) between positive numbers to the right and negative numbers to the left:
+
+{{blocks:diagram_submarine_elevation|Positive and Negative Numbers Above and Below 0 m Sea Level: Seabird Dive, Submarine Depth & Hot-Air Balloon Sandbags}}
+
 - **Two-Stage Hop Past Zero on `{{key:LINE}}`:** Tap `{{key:LINE}}`, then key in `3 {{key:ENTER}} 5 {{key:-}}`. Watch the jump arc hop **3 steps left to reach $0$**, and then continue **2 more steps left of zero** to land on **`-2`**!
 - **Andean Hummingbird Nighttime Torpor:** High in the Andes mountains, a hummingbird conserving energy in nighttime *torpor* watches the mountain air drop from $+3^\circ\text{C}$ at dusk by $5^\circ\text{C}$ overnight: $3 - 5 = \mathbf{-2^\circ\text{C}}$ ($2^\circ\text{C}$ below freezing).
-- **Zero-Pair Flip Counters:** On your Ten-Frame tray, 1 gold/yellow counter ($+1$) and 1 coral/red counter ($-1$) form a **Zero Pair** ($+1 + (-1) = 0$) that cancels out to zero—a core concept you will master alongside the `{{key:+/-}}` key, balance equations, and the 4-Quadrant Coordinate Plane in **[Chapter 07: Discrete Probability, Primes & Pre-Algebra](07-data-probability-primes.md)**.
+- **Zero-Pair Flip Counters:** On your Ten-Frame tray, 1 gold/yellow counter ($+1$) and 1 coral/red counter ($-1$) form a **Zero Pair** ($+1 + (-1) = 0$) that cancels out to zero—a core concept you will master alongside the `{{key:+/-}}` key, balance equations, and the 4-Quadrant Coordinate Plane in **[Chapter 7: Prime Numbers, Fair Dice & Data Detective](07-data-probability-primes.md)**.
 
 ---
 
@@ -325,6 +389,30 @@ Whenever you type `{{key:1}} {{key:4}}` and press `{{key:COUNT}}`, that confusio
 - **Top Wire (Wire 1):** Shows all **10 beads** (5 red, 5 white) slid to the active left side—that is the **`1` ten** in `14`.
 - **Bottom Wire (Wire 2):** Shows **4 red beads** slid to the left—that is the **`4` ones** in `14`.
 - And just like in Ten-Frame mode, tapping `{{key:.}}` slides beads across the wire one by one so you can watch numbers grow up to 20 on the dual-wire rack (and up to 100 in extended counting mode).
+
+### The Coral Reef & Deep-Sea Research Station: Teen Numbers & Doubles on the Rack
+Now board a research submarine bound for an underwater coral reef habitat! Here your crew pairs the two-rail **Rekenrek Number Rack (`{{key:COUNT}}`)** with the SC-6 stack, sliding 5-red and 5-white bead clusters across the top and bottom wires to spot teen numbers, doubles, and near-doubles in a single glance.
+
+As your submarine descends past the reef wall, the sonar operator spots a pod of 17 spinner dolphins swimming past the observation window. How do you show 17 on the two-rail Number Rack in just two pushes—without counting 17 beads one by one? Slide all 10 beads on Rail 1 (5 red, 5 white) in one sweep to lock in one full ten, then slide 7 beads on Rail 2 (all 5 red plus 2 white). To build that exact $10 + 7$ structure on the stack, press `{{res:sc6_03_counting_place_value_seq_10:keys}}` so Ground Shelf $X$ shows **`{{res:sc6_03_counting_place_value_seq_10:value}}`**, and then tap `{{key:COUNT}}` to see 1 full wire of 10 on top and $5 + 2 = 7$ beads on the bottom wire ($X = 17$).
+
+Once the submarine docks inside the underwater hangar, an engineer balances a mini-submersible's left and right thruster pods by bolting 6 battery cells onto the port side and 6 matching battery cells onto the starboard side. Why does the Number Rack make doubles like $6 + 6$ pop out immediately? Slide 6 beads on Rail 1 (5 red, 1 white) and 6 beads on Rail 2 (5 red, 1 white). Now look *vertically* at the red beads: the two 5-red clusters stack up to make a hidden **10**, and the two white beads make **2** ($10 + 2 = 12$)! Combine both battery pods on the stack by pressing `{{res:sc6_03_counting_place_value_seq_14:keys}}`, and the bottom shelf immediately displays **`{{res:sc6_03_counting_place_value_seq_14:value}}`** cells.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `6 {{key:ENTER}}` | 0 | 0 | 6 | 6 | Enter 6 port-side battery cells into $X$ and duplicate to Mezzanine $Y$ |
+| `6 {{key:+}}` | 0 | 0 | 0 | 12 | Add double quantities; $6 + 6 = 12$ battery cells forms in Register $X$ |
+
+Because `6 {{key:ENTER}}` already duplicated `6` into both $Y$ and $X$, you don't even have to type the second `6` in your own calculations—pressing `6 {{key:ENTER}} {{key:+}}` doubles any number on the spot!
+
+Once you know your doubles (like $6 + 6 = 12$ and $7 + 7 = 14$), what happens when two numbers are right next door to each other, like $7 + 8$? On the reef's live video feed, night cameras monitor two sea-turtle nesting beaches: North Cove has 7 nests, and South Cove has 8 nests. Slide 7 beads on Rail 1 and 8 beads on Rail 2 of your Number Rack. You can clearly see a matching pair of sevens ($7 + 7 = 14$) plus **1 extra white bead** on the bottom rail! That is the **Doubles-Plus-One** strategy in action: keying in `{{res:sc6_03_counting_place_value_seq_15:keys}}` doubles the 7 nests to `14` and adds the 1 extra nest to reach **`{{res:sc6_03_counting_place_value_seq_15:value}}`**.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `7 {{key:ENTER}}` | 0 | 0 | 7 | 7 | Load North Cove's 7 turtle nests into $X$ and duplicate to Mezzanine $Y$ |
+| `7 {{key:+}}` | 0 | 0 | 0 | 14 | Add the known double; $7 + 7 = 14$ nests forms in Register $X$ |
+| `1 {{key:+}}` | 0 | 0 | 0 | 15 | Add the 1 extra nest; total reaches 15 turtle nests ($X = 15$) |
+
+Any two neighbor numbers (like $6 + 7$, $7 + 8$, or $8 + 9$) are simply a double plus 1!
 
 ---
 
@@ -363,31 +451,42 @@ For example, when you check the Tens place of $4,725$ by pressing `{{key:1}} {{k
 ### Why `{{key:PV}}` Keeps Your Number Parked on Shelf $Y$
 Look closely at the `Display Y` column in the table above: even after you pressed `{{key:PV}}`, **your starting number (`4725`) stayed parked on Shelf $Y$!** Even better, `{{key:PV}}` turns off automatic stack lift for your next entry so that typing another column size (`100`, `1000`, or `1`) simply replaces the query in $X$ while keeping `4725` right in $Y$.
 
-That means you can X-ray every single column of $4,725$ in rapid-fire succession without ever re-typing `4725`:
-- Check Hundreds: Type `{{key:1}} {{key:0}} {{key:0}} {{key:PV}}` $\longrightarrow X = \mathbf{7}$ (7 hundreds, worth $700$).
-- Check Thousands: Type `{{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` $\longrightarrow X = \mathbf{4}$ (4 thousands, worth $4,000$).
-- Check Ones: Type `{{key:1}} {{key:PV}}` $\longrightarrow X = \mathbf{5}$ (5 ones, worth $5$).
+That means you can X-ray every single column of $4,725$ in rapid-fire succession without ever re-typing `4725`. Right after checking the tens column, type `{{key:1}} {{key:0}} {{key:0}} {{key:PV}}` and Ground Shelf $X$ reveals $\mathbf{7}$ (telling you there are 7 hundreds, worth $700$). Next, type `{{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` to see $X = \mathbf{4}$ (4 thousands, worth $4,000$), and finally type `{{key:1}} {{key:PV}}` to see $X = \mathbf{5}$ (5 ones, worth $5$).
+
+### Building Numbers from Expanded Notation in the Navigation Archive
+Just as `{{key:PV}}` pulls a number apart into its place-value columns, you can also build three-, four-, and five-digit numbers from the ground up by adding their expanded powers of ten ($100\text{s}, 10\text{s}, 1\text{s}$ and beyond). Step into the observatory's historical navigation archive with your physical **Place Value Studio Whole Numbers Tray** to see how!
+
+Your first stop in the archive is a celestial globe showing Earth's solar orbit. How many days does Earth take to complete one full orbit around the Sun? Dock the digit miniblocks `3`, `6`, and `5` into the `HUNDREDS`, `TENS`, and `ONES` sockets of your **Place Value Studio Whole Numbers Tray**: `3` hundreds ($300$), `6` tens ($60$), and `5` ones ($5$). Now watch those three bundled packages snap together into one whole number on the stack: pressing `{{res:sc6_03_counting_place_value_seq_26:keys}}` fuses $300 + 60 + 5$ into **`{{res:sc6_03_counting_place_value_seq_26:value}}`** solar days.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `300 {{key:ENTER}}` | 0 | 0 | 300 | 300 | Enter `3` hundreds ($300$) into stack |
+| `60 {{key:+}}` | 0 | 0 | 0 | 360 | Add `6` tens ($60$); subtotal accumulates to 360 |
+| `5 {{key:+}}` | 0 | 0 | 0 | 365 | Add `5` ones ($5$); full expanded sum reaches 365 |
+
+Each column contributes its exact place-value weight—$3$ hundreds, $6$ tens, and $5$ ones—to form $300 + 60 + 5 = 365$ days in a year.
+
+Next to the celestial globe sits a brass star astrolabe used by early ocean navigators who steered by the stars long before GPS satellites. Dock the four digit miniblocks `1`, `4`, `9`, and `2` into the `THOUSANDS`, `HUNDREDS`, `TENS`, and `ONES` sockets of your **Whole Numbers Place Value Tray**, then reconstruct that four-digit exploration year on the stack by adding its four place-value columns ($1,000 + 400 + 90 + 2$): keying in `{{res:sc6_03_counting_place_value_seq_27:keys}}` stacks each power of ten in turn to display **`{{res:sc6_03_counting_place_value_seq_27:value}}`**. Watch how the open zeros act like empty seats waiting for each smaller bundle to slide into place: starting with `1000 {{key:ENTER}}` parks `1000` on Waiting Shelf $Y$, and tapping `400 {{key:+}}` slides the 4 hundreds into the hundreds seat so Ground Shelf $X$ updates to `1400`. Next, `90 {{key:+}}` lifts `1400` to Shelf $Y$ and drops the 9 tens into the tens seat to form `1490`, and finally `2 {{key:+}}` snaps the 2 ones into the rightmost seat to complete `1492`—showing step by step how $1$ thousand, $4$ hundreds, $9$ tens, and $2$ ones lock together without ever interfering with one another's columns.
+
+What happens when a number grows past four digits? In the back of the observatory library, a vault archives a countdown-patterned collection of photographic glass star plates: 9 ten-thousands, 8 thousands, 7 hundreds, 6 tens, and 5 ones. Even though your desktop Place Value Tray has four physical sockets (`1000 | 100 | 10 | 1`), every new column to the left simply bundles 10 of the column before it! Build the five-digit archive total on the stack by pressing `{{res:sc6_03_counting_place_value_seq_29:keys}}`, which layers each place-value bundle from left to right to reach **`{{res:sc6_03_counting_place_value_seq_29:value}}`**.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `90000 {{key:ENTER}}` | 0 | 0 | 90000 | 90000 | Enter 9 ten-thousands tier into stack |
+| `8000 {{key:+}}` | 0 | 0 | 0 | 98000 | Add 8 thousands tier ($X = 98000$) |
+| `700 {{key:+}}` | 0 | 0 | 0 | 98700 | Add 7 hundreds column ($X = 98700$) |
+| `60 {{key:+}}` | 0 | 0 | 0 | 98760 | Add 6 tens column ($X = 98760$) |
+| `5 {{key:+}}` | 0 | 0 | 0 | 98765 | Add 5 ones column; completes 98,765 |
+
+Each addition fills the next open zero column—uniting $9$ ten-thousands, $8$ thousands, $7$ hundreds, $6$ tens, and $5$ ones into $98,765$.
 
 ### Exploring Tenths and Hundredths with Place Value
-In Grades 4–6, the exact same 10-for-1 pattern continues to the right of the raised tactile decimal point (`•`) on your **Decimal Place Value Tray (`1 • 0.1 | 0.01 | 0.001`)**. If you cut 1 whole into 10 equal strips, each strip is one **Tenth ($0.1$)**; if you cut 1 tenth into 10 tiny squares, each square is one **Hundredth ($0.01$)**:
-- On $345.67$, check Tenths ($0.1$) by typing `{{key:.}} {{key:1}} {{key:PV}}` $\longrightarrow X = \mathbf{6}$ (6 tenths).
-- Check Hundredths ($0.01$) by typing `{{key:.}} {{key:0}} {{key:1}} {{key:PV}}` $\longrightarrow X = \mathbf{7}$ (7 hundredths).
+In Grades 4–6, the exact same 10-for-1 pattern continues to the right of the raised tactile decimal point (`•`) on your **Decimal Place Value Tray (`1 • 0.1 | 0.01 | 0.001`)**. If you cut 1 whole into 10 equal strips, each strip is one **Tenth ($0.1$)**; if you cut 1 tenth into 10 tiny squares, each square is one **Hundredth ($0.01$)**. Suppose you park $345.67$ on Shelf $Y$: you can inspect its Tenths column ($0.1$) by typing `{{key:.}} {{key:1}} {{key:PV}}` to reveal $X = \mathbf{6}$ (6 tenths), and then inspect its Hundredths column ($0.01$) by typing `{{key:.}} {{key:0}} {{key:1}} {{key:PV}}` to reveal $X = \mathbf{7}$ (7 hundredths).
 
 Your Decimal Place Value Tray also makes it obvious *why* you must line up the decimal points—not the rightmost digits—when adding or subtracting decimals like $14.6 + 3.85$:
 - **Lining Up the Decimal Points on Paper:** Write $14.6$ above $3.85$ so their decimal points (`•`) sit in a straight vertical line, and add a placeholder zero on the end so $14.6$ becomes **$14.60$**. Now Tenths add to Tenths ($.60 + .80$) and Hundredths add to Hundredths ($.00 + .05$): $14.60 + 3.85 = \mathbf{18.45}$.
 - **On Your Decimal Tray & SC-6 Stack:** Dock `14.60` in the top row of the Decimal Tray and `3.85` in the bottom row—the raised decimal point physically keeps the Tenths (`6` and `8`) and Hundredths (`0` and `5`) in matching columns! Verify on your SC-6 (`14.6 {{key:ENTER}} 3.85 {{key:+}}` $\to \mathbf{18.45}$, then `0.1 {{key:PV}}` $\to 4$ Tenths and `0.01 {{key:PV}}` $\to 5$ Hundredths).
-- **Real Workshop Drawer Clearance:** Suppose you slide **4 modular Gridfinity storage bins** ($42.0\text{ mm}$ wide each) side-by-side into a workshop desk drawer whose inside width is **$170.5\text{ mm}$**. How many millimeters of sliding clearance remain? On your SC-6, evaluate `170.5 {{key:ENTER}} 4 {{key:ENTER}} 42 {{key:×}} {{key:-}}` $\longrightarrow$ **`2.5` mm** of smooth drawer clearance ($170.5 - 168.0 = 2.5\text{ mm}$).
-
-### Blind Digit Typing vs. Visible Place-Value Bundling
-
-The table below contrasts single-line infix entry with the SC-6's visual sandboxes and place-value inspection tools:
-
-| Challenge / Real-World Task | The Algebraic Calculator Trap (Infix) | Algebraic Keystrokes & Clutter | The StackCalc + Blocks Method (RPN Stack + Visual Studio) | StackCalc Keystrokes | The Stack Advantage |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Stadium Light Wattage:** Chained multi-bank load sum: $(30 \times 1500) + (10 \times 2000)$ | A basic four-function calculator evaluates strictly left-to-right ($30 \times 1500 + 10 = 45,010 \times 2000 = 90,020,000\text{ W}$!), while on a scientific infix screen, typing the full line hides both light-bank subtotals ($45,000$ and $20,000$) until you press `=`. Students wrap each product in defensive parentheses just to keep the two groups visually separate. | `( 3 0 × 1 5 0 0 ) + ( 1 0 × 2 0 0 0 ) =` (23 keystrokes with defensive brackets; intermediate subtotals hidden) | **RPN Parallel Accumulation:** Evaluates bank A ($45,000$) and bank B ($20,000$) into visible registers $Y$ and $X$, then combines them in a single keystroke with zero parentheses. | `30 {{key:ENTER}} 1500 {{key:×}} 10 {{key:ENTER}} 2000 {{key:×}} {{key:+}}` (16 keystrokes) | **Both Subtotals Visible:** Both power bank subtotals remain in plain sight on the stack before combining. |
-| **Ten-Frame Bridging:** Mental addition across ten boundary: $8 + 5 = (8 + 2) + 3 = 10 + 3$ | Single-line algebraic screens hide the intermediate landmark of 10. Pressing equals triggers a black-box answer without showing the ten-frame filling up. | `8 + 2 + 3 =` (Single-line display; intermediate ten lost) | **Ten-Frame Studio Bridge (`{{key:▦}}`):** Interactive grid drops 2 counters into Frame 1, flashing the completed ten at 10, then cascades remaining 3 counters into Frame 2. | `8 {{key:ENTER}} 2 {{key:+}} 3 {{key:+}}` (Visual ten-frame flash at $X = 10$) | **Visual Ten Landmark:** Concrete spatial grouping eliminates finger-counting and reveals why bridging ten works. |
-| **Place Value Explorer:** Extracting tens and hundreds from $4,725$ without scratch paper | Infix calculators have no positional extraction keys. Students must manually divide by 10, subtract the integer part, and multiply back—destroying the original number. | `4 7 2 5 / 1 0 =` $\to 472.5$, `- 4 7 0 =` $\to 2.5$ (Destructive multi-step division) | **Preserved Target Engine (`{{key:PV}}`):** Dedicated hardware instruction preserves target $4,725$ in Register $Y$, suppressing stack lift so subsequent checks execute instantly. | `4725 {{key:ENTER}} 10 {{key:PV}} 100 {{key:PV}} 1000 {{key:PV}}` (Chained single-stroke checks) | **Zero Value Destruction:** Target number remains permanently parked in Register $Y$; checks tens ($2$), hundreds ($7$), thousands ($4$) in rapid cadence. |
-| **Rhythmic Cadence Counting:** Even number ladder up to 20 | Infix constant equals-key mode (`2 + 2 = = =`) relies on hidden register state that fails if any non-equals key is accidentally touched. | `2 + 2 = = = = =` (Flaky state; hidden accumulator easily cleared) | **Stack Constant Duplication:** In 2-LV mode, Register $Y$ preserves constant $2.0$. Each tap of `{{key:+}}` advances count by 2 with deterministic mechanical precision. | `2 {{key:ENTER}} 2 {{key:+}} {{key:+}} {{key:+}} ...` (100% reliable stack retention) | **Visual Stepping Ladder:** Learners see constant waiting on Level $Y$ while Level $X$ climbs in cadence with physical block towers. |
+- **Real Workshop Drawer Clearance:** Suppose you slide **4 modular Gridfinity storage bins** ($42.0\text{ mm}$ wide each) side-by-side into a workshop desk drawer whose inside width is **$170.5\text{ mm}$**. How many millimeters of sliding clearance remain? On your SC-6, subtract the width of the 4 bins from the inside width of the drawer (`170.5 {{key:ENTER}} 4 {{key:ENTER}} 42 {{key:×}} {{key:-}}`) to see **`2.5` mm** of smooth drawer clearance ($170.5 - 168.0 = 2.5\text{ mm}$).
 
 ---
 
@@ -396,24 +495,14 @@ The table below contrasts single-line infix entry with the SC-6's visual sandbox
 Once you master the 10-for-1 regrouping exchange with your blocks, `{{key:PV}}` acts like a mathematical X-ray machine that lets you look inside any giant number in nature—from prehistoric dinosaur eras to the icy rings of Saturn.
 
 ### The Earth-Moon Distance ($384,400\text{ km}$)
-The average distance from the Earth to the Moon is $384,400\text{ kilometers}$.
-Let us decompose this colossal number using `{{key:PV}}`:
-1. `{{key:3}} {{key:8}} {{key:4}} {{key:4}} {{key:0}} {{key:0}} {{key:ENTER}}`
-2. `{{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` $\longrightarrow X = \mathbf{3}$ (3 hundred-thousands $= 300,000\text{ km}$).
-3. `{{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` $\longrightarrow X = \mathbf{8}$ (8 ten-thousands $= 80,000\text{ km}$).
-4. `{{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` $\longrightarrow X = \mathbf{4}$ (4 thousands $= 4,000\text{ km}$).
-5. `{{key:1}} {{key:0}} {{key:0}} {{key:PV}}` $\longrightarrow X = \mathbf{4}$ (4 hundreds $= 400\text{ km}$).
+Look up at the night sky: the average distance from the Earth to the Moon is $384,400\text{ kilometers}$. To see how that colossal distance is built out of base-ten bundles, park $384,400$ on Waiting Shelf $Y$ by typing `{{key:3}} {{key:8}} {{key:4}} {{key:4}} {{key:0}} {{key:0}} {{key:ENTER}}`, and then X-ray each column from largest to smallest. Querying the hundred-thousands place with `{{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` reveals $X = \mathbf{3}$ ($3$ hundred-thousands $= 300,000\text{ km}$); querying the ten-thousands place with `{{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` shows $X = \mathbf{8}$ ($8$ ten-thousands $= 80,000\text{ km}$); querying the thousands place with `{{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` extracts $X = \mathbf{4}$ ($4$ thousands $= 4,000\text{ km}$); and querying the hundreds place with `{{key:1}} {{key:0}} {{key:0}} {{key:PV}}` finishes with $X = \mathbf{4}$ ($4$ hundreds $= 400\text{ km}$).
 
 > **Lunar Transit Time:** If an Apollo spacecraft cruises toward the Moon at $4,000\text{ km/hour}$, how many hours does it take to complete the journey? By placing the lunar distance on Shelf $Y$ and dividing by the spacecraft's speed—pressing `{{res:sc6_03_counting_place_value_seq_01:keys}}`—Ground Shelf $X$ immediately displays **`{{res:sc6_03_counting_place_value_seq_01:value}}`** hours, which works out to about $4\text{ days}$ of continuous spaceflight.
 
 ### Human Heartbeats in a Year ($42,048,000$)
-Your heart beats approximately $80\text{ times per minute}$ when you are resting.
-How many times does the heart beat in an entire year?
-- 60 minutes in an hour: $80 \times 60 = 4,800\text{ beats/hour}$.
-- 24 hours in a day: $4,800 \times 24 = 115,200\text{ beats/day}$.
-- 365 days in a year: $115,200 \times 365 = \mathbf{42,048,000\text{ beats/year}}$!
+You don't even have to leave Earth to find numbers in the tens of millions—one is beating inside your chest right now! Your heart beats approximately $80\text{ times per minute}$ when you are resting. How many times does it beat in an entire year? With 60 minutes in an hour, your heart beats $80 \times 60 = 4,800\text{ times per hour}$; across 24 hours in a day, that climbs to $4,800 \times 24 = 115,200\text{ beats per day}$; and across all 365 days in a year, it reaches $115,200 \times 365 = \mathbf{42,048,000\text{ beats per year}}$!
 
-Let us calculate this continuously on the SC-6 stack without writing down any scratch paper:
+Watch how cleanly you can chain that entire year of heartbeats on the SC-6 stack without writing down a single intermediate subtotal:
 
 | Keystroke | Register T | Register Z | Register Y | Register X |
 | :--- | :--- | :--- | :--- | :--- |
@@ -422,26 +511,40 @@ Let us calculate this continuously on the SC-6 stack without writing down any sc
 | `24 {{key:×}}` | 0 | 0 | 0 | 115200 |
 | `365 {{key:×}}` | 0 | 0 | 0 | 42048000 |
 
-Now let's query the Ten-Millions place with `{{key:PV}}`:
-- Type `{{key:ENTER}} {{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` $\longrightarrow X = \mathbf{4}$ (4 ten-millions).
-- Type `{{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` $\longrightarrow X = \mathbf{2}$ (2 millions).
+With $42,048,000$ sitting on Ground Shelf $X$, lift it onto Shelf $Y$ and X-ray the top two columns: typing `{{key:ENTER}} {{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` reveals $X = \mathbf{4}$ ($4$ ten-millions, or $40,000,000$ beats), and typing `{{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}}` reveals $X = \mathbf{2}$ ($2$ millions, or $2,000,000$ beats).
 
 ### Distance to Mars ($225,000,000\text{ km}$) & The Age of *Tyrannosaurus rex* ($66,000,000\text{ Years}$)
-At its average orbital distance, the planet Mars is approximately $225,000,000\text{ kilometers}$ from Earth—and on Earth's timeline, the mighty *Tyrannosaurus rex* walked through Cretaceous fern forests $66,000,000\text{ years ago}$.
-- X-raying Mars's distance: `225000000 {{key:ENTER}} 100000000 {{key:PV}}` $\longrightarrow X = \mathbf{2}$ (hundred-millions), `10000000 {{key:PV}}` $\longrightarrow X = \mathbf{2}$ (ten-millions), and `1000000 {{key:PV}}` $\longrightarrow X = \mathbf{5}$ (millions).
-- X-raying the *T. rex* extinction boundary ($66,000,000\text{ years}$): `66000000 {{key:ENTER}} 10000000 {{key:PV}}` $\longrightarrow X = \mathbf{6}$ (6 ten-million-year bundles), and `1000000 {{key:PV}}` $\longrightarrow X = \mathbf{6}$ (6 one-million-year bundles).
-- If a robotic probe travels to Mars at $25,000\text{ km/h}$, how many days will the voyage take? Divide the orbital distance by the hourly speed and then by $24$ hours per day—pressing `225000000 {{key:ENTER}} 25000 {{key:÷}} 24 {{key:÷}}`—to see Ground Shelf $X$ land on **`375` days** (just over 1 full year in space).
+Now let's step up to eight- and nine-digit numbers. At its average orbital distance, the red planet Mars is approximately $225,000,000\text{ kilometers}$ from Earth—and on Earth's geological timeline, the mighty *Tyrannosaurus rex* walked through Cretaceous fern forests $66,000,000\text{ years ago}$. When you X-ray Mars's distance on the Place Value Engine by pressing `225000000 {{key:ENTER}} 100000000 {{key:PV}}`, Ground Shelf $X$ shows $\mathbf{2}$ (hundred-millions), followed by `10000000 {{key:PV}}` $\longrightarrow X = \mathbf{2}$ (ten-millions) and `1000000 {{key:PV}}` $\longrightarrow X = \mathbf{5}$ (millions). Doing the same X-ray on the *T. rex* extinction boundary (`66000000 {{key:ENTER}} 10000000 {{key:PV}}`) reveals $X = \mathbf{6}$ ($6$ ten-million-year bundles), and `1000000 {{key:PV}}` reveals $X = \mathbf{6}$ ($6$ one-million-year bundles). And if a robotic spacecraft travels toward Mars at $25,000\text{ km/h}$, how many days will the voyage take? Divide the orbital distance by the hourly speed and then by $24$ hours per day—pressing `225000000 {{key:ENTER}} 25000 {{key:÷}} 24 {{key:÷}}`—to see Ground Shelf $X$ land on **`375` days**, or just over 1 full year in space!
 
 ### Saturn's Ring Orbit ($1,427,000,000\text{ km}$) & Stars in a Dwarf Galaxy ($2,500,000,000$)
-The ringed planet Saturn orbits the Sun at an average distance of **1 billion, 427 million kilometers** ($1,427,000,000\text{ km}$), and a nearby dwarf galaxy cluster holds $2,500,000,000$ stars:
+Venturing even deeper into the solar system, the ringed planet Saturn orbits the Sun at an average distance of **1 billion, 427 million kilometers** ($1,427,000,000\text{ km}$), while a nearby dwarf galaxy cluster holds $2,500,000,000$ stars:
 $$1,427,000,000 = 1,000,000,000 + 400,000,000 + 20,000,000 + 7,000,000$$
 
-Use `{{key:PV}}` to X-ray Saturn's distance from the Billions column down to the Millions column without re-typing the number:
-- Billions place: `1427000000 {{key:ENTER}} 1000000000 {{key:PV}}` $\longrightarrow X = \mathbf{1}$ (1 billion km).
-- Hundred-millions place: `100000000 {{key:PV}}` $\longrightarrow X = \mathbf{4}$ (4 hundred-million km).
-- Ten-millions place: `10000000 {{key:PV}}` $\longrightarrow X = \mathbf{2}$ (2 ten-million km).
-- Millions place: `1000000 {{key:PV}}` $\longrightarrow X = \mathbf{7}$ (7 million km).
-- And for the dwarf galaxy ($2,500,000,000$): `2500000000 {{key:ENTER}} 1000000000 {{key:PV}}` $\longrightarrow X = \mathbf{2}$ (2 billions) and `100000000 {{key:PV}}` $\longrightarrow X = \mathbf{5}$ (5 hundred-millions).
+Using `{{key:PV}}`, you can X-ray Saturn's orbit from the Billions column down to the Millions column without re-typing the number once: `1427000000 {{key:ENTER}} 1000000000 {{key:PV}}` extracts $X = \mathbf{1}$ (1 billion km), `100000000 {{key:PV}}` extracts $X = \mathbf{4}$ (4 hundred-million km), `10000000 {{key:PV}}` extracts $X = \mathbf{2}$ (2 ten-million km), and `1000000 {{key:PV}}` extracts $X = \mathbf{7}$ (7 million km). In the exact same way, X-raying the dwarf galaxy (`2500000000 {{key:ENTER}} 1000000000 {{key:PV}}`) shows $X = \mathbf{2}$ (2 billions) and `100000000 {{key:PV}}` shows $X = \mathbf{5}$ (5 hundred-millions).
+
+### Deep-Space Mission Control & Seven-Digit X-Rays
+Now take a seat at the Deep-Space Mission Control console to see how `{{key:PV}}`, `{{key:LASTX}}`, and the four-level stack verify our lunar flight from the start of this section and scale up to seven-digit numbers across million-carton school totals and Voyager 1's daily race through interstellar space!
+
+Start by pulling the $384,400\text{ km}$ Earth-Moon transit we X-rayed a moment ago up onto the main flight-director console. Remember how dividing $384,400\text{ km}$ by the Apollo spacecraft's $4,000\text{ km/h}$ cruising speed gave a lunar voyage of $96.1\text{ hours}$? At Mission Control, every flight calculation must be verified in reverse before launch: when you run that transit division on the stack by pressing `{{res:sc6_03_counting_place_value_seq_48:keys}}` to display **`{{res:sc6_03_counting_place_value_seq_48:value}}`** hours ($X = 96.1$), the spacecraft's $4,000\text{ km/h}$ speed is automatically saved inside `{{key:LASTX}}`. That means you can prove your transit time is $100\%$ accurate without re-typing a single digit—just tap `{{key:LASTX}} {{key:×}}` and watch $96.1\text{ hours} \times 4,000\text{ km/h}$ snap right back to the exact `384400` kilometer Earth-Moon distance on Ground Shelf $X$!
+
+Before launching into interstellar space, mission nutritionists ask a down-to-earth question to help the crew picture seven-digit numbers: how big is **one million** in everyday life? Suppose 14 school districts each serve 450 cartons of milk per day across a 180-day school year. Do they cross the one-million-carton mark by summer vacation? To chain all three factors on the stack (`14 × 450 × 180`) without writing down intermediate subtotals, press `{{res:sc6_03_counting_place_value_seq_37:keys}}`, and Ground Shelf $X$ immediately climbs to **`{{res:sc6_03_counting_place_value_seq_37:value}}`** cartons.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `14 {{key:ENTER}}` | 0 | 0 | 14 | 14 | Enter number of school districts |
+| `450 {{key:×}}` | 0 | 0 | 0 | 6300 | Daily consumption across all districts ($6,300\text{ cartons/day}$) |
+| `180 {{key:×}}` | 0 | 0 | 0 | 1134000 | Scale by 180 school days: $1,134,000\text{ cartons/year}$ |
+
+With $1,134,000$ on the screen, you can X-ray every column in place: keying `{{key:ENTER}} 1000000 {{key:PV}}` extracts $X = \mathbf{1}$ (1 million cartons); `100000 {{key:PV}}` extracts $X = \mathbf{1}$ (1 hundred-thousand cartons); `10000 {{key:PV}}` extracts $X = \mathbf{3}$ (3 ten-thousand cartons); and `1000 {{key:PV}}` extracts $X = \mathbf{4}$ (4 thousand cartons).
+
+Now look out beyond the planets for your final telemetry check: NASA's Voyager 1 spacecraft hurtles through interstellar space at $17\text{ kilometers every second}$. How many kilometers does Voyager 1 travel in one full 24-hour day ($86,400\text{ seconds}$)? Multiply the seconds per day by Voyager's speed on the stack by pressing `{{res:sc6_03_counting_place_value_seq_38:keys}}`, and the bottom shelf immediately reveals **`{{res:sc6_03_counting_place_value_seq_38:value}}`** kilometers!
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `86400 {{key:ENTER}}` | 0 | 0 | 86400 | 86400 | Enter seconds per solar day into Register $Y$ |
+| `17 {{key:×}}` | 0 | 0 | 0 | 1468800 | Daily distance covered: $1,468,800\text{ km/day}$ |
+
+Voyager 1 covers $1,468,800\text{ kilometers}$—nearly $1.5\text{ million kilometers}$—every single day! You can then X-ray every column in place: keying `{{key:ENTER}} 1000000 {{key:PV}}` extracts $X = \mathbf{1}$ (1 million km); `100000 {{key:PV}}` extracts $X = \mathbf{4}$ (4 hundred-thousand km); `10000 {{key:PV}}` extracts $X = \mathbf{6}$ (6 ten-thousand km); `1000 {{key:PV}}` extracts $X = \mathbf{8}$ (8 thousand km); and `100 {{key:PV}}` extracts $X = \mathbf{8}$ (8 hundred km).
 
 ---
 
@@ -471,229 +574,16 @@ If your screen shows something unexpected while counting or checking place value
 | 9. Worried returning from sandbox to `{{key:NUM}}` lost data | Assumed mode switch clears the stack. | Press `{{key:NUM}}`: the operational stack is preserved. |
 | 10. Querying hundredths shows `0` on $\$345.67$ | Used `100` instead of `.01` for decimal place value. | Use `.01` for hundredths ($1/100$); `100` queries hundreds. |
 
----
+### Blind Digit Typing vs. Visible Place-Value Bundling
 
-## Place-Value Explorations: From Campfire Marshmallows to Planetary Distances
+Now that you have explored all four visual sandboxes (`{{key:▦}}`, `{{key:COUNT}}`, `{{key:LINE}}`, and `{{key:PV}}`), compare how a standard single-line calculator handles counting, ten-bridging, and place-value inspection versus the SC-6's visual studios:
 
-Whether you are toasted-marshmallow counting around a campfire—filling a ten-slot s'mores tray before opening a second box—or tracking a spacecraft hurtling past the outer planets, the same base-ten rhythm governs every calculation. Let's step through six connected stories that take you from a glowing rainforest nature dome and an underwater coral reef habitat to the Australian Outback, a mountaintop observatory, a historical navigation archive, and deep-space mission control.
-
-### The Bioluminescent Nature Lab
-You begin as a junior field biologist inside a glowing rainforest nature dome. Researchers bring in firefly terrariums, meteorite fragments, crystal geodes, weather sensors, and glowing algae tubes. Using your Ten-Frame trays (`{{key:▦}}`) and the SC-6 stack, you will spot groups at a glance, bridge across 10 without counting on your fingers, and step back across 10 with ease.
-
-#### The Five-Anchor Firefly Terrarium
-Your first stop in the rainforest dome is a glass terrarium where 5 glowing lantern fireflies rest on the top branch. Just after dusk, 3 more fireflies land on the lower fern branch. How many fireflies are glowing in the terrarium altogether?
-
-On your Ten-Frame tray, fill the top row of Frame 1 with 5 counters and place 3 counters on the bottom row. Because the top row of a ten-frame always holds 5, your eyes immediately see *"5 on top and 3 on the bottom makes 8"*—zero finger-counting needed! When you lift the 5 upper fireflies onto Shelf $Y$ and add the 3 lower fireflies by pressing `{{res:sc6_03_counting_place_value_seq_02:keys}}`, the stack combines both branches to show **`{{res:sc6_03_counting_place_value_seq_02:value}}`** glowing fireflies on Ground Shelf $X$.
-
-#### Bridging Ten in the Meteorite Tray
-Next to the firefly habitat, a planetary geologist is sorting magnetic iron meteorite pebbles into 10-slot specimen trays. The first tray already holds 9 pebbles, and a rover scoop delivers 4 more pebbles from a crater rim. What happens when we add $9 + 4$ across the 10-boundary?
-
-Look at your Ten-Frame tray: with 9 counters in Frame 1, there is only **1 empty pocket** left. Instead of counting upward by ones, split your 4 new pebbles into **$1 + 3$** so 1 pebble snaps the first tray shut at 10, and the other 3 pebbles land in Frame 2: pressing `{{res:sc6_03_counting_place_value_seq_03:keys}}` bridges cleanly through $10$ and lands on **`{{res:sc6_03_counting_place_value_seq_03:value}}`** pebbles.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `9 {{key:ENTER}}` | 0 | 0 | 9 | 9 | Load 9 meteorite pebbles into $X$ and duplicate to Mezzanine $Y$ |
-| `1 {{key:+}}` | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 completely fills and flashes ($X = 10$) |
-| `3 {{key:+}}` | 0 | 0 | 0 | 13 | Combine ten and three; Frame 2 holds 3 dots, giving total $X = 13$ pebbles |
-
-**Why Bridging Beats Counting:** Once Frame 1 locks in at 10, adding the remaining 3 pebbles is an instant visual snap ($10 + 3 = 13$).
-
-#### Geode Crystal Vaults
-Walking deeper into the geology alcove, a cave explorer cracks open a limestone boulder and finds 7 purple amethyst crystals in the first pocket and 6 sparkling quartz crystals in the second pocket. How does the Bridging Ten trick work when we start at 7 instead of 9?
-
-On your Ten-Frame tray, 7 counters leave **3 empty pockets** in Frame 1—which invites you to split the 6 quartz crystals into twin halves ($3 + 3$). The first 3 fill Frame 1 to make 10, and the second 3 sit in Frame 2: keying in `{{res:sc6_03_counting_place_value_seq_05:keys}}` completes the first ten-frame and adds the remaining 3 crystals to display **`{{res:sc6_03_counting_place_value_seq_05:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `7 {{key:ENTER}}` | 0 | 0 | 7 | 7 | Load 7 amethyst crystals into $X$ and duplicate to Mezzanine $Y$ |
-| `3 {{key:+}}` | 0 | 0 | 0 | 10 | Bridge to ten; Frame 1 completely fills ($X = 10$) |
-| `3 {{key:+}}` | 0 | 0 | 0 | 13 | Combine ten and three; Frame 2 holds 3 dots, giving total $X = 13$ crystals |
-
-**Zero-Retype Bonus:** Notice that after typing `3 {{key:+}}` to reach 10, the number `3` is already sitting in your `LASTX` memory! You can also tap `{{key:LASTX}} {{key:+}}` to add the second 3 without typing the digit again ($X = 13$).
-
-#### Launching Weather Probes from a Full Crate
-Now you step out onto the dome's canopy deck with a foam launch case holding a full set of 10 micro-weather sensors. Your team clips 4 sensors onto kite strings and launches them into the rainforest wind. How many sensors remain in the case?
-
-Fill Frame 1 with all 10 counters and pop 4 counters out to see the full top row of 5 plus 1 counter on the bottom row ($6$). When you load the full crate onto Shelf $Y$ and subtract the 4 launched sensors by pressing `{{res:sc6_03_counting_place_value_seq_07:keys}}`, Ground Shelf $X$ immediately shows **`{{res:sc6_03_counting_place_value_seq_07:value}}`** sensors still nestled in the foam case. *(Want to prove none were lost when you reel the kites back in? Tap `{{key:LASTX}} {{key:+}}` and watch the 4 launched sensors reunite with the 6 in the crate to restore `10`!)*
-
-#### Stepping Back Across Ten in the Glow-Tube Rack
-Back inside the wet lab, a bioluminescence rack holds 14 glowing algae test tubes (1 full rack of 10 plus 4 extra tubes in the second rack). A student scientist takes 6 tubes to the microscope station. Just as we bridged *forward* across 10 with the meteorite pebbles and geode crystals, how can we bridge *backward* across 10 when subtracting $14 - 6$?
-
-Instead of counting backward one by one, hop back to the landmark 10 first! Split the 6 tubes you are removing into **$4 + 2$**: first remove all 4 tubes from Frame 2 (leaving a clean 10 in Frame 1), then take 2 more tubes from Frame 1. Pressing `{{res:sc6_03_counting_place_value_seq_08:keys}}` steps back to `10` and then down to **`{{res:sc6_03_counting_place_value_seq_08:value}}`** glowing tubes.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `14 {{key:ENTER}}` | 0 | 0 | 14 | 14 | Load 14 glow-tubes into $X$ and duplicate to Mezzanine $Y$ |
-| `4 {{key:-}}` | 0 | 0 | 0 | 10 | First subtraction empties Frame 2, leaving clean benchmark ten ($X = 10$) |
-| `2 {{key:-}}` | 0 | 0 | 0 | 8 | Second subtraction takes 2 from Frame 1, leaving 8 glow-tubes ($X = 8$) |
-
-**Pattern Insight:** Splitting $-6$ into $-4$ and $-2$ turns a tricky teen subtraction into two effortless mental hops ($14 \to 10 \to 8$).
-
-### The Coral Reef & Deep-Sea Research Station
-Leaving the rainforest dome, you board a submarine bound for an underwater coral reef habitat! Here your crew switches from Ten-Frame trays to the two-rail **Rekenrek Number Rack (`{{key:COUNT}}`)**, sliding 5-red and 5-white bead clusters across the top and bottom wires to spot teen numbers, doubles, and near-doubles in a single glance.
-
-#### Building Teen Numbers on the Dual Rails
-As your submarine descends past the reef wall, the sonar operator spots a pod of 17 spinner dolphins swimming past the observation window. How do you show 17 on the two-rail Number Rack in just two pushes—without counting 17 beads one by one?
-
-Slide all 10 beads on Rail 1 (5 red, 5 white) in one sweep to lock in one full ten, then slide 7 beads on Rail 2 (all 5 red plus 2 white). To build that exact $10 + 7$ structure on the stack, press `{{res:sc6_03_counting_place_value_seq_10:keys}}` so Ground Shelf $X$ shows **`{{res:sc6_03_counting_place_value_seq_10:value}}`**, and then tap `{{key:COUNT}}` to see 1 full wire of 10 on top and $5 + 2 = 7$ beads on the bottom wire ($X = 17$).
-
-#### Hidden Tens Inside Twin Doubles
-Inside the submarine hangar, an engineer is balancing a mini-submersible's left and right thruster pods by bolting 6 battery cells onto the port side and 6 matching battery cells onto the starboard side. Why does the Number Rack make doubles like $6 + 6$ pop out immediately?
-
-Slide 6 beads on Rail 1 (5 red, 1 white) and 6 beads on Rail 2 (5 red, 1 white). Now look *vertically* at the red beads: the two 5-red clusters stack up to make a hidden **10**, and the two white beads make **2** ($10 + 2 = 12$)! Combine both battery pods on the stack by pressing `{{res:sc6_03_counting_place_value_seq_14:keys}}`, and the bottom shelf immediately displays **`{{res:sc6_03_counting_place_value_seq_14:value}}`** cells.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `6 {{key:ENTER}}` | 0 | 0 | 6 | 6 | Enter 6 port-side battery cells into $X$ and duplicate to Mezzanine $Y$ |
-| `6 {{key:+}}` | 0 | 0 | 0 | 12 | Add double quantities; $6 + 6 = 12$ battery cells forms in Register $X$ |
-
-**Stack Shortcut:** Because `6 {{key:ENTER}}` already duplicated `6` into both $Y$ and $X$, you don't even have to type the second `6` in your own calculations—pressing `6 {{key:ENTER}} {{key:+}}` doubles any number on the spot!
-
-#### The Doubles-Plus-One Secret
-Once you know your doubles (like $6 + 6 = 12$ and $7 + 7 = 14$), what happens when two numbers are right next door to each other, like $7 + 8$?
-
-Two sea-turtle nesting beaches are monitored by night cameras: North Cove has 7 nests, and South Cove has 8 nests. Slide 7 beads on Rail 1 and 8 beads on Rail 2 of your Number Rack. You can clearly see a matching pair of sevens ($7 + 7 = 14$) plus **1 extra white bead** on the bottom rail! That is the **Doubles-Plus-One** strategy in action: keying in `{{res:sc6_03_counting_place_value_seq_15:keys}}` doubles the 7 nests to `14` and adds the 1 extra nest to reach **`{{res:sc6_03_counting_place_value_seq_15:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `7 {{key:ENTER}}` | 0 | 0 | 7 | 7 | Load North Cove's 7 turtle nests into $X$ and duplicate to Mezzanine $Y$ |
-| `7 {{key:+}}` | 0 | 0 | 0 | 14 | Add the known double; $7 + 7 = 14$ nests forms in Register $X$ |
-| `1 {{key:+}}` | 0 | 0 | 0 | 15 | Add the 1 extra nest; total reaches 15 turtle nests ($X = 15$) |
-
-**Why It Works:** Any two neighbor numbers (like $6 + 7$, $7 + 8$, or $8 + 9$) are simply a double plus 1!
-
-### The Kangaroo Trailblazer
-Surfacing on the coast of Australia, you join a wildlife tracking team mapping the Outback trail! Here numbers represent distances and elevations along a continuous path, so you switch to the **Open Number Line (`{{key:LINE}}`)** to watch forward jump arcs, downward hikes, three-stage treks, and reverse-hop checks with `{{key:LASTX}}`.
-
-#### Bounding Across the Twenty Marker
-At the start of the trail, an Australian red kangaroo rests at kilometer marker 14 near a dry creek bed, then bounds forward 8 kilometers across the red sand plains to reach fresh desert grass. Which trail marker does the kangaroo reach?
-
-On your Open Number Line (`{{key:LINE}}`), start at tick 14 and launch a forward arc of `+8`. Just like bridging across 10 on a ten-frame, your mind can hop $+6$ to land on milestone 20 and $+2$ more to reach marker 22: when you press `{{res:sc6_03_counting_place_value_seq_18:keys}}`, the jump arc sweeps across the twenty mark and lands squarely on kilometer **`{{res:sc6_03_counting_place_value_seq_18:value}}`**.
-
-#### Hiking Down the Red Sand Dune
-A little farther along the trail, an outback scout stands atop a towering red sand dune at elevation 23 meters, then hikes down 7 meters into a shaded eucalyptus grove. What is the grove's elevation, and how does the number line show subtraction?
-
-Pin tick 23 on your Open Number Line and launch a backward arc of `-7` across benchmark 20 (stepping back 3 meters to hit 20, and 4 more meters to land on 16): pressing `{{res:sc6_03_counting_place_value_seq_19:keys}}` traces the downward hike to **`{{res:sc6_03_counting_place_value_seq_19:value}}`** meters. *(Now try the **Instant Reverse-Hop Check**: press `{{key:LASTX}} {{key:+}}` and watch the `-7` hike sitting in `LASTX` reverse into a `+7` climb right back to `23`!)*
-
-#### Three-Stage Trek to the Emerald Billabong
-From the eucalyptus grove, your survey team maps a three-part trek across the bush: 18 kilometers from base camp to Spinifex Ridge, 5 kilometers to the Giant Boab Tree, and 7 kilometers to the Emerald Billabong. How long is the entire trail?
-
-Watch how automatic stack lift chains the two forward jump arcs (`+5` then `+7`, which together add $+12$ onto $18$) to land right on a round decade milestone: keying in `{{res:sc6_03_counting_place_value_seq_20:keys}}` advances from marker `18` to `23` and then lands on **`{{res:sc6_03_counting_place_value_seq_20:value}}`** kilometers.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18 {{key:ENTER}}` | 0 | 0 | 18 | 18 | Pin Spinifex Ridge distance 18 into $X$ and duplicate to Mezzanine $Y$ |
-| `5 {{key:+}}` | 0 | 0 | 0 | 23 | First hop completes; first arc lands on Boab Tree marker 23 ($X = 23$) |
-| `7 {{key:+}}` | 0 | 0 | 0 | 30 | Final hop completes; second arc lands cleanly on milestone 30 ($X = 30$) |
-
-Those two consecutive arcs trace $18 \to 23 \to 30$, confirming a total trail length of $30\text{ km}$.
-
-#### Cartographer's Reverse-Hop Verification
-At the end of the outback hike, the team cartographer measures the span between Escarpment Overlook (kilometer 63) and Riverbed Base Camp (kilometer 27). How far apart are the two camps?
-
-On the Open Number Line, jump backward from 63 by splitting $-27$ into friendly mental hops ($-20$ to 43, $-3$ to 40, and $-4$ to 36), then verify on the stack by pressing `{{res:sc6_03_counting_place_value_seq_25:keys}}` to find a camp separation of **`{{res:sc6_03_counting_place_value_seq_25:value}}`** kilometers.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `63 {{key:ENTER}}` | 0 | 0 | 63 | 63 | Pin Escarpment marker 63 into Register $X$ and duplicate to Mezzanine $Y$ |
-| `27 {{key:-}}` | 0 | 0 | 0 | 36 | Leap backward by 27 units; arc lands squarely on tick 36 ($X = 36$) |
-
-**Zero-Retype Check:** Want to verify that starting at camp $36$ and hiking $+27\text{ km}$ brings you right back to marker $63$? Don't re-type `27`—just press `{{key:LASTX}} {{key:+}}` and watch `63` reappear on the ground floor!
-
-### Observatory Step Ladders & Rhythmic Countdowns
-Your Outback trail leads up to a mountaintop astronomical observatory! Inside the optics and planetary motion labs, technicians calibrate paired sensors, launch weather balloons, and track orbiting moons using rhythmic step-counting ladders in 2-Shelf (`2-LV`) and 4-Shelf (`4-LV`) modes.
-
-#### Telescope Sensor Pairs Ladder
-In the observatory optics lab, technicians calibrate paired star sensors by counting by 2s up to 20. Remember our step-counter discovery from Chapter 2: in **2-Shelf mode (`2-LV`)**, Shelf $Y$ is the roof of the stack, so it holds onto your step size (`2`) across every single tap of `{{key:+}}`! Switch to `{{key:FLAGS}} 2-LV` and climb the twos ladder by pressing `{{res:sc6_03_counting_place_value_seq_44:keys}}`, which steps evenly by twos all the way to **`{{res:sc6_03_counting_place_value_seq_44:value}}`**.
-
-After `2 {{key:ENTER}} 2 {{key:+}}` shows $Y = 2,\; X = 4$, each rhythmic tap of `{{key:+}}` advances through $6, 8, 10, 12, 14, 16, 18,$ up to $20$ while Shelf $Y$ keeps the constant `2` locked in place.
-
-#### Weather Balloon Launch Countdown by Fives
-Out on the observatory roof deck, the flight director prepares to launch a high-altitude weather balloon by counting down from 50 to 0 by 5s. Each `5 {{key:-}}` step drops the countdown by 5 in a steady rhythm until liftoff at zero: keying in `{{res:sc6_03_counting_place_value_seq_47:keys}}` steps down five meters of cable at a time until Ground Shelf $X$ reaches **`{{res:sc6_03_counting_place_value_seq_47:value}}`**.
-
-Starting with `50 {{key:ENTER}} 5 {{key:-}}` $\to$ $45$, nine more steps count down through $40, 35, 30, \dots, 0$ to reach liftoff at $X = 0$! *(Tip: You can also press `{{key:LASTX}} {{key:-}}` to reuse the `5` from `LASTX`.)*
-
-#### Moon-Triplet Resonance Ladder with `{{key:REP}}`
-What if you want a one-tap skip-counting ladder while staying in standard **4-Shelf mode (`4-LV`)**? Inside the planetary motion lab, astronomers track Jupiter's three locked Galilean moons (Io, Europa, and Ganymede) by generating multiples of 3. Pressing Constant Repeat (`{{key:REP}}`) fills all four floors ($T, Z, Y, X$) with `3`, so every tap of `{{key:+}}` automatically feeds a fresh `3` down from the Penthouse roof: `3 {{key:REP}} {{key:+}} {{key:+}} {{key:+}}`.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Challenge / Real-World Task | The Algebraic Calculator Trap (Infix) | Algebraic Keystrokes & Clutter | The StackCalc + Blocks Method (RPN Stack + Visual Studio) | StackCalc Keystrokes | The Stack Advantage |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `3 {{key:REP}}` | 3 | 3 | 3 | 3 | The `{{key:REP}}` repeat key replicates 3 across all registers ($T, Z, Y, X$) |
-| `{{key:+}}` | 3 | 3 | 3 | 6 | First addition yields 6; register $T$ preserves constant 3 |
-| `{{key:+}}` | 3 | 3 | 3 | 9 | Stack drop supplies 3 automatically; total reaches 9 |
-| `{{key:+}}` | 3 | 3 | 3 | 12 | Constant replicates from top of stack ($X = 12$) |
-
-Because Penthouse $T$ copies itself every time the stack drops, you never run out of 3s!
-
-### Place Value Decomposition & Expanded Notation
-Down the hall from the planetary lab is the observatory's historical navigation archive. Here you pair your physical **Place Value Studio Whole Numbers Tray** with the SC-6 stack to see how three-, four-, and five-digit numbers are built from expanded powers of ten ($100\text{s}, 10\text{s}, 1\text{s}$ and beyond).
-
-#### Rebuilding Earth's Solar Orbit from Place-Value Columns
-How many days does Earth take to complete one full orbit around the Sun? Dock the digit miniblocks `3`, `6`, and `5` into the `HUNDREDS`, `TENS`, and `ONES` sockets of your **Place Value Studio Whole Numbers Tray**: `3` hundreds ($300$), `6` tens ($60$), and `5` ones ($5$). Now watch those three bundled packages snap together into one whole number on the stack: pressing `{{res:sc6_03_counting_place_value_seq_26:keys}}` fuses $300 + 60 + 5$ into **`{{res:sc6_03_counting_place_value_seq_26:value}}`** solar days.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `300 {{key:ENTER}}` | 0 | 0 | 300 | 300 | Enter `3` hundreds ($300$) into stack |
-| `60 {{key:+}}` | 0 | 0 | 0 | 360 | Add `6` tens ($60$); subtotal accumulates to 360 |
-| `5 {{key:+}}` | 0 | 0 | 0 | 365 | Add `5` ones ($5$); full expanded sum reaches 365 |
-
-Each column contributes its exact place-value weight—$3$ hundreds, $6$ tens, and $5$ ones—to form $300 + 60 + 5 = 365$ days in a year.
-
-#### Unpacking a Four-Digit Ocean Voyage Year
-Next in the archive is a brass star astrolabe used by early ocean navigators who steered by the stars long before GPS satellites. Dock the four digit miniblocks `1`, `4`, `9`, and `2` into the `THOUSANDS`, `HUNDREDS`, `TENS`, and `ONES` sockets of your **Whole Numbers Place Value Tray**, then reconstruct that four-digit exploration year on the stack by adding its four place-value columns ($1,000 + 400 + 90 + 2$): keying in `{{res:sc6_03_counting_place_value_seq_27:keys}}` stacks each power of ten in turn to display **`{{res:sc6_03_counting_place_value_seq_27:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `1000 {{key:ENTER}}` | 0 | 0 | 1000 | 1000 | Enter `1` thousand ($1,000$) into stack |
-| `400 {{key:+}}` | 0 | 0 | 0 | 1400 | Add `4` hundreds ($400$); subtotal reaches 1400 |
-| `90 {{key:+}}` | 0 | 0 | 0 | 1490 | Add `9` tens ($90$); subtotal reaches 1490 |
-| `2 {{key:+}}` | 0 | 0 | 0 | 1492 | Add `2` ones ($2$); full four-digit year reaches 1492 |
-
-Watching the running sum grow from `1000` to `1400`, `1490`, and finally `1492` shows how $1$ thousand, $4$ hundreds, $9$ tens, and $2$ ones lock together.
-
-#### The Five-Digit Staircase Archive
-What happens when a number grows past four digits? The observatory library archives a countdown-patterned collection of photographic glass star plates: 9 ten-thousands, 8 thousands, 7 hundreds, 6 tens, and 5 ones. Even though your desktop Place Value Tray has four physical sockets (`1000 | 100 | 10 | 1`), every new column to the left simply bundles 10 of the column before it! Build the five-digit archive total on the stack by pressing `{{res:sc6_03_counting_place_value_seq_29:keys}}`, which layers each place-value bundle from left to right to reach **`{{res:sc6_03_counting_place_value_seq_29:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `90000 {{key:ENTER}}` | 0 | 0 | 90000 | 90000 | Enter 9 ten-thousands tier into stack |
-| `8000 {{key:+}}` | 0 | 0 | 0 | 98000 | Add 8 thousands tier ($X = 98000$) |
-| `700 {{key:+}}` | 0 | 0 | 0 | 98700 | Add 7 hundreds column ($X = 98700$) |
-| `60 {{key:+}}` | 0 | 0 | 0 | 98760 | Add 6 tens column ($X = 98760$) |
-| `5 {{key:+}}` | 0 | 0 | 0 | 98765 | Add 5 ones column; completes 98,765 |
-
-Each addition fills the next open zero column—uniting $9$ ten-thousands, $8$ thousands, $7$ hundreds, $6$ tens, and $5$ ones into $98,765$.
-
-### Deep-Space Mission Control & Big-Number X-Rays
-In our final story of the chapter, you take a seat at the Deep-Space Mission Control console! Instead of building big numbers from small parts as we did in the navigation archive, you will now use the **Place Value Engine (`{{key:PV}}`)** to X-ray six- and seven-digit numbers across lunar flights, million-carton school totals, and Voyager 1's daily race through interstellar space.
-
-#### Rocket Flight Time to the Moon
-The average distance from Earth's launch pad to the Moon is $384,400\text{ km}$. Because `{{key:PV}}` keeps $384,400$ parked on Shelf $Y$, you can X-ray every single place-value column in a row (`384400 {{key:ENTER}} 100000 {{key:PV}} 10000 {{key:PV}} 1000 {{key:PV}} 100 {{key:PV}}`). Next, if an Apollo spacecraft cruises at $4,000\text{ km/h}$, how many hours does the lunar voyage take?
-
-When you place the lunar distance on Shelf $Y$ and divide by the spacecraft's cruising speed—pressing `{{res:sc6_03_counting_place_value_seq_48:keys}}`—Ground Shelf $X$ immediately shows **`{{res:sc6_03_counting_place_value_seq_48:value}}`** transit hours, or just about $4\text{ days}$ to fly to the Moon ($X = 96.1$). Want to get the original $384,400\text{ km}$ lunar distance back without re-typing a single digit? Press `{{key:LASTX}} {{key:×}}` and watch $96.1 \times 4,000$ snap right back to `384400`!
-
-#### The Million-Carton School Lunch Challenge
-Before launching into interstellar space, mission nutritionists ask a down-to-earth question: how big is **one million** in everyday life? Suppose 14 school districts each serve 450 cartons of milk per day across a 180-day school year. Do they cross the one-million-carton mark by summer vacation?
-
-To chain all three factors on the stack (`14 × 450 × 180`) without writing down intermediate subtotals, press `{{res:sc6_03_counting_place_value_seq_37:keys}}`, and Ground Shelf $X$ immediately climbs to **`{{res:sc6_03_counting_place_value_seq_37:value}}`** cartons.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `14 {{key:ENTER}}` | 0 | 0 | 14 | 14 | Enter number of school districts |
-| `450 {{key:×}}` | 0 | 0 | 0 | 6300 | Daily consumption across all districts ($6,300\text{ cartons/day}$) |
-| `180 {{key:×}}` | 0 | 0 | 0 | 1134000 | Scale by 180 school days: $1,134,000\text{ cartons/year}$ |
-
-**Place Value X-Ray:** Keying `{{key:ENTER}} 1000000 {{key:PV}}` extracts $X = \mathbf{1}$ (1 million cartons); `100000 {{key:PV}}` extracts $X = \mathbf{1}$ (1 hundred-thousand cartons); `10000 {{key:PV}}` extracts $X = \mathbf{3}$ (3 ten-thousand cartons); and `1000 {{key:PV}}` extracts $X = \mathbf{4}$ (4 thousand cartons).
-
-#### Voyager 1's Interstellar Daily Dash
-Now look out beyond the planets: NASA's Voyager 1 spacecraft hurtles through interstellar space at $17\text{ kilometers every second}$. How many kilometers does Voyager 1 travel in one full 24-hour day ($86,400\text{ seconds}$)? Multiply the seconds per day by Voyager's speed on the stack by pressing `{{res:sc6_03_counting_place_value_seq_38:keys}}`, and the bottom shelf immediately reveals **`{{res:sc6_03_counting_place_value_seq_38:value}}`** kilometers!
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `86400 {{key:ENTER}}` | 0 | 0 | 86400 | 86400 | Enter seconds per solar day into Register $Y$ |
-| `17 {{key:×}}` | 0 | 0 | 0 | 1468800 | Daily distance covered: $1,468,800\text{ km/day}$ |
-
-Voyager 1 covers $1,468,800\text{ kilometers}$—nearly $1.5\text{ million kilometers}$—every single day! You can then X-ray every column in place: keying `{{key:ENTER}} 1000000 {{key:PV}}` extracts $X = \mathbf{1}$ (1 million km); `100000 {{key:PV}}` extracts $X = \mathbf{4}$ (4 hundred-thousand km); `10000 {{key:PV}}` extracts $X = \mathbf{6}$ (6 ten-thousand km); `1000 {{key:PV}}` extracts $X = \mathbf{8}$ (8 thousand km); and `100 {{key:PV}}` extracts $X = \mathbf{8}$ (8 hundred km).
+| **Stadium Light Wattage:** Chained multi-bank load sum: $(30 \times 1500) + (10 \times 2000)$ | A basic four-function calculator evaluates strictly left-to-right ($30 \times 1500 + 10 = 45,010 \times 2000 = 90,020,000\text{ W}$!), while on a scientific infix screen, typing the full line hides both light-bank subtotals ($45,000$ and $20,000$) until you press `=`. Students wrap each product in defensive parentheses just to keep the two groups visually separate. | `( 3 0 × 1 5 0 0 ) + ( 1 0 × 2 0 0 0 ) =` (23 keystrokes with defensive brackets; intermediate subtotals hidden) | **RPN Parallel Accumulation:** Evaluates bank A ($45,000$) and bank B ($20,000$) into visible registers $Y$ and $X$, then combines them in a single keystroke with zero parentheses. | `30 {{key:ENTER}} 1500 {{key:×}} 10 {{key:ENTER}} 2000 {{key:×}} {{key:+}}` (16 keystrokes) | **Both Subtotals Visible:** Both power bank subtotals remain in plain sight on the stack before combining. |
+| **Ten-Frame Bridging:** Mental addition across ten boundary: $8 + 5 = (8 + 2) + 3 = 10 + 3$ | Single-line algebraic screens hide the intermediate landmark of 10. Pressing equals triggers a black-box answer without showing the ten-frame filling up. | `8 + 2 + 3 =` (Single-line display; intermediate ten lost) | **Ten-Frame Studio Bridge (`{{key:▦}}`):** Interactive grid drops 2 counters into Frame 1, flashing the completed ten at 10, then cascades remaining 3 counters into Frame 2. | `8 {{key:ENTER}} 2 {{key:+}} 3 {{key:+}}` (Visual ten-frame flash at $X = 10$) | **Visual Ten Landmark:** Concrete spatial grouping eliminates finger-counting and reveals why bridging ten works. |
+| **Place Value Explorer:** Extracting tens and hundreds from $4,725$ without scratch paper | Infix calculators have no positional extraction keys. Students must manually divide by 10, subtract the integer part, and multiply back—destroying the original number. | `4 7 2 5 / 1 0 =` $\to 472.5$, `- 4 7 0 =` $\to 2.5$ (Destructive multi-step division) | **Preserved Target Engine (`{{key:PV}}`):** Dedicated hardware instruction preserves target $4,725$ in Register $Y$, suppressing stack lift so subsequent checks execute instantly. | `4725 {{key:ENTER}} 10 {{key:PV}} 100 {{key:PV}} 1000 {{key:PV}}` (Chained single-stroke checks) | **Zero Value Destruction:** Target number remains permanently parked in Register $Y$; checks tens ($2$), hundreds ($7$), thousands ($4$) in rapid cadence. |
+| **Rhythmic Cadence Counting:** Even number ladder up to 20 | Infix constant equals-key mode (`2 + 2 = = =`) relies on hidden register state that fails if any non-equals key is accidentally touched. | `2 + 2 = = = = =` (Flaky state; hidden accumulator easily cleared) | **Stack Constant Duplication:** In 2-LV mode, Register $Y$ preserves constant $2.0$. Each tap of `{{key:+}}` advances count by 2 with deterministic mechanical precision. | `2 {{key:ENTER}} 2 {{key:+}} {{key:+}} {{key:+}} ...` (100% reliable stack retention) | **Visual Stepping Ladder:** Learners see constant waiting on Level $Y$ while Level $X$ climbs in cadence with physical block towers. |
 
 ---
 
@@ -721,4 +611,4 @@ The tools and models in this chapter link physical counting directly to the base
 6. **Structural Decomposition:** The Place Value Engine (`{{key:PV}}`) slices numbers into their constituent powers of ten, preserving Register $Y$ across chained queries.
 7. **Cosmic Horizons:** Place value structures scale directly from single unit cubes to solar system distances.
 
-Once you can bundle single units into tens, hundreds, and thousands, what happens when we arrange equal groups into rectangular arrays? In Chapter 4, young Carl Friedrich Gauss shows us how multiplication and skip-counting reveal patterns across the universe.
+Once you can bundle single units into tens, hundreds, and thousands, what happens when we arrange equal groups into rectangular arrays? In **[Chapter 4: Tile Arrays, Skip-Counting & Remainders](04-operations-skip-counting.md)**, young Carl Friedrich Gauss shows us how multiplication and skip-counting reveal patterns across the universe.

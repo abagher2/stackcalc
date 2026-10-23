@@ -1,9 +1,9 @@
 ---
-title: "Chapter 7: Discrete Probability, Primes & Pre-Algebra"
+title: "Chapter 7: Prime Numbers, Fair Dice & Data Detective"
 description: "Mastering elementary probability, number theory, descriptive statistics, and Grade 6 pre-algebra on the SC-6: dice, prime factors, GCF/LCM, and signed numbers."
 ---
 
-# Chapter 7: Discrete Probability, Primes & Pre-Algebra
+# Chapter 7: Prime Numbers, Fair Dice & Data Detective
 
 ## The 17-Year Cicada Mystery: How Prime Numbers Outsmart Predators and Fair Dice Balance Chance
 
@@ -13,19 +13,17 @@ Deep beneath the deciduous forests of eastern North America, millions of periodi
 
 Naturalists and mathematical biologists long investigated a fascinating evolutionary question {{cite:gould1977,webb2001}}: **Why 13 years? Why 17 years?** Why didn't cicadas evolve a 12-year, 14-year, or 16-year life cycle?
 
-#### The Deadly Composite Trap
-Suppose a cicada brood emerged on a 12-year cycle. The number 12 is **composite**: its factors are $1, 2, 3, 4, 6,$ and $12$.
+To see the danger of a non-prime schedule, picture the **Deadly Composite Trap** that would happen if a cicada brood emerged on a 12-year cycle. The number 12 is **composite**, meaning its factors are $1, 2, 3, 4, 6,$ and $12$:
 - A predatory bird or parasitic wasp with a 2-year population surge would synchronize with them on every single emergence ($2 \times 6 = 12$).
 - A predator with a 3-year boom cycle would meet them every emergence ($3 \times 4 = 12$).
 - A predator with a 4-year cycle would feast on them every emergence ($4 \times 3 = 12$).
 
-The cicada population would be devastated by specialized parasites at every generation.
+The cicada population would be devastated by specialized parasites at every generation!
 
-#### The Prime Number Shield
-Now look at 17. The number 17 is **prime**: its *only* factors are 1 and 17.
-- A 2-year cyclical predator intersects with the cicadas only once every **34 years** ($\text{LCM}(2, 17) = 34$).
-- A 3-year cyclical predator intersects only once every **51 years** ($\text{LCM}(3, 17) = 51$).
-- A 5-year cyclical predator intersects only once every **85 years** ($\text{LCM}(5, 17) = 85$).
+Now compare that trap with the **Prime Number Shield** of 17. The number 17 is **prime**, so its *only* factors are 1 and 17:
+- A 2-year cyclical predator intersects with the cicadas only once every **34 years** ($\text{Least Common Multiple of } 2\text{ and } 17 = 34$).
+- A 3-year cyclical predator intersects only once every **51 years** ($\text{Least Common Multiple of } 3\text{ and } 17 = 51$).
+- A 5-year cyclical predator intersects only once every **85 years** ($\text{Least Common Multiple of } 5\text{ and } 17 = 85$).
 
 By sleeping underground for an exact prime number of years, cicadas outsmart every predator in the forest! Primes are nature's secret code—the unbreakable atomic building blocks of all numbers {{cite:gauss1809,singh1997}}.
 
@@ -46,17 +44,9 @@ If you try to make a 7-sided or 11-sided die, some sides will always be steeper 
 
 ---
 
-> **Keys & Tools in This Chapter**
-> - **Probability & Randomness:** `{{key:🎲}}` Polyhedral Dice Sandbox, `{{key:1…x}}` (Random 1 to X), `{{key:t…x}}` (Random Y to X).
-> - **Number Theory Keys:** `{{key:PRIME}}` Primality Test, `{{key:FACT}}` Prime Factor Decomposition, `{{key:C.FAC}}` Common Factors, `{{key:GCF}}` Greatest Common Factor, `{{key:LCM}}` Least Common Multiple, `y⟌x` (Quotient & Remainder).
-> - **Descriptive Statistics:** `{{key:Σ+}}` Accumulator, `{{key:Σ-}}` Correction, `{{key:N}}` Sample Count, `{{key:Σx}}` Sum, `{{key:Σx²}}` Sum of Squares, `{{key:x̄}}` Mean (Average), `{{key:MED}}` Median, `{{key:MODE}}` Mode, `{{key:MIN}}` Minimum, `{{key:MAX}}` Maximum, `{{key:IQR}}` Interquartile Range, `{{key:MAD}}` Mean Absolute Deviation, `{{key:FRQ}}` Frequency of X.
-> - **Grade 6 Pre-Algebra:** `{{key:+/-}}` Signed Numbers (Zero Pairs), `{{key:|x|}}` Absolute Value (Number Line Distance), Geometric `{{key:x²}}` and `{{key:√x}}` (Area-to-Side Inverses).
-
----
-
 ## Hands-On Studio: Two-Color Counters, Polyhedral Dice & The Sieve Grid
 
-Before we tap keys on the calculator, we roll real dice, balance counters, and build number arrays with our hands. When you understand what the numbers look like on your desk, the calculator becomes your ultimate math assistant.
+Before we tap keys on the calculator, we roll real dice, balance two-color counters, and build prime-number towers with our hands. Once you can see and feel what is happening on your desk, the calculator's dice key (`{{key:🎲}}`), prime-number keys (`{{key:PRIME}}`, `{{key:FACT}}`, `{{key:GCF}}`, `{{key:LCM}}`), data-detective keys (`{{key:Σ+}}`, `{{key:x̄}}`, `{{key:MED}}`, `{{key:MAD}}`), and negative-number toggle (`{{key:+/-}}`) will feel like old friends—and we will meet each one step by step as we need it.
 
 ### Concrete Probability & Number Theory Manipulatives
 
@@ -84,9 +74,7 @@ Before you manipulate signed numbers on the SC-6 keypad, you model integers conc
 
 When solving $(-5) + (+3)$, you place 5 Crimson tokens and 3 Yellow tokens on the mat. Pairing 3 Crimson tokens with the 3 Yellow tokens eliminates 3 Zero Pairs, leaving 2 Crimson tokens: $-2$. On the SC-6, you model that exact zero-pair cancellation on the stack by entering `5`, toggling its sign to `-5` on Register $Y$, and adding `3` on Register $X$ with `{{res:sc6_07_data_probability_primes_seq_66:keys}}` to land directly on $X = \mathbf{-2}$.
 
-#### Why Negative × Negative Is Positive
-
-*"Why is $(-3) \times (-2)$ equal to $+6$? Why aren't two negatives even more negative?"* Instead of memorizing a grammar rule ("two negatives make a positive"), picture yourself walking along your Number Line:
+That physical number-line walk also explains a puzzle that mystifies many students: *"Why is $(-3) \times (-2)$ equal to $+6$? Why aren't two negatives even more negative?"* Instead of memorizing a grammar rule ("two negatives make a positive"), picture yourself walking along your Number Line:
 
 1. **Multiplication is walking along the number line at a steady pace:**
    - $(+3) \times (+2)$: Face Forward ($+$), take 2 steps of size 3 forward $\longrightarrow +6$.
@@ -139,13 +127,16 @@ What if your game or science experiment needs a 20-sided dragon die ($d20$), a c
 - **`{{key:t…x}}` (Random Y to X):** Picks a random whole number between the starting number on Shelf Y and the ending number on Shelf X.
   - Generate a random two-digit number from 10 to 99: `10 {{key:ENTER}} 99 {{key:t…x}}`.
 
-#### Theoretical vs. Experimental Die Probability Across 60 Rolls
 Why doesn't a real die land on `4` *exact* once every 6 rolls? Because **Theoretical Probability** tells you what happens over thousands of rolls, while **Experimental Probability** records what actually happened in your real-life trial! Suppose you roll a standard six-sided die 60 times. On any single roll, the theoretical probability of rolling a 4 is $\frac{1}{6}$, so across 60 rolls a 4 should theoretically appear $60 \times \frac{1}{6} = 10\text{ times}$:
 
 $$\text{Theoretical Probability of Rolling a 4} = \frac{1}{6} \approx 0.1667 \ (16.67\%)$$
 $$\text{Expected Count} = 60 \times \frac{1}{6} = 10\text{ times}$$
 
 Suppose that in your actual 60-roll experiment, you roll a 4 twelve times. Dividing your 12 wins by the 60 total rolls on the stack with `12 {{key:ENTER}} 60 {{key:÷}}` gives an experimental probability of $0.2000$ ($20.0\%$), and subtracting the theoretical $\frac{1}{6}$ share with `0.20 {{key:ENTER}} {{key:1}} {{key:ENTER}} {{key:6}} {{key:÷}} {{key:-}}` shows a $+0.0333$ ($+3.33\%$) experimental difference.
+
+Game designers use this exact probability ratio (`Winning Outcomes ÷ Total Outcomes`) to check the fairness of every die roll and card draw before printing a rulebook. Suppose in the opening match of a tabletop tournament, a player needs to roll an odd number ($1, 3,$ or $5$) on a single six-sided equal-volume pip die from your Dice & Spinner Studio to unlock a treasure chest. Pick up one of your physical $d6$ dice and count the odd faces: 3 out of the 6 faces are odd. If you roll the die 60 times, you expect roughly 30 odd rolls. Comparing the 3 winning odd faces against all 6 faces of the cube on your SC-6 via `{{res:sc6_07_data_probability_primes_seq_01:keys}}` yields **`{{res:sc6_07_data_probability_primes_seq_01:value}}`**. Because half the faces of a standard cube are odd, the player's theoretical chance is an exact coin-flip ($\mathbf{0.5000}$ or $50\%$).
+
+Now move from the dice table over to the championship card arena, where a finalist needs to draw an Ace on the very first card pulled from a freshly shuffled 52-card deck. Since there are 4 suits (hearts, diamonds, clubs, and spades), there are 4 Aces hiding among the 52 cards. Dividing the 4 Aces by the 52-card deck on the stack with `{{res:sc6_07_data_probability_primes_seq_02:keys}}` produces **`{{res:sc6_07_data_probability_primes_seq_02:value}}`**. Because every suit holds 1 Ace out of 13 ranks ($4/52 = 1/13$), the opening-draw probability is $\mathbf{0.0769}$ ($\approx 7.69\%$)—rare enough to make the whole crowd gasp when an Ace turns over on the first draw!
 
 ---
 
@@ -174,8 +165,7 @@ Imagine painting the first die **Red** and the second die **Blue**. Because each
 | **$12$** | $(6,6)$ | $1$ | $1/36$ |
 | **Total** | **All $6 \times 6$ Outcomes** | **$36$** | **$36/36 = 1.00$** |
 
-#### Why Lucky 7 Wins: Building the 2-Dice Rooftop Pyramid
-Why do board-game designers put the robber or the most frequent resource on **$7$** when you throw two $d6$ dice from your **Polyhedral Dice** kit? Dock **Counting Tiles** along your Snapfinity lid—one tile ($7.0\text{ mm}$) for each *(First Die, Second Die)* pair in the table above:
+Why do board-game designers put the robber or the most frequent resource on **$7$** when you throw two $d6$ dice from your **Polyhedral Dice** kit? You can build a physical 2-dice rooftop pyramid by docking **Counting Tiles** along your Snapfinity lid—one tile ($7.0\text{ mm}$) for each *(First Die, Second Die)* pair in the table above:
 - Sums **$2$** and **$12$** get only **1 tile** ($7.0\text{ mm}$ tall), because there is only one way to roll snake-eyes $(1,1)$ or boxcars $(6,6)$.
 - Sums **$3$** and **$11$** stand **2 tiles** ($14.0\text{ mm}$) tall; **$4$** and **$10$** stand **3 tiles** ($21.0\text{ mm}$) tall; **$5$** and **$9$** stand **4 tiles** ($28.0\text{ mm}$) tall; **$6$** and **$8$** stand **5 tiles** ($35.0\text{ mm}$) tall.
 - Right in the center, **Lucky $7$** towers **6 tiles ($42.0\text{ mm}$) tall** because every possible number on the first die ($1$ through $6$) has an exact partner on the second die ($(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)$) that adds to $7$.
@@ -187,8 +177,10 @@ Why do board-game designers put the robber or the most frequent resource on **$7
 
 The probability of rolling a sum of $7$ is **$1/6 \approx 16.67\%$**—six times more likely than rolling a $2$ or a $12$.
 
+What if you pair two different random tools together—like flipping **Heads** on a fair coin ($\frac{1}{2}$) *and* rolling a **$6$** on a six-sided die ($\frac{1}{6}$) on the same turn? Because the coin and the die don't affect each other (mathematicians call them **independent events**), their $2 \times 6$ outcome grid has $12$ equally likely pairs, and only $1$ of those $12$ pairs is *(Heads, 6)*. Multiplying the two independent chances on the stack via `{{res:sc6_07_data_probability_primes_seq_51:keys}}` yields **`{{res:sc6_07_data_probability_primes_seq_51:value}}`**, giving a combined chance of $\text{Chance of Heads} \times \text{Chance of 6} = 1/12 \approx \mathbf{8.33\%}$.
+
 ### Probability Trees & Sampling Without Replacement
-What happens when you pull a marble out of a bag and **keep it in your hand** instead of tossing it back in? Now the bag has *one fewer marble* inside, so the odds on your second draw change!
+What happens when you pull a marble out of a bag (or deal a card from a deck) and **keep it in your hand** instead of tossing it back in? Now the bag has *one fewer marble* inside, so the odds on your second draw change!
 
 | First Draw Outcome ($8$ Marbles) | Second Draw Outcome ($7$ Remaining) | Combined Branch Probability |
 | :--- | :--- | :---: |
@@ -197,17 +189,17 @@ What happens when you pull a marble out of a bag and **keep it in your hand** in
 | **Blue 1st ($3/8$)** | Red 2nd ($5/7$) | $\frac{3}{8} \times \frac{5}{7} = \frac{15}{56}$ |
 | **Blue 1st ($3/8$)** | **Blue 2nd ($2/7$)** | $\frac{3}{8} \times \frac{2}{7} = \frac{6}{56} = \mathbf{\frac{3}{28}}$ |
 
-#### Drawing Two Blue Marbles Without Looking
-Suppose you reach into a cloth bag containing 5 Red and 3 Blue marbles ($8$ marbles in all) and draw two marbles without looking and without putting the first marble back. On your first reach, $3$ out of $8$ marbles are Blue ($\frac{3}{8}$). Once you hold that Blue marble in your hand, only $2$ Blue marbles remain among the $7$ marbles left in the bag ($\frac{2}{7}$)! Multiply the two step chances together:
+Suppose you reach into a cloth bag containing 5 Red and 3 Blue marbles ($8$ marbles in all) and draw two marbles without looking and without putting the first marble back. What is the chance of drawing two Blue marbles in a row? On your first reach, $3$ out of $8$ marbles are Blue ($\frac{3}{8}$). Once you hold that Blue marble in your hand, only $2$ Blue marbles remain among the $7$ marbles left in the bag ($\frac{2}{7}$)! Multiply the two step chances together:
 $$\text{Chance of Both Blue} = \text{Chance of 1st Blue} \times \text{Chance of 2nd Blue} = \frac{3}{8} \times \frac{2}{7} = \frac{6}{56} = \frac{3}{28}$$
 
 On the stack, compute the first draw probability $\frac{3}{8}$ on Register $Y$, compute the second draw probability $\frac{2}{7}$ on Register $X$, and multiply them with `{{key:3}} {{key:ENTER}} {{key:8}} {{key:÷}} {{key:2}} {{key:ENTER}} {{key:7}} {{key:÷}} {{key:×}}` to obtain $0.107143$. Tapping `{{key:FDISP}}` switches to exact fraction view ($\mathbf{3/28}$), showing that the probability of drawing two blue marbles in a row is $3/28 \approx \mathbf{10.71\%}$.
 
-#### The Complement Shortcut: Drawing At Least One Red Marble
-What if someone asks for the chance of drawing **at least one Red marble** in those two picks? Instead of adding up three different branches (Red-Red, Red-Blue, and Blue-Red), notice that the *only* way to fail is to draw **Both Blue** ($\frac{3}{28}$)! Subtracting the chance of Both Blue from $1$ ($100\%$) gives the answer in one step:
+What if someone asks for the chance of drawing **at least one Red marble** in those two picks? Instead of adding up three different branches (Red-Red, Red-Blue, and Blue-Red), use the **Complement Shortcut**: notice that the *only* way to fail is to draw **Both Blue** ($\frac{3}{28}$)! Subtracting the chance of Both Blue from $1$ ($100\%$) gives the answer in one step:
 $$\text{Chance of At Least One Red} = 1 - \text{Chance of Both Blue} = 1 - \frac{3}{28} = \frac{25}{28}$$
 
 Place `1` ($100\%$) onto Register $Y$, divide `3` by `28` on Register $X$, and subtract with `{{key:1}} {{key:ENTER}} {{key:3}} {{key:ENTER}} 28 {{key:÷}} {{key:-}}` to reach $0.892857$—and one tap of `{{key:FDISP}}` reveals the exact fraction $\mathbf{25/28}$ ($\approx \mathbf{89.29\%}$).
+
+That same without-replacement rule explains why drawing **two Aces in a row** from a 52-card deck is such a rare thrill! On the first draw, $4$ of the $52$ cards are Aces ($4/52$). Once you hold that first Ace in your hand, only **$3$ Aces** remain among the **$51$ cards** left in the deck ($3/51$). Multiplying the two dependent step chances on the stack with `{{res:sc6_07_data_probability_primes_seq_52:keys}}` gives **`{{res:sc6_07_data_probability_primes_seq_52:value}}`**—a combined probability of $1/221 \approx \mathbf{0.45\%}$, happening only once in every 221 two-card deals!
 
 ---
 
@@ -217,7 +209,7 @@ Now let's return to the 17-year cicada mystery from the start of our chapter. Wh
 
 | Tool | Format | What You Build & See | How It Connects to Your SC-6 |
 | :--- | :--- | :--- | :--- |
-| **Hands-On Blocks** | Physical Manipulatives | • **24-Tile Array Test:** Primes form only $1 \times N$ straight lines; composites form 2D matrices. • **Prime Factor Studio:** Proportional prime towers where stacking prime blocks physically multiplies their values. • Height(2) + Height(3) = Height(6) on the comparator stage. | Physical verification before keystrokes |
+| **Hands-On Blocks** | Physical Manipulatives | • **24-Tile Array Test:** Primes form only $1 \times \text{Number}$ straight lines; composites form 2D matrices. • **Prime Factor Studio:** Proportional prime towers where stacking prime blocks physically multiplies their values. • Height(2) + Height(3) = Height(6) on the comparator stage. | Physical verification before keystrokes |
 | **Visual Screen** | Graphic Sandboxes | • Screen Factor Tree View: exponents and prime dots ($2^3 \times 3^2 \times 5$). • Dual Frame Counter `{{key:▦}}`. • Interactive LCD Sieve: survivor primes highlighted on display. | Daylight LCD dot matrix |
 | **Number Stack** | RPN Symbolic Engines | • `{{key:PRIME}}` test flashes `PRIME` or `COMPOSITE` on the graphic status line, preserving the number on $X$. • `{{key:FACT}}` displays prime factorization string. • `{{key:GCF}}` and `{{key:LCM}}` execute Euclidean and Duality engines. | Stack execution ($T, Z, Y, X$) |
 
@@ -226,8 +218,8 @@ How can you tell with your bare hands whether a number is **prime** or **composi
 
 | Number Classification | Tile Count | Complete Rectangular Factor Arrays | Positive Divisors |
 | :--- | :--- | :--- | :--- |
-| **Composite ($N = 12$)** | 12 Tiles | $1 \times 12$, $2 \times 6$, and $3 \times 4$ complete rectangles | `1, 2, 3, 4, 6, 12` (6 factors) |
-| **Prime ($N = 13$)** | 13 Tiles | Rows of 2, 3, or 4 always leave 1 leftover tile; only $1 \times 13$ forms a rectangle | `1, 13` (2 factors only) |
+| **Composite (12 Tiles)** | 12 Tiles | $1 \times 12$, $2 \times 6$, and $3 \times 4$ complete rectangles | `1, 2, 3, 4, 6, 12` (6 factors) |
+| **Prime (13 Tiles)** | 13 Tiles | Rows of 2, 3, or 4 always leave 1 leftover tile; only $1 \times 13$ forms a rectangle | `1, 13` (2 factors only) |
 
 > **Why Prime Numbers Cannot Form Rectangles:** Take 12 counting tiles from your kit: you can arrange them into a neat $2 \times 6$ rectangle or a $3 \times 4$ rectangle with zero leftovers. Now add one more tile to make 13 and try building a rectangle 2, 3, or 4 tiles wide. Every attempt leaves an extra tile sticking out! The only rectangle 13 tiles can form is a single skinny $1 \times 13$ line. That is the geometric meaning of a prime number: it cannot be factored into two dimensions greater than 1.
 
@@ -252,8 +244,7 @@ With your individual 24-tile kit, you can build a $4 \times 6$ grid to hunt down
 - **Step 5: Prime Survivors (Slate Gray).** In a single 24-tile kit, the 9 survivor tiles are **$2, 3, 5, 7, 11, 13, 17, 19, 23$**. Across a 6-kit classroom pool ($144$ tiles), all 34 primes $\le 144$ survive:  
   $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139$.
 
-#### Unmasking Impostor Primes on the SC-6
-Watch out for "impostor primes" like $91$ and $119$—they look prime at first glance because they are odd and don't end in $5$, but both are secret multiples of $7$! When you test $91$ with `{{res:sc6_07_data_probability_primes_seq_70:keys}}`, the screen flashes `COMPOSITE` while leaving `91` on the display ($91 = 7 \times 13$), whereas testing $97$ with `{{res:sc6_07_data_probability_primes_seq_71:keys}}` flashes `PRIME` and keeps `97` on Register $X$. Likewise, testing $119$ with `{{res:sc6_07_data_probability_primes_seq_72:keys}}` flashes `COMPOSITE` ($119 = 7 \times 17$), while testing $137$ with `{{res:sc6_07_data_probability_primes_seq_73:keys}}` flashes `PRIME`. Whenever a number flashes `COMPOSITE`, simply tap `{{key:FACT}}` right afterward to unmask its hidden prime factors on the LCD!
+Notice how the eighties end with two true prime survivors—**$83$** and **$89$**—whereas the nineties and early hundreds hide sneaky "impostor primes" that look prime at first glance because they are odd and don't end in $5$, yet are secret multiples of $7$! For example, testing $91$ (`{{res:sc6_07_data_probability_primes_seq_70:keys}}`) flashes `COMPOSITE` ($91 = 7 \times 13$) while neighbor prime $89$ (or `{{res:sc6_07_data_probability_primes_seq_71:keys}}`) flashes `PRIME`, and beyond 100, testing $119$ (`{{res:sc6_07_data_probability_primes_seq_72:keys}}`) unmasks another multiple of $7$ ($119 = 7 \times 17$) while `{{res:sc6_07_data_probability_primes_seq_73:keys}}` confirms `PRIME`. Whenever any candidate flashes `COMPOSITE`, simply tap `{{key:FACT}}` right afterward to unmask its hidden prime factors on the LCD!
 
 ---
 
@@ -270,7 +261,7 @@ Because the ruler scale is spaced by multiplication steps, **adding block height
 
 {{blocks:prime_studio_comparator_stage|Prime Factor Studio: Bilateral Comparator Stage & Prime Factor Blocks}}
 
-#### Try Stacking Your Prime Blocks
+Try stacking your Prime Blocks right on the comparator stage to watch height addition turn into multiplication:
 1. **Multiplying $2 \times 3 = 6$:**
    Place Blue Block `{{key:2}}` on the desk. Stack Amber/Green Block `{{key:3}}` on top:
    $$\text{Height of 2-Block} + \text{Height of 3-Block} = 7.00\text{ mm} + 11.09\text{ mm} = \mathbf{18.09\text{ mm}}$$
@@ -289,8 +280,7 @@ Because the ruler scale is spaced by multiplication steps, **adding block height
 
 {{blocks:prime_studio_commutativity|Prime Studio Commutativity Proof: 2x5 = 5x2 = 10 Exact Flush Alignment}}
 
-#### Decomposing 60 into Prime Blocks on the Screen
-Keying `{{res:sc6_fact_60:keys}}` on the SC-6 decomposes `{{res:sc6_fact_60:value}}` directly into its prime factor tree (`2 × 2 × 3 × 5`), matching your four stacked blocks block-for-block:
+Now compare your physical block tower to the screen! Keying `{{res:sc6_fact_60:keys}}` on the SC-6 decomposes `{{res:sc6_fact_60:value}}` directly into its prime factor tree (`2 × 2 × 3 × 5`), matching your four stacked blocks block-for-block:
 
 {{res:sc6_fact_60:screenshot|SC-6 Prime Factorization Mode: 60 = 2 x 2 x 3 x 5}}
 
@@ -316,6 +306,26 @@ A prime number is a whole number greater than 1 whose only factors are 1 and its
 | `2` | 0 | 97 | 119 | 2 | Stack lifts; 2 entered |
 | `{{key:PRIME}}` | 0 | 97 | 119 | 2 | Flashes `PRIME` |
 
+Because `{{key:PRIME}}` leaves the number sitting untouched on Register $X$, you can test large candidates and immediately use them in multi-step number puzzles! Suppose an adventure quest's stone gate opens only if the code carved into the bronze key—**`83`** (`{{res:sc6_07_data_probability_primes_seq_82:keys}}`)—is an unbreakable prime number. Remember how 13 Counting Tiles refuse to form any rectangle of 2, 3, or 4 rows without leaving a tile sticking out? Testing candidate 83 with the hardware primality key via `{{res:sc6_07_data_probability_primes_seq_06:keys}}` confirms **`{{res:sc6_07_data_probability_primes_seq_06:value}}`**: because $9 \times 9 = 81$ and none of the primes below 9 ($2, 3, 5,$ or $7$) divide evenly into 83, the status line flashes `PRIME` and preserves $\mathbf{83}$ in Register $X$.
+
+Better yet, because `{{key:PRIME}}` preserves each number on the stack, you can test two primes in a row and immediately add them together! For example, two prime numbers that sit just $2$ steps apart on the number line—like $(11, 13)$ or $(17, 19)$—are called **Twin Primes** (because the even number sandwiched between them is always divisible by $2$!). Let's use `{{key:PRIME}}` to verify that **$29$** and **$31$** are both prime, and then add them together on the stack via `{{res:sc6_07_data_probability_primes_seq_39:keys}}` to reach **`{{res:sc6_07_data_probability_primes_seq_39:value}}`**. Both candidates flash `PRIME` on the daylight LCD and sum to $\mathbf{60}$—a multiple of 12, which is true for every twin prime pair greater than $(3, 5)$!
+
+You can also use `{{key:PRIME}}` to test a famous 300-year-old mathematical puzzle from the year 1742! That year, Christian Goldbach wrote a letter to Leonhard Euler with a bold guess: *Every even whole number greater than 2 can be built by adding two prime numbers together!* ($4 = 2+2$, $6 = 3+3$, $8 = 3+5$, $10 = 3+7\dots$). Even with modern supercomputers, no one has ever found an even number that breaks Goldbach's rule! Let's test the even number **$28$** by checking whether **$11$** and **$17$** are both prime and add up to $28$ using `{{res:sc6_07_data_probability_primes_seq_49:keys}}`, which confirms **`{{res:sc6_07_data_probability_primes_seq_49:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `11` | $0.0000$ | $0.0000$ | $0.0000$ | $11.0000$ | Key in first prime candidate 11 |
+| `{{key:PRIME}}` | $0.0000$ | $0.0000$ | $0.0000$ | $11.0000$ | LCD flashes `PRIME`; preserves 11 in Register $X$ |
+| `17` | $0.0000$ | $0.0000$ | $11.0000$ | $17.0000$ | Key in second candidate 17; stack lifts 11 to $Y$ |
+| `{{key:PRIME}}` | $0.0000$ | $0.0000$ | $11.0000$ | $17.0000$ | LCD flashes `PRIME`; preserves 17 in Register $X$ |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $28.0000$ | Sum primes $11 + 17 = 28$; stack drops |
+| `11` | $0.0000$ | $0.0000$ | $28.0000$ | $11.0000$ | Key in 11 for second partition check; stack lifts 28 to $Y$ |
+| `{{key:ENTER}}` | $0.0000$ | $28.0000$ | $11.0000$ | $11.0000$ | Push 11 to $Y$; lifts 28 to $Z$ (stack lift disabled) |
+| `17` | $0.0000$ | $28.0000$ | $11.0000$ | $17.0000$ | Key in 17; overwrites $X$ since `ENTER` disabled lift |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $28.0000$ | $28.0000$ | Sum $11 + 17 = 28$; stack drops, preserving first sum in $Y$ |
+
+Register $X$ displays $28$ and Register $Y$ preserves $28$—Goldbach's Conjecture holds true for $28$!
+
 ---
 
 ### Prime Factor Decomposition Engine (`{{key:FACT}}`)
@@ -339,50 +349,32 @@ In Chapter 05, you met the `{{key:GCF}}` and `{{key:LCM}}` keys as fast tools fo
 - **Shifted Key `{{key:LCM}}`:** Finds the **Least Common Multiple** of Shelf $Y$ and Shelf $X$ (e.g., `{{res:sc6_lcm_12_18:keys}}` $\longrightarrow$ `{{res:sc6_lcm_12_18:value}}`).
 - **Why Songbird Brains Pack More Neurons per Gram:** Why can a tiny songbird learn hundreds of complex melodies? Because songbird brains pack $140\text{ million}$ neurons into a single gram of tissue. Tapping `140 {{key:FACT}}` breaks $140$ into its prime building blocks: **`2² × 5 × 7`**.
 
-#### Two-Circle Prime Factor Venn Diagram with Prime Factor Blocks:
-Draw two overlapping circles on your desk for the numbers **$48$** and **$72$**:
+You can see how GCF and LCM share their prime blocks by drawing a **Two-Circle Prime Factor Venn Diagram** on your desk for the numbers **$48$** and **$72$**:
 - Break down $48 = 2 \times 2 \times 2 \times 2 \times 3$: Assemble four `{{key:2}}` blocks and one `{{key:3}}` block.
 - Break down $72 = 2 \times 2 \times 2 \times 3 \times 3$: Assemble three `{{key:2}}` blocks and two `{{key:3}}` blocks.
-- **Center Overlap ($\text{GCF}$):** Slide every matching pair of prime blocks that both numbers share (**three `{{key:2}}`s and one `{{key:3}}`**) into the **Center Overlap**. Multiplying the center blocks gives the Greatest Common Factor:
+- **Center Overlap ($\text{GCF}$):** Slide every matching pair of prime blocks that both numbers share (**three `{{key:2}}`s and one `{{key:3}}`**) into the **Center Overlap**. Multiplying the center blocks (or keying `{{res:sc6_07_data_probability_primes_seq_83:keys}}` on the stack) gives the Greatest Common Factor:
   $$\text{GCF} = 2 \times 2 \times 2 \times 3 = 8 \times 3 = \mathbf{24}$$
 - **All Three Regions Combined ($\text{LCM}$):** Place the leftover unshared blocks in the outer crescents (one extra `{{key:2}}` on the Left for $48$; one extra `{{key:3}}` on the Right for $72$). Multiplying **all blocks across all three regions** (Left $\times$ Center $\times$ Right) gives the Least Common Multiple:
   $$\text{LCM} = 2 \times 24 \times 3 = 16 \times 9 = \mathbf{144}$$
 
 {{blocks:prime_lcm_gcd_venn|Prime Factor Studio: Prime Factorization and Venn Intersection Model}}
 
-#### How Meshing Gears Work
 Why do mechanical engineers care about both GCF and LCM when two gears mesh together? Imagine a **$14\text{-tooth}$ driver gear** ($14 = 2 \times 7$) clicking tooth-for-tooth against a **$21\text{-tooth}$ driven gear** ($21 = 3 \times 7$), with two chalk-marked teeth touching at the start:
 - **GCF is the Largest Equal Tooth Group:** Keying `14 {{key:ENTER}} 21 {{key:GCF}}` gives **`7`**—meaning you can paint both gears in equal color-coded groups of **$7$ teeth** ($2$ groups on the small gear, $3$ groups on the big gear).
 - **LCM is When the Marked Teeth Meet Again:** Keying `14 {{key:ENTER}} 21 {{key:LCM}}` gives **`42`**—meaning exactly **$42$ teeth** must click past the mesh point ($42 \div 14 = 3$ spins of the small gear and $42 \div 21 = 2$ spins of the big gear) before the two chalk-marked teeth touch again!
 
-#### Application 1: Rectangle Tiling (GCF)
-A maker lab needs to tile a tabletop measuring $24\text{ cm} \times 36\text{ cm}$ using the largest possible square tiles with zero waste or cutting. Key `24 {{key:ENTER}} 36 {{key:GCF}}` $\to 12$, instantly revealing that the largest square tile side is the $\text{GCF of } 24\text{ and } 36 = \mathbf{12\text{ cm}}$.
-
-#### Application 2: Synchronized Flashing Cycle (LCM)
-Two signal lights flash at steady intervals: Light A flashes every $6\text{ seconds}$, while Light B flashes every $8\text{ seconds}$. Key `6 {{key:ENTER}} 8 {{key:LCM}}` $\to 24$, confirming that the signal lights flash together every $\text{LCM of } 6\text{ and } 8 = \mathbf{24\text{ seconds}}$.
-
-#### Application 3: Fraction Least Common Denominator (LCD)
-When adding unlike fractions $\frac{3}{8} + \frac{5}{12}$, the Least Common Denominator is the LCM of the denominators. Key `8 {{key:ENTER}} 12 {{key:LCM}}` $\to 24$, giving the exact common denominator $\text{LCM of } 8\text{ and } 12 = \mathbf{24}$ in a single keystroke.
+Once you see how `{{key:GCF}}` finds the largest shared building block and `{{key:LCM}}` finds the first shared meeting point, three everyday puzzles snap into focus:
+- **Rectangle Tiling (`{{key:GCF}}`):** Suppose a maker lab needs to tile a tabletop measuring $24\text{ cm} \times 36\text{ cm}$ using the largest possible square tiles with zero waste or cutting. Keying `24 {{key:ENTER}} 36 {{key:GCF}}` $\to 12$ immediately reveals that the largest square tile side is the $\text{GCF of } 24\text{ and } 36 = \mathbf{12\text{ cm}}$.
+- **Synchronized Flashing Cycles (`{{key:LCM}}`):** Suppose two signal lights flash at steady intervals—Light A every $6\text{ seconds}$ and Light B every $8\text{ seconds}$. Keying `6 {{key:ENTER}} 8 {{key:LCM}}` $\to 24$ confirms that the signal lights flash together every $\text{LCM of } 6\text{ and } 8 = \mathbf{24\text{ seconds}}$.
+- **Fraction Least Common Denominator (`{{key:LCM}}`):** When adding unlike fractions $\frac{3}{8} + \frac{5}{12}$, the Least Common Denominator is simply the LCM of the denominators. Keying `8 {{key:ENTER}} 12 {{key:LCM}}` $\to 24$ gives the exact common denominator $\text{LCM of } 8\text{ and } 12 = \mathbf{24}$ in a single keystroke.
 
 ---
-
-### Black-Box Statistics vs. Prime Towers, Fair-Share Blocks & Dice Trials
-
-The table below compares manual trial division and parenthesized averaging on an infix calculator against the SC-6's dedicated number-theory and statistical keys:
-
-| Challenge / Real-World Task | The Algebraic Calculator Trap (Infix) | Algebraic Keystrokes & Clutter | The StackCalc + Blocks Method (RPN Stack + Visual Studio) | StackCalc Keystrokes | The Stack Advantage |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **GCF & LCM Secret Partner Rule:** Checking that $\text{GCF} \times \text{LCM} = 24 \times 36 = 864$ | No hardware GCF or LCM keys: students must sketch manual factor trees on scratch paper, find prime powers, and re-enter multi-step arithmetic from scratch. Intermediate products vanish. | `2 4 * 3 6 =` Manual scratch work factor trees (28+ keystrokes, zero live factors) | **Hardware `{{key:GCF}}` & `{{key:LCM}}` Stack Duality:** Single-tap prime engines extract GCF (12) and LCM (72). Because `{{key:GCF}}` saves 36 in `LASTX`, tapping `24 {{key:LASTX}} {{key:LCM}} {{key:×}}` proves $12 \times 72 = 864$ without re-typing 36. | `24 {{key:ENTER}} 36 {{key:GCF}} 24 {{key:LASTX}} {{key:LCM}} {{key:×}}` (11 keystrokes) | **60% fewer keystrokes** Zero scratch paper; `{{key:LASTX}}` and the stack prove the Secret Partner Rule live on screen. |
-| **Euclidean Division:** Hydraulic gate synchronization: $105 \div 45 \implies Q = 2, R = 15$ | Infix division yields decimal $2.3333333$. Finding integer quotient and remainder requires rounding down, re-multiplying $2 \times 45 = 90$, and subtracting $105 - 90 = 15$ across multiple steps. | `1 0 5 / 4 5 =` $\to 2.333$, `1 0 5 - ( 2 * 4 5 ) =` (18 keystrokes, modal confusion) | **Single-Tap Euclidean `{{key:÷R}}`:** Hardware integer division deposits integer quotient $Q = 2$ in Register $X$ and exact remainder $R = 15$ in Register $Y$ simultaneously in one step. | `105 {{key:ENTER}} 45 {{key:÷R}}` (8 keystrokes) | **56% fewer keystrokes** Simultaneous quotient and remainder display matches physical token distribution. |
-| **Prime Factorization:** Cryptographic vault key factoring: $2,639 = 7 \times 13 \times 29$ | Standard algebraic calculators provide no hardware factoring. Students must manually test trial divisors on scratch paper ($2,639 \div 3, \div 7, \dots$) through tedious, error-prone trial division. | `2 6 3 9 / 3 =`, `2 6 3 9 / 7 =` $\to 377$, `3 7 7 / 1 1 =` $\dots$ (35+ keystrokes, manual logging) | **Hardware Prime Engine `{{key:FACT}}`:** Dedicated factoring co-processor parses composite numbers instantly into prime components, rendering $7 \times 13 \times 29$ across the daylight dot-matrix display. | `2639 {{key:FACT}}` (5 keystrokes) | **85% fewer keystrokes** Instant canonical decomposition; flashes `PRIME` or renders prime tower strings without guesswork. |
-| **Statistical Mean:** Four test scores averaging: $88, 92, 79, 95 \implies \text{Mean} = 88.5$ | Must enter chained addition with parentheses `( 88 + 92 + 79 + 95 ) / 4 =`. Forgetting outer brackets divides only 95 by 4, creating an undetected order-of-operations error ($283.75$). | `( 8 8 + 9 2 + 7 9 + 9 5 ) / 4 =` (23 keystrokes, bracket risk) | **Hardware Statistical Accumulator (`{{key:Σ+}}`):** Each data point accumulates into dedicated $\Sigma$ registers with running sample count. Pressing `{{key:x̄}}` extracts the exact mean with zero syntax parentheses. | `{{key:CLΣ}} 88 {{key:Σ+}} 92 {{key:Σ+}} 79 {{key:Σ+}} 95 {{key:Σ+}} {{key:x̄}}` (16 keystrokes) | **Zero Parentheses Clutter** Running sample count protects data entry; enables instant spread and total sum queries. |
 
 ### The Secret Partner Rule: Why GCF × LCM Always Equals First Number × Second Number
 Look back at the two-circle Venn diagram you built for $48$ and $72$. When we found the **GCF** ($24$), we multiplied the shared prime blocks in the center overlap. When we found the **LCM** ($144$), we multiplied the left crescent, the center overlap, and the right crescent. Notice that if you multiply **$\text{GCF} \times \text{LCM}$**, the center overlap gets counted *twice*—which uses the exact same collection of prime blocks as multiplying the two original numbers together!
 $$\text{GCF} \times \text{LCM} = \text{First Number} \times \text{Second Number}$$
 
-#### Checking the Secret Partner Rule on the Stack:
-Take the numbers **$24$** and **$36$**:
+Let's check the Secret Partner Rule on the stack using the numbers **$24$** and **$36$**:
 - **$\text{GCF of } 24\text{ and } 36$** $= 12$
 - **$\text{LCM of } 24\text{ and } 36$** $= 72$
 - **$\text{GCF} \times \text{LCM}$:** $12 \times 72 = 864$
@@ -399,6 +391,22 @@ Take the numbers **$24$** and **$36$**:
 
 Check against direct multiplication on the stack by keying `{{res:sc6_07_data_probability_primes_seq_74:keys}}` to reach $X = \mathbf{864.00}$, confirming the Secret Partner Rule!
 
+Let's also watch how `{{key:GCF}}` and `{{key:LCM}}` chain together in a single continuous stack sequence when two interlocking stone gears with **$18$ teeth** and **$24$ teeth** mesh inside a clockwork mechanism (and if you ever want to inspect every shared divisor of two gear wheels at once, the shifted common-factors key `{{key:C.FAC}}` lists them on the screen). Multiplying their Greatest Common Factor ($\text{GCF} = 6$) by their Least Common Multiple ($\text{LCM} = 72$) must equal $18 \times 24 = 432$! Chaining both keys on the stack with `{{res:sc6_07_data_probability_primes_seq_16:keys}}` lands on **`{{res:sc6_07_data_probability_primes_seq_16:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `18` | $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Key in first fortress number 18 |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $18.0000$ | $18.0000$ | Stack lifts; 18 locked into Register $Y$ |
+| `24` | $0.0000$ | $0.0000$ | $18.0000$ | $24.0000$ | Key in second number 24 |
+| `{{key:GCF}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6.0000$ | Compute Greatest Common Factor of 18 and 24 ($6$) |
+| `18` | $0.0000$ | $0.0000$ | $6.0000$ | $18.0000$ | Key in first number 18; GCF lifts to Register $Y$ |
+| `{{key:ENTER}}` | $0.0000$ | $6.0000$ | $18.0000$ | $18.0000$ | Stack lifts; 18 locked into Register $Y$, 6 into Register $Z$ |
+| `24` | $0.0000$ | $6.0000$ | $18.0000$ | $24.0000$ | Key in second number 24 |
+| `{{key:LCM}}` | $0.0000$ | $0.0000$ | $6.0000$ | $72.0000$ | Compute Least Common Multiple of 18 and 24 ($72$); GCF stays in Register $Y$ |
+| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $432.0000$ | Multiply GCF by LCM ($6 \times 72 = 432$) |
+
+The Secret Partner Rule holds identically ($18 \times 24 = 432$)! *(Pro tip: Since `{{key:GCF}}` saves `24` in `{{key:LASTX}}`, you can also replace `18 {{key:ENTER}} 24 {{key:LCM}}` with `18 {{key:LASTX}} {{key:LCM}}`.)*
+
 ---
 
 ### The Remainder-Step Ladder (Euclidean Division) via Hardware `{{key:÷R}}`
@@ -407,13 +415,12 @@ How does the SC-6 find the Greatest Common Factor of two huge numbers without te
 Imagine a rectangular hallway that is **$105\text{ cm}$ long** and **$45\text{ cm}$ wide**. We want to find the largest square tile that tiles the whole hallway evenly:
 1. First, lay down big **$45\text{ cm} \times 45\text{ cm}$ squares** along the $105\text{ cm}$ hallway. Two of those $45\text{ cm}$ squares fit side by side ($2 \times 45 = 90\text{ cm}$), leaving an unfilled rectangular gap at the end that measures **$45\text{ cm}$ by $15\text{ cm}$** (because $105 \div 45 = 2$ with a **remainder of $15$**)!
 2. Any square tile that tiles the whole hallway *must also* tile that leftover **$45\text{ cm} \times 15\text{ cm}$** gap!
-3. Now tile the $45\text{ cm} \times 15\text{ cm}$ gap with **$15\text{ cm} \times 15\text{ cm}$ squares**: exactly three $15\text{ cm}$ squares fit with **remainder $0$** ($45 \div 15 = 3, R = 0$)! Because $15\text{ cm}$ squares tile the gap with zero leftover space, they also tile the $45\text{ cm}$ squares—and the entire $105\text{ cm} \times 45\text{ cm}$ hallway!
+3. Now tile the $45\text{ cm} \times 15\text{ cm}$ gap with **$15\text{ cm} \times 15\text{ cm}$ squares**: exactly three $15\text{ cm}$ squares fit with **remainder $0$** ($45 \div 15 = 3$, remainder $0$)! Because $15\text{ cm}$ squares tile the gap with zero leftover space, they also tile the $45\text{ cm}$ squares—and the entire $105\text{ cm} \times 45\text{ cm}$ hallway!
 
 $$\text{GCF of Big and Small} = \text{GCF of Small and Remainder}$$
 
-On the SC-6, you can climb this remainder ladder using the shifted key `{{key:÷R}}`. Each press of `{{key:÷R}}` divides $Y$ by $X$, placing the whole-number quotient $Q$ in Register $X$ and the remainder $R$ in Register $Y$—while automatically saving the divisor you just used inside `{{key:LASTX}}`.
+On the SC-6, you can climb this remainder ladder using the shifted key `{{key:÷R}}`. Each press of `{{key:÷R}}` divides $Y$ by $X$, placing the whole-number quotient in Register $X$ and the remainder in Register $Y$—while automatically saving the divisor you just used inside `{{key:LASTX}}`.
 
-#### Tiling the 105 cm by 45 cm Hallway with a Remainder Ladder
 Let's run our $105\text{ cm} \times 45\text{ cm}$ hallway tiling puzzle on the stack using `{{key:÷R}}`:
 1. $105 \div 45 = 2$ with remainder $15$, so the **GCF of 105 and 45** is the same as the **GCF of 45 and 15**.
 2. $45 \div 15 = 3$ with remainder $0$, which means $15\text{ cm}$ square tiles fit evenly with zero waste!
@@ -427,11 +434,10 @@ The last non-zero remainder is **15**, so the **GCF of 105 and 45** is $\mathbf{
 | `{{key:÷R}}` | 0 | 0 | 15 | 2 | Integer quotient $Q = 2$ in $X$, remainder $R = 15$ in $Y$ (`LASTX` saves 45) |
 | `{{key:x⇄y}}` | 0 | 0 | 2 | 15 | Swap: remainder 15 now in $X$ |
 
-#### Climbing a Three-Step Remainder Ladder for a 252 cm by 105 cm Courtyard
-For even larger hallways or courtyards, you can keep stepping from the old width to the new remainder using `{{key:LASTX}}` and `{{key:÷R}}` until the remainder hits zero, without ever re-typing a divisor. Suppose a courtyard measures $252\text{ cm}$ by $105\text{ cm}$. What is the largest square paver that tiles it with zero cutting?
-1. Two $105 \times 105$ squares fit inside $252$, leaving a remainder strip of $42$ ($252 \div 105 = 2, R = 42$).
-2. Two $42 \times 42$ squares fit inside $105$, leaving a remainder strip of $21$ ($105 \div 42 = 2, R = 21$).
-3. Two $21 \times 21$ squares fit inside $42$ with **zero remainder** ($42 \div 21 = 2, R = 0$)!
+For even larger hallways or courtyards—like a $252\text{ cm}$ by $105\text{ cm}$ stone courtyard—you can keep stepping from the old width to the new remainder using `{{key:LASTX}}` and `{{key:÷R}}` until the remainder hits zero, without ever re-typing a divisor. What is the largest square paver that tiles a $252\text{ cm} \times 105\text{ cm}$ courtyard with zero cutting?
+1. Two $105 \times 105$ squares fit inside $252$, leaving a remainder strip of $42$ ($252 \div 105 = 2$, remainder $42$).
+2. Two $42 \times 42$ squares fit inside $105$, leaving a remainder strip of $21$ ($105 \div 42 = 2$, remainder $21$).
+3. Two $21 \times 21$ squares fit inside $42$ with **zero remainder** ($42 \div 21 = 2$, remainder $0$)!
 The last non-zero remainder is **21**, so the **GCF of 252 and 105** is $\mathbf{21}$.
 
 | Step / Key | Dividend (Y) | Divisor (X) | Quotient (X) | Remainder (Y) |
@@ -474,6 +480,25 @@ Before touching a single statistical key, picture what each measure looks like i
 | **Interquartile Range (IQR)** | `{{key:IQR}}` | $\text{Third Quartile (3Q)} - \text{First Quartile (1Q)}$ |
 | **Mean Absolute Deviation (MAD)** | `{{key:MAD}}` | $\text{Mean Absolute Deviation (MAD)} = \text{Total Distance from the Mean} \div \text{How Many Numbers}$ |
 
+Let's watch the fair-share **Mean (`{{key:x̄}}`)** and middle **Median (`{{key:MED}}`)** in action on two quick school datasets before we tackle a full 10-student frequency table. First, suppose you score `88`, `92`, `79`, and `95` on four science lab quizzes. What is your fair-share average (`{{key:x̄}}`)? Mark 88, 92, 79, and 95 with four Counting Tiles on a desk number line: notice how the two scores above $88.5$ ($+3.5$ and $+6.5$, totaling $+10$) balance the two scores below $88.5$ ($-0.5$ and $-9.5$, totaling $-10$). Tossing all four scores into `{{key:Σ+}}` and tapping `{{key:x̄}}` via `{{res:sc6_07_data_probability_primes_seq_19:keys}}` confirms **`{{res:sc6_07_data_probability_primes_seq_19:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `{{key:CLΣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Reset statistical registers ($\text{Count} = 0, \text{Sum} = 0$) |
+| `88` | $0.0000$ | $0.0000$ | $0.0000$ | $88.0000$ | Key in first test score 88 |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Accumulate score ($\text{Count} = 1, \text{Sum} = 88$) |
+| `92` | $0.0000$ | $0.0000$ | $0.0000$ | $92.0000$ | Key in second test score 92 |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Accumulate score ($\text{Count} = 2, \text{Sum} = 180$) |
+| `79` | $0.0000$ | $0.0000$ | $0.0000$ | $79.0000$ | Key in third test score 79 |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.0000$ | Accumulate score ($\text{Count} = 3, \text{Sum} = 259$) |
+| `95` | $0.0000$ | $0.0000$ | $0.0000$ | $95.0000$ | Key in fourth test score 95 |
+| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Accumulate score ($\text{Count} = 4, \text{Sum} = 354$) |
+| `{{key:x̄}}` | $0.0000$ | $0.0000$ | $0.0000$ | $88.5$ | Compute mean ($354 \div 4 = 88.5$) |
+
+Your fair-share mean lab score is $\mathbf{88.50}$.
+
+Second, step outside from the science lab to the running track, where five sprinters finish the 100-meter dash in $12.4, 12.8, 13.1, 13.5,$ and $14.0\text{ seconds}$. What is the middle **median** (`{{key:MED}}`) time? Line up five Counting Tiles from fastest to slowest on your desk: the third tile sits right in the middle with two sprinters faster and two sprinters slower, pointing straight to $13.1\text{ s}$. Entering the five sprint times into the statistical accumulator and tapping `{{key:MED}}` via `{{res:sc6_07_data_probability_primes_seq_20:keys}}` returns **`{{res:sc6_07_data_probability_primes_seq_20:value}}`**. With $5$ runners stored in Register $Y$, the middle runner's time of $\mathbf{13.10\text{ seconds}}$ appears in Register $X$.
+
 ### The 10-Quiz Score Frequency Table & The Seed of Distributions
 
 Let's see how fast `{{key:Σ+}}` analyzes a whole classroom dataset. Suppose a 5th-grade math class records scores on a 100-point weekly quiz across 10 students:
@@ -489,11 +514,9 @@ $$70, \ 75, \ 80, \ 80, \ 85, \ 85, \ 85, \ 90, \ 90, \ 95$$
 | 95 | I | 1 | ● |
 | **Total Count = Sum of All Frequencies** | — | **10** | $10$ total quiz scores |
 
-#### The Shape of a Bell-Curve Hill
 Look at the shape of the dot plot above. The scores climb smoothly from $70$ up to a central peak at $85$ (the **Mode**, because $85$ appears the most times!), and then step down toward $95$. This bell-shaped hill is your first look at a **symmetric distribution**.
 
-#### Auditing All Ten Scores on the SC-6
-Toss all 10 scores into your `{{key:Σ+}}` statistical basket, then tap any statistical key to inspect the class results:
+Let's audit all ten scores on the SC-6! Toss all 10 scores into your `{{key:Σ+}}` statistical basket (and remember that if you ever mistype a score, tapping `{{key:Σ-}}` immediately removes it from the basket, while `{{key:FRQ}}` checks how many times a given score appears and `{{key:Σx²}}` tracks the sum of squared scores), then tap any statistical key to inspect the class results:
 - `{{key:CLΣ}}` $\to$ Clears all stats registers ($\text{Count} = 0$)
 - `70 {{key:Σ+}}` $\to \text{Count} = 1$
 - `75 {{key:Σ+}}` $\to \text{Count} = 2$
@@ -557,14 +580,12 @@ When data detectives draw a **Box-and-Whisker Plot**, they line up all the numbe
 | **Center Box Width (`IQR`)** | `{{key:IQR}}` | $\text{Third Quartile (3Q)} - \text{First Quartile (1Q)}$ |
 | **Upper Whisker Tip (`MAX`)** | `{{key:MAX}}` | Biggest number ($100\%$ mark) |
 
-#### The $1.5 \times \text{IQR}$ Outlier Detection Rule
-How do scientists decide whether an unusual number is just a little high or a true **outlier** that wandered far away from the pack? They measure the width of the center box (`{{key:IQR}}`), multiply it by $1.5$, and build an invisible "fence" $1.5$ box-widths below the First Quartile and above the Third Quartile:
+How do scientists decide whether an unusual number is just a little high or a true **outlier** that wandered far away from the pack? They use the **$1.5 \times \text{IQR}$ Outlier Detection Rule**: measure the width of the center box (`{{key:IQR}}`), multiply it by $1.5$, and build an invisible "fence" $1.5$ box-widths below the First Quartile and above the Third Quartile:
 $$\text{Lower Fence} = \text{First Quartile (1Q)} - (1.5 \times \text{IQR})$$
 $$\text{Upper Fence} = \text{Third Quartile (3Q)} + (1.5 \times \text{IQR})$$
 Any number that jumps past either fence is officially flagged as an outlier!
 
-#### Detecting an Outlier in 5K Running Times
-Suppose 8 runners finish a 5K race in the following times (in minutes): $25, 28, 30, 32, 34, 35, 38, 58$. Runner 8 stopped to tie a shoelace and took $58\text{ minutes}$. Does $58$ jump past the upper outlier fence?
+Let's see that outlier fence in action on a real cross-country race. Suppose 8 runners finish a 5K race in the following times (in minutes): $25, 28, 30, 32, 34, 35, 38, 58$. Runner 8 stopped to tie a shoelace and took $58\text{ minutes}$. Does $58$ jump past the upper outlier fence?
 
 First, line up the eight finish times to locate the quartiles:
 - **Ordered data:** $25, 28, 30, 32, 34, 35, 38, 58$
@@ -601,12 +622,15 @@ To enter $-8$ on your SC-6:
 - Type `{{key:8}} {{key:+/-}}`. The screen immediately displays `-8`.
 - Pressing `{{key:+/-}}` a second time flips `-8` right back to `8`.
 
-#### Winter Temperature Differential in Chicago
-At 6:00 AM, the outdoor thermometer in Chicago reads $-14^\circ\text{C}$ ($14$ degrees below zero). By 2:00 PM, the winter sun warms the air up by $+9^\circ\text{C}$. What is the afternoon temperature?
+Imagine checking the outdoor thermometer in Chicago on a frosty winter morning: at 6:00 AM, it reads $-14^\circ\text{C}$ ($14$ degrees below zero). By 2:00 PM, the winter sun warms the air up by $+9^\circ\text{C}$. What is the afternoon temperature?
 
 $$\text{Temperature Change: } -14 + 9 = -5^\circ\text{C}$$
 
 Think of 14 Crimson cold tokens meeting 9 Yellow warm tokens: 9 Zero Pairs cancel out, leaving 5 Crimson tokens ($-5^\circ\text{C}$). On the stack, key `14 {{key:+/-}} {{key:ENTER}} 9 {{key:+}}` $\to -5$, confirming an afternoon temperature of $-5^\circ\text{C}$ directly on the LCD.
+
+What happens when *both* numbers pull in the negative direction—for instance, if you hook $15$ sandbags ($-15$) onto a balloon basket, and then hook on $28$ *more* sandbags ($-28$)? Model a smaller version with Crimson counters first ($-3 + (-5) = -8$ Crimson tokens): because both groups pull in the exact same negative direction, there are zero Yellow tokens to cancel them out! Combining the two negative movements on the stack with `{{res:sc6_07_data_probability_primes_seq_27:keys}}` produces **`{{res:sc6_07_data_probability_primes_seq_27:value}}`**, as the two downward pulls add their sizes together to reach **$-43$**.
+
+Now compare that with subtracting a larger positive number from a smaller one: suppose your student bank account has $\$45$ (45 Yellow $+1$ tokens), and an automatic purchase withdraws $\$70$. Where does your balance land? The first $\$45$ of the withdrawal cancels all 45 Yellow tokens down to $\$0$, and the remaining $\$25$ pulls you 25 steps below zero into Crimson debt ($-25$)! Evaluating $45 - 70$ on the SC-6 with `{{res:sc6_07_data_probability_primes_seq_28:keys}}` yields **`{{res:sc6_07_data_probability_primes_seq_28:value}}`**, wiping out your positive $\$45$ balance to $\$0$ and crossing zero into negative territory (**$-\$25$**).
 
 ---
 
@@ -620,8 +644,7 @@ On the SC-6, pressing the shifted absolute-value key `{{key:|x|}}` (`{{key:g}}` 
 - `42 {{key:+/-}} {{key:|x|}}` $\longrightarrow X = \mathbf{42}$.
 - `15 {{key:|x|}}` $\longrightarrow X = \mathbf{15}$.
 
-#### From Death Valley to Telescope Peak
-A desert hiker starts at the bottom of Badwater Basin in Death Valley at an elevation of $-86\text{ meters}$ ($86\text{ m}$ below sea level) and climbs all the way to the summit of Telescope Peak at $+3,366\text{ meters}$ above sea level. First the hiker climbs $86\text{ meters}$ just to reach sea level ($0\text{ m}$), and then climbs another $3,366\text{ meters}$ to the peak!
+To see why absolute value shines when crossing sea level, picture a desert hiker starting at the bottom of Badwater Basin in Death Valley at an elevation of $-86\text{ meters}$ ($86\text{ m}$ below sea level) and climbing all the way to the summit of Telescope Peak at $+3,366\text{ meters}$ above sea level. First the hiker climbs $86\text{ meters}$ just to reach sea level ($0\text{ m}$), and then climbs another $3,366\text{ meters}$ to the peak!
 
 $$\text{Vertical Climb: } |3366 - (-86)| = |3366 + 86| = 3,452\text{ meters}$$
 
@@ -650,34 +673,36 @@ In elementary school, the square key `{{key:x²}}` and square root key `{{key:�
 | :--- | :--- | :--- |
 | **5 cm × 5 cm Tile Square** | $\text{Side} = 5\text{ cm} \to \text{Square Area} = 5 \times 5 = \mathbf{25\text{ cm}^2}$ | $\text{Square Area} = 25\text{ cm}^2 \to \text{Side} = \sqrt{25} = \mathbf{5\text{ cm}}$ |
 
-#### Fencing a Square Horse Pasture
-A horse pasture has an exact square area of $1,225\text{ square meters}$. How long is one side of the pasture, and how much fencing is needed to surround all four sides?
-
-Taking the square root of the area with `1225 {{key:√x}}` immediately reveals a side length of $35.00\text{ meters}$ ($\text{Side} = \sqrt{\text{Square Area}}$), and multiplying that live result by four equal sides via `{{key:4}} {{key:×}}` gives a total perimeter of $\mathbf{140.00\text{ meters}}$ of fence.
+Suppose a horse pasture has an exact square area of $1,225\text{ square meters}$. How long is one side of the pasture, and how much fencing is needed to surround all four sides? Taking the square root of the area with `1225 {{key:√x}}` immediately reveals a side length of $35.00\text{ meters}$ ($\text{Side} = \sqrt{\text{Square Area}}$), and multiplying that live result by four equal sides via `{{key:4}} {{key:×}}` gives a total perimeter of $\mathbf{140.00\text{ meters}}$ of fence.
 
 ### Directed Integers in Motion: Elevators, Submersibles & Ledgers
-To master pre-algebra, you can solve multi-step signed integer problems reflecting real-world engineering, financial, and environmental contexts.
+To master pre-algebra, you can follow multi-step signed integers in motion across skyscrapers, deep-sea trenches, and student bank accounts!
 
-#### Skyscraper Elevator Traversal
-A high-rise tower features 3 subterranean parking levels (Floors $-3, -2, -1$), a ground lobby (Floor $0$), and 60 tower floors (Floors $1 \dots 60$).
-An elevator starts at subterranean parking Level $-3$, travels up $+45$ floors to deliver office supplies, descends $-12$ floors to the cafeteria, and finally descends $-33$ floors:
+First, imagine a high-rise tower with 3 subterranean parking levels (Floors $-3, -2, -1$), a ground lobby (Floor $0$), and 60 tower floors (Floors $1 \dots 60$). An elevator starts at subterranean parking Level $-3$, travels up $+45$ floors to deliver office supplies, descends $-12$ floors to the cafeteria, and finally descends $-33$ floors:
 
-$$\text{Equation: } -3 + 45 - 12 - 33 = -3\text{ (Back at parking Level -3.)}$$
+$$\text{Elevator Journey: } -3 + 45 - 12 - 33 = -3\text{ (Back at parking Level -3!)}$$
 
-Key `3 {{key:+/-}} {{key:ENTER}} 45 {{key:+}} 12 {{key:-}} 33 {{key:-}}` $\to -3$, returning the elevator precisely to subterranean parking Level $-3$ with zero register overflow.
+Keying `3 {{key:+/-}} {{key:ENTER}} 45 {{key:+}} 12 {{key:-}} 33 {{key:-}}` $\to -3$ returns the elevator precisely to subterranean parking Level $-3$ with zero register overflow.
 
-#### Deep-Sea Oceanographic Research Submersible
-A marine biology autonomous vehicle begins a mission on the deck of a research ship at $+4\text{ meters}$ above sea level and dives to a survey trench at $-350\text{ meters}$. After measuring the total vertical descent distance, the vehicle ascends $+125\text{ meters}$ to sample a hydrothermal vent before descending an additional $-45\text{ meters}$.
+Next, let's head out to sea aboard the marine biology research ship and launch the autonomous deep-sea submersible *Nautilus Jr.*! First, as *Nautilus Jr.* is lowered from the ship's A-frame crane at $+4\text{ meters}$ above sea level down to a deep survey trench at $-350\text{ meters}$ (before rising $+125\text{ meters}$ to a hydrothermal vent and descending $-45\text{ meters}$), subtracting the trench elevation from the deck height via `{{key:4}} {{key:ENTER}} 350 {{key:+/-}} {{key:-}}` reveals a total vertical descent span of $354.00\text{ meters}$ ($4 - (-350) = +354\text{ m}$) while automatically tucking $-350$ into `{{key:LASTX}}`—so tapping `{{key:LASTX}} 125 {{key:+}} 45 {{key:-}}` tracks the vent excursion to **$-270.00\text{ meters}$** without typing `350 {{key:+/-}}` twice. Now let's trace the second *Nautilus Jr.* canyon dive step by step across all four stack registers: hovering at a mid-water depth of $-180\text{ m}$ ($180\text{ m}$ below sea level), the submersible puffs compressed air into its ballast tanks to rise $+65\text{ m}$ over a coral ridge, and then dives $-40\text{ m}$ into a trench canyon. Trace *Nautilus Jr.* along a vertical number line ($-180 \to -115 \to -155$) and chain the moves on your SC-6 with `{{res:sc6_07_data_probability_primes_seq_43:keys}}` to land at **`{{res:sc6_07_data_probability_primes_seq_43:value}}`**:
 
-Subtracting the trench elevation from the ship-deck height via `{{key:4}} {{key:ENTER}} 350 {{key:+/-}} {{key:-}}` reveals a total vertical descent of $354.00\text{ meters}$ ($4 - (-350) = +354\text{ m}$) while automatically tucking $-350$ into `{{key:LASTX}}`. To find the vehicle's final depth from that trench floor without typing `350 {{key:+/-}}` a second time, simply recall it with `{{key:LASTX}} 125 {{key:+}} 45 {{key:-}}` to land at **$-270.00\text{ meters}$**.
+| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `180` | $0.0000$ | $0.0000$ | $0.0000$ | $180.0000$ | Key in initial depth magnitude 180 |
+| `{{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-180.0000$ | Negate to depth $-180\text{ m}$ |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $-180.0000$ | $-180.0000$ | Push initial depth to Register $Y$ |
+| `65` | $0.0000$ | $0.0000$ | $-180.0000$ | $65.0000$ | Key in ascent $+65\text{ m}$ |
+| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-115.0000$ | Add ascent: $-180 + 65 = -115\text{ m}$; stack drops |
+| `40` | $0.0000$ | $0.0000$ | $-115.0000$ | $40.0000$ | Key in dive descent $40\text{ m}$; stack lifts $-115$ to $Y$ |
+| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-155.0000$ | Deduct descent: $-115 - 40 = -155\text{ m}$; stack drops |
 
-#### Student Checking Ledger with Overdraft Fees
-Your student checking account starts with a positive balance of $+\$120.00$.
+The submarine settles at a final depth of $\mathbf{155\text{ m}}$ below sea level ($-155.00$).
+
+Signed numbers also govern your personal finances! Suppose your student checking account starts with a positive balance of $+\$120.00$, and you track four transactions using the SC-6 currency formatter `{{key:$}}`:
 - You buy school books for $\$85.00$ ($-\$85.00$).
 - You buy an art supply kit for $\$60.00$ ($-\$60.00$).
 - The bank assesses an overdraft penalty of $\$25.00$ ($-\$25.00$).
 - You deposit a lawn-mowing paycheck of $\$95.00$ ($+\$95.00$).
-Calculate your net account balance using the SC-6 currency formatter `{{key:$}}`.
 
 Keying `{{res:sc6_07_data_probability_primes_seq_77:keys}}` deducts the $\$85.00$ book purchase to leave $35.00$, subtracting `60 {{key:-}}` drops the ledger into overdraft at $-25.00$, subtracting the `25 {{key:-}}` fee reaches $-50.00$, adding the `95 {{key:+}}` paycheck restores a positive balance of $45.00$, and pressing `{{key:$}}` formats the closing balance as **$\$45.00$**.
 
@@ -688,7 +713,7 @@ Keying `{{res:sc6_07_data_probability_primes_seq_77:keys}}` deducts the $\$85.00
 - **Why Is the Number 1 Not a Prime Number?** A prime number has *exactly two distinct positive factors* (1 and itself), while a composite number has three or more factors. The number $1$ has only *one* factor (just $1$), so it is neither prime nor composite—mathematicians call $1$ a **unit**. Test it on your SC-6 with `{{res:sc6_07_data_probability_primes_seq_79:keys}}` and the screen alerts `INVALID DATA`. Now test `2` (`{{res:sc6_07_data_probability_primes_seq_80:keys}}`): it flashes `PRIME` and keeps `2` on the display—the smallest prime number and the only even prime.
 - **Why Does Subtracting a Negative Make a Number Bigger ($7 - (-3) = 10$)?** Imagine running a school store where a friend owes you $\$3$ (a debt of $-3$), or a hot-air balloon at $+7\text{ m}$ tossing $3$ sandbags ($-3$) overboard. If you cancel—or *subtract*—that $-3$ debt, your friend is $\$3$ richer and the balloon rises $+3\text{ m}$ higher! Taking away a negative is the exact same as adding a positive. Try it on your SC-6: `{{res:sc6_07_data_probability_primes_seq_81:keys}}` gives **`10`**.
 
-#### Quick Troubleshooting Guide
+If you ever see an unexpected result while exploring primes, statistics, or signed numbers, check this quick reference table:
 
 | What Happened on Your Screen | Why It Happened | How to Fix It |
 | :--- | :--- | :--- |
@@ -701,149 +726,16 @@ Keying `{{res:sc6_07_data_probability_primes_seq_77:keys}}` deducts the $\$85.00
 
 ---
 
-## Cicada Cycles, Fair Dice, and Wildlife Field Data in Action
+### Black-Box Statistics vs. Prime Towers, Fair-Share Blocks & Dice Trials
 
-Every keystroke sequence below starts from standard numeric mode (`{{key:NUM}}`). Whether you are testing a large candidate like `83` for primality (`{{res:sc6_07_data_probability_primes_seq_82:keys}}`, flashing `PRIME`) or finding the greatest common factor of `48` and `72` (`{{res:sc6_07_data_probability_primes_seq_83:keys}}` $\to 24$), these connected stories bring your physical studios and your 4-register stack together!
+Now that you have explored probability trials, prime factor towers, statistical accumulators, and signed numbers, look at how the SC-6's dedicated number-theory and statistical keys compare against manual trial division and parenthesized averaging on an algebraic calculator:
 
-### The High-Rollers Tabletop & Spinner Tournament
-Welcome to the annual Tabletop Game Designers' Convention! As the chief tournament referee, your job is to check the fairness and exact odds of every die roll and card draw before the championship round begins.
-
-#### Single Die Roll Probability
-In the opening match, a player needs to roll an odd number ($1, 3,$ or $5$) on a single six-sided equal-volume pip die from your Dice & Spinner Studio. Pick up one of your physical $d6$ dice and count the odd faces: 3 out of the 6 faces are odd. If you roll the die 60 times, you expect roughly 30 odd rolls.
-
-Comparing the 3 winning odd faces against all 6 faces of the cube on your SC-6 via `{{res:sc6_07_data_probability_primes_seq_01:keys}}` yields **`{{res:sc6_07_data_probability_primes_seq_01:value}}`**. Because half the faces of a standard cube are odd, the player's theoretical chance is an exact coin-flip ($\mathbf{0.5000}$ or $50\%$).
-
-#### Tournament Card Deck Draw
-Moving from the dice table to the card arena, a player needs to draw an Ace on the very first card pulled from a freshly shuffled 52-card deck. Since there are 4 suits (hearts, diamonds, clubs, and spades), there are 4 Aces hiding among the 52 cards.
-
-Dividing the 4 Aces by the 52-card deck on the stack with `{{res:sc6_07_data_probability_primes_seq_02:keys}}` produces **`{{res:sc6_07_data_probability_primes_seq_02:value}}`**. Because every suit holds 1 Ace out of 13 ranks ($4/52 = 1/13$), the opening-draw probability is $\mathbf{0.0769}$ ($\approx 7.69\%$).
-
----
-
-### The Prime Number Fortress & Sieve
-Next, you step into a tabletop adventure quest: the **Prime Number Fortress**, whose stone doors only unlock when you solve prime and factor riddles!
-
-#### Prime Fortress Outer Gate Cipher: Primality of 83
-The massive outer gate of the Prime Fortress opens only if the code carved into the key—**`83`**—is an unbreakable prime number! Remember how 13 Counting Tiles refuse to form any rectangle of 2, 3, or 4 rows without leaving a tile sticking out? Let's test whether `83` has that same rectangular resistance without counting out 83 loose tiles.
-
-Testing candidate 83 with the hardware primality key via `{{res:sc6_07_data_probability_primes_seq_06:keys}}` confirms **`{{res:sc6_07_data_probability_primes_seq_06:value}}`**. Because $9 \times 9 = 81$ and none of the primes below 9 ($2, 3, 5,$ or $7$) divide evenly into 83, the status line flashes `PRIME` and preserves $\mathbf{83}$ in Register $X$—swinging the outer gate wide open!
-
-#### Fortress Archival Seal: The Secret Partner Rule for 18 and 24
-Inside the fortress courtyard, the inner vault is locked by two interlocking stone gears with **$18$ teeth** and **$24$ teeth**. To open the vault, you must prove the **Secret Partner Rule**: multiplying their Greatest Common Factor ($\text{GCF} = 6$) by their Least Common Multiple ($\text{LCM} = 72$) must equal $18 \times 24 = 432$! Chaining both keys on the stack with `{{res:sc6_07_data_probability_primes_seq_16:keys}}` lands on **`{{res:sc6_07_data_probability_primes_seq_16:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `18` | $0.0000$ | $0.0000$ | $0.0000$ | $18.0000$ | Key in first fortress number 18 |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $18.0000$ | $18.0000$ | Stack lifts; 18 locked into Register $Y$ |
-| `24` | $0.0000$ | $0.0000$ | $18.0000$ | $24.0000$ | Key in second number 24 |
-| `{{key:GCF}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6.0000$ | Compute Greatest Common Factor of 18 and 24 ($6$) |
-| `18` | $0.0000$ | $0.0000$ | $6.0000$ | $18.0000$ | Key in first number 18; GCF lifts to Register $Y$ |
-| `{{key:ENTER}}` | $0.0000$ | $6.0000$ | $18.0000$ | $18.0000$ | Stack lifts; 18 locked into Register $Y$, 6 into Register $Z$ |
-| `24` | $0.0000$ | $6.0000$ | $18.0000$ | $24.0000$ | Key in second number 24 |
-| `{{key:LCM}}` | $0.0000$ | $0.0000$ | $6.0000$ | $72.0000$ | Compute Least Common Multiple of 18 and 24 ($72$); GCF stays in Register $Y$ |
-| `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $432.0000$ | Multiply GCF by LCM ($6 \times 72 = 432$) |
-
-The Secret Partner Rule holds identically ($18 \times 24 = 432$). *(Pro tip: Since `{{key:GCF}}` saves `24` in `{{key:LASTX}}`, you can also replace `18 {{key:ENTER}} 24 {{key:LCM}}` with `18 {{key:LASTX}} {{key:LCM}}`.)*
-
----
-
-### The Data Detective & Bell-Curve Mystery
-Now put on your Data Detective badge! At the school science and track-and-field day, you use your `{{key:Σ+}}` statistical basket to find the fair-share **Mean (`{{key:x̄}}`)** in the classroom and the middle **Median (`{{key:MED}}`)** out on the running track.
-
-#### Mean of Four Science Lab Scores
-First, in the science lab, you score `88`, `92`, `79`, and `95` on four lab quizzes. What is your fair-share average (`{{key:x̄}}`)? Mark 88, 92, 79, and 95 with four Counting Tiles on a desk number line: notice how the two scores above $88.5$ ($+3.5$ and $+6.5$, totaling $+10$) balance the two scores below $88.5$ ($-0.5$ and $-9.5$, totaling $-10$). Tossing all four scores into `{{key:Σ+}}` and tapping `{{key:x̄}}` via `{{res:sc6_07_data_probability_primes_seq_19:keys}}` confirms **`{{res:sc6_07_data_probability_primes_seq_19:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:CLΣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0000$ | Reset statistical registers ($\text{Count} = 0, \text{Sum} = 0$) |
-| `88` | $0.0000$ | $0.0000$ | $0.0000$ | $88.0000$ | Key in first test score 88 |
-| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Accumulate score ($\text{Count} = 1, \text{Sum} = 88$) |
-| `92` | $0.0000$ | $0.0000$ | $0.0000$ | $92.0000$ | Key in second test score 92 |
-| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Accumulate score ($\text{Count} = 2, \text{Sum} = 180$) |
-| `79` | $0.0000$ | $0.0000$ | $0.0000$ | $79.0000$ | Key in third test score 79 |
-| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.0000$ | Accumulate score ($\text{Count} = 3, \text{Sum} = 259$) |
-| `95` | $0.0000$ | $0.0000$ | $0.0000$ | $95.0000$ | Key in fourth test score 95 |
-| `{{key:Σ+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0000$ | Accumulate score ($\text{Count} = 4, \text{Sum} = 354$) |
-| `{{key:x̄}}` | $0.0000$ | $0.0000$ | $0.0000$ | $88.5$ | Compute mean ($354 \div 4 = 88.5$) |
-
-Mean score is $\mathbf{88.50}$.
-
-#### Median of Five 100-Meter Sprint Times
-Stepping outside to the running track, five sprinters finish the 100-meter dash in $12.4, 12.8, 13.1, 13.5,$ and $14.0\text{ seconds}$. What is the middle **median** (`{{key:MED}}`) time? Line up five Counting Tiles from fastest to slowest on your desk: the third tile sits right in the middle with two sprinters faster and two sprinters slower, pointing straight to $13.1\text{ s}$.
-
-Entering the five sprint times into the statistical accumulator and tapping `{{key:MED}}` via `{{res:sc6_07_data_probability_primes_seq_20:keys}}` returns **`{{res:sc6_07_data_probability_primes_seq_20:value}}`**. With $5$ runners stored in Register $Y$, the middle runner's time of $\mathbf{13.10\text{ seconds}}$ appears in Register $X$.
-
----
-
-### The Zero-Pair Vault & Pre-Algebra Ascent
-Next, let's practice our two-color counter and sandbag/balloon intuition on two signed-number puzzles using `{{key:+/-}}`!
-
-#### Adding Directed Negative Numbers
-What happens when you hook $15$ sandbags ($-15$) onto a balloon basket, and then hook on $28$ *more* sandbags ($-28$)? Model a smaller version with Crimson counters first ($-3 + (-5) = -8$ Crimson tokens): because both groups pull in the exact same negative direction, there are zero Yellow tokens to cancel them out!
-
-Combining the two negative movements on the stack with `{{res:sc6_07_data_probability_primes_seq_27:keys}}` produces **`{{res:sc6_07_data_probability_primes_seq_27:value}}`**. The two downward pulls add their sizes together to reach **$-43$**.
-
-#### Subtracting a Larger Positive Number
-Now suppose your student bank account has $\$45$ (45 Yellow $+1$ tokens), and an automatic purchase withdraws $\$70$. Where does your balance land? The first $\$45$ of the withdrawal cancels all 45 Yellow tokens down to $\$0$, and the remaining $\$25$ pulls you 25 steps below zero into Crimson debt ($-25$)!
-
-Evaluating $45 - 70$ on the SC-6 with `{{res:sc6_07_data_probability_primes_seq_28:keys}}` yields **`{{res:sc6_07_data_probability_primes_seq_28:value}}`**. The first $\$45$ wipes out your positive balance to $\$0$, and the remaining $\$25$ crosses zero into negative territory (**$-\$25$**).
-
----
-
-### Number Theory Challenges & Directed Integer Navigation
-Next, we combine our prime-hunting keys (`{{key:PRIME}}`) and signed-number navigation (`{{key:+/-}}`) to explore twin primes, guide a deep-sea submarine, and test a famous 300-year-old prime mystery!
-
-#### Twin Prime Pair Verification: $(29, 31)$
-Two prime numbers that sit just $2$ steps apart on the number line—like $(11, 13)$ or $(17, 19)$—are called **Twin Primes** (because the even number sandwiched between them is always divisible by $2$!). Let's use `{{key:PRIME}}` to verify that **$29$** and **$31$** are both prime, and then add them together on the stack via `{{res:sc6_07_data_probability_primes_seq_39:keys}}` to reach **`{{res:sc6_07_data_probability_primes_seq_39:value}}`**.
-
-This sequence finishes with $X = 60$, confirming both candidates flash `PRIME` on the daylight LCD and sum to 60—a multiple of 12, which is true for every twin prime pair greater than $(3, 5)$!
-
-#### Submarine Canyon Dive & Ascent
-From the number line, we dive into the ocean! A research submarine hovering at a depth of $-180\text{ m}$ ($180\text{ m}$ below sea level) puffs compressed air into its ballast tanks to rise $+65\text{ m}$, and then dives $-40\text{ m}$ into a canyon. Trace the submarine along a vertical number line ($-180 \to -115 \to -155$) and chain the moves on your SC-6 with `{{res:sc6_07_data_probability_primes_seq_43:keys}}` to land at **`{{res:sc6_07_data_probability_primes_seq_43:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `180` | $0.0000$ | $0.0000$ | $0.0000$ | $180.0000$ | Key in initial depth magnitude 180 |
-| `{{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-180.0000$ | Negate to depth $-180\text{ m}$ |
-| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $-180.0000$ | $-180.0000$ | Push initial depth to Register $Y$ |
-| `65` | $0.0000$ | $0.0000$ | $-180.0000$ | $65.0000$ | Key in ascent $+65\text{ m}$ |
-| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-115.0000$ | Add ascent: $-180 + 65 = -115\text{ m}$; stack drops |
-| `40` | $0.0000$ | $0.0000$ | $-115.0000$ | $40.0000$ | Key in dive descent $40\text{ m}$; stack lifts $-115$ to $Y$ |
-| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-155.0000$ | Deduct descent: $-115 - 40 = -155\text{ m}$; stack drops |
-
-Final depth is $155\text{ m}$ below sea level.
-
-#### Testing Goldbach's Conjecture on $28 = 11 + 17$
-In the year 1742, a mathematician named Christian Goldbach wrote a letter to Leonhard Euler with a bold guess: *Every even whole number greater than 2 can be built by adding two prime numbers together!* ($4 = 2+2$, $6 = 3+3$, $8 = 3+5$, $10 = 3+7\dots$). Even with supercomputers, no one has ever found an even number that breaks Goldbach's rule! Let's test the even number **$28$** by checking whether **$11$** and **$17$** are both prime and add up to $28$ using `{{res:sc6_07_data_probability_primes_seq_49:keys}}`, which confirms **`{{res:sc6_07_data_probability_primes_seq_49:value}}`**.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `11` | $0.0000$ | $0.0000$ | $0.0000$ | $11.0000$ | Key in first prime candidate 11 |
-| `{{key:PRIME}}` | $0.0000$ | $0.0000$ | $0.0000$ | $11.0000$ | LCD flashes `PRIME`; preserves 11 in Register $X$ |
-| `17` | $0.0000$ | $0.0000$ | $11.0000$ | $17.0000$ | Key in second candidate 17; stack lifts 11 to $Y$ |
-| `{{key:PRIME}}` | $0.0000$ | $0.0000$ | $11.0000$ | $17.0000$ | LCD flashes `PRIME`; preserves 17 in Register $X$ |
-| `{{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $28.0000$ | Sum primes $11 + 17 = 28$; stack drops |
-| `11` | $0.0000$ | $0.0000$ | $28.0000$ | $11.0000$ | Key in 11 for second partition check; stack lifts 28 to $Y$ |
-| `{{key:ENTER}}` | $0.0000$ | $28.0000$ | $11.0000$ | $11.0000$ | Push 11 to $Y$; lifts 28 to $Z$ (stack lift disabled) |
-| `17` | $0.0000$ | $28.0000$ | $11.0000$ | $17.0000$ | Key in 17; overwrites $X$ since `ENTER` disabled lift |
-| `{{key:+}}` | $0.0000$ | $0.0000$ | $28.0000$ | $28.0000$ | Sum $11 + 17 = 28$; stack drops, preserving first sum in $Y$ |
-
-Register $X$ displays $28$ and Register $Y$ preserves $28$—Goldbach's Conjecture holds for $28$!
-
----
-
-### Compound Probability & Pre-Algebra Mastery Sprints
-For our final adventure of Chapter 7, we return to the championship gaming table to compare two kinds of two-step probability: an **independent** event (where the first step has no effect on the second) and a **dependent** event (where keeping a card changes the deck for the second draw!).
-
-#### Independent Compound Probability: Coin Flip and Die Roll
-Suppose a board game bonus requires you to flip **Heads** on a fair coin ($\frac{1}{2}$) *and* roll a **$6$** on a six-sided die ($\frac{1}{6}$) on the same turn. Because the coin and the die don't affect each other, their $2 \times 6$ outcome grid has $12$ equally likely pairs, and only $1$ of those $12$ pairs is *(Heads, 6)*. Multiplying the two chances on the stack via `{{res:sc6_07_data_probability_primes_seq_51:keys}}` yields **`{{res:sc6_07_data_probability_primes_seq_51:value}}`**.
-
-This sequence finishes with $X = 0.0833333333$, giving a combined chance of $\text{Chance of Heads} \times \text{Chance of 6} = 1/12 \approx 8.33\%$.
-
-#### Dependent Probability: Drawing Two Aces Without Replacement
-Now compare that to drawing **two Aces in a row** from a 52-card deck *without putting the first card back*! On the first draw, $4$ of the $52$ cards are Aces ($4/52$). Once you hold that first Ace in your hand, only **$3$ Aces** remain among the **$51$ cards** left in the deck ($3/51$). Multiplying the two step chances on the stack with `{{res:sc6_07_data_probability_primes_seq_52:keys}}` gives **`{{res:sc6_07_data_probability_primes_seq_52:value}}`**.
-
-This sequence finishes with $X = 0.0045248869$, giving a combined probability of $1/221 \approx 0.45\%$—happening only once in every 221 two-card deals!
+| Challenge / Real-World Task | The Algebraic Calculator Trap (Infix) | Algebraic Keystrokes & Clutter | The StackCalc + Blocks Method (RPN Stack + Visual Studio) | StackCalc Keystrokes | The Stack Advantage |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **GCF & LCM Secret Partner Rule:** Checking that $\text{GCF} \times \text{LCM} = 24 \times 36 = 864$ | No hardware GCF or LCM keys: students must sketch manual factor trees on scratch paper, find prime powers, and re-enter multi-step arithmetic from scratch. Intermediate products vanish. | `2 4 * 3 6 =` Manual scratch work factor trees (28+ keystrokes, zero live factors) | **Hardware `{{key:GCF}}` & `{{key:LCM}}` Stack Duality:** Single-tap prime engines extract GCF (12) and LCM (72). Because `{{key:GCF}}` saves 36 in `LASTX`, tapping `24 {{key:LASTX}} {{key:LCM}} {{key:×}}` proves $12 \times 72 = 864$ without re-typing 36. | `24 {{key:ENTER}} 36 {{key:GCF}} 24 {{key:LASTX}} {{key:LCM}} {{key:×}}` (11 keystrokes) | **60% fewer keystrokes** Zero scratch paper; `{{key:LASTX}}` and the stack prove the Secret Partner Rule live on screen. |
+| **Euclidean Division:** Hydraulic gate synchronization: $105 \div 45 \implies \text{Quotient} = 2, \text{Remainder} = 15$ | Infix division yields decimal $2.3333333$. Finding integer quotient and remainder requires rounding down, re-multiplying $2 \times 45 = 90$, and subtracting $105 - 90 = 15$ across multiple steps. | `1 0 5 / 4 5 =` $\to 2.333$, `1 0 5 - ( 2 * 4 5 ) =` (18 keystrokes, modal confusion) | **Single-Tap Euclidean `{{key:÷R}}`:** Hardware integer division deposits integer quotient $2$ in Register $X$ and exact remainder $15$ in Register $Y$ simultaneously in one step. | `105 {{key:ENTER}} 45 {{key:÷R}}` (8 keystrokes) | **56% fewer keystrokes** Simultaneous quotient and remainder display matches physical token distribution. |
+| **Prime Factorization:** Cryptographic vault key factoring: $2,639 = 7 \times 13 \times 29$ | Standard algebraic calculators provide no hardware factoring. Students must manually test trial divisors on scratch paper ($2,639 \div 3, \div 7, \dots$) through tedious, error-prone trial division. | `2 6 3 9 / 3 =`, `2 6 3 9 / 7 =` $\to 377$, `3 7 7 / 1 1 =` $\dots$ (35+ keystrokes, manual logging) | **Hardware Prime Engine `{{key:FACT}}`:** Dedicated factoring co-processor parses composite numbers instantly into prime components, rendering $7 \times 13 \times 29$ across the daylight dot-matrix display. | `2639 {{key:FACT}}` (5 keystrokes) | **85% fewer keystrokes** Instant canonical decomposition; flashes `PRIME` or renders prime tower strings without guesswork. |
+| **Statistical Mean:** Four test scores averaging: $88, 92, 79, 95 \implies \text{Mean} = 88.5$ | Must enter chained addition with parentheses `( 88 + 92 + 79 + 95 ) / 4 =`. Forgetting outer brackets divides only 95 by 4, creating an undetected order-of-operations error ($283.75$). | `( 8 8 + 9 2 + 7 9 + 9 5 ) / 4 =` (23 keystrokes, bracket risk) | **Hardware Statistical Accumulator (`{{key:Σ+}}`):** Each data point accumulates into dedicated $\Sigma$ registers with running sample count. Pressing `{{key:x̄}}` extracts the exact mean with zero syntax parentheses. | `{{key:CLΣ}} 88 {{key:Σ+}} 92 {{key:Σ+}} 79 {{key:Σ+}} 95 {{key:Σ+}} {{key:x̄}}` (16 keystrokes) | **Zero Parentheses Clutter** Running sample count protects data entry; enables instant spread and total sum queries. |
 
 ---
 
@@ -868,4 +760,4 @@ With the probability generator, prime engine, statistical registers, and signed-
 3. **Descriptive Statistics:** With the non-volatile statistical accumulator (`{{key:Σ+}}`), you evaluated real datasets, discovering how means, medians, and modes capture central tendencies while IQR and MAD reveal spread.
 4. **Pre-Algebra & Directed Numbers:** You conquered negative numbers and zero pairs with the sign toggle (`{{key:+/-}}`) and distance metrics (`{{key:|x|}}`).
 
-In **[Chapter 08: The Math Quiz Engine](08-math-quiz-engine.md)**, you will take everything you have learned and put your operational speed to the test. You will enter the interactive quiz game mode on your SC-6, solving rapid-fire arithmetic challenges, racing against the hardware timer, and tracking your accuracy streaks on the daylight LCD. Let's see how fast your mathematical reflexes really are!
+In **[Chapter 8: Mental Math Tricks & The Quiz Game](08-math-quiz-engine.md)**, you will take everything you have learned and put your speed to the test. You will learn eight cool mental-math tricks and step into the interactive quiz game (`{{key:?}}`) on your SC-6—solving rapid-fire challenges, racing the clock, and lighting up your streak meter on the daylight screen. Let's see how fast your math reflexes really are!

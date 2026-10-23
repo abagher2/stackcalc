@@ -1,5 +1,5 @@
 ---
-title: "Appendix B: Error Catalog & Singularity Analysis | SC-32 Manual"
+title: "Appendix B: Error Catalog & Singularity Analysis | Thinking in the Stack (SC-32)"
 description: "Comprehensive catalog of all 12 hardware error codes, mathematical singularities, and non-destructive recovery procedures on the StackCalc SC-32."
 ---
 
@@ -40,6 +40,7 @@ Comparing how the SC-32 handles domain and arithmetic exceptions against vintage
 
 > **Hardware & Stack Verification:**  
 > If you accidentally divide by zero, do **not panic**! Do not turn off the calculator. Simply press `{{key:C}}`. Your numerator is still resting safely in Register $Y$, and the zero is in Register $X$. You can change the zero or swap registers immediately!
+
 ---
 
 ## Comprehensive Catalog of All 12 Hardware Errors
@@ -75,8 +76,7 @@ Every hardware error code on the SC-32 corresponds to a deterministic mathematic
   3. Key the intended non-zero divisor (e.g., `{{key:1}} {{key:2}}`).
   4. Press `{{key:÷}}`. The calculation completes normally.
 
-#### Worked Diagnostic Example: Division by Zero Recovery
-Compute $\frac{450}{15}$, but mistakenly key $0$ as the divisor:
+For example, suppose you are computing $\frac{450}{15}$, but mistakenly key $0$ as the divisor:
 
 | Step | Keystroke | Display Output | Register X | Register Y | Register Z |
 | :---: | :--- | :--- | :---: | :---: | :---: |
