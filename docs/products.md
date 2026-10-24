@@ -228,7 +228,7 @@ hide:
             </button>
 
             <!-- 6. Pure Black & White (Two-Tone) -->
-            <button type="button" class="te-swatch-btn" id="btn-swatch-pureblackwhite" onclick="selectFaceplate('pureblackwhite', '../assets/renders/etsy/combo_sc32_pure_black_white-square.png', 'Technical Matte Black PLA', 'Clean White PETG', 'Technical Black TPU 95A', 'Direct 1064nm IR Laser Foamed Stark White (Modular Contrast)')">
+            <button type="button" class="te-swatch-btn" id="btn-swatch-pureblackwhite" onclick="selectFaceplate('pureblackwhite', '../assets/renders/etsy/combo_sc32_pure_black_white-square.png', 'Technical Matte Black PLA', 'Clean White PETG (Unengraved Back Plate)', 'Technical Black TPU 95A', 'Direct 1064nm IR Laser Foamed Stark White (Faceplate) • Solid White Back Plate (No details)')">
               <span class="te-swatch-chip chip-pureblackwhite"></span>
               <span class="te-swatch-name">Two-Tone</span>
             </button>
