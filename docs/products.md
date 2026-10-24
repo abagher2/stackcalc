@@ -210,7 +210,7 @@ hide:
             </button>
 
             <!-- 3. Grayscale -->
-            <button type="button" class="te-swatch-btn" id="btn-swatch-grayscale" onclick="selectFaceplate('grayscale', '../assets/renders/etsy/combo_sc32_pure_black-square.png', 'Technical Matte Black PLA', 'Elegoo Black PLA', 'Tactile Light Gray TPU 95A', 'Direct 1064nm IR Clean White Micro-Foam (12.8:1 AAA)')">
+            <button type="button" class="te-swatch-btn" id="btn-swatch-grayscale" onclick="selectFaceplate('grayscale', '../assets/renders/etsy/combo_sc32_grayscale-square.png', 'Technical Matte Black PLA', 'Elegoo Black PLA', 'Tactile Light Gray TPU 95A', 'Direct 1064nm IR Clean White Micro-Foam (12.8:1 AAA)')">
               <span class="te-swatch-chip chip-grayscale"></span>
               <span class="te-swatch-name">Grayscale</span>
             </button>
@@ -828,7 +828,7 @@ hide:
           <span class="te-card-swatches-label">Finish:</span>
           <span class="te-card-swatch-dot chip-cosmos active" title="Cosmos Champion" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_cosmos-square.png', this)"></span>
           <span class="te-card-swatch-dot chip-pureblack" title="Pure Black Monolith" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_pure_black-square.png', this)"></span>
-          <span class="te-card-swatch-dot chip-grayscale" title="Grayscale" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_pure_black-square.png', this)"></span>
+          <span class="te-card-swatch-dot chip-grayscale" title="Grayscale" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_grayscale-square.png', this)"></span>
           <span class="te-card-swatch-dot chip-synthwave" title="Synthwave Dual Silk" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_synthwave-square.png', this)"></span>
           <span class="te-card-swatch-dot chip-earthtone" title="Earth-Tone Espresso" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_earth_tone-square.png', this)"></span>
           <span class="te-card-swatch-dot chip-pureblackwhite" title="Pure Black &amp; White" onclick="switchGridSC32('../assets/renders/etsy/combo_sc32_pure_black_white-square.png', this)"></span>
