@@ -376,7 +376,7 @@ ORDERING & EVALUATION ASSISTANCE:
 Questions regarding classroom pilots, sample kits, or volume purchase orders?
 Email: quotes@stackcalc.io
 Web:   https://stackcalc.io/#school-po
-Store: https://www.etsy.com/shop/StackCalc
+Store: https://stackcalcmath.etsy.com
 ================================================================================
 """
 

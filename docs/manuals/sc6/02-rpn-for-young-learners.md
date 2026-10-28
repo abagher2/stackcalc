@@ -1,481 +1,459 @@
 ---
 title: "Chapter 2: Stacking Numbers Just Like Blocks"
-description: "Master Stack Math on the SC-6: stacking numbers on a 4-level stack, leaving behind the confusing equals sign, and solving multi-step problems with zero parentheses."
+description: "Master Stack Math on the SC-6: riding the 4-story Number Elevator, balancing multi-step puzzles, and solving order of operations from the inside out."
 ---
 
 # Chapter 2: Stacking Numbers Just Like Blocks
 
-## The Equals-Sign Trap vs. The 4-Story Number Elevator
+## From Two Shelves to the 4-Shelf Number Stack
 
-In the Preface and Chapter 1, you met the bottom two shelves of your **StackCalc SC-6**—**Ground Shelf $X$** and **Waiting Shelf $Y$**—and tried your first stack additions. You saw how typing a number, pressing `{{key:ENTER}}` to slide it onto Waiting Shelf $Y$, and tapping `{{key:+}}` snaps two numbers together just like physical blocks on your desk.
+In the Preface and Chapter 1, you met the bottom two shelves of your **StackCalc SC-6**—**Ground Shelf $X$** and **Waiting Shelf $Y$**—and saw how they mirror the two rows of physical blocks in your desk tray.
 
-Now a bigger question awaits: what happens when a real-world math puzzle has *two* or *three* parts happening at once—like buying 3 warm pretzels at $\$4$ AND 2 smoothies at $\$5$, or solving a multi-step challenge like $(15 - 3) \times (4 + 2) \div 6$?
+Now a bigger question awaits: what happens when a real-world math puzzle has *two* or *three* separate groups happening at once—like balancing two block towers on your desk, combining two different sub-assemblies in a maker project, or working from the inside out on a multi-step challenge?
 
-In this chapter, you will unlock the **full 4-story Number Elevator ($X, Y, Z, T$)** tucked inside your calculator. To see why a four-shelf elevator makes multi-step math so much easier than a regular calculator, let's first look at a sneaky habit that trips up almost every student in elementary school.
+Try this quick balance puzzle with your **Counting & Array Studio** tiles first:
+$$8 + 4 = \Box + 5$$
+Picture stacking **8 blue tiles** and **4 gold tiles** into a tower on the left side of your desk ($8 + 4 = 12$ tiles high). Your friend places **5 red tiles** right next to your tower and asks: *"How many more tiles do I need on top of my 5 so our two towers stand at the exact same height?"*
 
-Have you ever wondered why school worksheets always put an equals sign (`=`) at the end of a problem like $4 + 3 = \underline{\hspace{0.5cm}}$?
+Watch how naturally that two-step story flows on your SC-6:
+1. **Build the left tower (`8 + 4`):** Tap `8` `{{key:ENTER}}` `4` `{{key:+}}`. Instantly, **`12`** sits on Shelf $X$.
+2. **Find the missing piece (`12 - 5`):** Leave `12` right on the screen and type `5`—which automatically lifts your `12` up onto Shelf $Y$—then tap `{{key:-}}` to see **`7`** tiles on Shelf $X$!
 
-After a few years of filling in those blanks, it is easy to fall into the **Equals-Sign Trap**. When you see an equals sign at the end of every line, you might start believing that `=` means *"do the math right now and write the answer here."*
+Why did that feel so effortless? Because **your brain naturally solves multi-step problems by stacking one piece on top of another**:
+- When you pack your backpack, you place your heavy binder on the bottom, then stack your notebook and lunchbox on top.
+- When you build a LEGO model, you snap together one small sub-assembly first, set it on the corner of your desk, build the second sub-assembly, and click the two halves together.
 
-Then one day, a teacher writes an open puzzle on the board with the box in the middle—just as cognitive researchers Karen Falkner, Thomas Carpenter, and Elizabeth Fennema tested across elementary classrooms {{cite:falkner1999}}:
-$$8 + 4 = \Box + 5 \quad \text{or} \quad 5 + \Box = 12$$
-In the landmark study, the vast majority of students wrote $12$ or $17$ in the box. Why? Because their eyes darted across the numbers and the `+` sign, and their fingers immediately added everything in sight. They didn't read the equation as two side-by-side **Counting & Array Studio** block towers that must stand flush at the exact same height—they treated the equals sign as an emergency "compute now" button {{cite:falkner1999}}.
+In **1924**, a Polish mathematician named **Jan Łukasiewicz** discovered something remarkable: if you always put your numbers down first and apply the action key right after them, **you never need a single parenthesis `( )`—no matter how many steps a math problem has!** Every finished piece simply waits on a shelf until you are ready to snap it together with the next piece.
 
-Now think about what **you** do in the real world when you build with physical blocks:
-Suppose you have **5 blue blocks** resting on your desk, and your friend hands you **3 red blocks**. How do you put them together?
-You don't wave a magic wand and shout *"Equals!"* You simply slide the 3 red blocks straight into the 5 blue blocks. **Putting them together IS the answer (`8`).**
+Nearly fifty years later, in **1972**, two California engineers named **William Hewlett** and **David Packard** challenged their team to build the world's first scientific calculator small enough to fit in a shirt pocket (the famous **HP-35**). Up to that day, scientists and astronauts had to slide wooden rulers called *slide rules* back and forth and scribble middle numbers on scrap paper—and if you lost your place halfway through a calculation, you had to start all over again.
 
-Here is the secret of **Stack Math**: **your brain doesn't think in parentheses and equals signs—your brain naturally stacks physical objects.**
-- When you pack your backpack, you place your heavy binder on the bottom shelf, then stack your lunchbox on top.
-- When you bake cookies, you weigh the flour into the bowl, crack an egg on top, and stir them together.
-- When you stack blocks, pancakes, or books, each new item rests on top of the stack.
+Hewlett and Packard realized that if a pocket calculator used Jan Łukasiewicz's **four-shelf stack ($X, Y, Z, T$)** instead of parenthesis buttons and an `=` key, you could solve even the biggest rocket-science puzzle one small step at a time and never lose your place. If a long math problem on paper ever made you feel frustrated because you lost track of the middle steps, there was nothing wrong with your brain—you were just missing a visible workbench!
 
-That is how **Stack Math** works on your **StackCalc SC-6**:
-1. Type the first number (`5`) and press `{{key:ENTER}}` to push it onto the waiting shelf (Level $Y$).
-2. Type the second number (`3`) on the ground shelf (Level $X$).
-3. Tap `{{key:+}}`—and *SNAP!* The upper shelf drops down, fusing the two numbers into `8` right before your eyes.
+Over the next few pages, you will unlock all four shelves of that **Number Elevator ($X, Y, Z, T$)** and meet the everyday controls that drive it: the digit keys `0` through `9` for building numbers on Shelf $X$, `{{key:ENTER}}` to lift a finished number upstairs, the four arithmetic action keys (`{{key:+}}`, `{{key:-}}`, `{{key:×}}`, and `{{key:÷}}`), and a set of friendly navigation and undo keys (`{{key:<-}}` Backspace, `{{key:x⇄y}}` Swap, `{{key:R↓}}` Roll Down, `{{key:REP}}` Repeat, and `{{key:LASTX}}` Recover Last Number).
 
-Instead of wrestling with parentheses, syntax errors, and misleading equals signs, on the SC-6 you keep a clear, visible stack of numbers that you can combine, separate, and inspect at any time. Over the next few pages, you will meet the everyday controls that drive this number elevator: the digit keys `{{key:0}}` through `{{key:9}}` for building numbers on the ground floor, `{{key:ENTER}}` to lift a finished number upstairs, the four arithmetic action keys (`{{key:+}}`, `{{key:-}}`, `{{key:×}}`, and `{{key:÷}}`), and a set of friendly navigation and undo keys (`{{key:<-}}` Backspace, `{{key:x⇄y}}` Swap, `{{key:R↓}}` Roll Down, `{{key:REP}}` Repeat, and `{{key:LASTX}}` Recover Last Number).
-
----
-
-## Unlocking the 4-Story Number Elevator ($T, Z, Y, X$)
+### Inside the 4-Shelf Number Stack
 
 When you only have two numbers to combine, Ground Shelf $X$ and Waiting Shelf $Y$ are all you need. But what if you finish calculating the first half of a problem—say, $15 - 3 = 12$—and you need a safe place to park that `12` while you work on the second half ($4 + 2 = 6$)?
 
-Instead of making you copy `12` onto scrap paper or wrap everything in parentheses, your SC-6 has **two more waiting floors upstairs**—**Floor $Z$ (the Third-Floor Loft)** and **Floor $T$ (the Top-Floor Penthouse)**:
+Your SC-6 has **two more waiting shelves upstairs**—**Shelf $Z$ (the Third-Story Loft)** and **Top Shelf $T$ (the Fourth-Story Roof Shelf)**:
 
-{{blocks:diagram_elevator_stack_concept|The 4-Story Number Elevator (Shelves T, Z, Y, X) Solving (15 − 3) × (4 + 2) = 72 Without Parentheses}}
+{{blocks:diagram_elevator_stack_concept|The 4-Story Number Elevator (Shelves T, Z, Y, X) Solving (15 − 3) × (4 + 2) = 72}}
 
-{{blocks:number_rack_subitizing|Number Rack Two-Color Bead Math Rekenrek}}
-*Figure 2.1: The Number Rack (Rekenrek) model. Intermediate numbers rest on visible horizontal levels just as numbers wait on the operational shelves of the SC-6.*
+{{blocks:number_rack_subitizing|The Two-Rail Number Rack (Rekenrek): Numbers Rest on Visible Horizontal Levels Just Like the Shelves of Your SC-6}}
 
-| Stack Level | Stack Register | What It Does | Where You See It |
+| Elevator Shelf | Table Column Name | How This Shelf Helps You Build | Where You See It on Screen |
 |---|---|---|---|
-| **Level 4** | **Register T** | **Top Shelf** (Keeps your multiplier locked for skip-counting) | Top line on screen |
-| **Level 3** | **Register Z** | **Third Shelf** (Waiting shelf for multi-step problems) | Second line from top |
-| **Level 2** | **Register Y** | **Second Shelf** (Waiting partner, held for subtraction or division) | Left column in $Y \mid X$ layout |
-| **Level 1** | **Register X** | **Ground Shelf** (Active shelf where you type and see results) | Right column / primary LCD line |
+| **Top Shelf $T$** | **Register T** | **The Repeat Shelf:** Keeps a constant step size locked at the top for skip-counting ladders | Top shelf of the 4-story elevator |
+| **Shelf $Z$** | **Register Z** | **The Upper Waiting Shelf:** Holds your first finished group while you build a second group below | Just above Shelf $Y$ |
+| **Shelf $Y$** | **Register Y** | **The Waiting Shelf:** Holds your first number ready to combine with Shelf $X$ | Left side of the $Y \mid X$ split screen |
+| **Ground Shelf $X$** | **Register X** | **Your Workbench:** Every number you type and every answer you calculate appears right here | Right side of the $Y \mid X$ split screen |
 
 ### The Three Golden Rules of Stack Math
 
-1. **Rule 1: New Numbers Enter at the Ground Shelf (Level $X$).**  
-   Whenever you tap digit keys (for example, `{{key:3}}`), that number appears on Level $X$. Level $X$ is the active display shelf you see right before your eyes.
-2. **Rule 2: Pressing `{{key:ENTER}}` Pushes Numbers UP the Stack.**  
-   When your first number is entered, tapping `{{key:ENTER}}` pushes it up to Level $Y$ (like an elevator rising to the second floor), leaving an identical copy ready on Level $X$ so you can type your next number.
-3. **Rule 3: Pressing an Operator Key (`+`, `-`, `×`, `÷`) Drops the Stack Down.**  
-   When you tap an operational key such as `{{key:+}}`, the upper shelf drops down. The number on Level $Y$ combines with the number on Level $X$, and their combined total remains on the ground shelf ($X$). Meanwhile, any number waiting upstairs on Floor $Z$ rides the elevator down to Floor $Y$, ready for its turn!
+1. **Type the First Number and Press `{{key:ENTER}}`:**  
+   Whenever you tap digit keys (for example, `3`), that number appears on Ground Shelf $X$ right before your eyes. When your first number is complete, tapping `{{key:ENTER}}` lifts it up onto Waiting Shelf $Y$ (like an elevator rising one story), leaving a copy on the bottom shelf that is immediately replaced as soon as you type your next number.
+2. **Type the Second Number on Shelf $X$:**  
+   As soon as you tap the next digit, your second number takes its place on Shelf $X$ while your first number waits in plain view on Shelf $Y$ right beside it.
+3. **Tap the Action Key Last (`+`, `-`, `×`, `÷`):**  
+   When you tap an action key such as `{{key:+}}`, the `3` on Shelf $Y$ drops down and fuses with the `4` on Shelf $X$, placing their combined sum **`7`** right onto the bottom shelf while Shelf $Y$ resets cleanly to `0`. At that exact same moment, any number waiting upstairs on Shelf $Z$ rides the elevator down into Shelf $Y$, ready for its turn!
 
-| Stack Level | Before Pressing `{{key:+}}` | Action During `{{key:+}}` | After Pressing `{{key:+}}` |
-| :--- | :---: | :--- | :---: |
-| **Level 2 (`Y`)** | `3` | Drops down to combine with Level 1 | `0` |
-| **Level 1 (`X`)** | `4` | Receives $3 + 4$ | **`7`** |
+### How Automatic Stack Lift Saves Your Answers
+One of the friendliest habits of your SC-6 is **automatic stack lift**. Say you just added `4 {{key:ENTER}} 5 {{key:+}}` and your answer `9` is sitting on Shelf $X$. What happens when you start typing a new number, like `6`?
 
-### Automatic Stack Lift: Why You Never Lose a Finished Answer
-One of the friendliest habits of your SC-6 is **automatic stack lift**. Suppose you just added `4 {{key:ENTER}} 5 {{key:+}}` and your answer `9` is sitting on Ground Shelf $X$. What happens when you start typing a new number, like `{{key:6}}`?
+You do **NOT** need to press `{{key:ENTER}}` first, and typing `6` will **never** erase your `9`! Because the calculator knows `9` is a finished answer, the moment you touch `6`, it automatically sends `9` up to Shelf $Y$ (and pushes anything in Shelf $Y$ up to Shelf $Z$) to make room for your `6` on Shelf $X$:
 
-You do **NOT** need to press `{{key:ENTER}}` first, and typing `{{key:6}}` will **never** erase your `9`! Because the calculator knows `9` is a finished answer, the moment you touch `{{key:6}}`, it automatically lifts `9` up to Waiting Shelf $Y$ (and pushes anything in $Y$ up to $Z$) to make room for your `6` on the ground floor:
-
-**Watching Automatic Stack Lift in Action** (After `4 {{key:ENTER}} 5 {{key:+}}` gives $X = 9$, then typing `{{key:6}}`):
-
-| Register | BEFORE Typing `6` | DURING Typing `6` | AFTER Typing `6` |
+| Elevator Shelf | Right After `4 {{key:ENTER}} 5 {{key:+}}` | The Moment You Touch `6` | Ready for Your Next Action Key |
 | :---: | :---: | :---: | :---: |
-| **Register T** | $0$ | $0$ | $0$ |
-| **Register Z** | $0$ | $0$ | $0$ |
-| **Register Y** | $0$ | **$9$** (Lifts up) | **$9$** |
-| **Register X** | **$9$** (Prior answer) | `6_` | **$6$** |
+| **Top Shelf $T$** | $0$ | $0$ | $0$ |
+| **Shelf $Z$** | $0$ | $0$ | $0$ |
+| **Shelf $Y$** | $0$ | **$9$** (Rides up automatically!) | **$9$** |
+| **Shelf $X$** | **$9$** (Finished answer) | `6_` (New number begins) | **$6$** |
 
 ### How the Elevator Drops (and the Top-Shelf Secret)
-Whenever you press a two-number action key (`+`, `-`, `×`, `÷`), the whole four-story elevator moves together in one smooth step:
+Whenever you press a two-number action key (`+`, `-`, `×`, `÷`), all four shelves of the elevator move together in one smooth step:
 1. The waiting number on **Shelf $Y$** combines with the active number on **Shelf $X$**—for example, in subtraction or division, Shelf $Y$ always goes first: $\text{Shelf } Y - \text{Shelf } X$ ($12 - 5 = 7$) or $\text{Shelf } Y \div \text{Shelf } X$ ($12 \div 4 = 3$).
-2. Their combined answer lands on **Ground Shelf $X$**.
-3. Whatever was waiting on **Floor $Z$** drops down into **Shelf $Y$**.
-4. Whatever was on **Top Shelf $T$** drops down into **Floor $Z$**—and **leaves a copy of itself behind on Top Shelf $T$!**
+2. Their combined answer lands on **Shelf $X$**.
+3. Whatever was waiting on **Shelf $Z$** drops down into **Shelf $Y$**.
+4. Whatever was on **Top Shelf $T$** drops down into **Shelf $Z$**—and **leaves a copy of itself behind on Top Shelf $T$!**
 
-Why does Top Shelf $T$ leave a copy of itself behind every time the elevator drops? Because if you lock a step size (like `7`) into the top floor, it will keep feeding fresh `7`s down the elevator forever, letting you skip-count through your times tables ($7, 14, 21, 28 \dots$) with single taps of `{{key:+}}`!
+Why does Top Shelf $T$ leave a copy of itself behind every time the elevator drops? Because if you lock a step size (like `7`) into Top Shelf $T$, it will keep feeding fresh `7`s down the elevator forever, letting you skip-count through your times tables ($7, 14, 21, 28 \dots$) with single taps of `{{key:+}}`!
 
-### Riding the Sky-Tower Space Elevator Express
-To see how automatic stack lift and the four elevator shelves work together in real life, imagine you are the chief dispatch controller for a 20-story Sky-Tower & Robotics Center! On your morning shift, you track heavy cargo lifts, ride a doubling cascade of laser scanners, chain three-stop passenger shuttles using automatic stack lift, and equip robot pit crews at the summit.
+### Reading Left to Right on Your Split Screen ($Y \mid X$)
 
-Your shift begins at the ground-floor loading dock, where a heavy cargo lift starts upward carrying $83\text{ kg}$ of robot frame parts. At Floor 4, the build team unloads $36\text{ kg}$ of aluminum beams, and the control console asks how many kilograms of parts stay inside the lift as it continues upward. On your **Place Value Tray**, unbundle 1 ten from the `TENS` column into ten `+1` regrouping blocks in the `ONES` column (making 7 tens and 13 ones), then remove 3 tens and 6 ones to leave 4 tens and 7 ones ($47$). When you place the starting $83\text{ kg}$ load on Shelf $Y$ and subtract the $36\text{ kg}$ unloaded at Floor 4 by pressing `{{res:sc6_02_rpn_for_young_learners_seq_11:keys}}`, the ground shelf immediately shows **`{{res:sc6_02_rpn_for_young_learners_seq_11:value}}`** kg of cargo remaining inside the lift—and tapping `{{key:LASTX}} {{key:+}}` right afterwards loads the $36\text{ kg}$ of aluminum beams back on to verify $47 + 36 = 83$.
+When you write a subtraction ($12 - 4 = 8$) or division ($12 \div 4 = 3$) story on paper, you read it from left to right. Older scientific calculators stacked their shelves vertically ($Y$ above $X$), which meant reading from top to bottom.
 
-While the cargo lift climbs slowly with its $47\text{ kg}$ load, you switch your monitor to the express turbo-lift shaft next door, where a laser safety scanner **doubles** its active beams on every floor rise. Starting with $2$ laser beams at Floor 1, how many beams are scanning by Floor 5? Typing `2 + 2`, then `+ 4`, then `+ 8`, then `+ 16` on a regular calculator would be slow and tiring—but on your SC-6, pressing `{{key:ENTER}}` automatically makes an identical twin copy of whatever number sits on Shelf $X$! That means tapping `{{key:ENTER}} {{key:+}}` doubles *any* number in two quick clicks. Place 2 tiles on your desk, double them to 4, then 8, then 16, and ride the two-key doubling rhythm (`{{key:ENTER}} {{key:+}}`) four times in a row on your SC-6: pressing `{{res:sc6_02_rpn_for_young_learners_seq_13:keys}}` clones and fuses each floor's beam count until Ground Shelf $X$ reaches **`{{res:sc6_02_rpn_for_young_learners_seq_13:value}}`** laser beams at Floor 5.
+Your SC-6 daylight screen makes reading natural by giving you a **Side-by-Side $Y \mid X$ Split Screen**. Across the top status bar sit your mode indicators and battery icon, while a crisp vertical line down the middle divides the main display into two side-by-side shelves: **Waiting Shelf $Y$ on the left** holds the first number you locked in with `{{key:ENTER}}` (like **`12`**), and **Ground Shelf $X$ on the right** shows the second number you are typing right now (like **`4`**). Because **`12`** sits on the left and **`4`** sits on the right, reading across your screen from left to right (`12 | 4`) matches the exact left-to-right order of $12 - 4 = 8$ and $12 \div 4 = 3$ on your notebook page! *(Prefer one extra-large number on screen instead of the split view? Open `{{key:FLAGS}}` anytime to toggle between the default **Side-by-Side $Y \mid X$** view and **Single-Shelf $X$** view.)*
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `2` | 0 | 0 | 0 | 2 |
-| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 4 |
-| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 8 |
-| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 16 |
-| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 32 |
+{{blocks:math_dominoes_bridging_12frame|Math Dominoes Studio: Placing [5|4] = 9 and [3|2] = 5 Across the 10-Break Line on the 12-Frame Tray to Regroup 9 + 5 into 10 + 4 = 14}}
 
-With the laser grid verified up to 32 beams, the morning science-fair rush begins! The passenger sky-shuttle picks up 15 passengers at the underground train station, 24 passengers at the main atrium, and 31 passengers at the botanical sky-deck. How do you add three stops in a row—and why do you only press `{{key:ENTER}}` **once** at the very beginning? First, spot a neat mental-math pattern in the ones digits: $5 + 4 + 1 = 10$. Now watch **automatic stack lift** do the heavy lifting after the first addition: once `15 {{key:ENTER}} 24 {{key:+}}` produces `39` on Shelf $X$, typing `31` automatically lifts `39` up to Shelf $Y$ without needing another `{{key:ENTER}}`. Keying in `{{res:sc6_02_rpn_for_young_learners_seq_14:keys}}` chains all three boarding stops into a single smooth tally of **`{{res:sc6_02_rpn_for_young_learners_seq_14:value}}`** passengers.
+### Fast Split-Screen Warm-Up: Dominoes, Swaps & Saving for a Telescope
+Just as a single **Math Domino** holds two dot patterns side by side across its center divider line, your calculator's $Y \mid X$ split screen keeps both numbers of a calculation visible right before they combine. Pick up the `[5|3]` Math Domino from your tray: 5 pips sit on the left half and 3 pips sit on the right half. Keying `{{res:sc6_02_rpn_for_young_learners_seq_01:keys}}` mirrors that exact domino on your screen—sliding `5` to the left half ($Y = 5$), placing `3` on the right half ($X = 3$), and snapping them together into **`{{res:sc6_02_rpn_for_young_learners_seq_01:value}}`**. *(Did your screen show `53` instead of `8`? That just means your thumb forgot to press `{{key:ENTER}}` to separate the two numbers!)*
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `15` | 0 | 0 | 0 | 15 |
-| `{{key:ENTER}}` | 0 | 0 | 15 | 15 |
-| `24` | 0 | 0 | 15 | 24 |
-| `{{key:+}}` | 0 | 0 | 0 | 39 |
-| `31` | 0 | 0 | 39 | 31 |
-| `{{key:+}}` | 0 | 0 | 0 | 70 |
+That side-by-side layout is even handier when order matters, like subtraction. Suppose your friends eat $4$ slices from a $9$-slice square pizza: the starting total (`9`) belongs on the left (Shelf $Y$) and the slices eaten (`4`) belong on the right (Shelf $X$), so keying `{{res:sc6_02_rpn_for_young_learners_seq_02:keys}}` leaves **`{{res:sc6_02_rpn_for_young_learners_seq_02:value}}`** slices on the pan. What if you were talking to a friend and accidentally typed `4 {{key:ENTER}} 9` backward? Instead of clearing and starting over, just glance at your split screen (`4 | 9`), tap **`{{key:x⇄y}}`** once to swap the two halves into `9 | 4`, and press `{{key:-}}`!
 
-When that 70-passenger shuttle reaches the top-floor robotics arena, the tournament director opens a crate of 24 walkie-talkies and splits them equally among 4 pit-crew stations. To see how many walkie-talkies each pit crew gets, deal your 24 counting tiles into 4 equal piles on your desk: you see 6 tiles in each pile, proving with your hands that division is just multiplication (`4 × 6 = 24`) run in reverse. Just like subtraction, the starting total (`24`) goes into the left column ($Y$) and the number of groups (`4`) goes into the right column ($X$), so pressing `{{res:sc6_02_rpn_for_young_learners_seq_19:keys}}` divides the crate evenly to show **`{{res:sc6_02_rpn_for_young_learners_seq_19:value}}`** walkie-talkies per pit crew. *(Tap `{{key:LASTX}} {{key:×}}` right after to multiply `6` by `4` and restore all `24` radios without re-typing!)*
+Now step up from single digits to two-digit numbers—say, **23 trading cards** in your binder and **14 cards** in a deck box. Dock `2` tens and `3` ones in the top row of your **Place Value Tray** ($23$, matching Shelf $Y$) and `1` ten and `4` ones in the bottom row ($14$, matching Shelf $X$). Keying `{{res:sc6_02_rpn_for_young_learners_seq_09:keys}}` combines the tens ($20 + 10 = 30$) and the ones ($3 + 4 = 7$) into **`{{res:sc6_02_rpn_for_young_learners_seq_09:value}}`** cards.
+
+What happens when those ones digits overflow past 10? Picture combining **$\$47$** saved from birthday gifts with **$\$36$** earned pet-sitting a neighbor's cat to buy an **$\$83$ backyard telescope**. On your **Place Value Tray**, the $7 + 6 = 13$ ones trade 10-for-1 to add $+1$ to the `TENS` column ($4 + 3 + 1 = 8\text{ tens}$) and leave `3` in `ONES` ($83$). Running `{{res:sc6_02_rpn_for_young_learners_seq_10:keys}}` combines both amounts into $\$83$ and immediately taps **`{{key:LASTX}}`** (`{{key:f}}` then `{{key:ENTER}}`) and `{{key:-}}` to subtract the $\$36$ back out—restoring your starting **`{{res:sc6_02_rpn_for_young_learners_seq_10:value}}`** birthday dollars on Shelf $X$:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `47` | 0 | 0 | 0 | 47 | Type your $\$47$ birthday gift savings onto Shelf $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 47 | 47 | Lift $\$47$ up to Shelf $Y$. |
+| `36` | 0 | 0 | 47 | 36 | Type your $\$36$ cat-sitting earnings onto Shelf $X$. |
+| `{{key:+}}` | 0 | 0 | 0 | 83 | Combine both amounts ($47 + 36 = 83$) for the telescope; 36 is tucked into `LAST x`. |
+| `{{key:LASTX}}` | 0 | 0 | 83 | 36 | Recall 36 onto Shelf $X$ while 83 lifts automatically to Shelf $Y$. |
+| `{{key:-}}` | 0 | 0 | 0 | 47 | Subtract $83 - 36 = 47$ to verify your starting $\$47$ birthday savings! |
 
 ---
 
-## Why Combining Numbers IS the Answer (Zero Parentheses)
+### Everyday Stories on the 4-Shelf Stack
+Now let's watch how **automatic stack lift** and the four elevator shelves handle real-world puzzles that chain multiple steps together: weighing a squirming dog at home, watching a living cell double, adding bike-riding minutes across three days, and dealing a deck of cards.
 
-> **The Golden Rule of RPN:** On the StackCalc SC-6, you never wait for an equals sign. The moment you press `{{key:+}}`, `{{key:-}}`, `{{key:×}}`, or `{{key:÷}}`, the numbers on Level 1 ($X$) and Level 2 ($Y$) combine immediately.
+Look at the three numbers from our telescope story right above ($47$, $36$, and $83$). What happens when a real-life mystery hands you the combined total ($83$) and one part ($36$), and you need to work backward to uncover the hidden part ($47$)? Have you ever tried to weigh a big, squirming golden retriever on a bathroom scale? Its paws hang off the edges, its tail wags, and it walks right off before the readout settles! Vets and pet owners solve this by weighing the dog inside its rolling travel crate ($83\text{ pounds}$ together) and then subtracting the weight of the empty crate ($36\text{ pounds}$). Placing the combined $83\text{-pound}$ weight on Shelf $Y$ and subtracting the $36\text{-pound}$ crate with `{{res:sc6_02_rpn_for_young_learners_seq_11:keys}}` immediately reveals **`{{res:sc6_02_rpn_for_young_learners_seq_11:value}}`** pounds for your dog—and tapping `{{key:LASTX}} {{key:+}}` adds the $36\text{-pound}$ crate right back on to prove $47 + 36 = 83$!
 
-To see how the four-story elevator rescues you from parentheses, imagine you are helping organize snacks for a 5th-grade field day and encounter a multi-step puzzle with two separate groups that need to be multiplied and then shared equally:
+Now look at how living things grow in biology. Every spring in shallow pond water, a fertilized frog egg begins as a single round cell. Under a magnifying glass, a groove pinches across the middle and that single cell divides into $2$ identical cells. About thirty minutes later, both cells divide at the same time to make $4$ cells, then $8$, then $16$, doubling on every round of cell division. Starting with $2$ cells after the first split, how many cells are in the cluster after four more rounds of doubling?
+
+On your SC-6, pressing `{{key:ENTER}}` makes an identical twin copy of whatever number sits on Shelf $X$. That means tapping `{{key:ENTER}} {{key:+}}` doubles *any* number in two quick clicks! Place 2 tiles on your desk, double them to 4, then 8, then 16, and ride the two-key doubling rhythm (`{{key:ENTER}} {{key:+}}`) four times in a row on your SC-6: running `{{res:sc6_02_rpn_for_young_learners_seq_13:keys}}` clones and fuses each generation of cells until Shelf $X$ reaches **`{{res:sc6_02_rpn_for_young_learners_seq_13:value}}`** cells.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `2` | 0 | 0 | 0 | 2 | Place the first 2 frog cells onto Shelf $X$. |
+| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 4 | Clone 2 onto Shelf $Y$ and add ($2 + 2 = 4$ cells after split 2). |
+| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 8 | Clone 4 onto Shelf $Y$ and add ($4 + 4 = 8$ cells after split 3). |
+| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 16 | Clone 8 onto Shelf $Y$ and add ($8 + 8 = 16$ cells after split 4). |
+| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 32 | Clone 16 onto Shelf $Y$ and add ($16 + 16 = 32$ cells after split 5). |
+
+What about adding a list of three or more numbers in a row? Imagine tracking your bike rides after school for three days: **15 minutes** on Monday, **24 minutes** on Tuesday, and **31 minutes** on Wednesday. How do you add three numbers in a row on the stack—and why do you only press `{{key:ENTER}}` **once** at the very beginning?
+
+First, spot a neat mental-math shortcut in the ones digits: $5 + 4 + 1 = 10$. Now watch **automatic stack lift** do the work after the first addition: once `15 {{key:ENTER}} 24 {{key:+}}` produces `39` on Shelf $X$, typing `31` automatically lifts `39` up to Shelf $Y$ without needing another `{{key:ENTER}}`. Keying in `{{res:sc6_02_rpn_for_young_learners_seq_14:keys}}` chains all three rides into a total of **`{{res:sc6_02_rpn_for_young_learners_seq_14:value}}`** minutes.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `15` | 0 | 0 | 0 | 15 | Type Monday's 15-minute bike ride onto Shelf $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 15 | 15 | Lift 15 up to Shelf $Y$ so the bottom shelf is ready for Tuesday. |
+| `24` | 0 | 0 | 15 | 24 | Type Tuesday's 24-minute ride onto Shelf $X$. |
+| `{{key:+}}` | 0 | 0 | 0 | 39 | Combine Monday and Tuesday ($15 + 24 = 39$ minutes on Shelf $X$). |
+| `31` | 0 | 0 | 39 | 31 | Typing Wednesday's 31 minutes automatically lifts 39 to Shelf $Y$! |
+| `{{key:+}}` | 0 | 0 | 0 | 70 | Combine all three days ($39 + 31 = 70$ total biking minutes). |
+
+Finally, picture sitting down with 3 friends to play Euchre, which uses a 24-card deck (the 9, 10, Jack, Queen, King, and Ace of all four suits), and dealing all 24 cards equally among the 4 players. How many cards does each player get?
+
+Deal your 24 counting tiles into 4 equal piles on your desk: you see 6 tiles in each pile, showing with your hands that division is just multiplication (`4 × 6 = 24`) run in reverse. Just like subtraction, the starting total (`24`) goes onto Shelf $Y$ and the number of players (`4`) goes onto Shelf $X$. Entering `{{res:sc6_02_rpn_for_young_learners_seq_19:keys}}` divides the deck evenly to show **`{{res:sc6_02_rpn_for_young_learners_seq_19:value}}`** cards per player—and tapping `{{key:LASTX}} {{key:×}}` right after multiplies `6` by `4` to restore all `24` cards.
+
+---
+
+## Solving Two-Group Puzzles on the Upper Shelves
+
+In every example so far—from weighing a dog on a bathroom scale to dealing a 24-card Euchre deck—we only needed Shelf $Y$ and Shelf $X$ because we were combining one pair of numbers at a time. What happens when a puzzle has **two separate groups** that each need to be solved first before they can be multiplied or divided together? Whenever you finish the first group of a puzzle on Shelf $X$ and start typing the second group, automatic stack lift carries your first group upstairs to **Shelf $Z$**—and drops it right back down to **Shelf $Y$** as soon as the second group finishes!
+
+### Stepping Through $(15 - 3) \times (4 + 2) \div 6 = 12$
+
+To see how the four-story elevator handles two groups at once, imagine you are helping organize snacks for a 5th-grade field day and hit a puzzle with two separate groups that need to be multiplied and then shared equally:
 
 $$(15 - 3) \times (4 + 2) \div 6 = 12$$
 
-On a regular calculator, you would have to type opening and closing parentheses around $(15 - 3)$ and $(4 + 2)$—or stop halfway through to scribble $12$ on a scrap of paper so you don't forget it while adding $4 + 2$. On your SC-6, the elevator shelves hold your place automatically. First, you find the size of the first group ($15 - 3$) by tapping `{{res:sc6_02_rpn_for_young_learners_seq_42:keys}}`, and **`12`** immediately appears on Ground Shelf $X$. Next, without clearing the screen or reaching for a pencil, you start typing the second group ($4 + 2$): as soon as you tap `{{res:sc6_02_rpn_for_young_learners_seq_43:keys}}`, automatic stack lift carries your finished **`12`** upstairs to the third-floor loft ($Z$) while `4` and `2` sit on the lower shelves, and tapping `{{key:+}}` fuses $4 + 2$ into **`6`** on Level 1 ($X$) as **`12`** rides back down to Level 2 ($Y$) right beside it! Now both finished groups (`12` and `6`) are sitting side by side on your screen, ready to combine: one tap of `{{key:×}}` multiplies those two groups into `72`, and tapping `6` `{{key:÷}}` splits `72` into 6 equal shares to reveal **`{{res:sc6_order_of_ops:value}}`**.
+On your SC-6, the elevator shelves hold your place at every step:
+1. **Solve the First Group ($15 - 3$):** Tap `{{res:sc6_02_rpn_for_young_learners_seq_42:keys}}`, and **`12`** immediately appears on Shelf $X$.
+2. **Solve the Second Group ($4 + 2$) While `12` Waits Upstairs:** Right away, tap `{{res:sc6_02_rpn_for_young_learners_seq_43:keys}}`. Automatic stack lift carries your finished **`12`** up to **Shelf $Z$** while `4` and `2` sit on the lower shelves, and tapping `{{key:+}}` turns $4 + 2$ into **`6`** on Shelf $X$ as **`12`** rides right back down to Shelf $Y$ beside it!
+3. **Multiply the Groups and Share by `6`:** Now both finished groups (`12` and `6`) are sitting side by side on your screen. One tap of `{{key:×}}` multiplies them into `72`, and tapping `6` `{{key:÷}}` splits `72` into 6 equal shares to reveal **`{{res:sc6_order_of_ops:value}}`**.
 
-When you string the entire sequence together from left to right—pressing `{{res:sc6_order_of_ops:keys}}`—the four-story elevator carries both intermediate groups and lands squarely on **`{{res:sc6_order_of_ops:value}}`**.
+Here is how all four shelves carry both groups when you key in `{{res:sc6_order_of_ops:keys}}` $\to$ **`{{res:sc6_order_of_ops:value}}`**:
 
-| Keystroke | Register T (Roof Floor) | Register Z (Loft Floor) | Register Y (Mezzanine) | Register X (Ground Flr) |
-| :--- | :--- | :--- | :--- | :--- |
-| `15` | 0 | 0 | 0 | 15 |
-| `{{key:ENTER}}` | 0 | 0 | 15 | 15 |
-| `3` | 0 | 0 | 15 | 3 |
-| `{{key:-}}` | 0 | 0 | 0 | 12 |
-| `4` | 0 | 0 | 12 | 4 |
-| `{{key:ENTER}}` | 0 | 12 | 4 | 4 |
-| `2` | 0 | 12 | 4 | 2 |
-| `{{key:+}}` | 0 | 0 | 12 | 6 |
-| `{{key:×}}` | 0 | 0 | 0 | 72 |
-| `6` | 0 | 0 | 72 | 6 |
-| `{{key:÷}}` | 0 | 0 | 0 | 12 |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `15` | 0 | 0 | 0 | 15 | Place 15 onto Shelf $X$ to start the first group. |
+| `{{key:ENTER}}` | 0 | 0 | 15 | 15 | Lift 15 up to Shelf $Y$. |
+| `3` | 0 | 0 | 15 | 3 | Type 3 onto Shelf $X$. |
+| `{{key:-}}` | 0 | 0 | 0 | 12 | First group finished: $15 - 3 = 12$ sits on Shelf $X$. |
+| `4` | 0 | 0 | 12 | 4 | Typing 4 automatically lifts your finished 12 to Shelf $Y$! |
+| `{{key:ENTER}}` | 0 | 12 | 4 | 4 | Pressing `{{key:ENTER}}` lifts 12 up to Shelf $Z$ and 4 to Shelf $Y$. |
+| `2` | 0 | 12 | 4 | 2 | Type 2 onto Shelf $X$ while 12 waits safely on Shelf $Z$. |
+| `{{key:+}}` | 0 | 0 | 12 | 6 | Second group finished ($4 + 2 = 6$); 12 drops back to Shelf $Y$! |
+| `{{key:×}}` | 0 | 0 | 0 | 72 | Multiply the two groups together ($12 \times 6 = 72$ on Shelf $X$). |
+| `6` | 0 | 0 | 72 | 6 | Typing 6 automatically lifts 72 up to Shelf $Y$. |
+| `{{key:÷}}` | 0 | 0 | 0 | 12 | Share 72 into 6 equal groups ($72 \div 6 = 12$ on Shelf $X$). |
 
-{{res:sc6_order_of_ops:screenshot|SC-6 Parenthesis-Free Order of Operations: (15 - 3) x (4 + 2) / 6 = 12}}
+{{res:sc6_order_of_ops:screenshot|Solving (15 − 3) × (4 + 2) ÷ 6 = 12 on the SC-6 Stack}}
 
----
-
-## Five Core Stack Techniques: A Quick Preview
-
-Throughout this book, five core techniques connect your 3D-printed math blocks (Ten-Frame Trays, Number Rack, Counting Tiles, and 84 mm Fraction Towers) directly to the 4-level stack:
-- **1. The Make-a-Ten Snap (`{{key:▦}}`):** Bridging across 10 on your Ten-Frame tray before chaining addition (Chapter 3).
-- **2. The Elevator Stack Drop (`{{key:ENTER}}`, `{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷}}`):** Letting intermediate subtotals ride upstairs to Floors $Y, Z, T$ and drop down on cue with zero parentheses.
-- **3. The Remainder-You-Can-Hold (`{{key:÷R}}`):** Splitting division into a whole Quotient in $X$ and a physical Remainder in $Y$ at the same time (in our Weekend Maker Fair adventure below and in Chapter 4).
-- **4. The Equal-Fraction Tower Alignment (`{{key:SIMP}}`):** Aligning $84\text{ mm}$ Fraction Towers flush in the comparator well while reducing factors step by step (Chapter 5).
-- **5. The Skip-Counting Ladder (`{{key:REP}}`):** Locking a constant step into Floor $T$ so rhythmic taps of `{{key:+}}` or `{{key:×}}` climb times tables automatically (Chapter 4).
-
-Let's look inside the screen and keypad to see how the horizontal $Y \mid X$ split display and stack controls work.
+Notice how smooth that elevator drop felt: once your hands learn to lift numbers with `{{key:ENTER}}` and combine them with `{{key:+}}`, `{{key:-}}`, `{{key:×}}`, and `{{key:÷}}`, every other helper key on your keypad—whether you are splitting whole groups and leftovers with `{{key:÷R}}`, locking a constant step into Top Shelf $T$ with `{{key:REP}}`, bridging across ten in `{{key:▦}}`, or simplifying fraction towers with `{{key:SIMP}}`—follows the exact same rhythm.
 
 ---
 
-## Horizontal $Y \mid X$ Split Screen vs. Vertical Stack
-
-When you first learn mathematics in elementary school, you learn to read and write equations from left to right (like $12 - 4 = 8$ or $12 \div 4 = 3$). Traditional RPN calculators display registers vertically ($Y$ above $X$), which can feel upside-down at first.
-
-The SC-6 graphic LCD introduces the **Horizontal $Y \mid X$ Split Screen Layout**:
-
-**↰ ↱ FRAC                   Y                X              [BATTERY]**
-
-| Left Column (`Y` — Waiting Number) | Center Divider | Right Column (`X` — Active Number) |
-| :---: | :---: | :---: |
-| **`12`** | Vertical Split Rule | **`4`** |
-
-### The Enter-Slide Animation
-1. **Typing Your First Number:** When you key `12`, it appears in the **Right ($X$)** column.
-2. **Pressing `{{key:ENTER}}`:** The digits `12` visually slide smoothly across the LCD from the right column into the **Left ($Y$)** column. You see: *"My 12 has moved into position on the left, waiting for math."*
-3. **Typing Your Second Number:** When you key `4`, it enters the **Right ($X$)** column. The display clearly presents `Y = 12` and `X = 4`.
-4. **Pressing an Operator (`{{key:-}}` or `{{key:÷}}`):**
-   - The operator symbol briefly flashes in the center vertical divider line.
-   - The calculator combines Shelf $Y$ on the left with Shelf $X$ on the right ($12 - 4 = 8$ or $12 \div 4 = 3$).
-   - The result appears in the right column ($X$), while the stack drops.
-
-### Customizing Your Screen View: Side-by-Side ($Y \mid X$) vs. Single Number ($X$)
-Everyone's eyes work a little differently when learning a new skill. Using the `{{key:FLAGS}}` menu (Flag 5), you can choose how your SC-6 displays the bottom shelves of your stack:
-- **Side-by-Side View (Flag 5 = 0, Default — Dual Stack $Y \mid X$):** Shows both your waiting number on the left ($Y$) and your active number on the right ($X$) at the exact same time. Seeing both numbers side by side makes subtraction ($Y - X$) and division ($Y \div X$) feel just like reading from left to right across a page.
-- **Big Single-Number View (Flag 5 = 1 — Single Stack $X$ Only):** Fills the screen with one extra-large, bold number ($X$). When you press `{{key:ENTER}}`, your first number still rides up to Shelf $Y$ in the background while your screen stays clean and simple for typing the next number.
-
-{{blocks:math_dominoes_pairing|Math Dominoes Studio Doubling and Pairing}}
-*Figure 2.2: The Math Dominoes Studio. Domino pips let you spot groups at a glance and build pairs that mirror RPN two-number operations.*
-
-{{blocks:math_dominoes_bridging_12frame|Math Dominoes Studio: Bridging 10 on the 12-Frame Tray ([5|4] = 9 + [3|2] = 5 = 10 + 4 = 14)}}
-*Figure 2.3: Bridging 10 on the 12-frame tray. Placing [5|4] = 9 and [3|2] = 5 across the 10-break line physically regroups 9 + 5 into 10 + 4 = 14.*
-
-### The Adventure Playground Construction Crew: Seeing $Y \mid X$ Side by Side
-To feel how natural that left-to-right $Y \mid X$ split screen is in action, step into the boots of the **Adventure Playground Construction Crew**! Your school is building an adventure playground complete with a two-bay swing set, a cedar perimeter fence, a giant spiral slide, and a monkey-bar climbing dome. As the project engineers, your crew walks from zone to zone laying shock-absorbing bounce tiles, setting fence posts, paving pathways, and weighing cedar woodchips—using your desk blocks and the horizontal $Y \mid X$ screen to verify every build step.
-
-Your first stop is the two-bay swing set, where your crew is laying interlocking rubber bounce tiles under the swings. You unload 5 blue tiles in the morning, and the delivery truck brings 3 green tiles in the afternoon. How many bounce tiles are ready to snap into place? Place 5 blue counting tiles on the left side of your desk, and 3 green tiles on the right, then slide them together into one solid row of 8 tiles. Notice how your calculator's horizontal $Y \mid X$ screen mirrors your desk: pressing `{{key:ENTER}}` slides your morning count (`5`) into the left column ($Y = 5$) so the afternoon delivery (`3`) can sit right beside it ($X = 3$). When you key in `{{res:sc6_02_rpn_for_young_learners_seq_01:keys}}`, the waiting shelf and ground shelf snap together to display **`{{res:sc6_02_rpn_for_young_learners_seq_01:value}}`** bounce tiles ready for the swing bay. Pause for a moment and glance at the screen: did you see $Y = 5$ on the left and $X = 3$ on the right before pressing `{{key:+}}`? If your screen showed $53$ instead, your fingers simply forgot to press `{{key:ENTER}}` to close the elevator door between the two numbers!
-
-Once the swing bay is cushioned with all 8 rubber tiles, your crew walks over to the playground border to anchor 9 sturdy cedar fence posts along the property line. Before the lunch bell rings, you finish bolting 4 posts firmly into the ground, and your foreman asks how many fence posts are still waiting for the afternoon shift. To see the answer with your hands, line up 9 counting tiles in a row for the fence line, then slide 4 tiles away for the finished posts to leave 5 remaining. In Stack Math, subtraction follows that exact same left-to-right story: your **starting total ($9$)** always goes into the left column ($Y$) first, and the **amount you take away ($4$)** goes into the right column ($X$). By pressing `{{res:sc6_02_rpn_for_young_learners_seq_02:keys}}`, you subtract the 4 bolted posts from the 9 starting posts and leave **`{{res:sc6_02_rpn_for_young_learners_seq_02:value}}`** unbolted posts on the ground floor for the afternoon shift.
-
-What if your fingers accidentally typed `4 {{key:ENTER}} 9` in reverse order while setting up that fence-post subtraction? Look at the split screen before pressing minus: $Y$ holds $4$ and $X$ holds $9$. On the SC-6, you never have to erase and re-type! Simply tap `{{key:x⇄y}}` to swap the two shelves into their proper seats ($Y = 9,\; X = 4$), then tap `{{key:-}}` to get $5$. Better yet, right after subtracting, tap `{{key:LASTX}} {{key:+}}` to bring back the $4$ finished posts and prove that $5 + 4 = 9$.
-
-After lunch, your crew moves from the perimeter fence to the center of the playground to pave the landing zone around the giant spiral slide using 23 rubber pavers, plus another 14 pavers around the balance-beam pit. Now that the numbers have grown into the twenties and teens, you can watch the tens and ones combine on your **Place Value Studio Whole Numbers Tray** before you even press `{{key:+}}`. Dock `2` in `TENS` and `3` in `ONES` for the top row ($23$), and `1` in `TENS` and `4` in `ONES` for the bottom row ($14$). Just like Registers $Y$ and $X$, the two rows of your tray let you combine the tens column ($20 + 10 = 30$) and the ones column ($3 + 4 = 7$) to see $37$ at a glance. Now lift the 23 spiral-slide pavers onto Shelf $Y$ and bring in the 14 balance-beam pavers by pressing `{{res:sc6_02_rpn_for_young_learners_seq_09:keys}}`, which unites both paving zones into **`{{res:sc6_02_rpn_for_young_learners_seq_09:value}}`** on Ground Shelf $X$. *(Try tapping `{{key:LASTX}} {{key:-}}` right after—watch `14` jump back into $X$ and subtract to restore `23`!)*
-
-With the spiral-slide pathway paved, your crew tackles the final job on the playground: wheeling soft cedar woodchips beneath the monkey-bar dome. The first wheelbarrow delivers $47\text{ kg}$ of woodchips, and the second brings $36\text{ kg}$. Unlike the pavers around the spiral slide, here the ones digits ($7 + 6 = 13$) overflow past 10! When you model 47 (`4` tens, `7` ones) and 36 (`3` tens, `6` ones) on your **Place Value Tray** with `+1` regrouping blocks, the $7 + 6 = 13$ ones trade 10-for-1 to add $+1$ to the `TENS` column and leave `3` in `ONES`, giving 8 tens and 3 ones ($83$). To combine both wheelbarrows on the stack and immediately verify the sum by subtracting the second load back out without re-typing a single digit, press `{{res:sc6_02_rpn_for_young_learners_seq_10:keys}}`, which reaches $83\text{ kg}$ and then uses `{{key:LASTX}}` to restore the original **`{{res:sc6_02_rpn_for_young_learners_seq_10:value}}`** kg on Ground Shelf $X$.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `47` | 0 | 0 | 0 | 47 |
-| `{{key:ENTER}}` | 0 | 0 | 47 | 47 |
-| `36` | 0 | 0 | 47 | 36 |
-| `{{key:+}}` | 0 | 0 | 0 | 83 |
-| `{{key:LASTX}}` | 0 | 0 | 83 | 36 |
-| `{{key:-}}` | 0 | 0 | 0 | 47 |
-
-Look at row 5 of that table to see why `{{key:LASTX}}` saves every keystroke: you didn't have to type `3` and `6` a second time! Tapping `{{key:LASTX}}` pulled `36` straight out of backup memory and lifted `83` to Floor $Y$, so one tap of `{{key:-}}` proved $83 - 36 = 47$.
-
----
-
-## Choosing How Many Shelves You Need: `2-LV`, `4-LV`, and `8-LV`
+### Choosing How Many Shelves You Need: `2-LVL`, `4-LVL`, and `8-LVL`
 
 Just as you might use a small two-pocket folder for a quick homework sheet or a big four-shelf locker for all your school projects, the `{{key:FLAGS}}` menu lets you choose how many shelves your Number Elevator uses:
 
-- **2-Shelf Mode ($X, Y$ — `2-LV`):** Uses just two shelves—Waiting Shelf $Y$ and Ground Shelf $X$. Because Shelf $Y$ is the top shelf in this mode, whatever number sits on Shelf $Y$ stays locked there like a permanent step-counter! That makes `2-LV` wonderful for early explorers practicing single-step addition, subtraction, and Ten-Frame games.
-- **4-Shelf Mode ($X, Y, Z, T$ — `4-LV` Standard):** The classic four-story Number Elevator—Ground ($X$), Mezzanine ($Y$), Loft ($Z$), and Penthouse Roof ($T$). This is your everyday mode for 3rd–6th grade adventures: multi-step word problems, whole-number division with remainders (`{{key:÷R}}`), fractions, and parenthesis-free order of operations.
-- **8-Shelf Mode (8 Stories Deep — `8-LV`):** Expands the elevator to 8 full waiting shelves for long tournament mental-math relays where you want to stack half a dozen subtotals without touching scratch paper.
+- **2-Shelf Mode ($X, Y$ — `2-LVL`):** Uses just two shelves—Shelf $Y$ and Shelf $X$. Because Shelf $Y$ is the top shelf in this mode, whatever number sits on Shelf $Y$ stays locked there like a permanent step-counter! That makes `2-LVL` wonderful for early explorers practicing single-step addition, subtraction, and Ten-Frame games.
+- **4-Shelf Mode ($X, Y, Z, T$ — `4-LVL` Standard):** The classic four-story Number Elevator—Shelf $X$, Shelf $Y$, Shelf $Z$, and Top Shelf $T$. This is your everyday mode for 3rd–6th grade adventures: multi-step word problems, whole-number division with remainders (`{{key:÷R}}`), fractions, and multi-group calculations.
+- **8-Shelf Mode (8 Stories Deep — `8-LVL`):** Expands the elevator to 8 full waiting shelves for long tournament mental-math relays where you want to stack half a dozen subtotals at once.
 
-### A Fun Discovery: How a Step Counter Works in 2-Shelf vs. 4-Shelf Mode
 One of the first experiments kids try on a calculator is building an automatic step counter: typing `{{res:sc6_02_rpn_for_young_learners_seq_41:keys}}` and tapping `{{key:+}}` over and over to watch the screen climb $2, 3, 4, 5 \dots$
 
-Try it in **4-Shelf Mode (`4-LV`)** first: after `1 {{key:ENTER}} 1 {{key:+}}` gives `2`, what happens if you tap `{{key:+}}` again? The screen stays at `2`! Why? Because in 4-Shelf mode, the elevator dropped `0` down from Floor $Z$ into Shelf $Y$, so tapping `{{key:+}}` simply added $2 + 0 = 2$. To make a 4-shelf elevator count forever, you first press Constant Repeat (`1 {{key:REP}}`), which fills all four shelves ($T, Z, Y, X$) with `1` so the Penthouse roof keeps feeding fresh `1`s down the stack!
+Try it in **4-Shelf Mode (`4-LVL`)** first: after `1 {{key:ENTER}} 1 {{key:+}}` gives `2`, what happens if you tap `{{key:+}}` again? The screen stays at `2`! Why? Because in 4-Shelf mode, the elevator dropped `0` down from Shelf $Z$ into Shelf $Y$, so tapping `{{key:+}}` simply added $2 + 0 = 2$. To make a 4-shelf elevator count forever, you first press Constant Repeat (`1 {{key:REP}}`), which fills all four shelves ($T, Z, Y, X$) with `1` so Top Shelf $T$ keeps feeding fresh `1`s down the stack!
 
-In **2-Shelf Mode (`2-LV`)**, however, Shelf $Y$ *is* the roof of the building. So when `+` drops the stack, Shelf $Y$ automatically keeps its `1` forever:
+In **2-Shelf Mode (`2-LVL`)**, however, Shelf $Y$ *is* the top shelf of the building. So when `+` drops the stack, Shelf $Y$ automatically keeps its `1` forever:
 `1 {{key:ENTER}} 1 {{key:+}}` $\implies \mathbf{2}$, `{{key:+}}` $\implies \mathbf{3}$, `{{key:+}}` $\implies \mathbf{4}$, `{{key:+}}` $\implies \mathbf{5}$!
 
 ---
 
-## Moving Numbers Around on Your Stack: `{{key:x⇄y}}`, `{{key:R↓}}`, `{{key:REP}}`, `{{key:LASTX}}`
+## Steering Numbers Around Your Shelves
 
-The SC-6 keypad provides dedicated physical keys to move and manage numbers on your stack:
+Five dedicated keys on your keypad let you trade, spin, repeat, recall, or inspect numbers across your shelves whenever you want:
 
-| Keystroke | Operation | Stack Register Effect |
+| Helper Key | What It Is Called | How It Moves Your Shelves |
 |---|---|---|
-| `{{key:x⇄y}}` | **Swap $X$ and $Y$** | Exchanges the active input and held number ($X \leftrightarrow Y$). Instantly corrects reversed subtraction or division. |
-| `{{key:R↓}}` | **Roll Down** | Rotates the 4-level stack downward in a carousel: $X \to T,\; T \to Z,\; Z \to Y,\; Y \to X$. |
-| `{{key:REP}}` | **Stack Replicator** | Copies Register $X$ across all four shelves ($T, Z, Y, X \leftarrow X$) so you can tap `{{key:+}}` or `{{key:×}}` repeatedly for rhythmic skip-counting and constant scaling. |
-| `{{key:LASTX}}` | **Undo & Twin-Calculation Recall** | Recalls the previous $X$ value before the last operation for self-checking inverse math or reusing a number without re-typing. |
-| `{{key:SHOW}}` | **Full Significant Digits Reveal** | Momentarily displays all internal digits of Register $X$. |
+| `{{key:x⇄y}}` | **Swap Shelf $X$ and Shelf $Y$** | Trades the active number on Shelf $X$ with the waiting number on Shelf $Y$ ($X \leftrightarrow Y$), fixing reversed subtraction or division in one tap. |
+| `{{key:R↓}}` | **Roll Down the Carousel** | Spins all four shelves downward like a Ferris wheel ($X \to T,\; T \to Z,\; Z \to Y,\; Y \to X$) so you can inspect every shelf. |
+| `{{key:REP}}` | **Constant Repeat** | Copies the number on Shelf $X$ across all four shelves ($T, Z, Y, X$) so repeated taps of `{{key:+}}` or `{{key:×}}` climb skip-counting ladders automatically. |
+| `{{key:LASTX}}` | **Last Number Recall** | Brings back the number that was on Shelf $X$ right before your last action key, ready for a two-tap check or instant undo. |
+| `{{key:SHOW}}` | **Full Digits Peek** | Momentarily reveals every internal digit of the number sitting on Shelf $X$. |
 
-### Fixing Reversed Entries with Swap (`{{key:x⇄y}}`) and Spinning the Stack Carousel (`{{key:R↓}}`)
-What happens if you type two numbers onto the stack in reverse order during a subtraction or division problem? Suppose you are at the Weekend Maker Fair & Farmer's Market, where the smoothie maker wants to pour a 24-ounce tub of frozen berry mix equally into 8 tasting cups ($24 \div 8 = 3$), and asks you to verify the ounces per cup. In your excitement, your fingers accidentally type the `8` first (`8 {{key:ENTER}} 24`)! On a regular calculator, typing a division problem backward means hitting Clear and starting all over. On the SC-6, look at the horizontal split screen: `8` is sitting in $Y$ and `24` is sitting in $X$. One tap of `{{key:x⇄y}}` swaps them into their proper seats before you press `{{key:÷}}`: when you run `{{res:sc6_02_rpn_for_young_learners_seq_24:keys}}`, the swap key puts `24` into the left seat ($Y$) and `8` into the right seat ($X$) so division cleanly yields **`{{res:sc6_02_rpn_for_young_learners_seq_24:value}}`** ounces per cup.
+### Fixing Reversed Entries & Spinning the 4-Shelf Carousel
+What happens if you type two numbers onto the stack in reverse order during a subtraction or division problem? Picture blending a **24-ounce pitcher of berry smoothie** in the kitchen and wanting to pour it equally into **8 cups** ($24 \div 8 = 3$). Because you are counting the 8 cups on the counter first, your fingers accidentally type `8` before `24` (`8 {{key:ENTER}} 24`).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `8` | 0 | 0 | 0 | 8 |
-| `{{key:ENTER}}` | 0 | 0 | 8 | 8 |
-| `24` | 0 | 0 | 8 | 24 |
-| `{{key:x⇄y}}` | 0 | 0 | 24 | 8 |
-| `{{key:÷}}` | 0 | 0 | 0 | 3 |
+Just look at your split screen before pressing divide: `8` is sitting on Shelf $Y$ and `24` is sitting on Shelf $X$. One tap of `{{key:x⇄y}}` swaps them onto their proper shelves before you press `{{key:÷}}`. When you run `{{res:sc6_02_rpn_for_young_learners_seq_24:keys}}`, the swap key puts `24` onto Shelf $Y$ and `8` onto Shelf $X$ so division cleanly gives **`{{res:sc6_02_rpn_for_young_learners_seq_24:value}}`** ounces per cup.
 
-Never start over when you type numbers in reverse order—just tap `{{key:x⇄y}}` and divide!
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `8` | 0 | 0 | 0 | 8 | You type the 8 empty cups first onto Shelf $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 8 | 8 | Lift 8 up onto Shelf $Y$. |
+| `24` | 0 | 0 | 8 | 24 | Type the 24-ounce pitcher onto Shelf $X$ (oops—reversed!). |
+| `{{key:x⇄y}}` | 0 | 0 | 24 | 8 | Swap Shelf $Y$ and Shelf $X$ so 24 is on Shelf $Y$ and 8 is on Shelf $X$! |
+| `{{key:÷}}` | 0 | 0 | 0 | 3 | Divide 24 ounces into 8 cups ($24 \div 8 = 3$ ounces per cup). |
 
-And what if you have numbers parked on all four floors ($T, Z, Y, X$) and want to inspect every shelf without erasing a single number? Before the first buzzer sounds at the state **Junior Math Olympiad**, the head judge asks every competitor to prove they can inspect all four shelves of their stack. You load `10`, `20`, `30`, and `40` onto the four shelves of your elevator, then spin them around the 4-level carousel using **Roll Down (`{{key:R↓}}`)**: when you key in `{{res:sc6_02_rpn_for_young_learners_seq_31:keys}}`, each tap of `{{key:R↓}}` brings the next shelf down to the ground floor until all four numbers return to their starting seats with **`{{res:sc6_02_rpn_for_young_learners_seq_31:value}}`** back on Ground Shelf $X$.
+Whenever two numbers land on Shelf $Y$ and Shelf $X$ in reverse order, one tap of `{{key:x⇄y}}` trades their places right on the spot.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `10` | 0 | 0 | 0 | 10 |
-| `{{key:ENTER}}` | 0 | 0 | 10 | 10 |
-| `20` | 0 | 0 | 10 | 20 |
-| `{{key:ENTER}}` | 0 | 10 | 20 | 20 |
-| `30` | 0 | 10 | 20 | 30 |
-| `{{key:ENTER}}` | 10 | 20 | 30 | 30 |
-| `40` | 10 | 20 | 30 | 40 |
-| `{{key:R↓}}` | 40 | 10 | 20 | 30 |
-| `{{key:R↓}}` | 30 | 40 | 10 | 20 |
-| `{{key:R↓}}` | 20 | 30 | 40 | 10 |
-| `{{key:R↓}}` | 10 | 20 | 30 | 40 |
+What if you have numbers parked on all four shelves ($T, Z, Y, X$) and want to check every shelf without erasing a single number? Think of the four shelves like a four-car Ferris wheel or a rotating tray carousel.
 
-Because there are 4 floors ($T, Z, Y, X$), pressing `{{key:R↓}}` 4 times brings every passenger right back to its starting floor!
+Load `10`, `20`, `30`, and `40` onto the four shelves of your elevator, then spin them around the 4-shelf carousel using **Roll Down (`{{key:R↓}}`)**: when you key in `{{res:sc6_02_rpn_for_young_learners_seq_31:keys}}`, each tap of `{{key:R↓}}` brings the next shelf down to the bottom shelf until all four numbers return to their starting shelves with **`{{res:sc6_02_rpn_for_young_learners_seq_31:value}}`** back on Shelf $X$.
 
-### Meet Your Undo & Twin-Calculation Key (`{{key:LASTX}}`)
-Every time you press an operation key (`{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷}}`), where does the number on Floor $X$ go? It doesn't disappear. Your SC-6 automatically tucks a backup copy of that number into a register called **`LAST x`**.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `10` | 0 | 0 | 0 | 10 | Place 10 onto Shelf $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 10 | 10 | Lift 10 up to Shelf $Y$. |
+| `20` | 0 | 0 | 10 | 20 | Place 20 onto Shelf $X$. |
+| `{{key:ENTER}}` | 0 | 10 | 20 | 20 | Lift 10 to Shelf $Z$ and 20 to Shelf $Y$. |
+| `30` | 0 | 10 | 20 | 30 | Place 30 onto Shelf $X$. |
+| `{{key:ENTER}}` | 10 | 20 | 30 | 30 | Lift 10 to Top Shelf $T$, 20 to Shelf $Z$, and 30 to Shelf $Y$. |
+| `40` | 10 | 20 | 30 | 40 | Place 40 on Shelf $X$ (all 4 shelves now hold 10, 20, 30, 40). |
+| `{{key:R↓}}` | 40 | 10 | 20 | 30 | Roll 1: 30 drops to Shelf $X$, while 40 wraps around to Top Shelf $T$. |
+| `{{key:R↓}}` | 30 | 40 | 10 | 20 | Roll 2: 20 drops to Shelf $X$, while 30 wraps around to Top Shelf $T$. |
+| `{{key:R↓}}` | 20 | 30 | 40 | 10 | Roll 3: 10 drops to Shelf $X$, while 20 wraps around to Top Shelf $T$. |
+| `{{key:R↓}}` | 10 | 20 | 30 | 40 | Roll 4: Every number returns to its starting shelf ($X = 40$)! |
 
-Pressing `{{key:LASTX}}` (`{{key:f}}` then `{{key:ENTER}}`) pulls that number right back onto Floor $X$ while lifting your answer up to Floor $Y$. That gives you three practical advantages without ever re-typing a number:
-1. **Two-Tap Self-Check:** Want to prove your subtraction $83 - 36 = 47$ is right? Just tap `{{key:LASTX}} {{key:+}}`—the calculator brings back `36`, adds it to `47`, and restores `83`. Divided $56 \div 7 = 8$? Tap `{{key:LASTX}} {{key:×}}` to bring back `7` and restore `56`.
-2. **Quick Undo:** Accidentally tapped `{{key:+}}` when you meant `{{key:-}}`? Don't clear and start over. Tap `{{key:LASTX}} {{key:-}}` to undo the accidental addition, then tap `{{key:LASTX}} {{key:-}}` again to perform the subtraction you wanted.
-3. **Zero-Retype Twin Calculations:** Whenever a multi-step problem needs the same number twice, `{{key:LASTX}}` hands it back to you in a single click so your fingers never waste time typing the same digits twice.
+Because there are four shelves ($T, Z, Y, X$), pressing `{{key:R↓}}` four times brings every number right back to its starting shelf.
 
-To see `{{key:LASTX}}` in action, suppose you stop at the Farmer's Market orchard booth to help the orchard master check an invoice for 15 wooden crates of Honeycrisp apple cider at $\$8.00$ per crate ($15 \times \$8.00 = \$120.00$). How can you prove the $\$120.00$ receipt is $100\%$ accurate without re-typing a single digit? If you model 2 rows of 8 tiles ($16$) on your desk and divide by 8, you see that dividing by the row width always brings back the number of rows. Now multiply the 15 cider crates by $\$8$ and let `{{key:LASTX}}` reverse-check the invoice by dividing by `8`: pressing `{{res:sc6_02_rpn_for_young_learners_seq_23:keys}}` computes the $\$120$ invoice and immediately divides by the recalled $\$8$ unit price to restore **`{{res:sc6_02_rpn_for_young_learners_seq_23:value}}`** crates on Ground Shelf $X$.
+### Reversing Multiplication and Undoing Steps in Two Taps
+Just as **`{{key:LASTX}}`** let us verify our $\$83$ telescope savings sum in two taps, that exact same backup pocket works for multiplication, division, and subtraction too. Imagine a group of **15 friends and parents** going to a matinee movie where tickets cost **$\$8.00$ each** ($15 \times 8.00 = 120.00$ dollars). How can you double-check that the $\$120.00$ total is right in two taps?
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `15` | 0 | 0 | 0 | 15 |
-| `{{key:ENTER}}` | 0 | 0 | 15 | 15 |
-| `8` | 0 | 0 | 15 | 8 |
-| `{{key:×}}` | 0 | 0 | 0 | 120 |
-| `{{key:LASTX}}` | 0 | 0 | 120 | 8 |
-| `{{key:÷}}` | 0 | 0 | 0 | 15 |
+If you model 2 rows of 8 tiles ($16$) on your desk and divide by 8, you see that dividing by the row width always brings back the number of rows. Now multiply the 15 tickets by $\$8$ and let `{{key:LASTX}}` reverse-check the receipt by dividing by `8`: entering `{{res:sc6_02_rpn_for_young_learners_seq_23:keys}}` computes the $\$120$ total and immediately divides by the recalled $\$8$ ticket price to restore **`{{res:sc6_02_rpn_for_young_learners_seq_23:value}}`** tickets on Shelf $X$.
 
-That same `{{key:LASTX}}` rescue also lets you undo a subtraction when plans change! Suppose your school math club opens its $\$120.00$ treasure vault to buy a $\$45.00$ telescope lens (`120 {{key:ENTER}} 45 {{key:-}}` $\to \$75.00$). Just as you subtract the $\$45.00$, the school principal walks in and announces that a science grant paid for the lens! How do you undo the subtraction and restore your $\$120.00$ balance without typing `45` again? You use `{{key:LASTX}}` to pull `45` right back out of memory and tap `{{key:+}}`: running the sequence `{{res:sc6_02_rpn_for_young_learners_seq_40:keys}}` subtracts the $\$45$ lens and then immediately reunites `$75` on Shelf $Y$ with the recalled `$45` on Shelf $X$ to restore **`{{res:sc6_02_rpn_for_young_learners_seq_40:value}}`** dollars.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `15` | 0 | 0 | 0 | 15 | Place the 15 moviegoers onto Shelf $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 15 | 15 | Lift 15 up to Shelf $Y$. |
+| `8` | 0 | 0 | 15 | 8 | Type the $\$8$ ticket price onto Shelf $X$. |
+| `{{key:×}}` | 0 | 0 | 0 | 120 | Multiply $15 \times 8 = 120$ dollars; 8 is saved in `LAST x`. |
+| `{{key:LASTX}}` | 0 | 0 | 120 | 8 | Recall the $\$8$ ticket price to Shelf $X$ (120 lifts to Shelf $Y$). |
+| `{{key:÷}}` | 0 | 0 | 0 | 15 | Divide $120 \div 8 = 15$ to verify all 15 tickets! |
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `120` | 0 | 0 | 0 | 120 |
-| `{{key:ENTER}}` | 0 | 0 | 120 | 120 |
-| `45` | 0 | 0 | 120 | 45 |
-| `{{key:-}}` | 0 | 0 | 0 | 75 |
-| `{{key:LASTX}}` | 0 | 0 | 75 | 45 |
-| `{{key:+}}` | 0 | 0 | 0 | 120 |
+That same `{{key:LASTX}}` rescue also lets you undo a subtraction when plans change. Say you have **$\$120.00$** in birthday and chore savings, and you spend **$\$45.00$** on a new skateboard deck (`120 {{key:ENTER}} 45 {{key:-}}` $\to$ $\$75.00$). Then your parents surprise you by offering to cover the $\$45.00$ deck as a birthday gift!
 
-With those two final clicks (`{{key:LASTX}} {{key:+}}`), your club's initial $\$120.00$ vault balance is completely restored without re-typing a single digit.
+How do you undo the subtraction and get your $\$120.00$ balance back? Just tap `{{key:LASTX}}` to pull `45` out of memory and tap `{{key:+}}`. Running `{{res:sc6_02_rpn_for_young_learners_seq_40:keys}}` subtracts the $\$45$ purchase and immediately reunites `$75` on Shelf $Y$ with the recalled `$45` on Shelf $X$ to restore **`{{res:sc6_02_rpn_for_young_learners_seq_40:value}}`** dollars.
 
-### Sharing with Whole Groups and Leftovers (`{{key:÷R}}`)
-Earlier at the top of the Sky-Tower, 24 walkie-talkies divided into 4 groups with zero leftovers. But what happens at the Weekend Maker Fair & Farmer's Market when numbers *don't* divide evenly?
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `120` | 0 | 0 | 0 | 120 | Place your starting $\$120$ savings onto Shelf $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 120 | 120 | Lift $\$120$ up to Shelf $Y$. |
+| `45` | 0 | 0 | 120 | 45 | Type the $\$45$ skateboard deck price onto Shelf $X$. |
+| `{{key:-}}` | 0 | 0 | 0 | 75 | Subtract $120 - 45 = 75$ dollars left; 45 is saved in `LAST x`. |
+| `{{key:LASTX}}` | 0 | 0 | 75 | 45 | Recall the $\$45$ price to Shelf $X$ while 75 lifts to Shelf $Y$. |
+| `{{key:+}}` | 0 | 0 | 0 | 120 | Add $75 + 45 = 120$ to restore your full $\$120$ savings! |
 
-Your first stop at the market is the brick-oven bakery, where the baker pulls 17 warm sourdough rolls from the oven and packs them into bags of 5 rolls each. How many bags are filled completely, and how many warm rolls are left over for the baker's snack? If you typed $17 \div 5$ on a regular calculator, it would say `3.4`—which doesn't tell you how many loose rolls are sitting on the counter! Instead, deal 17 counting tiles into piles of 5 on your desk: you get **3 full piles of 5** ($15$ tiles) and **2 loose tiles** left over. Now watch **Quotient & Remainder (`{{key:÷R}}`)** put the full bags in Register $X$ and the leftover rolls in Register $Y$ at the exact same time: when you key in `{{res:sc6_02_rpn_for_young_learners_seq_21:keys}}`, `{{key:÷R}}` splits the 17 rolls into 3 full bags and 2 leftovers before `{{key:x⇄y}}` swaps **`{{res:sc6_02_rpn_for_young_learners_seq_21:value}}`** into Ground Shelf $X$ so you can inspect the leftover rolls.
+In two clicks (`{{key:LASTX}}` and `{{key:+}}`), your full $\$120.00$ savings balance is right back on the bottom shelf.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `17` | 0 | 0 | 0 | 17 |
-| `{{key:ENTER}}` | 0 | 0 | 17 | 17 |
-| `5` | 0 | 0 | 17 | 5 |
-| `{{key:÷R}}` | 0 | 0 | 2 | 3 |
-| `{{key:x⇄y}}` | 0 | 0 | 3 | 2 |
+### Whole Groups and Leftovers on Two Shelves
+Earlier, when we dealt 24 cards among 4 players, the deck divided evenly with zero cards left over. What happens in real life when numbers *don't* divide evenly?
 
-Notice how Register $X$ first shows Quotient $Q = 3$ full bags while Register $Y$ holds Remainder $R = 2$ loose rolls, and tapping `{{key:x⇄y}}` swaps them so you can inspect the 2 leftover rolls up front. *(And if every single roll must go inside a bag, you need $3 + 1 = 4\text{ bags}$.)*
+Picture a neighborhood bakery pulling **17 warm bagels** from the oven and packing them into paper bags that hold **5 bagels each**. How many bags are filled completely, and how many loose bagels are left over on the counter?
 
-That same whole-number remainder power comes to the rescue right next door at the heritage farm stand, where a basket of 125 blue-shell pasture eggs is being packed into specialty cartons holding 8 eggs each. How many 8-egg cartons are filled completely, and how many eggs remain in the basket? Here again, a decimal like `15.625` would be completely useless—because nobody can pack `0.625` of a raw egg! To split the 125 eggs into 8-egg cartons and check the remainder, press `{{res:sc6_02_rpn_for_young_learners_seq_22:keys}}`, which first places 15 full cartons in Register $X$ with 5 leftover eggs waiting on Floor $Y$, and then swaps **`{{res:sc6_02_rpn_for_young_learners_seq_22:value}}`** into Register $X$. *(Want to prove $15 \times 8 + 5 = 125$ with zero re-typing? Right after `{{key:÷R}}`, tap `{{key:LASTX}} {{key:×}} {{key:+}}` and watch `125` reappear!)*
+Deal 17 counting tiles into piles of 5 on your desk: you get **3 full piles of 5** ($15$ tiles) and **2 loose tiles** left over. Now watch **Quotient & Remainder (`{{key:÷R}}`)** put the full bags on Shelf $X$ and the leftover bagels on Shelf $Y$ at the exact same time: when you key in `{{res:sc6_02_rpn_for_young_learners_seq_21:keys}}`, `{{key:÷R}}` splits the 17 bagels into 3 full bags and 2 leftovers before `{{key:x⇄y}}` swaps **`{{res:sc6_02_rpn_for_young_learners_seq_21:value}}`** onto Shelf $X$ so you can inspect the leftover bagels.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `17` | 0 | 0 | 0 | 17 | Place all 17 warm bagels onto Shelf $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 17 | 17 | Lift 17 up onto Shelf $Y$. |
+| `5` | 0 | 0 | 17 | 5 | Place the bag size (5 bagels per bag) onto Shelf $X$. |
+| `{{key:÷R}}` | 0 | 0 | 2 | 3 | Shelf $X$ shows 3 full bags; Shelf $Y$ holds 2 leftover bagels! |
+| `{{key:x⇄y}}` | 0 | 0 | 3 | 2 | Swap shelves to bring the 2 leftover bagels onto Shelf $X$. |
+
+With 3 full bags packed and 2 warm bagels swapped into view by `{{key:x⇄y}}`, both parts of the story sit on your screen at once—and if every single bagel needs to go into a bag, you just grab $3 + 1 = 4\text{ bags}$ in all.
+
+That same whole-number remainder key works on larger batches, too. If a school chess club 3D-prints **125 custom chess pieces** and snaps them into storage trays that hold **8 pieces per row**, how many 8-piece rows are filled completely, and how many extra pieces remain for the next tray?
+
+Key in `{{res:sc6_02_rpn_for_young_learners_seq_22:keys}}`, which first places 15 full rows on Shelf $X$ with 5 leftover pieces waiting on Shelf $Y$, and then swaps **`{{res:sc6_02_rpn_for_young_learners_seq_22:value}}`** onto the bottom shelf. *(Want to prove $15 \times 8 + 5 = 125$ in three taps? Right after `{{key:÷R}}`, tap `{{key:LASTX}} {{key:×}} {{key:+}}` and watch `125` reappear.)*
 
 ---
 
-## Beat Every Adult in the Room! The `1089` Mind-Reading Stack Trick
+### The `1089` Mind-Reading Stack Trick
 
 Want to amaze your parents or friends at the dinner table? Tell them you can read their mind using the SC-6 elevator stack:
 1. Write the secret number **`1089`** on a folded slip of paper and hand it to an adult before you start.
 2. Ask them to pick *any* 3-digit number where the first and last digits differ by at least 2 (for example, **`732`**).
 3. Have them reverse the digits (**`237`**) and subtract the smaller number from the larger on the stack (`732 {{key:ENTER}} 237 {{key:-}}` $\to$ `495`).
-4. Now take that intermediate answer (`495`), reverse its digits (**`594`**), and add them right on the stack: when you run the complete chain by pressing `{{res:sc6_02_mind_reader_1089:keys}}`, the ground shelf immediately lights up with **`{{res:sc6_02_mind_reader_1089:value}}`**!
+4. Now take that intermediate answer (`495`), reverse its digits (**`594`**), and add them right on the stack: when you run the complete chain `{{res:sc6_02_mind_reader_1089:keys}}`, Shelf $X$ immediately lights up with **`{{res:sc6_02_mind_reader_1089:value}}`**!
 5. Tell them to open the folded paper—no matter which 3-digit number they started with, the stack lands on **`1089`** every single time! *(Why it works: subtracting a reversed 3-digit number always produces a multiple of 99 whose hundreds and ones digits add to 9, and adding its reverse gives $900 + 180 + 9 = 1,089$.)*
 
 ---
 
-## Why Your Brain Loves Stack Math: The PEMDAS Funnel vs. The Inside-Out Stack
+## Why Stack Math Never Needs Parentheses
 
-Why do you learn math faster and make fewer mistakes with Stack Math? Because your brain only has to think about two numbers at a time.
+Why is it so much easier to solve a multi-step math puzzle when you build from the inside out on a stack? Think about clearing space on your desk: our minds work best when we only have to focus on two pieces in front of us at a time. When a long equation forces you to keep track of two or three open sets of parentheses while remembering which operation comes next, it is easy to lose your place. When the Polish logician Jan Łukasiewicz invented parenthesis-free notation in 1924 {{cite:lukasiewicz1924}}, he showed that any expression—no matter how intricate—can be evaluated one pair of numbers at a time so you only ever focus on the two numbers sitting on Shelf $Y$ and Shelf $X$ right now.
 
-Consider a classic Grade 6 order-of-operations challenge:
+Look at this multi-step order-of-operations puzzle:
 $$40 - 3 \times (2 + 3)^2 \div 5 = 25$$
 
-When students try to solve this on paper or a regular calculator, the **#1 trap** is subtracting $40 - 3 = 37$ first. Why? Because reading left-to-right tempts your eyes to grab $40 - 3$ before noticing that the $3$ is bound by multiplication to $(2 + 3)^2$. Compare the two ways to evaluate this expression:
+When people try to solve this from left to right on paper, the **#1 trap** is subtracting $40 - 3 = 37$ first. Why? Because reading left-to-right tempts your eyes to grab $40 - 3$ before noticing that the $3$ is attached by multiplication to $(2 + 3)^2$. Compare the two ways to evaluate this expression:
 
-### The PEMDAS Paper Funnel (Step-by-Step Rewrite)
-On paper, you shrink the expression one line at a time like a funnel (**P**arentheses $\to$ **E**xponents $\to$ **M**ultiply/**D**ivide left-to-right $\to$ **A**dd/**S**ubtract left-to-right):
-1. **Parentheses First:** Compute $(2 + 3) = 5$, rewriting the line as $40 - 3 \times 5^2 \div 5$.
-2. **Exponents Next:** Build a $5 \times 5$ square of Counting Tiles to see $5^2 = 25$, rewriting as $40 - 3 \times 25 \div 5$.
-3. **Multiply & Divide Left-to-Right:** Multiply $3 \times 25 = 75$, then divide $75 \div 5 = 15$, rewriting as $40 - 15$. *(Never subtract $40 - 3$ first.)*
-4. **Subtract Last:** $40 - 15 = \mathbf{25}$.
+### Solving $40 - 3 \times (2 + 3)^2 \div 5$ from the Inside Out
+On notebook paper, you have to copy the entire untouched outer frame of the equation over and over on four separate lines like a funnel (**P**arentheses $\to$ **E**xponents, which you can picture as a $5 \times 5 = 25$ square of Counting Tiles $\to$ **M**ultiply/**D**ivide left-to-right $\to$ **A**dd/**S**ubtract left-to-right), taking care never to subtract $40 - 3$ before multiplying.
 
-### Inside-Out RPN Stack Evaluation (Zero Parentheses)
-On your SC-6, you never have to rewrite four lines of paper or worry about subtracting $40 - 3$ too early. Because the elevator has four waiting shelves, you can park the outer `40` and `3` safely upstairs on Floors $Z$ and $Y$ while you solve the innermost group $(2 + 3)^2$ right on the ground floor! First you type `40 {{key:ENTER}} 3 {{key:ENTER}}` to send `40` and `3` upstairs, then you add `2 {{key:ENTER}} 3 {{key:+}}` to form `5` on Shelf $X$, and tap the square key `{{key:x²}}` to turn `5` into `25`. Now the waiting `3` on Shelf $Y$ is ready to multiply (`{{key:×}}` $\to 75$), dividing by `5` (`5 {{key:÷}}` $\to 15$) brings your parked `40` down into Shelf $Y$, and one final tap of `{{key:-}}` subtracts $40 - 15$ to land on **`25`**—all in one continuous chain (`40 {{key:ENTER}} 3 {{key:ENTER}} 2 {{key:ENTER}} 3 {{key:+}} {{key:x²}} {{key:×}} 5 {{key:÷}} {{key:-}}` $\longrightarrow$ **`25`**):
+On your SC-6, you never have to rewrite a line:
+- First, park the outer `40` and `3` safely upstairs on Shelf $Z$ and Shelf $Y$ (`40 {{key:ENTER}} 3 {{key:ENTER}}`) while you solve $(2 + 3)^2$ right on Shelf $X$ with `{{key:+}}` and `{{key:x²}}`.
+- Next, scale and divide (`{{key:×}} 5 {{key:÷}}`) and finish with `{{key:-}}` in one continuous chain:
+  `40 {{key:ENTER}} 3 {{key:ENTER}} 2 {{key:ENTER}} 3 {{key:+}} {{key:x²}} {{key:×}} 5 {{key:÷}} {{key:-}}` $\longrightarrow$ **`25`**.
 
-| What You Are Solving | PEMDAS Paper Funnel | SC-6 Elevator Stack |
+| What You Are Solving | Rewriting on Notebook Paper | Building on Your SC-6 Shelves |
 | :--- | :--- | :--- |
-| **1. Park Outer Numbers & Add `(2 + 3)`** | Rewrite $40 - 3 \times (5)^2 \div 5$ | `40 {{key:ENTER}} 3 {{key:ENTER}} 2 {{key:ENTER}} 3 {{key:+}}` $\to$ `5` in $X$ (`3` in $Y$, `40` in $Z$) |
-| **2. Square the Group (`5²`)** | Rewrite $40 - 3 \times 25 \div 5$ | Tap `{{key:x²}}` $\to$ `25` in $X$ |
-| **3. Scale & Divide (`3 × 25 ÷ 5`)** | Rewrite $40 - 75 \div 5 \to 40 - 15$ | Tap `{{key:×}} 5 {{key:÷}}` $\to$ `15` in $X$ while `40` drops to $Y$ |
+| **1. Park Outer Numbers & Add `(2 + 3)`** | Rewrite $40 - 3 \times (5)^2 \div 5$ | `40 {{key:ENTER}} 3 {{key:ENTER}} 2 {{key:ENTER}} 3 {{key:+}}` $\to$ `5` on Shelf $X$ (`3` on Shelf $Y$, `40` on Shelf $Z$) |
+| **2. Square the Group (`5²`)** | Rewrite $40 - 3 \times 25 \div 5$ | Tap `{{key:x²}}` $\to$ `25` on Shelf $X$ |
+| **3. Scale & Divide (`3 × 25 ÷ 5`)** | Rewrite $40 - 75 \div 5 \to 40 - 15$ | Tap `{{key:×}} 5 {{key:÷}}` $\to$ `15` on Shelf $X$ while `40` drops to Shelf $Y$ |
 | **4. Final Subtraction (`40 - 15`)** | $40 - 15 = \mathbf{25}$ | Tap `{{key:-}}` $\to$ **`25`**. |
 
 ### The Clark's Nutcracker's 30,000-Seed Memory Ledger
-That same ability to hold a running total in working memory while new quantities arrive shows up in nature, too. High in the alpine forests of the Rocky Mountains, a silver-and-black bird called **Clark's nutcracker** (*Nucifraga columbiana*) performs one of the animal kingdom's most astonishing feats of spatial memory. Every autumn, a single nutcracker harvests up to $30,000$ whitebark pine seeds, buries them in thousands of small underground caches across mountain ridges, and remembers their exact locations nine months later under deep winter snow.
+That same ability to keep track of a running total while new numbers arrive shows up in nature, too. High in the alpine forests of the Rocky Mountains, a silver-and-black bird called **Clark's nutcracker** (*Nucifraga columbiana*) performs one of the animal kingdom's most astonishing feats of memory. Every autumn, a single nutcracker harvests up to $30,000$ whitebark pine seeds, buries them in thousands of small underground caches across mountain ridges, and remembers their exact locations nine months later under deep winter snow.
 
-How does a bird track its winter pantry? Like a living stack ledger. Suppose a nutcracker buries **9 pine seeds in each of 12 caches** along a granite ridge, finds **15 extra seeds** under a fallen pine log, and eats **28 seeds** during a January blizzard:
+How does a bird track its winter pantry? Like a living stack ledger. Say a nutcracker buries **9 pine seeds in each of 12 caches** along a granite ridge, finds **15 extra seeds** under a fallen pine log, and eats **28 seeds** during a January blizzard:
 $$\text{Remaining Seeds} = 9 \times 12 + 15 - 28 = 95\text{ seeds}$$
 
-If you build $12$ rows of $9$ Counting Tiles on your desk to represent the $108$ cached seeds, slide in $15$ loose tiles for the bonus find under the log ($123$ seeds in all), and then sweep away $28$ tiles for the January blizzard, you are left with $95$ seeds. On your SC-6, the entire seasonal ledger flows across the ground and mezzanine shelves in 10 keystrokes with zero parentheses—multiplying the 12 caches of 9 seeds first (`9 {{key:ENTER}} 12 {{key:×}}`), adding the 15 extra seeds (`15 {{key:+}}`), and subtracting the 28 eaten seeds (`28 {{key:-}}`) to land directly on **`95` seeds**.
+If you build $12$ rows of $9$ Counting Tiles on your desk to represent the $108$ cached seeds, slide in $15$ loose tiles for the bonus find under the log ($123$ seeds in all), and then sweep away $28$ tiles for the January blizzard, you are left with $95$ seeds. On your SC-6, the entire seasonal ledger flows across Shelf $X$ and Shelf $Y$ in 10 keystrokes—multiplying the 12 caches of 9 seeds first (`9 {{key:ENTER}} 12 {{key:×}}`), adding the 15 extra seeds (`15 {{key:+}}`), and subtracting the 28 eaten seeds (`28 {{key:-}}`) to land directly on **`95` seeds**.
 
-### Beating Parentheses with Floor $Z$: From Market Food Courts to the Math Olympiad
-Even in everyday shopping, multi-step math pops up whenever you buy two different items at once. Suppose you stop at the Farmer's Market food court to buy **3 warm pretzel twists at $\$4.00$ each** AND **2 mango smoothies at $\$5.00$ each**. On a basic calculator, typing `3 × 4 + 2 × 5` gives the wrong answer unless you write down the first subtotal or use parentheses. How does the SC-6's **third-floor loft (Register $Z$)** solve the whole bill with zero parentheses and zero scratch paper? Build two tile arrays on your desk: a $3 \times 4$ array ($12$) and a $2 \times 5$ array ($10$). Now watch what happens in row 6 of the stack table below: as soon as you type `2 {{key:ENTER}} 5` for the smoothies, your $\$12$ pretzel subtotal rides the elevator up to **Floor $Z$**, waiting safely until the $\$10$ smoothie total finishes on Floor $X$. Pressing `{{res:sc6_02_rpn_for_young_learners_seq_26:keys}}` brings both booth subtotals together on the bottom two shelves and combines them into **`{{res:sc6_02_rpn_for_young_learners_seq_26:value}}`** dollars in all.
+Field biologists who study Clark's nutcrackers in the Cascade and Rocky Mountains discovered that the bird uses spatial landmarks—pairs of pine trees, boulders, and ridge lines—to triangulate each cache when six feet of snow cover the ground. Instead of trying to memorize a single giant map of thirty thousand seeds, the nutcracker groups its caches into small neighborhood clusters of 8 to 15 caches per ridge. That is the exact same secret behind your calculator's stack: breaking a big job into small, visible clusters makes it effortless to remember where every piece belongs.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `3` | 0 | 0 | 0 | 3 |
-| `{{key:ENTER}}` | 0 | 0 | 3 | 3 |
-| `4` | 0 | 0 | 3 | 4 |
-| `{{key:×}}` | 0 | 0 | 0 | 12 |
-| `2` | 0 | 0 | 12 | 2 |
-| `{{key:ENTER}}` | 0 | 12 | 2 | 2 |
-| `5` | 0 | 12 | 2 | 5 |
-| `{{key:×}}` | 0 | 0 | 12 | 10 |
-| `{{key:+}}` | 0 | 0 | 0 | 22 |
+### Five Multi-Step Journeys without Brackets
+Just like the Clark's nutcracker grouping its pine seeds ridge by ridge, your calculator's upper shelves let you solve everyday multi-group puzzles in one smooth flow—whether you are ordering food at a ballpark, packing bakery boxes, paving a bike trail, or laying stone pavers in a backyard.
 
-Pause and look at Row 8 of that table: right before you press `{{key:+}}`, Floor $Y$ shows your $\$12$ pretzels and Floor $X$ shows your $\$10$ smoothies side by side!
+Imagine stopping at a **stadium snack bar** to order **3 warm soft pretzels at $\$4.00$ each** AND **2 fruit smoothies at $\$5.00$ each** ($3 \times 4 + 2 \times 5$). How does **Shelf $Z$** keep track of both parts of your snack-bar order? If you build two tile arrays on your desk—a $3 \times 4$ array ($12$) and a $2 \times 5$ array ($10$)—you can watch the exact same partnership happen in row 6 of the stack table below: as soon as you type `2 {{key:ENTER}} 5` for the smoothies, your $\$12$ pretzel subtotal rides the elevator up to **Shelf $Z$**, waiting safely until the $\$10$ smoothie total finishes on Shelf $X$. Running `{{res:sc6_02_rpn_for_young_learners_seq_26:keys}}` brings both subtotals together on the bottom two shelves and combines them into **`{{res:sc6_02_rpn_for_young_learners_seq_26:value}}`** dollars in all:
 
-Now that you saw Floor $Z$ hold your pretzel subtotal at the market food court, watch how that exact same Floor $Z$ superpower conquers all four rounds of the state **Junior Math Olympiad** while other teams fumble with nested parentheses!
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `3` | 0 | 0 | 0 | 3 | Place 3 warm pretzels onto Shelf $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 3 | 3 | Lift 3 up onto Shelf $Y$. |
+| `4` | 0 | 0 | 3 | 4 | Type the $\$4$ pretzel price onto Shelf $X$. |
+| `{{key:×}}` | 0 | 0 | 0 | 12 | Pretzel subtotal ($3 \times 4 = 12$ dollars) sits on Shelf $X$. |
+| `2` | 0 | 0 | 12 | 2 | Typing 2 smoothies automatically lifts 12 up to Shelf $Y$! |
+| `{{key:ENTER}}` | 0 | 12 | 2 | 2 | Pressing `{{key:ENTER}}` lifts 12 up to Shelf $Z$ and 2 to Shelf $Y$. |
+| `5` | 0 | 12 | 2 | 5 | Type the $\$5$ smoothie price onto Shelf $X$ while 12 waits on Shelf $Z$. |
+| `{{key:×}}` | 0 | 0 | 12 | 10 | Smoothie subtotal ($2 \times 5 = 10$); 12 drops back to Shelf $Y$! |
+| `{{key:+}}` | 0 | 0 | 0 | 22 | Combine both items ($12 + 10 = 22$ dollars total on Shelf $X$). |
 
-*BZZZT!* Round 1 flashes on the scoreboard—and our Olympiad warm-up begins with a familiar friend from earlier in the chapter: the two-group expression $(15 - 3) \times (4 + 2) \div 6$. Remember how we walked through all 11 elevator floors of this puzzle when you first met Floor $Z$? Now that your fingers know the pretzel-and-smoothie rhythm from the market food court, you don't even have to pause between steps! You solve the first bracketed group on the ground floor (`15 {{key:ENTER}} 3 {{key:-}}` $\to 12$), let `12` ride automatically upstairs to Floor $Z$ while you build and add the second group (`4 {{key:ENTER}} 2 {{key:+}}` $\to 6$), and watch `12` drop right back down to Waiting Shelf $Y$ beside `6` on Ground Shelf $X$. With both bracket answers sitting side by side in plain sight, pressing `{{res:sc6_02_rpn_for_young_learners_seq_33:keys}}` fuses `12` and `6` into `72` on the ground shelf and divides by `6` to lock in **`{{res:sc6_02_rpn_for_young_learners_seq_33:value}}`**—all with zero parentheses and zero scratch paper while the other teams are still hunting for their bracket keys!
+Look at Row 8 of that table: right before you press `{{key:+}}`, Shelf $Y$ shows your $\$12$ pretzels and Shelf $X$ shows your $\$10$ smoothies side by side. Once your fingers feel that rhythm—solve the first group, type the second group while Shelf $Z$ holds your place, and combine—you can race through two-group puzzles in seconds. Try a **10-second no-peek speed replay** of the $(15 - 3) \times (4 + 2) \div 6$ pattern we met earlier: picture a Saturday morning bakery where **15 blueberry muffins are baked per batch and 3 get eaten warm** ($15 - 3 = 12$ left per batch) across **4 morning batches plus 2 afternoon batches** ($4 + 2 = 6$ batches), packed into **6-muffin gift boxes**. Keying `{{res:sc6_02_rpn_for_young_learners_seq_33:keys}}` lifts `12` to Shelf $Z$, multiplies by `6` batches (`72`), and divides by `6` to land on **`{{res:sc6_02_rpn_for_young_learners_seq_33:value}}`** gift boxes in under ten seconds!
 
-Hardly has the applause from Round 1 settled when Round 2 lights up the board, testing whether you can divide one bracketed difference by another: $(24 - 8) \div (6 - 2)$. Watch how the first difference ($24 - 8 = 16$) rides upstairs to Floor $Z$, then drops right back into the left seat (Floor $Y$) the moment the second difference ($6 - 2 = 4$) finishes on Floor $X$: keying in `{{res:sc6_02_rpn_for_young_learners_seq_34:keys}}` divides `16` on Shelf $Y$ by `4` on Shelf $X$ to display **`{{res:sc6_02_rpn_for_young_learners_seq_34:value}}`**.
+What if your two groups are connected by division instead of multiplication—like **paving a park bike trail** where you divide one difference by another, $(24 - 8) \div (6 - 2)$? Say a 24-mile bike trail has 8 miles already paved ($24 - 8 = 16$ miles left), and a trail crew paves $6 - 2 = 4$ miles per day. How many days will it take to finish? Watch how the first difference ($24 - 8 = 16$) rides upstairs to Shelf $Z$, then drops right back onto Shelf $Y$ the moment the second difference ($6 - 2 = 4$) finishes on the bottom shelf: keying in `{{res:sc6_02_rpn_for_young_learners_seq_34:keys}}` divides `16` on Shelf $Y$ by `4` on Shelf $X$ to display **`{{res:sc6_02_rpn_for_young_learners_seq_34:value}}`** days:
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `24` | 0 | 0 | 0 | 24 |
-| `{{key:ENTER}}` | 0 | 0 | 24 | 24 |
-| `8` | 0 | 0 | 24 | 8 |
-| `{{key:-}}` | 0 | 0 | 0 | 16 |
-| `6` | 0 | 0 | 16 | 6 |
-| `{{key:ENTER}}` | 0 | 16 | 6 | 6 |
-| `2` | 0 | 16 | 6 | 2 |
-| `{{key:-}}` | 0 | 0 | 16 | 4 |
-| `{{key:÷}}` | 0 | 0 | 0 | 4 |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `24` | 0 | 0 | 0 | 24 | Type the 24-mile bike trail onto Shelf $X$. |
+| `{{key:ENTER}}` | 0 | 0 | 24 | 24 | Lift 24 up onto Shelf $Y$. |
+| `8` | 0 | 0 | 24 | 8 | Type the 8 miles already paved onto Shelf $X$. |
+| `{{key:-}}` | 0 | 0 | 0 | 16 | Unpaved trail remaining ($24 - 8 = 16$ miles) sits on Shelf $X$. |
+| `6` | 0 | 0 | 16 | 6 | Typing 6 automatically lifts 16 up to Shelf $Y$. |
+| `{{key:ENTER}}` | 0 | 16 | 6 | 6 | Lift 16 up to Shelf $Z$ and 6 onto Shelf $Y$. |
+| `2` | 0 | 16 | 6 | 2 | Type 2 onto Shelf $X$ while 16 waits safely on Shelf $Z$. |
+| `{{key:-}}` | 0 | 0 | 16 | 4 | Daily paving speed ($6 - 2 = 4$ miles/day); 16 drops to Shelf $Y$! |
+| `{{key:÷}}` | 0 | 0 | 0 | 4 | Divide remaining miles by daily speed ($16 \div 4 = 4$ days). |
 
-When the final `{{key:÷}}` key drops the stack, Ground Shelf $X$ shows `4`—and if you tap `{{key:LASTX}} {{key:×}}` right after, the calculator multiplies $4 \times 4$ to bring `16` right back!
+When the final `{{key:÷}}` key drops the stack, Shelf $X$ shows `4`—and if you tap `{{key:LASTX}} {{key:×}}` right after, the calculator multiplies $4 \times 4$ to bring `16` right back. You can even chain addition, subtraction, multiplication, and division together in a single bake-sale story: suppose each baking sheet holds **18 chocolate-chip cookies plus 6 oatmeal cookies** ($18 + 6 = 24$ cookies per tray), you bake **10 trays minus 5 trays** saved for home ($10 - 5 = 5$ trays), and you pack all those cookies into **12-cookie bakery boxes**, $(18 + 6) \times (10 - 5) \div 12$. Solve the first group (`24`), type the second group (`5`) while `24` waits upstairs on Shelf $Z$ and drops back to Shelf $Y$, then multiply and divide by `12` in one continuous flow via `{{res:sc6_02_rpn_for_young_learners_seq_35:keys}}` to fill **`{{res:sc6_02_rpn_for_young_learners_seq_35:value}}`** boxes!
 
-In Round 3, the judges raise the stakes by combining addition, subtraction, multiplication, and division into one three-branch relay expression: $(18 + 6) \times (10 - 5) \div 12$. Because your hands now know the elevator rhythm—solve the first bracket, solve the second bracket, fuse them, and divide—you can glide through all 11 keystrokes in one continuous flow by pressing `{{res:sc6_02_rpn_for_young_learners_seq_35:keys}}` to reach **`{{res:sc6_02_rpn_for_young_learners_seq_35:value}}`**. Trace the three-story choreography in your mind's eye as each parenthesized pair resolves on the shelves: first, `18 {{key:ENTER}} 6 {{key:+}}` fuses the opening bracket into `24` on Ground Shelf $X$. Next, typing `10` automatically lifts `24` to Shelf $Y$, and pressing `{{key:ENTER}}` pushes `24` safely up to the Second Balcony (Floor $Z$) while `10` and `5` settle into $Y$ and $X$. The moment you tap `{{key:-}}`, two things happen at once: $10 - 5$ becomes `5` on Ground Shelf $X$, and your waiting `24` rides the elevator back down from Floor $Z$ into Shelf $Y$! Now `24` and `5` sit side by side on $Y$ and $X$, so one tap of `{{key:×}}` multiplies them into `120` on the ground shelf, and `12 {{key:÷}}` divides `120` by `12` to finish cleanly at `10`.
+Even better, when a two-part puzzle involves squaring numbers—like laying a **backyard stone patio around a garden bed** ($15^2 - 9^2$)—you don't even need Shelf $Z$, because the **`{{key:x²}}` (Square)** key squares each number right in place on Shelf $X$! Imagine your family is laying stone pavers in a **$15\text{ ft} \times 15\text{ ft}$** square backyard around a central **$9\text{ ft} \times 9\text{ ft}$** raised wooden garden bed. Tapping `15 {{key:x²}}` turns `15` into `225` right on Shelf $X$, and typing `9` automatically lifts `225` to Shelf $Y$ while you square `9`: entering `{{res:sc6_02_rpn_for_young_learners_seq_37:keys}}` subtracts the $81\text{ sq ft}$ garden bed from the $225\text{ sq ft}$ yard to leave **`{{res:sc6_02_rpn_for_young_learners_seq_37:value}}`** square feet of patio pavers:
 
-That brings you to Round 4, the Geometry Lightning Puzzle: a square castle courtyard measures $15\text{ ft} \times 15\text{ ft}$ on the outside, with a central $9\text{ ft} \times 9\text{ ft}$ fountain pool inside. How many square feet of stone paving surround the fountain? Instead of typing `15 {{key:ENTER}} 15 {{key:×}}`, you reach for the dedicated **Square Key (`{{key:x²}}`)** (`{{key:f}}` then `{{key:x²}}`). Notice how `15 {{key:x²}}` turns `15` into `225` right on Shelf $X$, and typing `9` automatically lifts `225` to Shelf $Y$ while you square `9`: pressing `{{res:sc6_02_rpn_for_young_learners_seq_37:keys}}` subtracts the $81\text{ sq ft}$ fountain from the $225\text{ sq ft}$ courtyard to leave **`{{res:sc6_02_rpn_for_young_learners_seq_37:value}}`** square feet of stone paving.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `15` | 0 | 0 | 0 | 15 | Place the outer courtyard side length ($15\text{ ft}$) onto Shelf $X$. |
+| `{{key:x²}}` | 0 | 0 | 0 | 225 | Square the outer yard ($15 \times 15 = 225\text{ sq ft}$) right on Shelf $X$. |
+| `9` | 0 | 0 | 225 | 9 | Typing 9 automatically lifts 225 up to Shelf $Y$! |
+| `{{key:x²}}` | 0 | 0 | 225 | 81 | Square the inner garden bed ($9 \times 9 = 81\text{ sq ft}$) on Shelf $X$. |
+| `{{key:-}}` | 0 | 0 | 0 | 144 | Subtract the garden bed from the yard ($225 - 81 = 144\text{ sq ft}$). |
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `15` | 0 | 0 | 0 | 15 |
-| `{{key:x²}}` | 0 | 0 | 0 | 225 |
-| `9` | 0 | 0 | 225 | 9 |
-| `{{key:x²}}` | 0 | 0 | 225 | 81 |
-| `{{key:-}}` | 0 | 0 | 0 | 144 |
-
-Look at that difference of squares: $225 - 81 = 144$, which is $12^2$! You just discovered the famous $9\text{–}12\text{–}15$ right-triangle family.
-
-### Parenthesis Traps vs. Inside-Out Elevator Math
-
-Just as cognitive researcher Jerome Bruner showed that learners build lasting understanding by moving from hands-on blocks to visual models to symbols {{cite:bruner1966}}, evaluating expressions from the inside out on the stack lets your working memory focus on two numbers at a time {{cite:sweller1988,miller1956}} without juggling nested parentheses {{cite:lukasiewicz1924,hamrick1980}}. Now that you have seen every shelf and control key of the SC-6 in action, compare how a parenthesized multi-step expression is entered on a standard calculator versus inside-out evaluation on the SC-6 stack:
-
-| Challenge / Equation | The Algebraic Calculator Trap (Standard Entry) | The StackCalc SC-6 + Blocks Method | Keystroke Reduction | Live Stack Visibility | Learning Breakthrough |
-| :--- | :--- | :--- | :---: | :--- | :--- |
-| **5th Grade Order of Operations:** $(15 - 3) \times (4 + 2) \div 6 = 12$ | `( 1 5 - 3 ) * ( 4 + 2 ) / 6 =` (14 keystrokes). *Trap: Missed or misplaced parenthesis computes $15 - 12 + 0.33 = 3.33$ silently. Intermediate results ($12, 6$) are invisible inside hardware buffers.* | **SC-6 Elevator Stack + Two-Number Fusion:** `15 {{key:ENTER}} 3 {{key:-}} 4 {{key:ENTER}} 2 {{key:+}} {{key:×}} 6 {{key:÷}}` (11 keystrokes). Both intermediate quantities ($12$ in $Y$, $6$ in $X$) are visible simultaneously before multiplying. Zero parentheses. | **21% fewer keystrokes** (11 vs. 14) | **Dual Live Registers:** Register $Y$ holds $12$ while Register $X$ computes $6$; live display proves $(15 - 3) \times (4 + 2)$ without scratch paper. | **Clarity of Structure:** Eliminates parenthesis anxiety and the Order-of-Operations & Parentheses Trap; replaces abstract rules with physical two-number stack fusion. |
+Look closely at that difference of two squares: $225 - 81 = 144$, and $144$ is itself a perfect square ($12 \times 12 = 12^2$). That means the pavers surrounding the $9 \times 9$ garden bed could be rearranged into a solid $12\text{ ft} \times 12\text{ ft}$ square patio with zero leftover stones—uncovering the famous $9\text{–}12\text{–}15$ right-triangle family ($9^2 + 12^2 = 15^2$) that carpenters and surveyors use to check square corners. Best of all, notice how the six-column trace table above let you follow every single number as it rode up and down the waiting shelves—a table format that dates back to the very first computer programmer in history.
 
 ---
 
-### Common Stack Slips & How to Fix Them
+### Ada Lovelace, Charles Babbage & the First Mechanical Stack
 
-When you are getting used to the 4-level stack, keep these quick rescues in mind:
-- **Typed `5`, then `3`, and the screen shows `53`:** Remember that `{{key:ENTER}}` closes the elevator door between your first and second numbers.
-- **Entered numbers in reverse order (`4` then `9` instead of `9` then `4`):** Look at the stack before tapping the operator; tap `{{key:x⇄y}}` to swap registers immediately, then tap `{{key:-}}`.
-- **Tapped `{{key:C}}` and lost your number:** `{{key:C}}` clears the active shelf; use `{{key:ENTER}}` to lift your number up to Floor $Y$.
-- **Wondering if the next number will overwrite your answer:** Do not press Clear after an answer—automatic stack lift pushes your finished total up to Floor $Y$ as soon as you type the next digit.
-- **Step counter adds `0` in 4-stack mode:** Use `{{key:REP}}` to fill all four shelves with your step size, or switch to 2-Stack (`2-LV`) mode.
-- **Tapped `{{key:+}}` and nothing changed:** You need two numbers on the stack to combine (`Y` and `X`).
-- **Division shows a decimal like `3.4` instead of whole groups and leftovers:** Use `{{key:÷R}}` for whole-number division with remainder.
-- **Want to verify an answer without re-typing:** Press `{{key:LASTX}}` followed by the opposite operation (for example, after $120 \div 8 = 15$, tapping `{{key:LASTX}} {{key:×}}` restores $120$).
+More than a hundred years before the first electronic pocket calculator was built, two visionary friends in London imagined a machine that solved multi-step puzzles using waiting shelves remarkably like your SC-6.
+
+In the **1830s**, the English inventor **Charles Babbage** grew frustrated with printed books of navigation and astronomy tables. Those tables were calculated by rooms full of human clerks using pen and paper, and whenever a clerk lost track of an intermediate subtotal in the margins, ships at sea could steer miles off course. Babbage set out to design a steam-powered brass giant called the **Analytical Engine**—the true mechanical ancestor of every modern computer and calculator.
+
+When Babbage sketched the floor plan of his Analytical Engine, he realized that any machine that solves multi-step math needs **two separate rooms**:
+
+1. **The "Store" (A Hall of Waiting Columns):** Babbage designed a long gallery of tall vertical brass columns, where each column of engraved gear wheels could hold a multi-digit number waiting quietly in plain sight until it was needed—just like an intermediate subtotal waiting upstairs on **Shelf $Y$, Shelf $Z$, or Top Shelf $T$** while you build the next part of a problem below.
+2. **The "Mill" (The Active Gear Workbench):** At the front of the machine sat a spinning gear workshop that Babbage named the **Mill**, after the humming textile mills of northern England. Whenever two numbers were ready to combine, mechanical levers fetched them from the Store, brought them into the Mill, and meshed their brass teeth together to add, subtract, multiply, or divide them on the active workbench.
+
+In **1833**, a seventeen-year-old mathematics prodigy named **Ada Byron** (later **Ada Lovelace**) visited Babbage's workshop in London. While most guests simply stared at the gleaming brass gears like a clockwork curiosity, young Ada immediately understood the mathematical soul of the machine. Ten years later, in **1843**, at age twenty-seven, Ada Lovelace published her famous *Notes* on the Analytical Engine—including **"Note G,"** the world's very first published computer program!
+
+How did Ada Lovelace write the world's first computer program? She drew a **multi-column trace table** across a wide sheet of paper! Down the left column, she listed each operation (`+`, `-`, `×`, `÷`); across the middle columns, she showed the exact number sitting on every waiting column of the Store before and after the gears turned; and on the right, she explained what that step accomplished in the calculation.
+
+Look back at any stack table in this chapter: every part of Babbage and Lovelace's 1843 Analytical Engine lives right inside the calculator on your desk. Babbage's **Store** is your set of **Waiting Shelves $Y$, $Z$, and Top Shelf $T$**, while his **Mill** is your **Ground Shelf $X$** workbench. Even the mechanical transfer levers that lifted, swapped, spun, repeated, or recalled numbers between the Store and the Mill match the helper keys (`{{key:ENTER}}`, `{{key:x⇄y}}`, `{{key:R↓}}`, `{{key:REP}}`, and `{{key:LASTX}}`) under your thumb. Every time you read across a 4-register stack table to see what sits on each shelf after a keystroke, you are reading Ada Lovelace's 1843 "Note G" trace table brought to life.
+
+Even more inspiring, Ada Lovelace realized something in 1843 that even Babbage himself hadn't noticed: a machine with waiting shelves and an active workbench isn't limited to dry accounting tables—if you represent musical notes, geometric patterns, or logical rules with numbers, those same shelves can compose music, explore patterns, and test scientific ideas! Every time you use your SC-6 to test a pattern or check your own work in two clicks, you are stepping into the footsteps of the world's first programmer.
+
+### Rear Admiral Grace Hopper & the Three-Cup Kitchen-Table Stack
+
+A century after Ada Lovelace wrote her 1843 trace tables, another trailblazing mathematician turned Babbage and Lovelace's dream into modern computing reality: **Rear Admiral Grace Hopper** (1906–1992). As a child growing up in New York City, seven-year-old Grace wanted to know how mechanical alarm clocks worked—so she disassembled **seven alarm clocks** in her bedrooms before her mother realized what she was doing (and kindly limited her to taking apart just *one* clock at a time!).
+
+When Grace Hopper became one of the first programmers of the room-sized **Harvard Mark I** computer in 1944 and later invented the world's first **compiler** in 1952, she loved making invisible computer ideas something students and engineers could hold in their hands. Whenever someone asked her why computer engineers cared so much about saving a billionth of a second (**one nanosecond**) inside a stack calculation, she pulled a bundle of cut copper wires out of her handbag and handed one out. Each wire was cut to **$11.8\text{ inches}$** ($29.98\text{ centimeters}$)—the exact maximum distance that light or electricity can travel in one billionth of a second! (You can check Grace Hopper's "nanosecond wire" on your stack right now: light travels about $300,000,000\text{ meters}$ per second, which is $30,000,000,000\text{ centimeters}$ per second; dividing by $1,000,000,000$ nanoseconds in a second leaves exactly **`30` centimeters**!)
+
+In Grace Hopper's hands-on spirit, you can build a working model of a computer's stack processor right on your kitchen table using **four paper cups** (or four sticky notes) and a stack of index cards:
+
+1. **Set Up Your Four-Story Cup Elevator:** Line up four paper cups from bottom to top on the table and label them **Shelf X (Workbench)** at the bottom, **Shelf Y (Waiting)** above it, **Shelf Z (Third Story)** above that, and **Top Shelf T** at the top. Set one extra saucer to the side labeled **`LAST x`**.
+2. **Act Out $(8 + 4) \times (9 - 6)$ by Hand:** Write `8` on an index card and drop it into Cup $X$. Call out *"ENTER!"*—slide `8` up into Cup $Y$ and write `4` for Cup $X$. Now call out *"PLUS!"*—replace both cards with a single card reading **`12`** in Cup $X$, while tucking the old `4` card onto the `LAST x` saucer!
+3. **Watch Automatic Stack Lift in Action:** Without touching `ENTER`, write `9` on a new card for Cup $X$—because `12` is a finished answer, it automatically slides up to Cup $Y$! Call out *"ENTER!"* to lift `12` up to **Cup $Z$** and `9` to Cup $Y$, then place `6` in Cup $X$.
+4. **Drop the Stack to Finish:** Call out *"MINUS!"* to turn `9` and `6` into **`3`** in Cup $X$ while `12` drops from Cup $Z$ back to Cup $Y$. Finally, call out *"MULTIPLY!"* to combine `12` and `3` into **`36`** in Cup $X$!
+
+Once you move index cards through four paper cups with your own hands, the four registers inside your calculator (`X, Y, Z, T`) will never feel mysterious again—you can literally picture the cards sliding up and down the shelves inside the case.
 
 ---
 
-## Where to Go Next: Companion Workbook Quests & Kitchen-Table Challenges
+## Dinner-Table Stack Tricks & Looking Ahead
 
-> *For 21 additional worked problems with full 4-register stack tables, see Chapter 2 of the [SC-6 Elementary Companion Problem & Activity Workbook](../../curriculum/sc6-elementary-companion-workbook.md).*
+Now that you can ride all four shelves of the Number Elevator—and swap, roll, or undo any step on the fly—you are ready to test your stack skills at the dinner table and peek ahead to Chapter 3.
 
-Want to turn these stack habits into rapid reflexes? Open the **[Big Ideas Math Middle School Supplement](../../curriculum/big-ideas-middle-school-sc6-workbook.md) — Unit 1: Numerical Expressions & Factors, Section 1.3 (Order of Operations)**, along with your **StackCalc Student Workbook & 12-Unit Curriculum Guide** (Unit 2: *Riding the 4-Level Number Elevator & Parenthesis-Free Chains*), or challenge your family at the dinner table tonight:
+### Three Dinner-Table Stack Tricks to Try
 
-1. **PEMDAS Funnel vs. RPN Inside-Out Showdown:** Write $40 - 3 \times (2 + 3)^2 \div 5$ on a napkin. First solve it on paper using the **PEMDAS Funnel** (watching out for the $40 - 3 = 37$ trap), then race an adult using their phone calculator while you evaluate `40 {{key:ENTER}} 3 {{key:ENTER}} 2 {{key:ENTER}} 3 {{key:+}} {{key:x²}} {{key:×}} 5 {{key:÷}} {{key:-}}` $\to \mathbf{25}$.
-2. **Hands-On Explorer — Clark's Nutcracker Seed-Cache Ledger & `{{key:LASTX}}` Detective:** Model the **Clark's Nutcracker Seed-Cache Ledger** (`9 {{key:ENTER}} 12 {{key:×}} 15 {{key:+}} 28 {{key:-}}` $\to \mathbf{95}$ seeds), then hand your SC-6 to a partner showing only `95` on Floor $X$. Have them tap `{{key:LASTX}} {{key:+}}` to uncover the 28 eaten seeds and restore all `123` cached seeds!
-3. **Workbook & Timed Proficiency Trial:** Complete **Unit 1, Section 1.3 (Practice Sheets A & B)** in the **Big Ideas Math Middle School Supplement** and **Unit 2 Quest Sheets 2A–2D** in the Companion Student Workbook, then run **Timed Proficiency Trial #2** (Parenthesis-Free Relay & `1089` Mind-Reader Proof).
+Gather a parent, a sibling, or a friend around the dinner table and try these three stack-powered mind readers and races:
+
+1. **The Shoe-Size & Birth-Year Mind Reader:** Hand your SC-6 to a parent or friend and tell them to secretly enter their whole **shoe size** (say, `9`), press `{{key:ENTER}} 5 {{key:×}}` ($45$), add `50` (`50 {{key:+}}` $\to 95$), multiply by `20` (`20 {{key:×}}` $\to 1900$), and add **`1026`** (`1026 {{key:+}}` $\to 2926$). Why does that sequence work? Multiplying their shoe size by $5$ and then by $20$ scales their shoe size by $5 \times 20 = \mathbf{100}$, shifting their shoe size cleanly into the **hundreds column** ($9 \times 100 = 900$), while adding $50 \times 20 = 1000$ plus $1026$ adds today's calendar year (**`2026`**) right on top ($900 + 2026 = 2926$). Finally, have them type the **4-digit year they were born** (say, `1984`) and tap `{{key:-}}` ($\to \mathbf{942}$)—then look at the screen and amaze them: the hundreds digits show their **shoe size (`9`)**, and the last two digits show their **age (`42`)**!
+2. **The Inside-Out Napkin Speed Race:** Write $100 - 4 \times (3 + 2)^2 \div 5$ on a napkin and race an adult using their phone calculator while you solve it from the inside out on your SC-6. First, put `100` and `4` onto the upper waiting shelves (`100 {{key:ENTER}} 4 {{key:ENTER}}`), next build the inner $(3 + 2)^2$ group (`3 {{key:ENTER}} 2 {{key:+}} {{key:x²}}` $\to \mathbf{25}$), and finally multiply by the `4` waiting on Shelf $Y$, divide by `5`, and subtract from `100` (`{{key:×}} 5 {{key:÷}} {{key:-}}` $\to \mathbf{80}$)—then check whether the phone calculator fell into the left-to-right $100 - 4 = 96$ trap!
+3. **The Mystery Receipt Coupon Unmasker (`{{key:LASTX}}` & `{{key:R↓}}`):** Hand your SC-6 to a family member and ask them to add any three item prices from a grocery receipt on the stack (for example, `14 {{key:ENTER}} 8 {{key:+}} 19 {{key:+}}` $\to 41$), then secretly subtract a mystery coupon amount (`6 {{key:-}}` $\to \mathbf{35}$) before handing the calculator back to you showing only `35` on Shelf $X$. Tell them you will unmask their secret coupon and restore the original receipt total in just two button taps: press **`{{key:LASTX}}`** to reveal their secret coupon (`6`) right on Shelf $X$ while `35` lifts to Shelf $Y$, and tap **`{{key:+}}`** to restore the full **`41`** receipt total! Afterward, load four favorite numbers onto the shelves and spin the 4-shelf carousel four times (`{{key:R↓}} {{key:R↓}} {{key:R↓}} {{key:R↓}}`) to watch every shelf return to its starting seat.
 
 ---
 
-## Chapter Summary & Looking Ahead
+### Peeking Inside Multi-Digit Numbers in Chapter 3
 
-The core mechanics of **Stack Math** (Reverse Polish Notation) on the SC-6 rest on five principles:
-1. **The Golden Rule of Stack Math:** Always place your two numbers onto the stack first, and tap the action button (`{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷}}`) last.
-2. **The 4-Story Number Elevator ($T, Z, Y, X$):** Watching `{{key:ENTER}}` push numbers upward from Floor $X$ to Floor $Y$ while earlier subtotals wait safely on Floors $Z$ and $T$.
-3. **Automatic Stack Lift & Drop:** Seeing completed results automatically lift to Floor $Y$ when you type the next number, and drop down cleanly when an operator fuses $Y$ and $X$.
-4. **Mistake-Proof Stack Controls:** Fixing typing slips with `{{key:<-}}`, swapping order-sensitive subtraction or division pairs with `{{key:x⇄y}}`, rotating all four shelves with `{{key:R↓}}`, and checking or undoing work without re-typing via `{{key:LASTX}}`.
-5. **Parenthesis-Free Multi-Step Expressions:** Solving multi-branch problems from the inside out without pressing a single parenthesis key or reaching for scratch paper.
+When Jan Łukasiewicz wrote down his parenthesis-free math notation in 1924, and when Australian computer scientist Charles Hamblin realized in 1957 that a stack of waiting shelves in computer memory could bring Łukasiewicz's idea to life, they were describing the exact rhythm your hands use with blocks: place the pieces on the workbench first, and combine them when they are ready.
 
-Now that you've mastered pushing numbers onto the stack, swapping registers, and dropping calculations cleanly, turn the page to **[Chapter 3: Ten-Frames, Number Lines & Place Value](03-counting-place-value.md)**—where we will travel back in time to discover how ancient pebble counters and ten human fingers created zero and the power of place value.
+Even better, every modern computer processor on Earth—from the chip inside your SC-6 to the flight computers aboard interplanetary spacecraft—evaluates math internally on a hardware stack using this exact inside-out order! By steering Shelves $X, Y, Z,$ and $T$ directly with your fingertips, you are thinking in the native language of every computer and engineering lab in the world. Here is a quick reference to the core stack moves you now have at your command:
+
+| Stack Move or Keycap | How Your Hands Build It | What Happens on Shelves $T, Z, Y, X$ |
+| :--- | :--- | :--- |
+| **Push & Lift (`{{key:ENTER}}`)** | Place your first block group on the upper shelf | Copies Shelf $X$ up to Shelf $Y$ and prepares Shelf $X$ for the next number |
+| **Combine (`{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷}}`)** | Fuse or compare the two groups on your workbench | Combines `Shelf Y (op) Shelf X` onto Shelf $X$ and drops $Z \to Y$ and $T \to Z$ |
+| **Swap Shelves (`{{key:x⇄y}}`)** | Trade the upper and lower block groups in one move | Trades Shelf $Y$ and Shelf $X$ immediately if you typed `-` or `÷` in reverse order |
+| **4-Shelf Carousel (`{{key:R↓}}`)** | Spin all four trays around to inspect upper shelves | Rolls $X \to T$, $T \to Z$, $Z \to Y$, and $Y \to X$ (four taps restore every seat) |
+| **Undo & Check (`{{key:LASTX}}`)** | Pull the last block group back onto the workbench | Recalls the previous Shelf $X$ number before the last operation so you can verify or undo |
+| **Fair Share & Leftovers (`{{key:÷R}}`)** | Pack items into equal boxes and count leftovers | Places whole groups (quotient $Q$) on Shelf $X$ and leftovers (remainder $R$) on Shelf $Y$ |
+
+Notice how each of those six moves mirrors a physical action you can see on your desk: setting a number on a waiting shelf, combining two shelves together, swapping two trays, spinning the four-story carousel, or pulling back the piece you just used to double-check your work. Because you never have to type opening and closing brackets or trust a hidden memory button, you can tackle two-group and three-group puzzles with total calm.
+
+Now that you can move whole numbers up and down all four shelves, have you ever stopped to wonder what is actually *inside* a multi-digit number like `14`, `365`, or `4,725`? Turn the page to **[Chapter 3: Ten-Frames, Number Lines & Place Value](03-counting-place-value.md)**, where we will travel back in time to see how ten human fingers and an empty shell created the number Zero (`0`)—and open the visual picture windows on your SC-6 to watch numbers bundle into tens, hundreds, thousands, and billions!

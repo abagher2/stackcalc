@@ -516,8 +516,7 @@ def add_faceplate_color_note(text: str, file_path: Path, is_sc32: bool) -> str:
     as Left Shift `{{key:↰}}` and Right Shift `{{key:↱}}` on SC-32, and `{{key:f}}`
     and `{{key:g}}` on SC-6.
     """
-    marker = "Faceplate Themes & Shift Legend Conventions"
-    if marker in text:
+    if "Faceplate Themes & Shift Legend Conventions" in text or "Your Favorite Color Theme, Same Friendly Shift Keys" in text:
         return text
 
     # Skip past YAML frontmatter if present
@@ -646,6 +645,23 @@ def sync_consolidated_user_guides() -> None:
             parts.append(ch_rendered.strip())
 
         guide_path.write_text(header + "\n" + "\n\n---\n\n".join(parts) + "\n", encoding="utf-8")
+
+    # Sync SC-6 markdown sources and consolidated guide to mirror directories across workspaces
+    import shutil
+    mirror_manual_roots = [
+        REPO_ROOT / "Website" / "docs" / "manuals",
+        REPO_ROOT.parent / "stackcalc" / "docs" / "manuals",
+        REPO_ROOT.parent / "stackcalc" / "Website" / "docs" / "manuals",
+    ]
+    for mroot in mirror_manual_roots:
+        if mroot.exists():
+            sc6_dst = mroot / "sc6"
+            if sc6_dst.exists():
+                for src_md in sorted((MANUALS_DIR / "sc6").glob("*.md")):
+                    shutil.copy2(src_md, sc6_dst / src_md.name)
+            sc6_guide_src = MANUALS_DIR / "sc6-user-guide.md"
+            if sc6_guide_src.exists() and (mroot / "sc6-user-guide.md").exists():
+                shutil.copy2(sc6_guide_src, mroot / "sc6-user-guide.md")
 
 
 def process_all_files() -> None:

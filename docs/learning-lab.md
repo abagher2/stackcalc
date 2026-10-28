@@ -45,7 +45,7 @@ All classroom curriculum, teacher guides, student proficiency trials, and 3D pri
 | **Student Timed Proficiency Trials** | 12 student assessment challenges with scoring rubrics and time-gate benchmarks. | [Letter PDF](downloads/stackcalc-student-proficiency-trials.pdf) · [A4 PDF](downloads/student-proficiency-trials-a4.pdf) |
 | **Teacher Booklet & Lab Sheets** | Classroom investigation cards, reproducible lab exercises, and diagnostic guides. | [Letter PDF](downloads/teacher-booklet-letter.pdf) · [A4 PDF](downloads/teacher-booklet-a4.pdf) |
 | **Hardware Reference Cards** | Desk cards summarizing RPN stack operations, Quest Scoreboard +10/+20 scoring, trigonometry volvelle reading, and fraction conversions. | [Letter PDF](downloads/reference-cards-letter.pdf) · [A4 PDF](downloads/reference-cards-a4.pdf) |
-| **Printable STL / 3MF Archives** | Complete 3D manufacturing files for all manipulative kits with calibrated Bambu Lab and Prusa print profiles. | [Master 3MF Directory](downloads.md) |
+| **Printable STL / 3MF Models** | Complete 3D manufacturing files for all manipulative kits on Printables with calibrated Bambu Lab and Prusa print profiles. | [Printables Hub ↗](https://www.printables.com/@StackCalc_5593834) · [Makerspace Kits Guide](printables.md) |
 
 Read the related documentation and lesson guides:
 

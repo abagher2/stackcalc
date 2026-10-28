@@ -193,4 +193,4 @@ StackCalc supports school district purchase orders, Title I grants, and departme
 To request a school district formal quote, tax-exempt invoice, or evaluation kit, use our procurement options:
 * **Interactive District Requisition:** [Submit School PO Requisition &rarr;](../index.md#school-po) (instant Net-30 quote generation & W-9 delivery)
 * **Email Invoicing & PO Submissions:** `quotes@stackcalc.io`
-* **Direct Marketplace:** [Visit the Official Etsy Storefront &rarr;](https://www.etsy.com/shop/StackCalc)
+* **Direct Marketplace:** [Visit the Official Etsy Storefront &rarr;](https://stackcalcmath.etsy.com)

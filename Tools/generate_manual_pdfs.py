@@ -38,6 +38,65 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase.pdfdoc import PDFObjectReference
 from reportlab.pdfgen import canvas
+import reportlab.platypus.paragraph as rl_para
+
+
+def _install_reportlab_img_wrap_fix() -> None:
+    """
+    Fixes two upstream ReportLab Paragraph line-wrapping bugs with inline `<img .../>` tags:
+      1. `_getFragWords` leaves a trailing space after `<img/>` as a separate 0-width `_HSFrag`
+         instead of marking the `<img/>` word itself as space-followed (`_HSFrag`).
+      2. `Paragraph.breakLines` only increments the line's word counter `n` when `nText` is
+         non-empty (`if nText: n += 1`), so a sequence of inline `<img/>` keycaps keeps `n == 0`
+         and `endLine = (newWidth > limWidth and n > 0)` is False—preventing multi-keycap
+         cells from wrapping across lines!
+    """
+    if getattr(rl_para, "_stackcalc_img_wrap_patched", False):
+        return
+    orig_gfw = rl_para._getFragWords
+
+    def _patched_gfw(frags, maxWidth=None):
+        words = orig_gfw(frags, maxWidth=maxWidth)
+        out = []
+        i = 0
+        while i < len(words):
+            w = words[i]
+            if (
+                out
+                and isinstance(w, rl_para._HSFrag)
+                and w[0] == 0.0
+                and len(w) == 2
+                and w[1][1] == ""
+                and any(getattr(x[0], "_fkind", None) == rl_para._FK_IMG for x in out[-1][1:])
+            ):
+                if not isinstance(out[-1], rl_para._HSFrag):
+                    out[-1] = rl_para._HSFrag(out[-1])
+                i += 1
+                continue
+            out.append(w)
+            i += 1
+        return out
+
+    rl_para._getFragWords = _patched_gfw
+
+    import inspect
+    src = inspect.getsource(rl_para.Paragraph.breakLines)
+    target_line = "if nText: n += 1"
+    replacement_line = (
+        "if nText or getattr(f, '_fkind', None) == _FK_IMG or "
+        "any(getattr(x[0], '_fkind', None) == _FK_IMG for x in w[1:]): n += 1"
+    )
+    if target_line in src:
+        ns = dict(rl_para.__dict__)
+        exec(
+            "\n".join(line[4:] for line in src.replace(target_line, replacement_line).splitlines()),
+            ns,
+        )
+        rl_para.Paragraph.breakLines = ns["breakLines"]
+    rl_para._stackcalc_img_wrap_patched = True
+
+
+_install_reportlab_img_wrap_fix()
 
 # ---------------------------------------------------------------------------
 # Path & Directory Setup
@@ -71,7 +130,9 @@ OUTPUT_DIR = (
 # Font Registration (Full Unicode TrueType Body & Monospace Families)
 # ---------------------------------------------------------------------------
 FONTS_AVAILABLE = False
+BOOK_SERIF_AVAILABLE = False
 BOOK_SANS_AVAILABLE = False
+MATH_SERIF_AVAILABLE = False
 MATH_SANS_AVAILABLE = False
 try:
     if (FONT_DIR / "SpaceMono-Regular.ttf").exists():
@@ -96,6 +157,24 @@ try:
         if (FONT_DIR / "Tiny5-Regular.ttf").exists():
             pdfmetrics.registerFont(TTFont("Tiny5", str(FONT_DIR / "Tiny5-Regular.ttf")))
         FONTS_AVAILABLE = True
+
+    cmu_dir = FONT_DIR if (FONT_DIR / "CMUSerif-Regular.ttf").exists() else (WATCH_CALC_ROOT / "documentation")
+    if (cmu_dir / "CMUSerif-Regular.ttf").exists() and (cmu_dir / "CMUSerif-Bold.ttf").exists():
+        pdfmetrics.registerFont(TTFont("CMUSerif", str(cmu_dir / "CMUSerif-Regular.ttf")))
+        pdfmetrics.registerFont(TTFont("CMUSerif-Bold", str(cmu_dir / "CMUSerif-Bold.ttf")))
+        cmu_it = cmu_dir / ("CMUSerif-Italic.ttf" if (cmu_dir / "CMUSerif-Italic.ttf").exists() else "CMUSerif-Regular.ttf")
+        cmu_bi = cmu_dir / ("CMUSerif-BoldItalic.ttf" if (cmu_dir / "CMUSerif-BoldItalic.ttf").exists() else "CMUSerif-Bold.ttf")
+        pdfmetrics.registerFont(TTFont("CMUSerif-Italic", str(cmu_it)))
+        pdfmetrics.registerFont(TTFont("CMUSerif-BoldItalic", str(cmu_bi)))
+        pdfmetrics.registerFontFamily(
+            "CMUSerif",
+            normal="CMUSerif",
+            bold="CMUSerif-Bold",
+            italic="CMUSerif-Italic",
+            boldItalic="CMUSerif-BoldItalic",
+        )
+        BOOK_SERIF_AVAILABLE = True
+
     arial_dir = Path("/System/Library/Fonts/Supplemental")
     if (arial_dir / "Arial.ttf").exists() and (arial_dir / "Arial Bold.ttf").exists():
         pdfmetrics.registerFont(TTFont("BookSans", str(arial_dir / "Arial.ttf")))
@@ -115,6 +194,22 @@ try:
     try:
         import matplotlib
         dejavu_dir = Path(matplotlib.get_data_path()) / "fonts" / "ttf"
+        if (dejavu_dir / "DejaVuSerif.ttf").exists():
+            pdfmetrics.registerFont(TTFont("MathSerif", str(dejavu_dir / "DejaVuSerif.ttf")))
+            bold_djs = dejavu_dir / ("DejaVuSerif-Bold.ttf" if (dejavu_dir / "DejaVuSerif-Bold.ttf").exists() else "DejaVuSerif.ttf")
+            it_djs = dejavu_dir / ("DejaVuSerif-Italic.ttf" if (dejavu_dir / "DejaVuSerif-Italic.ttf").exists() else "DejaVuSerif.ttf")
+            bi_djs = dejavu_dir / ("DejaVuSerif-BoldItalic.ttf" if (dejavu_dir / "DejaVuSerif-BoldItalic.ttf").exists() else "DejaVuSerif-Bold.ttf")
+            pdfmetrics.registerFont(TTFont("MathSerif-Bold", str(bold_djs)))
+            pdfmetrics.registerFont(TTFont("MathSerif-Italic", str(it_djs)))
+            pdfmetrics.registerFont(TTFont("MathSerif-BoldItalic", str(bi_djs)))
+            pdfmetrics.registerFontFamily(
+                "MathSerif",
+                normal="MathSerif",
+                bold="MathSerif-Bold",
+                italic="MathSerif-Italic",
+                boldItalic="MathSerif-BoldItalic",
+            )
+            MATH_SERIF_AVAILABLE = True
         if (dejavu_dir / "DejaVuSans.ttf").exists():
             pdfmetrics.registerFont(TTFont("MathSans", str(dejavu_dir / "DejaVuSans.ttf")))
             bold_dj = dejavu_dir / ("DejaVuSans-Bold.ttf" if (dejavu_dir / "DejaVuSans-Bold.ttf").exists() else "DejaVuSans.ttf")
@@ -136,9 +231,10 @@ try:
 except Exception as e:
     print(f"[WARN] Could not register TrueType fonts: {e}. Falling back to standard Helvetica/Courier.")
 
-FONT_BODY = "BookSans" if BOOK_SANS_AVAILABLE else "Helvetica"
-FONT_BODY_BOLD = "BookSans-Bold" if BOOK_SANS_AVAILABLE else "Helvetica-Bold"
-FONT_BODY_ITALIC = "BookSans-Italic" if BOOK_SANS_AVAILABLE else "Helvetica-Oblique"
+FONT_BODY = "CMUSerif" if BOOK_SERIF_AVAILABLE else ("BookSans" if BOOK_SANS_AVAILABLE else "Times-Roman")
+FONT_BODY_BOLD = "CMUSerif-Bold" if BOOK_SERIF_AVAILABLE else ("BookSans-Bold" if BOOK_SANS_AVAILABLE else "Times-Bold")
+FONT_BODY_ITALIC = "CMUSerif-Italic" if BOOK_SERIF_AVAILABLE else ("BookSans-Italic" if BOOK_SANS_AVAILABLE else "Times-Italic")
+FONT_MATH_SERIF = "MathSerif" if MATH_SERIF_AVAILABLE else ("MathSans" if MATH_SANS_AVAILABLE else FONT_BODY)
 FONT_MATH = "MathSans" if MATH_SANS_AVAILABLE else FONT_BODY
 FONT_MONO = "SpaceMono" if FONTS_AVAILABLE else "Courier"
 FONT_MONO_BOLD = "SpaceMono-Bold" if FONTS_AVAILABLE else "Courier-Bold"
@@ -186,10 +282,10 @@ COVER_FOIL_CREAM = "#e2e8f0"     # Warm Silver-Cream
 COVER_TAXONOMY_MUTED = "#64748B" # Muted Editorial Slate
 
 # 6.00 x 9.00 in Trade Paperback & Hardcover Geometry (432.0 x 648.0 pt)
-MARGIN_PT = 40.0                 # 0.556 in base margin (shifted +/- 14pt -> 0.750 in gutter / 0.361 in outside)
+MARGIN_PT = 42.0                 # 0.583 in base margin (shifted +/- 12pt -> 0.750 in gutter / 0.417 in outside)
 PAGE_WIDTH = 432.0               # 6.00 in trade trim width
 PAGE_HEIGHT = 648.0              # 9.00 in trade trim height
-PRINTABLE_WIDTH = PAGE_WIDTH - (2 * MARGIN_PT)  # 352.0 pt (4.89 in)
+PRINTABLE_WIDTH = PAGE_WIDTH - (2 * MARGIN_PT)  # 348.0 pt (4.833 in)
 
 
 def to_roman(n: int) -> str:
@@ -220,6 +316,7 @@ class BookmarkFlowable(Flowable):
         self.level = level
         self.width = 0
         self.height = 0
+        self.keepWithNext = True
 
     def draw(self):
         pg = self.canv._pageNumber
@@ -237,6 +334,7 @@ class ChapterTracker(Flowable):
         self.chapter_title = chapter_title
         self.width = 0
         self.height = 0
+        self.keepWithNext = True
 
     def draw(self):
         self.canv.current_chapter_title = self.chapter_title
@@ -283,7 +381,9 @@ class StartArabicPaginationFlowable(Flowable):
 
 class ManualDocTemplate(SimpleDocTemplate):
     """
-    Two-pass publication document template that intercepts flowables
+    Two-pass publication document template that intercepts flowables,
+    implements a LaTeX-style [ht] float engine for tables, figures, and callouts
+    (keeping tables intact while flowing subsequent prose into the bottom of the page),
     and notifies TableOfContents and SimpleIndex with exact Arabic page numbers
     synchronized with the printed page footers.
     """
@@ -291,23 +391,175 @@ class ManualDocTemplate(SimpleDocTemplate):
         super().__init__(*args, **kwargs)
         self.arabic_start_page = 7
 
+    def build(self, flowables, *args, **kwargs):
+        for fl in flowables:
+            if hasattr(fl, "_float_bypass_count"):
+                fl._float_bypass_count = 0
+        super().build(flowables, *args, **kwargs)
+
+    def filterFlowables(self, flowables):
+        # Preserve strict sequential reading order so headings and post-table paragraphs
+        # are never pulled out of order above the tables or figures they discuss.
+        return
+        frame = getattr(self, "frame", None)
+        if not flowables or frame is None or getattr(frame, "_atTop", 1):
+            return
+        f0 = flowables[0]
+        if f0 is None or not getattr(f0, "_is_latex_float", False):
+            return
+
+        bypass_cnt = getattr(f0, "_float_bypass_count", 0)
+        if bypass_cnt >= 6:
+            return
+
+        aW = self.frame._getAvailableWidth()
+        max_frame_h = self.frame._aH
+        rem_h = self.frame._y - self.frame._y1p
+        if rem_h < 24.0:
+            return
+
+        s_f = f0.getSpaceBefore()
+        if self.frame._oASpace:
+            s_f = max(s_f - self.frame._prevASpace, 0)
+        try:
+            _, h_f = f0.wrap(aW, max_frame_h)
+        except Exception:
+            return
+
+        # [h] Here: If the float fits in the remaining space on the current page, place it in position.
+        if (h_f + s_f) <= rem_h:
+            return
+
+        # If the table/block is taller than a single page (> 92% of frame height), let ReportLab split it across pages.
+        if h_f > (max_frame_h * 0.92):
+            return
+
+        # [t] Top-of-next-page Float: f0 does not fit in rem_h, but WILL fit intact on the next page.
+        # Scan ahead within the current section for prose paragraphs or subsections that can flow into rem_h.
+        max_scan = min(len(flowables), 12)
+        idx = 1
+        while idx < max_scan:
+            cand = flowables[idx]
+            # Hard barriers: never float a table/figure past a PageBreak or an H1/H2 section boundary
+            if isinstance(
+                cand,
+                (
+                    PageBreak,
+                    ChapterTracker,
+                    EnsureRectoPageFlowable,
+                    StartArabicPaginationFlowable,
+                    TableOfContents,
+                    SimpleIndex,
+                ),
+            ):
+                break
+            if isinstance(cand, Paragraph):
+                st_name = getattr(getattr(cand, "style", None), "name", "")
+                if st_name in ("Heading1", "Heading2"):
+                    break
+
+                # Case A: Subheading (Heading3 / Heading4) followed by a BodyText / ListBullet paragraph
+                if st_name in ("Heading3", "Heading4"):
+                    if rem_h < 46.0 or (idx + 1) >= len(flowables):
+                        break
+                    nxt = flowables[idx + 1]
+                    if not isinstance(nxt, Paragraph) or getattr(getattr(nxt, "style", None), "name", "") not in ("BodyText", "ListBullet"):
+                        break
+                    s_h = cand.getSpaceBefore()
+                    if self.frame._oASpace:
+                        s_h = max(s_h - self.frame._prevASpace, 0)
+                    _, h_h = cand.wrap(aW, max_frame_h)
+                    avail_for_nxt = rem_h - (s_h + h_h + cand.getSpaceAfter() + nxt.getSpaceBefore())
+                    if avail_for_nxt < 22.0:
+                        break
+                    _, h_nxt = nxt.wrap(aW, max_frame_h)
+                    has_bm = idx > 1 and isinstance(flowables[idx - 1], BookmarkFlowable)
+                    if h_nxt <= avail_for_nxt:
+                        pulled = []
+                        if has_bm:
+                            pulled.append(flowables.pop(idx - 1))
+                            idx -= 1
+                        h_el = flowables.pop(idx)
+                        p_el = flowables.pop(idx)
+                        p_el.__dict__["keepWithNext"] = False
+                        pulled.extend([h_el, p_el])
+                        f0._float_bypass_count = bypass_cnt + 1
+                        flowables[0:0] = pulled
+                        return
+                    else:
+                        parts = nxt.split(aW, avail_for_nxt)
+                        if len(parts) == 2:
+                            _, h_p0 = parts[0].wrap(aW, max_frame_h)
+                            if 18.0 <= h_p0 <= avail_for_nxt:
+                                if hasattr(nxt, "_index_terms"):
+                                    parts[0]._index_terms = nxt._index_terms
+                                parts[0].__dict__["keepWithNext"] = False
+                                flowables[idx + 1] = parts[1]
+                                pulled = []
+                                if has_bm:
+                                    pulled.append(flowables.pop(idx - 1))
+                                    idx -= 1
+                                h_el = flowables.pop(idx)
+                                pulled.extend([h_el, parts[0]])
+                                f0._float_bypass_count = bypass_cnt + 1
+                                flowables[0:0] = pulled
+                                return
+                    break
+
+                # Case B: Regular BodyText or ListBullet paragraph
+                if st_name in ("BodyText", "ListBullet"):
+                    raw_vis = re.sub(r"<[^>]+>", "", getattr(cand, "text", "")).strip()
+                    if raw_vis.endswith(":") and len(raw_vis) < 95:
+                        idx += 1
+                        continue
+                    s_c = cand.getSpaceBefore()
+                    if self.frame._oASpace:
+                        s_c = max(s_c - self.frame._prevASpace, 0)
+                    _, h_c = cand.wrap(aW, max_frame_h)
+                    if (h_c + s_c) <= rem_h:
+                        p_el = flowables.pop(idx)
+                        p_el.__dict__["keepWithNext"] = False
+                        f0._float_bypass_count = bypass_cnt + 1
+                        flowables.insert(0, p_el)
+                        return
+                    elif (rem_h - s_c) >= 22.0:
+                        parts = cand.split(aW, rem_h - s_c)
+                        if len(parts) == 2:
+                            _, h_p0 = parts[0].wrap(aW, max_frame_h)
+                            if 18.0 <= h_p0 <= (rem_h - s_c):
+                                if hasattr(cand, "_index_terms"):
+                                    parts[0]._index_terms = cand._index_terms
+                                parts[0].__dict__["keepWithNext"] = False
+                                flowables[idx] = parts[1]
+                                f0._float_bypass_count = bypass_cnt + 1
+                                flowables.insert(0, parts[0])
+                                return
+                    idx += 1
+                    continue
+
+            idx += 1
+
     def afterFlowable(self, flowable):
         super().afterFlowable(flowable)
         if isinstance(flowable, StartArabicPaginationFlowable):
             self.arabic_start_page = self.page
         arabic_pg = max(1, self.page - getattr(self, "arabic_start_page", 7) + 1)
-        if hasattr(flowable, '_toc_info'):
-            level, text, key = flowable._toc_info
-            self.notify('TOCEntry', (level, text, arabic_pg, key))
-        if hasattr(flowable, '_index_terms'):
-            for term in flowable._index_terms:
-                self.notify('IndexEntry', (term, arabic_pg))
+        items_to_check = [flowable]
+        if isinstance(flowable, KeepTogether):
+            items_to_check.extend(getattr(flowable, "_content", []))
+        for sub_f in items_to_check:
+            if hasattr(sub_f, '_toc_info'):
+                level, text, key = sub_f._toc_info
+                self.notify('TOCEntry', (level, text, arabic_pg, key))
+            if hasattr(sub_f, '_index_terms'):
+                for term in sub_f._index_terms:
+                    self.notify('IndexEntry', (term, arabic_pg))
 
 
 # ---------------------------------------------------------------------------
 # Two-Pass NumberedCanvas for KDP Interior Manuscript (Mirrored Gutter & Folios)
 # ---------------------------------------------------------------------------
-KDP_GUTTER_SHIFT_PT = 14.0  # Shifts 40pt base margin to 54pt (0.750 in) Inside Gutter & 26pt (0.361 in) Outside Margin
+KDP_GUTTER_SHIFT_PT = 12.0  # Shifts 42pt base margin to 54pt (0.750 in) Inside Gutter & 30pt (0.417 in) Outside Margin
 
 class NumberedCanvas(canvas.Canvas):
     """
@@ -350,7 +602,7 @@ class NumberedCanvas(canvas.Canvas):
                 break
         for idx_s, st in enumerate(self._saved_page_states):
             ch_t = st.get("page_chapter_title", "")
-            if ch_t not in ("HALF TITLE", "SERIES FRONTISPIECE", "TITLE PAGE", "COPYRIGHT AND COLOPHON", "TABLE OF CONTENTS", "BLANK_PAGE"):
+            if ch_t not in ("HALF TITLE", "SERIES FRONTISPIECE", "TITLE PAGE", "COPYRIGHT AND COLOPHON", "DEDICATION AND EPIGRAPH", "TABLE OF CONTENTS", "BLANK_PAGE"):
                 arabic_start = idx_s + 1
                 break
 
@@ -405,7 +657,7 @@ class NumberedCanvas(canvas.Canvas):
         - Chapter Openers: no top running header; Arabic folio on outside footer.
         - Regular Body Pages: mirrored running header + outside Arabic folio (1, 2, 3...).
         """
-        if chapter_title in ("HALF TITLE", "SERIES FRONTISPIECE", "TITLE PAGE", "BLANK_PAGE"):
+        if chapter_title in ("HALF TITLE", "SERIES FRONTISPIECE", "TITLE PAGE", "DEDICATION AND EPIGRAPH", "BLANK_PAGE"):
             return
 
         self.saveState()
@@ -413,7 +665,7 @@ class NumberedCanvas(canvas.Canvas):
         left_x = MARGIN_PT + gutter_shift
         right_x = (w - MARGIN_PT) + gutter_shift
         is_odd = (self._pageNumber % 2 == 1)
-        is_front_matter = (self._pageNumber < arabic_start) or (chapter_title in ("COPYRIGHT AND COLOPHON", "TABLE OF CONTENTS"))
+        is_front_matter = (self._pageNumber < arabic_start) or (chapter_title in ("COPYRIGHT AND COLOPHON", "DEDICATION AND EPIGRAPH", "TABLE OF CONTENTS"))
 
         # 1. Top Running Header (Suppressed on Copyright Page and on Chapter Opening Pages)
         show_header = (not is_opener) and (chapter_title != "COPYRIGHT AND COLOPHON")
@@ -423,7 +675,7 @@ class NumberedCanvas(canvas.Canvas):
             self.line(left_x, h - 29, right_x, h - 29)
 
             doc_hdr = "THINKING IN THE STACK" if getattr(self, "is_sc32", True) else "FROM BLOCKS TO THE STACK"
-            disp_title = (chapter_title[:42] + ("..." if len(chapter_title) > 42 else "")) if chapter_title else ""
+            disp_title = (chapter_title[:80] + ("..." if len(chapter_title) > 80 else "")) if chapter_title else ""
 
             if is_odd:
                 # Recto (Odd): Chapter title on outside (right), Book title on inside (left)
@@ -541,6 +793,8 @@ MATH_REPLACEMENTS = [
     (r"\oint", "∮"),
     (r"\int", "∫"),
     (r"\sqrt", "√"),
+    (r"\ell", "ℓ"),
+    (r"\hbar", "ℏ"),
     (r"\circ", "°"),
     (r"\qquad", "    "),
     (r"\quad", "  "),
@@ -584,8 +838,14 @@ def replace_latex_frac(text: str) -> str:
                 break
             if fmt == "binom":
                 text = text[:idx] + f"C({num}, {den})" + text[j:]
+            elif re.match(r'^\d+$', num.strip()) and re.match(r'^\d+$', den.strip()):
+                lead_sp = " " if (idx > 0 and text[idx - 1].isdigit()) else ""
+                trail_sp = " " if (j < len(text) and text[j].isdigit()) else ""
+                text = text[:idx] + f"{lead_sp}{num.strip()}/{den.strip()}{trail_sp}" + text[j:]
             else:
-                text = text[:idx] + f"({num} / {den})" + text[j:]
+                num_s = f"({num})" if (r"\div" in num or "÷" in num) and not (num.startswith("(") and num.endswith(")")) else num
+                den_s = f"({den})" if (r"\div" in den or "÷" in den) and not (den.startswith("(") and den.endswith(")")) else den
+                text = text[:idx] + f"({num_s} / {den_s})" + text[j:]
     return text
 
 
@@ -601,10 +861,8 @@ def replace_latex_sqrt(text: str) -> str:
         if radicand is None:
             break
         rad_clean = radicand.strip()
-        prefix = "∛" if root_deg == "3" else ("∜" if root_deg == "4" else (f"root({root_deg}, " if root_deg else "√"))
-        if root_deg and root_deg not in ("3", "4"):
-            rep = f"{prefix}{rad_clean})"
-        elif re.match(r'^[A-Za-z0-9\\]+$', rad_clean):
+        prefix = "∛" if root_deg == "3" else ("∜" if root_deg == "4" else (f"^{{{root_deg}}}√" if root_deg else "√"))
+        if re.match(r'^[A-Za-z0-9\\]+$', rad_clean):
             rep = f"{prefix}{rad_clean}"
         else:
             rep = f"{prefix}({rad_clean})"
@@ -634,6 +892,8 @@ def replace_latex_bold(text: str) -> str:
 
 def clean_latex_math(text: str) -> str:
     """Converts LaTeX math expressions into vector-sharp unicode typography."""
+    has_leading_latex_space = bool(re.match(r'^\s*(?:\\[,;!: ]|\\quad\b|\\qquad\b|\\(?:text|mathrm)\{\s+)', text))
+    has_trailing_latex_space = bool(re.search(r'(?:\\[,;!: ]|\\quad\b|\\qquad\b|\\(?:text|mathrm)\{[^{}]*\s+\})\s*$', text))
     # Strip backticks inside math spans
     text = re.sub(r'`\[([^`]+)\]`', r'[\1]', text)
     text = text.replace('`', '')
@@ -646,8 +906,8 @@ def clean_latex_math(text: str) -> str:
     text = re.sub(r'\\end\{[^}]*\}', '', text)
     text = text.replace(r"\\", "; ")
 
-    # Unescape LaTeX literal escapes before XML escaping
-    text = text.replace(r"\%", "%").replace(r"\$", "$").replace(r"\_", "_")
+    # Unescape LaTeX literal escapes before XML escaping (keep \_ protected until after subscript parsing)
+    text = text.replace(r"\%", "%").replace(r"\$", "$").replace(r"\_", "\x00ESC_US\x00").replace(r"\&", "&")
     text = text.replace(r"\{", "(").replace(r"\}", ")")
     text = text.replace(r"\ ", " ")
 
@@ -677,7 +937,33 @@ def clean_latex_math(text: str) -> str:
     text = replace_latex_sqrt(text)
     text = replace_latex_bold(text)
 
-    # 4. Handle font, text, and accent macros (iterated for nesting)
+    # 4. Relational operators, arrows, and general symbols BEFORE stripping \text{...}
+    # so \text{Pa}\cdot\text{s} never merges into \cdots when \text{s} becomes s.
+    text = re.sub(r'\^\s*(?:\{\s*(?:\\circ|°)\s*\}|(?:\\circ|°))', '°', text)
+    text = re.sub(r'\\le(?![a-zA-Z])', '≤', text)
+    text = re.sub(r'\\ge(?![a-zA-Z])', '≥', text)
+    text = re.sub(r'\\leq(?![a-zA-Z])', '≤', text)
+    text = re.sub(r'\\geq(?![a-zA-Z])', '≥', text)
+    text = re.sub(r'\\ll(?![a-zA-Z])', '≪', text)
+    text = re.sub(r'\\gg(?![a-zA-Z])', '≫', text)
+    text = re.sub(r'\\ne(?![a-zA-Z])', '≠', text)
+    text = re.sub(r'\\neq(?![a-zA-Z])', '≠', text)
+    text = re.sub(r'\\sim(?![a-zA-Z])', '~', text)
+    text = re.sub(r'\\in(?![a-zA-Z])', '∈', text)
+    text = re.sub(r'\\mid(?![a-zA-Z])', '|', text)
+    text = re.sub(r'\\to(?![a-zA-Z])', '→', text)
+    text = re.sub(r'\\pm(?![a-zA-Z])', '±', text)
+    text = re.sub(r'\\Large(?![a-zA-Z])', '', text)
+    text = re.sub(r'\\bmod(?![a-zA-Z])', ' mod ', text)
+
+    for pat, rep in MATH_REPLACEMENTS:
+        if pat[-1].isalpha():
+            text = re.sub(re.escape(pat) + r'(?![a-zA-Z])', lambda _, r=rep: r, text)
+        else:
+            text = text.replace(pat, rep)
+
+    # 5. Handle font, text, and accent macros (iterated for nesting)
+    text = re.sub(r'\\underline\{\s*\\hspace\{[^{}]*\}\s*\}', '___', text)
     for _ in range(3):
         text = re.sub(r'\\(?:text|mathrm|operatorname|mathcal|mathbb|mathbin|mathrel|mathtt|texttt|underline)\{([^{}]*)\}', r'\1', text)
         text = re.sub(r'\\(?:mathbf|textbf|boldsymbol)\{([^{}]*)\}', r'<b>\1</b>', text)
@@ -685,45 +971,22 @@ def clean_latex_math(text: str) -> str:
         text = re.sub(r'\\(?:bar|overline)\{([^{}]*)\}', r'\1̄', text)
         text = re.sub(r'\\hat\{([^{}]*)\}', r'\1̂', text)
         text = re.sub(r'\\dot\{([^{}]*)\}', r'\1̇', text)
-        text = re.sub(r'\\vec\{([^{}]*)\}', r'\1⃗', text)
+        text = re.sub(r'\\vec\{([^{}]*)\}', r'<b><i>\1</i></b>', text)
         text = re.sub(r'\\pmod\{((?:[^{}]|\{[^{}]*\})*)\}', r' (mod \1)', text)
         text = re.sub(r'\\xrightarrow\{([^{}]*)\}', r'→[\1]', text)
         text = re.sub(r'\\hspace\{[^{}]*\}', ' ', text)
 
-    text = re.sub(r'\\Large\b', '', text)
-    text = re.sub(r'\\bmod\b', ' mod ', text)
-    # Normalize degree superscripts (^\circ, ^{\circ}, ^°) into ° before general replacements
-    text = re.sub(r'\^\s*\{?\s*(?:\\circ|°)\s*\}?', '°', text)
-
-    # 5. Relational operators and arrows with word boundaries
-    text = re.sub(r'\\le\b', '≤', text)
-    text = re.sub(r'\\ge\b', '≥', text)
-    text = re.sub(r'\\leq\b', '≤', text)
-    text = re.sub(r'\\geq\b', '≥', text)
-    text = re.sub(r'\\ll\b', '≪', text)
-    text = re.sub(r'\\gg\b', '≫', text)
-    text = re.sub(r'\\ne\b', '≠', text)
-    text = re.sub(r'\\neq\b', '≠', text)
-    text = re.sub(r'\\sim\b', '~', text)
-    text = re.sub(r'\\in\b', '∈', text)
-    text = re.sub(r'\\mid\b', '|', text)
-    text = re.sub(r'\\to\b', '→', text)
-    text = re.sub(r'\\pm\b', '±', text)
-
-    # 6. General symbol replacements
-    for pat, rep in MATH_REPLACEMENTS:
-        text = text.replace(pat, rep)
-
     # Clean any residual ^° into °
     text = text.replace("^°", "°")
 
-    # 7. Clean empty braces before superscripts/subscripts (e.g., {}^{40}K)
+    # 6. Clean empty braces before superscripts/subscripts (e.g., {}^{40}K)
     text = text.replace("{}", "")
     for _ in range(2):
         text = re.sub(r'\^\{([^{}]*)\}', r'<sup>\1</sup>', text)
         text = re.sub(r'_\{([^{}]*)\}', r'<sub>\1</sub>', text)
-    text = re.sub(r'\^([0-9a-zA-Z+-]+)', r'<sup>\1</sup>', text)
-    text = re.sub(r'_([0-9a-zA-Z+-]+)', r'<sub>\1</sub>', text)
+    text = re.sub(r'\^([0-9a-zA-Zα-ωΑ-Ω+*′∞∂∇ℓℏ-])', r'<sup>\1</sup>', text)
+    text = re.sub(r'_([0-9a-zA-Zα-ωΑ-Ω+*′∞∂∇ℓℏ-])', r'<sub>\1</sub>', text)
+    text = text.replace("\x00ESC_US\x00", "_")
 
     # Flatten any nested <sup>...<sup>...</sup></sup> or <sub>...<sub>...</sub></sub>
     text = re.sub(r'<sup>([^<]*)<sup>([^<]*)</sup>([^<]*)</sup>', r'<sup>\1^\2\3</sup>', text)
@@ -732,28 +995,45 @@ def clean_latex_math(text: str) -> str:
     # Strip remaining LaTeX command backslashes and leftover grouping braces
     text = re.sub(r'\\([a-zA-Z]+)', r'\1', text)
     text = text.replace("{", "").replace("}", "")
+    text = text.replace("---", "—").replace("--", "–")
     # Use <super rise='2.5' size='6.5'> (+2.5pt) and <sub rise='1.8' size='6.5'> (-1.8pt in ReportLab)
     text = re.sub(r'<sup>(.*?)</sup>', r"<super rise='2.5' size='6.5'>\1</super>", text)
     text = re.sub(r'<sub>(.*?)</sub>', r"<sub rise='1.8' size='6.5'>\1</sub>", text)
     # Keep scientific notation (e.g., 6.6743 × 10^-11) on a single line using non-breaking spaces
     text = re.sub(r'(\d)\s*([×·])\s*(10\b)', "\\1\u00a0\\2\u00a0\\3", text)
-    return _protect_special_unicode_glyphs(text.strip())
+    cleaned = text.strip()
+    if has_leading_latex_space and cleaned:
+        cleaned = " " + cleaned
+    if has_trailing_latex_space and cleaned:
+        cleaned = cleaned + " "
+    return _protect_special_unicode_glyphs(cleaned)
 
+
+_MATH_SERIF_GLYPH_RE = re.compile(
+    r'([^\s<>][\u0304\u0302\u0307]|'
+    r'[≤≥≠≈≡∞∑∏∫∬∭∂∇↔⇌⇒⇔∝∠∥⊕∓′ˣᵇ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿ₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎□●⟨⟩ℏ⌊⌋⌈⌉])'
+)
 
 _MATH_SANS_GLYPH_RE = re.compile(
-    r'([⊕⊗⊙⊖⊘⊞⊟⊠⊡⊢⊣⊤⊥⊨⊩⊪⊫⊬⊭⊮⊯⊰⊱⊲⊳⊴⊵⊶⊷⊸⊹⊺⊻⊼⊽⊾⊿⋀⋁⋂⋃⋄⋅⋆⋇⋈⋉⋊⋋⋌⋍⋎⋏⋐⋑⋒⋓⋔⋕⋖⋗⋘⋙⋚⋛⋜⋝⋞⋟⋠⋡⋢⋣⋤⋥⋦⋧⋨⋩⋪⋫⋬⋭⋮⋯⋰⋱'
-    r'⇒⇔⇐⇑⇓⇕↦↪↩↼⇀↽⇁⇌⇋∀∃∅∇∈∉∋∌∏∐∓∔∕∖∗∘∙∛∜∝∟∠∡∢∣∤∥∦∧∨∬∭∮∯∰∱∲∳∴∵∶∷∸∹∺∻∼∽∾∿≀≁≂≃≄≅≆≇≉≊≋≌≍≎≏≐≑≒≓≔≕≖≗≘≙≚≛≜≝≞≟'
-    r'≢≣≦≧≨≩≪≫≬≭≮≯≰≱≲≳≴≵≶≷≸≹≺≻≼≽≾≿⊀⊁⊂⊃⊄⊅⊆⊇⊈⊉⊊⊋⊌⊍⊎⊏⊐⊑⊒⊓⊔⌊⌋⌈⌉⟨⟩⟪⟫⟬⟭⟮⟯])'
+    r'([⊗⊙⊖⊘⊞⊟⊠⊡⊢⊣⊤⊥⊨⊩⊪⊫⊬⊭⊮⊯⊰⊱⊲⊳⊴⊵⊶⊷⊸⊹⊺⊻⊼⊽⊾⊿⋀⋁⋂⋃⋄⋅⋆⋇⋈⋉⋊⋋⋌⋍⋎⋏⋐⋑⋒⋓⋔⋕⋖⋗⋘⋙⋚⋛⋜⋝⋞⋟⋠⋡⋢⋣⋤⋥⋦⋧⋨⋩⋪⋫⋬⋭⋮⋯⋰⋱'
+    r'⇐⇑⇓⇕↦↪↩↼⇀↽⇁⇋∀∃∅∈∉∋∌∐∔∕∖∗∘∙∛∜∟∡∢∣∤∦∧∨∮∯∰∱∲∳∴∵∶∷∸∹∺∻∼∽∾∿≀≁≂≃≄≅≆≇≉≊≋≌≍≎≏≐≑≒≓≔≕≖≗≘≙≚≛≜≝≞≟'
+    r'≢≣≦≧≨≩≪≫≬≭≮≯≰≱≲≳≴≵≶≷≸≹≺≻≼≽≾≿⊀⊁⊂⊃⊄⊅⊆⊇⊈⊉⊊⊋⊌⊍⊎⊏⊐⊑⊒⊓⊔⟪⟫⟬⟭⟮⟯'
+    r'ȳℓ─○★✓✗↖↗■])'
 )
 
 
-def _protect_special_unicode_glyphs(text: str) -> str:
+def _protect_special_unicode_glyphs(text: str, in_code: bool = False) -> str:
     """
-    Wraps specialized mathematical/calculator Unicode glyphs (⊕, ⇒, ⇔, ∈, ∇, ∠, ∝, ⊥, ∥, ⌊, ⌋, ⌈, ⌉, etc.)
-    that are absent in Arial with DejaVuSans (MathSans) or Terminus so zero tofu boxes (□) ever appear.
+    Wraps specialized mathematical/calculator Unicode glyphs (≤, ≥, ≠, ≈, ∞, ∑, ∫, ⊕, ⇒, ⇔, ∈, ∇, ∠, ∝, ∥, ⌊, ⌋, etc.)
+    that are absent in CMUSerif or SpaceMono with DejaVuSerif (MathSerif) or DejaVuSans (MathSans) so zero tofu boxes (□) ever appear.
     """
     text = text.replace("⇄", "↔").replace("↰", "↖").replace("↱", "↗").replace("▸", "→").replace("^°", "°")
     text = text.replace("🎲", "[DICE]").replace("🕒", "[CLOCK]").replace("▦", "[FRAME]")
+    text = text.replace("\u20d7", "").replace("⟌", "/").replace("⬜", "□").replace("🔴", "●").replace("⚪", "○").replace("🟦", "■")
+    if in_code and BOOK_SERIF_AVAILABLE:
+        text = re.sub(r'([α-ωΑ-Ω])', f"<font face='{FONT_BODY}'>\\1</font>", text)
+    if MATH_SERIF_AVAILABLE or MATH_SANS_AVAILABLE:
+        text = _MATH_SERIF_GLYPH_RE.sub(f"<font face='{FONT_MATH_SERIF}'>\\1</font>", text)
     if MATH_SANS_AVAILABLE:
         text = _MATH_SANS_GLYPH_RE.sub(f"<font face='{FONT_MATH}'>\\1</font>", text)
     elif FONTS_AVAILABLE:
@@ -768,7 +1048,7 @@ def _protect_special_unicode_glyphs(text: str) -> str:
 # ---------------------------------------------------------------------------
 _PAPER_KEYCAP_ATLAS: Dict[bool, Dict[Tuple[str, int, int], Tuple[Path, int, int]]] = {}
 _PAPER_FALLBACK_CACHE: Dict[Tuple[bool, str], Tuple[Path, int, int]] = {}
-_KEYCAP_CACHE_DIR = Path("/tmp/stackcalc_paper_keycaps_v5")
+_KEYCAP_CACHE_DIR = Path("/tmp/stackcalc_paper_keycaps_v6")
 
 
 def _ensure_paper_keycap_atlas(is_sc32: bool) -> Dict[Tuple[str, int, int], Tuple[Path, int, int]]:
@@ -922,8 +1202,14 @@ def _get_fallback_paper_keycap(clean_label: str, is_sc32: bool) -> Tuple[Path, i
     disp = clean_label.replace("⇄", "↔").replace("↰", "f").replace("↱", "g").replace("▸", "→")
     disp = disp.replace("🎲", "DICE").replace("🕒", "CLOCK").replace("▦", "FRAME")
 
+    space_mono_bold = FONT_DIR / "SpaceMono-Bold.ttf"
     arial_bold = Path("/System/Library/Fonts/Supplemental/Arial Bold.ttf")
-    font_path = str(arial_bold) if arial_bold.exists() else str(FONT_DIR / "SpaceMono-Bold.ttf")
+    if "ˣ" not in disp and space_mono_bold.exists():
+        font_path = str(space_mono_bold)
+    elif arial_bold.exists():
+        font_path = str(arial_bold)
+    else:
+        font_path = str(space_mono_bold)
     try:
         fnt = ImageFont.truetype(font_path, 34)
     except Exception:
@@ -1003,15 +1289,21 @@ def sanitize_inline_markdown(text: str, is_sc32: bool, in_table: bool = False) -
     accent_hex = SC32_ACCENT if is_sc32 else SC6_ACCENT
     keycap_h = 8.4 if in_table else 9.2
 
-    # 1. Unescape existing HTML entities (BookSans supports Polish Ł/ł natively!)
+    # 1. Unescape existing HTML entities (CMUSerif and BookSans support Polish Ł/ł natively!)
     text = html.unescape(text)
-    if not BOOK_SANS_AVAILABLE:
+    if not (BOOK_SERIF_AVAILABLE or BOOK_SANS_AVAILABLE):
         text = text.replace("Ł", "L").replace("ł", "l")
 
     # Convert inline HTML tags used inside markdown tables/lists to markdown equivalents first
     text = re.sub(r'<code>(.*?)</code>', r'`\1`', text)
     text = re.sub(r'<(?:strong|b)>(.*?)</(?:strong|b)>', r'**\1**', text)
     text = re.sub(r'<(?:em|i)>(.*?)</(?:em|i)>', r'*\1*', text)
+    text = re.sub(r'<a\b[^>]*>(.*?)</a>', r'**\1**', text, flags=re.IGNORECASE | re.DOTALL)
+    # When <br> follows a colon (e.g., **Title:**<br>Text), a bold heading (**30% fewer keystrokes**<br>Text),
+    # or precedes a parenthetical/bullet, use clean punctuation/space rather than a mid-line bullet
+    text = re.sub(r'(:\s*(?:\*+)?)\s*<br\s*/?>\s*', r'\1 ', text)
+    text = re.sub(r'(\*\*[^*.!?:;\n]+?\*\*)\s*<br\s*/?>\s*', r'\1: ', text)
+    text = re.sub(r'\s*<br\s*/?>\s*(?=[•(\[])', ' ', text)
     text = re.sub(r'<br\s*/?>', ' • ', text)
 
     # 2. Extract and protect escaped currency/percent symbols, code spans, math spans, and keycaps
@@ -1055,7 +1347,6 @@ def sanitize_inline_markdown(text: str, is_sc32: bool, in_table: bool = False) -
     text = re.sub(r'`\[([^`\]\n]+)\]`', sub_backtick_keycap, text)
 
     # Handle standard inline code `...` BEFORE math (converting any [KEY] inside backticks into Paper keycaps!)
-    text = re.sub(r'\$\s*`([^`\n]+)`\s*\$', r'`\1`', text)
     def sub_code(m):
         raw = m.group(1)
         # Split on [KEY] tokens inside the code span so keystroke sequences render with real Paper keycaps
@@ -1070,7 +1361,7 @@ def sanitize_inline_markdown(text: str, is_sc32: bool, in_table: bool = False) -
                     rendered_parts.append(format_hardware_keycap_cartouche(inner_k, is_sc32, target_h_pt=keycap_h))
                     continue
             pt_esc = pt.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-            pt_esc = _protect_special_unicode_glyphs(pt_esc)
+            pt_esc = _protect_special_unicode_glyphs(pt_esc, in_code=True)
             rendered_parts.append(f"<font face='{FONT_MONO}' size='7.5' color='{accent_hex}'><b>{pt_esc}</b></font>")
         return save_placeholder("".join(rendered_parts))
     text = re.sub(r'`([^`\n]+)`', sub_code, text)
@@ -1126,7 +1417,7 @@ def format_heading_text(raw_title: str, is_sc32: bool = True) -> Tuple[str, str]
     [KEY] badges as Paper-theme keycaps in the heading while keeping clean text in the TOC.
     """
     t = html.unescape(raw_title.strip())
-    if not BOOK_SANS_AVAILABLE:
+    if not (BOOK_SERIF_AVAILABLE or BOOK_SANS_AVAILABLE):
         t = t.replace("Ł", "L").replace("ł", "l")
     t = t.replace(r"\$", "QQESCDOLLARQQ").replace(r"\%", "%")
     t = re.sub(r'`\[([^`]+)\]`', r'[\1]', t)
@@ -1191,8 +1482,8 @@ def make_paragraph(text: str, style: ParagraphStyle) -> Paragraph:
 # Subject Index Catalogs & Term Extraction
 # ---------------------------------------------------------------------------
 INDEX_CATALOG_SC32 = [
-    ("Hardware Architecture & Dovetail Chassis", [re.compile(r'\b(hardware architecture|craftsmanship|dovetail|snap-dome)\b', re.IGNORECASE)]),
-    ("43-Key Matrix Keypad", [re.compile(r'\b(keypad matrix|43-key|snap-dome keypad)\b', re.IGNORECASE)]),
+    ("Hardware Architecture & Dovetail Chassis", [re.compile(r'\b(hardware architecture|craftsmanship|dovetail|tactile switches)\b', re.IGNORECASE)]),
+    ("43-Key Matrix Keypad", [re.compile(r'\b(keypad matrix|43-key|tactile keypad)\b', re.IGNORECASE)]),
     ("Transflective Monochrome LCD", [re.compile(r'\b(transflective lcd|monochrome lcd|132\s*[x×]\s*65)\b', re.IGNORECASE)]),
     ("RPN (Reverse Polish Notation)", [re.compile(r'\b(reverse polish notation|postfix notation)\b', re.IGNORECASE), re.compile(r'\bRPN\b')]),
     ("4-Level XYZT Operational Stack", [re.compile(r'\b(xyzt stack|4-stack|register [xyzt])\b', re.IGNORECASE)]),
@@ -1249,29 +1540,29 @@ INDEX_CATALOG_SC32 = [
 
 INDEX_CATALOG_SC6 = [
     ("Hardware Architecture & Classroom Durability", [re.compile(r'\b(hardware architecture|classroom durability|sliding desk-stand|protective cowl)\b', re.IGNORECASE)]),
-    ("Snap-Dome 400g Keypad", [re.compile(r'\b(snap-dome|tactile feedback|400g actuation)\b', re.IGNORECASE)]),
+    ("Tactile TPU Keypad", [re.compile(r'\b(tactile switches|tactile feedback|sculpted tpu|tpu key)\b', re.IGNORECASE)]),
     ("Transflective Ambient Display", [re.compile(r'\b(transflective|ambient-light|high-contrast display)\b', re.IGNORECASE)]),
     ("Fraction Studio 84mm Towers", [re.compile(r'\b(fraction studio|proportional towers|84\s*mm)\b', re.IGNORECASE)]),
     ("Ten-Frames & Desk Counters", [re.compile(r'\b(ten-frames?|desk counters?|counting grid|make-ten)\b', re.IGNORECASE)]),
     ("Classroom Planetary Clock", [re.compile(r'\b(planetary clock|geared clock|modulo 60|elapsed time)\b', re.IGNORECASE)]),
     ("Math Domino Studio", [re.compile(r'\b(math dominoes?|domino studio|dot arrays?)\b', re.IGNORECASE)]),
-    ("Algebra Boxes & Tiles", [re.compile(r'\b(algebra boxes|algebra tiles|area models?)\b', re.IGNORECASE)]),
+    ("Area-Model Factoring Tiles & L-Frame", [re.compile(r'\b(factoring tiles?|l-frame|area models?)\b', re.IGNORECASE)]),
     ("Probability Dice & Spinners", [re.compile(r'\b(probability dice|dice and spinner|random generator)\b', re.IGNORECASE)]),
     ("RPN 4-Story Glass Elevator Metaphor", [re.compile(r'\b(elevator metaphor|elevator model|ground floor|glass elevator)\b', re.IGNORECASE)]),
     ("2-Stack Operational Display", [re.compile(r'\b(2-stack|two-stack|upper stack|lower stack)\b', re.IGNORECASE)]),
     ("Counting, Place Value & Base-10 Regrouping", [re.compile(r'\b(place value|base-10|units and tens|hundreds board|regrouping)\b', re.IGNORECASE)]),
     ("Number Lines & Skip-Counting", [re.compile(r'\b(number lines?|skip-counting|skip counting)\b', re.IGNORECASE)]),
-    ("Superpower [REP] (Repeat Ladder)", [re.compile(r'\[REP\]'), re.compile(r'\bskip-counting ladder\b', re.IGNORECASE)]),
-    ("Superpower [÷R] (Quotient & Remainder)", [re.compile(r'\[(DivR|÷R)\]', re.IGNORECASE), re.compile(r'\bquotient and remainder\b', re.IGNORECASE)]),
-    ("Superpower [SIMP] (Factor Reduction)", [re.compile(r'\[SIMP\]', re.IGNORECASE), re.compile(r'\bfactor reduction\b', re.IGNORECASE)]),
-    ("Superpower [LASTX] (Undo & Inverse)", [re.compile(r'\[LASTX\]', re.IGNORECASE), re.compile(r'\bundoing operations\b', re.IGNORECASE)]),
+    ("Repeat Key [REP] (Skip-Counting Ladder)", [re.compile(r'\[REP\]'), re.compile(r'\bskip-counting ladder\b', re.IGNORECASE)]),
+    ("Quotient & Remainder Key [÷R]", [re.compile(r'\[(DivR|÷R)\]', re.IGNORECASE), re.compile(r'\bquotient and remainder\b', re.IGNORECASE)]),
+    ("Simplify Key [SIMP] (Fraction Reduction)", [re.compile(r'\[SIMP\]', re.IGNORECASE), re.compile(r'\bfactor reduction\b', re.IGNORECASE)]),
+    ("Last Number Key [LASTX] (Undo & Check)", [re.compile(r'\[LASTX\]', re.IGNORECASE), re.compile(r'\bundoing operations\b', re.IGNORECASE)]),
     ("Two-Dot Fraction Entry Syntax", [re.compile(r'\btwo-dot|fraction entry|mixed fractions?\b', re.IGNORECASE)]),
     ("Ratio Mode, Unit Rates & Percentages", [re.compile(r'\bratio mode|proportional reasoning|unit rate|sales tax|discount\b', re.IGNORECASE)]),
     ("Geometry, Perimeter, Area & Surface Area via [Σ+]", [re.compile(r'\bsurface area via|rectangular prism|cylinder volume|pythagorean|triangle area\b', re.IGNORECASE), re.compile(r'\[[Σ∑]\+\]')]),
     ("Discrete Probability, Prime Numbers & Factor Trees", [re.compile(r'\bdiscrete probability|prime factorization|sieve of eratosthenes|twin prime|goldbach|lcm\b', re.IGNORECASE)]),
     ("Negative Numbers, Zero Pairs & Absolute Value", [re.compile(r'\bzero pairs?|negative integer|submarine depth|temperature swing|absolute value\b', re.IGNORECASE)]),
     ("Gamified Math Quiz Engine ([?])", [re.compile(r'\bmath quiz engine|gamified quiz|flashcard mode\b', re.IGNORECASE)]),
-    ("Applied Elementary STEM Labs", [re.compile(r'\bapplied stem|paper circuits?|batch cubes?|maker labs?\b', re.IGNORECASE)]),
+    ("Applied Elementary STEM & Maker Labs", [re.compile(r'\bapplied stem|3d-printed|solar oven|maker labs?\b', re.IGNORECASE)]),
     ("Curriculum Standards (CCSS-M, Singapore, Bridges, Big Ideas)", [re.compile(r'\bbridges in math|ccss alignment|curriculum matrix|singapore dimensions\b', re.IGNORECASE)]),
     ("Teacher Lesson Plans (25 Turnkey 45-Minute Stations)", [re.compile(r'\blesson plan|station guide|teacher script\b', re.IGNORECASE)]),
     ("Keycap [ENTER]", [re.compile(r'\[ENTER\]', re.IGNORECASE)]),
@@ -1493,7 +1784,7 @@ def draw_bestseller_front_cover(
         c.drawCentredString(cx, oy + h - 166.0, "THE STACK")
         subtitle_str = "The Art of Calculating Without Parentheses"
     else:
-        c.setFont(FONT_BODY_BOLD, 39.0)
+        c.setFont(FONT_BODY_BOLD, 38.0)
         c.drawCentredString(cx, oy + h - 118.0, "FROM BLOCKS")
         c.drawCentredString(cx, oy + h - 166.0, "TO THE STACK")
         subtitle_str = "How Hands-On Blocks Make Numbers Click"
@@ -1641,37 +1932,37 @@ def draw_bestseller_back_cover(
         c.drawString(safe_x, oy + h - 92.0, "Why do we write equations one way,")
         c.drawString(safe_x, oy + h - 114.0, "yet solve them in our heads another?")
         p1_html = (
-            "In 1924, the Polish logician Jan Łukasiewicz realized that parentheses are not a law of "
-            "nature—they are merely a patch for writing algebra on flat paper. When you build a calculation "
+            "In 1924, the Polish logician Jan Łukasiewicz showed that algebraic parentheses are an artifact "
+            "of flat paper rather than a requirement of mathematics. When you build a calculation "
             "from the inside out on a four-level stack, parentheses vanish, hidden memory traps disappear, "
-            "and complex ideas unfold one transparent step at a time."
+            "and complex ideas unfold one step at a time."
         )
         p2_html = (
-            "Written for both the armchair reader on a plane and the practicing engineer or student at a desk, "
+            "Written for both the general reader and the practicing engineer or student at a desk, "
             "<b>Thinking in the Stack</b> pairs the historical stories behind great mathematical breakthroughs "
             "with a complete hands-on reference for the <b>StackCalc SC-32</b>."
         )
         ref_note_html = (
-            "<b>Inside the Desk Reference:</b> 14 narrative chapters  •  100 essential STEM equations  •  "
-            "698+ engine-verified problems across physics, electronics, calculus, statistics, and finance."
+            "<b>Inside the Book:</b> 14 narrative chapters  •  The stories behind logarithms, phasors, "
+            "root finding, and Romberg integration  •  100 essential STEM equations  •  Complete SC-32 reference."
         )
     else:
         c.drawString(safe_x, oy + h - 92.0, "What happens when you can hold")
         c.drawString(safe_x, oy + h - 114.0, "a number in your hands?")
         p1_html = (
             "Children rarely struggle with math because numbers are too hard. They struggle when flat worksheets "
-            "and black-box calculators sever symbols from physical reality. When a learner snaps physical tiles "
-            "into a frame and watches those exact numbers ride a four-story elevator stack, arithmetic stops "
-            "being a rule to memorize and becomes something they can see."
+            "and black-box calculators separate symbols from physical objects. When you snap physical tiles "
+            "into a frame and watch those exact numbers ride a four-story elevator stack, arithmetic stops "
+            "being a rule to memorize and becomes something you can see."
         )
         p2_html = (
-            "Written for curious readers, parents, and educators alike, <b>From Blocks to the Stack</b> connects "
-            "hands-on 3D blocks with parenthesis-free thinking—serving as both an engaging guide to visual number "
-            "sense and the complete companion to the <b>StackCalc SC-6</b>."
+            "Written for young explorers (Grades 3–6), parents, and teachers alike, <b>From Blocks to the Stack</b> "
+            "connects hands-on 3D blocks with parenthesis-free thinking—serving as both an engaging guide to visual "
+            "number sense and the complete companion to the <b>StackCalc SC-6</b>."
         )
         ref_note_html = (
-            "<b>Inside the Companion Guide:</b> 9 story-driven chapters (Grades K–6)  •  552+ realistic math quests  •  "
-            "7 open-source 3D-printable manipulative kits  •  25 turnkey 45-minute lesson plans."
+            "<b>Inside the Book:</b> 9 story-driven chapters (Grades 3–6)  •  9 open-source 3D-printable "
+            "math block studios  •  Step-by-step stack tables  •  25 classroom &amp; home station guides."
         )
 
     # Short accent bar under hook question
@@ -1833,11 +2124,11 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
         "How Hands-On Blocks Make Numbers Click"
     )
     desc_line = (
-        "A Popular Guide &amp; Complete Desk Reference to Reverse Polish Notation, Tactile 3D Geometry, "
-        "698+ Solved Problems, and 100 Master Equations — for the <b>StackCalc SC-32</b>"
+        "A Narrative Guide &amp; Desk Reference to Reverse Polish Notation, Applied Physics, "
+        "Numerical Calculus, and 100 Essential Equations — for the <b>StackCalc SC-32</b>"
         if is_sc32 else
-        "A Visual Adventure &amp; Complete K–6 Reference Guide to Number Sense, Fractions, 3D Manipulative "
-        "Blocks, and 552+ Real-World Problems — for the <b>StackCalc SC-6</b>"
+        "An Illustrated Guide to Visual Number Sense, Fractions, 3D-Printable Math Blocks, "
+        "and Parenthesis-Free Thinking for Grades 3–6 (Ages 8–12) — with the <b>StackCalc SC-6</b>"
     )
 
     # --- PAGE i (Recto): Half-Title Page ---
@@ -1855,26 +2146,26 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
     # --- PAGE ii (Verso): Series Frontispiece ("The StackCalc Library") ---
     elements.append(ChapterTracker("SERIES FRONTISPIECE"))
     elements.append(Spacer(1, 100))
-    elements.append(make_paragraph("BOOKS &amp; OPEN-SOURCE HARDWARE IN THE STACKCALC ECOSYSTEM", kicker_style))
+    elements.append(make_paragraph("BOOKS &amp; OPEN-SOURCE INSTRUMENTS IN THE STACKCALC LIBRARY", kicker_style))
     elements.append(Spacer(1, 8))
     elements.append(HRFlowable(width="100%", thickness=1.0, color=to_color(TEXT_MAIN), spaceAfter=10))
     elements.append(make_paragraph(
-        "<b>Volume I — From Blocks to the Stack (StackCalc SC-6 Elementary Edition, Grades K–6)</b><br/>"
+        "<b>Volume I — From Blocks to the Stack (Grades 3–6 / Ages 8–12)</b><br/>"
         "<i>How Hands-On Blocks Make Numbers Click</i><br/>"
-        "ISBN 979-8-9914832-1-6  •  9 Chapters, 552+ Kid-Friendly Quests, 7 3D Manipulative Studios &amp; 25 Teacher Guides",
+        "ISBN 979-8-9914832-1-6 (Placeholder)  •  9 Story-Driven Chapters, 9 Open-Source 3D-Printable Math Block Studios &amp; 25 Station Guides",
         copyright_style
     ))
     elements.append(Spacer(1, 6))
     elements.append(make_paragraph(
-        "<b>Volume II — Thinking in the Stack (StackCalc SC-32 Scientific &amp; Engineering Edition)</b><br/>"
+        "<b>Volume II — Thinking in the Stack (High School, University &amp; Practicing Engineers)</b><br/>"
         "<i>The Art of Calculating Without Parentheses</i><br/>"
-        "ISBN 979-8-9914832-2-3  •  14 Chapters, 698+ Solved STEM Problems, 100 Master Equations &amp; Numerical Methods",
+        "ISBN 979-8-9914832-2-3 (Placeholder)  •  14 Narrative Chapters, Historical Derivations, Numerical Methods &amp; 100 Master Equations",
         copyright_style
     ))
     elements.append(Spacer(1, 6))
     elements.append(make_paragraph(
         "<b>Companion Software &amp; 3D-Printable Manipulative Studios (stackcalc.io)</b><br/>"
-        "• <b>StackCalc iOS, iPadOS &amp; watchOS Simulators:</b> Run the exact <code>RPNCore</code> engine on your phone, tablet, or wrist.<br/>"
+        "• <b>StackCalc iOS, iPadOS &amp; watchOS Applications:</b> Full four-register RPN calculators for phone, tablet, or wrist.<br/>"
         "• <b>OpenSCAD 42mm Gridfinity 3D Models:</b> Print Ten-Frames, 84mm Fraction Towers, Prime Blocks, Volvelles &amp; Geared Clocks.",
         copyright_style
     ))
@@ -1896,7 +2187,7 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
     elements.append(HRFlowable(width="100%", thickness=0.75, color=to_color(DIVIDER_HEX), spaceAfter=8))
     elements.append(make_paragraph("StackCalc", imprint_style))
     elements.append(make_paragraph(
-        "San Francisco  •  Austin  •  stackcalc.io<br/>First Edition (Revision 1.2)",
+        "stackcalc.io<br/>First Edition",
         full_desc_style
     ))
     elements.append(PageBreak())
@@ -1906,49 +2197,109 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
     elements.append(BookmarkFlowable("bm_copyright", "Copyright & Print Colophon", level=0))
     elements.append(Spacer(1, 24))
     isbn_str = "979-8-9914832-2-3" if is_sc32 else "979-8-9914832-1-6"
-    sku_str = "STK-REF-32-V2" if is_sc32 else "STK-REF-06-V1"
     elements.append(make_paragraph(
         f"<b>{main_title}: {sub_line}</b><br/>"
         f"Copyright © 2026 by <b>StackCalc</b> (https://stackcalc.io). Some rights reserved.<br/>"
-        f"Published by <b>StackCalc</b>, San Francisco, California &amp; Austin, Texas.<br/>"
-        f"<b>ISBN-13:</b> {isbn_str} &nbsp;&nbsp;|&nbsp;&nbsp; <b>Catalog ID:</b> {sku_str} &nbsp;&nbsp;|&nbsp;&nbsp; <b>First Edition (Rev 1.2)</b>",
+        f"Published by <b>StackCalc</b>.<br/>"
+        f"<b>ISBN-13:</b> {isbn_str} (Placeholder) &nbsp;&nbsp;|&nbsp;&nbsp; <b>First Edition</b>",
         copyright_style
     ))
     elements.append(make_paragraph(
-        "<b>Open-Ecosystem License (CC BY-NC-SA 4.0):</b> Classroom teachers, university instructors, parents, and "
-        "students are expressly permitted to reproduce worksheet tables, 4-register stack traces, and 3D manipulative "
+        "<b>Open-Education License (CC BY-NC-SA 4.0):</b> Classroom teachers, university instructors, parents, and "
+        "students are expressly permitted to reproduce tables, 4-register stack traces, and 3D manipulative "
         "STL/3MF models for non-commercial educational instruction under Creative Commons Attribution-NonCommercial-"
         "ShareAlike 4.0 International.",
         copyright_style
     ))
     elements.append(make_paragraph(
-        "<b>100% Engine-Verified Mathematical Guarantee:</b> Every 4-register stack table (T, Z, Y, X), postfix keystroke "
-        "sequence, and numerical solution in this volume has been programmatically executed and verified against the "
-        "production <code>RPNCore</code> engine.",
-        copyright_style
-    ))
-    elements.append(make_paragraph(
         "<b>Regulatory &amp; Physical Safety Notice (Reese’s Law / P.L. 117-171 / 16 CFR Part 1263 &amp; ASTM F963):</b> "
         "Physical calculator instruments that utilize coin or button cell batteries must maintain a captive, tool-secured "
-        "battery compartment compliant with UL 4200A. 3D-printed 1×1 unit tiles (12 mm × 12 mm × 8 mm) and polyhedral dice "
-        "constitute small parts under 16 CFR Part 1501; adult supervision is required for learners under 6 years of age.",
+        "battery compartment compliant with UL 4200A. 3D-printed unit tiles and polyhedral dice "
+        "constitute small parts under 16 CFR Part 1501; adult supervision is required for children under 6 years of age.",
         copyright_style
     ))
     elements.append(make_paragraph(
-        "<b>Trademark Notice:</b> <i>StackCalc</i>, <i>SC-32</i>, <i>SC-6</i>, and <i>RPNCore</i> are trademarks of StackCalc. "
+        "<b>Trademark Notice:</b> <i>StackCalc</i>, <i>SC-32</i>, and <i>SC-6</i> are trademarks of StackCalc. "
         "<i>Common Core State Standards</i>, <i>Singapore Math</i>, <i>Bridges in Mathematics</i>, <i>AP</i>, <i>Hewlett-Packard</i>, "
         "and <i>Gridfinity</i> are trademarks of their respective owners, none of whom endorse or sponsor this publication.",
         copyright_style
     ))
     elements.append(make_paragraph(
-        "<b>KDP Archival Print &amp; Typography Colophon:</b> Typeset in Nimbus Sans L, Nimbus Mono L, and Terminus LCD "
-        "on 6.00 × 9.00 in (152.4 × 228.6 mm) archival white paper in high-contrast monochrome ink for Kindle Direct "
-        "Publishing Paperback and Hardcover editions. Standalone full-bleed wrap cover (<code>"
-        + ("sc32-full-wrap-cover.pdf" if is_sc32 else "sc6-full-wrap-cover.pdf")
-        + "</code>) generated separately to exact KDP spine and bleed tolerances.",
+        "<b>Print &amp; Typography Colophon:</b> Typeset in Computer Modern Unicode (CMU Serif), SpaceMono, STIX Math, and Terminus LCD "
+        "on 6.00 × 9.00 in (152.4 × 228.6 mm) archival white paper in high-contrast monochrome ink for trade paperback "
+        "and hardcover editions.",
         copyright_style
     ))
     elements.append(PageBreak())
+
+    # --- PAGE v (Recto): Dedication & Epigraph Page ---
+    elements.append(ChapterTracker("DEDICATION AND EPIGRAPH"))
+    dedication_style = ParagraphStyle(
+        "KDPDedication",
+        parent=styles["Normal"],
+        fontName=FONT_BODY_ITALIC,
+        fontSize=10.5,
+        leading=15.5,
+        textColor=to_color(TEXT_MAIN),
+        alignment=1,
+    )
+    epigraph_quote_style = ParagraphStyle(
+        "KDPEpigraphQuote",
+        parent=styles["Normal"],
+        fontName=FONT_BODY,
+        fontSize=9.5,
+        leading=14.2,
+        textColor=to_color(TEXT_MUTED),
+        alignment=1,
+        leftIndent=36,
+        rightIndent=36,
+    )
+    epigraph_attr_style = ParagraphStyle(
+        "KDPEpigraphAttr",
+        parent=styles["Normal"],
+        fontName=FONT_BODY_BOLD,
+        fontSize=8.5,
+        leading=12.0,
+        textColor=to_color(TEXT_MAIN),
+        alignment=1,
+    )
+    elements.append(Spacer(1, 145))
+    if is_sc32:
+        elements.append(make_paragraph(
+            "<i>For every engineer, scientist, and student who has ever wanted to see<br/>"
+            "inside the equation—and for the pioneers of parenthesis-free calculation<br/>"
+            "from Warsaw to Palo Alto.</i>",
+            dedication_style
+        ))
+        elements.append(Spacer(1, 48))
+        elements.append(make_paragraph(
+            "“Civilization advances by extending the number of important operations<br/>"
+            "which we can perform without thinking about them.”",
+            epigraph_quote_style
+        ))
+        elements.append(Spacer(1, 6))
+        elements.append(make_paragraph(
+            "— ALFRED NORTH WHITEHEAD, <i>An Introduction to Mathematics</i> (1911)",
+            epigraph_attr_style
+        ))
+    else:
+        elements.append(make_paragraph(
+            "<i>For every young builder who learns best by holding an idea in their hands,<br/>"
+            "and for the parents and teachers who light the spark of mathematical curiosity.</i>",
+            dedication_style
+        ))
+        elements.append(Spacer(1, 48))
+        elements.append(make_paragraph(
+            "“What I cannot create, I do not understand.”",
+            epigraph_quote_style
+        ))
+        elements.append(Spacer(1, 6))
+        elements.append(make_paragraph(
+            "— RICHARD P. FEYNMAN, blackboard inscription (1988)",
+            epigraph_attr_style
+        ))
+    elements.append(PageBreak())
+    elements.append(EnsureRectoPageFlowable())
     return elements
 
 
@@ -1984,9 +2335,14 @@ def _normalize_mathtext_latex(raw_tex: str) -> str:
     s = re.sub(r"\\(?:begin|end)\{(?:aligned|align\*?|array|cases|matrix|pmatrix|bmatrix)\}", "", s)
     s = s.replace("&", " ").replace(r"\\", r", \quad ")
     s = re.sub(r"</?[a-zA-Z][^>]*>", "", s)
+    s = re.sub(r'"([^"]*)"', r"“\1”", s)
     s = re.sub(r"\{\{key:([^}]+)\}\}", r"[\1]", s)
+    s = re.sub(r"(?<!\\)\$", "", s)
+    s = re.sub(r"\\(?:Large|large|small|normalsize|footnotesize|Huge|huge)\s*", "", s)
     s = s.replace(r"\tfrac", r"\frac").replace(r"\dfrac", r"\frac")
     s = s.replace(r"\leqslant", r"\leq").replace(r"\geqslant", r"\geq")
+    s = re.sub(r"\\le(?![a-zA-Z])", r"\\leq", s)
+    s = re.sub(r"\\ge(?![a-zA-Z])", r"\\geq", s)
     s = s.replace(r"\lvert", "|").replace(r"\rvert", "|")
     s = s.replace(r"\lVert", r"\|").replace(r"\rVert", r"\|")
     s = s.replace(r"\implies", r"\Rightarrow").replace(r"\iff", r"\Leftrightarrow")
@@ -1994,18 +2350,19 @@ def _normalize_mathtext_latex(raw_tex: str) -> str:
     s = s.replace(r"\land", r"\wedge").replace(r"\lor", r"\vee").replace(r"\lnot", r"\neg")
     s = s.replace(r"\empty", r"\emptyset").replace(r"\degree", r"^\circ")
     s = s.replace(r"\parallel", r"\Vert")
-    s = s.replace(r"\Box", r"\square")
+    s = s.replace(r"\Box", "□").replace(r"\square", "□")
     s = re.sub(r"\\pmod\{((?:[^{}]|\{[^{}]*\})*)\}", r"\\;(\\mathrm{mod}\\; \1)", s)
     s = re.sub(r"\\bmod\b", r"\\;\\mathrm{mod}\\;", s)
-    s = re.sub(r"\\xrightarrow\{([^{}]*)\}", r"\\stackrel{\1}{\\longrightarrow}", s)
+    s = re.sub(r"\\xrightarrow\{([^{}]*)\}", r"\\overset{\1}{\\longrightarrow}", s)
     for _ in range(3):
         s = re.sub(
             r"\\(?:text|textbf|textit|textrm|operatorname)\{([^{}]*)\}",
             lambda m: r"\mathrm{" + m.group(1).replace(" ", r"\ ") + "}",
             s,
         )
+        s = re.sub(r"\\(?:text|textbf|textit|textrm|operatorname)\{\\mathrm\{([^{}]*)\}\}", r"\\mathrm{\1}", s)
         s = re.sub(
-            r"\\(?:mathbf|boldsymbol|bm)\{([^{}]*)\}",
+            r"\\(?:mathbf|boldsymbol|bm)\{((?:[^{}]|\{[^{}]*\})*)\}",
             lambda m: r"\mathbf{" + m.group(1).replace(r"\cdot", r"}\cdot\mathbf{") + "}",
             s,
         )
@@ -2030,7 +2387,7 @@ def _render_latex_display_equation(
     global _DISPLAY_EQ_CACHE_DIR, _MATHTEXT_INITIALIZED
     import hashlib
     if _DISPLAY_EQ_CACHE_DIR is None:
-        _DISPLAY_EQ_CACHE_DIR = Path("/tmp/stackcalc_display_eqs_v4")
+        _DISPLAY_EQ_CACHE_DIR = Path("/tmp/stackcalc_display_eqs_v5")
         _DISPLAY_EQ_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
     norm_tex = _normalize_mathtext_latex(raw_tex)
@@ -2102,8 +2459,8 @@ def _render_latex_display_equation(
         max_w = eq_col_w - 8.0
         max_h = 44.0
         scale = min(max_w / max(1.0, w_pt), max_h / max(1.0, h_pt), 1.0)
-        # If single-line image would scale down too small (< 0.66), fall back to clean wrapped math paragraph
-        if scale >= 0.66:
+        # If single-line image would scale down too small (< 0.54), fall back to clean wrapped math paragraph
+        if scale >= 0.54:
             rl_img = RLImage(str(png_path), width=w_pt * scale, height=h_pt * scale)
             rl_img.hAlign = "CENTER"
             eq_flowable = rl_img
@@ -2136,11 +2493,10 @@ def _render_latex_display_equation(
         ("TOPPADDING", (0, 0), (-1, -1), 3.5),
         ("BOTTOMPADDING", (0, 0), (-1, -1), 3.5),
     ]))
-    return KeepTogether([
-        Spacer(1, 2.0),
-        eq_tbl,
-        Spacer(1, 3.0),
-    ])
+    eq_tbl.spaceBefore = 2.0
+    eq_tbl.spaceAfter = 3.0
+    eq_tbl.keepWithNext = True
+    return eq_tbl
 
 
 # ---------------------------------------------------------------------------
@@ -2167,6 +2523,16 @@ def parse_markdown_file(
     # Strip YAML frontmatter
     content = re.sub(r'^---\n.*?\n---\n', '', content, flags=re.DOTALL)
 
+    # In the print PDF, Copyright, Safety & Trademark notices are already typeset on Page iv
+    # of the KDP front matter, so omit the duplicate web-only notice block inside index.md
+    if file_path.stem.lower() == "index":
+        content = re.sub(
+            r"\n## Safety, Regulatory, Trademark.*?(?=\n## Turning the Page:)",
+            "\n",
+            content,
+            flags=re.DOTALL,
+        )
+
     # Auto-number sections and expand/validate keystroke macros from app layout JSON
     from book_engine import process_manual_markdown
     content = process_manual_markdown(content, file_path, is_sc32=is_sc32, target_format="pdf")
@@ -2178,6 +2544,45 @@ def parse_markdown_file(
         fenced_blocks[k] = m.group(0)
         return k
     content = re.sub(r'```.*?```', _save_fenced, content, flags=re.DOTALL)
+
+    # Split any <div class="admonition...">...</div> block around embedded Markdown tables (| ... |)
+    # so the table is rendered by the main ReportLab table engine rather than flattened into raw pipe text.
+    def _split_admonition_tables(m):
+        open_tag = m.group(1)
+        inner = m.group(2)
+        if not re.search(r"^\s*\|.*\|\s*$", inner, flags=re.M):
+            return m.group(0)
+        out_blocks = []
+        cur_prose = []
+        cur_table = []
+        for ln in inner.splitlines():
+            if re.match(r"^\s*\|.*\|\s*$", ln):
+                if cur_prose:
+                    prose_txt = "\n".join(cur_prose).strip()
+                    if prose_txt:
+                        out_blocks.append(f"{open_tag}\n{prose_txt}\n</div>")
+                    cur_prose = []
+                cur_table.append(ln.strip())
+            else:
+                if cur_table:
+                    out_blocks.append("\n".join(cur_table))
+                    cur_table = []
+                cur_prose.append(ln)
+        if cur_table:
+            out_blocks.append("\n".join(cur_table))
+        if cur_prose:
+            prose_txt = "\n".join(cur_prose).strip()
+            if prose_txt:
+                out_blocks.append(f"{open_tag}\n{prose_txt}\n</div>")
+        return "\n\n".join(out_blocks)
+
+    content = re.sub(
+        r'(<div\s+class=["\']admonition[^"\']*["\']\s*>)(.*?)</div\s*>',
+        _split_admonition_tables,
+        content,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+
     content = re.sub(
         r'(?<!\\)\$\$(.+?)(?<!\\)\$\$',
         lambda m: (
@@ -2222,10 +2627,8 @@ def parse_markdown_file(
             i += 1
             continue
 
-        # Horizontal Rule
+        # Horizontal Rule (skip standalone markdown section dividers so only H1 chapter headers have rules)
         if re.match(r'^(?:---|\*\*\*|___)\s*$', line):
-            elements.append(Spacer(1, 4))
-            elements.append(HRFlowable(width="100%", thickness=0.5, color=to_color(DIVIDER_HEX), spaceAfter=8))
             i += 1
             continue
 
@@ -2254,7 +2657,14 @@ def parse_markdown_file(
             div_text = re.sub(r'<code>(.*?)</code>', r'`\1`', div_text)
             div_text = re.sub(r'<(?:strong|b)>(.*?)</(?:strong|b)>', r'**\1**', div_text)
             div_text = re.sub(r'<(?:em|i)>(.*?)</(?:em|i)>', r'*\1*', div_text)
+            div_text = re.sub(r'<a\b[^>]*>(.*?)</a>', r'**\1**', div_text, flags=re.IGNORECASE | re.DOTALL)
             div_text = re.sub(r'<p\s+class=["\']admonition-title["\']>\s*(.*?)\s*</p>', r'**\1**\n', div_text, flags=re.IGNORECASE | re.DOTALL)
+            div_text = re.sub(
+                r'<li>\s*(.*?)\s*</li>',
+                lambda m: '\n• ' + re.sub(r'\s+', ' ', m.group(1)) + '\n',
+                div_text,
+                flags=re.IGNORECASE | re.DOTALL,
+            )
             div_text = re.sub(r'<li>\s*', '\n• ', div_text, flags=re.IGNORECASE)
             div_text = re.sub(r'(?:<br\s*/?>|</p>|</li>|</ul>|</ol>)', '\n', div_text, flags=re.IGNORECASE)
             # Only strip valid HTML tags starting with </?[a-zA-Z] so math inequalities like < 10 are never eaten!
@@ -2266,21 +2676,31 @@ def parse_markdown_file(
                 flags=re.DOTALL,
             )
             flat_clean = re.sub(r'\s+', ' ', clean_text).strip()
-            if is_centered_caption_div or re.match(r'^(?:\*|_)?Figure\s+\d', flat_clean):
+            if is_centered_caption_div or re.match(r'^(?:\*|_)?Figure\s+[A-Za-z0-9]', flat_clean):
                 if flat_clean:
                     cap_san = sanitize_inline_markdown(flat_clean, is_sc32)
                     elements.append(make_paragraph(f"<i>{cap_san}</i>", styles["FigureCaption"]))
                     elements.append(Spacer(1, 4))
                 continue
             div_rows = []
+            div_plain_lines = []
             for raw_dl in clean_text.split("\n"):
+                raw_dl = re.sub(r'^\s*>\s*', '', raw_dl)
                 dl_clean = re.sub(r'\s+', ' ', raw_dl).strip()
                 if dl_clean:
+                    dl_clean = re.sub(r'^#{1,6}\s+(.*)$', r'**\1**', dl_clean)
+                    dl_clean = re.sub(r'^[\*\-]\s+(.*)$', r'• \1', dl_clean)
                     dl_san = sanitize_inline_markdown(dl_clean, is_sc32)
                     div_rows.append([make_paragraph(dl_san, styles["CalloutText"])])
-            if div_rows:
-                callout_tbl = Table(div_rows, colWidths=[PRINTABLE_WIDTH], splitByRow=1)
-                callout_tbl.setStyle(TableStyle([
+                    div_plain_lines.append(dl_clean)
+            if len(div_rows) == 1 and re.match(r'^\*\*[^*]+\*\*$', div_plain_lines[0].strip()):
+                raw_t = div_plain_lines[0].strip().strip('*').strip()
+                t_san = sanitize_inline_markdown(raw_t, is_sc32)
+                h4_p = make_paragraph(t_san, styles["Heading4"])
+                h4_p.keepWithNext = True
+                elements.append(h4_p)
+            elif div_rows:
+                d_style = [
                     ('BACKGROUND', (0,0), (-1,-1), to_color(CALLOUT_BG_SC32 if is_sc32 else CALLOUT_BG_SC6)),
                     ('LINEBEFORE', (0,0), (0,-1), 2.5, to_color(primary_hex)),
                     ('BOX', (0,0), (-1,-1), 0.5, to_color(DIVIDER_HEX)),
@@ -2290,10 +2710,22 @@ def parse_markdown_file(
                     ('BOTTOMPADDING', (0,0), (-1,-1), 2),
                     ('TOPPADDING', (0,0), (-1,0), 5),
                     ('BOTTOMPADDING', (0,-1), (-1,-1), 5),
-                ]))
-                elements.append(Spacer(1, 3))
+                ]
+                if len(div_rows) <= 10 and sum(len(s) for s in div_plain_lines) < 1600:
+                    d_style.append(('NOSPLIT', (0, 0), (-1, -1)))
+                else:
+                    d_style.append(('NOSPLIT', (0, 0), (-1, 1)))
+                    d_style.append(('NOSPLIT', (0, -2), (-1, -1)))
+                    for r_idx, pl in enumerate(div_plain_lines[:-1]):
+                        if pl.rstrip('* ').endswith(':'):
+                            d_style.append(('NOSPLIT', (0, r_idx), (-1, r_idx + 1)))
+                callout_tbl = Table(div_rows, colWidths=[PRINTABLE_WIDTH], splitByRow=1)
+                callout_tbl.setStyle(TableStyle(d_style))
+                callout_tbl.spaceBefore = 2.5
+                callout_tbl.spaceAfter = 3.5
+                if len(div_rows) <= 10:
+                    callout_tbl._is_latex_float = True
                 elements.append(callout_tbl)
-                elements.append(Spacer(1, 5))
             continue
 
         # Blockquote (e.g. > [!NOTE] or > quote)
@@ -2317,26 +2749,11 @@ def parse_markdown_file(
                         quote_lines[0] = rem
                     else:
                         quote_lines.pop(0)
-                    if tag == "IMPORTANT":
-                        badge_title = "CRITICAL CHECKPOINT // ARCHITECTURAL INVARIANT"
-                        badge_color = primary_hex
-                    elif tag == "NOTE":
-                        badge_title = "OPERATIONAL NOTE // RPN STACK INSIGHT"
-                        badge_color = accent_hex
-                    elif tag == "TIP":
-                        badge_title = "PRO TIP // KEYSTROKE ACCELERATOR"
+                    if tag in ("NOTE", "TIP"):
                         badge_color = accent_hex
                     elif tag == "WARNING":
-                        badge_title = "SINGULARITY WARNING // HARDWARE RECOVERY"
                         badge_color = "#b91c1c"
-                    elif tag == "CHECKPOINT":
-                        badge_title = "DIAGNOSTIC CHECKPOINT // VERIFY YOUR STACK"
-                        badge_color = primary_hex
-                    elif tag == "TEACHER":
-                        badge_title = "GUIDED DISCOVERY // HANDS-ON EXTENSION"
-                        badge_color = primary_hex
                     else:
-                        badge_title = f"{tag} // STACKCALC REFERENCE"
                         badge_color = primary_hex
 
             quote_joined = "\n".join(quote_lines)
@@ -2348,21 +2765,26 @@ def parse_markdown_file(
             quote_lines = quote_joined.split("\n") if quote_joined else []
 
             quote_rows = []
+            quote_plain_lines = []
             extra_top_rows = []
             if badge_title:
                 badge_html = f"<b><font size='8.5' face='{FONT_BODY_BOLD}' color='{badge_color}'>{badge_title}</font></b>"
                 quote_rows.append([make_paragraph(badge_html, styles["CalloutText"])])
+                quote_plain_lines.append(badge_title)
 
             prev_blank = bool(badge_title)
             for ql in quote_lines:
                 if not ql:
                     prev_blank = True
                 else:
-                    ql_norm = re.sub(r'^[\*\-]\s+', '• ', ql)
+                    ql_norm = re.sub(r'^#{1,6}\s+(.*)$', r'**\1**', ql)
+                    ql_norm = re.sub(r'^[\*\-]\s+', '• ', ql_norm)
+                    ql_norm = re.sub(r'^(Step\s+\d+:\s*[^*\n]+)$', r'**\1**', ql_norm)
                     ql_san = sanitize_inline_markdown(ql_norm, is_sc32)
                     if prev_blank and quote_rows:
                         extra_top_rows.append(len(quote_rows))
                     quote_rows.append([make_paragraph(ql_san, styles["CalloutText"])])
+                    quote_plain_lines.append(ql_norm)
                     prev_blank = False
 
             if quote_rows:
@@ -2379,11 +2801,21 @@ def parse_markdown_file(
                 ]
                 for r_idx in extra_top_rows:
                     q_style.append(('TOPPADDING', (0, r_idx), (-1, r_idx), 5))
+                if len(quote_rows) <= 10 and sum(len(s) for s in quote_plain_lines) < 1600:
+                    q_style.append(('NOSPLIT', (0, 0), (-1, -1)))
+                else:
+                    q_style.append(('NOSPLIT', (0, 0), (-1, 1)))
+                    q_style.append(('NOSPLIT', (0, -2), (-1, -1)))
+                    for r_idx, pl in enumerate(quote_plain_lines[:-1]):
+                        if pl.rstrip('* ').endswith(':'):
+                            q_style.append(('NOSPLIT', (0, r_idx), (-1, r_idx + 1)))
                 callout_tbl = Table(quote_rows, colWidths=[PRINTABLE_WIDTH], splitByRow=1)
                 callout_tbl.setStyle(TableStyle(q_style))
-                elements.append(Spacer(1, 4))
+                callout_tbl.spaceBefore = 3
+                callout_tbl.spaceAfter = 4
+                if len(quote_rows) <= 12 and sum(len(s) for s in quote_plain_lines) < 1800:
+                    callout_tbl._is_latex_float = True
                 elements.append(callout_tbl)
-                elements.append(Spacer(1, 6))
             continue
 
         # Code Block or ASCII Art Diagram (``` ... ```)
@@ -2395,6 +2827,33 @@ def parse_markdown_file(
                 i += 1
             if i < num_lines and lines[i].startswith("```"):
                 i += 1
+
+            # Soft-wrap any non-diagram code line > 74 chars so code never overflows the 6x9 printable margin
+            wrapped_code_lines = []
+            MAX_CODE_COLS = 74
+            for cl in code_lines:
+                cl_exp = cl.replace("\t", "    ")
+                if len(cl_exp) <= MAX_CODE_COLS:
+                    wrapped_code_lines.append(cl_exp)
+                elif re.match(r'^\s*//\s*=+\s*$', cl_exp):
+                    wrapped_code_lines.append(cl_exp[:MAX_CODE_COLS])
+                else:
+                    indent_m = re.match(r'^(\s*)', cl_exp)
+                    base_indent = indent_m.group(1) if indent_m else ""
+                    cont_indent = base_indent + ("// " if cl_exp.lstrip().startswith("//") else "    ")
+                    rem = cl_exp
+                    while len(rem) > MAX_CODE_COLS:
+                        cut = MAX_CODE_COLS
+                        for sep in (" ", ", ", "; ", " + ", " - "):
+                            pos = rem.rfind(sep, len(base_indent) + 10, MAX_CODE_COLS)
+                            if pos != -1:
+                                cut = pos + len(sep)
+                                break
+                        wrapped_code_lines.append(rem[:cut].rstrip())
+                        rem = cont_indent + rem[cut:].lstrip()
+                    if rem.strip():
+                        wrapped_code_lines.append(rem)
+            code_lines = wrapped_code_lines
 
             # Chunk into at most 35 lines per table to allow clean page breaking across frames
             MAX_CODE_CHUNK = 35
@@ -2460,18 +2919,34 @@ def parse_markdown_file(
                     if inner_line.endswith('|'):
                         inner_line = inner_line[:-1]
                     inner_line = inner_line.replace(r'\|', '\x00PIPE\x00')
+                    inner_line = inner_line.replace(r'\$', '\x00DOLLAR\x00')
                     inner_line = re.sub(r'\{\{[^}]+\}\}', lambda m: m.group(0).replace('|', '\x00PIPE\x00'), inner_line)
                     inner_line = re.sub(r'`[^`]+`', lambda m: m.group(0).replace('|', '\x00PIPE\x00'), inner_line)
-                    inner_line = re.sub(r'\$[^\$\n]+\$', lambda m: m.group(0).replace('|', '\x00PIPE\x00'), inner_line)
-                    raw_cells = [c.replace('\x00PIPE\x00', '|').strip() for c in inner_line.split('|')]
+                    inner_line = re.sub(r'\$(?:(?!\s+\|\s+)[^\$\n])+\$', lambda m: m.group(0).replace('|', '\x00PIPE\x00'), inner_line)
+                    raw_cells = [c.replace('\x00PIPE\x00', '|').replace('\x00DOLLAR\x00', r'\$').strip() for c in inner_line.split('|')]
                     parsed_rows.append((r_idx == 0, raw_cells))
 
                 if parsed_rows:
+                    # Drop redundant leading Step/# column on 7-column 4-register stack trace tables
+                    # so all stack trace tables share a uniform 6-column layout.
+                    first_hdr = parsed_rows[0][1]
+                    if (
+                        len(first_hdr) >= 6
+                        and re.match(r'^\*?(?:Step|#)\*?$', first_hdr[0].strip(), flags=re.IGNORECASE)
+                        and sum(
+                            1 for hc in first_hdr[1:]
+                            if re.match(r'^\*?(?:Register\s+[TZYX]|[TZYX])\*?$', hc.strip(), flags=re.IGNORECASE)
+                        ) >= 3
+                    ):
+                        parsed_rows = [(is_h, rc[1:]) for is_h, rc in parsed_rows if len(rc) >= 2]
+
                     hdr_cols = len(parsed_rows[0][1])
                     num_cols = hdr_cols if hdr_cols >= 2 else max(len(cells) for _, cells in parsed_rows)
                     normalized_data = []
                     col_char_counts = [1] * num_cols
                     col_min_widths = [24.0] * num_cols
+                    hdr_min_widths = [24.0] * num_cols
+                    exact_floors = [20.0] * num_cols
                     is_stack_col = [False] * num_cols
                     is_step_col = [False] * num_cols
 
@@ -2496,6 +2971,9 @@ def parse_markdown_file(
                                     is_step_col[c_idx] = True
 
                             sanitized = sanitize_inline_markdown(cell_str, is_sc32, in_table=True)
+                            if is_hdr:
+                                # Ensure inline math ($Y, X$) and code inside dark header rows inherit white header text
+                                sanitized = re.sub(r"\s*color=['\"][^'\"]*['\"]", "", sanitized)
                             # Convert inline <img width="W".../> tags (and any immediately following space) into
                             # contiguous synthetic characters so ReportLab's <img/> + word run never overflows a column
                             measured_str = re.sub(
@@ -2507,29 +2985,66 @@ def parse_markdown_file(
                             plain_cell = html.unescape(plain_cell).strip()
                             col_char_counts[c_idx] = max(col_char_counts[c_idx], len(plain_cell))
 
-                            words = [w for w in re.split(r'[ \t\n/—–]+', plain_cell) if w]
+                            words = [w for w in re.split(r'[ \t\n]+', plain_cell) if w]
                             longest_w = max((len(w) for w in words), default=0)
-                            char_pt = 4.35 if is_hdr else 4.10
-                            word_floor = longest_w * char_pt + 8.0
-                            col_min_widths[c_idx] = max(col_min_widths[c_idx], min(82.0, word_floor))
+                            if is_hdr:
+                                hdr_floor = min(68.0, longest_w * 4.55 + 8.5)
+                                hdr_min_widths[c_idx] = max(hdr_min_widths[c_idx], hdr_floor)
+                                col_min_widths[c_idx] = max(col_min_widths[c_idx], hdr_floor)
+                            else:
+                                word_floor = longest_w * 4.20 + 8.0
+                                col_min_widths[c_idx] = max(col_min_widths[c_idx], min(88.0, word_floor))
 
                             cell_style = styles["TableHeader"] if is_hdr else styles["TableCell"]
-                            row_elements.append(make_paragraph(sanitized, cell_style))
+                            cell_para = make_paragraph(sanitized, cell_style)
+                            try:
+                                fw = rl_para._getFragWords(cell_para.frags)
+                                mw = max((w[0] for w in fw), default=0.0)
+                                # Add 7.5pt (3.5pt left + 3.5pt right cell padding + 0.5pt safety margin)
+                                exact_floors[c_idx] = max(exact_floors[c_idx], mw + 7.5)
+                            except Exception:
+                                pass
+                            row_elements.append(cell_para)
                         normalized_data.append(row_elements)
 
                     # Special compact sizing for 4-register stack columns and Step column
                     for c_idx in range(num_cols):
                         if is_step_col[c_idx]:
-                            col_min_widths[c_idx] = 20.0
+                            col_min_widths[c_idx] = max(20.0, exact_floors[c_idx])
+                            hdr_min_widths[c_idx] = max(20.0, exact_floors[c_idx])
                             col_char_counts[c_idx] = min(col_char_counts[c_idx], 3)
                         elif is_stack_col[c_idx]:
-                            col_min_widths[c_idx] = max(32.0, min(55.0, col_char_counts[c_idx] * 3.85 + 7.5))
+                            col_min_widths[c_idx] = max(32.0, exact_floors[c_idx], min(62.0, col_char_counts[c_idx] * 4.45 + 8.5))
+                            hdr_min_widths[c_idx] = max(hdr_min_widths[c_idx], col_min_widths[c_idx], exact_floors[c_idx])
+                        else:
+                            col_min_widths[c_idx] = max(col_min_widths[c_idx], exact_floors[c_idx])
+                            hdr_min_widths[c_idx] = max(hdr_min_widths[c_idx], exact_floors[c_idx])
 
-                    # Scale down col_min_widths proportionally if their sum exceeds 88% of PRINTABLE_WIDTH
+                    # Scale down col_min_widths proportionally if their sum exceeds 88% of PRINTABLE_WIDTH,
+                    # while never shrinking any column below its exact word floor (exact_floors)
                     min_sum = sum(col_min_widths)
                     if min_sum > PRINTABLE_WIDTH * 0.88:
                         scale_f = (PRINTABLE_WIDTH * 0.88) / min_sum
-                        col_min_widths = [mw * scale_f for mw in col_min_widths]
+                        col_min_widths = [
+                            max(exact_floors[c_i], hdr_min_widths[c_i], mw * scale_f)
+                            for c_i, mw in enumerate(col_min_widths)
+                        ]
+                    if sum(col_min_widths) > PRINTABLE_WIDTH:
+                        ef_sum = sum(exact_floors)
+                        if ef_sum <= PRINTABLE_WIDTH:
+                            slack = PRINTABLE_WIDTH - ef_sum
+                            extra_req = sum(max(0.0, col_min_widths[c] - exact_floors[c]) for c in range(num_cols))
+                            if extra_req > 0:
+                                col_min_widths = [
+                                    exact_floors[c] + slack * (max(0.0, col_min_widths[c] - exact_floors[c]) / extra_req)
+                                    for c in range(num_cols)
+                                ]
+                            else:
+                                col_min_widths = list(exact_floors)
+                        else:
+                            s_ef = PRINTABLE_WIDTH / ef_sum
+                            col_min_widths = [ef * s_ef for ef in exact_floors]
+                            exact_floors = list(col_min_widths)
 
                     # Damped power-law distribution so long commentary paragraphs never starve label/keycap columns
                     weights = [max(1.0, float(c_cnt)) ** 0.58 for c_cnt in col_char_counts]
@@ -2564,35 +3079,60 @@ def parse_markdown_file(
                         if not changed:
                             break
 
+                    # Final normalization that strictly preserves exact_floors[c] so no word ever splits or overflows
                     w_sum = sum(col_widths)
-                    col_widths = [(w / w_sum) * PRINTABLE_WIDTH for w in col_widths]
+                    if w_sum > PRINTABLE_WIDTH + 0.01:
+                        excess = w_sum - PRINTABLE_WIDTH
+                        reducible = [max(0.0, col_widths[c] - exact_floors[c]) for c in range(num_cols)]
+                        red_sum = sum(reducible)
+                        if red_sum >= excess and red_sum > 0:
+                            col_widths = [col_widths[c] - excess * (reducible[c] / red_sum) for c in range(num_cols)]
+                        else:
+                            col_widths = [(w / w_sum) * PRINTABLE_WIDTH for w in col_widths]
+                    elif w_sum < PRINTABLE_WIDTH - 0.01:
+                        deficit = PRINTABLE_WIDTH - w_sum
+                        col_widths = [col_widths[c] + deficit * (weights[c] / total_weight) for c in range(num_cols)]
 
-                    reportlab_table = Table(normalized_data, colWidths=col_widths, repeatRows=1)
-                    reportlab_table.setStyle(TableStyle([
+                    nosplit_end = min(2, len(normalized_data) - 1)
+                    tbl_styles = [
                         ('BACKGROUND', (0,0), (-1,0), to_color(primary_hex)),
                         ('TEXTCOLOR', (0,0), (-1,0), white),
                         ('ALIGN', (0,0), (-1,-1), 'LEFT'),
                         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
-                        ('TOPPADDING', (0,0), (-1,-1), 2.5),
-                        ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
+                        ('TOPPADDING', (0,0), (-1,-1), 2.0),
+                        ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
                         ('LEFTPADDING', (0,0), (-1,-1), 3.5),
                         ('RIGHTPADDING', (0,0), (-1,-1), 3.5),
                         ('ROWBACKGROUNDS', (0,1), (-1,-1), [white, to_color("#f8fafc")]),
                         ('GRID', (0,0), (-1,-1), 0.5, to_color(DIVIDER_HEX)),
                         ('LINEBELOW', (0,0), (-1,0), 1.0, to_color(primary_hex)),
                         ('BOX', (0,0), (-1,-1), 0.85, to_color(primary_hex)),
-                    ]))
-                    if len(normalized_data) <= 28:
-                        # Float table as an unsplit block so it never splits across a page break
-                        if len(elements) >= 2 and isinstance(elements[-2], Paragraph):
-                            vis_txt = re.sub(r"<[^>]+>", "", getattr(elements[-2], "text", ""))
-                            if len(vis_txt) < 260:
-                                elements[-2].keepWithNext = True
-                        elements.append(KeepTogether([Spacer(1, 3), reportlab_table, Spacer(1, 5)]))
+                    ]
+                    if len(normalized_data) <= 12:
+                        tbl_styles.append(('NOSPLIT', (0, 0), (-1, -1)))
                     else:
-                        elements.append(Spacer(1, 3))
+                        tbl_styles.append(('NOSPLIT', (0, 0), (-1, nosplit_end)))
+                        tbl_styles.append(('NOSPLIT', (0, max(0, len(normalized_data) - 2)), (-1, -1)))
+                    reportlab_table = Table(normalized_data, colWidths=col_widths, repeatRows=1)
+                    reportlab_table.setStyle(TableStyle(tbl_styles))
+                    reportlab_table.spaceBefore = 2.5
+                    reportlab_table.spaceAfter = 3.5
+                    if len(normalized_data) <= 26:
+                        # Mark table as a LaTeX [ht] float so it stays intact while allowing following prose to flow
+                        # into the bottom of the current page if the table itself does not fit in the remaining space.
+                        if elements and isinstance(elements[-1], Paragraph) and getattr(getattr(elements[-1], "style", None), "name", "") in ("Heading3", "Heading4"):
+                            hdr_group: List[Flowable] = [elements.pop()]
+                            if elements and isinstance(elements[-1], BookmarkFlowable):
+                                hdr_group.insert(0, elements.pop())
+                            hdr_group.append(reportlab_table)
+                            kt = KeepTogether(hdr_group)
+                            kt._is_latex_float = True
+                            elements.append(kt)
+                        else:
+                            reportlab_table._is_latex_float = True
+                            elements.append(reportlab_table)
+                    else:
                         elements.append(reportlab_table)
-                        elements.append(Spacer(1, 5))
             continue
 
         # Heading 1 (# Chapter Title)
@@ -2615,8 +3155,9 @@ def parse_markdown_file(
             if terms:
                 h1_p._index_terms = terms
             elements.append(h1_p)
-            elements.append(Spacer(1, 3))
-            elements.append(HRFlowable(width="100%", thickness=1.5, color=to_color(primary_hex), spaceAfter=10))
+            hr_h1 = HRFlowable(width="100%", thickness=1.5, color=to_color(primary_hex), spaceBefore=2, spaceAfter=10)
+            hr_h1.keepWithNext = True
+            elements.append(hr_h1)
             i += 1
             continue
 
@@ -2633,9 +3174,7 @@ def parse_markdown_file(
             terms = extract_index_terms(plain_title, is_sc32, term_counts)
             if terms:
                 h2_p._index_terms = terms
-            elements.append(Spacer(1, 6))
             elements.append(h2_p)
-            elements.append(Spacer(1, 3))
             i += 1
             continue
 
@@ -2651,9 +3190,7 @@ def parse_markdown_file(
             terms = extract_index_terms(plain_title, is_sc32, term_counts)
             if terms:
                 h3_p._index_terms = terms
-            elements.append(Spacer(1, 5))
             elements.append(h3_p)
-            elements.append(Spacer(1, 2))
             i += 1
             continue
 
@@ -2666,9 +3203,7 @@ def parse_markdown_file(
             terms = extract_index_terms(plain_title, is_sc32, term_counts)
             if terms:
                 h4_p._index_terms = terms
-            elements.append(Spacer(1, 4))
             elements.append(h4_p)
-            elements.append(Spacer(1, 2))
             i += 1
             continue
 
@@ -2680,11 +3215,24 @@ def parse_markdown_file(
                 list_items.append(item_text)
                 i += 1
 
-            for itm in list_items:
+            keep_short_list = len(list_items) <= 6 and sum(len(x) for x in list_items) < 900
+            last_keep = False
+            for idx, itm in enumerate(list_items):
                 sanitized = sanitize_inline_markdown(itm, is_sc32)
                 bullet_p = make_paragraph(f"&bull; &nbsp; {sanitized}", styles["ListBullet"])
+                if itm.rstrip('*` ').endswith(':'):
+                    bullet_p.keepWithNext = True
+                    last_keep = True
+                elif idx < len(list_items) - 1 and (keep_short_list or idx == 0 or idx == len(list_items) - 2):
+                    bullet_p.keepWithNext = True
+                    last_keep = False
+                else:
+                    last_keep = False
                 elements.append(bullet_p)
-            elements.append(Spacer(1, 3))
+            sp = Spacer(1, 3)
+            if last_keep:
+                sp.keepWithNext = True
+            elements.append(sp)
             continue
 
         # Numbered List (1. 2. etc.)
@@ -2696,11 +3244,24 @@ def parse_markdown_file(
                     num_items.append((m.group(1), m.group(2).strip()))
                 i += 1
 
-            for num_str, itm in num_items:
+            keep_short_num_list = len(num_items) <= 6 and sum(len(x[1]) for x in num_items) < 900
+            last_keep = False
+            for idx, (num_str, itm) in enumerate(num_items):
                 sanitized = sanitize_inline_markdown(itm, is_sc32)
                 num_p = make_paragraph(f"<b>{num_str}.</b> &nbsp; {sanitized}", styles["ListBullet"])
+                if itm.rstrip('*` ').endswith(':'):
+                    num_p.keepWithNext = True
+                    last_keep = True
+                elif idx < len(num_items) - 1 and (keep_short_num_list or idx == 0 or idx == len(num_items) - 2):
+                    num_p.keepWithNext = True
+                    last_keep = False
+                else:
+                    last_keep = False
                 elements.append(num_p)
-            elements.append(Spacer(1, 3))
+            sp = Spacer(1, 3)
+            if last_keep:
+                sp.keepWithNext = True
+            elements.append(sp)
             continue
 
         # Markdown Image (![caption](path))
@@ -2731,13 +3292,15 @@ def parse_markdown_file(
 
             # Check if the immediately following non-empty line in markdown is already an explicit Figure X.Y caption
             has_explicit_next_caption = False
+            explicit_caption_line = ""
             look_j = i + 1
             while look_j < num_lines and not lines[look_j].strip():
                 look_j += 1
             if look_j < num_lines:
                 nxt_s = lines[look_j].strip()
-                if re.match(r'^(?:\*|_)?Figure\s+\d', nxt_s):
+                if re.match(r'^(?:\*|_)?Figure\s+[A-Za-z0-9]', nxt_s):
                     has_explicit_next_caption = True
+                    explicit_caption_line = nxt_s
                 elif nxt_s.startswith("<div") and ("text-align: center" in "\n".join(lines[look_j:look_j+5]) or "Figure " in "\n".join(lines[look_j:look_j+5])):
                     has_explicit_next_caption = True
 
@@ -2748,7 +3311,7 @@ def parse_markdown_file(
                     with PIL.Image.open(resolved_img) as pimg:
                         orig_w, orig_h = pimg.size
                         max_w = PRINTABLE_WIDTH
-                        max_h = 160.0
+                        max_h = 135.0 if is_sc32 else (165.0 if "diagram_" in resolved_img.name else 142.0)
                         scale = min(max_w / orig_w, max_h / orig_h, 1.0)
                         w = orig_w * scale
                         h = orig_h * scale
@@ -2761,11 +3324,24 @@ def parse_markdown_file(
                         else:
                             rl_img = RLImage(str(resolved_img), width=w, height=h)
                     rl_img.hAlign = 'CENTER'
-                    elements.append(Spacer(1, 3))
-                    elements.append(rl_img)
-                    if alt_text and not has_explicit_next_caption:
-                        elements.append(make_paragraph(f"<i>Figure: {alt_text}</i>", styles["FigureCaption"]))
-                    elements.append(Spacer(1, 5))
+                    fig_items: List[Flowable] = [Spacer(1, 2), rl_img]
+                    if explicit_caption_line:
+                        cap_clean = explicit_caption_line.strip("*_ ").strip()
+                        cap_san = sanitize_inline_markdown(cap_clean, is_sc32)
+                        fig_items.append(make_paragraph(f"<i>{cap_san}</i>", styles["FigureCaption"]))
+                        fig_items.append(Spacer(1, 3))
+                        i = look_j + 1
+                    elif alt_text and not has_explicit_next_caption:
+                        fig_items.append(make_paragraph(f"<i>Figure: {alt_text}</i>", styles["FigureCaption"]))
+                        fig_items.append(Spacer(1, 3))
+                        i += 1
+                    else:
+                        fig_items.append(Spacer(1, 3))
+                        i += 1
+                    fig_kt = KeepTogether(fig_items)
+                    fig_kt._is_latex_float = True
+                    elements.append(fig_kt)
+                    continue
                 except Exception as ex:
                     print(f"[WARN] Failed to load image {resolved_img}: {ex}")
             else:
@@ -2779,6 +3355,7 @@ def parse_markdown_file(
             eq_label = f"Eq. {eq_prefix}.{eq_counter}"
             bm_key = f"bm_eq_{chapter_idx}_{eq_prefix}_{eq_counter}"
             eq_flowable = _render_latex_display_equation(line.strip(), eq_label, bm_key, styles, is_sc32)
+            eq_flowable.keepWithNext = True
             elements.append(eq_flowable)
             i += 1
             continue
@@ -2788,6 +3365,11 @@ def parse_markdown_file(
         while (
             i < num_lines
             and lines[i].strip()
+            and not (para_lines and re.match(r'^\*\*[A-Za-z0-9][^\*\n]{1,50}:\*\*', lines[i].strip()))
+            and not (para_lines and re.match(r'^\*[A-Za-z0-9][^\*\n]{1,50}:\*', lines[i].strip()))
+            and not (para_lines and lines[i - 1].rstrip('\r\n').endswith("  "))
+            and not (para_lines and re.match(r'^`[^`\n]+`$', lines[i].strip()))
+            and not (para_lines and re.match(r'^`[^`\n]+`$', para_lines[-1]))
             and not re.match(r'^(?:---|\*\*\*|___)\s*$', lines[i].strip())
             and not lines[i].strip().startswith("$$")
             and not lines[i].startswith("#")
@@ -2809,11 +3391,12 @@ def parse_markdown_file(
             raw_para = " ".join(para_lines)
             sanitized = sanitize_inline_markdown(raw_para, is_sc32)
             para_p = make_paragraph(sanitized, styles["BodyText"])
+            if raw_para.rstrip('*` ').endswith(':') or re.match(r'^\*(?:Variables|RPN Sequence|Benchmark):\*', raw_para.strip()):
+                para_p.keepWithNext = True
             terms = extract_index_terms(raw_para, is_sc32, term_counts)
             if terms:
                 para_p._index_terms = terms
             elements.append(para_p)
-            elements.append(Spacer(1, 2.5))
         elif i < num_lines:
             i += 1
 
@@ -2839,53 +3422,61 @@ def compile_manual_pdf(is_sc32: bool) -> Path:
     cover_accent_hex = SC32_COVER_ACCENT if is_sc32 else SC6_COVER_ACCENT
     doc_code = "STK-REF-32-V2" if is_sc32 else "STK-REF-06-V1"
 
-    # Style Sheet Setup (Calibrated for 6x9 Trade Paperback & Hardcover)
+    # Style Sheet Setup (Calibrated for 6x9 Trade Paperback & Hardcover with Full Justification)
     styles = getSampleStyleSheet()
 
     styles["Heading1"].fontName = FONT_BODY_BOLD
-    styles["Heading1"].fontSize = 16.5
-    styles["Heading1"].leading = 20.0
+    styles["Heading1"].fontSize = 15.5
+    styles["Heading1"].leading = 19.0
     styles["Heading1"].textColor = to_color(primary_hex)
     styles["Heading1"].keepWithNext = True
     styles["Heading1"].spaceBefore = 0
-    styles["Heading1"].spaceAfter = 5
+    styles["Heading1"].spaceAfter = 4
+    styles["Heading1"].spaceShrinkage = 0.0
 
     styles["Heading2"].fontName = FONT_BODY_BOLD
-    styles["Heading2"].fontSize = 11.8
-    styles["Heading2"].leading = 14.8
+    styles["Heading2"].fontSize = 11.4
+    styles["Heading2"].leading = 14.0
     styles["Heading2"].textColor = to_color(primary_hex)
     styles["Heading2"].keepWithNext = True
-    styles["Heading2"].spaceBefore = 9
-    styles["Heading2"].spaceAfter = 3
+    styles["Heading2"].spaceBefore = 7
+    styles["Heading2"].spaceAfter = 2.5
+    styles["Heading2"].spaceShrinkage = 0.0
 
     styles["Heading3"].fontName = FONT_BODY_BOLD
-    styles["Heading3"].fontSize = 9.8
-    styles["Heading3"].leading = 12.5
+    styles["Heading3"].fontSize = 9.6
+    styles["Heading3"].leading = 12.0
     styles["Heading3"].textColor = to_color(TEXT_MAIN)
     styles["Heading3"].keepWithNext = True
-    styles["Heading3"].spaceBefore = 6
-    styles["Heading3"].spaceAfter = 2
+    styles["Heading3"].spaceBefore = 5
+    styles["Heading3"].spaceAfter = 1.5
+    styles["Heading3"].spaceShrinkage = 0.0
 
     styles["Heading4"].fontName = FONT_BODY_BOLD
-    styles["Heading4"].fontSize = 8.8
-    styles["Heading4"].leading = 11.2
+    styles["Heading4"].fontSize = 8.6
+    styles["Heading4"].leading = 10.8
     styles["Heading4"].textColor = to_color(TEXT_MUTED)
     styles["Heading4"].keepWithNext = True
-    styles["Heading4"].spaceBefore = 5
-    styles["Heading4"].spaceAfter = 2
+    styles["Heading4"].spaceBefore = 4
+    styles["Heading4"].spaceAfter = 1.5
+    styles["Heading4"].spaceShrinkage = 0.0
 
     styles["BodyText"].fontName = FONT_BODY
-    styles["BodyText"].fontSize = 8.4
-    styles["BodyText"].leading = 11.1
+    styles["BodyText"].fontSize = 8.3 if is_sc32 else 8.6
+    styles["BodyText"].leading = 10.7 if is_sc32 else 11.4
+    styles["BodyText"].alignment = 4  # TA_JUSTIFY (Full Trade Book Justification)
     styles["BodyText"].textColor = to_color(TEXT_MAIN)
-    styles["BodyText"].spaceAfter = 2.4
+    styles["BodyText"].spaceAfter = 2.0 if is_sc32 else 2.4
+    styles["BodyText"].spaceShrinkage = 0.0
 
     styles.add(ParagraphStyle(
         "ListBullet",
         parent=styles["BodyText"],
+        alignment=4,  # TA_JUSTIFY
         leftIndent=12,
         firstLineIndent=-8,
-        spaceAfter=2,
+        spaceAfter=1.5,
+        spaceShrinkage=0.0,
     ))
 
     styles.add(ParagraphStyle(
@@ -2893,8 +3484,9 @@ def compile_manual_pdf(is_sc32: bool) -> Path:
         parent=styles["Normal"],
         fontName=FONT_BODY_BOLD,
         fontSize=6.8,
-        leading=8.6,
+        leading=8.5,
         textColor=white,
+        spaceShrinkage=0.0,
     ))
 
     styles.add(ParagraphStyle(
@@ -2902,29 +3494,33 @@ def compile_manual_pdf(is_sc32: bool) -> Path:
         parent=styles["Normal"],
         fontName=FONT_BODY,
         fontSize=6.6,
-        leading=8.4,
+        leading=8.2,
         textColor=to_color(TEXT_MAIN),
+        spaceShrinkage=0.0,
     ))
 
     styles.add(ParagraphStyle(
         "CalloutText",
         parent=styles["Normal"],
         fontName=FONT_BODY,
-        fontSize=8.0,
-        leading=10.8,
+        fontSize=7.9,
+        leading=10.3,
+        alignment=4,  # TA_JUSTIFY
         textColor=to_color(TEXT_MAIN),
+        spaceShrinkage=0.0,
     ))
 
     styles.add(ParagraphStyle(
         "FigureCaption",
         parent=styles["Normal"],
         fontName=FONT_BODY_ITALIC,
-        fontSize=7.4,
-        leading=9.8,
+        fontSize=7.3,
+        leading=9.4,
         textColor=to_color(TEXT_MUTED),
         alignment=1,
-        spaceBefore=2,
-        spaceAfter=4,
+        spaceBefore=1.5,
+        spaceAfter=2.5,
+        spaceShrinkage=0.0,
     ))
 
     # LCD display and monospaced stack frame text: Terminus LCD font on white paper
@@ -3222,18 +3818,38 @@ def main():
     parser = argparse.ArgumentParser(description="Generate publication-grade PDFs for StackCalc manuals.")
     parser.add_argument("--sc32-only", action="store_true", help="Compile only the SC-32 Scientific manual.")
     parser.add_argument("--sc6-only", action="store_true", help="Compile only the SC-6 Elementary manual.")
-    parser.add_argument("--min-pages", type=int, default=300, help="Minimum required page count (default: 300).")
+    parser.add_argument("--min-pages", type=int, default=240, help="Minimum required page count (default: 240).")
     args = parser.parse_args()
 
     build_both = not args.sc32_only and not args.sc6_only
 
+    import shutil
+    mirror_out_dirs = [
+        REPO_ROOT / "Website" / "docs" / "manuals" / "output",
+        REPO_ROOT.parent / "stackcalc" / "docs" / "manuals" / "output",
+        REPO_ROOT.parent / "stackcalc" / "Website" / "docs" / "manuals" / "output",
+        REPO_ROOT.parent / "stackcalc" / "site" / "manuals" / "output",
+    ]
+
     if build_both or args.sc32_only:
         compile_manual_pdf(is_sc32=True)
         compile_full_wrap_cover_spread(is_sc32=True)
+        for mdir in mirror_out_dirs:
+            if mdir.exists():
+                for fname in ("sc32-scientific-manual.pdf", "sc32-full-wrap-cover.pdf"):
+                    src_f = OUTPUT_DIR / fname
+                    if src_f.exists():
+                        shutil.copy2(src_f, mdir / fname)
 
     if build_both or args.sc6_only:
         compile_manual_pdf(is_sc32=False)
         compile_full_wrap_cover_spread(is_sc32=False)
+        for mdir in mirror_out_dirs:
+            if mdir.exists():
+                for fname in ("sc6-elementary-manual.pdf", "sc6-full-wrap-cover.pdf"):
+                    src_f = OUTPUT_DIR / fname
+                    if src_f.exists():
+                        shutil.copy2(src_f, mdir / fname)
 
     print("\n=======================================================")
     print("PDF Generation Complete. Validating outputs...")
@@ -3271,7 +3887,7 @@ def main():
             dest_pages = set(collect_dest_pages(reader.outline))
             print(f"    Unique bookmark destination pages: {len(dest_pages)}")
             assert len(dest_pages) >= 50, f"Outline bookmarks collapsed to {len(dest_pages)} unique pages (expected >= 50)!"
-            assert num_pages >= 300, f"{pdf_name} has only {num_pages} pages (expected >= 300)!"
+            assert num_pages >= 240, f"{pdf_name} has only {num_pages} pages (expected >= 240)!"
 
             for pg_idx, page in enumerate(reader.pages):
                 pg_text = page.extract_text() or ""

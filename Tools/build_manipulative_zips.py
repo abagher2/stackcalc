@@ -54,7 +54,7 @@ PRINT SETTINGS:
 
 License: CERN Open Hardware License v2 - Strongly Reciprocal
 Web: https://stackcalc.io/products/counting-tiles/
-Etsy Store: https://www.etsy.com/shop/StackCalc
+Etsy Store: https://stackcalcmath.etsy.com
 ================================================================================
 """
     with zipfile.ZipFile(COUNTING_ZIP, 'w', zipfile.ZIP_DEFLATED) as zf:
@@ -111,7 +111,7 @@ PRINT SETTINGS:
 
 License: CERN Open Hardware License v2 - Strongly Reciprocal
 Web: https://stackcalc.io/products/prime-factor-studio/
-Etsy Store: https://www.etsy.com/shop/StackCalc
+Etsy Store: https://stackcalcmath.etsy.com
 ================================================================================
 """
     with zipfile.ZipFile(PRIME_ZIP, 'w', zipfile.ZIP_DEFLATED) as zf:
@@ -163,7 +163,7 @@ PRINT SETTINGS:
 
 License: CERN Open Hardware License v2 - Strongly Reciprocal
 Web: https://stackcalc.io/products/quest-scoreboard/
-Etsy Store: https://www.etsy.com/shop/StackCalc
+Etsy Store: https://stackcalcmath.etsy.com
 ================================================================================
 """
     models_stl = WATCH_CALC_ROOT / "Education" / "models" / "stl"

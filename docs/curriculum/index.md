@@ -226,7 +226,7 @@ Every curriculum unit, manipulative studio, and station worksheet is anchored by
       <a href="sc6-elementary-companion-workbook/" class="px-3 py-2 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono text-xs font-bold transition">
         Companion Workbook (253 Problems) &rarr;
       </a>
-      <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition">
+      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition">
         Order Spiral Book ($16) ↗
       </a>
     </div>
@@ -250,7 +250,7 @@ Every curriculum unit, manipulative studio, and station worksheet is anchored by
       <a href="sc32-scientific-companion-workbook/" class="px-3 py-2 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 font-mono text-xs font-bold transition">
         Companion Casebook (339 Problems) &rarr;
       </a>
-      <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition">
+      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition">
         Order Spiral Book ($16) ↗
       </a>
     </div>

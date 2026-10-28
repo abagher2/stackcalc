@@ -21,8 +21,8 @@ hide:
       <p style="margin: 0; font-size: 0.85rem; color: #CBD5E1;">All kits are precision-manufactured in Mil-Spec PLA 2.0+ with laser-foamed pips and ship in 48 hours with our lifetime "No Lost Piece Left Behind" guarantee.</p>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-      <a href="https://www.printables.com/@StackCalc" target="_blank" rel="noopener noreferrer" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; text-decoration: none; white-space: nowrap; box-shadow: 0 4px 14px rgba(250, 107, 5, 0.4);">DOWNLOAD ON PRINTABLES ↗</a>
-      <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #FF4400; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; text-decoration: none; white-space: nowrap; box-shadow: 0 4px 14px rgba(255, 68, 0, 0.4);">SHOP ETSY STOREFRONT ↗</a>
+      <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; text-decoration: none; white-space: nowrap; box-shadow: 0 4px 14px rgba(250, 107, 5, 0.4);">DOWNLOAD ON PRINTABLES ↗</a>
+      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #FF4400; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; text-decoration: none; white-space: nowrap; box-shadow: 0 4px 14px rgba(255, 68, 0, 0.4);">SHOP ETSY STOREFRONT ↗</a>
     </div>
   </div>
 </div>
@@ -208,7 +208,7 @@ Official spiral-bound bench reference manuals, structured JSON operational datas
     <a href="../manuals/" style="padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
       EXPLORE MANUALS HUB &rarr;
     </a>
-    <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background: #F59E0B; color: #0F172A; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
+    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background: #F59E0B; color: #0F172A; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
       ORDER SPIRAL MANUAL ($16) ↗
     </a>
   </div>
@@ -226,7 +226,7 @@ Official spiral-bound bench reference manuals, structured JSON operational datas
       <a href="../manuals/#sc-32-scientific" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>PREVIEW &amp; TOC &rarr;</span>
       </a>
-      <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>ORDER ($16) ↗</span>
       </a>
     </div>
@@ -242,7 +242,7 @@ Official spiral-bound bench reference manuals, structured JSON operational datas
       <a href="../manuals/#sc-6-elementary" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>PREVIEW &amp; TOC &rarr;</span>
       </a>
-      <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>ORDER ($16) ↗</span>
       </a>
     </div>
@@ -268,76 +268,48 @@ Official spiral-bound bench reference manuals, structured JSON operational datas
 
 ---
 
-## 3. All-in-One Maker STL / 3MF Bundles
+## 3. 3D Printable Math Manipulatives & Hardware on Printables {: #3-individual-manipulative-kit-archives }
 
-Complete repository archives containing all models, stages, boxes, and lids in a single organized zip archive.
+All StackCalc 3D models, Gridfinity storage bins, and calculator chassis parts are hosted 100% free and open-source on **[Printables](https://www.printables.com/@StackCalc_5593834)**.
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-top: 1rem; margin-bottom: 2.5rem;">
+Instead of charging for digital STL downloads or maintaining large ZIP files, we publish pre-sliced multi-plate `.3mf` files (for Prusa, Bambu Lab, and OrcaSlicer) and single-part STLs directly to Printables.
 
-  <div style="background: #11141A; border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
-    <div>
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-        <span style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #10B981; font-weight: 700;">COMPLETE LAB SUITE</span>
-        <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; background: rgba(16, 185, 129, 0.2); color: #10B981; padding: 0.2rem 0.5rem; border-radius: 4px;">23.9 MB</span>
-      </div>
-      <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem; color: #FFFFFF;">Learning Lab 0.2.0 Master STL Pack</h3>
-      <p style="font-size: 0.85rem; color: #94A3B8; line-height: 1.5; margin-bottom: 1rem;">
-        Contains all physical manipulative kits: Ten-Frames, Math Dominoes, Counting Tiles, Fraction Studio, Planetary Clock, Algebra Boxes, Prime Factor Studio, Probability Dice, Unit Circle Volvelle, SC-6 Quest Scoreboard, and Desk Stands. Includes pre-sliced PrusaSlicer 3MFs.
-      </p>
-    </div>
-    <a href="stackcalc-learning-lab-0.2.0-stl-pack.zip" download style="display: block; text-align: center; padding: 0.75rem 1rem; background: #10B981; color: #080B10; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 800; text-decoration: none;">
-      DOWNLOAD LAB MASTER PACK (.ZIP) &darr;
-    </a>
+<div style="padding: 1.25rem 1.5rem; border-radius: 12px; background: rgba(250, 107, 5, 0.08); border: 1px solid rgba(250, 107, 5, 0.4); margin-bottom: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+  <div>
+    <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #FA6B05; text-transform: uppercase;">// OFFICIAL PRUSA PRINTABLES PROFILE</span>
+    <h3 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.25rem; font-weight: 800; color: #FFFFFF;">Printables Collection: @StackCalc_5593834</h3>
+    <p style="margin: 0; font-size: 0.85rem; color: #CBD5E1; line-height: 1.5;">
+      Free, verified community models with full print profiles, community makes, and 1-click single-part replacement files for classroom 3D printing.
+    </p>
   </div>
-
-  <div style="background: #11141A; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
-    <div>
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-        <span style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #38BDF8; font-weight: 700;">SC-32 HARDWARE CAD</span>
-        <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; background: rgba(56, 189, 248, 0.2); color: #38BDF8; padding: 0.2rem 0.5rem; border-radius: 4px;">4.1 MB</span>
-      </div>
-      <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem; color: #FFFFFF;">SC-32 Mechanical Prototype STLs</h3>
-      <p style="font-size: 0.85rem; color: #94A3B8; line-height: 1.5; margin-bottom: 1rem;">
-        Includes the 4-part interlocking sliding dovetail chassis, 43-key mechanical dome matrix carrier, battery door rails, and TPU travel pouch molds.
-      </p>
-    </div>
-    <a href="sc32-calculator-open-source-stls.zip" download style="display: block; text-align: center; padding: 0.75rem 1rem; background: #38BDF8; color: #080B10; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 800; text-decoration: none;">
-      DOWNLOAD SC-32 CAD PACK (.ZIP) &darr;
-    </a>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+    <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.75rem 1.25rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; text-decoration: none; white-space: nowrap; box-shadow: 0 4px 14px rgba(250, 107, 5, 0.4);">DOWNLOAD ON PRINTABLES ↗</a>
+    <a href="printables.md" style="padding: 0.75rem 1.25rem; border-radius: 6px; background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; text-decoration: none; white-space: nowrap;">MAKERSPACE KITS GUIDE &rarr;</a>
   </div>
-
 </div>
 
----
-
-## 3. Individual Manipulative Kit Archives
-
-Targeted STL archives for individual stations, replacement parts, or classroom prototyping:
-
-| Instrument | Focus &amp; Grade Level | Gridfinity Envelope | Direct Download |
+| Instrument | Focus &amp; Grade Level | Gridfinity Envelope | 3D Model Destination |
 | :--- | :--- | :--- | :--- |
-| **Fraction Studio Proportional Towers** | Grades 3–8 &bull; Equivalence &amp; Decimals | 3x1 Bin + Workbench Lid | <a href="fraction-studio-open-source-stls.zip" download>Download fraction-studio.zip (4.2 MB) &darr;</a> |
-| **Counting Tiles &amp; Planar Array Studio** | Grades K–6 &bull; Cardinality, Arrays &amp; Maps | 3x1 Bin + 12-Miniblock Lid | <a href="counting-tiles-open-source-stls.zip" download>Download counting-tiles.zip (783 KB) &darr;</a> |
-| **Prime Factor Studio &amp; Factor Towers** | Grades 3–9 &bull; Factorization &amp; Logarithms | 3x1 Bin + Factor Lid Sockets | <a href="prime-factor-studio-open-source-stls.zip" download>Download prime-factor-studio.zip (2.1 MB) &darr;</a> |
-| **SC-6 Quest Scoreboard &amp; +10 Token Kit** | Grades K–8 &bull; Multi-Method Mastery (`?`) | 3x1x7U Open Bin + Scoreboard Lid | <a href="quest-scoreboard-open-source-stls.zip" download>Download quest-scoreboard.zip (3.7 MB) &darr;</a> |
-| **Sectional Classroom Planetary Clock** | Grades K–5 &bull; 12:1 Gear Kinematics | 2x1 Stand + Quadrants | <a href="classroom-clock-open-source-stls.zip" download>Download classroom-clock.zip (12.5 MB) &darr;</a> |
-| **Ten-Frame Dual Stage &amp; Carry Shelf** | Grades K–3 &bull; Base-10 &amp; Regrouping | 3x1 Bin + 2U Carry Cube | <a href="ten-frames-open-source-stls.zip" download>Download ten-frames.zip (1.3 MB) &darr;</a> |
-| **Math Domino Studio &amp; 12-Frame Set** | Grades Pre-K–4 &bull; Doubles &amp; Pips | 3x1 Bin + Doubling Lid | <a href="math-dominoes-open-source-stls.zip" download>Download math-dominoes.zip (772 KB) &darr;</a> |
-| **Algebra Factoring Studio &amp; Tiles** | Grades 7–12 &bull; Quadratic Factoring | 3x1 Bin + 90° Area Stage | <a href="algebra-boxes-open-source-stls.zip" download>Download algebra-boxes.zip (1.4 MB) &darr;</a> |
-| **Probability Dice &amp; Spinner Pack** | Grades 4–12 &bull; Dial Distributions | 1x1 Modular Pocket Bin | <a href="dice-and-spinner-open-source-stls.zip" download>Download dice-spinner.zip (485 KB) &darr;</a> |
-| **Unit Circle Trigonometry Volvelle** | Grades 9–12 &bull; Degree/Radian Apertures | Pocket Dual-Disc Assembly | <a href="unit-circle-volvelle-open-source-stls.zip" download>Download unit-circle-volvelle.zip (4.5 MB) &darr;</a> |
-| **Modular Stands &amp; Desk Pouches** | All Grades &bull; 3-in-1 Puzzle Stands | 1x1 &amp; 2x1 Desktop Stands | <a href="stands-and-pouches-open-source-stls.zip" download>Download stands-and-pouches.zip (4.1 MB) &darr;</a> |
+| **Place Value Studio &amp; Regrouping Trays** | Grades 1–5 &bull; Place Value &amp; Decimals | 3x1 Bin + Snap Lid | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Fraction Studio Proportional Towers** | Grades 3–8 &bull; Equivalence &amp; Decimals | 3x1 Bin + Workbench Lid | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Prime Factor Studio &amp; Factor Towers** | Grades 3–9 &bull; Factorization &amp; Logarithms | 3x1x13U Bin + Slide Stage | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Ten-Frame Dual Stage &amp; Carry Shelf** | Grades K–3 &bull; Base-10 &amp; Regrouping | 3x1 Bin + 2U Carry Cube | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Counting Tiles &amp; Planar Array Studio** | Grades K–6 &bull; Cardinality, Arrays &amp; Maps | 3x1 Bin + 12-Tile Lid | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Math Domino Studio &amp; 12-Frame Set** | Grades Pre-K–4 &bull; Doubles &amp; Pips | 3x1 Bin + Doubling Lid | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Sectional Classroom Planetary Clock** | Grades K–5 &bull; 12:1 Gear Kinematics | 2x1 Stand + Quadrants | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Algebra Factoring Studio &amp; Tiles** | Grades 7–12 &bull; Quadratic Factoring | 3x1 Bin + 90° Area Stage | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Probability Dice &amp; Spinner Pack** | Grades 4–12 &bull; Dial Distributions | 1x1 Modular Pocket Bin | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Unit Circle Trigonometry Volvelle** | Grades 9–12 &bull; Degree/Radian Apertures | Pocket Dual-Disc Assembly | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **SC-6 Quest Scoreboard &amp; +10 Token Kit** | Grades K–8 &bull; Multi-Method Mastery (`?`) | 3x1x7U Open Bin + Scoreboard | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Modular Stands &amp; Desk Pouches** | All Grades &bull; 3-in-1 Puzzle Stands | 1x1 &amp; 2x1 Desktop Stands | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **SC-32 Hardware Chassis &amp; Keycaps** | Makers &bull; Tool-Free Dovetail Chassis | 5-Minute Snap Enclosure | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
 
 ---
 
-## Maker Hardware Pack Upsell
+## Don't Have a 3D Printer?
 
-Printed your own plastic parts? You can purchase the official factory fastener and decal pack on Etsy for **$19.00**, including:
-* Custom laser-engraved anodized faceplates with micro-grooves
-* Tactile microswitch arrays and pre-soldered silicone feet
-* Pre-cut transflective LCD optical adhesive gaskets
-* High-tack reference card decals and archival kraft packaging
-
-<div style="margin-top: 1.5rem;">
-  <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #38BDF8; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; text-decoration: none;">ORDER MAKER HARDWARE PACK ON ETSY ↗</a>
-</div>
+For schools, teachers, or parents who don't have access to a 3D printer:
+- **Order On-Demand from Slant 3D:** Our official manufacturing partner produces matching replacement parts, individual block refills, and classroom sets on industrial additive manufacturing farms: [Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)
+- **Order Complete Boxed Kits on Etsy:** Handcrafted kits, spiral-bound reference manuals, and pre-soldered calculator kits ship within 48 hours: [Etsy Storefront (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
+- **Follow Hardware Build Logs on Hackaday:** For KiCad PCB schematics, RP2350 silicon bring-up, and engineering discussion: [Hackaday Project ↗](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)
+- **View Full Refill Instructions:** Read our dedicated [Replacement Parts & Refills Guide](parts.md).

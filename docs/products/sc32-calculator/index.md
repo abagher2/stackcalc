@@ -223,7 +223,7 @@ hide:
 
       <!-- Action Buttons -->
       <div class="ec-actions-row">
-        <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
+        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
           Order Maker Kit on Etsy ($89.00) ↗
         </a>
         <a href="#downloads" class="ec-btn-secondary">
@@ -1191,7 +1191,7 @@ FORCE (g)
         <a href="../../manuals/#sc-32-scientific" class="px-4 py-2.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-mono text-xs font-bold transition text-center whitespace-nowrap">
           Preview &amp; Table of Contents &rarr;
         </a>
-        <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition text-center shadow-md whitespace-nowrap">
+        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition text-center shadow-md whitespace-nowrap">
           Order Spiral Manual ($16) ↗
         </a>
       </div>
@@ -1209,7 +1209,7 @@ FORCE (g)
         </p>
       </div>
       <div class="flex flex-wrap gap-3">
-        <a href="https://www.printables.com/@StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #FA6B05; border-color: #FA6B05;">
+        <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #FA6B05; border-color: #FA6B05;">
           Download on Printables ↗
         </a>
         <a href="/downloads/sc32-calculator-open-source-stls.zip" class="ec-btn-primary">

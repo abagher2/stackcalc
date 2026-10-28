@@ -5,13 +5,15 @@ description: "Hands-on maker projects on the SC-6: 3D printing filament and laye
 
 # Chapter 9: Kitchen-Table Inventions & Maker Projects
 
-## The Kitchen-Table Invention Studio: Turning Numbers into Moving Machines, 3D Prints, and Science Labs
+## The Invention Studio: 3D Printing, Slicing & Pendulums
 
-Picture the kitchen table on a rainy Saturday morning. In the center sits a spool of corn-based PLA filament, a pair of digital vernier calipers, a stopwatch, a length of string, the 3D-printed math blocks you have used throughout this book, and the solid, tactile form of your StackCalc SC-6 calculator. Outside, the rain taps against the glass; inside, the table is alive with invention.
+Picture the kitchen table on a rainy Saturday morning. In the center sits a spool of corn-based PLA plastic filament, a pair of digital calipers, a stopwatch, a piece of string, the 3D-printed math blocks you have used throughout this book, and your StackCalc SC-6 calculator. Outside, the rain taps against the window; inside, the table is a live invention workshop!
 
-For centuries, schoolchildren were told that mathematics was something that lived exclusively in the flat, monochrome world of paper workbooks—abstract symbols marching across ruled margins under the threat of a red grading pen. But mathematics was never meant to be trapped on paper. Mathematics is the hidden operating system of physical reality. It is the invisible scaffolding that allows a 3D printer nozzle heated to $215^\circ\text{C}$ to slice models into paper-thin $0.20\text{ mm}$ layers as it fabricates your **Counting Tiles** and **Planetary Geared Clock**. It is the steady rhythm discovered by Galileo Galilei in 1638 {{cite:galilei1638}} that keeps a grandfather clock pendulum swinging back and forth in equal beats across centuries.
+If you have ever stared at a page of math homework and wondered, *"When am I ever going to use this in real life?"*—this chapter is your answer! Math was never meant to stay trapped on flat paper under a red grading pen. It is the secret blueprint behind every moving machine, 3D print, and kitchen experiment.
 
-When you pick up the SC-6 in your workshop, you aren't just doing schoolwork—you are an engineer, a builder, and an inventor. In a hands-on maker studio, real mathematics is verified by whether your creation actually works—whether the 3D-printed planetary gears mesh smoothly, the 3D-printed layers stack to the exact millimeter, and the pendulum keeps steady time. With **Stack Math**, your numbers become as physical as the string pendulum and 3D-printed blocks on your desk: you push lengths and weights onto the stack, tap your operations, and watch your ideas turn into real machines that whir, tick, and run!
+Math is what guides a 3D printer nozzle heated to $215^\circ\text{C}$ as it slices your **Counting Tiles** and **Planetary Geared Clock** into paper-thin $0.20\text{ mm}$ layers. And it is the steady rhythm discovered by Galileo Galilei in 1638 {{cite:galilei1638}} that keeps a grandfather clock pendulum swinging back and forth in equal beats across centuries.
+
+When you pick up the SC-6 at your workbench, you aren't just doing schoolwork—you are an engineer, a builder, and an inventor! In a real workshop, you know your math is right when your creation actually works: when the 3D-printed gears mesh smoothly, the printed layers stack to the exact millimeter, and the pendulum keeps steady time. With **Stack Math**, you push lengths and weights onto the stack, tap your keys, and watch your ideas turn into machines that whir, tick, and fly!
 
 {{blocks:clock_classroom_hero|Classroom Maker Space Clock: Precision 3D-Printed Geared Engineering}}
 
@@ -19,346 +21,192 @@ When you pick up the SC-6 in your workshop, you aren't just doing schoolwork—y
 
 {{res:sc6_led_resistor:screenshot|Slicing a 1 cm (3 cm - 2 cm) 3D-printed block top into 0.02 cm layers = 50 layers}}
 
-**How 3D Printers Slice Models into Thin Layers:** Look at the SC-6 screen above. Suppose a 3D-printed block is $3\text{ cm}$ tall in total, and its solid base takes up the bottom $2\text{ cm}$. Subtracting `{{key:3}} {{key:ENTER}} {{key:2}} {{key:-}}` leaves $1\text{ cm}$ of height for the top section. When the 3D printer slices that $1\text{ cm}$ top section into horizontal plastic layers that are each $0.02\text{ cm}$ ($0.20\text{ mm}$) thick, dividing by `.02 {{key:÷}}` shows that the printer nozzle must lay down **`50` layers**!
+**How 3D Printers Slice Models into Thin Layers:** Look at the SC-6 screen above: a 3D-printed block stands $3\text{ cm}$ tall in total, and its solid base takes up the bottom $2\text{ cm}$. Subtracting `3 {{key:ENTER}} 2 {{key:-}}` leaves $1\text{ cm}$ of height for the top section. When the 3D printer slices that $1\text{ cm}$ top section into horizontal plastic layers that are each $0.02\text{ cm}$ ($0.20\text{ mm}$) thick, dividing by `.02 {{key:÷}}` shows that the printer nozzle must lay down **`50` layers**!
 
-## Building Real Things: From Your 3D-Printed Manipulative Studios to the Number Stack
+### How the 12 Maker Projects Work
 
-Grounded in Jerome Bruner's hands-on learning research {{cite:bruner1966}}, every maker project in this chapter follows a four-step loop that connects your physical **StackCalc Manipulative Studios** directly to the 4-story number stack:
-1. **Build & Measure It:** Measure 3D printer filament with vernier calipers as you print a **Math Dominoes** or **Counting Tile** tray, turn the gears of your **Planetary Geared Clock** (`{{key:🕒}}`), dial launch and solar tilt angles on your **Unit Circle Volvelle**, or stack **84 mm Fraction Towers** (`{{key:a ᵇ/c}}`) beside your kitchen measuring cups.
-2. **Sketch & Log It:** Record your measurements, layer sketches, and stopwatch trials in your notebook.
-3. **Stack & Solve It:** Push your measurements onto the SC-6 stack ($X, Y, Z, T$) so you can find circle areas (`{{key:x²}}`, `{{key:π}}`), multi-trial averages (`{{key:Σ+}}`, `{{key:x̄}}`, `{{key:MAD}}`), recipe percentages and prices (`{{key:%}}`, `{{key:%CHG}}`, `{{key:$}}`), and quick `{{key:LASTX}}` checks without parentheses.
-4. **Test It in Real Life:** Snap the 3D-printed parts together, slice the 3D print, swing the pendulum, and see your real-world machine match your stack prediction!
+To turn your desk or kitchen table into an invention lab, gather four simple tools beside your 3D-printed math blocks and your SC-6: a metric ruler (or digital calipers), a digital kitchen scale, a stopwatch, and a notebook. Each project in this chapter pairs a hands-on physical build with a live calculation on the 4-level stack ($X, Y, Z, T$). In **3D Printing & Workshop Geometry**, you will measure filament strands and layer heights with calipers, spin the gears of your **Planetary Geared Clock** (`{{key:🕒}}`), and find circular cross-sections (`{{key:x²}}`, `{{key:π}}`) and `{{key:LASTX}}` height checks right at the printer bed.
+
+In **Physics Timers, Catapults & Solar Angles**, you will time swinging pendulums with a stopwatch, dial launch and solar tilt angles on your **Unit Circle Volvelle**, and drop multi-trial experiments into the `{{key:Σ+}}` basket to find your bullseye average (`{{key:x̄}}`) and consistency (`{{key:MAD}}`). And in **Kitchen Scaling & Maker Budgets**, you will stack **Fraction Towers** (`{{key:a ᵇ/c}}`) beside your measuring cups and kitchen scale to resize recipes, track growth rates, and price out filament spools and club gear (`{{key:%}}`, `{{key:%CHG}}`, `{{key:$}}`).
 
 ---
 
-## How Much Plastic & Money Does a 3D Print Use?
+### How Much Plastic & Money Does a 3D Print Use?
 
-Have you ever wondered how a 3D printer's slicing software knows—down to the gram and the penny—how much plastic your design will use before the nozzle even heats up? The secret is hidden right on the filament spool! Unwind a few centimeters of plastic filament and look closely at it: that flexible strand is really a long, thin **cylinder** (like a giant strand of plastic spaghetti). If you know the tiny circle area of its cut end and you know how many centimeters of strand the printer will unspool, multiplying $\text{Circle Area} \times \text{Length}$ tells you the exact cubic centimeters of plastic your print will use!
+Have you ever wondered how a 3D printer's slicing software knows—down to the gram and the penny—how much plastic your design will use before the nozzle even heats up? Peek inside the extruder head of a desktop 3D printer: a tiny steel **hobbed drive gear** with microscopic teeth grips the plastic filament from the spool and pushes it millimeter by millimeter into the $215^\circ\text{C}$ melting chamber. Because the printer's stepper motor counts every fraction of a turn of that drive gear, it knows the exact length of filament unspooled!
 
-Standard 3D printing filament has a width (diameter) of $1.75\text{ mm}$, which means its radius from the center to the edge is half of that: $0.875\text{ mm}$, or $0.0875\text{ cm}$:
-- **Circle Area of the Filament Strand:** $\text{Circle Area} = \pi \times \text{Radius} \times \text{Radius} = \pi \times (0.0875\text{ cm})^2 \approx 0.0240528\text{ cm}^2$
-- **Plastic Volume:** $\text{Volume} = \text{Circle Area} \times \text{Length in cm}$
-- **Part Weight (PLA):** $\text{Weight in grams} = \text{Volume} \times 1.24\text{ grams per cm}^3$
-- **Part Cost:** $\text{Cost} = \text{Weight in grams} \times (\text{Spool Price} \div 1,000\text{ grams})$
+Unwind a few centimeters of plastic filament and look closely at it. That flexible strand is really a long, thin **cylinder**—like a giant strand of plastic spaghetti. Standard 3D printing filament has a width (diameter) of $1.75\text{ mm}$, which means its radius from the center to the edge is half of that: $0.875\text{ mm}$, or $0.0875\text{ cm}$. Once you multiply the tiny circular cross-section of its cut end ($\pi \times \text{Radius}^2$) by the length of strand pulled off the reel, you have the exact cubic centimeters of plastic—which converts straight into grams ($1.24\text{ g/cm}^3$ for corn-based PLA) and cents from a $1,000\text{-gram}$ spool:
+$$\text{Filament Volume} = (\pi \times \text{Radius}^2) \times \text{Length}, \qquad \text{Part Weight} = \text{Volume} \times 1.24\text{ g/cm}^3$$
 
 {{blocks:dominoes_studio_stealth_black|Double-Six Tactile Dominoes Set in Matte Slate}}
 
-### Estimating a 500 cm Print Model for Your Dominoes Studio Tray
-Suppose your slicing software reports that printing a custom replacement lid or divider tray for your **Math Dominoes** (or a **Counting Tile** organizer) will pull $500\text{ cm}$ ($5.0\text{ meters}$) of filament off the spool. Your maker space uses a $\$20.00$ spool of Midnight Navy PLA ($1,000\text{ grams}$). Let's follow the plastic from strand to finished price tag in one continuous stack flow!
+**From Filament Strand to Price Tag:**
+When your 3D-printer slicer reports that a replacement divider tray for your **Math Dominoes** takes $500\text{ cm}$ ($5.0\text{ meters}$) of filament from a $\$20.00$ spool ($1,000\text{ g}$, or $\$0.02/\text{g}$), you can price it in seconds: squaring the $0.0875\text{ cm}$ radius (`.0875 {{key:x²}} {{key:π}} {{key:×}}` $\to 0.02405\text{ cm}^2$) and multiplying by `500 {{key:×}}` gives $12.03\text{ cm}^3$ of PLA, or `1.24 {{key:×}}` $= \mathbf{14.91\text{ grams}}$. Keying `{{res:sc6_09_applied_stem_labs_seq_01:keys}}`, `{{key:×}}`, and `{{key:$}}` rounds $14.91 \times \$0.02$ to **`$0.30`**—and weighing a nearly empty spool on your kitchen scale (minus $200\text{ g}$ for the empty reel) tells you right away whether you have $15\text{ grams}$ left for an overnight print!
 
-First, we find the circle area of the filament ($\pi \times \text{Radius}^2$) by entering the radius in centimeters (`{{key:.}} 0875`), squaring it with `{{key:x²}}` ($\mathbf{0.00765625\text{ cm}^2}$), and multiplying by $\pi$ via `{{key:π}} {{key:×}}` ($\approx \mathbf{0.0240528\text{ cm}^2}$). Second, while that tiny circle area sits on Register $X$, we stretch it along the $500\text{ cm}$ filament strand (`500 {{key:×}}`) to get a plastic volume of $\mathbf{12.02641\text{ cm}^3}$. Third, because every cubic centimeter of PLA weighs $1.24\text{ grams}$, multiplying by `1.24 {{key:×}}` reveals that our finished studio tray weighs **`14.91275`** ($\mathbf{14.91\text{ grams}}$). Finally, to price the part from a $\$20 / 1,000\text{ g}$ spool, keying `{{res:sc6_09_applied_stem_labs_seq_01:keys}}` places the unit cost of $\$0.02\text{ per gram}$ on Register $X$ while keeping your $14.91\text{ g}$ tray weight in Register $Y$, pressing `{{key:×}}` computes **`0.298255`**, and tapping `{{key:$}}` formats the price tag as **`$0.30`**:
+Watch the full shelf-by-shelf sequence when you print a deeper storage bin for all your **Counting Tiles**, using $1,200\text{ cm}$ ($12\text{ meters}$) of $1.75\text{ mm}$ filament (radius $= 0.0875\text{ cm}$). Finding the filament's circle area ($\pi \times \text{Radius}^2$) with `{{res:sc6_09_applied_stem_labs_p01:keys}}` gives **`{{res:sc6_09_applied_stem_labs_p01:value}}`**, and multiplying by the $1,200\text{ cm}$ length with `{{res:sc6_09_applied_stem_labs_p02:keys}}` lands on **`{{res:sc6_09_applied_stem_labs_p02:value}}`**:
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `.0875` | 0 | 0 | 0 | $0.0875$ |
-| `{{key:x²}}` | 0 | 0 | 0 | $0.007656$ |
-| `{{key:π}} {{key:×}}` | 0 | 0 | 0 | $0.024053$ |
-| `500 {{key:×}}` | 0 | 0 | 0 | $12.02641$ |
-| `1.24 {{key:×}}` | 0 | 0 | 0 | $14.91275$ |
-| `20 {{key:ENTER}}` | 0 | $14.91275$ | $20.00000$ | 20 |
-| `1000 {{key:÷}}` | 0 | 0 | $14.91275$ | $0.02$ |
-| `{{key:×}}` | 0 | 0 | 0 | $0.298255$ |
-| `{{key:$}}` | 0 | 0 | 0 | $0.30$ |
-
-What if your next print is a deeper storage bin to hold all your **Counting Tiles**, and the slicing software previews that the nozzle will unspool $1,200\text{ cm}$ ($12\text{ meters}$) of $1.75\text{ mm}$ filament (radius $= 0.875\text{ mm} = 0.0875\text{ cm}$)? First, finding the tiny circle area of the filament strand ($\pi \times \text{Radius}^2$) with `{{res:sc6_09_applied_stem_labs_p01:keys}}` produces **`{{res:sc6_09_applied_stem_labs_p01:value}}`**, and stretching that circle along the $1,200\text{ cm}$ strand via `{{res:sc6_09_applied_stem_labs_p02:keys}}` reaches **`{{res:sc6_09_applied_stem_labs_p02:value}}`**:
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `.0875` | 0 | 0 | 0 | $0.0875$ | Enter filament radius in centimeters ($0.0875\text{ cm}$) |
 | `{{key:x²}}` | 0 | 0 | 0 | $0.007656$ | Square the radius ($0.0875 \times 0.0875 = 0.00765625\text{ cm}^2$) |
-| `{{key:π}}` | 0 | 0 | $0.007656$ | $3.141593$ | Enter $\pi$; stack lifts the squared radius into Register $Y$ |
+| `{{key:π}}` | 0 | 0 | $0.007656$ | $3.141593$ | Enter $\pi$; stack lifts the squared radius onto Shelf $Y$ |
 | `{{key:×}}` | 0 | 0 | 0 | $0.024053$ | Multiply to find the filament circle area ($\approx 0.02405\text{ cm}^2$) |
 | `1200` | 0 | 0 | $0.024053$ | 1200 | Enter the filament length ($1,200\text{ cm}$) |
 | `{{key:×}}` | 0 | 0 | 0 | $28.863383$ | Multiply circle area by length to find plastic volume ($28.86\text{ cm}^3$) |
 
-Register $X$ confirms that the storage bin uses $\mathbf{28.86\text{ cm}^3}$ of melted plastic—transforming a long, flexible cylinder of filament on the spool into a rigid geometric box on the build plate.
+Shelf $X$ shows that the storage bin uses $\mathbf{28.86\text{ cm}^3}$ of melted plastic—turning a long, flexible strand of filament on the spool into a sturdy box on the printer bed that takes up about the same space as twenty-nine $1\text{ cm}$ unit cubes.
 
----
+**Why 3D Prints Have a Honeycomb Inside ($15\%$ Infill):**
+Why don't 3D printers make every block $100\%$ solid plastic inside? Just like honeybees build lightweight hexagonal combs inside a hive, a 3D printer builds strong outer walls and fills the inside with a $15\%$ honeycomb grid.
 
-### Why 3D Prints Have a Honeycomb Inside (15% Infill)
-Why don't 3D printers make every block $100\%$ solid plastic inside? Just like honeybees build lightweight hexagonal combs inside a hive, a 3D printer builds strong outer walls and fills the inside with a $15\%$ honeycomb grid!
+You can feel this difference right in your hand by comparing a $20\text{ mm}$ ($2.0\text{ cm}$) calibration test cube against a hollow-infill block. Closing your digital calipers across all three directions of the test cube shows that its length, width, and height are each an exact $2\text{ cm}$. Multiplying the length, width, and height (`{{res:sc6_09_applied_stem_labs_p34:keys}}`) finds the cube's volume in cubic centimeters, **`{{res:sc6_09_applied_stem_labs_p34:value}}`**:
 
-You can feel this difference right in your hand by comparing a $20\text{ mm}$ ($2.0\text{ cm}$) calibration test cube against a hollow-infill block. Closing your vernier calipers across all three directions of the test cube confirms that its length, width, and height are each an exact $2\text{ cm}$. Evaluating the volume of the cube in cubic centimeters ($\text{Length} \times \text{Width} \times \text{Height}$) via `{{res:sc6_09_applied_stem_labs_p34:keys}}` produces **`{{res:sc6_09_applied_stem_labs_p34:value}}`**:
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `{{key:2}}` | 0 | 0 | 0 | 2 | Enter cube length in centimeters ($2\text{ cm}$) |
-| `{{key:ENTER}}` | 0 | 0 | 2 | 2 | Copy length into Register $Y$ |
-| `{{key:2}}` | 0 | 0 | 2 | 2 | Enter cube width ($2\text{ cm}$) |
+| `2` | 0 | 0 | 0 | 2 | Enter cube length in centimeters ($2\text{ cm}$) |
+| `{{key:ENTER}}` | 0 | 0 | 2 | 2 | Copy length onto Shelf $Y$ |
+| `2` | 0 | 0 | 2 | 2 | Enter cube width ($2\text{ cm}$) |
 | `{{key:×}}` | 0 | 0 | 0 | 4 | Multiply length by width to get the bottom square area ($4\text{ cm}^2$) |
-| `{{key:2}}` | 0 | 0 | 4 | 2 | Enter cube height ($2\text{ cm}$); lifts area into Register $Y$ |
+| `2` | 0 | 0 | 4 | 2 | Enter cube height ($2\text{ cm}$); lifts area onto Shelf $Y$ |
 | `{{key:×}}` | 0 | 0 | 0 | 8 | Multiply base area by height to find cube volume ($8.0\text{ cm}^3$) |
 
-Register $X$ confirms a volume of $\mathbf{8.0\text{ cm}^3}$—the exact space occupied by eight $1\text{ cm}$ unit cubes stacked in a $2 \times 2 \times 2$ block. Because every cubic centimeter ($1\text{ cm}^3$) of corn-based PLA plastic weighs $1.24\text{ grams}$, printing that $8.0\text{ cm}^3$ block completely solid ($100\%$ infill) via `{{res:sc6_09_applied_stem_labs_p35:keys}}` would weigh **`{{res:sc6_09_applied_stem_labs_p35:value}}`** ($9.92\text{ grams}$). Subtracting the $3.1\text{-gram}$ weight of a hollow-infill **Counting Tile** via `{{res:sc6_09_applied_stem_labs_p36:keys}}` leaves **`{{res:sc6_09_applied_stem_labs_p36:value}}`**—saving $\mathbf{6.82\text{ grams}}$ on every single block while keeping the outer walls just as stiff and sturdy!
+The bottom line shows a volume of $\mathbf{8.0\text{ cm}^3}$—the exact space of eight $1\text{ cm}$ unit cubes stacked in a $2 \times 2 \times 2$ block. Because every cubic centimeter ($1\text{ cm}^3$) of corn-based PLA plastic weighs $1.24\text{ grams}$, printing that $8.0\text{ cm}^3$ block completely solid ($100\%$ infill) via `{{res:sc6_09_applied_stem_labs_p35:keys}}` would weigh **`{{res:sc6_09_applied_stem_labs_p35:value}}`** ($9.92\text{ grams}$).
 
-Now scale that honeycomb savings up to a larger $100\text{ cm}^3$ trophy base with $15\%$ infill:
-- **Solid Block Weight:** $100\text{ cm}^3 \times 1.24\text{ g/cm}^3 = 124.0\text{ g}$.
-- **Outer Shell Weight:** $20\text{ cm}^3$ solid outer walls ($20 \times 1.24 = 24.8\text{ g}$).
-- **Inside Infill Weight:** $80\text{ cm}^3$ inside space filled to $15\%$: $80 \times 0.15 \times 1.24 = 14.88\text{ g}$.
-- **Total Hollow-Infill Weight:** $24.8 + 14.88 = 39.68\text{ g}$.
-- **Weight Saved:** $124.0 - 39.68 = 84.32\text{ g}$.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `124` | 0 | 0 | 0 | 124 |
-| `{{key:ENTER}}` | 0 | 0 | 124 | 124 |
-| `24.8` | 0 | 0 | 124 | $24.8$ |
-| `{{key:ENTER}}` | 0 | 124 | $24.8$ | $24.8$ |
-| `80` | 0 | $124.0$ | $24.8$ | 80 |
-| `{{key:ENTER}}` | $124.0$ | $24.8$ | 80 | 80 |
-| `0.15 {{key:×}}` | $124.0$ | $124.0$ | $24.8000$ | 12 |
-| `1.24 {{key:×}}` | $124.0$ | $124.0$ | $24.8000$ | $14.88$ |
-| `{{key:+}}` | 124 | 124 | $124.0$ | $39.68$ |
-| `{{key:-}}` | 124 | 124 | 124 | $84.32$ |
-| `.02 {{key:×}}` | 124 | 124 | 124 | $1.6864$ |
-| `{{key:$}}` | 124 | 124 | 124 | $1.69$ |
+Now subtract the $3.1\text{-gram}$ weight of a hollow-infill **Counting Tile** (`{{res:sc6_09_applied_stem_labs_p36:keys}}`) to get **`{{res:sc6_09_applied_stem_labs_p36:value}}`**. That honeycomb inside saves $\mathbf{6.82\text{ grams}}$ on every single block—and on a larger $100\text{ cm}^3$ trophy base ($20\text{ cm}^3$ solid outer shell plus $80\text{ cm}^3$ at $15\%$ infill), a $15\%$ honeycomb cuts the weight from $124.0\text{ g}$ down to $39.68\text{ g}$, saving **$84.32\text{ grams}$** ($\$1.69$ of filament) and more than two hours of print time while keeping the vertical hexagonal pillars strong enough to stand on!
 
 ---
 
-## Running a Desktop 3D-Printing Toy Factory
+### Running a Desktop 3D-Printing Toy Factory
 
-What does it take to run your own miniature toy factory at home or in a classroom maker lab? When you print a complete 24-piece set of **Counting Tiles**, you aren't just using plastic from the spool—you are also paying for the electricity that keeps the printer's nozzle and build plate warm for hours! In this project, you step into the shoes of a maker-space builder to budget both the filament and the electricity for a full student kit.
-- **How 3D Printers Slice $0.20\text{ mm}$ Layers:** A 3D printer builds objects from the bottom up by laying down thin horizontal ribbons of melted PLA plastic, each just $0.20\text{ mm}$ thick. To print a $14.4\text{ mm}$ tall two-tier block stack, dividing `14.4 {{key:ENTER}} 0.20 {{key:÷}}` shows that the printer nozzle must trace **$72$ horizontal layers**.
+What does it take to run your own miniature toy factory at home or in a classroom maker lab? When you print a complete 24-piece set of **Counting Tiles**, you aren't just using plastic from the spool—you are also paying for the electricity that keeps the printer's nozzle and build plate warm for hours! Every block is built from the bottom up as the brass nozzle lays down paper-thin horizontal ribbons of melted PLA plastic ($0.20\text{ mm}$ thick—so a $14.4\text{ mm}$ tall two-tier block stack takes `14.4 {{key:ENTER}} 0.20 {{key:÷}}` $= \mathbf{72\text{ horizontal layers}}$). In this project, you budget both the filament and the electricity for a full student kit.
 
-### Printing a Complete Set of 24 Counting Tiles
-How much does the plastic cost to 3D print a complete student kit of 24 **Counting Tiles** (6 each of Coral Red, Amber Gold, Sky Cyan, and Indigo Purple)?
-- Each $19.0\text{ mm} \times 19.0\text{ mm}$ interlocking tile ($7.0\text{ mm}$ visible step height, $8.85\text{ mm}$ overall with its stacking lip) uses approximately $3.1\text{ grams}$ of PLA.
-- Multiplying the 24 tiles by $3.1\text{ g}$ via `{{res:sc6_09_applied_stem_labs_seq_02:keys}}` gives a total kit weight of $\mathbf{74.4\text{ grams}}$, multiplying by `.02 {{key:×}}` finds the raw plastic cost of $1.488$, and pressing `{{key:$}}` rounds the spool cost to **`$1.49`**.
+**Printing a Complete Set of 24 Counting Tiles:**
+How much does the plastic cost to 3D print a complete student kit of 24 **Counting Tiles**—six tiles each of Coral Red, Amber Gold, Sky Cyan, and Indigo Purple arranged in a neat $4 \times 6$ array on the heated build plate?
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `24` | 0 | 0 | 0 | 24 |
-| `{{key:ENTER}}` | 0 | 0 | 24 | 24 |
-| `3.1` | 0 | 0 | 24 | $3.1$ |
-| `{{key:×}}` | 0 | 0 | 0 | $74.4$ |
-| `{{key:.}} 02` | 0 | 0 | $74.4$ | $0.02$ |
-| `{{key:×}}` | 0 | 0 | 0 | $1.488$ |
-| `{{key:$}}` | 0 | 0 | 0 | $1.49$ |
+When you pop one finished $19\text{ mm} \times 19\text{ mm}$ snap-together tile off the build plate and set it on a digital kitchen scale, the readout settles at $3.1\text{ grams}$ of PLA plastic. In your head, you can already estimate the whole tray: 24 tiles times $3\text{ grams}$ is $72\text{ grams}$, plus 24 tenths of a gram ($2.4\text{ g}$) makes $74.4\text{ grams}$. On your SC-6 stack, staging the `24`-tile batch size on Shelf $Y$ and multiplying by the $3.1\text{-gram}$ single-tile weight via `{{res:sc6_09_applied_stem_labs_seq_02:keys}}` places the exact kit weight of $\mathbf{74.4\text{ grams}}$ on Shelf $X$. Multiplying that batch weight by `.02 {{key:×}}` ($2\text{ cents}$ per gram from a $\$20.00$ kilogram spool) gives a raw plastic cost of $\$1.488$, which one tap of `{{key:$}}` rounds cleanly to **`$1.49`**.
 
----
+What if your school maker lab needs to print 10 complete student kits (240 Counting Tiles in total) so every table group has its own tray? Multiplying $74.4\text{ grams}$ per kit by $10$ kits uses $744\text{ grams}$ of plastic, and subtracting $1,000 - 744 = 256\text{ grams}$ shows that a single $1,000\text{-gram}$ spool of PLA can produce all 10 classroom kits with $256\text{ grams}$ of filament still left on the reel. Even better, dividing that $256\text{-gram}$ reserve by $3.1\text{ grams per tile}$ (`256 {{key:ENTER}} 3.1 {{key:÷}}`) proves that the leftover plastic on the reel can print **82 extra replacement tiles** whenever a tile rolls under a cabinet!
 
-### Checking the Printer's Electric Bill & STEM Fair Medals
-Now let's check the electric bill! A classroom 3D printer uses an average electrical power of $120\text{ Watts}$ ($0.120\text{ kilowatts}$). The 24-tile Counting Tile kit requires $4.5\text{ hours}$ to print, and the local electric rate is $\$0.15\text{ per kilowatt-hour (kWh)}$:
-1. Electricity Used: $0.120\text{ kW} \times 4.5\text{ hours} = 0.54\text{ kWh}$.
-2. Electricity Cost: $0.54 \times \$0.15 = \$0.081$ ($\sim \$0.08$).
-3. Total Production Cost (Filament + Electricity): $\$1.49 + \$0.08 = \mathbf{\$1.57}$ for the entire 24-tile kit.
+**How Much Electricity Does a 4.5-Hour Print Use?**
+Now let's check the electric bill for that 24-tile print job! While the printer's stepper motors hum back and forth and the heater block holds the nozzle at $215^\circ\text{C}$, a classroom 3D printer draws an average electrical power of $120\text{ Watts}$—which is $0.120\text{ kilowatts}$ ($\text{Watts} \div 1,000$). Because the 24-tile Counting Tile kit takes $4.5\text{ hours}$ to finish and your local utility charges $\$0.15$ per kilowatt-hour (kWh), you can chain the entire utility check on the stack. First, enter `{{key:.}} 12 {{key:ENTER}} 4.5 {{key:×}}` to multiply $0.120\text{ kW} \times 4.5\text{ hours} = \mathbf{0.54\text{ kWh}}$ (just over half a kilowatt-hour of energy). Next, multiply that $0.54\text{ kWh}$ by the utility rate with `{{key:.}} 15 {{key:×}}` to get $\$0.081$—only **$8\text{ cents}$** of electricity for a four-and-a-half-hour print! Finally, add the filament cost right onto the electric cost with `1.49 {{key:+}} {{key:$}}` (`$1.49 + $0.081 = $1.571`) to land on **$\$1.57$** for the entire 24-tile kit.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 12` | 0 | 0 | 0 | $0.12$ |
-| `{{key:ENTER}}` | 0 | 0 | $0.12$ | $0.12$ |
-| `4.5` | 0 | 0 | $0.12$ | $4.5$ |
-| `{{key:×}}` | 0 | 0 | 0 | $0.54$ |
-| `{{key:.}} 15` | 0 | 0 | $0.54$ | $0.15$ |
-| `{{key:×}}` | 0 | 0 | 0 | $0.081$ |
-| `1.49 {{key:+}}` | 0 | 0 | 0 | $1.571$ |
-| `{{key:$}}` | 0 | 0 | 0 | $1.57$ |
+Notice how surprising that breakdown is for new makers: out of the $\$1.57$ total cost to manufacture a 24-tile kit, the melted plastic accounts for $\$1.49$ (nearly $95\%$ of the cost), while running the heated printer for $4.5\text{ hours}$ uses only $8\text{ cents}$ of electricity!
 
-Once word spreads around school about your 3D-printing studio, the principal asks your team to print 50 gold award medals for the Friday STEM Fair! Weighing one finished sample medal on your digital scale shows that each medal uses $14.5\text{ grams}$ of plastic. With filament priced at $\$0.02$ per gram, how much will it cost to print all 50 medals? Evaluating the three-step cost calculation on the stack via `{{res:sc6_09_applied_stem_labs_p40:keys}}` yields **`{{res:sc6_09_applied_stem_labs_p40:value}}`**:
+That same batch-costing chain works for larger school runs—such as printing 50 gold award medals ($14.5\text{ grams}$ each) for the Friday STEM Fair at $\$0.02$ per gram (`{{res:sc6_09_applied_stem_labs_p40:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p40:value}}`**):
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `50` | 0 | 0 | 0 | 50 | Enter total medals to print ($50\text{ medals}$) |
-| `{{key:ENTER}}` | 0 | 0 | 50 | 50 | Copy medal count into Register $Y$ |
+| `{{key:ENTER}}` | 0 | 0 | 50 | 50 | Copy medal count onto Shelf $Y$ |
 | `14.5` | 0 | 0 | 50 | $14.5$ | Enter weight of one medal ($14.5\text{ g}$) |
 | `{{key:×}}` | 0 | 0 | 0 | 725 | Multiply to find total plastic weight ($50 \times 14.5 = 725\text{ g}$) |
-| `.02` | 0 | 0 | 725 | $0.02$ | Enter filament cost per gram ($\$0.02/\text{g}$) |
+| `.02` | 0 | 0 | 725 | $0.02$ | Enter filament cost per gram ($\$0.02$ per gram) |
 | `{{key:×}}` | 0 | 0 | 0 | $14.5$ | Multiply weight by price per gram ($725 \times 0.02 = 14.50$) |
 | `{{key:$}}` | $0.00$ | $0.00$ | $0.00$ | $14.50$ | Format result in currency mode |
 
-Register $X$ displays $\$14.50$, showing that printing all 50 STEM fair medals costs just $\mathbf{\$14.50}$ in PLA filament—less than a single store-bought trophy!
+Shelf $X$ displays $\$14.50$, showing that printing all 50 STEM fair medals uses $725\text{ grams}$ of plastic (a little under three-quarters of a $1,000\text{-gram}$ spool) and costs just **\$14.50** total—less than a single store-bought trophy.
 
-To equip the rest of your 6-student Maker Club workbench, suppose your team orders a digital caliper and tool set listed at $\$56.00$ with a $30\%$ student discount (`{{res:sc6_09_applied_stem_labs_p31:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p31:value}}`**) plus $7.5\%$ sales tax (`{{res:sc6_09_applied_stem_labs_p32:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p32:value}}`**). Then, when the club's total 3D-printing supply bill comes to $\$124.80$, you split it equally among all $6$ members (`{{res:sc6_09_applied_stem_labs_p33:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p33:value}}`**):
+To outfit your 6-student Maker Club for the STEM Fair, the team orders a bundle of custom team hoodies and digital calipers listed at $\$56.00$ with a $30\%$ student discount (`{{res:sc6_09_applied_stem_labs_p31:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p31:value}}`**) plus $7.5\%$ sales tax (`{{res:sc6_09_applied_stem_labs_p32:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p32:value}}`**). Then, when the club's total 3D-printing and hoodie supply bill comes to $\$124.80$, you split it equally among all $6$ members (`{{res:sc6_09_applied_stem_labs_p33:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p33:value}}`**):
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `56 {{key:ENTER}}` | 0 | 0 | 56 | 56 | Enter regular tool price ($\$56.00$) |
-| `30 {{key:%}}` | 0 | 0 | 56 | $16.8$ | Find $30\%$ discount ($\$16.80$); base $\$56$ stays in Register $Y$ |
+| `56 {{key:ENTER}}` | 0 | 0 | 56 | 56 | Enter regular bundle price ($\$56.00$) |
+| `30 {{key:%}}` | 0 | 0 | 56 | $16.8$ | Find $30\%$ discount ($\$16.80$); base $\$56$ stays on Shelf $Y$ |
 | `{{key:-}} {{key:$}}` | $0.00$ | $0.00$ | $0.00$ | $39.20$ | Subtract discount and format as currency ($\$39.20$ sale price) |
-| `7.5 {{key:%}}` | $0.00$ | $0.00$ | $39.20$ | $2.94$ | Find $7.5\%$ sales tax ($\$2.94$); $\$39.20$ stays in Register $Y$ |
-| `{{key:+}} {{key:$}}` | $0.00$ | $0.00$ | $0.00$ | $42.14$ | Add sales tax for final tool checkout price ($\$42.14$) |
-| `124.80 {{key:ENTER}} {{key:6}} {{key:÷}} {{key:$}}` | $0.00$ | $0.00$ | $42.14$ | $20.80$ | Split the $\$124.80$ supply bill among 6 students ($\$20.80$ each) |
+| `7.5 {{key:%}}` | $0.00$ | $0.00$ | $39.20$ | $2.94$ | Find $7.5\%$ sales tax ($\$2.94$); $\$39.20$ stays on Shelf $Y$ |
+| `{{key:+}} {{key:$}}` | $0.00$ | $0.00$ | $0.00$ | $42.14$ | Add sales tax for final bundle checkout price ($\$42.14$) |
+| `124.80 {{key:ENTER}} 6 {{key:÷}} {{key:$}}` | $0.00$ | $0.00$ | $42.14$ | $20.80$ | Split the $\$124.80$ supply bill among 6 students ($\$20.80$ each) |
 
-The discounted tool set costs $\mathbf{\$42.14}$ after tax, and each club member pays $\mathbf{\$20.80}$ for the supply bill—all balanced to the penny on the four-register stack!
+The discounted gear bundle costs **\$42.14** after tax, and each club member pays **\$20.80** for the supply bill—while Shelf $Y$ still holds the $\$42.14$ checkout price so you can see both totals at once.
 
 ---
 
-## 3D-Printer Layer Slicing & Height Checks
+### 3D-Printer Layer Slicing & Height Checks
 
-Have you ever seen a 3D-printed math block with a dark slate-gray base and bright gold numbers raised on top, even though the printer only has a single nozzle? Makers do this with a clever trick called a **filament color swap**: you let the printer finish the bottom base, pause the machine, load a second color of plastic, and let it print the remaining top layers! To set the pause at the exact right height, how do you know how many paper-thin $0.02\text{ cm}$ ($0.20\text{ mm}$) layers remain in the top section?
+Have you ever seen a 3D-printed math block with a dark slate-gray base and bright gold numbers raised on top, even though the printer only has a single nozzle? Makers do this with a technique called a **filament color swap**: you let the printer finish the bottom base, pause the machine, load a second color of plastic, and let it print the remaining top layers.
+
+To program that pause at the exact right layer number in your slicer, you subtract the already-printed base height from the total model height to find the remaining upper height, and then divide by the thickness of a single plastic ribbon ($0.02\text{ cm}$, or $0.20\text{ mm}$):
 
 {{blocks:diagram_3d_printer_slicer_pendulum|How a 3D Printer Slices a 3 cm Block into 50 Horizontal 0.02 cm Layers & Galileo's Quarter-Length Pendulum Secret}}
 
-| Slicer Measurement | Example Value | What It Means |
-| :--- | :--- | :--- |
-| **Total Model Height** | $3.0\text{ cm}$ (or $9.0\text{ cm}$) | Full height from the printer bed to the top of the block |
-| **Base Height Printed** | $2.0\text{ cm}$ (or $3.2\text{ cm}$) | Bottom section already finished before the color swap |
-| **Layer Thickness** | $0.02\text{ cm}$ ($0.20\text{ mm}$) | Height of each single plastic ribbon laid down by the nozzle |
+Inside your 3D printer's brass nozzle, solid **PLA (polylactic acid)**—a biodegradable bioplastic fermented from natural cornstarch and sugarcane—softens at $60^\circ\text{C}$ and melts into a smooth, honey-like ribbon around $200^\circ\text{C}$ to $215^\circ\text{C}$, giving off a faint scent like warm breakfast waffles as it prints! Because the stepper motor lifts the nozzle by an exact $0.02\text{ cm}$ ($0.20\text{ mm}$) after every horizontal pass, each new ribbon welds onto the layer below it like microscopic LEGO bricks (with a tiny cross-section of `{{res:sc6_09_applied_stem_labs_seq_22:keys}}` $\to 0.0004\text{ cm}^2$). Just as the $3.0\text{ cm}$ trophy screenshot at the start of this chapter left $3 - 2 = 1.0\text{ cm}$ ($1.0 \div 0.02 = \mathbf{50\text{ layers}}$) above its $2.0\text{ cm}$ base, watch how you slice a taller $9.0\text{ cm}$ **Fraction Tower** holder whose solid base takes up the bottom $3.2\text{ cm}$. Subtracting the base height via `{{res:sc6_09_applied_stem_labs_seq_03:keys}}` leaves $\mathbf{5.8\text{ cm}}$ of upper wall height, dividing by `{{key:.}} 02 {{key:÷}}` shows **`290.0 layers`**, and tapping `{{key:LASTX}} {{key:×}}` rebuilds the exact **`5.8 cm`** height:
 
-### How Layer Slicing Works in Words
-To find how many horizontal layers the printer needs for the top section of a model:
-- **Step 1 (Remaining Height):** $\text{Remaining Height} = \text{Total Height} - \text{Base Height}$
-- **Step 2 (Number of Layers):** $\text{Number of Layers} = \text{Remaining Height} \div \text{Layer Thickness } (0.02\text{ cm})$
-- **Step 3 (Height Check with `{{key:LASTX}}`):** Press `{{key:LASTX}}` to bring back the $0.02\text{ cm}$ layer thickness without re-typing it, and press `{{key:×}}` to verify that $\text{Number of Layers} \times \text{Layer Thickness} = \text{Remaining Height}$!
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `9 {{key:ENTER}}` | 0 | 0 | 9 | 9 | Enter total tower height ($9.0\text{ cm}$) and copy to Shelf $Y$ |
+| `3.2 {{key:-}}` | 0 | 0 | 0 | $5.8$ | Subtract the $3.2\text{ cm}$ base to leave $5.8\text{ cm}$ of upper wall |
+| `.02 {{key:÷}}` | 0 | 0 | 0 | 290 | Divide by $0.02\text{ cm}$ per layer: **290 layers** needed |
+| `{{key:LASTX}}` | 0 | 0 | 290 | $0.02$ | Recall $0.02\text{ cm}$ layer thickness; $290$ lifts to Shelf $Y$ |
+| `{{key:×}}` | 0 | 0 | 0 | $5.8$ | Multiply $290 \times 0.02 = \mathbf{5.8\text{ cm}}$ to verify the upper height |
 
 ---
 
-### Slicing the Top Section of a 3 cm Block (`50` Layers)
+### Timing a Swinging Clock Pendulum
 
-Remember the $3.0\text{ cm}$ block slicer screenshot we previewed at the opening of this chapter? Let's trace every shelf of that filament color swap in detail—and add a two-tap `{{key:LASTX}}` height proof at the end! Suppose you are printing a $3.0\text{ cm}$ tall counting block trophy where the bottom $2.0\text{ cm}$ base is already printed in slate gray, and you want to print the remaining top section in radiant gold using $0.02\text{ cm}$ layers.
+Why does a grandfather clock keep the exact same steady beat whether its swinging weight is heavy brass or light wood—and what happens to the beat if you shorten the string to one-fourth of its original length?
 
-First, find the remaining height ($\text{Total Height} - \text{Base Height}$) by entering the total block height (`{{key:3}} {{key:ENTER}}`) and subtracting the base height (`{{key:2}} {{key:-}}`), which leaves $\mathbf{1.0\text{ cm}}$ in Register $X$. Next, divide by the $0.02\text{ cm}$ layer thickness (`{{key:.}} 02 {{key:÷}}`): Register $X$ displays **`50.0`**, showing that the printer nozzle must lay down **`50` layers** of gold filament. Finally, to prove that $50$ layers of $0.02\text{ cm}$ each rebuild the exact $1.0\text{ cm}$ top section without typing `0.02` a second time, press `{{key:LASTX}}` (which recalls $0.02$ into Register $X$ and lifts $50.0$ into Register $Y$) and tap `{{key:×}}` to verify **`1.0`** ($50 \times 0.02\text{ cm} = \mathbf{1.0\text{ cm}}$):
+Over four hundred years ago, a young Galileo Galilei watched a bronze oil lamp swinging from a high cathedral ceiling in Pisa. With no stopwatch in the 1500s, Galileo pressed two fingers against his wrist and timed the swinging chandelier against his own heartbeat! Even as the swings died down from wide arcs to tiny nudges, each swing took the exact same number of pulse beats. He later proved that the time a pendulum takes to swing depends on the **length of the string**, not on how heavy the weight is (gravity pulls harder on a heavier bolt, but the heavier bolt has matching inertia, so the two cancel out completely!).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:3}} {{key:ENTER}}` | 0 | 0 | 3 | 3 |
-| `{{key:2}} {{key:-}}` | 0 | 0 | 0 | 1 |
-| `.02 {{key:÷}}` | 0 | 0 | 0 | 50 |
-| `{{key:LASTX}}` | 0 | 0 | 50 | $0.02$ |
-| `{{key:×}}` | 0 | 0 | 0 | 1 |
+Because a single swing goes by so fast that your thumb on the stopwatch might be a tenth of a second early or late, clockmakers time **10 complete back-and-forth swings** in a row and divide by $10$ to find the average time for a single swing:
+$$\text{One-Swing Period} = \text{Total Time for 10 Swings} \div 10, \qquad \text{Swings per Minute} = 60\text{ seconds} \div \text{One-Swing Period}$$
 
----
+{{blocks:clock_quadrant_concept|How a Swinging Pendulum Keeps Steady Time for Mechanical Clocks}}
 
-### Slicing a Taller 9.0 cm Tower Above a 3.2 cm Base (`290` Layers)
-Suppose you print a $9.0\text{ cm}$ tall **Fraction Tower** holder whose solid base takes up the bottom $3.2\text{ cm}$, using $0.02\text{ cm}$ layers for the upper walls. Subtracting the base height via `{{res:sc6_09_applied_stem_labs_seq_03:keys}}` leaves $\mathbf{5.8\text{ cm}}$ of upper wall height, dividing by `{{key:.}} 02 {{key:÷}}` shows that the nozzle must trace **`290.0 layers`**, and tapping `{{key:LASTX}} {{key:×}}` immediately confirms that $290 \times 0.02\text{ cm}$ rebuilds the exact **`5.8 cm`** height.
+Look closely at the **Planetary Geared Clock** and its removable $90^\circ$ clock quadrants above. In a mechanical grandfather clock, a swinging pendulum rocks an anchor-shaped lever (called an **escapement**) that releases one gear tooth on every tick, driving the $60\text{-minute}$ outer ring and $12:1$ planetary hour hand at a steady pace.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:9}} {{key:ENTER}}` | 0 | 0 | 9 | 9 |
-| `3.2 {{key:-}}` | 0 | 0 | 0 | $5.8$ |
-| `.02 {{key:÷}}` | 0 | 0 | 0 | 290 |
-| `{{key:LASTX}}` | 0 | 0 | 290 | $0.02$ |
-| `{{key:×}}` | 0 | 0 | 0 | $5.8$ |
+Run Galileo's two-length pendulum test with a washer, a string, and a stopwatch. Start with a **$100\text{ cm}$ ($1\text{-meter}$) string**: tie a metal washer to the end, pull it aside about $15^\circ$, and time 10 complete round-trip swings ($20.1\text{ seconds}$). Dividing by $10$ (`20.1 {{key:ENTER}} 10 {{key:÷}}`) shrinks your thumb's reaction error tenfold to reveal **`2.01` seconds per swing**—and dividing into $60\text{ seconds}$ (`60 {{key:x⇄y}} {{key:÷}}`) shows **`29.85` swings per minute**. Now test the **$25\text{ cm}$ (quarter-length) surprise**: pinch the string at $25\text{ cm}$, which is one-fourth ($\frac{1}{4}$) of $100\text{ cm}$. Most people guess it will swing four times as fast, but 10 swings take **$10.05\text{ seconds}$** (`10.05 {{key:ENTER}} 10 {{key:÷}}` $\to \mathbf{1.005\text{ seconds per swing}}$). Comparing against the $100\text{ cm}$ pendulum (`2.01 {{key:x⇄y}} {{key:÷}}`) lands on $\mathbf{2.0}$: shortening the string to $\frac{1}{4}$ made it swing **twice as fast** ($\sqrt{4} = 2$), because a pendulum's period scales with the **square root** of its length:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `10.05 {{key:ENTER}}` | 0 | 0 | $10.05$ | $10.05$ | Enter 10-swing time for the $25\text{ cm}$ pendulum ($10.05\text{ s}$) |
+| `10 {{key:÷}}` | 0 | 0 | 0 | $1.005$ | Divide by 10 swings: $1.005\text{ seconds}$ per swing |
+| `2.01` | 0 | 0 | $1.005$ | $2.01$ | Enter the $100\text{ cm}$ pendulum's 1-swing time ($2.01\text{ s}$) |
+| `{{key:x⇄y}}` | 0 | 0 | $2.01$ | $1.005$ | Swap $X$ and $Y$ so $2.01\text{ s}$ is ready to be divided by $1.005\text{ s}$ |
+| `{{key:÷}}` | 0 | 0 | 0 | 2 | Divide $2.01 \div 1.005 = \mathbf{2.0}$ (quarter length swings **twice as fast**) |
 
 ---
 
-## Timing a Swinging Clock Pendulum (Finding the 10-Swing Average)
+## Solar Ovens, Catapults, Plant Growth & Bakery Scaling
 
-Why does a grandfather clock keep the exact same steady beat whether its swinging weight is heavy brass or light wood—and what happens to the beat if you shorten the string to one-fourth of its original length? Over four hundred years ago, a young Galileo Galilei watched a bronze lamp swinging from a high ceiling and timed it against his own pulse. He discovered an amazing law of nature: the time a pendulum takes to swing back and forth depends on the **length of the string**, not on how heavy the weight is!
+Now let's step from the 3D printer bed to the backyard and kitchen counter, where temperature rises, launch distances, growing bean stems, and baker's dough weights all obey step-by-step stack rules.
 
-Because a single swing goes by so fast that your thumb on the stopwatch might be a tenth of a second early or late, real scientists time **10 complete back-and-forth swings** in a row and divide by $10$ to find the razor-sharp average time for a single swing:
-- **Time for 1 Swing:** $\text{One-Swing Time} = \text{Total Time for 10 Swings} \div 10$
-- **Swings per Minute:** $\text{Swings per Minute} = 60\text{ seconds} \div \text{One-Swing Time}$
+### The Pizza-Box Solar Oven
 
-{{blocks:clock_quadrant_concept|Clock Quadrant Concept: Pendulum Escapements and Harmonic Oscillation}}
+How can an ordinary cardboard pizza box lined with aluminum foil and clear plastic wrap trap enough sunshine to melt chocolate and marshmallows into gooey s'mores on a sunny afternoon? The shiny foil bounces extra sunlight into the box, the black paper at the bottom soaks up that light as heat, and the clear plastic window plus newspaper insulation trap the warm air inside like a greenhouse!
 
-Look closely at the **Planetary Geared Clock** and its removable $90^\circ$ clock quadrants above: in a mechanical grandfather clock, a swinging pendulum releases one gear tooth on every tick, driving the $60\text{-minute}$ outer ring and $12:1$ planetary hour hand at a steady pace. By timing a string pendulum beside your Planetary Geared Clock dial, you can see how string length controls the beat of a clock!
+In 1767, the Swiss alpine naturalist **Horace-Bénédict de Saussure** wondered why mountain sunlight felt just as bright on top of freezing, snow-covered peaks in the Alps as it did in warm valleys below. To prove that trapped sunshine could heat air regardless of the cold mountain wind outside, he built the world's first **solar oven**—an insulated pine box lined with black cork under three layers of clear window glass—and watched the temperature inside climb past $100^\circ\text{C}$ ($212^\circ\text{F}$, the boiling point of water) while he cooked fresh fruit with pure sunlight! In your own pizza-box version of de Saussure's solar collector, you will subtract your starting temperature from your ending temperature to find the **Temperature Rise**, and then divide by the **Heating Time in minutes** to measure how many degrees Celsius your solar oven gains every single minute ($^\circ\text{C/min}$).
 
-### Timing 10 Swings of a 100 cm (1-Meter) Pendulum
-You tie a washer to a string that is $100\text{ cm}$ ($1.00\text{ meter}$) long from the knot to the center of the washer. Using a stopwatch, you and your lab partner time 10 complete back-and-forth swings:
-$$\text{Stopwatch time for 10 swings} = 20.1\text{ seconds}$$
+**Measuring Solar Heating Speed:**
+Place your solar cooker in direct noon sunlight with a graham cracker, marshmallow, and dark chocolate square inside. When the air inside climbs from **$22.5^\circ\text{C}$** to **$78.0^\circ\text{C}$** over **$25\text{ minutes}$**, keying `{{res:sc6_09_applied_stem_labs_seq_05:keys}}` (`78 {{key:ENTER}} 22.5 {{key:-}} 25 {{key:÷}}`) shows a $55.5^\circ\text{C}$ temperature rise and a heating speed of $\mathbf{2.22^\circ\text{C per minute}}$, while `{{res:sc6_09_applied_stem_labs_seq_06:keys}}` confirms a $\mathbf{+246.67\%}$ jump. Angle the foil reflector flap on a compact oven to catch even more direct rays ($20^\circ\text{C} \to 65^\circ\text{C}$ in just $15\text{ minutes}$), and `{{res:sc6_09_applied_stem_labs_p11:keys}}` clocks **`{{res:sc6_09_applied_stem_labs_p11:value}}`** ($\mathbf{3.00^\circ\text{C/min}}$) with a `{{res:sc6_09_applied_stem_labs_p12:keys}}` boost of **`{{res:sc6_09_applied_stem_labs_p12:value}}`** ($\mathbf{+225.0\%}$)!
 
-To find the average time for 1 swing ($\text{Total Time} \div 10$), enter your stopwatch time (`20.1 {{key:ENTER}}`) and divide by 10 swings (`10 {{key:÷}}`), which lands on $\mathbf{2.01\text{ seconds per swing}}$ in Register $X$. Next, to see how many swings happen in 1 full minute ($60 \div \text{One-Swing Time}$), type `60`, swap Registers $X$ and $Y$ with `{{key:x⇄y}}` so $60$ sits in Register $Y$ above $2.01$ in Register $X$, and press `{{key:÷}}` to display **`29.8507`** ($\sim \mathbf{29.85\text{ swings per minute}}$, almost $30$ full swings every minute!):
+**How Well Does Newspaper Insulation Trap the Heat?**
+How well does your rolled-up newspaper insulation around the edges of the pizza box hold onto that trapped solar warmth when a big cumulus cloud drifts across the sun? At peak noon heat, the oven reaches $78^\circ\text{C}$ in the sun while the outdoor shade temperature is $22^\circ\text{C}$ (so the inside of the box is $78 - 22 = 56^\circ\text{C}$ warmer than the shade). You carry the closed solar oven into the shade for 30 minutes and check the thermometer again: it reads $56^\circ\text{C}$ (which is still $56 - 22 = 34^\circ\text{C}$ warmer than the $22^\circ\text{C}$ shade!). Dividing the remaining warmth by the starting warmth gives the exact **fraction of extra heat kept inside**: $\frac{56 - 22}{78 - 22} = \frac{34^\circ\text{C}}{56^\circ\text{C}} \approx \mathbf{60.71\%}$ kept inside after half an hour in the shade:
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `20.1 {{key:ENTER}}` | 0 | 0 | $20.1$ | $20.1$ |
-| `10 {{key:÷}}` | 0 | 0 | 0 | $2.01$ |
-| `60` | 0 | 0 | $2.01$ | 60 |
-| `{{key:x⇄y}}` | 0 | 0 | 60 | $2.01$ |
-| `{{key:÷}}` | 0 | 0 | 0 | $29.8507$ |
-
----
-
-### Testing a Shorter 25 cm Quarter-Length Pendulum
-What happens if you shorten the string to $25\text{ cm}$ (one-fourth of a meter)? Most people guess it will swing four times as fast—let's test that guess with a stopwatch! When you time 10 full back-and-forth swings, it takes **$10.05\text{ seconds}$**:
-1. Divide $10.05\text{ seconds}$ by $10$ swings: `10.05 {{key:ENTER}} 10 {{key:÷}}` $\longrightarrow \mathbf{1.005\text{ seconds per swing}}$ (about $1\text{ second}$ per round-trip swing!).
-2. Compare the $100\text{ cm}$ swing time ($2.01\text{ s}$) to the $25\text{ cm}$ swing time ($1.005\text{ s}$): enter `2.01`, swap `{{key:x⇄y}}`, and press `{{key:÷}}` $\longrightarrow \mathbf{2.0}$. Shortening the string to one-fourth ($\frac{1}{4}$) of its original length made the pendulum swing **twice as fast** ($\sqrt{4} = 2$)!
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `10.05 {{key:ENTER}}` | 0 | 0 | $10.05$ | $10.05$ |
-| `10 {{key:÷}}` | 0 | 0 | 0 | $1.005$ |
-| `2.01` | 0 | 0 | $1.005$ | $2.01$ |
-| `{{key:x⇄y}}` | 0 | 0 | $2.01$ | $1.005$ |
-| `{{key:÷}}` | 0 | 0 | 0 | 2 |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `56` | 0 | 0 | 0 | 56 | Enter oven temperature after 30 min in shade ($56^\circ\text{C}$) |
+| `{{key:ENTER}}` | 0 | 0 | 56 | 56 | Copy $56^\circ\text{C}$ up onto Shelf $Y$ |
+| `22 {{key:-}}` | 0 | 0 | 0 | 34 | Subtract $22^\circ\text{C}$ shade temp: $34^\circ\text{C}$ of warmth still inside |
+| `78` | 0 | 0 | 34 | 78 | Enter peak oven temperature ($78^\circ\text{C}$); $34$ lifts to Shelf $Y$ |
+| `{{key:ENTER}}` | 0 | 34 | 78 | 78 | Lift $34$ to Shelf $Z$ while copying $78$ onto Shelf $Y$ |
+| `22 {{key:-}}` | 0 | 0 | 34 | 56 | Subtract $22^\circ\text{C}$ shade temp: $56^\circ\text{C}$ starting warmth above shade |
+| `{{key:÷}}` | 0 | 0 | 0 | $0.6071$ | Divide remaining warmth by starting warmth ($34 \div 56 = 0.6071$) |
+| `100 {{key:×}}` | 0 | 0 | 0 | $60.71$ | Convert to percent: **60.71%** of the extra heat stayed trapped |
 
 ---
 
-## Cooking S'mores with Sunshine: The Pizza-Box Solar Oven
+### Tabletop Catapults & Finding Your Bullseye Average
 
-How can an ordinary cardboard box lined with kitchen aluminum foil and clear plastic wrap trap enough sunshine to melt chocolate and marshmallows into gooey s'mores on a sunny afternoon? The shiny foil bounces extra sunlight into the box, the black paper at the bottom soaks up that light as heat, and the clear plastic window plus newspaper insulation trap the warm air inside like a greenhouse! In this project, you track how many degrees Celsius your solar oven gains every single minute.
+When you pull back the arm of a tabletop rubber-band catapult and launch a foam ball toward a floor target, why doesn't the ball land on the exact same millimeter every single time? Tiny differences in how your finger releases the lever create a small scatter of landing spots!
 
-| Thermal Measurement | Word Rule | What It Means |
-| :--- | :--- | :--- |
-| **Temperature Rise** | $\text{Ending Temp} - \text{Starting Temp}$ | Total degrees Celsius gained inside the solar box |
-| **Heating Time** | $\text{Minutes in the Sun}$ | How many minutes the solar oven sits in sunlight |
-| **Heating Speed** | $\text{Temperature Rise} \div \text{Minutes}$ | Degrees Celsius gained each minute ($^\circ\text{C/min}$) |
+By holding your **Unit Circle Volvelle** (or a $90^\circ$ quadrant from your **Planetary Geared Clock**) beside the catapult arm to dial in an exact pullback angle ($30^\circ, 45^\circ,$ or $60^\circ$) before releasing the lever, you can measure each shot's landing distance in centimeters along a floor tape and toss every trial into `{{key:Σ+}}`. Why do we test $45^\circ$ first? As Italian mathematician **Niccolò Tartaglia** and **Galileo Galilei** discovered when studying projectile arcs, a low $30^\circ$ launch skims fast across the floor but touches down early, while a steep $60^\circ$ launch climbs high into the air without traveling far forward—making the halfway **$45^\circ$ angle** the sweet spot for maximum horizontal distance! Once your five trials are in the `{{key:Σ+}}` basket, `{{key:x̄}}` and `{{key:MAD}}` reveal both your center bullseye distance and how tightly grouped your shots are.
 
-### Measuring Solar Heating Speed
-Place your solar cooker in direct sunlight at noon. Your digital thermometer records:
-- Starting Temperature at $0\text{ minutes}$: $22.5^\circ\text{C}$
-- Ending Temperature at $25\text{ minutes}$: $78.0^\circ\text{C}$
+**Launch Average & Spread at $45^\circ$:**
+Tape a measuring tape down the hallway floor, set a $45^\circ$ pullback angle with your **Unit Circle Volvelle**, and launch 5 shots in a row: **$182\text{ cm}, 195\text{ cm}, 188\text{ cm}, 201\text{ cm},$ and $189\text{ cm}$**. Clearing the basket (`{{key:CLΣ}}`), logging all five chalk marks with `{{key:Σ+}}`, and tapping `{{key:x̄}}` then `{{key:MAD}}` levels the five shots into a bullseye center of $\mathbf{191.00\text{ cm}}$ ($955 \div 5$) with a Mean Absolute Deviation of $\mathbf{5.60\text{ cm}}$!
 
-Subtracting the starting temperature from the ending temperature with `{{res:sc6_09_applied_stem_labs_seq_05:keys}}` reveals a temperature rise of $\mathbf{55.5^\circ\text{C}}$, dividing by `25 {{key:÷}}` gives a heating speed of $\mathbf{2.22^\circ\text{C per minute}}$, and checking `{{key:%CHG}}` via `{{res:sc6_09_applied_stem_labs_seq_06:keys}}` confirms a $\mathbf{+246.67\%}$ thermal increase.
+Watch the shelf-by-shelf sequence during a quick 3-shot patio calibration check ($150\text{ cm}$, $162\text{ cm}$, and $156\text{ cm}$), where `{{res:sc6_09_applied_stem_labs_p13:keys}}` levels the three distances out to **`{{res:sc6_09_applied_stem_labs_p13:value}}`**:
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `78` | 0 | 0 | 0 | 78 |
-| `{{key:ENTER}}` | 0 | 0 | 78 | 78 |
-| `22.5` | 0 | 0 | 78 | $22.5$ |
-| `{{key:-}}` | 0 | 0 | 0 | $55.5$ |
-| `25` | 0 | 0 | $55.5$ | 25 |
-| `{{key:÷}}` | 0 | 0 | 0 | $2.22$ |
-
-What if you angle the foil reflector flap on a smaller pizza-box solar oven so it catches even more direct noon rays? Suppose over a $15\text{-minute}$ sprint, the temperature inside your pizza-box solar oven climbs from $20^\circ\text{C}$ to $65^\circ\text{C}$. First, find the heating speed in degrees per minute (`{{res:sc6_09_applied_stem_labs_p11:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p11:value}}`**): subtracting the $20^\circ\text{C}$ starting temperature gives a $45^\circ\text{C}$ rise, and dividing by $15\text{ minutes}$ gives a brisk $\mathbf{3.00^\circ\text{C/min}}$. Next, check the percentage temperature boost with `{{key:%CHG}}` (`{{res:sc6_09_applied_stem_labs_p12:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p12:value}}`**), confirming a $\mathbf{+225.0\%}$ jump over the starting temperature—plenty of solar warmth to melt chocolate squares onto graham crackers!
-
----
-
-### How Well Does Newspaper Insulation Trap the Heat?
-How well does your crumpled-newspaper insulation hold onto that heat when a cloud passes over? After reaching $78^\circ\text{C}$ (which is $78 - 22 = 56^\circ\text{C}$ warmer than the $22^\circ\text{C}$ shade), move your oven into the shade for 30 minutes. The thermometer reads $56^\circ\text{C}$ ($56 - 22 = 34^\circ\text{C}$ above the shade temperature):
-- Total Heat Kept Inside: $\frac{56 - 22}{78 - 22} = \frac{34}{56} \approx \mathbf{60.71\%}$ kept inside.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `56` | 0 | 0 | 0 | 56 |
-| `{{key:ENTER}}` | 0 | 0 | 56 | 56 |
-| `22 {{key:-}}` | 0 | 0 | 0 | 34 |
-| `78` | 0 | 0 | 34 | 78 |
-| `{{key:ENTER}}` | 0 | 34 | 78 | 78 |
-| `22 {{key:-}}` | 0 | 0 | 34 | 56 |
-| `{{key:÷}}` | 0 | 0 | 0 | $0.6071$ |
-| `100 {{key:×}}` | 0 | 0 | 0 | $60.71$ |
-
----
-
-## Tabletop Catapults & Finding Your Bullseye Average
-
-When you pull back the arm of a tabletop rubber-band catapult and launch a foam ball toward a floor target, why doesn't the ball land on the exact same millimeter every single time? Tiny differences in how your finger releases the lever create a small scatter of landing spots! By holding your **Unit Circle Volvelle** (or a $90^\circ$ quadrant from your **Planetary Geared Clock**) beside the catapult arm to set an exact $45^\circ$ launch angle, you can use `{{key:Σ+}}`, `{{key:x̄}}`, and `{{key:MAD}}` to measure both your center bullseye distance and how tightly grouped your shots are.
-
-| Catapult Measurement | What You Measure | Role in the Experiment |
-| :--- | :--- | :--- |
-| **Pullback Angle** | $30^\circ, 45^\circ, 60^\circ$ | The launch angle you choose before releasing the arm |
-| **Landing Distance** | Measured in $\text{cm}$ along a floor tape | The distance you enter into the calculator with `{{key:Σ+}}` |
-
-### Five-Trial Launch Average at $45^\circ$
-Launch a foam ball 5 times at a $45^\circ$ pullback angle, measuring each landing distance in centimeters:
-$$\text{Landing Distances}: 182\text{ cm},\ 195\text{ cm},\ 188\text{ cm},\ 201\text{ cm},\ 189\text{ cm}$$
-
-Add each launch into the SC-6 statistical registers using `{{key:Σ+}}`:
-1. Clear statistics: Press `{{key:CLΣ}}`.
-2. Enter Launch 1: `182 {{key:Σ+}}` $\longrightarrow \text{Count} = 1$.
-3. Enter Launch 2: `195 {{key:Σ+}}` $\longrightarrow \text{Count} = 2$.
-4. Enter Launch 3: `188 {{key:Σ+}}` $\longrightarrow \text{Count} = 3$.
-5. Enter Launch 4: `201 {{key:Σ+}}` $\longrightarrow \text{Count} = 4$.
-6. Enter Launch 5: `189 {{key:Σ+}}` $\longrightarrow \text{Count} = 5$.
-7. Find the Average (Mean): Press `{{key:x̄}}` $\longrightarrow X = \mathbf{191.00\text{ cm}}$.
-8. Find the Mean Absolute Deviation ($\text{MAD}$): Press `{{key:MAD}}` $\longrightarrow X = \mathbf{5.60\text{ cm}}$.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:CLΣ}}` | 0 | 0 | 0 | 0 |
-| `182 {{key:Σ+}}` | 0 | 0 | 0 | $1.0000$ |
-| `195 {{key:Σ+}}` | 0 | 0 | 0 | $2.0000$ |
-| `188 {{key:Σ+}}` | 0 | 0 | 0 | $3.0000$ |
-| `201 {{key:Σ+}}` | 0 | 0 | 0 | $4.0000$ |
-| `189 {{key:Σ+}}` | 0 | 0 | 0 | $5.0000$ |
-| `{{key:x̄}}` | 0 | 0 | 0 | $191.00$ |
-| `{{key:MAD}}` | 0 | 0 | $191.00$ | $5.60$ |
-
-You can also run a quick 3-shot calibration check whenever you move your catapult to a new patio surface! Suppose firing 3 practice shots at the same pullback angle sends the foam ball landing at $150\text{ cm}$, $162\text{ cm}$, and $156\text{ cm}$. Dropping all three launches into your statistical basket with `{{key:Σ+}}` and pressing `{{key:x̄}}` via `{{res:sc6_09_applied_stem_labs_p13:keys}}` levels the three distances out to **`{{res:sc6_09_applied_stem_labs_p13:value}}`**:
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `{{key:CLΣ}}` | 0 | 0 | 0 | 0 | Clear the statistics registers |
 | `150 {{key:Σ+}}` | 0 | 0 | 0 | 1 | Add Shot 1 ($150\text{ cm}$); screen shows count $= 1$ |
@@ -366,77 +214,53 @@ You can also run a quick 3-shot calibration check whenever you move your catapul
 | `156 {{key:Σ+}}` | 0 | 0 | 0 | 3 | Add Shot 3 ($156\text{ cm}$); screen shows count $= 3$ |
 | `{{key:x̄}}` | 0 | 0 | 0 | 156 | Compute the average (mean) landing distance ($156.00\text{ cm}$) |
 
-How tightly grouped were those three practice shots ($150\text{ cm}, 162\text{ cm}, 156\text{ cm}$) around the $156.00\text{ cm}$ center? Shot 1 was $6\text{ cm}$ short, Shot 2 was $6\text{ cm}$ long, and Shot 3 landed right on the nose ($0\text{ cm}$). Since all three shots are still sitting in your statistical registers, one tap of `{{key:MAD}}` via `{{res:sc6_09_applied_stem_labs_p14:keys}}` returns **`{{res:sc6_09_applied_stem_labs_p14:value}}`**—confirming that $(6 + 6 + 0) \div 3 = \mathbf{4.00\text{ cm}}$ of average spread from the bullseye!
+How tightly grouped were those three practice shots ($150\text{ cm}, 162\text{ cm}, 156\text{ cm}$) around the $156.00\text{ cm}$ center? Shot 1 was $6\text{ cm}$ short, Shot 2 was $6\text{ cm}$ long, and Shot 3 landed right on the nose ($0\text{ cm}$). Since all three shots are still sitting in your running-total basket, one tap of `{{key:MAD}}` via `{{res:sc6_09_applied_stem_labs_p14:keys}}` returns **`{{res:sc6_09_applied_stem_labs_p14:value}}`**—confirming that $(6 + 6 + 0) \div 3 = \mathbf{4.00\text{ cm}}$ of average spread from the bullseye!
+
+**Will Your Catapult Shots Land Inside the Target Ring?**
+Will your 5-trial catapult shots (with a center average of $191.00\text{ cm}$ and a Mean Absolute Deviation of $5.60\text{ cm}$) land inside a circular floor target centered at $190\text{ cm}$ with a radius of $15\text{ cm}$ (stretching from $175\text{ cm}$ on the near edge to $205\text{ cm}$ on the far edge)?
+
+Engineers often check a launcher's **two-deviation landing zone** ($\text{Mean} \pm 2 \times \text{MAD}$) to see where almost all shots will touch down. To find the near edge of that landing zone, enter your mean (`191 {{key:ENTER}}`), double your $5.60\text{ cm}$ spread (`5.60 {{key:ENTER}} 2 {{key:×}}` $\to 11.20\text{ cm}$), and press `{{key:-}}` to land on $\mathbf{179.80\text{ cm}}$—well past the target ring's $175\text{ cm}$ front rim. Then, because subtracting $11.20\text{ cm}$ automatically saved $11.20$ inside `{{key:LASTX}}`, you don't even have to type `11.20` again to check the far edge: simply enter `191`, tap `{{key:LASTX}}` to pull $11.20\text{ cm}$ back onto Shelf $X$, and press `{{key:+}}` to find the far boundary at $\mathbf{202.20\text{ cm}}$ (while the near edge $179.80\text{ cm}$ stays visible right above it on Shelf $Y$). Both edges ($179.80\text{ cm}$ to $202.20\text{ cm}$) sit comfortably inside the $175\text{ cm}$ to $205\text{ cm}$ target ring! Now let's trade the fast arc of a catapult for the slow, steady climb of a living plant by the window.
 
 ---
 
-### Will Your Catapult Shots Land Inside the Target Ring?
-Will your catapult shots land inside a circular floor target centered at $190\text{ cm}$ with a radius of $15\text{ cm}$ (stretching from $175\text{ cm}$ to $205\text{ cm}$)?
-Since your average landing distance is $191.00\text{ cm}$ and double the Mean Absolute Deviation is $2 \times 5.60\text{ cm} = 11.20\text{ cm}$, your landing zone runs from $191 - 11.20 = 179.80\text{ cm}$ to $191 + 11.20 = 202.20\text{ cm}$. Notice the neat `{{key:LASTX}}` shortcut below: because subtracting $11.20$ automatically stores $11.20$ inside `{{key:LASTX}}`, tapping `191 {{key:LASTX}} {{key:+}}` finds the far edge without re-typing `11.20`. Every shot in this zone lands squarely inside the $175\text{ cm}$ to $205\text{ cm}$ target ring!
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `191 {{key:ENTER}}` | 0 | 0 | 191 | 191 |
-| `5.60 {{key:ENTER}}` | 0 | 191 | $5.60$ | $5.60$ |
-| `2 {{key:×}}` | 0 | 0 | 191 | $11.20$ |
-| `{{key:-}}` | 0 | 0 | 0 | $179.80$ |
-| `191` | 0 | 0 | $179.80$ | 191 |
-| `{{key:LASTX}} {{key:+}}` | 0 | 0 | $179.80$ | $202.20$ |
-
----
-
-## Watching a Window Bean Sprout Race Toward the Sun
+### Watching a Window Bean Sprout Race Toward the Sun
 
 Have you ever planted a bean seed in a clear cup by a sunny window and noticed that it seems to grow taller overnight? Plants grow too slowly for your eyes to see in real time, like the hour hand of a clock—but when you measure the stem height in millimeters every two days, the stack lets you calculate its exact **growth speed in millimeters per day**!
 
-| **14-Day Botany Log** | **Day 2** | **Day 4** | **Day 6** | **Day 8** | **Day 10** | **Day 12** | **Day 14** |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Stem Height ($\text{mm}$)** | $12$ | $28$ | $49$ | $74$ | $105$ | $138$ | $172$ |
+| Observation Day | Stem Height ($\text{mm}$) | 2-Day Growth Gain | What the Bean Plant Is Doing |
+| :--- | :---: | :---: | :--- |
+| **Day 2** | $12\text{ mm}$ | $+12\text{ mm}$ | Seed coat splits; arched green stem ("hypocotyl") peeks up |
+| **Day 4** | $28\text{ mm}$ | $+16\text{ mm}$ | White root network anchors into the damp paper towel |
+| **Day 6** | $49\text{ mm}$ | $+21\text{ mm}$ | First pair of solar-panel leaves unfold to catch window light |
+| **Day 8** | $74\text{ mm}$ | $+25\text{ mm}$ | Leaves convert sunlight and water into fast stem growth |
+| **Day 10** | $105\text{ mm}$ | $+31\text{ mm}$ | Peak growth spurt as second leaf tier opens |
+| **Day 12** | $138\text{ mm}$ | $+33\text{ mm}$ | Tall stem thickens and reaches toward the window glass |
+| **Day 14** | $172\text{ mm}$ | $+34\text{ mm}$ | Full $17.2\text{ cm}$ seedling ready for a garden pot |
 
-### Daily Growth Speed
-How fast was the sprout growing during its big middle growth spurt between Day 4 ($28\text{ mm}$) and Day 10 ($105\text{ mm}$)? Subtract the starting height from the ending height on top, subtract the starting day from the ending day on the bottom, and divide:
-$$\text{Daily Growth Rate} = \frac{\text{Ending Height} - \text{Starting Height}}{\text{Ending Day} - \text{Starting Day}} = \frac{105 - 28}{10 - 4} = \frac{77\text{ mm}}{6\text{ days}} \approx \mathbf{12.83\text{ mm/day}}$$
+Look closely at the 14-day sprout log above: once the first green leaves unfold after Day 4, the sprout shoots up from $28\text{ mm}$ on Day 4 to $105\text{ mm}$ on Day 10! Dividing the height gain by the elapsed days (`105 {{key:ENTER}} 28 {{key:-}} 10 {{key:ENTER}} 4 {{key:-}} {{key:÷}}`) shows that the stem climbed $77\text{ mm} \div 6\text{ days} \approx \mathbf{12.83\text{ mm/day}}$—and comparing the Day 14 height ($172\text{ mm}$) against Day 2 ($12\text{ mm}$) with `{{res:sc6_09_applied_stem_labs_seq_07:keys}}` reveals a $\mathbf{+1333.33\%}$ jump!
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `105` | 0 | 0 | 0 | 105 |
-| `{{key:ENTER}}` | 0 | 0 | 105 | 105 |
-| `28 {{key:-}}` | 0 | 0 | 0 | 77 |
-| `10` | 0 | 0 | 77 | 10 |
-| `{{key:ENTER}}` | 0 | 77 | 10 | 10 |
-| `{{key:4}} {{key:-}}` | 0 | 0 | 77 | 6 |
-| `{{key:÷}}` | 0 | 0 | 0 | $12.83$ |
+Watch how both measurements—daily growth speed *and* percentage growth—chain together on a second sprout that grew from $15\text{ mm}$ to $75\text{ mm}$ over $5\text{ days}$. Finding the daily growth speed with `{{res:sc6_09_applied_stem_labs_p15:keys}}` yields **`{{res:sc6_09_applied_stem_labs_p15:value}}`**, and checking the percentage growth via `{{res:sc6_09_applied_stem_labs_p16:keys}}` confirms **`{{res:sc6_09_applied_stem_labs_p16:value}}`**:
 
-### Overall Growth Percentage
-How much bigger is the Day 14 plant ($172\text{ mm}$) compared to when it first peeked above the soil on Day 2 ($12\text{ mm}$)? Using `{{key:%CHG}}` via `{{res:sc6_09_applied_stem_labs_seq_07:keys}}` reveals a total growth of $\mathbf{+1333.33\%}$.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `12` | 0 | 0 | 0 | 12 |
-| `{{key:ENTER}}` | 0 | 0 | 12 | 12 |
-| `172` | 0 | 0 | 12 | 172 |
-| `{{key:%CHG}}` | 0 | 0 | 12 | $1333.33$ |
-
-You can combine both measurements—daily growth speed *and* percentage growth—into a single 8-step stack check on your windowsill bean sprout! Suppose five days ago your sprout stood $15\text{ mm}$ tall, and today your millimeter ruler reads $75\text{ mm}$ tall. First, finding the daily growth speed with `{{res:sc6_09_applied_stem_labs_p15:keys}}` yields **`{{res:sc6_09_applied_stem_labs_p15:value}}`**, and checking the percentage growth via `{{res:sc6_09_applied_stem_labs_p16:keys}}` confirms **`{{res:sc6_09_applied_stem_labs_p16:value}}`**:
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `75` | 0 | 0 | 0 | 75 | Enter ending sprout height ($75\text{ mm}$) |
-| `{{key:ENTER}}` | 0 | 0 | 75 | 75 | Copy ending height into Register $Y$ |
+| `{{key:ENTER}}` | 0 | 0 | 75 | 75 | Copy ending height onto Shelf $Y$ |
 | `15` | 0 | 0 | 75 | 15 | Enter starting sprout height ($15\text{ mm}$) |
 | `{{key:-}}` | 0 | 0 | 0 | 60 | Subtract to find total height gained ($75 - 15 = 60\text{ mm}$) |
-| `{{key:5}}` | 0 | 0 | 60 | 5 | Enter number of growing days ($5\text{ days}$) |
+| `5` | 0 | 0 | 60 | 5 | Enter number of growing days ($5\text{ days}$) |
 | `{{key:÷}}` | 0 | 0 | 0 | 12 | Divide height gained by days ($60 \div 5 = 12.0\text{ mm/day}$) |
-| `15 {{key:ENTER}}` | 0 | 12 | 15 | 15 | Enter starting height ($15\text{ mm}$) into Register $Y$ |
+| `15 {{key:ENTER}}` | 0 | 12 | 15 | 15 | Enter starting height ($15\text{ mm}$) onto Shelf $Y$ |
 | `75 {{key:%CHG}}` | 0 | 12 | 15 | 400 | Find percent increase from $15\text{ mm}$ to $75\text{ mm}$ ($+400.0\%$) |
 
-Register $X$ shows that the bean sprout grew $\mathbf{12.0\text{ mm/day}}$ for a total increase of $\mathbf{+400.0\%}$—five times its starting height in less than a week!
+Shelf $X$ shows a total growth of $\mathbf{+400.0\%}$ ($60\text{ mm}$ of new stem divided by the $15\text{ mm}$ starting height is $4$ full times more height, so the plant now stands $5\times$ as tall as on Day 1), while Shelf $Z$ still holds its daily speed of $\mathbf{12.0\text{ mm/day}}$.
 
 ---
 
-## Bakery Math: Scaling Bread & Smoothie Recipes
+### Scaling Bread & Smoothie Recipes
 
-Why do professional bread bakers weigh their ingredients in grams on a digital kitchen scale instead of scooping flour with measuring cups—and why do they call the flour weight **$100\%$** even when all the ingredients add up to $171.5\%$? If you scoop flour with a cup, packing the flour tightly can sneak $30$ extra grams into the bowl and make your bread dry and heavy. With **Baker's Percentages**, the flour is always the $100\%$ anchor, and every other ingredient (water, yeast, salt) is simply a percentage of the flour weight! That means you can scale a recipe to feed 4 people or 400 people in seconds.
+Why do professional bread and pizza bakers weigh their ingredients in grams on a digital kitchen scale instead of scooping flour with measuring cups—and why do they call the flour weight **$100\%$** even when all the ingredients add up to $171.5\%$?
+
+If you scoop flour with a cup, packing the flour tightly can sneak $30$ extra grams into the bowl and make your pizza crust or bread loaf dry and heavy. With **Baker's Percentages**, the flour is always the $100\%$ anchor, and every other ingredient (water, yeast, salt) is simply a percentage of the flour weight. That means you can scale a recipe to feed 4 people or 400 people in seconds.
 
 | Ingredient | Baker's Percentage |
 | :--- | :--- |
@@ -446,72 +270,64 @@ Why do professional bread bakers weigh their ingredients in grams on a digital k
 | **Salt** | $2.0\%$ |
 | **Total Formula** | **$171.5\%$** |
 
-### Scaling Bread for a 28-Guest Banquet
-The standard loaf requires $500\text{ grams}$ of flour and yields 4 generous servings. You need to bake bread for 28 guests ($28 \div 4 = 7\times$ scaling factor).
+**Scaling Multi-Loaf Bakery Batches:**
+Because the SC-6 percentage key `{{key:%}}` calculates a percentage of Shelf $Y$ *without* erasing Shelf $Y$, your $100\%$ flour anchor stays alive on Shelf $Y$ for every ingredient! To bake 7 loaves ($500\text{ g}$ flour each) for a 28-guest dinner, multiplying `{{res:sc6_09_applied_stem_labs_seq_08:keys}}` sets your $100\%$ flour anchor at $\mathbf{3,500\text{ g}}$, and then `{{res:sc6_09_applied_stem_labs_seq_09:keys}}` ($\mathbf{2,380\text{ g}}$ water at $68\%$), `{{res:sc6_09_applied_stem_labs_seq_10:keys}}` ($\mathbf{70\text{ g}}$ salt at $2\%$), and `{{res:sc6_09_applied_stem_labs_seq_11:keys}}` ($\mathbf{52.5\text{ g}}$ yeast at $1.5\%$) measure every ingredient from that same $3,500\text{ g}$ anchor ($\mathbf{6,002.5\text{ g}}$ total dough).
 
-Multiplying the $500\text{ g}$ loaf base by $7$ with `{{res:sc6_09_applied_stem_labs_seq_08:keys}}` establishes $\mathbf{3,500\text{ grams}}$ ($3.5\text{ kg}$) of total flour; from there, `{{res:sc6_09_applied_stem_labs_seq_09:keys}}` computes $\mathbf{2,380\text{ grams}}$ ($2.38\text{ L}$) of water at $68\%$ hydration while keeping $3,500\text{ g}$ in Register $Y$, `{{res:sc6_09_applied_stem_labs_seq_10:keys}}` finds $\mathbf{70\text{ grams}}$ of salt ($2.0\%$), and `{{res:sc6_09_applied_stem_labs_seq_11:keys}}` finds $\mathbf{52.5\text{ grams}}$ of yeast ($1.5\%$).
+Watch all four stack shelves in action when you scale twelve golden loaves of country sourdough ($450\text{ g}$ flour per loaf, $65\%$ water, $2\%$ salt): finding total flour (`{{res:sc6_09_applied_stem_labs_p17:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p17:value}}`**), $65\%$ water (`{{res:sc6_09_applied_stem_labs_p18:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p18:value}}`**), and $2\%$ salt (`{{res:sc6_09_applied_stem_labs_p19:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p19:value}}`**) keeps every weight visible at once:
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 01 | `500 {{key:ENTER}} 7 {{key:×}}` | 0 | 0 | 0 | 3500 | Total Flour base: $500\text{g} \times 7 = 3,500\text{g}$ |
-| 02 | `68 {{key:%}}` | 0 | 0 | 3500 | 2380 | Water: $68\%$ of $3,500\text{g} = 2,380\text{g}$ ($Y$ holds base $3,500\text{g}$) |
-| 03 | `3500 {{key:ENTER}} 2 {{key:%}}` | 3500 | 2380 | 3500 | 70 | Salt: $2.0\%$ of $3,500\text{g} = 70\text{g}$ ($Y$ holds base $3,500\text{g}$) |
-| 04 | `3500 {{key:ENTER}} 1.5 {{key:%}}` | 3500 | 70 | 3500 | 52.5 | Yeast: $1.5\%$ of $3,500\text{g} = 52.5\text{g}$ ($Y$ holds base $3,500\text{g}$) |
-
-Let's scale a second bakery recipe for the School STEM Bake Sale: twelve golden loaves of country sourdough! A single loaf uses $450\text{ grams}$ of flour ($100\%$), plus $65\%$ water and $2\%$ salt. To mix the dough for all $12$ loaves at once, first calculate total flour (`{{res:sc6_09_applied_stem_labs_p17:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p17:value}}`**), then $65\%$ water (`{{res:sc6_09_applied_stem_labs_p18:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p18:value}}`**), and then $2\%$ salt (`{{res:sc6_09_applied_stem_labs_p19:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p19:value}}`**):
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `450 {{key:ENTER}}` | 0 | 0 | 450 | 450 | Enter flour weight for 1 loaf ($450\text{ g}$) |
 | `12 {{key:×}}` | 0 | 0 | 0 | 5400 | Multiply by 12 loaves to find total flour ($5,400\text{ g}$) |
-| `65 {{key:%}}` | 0 | 0 | 5400 | 3510 | Find $65\%$ of $5,400\text{ g}$ for water ($3,510\text{ g}$); $5,400$ stays in $Y$ |
-| `5400 {{key:ENTER}}` | 5400 | 3510 | 5400 | 5400 | Place the $5,400\text{ g}$ flour base in Register $Y$ |
-| `{{key:2}} {{key:%}}` | 5400 | 3510 | 5400 | 108 | Find $2\%$ of $5,400\text{ g}$ for salt ($108\text{ g}$) |
+| `65 {{key:%}}` | 0 | 0 | 5400 | 3510 | Find $65\%$ of $5,400\text{ g}$ for water ($3,510\text{ g}$); $5,400$ stays on Shelf $Y$ |
+| `5400 {{key:ENTER}}` | 5400 | 3510 | 5400 | 5400 | Place the $5,400\text{ g}$ flour base on Shelf $Y$ |
+| `2 {{key:%}}` | 5400 | 3510 | 5400 | 108 | Find $2\%$ of $5,400\text{ g}$ for salt ($108\text{ g}$) |
 
-Your 12-loaf batch uses $\mathbf{5,400\text{ grams}}$ of flour, $\mathbf{3,510\text{ grams}}$ of water, and $\mathbf{108\text{ grams}}$ of salt!
+Look at all four stack shelves at the end of the sequence: Shelf $X$ holds your $\mathbf{108\text{ grams}}$ of salt, Shelves $Y$ and $T$ hold your $\mathbf{5,400\text{ grams}}$ of flour, and Shelf $Z$ still holds your $\mathbf{3,510\text{ grams}}$ of water—all three recipe weights visible at once without writing a single number on a flour-dusted notepad.
 
-### Scaling Down a Liquid Measuring Cup Recipe with Fraction Towers
-What if a cookbook recipe uses fractional measuring cups and you want to make a smaller or larger batch? Suppose a pancake recipe calls for $1\ \frac{3}{4}$ cups of milk to make 8 pancakes, and you are making breakfast for just two people ($2$ pancakes, or $\frac{2}{8} = \frac{1}{4}$ of the recipe). Before touching the keypad, picture this with your **84 mm Fraction Towers**: $1$ whole tower ($84\text{ mm}$) plus three $\frac{1}{4}$ blocks ($3 \times 21\text{ mm} = 63\text{ mm}$) equals seven $\frac{1}{4}$ blocks ($\frac{7}{4}$). Splitting each $\frac{1}{4}$ block into 4 equal pieces turns fourths into sixteenths ($\frac{7}{16}$)! Now verify on the SC-6:
-- Enter milk: `1 {{key:.}} 3 {{key:.}} 4 {{key:ENTER}}` ($1\ \frac{3}{4} = 7/4 = 1.75$).
-- Divide by 4: `{{key:4}} {{key:÷}}`.
-- Result: **`7/16`** cup of milk ($0.4375$).
+**Scaling Down a Liquid Measuring Cup Recipe with Fraction Towers:**
+What if a cookbook recipe uses fractional measuring cups and you want to make a smaller or larger batch? Take a Saturday-morning pancake recipe that calls for $1\ \frac{3}{4}$ cups of milk to make 8 fluffy pancakes, when you are making breakfast for just two people ($2$ pancakes, or $\frac{2}{8} = \frac{1}{4}$ of the recipe).
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 01 | `1 . 3 . 4` | 0 | 0 | 0 | $1\ \frac{3}{4}$ | Enter mixed fraction $1\ \frac{3}{4}$ cups ($1.75$) |
-| 02 | `{{key:ENTER}}` | 0 | 0 | $1\ \frac{3}{4}$ | $1\ \frac{3}{4}$ | Push to operational stack |
-| 03 | `{{key:4}} {{key:÷}}` | 0 | 0 | 0 | **`7/16`** | Divide by 4; yields exact $\frac{7}{16}$ cup ($0.4375$) |
+Before touching the keypad, picture this with your **Fraction Towers** right beside your glass measuring pitcher: $1$ whole tower plus three $\frac{1}{4}$ blocks equals seven $\frac{1}{4}$ blocks ($\frac{7}{4}$). When you divide that stack by $4$, you are splitting each $\frac{1}{4}$ block into 4 equal pieces, which turns fourths into sixteenths ($\frac{7}{16}$ of a cup)! On your SC-6, entering the mixed fraction with `1 {{key:.}} 3 {{key:.}} 4 {{key:ENTER}}` stages $1\ \frac{3}{4}$ ($7/4 = 1.75$) onto Shelf $Y$, and dividing by `4 {{key:÷}}` lands directly on **`7/16`** cup of milk ($0.4375\text{ cup}$)—which is just a splash under the $\frac{1}{2}\text{-cup}$ ($8/16$) mark, or exactly $7\text{ tablespoons}$ since there are $16\text{ tablespoons}$ in $1\text{ cup}$!
 
-Now try scaling up and down for two STEM Bake Sale treats! First, a single batch of trail-mix granola bars calls for $2\ \frac{1}{4}$ cups of rolled oats, and you need $4$ batches for the bake sale table. Picture $2\ \frac{1}{4} \times 4$ with your **Fraction Towers**: four $2$-whole towers make $8$ wholes, and four $\frac{1}{4}$ blocks snap together into $1$ more whole tower ($8 + 1 = 9$). Verifying on the SC-6 using mixed-fraction entry via `{{res:sc6_09_applied_stem_labs_p20:keys}}` confirms **`{{res:sc6_09_applied_stem_labs_p20:value}}`**: multiplying $2\ \frac{1}{4}$ by $4$ gives an exact $\mathbf{9\text{ cups}}$ of oats.
+Now try scaling up and down for two STEM Bake Sale treats! First, a single batch of trail-mix granola bars calls for $2\ \frac{1}{4}$ cups of rolled oats, and you need $4$ batches for the bake sale table.
 
-Second, to wash down the warm granola bars, you blend $3\ \frac{1}{2}$ cups of berry smoothie and pour it equally into $4$ tasting cups for your baking team. Picture $3\ \frac{1}{2}$ as seven $\frac{1}{2}\text{-cup}$ blocks ($7/2$): when you slice each half-cup into 4 equal shares, halves turn into eighths ($7/8$). Dividing the mixed-number volume by 4 on the stack with `{{res:sc6_09_applied_stem_labs_p39:keys}}` yields **`{{res:sc6_09_applied_stem_labs_p39:value}}`**:
+Picture $2\ \frac{1}{4} \times 4$ with your **Fraction Towers**: four $2$-whole towers make $8$ wholes, and four $\frac{1}{4}$ blocks snap together into $1$ more whole tower ($8 + 1 = 9$). Checking on the SC-6 using mixed-fraction entry via `{{res:sc6_09_applied_stem_labs_p20:keys}}` confirms **`{{res:sc6_09_applied_stem_labs_p20:value}}`**—multiplying $2\ \frac{1}{4}$ by $4$ gives an exact $\mathbf{9\text{ cups}}$ of oats!
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+Second, to wash down the warm granola bars, you blend $3\ \frac{1}{2}$ cups of berry smoothie and pour it equally into $4$ tasting cups for your baking team. Picture $3\ \frac{1}{2}$ as seven $\frac{1}{2}\text{-cup}$ blocks ($7/2$): when you slice each half-cup into 4 equal shares, halves turn into eighths ($7/8$). Dividing the mixed-number volume by 4 on the stack with `{{res:sc6_09_applied_stem_labs_p39:keys}}` gives **`{{res:sc6_09_applied_stem_labs_p39:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `3 {{key:.}} 1 {{key:.}} 2` | 0 | 0 | 0 | $3\ 1/2$ | Enter mixed number $3\ \frac{1}{2}$ cups |
-| `{{key:ENTER}}` | 0 | 0 | $3\ 1/2$ | $3\ 1/2$ | Push $3\ \frac{1}{2}$ into Register $Y$ |
-| `{{key:4}}` | 0 | 0 | $3\ 1/2$ | 4 | Enter 4 equal cups |
+| `{{key:ENTER}}` | 0 | 0 | $3\ 1/2$ | $3\ 1/2$ | Push $3\ \frac{1}{2}$ onto Shelf $Y$ |
+| `4` | 0 | 0 | $3\ 1/2$ | 4 | Enter 4 equal cups |
 | `{{key:÷}}` | 0 | 0 | 0 | $7/8$ | Divide $3\ \frac{1}{2} \div 4 = 7/8$ cup |
 | `{{key:a ᵇ/c}}` | 0 | 0 | 0 | $0.875$ | Toggle between exact fraction `7/8` and decimal `0.875` |
 
-Each tasting cup receives $\mathbf{7/8\text{ cup}}$ ($0.875\text{ cup}$) of smoothie—just one eighth of a cup shy of a full cup!
+Each tasting cup gets $\mathbf{7/8\text{ cup}}$ ($0.875\text{ cup}$) of smoothie—just one eighth of a cup shy of a full cup, so you can pour it right up to the $\frac{3}{4}\text{-cup}$ plus $\frac{1}{8}\text{-cup}$ line on your kitchen pitcher!
 
 ---
 
-## How Bicycle & Robot Gears Trade Speed for Super-Strength
+## Gears, Hydraulics, Drones & Solar Tilt
+
+With our kitchen and backyard experiments logged, we are ready to build mechanical and electrical machines—exploring how gear trains and water syringes multiply force, and how drone pilots and solar engineers budget electrical energy.
+
+### How Bicycle & Robot Gears Trade Speed for Super-Strength
 
 How can a tiny electric motor that spins super fast—but is weak enough to stop with your finger—lift a heavy crate or turn the hands of a clock when you connect it through a train of gears?
 
-Think about how two gear wheels push each other: their teeth lock together one tooth at a time! When a small **Driver Gear** with only $12$ teeth meshes with a big **Driven Gear** that has $36$ teeth, one full spin of the small gear only pushes $12$ teeth around the edge of the big gear. Because $36 \div 12 = 3$, the small gear has to spin **$3$ full times** just to turn the big gear **once**! The big gear spins $3$ times slower, **but it pushes with $3$ times the lifting strength**.
+In the 1490s, Renaissance artist and inventor **Leonardo da Vinci** filled his *Codex Madrid* notebooks with detailed drawings of interlocking wooden and brass gear wheels—showing his workshop apprentices that every mesh between a small gear and a big gear is really a fraction and a ratio you can count with your fingertips! You feel this exact gear math in your legs every time you click the thumb-shifter on a **multi-speed bicycle**: when you pedal up a steep hill, the bicycle's rear derailleur guides the steel chain onto a wide, many-toothed sprocket on the back wheel so your legs spin easily while multiplying your climbing force; on a flat road, shifting to a tiny 12-tooth rear sprocket makes one turn of your pedals spin the back wheel three or four times for top speed!
+
+When two gear wheels mesh directly together, their teeth lock one tooth at a time. When a small **Driver Gear** with only $12$ teeth meshes with a big **Driven Gear** that has $36$ teeth, one full spin of the small gear only pushes $12$ teeth around the edge of the big gear. Because $36 \div 12 = 3$, the small gear has to spin **$3$ full times** just to turn the big gear **once**! The big gear spins $3$ times slower, **but it pushes with $3$ times the lifting strength**.
 
 What if $3$ times stronger still isn't strong enough to lift a heavy robot arm? Instead of building one gigantic gear the size of a dinner plate, engineers connect **two gear pairs in a row** on a shared middle axle—just like the hidden gears inside your **Planetary Geared Clock**:
 
 {{blocks:diagram_compound_gear_train|How a Two-Stage Compound Gear Train Multiplies Lifting Strength (3 × 3 = 9:1)}}
 
-Look at the diagram above to see how each stage hands off the push:
-- **Stage 1 (Red to Blue):** Small Gear A ($12\text{ teeth}$) turns Big Gear B ($36\text{ teeth}$). Dividing $36 \div 12$ gives a **$3:1$ ratio**, slowing the $1,800\text{ RPM}$ motor down to $600\text{ RPM}$ and multiplying its strength by $3\times$.
-- **The Shared Middle Axle:** Small Gear C ($16\text{ teeth}$) is locked onto the exact same metal rod as Big Gear B, so Gear C also turns at $600\text{ RPM}$ with that $3\times$ stronger push!
-- **Stage 2 (Gold to Green):** Small Gear C ($16\text{ teeth}$) turns Big Gear D ($48\text{ teeth}$). Dividing $48 \div 16$ gives a second **$3:1$ ratio**, multiplying the strength by another $3\times$ ($3 \times 3 = 9:1$ total!).
+Look at the diagram above to see how each stage hands off the push. In **Stage 1 (Red to Blue)**, Small Gear A ($12\text{ teeth}$) turns Big Gear B ($36\text{ teeth}$): dividing `{{res:sc6_09_applied_stem_labs_seq_12:keys}}` (`36 {{key:ENTER}} 12 {{key:÷}}`) gives a **`3.0`** ($3:1$) ratio, slowing an $1,800\text{ RPM}$ motor down to $600\text{ RPM}$ and multiplying its strength by $3\times$.
+
+Next, in **Stage 2 on the Shared Middle Axle (Gold to Green)**, Small Gear C ($16\text{ teeth}$) is locked onto the same rod as Gear B and turns Big Gear D ($48\text{ teeth}$). Dividing `{{res:sc6_09_applied_stem_labs_seq_13:keys}}` (`48 {{key:ENTER}} 16 {{key:÷}}`) places the second **`3.0`** on Shelf $X$ while holding Stage 1's `3.0` on Shelf $Y$, and tapping `{{key:×}}` multiplies them into a **`9.0`** ($9:1$) compound reduction—slowing the winch drum to $1800 \div 9 = \mathbf{200\text{ RPM}}$ with **$9\times$ the pulling muscle**! *(If you accidentally hook the motor to the big gear first, you get $12 \div 36 = 0.3333$—one tap of `{{key:x⇄y}}` before `{{key:÷}}` flips the tooth counts back into place.)*
+$$\text{Total Gear Ratio} = (\text{Stage 1 Driven Teeth} \div \text{Stage 1 Driver Teeth}) \times (\text{Stage 2 Driven Teeth} \div \text{Stage 2 Driver Teeth})$$
 
 | Reduction Stage | Driver Gear | Driven Gear | Stage Ratio |
 | :--- | :---: | :---: | :---: |
@@ -519,141 +335,53 @@ Look at the diagram above to see how each stage hands off the push:
 | **Stage 2 (Middle Shaft)** | Gear C ($16\text{ teeth}$) | Gear D ($48\text{ teeth}$) | $48 \div 16 = 3:1$ |
 | **Compound Output** | — | — | **$3 \times 3 = 9:1$** |
 
-### The Gear Ratio Rule in Words
-For any two-stage gear train, divide the driven teeth by the driver teeth for Stage 1, divide the driven teeth by the driver teeth for Stage 2, and multiply the two stage ratios together:
-$$\text{Total Gear Ratio} = (\text{Stage 1 Driven Teeth} \div \text{Stage 1 Driver Teeth}) \times (\text{Stage 2 Driven Teeth} \div \text{Stage 2 Driver Teeth})$$
+What if your robotics team tests a single $4:1$ gear pair first ($16\text{-tooth}$ driver turning a $64\text{-tooth}$ driven gear via `{{res:sc6_09_applied_stem_labs_p21:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p21:value}}`**), and then builds a two-stage winch where Stage 1 is $40 \div 10$ ($4:1$) and Stage 2 is $30 \div 15$ ($2:1$)? Watch how Shelf $Z$ holds Stage 1 (`4`) while you divide Stage 2 (`30 ÷ 15 = 2`), then multiplies both stages (`{{res:sc6_09_applied_stem_labs_p23:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p23:value}}`**):
 
-Notice how the exact same tooth-counting idea connects every gear puzzle you have met in this book:
-- **Bicycle Speed Gears (Chapter 5):** On a bicycle, your pedals turn a *big* $48\text{-tooth}$ front sprocket chained to a *small* $16\text{-tooth}$ back wheel gear ($48 \div 16 = 3$), so one pedal turn spins your back wheel $3$ full times for high speed! And if a gear pair has a $3.5:1$ ratio, turning the big gear $12$ times spins the small gear $12 \times 3.5 = 42$ times.
-- **When Marked Teeth Meet Again (Chapter 7):** If a $14\text{-tooth}$ gear turns against a $21\text{-tooth}$ gear, their gold marked teeth line up again every $\text{LCM}(14, 21) = 42\text{ teeth}$ ($3$ turns of the small gear $= 2$ turns of the big gear).
-- **Three-Stage Fraction Chains (Chapter 5):** If three gear stages step speed down by $\frac{1}{2}$, then $\frac{2}{3}$, and then $\frac{3}{4}$, multiplying the fractions cancels the middle numbers ($\frac{1}{2} \times \frac{2}{3} \times \frac{3}{4} = \frac{1}{4}$).
-
-### Multiplying Two Gear Stages Together on the Stack
-Stage 1: Gear A ($12\text{ teeth}$) drives Gear B ($36\text{ teeth}$).  
-Stage 2: Gear C ($16\text{ teeth}$) drives Gear D ($48\text{ teeth}$).
-
-Dividing the Stage 1 teeth with `{{res:sc6_09_applied_stem_labs_seq_12:keys}}` places $\mathbf{3.0}$ on the stack, dividing the Stage 2 teeth with `{{res:sc6_09_applied_stem_labs_seq_13:keys}}` places the second $\mathbf{3.0}$ ratio in Register $X$, and pressing `{{key:×}}` multiplies both stages into a **`9.0`** ($9:1$) compound reduction.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `36` | 0 | 0 | 0 | 36 |
-| `{{key:ENTER}}` | 0 | 0 | 36 | 36 |
-| `12 {{key:÷}}` | 0 | 0 | 0 | $3.0$ |
-| `48` | 0 | 0 | $3.0$ | 48 |
-| `{{key:ENTER}}` | 0 | $3.0$ | 48 | 48 |
-| `16 {{key:÷}}` | 0 | 0 | $3.0$ | $3.0$ |
-| `{{key:×}}` | 0 | 0 | 0 | $9.0$ |
-
-### Calculating Output Shaft Speed
-If the input electric motor spins at $1,800\text{ RPM}$ (revolutions per minute), how fast does the final output shaft spin after a $9:1$ gear reduction?
-- `1800 {{key:ENTER}} 9 {{key:÷}}` $\longrightarrow X = \mathbf{200\text{ RPM}}$ (spinning $9\times$ slower, with $9\times$ the twisting push!).
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `1800 {{key:ENTER}}` | 0 | 0 | 1800 | 1800 |
-| `9 {{key:÷}}` | 0 | 0 | 0 | 200 |
-
-What if your robotics team wants to test a single $4:1$ gear pair where a small $16\text{-tooth}$ driver gear turns a large $64\text{-tooth}$ driven gear (`{{res:sc6_09_applied_stem_labs_p21:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p21:value}}`**), and then build a two-stage compound winch where Stage 1 has a $10\text{-tooth}$ gear driving a $40\text{-tooth}$ gear and Stage 2 has a $15\text{-tooth}$ gear driving a $30\text{-tooth}$ gear? Watch how the 4-register stack holds the Stage 1 ratio (`4`) on Floor $Z$ while you divide Stage 2 (`30 ÷ 15 = 2`), then multiplies both stages together (`{{res:sc6_09_applied_stem_labs_p23:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_p23:value}}`**):
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `40 {{key:ENTER}} 10 {{key:÷}}` | 0 | 0 | 0 | 4 | Stage 1 gear ratio: $40 \div 10 = 4.0$ |
-| `30 {{key:ENTER}}` | 0 | 4 | 30 | 30 | Enter Stage 2 driven gear ($30\text{ teeth}$); lifts $4$ into Register $Z$ |
-| `15 {{key:÷}}` | 0 | 0 | 4 | 2 | Stage 2 gear ratio: $30 \div 15 = 2.0$; drops $4$ into Register $Y$ |
+| `30 {{key:ENTER}}` | 0 | 4 | 30 | 30 | Enter Stage 2 driven gear ($30\text{ teeth}$); lifts $4$ onto Shelf $Z$ |
+| `15 {{key:÷}}` | 0 | 0 | 4 | 2 | Stage 2 gear ratio: $30 \div 15 = 2.0$; drops $4$ onto Shelf $Y$ |
 | `{{key:×}}` | 0 | 0 | 0 | 8 | Multiply Stage 1 by Stage 2: $4 \times 2 = 8.0$ |
 
-Register $X$ displays $8.0$, proving that the two-stage gear train gives an $\mathbf{8.0 : 1}$ mechanical advantage—trading eight fast turns of the motor shaft for one slow, super-strong turn of the winch drum!
+Shelf $X$ displays $8.0$, proving that the two-stage gear train gives an $\mathbf{8.0 : 1}$ strength boost—trading eight fast turns of the motor shaft for one slow, high-torque turn of the winch drum.
 
 ---
 
-## Lifting Heavy Books with Water Syringes
+### Lifting Heavy Books with Water Syringes
 
-How can a gentle push from your thumb on a small water-filled plastic syringe lift a heavy stack of dictionaries sitting on top of a wide syringe? Connect a narrow $1.0\text{ cm}$ syringe to a wide $3.0\text{ cm}$ syringe with clear vinyl tubing filled with water. When you push the small plunger, the water carries your pressure equally to every square centimeter of the big plunger! And why does making the big plunger $3\times$ wider multiply your force by **$9\times$** instead of $3\times$? Because a plunger is a circle, and just like you discovered in Chapter 6, scaling a shape's width by $3$ scales its **area** by $3 \times 3 = 9$!
+How can a gentle push from your thumb on a small water-filled plastic syringe lift a heavy stack of dictionaries sitting on top of a wide syringe? In 1646, the young French scientist **Blaise Pascal (1623–1662)** staged a dramatic experiment to prove that water transmits pressure equally in every direction. Pascal attached a tall, skinny vertical tube no wider than a drinking straw to the lid of a heavy, water-filled oak barrel. When he climbed a ladder and poured just a single cup of water down that skinny tube, the water pressure multiplied across the wide barrel walls so powerfully that the heavy oak staves burst open!
+
+You can harness Pascal's water-pressure multiplier right on your desk—without bursting any barrels! Connect a narrow $1.0\text{ cm}$ master syringe to a wide $3.0\text{ cm}$ lifting syringe with clear vinyl tubing filled with water. When you push the small plunger, the water carries your pressure equally to every square centimeter of the big plunger—the exact same hydraulic principle that lets a driver stop a $4,000\text{-pound}$ car with one foot on the brake pedal.
+
+Why does making the big plunger $3\times$ wider multiply your lifting push by **$9\times$** instead of $3\times$?
 
 {{blocks:diagram_hydraulic_solar_catapult|Water Pressure and Sunshine Geometry: How a 3× Wider Syringe Gives 9× the Push and How Tilting a Solar Panel Shrinks Its Shadow}}
 
-| Syringe Part | Plunger Width | Circle Area Comparison | Force Multiplier |
-| :--- | :---: | :---: | :--- |
-| **Small Input Syringe** | $1.0\text{ cm}$ wide | $1\times$ base area | Your thumb push |
-| **Large Output Syringe** | $3.0\text{ cm}$ wide | $(3 \div 1)^2 = 9\times$ area | $\text{Output Lift} = 9 \times \text{Thumb Push}$ |
+Look at the water-pressure diagram above: a syringe plunger is a circle, and just like you discovered in Chapter 6, a circle's area grows with the **square** of its width. When you divide the $3.0\text{ cm}$ wide plunger by the $1.0\text{ cm}$ narrow plunger (`3 {{key:ENTER}} 1 {{key:÷}}` $\to 3.0$) and tap `{{key:x²}}`, its circular face packs **`9.0`** times the area—turning your gentle thumb push into **nine times the upward lifting force** ($\text{Output Lift} = 9 \times \text{Thumb Push}$), the exact same hydraulic secret that powers giant yellow excavators and fire-truck aerial ladders. What is the trade-off for getting $9\times$ the push? Watch the water inside the vinyl tube! Because the big syringe has $9\times$ the circle area, pushing the small $1.0\text{ cm}$ plunger down by **$9.0\text{ cm}$** only raises the big $3.0\text{ cm}$ plunger by **$1.0\text{ cm}$**. Just like a $9:1$ gear train trades 9 fast turns for 1 super-strong turn, a hydraulic syringe lift trades **$9\times$ the push distance** for **$9\times$ the lifting strength**!
 
-### Finding the Force Multiplier
-The small input syringe is $1.0\text{ cm}$ wide, and the large output syringe is $3.0\text{ cm}$ wide. Because a circle's area grows with the square of its width, we divide the widths and square the result:
-1. Enter the large syringe width: `{{key:3}} {{key:ENTER}}`.
-2. Divide by the small syringe width: `{{key:1}} {{key:÷}}`.
-3. Square the width ratio: Press `{{key:x²}}`:
-   - Register $X$ displays: **`9.0`** (The force multiplier is **$9\times$**).
+Now test that $9\times$ hydraulic multiplier under a stack of heavy hardcover dictionaries! If you press the small plunger with a gentle thumb force of $5.0\text{ Newtons}$ (about half a kilogram of push), how many Newtons of upward force—and how many kilograms of books (where $1\text{ kg}$ weighs $9.8\text{ Newtons}$ in Earth's gravity)—can the large syringe raise? Multiply the $9\times$ area multiplier by your $5.0\text{ N}$ thumb push (`9 {{key:ENTER}} 5.0 {{key:×}}`) to reach $\mathbf{45.0\text{ Newtons}}$ of upward lift, then divide by Earth's gravity (`9.8 {{key:÷}}`) to land on $\mathbf{4.59\text{ kg}}$ (over $10\text{ pounds}$ of books lifted with one thumb!):
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:3}}` | 0 | 0 | 0 | 3 |
-| `{{key:ENTER}}` | 0 | 0 | 3 | 3 |
-| `{{key:1}}` | 0 | 0 | 3 | 1 |
-| `{{key:÷}}` | 0 | 0 | 0 | 3 |
-| `{{key:x²}}` | 0 | 0 | 0 | 9 |
-
-### Lifting a Heavy Stack of Books
-If you push the small syringe with a force of $5.0\text{ Newtons}$ (about half a kilogram of thumb push) and the hydraulic syringe system multiplies your push by $9\times$, how much lifting force and book weight can the large syringe raise?
-- `9 {{key:ENTER}} 5.0 {{key:×}}` $\longrightarrow X = \mathbf{45.0\text{ Newtons}}$, then `9.8 {{key:÷}}` $\longrightarrow X = \mathbf{4.59\text{ kg}}$ of lifting power (over $10\text{ pounds}$ of books lifted with one thumb!).
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `9 {{key:ENTER}}` | 0 | 0 | 9 | 9 |
-| `5.0 {{key:×}}` | 0 | 0 | 0 | $45.0$ |
-| `9.8 {{key:÷}}` | 0 | 0 | 0 | $4.59$ |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `9 {{key:ENTER}}` | 0 | 0 | 9 | 9 | Enter the $9\times$ syringe area multiplier onto Shelf $Y$ |
+| `5.0 {{key:×}}` | 0 | 0 | 0 | $45.0$ | Multiply by your $5.0\text{ N}$ thumb push: $45.0\text{ Newtons}$ of lift |
+| `9.8 {{key:÷}}` | 0 | 0 | 0 | $4.59$ | Divide by gravity ($9.8\text{ N/kg}$): lifts **4.59 kg** of books |
 
 ---
 
-## Quadcopter Drone Batteries & Safe Flight Timers
+### Quadcopter Drone Batteries & Safe Flight Timers
 
-Why do drone pilots always set a countdown timer to land when their rechargeable battery still has $20\%$ charge left—and how can you predict your exact hover time before spinning up the propellers? Think of a drone battery's **milliamp-hour ($\text{mAh}$) rating** like a fuel tank of electrical energy, and the four motors' **current draw ($\text{mA}$)** like how fast the motors sip from that tank. Leaving $20\%$ in reserve protects the battery chemistry from overheating and gives you a safe landing cushion!
+Why do drone pilots always set a countdown timer to land when their rechargeable battery still has $20\%$ charge left—and how can you predict your exact hover time before spinning up the propellers?
 
-| Drone Battery Measurement | Value / Word Rule |
-| :--- | :--- |
-| **Battery Capacity** | $850\text{ mAh}$ |
-| **Hover Current Used** | $4,200\text{ mA}$ |
-| **Safe Battery Rule** | Use $80\%$ ($0.80$) so $20\%$ stays in reserve to protect the battery |
-| **Safe Flight Time (Minutes)** | $(\text{Battery Capacity} \times 0.80 \times 60\text{ minutes}) \div \text{Hover Current}$ |
+Think of a drone battery's **milliamp-hour ($\text{mAh}$) rating** like a fuel tank of electrical energy, and the four motors' **current draw ($\text{mA}$)** like how fast the motors sip from that tank. Inside a quadcopter's lightweight **lithium-polymer (LiPo)** battery pack, microscopic lithium ions shuttle back and forth through a polymer gel: if you ever drain the pack all the way to $0\%$, the chemical layers inside puff up with gas and permanently lose their ability to hold a charge, while the sudden voltage drop mid-flight leaves the propellers without enough power to cushion your landing! That is why aerospace engineers and RC pilots always follow the **$80\%$ Safe Battery Rule**—multiplying the battery's capacity by $0.80$ (so $20\%$ stays untouched in reserve), multiplying by $60\text{ minutes per hour}$, and dividing by the hover current in milliamps:
+$$\text{Safe Flight Time (Minutes)} = (\text{Battery Capacity in mAh} \times 0.80 \times 60\text{ minutes}) \div \text{Hover Current in mA}$$
 
-### Calculating Safe Hover Duration
-1. Enter battery capacity: `850 {{key:ENTER}}`.
-2. Multiply by the $80\%$ safe battery rule: `{{key:.}} {{key:8}} {{key:×}}` $\longrightarrow X = \mathbf{680\text{ mAh usable}}$.
-3. Multiply by $60\text{ minutes per hour}$: `60 {{key:×}}` $\longrightarrow X = \mathbf{40,800\text{ mA}\cdot\text{min}}$.
-4. Divide by total hover current ($4,200\text{ mA}$): `4200 {{key:÷}}`:
-   - Register $X$ displays: **$9.714\text{ minutes}$**.
-5. Convert decimal minutes to minutes and seconds:
-   - Safe flight timer: **9 minutes 43 seconds**.
+On a lightweight $850\text{ mAh}$ pack whose motors draw $4,200\text{ mA}$ (`850 {{key:ENTER}} 0.8 {{key:×}} 60 {{key:×}} 4200 {{key:÷}}`), you get **$9.714\text{ minutes}$** ($9\text{ min } 43\text{ s}$ via `{{key:▸HMS}}`) of safe flight—or **$7.418\text{ minutes}$** ($\mathbf{-23.64\%}$ via `{{key:%CHG}}`) if a $45\text{-gram}$ action camera raises the motor draw to $5,500\text{ mA}$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `850` | 0 | 0 | 0 | 850 |
-| `{{key:ENTER}}` | 0 | 0 | 850 | 850 |
-| `{{key:.}} {{key:8}} {{key:×}}` | 0 | 0 | 0 | 680 |
-| `60 {{key:×}}` | 0 | 0 | 0 | 40800 |
-| `4200 {{key:÷}}` | 0 | 0 | 0 | $9.714$ |
+To get more flight time back when carrying a custom 3D-printed prop-guard frame ($5,000\text{ mA}$ draw), upgrade to a larger $1,200\text{ mAh}$ battery! Following the $80\%$ safe battery rule (`{{res:sc6_09_applied_stem_labs_p26:keys}}`) lands on **`{{res:sc6_09_applied_stem_labs_p26:value}}`**:
 
-### Carrying a Mini Action Camera
-What happens to your flight time when you clip a $45\text{-gram}$ mini action camera onto the drone? Because the propellers have to spin faster to lift the extra weight, the hover current jumps from $4,200\text{ mA}$ to $5,500\text{ mA}$:
-1. Calculate the new flight time with the camera:
-   - Usable battery capacity: $680\text{ mAh}$ ($80\%$ of $850\text{ mAh}$).
-   - Flight minutes: $(680 \times 60) \div 5,500 = 7.418\text{ minutes}$ ($7\text{ min } 25\text{ sec}$).
-2. Calculate the percent change in flight time:
-   - Starting flight time: $9.714\text{ min}$.
-   - New flight time: $7.418\text{ min}$.
-   - Percent change: enter `9.714`, swap `{{key:x⇄y}}`, then press `{{key:%CHG}}` $\longrightarrow \mathbf{-23.64\%}$ shorter flight time.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `680 {{key:ENTER}}` | 0 | 0 | 680 | 680 |
-| `60 {{key:×}}` | 0 | 0 | 0 | 40800 |
-| `5500 {{key:÷}}` | 0 | 0 | 0 | $7.418$ |
-| `9.714` | 0 | 0 | $7.418$ | $9.714$ |
-| `{{key:x⇄y}}` | 0 | 0 | $9.714$ | $7.418$ |
-| `{{key:%CHG}}` | 0 | 0 | $9.714$ | $-23.64$ |
-
-How can you get more flight time back when carrying a heavier frame or camera? Upgrade to a higher-capacity battery! Suppose your club bolts a lightweight 3D-printed frame onto an indoor quadcopter powered by a larger $1,200\text{ mAh}$ battery. Following the $80\%$ safe battery rule ($0.80$) so $20\%$ stays in reserve for a safe landing, how many minutes can the drone hover when its four motors draw a combined $5,000\text{ mA}$? Calculating the safe flight time in minutes on the stack via `{{res:sc6_09_applied_stem_labs_p26:keys}}` produces **`{{res:sc6_09_applied_stem_labs_p26:value}}`**:
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `1200 {{key:ENTER}}` | 0 | 0 | 1200 | 1200 | Enter battery capacity ($1,200\text{ mAh}$) |
 | `.8 {{key:×}}` | 0 | 0 | 0 | 960 | Multiply by $0.80$ safe battery rule: $960\text{ mAh}$ usable |
@@ -661,90 +389,70 @@ How can you get more flight time back when carrying a heavier frame or camera? U
 | `5000` | 0 | 0 | 57600 | 5000 | Enter hover current draw ($5,000\text{ mA}$) |
 | `{{key:÷}}` | 0 | 0 | 0 | $11.52$ | Divide usable battery by current ($57,600 \div 5,000 = 11.52\text{ min}$) |
 
-Register $X$ displays $11.52\text{ minutes}$, showing that the upgraded $1,200\text{ mAh}$ battery lets the quadcopter safely hover for $\mathbf{11.52\text{ minutes}}$ before the landing timer beeps!
+The bottom line displays $11.52\text{ minutes}$ ($11\text{ minutes}$ and $0.52 \times 60 \approx 31\text{ seconds}$), showing that the upgraded $1,200\text{ mAh}$ battery lets the quadcopter safely hover for **11 minutes 31 seconds** before the landing timer beeps.
 
 ---
 
-## Solar Panel Tilt Angle & Sunlight Shadow Factor
+### Solar Panel Tilt Angle & Sunlight Shadow Factor
 
-Why does a solar panel make maximum power when aimed straight at the noon sun ($0^\circ$ tilt), yet drop to exactly half power when tilted at $60^\circ$? Hold a flat book under a ceiling light and tilt it slowly: as the book tilts, the **shadow** it casts on the table directly underneath gets narrower! A solar panel only catches as much beam width of sunshine as its flat shadow—and you can read that exact **Sunlight Shadow Factor** right off your 3D-printed **Unit Circle Volvelle**! When you turn the pointer of the Unit Circle Volvelle to $0^\circ, 30^\circ, 45^\circ,$ or $60^\circ$, the horizontal window displays the shadow factor ($1.0000, 0.8660, 0.7071,$ and $0.5000$), showing the exact decimal fraction of direct sunlight caught by the tilted panel.
+Why does a solar panel make full power when aimed straight at the noon sun ($0^\circ$ tilt), yet drop to half power when tilted at $60^\circ$? Try this experiment on your desk right now: hold a flashlight straight down ($0^\circ$) over a sheet of graph paper and count how many squares the bright circle of light covers. Now tilt the flashlight at a steep $60^\circ$ angle: that exact same beam of light stretches out into an oval twice as wide, spreading its energy thin across twice as many squares! Conversely, if you hold a flat solar panel under the noon sun and tilt it slowly, the **shadow** it casts on the table directly underneath gets narrower and narrower.
 
-| Panel Tilt Angle | Sunlight Shadow Factor (from Volvelle) | Solar Power Produced ($\text{Peak Watts} \times \text{Shadow Factor}$) |
-| :--- | :--- | :--- |
-| **$0^\circ$ (Flat to the Sun)** | $1.0000$ | $100.0\%$ of Peak Watts |
-| **$30^\circ$ Tilt** | $0.8660$ | $86.6\%$ of Peak Watts |
-| **$45^\circ$ Tilt** | $0.7071$ | $70.7\%$ of Peak Watts |
-| **$60^\circ$ Tilt** | $0.5000$ | $50.0\%$ of Peak Watts |
+A solar panel only catches as much beam width of sunshine as its flat shadow—and you can read that exact **Sunlight Shadow Factor** right off your 3D-printed **Unit Circle Volvelle**. When you turn the pointer of the Unit Circle Volvelle to $0^\circ, 30^\circ, 45^\circ,$ or $60^\circ$, the horizontal window displays the shadow factor ($1.0000, 0.8660, 0.7071,$ and $0.5000$), showing the exact decimal fraction of direct sunlight caught by the tilted panel.
 
-### Solar Power at Different Tilt Angles
-A classroom solar panel produces $5.0\text{ Watts}$ when pointed straight at the sun ($0^\circ$ tilt). How many Watts does it produce at tilt angles of $30^\circ, 45^\circ,$ and $60^\circ$?
+**Solar Power at Different Tilt Angles:**
+Set a classroom solar panel on a sunny windowsill where it produces $5.00\text{ Watts}$ when pointed straight at the sun ($0^\circ$ tilt). How many Watts does it produce when the sun strikes it at tilt angles of $30^\circ, 45^\circ,$ and $60^\circ$? By staging the panel's $5.0\text{-Watt}$ peak rating on Shelf $Y$ (`5 {{key:ENTER}}`) and multiplying by the Volvelle shadow factor on Shelf $X$, you can test all three angles in seconds. At a gentle **$30^\circ$ tilt** (shadow factor $0.8660$), multiplying via `{{res:sc6_09_applied_stem_labs_seq_14:keys}}` yields $\mathbf{4.33\text{ Watts}}$—showing that even a $30^\circ$ angle still captures $86.6\%$ of peak sunshine! At a medium **$45^\circ$ tilt** (shadow factor $0.7071$), keying in `{{res:sc6_09_applied_stem_labs_seq_15:keys}}` gives $\mathbf{3.54\text{ Watts}}$ ($70.7\%$ of peak). And at a steep **$60^\circ$ tilt** (shadow factor $0.5000$), pressing `{{res:sc6_09_applied_stem_labs_seq_16:keys}}` lands on an exact $\mathbf{2.50\text{ Watts}}$ ($50.0\%$—half the shadow width means half the electrical power):
 
-1. At a $30^\circ$ tilt (Volvelle shadow factor $0.866$), multiplying via `{{res:sc6_09_applied_stem_labs_seq_14:keys}}` yields $X = \mathbf{4.33\text{ Watts}}$ ($86.6\%$).
-2. At a $45^\circ$ tilt (Volvelle shadow factor $0.7071$), multiplying via `{{res:sc6_09_applied_stem_labs_seq_15:keys}}` yields $X = \mathbf{3.54\text{ Watts}}$ ($70.7\%$).
-3. At a $60^\circ$ tilt (Volvelle shadow factor $0.500$), multiplying via `{{res:sc6_09_applied_stem_labs_seq_16:keys}}` yields $X = \mathbf{2.50\text{ Watts}}$ ($50.0\%$).
+| Panel Tilt Angle | Sunlight Shadow Factor (from Volvelle) | Peak Watts | Output Power ($\text{Peak} \times \text{Factor}$) | Percent of Peak |
+| :--- | :---: | :---: | :---: | :---: |
+| **$0^\circ$ (Flat to the Sun)** | $1.0000$ | $5.00\text{ W}$ | $\mathbf{5.00\text{ W}}$ | $100.0\%$ |
+| **$30^\circ$ Tilt** | $0.8660$ | $5.00\text{ W}$ | $\mathbf{4.33\text{ W}}$ | $86.6\%$ |
+| **$45^\circ$ Tilt** | $0.7071$ | $5.00\text{ W}$ | $\mathbf{3.54\text{ W}}$ | $70.7\%$ |
+| **$60^\circ$ Tilt** | $0.5000$ | $5.00\text{ W}$ | $\mathbf{2.50\text{ W}}$ | $50.0\%$ |
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:5}} {{key:ENTER}}` | 0 | 0 | 5 | 5 |
-| `.866 (30° factor)` | 0 | 0 | 5 | $0.8660$ |
-| `{{key:×}}` | 0 | 0 | 0 | $4.33$ |
+That shadow-factor table explains why rooftop solar installers tilt fixed solar panels to match a city's **latitude on Earth**—tilting panels around $30^\circ$ in southern cities like Austin, New Orleans, or Cairo, and around $45^\circ$ in northern cities like Minneapolis, Portland, or Milan—so the panel faces as squarely as possible into the noon sun all year round!
 
-Repeating this stack multiplication across all four tilt angles produces the complete solar panel power table:
+**Adding Up a Full School Day of Solar Energy:**
+As the sun arcs across the sky from morning to afternoon, how much total electrical energy does your panel collect over an 8-hour school day? In the morning (9:00 AM to 12:00 PM, $60^\circ$ tilt), the panel produces $2.50\text{ Watts}$ for $3\text{ hours}$ ($7.50\text{ Watt-hours}$). Around noon (12:00 PM to 2:00 PM, $0^\circ$ tilt), it produces a full $5.00\text{ Watts}$ for $2\text{ hours}$ ($10.00\text{ Watt-hours}$). And in the afternoon (2:00 PM to 5:00 PM, $45^\circ$ tilt), it produces $3.54\text{ Watts}$ for $3\text{ hours}$ ($10.62\text{ Watt-hours}$).
 
-| Tilt Angle | Shadow Factor | Peak Watts | Output Power | Percent of Peak |
-| :--- | :--- | :--- | :--- | :--- |
-| 0° | 1.0000 | 5.00 W | 5.00 W | 100.0% |
-| 30° | 0.8660 | 5.00 W | 4.33 W | 86.6% |
-| 45° | 0.7071 | 5.00 W | 3.54 W | 70.7% |
-| 60° | 0.5000 | 5.00 W | 2.50 W | 50.0% |
+Instead of jotting down subtotals on paper, you can clear your statistics basket with `{{key:CLΣ}}`, multiply the Watts by the hours for each part of the day (`2.5 {{key:ENTER}} 3 {{key:×}} {{key:Σ+}}` for morning, `5 {{key:ENTER}} 2 {{key:×}} {{key:Σ+}}` for noon, and `3.54 {{key:ENTER}} 3 {{key:×}} {{key:Σ+}}` for afternoon), and tap `{{key:Σx}}` to ring up the full day's harvest of $\mathbf{28.12\text{ Watt-hours}}$—then divide by `1000 {{key:÷}}` to convert into $\mathbf{0.02812\text{ kWh}}$:
 
-### Adding Up a Full School Day of Solar Energy
-As the sun arcs across the sky from morning to afternoon, how much total electrical energy does your panel harvest over an 8-hour school day? Multiply the Watts by the hours for each part of the day and drop each subtotal into your statistical basket (`{{key:Σ+}}`):
-- Morning (9:00 AM, $60^\circ$ tilt): $2.50\text{ Watts}$ for 3 hours $\longrightarrow 7.50\text{ Watt-hours}$.
-- Noon (12:00 PM, $0^\circ$ tilt): $5.00\text{ Watts}$ for 2 hours $\longrightarrow 10.00\text{ Watt-hours}$.
-- Afternoon (3:00 PM, $45^\circ$ tilt): $3.54\text{ Watts}$ for 3 hours $\longrightarrow 10.62\text{ Watt-hours}$.
-
-Add up each energy period using the SC-6 statistical key `{{key:Σ+}}`:
-1. Clear statistics: `{{key:CLΣ}}`.
-2. Morning energy: `2.5 {{key:ENTER}} {{key:3}} {{key:×}} {{key:Σ+}}` $\longrightarrow \text{Count} = 1$ ($7.5\text{ Wh}$).
-3. Noon energy: `{{key:5}} {{key:ENTER}} {{key:2}} {{key:×}} {{key:Σ+}}` $\longrightarrow \text{Count} = 2$ ($10.0\text{ Wh}$).
-4. Afternoon energy: `3.54 {{key:ENTER}} {{key:3}} {{key:×}} {{key:Σ+}}` $\longrightarrow \text{Count} = 3$ ($10.62\text{ Wh}$).
-5. Total Daily Energy: Press `{{key:Σx}}` $\longrightarrow X = \mathbf{28.12\text{ Watt-hours}}$.
-6. Convert to Kilowatt-hours: `1000 {{key:÷}}` $\longrightarrow X = \mathbf{0.02812\text{ kWh}}$.
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:CLΣ}}` | 0 | 0 | 0 | 0 |
-| `2.5 {{key:ENTER}} 3 {{key:×}}` | 0 | 0 | 0 | $7.5$ |
-| `{{key:Σ+}}` | 0 | 0 | 0 | $1.0000$ |
-| `5 {{key:ENTER}} 2 {{key:×}}` | 0 | 0 | 0 | $10.0$ |
-| `{{key:Σ+}}` | 0 | 0 | 0 | $2.0000$ |
-| `3.54 {{key:ENTER}} 3 {{key:×}}` | 0 | 0 | 0 | $10.62$ |
-| `{{key:Σ+}}` | 0 | 0 | 0 | $3.0000$ |
-| `{{key:Σx}}` | 0 | 0 | 0 | $28.12$ |
-| `1000 {{key:÷}}` | 0 | 0 | 0 | $0.02812$ |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `{{key:CLΣ}}` | 0 | 0 | 0 | 0 | Clear the statistics basket before starting the daily log |
+| `2.5 {{key:ENTER}} 3 {{key:×}}` | 0 | 0 | 0 | $7.5$ | Morning energy: $2.50\text{ W} \times 3\text{ hours} = 7.50\text{ Wh}$ |
+| `{{key:Σ+}}` | 0 | 0 | 0 | $1.0000$ | Toss morning energy into the basket ($\text{Count} = 1$) |
+| `5 {{key:ENTER}} 2 {{key:×}}` | 0 | 0 | 0 | $10.0$ | Noon energy: $5.00\text{ W} \times 2\text{ hours} = 10.00\text{ Wh}$ |
+| `{{key:Σ+}}` | 0 | 0 | 0 | $2.0000$ | Toss noon energy into the basket ($\text{Count} = 2$) |
+| `3.54 {{key:ENTER}} 3 {{key:×}}` | 0 | 0 | 0 | $10.62$ | Afternoon energy: $3.54\text{ W} \times 3\text{ hours} = 10.62\text{ Wh}$ |
+| `{{key:Σ+}}` | 0 | 0 | 0 | $3.0000$ | Toss afternoon energy into the basket ($\text{Count} = 3$) |
+| `{{key:Σx}}` | 0 | 0 | 0 | $28.12$ | Sum all three periods: **28.12 Watt-hours** total |
+| `1000 {{key:÷}}` | 0 | 0 | 0 | $0.02812$ | Divide by 1,000 to convert into **0.02812 kWh** |
 
 ---
 
-## Maker Lab Engineering Notebook & Measurement Checks
+## The Maker's Notebook, Wind Tunnels & Weekend Challenges
 
-Real makers always check how close their physical measurements come to their design target. In this section, you learn to calculate **Percent Error** and **3D-Printing Snap-Fit Clearance** on the SC-6:
+Real makers always check how close their physical measurements come to their design target. In this closing section, we will check **Percent Error**, **3D-Printing Snap-Fit Clearance**, and **Archimedes' Density Fingerprint**, and then see how the Wright brothers used a bicycle-shop wind tunnel and triangle trusses to build the first airplane.
+
+### Maker Lab Engineering Notebook & Measurement Checks
+
+To check your accuracy at the workbench, compare your measured value against the target value using:
 
 $$\text{Percent Error} = (\text{Difference from Target} \div \text{Target Value}) \times 100\%$$
 
-### Checking Percent Error on a Precision Calibration Block
-Suppose a precision 3D-printed calibration bar has a target weight of $9.80665\text{ grams}$, and your digital scale measures $9.7716\text{ grams}$. How close is your print in percent? Because subtracting $9.80665$ automatically saves $9.80665$ inside `{{key:LASTX}}`, tapping `{{key:LASTX}} {{key:÷}}` divides by the target value right away without making you type that six-digit number a second time!
+**Checking Percent Error on a Precision Calibration Block:**
+A precision 3D-printed calibration bar has a CAD target weight of $9.80665\text{ grams}$, and your digital scale measures $9.7716\text{ grams}$. How close is your print in percent? Because subtracting $9.80665$ automatically saves $9.80665$ inside `{{key:LASTX}}`, tapping `{{key:LASTX}} {{key:÷}}` divides by the target value right away without making you type that six-digit number a second time.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `9.7716` | 0 | 0 | 0 | $9.7716$ |
-| `{{key:ENTER}}` | 0 | 0 | $9.7716$ | $9.7716$ |
-| `9.80665` | 0 | 0 | $9.7716$ | $9.80665$ |
-| `{{key:-}}` | 0 | 0 | 0 | $-0.03505$ |
-| `{{key:LASTX}}` | 0 | 0 | $-0.03505$ | $9.80665$ |
-| `{{key:÷}}` | 0 | 0 | 0 | $-0.003574$ |
-| `{{key:|x|}}` | 0 | 0 | 0 | $0.003574$ |
-| `100 {{key:×}}` | 0 | 0 | 0 | $0.357$ |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `9.7716` | 0 | 0 | 0 | $9.7716$ | Enter the measured scale weight ($9.7716\text{ g}$) |
+| `{{key:ENTER}}` | 0 | 0 | $9.7716$ | $9.7716$ | Copy measured weight up onto Shelf $Y$ |
+| `9.80665` | 0 | 0 | $9.7716$ | $9.80665$ | Enter the exact target weight ($9.80665\text{ g}$) |
+| `{{key:-}}` | 0 | 0 | 0 | $-0.03505$ | Subtract to find the raw weight difference ($-0.03505\text{ g}$) |
+| `{{key:LASTX}}` | 0 | 0 | $-0.03505$ | $9.80665$ | Recall target weight from `LASTX` without re-typing it |
+| `{{key:÷}}` | 0 | 0 | 0 | $-0.003574$ | Divide difference by target weight |
+| `{{key:|x|}}` | 0 | 0 | 0 | $0.003574$ | Take absolute value so error is positive |
+| `100 {{key:×}}` | 0 | 0 | 0 | $0.357$ | Multiply by 100: **0.357%** error (within $0.36\%$!) |
 
 *(Your print is within $0.36\%$ of the target—and `{{key:LASTX}}` saved you from re-typing `9.80665`.)*
 
@@ -752,6 +460,7 @@ Suppose a precision 3D-printed calibration bar has a target weight of $9.80665\t
 
 ### 3D Printing Snap-Fit Clearance Gap
 When 3D printing interlocking parts—like the stacking lips of your **Counting Tiles**, the dovetail slots of the **L-Frame Factoring Stage**, or the $42\text{ mm}$ **Gridfinity Studio Bins**—melted plastic expands slightly as it cools, so engineers leave a small clearance gap of $0.15\text{ mm}$ on each side.
+
 If a round peg is $10.00\text{ mm}$ wide, what is the minimum hole width needed so the peg slides in smoothly?
 $$\text{Hole Width} = \text{Peg Width} + (2 \times \text{Clearance Gap}) = 10.00\text{ mm} + (2 \times 0.15\text{ mm}) = 10.30\text{ mm}$$
 
@@ -759,12 +468,16 @@ Doubling the $0.15\text{ mm}$ side clearance and adding it to the $10.00\text{ m
 
 ---
 
-### Digital Scale & Filament Density Check
-In maker spaces, you can also run our earlier $20.0\text{ mm} \times 20.0\text{ mm} \times 20.0\text{ mm}$ ($2.0\text{ cm}$ on each edge) calibration test cube in reverse to check whether an unlabeled mystery spool of plastic is corn-based PLA ($1.24\text{ g/cm}^3$) or lightweight ABS ($1.04\text{ g/cm}^3$) by finding how much $1\text{ cm}^3$ of the plastic weighs ($\text{Grams per cm}^3 = \text{Weight in Grams} \div \text{Volume in cm}^3$). Just as we saw when comparing solid and hollow infill earlier in the chapter, cubing the $2.0\text{ cm}$ edge length on the stack via `{{res:sc6_09_applied_stem_labs_seq_17:keys}}` (`{{key:2}} {{key:ENTER}} {{key:2}} {{key:×}}` $\to 4\text{ cm}^2$ base area, followed by `{{key:2}} {{key:×}}`) places the exact cube volume **`{{res:sc6_09_applied_stem_labs_seq_17:value}}`** ($X = \mathbf{8.00\text{ cm}^3}$) on Ground Shelf $X$. Next, place the solid mystery cube on a zeroed digital scale, where it reads $9.92\text{ grams}$, and type `9.92` into Register $X$ (which automatically lifts the $8.0\text{ cm}^3$ volume onto Waiting Shelf $Y$). Because density is weight divided by volume ($\text{Grams} \div \text{cm}^3$), tap `{{key:x⇄y}}` once to swap `9.92` into the left seat (Register $Y$) and `8.0` into the right seat (Register $X$), then press `{{key:÷}}`: Ground Shelf $X$ immediately displays **`1.24`** ($\mathbf{1.24\text{ g/cm}^3}$)—confirming that the mystery spool is **authentic PLA** ($1.24\text{ g/cm}^3$) rather than ABS ($1.04\text{ g/cm}^3$)!
+### Archimedes' Mystery Filament Detective Test
+Over two thousand years ago in Syracuse, King Hiero II suspected his goldsmith had secretly mixed cheaper, lighter silver into a solid gold crown—and asked Archimedes to unmask the fraud without scratching the crown! Archimedes realized that every pure material has its own unchangeable **density fingerprint** ($\text{Density} = \text{Weight in Grams} \div \text{Volume in cm}^3$).
+
+You can run that exact Archimedes detective test on two unlabeled spools of black 3D-printing plastic on the back shelf of the maker lab: one is corn-based **PLA** ($1.24\text{ g/cm}^3$, which prints cleanly at $215^\circ\text{C}$), and the other is petroleum-based **ABS** ($1.04\text{ g/cm}^3$, which clogs a $215^\circ\text{C}$ PLA nozzle!). Print a solid $2.0\text{ cm} \times 2.0\text{ cm} \times 2.0\text{ cm}$ test cube from the mystery spool—the exact same $2.0\text{ cm}$ calibration cube size we measured earlier in this chapter (`{{res:sc6_09_applied_stem_labs_seq_17:keys}}` $\to$ **`{{res:sc6_09_applied_stem_labs_seq_17:value}}`** $\text{cm}^3$ on Shelf $X$).
+
+When you set that mystery cube on your digital scale, ABS would weigh only $8.32\text{ grams}$, whereas the readout settles at $9.92\text{ grams}$! Typing `9.92` onto Shelf $X$ (lifting `8.0` to Shelf $Y$), tapping `{{key:x⇄y}}` to put grams over cubic centimeters, and pressing `{{key:÷}}` lands on **`1.24`** ($\mathbf{1.24\text{ g/cm}^3}$)—unmasking the mystery spool as **genuine PLA** (and for a curved 3D print like a chess knight that pushes up $15.0\text{ cm}^3$ of water in a beaker and weighs $18.60\text{ g}$, dividing `18.60 {{key:ENTER}} 15 {{key:÷}}` reveals the exact same **`1.24`** PLA fingerprint!).
 
 ---
 
-## Workshop Safety Rules & Checking the Wall Outlet
+### Workshop Safety Rules & Checking the Wall Outlet
 
 Operating maker space equipment requires following classroom safety rules:
 
@@ -774,86 +487,75 @@ Operating maker space equipment requires following classroom safety rules:
 > 3. **Eye Protection:** Always wear safety glasses when launching tabletop catapults, testing water syringes, or clipping plastic support material.
 > 4. **Fresh Air:** Always run the classroom air filter when 3D printing.
 
-### Classroom Wall Outlet Load Check
-A classroom maker lab has four 3D printers ($150\text{ W}$ each), two laptop computers ($65\text{ W}$ each), and an air filter ($80\text{ W}$) plugged into a single $120\text{-Volt}$, $15\text{-Amp}$ wall circuit.
-Does the total electrical load stay safely below the $80\%$ continuous limit ($12\text{ Amps}$)?
+Have you ever plugged a toaster and a hair dryer into the same wall outlet and heard the circuit breaker click off in the hallway panel? Inside your classroom walls, copper wires warm up as electrical current (**Amps**) flows through them, and the National Electrical Code requires continuous loads to stay below **$80\%$** of a circuit breaker's rating ($15\text{ Amps} \times 0.80 = 12.0\text{ Amps}$).
 
-1. Total Watts Used:
-   - 4 printers: `{{res:sc6_09_applied_stem_labs_seq_18:keys}}` $\longrightarrow 600\text{ W}$.
-   - 2 laptops: `{{res:sc6_09_applied_stem_labs_seq_19:keys}}` $\longrightarrow 730\text{ W}$.
-   - 1 air filter: `80 {{key:+}}` $\longrightarrow \mathbf{810\text{ Watts total}}$.
-2. Amps Used at $120\text{ Volts}$ ($\text{Total Watts} \div 120\text{ Volts}$):
-   - `120 {{key:÷}}` $\longrightarrow X = \mathbf{6.75\text{ Amps}}$.
-3. Safe $80\%$ Circuit Limit ($15\text{ Amps} \times 80\%$):
-   - `{{res:sc6_09_applied_stem_labs_seq_20:keys}}` $\longrightarrow X = \mathbf{12.00\text{ Amps}}$.
-4. Safety Room Remaining:
-   - `{{res:sc6_09_applied_stem_labs_seq_21:keys}}` $\longrightarrow X = \mathbf{5.25\text{ Amps remaining}}$, confirming that all machines run safely with $5.25\text{ Amps}$ to spare.
+Plugged into a single $120\text{-Volt}$, $15\text{-Amp}$ classroom wall circuit are four 3D printers ($150\text{ W}$ each), two laptop computers ($65\text{ W}$ each), and an air filter ($80\text{ W}$). On the stack, multiplying the 4 printers (`{{res:sc6_09_applied_stem_labs_seq_18:keys}}` $\to 600\text{ W}$), adding the 2 laptops (`{{res:sc6_09_applied_stem_labs_seq_19:keys}}` $\to 730\text{ W}$), and adding the air filter (`80 {{key:+}}`) reveals a combined load of $\mathbf{810\text{ Watts}}$. Dividing by the $120\text{-Volt}$ wall voltage (`120 {{key:÷}}`) shows that the equipment draws $\mathbf{6.75\text{ Amps}}$ of current. When you compute the $80\%$ safe breaker limit (`{{res:sc6_09_applied_stem_labs_seq_20:keys}}` $\to \mathbf{12.00\text{ Amps}}$) and swap-subtract (`{{res:sc6_09_applied_stem_labs_seq_21:keys}}`), Shelf $X$ confirms $\mathbf{5.25\text{ Amps}}$ of safety margin to spare:
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `4 {{key:ENTER}} 150 {{key:×}}` | 0 | 0 | 0 | 600 |
-| `2 {{key:ENTER}} 65 {{key:×}}` | 0 | 0 | 600 | 130 |
-| `{{key:+}}` | 0 | 0 | 0 | 730 |
-| `80 {{key:+}}` | 0 | 0 | 0 | 810 |
-| `120 {{key:÷}}` | 0 | 0 | 0 | $6.75$ |
-| `15 {{key:ENTER}} .80 {{key:×}}` | 0 | 0 | $6.75$ | $12.0$ |
-| `{{key:x⇄y}} {{key:-}}` | 0 | 0 | 0 | $5.25$ |
-
----
-
-### Lab Bench Mysteries: Layer Thickness & Pendulum Swings
-
-- **Why Does Layer Thickness Change 3D-Printing Time So Much?** Suppose you slice a $1.0\text{ cm}$ top block section into $0.02\text{ cm}$ layers (`50` layers). If you switch your slicer to ultra-fine $0.01\text{ cm}$ layers, the printer nozzle has to trace $1.0 \div 0.01 = 100$ layers—twice as many horizontal trips across the build plate! You can even check how tiny a $0.020\text{ cm}$ layer is when squared (`{{res:sc6_09_applied_stem_labs_seq_22:keys}}` $\to 0.0004\text{ cm}^2$).
-- **Why Doesn't a Heavier Pendulum Swing Faster?** A $50\text{-gram}$ steel bolt and a $5\text{-gram}$ wooden bead tied to the same $100\text{ cm}$ string both take $20.1\text{ seconds}$ to complete $10$ swings (an average of $2.01\text{ seconds}$ per swing). Gravity pulls ten times harder on the $50\text{-gram}$ bolt, but the heavier bolt is also ten times harder to get moving, so the two effects balance out completely. Only the length of the string changes the swing time!
-
-Keep this quick troubleshooting checklist handy at your workbench whenever a measurement or calculation looks surprising:
-
-| What Happened on Your Screen | Why It Happened | How to Fix It |
-| :--- | :--- | :--- |
-| **Squaring the full width (diameter) instead of the radius** | Forgetting to divide the circle's width by 2 before squaring. | *"Width (diameter) goes all the way across the circle; radius goes from the center to the edge. Always divide $1.75\text{ mm}$ by 2 to get radius $0.875\text{ mm}$."* |
-| **Forgetting to subtract the base height before slicing layers** | Dividing the full block height by $0.02\text{ cm}$ instead of just the remaining top section. | *"Subtract the already-printed base height from the total height first (`3 ENTER 2 -`), then divide the remaining height by `.02`."* |
-| **Assuming a heavier pendulum swings faster** | Thinking a heavier weight falls faster on a string. | *"A heavier weight gets pulled harder by gravity, but it is also harder to speed up. The two balance out: only the string length changes the swing time."* |
-| **Scaling recipes by adding instead of multiplying** | Adding cups instead of multiplying by the batch size. | *"If you make 7 loaves of bread instead of 1, you must MULTIPLY every single ingredient by 7, not add 7."* |
-| **Dividing gear ratios in reverse order** | Mixing up the driver gear (input) and driven gear (output). | *"Gear ratio is always Driven teeth divided by Driver teeth ($\text{Out} \div \text{In}$). A bigger driven gear spins slower with stronger push."* |
-| **Ignoring the 20% battery reserve rule** | Draining a rechargeable drone battery all the way to 0%. | *"Draining a drone battery below 20% wears it out. Always multiply battery capacity by 0.80 to find safe flight time."* |
-
----
-
-### Scratch-Paper Formula Juggling vs. Live Workshop Stack Modeling
-
-Now that you have explored 3D printing, pendulums, solar ovens, catapults, recipes, gear trains, hydraulics, and drones, compare how a multi-step workshop cost calculation is entered on a standard calculator versus live unit-rate evaluation on the SC-6 stack:
-
-| Challenge / Equation | The Algebraic Calculator Trap (Standard Entry) | The StackCalc SC-6 + Manipulative Method | Keystroke Comparison | Live Stack Visibility | Learning Breakthrough |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **3D Printing Filament Cost**: $14.91\text{g} \times (\$20.00 / 1000\text{g}) = \$0.30$ | Typing `1 4 . 9 1  2 0 / 1 0 0 0 =` (14 physical keystrokes) jumps straight to `0.2982` without ever displaying the $\$0.02/\text{g}$ unit cost—or requires parentheses `1 4 . 9 1  ( 2 0 / 1 0 0 0 ) =` (16 physical keystrokes) to group the unit rate first. | Continuous dimensional pipeline: `14.91 {{key:ENTER}} 20 {{key:ENTER}} 1000 {{key:÷}} {{key:×}} {{key:$}}` $\to \mathbf{\$0.30}$ (16 physical keystrokes, including `{{key:$}}` rounding). Both the part mass ($14.91\text{g}$) and unit cost ($\$0.02/\text{g}$) appear side by side on the stack. | **16 vs. 16 strokes (with live unit-rate check & `{{key:$}}` rounding)** | Register $Y$ holds $14.91\text{g}$ while Register $X$ displays the exact unit price $\$0.02/\text{g}$, followed by single-tap `{{key:×}}` and `{{key:$}}` currency formatting without scrap paper. | Students measure physical filament with calipers, inspect both the gram weight and per-gram unit rate simultaneously on the screen, and see the exact cost before printing. |
+| `4 {{key:ENTER}} 150 {{key:×}}` | 0 | 0 | 0 | 600 | Four 3D printers at $150\text{ W}$ each $= 600\text{ W}$ |
+| `2 {{key:ENTER}} 65 {{key:×}}` | 0 | 0 | 600 | 130 | Two laptops at $65\text{ W}$ each $= 130\text{ W}$; $600\text{ W}$ waits on Shelf $Y$ |
+| `{{key:+}}` | 0 | 0 | 0 | 730 | Combine printers and laptops ($600 + 130 = 730\text{ W}$) |
+| `80 {{key:+}}` | 0 | 0 | 0 | 810 | Add the $80\text{ W}$ air filter: $810\text{ Watts}$ total load |
+| `120 {{key:÷}}` | 0 | 0 | 0 | $6.75$ | Divide by $120\text{ Volts}$ to find current: **6.75 Amps** |
+| `15 {{key:ENTER}} .80 {{key:×}}` | 0 | 0 | $6.75$ | $12.0$ | Compute $80\%$ safe limit of $15\text{ A}$ breaker: **12.0 Amps** |
+| `{{key:x⇄y}} {{key:-}}` | 0 | 0 | 0 | $5.25$ | Swap and subtract ($12.0 - 6.75$): **5.25 Amps** of safety margin |
 
 ---
 
-## Where to Go Next: Companion Workbook Quests & Kitchen-Table Challenges
+### The Wright Brothers' 1901 Bicycle-Shop Wind Tunnel
 
-> *For 26 additional worked problems with full 4-register stack tables, see Chapter 9 of the [SC-6 Elementary Companion Problem & Activity Workbook](../../curriculum/sc6-elementary-companion-workbook.md).*
+At the turn of the twentieth century, some of the best-funded laboratories in the world were racing to build the first airplane—and failing. Why did two brothers from Dayton, Ohio, who never attended college and funded their experiments entirely with their own savings, succeed where famous institutions crashed? Because **Wilbur Wright** (1867–1912) and **Orville Wright** (1871–1948) were hands-on makers who trusted careful workshop measurements and notebook math over guesswork.
 
-Ready to launch your own weekend invention studio? Here is how to extend the projects in this chapter using the [Big Ideas Math Middle School Supplement](../../curriculum/big-ideas-middle-school-sc6-workbook.md)—across **Unit 1: Numerical Expressions & Factors (Section 1.5)**, **Unit 2: Fractions & Decimals (Sections 2.2, 2.3 & 2.5)**, **Unit 3: Ratios, Rates & Percents (Sections 3.1 & 3.3)**, **Unit 5: Area, Surface Area & Volume (Section 5.2)**, **Unit 7: Equations & Inequalities (Section 7.5)**, **Unit 8: Geometric Figures, Scale Drawings & Circles (Section 8.4)**, and **Unit 9: Statistical Measures & Data Displays (Section 9.4)**—alongside *Timed Proficiency Trials* and the *12-Unit Curriculum Guide*:
+Long before they ever stood on the windy sand dunes of Kitty Hawk, North Carolina, Wilbur and Orville ran a home-built printing press and a neighborhood bicycle shop called **The Wright Cycle Exchange** at 1127 West Third Street in Dayton. In their back workshop, they brazed lightweight steel frames, trued wire-spoked wheels, and calculated sprocket-and-chain gear ratios ($\text{Driven Teeth} \div \text{Driver Teeth}$) for their own custom bicycle brands, the *Van Cleve* and the *St. Clair*. Bicycles taught the brothers three lessons that no textbook of the 1890s understood: how to build strong, feather-light structures out of triangles and tensioned spokes, how to transmit power efficiently through roller chains and sprockets, and why an unstable vehicle (like a bicycle or an airplane) stays upright not by being rigid and heavy, but by actively banking and steering into every turn.
 
-1. **The Kitchen-Table Pendulum Timing Lab (Curriculum Guide Unit 9 & Student Workbook):** Tie a metal washer or 3D-printed bob to a $100\text{ cm}$ ($1\text{-meter}$) piece of string and time 10 full back-and-forth swings with a stopwatch. Divide by $10$ on your SC-6 to find the average time for 1 swing, then shorten the string to $25\text{ cm}$ (one-fourth as long) and time 10 swings again to see why a quarter-length pendulum swings twice as fast!
-2. **The Baker's Percentage Pizza Night (Big Ideas Middle School Supplement):** Weigh out $400\text{ g}$ of flour on a kitchen scale ($100\%$), then use your SC-6's `{{key:%}}` key (just like our 28-guest banquet bread scaling earlier) to compute $65\%$ warm water ($260\text{ g}$), $2\%$ salt ($8\text{ g}$), and $1.5\%$ yeast ($6\text{ g}$).
-3. **The 3D-Printer Slicer & `{{key:LASTX}}` Height Sprint (Timed Proficiency Trials — Maker Engineering Round):** Pick any block height in centimeters, subtract the base height, and divide by `.02` ($0.02\text{ cm}$ per layer) to find how many horizontal plastic layers the 3D printer must trace—then tap `{{key:LASTX}} {{key:×}}` to verify that the layers stack back up to the exact remaining height without typing `.02` twice!
+In the summer of 1901, however, the brothers hit a heartbreaking wall. When they flew their full-size 1901 glider in the coastal winds at Kitty Hawk, its curved wings produced only **one-third** as much upward lift as the official air-pressure tables published by Europe's leading aeronautical scientists promised. Discouraged on the train ride home to Ohio, Wilbur remarked that humanity might not fly for a thousand years.
+
+Back in their Dayton bicycle shop that autumn, the brothers decided to test whether the textbook equations themselves were wrong. First, they mounted a small model wing and a flat metal plate horizontally onto the front handlebars of a St. Clair bicycle and pedaled furiously down a Dayton street to watch how the wind pushed the two surfaces balanced against each other. Then, in October 1901, they cleared a space in the upstairs room above their bike shop and built a **6-foot-long wooden wind tunnel** out of an old starch box with a glass viewing window on top, blown by a two-bladed fan connected to their shop's overhead belt drive.
+
+Inside that homemade wooden tunnel, Orville and Wilbur placed two of the cleverest measuring instruments in engineering history: miniature aerodynamic balances **hacked together out of old hacksaw blades and ground-down bicycle spokes**! Just like the angle pointer and shadow scale on your **Unit Circle Volvelle**, the brothers' bicycle-spoke balance measured the exact angle of each miniature wing slice against the wind and let them read the lift and drag ratios directly off a protractor dial. Over two intense months in late 1901, Wilbur and Orville bent and filed more than **200 miniature wing shapes** out of sheet steel, tested every angle of attack, and filled their pocket notebooks with the first accurate flight tables in human history.
+
+Two years later—on December 17, 1903—those back-room wind-tunnel numbers took to the sky. Even on the 1903 *Wright Flyer* itself, their bicycle-shop DNA was everywhere: to turn the twin wooden propellers in opposite directions from their 12-horsepower engine, Wilbur and Orville linked the engine shaft to the propellers using **heavy-duty bicycle sprockets and roller chains** running through steel tubes (with a $23\text{:}8$ sprocket reduction ratio—$23 \div 8 = 2.875\text{ engine turns}$ for every $1\text{ propeller turn}$—to trade high motor speed for low-speed pushing thrust, just like the compound gear trains you built in this chapter!). Every time you measure a filament strand with calipers, time 10 swings of a pendulum, log catapult trials with `{{key:Σ+}}` and `{{key:MAD}}`, or test a gear ratio on your SC-6, you are working in the exact spirit of the two bicycle mechanics from Dayton who measured their way into the sky.
+
+### Why Triangles Hold Up Bridges: Testing Paper Trusses to Failure
+
+One of the first things Wilbur and Orville Wright noticed in their bicycle shop is that a four-sided rectangle pinned at its corners is floppy—push on one corner and it collapses into a tilted parallelogram—whereas a **three-sided triangle** cannot change its shape without bending or breaking one of its sides! That geometric rule is why bicycle frames, bridge trusses, roof rafters, and the internal honeycomb infill inside your 3D-printed math blocks are all built out of **triangles**.
+
+When civil and aerospace engineers design a bridge or an airplane wing, they don't just ask *"How much weight can it hold?"* Anyone can build a bridge out of solid cast iron that holds a heavy load if you don't care how heavy the bridge itself is! Instead, real engineers measure a structure's **Strength-to-Weight Ratio**—dividing the maximum load the bridge holds before buckling by the weight of the bridge itself:
+
+$$\text{Strength-to-Weight Ratio} = \frac{\text{Maximum Load Supported (grams)}}{\text{Mass of the Bridge (grams)}}$$
+
+You can run a real structural engineering lab right at your desk using two hardcover books spaced **$16\text{ centimeters}$ apart**, two identical sheets of notebook or printer paper (each weighing about **$4.5\text{ grams}$**), and a cup of **U.S. pennies** (where each copper-plated zinc penny weighs exactly **$2.50\text{ grams}$** on a digital scale!):
+
+| Bridge Design Across a $16\text{ cm}$ Gap | Bridge Mass ($M$) | Pennies Held ($N$) | Total Load ($2.50\text{ g} \times N$) | Strength-to-Weight Ratio ($\text{Load} \div M$) |
+| :--- | :---: | :---: | :---: | :---: |
+| **1. Flat Unfolded Sheet of Paper** | $4.5\text{ g}$ | **$2$ pennies** | **$5.0\text{ g}$** | `5 {{key:ENTER}} 4.5 {{key:÷}}` $\to$ **`1.11×`** its weight |
+| **2. Folded Side-Wall Channel (`U`-Beam)** | $4.5\text{ g}$ | **$28$ pennies** | **$70.0\text{ g}$** | `28 {{key:ENTER}} 2.5 {{key:×}} 4.5 {{key:÷}}` $\to$ **`15.56×`** its weight |
+| **3. Accordion Triangle Truss (7 Pleats)** | $4.5\text{ g}$ | **$108$ pennies** | **$270.0\text{ g}$** | `108 {{key:ENTER}} 2.5 {{key:×}} 4.5 {{key:÷}}` $\to$ **`60.00×`** its weight! |
+
+Verify the **Accordion Triangle Truss** on your SC-6 stack: multiplying **108 pennies** by **$2.50\text{ g}$ per penny** (`108 {{key:ENTER}} 2.5 {{key:×}}` $\to \mathbf{270.0\text{ g}}$) and dividing by the **$4.5\text{ g}$** sheet of paper (`4.5 {{key:÷}}` $\to \mathbf{60.00}$) shows that folding triangular pleats lets that $4.5\text{-gram}$ sheet hold **60 times its own weight** (`60 {{key:ENTER}} 1.1111 {{key:÷}}` $\to \mathbf{54\times}$ stronger than the flat sheet!). That is why your 3D-printer slicer fills the inside of your **Fraction Towers** and **Gridfinity Trays** with triangular and honeycomb infill rather than solid plastic—printing in a third of the time while shrugging off classroom drops.
 
 ---
 
-## Chapter Summary & Looking Ahead
+### Three Weekend Maker-Bench Experiments to Try
 
-Across all nine chapters, you have paired physical manipulatives with the four-register stack to solve arithmetic, geometry, statistics, and maker problems:
+1. **The Kitchen-Table Pendulum Timing Lab:** Tie a washer to a $100\text{ cm}$ string, time 10 swings with a stopwatch, and divide by $10$ on your SC-6 ($\sim 2.0\text{ s}$ per swing). Then shorten the string to $25\text{ cm}$ (one-fourth as long) and time 10 swings to see why a quarter-length pendulum swings **twice as fast**!
+2. **The Baker's Percentage Pizza Night:** Weigh $400\text{ g}$ of flour on a kitchen scale ($100\%$) and use `{{key:%}}` on your SC-6 to find the gram weights for $65\%$ warm water (`400 {{key:ENTER}} 65 {{key:%}}` $\to 260\text{ g}$), $2\%$ salt (`2 {{key:%}}` $\to 8\text{ g}$), and $1.5\%$ yeast (`1.5 {{key:%}}` $\to 6\text{ g}$)!
+3. **The 3D-Printer Slicer & `{{key:LASTX}}` Height Sprint:** Measure a block's height in centimeters, subtract a $2\text{ cm}$ base, and divide by `.02` ($0.02\text{ cm}$ per layer) to find the layer count—then tap `{{key:LASTX}} {{key:×}}` to prove those layers stack right back to the exact height!
 
-1. **The RPN Mental Model & Stack Mastery:** You replaced parentheses and equals-sign confusion with a four-register stack ($X, Y, Z, T$) that tracks intermediate values like physical blocks.
-2. **Tactile Fractions & Rational Arithmetic:** You explored fraction equivalence, common denominators, and mixed numerals by aligning real blocks and tapping dedicated fraction hardware keys (`{{key:a ᵇ/c}}`, `{{key:d/c}}`, `{{key:SIMP}}`).
-3. **Spatial Geometry & Dimensional Scaling:** You measured perimeters, surface areas, and 3D volumes, using **Counting Tiles**, the **L-Frame Factoring Stage**, and the **Unit Circle Volvelle** shadow projection to connect 2D footprints to real 3D solids.
-4. **Number Theory & Experimental Probability:** You examined the building blocks of numbers with prime factorization, GCF, and LCM, and gathered empirical data with the hardware probability engine (`{{key:🎲}}`) and statistical accumulators (`{{key:Σ+}}`).
-5. **Cognitive Reflexes & Mental Math Fluency:** You trained your speed and accuracy in the Quiz Engine, applying the ends-in-5 squaring shortcut, the 11s trick, and instant verification without scratch paper.
-6. **Applied STEM & Maker Design:** You connected word rules directly to physical measurements—budgeting 3D printer filament weight and spool costs, slicing $0.02\text{ cm}$ print layers, timing clock pendulums, scaling recipes, tuning gear ratios, and calculating drone flight times.
+---
 
-Your SC-6 is more than a calculator—it is your permanent laboratory workbench, your tactile compass, and your engineering partner. 
+### Thinking Like an Engineer at the Workbench
 
-To fabricate your own manipulatives in CAD or on a 3D printer, check out **[Appendix A: Manipulative Studio Guide & How We Built StackCalc](appendix-a-manipulative-blueprints.md)**, review classroom stations in **[Appendix B: Teacher Lesson Plans & Diagnostic Protocols](appendix-b-teacher-lesson-plans.md)**, look up conversion factors in **[Appendix C: Formulas, Conversions & Prime Catalogs](appendix-c-formulas-and-conversions.md)**, or inspect every button function in **[Appendix D: Keycap Matrix & Layout Directory](appendix-d-keycap-directory.md)**. 
+Across these nine chapters, you have seen how every workshop invention—from a 3D-printed **Counting Tile** tray to a two-stage robot winch—is built out of intermediate steps that sit in plain sight on your four-shelf stack ($X, Y, Z, T$) just like physical blocks on a desk:
 
-Keep building, keep measuring, and keep exploring!
+| Maker Project | What You Measure on the Bench | Stack Keys That Power Your Build |
+| :--- | :--- | :--- |
+| **1–2. 3D-Print Spool & Layer Slicer** | Spool length ($1,200\text{ cm}$), PLA density ($1.24\text{ g/cm}^3$), $0.02\text{ cm}$ layers | `{{key:x²}}`, `{{key:π}}`, `{{key:×}}`, `{{key:÷}}`, and `{{key:LASTX}}` reverse height verification |
+| **3–4. Clock Pendulum & Solar Oven** | $100\text{ cm}$ vs. $25\text{ cm}$ pendulum string ($2\times$ speed) & $22.5^\circ\text{C} \to 78.0^\circ\text{C}$ solar oven | `{{key:÷}}`, `{{key:√x}}`, and `{{key:+}}`/`{{key:-}}` temperature-rise tracking |
+| **5–6. Tabletop Catapult & Bean Sprouts** | 3-launch landing distances ($156\text{ cm}$ & $191\text{ cm}$ means) & 6-day bean growth ($12.83\text{ mm/day}$) | `{{key:CLΣ}}`, `{{key:Σ+}}`, `{{key:x̄}}`, `{{key:MED}}`, and `{{key:MAD}}` consistency |
+| **7–8. Baker's Dough & Compound Gears** | $65\%$ baker's hydration ($3,510\text{ g}$ water) & $40{:}10 \times 30{:}15$ gear winches ($8\times$) | Non-consuming `{{key:%}}`, fraction scaling (`{{key:a ᵇ/c}}`), and multi-shelf `{{key:÷}} {{key:×}}` |
+| **9–10. Hydraulic Lifter & Drone Battery** | $1\text{ cm}$ vs. $3\text{ cm}$ syringes ($9\times$ force) & $1,200\text{ mAh}$ $80\%$ safe flight timer | `{{key:x²}}` area multiplier (`45.0 N` lift), `0.8 {{key:×}}`, and `60 {{key:×}}` ($11.52\text{ min}$) |
+| **11–12. Solar Panel Tilt & Density Check** | $30^\circ\text{–}60^\circ$ sun-tilt factors ($5.00\text{ W}$ panel), $0.357\%$ scale check & PLA density ($1.24\text{ g/cm}^3$) | `{{key:×}}`, `{{key:|x|}}` percent-error check, and `{{key:÷}}` water displacement |
+
+Remember the Wright brothers' secret from their Dayton bicycle shop: real discovery happens when your hands build the model, your eyes measure what happens, and your stack turns every measurement into clear understanding. To 3D print your own blocks or see how the SC-6 was engineered, turn to **[Appendix A](appendix-a-manipulative-blueprints.md)**, explore classroom stations in **[Appendix B](appendix-b-teacher-lesson-plans.md)**, look up geometry, fraction, and unit references in **[Appendix C](appendix-c-formulas-and-conversions.md)**, or tour every button in **[Appendix D](appendix-d-keycap-directory.md)**. Keep building, keep measuring, and keep exploring!

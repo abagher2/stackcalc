@@ -57,7 +57,24 @@ We hold our documentation to a strict standard of engineering truthfulness:
 - [Log 06: Cross-Surface Fuzzing & Emulation](logs/log-06-cross-surface-fuzzing-and-emulation.md) — Emulating the RP2350 at 40 Hz
 - [Log 07: Origami to Puzzle Stand](logs/log-07-origami-to-puzzle-stand.md) — From Folding Cardstock to Interlocking 3D Print
 - [Log 08: PCB Envelope & Fabrication](logs/log-08-pcb-envelope-and-fabrication.md) — How Routing Drove Enclosure Geometry
+- [Log 09: Notes from the PCBWay Assembly Floor](logs/log-09-pcbway-dfm-photos-and-jumper-fixes.md) — Header Pins, JST Pads & Tactile Switch Jumper Routing
+- [Log 10: Shipping StackCalc v1.1 (SC-32 & SC-6)](logs/log-10-shipping-stackcalc-v1-1-sc32-and-sc6.md) — Unifying Scientific & Visual Learning Modes on iOS & watchOS
+- [Log 11: Manufacturing the Math Blocks & Reference Books](logs/log-11-manufacturing-math-blocks-and-reference-books.md) — In-House + Slant3D Production & Unit-Tested Manuals
 - [Build Instructions](build-instructions.md) — Step-by-step mechanical assembly guide
 - [Project Files](files.md) — Approved downloadable STLs and teacher PDFs
 - [Launch Cadence & Community Asks](launch-cadence.md) — Publishing schedule and engineering questions
 - [Board Arrival Protocol](board-arrival.md) — Gated bring-up checklist for PCB delivery
+
+---
+
+## 5. Ecosystem & Cross-Platform Channels
+
+StackCalc is a comprehensive open-hardware, educational, and computational ecosystem spanning physical manipulatives, hardware calculators, and digital twins:
+
+- 🌐 **Official Website & Interactive Docs:** [stackcalc.io](https://stackcalc.io) — Interactive web calculator, technical manuals, and curriculum pacing guides.
+- 🖨️ **Printables 3D Models Hub:** [printables.com/@StackCalc_5593834](https://www.printables.com/@StackCalc_5593834) — 100% free open-source STLs and pre-sliced 3MF plates for school makerspaces, teachers, and enthusiasts.
+- 🛒 **Etsy Storefront:** [stackcalcmath.etsy.com](https://stackcalcmath.etsy.com) — Handcrafted boxed manipulative sets, lay-flat coil-bound reference manuals, and pre-soldered hardware calculator kits.
+- 🏭 **Slant 3D Manufacturing Portal:** [teleportpod.com/portals/profile/StackCalc](https://teleportpod.com/portals/profile/StackCalc) — Industrial on-demand 3D printing for single-piece replacement refills and classroom fleet sets.
+- 📖 **Companion Book on Amazon:** [*From Blocks to the Stack* (ASIN B0HPJN3KP9)](https://link.amazon/B0f5cP0Ur) — Illustrated K–8 popular math handbook and SC-6 student guide.
+- 📱 **Apple App Store:** [StackCalc on the App Store](https://apps.apple.com/app/id6801788040) — Native iOS, iPadOS, and standalone watchOS RPN calculator apps.
+

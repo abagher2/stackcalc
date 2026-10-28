@@ -7,7 +7,7 @@ description: "Approved downloadable STL packages and teacher PDFs for StackCalc3
 
 <div class="inline-block px-3 py-1 mb-6 border border-accentCyan text-accentCyan font-mono text-xs tracking-wider">// HACKADAY.IO · CANONICAL DOWNLOADS</div>
 
-> **Notice:** All project files link canonically to `https://www.stackcalc.io/downloads/`. To maintain project security and licensing boundaries, microcontroller firmware source and PCB manufacturing scripts are excluded from public distribution. For physical kits, workbooks, reference decks, and pre-order details, visit our comprehensive [Product & Hardware Catalog](../products.md).
+> **Notice:** All 3D printable mechanical models and classroom manipulatives are hosted 100% free and open-source on **[Printables (@StackCalc_5593834)](https://www.printables.com/@StackCalc_5593834)**. Factory refills are available on **[Slant 3D Portals](https://teleportpod.com/portals/profile/StackCalc)**, and handcrafted kits are available on **[Etsy](https://stackcalcmath.etsy.com)**. To maintain project security and licensing boundaries, microcontroller firmware source and PCB manufacturing scripts are excluded from public distribution. For physical kits, workbooks, reference decks, and pre-order details, visit our comprehensive [Product & Hardware Catalog](../products.md).
 
 ---
 

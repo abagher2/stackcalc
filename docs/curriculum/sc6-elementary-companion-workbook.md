@@ -26,6 +26,12 @@ description: "Complete chapter-by-chapter companion problem workbook for From Bl
 
 This companion workbook houses the **253 extended chapter-by-chapter worked problems**, fluency drills, and applied STEM lab challenges that accompany the **Bookstore Edition** of *From Blocks to the Stack*. Every problem below pairs a hands-on physical Gridfinity manipulative setup with an engine-verified SC-6 keystroke sequence and 4-register $(T, Z, Y, X)$ stack trace.
 
+> **Get the Physical Book & 3D Math Manipulatives:**  
+> • **Order on Amazon:** [From Blocks to the Stack on Amazon ($16.00) ↗](https://link.amazon/B0f5cP0Ur)  
+> • **Order on Etsy:** [Spiral-Bound Lay-Flat Edition on Etsy ↗](https://stackcalcmath.etsy.com)  
+> • **Order Physical Math Blocks:** [On-Demand Additive Manufacturing via Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)  
+> • **Explore Book Product Page:** [Full Table of Contents & Specifications ↗](../products/sc6-book.md)
+
 ## Chapter Quick-Jump & Manipulative Index
 
 | Chapter | Topic & Companion Problem Set | Primary Manipulative Kit | Worked Problems | Textbook Reference |

@@ -1,39 +1,48 @@
 ---
-title: "Chapter 1: Hardware Architecture & Instrument Craftsmanship | Thinking in the Stack (SC-32)"
-description: "An exploration of the physical craftsmanship of the SC-32: what a stack is, why it aids human thought, tactile microswitch mechanics, daylight display optics, and a first-principles tour of instrument physics on the 4-level stack."
+title: "Chapter 1: The Pocket Mathematical Observatory | Thinking in the Stack (SC-32)"
+description: "An exploration of the physical craftsmanship and design philosophy of the SC-32: Bill Hewlett's 1971 shirt-pocket challenge, the Dvorak zero-menu principle, why we refined the HP-32SII with HP-15C and HP-12C capabilities, scientific notation, the 32,768 Hz quartz heartbeat, daylight display optics, and Ohm's and Joule's laws on the 4-level stack."
 ---
 
-# Chapter 1: Hardware Architecture & Instrument Craftsmanship
+# Chapter 1: The Pocket Mathematical Observatory
 
-## Bill Hewlett's Shirt-Pocket Challenge & Why the Mind Thinks in a Stack
+## Bill Hewlett's Shirt Pocket and the Death of the Slide Rule
 
-In 1970, William R. Hewlett {{cite:hewlett1972}}, co-founder of Hewlett-Packard, issued a famous engineering challenge to his Palo Alto laboratory team: take the mathematical capability of the desktop HP 9100A—a 40-pound electronic calculator that sat on NASA workbenches and university design desks—and shrink it into a battery-powered instrument small enough to fit inside his dress shirt pocket ($3.2 \times 5.8 \times 1.0$ inches).
+### January 1972: Thirty-Five Keys That Ended Three Centuries of Wood and Ivory
 
-As Hewlett later recounted in the *Hewlett-Packard Journal* {{cite:hewlett1972}}, his goal was a true "electronic slide rule"—an instrument with trigonometry, logarithms, and exponentials that an engineer could carry to the launchpad, the construction gantry, or the lecture hall. Industrial designers measured Hewlett's actual shirt pockets to establish the physical envelope before silicon layout even began.
+On a crisp morning in 1971 in Palo Alto, California, **William R. Hewlett** {{cite:hewlett1972}}—co-founder of Hewlett-Packard—stood in his laboratory beside **Dave Packard**, self-taught computer designer **Thomas Osborne**, and algorithmic architect **David S. Cochran** {{cite:cochran1972}}. Sitting on the wooden workbench in front of them was the Hewlett-Packard 9100A: a forty-pound desktop electronic calculator the size of an electric typewriter, priced at nearly five thousand dollars, which sat in NASA mission-control rooms, nuclear physics laboratories, and university engineering departments.
 
-Many inside Hewlett-Packard believed the challenge was impossible. Pocket electronic calculators of 1970 could barely perform four-function arithmetic with fragile light-emitting diodes that drained nickel-cadmium batteries in under an hour. To fit scientific functions and multi-step engineering formulas into a pocket instrument required a radical rethink of how a human and a calculator communicate.
+Three years earlier, Thomas Osborne had walked into Hewlett-Packard carrying a machine he had built at home in his spare time after leaving the University of California at Berkeley. Every major adding-machine company in America had rejected Osborne's prototype because it used floating-point scientific notation and Reverse Polish logic instead of a mechanical paper-tape crank. Yet the moment Bill Hewlett pressed its keys, he recognized the future of scientific computing. That prototype became the forty-pound HP 9100A—the first machine ever called a "personal computer" in print.
 
-Led by algorithmic architect **David S. Cochran** {{cite:cochran1972}}, the engineering team asked a foundational question: *Why do written equations need parentheses in the first place?*
+Now, in 1971, Hewlett pointed to the forty-pound desktop machine, then patted the breast pocket of his white cotton dress shirt. He issued a challenge that has become legend in the history of engineering:
 
-When you write an expression like $(14 + 6) \times (9 - 4)$ on a flat sheet of paper, the multiplication sign `×` sits in the middle before the second group `(9 - 4)` even exists. If you type that string from left to right into an ordinary algebraic calculator, the machine has to freeze halfway through, hide your numbers inside an invisible buffer, and wait until you close every parenthesis and press `=`. Yet when you build something with your hands in a physical workshop, you never work like that! You build the first sub-assembly (`14 + 6 = 20`), set that finished piece on a shelf at the back of your workbench, build the second sub-assembly (`9 - 4 = 5`), and bring the two finished pieces together (`20 × 5 = 100`).
+*Shrink the mathematical brain of that forty-pound desktop computer—trigonometry, logarithms, exponentials, square roots, and ten-digit floating-point range—into a battery-powered instrument small enough to slip inside my shirt pocket.*
 
-Cochran turned to the parenthesis-free logic of Jan Łukasiewicz and the 1957 push-down store of Charles Hamblin, designing the classic **four-register operational stack ($X, Y, Z, T$)** governed by Reverse Polish Notation (RPN). When the **HP-35** debuted on February 1, 1972, slide rules—which had sent Apollo 11 to the Sea of Tranquility just three years earlier—became obsolete overnight. More than a calculating gadget, the HP-35 and its celebrated Corvallis descendants—the HP-67, HP-41C, HP-15C Voyager, and HP-32SII Pioneer—defined an engineering standard: **the dedicated pocket scientific instrument**.
+Before a single silicon transistor was laid out, Hewlett's industrial designers literally took a brass ruler to his dress shirts, establishing the famous target envelope of $3.2 \times 5.8 \times 1.0\text{ inches}$ {{cite:hewlett1972}}.
 
-A dedicated scientific instrument rests on three principles that separate it from disposable consumer electronics and notification-ridden smartphones:
-1. **Physical Permanence:** High-durability technical thermoplastics, positive-travel tactile keys that give physical confirmation of contact, and markings molded directly into the keycap plastic so they never wear away under decades of finger friction.
-2. **Instant-On Readiness:** Waking in milliseconds when you press `{{key:C}}`, with zero boot lag, zero pop-up distractions, and continuous memory that preserves your exact stack ($X, Y, Z, T$), `{{key:LASTX}}`, variables $A\dots Z$, statistical sums, and stored equations even across battery changes.
-3. **Visible Working Memory:** A daylight-reflective display that keeps four horizontal shelves of numbers in plain sight, freeing your mind from counting parentheses {{cite:miller1956,sweller1988}}.
+To understand how audacious Hewlett's shirt-pocket challenge was, imagine stepping into an engineering classroom or an aerospace drafting hall in 1970. For more than three hundred and fifty years—ever since the English mathematician **William Oughtred** placed two of John Napier's logarithmic scales side by side in 1622 so one wooden ruler could slide past the other—every suspension bridge, steam locomotive, transatlantic liner, jet turbine, and Apollo lunar trajectory had been designed with a **slide rule**: a slipstick of boxwood, bamboo, or engraved yellow aluminum.
 
-{{blocks:sc32_utility_ortho|StackCalc SC-32 Orthographic Drafting Views}}
-*Figure 1.1: Precision orthographic engineering projections of the StackCalc SC-32 handheld scientific instrument.*
+When Apollo 11 descended toward the Sea of Tranquility in July 1969, Buzz Aldrin and Neil Armstrong carried a six-inch aluminum Pickett N600-ES slide rule in their spacesuit pockets as their backup flight computer. Nine months later, in April 1970, when an oxygen tank exploded aboard **Apollo 13** two hundred thousand miles from Earth and forced the crew to power down the Command Module's electronic guidance computer to save every amp-hour of battery power, NASA flight engineers in Houston and Astronaut Jack Swigert in the frigid cabin pulled out their Pickett slide rules to verify the emergency engine-burn attitude and free-return trajectory around the Moon.
 
----
+The slide rule was a masterpiece of mechanical elegance, teaching generations of engineers to develop an instinctive feel for numbers and orders of magnitude. Yet it suffered from two maddening physical limitations that every twentieth-century high-school physics student and structural engineer knew by heart:
 
-## What Is a Stack? A Gentle Introduction to the Four Shelves ($T, Z, Y, X$)
+1. **Three-Digit Resolution:** No matter how sharply your eyes squinted through the glass hairline cursor, a ten-inch desk slide rule—and certainly a six-inch pocket rule—could only be read to **three significant figures** (roughly $0.1\%$ accuracy). On a wooden C/D scale, $1,495$ and $1,496$ sat on the exact same ink line. If you were surveying a property boundary to the millimeter or calculating an orbital trajectory correction where the fourth digit mattered, the slide rule ran out of road; you had to open a thick book of seven-place logarithm tables and add columns of digits by hand.
+2. **It Could Not Add or Subtract—and It Did Not Know Where the Decimal Point Was:** Because sliding two logarithmic scales past one another adds their lengths ($\log A + \log B = \log(A \times B)$), a slide rule could multiply and divide in a heartbeat. Yet if you needed to compute a simple sum like $14.2 + 6.8$ in the middle of a formula, the slide rule was completely helpless! You had to put the slide rule down, pick up a pencil, add the numbers on scratch paper, and re-enter the sum on the wooden cursor. Worse still, the logarithmic markings on a slide rule look identical for $0.0025$, $0.25$, $2.5$, $250$, and $25,000,000$. The human engineer had to estimate the order of magnitude in their head after every single slide—and a single misplaced decimal point meant a bridge girder ten times too thin or ten times too heavy!
 
-If the **StackCalc SC-32** is your first RPN instrument, take a moment to look at its keypad and screen before we calculate anything. You will notice right away that **there is no equals (`=`) key** and **there are no parenthesis keys `( )`**.
+Many marketing executives inside Hewlett-Packard believed Hewlett's shirt-pocket challenge was financially reckless. Their market research reports warned that no engineer would pay $\$395$ (nearly half the price of a used car in 1972) to replace a $\$20$ bamboo slide rule. Meanwhile, the earliest pocket electronic calculators of 1970 could barely add, subtract, multiply, and divide four-function grocery totals, and their power-hungry red LED numerals drained nickel-cadmium batteries in less than an hour.
 
-Why? Because on a stack calculator, you never hide numbers inside brackets or wait for an `=` key to see what is happening. Instead, the daylight-reflective display is organized into **four visible horizontal shelves**—called **Registers $X, Y, Z,$ and $T$**—that work just like four shelves above a physical workbench {{cite:cochran1972,hp15c1982}}:
+Even more daunting was the silicon memory barrier. To fit logarithmic, trigonometric, exponential, and power algorithms onto three tiny 256-word read-only memory chips—just **768 ten-bit words of firmware in total!**—David Cochran and Thomas Osborne realized they could not waste precious silicon transistors on an algebraic syntax parser to count open and closed parentheses `( ( ... ) )` or stack up pending operators {{cite:cochran1972}}. Instead, they asked a first-principles question about human thought:
+
+*How does an engineer or a student actually build a calculation in time?*
+
+When you solve $(14 + 6) \times (9 - 4)$ in your head or on a workbench, you never freeze halfway through waiting for a closing parenthesis. You add the first pair ($14 + 6 = 20$), set that $20$ on a mental shelf, subtract the second pair ($9 - 4 = 5$), and multiply the two results together ($20 \times 5 = 100$).
+
+Drawing on Jan Łukasiewicz's parenthesis-free logic and Charles Hamblin's push-down store, Cochran and Osborne built the **four-register operational stack ($X, Y, Z, T$)**. Hewlett bypassed the skeptical market research, ordered production tooling on his own authority, and unveiled the **HP-35** on February 1, 1972 (named for its 35 keys). Expecting to sell perhaps ten thousand units in the first year, Hewlett-Packard sold over **100,000 HP-35 calculators in year one** and 300,000 before its successor arrived. Within forty-eight months, Keuffel & Esser and Pickett shut down their slide-rule factories forever; the three-hundred-and-fifty-year reign of the wooden slipstick had ended in a shirt pocket.
+
+### What Separates an Instrument from a Gadget?
+
+The HP-35 and its celebrated descendants—the horizontally sculpted HP-15C Voyager {{cite:cochran1972,hp15c1982}} and the alphanumeric HP-32SII Pioneer {{cite:hp32sii1991}}—established an enduring engineering ideal: **the pocket mathematical observatory**. Unlike a smartphone glass screen crowded with pop-up notifications and flat virtual buttons that demand your eyes for every tap, a dedicated scientific instrument is built around three physical commitments:
+
+1. **Visible Working Memory:** Four horizontal shelves of numbers ($T, Z, Y, X$) remain in plain sight at all times, freeing your biological working memory from counting brackets or jotting scratchpad fractions {{cite:miller1956,sweller1988}}:
 
 | Stack Register | Display Shelf Readout | Role on Your Workbench |
 | :---: | :---: | :--- |
@@ -42,114 +51,393 @@ Why? Because on a stack calculator, you never hide numbers inside brackets or wa
 | **$Y$** | `0.000000000000` | **Staging Shelf:** Holds your first number waiting to combine with $X$ ($Y + X$, $Y - X$, $Y \times X$, $Y \div X$) |
 | **$X$** | `0.000000000000` | **Active Workbench:** Bottom shelf where digits appear as you type and where every immediate result lands |
 
-### How `{{key:ENTER}}`, Automatic Stack Lift, and Operators Work
+2. **Tactile Muscle Memory Across Three Planes:** Rather than hiding scientific functions inside nested computer menus, the 43 sculpted Shore 90A TPU keys of the StackCalc SC-32 place **129 functions** directly under your fingertips across three planes (with a complete map of all 43 keys in **[Appendix C](appendix-c-keycap-directory.md)**):
+   * **Primary Key Face (Direct Press):** Digits `0`–`9`, `{{key:ENTER}}`, arithmetic (`{{key:+}}`–`{{key:÷}}`), stack and storage control (`{{key:x⇄y}}`, `{{key:R↓}}`, `{{key:STO}}`, `{{key:RCL}}`), and everyday scientific keys (`{{key:SIN}}`, `{{key:COS}}`, `{{key:TAN}}`, `{{key:LN}}`, `{{key:eˣ}}`, `{{key:√x}}`, `{{key:yˣ}}`, `{{key:1/x}}`, `{{key:x∥y}}`, `{{key:E}}`).
+   * **Left Shift `{{key:↰}}`:** Upper-left inverse and structural keys, including `{{key:ASIN}}`, `{{key:ACOS}}`, `{{key:ATAN}}`, `{{key:LOG}}`, `{{key:10ˣ}}`, `{{key:x²}}`, `{{key:ˣ√y}}`, `{{key:x!}}`, `{{key:CMPLX}}`, `{{key:TVM}}`, `{{key:▸θ,r}}`, and `{{key:LASTX}}`.
+   * **Right Shift `{{key:↱}}`:** Upper-right numerical engines and inspectors, including `{{key:SOLVE}}`, `{{key:∫}}`, `{{key:POLY}}`, `{{key:PLOT}}`, `{{key:÷R}}`, `{{key:▸y,x}}`, and `{{key:SHOW}}`.
+3. **Instant-On Permanence:** Waking in under five milliseconds when you touch `{{key:C}}`, preserving your exact stack, variables $A\dots Z$, and equations in non-volatile flash memory.
 
-Every calculation on the SC-32 follows a natural, conversational rhythm: **put your numbers on the workbench first, then press the tool that acts on them.** Here are the five building blocks that will carry you through every example in this book (we will explore their full mechanics in Chapter 2):
+Notice too how the physical geometry of a dedicated keypad serves your fingers when your eyes are focused on a circuit board, a telescope, or an exam paper:
+* **Stepped Wedge Keycaps:** Each keycap features a gently sloped top surface and crisp chamfered edges so your thumb can feel the boundary between adjacent columns without looking down.
+* **Snap-Action Tactile Force Curve:** A mechanical dome switch builds resistance up to an actuation peak of roughly $1.6\text{ Newtons}$ ($\approx 160\text{ grams-force}$) before snapping crisply downward onto gold-plated contacts, giving your fingertips unmistakable physical confirmation that a digit or operator has registered.
+* **Three-Plane Visual Hierarchy:** Primary operations sit directly on the raised key face; frequently paired inverse operations sit above and to the left for `{{key:↰}}`; and numerical solvers, definite integrals, and coordinate conversions sit above and to the right for `{{key:↱}}`.
 
-1. **Separating Two Typed Numbers with `{{key:ENTER}}`:**  
-   The wide central **`{{key:ENTER}}`** bar has one job: **it separates the number you just finished typing from the next number you are about to type** {{cite:hp32sii1991}}. Suppose you want to add `14` and `6`. You type `14` on the bottom Workbench (**Shelf $X$**), and press **`{{key:ENTER}}`** to lift `14` up onto the Staging Shelf (**Shelf $Y$**). Now type `6` on Shelf $X$. Both numbers (`14` in $Y$, `6` in $X$) sit in plain sight on your screen. When you tap **`{{key:+}}`**, Shelf $Y$ drops down and fuses with Shelf $X$ into **`20`**.
-
-2. **Automatic Stack Lift (Why You Never Press `{{key:ENTER}}` After an Operator):**  
-   Once an operation like `{{key:+}}` finishes, the `20` sitting on Shelf $X$ is already a completed number. What happens when you start typing the next number—say, `9`? You do **not** press `{{key:ENTER}}`! The moment your finger touches `9`, the SC-32 **automatically lifts `20` up to Shelf $Y$** so `9` can take its place on Shelf $X$. And if you then press `{{key:ENTER}}` and type `4` to evaluate $(14 + 6) \times (9 - 4)$, your waiting `20` rides safely up to **Shelf $Z$**, drops back to **Shelf $Y$** the instant `{{key:-}}` turns $9 - 4$ into `5`, and multiplies with `5` (`{{key:×}}`) to give **`100`**—with zero parentheses!
-
-3. **In-Place Functions (`{{key:√x}}`, `{{key:1/x}}`, `{{key:LN}}`, `{{key:SIN}}`):**  
-   Single-number functions act immediately on whatever number is currently sitting on Workbench **Shelf $X$**, without disturbing any numbers waiting upstairs in $Y, Z,$ or $T$. For example, tapping **`{{key:1/x}}`** flips the number in Shelf $X$ upside down ($1/X$) in a single stroke.
-
-4. **Swapping Shelf $Y$ and Shelf $X$ (`{{key:x⇄y}}`):**  
-   In subtraction ($Y - X$) and division ($Y \div X$), **Shelf $Y$** is always the starting number or numerator, and **Shelf $X$** is the number being subtracted or the denominator. Why is that so convenient? Because if a formula has a complicated denominator—like $\frac{225}{\text{daily energy drain}}$—you can calculate the complicated denominator *first* on Shelf $X$, type `225` (which lifts the denominator to Shelf $Y$), tap **`{{key:x⇄y}}`** to swap their shelves (`225` in $Y$, denominator in $X$), and press **`{{key:÷}}`**!
-
-5. **Recovering Your Last Input (`{{key:LASTX}}`):**  
-   Every time an operation changes Shelf $X$, the calculator automatically tucks a backup copy of the number that was in Shelf $X$ into a special pocket called **`LASTX`**. Tapping **`{{key:LASTX}}`** (`{{key:↰}}` then `{{key:ENTER}}`) brings that number right back onto Shelf $X$ so you can check a step or reuse a measurement without typing it twice.
-
-### The Three Planes of the Keypad & Companion $42.0\text{ mm}$ Studios
-
-Rather than burying scientific tools inside multi-page computer menus, the 43 sculpted Shore 90A TPU keys place **129 functions** directly under your fingertips across three planes:
-* **Primary Key Face (Direct Press):** Digits `0`–`9`, arithmetic (`{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷}}`), `{{key:ENTER}}`, stack control (`{{key:x⇄y}}`, `{{key:R↓}}`, `{{key:<-}}`, `{{key:C}}`), storage (`{{key:STO}}`, `{{key:RCL}}`, `{{key:Σ+}}`), and primary scientific keys (`{{key:SIN}}`, `{{key:COS}}`, `{{key:TAN}}`, `{{key:LN}}`, `{{key:eˣ}}`, `{{key:√x}}`, `{{key:yˣ}}`, `{{key:1/x}}`, `{{key:x∥y}}`, `{{key:+/-}}`, `{{key:E}}`).
-* **Left Shift `{{key:↰}}`:** Upper-left shifted functions, including inverse trig (`{{key:ASIN}}`, `{{key:ACOS}}`, `{{key:ATAN}}`), base-10 logs (`{{key:10ˣ}}`, `{{key:LOG}}`), powers and factorials (`{{key:x²}}`, `{{key:ˣ√y}}`, `{{key:x!}}`), complex numbers (`{{key:CMPLX}}`), finance (`{{key:TVM}}`), polar/unit conversions (`{{key:▸θ,r}}`, `{{key:▸HR}}`, `{{key:▸DEG}}`), `{{key:LASTX}}`, and `{{key:CLEAR}}`.
-* **Right Shift `{{key:↱}}`:** Upper-right shifted functions and solvers, including Brent's root finder (`{{key:SOLVE}}`), Romberg integration (`{{key:∫}}`), polynomial roots (`{{key:POLY}}`), plotting (`{{key:PLOT}}`), roll-up (`{{key:R↑}}`), integer remainder (`{{key:÷R}}`), rectangular/time conversions (`{{key:▸y,x}}`, `{{key:▸HMS}}`, `{{key:▸RAD}}`), 12-digit inspection (`{{key:SHOW}}`), and `{{key:OFF}}`.
+{{blocks:sc32_craftsmanship_pureblack|The StackCalc SC-32 precision enclosure, high-contrast transflective LCD, and tactile key switches}}
 
 > **Faceplate Themes & Shift Legend Conventions:** Because both the physical StackCalc SC-32 faceplate editions and the companion software app support multiple interchangeable faceplate themes (`Pure Black`, `Retro Futurism`, `Pioneer Brown`, `Pioneer Black`, `Stealth`, `Supernova`, `Deep Space`, `Voyager`, `Synthwave`, and `Arcade`), shift accent colors adapt dynamically to the active faceplate palette. Throughout this book, shifted functions are referenced independent of color using the hardware directional shift symbols: **Left Shift `{{key:↰}}`** and **Right Shift `{{key:↱}}`**.
 
 ---
 
-## Starting Simple: One-Step Physics on Your Workbench
+## Honoring Corvallis, Completing the Vision: The Dvorak Philosophy and Why We Refined the HP-32SII
 
-Now that you know how `{{key:ENTER}}` lifts a number to Shelf $Y$ and how operators combine Shelf $Y$ and Shelf $X$, let's put the stack to work on the physical instrument right in your hands! We will start with simple one-step and chained arithmetic stories that explore how the SC-32 and its companion **3D-printable $42.0\text{ mm}$ Gridfinity Manipulative Studios** are built.
+In 1932, educational psychologist **August Dvorak** and his brother-in-law **William Dealey** at the University of Washington pointed a motion-picture camera at the hands of dozens of professional typists. Why did typists suffer such rapid finger fatigue? Because Christopher Latham Sholes's 1870s QWERTY typewriter had scattered the most common letters of the English language into awkward corners to keep nineteenth-century iron typebars from jamming, forcing a typist's fingers to leap across rows for nearly seventy percent of every sentence. Dvorak's insight was simple and timeless: **an instrument designed for human thought should place the actions you perform ninety-nine percent of the time directly under your resting fingertips, with zero hunting.**
 
-{{res:sc32_hero_stack:screenshot|3D printing volumetric flow rate Q = 0.45 * 0.20 * 180 = 16.2 mm^3/s}}
-*Figure 1.2: Live transflective LCD stack audit of the 3D printer hotend volumetric melt flow rate $\dot{Q} = 0.45\text{ mm} \times 0.20\text{ mm} \times 180\text{ mm/s} = 16.2\text{ mm}^3/\text{s}$ used to fabricate the SC-32 sliding enclosure and companion $42.0\text{ mm}$ studio blocks.*
+Over the past three decades, that human-factors wisdom was quietly abandoned in scientific computing. Smartphones, desktop computer terminals, and modern graphing calculators are marvelous for writing long programs or browsing encyclopedic trees of rarely used settings that no human could ever memorize. Yet when calculator manufacturers began imitating computer terminals, they swept everyday mathematical tools—absolute value, integer remainders, rounding, greatest common divisors, unit conversions, parallel impedance, and polynomial root solvers—off the physical keypad and buried them three or four layers deep inside scrolling on-screen submenus.
 
-### Extruding the Enclosure & Companion $42.0\text{ mm}$ Manipulative Studios
-Throughout this book, the dark matte frame of the SC-32 pairs with our open-source, 3D-printable **Gridfinity Mathematical Manipulative Studios**:
-- **Counting Tiles and Place Value Cubes:** Make the four operational registers ($X, Y, Z, T$), radix-2/radix-16 bit packing, and discrete $64 \times 32$ pixel rasterization physically visible on your desk.
-- **84 mm Fraction Towers and Logarithmic Prime Factor Blocks:** Ground Napier's logarithms ($h(p) = 42\log_{10}(p)\text{ mm}$), Riemann step-function quadrature, and discounted cash-flow series in exact millimeter heights.
-- **The $90^\circ$ L-Frame Factoring Stage, Unit Circle Volvelle, and Planetary Geared Clock:** Reveal al-Khwarizmi's completing-the-square geometry, trigonometric $(\cos\theta, \sin\theta)$ projections, $90^\circ$ complex phasor rotations, and compound planetary gear reduction.
+Think about what happens to your concentration when a calculation requires a nested menu tree. You are halfway through analyzing an AC filter network, a thermodynamic cycle, or a timed competition problem. Suddenly you have to pause your mathematical train of thought, look away from your work, press a menu button, tap arrow keys across three tabs, and scroll down a list of text labels just to take an absolute value or convert inches to millimeters. Every trip into a scrolling menu breaks your cognitive rhythm.
 
-Look at the live LCD calculation in *Figure 1.2* (`0.45 * 0.20 * 180 = 16.2 mm³/s`). Those three numbers connect the calculator's enclosure directly to every manipulative block on your workbench:
-- **The $42.0\text{ mm}$ Gridfinity Pitch:** Every studio tray is built on a **$42.0\text{ mm}$ horizontal grid pitch**—six $7.0\text{ mm}$ ($1\text{U}$) vertical height units ($6 \times 7.0\text{ mm} = 42.0\text{ mm}$). Four $1\times 1$ studio boxes ($4 \times 42.0\text{ mm} = 168.0\text{ mm}$) fit side by side across a $170.5\text{ mm}$ laboratory drawer with a clean $2.5\text{ mm}$ clearance.
-- **Bilateral $0.20\text{ mm}$ Slip-Fit Clearances:** Mating walls on every counting tile, 84 mm fraction bar, and sliding cover rail are offset by a **$0.20\text{ mm}$ bilateral slip-fit clearance** ($0.10\text{ mm}$ per side) so parts glide smoothly without rattling or jamming.
-- **Layer Slicing & Hotend Melt Flow ($\dot{Q} = 16.2\text{ mm}^3/\text{s}$):** Cutting each $7.0\text{ mm}$ ($1\text{U}$) height step into $35$ horizontal slices at a **$h = 0.20\text{ mm}$ layer height** with road width $w = 0.45\text{ mm}$ and printhead speed $v = 180\text{ mm/s}$ requires the 3D printer hotend to melt polymer at $\dot{Q} = w \times h \times v$. On the stack, you type `0.45 {{key:ENTER}} 0.20 {{key:×}}` to see the $0.090\text{ mm}^2$ bead cross-section on Shelf $X$, and then simply type `180 {{key:×}}`—letting automatic stack lift carry `0.090` to Shelf $Y$—to land on **`16.2`** $\text{mm}^3/\text{s}$.
+The StackCalc family was born from the opposite conviction—**the Dvorak Principle applied to calculators**:
 
-### Why Tactile Keys Never Double-Type or Ghost (`÷`, `-`, and `LASTX`)
-Press any key on the SC-32 and notice how crisp and immediate the response feels. When your thumb presses a sculpted TPU key, the internal tactile microswitch closes against a gold-plated circuit pad—but at the microsecond scale, kinetic energy causes microscopic elastic rebounds (contact chatter) that last $t_{\text{bounce}} = 4.8\text{ ms}$. If a calculator waits until chatter stops before registering a key, fast touch-typists feel a sluggish lag; if it doesn't filter chatter at all, typing `5` prints `555`. An eager debouncer solves both problems by registering your keystroke on the very *first* contact edge and holding a $T_{\text{lockout}} = 20.0\text{ ms}$ refractory window closed while the metal settles:
-$$M = \frac{T_{\text{lockout}}}{t_{\text{bounce}}}$$
+> *Leave long, scrolling option lists to phones and computer terminals. On a dedicated mathematical instrument, **ninety-nine percent of your daily work should require zero menus**—every high-frequency operation belongs on a direct, tactile keystroke that your fingers can find by muscle memory alone.*
 
-Let's check that safety factor on the stack: put the lockout window (`20`) onto Shelf $Y$ via `20 {{key:ENTER}}`, put the chatter duration (`4.8`) onto Shelf $X$, and tap `{{key:÷}}` (`{{res:sc32_01_craftsmanship_hardware_seq_02:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_02:value}}`**) to confirm a $\mathbf{4.1667\times}$ safety margin against double-triggering.
+That single design rule links both volumes of this series. When we designed the elementary **StackCalc SC-6** (*Volume I: From Blocks to the Stack*), we gave young learners dedicated physical keys for prime factorization, greatest common factors, integer quotient-and-remainder division (`{{key:÷R}}`), exact fraction simplification, and 2D/3D geometry so children could explore numbers with their hands instead of hunting through menus. And when we set out to build the scientific **StackCalc SC-32**, we applied the exact same Dvorak discipline to the classic Corvallis RPN lineage.
 
-What happens when a fast typist rolls their thumb across three keys at once? In an $8 \times 6$ key matrix, pressing three keys simultaneously can create a sneaky electrical loop ("phantom key ghosting") unless every switch is isolated by its own diode. By placing a low-barrier Schottky diode ($V_F = 0.32\text{ V}$ at $2.0\text{ mA}$) at every switch intersection instead of an ordinary silicon PN diode ($V_F \approx 0.72\text{ V}$), pulling a column low raises the switch node to only $0.32\text{ V}$ above ground. Since the processor's input pin recognizes any voltage below $V_{IL,\max} = 0.80\text{ V}$ as a clean logic low, subtracting the Schottky drop (`{{res:sc32_01_craftsmanship_hardware_seq_09:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_09:value}}`**$\text{ V}$) leaves a $\mathbf{0.4800\text{ V}}$ ($480\text{ mV}$) noise margin:
-$$V_{NM,L} = V_{IL,\max} - V_F$$
-And look at how `{{key:LASTX}}` lets you compare that against an ordinary silicon diode right away: tapping `{{key:LASTX}} {{key:+}}` adds $0.32\text{ V}$ back to restore the $0.80\text{ V}$ threshold, and typing `0.72 {{key:-}}` shows why a standard $0.72\text{ V}$ silicon diode would have shrunk that noise immunity sixfold to a fragile $80\text{ mV}$!
+### Why We Chose the 1991 HP-32SII Over the 1982 HP-15C as Our Foundation—And How We United Both Worlds
 
-### Tuning the Quartz Clock, Anchoring Brass Inserts & Surviving a $1.20\text{ m}$ Drop
-Three more quick workbench checks show how one- and two-step stack operations verify the mechanical and electrical backbone of the instrument:
+Whenever veteran Hewlett-Packard engineers and vintage calculator collectors gather, one question immediately arises: *Why base the SC-32 on the 1991 **HP-32SII Pioneer** {{cite:hp32sii1991}} rather than the legendary 1982 **HP-15C Voyager** {{cite:hp15c1982}}?*
 
-* **Matching the $12.000\text{ MHz}$ Quartz Crystal Load Capacitors:** Inside the timing circuit, a $12.000\text{ MHz}$ Pierce quartz crystal wafer needs a parallel load capacitance of $C_L = 18.0\text{ pF}$ to tick at its exact rated frequency. Because the two external matching capacitors ($C_1 = C_2 = C$) sit in series with each other across the crystal terminals while the circuit board traces add $C_{\text{stray}} = 3.5\text{ pF}$ in parallel:
-  $$C_L = \frac{C}{2} + C_{\text{stray}} \implies C = 2 (C_L - C_{\text{stray}})$$
-  On the stack, you simply subtract the stray board capacitance first (`18 {{key:ENTER}} 3.5 {{key:-}}` $\to 14.5\text{ pF}$) and double it (`{{res:sc32_01_craftsmanship_hardware_seq_11:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_11:value}}`**$\text{ pF}$) to find the required $\mathbf{29.0000\text{ pF}}$ capacitor value. Once matched at room temperature ($T_0 = 25.0^\circ\text{C}$), that AT-cut $12.000\text{ MHz}$ quartz wafer exhibits a cubic thermal drift curve $\frac{\Delta f}{f_0} = k (T - T_0)^3$ with $k = 0.035 \times 10^{-9}\text{ K}^{-3}$ around its $25.0^\circ\text{C}$ inflection point; at a sub-zero field temperature of $T = -15.0^\circ\text{C}$ ($\Delta T = -40\text{ K}$), keying `40 {{key:+/-}} {{key:ENTER}} 3 {{key:yˣ}} 0.035 {{key:E}} 9 {{key:+/-}} {{key:×}}` evaluates the fractional drift $\Delta f / f_0 = -2.2400 \times 10^{-6}$ ($-2.24\text{ ppm}$), and multiplying by the carrier frequency via `12 {{key:E}} 6 {{key:×}}` resolves the absolute frequency shift $\Delta f = \mathbf{-26.8800\text{ Hz}}$ in a single continuous stream.
-* **Diverting a Winter Carpet Static Spark:** When you walk across a dry winter carpet charged to $V_0 = 8,000\text{ V}$ (human-body capacitance $C_{\text{HBM}} = 100\text{ pF}$, skin discharge resistance $R_{\text{HBM}} = 1500\,\Omega$) and touch the keypad, dividing $I_{\text{peak}} = V_0 / R$ (`{{res:sc32_01_craftsmanship_hardware_seq_22:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_22:value}}`**$\text{ Amperes}$) reveals a brief $\mathbf{5.3333\text{ A}}$ spark current—which transient voltage suppressor (TVS) diodes safely divert to ground in under a nanosecond.
-* **Knurled Brass Screw Inserts:** Instead of driving self-tapping screws straight into plastic posts that strip after a few battery changes, the enclosure anchors M2.5 machine screws into heat-set knurled brass inserts of outer diameter $D = 3.6\text{ mm}$ and length $L = 5.0\text{ mm}$. Pulling an insert out would require shearing an entire cylinder of solid thermoplastic ($\tau = 42.0\text{ MPa} = 42.0\text{ N/mm}^2$) around the insert's outer wall:
-  $$A_{\text{shear}} = \pi \cdot D \cdot L, \quad F_{\text{pull}} = A_{\text{shear}} \cdot \tau$$
-  On the stack, we chain the product outward from the diameter $D = 3.6\text{ mm}$—multiplying by `{{key:π}}` to see the circumference ($11.31\text{ mm}$), by $L = 5.0\text{ mm}$ to see the cylindrical shear area ($56.55\text{ mm}^2$), and by $\tau = 42.0\text{ N/mm}^2$ (`{{res:sc32_01_craftsmanship_hardware_seq_06:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_06:value}}\text{ N}} \approx 242.1\text{ kgf}$, roughly the weight of three adults hanging from a single screw):
+Among collectors, the horizontally oriented HP-15C Voyager is rightly revered as a landmark of twentieth-century silicon engineering. It brought numerical root-finding (`SOLVE`), numerical quadrature (`∫f(x)`), complex-number arithmetic, and matrix operations into a brushed-metal shirt-pocket slab. Yet when you use both calculators side by side at an engineering workbench, in a physics lab, or during a calculation sprint, the 1991 **HP-32SII Pioneer** proves to be the far stronger ergonomic and conceptual foundation for a modern instrument—for four concrete reasons:
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+1. **One-Handed Portrait Ergonomics vs. Two-Handed Landscape Reach:** On a lab bench, one of your hands is almost always holding an oscilloscope probe, a Vernier caliper, or a mechanical pencil. The HP-15C's wide landscape chassis was designed for two-handed thumb typing or flat desk tapping, whereas the HP-32SII's vertical Pioneer footprint places the entire digit pad, the double-wide `{{key:ENTER}}` bar, and the arithmetic column inside the natural arc of a single thumb.
+2. **Twenty-Six Named Alpha Variables (`A`–`Z`) vs. Numbered Memory Slots (`R0`–`R9`):** Because the 1982 HP-15C relied on a seven-segment numeric LCD that could not render alphabetical words, you had to store physical constants and variables inside numbered registers (`R0` through `R9` and `.0` through `.9`). Halfway through an orbital mechanics or chemistry derivation, you had to remember whether molar gas constant $R$ sat in `R3` or `R7`. The HP-32SII replaced numbered slots with **26 lettered variables (`A` through `Z`)** that activate automatically whenever you press `{{key:STO}}` or `{{key:RCL}}`. Storing gravitational acceleration in `G`, inductance in `L`, capacitance in `C`, or temperature in `T` turns your register bank into self-documenting algebra.
+3. **Human-Readable Symbolic Equations (`{{key:EQN}}`) vs. Blind Keystroke Subroutines (`LBL 0..9`):** To solve $f(x) = 0$ or integrate $\int_a^b f(x)\,dx$ on the HP-15C, you had to enter keystroke programming mode, record an anonymous subroutine under a numeric label (`LBL 0`), read back cryptic row-column keycodes (`001- 43 21 0`), and pass that label to the solver. If you made a typo in a ten-step formula, you had to single-step through numeric keycodes to find it. The HP-32SII introduced a dedicated **Equation Bank (`{{key:EQN}}`)** where formulas are stored, scrolled, inspected, evaluated (`{{key:XEQ}}`), solved (`{{key:SOLVE}}`), and integrated (`{{key:∫}}`) as readable mathematical expressions.
+4. **Ten Direct SI $\leftrightarrow$ Imperial Unit Conversions & Native Rational Fractions on the Keypad:** Working engineers and students constantly cross the bridge between metric and imperial blueprints (`km` $\leftrightarrow$ `mi`, `kg` $\leftrightarrow$ `lb`, `°C` $\leftrightarrow$ `°F`, `cm` $\leftrightarrow$ `in`, `l` $\leftrightarrow$ `gal`) and exact fractional machinist dimensions (`3/8 in`, `5/16 in`). The HP-15C had neither physical unit conversions nor native fraction arithmetic. The HP-32SII placed all ten unit conversions directly on the digit keys—with **Metric (`SI`) always on Left Shift `{{key:↰}}`** and **Imperial (`US`) always on Right Shift `{{key:↱}}`**—alongside exact fraction display (`{{key:FDISP}}`) and denominator control (`{{key:/c}}`).
+
+At the same time, we asked: *Why should an engineer have to carry an HP-32SII for named equations and unit conversions, an HP-15C for polynomial roots, and an **HP-12C** for financial cash flows?* By applying the Dvorak principle to the Pioneer keypad, the SC-32 brings the best capabilities of the **HP-15C** and **HP-12C** directly onto dedicated shifted keys:
+
+* **From the HP-12C Voyager (1981):** Pressing `{{key:TVM}}` (Left Shift `{{key:↰}}` above `{{key:x∥y}}`) opens a complete **5-variable Time Value of Money** engine (`N`, `I%`, `PV`, `PMT`, `FV`, `END/BEG`) on the top softkeys with exact HP-12C one-tap store-or-solve semantics and cash-flow sign conventions (explored step by step in **Chapter 11**)—paired with William Kahan's base-preserving `{{key:%}}` (Right Shift `{{key:↱}}` above `{{key:COS}}`) and `{{key:%CHG}}` (Right Shift `{{key:↱}}` above `{{key:TAN}}`).
+* **From the HP-15C Voyager (1982):** Pressing `{{key:POLY}}` (Right Shift `{{key:↱}}` above `{{key:XEQ}}`) launches a dedicated **Quadratic & Cubic Polynomial Root Workspace** (`A`, `B`, `C`, `D`, `EXEC`, `CLR`) that solves $Ax^2 + Bx + C = 0$ and $Ax^3 + Bx^2 + Cx + D = 0$ analytically in closed form—including complex conjugate root pairs—and writes all roots directly into indirect registers `R34`–`R39` (**Chapter 7**), alongside a full four-register **Gaussian Complex (`{{key:CMPLX}}`)** phasor engine on Left Shift `{{key:↰}}` above `{{key:STO}}` (which we will build from the ground up in **Chapter 5**).
+
+### Curing the 1-Line Keyhole, Purifying RPN Equations, and Elevating Everyday Keys
+
+Even as we honored the HP-32SII's keyboard architecture, we confronted three well-known compromises that constrained the original 1991 hardware:
+
+1. **Expanding the 1-Line Keyhole into a 4-Line Stack Observatory + Dedicated 6-Key Softkey Bar:**  
+   Because of 1991 LCD driver constraints, the HP-32SII could show only **a single 12-character line** (`Register X`). You had to track Registers $Y, Z,$ and $T$ blindly in your head—and worse, whenever you opened a menu (`PARTS`, `PROB`, `SUMS`), the HP-32SII hijacked the top row of physical scientific keys (`{{key:√x}}`, `{{key:eˣ}}`, `{{key:LN}}`, `{{key:yˣ}}`, `{{key:1/x}}`, `{{key:Σ+}}`) to serve as unlabeled menu buttons! The SC-32 cures both flaws at once: its $132 \times 65$ transflective display keeps **all four stack shelves ($T, Z, Y, X$) visible simultaneously**, and a dedicated **6-key Dynamic Softkey Strip (`{{key:LFU0}}`–`{{key:LFU5}}`)** sits directly beneath the screen so menus never hijack your scientific keys.
+2. **Purifying `{{key:EQN}}` Mode to 100% RPN—and Reclaiming Three Wasted Infix Keys (`(`, `)`, `=`):**  
+   The strangest quirk of the 1991 HP-32SII was its split personality: on the live stack it was an RPN calculator, yet the moment you entered `EQN` mode it forced you to type **algebraic infix formulas** with parentheses! To support infix typing, HP sacrificed three prime right-shifted slots on Row 3 to an open parenthesis `(`, a close parenthesis `)`, and an equals sign `=`. On the SC-32, **`{{key:EQN}}` mode is 100% pure RPN**: you enter formulas using the exact same postfix rhythm as the live stack, and you can embed relational tests (`{{key:x?0}}` and `{{key:x?y}}`) directly inside an equation as $1/0$ **Iverson Boolean indicators** to model piecewise engineering functions without branching programs (as we will put to work in **Chapters 7, 8, and 12**). Reclaiming `(`, `)`, and `=` on Row 3 allowed us to promote **Absolute Value (`{{key:ABS}}` / `|x|`)** directly onto Right Shift `{{key:↱}}` above `{{key:+/-}}` and **Euclidean Quotient-Remainder Division (`{{key:÷R}}`)** onto Right Shift `{{key:↱}}` above `{{key:E}}`—and promoting **Round (`{{key:RND}}`)** onto Left Shift `{{key:↰}}` above `{{key:RCL}}` freed space inside the `PARTS` menu for **Signum (`{{key:SGN}}`)**, **Greatest Common Divisor (`{{key:GCD}}`)**, and **Least Common Multiple (`{{key:LCM}}`)**!
+3. **Replacing `R/S`, `GTO`, and `INPUT` Boilerplate with `{{key:x∥y}}`, `{{key:TVM}}`, `{{key:PLOT}}`, and `{{key:REGS}}`:**  
+   On the HP-32SII, key `Row 7, Col 3` was dedicated to `R/S` (Run/Stop) and `GTO` (Go To line) for 1970s-style keystroke loops, while Left Shift `{{key:↰}}` above `{{key:0}}` was `INPUT`. Because named RPN equations (`{{key:EQN}}`), `{{key:XEQ}}`, `{{key:SOLVE}}`, and `{{key:∫}}` eliminate line-number spaghetti, the SC-32 transforms `Row 7, Col 3` into a high-frequency engineering hub:
+   * **Primary Tap — `{{key:x∥y}}` (Universal Parallel / Harmonic Operator):** Computes $x \parallel y = \frac{Y \times X}{Y + X}$ in a single keystroke for parallel resistors, series capacitors, thin lenses, reduced masses, and harmonic means—even in `{{key:CMPLX}}` AC impedance mode!
+   * **Left Shift `{{key:↰}}` — `{{key:TVM}}`:** Launches the 5-variable HP-12C financial solver (`N`, `I%`, `PV`, `PMT`, `FV`, `END/BEG`).
+   * **Right Shift `{{key:↱}}` — `{{key:PLOT}}`:** Opens the 64-column graphical function plotter and statistical scatter-plot canvas (paired with `{{key:↓}}` and `{{key:↑}}` on Left Shift `{{key:↰}}` above `{{key:7}}` and `{{key:8}}`, and `{{key:SCRL}}` on Right Shift `{{key:↱}}` above `{{key:RCL}}`).
+   * **Alpha Label — `(i)` & Full-Screen `{{key:REGS}}` (Left Shift `{{key:↰}}` above `{{key:0}}`):** Preserves full HP-32SII indirect register addressing (`1`–`89` via index pointer `i` on `{{key:.}}` and dereference `(i)` on `{{key:x∥y}}`, introduced step by step in **Chapter 2**) while replacing `INPUT` with an instant full-screen `{{key:REGS}}` inspector.
+
+Best of all, if your fingers already know Corvallis RPN, **zero retraining is required**: in the default `{{key:4-LVL}}` stack mode, every `{{key:ENTER}}` lift disable, top-of-stack $T$-replication, `{{key:LASTX}}` capture, storage-register arithmetic (`STO + A`), and flag test behaves identically to the 1991 HP-32SII—while `{{key:FLAGS}}` (Right Shift `{{key:↱}}` above `{{key:×}}`) lets you expand the stack to `{{key:8-LVL}}` or `{{key:INF}}` (unlimited LIFO depth) or lock the instrument into proctored `{{key:EXAM}}` mode whenever a task demands it. (For a complete key-by-key comparison against the HP-32SII, HP-15C, and HP-12C, see [Appendix C](appendix-c-keycap-directory.md).)
+
+---
+
+## Scientific Notation, Orders of Magnitude, and the 32,768 Hz Quartz Heartbeat
+
+Why was a pocket scientific calculator such a revolutionary leap over both a four-function grocery calculator and a wooden slide rule? Because physics, chemistry, and engineering do not live solely in the everyday human neighborhood between $1$ and $1,000$.
+
+In the third century BCE, the Greek mathematician and physicist **Archimedes of Syracuse** wrote a playful treatise to King Gelon II titled *The Sand Reckoner* (*Psammites*). Critics had claimed that the number of grains of sand on the Sicilian seashore was infinite—or at least larger than any number that could ever be named. Archimedes saw that Greek numerals only had words up to a *myriad* ($10,000 = 10^4$). By inventing a hierarchy of powers—grouping myriads of myriads ($10^8$) as his "first order" and raising them to higher powers—Archimedes proved that even if you filled the entire spherical cosmos of Aristarchus from Earth to the fixed stars with fine beach sand, the total number of sand grains could be written cleanly in just a few words: $10^{63}$.
+
+Archimedes had discovered the central insight of **scientific notation**: to reason across vast scales without drowning in zeros, you must separate **how precisely you know a quantity** from **how big or small that quantity is**.
+
+### Separating Shape from Scale: Mantissa ($m$) and Exponent ($10^n$)
+
+In high-school chemistry, a single mole of carbon-12 atoms ($12\text{ grams}$) contains Avogadro's number of atoms—$602,214,076,000,000,000,000,000$. In electronics, a high-frequency bypass capacitor inside a pocket instrument has a parasitic inductance of $0.00000000085\text{ Henries}$. Try writing twenty-three trailing zeros on a chalkboard or counting nine leading zeros after a decimal point under exam pressure, and your eyes blur within seconds. Worse yet, a single missed zero throws your bridge, orbit, or circuit off by a factor of ten!
+
+To tame numbers that span forty orders of magnitude from the subatomic to the astronomical, scientists factor every real number $x$ into two distinct psychological pieces:
+
+$$x = m \times 10^n \qquad (1 \le |m| < 10)$$
+
+1. **The Mantissa ($m$) — The *Shape* of the Number:**  
+   The mantissa (or significand) $m$ contains the meaningful measured digits—the **significant figures**—normalized so that a single non-zero digit sits to the left of the decimal point (for example, $6.02214076$ or $8.50$). Think of the mantissa as the *shape* and *precision* of your measurement: it is the exact part that William Oughtred's 17th-century slide rule could show you along its engraved wooden scale.
+2. **The Exponent ($10^n$) — The *Order of Magnitude* (Scale):**  
+   The integer exponent $n$ tells you how many powers of ten to zoom out ($n > 0$) or zoom in ($n < 0$). Moving from $10^3$ (kilometers) to $10^6$ (megameters) or zooming down to $10^{-3}$ (millimeters), $10^{-6}$ (micrometers, the width of a red blood cell), $10^{-9}$ (nanometers, the spacing of silicon atoms), and $10^{-12}$ (picofarads, the capacitance of a quartz crystal trace) lets you compare scales across the universe at a glance.
+
+In daily electrical, mechanical, and optical engineering, powers of ten that are multiples of three ($10^{\pm 3k}$) correspond directly to the **International System of Units (SI) metric prefixes**—which is why the SC-32 provides both **Scientific (`{{key:SCI}}`)** display mode ($1 \le |m| < 10$) and **Engineering (`{{key:ENG}}`)** display mode (where the exponent $n$ is always constrained to a multiple of $3$ so you can read off kilo-, mega-, milli-, micro-, nano-, or pico- units directly!):
+
+| Power of Ten | SI Prefix | Symbol | Physical Scale Example on the SC-32 Workbench |
+| :---: | :---: | :---: | :--- |
+| $10^{9}$ | giga- | $\text{G}$ | Visible light frequency ($\sim 5 \times 10^{14}\text{ Hz} = 500,000\text{ GHz}$) |
+| $10^{6}$ | mega- | $\text{M}$ | High-speed Pierce quartz oscillator ($12.000\text{ MHz} = 1.2 \times 10^7\text{ Hz}$) |
+| $10^{3}$ | kilo- | $\text{k}$ | RC reset pull-up resistor ($100\text{ k}\Omega$) & laser repetition rate ($35.0\text{ kHz}$) |
+| $10^{0}$ | (unit) | — | Coin-cell electromotive force ($3.0\text{ V}$) & drop test height ($1.20\text{ m}$) |
+| $10^{-3}$ | milli- | $\text{m}$ | SPI frame refresh period ($1.065\text{ ms}$) & solver burst current ($18.2\text{ mA}$) |
+| $10^{-6}$ | micro- | $\mu$ | Beer-Lambert optical absorption depth ($51.17\,\mu\text{m}$) & bypass capacitor ($0.10\,\mu\text{F}$) |
+| $10^{-9}$ | nano- | $\text{n}$ | Bypass capacitor parasitic inductance ($0.85\text{ nH} = 8.5 \times 10^{-10}\text{ H}$) |
+| $10^{-12}$ | pico- | $\text{p}$ | Quartz crystal load capacitor ($29.0\text{ pF} = 2.9 \times 10^{-11}\text{ F}$) |
+
+When you multiply or divide two numbers in scientific notation, the shapes ($m_1, m_2$) multiply or divide while the orders of magnitude ($n_1, n_2$) simply add or subtract:
+
+$$(m_1 \times 10^{n_1}) \times (m_2 \times 10^{n_2}) = (m_1 \times m_2) \times 10^{n_1 + n_2}$$
+
+$$\frac{m_1 \times 10^{n_1}}{m_2 \times 10^{n_2}} = \left(\frac{m_1}{m_2}\right) \times 10^{n_1 - n_2}$$
+
+Now pause and notice a classic mental trap that catches thousands of high-school physics and chemistry students every year when they first meet scientific notation on a calculator: **a number written as $8.0 \times 10^6$ is a *single* number, not a multiplication problem between $8.0$ and $10^6$!**
+
+Suppose you need to calculate the time required to transmit $8,520\text{ bits}$ across an $8.0 \times 10^6\text{ bits/s}$ serial bus:
+
+$$T = \frac{8,520}{8.0 \times 10^6}$$
+
+If a student using an ordinary calculator types `8520 ÷ 8.0 × 10 ^ 6` as separate arithmetic operations, the calculator divides $8,520$ by $8.0$ first ($1,065$) and then *multiplies* that answer by $10^6$—returning $1,065,000,000\text{ seconds}$ (thirty-three years!) instead of $0.001065\text{ seconds}$ (one millisecond), an error of a trillion ($10^{12}$)!
+
+That is why Bill Hewlett's 1972 HP-35 introduced a dedicated **Exponent Entry key**—labeled **`{{key:E}}`** on the SC-32. When you type `8`, tap `{{key:E}}`, and type `6` (or type `8.5 {{key:E}} 10 {{key:+/-}}` for $8.5 \times 10^{-10}$), you are not issuing an arithmetic multiplication command; you are welding the scale $10^6$ or $10^{-10}$ directly onto the mantissa inside the entry buffer so the entire quantity travels through the stack as a single, indivisible atomic number. And remember the golden rule of `{{key:E}}` on every physics and chemistry exam: because **`{{key:E}}` already means *"$\times 10^{\text{to the power of}}$"***, a pure power of ten such as $10^{-7}\text{ F}$ ($1 \times 10^{-7}\text{ F}$) or $10^6\text{ Hz}$ ($1 \times 10^6\text{ Hz}$) is entered as **`1 {{key:E}} 7 {{key:+/-}}`** or **`1 {{key:E}} 6`**—never `10 {{key:E}} 6` (which means $10 \times 10^6 = 10^7$, a classic $10\times$ order-of-magnitude error!).
+
+Equally important, changing how a number is *displayed* on the screen—by pressing `{{key:DISP}}` and choosing **Fixed-Point (`{{key:FIX}}`)**, **Scientific (`{{key:SCI}}`)**, **Engineering (`{{key:ENG}}`)**, or **Full Precision (`{{key:ALL}}`)**—never truncates or rounds the underlying number stored inside the stack register! Internally, every shelf ($X, Y, Z, T$) and every variable ($A\dots Z$) holds its value to full IEEE 754 double precision ($53\text{ bits}$ of binary significand, or roughly $15$ to $17$ decimal digits), and pressing `{{key:SHOW}}` at any moment reveals the full unrounded mantissa of Register $X$.
+
+### The Tuning Fork in Your Pocket: Why $32,768\text{ Hz}$ Equals $2^{15}$
+
+Once a pocket instrument can hold both microscopic and astronomical numbers, how does it keep track of **time**?
+
+For centuries, timekeeping depended on swinging pendulums (discovered by Galileo and perfected by Christiaan Huygens in 1656) or coiled hairsprings (invented by Robert Hooke and Huygens for marine chronometers). Yet even the finest mechanical pocket watch drifted by several seconds a day as temperature changed the length of its balance wheel.
+
+In 1880, two young French physicists—the brothers **Jacques and Pierre Curie**—discovered a remarkable property inside crystals of **quartz ($\text{SiO}_2$, silicon dioxide)**, tourmaline, and Rochelle salt. They called it **piezoelectricity** (from the Greek *piezein*, "to squeeze"):
+* If you squeeze or bend a quartz crystal mechanically, the positive silicon ions and negative oxygen ions in its hexagonal lattice shift slightly apart, generating an electrical voltage across its faces.
+* Conversely, if you apply an alternating electrical voltage across metal electrodes plated onto the quartz wafer, the crystal physically expands, contracts, and bends back and forth like a microscopic tuning fork!
+
+Because a single crystal of quartz is an almost perfectly elastic atomic lattice with virtually zero internal friction in a vacuum, a quartz tuning fork rings thousands of times longer than a steel tuning fork. In 1927 at Bell Telephone Laboratories, **Warren Marrison** used a vacuum-tube amplifier to keep a quartz crystal vibrating continuously, building the world's first quartz clock. Four decades later, Seiko and Swiss watchmakers laser-trimmed a quartz tuning fork just four millimeters long to fit inside a wristwatch.
+
+If you open the specification sheet for almost any digital wristwatch, spacecraft timer, or the real-time clock inside the SC-32, you will find a wonderfully odd vibration frequency:
+
+$$f_{\text{RTC}} = 32,768\text{ Hz}$$
+
+Pause and ask yourself a puzzle: *Why on Earth did electrical engineers choose **$32,768$ vibrations per second** instead of a clean decimal number like $10,000\text{ Hz}$ or $50,000\text{ Hz}$?*
+
+To solve the puzzle, recall that in physics the **frequency** $f$ (in Hertz, cycles per second) and the **period** $T$ (in seconds per cycle) are exact **reciprocals** of one another:
+
+$$T = \frac{1}{f} \qquad \text{and} \qquad f = \frac{1}{T}$$
+
+Each single swing of a $32,768\text{ Hz}$ quartz tuning fork takes a period of:
+
+$$T = \frac{1}{32,768\text{ Hz}} \approx 0.000030517578\text{ s} = 30.5176\text{ microseconds}$$
+
+Now how does a digital circuit count those $30.5\text{-microsecond}$ vibrations to tick the clock forward by **exactly $1\text{ second}$** ($1\text{ Hz}$)?
+
+In binary electronics, the simplest, lowest-power circuit element is a **toggle flip-flop**—a tiny two-transistor gate that changes state on every second incoming pulse, dividing the frequency in half ($\div 2$). Watch what happens when you chain **fifteen** divide-by-two flip-flops in series:
+
+$$32,768 \xrightarrow{\div 2} 16,384 \xrightarrow{\div 2} 8,192 \xrightarrow{\div 2} 4,096 \xrightarrow{\div 2} \dots \xrightarrow{\div 2} 4 \xrightarrow{\div 2} 2 \xrightarrow{\div 2} 1\text{ pulse per second!}$$
+
+Because **$2^{15} = 32,768$**, fifteen ultra-low-power halving stages reduce $32,768\text{ Hz}$ down to **exactly $1.000000\text{ Hz}$** without a single complex decimal comparator! And why did engineers pick $2^{15} = 32,768\text{ Hz}$ rather than $2^{14} = 16,384\text{ Hz}$? Because the upper limit of human hearing is roughly $20,000\text{ Hz}$. A $16,384\text{ Hz}$ crystal would emit a faint, high-pitched mosquito whine whenever you held your watch or calculator near your ear, whereas $32,768\text{ Hz}$ is the very first power of two that is completely **ultrasonic** and silent to human ears!
+
+### High-Speed Pierce Oscillators, Thermal Drift, and Parasitic Resonance
+
+While a $32,768\text{ Hz}$ tuning-fork crystal keeps human calendar time during deep sleep on nanoamperes of current, waking the processor to evaluate a Romberg definite integral or a 64-point function plot in milliseconds requires a much faster heartbeat: a **$12.000\text{ MHz}$ ($1.2 \times 10^7\text{ Hz}$) Pierce quartz crystal oscillator** (named after Harvard physicist George Washington Pierce, who invented the single-stage crystal feedback loop in 1923), whose period is a brisk $T = 1 / (1.2 \times 10^7\text{ Hz}) = 83.33\text{ nanoseconds}$.
+
+Why does a thin slice of quartz lock onto a single frequency so stubbornly? Because through the piezoelectric effect, a vibrating crystal acts like a **microscopic mechanical pendulum disguised as an electrical circuit**: its physical mass behaves like an inductor $L$, its elastic stiffness behaves like a spring or small series capacitor $C$, and a tiny inverter gate gives it a gentle electrical push on every swing.
+
+First, just as adding a small weight to a grandfather clock's pendulum bob fine-tunes its swing, a quartz wafer requires a specific external **load capacitance** ($C_L = 18.0\text{ pF}$) across its terminals to vibrate at exactly $12.000\text{ MHz}$. On the circuit board, two identical ceramic capacitors ($C_1 = C_2 = C$) sit at either end of the crystal, wired in series with each other through the ground plane, while the copper board traces contribute a small stray capacitance ($C_{\text{stray}} = 3.5\text{ pF}$) in parallel. Why is the series combination of two equal capacitors $C_1 = C_2 = C$ equal to $C/2$? Because placing two capacitors in series effectively doubles the dielectric gap thickness between the outer plates, halving the capacitance according to the product-over-sum law (the exact harmonic combination $C_1 \parallel C_2$ computed on the keypad by `{{key:x∥y}}`, as we will see in Chapter 3):
+
+$$C_{\text{series}} = C_1 \parallel C_2 = \frac{C_1 C_2}{C_1 + C_2} = \frac{C^2}{2C} = \frac{C}{2}$$
+
+Adding the parallel stray capacitance $C_{\text{stray}}$ of the copper traces gives the total load capacitance seen by the vibrating quartz wafer:
+
+$$C_L = \frac{C}{2} + C_{\text{stray}} \implies C = 2(C_L - C_{\text{stray}})$$
+
+On the SC-32 stack, you model this from the inside out without parentheses: place the target load $18.0\text{ pF}$ on Shelf $Y$ (`{{key:ENTER}}`), subtract the $3.5\text{ pF}$ stray capacitance on Shelf $X$ (`{{key:-}}` $\to 14.5\text{ pF}$), and double the difference (`2 {{key:×}}`) to find that each external capacitor must be $C = 29.0\text{ pF}$.
+
+Second, even quartz expands and stiffens slightly with temperature. Ordinary X-cut or Y-cut quartz wafers drift parabolically with temperature, losing or gaining dozens of parts per million when carried outdoors. In 1934, engineers discovered that by slicing the synthetic quartz boule along a precise crystallographic plane inclined at $35^\circ 15'$ to the optical $Z$-axis—the celebrated **AT-cut**—both the first-order (linear) and second-order (quadratic) temperature derivatives vanish right at room temperature ($T_0 = 25.0^\circ\text{C}$), leaving only a gentle **cubic** inflection curve:
+
+$$\frac{\Delta f}{f_0} = k (T - T_0)^3$$
+
+With $k = 0.035 \times 10^{-9}\text{ K}^{-3}$, carrying the instrument into a $-15.0^\circ\text{C}$ winter field site ($\Delta T = -40\text{ K}$) shifts the frequency by:
+
+$$\frac{\Delta f}{f_0} = (0.035 \times 10^{-9}\text{ K}^{-3}) \times (-40\text{ K})^3 = -2.24 \times 10^{-6}$$
+
+To model this on the SC-32, you negate the temperature drop $\Delta T = -40\text{ K}$ with `{{key:+/-}}`, raise it to the third power via the dyadic power key `{{key:yˣ}}`, and scale by the tiny thermal constant $k$ entered as an atomic scientific number via `{{key:E}}` and `{{key:+/-}}`. That fractional drift of $-2.24\text{ parts per million}$ means a $12,000,000\text{ Hz}$ clock shifts by only $-26.88\text{ Hz}$ even in sub-zero cold.
+
+Third, right beside the processor's power pins sit tiny ceramic **bypass capacitors** ($C = 0.10\,\mu\text{F} = 1.0 \times 10^{-7}\text{ F}$) whose job is to act like a local charge reservoir, shorting high-frequency transistor switching noise to ground. In an ideal circuit diagram, a capacitor's opposition to alternating current—its capacitive reactance $X_C = \frac{1}{2\pi f C}$—drops toward zero as frequency $f$ climbs toward infinity. Yet in the physical world, every real capacitor has metal end-caps and microscopic internal plates that form a tiny current loop with **equivalent series inductance** ($L = 0.85\text{ nH} = 8.5 \times 10^{-10}\text{ H}$), whose inductive reactance $X_L = 2\pi f L$ *grows* linearly with frequency. At the exact frequency where the falling capacitive reactance $X_C$ equals the rising inductive reactance $X_L$, the two reactances cancel completely and the capacitor hits its **self-resonant frequency ($f_{\text{SRF}}$)**:
+
+$$\frac{1}{2\pi f_{\text{SRF}} C} = 2\pi f_{\text{SRF}} L \implies f_{\text{SRF}} = \frac{1}{2\pi \sqrt{L C}}$$
+
+Above $f_{\text{SRF}}$, inductive reactance dominates and the capacitor behaves like an inductor. Look at how the SC-32 models $f_{\text{SRF}}$ from the inside out on Shelf $X$: first $L$ and $C$ are entered with `{{key:E}}` and multiplied together, then `{{key:√x}}` extracts the characteristic electromagnetic time scale $\sqrt{LC} \approx 9.22\text{ ns}$ in place, then `2` and `{{key:π}}` scale it into a full radian cycle ($57.93\text{ ns}$), and finally a single tap of the unary reciprocal key `{{key:1/x}}` flips that period upside down into a frequency of $17.26\text{ MHz}$.
+
+---
+
+## Daylight Optics, Tactile Mechanics, and the Laws of Ohm and Joule
+
+Why did those early 1970s red-LED calculators die after forty-five minutes of use, whereas a modern pocket scientific instrument runs for months or years on a single coin-sized lithium battery?
+
+The answer bridges **optics**, **electromagnetism**, and **structural mechanics**.
+
+### Reflective Daylight Optics and Exponential Light Absorption
+
+Look closely at the screen of a smartphone when you step outdoors into bright noon sunlight. Why does it look washed out? Because a phone screen is an *emissive backlight*: it tries to shine a tiny electric flashlight out at your eyes, fighting a losing battle against the $100,000\text{-lux}$ glare of the Sun—and burning hundreds of milliwatts of battery power every second just to glow.
+
+A dedicated scientific instrument like the SC-32 uses a **transflective liquid-crystal display (LCD)** that works like black ink on a page of paper. Ambient room light or sunlight passes through a thin front linear polarizer and a layer of twisted-nematic liquid-crystal molecules, bounces off a brushed metallic reflector behind the glass, and travels right back to your eyes. Where a pixel is energized by an electric field, the rod-shaped liquid-crystal molecules untwist and align with the field so the crossed polarizer blocks the reflected light, forming a crisp, ink-black numeral; where a pixel is off, the ambient light twists smoothly through the crystal helix and reflects back cleanly. The brighter the room or outdoor sunlight becomes, the *sharper* the display looks—while drawing a tiny fraction of a milliwatt!
+
+Four physical principles govern how that display and its dark matte enclosure behave across light and temperature:
+
+1. **Flicker-Free Serial Frame Commits:** To update all four stack shelves ($132 \times 65$ pixels, organized into $9$ command bytes plus $1,056$ pixel-column bytes $= 1,065\text{ bytes}$ total) without any visible tearing or flicker, the processor streams the frame over an $8.0\text{ MHz}$ ($8.0 \times 10^6\text{ bits/s}$) serial peripheral interface (SPI) bus:
+
+   $$T_{\text{frame}} = \frac{(9 + 1056)\text{ bytes} \times 8\text{ bits/byte}}{8.0 \times 10^6\text{ bits/s}} = \frac{8,520\text{ bits}}{8.0 \times 10^6\text{ bits/s}} = 0.001065\text{ s} = 1.065\text{ milliseconds}$$
+
+   Because the human eye integrates visual changes over roughly $16\text{ milliseconds}$ ($60\text{ Hz}$), a $1.065\text{-millisecond}$ frame transfer appears completely instantaneous—locking the new numbers onto the glass and returning the serial bus to zero-current sleep before your finger has even finished lifting off the keycap.
+
+2. **Cold-Weather Liquid-Crystal Viscosity Compensation:** Just like honey in a winter kitchen, liquid-crystal molecules become more viscous as the temperature drops, requiring a slightly higher electrical field to untwist crisply against their elastic restoring forces. With a negative temperature coefficient of $\frac{dV}{dT} = -12.5\text{ mV/}^\circ\text{C}$ ($-0.0125\text{ V/}^\circ\text{C}$) around a room-temperature charge-pump baseline of $V_0 = 9.00\text{ V}$ at $T_0 = 25.0^\circ\text{C}$:
+
+   $$V(T) = V_0 + \frac{dV}{dT}(T - T_0)$$
+
+   stepping into freezing air ($T = 0.0^\circ\text{C}$, so $T - T_0 = -25^\circ\text{C}$) automatically boosts the contrast bias by $(-0.0125\text{ V/}^\circ\text{C}) \times (-25^\circ\text{C}) = +0.3125\text{ V}$ to $9.3125\text{ V}$ so the digits never ghost or fade in winter weather.
+
+3. **Beer-Lambert Optical Absorption in the Enclosure Walls:** Why must the dark matte polymer shell around the display be compounded with carbon black pigment? If stray sunlight or near-infrared light ($\lambda = 1064\text{ nm}$, linear attenuation coefficient $\alpha = 450\text{ cm}^{-1}$) leaked through the plastic walls, internal scattering would wash out the display contrast and disturb internal optical sensors. In the eighteenth and nineteenth centuries, Pierre Bouguer, Johann Heinrich Lambert, and August Beer discovered why light does not fade linearly inside an absorbing medium: if the first thin layer of plastic absorbs half of the incoming photons, the second identical layer absorbs half of the *remaining* half, leaving one-quarter, then one-eighth, then one-sixteenth. Integrating $dI/dz = -\alpha I$ shows that light intensity $I(z)$ decays exponentially with penetration depth $z$:
+
+   $$I(z) = I_0 e^{-\alpha z} \implies \frac{I(z)}{I_0} = e^{-\alpha z}$$
+
+   To find the exact depth $z$ at which $90\%$ of the incident light has been absorbed—leaving a transmitted fraction of $I/I_0 = 0.10$—we undo the exponential function with its natural inverse, the natural logarithm $\ln$ (using the natural logarithm key `{{key:LN}}`, which acts in place on Register $X$ and whose full story we will explore in Chapter 3):
+
+   $$z = -\frac{\ln(I/I_0)}{\alpha} = -\frac{\ln(0.10)}{450\text{ cm}^{-1}} \approx 0.005117\text{ cm} = 51.17\,\mu\text{m}$$
+
+   Ninety percent of incident light is extinguished within the outer $51.17\text{ micrometers}$—less than the thickness of a single human hair!
+
+4. **Average Power vs. Peak Power in Optical Pulses:** In optical physics and laser-marking laboratories, that same $1064\text{ nm}$ near-infrared wavelength is used by Q-switched fiber lasers to foam high-contrast white legends into dark polymer keycaps without removing surface material. Even when the laser draws a gentle average power of $P_{\text{avg}} = 1.20\text{ W}$ at a repetition rate of $f_{\text{rep}} = 35.0\text{ kHz}$ ($35,000\text{ pulses/s}$), each individual pulse carries an energy packet of:
+
+   $$E_{\text{pulse}} = \frac{P_{\text{avg}}}{f_{\text{rep}}} = \frac{1.20\text{ J/s}}{35,000\text{ s}^{-1}} = 3.4286 \times 10^{-5}\text{ J} = 34.29\,\mu\text{J}$$
+
+   Compressing that tiny $34.29\text{-microjoule}$ packet into a $\tau = 100\text{ ns}$ ($1.0 \times 10^{-7}\text{ s}$) optical burst unleashes an instantaneous peak power of:
+
+   $$P_{\text{peak}} = \frac{E_{\text{pulse}}}{\tau} = \frac{P_{\text{avg}}}{f_{\text{rep}} \tau} = 342.86\text{ Watts}$$
+
+   Focused onto a microscopic circular spot of radius $r = 22.5\,\mu\text{m}$ ($0.00225\text{ cm}$, area $A = \pi r^2 \approx 1.590 \times 10^{-5}\text{ cm}^2$), that single pulse delivers an energy density (fluence) of $F = E_{\text{pulse}}/(\pi r^2) = 2.16\text{ J/cm}^2$—instantly foaming microscopic gas bubbles inside the polymer surface to create a permanent, wear-proof key legend.
+
+### Ohm's Law, Joule's Law, and the Secret Life of a Coin Cell
+
+Turn the instrument over and consider the humble **CR2032 lithium coin cell ($3.0\text{ V}$, $225\text{ mAh}$ capacity)** tucked inside its compartment. Every electrical circuit in high-school physics and modern engineering rests on two twin pillars discovered in 1827 by the German physicist **Georg Simon Ohm** (who used bismuth-copper thermocouples dipped in boiling water and crushed ice to get a steady voltage source!) and in 1841 by the English physicist **James Prescott Joule**:
+
+$$V = I R \quad \text{(Ohm's Law)} \qquad \text{and} \qquad P = V I = I^2 R = \frac{V^2}{R} \quad \text{(Joule's Power Law)}$$
+
+Here $V$ is electrical potential difference (in Volts, the "pressure" or energy in Joules per Coulomb pushing electrons), $I$ is current (in Amperes, the flow rate of charge in Coulombs per second), $R$ is resistance (in Ohms $\Omega$, how strongly a conductor opposes current), and $P$ is thermal power dissipated as heat (in Watts, Joules per second). Notice how substituting Ohm's Law $V = IR$ into $P = VI$ produces the quadratic heating law $P = I^2 R$: doubling the current flowing through a wire or battery does not merely double the wasted heat—it multiplies the wasted heat by **four ($2^2 = 4$)**!
+
+Let us see how Ohm's Law and Joule's Law explain four everyday mysteries of hardware design:
+
+- **Why Battery Voltage Droops Under Heavy Load (Internal Resistance $R_{\text{int}}$):**  
+  An ideal textbook battery holds a constant open-circuit electromotive force $\mathcal{E} = 3.0\text{ V}$ no matter how much current you draw. A real chemical coin cell, however, relies on lithium ions migrating through an organic electrolyte paste between the anode and manganese-dioxide cathode—and that ionic migration acts like a hidden resistor $R_{\text{int}}$ wired in series inside the cell! Whenever the calculator draws a current $I$, the voltage actually delivered to the circuit board terminals is reduced by the internal Ohm's Law drop $I R_{\text{int}}$:
+
+  $$V_{\text{term}}(I) = \mathcal{E} - I R_{\text{int}}$$
+
+  When the calculator sits idle drawing $I_1 = 4.8\text{ mA}$ ($0.0048\text{ A}$), its terminal voltage reads $V_1 = 2.940\text{ V}$. The instant you launch a numerical root-solver burst drawing $I_2 = 18.2\text{ mA}$ ($0.0182\text{ A}$), the terminal voltage dips to $V_2 = 2.685\text{ V}$. Subtracting the two equations eliminates the unknown open-circuit voltage $\mathcal{E}$ and reveals the battery's internal dynamic resistance:
+
+  $$R_{\text{int}} = \frac{V_1 - V_2}{I_2 - I_1} = \frac{2.940 - 2.685}{0.0182 - 0.0048} = \frac{0.2550\text{ V}}{0.0134\text{ A}} = 19.03\,\Omega$$
+
+  Look at how naturally your mind unpeels that fraction: you find the voltage difference on top ($0.2550\text{ V}$), set it aside on a shelf, find the current difference on the bottom ($0.0134\text{ A}$), and divide them! And once you know $R_{\text{int}} \approx 19.03\,\Omega$, Joule's Law ($P_{\text{loss}} = I_{\text{burst}}^2 R_{\text{int}}$) tells you immediately that during an $18.2\text{ mA}$ burst, only:
+
+  $$P_{\text{loss}} = (0.0182\text{ A})^2 \times 19.03\,\Omega = 0.006304\text{ W} = 6.30\text{ milliwatts}$$
+
+  is lost as internal battery warmth.
+
+- **Tallying a Multi-State Daily Energy Budget:**  
+  Battery capacity $Q$ is measured in **milliampere-hours ($\text{mAh}$)**—the product of current $I$ (in milliamperes) and duration $t$ (in hours), where $1\text{ mAh} = 3.6\text{ Coulombs}$ of electrical charge. Over a 24-hour day of heavy school or lab use across four states—active solving ($18.2\text{ mA}$ for $0.5\text{ hr}$), idle typing ($4.8\text{ mA}$ for $1.5\text{ hr}$), standby pause ($0.85\text{ mA}$ for $2.0\text{ hr}$), and deep sleep ($0.0118\text{ mA}$ for $20.0\text{ hr}$)—the total charge consumed per day is the sum of the four current-time products:
+
+  $$Q_{\text{daily}} = (18.2 \times 0.5) + (4.8 \times 1.5) + (0.85 \times 2.0) + (0.0118 \times 20.0) = 9.10 + 7.20 + 1.70 + 0.236 = 18.236\text{ mAh/day}$$
+
+  Dividing the cell's $225\text{ mAh}$ capacity by $18.236\text{ mAh/day}$ gives $12.34\text{ days}$ of nonstop heavy testing (or well over a year of normal daily pocket use).
+
+- **Curing Mechanical Switch Bounce & Phantom Ghosting:**  
+  When your thumb presses a physical key, the gold-plated switch contacts do not simply kiss and stay still; at the millisecond scale, they bounce elastically like a dropped basketball for $t_{\text{bounce}} = 4.8\text{ ms}$. Registering your keystroke on the very first touch and locking out rebounds for a $T_{\text{lockout}} = 20.0\text{ ms}$ refractory window provides a:
+
+  $$M = \frac{T_{\text{lockout}}}{t_{\text{bounce}}} = \frac{20.0\text{ ms}}{4.8\text{ ms}} = 4.1667\times$$
+
+  safety margin against double-typing. Meanwhile, in a row-and-column key matrix, holding three keys at once could create a "sneak path" unless every key sits in series with a one-way diode. Placing a low-barrier metal-semiconductor **Schottky diode** ($V_F = 0.32\text{ V}$) at every key intersection instead of a standard silicon p-n junction diode ($V_F = 0.72\text{ V}$) leaves a clean $V_{NM,L} = 0.80\text{ V} - 0.32\text{ V} = 0.48\text{ V}$ noise margin below the processor's $0.80\text{ V}$ logic-low threshold, while transient voltage suppressor (TVS) diodes safely shunt an $8,000\text{ V} / 1500\,\Omega = 5.33\text{ A}$ winter-carpet static spark to ground.
+
+- **The RC Power-On Reset Timer:**  
+  When you slide a fresh battery into the compartment, the voltage rail does not jump cleanly to $V_{\text{dd}} = 3.30\text{ V}$ in zero time. To prevent the processor from waking up half-starved, a pull-up resistor ($R = 100\text{ k}\Omega = 1.0 \times 10^5\,\Omega$) slowly charges a timing capacitor ($C = 0.10\,\mu\text{F} = 1.0 \times 10^{-7}\text{ F}$, with characteristic RC time constant $\tau = RC = 0.0100\text{ s} = 10.0\text{ ms}$) until the capacitor voltage crosses the $V_{\text{th}} = 2.10\text{ V}$ reset release threshold. Solving Kirchhoff's loop equation $V_{\text{dd}} - IR - Q/C = 0$ shows that the uncharged voltage headroom $(1 - V(t)/V_{\text{dd}})$ decays exponentially as $e^{-t/RC}$:
+
+  $$V(t) = V_{\text{dd}}\left(1 - e^{-t/RC}\right) \implies 1 - \frac{V_{\text{th}}}{V_{\text{dd}}} = e^{-t/RC} \implies t = -R C \ln\left(1 - \frac{V_{\text{th}}}{V_{\text{dd}}}\right) = 10.12\text{ ms}$$
+
+### Mechanical Permanence, Thermal Fatigue, and the Cubic Law of Stiffness ($I = bh^3/12$)
+
+Finally, what gives a pocket scientific instrument its solid, heirloom feel in your hand across decades of service? It starts at the fasteners and solder joints. Instead of driving metal screws into bare plastic posts that strip out after two battery changes, heat-set **knurled brass inserts** ($D = 3.6\text{ mm}$, length $L = 5.0\text{ mm}$) anchor into the chassis across a cylindrical shear area of $A_{\text{shear}} = \pi D L = \pi \times 3.6\text{ mm} \times 5.0\text{ mm} = 56.55\text{ mm}^2$. Multiplying that area by the polymer shear strength ($\tau = 42.0\text{ N/mm}^2$) reveals an ultimate pull-out force of $F_{\text{pull}} = \pi D L \tau = 2,375\text{ N}$ ($\approx 242\text{ kgf}$)—the weight of three adults! Inside the shell, when the calculator is carried back and forth between a cold winter backpack and a warm desk through a temperature swing of $\Delta T = 55\text{ K}$, the slight thermal expansion mismatch between copper pads and lead-free SAC305 solder joints strains the metal crystal grains; by the **Coffin-Manson power law** (with fatigue exponent $m = 2.2$ and material constant $C = 1.8 \times 10^7$), the joints endure $N_f = \frac{C}{(\Delta T)^m} = \frac{1.8 \times 10^7}{55^{2.2}} \approx 2,670$ extreme thermal shock cycles before fatigue. And if the calculator slips off a $h = 1.20\text{ m}$ workbench onto concrete while its perimeter TPU bumper compresses by $\Delta y = 2.2\text{ mm} = 0.0022\text{ m}$ to absorb the gravitational potential energy $mgh = F_{\text{avg}} \Delta y = m a_{\text{avg}} \Delta y$, both the mass $m$ and gravitational acceleration $g$ cancel right out of the ratio $a_{\text{avg}}/g$, limiting the freefall shock deceleration to $G = \frac{a_{\text{avg}}}{g} = \frac{h}{\Delta y} = \frac{1.20\text{ m}}{0.0022\text{ m}} = 545.45\,G$.
+
+Just as important, nobody likes a calculator keypad that bends like a sponge under your thumb. In the 1700s, **Leonhard Euler and Daniel Bernoulli** discovered why a wooden plank laid flat across a stream sags heavily under your weight, yet the exact same plank turned on its narrow edge becomes rigid enough to walk across. When a thumb press of $F = 3.92\text{ N}$ pushes down on a span of length $L = 60.0\text{ mm}$ (width $b = 15.0\text{ mm}$, vertical thickness $h = 2.5\text{ mm}$, elastic modulus $E = 3,500\text{ N/mm}^2$), the top fibers of the beam compress while the bottom fibers stretch, creating an internal restoring torque proportional to the **area moment of inertia** $I$:
+
+$$I = \frac{b h^3}{12}, \qquad \delta = \frac{F L^3}{48 E I}$$
+
+Look closely at the exponent on width $b$ versus vertical thickness $h$: width enters to the first power ($b^1$), whereas thickness enters **cubed ($h^3$)**! Doubling the vertical height of an internal stiffening rib or a battery-door snap-latch cantilever clip from $1.5\text{ mm}$ to $3.0\text{ mm}$ does not merely double its stiffness—it multiplies its resistance to bending by **$2^3 = 8\times$**, holding center keypad flexure to an imperceptible $\delta = 0.258\text{ mm}$.
+
+{{blocks:sc32_dovetail_service|Precision dovetail service bay and cantilever snap-latch geometry}}
+
+---
+
+## On the Stack: Instrument & Power-Law Workbench
+
+Notice what happened in your mind as we walked through every physical law in this chapter—from matching quartz crystal load capacitors $C = 2(C_L - C_{\text{stray}})$ and measuring battery internal resistance $R_{\text{int}} = \frac{V_1 - V_2}{I_2 - I_1}$ to inverting resonant period $f_{\text{SRF}} = \frac{1}{2\pi\sqrt{LC}}$ and RC charging time $t = -RC\ln(1 - V_{\text{th}}/V_{\text{dd}})$. In every single formula, your mind naturally looked for the **innermost difference, product, or ratio**, evaluated that core piece first, and stepped outward. Let us now open the Chapter 1 Workbench and execute every one of these instrument calculations on the four visible shelves ($T, Z, Y, X$) of the SC-32.
+
+### First Arithmetic & Stack Shift
+
+Let us begin with the chained arithmetic and one-step ratios that verify the mechanical enclosure and switch matrix:
+
+* **Hotend Volumetric Melt Flow ($\dot{Q} = w \times h \times v$):** Returning to the 3D printer hotend flow from the Prologue ($w = 0.45\text{ mm}$, layer height $h = 0.20\text{ mm}$, and printhead speed $v = 180\text{ mm/s}$), type `0.45 {{key:ENTER}} 0.20 {{key:×}}` to see the $0.090\text{ mm}^2$ bead cross-section in Register $X$, then type `180 {{key:×}}`—letting automatic stack lift carry `0.090` to Register $Y$—to land on **`16.2`** $\text{mm}^3/\text{s}$.
+* **Switch Debounce Safety Margin ($M = T_{\text{lockout}} / t_{\text{bounce}}$):** Put the lockout window (`20`) onto Shelf $Y$ via `20 {{key:ENTER}}`, put the chatter duration (`4.8`) onto Shelf $X$, and tap `{{key:÷}}` (`{{res:sc32_01_craftsmanship_hardware_seq_02:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_02:value}}`**) to confirm a $\mathbf{4.1667\times}$ safety margin.
+* **Winter Carpet Static Spark Current ($I_{\text{peak}} = V_0 / R_{\text{HBM}}$):** When an $8,000\text{ V}$ static discharge jumps across human-body-model skin resistance $R = 1500\,\Omega$, dividing (`{{res:sc32_01_craftsmanship_hardware_seq_22:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_22:value}}`**$\text{ Amperes}$) reveals the $\mathbf{5.3333\text{ A}}$ spark pulse diverted by the TVS diodes.
+* **Knurled Brass Insert Shear Retention ($F_{\text{pull}} = \pi D L \tau$):** Anchoring a heat-set brass insert of diameter $D = 3.6\text{ mm}$ and length $L = 5.0\text{ mm}$ in polymer of shear strength $\tau = 42.0\text{ N/mm}^2$, we chain the product outward (`{{res:sc32_01_craftsmanship_hardware_seq_06:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_06:value}}\text{ N}}$):
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `3.6` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6000$ | Insert outer knurled diameter $D$ in mm |
 | `{{key:π}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $11.3097$ | Circumference $\pi D$ in mm |
 | `5.0 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $56.5487$ | Cylindrical shear area $A_{\text{shear}}$ in mm$^2$ |
 | `42.0 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2375.0440$** | Ultimate retention force $F_{\text{pull}}$ in Newtons |
 
-* **Surviving a $1.20\text{ m}$ Workbench Drop:** What happens if the calculator slips off a $h = 1.20\text{ m}$ workbench onto a concrete floor? All of the gravitational potential energy $mgh$ gained during the fall must be absorbed over the stopping distance $\Delta y = 2.2\text{ mm} = 0.0022\text{ m}$ as the perimeter bumper compresses. Equating potential energy $mgh$ to stopping work $m a_{\text{avg}} \Delta y$ cancels both mass $m$ and local gravity $g$, leaving a remarkably simple ratio for the average shock deceleration in $G$'s:
-  $$v_{\text{impact}} = \sqrt{2gh}, \quad a_{\text{avg}} = \frac{v^2}{2 \Delta y} = \frac{g h}{\Delta y}, \quad G = \frac{h}{\Delta y}$$
-  Dividing the drop height by the bumper deflection (`{{res:sc32_01_craftsmanship_hardware_seq_18:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_18:value}}\,G}$) gives the average shock deceleration in three keystrokes:
+* **Workbench Drop Shock Deceleration ($G = h / \Delta y$):** Dropping the instrument from a bench height $h = 1.20\text{ m}$ onto a perimeter bumper that compresses by $\Delta y = 0.0022\text{ m}$, divide directly (`{{res:sc32_01_craftsmanship_hardware_seq_18:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_18:value}}\,G}$):
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `1.20 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $1.2000$ | $1.2000$ | Freefall drop height $h = 1.20\text{ m}$ |
 | `0.0022` | $0.0000$ | $0.0000$ | $1.2000$ | $0.0022$ | Bumper deflection $\Delta y = 2.2\text{ mm}$ |
 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$545.4545$** | Average shock deceleration $G = h/\Delta y$ |
 
-A $545\,G$ impact pulse explains why battery contacts need firm dual-wiping spring preload so the coin cell never loses contact on impact. You can verify that same shock load along a second independent pathway using Torricelli's kinematic impact velocity $v = \sqrt{2gh}$ (for instance, on a $h = 1.50\text{ m}$ stand-up bench drop onto a $\Delta y = 0.0018\text{ m}$ corner bumper where $1.50 / 0.0018 = \mathbf{833.3333\,G}$, or the $1.20\text{ m} / 0.0022\text{ m}$ drop above): computing `2 {{key:ENTER}} 9.80665 {{key:×}} 1.50 {{key:×}} {{key:√x}}` reveals the physical impact speed $v = \mathbf{5.4240\text{ m/s}}$ ($4.8514\text{ m/s}$ for $h = 1.20\text{ m}$), and squaring $v$ via `{{key:x²}}` before dividing by $2 g \Delta y$ returns the exact same $\mathbf{833.3333\,G}$ (and $\mathbf{545.4545\,G}$) shock load.
+*(To test a harsher corner impact from shoulder height $h = 1.50\text{ m}$ onto a stiffer $\Delta y = 0.0018\text{ m}$ corner bumper—where the direct energy ratio gives $1.50 / 0.0018 = \mathbf{833.3333\,G}$—you can also cross-check via Evangelista Torricelli's impact velocity $v = \sqrt{2gh}$: keying `2 {{key:ENTER}} 9.80665 {{key:×}} 1.50 {{key:×}} {{key:√x}}` yields impact speed $v = \mathbf{5.4240\text{ m/s}}$, and squaring via `{{key:x²}}` before dividing by $2 g \Delta y$ confirms the exact same $\mathbf{833.3333\,G}$ deceleration.)*
 
----
+### Scientific Notation & Reciprocals
 
-## Letting Upper Shelves Hold Your Place: Power Budgets, Powers & Beam Stiffness
+Next, let us use the Scientific Exponent key (`{{key:E}}`), Power key (`{{key:yˣ}}`), and Reciprocal key (`{{key:1/x}}`) on the clock, display, and optical circuits:
 
-So far, our calculations have needed only Shelf $Y$ and Shelf $X$. Now let's see why having **four shelves ($T, Z, Y, X$)**—together with the Swap key **`{{key:x⇄y}}`** and the Power key **`{{key:yˣ}}`**—makes multi-part engineering formulas so much cleaner than on an algebraic calculator.
+* **Quartz Crystal Load Capacitors ($C = 2(C_L - C_{\text{stray}})$) & Cubic Thermal Drift:**
+  - *Matching Load Capacitance:* Subtract stray board capacitance first (`18 {{key:ENTER}} 3.5 {{key:-}}` $\to 14.5\text{ pF}$) and double it (`{{res:sc32_01_craftsmanship_hardware_seq_11:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_11:value}}`**$\text{ pF}$) to find that each series load capacitor must be $C = \mathbf{29.0000\text{ pF}}$.
+  - *Winter AT-Cut Cubic Frequency Drift:* At $T = -15.0^\circ\text{C}$ ($\Delta T = -40\text{ K}$ below the $25.0^\circ\text{C}$ turnover point, with $k = 0.035 \times 10^{-9}\text{ K}^{-3}$), keying `40 {{key:+/-}} {{key:ENTER}} 3 {{key:yˣ}} 0.035 {{key:E}} 9 {{key:+/-}} {{key:×}}` evaluates the fractional drift $\Delta f / f_0 = -2.2400 \times 10^{-6}$, and scaling by `12 {{key:E}} 6 {{key:×}}` reveals a shift of only $\Delta f = \mathbf{-26.8800\text{ Hz}}$.
+* **SPI Display Refresh Period ($T_{\text{frame}}$):** Streaming a full $1,065\text{-byte}$ display frame over an $8.0\text{ MHz}$ ($8 \times 10^6\text{ bits/s}$) serial bus (`{{res:sc32_01_craftsmanship_hardware_seq_04:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_04:value}}\text{ ms}}$) completes in just over one millisecond:
 
-### Summing a 4-State Battery Duty Cycle Without Parentheses (`{{key:x⇄y}}`)
-Suppose an engineering student runs the SC-32 under an intensive four-state daily duty cycle: active calculation ($18.2\text{ mA}$ for $0.5\text{ hr/day}$), idle typing ($4.8\text{ mA}$ for $1.5\text{ hr/day}$), standby pause ($0.85\text{ mA}$ for $2.0\text{ hr/day}$), and deep sleep ($0.0118\text{ mA}$ for $20.0\text{ hr/day}$):
-$$Q_{\text{daily}} = (18.2 \times 0.5) + (4.8 \times 1.5) + (0.85 \times 2.0) + (0.0118 \times 20.0)$$
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `1065 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $1065.0000$ | $1065.0000$ | Frame payload: 9 command + 1056 data bytes |
+| `8 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8520.0000$ | Serialized bit stream length |
+| `8 {{key:E}} 6 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.001065$ | Clock transmission duration in seconds |
+| `1000 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0650$** | Frame refresh period $T_{\text{frame}}$ in milliseconds |
 
-Compare what happens when you evaluate battery life on a conventional algebraic calculator versus the SC-32 stack:
+* **Q-Switched Laser Peak Power ($P_{\text{peak}} = \frac{P_{\text{avg}}}{f_{\text{rep}}\tau}$):** Dividing $P_{\text{avg}} = 1.20\text{ W}$ by $f_{\text{rep}} = 35,000\text{ Hz}$ (`1.20 {{key:ENTER}} 35000 {{key:÷}}` $\to 3.4286 \times 10^{-5}\text{ J}$) and dividing by $\tau = 100\text{ ns}$ (`{{res:sc32_01_craftsmanship_hardware_seq_07:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_07:value}}`**) gives $\mathbf{342.8571\text{ W}}$ peak power (and dividing $E_{\text{pulse}}$ by a spot area of radius $r = 0.00225\text{ cm}$ via `1.20 {{key:ENTER}} 35000 {{key:÷}} 0.00225 {{key:x²}} {{key:π}} {{key:×}} {{key:÷}}` gives fluence $\mathbf{2.1558\text{ J/cm}^2}$).
+* **Bypass Capacitor Self-Resonance ($f_{\text{SRF}} = \frac{1}{2\pi\sqrt{LC}}$):** Pairing parasitic package inductance $L = 8.5 \times 10^{-10}\text{ H}$ with decoupling capacitance $C = 1.0 \times 10^{-7}\text{ F}$, start inside the radical and invert with `{{key:1/x}}` (`{{res:sc32_01_craftsmanship_hardware_seq_16:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_16:value}}\text{ MHz}}$):
 
-| Challenge / Engineering Task | Conventional Algebraic Calculator (Infix) | Algebraic Keystrokes & Clutter | The StackCalc Stack Advantage (RPN Stack + Visual Studio) | StackCalc Keystrokes | The Stack Advantage |
-| :--- | :--- | :---: | :--- | :---: | :--- |
-| **Coin Cell Operational Life**:<br>$T_{\text{life}} = \frac{225}{(0.65 \times 2 + 0.0025 \times 22) / 24}$ | `2 2 5 / ( ( 0 . 6 5 * 2 + 0 . 0 0 2 5 * 2 2 ) / 2 4 ) =`<br>*Trap: Triple-nested parentheses; missing bracket divides 225 by active term and adds sleep term. Daily draw ($1.355\text{ mAh}$) is completely hidden.* | 27 | **Inside-Out Stack Integration**:<br>`0.65 {{key:ENTER}} 2 {{key:×}} 0.0025 {{key:ENTER}} 22 {{key:×}} {{key:+}} 24 {{key:÷}} 225 {{key:x⇄y}} {{key:÷}}`<br>Evaluates daily active/sleep draw, normalizes hourly, and divides capacity directly. | 21 | **22% fewer strokes + 100% register transparency & zero grouping syntax errors** |
-| **Multi-Rail Energy Envelope**:<br>$Q_{\text{daily}} = \sum (I_i \cdot t_i)$ across 4 operational states | `( 1 8 . 2 * 0 . 5 ) + ( 4 . 8 * 1 . 5 ) + ( 0 . 8 5 * 2 . 0 ) + ( 0 . 0 1 1 8 * 2 0 ) =`<br>*Trap: Four parenthesis pairs; typing error or accidental clear destroys entire entry stream.* | 46 | **Chained Running Total Accumulation**:<br>`18.2 {{key:ENTER}} 0.5 {{key:×}} 4.8 {{key:ENTER}} 1.5 {{key:×}} {{key:+}} 0.85 {{key:ENTER}} 2 {{key:×}} {{key:+}} 0.0118 {{key:ENTER}} 20 {{key:×}} {{key:+}}`<br>Each rail multiplies in place; running draw accumulates continuously in Register $X$. | 34 | **26% fewer strokes + live sub-rail visibility in Registers $Y, Z, T$** |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `8.5 {{key:E}} 10 {{key:+/-}} {{key:ENTER}}` | $0.0000$ | $0.0000$ | $8.5000 \times 10^{-10}$ | $8.5000 \times 10^{-10}$ | Parasitic inductance $ESL$ in Henries |
+| `1 {{key:E}} 7 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.5000 \times 10^{-17}$ | Reactive product $L C$ in s$^2$ |
+| `{{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $9.2195 \times 10^{-9}$ | Time constant $\sqrt{LC}$ in seconds |
+| `2 {{key:×}} {{key:π}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $5.7928 \times 10^{-8}$ | Period divisor $2\pi\sqrt{LC}$ |
+| `{{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.7263 \times 10^{7}$ | Self-resonant frequency in Hertz |
+| `1 {{key:E}} 6 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$17.2628$** | Self-resonant frequency $f_{\text{SRF}}$ in MHz |
 
-On the stack, every time you type the next `(current × hours)` pair, automatic stack lift carries your running daily total up to Shelf $Z$ and drops it back to Shelf $Y$ so `{{key:+}}` adds the new state immediately ($9.10 \to 16.30 \to 18.00 \to 18.236\text{ mAh/day}$). Then, to divide the battery's $225\text{ mAh}$ capacity by that $18.236\text{ mAh/day}$ drain, you type `225` (lifting `18.236` to Shelf $Y$) and tap **`{{key:x⇄y}} {{key:÷}}`** (`{{res:sc32_01_craftsmanship_hardware_seq_01:keys}}`):
+* **Solder-Joint Thermal Fatigue ($N_f = C / (\Delta T)^m$):** Cycling lead-free SAC305 joints through $\Delta T = 55\text{ K}$ with Coffin-Manson exponent $m = 2.2$ and constant $C = 1.8 \times 10^7$, compute $55^{2.2}$ first and swap with `{{key:x⇄y}}` (`{{res:sc32_01_craftsmanship_hardware_seq_21:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_21:value}}\text{ cycles}}$):
 
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `55 {{key:ENTER}} 2.2 {{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6742.1423$ | Thermal swing power $(\Delta T)^{2.2}$ |
+| `1.8 {{key:E}} 7` | $0.0000$ | $0.0000$ | $6742.1423$ | $1.8000 \times 10^{7}$ | SAC305 fatigue coefficient $C$ |
+| `{{key:x⇄y}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2669.7745$** | Thermal shock endurance cycles $N_f$ |
+
+* **Faceplate & Cantilever Beam Flexure ($I = bh^3/12$, $\delta = FL^3/(48EI)$):** Using all four registers (`{{res:sc32_01_craftsmanship_hardware_seq_13:keys}}`), the area moment of inertia $I = 19.53125\text{ mm}^4$ rides up to Register $T$ as you push $F = 3.92\text{ N}$ and $L = 60.0\text{ mm}$, and then **replicates automatically from Register $T$ down into $Z$ and $Y$** each time a dyadic operation (`{{key:yˣ}}`, `{{key:×}}`, `{{key:÷}}`) drops the stack:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `15 {{key:ENTER}} 2.5 {{key:ENTER}} 3 {{key:yˣ}}` | $0.0000$ | $0.0000$ | $15.0000$ | $15.6250$ | Cube vertical rib thickness $h^3 = 2.5^3 = 15.625\text{ mm}^3$ |
+| `{{key:×}} 12 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $19.5312$ | Area moment of inertia $I = bh^3/12 = 19.53125\text{ mm}^4$ |
+| `3.92 {{key:ENTER}} 60 {{key:ENTER}} 3 {{key:yˣ}}` | $19.5312$ | $19.5312$ | $3.9200$ | $216000.00$ | Cube span $L^3 = 60^3\text{ mm}^3$ ($I$ lifts to $T$ and replicates into $Z$) |
+| `{{key:×}}` | $19.5312$ | $19.5312$ | $19.5312$ | $846720.00$ | Bending load $F L^3$ ($\text{N}\cdot\text{mm}^3$); $T$-replication brings $I$ down to $Y$ |
+| `48 {{key:ENTER}} 3500 {{key:×}}` | $19.5312$ | $19.5312$ | $846720.00$ | $168000.00$ | Stiffness denominator factor $48 E = 168,000\text{ N/mm}^2$ |
+| `{{key:÷}}` | $19.5312$ | $19.5312$ | $19.5312$ | $5.0400$ | Quotient $F L^3 / (48 E) = 5.0400\text{ mm}^5$; $I$ waits in $Y$ |
+| `{{key:x⇄y}} {{key:÷}}` | $19.5312$ | $19.5312$ | $19.5312$ | **$0.2580$** | Swap $I$ into $X$ and divide to resolve center flexure $\delta$ in mm |
+
+*(Similarly, for the battery-door snap-latch cantilever clip of width $b = 4.0\text{ mm}$, thickness $h = 1.5\text{ mm}$, and length $L = 12.0\text{ mm}$ under a $F = 6.0\text{ N}$ thumb press, first form $I = bh^3/12 = 1.125\text{ mm}^4$ via `4 {{key:ENTER}} 1.5 {{key:ENTER}} 3 {{key:yˣ}} {{key:×}} 12 {{key:÷}}`, then evaluate $\delta = FL^3/(3EI)$ via `6 {{key:ENTER}} 12 {{key:ENTER}} 3 {{key:yˣ}} {{key:×}} 3 {{key:ENTER}} 3500 {{key:×}} {{key:÷}} {{key:x⇄y}} {{key:÷}}` to confirm an elastic latch deflection of $\mathbf{0.8777\text{ mm}}$.)*
+
+### Correction, Sign & LASTX Verification
+
+* **Schottky Diode Anti-Ghosting Noise Margin ($V_{NM,L} = V_{IL,\max} - V_F$):** Subtracting the Schottky forward drop $0.32\text{ V}$ from $0.80\text{ V}$ (`{{res:sc32_01_craftsmanship_hardware_seq_09:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_09:value}}`**$\text{ V}$) confirms a $\mathbf{0.4800\text{ V}}$ noise margin; tapping `{{key:LASTX}} {{key:+}} 0.72 {{key:-}}` restores $0.80\text{ V}$ and shows that an ordinary $0.72\text{ V}$ silicon diode would leave only $0.0800\text{ V}$.
+* **Cold-Weather LCD Bias Compensation ($V(T) = V_0 + \frac{dV}{dT}(T - T_0)$):** Evaluating from the inside out at $T = 0.0^\circ\text{C}$ (`0 {{key:ENTER}} 25 {{key:-}}` $\to -25.0^\circ\text{C}$), multiplying by $-0.0125$, and adding $9.00\text{ V}$ (`{{res:sc32_01_craftsmanship_hardware_seq_15:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_15:value}}`**$\text{ V}$) gives $\mathbf{9.3125\text{ V}}$.
+* **Continuous-Memory FNV-1a Checksum (`{{key:÷R}}`):** How does the SC-32 verify in microseconds upon waking from deep sleep that not a single bit of your non-volatile flash memory was corrupted while powered off? It runs the **FNV-1a hash checksum** (invented in 1991 by computer scientists Glenn Fowler, Landon Curt Noll, and Kiem-Phong Vo), which folds each byte of stored state into a running integer and multiplies by the FNV prime $16,777,619$ modulo $2^{32} = 4,294,967,296$. Multiplying the XOR-updated hash state $2,166,136,200$ by the FNV prime $16,777,619$ and taking the modulo-$2^{32}$ remainder via `{{key:÷R}}` (Right Shift `{{key:↱}}` above `{{key:E}}`, keyed as `{{res:sc32_01_craftsmanship_hardware_seq_05:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_05:value}}`**) places the 32-bit wrapped hash remainder ($3.3562 \times 10^9$) in Register $Y$ and the overflow quotient ($\mathbf{{{res:sc32_01_craftsmanship_hardware_seq_05:value}}}$) in Register $X$:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `2166136200 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.1661 \times 10^{9}$ | $2.1661 \times 10^{9}$ | Load XOR-accumulated hash state |
+| `16777619 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6343 \times 10^{16}$ | Multiply by 32-bit FNV prime |
+| `4294967296 {{key:÷R}}` | $0.0000$ | $0.0000$ | $3.3562 \times 10^{9}$ | **$8461672.00$** | Divide with remainder: $Y=\text{32-bit wrapped hash}, X=\text{quotient}$ |
+
+### Battery Duty Cycle & RC Reset Timing
+
+* **4-State Battery Duty Cycle & Operational Life:** Accumulating $(18.2 \times 0.5) + (4.8 \times 1.5) + (0.85 \times 2.0) + (0.0118 \times 20.0) = 18.236\text{ mAh/day}$ and dividing into $225\text{ mAh}$ via `225 {{key:x⇄y}} {{key:÷}}` (`{{res:sc32_01_craftsmanship_hardware_seq_01:keys}}`):
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `18.2 {{key:ENTER}} 0.5 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $9.1000$ | Active calculation: $9.100\text{ mAh}$ |
 | `4.8 {{key:ENTER}} 1.5 {{key:×}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $16.3000$ | Add idle typing ($7.200\text{ mAh}$) |
@@ -157,99 +445,27 @@ On the stack, every time you type the next `(current × hours)` pair, automatic 
 | `0.0118 {{key:ENTER}} 20 {{key:×}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $18.2360$ | Total daily drain: $18.236\text{ mAh/day}$ |
 | `225 {{key:x⇄y}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12.3382$** | Expected battery life: **$12.34\text{ days}$** continuous heavy school use |
 
-### Dividing Two Differences: Coin-Cell Internal Resistance
-Why does an aging coin cell show nearly $3.0\text{ V}$ when sitting idle, yet dip in voltage when a heavy root-solver burst begins? Every chemical cell has an internal series resistance $R_{\text{int}}$ that grows as the electrolyte ages. By sampling terminal voltage at idle ($V_1 = 2.940\text{ V}$ at $I_1 = 4.8\text{ mA}$) and again during a solver burst ($V_2 = 2.685\text{ V}$ at $I_2 = 18.2\text{ mA}$), we find $R_{\text{int}}$ as the ratio of the voltage drop to the current jump:
-$$R_{\text{int}} = \frac{V_1 - V_2}{I_2 - I_1}$$
+* **Coin-Cell Internal Resistance ($R_{\text{int}} = \frac{V_1 - V_2}{I_2 - I_1}$):** Subtracting voltages first and currents second (`{{res:sc32_01_craftsmanship_hardware_seq_14:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_14:value}}\,\Omega}$):
 
-Watch how Shelf $Z$ and Shelf $Y$ handle this two-difference fraction with zero parentheses: subtracting the voltages first (`2.940 {{key:ENTER}} 2.685 {{key:-}}` $\to 0.2550\text{ V}$) and then subtracting the currents (`0.0182 {{key:ENTER}} 0.0048 {{key:-}}` $\to 0.0134\text{ A}$) automatically parks $\Delta V$ in Register $Y$ above $\Delta I$ in Register $X$, ready for `{{key:÷}}` (`{{res:sc32_01_craftsmanship_hardware_seq_14:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_14:value}}\,\Omega}$):
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `2.940 {{key:ENTER}} 2.685 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2550$ | Active voltage drop $\Delta V$ in Volts |
 | `0.0182 {{key:ENTER}} 0.0048 {{key:-}}` | $0.0000$ | $0.0000$ | $0.2550$ | $0.0134$ | Dynamic step current $\Delta I$ in Amperes |
 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$19.0299$** | Coin cell internal dynamic impedance in $\Omega$ |
 
-With that internal impedance $R_{\text{int}} = 19.0299\,\Omega$ on hand, we can verify the brownout horizon and internal Joule heating of a depleted CR2032 cell whose open-circuit voltage has dropped to $V_{\text{oc}} = 2.75\text{ V}$. During an $I_{\text{burst}} = 18.2\text{ mA}$ ($0.0182\text{ A}$) solver burst, we can evaluate both the loaded terminal voltage $V_{\text{term}} = V_{\text{oc}} - I_{\text{burst}} R_{\text{int}}$ and the internal Joule heating loss $P_{\text{loss}} = I_{\text{burst}}^2 R_{\text{int}}$ without typing $I_{\text{burst}}$ twice: keying `2.75 {{key:ENTER}} 19.0299 {{key:ENTER}} 0.0182 {{key:×}} {{key:-}}` obtains $V_{\text{term}} = \mathbf{2.4037\text{ V}}$ in Register $X$ (safely above the $2.15\text{ V}$ brownout threshold), and if you evaluate the internal voltage drop $I_{\text{burst}} R_{\text{int}} = 0.3463\text{ V}$ first via `19.0299 {{key:ENTER}} 0.0182 {{key:×}}` and tap `{{key:ENTER}} {{key:LASTX}} {{key:×}}`, you obtain $P_{\text{loss}} = \mathbf{6.3035\text{ mW}}$ in $X$ while the voltage drop $0.3463\text{ V}$ waits in $Y$.
+*(With $R_{\text{int}} = 19.0299\,\Omega$, keying `19.0299 {{key:ENTER}} 0.0182 {{key:×}} {{key:ENTER}} {{key:LASTX}} {{key:×}}` computes both the voltage drop $I_{\text{burst}}R_{\text{int}} = 0.3463\text{ V}$ in Register $Y$ and the internal Joule heating $P_{\text{loss}} = I_{\text{burst}}^2 R_{\text{int}} = \mathbf{6.3035\text{ mW}}$ in Register $X$ without typing $0.0182$ twice!)*
 
-### Powers (`{{key:yˣ}}`), Scientific Notation (`{{key:E}}`) & Register $T$ Duplication
-Two more keys unlock engineering formulas that involve exponents or very large and small numbers:
-- **The Power Key (`{{key:yˣ}}`):** Raises the base in **Shelf $Y$** to the exponent in **Shelf $X$** ($Y^X$). For example, `55 {{key:ENTER}} 2.2 {{key:yˣ}}` computes $55^{2.2}$.
-- **The Scientific Exponent Key (`{{key:E}}`):** Enters a power of $10$ ($\times 10^n$) directly as part of a number without multiplying by $10$. For example, typing `1.8 {{key:E}} 7` enters $1.8 \times 10^7$, and typing `1 {{key:E}} 7 {{key:+/-}}` enters $1 \times 10^{-7}$.
+* **Beer-Lambert Optical Absorption Depth ($z = -\ln(0.10)/\alpha$):** Extinguishing $90\%$ of stray $1064\text{ nm}$ light in carbon-black polymer of attenuation coefficient $\alpha = 450\text{ cm}^{-1}$ (`{{res:sc32_01_craftsmanship_hardware_seq_17:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_17:value}}\,\mu\text{m}}$):
 
-Let's see `{{key:yˣ}}`, `{{key:E}}`, and `{{key:x⇄y}}` work together on thermal reliability. When a calculator moves between a $-10^\circ\text{C}$ winter pack and a $+45^\circ\text{C}$ summer workbench ($\Delta T = 55\text{ K}$), the silicon chip ($\text{CTE} \approx 2.6\text{ ppm/K}$) expands less than the fiberglass board ($\text{CTE} \approx 14\text{ ppm/K}$), flexing the lead-free SAC305 solder joints according to the Coffin-Manson fatigue law ($m = 2.2$, $C = 1.8 \times 10^7$):
-$$N_f = \frac{C}{(\Delta T)^m}$$
-
-On the stack, we compute the denominator power $55^{2.2}$ first (`55 {{key:ENTER}} 2.2 {{key:yˣ}}`), enter $C = 1.8 \times 10^7$ (`1.8 {{key:E}} 7`), and tap `{{key:x⇄y}} {{key:÷}}` (`{{res:sc32_01_craftsmanship_hardware_seq_21:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_21:value}}\text{ thermal shock cycles}}$, over $7.3\text{ years}$ of daily arctic-to-desert swings):
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `55 {{key:ENTER}} 2.2 {{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6742.1423$ | Thermal swing power $(\Delta T)^{2.2}$ |
-| `1.8 {{key:E}} 7` | $0.0000$ | $0.0000$ | $6742.1423$ | $1.8000 \times 10^{7}$ | SAC305 fatigue coefficient $C$ |
-| `{{key:x⇄y}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2669.7745$** | Thermal shock endurance cycles $N_f$ |
-
-Now watch what happens when we use all four shelves—including **Top Shelf $T$**—to check the structural stiffness of the keypad faceplate! Nothing ruins the feel of a pocket instrument faster than a faceplate that bows like a trampoline when you press `{{key:ENTER}}`. Suppose we model the polycarbonate web between internal standoffs as a simply supported beam ($L = 60.0\text{ mm}$, width $b = 15.0\text{ mm}$, thickness $h = 2.5\text{ mm}$, flexural modulus $E = 3.5\text{ GPa} = 3500\text{ N/mm}^2$) under a heavy thumb press of $F = 3.92\text{ N}$ ($400\text{ gf}$). Euler-Bernoulli beam theory gives the center deflection $\delta$ in two parts:
-$$I = \frac{b h^3}{12}, \quad \delta = \frac{F L^3}{48 E I}$$
-
-Look at how the four-register stack handles both equations in a single pass (`{{res:sc32_01_craftsmanship_hardware_seq_13:keys}}`): we compute the beam's area moment of inertia $I = bh^3/12 = 19.53125\text{ mm}^4$ first. Then, as we compute $F L^3 / (48 E)$ on the lower shelves, $I = 19.53125$ rides up into **Register $T$**. Because Register $T$ automatically copies its value downward whenever the stack drops, $19.53125$ walks right back down into Shelf $Y$ so `{{key:x⇄y}} {{key:÷}}` divides by $I$ with zero memory registers:
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `15 {{key:ENTER}} 2.5 {{key:ENTER}} 3 {{key:yˣ}}` | $0.0000$ | $0.0000$ | $15.0000$ | $15.6250$ | Thickness cubed $h^3 = 2.5^3$ |
-| `{{key:×}} 12 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $19.5312$ | Moment of inertia $I = bh^3/12$ in mm$^4$ |
-| `3.92 {{key:ENTER}} 60 {{key:ENTER}} 3 {{key:yˣ}}` | $19.5312$ | $19.5312$ | $3.9200$ | $216000.00$ | Span cubed $L^3 = 60^3$ |
-| `{{key:×}}` | $19.5312$ | $19.5312$ | $19.5312$ | $846720.00$ | Bending load numerator $F L^3$ |
-| `48 {{key:ENTER}} 3500 {{key:×}}` | $19.5312$ | $19.5312$ | $846720.00$ | $168000.00$ | Modulus factor $48 E$ |
-| `{{key:÷}}` | $19.5312$ | $19.5312$ | $19.5312$ | $5.0400$ | Divide bending load $F L^3$ by modulus factor $48 E$ |
-| `{{key:x⇄y}} {{key:÷}}` | $19.5312$ | $19.5312$ | $19.5312$ | **$0.2580$** | Swap $I$ into $X$ and divide to resolve center flexure $\delta$ in mm |
-
-That barely perceptible deflection ($\delta = \mathbf{0.2580\text{ mm}}$) comes from the cubic power in $I = bh^3/12$: doubling an internal stiffening rib from $h_1 = 1.5\text{ mm}$ to $h_2 = 3.0\text{ mm}$ (`3.0 {{key:ENTER}} 1.5 {{key:÷}} 3 {{key:yˣ}}` $\to \mathbf{8.0000\times}$) multiplies bending stiffness by **$2^3 = 8\times$** while only doubling rib mass—the exact same geometrical stiffness advantage used by structural steel **I-beams**, the $2.5\text{ mm}$ ribs under our $42.0\text{ mm}$ Gridfinity manipulative trays, and the **hollow wing bones** of wandering albatrosses and peregrine falcons.
-
----
-
-## Inside-Out Scientific Workflows: Optics, Reset Timers & Continuous Memory
-
-In the final section of this chapter, let's see how the same stack shelves combine with scientific keys (`{{key:LN}}`, `{{key:√x}}`, `{{key:1/x}}`, and `{{key:÷R}}`) to model the display optics, power-on reset timing, and continuous memory of the SC-32.
-
-### The Daylight-Reflective Screen & Temperature Compensation
-Why does the SC-32 use a reflective liquid-crystal display framed by a dark matte enclosure instead of a glowing glass touchscreen? When you work under laboratory bench lamps or bright outdoor sunlight, a backlit phone screen washes out and forces your pupils to squint against specular glare. A transflective display works like ink on paper: ambient light passes through the liquid-crystal layer, reflects off a metallic rear mirror, and returns to your eyes—growing *sharper* as the room gets brighter while drawing a tiny fraction of a milliwatt.
-
-How does the screen update all four stack shelves without any visible flicker when you press a key? Each keystroke streams pixel updates over an $f_{\text{SPI}} = 8.0\text{ MHz}$ ($8.0 \times 10^6\text{ bits/s}$) synchronous serial bus. Refreshing the entire $132 \times 65$ dot-matrix array transmits $9$ page-addressing command bytes plus $1,056$ pixel-column data bytes ($8 \text{ pages} \times 132 \text{ columns} = 1,065\text{ bytes}$ total):
-$$T_{\text{frame}} = \frac{(9 + 1056) \times 8\text{ bits}}{8.0 \times 10^6\text{ bits/s}}$$
-
-On the stack, we start with the total byte count ($1065$), convert to bits (`8 {{key:×}}`), divide by the $8.0\text{ MHz}$ clock rate (`8 {{key:E}} 6 {{key:÷}}`), and scale from seconds to milliseconds (`{{res:sc32_01_craftsmanship_hardware_seq_04:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_04:value}}\text{ ms}}$):
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `1065 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $1065.0000$ | $1065.0000$ | Frame payload: 9 command + 1056 data bytes |
-| `8 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8520.0000$ | Serialized bit stream length |
-| `8 {{key:E}} 6 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.001065$ | Clock transmission duration in seconds |
-| `1000 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0650$** | Frame refresh period $T_{\text{frame}}$ in milliseconds |
-
-Because the entire frame commits in $1.065\text{ ms}$, the serial bus returns to sleep almost immediately after each keystroke. And what happens to that liquid-crystal display when you carry the instrument outside on a freezing winter morning? Liquid-crystal molecules stiffen as temperature drops, requiring a higher driving voltage at freezing temperatures ($\frac{dV_{\text{LCD}}}{dT} = -12.5\text{ mV/}^\circ\text{C}$) so the digits don't turn faint. Starting from a room-temperature bias of $V_0 = 9.00\text{ V}$ at $T_0 = 25.0^\circ\text{C}$, the voltage required at freezing ($T = 0.0^\circ\text{C}$) is:
-$$V(T) = V_0 + \frac{dV}{dT} (T - T_0) = 9.00 + (-0.0125)(0 - 25)$$
-Evaluating from the inside of the parentheses outward (`0 {{key:ENTER}} 25 {{key:-}}` $\to -25.0^\circ\text{C}$), multiplying by the slope, and adding the room-temperature baseline (`{{res:sc32_01_craftsmanship_hardware_seq_15:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_15:value}}`**$\text{ V}$) gives the freezing-point bias of $\mathbf{9.3125\text{ V}}$.
-
-### Natural Logarithms (`{{key:LN}}`) in Optical Absorption & Power-On Reset Timers
-Whenever a physical quantity decays exponentially—whether light passing through a dark bezel or a capacitor charging through a resistor—inverting that exponential curve uses the **Natural Logarithm key (`{{key:LN}}`)** (which we will explore in depth in Chapter 3).
-
-Consider the dark matte thermoplastic shell surrounding the SC-32 display. When $1064\text{ nm}$ near-infrared light enters a carbon-black-doped polymer with linear attenuation coefficient $\alpha = 450\text{ cm}^{-1}$, light intensity drops off exponentially with depth ($I(z) = I_0 e^{-\alpha z}$). To find how deep ($z$, in micrometers) light penetrates before $90\%$ of it is absorbed ($I/I_0 = 0.10$), we take the natural logarithm of $0.10$ in place via `{{key:LN}}`, divide by $\alpha = 450\text{ cm}^{-1}$, flip the sign with `{{key:+/-}}`, and scale from centimeters to micrometers (`{{res:sc32_01_craftsmanship_hardware_seq_17:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_17:value}}\,\mu\text{m}}$):
-$$I(z) = I_0 e^{-\alpha z} \implies z = - \frac{\ln(0.10)}{\alpha}$$
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `0.10 {{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-2.3026$ | Natural logarithm of beam ratio $I/I_0$ |
 | `450 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-0.005117$ | Absorption depth in centimeters |
 | `{{key:+/-}} 10000 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$51.1686$** | Optical penetration depth $z$ in $\mu\text{m}$ |
 
-Absorbing $90\%$ of incident near-infrared light within the outer $51.2\,\mu\text{m}$—roughly the thickness of a single human hair—keeps stray sunlight from scattering through the enclosure walls. In optical metrology labs, that same $1064\text{ nm}$ wavelength is used in Q-switched fiber lasers for lidar ranging and surface inspection. Even when such a laser draws an average optical power of only $P_{\text{avg}} = 1.20\text{ W}$ at a repetition rate of $f_{\text{rep}} = 35.0\text{ kHz}$, compressing each flash into $\tau = 100\text{ ns} = 1.0 \times 10^{-7}\text{ s}$ concentrates huge peak power into each burst:
-$$E_{\text{pulse}} = \frac{P_{\text{avg}}}{f_{\text{rep}}}, \quad P_{\text{peak}} = \frac{E_{\text{pulse}}}{\tau}$$
-Dividing average power by the repetition rate (`1.20 {{key:ENTER}} 35000 {{key:÷}}`) isolates the single-pulse energy $E_{\text{pulse}} = 3.4286 \times 10^{-5}\text{ J}$ ($34.3\,\mu\text{J}$) in Register $X$, and dividing immediately by the $100\text{ ns}$ pulse width (`{{res:sc32_01_craftsmanship_hardware_seq_07:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_07:value}}`**) reveals a peak optical burst power of $\mathbf{342.8571\text{ W}}$. When that same $E_{\text{pulse}} = 34.2857\,\mu\text{J}$ pulse is focused onto a Gaussian test-bench spot of diameter $d = 45.0\,\mu\text{m}$ ($r = 0.00225\text{ cm}$), keying `1.20 {{key:ENTER}} 35000 {{key:÷}} 0.00225 {{key:x²}} {{key:π}} {{key:×}} {{key:÷}}` divides the pulse energy directly by the circular spot area $\pi r^2$ to verify a peak optical fluence of $F = \frac{E_{\text{pulse}}}{\pi r^2} = \mathbf{2.1558\text{ J/cm}^2}$ across the detector aperture.
+* **RC Power-On Reset Lockout Time ($t = -RC\ln(1 - V_{\text{th}}/V_{\text{dd}})$):** Charging the reset timing node to $V_{\text{th}} = 2.10\text{ V}$ from a $V_{\text{dd}} = 3.30\text{ V}$ rail through $R = 100\text{ k}\Omega$ and $C = 1.0 \times 10^{-7}\text{ F}$ (`{{res:sc32_01_craftsmanship_hardware_seq_10:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_10:value}}\text{ ms}}$):
 
-That same inside-out `{{key:LN}}` pattern governs the calculator's **resistor-capacitor power-on reset timer** ($R = 100\text{ k}\Omega$, $C = 0.10\,\mu\text{F} = 1.0 \times 10^{-7}\text{ F}$), which holds the processor in reset when you insert a fresh battery until the capacitor charges past $V_{\text{th}} = 2.10\text{ V}$ on the $V_{\text{dd}} = 3.30\text{ V}$ rail:
-$$V(t) = V_{\text{dd}} \left(1 - e^{-t/RC}\right) \implies t = - R C \ln\left(1 - \frac{V_{\text{th}}}{V_{\text{dd}}}\right)$$
-Starting inside the parentheses, we divide $2.10$ by $3.30$, flip its sign with `{{key:+/-}}` and add `1` to see the uncharged voltage fraction ($0.3636$), tap `{{key:LN}}`, and multiply by $RC$ (`{{res:sc32_01_craftsmanship_hardware_seq_10:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_10:value}}\text{ ms}}$):
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `2.10 {{key:ENTER}} 3.30 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6364$ | Normalized threshold $V_{\text{th}} / V_{\text{dd}}$ |
 | `{{key:+/-}} 1 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3636$ | Uncharged voltage headroom ($1 - V_{\text{th}}/V_{\text{dd}}$) |
@@ -259,40 +475,13 @@ Starting inside the parentheses, we divide $2.10$ by $3.30$, flip its sign with 
 | `{{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-0.010116$ | Negative elapsed delay in seconds |
 | `{{key:+/-}} 1000 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$10.1160$** | POR reset lockout time in milliseconds |
 
-### Inverting a Radical Denominator (`{{key:1/x}}`) & Checksum Remainders (`{{key:÷R}}`)
-Finally, look at how **`{{key:1/x}}`** and **`{{key:÷R}}`** simplify two calculations that protect the processor's power rails and continuous memory:
-
-* **Bypass Capacitor Self-Resonance (`{{key:1/x}}`):** Surface-mount ceramic bypass capacitors filter high-frequency switching noise off the power rails—but because an 0603 capacitor package carries a tiny loop of parasitic inductance ($ESL = 0.85\text{ nH} = 8.5 \times 10^{-10}\text{ H}$), a $C = 0.10\,\mu\text{F}$ capacitor stops acting like a capacitor above its series self-resonant frequency:
-  $$f_{\text{SRF}} = \frac{1}{2\pi \sqrt{L C}}$$
-  Rather than typing `1 ÷ ( 2 * π * √( ... ) )`, on the stack you start inside the square root: multiply $L$ and $C$, tap `{{key:√x}}`, multiply by $2\pi$, and flip the entire denominator upside down with a single tap of `{{key:1/x}}` (`{{res:sc32_01_craftsmanship_hardware_seq_16:keys}}` $\to \mathbf{{{res:sc32_01_craftsmanship_hardware_seq_16:value}}\text{ MHz}}$):
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `8.5 {{key:E}} 10 {{key:+/-}} {{key:ENTER}}` | $0.0000$ | $0.0000$ | $8.5000 \times 10^{-10}$ | $8.5000 \times 10^{-10}$ | Parasitic inductance $ESL$ in Henries |
-| `1 {{key:E}} 7 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $8.5000 \times 10^{-17}$ | Reactive product $L C$ in s$^2$ |
-| `{{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $9.2195 \times 10^{-9}$ | Time constant $\sqrt{LC}$ in seconds |
-| `2 {{key:×}} {{key:π}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $5.7928 \times 10^{-8}$ | Period divisor $2\pi\sqrt{LC}$ |
-| `{{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.7263 \times 10^{7}$ | Self-resonant frequency in Hertz |
-| `1 {{key:E}} 6 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$17.2628$** | Self-resonant frequency $f_{\text{SRF}}$ in MHz |
-
-* **Continuous-Memory Checksum Integrity (`{{key:÷R}}`):** When the processor wakes from sleep, how does it verify that your saved stack and equations haven't suffered a single-bit error? It folds each byte $b$ into Fowler, Noll, and Vo's 32-bit FNV-1a rolling checksum, multiplying the XOR-updated state ($2166136261 \oplus 77 = 2166136200$ for header byte $b = \text{0x4D}$) by the FNV prime $16777619$ modulo $2^{32}$ ($4,294,967,296$):
-  $$\text{hash}' = (\text{hash} \oplus b) \times 16777619 \pmod{2^{32}}$$
-  Tapping the Euclidean division-with-remainder key (`{{key:÷R}}`) after multiplying (`{{res:sc32_01_craftsmanship_hardware_seq_05:keys}}` $\rightarrow$ **`{{res:sc32_01_craftsmanship_hardware_seq_05:value}}`**) splits the 53-bit exact product cleanly across the stack: Register $Y$ holds the 32-bit modulo-wrapped hash remainder ($3.3562 \times 10^9$), while Register $X$ displays the overflow quotient ($\mathbf{{{res:sc32_01_craftsmanship_hardware_seq_05:value}}}$):
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `2166136200 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.1661 \times 10^{9}$ | $2.1661 \times 10^{9}$ | Load XOR-accumulated hash state |
-| `16777619 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.6343 \times 10^{16}$ | Multiply by 32-bit FNV prime |
-| `4294967296 {{key:÷R}}` | $0.0000$ | $0.0000$ | $3.3562 \times 10^{9}$ | **$8461672.00$** | Divide with remainder: $Y=\text{32-bit wrapped hash}, X=\text{quotient}$ |
-
-> **Open Hardware Blueprints, Cross-Surface Simulation & Safety Notices:**  
-> We summarize the open-source engineering story—including how we developed the shared calculator core through cross-surface simulation and automated engine verification—in **[Appendix C: Keypad Directory & How We Built StackCalc](appendix-c-keycap-directory.md)**, at **[stackcalc.io/hardware](https://stackcalc.io/hardware)**, and on the **[StackCalc Hackaday Project](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)**.  
-> **COIN CELL BATTERY INGESTION HAZARD (REESE'S LAW / 16 CFR PART 1263):** The physical handheld uses a **CR2032 $3.0\,\text{V}$ lithium coin cell battery**. **DEATH or serious injury can occur if ingested.** A swallowed button or coin cell battery can cause **Internal Chemical Burns in as little as 2 hours**. **KEEP new and used batteries OUT OF REACH of children.** Always secure the battery cover before use. Seek immediate medical attention if a battery is suspected to be swallowed or inserted inside any part of the body (U.S. National Battery Ingestion Hotline: **1-800-498-8666**).
+> **Open Hardware Blueprints & Coin Cell Safety Reminder:**  
+> Complete engineering notes on how we built the open-source StackCalc hardware and cross-surface simulation architecture appear in **[Appendix C: Keycap Directory & How We Built StackCalc](appendix-c-keycap-directory.md)**, at **[stackcalc.io/hardware](https://stackcalc.io/hardware)**, and on the **[StackCalc Hackaday Project](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)**. Always keep new and used CR2032 lithium coin cells out of reach of children and ensure the battery compartment fastener is secured before operation (see the full **Reese's Law / 16 CFR Part 1263 Ingestion Hazard Notice** in the [Prologue](index.md#safety-regulatory-trademark-legal-notices)).
 
 ---
 
-## Summary & Looking Ahead
+### The Unanswered Question: Why Four Shelves?
 
-In this opening chapter, we saw how Bill Hewlett's 1972 shirt-pocket challenge gave birth to the four-register operational stack ($X, Y, Z, T$), how `{{key:ENTER}}`, automatic stack lift, and the two shift keys (`{{key:↰}}` and `{{key:↱}}`) organize the physical keypad, and how every mechanical and electrical detail of an instrument—from switch debounce and brass inserts to battery duty cycles, beam bending ($I = bh^3/12$), and optical attenuation—can be explored step by step on the stack.
+Now that we have met the physical keys, the $32,768\text{ Hz}$ quartz heartbeat, the daylight-reflective display, and the electrical laws of the instrument in your hands, look back at the screen. There are only **four shelves** ($X, Y, Z, T$)—not forty, and not four hundred.
 
-Even in these first calculations, you noticed a recurring theme: whenever a formula had a messy denominator or a nested inner expression, we didn't reach for parentheses. Instead, we started on the inside, let the upper shelves ($Y, Z, T$) hold our intermediate pieces, and used keys like `{{key:x⇄y}}`, `{{key:1/x}}`, and `{{key:LASTX}}` to bring everything together. In **[Chapter 2: Principles of RPN & 4-Stack XYZT Dynamics](02-rpn-stack-dynamics.md)**, we will open up the hood of the four-register stack itself—tracing the exact rules of stack lift, dyadic stack drop, Register $T$ constant replication, and Jan Łukasiewicz's parenthesis-free logic.
+How can four simple shelves replace every parenthesis in high-school and collegiate algebra? Why can a human being effortlessly remember a four-item grocery list, yet freeze when staring at a four-story algebraic fraction on paper? In **[Chapter 2: The Architecture of Inside-Out Thinking](02-rpn-stack-dynamics.md)**, a 1956 psychology discovery by George A. Miller and a 1961 railway yard invented by Edsger Dijkstra reveal why a 4-level stack is a mirror of the human mind.

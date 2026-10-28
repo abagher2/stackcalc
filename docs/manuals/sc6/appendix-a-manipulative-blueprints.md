@@ -1,139 +1,83 @@
 ---
-title: "Appendix A: Manipulative Studio Guide & How We Built StackCalc"
-description: "Overview of the eight StackCalc 3D-printed and cardstock math manipulative kits, classroom setup guide, system flags, and how we built the StackCalc Learning Lab (open-source hardware, cross-surface simulation, and Hackaday build logs)."
+title: "Appendix A: Hands-On Block Studio Guide & How We Built StackCalc"
+description: "Overview of the nine StackCalc hands-on math block studios (12 modular desktop kits), classroom setup guide, system flags, and how we built the StackCalc Learning Lab (open-source hardware, cross-surface simulation, and Hackaday build logs)."
 ---
 
-# Appendix A: Manipulative Studio Guide & How We Built StackCalc
+# Appendix A: Hands-On Block Studio Guide & How We Built StackCalc
 
-> **Where to Download 3D Print Files, Laser Templates & Full Hardware Specs**
-> To keep this book focused on hands-on math discovery rather than long lists of 3D-printer temperatures, slicer settings, and mechanical tolerances, all downloadable `.stl` and `.3mf` 3D print files, laser-cutter templates, and detailed hardware specifications are hosted online:
-> - **3D Print Files & Printable PDF Cutouts:** [stackcalc.io/downloads](https://stackcalc.io/downloads/) (including the complete [Learning Lab Master STL Pack](https://stackcalc.io/downloads/stackcalc-learning-lab-0.2.0-stl-pack.zip))
-> - **Hardware & Enclosure Documentation:** [stackcalc.io/hardware](https://stackcalc.io/hardware)
-> - **Open Engineering Logs & Build Story:** [Hackaday.io — StackCalc Tactile RPN Calculator Project](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)
-
-> **CHOKING HAZARD — SMALL PARTS & 3D PRINTING SAFETY (16 CFR § 1501 / ASTM F963):**  
-> The physical manipulative studios documented in this appendix (including the $19.0 \times 19.0 \times 7.0\,\text{mm}$ visible $1\text{U}$ Counting Tiles [$8.85\,\text{mm}$ overall height with stacking lip], Ten-Frame Counters, $\frac{1}{12}$ Fraction Studio blocks, Prime Factor blocks, and Polyhedral Dice) contain small parts that fit within the CPSC small-parts test cylinder ($31.7\,\text{mm}$ diameter). **Not for children under 3 years of age.** Recommended for supervised educational use in Grades 3–6 (ages 8–12).  
-> **Classroom Print Check:** Always print classroom manipulatives using certified non-toxic PLA or PETG filament. Before handing newly printed parts to students, an adult should inspect each piece and remove any loose filament wisps or brims.
+> **3D Print Files, Laser Templates & Classroom Safety:** All downloadable `.stl` and `.3mf` 3D print files, full-scale PDF cardstock cutouts, laser-cutter templates, and enclosure CAD drawings are available free of charge at **[stackcalc.io/downloads](https://stackcalc.io/downloads/)** (including the complete [Learning Lab Master STL Pack](https://stackcalc.io/downloads/stackcalc-learning-lab-0.2.0-stl-pack.zip)), **[stackcalc.io/hardware](https://stackcalc.io/hardware)**, and the **[Hackaday.io StackCalc Build Log](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)**. Always print classroom math blocks in certified non-toxic PLA or PETG filament, inspect finished prints to remove any loose filament wisps, and observe the small-parts safety guidance in the Preface (not for children under 3 years of age; recommended for supervised use in Grades 3–6, ages 8–12).
 
 ---
 
-## Why Hands-On Blocks Make Math Click
+## The 84-Millimeter Rule & Nine 3D-Printed Block Studios
 
 Why build physical math blocks when digital screens are everywhere? Because your hands and eyes learn together! When you pick up a physical 10-rod, stack an $84\text{ mm}$ fraction tower, or balance a lever beam, your fingers can *feel* why an idea is true before you even press a key on the calculator.
 
-Grounded in Jerome Bruner's hands-on learning research {{cite:bruner1966}}, Zoltan Dienes' multi-embodiment principle {{cite:dienes1960}}, and David Macaulay's clear visual explanations of how things work {{cite:macaulay2016}}, every StackCalc manipulative kit follows three simple rules:
-1. **True Mathematical Scale:** A 10-rod equals exactly 10 unit cubes in length and volume. Two $\frac{1}{4}$ fraction blocks stacked together match a $\frac{1}{2}$ block right to the top edge with zero gap.
+Grounded in Jerome Bruner's hands-on learning research {{cite:bruner1966}}, Zoltan Dienes' hands-on base-ten block discoveries {{cite:dienes1960}}, and David Macaulay's clear visual explanations of how things work {{cite:macaulay2016}}, every StackCalc block studio follows three simple design principles:
+1. **True Mathematical Scale (The $1\text{U}$ Miniblock Standard):** Every unit tile across the studios shares a unified $19.0 \times 19.0\text{ mm}$ square footprint and a $7.0\text{ mm}$ visible $1\text{U}$ height step (with a recessed interlocking lip so stacked blocks never slide off each other). Ten stacked unit blocks reach $70.0\text{ mm}$ to match a 10-rod, and twelve stacked unit blocks reach $84.0\text{ mm}$ to match the $1\text{-Whole}$ Fraction Tower with zero gap.
 2. **Three Ways to Build:** Every classroom and family can make these tools using a desktop 3D printer (with zero support material needed), a school laser cutter, or ordinary cardstock paper, scissors, and a glue stick.
-3. **Tidy Modular Trays:** All eight manipulative kits store neatly inside standard **Gridfinity** modular trays ($42.0\text{ mm}$ grid squares) so pieces stay organized on your desk.
+3. **Tidy Modular Trays:** All nine hands-on block studios (comprising 12 modular desktop kits) store neatly inside standard **Gridfinity** modular trays ($42.0\text{ mm}$ grid squares) so pieces stay organized on your desk.
 
----
+All 3D-printable `.stl` and `.3mf` files for these nine studios (12 modular desktop kits in total) can be downloaded free of charge at **[stackcalc.io/downloads](https://stackcalc.io/downloads/)**, either as the complete Master STL Pack or as individual studio archives listed in the Print & Filament Schedule below. Every piece is engineered to print flat on a standard $220 \times 220\text{ mm}$ desktop FDM printer (such as a Bambu Lab, Prusa, or Ender printer) in **PLA or PETG at $0.20\text{ mm}$ layer height with $15\%$ gyroid or grid infill and zero support material**.
 
-## How the Eight Manipulative Studios Work
+### Base-Ten, Place Value & $84\text{ mm}$ Fraction Kits
+For the **Ten-Frame Studio (`{{key:▦}}`)**, print the two $2 \times 5$ Ten-Frame trays flat on their bases in matte slate or navy PLA so the recessed counter wells and the raised **5-anchor divider rib** contrast sharply against the bright counters. For the twenty $16.5 \times 3.5\text{ mm}$ two-color flip counters, add a single **filament color pause at Layer 9 ($1.80\text{ mm}$ height)** in your slicer: print the bottom half in coral red and the top half in radiant gold. When you pull the finished counters off the build plate, test-slide two counters across the finger scoops from a tray of 5 into a tray of 8 to confirm they drop smoothly into the pockets before tapping `{{key:+}}` in `{{key:▦}}` Ten-Frame Mode.
 
-All 3D-printable `.stl` and `.3mf` files for these eight studios can be downloaded free of charge at **[stackcalc.io/downloads](https://stackcalc.io/downloads/)**:
+The **Place Value Studio (`{{key:PV}}`)** prints inside a $3 \times 1 \times 7\text{U}$ Gridfinity box with an embossed `"PLACE VALUE"` front plaque and `{{key:PV}}` lid badge. When slicing the two $4 \times 2$ activity trays ($77.8 \times 38.6 \times 8.85\text{ mm}$)—one labeled `THOUSANDS | HUNDREDS | TENS | ONES` (`1000 | 100 | 10 | 1`) for whole numbers and the second labeled `ONES • TENTHS | HUNDREDTHS | THOUSANDTHS` (`1 • 0.1 | 0.01 | 0.001`) with a raised decimal point (`•`)—pause for a filament swap on the top two layers so the column headers and the raised decimal dot stand out in bright white. Print the 44 digit miniblocks (`0`–`9` plus four extra `0` placeholders) and the 9 stackable `+1` regrouping cubes with a $0.4\text{ mm}$ nozzle, then verify that ten stacked `+1` cubes stand at $70.0\text{ mm}$ to match the Ten-Frame 10-Rod during 10-for-1 regrouping trades.
 
-### The Ten-Frame Studio
-- **What It Teaches:** Early counting, spotting groups of 5 and 10 at a glance (subitizing), and make-ten addition (CCSS 3.OA.C.7).
-- **How the Math Is Built In:** Each tray holds two $2 \times 5$ rows of two-color flip counters ($16.5\text{ mm} \times 3.5\text{ mm}$, red on one side and yellow on the other). A raised **5-anchor divider rib** right down the middle splits each row of 10 into two clear groups of 5, matching `{{key:▦}}` Ten-Frame Mode on your SC-6 screen.
-- **Download:** **[stackcalc.io/downloads/ten-frames-open-source-stls.zip](https://stackcalc.io/downloads/ten-frames-open-source-stls.zip)**
+Because the **$84\text{ mm}$ Fraction Studio (`{{key:a ᵇ/c}}`, `{{key:SIMP}}`)** relies on exact side-by-side height comparisons in the lid comparator well ($1 = 84.0\text{ mm}$, $\frac{1}{2} = 42.0\text{ mm}$, $\frac{1}{3} = 28.0\text{ mm}$, $\frac{1}{4} = 21.0\text{ mm}$, $\frac{1}{6} = 14.0\text{ mm}$, $\frac{1}{8} = 10.5\text{ mm}$, and $\frac{1}{12} = 7.0\text{ mm}$), slice all 78 blocks at **$0.20\text{ mm}$ layer height** (using $0.10\text{ mm}$ adaptive layers on the $\frac{1}{8}$ block so $10.5\text{ mm}$ lands on an exact layer boundary). Every tower features a recessed $1.85\text{ mm}$ top-and-bottom lap joint that locks blocks together without adding to their visible height. After printing, stand $\frac{1}{2} + \frac{1}{3} + \frac{1}{6}$ ($42 + 28 + 14 = 84.0\text{ mm}$) beside the white $1\text{ WHOLE}$ tower in the comparator well and run your fingertip across the top seam to confirm they sit flush before testing `{{key:SIMP}}`.
 
-### Place Value Studio
-- **What It Teaches:** Multi-digit place value, 10-for-1 carrying and borrowing (regrouping), and decimal place value (CCSS 3.NBT.A.2, 5.NBT.A.1).
-- **How the Math Is Built In:** Stored in a $3 \times 1 \times 7\text{U}$ Gridfinity box (`"PLACE VALUE"` plaque, `{{key:PV}}` lid badge), every component is engineered around the unified $19.0 \times 19.0 \times 7.0\text{ mm}$ visible $1\text{U}$ Miniblock standard:
-  - **$4 \times 2$ Whole Numbers Activity Tray (`77.8 × 38.6 × 8.85 mm`):** Four recessed column sockets labeled `THOUSANDS | HUNDREDS | TENS | ONES` (`1000 | 100 | 10 | 1`) across two rows (matching Registers $Y$ and $X$).
-  - **$4 \times 2$ Decimal Numbers Activity Tray (`77.8 × 38.6 × 8.85 mm`):** Four recessed column sockets labeled `ONES • TENTHS | HUNDREDTHS | THOUSANDTHS` (`1 • 0.1 | 0.01 | 0.001`) with a raised tactile decimal point (`•`).
-  - **44 Place Value Digit Miniblocks (`0`–`9`):** Four complete sets of digits `0–9` plus four extra `0` placeholders ($19.0 \times 19.0 \times 7.0\text{ mm}$ visible $1\text{U}$ height).
-  - **9 Stackable `+1` Regrouping Unit Miniblocks:** $19.0 \times 19.0 \times 7.0\text{ mm}$ visible $1\text{U}$ height; stacking 10 unit blocks reaches $70.0\text{ mm}$ (matching the $70.0\text{ mm}$ Ten-Frame 10-Rod) and trades 10-for-1 into the next place-value column to the left.
-- **Download:** **[stackcalc.io/downloads/place-value-open-source-stls.zip](https://stackcalc.io/downloads/place-value-open-source-stls.zip)**
+### Area Grids, Geared Clocks & Rotary Volvelles
+In the **Counting & Array Studio (`{{key:RECT}}`, `{{key:TRI}}`)**, each student kit includes 24 gravity-docking $1\text{U}$ tiles ($19.0 \times 19.0 \times 7.0\text{ mm}$ visible height) across four high-contrast colors (6 white, 6 blue, 6 gold, 6 slate), while the classroom drop-front Desktop Storage Case holds 144 tiles ($12 \times 12$) for building area and perimeter rectangles. You can print all 36 tiles of a single color on one build plate in under 95 minutes; after printing, stack 12 tiles vertically ($12 \times 7.0\text{ mm} = 84.0\text{ mm}$) and stand them next to the Fraction Studio's $1\text{-Whole}$ tower to verify zero cumulative height drift.
 
-### The 84 mm Fraction Studio
-- **What It Teaches:** Equivalent fractions, common denominators, and step-by-step simplification with `{{key:SIMP}}` (CCSS 3.NF.A.1, 4.NF.A.1).
-- **Why Exactly 84 Millimeters?** Because $84$ divides evenly by $1, 2, 3, 4, 6, 7, 12, 14, 21, 28,$ and $42$. That gives every fraction tower an exact, whole-millimeter height ($1 = 84\text{ mm}$, $\frac{1}{2} = 42\text{ mm}$, $\frac{1}{3} = 28\text{ mm}$, $\frac{1}{4} = 21\text{ mm}$, $\frac{1}{6} = 14\text{ mm}$, $\frac{1}{8} = 10.5\text{ mm}$, $\frac{1}{12} = 7\text{ mm}$). A recessed lap joint lets towers stack without adding extra height, so $\frac{1}{2} + \frac{1}{3} + \frac{1}{6}$ stands at $42 + 28 + 14 = 84.0\text{ mm}$ alongside the $1\text{ WHOLE}$ tower.
-- **Download:** **[stackcalc.io/downloads/fraction-studio-open-source-stls.zip](https://stackcalc.io/downloads/fraction-studio-open-source-stls.zip)**
+The two interlocking rails of the **$90^\circ$ Corner L-Frame & Area-Grid Studio** print flat and snap together at a crisp $90^\circ$ corner joint—forming a horizontal top rail and a vertical side rail that frame two-digit area models on your desk. Print the 40 stackable tiles by color family: four large square flats ($38.6 \times 38.6\text{ mm}$) in radiant gold, twelve rectangular rods ($38.6 \times 19.0\text{ mm}$) in electric blue, twelve $+1$ unit tiles in bright white, and twelve $-1$ unit tiles in coral red. Test the $90^\circ$ corner dovetail by laying out $(10 + 2) \times (10 + 3) = 100 + 50 + 6 = 156$ inside the L-Frame rails and checking that all tiles sit flat without binding.
 
-### Algebra Factoring Studio & L-Frame Stage
-- **What It Teaches:** Area models, distributive multiplication, breaking rectangles into friendlier parts, and solving puzzles with positive and negative zero-pairs (CCSS 6.EE.A.3, 6.EE.B.7).
-- **How the Math Is Built In:** Two interlocking rails snap together at a $90^\circ$ corner to form the **L-Frame Factoring Stage** (horizontal rail for the top width, vertical rail for the side height). Inside the grid sit 40 stackable Miniblock tiles—four large square flats ($38.6 \times 38.6\text{ mm}$), twelve rectangular rods ($38.6 \times 19.0\text{ mm}$), and twenty-four unit tiles ($19.0 \times 19.0\text{ mm}$, twelve $+1$ and twelve $-1$, $7.0\text{ mm}$ visible height)—so learners can build area-model rectangles like $(10 + 2) \times (10 + 3) = 100 + 50 + 6 = 156$ and cancel $+1$ and $-1$ zero-pairs by hand.
-- **Download:** **[stackcalc.io/downloads/algebra-boxes-open-source-stls.zip](https://stackcalc.io/downloads/algebra-boxes-open-source-stls.zip)**
+The **Planetary Geared Clock (`{{key:🕒}}`) & $360^\circ$ Unit Circle Volvelle** are favorite maker builds because their moving mechanical parts snap together with zero metal screws. Print the clock's **12-tooth center sun gear, three 60-tooth planet gears, and 132-tooth outer ring gear** ($12 + 2 \times 60 = 132$) with the slicer's *"Elephant's Foot Compensation"* set to $0.15\text{ mm}$ so the bottom gear teeth mesh smoothly without rubbing:
+$$\text{Clock Gear Ratio} = 1 + (132 \div 12) = 1 + 11 = \mathbf{12 : 1\text{ Exact Reduction}}$$
+Press the three 60-tooth planet gears onto the carrier pins, snap the minute hand onto the center sun shaft, and spin the minute hand one full $360^\circ$ turn to watch the meshed gear train drive the hour hand forward by $\frac{1}{12}$ of a circle ($30^\circ$, or 1 hour). Next, drop the four removable $90^\circ$ dial quadrants into the clock face and snap the two concentric rings of the $120\text{ mm}$ **Unit Circle Volvelle** together with the center snap pin so the sight window rotates smoothly from $0^\circ$ to $360^\circ$.
 
-### Planetary Geared Clock & $360^\circ$ Unit Circle Volvelle
-- **What It Teaches:** Telling time across the 60-minute boundary (`{{key:🕒}}`), fractions of an hour using 4 removable $90^\circ$ dial quadrants, and measuring angles around a $360^\circ$ circle (CCSS 3.MD.A.1, 4.MD.C.5).
-- **How the Math Is Built In:** Inside the clock sits a planetary gear train with a **12-tooth center sun gear, three 60-tooth planet gears, and a 132-tooth outer ring gear** ($12 + 2 \times 60 = 132$):
-  $$\text{Clock Gear Ratio} = 1 + (132 \div 12) = 1 + 11 = \mathbf{12 : 1\text{ Exact Reduction}}$$
-  Every full $360^\circ$ turn of the minute hand advances the hour hand by $\frac{1}{12}$ of a circle ($30^\circ$, or 1 hour).
-- **Download:** **[stackcalc.io/downloads/classroom-clock-open-source-stls.zip](https://stackcalc.io/downloads/classroom-clock-open-source-stls.zip)** and **[stackcalc.io/downloads/unit-circle-volvelle-open-source-stls.zip](https://stackcalc.io/downloads/unit-circle-volvelle-open-source-stls.zip)**
+{{blocks:unit_circle_volvelle|The 120 mm 360° Unit Circle Volvelle with Four 90° Quadrants and Rotating Angle Sight Window}}
 
-### Number Rack, Math Dominoes & Quest Scoreboard
-- **What It Teaches:** Subitizing 5-and-5 bead groups (`{{key:COUNT}}`), pairing domino dot patterns across a 12-frame, and tracking two-way problem mastery (`{{key:?}}` Quiz Mode).
-- **How the Math Is Built In:**
-  - **Number Rack & Math Dominoes:** Color-grouped 5-and-5 sliding blocks and tactile domino tiles let young learners spot combinations of 5, 10, and 12 without counting one-by-one.
-  - **Quest Scoreboard:** Holds 60 identical `+10` $1\text{U}$ tokens ($19.0 \times 19.0 \times 7.0\text{ mm}$ visible height) and a $3 \times 1$ Snapfinity desktop scoreboard lid numbered `1`–`10` with a `100` Mastery Tower socket—place 1 token ($+10\text{ pts}$) when you solve a problem with blocks, and stack a 2nd token ($+20\text{ pts}$) when you verify it on the SC-6.
-- **Download:** **[stackcalc.io/downloads](https://stackcalc.io/downloads/)**
+### Number Racks, Fair-Weight Dice & Logarithmic Prime Blocks
+The **Number Rack, Math Dominoes & Quest Scoreboard (`{{key:COUNT}}`, `{{key:?}}`)** share the standard $3 \times 1 \times 7\text{U}$ Gridfinity box footprint. Print the two horizontal Number Rack rails and slide five white blocks and five coral-red blocks onto each rail before snapping the end caps into the tray walls; for the Math Dominoes, pause for a filament color swap on the top two layers so the raised pips pop out clearly inside the 12-frame divider tray. Print the 60 universal `+10` $1\text{U}$ tokens in radiant gold and the $3 \times 1$ Quest Scoreboard lid (`1`–`10` sockets plus the `100` Mastery Tower socket) in dark slate so students can stack 1 token ($+10\text{ pts}$) for a physical block solution and a 2nd token ($+20\text{ pts}$) for a verified SC-6 stack solution.
 
-### Probability Dice, Modular Spinner & Counting Array Studio
-- **What It Teaches:** Multiplication arrays, area and perimeter on the Miniblock socket grid (`{{key:RECT}}`, `{{key:TRI}}`), commutative and distributive properties, and fair probability trials (`{{key:🎲}}`).
-- **How the Math Is Built In:**
-  - **Fair-Weight Dice & Modular Spinners:** Includes four $18\text{ mm}$ volume-equalized $d6$ dice (where pip depths are adjusted so all six faces remove the exact same volume of plastic), polyhedral dice ($d4, d6, d8, d10, d12, d20$), and a $1 \times 1$ spinner box with a 10-sector (`0–9`) lid plus drop-in Biased ($\frac{1}{2}\text{–}\frac{1}{4}\text{–}\frac{1}{4}$), Binary ($50/50$), and Operations ($+, -, \times, \div$) dials.
-  - **Four-Color Counting Tiles:** Each student kit holds 24 gravity-docking tiles ($19.0 \times 19.0 \times 8.85\text{ mm}$ overall, with a $7.0\text{ mm}$ visible $1\text{U}$ step—so 12 stacked tiles equal the exact $84.0\text{ mm}$ Fraction Studio whole) across four colors (6 white, 6 blue, 6 gold, 6 slate; 144 tiles in a drop-front classroom Desktop Storage Case).
+When slicing the **Fair Probability Dice & Modular Spinner Studio (`{{key:🎲}}`)**—which includes four $18\text{ mm}$ **volume-equalized $d6$ dice** and the polyhedral dice set ($d4, d6, d8, d10, d12, d20$)—increase infill to **$100\%$ concentric or rectilinear infill** (or 4 perimeter walls with $40\%$ symmetric gyroid infill) so the internal mass stays balanced around the center of gravity. Because the CAD model carves the six pips on the `6` face shallower than the single deep pip on the `1` face, all six faces lose the exact same volume of plastic. For the companion $1 \times 1$ spinner box, print the low-friction center spindle at $0.12\text{ mm}$ layer height so the standard 10-sector (`0–9`) decimal lid and the three drop-in dials—Biased ($\frac{1}{2}\text{–}\frac{1}{4}\text{–}\frac{1}{4}$), Binary ($50/50$), and Operations ($+, -, \times, \div$)—spin freely with a flick of your finger.
 
-{{blocks:counting_tiles_box_3x1x13u|Counting & Array Studio: Desktop Storage Case with COUNTING Plaque and {{key:NUM}} Badge}}
+{{blocks:dice_spinner_craftsmanship|Volume-Equalized Fair Probability Dice and Low-Friction Modular Spinner Dials}}
 
-{{blocks:counting_tiles_distributive_4color|Counting & Array Studio: 4-Color Distributive 144-Tile Array (12x12)}}
-
-- **Download:** **[stackcalc.io/downloads/dice-and-spinner-open-source-stls.zip](https://stackcalc.io/downloads/dice-and-spinner-open-source-stls.zip)** and **[stackcalc.io/downloads/counting-tiles-open-source-stls.zip](https://stackcalc.io/downloads/counting-tiles-open-source-stls.zip)**
-
-### Prime Factor Studio
-- **What It Teaches:** Prime numbers (`{{key:PRIME}}`), prime factor trees (`{{key:FACT}}`), Greatest Common Factor (`{{key:GCF}}`), and Least Common Multiple (`{{key:LCM}}`).
-- **How the Math Is Built In:** The drop-front Desktop Storage Case comparator box holds stackable $19.0 \times 19.0\text{ mm}$ prime factor blocks ($[2], [3], [5], [7], [11], [13], [17], [19], [23], [29]$ plus fused powers $2^2, 2^3, 3^2, 5^2$) harmonized to the $7.00\text{ mm}$ ($1\text{U}$) datum so the $[2]$ block has exact visible height $7.00\text{ mm}$ and **stacking blocks adds their heights to multiply their prime numbers**. Whether you build $12$ as $2 \times 2 \times 3$ or $3 \times 2 \times 2$, your factor tower reaches the exact same $25.09\text{ mm}$ `12` mark on the comparator scale—and comparing $20 = 2^2 \times 5$ ($30.25\text{ mm}$) beside $50 = 2 \times 5^2$ ($39.51\text{ mm}$) physically proves that $\text{GCF}(20,50) = 2 \times 5 = 10$ ($23.25\text{ mm}$) and $\text{LCM}(20,50) = 2^2 \times 5^2 = 100$ ($46.51\text{ mm}$) use the exact same prime blocks!
-
-{{blocks:prime_studio_comparator_stage|Prime Factor Studio: Desktop Storage Case with Bilateral Factor Tower Comparator}}
+In the **Logarithmic Prime Factor Studio (`{{key:PRIME}}`, `{{key:FACT}}`, `{{key:GCF}}`, `{{key:LCM}}`)**, each prime block's visible height is scaled to $7.00\text{ mm} \times \log_2(p)$ so that stacking blocks *adds* their heights to *multiply* their numbers! Slice the prime blocks (`2`, `3`, `5`, `7`, `11`, `13`, `17`, `19`, `23`, `29` plus fused powers $2^2, 2^3, 3^2, 5^2$) at **$0.10\text{ mm}$ layer height** so logarithmic heights like the `3`-block ($11.09\text{ mm}$) and `5`-block ($16.25\text{ mm}$) print within $\pm 0.05\text{ mm}$ of the laser-tick marks on the drop-front comparator case. Test your finished print by stacking $2 \times 2 \times 3$ ($7.00 + 7.00 + 11.09 = 25.09\text{ mm}$) beside the `12` tick mark, and standing $20 = 2^2 \times 5$ ($30.25\text{ mm}$) beside $50 = 2 \times 5^2$ ($39.51\text{ mm}$) to check $\text{GCF}(20,50) = 10$ ($23.25\text{ mm}$) and $\text{LCM}(20,50) = 100$ ($46.51\text{ mm}$).
 
 | Target Number | Prime Building Blocks | Visible Block Heights Added Together (in $\text{mm}$) | Mark on Comparator Scale |
 |:---:|:---|:---|:---:|
-| **2** | $[2]$ | $7.00\text{ mm}$ ($1\text{U}$ base unit) | **Target 2** |
-| **3** | $[3]$ | $11.09\text{ mm}$ | **Target 3** |
-| **4** | $[2] \times [2]$ ($2^2$) | $7.00 + 7.00 = 14.00\text{ mm}$ | **Target 4** |
-| **6** | $[2] \times [3]$ | $7.00 + 11.09 = 18.09\text{ mm}$ | **Target 6** |
-| **10** | $[2] \times [5]$ | $7.00 + 16.25 = 23.25\text{ mm}$ | **Target 10** |
-| **12** | $[2]^2 \times [3]$ | $14.00 + 11.09 = 25.09\text{ mm}$ | **Target 12** |
-| **20** | $[2]^2 \times [5]$ | $14.00 + 16.25 = 30.25\text{ mm}$ | **Target 20** |
-| **30** | $[2] \times [3] \times [5]$ | $7.00 + 11.09 + 16.25 = 34.35\text{ mm}$ | **Target 30** |
-| **50** | $[2] \times [5]^2$ | $7.00 + 32.51 = 39.51\text{ mm}$ | **Target 50** |
-| **60** | $[2]^2 \times [3] \times [5]$ | $14.00 + 11.09 + 16.25 = 41.35\text{ mm}$ | **Target 60** |
-| **100** | $[2]^2 \times [5]^2$ | $14.00 + 32.51 = 46.51\text{ mm}$ | **Target 100** |
-
-- **Download:** **[stackcalc.io/downloads/prime-factor-studio-open-source-stls.zip](https://stackcalc.io/downloads/prime-factor-studio-open-source-stls.zip)**
+| **2** | `2`-block | $7.00\text{ mm}$ ($1\text{U}$ base unit) | **Target 2** |
+| **3** | `3`-block | $11.09\text{ mm}$ | **Target 3** |
+| **4** | $2 \times 2$ ($2^2$) | $7.00 + 7.00 = 14.00\text{ mm}$ | **Target 4** |
+| **6** | $2 \times 3$ | $7.00 + 11.09 = 18.09\text{ mm}$ | **Target 6** |
+| **10** | $2 \times 5$ | $7.00 + 16.25 = 23.25\text{ mm}$ | **Target 10** |
+| **12** | $2^2 \times 3$ | $14.00 + 11.09 = 25.09\text{ mm}$ | **Target 12** |
+| **20** | $2^2 \times 5$ | $14.00 + 16.25 = 30.25\text{ mm}$ | **Target 20** |
+| **30** | $2 \times 3 \times 5$ | $7.00 + 11.09 + 16.25 = 34.34\text{ mm}$ | **Target 30** |
+| **50** | $2 \times 5^2$ | $7.00 + 32.51 = 39.51\text{ mm}$ | **Target 50** |
+| **60** | $2^2 \times 3 \times 5$ | $14.00 + 11.09 + 16.25 = 41.34\text{ mm}$ | **Target 60** |
+| **100** | $2^2 \times 5^2$ | $14.00 + 32.51 = 46.51\text{ mm}$ | **Target 100** |
 
 ---
 
-## Printable Cardstock Cutout Workshop (Scissors & Glue Nets)
+### Printable Cardstock Cutout Workshop (Scissors & Glue Nets)
 
-If you don't have a 3D printer handy, you can print the full-scale paper nets from **[stackcalc.io/downloads](https://stackcalc.io/downloads/)** at $100\%$ scale on heavy cardstock ($110\text{ lb}$ index paper), score the dashed lines with an empty ballpoint pen, cut along the solid outer edges, and glue the tabs:
+If you don't have a 3D printer handy, you can print the full-scale paper nets from **[stackcalc.io/downloads](https://stackcalc.io/downloads/)** at $100\%$ scale on heavy cardstock ($110\text{ lb}$ index paper), score the dashed lines with an empty ballpoint pen, cut along the solid outer edges, and glue the tabs.
 
-### Cardstock Net: Ten-Frame Tray ($125 \times 42\text{ mm}$ Base)
+To fold a rigid **Two-Row Ten-Frame Tray ($125 \times 42\text{ mm}$ Base)** that matches the exact footprint of the 3D-printed tray, lay your ruler along the dashed border of the $125 \times 42\text{ mm}$ center base—marked with **Row 1: Cells `(1) (2) (3) (4) (5)`** on top, **Row 2: Cells `(6) (7) (8) (9) (10)`** on the bottom, and the bold vertical $5\text{-anchor}$ line down the middle—and score firmly with a dry ballpoint pen. Next, crease the top, bottom, and twin $12 \times 42\text{ mm}$ left and right side flaps upward at crisp $90^\circ$ angles, then fold the inner rim strips back down over the corner glue tabs and press for ten seconds to lock the tray walls in place.
 
-Score and fold the side flaps upward along the $125 \times 42\text{ mm}$ base to form a rigid two-row desktop ten-frame tray:
+To assemble the **$84\text{ mm}$ Whole & $42\text{ mm}$ Half Fraction Towers** as hollow $20 \times 20\text{ mm}$ square prisms calibrated to the exact $84.0\text{ mm}$ whole-tower height, start with either the **Whole ($1$)** tower ($4$ faces of $20 \times 84\text{ mm}$ printed with `"1 WHOLE"` on the front and `"100%"` on the back) or the **Half ($1/2$)** tower ($4$ faces of $20 \times 42\text{ mm}$ printed with `"1/2"` on the front and `"50%"` on the back), scoring and folding all four vertical creases at $90^\circ$ angles so the strip wraps into a square tube. Glue the long side tab inside the fourth wall to close the square prism, then fold the $20 \times 20\text{ mm}$ top and bottom square caps over their three glue tabs so your cardstock `1/2` towers stack flush alongside a `1 WHOLE` tower.
 
-| Left Flap ($12 \times 42\text{ mm}$) | Ten-Frame Base ($125 \times 42\text{ mm}$) | Right Flap ($12 \times 42\text{ mm}$) |
-| :---: | :---: | :---: |
-| Fold & Glue Tab | Row 1: Cells `(1) (2) (3) (4) (5)` | Fold & Glue Tab |
-| Fold & Glue Tab | Row 2: Cells `(6) (7) (8) (9) (10)` | Fold & Glue Tab |
-
-### Cardstock Net: 84 mm Whole & 42 mm Half Fraction Towers
-
-Fold the four vertical faces at $90^\circ$ angles and glue the side and bottom tabs to assemble hollow square fraction towers calibrated to the $84.0\text{ mm}$ datum:
-
-| Face Left | Front Label Face | Face Right | Back Percent Face |
-| :--- | :--- | :--- | :--- |
-| **Whole ($1$):** $20 \times 84\text{ mm}$ | `"1 WHOLE"` ($20 \times 84\text{ mm}$) | $20 \times 84\text{ mm}$ | `"100%"` ($20 \times 84\text{ mm}$) |
-| **Half ($1/2$):** $20 \times 42\text{ mm}$ | `"1/2"` ($20 \times 42\text{ mm}$) | $20 \times 42\text{ mm}$ | `"50%"` ($20 \times 42\text{ mm}$) |
-| Bottom Cap ($20 \times 20\text{ mm}$) | Fold Glue Tab | Fold Glue Tab | Fold Glue Tab |
+You can also build the **$120\text{ mm}$ Unit Circle Volvelle & Prime Comparator Ruler** from heavy cardstock in under ten minutes. For the **Two-Disc Unit Circle Volvelle ($120\text{ mm}$ Diameter)**, cut out the larger $120\text{ mm}$ bottom degree wheel ($0^\circ$ to $360^\circ$ marked in $5^\circ$ and $15^\circ$ ticks) and the smaller $96\text{ mm}$ top pointer wheel, carefully snipping out the shaded sight window on the top disc; punch a $3\text{ mm}$ hole through the center crosshairs of both discs and push a brass paper fastener (or a short 3D-printed snap pin) through the center so the top pointer spins smoothly around all four $90^\circ$ quadrants. For the **Folding Prime Factor Comparator Strip**, cut out and fold the L-shaped cardstock comparator stand alongside the rectangular cardstock strips for the `2`-block ($7.00\text{ mm}$), `3`-block ($11.09\text{ mm}$), `5`-block ($16.25\text{ mm}$), and `7`-block ($19.65\text{ mm}$)—laying two `2`-strips and one `3`-strip end-to-end along the vertical comparator scale lands right on the printed `12` line ($25.09\text{ mm}$), matching the 3D-printed Prime Factor Studio!
 
 ---
 
-## System Configuration Flags (`{{key:FLAGS}}`) & Studio Catalog
+## Printing Settings, Color Guide & Quick Checks
 
-Teachers and parents can customize classroom settings anytime via the `{{key:FLAGS}}` menu:
+Teachers and parents can customize classroom settings anytime via the `{{key:FLAGS}}` menu (`{{key:FLAGS}}`):
 
 | Flag # | Default State | Classroom Purpose |
 | :--- | :--- | :--- |
@@ -148,47 +92,69 @@ Teachers and parents can customize classroom settings anytime via the `{{key:FLA
 | **Flag 8** | `0` (Manual) | Fraction Reduction: `0` = Step-by-Step `{{key:SIMP}}`, `1` = Auto-Simplify |
 | **Flag 9** | `0` (General) | Quiz Mode State: `1` = Active `{{key:?}}` Math Sprint |
 
-### Complete Manipulative Studio Quick-Reference
+### 3D Print & Filament Schedule (9 Studios / 12 Modular Kits)
 
-| Manipulative Kit Name | Tray Size | What's Inside the Box | Target Grades |
+| Studio & Modular Kit Name | Gridfinity Box | Filament & Slicer Profile | Direct STL Pack Download |
 | :--- | :---: | :--- | :--- |
-| **Ten-Frame Studio** | $3 \times 1 \times 7\text{U}$ | Dual $2 \times 5$ tray with 5-anchor rib & two-color counters | Foundational & Grades 3–6 |
-| **Number Rack Studio** | $3 \times 1 \times 7\text{U}$ | Two horizontal rows of sliding subitizing blocks grouped $5+5$ by color | Foundational & Grades 3–6 |
-| **Math Dominoes Studio** | $3 \times 1 \times 7\text{U}$ | Tactile math dominoes with 12-frame subitizing divider tray | Foundational & Grades 3–6 |
-| **Place Value Studio** | $3 \times 1 \times 7\text{U}$ | $4 \times 2$ Whole & Decimal Place Value Trays, 44 digit miniblocks (`0`–`9`), and 9 `+1` regrouping blocks | Grades 3–6 |
-| **Counting & Array Studio** | Desktop Case ($3 \times 1$) | 24 four-color $1\text{U}$ stacking tiles per student kit (144 per drop-front classroom box) | Grades 3–6 |
-| **Planetary Geared Clock** | $3 \times 2 \times 7\text{U}$ | $12:1$ geared hands, 4 removable $90^\circ$ dial quadrants, and time blocks | Grades 3–6 |
-| **84 mm Fraction Studio** | Desktop Case ($3 \times 1$) | 78 proportional fraction blocks ($1$ down to $1/12$, $84\text{ mm}$ datum) & lid comparator | Grades 3–6 |
-| **Probability Dice & Spinner** | $1 \times 1 \times 7\text{U}$ | 4 fair $d6$ dice, polyhedral dice ($d4 \dots d20$), and 10-sector + 3 drop-in spinner dials | Grades 3–6 |
-| **Unit Circle Volvelle** | $120\text{ mm}$ | Dual-ring rotary protractor and shadow-factor sight-window wheel | Grades 3–6 |
-| **Prime Factor Studio** | Desktop Case ($3 \times 1$) | Stackable prime factor blocks ($[2] \dots [29]$) & comparator scale box | Grades 3–6 |
-| **Algebra Factoring Studio** | $3 \times 1 \times 7\text{U}$ | 40 area-model tiles (squares, rods, and $\pm 1$ unit tiles) and interlocking $90^\circ$ L-Frame Stage | Grades 3–6 |
-| **Quest Scoreboard** | $3 \times 1 \times 7\text{U}$ | 60 universal `+10` $1\text{U}$ tokens and 10-problem + 100-Point Mastery scoreboard lid | Grades 3–6 |
+| **1. Ten-Frame Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; pause at $1.80\text{ mm}$ on counters for red/gold swap | [Ten-Frame STL Pack](https://stackcalc.io/downloads/ten-frames-open-source-stls.zip) |
+| **2. Place Value Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; top-layer white swap on column labels & `•` dot | [Place Value STL Pack](https://stackcalc.io/downloads/place-value-open-source-stls.zip) |
+| **3. 84 mm Fraction Studio** | Desktop Case ($3 \times 1$) | $0.20\text{ mm}$ PLA ($0.10\text{ mm}$ adaptive on $\frac{1}{8}$ block for $10.5\text{ mm}$ height) | [Fraction Studio STL Pack](https://stackcalc.io/downloads/fraction-studio-open-source-stls.zip) |
+| **4. 90° Corner L-Frame & Area Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA in 4 colors (gold flats, blue rods, white/red units) | [L-Frame & Area STL Pack](https://stackcalc.io/downloads/algebra-boxes-open-source-stls.zip) |
+| **5a. Planetary Geared Clock** | $3 \times 2 \times 7\text{U}$ | $0.20\text{ mm}$ PLA with $0.15\text{ mm}$ elephant-foot compensation on gears | [Geared Clock STL Pack](https://stackcalc.io/downloads/classroom-clock-open-source-stls.zip) |
+| **5b. Unit Circle Volvelle** | $120\text{ mm}$ Disc | $0.20\text{ mm}$ PLA; two-color swap on degree ticks & sight window | [Unit Circle STL Pack](https://stackcalc.io/downloads/unit-circle-volvelle-open-source-stls.zip) |
+| **6a. Number Rack Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; print sliding $5+5$ beads in white and coral red | [Number Rack STL Pack](https://stackcalc.io/downloads/) |
+| **6b. Math Dominoes Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; top-layer contrast swap on raised domino pips | [Math Dominoes STL Pack](https://stackcalc.io/downloads/) |
+| **6c. Quest Scoreboard** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; 60 radiant-gold `+10` tokens & dark slate lid | [Quest Scoreboard STL Pack](https://stackcalc.io/downloads/) |
+| **7. Counting & Array Studio** | Desktop Case ($3 \times 1$) | $0.20\text{ mm}$ PLA; 4-color batch plates (verify $12 \times 7.0 = 84.0\text{ mm}$) | [Counting Tiles STL Pack](https://stackcalc.io/downloads/counting-tiles-open-source-stls.zip) |
+| **8. Probability Dice & Spinner** | $1 \times 1 \times 7\text{U}$ | $100\%$ concentric infill on dice; $0.12\text{ mm}$ layers on spinner spindle | [Dice & Spinner STL Pack](https://stackcalc.io/downloads/dice-and-spinner-open-source-stls.zip) |
+| **9. Prime Factor Studio** | Desktop Case ($3 \times 1$) | $0.10\text{ mm}$ fine layers for $\pm 0.05\text{ mm}$ logarithmic height match | [Prime Factor STL Pack](https://stackcalc.io/downloads/prime-factor-studio-open-source-stls.zip) |
 
-> **Companion Workbook Studio Mapping:** Every one of the **10 Units (45 Sections, 90 Two-Way Worksheets)** in the [Big Ideas Math Middle School Supplement](../../curriculum/big-ideas-middle-school-sc6-workbook.md) pairs directly with these 3D-printed kits and the **Quest Scoreboard**—from **Counting Tiles** and **Prime Factor Blocks** in Unit 1 (Exponents, Factor Trees & GCF/LCM Venn Diagrams), **84 mm Fraction Towers** and **Place Value Trays** in Units 2–3 (Fractions, Decimals, Tape Diagrams & Percents), **Algebra Tiles** in Units 4, 7 & 10 (Algebraic Expressions & Balance-Scale Equations), the **Planetary Geared Clock** and **Unit Circle Volvelle** in Units 5 & 8 (2D Polygons, 3D Nets, Fractional Cube Packing & Elapsed Time), **Ten-Frame** two-color zero-pairs in Unit 6 (Signed Integers & Coordinate Plane), to **Polyhedral Dice & Spinners** in Units 9 & 10 (Fair-Share Mean, MAD & Experimental Probability).
+### Five-Color Filament Palette & Multi-Color Layer Swaps
+To help students spot mathematical connections across different chapters—and to let any single-nozzle printer produce high-contrast parts—all nine studios share a five-color filament palette:
+
+| Filament Color | Standard PLA / PETG Shade | Where Students Meet This Color Across the Studios |
+| :--- | :--- | :--- |
+| **Bright White** | Matte Snow White | $1\text{-Whole}$ ($84\text{ mm}$) Fraction Tower, $+1$ Unit Tiles, `0`–`9` Digit Tops, Number Rack first-5 beads |
+| **Coral Red** | Matte Scarlet / Coral | $\frac{1}{2}$ ($42\text{ mm}$) Fraction Towers, Ten-Frame Counter side A, $-1$ Opposite Tiles, Number Rack second-5 beads |
+| **Radiant Gold** | Silk or Matte Amber Gold | $\frac{1}{3}$ ($28\text{ mm}$) Fraction Towers, Ten-Frame Counter side B, $10 \times 10$ Hundred-Flats, `5` Prime Blocks, `+10` Quest Tokens |
+| **Cobalt Blue** | Matte Royal / Electric Blue | $\frac{1}{4}$ ($21\text{ mm}$) Fraction Towers, $10 \times 1$ Ten-Rods, `2` Prime Blocks ($7.0\text{ mm}$), Counting & Array Quarter-Grid |
+| **Slate Navy** | Matte Charcoal / Dark Slate | All $3 \times 1$ Gridfinity Storage Trays, $90^\circ$ L-Frame Stage Rails, Comparator Wells, and Faceplate Bezels |
+
+You do not need an expensive multi-material printer to make the raised text, pips, and clock numerals pop out in a second color. Every raised label across the nine studios—including the column headers and decimal dot (`•`) on the **Place Value** trays, the raised pips on the **Math Dominoes**, the $5\text{-minute}$ outer ring numerals on the **Planetary Geared Clock**, and the degree ticks on the **Unit Circle Volvelle**—is extruded exactly $0.40\text{ mm}$ (two $0.20\text{ mm}$ layers) above the flat dark-slate surface below it. By right-clicking the vertical layer slider in your slicer software and inserting a standard filament pause command (`M600`) at the first raised layer, any single-extruder classroom printer will automatically park its nozzle, beep, and wait for you to load Bright White or Radiant Gold filament for the final two minutes of the print.
 
 ---
 
-## How We Built the StackCalc Learning Lab: Open-Source Hardware & Hackaday Build Logs
+## How We Built the StackCalc Learning Lab
 
-Curious how a calculator, nine 3D-printed block kits, and this math book were invented together? We documented every step of our journey on our open-source **[Hackaday Engineering Blog](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)** and at **[stackcalc.io](https://stackcalc.io)**. Here is the behind-the-scenes story of how open-source hardware engineering, physical block design, and screen simulation came together to build StackCalc:
+Curious how a calculator, nine 3D-printed block studios, and this math book were invented together? We documented every step of our journey on our open-source **[Hackaday Engineering Blog](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)** and at **[stackcalc.io](https://stackcalc.io)**. Here is the behind-the-scenes story of how open-source hardware engineering, physical block design, and screen simulation came together to build StackCalc:
 
-### Starting on a Tiny Apple Watch Screen—and Sharing One Math Brain
-StackCalc began on a wristwatch. When you try to do math on an Apple Watch screen that is barely $40\text{ millimeters}$ wide, there is no room for tiny `( )` parenthesis buttons or long scrolling formulas. Reverse Polish Notation (RPN)—the 4-story Number Elevator you use in this book—made watch math direct and practical: you type your two numbers, see them sitting right on Shelf $Y$ and Shelf $X$, and tap the operation key.
+### From a Tiny Watch Screen to Kid-Tested Gravity-Docking Blocks
+StackCalc began on a wristwatch. When you try to do math on an Apple Watch screen that is barely $40\text{ millimeters}$ wide, there is no room for tiny `( )` parenthesis buttons or long scrolling formulas. Reverse Polish Notation (RPN)—the 4-story Number Elevator you use in this book—made watch math direct and practical: you type your two numbers, see them sitting right on Shelf $Y$ and Shelf $X$, and tap the operation key. As we expanded from the watch to the iPhone, the web browser, and our physical handheld calculators (`SC-6` and `SC-32`), we made a strict rule: **every device would share the exact same mathematical brain.** Whether you tap `{{key:SIMP}}` on a handheld SC-6 at your desk or click it in the web simulator at **[stackcalc.io](https://stackcalc.io)**, every shelf of the stack behaves the exact same way.
 
-As we expanded from the watch to the iPhone, the web browser, and our physical handheld calculators (`SC-6` and `SC-32`), we made a strict rule: **every device would share the exact same mathematical brain.** Whether you tap `{{key:SIMP}}` on a handheld SC-6 at your desk or click it in the web simulator at **[stackcalc.io](https://stackcalc.io)**, every shelf of the stack behaves the exact same way.
+Meanwhile, watching real 3rd–6th graders test our first prototypes reshaped the physical blocks just as dramatically. Our very first 3D-printed math tiles were completely flat plastic squares—and the first time elementary students tested them on a classroom table, an accidental elbow bump sent a whole multiplication array sliding across the desk! Guided by what young builders showed us with their hands, we engineered **gravity-docking socket trays and stacking lips** across all nine studios: adding a recessed $1.85\text{ mm}$ interlocking lip to the bottom of every tile and molding matching socket grids into the Place Value, Ten-Frame, and L-Frame trays so tiles drop into place with a satisfying clack and stay put even when you pass a tray across the table to a partner.
 
-### Calibrating Physical Blocks to Match the Screen
-Why are the Counting Tiles $7.0\text{ mm}$ tall and the Whole Fraction Tower $84.0\text{ mm}$ tall? Because $84 = 12 \times 7$! By choosing a height that divides evenly by $1, 2, 3, 4, 6,$ and $12$, every fraction block—halves ($42\text{ mm}$), thirds ($28\text{ mm}$), fourths ($21\text{ mm}$), sixths ($14\text{ mm}$), and twelfths ($7\text{ mm}$)—can be printed to an exact whole-millimeter height without messy decimal fractions of a millimeter. When you stack three $\frac{1}{4}$ blocks ($63\text{ mm}$) beside two $\frac{1}{3}$ blocks ($56\text{ mm}$), your fingertips feel the $1\frac{5}{12}$ tower height before you even type `. 3 . 4 {{key:ENTER}} . 2 . 3 {{key:+}}` on the keypad.
+Because students also loved closing their eyes and counting by touch, we added **finger-traceable raised symbols** across the entire kit. We raised the decimal point (`•`) on the Place Value tray, the 5-anchor divider rib on the Ten-Frame, and the fraction numerals on the $84\text{ mm}$ towers so your fingertips can feel the structure of a number before your eyes even read the screen.
 
-### Testing a Virtual Calculator Before Building the Real One
+### Virtual Hardware Simulation & Screw-Free Sliding Assembly
 Before we ever ordered a physical circuit board or soldered a single button, we built a **virtual hardware simulator** that runs right on a computer screen. It draws the exact $132 \times 65$ pixel display—including the live Ten-Frame dots (`{{key:▦}}`), Number Line jump arcs (`{{key:LINE}}`), and Geared Clock hands (`{{key:🕒}}`)—so teachers and students could test every button and Math Quiz sprint (`{{key:?}}`) while the physical parts were still being 3D-printed.
 
-### 3D Printing Directly from the Circuit Board & Snap-Together Assembly
-Have you ever opened a toy or calculator and found tiny metal screws that strip out the plastic or roll off the table and get lost? In our Hackaday build logs (*"How the Circuit Board Design Shapes the Printed Calculator"* and *"Tool-Free Sliding Assembly"*), we showed how we eliminated external case screws:
-- **Circuit-Board-Driven 3D Models:** Instead of measuring the circuit board with a ruler and guessing where the buttons and screen holes should go, our 3D-printing program reads the exact button coordinates directly from the circuit board design file. Every keycap hole lines up automatically.
-- **4-Piece Sliding Lock:** The calculator case prints in four interlocking pieces (bottom shell, button frame, top faceplate, and a side-locking rail) that slide together like a puzzle box and lock tight with a single click, which locks the internal circuit board and battery contacts securely in place—and all of your desktop math block trays print on any classroom 3D printer with zero support plastic to peel off.
+When it came time to manufacture the physical calculator enclosure, we asked a simple question: have you ever opened a toy or calculator and found tiny metal screws that strip out the plastic or roll off the table and get lost? In our Hackaday build logs (*"How the Circuit Board Design Shapes the Printed Calculator"* and *"Tool-Free Sliding Assembly"*), we showed how we eliminated external case screws entirely by using **circuit-board-driven 3D models**: instead of measuring the circuit board with a ruler and guessing where the buttons and screen holes should go, our 3D-printing program reads the exact button coordinates directly from the circuit board design file so every keycap hole lines up automatically.
 
-For complete classroom lesson scripts and station activities that use these manipulatives, turn to **[Appendix B: Teacher Lesson Plans & Diagnostic Protocols](appendix-b-teacher-lesson-plans.md)**.
+Even better, the calculator case prints in a **4-piece sliding lock** (bottom shell, button frame, top faceplate, and a side-locking rail) that slides together like a Japanese puzzle box and locks tight with a single click, holding the internal circuit board and battery contacts securely in place—while all of your desktop math block trays print flat on any classroom 3D printer with zero support plastic to peel off:
 
+| Engineering Layer | How We Designed It | Why It Matters at Your Desk |
+| :--- | :--- | :--- |
+| **Shared RPN Engine** | Identical stack math across SC-6 hardware, iOS, watchOS, and web simulator | Every keystroke and stack table in this book works identically on screen and in hand |
+| **Gravity-Docking Trays** | $1.85\text{ mm}$ recessed tile lips and chamfered socket pockets | Multiplication arrays and fraction towers stay locked in place when bumped |
+| **Tactile Raised Relief** | $0.40\text{ mm}$ (2-layer) raised numerals, pips, and 5-anchor divider ribs | Lets students trace number structures by touch and swap filament colors easily |
+| **PCB-Driven 3D Case** | Enclosure geometry generated directly from circuit-board button coordinates | Zero misaligned buttons and tool-free 4-piece sliding rail assembly |
 
+### Classroom Care, Caliper Checks & Saltwater Dice Testing
+
+Once your nine 3D-printed studios come off the printer bed, three quick quality checks will make sure every block and die performs with laboratory accuracy for years of classroom or home use:
+
+1. **The $84.0\text{ mm}$ Master Height Check (`{{key:-}}` & `{{key:%}}`):** Before placing a freshly printed set of **Fraction Towers** or **Counting Tiles** into the comparator tray, close the jaws of a digital caliper around the white **$1\text{-Whole}$ tower** ($84.00\text{ mm}$), then stack **three $\frac{1}{3}$ Gold blocks** ($3 \times 28.00 = 84.00\text{ mm}$), **four $\frac{1}{4}$ Blue blocks** ($4 \times 21.00 = 84.00\text{ mm}$), and **twelve Counting Tiles** ($12 \times 7.00 = 84.00\text{ mm}$) beside it. If your printer's first layer squishes slightly (a common 3D-printing effect called *"elephant's foot"*), lightly deburr the bottom rim or enable **$0.15\text{ mm}$ elephant-foot compensation** in your slicer so every complete stack stands within $\pm 0.15\text{ mm}$ of $84.00\text{ mm}$.
+2. ** Lou Lou's Saltwater Fair-Die Float Test (`{{key:🎲}}`):** How do board-game makers and probability labs verify that a 3D-printed $6\text{-sided}$ or $20\text{-sided}$ die doesn't have an air pocket inside that biases it toward one face? Dissolve **3 tablespoons of table salt** in a warm glass of water until your $100\%$-infill PLA die floats just below the surface. Flick the floating die gently with your fingertip **10 times** and record which face floats to the top each time! A balanced $100\%$ concentric-infill die will bob up with different random faces, whereas a hollow or lopsided die will swing its lightest face to the top on almost every flick.
+3. **Keeping PLA Blocks Clean & Warp-Free:** Because standard **PLA** (*polylactic acid*, made from fermented cornstarch and sugarcane) begins to soften above **$55^\circ\text{C}$ ($131^\circ\text{F}$)**, never wash 3D-printed math blocks in a hot dishwasher or leave a dark-slate storage bin on a car dashboard in direct summer sun. To clean classroom blocks between school terms, simply swish them in a basin of **lukewarm water ($30^\circ\text{C}$) with a drop of mild dish soap**, rinse, and towel-dry on a flat table.
+
+For complete classroom lesson scripts and station activities that use these 3D-printed math blocks, turn to **[Appendix B: Teacher Lesson Plans & Station Guide](appendix-b-teacher-lesson-plans.md)**.

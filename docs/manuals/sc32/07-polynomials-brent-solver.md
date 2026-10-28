@@ -1,437 +1,483 @@
 ---
-title: "Chapter 7: Polynomials, Brent-Dekker Solver & Root Finding | Thinking in the Stack (SC-32)"
-description: "Master Cardano's analytic cubic solver [POLY], Richard Brent's hybrid numerical root solver [SOLVE] with 10^-12 precision, Horner's method, and engineering equation solving on the StackCalc SC-32."
+title: "Chapter 7: The Scandal of the Cubic & The Art of Hunting Roots | Thinking in the Stack (SC-32)"
+description: "From al-Khwarizmi's squares and the 1535 Milan cubic duel to Horner's nested evaluation and Richard Brent's hybrid root solver on the StackCalc SC-32."
 ---
 
-# Chapter 7: Polynomials, Brent-Dekker Solver & Root Finding
+# Chapter 7: The Scandal of the Cubic & The Art of Hunting Roots
 
-## Transcendental Root-Finding & Richard Brent's Hybrid Method
+## From Al-Khwarizmi's Squares to the 1535 Duel in Milan
 
-Across an eleven-hundred-year mathematical arc—from **Muhammad ibn Musa al-Khwarizmi's** geometric completing-the-square algorithms in 820 AD Baghdad (`{{key:POLY}}` degree 2) and **Gerolamo Cardano's** closed-form cubic and quartic radical solutions in *Ars Magna* (1545) {{cite:cardano1545}} (`{{key:POLY}}` degrees 3–4) to **Niels Henrik Abel's** 1824 impossibility theorem proving that no general radical formula exists for polynomials of degree 5 or higher—algebraists sought to isolate unknown roots through finite chains of arithmetic and $n$-th roots. Yet in mechanical, chemical, and aerospace engineering, physical conservation laws routinely couple polynomials with logarithms, exponentials, and trigonometric functions that cannot be inverted symbolically at all.
+Around the year 820 CE, in the House of Wisdom (*Bayt al-Hikma*) in Baghdad, the Persian mathematician and astronomer **Muhammad ibn Musa al-Khwarizmi** wrote a landmark treatise whose title—*Al-Kitāb al-mukhtaṣar fī ḥisāb al-jabr wa'l-muqābala* (*The Compendious Book on Calculation by Completion and Balancing*)—gave every language on Earth the word **algebra** (from *al-jabr*, restoring a broken or subtracted term to the other side of an equation), while his own name, Latinized as *Algoritmi*, gave us the word **algorithm**.
 
-### Turbulent Pipe Flow & The Colebrook-White Implicit Equation
+When al-Khwarizmi set out to solve a quadratic equation such as his famous benchmark:
 
-Consider water surging through a municipal aqueduct or cryogenic kerosene rushing into a rocket turbopump. The friction factor $f$ across the turbulent pipe wall is governed by Cyril F. Colebrook's landmark 1939 equation {{cite:colebrook1939}}:
+$$x^2 + 10x = 39$$
 
-$$\frac{1}{\sqrt{f}} = -2.0 \log_{10} \left( \frac{\varepsilon}{3.7 D} + \frac{2.51}{\operatorname{Re} \sqrt{f}} \right)$$
+he did not reach for modern algebraic symbols, because plus signs, minus signs, and exponents would not be invented for another seven hundred years. Even more remarkably, al-Khwarizmi did not view $x^2$ as a number multiplied by itself—he viewed $x^2$ literally as a **physical square** of side $x$, and $10x$ as the area of a rectangle.
 
-Inspect this equation with an analytical eye: the unknown Darcy friction factor $f$ appears on *both* sides of the equals sign—trapped inside an inverse square root on the left, and buried inside both a base-10 logarithm and a square root denominator on the right.
+How do you find the side $x$ of a square when its area $x^2$ plus $10x$ equals $39$? Follow al-Khwarizmi's geometric recipe:
+1. Start with a square of side $x$ and area $x^2$.
+2. Split the linear term $10x$ in half into two equal rectangles of width $5$ and length $x$ (each having area $5x$), and attach them to two adjacent edges of the $x \times x$ square.
+3. Examine the L-shaped figure (a *gnomon*) you have just built. It is *almost* a larger square of side $(x + 5)$—except that the upper-right corner where the two $5 \times x$ wings meet is missing a little **$5 \times 5$ corner square** of area $25$.
+4. Drop a $5 \times 5 = 25$ square into that empty corner to **complete the square**. Because you added $25$ to the geometric figure on the left, add $25$ to the $39$ on the right:
 
-It is mathematically impossible to isolate $f$ using elementary symbolic algebra. There is no closed-form formula. The same mathematical barrier governs Johannes Kepler's equation for planetary orbital mechanics:
+$$(x + 5)^2 = 39 + 25 = 64 = 8^2 \implies x + 5 = 8 \implies \mathbf{x = 3}$$
 
-$$M = E - e \sin E$$
+{{blocks:algebra_factoring_area|Al-Khwarizmi's geometric completion of the square and rectangular factorization of quadratic polynomials.}}
 
-You cannot isolate the eccentric anomaly $E$ with pencil and paper. To design a municipal water main that withstands water hammer transients, or to steer an interplanetary spacecraft through a gravitational assist, the engineer must solve transcendental equations numerically.
+Apply that exact same geometric completion to the general quadratic equation $a x^2 + b x + c = 0$—dividing by $a$, splitting the middle term $(b/a)x$ into two wings of width $\frac{b}{2a}$, and filling the missing corner with $\left(\frac{b}{2a}\right)^2$—and out pops the universal **quadratic formula**:
 
-### The Fatal Flaw of Naive Root Finding
-Early computational engineers turned to the classic Newton-Raphson iteration:
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
-$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
+### William Kahan's Warning: When the Quadratic Formula Loses Its Mind
 
-Newton-Raphson is quadratic and fast—until the function encounters a local extremum, an inflection point, or an asymptotic plateau where the derivative $f'(x) \approx 0$. When the denominator vanishes, the tangent line becomes nearly horizontal, catapulting the next estimate into numerical oblivion. In an embedded autopilot or real-time chemical process controller, a divergent Newton solver can trigger catastrophic system instability.
+Before we leave quadratic equations, modern floating-point computing adds a fascinating plot twist to al-Khwarizmi's formula. As Berkeley numerical analyst **William Kahan** famously demonstrated, the textbook formula $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$ contains a hidden numerical trap whenever $b^2$ is much larger than $4ac$ ($b^2 \gg |4ac|$).
 
-### Richard Brent (1973): The Art of Algorithmic Paranoia
-In 1973, the Australian mathematician Richard P. Brent asked a deceptively simple question: can we build a root finder that runs nearly as fast as Newton-Raphson on smooth curves, requires no analytical derivative, and is mathematically guaranteed never to diverge on pathological functions? His answer—published in *Algorithms for Minimization Without Derivatives* {{cite:brent1973}}—became the universal standard of numerical computing through what might be called **algorithmic paranoia**.
+Suppose $b > 0$ and $4ac$ is tiny compared to $b^2$. Then $\sqrt{b^2 - 4ac}$ is almost identical to $b$. When you evaluate the root with the plus sign ($-b + \sqrt{b^2 - 4ac}$), you are subtracting two nearly equal numbers—wiping out up to half or more of your calculator's significant digits in a single stroke of **catastrophic cancellation**! How do numerical analysts defeat this trap? You *never* subtract $\sqrt{b^2 - 4ac}$ from a number of the same sign. Instead, you always choose the sign that **adds** the magnitudes together to compute the larger root $x_1$ at full precision, and then find the smaller root $x_2$ by using François Viète's exact root-product identity $x_1 x_2 = \frac{c}{a}$:
 
-Brent begins by enclosing the root inside a tight bracket $[a, b]$ where $f(a)$ and $f(b)$ have opposite signs ($f(a) \cdot f(b) < 0$). Because a continuous curve cannot cross from negative to positive without passing through zero, the Intermediate Value Theorem guarantees that a true root lies trapped inside the interval. Whenever three distinct sample points are available, Brent's algorithm sprints toward that root using **Inverse Quadratic Interpolation (IQI)**—fitting a sideways parabola $x = P(y)$ through $(f(a), a)$, $(f(b), b)$, and $(f(c), c)$ and evaluating it directly at $y = 0$. Left unchecked, a parabolic fit can occasionally shoot wild, so Brent wrapped the interpolator in unyielding watchdog tests: if a proposed parabolic leap lands outside the active bracket $[a, b]$, or if it fails to shrink the bracket width by at least $50\%$ every two steps, the solver immediately overrides the interpolation and takes a rock-solid **bisection step** at the midpoint.
+$$x_1 = \frac{-b - \operatorname{sgn}(b)\sqrt{b^2 - 4ac}}{2a}, \qquad x_2 = \frac{c}{a \, x_1}$$
 
-The result is the best of both worlds. Brent's method converges to 12 decimal places in fewer than 10 iterations on well-behaved engineering equations, yet falls back to the ironclad safety of bisection the instant a curve turns steep or flat. On the StackCalc SC-32, pressing `{{key:SOLVE}}` puts Richard Brent's hybrid architecture directly at your fingertips.
+Quadratic equations govern two classic inverse problems in mechanics and forensic engineering:
+* **The Inverse Ballistic Trajectory Quadratic (Solving Backwards for Launch Angle):** In Chapter 4, we projected where a shell lands when its launch angle $\theta$ is already known. What if we face the *inverse* question: the target coordinates $(x, y)$ are fixed on an elevated ridge at known muzzle speed $v_0$, and we must solve backwards for the required launch angle $\theta$? Substituting the trigonometric identity $\sec^2\theta = 1 + \tan^2\theta$ into Galileo's parabolic trajectory $y = x\tan\theta - \frac{gx^2}{2v_0^2}\sec^2\theta$ turns the unknown launch slope $u = \tan\theta$ into a quadratic equation:
+  $$\left(\frac{gx^2}{2v_0^2}\right) u^2 - x u + \left(y + \frac{gx^2}{2v_0^2}\right) = 0$$
+  Whenever the target lies within the gun's reach, its two positive roots give the gunner two completely different ways to hit the exact same spot: a flat, fast **low direct-fire trajectory** ($\theta_1 = \arctan u_1$) and a high, arcing **plunging mortar trajectory** ($\theta_2 = \arctan u_2$) that drops down from above.
+* **Highway Braking & Reaction Stopping Distance ($d = v_0 t_r + \frac{v_0^2}{2\mu g}$):** When a driver spots a hazard on the highway, the car travels at its initial speed $v_0$ during the human perception-reaction time $t_r$ ($d_{\text{react}} = v_0 t_r$) before the brakes lock and tire-pavement friction $\mu$ decelerates the car to a halt over a kinetic-energy braking distance $d_{\text{brake}} = \frac{v_0^2}{2\mu g}$. When crash investigators measure the total stopping distance $d$ at the scene, reconstructing the car's unknown initial speed $v_0$ requires extracting the positive root of the monic quadratic:
+  $$v_0^2 + (2\mu g t_r)\, v_0 - 2\mu g d = 0$$
+
+### The 1535 Milan Duel, Cardano's Oath & the Ghost of Casus Irreducibilis
+
+For seven centuries after al-Khwarizmi, the **cubic equation** ($A x^3 + B x^2 + C x + D = 0$) stood as an impenetrable wall. In 1494, the Franciscan friar Luca Pacioli (Leonardo da Vinci's mathematics collaborator) declared in his *Summa de arithmetica* that solving the general cubic was as impossible with current mathematics as squaring the circle.
+
+Pacioli was wrong. Around 1515, a quiet professor at the University of Bologna named **Scipione del Ferro** discovered how to solve the "depressed" cubic $t^3 + pt = q$ (a cubic with no $t^2$ term). In Renaissance Italy, however, university chairs were not protected by lifelong tenure; a mathematician could be publicly challenged to a high-stakes problem-solving duel, with the loser forfeiting his salary, his reputation, and his professorship. So del Ferro kept his formula a closely guarded trade secret until his deathbed in 1526, when he whispered it to his mediocre student **Antonio Maria Fior**.
+
+Armed with his dead master's secret, Fior began boasting that he alone could solve cubic equations, and in early **1535** he challenged **Niccolò Fontana**—a self-taught mathematical prodigy from Brescia known as **Tartaglia** ("The Stammerer," after a French soldier's saber sliced his jaw and palate during the 1512 sack of Brescia, leaving him with a lifelong speech impediment). Each contestant deposited thirty cubic problems with a notary in Milan and was given fifty days to solve the rival's list.
+
+Fior had set all thirty of his problems as variations of del Ferro's single form $t^3 + pt = q$. Tartaglia, on the other hand, had posed several different families of cubics, including $t^3 + pt^2 = q$. For six weeks Tartaglia struggled in agony until, on the night of **February 12, 1535**—just eight days before the deadline—inspiration struck. By imagining a physical three-dimensional cube of side $(u - v)$ sliced into smaller blocks:
+
+$$(u - v)^3 + 3uv(u - v) = u^3 - v^3$$
+
+Tartaglia saw that if you set $t = u - v$, $3uv = p$, and $u^3 - v^3 = -q$, the cubic $t^3 + pt + q = 0$ collapses into a simple **quadratic equation in $u^3$**! Within two hours Tartaglia solved all thirty of Fior's problems, while Fior failed to solve a single one of Tartaglia's.
+
+News of Tartaglia's triumph electrified the polymath physician, gambler, and algebraist **Gerolamo Cardano** in Milan. In March 1539, Cardano invited Tartaglia to his house and begged for the formula, swearing a solemn oath on the Holy Gospels (and on his honor as a gentleman) never to publish Tartaglia's secret. Tartaglia relented, encoding his rule in a cryptic twenty-five-line Italian poem (*"Quando che'l cubo con le cose appresso..."*).
+
+Combining Tartaglia's poem with his own discovery that *any* full cubic $A x^3 + B x^2 + C x + D = 0$ can be stripped of its quadratic $x^2$ term by sliding the coordinate origin to the curve's point of inflection via $x = t - \frac{B}{3A}$:
+
+$$t^3 + p t + q = 0, \qquad p = \frac{3AC - B^2}{3A^2}, \qquad q = \frac{27A^2D - 9ABC + 2B^3}{27A^3}$$
+
+Cardano—together with his brilliant teenaged servant and pupil **Lodovico Ferrari**, who soon discovered how to solve the fourth-degree **quartic equation** by reducing it to a resolvent cubic—had the complete analytical solution to every polynomial up to degree four. In 1543, Cardano traveled to Bologna, inspected Scipione del Ferro's posthumous papers, and realized that del Ferro had discovered the formula twenty years *before* Tartaglia. Free from his oath (at least in his own mind), Cardano published the complete cubic and quartic solutions in his 1545 masterpiece ***Ars Magna*** (*The Great Art*) {{cite:cardano1545}}, giving credit to both del Ferro and a furious Tartaglia.
+
+Yet inside Cardano's cubic formula lurked a mathematical ghost that gave birth to complex numbers (as we saw in Chapter 5). In Cardano's formula:
+
+$$t = \sqrt[3]{-\frac{q}{2} + \sqrt{\Delta}} + \sqrt[3]{-\frac{q}{2} - \sqrt{\Delta}}, \qquad \text{where } \Delta = \left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3$$
+
+the **cubic discriminant** $\Delta$ governs the nature of the three roots:
+* **$\Delta > 0$:** The S-shaped cubic crosses the horizontal axis only once, having **one real root** and **two complex conjugate roots** (formed by rotating $u = \sqrt[3]{-q/2 + \sqrt{\Delta}}$ and $v = \sqrt[3]{-q/2 - \sqrt{\Delta}}$ by the cube roots of unity $\omega = -\frac{1}{2} + i\frac{\sqrt{3}}{2}$ and $\omega^2$).
+* **$\Delta = 0$:** The cubic just kisses the horizontal axis tangentially, producing **three real roots with at least one repeated root** (such as the critically damped RLC filter polynomial $s^3 + 12s^2 + 45s + 50 = (s+2)(s+5)^2 = 0$, with a double pole at $s = -5$).
+* **$\Delta < 0$ (*Casus Irreducibilis*):** Here was the scandal! Whenever a cubic wiggles across the horizontal axis three times to produce **three distinct real roots** (such as $(x-1)(x-2)(x-3) = x^3 - 6x^2 + 11x - 6 = 0$), the discriminant $\Delta$ under the square root is **strictly negative**. To extract three completely real numbers from Cardano's formula, you are *forced* to walk through the complex plane, taking the cube root of a complex number $r e^{i\theta}$ by De Moivre's angle trisection $r^{1/3}[\cos(\theta/3) + i\sin(\theta/3)]$, where the imaginary parts of the two conjugate cube roots cancel out to zero.
+
+### Viète's Trigonometric Escape, Ferrari's Quartic & the Root-Coefficient Checksums
+
+How did sixteenth-century algebraists verify their roots and bypass the complex radicals of *casus irreducibilis* before complex exponential notation existed, and how does the SC-32 model this entire analytical toolkit?
+
+On the SC-32, pressing **`{{key:POLY}}`** (`{{key:↱}}` + `{{key:XEQ}}`) opens the dedicated analytical polynomial workspace for $Ax^3 + Bx^2 + Cx + D = 0$, mapping the six LFU softkeys to `{{key:A}}`, `{{key:B}}`, `{{key:C}}`, `{{key:D}}`, `{{key:EXEC}}`, and `{{key:CLR}}`. You simply key each coefficient onto the stack and tap its softkey (setting `0 {{key:D}}` to solve a quadratic $Ax^2 + Bx + C = 0$), and when you press `{{key:EXEC}}`, the calculator evaluates the discriminant $\Delta$, places the primary root $r_1$ directly onto the stack in Gaussian complex format ($Y = \text{Real},\; X = \text{Imag}$), and writes all three real or complex roots into numbered variable registers `1` through `6` (`{{key:RCL}} 1` through `{{key:RCL}} 6`).
+
+Behind that single `{{key:EXEC}}` keystroke stand three classical pillars of polynomial theory:
+
+1. **François Viète's Cosine Trisection of the Cubic (1591):** The French cryptographer and algebraist **François Viète** noticed a striking resemblance between the depressed cubic $t^3 + pt + q = 0$ (when $\Delta < 0$, so $p < 0$) and the trigonometric triple-angle identity for cosine:
+   $$\cos(3\theta) = 4\cos^3\theta - 3\cos\theta \implies \cos^3\theta - \frac{3}{4}\cos\theta - \frac{1}{4}\cos(3\theta) = 0$$
+   By scaling the unknown $t = 2\sqrt{-p/3}\,\cos\theta$, Viète matched the depressed cubic term-for-term against the triple-angle cosine identity, expressing all three real roots directly without a single complex square root:
+   $$t_k = 2\sqrt{-\frac{p}{3}} \cos\left(\frac{1}{3}\arccos\left(\frac{3q}{2p}\sqrt{-\frac{3}{p}}\right) - \frac{2\pi k}{3}\right), \qquad k = 0, 1, 2$$
+   Geometrically, solving a three-real-root cubic is identical to **trisecting an angle on the unit circle** and projecting the three $120^\circ$-spaced corners of an inscribed equilateral triangle down onto the horizontal real axis.
+2. **Lodovico Ferrari's Reduction of the Quartic to a Resolvent Cubic (1540):** Right after Cardano mastered the cubic in 1539, a rival mathematician named Zuanne da Coi challenged Cardano and Tartaglia with a fourth-degree **quartic equation**: $x^4 + 6x^2 + 36 = 60x$. Neither Cardano nor Tartaglia could solve it—until Cardano's eighteen-year-old protégé **Lodovico Ferrari** spotted a two-stage algebraic lockpick.
+   After shifting $x$ to remove the $x^3$ term ($x^4 + px^2 + qx + r = 0$), Ferrari moved $px^2 + qx + r$ to the right side, completed the square on the left as $(x^2 + \frac{p}{2})^2$, and introduced an **auxiliary variable $y$** inside the square:
+   $$\left(x^2 + \frac{p}{2} + y\right)^2 = (p + 2y)x^2 - qx + \left(\frac{p^2}{4} - r + py + y^2\right)$$
+   Notice the right-hand side: it is a simple **quadratic in $x$**. When is a quadratic in $x$ a perfect square $(mx + n)^2$ so that we can take the square root of both sides of the equation? Precisely when its quadratic discriminant $B^2 - 4AC$ equals zero:
+   $$q^2 - 4(p + 2y)\left(y^2 + py + \frac{p^2}{4} - r\right) = 0$$
+   And what degree is that equation for the helper variable $y$? It is a **third-degree cubic equation**—the **resolvent cubic**—which Cardano's `{{key:POLY}}` solver can already solve. Once one root $y_1$ of the resolvent cubic is found, the quartic splits into two ordinary quadratic equations, giving all four roots.
+3. **Viète's Root-Coefficient Checksums (Viète's Formulas):** Whenever `{{key:POLY}}` writes the roots of a cubic ($A x^3 + B x^2 + C x + D = 0$) into variables `1` through `6`, how can you verify in two seconds that your roots are $100\%$ accurate without plugging each root back into the polynomial? Multiply out $A(x - r_1)(x - r_2)(x - r_3) = A x^3 - A(r_1 + r_2 + r_3)x^2 + A(r_1 r_2 + r_2 r_3 + r_3 r_1)x - A r_1 r_2 r_3$ and compare coefficients term by term:
+   $$\begin{aligned}
+   \text{Sum of Roots (Trace):} &\quad r_1 + r_2 + r_3 = -\frac{B}{A} \\
+   \text{Pairwise Products:} &\quad r_1 r_2 + r_2 r_3 + r_3 r_1 = +\frac{C}{A} \\
+   \text{Product of Roots (Determinant):} &\quad r_1 \cdot r_2 \cdot r_3 = -\frac{D}{A}
+   \end{aligned}$$
+   For our benchmark cubic $x^3 - 6x^2 + 11x - 6 = 0$ with roots $1, 2, 3$, recalling and summing `{{key:RCL}} 1 {{key:RCL}} 3 {{key:+}} {{key:RCL}} 5 {{key:+}}` gives $1 + 2 + 3 = 6 = -(-6)/1$, their pairwise product sum is $1(2) + 2(3) + 3(1) = 11 = +11/1$, and their product `{{key:RCL}} 1 {{key:RCL}} 3 {{key:×}} {{key:RCL}} 5 {{key:×}}` is $1 \times 2 \times 3 = 6 = -(-6)/1$. In any **depressed cubic** $t^3 + pt + q = 0$ (where the quadratic coefficient $B = 0$), **the three roots always sum identically to zero** ($t_1 + t_2 + t_3 = 0$), because the coordinate shift $x = t - \frac{B}{3A}$ placed the origin right at the arithmetic average (centroid) of the three roots.
+
+And why did the chain of radical reductions stop forever after Ferrari's degree-4 quartic? For nearly three hundred years after *Ars Magna*, the greatest minds in Europe—including Ehrenfried Walther von Tschirnhaus, Leonhard Euler, and Joseph-Louis Lagrange—hunted for a degree-5 quintic formula ($Ax^5 + Bx^4 + Cx^3 + Dx^2 + Ex + F = 0$). Lagrange noticed a troubling pattern: for a degree-2 quadratic, the resolvent has degree 1; for a degree-3 cubic, Tartaglia's resolvent has degree 2; for a degree-4 quartic, Ferrari's resolvent has degree 3. Each time, the helper equation had *lower* degree than the original problem. Yet when Lagrange applied the same permutation method to a degree-5 quintic, the resolvent equation jumped *up* to degree 6 (with $5!/2 = 60$ alternating permutations).
+
+In **1824**, the twenty-one-year-old Norwegian mathematician **Niels Henrik Abel** proved (building on Paolo Ruffini's 1799 work) that this barrier is absolute—and on the night of May 29, 1832, the twenty-year-old French revolutionary **Évariste Galois** scribbled a frantic letter by candlelight the night before he was fatally shot in a pistol duel at dawn, founding **Group Theory** and proving why: for $n = 2, 3, 4$, the permutation group $S_n$ of the roots breaks down into commutative cyclic pieces ("solvable groups") that correspond to extracting $k$-th roots $\sqrt[k]{\phantom{x}}$. For $n \ge 5$, the alternating group $A_5$ (the $60$ rotational symmetries of a regular icosahedron) is a **simple non-abelian group** that cannot be factored into cyclic steps. **No general radical formula in $+, -, \times, \div$, and $\sqrt[n]{\phantom{x}}$ can ever exist for degree 5 or higher!**
 
 ---
+
+## Unpeeling Polynomials from the Inside Out: Horner's Scheme
+
+Even before we try to *solve* a polynomial $P(x) = 0$, how should we *evaluate* a polynomial at a given number $x$?
+
+Suppose you want to evaluate the fourth-degree polynomial:
+
+$$P(x) = 4x^4 - 3x^3 + 2x^2 - 5x + 7 \qquad \text{at } x = 2.5$$
+
+If you evaluate $P(x)$ the way it is written on the page—computing $x^4$, multiplying by $4$, computing $x^3$, multiplying by $3$, computing $x^2$, and so on—you have to compute powers of $x$ over and over again ($4 + 3 + 2 + 1 = 10$ multiplications, or three separate exponentiations). Worse yet, near a root where large positive and negative power terms nearly cancel out, computing $a_n x^n$ separately magnifies floating-point rounding error.
+
+In 1819, the English schoolmaster **William George Horner** (rediscovering a method known to Isaac Newton in 1669 and the 13th-century Chinese algebraist **Qin Jiushao** in his 1247 *Mathematical Treatise in Nine Sections*) noticed what happens when you factor $x$ out from the inside out:
+
+$$P(x) = 4x^4 - 3x^3 + 2x^2 - 5x + 7 = (((4x - 3)x + 2)x - 5)x + 7$$
+
+In **Horner's nested scheme**, every single exponent has vanished. To evaluate any degree-$n$ polynomial at $x$, you start with the leading coefficient $a_n$ and simply repeat a two-beat heartbeat $n$ times:
+
+$$\textbf{Multiply by } x \text{ (`{{key:×}}`),} \quad \textbf{Add the next coefficient (`{{key:+}}` or `{{key:-}}`).}$$
+
+Let us trace that heartbeat mentally on $P(2.5) = (((4(2.5) - 3)(2.5) + 2)(2.5) - 5)(2.5) + 7$:
+* Start with $4$, multiply by $2.5$ ($\to 10$), subtract $3$ ($\to \mathbf{7.0}$).
+* Multiply by $2.5$ ($\to 17.5$), add $2$ ($\to \mathbf{19.5}$).
+* Multiply by $2.5$ ($\to 48.75$), subtract $5$ ($\to \mathbf{43.75}$).
+* Multiply by $2.5$ ($\to 109.375$), add $7$ ($\to \mathbf{116.3750}$).
+
+Four multiplications, four additions, zero powers, and zero temporary variables. On the SC-32, you can make Horner's scheme even faster by **flooding all four stack registers with $x$** at the very start via **`x {{key:ENTER}} {{key:ENTER}} {{key:ENTER}}`**. Because the top shelf **Register $T$ replicates its value downward into Register $Z$** every time the stack drops, a fresh copy of $x$ is waiting in Register $Y$ whenever you finish adding a coefficient—turning the four-register stack into an automatic Horner conveyor belt where you never have to re-type $x$!
+
+Better still, the intermediate numbers produced at each beat of Horner's scheme ($4,\; 7.0,\; 19.5,\; 43.75$) are not random scratchpad numbers—they are the exact coefficients of the quotient polynomial $Q(x)$ obtained by **Ruffini-Horner synthetic division** when dividing $P(x)$ by $(x - x_0)$ at $x_0 = 2.5$:
+
+$$P(x) = (x - x_0)\,Q(x) + R = (x - 2.5)\left(4x^3 + 7x^2 + 19.5x + 43.75\right) + 116.3750$$
+
+This Polynomial Remainder Theorem identity $P(x) = (x - x_0)Q(x) + P(x_0)$ gives us three computational superpowers:
+* **Polynomial Deflation:** Once you find one exact root $r_1$ of a polynomial (where the remainder $P(r_1) = 0$), the intermediate numbers generated during Horner's evaluation at $r_1$ immediately hand you the deflated degree-$(n-1)$ quotient polynomial $Q(x) = P(x)/(x - r_1)$—allowing you to drop a fourth-degree quartic down to a cubic, or a cubic down to a quadratic.
+* **Simultaneous Derivative Evaluation ($P'(x_0) = Q(x_0)$):** Differentiate $P(x) = (x - x_0)Q(x) + P(x_0)$ with respect to $x$ by the product rule:
+   $$P'(x) = Q(x) + (x - x_0)Q'(x) \implies P'(x_0) = Q(x_0)$$
+   Evaluating the quotient polynomial $Q(x)$ at $x_0$ by running a second Horner pass on the intermediate coefficients gives the exact **calculus derivative $P'(x_0)$** without ever writing down a symbolic derivative formula.
+* **Suppression of Catastrophic Cancellation Near Multiple Roots:** In numerical thermodynamics and flight-control engineering—such as evaluating standard-atmosphere pressure-altitude curves $P(h) = a_3 h^3 + a_2 h^2 + a_1 h + a_0$, NASA Glenn molar heat-capacity polynomials $C_p(T)/R = a_0 + a_1 T + a_2 T^2 + a_3 T^3 + a_4 T^4$, or our critically damped RLC filter polynomial near its repeated root $s = -5$—nested Horner evaluation updates the running factor $(s + 5)$ locally at each step rather than subtracting huge, independently rounded powers $s^3$ and $12s^2$.
+
+That same nested-factoring mindset simplifies rational formulas and symmetric high-degree equations across physics:
+* **Martin Green's Solar-Cell Fill Factor (1982):** In a silicon photovoltaic cell, the maximum power point satisfies a transcendental diode equation that cannot be inverted in closed form, but Australian solar physicist Martin Green discovered an accurate rational-logarithmic expression in the normalized open-circuit voltage $v_{\text{oc}} = V_{\text{oc}} / V_T$ (evaluated in one pass on the stack by flooding $v_{\text{oc}}$ across all four registers with `{{key:ENTER}} {{key:ENTER}} {{key:ENTER}}`):
+  $$\text{Fill Factor } FF = \frac{v_{\text{oc}} - \ln(v_{\text{oc}} + 0.72)}{v_{\text{oc}} + 1}$$
+* **Coupled-Oscillator Biquadratic Polynomials:** When two coupled undamped spring-mass pendulums vibrate in their natural normal modes, the eigenvalue equation $\det(\mathbf{K} - \omega^2\mathbf{M}) = 0$ contains only even powers of frequency ($a x^4 + b x^2 + c = 0$), which collapses into a quadratic in $u = x^2$ whose positive square roots $\omega = \sqrt{u}$ give the two normal-mode frequencies.
+
+---
+
+## Why Newton's Method Flies Off Cliffs—And How Richard Brent Tamed It
+
+Abel and Galois proved that we cannot even solve $x^5 - x - 1 = 0$ with a radical formula. And across real-world science and engineering, nature rarely hands us pure polynomials anyway. Physical conservation laws constantly mix algebraic powers $x$ with sines, cosines, exponentials, and logarithms—producing **transcendental equations** where no symbolic manipulation can ever isolate the unknown on one side of the equals sign.
+
+How do you hunt down a root $x^*$ where $f(x^*) = 0$ when algebra cannot isolate $x$? Over three centuries, numerical analysts developed two rival philosophies—one slow and invincible, the other blazingly fast and reckless:
+
+1. **The Tortoise: Bolzano's Intermediate Value Theorem & Bisection ($p = 1.000$):** Suppose a continuous curve $f(x)$ is negative at $x = a$ ($f(a) < 0$, below the axis) and positive at $x = b$ ($f(b) > 0$, above the axis), so that $f(a)\cdot f(b) < 0$. By Bernard Bolzano's **Intermediate Value Theorem** (1817), a continuous curve cannot get from below the horizontal axis to above it without crossing $y = 0$ at least once inside the **bracket** $[a, b]$.
+   In the **Bisection Method**, you evaluate the function at the midpoint $m = \frac{1}{2}(a + b)$, check its sign, and throw away whichever half of the interval does not contain the sign change. Every step cuts the uncertainty in half—gaining $1\text{ binary bit}$ of precision per step (linear convergence, order $p = 1.000$). After $40$ bisections, your bracket has shrunk by $2^{-40} \approx 10^{-12}$. Bisection can *never* fail on a bracketed root, but taking $40$ to $50$ function evaluations is a slow trudge.
+2. **The Hare: Newton-Raphson ($p = 2.000$) & the Secant Chord ($p \approx 1.618$):** In 1669, **Isaac Newton** (testing John Wallis's cubic benchmark $x^3 - 2x - 5 = 0$ near $x_0 = 2$) and **Joseph Raphson** (1690) proposed sliding down the local tangent line of the curve:
+   $$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
+   Near a clean simple root, Newton's method is **quadratically convergent** ($p = 2.000$), **doubling the number of accurate decimal digits on every single step** ($1 \to 2 \to 4 \to 8 \to 16\text{ digits}$). And if you don't want to work out the calculus derivative $f'(x)$ by hand, replacing the tangent slope with the **Secant Chord** through the last two points gives superlinear convergence at the **golden-ratio power** $p = \phi = \frac{1+\sqrt{5}}{2} \approx 1.618$.
+   So what is the catch? Look at the denominator $f'(x_n)$ in Newton's formula (or $f(x_n) - f(x_{n-1})$ in the secant formula). If your search ever wanders near a peak, a valley, an inflection plateau, or a horizontal asymptote where the slope flattens out ($f'(x_n) \approx 0$), **the nearly horizontal tangent line shoots off to the horizon, catapulting $x_{n+1}$ miles away from the root or into an infinite loop!**
+
+### Richard Brent's 1973 Masterpiece: Algorithmic Paranoia
+
+In 1973, building on earlier work by Theodorus Dekker, the Australian mathematician **Richard P. Brent** asked a brilliant question in *Algorithms for Minimization Without Derivatives* {{cite:brent1973}}: *Can we combine the invincible safety net of Bisection with the superlinear sprint of Interpolation so that the solver runs at top speed on smooth curves, never requires a derivative, and is mathematically guaranteed never to fly off a cliff?*
+
+Brent's hybrid root-finding algorithm—the engine behind the SC-32's **`{{key:SOLVE}}`** key (`{{key:↱}}` + `{{key:7}}`, paired with the **`{{key:EQN}}`** equation editor)—achieves this through two mechanisms:
+* **Sideways Parabolic Fitting (Inverse Quadratic Interpolation, $p \approx 1.839$):** Suppose you have three points $(a, f(a))$, $(b, f(b))$, and $(c, f(c))$ near the root. If you fit an ordinary upright parabola $y = P(x)$ through three points, that parabola might turn around before reaching the $x$-axis and have *no real roots at all*. Brent instead turns his head sideways and fits $x$ as a **Lagrange quadratic polynomial of $y$** ($x = P(y)$) through $(f(a), a)$, $(f(b), b)$, and $(f(c), c)$, and then simply plugs in $y = 0$:
+  $$x_{\text{IQI}} = \frac{a f(b) f(c)}{(f(a)-f(b))(f(a)-f(c))} + \frac{b f(a) f(c)}{(f(b)-f(a))(f(b)-f(c))} + \frac{c f(a) f(b)}{(f(c)-f(a))(f(c)-f(b))}$$
+  Evaluating a sideways parabola at $y = 0$ is guaranteed to yield a single unique real number $x_{\text{IQI}}$, converging at order $p \approx 1.839$ (nearly doubling the correct digits on every step).
+* **The Five Watchdog Tests:** Brent never trusts an interpolated step blindly. At every single iteration, the algorithm keeps the root locked inside a shrinking sign-change cage $[a, b]$ where $f(a)f(b) \le 0$. Whenever Secant or Inverse Quadratic Interpolation proposes a leap $s$, **five watchdog conditions** inspect it: does $s$ land strictly inside the interior three-quarter window $\left(\frac{3a+b}{4}, b\right)$? And is the step contracting the bracket at least twice as fast as the previous steps? The instant an interpolated step tries to jump outside the cage or stalls on a flat plateau, **Brent's watchdog vetoes the interpolation and forces a guaranteed Bisection step $m = \frac{1}{2}(a + b)$!**
+
+| Root-Finding Algorithm | Convergence Order ($p$) | Requires Derivative $f'(x)$? | Guaranteed to Stay in Bracket? | Behavior Near Flat Slopes ($f'(x) \approx 0$) |
+| :--- | :---: | :---: | :---: | :--- |
+| **Bisection** | $1.000$ | No | Yes (Guaranteed) | Steady ($1\text{ bit/step}$), immune to slope traps |
+| **Newton-Raphson** | $2.000$ | Yes | No | Catastrophic divergence when $f'(x) \approx 0$ |
+| **Secant Chord** | $1.618$ ($\phi$) | No | No | Can fling iterates far outside the search region |
+| **Brent's Hybrid Method** | $1.839$ | No | **Yes (Guaranteed)** | **Instant bisection fallback; zero divergence** |
+
+### Five Real-World Mysteries Where the Unknown Hides Inside the Equation
+
+Once you have both Cardano's `{{key:POLY}}` workspace and Brent's `{{key:SOLVE}}` root hunter in your toolkit, equations across astronomy, fluid mechanics, thermodynamics, and solid mechanics unlock immediately:
+
+1. **Johannes Kepler's Transcendental Equation of Planetary Orbits (1609):** When a planet or satellite travels along an elliptical orbit of eccentricity $e$, **Kepler's Second Law** states that the radius vector from the central body sweeps out equal areas in equal times—the satellite speeds up as it swoops close to periapsis and slows down as it coasts out toward apoapsis. Where along its orbit is the satellite at a given time $t$ after periapsis? In his 1609 *Astronomia Nova*, **Johannes Kepler** showed that the mean time angle $M = \frac{2\pi t}{T}$ (**mean anomaly**) is linked to the geometric position angle $E$ (**eccentric anomaly**) by a deceptively simple equation:
+   $$M = E - e \sin E \implies f(E) = E - e\sin E - M = 0$$
+   In $E - e\sin E = M$, the angle $E$ sits both *outside* the sine function (as a linear arc) and *inside* the sine function ($\sin E$). Kepler himself lamented in 1609 that no algebraic formula can ever solve this equation for $E$ ("I am sufficiently satisfied that it cannot be solved *a priori*, on account of the different nature of the arc and the sine")—yet entering the residual into `{{key:EQN}}` in `{{key:RAD}}` mode and pressing `{{key:SOLVE}} E` zeroes in on the exact orbital angle in milliseconds.
+2. **Cyril Colebrook's Turbulent Pipe Friction Law (1939):** When water or rocket propellant rushes through a commercial steel pipe of diameter $D$ at high Reynolds number $\text{Re}$, what is the Darcy-Weisbach friction factor $f$? Even in violent turbulence, fluid right at the metal wall is brought to a stop by the no-slip condition, creating a microscopic **viscous laminar sublayer** of thickness $\delta_v \propto D / (\text{Re}\sqrt{f})$. When the flow is slow, this smooth viscous cushion buries the rough metal grain peaks ($\varepsilon/D$); as the flow speeds up, the cushion thins until the roughness peaks poke through into the turbulent core and shed eddies. Because the thickness of the shielding cushion itself depends on the friction factor $\sqrt{f}$, **Cyril Colebrook** (1939) {{cite:colebrook1939}} showed that $f$ is trapped on *both* sides of a base-10 logarithm (`{{key:LOG}}`):
+   $$\frac{1}{\sqrt{f}} = -2.0 \log_{10} \left( \frac{\varepsilon / D}{3.7} + \frac{2.51}{\text{Re}\sqrt{f}} \right)$$
+   Generations of engineers had to squint at logarithmic lines on the **Moody Chart** to estimate $f$; `{{key:SOLVE}}` extracts $f$ directly from Colebrook's implicit law to full precision.
+3. **Archimedes' Floating Sphere Equilibrium (Answering Chapter 6's Cliffhanger):** At the end of Chapter 6, we asked how deep ($h$) a solid oak marine buoy sphere of radius $R$ and density $\rho_s$ sinks when floating in water of density $\rho_w$. By **Archimedes' Principle**, the sphere sinks until the volume of its submerged spherical cap $\frac{1}{3}\pi h^2(3R - h)$ equals $\frac{\rho_s}{\rho_w}$ times the total sphere volume $\frac{4}{3}\pi R^3$:
+   $$\frac{1}{3}\pi h^2 (3R - h) = \frac{\rho_s}{\rho_w}\left(\frac{4}{3}\pi R^3\right) \implies h^3 - 3R h^2 + 4\left(\frac{\rho_s}{\rho_w}\right)R^3 = 0$$
+   Because the polynomial $h^2(3R - h)$ extends mathematically beyond the bottom and top poles of the physical sphere ($0 \le h \le 2R$), this depressed-linear cubic always possesses three real roots (*casus irreducibilis*)—and sorting them in `{{key:POLY}}` isolates the exact physical waterline depth $h$ inside $[0, 2R]$ as the middle root in Variable `3` (`{{key:RCL}} 3`).
+4. **Why Twisted Chalk Snaps at a $45^\circ$ Spiral (3D Principal Stress Eigenvalues) & Van der Waals Real Gases:** Take a piece of brittle blackboard chalk between your fingers and twist it in pure torsion. It does not shear off flat at $90^\circ$—it snaps along a clean **$45^\circ$ helical spiral**. Why? Because chalk is weak in tension, and any 3D state of normal and shear stress ($\sigma_{xx}, \sigma_{yy}, \sigma_{zz}, \tau_{xy}, \tau_{yz}, \tau_{xz}$) is secretly equivalent to three pure perpendicular pulls or pushes (**principal stresses** $\sigma_1 \ge \sigma_2 \ge \sigma_3$) along rotated coordinate axes where shear vanishes completely. Setting the determinant $\det(\boldsymbol{\sigma} - \lambda\mathbf{I}) = 0$ produces the **3D stress invariant cubic**:
+   $$\lambda^3 - I_1 \lambda^2 + I_2 \lambda - I_3 = 0$$
+   whose three real roots in `{{key:POLY}}` deliver the exact principal stresses. Similarly, when a real gas is compressed near its critical point, **Johannes Diderik van der Waals's** equation of state $\left(P + \frac{a}{V^2}\right)(V - b) = RT$ accounts for intermolecular attraction ($a/V^2$) and finite molecular volume ($b$), expanding into the cubic polynomial $PV^3 - (Pb + RT)V^2 + aV - ab = 0$ whose molar volume $V$ can be extracted either analytically via `{{key:POLY}}` or directly in unexpanded form via `{{key:SOLVE}}`.
+5. **Diode Load Lines, Open-Channel Critical Depth, Nuclear Criticality & Supersonic Rocket Nozzles:** Whenever a linear circuit, hydraulic channel, or compressible flow crosses a physical threshold, an implicit transcendental or high-degree balance governs the operating point:
+   * **William Shockley's Silicon Diode Load Line:** Finding the operating voltage $V$ where a linear series resistor load line $(V_s - V)/R$ intersects the exponential diode current $I_s(e^{V/V_T} - 1)$ requires solving a mixed linear-exponential equation that no logarithm can untangle.
+   * **Open-Channel Froude Critical Depth & Nuclear Reactor Buckling:** In civil hydraulics, water pouring over a spillway reaches **critical depth** $y_c$ where flow velocity equals the shallow-water gravity wave speed ($\text{Fr} = \frac{Q}{\sqrt{g A(y)^3 / T(y)}} = 1$), just as a spherical fission reactor core reaches criticality when its radial neutron flux satisfies the buckling eigencondition $\sin(B_g R) = 0$.
+   * **Aurel Stodola's De Laval Rocket Nozzle Area-Mach Law:** In compressible gas dynamics, accelerating hot combustion gas through a converging-diverging nozzle links the cross-sectional area ratio $A/A^*$ to the Mach number $M$ via $\frac{A}{A^*} = \frac{1}{M}\left(\frac{2}{\gamma+1}\left[1 + \frac{\gamma-1}{2}M^2\right]\right)^{\frac{\gamma+1}{2(\gamma-1)}}$, whose two roots on either side of the $M = 1$ throat represent the **subsonic diffuser branch** ($M < 1$) and the **supersonic rocket exhaust branch** ($M > 1$).
+
+### A Field Guide to Polynomial & Transcendental Roots Across Science
+
+Beyond our five core case studies, polynomial and implicit equations emerge wherever physical conservation laws balance competing effects. In hydraulics and fluid machinery, when supercritical water rushing down a dam spillway ($\text{Fr}_1 = v_1/\sqrt{gy_1} > 1$) slams into slow downstream river water, it erupts into a standing turbulent shock wave—a **hydraulic jump** whose downstream depth satisfies **Jean-Baptiste Bélanger's 1828 conjugate depth quadratic**:
+
+$$y_2^2 + y_1 y_2 - 2 y_1^2 \text{Fr}_1^2 = 0 \implies y_2 = \frac{y_1}{2}\left(\sqrt{1 + 8\text{Fr}_1^2} - 1\right)$$
+
+In the same way, matching a centrifugal pump's head curve $H_p(Q) = H_0 + b_1 Q - b_2 Q^2$ against a pipeline's frictional head loss $H_{\text{sys}}(Q) = H_{\text{stat}} + k Q^2$ produces the operating-point quadratic $(b_2 + k)Q^2 - b_1 Q - (H_0 - H_{\text{stat}}) = 0$, while terminal settling of a sphere under combined linear Stokes viscous drag and quadratic Newton pressure drag satisfies $c_2 v^2 + c_1 v - W_{\text{buoy}} = 0$.
+
+In thermal physics and acoustics, when Max Planck formulated the quantum law of blackbody radiation in 1900, finding the wavelength $\lambda_{\max}$ where a star's spectrum peaks (**Wien's Displacement Law**) required setting the derivative of $x^5/(e^x - 1)$ to zero—yielding the classic transcendental root equation:
+
+$$5\left(1 - e^{-x}\right) - x = 0 \implies x^* = 4.9651142317$$
+
+Chemical engineers likewise rely on `{{key:SOLVE}}` to extract an unknown outlet temperature difference $\Delta T_2$ from a target **Log Mean Temperature Difference** $\text{LMTD} = \frac{\Delta T_1 - \Delta T_2}{\ln(\Delta T_1 / \Delta T_2)}$ in shell-and-tube heat exchangers, whereas acoustic designers size the throat radius $a$ of a **Helmholtz resonator** of cavity volume $V$ and neck length $L$. Because sound waves radiating from an open neck drag a small plug of outside air back and forth—adding **Lord Rayleigh's radiation end-correction** $L_{\text{eff}} = L + 1.7a$ into the resonance formula $f_0 = \frac{c}{2\pi}\sqrt{\frac{\pi a^2}{V(L + 1.7a)}}$—solving for the required neck radius $a$ reduces to the quadratic $a^2 - \left(\frac{6.8\pi f_0^2 V}{c^2}\right) a - \left(\frac{4\pi f_0^2 V L}{c^2}\right) = 0$.
+
+Across orbital mechanics and structural design, low-degree polynomials govern equilibrium at every scale: finding the **geostationary orbital radius** where a satellite's orbital period matches Earth's sidereal rotation period $T$ is a pure cubic $r^3 - \frac{\mu T^2}{4\pi^2} = 0$; the slow **precession and fast nutation rates** $\Omega$ of a spinning top or spacecraft gyroscope satisfy the quadratic $I_t \Omega^2 - I_p \omega \Omega + M g L = 0$; and **Gabriel Lamé's thick-walled pressure vessel equation** $\sigma_\theta = P_i \frac{R_o^2 + R_i^2}{R_o^2 - R_i^2}$ reduces directly to a quadratic in the wall-thickness ratio $u = R_o/R_i$.
+
+### Inside the Symbolic Equation Bank ({{key:EQN}}): Pure Functions, Step Editing & Iverson Piecewise Logic
+
+Before we hand an implicit equation over to Brent's root hunter, how do we actually enter, inspect, edit, and structure a formula inside the SC-32's **`{{key:EQN}}` workspace** (`{{key:↱}}` + `{{key:STO}}`)—and how can a single RPN equation represent a **piecewise physical law** that changes its mathematical formula across a threshold?
+
+Unlike vintage keystroke-programmable calculators that mixed arithmetic formulas with destructive memory writes and spaghetti-code `GTO` jumps, the SC-32's **24-slot Equation Bank** treats every stored entry (`A` through `Z`, up to $96$ steps per equation) as a **pure, side-effect-free mathematical function**:
+* **Creating, Labeling & Navigating Equations (`{{key:EQN}}`, `NEW`, `{{key:LBL}}`, `{{key:↑}}`, `{{key:↓}}`, `{{key:<-}}`):** Pressing `{{key:EQN}}` (`{{key:↱}}` + `{{key:STO}}`) opens the Equation Catalog (`NEW`, `1:A`, `2:B`, … on the top softkeys). Tapping `NEW` (`{{key:LFU0}}`) or pressing `{{key:LBL}}` (`{{key:↰}}` + `{{key:+}}`) prompts **`LBL _`** and automatically arms the `A–Z` Alpha layer so a single tap assigns your equation's letter (`00 LBL A`). As you key in operations, each step is recorded with a line number (`01 RCL X`, `02 x²`, …). When typing a multi-digit constant such as `0.05`, pressing `{{key:ENTER}}` terminates the numeric literal cleanly without inserting an extra stack duplication; pressing `{{key:ENTER}}` a second time inserts an explicit `ENTER` stack-lift step. At any time, `{{key:↑}}` (`{{key:↰}}` + `{{key:8}}`) and `{{key:↓}}` (`{{key:↰}}` + `{{key:7}}`) step the cursor backward and forward through your numbered instructions: typing any key inserts right at the cursor, `{{key:<-}}` deletes the preceding step, and `{{key:RTN}}` (`{{key:↱}}` + `{{key:+}}`), `{{key:EQN}}`, or `{{key:C}}` saves the equation to non-volatile memory.
+* **Why `{{key:STO}}` Is Blocked Inside `{{key:EQN}}` (`INVALID FOR EQN`):** Inside an equation, pressing `{{key:RCL}}` followed by a letter (`A`–`Z`, or indirect `(i)`—recall from Chapter 2 that storing a slot number $1\dots 89$ in the index pointer `i` via `{{key:STO}} {{key:.}}` lets `{{key:RCL}} {{key:x∥y}}` dereference `(i)` dynamically) reads that variable onto the stack, and `{{key:RCL}} {{key:+}} A` / `{{key:RCL}} {{key:×}} A` performs in-place recall arithmetic. By contrast, `{{key:STO}}` is intentionally blocked (`INVALID FOR EQN`) so that when `{{key:XEQ}}`, `{{key:FN=}}` (`{{key:↰}}` + `{{key:XEQ}}`), `{{key:SOLVE}}`, `{{key:∫}}`, or `{{key:PLOT}}` evaluates your equation dozens or hundreds of times across an interval, it can never overwrite your stored laboratory constants.
+* **Macaulay's Singularity Bracket & Iverson's Indicator Logic (`{{key:x?0}}` and `{{key:x?y}}`):** In 1919, the Cambridge mathematician **William H. Macaulay** solved a headache that had plagued structural engineers since Euler: when a bridge beam carries concentrated point loads or steps in cross-section at stations $a_1, a_2, \dots$, writing a separate differential equation for every span is a nightmare. Macaulay introduced the **singularity ramp bracket** $\langle x - a \rangle_+ = \max(0, x - a)$, which equals $0$ to the left of $x = a$ and turns on smoothly as $(x - a)$ to the right of $x = a$. Four decades later, **Kenneth E. Iverson** (1962) generalized Macaulay's switch into the **Iverson Indicator Bracket $[P] \in \{1, 0\}$**, where any relational proposition $P$ evaluates directly to **`1` if True** and **`0` if False**:
+  $$f(x) = f_1(x)\cdot [x \le c] + f_2(x)\cdot [x > c] \qquad \text{or} \qquad \langle u \rangle_+ = u \cdot [u > 0] = \max(0, u)$$
+  On the SC-32, when an equation is evaluated, the six unary zero tests in **`{{key:x?0}}`** (`{{key:↱}}` + `{{key:÷}}`: `{{key:x=0}}`, `{{key:x≠0}}`, `{{key:x>0}}`, `{{key:x<0}}`, `{{key:x≥0}}`, `{{key:x≤0}}`) replace Register $X$ in place with `1.0` (True) or `0.0` (False), while the six binary two-register tests in **`{{key:x?y}}`** (`{{key:↰}}` + `{{key:÷}}`: `{{key:x=y}}`, `{{key:x≠y}}`, `{{key:x>y}}`, `{{key:x<y}}`, `{{key:x≥y}}`, `{{key:x≤y}}`) compare Register $X$ against Register $Y$, drop the stack, and place `1.0` or `0.0` in Register $X$. Consequently, on any expression $u$ sitting in Register $X$, the three-keystroke **Macaulay Ramp Idiom** **`{{key:ENTER}} {{key:x>0}} {{key:×}}`** duplicates $u$ into $Y$, converts $X$ into $[u > 0] \in \{0, 1\}$, and multiplies them to produce $\langle u \rangle_+ = \max(0, u)$—allowing you to model bilinear contact springs, progressive tax or tariff brackets, Zener clippers, and piecewise fluid drag laws inside a single continuous `{{key:EQN}}` formula!
+
+### How Brent's Two-Phase Engine and Kahan's Diagnostic Audit Work Together
+
+What happens behind the scenes when you hand an equation $f(x) = 0$ in `{{key:EQN}}` to Brent's `{{key:SOLVE}}` key, and how can you tell with certainty whether the number returned on the screen is a genuine root or a mathematical mirage?
+
+Brent's solver operates as a **two-phase state machine**:
+1. **Phase 1 — Guarded Secant & Golden-Ratio Outward Bracket Search:** If you place two initial guesses in **Registers $Y$ and $X$** that already straddle a sign change ($f(a)\cdot f(b) \le 0$), `{{key:SOLVE}}` uses your $(Y, X)$ stack shelves directly as the starting bracket $[a, b]$ and locks the jaws immediately. What if you store only a single seed $x_0$ via `{{key:STO}}` (or two guesses on the same side of the axis where $f(a)\cdot f(b) > 0$)? Phase 1 generates a companion probe ($\Delta = 0.1|x_0|$) and marches outward for up to $50$ steps using clamped secant steps—or expanding by the **golden ratio** $\phi \approx 1.618034$ whenever the slope is flat—while automatically pulling back any probe that steps outside the valid domain of $\ln x$ or $\sqrt{x}$, and detecting even-multiplicity tangent roots like $(x - 2)^2 = 0$ when $|b - a| < 10^{-12}$ and $|f(b)| < 10^{-7}$.
+2. **Phase 2 — Inverse Quadratic / Secant Sprint with Five Bisection Watchdogs:** Once a sign change $f(a)\cdot f(b) \le 0$ is caged, Phase 2 attempts **Inverse Quadratic Interpolation (IQI)** whenever three distinct values $(f(a), f(b), f(c))$ are available, or a **Secant Chord** step otherwise. Before accepting the proposed step $s$, Brent's five watchdogs verify that $s$ lies strictly inside the three-quarter window $\left(\frac{3a+b}{4}, b\right)$ and shrinks the step width by at least $50\%$ every two steps; if any check fails, the engine takes a guaranteed **Bisection** step $m = \frac{1}{2}(a + b)$ until $|f(b)| \le 10^{-13}$ or the half-bracket width reaches machine tolerance $\text{tol} = 2\varepsilon_{\text{mach}}|b| + \frac{1}{2}\cdot 10^{-12}$.
+
+Even more importantly, following **William Kahan's** diagnostic solver philosophy, you should always distinguish a genuine crossing root from a discontinuous pole. When `{{key:SOLVE}}` finishes on the SC-32, it writes the converged root $x^*$ into your target variable and pushes $x^*$ onto **Register $X$** while lifting your starting guess (or upper bracket bound) into **Register $Y$** and preserving the prior stack contents in **Registers $Z$ and $T$**. What if your initial bracket accidentally straddled a **vertical asymptote (discontinuous pole)** where the curve jumps from $-\infty$ to $+\infty$, such as $f(x) = \tan x$ across $x = \pi/2$ or $f(x) = \frac{1}{x - 2}$ across $x = 2$? Because $f(x)$ is negative on the left of the pole and positive on the right ($f(a)\cdot f(b) < 0$), bisection will pinch tightly around the pole $x = 2.0000000000$. Because `{{key:SOLVE}}` has already stored $x^*$ in your equation's variable, simply pressing **`{{key:XEQ}}`** (followed by your equation's letter) evaluates the residual $f(x^*)$ directly in Register $X$: at a **true root**, `{{key:XEQ}}` returns $f(x^*) \approx 0$ ($|f(x^*)| \le 10^{-12}$), whereas at a **false pole**, `{{key:XEQ}}` exposes a gigantic residual ($|f(x^*)| \gg 1$, or `DIVIDE BY 0`)!
+
+---
+
+## On the Stack: Horner Polynomials, POLY & Brent's SOLVE Workbench
+
+We now have three complementary tools for polynomial and nonlinear equations: Horner's two-beat rhythm for evaluating polynomials from the inside out via `{{key:ENTER}} {{key:ENTER}} {{key:ENTER}}`, Cardano's analytical `{{key:POLY}}` workspace for extracting all three real or complex roots of a cubic or quadratic at once, and Richard Brent's bracketed `{{key:SOLVE}}` engine for hunting down transcendental roots in `{{key:EQN}}`. Let us step onto the SC-32 workbench and put all three engines through their paces across polynomial evaluations, principal-stress eigenvalues, and implicit engineering conservation laws.
 
 {{res:sc32_cubic_roots:screenshot|Cubic polynomial x^3 - 6x^2 + 11x - 6 = 0 solved via POLY}}
 
-## Physical Equilibrium, Root Bracketing, and Hybrid Solvers
+### Horner's Nested Evaluation, T-Register Flooding & Biquadratic Reductions
 
-Root finding determines the equilibrium state $x^*$ where opposing physical forces cancel to zero: the neutral axis of a loaded structural beam where tensile and compressive stresses balance, the hydraulic flow rate where Darcy-Weisbach pipe friction matches gravitational head drop, or the orbital eccentric anomaly $E$ that satisfies Kepler's time equation $f(x^*) = 0$. Physically, bracketing a root is identical to closing the jaws of a vernier caliper around the zero-crossing interval $[a, b]$ where the residual flips sign.
+To evaluate $P(x) = 4x^4 - 3x^3 + 2x^2 - 5x + 7$ at $x = 2.5$ in Horner's nested form $P(2.5) = (((4(2.5) - 3)(2.5) + 2)(2.5) - 5)(2.5) + 7$ with zero parentheses and zero memory registers, keying `{{res:sc32_07_polynomials_brent_solver_seq_01:keys}}` streams directly to **`{{res:sc32_07_polynomials_brent_solver_seq_01:value}}`**:
 
-On the StackCalc SC-32, you load those two bracket bounds $(a, b)$ directly into Registers $Y$ and $X$ and enter the governing postfix expression into the Equation Editor. For cubic and quadratic characteristic equations, `{{key:POLY}}` extracts all real and complex roots analytically via Cardano's and Viète's closed-form resolvents; for arbitrary transcendental equations, `{{key:SOLVE}}` drives Richard Brent's hybrid algorithm, combining the guaranteed enclosure of bisection with the superlinear $\phi \approx 1.618$ convergence of secant and inverse quadratic interpolation.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `2.5 {{key:ENTER}} 4 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $10.0000$ | First term: $a_4 x = 4(2.5) = 10.0$ |
+| `3 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7.0000$ | Add next coefficient: $10.0 - 3 = 7.0$ |
+| `2.5 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $17.5000$ | Digit entry lifts $7.0$ to $Y$; multiply: $(7.0)(2.5) = 17.5$ |
+| `2 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $19.5000$ | Add next coefficient: $17.5 + 2 = 19.5$ |
+| `2.5 {{key:×}} 5 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $43.7500$ | Lift & multiply: $(19.5)(2.5) - 5 = 43.75$ |
+| `2.5 {{key:×}} 7 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$116.3750$** | Final evaluation: $(43.75)(2.5) + 7 = \mathbf{116.3750}$ |
 
-{{blocks:algebra_factoring_area|Algebra Factoring Stage Root Model}}
-*Figure 7.1: Geometric decomposition of polynomial roots on the Algebra Factoring Stage, illustrating factor dimensions prior to numerical bracketing.*
+When $x$ has many digits (such as $x = 2.71828$), flood the 4-register stack first via `2.71828 {{key:ENTER}} {{key:ENTER}} {{key:ENTER}}`. Because Register $T$ replicates downward on every dyadic drop, you stream `4 {{key:×}} 3 {{key:-}} {{key:×}} 2 {{key:+}} {{key:×}} 5 {{key:-}} {{key:×}} 7 {{key:+}}` without ever re-typing $x$!
+
+That same T-register replication evaluates **Martin Green's solar-cell fill factor** $FF = \frac{v_{\text{oc}} - \ln(v_{\text{oc}} + 0.72)}{v_{\text{oc}} + 1}$ at $v_{\text{oc}} = 25.145$ while typing `25.145` only once: key `25.145 {{key:ENTER}} {{key:ENTER}} {{key:ENTER}}`, then `0.72 {{key:+}} {{key:LN}} {{key:-}}` ($\to 21.8921$), and finally `{{key:x⇄y}} 1 {{key:+}} {{key:÷}}` to resolve **$FF = 0.837334$**. Similarly, for the coupled-oscillator **biquadratic** $x^4 - 10x^2 + 9 = 0$ ($u = x^2$), keying `10 {{key:x²}} 4 {{key:ENTER}} 9 {{key:×}} {{key:-}} {{key:√x}}` computes $\sqrt{\Delta} = 8.0000$, `10 {{key:x⇄y}} {{key:+}}` forms $18.0000$ while saving $8.0000$ in `LASTX`, `{{key:LASTX}} 10 {{key:x⇄y}} {{key:-}}` forms $2.0000$, and `2 {{key:÷}} {{key:√x}} {{key:x⇄y}} 2 {{key:÷}} {{key:√x}}` leaves both positive normal-mode frequencies side by side on the stack ($Y = \mathbf{1.0000},\; X = \mathbf{3.0000}$).
 
 ---
 
-## Characteristic Polynomial Solver (`{{key:POLY}}`)
+### Cardano's Analytical Cubic & Quadratic Solver
 
-Root extraction of polynomial characteristic equations is fundamental to structural vibration analysis, aircraft flight control stability, circuit pole-zero placement, and chemical reaction equilibria.
-
-The StackCalc SC-32 features an onboard **Characteristic Polynomial Solver (`{{key:POLY}}`)** mapped to Right Shift `{{key:↱}}` on the `{{key:XEQ}}` key. The engine extracts all real and complex roots for general cubic and quadratic polynomials analytically:
-
-$$A x^3 + B x^2 + C x + D = 0$$
+Pressing `{{key:POLY}}` (`Right Shift {{key:↱}} above {{key:XEQ}}`) opens the analytical polynomial solver for $Ax^3 + Bx^2 + Cx + D = 0$:
 
 | Interface Element | Display Legend / Key Assignment | Functional Action / Internal Allocation |
 | :--- | :--- | :--- |
 | **Menu Prompt** | `Ax^3 + Bx^2 + Cx + D = 0` | Prompts for polynomial coefficient entry |
 | **LFU Softkeys** | `{{key:A}} {{key:B}} {{key:C}} {{key:D}} {{key:EXEC}} {{key:CLR}}` | Softkey assignments for coefficient entry and execution |
-| **Internal Storage: Root 1** | Variables `"1"` (Real), `"2"` (Imaginary) | Stores first calculated root |
+| **Internal Storage: Root 1** | Variables `"1"` (Real), `"2"` (Imaginary) | Stores first calculated root (also placed in Registers $Y$ and $X$) |
 | **Internal Storage: Root 2** | Variables `"3"` (Real), `"4"` (Imaginary) | Stores second calculated root |
 | **Internal Storage: Root 3** | Variables `"5"` (Real), `"6"` (Imaginary) | Stores third calculated root |
-| **Active Stack Output** | Register $Y$: $\operatorname{Re}(\text{Root 1})$, Register $X$: $\operatorname{Im}(\text{Root 1})$ | Primary root delivered directly in $(Y, X)$ Gaussian format |
 
-### Cardano's Analytical Cubic & Quadratic Engine
-Numerical root finders are indispensable for transcendental curves, but when an engineer faces a cubic or quadratic characteristic polynomial, iterative guessing has blind spots: a numerical search can step right over two closely-spaced resonant poles, stall near an inflection point, or miss complex conjugate roots that govern underdamped oscillatory stability. To eliminate those blind spots, the `{{key:POLY}}` engine implements **Gerolamo Cardano's closed-form analytic cubic resolvent** alongside a native complex quadratic solver.
+Any unentered coefficient defaults to $0.0$ (at least one of $A$ or $B$ must be non-zero, otherwise `{{key:EXEC}}` displays `A ≠ 0`). Let us trace five analytical benchmarks inside `{{key:POLY}}`:
 
-When the leading cubic coefficient $A$ is non-zero, Cardano's method begins with a geometric coordinate shift $x = t - \frac{B}{3A}$ that slides the horizontal origin directly onto the cubic's point of inflection. That single substitution annihilates the quadratic $x^2$ term and reduces the general cubic to the clean **depressed cubic**:
+#### Casus Irreducibilis Cubic with Three Distinct Real Roots ($x^3 - 6x^2 + 11x - 6 = 0$)
 
-$$t^3 + p t + q = 0, \qquad p = \frac{3AC - B^2}{3A^2}, \qquad q = \frac{27A^2D - 9ABC + 2B^3}{27A^3}$$
+To see how `{{key:POLY}}` navigates *casus irreducibilis* ($\Delta < 0$) automatically using François Viète's trigonometric cosine trisection, let us solve the classic factored cubic $(x - 1)(x - 2)(x - 3) = x^3 - 6x^2 + 11x - 6 = 0$. Inside `{{key:POLY}}`, load $A = 1$, $B = -6$, $C = 11$, and $D = -6$, then press `{{key:EXEC}}`:
 
-The qualitative character of the three roots is governed entirely by the **cubic discriminant**:
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `1 {{key:A}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Coefficient $A = 1.0$ |
+| `6 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $1.0000$ | $-6.0000$ | Coefficient $B = -6.0$ |
+| `11 {{key:C}}` | $0.0000$ | $1.0000$ | $-6.0000$ | $11.0000$ | Coefficient $C = 11.0$ |
+| `6 {{key:+/-}} {{key:D}}` | $1.0000$ | $-6.0000$ | $11.0000$ | $-6.0000$ | Coefficient $D = -6.0$ |
+| `{{key:EXEC}}` | $1.0000$ | $-6.0000$ | **$1.000000$** | **$0.000000$** | Primary root $r_1 = 1.0 + 0.0i$ in $(Y, X)$; roots $1, 2, 3$ in vars `1`–`6` |
 
-$$\Delta = \left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3$$
+Notice that `{{key:EXEC}}` sorts purely real roots in ascending order ($r_1 = 1.0$ in variables `1, 2`, $r_2 = 2.0$ in variables `3, 4`, and $r_3 = 3.0$ in variables `5, 6`), while placing the real part of $r_1$ in Register $Y$ and its zero imaginary part in Register $X$.
 
-To evaluate the depressed roots without numerical branch cuts, the SC-32 computes the complex radical $u = \sqrt[3]{-q/2 + \sqrt{\Delta}}$ via polar De Moivre trisection ($r^{1/3}[\cos(\theta/3) + i\sin(\theta/3)]$) and pairs it with $v = \frac{-p/3}{u}$ (or $\sqrt[3]{-q/2 - \sqrt{\Delta}}$ when $|u| \le 10^{-14}$), rotating in the complex plane by the primitive cube roots of unity $\omega = -\frac{1}{2} + i\frac{\sqrt{3}}{2}$ and $\omega^2$. When $\Delta > 0$, the cubic crosses the horizontal axis only once, yielding one real root ($t_1 = u + v$) and a complex conjugate pair ($t_{2,3} = \omega u + \omega^2 v,\; \omega^2 u + \omega v$). When $\Delta = 0$, the curve is tangent to the axis, producing three real roots with at least one repeated root. Most intriguing of all is $\Delta < 0$—the famous *casus irreducibilis* that mystified sixteenth-century algebraists because the expression $\sqrt{\Delta}$ becomes purely imaginary precisely when all three roots of the cubic are real and distinct! As Rafael Bombelli and François Viète discovered, taking the polar cube root of those complex conjugates trisects their phase angle ($\cos(\theta/3)$) so their imaginary parts cancel out completely, leaving all three distinct real roots with residuals $< 10^{-12}$ clamped cleanly to zero and sorted with real roots first.
+#### Cubic with Complex Conjugate Roots ($x^3 - x^2 + x - 1 = (x-1)(x^2+1) = 0$)
 
-### Singularity Rule ($A \ne 0$ or $B \ne 0$), Native Quadratic Fallback & Quadratic Embedding ($D = 0$ Default)
-Because a polynomial requires at least a quadratic or cubic leading term, at least one of $A$ or $B$ must be non-zero; pressing `{{key:EXEC}}` when both $A = 0$ and $B = 0$ triggers `A ≠ 0`. Any coefficient you do not explicitly enter **defaults to $0$**, which gives you two convenient ways to solve a quadratic equation $a x^2 + b x + c = 0$. In **quadratic embedding**, you simply enter the quadratic coefficients into the first three softkeys via `a {{key:A}} b {{key:B}} c {{key:C}} {{key:EXEC}}`; with $D = 0$ by default, the solver factors $a x^3 + b x^2 + c x = x(a x^2 + b x + c) = 0$, extracting the trivial root $0$ alongside the two exact quadratic roots in variables `3` (`{{key:RCL}} 3`) and `5` (`{{key:RCL}} 5`):
+Now watch what happens when the cubic discriminant is strictly positive ($\Delta > 0$), so the cubic crosses the horizontal axis only once at $r_1 = 1.0$ and has a complex conjugate pair $r_{2,3} = 0.0 \pm 1.0i$. Inside `{{key:POLY}}`:
 
-$$a x^3 + b x^2 + c x + 0 = x(a x^2 + b x + c) = 0 \implies x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$$
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `1 {{key:A}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Coefficient $A = 1.0$ |
+| `1 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $1.0000$ | $-1.0000$ | Coefficient $B = -1.0$ |
+| `1 {{key:C}}` | $0.0000$ | $1.0000$ | $-1.0000$ | $1.0000$ | Coefficient $C = 1.0$ |
+| `1 {{key:+/-}} {{key:D}}` | $1.0000$ | $-1.0000$ | $1.0000$ | $-1.0000$ | Coefficient $D = -1.0$ |
+| `{{key:EXEC}}` | $1.0000$ | $-1.0000$ | **$1.000000$** | **$0.000000$** | Real $r_1=1$ in $Y$, Imag $r_1=0$ in $X$; conjugate pair $\pm i$ in vars `3`–`6` |
 
-Alternatively, in **native quadratic fallback**, you leave $A = 0$ and enter `b {{key:B}} c {{key:C}} d {{key:D}} {{key:EXEC}}`, which invokes the closed-form complex quadratic formula $x = \frac{-C \pm \sqrt{C^2 - 4BD}}{2B}$ directly across variables `1`–`4`. The same zero-default rule streamlines sparse cubics: to solve a pure cubic such as $x^3 - 8 = 0$, you only need to key `1 {{key:A}} 8 {{key:+/-}} {{key:D}} {{key:EXEC}}`, since $B$ and $C$ default to zero automatically.
+Recalling `{{key:RCL}} 3` ($0.0000$) and `{{key:RCL}} 4` ($+1.0000$) inspects $r_2 = +i$, while `{{key:RCL}} 5` ($0.0000$) and `{{key:RCL}} 6` ($-1.0000$) inspects $r_3 = -i$.
 
----
+For the boundary case $\Delta = 0$—represented by the critically damped third-order RLC filter polynomial $s^3 + 12s^2 + 45s + 50 = (s+2)(s+5)^2 = 0$—keying `{{res:sc32_07_polynomials_brent_solver_seq_10:keys}}` inside `{{key:POLY}}` returns **`{{res:sc32_07_polynomials_brent_solver_seq_10:value}}`** as the first sorted real root in $(Y = -5.000000,\; X = 0.000000)$, storing both copies of the repeated root ($-5.0, -5.0$) and the simple root ($-2.0$) in variables `1`, `3`, and `5`.
 
-### Cardano Cubic with Three Real Roots
+#### 3D Cauchy Principal Stress Eigenvalues ($\lambda^3 - 70\lambda^2 + 1175\lambda - 5750 = 0$)
 
-Suppose a three-mass mechanical oscillator or a 3D principal stress state has the cubic characteristic polynomial:
-$$x^3 - 6x^2 + 11x - 6 = 0$$
-Factoring by inspection shows three distinct real roots:
-$$(x - 1)(x - 2)(x - 3) = 0 \implies x_1 = 1.0, \quad x_2 = 2.0, \quad x_3 = 3.0$$
+For a 3D structural steel element with stress invariants $I_1 = 70\text{ MPa}$, $I_2 = 1175\text{ MPa}^2$, and $I_3 = 5750\text{ MPa}^3$, the characteristic polynomial $\det(\boldsymbol{\sigma} - \lambda\mathbf{I}) = \lambda^3 - I_1\lambda^2 + I_2\lambda - I_3 = 0$ is guaranteed by the symmetry of Cauchy's stress tensor to lie in *casus irreducibilis* ($\Delta \le 0$) with three real eigenvalues $\sigma_3 \le \sigma_2 \le \sigma_1$. Entering the invariants into `{{key:POLY}}` via `{{res:sc32_07_polynomials_brent_solver_seq_12:keys}}` returns **`{{res:sc32_07_polynomials_brent_solver_seq_12:value}}`**:
 
-To extract all three roots analytically on the stack, press `{{key:POLY}}` to open the polynomial workspace on the LFU softkeys. Key `1` and press `{{key:A}}` to store the cubic coefficient $A = 1.0$, key `6 {{key:+/-}}` and press `{{key:B}}` to store $B = -6.0$, key `11` and press `{{key:C}}` to store $C = 11.0$, and key `6 {{key:+/-}}` and press `{{key:D}}` to store $D = -6.0$. Pressing `{{key:EXEC}}` immediately evaluates Cardano's closed-form resolvent:
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `1 {{key:A}} 70 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $1.0000$ | $-70.0000$ | Coefficients $A, B = -I_1$ |
+| `1175 {{key:C}} 5750 {{key:+/-}} {{key:D}}` | $1.0000$ | $-70.0000$ | $1175.0000$ | $-5750.0000$ | Coefficients $C = I_2, D = -I_3$ |
+| `{{key:EXEC}}` | $1.0000$ | $-70.0000$ | **$10.000000$** | **$0.000000$** | Minor stress $\sigma_3 = 10.0$ in $Y$; $\sigma_2, \sigma_1$ in vars `3`, `5` |
+| `{{key:RCL}} 5` | $-70.0000$ | $10.0000$ | $0.0000$ | **$48.027756$** | Recall major principal stress $\sigma_1$ into Register $X$ |
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1 {{key:A}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Coefficient $A = 1.0$ |
-| 2 | `6 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $1.0000$ | $-6.0000$ | Coefficient $B = -6.0$ |
-| 3 | `11 {{key:C}}` | $0.0000$ | $1.0000$ | $-6.0000$ | $11.0000$ | Coefficient $C = 11.0$ |
-| 4 | `6 {{key:+/-}} {{key:D}}` | $1.0000$ | $-6.0000$ | $11.0000$ | $-6.0000$ | Coefficient $D = -6.0$ |
-| 5 | `{{key:EXEC}}` | $1.0000$ | $-6.0000$ | **$1.000000$** | **$0.000000$** | Primary root $r_1 = 1.0 + 0.0i$ in $(Y, X)$; roots $1, 2, 3$ stored in vars `1`–`6` |
+Once $\sigma_1 = 48.0278\text{ MPa}$ is in Register $X$ and $\sigma_3 = 10.0000\text{ MPa}$ is in Register $Z$, keying `{{key:R↓}} {{key:x⇄y}} {{key:-}} 2 {{key:÷}}` immediately yields Henri Tresca's **maximum shear stress** $\tau_{\max} = \frac{1}{2}(\sigma_1 - \sigma_3) = \mathbf{19.0139\text{ MPa}}$!
 
-Upon pressing `{{key:EXEC}}`, the Cardano analytical solver simultaneously writes all three complex root pairs $(r_k = \operatorname{Re} + i\operatorname{Im})$ into numbered storage registers `1` through `6`:
+#### Archimedes' Floating Oak Sphere Draft ($h^3 - 1.5h^2 + 0.325 = 0$)
 
-| Storage Variable | Extracted Value | Polynomial Root Assignment |
-| :---: | :---: | :--- |
-| **`1` / `2`** | **`1.0000000000` / `0.0000000000`** | Root $r_1 = 1.0 + 0.0i$ (also placed in Registers $Y$ and $X$) |
-| **`3` / `4`** | **`2.0000000000` / `0.0000000000`** | Root $r_2 = 2.0 + 0.0i$ |
-| **`5` / `6`** | **`3.0000000000` / `0.0000000000`** | Root $r_3 = 3.0 + 0.0i$ |
+For our solid oak marine buoy sphere of radius $R = 0.50\text{ m}$ ($1.00\text{ m}$ diameter) and specific gravity $\rho_s/\rho_w = 0.65$ floating in freshwater, plugging $R = 0.50$ and $\rho_s/\rho_w = 0.65$ into $h^3 - 3Rh^2 + 4(\rho_s/\rho_w)R^3 = 0$ gives $h^3 - 1.5h^2 + 0.325 = 0$. Solving this buoyant spherical-cap equilibrium equation in `{{key:POLY}}` via `{{res:sc32_07_polynomials_brent_solver_seq_13:keys}}` produces **`{{res:sc32_07_polynomials_brent_solver_seq_13:value}}`** ($60.14\%$ of the buoy's diameter submerged, while the algebraic companion roots $-0.4123\text{ m}$ and $1.3109\text{ m}$ lie outside the physical sphere $[0, 1.00\text{ m}]$):
 
-Because all three roots are stored in non-volatile variables `1` through `6`, you can recall any root to the active stack at will: `{{key:RCL}} 1` and `{{key:RCL}} 2` recall the real and imaginary parts of Root 1 ($1.0 + 0.0i$), `{{key:RCL}} 3` and `{{key:RCL}} 4` recall Root 2 ($2.0 + 0.0i$), and `{{key:RCL}} 5` and `{{key:RCL}} 6` recall Root 3 ($3.0 + 0.0i$).
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `1 {{key:A}} 1.5 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $1.0000$ | $-1.5000$ | Load cubic and quadratic coefficients $A = 1.0,\; B = -1.5$ |
+| `0 {{key:C}} 0.325 {{key:D}}` | $1.0000$ | $-1.5000$ | $0.0000$ | $0.3250$ | Load linear and constant coefficients $C = 0.0,\; D = 0.325$ |
+| `{{key:EXEC}}` | $1.0000$ | $-1.5000$ | $-0.412257$ | $0.0000$ | Solve cubic; real parts of 3 roots stored in Variables `1`, `3`, `5` |
+| `{{key:RCL}} 3` | $-1.5000$ | $-0.412257$ | $0.0000$ | **$0.601390$** | Recall physical immersion depth $h \in [0, 2R]$ from Variable `3` |
 
-### Cubic with Complex Conjugate Roots
+#### Tartaglia-Galileo Ballistic Trajectory Quadratic ($360.3673 u^2 - 1200u + 510.3673 = 0$)
 
-Now consider a system that combines one real decay mode with an undamped oscillatory pair:
-$$x^3 - x^2 + x - 1 = 0 \implies (x - 1)(x^2 + 1) = 0$$
-Its exact roots are one real root and two purely imaginary conjugate roots:
-$$x_1 = 1.0 + 0.0i, \quad x_2 = 0.0 + 1.0i, \quad x_3 = 0.0 - 1.0i$$
+For an elevated target at horizontal range $x = 1,200\text{ m}$ and height $y = 150\text{ m}$ engaged at muzzle speed $v_0 = 140\text{ m/s}$ ($\frac{gx^2}{2v_0^2} = 360.3673\text{ m}$), how do you solve a quadratic equation $a u^2 + b u + c = 0$ inside the cubic `{{key:POLY}}` workspace? You have two equally clean options: you can set the cubic coefficient $A = 0$ (`0 {{key:A}}`) and load $(B = a,\; C = b,\; D = c)$ to solve $Bx^2 + Cx + D = 0$ directly, or you can map the quadratic coefficients into $(A = a,\; B = b,\; C = c,\; D = 0)$, which multiplies the quadratic by $u$ to form $u(a u^2 + b u + c) = 0$ (adding a known dummy root at $u = 0$ while placing the two quadratic roots in variables `3` and `5`). Using the shifted $D = 0$ form, executing `{{res:sc32_07_polynomials_brent_solver_seq_02:keys}}` yields **`{{res:sc32_07_polynomials_brent_solver_seq_02:value}}`**:
 
-Press `{{key:POLY}}`, load the alternating coefficients with `1 {{key:A}}`, `1 {{key:+/-}} {{key:B}}`, `1 {{key:C}}`, and `1 {{key:+/-}} {{key:D}}`, and press `{{key:EXEC}}`:
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `360.3673 {{key:A}}` | $0.0000$ | $0.0000$ | $0.0000$ | $360.3673$ | Quadratic coefficient $A$ |
+| `1200 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $360.3673$ | $-1200.0000$ | Quadratic coefficient $B$ |
+| `510.3673 {{key:C}}` | $0.0000$ | $360.3673$ | $-1200.0000$ | $510.3673$ | Quadratic coefficient $C$ |
+| `0 {{key:D}}` | $360.3673$ | $-1200.0000$ | $510.3673$ | $0.0000$ | Depressed constant ($D$ defaults to $0.0$ if omitted) |
+| `{{key:EXEC}}` | $360.3673$ | $-1200.0000$ | $0.0000$ | $0.0000$ | Solve polynomial; real roots $(0, u_1, u_2)$ stored in Variables `1`, `3`, `5` |
+| `{{key:RCL}} 3 {{key:ATAN}}` | $-1200.0000$ | $0.0000$ | $0.0000$ | **$26.590116$** | Low direct-fire trajectory $\theta_1$ in degrees |
+| `{{key:RCL}} 5 {{key:ATAN}}` | $0.0000$ | $0.0000$ | $26.590116$ | **$70.532306$** | High plunging mortar arc $\theta_2$ in degrees |
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1 {{key:A}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Coefficient $A = 1.0$ |
-| 2 | `1 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $1.0000$ | $-1.0000$ | Coefficient $B = -1.0$ |
-| 3 | `1 {{key:C}}` | $0.0000$ | $1.0000$ | $-1.0000$ | $1.0000$ | Coefficient $C = 1.0$ |
-| 4 | `1 {{key:+/-}} {{key:D}}` | $1.0000$ | $-1.0000$ | $1.0000$ | $-1.0000$ | Coefficient $D = -1.0$ |
-| 5 | `{{key:EXEC}}` | $1.0000$ | $-1.0000$ | **$1.000000$** | **$0.000000$** | Real $r_1=1$ in $Y$, Imag $r_1=0$ in $X$; conjugate pair $\pm i$ in vars `3`–`6` |
-
-The real root $r_1 = 1.000000 + 0.000000i$ is delivered immediately to $(Y, X)$ and stored in Variables `1` and `2`, while the complex conjugate pair is written cleanly into Variables `3` and `4` ($\operatorname{Re} = \mathbf{0.000000},\; \operatorname{Im} = \mathbf{+1.000000}$) and Variables `5` and `6` ($\operatorname{Re} = \mathbf{0.000000},\; \operatorname{Im} = \mathbf{-1.000000}$).
-
-When our governing equation sits right on the discriminant boundary $\Delta = 0$ between real and complex roots, `{{key:POLY}}` exposes repeated critical-damping poles just as cleanly. Suppose a third-order linear passive RLC filter network has the Laplace-domain characteristic denominator polynomial:
-
-$$s^3 + 12 s^2 + 45 s + 50 = 0$$
-
-Analytical factorization yields $(s + 2)(s + 5)^2 = 0$, giving an isolated real pole at $s = -2\text{ Np/s}$ and a critically damped double pole at $s = -5\text{ Np/s}$ where the cubic discriminant $\Delta = 0$ sits precisely on the boundary between overdamped real poles and underdamped complex conjugate oscillations. Inside `{{key:POLY}}`, keying `{{res:sc32_07_polynomials_brent_solver_seq_10:keys}}` loads the leading cubic and quadratic coefficients via `1 {{key:A}} 12 {{key:B}}` ($Y = 1.0000,\; X = 12.0000$) and the linear and constant terms via `45 {{key:C}} 50 {{key:D}}` ($Y = 45.0000,\; X = 50.0000$). Pressing `{{key:EXEC}}` evaluates Cardano's closed-form roots, returning **`{{res:sc32_07_polynomials_brent_solver_seq_10:value}}`** as the first sorted real root in $(Y, X)$ ($Y = \mathbf{-5.000000},\; X = \mathbf{0.000000}$) and storing all three real poles ($s_1 = -5.0, s_2 = -5.0, s_3 = -2.0$) in variables `1`, `3`, and `5`.
+Similarly, for our forensic highway braking quadratic $v_0^2 + 20.594\,v_0 - 1166.99 = 0$ ($t_r = 1.5\text{ s},\; \mu = 0.70,\; d = 85.0\text{ m}$), keying `1 {{key:A}} 20.594 {{key:B}} 1166.99 {{key:+/-}} {{key:C}} 0 {{key:D}} {{key:EXEC}} {{key:RCL}} 5` inside `{{key:POLY}}` extracts the positive initial vehicle speed **$v_0 = 25.301\text{ m/s}$** ($91.1\text{ km/h}$).
 
 ---
 
-### Physical Cubics in Action: 3D Principal Stress Eigenvalues & Floating Buoy Equilibrium
+### Hunting Transcendental Roots & Auditing Kahan's Stack with Brent's SOLVE
 
-This ability of `{{key:POLY}}` to deliver all three roots of a cubic in sorted order shines brightest when every root has an independent physical meaning—as in 3D continuum mechanics and hydrostatics.
+Let us first compare `{{key:SOLVE}}` and `{{key:POLY}}` side by side on two famous cubics (remembering that inside `{{key:EQN}}`, recalling a variable letter automatically lifts the stack, whereas two consecutive numeric literals require `{{key:ENTER}}` between them so their digits do not concatenate):
 
-Consider a structural steel element subjected to a 3D Cauchy stress tensor (in $\text{MPa}$) with normal components $\sigma_{xx} = 40, \sigma_{yy} = 20, \sigma_{zz} = 10$ and in-plane shear $\tau_{xy} = 15$ ($\tau_{yz} = \tau_{xz} = 0$). Setting the characteristic determinant $\det(\boldsymbol{\sigma} - \lambda \mathbf{I}) = 0$ expresses the principal stresses via the three coordinate-frame stress invariants $I_1 = \text{tr}(\boldsymbol{\sigma}) = 70\text{ MPa}$, $I_2 = 1175\text{ MPa}^2$, and $I_3 = \det(\boldsymbol{\sigma}) = 5750\text{ MPa}^3$:
+1. **John Wallis & Isaac Newton's 1669 Cubic Benchmark ($x^3 - 2x - 5 = 0$):** Programming `X {{key:3}} {{key:yˣ}} 2 {{key:ENTER}} X {{key:×}} {{key:-}} 5 {{key:-}}` into `{{key:EQN}}`, seeding Newton's initial guess `2 {{key:STO}} X`, and pressing `{{key:SOLVE}} X` converges to **$2.0945514815$**:
 
-$$\det(\boldsymbol{\sigma} - \lambda \mathbf{I}) = (10 - \lambda)[(40 - \lambda)(20 - \lambda) - 225] = 0 \implies \lambda^3 - 70 \lambda^2 + 1175 \lambda - 5750 = 0$$
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `2 {{key:STO}} X` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Initial guess loaded |
+| `{{key:SOLVE}} X` | $0.0000$ | $0.0000$ | $2.0000$ | **$2.0945514815$** | Initial guess lifts to $Y$; root extracted in $X$ |
 
-Entering these invariants into `{{key:POLY}}` via `{{res:sc32_07_polynomials_brent_solver_seq_12:keys}}` returns **`{{res:sc32_07_polynomials_brent_solver_seq_12:value}}`**:
+2. **Van der Waals Real Gas Equation for $\text{CO}_2$ ($50V^3 - 26.753V^2 + 3.59V - 0.153293 = 0$):** When $\text{CO}_2$ gas ($a = 3.59\text{ L}^2\cdot\text{atm/mol}^2,\; b = 0.0427\text{ L/mol}$) is compressed to $P = 50\text{ atm}$ at $T = 300\text{ K}$ ($RT = 24.618\text{ L}\cdot\text{atm/mol}$), solving the expanded Van der Waals cubic analytically inside `{{key:POLY}}` with `{{res:sc32_07_polynomials_brent_solver_seq_09:keys}}` delivers **`{{res:sc32_07_polynomials_brent_solver_seq_09:value}}`** ($27\%$ denser than an ideal gas's $RT/P = 0.4924\text{ L/mol}$, and identical to the molar volume $V_m = \mathbf{0.358736\text{ L/mol}}$ obtained by entering the unexpanded Van der Waals balance into `{{key:EQN}}` and running `0.49 {{key:STO}} V {{key:SOLVE}} V`):
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1 {{key:A}} 70 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $1.0000$ | $-70.0000$ | Coefficients $A, B = -I_1$ |
-| 2 | `1175 {{key:C}} 5750 {{key:+/-}} {{key:D}}` | $1.0000$ | $-70.0000$ | $1175.0000$ | $-5750.0000$| Coefficients $C = I_2, D = -I_3$ |
-| 3 | `{{key:EXEC}}` | $1.0000$ | $-70.0000$ | **$10.000000$** | **$0.000000$** | Minor stress $\sigma_3 = 10.0$ in $Y$; $\sigma_2, \sigma_1$ in vars `3`, `5` |
-| 4 | `{{key:RCL}} 5` | $-70.0000$ | $10.0000$ | $0.0000$ | **$48.027756$** | Recall major principal stress $\sigma_1$ into Register $X$ |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `50 {{key:A}}` | $0.0000$ | $0.0000$ | $0.0000$ | $50.0000$ | Coefficient $A = 50.0$ |
+| `26.753 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $50.0000$ | $-26.7530$ | Coefficient $B = -26.753$ |
+| `3.59 {{key:C}}` | $0.0000$ | $50.0000$ | $-26.7530$ | $3.5900$ | Coefficient $C = 3.59$ |
+| `0.153293 {{key:+/-}} {{key:D}}` | $50.0000$ | $-26.7530$ | $3.5900$ | $-0.153293$ | Coefficient $D = -0.153293$ |
+| `{{key:EXEC}}` | $50.0000$ | $-26.7530$ | **$0.358736$** | **$0.000000$** | Real root in $Y$, Imag in $X$ |
+| `{{key:x⇄y}}` | $50.0000$ | $-26.7530$ | $0.000000$ | **$0.358736$** | Molar volume $V_m$ in Register $X$ |
 
-This confirms all three ordered principal stresses: **$\sigma_1 = 48.03\text{ MPa}$**, **$\sigma_2 = 11.97\text{ MPa}$**, and **$\sigma_3 = 10.00\text{ MPa}$** (satisfying $\sigma_1 + \sigma_2 + \sigma_3 = I_1 = 70.00\text{ MPa}$).
+Now let us run `{{key:SOLVE}}` on five genuinely transcendental engineering equations:
 
-A depressed-linear cubic arises just as naturally when a solid oak marine buoy sphere of radius $R = 0.50\text{ m}$ and density $\rho_s = 650\text{ kg/m}^3$ floats in freshwater ($\rho_w = 1000\text{ kg/m}^3$). By Archimedes' principle (*On Floating Bodies*), equating the submerged spherical cap volume $V_{\text{cap}}(h) = \frac{\pi h^2}{3}(3R - h)$ to the displaced water volume $\frac{\rho_s}{\rho_w} \left(\frac{4}{3}\pi R^3\right)$ yields a cubic polynomial for the equilibrium draft $h$:
-$$h^3 - 3R h^2 + 4 \frac{\rho_s}{\rho_w} R^3 = 0 \implies h^3 - 1.5 h^2 + 0.325 = 0$$
+#### Colebrook-White Turbulent Pipe Friction ($\text{Re} = 100,000,\; \varepsilon/D = 0.001$)
 
-Solving this cubic in `{{key:POLY}}` with `{{res:sc32_07_polynomials_brent_solver_seq_13:keys}}` produces **`{{res:sc32_07_polynomials_brent_solver_seq_13:value}}`**:
+To solve Cyril Colebrook's implicit friction equation $\frac{1}{\sqrt{f}} + 2.0\log_{10}\!\left(\frac{\varepsilon/D}{3.7} + \frac{2.51}{\text{Re}\sqrt{f}}\right) = 0$ without Moody chart interpolation, enter `F {{key:√x}} {{key:1/x}}  0.001 {{key:ENTER}} 3.7 {{key:÷}}  2.51 {{key:ENTER}} 100000 {{key:÷}} F {{key:√x}} {{key:÷}} {{key:+}} {{key:LOG}} 2 {{key:×}} {{key:+}}` in `{{key:EQN}}` and seed the classic turbulent pipe guess $f_0 = 0.02$:
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1 {{key:A}} 1.5 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $1.0000$ | $-1.5000$ | Coefficients $A, B$ |
-| 2 | `0 {{key:C}} 0.325 {{key:D}}` | $1.0000$ | $-1.5000$ | $0.0000$ | $0.3250$ | Coefficients $C, D$ (or omit $C$; omitted terms default to $0$) |
-| 3 | `{{key:EXEC}}` | $1.0000$ | $-1.5000$ | $-0.412257$ | $0.0000$ | Roots stored in Regs 1, 3, 5 |
-| 4 | `{{key:RCL}} 3` | $-1.5000$ | $-0.412257$ | $0.0000$ | **$0.601390$** | Physical immersion depth in $[0, 2R]$ |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `0.02 {{key:STO}} F` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0200$ | Initial Moody plateau guess loaded |
+| `{{key:SOLVE}} F` | $0.0000$ | $0.0000$ | $0.0200$ | **$0.022204$** | Darcy friction factor $f = 0.022204$ |
 
-The middle root in variable `3` gives the physical immersion depth **$h = 0.601390\text{ meters}$** ($60.14\%$ of the $1.00\text{ m}$ diameter, whereas the negative root $-0.4123\text{ m}$ and super-diameter root $1.3109\text{ m}$ lie outside the physical cap domain $0 \le h \le 1.0\text{ m}$).
+#### Kepler's Orbital Anomaly Equation ($E - 0.25\sin E - 1.20 = 0$)
 
-### Quadratic Embedding in Action: Ballistic Trajectories & Rankine Slip Planes
+For an Earth-observation satellite in an elliptical orbit of eccentricity $e = 0.25$ at mean anomaly $M = 1.20\text{ rad}$, set angular mode to `{{key:RAD}}`, enter `E  0.25 {{key:ENTER}} E {{key:SIN}} {{key:×}} {{key:-}} 1.20 {{key:-}}` in `{{key:EQN}}`, and seed the mean anomaly $E_0 = M = 1.20\text{ rad}$:
 
-Because any unentered coefficient in `{{key:POLY}}` defaults to $0.0$, quadratic equations $a u^2 + b u + c = 0$ solve effortlessly via quadratic embedding ($A = a, B = b, C = c$, with $D = 0$ by default). Suppose an artillery battery must strike an elevated ridge target at horizontal range $x = 1,200\text{ m}$ and elevation $y = 150\text{ m}$ with muzzle velocity $v_0 = 140\text{ m/s}$. Substituting the trigonometric identity $\sec^2\theta = 1 + \tan^2\theta$ into the parabolic ballistic trajectory eliminates time of flight and transforms the launch slope $u = \tan\theta$ into the classic Tartaglia-Galileo ballistic quadratic:
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `1.20 {{key:STO}} E` | $0.0000$ | $0.0000$ | $0.0000$ | $1.2000$ | Initial estimate $E_0 = M$ in radians |
+| `{{key:SOLVE}} E` | $0.0000$ | $0.0000$ | $1.2000$ | **$1.488665$** | Eccentric anomaly $E$ in radians ($85.294^\circ$) |
 
-$$y = x \tan\theta - \frac{g x^2}{2 v_0^2} (1 + \tan^2\theta) \implies 360.3673 u^2 - 1200 u + 510.3673 = 0 \quad (\text{where } u = \tan\theta)$$
+#### Shockley Silicon Diode Load Line ($5.0 - 10^{-9}(e^{V/0.02585} - 1) - V = 0$)
 
-Solving this quadratic in `{{key:POLY}}` and converting the slope roots via `{{key:ATAN}}` with `{{res:sc32_07_polynomials_brent_solver_seq_02:keys}}` yields **`{{res:sc32_07_polynomials_brent_solver_seq_02:value}}`**:
+For a $V_s = 5.0\text{ V}$ supply driving a silicon diode ($I_s = 10^{-12}\text{ A},\; V_T = 0.02585\text{ V}$) through a $R = 1\text{ k}\Omega$ series load resistor ($I_s R = 10^{-9}\text{ V}$), enter `5  V 0.02585 {{key:÷}} {{key:eˣ}} 1 {{key:-}} 1 {{key:E}} 9 {{key:+/-}} {{key:×}} {{key:-}}  V {{key:-}}` into `{{key:EQN}}`. To avoid exponential overflow on $e^{V/0.02585}$ during Phase 1's outward search, seed `V` right at the physical $0.65\text{ V}$ silicon turn-on knee:
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `360.3673 {{key:A}}` | $0.0000$ | $0.0000$ | $0.0000$ | $360.3673$ | Quadratic coefficient $A$ |
-| 2 | `1200 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $360.3673$ | $-1200.0000$ | Quadratic coefficient $B$ |
-| 3 | `510.3673 {{key:C}}` | $0.0000$ | $360.3673$ | $-1200.0000$ | $510.3673$ | Quadratic coefficient $C$ |
-| 4 | `0 {{key:D}}` | $360.3673$ | $-1200.0000$ | $510.3673$ | $0.0000$ | Depressed constant (optional; $D$ defaults to $0.0$ if omitted) |
-| 5 | `{{key:EXEC}}` | $360.3673$ | $-1200.0000$ | $0.0000$ | $0.0000$ | Roots stored in Regs 1, 3, 5 ($0, u_1, u_2$) |
-| 6 | `{{key:RCL}} 3 {{key:ATAN}}` | $-1200.0000$ | $0.0000$ | $0.0000$ | **$26.590116$** | Low direct-fire trajectory $\theta_1$ in degrees |
-| 7 | `{{key:RCL}} 5 {{key:ATAN}}` | $0.0000$ | $0.0000$ | $26.590116$ | **$70.532306$** | High plunging mortar arc $\theta_2$ in degrees |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `0.65 {{key:STO}} V` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6500$ | Initial estimate loaded |
+| `{{key:SOLVE}} V` | $0.0000$ | $0.0000$ | $0.6500$ | **$0.672944$** | Diode forward voltage $V_D$ in Volts |
 
-Because unentered coefficients in `{{key:POLY}}` default to $0.0$, Step 4 can be skipped entirely—keying `360.3673 {{key:A}} 1200 {{key:+/-}} {{key:B}} 510.3673 {{key:C}} {{key:EXEC}}` directly solves the quadratic, confirming **$\theta_1 = 26.59^\circ$** (flat direct trajectory) and **$\theta_2 = 70.53^\circ$** (high plunging mortar trajectory).
+#### Open-Channel Froude Critical Depth ($400(3 + 4y) - 9.81(3y + 2y^2)^3 = 0$)
 
-The same quadratic embedding solves geotechnical slip-plane equilibrium without writing down the quadratic formula. For cohesionless granular backfill with internal friction angle $\phi = 32.0^\circ$ ($2\tan 32^\circ = 1.249739$) behind a smooth retaining wall, William J. M. Rankine's (1857) plastic limit equilibrium requires Mohr's stress circle to touch the Coulomb failure envelope $\tau = \sigma\tan\phi$. Expressing the conjugate failure-plane inclination tangent $u = \tan(45^\circ - \phi/2) = \sqrt{K_a}$ via the double-angle tangent identity yields a monic quadratic equation:
-$$u^2 + (2\tan\phi) u - 1 = 0 \implies u^2 + 1.249739 u - 1 = 0 \implies K_a = u^2 = \mathbf{0.307259}$$
+For a trapezoidal spillway channel of bottom width $b = 3.0\text{ m}$, side slopes $z = 2.0$, and discharge $Q = 20.0\text{ m}^3/\text{s}$ ($Q^2 = 400$, top width $T(y) = 3 + 4y$, and wetted area $A(y) = 3y + 2y^2$), enter the Froude $\text{Fr} = 1$ residual `3 {{key:ENTER}} 4 {{key:ENTER}} Y {{key:×}} {{key:+}} 400 {{key:×}}  3 {{key:ENTER}} Y {{key:×}}  Y {{key:x²}} 2 {{key:×}} {{key:+}} 3 {{key:yˣ}} 9.81 {{key:×}} {{key:-}}` into `{{key:EQN}}` and seed $y_0 = 1.0\text{ m}$ to locate the critical depth $y_c$:
 
-In `{{key:POLY}}`, `1 {{key:A}} 1.249739 {{key:B}}` loads $A = 1.0$ and the frictional coupling $B = 2\tan(32^\circ) = 1.249739$, while `1 {{key:+/-}} {{key:C}} {{key:EXEC}}` sets $C = -1.0$ and extracts the roots ($Y = -1.8040,\; X = 0.0000$). Just as completing the square on the **$90^\circ$ L-Frame Factoring Stage** writes $(u + \tan\phi)^2 = 1 + \tan^2\phi = \sec^2\phi$, `{{key:RCL}} 5 {{key:x²}}` recalls the positive slip-angle tangent $u = \sec\phi - \tan\phi = \tan(29^\circ) = 0.554309$ and squares it in place to obtain the Rankine active earth pressure coefficient ($X = \mathbf{0.307258}$), yielding **$K_a = 0.307259$** (while squaring the negative root $-1.804048 = -\tan(61^\circ)$ in variable 1 directly yields the passive earth pressure coefficient $K_p = 1/K_a = 3.254587$).
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `1.0 {{key:STO}} Y` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Initial depth estimate |
+| `{{key:SOLVE}} Y` | $0.0000$ | $0.0000$ | $1.0000$ | **$1.258641$** | Critical flow depth $y_c$ in meters |
 
----
+#### Nuclear Critical Buckling Radius & De Laval Rocket Nozzle Mach Branches
 
-## Horner's Method, T-Register Replication & Biquadratic Stack Reductions
+* **Spherical Fission Reactor Critical Radius ($\sin(0.045 R) = 0$):** In `{{key:RAD}}` mode, storing `R 0.045 {{key:×}} {{key:SIN}}` in `{{key:EQN}}` and running `60 {{key:STO}} R {{key:SOLVE}} R` isolates the fundamental buckling zero $0.045 R = \pi$ at **$R_{\text{crit}} = 69.813170\text{ cm}$** (whereas seeding $R_0 = 0$ would stop at the trivial zero $R = 0$).
+* **Aurel Stodola's De Laval Nozzle Area-Mach Equation ($\frac{A}{A^*} = 2.50$ for $\gamma = 1.4$):** Storing `M {{key:x²}} 0.2 {{key:×}} 1 {{key:+}} 1.2 {{key:÷}} 3 {{key:yˣ}} M {{key:÷}} 2.50 {{key:-}}` in `{{key:EQN}}`:
+  * Seeding above the $M = 1$ sonic throat via `2.5 {{key:STO}} M {{key:SOLVE}} M` isolates the **supersonic rocket exhaust root** **$M_{\text{sup}} = 2.442804$**.
+  * Seeding below the $M = 1$ sonic throat via `0.2 {{key:STO}} M {{key:SOLVE}} M` isolates the **subsonic diffuser root** **$M_{\text{sub}} = 0.239541$**.
 
-Before we step from closed-form polynomials into iterative root-finding, how should you evaluate a polynomial $P(x)$—or a rational expression containing $x$ in several places—directly on the 4-level stack? Evaluating a high-degree polynomial in standard algebraic form requires calculating redundant powers $x^2, x^3, \dots, x^n$. **Horner's Method** factors the polynomial into nested linear binomials:
+### Editing & Solving a Piecewise Equation in EQN Mode (`x?0` & `x?y`)
 
-$$P(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0 = (\dots((a_n x + a_{n-1}) x + a_{n-2}) x + \dots + a_1) x + a_0$$
+Suppose a precision aerospace isolation mount uses a primary coil spring of stiffness $k_1 = 2,000\text{ N/m}$ up to a clearance gap $x_0 = 0.05\text{ m}$ ($50\text{ mm}$), where a secondary elastomer bump-stop of stiffness $k_2 = 8,000\text{ N/m}$ engages—producing the **piecewise bilinear force law**:
 
-### RPN Stack Elegance of Horner's Method & T-Register Flooding
-On the SC-32, Horner's method executes with **zero memory storage registers** and **zero parentheses**. At each stage, keying the multiplier $x = 2.5$ automatically lifts the running polynomial accumulator from Register $X$ into Register $Y$, allowing each nested multiplication and addition to cascade cleanly through the stack.
+$$F(x) = 2000x + 8000\langle x - 0.05 \rangle_+ = 2000x + 8000(x - 0.05)\cdot[x - 0.05 > 0]$$
 
-To evaluate $P(x) = 4x^4 - 3x^3 + 2x^2 - 5x + 7$ at $x = 2.5$ in nested form $P(2.5) = (((4(2.5) - 3)(2.5) + 2)(2.5) - 5)(2.5) + 7$, keying `{{res:sc32_07_polynomials_brent_solver_seq_01:keys}}` streams directly to **`{{res:sc32_07_polynomials_brent_solver_seq_01:value}}`**:
+To find the exact deflection $x^*$ under a static payload of $F_{\text{target}} = 350\text{ N}$, press `{{key:EQN}}` (`Right Shift {{key:↱}} above {{key:STO}}`), tap `NEW` (`{{key:LFU0}}`), press `A` for `00 LBL A`, and enter the residual $F(x) - 350$ using the three-step Macaulay ramp idiom (`{{key:ENTER}} {{key:x>0}} {{key:×}}`, accessing `{{key:x>0}}` via `{{key:x?0}}` on `Right Shift {{key:↱}} above {{key:÷}}`):
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2.5 {{key:ENTER}} 4 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $10.0000$ | First term: $a_4 x = 4(2.5) = 10.0$ |
-| 2 | `3 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7.0000$ | Add next coefficient: $10.0 - 3 = 7.0$ |
-| 3 | `2.5 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $17.5000$ | Digit entry lifts $7.0$ to $Y$; multiply: $(7.0)(2.5) = 17.5$ |
-| 4 | `2 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $19.5000$ | Add next coefficient: $17.5 + 2 = 19.5$ |
-| 5 | `2.5 {{key:×}} 5 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $43.7500$ | Lift & multiply: $(19.5)(2.5) - 5 = 43.75$ |
-| 6 | `2.5 {{key:×}} 7 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$116.3750$** | Final evaluation: $(43.75)(2.5) + 7 = \mathbf{116.3750}$ |
+`{{key:RCL}} X  2000 {{key:×}}  {{key:RCL}} X  0.05 {{key:-}}  {{key:ENTER}} {{key:x>0}} {{key:×}}  8000 {{key:×}}  {{key:+}}  350 {{key:-}}  {{key:RTN}}`
 
-When evaluating a polynomial at an argument $x$ with many digits (e.g., $x = 2.71828$), classic 4-register RPN masters flood the stack first via `2.71828 {{key:ENTER}} {{key:ENTER}} {{key:ENTER}}`. Because Register $T$ replicates downward on every dyadic drop, you stream `4 {{key:×}} 3 {{key:-}} {{key:×}} 2 {{key:+}} {{key:×}} 5 {{key:-}} {{key:×}} 7 {{key:+}}` without ever re-keying $x$ or touching a storage register. Alternatively, store $x$ once via `2.71828 {{key:STO}} A` and evaluate with `4 {{key:RCL}} A {{key:×}} 3 {{key:-}} {{key:RCL}} A {{key:×}} 2 {{key:+}} ...` (no `{{key:ENTER}}` needed before `{{key:RCL}}`). Either way, the entire degree-4 polynomial requires only 4 multiplications and 4 additions, with zero exponentiations—and for any cubic $P(x) = a_3 x^3 + a_2 x^2 + a_1 x + a_0$, flooding $x$ across the stack with `x {{key:ENTER}} {{key:ENTER}} {{key:ENTER}}` evaluates $P(x)$ in exactly $3$ multiplies and $3$ additions without touching memory registers `0`–`9`. You can test this directly at the double root $x = -5$ of our earlier RLC circuit characteristic polynomial ($s^3 + 12s^2 + 45s + 50 = 0$), comparing the Horner stream against naive term-by-term power evaluation (`{{key:yˣ}}`) to see how nested synthetic division suppresses floating-point cancellation near multiple roots.
+Let us trace how this exact stack sequence evaluates to $F(0.03) = 60\text{ N}$ below the gap (where $[x - 0.05 > 0] = 0$) and $F(0.075) = 350\text{ N}$ above the gap (where $[x - 0.05 > 0] = 1$, confirming the root $x^* = \mathbf{0.0750\text{ m}}$ returned by `0.02 {{key:ENTER}} 0.10 {{key:SOLVE}} X`):
 
-That same T-register stack replication shines whenever an implicit transcendental root is approximated by a rational polynomial-logarithmic formula for rapid field design. For a silicon solar cell with open-circuit voltage $V_{\text{oc}} = 0.65\text{ V}$ and thermal voltage $V_T = 0.02585\text{ V}$ (normalized open-circuit voltage $v_{\text{oc}} = \frac{V_{\text{oc}}}{V_T} = \frac{0.65}{0.02585} = 25.145$), Martin Green's (1982) semi-empirical rational formula approximates the transcendental maximum-power-point root $v_{\text{mp}} + \ln(1 + v_{\text{mp}}) = v_{\text{oc}}$ to yield the photovoltaic cell fill factor $FF = \frac{V_{\text{mp}} I_{\text{mp}}}{V_{\text{oc}} I_{\text{sc}}}$:
-$$\text{Fill Factor } FF = \frac{v_{\text{oc}} - \ln(v_{\text{oc}} + 0.72)}{v_{\text{oc}} + 1} = \frac{25.145 - \ln(25.865)}{26.145} = \frac{25.145 - 3.2529}{26.145} = \mathbf{0.8373}$$
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `0.03 {{key:STO}} X` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0300$ | Test sub-gap deflection $x = 0.03\text{ m}$ |
+| `2000 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $60.0000$ | Primary spring force $2000(0.03) = 60\text{ N}$ |
+| `{{key:RCL}} X 0.05 {{key:-}}` | $0.0000$ | $0.0000$ | $60.0000$ | $-0.0200$ | Gap clearance $x - 0.05 = -0.02\text{ m} < 0$ |
+| `{{key:ENTER}} {{key:x>0}} {{key:×}}` | $0.0000$ | $0.0000$ | $60.0000$ | $0.0000$ | Macaulay bracket $\langle -0.02 \rangle_+ = -0.02 \times 0 = 0$ |
+| `8000 {{key:×}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$60.0000$** | Bump-stop inactive; total force $F(0.03) = 60\text{ N}$ |
+| `0.075 {{key:STO}} X` | $0.0000$ | $0.0000$ | $60.0000$ | $0.0750$ | Test post-gap root $x^* = 0.075\text{ m}$ from `SOLVE X` |
+| `2000 {{key:×}}` | $0.0000$ | $0.0000$ | $60.0000$ | $150.0000$ | Primary spring force $2000(0.075) = 150\text{ N}$ |
+| `{{key:RCL}} X 0.05 {{key:-}}` | $60.0000$ | $60.0000$ | $150.0000$ | $0.0250$ | Gap overrun $x - 0.05 = +0.025\text{ m} > 0$ |
+| `{{key:ENTER}} {{key:x>0}} {{key:×}}` | $60.0000$ | $60.0000$ | $150.0000$ | $0.0250$ | Macaulay bracket $\langle +0.025 \rangle_+ = 0.025 \times 1 = 0.025$ |
+| `8000 {{key:×}} {{key:+}}` | $60.0000$ | $60.0000$ | $60.0000$ | **$350.0000$** | Bump-stop adds $200\text{ N}$; $F(0.075) = \mathbf{350.0\text{ N}}$ |
 
-Because $v_{\text{oc}} = 25.145$ appears in three distinct sub-expressions, we flood the 4-level stack via `25.145 {{key:ENTER}} {{key:ENTER}} {{key:ENTER}}` so `25.145` is typed only **once**. Next, `0.72 {{key:+}} {{key:LN}} {{key:-}}` adds $0.72$, takes the natural logarithm $\ln(25.865) \approx 3.2529$, and subtracts it from the copy of $v_{\text{oc}}$ waiting in Register $Y$ while Register $T$ continually replenishes $25.1450$ downward ($X = 21.8921$). Finally, `{{key:x⇄y}} 1 {{key:+}} {{key:÷}}` swaps the fresh copy of $v_{\text{oc}}$ from $Y$ into $X$, adds $1$ to form the denominator $26.145$, and divides in place to resolve the solar cell fill factor ($X = \mathbf{0.837334}$), or **$FF = 0.8373$** ($83.73\%$). *(You can equally avoid re-entry via `{{key:LASTX}}` by keying `0.72 {{key:ENTER}} 25.145 {{key:+}} {{key:LASTX}} {{key:x⇄y}} {{key:LN}} {{key:-}}` and dividing by $v_{\text{oc}} + 1$.)*
+Finally, let us summarize the post-`{{key:SOLVE}}` stack state and residual verification workflow:
 
-Similarly, when two coupled undamped spring-mass oscillators or an LC ladder filter vibrate in their natural normal modes, the eigenvalue determinant $\det(\mathbf{K} - x^2 \mathbf{M}) = 0$ contains only squared frequencies $u = x^2$, producing an even **biquadratic characteristic polynomial** such as $x^4 - 10 x^2 + 9 = 0$:
-
-$$u = x^2 \implies u^2 - 10 u + 9 = 0 \implies (u - 1)(u - 9) = 0 \implies u = 1, 9 \implies x = \mathbf{1.0, 3.0}$$
-
-Instead of calling a menu solver, you can extract both positive biquadratic roots simultaneously on the main stack by evaluating the quadratic numerator branches $10 \pm \sqrt{\Delta}$ with `{{key:LASTX}}` so the discriminant radical $\sqrt{\Delta} = 8.0000$ is never re-typed. First, `10 {{key:x²}} 4 {{key:ENTER}} 9 {{key:×}} {{key:-}} {{key:√x}}` evaluates the discriminant radical $\sqrt{\Delta} = \sqrt{100 - 36} = 8.0000$ in Register $X$. Next, `10 {{key:x⇄y}} {{key:+}}` forms the upper numerator $10 + 8 = 18.0000$ in Register $X$ while automatically preserving $\sqrt{\Delta} = 8.0000$ inside `LASTX`. Recalling `{{key:LASTX}} 10 {{key:x⇄y}} {{key:-}}` brings $\sqrt{\Delta} = 8.0000$ back from `LASTX` (lifting $18.0000$ into $Y$) and forms the lower numerator $10 - 8 = 2.0000$ in Register $X$. Then `2 {{key:÷}} {{key:√x}}` halves $2.0000$ to $u_2 = 1.0000$ and extracts the square root to place the fundamental mode $x_2 = 1.0000$ in Register $X$. Finally, `{{key:x⇄y}} 2 {{key:÷}} {{key:√x}}` swaps $18.0000$ into $X$, halves to $u_1 = 9.0000$, and extracts the square root, leaving both positive biquadratic roots side by side on the stack ($Y = \mathbf{1.0000},\; X = \mathbf{3.0000}$) for **$x_1 = 3.0$** and **$x_2 = 1.0$** with zero manual re-entry.
-
----
-
-## Richard Brent's Numerical Root Finder ({{key:SOLVE}})
-
-For general non-linear, transcendental, or piecewise equations where closed-form algebraic formulas do not exist, the SC-32 provides **Richard Brent's Numerical Root Finder (`{{key:SOLVE}}`)**.
-
-### Richard Brent's Two-Phase Hybrid Root Solver State Machine (1973)
-
-When you invoke `{{key:SOLVE}}`, the SC-32 executes a two-phase state machine modeled directly on Brent's 1973 algorithm. In **Phase 1 (Guarded Secant & Golden-Ratio Outward Bracket Search)**, the engine starts from your initial guess $x_0$ (generating a companion probe via $\Delta = 0.1|x_0|$ for $|x_0| < 1$ or $0.1$, or adopting the $(Y, X)$ stack bounds if $x_0$ lies outside the valid domain) and checks whether $f(a)$ and $f(b)$ already have opposite signs. If $f(a) \cdot f(b) > 0$, it marches outward for up to 50 steps using clamped secant steps—or golden-ratio $\phi = 1.61803398875$ expansion whenever $|f(b) - f(a)| \le 10^{-14}$. If a trial step crosses a domain boundary such as $\ln x$ or $\sqrt{x}$ for $x \le 0$, automatic domain recovery pulls the step back inside the valid region, while tangent even-multiplicity roots are captured automatically when $|b - a| < 10^{-12}$ and $|f(b)| < 10^{-7}$.
-
-Once a sign change $f(a) \cdot f(b) \le 0$ is bracketed, the solver enters **Phase 2 (Inverse Quadratic & Secant Interpolation)** for up to 100 iterations. Whenever three distinct function values $(f(a), f(b), f(c))$ are available ($|f(a)-f(c)| > 10^{-15}$ and $|f(b)-f(c)| > 10^{-15}$), the solver computes an **Inverse Quadratic Interpolation (IQI)** step; otherwise, it computes a **Linear Secant step**. Before accepting that interpolated estimate $s$, the engine enforces **Brent's five bisection watchdog conditions**: $s$ must land strictly inside the three-quarter window $\left(\frac{3a+b}{4}, b\right)$, it must contract the step size by at least $50\%$ compared to the prior step ($|b-c|$ after bisection or $|c-d|$ after interpolation), and the step must exceed the machine-epsilon threshold $\text{tol} = 2\varepsilon_{\text{mach}}|b| + \frac{1}{2}\cdot 10^{-12}$. If any one of those five conditions fails, the solver immediately rejects interpolation and executes a guaranteed **Bisection step** $s = \frac{1}{2}(a + b)$, terminating as soon as $|f(b)| \le 10^{-13}$ or the half-bracket width satisfies $\frac{1}{2}|a - b| \le \text{tol}$.
-
-{{blocks:algebra_boxes_hero|Algebra Boxes Studio Kit Hardware}}
-*Figure 7.2: The physical Algebra Factoring Studio hardware kit, showing the 40 stackable Miniblock tiles ($+x^2/-x^2$ flats, $+x/-x$ rods, and $+1/-1$ unit tiles) and the interlocking $90^\circ$ L-Frame Factoring Stage.*
-
-### From Al-Khwarizmi's Factoring Tiles to Zero-Pair Root Bracketing on the $90^\circ$ L-Frame Stage
-
-Why do closed-form algebraic solvers (`{{key:POLY}}`) and bracketed numerical solvers (`{{key:SOLVE}}`) complement each other so naturally? Because they represent the two foundational physical operations of the **Algebra Factoring Studio** (*Figure 7.1* and *Figure 7.2*): **completing a rectangular area inside the $90^\circ$ L-Frame Factoring Stage** and **zero-pair sign cancellation across $+1/-1$ and $+x/-x$ tiles**.
-
-The Algebra Factoring Studio kit contains 40 stackable Miniblock algebra tiles engineered around a $7.0\text{ mm}$ visible step height: four $x^2$ square flats ($38.6 \times 38.6\text{ mm}$, two positive $+x^2$ and two negative $-x^2$), twelve $x$ linear rods ($38.6 \times 19.0\text{ mm}$, six positive $+x$ and six negative $-x$), and twenty-four unit tiles ($19.0 \times 19.0\text{ mm}$, twelve positive $+1$ and twelve negative $-1$), all docking into a two-rail interlocking $90^\circ$ L-Frame Factoring Stage with a horizontal `base_rail` for the first linear factor $(x + a)$ and a perpendicular vertical `height_rail` for the second linear factor $(x + b)$.
-
-In 820 AD in Baghdad, the Persian mathematician **Muhammad ibn Musa al-Khwarizmi** wrote *Al-Kitāb al-mukhtaṣar fī ḥisāb al-jabr wa'l-muqābala*—the treatise that gave the world both the word *algebra* (*al-jabr*, restoration) and the word *algorithm* (from his Latinized name, *Algoritmi*). When al-Khwarizmi solved quadratic equations such as $x^2 + 4x = 5$ (or his classic $x^2 + 10x = 39$), he possessed no modern symbolic formula. Instead, he solved the polynomial literally by docking physical **Algebra Factoring Tiles** into the corner of the $90^\circ$ L-Frame Stage. You begin by docking one $+x^2$ square flat ($38.6 \times 38.6\text{ mm}$) snugly into the $90^\circ$ origin corner where the horizontal `base_rail` and vertical `height_rail` interlock. Next, you split the linear term $4x$ symmetrically into two equal wings, placing two $+x$ rods ($38.6 \times 19.0\text{ mm}$ each) along the right edge of the $+x^2$ flat and two $+x$ rods along the top edge to form an L-shaped gnomon of area $x^2 + 2x + 2x$. Inspecting the upper-right corner where the two $+x$ wings meet reveals an unmistakable $2 \times 2$ square notch waiting to be filled: docking **four $+1$ unit tiles** ($19.0 \times 19.0\text{ mm}$ each) into that corner literally *completes the square* into a flush $(x + 2) \times (x + 2)$ square on the stage. Adding those same four $+1$ unit tiles to the right-hand side yields $(x + 2)^2 = 5 + 4 = 9 = 3^2$, exposing $x + 2 = 3 \implies \mathbf{x = 1}$ (and similarly for al-Khwarizmi's $x^2 + 10x = 39$, splitting $10x$ into two $5 \times x$ wings leaves a $5 \times 5 = 25$ corner square so $(x + 5)^2 = 39 + 25 = 64 \implies \mathbf{x = 3}$).
-
-What if a polynomial has mixed signs, such as $x^2 + x - 6 = (x + 3)(x - 2) = 0$? When you place $x + 3$ along the `base_rail` and $x - 2$ along the `height_rail`, the interior of the L-Frame Stage contains one $+x^2$ flat, three $+x$ rods, two $-x$ rods, and six $-1$ unit tiles. Stacking the two $-x$ rods directly on top of two $+x$ rods demonstrates **zero-pair cancellation**: each $(+x, -x)$ pair annihilates to zero, leaving the net polynomial $x^2 + x - 6$.
-
-That same **zero-pair cancellation** explains Richard Brent's root-bracketing theorem ($f(a) \cdot f(b) \le 0$) when `{{key:SOLVE}}` attacks a transcendental equation. At the lower bracket endpoint $x = a$ where $f(a) < 0$, the evaluated residual leaves an uncancelled stack of **negative ($-1$) unit tiles**, whereas at the upper bracket endpoint $x = b$ where $f(b) > 0$, the evaluated residual leaves an uncancelled stack of **positive ($+1$) unit tiles**. By Bolzano's **Intermediate Value Theorem**, as $x$ sweeps continuously across $[a, b]$ from a negative $-1$ tile residual to a positive $+1$ tile residual, there must exist an exact root $x^* \in [a, b]$ where every $+1$ and $-1$ contribution forms a complete zero-pair and the residual stack vanishes to the bare stage floor ($f(x^*) = 0$).
-
-### The Three Convergence Mechanics of Brent's Algorithm
-Brent's hybrid solver shifts seamlessly among three classic root-finding gears depending on the local geometry of $f(x)$. Its safety net is the **Bisection Method**, which cuts the bracket interval exactly in half at $m = (a + b) / 2$; bisection is guaranteed to converge on any continuous sign-change bracket, though at a steady linear pace of $1\text{ bit}$ of precision per iteration ($p = 1.000$). When two distinct sample points are available, the solver can accelerate into the **Secant Method**, drawing a straight chord through $(a, f(a))$ and $(b, f(b))$ to achieve superlinear golden-ratio convergence ($p = \phi \approx 1.618$). And whenever three distinct sample points $(f(a), a)$, $(f(b), b)$, and $(f(c), c)$ are available, the engine shifts into top gear—**Inverse Quadratic Interpolation (IQI)**—fitting a Lagrange parabola $x = P(y)$ sideways as a function of $y$ and evaluating it directly at $y = 0$:
-
-$$x = \frac{a f(b) f(c)}{(f(a)-f(b))(f(a)-f(c))} + \frac{b f(a) f(c)}{(f(b)-f(a))(f(b)-f(c))} + \frac{c f(a) f(b)}{(f(c)-f(a))(f(c)-f(b))}$$
-
-Because fitting $x$ as a quadratic function of $y$ guarantees a single unique crossing of the $y = 0$ axis, IQI reaches an asymptotic order of convergence $p \approx 1.839$—approaching the quadratic speed of Newton-Raphson without ever computing a derivative.
-
-| Root Finding Algorithm | Asymptotic Order ($p$) | Derivative Required? | Convergence Guarantee | Vulnerability / Failure Risk |
-| :--- | :---: | :---: | :---: | :--- |
-| **Bisection** | $1.000$ | No | Guaranteed (bracketed) | Slow, linear progress ($1\text{ bit/iteration}$) |
-| **Newton-Raphson** | $2.000$ | Yes ($f'(x)$) | Local only | Divergence near $f'(x) \approx 0$; inflection loops |
-| **Secant Method** | $1.618$ | No | Local only | Undamped oscillations on non-convex curves |
-| **Brent-Dekker** | $1.839$ | No | Guaranteed (bracketed) | **Zero failure** (automatic bisection fallback) |
-
----
-
-### Auditing Cubics Along Two Pathways: Wallis's Benchmark & Van der Waals Real Gases
-
-In 1685, John Wallis proposed a deceptively simple cubic equation that Isaac Newton and Joseph Raphson adopted as the historic benchmark for testing iterative root-finding convergence:
-$$f(x) = x^3 - 2x - 5 = 0$$
-Starting from Newton's initial estimate $x = 2.0$ (where $f(2) = 8 - 4 - 5 = -1.0$), we can extract the classic real root $x^* \approx 2.0945514815423$ by programming the postfix residual `X {{key:3}} {{key:yˣ}} 2 {{key:ENTER}} X {{key:×}} {{key:-}} 5 {{key:-}}` into `{{key:EQN}}`, seeding the initial estimate with `2 {{key:STO}} X`, and executing Brent's solver with `{{key:SOLVE}} X`:
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `2 {{key:STO}} X` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0000$ | Initial guess loaded |
-| 2 | `{{key:SOLVE}} X` | $0.0000$ | $0.0000$ | $2.0000$ | **$2.0945514815$** | Initial guess lifts to $Y$; root extracted in $X$ |
-
-The display outputs the root **$x = 2.0945514815$**. Because the SC-32 includes *both* an analytical Cardano cubic engine (`{{key:POLY}}`) and Richard Brent's numerical root finder (`{{key:SOLVE}}`), any cubic equation can be audited along two completely independent mathematical pathways. On **Wallis's benchmark ($x^3 - 2x - 5 = 0$)** above, `{{key:SOLVE}}` bracketed the real root numerically to `2.0945514815`; if you instead press `{{key:POLY}}` and enter the cubic coefficients (`1 {{key:A}} 0 {{key:B}} 2 {{key:+/-}} {{key:C}} 5 {{key:+/-}} {{key:D}} {{key:EXEC}}`), Cardano's closed-form radical formula extracts the exact same real root **$2.0945514815$** in Register $Y$ while simultaneously revealing the complex conjugate pair $-1.047276 \pm 1.135940i$ in variables `3`–`6`.
-
-We have the exact same luxury of choosing between `{{key:POLY}}` and `{{key:SOLVE}}` when solving a real-gas equation of state in chemical thermodynamics. Suppose carbon dioxide gas ($a = 3.59\text{ L}^2\cdot\text{atm/mol}^2, b = 0.0427\text{ L/mol}$) is compressed to temperature $T = 300\text{ K}$ and pressure $P = 50.0\text{ atm}$ ($R = 0.08206\text{ L}\cdot\text{atm/(mol}\cdot\text{K)}$). Near the critical isotherm ($T_c \approx 304.1\text{ K}$ for $\text{CO}_2$), intermolecular London dispersion attractions ($a/V^2$) and finite hard-sphere excluded volume ($b$) cause severe deviation from the ideal gas law ($V_{\text{ideal}} = RT/P = 0.4924\text{ L/mol}$), expanding Johannes Diderik van der Waals's equation of state into a cubic polynomial in molar volume $V$:
-$$\left(P + \frac{a}{V^2}\right)(V - b) = R T \implies P V^3 - (P b + R T) V^2 + a V - a b = 0$$
-Substituting the physical constants gives the cubic coefficients $A = P = 50.0$, $B = -(P b + R T) = -(50 \times 0.0427 + 0.08206 \times 300) = -(2.135 + 24.618) = -26.753$, $C = a = 3.59$, and $D = -a b = -(3.59 \times 0.0427) = -0.153293$. Loading these coefficients into `{{key:POLY}}` via `{{res:sc32_07_polynomials_brent_solver_seq_09:keys}}` delivers **`{{res:sc32_07_polynomials_brent_solver_seq_09:value}}`**:
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `50 {{key:A}}` | $0.0000$ | $0.0000$ | $0.0000$ | $50.0000$ | Coefficient $A = 50.0$ |
-| 2 | `26.753 {{key:+/-}} {{key:B}}` | $0.0000$ | $0.0000$ | $50.0000$ | $-26.7530$ | Coefficient $B = -26.753$ |
-| 3 | `3.59 {{key:C}}` | $0.0000$ | $50.0000$ | $-26.7530$ | $3.5900$ | Coefficient $C = 3.59$ |
-| 4 | `0.153293 {{key:+/-}} {{key:D}}`| $50.0000$ | $-26.7530$ | $3.5900$ | $-0.153293$| Coefficient $D = -0.153293$ |
-| 5 | `{{key:EXEC}}` | $50.0000$ | $-26.7530$ | **$0.358736$** | **$0.000000$** | Real root in $Y$, Imag in $X$ |
-| 6 | `{{key:x⇄y}}` | $50.0000$ | $-26.7530$ | $0.000000$ | **$0.358736$** | Molar volume $V_m$ in Register $X$ |
-
-This confirms a final value of **$V_m = 0.358736\text{ L/mol}$** (a compressibility factor $Z = PV_m / RT = 0.7286$, reflecting strong attractive clustering at $50\text{ atm}$). Notice how the closed-form **`{{key:POLY}}`** solver above extracts the root of the expanded cubic $50V^3 - 26.753V^2 + 3.59V - 0.153293 = 0$ analytically via Cardano's formula (`0.358736 L/mol`)—and lets you compare that $P = 50\text{ atm}$ supercritical regime against a lower-pressure regime such as $P = 10\text{ atm}$ to watch the cubic discriminant transition from a single real root ($\Delta > 0$) to three real roots ($\Delta < 0$, corresponding to liquid, metastable, and vapor phases) when cooled below the critical point—whereas the numerical **`{{key:SOLVE}}`** engine lets you enter the raw physical Van der Waals balance $\left(50 + \frac{3.59}{V^2}\right)(V - 0.0427) - 24.618 = 0$ into `{{key:EQN}}` (`50 3.59 {{key:ENTER}} V {{key:x²}} {{key:÷}} {{key:+}} V 0.0427 {{key:-}} {{key:×}} 24.618 {{key:-}}`) without multiplying out a single coefficient—converging from `0.49 {{key:STO}} V {{key:SOLVE}} V` to the identical **$V_m = 0.358736\text{ L/mol}$**.
-
----
-
-### Implicit Fluid, Orbital, Electronic & Hydraulic Equations via {{key:SOLVE}}
-
-Now let us unleash Brent's `{{key:SOLVE}}` engine on the genuinely transcendental equations that motivated this chapter—equations where the physical quantity we seek is entangled inside logarithms, sines, or exponentials that no polynomial expansion can ever untangle.
-
-Consider fluid flowing through a rough commercial steel pipe at Reynolds number $\text{Re} = 100,000$ and relative roughness $\varepsilon/D = 0.001$. Why can't the pipe's Darcy-Weisbach friction factor $f$ be isolated explicitly with ordinary algebra? Even inside a violently turbulent pipe at $\text{Re} = 100,000$, fluid right against the steel wall is brought to a complete halt by the no-slip boundary condition, forming a paper-thin **viscous laminar sublayer** whose thickness scales inversely with wall shear ($\delta_v \propto D / (\text{Re}\sqrt{f})$). When flow is slow, this laminar cushion covers the microscopic cast-iron or steel roughness bumps ($\varepsilon/D = 0.001$), and friction depends only on viscosity ($\text{Re}\sqrt{f}$); when flow speeds up, the sublayer thins until the roughness peaks poke through like mountain ranges into the core flow, shedding turbulent eddies that depend on $\varepsilon/D$. Because the thickness of the laminar blanket itself depends on the friction factor $\sqrt{f}$ it is trying to shield, viscous shear and form drag are coupled on both sides of the logarithm inside Cyril Colebrook and Cedric White's (1937) implicit logarithmic law—the analytic foundation of the Moody chart:
-$$\frac{1}{\sqrt{f}} = -2.0 \log_{10}\left(\frac{\varepsilon/D}{3.7} + \frac{2.51}{\text{Re}\sqrt{f}}\right) \implies f(F) = \frac{1}{\sqrt{F}} + 2.0 \log_{10}\left(\frac{0.001}{3.7} + \frac{2.51}{100000\sqrt{F}}\right) = 0$$
-
-Entering the residual expression into `{{key:EQN}}` under label `COLE` as `F {{key:√x}} {{key:1/x}}  0.001 {{key:ENTER}} 3.7 {{key:÷}}  2.51 {{key:ENTER}} 100000 {{key:÷}} F {{key:√x}} {{key:÷}} {{key:+}} {{key:LOG}} 2 {{key:×}} {{key:+}}` and seeding the typical fully rough Moody plateau $F = 0.02$ before invoking `{{key:SOLVE}} F` converges rapidly:
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.02 {{key:STO}} F` | $0.0000$ | $0.0000$ | $0.0000$ | $0.0200$ | Initial guess loaded |
-| 2 | `{{key:SOLVE}} F` | $0.0000$ | $0.0000$ | $0.0200$ | **$0.022204$** | Darcy friction factor $f$ |
-
-The stack resolves to **$f = 0.022204$** ($2.22 \times 10^{-2}$), with the initial seed $0.0200$ retained in Register $Y$ for immediate convergence inspection.
-
-A similar self-referential coupling arises in orbital mechanics when an Earth observation satellite follows an elliptical orbit of eccentricity $e = 0.25$ and has swept out a mean anomaly $M = 1.20\text{ rad}$ since periapsis. Because angular momentum $h = r^2 \dot{\nu}$ is conserved under Kepler's Second Law, time elapsed since periapsis is proportional to swept elliptical sector area rather than central angle, yielding Johannes Kepler's (1609) famous transcendental equation relating mean anomaly $M$ to eccentric anomaly $E$:
-$$f(E) = E - e \sin E - M = E - 0.25 \sin E - 1.20 = 0$$
-With the angular baseline set to `{{key:RAD}}` and the residual `E  0.25 {{key:ENTER}} E {{key:SIN}} {{key:×}} {{key:-}} 1.20 {{key:-}}` loaded into `{{key:EQN}}`, seeding $E_0 = M = 1.20$ drives Brent's solver straight to the eccentric anomaly:
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1.20 {{key:STO}} E` | $0.0000$ | $0.0000$ | $0.0000$ | $1.2000$ | Initial estimate $E_0 = M$ |
-| 2 | `{{key:SOLVE}} E` | $0.0000$ | $0.0000$ | $1.2000$ | **$1.488665$** | Eccentric anomaly $E$ in radians |
-
-Register $X$ settles at **$E = 1.488665\text{ radians}$** ($85.294^\circ$), exceeding $M$ by $e\sin E = 0.288665\text{ rad}$ because the satellite moves faster than its mean angular rate near periapsis.
-
-In solid-state electronics, consider a silicon $p\text{-}n$ junction diode sitting in series with load resistor $R = 1,000\,\Omega$ and DC bias source $V_s = 5.0\text{ V}$, with reverse saturation current $I_s = 10^{-12}\text{ A}$ and room-temperature thermal voltage $V_T = k_B T / q = 0.02585\text{ V}$. Because Kirchhoff's linear load line $I = (V_s - V)/R$ intersects William Shockley's exponential minority-carrier injection law $I = I_s(e^{V/V_T} - 1)$, the quiescent operating voltage $V_D$ is governed by an implicit transcendental equation:
-$$f(V) = 5.0 - 1000 \times 10^{-12} (e^{V / 0.02585} - 1) - V = 0$$
-
-With this residual stored in `{{key:EQN}}` under label `DIODE` and seeded at the standard silicon forward turn-on knee of $0.65\text{ V}$, `{{key:SOLVE}}` pinpoints the exact intersection of the linear resistor and exponential junction:
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.65 {{key:STO}} V` | $0.0000$ | $0.0000$ | $0.0000$ | $0.6500$ | Initial estimate loaded |
-| 2 | `{{key:SOLVE}} V` | $0.0000$ | $0.0000$ | $0.6500$ | **$0.672944$** | Diode forward voltage $V_D$ |
-
-The calculation yields **$V_D = 0.672944\text{ Volts}$** (quiescent loop current $I_D = (5.0 - 0.672944)/1000 = 4.327\text{ mA}$).
-
-Even high-degree algebraic equations are often cleaner to solve directly in their unexpanded physical form via `{{key:SOLVE}}`. Take a trapezoidal hydraulic spillway channel of bottom width $b = 3.0\text{ m}$ and side-slope ratio $z = 2.0\text{ (H:V)}$ carrying volumetric discharge $Q = 20.0\text{ m}^3/\text{s}$. Specific energy $E = y + \frac{Q^2}{2gA(y)^2}$ reaches its minimum—and the Froude number $\text{Fr} = \frac{Q\sqrt{T(y)}}{\sqrt{g A(y)^3}}$ passes through unity between tranquil subcritical and rapid supercritical flow—when top width $T(y) = b + 2zy = 3 + 4y$ and wetted cross-sectional area $A(y) = by + zy^2 = 3y + 2y^2$ satisfy the critical-flow condition:
-
-$$\frac{Q^2 T}{g A^3} = 1 \implies 400(3 + 4 y) - 9.81 (3y + 2y^2)^3 = 0$$
-
-Entering that unexpanded balance into `{{key:EQN}}` and seeding an initial depth estimate of $y = 1.0\text{ m}$ locates the critical flow depth without expanding a sixth-degree polynomial:
-
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1.0 {{key:STO}} Y` | $0.0000$ | $0.0000$ | $0.0000$ | $1.0000$ | Initial depth estimate |
-| 2 | `{{key:SOLVE}} Y` | $0.0000$ | $0.0000$ | $1.0000$ | **$1.258641$** | Critical flow depth $y_c$ |
-
-The stack resolves to **$y_c = 1.258641\text{ meters}$**. Why is the Froude number $\text{Fr} = v / \sqrt{g D_h} = 1$ (where hydraulic depth $D_h = A/T$, or $y$ in a wide rectangular channel) the exact tipping point of open-channel hydraulics? Because $c = \sqrt{g D_h}$ is the **propagation speed of a shallow-water gravity wave**. Just as Mach $1$ ($M = v/c_{\text{sound}} = 1$) marks the sonic barrier where air flows faster than pressure waves can propagate upstream, $\text{Fr} = 1$ ($y = y_c = 1.2586\text{ m}$) is the critical depth where water velocity $v = Q/A$ matches the surface wave speed $c = \sqrt{g A / T}$. Upstream of a spillway where $y > y_c$ ($\text{Fr} < 1$, tranquil subcritical flow), surface ripples can travel upstream to warn approaching water of an obstacle; down the chute where $y < y_c$ ($\text{Fr} > 1$, rapid supercritical flow), ripples are swept downstream, and the flow can only decelerate back to tranquil depth through a standing shock wave—a **turbulent hydraulic jump**.
-
-Similarly, in nuclear reactor physics, `{{key:SOLVE}}` locates eigenvalue boundary zeros directly. For an unreflected bare spherical thermal fission reactor core with critical geometric buckling $B_{\text{crit}} = 0.045\text{ cm}^{-1}$ (where material buckling $B_m^2 = (\nu\Sigma_f - \Sigma_a)/D$ equals geometric buckling $B_g^2$), solving the Helmholtz one-group neutron diffusion equation $\nabla^2\phi + B_{\text{crit}}^2\phi = 0$ yields the radial flux eigenmode $\phi(r) = \Phi_0 \frac{\sin(B_{\text{crit}} r)}{r}$, which vanishes at the extrapolated critical radius $R_{\text{crit}}$ where $\sin(0.045 R) = 0$:
-$$f(R) = \sin(0.045 R) = 0 \implies R_{\text{crit}} = \frac{\pi}{0.045} \approx \mathbf{69.813170\text{ cm}}$$
-
-In `{{key:RAD}}` mode, storing `R 0.045 {{key:×}} {{key:SIN}}` inside `{{key:EQN}}`, seeding the initial radius estimate $R_0 = 60.0\text{ cm}$ near the first non-trivial zero (`R > 0`) via `60 {{key:STO}} R`, and executing `{{key:SOLVE}} R` isolates the critical core radius ($Y = 60.0000,\; X = \mathbf{69.813170}\text{ cm}$), or **$R_{\text{crit}} = 69.81\text{ cm}$**.
-
-### Manual Root Iteration vs. Hardware `{{key:POLY}}` & `{{key:SOLVE}}` Workflows
-
-The table below compares parenthesized solver string entry and manual root graphing against the SC-32's dedicated `{{key:SOLVE}}` and `{{key:POLY}}` engines:
-
-| Challenge / Metric | Conventional Algebraic Calculator (Infix) | Algebraic Strokes | SC-32 RPN Stack Method | SC-32 Strokes | Stack Advantage |
-| :--- | :--- | :---: | :--- | :---: | :--- |
-| **Transcendental Root Finding**: Colebrook-White friction factor | String entry in numeric solver: `solve(1/√(F) + 2*log(0.001/3.7 + 2.51/(100000*√(F))), F, 0.02)` (54 strokes). Missing or mismatched parenthesis throws syntax error; Newton tangent iteration prone to divergence near asymptotic plateaus. | 54 | **Brent's Hybrid Root Finder (`{{key:SOLVE}}`)**: Define postfix equation in `{{key:EQN}}`, load initial estimate `0.02 {{key:STO}} F`, press `{{key:SOLVE}} F` (24 strokes). Guarded Inverse Quadratic Interpolation contracts interval to $10^{-12}$ in $\le 8$ iterations with guaranteed convergence. | 24 | **56% fewer strokes + guaranteed bisection fallback** |
-| **Cubic Characteristic Roots**: $x^3 - 6x^2 + 11x - 6 = 0$ | High-degree numerical approximation or graph tracing; requires setting window, guessing each root separately, and rerunning solver 3 times (48 strokes). Complex conjugate roots invisible. | 48 | **Cardano Analytic Solver (`{{key:POLY}}`)**: Enter coefficients into softkeys `1 {{key:A}} 6 {{key:+/-}} {{key:B}} 11 {{key:C}} 6 {{key:+/-}} {{key:D}}`, press `{{key:EXEC}}` (16 strokes). Closed-form Cardano resolvent delivers all three real/complex roots to $(Y, X)$ and variables 1–6 in $<5\text{ ms}$. | 16 | **67% fewer strokes + all real & complex roots simultaneously** |
-
----
-
-## Survey of Polynomial & Implicit Equations Across Engineering
-Across fluid hydraulics, thermodynamics, electromagnetics, and astrodynamics, physical conservation laws routinely produce multi-degree polynomials or implicit transcendental equations that call for `{{key:POLY}}`, Horner's nested evaluation, or Richard Brent's `{{key:SOLVE}}` engine.
-
-In **fluid and open-channel hydraulics**, conserving specific momentum across an open-channel hydraulic jump with upstream supercritical depth $y_1$ and Froude number $\text{Fr}_1 = v_1 / \sqrt{g y_1}$ produces the **Bélanger conjugate depth quadratic**:
-
-$$y_2^2 + y_1 y_2 - \frac{2 q^2}{g y_1} = y_2^2 + y_1 y_2 - 2 y_1^2 \text{Fr}_1^2 = 0$$
-
-whose positive subcritical conjugate root $y_2 = \frac{y_1}{2}\left(\sqrt{1 + 8\text{Fr}_1^2} - 1\right)$ can be extracted directly via `{{key:POLY}}` or stack evaluation. Likewise, equating a centrifugal pump impeller head curve $H_p(Q) = H_0 + b_1 Q - b_2 Q^2$ to a turbulent pipeline resistance curve $H_s(Q) = H_{\text{stat}} + k Q^2$ produces a quadratic polynomial $(b_2 + k)Q^2 - b_1 Q - (H_0 - H_{\text{stat}}) = 0$ for the operating flow rate $Q$. Planar **Couette-Poiseuille channel flow** under an adverse pressure gradient $dp/dx$ follows the parabolic velocity profile $u(y) = \frac{1}{2\mu}\frac{dp}{dx}(y^2 - h y) + \frac{U}{h}y$, terminal particle settling under combined linear Stokes and quadratic Newton drag satisfies $c_2 v^2 + c_1 v - W = 0$, and implicit turbulent pipe friction obeys the transcendental **Colebrook-White** equation.
-
-In **thermodynamics, acoustics, and electromagnetics**, real-gas isotherms obey the cubic **van der Waals** polynomial $P V^3 - (Pb + RT)V^2 + aV - ab = 0$, while standard-atmosphere pressure-altitude profiles $P(h) = a_3 h^3 + a_2 h^2 + a_1 h + a_0$ and polynomial heat-capacity curves evaluate cleanly via **Horner's nested scheme**. In counter-flow heat exchangers, solving for an unknown terminal temperature difference $\Delta T_2$ from a target **Log Mean Temperature Difference** $\text{LMTD} = \frac{\Delta T_1 - \Delta T_2}{\ln(\Delta T_1 / \Delta T_2)}$ requires Brent's `{{key:SOLVE}}` engine, as do Wien's spectral peak root $5(1 - e^{-x}) - x = 0$ and the Shockley diode load-line equation, while **Green's empirical rational fill-factor equation** $FF = \frac{v_{\text{oc}} - \ln(v_{\text{oc}} + 0.72)}{v_{\text{oc}} + 1}$ evaluates solar cell efficiency from normalized open-circuit voltage $v_{\text{oc}} = V_{\text{oc}} / V_T$. Even acoustic resonators lead directly to quadratics: in a cylindrical **Helmholtz resonator** of volume $V$ and neck length $L$, incorporating Rayleigh's radiation end-correction $L' = L + 1.7a$ alongside throat area $A = \pi a^2$ in $f_0 = \frac{c}{2\pi}\sqrt{\frac{A}{V L'}}$ produces an explicit quadratic equation for the neck radius $a$:
-
-$$a^2 - \left(\frac{6.8\pi f_0^2 V}{c^2}\right) a - \left(\frac{4\pi f_0^2 V L}{c^2}\right) = 0$$
-
-alongside RLC circuit state poles, high-frequency **Kelvin skin-depth AC resistance** quadratics, and **Gaussian laser cavity beam-waist** stability equations ($z^2 - L z + z_0^2 = 0$, where $z_0^2 = L(2f - L)$) solved via `{{key:POLY}}`.
-
-In **relativistic mechanics, astrodynamics, and structural/geotechnical buckling**, substituting total relativistic energy $E = K + m_0 c^2$ into Einstein's invariant $E^2 - (pc)^2 - (m_0 c^2)^2 = 0$ yields the quadratic kinetic-energy polynomial:
-
-$$K^2 + 2(m_0 c^2) K - (pc)^2 = 0$$
-
-which extracts kinetic energy $K$ from momentum $pc$. In orbital and compressible-flow mechanics, **Kepler's anomaly equation** $M = E - e\sin E$ and the **de Laval supersonic nozzle Area-Mach relation** $\frac{A}{A^*} = \frac{1}{M}\left[\frac{2}{\gamma+1}\left(1 + \frac{\gamma-1}{2}M^2\right)\right]^{\frac{\gamma+1}{2(\gamma-1)}}$ require `{{key:SOLVE}}`, whereas the **vis-viva hyperbolic excess velocity** quadratic $v_\infty^2 - v^2 + \frac{2\mu}{r} = 0$, the **geostationary orbital radius pure cubic** $r^3 - \frac{\mu T^2}{4\pi^2} = 0$, and the **gyroscopic nutation-precession characteristic quadratic** $I_t \Omega^2 - I_p \omega \Omega + M g L = 0$ yield directly to `{{key:POLY}}`, joined in solid mechanics by 3D principal stress tensor cubics, Euler/cantilever beam deflection polynomials, **Lamé thick-walled cylinder** wall-thickness quadratics, **Rankine Mohr-Coulomb slip-plane** quadratics ($\tan^2\theta + 2\tan\phi\tan\theta - 1 = 0$, where $K_a = \tan^2\theta$), **annular clutch torque** cubics, and **nuclear reactor critical buckling** equations.
-
----
-
-### Root Brackets, Degenerate Leading Coefficients, and Tangent Extrema
-
-Understanding how `{{key:SOLVE}}` and `{{key:POLY}}` behave at mathematical boundaries lets you diagnose any equation immediately. For `{{key:SOLVE}}` to guarantee convergence via the Intermediate Value Theorem, your initial guesses in Registers $Y$ and $X$ should bracket the root so that $f(Y) \cdot f(X) \le 0$. If both initial guesses share the same sign, Phase 1 automatically launches a guarded secant and golden-ratio outward search; if the curve never crosses zero (for example, $e^x + 1 = 0$), execution halts after 100 iterations with `NO ROOT FOUND` (Code 06), leaving your stack registers preserved until you press `{{key:C}}` to clear the banner. What if the root is an even-multiplicity tangent root such as $f(x) = (x - 2)^2 = 0$, where $f(x) \ge 0$ everywhere and no sign-change bracket exists? During Phase 1, the guarded secant contraction detects the stationary minimum when $|b - a| < 10^{-12}$ and $|f(b)| < 10^{-7}$ (or immediately if $|f(b)| \le 10^{-13}$) and returns $x = 2.0$.
-
-Similarly, when using `{{key:POLY}}`, at least one of the leading coefficients $A$ or $B$ must be non-zero; pressing `{{key:EXEC}}` when both $A = 0$ and $B = 0$ displays `A ≠ 0` (which clears non-destructively with `{{key:C}}`). Because unentered coefficients default to $0$, you can solve a quadratic equation $ax^2 + bx + c = 0$ either by keying $A = a, B = b, C = c$ before pressing `{{key:EXEC}}` ($D$ defaults to $0$, storing the two quadratic roots in variables `3` and `5`) or by keying $B = a, C = b, D = c$ to invoke the native quadratic fallback, while sparse cubics like $x^3 - 8 = 0$ require entering only $A$ and $D$.
-
-### Interpreting the Stack After {{key:SOLVE}}: Roots, Poles, and Directed Branch Selection
-
-In the spirit of William Kahan's diagnostic solver architecture (introduced in the HP-34C and refined in Chapter 14 and Appendix B of the *HP-32SII Owner's Manual*), `{{key:SOLVE}}` never acts as an opaque black box. When root-finding terminates, the SC-32 populates the operational stack with a complete **three-register diagnostic audit** so you can immediately distinguish a true physical zero from an even-multiplicity tangent root or a discontinuous vertical asymptote (pole):
-
-| Stack Register | Post-`{{key:SOLVE}}` Contents | Engineering Diagnostic Interpretation |
+| Stack / Action | Post-`{{key:SOLVE}}` Contents | Engineering Diagnostic Interpretation |
 | :---: | :--- | :--- |
-| **Register $X$** | **Converged Root Estimate ($x^*$)** | The final abscissa estimate where $f(x^*)$ crosses or touches zero, also written directly into the target solver variable. |
-| **Register $Y$** | **Previous Bracket Iterate ($x_{\text{prev}}$)** | The companion bracket bound or prior secant/IQI iterate. When $\lvert X - Y \rvert \le 10^{-12}$, the bracket jaws have pinched tightly around $x^*$. (When called from a single seed in `STO` workflow, $Y$ retains the initial seed for immediate step inspection.) |
-| **Register $Z$** | **Evaluated Function Residual ($f(x^*)$)** | The value of your residual expression evaluated at $x = x^*$. Inspect via `{{key:R↓}} {{key:R↓}}`: a true zero-crossing yields $\lvert Z \rvert \le 10^{-12}$. |
+| **Register $X$** | **Converged Root Estimate ($x^*$)** | The final root estimate where $f(x^*)$ crosses or touches zero, also written into the target variable (`A`–`Z`). |
+| **Register $Y$** | **Starting Seed or Upper Bracket Bound** | Lifted from Register $X$ when `{{key:SOLVE}}` pushes the converged root $x^*$ onto the stack. |
+| **Registers $Z, T$** | **Prior Stack Context (Preserved)** | Any values previously in Registers $Y$ and $Z$ lift into $Z$ and $T$ undisturbed. |
+| **`{{key:XEQ}}` Residual Audit** | **Evaluated Function Residual ($f(x^*)$)** | Because $x^*$ is already stored in your equation's target variable, pressing `{{key:XEQ}}` evaluates $f(x^*)$: a true root yields $\lvert f(x^*) \rvert \le 10^{-12}$, whereas an accidental vertical asymptote/pole exposes itself with $\lvert f(x^*) \rvert \gg 1$. |
 
-Inspecting those three registers after `{{key:SOLVE}}` finishes tells you the exact geometry of the root. At a **verified simple root** ($f(x^*) = 0,\; f'(x^*) \ne 0$), the bracket has contracted to machine precision ($X \approx Y$ within $10^{-12}$) and rolling down twice (`{{key:R↓}} {{key:R↓}}`) shows that the residual in Register $Z$ vanishes ($|Z| \le 10^{-12}$), confirming complete zero-pair cancellation between positive and negative terms. At an **even-multiplicity tangent root** such as $f(x) = (x - 2)^2 = 0$, the curve touches the horizontal axis without crossing it ($f(x) \ge 0$ everywhere), so no sign-change bracket exists; during Phase 1, the guarded secant contraction pinches onto the vertex and terminates when the step width satisfies $|b - a| < 10^{-12}$ and the residual in Register $Z$ satisfies $|Z| < 10^{-7}$ (typically $\sim 10^{-12}$ to $10^{-8}$ because squaring a perturbation of size $10^{-6}$ already reaches $10^{-12}$).
+### Practical Root-Finding Strategy: Bracket Seeding, Multiple Roots & Deflation on the Stack
 
-What if your initial bracket accidentally straddles a **discontinuous pole or vertical asymptote**, such as $\tan x$ at $x = \pi/2$ or $f(x) = \frac{1}{x - 2}$? Because $f(a)$ is large and negative ($-\infty$) on one side of the odd-order pole while $f(b)$ is large and positive ($+\infty$) on the other, $f(a) \cdot f(b) < 0$ is satisfied and bisection repeatedly halves the interval toward the singularity until $X$ and $Y$ pinch together on opposite sides of the asymptote. Rolling the stack down twice (`{{key:R↓}} {{key:R↓}}`) to inspect Register $Z$ immediately exposes the impostor: instead of $Z \approx 0$, **Register $Z$ holds an enormous residual ($|Z| \gg 1$, often $10^{11}$ or larger)**.
+When tackling unfamiliar nonlinear equations in the lab or field, four practical stack habits make `{{key:POLY}}` and `{{key:SOLVE}}` bulletproof:
 
-Finally, what happens when a nonlinear conservation law possesses two distinct physical branches on opposite sides of a minimum—such as the tranquil versus rapid alternate depths of a hydraulic weir, or the subsonic diffuser root ($M_{\text{sub}} < 1$) and supersonic exhaust root ($M_{\text{sup}} > 1$) of a rocket nozzle? You can use **directed seeding or two-guess bracketing** to steer `{{key:SOLVE}}` into the exact physical branch you want. For isentropic air flow ($\gamma = 1.4$, critical sonic throat pressure ratio $\frac{P^*}{P_0} = \left(\frac{2}{\gamma+1}\right)^{\gamma/(\gamma-1)} = 0.528282$) expanding through a converging-diverging de Laval rocket nozzle with exit-to-throat area ratio $\frac{A}{A^*} = 2.50$, the exit Mach number $M$ satisfies the implicit Stodola Area-Mach relation—which possesses both a subsonic diffuser branch ($M_{\text{sub}} \approx 0.2395$) and a supersonic rocket-exhaust branch ($M_{\text{sup}} > 1$):
-$$f(M) = \frac{1}{M}\left(\frac{1 + 0.2 M^2}{1.2}\right)^3 - 2.50 = 0 \implies M_{\text{sup}} = \mathbf{2.442804}$$
-
-With `M {{key:x²}} 0.2 {{key:×}} 1 {{key:+}} 1.2 {{key:÷}} 3 {{key:yˣ}} M {{key:÷}} 2.50 {{key:-}}` entered into `{{key:EQN}}`, seeding the initial estimate $M_0 = 2.50$ on the supersonic side of the sonic throat minimum ($M = 1.0$) via `2.5 {{key:STO}} M` and pressing `{{key:SOLVE}} M` isolates the supersonic exit Mach number ($Y = 2.5000,\; X = \mathbf{2.442804}$) in Register $X$. Conversely, if you re-run that exact same Stodola Area-Mach equation ($A/A^* = 2.50$) with an initial subsonic seed on the other side of the $M = 1.0$ throat extremum via `0.2 {{key:STO}} M {{key:SOLVE}} M`, Brent's solver converges cleanly to the subsonic venturi-diffuser root **$M_{\text{sub}} = 0.239541$**—demonstrating how your initial seed steers `{{key:SOLVE}}` into whichever physical flow regime you wish to analyze.
+1. **Verifying `{{key:POLY}}` Roots Instantly via Viète's Sum-and-Product Checksums:**
+   Whenever `{{key:POLY}}` writes the three roots of $Ax^3 + Bx^2 + Cx + D = 0$ into variables `1` (Real 1), `3` (Real 2), and `5` (Real 3), you can verify the trace and determinant in six keystrokes:
+   * Keying `{{key:RCL}} 1 {{key:RCL}} 3 {{key:+}} {{key:RCL}} 5 {{key:+}}` must equal $-B/A$ (for our stress tensor cubic $\lambda^3 - 70\lambda^2 + 1175\lambda - 5750 = 0$, $10.0 + 11.972244 + 48.027756 = \mathbf{70.000000}$).
+   * Keying `{{key:RCL}} 1 {{key:RCL}} 3 {{key:×}} {{key:RCL}} 5 {{key:×}}` must equal $-D/A$ ($10.0 \times 11.972244 \times 48.027756 = \mathbf{5750.0000}$).
+   * And when a cubic has complex conjugate roots $r_{2,3} = \alpha \pm i\beta$ stored in variables `3, 4` and `5, 6`, keying `{{key:RCL}} 4 {{key:RCL}} 3 {{key:▸θ,r}}` (`Left Shift {{key:↰}} above {{key:4}}`) converts $(\text{Re}, \text{Im})$ directly into the polar modulus $|r_2| = \sqrt{\alpha^2 + \beta^2}$ in Register $X$ and phase angle $\theta$ in Register $Y$.
+2. **Isolating Specific Branches of Multi-Root Transcendental Equations:**
+   Many physical conservation laws have two or more physically meaningful branches—such as the low direct-fire mortar angle vs. high plunging mortar angle, the subsonic vs. supersonic branches of Stodola's rocket nozzle Area-Mach relation ($M^* = 1$ throat sonic point separating $M_{\text{sub}} \in (0, 1)$ from $M_{\text{sup}} > 1$), or the subcritical vs. supercritical conjugate depths in open-channel hydraulics. Whenever an equation has multiple roots, place two bracket bounds $(a, b)$ in Registers $Y$ and $X$ that straddle ONLY the branch you want (for example, `0.05 {{key:ENTER}} 0.95` for the subsonic nozzle branch, or `1.05 {{key:ENTER}} 4.0` for the supersonic nozzle branch) so Brent's solver is locked inside that branch from iteration zero.
+3. **Deflating Known Roots to Hunt Additional Roots (`(x - r₁)` Division):**
+   Suppose you have found one root $r_1$ of a transcendental or high-degree equation $f(x) = 0$ (stored in Variable `A`) and want to search for a second root $r_2$ without having the solver fall back into the basin of attraction of $r_1$. Simply append `X {{key:RCL}} A {{key:-}} {{key:÷}}` to the end of your equation in `{{key:EQN}}` to form the deflated function $g(x) = \frac{f(x)}{x - r_1}$, removing the zero at $r_1$ completely.
+4. **Recognizing `NO ROOT FND` (Code 08) & Even-Multiplicity Tangent Roots:**
+   If a curve $f(x)$ stays strictly positive everywhere—such as $f(x) = x^2 + 4 = 0$, which has only complex roots $\pm 2i$—Phase 1's outward golden-ratio search terminates after 50 expansion steps and displays **`NO ROOT FND`** (Code 08, cleared via `{{key:C}}`). Conversely, if a curve merely *kisses* the axis tangentially at an even-multiplicity root such as $(x - 3)^2 = 0$, its derivative $f'(3)$ is zero at the root, so the classic secant slope becomes horizontal; Brent's solver detects the tangent minimum when $|b - a| < 10^{-12}$ and $|f(b)| < 10^{-7}$, or you can solve $f'(x) = 0$ directly to recover full quadratic convergence.
 
 ---
 
-## Summary & Looking Ahead
+### From Where a Curve Crosses Zero to How Fast It Moves
 
-Chapter 7 bridged classical polynomial theory and modern numerical analysis. By chaining synthetic division and Horner's nested polynomial stream through the stack, you evaluated high-order polynomials with minimal keystrokes. You extracted real and complex roots of quadratics and cubics via the hardware polynomial solver (`{{key:POLY}}`), and conquered transcendental equations—from pipe friction factors to transcendental orbital anomalies—using Richard Brent's root finder (`{{key:SOLVE}}`) with guaranteed bracket convergence to $10^{-12}$ accuracy.
+Consider what we have conquered in Chapter 7: give us any continuous curve $f(x)$—whether it is a third-degree stress polynomial, Kepler's elliptical orbit equation, or Colebrook's turbulent pipe law—and we can pinpoint the exact spot $x^*$ where the curve crosses zero.
 
-Root-finding answers where a function crosses zero, but continuous physical models also require measuring rates of change and accumulating continuous quantities. In **[Chapter 8: Calculus, Numerical Derivatives & Romberg Quadrature](08-calculus-romberg-quadrature.md)**, you will take the step into infinitesimal analysis. You will use the SC-32's Romberg integration engine (`{{key:∫}}`) and Richardson extrapolation to evaluate definite integrals, compute variable rocket motor impulses, and calculate numerical derivatives.
+Yet knowing where a curve sits at a single equilibrium point is only the beginning of physics. Suppose that instead of asking *where* a rising Saturn V rocket crosses a given altitude, we ask two dynamic questions:
+1. **How fast is the curve changing at this exact microsecond?** (Its instantaneous slope, or **derivative**, $\frac{df}{dx}$.)
+2. **How much total distance, work, or impulse has accumulated underneath the curve from $x = a$ to $x = b$?** (Its curved area, or **definite integral**, $\int_a^b f(x)\,dx$.)
 
+And what do we do when the curve whose area we need to measure—like the large-angle swing of a grandfather clock's pendulum or the velocity profile of a rocket shedding fifteen tons of propellant every second—has no elementary antiderivative in any calculus textbook? In **[Chapter 8: Slicing Infinity: From Archimedes and Saturn V to Romberg's 4/3 − 1/3 Miracle](08-calculus-romberg-quadrature.md)**, we step into the twin engines of calculus and discover how a deceptively simple $\frac{4}{3} - \frac{1}{3}$ weighting trick melts away numerical approximation error.

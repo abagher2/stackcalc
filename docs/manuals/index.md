@@ -25,14 +25,14 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
         "price": "16.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://www.etsy.com/shop/StackCalc"
+        "url": "https://stackcalcmath.etsy.com"
       }
     },
     {
       "@type": "Book",
       "name": "From Blocks to the Stack: Hands-On Math & the SC-6 Stack Calculator",
       "description": "The student handbook, parent guide, and classroom companion for the StackCalc SC-6 Elementary RPN Calculator. Connects 3D-printed math blocks with the 4-level number stack, skip-counting ladders, whole-number remainders, fraction towers, geometry, primes, and mental-math sprints.",
-      "bookFormat": "https://schema.org/SpiralBound",
+      "bookFormat": "https://schema.org/Paperback",
       "genre": "Mathematics / Elementary & Middle School Education",
       "inLanguage": "en",
       "publisher": {
@@ -40,13 +40,24 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
         "name": "StackCalc",
         "url": "https://www.stackcalc.io"
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "16.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://www.etsy.com/shop/StackCalc"
-      }
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Amazon Print Edition",
+          "price": "16.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://link.amazon/B0f5cP0Ur"
+        },
+        {
+          "@type": "Offer",
+          "name": "Etsy Spiral-Bound Edition",
+          "price": "16.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://stackcalcmath.etsy.com"
+        }
+      ]
     }
   ]
 }
@@ -69,6 +80,10 @@ Every worked example, story, and 4-register stack trace in both books is verifie
 
 Written directly for curious 3rd–6th graders, parents, and teachers, ***From Blocks to the Stack*** begins with a simple observation: before you ever learned to write equations with parentheses and equals signs, your hands already knew how to do math by **stacking physical things**. Pairing the **StackCalc SC-6** with nine 3D-printed manipulative studios (Ten-Frames, Counting Tiles, $84\text{ mm}$ Fraction Towers, Prime Factor Blocks, and a Planetary Geared Clock), the book gently guides young learners from their very first stack addition to multi-step problem solving without parentheses.
 
+- **[Order on Amazon: Paperback & Hardcover Bookstore Editions ↗](https://link.amazon/B0f5cP0Ur)**
+- **[Order on Etsy: Spiral-Bound Lay-Flat Bench Edition ($16.00) ↗](https://stackcalcmath.etsy.com)**
+- **[Order Physical Math Blocks & Refills via Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)**
+- **[Explore Dedicated Book Product Page & TOC ↗](../products/sc6-book.md)**
 - **[Start Reading Online: Preface (`sc6/index.md`)](sc6/index.md)**
 - **[Download Complete Typeset Book PDF (`sc6-elementary-manual.pdf`)](output/sc6-elementary-manual.pdf)**
 - **[Open Companion Student Activity Workbook](../curriculum/sc6-elementary-companion-workbook.md)**
@@ -120,7 +135,7 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
 
 ## School District Procurement & Institutional Purchasing {: #school-district-procurement }
 
-We support school mathematics departments, STEM academies, and homeschool co-ops with direct institutional purchasing via formal Purchase Order (`orders@stackcalc.io`) as well as individual spiral-bound copies on [Etsy](https://www.etsy.com/shop/StackCalc).
+We support school mathematics departments, STEM academies, and homeschool co-ops with direct institutional purchasing via formal Purchase Order (`orders@stackcalc.io`), individual print copies on [Amazon](https://link.amazon/B0f5cP0Ur), spiral-bound bench editions on [Etsy](https://stackcalcmath.etsy.com), and on-demand manipulative fleets through our [Slant 3D Portal](https://teleportpod.com/portals/profile/StackCalc).
 
 | Tier | Order Quantity | Unit Price | Savings | Benefits Included |
 | :--- | :---: | :---: | :---: | :--- |

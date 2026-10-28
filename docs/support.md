@@ -17,6 +17,11 @@ If you need direct assistance, encountered a bug, or have a question:
 
 - **Direct Email Support:** [support@stackcalc.io](mailto:support@stackcalc.io) *(Fastest response for App Store customers and reviewers)*
 - **GitHub Issue Tracker:** [https://github.com/abagher2/stackcalc/issues](https://github.com/abagher2/stackcalc/issues) *(Best for bug reports, troubleshooting, and feature requests)*
+- **Official Storefronts & Fulfillment:**
+  - **Amazon Bookstore:** [From Blocks to the Stack on Amazon (B0HPJN3KP9) ↗](https://link.amazon/B0f5cP0Ur)
+  - **Etsy Storefront:** [Handcrafted Kits & Spiral Manuals (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
+  - **Slant 3D Portal:** [On-Demand Additive Manufacturing & Replacement Parts ↗](https://teleportpod.com/portals/profile/StackCalc)
+- **Replacement Parts & Refills:** Missing a block or need hardware parts? See our [Replacement Parts Guide](parts.md).
 - **Community Documentation:** Explore our in-depth guides for [Hardware](hardware.md), [Firmware](firmware.md), [iOS App](ios_app.md), and [Interactive Tutorials](tutorials.md).
 - **Web Support & Help Desk:** Visit [https://stackcalc.io/support/](https://stackcalc.io/support/) for frequent updates.
 
@@ -86,6 +91,15 @@ StackCalc includes an equation solver based on classic Romberg numerical integra
 - **Public printable release:** Download the matching four-part STL/3MF set from the [hardware guide](hardware.md). It is intended for mechanical exploration and community fabrication.
 - **Teaching materials:** The [Learning Lab](learning-lab.md#download-the-prototype-materials) provides printable curriculum materials and teacher PDFs.
 - **What is not public:** Electronics source, firmware source, CAD generators, manufacturing artwork, and production documentation are not public downloads.
+
+---
+
+### 8. What should I do if a manipulative piece or calculator part goes missing?
+Every StackCalc educational kit includes an Archival Reference Card with component Part IDs. If a piece ever goes missing:
+- Refer to our [Replacement Parts Guide](parts.md).
+- Order replacements, spare docking trays, and batch refills directly through our [Slant 3D Portal](https://teleportpod.com/portals/profile/StackCalc).
+- Contact us at [support@stackcalc.io](mailto:support@stackcalc.io) with your Part ID if you need custom fulfillment assistance.
+- Download 100% free open models and 3MF print profiles from our [Printables Hub](https://www.printables.com/@StackCalc_5593834) or explore our [Makerspace 3D Print Kits Guide](printables.md) to 3D print replacement parts locally in your school or home makerspace.
 
 ---
 

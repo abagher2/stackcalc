@@ -1,324 +1,255 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 820" width="1260" height="820">
+<svg xmlns="http://www.w3.org/2000/svg" width="6.0in" height="4.0in" viewBox="0 0 1200 800">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
-      .font-mono { font-family: 'Space Mono', monospace; }
-      .title { font-size: 20px; font-weight: 700; fill: #ffffff; letter-spacing: -0.5px; }
-      .subtitle { font-size: 12px; font-weight: 400; fill: #e2e8f0; }
-      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #ffffff; }
-      .badge-rev { font-size: 12px; font-weight: 700; fill: #ffffff; }
-      .badge-box { font-size: 10.5px; font-weight: 400; fill: #cccccc; }
-      .section-hdr { font-size: 11px; font-weight: 700; fill: #ffffff; letter-spacing: 0.8px; text-transform: uppercase; }
-      .th { font-size: 9px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
-      .td { font-size: 8.5px; font-weight: 400; fill: #ffffff; }
-      .footer-txt { font-size: 9.3px; font-weight: 400; fill: #cccccc; }
+      .font-mono { font-family: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .card-title { font-size: 24px; font-weight: 700; fill: #ffffff; letter-spacing: -0.5px; }
+      .card-subtitle { font-size: 15px; font-weight: 400; fill: #e2e8f0; }
+      .section-hdr { font-size: 16px; font-weight: 700; fill: #ffffff; letter-spacing: 0.6px; text-transform: uppercase; }
+      .th { font-size: 14px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
+      .footer-txt { font-size: 13.5px; font-weight: 400; fill: #cccccc; }
     </style>
   </defs>
 
   <!-- Background Base Canvas -->
-  <rect x="0" y="0" width="1260" height="820" fill="#000000" />
+  <rect x="0" y="0" width="1200" height="800" fill="#000000" />
 
-  <!-- Outer Card Frame (135x90mm Proportions) -->
-  <rect x="15" y="15" width="1230" height="790" rx="14" fill="#000000" stroke="#ffffff" stroke-width="1.8" />
-  <rect x="25" y="25" width="1210" height="770" rx="8" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+  <!-- Outer Card Frame (4x6 Aspect Ratio, 3mm corner radius) -->
+  <rect x="10" y="10" width="1180" height="780" rx="12" fill="#000000" stroke="#ffffff" stroke-width="1.8" />
+  <rect x="18" y="18" width="1164" height="764" rx="8" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
 
   <!-- Top Header Panel -->
-  <rect x="35" y="35" width="1190" height="102" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+  <rect x="25" y="25" width="1150" height="84" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
   
   <!-- StackCalc Brand Logo Badge -->
-  <g transform="translate(48, 50)">
-    <rect x="0" y="0" width="65" height="65" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.4" />
-    <rect x="12" y="14" width="41" height="6" rx="2" fill="#ffffff" />
-    <rect x="16" y="24" width="33" height="6" rx="2" fill="#ffffff" opacity="0.85" />
-    <rect x="20" y="34" width="25" height="6" rx="2" fill="#ffffff" opacity="0.70" />
-    <rect x="24" y="44" width="17" height="6" rx="2" fill="#ffffff" opacity="0.55" />
+  <g transform="translate(36, 36)">
+    <rect x="0" y="0" width="52" height="52" rx="7" fill="#000000" stroke="#ffffff" stroke-width="1.3" />
+    <rect x="10" y="11" width="32" height="5" rx="1.5" fill="#ffffff" />
+    <rect x="13" y="19" width="26" height="5" rx="1.5" fill="#ffffff" opacity="0.85" />
+    <rect x="16" y="27" width="20" height="5" rx="1.5" fill="#ffffff" opacity="0.70" />
+    <rect x="19" y="35" width="14" height="5" rx="1.5" fill="#ffffff" opacity="0.55" />
   </g>
 
   <!-- Box Button Icon Badge -->
   
-    <g transform="translate(125, 49)" data-macro="{{icon:button_domino}}">
-      <rect x="0" y="0" width="65" height="65" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-      <g transform="translate(5.2, 5.2) scale(0.546)">
+    <g transform="translate(98, 36)" data-macro="{{icon:button_domino}}">
+      <rect x="0" y="0" width="52" height="52" rx="7" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <g transform="translate(4.16, 4.16) scale(0.4368)">
         <path d="M 1.8125 -22.890625 L 1.8125 -27.703125 L 21.234375 -27.703125 L 21.234375 -22.875 L 8.125 -22.875 L 15.59375 -13.859375 L 8.125 -4.828125 L 21.234375 -4.828125 L 21.234375 0 L 1.8125 0 L 1.8125 -4.828125 L 9.265625 -13.859375 Z M 1.8125 -22.890625 " transform="translate(27, 65)" fill="#ffffff" fill-rule="nonzero" /><path d="M 9.46875 -5.359375 L 9.46875 -11.140625 L 3.6875 -11.140625 L 3.6875 -15.46875 L 9.46875 -15.46875 L 9.46875 -21.234375 L 13.796875 -21.234375 L 13.796875 -15.46875 L 19.5625 -15.46875 L 19.5625 -11.140625 L 13.796875 -11.140625 L 13.796875 -5.359375 Z M 9.46875 -5.359375 " transform="translate(49.87793, 65)" fill="#ffffff" fill-rule="nonzero" /><path d="M 100 50 L 100 81.65625 C 100 86.9375 100 89.578125 99.101562 92.421875 C 97.972656 95.527344 95.527344 97.972656 92.421875 99.101562 C 89.578125 100 86.9375 100 81.65625 100 L 18.34375 100 C 13.0625 100 10.421875 100 7.578125 99.101562 C 4.472656 97.972656 2.027344 95.527344 0.898438 92.421875 C 0 89.578125 0 86.9375 0 81.65625 L 0 18.34375 C 0 13.0625 0 10.421875 0.898438 7.578125 C 2.027344 4.472656 4.472656 2.027344 7.578125 0.898438 C 10.421875 0 13.0625 0 18.34375 0 L 81.65625 0 C 86.9375 0 89.578125 0 92.421875 0.898438 C 95.527344 2.027344 97.972656 4.472656 99.101562 7.578125 C 100 10.421875 100 13.0625 100 18.34375 Z M 96.5 50 L 96.5 83.507812 C 96.5 87.246094 96.5 89.117188 95.863281 91.132812 C 95.0625 93.332031 93.332031 95.0625 91.132812 95.863281 C 89.117188 96.5 87.246094 96.5 83.507812 96.5 L 16.492188 96.5 C 12.753906 96.5 10.882812 96.5 8.867188 95.863281 C 6.667969 95.0625 4.9375 93.332031 4.136719 91.132812 C 3.5 89.117188 3.5 87.246094 3.5 83.507812 L 3.5 16.492188 C 3.5 12.753906 3.5 10.882812 4.136719 8.867188 C 4.9375 6.667969 6.667969 4.9375 8.867188 4.136719 C 10.882812 3.5 12.753906 3.5 16.492188 3.5 L 83.507812 3.5 C 87.246094 3.5 89.117188 3.5 91.132812 4.136719 C 93.332031 4.9375 95.0625 6.667969 95.863281 8.867188 C 96.5 10.882812 96.5 12.753906 96.5 16.492188 Z M 96.5 50 " fill="#ffffff" fill-rule="evenodd" />
       </g>
     </g>
     
 
   <!-- Header Typography -->
-  <text x="215" y="60" class="font-mono title">MATH DOMINO STUDIO &amp; 12-FRAME REGROUPING LAB</text>
-  <text x="215" y="78" class="font-mono subtitle">Triangular Combinatorics, Subitizing &amp; Part-Whole Decompositions</text>
+  <text x="165" y="55" class="font-mono card-title">MATH DOMINO STUDIO &amp; 12-FRAME REGROUPING LAB</text>
+  <text x="165" y="74" class="font-sans card-subtitle">Triangular Combinatorics, Subitizing &amp; Part-Whole Decompositions</text>
+  <text x="165" y="93" class="font-mono" font-size="12.5px" font-weight="700" fill="#ffffff">SERIES 1 • CARD 02 / 12 • DOMAIN: DISCRETE COMBINATORICS &amp; PARTITIONS</text>
 
-  <!-- Studio Continuum Ribbon -->
-  <text x="215.0" y="109.0" class="font-mono" font-size="8.2px" font-weight="700" fill="#ffffff">STUDIO CONTINUUM:</text>
-
-    <g transform="translate(313.0, 98.0)">
-      <rect x="0" y="0" width="68.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="34.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">1·Ten-Frames</text>
-    </g>
-<text x="382.5" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
-
-    <g transform="translate(388.5, 98.0)">
-      <rect x="0" y="0" width="58.0" height="15" rx="3.5" fill="#ffffff" stroke="#ffffff" stroke-width="0.8" />
-      <text x="29.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="700" text-anchor="middle" fill="#000000">2·Dominoes</text>
-    </g>
-<text x="448.0" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
-
-    <g transform="translate(454.0, 98.0)">
-      <rect x="0" y="0" width="43.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="21.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">3·Clock</text>
-    </g>
-<text x="498.5" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
-
-    <g transform="translate(504.5, 98.0)">
-      <rect x="0" y="0" width="63.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="31.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">4·Fractions</text>
-    </g>
-<text x="569.0" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
-
-    <g transform="translate(575.0, 98.0)">
-      <rect x="0" y="0" width="48.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="24.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">5·Primes</text>
-    </g>
-<text x="624.5" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
-
-    <g transform="translate(630.5, 98.0)">
-      <rect x="0" y="0" width="53.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="26.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">6·Algebra</text>
-    </g>
-<text x="685.0" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
-
-    <g transform="translate(691.0, 98.0)">
-      <rect x="0" y="0" width="73.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="36.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">7·Probability</text>
-    </g>
-<text x="765.5" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
-
-    <g transform="translate(771.5, 98.0)">
-      <rect x="0" y="0" width="58.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="29.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">8·Volvelle</text>
-    </g>
-<text x="831.0" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
-
-    <g transform="translate(837.0, 98.0)">
-      <rect x="0" y="0" width="43.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="21.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">9·Quest</text>
-    </g>
-<text x="881.5" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
-
-    <g transform="translate(887.5, 98.0)">
-      <rect x="0" y="0" width="43.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="21.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">10·Rack</text>
-    </g>
-<text x="932.0" y="108.5" class="font-mono" font-size="7.0px" fill="#ffffff">→</text>
-
-    <g transform="translate(938.0, 98.0)">
-      <rect x="0" y="0" width="48.0" height="15" rx="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
-      <text x="24.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#cccccc">11·SC-32</text>
-    </g>
-
-  <!-- Top-Right Series & SKU Badges -->
-  <g transform="translate(1025, 48)">
-    <rect x="0" y="0" width="180" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="90" y="19" class="font-mono badge-sku" text-anchor="middle">CARD 02 / 10 • DOMI-01</text>
+  <!-- Top-Right SKU Badges -->
+  <g transform="translate(975, 36)">
+    <rect x="0" y="0" width="190" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="95" y="19" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#ffffff">CARD 02 / 12 • DOMI-01</text>
     
-    <rect x="0" y="34" width="180" height="26" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="90" y="52" class="font-mono badge-rev" text-anchor="middle">MATHEMATICAL REFERENCE</text>
+    <rect x="0" y="34" width="190" height="26" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="95" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#ffffff">MATHEMATICAL GUIDE</text>
   </g>
 
-  <!-- COLUMN 1: WHAT IS THIS MANIPULATIVE? -->
-  <g transform="translate(35, 148)">
-    <rect x="0" y="0" width="370" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="370" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="16" y="22" class="font-mono section-hdr">1. WHAT IS THIS MANIPULATIVE?</text>
+  <!-- COLUMN 1: CONCEPT & PROOF (Width: 390) -->
+  <g transform="translate(25, 120)">
+    <rect x="0" y="0" width="390" height="585" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="390" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="23" class="font-mono section-hdr">1. CONCEPT &amp; GEOMETRIC PROOF</text>
 
     <!-- Headline -->
-    <text x="16" y="52" class="font-mono" font-size="10.5px" font-weight="700" fill="#ffffff">TRIANGULAR COMBINATORICS &amp; PART-WHOLE PAIRS</text>
+    <text x="16" y="52" class="font-mono" font-size="14.5px" font-weight="700" fill="#ffffff">TRIANGULAR COMBINATORICS &amp; PART-WHOLE PAIRS</text>
 
-    <!-- Concept principle text -->
-    <text x="16" y="66" class="font-mono" font-size="8.8px" fill="#ffffff">
-      <tspan x="16" dy="0" font-weight="400" fill="#ffffff">Double-six dominoes form a triangular math system.</tspan><tspan x="16" dy="12" font-weight="400" fill="#ffffff">It contains all unordered pairs [a|b] from 0 to 6:</tspan><tspan x="16" dy="12" font-weight="700" fill="#ffffff">   Total Tiles = T(7) = (7 × 8) / 2 = 28 Unique Tiles</tspan><tspan x="16" dy="12" font-weight="400" fill="#ffffff">Each tile is a 2-part additive partition of 0–12!</tspan>
-    </text>
+    <!-- Concept lines -->
+    <text x="16" y="66" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">Double-six dominoes form a triangular math</text>
+    <text x="16" y="86" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">system.</text>
+    <text x="16" y="106" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">It contains all unordered pairs [a|b] from</text>
+    <text x="16" y="126" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">0 to 6:</text>
+    <text x="16" y="146" class="font-sans" font-size="15px" font-weight="700" fill="#ffffff">   Total Tiles = T(7) = (7 × 8) / 2 = 28</text>
+    <text x="16" y="166" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">Unique Tiles</text>
+    <text x="16" y="186" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">Each tile is a 2-part additive partition</text>
+    <text x="16" y="206" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">of 0–12!</text>
 
-    <!-- Calibration Datum Box -->
-    <g transform="translate(14, 114)">
-      <rect x="0" y="0" width="342" height="84" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="18" class="font-mono" font-size="9.2px" font-weight="700" fill="#ffffff">MODULAR 28.0 × 14.0 MM TILE DATUM</text>
-      <text x="12" y="32" class="font-mono" font-size="8.2px" fill="#cccccc">• Tile Size: 28.00 × 14.00 × 7.00 mm (4U×2U×1U)</text>
-<text x="12" y="44" class="font-mono" font-size="8.2px" fill="#cccccc">• Tactile Pips: 3.20 mm ⌀ recessed high-contrast cups</text>
-<text x="12" y="56" class="font-mono" font-size="8.2px" fill="#cccccc">• Center Divider: Recessed 1.2mm scoring groove</text>
-<text x="12" y="68" class="font-mono" font-size="8.2px" fill="#cccccc">• Pitch: 14.0 mm half matches Ten-Frame cell</text>
-
+    <!-- Datum Box -->
+    <g transform="translate(12, 236)">
+      <rect x="0" y="0" width="366" height="154" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">MODULAR 28.0 × 14.0 MM TILE DATUM</text>
     </g>
+    <text x="24" y="272" class="font-mono" font-size="13.5px" fill="#cccccc">• Tile Size: 28.00 × 14.00 × 7.00 mm</text>
+    <text x="24" y="290" class="font-mono" font-size="13.5px" fill="#cccccc">(4U×2U×1U)</text>
+    <text x="24" y="308" class="font-mono" font-size="13.5px" fill="#cccccc">• Tactile Pips: 3.20 mm ⌀ recessed high-</text>
+    <text x="24" y="326" class="font-mono" font-size="13.5px" fill="#cccccc">contrast cups</text>
+    <text x="24" y="344" class="font-mono" font-size="13.5px" fill="#cccccc">• Center Divider: Recessed 1.2mm scoring</text>
+    <text x="24" y="362" class="font-mono" font-size="13.5px" fill="#cccccc">groove</text>
 
-    <!-- Lid Feature -->
-    <text x="16" y="210" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">12-FRAME REGROUPING TRAY &amp; DOUBLES LID</text>
-    <text x="16" y="224" class="font-mono" font-size="8.5px" fill="#cccccc">
-      <tspan x="16" dy="0">Lid features doubles spine [0|0]–[6|6] and a</tspan><tspan x="16" dy="12">regrouping tray to model part-whole sums!</tspan>
-    </text>
-
-    <!-- Visual Diagram of Geometry / Stacking -->
-    <g transform="translate(14, 324)">
-      <rect x="0" y="0" width="342" height="138" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <!-- Proof Diagram Box -->
+    <g transform="translate(12, 402)">
+      <rect x="0" y="0" width="366" height="173" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       
-      <text x="12" y="18" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">DOMINO SUBITIZING &amp; SUM: [5|4] + [3|2] = 14</text>
-      <g transform="translate(35, 36)">
-        <rect x="0" y="0" width="70" height="36" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.4" />
-        <line x1="35" y1="0" x2="35" y2="36" stroke="#ffffff" stroke-width="1.2" />
-        <circle cx="10" cy="10" r="2.5" fill="#ffffff" />
-        <circle cx="25" cy="10" r="2.5" fill="#ffffff" />
-        <circle cx="17.5" cy="18" r="2.5" fill="#ffffff" />
-        <circle cx="10" cy="26" r="2.5" fill="#ffffff" />
-        <circle cx="25" cy="26" r="2.5" fill="#ffffff" />
-        <circle cx="45" cy="10" r="2.5" fill="#ffffff" />
-        <circle cx="60" cy="10" r="2.5" fill="#ffffff" />
-        <circle cx="45" cy="26" r="2.5" fill="#ffffff" />
-        <circle cx="60" cy="26" r="2.5" fill="#ffffff" />
-        <text x="35" y="48" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">[5|4] = 9</text>
+      <text x="14" y="22" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">DOMINO SUBITIZING &amp; SUM: [5|4] + [3|2] = 14</text>
+      <g transform="translate(30, 42)">
+        <rect x="0" y="0" width="76" height="40" rx="4" fill="#000000" stroke="#ffffff" stroke-width="1.5" />
+        <line x1="38" y1="0" x2="38" y2="40" stroke="#ffffff" stroke-width="1.2" />
+        <circle cx="12" cy="11" r="3" fill="#ffffff" />
+        <circle cx="26" cy="11" r="3" fill="#ffffff" />
+        <circle cx="19" cy="20" r="3" fill="#ffffff" />
+        <circle cx="12" cy="29" r="3" fill="#ffffff" />
+        <circle cx="26" cy="29" r="3" fill="#ffffff" />
+        <circle cx="50" cy="11" r="3" fill="#ffffff" />
+        <circle cx="64" cy="11" r="3" fill="#ffffff" />
+        <circle cx="50" cy="29" r="3" fill="#ffffff" />
+        <circle cx="64" cy="29" r="3" fill="#ffffff" />
+        <text x="38" y="56" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#ffffff">[5|4] = 9</text>
       </g>
 
-      <g transform="translate(125, 36)">
-        <rect x="0" y="0" width="70" height="36" rx="3" fill="#000000" stroke="#ffffff" stroke-width="1.4" />
-        <line x1="35" y1="0" x2="35" y2="36" stroke="#ffffff" stroke-width="1.2" />
-        <circle cx="10" cy="10" r="2.5" fill="#ffffff" />
-        <circle cx="17.5" cy="18" r="2.5" fill="#ffffff" />
-        <circle cx="25" cy="26" r="2.5" fill="#ffffff" />
-        <circle cx="45" cy="10" r="2.5" fill="#ffffff" />
-        <circle cx="60" cy="26" r="2.5" fill="#ffffff" />
-        <text x="35" y="48" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#ffffff">[3|2] = 5</text>
+      <g transform="translate(125, 42)">
+        <rect x="0" y="0" width="76" height="40" rx="4" fill="#000000" stroke="#ffffff" stroke-width="1.5" />
+        <line x1="38" y1="0" x2="38" y2="40" stroke="#ffffff" stroke-width="1.2" />
+        <circle cx="12" cy="11" r="3" fill="#ffffff" />
+        <circle cx="19" cy="20" r="3" fill="#ffffff" />
+        <circle cx="26" cy="29" r="3" fill="#ffffff" />
+        <circle cx="50" cy="11" r="3" fill="#ffffff" />
+        <circle cx="64" cy="29" r="3" fill="#ffffff" />
+        <text x="38" y="56" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#ffffff">[3|2] = 5</text>
       </g>
 
-      <text x="215" y="50" class="font-mono" font-size="9px" font-weight="700" fill="#ffffff">PART-WHOLE ADDITION</text>
-      <text x="215" y="65" class="font-mono" font-size="8px" fill="#cccccc">[5|4] pips = 9</text>
-      <text x="215" y="79" class="font-mono" font-size="8px" fill="#cccccc">[3|2] pips = 5</text>
-      <text x="215" y="95" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">Total: 9 + 5 = 14</text>
-      <text x="215" y="109" class="font-mono" font-size="8px" fill="#cccccc">T(7) = 7×8/2 = 28 Tiles</text>
-      <text x="215" y="123" class="font-mono" font-size="8px" fill="#cccccc">Double-Six Combinatorics</text>
+      <text x="220" y="56" class="font-mono" font-size="14.5px" font-weight="700" fill="#ffffff">PART-WHOLE SUM</text>
+      <text x="220" y="76" class="font-sans" font-size="13px" fill="#cccccc">[5|4] pips = 9</text>
+      <text x="220" y="94" class="font-sans" font-size="13px" fill="#cccccc">[3|2] pips = 5</text>
+      <text x="220" y="118" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">Total: 9 + 5 = 14</text>
+      <text x="220" y="136" class="font-sans" font-size="13px" fill="#cccccc">T(7) = 28 Unique Tiles</text>
+      <text x="220" y="154" class="font-sans" font-size="13px" fill="#cccccc">Double-Six Combinatorics</text>
 
     </g>
   </g>
 
-  <!-- COLUMN 2: KIT PARTS INVENTORY -->
-  <g transform="translate(420, 148)">
-    <rect x="0" y="0" width="450" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+  <!-- COLUMN 2: PARTS INVENTORY (Width: 450) -->
+  <g transform="translate(425, 120)">
+    <rect x="0" y="0" width="450" height="585" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <rect x="0" y="0" width="450" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="16" y="22" class="font-mono section-hdr">2. KIT PARTS INVENTORY (33 PIECES)</text>
+    <text x="16" y="23" class="font-mono section-hdr">2. KIT PARTS INVENTORY (33 PIECES)</text>
 
     <!-- Table Header -->
-    <text x="16" y="52" class="font-mono th">COMPONENT</text>
-    <text x="150" y="52" class="font-mono th">QTY</text>
-    <text x="190" y="52" class="font-mono th">SPEC / DIMENSION</text>
-    <text x="340" y="52" class="font-mono th">PALETTE COLOR</text>
+    <text x="14" y="52" class="font-mono th">COMPONENT</text>
+    <text x="180" y="52" class="font-mono th">QTY</text>
+    <text x="215" y="52" class="font-mono th">SPEC</text>
+    <text x="436" y="52" class="font-mono th" text-anchor="end">COLOR</text>
     <line x1="12" y1="58" x2="438" y2="58" stroke="#ffffff" stroke-width="1" />
 
     
-    <text x="16" y="74" class="font-mono td" font-weight="700">Double-Six Tiles</text>
-    <text x="150" y="74" class="font-mono td" font-weight="700" fill="#ffffff">28x</text>
-    <text x="190" y="74" class="font-mono td">28.0 × 14.0 × 7.0 mm (T7)</text>
-    <text x="340" y="74" class="font-mono td" fill="#cccccc">Stealth Black</text>
-    <line x1="12" y1="80" x2="438" y2="80" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Double-Six Tiles</text>
+      <text x="180" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">28x</text>
+      <text x="215" y="64" class="font-mono" font-size="12.5px" fill="#ffffff">28×14×7 mm</text>
+      <text x="436" y="64" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Stealth Black</text>
+      <line x1="12" y1="69" x2="438" y2="69" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="97" class="font-mono td" font-weight="700">Wildcard Blanks</text>
-    <text x="150" y="97" class="font-mono td" font-weight="700" fill="#ffffff">2x</text>
-    <text x="190" y="97" class="font-mono td">28.0 × 14.0 × 7.0 mm [ | ]</text>
-    <text x="340" y="97" class="font-mono td" fill="#cccccc">Stealth Black</text>
-    <line x1="12" y1="103" x2="438" y2="103" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Wildcard Blanks</text>
+      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">2x</text>
+      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#ffffff">28×14×7 mm</text>
+      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Stealth Black</text>
+      <line x1="12" y1="91" x2="438" y2="91" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="120" class="font-mono td" font-weight="700">12-Frame Regroup Tray</text>
-    <text x="150" y="120" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="190" y="120" class="font-mono td">Dual 6-Bay Tactile Stage</text>
-    <text x="340" y="120" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
-    <line x1="12" y1="126" x2="438" y2="126" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">12-Frame Tray</text>
+      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
+      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#ffffff">Dual 6-Bay</text>
+      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Matte Charcoal</text>
+      <line x1="12" y1="113" x2="438" y2="113" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="143" class="font-mono td" font-weight="700">Doubles Organizer Lid</text>
-    <text x="150" y="143" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="190" y="143" class="font-mono td">7-Slot Doubles Spine Rail</text>
-    <text x="340" y="143" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
-    <line x1="12" y1="149" x2="438" y2="149" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Doubles Lid</text>
+      <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
+      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#ffffff">7-Slot Rail</text>
+      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Matte Charcoal</text>
+      <line x1="12" y1="135" x2="438" y2="135" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="166" class="font-mono td" font-weight="700">3x1 Storage Bin</text>
-    <text x="150" y="166" class="font-mono td" font-weight="700" fill="#ffffff">1x</text>
-    <text x="190" y="166" class="font-mono td">49.0 mm Height (7U)</text>
-    <text x="340" y="166" class="font-mono td" fill="#cccccc">Matte Charcoal</text>
-    <line x1="12" y1="172" x2="438" y2="172" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">3x1 Storage Bin</text>
+      <text x="180" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
+      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#ffffff">49.0 mm</text>
+      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Matte Charcoal</text>
+      <line x1="12" y1="157" x2="438" y2="157" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
 
     <!-- Total Pieces Summary -->
-    <text x="16" y="334" class="font-mono" font-size="8.5px" font-weight="700" fill="#ffffff">TOTAL: 30 Domino Tiles + 12-Frame Tray + Doubles Lid + Storage Bin = 33 Parts</text>
+    <text x="14" y="190" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">TOTAL: 30 Domino Tiles + 12-Frame Tray +</text>
+    <text x="14" y="206" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">Doubles Lid + Storage Bin = 33 Parts</text>
 
     <!-- Palette Box -->
-    <g transform="translate(12, 350)">
-      <rect x="0" y="0" width="426" height="112" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="9.5px" font-weight="700" fill="#ffffff">HIGH-CONTRAST PIPS &amp; TEXTURE</text>
-      <text x="12" y="36" class="font-mono" font-size="8.3px" fill="#cccccc">• Stealth Black Matte: Low glare, fingerprint resistant polymer.</text>
-<text x="12" y="49" class="font-mono" font-size="8.3px" fill="#cccccc">• Brilliant White Pips: Standard dice quincunx configurations.</text>
-<text x="12" y="62" class="font-mono" font-size="8.3px" fill="#cccccc">• Doubles Spine: Labeled slots [0|0] to [6|6] for organizing.</text>
-<text x="12" y="75" class="font-mono" font-size="8.3px" fill="#cccccc">• High Durability: Scratch-resistant tactile surfaces.</text>
-
+    <g transform="translate(12, 232)">
+      <rect x="0" y="0" width="426" height="172" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">HIGH-CONTRAST PIPS &amp; TEXTURE</text>
     </g>
+    <text x="24" y="268" class="font-sans" font-size="13.5px" fill="#cccccc">• Stealth Black Matte: Low glare, fingerprint</text>
+    <text x="24" y="286" class="font-sans" font-size="13.5px" fill="#cccccc">resistant polymer.</text>
+    <text x="24" y="304" class="font-sans" font-size="13.5px" fill="#cccccc">• Brilliant White Pips: Standard dice quincunx</text>
+    <text x="24" y="322" class="font-sans" font-size="13.5px" fill="#cccccc">configurations.</text>
+    <text x="24" y="340" class="font-sans" font-size="13.5px" fill="#cccccc">• Doubles Spine: Labeled slots [0|0] to [6|6] for</text>
+    <text x="24" y="358" class="font-sans" font-size="13.5px" fill="#cccccc">organizing.</text>
+    <text x="24" y="376" class="font-sans" font-size="13.5px" fill="#cccccc">• High Durability: Scratch-resistant tactile surfaces.</text>
   </g>
 
-  <!-- COLUMN 3: WHY KEEP THIS REFERENCE CARD? -->
-  <g transform="translate(885, 148)">
-    <rect x="0" y="0" width="340" height="475" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <rect x="0" y="0" width="340" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="16" y="22" class="font-mono section-hdr">3. WHY KEEP THIS REFERENCE CARD?</text>
+  <!-- COLUMN 3: WHY KEEP CARD (Width: 290) -->
+  <g transform="translate(885, 120)">
+    <rect x="0" y="0" width="290" height="585" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="290" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="14" y="23" class="font-mono section-hdr">3. PACK-UP &amp; SUPPORT</text>
 
-    <!-- Reason 1: No Lost Piece Guarantee / Hardware Support -->
-    <g transform="translate(14, 48)">
-      <rect x="0" y="0" width="312" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ NO LOST PIECE LEFT BEHIND</text>
-      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
-        <tspan x="12" dy="0">Classroom manipulatives get lost. Never abandon</tspan><tspan x="12" dy="12">an incomplete set! Every individual math component</tspan><tspan x="12" dy="12">is permanently stocked for single replacements.</tspan>
-      </text>
-      <rect x="12" y="84" width="288" height="28" rx="4" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
-      <text x="156" y="98" class="font-mono" font-size="8.8px" font-weight="700" text-anchor="middle" fill="#ffffff">Scan back QR or visit stackcalc.io/parts</text>
-      <text x="156" y="108" class="font-mono" font-size="7.8px" text-anchor="middle" fill="#cccccc">Order individual replacement pieces anytime</text>
+    <!-- Reason 1: Pack-Up -->
+    <g transform="translate(12, 44)">
+      <rect x="0" y="0" width="266" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">✓ 10-SECOND PACK-UP</text>
+    </g>
+    <text x="24" y="82" class="font-sans" font-size="13px" fill="#cccccc">Arrange the 28 standard tiles and 2</text>
+    <text x="24" y="100" class="font-sans" font-size="13px" fill="#cccccc">wildcards into 4 columns of 7 and 1</text>
+    <text x="24" y="118" class="font-sans" font-size="13px" fill="#cccccc">row of 2 on the floor. Missing tiles</text>
+    <text x="24" y="136" class="font-sans" font-size="13px" fill="#cccccc">break the brick layout! Snap lid</text>
+    <text x="24" y="154" class="font-sans" font-size="13px" fill="#cccccc">securely.</text>
+
+    <!-- Reason 2: Guarantee -->
+    <g transform="translate(12, 190)">
+      <rect x="0" y="0" width="266" height="138" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="13.5px" font-weight="700" fill="#ffffff">✓ NO LOST PIECE GUARANTEE</text>
+      <text x="12" y="40" class="font-sans" font-size="13px" fill="#cccccc">Classrooms lose pieces. Every single</text>
+      <text x="12" y="58" class="font-sans" font-size="13px" fill="#cccccc">math component is permanently</text>
+      <text x="12" y="76" class="font-sans" font-size="13px" fill="#cccccc">stocked for single replacements.</text>
+      <rect x="12" y="90" width="242" height="36" rx="4" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+      <text x="133" y="106" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#ffffff">stackcalc.io/parts</text>
+      <text x="133" y="120" class="font-sans" font-size="11px" text-anchor="middle" fill="#cccccc">Order replacements anytime</text>
     </g>
 
-    <!-- Reason 2: Self-Auditing Sockets / Instant Off -->
-    <g transform="translate(14, 186)">
-      <rect x="0" y="0" width="312" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ 10-SECOND SELF-CHECKING PACK-UP</text>
-      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
-        <tspan x="12" dy="0">Pack-up is a built-in math game! Arrange the</tspan><tspan x="12" dy="12">28 standard tiles</tspan><tspan x="12" dy="12">and 2 wildcards into four neat columns of 7</tspan><tspan x="12" dy="12">and one row of 2 in</tspan><tspan x="12" dy="12">the box floor. A missing tile breaks the</tspan><tspan x="12" dy="12">smooth rectangular brick!</tspan><tspan x="12" dy="12">Organizer lid snaps flush for silent zero-</tspan><tspan x="12" dy="12">rattle carry.</tspan>
-      </text>
+    <!-- Reason 3: Reverse Lesson Guide -->
+    <g transform="translate(12, 338)">
+      <rect x="0" y="0" width="266" height="84" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">✓ HANDS-ON TUTORIAL</text>
+      <text x="12" y="38" class="font-sans" font-size="12.5px" fill="#cccccc">Flip over for 5-step concrete</text>
+      <text x="12" y="54" class="font-sans" font-size="12.5px" fill="#cccccc">lesson &amp; live 3D Video QR!</text>
+      <text x="12" y="72" class="font-sans" font-size="12px" font-weight="700" fill="#ffffff">Keep stored inside box lid!</text>
     </g>
 
-    <!-- Reason 3: Quick Lesson Guide -->
-    <g transform="translate(14, 334)">
-      <rect x="0" y="0" width="312" height="126" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#ffffff">✓ HANDS-ON TUTORIAL ON REVERSE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#cccccc">
-        <tspan x="12" dy="0">Flip this card over for a complete step-by-step</tspan>
-        <tspan x="12" dy="12">hands-on lesson with concrete numbers, stage</tspan>
-        <tspan x="12" dy="12">arrangements, and calculator cross-references!</tspan>
-        <tspan x="12" dy="15" font-weight="700" fill="#ffffff">Keep this card stored inside the box lid!</tspan>
+    <!-- Fundamental Theorem Box -->
+    <g transform="translate(12, 432)">
+      <rect x="0" y="0" width="266" height="88" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="18" class="font-mono" font-size="12.5px" font-weight="700" fill="#ffffff">FUNDAMENTAL THEOREM</text>
+      <text x="12" y="36" class="font-sans" font-size="12px" fill="#cccccc">
+        <tspan x="12" dy="0">The number of unordered pairs</tspan><tspan x="12" dy="16">chosen with replacement from n</tspan><tspan x="12" dy="16">elements is T(n) = n(n+1)/2.</tspan>
       </text>
     </g>
   </g>
 
   <!-- Bottom Footer Bar -->
-  <g transform="translate(35, 635)">
-    <rect x="0" y="0" width="1190" height="115" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+  <g transform="translate(25, 715)">
+    <rect x="0" y="0" width="1150" height="60" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     
-    <g transform="translate(25, 24)">
-      <text x="0" y="0" class="font-mono th" fill="#ffffff">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
-      <text x="0" y="18" class="font-mono footer-txt">Designed in Mountain View, California, USA • Non-Toxic BPA-Free.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates (10x / 30x Stations): stackcalc.io/schools</text>
+    <g transform="translate(20, 24)">
+      <text x="0" y="0" class="font-mono" font-size="13.5px" font-weight="700" fill="#ffffff">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
+      <text x="0" y="18" class="font-sans footer-txt">Designed in Mountain View, California • Non-Toxic BPA-Free • Classroom Lab Stations: stackcalc.io/schools</text>
     </g>
 
-    <g transform="translate(450, 18)">
-      <text x="0" y="0" class="font-mono th" fill="#ffffff">TRIANGULAR NUMBER COMBINATORIAL THEOREM</text>
-      <text x="0" y="15" class="font-mono footer-txt" font-size="8.3px">
-        <tspan x="0" dy="0">The number of unordered pairs chosen with replacement from n</tspan><tspan x="0" dy="12">elements is T(n) = n(n+1)/2.</tspan>
-      </text>
-      <text x="0" y="44" class="font-mono footer-txt" font-size="8px" opacity="0.85">Universal 7.00mm Datum • Classroom Continuum (10 Kits)</text>
-    </g>
-
-    <g transform="translate(980, 24)">
-      <text x="0" y="0" class="font-mono th" fill="#ffffff">OFFICIAL REFILL PORTAL</text>
-      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#ffffff">stackcalc.io/parts</text>
-      <text x="0" y="32" class="font-mono footer-txt">Order replacement parts anytime</text>
+    <g transform="translate(880, 24)">
+      <text x="0" y="0" class="font-mono" font-size="12.5px" font-weight="700" fill="#ffffff">OFFICIAL REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono" font-size="14.5px" font-weight="700" fill="#ffffff">stackcalc.io/parts</text>
     </g>
   </g>
   <metadata id="stackcalc-book-macro-manifest" data-kit="DOMI-01">

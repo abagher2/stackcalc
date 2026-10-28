@@ -123,8 +123,11 @@ hide:
 
       <!-- Action Buttons -->
       <div class="ec-actions-row">
-        <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
+        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
           Order on Etsy ($49.00) ↗
+        </a>
+        <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border: 1px solid rgba(56, 189, 248, 0.4); color: #38BDF8;">
+          Order on Slant 3D ↗
         </a>
         <a href="/downloads/sc6-elementary-open-source-stls.zip" class="ec-btn-secondary">
           Download Free 3D Print STLs (.ZIP) &darr;
@@ -133,11 +136,14 @@ hide:
 
       <!-- Quick Subpage Links -->
       <div class="flex flex-wrap gap-2 my-4">
-        <a href="../../manuals/#sc-6-elementary" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
-          &bull; Reference Manual &amp; TOC Preview &rarr;
+        <a href="../sc6-book/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
+          &bull; Companion Book Product Page &rarr;
         </a>
-        <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-sky-400 border border-sky-500/30 hover:bg-slate-700">
-          &bull; Order Spiral Print Edition ($16) ↗
+        <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-orange-400 border border-orange-500/30 hover:bg-slate-700">
+          &bull; Order Book on Amazon ($16) ↗
+        </a>
+        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-sky-400 border border-sky-500/30 hover:bg-slate-700">
+          &bull; Order on Etsy (stackcalcmath.etsy.com) ↗
         </a>
       </div>
 
@@ -609,11 +615,14 @@ hide:
         </p>
       </div>
       <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
-        <a href="../../manuals/#sc-6-elementary" class="px-4 py-2.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-mono text-xs font-bold transition text-center whitespace-nowrap">
-          Preview &amp; Table of Contents &rarr;
+        <a href="../sc6-book/" class="px-4 py-2.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-mono text-xs font-bold transition text-center whitespace-nowrap">
+          Book Details &amp; TOC &rarr;
         </a>
-        <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition text-center shadow-md whitespace-nowrap">
-          Order Spiral Manual ($16) ↗
+        <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-[#FF9900] hover:bg-[#e68a00] text-slate-950 font-mono text-xs font-bold transition text-center shadow-md whitespace-nowrap">
+          Order on Amazon ($16) ↗
+        </a>
+        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-[#f1641e] hover:bg-[#e0530d] text-white font-mono text-xs font-bold transition text-center shadow-md whitespace-nowrap">
+          Order on Etsy ($16) ↗
         </a>
       </div>
     </div>
@@ -659,8 +668,11 @@ hide:
     </div>
     <div class="flex items-center gap-2 shrink-0">
       <span class="text-sm font-bold text-white mr-1">$49.00</span>
-      <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded bg-[#f1641e] hover:bg-[#e0530d] text-white font-bold transition shadow-md whitespace-nowrap">
+      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded bg-[#f1641e] hover:bg-[#e0530d] text-white font-bold transition shadow-md whitespace-nowrap">
         Order on Etsy ($49) ↗
+      </a>
+      <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block px-3.5 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-bold transition whitespace-nowrap">
+        Slant 3D ↗
       </a>
       <a href="../../#school-po" class="hidden md:inline-block px-3 py-1.5 rounded bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 font-bold transition whitespace-nowrap">
         District PO →

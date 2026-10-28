@@ -67,6 +67,7 @@ nav:
         - Hardware Assembly: products/sc32-calculator/assembly.md
         - Operational Lessons: products/sc32-calculator/lessons.md
     - SC-6 Elementary Calculator: products/sc6-elementary.md
+    - From Blocks to the Stack (SC-6 Book): products/sc6-book.md
     - Fraction Studio Towers:
         - Product Overview: products/fraction-studio/index.md
         - Assembly Guide: products/fraction-studio/assembly.md
@@ -98,7 +99,8 @@ nav:
     - Unit Circle & Trig Volvelle: products/unit-circle-volvelle.md
     - Stands & Pouches: products/stands-and-pouches.md
     - Curriculum & Decks: products/curriculum-and-decks.md
-    - Download Center (3MFs): downloads.md
+    - Makerspace 3D Print Kits: printables.md
+    - Download Center (PDFs & 3MFs): downloads.md
   - Curriculum & Standards:
     - Master Curriculum Guide: curriculum/index.md
     - SC-6 Companion Workbook (253 Problems): curriculum/sc6-elementary-companion-workbook.md
@@ -111,6 +113,7 @@ nav:
     - Competitive STEM & Speed Calculation: curriculum/uil-competition.md
   - Books & Reference Manuals:
     - Official Manuals & Reference Books ($16): manuals/index.md
+    - From Blocks to the Stack (Book Page): products/sc6-book.md
     - Bestseller Rubric & Editorial Guide: manuals/bestseller-rubric-and-editorial-guide.md
     - Critical Editorial Review: manuals/critical-editorial-review-and-school-adoption.md
     - Agent & OpenAPI Spec: api/index.md
@@ -129,6 +132,7 @@ nav:
     - Privacy Policy: privacy.md
     - Terms of Service: terms.md
     - Support: support.md
+    - Replacement Parts: parts.md
 
 not_in_nav: |
   hackaday/**

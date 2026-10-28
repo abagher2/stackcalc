@@ -1,37 +1,85 @@
 ---
-title: "Chapter 3: Algebra, Transcendentals & Display Formatting | SC-32 Manual"
-description: "Powers, roots, logarithms, exponentials, number parts (IP, FP, ABS, SGN), large factorials up to 70!, and display formatting modes on the StackCalc SC-32."
+title: "Chapter 3: The Shortcut That Doubled the Lifespan of Astronomers | Thinking in the Stack (SC-32)"
+description: "John Napier's logarithms, Weber-Fechner perception, Kleiber's biological scaling, the 5-domain harmonic operator, Euler's base e, Carbon-14 dating, Newton's cooling law, and Lanczos Gamma factorials on the StackCalc SC-32."
 ---
 
-# Chapter 3: Algebra, Transcendentals & Display Formatting
+# Chapter 3: The Shortcut That Doubled the Lifespan of Astronomers
 
-## John Napier's 20-Year Labor (1614): How Logarithms Doubled the Lifespan of Astronomers, and Cody & Waite's Range Reduction
+## The Scottish Baron Who Turned Multiplication into Addition
 
-In the damp stone halls of Merchiston Castle near Edinburgh, Scotland, in the early decades of the seventeenth century, Scottish mathematician and baron **John Napier** (1550–1617) sat watching the intellectual crisis of his era unfold. Across Europe, the scientific revolution was stalling—not for lack of astronomical genius, but under the sheer, crushing burden of arithmetic.
+### Inside Merchiston Castle: Turning Products into Sums
 
-Johannes Kepler, Tycho Brahe, and contemporary naval navigators were going blind by candlelight, spending months manually multiplying eight-digit sines and chords to determine planetary orbits and guide merchant fleets across uncharted oceans. A single calculation error on the four-hundredth page of an orbital ephemeris could invalidate a year of painstaking sky observations.
+In the damp stone tower of Merchiston Castle near Edinburgh, Scotland, in the opening years of the seventeenth century, a fifty-year-old Scottish landowner and amateur mathematician named **John Napier** (1550–1617) sat watching the scientific revolution grind to a halt.
 
-Napier dedicated twenty grueling years of his life to a singular obsession: could the brutal labor of multiplication be transformed into simple addition?
+Across Europe, astronomers had just inherited the richest treasure of observational data in human history. On the island of Hven in Denmark, Tycho Brahe had spent thirty years measuring the nightly positions of Mars and the stars to within one arcminute. In Prague, Tycho's young assistant **Johannes Kepler** was trying to prove that the planets orbit the Sun not in perfect circles, but in ellipses. Yet every time Kepler tested an elliptical orbit against Tycho's observations, he had to multiply and divide eight-digit trigonometric numbers by hand—filling nearly a thousand folio pages of dense arithmetic by candlelight. A single carried-digit mistake on page four hundred ruined months of work.
 
-In 1614, Napier published his classic work, *Mirifici Logarithmorum Canonis Descriptio* ("Description of the Wonderful Rule of Logarithms") {{cite:napier1614}}. By mapping numbers into geometric ratios and continuous flow distances, Napier discovered that:
-$$\log(a \cdot b) = \log a + \log b \qquad \text{and} \qquad \log\left(\frac{a}{b}\right) = \log a - \log b$$
+Napier asked himself a daring question: *Is there a secret tunnel in mathematics that turns multiplication into simple addition, division into subtraction, and square or cube roots into division by $2$ or $3$?*
 
-The effect on science was explosive. Calculations that previously took astronomers four exhausting weeks could now be executed in an afternoon. Decades later, the great French mathematician Pierre-Simon Laplace observed that Napier's logarithms, *"by shortening the labors, doubled the life of the astronomer."*
+Look at a simple row of powers of two or powers of ten—something every high-school Algebra II student writes in the margin of a notebook:
 
-{{blocks:counting_tiles_distributive_4color|4-Color Distributive Geometric Polynomial Area}}
-*Figure 3.1: The physical distributive area model: geometric decomposition of multi-digit polynomial multiplication into visual sub-rectangles.*
+$$\begin{array}{ccccccccc}
+\text{Exponent (Steps):} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+\text{Power of } 2: & 1 & 2 & 4 & 8 & 16 & 32 & 64 & 128 \\
+\text{Power of } 10: & 1 & 10 & 100 & 1{,}000 & 10{,}000 & 100{,}000 & 1{,}000{,}000 & 10{,}000{,}000
+\end{array}$$
 
-Three and a half centuries later, the battle for logarithmic precision moved from quill and paper into silicon microcode. When evaluating exponential ($e^x$), logarithmic ($\ln x$), and power ($y^x$) functions on digital computers, naive textbook Taylor series suffer from **catastrophic cancellation**—the complete annihilation of significant digits when subtracting nearly equal floating-point numbers.
+Suppose you want to multiply $8 \times 16$ in the middle row. Examine the exponents directly above them: $8$ is step $3$ ($2^3$), and $16$ is step $4$ ($2^4$). When you **add** their exponents ($3 + 4 = 7$) and look directly below step $7$, you find **$128$** ($8 \times 16 = 128$)!
 
-In 1980, William J. Cody and William Waite published their landmark treatise, *Software Manual for the Elementary Functions* {{cite:cody1980}}, solving the range reduction problem. They demonstrated that before evaluating transcendentals, the argument $x$ must be rigorously reduced to a primary kernel $[-\ln 2 / 2, +\ln 2 / 2]$ using extended-precision constants, preserving all 53 bits of IEEE-754 mantissa. The StackCalc SC-32 builds directly upon this intellectual lineage, providing transcendentals and powers that guarantee 12 visible decimal digits of monotonic precision across all engineering domains.
+Why did that work? Because an exponent counts *how many times* you multiply by the base:
+
+$$b^x \cdot b^y = b^{x + y}, \qquad \frac{b^x}{b^y} = b^{x - y}, \qquad \left(b^x\right)^n = b^{n x}$$
+
+Napier spent twenty years filling in the gaps between the whole numbers by imagining two runners moving simultaneously along straight tracks:
+* **Runner A (The Logarithm Track):** Runs along an infinite straight line at a completely constant speed $v_0$, covering equal **arithmetic** increments of distance in equal ticks of time ($0, \Delta x, 2\Delta x, 3\Delta x, \dots$).
+* **Runner B (The Number Track):** Starts at distance $L$ from a finish line and runs toward the finish line at a speed proportional to the distance still remaining—covering equal **geometric** ratios in equal ticks of time ($L, L r, L r^2, L r^3, \dots$).
+
+By pairing the arithmetic position of Runner A with the geometric position of Runner B at every instant, Napier constructed a continuous bridge between addition and multiplication. In 1614, three years before his death, he published *Mirifici Logarithmorum Canonis Descriptio* ("Description of the Wonderful Rule of Logarithms") {{cite:napier1614}}, coining the word **logarithm** from the Greek *logos* (ratio) and *arithmos* (number)—literally "the number that counts how many ratios." A year later, London geometry professor **Henry Briggs** made the long summer journey by stagecoach to Edinburgh and worked with Napier to anchor logarithms to **base $10$** ($\log_{10} 1 = 0$, $\log_{10} 10 = 1$, $\log_{10} 100 = 2$, $\log_{10} 1000 = 3$).
+
+For any two positive numbers $a$ and $b$, Napier and Briggs's bridge obeys three golden laws:
+
+$$\log(a \cdot b) = \log a + \log b, \qquad \log\left(\frac{a}{b}\right) = \log a - \log b, \qquad \log\left(y^x\right) = x \log y$$
+
+Instead of spending twenty minutes multiplying two eight-digit numbers by hand, an astronomer could look up their two logarithms in Briggs's table, **add** them in ten seconds, and look up the number matching that sum. Even better, taking a **cube root** ($\sqrt[3]{y} = y^{1/3}$)—a grueling medieval extraction that took hours by hand—became as simple as looking up $\log y$ and dividing by $3$. When Kepler received Napier's book in 1617, he was overjoyed, dedicating his *Ephemerides* to the Scottish baron and using logarithms to discover his Third Law of Planetary Motion ($T^2 = a^3$). Two centuries later, the French astronomer Pierre-Simon Laplace wrote the ultimate tribute: *"Logarithms, by shortening the labors, doubled the life of the astronomer."*
+
+How does a modern scientific instrument like the SC-32 evaluate `{{key:LN}}` and `{{key:LOG}}` to full 53-bit IEEE-754 accuracy across three hundred orders of magnitude? Following the classical algorithm of **William J. Cody and William Waite** {{cite:cody1980}}, the processor splits any positive floating-point number $x = m \cdot 2^k$ into its normalized binary significand $m \in [\frac{1}{\sqrt{2}}, \sqrt{2})$ and its exact integer binary exponent $k$:
+
+$$\ln\left(m \cdot 2^k\right) = \ln(m) + k \ln(2)$$
+
+Because $m$ is now squeezed into a tight neighborhood around $1$, the natural logarithm $\ln(m)$ can be expanded in terms of the rapidly converging rational transformation $z = \frac{m - 1}{m + 1}$:
+
+$$\ln(m) = 2\left(z + \frac{z^3}{3} + \frac{z^5}{5} + \frac{z^7}{7} + \dots\right), \qquad \text{where } z = \frac{m - 1}{m + 1}$$
+
+which converges to 16 decimal digits in just a handful of odd powers.
+
+### The Weber-Fechner Law: Why Your Ears and Eyes Are Logarithmic
+
+Logarithms are not merely a historical shortcut for 17th-century astronomers. In the nineteenth century, German physiologists Ernst Heinrich Weber and Gustav Fechner discovered a startling fact about the human brain: **nearly every human sense perceives the physical world on a base-10 logarithmic scale!**
+
+Suppose you are sitting in a dark room holding a single lit birthday candle, and someone brings in a second candle. The room looks dramatically brighter. Now suppose you are standing under $100$ lit candles, and someone brings in candle number $101$. Can your eyes even tell the difference? Not at all. Your senses do not respond to the *absolute difference* ($+1\text{ candle}$); they respond to the **percentage ratio** ($\frac{\text{new intensity}}{\text{old intensity}}$). Every time physical energy multiplies by $10$, your brain perceives one equal step of loudness or brightness.
+
+That is why four of the most famous scales in secondary and collegiate science are modeled on the SC-32 with the base-10 logarithm key `{{key:LOG}}` (and inverted with `{{key:10ˣ}}`), each operating in place on Register $X$ after you form the physical ratio on the bottom two shelves:
+1. **Acoustic Decibels ($\text{dB SPL}$):**  
+   Between the faintest rustle of dry leaves that the human eardrum can detect ($p_0 = 20\,\mu\text{Pa} = 2.0 \times 10^{-5}\text{ Pa}$) and the roar of a stadium concert or jet engine ($20\text{ Pa}$), air-pressure waves span a million-fold range ($10^6:1$), and sound *energy* ($I \propto p^2$) spans a **trillion-fold range ($10^{12}:1$)**! Inside your inner ear, the tapered basilar membrane of the **mammalian cochlea** acts as a mechanical base-10 logarithm calculator, compressing twelve orders of magnitude into the comfortable $0\text{ to }120\text{ dB}$ **Sound Pressure Level** scale:
+   $$L_p = 20 \log_{10}\left(\frac{p_{\text{rms}}}{p_0}\right)\text{ dB SPL}$$
+   To model this equation on the SC-32 from the **inside out**, you first place the measured sound pressure $p_{\text{rms}}$ on Shelf $Y$ and the hearing threshold $p_0 = 2.0 \times 10^{-5}\text{ Pa}$ on Shelf $X$ so `{{key:÷}}` reveals the raw physical pressure ratio in Register $X$. Next, a single tap of `{{key:LOG}}` compresses that ratio in place into base-10 orders of magnitude (Bels), and multiplying by $20$ scales the result into decibels (`dB SPL`). *(In **Chapter 13**, we will see how a $60\text{ dB}$ million-fold energy decay threshold governs room reverberation in architectural acoustics.)*
+2. **Chemistry's $\text{pH}$ and Henderson-Hasselbalch Buffers:**  
+   In chemistry, the concentration of hydronium ions $[\text{H}_3\text{O}^+]$ in water spans fourteen orders of magnitude from battery acid ($10^0\text{ M}$) to drain cleaner ($10^{-14}\text{ M}$). In 1909, Danish biochemist Søren Peder Lauritz Sørensen tamed those exponents by defining $\text{pH} = -\log_{10}[\text{H}_3\text{O}^+]$. When your blood or a laboratory buffer solution mixes a weak acid ($[\text{HA}]$) with its conjugate base ($[\text{A}^-]$), the **Henderson-Hasselbalch equation** gives the equilibrium $\text{pH}$:
+   $$\text{pH} = \text{pK}_a + \log_{10}\left(\frac{[\text{A}^-]}{[\text{HA}]}\right)$$
+   On the stack, you divide the conjugate base concentration in $Y$ by the weak acid concentration in $X$, tap `{{key:LOG}}` to transform the ratio in place, and add $\text{pK}_a$.
+3. **Earthquake Richter Magnitudes ($M_L = \log_{10}(A/A_0)$):**  
+   In 1935, Caltech seismologist Charles F. Richter tamed the vast range of ground motion recorded on Wood-Anderson torsion seismographs by defining earthquake magnitude as a base-10 logarithm (`{{key:LOG}}`): every whole-number step up the Richter scale means the ground shakes **$10\times$ farther** in amplitude and releases $10^{1.5} = 10\sqrt{10} \approx \mathbf{31.62\times}$ more elastic wave energy!
+4. **Hipparchus and Pogson's Stellar Brightness Scale ($m_1 - m_2 = -2.5\log_{10}(F_1/F_2)$):**  
+   Around 130 BC, the Greek astronomer Hipparchus ranked naked-eye stars from "First Magnitude" (the brightest) down to "Sixth Magnitude" (the faintest). In 1856, English astronomer Norman Robert Pogson discovered that Hipparchus's eye had naturally sorted stars by a base-10 logarithm: a 5-magnitude difference corresponds to a **$100\times$ ($10^2$) ratio in photon flux**, so each single magnitude step is a brightness ratio of $100^{1/5} = 10^{0.4} \approx \mathbf{2.5119\times}$.
 
 ---
 
-{{res:sc32_db_spl:screenshot|Acoustic sound pressure level 20 * log10(2 / 0.00002) = 100 dB}}
+## Power Laws, Biological Scaling & The Universal Harmonic Operator
 
-## Powers, Roots, Reciprocals & Parallel Operations
+Once Napier showed that $\log(y^x) = x\log y$, raising any positive number $y$ to *any* fractional or decimal power $x$ became possible:
 
-Before we step into logarithmic scales, let us look at how the SC-32 handles algebraic powers, roots, reciprocals, and harmonic combinations. On the operational stack, these six keys divide naturally into two families: **in-place unary transformers** (`{{key:x²}}`, `{{key:√x}}`, `{{key:1/x}}`) that reshape Register $X$ without disturbing a single number stored in $Y, Z,$ or $T$, and **two-register dyadic operators** (`{{key:yˣ}}`, `{{key:ˣ√y}}`, `{{key:x∥y}}`) that fuse Registers $Y$ and $X$ into a single result while dropping the upper stack:
+$$y^x = e^{x \ln y} \qquad \text{and} \qquad \sqrt[x]{y} = y^{1/x}$$
+
+On the SC-32, powers, roots, and reciprocals divide into two clean groups: **in-place unary keys** (`{{key:x²}}`, `{{key:√x}}`, `{{key:1/x}}`) that transform Shelf $X$ immediately without disturbing anything waiting upstairs in $Y, Z,$ or $T$, and **two-register dyadic keys** (`{{key:yˣ}}`, `{{key:ˣ√y}}`, `{{key:x∥y}}`) that combine Shelf $Y$ and Shelf $X$:
 
 | Mathematical Function | Physical Keycap | Arity | Exact Mathematical Definition | Register Stack Effect |
 | :--- | :---: | :---: | :--- | :--- |
@@ -42,473 +90,355 @@ Before we step into logarithmic scales, let us look at how the SC-32 handles alg
 | **Arbitrary Root** | `{{key:ˣ√y}}` | Dyadic | $f(y, x) = \sqrt[x]{y} = y^{1/x}$ | $X \leftarrow Y^{1/X}$ (Dyadic drop) |
 | **Parallel Harmonic** | `{{key:x∥y}}` | Dyadic | $f(x, y) = \frac{x \cdot y}{x + y}$ | $X \leftarrow \frac{X \cdot Y}{X + Y}$ (Dyadic drop) |
 
-### In-Place Unary Transformers: `{{key:x²}}`, `{{key:√x}}`, and `{{key:1/x}}`
-Because squaring ($x^2$), extracting a square root ($\sqrt{x} = x^{1/2}$), and taking a reciprocal ($1/x = x^{-1}$) act solely on Register $X$, they let you transform intermediate physical quantities on the fly without consuming an extra stack level. In kinetic energy ($E_k = \frac{1}{2}mv^2$), electrical Joule heating ($P = I_{\text{rms}}^2 R$), Euclidean distance norms ($r = \sqrt{x^2 + y^2}$), and quadratic discriminants ($\sqrt{b^2 - 4ac}$), `{{key:x²}}` and `{{key:√x}}` execute in a single keystroke. In real mode, attempting `{{key:√x}}` on a negative number ($x < 0$) halts safely with `Error 01: INVALID DATA` rather than corrupting the stack, whereas prefixing with `{{key:CMPLX}}` (`{{key:CMPLX}} {{key:√x}}`) steps smoothly into the complex plane ($\sqrt{-4} = 0.0000 + 2.0000i$).
+### Kepler's Planets, Kleiber's Mice and Whales, and Relativistic Muons
 
-Similarly, `{{key:1/x}}` is the workhorse of inside-out RPN evaluation. Whenever a complicated expression sits in the denominator of a fraction, you do not need to enter the numerator first: simply evaluate the complicated denominator first, press `{{key:1/x}}` to flip it in place, and multiply by the numerator (`{{key:×}}`). Physically, `{{key:1/x}}` translates directly between wave frequency and period ($T = 1/f$), electrical resistance and conductance ($G = 1/R$), and optical focal length and lens power in diopters ($D = 1/f$), while guarding against $x = 0$ with `Error 02: DIVIDE BY 0`.
+Why do fractional exponents like $y^{2/3}$, $y^{3/4}$, $y^{1.32}$, and $(1 - \beta^2)^{-1/2}$ appear everywhere in nature, and how does the SC-32 model them on its four shelves?
 
-### Dyadic Powers & Roots: `{{key:yˣ}}` and `{{key:ˣ√y}}`
-When raising an arbitrary base $y$ to a non-integer exponent $x$ ($y^x = \exp(x\ln y)$) or extracting an $x$-th root ($\sqrt[x]{y} = y^{1/x}$), the stack follows natural reading order: load the **base (or radicand) $y$ into Register $Y$** first, type the **exponent (or root index) $x$ into Register $X$** second, and press `{{key:yˣ}}` or `{{key:ˣ√y}}`. Both registers collapse into $X$, $Z$ drops to $Y$, and $T$ replicates downward. Whether you are computing polytropic gas expansion volumes ($P V^n = C \implies V = \sqrt[n]{C/P}$), $n$-year compound annual growth rates (CAGR), or fractional scaling laws in radiative-convective heat transfer, `{{key:yˣ}}` and `{{key:ˣ√y}}` evaluate to full 53-bit significand precision.
+- **Kepler's Third Law ($T^2 = a^3 \implies a = T^{2/3}$):**  
+  In 1619, Johannes Kepler discovered that the square of a planet's orbital period $T$ (in Earth years) equals the cube of its semi-major axis $a$ (its average distance from the Sun in Astronomical Units, where $1\text{ AU}$ is the Earth-Sun distance). Why $T^2 \propto a^3$? Sixty-eight years later, Isaac Newton showed that balancing gravitational pull $G M_{\odot} m / a^2$ against centripetal force $m v^2 / a = m(2\pi a / T)^2 / a$ immediately yields $T^2 = \frac{4\pi^2}{G M_{\odot}} a^3$.
 
-Suppose a furnace wall's absolute temperature increases by a factor of $y = 2.5$ while mixed convective-radiative losses scale with a non-integer empirical exponent of $x = 3.8$:
-$$\Phi = 2.5^{3.8}$$
+  Taking the cube root of both sides turns $T^2 = a^3$ into a $2/3$ fractional power law:
 
-Loading the base $2.5$ into Register $Y$ and the fractional exponent $3.8$ into Register $X$ via `{{res:sc32_03_algebra_transcendentals_seq_01:keys}}` evaluates $y^x = \exp(x\ln y)$ in hardware to produce **`{{res:sc32_03_algebra_transcendentals_seq_01:value}}`**.
+  $$a = \left(T^2\right)^{1/3} = \sqrt[3]{T^2} = T^{2/3}$$
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Notes & State Analysis |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{key:2}} {{key:.}} {{key:5}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.5000$ | Enter base $y$ |
-| 2 | `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.5000$ | $2.5000$ | Stack lift disabled; $y$ pushed to $Y$ |
-| 3 | `{{key:3}} {{key:.}} {{key:8}}` | $0.0000$ | $0.0000$ | $2.5000$ | $3.8000$ | Overwrite $X$ with exponent $x$ |
-| 4 | `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$32.5216096641$** | Evaluates $2.5^{3.8}$; Stack lift armed |
+  On the SC-32, you can model $T^{2/3}$ in two ways: either square Mars's orbital period ($T = 1.8808\text{ Earth years}$) in place on Shelf $X$ with the unary key `{{key:x²}}` ($\to 3.5374$) and extract the cube root via the dyadic key `{{key:ˣ√y}}` (with `3` in Register $X$), or raise $T$ in Register $Y$ directly to the fractional exponent $2/3$ in Register $X$ with `{{key:yˣ}}` to find Mars's orbital radius $a = 1.5237\text{ AU}$.
 
-### The Universal Parallel Harmonic Operator: `{{key:x∥y}}`
-Why does a scientific calculator deserve a dedicated primary keycap for the product-over-sum harmonic combination $x \parallel y = \frac{x \cdot y}{x + y} = \left(\frac{1}{x} + \frac{1}{y}\right)^{-1}$? Because nature uses the exact same reciprocal-addition law whenever two elements share a common potential or divide a common displacement across five different branches of physics:
-* **Electrical Circuits:** Two resistors wired in parallel share the same voltage while their conductances add ($R_{\text{eq}} = R_1 \parallel R_2$), and two capacitors wired in series share the same charge ($C_{\text{eq}} = C_1 \parallel C_2$).
-* **Mechanical Elasticity:** Two coil springs connected end-to-end in series carry the same tension while their deflections add, yielding an effective stiffness $k_{\text{eq}} = k_1 \parallel k_2$.
-* **Geometrical Optics:** A thin lens maps an object at distance $d_o$ to an image at distance $d_i$ according to Descartes's Gaussian lens equation $\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$, which is simply $f = d_o \parallel d_i$.
-* **Thermal & Fluid Networks:** Two parallel thermal conduction paths or series fluid-orifice conductances combine as $C_{\text{eq}} = C_1 \parallel C_2$.
-* **Kinematics:** If an aircraft or runner covers the outbound leg of a trip at speed $v_1$ and returns over the same distance at speed $v_2$, the average round-trip speed is not the arithmetic mean—it is the harmonic mean $v_{\text{avg}} = 2(v_1 \parallel v_2)$.
+- **Max Kleiber's $\frac{3}{4}$-Power Law of Life ($B \propto M^{3/4}$):**  
+  In 1932, Swiss agricultural biologist **Max Kleiber** plotted the daily resting metabolic heat production $B$ (in Watts or kilocalories per day) against body mass $M$ across warm-blooded animals ranging from a $20\text{-gram}$ mouse to a $4,000\text{-kilogram}$ elephant ($200,000\times$ heavier). You might expect an elephant to burn $200,000\times$ as much energy as a mouse ($M^1$), or perhaps scale with external skin surface area ($M^{2/3} \approx M^{0.67}$) to shed body heat. Instead, Kleiber discovered that across almost all living organisms on Earth—from bacteria to blue whales—metabolic rate scales with the **three-quarters power of mass**:
 
-In rapid calculation sprints, combining in-place unary powers (`{{key:x²}}`, `{{key:√x}}`) with dyadic arithmetic lets you resolve quadratic equations $a x^2 + b x + c = 0$ in under six seconds without writing intermediate terms on scratch paper. For $2.4 x^2 + 7.8 x - 15.6 = 0$, evaluating the discriminant radical $\sqrt{b^2 - 4ac} = \sqrt{210.6} \approx \mathbf{14.5121}$ first and chaining $-b$ and $2a$ directly into the positive root via `{{res:sc32_03_algebra_quadratic_sprint:keys}}` delivers **`{{res:sc32_03_algebra_quadratic_sprint:value}}`** in 13 keystrokes with zero parentheses or storage registers. The same inside-out cascade resolves the Law of Cosines $c = \sqrt{a^2 + b^2 - 2ab\cos C}$: evaluate $a^2$, then $b^2$, add them, push $2ab\cos C$, subtract, and press `{{key:√x}}` in a single continuous flow.
+  $$B = B_0 M^{3/4} = B_0 M^{0.75}$$
+
+  Why $3/4$? As physicists Geoffrey West, James Brown, and Brian Enquist later showed, biological circulatory and respiratory trees are space-filling fractal networks that minimize pumping energy across three spatial dimensions, endowing life with an effective fourth scale dimension ($3 / (3 + 1) = 3/4$). Because metabolism scales as $M^{0.75}$, an animal $10,000\times$ heavier ($10^4$) needs only $(10^4)^{0.75} = 10^3 = 1,000\times$ as much food—and its heart rate scales as $M^{-1/4}$ ($10\times$ slower), which is why a tiny shrew's heart races at $800\text{ beats per minute}$ while a blue whale's heart beats fewer than $10\text{ times a minute}$.
+
+- **Why Cosmic-Ray Muons Survive to Reach the Ocean ($\gamma = \frac{1}{\sqrt{1 - (v/c)^2}}$):**  
+  Here is one of the most dramatic detective stories in modern physics. High in Earth's stratosphere, $15\text{ kilometers}$ ($15,000\text{ meters}$) above sea level, incoming cosmic rays collide with air nuclei and create unstable subatomic particles called **muons**. In a laboratory rest frame, a muon decays in an average proper lifetime of only $\tau_0 = 2.2\text{ microseconds}$ ($2.2 \times 10^{-6}\text{ s}$).
+  Now do the classical multiplication in your head: even if a muon travels downward at $85\%$ of the speed of light ($v = 0.85c \approx 2.55 \times 10^8\text{ m/s}$), how far can it get in $2.2\text{ microseconds}$ before disintegrating?
+
+  $$d_{\text{classical}} = v \cdot \tau_0 = (2.55 \times 10^8\text{ m/s})(2.2 \times 10^{-6}\text{ s}) \approx \mathbf{560\text{ meters}}$$
+
+  By classical Newtonian physics, almost every single muon should vanish more than $14\text{ kilometers}$ above our heads—and yet detectors at sea level count cosmic-ray muons raining down on our beaches every second! Why? Because by **Albert Einstein's 1905 Special Theory of Relativity**, time itself slows down for a fast-moving clock by **Hendrik Lorentz's time-dilation factor $\gamma$**:
+
+  $$\gamma = \frac{1}{\sqrt{1 - \left(\frac{v}{c}\right)^2}}$$
+
+  Follow how the SC-32 unpeels $\gamma$ from the **inside out** on Shelf $X$ for $v/c = 0.85$:
+  1. Start at the deepest inner ratio ($0.85$) and **square** it in place with `{{key:x²}}` ($0.85^2 = 0.7225$).
+  2. Negate with `{{key:+/-}}` and add $1$ ($1 - 0.7225 = 0.2775$).
+  3. Extract the **square root** in place with `{{key:√x}}` ($\sqrt{0.2775} \approx 0.5268$—from the muon's perspective, the atmosphere is length-contracted to $52.68\%$ of its rest thickness).
+  4. Flip it upside down with the **reciprocal** key `{{key:1/x}}` ($1 / 0.5268 = \mathbf{1.8983}$)—stretching the muon's apparent lifetime while `{{key:LASTX}}` automatically retains the length-contraction factor $1/\gamma = 0.5268$. At $v = 0.999c$, $\gamma$ leaps past $22$, allowing muons to reach the ocean floor.
+
+Notice the shared structural rhythm running through Kepler's orbits, Kleiber's metabolic scaling, and Einstein's relativistic muons. That rhythm explains why the SC-32 deliberately separates **in-place unary keys** (`{{key:x²}}`, `{{key:√x}}`, `{{key:1/x}}`) from **two-register dyadic keys** (`{{key:yˣ}}`, `{{key:ˣ√y}}`, `{{key:x∥y}}`). Whenever a power or root acts on a single physical term right where it sits—such as squaring the speed of light $c$ in Einstein's gravitational redshift ($z \approx \frac{GM}{Rc^2}$) for light climbing out of a dense white dwarf star, squaring molar volume $V$ in Johannes Diderik van der Waals's cohesive pressure correction ($P = \frac{nRT}{V - nb} - \frac{an^2}{V^2}$), or taking the reciprocal square root `{{key:√x}}` `{{key:1/x}}` for the electromagnetic skin depth $\delta = \frac{1}{\sqrt{\pi f \mu \sigma}}$ of alternating current crowding into the outer surface of a copper wire—an in-place unary key transforms Register $X$ immediately without touching `{{key:ENTER}}` or disturbing upper registers.
+
+Conversely, whenever an equation pairs a base waiting on Shelf $Y$ with a general fractional exponent or root index you just formed on Shelf $X$—as in polytropic gas compression work ($W = \frac{P_1 V_1}{n - 1}[(V_1/V_2)^{n - 1} - 1]$), stretched-exponential atmospheric wind profiles, or solar air-mass attenuation ($I = I_0 \cdot 0.7^{(\text{AM}^{0.678})}$)—pressing the dyadic key `{{key:yˣ}}` or `{{key:ˣ√y}}` fuses $Y$ and $X$ into $Y^X$ or $\sqrt[X]{Y}$ and drops the upper stack by one floor. And whenever you want to inspect a rational power or decimal result as a reduced fraction $a/b$ or mixed number $n\frac{a}{b}$ (up to a configurable denominator ceiling set via `{{key:/c}}`, Right Shift `{{key:↱}}` above `{{key:.}}`), toggling fraction display mode (`{{key:FDISP}}`, Left Shift `{{key:↰}}` above `{{key:.}}`) formats Register $X$ as an exact rational approximation using Euclid's continued-fraction algorithm while keeping all 53 bits of floating-point precision underneath.
+
+### The Five-Domain Universal Harmonic Operator (`x∥y`)
+
+In Chapter 2, we met the two-pipe reservoir puzzle ($\frac{1}{T} = \frac{1}{T_1} + \frac{1}{T_2}$). Why did we give the SC-32 a dedicated primary hardware keycap labeled **`{{key:x∥y}}`** that computes the product-over-sum harmonic combination:
+
+$$x \parallel y = \frac{x \cdot y}{x + y} = \left(\frac{1}{x} + \frac{1}{y}\right)^{-1}$$
+
+in a single keystroke? Because **five seemingly unrelated chapters of a physics textbook all obey this exact same mathematical identity**:
+
+| Physical Domain | What Combines via $x \parallel y = \frac{x y}{x + y}$ | Why the Reciprocal-Sum Law Appears |
+| :--- | :--- | :--- |
+| **1. Parallel Electrical Resistors** | $R_{\text{eq}} = R_1 \parallel R_2 = \frac{R_1 R_2}{R_1 + R_2}$ | Both resistors share the same voltage $V$, while their currents ($I_i = V/R_i$) add. |
+| **2. Thin Optical Lenses & Mirrors** | $f = d_o \parallel d_i = \frac{d_o d_i}{d_o + d_i}$ | Light rays from object distance $d_o$ bend by constant optical power $1/f$ to focus at image distance $d_i$ ($\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$). |
+| **3. Capacitors Wired in Series** | $C_{\text{eq}} = C_1 \parallel C_2 = \frac{C_1 C_2}{C_1 + C_2}$ | Series capacitor plates trap the exact same charge $Q$, while their voltage drops ($V_i = Q/C_i$) add. |
+| **4. Mechanical Springs in Series** | $k_{\text{eq}} = k_1 \parallel k_2 = \frac{k_1 k_2}{k_1 + k_2}$ | Two springs hooked end-to-end feel the same tension force $F$, while their stretches ($\Delta x_i = F/k_i$) add. |
+| **5. Round-Trip Average Speed** | $v_{\text{avg}} = 2(v_1 \parallel v_2) = \frac{2 v_1 v_2}{v_1 + v_2}$ | Driving $D\text{ miles}$ uphill at $v_1 = 30\text{ mph}$ and $D\text{ miles}$ downhill at $v_2 = 60\text{ mph}$ adds *times* ($D/v_1 + D/v_2$), giving $2(30 \parallel 60) = \mathbf{40\text{ mph}}$ (not $45\text{ mph}$). |
+
+Consider why all five laws collapse into $x \parallel y$:
+* In a **parallel resistor network**, Kirchhoff's current law states that the total current $I_{\text{total}} = V / R_{\text{eq}}$ splitting at a node is the sum of the branch currents $I_1 + I_2 = V/R_1 + V/R_2$. Dividing out the common voltage $V$ gives $\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}$.
+* In **series capacitors**, the exact opposite duality holds: the same displacement charge $+Q$ and $-Q$ is induced on each capacitor in the chain, while the voltages add ($V_{\text{total}} = V_1 + V_2 \implies \frac{Q}{C_{\text{eq}}} = \frac{Q}{C_1} + \frac{Q}{C_2}$).
+* In **series Hookean springs**, both springs experience the same tension force $F$, while their physical elongations add ($\Delta x_{\text{total}} = \Delta x_1 + \Delta x_2 \implies \frac{F}{k_{\text{eq}}} = \frac{F}{k_1} + \frac{F}{k_2}$), making the combined spring *softer* than either individual spring.
+* Because $x \parallel y$ is both **commutative** ($x \parallel y = y \parallel x$) and **associative** ($(x \parallel y) \parallel z = x \parallel (y \parallel z)$), you can chain three, four, or ten parallel branches on the stack with `{{key:x∥y}}` just as effortlessly as chaining `{{key:+}}` or `{{key:×}}`.
+
+Seeing that a glass camera lens, two coil springs, two parallel resistors, and a mountain road trip are all disguised versions of $x \parallel y$ is one of the great "aha!" moments of mathematical maturity.
 
 ---
 
-## Logarithms, Exponentials & Natural Constants
+## Leonhard Euler's Natural Base e, Carbon-14 & Cooling Coffee
 
-Why do logarithms appear everywhere from stellar magnitudes and earthquake Richter scales to chemical pH, acoustic decibels, and radioactive half-lives? Because whenever a physical process grows or decays in proportion to how much of it is currently present ($\frac{dN}{dt} = \pm \lambda N$), its magnitude unfolds along a geometric curve ($e^{\pm \lambda t}$). Taking a logarithm unwraps that exponential curve into a straight line—translating multiplication into addition ($\ln(ab) = \ln a + \ln b$), division into subtraction ($\ln(a/b) = \ln a - \ln b$), and exponentiation into simple scalar multiplication ($\ln(y^x) = x\ln y$).
+While Henry Briggs's base-10 logarithm (`{{key:LOG}}`) is ideal for counting powers of ten, nature itself has a favorite base—a mysterious, unending number studied by **Jacob Bernoulli** in 1683 while analyzing compound interest and named **$e$** by the great Swiss mathematician **Leonhard Euler** in 1727:
 
-The SC-32 pairs the **natural logarithm (`{{key:LN}}`)** and **natural exponential (`{{key:eˣ}}`)**—governed by Leonhard Euler's continuous compounding base $e = \lim_{n\to\infty}(1 + 1/n)^n \approx 2.718281828459$, the unique number whose derivative equals itself—with the **common base-10 logarithm (`{{key:LOG}}`)** and **decade exponential (`{{key:10ˣ}}`)** used for decibel and order-of-magnitude engineering scales:
+$$e = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \dots \approx \mathbf{2.718281828459}$$
 
-| Function | Keystroke | Arity | Valid Domain | Inverse Function |
-| :--- | :--- | :--- | :--- | :--- |
-| **Natural Logarithm** | `{{key:LN}}` | Unary | $x > 0$ | Natural Exponential `{{key:eˣ}}` |
-| **Natural Exponential** | `{{key:eˣ}}` | Unary | $-708 < x < 709$ | Natural Logarithm `{{key:LN}}` |
-| **Common Logarithm** | `{{key:LOG}}` | Unary | $x > 0$ | Base-10 Exponential `{{key:10ˣ}}` |
-| **Base-10 Exponential** | `{{key:10ˣ}}` | Unary | $-308 < x < 308$ | Common Logarithm `{{key:LOG}}` |
-| **Euler's Number $e$** | `1 {{key:eˣ}}` | Unary | Constant ($e^1 \approx 2.718281828459$) | `{{key:LN}}` |
-| **Scientific Exponent (`EEX`)** | `{{key:E}}` | Entry | $m \times 10^n$ ($-308 \le n \le 308$) | N/A |
-| **Archimedes' Constant $\pi$** | `{{key:π}}` | $0$-ary | Constant ($\approx 3.141592653590$) | N/A |
+Where does $e$ come from? Imagine a generous bank in 17th-century Basel that pays $100\%$ nominal interest per year on $\$1.00$:
+- If the bank compounds interest **once** at the end of the year, you get $(1 + 1)^1 = \$2.00$.
+- If it compounds **twice** a year ($50\%$ every six months), you get $(1 + \frac{1}{2})^2 = \$2.25$.
+- If it compounds **quarterly** ($25\%$ every three months, $n = 4$), you get $(1 + \frac{1}{4})^4 \approx \$2.4414$.
+- If it compounds **monthly** ($n = 12$), you get $(1 + \frac{1}{12})^{12} \approx \$2.6130$.
+- If it compounds **every day** ($n = 365$), you get $(1 + \frac{1}{365})^{365} \approx \$2.7146$.
+- If it compounds **every second** ($n = 31,536,000$)—growing continuously at every instant in proportion to its current size—your $\$1.00$ approaches Euler's limit **$e \approx \$2.718281828459\dots$**
 
-{{blocks:algebra_lframe_grid_hero|Algebra L-Frame Grid Hardware Stage}}
-*Figure 3.2: The Algebra L-Frame Grid hardware stage provides physical boundary constraints for polynomial factoring, linking tactile coordinate geometry directly to RPN stack transcendentals.*
+Why do physicists, chemists, and biologists call $e^x$ (`{{key:eˣ}}`) and its inverse $\ln x$ (`{{key:LN}}`) the **natural** exponential and logarithm? Because when you differentiate the infinite factorial series for $e^x$ term by term, every power $\frac{x^k}{k!}$ steps down to $\frac{k x^{k-1}}{k!} = \frac{x^{k-1}}{(k-1)!}$, reproducing the exact same series:
 
-### Mathematical Formulations
-$$\ln x = \int_1^x \frac{1}{t}\,dt, \quad e^x = \sum_{k=0}^{\infty} \frac{x^k}{k!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots$$
-$$\log_{10} x = \frac{\ln x}{\ln 10}, \quad 10^x = e^{x \ln 10}$$
+$$\frac{d}{dx}\left(1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \dots\right) = 0 + 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots = e^x$$
 
-### Napier's Slide-Rule Insight & Prime Factor Blocks
+The function $e^x$ is the only curve in the universe whose **rate of change (slope) at every point is equal to its own height**! Whenever anything in nature grows or decays at a rate proportional to how much of it is present right now ($\frac{dN}{dt} = \pm \lambda N$), Euler's base $e$ is the law that governs it.
 
-Before evaluating logarithms on silicon, you can hold John Napier's 1614 mathematical breakthrough in your hands using the *Prime Factor Blocks*—the stackable $19.0 \times 19.0\text{ mm}$ logarithmic prime blocks ($[2], [3], [5], [7], [11], [13], [17], [19], [23], [29]$ plus fused composite powers $2^2, 2^3, 3^2, 5^2$) housed in the $3 \times 1 \times 13\text{U}$ drop-front comparator enclosure.
+### Willard Libby's 1949 Carbon-14 Time Machine
 
-{{blocks:prime_studio_comparator_stage|Prime Factor Blocks: Logarithmic Prime Blocks & Comparator Scale}}
-*Figure 3.3: The Prime Factor Blocks and bilateral comparator scale, harmonized to the $7.00\text{ mm}$ ($1\text{U}$) Gridfinity datum.*
+In 1949, at the University of Chicago, physical chemist **Willard F. Libby** realized that Euler's natural logarithm (`{{key:LN}}`) could turn every piece of ancient wood, linen, charcoal, or bone on Earth into a nuclear stopwatch—an insight that won him the 1960 Nobel Prize in Chemistry.
 
-For each prime block $p$, the visible step height is machined to the exact logarithmic law:
-$$h_{\text{vis}}(p) = 7.0\log_2(p) = \frac{7.0}{\log_{10}(2)}\log_{10}(p) \approx 23.2535\log_{10}(p)\text{ mm}$$
-where the smallest prime block ($[2]$) defines the fundamental $1\text{U} = 7.00\text{ mm}$ vertical unit (`{{key:2}} = 7.00 mm`, `{{key:3}} = 11.09 mm`, `{{key:5}} = 16.25 mm`, `{{key:7}} = 19.65 mm`). Because $\log(a \times b) = \log(a) + \log(b)$, **stacking two prime blocks physically adds their logarithmic heights to form the exact height of their product**:
-1. **The Decade Identity ($2 \times 5 = 10$):** Stack a Blue $[2]$ block ($7.00\text{ mm}$) on top of a Yellow $[5]$ block ($16.25\text{ mm}$) inside the comparator channel. Their combined physical height ($7.00 + 16.25 = \mathbf{23.25\text{ mm}}$) stands completely flush with the engraved **`10`** decade mark on the comparator wall.
-2. **Why Three Acoustic/RF Doublings ($2^3 = 8$) Equal $9.03\text{ dB}$ vs. $10\text{ dB}$:** Stack three Blue $[2]$ blocks ($2 \times 2 \times 2 = 8$) into a $3\text{U}$ column of height $3 \times 7.00\text{ mm} = \mathbf{21.00\text{ mm}}$ right beside the $10$ decade mark ($23.25\text{ mm}$). In telecommunications and acoustics, a factor of $10$ in power defines $1\text{ Bel} = 10\text{ dB}$ ($23.25\text{ mm}$), while each doubling of power ($[2] = 7.00\text{ mm}$) adds $10\log_{10}(2) \approx \mathbf{3.0103\text{ dB}}$. Looking across the top of your three-$[2]$ tower ($21.00\text{ mm} \leftrightarrow 9.03\text{ dB}$) against the $10$-mark ($23.25\text{ mm} \leftrightarrow 10.00\text{ dB}$), you can physically see and feel why $2^3 = 8$ is $\frac{21.00}{23.25} = 0.90309\text{ B} = 9.03\text{ dB}$—just $2.25\text{ mm}$ ($0.97\text{ dB}$) shy of a full decade.
-3. **Meshing Gear Teeth & Hunting-Tooth Gear Trains (`PARTS` $\to$ `GCD` / `LCM`):** Why do prime factor towers govern mechanical gearboxes? Suppose a $48\text{-tooth}$ pinion ($2^4 \times 3$) meshes with a $72\text{-tooth}$ bull gear ($2^3 \times 3^2$). With the *Prime Factor Blocks*, the shared blocks inside both towers form the **Greatest Common Divisor** $\gcd(48, 72) = 2^3 \times 3 = 24$ (allowing a machinist to color-code both gears into $24$ equal tooth groups of $2$ and $3$ teeth), while the taller prime-power union forms the **Least Common Multiple** $\operatorname{lcm}(48, 72) = 2^4 \times 3^2 = 144$ tooth clicks before two marked teeth realign (`{{key:PARTS}}` $\to$ `GCD` / `LCM`). In heavy-duty transmissions, engineers deliberately add a single "hunting tooth" so the mating gears are **coprime** ($\gcd(A, B) = 1$, sharing no common prime blocks at all)—ensuring that every tooth on the pinion contacts every tooth on the bull gear to distribute wear evenly over $\operatorname{lcm}(A, B) = A \times B$ tooth meshes, while Napier's logarithm (`{{key:LN}}` / `{{key:LOG}}`) turns multi-stage compound gear-ratio multiplication into physical block-height addition.
+Here is how Libby's clock works:
+1. High in the stratosphere, cosmic-ray neutrons continuously bombard nitrogen-14 atoms ($^{14}\text{N} + n \to {}^{14}\text{C} + p$), converting them into radioactive **carbon-14 ($^{14}\text{C}$)** at a steady global rate.
+2. Those $^{14}\text{C}$ atoms oxidize into carbon dioxide ($^{14}\text{CO}_2$), mix throughout the atmosphere and oceans, and enter the food chain through photosynthesis. As long as a tree, a sheep, or a human being is alive—breathing air and eating plants—the ratio of radioactive $^{14}\text{C}$ to normal stable carbon ($^{12}\text{C}$) in its tissues stays locked to the atmosphere's equilibrium baseline ($N_0 \approx 1\text{ part per trillion}$).
+3. The instant the tree is chopped down for a prehistoric campfire or woven into the flax linen wrappings of the **Dead Sea Scrolls**, photosynthesis and metabolism stop. No fresh $^{14}\text{C}$ ever enters the sample again. From that day forward, its trapped $^{14}\text{C}$ nuclei undergo beta decay back into nitrogen-14 with a physical (**Cambridge**) half-life of **$t_{1/2} = 5,730\text{ years}$**:
 
-### Radioactive Decay & Carbon-14 Dating
-The radioactive decay of unstable carbon-14 ($^{14}\text{C}$) follows first-order exponential kinetics:
-$$N(t) = N_0 e^{-\lambda t}$$
-where the true physical (**Cambridge**) half-life is $t_{1/2} = 5,730 \pm 40\text{ years}$ (Godwin, 1962). The physical decay constant $\lambda$ is:
-$$\lambda = \frac{\ln 2}{t_{1/2}} = \frac{\ln 2}{5730} \approx 1.20968 \times 10^{-4}\text{ yr}^{-1}$$
+   $$N(t) = N_0 \left(\frac{1}{2}\right)^{t / t_{1/2}} = N_0 e^{-\lambda t}, \qquad \text{where } \lambda = \frac{\ln 2}{t_{1/2}} = \frac{\ln 2}{5730} \approx 1.20968 \times 10^{-4}\text{ yr}^{-1}$$
 
-> **Radiometric Convention — Cambridge ($5,730\text{ yr}$) vs. Libby ($5,568\text{ yr}$) Half-Life:**  
-> In physical nuclear chemistry, the true mean half-life of $^{14}\text{C}$ is the **Cambridge half-life** ($5,730\text{ yr}$), which we use here to compute true physical decay time under constant atmospheric production. Note that in archaeological reporting (Stuiver & Polach, 1977), uncalibrated "Conventional Radiocarbon Ages (Years BP)" are historically calculated using Willard Libby's original $5,568\text{-year}$ half-life prior to applying dendrochronological calibration curves (`IntCal20`).
+To invert that equation on the SC-32 from the **inside out** and read the age $t$ of an Ice Age hearth bone that retains **$23.4\%$** of its original $^{14}\text{C}$ ($N(t)/N_0 = 0.234$):
 
-Suppose an archaeological bone specimen unearthed from an Ice Age hearth retains **$23.4\%$ of its original $^{14}\text{C}$** content ($N(t)/N_0 = 0.234$). To find how many years have elapsed since the organism stopped exchanging carbon with the atmosphere, we invert the exponential decay law with the natural logarithm:
 $$t = -\frac{\ln(N(t)/N_0)}{\lambda} = -\frac{\ln(0.234) \times 5730}{\ln 2}$$
 
-Watching the calculation unfold on the stack shows how each physical constant enters in turn: entering the remaining fraction and taking its natural logarithm (`0.234` `{{key:LN}}`) places $X = -1.452434$ on the ground floor; multiplying by the Cambridge half-life (`5730` `{{key:×}}`) scales that log-ratio to $X = -8322.447816$; keying `2` `{{key:LN}}` lifts the product to $Y$ while forming the divisor $\ln 2 = 0.693147$ in $X$; and dividing and flipping the sign (`{{key:÷}}` `{{key:+/-}}`) reveals an elapsed age of **$12,006.75\text{ years}$**:
+1. Start inside the logarithm with the surviving fraction ($0.234$) on Shelf $X$ and press `{{key:LN}}` to take its **natural logarithm** in place ($\ln(0.234) = -1.4524\text{ natural decay units}$).
+2. Multiply by the half-life ($5,730\text{ years}$), divide by $\ln 2 \approx 0.6931$ (computed right on Shelf $X$ via `2 {{key:LN}}` while the numerator waits in $Y$), and flip the minus sign with `{{key:+/-}}`: the bone is **$12,006.75\text{ years old}$**, dating straight to the end of the last Ice Age. *(For volcanic rocks billions of years old, geologists use the same `{{key:LN}}` law on Potassium-40 decaying into Argon-40 gas trapped inside cooled lava crystals, while in **Chapter 11** we will see how the exact logarithmic doubling law $t = \frac{\ln 2}{\ln(1+r)}$ underpins compound-interest growth.)*
 
-| Step | Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `0.234 {{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.4524$ | Remaining proportion and $\ln(0.234)$ |
-| 2 | `5730 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-8322.4478$ | Product with Cambridge half-life |
-| 3 | `2 {{key:LN}}` | $0.0000$ | $0.0000$ | $-8322.4478$ | $0.6931$ | Base 2 and $\ln(2)$ divisor |
-| 4 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-12006.7541$ | Quotient |
-| 5 | `{{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12006.7541$** | Artifact age in years |
+### Newton's Law of Cooling: Why Hot Coffee Cools Fastest in the First Five Minutes
 
-Executed as a continuous single-pass chain via `{{res:sc32_03_algebra_transcendentals_seq_44:keys}}`, the entire radiometric age determination takes 15 keystrokes with zero parentheses and zero temporary storage registers, dating the bone to approximately **$12,007\text{ years old}$** at the close of the Younger Dryas glacial epoch.
+You do not need a nuclear physics lab to watch $e^{-t/\tau}$ in action; you can observe it on your kitchen table every morning.
 
----
+In 1701, **Isaac Newton** placed a glowing-hot iron block in a steady breeze and observed that the rate $\frac{dT}{dt}$ at which a warm object loses heat to its surroundings is directly proportional to the **temperature difference** $\Delta T(t) = T(t) - T_{\text{room}}$ between the object and the surrounding room air:
 
-### Acoustic Sound Pressure Level (dB SPL)
-While nuclear chemistry relies on the natural logarithm (`{{key:LN}}`), acoustics and telecommunications use the base-10 common logarithm (`{{key:LOG}}`) because human sensory perception compresses vast energy ratios into order-of-magnitude decades. The sound pressure level (SPL) in decibels is defined relative to the threshold of human hearing at $1\text{ kHz}$, $p_0 = 20\,\mu\text{Pa} = 2.0 \times 10^{-5}\text{ Pa}$:
-$$L_p = 20 \log_{10}\left(\frac{p_{\text{rms}}}{p_0}\right)\text{ dB SPL}$$
+$$\frac{d}{dt}\left(T(t) - T_{\text{room}}\right) = -\frac{1}{\tau}\left(T(t) - T_{\text{room}}\right)$$
 
-When an acoustic engineer stands in front of a stadium loudspeaker array and measures an RMS sound pressure of **$p_{\text{rms}} = 1.45\text{ Pa}$**, how many decibels is the crowd experiencing?
-$$L_p = 20 \log_{10}\left(\frac{1.45}{2.0 \times 10^{-5}}\right)$$
+- When a fresh cup of coffee is piping hot ($90^\circ\text{C}$ in a $20^\circ\text{C}$ room, so $\Delta T_0 = 70^\circ\text{C}$), heat pours out into the room rapidly.
+- Twenty minutes later, when the coffee has cooled to $35^\circ\text{C}$ ($\Delta T = 15^\circ\text{C}$), it loses heat almost five times more slowly.
 
-First, `1.45 {{key:ENTER}} 2.0 {{key:E}} 5 {{key:+/-}} {{key:÷}}` divides the measured acoustic pressure by the reference threshold $p_0 = 20\,\mu\text{Pa}$, yielding a relative pressure ratio of $72,500.0$ in Register $X$—showing right on the screen that the stadium wave is $72,500$ times stronger in pressure than the quietest audible whisper. Next, `{{key:LOG}} 20 {{key:×}}` computes the decade power and scales by $20\text{ dB/decade}$, so the continuous sequence `{{res:sc32_03_algebra_transcendentals_seq_02:keys}}` resolves the stadium sound pressure level directly to **`{{res:sc32_03_algebra_transcendentals_seq_02:value}}`** $\text{dB SPL}$ (**$97.2\text{ dB SPL}$**), a high-intensity level that calls for hearing protection during extended exposure.
+Because the rate of cooling is proportional to the remaining temperature excess, integrating that differential equation yields a pure exponential relaxation curve with characteristic thermal time constant $\tau$:
 
-> **The Mammalian Cochlea & Barn-Owl Logarithmic Compression:**  
-> Why do acoustic engineers measure sound in base-10 logarithms (`{{key:LOG}}`) rather than linear Pascals? Between the rustle of a mouse in dry leaves at $p_0 = 20\,\mu\text{Pa}$ ($0\text{ dB SPL}$) and a jet afterburner at $20\text{ Pa}$ ($120\text{ dB SPL}$), acoustic pressure spans six orders of magnitude ($10^6:1$) and acoustic *power* ($I \propto p^2$) spans twelve orders of magnitude (**$10^{12}:1$**). To process both whispers and thunder without saturating neural firing rates, the tapered basilar membrane of the **mammalian cochlea** and the auditory cortex of nocturnal **barn owls** act as biological spectrum analyzers with logarithmic mechanical stiffness—compressing a trillion-fold ($10^{12}:1$) energy span into a linear $0\text{--}120\text{ dB}$ perceptual scale where every $10\times$ power jump adds a uniform $+10\text{ dB}$ step.
+$$\Delta T(t) = \Delta T_0 e^{-t/\tau} \implies t = -\tau \ln\left(\frac{\Delta T(t)}{\Delta T_0}\right)$$
 
----
+Whether a cup of coffee is relaxing toward room temperature or an electrical timing circuit with time constant $\tau = 7.05\text{ s}$ is relaxing to $10\%$ of its initial state ($\Delta T / \Delta T_0 = 0.10$), multiplying $\tau = 7.05\text{ s}$ on Shelf $Y$ by $\ln(0.10) = -2.3026$ on Shelf $X$ and tapping `{{key:+/-}}` reveals that $90\%$ of the relaxation finishes in $t = 16.23\text{ seconds}$.
 
-### Chemical pH & Henderson-Hasselbalch Buffer
-Base-10 logarithms play an equally central role in analytical chemistry, where the acidity of an aqueous solution spans fourteen orders of magnitude in hydronium ion activity ($\text{pH} = -\log_{10}[\text{H}_3\text{O}^+]$). When a biochemist prepares a buffer solution containing a weak acid ($\text{HA}$) and its conjugate base ($\text{A}^-$) to keep cellular enzymes stable, the equilibrium pH is governed by the Henderson-Hasselbalch equation:
-$$\text{pH} = \text{pK}_a + \log_{10}\left(\frac{[\text{A}^-]}{[\text{HA}]}\right)$$
+### How the Stack Models the Boltzmann Factor: From Mountain Air to Quantum Starlight
 
-Suppose we prepare an acetic acid buffer system ($\text{pK}_a = 4.76$) by mixing a sodium acetate conjugate-base concentration of $[\text{A}^-] = 0.185\text{ M}$ with an acetic acid concentration of $[\text{HA}] = 0.120\text{ M}$. On the stack, the concentration quotient `0.185 {{key:ENTER}} 0.120 {{key:÷}}` forms the conjugate base-to-acid ratio $[\text{A}^-]/[\text{HA}] \approx 1.5417$ in Register $X$. Pressing `{{key:LOG}} 4.76 {{key:+}}` in the full sequence `{{res:sc32_03_algebra_transcendentals_seq_03:keys}}` then computes the logarithmic offset ($\approx +0.1880$) and adds the baseline dissociation constant $\text{pK}_a = 4.76$, showing that the buffer stabilizes at **`{{res:sc32_03_algebra_transcendentals_seq_03:value}}`** (**$\text{pH} = 4.95$**) with zero scratchpad memory.
+Why does food spoil four times faster on a warm picnic table than in a refrigerator? Why does water boil at only $60^\circ\text{C}$ inside a vacuum chamber? Why is a mountaineer gasping for breath atop Hawaii's $4,207\text{-meter}$ Mauna Kea? And why does a silicon solar cell or a glowing star obey the exact same exponential curve?
 
----
+Every one of those phenomena is governed by a universal competition between **barrier energy ($\Delta E$)** and **thermal motion ($RT$ or $kT$)** inside Ludwig Boltzmann's and Leonhard Euler's natural exponential (`{{key:eˣ}}`):
+- **Chemical & Solid-State Activation Barriers ($\exp(-E_a / RT)$):**  
+  In **Svante Arrhenius's 1889 activation law** ($k = A \exp(-E_a / RT)$), in solid-state atomic diffusion ($D = D_0 \exp(-Q / RT)$), and in the **Clausius-Clapeyron vapor-pressure equation** ($\ln(P_2/P_1) = -\frac{\Delta H_{\text{vap}}}{R}(\frac{1}{T_2} - \frac{1}{T_1})$), molecules must clear an energy barrier to react, hop through a crystal lattice, or escape from a liquid into a vapor. On the SC-32 stack, you always model a Boltzmann factor from the **exponent outward**: form the dimensionless energy-to-temperature ratio $\Delta E / RT$ (or reciprocal-temperature difference $\frac{1}{T_1} - \frac{1}{T_2}$ via two taps of `{{key:1/x}}` and `{{key:-}}`) right on Shelf $X$, press `{{key:+/-}}` if it is a decay barrier, tap `{{key:eˣ}}` to convert the dimensionless exponent into a probability factor in place, and multiply by the pre-exponential baseline ($A, D_0,$ or $P_1$).
+- **Barometric Altitude ($P(h) = P_0 e^{-Mgh/RT}$):**  
+  In the ocean, water is nearly incompressible, so hydrostatic pressure grows *linearly* with depth. Air, however, is a compressible ideal gas whose density $\rho = \frac{PM}{RT}$ is proportional to pressure $P$ itself. Substituting $\rho$ into the hydrostatic balance gives $\frac{dP}{P} = -\frac{Mg}{RT}\,dh$: here gravitational potential energy $Mgh$ competes against thermal energy $RT$, causing atmospheric pressure to drop **exponentially** with altitude $h$ and leaving only $60.7\%$ of sea-level air atop Mauna Kea.
+- **Semiconductors & Max Planck's 1900 Quantum Law ($e^x - 1$):**  
+  Across a silicon p-n diode ($I = I_s[\exp(V / nV_t) - 1]$) or intrinsic silicon bandgap ($n_i = B T^{3/2} \exp(-E_g / 2kT)$), electrostatic potential competes against thermal voltage $kT/q$. And in December 1900, when **Max Planck** placed that same $(e^x - 1)$ expression—with $x = \frac{hc}{\lambda kT}$—in the denominator of his blackbody spectral radiance law,
 
-### Arrhenius Chemical Reaction Kinetics
-Why do chemical reactions speed up so dramatically when heated by only a few tens of degrees? Svante Arrhenius discovered in 1889 that reacting molecules must surmount an activation energy barrier $E_a$, so the rate constant $k$ depends exponentially on reciprocal absolute temperature:
-$$k = A \exp\left(-\frac{E_a}{R T}\right)$$
-Taking the natural logarithm of the rate ratio between two temperatures $T_1$ and $T_2$ eliminates the pre-exponential collision factor $A$ and isolates the activation energy $E_a$ (where $R = 8.314462\text{ J}/(\text{mol}\cdot\text{K})$ is the universal gas constant):
-$$\ln\left(\frac{k_2}{k_1}\right) = \frac{E_a}{R} \left(\frac{1}{T_1} - \frac{1}{T_2}\right) \implies E_a = \frac{R \ln(k_2 / k_1)}{\frac{1}{T_1} - \frac{1}{T_2}}$$
+  $$B_\lambda(T) = \frac{2 h c^2}{\lambda^5 \left(e^{\frac{h c}{\lambda k T}} - 1\right)}$$
 
-In a laboratory reactor, warming a polymerization reaction from room temperature $T_1 = 300\text{ K}$ ($27^\circ\text{C}$, where $k_1 = 3.25 \times 10^{-4}\text{ s}^{-1}$) up to $T_2 = 350\text{ K}$ ($77^\circ\text{C}$) causes the rate constant to surge nearly ninety-fold to $k_2 = 2.85 \times 10^{-2}\text{ s}^{-1}$. To find the activation barrier $E_a$ in $\text{kJ/mol}$ driving that sensitivity, `{{res:sc32_03_algebra_transcendentals_seq_45:keys}}` first forms the reciprocal temperature difference $(1/T_1 - 1/T_2) \approx 0.000476\text{ K}^{-1}$ in Register $X$. Next, `{{res:sc32_03_algebra_transcendentals_seq_46:keys}}` computes the numerator product $R \ln(k_2/k_1) = \mathbf{{{res:sc32_03_algebra_transcendentals_seq_46:value}}\text{ J/(mol}\cdot\text{K)}}$ while the temperature denominator waits in $Y$. Pressing `{{key:x⇄y}} {{key:÷}} 1000 {{key:÷}}` swaps, divides numerator by denominator ($78,114.80\text{ J/mol}$), and converts to $\text{kJ/mol}$, revealing an activation energy of $X = \mathbf{78.1148}\text{ kJ/mol}$.
+  he prevented the classical ultraviolet catastrophe and launched quantum mechanics! On the SC-32, evaluating $(e^x - 1)$ first on Shelf $X$ (`{{key:eˣ}} 1 {{key:-}}`) lets that quantum denominator ride up to Shelf $Z$ while you compute $2hc^2 / \lambda^5$ on Shelves $Y$ and $X$, before a final swap-and-divide (`{{key:x⇄y}} {{key:÷}}`) unites them. *(See **On the Stack** below for the complete worked tables across all of these systems.)*
 
-> **The $Q_{10} \approx 2$ Metabolic Doubling Rule & Freezing-Point Depression:**  
-> Notice why a seemingly modest $50\text{ K}$ warming ($27^\circ\text{C} \to 77^\circ\text{C}$) accelerated this reaction by $k_2/k_1 = 87.7\times$: because molecular collisions sit inside the exponential tail $\exp(-E_a / RT)$, for typical biochemical activation barriers ($E_a \approx 50\text{--}80\text{ kJ/mol}$) every **$10^\circ\text{C}$ temperature rise approximately doubles to triples reaction and ectothermic metabolic rates** ($Q_{10} \approx 2\text{--}3$, so five $10^\circ\text{C}$ steps multiply rate by $\approx 2.45^5 \approx 88\times$). Conversely, when winter temperatures plunge below $0^\circ\text{C}$, wood frogs and Arctic insects survive by flooding their cells with glucose and glycerol solutes—exploiting colligative **freezing-point depression** ($\Delta T_f = i K_f m$) to lower the chemical potential of liquid water and prevent lethal intracellular ice solidification.
+> **Why High-Precision Calculators Guard Against Catastrophic Cancellation:**  
+> Numerical analysts distinguish two separate places where careless exponential evaluation loses precision: **inside** the `{{key:eˣ}}` algorithm on large arguments, and **on the stack** when subtracting $1$ from $e^x$ on tiny arguments. First, as **William J. Cody and William Waite** demonstrated in their classic 1980 manual {{cite:cody1980}}, a high-precision math engine must reduce any argument $x$ modulo $\ln 2$ (`x = k * ln(2) + r`, where $|r| \le \frac{1}{2}\ln 2$) using split extended-precision constants $C_1 + C_2 = \ln 2$ before evaluating a minimax polynomial on the reduced remainder $r$, preventing internal range-reduction cancellation. Second, what happens on the stack if you evaluate $e^x - 1$ for a tiny number like $x = 10^{-10}$ by pressing `{{key:eˣ}} 1 {{key:-}}`? Even if `{{key:eˣ}}` computes $e^{10^{-10}}$ accurately, storing $1 + 10^{-10} + \frac{1}{2}10^{-20}\dots$ into a 53-bit IEEE-754 register forces the leading `1.000000000` to consume the first ten decimal digits of the mantissa, rounding away the delicate $x^2/2$ curvature before you ever press `1 {{key:-}}`! For moderate exponents like our Shockley diode ($x = 17.95$) or visible-light Planck law ($x = 4.98$), `{{key:eˣ}} 1 {{key:-}}` retains full accuracy; for tiny arguments $|x| \ll 10^{-5}$ (such as long-wavelength Rayleigh-Jeans radio astronomy), you avoid **catastrophic cancellation** on the stack by evaluating the two-term Taylor series $e^x - 1 \approx x + \frac{1}{2}x^2 = x(1 + x/2)$ or the exact identity $2 e^{x/2}\sinh(x/2)$ directly.
 
 ---
 
-### Barometric Altimetry Formula
-Just as thermal energy competes with molecular activation barriers in chemistry, thermal kinetic energy $RT$ competes with gravitational potential energy $Mgh$ in a planetary atmosphere. Because air is compressible, atmospheric pressure drops exponentially with altitude $h$ above sea level:
-$$P(h) = P_0 \exp\left(-\frac{M g h}{R T}\right)$$
-How thin is the air atop Hawaii's Mauna Kea Observatory at altitude $h = 4,207\text{ meters}$, given standard sea-level pressure $P_0 = 1013.25\text{ hPa}$, dry-air molar mass $M = 0.0289644\text{ kg/mol}$, gravity $g = 9.80665\text{ m/s}^2$, gas constant $R = 8.314462\text{ J}/(\text{mol}\cdot\text{K})$, and mean atmospheric temperature $T = 288.15\text{ K}$ ($15^\circ\text{C}$)? The ratio of gravitational potential to thermal energy defines the dimensionless scale-height exponent $\kappa$:
-$$\kappa = \frac{M g h}{R T} = \frac{0.0289644 \times 9.80665 \times 4207}{8.314462 \times 288.15}$$
+## Factorials, Combinatorics & Extending n! to Fractional Numbers
 
-Evaluating the dimensionless potential scale height exponent $\kappa \approx 0.4988$ first (`0.0289644 {{key:ENTER}} 9.80665 {{key:×}} 4207 {{key:×}} 8.314462 {{key:÷}} 288.15 {{key:÷}}`) and then negating, exponentiating, and scaling by sea-level pressure via `{{res:sc32_03_algebra_transcendentals_seq_47:keys}}` computes the attenuation factor $e^{-\kappa} \approx 0.6073$ and yields the summit barometric pressure ($X = \mathbf{615.3168}\text{ hPa}$). Atop Mauna Kea, atmospheric pressure is **$615.3\text{ hPa}$**—barely $60.7\%$ of sea-level pressure, which keeps water vapor out of infrared telescope beams while requiring supplemental oxygen for summit astronomers.
+Suppose you pick up an ordinary deck of $52$ playing cards and give it a thorough shuffle. How many different top-to-bottom orders can those $52$ cards land in?
 
-> **Exponential Air vs. Linear Ocean Pressure (Bar-Headed Geese vs. Cuvier's Beaked Whales):**  
-> Why does atmospheric pressure decay *exponentially* with altitude ($P(h) = P_0 e^{-h/H}$), whereas ocean hydrostatic pressure increases *linearly* with depth ($P(z) = P_0 + \rho g z$, adding $+1\text{ atm}$ every $10.0\text{ m}$ of seawater)? Because liquid water is nearly incompressible ($\rho \approx \text{const}$), each $10\text{ m}$ water column weighs the same; air, however, is a compressible gas ($\rho = PM/RT \propto P$), so the rate of pressure drop $dP/dh = -\rho g$ is proportional to $P$ itself. At $h = 8,000\text{ m}$ over the Himalayan crest, exponential decay leaves barely one-third of sea-level oxygen ($P \approx 356\text{ hPa}$)—an aerodynamic and physiological frontier conquered by migrating **bar-headed geese** (*Anser indicus*), whose mutated high-affinity hemoglobin and dense capillary beds extract oxygen where mountaineers require bottled gas, while deep-diving **Cuvier's beaked whales** and elephant seals collapsible-rib-cage their lungs to withstand linear hydrostatic pressures exceeding $200\text{ atm}$ at $2,000\text{ m}$ depth.
+- The top card can be any of the **$52$** cards.
+- For each of those $52$ choices, the second card can be any of the remaining **$51$** cards ($52 \times 51$).
+- Continuing down to the last card gives **52 factorial ($52!$)** possible arrangements:
 
----
+$$52! = 52 \times 51 \times 50 \times \dots \times 3 \times 2 \times 1 \approx \mathbf{8.0658 \times 10^{67}}$$
 
-## Number Parts Functions (`{{key:PARTS}}`)
+That number—an $8$ followed by sixty-seven zeros—is larger than the total number of atoms in the entire Earth! Every time you thoroughly shuffle a fair deck of $52$ cards, you are almost certainly holding a card sequence that has never existed before in human history. Even a modest $16 \times 16$ fiber-optic crossbar switch has $16! = 20,922,789,888,000$ ($\approx 20.92\text{ trillion}$) distinct one-to-one routing configurations.
 
-In celestial navigation, GPS coordinate metrology, and digital signal synthesis, a continuous real number often carries two distinct physical meanings packed on either side of its decimal point: whole revolutions or integer hours to the left, and phase angles or fractional minutes to the right. Pressing Right Shift `{{key:↱}}` followed by `{{key:PARTS}}` opens four hardware decomposition primitives that split any real number in Register $X$ cleanly in place:
+### Breaking the Vintage $69!$ Barrier, Stirling's Asymptotic Formula, and Lanczos's Gamma Engine
 
-| Function | Mathematical Definition | Example Input | Result Produced | Operation |
-| :--- | :--- | :---: | :---: | :--- |
-| **`IP` (INTG)** | $\operatorname{trunc}(x)$ | `-42.785` | `-42.0` | Integer part (truncated toward zero) |
-| **`FP` (FRAC)** | $x - \operatorname{trunc}(x)$ | `-42.785` | `-0.785` | Signed fractional remainder ($x - \text{IP}(x)$) |
-| **`ABS`** | $\lvert x \rvert$ | `-42.785` | `42.785` | Absolute magnitude ($\lvert x\rvert = \sqrt{x^2}$) |
-| **`SGN`** | $\operatorname{sgn}(x)$ ($0 \to 0$) | `-42.785` | `-1.0` | Signum function ($\{-1, 0, +1\}$) |
+If you ever played with a pocket scientific calculator in the 1970s or 1980s, you probably discovered a famous quirk: typing `69` `x!` worked fine ($\approx 1.7112 \times 10^{98}$), but typing `70` `x!` crashed with an `OVERFLOW` error. Why? Because vintage calculators allocated only two decimal digits (`E99`) for the power-of-ten exponent, so they could not display any number $\ge 10^{100}$ (a googol), and $70! \approx 1.197857 \times 10^{100}$ steps right past $10^{100}$. Because the SC-32 uses a 64-bit IEEE-754 floating-point core supporting exponents up to $10^{\pm 308}$, its unary `{{key:x!}}` key evaluates $70!$ ($\to 1.1978571670 \times 10^{100}$) in place on Shelf $X$—all the way up to $170! \approx 7.2574 \times 10^{306}$—without overflowing.
 
-{{blocks:algebra_factoring_area|Algebra Factoring Area Model}}
-*Figure 3.4: The physical Algebra Factoring Stage area model $(x+2)(x+3) = x^2 + 5x + 6$, demonstrating visual and tactile decomposition alongside the SC-32 numerical parts engine.*
+How did physicists in statistical mechanics estimate $n!$ before 64-bit calculators? In 1730, the Scottish mathematician **James Stirling** and Abraham de Moivre proved that for large $n$, the factorial grows as $(n/e)^n$ multiplied by $\sqrt{2\pi n}$:
 
-### Bit-Exact Splitting & Sign Orientation
-When `IP` (Integer Part) strips the fractional digits from Register $X$, it truncates toward zero ($\lfloor x \rfloor$ for $x \ge 0$ and $\lceil x \rceil$ for $x < 0$). Its companion `FP` (Fractional Part) extracts the signed remainder $\text{FP}(x) = x - \text{IP}(x)$ while preserving the exact bit-level identity $\text{IP}(x) + \text{FP}(x) \equiv x$ down to the 53rd bit of the IEEE-754 mantissa—and because both functions save the original unsplit number $x$ inside `{{key:LASTX}}`, you can extract `IP` first and recall `{{key:LASTX}}` to extract `FP` without ever storing $x$ in a named variable. Rounding out the menu, `ABS` clears the IEEE-754 sign bit to return the non-negative magnitude $|x|$, while `SGN` extracts the pure unit direction vector ($+1.0$ for $x > 0$, $0.0$ for $x = 0$, and $-1.0$ for $x < 0$).
+$$n! \approx \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$$
 
-### Practical Application: Decomposing Decimal Hours into Hours, Minutes, and Seconds
-Suppose an astronomical tracking log records a deep-field telescope exposure time of **$14.736\text{ decimal hours}$**, and the observatory logbook requires integer hours, integer minutes, and decimal seconds. We can peel off each sexagesimal unit directly on the stack: storing the initial reading (`14.736 {{key:STO}} 0`) and extracting its integer part (`{{key:PARTS}} {{key:IP}}`) isolates **$14\text{ hours}$**; recalling the original value, stripping its integer part, and scaling by $60$ (`{{key:RCL}} 0 {{key:PARTS}} {{key:FP}} 60 {{key:×}}`) places $X = 44.16\text{ minutes}$ on screen; duplicating that value and taking its integer part (`{{key:ENTER}} {{key:PARTS}} {{key:IP}}`) isolates **$44\text{ minutes}$**; and swapping the unrounded remainder back to $X$ to extract its fractional part and scale by $60$ (`{{key:x⇄y}} {{key:PARTS}} {{key:FP}} 60 {{key:×}}`) yields **$9.60\text{ seconds}$**—for a total exposure of **$14\text{ hours}, 44\text{ minutes}, 9.6\text{ seconds}$**.
+Even at a modest integer like $n = 10$ ($10! = 3,628,800$), Stirling's formula gives $3,598,695.62$—capturing over $99.17\%$ of the true value in a single smooth expression.
 
----
+Even more intriguing is a puzzle that Christian Goldbach posed to twenty-two-year-old **Leonhard Euler** in 1729: *What does $\left(\frac{1}{2}\right)!$ mean?*
 
-## Factorials & The Lanczos Gamma Extension ($70!$)
+How can you multiply all the whole numbers from $1$ up to $\frac{1}{2}$? Euler solved the riddle by discovering a continuous integral—the **Gamma function**:
 
-In elementary combinatorics, the factorial $n! = 1 \times 2 \times 3 \times \dots \times n$ counts the number of ways to arrange $n$ distinct objects in a row. But in 1729, Prussian mathematician Christian Goldbach wrote to a twenty-two-year-old **Leonhard Euler** with a tantalizing question: *Can we find a smooth, continuous curve that passes through $1!, 2!, 3!, 4!\dots$ and tells us what $(1/2)!$ means?*
+$$\Gamma(x + 1) = \int_0^\infty t^x e^{-t}\,dt = x\,\Gamma(x)$$
 
-Euler solved the puzzle by inventing the **Gamma integral**, defining the generalized factorial for any real or complex number $x$ not equal to a negative integer:
-$$x! = \Gamma(x + 1) = \int_0^{\infty} t^x e^{-t}\,dt$$
+that passes smoothly through every integer factorial ($n! = \Gamma(n+1)$) while defining factorials for fractions as well. When you substitute $x = \frac{1}{2}$ into Euler's integral and change variables to $t = u^2$, the integral turns into Carl Friedrich Gauss's famous bell-curve integral $\int_0^\infty e^{-u^2}\,du = \frac{\sqrt{\pi}}{2}$:
 
-### How Cornelius Lanczos Brought Euler's Integral to Silicon
-Evaluating an improper integral from $0$ to $\infty$ directly on a pocket microprocessor would be far too slow, and James Stirling's classic asymptotic series $n! \sim \sqrt{2\pi n}\,(n/e)^n \left(1 + \frac{1}{12n} + \dots\right)$ loses accuracy for small arguments. In 1964, Hungarian physicist and mathematician **Cornelius Lanczos** discovered how to transform Euler's integral into a rapidly converging 9-pole Chebyshev rational expansion {{cite:cody1980}}.
+$$\left(\frac{1}{2}\right)! = \Gamma\left(\frac{3}{2}\right) = \frac{\sqrt{\pi}}{2} \approx \mathbf{0.886226925453}$$
 
-When you press `{{key:x!}}` on the SC-32, the engine combines exact integer multiplication for discrete integers ($0, 1, 2, \dots, 70$) with Lanczos's 9-term Gamma approximation for fractional and real arguments, delivering relative accuracy better than $10^{-15}$ across the entire real line.
+The factorial of one-half is half the square root of $\pi$! To compute `{{key:x!}}` for both integers and fractional numbers on the SC-32 in microseconds, the firmware uses Hungarian physicist **Cornelius Lanczos's 1964 Chebyshev rational approximation** {{cite:cody1980}}—which lets you compute everything from Stirling factorial comparisons to the volume of a five-dimensional unit hypersphere ($V_5 = \frac{\pi^{2.5}}{(2.5)!} = \frac{8}{15}\pi^2 \approx 5.2638$, the dimension where a unit ball's volume reaches its maximum across all dimensions $n$).
 
-### Breaking the Vintage $69!$ Overflow Barrier ($70! = 1.1979 \times 10^{100}$)
-If you ever owned a 1970s or 1980s pocket calculator, you probably remember testing its limits by typing `69` `x!` ($\approx 1.7112 \times 10^{98}$) and watching `70` `x!` crash with an `OVERFLOW` error. Why did vintage calculators hit a brick wall at $69!$? Because their hardware BCD registers allocated only **two decimal digits** (`E00` to `E99`) for the power-of-10 exponent, capping the universe at $9.999999999 \times 10^{99}$—just shy of a googol ($10^{100}$).
+### Slicing Numbers into Parts (`PARTS`) and Formatting the Display (`DISP`)
 
-Because the SC-32 uses IEEE-754 `binary64` floating-point architecture with an 11-bit binary exponent (supporting decimal exponents up to $\pm 308$), it sails past the two-digit exponent barrier to evaluate $70!$ directly:
-$$70! = 1.197857166996989 \times 10^{100}$$
-Display: `1.1978571670 E100`
+Rounding out our algebraic toolkit are two practical conveniences for science and engineering:
+- **Number Parts (`{{key:PARTS}}`: `IP`, `FP`, `ABS`, `SGN`, `GCD`, `LCM`):**  
+  When an astronomical telescope log reports $14.736\text{ decimal hours}$ or a marine GPS receiver streams latitude $30.267153^\circ\text{ N}$, a single floating-point number packs whole units to the left of the decimal point and fractional sub-units to the right. The `{{key:PARTS}}` menu (Right Shift `{{key:↱}}` above `{{key:√x}}`) splits any number in Shelf $X$ into its **Integer Part (`IP`)** and **Fractional Part (`FP`)** while preserving the original unsplit number inside `{{key:LASTX}}`, alongside **Absolute Value (`ABS`, $|x|$)**, **Sign (`SGN`, $\pm 1$ or $0$)**, and Euclidean **Greatest Common Divisor (`{{key:GCD}}`)** and **Least Common Multiple (`{{key:LCM}}`)**:
 
-### Non-Integer Arguments & The Half-Integer $\sqrt{\pi}$ Surprise
-One of the most magical consequences of Euler's integral appears when you substitute $x = -1/2$ into $\Gamma(x+1) = \int_0^\infty t^{-1/2} e^{-t}\,dt$. Changing variables via $t = u^2$ turns the factorial of $-1/2$ into the famous Gaussian bell-curve integral $2\int_0^\infty e^{-u^2}\,du = \sqrt{\pi}$! Consequently, $(-1/2)! = \Gamma(1/2) = \sqrt{\pi}$, and by the recurrence $(1/2)! = \frac{1}{2}(-1/2)!$, evaluating `{{res:sc32_03_algebra_transcendentals_seq_48:keys}}` computes $\Gamma(1.5)$:
-$$\left(\frac{1}{2}\right)! = \Gamma\left(\frac{3}{2}\right) = \frac{\sqrt{\pi}}{2} \approx 0.886226925453$$
+| Menu Softkey | Operation Name | Mathematical Definition | Example on $X = -14.7360$ |
+| :---: | :--- | :--- | :--- |
+| **`{{key:IP}}`** | Integer Part | $\operatorname{sgn}(x)\lfloor |x| \rfloor$ (truncation toward zero) | $-14.0000$ |
+| **`{{key:FP}}`** | Fractional Part | $x - \operatorname{IP}(x)$ (signed fractional remainder) | $-0.7360$ |
+| **`{{key:ABS}}`** | Absolute Value | $|x| = \sqrt{x^2}$ (non-negative magnitude) | $+14.7360$ |
+| **`{{key:SGN}}`** | Signum Function | $+1.0$ if $x > 0$, $0.0$ if $x = 0$, $-1.0$ if $x < 0$ | $-1.0000$ |
 
-Executing `{{res:sc32_03_algebra_transcendentals_seq_04:keys}}` yields **`{{res:sc32_03_algebra_transcendentals_seq_04:value}}`**, which you can verify directly against the analytical constant via `{{res:sc32_03_algebra_transcendentals_seq_49:keys}}` to obtain **`{{res:sc32_03_algebra_transcendentals_seq_49:value}}`**. The two calculations match to the 12th decimal place.
+  Because `{{key:IP}}` saves the original unsplit number inside `{{key:LASTX}}`, extracting the integer part (`{{key:IP}}`) onto Shelf $X$, recalling `{{key:LASTX}}` (which lifts the whole hours to Shelf $Y$), taking the fractional part (`{{key:FP}}`), and scaling by $60$ cleanly splits $14.736\text{ hours}$ into $14\text{ hours}$ in Register $Y$ and $44.16\text{ minutes}$ in Register $X$.
+- **Non-Destructive Display Formatting (`{{key:DISP}}`: `{{key:FIX}}`, `{{key:SCI}}`, `{{key:ENG}}`, `{{key:ALL}}`):**  
+  Accessed via **`{{key:DISP}}`** (Left Shift `{{key:↰}}` above `{{key:E}}`), whether you display numbers rounded to fixed decimal places (`{{key:FIX}} n`), scientific notation (`{{key:SCI}} n`), engineering multiples-of-three exponents (`{{key:ENG}} n` for $\text{pF}, \text{nH}, \mu\text{F}, \text{mA}, \text{k}\Omega, \text{MHz}$), or full 12-digit general display (`{{key:ALL}}`), **changing the display mode never alters or truncates the 64-bit precision stored inside the stack registers**. Recall the Beer-Lambert optical absorption length $1/\alpha = 0.00005116855\text{ m}$ ($51.169\,\mu\text{m}$) we computed for our transflective polarizer film in Chapter 1; here is how that exact same register value appears across all four display modes:
+
+| Display Mode | Key Sequence | Display Format | How $0.00005116855\text{ m}$ Appears |
+| :---: | :--- | :--- | :--- |
+| **`FIX 4`** | `{{key:DISP}} {{key:FIX}} 4` | Fixed $n$ digits after decimal point | `0.0001` |
+| **`SCI 4`** | `{{key:DISP}} {{key:SCI}} 4` | Scientific $m \times 10^k$ ($1 \le |m| < 10$) | `5.1169E-5` |
+| **`ENG 4`** | `{{key:DISP}} {{key:ENG}} 4` | Engineering $m \times 10^{3k}$ (SI prefixes) | `51.169E-6` ($51.169\,\mu\text{m}$) |
+| **`ALL`** | `{{key:DISP}} {{key:ALL}}` | Full 12-digit general representation | `5.11685525285E-5` |
 
 ---
 
-## Display Formatting Modes (`FIX`, `SCI`, `ENG`, `ALL`)
+## On the Stack: Powers, Logarithms & Transcendentals Workbench
 
-The SC-32 provides four display formatting modes accessed via Left Shift `{{key:↰}}` followed by `{{key:DISP}}`:
+Think back over every law we just met—from gravitational redshift $z = \frac{GM}{Rc^2}$ and muon time dilation $\gamma = \frac{1}{\sqrt{1 - (v/c)^2}}$ to acoustic decibels $L_p = 20\log_{10}(p/p_0)$, Carbon-14 dating $t = -\frac{\ln(N/N_0) \times 5730}{\ln 2}$, and Planck's blackbody spectrum. In every single case, nature asks us to evaluate an inner ratio or exponent *first*, apply a logarithm, exponential, or power *second*, and scale by the outer constant *third*. Let us now step into the Chapter 3 Workbench and execute all thirty verified transcendental sequences on the SC-32 stack.
 
-| Mode | Invocation Syntax | Display Example for `1234.5678` | Engine Presentation Behavior |
-| :--- | :--- | :--- | :--- |
-| **`FIX`** | `{{key:FIX}} n` | `1234.57` (for $n=2$) | Fixed decimal places ($0 \le n \le 9$) with standard half-up rounding |
-| **`SCI`** | `{{key:SCI}} n` | `1.23 E03` (for $n=2$) | Normalized scientific notation: single non-zero leading digit |
-| **`ENG`** | `{{key:ENG}} n` | `1.23 E03` (for $n=2$) | Engineering notation: power-of-10 exponent forced to a multiple of 3 |
-| **`ALL`** | `{{key:ALL}}` | `1234.5678` | Full mantissa precision displayed; suppresses trailing zeros |
+{{res:sc32_db_spl:screenshot|Acoustic sound pressure level 20 * log10(2 / 0.00002) = 100 dB evaluated from the inside out on the SC-32 stack.}}
 
-### The Non-Destructive Display Invariant
-> **Core Architectural Invariant:**  
-> Changing the display formatting mode **never modifies or truncates the internal precision of the numbers stored in Registers $X, Y, Z, T$**. The floating-point mantissa retains full 64-bit IEEE-754 precision (15–17 decimal digits). Formatting alters only the visual presentation on the LCD.
+### In-Place Squares, Reciprocal Roots, Dyadic Powers & `x∥y`
 
-### Engineering Notation (`ENG`) in Electronic Circuits
-In electronic engineering, physical quantities align with metric engineering prefixes (pico $10^{-12}$, nano $10^{-9}$, micro $10^{-6}$, milli $10^{-3}$, kilo $10^3$, mega $10^6$, giga $10^9$).
+1. **White Dwarf Gravitational Redshift ($z \approx \frac{GM}{Rc^2}$):**  
+   Climbing out of a solar-mass white dwarf ($M = 1.989 \times 10^{30}\text{ kg}$, radius $R = 6.4 \times 10^6\text{ m}$, with $G = 6.6743 \times 10^{-11}\text{ N}\cdot\text{m}^2/\text{kg}^2$ and $c = 2.99792 \times 10^8\text{ m/s}$), squaring $c^2$ in place via `{{res:sc32_03_algebra_transcendentals_seq_23:keys}}` yields $z = \mathbf{{{res:sc32_03_algebra_transcendentals_seq_23:value}}}$:
 
-Setting `{{key:ENG}} 2` ensures that the exponent is always forced to a multiple of 3:
-* Evaluating capacitor impedance: $X = 0.0000047 \implies$ Display: `4.70 E-06` ($4.7\,\mu\text{F}$).
-* Evaluating RF carrier frequency: $X = 145000000 \implies$ Display: `145.00 E06` ($145\text{ MHz}$).
-
----
-
-## Special Functions, Numerical Conditioning & Error Propagation
-
-Why do poorly written computer programs and cheap calculators sometimes lose half their significant digits when evaluating seemingly innocent textbook formulas? To maintain 12-digit certified accuracy across the entire floating-point domain, the SC-32 mathematical engine guards against two classic numerical traps: **ill-conditioned magnification** and **catastrophic cancellation**.
-
-### Why $e^x - 1$ Suffers Catastrophic Cancellation Near Zero
-Suppose a physicist is evaluating Max Planck's radiation denominator $e^x - 1$, or a financial engineer is computing continuous interest growth $e^{rt} - 1$, for a tiny argument such as $x = 10^{-10}$. What is the true mathematical value of $e^x - 1$? By Taylor's series:
-$$e^x - 1 = \left(1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots\right) - 1 = x + \frac{x^2}{2} + \dots \approx 1.000000000050000 \times 10^{-10}$$
-Now watch what happens if a naive calculator computes $e^x$ first and then subtracts $1$:
-1. When it evaluates $e^{10^{-10}} = 1.000000000100000000005\dots$, a 16-digit floating-point register must spend its first **ten mantissa digits** just storing the leading `1.000000000`! The quadratic $x^2/2 = 0.5 \times 10^{-20}$ term is pushed right off the end of the 53-bit significand and lost forever.
-2. When you subsequently subtract `1`, the leading `1` cancels out—and those ten leading zeros shift left to fill the register, leaving only 6 surviving digits of accuracy and 10 digits of binary rounding garbage!
-
-This loss of leading significant digits when subtracting two nearly equal numbers is called **catastrophic cancellation**. More generally, the sensitivity of any function $f(x)$ to tiny input errors is measured by its **Condition Number** $C(x) = \left|\frac{x f'(x)}{f(x)}\right|$. For $f(x) = e^x$, $C(x) = |x|$: when $|x|$ is large, tiny rounding errors in $x$ are magnified by $|x|$ unless the argument is reduced modulo $\ln 2$ using **Cody & Waite extended-precision range reduction** {{cite:cody1980}}. And when $|x| \ll 1$ in expressions involving $e^x - 1$, bypass the leading `1` entirely via the Maclaurin series $x + x^2/2 + x^3/6$ (or internal `expm1` branches) so every bit of precision is preserved.
-
----
-
-## Forward & Inverse Transcendental Verification on the Stack
-
-Because monadic transcendental functions (`{{key:LN}}`, `{{key:LOG}}`, `{{key:eˣ}}`, `{{key:10ˣ}}`, `{{key:√x}}`, `{{key:1/x}}`, and `{{key:x!}}`) transform Register $X$ in place while leaving upper Registers $Y, Z, T$ untouched and saving the pre-function argument in `{{key:LASTX}}`, the SC-32 supports direct verification of every transcendental calculation along independent algebraic pathways:
-
-1. **Harmonic Reciprocal Sum (`{{key:1/x}}`) vs. Hardware Parallel Operator (`{{key:x∥y}}`):**  
-   Whether combining parallel resistors, series capacitors, or thin optical lenses ($f = d_o \parallel d_i = 30 \parallel 60 = 20.0\text{ cm}$), you can verify the single-stroke `{{key:x∥y}}` result (`30 {{key:ENTER}} 60 {{key:x∥y}}` $\to \mathbf{20.0000}$) against the explicit dioptric reciprocal sum (`30 {{key:1/x}} 60 {{key:1/x}} {{key:+}} {{key:1/x}}` $\to \mathbf{20.0000}$), or verify RC time-constant discharge $t = -\tau \ln(V/V_0) = +\tau \ln(V_0/V)$ (explored in the RC filter discharge analysis below) by checking that $\ln(0.10) = -\ln(10) = -2.302585$ via `0.10 {{key:LN}}` and `10 {{key:LN}} {{key:+/-}}`.
-2. **Direct Quotient Logarithm $\ln(a/b)$ vs. Logarithmic Difference $\ln a - \ln b$:**  
-   By John Napier's fundamental homomorphism, dividing two concentrations or reaction rates before taking the logarithm (`0.185 {{key:ENTER}} 0.120 {{key:÷}} {{key:LOG}}` $\to \mathbf{0.1880}$ in the Henderson-Hasselbalch buffer, or $\ln(k_2/k_1)$ in Arrhenius kinetics) must match subtracting their individual logarithms (`0.185 {{key:LOG}} 0.120 {{key:LOG}} {{key:-}}` $\to \mathbf{0.1880}$) to machine precision—just as measuring the height difference between two towers on the *Prime Factor Blocks* comparator scale yields the exact logarithm of their ratio.
-3. **Round-Trip Inverse Function Audit (`{{key:LN}}` $\leftrightarrow$ `{{key:eˣ}}` and `{{key:LOG}}` $\leftrightarrow$ `{{key:10ˣ}}`):**  
-   After solving for an elapsed decay time $t$ or activation energy $E_a$ via `{{key:LN}}`, substituting $t$ back into the forward exponential $N(t)/N_0 = e^{-\lambda t}$ (`{{key:eˣ}}`) immediately recovers the starting ratio in Register $X$, confirming that no scale factor or sign was dropped. And with `{{key:ENG}}` display mode locking exponents to multiples of three ($10^{-12}, 10^{-9}, 10^{-6}, 10^{-3}, 10^3, 10^6$), every physical unit prefix (pico, nano, micro, milli, kilo, mega) is verified at a glance without altering the 64-bit internal mantissa.
-
-### Infix Transcendental Chains vs. Inside-Out Logarithmic & Power Evaluation
-
-Now that we have explored powers, roots, parallel harmonics, logarithms, exponentials, and display modes, the table below summarizes how evaluating transcendental expressions from the inside out eliminates nested parentheses while exposing every intermediate physical ratio on the stack:
-
-| Challenge / Metric | Conventional Algebraic Calculator (Infix) | Algebraic Strokes | SC-32 RPN Stack Method | SC-32 Strokes | Stack Advantage |
-| :--- | :--- | :---: | :--- | :---: | :--- |
-| **Thin Lens / Parallel Combinations**: $f = d_o \parallel d_i = \frac{1}{\frac{1}{30} + \frac{1}{60}}$ | `( 1 / ( 1 / 3 0 + 1 / 6 0 ) ) =` (21 strokes). Nested reciprocal parenthesis tracking. | 21 | **Parallel Key (`{{key:x∥y}}`)**: `30 {{key:ENTER}} 60 {{key:x∥y}}` (6 strokes). Direct single-touch harmonic combination in hardware silicon. | 6 | **71% fewer strokes + instant execution** |
-| **Chained Diode Exponential**: $I = I_s (e^{V / nV_t} - 1)$ | `1 . 8 E - 1 1 * ( e ^ ( 0 . 5 8 / ( 1 . 2 5 * 0 . 0 2 5 8 5 2 ) ) - 1 ) =` (46 strokes). 4 levels of nested parentheses; missing bracket throws syntax error. | 46 | **Inside-Out Stack**: `0.58 {{key:ENTER}} 1.25 {{key:÷}} 0.025852 {{key:÷}} {{key:eˣ}} 1 {{key:-}} 1.8 {{key:E}} 11 {{key:+/-}} {{key:×}}` (22 strokes). | 22 | **52% fewer strokes + zero parenthesis nesting** |
-| **Acoustic Decibel Ratio**: $L_p = 20 \log_{10}(p / p_0)$ | `2 0 * l o g ( 1 . 4 5 / ( 2 . 0 E - 5 ) ) =` (24 strokes). Syntax tree evaluation deferred until `=`. | 24 | **Live Decade Scaling**: `1.45 {{key:ENTER}} 2.0 {{key:E}} 5 {{key:+/-}} {{key:÷}} {{key:LOG}} 20 {{key:×}}` (16 strokes). Pressure ratio visible before log. | 16 | **33% fewer strokes + live stage audit** |
-
----
-
-### Physical Boundaries, Singularities, and Non-Destructive Recovery
-
-Because real-valued logarithms $\ln x = \int_1^x \frac{1}{t}\,dt$ diverge toward $-\infty$ as $x \to 0^+$ and have no real solution for negative arguments (where Euler's identity $e^{i\pi} = -1$ shifts the logarithm into the complex plane as $\ln(-5) = \ln 5 + i\pi$), the SC-32 enforces strict non-destructive domain protection in real mode. If you attempt to evaluate $\ln(-5)$ by keying `{{res:sc32_03_algebra_transcendentals_seq_50:keys}}`, the processor halts before modifying the stack and displays `Error 01: INVALID DATA`. Pressing `{{key:C}}` clears the error banner while leaving your prior stack contents in Registers $Y, Z,$ and $T$ completely intact (and if you actually want the complex logarithm, prefixing with `{{key:CMPLX}} {{key:LN}}` in Chapter 5 evaluates it directly).
-
-The same hardware vigilance guards the upper boundary of the IEEE-754 `binary64` floating-point universe ($x_{\max} \approx 1.7976931348623157 \times 10^{308}$, corresponding to $\ln x_{\max} \approx 709.78$). If a calculation attempts to step past that ceiling—for instance, entering `1 {{key:E}} 308` and multiplying by ten via `{{key:ENTER}} 10 {{key:×}}`, or pressing `{{key:eˣ}}` on an argument greater than $709.78$—the SC-32 refuses to let silent infinity (`Inf`) or `NaN` values poison downstream registers, immediately reporting `Error 03: OVERFLOW` so you can press `{{key:C}}` and rescale your equation in logarithmic form.
-
----
-
-## Exponential and Logarithmic Models Across Physics, Chemistry, and Astronomy
-
-When nature stores energy in a capacitor, dates a billion-year-old volcanic lava flow, excites electrons across a silicon bandgap, or radiates starlight from the solar photosphere, the governing equations all speak the language of exponentials and logarithms. In the eighteen physical models that follow, we apply inside-out transcendental evaluation, `{{key:LASTX}}` argument reuse, and the Lanczos Gamma extension (`{{key:x!}}`) so every intermediate dimensionless ratio is visible on the stack before the final function is pressed.
-
-### Exponential Relaxation, Radiometric Clocks & Quantum Bandgaps
-
-Our first five explorations trace the interplay between exponential decay or growth (`{{key:eˣ}}`) and its inverse (`{{key:LN}}`): RC capacitor discharge, Potassium-Argon radiometric dating, Shockley's semiconductor diode law, Max Planck's quantum blackbody spectrum, and thermal carrier generation in pure silicon.
-
-When a charged capacitor ($C = 47\,\mu\text{F}$) drains through a bleed resistor ($R = 150\text{ k}\Omega$), the rate at which charge leaves the plates is proportional to the voltage still remaining across them ($I = -C\,dV/dt = V/R$). That self-referential proportionality produces an exponential decay with characteristic time constant $\tau = RC = 7.05\text{ s}$—the time required for the voltage to drop to $1/e \approx 36.79\%$ of its starting value $V_0 = 12.0\text{ V}$. To find the time $t$ required for the capacitor voltage to decay to $10\%$ of its initial voltage ($V/V_0 = 0.10$), we invert the exponential with `{{key:LN}}`:
-$$V(t) = V_0 e^{-t/\tau} \implies t = - \tau \ln(0.10) = - (150 \times 10^3)(47 \times 10^{-6}) \ln(0.10)$$
-
-Multiplying $R$ and $C$ to form the relaxation time constant $\tau = 7.05\text{ s}$ in Register $Y$ while taking the natural logarithm of the $0.10$ voltage ratio in Register $X$ via `{{res:sc32_03_algebra_transcendentals_seq_05:keys}}` yields the $90\%$ discharge interval of **`{{res:sc32_03_algebra_transcendentals_seq_05:value}}`** seconds.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `150000 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $150000.000$ | $150000.000$ | Load resistance $R$ in $\Omega$ |
-| `47 {{key:E}} 6 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7.050000$ | Time constant $\tau = RC = 7.05\text{ s}$ |
+| `6.6743 {{key:E}} 11 {{key:+/-}} {{key:ENTER}} 1.989 {{key:E}} 30 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.3275 \times 10^{20}$ | Gravitational parameter $G M_{\odot}$ |
+| `6.4 {{key:E}} 6 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0742 \times 10^{13}$ | Divide by white dwarf radius $R$ for gravitational potential $\Phi$ |
+| `2.99792 {{key:E}} 8 {{key:x²}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.3079 \times 10^{-4}$** | Divide by speed of light squared $c^2$ for fractional redshift $z$ |
+
+2. **Cohesive Intermolecular Pressure Correction ($P = \frac{nRT}{V - nb} - \frac{an^2}{V^2}$):**  
+   Compressing $n = 2.0\text{ mol}$ ($n^2 = 4.0\text{ mol}^2$) of real gas into $V = 0.0050\text{ m}^3$ at $T = 320.0\text{ K}$ with universal gas constant $R = 8.31446\text{ J/(mol}\cdot\text{K)}$, excluded volume $b = 4.27 \times 10^{-5}\text{ m}^3/\text{mol}$, and cohesion constant $a = 0.364\text{ Pa}\cdot\text{m}^6/\text{mol}^2$, evaluating the kinetic term first and subtracting $an^2/V^2$ via `{{res:sc32_03_algebra_transcendentals_seq_40:keys}}` confirms $P \approx \mathbf{1,024,504.15\text{ Pa}}$:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `2 {{key:ENTER}} 8.31446 {{key:×}} 320 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $5321.2544$ | Ideal kinetic energy numerator $n R T$ |
+| `0.0050 {{key:ENTER}} 2 {{key:ENTER}} 4.27 {{key:E}} 5 {{key:+/-}} {{key:×}} {{key:-}} {{key:÷}}` | $5321.2544$ | $5321.2544$ | $5321.2544$ | $1082744.1501$ | Divide by free volume $(V - n b)$ for kinetic pressure term |
+| `0.364 {{key:ENTER}} 4 {{key:×}} 0.0050 {{key:x²}} {{key:÷}} {{key:-}}` | $5321.2544$ | $5321.2544$ | $5321.2544$ | **$1024504.1501$** | Subtract molecular attraction term $a n^2 / V^2$ for net pressure $P$ (Pa) |
+
+3. **RF Electromagnetic Skin Depth ($\delta = \frac{1}{\sqrt{\pi f\mu\sigma}}$):**  
+   At $f = 1.0 \times 10^8\text{ Hz}$ in copper ($\sigma = 5.8 \times 10^7\text{ S/m}$, with free-space magnetic permeability $\mu_0 = 4\pi \times 10^{-7}\text{ H/m}$), multiplying inside Register $X$ and tapping `{{key:√x}} {{key:1/x}}` in `{{res:sc32_03_algebra_transcendentals_seq_41:keys}}` yields $\mathbf{{{res:sc32_03_algebra_transcendentals_seq_41:value}}\,\mu\text{m}}$:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `{{key:π}} 1 {{key:E}} 8 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.1416 \times 10^{8}$ | Angular frequency $\pi f$ at $100\text{ MHz}$ |
+| `4 {{key:π}} {{key:×}} 1 {{key:E}} 7 {{key:+/-}} {{key:×}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $394.7842$ | Multiply by magnetic permeability $\mu_0 = 4\pi \times 10^{-7}$ |
+| `5.8 {{key:E}} 7 {{key:×}} {{key:√x}} {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6.6085 \times 10^{-6}$ | Multiply by copper conductivity $\sigma$ and take reciprocal root $\delta$ (m) |
+| `1 {{key:E}} 6 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$6.6085$** | Convert skin depth $\delta$ to micrometers ($\mu\text{m}$) |
+
+4. **Cosmic-Ray Muon Time Dilation ($\gamma = \frac{1}{\sqrt{1 - (v/c)^2}}$):**  
+   Hurtling through the stratosphere at $\beta = v/c = 0.85$, keying `{{res:sc32_03_algebra_transcendentals_seq_42:keys}}` resolves the Lorentz factor to **`{{res:sc32_03_algebra_transcendentals_seq_42:value}}`** while preserving the length-contraction ratio $1/\gamma = 0.5268$ in `{{key:LASTX}}`.
+
+5. **Dyadic Powers (`yˣ`, `ˣ√y`), Harmonic Speed (`x∥y`) & the 13-Keystroke Quadratic Sprint:**  
+   * **Fractional Power Scaling ($\Phi = 2.5^{3.8}$):** Loading base $2.5$ into Register $Y$ and exponent $3.8$ into Register $X$ via `{{res:sc32_03_algebra_transcendentals_seq_01:keys}}` produces **`{{res:sc32_03_algebra_transcendentals_seq_01:value}}`**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `{{key:2}} {{key:.}} {{key:5}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.5000$ | Enter base $y$ |
+| `{{key:ENTER}}` | $0.0000$ | $0.0000$ | $2.5000$ | $2.5000$ | Stack lift disabled; $y$ pushed to $Y$ |
+| `{{key:3}} {{key:.}} {{key:8}}` | $0.0000$ | $0.0000$ | $2.5000$ | $3.8000$ | Overwrite $X$ with exponent $x$ |
+| `{{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$32.5216096641$** | Evaluates $2.5^{3.8}$; Stack lift armed |
+
+   * **Polytropic Gas Compression Work ($W = \frac{P_1 V_1}{n-1}[(V_1/V_2)^{n-1} - 1]$):** Compressing a gas across volume ratio $V_1/V_2 = 4.0$ with polytropic exponent $n - 1 = 0.32$ and pre-factor $P_1 V_1 / (n-1) = 15,000\text{ J}$, `{{res:sc32_03_algebra_transcendentals_seq_34:keys}}` yields **`{{res:sc32_03_algebra_transcendentals_seq_34:value}}`** $\text{J}$.
+   * **Kepler's Third Law for Mars ($a = \sqrt[3]{T^2}$) & Round-Trip Harmonic Speed ($2(v_1 \parallel v_2)$):** Given Mars's orbital period $T = 1.8808\text{ yr}$, keying `1.8808 {{key:x²}} 3 {{key:ˣ√y}}` squares $T$ in place ($\to 3.5374$) and extracts the cube root to return Mars's semi-major axis $a = \mathbf{1.5237\text{ AU}}$. And for the round-trip harmonic speed puzzle ($30\text{ mph}$ uphill and $60\text{ mph}$ downhill), keying `30 {{key:ENTER}} 60 {{key:x∥y}} 2 {{key:×}}` forms $30 \parallel 60 = 20\text{ mph}$ in one stroke of `{{key:x∥y}}` and doubles it to $\mathbf{40.0000\text{ mph}}$.
+   * **Stretched-Exponential Boundary-Layer Profile ($f(v) = \frac{k}{c}(v/c)^{k-1}\exp[-(v/c)^k]$):** At wind speed $v = 8.5\text{ m/s}$, scale velocity $c = 9.0\text{ m/s}$, and shape parameter $k = 2.2$, duplicating $v/c = 0.9444$ across the stack via `{{res:sc32_03_algebra_transcendentals_seq_29:keys}}` confirms $\mathbf{0.094496\text{ (m/s)}^{-1}}$:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `8.5 {{key:ENTER}} 9.0 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.9444$ | Normalized velocity ratio $v/c$ |
+| `{{key:ENTER}} {{key:ENTER}} 2.2 {{key:yˣ}} {{key:+/-}} {{key:eˣ}}` | $0.0000$ | $0.0000$ | $0.9444$ | $0.4140$ | Stretched exponential factor $\exp(-(v/c)^k)$ |
+| `{{key:x⇄y}} 1.2 {{key:yˣ}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3866$ | Multiply by power-law velocity term $(v/c)^{k-1}$ |
+| `2.2 {{key:ENTER}} 9.0 {{key:÷}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.0945$** | Scale by shape/scale ratio $k/c$ for density $f(v)$ |
+
+   * **13-Keystroke Quadratic Sprint ($2.4 x^2 + 7.8 x - 15.6 = 0$):** Evaluating the discriminant $\sqrt{b^2 - 4ac} = \sqrt{7.8^2 - 4(2.4)(-15.6)} = 14.5121$ from the inside out first (`7.8 {{key:x²}} 4 {{key:ENTER}} 2.4 {{key:×}} 15.6 {{key:×}} {{key:+}} {{key:√x}}`), subtracting $b = 7.8$, and dividing by $2a = 4.8$ via `{{res:sc32_03_algebra_quadratic_sprint:keys}}` delivers $x_+ =$ **`{{res:sc32_03_algebra_quadratic_sprint:value}}`** in 13 keystrokes without touching a storage register.
+
+### Base-10 & Natural Logarithms (`LOG`, `LN`)
+
+1. **Stadium Sound Pressure Level ($L_p = 20\log_{10}(p_{\text{rms}}/p_0)$), 60 dB ($10^{-6}$) Acoustic Energy Decay Preview, and Buffer $\text{pH}$:**  
+   Measuring an acoustic wave of $p_{\text{rms}} = 1.45\text{ Pa}$ relative to the human hearing threshold $p_0 = 2.0 \times 10^{-5}\text{ Pa}$, `{{res:sc32_03_algebra_transcendentals_seq_02:keys}}` resolves $L_p =$ **`{{res:sc32_03_algebra_transcendentals_seq_02:value}}`** $\text{dB SPL}$. As a preview of **Chapter 13's** architectural acoustics case study—where a $60\text{ dB}$ ($10^{-6}$) decay in sound energy ($\ln(10^6) = 6\ln 10 \approx 13.8155$) sets the $0.161\text{ s/m}$ reverberation constant across a room of volume $V = 4,500\text{ m}^3$ and acoustic absorption $A = 320.0\text{ Sabins}$—keying `{{res:sc32_03_algebra_transcendentals_seq_21:keys}}` yields $T_{60} =$ **`{{res:sc32_03_algebra_transcendentals_seq_21:value}}`** $\text{s}$. And in an acetic acid buffer ($\text{pK}_a = 4.76$, $[\text{A}^-] = 0.185\text{ M}$, $[\text{HA}] = 0.120\text{ M}$), `{{res:sc32_03_algebra_transcendentals_seq_03:keys}}` yields $\text{pH} =$ **`{{res:sc32_03_algebra_transcendentals_seq_03:value}}`**.
+
+2. **Willard Libby's Carbon-14 Radiometric Dating ($t = -\frac{\ln(0.234) \times 5730}{\ln 2}$):**  
+   Executing `{{res:sc32_03_algebra_transcendentals_seq_44:keys}}` dates the Ice Age hearth specimen to **$12,006.75\text{ years}$**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `0.234 {{key:LN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-1.4524$ | Evaluate natural logarithm $\ln(0.234)$ of surviving $^{14}\text{C}$ fraction |
+| `5730 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-8322.4478$ | Multiply by Cambridge carbon-14 half-life ($t_{1/2} = 5,730\text{ yr}$) |
+| `2 {{key:LN}}` | $0.0000$ | $0.0000$ | $-8322.4478$ | $0.6931$ | Lift numerator to $Y$ and form half-life decay divisor $\ln(2)$ in $X$ |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $-12006.7541$ | Divide by $\ln(2)$ to convert natural decay units into elapsed years |
+| `{{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12006.7541$** | Negate decay sign for positive radiometric specimen age (years) |
+
+3. **Potassium-Argon Geochronology ($t = \frac{1}{\lambda}\ln\left(1 + C\frac{^{40}\text{Ar}}{^{40}\text{K}}\right)$), Exponential Relaxation ($\tau = 7.05\text{ s}$), and Exact Logarithmic Doubling:**  
+   Dating a Precambrian basalt core with measured daughter-to-parent isotope ratio $^{40}\text{Ar}/{}^{40}\text{K} = 0.0850$ (where $C = \lambda_{\text{total}}/\lambda_{\text{EC}} = 9.54$ is the $^{40}\text{K} \to {}^{40}\text{Ar}$ electron-capture branching factor and $\lambda = 5.543 \times 10^{-10}\text{ yr}^{-1}$ is the total decay rate), `{{res:sc32_03_algebra_transcendentals_seq_06:keys}}` resolves the rock's solidification age to **`{{res:sc32_03_algebra_transcendentals_seq_06:value}}`** years ($1.071\text{ billion years}$). Watching a thermal or RC system relax to $10\%$ of its initial excess with time constant $\tau = (150 \times 10^3)(47 \times 10^{-6}) = 7.05\text{ s}$, `{{res:sc32_03_algebra_transcendentals_seq_05:keys}}` yields **`{{res:sc32_03_algebra_transcendentals_seq_05:value}}`** seconds:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `150000 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $150000.000$ | $150000.000$ | Load scale factor $150,000$ |
+| `47 {{key:E}} 6 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $7.050000$ | Relaxation time constant $\tau = 7.05\text{ s}$ |
 | `0.10 {{key:LN}}` | $0.0000$ | $0.0000$ | $7.050000$ | $-2.302585$ | $\ln(0.10)$ natural logarithm |
-| `{{key:×}} {{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$16.233225$** | Discharge time in seconds |
+| `{{key:×}} {{key:+/-}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$16.233225$** | Relaxation time in seconds |
 
-Did your screen display $Y = 7.0500$ and $X = -2.3026$ after pressing `{{key:LN}}`? *If you see $X = -1.0000$,* you pressed `{{key:LOG}}` (common base-10 log) instead of `{{key:LN}}` (natural log). Press `{{key:LASTX}}` and press `{{key:LN}}` to recover.
+   And compounding at an annual growth rate of $r = 7.2\%$, exact logarithmic doubling $t = \frac{\ln 2}{\ln(1.072)}$ via `{{res:sc32_03_algebra_transcendentals_seq_25:keys}}` resolves to **`{{res:sc32_03_algebra_transcendentals_seq_25:value}}`** years (a benchmark we will revisit in **Chapter 11** when we derive the classical Rule of 72).
 
-That same natural logarithm scales from a $16\text{-second}$ benchtop capacitor discharge up to billion-year planetary history when geologists date ancient volcanic rocks on Earth and the Moon via **Potassium-Argon ($^{40}\text{K} \to {}^{40}\text{Ar}$) dating**. While molten lava is still liquid, any noble argon gas bubbles out into the atmosphere, resetting the rock's argon clock to zero. Once the lava cools and solidifies into crystalline basalt, trace radioactive potassium-40 ($^{40}\text{K}$) trapped in the mineral lattice slowly decays—partly into calcium-40 and partly (via electron capture, with branching multiplier $C = \frac{\lambda}{\lambda_{\text{EC}}} = 9.54$ and total decay constant $\lambda = 5.543 \times 10^{-10}\text{ yr}^{-1}$) into stable argon-40 ($^{40}\text{Ar}$) gas locked inside the crystal cages. For a Precambrian basalt core with measured atomic daughter-to-parent ratio $^{40}\text{Ar} / {}^{40}\text{K} = 0.0850$, reconstructing the original parent abundance yields the elapsed solidification age $t$:
-$$t = \frac{1}{\lambda} \ln\left(1 + C \cdot \frac{{}^{40}\text{Ar}}{{}^{40}\text{K}}\right) = \frac{\ln(1 + 9.54 \times 0.0850)}{5.543 \times 10^{-10}}$$
+### Natural Exponentials (`eˣ`) in Kinetics, Atmospheres & Quantum Physics
 
-From the inside out, `9.54 {{key:ENTER}} 0.0850 {{key:×}} 1 {{key:+}}` places the parent-plus-daughter restoration ratio $P_0 / P(t) = 1.8109$ in Register $X$. Next, `{{key:LN}} 5.543 {{key:E}} 10 {{key:+/-}} {{key:÷}}` in the complete sequence `{{res:sc32_03_algebra_transcendentals_seq_06:keys}}` takes the natural logarithm in place and divides by the decay constant to resolve the Proterozoic solidification age of **`{{res:sc32_03_algebra_transcendentals_seq_06:value}}`** years ($1.071\text{ billion years}$)—while `{{key:LASTX}}` retains $\lambda = 5.543 \times 10^{-10}\text{ yr}^{-1}$ for dating subsequent core strata.
+1. **Arrhenius Activation Energy ($E_a = \frac{R\ln(k_2/k_1)}{1/T_1 - 1/T_2}$) & Carbon Diffusion in Steel ($D = D_0 e^{-Q/RT}$):**  
+   * **Two-Temperature Arrhenius Activation Barrier:** Heating a reaction from $T_1 = 300\text{ K}$ ($k_1 = 3.25 \times 10^{-4}\text{ s}^{-1}$) to $T_2 = 350\text{ K}$ ($k_2 = 2.85 \times 10^{-2}\text{ s}^{-1}$), keying `{{res:sc32_03_algebra_transcendentals_seq_45:keys}}` first forms the reciprocal-temperature difference $(1/T_1 - 1/T_2) \approx 0.000476\text{ K}^{-1}$ in Register $X$. Next, `{{res:sc32_03_algebra_transcendentals_seq_46:keys}}` computes the scaled logarithmic rate ratio $R\ln(k_2/k_1) = \mathbf{{{res:sc32_03_algebra_transcendentals_seq_46:value}}\text{ J/(mol}\cdot\text{K)}}$ while $(1/T_1 - 1/T_2)$ waits in Register $Y$, so `{{key:x⇄y}} {{key:÷}} 1000 {{key:÷}}` reveals the activation energy $E_a = \mathbf{78.1148\text{ kJ/mol}}$.
+   * **Solid-State Carbon Diffusion in Austenite Steel:** At furnace temperature $T = 1,200\text{ K}$ ($Q = 148,000\text{ J/mol}$, $D_0 = 2.3 \times 10^{-5}\text{ m}^2/\text{s}$, $R = 8.31446\text{ J/(mol}\cdot\text{K)}$), `{{res:sc32_03_algebra_transcendentals_seq_15:keys}}` yields diffusivity $D =$ **`{{res:sc32_03_algebra_transcendentals_seq_15:value}}`** $\text{m}^2/\text{s}$.
 
-Now let us flip from `{{key:LN}}` to its forward inverse `{{key:eˣ}}` inside a semiconductor crystal. Why does a silicon solar cell or rectifier diode block current until the forward bias approaches $0.5\text{--}0.6\text{ V}$, and then suddenly conduct? Across a $p\text{--}n$ semiconductor junction, an internal electrostatic barrier opposes carrier diffusion; applying a forward voltage $V = 0.58\text{ V}$ lowers that barrier relative to the thermal energy scale $V_t = kT/q = 0.025852\text{ V}$ (at $T = 300\text{ K}$, with ideality factor $n = 1.25$ and reverse saturation current $I_s = 1.8 \times 10^{-11}\text{ A}$), allowing an exponential flood of minority carriers across the junction according to William Shockley's diode law:
-$$I = I_s \left[\exp\left(\frac{V}{n \cdot V_t}\right) - 1\right] = 1.8 \times 10^{-11} \left[\exp\left(\frac{0.58}{1.25 \times 0.025852}\right) - 1\right]$$
+2. **Clausius-Clapeyron Boiling Pressure & Mauna Kea Barometric Altimetry:**  
+   At $T = 333.15\text{ K}$ ($60^\circ\text{C}$) relative to $T_0 = 373.15\text{ K}$ ($100^\circ\text{C}$, $P_0 = 101.325\text{ kPa}$, $\Delta H_{\text{vap}} = 40,660\text{ J/mol}$), `{{res:sc32_03_algebra_transcendentals_seq_19:keys}}` resolves vapor pressure to $\mathbf{21.0063\text{ kPa}}$:
 
-Successive division (`0.58 {{key:ENTER}} 1.25 {{key:÷}} 0.025852 {{key:÷}}`) computes $V / (n V_t)$ without multiplying the denominator separately, yielding the dimensionless thermal ratio $17.9483$ ($e^{17.9483} \approx 6.235 \times 10^7$) so that `{{res:sc32_03_algebra_transcendentals_seq_09:keys}}` resolves forward diode current to **`{{res:sc32_03_algebra_transcendentals_seq_09:value}}`** $\text{A}$ ($1.122\text{ mA}$):
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `333.15 {{key:1/x}} 373.15 {{key:1/x}} {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.2176 \times 10^{-4}$ | Reciprocal temperature differential $(1/T_1 - 1/T_2)$ |
+| `40660 {{key:ENTER}} 8.31446 {{key:÷}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.5735$ | Scale by enthalpy of vaporization $\Delta H_{\text{vap}}/R$ |
+| `{{key:+/-}} {{key:eˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2073$ | Clausius-Clapeyron exponential pressure factor |
+| `101.325 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$21.0063$** | Scale by reference pressure $P_1$ for vapor pressure $P_2$ (kPa) |
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `0.58 {{key:ENTER}} 1.25 {{key:÷}} 0.025852 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $17.9483$ | Chain division for diode activation argument $V/(n V_t)$ |
-| 2 | `{{key:eˣ}} 1 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6.2353 \times 10^{7}$ | Exponential emission factor $(e^{V/nV_t} - 1)$ |
-| 3 | `1.8 {{key:E}} 11 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.0011$** | Scale by saturation current $I_s$ for forward current $I$ (A) |
+   And climbing to the summit of Mauna Kea ($h = 4,207\text{ m}$, with dry-air molar mass $M = 0.0289644\text{ kg/mol}$, gravity $g = 9.80665\text{ m/s}^2$, gas constant $R = 8.314462\text{ J/(mol}\cdot\text{K)}$, sea-level temperature $T_0 = 288.15\text{ K}$, and baseline pressure $P_0 = 1013.25\text{ hPa}$, giving dimensionless scale height ratio $\kappa = \frac{Mgh}{RT_0} \approx 0.4988$), keying `0.0289644 {{key:ENTER}} 9.80665 {{key:×}} 4207 {{key:×}} 8.314462 {{key:÷}} 288.15 {{key:÷}}` followed by `{{res:sc32_03_algebra_transcendentals_seq_47:keys}}` yields summit pressure $X = \mathbf{615.3168\text{ hPa}}$.
 
-Look closely at the factor $(e^x - 1)$ in Step 2: that exact same mathematical structure—moved from the numerator to the denominator—sparked the birth of quantum mechanics. At the turn of the twentieth century, classical physics predicted that any hot glowing object, from a fireplace ember to the sun, should radiate infinite ultraviolet energy (the "ultraviolet catastrophe"). In December 1900, Max Planck resolved the crisis by proposing that electromagnetic oscillators can emit energy only in discrete packets $E = hc/\lambda$. At short wavelengths where photon energy $hc/\lambda$ far exceeds thermal energy $kT$, high-frequency modes are exponentially starved of energy by the Bose-Einstein denominator $\left(e^{\frac{hc}{\lambda kT}} - 1\right)$. To see Planck's law at work on the star that illuminates that photovoltaic diode, let us calculate the spectral radiance of the solar photosphere ($T = 5,778\text{ K}$) at its green visible peak $\lambda = 500\text{ nm} = 5.0 \times 10^{-7}\text{ m}$ ($c_1 = 2 h c^2 = 1.19104 \times 10^{-16}\text{ W}\cdot\text{m}^2$, $c_2 = h c / k = 0.0143878\text{ m}\cdot\text{K}$, and dimensionless photon energy $x = \frac{c_2}{\lambda T} = 4.98020$):
+3. **Shockley Diode Law, Silicon Bandgap Carriers & Planck's Blackbody Spectrum:**  
+   Biasing a silicon p-n junction at forward voltage $V = 0.58\text{ V}$ (ideality factor $n = 1.25$, thermal voltage $V_t = 0.025852\text{ V}$, saturation current $I_s = 1.8 \times 10^{-11}\text{ A}$), `{{res:sc32_03_algebra_transcendentals_seq_09:keys}}` yields **`{{res:sc32_03_algebra_transcendentals_seq_09:value}}`** $\text{A}$:
 
-$$B_\lambda(T) = \frac{2 h c^2}{\lambda^5 \left(e^{\frac{h c}{\lambda k T}} - 1\right)}$$
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `0.58 {{key:ENTER}} 1.25 {{key:÷}} 0.025852 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $17.9483$ | Chain division for diode activation argument $V/(n V_t)$ |
+| `{{key:eˣ}} 1 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6.2353 \times 10^{7}$ | Exponential emission factor $(e^{V/nV_t} - 1)$ |
+| `1.8 {{key:E}} 11 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.0011$** | Scale by saturation current $I_s$ for forward current $I$ (A) |
 
-When the Bose-Einstein occupation denominator $(e^x - 1) = 144.5035$ is computed first via `{{res:sc32_03_algebra_transcendentals_seq_13:keys}}`, it waits in the upper stack while $c_1 / \lambda^5$ forms below it, resolving $B_\lambda \approx \mathbf{2.6375 \times 10^{13}\text{ W}/(\text{m}^3\cdot\text{sr})}$:
+   Thermally exciting intrinsic carriers $n_i = B T^{3/2} \exp(-E_g / 2kT)$ across the silicon bandgap ($E_g = 1.12\text{ eV}$) at room temperature $T = 300\text{ K}$ (with Boltzmann constant $k = 8.61733 \times 10^{-5}\text{ eV/K}$ and density-of-states coefficient $B = 5.23 \times 10^{15}\text{ cm}^{-3}\text{K}^{-3/2}$), `{{res:sc32_03_algebra_transcendentals_seq_14:keys}}` resolves $n_i \approx \mathbf{1.0631 \times 10^{10}\text{ cm}^{-3}}$:
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `4.98020 {{key:eˣ}} 1 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $144.5035$ | Planck photon distribution denominator $(e^x - 1)$ |
-| 2 | `1.19104 {{key:E}} 16 {{key:+/-}} {{key:ENTER}}` | $0.0000$ | $144.5035$ | $1.1910 \times 10^{-16}$ | $1.1910 \times 10^{-16}$ | Load first radiation constant $2hc^2$ |
-| 3 | `5.0 {{key:E}} 7 {{key:+/-}} {{key:ENTER}} 5 {{key:yˣ}}` | $144.5035$ | $144.5035$ | $1.1910 \times 10^{-16}$ | $3.1250 \times 10^{-32}$ | Raise wavelength to fifth power $\lambda^5$ |
-| 4 | `{{key:÷}}` | $144.5035$ | $144.5035$ | $144.5035$ | $3.8113 \times 10^{15}$ | Divide radiation constant $c_1$ by $\lambda^5$ |
-| 5 | `{{key:x⇄y}} {{key:÷}}` | $144.5035$ | $144.5035$ | $144.5035$ | **$2.6375 \times 10^{13}$** | Divide spectral power by photon denominator for radiance $B_\lambda$ |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `1.12 {{key:ENTER}} 2 {{key:ENTER}} 8.61733 {{key:E}} 5 {{key:+/-}} {{key:×}} 300 {{key:×}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $21.6618$ | Bandgap thermal activation exponent $E_g/(2 k T)$ |
+| `{{key:+/-}} {{key:eˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.9121 \times 10^{-10}$ | Boltzmann activation factor $\exp(-E_g/2kT)$ |
+| `300 {{key:ENTER}} 1.5 {{key:yˣ}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0328 \times 10^{-6}$ | Scale by density-of-states temperature factor $T^{3/2}$ |
+| `5.23 {{key:E}} 15 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0631 \times 10^{10}$** | Multiply by material coefficient for intrinsic carrier density $n_i$ ($\text{cm}^{-3}$) |
 
-Even in total darkness, thermal agitation inside a silicon wafer excites a baseline population of charge carriers across the semiconductor bandgap. At absolute zero ($T = 0\text{ K}$), pure silicon is a perfect electrical insulator: every valence electron is locked in a covalent bond, separated from the conduction band by a forbidden energy gap $E_g = 1.12\text{ eV}$. At room temperature ($T = 300\text{ K}$), random thermal vibrations kick a tiny fraction of electrons—governed by the Boltzmann factor $\exp\left(-\frac{E_g}{2kT}\right)$ where $k = 8.61733 \times 10^{-5}\text{ eV/K}$ and density-of-states coefficient $B = 5.23 \times 10^{15}\text{ cm}^{-3}\text{K}^{-3/2}$—across the gap, creating an intrinsic concentration $n_i$ of mobile electron-hole pairs:
-$$n_i = B T^{3/2} \exp\left(-\frac{E_g}{2 k T}\right)$$
+   And evaluating Max Planck's solar blackbody spectral radiance $B_\lambda(T) = \frac{c_1}{\lambda^5(e^x - 1)}$ at green wavelength $\lambda = 500\text{ nm} = 5.0 \times 10^{-7}\text{ m}$ (with first radiation constant $c_1 = 2hc^2 = 1.19104 \times 10^{-16}\text{ W}\cdot\text{m}^2/\text{sr}$ and dimensionless photon-energy ratio $x = \frac{hc}{\lambda kT} = 4.98020$), `{{res:sc32_03_algebra_transcendentals_seq_13:keys}}` resolves $B_\lambda \approx \mathbf{2.6375 \times 10^{13}\text{ W}/(\text{m}^3\cdot\text{sr})}$:
 
-Evaluating the dimensionless bandgap activation exponent $E_g/(2kT) = 21.6618$ first and scaling the resulting Boltzmann factor by $T^{3/2}$ and $B$ via `{{res:sc32_03_algebra_transcendentals_seq_14:keys}}` yields $n_i \approx \mathbf{1.0631 \times 10^{10}\text{ cm}^{-3}}$.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `4.98020 {{key:eˣ}} 1 {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $144.5035$ | Planck photon distribution denominator $(e^x - 1)$ |
+| `1.19104 {{key:E}} 16 {{key:+/-}} {{key:ENTER}}` | $0.0000$ | $144.5035$ | $1.1910 \times 10^{-16}$ | $1.1910 \times 10^{-16}$ | Load first radiation constant $2hc^2$ |
+| `5.0 {{key:E}} 7 {{key:+/-}} {{key:ENTER}} 5 {{key:yˣ}}` | $144.5035$ | $144.5035$ | $1.1910 \times 10^{-16}$ | $3.1250 \times 10^{-32}$ | Raise wavelength to fifth power $\lambda^5$ |
+| `{{key:÷}}` | $144.5035$ | $144.5035$ | $144.5035$ | $3.8113 \times 10^{15}$ | Divide radiation constant $c_1$ by $\lambda^5$ |
+| `{{key:x⇄y}} {{key:÷}}` | $144.5035$ | $144.5035$ | $144.5035$ | **$2.6375 \times 10^{13}$** | Divide spectral power by photon denominator for radiance $B_\lambda$ |
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `1.12 {{key:ENTER}} 2 {{key:ENTER}} 8.61733 {{key:E}} 5 {{key:+/-}} {{key:×}} 300 {{key:×}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $21.6618$ | Bandgap thermal activation exponent $E_g/(2 k T)$ |
-| 2 | `{{key:+/-}} {{key:eˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.9121 \times 10^{-10}$ | Boltzmann activation factor $\exp(-E_g/2kT)$ |
-| 3 | `300 {{key:ENTER}} 1.5 {{key:yˣ}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0328 \times 10^{-6}$ | Scale by density-of-states temperature factor $T^{3/2}$ |
-| 4 | `5.23 {{key:E}} 15 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.0631 \times 10^{10}$** | Multiply by material coefficient for intrinsic carrier density $n_i$ ($\text{cm}^{-3}$) |
+### Factorials (`x!`), Lanczos Gamma, and Domain Guard Verification
 
-Notice that after Step 1 (`300 {{key:×}}`), `{{key:LASTX}}` already holds $T = 300\text{ K}$ if you wish to form $T^{3/2}$ without re-typing `300`.
-
----
-
-### Solid-State Diffusion, Phase Equilibria, Architectural Acoustics & Relativistic Redshift
-
-In metallurgy, phase-change thermodynamics, architectural acoustics, and relativistic astrophysics, physical properties hinge on exponential activation barriers and small fractional shifts. Let us trace how the stack evaluates each physical regime from the innermost energy ratio outward.
-
-To give a steel transmission gear a wear-resistant outer skin while keeping its core tough and ductile, metallurgists heat the gear to glowing red-orange ($T = 1,200\text{ K}$, where iron rearranges into face-centered cubic $\gamma$-phase austenite) in a carbon-rich atmosphere. For a carbon atom to hop from one interstitial lattice site to the next, thermal vibrations must supply the activation energy $Q = 148\text{ kJ/mol} = 148,000\text{ J/mol}$ ($D_0 = 2.3 \times 10^{-5}\text{ m}^2/\text{s}$, $R = 8.31446\text{ J/mol}\cdot\text{K}$):
-$$D = D_0 \exp\left(-\frac{Q}{R T}\right)$$
-
-The dimensionless activation barrier $Q/(RT)$ (`148000 {{key:ENTER}} 8.31446 {{key:ENTER}} 1200 {{key:×}} {{key:÷}}`) places $14.8336$ in Register $X$. Negating, exponentiating, and scaling by the lattice vibration prefactor $D_0$ in `{{res:sc32_03_algebra_transcendentals_seq_15:keys}}` resolves interstitial carbon diffusivity to **`{{res:sc32_03_algebra_transcendentals_seq_15:value}}`** $\text{m}^2/\text{s}$.
-
-The exact same competition between thermal energy $RT$ and a molar energy barrier explains why water boils at $100^\circ\text{C}$ ($373.15\text{ K}$) at sea level ($P_0 = 101.325\text{ kPa}$), yet boils at only $60^\circ\text{C}$ ($333.15\text{ K}$) inside a vacuum evaporator or high in the stratosphere. For a liquid molecule to escape into the vapor phase, it must overcome the cohesive hydrogen-bond latent heat of vaporization $\Delta H_{\text{vap}} = 40,660\text{ J/mol}$ ($R = 8.31446\text{ J/mol}\cdot\text{K}$). Rudolf Clausius and Benoît Paul Émile Clapeyron showed that the equilibrium vapor pressure $P$ rises exponentially with reciprocal temperature ($1/T$):
-$$\ln\left(\frac{P}{P_0}\right) = -\frac{\Delta H_{\text{vap}}}{R} \left(\frac{1}{T} - \frac{1}{T_0}\right)$$
-
-The monadic `{{key:1/x}}` key computes reciprocal temperature differences directly: `333.15 {{key:1/x}} 373.15 {{key:1/x}} {{key:-}}` evaluates $1/T - 1/T_0$ in six strokes without a single parenthesis, so the full chain `{{res:sc32_03_algebra_transcendentals_seq_19:keys}}` resolves $P \approx \mathbf{21.0063\text{ kPa}}$:
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `333.15 {{key:1/x}} 373.15 {{key:1/x}} {{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.2176 \times 10^{-4}$ | Reciprocal temperature differential $(1/T_1 - 1/T_2)$ |
-| 2 | `40660 {{key:ENTER}} 8.31446 {{key:÷}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.5735$ | Scale by enthalpy of vaporization $\Delta H_{\text{vap}}/R$ |
-| 3 | `{{key:+/-}} {{key:eˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2073$ | Clausius-Clapeyron exponential pressure factor |
-| 4 | `101.325 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$21.0063$** | Scale by reference pressure $P_1$ for vapor pressure $P_2$ (kPa) |
-
-Exponential decay also governs the acoustics of concert halls. When Harvard University opened the Fogg Lecture Hall in 1895, its vaulted plaster walls echoed so severely that a professor's spoken word lingered for over five seconds, rendering lectures unintelligible. Young physics professor Wallace Clement Sabine spent nights hauling hundreds of seat cushions from Sanders Theatre into the hall with a stopwatch and organ pipe—discovering that the time $T_{60}$ required for sound energy to decay by $60\text{ dB}$ ($10^{-6}$ of its initial intensity, so $\ln(10^6) \approx 13.8155$) in a room of volume $V = 4,500\text{ m}^3$ is inversely proportional to its total equivalent open-window absorption $A = 320.0\text{ m}^2\text{ Sabins}$:
-
-$$T_{60} = \frac{0.161 \cdot V}{A}$$
-
-First, `0.161 {{key:ENTER}} 4500 {{key:×}}` forms the room constant product $0.161 V = 724.5000\text{ m}^3\cdot\text{s/m}$ in Register $X$, and dividing by the bare-hall absorption (`320 {{key:÷}}`) in `{{res:sc32_03_algebra_transcendentals_seq_21:keys}}` resolves the Sabine reverberation time of **`{{res:sc32_03_algebra_transcendentals_seq_21:value}}`** seconds—ideal for a symphonic organ hall, but too reverberant for speech. Suppose the acoustic consultant deploys $160\text{ Sabins}$ of velvet stage draperies (raising $A$ from $320$ to $480\text{ Sabins}$): because `320 {{key:÷}}` automatically saved $A_1 = 320$ in `{{key:LASTX}}`, keying `{{key:LASTX}} {{key:×}} 480 {{key:÷}}` restores $0.161 V = 724.5$ and computes the treated reverberation time ($\mathbf{1.5094\text{ s}}$) without re-entering room volume.
-
-Now step from acoustic waves in a concert hall to electromagnetic light waves climbing out of the crushing gravity of a dead star. Imagine a white dwarf star that packs the entire mass of our Sun ($M = 1.989 \times 10^{30}\text{ kg}$) into a sphere the size of the Earth ($R = 6.4 \times 10^6\text{ m}$, with $G = 6.6743 \times 10^{-11}\text{ N}\cdot\text{m}^2/\text{kg}^2$ and $c = 2.99792 \times 10^8\text{ m/s}$). By Albert Einstein's equivalence principle, a photon climbing out of that intense gravitational potential well $\Phi = -GM/R$ must spend energy $h\Delta f$ against gravity, stretching its wavelength toward the red end of the spectrum by the fractional redshift $z$:
-$$z = \frac{\Delta f}{f} \approx \frac{G M}{R c^2}$$
-
-Dividing the solar gravitational parameter $GM_\odot$ by the white dwarf radius $R$ and the squared speed of light $c^2$ via `{{res:sc32_03_algebra_transcendentals_seq_23:keys}}` yields the dimensionless gravitational redshift $z = \mathbf{{{res:sc32_03_algebra_transcendentals_seq_23:value}}} \approx 2.308 \times 10^{-4}$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `6.6743 {{key:E}} 11 {{key:+/-}} {{key:ENTER}} 1.989 {{key:E}} 30 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.3275 \times 10^{20}$ | Gravitational parameter $G M_{\odot}$ |
-| 2 | `6.4 {{key:E}} 6 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0742 \times 10^{13}$ | Divide by white dwarf radius $R$ for gravitational potential $\Phi$ |
-| 3 | `2.99792 {{key:E}} 8 {{key:x²}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.3079 \times 10^{-4}$** | Divide by speed of light squared $c^2$ for fractional redshift $z$ |
+* **16-Channel Photonic Crossbar Permutations ($16!$):** Evaluating `{{res:sc32_03_algebra_transcendentals_seq_30:keys}}` computes $16!$ in place to display **`{{res:sc32_03_algebra_transcendentals_seq_30:value}}`** ($20,922,789,888,000$).
+* **Half-Integer Gamma Verification ($\left(\frac{1}{2}\right)! = \frac{\sqrt{\pi}}{2}$):** Evaluating `{{res:sc32_03_algebra_transcendentals_seq_48:keys}}` (or decimal `{{res:sc32_03_algebra_transcendentals_seq_04:keys}}` $\to$ **`{{res:sc32_03_algebra_transcendentals_seq_04:value}}`**) matches Gauss's analytical constant `{{res:sc32_03_algebra_transcendentals_seq_49:keys}}` $\to$ **`{{res:sc32_03_algebra_transcendentals_seq_49:value}}`** to all 12 displayed digits.
+* **5D Unit Hypersphere Volume ($V_5 = \frac{\pi^{2.5}}{(2.5)!} = \frac{8}{15}\pi^2$):** Raising $\pi$ to the $2.5$ power and dividing by Lanczos's fractional factorial $(2.5)!$ via `{{res:sc32_03_algebra_transcendentals_seq_31:keys}}` yields **`{{res:sc32_03_algebra_transcendentals_seq_31:value}}`**.
+* **Non-Destructive Domain Protection:** Attempting a real logarithm of a negative number via `{{res:sc32_03_algebra_transcendentals_seq_50:keys}}` halts with `INVALID DATA` (Code 02) before altering Registers $Y, Z,$ or $T$; tapping `{{key:C}}` clears the banner cleanly.
 
 ---
 
-### Doubling Laws, Weibull Distributions, Coordinate Parts & Higher-Dimensional Gamma
+### From Straight-Line Growth to the Circle
 
-Next we turn to logarithmic doubling laws, Weibull wind-turbine probability distributions, sexagesimal GPS coordinate decomposition (`IP`/`FP`), optical switch combinatorics, and the strange geometry of 5-dimensional hyperspheres (`{{key:x!}}`).
+In Chapter 3, we watched John Napier's logarithms and Leonhard Euler's natural exponential $e^x$ tame continuous growth and decay along a straight line—measuring everything from the age of the Dead Sea Scrolls and the cooling of a morning cup of coffee to the roar of a stadium and the combinations of a shuffled deck of cards.
 
-In 1494, Franciscan friar Luca Pacioli (mentor to Leonardo da Vinci) noted in *Summa de arithmetica* that dividing $72$ by an annual percentage interest rate gives a remarkably close estimate of how many years it takes an investment to double. Let us test Pacioli's Renaissance rule of thumb against the exact logarithmic solution at an annual yield of $r = 7.2\%$: Pacioli's Rule of 72 predicts $t_{\text{approx}} = 72 / 7.2 = \mathbf{10.0\text{ years}}$, whereas exact logarithmic doubling ($1.072^t = 2$) gives $t_{\text{exact}} = \frac{\ln 2}{\ln(1 + 0.072)}$. Keying `2 {{key:LN}}` places $\ln 2 \approx 0.6931$ in Register $X$, and dividing by the exact logarithmic growth rate $\ln(1.072) \approx 0.0695$ in `{{res:sc32_03_algebra_transcendentals_seq_25:keys}}` resolves the doubling time to **`{{res:sc32_03_algebra_transcendentals_seq_25:value}}`** years—showing why $72$ (which approximates $100\ln 2 \cdot (1 + r/2) \approx 69.31 \times 1.036 \approx 71.8$) is remarkably accurate near $7\text{--}8\%$. In physical terms on the *Prime Factor Blocks* comparator, each doubling of principal adds one more $7.00\text{ mm}$ Blue $[2]$ block to the logarithmic height stack, and $\ln(1+r)$ measures how much vertical height each year of compounding contributes toward that $7.00\text{ mm}$ step.
-
-While compound growth follows a pure exponential, natural geophysical processes often combine power-law growth with an exponential cutoff. When siting a multi-megawatt offshore wind turbine, engineers cannot just use average wind speed: calm days generate zero power, while rare gale-force gusts are feathered out. Swedish engineer Waloddi Weibull's skewed distribution captures the real-world probability density $f(v)$ of wind speed at hub height $v = 8.5\text{ m/s}$ using shape parameter $k = 2.2$ and scale parameter $c = 9.0\text{ m/s}$. Look at the structure of the formula: the dimensionless wind ratio $v/c$ appears both inside the polynomial prefactor $(v/c)^{k-1}$ and inside the stretched exponential tail $\exp[-(v/c)^k]$:
-
-$$f(v) = \frac{k}{c} \left(\frac{v}{c}\right)^{k - 1} \exp\left[-\left(\frac{v}{c}\right)^k\right]$$
-
-When the normalized wind ratio $v/c = 0.9444$ is duplicated across the stack before evaluating the two powers via `{{res:sc32_03_algebra_transcendentals_seq_29:keys}}`, the ratio $8.5 / 9.0$ never has to be re-divided, confirming $f(8.5) \approx \mathbf{0.094496\text{ (m/s)}^{-1}}$:
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `8.5 {{key:ENTER}} 9.0 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.9444$ | Normalized wind speed ratio $v/c$ |
-| 2 | `{{key:ENTER}} {{key:ENTER}} 2.2 {{key:yˣ}} {{key:+/-}} {{key:eˣ}}` | $0.0000$ | $0.0000$ | $0.9444$ | $0.4140$ | Weibull exponential factor $\exp(-(v/c)^k)$ |
-| 3 | `{{key:x⇄y}} 1.2 {{key:yˣ}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3866$ | Multiply by power-law velocity term $(v/c)^{k-1}$ |
-| 4 | `2.2 {{key:ENTER}} 9.0 {{key:÷}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.0945$** | Scale by shape/scale ratio $k/c$ for probability density $f(v)$ |
-
-Once the offshore wind survey vessel drops anchor at its target site, its satellite NMEA telemetry stream reports latitude as a decimal degree string (such as $30.267153^\circ\text{ N}$), whereas nautical charts and survey plats require degrees, arcminutes ($1^\circ = 60'$), and arcseconds ($1' = 60''$). We can peel $30.267153^\circ\text{ N}$ into integer degrees, arcminutes, and arcseconds ($D^\circ M' S''$) while typing the coordinate only **once** using `{{key:PARTS}}` and `{{key:LASTX}}`: first, `30.267153 {{key:PARTS}} {{key:IP}}` isolates integer degrees in Register $X$ ($X = \mathbf{30.0000^\circ}$) while automatically preserving the full 8-digit coordinate $30.267153^\circ$ in `LASTX`—physically mirroring the way the *Place Value Cubes* decimal tray (`1 • 0.1 | 0.01 | 0.001`) separates the whole-unit column to the left of the physical decimal post (`•`) from the fractional sub-columns to the right. Rather than re-typing $30.267153^\circ$, keying `{{key:LASTX}} {{key:PARTS}} {{key:FP}} 60 {{key:×}} {{key:PARTS}} {{key:IP}}` recalls $30.267153^\circ$ from `{{key:LASTX}}`, strips the integer part to leave $0.267153^\circ$, multiplies by $60$ to form $16.02918'$, and isolates integer arcminutes ($Y = 30.0000,\; X = 16.0000$) while automatically latching the unrounded $16.02918'$ in `LASTX`. Finally, keying `{{key:LASTX}} {{key:PARTS}} {{key:FP}} 60 {{key:×}}` recalls $16.02918'$, isolates its fractional remainder $0.02918'$, and scales by $60$ to resolve arcseconds ($Y = 16.0000,\; X = \mathbf{1.7508''}$)—leaving $30^\circ$, $16'$, and $1.7508''\text{ N}$ arrayed simultaneously across Registers $Z, Y, X$ with zero manual re-entry.
-
-From continuous coordinate splitting, let us turn to discrete and continuous factorials (`{{key:x!}}`). In a fiber-optic data center, a non-blocking $16 \times 16$ photonic crossbar switch can route 16 incoming wavelength channels to 16 outgoing fibers in any one-to-one order. The first input fiber has $16$ choices, the second has $15$, the third has $14$, and so on—yielding $16! = 16 \times 15 \times \dots \times 1$ distinct bijective routing states. Evaluating `{{res:sc32_03_algebra_transcendentals_seq_30:keys}}` computes $16! = 20,922,789,888,000$ in place in Register $X$ to display **`{{res:sc32_03_algebra_transcendentals_seq_30:value}}`** ($20.92\text{ trillion paths}$)—and pressing `{{key:SHOW}}` reveals all 14 exact integer digits ($20922789888000$).
-
-Now what happens when we press that exact same `{{key:x!}}` key on a *non-integer*? That question leads to one of the most counterintuitive facts in higher-dimensional geometry: what happens to the volume of a unit ball (radius $R = 1$) as you increase the number of spatial dimensions $n$? For $n = 1$ (an interval from $-1$ to $+1$), $V_1 = 2$; for $n = 2$ (a unit disk), $V_2 = \pi \approx 3.1416$; for $n = 3$ (a unit sphere), $V_3 = \frac{4}{3}\pi \approx 4.1888$; and for $n = 4$, $V_4 = \frac{1}{2}\pi^2 \approx 4.9348$. You might guess that $V_n$ grows forever—yet as dimension $n$ increases, the corners of the circumscribing hypercube pull away from the inscribed sphere so rapidly that the unit hypersphere's volume **peaks at dimension $n = 5$** and then shrinks toward zero as $n \to \infty$! Because the volume of an $n$-ball is $V_n = \frac{\pi^{n/2}}{(n/2)!}$, odd dimensions require evaluating the factorial of a **half-integer** via the SC-32's Lanczos Gamma extension:
-
-$$V_5 = \frac{\pi^{5/2}}{\Gamma\left(\frac{5}{2} + 1\right)} = \frac{\pi^{2.5}}{(2.5)!} = \frac{8}{15}\pi^2$$
-
-In the numerator, `{{key:π}} 2.5 {{key:yˣ}}` places $\pi^{2.5} \approx 17.4934$ in Register $X$. Because the SC-32's {{key:x!}} operator evaluates the continuous Lanczos Gamma expansion $\Gamma(x + 1)$ for non-integers, completing the sequence `{{res:sc32_03_algebra_transcendentals_seq_31:keys}}` computes $(2.5)! = \frac{15}{8}\sqrt{\pi} \approx 3.3234$ and divides in place to yield the 5-sphere volume **`{{res:sc32_03_algebra_transcendentals_seq_31:value}}`**—or even more compactly via {{key:LASTX}}: `{{key:π}} 2.5 {{key:yˣ}} {{key:LASTX}} {{key:x!}} {{key:÷}}`, which recalls $2.5$ directly from {{key:LASTX}}.
-
----
-
-### Compressible Thermodynamics, RF Waveguides & Relativistic Time Dilation
-
-Our final four scenarios tackle polytropic gas compression work, Van der Waals intermolecular forces, high-frequency electromagnetic skin depth in copper waveguides, and Einstein's relativistic time dilation.
-
-When a piston compresses a gas cylinder from $V_1 = 0.040\text{ m}^3$ (at $P_1 = 120\text{ kPa}$) down to $V_2 = 0.010\text{ m}^3$, the process is neither purely isothermal ($PV = \text{const}$) nor purely adiabatic ($PV^\gamma = \text{const}$): some heat escapes through the cylinder water jacket, resulting in a **polytropic compression** $P V^n = \text{const}$ with index $n = 1.32$. Integrating mechanical work $\int_{V_2}^{V_1} P\,dV$ places the polytropic difference $n - 1 = 0.32$ in both the exponent and the denominator (with compression ratio $V_1 / V_2 = 4.0$):
-
-$$W = \frac{P_1 V_1}{n - 1} \left[ \left(\frac{V_1}{V_2}\right)^{n - 1} - 1 \right]$$
-
-First, `4.0 {{key:ENTER}} 0.32 {{key:yˣ}} 1 {{key:-}}` forms the dimensionless temperature-rise factor $(4.0^{0.32} - 1) \approx 0.5583$ in Register $X$, and scaling by $P_1 V_1 / (n - 1) = 15,000\text{ J}$ in `{{res:sc32_03_algebra_transcendentals_seq_34:keys}}` resolves polytropic compression work to **`{{res:sc32_03_algebra_transcendentals_seq_34:value}}`** $\text{J}$ ($\approx 8.375\text{ kJ}$). Even better, notice how `{{key:LASTX}}` eliminates typing $n - 1 = 0.32$ a second time: right after `4.0 {{key:ENTER}} 0.32 {{key:yˣ}}`, `LASTX` holds $0.32$ (`1 {{key:-}}` overwrites `LASTX` with $1$, so if you instead key `4.0 {{key:ENTER}} 1.32 {{key:ENTER}} 1 {{key:-}} {{key:ENTER}} {{key:R↓}} {{key:yˣ}} 1 {{key:-}} {{key:x⇄y}} {{key:÷}} 120000 {{key:×}} 0.040 {{key:×}}`, or divide by `{{key:LASTX}}` after `0.32 {{key:×}}`), the polytropic index $n - 1$ is entered only once.
-
-What if that compressed gas is pushed to high density where the ideal gas law ($PV = nRT$) breaks down? The ideal gas law pretends that gas molecules are dimensionless points that never attract or repel one another. In 1873, Johannes Diderik van der Waals corrected both assumptions: first, real molecules have a finite hard-sphere volume $b = 4.27 \times 10^{-5}\text{ m}^3/\text{mol}$, reducing the free container volume to $V - nb$ and *raising* collision pressure; second, passing molecules tug on one another via attractive London dispersion forces $a = 0.364\text{ Pa}\cdot\text{m}^6/\text{mol}^2$, *reducing* wall impact pressure by $a n^2 / V^2$. For $n = 2.0\text{ mol}$ of $\text{CO}_2$ confined to $V = 0.0050\text{ m}^3$ at $T = 320.0\text{ K}$ ($R = 8.31446\text{ J/mol}\cdot\text{K}$):
-$$P = \frac{n R T}{V - n b} - \frac{a n^2}{V^2}$$
-
-Evaluating the repulsive kinetic pressure $nRT/(V - nb) = 1,082,744.15\text{ Pa}$ first and subtracting the cohesive internal pressure $an^2/V^2 = 58,240.00\text{ Pa}$ via `{{res:sc32_03_algebra_transcendentals_seq_40:keys}}` shows that intermolecular attraction reduces wall pressure by $5.4\%$, confirming $P \approx \mathbf{1,024,504.15\text{ Pa}} \approx 1.025\text{ MPa}$:
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `2 {{key:ENTER}} 8.31446 {{key:×}} 320 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $5321.2544$ | Ideal kinetic energy numerator $n R T$ |
-| 2 | `0.0050 {{key:ENTER}} 2 {{key:ENTER}} 4.27 {{key:E}} 5 {{key:+/-}} {{key:×}} {{key:-}} {{key:÷}}` | $5321.2544$ | $5321.2544$ | $5321.2544$ | $1082744.1501$ | Divide by free volume $(V - n b)$ for kinetic pressure term |
-| 3 | `0.364 {{key:ENTER}} 4 {{key:×}} 0.0050 {{key:x²}} {{key:÷}} {{key:-}}` | $5321.2544$ | $5321.2544$ | $5321.2544$ | **$1024504.1501$** | Subtract molecular attraction term $a n^2 / V^2$ for van der Waals pressure $P$ (Pa) |
-
-Reciprocal square roots (`{{key:√x}} {{key:1/x}}`) govern another remarkable physical crowding effect: electromagnetic skin depth in radio-frequency conductors. At DC ($0\text{ Hz}$), electrical current flows uniformly through the entire cross-section of a copper wire. At radio frequencies ($f = 100.0\text{ MHz} = 1.0 \times 10^8\text{ Hz}$), however, the rapidly alternating magnetic field inside the wire induces back-EMF eddy currents (Lenz's law) that cancel current flow in the core and crowd the electrons into a microscopic outer skin of thickness $\delta$ ($\sigma = 5.8 \times 10^7\text{ S/m}$, permeability $\mu = 4\pi \times 10^{-7}\text{ H/m}$):
-$$\delta = \frac{1}{\sqrt{\pi f \mu \sigma}}$$
-
-Multiplying $\pi f$, magnetic permeability $\mu$, and conductivity $\sigma$ inside Register $X$ before taking the square root and reciprocal in `{{res:sc32_03_algebra_transcendentals_seq_41:keys}}` yields an electromagnetic skin depth of $\mathbf{{{res:sc32_03_algebra_transcendentals_seq_41:value}}\,\mu\text{m}}$.
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 1 | `{{key:π}} 1 {{key:E}} 8 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.1416 \times 10^{8}$ | Angular frequency $\pi f$ at $100\text{ MHz}$ |
-| 2 | `4 {{key:π}} {{key:×}} 1 {{key:E}} 7 {{key:+/-}} {{key:×}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $394.7842$ | Multiply by magnetic permeability $\mu_0 = 4\pi \times 10^{-7}$ |
-| 3 | `5.8 {{key:E}} 7 {{key:×}} {{key:√x}} {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $6.6085 \times 10^{-6}$ | Multiply by copper conductivity $\sigma$ and take reciprocal root $\delta$ (m) |
-| 4 | `1 {{key:E}} 6 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$6.6085$** | Convert skin depth $\delta$ to micrometers ($\mu\text{m}$) |
-
-Because $98\%$ of the RF current flows within $4\delta \approx 26.4\,\mu\text{m}$ of the surface, hollow copper tubing has virtually the same $100\text{ MHz}$ AC resistance as a solid copper rod.
-
-That same `{{key:√x}} {{key:1/x}}` combination resolves the ultimate speed limit of the universe. When cosmic rays slam into Earth's upper atmosphere at $15\text{ km}$ altitude, they create unstable subatomic particles called muons with a proper mean lifetime of only $2.2\,\mu\text{s}$. Even traveling at $v = 0.85c$, a classical clock would allow a muon to travel barely $2.2\,\mu\text{s} \times 0.85c \approx 560\text{ meters}$ before decaying—yet cosmic-ray muons rain down onto sea-level detectors in abundance! Albert Einstein's Special Theory of Relativity explains why: because the speed of light $c$ is invariant in all inertial frames, a clock moving at $\beta = v/c = 0.85$ ticks slower relative to Earth by Hendrik Lorentz's factor $\gamma$ (while the atmosphere in the muon's frame is length-contracted by $1/\gamma$):
-
-$$\gamma = \frac{1}{\sqrt{1 - (v/c)^2}}$$
-
-First, `0.85 {{key:x²}} 1 {{key:-}} {{key:+/-}}` squares $\beta = 0.85$ and forms its unit complement $1 - \beta^2 = 0.2775$ in Register $X$. Next, taking the square root and inverting in `{{res:sc32_03_algebra_transcendentals_seq_42:keys}}` resolves the Lorentz factor to **`{{res:sc32_03_algebra_transcendentals_seq_42:value}}`**—and because $\sqrt{1 - \beta^2} = 0.5268$ is preserved in `{{key:LASTX}}` upon pressing `{{key:1/x}}`, both time-dilation $\gamma = 1.8983$ and Lorentz length-contraction $L/L_0 = 1/\gamma = 0.5268$ are available simultaneously.
-
----
-
-## Further Exploration: Companion Workbooks & Applied Tie-Ins
-
-> *For 22 additional worked engineering problems with full 4-register stack traces, see Chapter 3 of the [SC-32 Scientific Companion Problem & Casebook Workbook](../../curriculum/sc32-scientific-companion-workbook.md).*
-
-
-The transcendental conditioning and `{{key:LASTX}}` techniques developed in this chapter tie directly into the **StackCalc Engineering & Speed Competition Workbooks** (*Volume I: Exponential & Logarithmic Analysis*). Explore these three synthesis challenges:
-
-### Synthesis Challenge Problems
-
-1. **Planck Radiation Wien-Limit vs. Exact Bose-Einstein Ratio via `{{key:LASTX}}` (Tie-In to Planck Blackbody Spectral Radiance):**  
-   In our solar photosphere radiance analysis above, the dimensionless photon energy at $\lambda = 500\text{ nm}$ and $T = 5,778\text{ K}$ was $x = \frac{hc}{\lambda k_B T} = 4.98020$. Calculate the fractional error $\frac{e^x}{e^x - 1}$ incurred by Wilhelm Wien's short-wavelength approximation ($e^x - 1 \approx e^x$) without evaluating $e^x$ twice:  
-   Duplicating $e^x$ on the stack via `4.98020 {{key:eˣ}} {{key:ENTER}} 1 {{key:-}} {{key:÷}}` (or evaluating `4.98020 {{key:+/-}} {{key:eˣ}} 1 {{key:-}} {{key:+/-}} {{key:1/x}}`) produces $\mathbf{1.006920}$—proving Wien's law underestimates solar green-peak radiance by $0.692\%$.
-2. **Stirling's Asymptotic Approximation vs. Exact Lanczos Factorial via `{{key:LASTX}}` (Tie-In to Network Switch Permutations & Half-Integer Gamma):**  
-   Compare exact $10! = 3,628,800$ against Stirling's leading-order asymptotic formula $\sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ at $n = 10$ by recalling $n = 10$ from `{{key:LASTX}}` after both `{{key:x!}}` and `{{key:yˣ}}`:  
-   Keying `10 {{key:x!}}` places exact $10! = 3,628,800$ in Register $X$ while latching $10$ in `{{key:LASTX}}`. Continuing with `{{key:LASTX}} 1 {{key:eˣ}} {{key:÷}} 10 {{key:yˣ}} {{key:LASTX}} 2 {{key:×}} {{key:π}} {{key:×}} {{key:√x}} {{key:×}}` obtains Stirling's estimate $3,598,695.62$ in $X$ beneath exact $3,628,800$ in $Y$; pressing `{{key:÷}}` confirms the ratio $1.008365 \approx e^{1/(12 \times 10)} = e^{1/120} = \mathbf{1.008368}$.
-3. **Round-Trip DMS-to-Decimal and Decimal-to-DMS Metrology Check (Tie-In to GPS Coordinate Decomposition):**  
-   Reconstruct the decimal latitude $30^\circ 16' 1.7508''$ from the three registers $Z = 30,\; Y = 16,\; X = 1.7508$ left at the end of our GPS coordinate decomposition:  
-   With $Z = 30.0000,\; Y = 16.0000,\; X = 1.7508$ already on the stack, keying `60 {{key:÷}} {{key:+}} 60 {{key:÷}} {{key:+}}` (or `60 {{key:÷}} {{key:x⇄y}} {{key:LASTX}} {{key:÷}} {{key:+}} 60 {{key:÷}} {{key:+}}` if scaling minutes and seconds simultaneously) collapses all three registers back to $\mathbf{30.267153^\circ}$ in 6 keystrokes.
-
----
-
-## Summary & Looking Ahead
-
-Chapter 3 expanded the operational stack into the continuous domain of algebra and transcendentals. You explored in-place monadic transformations, arbitrary powers and fractional roots, natural and common logarithms across wide dynamic ranges, and factorials extending smoothly into the half-integer Gamma domain. With IEEE-754 64-bit precision, in-place evaluation preserves upper stack registers ($Y, Z, T$) untouched, while `{{key:SHOW}}` and display formats (`{{key:FIX}}`, `{{key:SCI}}`, `{{key:ENG}}`, `{{key:ALL}}`) adapt readouts directly to engineering disciplines.
-
-Linear and exponential scales are only part of the physical world; nature also rotates, oscillates, and points through multi-dimensional space. In **[Chapter 4: Trigonometry, Vectors & Polar Transformations](04-trig-vectors-polar.md)**, you will step onto the unit circle, navigating degree, radian, and gradian angular modes. You will work directly with forward and inverse trigonometric functions, hyperbolic projections, and instantaneous rectangular-to-polar conversions to decompose forces, track geodetic traverses, and navigate 2D vector spaces on the stack.
+Yet nature does not merely grow along a straight line. Planets sweep around ellipses, ocean waves rise and fall, pendulums swing, and aircraft crab into crosswinds across a curved Earth. What happens when we wrap a straight number line around a **circle**? In **[Chapter 4: Measuring the Cosmos with a Shadow](04-trig-vectors-polar.md)**, our story opens in 240 BC in Alexandria, where Eratosthenes measured the circumference of the entire Earth using the noon shadow of a single vertical bronze stick.

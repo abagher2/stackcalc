@@ -1,133 +1,183 @@
 ---
-title: "Chapter 14: High-Speed Equation Entry & Inside-Out Calculation Mastery | SC-32 Manual"
-description: "Master high-speed equation entry, inside-out calculation, nested radical pyramids, continued fraction shortcuts, and factory baseline reset on the StackCalc SC-32."
+title: "Chapter 14: The Art of Mental Poise: Fermi Estimation, Number Sense & Lightning Calculation | Thinking in the Stack (SC-32)"
+description: "Master Enrico Fermi's order-of-magnitude estimation, mental algebra shortcuts, visual inside-out chunking, and high-speed calculation on the StackCalc SC-32."
 ---
 
-# Chapter 14: High-Speed Equation Entry & Inside-Out Calculation Mastery
+# Chapter 14: The Art of Mental Poise: Fermi Estimation, Number Sense & Lightning Calculation
 
-## The High-Speed Calculation Arena: Mental Poise and Inside-Out Speed Under Extreme Time Pressure
+## Enrico Fermi's Torn Paper Scraps and the Art of Back-of-the-Envelope Estimation
 
-Across high-stakes technical environments—from collegiate engineering exams and competitive STEM tournaments to aerospace test stands—practitioners face demanding numerical challenges under strict time pressure. The problem set spans numerical algebra, nested continued fractions, 3D solid geometry, and multi-step applied physics equations. The challenge: calculate exact, verifiable results at an unrelenting pace of under thirty seconds per problem.
+At 5:29 a.m. on July 16, 1945, in the Jornada del Muerto desert of New Mexico, the physicist Enrico Fermi stood at Base Camp ten miles ($r \approx 16\text{ km}$) south of Ground Zero as the world's first nuclear detonation turned the pre-dawn sky white. While instruments whirred and oscillographs traced pressure curves that would take weeks to reduce, Fermi held a handful of torn notebook-paper scraps above his head. Forty seconds after the flash, when the shockwave reached Base Camp, he released the scraps into the sudden gust of air. They fluttered backward and landed on the desert floor about two and a half meters ($\Delta r \approx 2.5\text{ m}$) behind him. Pacing off the displacement and mentally estimating the mechanical work $W \approx P_0 (2\pi r^2)\Delta r$ done by a hemispherical blast shell of area $2\pi r^2$ pushing ambient atmospheric pressure $P_0 \approx 10^5\text{ Pa}$ outward by $\Delta r \approx 2.5\text{ m}$, Fermi announced to his colleagues within seconds that the blast equaled roughly $10\text{ kilotons}$ of TNT. Weeks later, exhaustive radiochemical analysis of the fused desert glass settled on $18.6\text{ kilotons}$—well within a factor of two of Fermi's torn-paper estimate.
 
-Under this extreme time pressure, traditional algebraic entry breaks down. When a user attempts to key a compound radical pyramid or a 5-tier continued fraction using algebraic infix syntax, they are forced to count opening and closing parentheses while watching a blinking cursor. A single dropped bracket produces an unhelpful `SYNTAX ERROR` after twenty seconds of frantic typing, destroying the practitioner's pacing and mental poise.
+Fermi delighted in training his University of Chicago students to cultivate that same numerical poise before touching a slide rule or desk calculator. His most famous oral-exam opener—"How many piano tuners work in the city of Chicago?"—looked impossible without a telephone directory, yet collapsed in thirty seconds when decomposed into a chain of bounded factors:
 
-Reverse Polish Notation transforms calculation speed. Because RPN evaluates expressions strictly from the inside out in natural mathematical priority, parentheses do not exist. Intermediate subtotals appear instantly on the transflective display, allowing peripheral-vision verification without looking away from the problem sheet. Crisp tactile TPU keys provide unambiguous tactile feedback, enabling complete muscle-memory touch typing. In fast-paced problem sets where speed and accuracy decide outcomes, the SC-32 saves over 350 redundant keystrokes per session—giving the practitioner a decisive advantage against the clock.
+1. **Population:** Chicago had roughly $3 \times 10^6$ residents.
+2. **Households:** At about $4$ people per household, that meant $7.5 \times 10^5$ homes.
+3. **Pianos:** If roughly $1$ household in $15$ owned a piano (between $1$ in $10$ and $1$ in $20$), the city held about $5 \times 10^4$ pianos.
+4. **Annual Tunings:** Tuned once a year, those instruments demanded $5 \times 10^4$ service visits per year.
+5. **Tuner Capacity:** A full-time tuner servicing $4$ pianos a day across $250$ working days completed $1,000$ tunings per year—leaving $50,000 / 1,000 \approx \mathbf{50\text{ piano tuners}}$ in Chicago.
 
-{{res:sc32_uil_radical:screenshot|Nested radical pyramid sqrt(11 + sqrt(21 + sqrt(16))) = 4}}
-*Figure 14.1: High-speed inside-out evaluation of a nested radical pyramid on the StackCalc SC-32, producing the exact integer result `4` with zero parentheses.*
+Why does multiplying five rough guesses produce a remarkably accurate answer instead of compounding into nonsense? Because independent overestimates and underestimates cancel in logarithmic space. Whenever you are unsure of a factor in a Fermi chain, bracket it between a plausible lower bound $L$ (too small) and a plausible upper bound $H$ (too large) and take their **geometric mean**—modeled on the SC-32 in three strokes via `L {{key:ENTER}} H {{key:×}} {{key:√x}}`:
 
----
+$$x_{\text{est}} = \sqrt{L \times H}$$
 
-## Rapid Calculation Dynamics: The 30-Minute, 70-Problem Sprint
+Taking the base-$10$ logarithm reveals why the geometric mean is the natural center of an order-of-magnitude interval:
 
-Consider the classic collegiate and interscholastic engineering calculation sprint: **70 problems in 30 minutes** ($1,800\text{ seconds}$), spanning pure number sense, 2D and 3D mensuration, coordinate geometry, and applied STEM word problems, all graded to **three significant figures** (or $\pm 10^{-3}$). Simple division reveals the relentless clock budget: you have an average of just **25.7 seconds per problem** to read the prompt, set up the mathematics, execute the keystrokes, verify the order of magnitude, and write down the rounded answer.
+$$\log_{10}\!\left(\sqrt{L \times H}\right) = \frac{\log_{10} L + \log_{10} H}{2}$$
 
-Why do conventional algebraic infix calculators falter at a 25-second pace? Three bottlenecks compound across a 70-problem test:
-1. **The Parenthesis Penalty:** Evaluating a nested fraction like $\frac{A + B/C}{D - E/F}$ in infix notation requires 6 to 10 opening and closing parenthesis keystrokes. Across 70 problems, an algebraic user presses **over 350 redundant bracket keys**—burning nearly three full minutes of physical finger travel on punctuation that performs zero math.
-2. **Delayed Error Visibility:** In an algebraic formula editor, a miscounted parenthesis or a typo inside an inner radical remains invisible until you press `=` at the very end, when a `SYNTAX ERROR` or a wildly implausible number forces you to scrap twenty seconds of work and start over.
-3. **Visual Context Switching:** Calculators with soft rubber dome pads give vague tactile feedback, forcing your eyes to bounce back and forth between the printed problem sheet and the keypad.
+If you bound a quantity between $20$ and $80$, the arithmetic mean ($50$) overweights the upper end in relative terms, whereas the geometric mean $\sqrt{20 \times 80} = \sqrt{1,600} = 40$ sits at an exact factor of $2$ above $20$ and a factor of $2$ below $80$.
 
-On the StackCalc SC-32, those three bottlenecks disappear. Because Reverse Polish Notation evaluates expressions from the inside out, **parentheses do not exist**—cutting total keystrokes by $35\%$ to $67\%$ across common problem types. Every intermediate root, sum, or divisor appears immediately in Register $X$ on the high-contrast transflective LCD, while crisp $400\text{ g}$ tactile snap-domes let your right hand touch-type by muscle memory while your left index finger tracks the problem statement on the page:
+### Why Multiplying Five Rough Guesses Beats One Wild Guess (The $\sqrt{N}$ Law of Error Cancellation)
 
-| Expression Type | Algebraic Infix | RPN (SC-32) | Key Savings |
-|:---|:---|:---|:---|
-| Nested Radical Pyramid | 18 keys (nested parens) | 10 keys (inside-out) | -44% |
-| Continued Fraction | 19 keys (nested parens) | 11 keys (reciprocals) | -42% |
-| Compound Quotient | 14 keys ((A+B)/(C-D)) | 9 keys (A B + C D - ÷) | -36% |
-| Parallel Resistance | 12 keys (1/(1/R1+1/R2)) | 4 keys (R1 R2 x∥y) | -67% |
-| Coordinate Distance | 17 keys (√((x2-x1)²+..)) | 11 keys (Δx² Δy² + √) | -35% |
+Students encountering a Fermi problem for the first time often harbor a nagging suspicion: *If I don't know the exact number of pianos in Chicago, doesn't breaking one unknown number into five separate guesses just give me five chances to be wrong instead of one?*
 
----
+The mathematics of Chapter 3 (logarithms) and Chapter 9 (statistics) proves that the exact opposite is true. Suppose you try to guess the number of piano tuners in Chicago in a single blind leap. Because a single unanchored guess has no everyday human scale to tether it, you might easily guess $5$ or $5,000$—an error of two orders of magnitude ($10^{\pm 2}$).
 
-## How Physical Block Geometry Reveals High-Speed Calculation Shortcuts
+Now see what happens when you decompose that single mystery into a product of $k = 5$ everyday factors $X = f_1 \times f_2 \times f_3 \times f_4 \times f_5$ (population, household size, piano ownership fraction, tunings per year, and tunings per day). Because each individual factor is anchored in familiar daily life—you know a family household has around $3$ to $5$ people, not $400$ people, and a technician can tune $3$ to $5$ pianos a day, not $300$—your relative error on each individual factor $f_i$ is tightly bounded (say within $\pm 30\%$, or $\pm 0.12$ in base-10 log units).
 
-Why can a seasoned contest mathematician or chief engineer glance at an intimidating algebraic expression and collapse it in four keystrokes while others are still typing opening parentheses? Because every championship speed shortcut is really a **physical geometric symmetry** that you can see and touch with our manipulative studio blocks:
+When you multiply $k$ independent factors together, their base-10 logarithms **add**:
 
-1. **The $90^\circ$ L-Frame Factoring Stage & Difference-of-Squares / Inradius Shortcuts:**
-   When you dock an $a \times a$ square on the **$90^\circ$ L-Frame Stage** and remove a $b \times b$ corner square ($a^2 - b^2$), lifting the remaining $b \times (a - b)$ side strip and rotating it $90^\circ$ onto the top edge forms a single $(a - b) \times (a + b)$ rectangle—proving visually why $a^2 - b^2 = (a - b)(a + b)$. Similarly, docking a corner square of side $r$ into the $90^\circ$ vertex of a right triangle shows why the two tangent legs $(a - r)$ and $(b - r)$ fold onto the hypotenuse $c = (a - r) + (b - r)$, yielding the 3-second inradius shortcut $r = \frac{a + b - c}{2}$.
-2. **84 mm Fraction Towers & Bottom-Up Reciprocal Ladders:**
-   In the **Fraction Towers**, every unit fraction block $\frac{1}{n}$ has height $\frac{84.0\text{ mm}}{n}$, and its reciprocal `{{key:1/x}}` flips that ratio back to the integer count $n$ of blocks that fill the $84.0\text{ mm}$ comparator well. A multi-tier continued fraction (such as the $\pi$ convergent $3 + \frac{1}{7 + \frac{1}{15 + \dots}}$ below) is simply a nested stack of reciprocal towers: starting at the bottom-most block and alternating `{{key:1/x}}` with integer addition climbs the tower from the ground floor up with zero parentheses. That same reciprocal symmetry powers the hardware parallel operator `{{key:x∥y}}` for harmonic-mean round-trip speeds.
-3. **Counting & Array Tiles & Gauss's Staircase Folding:**
-   Arranging $1 + 2 + \dots + n$ **Counting Tiles** into a stepped staircase and docking an inverted copy on top forms an $n \times (n + 1)$ rectangle ($S_n = \frac{n(n+1)}{2}$), turning long series summations into a 3-keystroke product.
+$$\log_{10} X = \log_{10} f_1 + \log_{10} f_2 + \log_{10} f_3 + \log_{10} f_4 + \log_{10} f_5$$
 
-## Radical Pyramid Evaluation Shortcuts
+If your individual log-errors $\epsilon_i$ are unbiased (some slightly high, like guessing $1\text{ in }15$ households own a piano when the true fraction is $1\text{ in }20$; others slightly low, like guessing $3\text{ million}$ residents when the metro area has $4\text{ million}$), they do **not** add up in the worst-case direction. Instead, just like the random machining tolerances we met in Chapter 13, independent logarithmic errors combine via the **Root-Sum-Square (`RSS`) random-walk law** ($\sigma_{\text{total}} = \sqrt{k}\,\sigma_{\text{step}}$ rather than $k\,\sigma_{\text{step}}$). Overestimating two links and underestimating three links causes the errors to cancel each other out across the multiplication chain!
 
-Nested radical pyramids look intimidating on paper precisely because algebraic notation reads from the outside in, forcing you to open three nested square-root brackets `√( 17 + √( 29 + √( 83 ) ) ) =` (18 keystrokes) before reaching the number that actually gets evaluated first:
+### Four Everyday Sanity Benchmarks Worth Knowing by Heart
 
-$$Q = \sqrt{17 + \sqrt{29 + \sqrt{83}}}$$
+To run a three-second Fermi check on any physics, chemistry, finance, or engineering problem before your fingers ever touch the keys, keep four compact physical anchors in your mental pocket:
+1. **The Seconds in a Year ($\approx \pi \times 10^7\text{ s}$):** One solar year of $365.2422\text{ days} \times 86,400\text{ s/day}$ equals **$3.1557 \times 10^7\text{ seconds}$**—within half a percent of **$\pi \times 10^7\text{ seconds}$**. Whenever a problem converts annual power consumption, radioactive decay, or satellite drift into per-second rates, $\pi \times 10^7$ gives you the order of magnitude instantaneously.
+2. **Density of Water & Structural Metals:** Liquid water has a density of exactly $1\text{ g/cm}^3 = 1\text{ kg/L} = \mathbf{1,000\text{ kg/m}^3}$ (one metric ton per cubic meter); air at sea level is roughly $\frac{1}{800}$ as dense ($\approx 1.225\text{ kg/m}^3$); aluminum is $2.7\times$ water; steel and iron are $\approx 7.8\times$ water.
+3. **Atmospheric Pressure & Hydrostatic Depth:** Standard sea-level atmospheric pressure ($101.325\text{ kPa} \approx 14.7\text{ psi}$) equals the weight of a **$10.3\text{-meter}$ ($34\text{-foot}$) column of fresh water**. Every $10\text{ meters}$ deeper a submarine or dam face descends adds roughly $1\text{ atmosphere}$ ($100\text{ kPa}$) of water pressure.
+4. **Thermal Voltage & Room-Temperature Molecular Speed:** At room temperature ($T \approx 298\text{ K} = 25^\circ\text{C}$), the Nernst/Shockley thermal voltage $\frac{k_B T}{q}$ is roughly **$25.7\text{ mV}$** (giving $25.7\text{ mV} \times \ln 10 \approx 59.2\text{ mV}$ per decade of concentration or current), and the speed of sound in air is roughly **$343\text{ m/s}$** ($\approx 1\text{ kilometer}$ every $3\text{ seconds}$, or $1\text{ mile}$ every $5\text{ seconds}$ between a lightning flash and its thunderclap).
 
-In RPN, you read the radical pyramid **from the inside out**: start at the deepest radicand ($83$), take its square root (`{{key:√x}}`), add the next layer outward ($+29$), take `{{key:√x}}`, add $17$, and take `{{key:√x}}`! Notice that because unary `{{key:√x}}` and dyadic `{{key:+}}` leave stack lift enabled, keying `{{res:sc32_14_uil_contest_playbook_seq_01:keys}}` evaluates this entire three-story radical pyramid with **zero `{{key:ENTER}}` keystrokes** (10 keys total, 3.8 seconds) to yield **`{{res:sc32_14_uil_contest_playbook_seq_01:value}}`** (3-sig-fig target: **`4.81`**, full mantissa `4.813872126`):
+In high-speed technical calculation, pairing every multi-step keypad evaluation with an instantaneous two-second Fermi bound catches slipped decimal points and transposed digits before your pen ever touches the answer sheet:
+* **Harmonic & Parallel Combinations:** Whenever you combine two positive rates or impedances via the harmonic operator $x \parallel y = \frac{xy}{x+y}$, the result must lie strictly below the smaller input and at least half of that smaller input:
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 01 | `83 {{key:√x}}` | 0.00 | 0.00 | 0.00 | 9.11043358 | Evaluate innermost radical $\sqrt{83} = 9.110434$ |
-| 02 | `29 {{key:+}}` | 0.00 | 0.00 | 0.00 | 38.1104336 | Add middle radicand $29 + 9.110434 = 38.110434$ |
-| 03 | `{{key:√x}}` | 0.00 | 0.00 | 0.00 | 6.17336485 | Evaluate middle radical $\sqrt{38.110434} = 6.173365$ |
-| 04 | `17 {{key:+}}` | 0.00 | 0.00 | 0.00 | 23.1733649 | Add outer radicand $17 + 6.173365 = 23.173365$ |
-| 05 | `{{key:√x}}` | 0.00 | 0.00 | 0.00 | 4.81387213 | Evaluate outer radical $Q = 4.813872$ |
+  $$\frac{1}{2}\min(x, y) \le x \parallel y < \min(x, y)$$
+
+* **Continued Fractions & Radical Pyramids:** In a bottom-up continued fraction $a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \dots}}$, the leading integer plus the first reciprocal rung ($a_0 + 1/a_1$) brackets the exact convergent within $\pm \frac{1}{a_1^2}$. Similarly, in a nested radical pyramid $\sqrt{a + \sqrt{b + \sqrt{c}}}$, adding just the integer floor of the inner root gives a two-digit mental preview of the outer square root in one second.
+* **Compound Growth & The Rule of 72:** Recalling Luca Pacioli's Rule of 72 from Chapters 3 and 11, for compound interest or exponential growth $FV = P(1+r)^n$, dividing $72$ by the percentage rate $r_{\%}$ gives the doubling time $T_{\text{double}} \approx \frac{72}{r_{\%}}$. At $6.5\%$ annual interest, capital doubles every $\approx 72 / 6.5 \approx 11\text{ years}$, so over $18\text{ years}$ ($1.6$ doublings) a $\$5,000$ endowment must grow to roughly $\$5,000 \times 2^{1.6} \approx \$15,000$.
 
 ---
 
-## Continued Fraction Sprint Shortcuts
+## Mental Algebra Shortcuts That Beat Any Button-Pusher
 
-Now consider the famous 5-tier simple continued fraction convergent for $\pi$ ($355/113$ extended by $292$):
+Legend holds that when seven-year-old Carl Friedrich Gauss sat in J. G. Büttner's arithmetic classroom in Brunswick in 1784, the schoolmaster assigned the class the tedious task of summing the integers from $1$ to $100$. While his classmates scribbled column additions on their slates, Gauss laid his slate on the teacher's desk after a few seconds with a single number written on it: **$5,050$**. Rather than adding from left to right, Gauss had folded the ascending staircase of numbers onto a reversed copy of itself—pairing $1 + 100 = 101$, $2 + 99 = 101$, ..., $50 + 51 = 101$ into $50$ identical pairs ($S_n = \frac{n(n+1)}{2} = 50 \times 101 = 5,050$). Almost two centuries later, the Indian mental calculator Shakuntala Devi demonstrated that same structural vision on stage, out-computing mainframe computers by spotting algebraic symmetries that collapse ten arithmetic operations into two.
 
-$$Q = 3 + \frac{1}{7 + \frac{1}{15 + \frac{1}{1 + \frac{1}{292}}}}$$
+Four geometric symmetries turn multi-step textbook formulas into instantaneous mental or three-keystroke reflexes:
 
-Just like stacking reciprocal blocks from the base of the **84 mm Fraction Towers** comparator upward, you evaluate a continued fraction **from the bottom rung up**: start at the deepest denominator ($292$), flip it with `{{key:1/x}}`, add the next integer up ($+1$), flip with `{{key:1/x}}`, add $15$, flip with `{{key:1/x}}`, add $7$, flip with `{{key:1/x}}`, and add $3$. Once again, because `{{key:1/x}}` and `{{key:+}}` re-enable stack lift automatically, keying `{{res:sc32_14_uil_contest_playbook_seq_02:keys}}` climbs all five stories in **11 keystrokes with zero `{{key:ENTER}}` presses and zero parentheses** (under 4.5 seconds) to yield **`{{res:sc32_14_uil_contest_playbook_seq_02:value}}`** (3-sig-fig target: **`3.14`**):
+### The Difference-of-Squares Symmetry Trick
+Imagine an $a \times a$ square with a smaller $b \times b$ square removed from its upper-right corner, leaving an L-shaped gnomon of area $a^2 - b^2$. If you slice off the narrow vertical leg of dimensions $b \times (a - b)$ and rotate it $90^\circ$ onto the top edge, the two rectangles lock together into a single $(a - b) \times (a + b)$ rectangle:
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 01 | `292 {{key:1/x}}` | 0.00 | 0.00 | 0.00 | 0.00342466 | Invert bottom denominator $1/292 = 0.003425$ |
-| 02 | `1 {{key:+}}` | 0.00 | 0.00 | 0.00 | 1.00342466 | Add fourth-level integer $1 + 1/292 = 1.003425$ |
-| 03 | `{{key:1/x}}` | 0.00 | 0.00 | 0.00 | 0.99658703 | Invert fourth-level denominator $1 / 1.003425 = 0.996587$ |
-| 04 | `15 {{key:+}}` | 0.00 | 0.00 | 0.00 | 15.9965870 | Add third-level integer $15 + 0.996587 = 15.996587$ |
-| 05 | `{{key:1/x}}` | 0.00 | 0.00 | 0.00 | 0.06251333 | Invert third-level denominator $1 / 15.996587 = 0.062513$ |
-| 06 | `7 {{key:+}}` | 0.00 | 0.00 | 0.00 | 7.06251333 | Add second-level integer $7 + 0.062513 = 7.062513$ |
-| 07 | `{{key:1/x}}` | 0.00 | 0.00 | 0.00 | 0.14159265 | Invert second-level denominator $1 / 7.062513 = 0.141593$ |
-| 08 | `3 {{key:+}}` | 0.00 | 0.00 | 0.00 | 3.14159265 | Add leading integer $3 + 0.141593 = 3.141593$ ($\approx \pi$) |
+$$a^2 - b^2 = (a - b)(a + b)$$
+
+Read from left to right, this identity collapses the difference of two squares without squaring either number:
+* To evaluate $68^2 - 32^2$, never square $68$ or $32$. Simply multiply their difference ($68 - 32 = 36$) by their sum ($68 + 32 = 100$) to read off **$3,600$** in one second.
+
+Read from right to left, the same identity turns any product of two numbers equidistant from a round midpoint $a$ into a one-second mental subtraction $(a - b)(a + b) = a^2 - b^2$:
+* To multiply $47 \times 53$, observe that both factors sit at distance $b = 3$ from $a = 50$:
+
+  $$47 \times 53 = (50 - 3)(50 + 3) = 50^2 - 3^2 = 2,500 - 9 = \mathbf{2,491}$$
+
+### Squaring Any Number Ending in 5
+What happens when you choose the offset $b = 5$ in the difference-of-squares rectangle? Rewriting $a^2 - 5^2 = (a - 5)(a + 5)$ as $a^2 = (a - 5)(a + 5) + 25$ proves why **squaring any number ending in $5$** requires zero multiplication of the full number. For a two-digit number $10n + 5$ (such as $35$ or $85$, or a half-integer like $8.5$), subtracting $5$ gives $10n$ and adding $5$ gives $10(n + 1)$, so:
+
+$$(10n + 5)^2 = 100\,n(n + 1) + 25$$
+
+Multiply the leading digit $n$ by the next integer $n + 1$ and append $25$:
+* **$35^2$:** Multiply $3 \times 4 = 12$ and append $25 \implies \mathbf{1,225}$.
+* **$8.5^2$:** Multiply $8 \times 9 = 72$ and append $.25 \implies \mathbf{72.25}$ (the exact lower-base square $R^2$ in our conical frustum example below).
+
+### Harmonic Round-Trip Speeds
+Suppose a rally car climbs a mountain pass at $v_1 = 40\text{ mph}$ and descends the exact same distance at $v_2 = 60\text{ mph}$. What is the car's average speed for the round trip? Almost every intuition shouts "$50\text{ mph}$!"—and that is the classic timed-exam trap. Because the car spends $50\%$ *more time* crawling uphill at $40\text{ mph}$ than flying downhill at $60\text{ mph}$, the round-trip average speed over equal legs of length $d$ is weighted by travel time $t = d/v$, yielding the **harmonic mean**:
+
+$$v_{\text{avg}} = \frac{2d}{\frac{d}{v_1} + \frac{d}{v_2}} = \frac{2 v_1 v_2}{v_1 + v_2} = 2\,(v_1 \parallel v_2)$$
+
+Because $\frac{v_1 v_2}{v_1 + v_2}$ has the exact form of the SC-32's hardware **`{{key:x∥y}}`** harmonic operator ($40 \parallel 60 = 24$), keying `40 {{key:ENTER}} 60 {{key:x∥y}} 2 {{key:×}}` evaluates $2(v_1 \parallel v_2)$ in two taps to give $v_{\text{avg}} = 2 \times 24 = \mathbf{48.0\text{ mph}}$.
+
+### Right-Triangle Inradius via Corner-Square Folding
+Suppose a geometry problem asks for the inscribed circle radius (inradius) $r$ of a right triangle with legs $a = 8$, $b = 15$, and hypotenuse $c = 17$. The slow textbook approach computes the triangle's area $A = \frac{1}{2}ab = 60$ and semiperimeter $s = \frac{a+b+c}{2} = 20$ to divide $r = A/s = 3$. Picture instead the inscribed circle tucked into the $90^\circ$ corner of the right triangle: the two radii perpendicular to the legs form a little $r \times r$ square in the right-angle vertex, while the remaining segments of the legs ($a - r$ and $b - r$) fold onto the hypotenuse $c$ as equal tangent segments from the two acute vertices. Therefore $(a - r) + (b - r) = c$, which solves at a glance for the universal right-triangle inradius shortcut:
+
+$$r = \frac{a + b - c}{2}$$
+
+For the $8\text{–}15\text{–}17$ right triangle, $(8 + 15 - 17)/2 = 6/2 = \mathbf{3.00}$. Moreover, since the corner square has side $r$, it must fit inside the shorter leg, giving the instant mental sanity bound $r < \frac{1}{2}\min(a, b)$.
+
+### Trading Awkward Divisions by 5, 25, and 125 for Instant Doubling
+
+Why does dividing a multi-digit number by $5$, $25$, or $125$ in your head feel slow and error-prone, whereas multiplying by $2$, $4$, or $8$ feels effortless? Because human working memory hates long division with remainders, yet loves doubling.
+
+Observe that $5$, $25$, and $125$ are the exact powers of $5$ that pair with $2$, $4$, and $8$ to form powers of $10$:
+
+$$\frac{x}{5} = \frac{2x}{10}, \qquad \frac{x}{25} = \frac{4x}{100}, \qquad \frac{x}{125} = \frac{8x}{1,000}$$
+
+Whenever a problem asks you to divide by $5$, $25$, or $125$ (or multiply by $0.25$, $2.5$, $12.5$, or $25$), flip the division into a left-to-right doubling cascade and shift the decimal point:
+* **To divide $430 \div 5$:** Double $430 \to 860$ and shift one decimal place left $\implies \mathbf{86}$.
+* **To divide $1,700 \div 25$:** Quadruple $17 \times 4 = 68$ (double $17 \to 34 \to 68$) $\implies \mathbf{68}$.
+* **To multiply $36 \times 25$:** Divide $36$ by $4$ ($\to 9$) and append two zeros $\implies \mathbf{900}$.
+
+### Nicomachus's Sum-of-Cubes Miracle ($1^3 + 2^3 + \dots + n^3$)
+
+Once you know seven-year-old Gauss's staircase formula for the sum of the first $n$ integers—the $n$-th **triangular number** $T_n = 1 + 2 + \dots + n = \frac{n(n+1)}{2}$—you automatically own two more power-sum formulas that appear regularly in physics moments of inertia, Riemann integral limits, and math competitions:
+* **Sum of the First $n$ Squares:** $\sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6} = \frac{2n+1}{3}\,T_n$.
+* **Nicomachus of Gerasa's Sum-of-Cubes Theorem (c. 100 CE):** If you add up the first $n$ **cubes** ($1^3 + 2^3 + 3^3 + \dots + n^3$), the result is **the exact square of Gauss's triangular number $T_n$**:
+
+$$1^3 + 2^3 + 3^3 + \dots + n^3 = \left(1 + 2 + 3 + \dots + n\right)^2 = \left[\frac{n(n+1)}{2}\right]^2$$
+
+Check it for $n = 4$: $1 + 2 + 3 + 4 = 10$, and $1^3 + 2^3 + 3^3 + 4^3 = 1 + 8 + 27 + 64 = \mathbf{100 = 10^2}$. To sum the cubes from $1^3$ to $20^3$, never cube twenty numbers: simply compute $T_{20} = \frac{20 \times 21}{2} = 210$ and square it ($210^2 = \mathbf{44,100}$) in three seconds flat!
 
 ---
 
-## Rapid Order-of-Magnitude Bounding vs. Exact RPN Execution
+## Reading Giant Expressions from the Inside Out: Visual Chunking & Horner Rhythm
 
-What separates a championship calculator competitor or veteran test-stand engineer from a rushed novice is not merely raw typing speed—it is the habit of pairing every 4-second RPN stack evaluation with an instantaneous 2-second physical or geometric sanity bound before writing down the 3-significant-figure result:
-* **Harmonic & Parallel Combinations (`{{key:x∥y}}`):** Whenever you combine two positive impedances, spring compliances, or thin-lens conjugates via `{{key:x∥y}}`, the result $x \parallel y = \frac{xy}{x+y}$ must satisfy $\frac{1}{2}\min(x, y) \le x \parallel y < \min(x, y)$ (as proven by our **84 mm Fraction Towers** in Chapter 4). If `30 {{key:ENTER}} 60 {{key:x∥y}}` displays `20.0`, your eye immediately verifies $15 \le 20.0 < 30$.
-* **Right-Triangle Inradius & Corner-Square Fold:** For a right triangle with legs $a, b$ and hypotenuse $c = \sqrt{a^2 + b^2}$ (computed in one keystroke via `a {{key:ENTER}} b {{key:▸θ,r}}`), the inscribed circle radius is $r = \frac{a + b - c}{2}$ (`a {{key:ENTER}} b {{key:+}} a {{key:ENTER}} b {{key:▸θ,r}} {{key:-}} 2 {{key:÷}}`). Geometrically, docking a corner $r \times r$ square inside the right angle of our **Algebra Factoring Studio** L-Frame shows that the two tangent segments $(a - r)$ and $(b - r)$ fold onto the hypotenuse $c = (a - r) + (b - r)$, which guarantees $r < \frac{1}{2}\min(a, b)$.
-* **Continued Fractions & Radical Pyramids:** In a bottom-up continued fraction (`{{key:1/x}}` cascade), the leading integer plus the first reciprocal rung ($a_0 + 1/a_1$) brackets the final answer within $\pm \frac{1}{a_1^2}$. Checking that Register $X$ sits inside that tight physical window catches a mistyped digit before your pencil ever touches the answer line.
+Why does an algebraic expression like a four-story fraction or a nested radical pyramid look intimidating on a printed page? Because traditional mathematical typesetting is written from the outside in, whereas numerical evaluation happens **from the inside out**.
 
-### Algebraic Infix Entry vs. RPN Competition Velocity
+### Visual Chunking: Finding the Innermost Seed
+When a practiced problem-solver glances at a complex equation, their eye ignores the outer fraction bars and radical roofs and locks immediately onto the **innermost seed**:
+1. **Radical Pyramids ($\sqrt{17 + \sqrt{29 + \sqrt{83}}}$):** Instead of reading from left to right and counting nested square-root brackets, your eye starts at the right-hand core ($83$), takes its square root ($\approx 9.11$), adds $29$ ($\approx 38.11$), takes the root ($\approx 6.17$), adds $17$ ($\approx 23.17$), and takes the outer root ($\approx 4.81$). Every intermediate subtotal is a physical number you can sanity-check in real time.
+2. **Continued-Fraction Ladders ($3 + \frac{1}{7 + \frac{1}{15 + \frac{1}{1 + \frac{1}{292}}}}$):** A continued fraction is simply an inverted staircase of unit fractions. Starting at the ground floor ($292$) and alternating reciprocals with integer additions climbs all five stories without a single parenthesis or scratchpad note.
+3. **Single-Entry Polynomial & Mensuration Cores:** Revisit the truncated-cone (frustum) volume formula from the 1850 BCE Moscow Mathematical Papyrus that we derived in Chapter 6:
 
-Across ten canonical competition problem archetypes, inside-out postfix evaluation eliminates the nested parentheses and manual intermediate storage required by algebraic infix entry:
+   $$V = \frac{1}{3}\pi h\,(R^2 + Rr + r^2)$$
 
-| Problem / Scenario | Algebraic Infix Entry | SC-32 RPN Shortcut |
-|:---|:---|:---|
-| 1. Triple Parallel Resistor: $12\ \Omega \parallel 20\ \Omega \parallel 30\ \Omega$ | `(1/(1/12 + 1/20 + 1/30)) =`<br>→ 24 keys, 4 parens (18s) | `12 {{key:ENTER}} 20 {{key:x∥y}} 30 {{key:x∥y}}`<br>→ 6.0 $\Omega$ (3.5s) |
-| 2. Nested Continued Fraction: $1 / (2 + 1/(3 + 1/4))$ | `1 / ( 2 + 1 / ( 3 + 1 / 4 ) )`<br>→ 22 keys, brackets overflow | `4 {{key:1/x}} 3 {{key:+}} {{key:1/x}} 2 {{key:+}} {{key:1/x}}`<br>→ 0.433 |
-| 3. Radical Nested Pyramid: $\sqrt{17 + \sqrt{29 + \sqrt{83}}}$ | `√( 17 + √( 29 + √( 83 ) ) ) =`<br>→ 18 keys, high error rate | `83 {{key:√x}} 29 {{key:+}} {{key:√x}} 17 {{key:+}} {{key:√x}}`<br>→ 4.81 |
-| 4. 3D Euclidean Vector Norm: $\lVert(3, 4, 12)\rVert$ | `√( 3² + 4² + 12² ) =`<br>→ 14 keys, memory loss | `3 {{key:x²}} 4 {{key:x²}} {{key:+}} 12 {{key:x²}} {{key:+}} {{key:√x}}`<br>→ 13 |
-| 5. Thin Lens Conjugate: $f = 20\text{ cm}, d_o = 30\text{ cm}$ | `( 1 / 20 - 1 / 30 )⁻¹ =`<br>→ 16 keys, inversion trap | `20 {{key:1/x}} 30 {{key:1/x}} {{key:-}} {{key:1/x}}`<br>→ 60.0 cm |
-| 6. Sequential Markup & Tax: $\$250 + 15\% - 12\%$ | `250 × 1.15 × 0.88 =`<br>→ Loses subtotal visibility | `250 {{key:ENTER}} 15 {{key:%}} {{key:+}} 12 {{key:%}} {{key:-}}`<br>→ 253 |
-| 7. Quadratic Discriminant: $x^2 - 7x + 12 = 0$ | $b^2 - 4ac$ evaluated, then must retype 7 twice | `LASTX` or `{{key:POLY}}` ($D=0$ default):<br>`1 {{key:A}} 7 {{key:+/-}} {{key:B}} 12 {{key:C}} {{key:EXEC}}`<br>→ roots 3 & 4 |
-| 8. Modulo-60 Time: $3\text{h }45\text{m} + 2\text{h }35\text{m}$ | Must convert minutes to decimal and back | `3.45 {{key:▸HR}} 2.35 {{key:▸HR}} {{key:+}} {{key:▸HMS}}`<br>→ 6.20 (6h 20m) |
-| 9. Complex Impedance: $Z = 45 + j60\ \Omega$ | `√( 45² + 60² ) =`<br>→ Requires manual square sum | `45 {{key:ENTER}} 60 {{key:▸θ,r}}`<br>→ 75.0 $\Omega$ |
-| 10. Fast Temperature: Body Temp $37.0^\circ\text{C}$ | `( 37 × 9 / 5 ) + 32 =`<br>→ 14 keys | `37 {{key:ENTER}} 1.8 {{key:×}} 32 {{key:+}}`<br>→ 98.6°F |
+   Examine the symmetric quadratic core $R^2 + Rr + r^2$—and the closely related Law of Cosines core $a^2 + b^2 - 2ab\cos C$ or the depressed cubic $f(x) = x^3 - cx$ in a central-difference derivative $f'(x) \approx \frac{f(x+h) - f(x-h)}{2h}$. By chaining the calculator's automatic last-argument memory (`{{key:LASTX}}`) as a **Single-Entry Spine**, you can evaluate $R^2$, recall $R$ to multiply by $r$, and recall $r$ to form $r^2$ while typing each multi-digit dimension only once.
 
-### Keystroke Economy: Parenthesis Overhead vs. Postfix Fluency
+### Why Typing a Multi-Digit Number Only Once Saves Both Time and Accuracy
 
-Comparing stroke-by-stroke infix entry against postfix stack pipelines highlights the time saved when nested brackets are eliminated:
+Why do championship calculators obsess over **Single-Entry Spines**—refusing to type a number like $x = 3.847$ or $R = 8.5$ twice when evaluating $P(x) = 2x^3 - 5x^2 + 4x - 7$ or $V = \frac{1}{3}\pi h(R^2 + Rr + r^2)$?
 
-| Challenge / Metric | Conventional Algebraic Calculator (Infix) | Algebraic Strokes | SC-32 RPN Stack Method | SC-32 Strokes | Stack Advantage |
-| :--- | :--- | :---: | :--- | :---: | :--- |
-| **Nested Radical Pyramid**: $\sqrt{17 + \sqrt{29 + \sqrt{83}}}$ | Infix radical string: `√( 17 + √( 29 + √( 83 ) ) ) =` (18 strokes). Nested brackets overflow working memory; single syntax slip causes total abort. | 18 | **Inside-Out Radical Cascade**: Key innermost radicand first, take root, and add outward (10 strokes). Intermediate roots visible in real time. | 10 | **44% fewer keystrokes + zero syntax risk** |
-| **5-Tier Continued Fraction**: $\pi$ approximation | Deep division string: `3 + 1 / ( 7 + 1 / ( 15 + 1 / ( 1 + 1 / 292 ) ) ) =` (24 strokes). Precedence confusion; syntax error on unmatched closing parens. | 24 | **Bottom-Up Reciprocal Ascent (`{{key:1/x}}`)**: Start at 292, climb ladder with `{{key:1/x}}` (11 strokes). Real-time telemetry on every rung. | 11 | **54% fewer strokes + continuous telemetry** |
-| **Compound Geometric Quotient**: $\frac{148.6 + 92.4}{314.2 - 188.7}$ | Infix bracketed quotient: `( 148.6 + 92.4 ) / ( 314.2 - 188.7 ) =` (19 strokes). Mandatory numerator and denominator wrapping brackets. | 19 | **Inside-Out Stack Separation**: Sum numerator in place, subtract denominator, strike `{{key:÷}}` (12 strokes). Immediate quotient in Register $X$. | 12 | **37% fewer keystrokes + zero scratchpad storage** |
+Count the physical and cognitive costs of retyping a five-keystroke decimal number (`3 . 8 4 7`) three separate times inside a polynomial:
+1. **Ten Wasted Keystrokes:** Typing `3.847` three times costs $15\text{ keystrokes}$ instead of $5$, burning $4$ to $5\text{ seconds}$ of clock time on a single problem.
+2. **Tripling the Risk of a Transcription Typo:** Under timed pressure, every manual digit entry carries a small probability of a finger slip (typing `3.874` on the quadratic term after typing `3.847` on the cubic term). Worse yet, a small transposition error in a secondary term often produces an answer that still passes a rough order-of-magnitude check, making the error nearly invisible.
+3. **Zero-Cycle Register Cloning via `ENTER` and `LASTX`:** On a four-register stack, once you type a number into Register $X$, it is an exact IEEE-754 floating-point object. Tapping `{{key:ENTER}}` clones it onto Register $Y$ in a single keystroke; filling the stack via `{{key:ENTER}} {{key:ENTER}} {{key:ENTER}}` turns Register $T$ into an inexhaustible conveyor belt of exact copies of $x$ for Horner's scheme; and tapping `{{key:LASTX}}` after `{{key:x²}}` or `{{key:×}}` brings back the exact pre-operation operand with **zero digit keys pressed and zero chance of a transcription error**!
 
----
+### The Four Laws of Inside-Out Expression Unpeeling
 
-## Rapid Calculation Pacing, Error Recovery & Factory Baseline Reset
+Whenever you face an unfamiliar multi-story formula in physics, chemistry, finance, or engineering, apply four universal inside-out rules to find the optimal evaluation path in two seconds flat:
+* **Law 1 — Start at the Deepest Asymmetric Leaf:** Scan inside the innermost parentheses, radical roof, or exponent for the operation that requires two numbers (such as $a/b$ or $c + d$). Evaluate that seed first so every subsequent unary function (`LN`, `SIN`, `√x`, `eˣ`, `1/x`) fires in place on Register $X$ without lifting the stack.
+* **Law 2 — Never Press `ENTER` After a Completed Calculation:** Remember the Stack-Lift State Machine from Chapter 2: every arithmetic key (`+`, `-`, `×`, `÷`) and every function key (`√x`, `x²`, `LN`, `SIN`, `1/x`) automatically leaves **Stack Lift ENABLED**. Typing the next constant immediately pushes your finished subtotal safely up onto Register $Y$. Pressing `ENTER` after `+` or `√x` is not only a wasted keystroke—it duplicates your subtotal into both $Y$ and $X$ and wastes a stack register.
+* **Law 3 — Let `x⇄y` and `1/x` Replace Parentheses in Subtracted or Divided Denominators:** Suppose you have just finished computing a complicated denominator $D$ in Register $X$, and now need $\frac{N}{D}$ or $A - D$. You never need to clear the screen or store $D$ in memory. For a simple constant numerator $N$, tap `{{key:1/x}}` and multiply by $N$ ($N \times D^{-1}$); or type $N$ (which lifts $D$ to Register $Y$), tap `{{key:x⇄y}}` to put $N$ in $Y$ and $D$ in $X$, and press `{{key:÷}}` (or `{{key:-}}`).
+* **Law 4 — Park Finished Branches on Register $Z$ While You Build on $Y$ and $X$:** Any expression of the form $(A \text{ op } B) \pm (C \text{ op } D)$ needs only three registers ($X, Y, Z$). Compute $(A \text{ op } B)$ first; the moment you type $C$ and `ENTER` $D$, your first branch rides up to Register $Z$, and when $(C \text{ op } D)$ collapses into Register $X$, your first branch automatically drops from $Z$ to $Y$, ready for the final `+`, `-`, `×`, `÷`, or `x∥y`.
 
-In a 30-minute, 70-problem sprint, pacing is everything. Rather than treating all 70 problems as equal, allocate your clock budget progressively across the seven tiers of difficulty—sweeping the pure number-cruncher arithmetic and radical cascades in 15 to 18 seconds per problem so you bank time for the 3D mensuration and capstone physics problems ahead:
+### Breaking the Four-Register Ceiling: Unlimited Stack Mode (`INF`) and Proctored Exam Lockdown (`EXAM`)
+
+As we proved in Chapter 2, a classic four-register stack (`{{key:4-LVL}}`: $X, Y, Z, T$) evaluates $95\%$ of scientific and engineering expressions without touching a single memory variable, while top-of-stack $T$-replication turns `{{key:ENTER}} {{key:ENTER}} {{key:ENTER}}` into an endless conveyor belt of a constant $x$ for Horner's polynomial rhythm. Yet in high-speed calculation tournaments and proctored university examinations, two practical challenges regularly arise—and the SC-32 addresses both inside the **`{{key:FLAGS}}`** menu (Right Shift `{{key:↱}}` above `{{key:×}}`), which exposes **`STACK`** on `{{key:LFU3}}` and **`{{key:EXAM}}`** on `{{key:LFU4}}`:
+
+1. **When to Switch from `4-LVL` to `8-LVL` or Unlimited Stack Mode (`INF`):**  
+   Suppose a competition problem presents five or six parallel branches—such as a five-branch parallel resistor or spring network ($R_{\text{eq}} = R_1 \parallel R_2 \parallel R_3 \parallel R_4 \parallel R_5$), a five-component gas mixture, or a four-mass rotational inertia sum $\sum_{k=1}^4 m_k r_k^2$ where you want to compute and inspect all four individual $m_k r_k^2$ terms on the stack before adding them—or suppose you prefer to read five or six given parameters off the problem sheet from left to right, pushing all of them onto the stack in one uninterrupted pass before collapsing them in an operator cascade (`{{key:x∥y}} {{key:x∥y}} {{key:x∥y}} {{key:x∥y}}` or `{{key:+}} {{key:+}} {{key:+}} {{key:+}}`).  
+   On a classic four-level stack (`{{key:4-LVL}}`), pushing a fifth number silently shoves your first number off the top of Register $T$ into oblivion, and every subsequent dyadic drop duplicates whatever happens to sit in Register $T$ downward into $Z$ and $Y$. Pausing to store intermediate values in lettered registers (`{{key:STO}} A`, `{{key:RCL}} A`) costs precious seconds and forces your fingers off the numeric keypad.  
+   By pressing `{{key:FLAGS}}` (Right Shift `{{key:↱}}` above `{{key:×}}`), tapping `STACK` (`{{key:LFU3}}` to open the stack-depth bar `2-LVL | 4-LVL | 8-LVL | INF | VIEW`), and selecting **`{{key:8-LVL}}`** (`{{key:LFU2}}`, 8 registers: $X, Y, Z, T, R_5 \dots R_8$) or **`{{key:INF}}`** (`{{key:LFU3}}`, an unbounded **999-level Last-In, First-Out heap stack**, which automatically sets System Flag 5), you remove the four-register ceiling altogether:
+   * **Zero Top-of-Stack Loss:** In `{{key:INF}}` mode, values pushed above Register $T$ ride safely into Levels $5, 6, \dots, 999$. You can push five, ten, or twenty intermediate operands onto the stack without ever losing an earlier sub-result off the top.
+   * **True LIFO Drop Without $T$-Smearing:** Every dyadic operation (`+`, `-`, `×`, `÷`, `x∥y`, `yˣ`) pulls waiting values from Levels $5, 6, \dots$ cleanly back down into Register $T \to Z \to Y \to X$ without duplicating the top element, while **`{{key:VIEW}}`** (`{{key:LFU4}}`, System Flag 4) toggles the multi-line full-stack view when you want to inspect multiple levels simultaneously. *(Switch back to `{{key:4-LVL}}` whenever you want classic top-of-stack $T$-replication for Horner's scheme!)*
+
+2. **Proctored Competition Compliance via One-Tap Exam Mode (`EXAM`):**  
+   Interscholastic speed-calculation championships, collegiate engineering bowls, and professional licensure boards strictly prohibit pre-stored symbolic equations, programmed routines, and pre-populated alphanumeric registers. Rather than forcing a tournament proctor to audit 26 lettered variables ($A\text{--}Z$) and scroll through the `{{key:EQN}}` library on every competitor's desk, pressing **`{{key:FLAGS}}`** (Right Shift `{{key:↱}}` above `{{key:×}}`) and tapping **`{{key:EXAM}}`** (`{{key:LFU4}}`) engages hardware-enforced **Exam Lockdown Mode**:
+   * **Authoritative Irreversible Memory Purge:** Activating `{{key:EXAM}}` immediately executes a complete `CLALL` memory wipe—zeroing all stack levels, `LASTX`, all 6 statistical accumulators ($\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n$) and raw `DATA` points, all 26 named variables ($A\text{--}Z$), the index and indirect registers $i$ and $(i)$, all five `{{key:TVM}}` financial registers, and every equation stored in the `{{key:EQN}}` library, while resetting the number base to `DEC` and display format to `ALL`.
+   * **Persistent `EXAM` Annunciator & Tutorial Suppression:** While active, the top status bar illuminates a continuous **`EXAM`** annunciator badge (preserved across sleep/wake cycles in continuous memory) and suppresses interactive tutorial overlays, giving proctors an unmistakable visual confirmation of compliance from across the aisle.
+   * **One-Way Security with Full Live Speed:** Toggling `{{key:EXAM}}` off after the competition extinguishes the `EXAM` badge without ever restoring pre-exam memory—making it impossible to hide and recover pre-stored equations mid-session—while leaving 100% of the live RPN stack (`{{key:4-LVL}}`, `{{key:8-LVL}}`, and `{{key:INF}}`), `{{key:LASTX}}`, scratch registers created during the test, `{{key:π}}`, and numerical solvers (`{{key:SOLVE}}`, `{{key:∫}}`, `{{key:POLY}}`, `{{key:TVM}}`) at your fingertips.
+
+### Pacing Discipline for the 30-Minute, 70-Problem Sprint
+Consider the classic collegiate and interscholastic engineering calculation sprint: **70 problems in 30 minutes** ($1,800\text{ seconds}$), spanning pure number sense, 2D and 3D mensuration, coordinate geometry, and applied STEM word problems, all graded to **three significant figures** (or $\pm 10^{-3}$). Simple division reveals the relentless clock budget: you have an average of just **25.7 seconds per problem** to read the prompt, set up the mathematics, execute the keystrokes, verify the Fermi bound, and write down the rounded answer.
+
+Rather than treating all 70 problems as equal, allocate your clock budget progressively across the seven tiers of difficulty—sweeping the pure number-cruncher arithmetic and radical cascades in 15 to 18 seconds per problem so you bank time for the 3D mensuration and capstone physics problems ahead:
 
 | Problem Tier | Problem Types | Target Accuracy | Time Budget | Pace / Problem |
 |:---|:---|:---|:---|:---|
@@ -139,193 +189,227 @@ In a 30-minute, 70-problem sprint, pacing is everything. Rather than treating al
 | Tier 6 | Applied modeling, calculus | 80% (8 / 10) | 5.5 min | 33 sec |
 | Tier 7 | Capstone STEM & astronomy | 70% (7 / 10) | 5.5 min | 33 sec |
 
+Top championship competitors pair this time budget with the **Two-Pass Sweep Strategy**. On **Pass 1**, sweep through the entire booklet from front to back, solving every pure numerical evaluation, radical pyramid, and one-line formula in 12 to 15 seconds while circling longer diagram mensuration and multi-sentence word problems without breaking stride. On **Pass 2**, with 35 to 40 fast points already banked on your answer sheet, return to harvest the circled geometry and physics problems with calm precision and zero clock panic.
+
+With Fermi's geometric-mean bounding in your head, Gauss's factoring symmetries in your eye, and inside-out visual chunking in your fingers, let us step up to the SC-32 stack and execute the full lightning-calculation repertoire at sprint speed.
+
+---
+
+## On the Stack: Lightning Calculation & Championship Sprint Workbench
+
+{{res:sc32_uil_radical:screenshot|High-speed inside-out evaluation of a nested radical pyramid sqrt(11 + sqrt(21 + sqrt(16))) = 4 on the StackCalc SC-32, producing the exact integer result 4 with zero parentheses.}}
+
+### Pre-Sprint Habits, Proctored `EXAM` Lockdown & Stack Depth Selection
+
 Four operational habits keep your pace steady under clock pressure:
 1. **Three-Significant-Figure Discipline & The `DEG` Check:** Record answers to exactly three significant figures (`14.2`, `0.0482`, `1.48E5`, or `3.14`), using `{{key:E}}` for scientific notation inputs, and always verify that the `DEG` annunciator is active before tackling geometry and trigonometry pages (`{{key:MODES}} {{key:DEG}}`).
-2. **Instant Error Recovery via `{{key:LASTX}}`:** If you accidentally press `{{key:+}}` instead of `{{key:-}}` on step 8 of a 10-step calculation, never clear the stack and start over! Because `LASTX` holds the operand that was in Register $X$ just before the mistake, pressing `{{key:LASTX}} {{key:-}}` undoes the addition and restores your prior subtotal, and a second `{{key:LASTX}} {{key:-}}` performs the intended subtraction.
-3. **The 35-Second Bailout & Scratch-Paper Hygiene:** If any word problem or diagram stalls for more than 35 seconds, circle it and move on immediately so you never sacrifice three 15-second problems for one 90-second bottleneck. Keep scratch paper directly below the calculator for sketching triangles or noting a variable, never for writing down intermediate numbers that already live on the 4-level stack. (For rapid mensuration formulas on spheres, frustums, tori, and annuities, see **[Appendix D: Sections 7, 8 & 9](appendix-d-constants-and-equations.md)**.)
-4. **One-Second Exam Baseline Reset (`ALL MEMORY CLEARED`):** Before a proctored exam begins, hold down **`{{key:C}}`** (Clear/ON) while powering on, or press `{{key:CLEAR}} {{key:CLALL}}`. The screen flashes `ALL MEMORY CLEARED`, zeroing all four stack registers ($X, Y, Z, T$), `LASTX`, all 6 statistical accumulators ($\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n$), all 26 named variables ($A \dots Z$) plus indirect registers $i$ and $(i)$, and all `{{key:EQN}}` programs while resetting the angular mode to `DEG` and display mode to `ALL`.
+2. **Instant Error Recovery via `{{key:LASTX}}`:** If you accidentally press `{{key:+}}` instead of `{{key:-}}` on step 8 of a 10-step calculation, never clear the stack and start over. Because `LASTX` holds the operand that was in Register $X$ just before the mistake, pressing `{{key:LASTX}} {{key:-}}` undoes the addition and restores your prior subtotal, and a second `{{key:LASTX}} {{key:-}}` performs the intended subtraction.
+3. **The 35-Second Bailout & Scratch-Paper Hygiene:** If any word problem or diagram stalls for more than 35 seconds, circle it and move on immediately so you never sacrifice three 15-second problems for one 90-second bottleneck. Keep scratch paper directly below the calculator for sketching triangles or noting a variable, never for writing down intermediate numbers that already live on the stack. (For rapid mensuration formulas on spheres, frustums, tori, and annuities, see **[Appendix D: Sections 7, 8 & 9](appendix-d-constants-and-equations.md)**.)
+4. **Pre-Flight `EXAM` Lockdown & Stack Depth (`4-LVL` vs. `INF`):** Before the signal to begin, press `{{key:FLAGS}}` (Right Shift `{{key:↱}}` above `{{key:×}}`) and tap **`{{key:EXAM}}`** (`{{key:LFU4}}`) to perform a proctor-verified `CLALL` memory wipe and illuminate the `EXAM` badge, then tap `STACK` (`{{key:LFU3}}`) to select either **`{{key:4-LVL}}`** (for Horner $T$-replication) or **`{{key:INF}}`** (for 5+ branch LIFO cascades).
 
-{{blocks:tpu_travel_pouch|StackCalc SC-32 Protective Travel Pouch and Operational Setup}}
-*Figure 14.2: High-speed calculation configuration: the StackCalc SC-32 in its protective TPU travel pouch, prepared for field or examination use with baseline memory reset.*
+### Rational Number Crunchers, Reciprocals & Compound Growth
 
----
+Before writing down any result, pair your RPN stack evaluation with a fast mental bound. For example, with `{{key:x∥y}}`, if `30 {{key:ENTER}} 60 {{key:x∥y}}` displays `20.0`, your eye immediately verifies $15 \le 20.0 < 30$; and for a right triangle with legs $a, b$, computing the hypotenuse in one keystroke via `a {{key:ENTER}} b {{key:▸θ,r}}` lets you check $r = \frac{a+b-c}{2} < \frac{1}{2}\min(a,b)$.
 
-## High-Speed Estimation and Exact Stack Execution Under Time Pressure
-
-The explorations that follow simulate a full 30-minute engineering computation sprint, progressing from opening-page rational arithmetic and classical mensuration to orbital astrodynamics, thermal relaxation, and championship tie-breaker shortcuts. Each example sets up the mathematical or physical intuition first, then demonstrates the optimal RPN keystroke path alongside its 3-significant-figure competition target.
-
----
-
-### Pure Number Crunchers: Rational Ladders, Powers & Vector Norms
-
-The opening pages of a timed calculation exam test pure stack fluency: evaluating quotients of sums, reciprocal differences, circular segments, and three-dimensional solids without wasting a single stroke on parentheses or scratch-pad transcriptions. On an algebraic calculator, a simple compound algebraic fraction—a ratio of two sums such as
+Let's see how mental bounding and automatic stack lift work together on the opening number-cruncher problems of a timed sprint. Consider the compound algebraic fraction
 
 $$Q = \frac{148.6 + 92.4}{314.2 - 188.7}$$
 
-requires four parentheses (`((148.6 + 92.4) / (314.2 - 188.7))`), and a single omitted bracket quietly alters the order of operations by adding $148.6$ to $92.4 / 314.2$. On the SC-32, automatic stack lift acts as a natural fraction bar: once `{{key:+}}` finishes the numerator ($241.0$), keying the denominator's first number (`314.2`) automatically lifts $241.0$ into Register $Y$, and pressing `{{key:ENTER}}` lifts it again into Register $Z$ while the denominator difference ($125.5$) forms in $X$ and $Y$. When `{{key:-}}` collapses the denominator into $X$, the numerator drops right back into $Y$, so keying `{{res:sc32_14_uil_contest_playbook_seq_11:keys}}` delivers **`{{res:sc32_14_uil_contest_playbook_seq_11:value}}`** (3-sig-fig target: **`1.92`**, full: `1.9203187`):
+Mentally, the numerator is $\approx 150 + 90 = 240$ and the denominator is $\approx 314 - 189 = 125$, so the quotient must lie just under $240 / 120 = 2.0$. On the SC-32, automatic stack lift acts as a natural fraction bar: once `{{key:+}}` finishes the numerator ($241.0$), keying the denominator's first number (`314.2`) automatically lifts $241.0$ into Register $Y$, and pressing `{{key:ENTER}}` lifts it again into Register $Z$ while the denominator difference ($125.5$) forms in $X$ and $Y$. When `{{key:-}}` collapses the denominator into $X$, the numerator drops right back into $Y$, so keying `{{res:sc32_14_uil_contest_playbook_seq_11:keys}}` delivers **`{{res:sc32_14_uil_contest_playbook_seq_11:value}}`** (3-sig-fig target: **`1.92`**, full: `1.9203187`):
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `148.6 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $148.6000$ | $148.6000$ | Lift first numerator term to $Y$ |
-| 2 | `92.4 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $241.0000$ | Numerator sum $148.6 + 92.4 = 241.0$ |
-| 3 | `314.2 {{key:ENTER}}` | $0.0000$ | $241.0000$ | $314.2000$ | $314.2000$ | Auto-lift numerator to $Z$, enter minuend |
-| 4 | `188.7 {{key:-}}` | $0.0000$ | $0.0000$ | $241.0000$ | $125.5000$ | Denominator difference $314.2 - 188.7 = 125.5$ |
-| 5 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **1.9203** | Quotient $241.0 / 125.5 = 1.920319$ (`1.92`) |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `148.6 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $148.6000$ | $148.6000$ | Lift first numerator term to $Y$ |
+| `92.4 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $241.0000$ | Numerator sum $148.6 + 92.4 = 241.0$ |
+| `314.2 {{key:ENTER}}` | $0.0000$ | $241.0000$ | $314.2000$ | $314.2000$ | Auto-lift numerator to $Z$, enter minuend |
+| `188.7 {{key:-}}` | $0.0000$ | $0.0000$ | $241.0000$ | $125.5000$ | Denominator difference $314.2 - 188.7 = 125.5$ |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **1.9203** | Quotient $241.0 / 125.5 = 1.920319$ (`1.92`) |
 
-That same automatic stack lift accelerates differences of reciprocals, which appear constantly on timed sprints whenever you resolve the net optical power of two thin lenses or subtract conductances in a bridge circuit:
+That same automatic stack lift accelerates differences of reciprocals:
 
 $$Q = \frac{1}{0.0482} - \frac{1}{0.0895}$$
 
-Because every unary function on the SC-32—including `{{key:1/x}}`—terminates digit entry and arms stack lift, this reciprocal difference requires **zero `{{key:ENTER}}` strokes**. Keying `{{res:sc32_14_uil_contest_playbook_seq_12:keys}}` computes the first reciprocal ($20.7469$) and arms the stack, auto-lifts $20.7469$ into Register $Y$ when `.0895` is typed, inverts $0.0895$ in place ($11.1722$), and subtracts via `{{key:-}}` to deliver **`{{res:sc32_14_uil_contest_playbook_seq_12:value}}`** ($Q = \mathbf{9.5747}$, 3-sig-fig target: **`9.58`**, full: `9.574688`) in five operations.
+Mentally, $\frac{1}{0.05} - \frac{1}{0.09} \approx 20 - 11 = 9$. Because every unary function on the SC-32—including `{{key:1/x}}`—terminates digit entry and arms stack lift, this reciprocal difference requires **zero `{{key:ENTER}}` strokes**. Keying `{{res:sc32_14_uil_contest_playbook_seq_12:keys}}` computes the first reciprocal ($20.7469$) and arms the stack, auto-lifts $20.7469$ into Register $Y$ when `.0895` is typed, inverts $0.0895$ in place ($11.1732$), and subtracts via `{{key:-}}` to deliver **`{{res:sc32_14_uil_contest_playbook_seq_12:value}}`** ($Q = 20.7469 - 11.1732 = \mathbf{9.5737}$, 3-sig-fig target: **`9.57`**, full: `9.573704`) in five operations.
 
-Moving from rational arithmetic to plane mensuration, imagine liquid filling a horizontal cylindrical pipe of radius $r = 12.0\text{ cm}$ until the wetted perimeter subtends a central angle of $\theta = 65.0^\circ$. The cross-sectional wetted area is a circular segment—the area of the pie-slice sector $\frac{1}{2}r^2\theta_{\text{rad}}$ minus the area of the isosceles triangle $\frac{1}{2}r^2\sin\theta$:
+In analytic geometry, keeping signed coordinate differences organized on the stack prevents sign flips when computing the secant slope between two survey benchmarks $(x_1, y_1) = (12.4, 8.5)$ and $(x_2, y_2) = (34.8, -14.2)$:
+
+$$m = \frac{y_2 - y_1}{x_2 - x_1}$$
+
+Evaluating the vertical rise $\Delta y = -14.2 - 8.5 = -22.7$ first and then computing the horizontal run $\Delta x = 34.8 - 12.4 = 22.4$ automatically lifts $\Delta y$ into Register $Y$ so `{{key:÷}}` yields the slope directly: keying `{{res:sc32_14_uil_contest_playbook_seq_23:keys}}` subtracts the ordinates ($\Delta y = -22.7000$), forms the abscissa run ($\Delta x = 22.4000$ in $X$ while $\Delta y$ waits in $Y$), and divides to return **`{{res:sc32_14_uil_contest_playbook_seq_23:value}}`** ($m = \mathbf{-1.0134}$, 3-sig-fig target: **`-1.01`**, full mantissa: `-1.013393`).
+
+For multi-period exponential growth—a principal of $\$5,000.00$ invested in a college endowment fund earning $6.5\%$ annual interest compounded annually for $n = 18\text{ years}$ ($FV = P(1+r)^n$, bounded near $\$15,000$ by our Rule-of-72 estimate)—forming the 1-plus-rate growth factor mentally ($1 + 0.065 = 1.065$), raising it to the 18th power, and scaling by principal via `{{res:sc32_14_uil_contest_playbook_seq_44:keys}}` determines the terminal balance **`{{res:sc32_14_uil_contest_playbook_seq_44:value}}`** ($FV = \mathbf{\$15,533.27}$, 3-sig-fig target: **`1.55E4`** / **`1.55 × 10⁴`**) in three operations.
+
+### Radical Pyramid Cascades & Bottom-Up Continued Fractions
+
+To evaluate the three-story nested radical pyramid
+
+$$Q = \sqrt{17 + \sqrt{29 + \sqrt{83}}}$$
+
+from the inside out, start at the deepest radicand ($83$), take its square root (`{{key:√x}}`), add the next layer outward ($+29$), take `{{key:√x}}`, add $17$, and take `{{key:√x}}`. Because unary `{{key:√x}}` and dyadic `{{key:+}}` leave stack lift enabled, keying `{{res:sc32_14_uil_contest_playbook_seq_01:keys}}` evaluates this entire three-story radical pyramid with **zero `{{key:ENTER}}` keystrokes** (10 keys total, 3.8 seconds) to yield **`{{res:sc32_14_uil_contest_playbook_seq_01:value}}`** (3-sig-fig target: **`4.81`**, full mantissa `4.813872126`):
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `83 {{key:√x}}` | 0.00 | 0.00 | 0.00 | 9.11043358 | Evaluate innermost radical $\sqrt{83} = 9.110434$ |
+| `29 {{key:+}}` | 0.00 | 0.00 | 0.00 | 38.1104336 | Add middle radicand $29 + 9.110434 = 38.110434$ |
+| `{{key:√x}}` | 0.00 | 0.00 | 0.00 | 6.17336485 | Evaluate middle radical $\sqrt{38.110434} = 6.173365$ |
+| `17 {{key:+}}` | 0.00 | 0.00 | 0.00 | 23.1733649 | Add outer radicand $17 + 6.173365 = 23.173365$ |
+| `{{key:√x}}` | 0.00 | 0.00 | 0.00 | 4.81387213 | Evaluate outer radical $Q = 4.813872$ |
+
+Now consider the 5-tier simple continued fraction convergent for $\pi$ ($355/113$ extended by $292$):
+
+$$Q = 3 + \frac{1}{7 + \frac{1}{15 + \frac{1}{1 + \frac{1}{292}}}}$$
+
+Start at the deepest denominator ($292$), flip it with `{{key:1/x}}`, add the next integer up ($+1$), flip with `{{key:1/x}}`, add $15$, flip with `{{key:1/x}}`, add $7$, flip with `{{key:1/x}}`, and add $3$. Because `{{key:1/x}}` and `{{key:+}}` re-enable stack lift automatically, keying `{{res:sc32_14_uil_contest_playbook_seq_02:keys}}` climbs all five stories in **11 keystrokes with zero `{{key:ENTER}}` presses and zero parentheses** (under 4.5 seconds) to yield **`{{res:sc32_14_uil_contest_playbook_seq_02:value}}`** (3-sig-fig target: **`3.14`**):
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `292 {{key:1/x}}` | 0.00 | 0.00 | 0.00 | 0.00342466 | Invert bottom denominator $1/292 = 0.003425$ |
+| `1 {{key:+}}` | 0.00 | 0.00 | 0.00 | 1.00342466 | Add fourth-level integer $1 + 1/292 = 1.003425$ |
+| `{{key:1/x}}` | 0.00 | 0.00 | 0.00 | 0.99658703 | Invert fourth-level denominator $1 / 1.003425 = 0.996587$ |
+| `15 {{key:+}}` | 0.00 | 0.00 | 0.00 | 15.9965870 | Add third-level integer $15 + 0.996587 = 15.996587$ |
+| `{{key:1/x}}` | 0.00 | 0.00 | 0.00 | 0.06251333 | Invert third-level denominator $1 / 15.996587 = 0.062513$ |
+| `7 {{key:+}}` | 0.00 | 0.00 | 0.00 | 7.06251333 | Add second-level integer $7 + 0.062513 = 7.062513$ |
+| `{{key:1/x}}` | 0.00 | 0.00 | 0.00 | 0.14159265 | Invert second-level denominator $1 / 7.062513 = 0.141593$ |
+| `3 {{key:+}}` | 0.00 | 0.00 | 0.00 | 3.14159265 | Add leading integer $3 + 0.141593 = 3.141593$ ($\approx \pi$) |
+
+### Inside-Out Mensuration & Multistage Physics Across Twenty Orders of Magnitude
+
+In plane mensuration, suppose liquid fills a horizontal cylindrical pipe of radius $r = 12.0\text{ cm}$ until the wetted perimeter subtends a central angle of $\theta = 65.0^\circ$. The cross-sectional wetted area is a circular segment—the area of the pie-slice sector $\frac{1}{2}r^2\theta_{\text{rad}}$ minus the area of the isosceles triangle $\frac{1}{2}r^2\sin\theta$:
 
 $$A = \frac{1}{2} r^2 \left( \frac{\pi \theta}{180} - \sin\theta \right)$$
 
 Notice the dimensional trap inside the parentheses: the first term requires $\theta$ in **radians** ($\pi\theta/180$), whereas $\sin\theta$ evaluates the degree angle directly in `{{key:DEG}}` mode. Evaluating the radian angle first and then pressing `65 {{key:SIN}}` lifts the radian arc into Register $Y$ so `{{key:-}}` immediately forms the segment factor $(\theta_{\text{rad}} - \sin\theta)$. In `{{key:DEG}}` mode, keying `{{res:sc32_14_uil_contest_playbook_seq_15:keys}}` yields **`{{res:sc32_14_uil_contest_playbook_seq_15:value}}`** (3-sig-fig target: **`16.4`**, full: `16.42725`):
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `65 {{key:π}} {{key:×}} 180 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.1345$ | Radian arc angle $\theta_{\text{rad}} = 65\pi / 180 = 1.134464$ |
-| 2 | `65 {{key:SIN}}` | $0.0000$ | $0.0000$ | $1.1345$ | $0.9063$ | $\sin(65^\circ) = 0.906308$; $\theta_{\text{rad}}$ lifts to $Y$ |
-| 3 | `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2282$ | Segment factor $\theta_{\text{rad}} - \sin\theta = 0.228156$ |
-| 4 | `12 {{key:x²}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $32.8545$ | Scale by $r^2 = 144$ |
-| 5 | `2 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **16.4272** | Circular segment area $A = 16.4272\text{ cm}^2$ (`16.4`) |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `65 {{key:π}} {{key:×}} 180 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.1345$ | Radian arc angle $\theta_{\text{rad}} = 65\pi / 180 = 1.134464$ |
+| `65 {{key:SIN}}` | $0.0000$ | $0.0000$ | $1.1345$ | $0.9063$ | $\sin(65^\circ) = 0.906308$; $\theta_{\text{rad}}$ lifts to $Y$ |
+| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2282$ | Segment factor $\theta_{\text{rad}} - \sin\theta = 0.228156$ |
+| `12 {{key:x²}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $32.8545$ | Scale by $r^2 = 144$ |
+| `2 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **16.4272** | Circular segment area $A = 16.4272\text{ cm}^2$ (`16.4`) |
 
 *(**`LASTX` Single-Entry Angle Shortcut:** Keying `65 {{key:SIN}} {{key:LASTX}} {{key:π}} {{key:×}} 180 {{key:÷}} {{key:x⇄y}} {{key:-}} 12 {{key:x²}} {{key:×}} 2 {{key:÷}}` recovers $\theta = 65^\circ$ from `LASTX` immediately after `{{key:SIN}}` so the angle is typed only once.)*
 
-Stepping into three-dimensional solid geometry, around 1850 BCE an Egyptian scribe writing Problem 14 of the Moscow Mathematical Papyrus recorded one of antiquity's crowning achievements in mensuration: the exact volume of a truncated pyramid or right circular cone (frustum) is one-third the height times the sum of the bottom area, the top area, and their geometric mean. For a conical hopper or rocket nozzle fairing of height $h = 14.0\text{ cm}$, lower radius $R = 8.5\text{ cm}$, and upper radius $r = 4.2\text{ cm}$, the frustum volume is governed by:
-
-$$V = \frac{1}{3} \pi h (R^2 + R r + r^2)$$
-
-Evaluating the quadratic core $R^2 + Rr + r^2$ from left to right on the stack via `{{res:sc32_14_uil_contest_playbook_seq_17:keys}}`—squaring `8.5 {{key:x²}}` ($R^2 = 72.25$), accumulating the cross-term and top base `8.5 {{key:ENTER}} 4.2 {{key:×}} {{key:+}} 4.2 {{key:x²}} {{key:+}}` ($125.59$), and scaling by `14 {{key:×}} 3 {{key:÷}} {{key:π}} {{key:×}}`—yields **`{{res:sc32_14_uil_contest_playbook_seq_17:value}}`** ($V = \mathbf{1,841.25\text{ cm}^3}$, 3-sig-fig target: **`1.84E3`**). Notice that you can also chain `{{key:LASTX}}` (`8.5 {{key:x²}} {{key:LASTX}} 4.2 {{key:×}} {{key:LASTX}} {{key:x²}} {{key:+}} {{key:+}}`), which squares `8.5` (saving `8.5` in `LASTX`), multiplies `{{key:LASTX}}` by `4.2` (saving `4.2` in `LASTX`), and squares `{{key:LASTX}}`—evaluating $R^2 + Rr + r^2 = 125.59$ with `8.5` and `4.2` each typed only once:
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `8.5 {{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $72.2500$ | Lower base square $R^2 = 72.25$ |
-| 2 | `8.5 {{key:ENTER}} 4.2 {{key:×}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $107.9500$ | Add cross-product $Rr = 35.70$ |
-| 3 | `4.2 {{key:x²}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $125.5900$ | Add upper base square $r^2 = 17.64$ |
-| 4 | `14 {{key:×}} 3 {{key:÷}} {{key:π}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **1841.2485** | Scale by $\pi h / 3 \implies 1,841.25\text{ cm}^3$ (`1.84E3`) |
-
-A closely related quadratic pattern governs oblique triangle trigonometry. When a surveyor measures two sides of a triangular plot ($a = 18.5\text{ m}$ and $b = 24.2\text{ m}$) and the included angle between them ($C = 52.0^\circ$), the Pythagorean theorem generalizes via the Law of Cosines by subtracting the projection correction $2ab\cos C$:
-
-$$c = \sqrt{a^2 + b^2 - 2ab \cos C}$$
-
-On the stack in `{{key:DEG}}` mode, accumulating $a^2 + b^2$ first leaves that sum parked in Register $Y$ while you build $2ab\cos C$ in Register $X$, so keying `{{res:sc32_14_uil_contest_playbook_seq_19:keys}}` finishes the triangle in a single pass to yield **`{{res:sc32_14_uil_contest_playbook_seq_19:value}}`** (3-sig-fig target: **`19.4`**, full: `19.4068`):
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `18.5 {{key:x²}} 24.2 {{key:x²}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $927.8900$ | Sum of squares $a^2 + b^2 = 927.89$ |
-| 2 | `2 {{key:ENTER}} 18.5 {{key:×}} 24.2 {{key:×}}` | $0.0000$ | $0.0000$ | $927.8900$ | $895.4000$ | Double product $2ab = 895.40$ in $X$ |
-| 3 | `52 {{key:COS}} {{key:×}}` | $0.0000$ | $0.0000$ | $927.8900$ | $551.2636$ | Cosine term $2ab\cos(52^\circ) = 551.2636$ |
-| 4 | `{{key:-}} {{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **19.4069** | Opposite side $c = 19.4069$ (`19.4`) |
-
-*(**`LASTX` Single-Entry Law of Cosines:** Just like the frustum identity above, keying `18.5 {{key:x²}} {{key:LASTX}} 24.2 {{key:×}} {{key:LASTX}} {{key:x²}} {{key:x⇄y}} 2 {{key:×}} 52 {{key:COS}} {{key:×}} {{key:-}} {{key:+}} {{key:√x}}` uses `{{key:LASTX}}` to chain $a^2$, $ab$, and $b^2$ so neither `18.5` nor `24.2` is typed twice.)*
-
----
-
-### Coordinate Geometry, Mensuration & Calculus Sprints
-
-The middle pages of a speed test transition from pure arithmetic into analytic geometry and numerical calculus—where keeping signed coordinate differences and perturbed abscissas organized on the stack prevents sign flips and transcription errors. Suppose two survey benchmarks lie at coordinates $(x_1, y_1) = (12.4, 8.5)$ and $(x_2, y_2) = (34.8, -14.2)$, and we want the secant slope connecting them:
-
-$$m = \frac{y_2 - y_1}{x_2 - x_1}$$
-
-Just as in the compound algebraic fraction above, evaluating the vertical rise $\Delta y = -14.2 - 8.5 = -22.7$ first and then computing the horizontal run $\Delta x = 34.8 - 12.4 = 22.4$ automatically lifts $\Delta y$ into Register $Y$ so `{{key:÷}}` yields the slope directly: keying `{{res:sc32_14_uil_contest_playbook_seq_23:keys}}` subtracts the ordinates ($\Delta y = -22.7000$), forms the abscissa run ($\Delta x = 22.4000$ in $X$ while $\Delta y$ waits in $Y$), and divides to return **`{{res:sc32_14_uil_contest_playbook_seq_23:value}}`** ($m = \mathbf{-1.0134}$, 3-sig-fig target: **`-1.01`**, full mantissa: `-1.013393`).
-
-That exact secant-slope pattern becomes a lightning-fast derivative engine on calculus sprint problems. When a timed contest problem asks for the instantaneous derivative of a function like $f(x) = x^3 - 2x$ at $x = 3.0$, you don't even need symbolic differentiation rules if you use a symmetric central difference with step $h = 0.001$:
-
-$$f'(3) \approx \frac{(3.001)^3 - 2(3.001) - ((2.999)^3 - 2(2.999))}{0.002} = \mathbf{25.000}$$
-
-Why straddle $x = 3.0$ symmetrically at $3.001$ and $2.999$ instead of evaluating a one-sided step at $3.001$ and $3.000$? In the Taylor expansions of $f(x+h)$ and $f(x-h)$, the even-order quadratic error terms $+ \frac{1}{2}f''(x)h^2$ and $+ \frac{1}{2}f''(x)(-h)^2$ have identical signs and cancel completely upon subtraction! Only the tiny cubic remainder $\frac{1}{6}f'''(x)h^2 = 10^{-6}$ survives, yielding five-digit derivative accuracy from a single secant slope. Keying `{{res:sc32_14_uil_contest_playbook_seq_28:keys}}` evaluates the forward node ($f(3.001) = 21.025009$), evaluates the backward node ($f(2.999) = 20.975009$ in $X$ while $f(3.001)$ waits in $Y$), and divides their difference by $2h = 0.002$ to yield **`{{res:sc32_14_uil_contest_playbook_seq_28:value}}`** ($f'(3) \approx \mathbf{25.000}$, 3-sig-fig target: **`25.0`**). Better yet, never re-type a 4-digit perturbed abscissa like `3.001` or `2.999` during a timed sprint: in the double-`{{key:LASTX}}` cascade `3.001 {{key:x²}} {{key:LASTX}} {{key:×}} {{key:LASTX}} 2 {{key:×}} {{key:-}} 2.999 {{key:x²}} {{key:LASTX}} {{key:×}} {{key:LASTX}} 2 {{key:×}} {{key:-}} {{key:-}} .002 {{key:÷}}`, squaring `3.001 {{key:x²}}` saves `3.001` in `LASTX`, multiplying by `{{key:LASTX}} {{key:×}}` forms $3.001^3$ while keeping `3.001` in `LASTX` for a second recall (`{{key:LASTX}} 2 {{key:×}} {{key:-}}`), entering `3.001` and `2.999` only once each with zero `{{key:ENTER}}` keystrokes.
-
----
-
-### Classical Physics, Electromagnetics & Relativistic Kinematics
-
-Word problems and applied physics formulas introduce scientific-notation exponents (`{{key:E}}`) spanning twenty orders of magnitude—from nanofarad tank circuits to geostationary transfer orbits—where inside-out evaluation keeps unit powers crystal clear. In 1853, William Thomson (Lord Kelvin) proved that discharging a capacitor $C$ through an inductor $L$ produces a sinusoidal electromagnetic oscillation as energy sloshes back and forth between the capacitor's electric field and the inductor's magnetic field. For an RF receiver tank circuit with inductance $L = 2.5\text{ mH}$ ($2.5 \times 10^{-3}\text{ H}$) and capacitance $C = 4.7\text{ nF}$ ($4.7 \times 10^{-9}\text{ F}$), the natural resonant frequency is:
+Applied physics word problems introduce scientific-notation exponents (`{{key:E}}`) spanning twenty orders of magnitude—from nanofarad tank circuits to geostationary transfer orbits. In 1853, William Thomson (Lord Kelvin) proved that discharging a capacitor $C$ through an inductor $L$ produces a sinusoidal electromagnetic oscillation. For an RF receiver tank circuit with inductance $L = 2.5\text{ mH}$ ($2.5 \times 10^{-3}\text{ H}$) and capacitance $C = 4.7\text{ nF}$ ($4.7 \times 10^{-9}\text{ F}$), the natural resonant frequency is:
 
 $$f_0 = \frac{1}{2\pi \sqrt{LC}}$$
 
 Forming the reactive time constant and inverting $2\pi\sqrt{LC}$ via `{{res:sc32_14_uil_contest_playbook_seq_32:keys}}` ($\sqrt{LC} = 3.4278 \times 10^{-6}\text{ s}$ followed by `2 {{key:×}} {{key:π}} {{key:×}} {{key:1/x}}`) determines the resonant frequency **`{{res:sc32_14_uil_contest_playbook_seq_32:value}}`** ($f_0 = \mathbf{46,430.27\text{ Hz}}$, 3-sig-fig target: **`4.64E4`**) without a single parenthesis.
 
-From electromagnetic oscillations at $10^{-9}$ scale we leap to orbital mechanics at $10^{14}$. In 1925, the German engineer Walter Hohmann proved that the most fuel-efficient way to move a spacecraft between two circular orbits of radii $r_1$ and $r_2$ is an elliptical transfer orbit tangent to the inner orbit at periapsis ($r_1$) and tangent to the outer orbit at apoapsis ($r_2$). To boost a satellite from a low Earth parking orbit ($r_1 = 6.678 \times 10^6\text{ m}$, $300\text{ km}$ altitude) onto a geostationary transfer ellipse ($r_2 = 4.2164 \times 10^7\text{ m}$) in Earth's gravitational field ($\mu = 3.986 \times 10^{14}\text{ m}^3/\text{s}^2$), what prograde velocity impulse $\Delta v_1$ must the upper-stage engine deliver at perigee?
+From electromagnetic oscillations at $10^{-9}$ scale we leap to orbital mechanics at $10^{14}$. In 1925, the German engineer Walter Hohmann proved that the most fuel-efficient way to move a spacecraft between two circular orbits of radii $r_1$ and $r_2$ is an elliptical transfer orbit tangent to the inner orbit at periapsis ($r_1$) and tangent to the outer orbit at apoapsis ($r_2$). To boost a satellite from a low Earth parking orbit ($r_1 = 6.678 \times 10^6\text{ m}$, $300\text{ km}$ altitude) onto a geostationary transfer ellipse ($r_2 = 4.2164 \times 10^7\text{ m}$) in Earth's gravitational field ($\mu = 3.986 \times 10^{14}\text{ m}^3/\text{s}^2$), the prograde velocity impulse $\Delta v_1$ at perigee is:
 
 $$\Delta v_1 = \sqrt{\frac{\mu}{r_1}} \left( \sqrt{\frac{2 r_2}{r_1 + r_2}} - 1 \right)$$
 
 Evaluating the dimensionless eccentricity factor $\sqrt{2r_2/(r_1 + r_2)} - 1$ first leaves it waiting in Register $Y$ while you compute the circular parking velocity $v_{c1} = \sqrt{\mu/r_1}$ in Register $X$, so keying `{{res:sc32_14_uil_contest_playbook_seq_36:keys}}` yields **`{{res:sc32_14_uil_contest_playbook_seq_36:value}}`** (3-sig-fig target: **`2.43E3`**, $2,425.8\text{ m/s}$):
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 01 | `2 {{key:ENTER}} 4.2164 {{key:E}} 7 {{key:×}}` | 0.00 | 0.00 | 0.00 | 8.432800E7 | Numerator $2r_2 = 8.4328 \times 10^7\text{ m}$ |
-| 02 | `6.678 {{key:E}} 6 {{key:ENTER}} 4.2164 {{key:E}} 7 {{key:+}}` | 0.00 | 0.00 | 8.432800E7 | 4.884200E7 | Denominator sum $r_1 + r_2$; numerator lifts to $Y$ |
-| 03 | `{{key:÷}} {{key:√x}}` | 0.00 | 0.00 | 0.00 | 1.313988 | Transfer velocity ratio $\sqrt{2r_2 / (r_1 + r_2)}$ |
-| 04 | `1 {{key:-}}` | 0.00 | 0.00 | 0.00 | 0.313988 | Deduct unity for impulse factor ($0.3140$) |
-| 05 | `3.986 {{key:E}} 14 {{key:ENTER}} 6.678 {{key:E}} 6 {{key:÷}} {{key:√x}}` | 0.00 | 0.00 | 0.313988 | 7725.8352 | Circular orbital velocity $v_{c1} = 7725.84\text{ m/s}$ in $X$ |
-| 06 | `{{key:×}}` | 0.00 | 0.00 | 0.00 | 2425.7677 | Periapsis transfer burn $\Delta v_1 = 2,425.77\text{ m/s}$ |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `2 {{key:ENTER}} 4.2164 {{key:E}} 7 {{key:×}}` | 0.00 | 0.00 | 0.00 | 8.432800E7 | Numerator $2r_2 = 8.4328 \times 10^7\text{ m}$ |
+| `6.678 {{key:E}} 6 {{key:ENTER}} 4.2164 {{key:E}} 7 {{key:+}}` | 0.00 | 0.00 | 8.432800E7 | 4.884200E7 | Denominator sum $r_1 + r_2$; numerator lifts to $Y$ |
+| `{{key:÷}} {{key:√x}}` | 0.00 | 0.00 | 0.00 | 1.313988 | Transfer velocity ratio $\sqrt{2r_2 / (r_1 + r_2)}$ |
+| `1 {{key:-}}` | 0.00 | 0.00 | 0.00 | 0.313988 | Deduct unity for impulse factor ($0.3140$) |
+| `3.986 {{key:E}} 14 {{key:ENTER}} 6.678 {{key:E}} 6 {{key:÷}} {{key:√x}}` | 0.00 | 0.00 | 0.313988 | 7725.8352 | Circular orbital velocity $v_{c1} = 7725.84\text{ m/s}$ in $X$ |
+| `{{key:×}}` | 0.00 | 0.00 | 0.00 | 2425.7677 | Periapsis transfer burn $\Delta v_1 = 2,425.77\text{ m/s}$ |
 
-Back on the laboratory bench, exponential thermal relaxation follows Newton's Law of Cooling. When a freshly quenched steel billet or a cup of coffee at initial temperature $T_0 = 95.0^\circ\text{C}$ is placed in a laboratory room at ambient temperature $T_{\text{env}} = 22.0^\circ\text{C}$ with convective decay constant $k = 0.045\text{ min}^{-1}$, its temperature excess above the room $(T_0 - T_{\text{env}})$ decays exponentially over $t = 15.0\text{ min}$:
+### Single-Entry Quadratic & Cubic Cores via `LASTX`
 
-$$T(15) = T_{\text{env}} + (T_0 - T_{\text{env}}) e^{-kt}$$
+For a conical hopper or rocket nozzle fairing of height $h = 14.0\text{ cm}$, lower radius $R = 8.5\text{ cm}$, and upper radius $r = 4.2\text{ cm}$, the frustum volume is:
 
-From the decay rate and elapsed time, keying `{{res:sc32_14_uil_contest_playbook_seq_43:keys}}` evaluates the exponential relaxation factor ($e^{-0.675} = 0.5092$) and scales by the initial thermal excess above ambient to resolve **`{{res:sc32_14_uil_contest_playbook_seq_43:value}}`** ($T(15) = \mathbf{59.17^\circ\text{C}}$, 3-sig-fig target: **`59.2`**)—or key `95 {{key:ENTER}} 22 {{key:-}} {{key:LASTX}} {{key:x⇄y}} 0.045 {{key:+/-}} {{key:ENTER}} 15 {{key:×}} {{key:eˣ}} {{key:×}} {{key:+}}` so `22` is typed only once.
+$$V = \frac{1}{3} \pi h (R^2 + R r + r^2)$$
+
+Evaluating the quadratic core $R^2 + Rr + r^2$ from left to right on the stack via `{{res:sc32_14_uil_contest_playbook_seq_17:keys}}`—squaring `8.5 {{key:x²}}` ($R^2 = 72.25$, which matches our $8 \times 9 = 72 \implies 72.25$ mental check), accumulating the cross-term and top base `8.5 {{key:ENTER}} 4.2 {{key:×}} {{key:+}} 4.2 {{key:x²}} {{key:+}}` ($125.59$), and scaling by `14 {{key:×}} 3 {{key:÷}} {{key:π}} {{key:×}}`—yields **`{{res:sc32_14_uil_contest_playbook_seq_17:value}}`** ($V = \mathbf{1,841.25\text{ cm}^3}$, 3-sig-fig target: **`1.84E3`**). Better yet, you can chain `{{key:LASTX}}` (`8.5 {{key:x²}} {{key:LASTX}} 4.2 {{key:×}} {{key:LASTX}} {{key:x²}} {{key:+}} {{key:+}}`), which squares `8.5` (saving `8.5` in `LASTX`), multiplies `{{key:LASTX}}` by `4.2` (saving `4.2` in `LASTX`), and squares `{{key:LASTX}}`—evaluating $R^2 + Rr + r^2 = 125.59$ with `8.5` and `4.2` each typed only once:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `8.5 {{key:x²}}` | $0.0000$ | $0.0000$ | $0.0000$ | $72.2500$ | Lower base square $R^2 = 72.25$ |
+| `8.5 {{key:ENTER}} 4.2 {{key:×}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $107.9500$ | Add cross-product $Rr = 35.70$ |
+| `4.2 {{key:x²}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $125.5900$ | Add upper base square $r^2 = 17.64$ |
+| `14 {{key:×}} 3 {{key:÷}} {{key:π}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | **1841.2485** | Scale by $\pi h / 3 \implies 1,841.25\text{ cm}^3$ (`1.84E3`) |
+
+Practice that 9-token `{{key:LASTX}}` quadratic-core reflex until it becomes automatic: for a larger frustum with radii $R = 11.4\text{ cm}$ and $r = 6.8\text{ cm}$, keying `11.4 {{key:x²}} {{key:LASTX}} 6.8 {{key:×}} {{key:LASTX}} {{key:x²}} {{key:+}} {{key:+}}` evaluates $R^2 + Rr + r^2 = \mathbf{253.7200\text{ cm}^2}$ while typing `11.4` and `6.8` only once each. Likewise, whenever a solid mensuration problem asks for the total surface area of a closed right circular cylinder ($A_{\text{total}} = 2\pi r h + 2\pi r^2$), factor $2\pi r$ out mentally to write $A_{\text{total}} = 2\pi r(h + r)$ and recover $r$ from `{{key:LASTX}}`: for a solid cylinder of height $h = 84.0\text{ mm}$ and radius $r = 18.5\text{ mm}$, keying `84 {{key:ENTER}} 18.5 {{key:+}} {{key:LASTX}} {{key:×}} 2 {{key:×}} {{key:π}} {{key:×}}` adds $h + r = 102.5\text{ mm}$, recalls $r = 18.5\text{ mm}$ via `{{key:LASTX}}`, and scales by $2\pi$ to obtain $A_{\text{total}} = \mathbf{1.19E4\text{ mm}^2}$ ($11,914.49\text{ mm}^2$) with `18.5` typed only once.
+
+When a surveyor measures two sides of a triangular plot ($a = 18.5\text{ m}$ and $b = 24.2\text{ m}$) and the included angle between them ($C = 52.0^\circ$), the Law of Cosines gives:
+
+$$c = \sqrt{a^2 + b^2 - 2ab \cos C}$$
+
+On the stack in `{{key:DEG}}` mode, accumulating $a^2 + b^2$ first leaves that sum parked in Register $Y$ while you build $2ab\cos C$ in Register $X$, so keying `{{res:sc32_14_uil_contest_playbook_seq_19:keys}}` finishes the triangle in a single pass to yield **`{{res:sc32_14_uil_contest_playbook_seq_19:value}}`** (3-sig-fig target: **`19.4`**, full: `19.4068`):
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `18.5 {{key:x²}} 24.2 {{key:x²}} {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $927.8900$ | Sum of squares $a^2 + b^2 = 927.89$ |
+| `2 {{key:ENTER}} 18.5 {{key:×}} 24.2 {{key:×}}` | $0.0000$ | $0.0000$ | $927.8900$ | $895.4000$ | Double product $2ab = 895.40$ in $X$ |
+| `52 {{key:COS}} {{key:×}}` | $0.0000$ | $0.0000$ | $927.8900$ | $551.2636$ | Cosine term $2ab\cos(52^\circ) = 551.2636$ |
+| `{{key:-}} {{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **19.4069** | Opposite side $c = 19.4069$ (`19.4`) |
+
+*(**`LASTX` Single-Entry Law of Cosines:** Keying `18.5 {{key:x²}} {{key:LASTX}} 24.2 {{key:×}} {{key:LASTX}} {{key:x²}} {{key:x⇄y}} 2 {{key:×}} 52 {{key:COS}} {{key:×}} {{key:-}} {{key:+}} {{key:√x}}` uses `{{key:LASTX}}` to chain $a^2$, $ab$, and $b^2$ so neither `18.5` nor `24.2` is typed twice.)*
+
+To approximate the instantaneous derivative of $f(x) = x^3 - 2x$ at $x = 3.0$ using a symmetric central difference with step $h = 0.001$:
+
+$$f'(3) \approx \frac{(3.001)^3 - 2(3.001) - \left[(2.999)^3 - 2(2.999)\right]}{0.002} = \mathbf{25.000}$$
+
+Keying `{{res:sc32_14_uil_contest_playbook_seq_28:keys}}` evaluates the forward node ($f(3.001) = 21.025009$), evaluates the backward node ($f(2.999) = 20.975009$ in $X$ while $f(3.001)$ waits in $Y$), and divides their difference by $2h = 0.002$ to yield **`{{res:sc32_14_uil_contest_playbook_seq_28:value}}`** ($f'(3) \approx \mathbf{25.000}$, 3-sig-fig target: **`25.0`**). In the double-`{{key:LASTX}}` cascade `3.001 {{key:x²}} {{key:LASTX}} {{key:×}} {{key:LASTX}} 2 {{key:×}} {{key:-}} 2.999 {{key:x²}} {{key:LASTX}} {{key:×}} {{key:LASTX}} 2 {{key:×}} {{key:-}} {{key:-}} .002 {{key:÷}}`, squaring `3.001 {{key:x²}}` saves `3.001` in `LASTX`, multiplying by `{{key:LASTX}} {{key:×}}` forms $3.001^3$ while keeping `3.001` in `LASTX` for a second recall (`{{key:LASTX}} 2 {{key:×}} {{key:-}}`), entering `3.001` and `2.999` only once each with zero `{{key:ENTER}}` keystrokes. Similarly, for $f(x) = x^3 - 5x$ at $x = 4.0$ ($h = 0.001$), keying `4.001 {{key:x²}} {{key:LASTX}} {{key:×}} {{key:LASTX}} 5 {{key:×}} {{key:-}} 3.999 {{key:x²}} {{key:LASTX}} {{key:×}} {{key:LASTX}} 5 {{key:×}} {{key:-}} {{key:-}} .002 {{key:÷}}` confirms $f'(4) \approx \mathbf{43.0000}$ (matching $3(4)^2 - 5 = 43$ to six digits).
+
+In Newton's Law of Cooling, when a freshly quenched steel billet at initial temperature $T_0 = 95.0^\circ\text{C}$ cools in a laboratory room at ambient temperature $T_{\text{env}} = 22.0^\circ\text{C}$ with convective decay constant $k = 0.045\text{ min}^{-1}$ over $t = 15.0\text{ min}$ ($T(15) = T_{\text{env}} + (T_0 - T_{\text{env}}) e^{-kt}$), keying `{{res:sc32_14_uil_contest_playbook_seq_43:keys}}` evaluates the exponential relaxation factor ($e^{-0.675} = 0.5092$) and scales by the initial thermal excess above ambient to resolve **`{{res:sc32_14_uil_contest_playbook_seq_43:value}}`** ($T(15) = \mathbf{59.17^\circ\text{C}}$, 3-sig-fig target: **`59.2`**)—or key `95 {{key:ENTER}} 22 {{key:-}} {{key:LASTX}} {{key:x⇄y}} 0.045 {{key:+/-}} {{key:ENTER}} 15 {{key:×}} {{key:eˣ}} {{key:×}} {{key:+}}` so `22` is typed only once.
+
+### Sub-4-Second Championship Shortcuts (`x∥y` & Corner-Square Inradius)
+
+On the harmonic-mean round-trip speed problem ($v_1 = 40\text{ mph}$ outbound and $v_2 = 60\text{ mph}$ return, $v_{\text{avg}} = 2(v_1 \parallel v_2)$), the SC-32's dedicated hardware `{{key:x∥y}}` operator lets you key `{{res:sc32_14_captain_harmonic_speed:keys}}` to compute the single-leg harmonic factor ($24.0$) and double it for the round trip in 4 operations, yielding **`{{res:sc32_14_captain_harmonic_speed:value}}`** (3-sig-fig target: **`48.0`** $\text{mph}$):
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `40 {{key:ENTER}}` | 0.00 | 0.00 | 40.000000 | 40.000000 | Outbound velocity $v_1 = 40.0\text{ mph}$ entered into Y |
+| `60 {{key:x∥y}}` | 0.00 | 0.00 | 0.00 | 24.000000 | Harmonic operator evaluates $v_1 \parallel v_2 = 24.0\text{ mph}$ |
+| `2 {{key:×}}` | 0.00 | 0.00 | 0.00 | 48.000000 | Double harmonic mean for round trip; $v_{\text{avg}} = 48.0\text{ mph}$ |
+
+And for the inscribed circle radius $r = \frac{a + b - c}{2}$ of a right triangle with legs $a = 8, b = 15$ and hypotenuse $c = 17$, keying `{{res:sc32_14_captain_right_triangle_inradius:keys}}` sums the legs ($23.0000$), subtracts the hypotenuse ($6.0000$), and halves via `2 {{key:÷}}` in under 3 seconds to resolve the inradius **`{{res:sc32_14_captain_right_triangle_inradius:value}}`** ($r = \mathbf{3.0000}$, 3-sig-fig target: **`3.00`**).
+
+### Unlimited Stack Mode (`INF`) on Five-Branch Parallel & Multi-Term Sprints
+
+To see why switching to **`{{key:INF}}`** mode (pressing `{{key:FLAGS}}` via Right Shift `{{key:↱}}` above `{{key:×}}`, tapping `STACK` on `{{key:LFU3}}`, and selecting `{{key:INF}}` on `{{key:LFU3}}`, abbreviated `{{key:FLAGS}} {{key:INF}}` below) is a formidable weapon on multi-branch competition problems, consider a five-branch parallel telemetry shunt network with resistances $R_1 = 20\,\Omega$, $R_2 = 30\,\Omega$, $R_3 = 60\,\Omega$, $R_4 = 40\,\Omega$, and $R_5 = 120\,\Omega$:
+
+$$R_{\text{eq}} = 20 \parallel 30 \parallel 60 \parallel 40 \parallel 120 = \mathbf{7.5000\,\Omega}$$
+
+In **`{{key:INF}}`** mode, you can read all five resistor values straight off the exam sheet into the stack (`20 {{key:ENTER}} 30 {{key:ENTER}} 60 {{key:ENTER}} 40 {{key:ENTER}} 120`) and then collapse all four parallel pairs in a rapid four-tap `{{key:x∥y}}` cascade (`{{key:x∥y}} {{key:x∥y}} {{key:x∥y}} {{key:x∥y}}`). Watch what happens in `Register T` on rows 2 through 6 below: when `120` is entered on row 2, `20.0000` is not lost—it rides up into Level 5 above `Register T` ($30.0000$), and on the very first `{{key:x∥y}}` tap (row 3), `20.0000` drops right back from Level 5 into `Register T` while true LIFO history pulls `0.0000` (never duplicating $T$) on rows 4, 5, and 6:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `{{key:FLAGS}} {{key:INF}} 20 {{key:ENTER}} 30 {{key:ENTER}} 60 {{key:ENTER}} 40` | $20.0000$ | $30.0000$ | $60.0000$ | $40.0000$ | Enable 999-level `INF` stack; load first 4 branches ($R_1 \dots R_4$) |
+| `{{key:ENTER}} 120` | $30.0000$ | $60.0000$ | $40.0000$ | $120.0000$ | Enter $R_5 = 120\,\Omega$; $R_1 = 20.0000$ rides safely up to Level 5 |
+| `{{key:x∥y}}` | $20.0000$ | $30.0000$ | $60.0000$ | $30.0000$ | $40 \parallel 120 = 30\,\Omega$; $R_1 = 20.0000$ drops from Level 5 back into $T$ |
+| `{{key:x∥y}}` | $0.0000$ | $20.0000$ | $30.0000$ | $20.0000$ | $60 \parallel 30 = 20\,\Omega$; true LIFO drop pulls $0.0000$ into $T$ (no $T$-smearing) |
+| `{{key:x∥y}}` | $0.0000$ | $0.0000$ | $20.0000$ | $12.0000$ | $30 \parallel 20 = 12\,\Omega$; $R_1 = 20.0000$ drops to $Y$ |
+| `{{key:x∥y}}` | $0.0000$ | $0.0000$ | $0.0000$ | **7.5000** | Final collapse $20 \parallel 12 = \mathbf{7.5000\,\Omega}$ (`7.50`) |
+
+That same `{{key:INF}}` depth lets you evaluate multi-term product sums—such as the total rotational moment of inertia $I = \sum_{k=1}^4 m_k r_k^2$ of a four-mass rotor assembly ($m_1 = 1.5\text{ kg}$ at $r_1 = 0.20\text{ m}$, $m_2 = 2.0\text{ kg}$ at $r_2 = 0.30\text{ m}$, $m_3 = 2.5\text{ kg}$ at $r_3 = 0.40\text{ m}$, and $m_4 = 3.0\text{ kg}$ at $r_4 = 0.50\text{ m}$)—by pushing each finished $m_k r_k^2$ product onto the stack (`1.5 {{key:ENTER}} .2 {{key:x²}} {{key:×}} 2 {{key:ENTER}} .3 {{key:x²}} {{key:×}} 2.5 {{key:ENTER}} .4 {{key:x²}} {{key:×}} 3 {{key:ENTER}} .5 {{key:x²}} {{key:×}}`) so all four individual inertias ($0.06, 0.18, 0.40, 0.75\text{ kg}\cdot\text{m}^2$) stand on the stack simultaneously before collapsing them via `{{key:+}} {{key:+}} {{key:+}}` $\to \mathbf{1.3900\text{ kg}\cdot\text{m}^2}$ (`1.39`) with zero `{{key:STO}}`/`{{key:RCL}}` overhead.
+
+### Ten Canonical Sprint Archetypes: Quick-Reference Stack Recipes
+
+| Problem Archetype | Target Result | Inside-Out SC-32 Stack Recipe |
+|:---|:---|:---|
+| 1. Triple Harmonic Combination: $12 \parallel 20 \parallel 30$ | $6.00$ | `12 {{key:ENTER}} 20 {{key:x∥y}} 30 {{key:x∥y}}` |
+| 2. Nested Continued Fraction: $1 / (2 + 1/(3 + 1/4))$ | $0.433$ | `4 {{key:1/x}} 3 {{key:+}} {{key:1/x}} 2 {{key:+}} {{key:1/x}}` |
+| 3. Radical Nested Pyramid: $\sqrt{17 + \sqrt{29 + \sqrt{83}}}$ | $4.81$ | `83 {{key:√x}} 29 {{key:+}} {{key:√x}} 17 {{key:+}} {{key:√x}}` |
+| 4. 3D Euclidean Vector Norm: $\lVert(3, 4, 12)\rVert$ | $13.0$ | `3 {{key:x²}} 4 {{key:x²}} {{key:+}} 12 {{key:x²}} {{key:+}} {{key:√x}}` |
+| 5. Reciprocal Difference Conjugate: $(1/20 - 1/30)^{-1}$ | $60.0$ | `20 {{key:1/x}} 30 {{key:1/x}} {{key:-}} {{key:1/x}}` |
+| 6. Sequential Markup & Discount: $\$250 + 15\% - 12\%$ | $\$253$ | `250 {{key:ENTER}} 15 {{key:%}} {{key:+}} 12 {{key:%}} {{key:-}}` |
+| 7. Quadratic Roots: $x^2 - 7x + 12 = 0$ | $3.00, 4.00$ | `{{key:POLY}}`: `0 {{key:A}} 1 {{key:B}} 7 {{key:+/-}} {{key:C}} 12 {{key:D}} {{key:EXEC}}` |
+| 8. Sexagesimal Time Addition: $3\text{h }45\text{m} + 2\text{h }35\text{m}$ | $6.20$ ($6\text{h }20\text{m}$) | `3.45 {{key:▸HR}} 2.35 {{key:▸HR}} {{key:+}} {{key:▸HMS}}` |
+| 9. 2D Vector Magnitude: $\lVert(45, 60)\rVert$ | $75.0$ | `45 {{key:ENTER}} 60 {{key:▸θ,r}}` |
+| 10. Affine Temperature Scaling: $37.0^\circ\text{C} \to ^\circ\text{F}$ | $98.6^\circ\text{F}$ | `37 {{key:ENTER}} 1.8 {{key:×}} 32 {{key:+}}` |
 
 ---
 
-### Championship Tie-Breakers: Finance, Optics & Multi-Step Synthesis
+## Epilogue: The Mind and the Instrument
 
-On the final pages of a competition test, multi-period financial growth problems test whether you can evaluate exponential powers rapidly while formatting the result in 3-significant-figure scientific notation. Suppose a principal of $\$5,000.00$ is invested in a college endowment fund earning $6.5\%$ annual interest compounded annually for $n = 18\text{ years}$, growing according to:
+Fourteen chapters ago, we began with a simple observation from Jan Łukasiewicz's 1924 Warsaw logic tables and Charles Hamblin's hardware stacks: traditional algebraic notation writes expressions from the outside in, trapping your working memory in a thicket of pending parentheses, whereas nature and mathematics build quantities **from the inside out**. Over the course of this volume, we have seen that inside-out rhythm unify every corner of quantitative thought—from powers, logarithms, trigonometry, and rotations in the complex plane to three-dimensional scaling laws, the hunting of polynomial and transcendental roots, numerical integration, statistical discovery, 36-bit binary logic, the time value of money, pixel-grid curve plotting, cross-disciplinary engineering, and the back-of-the-envelope poise of Enrico Fermi.
 
-$$FV = P(1+r)^n$$
+Think back across the centuries of human curiosity gathered inside this little machine. Every time you tap a key, you stand in the company of builders and dreamers who refused to be intimidated by complexity: Jan Łukasiewicz clearing the fog of nested brackets at the University of Warsaw; John Napier laboring twenty years by candlelight at Merchiston Castle so astronomers could multiply by adding; René Descartes lying awake in Anjou watching a housefly trace algebraic curves across a plastered bedroom ceiling; Sadi Carnot discovering the universal law of heat and entropy in the fall of a millstream; Enrico Fermi letting torn scraps of notebook paper drift two and a half meters across the New Mexico desert to weigh the energy of a star; and Bill Hewlett holding up his white button-down shirt pocket in Palo Alto in 1971 to challenge his engineers to place the power of a room-sized computer inside the palm of a human hand.
 
-Rather than invoking the 5-key TVM solver when $PMT = 0$, forming the 1-plus-rate growth factor mentally ($1 + 0.065 = 1.065$), raising it to the 18th power, and scaling by principal via `{{res:sc32_14_uil_contest_playbook_seq_44:keys}}` determines the terminal balance **`{{res:sc32_14_uil_contest_playbook_seq_44:value}}`** ($FV = \mathbf{\$15,533.27}$, 3-sig-fig target: **`1.55E4`** / **`1.55 × 10⁴`**) in three operations.
+When you think in the stack, the calculator stops being a black box into which you transcribe formulas and hope for an answer. Instead, the four registers ($X, Y, Z, T$) become an open, well-lit workbench—a quiet dialogue between your intuition and the laws of nature—where every intermediate physical quantity, from a radian arc or an impedance phase angle to a Simpson parabola weight or a mortgage principal reduction, stands in plain view as you build toward the final result. Long after the exam clock stops or the laboratory notebook closes for the evening, that habit of unpeeling problems from the inside out remains yours for life: the calm confidence to estimate before you calculate, to see the geometry behind every equation, and to hold the architecture of the physical world in your own two hands.
 
----
-
-### Tournament Speed Optimization & Sub-4-Second Shortcuts
-
-In timed competitive STEM examinations and rapid equation sprints, mastering standard formulas is only the baseline. High-scoring practitioners excel by recognizing **algebraic and hardware shortcuts** that collapse 15-keystroke problems into three-second RPN reflexes. Consider the classic harmonic-mean average-speed trap: a rally car climbs a mountain pass at $v_1 = 40\text{ mph}$ and descends the exact same distance at $v_2 = 60\text{ mph}$. What is the car's average speed for the round trip?
-
-Almost every intuition shouts "$50\text{ mph}$!"—and that is the classic examination trap. Because the car spends *more time* crawling uphill at $40\text{ mph}$ than flying downhill at $60\text{ mph}$, the round-trip average speed over equal distances $d$ is weighted by travel time $t = d/v$, yielding the **harmonic mean**:
-
-$$v_{\text{avg}} = \frac{2d}{\frac{d}{v_1} + \frac{d}{v_2}} = \frac{2 v_1 v_2}{v_1 + v_2} = 2 \times (v_1 \parallel v_2)$$
-
-Notice that $\frac{v_1 v_2}{v_1 + v_2}$ is the exact mathematical formula for two parallel resistors (`{{key:x∥y}}`). Because the SC-32 has a dedicated hardware `{{key:x∥y}}` operator, you never have to type $v_1$ and $v_2$ twice: keying `{{res:sc32_14_captain_harmonic_speed:keys}}` computes the single-leg harmonic factor ($24.0$) and doubles it for the round trip in 4 operations to yield **`{{res:sc32_14_captain_harmonic_speed:value}}`** (3-sig-fig target: **`48.0`** $\text{mph}$):
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 01 | `40 {{key:ENTER}}` | 0.00 | 0.00 | 40.000000 | 40.000000 | Outbound velocity $v_1 = 40.0\text{ mph}$ entered into Y |
-| 02 | `60 {{key:x∥y}}` | 0.00 | 0.00 | 0.00 | 24.000000 | Harmonic operator evaluates $v_1 \parallel v_2 = 24.0\text{ mph}$ |
-| 03 | `2 {{key:×}}` | 0.00 | 0.00 | 0.00 | 48.000000 | Double harmonic mean for round trip; $v_{\text{avg}} = 48.0\text{ mph}$ |
-
-An equally dramatic 3-second shortcut resolves the inscribed circle radius (inradius) $r$ of a right triangle with legs $a = 8, b = 15$ and hypotenuse $c = 17$. The textbook approach computes the triangle's area $A = \frac{1}{2}ab = 60$ and semiperimeter $s = \frac{a+b+c}{2} = 20$ to evaluate $r = A/s = 3$. Picture instead the inscribed circle tucked into the $90^\circ$ corner of the right triangle: the two radii perpendicular to the legs form a little $r \times r$ square in the right-angle corner, while the remaining segments of the legs ($a - r$ and $b - r$) fold onto the hypotenuse $c$ as equal tangent segments from the acute vertices, so $(a - r) + (b - r) = c$. Solving for $r$ gives the universal right-triangle inradius identity:
-
-$$r = \frac{a + b - c}{2}$$
-
-Because tangent segments from an inscribed circle to an exterior vertex are equal, docking a corner square of side $r$ into the $90^\circ$ corner of the **L-Frame Factoring Stage** shows that the two legs minus the hypotenuse leave twice the corner square of side $r$: keying `{{res:sc32_14_captain_right_triangle_inradius:keys}}` sums the legs ($23.0000$), subtracts the hypotenuse ($6.0000$), and halves via `2 {{key:÷}}` in under 3 seconds to resolve the inradius **`{{res:sc32_14_captain_right_triangle_inradius:value}}`** ($r = \mathbf{3.0000}$, 3-sig-fig target: **`3.00`**).
-
----
-
-## Further Exploration: Companion Workbooks & Applied Tie-Ins
-
-> *For 40 additional worked engineering problems with full 4-register stack traces, see Chapter 14 of the [SC-32 Scientific Companion Problem & Casebook Workbook](../../curriculum/sc32-scientific-companion-workbook.md#chapter-14).*
-
-
-To sharpen the 30-minute, 70-problem speed reflexes from this chapter against full-length tournament tests and state championship problem archives, consult these companion training volumes:
-
-- **Speed & Precision Calculator Championship Drill Book (Volumes 1 & 2: Number Crunchers, Geometry Pages & Word Problem Sprints):** Contains 20 full-length 70-problem timed practice exams with annotated RPN keystroke budgets, 3-significant-figure formatting audits, and page-by-page split time targets.
-- **StackCalc Rapid Calculation & Mental Math Compendium (Module 10: Horner Schemes, Continued Fractions & Harmonic Identities):** Develops advanced single-entry stack sequences using `{{key:LASTX}}`, Register $T$ constant replication, and `{{key:x∥y}}` for algebra, mensuration, and physics tie-breakers.
-
-### Synthesis Challenge Problems
-
-1. **Single-Entry Frustum & Law-of-Cosines Core ($R^2 + Rr + r^2$) via `{{key:LASTX}}`:** Evaluate the quadratic form $R^2 + Rr + r^2$ for $R = 11.4\text{ cm}$ and $r = 6.8\text{ cm}$ while typing `11.4` and `6.8` only once each: key `11.4 {{key:x²}} {{key:LASTX}} 6.8 {{key:×}} {{key:LASTX}} {{key:x²}} {{key:+}} {{key:+}}` to obtain $\mathbf{253.7200\text{ cm}^2}$ in 9 tokens.
-2. **Single-Entry Central-Difference Derivative via Double-`{{key:LASTX}}` Cascade:** Approximate $f'(4)$ for $f(x) = x^3 - 5x$ using $h = 0.001$ ($x + h = 4.001$, $x - h = 3.999$) while typing each perturbed abscissa only once and using zero `{{key:ENTER}}` keystrokes: key `4.001 {{key:x²}} {{key:LASTX}} {{key:×}} {{key:LASTX}} 5 {{key:×}} {{key:-}} 3.999 {{key:x²}} {{key:LASTX}} {{key:×}} {{key:LASTX}} 5 {{key:×}} {{key:-}} {{key:-}} .002 {{key:÷}}` to confirm $f'(4) \approx \mathbf{43.0000}$ (exact $3(4)^2 - 5 = 43$).
-3. **Single-Entry Cylinder Total Surface Area via `{{key:LASTX}}`:** Using the factored identity $A_{\text{total}} = 2\pi r(h + r)$, compute the total surface area of a solid cylinder of height $h = 84.0\text{ mm}$ and radius $r = 18.5\text{ mm}$ while typing `18.5` only once: key `84 {{key:ENTER}} 18.5 {{key:+}} {{key:LASTX}} {{key:×}} 2 {{key:×}} {{key:π}} {{key:×}}` to confirm $A_{\text{total}} = \mathbf{1.19E4\text{ mm}^2}$ ($11,914.49\text{ mm}^2$).
-
----
-
-## Summary & Looking Ahead
-
-Under timed calculation conditions across number sense, geometry, algebra, calculus, and physics, inside-out evaluation, nested radicals, continued-fraction ascents via `{{key:1/x}}`, and harmonic combinations via `{{key:x∥y}}` eliminate parenthetical bookkeeping and keep every intermediate value visible on the four-level stack.
-
-The appendices that follow provide a complete technical reference for daily bench and field work: the formal state-machine specification of stack lift (Appendix A), error codes and numeric limits (Appendix B), the full hardware keycap directory (Appendix C), 100 core scientific and engineering equations with step-by-step RPN stack traces (Appendix D), and the mathematical bibliography.
-
+The five technical appendices that close this book are designed to stay beside your workbench for years to come:
+* **[Appendix A: Formal Stack-Lift State Machine](appendix-a-stack-lift-state-machine.md)** — The complete deterministic rules governing when typing a digit lifts the stack versus overwrites Register $X$, with 12 step-by-step register traces.
+* **[Appendix B: Error Catalog & Singularity Analysis](appendix-b-error-catalog.md)** — The 12 non-destructive error conditions, mathematical domain boundaries, and instant recovery protocols.
+* **[Appendix C: Keycap Directory & How We Built StackCalc](appendix-c-keycap-directory.md)** — A complete prose tour and 43-key reference directory of every primary, left-shifted, right-shifted, and LFU softkey function, followed by the open-source hardware and software story behind StackCalc.
+* **[Appendix D: Mathematical Constants, SI Units & Master STEM Equation Directory](appendix-d-constants-and-equations.md)** — Fundamental physical constants, exact SI conversions, and 100 canonical RPN stack recipes across 12 scientific and engineering disciplines.
+* **[Appendix E: Primary Sources & Annotated Further Reading Guide](appendix-e-annotated-bibliography.md)** — Historical primary sources and curated reading pathways for students, educators, and engineers.

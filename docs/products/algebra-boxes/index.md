@@ -199,7 +199,7 @@ hide:
 
       <!-- Action Buttons -->
       <div class="ec-actions-row">
-        <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
+        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
           Order on Etsy ($42.00) ↗
         </a>
         <a href="#downloads" class="ec-btn-secondary">

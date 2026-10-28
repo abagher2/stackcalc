@@ -1,291 +1,278 @@
 ---
-title: "Chapter 12: Function & Scatter Plotting Engine | SC-32 Manual"
-description: "Master the 64-point vector graphics engine, interactive crosshair curve tracing, window scaling, and regression scatter overlays on the StackCalc SC-32."
+title: "Chapter 12: Seeing the Invisible: From Descartes's Bedroom Ceiling to the Pixel Grid | Thinking in the Stack (SC-32)"
+description: "From René Descartes's coordinate plane, Jack Bresenham's line algorithm, and Francis Anscombe's Quartet to vector function graphing and interactive viewport navigation on the StackCalc SC-32."
 ---
 
-# Chapter 12: Function & Scatter Plotting Engine
+# Chapter 12: Seeing the Invisible: From Descartes's Bedroom Ceiling to the Pixel Grid
 
-## Seeing the Invisible: Why One 64-Point Curve Reveals What a Thousand Numbers Hide
+## The Fly on René Descartes's Ceiling and the Marriage of Algebra and Geometry
 
-In 1637, French philosopher and mathematician René Descartes published *La Géométrie* {{cite:descartes1637}}, resolving a schism that had divided mathematics since antiquity. Geometry belonged to continuous space—to lines, circles, and figures drawn with straightedge and compass. Algebra belonged to discrete symbolic manipulation—to polynomial balances and abstract quantities. Descartes demonstrated that these two worlds are isomorphic: every algebraic relation $y = f(x)$ defines a geometric locus in coordinate space, and every geometric curve can be interrogated through its coordinates.
+### Morning Meditation at La Flèche: Turning Equations into Curves
 
-Centuries later, an engineer wrestling with complex systems—an oscillating LC circuit, an aerodynamic shockwave boundary, or the decay envelope of an underdamped suspension—faces the inverse dilemma. A stack of discrete numbers on a handheld calculator, no matter how precise, cannot immediately reveal a high-frequency resonance peak, a hidden vertical asymptote, or a saddle point. To see the dynamics of a physical system, one must see its shape.
+As a frail eleven-year-old boarding student at the Jesuit College of La Flèche in Anjou, **René Descartes** was granted an unusual privilege by the rector, Father Charlet: while his classmates rose at five o'clock every morning to recite Latin prayers in unheated stone halls, young René was allowed to remain warm under his blankets until late morning, thinking quietly with his eyes open.
 
-The StackCalc SC-32 bridges this gap through its dedicated 64-point vector graphics engine (`{{key:PLOT}}`). By transforming the transflective dot-matrix LCD into a miniature Cartesian laboratory, the instrument evaluates 64 discrete mathematical slices across any domain and renders an interpolated continuous curve in under 42 milliseconds. Paired with interactive crosshair reticle tracing, the engineer can walk along the mathematical terrain, reading exact coordinate pairs from the real-time status bar and committing discovered extrema or inflection points directly back into the RPN operational stack with a single keystroke.
+Descartes kept that habit of morning meditation for the rest of his life. According to nineteenth-century mathematical lore, on one such morning as he lay in bed staring up at the corner of his room, a housefly landed on the plastered ceiling and began crawling from tile to tile. Watching the insect wander across the grid, Descartes asked himself how he could tell a friend the exact spot where the fly rested at any instant—and where it was headed next.
 
-{{screenshot:sc32_plot_polynomial|SC-32 64-Point Vector Function Plotter ({{key:PLOT}}): Cubic Polynomial x³ − 6x² + 11x − 6 with Interactive Crosshair}}
-*Figure 12.1: The StackCalc SC-32 rendering an interactive 64-point vector curve (`X^3 - 6*X^2 + 11*X - 6`) with real-time coordinate crosshair telemetry in the Paper print theme.*
+Suddenly, the answer flashed before him: if he measured the perpendicular distance $x$ from the left wall and the perpendicular distance $y$ from the back wall, **every position of the fly on the flat ceiling corresponded to a unique pair of numbers $(x, y)$**. Even better, if the fly walked along a straight diagonal line or a smooth circular arc, its two distances $x$ and $y$ obeyed a strict algebraic equation—and conversely, *any* algebraic equation connecting $x$ and $y$ traced a visible geometric curve across the ceiling!
 
----
+When Descartes published this discovery in **1637** as ***La Géométrie*** {{cite:descartes1637}}—an appendix to his *Discourse on the Method*—he ended a two-thousand-year separation that had divided human thought since antiquity:
 
-## The Transflective 64-Point Vector Rendering Engine
+- **Ancient Greek Geometry (Euclid, Archimedes, Apollonius)** was rich in visual intuition—circles, triangles, parabolas, and tangent lines drawn with straightedge and compass—but it had almost no symbolic algebra. Proving a new theorem required inventing a custom geometric construction from scratch.
+- **Medieval & Renaissance Algebra (al-Khwarizmi, Tartaglia, Cardano, Viète)** was a powerful symbolic machine for balancing unknowns ($x^2, x^3$), but it was blind. An equation sat on the page as a dry string of characters with no visual shape.
 
-While the StackCalc SC-32 is engineered primarily as a rapid tactile numerical instrument, its $132 \times 65$ transflective monochrome dot-matrix display features a dedicated **64-Point Vector Graphics Engine (`{{key:PLOT}}`)**, accessed via Right Shift `{{key:↱}}` on the multi-action `{{key:x∥y}}` key (Row 7, Column 3).
+Descartes proved that **algebra and geometry are two languages describing the exact same reality**. John Stuart Mill later called analytic geometry *"the greatest single step ever made in the progress of the exact sciences,"* because it gave equations **eyes**—and gave geometric shapes **formulas**.
 
-### Viewport Geometry & Pixel Mapping
-The physical display is partitioned into two specialized zones:
-* **Graphing Viewport ($128 \times 52\text{ pixels}$):** World coordinates $(x, y)$ are projected onto screen pixel coordinates $(u, v)$ via linear transformation:
-  $$u = \left\lfloor \frac{x - X_{\min}}{X_{\max} - X_{\min}} \times 127 \right\rfloor$$
-  $$v = 51 - \left\lfloor \frac{y - Y_{\min}}{Y_{\max} - Y_{\min}} \times 51 \right\rfloor$$
-  where $u \in [0, 127]$ maps horizontally from left to right, and $v \in [0, 51]$ maps vertically from top to bottom.
-* **Status Readout Line ($132 \times 13\text{ pixels}$):** The lower 13 vertical pixels ($v \in [52, 64]$) are reserved for coordinate text readouts, equation labels, active mode indicators, and crosshair reticle telemetry rendered in high-contrast monospaced font.
+### Reading the Anatomy of a Curve: Roots, Peaks, Valleys & Inflection Points
 
-### Vector Line Rasterization & Bresenham Algorithm
-Connecting 64 discrete sample points into a continuous graphic curve requires integer line interpolation. The SC-32 graphics pipeline executes a hardware-accelerated **Bresenham Vector Line Algorithm** directly into the 1,072-byte display frame buffer.
-Given two adjacent plotted coordinates $(u_0, v_0)$ and $(u_1, v_1)$:
-$$\Delta u = |u_1 - u_0|, \quad \Delta v = |v_1 - v_0|$$
-The error term $\epsilon = 2\Delta v - \Delta u$ steps across pixel increments without floating-point division, drawing smooth 1-pixel wide line segments that preserve high-frequency crests and steep asymptotes.
+Once you translate an algebraic formula $y = f(x)$ into a Cartesian curve across a horizontal $x$-axis (**domain**) and a vertical $y$-axis (**range**)—defined on the SC-32 via the **`{{key:EQN}}`** editor (Right Shift `{{key:↱}}` above `{{key:STO}}`)—every abstract concept from high-school Algebra II, Precalculus, and introductory calculus turns into an unmistakable landmark on a physical landscape:
 
-> **Reflective Daylight Liquid-Crystal Pixels & Bresenham Stepper Quantization:** Why does the SC-32 display remain razor-sharp in direct midday sunlight where smartphone OLED screens wash out? Each pixel cell in a **transflective** (*transmissive + reflective*) liquid-crystal panel sits above a microscopic semi-mirror: outdoors, ambient sunlight passes through the liquid crystal, bounces off the rear reflector, and returns to your eye with zero battery drain; indoors, a warm edge-lit LED waveguide shines upward through the same liquid-crystal shutter. And when Jack Bresenham invented his 1965 integer line-drawing algorithm at IBM to connect $(u_0, v_0) \to (u_1, v_1)$ on a drum plotter, he solved the exact same discrete quantization problem that governs both our **Counting Tiles** grid (*Figure 12.2*) and every modern CNC mill or 3D printer $X/Y$ stepper carriage: by accumulating the integer decision residual $\epsilon = 2\Delta v - \Delta u$, the hardware knows on every horizontal column step whether to fire a vertical step pulse ($v \leftarrow v \pm 1$), tracing a continuous diagonal line using pure integer addition and subtraction.
+1. **Zeros / Roots ($f(x) = 0$ — Where the Curve Crosses Sea Level):**
+   In Chapter 7, hunting for the roots of a polynomial or transcendental equation meant searching for values of $x$ where $f(x) = 0$. On a Cartesian graph, a root is simply **a shoreline where the terrain crosses sea level** ($y = 0$), switching from negative elevation ($y < 0$, underwater) to positive elevation ($y > 0$, dry land).
+2. **Local Maxima & Minima ($f'(x) = 0$ — Mountain Peaks and Valley Floors):**
+   In Chapter 8, we saw that the derivative $f'(x)$ measures the instantaneous slope of a curve. As you hike up a mountain, the slope is positive ($f'(x) > 0$); as you descend the far side, the slope is negative ($f'(x) < 0$). At the exact summit of a smooth hill (**local maximum**) or the bottom of a smooth valley (**local minimum**), the ground beneath your boots is momentarily **flat and horizontal** ($f'(x) = 0$).
+3. **Inflection Points ($f''(x) = 0$ — Where the Steering Wheel Passes Through Center):**
+   What is an **inflection point**, and how can you feel one in your hands? Imagine driving a car along an S-shaped highway curve modeled by the cubic polynomial:
 
-### Automatic Domain Scaling, Senary-Binary Root Detection & Tangent Overlays
-When a mathematical function is plotted via `{{key:PLOT}}` across the graphing viewport:
-1. **Domain Bounds Selection:** Domain bounds $[X_{\min}, X_{\max}]$ are read directly from stack registers $(Y, X)$—defaulting automatically to $[-3.0, +3.0]$ whenever $Y = X$ (or configured via `XMIN` and `XMAX` registers on the hardware viewport).
-2. **Discrete Grid Evaluation (From the Counting & Array Studio Socket Grid to 64-Column Vector Sampling):** Just as docking $19.0 \times 19.0\text{ mm}$ tiles from the **Counting & Array Studio** into the discrete Miniblock socket grid on the Snapfinity lid—or aligning polynomial factors along the orthogonal axes of the **Algebra Factoring Studio L-Frame Stage**—quantizes continuous coordinates into discrete physical grid cells, the SC-32's hardware viewport sweeps **64 discrete sample columns** across $[X_{\min}, X_{\max}]$:
-   $$x_k = X_{\min} + k \left( \frac{X_{\max} - X_{\min}}{63} \right), \quad k = 0, 1, \dots, 63$$
-   For sample column $k = 21$ across the default domain $[-3.0, +3.0]$, this affine grid mapping on the 4-register stack illustrates how each pixel column maps to its exact domain abscissa $x_{21} = -1.000000$:
+$$y(x) = x^3 - 6x^2 + 9x + 2$$
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 01 | `3 {{key:ENTER}} 3 {{key:+/-}} {{key:-}}` | 0.000000 | 0.000000 | 0.000000 | 6.000000 | Total domain span $X_{\max} - X_{\min} = 3.0 - (-3.0) = 6.0$ |
-| 02 | `63 {{key:÷}}` | 0.000000 | 0.000000 | 0.000000 | 0.095238 | Quantized column step $\Delta x = 6.0 / 63 \approx 0.095238$ |
-| 03 | `21 {{key:×}}` | 0.000000 | 0.000000 | 0.000000 | 2.000000 | Horizontal displacement $k \cdot \Delta x = 2.0$ at column $k = 21$ |
-| 04 | `3 {{key:+/-}} {{key:+}}` | 0.000000 | 0.000000 | 0.000000 | -1.000000 | Sampled domain coordinate $x_{21} = X_{\min} + 2.0 = -1.000000$ |
+   Over the first half of the S-curve ($0 \le x < 2$), the road bends clockwise (curving downward on the map, **concave down**, where the second derivative $y''(x) = 6x - 12 < 0$), and your hands hold the steering wheel turned to the right. Over the second half ($2 < x \le 4$), the road bends counterclockwise (**concave up**, $y''(x) > 0$), and your hands hold the steering wheel turned to the left. Right at $x = 2$, where $y''(2) = 6(2) - 12 = 0$ and the road passes through $(2, 4)$, **your steering wheel passes momentarily through dead center** as the curve switches from bending right to bending left.
+4. **Vertical & Horizontal Asymptotes (Cliffs and Plateaus):**
+   When a rational denominator approaches zero—such as the thin-lens magnification formula $f(x) = \frac{1}{x - 2}$ as an object crosses the focal point $x = 2$—the curve rockets toward $-\infty$ on the left and plunges from $+\infty$ on the right along a **vertical asymptote**. Conversely, when a skydiver steps from a high-altitude balloon under gravity $g$ and quadratic air drag ($v(t) = v_{\text{term}}\tanh(gt/v_{\text{term}})$), or when an uncharged capacitor charges through a resistor toward a supply voltage $V_{\max}$ with RC time constant $\tau$:
 
-3. **Automatic Vertical Range Scaling:** The internal min/max scan determines $Y_{\min} = \min(f(x_k))$ and $Y_{\max} = \max(f(x_k))$, ignoring non-finite singularities (`NaN` / $\pm\infty$). If $Y_{\max} - Y_{\min} < 10^{-12}$ (a flat constant line), the vertical range automatically pads to $[y - 1, y + 1]$.
-4. **Automatic Root Marker Detection (6-Segment Senary Search + 30-Step Binary Search):** While generating the curve, the plotter automatically scans for zero crossings ($f(x_{k-1}) \cdot f(x_k) \le 0$). For each sign change, it executes a **5-pass Senary Search** (partitioning the interval into 6 equal sub-segments per pass to isolate the sub-interval containing the sign reversal), followed by a **30-iteration Binary Search** (bisection) to pinpoint the exact root $(x_{\text{root}}, 0)$ and place an interactive root marker directly on the curve.
-5. **Central-Difference Tangent & Shaded Quadrature Overlays:** When invoked alongside numerical differentiation or Romberg integration (`{{key:∫}}`), the plotter superimposes the exact tangent line $y = f(x_0) + f'(x_0)(x - x_0)$ computed via central difference ($h = 10^{-5}$) or shades the Riemann area columns between $f(x)$ and $y = 0$. When no active equation is selected and at least two statistical data pairs reside in the **50-point scatter ring buffer**, `{{key:PLOT}}` automatically renders a bivariate scatter plot with the least-squares linear regression line $y = mx + b$ superimposed across the data range.
-6. **Sub-Frame Latency:** Total plot generation and Bresenham rasterization completes in under **$42\text{ milliseconds}$**.
+$$V(t) = V_{\max}\!\left(1 - e^{-t/\tau}\right)$$
 
-### Precision Graphic Plot Visualizations & Coordinate Mapping
-
-Alongside the cubic polynomial root and extrema inspection shown in the chapter opening figure above (`X^3 - 6*X^2 + 11*X - 6` over $X \in [0, 4]$, revealing zero crossings at $x = 1, 2, 3$), two additional live visualizations illustrate how the $128 \times 52$ dot-matrix viewport renders definite integrals and probability distributions. First, when plotting an integrand such as `3*X^2` on $[0, 4]$ after or during Adaptive Romberg Quadrature (`{{key:∫}}`), the graphing viewport shades the vertical Riemann columns between the curve $y = f(x)$ and the horizontal axis $y = 0$, visually confirming net positive versus negative area accumulation:
-
-{{res:sc32_plot_romberg_shaded:screenshot|SC-32 Vector Plotter: Shaded Definite Integral of 3x² from 0 to 4 (Area = 64.0)}}
-
-Second, plotting the Standard Normal probability density function $f(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}$ across $Z \in [-3.5\sigma, +3.5\sigma]$ displays the classic symmetric Gaussian bell curve peaking at $f(0) = 0.3989422804$ with inflection points at $z = \pm 1.0\sigma$:
-
-{{res:sc32_plot_normal_bell:screenshot|SC-32 Vector Plotter: Standard Normal Bell Curve over [-3.5, +3.5]}}
+   upward air resistance or capacitor back-voltage gradually balances the driving force, and the curve bends smoothly toward a flat horizontal ceiling—a **horizontal asymptote** at $v = v_{\text{term}}$ or $V = V_{\max}$ as $t \to \infty$.
 
 ---
 
-## Navigation, Pan & Zoom Control Scheme
+## Rasterization on a Pocket Canvas: Turning Equations into Pixels
 
-In Plot Mode, the physical keypad dynamically reconfigures into an intuitive navigation controller:
+### The Paradox of Digital Graphics: Continuous Math on a Discrete Grid
 
-| Key | Action | Operational Behavior |
-|:---|:---|:---|
-| `{{key:PLOT}}` | Enter Plot Mode | Renders active function / data |
-| Numpad `{{key:8}}` | Pan Up | Shifts Y-window upward by 25% |
-| Numpad `{{key:2}}` | Pan Down | Shifts Y-window downward by 25% |
-| Numpad `{{key:4}}` | Pan Left | Shifts X-window left by 25% |
-| Numpad `{{key:6}}` | Pan Right | Shifts X-window right by 25% |
-| `{{key:+}}` | Zoom In | Contracts window bounds by 50% |
-| `{{key:-}}` | Zoom Out | Expands window bounds by 200% |
-| `{{key:↓}}` (Key 7) | Trace Previous | Moves crosshair left along curve |
-| `{{key:↑}}` (Key 8) | Trace Next | Moves crosshair right on curve |
-| `{{key:ENTER}}` | Commit Coordinates | Copies current (X, Y) to stack |
-| `{{key:<-}}` or `{{key:C}}` | Exit Plot | Restores normal RPN stack view |
+Descartes imagined his coordinate plane as infinitely smooth: between any two points on a line, there are infinitely many closer points. A computer or calculator screen, however, is **discrete**. Inspect a monochrome liquid-crystal display through a magnifying glass, and you will see a chessboard of tiny rectangular liquid-crystal shutters (**pixels**, short for *picture elements*), each of which is either **ON (dark ink)** or **OFF (reflective paper background)**.
 
-### From Visual Curve Inspection to Stack Coordinate Commitment
-Plotting a function on the transflective LCD immediately exposes its qualitative behavior—root crossings, asymptotic singularities, local extrema, and Gibbs ringing overshoots—before any numerical solver is invoked. Look at *Figure 12.2*: when you dock $19.0 \times 19.0\text{ mm}$ tiles from the **Counting & Array Studio** into the $3 \times 8$ discrete socket grid on the Snapfinity lid, a continuous diagonal line must step from socket column to socket column by integer grid increments $(\Delta u, \Delta v)$. That physical socket-grid quantization is the exact tactile model of the SC-32's $128 \times 52$ pixel framebuffer and Jack Bresenham's (1965) integer line-drawing algorithm: the plotter evaluates $y = f(x_k)$ at 64 discrete horizontal columns, maps each $(x_k, y_k)$ sample to its nearest integer pixel socket $(u_k, v_k)$, and connects adjacent sockets with 1-pixel staircase steps. Stepping the interactive crosshair reticle along the rasterized curve with `{{key:↓}}` and `{{key:↑}}` displays each sampled $(x, y)$ coordinate pair in real time (just like reading the simultaneous $(\cos\theta, \sin\theta)$ sight-windows of the **Unit Circle Trigonometry Volvelle**). Pressing `{{key:ENTER}}` commits that exact coordinate pair directly into the operational stack ($Y = x, X = y$) so you can launch `{{key:SOLVE}}` or `{{key:∫}}` without retyping a single digit.
+That raises a fascinating computer-science question that bridges Chapter 10 (discrete integer bits) and Chapter 8 (continuous functions): **how does a digital processor translate a smooth, continuous mathematical equation $y = f(x)$ into a crisp ribbon of integer pixels in less than a twentieth of a second?**
 
-{{blocks:counting_tiles_array_3x8|Discrete Grid Sampling and Pixel Quantization Array}}
-*Figure 12.2: Discrete grid sampling array: docking $19.0\text{ mm}$ Counting Tiles into discrete grid columns illustrates how mathematical domain intervals map to quantized display pixels before hardware-accelerated Bresenham line interpolation.*
+Inside the SC-32's $132 \times 65\text{ pixel}$ transflective LCD, the graphical plotting viewport dedicates a clean $128 \times 52\text{ pixel}$ active curve canvas directly above the 13-pixel status and coordinate readout bar. Placing the horizontal domain window $[X_{\min}, X_{\max}]$ into Registers $Y$ and $X$ and pressing **`{{key:PLOT}}`** (Right Shift `{{key:↱}}` above `{{key:x∥y}}`) launches the firmware's 100-step Bresenham vector renderer across the 128-column plotting canvas in three clean inside-out stages:
 
----
+### Stage 1: Slicing the Continuous Domain into Discrete Columns
 
-## Window Bounds & Viewport Configuration
+Suppose you ask the calculator to plot a function $y = f(x)$ across a horizontal world window from $X_{\min} = -3.0$ on the left to $X_{\max} = +3.0$ on the right (a total horizontal span of $\Delta X = X_{\max} - X_{\min} = 6.0$). In firmware, the plotter sweeps $100$ evenly spaced horizontal steps across the 128-column viewport; to illustrate the exact column-sampling algebra on the stack with clean mental fractions, consider a **worked 64-column ($N = 64$, $k = 0, 1, 2, \dots, 63$) affine viewport-mapping benchmark** that divides the span into $N - 1 = 63$ equal steps of width $\Delta x = \frac{X_{\max} - X_{\min}}{63}$:
 
-You can set the horizontal plotting window $[X_{\min}, X_{\max}]$ in two ways: either push the domain limits directly onto the stack ($Y = X_{\min},\; X = X_{\max}$, which defaults to $[-3.0, +3.0]$ whenever $Y = X$) and press `{{key:PLOT}}`, or store persistent bounds into the named window registers (`XMIN`, `XMAX`, `YMIN`, `YMAX`, `XSCL`, `YSCL`):
+$$x_k = X_{\min} + k \left(\frac{X_{\max} - X_{\min}}{63}\right), \qquad k = 0, 1, \dots, 63$$
 
-| Parameter | Register / Stack | Default Value | Description |
-|:---|:---|:---|:---|
-| Xmin | Register $Y$ / `XMIN` | `-3.0` (Stack) / `-10.0` (Reg) | Leftmost domain boundary |
-| Xmax | Register $X$ / `XMAX` | `+3.0` (Stack) / `+10.0` (Reg) | Rightmost domain boundary |
-| Ymin | `YMIN` | (Auto-scaled) | Lower range boundary |
-| Ymax | `YMAX` | (Auto-scaled) | Upper range boundary |
-| Xscl | `XSCL` | 1.00000000000 | Tick mark spacing along X-axis |
-| Yscl | `YSCL` | 1.00000000000 | Tick mark spacing along Y-axis |
+At column $k = 0$ (the left edge), $x_0 = -3.0$; at column $k = 21$ (exact one-third of the way across, since $21 / 63 = 1/3$), $x_{21} = -3.0 + 21 \times \frac{6.0}{63} = -3.0 + 2.0 = -1.0$; and at column $k = 63$ (the right edge), $x_{63} = +3.0$.
 
-For example, to sweep an equation from $-10$ to $+10$ on the fly, simply key `10 {{key:+/-}} {{key:ENTER}} 10 {{key:PLOT}}` (or store `10 {{key:+/-}} {{key:STO}} "XMIN"` and `10 {{key:STO}} "XMAX"` before pressing `{{key:PLOT}}`).
+### Stage 2: Auto-Scaling & The Affine Viewport Transformation (Flipping the Y-Axis)
 
----
+As the calculator evaluates $y_k = f(x_k)$ at each sampled horizontal step across the 128-column canvas, it keeps a running record of the lowest value $Y_{\min} = \min(y_k)$ and the highest value $Y_{\max} = \max(y_k)$—cleverly skipping over any sample where the function hits an undefined division by zero (`NaN` or $\pm\infty$) so a single vertical asymptote does not crush the rest of the graph into a flat line.
 
-## Advanced Statistical Regression Curve Overlays
+Now comes a subtle twist that every game programmer and graphics engineer learns on Day One: **in mathematics, $+y$ points UP, but in computer memory, pixel row numbers $v$ count DOWN from the top-left corner of the screen.**
 
-When performing bivariate data analysis in `{{key:SUMS}}` mode, the SC-32 can superimpose four distinct mathematical curve models directly over your empirical scatter points:
+Within the $132 \times 65$ transflective display's active $128 \times 52\text{ pixel}$ graphing viewport (where horizontal pixel columns run from $u = 0$ on the left to $u = 127$ on the right, and vertical pixel rows run from $v = 0$ at the **top** edge to $v = 51$ at the **bottom** edge above the 13-pixel coordinate readout bar), mapping a continuous world point $(x, y)$ onto an integer screen pixel $(u, v)$ requires a two-step **Affine Viewport Transformation**:
 
-| Model | Formula | Transformation Protocol |
-|:---|:---|:---|
-| Linear | $y = m x + b$ | Native coordinates: $(x, y)$ |
-| Logarithmic | $y = a \ln(x) + b$ | Semi-logarithmic: $(\ln x, y)$ |
-| Exponential | $y = a e^{b x}$ | Semi-logarithmic: $(x, \ln y)$ |
-| Power | $y = a x^b$ | Log-Log: $(\ln x, \ln y)$ |
+$$u = \left\lfloor \frac{x - X_{\min}}{X_{\max} - X_{\min}} \times 127 \right\rfloor, \qquad v = 51 - \left\lfloor \frac{y - Y_{\min}}{Y_{\max} - Y_{\min}} \times 51 \right\rfloor$$
 
-### Goodness-of-Fit & Coefficient of Determination ($R^2$)
-The correlation coefficient $r$ provided by `{{key:ŷ}}` quantifies the linear association between the transformed coordinates, and squaring $r$ on the stack (`{{key:x²}}`) yields the **Coefficient of Determination ($R^2$)**:
+Examine the inside-out structure of both formulas:
+1. **Normalize (`[0, 1]`):** Subtract the minimum bound ($x - X_{\min}$ or $y - Y_{\min}$) and divide by the total window span ($X_{\max} - X_{\min}$ or $Y_{\max} - Y_{\min}$). That turns *any* physical units—whether nanometers of optical wavelength, seconds of rocket burn, or millions of dollars—into a universal dimensionless fraction between $0.0$ and $1.0$.
+2. **Scale & Invert:** Multiply the horizontal fraction by $127$ pixels; multiply the vertical fraction by $51$ pixels and subtract from $51$ so the highest mathematical peak ($y = Y_{\max}$) lands at the top row of the screen ($v = 0$) and the lowest valley ($y = Y_{\min}$) lands at the bottom row ($v = 51$).
 
-$$R^2 = 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}} = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}$$
+### Stage 3: Jack Bresenham's 1962 Integer Line-Drawing Miracle
 
-For the pressure sensor calibration dataset analyzed below ($r = 0.999565$), pressing `{{key:x²}}` immediately gives $R^2 = 0.999130$, confirming that $99.91\%$ of the output voltage variance is explained by applied pressure while the scatter plot lets you inspect the individual residuals visually.
+Wait: if you only light up the isolated sample dots $(u_k, v_k)$ on the screen, a steep curve—like a high-frequency sine wave or a cubic polynomial—will look like a scattered constellation of disconnected dots with wide vertical gaps between columns.
+
+How do you connect two pixel coordinates $(u_0, v_0)$ and $(u_1, v_1)$ with a continuous, gap-free straight line segment on a square grid?
+
+In **1962**, a twenty-four-year-old engineer named **Jack Elton Bresenham** was working at IBM's computation laboratory in San Jose, California. He wanted to write a program to drive an early CalComp mechanical drum plotter attached to an IBM 1401 computer. There was just one catch: the computer had **no floating-point hardware** and **no fast division instruction**. If the plotter had to compute a floating-point slope $m = \frac{\Delta v}{\Delta u}$ and round decimals at every single pixel step, drawing one graph would take forever.
+
+Bresenham asked a brilliant inside-out question: suppose we are drawing a line that moves $\Delta u = u_1 - u_0$ pixels to the right and rises $\Delta v = |v_1 - v_0|$ pixels vertically (with $\Delta v \le \Delta u$, and swapping the roles of $u$ and $v$ whenever a steep curve segment rises faster than it runs, $\Delta v > \Delta u$). As we step one column to the right ($u \leftarrow u + 1$), the true mathematical line rises by the fraction $\frac{\Delta v}{\Delta u}$ of a pixel. We only need to decide a simple binary question: **is the true line closer to staying on the current pixel row $v$, or stepping one pixel row up ($v \pm 1$)?**
+
+Instead of dividing $\Delta v$ by $\Delta u$ and comparing the fraction against $\frac{1}{2}$ ($0.5$), Bresenham multiplied the entire inequality by $2\Delta u$ to clear the fraction completely. That left an **integer error accumulator**:
+
+$$\epsilon_0 = 2\Delta v - \Delta u$$
+
+- On each horizontal pixel step, if $\epsilon < 0$, the line has not yet crossed the halfway mark: stay on the same row $v$ and add $2\Delta v$ to $\epsilon$.
+- If $\epsilon \ge 0$, the line has crossed the halfway mark: step one pixel vertically ($v \leftarrow v \pm 1$) and add $2(\Delta v - \Delta u)$ to $\epsilon$.
+
+Zero fractions, zero floating-point decimals, and zero divisions—just integer addition, subtraction, and a bit-shift by $2$! **Bresenham's Line Algorithm** became one of the foundational pillars of computer graphics, etched into the silicon of every modern graphics card, laser printer, CNC milling controller, and the SC-32's 42-millisecond vector plotting engine {{cite:hp32sii1991}}.
 
 ---
 
-## Visual Crosshair Bracketing (`PLOT`) & Analytical Refinement (`SOLVE` & `∫`)
+## Why Summary Numbers Can Lie: Anscombe's Quartet & Visual Root Bracketing
 
-Why pair a 64-column graphical plotter with a 12-digit numerical root solver and integrator? Because human visual intuition and high-precision numerical algorithms have complementary blind spots!
+### Francis Anscombe's 1973 Quartet: Why You Must Always Plot Your Data
 
-A blind numerical root search (`{{key:SOLVE}}`) or definite integral (`{{key:∫}}`) on an unfamiliar nonlinear function can easily miss a second root, get trapped near a local extremum, or integrate right across a hidden vertical asymptote. Conversely, a 64-column pixel plot (`{{key:PLOT}}`) reveals the global shape of a function in under $42\text{ ms}$, but its horizontal cursor step is quantized to $\Delta x = (X_{\max} - X_{\min})/63$. On the SC-32, you combine both strengths into a seamless two-stage pipeline:
-1. **Visual Crosshair Reconnaissance (`{{key:PLOT}}`):** Plot the active `{{key:EQN}}` over $[X_{\min}, X_{\max}]$. The plotter's automatic **6-segment senary + 30-step binary root detector** places visual markers on every zero crossing, while stepping the crosshair reticle with `{{key:↓}}` and `{{key:↑}}` lets you inspect peaks, troughs, and inflection points on the bottom status line.
-2. **Direct Stack Handoff to `{{key:SOLVE}}` & `{{key:∫}}` via `{{key:ENTER}}`:** When the crosshair rests near a root or interval bound of interest, pressing `{{key:ENTER}}` exits `{{key:PLOT}}` and pushes the active crosshair coordinates directly onto the operational stack: Register $Y$ receives the horizontal coordinate $x$, and Register $X$ receives the vertical evaluated coordinate $y$. From there, you can immediately invoke Brent's solver (`{{key:SOLVE}}`) or Adaptive Romberg Quadrature (`{{key:∫}}`) to refine that visual reading to full **12-digit analytical precision** without re-typing a single coordinate!
+In Chapter 9, we saw how Carl Friedrich Gauss's method of least squares distills a cloud of $(x_i, y_i)$ measurements into four clean summary numbers: the sample means $(\bar{x}, \bar{y})$, the sample standard deviations $(s_x, s_y)$, the linear regression line $\hat{y} = m x + b$, and Karl Pearson's correlation coefficient $r$.
 
-Keep three practical habits in mind when plotting functions: first, make sure the lower domain bound is strictly less than the upper bound ($X_{\min} < X_{\max}$, otherwise `Error 01: INVALID DATA` is reported when `XMIN` $\ge$ `XMAX`); second, check that your angular mode (`{{key:RAD}}` vs. `{{key:DEG}}`) matches your domain bounds when plotting trigonometric waveforms (plotting $\sin x$ over $[-3.14, +3.14]$ while accidentally in Degrees mode will trace only a tiny $6.28^\circ$ ramp near the origin!); and third, whenever an equation hits a pole or undefined domain point (such as $1/0$ or $\ln(-1)$) at one of the 64 sample columns, the Bresenham renderer automatically lifts its virtual pen across the singularity rather than drawing a false vertical line connecting $-\infty$ to $+\infty$.
+By the early 1970s, as mainframe computers made statistical regression effortless, many scientists and economists stopped bothering to graph their data at all—looking only at the printed values of $m, b,$ and $r$.
 
-### Blind Solver Guesses vs. Visual Viewport Bracketing (`{{key:PLOT}}` $\to$ `{{key:SOLVE}}`)
+In **1973**, British statistician **Francis John Anscombe**—founder of Yale University's Department of Statistics—published a four-page paper in *The American Statistician* titled *"Graphs in Statistical Analysis"* that shocked the scientific world. To prove that summary statistics without a visual plot can be dangerously deceptive, Anscombe constructed four small datasets (**Anscombe's Quartet**), each consisting of $n = 11$ coordinate pairs $(x_i, y_i)$.
 
-Coupling the 128×64 viewport reticle directly to Registers $Y$ and $X$ eliminates the disconnected graph-screen menus and manual bound re-entry required on conventional algebraic graphing calculators:
+If you feed all four datasets into a statistical calculator and read only the summary numbers, they look **100% identical**:
 
-| Challenge / Metric | Conventional Algebraic Calculator (Infix) | Algebraic Strokes | SC-32 RPN Stack Method | SC-32 Strokes | Stack Advantage |
-| :--- | :--- | :---: | :--- | :---: | :--- |
-| **Fourier Series**: Square Wave ($\sin t + \frac{1}{3}\sin 3t + \frac{1}{5}\sin 5t$) | Rigid formula line `Y1 = sin(X) + (1/3)*sin(3*X) + (1/5)*sin(5*X)`. Missing a parenthesis halts with `SYNTAX ERROR`. Repeated point re-evaluations re-parse token tree. | 42 | **Hardware Stack Vector Sampling**: Postfix expression `T SIN T 3 * SIN 3 / + T 5 * SIN 5 / +` evaluates directly on registers. Deterministic sweep in $<42\text{ ms}$; zero parenthesis stack overhead. | 22 | **48% fewer strokes + zero parenthesis syntax errors** |
-| **Extrema & Zero Inspection**: Root Bracketing | Graph function, navigate `CALC` $\to$ `zero`, enter Left Bound, Right Bound, Guess via arrow keys. Numerical root is stranded on graph screen; must exit to home screen and re-type coordinate for subsequent integration. | 38 | **Interactive Reticle Stack Commitment**: Trace crosshair with `{{key:↓}}/{{key:↑}}` to visual zero/extrema; tap `{{key:ENTER}}` to commit exact $(x, y)$ coordinates into Registers $Y$ and $X$. Directly invoke `{{key:SOLVE}}` with zero re-entry. | 14 | **63% fewer strokes + direct stack-to-solver pipeline** |
-| **Domain Window Sweep**: Dynamic Range Scaling | Open `WINDOW` menu, manually adjust `Xmin`, `Xmax`, `Xscl`, `Ymin`, `Ymax`, `Yscl`. If $Y$ bounds are mismatched, curve clips off-screen; user must execute trial-and-error `ZoomFit`. | 32 | **Stack-Direct Bounds & Hardware Auto-Scale**: Push domain bounds to stack ($Y = X_{\min}, X = X_{\max}$) or store into `XMIN`/`XMAX`; engine automatically calculates $[Y_{\min}, Y_{\max}]$ and auto-scales vertical viewport in $<42\text{ ms}$. | 12 | **62% fewer strokes + automatic optimal vertical scaling** |
-| **Scatter Data & Curve Fit**: Regression Overlay | Navigate `STAT` $\to$ `EDIT`, manually populate `L1` and `L2` column tables. Exit to `STAT PLOT`, enable `Plot1`. Navigate `STAT` $\to$ `CALC` $\to$ `LinReg`, paste `L1, L2, Y1`. Prone to dimension mismatch errors. | 46 | **Live Statistical Accumulation (`{{key:Σ+}}`)**: Stream raw $(x, y)$ pairs onto stack and press `{{key:Σ+}}`. Instant correlation $r$ and $R^2$ via `{{key:x²}}`; superimpose linear, exponential, logarithmic, or power regressions directly over scatter dots. | 18 | **61% fewer strokes + zero list-dimension mismatch** |
+| Statistical Metric | Dataset I | Dataset II | Dataset III | Dataset IV |
+| :--- | :---: | :---: | :---: | :---: |
+| **Sample Size ($n$)** | $11$ | $11$ | $11$ | $11$ |
+| **Mean of $x$ ($\bar{x}$) & Variance ($s_x^2$)** | $\bar{x} = 9.0,\; s_x^2 = 11.0$ | $\bar{x} = 9.0,\; s_x^2 = 11.0$ | $\bar{x} = 9.0,\; s_x^2 = 11.0$ | $\bar{x} = 9.0,\; s_x^2 = 11.0$ |
+| **Mean of $y$ ($\bar{y}$) & Variance ($s_y^2$)** | $\bar{y} = 7.50,\; s_y^2 = 4.125$ | $\bar{y} = 7.50,\; s_y^2 = 4.125$ | $\bar{y} = 7.50,\; s_y^2 = 4.125$ | $\bar{y} = 7.50,\; s_y^2 = 4.125$ |
+| **Least-Squares Line ($\hat{y} = m x + b$)** | $\hat{y} = 0.500x + 3.00$ | $\hat{y} = 0.500x + 3.00$ | $\hat{y} = 0.500x + 3.00$ | $\hat{y} = 0.500x + 3.00$ |
+| **Correlation ($r$) & Determination ($R^2$)** | $r = 0.816,\; R^2 = 0.667$ | $r = 0.816,\; R^2 = 0.667$ | $r = 0.816,\; R^2 = 0.667$ | $r = 0.816,\; R^2 = 0.667$ |
 
----
+An analyst looking only at $m = 0.500$, $b = 3.00$, and $r = 0.816$ would conclude that all four experiments show the exact same moderately strong linear trend. Yet the moment you press **`{{key:PLOT}}`** after accumulating your data pairs with **`{{key:Σ+}}`**, the SC-32 automatically renders a bivariate scatter plot with the least-squares trendline $\hat{y} = 0.500x + 3.00$ overlaid, and four completely different stories appear in less than a second:
 
-## Visual Reconnaissance and Analytical Refinement Across Engineering Curves
+- **Dataset I (True Linear Cloud):** Eleven noisy data points scattered naturally around a genuine straight line—the only dataset where linear regression is actually appropriate.
+- **Dataset II (The Hidden Parabola):** Eleven points lying on a smooth, noiseless **quadratic arch** that rises to a peak and curves back down. A linear fit is the wrong mathematical model—the data calls for a polynomial or nonlinear curve.
+- **Dataset III (The Single Bad Outlier):** Ten points lying on a razor-sharp straight line of slope $0.346$, plus **one single corrupted sensor reading** at $(13, 12.74)$ that yanks the least-squares slope up to $0.500$ and ruins the correlation.
+- **Dataset IV (The Leverage Mirage):** Ten points stacked vertically at the exact same $x = 8.0$ (showing *zero* relationship between $x$ and $y$), plus **one isolated point** far to the right at $(19, 12.50)$ that single-handedly fabricates a fake correlation of $r = 0.816$!
 
-On a conventional algebraic graphing calculator, defining a multi-term Fourier series or transfer function requires typing a deeply nested string of infix parentheses into a small formula editor, where a single mismatched bracket halts the plot with a `SYNTAX ERROR`. On the StackCalc SC-32, equations are evaluated directly on the four hardware stack registers ($X, Y, Z, T$) in under 42 milliseconds {{cite:hp32sii1991}}, and pressing `{{key:ENTER}}` while tracing hands the live $(x, y)$ crosshair coordinates straight back to the stack for 12-digit verification, root-finding (`{{key:SOLVE}}`), or integration (`{{key:∫}}`) {{cite:brent1973,romberg1955}}.
+Anscombe's Quartet is why a scientist or engineer should never trust a correlation coefficient in the dark: pairing `{{key:Σ+}}` statistical accumulation with `{{key:PLOT}}` lets your eyes verify in an instant whether your data follows a straight line, an exponential curve, a power law, or contains a rogue outlier.
 
----
+### Visual Root Bracketing & Harmonic Waveforms: Where Vision Guides Precision
 
-### Harmonic Waveforms, Damped Transients & Cartesian Function Plotting
+Plotting is equally transformative when paired with numerical root-finding (`{{key:SOLVE}}`) and integration (`{{key:∫}}`) {{cite:brent1973,romberg1955}}. Think about the complementary strengths of the human eye and a 12-digit numerical solver:
 
-We open by rendering Joseph Fourier's harmonic square-wave synthesis, an underdamped automotive shock-absorber transient, and a Fraunhofer single-slit optical diffraction pattern on the $128 \times 52$ pixel canvas. When Jean-Baptiste Joseph Fourier claimed in 1807 that *any* periodic waveform—even a flat-topped square wave with vertical jumps—could be constructed by adding together smooth sinusoidal waves, his contemporaries Lagrange and Laplace were incredulous. Yet as we stack odd harmonics of decreasing amplitude ($y(t) = \sin(t) + \frac{1}{3}\sin(3t) + \frac{1}{5}\sin(5t)$), the fundamental $\sin t$ provides the main humps, the third harmonic $\frac{1}{3}\sin(3t)$ carves out the center peak to flatten the plateau, and the fifth harmonic $\frac{1}{5}\sin(5t)$ sharpens the corners while leaving a characteristic ripple across the top. To synthesize and plot this three-harmonic square wave across $t \in [-180.0^\circ, +180.0^\circ]$ in Degrees mode (`{{key:DEG}}`), store the postfix expression `T {{key:SIN}} T 3 {{key:×}} {{key:SIN}} 3 {{key:÷}} {{key:+}} T 5 {{key:×}} {{key:SIN}} 5 {{key:÷}} {{key:+}}` in `{{key:EQN}}` mode under label `FOURIER`, set the domain bounds via `180 {{key:+/-}} {{key:STO}} "XMIN"` and `180 {{key:STO}} "XMAX"`, and press `{{key:PLOT}}`:
+- **The Eye Sees the Whole Landscape (Global Reconnaissance):** When you plot a wave or polynomial across the 128-column viewport, your eye immediately sees *how many* roots cross the axis, where local peaks and valleys sit, and whether a vertical asymptote lurks inside the interval—preventing the classic blunder of asking a root solver to search an interval that contains no root or jumps across infinity.
+- **The Solver Refines One Point to 12 Digits (Local Precision):** A pixel screen has finite horizontal column resolution, whereas Richard Brent's solver and Werner Romberg's integrator operate at full 12-digit precision.
 
-| Plot Telemetry | Crosshair Readout | Curve Feature |
-| :--- | :--- | :--- |
-| **Active Function** | `SIN(X) + SIN(3*X)/3` | Fundamental + odd harmonic square-wave synthesis |
-| **Crosshair Cursor** | `X = 90.000000000`, `Y = 0.8666666667` | Central saddle trough between twin local maxima |
+By bisecting and panning the plotted viewport with the six binary-search navigation softkeys (`<`, `|<-`, `OUT`, `IN`, `->|`, `>`) and tapping **`{{key:PLOT}}`** a second time to drop root markers (**`MARK`**), push brackets onto the stack (**`STORE`**) for **`{{key:SOLVE}}`**, or shade definite integrals (**`∫ f(x)`**), you unite global visual insight with 12-digit analytical certainty across every waveform in physics and engineering:
 
-Stepping the crosshair with `{{key:↓}}` and `{{key:↑}}` to the center of the positive plateau at $t = 90.0^\circ$ reveals a slight central dimple flanked by two higher Gibbs-overshoot shoulders, $y(90^\circ) = \sin(90^\circ) + \frac{1}{3}\sin(270^\circ) + \frac{1}{5}\sin(450^\circ) = 1.0 - 0.333333 + 0.200000 = \mathbf{0.866667}$, with the status bar reading `X: 90.000000000    Y: 0.8666666667`. We can verify that exact harmonic sum at $t = 90^\circ$ in `{{key:DEG}}` mode on the RPN stack via {{res:sc32_12_plot_01:keys}} $\implies \mathbf{{{res:sc32_12_plot_01:value}}}$:
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 01 | `90 {{key:SIN}}` | 0.00 | 0.00 | 0.00 | 1.000000 | Fundamental harmonic $\sin(90^\circ) = 1.000000$ |
-| 02 | `90 {{key:ENTER}} 3 {{key:×}} {{key:SIN}}` | 0.00 | 0.00 | 1.000000 | -1.000000 | Third harmonic phase $\sin(270^\circ) = -1.000000$; fundamental lifts to Y |
-| 03 | `3 {{key:÷}}` | 0.00 | 0.00 | 1.000000 | -0.333333 | Scale third harmonic amplitude $-\frac{1}{3} = -0.333333$ |
-| 04 | `{{key:+}}` | 0.00 | 0.00 | 0.00 | 0.666667 | Partial sum of 1st + 3rd harmonics ($0.666667$) |
-| 05 | `90 {{key:ENTER}} 5 {{key:×}} {{key:SIN}}` | 0.00 | 0.00 | 0.666667 | 1.000000 | Fifth harmonic phase $\sin(450^\circ) = 1.000000$; partial sum lifts to Y |
-| 06 | `5 {{key:÷}}` | 0.00 | 0.00 | 0.666667 | 0.200000 | Scale fifth harmonic amplitude $+\frac{1}{5} = 0.200000$ |
-| 07 | `{{key:+}}` | 0.00 | 0.00 | 0.00 | 0.866667 | Three-harmonic square wave trough ordinate $y(90^\circ) = 0.866667$ |
-
-Now compare that steady periodic wave with an exponentially decaying transient. When a car tire strikes a speed bump and drops back onto level pavement at $t = 0$, the suspension coil spring tries to bounce the chassis up and down at its damped natural frequency $\omega_d$, while the hydraulic shock absorber dissipates kinetic energy into heat, wrapping the oscillation inside an exponential decay envelope $x(t) = e^{-\zeta \omega_n t} \cos(\omega_d t)$. For an underdamped sports suspension with damping ratio $\zeta = 0.15$, natural frequency $\omega_n = 4.0\text{ rad/s}$ ($\zeta \omega_n = 0.60\text{ s}^{-1}$), and damped frequency $\omega_d = \omega_n\sqrt{1 - \zeta^2} = 3.9546\text{ rad/s}$, the transient ringing profile is $x(t) = e^{-0.60 t} \cos(3.9546 t)$. In Radians mode (`{{key:RAD}}`), enter `T 0.60 {{key:×}} {{key:+/-}} {{key:eˣ}} T 3.9546 {{key:×}} {{key:COS}} {{key:×}}` in `{{key:EQN}}`, set the domain via `0 {{key:STO}} "XMIN"` and `6 {{key:STO}} "XMAX"`, and press `{{key:PLOT}}`:
-
-| Plot Telemetry | Crosshair Readout | Curve Feature |
-| :--- | :--- | :--- |
-| **Active Function** | `EXP(-0.6*T)*COS(3.9546*T)` | Underdamped second-order exponential ringdown envelope |
-| **Crosshair Cursor** | `X = 0.000000000`, `Y = 1.0000000000` | Initial peak displacement at $t = 0$ |
-
-One second after hitting the bump ($t = 1.0\text{ s}$ in `RAD`), the shock absorber has bled the amplitude envelope down to $e^{-0.60} \approx 54.9\%$ while the phase $\omega_d t = 3.9546\text{ rad}$ ($226.6^\circ$) places the suspension near the bottom of its first rebound trough ({{res:sc32_12_plot_02:keys}} $\implies \mathbf{{{res:sc32_12_plot_02:value}}}$):
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 01 | `1 {{key:ENTER}} .60 {{key:×}}` | 0.00 | 0.00 | 0.00 | 0.600000 | Damping exponent $\zeta \omega_n t = 0.600000$ at $t = 1.0\text{ s}$ |
-| 02 | `{{key:+/-}} {{key:eˣ}}` | 0.00 | 0.00 | 0.00 | 0.548812 | Exponential decay envelope $e^{-0.60} = 0.548812$ |
-| 03 | `1 {{key:ENTER}}` | 0.00 | 0.548812 | 1.000000 | 1.000000 | Stage time $t = 1.0\text{ s}$ for oscillatory phase; envelope lifts to Z |
-| 04 | `3.9546 {{key:×}}` | 0.00 | 0.00 | 0.548812 | 3.954600 | Damped phase angle $\omega_d t = 3.954600\text{ rad}$; envelope drops to Y |
-| 05 | `{{key:COS}}` | 0.00 | 0.00 | 0.548812 | -0.687229 | Cosine carrier $\cos(3.9546\text{ rad}) = -0.687229$ |
-| 06 | `{{key:×}}` | 0.00 | 0.00 | 0.00 | -0.377160 | Instantaneous suspension displacement $x(1.0) = -0.377160\text{ m}$ |
-
-A third oscillatory envelope appears when we shine a coherent laser beam through a narrow rectangular slit onto a dark wall, or transmit a rectangular digital voltage pulse across a band-limited radio channel: the resulting wave amplitude profile is governed by the **sinc function** $y(x) = \frac{\sin x}{x}$, which is the Fourier transform of a rectangular window. Plotting $y(x) = \frac{\sin x}{x}$ over $x \in [-4\pi, +4\pi]$ (`-12.57 {{key:STO}} "XMIN"`, `12.57 {{key:STO}} "XMAX"`) in Radians mode (`{{key:RAD}}`) reveals the tall central diffraction bright fringe at $x = 0$ ($\lim_{x \to 0} \frac{\sin x}{x} = 1.00$) flanked by alternating positive and negative side lobes that cross zero at every non-zero integer multiple of $\pi$ ($\pm\pi, \pm 2\pi, \pm 3\pi, \pm 4\pi$). At the half-lobe point $x = \pi/2$, keying {{res:sc32_12_plot_07:keys}} yields $\mathbf{{{res:sc32_12_plot_07:value}}}$. Notice how `{{key:LASTX}}` streamlines evaluating $\operatorname{sinc}(x) = \frac{\sin x}{x}$ at any angle: forming the half-lobe argument `{{key:RAD}} {{key:π}} 2 {{key:÷}}` ($\pi/2 \approx 1.570796\text{ rad}$) and pressing `{{key:SIN}}` evaluates $\sin(\pi/2) = 1.000000$ in Register $X$ while automatically archiving the radian argument $\pi/2$ in `LASTX`. Chaining `{{key:LASTX}} {{key:÷}}` recalls $\pi/2$ into $X$, lifts $1.000000$ into $Y$, and divides to yield the exact half-lobe amplitude $2/\pi$ ($X = \mathbf{0.636620}$, or $-3.92\text{ dB}$) without re-computing $\pi/2$.
+1. **Joseph Fourier's 1807 Harmonic Synthesis:** When French mathematician **Jean-Baptiste Joseph Fourier** announced in 1807 that a flat-topped **square wave** with sharp corners could be built by adding smooth sine waves of odd frequencies:
+   $$y(t) = \sin(t) + \frac{1}{3}\sin(3t) + \frac{1}{5}\sin(5t) + \cdots$$
+   Lagrange and Laplace could hardly believe it. Plotting just the first three odd harmonics shows *why* Fourier was right: the fundamental $\sin(t)$ forms the main arch, the negative peak of $\frac{1}{3}\sin(3t)$ at $t = 90^\circ$ ($\sin 270^\circ = -1$) presses the middle of the arch down to $1 - \frac{1}{3} = 0.667$, and $\frac{1}{5}\sin(5t)$ lifts the center back up to $1 - \frac{1}{3} + \frac{1}{5} = \mathbf{0.866667}$ while squaring off the shoulders (leaving the famous **Gibbs-phenomenon** ripple ears at the corners).
+2. **Damped Harmonic Ringdown:** When an automobile suspension hits a speed bump at $t = 0$, the coil spring oscillates at $\cos(\omega_d t)$ while the hydraulic shock absorber wraps the motion inside an exponential decay envelope $e^{-\zeta\omega_n t}$:
+   $$x(t) = e^{-\zeta\omega_n t}\cos(\omega_d t)$$
+   Plotting the curve reveals both the oscillation period and how quickly the rebound troughs die away.
+3. **Laser Diffraction & The `sinc` Envelope:** When light passes through a narrow slit, interference produces the classic diffraction pattern $y(x) = \frac{\sin x}{x}$, with a tall central bright fringe $\lim_{x \to 0}\frac{\sin x}{x} = 1$ and alternating side lobes that cross zero at every non-zero multiple of $\pi$.
+4. **Piecewise & Clipped Waveforms via Relational Indicator Tests (`{{key:x?0}}` and `{{key:x?y}}`):** As we discovered in Chapter 7, the relational test menus **`{{key:x?y}}`** (Left Shift `{{key:↰}}` above `{{key:÷}}`) and **`{{key:x?0}}`** (Right Shift `{{key:↱}}` above `{{key:÷}}`) evaluate inside `{{key:EQN}}` to Kenneth Iverson's Boolean indicator $1.0$ (True) or $0.0$ (False). By combining a smooth curve with the three-keystroke Macaulay ramp idiom (`{{key:ENTER}} {{key:x>0}} {{key:×}}`), you can plot and trace half-wave rectifiers / neural-network ReLU units $y = x[x > 0]$, Zener voltage clippers $v_{\text{out}}(x) = x - \langle x - V_Z \rangle_+$, or multi-branch piecewise engineering laws across the entire 128-column canvas of `{{key:PLOT}}` without switching equations!
 
 ---
 
-### Singularities, Bifurcations & Bivariate Scatter Overlays
+## On the Stack: Function Graphing, Reticle Tracing & Scatter-Plot Workbench
 
-Next we inspect how the plotter handles rational poles, biochemical saturation plateaus, empirical `{{key:Σ+}}` calibration scatter plots, and quadrature phase circles. In optics and control theory, rational functions of the form $f(x) = \frac{1}{x - x_0}$ appear whenever a physical denominator passes through zero—such as thin-lens magnification $M = \frac{f}{f - d_o}$ as an object crosses the focal point $d_o = f$. When we examine $f(x) = \frac{1}{x - 2}$ over $x \in [0, 4]$, because $f(x)$ diverges to $-\infty$ as $x \to 2^-$ and plunges from $+\infty$ as $x \to 2^+$, naive plotting software often connects the two branches with a vertical line straight through $x = 2.0$. The SC-32's singularity guard detects the pole and renders the lower-left and upper-right hyperbolic branches cleanly separated, and sampling the upper branch at $x = 2.5$ (`2.5 {{key:ENTER}} 2 {{key:-}}` $\rightarrow 0.500000$, followed by `{{key:1/x}}`) confirms the ordinate ($X = \mathbf{2.000000}$).
+See how every graphical idea in this chapter flows directly from our inside-out stack philosophy. A two-dimensional point $(x, y)$ on Descartes's ceiling—or a horizontal plotting window $[X_{\min}, X_{\max}]$—is simply a pair of numbers sitting naturally on two adjacent shelves: Register `Y` holds the lower domain bound $X_{\min}$, and Register `X` holds the upper domain bound $X_{\max}$. When you center a feature or drop a pair of markers $[x_1, x_2]$ on the SC-32's `{{key:PLOT}}` viewport and tap `{{key:PLOT}}` $\to$ `STORE` (`{{key:LFU2}}`), the calculator pushes those exact coordinates straight into Registers `Y` and `X`, ready for immediate root refinement via `{{key:SOLVE}}`, area integration via `{{key:∫}}`, or algebraic verification on the stack. Let us step onto the workbench and explore the plotting engine in action.
 
-A smooth horizontal asymptote appears in enzyme biochemistry. In Chapter 9, we linearized enzyme kinetics by taking reciprocals $(1/[S], 1/v)$ for a Lineweaver-Burk regression. With `{{key:PLOT}}`, we can inspect Leonor Michaelis and Maud Menten's untransformed hyperbolic saturation curve $v = \frac{V_{\max} [S]}{K_m + [S]}$ directly over $[S] \in [0, 100\text{ mM}]$ for an enzyme with maximum turnover velocity $V_{\max} = 100.0\text{ }\mu\text{mol/min}$ and Michaelis constant $K_m = 15.0\text{ mM}$. The plotted curve rises steeply near the origin ($v \approx \frac{V_{\max}}{K_m}[S]$ when active sites are mostly empty) and bends smoothly toward the horizontal asymptote $V_{\max} = 100$ as substrate floods the enzyme. Stepping the crosshair to $[S] = K_m = 15.0\text{ mM}$ visually confirms that $K_m$ is the exact substrate concentration where reaction velocity reaches half-maximum ($v = V_{\max}/2 = 50.0\text{ }\mu\text{mol/min}$). On the stack, evaluating the numerator `100 {{key:ENTER}} 15 {{key:×}}` forms $V_{\max}[S] = 1500.00$ in Register $X$ while saving $[S] = 15.0$ in `LASTX`; chaining `{{key:LASTX}} 2 {{key:×}} {{key:÷}}` forms the denominator $15 + 15 = 30.00$ and divides to yield $X = \mathbf{50.000000}$ with `15` typed only once.
+{{screenshot:sc32_plot_polynomial|The StackCalc SC-32 rendering an interactive vector curve (X³ − 6X² + 11X − 6) via {{key:PLOT}} with real-time coordinate crosshair telemetry.}}
 
-What if we want to inspect discrete experimental measurements alongside their fitted regression line? Whenever you calibrate a laboratory sensor via `{{key:Σ+}}` (as in Chapter 9's thermistor and pressure calibration models), glancing at the correlation coefficient $r$ alone is never enough—you also want to *see* the data points against the fitted line to verify that no single point is an outlier or a nonlinear bend. Let's load four piezoresistive pressure sensor calibration pairs—$(10\text{ kPa}, 1.25\text{ V}), (20\text{ kPa}, 2.45\text{ V}), (30\text{ kPa}, 3.80\text{ V}), (40\text{ kPa}, 4.95\text{ V})$—by clearing statistics (`{{key:CLEAR}} {{key:CLΣ}}`), entering `1.25 {{key:ENTER}} 10 {{key:Σ+}}`, `2.45 {{key:ENTER}} 20 {{key:Σ+}}`, `3.80 {{key:ENTER}} 30 {{key:Σ+}}`, `4.95 {{key:ENTER}} 40 {{key:Σ+}}`, and pressing `{{key:PLOT}}` (`STAT`):
+### Viewport Geometry, Affine Column Mapping & Crosshair Controls
 
-| Scatter Telemetry | Statistical Readout | Interpretation |
-| :--- | :--- | :--- |
-| **Sample Count** | `n = 4` | Four bivariate `(x, y)` calibration pairs accumulated via `{{key:Σ+}}` |
-| **Linear Fit** | `m = 0.124500`, `r = 0.999565` | Least-squares trendline overlay with near-unity linearity |
+Inside the SC-32's $132 \times 65$ transflective monochrome dot-matrix display, the dedicated **Vector Graphics Engine (`{{key:PLOT}}`)**—accessed via Right Shift `{{key:↱}}` above `{{key:x∥y}}` (Row 7, Column 3) {{cite:hp32sii1991}}—renders functions (sampling 100 horizontal steps across the 128-column canvas in firmware) and scatter clouds across a $128 \times 52\text{ pixel}$ active plotting viewport directly above the 13-pixel coordinate telemetry bar.
 
-The LCD renders the four $2\times 2$ pixel dot markers—just like docking four **Counting Tiles** at discrete $(x_i, y_i)$ coordinates on the grid—and superimposes the least-squares linear regression trendline $y = 0.1245x + 0.0000$ directly through the cloud:
+For our worked 64-column ($N - 1 = 63$, $k \in [0, 63]$) affine viewport-mapping benchmark on the stack at sample column $k = 21$ across the default domain $[-3.0, +3.0]$ ($x_k = X_{\min} + k\frac{X_{\max} - X_{\min}}{63}$), this 4-register trace illustrates how each discrete column maps to its exact domain abscissa $x_{21} = -1.000000$:
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 01 | `{{key:CLEAR}} {{key:CLΣ}}` | 0.00 | 0.00 | 0.00 | 0.00 | Clear statistical accumulators |
-| 02 | `1.25 {{key:ENTER}} 10 {{key:Σ+}}` | 0.00 | 0.00 | 1.25 | 1.00 | Pair 1: (10 kPa, 1.25 V); count n = 1 |
-| 03 | `2.45 {{key:ENTER}} 20 {{key:Σ+}}` | 0.00 | 1.25 | 2.45 | 2.00 | Pair 2: (20 kPa, 2.45 V); count n = 2 |
-| 04 | `3.80 {{key:ENTER}} 30 {{key:Σ+}}` | 1.25 | 2.45 | 3.80 | 3.00 | Pair 3: (30 kPa, 3.80 V); count n = 3 |
-| 05 | `4.95 {{key:ENTER}} 40 {{key:Σ+}}` | 2.45 | 3.80 | 4.95 | 4.00 | Pair 4: (40 kPa, 4.95 V); count n = 4 |
-| 06 | `{{key:m}}` | 2.45 | 3.80 | 4.95 | 0.1245 | Regression slope m = 0.124500 V/kPa |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+|:---|:---|:---|:---|:---|:---|
+| `3 {{key:ENTER}} 3 {{key:+/-}} {{key:-}}` | 0.000000 | 0.000000 | 0.000000 | 6.000000 | Total domain span $X_{\max} - X_{\min} = 3.0 - (-3.0) = 6.0$ |
+| `63 {{key:÷}}` | 0.000000 | 0.000000 | 0.000000 | 0.095238 | Quantized column step $\Delta x = 6.0 / 63 \approx 0.095238$ |
+| `21 {{key:×}}` | 0.000000 | 0.000000 | 0.000000 | 2.000000 | Horizontal displacement $k \cdot \Delta x = 2.0$ at column $k = 21$ |
+| `3 {{key:+/-}} {{key:+}}` | 0.000000 | 0.000000 | 0.000000 | -1.000000 | Sampled domain coordinate $x_{21} = X_{\min} + 2.0 = -1.000000$ |
 
-In 1857, French physicist Jules Antoine Lissajous bounced a narrow beam of light off mirrors attached to two tuning forks vibrating at right angles, projecting glowing geometric loops onto a lecture-hall screen. Today, electrical engineers perform the same test in oscilloscope $X\text{–}Y$ mode to compare the frequency and phase of two AC signals. When two equal-frequency sinusoids have an exact $90^\circ$ ($\pi/2\text{ rad}$) quadrature phase shift, $x(t) = \cos(t)$ and $y(t) = \sin(t)$, their parametric Lissajous trajectory $(x(t), y(t))$ traces the unit circle $x^2 + y^2 = 1$—the exact electronic counterpart of rotating the **Unit Circle Volvelle** through phase angle $t$ while reading its orthogonal $\cos t$ and $\sin t$ sight-windows simultaneously. In `{{key:RAD}}` mode, evaluating `{{key:π}} 4 {{key:÷}} {{key:ENTER}}` ($t = \pi/4 \approx 0.785398$), pressing `{{key:COS}}` to form $x = \cos(\pi/4) \approx 0.707107$ in $X$ while $t$ waits in $Y$, and executing `{{key:x⇄y}} {{key:SIN}}` resolves $y = \sin(\pi/4)$ in $X$ alongside $x$ in $Y$ ($Y = 0.707107,\; X = \mathbf{0.707107}$)—or without `{{key:ENTER}}` via `{{key:π}} 4 {{key:÷}} {{key:COS}} {{key:LASTX}} {{key:SIN}}`.
+The SC-32's **`{{key:PLOT}}`** engine (`Right Shift {{key:↱}} above {{key:x∥y}}`) replaces cumbersome setup forms and manual window-variable entry with a direct, stack-driven graphical architecture:
+
+1. **Stack-Driven Horizontal Domain $[X_{\min}, X_{\max}]$ & Automatic Vertical Autoscaling:** To plot any equation stored in `{{key:EQN}}`, push the lower bound $X_{\min}$ into **Register $Y$** and the upper bound $X_{\max}$ into **Register $X$** (`Xmin {{key:ENTER}} Xmax`), press **`{{key:PLOT}}`** (Right Shift `{{key:↱}}` above `{{key:x∥y}}`), select the equation softkey (`{{key:LFU0}}`–`{{key:LFU5}}`), and tap the independent variable softkey (`X`, `T`, etc.) or `EXEC` (if $Y = X$, the engine defaults to $[-3.0, +3.0]$, or $[-10.0, +10.0]$ via `EXEC`). As the engine sweeps 100 horizontal sample steps across the 128-column viewport, it **automatically autoscales the vertical range $[Y_{\min}, Y_{\max}]$** with a $10\%$ top/bottom margin, printing the live **`[minY, maxY]`** range at the top-right of the LCD and the center $x$-coordinate **`centerX`** at the top-left.
+2. **Automatic Senary Root-Marker Detection:** During every plot sweep, the engine partitions $[X_{\min}, X_{\max}]$ into 6 senary sub-intervals, detects sign changes $f(x_k)\cdot f(x_{k+1}) < 0$, refines each zero crossing via 30-step binary bisection to $10^{-10}$, and draws vertical root markers directly on the curve.
+3. **The 6 Primary Plot Navigation Softkeys (`{{key:LFU0}}`–`{{key:LFU5}}`):** While a graph is displayed, the six top softkeys form a **Binary-Search Zoom & Pan Toolbar**:
+   * **`{{key:LFU0}}` (`<`):** Pan Left by $25\%$ of the current domain width.
+   * **`{{key:LFU1}}` (`|<-`):** Bisect Left Half—zooms the domain to the left half $[X_{\min}, X_{\text{center}}]$.
+   * **`{{key:LFU2}}` (`OUT`, or `{{key:<-}}` Backspace):** Zoom Out $2\times$ around `centerX`.
+   * **`{{key:LFU3}}` (`IN`):** Zoom In $2\times$ ($0.5\times$ width) around `centerX`.
+   * **`{{key:LFU4}}` (`->|`):** Bisect Right Half—zooms the domain to the right half $[X_{\text{center}}, X_{\max}]$.
+   * **`{{key:LFU5}}` (`>`):** Pan Right by $25\%$ of the current domain width.
+4. **The Second-Tap `{{key:PLOT}}` Action Toolbar (`MARK`, `CLEAR`, `STORE`, `∫ f(x)`):** Pressing **`{{key:PLOT}}`** a second time while viewing a graph toggles the 4-action softkey menu:
+   * **`{{key:LFU0}}` (`MARK`):** Drops a vertical marker at the current center crosshair `centerX`.
+   * **`{{key:LFU1}}` (`CLEAR`):** Clears active plot markers.
+   * **`{{key:LFU2}}` (`STORE`):** Pushes the two most recent plot markers $[x_1, x_2]$ (or $(y, x)$ at the center crosshair) directly onto **Registers $Y$ and $X$** of the live RPN stack—giving you an instant visual bracket for **`{{key:SOLVE}}`**.
+   * **`{{key:LFU3}}` (`∫ f(x)`):** Executes Romberg quadrature (`{{key:∫}}`) directly between the active markers (or across $[X_{\min}, X_{\max}]$) and shades the area under the curve.
+   * Pressing **`{{key:C}}`** exits `{{key:PLOT}}` cleanly back to the stack.
+
+> **Visual Root-Bracketing Recipe (`PLOT` $\to$ `MARK` $\to$ `STORE` $\to$ `SOLVE`):**
+> To find a root to 12-digit precision without guessing blind brackets:
+> 1. Push your search window $[X_{\min}, X_{\max}]$ onto the stack (`Xmin {{key:ENTER}} Xmax`) and press `{{key:PLOT}}` (Right Shift `{{key:↱}}` above `{{key:x∥y}}`).
+> 2. Use the binary-search navigation softkeys (`|<-`, `->|`, `IN`, `<`, `>`) to frame the zero crossing (or drop two markers straddling the crossing via second-tap `{{key:PLOT}}` $\to$ `MARK` on `{{key:LFU0}}`).
+> 3. Tap `{{key:PLOT}}` $\to$ `STORE` (`{{key:LFU2}}`) to push the visual bracket $[x_1, x_2]$ directly onto Registers $Y$ and $X$, press `{{key:C}}` to return to the stack, and invoke `{{key:SOLVE}}` (Right Shift `{{key:↱}}` above `{{key:7}}`) to polish the zero crossing to 12-digit accuracy!
+
+### Tracing Cubic Inflections, Fourier Square Waves, Damped Ringdown & `sinc` Lobes
+
+Consider the cubic highway S-curve $y(x) = x^3 - 6x^2 + 9x + 2$ plotted over $x \in [0, 4]$ via `0 {{key:ENTER}} 4 {{key:PLOT}}`: its local maximum rises to $(1, 6)$, its local minimum dips to $(3, 2)$, and its inflection point ($y''(x) = 6x - 12 = 0$) sits midway between them at $x = 2$. Writing $y(x)$ in nested Horner form $y(x) = ((x - 6)x + 9)x + 2$ and pre-filling the 4-level stack evaluates the inflection ordinate ($X = \mathbf{4.000000}$) with `2` typed only once:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+|:---|:---|:---|:---|:---|:---|
+| `2 {{key:ENTER}} {{key:ENTER}} {{key:ENTER}}` | 2.000000 | 2.000000 | 2.000000 | 2.000000 | Flood all four stack registers with inflection abscissa $x = 2.0$ |
+| `6 {{key:-}}` | 2.000000 | 2.000000 | 2.000000 | -4.000000 | Innermost Horner factor $x - 6 = -4.0$; Register $T$ replicates $2.0$ |
+| `{{key:×}} 9 {{key:+}}` | 2.000000 | 2.000000 | 2.000000 | 1.000000 | Second Horner stage $(x - 6)x + 9 = 1.0$; $x = 2.0$ drops into $Y$ |
+| `{{key:×}} 2 {{key:+}}` | 2.000000 | 2.000000 | 2.000000 | 4.000000 | Inflection point ordinate $y(2) = ((x - 6)x + 9)x + 2 = 4.000000$ |
+
+To synthesize and plot Joseph Fourier's three-harmonic square wave $y(t) = \sin(t) + \frac{1}{3}\sin(3t) + \frac{1}{5}\sin(5t)$ across $t \in [-180.0^\circ, +180.0^\circ]$ in Degrees mode (`{{key:DEG}}`), store `T {{key:SIN}} T 3 {{key:×}} {{key:SIN}} 3 {{key:÷}} {{key:+}} T 5 {{key:×}} {{key:SIN}} 5 {{key:÷}} {{key:+}}` in `{{key:EQN}}` (remembering that inside `{{key:EQN}}` mode, each variable `T` is keyed via `{{key:RCL}} T`, i.e., `{{key:RCL}}` followed by `{{key:4}}`), and launch the domain $[-180^\circ, +180^\circ]$ directly from the stack via `180 {{key:+/-}} {{key:ENTER}} 180 {{key:PLOT}}`! Navigating to the center plateau trough at $t = 90.0^\circ$ in `{{key:DEG}}` mode and verifying on the stack via {{res:sc32_12_plot_01:keys}} yields $\mathbf{{{res:sc32_12_plot_01:value}}}$:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+|:---|:---|:---|:---|:---|:---|
+| `90 {{key:SIN}}` | 0.00 | 0.00 | 0.00 | 1.000000 | Fundamental harmonic $\sin(90^\circ) = 1.000000$ |
+| `90 {{key:ENTER}} 3 {{key:×}} {{key:SIN}}` | 0.00 | 0.00 | 1.000000 | -1.000000 | Third harmonic phase $\sin(270^\circ) = -1.000000$; fundamental lifts to Y |
+| `3 {{key:÷}}` | 0.00 | 0.00 | 1.000000 | -0.333333 | Scale third harmonic amplitude $-\frac{1}{3} = -0.333333$ |
+| `{{key:+}}` | 0.00 | 0.00 | 0.00 | 0.666667 | Partial sum of 1st + 3rd harmonics ($0.666667$) |
+| `90 {{key:ENTER}} 5 {{key:×}} {{key:SIN}}` | 0.00 | 0.00 | 0.666667 | 1.000000 | Fifth harmonic phase $\sin(450^\circ) = 1.000000$; partial sum lifts to Y |
+| `5 {{key:÷}}` | 0.00 | 0.00 | 0.666667 | 0.200000 | Scale fifth harmonic amplitude $+\frac{1}{5} = 0.200000$ |
+| `{{key:+}}` | 0.00 | 0.00 | 0.00 | 0.866667 | Three-harmonic square wave trough ordinate $y(90^\circ) = 0.866667$ |
+
+When an underdamped sports suspension $x(t) = e^{-0.60 t} \cos(3.9546 t)$ ($\zeta = 0.15, \omega_n = 4.0\text{ rad/s}, \omega_d = 3.9546\text{ rad/s}$) is plotted over $t \in [0, 6\text{ s}]$ in Radians mode (`{{key:RAD}}`), the trace shows the cosine oscillation decaying inside its exponential envelope; evaluating the instantaneous displacement at $t = 1.0\text{ s}$ in `RAD` via {{res:sc32_12_plot_02:keys}} yields $\mathbf{{{res:sc32_12_plot_02:value}}}$:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+|:---|:---|:---|:---|:---|:---|
+| `1 {{key:ENTER}} .60 {{key:×}}` | 0.00 | 0.00 | 0.00 | 0.600000 | Damping exponent $\zeta \omega_n t = 0.600000$ at $t = 1.0\text{ s}$ |
+| `{{key:+/-}} {{key:eˣ}}` | 0.00 | 0.00 | 0.00 | 0.548812 | Exponential decay envelope $e^{-0.60} = 0.548812$ |
+| `1 {{key:ENTER}}` | 0.00 | 0.548812 | 1.000000 | 1.000000 | Stage time $t = 1.0\text{ s}$ for oscillatory phase; envelope lifts to Z |
+| `3.9546 {{key:×}}` | 0.00 | 0.00 | 0.548812 | 3.954600 | Damped phase angle $\omega_d t = 3.954600\text{ rad}$; envelope drops to Y |
+| `{{key:COS}}` | 0.00 | 0.00 | 0.548812 | -0.687229 | Cosine carrier $\cos(3.9546\text{ rad}) = -0.687229$ |
+| `{{key:×}}` | 0.00 | 0.00 | 0.00 | -0.377160 | Instantaneous suspension displacement $x(1.0) = -0.377160\text{ m}$ |
+
+Plotting the optical diffraction **sinc function** $y(x) = \frac{\sin x}{x}$ over $x \in [-4\pi, +4\pi]$ in Radians mode (`{{key:RAD}}`) reveals the tall central maximum $y(0) \to 1$ flanked by decaying secondary fringes; evaluating the half-lobe point $x = \pi/2$ via {{res:sc32_12_plot_07:keys}} yields $\mathbf{{{res:sc32_12_plot_07:value}}}$ ($2/\pi \approx 0.636620$—or with `{{key:LASTX}}` via `{{key:RAD}} {{key:π}} 2 {{key:÷}} {{key:SIN}} {{key:LASTX}} {{key:÷}}`).
+
+Biochemical and structural curves display equally distinctive silhouettes on the `{{key:PLOT}}` canvas. Plotting Michaelis–Menten enzyme saturation $v = \frac{V_{\max}[S]}{K_m + [S]}$ ($V_{\max} = 100.0\text{ }\mu\text{mol/min}$, $K_m = 15.0\text{ mM}$) over $[S] \in [0, 60]\text{ mM}$ traces a steep initial rise that bends smoothly toward the horizontal asymptote $V_{\max} = 100$, and `{{key:LASTX}}` verifies key landmarks along that curve with $[S]$ typed only once: at $[S] = 15.0\text{ mM}$ ($K_m$, half-saturation), keying `100 {{key:ENTER}} 15 {{key:×}} {{key:LASTX}} 2 {{key:×}} {{key:÷}}` confirms $v = \mathbf{50.000000}$, and at $[S] = 45.0\text{ mM}$ ($3K_m$, three-quarter saturation), keying `100 {{key:ENTER}} 45 {{key:×}} {{key:LASTX}} 15 {{key:+}} {{key:÷}}` confirms $v = \mathbf{75.000000}$. Likewise, plotting an Euler–Bernoulli cantilevered beam $y(x) = \frac{Px^2}{6EI}(3L - x)$ across its $L = 4.0\text{ m}$ span ($\frac{P}{6EI} = 3.0625 \times 10^{-5}\text{ m}^{-2}$) shows the beam emerging horizontally from the clamped wall ($y(0) = y'(0) = 0$) before curving into a cubic bend toward the free tip at $x = 4.0\text{ m}$, where double-`{{key:LASTX}}` recall evaluates the maximum tip deflection with `4` typed only once:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+|:---|:---|:---|:---|:---|:---|
+| `3 {{key:ENTER}} 4 {{key:×}}` | 0.000000 | 0.000000 | 0.000000 | 12.000000 | Compute $3L = 12.0\text{ m}$; tip coordinate $x = 4.0\text{ m}$ archived in `LASTX` |
+| `{{key:LASTX}} {{key:-}}` | 0.000000 | 0.000000 | 0.000000 | 8.000000 | Recall $x = 4.0\text{ m}$ and subtract for span factor $3L - x = 8.0\text{ m}$ |
+| `{{key:LASTX}} {{key:x²}} {{key:×}}` | 0.000000 | 0.000000 | 0.000000 | 128.000000 | Recall $x = 4.0\text{ m}$ again, square to $16.0\text{ m}^2$, and form $x^2(3L - x) = 128.0\text{ m}^3$ |
+| `3.0625 {{key:E}} 5 {{key:+/-}} {{key:×}}` | 0.000000 | 0.000000 | 0.000000 | 0.003920 | Scale by $\frac{P}{6EI} = 3.0625 \times 10^{-5}\text{ m}^{-2}$; tip deflection $\delta_{\max} = 0.003920\text{ m}$ |
+
+Finally, to plot a **piecewise Zener-diode voltage limiter** $v_{\text{out}}(x) = \min(x, 5.0\text{ V}) = x - \langle x - 5 \rangle_+$ over $x \in [0, 8]\text{ V}$, enter `{{key:RCL}} X  {{key:RCL}} X  5 {{key:-}}  {{key:ENTER}} {{key:x>0}} {{key:×}}  {{key:-}}` in `{{key:EQN}}` and press `0 {{key:ENTER}} 8 {{key:PLOT}}`. Below the $5.0\text{ V}$ breakdown knee (e.g., at $x = 3.2\text{ V}$), `{{key:x>0}}` evaluates to $0$ so the plotted curve rises along a $45^\circ$ ramp ($v_{\text{out}} = 3.2\text{ V}$); above the knee (e.g., at $x = 7.4\text{ V}$), `{{key:x>0}}` evaluates to $1$ and subtracts the $2.4\text{ V}$ excess to clamp the plotted output flat at **$5.000000\text{ V}$**:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+|:---|:---|:---|:---|:---|:---|
+| `3.2 {{key:STO}} X` | 0.000000 | 0.000000 | 0.000000 | 3.200000 | Sample linear ramp below knee ($x = 3.2\text{ V}$) |
+| `{{key:RCL}} X 5 {{key:-}}` | 0.000000 | 0.000000 | 3.200000 | -1.800000 | Excess above Zener knee $x - 5 = -1.8\text{ V} < 0$ |
+| `{{key:ENTER}} {{key:x>0}} {{key:×}} {{key:-}}` | 0.000000 | 0.000000 | 0.000000 | **3.200000** | Macaulay ramp is $0$; linear output $v_{\text{out}}(3.2) = 3.2\text{ V}$ |
+| `7.4 {{key:STO}} X` | 0.000000 | 0.000000 | 3.200000 | 7.400000 | Sample clamped plateau above knee ($x = 7.4\text{ V}$) |
+| `{{key:RCL}} X 5 {{key:-}}` | 3.200000 | 3.200000 | 7.400000 | 2.400000 | Excess above Zener knee $x - 5 = +2.4\text{ V} > 0$ |
+| `{{key:ENTER}} {{key:x>0}} {{key:×}} {{key:-}}` | 3.200000 | 3.200000 | 3.200000 | **5.000000** | Subtract $2.4 \times 1 = 2.4\text{ V}$; clamped $v_{\text{out}}(7.4) = \mathbf{5.0\text{ V}}$ |
+
+### Visual Overlays (`SOLVE`, `∫`) & Bivariate Scatter Plots (`Σ+` $\to$ `PLOT`)
+
+When invoked alongside numerical root-finding or Adaptive Romberg Quadrature (`{{key:∫}}` via `∫ f(x)` on `{{key:LFU3}}`, as illustrated in Chapter 8) {{cite:brent1973,romberg1955}}, the plotter shades the vertical area columns between $y = f(x)$ and $y = 0$. Likewise, plotting the Standard Normal density $f(z) = \frac{1}{\sqrt{2\pi}}e^{-z^2/2}$ over $Z \in [-3.5\sigma, +3.5\sigma]$ displays the symmetric Gaussian bell curve peaking at $f(0) = 0.3989422804$ with inflection points at $z = \pm 1.0\sigma$:
+
+{{res:sc32_plot_normal_bell:screenshot|SC-32 Vector Plotter displaying the Standard Normal Bell Curve over [-3.5, +3.5].}}
+
+When no active equation is selected and at least two statistical data pairs reside in the **50-point scatter ring buffer** (`{{key:SUMS}}` mode), pressing `{{key:PLOT}}` renders a bivariate scatter plot with linear, logarithmic, exponential, or power trendline overlays. For four piezoresistive pressure sensor calibration pairs—$(10\text{ kPa}, 1.25\text{ V}), (20\text{ kPa}, 2.45\text{ V}), (30\text{ kPa}, 3.80\text{ V}), (40\text{ kPa}, 4.95\text{ V})$—accumulating via `{{key:Σ+}}` and pressing `{{key:m}}` (and `{{key:PLOT}}` to inspect the scatter cloud against the regression line $y = 0.1245x + 0.0000$, $r = 0.999565$, $R^2 = 0.999130$) verifies linearity on the stack:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+|:---|:---|:---|:---|:---|:---|
+| `{{key:CLEAR}} {{key:CLΣ}}` | 0.00 | 0.00 | 0.00 | 0.00 | Clear statistical accumulators |
+| `1.25 {{key:ENTER}} 10 {{key:Σ+}}` | 0.00 | 0.00 | 1.25 | 1.00 | Pair 1: (10 kPa, 1.25 V); count n = 1 |
+| `2.45 {{key:ENTER}} 20 {{key:Σ+}}` | 0.00 | 1.25 | 2.45 | 2.00 | Pair 2: (20 kPa, 2.45 V); count n = 2 |
+| `3.80 {{key:ENTER}} 30 {{key:Σ+}}` | 1.25 | 2.45 | 3.80 | 3.00 | Pair 3: (30 kPa, 3.80 V); count n = 3 |
+| `4.95 {{key:ENTER}} 40 {{key:Σ+}}` | 2.45 | 3.80 | 4.95 | 4.00 | Pair 4: (40 kPa, 4.95 V); count n = 4 |
+| `{{key:m}}` | 2.45 | 3.80 | 4.95 | 0.1245 | Regression slope m = 0.124500 V/kPa |
 
 ---
 
-### Polar Radiation Patterns & Cubic Inflection Geometry
+### From Visual Curves into the Engineering Wild
 
-Exploring directional antenna radiation lobes and polynomial concavity transitions reveals how symmetry shapes both electromagnetic fields and algebraic curves. When RF engineers arrange four antenna elements into a phased quadrupole array—or when an acoustic transducer vibrates in a quadrupole mode—constructive interference beams energy along the four $45^\circ$ diagonal bisectors ($\theta = 45^\circ, 135^\circ, 225^\circ, 315^\circ$), while destructive phase cancellation creates dead-silent nodal lines along the cardinal axes ($\theta = 0^\circ, 90^\circ, 180^\circ, 270^\circ$). Over $\theta \in [0^\circ, 360^\circ]$, the polar radiation gain follows the four-petal quadrupole rose $r(\theta) = 3 \sin(2\theta)$. At the first-quadrant diagonal bisector $\theta = 45^\circ$, doubling the azimuth `45 {{key:ENTER}} 2 {{key:×}}` ($2\theta = 90.0^\circ$), taking `{{key:SIN}}` ($\sin 90^\circ = 1.000000$), and scaling by `3 {{key:×}}` (`45 {{key:ENTER}} 2 {{key:×}} {{key:SIN}} 3 {{key:×}}` $\implies \mathbf{3.0000}$) confirms the peak main-lobe gain ($X = \mathbf{3.000000}$) at the tip of the petal.
+With René Descartes's coordinate plane, Jack Bresenham's integer pixel rasterizer, and Francis Anscombe's scatter plots in hand, the foundational toolkit of *Thinking in the Stack* is complete. Look at the arc we have traveled across our first twelve chapters:
+* **Chapters 1 and 2** gave us our physical instrument and our mental architecture: the 4-register operational stack ($X, Y, Z, T$), automatic stack lift, Register $T$ replication, `LASTX` argument recovery, and inside-out expression unpeeling.
+* **Chapters 3, 4, and 5** unified the three great transcendental families of mathematics: continuous exponential growth and logarithms ($e^x, \ln x$), circular and hyperbolic trigonometry ($\cos\theta, \sin\theta, \cosh x$), and their marriage in the complex phasor plane ($e^{i\theta} = \cos\theta + i\sin\theta$).
+* **Chapters 6, 7, 8, and 9** gave us the analytical engines of physical science: 2D and 3D mensuration, Horner polynomials and Richard Brent's root solver (`SOLVE`), numerical derivatives and Werner Romberg's $\frac{4}{3} - \frac{1}{3}$ quadrature (`∫`), and Carl Friedrich Gauss's least-squares statistics (`Σ+`, `L.R.`).
+* **Chapters 10, 11, and 12** extended those tools to 36-bit binary computing, financial compounding (`TVM`), and interactive visual graphing (`PLOT`).
 
-Now imagine driving along a highway S-curve modeled by the third-degree polynomial $y(x) = x^3 - 6x^2 + 9x + 2$ over $x \in [0, 4]$. The first derivative $y'(x) = 3x^2 - 12x + 9 = 3(x-1)(x-3)$ vanishes at the local hill crest $(1, 6)$ and the valley trough $(3, 2)$. Right in the middle, where the second derivative $y''(x) = 6x - 12 = 0$ vanishes at $x = 2$, lies the **inflection point** $(2, 4)$—the exact point along the S-curve where the road transitions from curving downward (concave-down, $y'' < 0$) to curving upward (concave-up, $y'' > 0$) and your steering wheel passes through dead center. At the inflection abscissa $x = 2$, writing $y(x)$ in nested Horner form $y(x) = ((x - 6)x + 9)x + 2$ and pre-filling the 4-level stack via `2 {{key:ENTER}} {{key:ENTER}} {{key:ENTER}} 6 {{key:-}} {{key:×}} 9 {{key:+}} {{key:×}} 2 {{key:+}}` evaluates the inflection ordinate ($X = \mathbf{4.000000}$) with `2` typed only once as Register $T$ replicates $x = 2.0$ down the stack on every multiplication:
+Up to this point, however, we have met each branch of mathematics inside its own dedicated chapter—studying logarithms in the logarithm chapter, vectors in the trigonometry chapter, buckling and centroids in the geometry chapter, and regression in the statistics chapter.
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 01 | `2 {{key:ENTER}} {{key:ENTER}} {{key:ENTER}}` | 2.000000 | 2.000000 | 2.000000 | 2.000000 | Flood all four stack registers with inflection abscissa $x = 2.0$ |
-| 02 | `6 {{key:-}}` | 2.000000 | 2.000000 | 2.000000 | -4.000000 | Innermost Horner factor $x - 6 = -4.0$; Register $T$ replicates $2.0$ |
-| 03 | `{{key:×}} 9 {{key:+}}` | 2.000000 | 2.000000 | 2.000000 | 1.000000 | Second Horner stage $(x - 6)x + 9 = 1.0$; $x = 2.0$ drops into $Y$ |
-| 04 | `{{key:×}} 2 {{key:+}}` | 2.000000 | 2.000000 | 2.000000 | 4.000000 | Inflection point ordinate $y(2) = ((x - 6)x + 9)x + 2 = 4.000000$ |
-
----
-
-### Structural Deflection & Torsion Profiles
-
-We conclude by contrasting the cubic-parabolic bending curve of a cantilevered beam against the linear torsional windup of a transmission drive shaft. Picture a structural steel balcony I-beam—or an aircraft wing spar—clamped rigidly into a concrete wall at $x = 0$ and supporting a concentrated point load $P$ at its free tip $x = L = 4.0\text{ m}$. Because the wall prevents the root from either sinking ($y(0) = 0$) or tilting ($y'(0) = 0$), integrating the Euler-Bernoulli bending-moment equation $EI y''(x) = P(L - x)$ twice produces the classic cubic-parabolic elastic curve:
-
-$$y(x) = \frac{P x^2}{6 E I} (3L - x)$$
-
-Over $x \in [0, L]$, the beam emerges horizontally from the wall, curves downward with increasing slope as the $x^2$ factor grows, and reaches its maximum tip deflection $\delta_{\max} = \frac{P L^3}{3 E I}$ at $x = L$. Given a flexural rigidity factor $\frac{P}{6EI} = 3.0625 \times 10^{-5}\text{ m}^{-2}$ on a $L = 4.0\text{ m}$ span, evaluating the span factor at the tip (`4 {{key:ENTER}} 3 {{key:×}} 4 {{key:-}}` $\rightarrow 3L - x = 8.0\text{ m}$), multiplying by $x^2$ (`4 {{key:x²}} {{key:×}}` $\rightarrow 128.0\text{ m}^3$), and scaling by `3.0625 {{key:E}} 5 {{key:+/-}} {{key:×}}` yields the exact tip deflection ($X = \mathbf{0.003920}\text{ m} = 3.92\text{ mm}$). *(**`LASTX` Single-Entry Tip Evaluation:** Keying `3 {{key:ENTER}} 4 {{key:×}} {{key:LASTX}} {{key:-}} {{key:LASTX}} {{key:x²}} {{key:×}} 3.0625 {{key:E}} 5 {{key:+/-}} {{key:×}}` uses `{{key:LASTX}}` twice in succession to recover $x = 4.0\text{ m}$—first after `4 {{key:×}}` and again after `{{key:-}}`—so `4` is typed only once.)*
-
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-|:---|:---|:---|:---|:---|:---|:---|
-| 01 | `3 {{key:ENTER}} 4 {{key:×}}` | 0.000000 | 0.000000 | 0.000000 | 12.000000 | Compute $3L = 12.0\text{ m}$; tip coordinate $x = 4.0\text{ m}$ archived in `LASTX` |
-| 02 | `{{key:LASTX}} {{key:-}}` | 0.000000 | 0.000000 | 0.000000 | 8.000000 | Recall $x = 4.0\text{ m}$ and subtract for span factor $3L - x = 8.0\text{ m}$ |
-| 03 | `{{key:LASTX}} {{key:x²}} {{key:×}}` | 0.000000 | 0.000000 | 0.000000 | 128.000000 | Recall $x = 4.0\text{ m}$ again, square to $16.0\text{ m}^2$, and form $x^2(3L - x) = 128.0\text{ m}^3$ |
-| 04 | `3.0625 {{key:E}} 5 {{key:+/-}} {{key:×}}` | 0.000000 | 0.000000 | 0.000000 | 0.003920 | Scale by $\frac{P}{6EI} = 3.0625 \times 10^{-5}\text{ m}^{-2}$; tip deflection $\delta_{\max} = 0.003920\text{ m}$ |
-
-Unlike a cantilevered beam whose bending moment varies along its length, a uniform circular drive shaft of polar moment $J$ and shear modulus $G$ transmitting torque $T$ from an engine gearbox ($x = 0$) to a rear differential ($x = 2.50\text{ m}$) experiences the *exact same* internal torque $T$ at every cross-section. Under Saint-Venant pure torsion, the angular twist $\theta(x) = \frac{T x}{J G}$ therefore plots as a straight line through the origin with constant torsional gradient $d\theta/dx = T/(JG) = 0.0045\text{ rad/m}$. Staging the shaft length `2.5 {{key:ENTER}}` ($2.50\text{ m}$), multiplying by the specific twist rate (`0.0045 {{key:×}}` $\rightarrow 0.011250\text{ rad}$), and converting radians to degrees (`180 {{key:×}} {{key:π}} {{key:÷}}`) resolves the total angular windup at the output flange ($X = \mathbf{0.644578}^\circ$).
-
----
-
-## Further Exploration: Companion Workbooks & Applied Tie-Ins
-
-> *For 27 additional worked engineering problems with full 4-register stack traces, see Chapter 12 of the [SC-32 Scientific Companion Problem & Casebook Workbook](../../curriculum/sc32-scientific-companion-workbook.md#chapter-12).*
-
-
-To connect the 64-point vector graphics engine (`{{key:PLOT}}`), senary-binary root markers, and `{{key:Σ+}}` scatter overlays with laboratory instrumentation and competition problem sets, explore these companion workbooks:
-
-- **StackCalc Engineering Laboratory Casebook (Module 5: Bode Plots, Filter Synthesis & Transducer Calibration):** Pairs `{{key:PLOT}}` crosshair tracing with `{{key:SOLVE}}` and `{{key:∫}}` to locate $-3\text{ dB}$ passband corners, measure total harmonic distortion (THD) across Fourier partial sums, and audit sensor calibration residuals.
-- **Timed STEM Competition & Physics Workbook (Section G: Curve Sketching, Extrema & Parametric Kinematics):** Trains students to bracket polynomial roots visually on the $128 \times 52$ viewport, commit crosshair coordinates to the stack with `{{key:ENTER}}`, and evaluate rational/trigonometric waveforms without re-typing arguments.
-
-### Synthesis Challenge Problems
-
-1. **Single-Entry Michaelis-Menten Velocity at Arbitrary Substrate Concentration:** For an enzyme with $V_{\max} = 100.0\text{ }\mu\text{mol/min}$ and $K_m = 15.0\text{ mM}$, evaluate the reaction velocity $v = \frac{V_{\max}[S]}{K_m + [S]}$ at $[S] = 45.0\text{ mM}$ while typing `45` only once: key `100 {{key:ENTER}} 45 {{key:×}} {{key:LASTX}} 15 {{key:+}} {{key:÷}}` to confirm that `{{key:LASTX}}` recalls $[S] = 45.0$ into the denominator and yields $v = \mathbf{75.000000\text{ }\mu\text{mol/min}}$ ($\frac{3}{4}V_{\max}$ at $[S] = 3K_m$).
-2. **Zero-Register RC High-Pass Gain & Phase Angle in One Pass:** At $f = 2000\text{ Hz}$ for a high-pass RC filter with $f_c = 1000\text{ Hz}$, the normalized frequency ratio is $f/f_c = 2.0$. In `{{key:DEG}}` mode, keying `1 {{key:ENTER}} 2000 {{key:ENTER}} 1000 {{key:÷}} {{key:▸θ,r}} {{key:LASTX}} {{key:x⇄y}} {{key:÷}}` uses `{{key:▸θ,r}}` (`y = 1, x = 2`) to place phase lead $\phi = 90^\circ - \arctan(2) = \mathbf{26.565051^\circ}$ in Register $Y$ and $\sqrt{1 + (f/f_c)^2} = \sqrt{5}$ in Register $X$, while `{{key:LASTX}}` recalls $f/f_c = 2.0$ to divide out the passband gain $|H(f)| = \mathbf{0.894427}$ in Register $X$ without using a single storage register.
-3. **Single-Entry Euler-Bernoulli Deflection at Midspan ($x = L/2$):** For the Euler-Bernoulli cantilevered beam above ($L = 4.0\text{ m}$, $\frac{P}{6EI} = 3.0625 \times 10^{-5}\text{ m}^{-2}$), evaluate deflection $y(x) = \frac{P}{6EI}(3L - x)x^2$ at midspan $x = 2.0\text{ m}$ by typing `2` only once: key `12 {{key:ENTER}} 2 {{key:-}} {{key:LASTX}} {{key:x²}} {{key:×}} 3.0625 {{key:E}} 5 {{key:+/-}} {{key:×}}` to confirm $y(2.0\text{ m}) = \mathbf{0.001225\text{ m}}$ ($1.225\text{ mm}$, exactly $\frac{5}{16}$ of the tip deflection $\delta_{\max} = 3.92\text{ mm}$).
-
----
-
-## Summary & Looking Ahead
-
-Pairing the RPN mathematical engine with the 64-point vector curve renderer (`{{key:PLOT}}`) projects analytical formulas onto the $128 \times 52$ transflective viewport. Configuring domain windows ($X_{\min}, X_{\max}$), scaling vertical dynamic ranges, stepping the interactive crosshair (`{{key:↓}}`, `{{key:↑}}`) across local extrema and inflection points, and committing traced coordinates to the stack via `{{key:ENTER}}` bridges visual reconnaissance and 12-digit numerical refinement.
-
-Visual intuition and analytical keystrokes find their ultimate expression when applied to authentic engineering design problems. In **[Chapter 13: Applied STEM Engineering Case Studies](13-applied-stem-case-studies.md)**, you will step into the shoes of multidisciplinary field engineers. You will solve comprehensive multi-page challenges spanning fluid dynamics in 3D printer hotends, multi-stage rocket trajectory integration, acoustic reverberation modeling, optical lens cascades via `{{key:x∥y}}`, and closed-loop civil geodetic survey traverses.
+What happens when we step out of individual textbook compartments into the **real engineering wild**—where a single design problem on a laboratory workbench or factory floor crosses optics, precision machining tolerances, turbulent pipe flow, structural column buckling, heat-engine thermodynamics, concert-hall acoustics, and orbital mechanics all at once? We open the chief engineer's field notebook in **[Chapter 13: Six Equations That Run the Modern World: Cross-Disciplinary Engineering](13-applied-stem-case-studies.md)**.

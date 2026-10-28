@@ -94,8 +94,18 @@ hide:
         <span>"No Lost Piece Left Behind" Lifetime Guarantee</span>
       </div>
       <div class="te-trust-item">
-        <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-trust-link-etsy">
-          <span>Shop Official Etsy Storefront ↗</span>
+        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-trust-link-etsy">
+          <span>Etsy Storefront ↗</span>
+        </a>
+      </div>
+      <div class="te-trust-item">
+        <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="color: #38BDF8; font-weight: 700; text-decoration: none;">
+          <span>Slant 3D Portal &amp; Parts ↗</span>
+        </a>
+      </div>
+      <div class="te-trust-item">
+        <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="color: #FF9900; font-weight: 700; text-decoration: none;">
+          <span>SC-6 Book on Amazon ↗</span>
         </a>
       </div>
     </div>
@@ -174,6 +184,39 @@ hide:
        Complete with real hardware faceplates and interactive swatch switcher
        ========================================================================== -->
   <section id="featured">
+    <!-- SC-6 Book Spotlight Feature -->
+    <div class="te-spotlight-card my-6" style="border: 1px solid rgba(255, 153, 0, 0.4); background: linear-gradient(135deg, rgba(255, 153, 0, 0.08), rgba(15, 23, 42, 0.95));">
+      <div class="te-spotlight-right" style="border-right: 1px solid var(--te-border-subtle);">
+        <div>
+          <div class="te-product-id text-amber-400">OFFICIAL BOOKSTORE EDITION // GRADES 3–6</div>
+          <h3 class="te-spotlight-title">From Blocks to the Stack</h3>
+          <div class="text-sm font-semibold text-slate-300 mt-1">Hands-On Math &amp; the SC-6 Stack Calculator</div>
+          <div class="te-price-headline" style="margin-top: 0.5rem;">
+            <span class="te-price-main">$16.00</span>
+            <span class="te-price-note">✓ Available on Amazon Prime &amp; Etsy</span>
+          </div>
+          <p class="te-card-desc" style="font-size: 0.92rem; margin-top: 0.75rem;">
+            The student handbook, parent guide, and classroom companion connecting 3D-printed math blocks with the 4-level number stack ($X, Y, Z, T$). 9 illustrated chapters, 25 complete teacher lesson plans, and engine-verified stack traces.
+          </p>
+        </div>
+        <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem;">
+          <a href="sc6-book/" class="te-btn-primary">Book Overview &amp; TOC &rarr;</a>
+          <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">Order on Amazon ($16) ↗</a>
+          <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #f1641e; color: #f1641e; font-weight: 700;">Order on Etsy ($16) ↗</a>
+          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #38BDF8; color: #38BDF8; font-weight: 700;">Slant 3D Manipulatives ↗</a>
+        </div>
+      </div>
+      <div class="p-8 bg-black/40 flex flex-col justify-center">
+        <h4 class="text-white font-semibold mb-3 font-mono text-sm uppercase text-amber-400">Book Highlights:</h4>
+        <ul class="text-sm text-gray-300 space-y-2.5 m-0 p-0 list-none">
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 9 comprehensive chapters &amp; 4 appendices</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Pairs with 9 modular 3D-printed manipulative studios</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 25 complete classroom lesson plans for Grades 3&ndash;6</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 100% free open-source digital edition available online</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="te-spotlight-card">
 
       <!-- Left Column: Unobstructed Hardware Viewport & Real Faceplate Matrix -->
@@ -348,7 +391,7 @@ hide:
           <a href="../manuals/#sc-32-scientific" class="te-btn-secondary">
             <span>Reference Manual &amp; Print ($16) &rarr;</span>
           </a>
-          <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary">
+          <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-secondary">
             <span>Order on Etsy Storefront ↗</span>
           </a>
         </div>
@@ -391,7 +434,7 @@ hide:
           <div class="te-card-category">Fractions &amp; Equivalence</div>
           <h3 class="te-card-title"><a href="fraction-studio/">Fraction Studio Proportional Towers</a></h3>
           <p class="te-card-desc">
-            Single-color precision proportional towers with debossed 4-face notation (fraction, decimal, percent, degree). Halves, quarters, and eighths physically align flush on any classroom table. Features a removable 12-column caddy chassis with anti-scrape vertical runner glides and debossed socket floors inside a 3x1x13U Snapfinity Gridfinity storage enclosure with stackable lid. Pairs directly with SC-6 stacked fraction display mode.
+            Precision proportional towers with debossed 4-face notation (fraction, decimal, percent, degree). Halves, quarters, and eighths physically align flush on any classroom table. Available in two variations: Standard Production 3x1x7U Snapfinity Gridfinity enclosure with integrated stepped-floor risers (Slant 3D farm, 39 pcs), or Founders Collector Edition 3x1x13U enclosure with drop-front sliding door and 12-column caddy (in-house batch, 81 pcs) offered at the same introductory price ($48.00). Pairs directly with SC-6 stacked fraction display mode.
           </p>
         </div>
         <div class="te-card-footer">
@@ -402,7 +445,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="fraction-studio/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/fraction-studio-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -428,7 +471,7 @@ hide:
           <div class="te-card-category">Prime Factorization &amp; Logarithms</div>
           <h3 class="te-card-title"><a href="prime-factor-studio/">Prime Factor Studio &amp; Factor Towers</a></h3>
           <p class="te-card-desc">
-            Proportional logarithmic prime factor blocks housed in a 3x1x13U Snapfinity Gridfinity enclosure with a removable 12-column caddy chassis. Stepped floor pedestals elevate larger primes ([11], [13], [17], [19], [23], [29]), bringing every column summit to the uniform 84.00mm waterline flush against the Snapfinity stackable lid. Stacking prime blocks physically multiplies them ($2 \times 3 = 6$, $2 \times 2 \times 3 = 12$) to prove the Fundamental Theorem of Arithmetic and solve GCF/LCM. Direct twin to SC-6 prime engine.
+            Proportional logarithmic prime factor blocks. Stacking prime blocks physically multiplies them ($2 \times 3 = 6$, $2 \times 2 \times 3 = 12$) to prove the Fundamental Theorem of Arithmetic and solve GCF/LCM. Available in two variations: Standard Production 3x1x7U Snapfinity Gridfinity enclosure with integrated stepped floor pedestals (Slant 3D farm, 23 pcs), or Founders Collector Edition 3x1x13U enclosure with drop-front sliding door and 12-column caddy (in-house batch, 47 pcs) reaching the uniform waterline, offered at the same introductory price ($46.00). Direct twin to SC-6 prime engine.
           </p>
         </div>
         <div class="te-card-footer">
@@ -438,7 +481,7 @@ hide:
           </div>
           <div class="te-card-actions">
             <a href="prime-factor-studio/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/prime-factor-studio-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -474,7 +517,7 @@ hide:
           </div>
           <div class="te-card-actions">
             <a href="place-value/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/" class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -525,7 +568,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="classroom-clock/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/classroom-clock-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -562,7 +605,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="algebra-boxes/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/algebra-boxes-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -599,7 +642,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="ten-frames/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/ten-frames-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -636,7 +679,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="math-dominoes/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/math-dominoes-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -673,7 +716,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="dice-and-spinner/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/dice-and-spinner-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -710,7 +753,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="unit-circle-volvelle/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/unit-circle-volvelle-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -747,7 +790,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="counting-tiles/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/counting-tiles-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -784,7 +827,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="quest-scoreboard/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/quest-scoreboard-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -851,7 +894,7 @@ hide:
           <div class="te-card-actions">
             <a href="sc32-calculator/" class="te-card-btn">Specs &rarr;</a>
             <a href="../manuals/#sc-32-scientific" class="te-card-btn" title="Reference Manual & Spiral Print Edition ($16)">Manual 📖</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/sc32-calculator-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -889,7 +932,7 @@ hide:
           <div class="te-card-actions">
             <a href="sc6-elementary/" class="te-card-btn">Specs &rarr;</a>
             <a href="../manuals/#sc-6-elementary" class="te-card-btn" title="Reference Manual & Spiral Print Edition ($16)">Manual 📖</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/sc6-elementary-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -975,7 +1018,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="stands-and-pouches/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/stands-and-pouches-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -1012,7 +1055,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="stands-and-pouches/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="../downloads/stands-and-pouches-open-source-stls.zip" download class="te-btn-stl-sm">3MF ↓</a>
           </div>
         </div>
@@ -1022,31 +1065,31 @@ hide:
       <article class="te-card">
         <div class="te-card-header">
           <span class="te-card-sku">REPL-01 // NO LOST PIECE</span>
-          <span class="te-card-status status-instock">● ACTIVE SERVICE [SHIPS 24H]</span>
+          <span class="te-card-status status-instock">● ON-DEMAND [SLANT 3D]</span>
         </div>
         <div class="te-card-viewport">
-          <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/renders/etsy/infographic-guarantee-safety-square.png" alt="Lifetime Replacement Parts Service" loading="lazy">
+          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/renders/etsy/infographic-guarantee-safety-square.png" alt="Lifetime Replacement Parts Service via Slant 3D" loading="lazy">
           </a>
         </div>
         <div class="te-card-specs">
-          <span class="te-card-spec-item">PRICE: $2.49+</span>
-          <span class="te-card-spec-item">TRACKING: GIT HASH</span>
-          <span class="te-card-spec-item">SLA: 24 HOURS</span>
+          <span class="te-card-spec-item">FULFILLMENT: SLANT 3D</span>
+          <span class="te-card-spec-item">CAD: ARCHIVAL MATCH</span>
+          <span class="te-card-spec-item">PORTAL: ACTIVE</span>
         </div>
         <div class="te-card-body">
-          <div class="te-card-category">Lifetime Parts Service</div>
-          <h3 class="te-card-title"><a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer">Lifetime Replacement Parts Service</a></h3>
+          <div class="te-card-category">Lifetime Parts &amp; Refill Service</div>
+          <h3 class="te-card-title"><a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer">Replacement Parts &amp; Refills (Slant 3D)</a></h3>
           <p class="te-card-desc">
-            Never retire a classroom set again because a tile rolled under a radiator. Order individual replacement fraction blocks, algebra tiles, counters, or stand legs 3D printed from the exact Git commit of your set. Structured at 50% over amortized cost to eliminate kit arbitrage.
+            Never retire an educational set again because a tile rolled under a radiator. Order individual replacement fraction blocks, algebra tiles, counters, or stand legs 3D printed on-demand via our official Slant 3D Portal, or download free STL models to print locally.
           </p>
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$2.49 &ndash; $7.50</span>
-            <span class="te-card-shipping-tag">✓ USPS Letter Included</span>
+            <span class="te-card-price">On-Demand</span>
+            <span class="te-card-shipping-tag">✓ Slant 3D Additive</span>
           </div>
-          <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="te-card-btn">Order Part ↗</a>
+          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-card-btn" style="background-color: #38BDF8; color: #080B10; font-weight: 800;">Slant 3D Portal ↗</a>
         </div>
       </article>
 
@@ -1063,6 +1106,39 @@ hide:
         <p class="text-sm text-gray-400 m-0">Structured problem cards and teacher guides designed around tactile manipulatives.</p>
       </div>
       <span class="te-section-badge">CRA CONTINUUM &bull; CCSS ALIGNED &bull; 60 CHALLENGE CARDS</span>
+    </div>
+
+    <!-- SC-6 Book Spotlight Feature -->
+    <div class="te-spotlight-card my-6" style="border: 1px solid rgba(255, 153, 0, 0.4); background: linear-gradient(135deg, rgba(255, 153, 0, 0.08), rgba(15, 23, 42, 0.95));">
+      <div class="te-spotlight-right" style="border-right: 1px solid var(--te-border-subtle);">
+        <div>
+          <div class="te-product-id text-amber-400">OFFICIAL BOOKSTORE EDITION // GRADES 3–6</div>
+          <h3 class="te-spotlight-title">From Blocks to the Stack</h3>
+          <div class="text-sm font-semibold text-slate-300 mt-1">Hands-On Math &amp; the SC-6 Stack Calculator</div>
+          <div class="te-price-headline" style="margin-top: 0.5rem;">
+            <span class="te-price-main">$16.00</span>
+            <span class="te-price-note">✓ Available on Amazon Prime &amp; Etsy</span>
+          </div>
+          <p class="te-card-desc" style="font-size: 0.92rem; margin-top: 0.75rem;">
+            The student handbook, parent guide, and classroom companion connecting 3D-printed math blocks with the 4-level number stack ($X, Y, Z, T$). 9 illustrated chapters, 25 complete teacher lesson plans, and engine-verified stack traces.
+          </p>
+        </div>
+        <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem;">
+          <a href="sc6-book/" class="te-btn-primary">Book Overview &amp; TOC &rarr;</a>
+          <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">Order on Amazon ($16) ↗</a>
+          <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #f1641e; color: #f1641e; font-weight: 700;">Order on Etsy ($16) ↗</a>
+          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #38BDF8; color: #38BDF8; font-weight: 700;">Slant 3D Manipulatives ↗</a>
+        </div>
+      </div>
+      <div class="p-8 bg-black/40 flex flex-col justify-center">
+        <h4 class="text-white font-semibold mb-3 font-mono text-sm uppercase text-amber-400">Book Highlights:</h4>
+        <ul class="text-sm text-gray-300 space-y-2.5 m-0 p-0 list-none">
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 9 comprehensive chapters &amp; 4 appendices</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Pairs with 9 modular 3D-printed manipulative studios</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 25 complete classroom lesson plans for Grades 3&ndash;6</li>
+          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 100% free open-source digital edition available online</li>
+        </ul>
+      </div>
     </div>
 
     <div class="te-spotlight-card">
@@ -1109,11 +1185,14 @@ hide:
         </p>
       </div>
       <div class="flex flex-wrap gap-3">
-        <a href="https://www.printables.com/@StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FA6B05; border-color: #FA6B05;">
+        <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FA6B05; border-color: #FA6B05;">
           Download on Printables ↗
         </a>
-        <a href="/downloads/stackcalc-3d-print-stls-v0.2.0.zip" class="te-btn-primary">
-          All STLs (.ZIP) &darr;
+        <a href="printables.md" class="te-btn-primary" style="background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25);">
+          Makerspace Kits Guide &rarr;
+        </a>
+        <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="color: #FFFFFF !important; border-color: rgba(255,255,255,0.3);">
+          Hackaday Project ↗
         </a>
         <a href="https://github.com/abagher/watch-calc-32" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="color: #FFFFFF !important; border-color: rgba(255,255,255,0.3);">
           GitHub Repository ↗

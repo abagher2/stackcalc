@@ -1,359 +1,300 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 820" width="1260" height="820">
+<svg xmlns="http://www.w3.org/2000/svg" width="6.0in" height="4.0in" viewBox="0 0 1200 800">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
-      .font-mono { font-family: 'Space Mono', monospace; }
-      .title { font-size: 20px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
-      .subtitle { font-size: 12px; font-weight: 400; fill: #475569; }
-      .badge-sku { font-size: 12.5px; font-weight: 700; fill: #0f172a; }
-      .badge-rev { font-size: 12px; font-weight: 700; fill: #059669; }
-      .badge-box { font-size: 10.5px; font-weight: 400; fill: #64748b; }
-      .section-hdr { font-size: 11px; font-weight: 700; fill: #0f172a; letter-spacing: 0.8px; text-transform: uppercase; }
-      .th { font-size: 9px; font-weight: 700; fill: #475569; text-transform: uppercase; }
-      .td { font-size: 8.5px; font-weight: 400; fill: #0f172a; }
-      .footer-txt { font-size: 9.3px; font-weight: 400; fill: #475569; }
+      .font-mono { font-family: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .card-title { font-size: 24px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
+      .card-subtitle { font-size: 15px; font-weight: 400; fill: #475569; }
+      .section-hdr { font-size: 16px; font-weight: 700; fill: #0f172a; letter-spacing: 0.6px; text-transform: uppercase; }
+      .th { font-size: 14px; font-weight: 700; fill: #475569; text-transform: uppercase; }
+      .footer-txt { font-size: 13.5px; font-weight: 400; fill: #475569; }
     </style>
   </defs>
 
   <!-- Background Base Canvas -->
-  <rect x="0" y="0" width="1260" height="820" fill="#ffffff" />
+  <rect x="0" y="0" width="1200" height="800" fill="#ffffff" />
 
-  <!-- Outer Card Frame (135x90mm Proportions) -->
-  <rect x="15" y="15" width="1230" height="790" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
-  <rect x="25" y="25" width="1210" height="770" rx="8" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+  <!-- Outer Card Frame (4x6 Aspect Ratio, 3mm corner radius) -->
+  <rect x="10" y="10" width="1180" height="780" rx="12" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+  <rect x="18" y="18" width="1164" height="764" rx="8" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
 
   <!-- Top Header Panel -->
-  <rect x="35" y="35" width="1190" height="102" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.2" />
+  <rect x="25" y="25" width="1150" height="84" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.2" />
   
   <!-- StackCalc Brand Logo Badge -->
-  <g transform="translate(48, 50)">
-    <rect x="0" y="0" width="65" height="65" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.4" />
-    <rect x="12" y="14" width="41" height="6" rx="2" fill="#0f172a" />
-    <rect x="16" y="24" width="33" height="6" rx="2" fill="#0f172a" opacity="0.85" />
-    <rect x="20" y="34" width="25" height="6" rx="2" fill="#0f172a" opacity="0.70" />
-    <rect x="24" y="44" width="17" height="6" rx="2" fill="#0f172a" opacity="0.55" />
+  <g transform="translate(36, 36)">
+    <rect x="0" y="0" width="52" height="52" rx="7" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.3" />
+    <rect x="10" y="11" width="32" height="5" rx="1.5" fill="#0f172a" />
+    <rect x="13" y="19" width="26" height="5" rx="1.5" fill="#0f172a" opacity="0.85" />
+    <rect x="16" y="27" width="20" height="5" rx="1.5" fill="#0f172a" opacity="0.70" />
+    <rect x="19" y="35" width="14" height="5" rx="1.5" fill="#0f172a" opacity="0.55" />
   </g>
 
   <!-- Box Button Icon Badge -->
   
-    <g transform="translate(125, 49)" data-macro="{{icon:button_prime}}">
-      <rect x="0" y="0" width="65" height="65" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
-      <g transform="translate(5.2, 5.2) scale(0.546)">
+    <g transform="translate(98, 36)" data-macro="{{icon:button_prime}}">
+      <rect x="0" y="0" width="52" height="52" rx="7" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <g transform="translate(4.16, 4.16) scale(0.4368)">
         <path d="M 100 50 L 100 81.65625 C 100 86.9375 100 89.578125 99.101562 92.421875 C 97.972656 95.527344 95.527344 97.972656 92.421875 99.101562 C 89.578125 100 86.9375 100 81.65625 100 L 18.34375 100 C 13.0625 100 10.421875 100 7.578125 99.101562 C 4.472656 97.972656 2.027344 95.527344 0.898438 92.421875 C 0 89.578125 0 86.9375 0 81.65625 L 0 18.34375 C 0 13.0625 0 10.421875 0.898438 7.578125 C 2.027344 4.472656 4.472656 2.027344 7.578125 0.898438 C 10.421875 0 13.0625 0 18.34375 0 L 81.65625 0 C 86.9375 0 89.578125 0 92.421875 0.898438 C 95.527344 2.027344 97.972656 4.472656 99.101562 7.578125 C 100 10.421875 100 13.0625 100 18.34375 Z M 96.5 50 L 96.5 83.507812 C 96.5 87.246094 96.5 89.117188 95.863281 91.132812 C 95.0625 93.332031 93.332031 95.0625 91.132812 95.863281 C 89.117188 96.5 87.246094 96.5 83.507812 96.5 L 16.492188 96.5 C 12.753906 96.5 10.882812 96.5 8.867188 95.863281 C 6.667969 95.0625 4.9375 93.332031 4.136719 91.132812 C 3.5 89.117188 3.5 87.246094 3.5 83.507812 L 3.5 16.492188 C 3.5 12.753906 3.5 10.882812 4.136719 8.867188 C 4.9375 6.667969 6.667969 4.9375 8.867188 4.136719 C 10.882812 3.5 12.753906 3.5 16.492188 3.5 L 83.507812 3.5 C 87.246094 3.5 89.117188 3.5 91.132812 4.136719 C 93.332031 4.9375 95.0625 6.667969 95.863281 8.867188 C 96.5 10.882812 96.5 12.753906 96.5 16.492188 Z M 96.5 50 " fill="#0f172a" fill-rule="evenodd" /><path d="M 47.398438 45.359375 L 52.601562 45.359375 L 52.601562 31.441406 L 47.398438 31.441406 Z M 47.398438 45.359375 " fill="#0f172a" fill-rule="nonzero" /><path d="M 48.023438 43.671875 L 28.222656 66.871094 L 32.175781 70.246094 L 51.976562 47.046875 Z M 48.023438 43.671875 " fill="#0f172a" fill-rule="nonzero" /><path d="M 47.964844 46.980469 L 66.445312 70.179688 L 70.515625 66.941406 L 52.035156 43.738281 Z M 47.964844 46.980469 " fill="#0f172a" fill-rule="nonzero" /><path d="M 52.5 45.5 C 52.5 46.878906 51.378906 48 50 48 C 48.621094 48 47.5 46.878906 47.5 45.5 C 47.5 44.121094 48.621094 43 50 43 C 51.378906 43 52.5 44.121094 52.5 45.5 Z M 52.5 45.5 " fill="#0f172a" fill-rule="nonzero" /><path d="M 56 31.5 C 56 34.8125 53.3125 37.5 50 37.5 C 46.6875 37.5 44 34.8125 44 31.5 C 44 28.1875 46.6875 25.5 50 25.5 C 53.3125 25.5 56 28.1875 56 31.5 Z M 56 31.5 " fill="#0f172a" fill-rule="nonzero" /><path d="M 36 68.5 C 36 71.8125 33.3125 74.5 30 74.5 C 26.6875 74.5 24 71.8125 24 68.5 C 24 65.1875 26.6875 62.5 30 62.5 C 33.3125 62.5 36 65.1875 36 68.5 Z M 36 68.5 " fill="#0f172a" fill-rule="nonzero" /><path d="M 75 68.5 C 75 72.089844 72.089844 75 68.5 75 C 64.910156 75 62 72.089844 62 68.5 C 62 64.910156 64.910156 62 68.5 62 C 72.089844 62 75 64.910156 75 68.5 Z M 75 68.5 " fill="#0f172a" fill-rule="nonzero" />
       </g>
     </g>
     
 
   <!-- Header Typography -->
-  <text x="215" y="60" class="font-mono title">PRIME FACTOR STUDIO — IN-BOX USER GUIDE</text>
-  <text x="215" y="78" class="font-mono subtitle">Kinesthetic Number Theory, Proportional Logarithmic Stacking &amp; 12-Socket Lid Tray</text>
+  <text x="165" y="55" class="font-mono card-title">PRIME FACTOR STUDIO — IN-BOX USER GUIDE</text>
+  <text x="165" y="74" class="font-sans card-subtitle">Kinesthetic Number Theory, Proportional Logarithmic Stacking &amp; 12-Socket Lid Tray</text>
+  <text x="165" y="93" class="font-mono" font-size="12.5px" font-weight="700" fill="#0284c7">SERIES 1 • CARD 05 / 12 • DOMAIN: FUNDAMENTAL THEOREM OF ARITHMETIC</text>
 
-  <!-- Studio Continuum Ribbon -->
-  <text x="215.0" y="109.0" class="font-mono" font-size="8.2px" font-weight="700" fill="#0f172a">STUDIO CONTINUUM:</text>
-
-    <g transform="translate(313.0, 98.0)">
-      <rect x="0" y="0" width="68.0" height="15" rx="3.5" fill="none" stroke="#cbd5e1" stroke-width="0.8" />
-      <text x="34.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#475569">1·Ten-Frames</text>
-    </g>
-<text x="382.5" y="108.5" class="font-mono" font-size="7.0px" fill="#cbd5e1">→</text>
-
-    <g transform="translate(388.5, 98.0)">
-      <rect x="0" y="0" width="58.0" height="15" rx="3.5" fill="none" stroke="#cbd5e1" stroke-width="0.8" />
-      <text x="29.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#475569">2·Dominoes</text>
-    </g>
-<text x="448.0" y="108.5" class="font-mono" font-size="7.0px" fill="#cbd5e1">→</text>
-
-    <g transform="translate(454.0, 98.0)">
-      <rect x="0" y="0" width="43.0" height="15" rx="3.5" fill="none" stroke="#cbd5e1" stroke-width="0.8" />
-      <text x="21.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#475569">3·Clock</text>
-    </g>
-<text x="498.5" y="108.5" class="font-mono" font-size="7.0px" fill="#cbd5e1">→</text>
-
-    <g transform="translate(504.5, 98.0)">
-      <rect x="0" y="0" width="63.0" height="15" rx="3.5" fill="none" stroke="#cbd5e1" stroke-width="0.8" />
-      <text x="31.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#475569">4·Fractions</text>
-    </g>
-<text x="569.0" y="108.5" class="font-mono" font-size="7.0px" fill="#cbd5e1">→</text>
-
-    <g transform="translate(575.0, 98.0)">
-      <rect x="0" y="0" width="48.0" height="15" rx="3.5" fill="#0284c7" stroke="#0284c7" stroke-width="0.8" />
-      <text x="24.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="700" text-anchor="middle" fill="#ffffff">5·Primes</text>
-    </g>
-<text x="624.5" y="108.5" class="font-mono" font-size="7.0px" fill="#cbd5e1">→</text>
-
-    <g transform="translate(630.5, 98.0)">
-      <rect x="0" y="0" width="53.0" height="15" rx="3.5" fill="none" stroke="#cbd5e1" stroke-width="0.8" />
-      <text x="26.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#475569">6·Algebra</text>
-    </g>
-<text x="685.0" y="108.5" class="font-mono" font-size="7.0px" fill="#cbd5e1">→</text>
-
-    <g transform="translate(691.0, 98.0)">
-      <rect x="0" y="0" width="73.0" height="15" rx="3.5" fill="none" stroke="#cbd5e1" stroke-width="0.8" />
-      <text x="36.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#475569">7·Probability</text>
-    </g>
-<text x="765.5" y="108.5" class="font-mono" font-size="7.0px" fill="#cbd5e1">→</text>
-
-    <g transform="translate(771.5, 98.0)">
-      <rect x="0" y="0" width="58.0" height="15" rx="3.5" fill="none" stroke="#cbd5e1" stroke-width="0.8" />
-      <text x="29.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#475569">8·Volvelle</text>
-    </g>
-<text x="831.0" y="108.5" class="font-mono" font-size="7.0px" fill="#cbd5e1">→</text>
-
-    <g transform="translate(837.0, 98.0)">
-      <rect x="0" y="0" width="43.0" height="15" rx="3.5" fill="none" stroke="#cbd5e1" stroke-width="0.8" />
-      <text x="21.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#475569">9·Quest</text>
-    </g>
-<text x="881.5" y="108.5" class="font-mono" font-size="7.0px" fill="#cbd5e1">→</text>
-
-    <g transform="translate(887.5, 98.0)">
-      <rect x="0" y="0" width="43.0" height="15" rx="3.5" fill="none" stroke="#cbd5e1" stroke-width="0.8" />
-      <text x="21.5" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#475569">10·Rack</text>
-    </g>
-<text x="932.0" y="108.5" class="font-mono" font-size="7.0px" fill="#cbd5e1">→</text>
-
-    <g transform="translate(938.0, 98.0)">
-      <rect x="0" y="0" width="48.0" height="15" rx="3.5" fill="none" stroke="#cbd5e1" stroke-width="0.8" />
-      <text x="24.0" y="10.8" class="font-mono" font-size="7.2px" font-weight="400" text-anchor="middle" fill="#475569">11·SC-32</text>
-    </g>
-
-  <!-- Top-Right Series & SKU Badges -->
-  <g transform="translate(1025, 48)">
-    <rect x="0" y="0" width="180" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-    <text x="90" y="19" class="font-mono badge-sku" text-anchor="middle">CARD 05 / 10 • PRIME-01</text>
+  <!-- Top-Right SKU Badges -->
+  <g transform="translate(975, 36)">
+    <rect x="0" y="0" width="190" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="95" y="19" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">CARD 05 / 12 • PRIME-01</text>
     
-    <rect x="0" y="34" width="180" height="26" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2" />
-    <text x="90" y="52" class="font-mono badge-rev" text-anchor="middle">MATHEMATICAL REFERENCE</text>
+    <rect x="0" y="34" width="190" height="26" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2" />
+    <text x="95" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#059669">MATHEMATICAL GUIDE</text>
   </g>
 
-  <!-- COLUMN 1: WHAT IS THIS MANIPULATIVE? -->
-  <g transform="translate(35, 148)">
-    <rect x="0" y="0" width="370" height="475" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
-    <rect x="0" y="0" width="370" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-    <text x="16" y="22" class="font-mono section-hdr">1. WHAT IS THIS MANIPULATIVE?</text>
+  <!-- COLUMN 1: CONCEPT & PROOF (Width: 390) -->
+  <g transform="translate(25, 120)">
+    <rect x="0" y="0" width="390" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="390" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="23" class="font-mono section-hdr">1. CONCEPT &amp; GEOMETRIC PROOF</text>
 
     <!-- Headline -->
-    <text x="16" y="52" class="font-mono" font-size="10.5px" font-weight="700" fill="#0284c7">FEEL THE PRIMES. MULTIPLY WITH HEIGHT.</text>
+    <text x="16" y="52" class="font-mono" font-size="14.5px" font-weight="700" fill="#0284c7">FEEL THE PRIMES. MULTIPLY WITH HEIGHT.</text>
 
-    <!-- Concept principle text -->
-    <text x="16" y="66" class="font-mono" font-size="8.8px" fill="#0f172a">
-      <tspan x="16" dy="0" font-weight="400" fill="#0f172a">Standard base-10 counting blocks add lengths (1+1=2).</tspan><tspan x="16" dy="12" font-weight="400" fill="#0f172a">Prime Factor blocks are logarithmically proportional:</tspan><tspan x="16" dy="12" font-weight="700" fill="#0284c7">   log(a × b) = log(a) + log(b)</tspan><tspan x="16" dy="12" font-weight="400" fill="#0f172a">Stacking blocks in a tower multiplies their numbers!</tspan>
-    </text>
+    <!-- Concept lines -->
+    <text x="16" y="66" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Standard base-10 counting blocks add</text>
+    <text x="16" y="86" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">lengths (1+1=2).</text>
+    <text x="16" y="106" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Prime Factor blocks are logarithmically</text>
+    <text x="16" y="126" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">proportional:</text>
+    <text x="16" y="146" class="font-sans" font-size="15px" font-weight="700" fill="#0284c7">   log(a × b) = log(a) + log(b)</text>
+    <text x="16" y="166" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Stacking blocks in a tower multiplies</text>
+    <text x="16" y="186" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">their numbers!</text>
 
-    <!-- Calibration Datum Box -->
-    <g transform="translate(14, 114)">
-      <rect x="0" y="0" width="342" height="84" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-      <text x="12" y="18" class="font-mono" font-size="9.2px" font-weight="700" fill="#0f172a">CALIBRATED LOGARITHMIC DATUM</text>
-      <text x="12" y="32" class="font-mono" font-size="8.2px" fill="#475569">• Unit Datum: Block [2] = 1U = 7.00 mm visible height</text>
-<text x="12" y="44" class="font-mono" font-size="8.2px" fill="#475569">• Log Modulus: K_log = 23.2535 mm / decade</text>
-<text x="12" y="56" class="font-mono" font-size="8.2px" fill="#475569">• Prime Formula: h_vis(p) = K_log × log10(p)</text>
-<text x="12" y="68" class="font-mono" font-size="8.2px" fill="#475569">• Connector Spec: 1.85mm base plug &amp; stacking socket</text>
-
+    <!-- Datum Box -->
+    <g transform="translate(12, 216)">
+      <rect x="0" y="0" width="366" height="136" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">CALIBRATED LOGARITHMIC DATUM</text>
     </g>
+    <text x="24" y="252" class="font-mono" font-size="13.5px" fill="#475569">• Unit Datum: Block [2] = 1U = 7.00 mm</text>
+    <text x="24" y="270" class="font-mono" font-size="13.5px" fill="#475569">visible height</text>
+    <text x="24" y="288" class="font-mono" font-size="13.5px" fill="#475569">• Log Modulus: K_log = 23.2535 mm / decade</text>
+    <text x="24" y="306" class="font-mono" font-size="13.5px" fill="#475569">• Prime Formula: h_vis(p) = K_log ×</text>
+    <text x="24" y="324" class="font-mono" font-size="13.5px" fill="#475569">log10(p)</text>
 
-    <!-- Lid Feature -->
-    <text x="16" y="210" class="font-mono" font-size="9.5px" font-weight="700" fill="#0f172a">12-SOCKET LID TRAY &amp; LOGARITHMIC SCALE</text>
-    <text x="16" y="224" class="font-mono" font-size="8.5px" fill="#475569">
-      <tspan x="16" dy="0">Flip 13U lid over to use 12-socket comparison stage.</tspan><tspan x="16" dy="12">Equal heights prove equal mathematical products!</tspan>
-    </text>
-
-    <!-- Visual Diagram of Geometry / Stacking -->
-    <g transform="translate(14, 324)">
-      <rect x="0" y="0" width="342" height="138" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <!-- Proof Diagram Box -->
+    <g transform="translate(12, 364)">
+      <rect x="0" y="0" width="366" height="211" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
       
-      <text x="12" y="18" class="font-mono" font-size="9.5px" font-weight="700" fill="#0f172a">VISUAL PROOF: TOWER 12 = [2] + [2] + [3]</text>
-      <line x1="42" y1="28" x2="42" y2="135" stroke="#0f172a" stroke-width="1.5" />
-      <line x1="36" y1="130" x2="42" y2="130" stroke="#0f172a" stroke-width="1.5" />
-      <text x="33" y="133" class="font-mono" font-size="8px" text-anchor="end" fill="#475569">1</text>
-      <line x1="36" y1="112" x2="42" y2="112" stroke="#0f172a" stroke-width="1" />
-      <text x="33" y="115" class="font-mono" font-size="8px" text-anchor="end" fill="#475569">2</text>
-      <line x1="36" y1="98" x2="42" y2="98" stroke="#0f172a" stroke-width="1" />
-      <text x="33" y="101" class="font-mono" font-size="8px" text-anchor="end" fill="#475569">3</text>
-      <line x1="36" y1="88" x2="42" y2="88" stroke="#0f172a" stroke-width="1" />
-      <text x="33" y="91" class="font-mono" font-size="8px" text-anchor="end" fill="#475569">4</text>
-      <line x1="36" y1="74" x2="42" y2="74" stroke="#0f172a" stroke-width="1" />
-      <text x="33" y="77" class="font-mono" font-size="8px" text-anchor="end" fill="#475569">6</text>
-      <line x1="34" y1="48" x2="42" y2="48" stroke="#059669" stroke-width="2" />
-      <text x="31" y="51" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="end" fill="#059669">12</text>
-      <line x1="36" y1="36" x2="42" y2="36" stroke="#0f172a" stroke-width="1" />
-      <text x="33" y="39" class="font-mono" font-size="8px" text-anchor="end" fill="#475569">18</text>
+      <text x="14" y="22" class="font-mono" font-size="14.5px" font-weight="700" fill="#0f172a">VISUAL PROOF: TOWER 12 = [2] + [2] + [3]</text>
+      <!-- Ruler -->
+      <line x1="45" y1="36" x2="45" y2="165" stroke="#0f172a" stroke-width="1.8" />
+      <line x1="38" y1="160" x2="45" y2="160" stroke="#0f172a" stroke-width="1.5" />
+      <text x="35" y="164" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">1</text>
+      <line x1="38" y1="138" x2="45" y2="138" stroke="#0f172a" stroke-width="1.5" />
+      <text x="35" y="142" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">2</text>
+      <line x1="38" y1="120" x2="45" y2="120" stroke="#0f172a" stroke-width="1.5" />
+      <text x="35" y="124" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">3</text>
+      <line x1="38" y1="108" x2="45" y2="108" stroke="#0f172a" stroke-width="1.5" />
+      <text x="35" y="112" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">4</text>
+      <line x1="38" y1="90" x2="45" y2="90" stroke="#0f172a" stroke-width="1.5" />
+      <text x="35" y="94" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">6</text>
+      <line x1="35" y1="58" x2="45" y2="58" stroke="#059669" stroke-width="2.5" />
+      <text x="32" y="62" class="font-mono" font-size="14px" font-weight="700" text-anchor="end" fill="#059669">12</text>
 
-      <rect x="68" y="112" width="56" height="18" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-      <text x="96" y="125" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">[ 2 ]</text>
-      <rect x="68" y="94" width="56" height="18" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-      <text x="96" y="107" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">[ 2 ]</text>
-      <rect x="68" y="48" width="56" height="46" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-      <text x="96" y="75" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#0f172a">[ 3 ]</text>
+      <!-- Blocks -->
+      <rect x="70" y="138" width="60" height="22" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.4" />
+      <text x="100" y="154" class="font-mono" font-size="14px" font-weight="700" text-anchor="middle" fill="#0f172a">[ 2 ]</text>
+      <rect x="70" y="116" width="60" height="22" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.4" />
+      <text x="100" y="132" class="font-mono" font-size="14px" font-weight="700" text-anchor="middle" fill="#0f172a">[ 2 ]</text>
+      <rect x="70" y="58" width="60" height="58" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.4" />
+      <text x="100" y="92" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">[ 3 ]</text>
 
-      <line x1="68" y1="48" x2="45" y2="48" stroke="#059669" stroke-width="1.8" stroke-dasharray="3,2" />
-      <polygon points="43,48 49,45 49,51" fill="#059669" />
+      <line x1="70" y1="58" x2="48" y2="58" stroke="#059669" stroke-width="2" stroke-dasharray="3,2" />
+      <polygon points="46,58 52,54 52,62" fill="#059669" />
 
-      <text x="140" y="55" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">▲ SUMMIT = 12</text>
-      <text x="140" y="70" class="font-mono" font-size="8.8px" fill="#475569">2 × 2 × 3 = 12</text>
-      <text x="140" y="84" class="font-mono" font-size="8.8px" fill="#475569">Visible: 25.09 mm</text>
-      <text x="140" y="102" class="font-mono" font-size="8.8px" font-weight="700" fill="#0284c7">Commutative:</text>
-      <text x="140" y="116" class="font-mono" font-size="8.2px" fill="#475569">[3]+[2]+[2] = same height!</text>
+      <!-- Annotations -->
+      <text x="145" y="66" class="font-mono" font-size="14.5px" font-weight="700" fill="#059669">▲ SUMMIT = 12</text>
+      <text x="145" y="86" class="font-mono" font-size="13.5px" fill="#475569">2 × 2 × 3 = 12</text>
+      <text x="145" y="104" class="font-mono" font-size="13.5px" fill="#475569">Visible: 25.09 mm</text>
+      <text x="145" y="128" class="font-mono" font-size="14px" font-weight="700" fill="#0284c7">Commutative:</text>
+      <text x="145" y="146" class="font-sans" font-size="13px" fill="#475569">[3]+[2]+[2] = same height!</text>
 
     </g>
   </g>
 
-  <!-- COLUMN 2: KIT PARTS INVENTORY -->
-  <g transform="translate(420, 148)">
-    <rect x="0" y="0" width="450" height="475" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+  <!-- COLUMN 2: PARTS INVENTORY (Width: 450) -->
+  <g transform="translate(425, 120)">
+    <rect x="0" y="0" width="450" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
     <rect x="0" y="0" width="450" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-    <text x="16" y="22" class="font-mono section-hdr">2. KIT PARTS INVENTORY (72 PIECES)</text>
+    <text x="16" y="23" class="font-mono section-hdr">2. KIT PARTS INVENTORY (23 PIECES)</text>
 
     <!-- Table Header -->
-    <text x="16" y="52" class="font-mono th">COMPONENT</text>
-    <text x="150" y="52" class="font-mono th">QTY</text>
-    <text x="190" y="52" class="font-mono th">SPEC / DIMENSION</text>
-    <text x="340" y="52" class="font-mono th">PALETTE COLOR</text>
+    <text x="14" y="52" class="font-mono th">COMPONENT</text>
+    <text x="180" y="52" class="font-mono th">QTY</text>
+    <text x="215" y="52" class="font-mono th">SPEC</text>
+    <text x="436" y="52" class="font-mono th" text-anchor="end">COLOR</text>
     <line x1="12" y1="58" x2="438" y2="58" stroke="#cbd5e1" stroke-width="1" />
 
     
-    <text x="16" y="74" class="font-mono td" font-weight="700">Prime Block [2]</text>
-    <text x="150" y="74" class="font-mono td" font-weight="700" fill="#0284c7">29x</text>
-    <text x="190" y="74" class="font-mono td">7.00 mm (1.00U)</text>
-    <text x="340" y="74" class="font-mono td" fill="#475569">Blue</text>
-    <line x1="12" y1="80" x2="438" y2="80" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [2]</text>
+      <text x="180" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
+      <text x="215" y="64" class="font-mono" font-size="12.5px" fill="#0f172a">7.00 mm</text>
+      <text x="436" y="64" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
+      <line x1="12" y1="69" x2="438" y2="69" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="97" class="font-mono td" font-weight="700">Prime Block [3]</text>
-    <text x="150" y="97" class="font-mono td" font-weight="700" fill="#0284c7">17x</text>
-    <text x="190" y="97" class="font-mono td">11.09 mm (1.58U)</text>
-    <text x="340" y="97" class="font-mono td" fill="#475569">Gold</text>
-    <line x1="12" y1="103" x2="438" y2="103" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [2²]</text>
+      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
+      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#0f172a">14.00 mm</text>
+      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
+      <line x1="12" y1="91" x2="438" y2="91" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="120" class="font-mono td" font-weight="700">Prime Block [5]</text>
-    <text x="150" y="120" class="font-mono td" font-weight="700" fill="#0284c7">8x</text>
-    <text x="190" y="120" class="font-mono td">16.25 mm (2.32U)</text>
-    <text x="340" y="120" class="font-mono td" fill="#475569">Classic White</text>
-    <line x1="12" y1="126" x2="438" y2="126" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [2³]</text>
+      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
+      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#0f172a">21.00 mm</text>
+      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
+      <line x1="12" y1="113" x2="438" y2="113" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="143" class="font-mono td" font-weight="700">Prime Block [7]</text>
-    <text x="150" y="143" class="font-mono td" font-weight="700" fill="#0284c7">4x</text>
-    <text x="190" y="143" class="font-mono td">19.65 mm (2.81U)</text>
-    <text x="340" y="143" class="font-mono td" fill="#475569">Slate Gray</text>
-    <line x1="12" y1="149" x2="438" y2="149" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [3]</text>
+      <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">4x</text>
+      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#0f172a">11.09 mm</text>
+      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
+      <line x1="12" y1="135" x2="438" y2="135" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="166" class="font-mono td" font-weight="700">Prime Block [11]</text>
-    <text x="150" y="166" class="font-mono td" font-weight="700" fill="#0284c7">3x</text>
-    <text x="190" y="166" class="font-mono td">24.21 mm (3.46U)</text>
-    <text x="340" y="166" class="font-mono td" fill="#475569">Gold</text>
-    <line x1="12" y1="172" x2="438" y2="172" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [3²]</text>
+      <text x="180" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#0f172a">22.18 mm</text>
+      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
+      <line x1="12" y1="157" x2="438" y2="157" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="189" class="font-mono td" font-weight="700">Prime Block [13]</text>
-    <text x="150" y="189" class="font-mono td" font-weight="700" fill="#0284c7">3x</text>
-    <text x="190" y="189" class="font-mono td">25.90 mm (3.70U)</text>
-    <text x="340" y="189" class="font-mono td" fill="#475569">Classic White</text>
-    <line x1="12" y1="195" x2="438" y2="195" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [5]</text>
+      <text x="180" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
+      <text x="215" y="174" class="font-mono" font-size="12.5px" fill="#0f172a">16.25 mm</text>
+      <text x="436" y="174" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="179" x2="438" y2="179" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="212" class="font-mono td" font-weight="700">Prime Block [17]</text>
-    <text x="150" y="212" class="font-mono td" font-weight="700" fill="#0284c7">2x</text>
-    <text x="190" y="212" class="font-mono td">28.61 mm (4.09U)</text>
-    <text x="340" y="212" class="font-mono td" fill="#475569">Slate Gray</text>
-    <line x1="12" y1="218" x2="438" y2="218" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="196" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [7]</text>
+      <text x="180" y="196" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
+      <text x="215" y="196" class="font-mono" font-size="12.5px" fill="#0f172a">19.65 mm</text>
+      <text x="436" y="196" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Gray</text>
+      <line x1="12" y1="201" x2="438" y2="201" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="235" class="font-mono td" font-weight="700">Prime Block [19]</text>
-    <text x="150" y="235" class="font-mono td" font-weight="700" fill="#0284c7">2x</text>
-    <text x="190" y="235" class="font-mono td">29.73 mm (4.25U)</text>
-    <text x="340" y="235" class="font-mono td" fill="#475569">Gold</text>
-    <line x1="12" y1="241" x2="438" y2="241" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="218" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [11]</text>
+      <text x="180" y="218" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="218" class="font-mono" font-size="12.5px" fill="#0f172a">24.21 mm</text>
+      <text x="436" y="218" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Tan</text>
+      <line x1="12" y1="223" x2="438" y2="223" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="258" class="font-mono td" font-weight="700">Prime Block [23]</text>
-    <text x="150" y="258" class="font-mono td" font-weight="700" fill="#0284c7">2x</text>
-    <text x="190" y="258" class="font-mono td">31.67 mm (4.52U)</text>
-    <text x="340" y="258" class="font-mono td" fill="#475569">Slate Gray</text>
-    <line x1="12" y1="264" x2="438" y2="264" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="240" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [13]</text>
+      <text x="180" y="240" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="240" class="font-mono" font-size="12.5px" fill="#0f172a">25.90 mm</text>
+      <text x="436" y="240" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Tan</text>
+      <line x1="12" y1="245" x2="438" y2="245" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="281" class="font-mono td" font-weight="700">13U Storage Bin</text>
-    <text x="150" y="281" class="font-mono td" font-weight="700" fill="#0284c7">1x</text>
-    <text x="190" y="281" class="font-mono td">91.0 mm (13U)</text>
-    <text x="340" y="281" class="font-mono td" fill="#475569">84.0mm Waterline</text>
-    <line x1="12" y1="287" x2="438" y2="287" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="262" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [17]</text>
+      <text x="180" y="262" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="262" class="font-mono" font-size="12.5px" fill="#0f172a">28.61 mm</text>
+      <text x="436" y="262" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Gray</text>
+      <line x1="12" y1="267" x2="438" y2="267" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-    <text x="16" y="304" class="font-mono td" font-weight="700">Stage Lid</text>
-    <text x="150" y="304" class="font-mono td" font-weight="700" fill="#0284c7">1x</text>
-    <text x="190" y="304" class="font-mono td">10.4 mm Stage</text>
-    <text x="340" y="304" class="font-mono td" fill="#475569">12-Socket Lid Tray</text>
-    <line x1="12" y1="310" x2="438" y2="310" stroke="#e2e8f0" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="14" y="284" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [19]</text>
+      <text x="180" y="284" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="284" class="font-mono" font-size="12.5px" fill="#0f172a">29.73 mm</text>
+      <text x="436" y="284" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Gray</text>
+      <line x1="12" y1="289" x2="438" y2="289" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="306" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [23]</text>
+      <text x="180" y="306" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="306" class="font-mono" font-size="12.5px" fill="#0f172a">31.67 mm</text>
+      <text x="436" y="306" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="311" x2="438" y2="311" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="328" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [29]</text>
+      <text x="180" y="328" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="328" class="font-mono" font-size="12.5px" fill="#0f172a">33.51 mm</text>
+      <text x="436" y="328" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="333" x2="438" y2="333" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
 
     <!-- Total Pieces Summary -->
-    <text x="16" y="334" class="font-mono" font-size="8.5px" font-weight="700" fill="#0f172a">TOTAL: 70 Prime Blocks + Storage Bin + Comparison Stage Lid = 72 Parts</text>
+    <text x="14" y="366" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">TOTAL: 21 Blocks + 7U Box + Stage Lid = 23</text>
+    <text x="14" y="382" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">Parts (7U Farm) • 47 Parts (13U)</text>
 
     <!-- Palette Box -->
-    <g transform="translate(12, 350)">
-      <rect x="0" y="0" width="426" height="112" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="9.5px" font-weight="700" fill="#0f172a">4-COLOR HIGH-CONTRAST PALETTE</text>
-      <text x="12" y="36" class="font-mono" font-size="8.3px" fill="#475569">• 4-Color Palette: Neighboring prime columns have distinct hues.</text>
-<text x="12" y="49" class="font-mono" font-size="8.3px" fill="#475569">• Instant Sorting: Enables fast visual sorting across 70 blocks.</text>
-<text x="12" y="62" class="font-mono" font-size="8.3px" fill="#475569">• High Durability: Scratch-resistant debossed numerals.</text>
-<text x="12" y="75" class="font-mono" font-size="8.3px" fill="#475569">• Tactile Alignment: Connectors mate smoothly without binding.</text>
-
+    <g transform="translate(12, 408)">
+      <rect x="0" y="0" width="426" height="154" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">SLANT 3D PRODUCTION PALETTE</text>
     </g>
+    <text x="24" y="444" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Blue: Prime [2] family (2, 2², 2³).</text>
+    <text x="24" y="462" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Muted Red: Prime [3] family (3, 3²).</text>
+    <text x="24" y="480" class="font-sans" font-size="13.5px" fill="#475569">• PLA White: Prime [5], Primes [23], [29], Enclosure</text>
+    <text x="24" y="498" class="font-sans" font-size="13.5px" fill="#475569">Box &amp; Lid.</text>
+    <text x="24" y="516" class="font-sans" font-size="13.5px" fill="#475569">• PLA Tan: Mid primes [11], [13] • PLA Gray: Primes</text>
+    <text x="24" y="534" class="font-sans" font-size="13.5px" fill="#475569">[7], [17], [19].</text>
   </g>
 
-  <!-- COLUMN 3: WHY KEEP THIS REFERENCE CARD? -->
-  <g transform="translate(885, 148)">
-    <rect x="0" y="0" width="340" height="475" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
-    <rect x="0" y="0" width="340" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-    <text x="16" y="22" class="font-mono section-hdr">3. WHY KEEP THIS REFERENCE CARD?</text>
+  <!-- COLUMN 3: WHY KEEP CARD (Width: 290) -->
+  <g transform="translate(885, 120)">
+    <rect x="0" y="0" width="290" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="290" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="14" y="23" class="font-mono section-hdr">3. PACK-UP &amp; SUPPORT</text>
 
-    <!-- Reason 1: No Lost Piece Guarantee / Hardware Support -->
-    <g transform="translate(14, 48)">
-      <rect x="0" y="0" width="312" height="126" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#059669">✓ NO LOST PIECE LEFT BEHIND</text>
-      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">
-        <tspan x="12" dy="0">Classroom manipulatives get lost. Never abandon</tspan><tspan x="12" dy="12">an incomplete set! Every individual math component</tspan><tspan x="12" dy="12">is permanently stocked for single replacements.</tspan>
-      </text>
-      <rect x="12" y="84" width="288" height="28" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8" />
-      <text x="156" y="98" class="font-mono" font-size="8.8px" font-weight="700" text-anchor="middle" fill="#0284c7">Scan back QR or visit stackcalc.io/parts</text>
-      <text x="156" y="108" class="font-mono" font-size="7.8px" text-anchor="middle" fill="#475569">Order individual replacement pieces anytime</text>
+    <!-- Reason 1: Pack-Up -->
+    <g transform="translate(12, 44)">
+      <rect x="0" y="0" width="266" height="136" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#d97706">✓ 10-SECOND PACK-UP</text>
+    </g>
+    <text x="24" y="82" class="font-sans" font-size="13px" fill="#475569">Stand prime blocks in product-labeled</text>
+    <text x="24" y="100" class="font-sans" font-size="13px" fill="#475569">sockets (2¹²=4096, 3⁷·2=4374, etc).</text>
+    <text x="24" y="118" class="font-sans" font-size="13px" fill="#475569">All 12 towers level off at the 84mm</text>
+    <text x="24" y="136" class="font-sans" font-size="13px" fill="#475569">waterline. Snap stage lid flush for</text>
+    <text x="24" y="154" class="font-sans" font-size="13px" fill="#475569">silent carry.</text>
+
+    <!-- Reason 2: Guarantee -->
+    <g transform="translate(12, 190)">
+      <rect x="0" y="0" width="266" height="138" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="13.5px" font-weight="700" fill="#059669">✓ NO LOST PIECE GUARANTEE</text>
+      <text x="12" y="40" class="font-sans" font-size="13px" fill="#475569">Classrooms lose pieces. Every single</text>
+      <text x="12" y="58" class="font-sans" font-size="13px" fill="#475569">math component is permanently</text>
+      <text x="12" y="76" class="font-sans" font-size="13px" fill="#475569">stocked for single replacements.</text>
+      <rect x="12" y="90" width="242" height="36" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8" />
+      <text x="133" y="106" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0284c7">stackcalc.io/parts</text>
+      <text x="133" y="120" class="font-sans" font-size="11px" text-anchor="middle" fill="#475569">Order replacements anytime</text>
     </g>
 
-    <!-- Reason 2: Self-Auditing Sockets / Instant Off -->
-    <g transform="translate(14, 186)">
-      <rect x="0" y="0" width="312" height="136" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#d97706">✓ 10-SECOND SELF-CHECKING PACK-UP</text>
-      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">
-        <tspan x="12" dy="0">Pack-up is a built-in math game! Each floor</tspan><tspan x="12" dy="12">socket is labeled</tspan><tspan x="12" dy="12">with its tower's product: 2¹²=4096,</tspan><tspan x="12" dy="12">3⁷·2=4374, 5⁵=3125, 7⁴·2=4802...</tspan><tspan x="12" dy="12">When all 70 blocks are stacked in their</tspan><tspan x="12" dy="12">bays, all 12 towers level</tspan><tspan x="12" dy="12">at the 84.0mm waterline. Stage lid latches</tspan><tspan x="12" dy="12">firmly for quiet carry.</tspan>
-      </text>
+    <!-- Reason 3: Reverse Lesson Guide -->
+    <g transform="translate(12, 338)">
+      <rect x="0" y="0" width="266" height="84" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">✓ HANDS-ON TUTORIAL</text>
+      <text x="12" y="38" class="font-sans" font-size="12.5px" fill="#475569">Flip over for 5-step concrete</text>
+      <text x="12" y="54" class="font-sans" font-size="12.5px" fill="#475569">lesson &amp; live 3D Video QR!</text>
+      <text x="12" y="72" class="font-sans" font-size="12px" font-weight="700" fill="#0f172a">Keep stored inside box lid!</text>
     </g>
 
-    <!-- Reason 3: Quick Lesson Guide -->
-    <g transform="translate(14, 334)">
-      <rect x="0" y="0" width="312" height="126" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#0284c7">✓ HANDS-ON TUTORIAL ON REVERSE</text>
-      <text x="12" y="38" class="font-mono" font-size="8.5px" fill="#475569">
-        <tspan x="12" dy="0">Flip this card over for a complete step-by-step</tspan>
-        <tspan x="12" dy="12">hands-on lesson with concrete numbers, stage</tspan>
-        <tspan x="12" dy="12">arrangements, and calculator cross-references!</tspan>
-        <tspan x="12" dy="15" font-weight="700" fill="#0f172a">Keep this card stored inside the box lid!</tspan>
+    <!-- Fundamental Theorem Box -->
+    <g transform="translate(12, 432)">
+      <rect x="0" y="0" width="266" height="88" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="18" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">FUNDAMENTAL THEOREM</text>
+      <text x="12" y="36" class="font-sans" font-size="12px" fill="#475569">
+        <tspan x="12" dy="0">Every integer &gt; 1 has a unique</tspan><tspan x="12" dy="16">prime factorization</tspan><tspan x="12" dy="16">decomposition.</tspan>
       </text>
     </g>
   </g>
 
   <!-- Bottom Footer Bar -->
-  <g transform="translate(35, 635)">
-    <rect x="0" y="0" width="1190" height="115" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <g transform="translate(25, 715)">
+    <rect x="0" y="0" width="1150" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
     
-    <g transform="translate(25, 24)">
-      <text x="0" y="0" class="font-mono th" fill="#0f172a">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
-      <text x="0" y="18" class="font-mono footer-txt">Designed in Mountain View, California, USA • Non-Toxic BPA-Free.</text>
-      <text x="0" y="32" class="font-mono footer-txt">Classroom Lab Crates (10x / 30x Stations): stackcalc.io/schools</text>
+    <g transform="translate(20, 24)">
+      <text x="0" y="0" class="font-mono" font-size="13.5px" font-weight="700" fill="#0f172a">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
+      <text x="0" y="18" class="font-sans footer-txt">Designed in Mountain View, California • Non-Toxic BPA-Free • Classroom Lab Stations: stackcalc.io/schools</text>
     </g>
 
-    <g transform="translate(450, 18)">
-      <text x="0" y="0" class="font-mono th" fill="#0f172a">FUNDAMENTAL THEOREM OF ARITHMETIC</text>
-      <text x="0" y="15" class="font-mono footer-txt" font-size="8.3px">
-        <tspan x="0" dy="0">Every integer &gt; 1 has a unique prime factorization</tspan><tspan x="0" dy="12">decomposition.</tspan>
-      </text>
-      <text x="0" y="44" class="font-mono footer-txt" font-size="8px" opacity="0.85">Universal 7.00mm Datum • Classroom Continuum (10 Kits)</text>
-    </g>
-
-    <g transform="translate(980, 24)">
-      <text x="0" y="0" class="font-mono th" fill="#0f172a">OFFICIAL REFILL PORTAL</text>
-      <text x="0" y="18" class="font-mono td" font-size="12px" font-weight="700" fill="#0284c7">stackcalc.io/parts</text>
-      <text x="0" y="32" class="font-mono footer-txt">Order replacement parts anytime</text>
+    <g transform="translate(880, 24)">
+      <text x="0" y="0" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">OFFICIAL REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono" font-size="14.5px" font-weight="700" fill="#0284c7">stackcalc.io/parts</text>
     </g>
   </g>
   <metadata id="stackcalc-book-macro-manifest" data-kit="PRIME-01">

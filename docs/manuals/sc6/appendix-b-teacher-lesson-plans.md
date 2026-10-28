@@ -1,535 +1,340 @@
 ---
-title: "Appendix B: Teacher Lesson Plans & Diagnostic Protocols"
-description: "Twenty-five turnkey classroom station lesson scripts, teacher dialogue, student misconception diagnostic tables, and 4-tier rubrics for the StackCalc SC-6 across foundational readiness and Grades 3 through 6."
+title: "Appendix B: Teacher Lesson Plans & Station Guide"
+description: "Twenty-five turnkey classroom station lesson guides, facilitation narratives, student slip-up checks, and 4-tier observation rubrics for the StackCalc SC-6 across foundational readiness and Grades 3 through 6."
 ---
 
-# Appendix B: Teacher Lesson Plans & Diagnostic Protocols
+# Appendix B: Teacher Lesson Plans & Station Guide
 
-## Station Facilitation Model & Workshop Architecture
+## Running the 45-Minute Workshop & Foundational Fluency Stations
 
-The StackCalc SC-6 curriculum follows the **Math Workshop Rotation Model**, where every mathematical concept moves naturally from physical blocks to visual sketches to the four-register number stack:
+The StackCalc SC-6 station curriculum aligns with the Grades 3–6 Common Core State Standards for Mathematics {{cite:ccssm2010}} and follows the **Math Workshop Rotation Model**, where every mathematical concept moves from physical blocks {{cite:dienes1960,bruner1966}} to visual bar and array models {{cite:singapore2014}} to the four-shelf number stack. Grounded in research on elementary mathematics instruction {{cite:ma1999}}, relational understanding of equality {{cite:falkner1999}}, and structured problem-solving heuristics {{cite:polya1945}}, each 45-minute lesson unfolds in four phases:
 
 | Time Window | Phase | Activity & Student Experience |
 | :---: | :--- | :--- |
-| **00:00 – 05:00** | Whole-Class Warm-Up | Pose the real-world narrative challenge and frame the question. |
-| **05:00 – 20:00** | Station Investigation | Hands-on physical manipulative build at studio stations. |
-| **20:00 – 35:00** | Stack Verification & Practice | SC-6 four-register stack verification and keystroke logging. |
-| **35:00 – 45:00** | Discourse & Exit Ticket | Mathematical reflection, diagnostic check, and notebook log. |
+| **00:00 – 05:00** | Whole-Class Warm-Up | Share the real-world story challenge and pose the main question. |
+| **05:00 – 20:00** | Station Investigation | Hands-on physical block build at studio stations. |
+| **20:00 – 35:00** | Stack Verification & Practice | SC-6 four-shelf stack verification and keystroke logging. |
+| **35:00 – 45:00** | Discourse & Exit Ticket | Mathematical reflection, quick check, and notebook log. |
 
-### Four-Register Stack Elevator Mental Model
-For elementary students, the four-register RPN stack ($X, Y, Z, T$) is taught as a four-story glass elevator:
-- **Floor 1 (Register $X$):** The Lobby / Ground Floor where current typing happens.
-- **Floor 2 (Register $Y$):** The First Balcony where numbers wait for two-number operations.
-- **Floor 3 (Register $Z$):** The Second Balcony for intermediate storage.
-- **Floor 4 (Register $T$):** The Penthouse / Constant Dispenser that duplicates downward during continuous operations.
+### Classroom Hand-Signals for the Four Shelves ($X, Y, Z, T$)
 
-> **Middle School Supplement Station Alignment:** For Grades 5–7 classrooms, the station rotation model in this appendix scales directly into the **10 Units (45 Sections, 90 Worksheets)** of the [Big Ideas Math Middle School Supplement](../../curriculum/big-ideas-middle-school-sc6-workbook.md): **Unit 1** (Exponents, Order of Operations & Prime Factor Studio GCF/LCM Venn Diagrams), **Unit 2** (Fraction Tower Multiplication/Division & Place Value Studio Decimals), **Unit 3** (Tape Diagrams, Unit Rates & Percents), **Unit 4** (Expressions, Distributive L-Frames & Factoring), **Unit 5** (2D Polygon Areas & Planetary Geared Clock Elapsed Time), **Unit 6** (Signed Integers, `{{key:|x|}}` & Coordinate Plane), **Unit 7** (Balance-Scale Equations & Inequalities), **Unit 8** (`{{key:Σ+}}` 3D Surface Area Nets, Fractional Cube Volume & Circles), **Unit 9** (Counting Tile Fair-Share Mean, `{{key:MAD}}`, Box Plots & Histograms), and **Unit 10** (Signed Rational Numbers, Two-Step Equations & Polyhedral Dice Probability). Each worksheet includes two-way verification and **Quest Scoreboard** tracking.
+When introducing the four-shelf stack ($X, Y, Z, T$) at the classroom carpet or whiteboard, pair each shelf with a simple hand-height cue so students connect the physical blocks on their desk with the shelves on the screen:
 
----
+| Stack Shelf | Classroom Hand-Signal Cue | How It Connects to the Desk Tray & Screen |
+| :--- | :--- | :--- |
+| **Ground Shelf $X$** | **Hands Flat on the Desk** (The Workbench) | Every number you type starts right here on Ground Shelf $X$, matching the front/bottom row of your block tray. |
+| **Waiting Shelf $Y$** | **Hands Raised to Chest Height** | Tapping `{{key:ENTER}}` lifts your first number up to Waiting Shelf $Y$, matching the back/top row of your block tray so both numbers sit in plain sight before an operation combines them. |
+| **Upper Shelf $Z$** | **Hands Raised to Shoulder Height** | Whenever you start building a second group in a multi-step problem, your finished first group rides automatically up to Shelf $Z$ to wait safely out of the way. |
+| **Top Shelf $T$** | **Hands Raised Overhead** (The Constant Dispenser) | Pressing `{{key:REP}}` fills all four shelves up to Top Shelf $T$, which feeds a fresh copy of your step size downward every time the stack drops during skip-counting. |
 
-## Foundational Fluency & Grade 3 Readiness Warm-Up Stations
+### Setting Up the Five-Table Studio Rotation & 60-Second Tray Cleanup
 
-Foundational fluency stations build one-to-one correspondence, five-and-ten subitizing, tower comparisons, place-value bundling, and skip-counting fluency as warm-up and intervention stations for Grades 3–6 classrooms using physical Ten-Frame trays, Place Value Trays, and Counting Tiles alongside `{{key:▦}}` Ten-Frame Mode.
+In a typical classroom of 20 to 30 students, the 45-minute workshop runs smoothly when desks are clustered into **five station tables of 4 to 6 students** (two or three partner pairs per table). Each table receives one modular studio tray (or a pair of student kits) alongside two or three SC-6 calculators so every pair shares one physical block tray and one calculator. On the first problem at a station, **Partner A (The Architect)** builds the physical model with the 3D-printed blocks while **Partner B (The Stack Navigator)** keys the matching sequence onto the SC-6 stack and calls out what appears on Shelf $Y$ and Ground Shelf $X$; on the next problem, partners swap roles so every student builds with both their hands and the keypad.
 
-### Station F.1: One-to-One Correspondence & Counting to 10
-- **Standards:** CCSS.MATH.CONTENT.3.NBT.A.2 (Foundational Readiness); TEKS 3.2.A.
-- **Learning Objective:** Students will place up to 10 physical counters onto a Ten-Frame Studio tray while stepping through counts on the SC-6 LCD display using Ten-Frame Mode (`{{key:▦}}`).
-- **Manipulatives:** Ten-Frame Studio tray, 10 two-color flip counters (yellow/red).
-- **Warm-Up Activity (5 min):** "Place 4 yellow counters in the top row. Count them with your finger: one, two, three, four. Now tap one red counter into the next space. How many now?"
+Fast finishers sometimes want to jump straight to the calculator buttons without touching the blocks. Placing a **Quest Scoreboard** lid at the center of the table solves this naturally through the **Two-Token Quest Scoreboard Rule**: partners earn their first `+10` token *only* when their physical block model is built on the desk, and they stack their second `+10` token (`+20` total) when the SC-6 screen confirms the exact same result.
 
-{{blocks:ten_frame_subitizing_5anchor|Ten-Frame Studio: 5-Anchor Subitizing (5 Red + 3 Green = 8, 2 Empty to 10) and 70.0 mm 10-Rod Height Parity}}
+Because every StackCalc studio tray is engineered with recessed sockets for its exact part count—10 pockets per row in the Ten-Frame, 12 color columns in the Counting & Array case, and stepped wells in the $84\text{ mm}$ Fraction and Prime Factor cases—you never have to count loose plastic pieces by hand at the end of class. Give a **60-Second Gridfinity Socket Count-In** chime at minute `34:00`: if every socket in the tray is filled and the lid slides shut flush, zero pieces are left on the floor!
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "Hold up your SC-6 calculator. Tap the Ten-Frame key `{{key:▦}}`. Look at the glass screen. Do you see the two empty rows of five boxes, just like your wooden tray?" *(Expected response: Yes, it looks like our tray.)*
-2. **Prompt:** "Now, let us drop one counter into both trays at the same time. Place one yellow counter on your tray. At the same time, tap `1 {{key:+}}` on your calculator. What popped onto your screen?" *(Expected response: A little dot filled the first box.)*
-3. **Prompt:** "Tap `1 {{key:+}}` again. And again. Stop when your top row is full. How many counters are in the top row?" *(Expected response: Five.)*
-4. **Prompt:** "What number shows in the corner?" *(Expected response: 5.)*
+Foundational fluency stations (`F.1`–`F.11`) build quick ten-frame pattern recognition, spotting groups of 5 and 10 at a glance, tower comparisons, place-value bundling, and skip-counting fluency as warm-up and practice stations for Grades 3–6 classrooms using physical Ten-Frame trays, Place Value Trays, and Counting Tiles alongside `{{key:▦}}` Ten-Frame Mode.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:▦}}` | 0 | 0 | 0 | 0 (10F) |
-| `1 {{key:+}}` | 0 | 0 | 0 | 1 (10F) |
-| `1 {{key:+}}` | 0 | 0 | 0 | 2 (10F) |
-| `1 {{key:+}}` | 0 | 0 | 0 | 3 (10F) |
-| `1 {{key:+}}` | 0 | 0 | 0 | 4 (10F) |
-| `1 {{key:+}}` | 0 | 0 | 0 | 5 (10F) |
+### Station F.1: Spotting 5-and-Some-More in Ten-Frame Mode
 
-**Student Practice Problems:**
-1. Count out 7 counters on the tray and match with 7 dots on the SC-6 (`{{key:▦}} 7`).
-2. Show 10 full dots on the screen. How many rows are filled? (Both rows, answer: 10).
-3. Clear the frame (`{{key:C}} {{key:▦}}`). Enter 3 dots. How many empty boxes remain? (7 boxes).
+Place a **Ten-Frame Studio tray** and ten two-color flip counters (yellow and red) between each pair of students to launch your first workshop rotation (**CCSS 3.NBT.A.2**; **TEKS 3.2.A**). To kick off the five-minute warm-up, have partners fill the top row of their tray with 5 red counters and place 3 yellow counters in the bottom row, then ask how they can tell the total is 8—with 2 empty pockets left to reach 10—without counting from one.
 
-**Common Stumbling Blocks:**
+Invite students to hold up their SC-6 calculator, tap the Ten-Frame key `{{key:▦}}`, and compare the glass display to the plastic tray on their desk. They will immediately notice the same two rows of five cells separated by the center 5-anchor divider. Have them build the warm-up tray step by step on both the desk and the screen, dropping one counter into the top row each time they tap `1 {{key:+}}` until all five top pockets are filled. Once they see that a full top row always represents an instant group of 5 on Shelf $X$, ask them to add the 3 yellow counters into the bottom row (`3 {{key:+}}`) so their eyes read $5 + 3 = 8$ and spot the 2 empty cells remaining to make 10.
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student taps keys rapidly, overshooting the physical counter count. | Motor impulsivity without one-to-one correspondence pairing. | "One touch on the block, one tap on the key. Say 'click' for each." |
-| Student starts filling the bottom row first. | Lacks left-to-right, top-to-bottom reading orientation. | "The top row is the attic. Fill the attic from left to right first." |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `{{key:▦}}` | 0 | 0 | 0 | 0 (10F) | Open Ten-Frame Mode (`0` dots filled) |
+| `1 {{key:+}}` | 0 | 0 | 0 | 1 (10F) | Add 1st counter into top row (`1` dot) |
+| `1 {{key:+}}` | 0 | 0 | 0 | 2 (10F) | Add 2nd counter (`2` dots) |
+| `1 {{key:+}}` | 0 | 0 | 0 | 3 (10F) | Add 3rd counter (`3` dots) |
+| `1 {{key:+}}` | 0 | 0 | 0 | 4 (10F) | Add 4th counter (`4` dots) |
+| `1 {{key:+}}` | 0 | 0 | 0 | 5 (10F) | Complete the full top row of **5** dots |
+
+During partner practice, challenge teams to build `7` on the tray (5 on top, 2 on bottom) and match it on screen (`{{key:▦}} 7`), fill all `10` dots to confirm that two complete rows of 5 make 10, and then clear the frame (`{{key:C}} {{key:▦}}`) to enter `3` dots and name the `7` empty boxes needed to reach 10.
+
+As you circulate among tables, watch for two common habits: if a student taps calculator keys faster than they place counters and overshoots the count, coach them to pair each physical counter with a single key press (*"touch the block, tap the key"*). If a student scatters counters randomly across both rows, guide them to fill the top row of 5 from left to right first so the 5-and-some-more pattern jumps out at a glance.
 
 ---
 
-### Station F.2: Composing & Decomposing 5 (Number Bonds)
-- **Standards:** CCSS.MATH.CONTENT.3.OA.C.7 (Foundational Readiness); TEKS 3.4.A.
-- **Learning Objective:** Students decompose 5 into pairs ($4+1, 3+2, 2+3, 1+4$) using two-color counters and verify that the sum remains invariant.
-- **Manipulatives:** 5 two-color counters, 1 Ten-Frame Studio tray.
-- **Warm-Up Activity:** Shake 5 counters in a cup and spill them onto the desk. Count yellow vs. red.
+### Station F.2: Building & Splitting Benchmark Number Bonds
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "Spill your counters. Maya, how many yellow and how many red did you get?" *(Expected response: I got 3 yellow and 2 red.)*
-2. **Prompt:** "Let us enter Maya's spill into our SC-6 elevator. Type `{{key:3}} {{key:ENTER}}`. The 3 rides up to the first balcony. Now type `{{key:2}}`. Look at Floor 1 and Floor 2. Press `{{key:+}}`. What is the total?" *(Expected response: 5.)*
-3. **Prompt:** "Now spill again. David, what did you get?" *(Expected response: 4 yellow and 1 red.)*
-4. **Prompt:** "Type `{{key:4}} {{key:ENTER}} {{key:1}} {{key:+}}`. What do you get?" *(Expected response: Still 5.)*
+What happens when you shake 5 two-color counters inside a cup and spill them onto the desk—does the total ever change when the colors flip? In this number-bond investigation (**CCSS 3.OA.C.7**; **TEKS 3.4.A**), partners use a **Ten-Frame Studio tray**, a small cup, and 5 (or 10) two-color counters to discover how decomposing a whole into partner pairs ($4+1, 3+2, 2+3, 1+4$) always preserves the total. Begin by having one partner shake 5 counters in the cup, spill them onto the desk, and sort the yellow and red counters into the tray.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:3}}` | 0 | 0 | 0 | 3 |
-| `{{key:ENTER}}` | 0 | 0 | 3 | 3 |
-| `{{key:2}}` | 0 | 0 | 3 | 2 |
-| `{{key:+}}` | 0 | 0 | 0 | 5 |
+When the first spill lands on 3 yellow and 2 red counters, walk students through loading those two parts onto the SC-6 elevator: typing `3 {{key:ENTER}}` lifts the 3 yellow counters up to Shelf $Y$, and typing `2` places the 2 red counters on Shelf $X$. With both parts visible side by side on the screen, pressing `{{key:+}}` combines them into `5` on the bottom shelf. Have the second partner shake and spill the same 5 counters again—perhaps landing on 4 yellow and 1 red—and key in `4 {{key:ENTER}} 1 {{key:+}}`. Discuss why every spill of the cup lands on the exact same sum of `5`: no counters ever entered or left the cup, so only the yellow-and-red split changed.
 
-**Student Practice Problems:**
-1. Enter $1 + 4$: `{{key:1}} {{key:ENTER}} {{key:4}} {{key:+}}`. Display shows `5`.
-2. Enter $2 + 3$: `{{key:2}} {{key:ENTER}} {{key:3}} {{key:+}}`. Display shows `5`.
-3. Enter $5 + 0$: `{{key:5}} {{key:ENTER}} {{key:0}} {{key:+}}`. Display shows `5`.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `3` | 0 | 0 | 0 | 3 | Enter 3 yellow counters onto Shelf $X$ |
+| `{{key:ENTER}}` | 0 | 0 | 3 | 3 | Copy 3 up onto Shelf $Y$ |
+| `2` | 0 | 0 | 3 | 2 | Enter 2 red counters onto Shelf $X$ |
+| `{{key:+}}` | 0 | 0 | 0 | 5 | Combine both parts: $3 + 2 = \mathbf{5}$ |
 
-**Common Stumbling Blocks:**
+Once the first two spills are verified, have partners log all remaining splits of 5 (`1 {{key:ENTER}} 4 {{key:+}}`, `2 {{key:ENTER}} 3 {{key:+}}`, and `5 {{key:ENTER}} 0 {{key:+}}`) before repeating the cup-spill investigation with 10 counters.
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student types `32 {{key:+}}` without `{{key:ENTER}}`, getting 32. | Forgets stack lift separator. | "Press `{{key:ENTER}}` so the 3 can climb into the balcony before 2 enters the lobby." |
-| Student thinks $3+2$ and $2+3$ have different totals. | Has not internalized commutativity. | "Turn your tray around $180^\circ$. Did any counters disappear?" |
+Keep an eye on the screen during the first few entries: if `32` appears instead of `5`, the student typed `3` and `2` without pressing `{{key:ENTER}}` between them; remind them to press `{{key:ENTER}}` so the `3` rides up to Shelf $Y$ before `2` steps onto Shelf $X$. And if a student wonders why $3+2$ and $2+3$ give the same answer, have them rotate their Ten-Frame tray $180^\circ$ on the desk to see that the total count never changes.
 
 ---
 
-### Station F.3: Comparing Quantities (More, Fewer, Same)
-- **Standards:** CCSS.MATH.CONTENT.3.NBT.A.2 (Foundational Readiness); TEKS 3.2.D.
-- **Learning Objective:** Students compare two side-by-side towers of counting tiles docked on the Counting & Array Studio lid, determine the height difference in tiles, and verify on SC-6 via subtraction.
-- **Manipulatives:** Counting & Array Studio with $6 \times 2$ Snapfinity docking lid and 20 counting tiles (10 Cobalt Blue, 10 Amber Gold).
-- **Warm-Up Activity:** Dock a tower of 7 blue tiles on the left lid socket and a tower of 4 gold tiles on the adjacent right socket. Run a finger across the tops of both towers to feel the step difference.
+### Station F.3: Finding the Difference Between Two Towers
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "Which tower stands taller on the docking lid?" *(Expected response: The blue tower with 7 tiles.)*
-2. **Prompt:** "How many more tiles are in the blue tower? Let us ask the calculator to find the difference. Put the bigger number in first: `{{key:7}} {{key:ENTER}}`. Now put the smaller number in: `{{key:4}}`. Press `{{key:-}}`. What is the difference?" *(Expected response: 3.)*
-3. **Prompt:** "Stack 3 more gold tiles onto the shorter gold tower. Run your finger across the tops of the two towers now—what happened?" *(Expected response: Their tops are completely flush. Both towers are 7 tiles tall, or $49.0\text{ mm}$.)*
+Many young learners think subtraction only means "taking things away"—which makes comparison questions like *"How much taller is the blue tower than the gold tower?"* surprisingly tricky. This station reframes subtraction as the physical height gap between two side-by-side towers (**CCSS 3.NBT.A.2**; **TEKS 3.2.D**). Give each pair the **Counting & Array Studio** with its $6 \times 2$ docking lid, 10 Cobalt Blue tiles, 10 Amber Gold tiles, and a straightedge ruler. Start by having students dock a tower of 7 blue tiles in the left socket and a tower of 4 gold tiles in the adjacent right socket, laying the ruler across the top of the shorter tower to see the step gap.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:7}}` | 0 | 0 | 0 | 7 |
-| `{{key:ENTER}}` | 0 | 0 | 7 | 7 |
-| `{{key:4}}` | 0 | 0 | 7 | 4 |
-| `{{key:-}}` | 0 | 0 | 0 | 3 |
+Ask partners how many tiles sit where the two towers are neck-and-neck (4 tiles) and how many extra blue tiles rise above the ruler (3 tiles). To measure that gap on the SC-6 stack, have them load the taller tower onto Shelf $Y$ first (`7 {{key:ENTER}}`), enter the shorter tower on Shelf $X$ (`4`), and press `{{key:-}}`. The `3` on the bottom shelf measures the exact 3-tile step between the towers. Then have students snap 3 more gold tiles onto the shorter tower and run a finger across both tops: standing flush at 7 tiles physically proves that $4 + 3 = 7$ and $7 - 4 = 3$ are inverse partners.
 
-**Student Practice Problems:**
-1. Compare 9 and 5: `{{key:9}} {{key:ENTER}} {{key:5}} {{key:-}}`. Difference is `4`.
-2. Compare 8 and 8: `{{key:8}} {{key:ENTER}} {{key:8}} {{key:-}}`. Difference is `0` (balanced).
-3. Compare 6 and 2: `{{key:6}} {{key:ENTER}} {{key:2}} {{key:-}}`. Difference is `4`.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `7` | 0 | 0 | 0 | 7 | Enter the taller 7-tile tower onto Shelf $X$ |
+| `{{key:ENTER}}` | 0 | 0 | 7 | 7 | Copy 7 up onto Shelf $Y$ |
+| `4` | 0 | 0 | 7 | 4 | Enter the shorter 4-tile tower onto Shelf $X$ |
+| `{{key:-}}` | 0 | 0 | 0 | 3 | Subtract to find the height gap: $7 - 4 = \mathbf{3}$ |
 
-**Common Stumbling Blocks:**
+Invite partners to build and compare tower pairs of `9` and `5` (`9 {{key:ENTER}} 5 {{key:-}}` $\to 4$), `8` and `8` (`8 {{key:ENTER}} 8 {{key:-}}` $\to 0$, level tops), and `6` and `2` (`6 {{key:ENTER}} 2 {{key:-}}` $\to 4$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student enters `{{key:4}} {{key:ENTER}} {{key:7}} {{key:-}}` and gets `-3`. | Operates with smaller number first. | "In subtraction, the heavy tower enters the elevator first." |
-| Student equates physical height with numerical quantity when using mismatched objects. | Perceptual salience over unit count. | "Count the cubes one-by-one; do not just look with your eyes." |
+Whenever a student enters the shorter tower first (`4 {{key:ENTER}} 7 {{key:-}}`) and sees `-3`, explain that `-3` tells us the gold tower is 3 tiles *shorter* than the blue tower, and show how tapping `{{key:x⇄y}}` before `{{key:-}}` puts the taller tower on Shelf $Y$ first. Also make sure both towers are seated firmly in the lid sockets so the tile steps align cleanly.
 
 ---
 
 ### Station F.4: Bridging Through 10 with the Ten-Frame
-- **Standards:** CCSS.MATH.CONTENT.3.NBT.A.2 (Foundational Readiness); TEKS 3.4.A.
-- **Learning Objective:** Students solve $8 + 5$ by decomposing 5 into $2 + 3$, filling the first ten-frame, and recognizing that $8 + 5 = 10 + 3 = 13$.
-- **Manipulatives:** 2 Ten-Frame Studio trays side-by-side, 20 two-color counters.
-- **Warm-Up Activity:** Place 8 counters in the first frame. Place 5 in hand. How many are needed to fill the first frame?
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "We have 8 yellow counters in Tray 1. We want to add 5 red counters. Where must the first 2 red counters go?" *(Expected response: They must go in the empty spots of Tray 1 to make 10.)*
-2. **Prompt:** "Good. That makes 10. How many red counters are still in your hand?" *(Expected response: 3 counters.)*
-3. **Prompt:** "Put them in Tray 2. So 8 plus 5 is the same as 10 plus 3. Let us see this on the SC-6. Type `{{key:8}} {{key:ENTER}} {{key:5}} {{key:+}}`. What do you get?" *(Expected response: 13.)*
-4. **Prompt:** "Now press `{{key:▦}}`. See the two frames on screen: one completely full (10), and the second has 3 dots."
+Instead of counting on their fingers one by one to add $8 + 5$, fluent mathematicians build a bridge through 10 ($8 + 2 + 3 = 13$). Set **two Ten-Frame Studio trays** side by side with 20 two-color counters at each partner station (**CCSS 3.NBT.A.2**; **TEKS 3.4.A**), and launch the activity by having students place 8 yellow counters into Tray 1 while holding 5 red counters in their hand. Ask: *"How many of the red counters in your hand do we need just to finish filling Tray 1?"*
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:8}}` | 0 | 0 | 0 | 8 |
-| `{{key:ENTER}}` | 0 | 0 | 8 | 8 |
-| `{{key:5}}` | 0 | 0 | 8 | 5 |
-| `{{key:+}}` | 0 | 0 | 0 | 13 |
-| `{{key:▦}}` | 0 | 0 | 0 | 13(10F) |
+Students quickly see that Tray 1 has 2 empty pockets waiting. Have them drop 2 red counters into those pockets to complete a full 10 in Tray 1, then place the remaining 3 red counters into Tray 2 so their eyes read $10 + 3 = 13$ immediately. Next, have them key `8 {{key:ENTER}} 5 {{key:+}}` on the SC-6 to see `13` on Shelf $X$, and then press `{{key:▦}}`: the LCD displays one completely filled ten-frame of 10 dots plus 3 dots in the second frame, mirroring the two plastic trays on the table.
 
-**Student Practice Problems:**
-1. Solve $9 + 6$: `{{key:9}} {{key:ENTER}} {{key:6}} {{key:+}} {{key:▦}}`. Display shows 10 + 5 = 15.
-2. Solve $7 + 5$: `{{key:7}} {{key:ENTER}} {{key:5}} {{key:+}} {{key:▦}}`. Display shows 10 + 2 = 12.
-3. Solve $8 + 7$: `{{key:8}} {{key:ENTER}} {{key:7}} {{key:+}} {{key:▦}}`. Display shows 10 + 5 = 15.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `8` | 0 | 0 | 0 | 8 | Enter 8 counters in Tray 1 |
+| `{{key:ENTER}}` | 0 | 0 | 8 | 8 | Copy 8 up onto Shelf $Y$ |
+| `5` | 0 | 0 | 8 | 5 | Enter 5 counters to add |
+| `{{key:+}}` | 0 | 0 | 0 | 13 | Bridge through 10: $8 + 2 + 3 = \mathbf{13}$ |
+| `{{key:▦}}` | 0 | 0 | 0 | 13(10F) | View as 1 full ten-frame plus 3 dots |
 
-**Common Stumbling Blocks:**
+From there, partners can practice the same make-ten bridge with $9 + 6$ (`9 {{key:ENTER}} 6 {{key:+}} {{key:▦}}` $\to 10 + 5 = 15$), $7 + 5$ (`7 {{key:ENTER}} 5 {{key:+}} {{key:▦}}` $\to 10 + 2 = 12$), and $8 + 7$ (`8 {{key:ENTER}} 7 {{key:+}} {{key:▦}}` $\to 10 + 5 = 15$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student counts on fingers starting from 1 ($1, 2, 3 \dots 13$). | Lacks ten-structuring automaticity. | "Lock the 8 in your mind. How many to 10? Two. Now add the rest." |
-| Student places all 5 in the second frame, leaving first incomplete. | Does not recognize benchmark 10 constraint. | "A ten-frame must be full before you open a new one." |
+Whenever a student reverts to counting up one by one on their fingers, point to the empty pockets in Tray 1 and ask: *"How many empty seats are left to finish 10? Fill Tray 1 completely before any counters spill over into Tray 2."*
 
 ---
 
-### Station F.5: Commutative Property of Addition (The Turn-Around Rule: $3 + 7 = 7 + 3$)
-- **Standards:** CCSS.MATH.CONTENT.3.NBT.A.2 (Foundational Readiness); TEKS 3.4.A.
-- **Learning Objective:** Students construct two towers ($3+7$ and $7+3$) and use the exchange key `{{key:x⇄y}}` on the SC-6 to prove sum invariance.
-- **Manipulatives:** Four-color counting tiles (blue and gold).
-- **Warm-Up Activity:** Build a tower of 3 blue tiles stacked onto 7 gold tiles. Turn the tower over.
+### Station F.5: The Turn-Around Rule of Addition ($3 + 7 = 7 + 3$)
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "Enter `{{key:3}} {{key:ENTER}} {{key:7}}`. Register $Y$ has 3, Register $X$ has 7. Press `{{key:x⇄y}}`. What happened?" *(Expected response: They swapped places. 7 is on top, 3 is on bottom.)*
-2. **Prompt:** "Press `{{key:+}}`. What is the sum?" *(Expected response: 10.)*
-3. **Prompt:** "Press `{{key:LASTX}} {{key:3}} {{key:+}}`. It is still 10. Flipping the order never changes the sum."
+Snap 3 Cobalt Blue tiles onto 7 Amber Gold tiles to build a 10-tile tower, then flip the whole tower upside down in your hands—did the height of the tower change at all? Pairing **Four-Color Counting Tiles** with the SC-6 swap key `{{key:x⇄y}}` gives students a tangible proof of the Turn-Around Rule of addition (**CCSS 3.NBT.A.2**; **TEKS 3.4.A**).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:3}}` | 0 | 0 | 0 | 3 |
-| `{{key:ENTER}}` | 0 | 0 | 3 | 3 |
-| `{{key:7}}` | 0 | 0 | 3 | 7 |
-| `{{key:x⇄y}}` | 0 | 0 | 7 | 3 |
-| `{{key:+}}` | 0 | 0 | 0 | 10 |
+To mirror that physical flip on the calculator, have students enter `3 {{key:ENTER}} 7` so Shelf $Y$ holds `3` and Shelf $X$ holds `7`. When they tap `{{key:x⇄y}}`, the two shelves trade places right on the screen—putting `7` on Shelf $Y$ and `3` on the bottom shelf—and pressing `{{key:+}}` yields `10`. Tapping `{{key:LASTX}} 3 {{key:+}}` confirms that both orders land on `10` because swapping the order of two addends never changes the combined height of the tower.
 
-**Student Practice Problems:**
-1. Test $4 + 8$ vs. $8 + 4$: `{{key:4}} {{key:ENTER}} {{key:8}} {{key:+}}` = 12; `{{key:8}} {{key:ENTER}} {{key:4}} {{key:+}}` = 12.
-2. Test $2 + 9$ vs. $9 + 2$: both equal 11.
-3. Test $6 + 5$ vs. $5 + 6$: both equal 11.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `3` | 0 | 0 | 0 | 3 | Enter 3 blue tiles onto Shelf $X$ |
+| `{{key:ENTER}}` | 0 | 0 | 3 | 3 | Copy 3 up onto Shelf $Y$ |
+| `7` | 0 | 0 | 3 | 7 | Enter 7 gold tiles onto Shelf $X$ |
+| `{{key:x⇄y}}` | 0 | 0 | 7 | 3 | Swap Shelves $X$ and $Y$ ($7$ on $Y$, $3$ on $X$) |
+| `{{key:+}}` | 0 | 0 | 0 | 10 | Add both shelves: $7 + 3 = \mathbf{10}$ |
 
-**Common Stumbling Blocks:**
+Encourage partners to test $4 + 8$ vs. $8 + 4$ (both `12`), $2 + 9$ vs. $9 + 2$ (both `11`), and $6 + 5$ vs. $5 + 6$ (both `11`) using `{{key:x⇄y}}`.
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student assumes subtraction is also commutative ($7-3 = 3-7$). | Overgeneralizes additive symmetry to non-symmetric operations. | "Try `{{key:3}} {{key:ENTER}} {{key:7}} {{key:-}}` on your calculator. Do you get 4 or -4?" |
+Before closing the station, pose a thought-provoking extension question: does *subtraction* also obey the Turn-Around Rule ($7 - 3$ vs. $3 - 7$)? Having students key `3 {{key:ENTER}} 7 {{key:-}}` on the SC-6 and seeing `-4` appear on screen sparks a memorable conversation about why order matters in subtraction even though addition is turn-around friendly.
 
 ---
 
-### Station F.6: Number Bonds & Part-Whole Missing Addends
-- **Standards:** CCSS.MATH.CONTENT.3.OA.D.8 (Foundational Readiness); TEKS 3.5.A.
-- **Learning Objective:** Students solve missing addend problems ($? + 6 = 14$) by modeling whole-part subtraction on the SC-6.
-- **Manipulatives:** 14 counting tiles from the Counting Studio; cup hiding an unknown number.
-- **Warm-Up Activity:** Place 14 tiles on desk. Teacher hides 6 under a cup. How many are visible? (8 tiles).
+### Station F.6: Number Bonds & Part-Whole Missing Numbers
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "We started with a set of 14 tiles. I put some under this cup, and 6 are left on the desk. How do we find what is under the cup?" *(Expected response: Take away the 6 from the 14.)*
-2. **Prompt:** "Key it into the SC-6: Whole set first: `14 {{key:ENTER}}`. Visible part second: `{{key:6}}`. Take it away: `{{key:-}}`. What is in the lobby?" *(Expected response: 8.)*
-3. **Prompt:** "Lift the cup and count the tiles: 8."
+An overturned cup hiding a secret pile of tiles turns missing-addend equations like $? + 6 = 14$ into a classroom detective game (**CCSS 3.OA.D.8**; **TEKS 3.5.A**). Give each pair **14 counting tiles** and an opaque cup. During the opening mystery, one partner counts out all 14 tiles onto the desk, hides a secret cluster under the cup while the other partner closes their eyes, and leaves 6 tiles visible outside the cup.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `14` | 0 | 0 | 0 | 14 |
-| `{{key:ENTER}}` | 0 | 0 | 14 | 14 |
-| `{{key:6}}` | 0 | 0 | 14 | 6 |
-| `{{key:-}}` | 0 | 0 | 0 | 8 |
+Ask students how they can figure out how many tiles are hiding under the cup without peeking. Because the whole collection is 14 tiles and the visible part is 6 tiles, subtracting the visible part from the whole reveals the hidden part. Have students key the starting whole first (`14 {{key:ENTER}}`), enter the visible part second (`6`), and press `{{key:-}}` to uncover `8` on Shelf $X$—then lift the cup to count the 8 hidden tiles ($8 + 6 = 14$).
 
-**Student Practice Problems:**
-1. $? + 5 = 12$: `12 {{key:ENTER}} {{key:5}} {{key:-}}` = 7.
-2. $? + 9 = 16$: `16 {{key:ENTER}} {{key:9}} {{key:-}}` = 7.
-3. $? + 8 = 15$: `15 {{key:ENTER}} {{key:8}} {{key:-}}` = 7.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `14` | 0 | 0 | 0 | 14 | Enter the starting whole of 14 tiles |
+| `{{key:ENTER}}` | 0 | 0 | 14 | 14 | Copy 14 up onto Shelf $Y$ |
+| `6` | 0 | 0 | 14 | 6 | Enter the 6 visible tiles onto Shelf $X$ |
+| `{{key:-}}` | 0 | 0 | 0 | 8 | Subtract to uncover the **8** hidden tiles |
 
-**Common Stumbling Blocks:**
+Partners can then trade roles hiding tiles for $? + 5 = 12$ (`12 {{key:ENTER}} 5 {{key:-}}` $\to 7$), $? + 9 = 16$ (`16 {{key:ENTER}} 9 {{key:-}}` $\to 7$), and $? + 8 = 15$ (`15 {{key:ENTER}} 8 {{key:-}}` $\to 7$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student adds $14 + 6$ to get 20. | Keywords trigger addition without spatial whole-part analysis. | "Can the hidden part be bigger than the whole train?" |
+Watch out for a common reflex: a student sees the `+` sign in $? + 6 = 14$ and immediately adds $14 + 6 = 20$. Point to the overturned cup and ask: *"Can the hidden pile under the cup have 20 tiles if we only started with 14 tiles on the whole table?"* That physical check steers them right back to subtracting the visible part from the whole.
 
 ---
 
-### Station F.7: Place Value: Bundling 10 Ones into 1 Ten
-- **Standards:** CCSS.MATH.CONTENT.3.NBT.A.1 (Foundational Readiness); TEKS 3.2.A.
-- **Learning Objective:** Students stack ten $7.0\text{ mm}$ ($1\text{U}$) unit miniblocks to match a $70.0\text{ mm}$ ($10\text{U}$) 10-Rod and trade 10 ones for 1 ten on the Place Value Tray.
-- **Manipulatives:** Place Value Studio (Whole Numbers Tray, digit miniblocks, and `+1` regrouping unit blocks) plus the $70.0\text{ mm}$ 10-Rod from the Ten-Frame Studio.
-- **Warm-Up Activity:** Count out 13 single $1\text{U}$ miniblocks. Stack 10 of them beside the $70.0\text{ mm}$ 10-Rod, then trade 10 ones into the `TENS` column of the Place Value Tray.
+### Station F.7: Bundling 10 Ones into 1 Ten
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "Stack 10 unit miniblocks into a tower and stand it beside the 10-Rod. Do they have the exact same $70.0\text{ mm}$ height?" *(Expected response: Yes, the exact same height.)*
-2. **Prompt:** "Trade those 10 ones for a `1` in the `TENS` socket and dock `3` in the `ONES` socket of your Place Value Tray. Now what do you have on your tray?" *(Expected response: One ten and three ones.)*
-3. **Prompt:** "Type `13` on the SC-6. The digit 1 means 1 full bundle of ten. The digit 3 means 3 loose ones."
+Count out 13 loose $1\text{U}$ unit blocks ($7.0\text{ mm}$ tall each) and stack 10 of them into a single column right beside the solid **$70.0\text{ mm}$ 10-Rod** from the Ten-Frame Studio (**CCSS 3.NBT.A.1**; **TEKS 3.2.A**). Using the **Place Value Studio** (Whole Numbers Tray, digit miniblocks, and `+1` regrouping unit cubes), this station shows students why 10 loose ones trade cleanly for 1 ten.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `10` | 0 | 0 | 0 | 10 |
-| `{{key:ENTER}}` | 0 | 0 | 10 | 10 |
-| `{{key:3}}` | 0 | 0 | 10 | 3 |
-| `{{key:+}}` | 0 | 0 | 0 | 13 |
+When students run a finger across the top of their 10-cube tower and the solid 10-Rod, they feel that both stand at the exact same $70.0\text{ mm}$ height. Have them trade those 10 loose ones for a `1` digit miniblock in the `TENS` socket and dock a `3` miniblock in the `ONES` socket of the Place Value Tray, then key `10 {{key:ENTER}} 3 {{key:+}}` on the SC-6. Comparing the tray to the `13` on Shelf $X$ makes it clear that the `1` in `13` means 1 full bundle of ten ($10$), while the `3` means 3 loose ones.
 
-**Student Practice Problems:**
-1. Model 2 tens and 5 ones: `20 {{key:ENTER}} {{key:5}} {{key:+}}` = 25.
-2. Model 3 tens and 8 ones: `30 {{key:ENTER}} {{key:8}} {{key:+}}` = 38.
-3. Model 4 tens and 0 ones: `40 {{key:ENTER}} {{key:0}} {{key:+}}` = 40.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `10` | 0 | 0 | 0 | 10 | Enter 1 bundle of ten ($10$) |
+| `{{key:ENTER}}` | 0 | 0 | 10 | 10 | Copy 10 up onto Shelf $Y$ |
+| `3` | 0 | 0 | 10 | 3 | Enter 3 loose ones onto Shelf $X$ |
+| `{{key:+}}` | 0 | 0 | 0 | 13 | Combine 1 ten and 3 ones into **13** |
 
-**Common Stumbling Blocks:**
+Once `13` is docked on the tray, ask partners to build and verify 2 tens and 5 ones (`20 {{key:ENTER}} 5 {{key:+}}` $\to 25$), 3 tens and 8 ones (`30 {{key:ENTER}} 8 {{key:+}}` $\to 38$), and 4 tens and 0 ones (`40 {{key:ENTER}} 0 {{key:+}}` $\to 40$), pressing `{{key:PV}}` to see the calculator decompose each number back into its place-value parts.
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student writes '103' for thirteen. | Writes numbers concatenating 10 and 3. | "The 1 ten already carries the 0 inside it until the 3 sits in its seat." |
+A classic place-value misconception is writing `103` for thirteen by placing `10` and `3` side by side. If you see this, have the student slide the `3` miniblock directly over the `0` placeholder in the `ONES` socket of the Place Value Tray so they see why `0` was only holding the ones seat empty until the `3` arrived.
 
 ---
 
-### Station F.8: Skip-Counting Ladders with Constant Repeat (`{{key:REP}}`)
-- **Standards:** CCSS.MATH.CONTENT.3.OA.A.1 (Foundational Readiness); TEKS 3.4.E.
-- **Learning Objective:** Students generate skip-counting sequences (twos, fives, tens) using continuous stack replication (`{{key:REP}}`).
-- **Manipulatives:** Counting tiles from Counting Studio stacked in towers of 5.
-- **Warm-Up Activity:** Line up six towers of 5 tiles. Skip-count aloud: 5, 10, 15, 20, 25, 30.
+### Station F.8: Skip-Counting Ladders with Constant Repeat
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "Today we teach our calculator to skip-count automatically using Constant Repeat: `{{key:REP}}`. Type `{{key:5}}`. Now press `{{key:REP}}`. What did `{{key:REP}}` do?" *(Expected response: It copied 5 into all four elevator floors: T, Z, Y, and X.)*
-2. **Prompt:** "Now press `{{key:+}}` once. What is on Floor 1?" *(Expected response: 10.)*
-3. **Prompt:** "Tap `{{key:+}}` again, and again." *(Expected response: 15, 20, 25, 30.)*
-4. **Prompt:** "Floor $T$ at the top of the elevator keeps dispensing a fresh 5 every time you add."
+How does tapping equal towers of **Counting Tiles** across a desk turn into multiplication readiness? At this station (**CCSS 3.OA.A.1**; **TEKS 3.4.E**), partners snap together six towers of 5 tiles each, line them up in a row across the table, and touch each tower as they skip-count aloud (*5, 10, 15, 20, 25, 30*) before matching that cadence with the SC-6 Constant Repeat key (`{{key:REP}}`).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:5}}` | 0 | 0 | 0 | 5 |
-| `{{key:REP}}` | 5 | 5 | 5 | 5 |
-| `{{key:+}}` | 5 | 5 | 5 | 10 |
-| `{{key:+}}` | 5 | 5 | 5 | 15 |
-| `{{key:+}}` | 5 | 5 | 5 | 20 |
+Demonstrate how to load Top Shelf $T$ with `{{key:REP}}` so the calculator skip-counts right alongside their fingers. Typing `5` and pressing `{{key:REP}}` copies `5` into all four shelves ($T, Z, Y,$ and $X$). Have students touch the second 5-tile tower and tap `{{key:+}}` once to see `10` on Shelf $X$, then tap `{{key:+}}` four more times as they touch the third, fourth, fifth, and sixth towers (`15`, `20`, `25`, `30`). Because Top Shelf $T$ keeps feeding a fresh `5` down onto Shelf $Y$ after every addition, each tap of `{{key:+}}` adds one more tower of 5.
 
-**Student Practice Problems:**
-1. Skip-count by 2 up to 16: `{{key:2}} {{key:REP}} {{key:+}} ...`
-2. Skip-count by 10 up to 70: `10 {{key:REP}} {{key:+}} ...`
-3. Skip-count by 3 up to 21: `{{key:3}} {{key:REP}} {{key:+}} ...`
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `5` | 0 | 0 | 0 | 5 | Enter step size of 5 onto Shelf $X$ |
+| `{{key:REP}}` | 5 | 5 | 5 | 5 | Fill all four shelves ($T, Z, Y, X$) with 5 |
+| `{{key:+}}` | 5 | 5 | 5 | 10 | Two 5-towers $= 10$; Shelf $T$ refills $5$ from the top |
+| `{{key:+}}` | 5 | 5 | 5 | 15 | Three 5-towers $= 15$ |
+| `{{key:+}}` | 5 | 5 | 5 | 20 | Four 5-towers $= \mathbf{20}$ |
 
-**Common Stumbling Blocks:**
+After mastering fives, let partners build and step through skip-counting ladders by twos up to 16 (`2 {{key:REP}} {{key:+}}...`), by tens up to 70 (`10 {{key:REP}} {{key:+}}...`), and by threes up to 21 (`3 {{key:REP}} {{key:+}}...`).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student taps `{{key:ENTER}}` instead of `{{key:+}}`. | Confuses stack replication with arithmetic operation. | "`{{key:ENTER}}` lifts passengers up; `{{key:+}}` brings the top passenger down to combine." |
+Sometimes a student taps `{{key:ENTER}}` repeatedly after `{{key:REP}}` and wonders why the display stays stuck on `5`; remind them that `{{key:ENTER}}` only copies Shelf $X$ upward to Waiting Shelf $Y$, whereas `{{key:+}}` combines Shelf $Y$ and the bottom shelf to step up the ladder.
 
 ---
 
 ### Station F.9: Two-Digit Addition with Regrouping
-- **Standards:** CCSS.MATH.CONTENT.3.NBT.A.2 (Foundational Readiness); TEKS 3.4.A.
-- **Learning Objective:** Students solve $38 + 27$ by modeling tens and ones on the Place Value Studio Whole Numbers Tray and confirming the regrouped sum on the SC-6.
-- **Manipulatives:** Place Value Studio: Whole Numbers Tray (`1000 | 100 | 10 | 1`), digit miniblocks (`0`–`9`), and stackable `+1` regrouping unit blocks (plus Counting Tiles).
-- **Warm-Up Activity:** Dock `3` tens and `8` ones in the top row ($38$) and `2` tens and `7` ones in the bottom row ($27$). Combine the ones ($8 + 7 = 15$) and trade 10 unit blocks for $+1$ in the `TENS` column.
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "When we combined 8 ones and 7 ones, we got 15 ones. What do we do when we have 10 or more ones in the `ONES` column?" *(Expected response: Trade 10 ones for 1 ten in the `TENS` column.)*
-2. **Prompt:** "Now check your `TENS` column: 3 tens + 2 tens + 1 traded ten = 6 tens, and 5 ones remain in `ONES`. That is 65. Let us confirm on SC-6: `38 {{key:ENTER}} 27 {{key:+}}`." *(Expected response: 65.)*
+Why do we "carry a 1" when adding $38 + 27$, and what is that carried `1` really worth? On the **Place Value Studio Whole Numbers Tray** (`1000 | 100 | 10 | 1`), digit miniblocks (`0`–`9`) and stackable `+1` regrouping unit blocks make two-digit regrouping concrete (**CCSS 3.NBT.A.2**; **TEKS 3.4.A**). Begin the activity by having students dock `3` tens and `8` ones in the top row of the tray ($38$, matching Shelf $Y$) and `2` tens and `7` ones in the bottom row ($27$, matching Shelf $X$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `38` | 0 | 0 | 0 | 38 |
-| `{{key:ENTER}}` | 0 | 0 | 38 | 38 |
-| `27` | 0 | 0 | 38 | 27 |
-| `{{key:+}}` | 0 | 0 | 0 | 65 |
+When students combine the ones column ($8 + 7 = 15$ ones), ask why all 15 unit blocks cannot remain in the `ONES` socket. Because every group of 10 ones forms a new ten, students stack 10 of the `+1` unit blocks into a $70.0\text{ mm}$ tower, trade that tower for `+1` in the `TENS` column, and leave `5` ones in the `ONES` socket. Counting the `TENS` column ($3 + 2 + 1\text{ traded ten} = 6\text{ tens}$) and the `ONES` column ($5\text{ ones}$) yields `65`, which students verify on the SC-6 by keying `38 {{key:ENTER}} 27 {{key:+}}`.
 
-**Student Practice Problems:**
-1. $46 + 28$: `46 {{key:ENTER}} 28 {{key:+}}` = 74.
-2. $57 + 35$: `57 {{key:ENTER}} 35 {{key:+}}` = 92.
-3. $19 + 64$: `19 {{key:ENTER}} 64 {{key:+}}` = 83.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `38` | 0 | 0 | 0 | 38 | Enter first addend ($38$: 3 tens, 8 ones) |
+| `{{key:ENTER}}` | 0 | 0 | 38 | 38 | Copy 38 up onto Shelf $Y$ |
+| `27` | 0 | 0 | 38 | 27 | Enter second addend ($27$: 2 tens, 7 ones) |
+| `{{key:+}}` | 0 | 0 | 0 | 65 | Regroup 15 ones into 1 ten and 5 ones: **65** |
 
-**Common Stumbling Blocks:**
+For independent practice, teams model and check $46 + 28$ (`46 {{key:ENTER}} 28 {{key:+}}` $\to 74$), $57 + 35$ (`57 {{key:ENTER}} 35 {{key:+}}` $\to 92$), and $19 + 64$ (`19 {{key:ENTER}} 64 {{key:+}}` $\to 83$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student adds tens and ones separately on paper and writes '515' ($3+2=5, 8+7=15$). | Fails to carry regrouped ten into the tens column. | "15 ones has a full ten inside it. Trade 10 ones into the `TENS` column first." |
+This physical trade cures the classic paper-and-pencil `515` error (where a student adds $3+2=5$ and $8+7=15$ and writes `515`): whenever a student forgets to carry the new ten, have them physically stack 10 of the 15 unit cubes and move that tower into the `TENS` column before reading the result.
 
 ---
 
-### Station F.10: Two-Digit Subtraction with Decomposition
-- **Standards:** CCSS.MATH.CONTENT.3.NBT.A.2 (Foundational Readiness); TEKS 3.4.A.
-- **Learning Objective:** Students solve $52 - 26$ by unbundling 1 ten from the `TENS` column into ten `+1` unit blocks in the `ONES` column.
-- **Manipulatives:** Place Value Studio (Whole Numbers Tray, digit miniblocks, and `+1` regrouping blocks).
-- **Warm-Up Activity:** Dock `5` in `TENS` and `2` unit blocks in `ONES` ($52$). Try to take away 6 ones and observe that only 2 ones sit in the `ONES` column.
+### Station F.10: Two-Digit Subtraction with Unbundling
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "We have 5 tens and 2 ones on our Place Value Tray. We need to take away 26, which means 2 tens and 6 ones. Can we take 6 ones from 2 ones?" *(Expected response: No, not enough ones.)*
-2. **Prompt:** "How can we get 10 more ones into the `ONES` column?" *(Expected response: Trade 1 ten from the `TENS` column for 10 `+1` unit blocks.)*
-3. **Prompt:** "Do that now. You have `4` in `TENS` and 12 unit blocks in `ONES`. Take away 6 ones: 6 remain. Take away 2 tens: 2 remain. Answer: 26. Key it in: `52 {{key:ENTER}} 26 {{key:-}}`." *(Expected response: 26.)*
+Dock `5` in the `TENS` socket and `2` unit blocks in the `ONES` socket of the **Place Value Studio Whole Numbers Tray** to represent $52$, then challenge partners to lift 6 ones out of the `ONES` socket ($52 - 26$, **CCSS 3.NBT.A.2**; **TEKS 3.4.A**).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `52` | 0 | 0 | 0 | 52 |
-| `{{key:ENTER}}` | 0 | 0 | 52 | 52 |
-| `26` | 0 | 0 | 52 | 26 |
-| `{{key:-}}` | 0 | 0 | 0 | 26 |
+Students immediately spot the bottleneck: there are only 2 loose ones sitting in the `ONES` column! Ask how they can get more loose ones on the tray without changing the starting total of 52. By lifting 1 ten out of the `TENS` column (leaving 4 tens) and trading it for ten `+1` unit blocks in the `ONES` column, the tray now holds 4 tens and 12 ones ($40 + 12 = 52$). From those 12 ones and 4 tens, students easily lift away 6 ones and 2 tens to leave 2 tens and 6 ones (`26`), then verify on the stack with `52 {{key:ENTER}} 26 {{key:-}}`.
 
-**Student Practice Problems:**
-1. $63 - 27$: `63 {{key:ENTER}} 27 {{key:-}}` = 36.
-2. $71 - 38$: `71 {{key:ENTER}} 38 {{key:-}}` = 33.
-3. $80 - 45$: `80 {{key:ENTER}} 45 {{key:-}}` = 35.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `52` | 0 | 0 | 0 | 52 | Enter starting total ($52$: 5 tens, 2 ones) |
+| `{{key:ENTER}}` | 0 | 0 | 52 | 52 | Copy 52 up onto Shelf $Y$ |
+| `26` | 0 | 0 | 52 | 26 | Enter amount to subtract ($26$) |
+| `{{key:-}}` | 0 | 0 | 0 | 26 | Unbundle 1 ten ($4\text{ tens} + 12\text{ ones} - 26$): **26** |
 
-**Common Stumbling Blocks:**
+Students can then practice unbundling on the tray and verifying on the SC-6 with $63 - 27$ (`63 {{key:ENTER}} 27 {{key:-}}` $\to 36$), $71 - 38$ (`71 {{key:ENTER}} 38 {{key:-}}` $\to 33$), and $80 - 45$ (`80 {{key:ENTER}} 45 {{key:-}}` $\to 35$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student subtracts smaller from larger digit on paper ($6-2=4$, writing 34). | Avoidance of regrouping by inverting digit roles. | "The top number is what you have in the bank. You cannot steal from the bottom number." |
+Watch for the upside-down subtraction habit where a student flips the ones digits on paper ($6 - 2 = 4$) to get `34` instead of `26`. Pointing to the physical tray—where only 2 loose ones sit in the `ONES` column until a ten is unpacked into 10 ones—makes the reason for unbundling unmistakable.
 
 ---
 
-### Station F.11: Even and Odd Numbers via Equal Pairing & `{{key:÷R}}`
-- **Standards:** CCSS.MATH.CONTENT.3.OA.D.9 (Foundational Readiness); TEKS 3.4.I.
-- **Learning Objective:** Students determine if a number is even or odd by pairing counters and checking for remainder 0 vs. 1 using `{{key:÷R}}`.
-- **Manipulatives:** 15 counters per student pair.
-- **Warm-Up Activity:** Pair up 11 counters in two parallel rows. Does one counter stick out alone?
+### Station F.11: Even and Odd Numbers via Equal Pairing
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "Line up 11 counters in pairs of two. Is there a leftover counter without a partner?" *(Expected response: Yes, one counter is left over.)*
-2. **Prompt:** "That means 11 is an *odd* number. Let us test with Quotient & Remainder: `{{key:÷R}}`. Type `11 {{key:ENTER}} {{key:2}} {{key:÷R}}`."
-3. **Prompt:** "Register $X$ shows 5 pairs. Now press `{{key:x⇄y}}`. What is in Register $Y$?" *(Expected response: 1. The remainder is 1.)*
-4. **Prompt:** "Any number with a remainder of 1 when divided by 2 is ODD. If the remainder is 0, it is EVEN."
+Give each pair of students **15 counters** and ask them to line up 11 counters in two equal rows of partners to open the investigation (**CCSS 3.OA.D.9**; **TEKS 3.4.I**). Linking physical partner-pairing to remainder division (`{{key:÷R}}`) turns even-and-odd rules into something students can see and touch.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `11` | 0 | 0 | 0 | 11 |
-| `{{key:ENTER}}` | 0 | 0 | 11 | 11 |
-| `{{key:2}}` | 0 | 0 | 11 | 2 |
-| `{{key:÷R}}` | 0 | 0 | 1 (Rem) | 5 (Quot) |
-| `{{key:x⇄y}}` | 0 | 0 | 5 (Quot) | 1 (Rem) |
+Students see right away that 11 counters form 5 complete pairs with 1 leftover counter standing alone at the end of the line. Explain that this lone leftover counter is the physical signature of an *odd* number, and show how the SC-6 Quotient & Remainder key (`{{key:÷R}}`) tests any number for partners: typing `11 {{key:ENTER}} 2 {{key:÷R}}` places the `5` complete pairs on Shelf $X$ and stores the leftover remainder on Shelf $Y$. Tapping `{{key:x⇄y}}` brings that remainder of `1` to the front, proving that 11 is odd (whereas any even number leaves a remainder of `0` when divided by 2).
 
-**Student Practice Problems:**
-1. Test 14: `14 {{key:ENTER}} {{key:2}} {{key:÷R}} {{key:x⇄y}}` $\to$ Remainder 0 (EVEN).
-2. Test 17: `17 {{key:ENTER}} {{key:2}} {{key:÷R}} {{key:x⇄y}}` $\to$ Remainder 1 (ODD).
-3. Test 20: `20 {{key:ENTER}} {{key:2}} {{key:÷R}} {{key:x⇄y}}` $\to$ Remainder 0 (EVEN).
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `11` | 0 | 0 | 0 | 11 | Enter 11 counters to test |
+| `{{key:ENTER}}` | 0 | 0 | 11 | 11 | Copy 11 up onto Shelf $Y$ |
+| `2` | 0 | 0 | 11 | 2 | Divide into pairs of 2 |
+| `{{key:÷R}}` | 0 | 0 | 1 (Rem) | 5 (Quot) | 5 full pairs in $X$; remainder 1 in $Y$ |
+| `{{key:x⇄y}}` | 0 | 0 | 5 (Quot) | 1 (Rem) | Swap to view the **1** leftover counter (ODD) |
 
-**Common Stumbling Blocks:**
+Have students test 14 (`14 {{key:ENTER}} 2 {{key:÷R}} {{key:x⇄y}}` $\to$ Remainder 0, even), 17 (`17 {{key:ENTER}} 2 {{key:÷R}} {{key:x⇄y}}` $\to$ Remainder 1, odd), and 20 (`20 {{key:ENTER}} 2 {{key:÷R}} {{key:x⇄y}}` $\to$ Remainder 0, even), and then test a three-digit mystery number like `348`.
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student looks only at first digit of two-digit number (e.g. thinking 16 is odd because 1 is odd). | Ignores place value significance of ones digit. | "Look only at the ones place. Can 6 ones be shared equally?" |
+When a student guesses that `16` is odd because its tens digit `1` is odd, have them pair up a full 10-frame first: because every 10 is already 5 complete pairs of 2, only the ones digit decides whether a counter is left without a partner.
 
 ---
 
 ## Grade 3 Lesson Plans (Ages 8–9)
 
-Grade 3 stations transition from additive counting to 2D rectangular arrays (`{{key:RECT}}`), fair-share division with remainders (`{{key:÷R}}`), unit fraction towers, and polygon perimeters (`{{key:Σ+}}`).
+Grade 3 stations move from counting into 2D rectangular arrays (`{{key:RECT}}`), fair-share division with remainders (`{{key:÷R}}`), unit fraction towers, and polygon perimeters (`{{key:Σ+}}`).
 
-### Lesson 3.1: Arrays, Equal Groups & Area with `{{key:RECT}}`
-- **Standards:** CCSS.MATH.CONTENT.3.OA.A.1, 3.MD.C.7; TEKS 3.4.D, 3.6.C.
-- **Learning Objective:** Students construct a $6 \times 4$ array, compute area using `{{key:RECT}}`, and rotate it $90^\circ$ to demonstrate commutativity ($6 \times 4 = 4 \times 6 = 24$).
-- **Manipulatives:** Four-Color Counting Studio (24-tile student kit in a Desktop Storage Case, or shared 144-tile 6-kit classroom pack), Gridfinity $4 \times 4$ coordinate baseplate.
-- **Warm-Up Activity:** Build a rectangle 6 tiles long and 4 tiles wide using 24 counting tiles on the baseplate.
+### Station 3.1: Arrays, Equal Groups & Rectangular Area
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "How many columns of 4 tiles did you make?" *(Expected response: 6 columns.)*
-2. **Prompt:** "Count all the tiles covering the rectangle. How many?" *(Expected response: 24 tiles.)*
-3. **Prompt:** "In geometry, the surface covered by tiles is called *area*. On the SC-6, we have a dedicated geometry key: `{{key:RECT}}`. Type `{{key:6}} {{key:ENTER}} {{key:4}}`."
-4. **Prompt:** "Now press `{{key:RECT}}`. What is the area?" *(Expected response: 24.)*
-5. **Prompt:** "Turn the tray sideways. Now it is 4 columns of 6. Test: `{{key:4}} {{key:ENTER}} {{key:6}} {{key:RECT}}`. Still 24."
+When students snap 24 tiles from their **Four-Color Counting & Array Studio** onto a $4 \times 4$ Gridfinity coordinate baseplate in 6 columns of 4 rows, equal-group multiplication and rectangular floor area become the exact same picture (**CCSS 3.OA.A.1, 3.MD.C.7**; **TEKS 3.4.D, 3.6.C**).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:6}}` | 0 | 0 | 0 | 6 |
-| `{{key:ENTER}}` | 0 | 0 | 6 | 6 |
-| `{{key:4}}` | 0 | 0 | 6 | 4 |
-| `{{key:RECT}}` | 0 | 0 | 0 | 24 |
+Ask students to count how many columns of 4 form their rectangle and how many total square tiles cover its floor (`24`). Introduce *area* as the number of unit squares covering a flat region, and have students enter the rectangle's length and width on the SC-6 (`6 {{key:ENTER}} 4`) before tapping `{{key:RECT}}` to see `24` on Shelf $X$. Next, have them rotate the baseplate $90^\circ$ on the desk so it stands 4 columns wide by 6 rows tall and run `4 {{key:ENTER}} 6 {{key:RECT}}`: because turning the baseplate never adds or removes a single tile, $6 \times 4$ and $4 \times 6$ cover the exact same area of 24 square units.
 
-**Student Practice Problems:**
-1. $7 \times 5$ rug: `{{key:7}} {{key:ENTER}} {{key:5}} {{key:RECT}}` = 35 square units.
-2. $8 \times 3$ garden bed: `{{key:8}} {{key:ENTER}} {{key:3}} {{key:RECT}}` = 24 square units.
-3. $9 \times 4$ patio: `{{key:9}} {{key:ENTER}} {{key:4}} {{key:RECT}}` = 36 square units (built by combining two 24-tile partner kits).
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `6` | 0 | 0 | 0 | 6 | Enter 6 columns along the length |
+| `{{key:ENTER}}` | 0 | 0 | 6 | 6 | Copy 6 up onto Shelf $Y$ |
+| `4` | 0 | 0 | 6 | 4 | Enter 4 rows along the width |
+| `{{key:RECT}}` | 0 | 0 | 0 | 24 | Compute rectangle area: $6 \times 4 = \mathbf{24}$ tiles |
 
-**Classroom Station Partner Game: "Capture the Rectangle":**
-* **Materials:** Four-Color Counting Tiles (shared 144-tile classroom pack across 4 players: Player 1 in Archival White, Player 2 in Cobalt Blue Silk, Player 3 in Radiant Gold Silk, and Player 4 in Slate Blue-Gray PLA), SC-6 Calculator, 2 Polyhedral Dice (or roll via `{{key:🎲}}`).
-* **Gameplay:** Player 1 rolls two factors (e.g., 5 and 4). Player 1 calculates area on the SC-6 (`5 {{key:ENTER}} 4 {{key:×}} = 20`), assembles a $5 \times 4$ rectangle in their color, and claims their territory on the table. Player 2 rolls, computes, assembles, and places their rectangle adjacent to Player 1.
-* **The Four-Color Challenge Rule:** Placed rectangles of the same color cannot touch along a side. The SC-6 calculator serves as the referee: if a challenged player computes an area incorrectly, they forfeit their turn.
+To build fluency with `{{key:RECT}}`, have partners calculate and model a $7 \times 5$ rug (`7 {{key:ENTER}} 5 {{key:RECT}}` $\to 35$), an $8 \times 3$ garden bed (`8 {{key:ENTER}} 3 {{key:RECT}}` $\to 24$), and—combining two 24-tile partner kits—a $9 \times 4$ patio (`9 {{key:ENTER}} 4 {{key:RECT}}` $\to 36$).
 
-**Common Stumbling Blocks:**
-
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student confuses perimeter with area. | Conflates boundary fence with surface tiles. | "Trace the fence with your finger—that is perimeter. Lay your hand over the blocks—that is area." |
+Once partners finish the three practice builds, launch the **"Capture the Rectangle"** four-player table game using the shared 144-tile classroom case (Player 1 in Archival White, Player 2 in Cobalt Blue, Player 3 in Radiant Gold, and Player 4 in Slate Gray) and two dice (or `{{key:🎲}}`). On each turn, a player rolls two factors (such as `5` and `4`), computes the area on the SC-6 (`5 {{key:ENTER}} 4 {{key:RECT}}` $\to 20$), and snaps a $5 \times 4$ rectangle of their color onto the shared board so that no two rectangles of the same color touch along a side. If a student confuses perimeter with area during gameplay, have them trace the outer edge with one fingertip (*"that's the perimeter fence"*) and press their open palm flat across the tiles (*"that's the area floor"*).
 
 ---
 
-### Lesson 3.2: Division as Fair Sharing vs. Grouping (`{{key:÷R}}`)
-- **Standards:** CCSS.MATH.CONTENT.3.OA.A.2; TEKS 3.4.H.
-- **Learning Objective:** Students model dividing 23 tiles among 4 Gridfinity holding bays, finding quotient 5 and remainder 3 using `{{key:÷R}}`.
-- **Manipulatives:** 23 Four-Color Counting Tiles (from a single 24-tile student kit), 4 Gridfinity sorting trays/bays.
-- **Warm-Up Activity:** Deal 23 counting tiles one by one into the 4 trays until no more equal rounds can be dealt.
+### Station 3.2: Division as Fair Sharing vs. Grouping
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "How many cookies ended up in each cup?" *(Expected response: 5 cookies.)*
-2. **Prompt:** "How many cookies are left on the table that cannot be shared equally?" *(Expected response: 3 cookies.)*
-3. **Prompt:** "Let us verify with the SC-6 quotient and remainder engine. Dividend first: `23 {{key:ENTER}}`. Divisor second: `{{key:4}}`. Quotient & Remainder: `{{key:÷R}}`. What is in Register $X$?" *(Expected response: 5, the quotient.)*
-4. **Prompt:** "Press `{{key:x⇄y}}`. What is in Register $Y$?" *(Expected response: 3, the remainder.)*
+Deal **23 Four-Color Counting Tiles** (from a single 24-tile student kit) one by one into **4 Gridfinity sorting trays** like playing cards until you cannot complete another fair round (**CCSS 3.OA.A.2**; **TEKS 3.4.H**).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `23` | 0 | 0 | 0 | 23 |
-| `{{key:ENTER}}` | 0 | 0 | 23 | 23 |
-| `{{key:4}}` | 0 | 0 | 23 | 4 |
-| `{{key:÷R}}` | 0 | 0 | 3 (Rem) | 5 (Quot) |
-| `{{key:x⇄y}}` | 0 | 0 | 5 (Quot) | 3 (Rem) |
+When the dealing stops, students see 5 tiles inside each of the 4 trays and 3 leftover tiles sitting on the desk because 3 is not enough to give all 4 trays a sixth tile. Have them verify their physical deal on the SC-6 by entering the starting total first (`23 {{key:ENTER}}`), the 4 trays second (`4`), and pressing `{{key:÷R}}`. Shelf $X$ displays the whole-number quotient `5` (tiles per tray), and tapping `{{key:x⇄y}}` brings Shelf $Y$ to the front to reveal the remainder `3` (leftover tiles).
 
-**Student Practice Problems:**
-1. 19 markers shared among 3 pencil cases: `19 {{key:ENTER}} {{key:3}} {{key:÷R}}` $\to$ Quotient = 6, Remainder = 1.
-2. 31 apples packed into bags of 6: `31 {{key:ENTER}} {{key:6}} {{key:÷R}}` $\to$ Quotient = 5, Remainder = 1.
-3. 35 tiles partitioned into teams of 4: `35 {{key:ENTER}} {{key:4}} {{key:÷R}}` $\to$ Quotient = 8, Remainder = 3.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `23` | 0 | 0 | 0 | 23 | Enter 23 total tiles onto Shelf $X$ |
+| `{{key:ENTER}}` | 0 | 0 | 23 | 23 | Copy 23 up onto Shelf $Y$ |
+| `4` | 0 | 0 | 23 | 4 | Enter 4 equal sorting trays |
+| `{{key:÷R}}` | 0 | 0 | 3 (Rem) | 5 (Quot) | 5 tiles per tray in $X$; 3 leftover in $Y$ |
+| `{{key:x⇄y}}` | 0 | 0 | 5 (Quot) | 3 (Rem) | Swap to bring the **3** leftover tiles to $X$ |
 
-**Classroom Station Partner Game: "Remainder Race to Bank":**
-* **Materials:** 36 Counting Tiles (combining two partner 24-tile kits), 1 Die, SC-6 Calculator.
-* **Gameplay:** Players start with a shared pool of 36 tiles. Player 1 rolls a die (e.g., 5) and keys `36 {{key:ENTER}} 5 {{key:÷R}}`. Line $X$ displays quotient 7 (which returns to the supply depot), and line $Y$ (`{{key:x⇄y}}`) displays remainder 1. Player 1 takes the 1 remainder tile into their personal bank.
-* **Winning:** Players alternate turns with the remaining tiles. The player who banks the most remainder tiles wins the round.
+Ask partners to solve three real-world sharing puzzles with `{{key:÷R}}`: 19 markers shared among 3 pencil cases (`19 {{key:ENTER}} 3 {{key:÷R}}` $\to$ Quotient 6, Remainder 1), 31 apples packed into bags of 6 (`31 {{key:ENTER}} 6 {{key:÷R}}` $\to$ Quotient 5, Remainder 1), and 35 tiles shared among teams of 4 (`35 {{key:ENTER}} 4 {{key:÷R}}` $\to$ Quotient 8, Remainder 3).
 
-**Common Stumbling Blocks:**
-
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student writes $23 \div 4 = 5.75$ and doesn't know what to do with the leftover cookies. | Standard decimal division obscures integer remainder context. | "Can you hand a guest $0.75$ of an unwrapped cookie at a party? Give them 5 cookies and keep 3 in the box." |
+Then let partners play **"Remainder Race to Bank"** with a shared pool of 36 tiles and a die: Player 1 rolls (say `5`), runs `36 {{key:ENTER}} 5 {{key:÷R}}`, returns the quotient (`7`) to the supply depot, swaps with `{{key:x⇄y}}` to see the remainder (`1`), and banks that 1 leftover tile as their score while play continues with the remaining tiles. If a student accidentally presses regular division (`{{key:÷}}`) on $23 \div 4$ and gets `5.75`, ask whether we can deal `0.75` of a solid plastic tile into a tray—reinforcing when a problem calls for whole-number remainders (`{{key:÷R}}`) versus decimal slices (`{{key:÷}}`).
 
 ---
 
-### Lesson 3.3: Introduction to Unit Fractions with Fraction Studio
-- **Standards:** CCSS.MATH.CONTENT.3.NF.A.1; TEKS 3.3.A.
-- **Learning Objective:** Students compare physical fraction towers ($\frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{6}, \frac{1}{8}$) against the $84.0\text{ mm}$ whole tower and understand that larger denominators produce smaller unit pieces.
-- **Manipulatives:** Fraction Studio tower set.
-- **Warm-Up Activity:** Place the 1-Whole tower ($84\text{ mm}$) on desk. Stack two $\frac{1}{2}$ blocks next to it. Observe equal heights.
+### Station 3.3: Introduction to Unit Fractions with Fraction Studio
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "Hold up a $\frac{1}{2}$ block and a $\frac{1}{8}$ block. Which block is taller?" *(Expected response: The $\frac{1}{2}$ block is much taller.)*
-2. **Prompt:** "Why is $\frac{1}{8}$ smaller if 8 is a bigger number than 2?" *(Expected response: Because you had to cut the same candy bar into 8 pieces instead of 2 pieces, so each slice is smaller.)*
-3. **Prompt:** "Right. The denominator tells us how many equal pieces the whole was cut into. Enter $\frac{1}{2}$ on the SC-6: `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}}`. Enter $\frac{1}{8}$: `{{key:.}} 1 {{key:.}} 8`. Now press `{{key:-}}`. The difference is positive: $\frac{1}{2}$ is $\frac{3}{8}$ larger."
+Why does a larger denominator produce a *smaller* unit fraction ($\frac{1}{8} < \frac{1}{2}$) when $8$ is bigger than $2$? Standing the **$84\text{ mm}$ Fraction Studio** towers upright on the desk settles this third-grade question in seconds (**CCSS 3.NF.A.1**; **TEKS 3.3.A**). Begin the activity by having students stand the $1\text{-Whole}$ tower ($84.0\text{ mm}$) next to two stacked $\frac{1}{2}$ blocks ($42.0\text{ mm}$ each) to feel their flush tops.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 1 {{key:.}} 2` | 0 | 0 | 0 | 1/2 |
-| `{{key:ENTER}}` | 0 | 0 | 1/2 | 1/2 |
-| `{{key:.}} 1 {{key:.}} 8` | 0 | 0 | 1/2 | 1/8 |
-| `{{key:-}}` | 0 | 0 | 0 | 3/8 |
+Now ask partners to stand a single $\frac{1}{2}$ block next to a single $\frac{1}{8}$ block ($10.5\text{ mm}$) and explain why the $\frac{1}{8}$ block is so much shorter even though $8$ is larger than $2$. Seeing the blocks side by side makes the reason obvious: slicing the same $84\text{ mm}$ bar into 8 equal shares makes each share four times thinner than slicing it into 2 shares. Have students measure the height gap between $\frac{1}{2}$ and $\frac{1}{8}$ on the SC-6 by entering $\frac{1}{2}$ (`{{key:.}} 1 {{key:.}} 2 {{key:ENTER}}`) and subtracting $\frac{1}{8}$ (`{{key:.}} 1 {{key:.}} 8 {{key:-}}`) to see `3/8` on Shelf $X$, then stack three $\frac{1}{8}$ blocks on top of the $\frac{1}{8}$ block so it stands flush with $\frac{1}{2}$ ($\frac{4}{8} = \frac{1}{2}$).
 
-**Student Practice Problems:**
-1. Show that three $\frac{1}{3}$ blocks equal 1 whole: `{{key:.}} 1 {{key:.}} 3 {{key:ENTER}} {{key:3}} {{key:×}}` = 1.
-2. Compare $\frac{1}{4}$ and $\frac{1}{2}$: `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}} {{key:.}} 1 {{key:.}} 4 {{key:-}}` = $\frac{1}{4}$.
-3. Show that four $\frac{1}{8}$ blocks equal $\frac{1}{2}$: `{{key:.}} 1 {{key:.}} 8 {{key:ENTER}} {{key:4}} {{key:×}}` = $\frac{1}{2}$.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `{{key:.}} 1 {{key:.}} 2` | 0 | 0 | 0 | 1/2 | Enter fraction $1/2$ onto Shelf $X$ |
+| `{{key:ENTER}}` | 0 | 0 | 1/2 | 1/2 | Copy $1/2$ up onto Shelf $Y$ |
+| `{{key:.}} 1 {{key:.}} 8` | 0 | 0 | 1/2 | 1/8 | Enter fraction $1/8$ onto Shelf $X$ |
+| `{{key:-}}` | 0 | 0 | 0 | 3/8 | Subtract: $4/8 - 1/8 =$ **`3/8`** height difference |
 
-**Common Stumbling Blocks:**
+During partner practice, students verify three relationships with blocks and keys: stacking three $\frac{1}{3}$ blocks to equal 1 whole (`{{key:.}} 1 {{key:.}} 3 {{key:ENTER}} 3 {{key:×}}` $\to 1$), measuring the height difference between $\frac{1}{2}$ and $\frac{1}{4}$ (`{{key:.}} 1 {{key:.}} 2 {{key:ENTER}}` followed by `{{key:.}} 1 {{key:.}} 4 {{key:-}}` $\to 1/4$), and standing four $\frac{1}{8}$ blocks beside $\frac{1}{2}$ (`{{key:.}} 1 {{key:.}} 8 {{key:ENTER}} 4 {{key:×}}` $\to 1/2$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student believes $\frac{1}{8} > \frac{1}{4}$ because $8 > 4$. | Whole-number bias applied to denominators. | "Place the physical $\frac{1}{8}$ tower next to the $\frac{1}{4}$ tower. Which one touches the ceiling first?" |
+Whenever a student slips into whole-number thinking and claims $\frac{1}{8} > \frac{1}{4}$ because $8 > 4$, simply ask them to stand the $\frac{1}{8}$ block ($10.5\text{ mm}$) beside the $\frac{1}{4}$ block ($21.0\text{ mm}$) in the comparator lid—their fingertips will correct the misconception in seconds.
 
 ---
 
-### Lesson 3.4: Perimeter of Polygons vs. Area using `{{key:Σ+}}`
-- **Standards:** CCSS.MATH.CONTENT.3.MD.D.8; TEKS 3.7.B.
-- **Learning Objective:** Students find the perimeter of a stepped or 5-sided polygon by accumulating side lengths with `{{key:Σ+}}`, distinguishing boundary distance from internal tile area.
-- **Manipulatives:** Counting & Array Studio tiles, Algebra Factoring L-Frame Stage, and millimeter ruler.
-- **Warm-Up Activity:** Arrange Counting & Array Studio tiles inside the $90^\circ$ L-Frame Stage to form a stepped pentagon outline with side lengths $6\text{ cm}, 4\text{ cm}, 4.2\text{ cm}, 4.2\text{ cm},$ and $4\text{ cm}$.
+### Station 3.4: Perimeter of Polygons vs. Area in the Wall Basket
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "To find the perimeter, we walk all the way around the outer boundary fence. Let us add the sides using our SC-6 statistical accumulator key `{{key:Σ+}}`. First, clear memory: `{{key:CLΣ}}`."
-2. **Prompt:** "Side 1 is 6 cm: `{{key:6}} {{key:Σ+}}`. Side 2 is 4 cm: `{{key:4}} {{key:Σ+}}`. Side 3 is 4.2 cm: `4.2 {{key:Σ+}}`. Side 4 is 4.2 cm: `4.2 {{key:Σ+}}`. Side 5 is 4 cm: `{{key:4}} {{key:Σ+}}`."
-3. **Prompt:** "How many sides did we measure? $\text{Count} = 5$. Now press `{{key:Σx}}`. What is the total perimeter?" *(Expected response: 22.4 centimeters.)*
+Tracing the outer walls of a multi-sided polygon is easy until a student loses count of which side they started on! Combining **Counting & Array Studio tiles**, the **Algebra Factoring L-Frame Stage**, and a millimeter ruler with the SC-6 running-total basket (`{{key:Σ+}}`) keeps every wall accounted for (**CCSS 3.MD.D.8**; **TEKS 3.7.B**). To open the investigation, students arrange tiles inside the $90^\circ$ L-Frame Stage to form a stepped 5-sided polygon (pentagon) with side lengths $6\text{ cm}, 4\text{ cm}, 4.2\text{ cm}, 4.2\text{ cm},$ and $4\text{ cm}$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:CLΣ}}` | 0 | 0 | 0 | 0 |
-| `{{key:6}} {{key:Σ+}}` | 0 | 0 | 0 | Count = 1 |
-| `{{key:4}} {{key:Σ+}}` | 0 | 0 | 0 | Count = 2 |
-| `4.2 {{key:Σ+}}` | 0 | 0 | 0 | Count = 3 |
-| `4.2 {{key:Σ+}}` | 0 | 0 | 0 | Count = 4 |
-| `{{key:4}} {{key:Σ+}}` | 0 | 0 | 0 | Count = 5 |
-| `{{key:Σx}}` | 0 | 0 | 0 | 22.4 |
+Explain that finding perimeter means walking all the way around the outer fence and tossing each side length into the SC-6 statistics basket (`{{key:Σ+}}`). Have students first clear any old data from the basket with `{{key:CLΣ}}`, then trace each wall of the polygon with a finger as they key in Side 1 (`6 {{key:Σ+}}`), Side 2 (`4 {{key:Σ+}}`), Side 3 (`4.2 {{key:Σ+}}`), Side 4 (`4.2 {{key:Σ+}}`), and Side 5 (`4 {{key:Σ+}}`).
 
-**Student Practice Problems:**
-1. Triangle with sides 5, 7, 8: `{{key:CLΣ}} {{key:5}} {{key:Σ+}} {{key:7}} {{key:Σ+}} {{key:8}} {{key:Σ+}} {{key:Σx}}` = 20.
-2. Rectangle perimeter ($8 + 5 + 8 + 5$): `{{key:Σx}}` = 26.
-3. Hexagon with sides 3, 3, 4, 4, 5, 5: `{{key:Σx}}` = 24.
+Because the screen confirms `Count = 5` after the fifth tap, students know they haven't skipped or double-counted a wall before pressing `{{key:Σx}}` to read the total perimeter of `22.4 cm`.
 
-**Common Stumbling Blocks:**
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `{{key:CLΣ}}` | 0 | 0 | 0 | 0 | Clear the statistics basket (`Count = 0`) |
+| `6 {{key:Σ+}}` | 0 | 0 | 0 | Count = 1 | Add Side 1 ($6\text{ cm}$) to the basket |
+| `4 {{key:Σ+}}` | 0 | 0 | 0 | Count = 2 | Add Side 2 ($4\text{ cm}$) to the basket |
+| `4.2 {{key:Σ+}}` | 0 | 0 | 0 | Count = 3 | Add Side 3 ($4.2\text{ cm}$) to the basket |
+| `4.2 {{key:Σ+}}` | 0 | 0 | 0 | Count = 4 | Add Side 4 ($4.2\text{ cm}$) to the basket |
+| `4 {{key:Σ+}}` | 0 | 0 | 0 | Count = 5 | Add Side 5 ($4\text{ cm}$) to the basket |
+| `{{key:Σx}}` | 0 | 0 | 0 | 22.4 | Sum all 5 sides: **22.4 cm** perimeter |
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student forgets to clear statistical memory before starting problem 2. | Persistent accumulator contamination. | "Always check the count on the screen. If the count is not zero, press `{{key:CLΣ}}` before walking your fence." |
+Have partners use `{{key:CLΣ}}`, `{{key:Σ+}}`, and `{{key:Σx}}` to find the perimeter of a triangle with sides $5, 7, 8$ (`Count = 3`, sum `20`), a rectangle with sides $8, 5, 8, 5$ (`Count = 4`, sum `26`), and a hexagon with sides $3, 3, 4, 4, 5, 5$ (`Count = 6`, sum `24`).
+
+If a student's perimeter on the second or third shape comes out unexpectedly large (say `46` instead of `26` on the rectangle), ask them to tap `{{key:N}}` to check the item count: seeing `Count = 7` immediately reveals that they forgot to tap `{{key:CLΣ}}` to empty the basket before starting the new polygon!
 
 ---
 
@@ -537,238 +342,151 @@ Grade 3 stations transition from additive counting to 2D rectangular arrays (`{{
 
 Grade 4 stations extend division to multi-digit remainders (`{{key:÷R}}`), build equivalent fractions and step-by-step reductions (`{{key:SIMP}}`), add and subtract unlike fractions, and measure angles with the $360^\circ$ Volvelle.
 
-### Lesson 4.1: Long Division with Remainders (`{{key:÷R}}`)
-- **Standards:** CCSS.MATH.CONTENT.4.OA.A.3; TEKS 4.4.F.
-- **Learning Objective:** Students solve a multi-step hiking trail provisioning problem ($89\text{ oz}$ water distributed into $16\text{ oz}$ flasks) using `{{key:÷R}}`.
-- **Manipulatives:** Place Value Studio (`8` in `TENS` and `9` in `ONES` to represent 89) or shared 144-tile classroom Counting Studio bin.
-- **Warm-Up Activity:** Model a smaller proportional sample first with your 24-tile student kit (such as $20 \div 6 = 3\text{ R }2$), or count out 89 counting tiles from the shared 144-tile classroom station bin and group into 16-unit flasks to count full flasks and leftover ounces.
+### Station 4.1: Long Division with Remainders
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "We have 89 fluid ounces of water. Each water bottle holds 16 fluid ounces. How many full bottles can we pack, and how many ounces are left over?" *(Expected response: Type `89 {{key:ENTER}} 16 {{key:÷R}}`.)*
-2. **Prompt:** "What is on your screen?" *(Expected response: 5.)*
-3. **Prompt:** "That is 5 full flasks. Now swap registers: press `{{key:x⇄y}}`. What is in Register $Y$?" *(Expected response: 9. 9 ounces left over.)*
-4. **Prompt:** "Check your answer: 5 bottles times 16 oz is 80 oz, plus 9 oz equals 89 oz."
+What happens in real life when a division problem leaves a remainder—do you leave the leftover campers outside in the rain, or order one extra cabin? Using the **Place Value Studio** (or the shared 144-tile Counting Studio bin) and `{{key:÷R}}`, students learn how to interpret quotients and remainders in real-world packing problems (**CCSS 4.OA.A.3**; **TEKS 4.4.F**). Start with a smaller hands-on trial using a 24-tile student kit—packing 20 trail-mix bars into bags of 6 ($20 \div 6 = 3\text{ bags}$ with $2\text{ bars}$ left over)—and then pose the main station challenge: distributing $89\text{ fluid ounces}$ of water into $16\text{-ounce}$ hiking flasks.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `89` | 0 | 0 | 0 | 89 |
-| `{{key:ENTER}}` | 0 | 0 | 89 | 89 |
-| `16` | 0 | 0 | 89 | 16 |
-| `{{key:÷R}}` | 0 | 0 | 9 (Rem) | 5 (Quot) |
-| `{{key:x⇄y}}` | 0 | 0 | 5 (Quot) | 9 (Rem) |
+Have students dock `8` in `TENS` and `9` in `ONES` on the Place Value Tray to represent the $89\text{ oz}$ supply, then key `89 {{key:ENTER}} 16 {{key:÷R}}` on the SC-6. Shelf $X$ reports `5` completely filled flasks, and tapping `{{key:x⇄y}}` brings Shelf $Y$ to the front to show `9` leftover fluid ounces still waiting in the pitcher. Ask students to verify the division by running the inverse check right on the stack: $5\text{ flasks} \times 16\text{ oz} = 80\text{ oz}$, plus the $9\text{ leftover oz} = 89\text{ oz}$.
 
-**Student Practice Problems:**
-1. 145 campers into cabins of 12: `145 {{key:ENTER}} 12 {{key:÷R}}` $\to$ Quotient = 12 cabins, Remainder = 1 camper.
-2. 250 eggs packed in cartons of 12: `250 {{key:ENTER}} 12 {{key:÷R}}` $\to$ Quotient = 20 cartons, Remainder = 10 eggs.
-3. 500 pencils in packs of 24: `500 {{key:ENTER}} 24 {{key:÷R}}` $\to$ Quotient = 20 packs, Remainder = 20 pencils.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `89` | 0 | 0 | 0 | 89 | Enter 89 fluid ounces of water |
+| `{{key:ENTER}}` | 0 | 0 | 89 | 89 | Copy 89 up onto Shelf $Y$ |
+| `16` | 0 | 0 | 89 | 16 | Enter 16 ounces per flask |
+| `{{key:÷R}}` | 0 | 0 | 9 (Rem) | 5 (Quot) | 5 full flasks in $X$; 9 leftover oz in $Y$ |
+| `{{key:x⇄y}}` | 0 | 0 | 5 (Quot) | 9 (Rem) | Swap to inspect the **9** leftover ounces |
 
-**Common Stumbling Blocks:**
+During station practice, challenge teams to find both the quotient and remainder—and explain what you must do with the remainder in real life—for 145 campers assigned to cabins of 12 (`145 {{key:ENTER}} 12 {{key:÷R}}` $\to 12\text{ cabins, R }1\text{ camper}$, requiring a 13th cabin so no camper sleeps outside!), 250 eggs packed into cartons of 12 (`250 {{key:ENTER}} 12 {{key:÷R}}` $\to 20\text{ full cartons, R }10\text{ eggs}$), and 500 pencils boxed in packs of 24 (`500 {{key:ENTER}} 24 {{key:÷R}}` $\to 20\text{ packs, R }20\text{ pencils}$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student interprets remainder 9 as $0.9$ bottles. | Confuses integer discrete leftovers with decimal fraction. | "Is that 9 tenths of a bottle, or 9 whole ounces in the bottom of the pot? Remember the units." |
+When coaching at tables, watch for students who read the remainder `9` on Shelf $Y$ as `5.9 flasks`. Ask them what unit the starting `89` was measured in (*fluid ounces*): because the remainder is simply the unpoured water left in the pitcher, `9` means 9 whole fluid ounces ($\frac{9}{16}$ of a flask), not 9 tenths!
 
 ---
 
-### Lesson 4.2: Equivalent Fractions & Simplification (`{{key:SIMP}}`)
-- **Standards:** CCSS.MATH.CONTENT.4.NF.A.1; TEKS 4.3.C.
-- **Learning Objective:** Students build equivalent fraction models ($\frac{6}{8} = \frac{3}{4}$) and reduce them on the SC-6 using Step-by-Step Simplify (`{{key:SIMP}}`).
-- **Manipulatives:** Fraction Studio towers ($\frac{1}{8}$ and $\frac{1}{4}$ blocks).
-- **Warm-Up Activity:** Line up six $\frac{1}{8}$ blocks in the channel. Find which group of $\frac{1}{4}$ blocks matches the exact length.
+### Station 4.2: Equivalent Fractions & Step-by-Step Simplification
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "How many $\frac{1}{4}$ blocks match six $\frac{1}{8}$ blocks?" *(Expected response: Three $\frac{1}{4}$ blocks.)*
-2. **Prompt:** "So $\frac{6}{8}$ is equivalent to $\frac{3}{4}$. Now let us watch the SC-6 simplify it step-by-step. Enter six-eighths: `{{key:.}} 6 {{key:.}} 8 {{key:ENTER}}`. Press `{{key:SIMP}}`. What does the screen show?" *(Expected response: `3/4`.)*
-3. **Prompt:** "What factor did the calculator divide out from top and bottom?" *(Expected response: It divided both numbers by 2.)*
-4. **Prompt:** "Now press `{{key:SIMP}}` again. What does it say?" *(Expected response: `LOWEST TERMS`. It cannot be simplified any further because 3 is prime.)*
+Stack six $\frac{1}{8}$ blocks ($6 \times 10.5\text{ mm} = 63.0\text{ mm}$) in the comparator well of the **$84\text{ mm}$ Fraction Studio** and ask partners how many $\frac{1}{4}$ blocks ($21.0\text{ mm}$ each) match that exact height (**CCSS 4.NF.A.1**; **TEKS 4.3.C**). Pairing the physical fraction towers with the SC-6 Step-by-Step Simplify key (`{{key:SIMP}}`) proves that simplifying a fraction fuses smaller slices into larger slices without changing the tower's height.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 6 {{key:.}} 8` | 0 | 0 | 0 | 6/8 |
-| `{{key:ENTER}}` | 0 | 0 | 6/8 | 6/8 |
-| `{{key:SIMP}}` | 0 | 0 | 6/8 | 3/4 |
-| `{{key:SIMP}}` | 0 | 0 | 6/8 | 3/4 (LOWEST) |
+Students see that three $\frac{1}{4}$ blocks stand flush with six $\frac{1}{8}$ blocks because every pair of $\frac{1}{8}$ blocks fuses into one $\frac{1}{4}$ block. Now have them enter six-eighths on the SC-6 (`{{key:.}} 6 {{key:.}} 8 {{key:ENTER}}`) and press `{{key:SIMP}}` once: Shelf $X$ reduces `6/8` to `3/4` by dividing both the top and bottom numbers by their smallest shared prime factor (`2`). When they press `{{key:SIMP}}` a second time, the screen flashes `LOWEST TERMS` because `3` and `4` share no common factor greater than 1.
 
-**Student Practice Problems:**
-1. Simplify $\frac{8}{12}$: `{{key:.}} 8 {{key:.}} 12 {{key:ENTER}} {{key:SIMP}}` = $\frac{2}{3}$.
-2. Simplify $\frac{10}{25}$: `{{key:.}} 10 {{key:.}} 25 {{key:ENTER}} {{key:SIMP}}` = $\frac{2}{5}$.
-3. Simplify $\frac{18}{24}$: `{{key:.}} 18 {{key:.}} 24 {{key:ENTER}} {{key:SIMP}}` = $\frac{3}{4}$.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `{{key:.}} 6 {{key:.}} 8` | 0 | 0 | 0 | 6/8 | Enter fraction $6/8$ onto Shelf $X$ |
+| `{{key:ENTER}}` | 0 | 0 | 6/8 | 6/8 | Copy $6/8$ up onto Shelf $Y$ |
+| `{{key:SIMP}}` | 0 | 0 | 6/8 | 3/4 | Divide top and bottom by 2: **`3/4`** |
+| `{{key:SIMP}}` | 0 | 0 | 6/8 | 3/4 | Screen flashes `LOWEST TERMS` to confirm `3/4` is fully simplified |
 
-**Common Stumbling Blocks:**
+Have partners build the matching towers and step through `{{key:SIMP}}` for $\frac{8}{12}$ (`{{key:.}} 8 {{key:.}} 12 {{key:ENTER}} {{key:SIMP}}` $\to \frac{4}{6} \to \frac{2}{3}$), $\frac{10}{25}$ (`{{key:.}} 10 {{key:.}} 25 {{key:ENTER}} {{key:SIMP}}` $\to \frac{2}{5}$), and $\frac{18}{24}$ (`{{key:.}} 18 {{key:.}} 24 {{key:ENTER}} {{key:SIMP}}` $\to \frac{9}{12} \to \frac{3}{4}$), recording each intermediate step in their notebooks.
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student divides numerator by 2 and denominator by 3 ($\frac{6 \div 2}{8 \div 4}$). | Fails to recognize that scaling requires multiplying or dividing by a whole fraction like $\frac{2}{2} = 1$. | "You must treat the top and bottom with equal justice. Divide both by the exact same number." |
+One quick teacher check before the rotation starts: if a calculator jumps straight from `8/12` to `2/3` in a single press, System Flag 8 has been set to Auto-Simplify; keep Flag 8 at its default `0` (Manual Step-by-Step `{{key:SIMP}}`) during this station so students see every single shared factor divide out one step at a time.
 
 ---
 
-### Lesson 4.3: Adding & Subtracting Fractions with Unlike Denominators
-- **Standards:** CCSS.MATH.CONTENT.4.NF.B.3; TEKS 4.3.E.
-- **Learning Objective:** Students solve $\frac{1}{2} + \frac{1}{4}$ and $\frac{2}{3} - \frac{1}{6}$ using Fraction Studio blocks and SC-6 fraction arithmetic.
-- **Manipulatives:** Fraction Studio towers.
-- **Warm-Up Activity:** Put one $\frac{1}{2}$ block and one $\frac{1}{4}$ block end-to-end. Measure total length with $\frac{1}{4}$ blocks.
+### Station 4.3: Adding & Subtracting Fractions with Unlike Denominators
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "How many fourths fit across $\frac{1}{2} + \frac{1}{4}$?" *(Expected response: Three fourths.)*
-2. **Prompt:** "Enter it on the SC-6: `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}} {{key:.}} 1 {{key:.}} 4 {{key:+}}`. What is the result?" *(Expected response: `3/4`.)*
-3. **Prompt:** "Now try a subtraction: $\frac{5}{6} - \frac{1}{3}$. Key: `{{key:.}} 5 {{key:.}} 6 {{key:ENTER}} {{key:.}} 1 {{key:.}} 3 {{key:-}}`. What do you get?" *(Expected response: `1/2`.)*
+Before students ever compute a common denominator on paper, let them feel why unlike fractions must trade into a shared slice size using the **$84\text{ mm}$ Fraction Studio** towers (**CCSS 4.NF.B.3**; **TEKS 4.3.E**). Open the activity by having partners stack one $\frac{1}{2}$ block ($42.0\text{ mm}$) and one $\frac{1}{4}$ block ($21.0\text{ mm}$) together and measure the combined $63.0\text{ mm}$ tower against their $\frac{1}{4}$ blocks.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 1 {{key:.}} 2` | 0 | 0 | 0 | 1/2 |
-| `{{key:ENTER}}` | 0 | 0 | 1/2 | 1/2 |
-| `{{key:.}} 1 {{key:.}} 4` | 0 | 0 | 1/2 | 1/4 |
-| `{{key:+}}` | 0 | 0 | 0 | 3/4 |
+Because the $\frac{1}{2}$ block trades cleanly for two $\frac{1}{4}$ blocks, the combined tower equals three $\frac{1}{4}$ blocks ($\frac{2}{4} + \frac{1}{4} = \frac{3}{4}$). Have students verify this on the SC-6 by keying $\frac{1}{2}$ (`{{key:.}} 1 {{key:.}} 2 {{key:ENTER}}`) and adding $\frac{1}{4}$ (`{{key:.}} 1 {{key:.}} 4 {{key:+}}`) to see `3/4` on Shelf $X$. Next, challenge them to model $\frac{5}{6} - \frac{1}{3}$ by trading the $\frac{1}{3}$ block ($28.0\text{ mm}$) for two $\frac{1}{6}$ blocks ($14.0\text{ mm}$ each): removing $\frac{2}{6}$ from $\frac{5}{6}$ leaves $\frac{3}{6}$, which stands flush with the $\frac{1}{2}$ block and matches $\frac{5}{6}$ (`{{key:.}} 5 {{key:.}} 6 {{key:ENTER}}`) minus $\frac{1}{3}$ (`{{key:.}} 1 {{key:.}} 3 {{key:-}}` $\to$ `1/2`) on the calculator.
 
-**Student Practice Problems:**
-1. $\frac{1}{3} + \frac{1}{6}$: `{{key:.}} 1 {{key:.}} 3 {{key:ENTER}} {{key:.}} 1 {{key:.}} 6 {{key:+}}` = $\frac{1}{2}$.
-2. $\frac{3}{4} - \frac{1}{8}$: `{{key:.}} 3 {{key:.}} 4 {{key:ENTER}} {{key:.}} 1 {{key:.}} 8 {{key:-}}` = $\frac{5}{8}$.
-3. $\frac{2}{5} + \frac{3}{10}$: `{{key:.}} 2 {{key:.}} 5 {{key:ENTER}} {{key:.}} 3 {{key:.}} 10 {{key:+}}` = $\frac{7}{10}$.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `{{key:.}} 1 {{key:.}} 2` | 0 | 0 | 0 | 1/2 | Enter fraction $1/2$ onto Shelf $X$ |
+| `{{key:ENTER}}` | 0 | 0 | 1/2 | 1/2 | Copy $1/2$ up onto Shelf $Y$ |
+| `{{key:.}} 1 {{key:.}} 4` | 0 | 0 | 1/2 | 1/4 | Enter fraction $1/4$ onto Shelf $X$ |
+| `{{key:+}}` | 0 | 0 | 0 | 3/4 | Trade $1/2$ for $2/4$ and add: **`3/4`** |
 
-**Common Stumbling Blocks:**
+From there, partners build with blocks and verify three practice sums and differences on the stack: adding $\frac{1}{3} + \frac{1}{6}$ (`{{key:.}} 1 {{key:.}} 3 {{key:ENTER}}` and `{{key:.}} 1 {{key:.}} 6 {{key:+}}` $\to \frac{1}{2}$), subtracting $\frac{3}{4} - \frac{1}{8}$ (`{{key:.}} 3 {{key:.}} 4 {{key:ENTER}}` and `{{key:.}} 1 {{key:.}} 8 {{key:-}}` $\to \frac{5}{8}$), and combining $\frac{2}{5} + \frac{3}{10}$ (`{{key:.}} 2 {{key:.}} 5 {{key:ENTER}}` and `{{key:.}} 3 {{key:.}} 10 {{key:+}}` $\to \frac{7}{10}$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student adds across numerators and denominators ($\frac{1}{2} + \frac{1}{4} = \frac{2}{6}$). | Treats numerator and denominator as independent whole numbers. | "Look at your blocks. Is $\frac{2}{6}$ bigger than $\frac{1}{2}$? No. You cannot add pieces of different sizes until they share a common name." |
+Whenever a student falls into the add-across trap on paper—writing $\frac{1}{2} + \frac{1}{4} = \frac{2}{6}$ by adding tops and bottoms separately—ask them to stand two $\frac{1}{6}$ blocks ($28.0\text{ mm}$) next to their starting $\frac{1}{2}$ block ($42.0\text{ mm}$). Seeing that $\frac{2}{6}$ is *shorter* than the $\frac{1}{2}$ block they started with before even adding $\frac{1}{4}$ permanently cures the add-across habit!
 
 ---
 
-### Lesson 4.4: Angles & Rotations with the $360^\circ$ Volvelle Protractor
-- **Standards:** CCSS.MATH.CONTENT.4.MD.C.6; TEKS 4.7.C.
-- **Learning Objective:** Students measure acute, right, and obtuse angles using the $360^\circ$ Volvelle and calculate supplementary and complementary angles.
-- **Manipulatives:** Two-disc rotating Unit Circle Volvelle protractor, removable $90^\circ$ clock quadrant sectors, and $d4$/$d6$ polyhedral faces.
-- **Warm-Up Activity:** Align the Volvelle pointer to $0^\circ$. Rotate the top disc to match the $90^\circ$ corner of a clock quadrant sector (or a square counting tile).
+### Station 4.4: Angles & Rotations with the $360^\circ$ Volvelle Protractor
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "Rotate your Volvelle to the $120^\circ$ mark (4 hour marks on your Planetary Clock). What degree reading does the cursor line up with?" *(Expected response: 120 degrees.)*
-2. **Prompt:** "If two angles sit on a straight line, their sum is $180^\circ$ (supplementary). How many degrees are left to make a straight line? Calculate on SC-6: `180 {{key:ENTER}} 120 {{key:-}}`." *(Expected response: 60 degrees.)*
-3. **Prompt:** "Check with the $60^\circ$ equilateral triangle face of your $d4$ or $d8$ polyhedron: it fits the $60^\circ$ gap on your Volvelle."
+Set the pointer of the two-disc rotating **$360^\circ$ Unit Circle Volvelle** to $0^\circ$, rotate the top dial to match the square $90^\circ$ corner of a removable **clock quadrant sector**, and let students feel how degree turns work in their hands (**CCSS 4.MD.C.6**; **TEKS 4.7.C**). Combining the Volvelle, the $90^\circ$ clock quadrants, and the equilateral triangle faces of the **$d4$/$d8$ polyhedral dice** makes acute, right, and obtuse angles effortless to compare.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `180` | 0 | 0 | 0 | 180 |
-| `{{key:ENTER}}` | 0 | 0 | 180 | 180 |
-| `120` | 0 | 0 | 180 | 120 |
-| `{{key:-}}` | 0 | 0 | 0 | 60 |
+Ask students to rotate the Volvelle pointer to the $120^\circ$ mark (which corresponds to 4 hours on the Planetary Geared Clock face) and compare that opening against a $90^\circ$ square corner to see that $120^\circ$ is an obtuse angle. Ask how many degrees remain between that $120^\circ$ turn and a $180^\circ$ straight line (supplementary angles): keying `180 {{key:ENTER}} 120 {{key:-}}` on the SC-6 yields `60°` on Shelf $X$. Have students nest the $60^\circ$ corner of a $d4$ or $d8$ die right beside the $120^\circ$ Volvelle sector to see the two angles snap together into a flat $180^\circ$ straightedge.
 
-**Student Practice Problems:**
-1. Complement of $35^\circ$ ($90 - 35$): `{{key:9}} {{key:0}} {{key:ENTER}} {{key:3}} {{key:5}} {{key:-}}` = $55^\circ$.
-2. Supplement of $45^\circ$ ($180 - 45$): `{{key:1}} {{key:8}} {{key:0}} {{key:ENTER}} {{key:4}} {{key:5}} {{key:-}}` = $135^\circ$.
-3. Sum of four angles meeting at a point ($90 + 120 + 80 + ?$): `{{key:3}} {{key:6}} {{key:0}} {{key:ENTER}} ...` = $70^\circ$.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `180` | 0 | 0 | 0 | 180 | Enter straight-line angle ($180^\circ$) |
+| `{{key:ENTER}}` | 0 | 0 | 180 | 180 | Copy $180^\circ$ up onto Shelf $Y$ |
+| `120` | 0 | 0 | 180 | 120 | Enter measured obtuse angle ($120^\circ$) |
+| `{{key:-}}` | 0 | 0 | 0 | 60 | Subtract for supplementary angle: **60°** |
 
-**Common Stumbling Blocks:**
+Then invite partners to dial in and compute the complementary partner of $35^\circ$ inside a $90^\circ$ right angle (`90 {{key:ENTER}} 35 {{key:-}}` $\to 55^\circ$), the supplementary partner of $45^\circ$ along a $180^\circ$ straight line (`180 {{key:ENTER}} 45 {{key:-}}` $\to 135^\circ$), and the missing fourth angle when $90^\circ, 120^\circ,$ and $80^\circ$ meet around a full $360^\circ$ circle (`360 {{key:ENTER}} 90 {{key:-}} 120 {{key:-}} 80 {{key:-}}` $\to 70^\circ$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student reads outer scale instead of inner scale on standard protractor, reporting $60^\circ$ for an obtuse angle. | Dual-scale confusion on semi-circular protractors. | "Look at the corner: is it sharper than a book corner or wider than a book corner? Obtuse must be $> 90^\circ$." |
+If a student misreads an ordinary protractor scale and reports $60^\circ$ for an angle that is clearly obtuse, teach them the **Square-Tile Corner Check**: tucking a $90^\circ$ square counting tile into the vertex first immediately tells their eyes whether the angle is narrower ($<90^\circ$) or wider ($>90^\circ$) than a right angle.
 
 ---
 
 ## Grade 5 Lesson Plans (Ages 10–11)
 
-Grade 5 stations explore 3D prism volume and `{{key:Σ+}}` surface area accumulation, fraction multiplication and reciprocal division (`{{key:1/x}}`), and parenthesis-free order of operations on the 4-register stack.
+Grade 5 stations explore 3D prism volume and `{{key:Σ+}}` surface area baskets, fraction multiplication and flip-and-multiply division (`{{key:1/x}}`), and parenthesis-free order of operations on the 4-shelf stack.
 
-### Lesson 5.1: Volume & Total Surface Area of Prisms via `{{key:Σ+}}`
-- **Standards:** CCSS.MATH.CONTENT.5.MD.C.5, 6.G.A.4; TEKS 5.6.B.
-- **Learning Objective:** Students calculate the volume and total surface area of a $5 \times 4 \times 3\text{ cm}$ wooden prism using the statistical accumulator `{{key:Σ+}}` without scratch paper.
-- **Manipulatives:** Wooden prism ($5 \times 4 \times 3\text{ cm}$), digital caliper.
-- **Warm-Up Activity:** Count the faces on the prism. Notice that opposite faces are identical twins (3 pairs: top/bottom, front/back, left/right).
+### Station 5.1: Volume & Total Surface Area of Prisms
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "First, let us calculate volume: Length $\times$ Width $\times$ Height. Key: `{{key:5}} {{key:ENTER}} {{key:4}} {{key:×}} {{key:3}} {{key:×}}`. Volume is $60\text{ cm}^3$."
-2. **Prompt:** "Now, total surface area. We must add the areas of all 6 faces. We will use the SC-6 statistical accumulator memory: `{{key:Σ+}}`. Clear memory first: `{{key:CLΣ}}`."
-3. **Prompt:** "Pair 1 (Top/Bottom, $5 \times 4$, two faces): `{{key:5}} {{key:ENTER}} {{key:4}} {{key:×}} {{key:2}} {{key:×}}` $\to$ 40. Press `{{key:Σ+}}`."
-4. **Prompt:** "Pair 2 (Front/Back, $5 \times 3$, two faces): `{{key:5}} {{key:ENTER}} {{key:3}} {{key:×}} {{key:2}} {{key:×}}` $\to$ 30. Press `{{key:Σ+}}`."
-5. **Prompt:** "Pair 3 (Left/Right, $4 \times 3$, two faces): `{{key:4}} {{key:ENTER}} {{key:3}} {{key:×}} {{key:2}} {{key:×}}` $\to$ 24. Press `{{key:Σ+}}`."
-6. **Prompt:** "Screen shows $\text{Count} = 3$. Now press `{{key:Σx}}`. What is the total surface area?" *(Expected response: 94 square centimeters.)*
+Hand each partner pair a **$6 \times 5 \times 4\text{ cm}$ rectangular prism** (distinct from the $5 \times 4 \times 3\text{ cm}$ gift box in Chapter 6 so students apply the 3-pair wall method to a fresh dimension set) and ask them to turn it in their hands to compare the space packed inside against the six flat walls wrapping the outside (**CCSS 5.MD.C.5, 6.G.A.4**; **TEKS 5.6.B**). Using the SC-6 running-total basket (`{{key:Σ+}}`), students can separate 3D interior volume from 2D exterior surface area without needing scratch paper. Have partners inspect all 6 faces of the box first and notice that opposite faces are identical twins: a matching top and bottom ($6 \times 5$), a matching front and back ($6 \times 4$), and a matching left and right end ($5 \times 4$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:CLΣ}}` | 0 | 0 | 0 | 0 |
-| `{{key:5}} {{key:ENTER}} {{key:4}} {{key:×}} {{key:2}} {{key:×}}` | 0 | 0 | 0 | 40 |
-| `{{key:Σ+}}` | 0 | 0 | 0 | Count = 1 |
-| `{{key:5}} {{key:ENTER}} {{key:3}} {{key:×}} {{key:2}} {{key:×}}` | 0 | 0 | 0 | 30 |
-| `{{key:Σ+}}` | 0 | 0 | 0 | Count = 2 |
-| `{{key:4}} {{key:ENTER}} {{key:3}} {{key:×}} {{key:2}} {{key:×}}` | 0 | 0 | 0 | 24 |
-| `{{key:Σ+}}` | 0 | 0 | 0 | Count = 3 |
-| `{{key:Σx}}` | 0 | 0 | 0 | 94 |
+First, have students find the interior volume ($\text{Length} \times \text{Width} \times \text{Height}$) by keying `6 {{key:ENTER}} 5 {{key:×}} 4 {{key:×}}` (or `6 {{key:ENTER}} 5 {{key:ENTER}} 4 {{key:PRISM}}`) to get `120 cm³`. Then have them clear the statistics basket (`{{key:CLΣ}}`) to accumulate the 6 outer walls in three twin pairs: first the **Top & Bottom Pair** ($6 \times 5 \times 2$ via `6 {{key:ENTER}} 5 {{key:×}} 2 {{key:×}} {{key:Σ+}}` $\to$ `60 cm²`, `Count = 1`), second the **Front & Back Pair** ($6 \times 4 \times 2$ via `6 {{key:ENTER}} 4 {{key:×}} 2 {{key:×}} {{key:Σ+}}` $\to$ `48 cm²`, `Count = 2`), and third the **Left & Right Pair** ($5 \times 4 \times 2$ via `5 {{key:ENTER}} 4 {{key:×}} 2 {{key:×}} {{key:Σ+}}` $\to$ `40 cm²`, `Count = 3`).
 
-**Student Practice Problems:**
-1. Box measuring $6 \times 3 \times 2\text{ cm}$: Volume = $36\text{ cm}^3$, Surface Area = $72\text{ cm}^2$.
-2. Cube measuring $4 \times 4 \times 4\text{ cm}$: Volume = $64\text{ cm}^3$, Surface Area = $96\text{ cm}^2$.
-3. Storage crate $10 \times 8 \times 5\text{ cm}$: Volume = $400\text{ cm}^3$, Surface Area = $340\text{ cm}^2$.
+With `Count = 3` pairs verified on screen, tapping `{{key:Σx}}` recalls the complete 6-face surface area of `148 cm²` on Shelf $X$.
 
-**Common Stumbling Blocks:**
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `{{key:CLΣ}}` | 0 | 0 | 0 | 0 | Clear the statistics basket (`Count = 0`) |
+| `6 {{key:ENTER}} 5 {{key:×}} 2 {{key:×}}` | 0 | 0 | 0 | 60 | Top & bottom pair: $6 \times 5 \times 2 = 60\text{ cm}^2$ |
+| `{{key:Σ+}}` | 0 | 0 | 0 | Count = 1 | Toss Pair 1 into the basket (`Count = 1`) |
+| `6 {{key:ENTER}} 4 {{key:×}} 2 {{key:×}}` | 0 | 0 | 0 | 48 | Front & back pair: $6 \times 4 \times 2 = 48\text{ cm}^2$ |
+| `{{key:Σ+}}` | 0 | 0 | 0 | Count = 2 | Toss Pair 2 into the basket (`Count = 2`) |
+| `5 {{key:ENTER}} 4 {{key:×}} 2 {{key:×}}` | 0 | 0 | 0 | 40 | Left & right pair: $5 \times 4 \times 2 = 40\text{ cm}^2$ |
+| `{{key:Σ+}}` | 0 | 0 | 0 | Count = 3 | Toss Pair 3 into the basket (`Count = 3`) |
+| `{{key:Σx}}` | 0 | 0 | 0 | 148 | Sum all 6 faces: **148 cm²** total surface area |
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student calculates only 3 faces and forgets to multiply by 2. | Confuses the three unique face orientations with total face count. | "Every room has a ceiling AND a floor. Multiply each face pair by 2." |
+Next, have partners compute both volume and total surface area for a $6 \times 3 \times 2\text{ cm}$ box ($\text{Volume} = 36\text{ cm}^3$, $\text{Surface Area} = 72\text{ cm}^2$), a $4 \times 4 \times 4\text{ cm}$ cube ($\text{Volume} = 64\text{ cm}^3$, $\text{Surface Area} = 96\text{ cm}^2$), and a $10 \times 8 \times 5\text{ cm}$ storage crate ($\text{Volume} = 400\text{ cm}^3$, $\text{Surface Area} = 340\text{ cm}^2$).
+
+Watch for `74 cm²` instead of `148 cm²` on the $6 \times 5 \times 4\text{ cm}$ box: that means the student added only the three visible faces ($30 + 24 + 20 = 74$) and forgot the opposite twin walls; have them touch both the ceiling and floor of the physical box as they multiply each face area by `2`.
 
 ---
 
-### Lesson 5.2: Fraction Multiplication & Division via Reciprocal (`{{key:1/x}}`)
-- **Standards:** CCSS.MATH.CONTENT.5.NF.B.4, 5.NF.B.7; TEKS 5.3.I, 5.3.L.
-- **Learning Objective:** Students model multiplying $\frac{2}{3} \times \frac{3}{4}$ using area grid overlays, and divide fractions by multiplying by the reciprocal using `{{key:1/x}}`.
-- **Manipulatives:** Transparent grid overlay sheets, dry-erase markers.
-- **Warm-Up Activity:** Shade $\frac{3}{4}$ of a square vertically. Shade $\frac{2}{3}$ horizontally. Count overlapping squares: $\frac{6}{12} = \frac{1}{2}$.
+### Station 5.2: Fraction Multiplication & Flip-and-Multiply Division
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "Enter $\frac{2}{3} \times \frac{3}{4}$ on SC-6: `{{key:.}} 2 {{key:.}} 3 {{key:ENTER}} {{key:.}} 3 {{key:.}} 4 {{key:×}}`. What is the result?" *(Expected response: `1/2`.)*
-2. **Prompt:** "Now let us divide: $\frac{3}{4} \div \frac{2}{5}$. Dividing by a fraction is the same as multiplying by its flipped upside-down twin—the reciprocal. Enter $\frac{3}{4}$: `{{key:.}} 3 {{key:.}} 4 {{key:ENTER}}`. Enter $\frac{2}{5}$: `{{key:.}} 2 {{key:.}} 5`. Now tap reciprocal `{{key:1/x}}`. What did $\frac{2}{5}$ turn into?" *(Expected response: `5/2`.)*
-3. **Prompt:** "Now press `{{key:×}}`. What is the final quotient?" *(Expected response: `15/8` or $1\frac{7}{8}$.)*
+Why does multiplying two proper fractions make a *smaller* piece, while dividing by a fraction flips the divisor upside down? At this station (**CCSS 5.NF.B.4, 5.NF.B.7**; **TEKS 5.3.I, 5.3.L**), students use **transparent area-grid overlays** (or Fraction Studio towers) alongside the SC-6 reciprocal key `{{key:1/x}}` to see both operations in action. Begin by having students shade $\frac{3}{4}$ of a square grid vertically in blue and $\frac{2}{3}$ of the same square horizontally in yellow: counting the 6 green overlapping cells out of 12 total cells visually proves that $\frac{2}{3} \times \frac{3}{4} = \frac{6}{12} = \frac{1}{2}$, which matches entering $\frac{2}{3}$ (`{{key:.}} 2 {{key:.}} 3 {{key:ENTER}}`) and multiplying by $\frac{3}{4}$ (`{{key:.}} 3 {{key:.}} 4 {{key:×}}` $\to$ `1/2`) on the SC-6.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 3 {{key:.}} 4` | 0 | 0 | 0 | 3/4 |
-| `{{key:ENTER}}` | 0 | 0 | 3/4 | 3/4 |
-| `{{key:.}} 2 {{key:.}} 5` | 0 | 0 | 3/4 | 2/5 |
-| `{{key:1/x}}` | 0 | 0 | 3/4 | 5/2 |
-| `{{key:×}}` | 0 | 0 | 0 | 15/8 |
+Now explore why dividing by a fraction is the same as multiplying by its flipped reciprocal (`{{key:1/x}}`). Pose the problem $\frac{3}{4} \div \frac{2}{5}$: have students enter the starting quantity $\frac{3}{4}$ onto Shelf $Y$ (`{{key:.}} 3 {{key:.}} 4 {{key:ENTER}}`), enter the divisor $\frac{2}{5}$ on Shelf $X$ (`{{key:.}} 2 {{key:.}} 5`), and tap `{{key:1/x}}`. Right on the bottom shelf, `2/5` flips upside down into `5/2`, and pressing `{{key:×}}` multiplies $\frac{3}{4} \times \frac{5}{2}$ to display `15/8` (or `1 7/8` when toggled with `{{key:a ᵇ/c}}`).
 
-**Student Practice Problems:**
-1. $\frac{4}{5} \times \frac{5}{8}$: `{{key:.}} 4 {{key:.}} 5 {{key:ENTER}} {{key:.}} 5 {{key:.}} 8 {{key:×}}` = $\frac{1}{2}$.
-2. $\frac{1}{2} \div \frac{1}{6}$: `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}} {{key:.}} 1 {{key:.}} 6 {{key:1/x}} {{key:×}}` = 3.
-3. $\frac{2}{3} \div \frac{4}{9}$: `{{key:.}} 2 {{key:.}} 3 {{key:ENTER}} {{key:.}} 4 {{key:.}} 9 {{key:1/x}} {{key:×}}` = $\frac{3}{2} = 1\frac{1}{2}$.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `{{key:.}} 3 {{key:.}} 4` | 0 | 0 | 0 | 3/4 | Enter starting fraction $3/4$ onto Shelf $X$ |
+| `{{key:ENTER}}` | 0 | 0 | 3/4 | 3/4 | Copy $3/4$ up onto Shelf $Y$ |
+| `{{key:.}} 2 {{key:.}} 5` | 0 | 0 | 3/4 | 2/5 | Enter divisor fraction $2/5$ onto Shelf $X$ |
+| `{{key:1/x}}` | 0 | 0 | 3/4 | 5/2 | Flip divisor $2/5$ into its reciprocal $5/2$ |
+| `{{key:×}}` | 0 | 0 | 0 | 15/8 | Multiply $3/4 \times 5/2 =$ **`15/8`** ($1\frac{7}{8}$) |
 
-**Common Stumbling Blocks:**
+For partner practice, teams solve three fraction challenges: multiplying $\frac{4}{5} \times \frac{5}{8}$ (`{{key:.}} 4 {{key:.}} 5 {{key:ENTER}}` and `{{key:.}} 5 {{key:.}} 8 {{key:×}}` $\to \frac{1}{2}$), dividing $\frac{1}{2} \div \frac{1}{6}$ (`{{key:.}} 1 {{key:.}} 2 {{key:ENTER}}` and `{{key:.}} 1 {{key:.}} 6 {{key:1/x}} {{key:×}}` $\to 3$, verified by stacking three $\frac{1}{6}$ blocks beside one $\frac{1}{2}$ block!), and dividing $\frac{2}{3} \div \frac{4}{9}$ (`{{key:.}} 2 {{key:.}} 3 {{key:ENTER}}` and `{{key:.}} 4 {{key:.}} 9 {{key:1/x}} {{key:×}}` $\to \frac{3}{2} = 1\frac{1}{2}$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student reciprocates the first fraction instead of the second fraction ($\frac{4}{3} \times \frac{2}{5}$). | Rote mnemonic "keep-change-flip" memorized without structural meaning. | "The divisor (the second passenger) is the one doing the dividing. That is the one that flips." |
+When a student isn't sure *which* of the two fractions gets flipped with `{{key:1/x}}`, remind them of the elevator roles: Shelf $Y$ holds the starting batch of dough you have on the table, while Shelf $X$ holds the measuring scoop you are dividing by—so `{{key:1/x}}` always flips the divisor sitting on the bottom shelf.
 
 ---
 
-### Lesson 5.3: Order of Operations without Parentheses (Stack Architecture)
-- **Standards:** CCSS.MATH.CONTENT.5.OA.A.1; TEKS 5.4.F.
-- **Learning Objective:** Students evaluate complex multi-step expressions like $(8 + 4) \times (9 - 3)$ and $15 + 4 \times (12 - 7)$ using the 4-register RPN stack with zero parentheses keys.
-- **Manipulatives:** Expression cards, 4-story physical elevator cardboard model.
-- **Warm-Up Activity:** Analyze $(8 + 4) \times (9 - 3)$. What must be solved first? The two parenthetical groups.
+### Station 5.3: Order of Operations without Parentheses (Stack Architecture)
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "On ordinary calculators, students get lost in tangled parentheses like `( ( 8 + 4 ) * ( 9 - 3 ) )`. If you forget one parenthesis, you get a syntax error. On the SC-6 RPN elevator, we solve inside-out naturally. Evaluate group 1: `{{key:8}} {{key:ENTER}} {{key:4}} {{key:+}}` $\to$ 12. Keep it in the elevator. Now evaluate group 2: `{{key:9}} {{key:ENTER}} {{key:3}} {{key:-}}` $\to$ 6. Look at your screen: Register $Y$ holds 12, Register $X$ holds 6. What operation combines them?" *(Expected response: Multiplication. Press `{{key:×}}`.)*
-2. **Prompt:** "Tap `{{key:×}}`. What is the answer?" *(Expected response: 72.)*
-3. **Prompt:** "Zero parentheses keys used. The stack holds intermediate answers automatically."
+Look closely at the SC-6 keypad and ask your fifth graders what buttons are missing: there are zero `(` or `)` parenthesis keys! Using printed expression cards and a 4-shelf elevator mat, students discover how the four-shelf stack handles multi-step order of operations automatically (**CCSS 5.OA.A.1**; **TEKS 5.4.F**). Display $(8 + 4) \times (9 - 3)$ to open the station and ask which parts must be solved before the multiplication can happen: both parenthetical groups must be evaluated first.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:8}} {{key:ENTER}} {{key:4}}` | 0 | 0 | 8 | 4 |
-| `{{key:+}}` | 0 | 0 | 0 | 12 |
-| `{{key:9}}` | 0 | 0 | 12 | 9 |
-| `{{key:ENTER}}` | 0 | 12 | 9 | 9 |
-| `{{key:3}}` | 0 | 12 | 9 | 3 |
-| `{{key:-}}` | 0 | 0 | 12 | 6 |
-| `{{key:×}}` | 0 | 0 | 0 | 72 |
+Show students how naturally the four shelves handle both groups without a single parenthesis key. When they build the first group (`8 {{key:ENTER}} 4 {{key:+}}`), `12` lands on Shelf $X$. As soon as they begin typing the second group (`9 {{key:ENTER}} 3`), the finished `12` rides automatically up to Shelf $Z$ to wait safely out of the way! Pressing `{{key:-}}` turns $9 - 3$ into `6` on the bottom shelf while dropping `12` right back down to Shelf $Y$, and one final tap of `{{key:×}}` multiplies the two groups into `72`.
 
-**Student Practice Problems:**
-1. $(14 + 6) \div (7 - 2)$: `14 {{key:ENTER}} {{key:6}} {{key:+}} {{key:7}} {{key:ENTER}} {{key:2}} {{key:-}} {{key:÷}}` = 4.
-2. $50 - (4 \times 8) + 6$: `50 {{key:ENTER}} {{key:4}} {{key:ENTER}} {{key:8}} {{key:×}} {{key:-}} {{key:6}} {{key:+}}` = 24.
-3. $(3 + 5)^2 - 10$: `{{key:3}} {{key:ENTER}} {{key:5}} {{key:+}} {{key:x²}} 10 {{key:-}}` = 54.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `8 {{key:ENTER}} 4` | 0 | 0 | 8 | 4 | Stage 8 and 4 for the first group |
+| `{{key:+}}` | 0 | 0 | 0 | 12 | Solve first group: $8 + 4 = 12$ |
+| `9` | 0 | 0 | 12 | 9 | Enter 9; $12$ lifts to Shelf $Y$ |
+| `{{key:ENTER}}` | 0 | 12 | 9 | 9 | Lift $12$ to Shelf $Z$ and copy 9 to Shelf $Y$ |
+| `3` | 0 | 12 | 9 | 3 | Enter 3 onto Shelf $X$ |
+| `{{key:-}}` | 0 | 0 | 12 | 6 | Solve second group ($9 - 3 = 6$); $12$ drops to $Y$ |
+| `{{key:×}}` | 0 | 0 | 0 | 72 | Multiply both groups: $12 \times 6 = \mathbf{72}$ |
 
-**Common Stumbling Blocks:**
+Have partners trace the shelf movements and evaluate three multi-step expressions: $(14 + 6) \div (7 - 2)$ via `14 {{key:ENTER}} 6 {{key:+}}` then `7 {{key:ENTER}} 2 {{key:-}} {{key:÷}}` ($\to 4$), $50 - (4 \times 8) + 6$ via `50 {{key:ENTER}} 4 {{key:ENTER}} 8 {{key:×}} {{key:-}} 6 {{key:+}}` ($\to 24$), and $(3 + 5)^2 - 10$ via `3 {{key:ENTER}} 5 {{key:+}} {{key:x²}} 10 {{key:-}}` ($\to 54$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student keys in numbers sequentially from left to right without respecting operator precedence. | Linear reading habit overriding algebraic hierarchy. | "RPN processes operators from the inside out. Build your building blocks first, then combine them." |
+When a student evaluating $50 - (4 \times 8)$ tries to subtract $50 - 4$ first just because `50` is written on the left, show them how `50 {{key:ENTER}}` parks `50` safely upstairs on Shelf $Z$ while `4 {{key:ENTER}} 8 {{key:×}}` computes `32` on Shelf $X$ so `{{key:-}}` subtracts $50 - 32 = 18$.
 
 ---
 
@@ -776,167 +494,181 @@ Grade 5 stations explore 3D prism volume and `{{key:Σ+}}` surface area accumula
 
 Grade 6 stations bridge into pre-algebra with two-color integer zero-pairs (`{{key:+/-}}`), prime factor towers and GCF/LCM intersections (`{{key:PRIME}}`, `{{key:FACT}}`), and unit rates with `{{key:LASTX}}`.
 
-### Lesson 6.1: Negative Numbers, Zero Pairs & `{{key:+/-}}`
-- **Standards:** CCSS.MATH.CONTENT.6.NS.C.5, 6.NS.C.6; TEKS 6.2.B.
-- **Learning Objective:** Students model integer addition and subtraction using two-color counters (yellow $= +1$, red $= -1$), cancel zero pairs, and verify signed arithmetic on SC-6 using `{{key:+/-}}`.
-- **Manipulatives:** 30 two-color counters (15 yellow, 15 red).
-- **Warm-Up Activity:** Place 7 yellow counters ($+7$) and 4 red counters ($-4$) on desk. Pair them up. What is left? (+3).
+### Station 6.1: Negative Numbers & Two-Color Zero Pairs
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "What happens when $+1$ meets $-1$?" *(Expected response: They make a zero pair and cancel out.)*
-2. **Prompt:** "Now let us model $-8 + 5$. Lay out 8 red counters and 5 yellow counters. Pair up 5 zero pairs. How many counters remain?" *(Expected response: 3 red counters, so the answer is $-3$.)*
-3. **Prompt:** "Now key it into the SC-6. Type `{{key:8}}`. To make it negative, press the sign toggle key `{{key:+/-}}`. Look at the screen—a minus sign appears before the 8. Press `{{key:ENTER}}`. Now type `{{key:5}}` and press `{{key:+}}`. What is the result?" *(Expected response: $-3$.)*
+Slide one $+1$ yellow counter and one $-1$ red counter together on the desk until they cancel out as a **zero pair**, and signed integer arithmetic loses all its mystery (**CCSS 6.NS.C.5, 6.NS.C.6**; **TEKS 6.2.B**). Equip each pair with **30 two-color counters** (15 yellow for $+1$ and 15 red for $-1$, or the $+1$ and $-1$ unit tiles from the Algebra Factoring Studio) alongside the SC-6 sign-flip key `{{key:+/-}}`. Start by having partners place 7 yellow counters ($+7$) and 4 red counters ($-4$) on the desk, slide each $+1/-1$ pair together to cancel as a zero pair, and see that 3 yellow counters ($+3$) remain.
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:8}}` | 0 | 0 | 0 | 8 |
-| `{{key:+/-}}` | 0 | 0 | 0 | -8 |
-| `{{key:ENTER}}` | 0 | 0 | -8 | -8 |
-| `{{key:5}}` | 0 | 0 | -8 | 5 |
-| `{{key:+}}` | 0 | 0 | 0 | -3 |
+Now reverse the balance by having students lay out 8 red counters ($-8$) and 5 yellow counters ($+5$): after 5 zero pairs cancel out, 3 red counters ($-3$) remain on the desk. To enter $-8$ on the SC-6, students type `8` first and tap `{{key:+/-}}` to flip its sign to `-8` on Shelf $X$, press `{{key:ENTER}}` to lift `-8` to Shelf $Y$, and then type `5 {{key:+}}` to confirm `-3` on the bottom shelf.
 
-**Student Practice Problems:**
-1. Solve $-12 + (-7)$: `{{key:1}} {{key:2}} {{key:+/-}} {{key:ENTER}} {{key:7}} {{key:+/-}} {{key:+}}` = $-19$.
-2. Solve $15 - (-6)$: `{{key:1}} {{key:5}} {{key:ENTER}} {{key:6}} {{key:+/-}} {{key:-}}` = 21.
-3. Solve $(-4) \times (-8)$: `{{key:4}} {{key:+/-}} {{key:ENTER}} {{key:8}} {{key:+/-}} {{key:×}}` = 32.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `8` | 0 | 0 | 0 | 8 | Enter 8 onto Shelf $X$ |
+| `{{key:+/-}}` | 0 | 0 | 0 | -8 | Flip sign to $-8$ (8 red counters) |
+| `{{key:ENTER}}` | 0 | 0 | -8 | -8 | Copy $-8$ up onto Shelf $Y$ |
+| `5` | 0 | 0 | -8 | 5 | Enter $+5$ (5 yellow counters) |
+| `{{key:+}}` | 0 | 0 | 0 | -3 | Cancel 5 zero-pairs: $-8 + 5 = \mathbf{-3}$ |
 
-**Common Stumbling Blocks:**
+During station practice, partners model with counters and verify three signed challenges on the stack: combining two groups of red counters in $-12 + (-7)$ (`12 {{key:+/-}} {{key:ENTER}} 7 {{key:+/-}} {{key:+}}` $\to -19$), removing 6 red debt counters in $15 - (-6)$ (`15 {{key:ENTER}} 6 {{key:+/-}} {{key:-}}` $\to 21$), and flipping four groups of 8 red counters in $(-4) \times (-8)$ (`4 {{key:+/-}} {{key:ENTER}} 8 {{key:+/-}} {{key:×}}` $\to 32$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student presses the operation key `{{key:-}}` instead of sign toggle key `{{key:+/-}}`. | Conflates binary subtraction operator with unary negative sign. | "`{{key:-}}` is an action combining two numbers. `{{key:+/-}}` is a label stuck onto one number." |
+The most common calculator slip-up in sixth grade is pressing the subtraction operation key `{{key:-}}` instead of the sign-flip key `{{key:+/-}}` when entering a negative number. Remind students that `{{key:-}}` immediately subtracts Shelf $X$ from Shelf $Y$, whereas `{{key:+/-}}` flips the sign of the single number currently sitting on the bottom shelf.
 
 ---
 
-### Lesson 6.2: Prime Factorization, GCF & LCM (`{{key:PRIME}}`, `{{key:FACT}}`)
-- **Standards:** CCSS.MATH.CONTENT.6.NS.B.4; TEKS 6.7.A.
-- **Learning Objective:** Students test numbers for primality using `{{key:PRIME}}`, decompose composite numbers into prime factor trees using `{{key:FACT}}`, and physically verify factor products using the Prime Factor Studio factor towers and Counting Studio rectangular arrays.
-- **Manipulatives:** StackCalc Prime Factor Studio (Desktop Storage Case with Prime Power Lid Sockets and 29 Proportional Blocks) and Counting & Array Studio (24-tile student kit or 144-tile classroom pack).
-- **Warm-Up Activity:** 
-  1. *Counting Tile Array Test:* Take 24 counting tiles. Can they form a rectangular array with row and column dimensions $\ge 2$? (Yes: $2 \times 12, 3 \times 8, 4 \times 6$). Now take 23 tiles. Try every width: 2 leaves 1 leftover; 3 leaves 2 leftover; 4 leaves 3 leftover. 23 tiles can ONLY form a straight line $1 \times 23$. A prime number cannot be arranged into a multi-row rectangle.
-  2. *Prime Factor Stacking:* Place a Blue Block `{{key:2}}` ($7.00\text{ mm}$) and a Green Block `{{key:3}}` ($11.09\text{ mm}$) from the Prime Studio onto the desk next to the comparator box. Stack Block `{{key:3}}` on top of Block `{{key:2}}`. Look at the composite factor mark `6` on the side of the box: the top edge of your tower lines up flush with `6` ($7.00\text{ mm} + 11.09\text{ mm} = 18.09\text{ mm}$).
+### Station 6.2: Prime Factorization, GCF & LCM
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "Take 23 counting tiles from your Counting Studio. Try to build a rectangle that is 2 tiles wide, or 3 tiles wide. Can anyone do it without leftovers?" *(Expected response: No, 23 only forms a single straight line of 23 tiles.)*
-2. **Prompt:** "Enter 23 on the SC-6. Press `{{key:PRIME}}`. What does the display show?" *(Expected response: It flashes `PRIME` while keeping `23` on the screen.)*
-3. **Prompt:** "Now let's examine 60. Can 60 tiles form rectangles? Yes, many. Enter 60 and press `{{key:PRIME}}`. What does it say?" *(Expected response: It flashes `COMPOSITE`.)*
-4. **Prompt:** "To break 60 down into its fundamental prime building blocks, press `{{key:FACT}}`. What is the prime factorization?" *(Expected response: `2^2 * 3 * 5`.)*
-5. **Prompt:** "Now open your Prime Factor Studio. Take two Blue `{{key:2}}` blocks, one Green `{{key:3}}` block, and one Yellow `{{key:5}}` block. Stack them next to the scale on the comparator box. Where does the top of your tower land?" *(Expected response: It lines up right at the `60` mark on the comparator rail.)*
-6. **Prompt:** "Now swap the order of the blocks: put the `{{key:5}}` block at the bottom, then `{{key:3}}`, then the two `{{key:2}}` blocks on top. Does the total height change?" *(Expected response: No, it still reaches the `60` mark. Multiplying factors in any order gives the same product.)*
-7. **Prompt:** "Now multiply them back on the SC-6: `{{key:2}} {{key:x²}} {{key:3}} {{key:×}} {{key:5}} {{key:×}}`. You get 60."
+Every whole number greater than 1 is built from a unique team of prime building blocks—and in the **Prime Factor Studio**, students can literally stack those prime factors into physical towers whose heights add up to the product (**CCSS 6.NS.B.4**; **TEKS 6.7.A**). Pairing the **Counting & Array Studio** and the logarithmic prime blocks (`2` through `29` with the comparator scale box) alongside `{{key:PRIME}}`, `{{key:FACT}}`, `{{key:GCF}}`, and `{{key:LCM}}`, begin with a two-part hands-on warm-up:
+1. **The Rectangle Tile Test:** Have students arrange 24 counting tiles into multi-row rectangles ($2 \times 12, 3 \times 8,$ and $4 \times 6$), then remove 1 tile and try to arrange 23 tiles into any rectangle at least 2 rows wide. Because 23 leaves a remainder when divided by 2, 3, or 4, it can only form a single $1 \times 23$ strip—physically proving that 23 is prime.
+2. **Logarithmic Factor Stacking:** Have students stack a Green `3`-block ($11.09\text{ mm}$) on top of a Blue `2`-block ($7.00\text{ mm}$) on the Prime Factor Studio comparator stage and see the top edge align flush with the `6` mark ($18.09\text{ mm}$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `60` | 0 | 0 | 0 | 60 |
-| `{{key:PRIME}}` | 0 | 0 | 0 | 60 (Flashes `COMPOSITE`) |
-| `{{key:FACT}}` | 0 | 0 | 0 | 60 (2² × 3 × 5) |
+Invite students to test `23 {{key:PRIME}}` on the SC-6 to see `PRIME` flash on Shelf $X$, and then test `60 {{key:PRIME}}` (`COMPOSITE`) followed by `{{key:FACT}}` to reveal `2² × 3 × 5`. When students pull two Blue `2`-blocks, one Green `3`-block, and one Yellow `5`-block from the studio and stack them in any order on the comparator stage, the tower always reaches the exact `60` mark at $41.34\text{ mm}$—which `2 {{key:x²}} 3 {{key:×}} 5 {{key:×}}` $\to 60$ confirms on the stack.
 
-**Student Practice Problems:**
-1. Prime factorize 84: `{{key:8}} {{key:4}} {{key:FACT}}` $\to$ $2^2 \times 3 \times 7$.
-2. Prime factorize 180: `{{key:1}} {{key:8}} {{key:0}} {{key:FACT}}` $\to$ $2^2 \times 3^2 \times 5$.
-3. Find GCF of 84 and 180: Shared prime factors $= 2^2 \times 3 = 12$.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `60` | 0 | 0 | 0 | 60 | Enter composite candidate $60$ onto Shelf $X$ |
+| `{{key:PRIME}}` | 0 | 0 | 0 | 60 | Screen flashes `COMPOSITE` while keeping $60$ on Shelf $X$ |
+| `{{key:FACT}}` | 0 | 0 | 0 | 60 | Screen displays **`2² × 3 × 5`** while keeping $60$ on Shelf $X$ |
 
-**Common Stumbling Blocks:**
+For station practice, have partners factor `84` (`84 {{key:FACT}}` $\to$ `2² × 3 × 7`) and `180` (`180 {{key:FACT}}` $\to$ `2² × 3² × 5`), build both prime towers side by side in the comparator stage to pull out their shared blocks ($\text{GCF} = 2^2 \times 3 = 12$, verified via `84 {{key:ENTER}} 180 {{key:GCF}}`), and verify their Least Common Multiple (`84 {{key:ENTER}} 180 {{key:LCM}}` $\to 1,260$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student claims 1 is a prime number. | Misunderstands definition of prime (must have exactly two distinct factors). | "A prime number must have *exactly two* factors: 1 and itself. How many factors does 1 have? Only one." |
+Whenever a student asks why `1` is not considered a prime number, have them key `1 {{key:PRIME}}` (`INVALID DATA`) and look at the Prime Factor Studio tray: if `1` were a prime block of height $0\text{ mm}$, you could stack five, ten, or a hundred `1` blocks onto `60` (`1 × 1 × 2² × 3 × 5`) and destroy the rule that every composite number has *one unique team* of prime building blocks!
 
 ---
 
-### Lesson 6.3: Ratios, Unit Rates & Nature's Spiral Ratio
-- **Standards:** CCSS.MATH.CONTENT.6.RP.A.2, 6.RP.A.3; TEKS 6.4.B.
-- **Learning Objective:** Students calculate unit rates ($240\text{ miles}$ on $8\text{ gallons} = 30\text{ mpg}$) and compute consecutive Fibonacci ratios approaching Nature's Spiral Ratio ($1.618$).
-- **Manipulatives:** Double number lines, tape measures.
-- **Warm-Up Activity:** If 3 packs of gum cost \$4.50, how much does 1 pack cost? ($4.50 \div 3 = 1.50$).
+### Station 6.3: Ratios, Unit Rates & Nature's Spiral Ratio
 
-**Guided Facilitation Walkthrough:**
-1. **Prompt:** "A car drives 372 miles on 12 gallons of fuel. What is the unit rate in miles per gallon? Enter miles: `372 {{key:ENTER}}`. Enter gallons: `12`. Divide: `{{key:÷}}`. What is the rate?" *(Expected response: 31 miles per gallon.)*
-2. **Prompt:** "Now let us investigate the Fibonacci sequence ($1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89$). Divide consecutive terms: $55 \div 34$: `55 {{key:ENTER}} 34 {{key:÷}}`. What do you get?" *(Expected response: 1.6176...)*
-3. **Prompt:** "Now see how `{{key:LASTX}}` works here: add $34 + 55$ to get the next Fibonacci number (`34 {{key:ENTER}} 55 {{key:+}}` $\to 89$). Because `55` was just saved inside `{{key:LASTX}}`, you don't even have to re-type `55`—just tap `{{key:LASTX}} {{key:÷}}` to divide $89 \div 55$." *(Expected response: 1.61818...)*
-4. **Prompt:** "That is Nature's Spiral Ratio ($1.618$), the Golden Ratio found in sunflower spirals, pinecones, seashells, and classical architecture."
+From grocery store price tags to the spiral of a pinecone, ratios and unit rates tell us how two quantities grow together (**CCSS 6.RP.A.2, 6.RP.A.3**; **TEKS 6.4.B**). Using double number lines, tape measures, and the SC-6 `{{key:LASTX}}` key, students explore everyday unit rates and the Golden Ratio ($\approx 1.618$) hidden inside Fibonacci numbers. Warm up by asking how much 1 pack of gum costs if 3 packs cost $\$ 4.50$ (`4.50 {{key:ENTER}} 3 {{key:÷}}` $\to$ $\$1.50$ per pack).
 
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `372` | 0 | 0 | 0 | 372 |
-| `{{key:ENTER}}` | 0 | 0 | 372 | 372 |
-| `12` | 0 | 0 | 372 | 12 |
-| `{{key:÷}}` | 0 | 0 | 0 | 31 |
+Walk students through finding a highway fuel-efficiency unit rate on the stack: if a family car travels $372\text{ miles}$ on $12\text{ gallons}$ of gas, entering miles first (`372 {{key:ENTER}}`), gallons second (`12`), and pressing `{{key:÷}}` yields `31 miles per gallon` on Shelf $X$. Then pivot to nature's famous pattern ($1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89$): have students divide consecutive terms $55 \div 34$ (`55 {{key:ENTER}} 34 {{key:÷}}` $\to 1.617647$), and then generate the next Fibonacci number on the stack (`34 {{key:ENTER}} 55 {{key:+}}` $\to 89$). Because `55` was automatically preserved inside `{{key:LASTX}}`, tapping `{{key:LASTX}} {{key:÷}}` immediately divides $89 \div 55 = 1.618182$ without retyping `55`!
 
-**Student Practice Problems:**
-1. Unit price: $\$18.60$ for 6 pairs of socks: `18.60 {{key:ENTER}} {{key:6}} {{key:÷}}` = $\$3.10$ per pair.
-2. Typing rate: 385 words in 7 minutes: `385 {{key:ENTER}} {{key:7}} {{key:÷}}` = 55 wpm.
-3. Fibonacci ratio $144 \div 89$: `55 {{key:ENTER}} 89 {{key:+}} {{key:LASTX}} {{key:÷}}` (or `144 {{key:ENTER}} 89 {{key:÷}}`) = $1.61797...$
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `372` | 0 | 0 | 0 | 372 | Enter total distance ($372\text{ miles}$) |
+| `{{key:ENTER}}` | 0 | 0 | 372 | 372 | Copy 372 up onto Shelf $Y$ |
+| `12` | 0 | 0 | 372 | 12 | Enter fuel used ($12\text{ gallons}$) |
+| `{{key:÷}}` | 0 | 0 | 0 | 31 | Divide for unit rate: **31 miles per gallon** |
 
-**Common Stumbling Blocks:**
+Finally, let partners compute the unit price of 6 pairs of socks for $\$ 18.60$ (`18.60 {{key:ENTER}} 6 {{key:÷}}` $\to$ $\$3.10$ per pair), a typing speed of 385 words in 7 minutes (`385 {{key:ENTER}} 7 {{key:÷}}` $\to 55\text{ words per minute}$), and the next Fibonacci ratio $144 \div 89$ (`55 {{key:ENTER}} 89 {{key:+}} {{key:LASTX}} {{key:÷}}` $\to 1.617978$).
 
-| What You Might See | Why It Happens | How to Guide |
-|:---|:---|:---|
-| Student divides gallons by miles ($12 \div 372 = 0.032$) when asked for miles per gallon. | Ignores unit dimensional grammar. | "Say the units out loud: *miles* PER *gallon*. Miles goes in first, gallons goes in second." |
+Whenever a student divides unit-rate numbers in reverse order ($12 \div 372 = 0.032\text{ gallons per mile}$), teach them to listen for the word **"per"** (*miles PER gallon*, *dollars PER pair*, *words PER minute*): the unit before "per" always rides up to Shelf $Y$ first, and the unit after "per" divides it from Shelf $X$ (or one tap of `{{key:x⇄y}}` before `{{key:÷}}` swaps them into place).
 
 ---
 
 ## Classroom Observation Guide & Common Student Stumbling Blocks
 
-Every student interaction across the 25 lesson plans is evaluated along four observable performance criteria:
+Across all 25 station lessons, teachers can check student progress across four friendly milestones:
 
 | Performance Band | Score | Hands-On Block Building | Visual Sketching | Calculator Stack Execution |
 |:---|:---:|:---|:---|:---|
-| **Exemplary** | **4 pts** | Fluidly constructs physical model with zero prompting. Explains spatial relationships and invariances clearly to peers. | Accurately sketches bar models, area arrays, or number lines with correct proportional scaling. | Keys problem into SC-6 fluently; explains register states ($X, Y, Z, T$); uses `{{key:LASTX}}` or inverse operations to self-check. |
-| **Proficient** | **3 pts** | Correctly builds model after initial launch. Self-corrects minor manipulative errors without teacher intervention. | Draws recognizable visual models matching the problem context. | Enters correct keystrokes on SC-6; successfully identifies solution on Register $X$. |
-| **Developing** | **2 pts** | Requires teacher prompting to begin building or select correct manipulative blocks. | Sketches disorganized diagrams that fail to preserve mathematical proportionality. | Frequently omits `{{key:ENTER}}` separator or confuses `{{key:+/-}}` with `{{key:-}}`; needs step-by-step keystroke guidance. |
-| **Intervention** | **1 pt** | Unable to model problem with concrete blocks; counts by ones; exhibits persistent off-task or frustrated behavior. | Does not produce pictorial representations; writes isolated digits disconnected from meaning. | Unable to operate calculator interface; relies on wild guessing without checking screen feedback. |
+| **Exemplary** | **4 pts** | Fluidly constructs physical model with zero prompting. Explains spatial relationships and patterns clearly to peers. | Accurately sketches bar models, area arrays, or number lines with correct proportional scaling. | Keys problem into SC-6 fluently; explains shelf states ($X, Y, Z, T$); uses `{{key:LASTX}}` or inverse operations to self-check. |
+| **Proficient** | **3 pts** | Correctly builds model after initial launch. Self-corrects minor block errors without teacher help. | Draws recognizable visual models matching the problem context. | Enters correct keystrokes on SC-6; successfully identifies solution on Shelf $X$. |
+| **Developing** | **2 pts** | Requires teacher prompting to begin building or select the right 3D-printed math blocks. | Sketches disorganized diagrams that do not yet match the block sizes. | Occasionally forgets `{{key:ENTER}}` separator or mixes up `{{key:+/-}}` with `{{key:-}}`; needs step-by-step keystroke guidance. |
+| **Getting Started** | **1 pt** | Needs a partner or teacher model to begin building with blocks; counts one by one. | Needs a starter template before sketching; writes isolated digits. | Needs guided practice with the calculator buttons; guesses without checking screen feedback. |
+
+### Conducting a 90-Second Table Conference (The "Point-and-Prove" Check)
+
+When you pull up a chair beside a partner pair during the 15-minute Station Investigation window, you can assess all three columns of the rubric in under 90 seconds using three quick **"Point-and-Prove"** prompts:
+1. **"Point to Shelf $Y$ on your desk:"** Ask the partners to touch the exact pile of counters, fraction tower, or rectangle side on their table that matches the number currently waiting on Shelf $Y$ of their SC-6 screen. When a student can point directly from the upper line of the LCD to the first physical group on the desk, you know they are reading the stack as a real physical workspace rather than a black box.
+2. **"Predict before you press:"** Before Partner B taps the operation key (`{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷R}}`, or `{{key:SIMP}}`), cover the calculator screen with an index card and ask both partners what their physical blocks say the answer *must* be. Lifting the card after the key press turns every calculation into an instant self-check.
+3. **"Show me with `{{key:LASTX}}`:"** After an operation completes and Shelf $Y$ and Shelf $X$ collapse into a single result, ask the student what number was sitting on the bottom shelf just a moment ago—and have them tap `{{key:LASTX}}` to prove it and run the inverse operation back to where they started.
+
+### Common Student Slip-Ups & Coaching Rescues
+
+When a student gets stuck at a workshop station, use this quick table to spot what happened and get them rolling again:
+
+| What You Might See | Why It Happens | How to Help |
+| :--- | :--- | :--- |
+| **Stuck-Together Digits** (e.g., `64` instead of `6` `{{key:ENTER}}` `4`) | Forgot to press `{{key:ENTER}}` before typing the second number | Remind them of the **Elevator Model** (*"Lift `6` to Shelf $Y$ first before `4` steps onto Shelf $X$."*) |
+| **Surprise Negative Answer** (e.g., negative area or distance) | Typed the smaller number first before subtracting, or divided in reverse order | Point to the physical blocks: *"Can $4$ tiles have negative area? Tap `{{key:x⇄y}}` before you subtract!"* |
+| **Counting One-by-One from $1$** | Not yet spotting groups of $5$ and $10$ at a glance | Switch to **Ten-Frame Mode** (`{{key:▦}}`) and practice spotting full rows of $5$ and $10$ |
+| **Wild Guessing in Quiz Mode** | Timer or level feels too fast right now | Drop down two difficulty levels and build one problem with physical blocks before restarting the sprint |
 
 ---
 
-## Student Intervention Decision Tree & Cognitive Misconceptions
+### Integrating Fluency Sprints & Differentiated Pacing Across the School Week
 
-When a student struggles at a workshop station, follow this structured diagnostic decision protocol:
+Once students have built a concept with physical blocks during the 20-minute station investigation, short, low-stakes bursts in the SC-6 Quiz Engine (`{{key:?}}`, detailed in [Chapter 8](08-math-quiz-engine.md)) consolidate their concrete models into effortless recall. Rather than assigning long paper worksheets at the end of a lesson, educators can weave a two-minute `{{key:?}}` sprint into the final five minutes of the workshop block using three classroom management strategies:
 
-| What You Might See | Why It Happens | How to Guide |
+**Spaced 2-Minute Replay Schedule Across the Unit:**
+Brief, spaced two-minute replays across several days build far stronger fluency than a single long drill session. When introducing a new station concept on Monday, schedule a 2-minute `{{key:?}}` sprint at the matching level on Day 2, Day 4, Day 8, and Day 16:
+
+| Workshop Touchpoint | Recommended Classroom Format | Teacher Facilitation Focus |
 | :--- | :--- | :--- |
-| **Concatenated Digits** (e.g., `64` instead of `6` `{{key:ENTER}}` `4`) | Omitted `{{key:ENTER}}` separator before second operand | Re-anchor the **Elevator Mental Model** (*"Lift `6` to the balcony first."*) |
-| **Nonsensical Numerical Answer** (e.g., negative area) | Reversed operand order or misapplied operation | Point to physical blocks: *"Can $4$ tiles have negative area?"* |
-| **Counting One-by-One from $1$** | Subitizing benchmark not yet internalized | Revert to **Ten-Frame Subitizing Drill** (`{{key:▦}}`); focus on $5$ and $10$ benchmarks |
-| **Blind Guessing in Quiz Mode** | Frustration from pace or difficulty tier | Drop down two difficulty levels; re-engage tactile blocks before restarting timer |
+| **Day 1 (Station Launch)** | Untimed Two-Way Mastery (`10` problems with blocks + SC-6) | Verify every student can build the physical block model before touching `{{key:?}}`. |
+| **Day 2 (1st Replay)** | Solo 2-Minute Personal-Best Sprint (`{{key:?}}`) | Students record their starting score and streak in their notebook log. |
+| **Day 4 (2nd Replay)** | Partner Check with Physical Studio Blocks Nearby | Any missed fact that returns in the $+3/+7$ review queue is built once with blocks. |
+| **Day 8 (3rd Replay)** | 4-Player Baton Relay (Shared Classroom Seed Code) | Mixed-ability table teams pass the calculator every 2 questions (`1`–`10`). |
+| **Day 16+ (Spiral Review)** | Friday Warm-Up Tournament (Shared Seed + `{{key:CLΣ}}` Reset) | Celebrate personal growth over Day 2 baseline scores across the whole class. |
+
+**Synchronized Seed Codes & Smart Review Coaching:**
+During independent practice, the SC-6 shuffles questions automatically so students sitting side by side cannot copy each other's screens. When you want to run a whole-class warm-up or a 4-player table relay where every team faces the *exact same 10 questions in the exact same order*, write a shared **Classroom Seed Number** on the board (for example, today's date `24`). Having every student type `24` on Shelf $X$ right before tapping `{{key:?}}` locks every calculator in the room onto the identical 10-question sequence—and allows you to walk through Question #4 or Question #7 on the document camera afterward knowing every student solved that exact prompt.
+
+Because the SC-6 Quiz Engine automatically recycles any missed fact **3 turns later** and **7 turns later** within the same round (while resting mastered facts for 30 turns), you never need to grade stacks of fluency slips to spot which facts a student finds tricky. As you circulate during the last two minutes of a sprint, glance at which problems reappear on a student's screen and keep the corresponding studio tray within reach—whether that means sliding two counters across the 5-anchor rib for a make-ten fact, turning a Counting Tile array $90^\circ$ for a multiplication fact, or canceling $+1/-1$ counter pairs for a signed-integer challenge.
 
 ---
 
-## Cognitive Science of Fluency & Classroom Quiz Practice
+## School Library Makerspace, Math Circle & Year-Long Pacing Guide
 
-Short, low-stakes retrieval sessions in the SC-6 Quiz Engine (`{{key:?}}`) help students consolidate hands-on block discoveries into effortless long-term fact fluency.
+Beyond the daily 45-minute math classroom, school librarians, makerspace coordinators, and math coaches frequently use the StackCalc SC-6 and its 3D-printed math block studios to host **drop-in library exploration corners**, **after-school Math Circles**, and **Family STEM Nights**. Because every block tray snaps into a self-contained Gridfinity box where missing pieces are visible at a glance, a library or media center can circulate kits with the same ease as board games or robotics bins.
 
-### Spaced Retrieval Practice & Memory Retention
-Why does passive flashcard reading fail so often in elementary classrooms? Cognitive scientists studying the **Forgetting Curve** and active recall have shown that actively *retrieving* a math fact from memory strengthens its neural pathway far more effectively than passively re-reading a multiplication chart:
+### Setting Up Circulating Library "Math Explorer Backpacks"
+School and public libraries can assemble sturdy, check-out-ready **Math Explorer Backpacks** for students in Grades 3–6 to borrow over a weekend with their families. Each circulating backpack pairs this book with a curated subset of 3D-printed trays so students can teach their parents and siblings at the kitchen table:
 
-| Review Milestone | Scheduled Interval | Typical Memory Retention Floor |
+| Backpack Theme | Recommended Grades | Included 3D-Printed Studio Trays | Featured Family Kitchen-Table Quests |
+| :--- | :---: | :--- | :--- |
+| **Pack 1: Patterns, Arrays & Mind-Reading Math** | Grades 3–4 | Ten-Frame Studio + 24-Tile Counting & Array Studio | The `1089` Mind-Reading Trick ([Ch. 2](02-rpn-for-young-learners.md)), Gauss's $1\text{–}100$ Staircase & Four-Color Map Game ([Ch. 4](04-operations-skip-counting.md)) |
+| **Pack 2: Fraction Towers, Musical Strings & Recipes** | Grades 3–5 | 84 mm Fraction Studio + Twin Comparator Lid | Musical Glass Water Fractions ([Ch. 5](05-fractions-decimals-ratios.md)), Pharaoh's Unit-Fraction Bakery & Sourdough Scaling ([Ch. 9](09-applied-stem-labs.md)) |
+| **Pack 3: 3D Boxes, Penguin Huddles & Clock Gears** | Grades 4–6 | Planetary Geared Clock + Counting Tiles & Cardstock Nets | Emperor Penguin Square-Cube Huddle, Cereal-Box Surface Area Audit & Clock-Hand Angle Hunt ([Ch. 6](06-geometry-surface-area.md)) |
+| **Pack 4: Fair Dice, Cicada Primes & Secret Partners** | Grades 5–6 | Fair-Weight Dice & Spinner + Prime Factor Comparator Box | 36-Roll Lucky 7 Tower Race, Impostor Prime Hunt & GCF $\times$ LCM Secret Partner Challenge ([Ch. 7](07-data-probability-primes.md)) |
+
+To make check-in effortless at the circulation desk, tape a photo of the filled socket grid inside the lid of each backpack pouch: when all 24 Counting Tile sockets, 10 Ten-Frame pockets, or 14 Prime Factor slots are filled flush to the rim, the librarian knows in five seconds that every piece has come home safely.
+
+### Running a 60-Minute After-School Math Circle (Grades 3–6)
+In an after-school **Math Circle** or library club, students from Grades 3 through 6 often sit together around shared tables without grade-level tests or homework grades. The goal of a Math Circle is joyful mathematical discovery—posing a surprising mystery that a 3rd grader can explore right away with physical blocks while a 6th grader uncovers *why* the pattern always works on the four-shelf stack. Here are four proven 60-minute Math Circle sessions built directly from this book:
+
+1. **The Square-Frame & Odd-Number Staircase Mystery ([Chapter 3](03-counting-place-value.md) & [Chapter 4](04-operations-skip-counting.md)):**
+   Start by handing each table 25 Four-Color Counting Tiles and asking them to build a $1 \times 1$ white square in the corner, wrap a 3-tile blue L-border around it to form a $2 \times 2$ square ($1 + 3 = 4$), wrap a 5-tile gold L-border around that to form a $3 \times 3$ square ($4 + 5 = 9$), and then add a 7-tile slate L-border ($9 + 7 = 16$) and a 9-tile white L-border ($16 + 9 = 25$). Challenge the circle to predict what happens if you add the first **20 odd numbers** ($1 + 3 + 5 + \dots + 39$) before testing it on the SC-6 (`20 {{key:x²}}` $\to 400$). Then ask older students to remove an inner $3 \times 3$ square from a $5 \times 5$ square ($5^2 - 3^2 = 16$) and rearrange the leftover L-border into a single rectangle to discover why $(5 - 3) \times (5 + 3) = 2 \times 8 = 16$.
+
+2. **The Musical Monochord & Egyptian Fraction Bakery ([Chapter 5](05-fractions-decimals-ratios.md)):**
+   Bring four identical drinking glasses, a pitcher of water, a ruler, and a metal spoon to the library table alongside the **84 mm Fraction Studio**. Have students measure the glass height, pour water to $\frac{1}{4}$, $\frac{1}{3}$, $\frac{1}{2}$, and $\frac{3}{4}$ full, and tap the glasses to hear the musical intervals rise as the air column shortens. Next, pose the ancient Egyptian scribe puzzle from the Rhind Papyrus: *How can 8 bakers share 5 loaves of bread fairly without crumbling the loaves into tiny bits?* Have students model $\frac{5}{8}$ in the Twin Comparator Well by stacking one $\frac{1}{2}$ block ($42.0\text{ mm}$) and one $\frac{1}{8}$ block ($10.5\text{ mm}$) to reach $52.5\text{ mm}$, then verify `. 1 . 2 {{key:ENTER}} . 1 . 8 {{key:+}}` $\to$ `5/8` on the SC-6.
+
+3. **The Antarctic Penguin Huddle & Giant Monster Scaling Lab ([Chapter 6](06-geometry-surface-area.md)):**
+   Ask the circle why a movie monster that is $10\text{ times}$ taller than a human would collapse under its own weight, and why Emperor penguins huddle tightly together in $-40^\circ\text{C}$ blizzards. Have students take 8 Unit Miniblocks and compare their exposed square faces when standing apart ($8 \times 6 = 48$ chilly faces) versus snapped into a $2 \times 2 \times 2$ cube ($6 \times 4 = 24$ exposed faces—cutting heat loss in half!). Then challenge teams to use `{{key:CLΣ}}` and `{{key:Σ+}}` to find which 3D rectangular prism built from 24 Counting Tiles ($1 \times 1 \times 24$, $1 \times 2 \times 12$, $1 \times 3 \times 8$, $1 \times 4 \times 6$, or $2 \times 3 \times 4$) has the *smallest* outer surface area (`2 × 3 × 4` wins with just $52$ square faces!).
+
+4. **The Settlers of Catan Dice Pyramid & Prime Factor Vault ([Chapter 7](07-data-probability-primes.md)):**
+   Give each team two volume-equalized $d6$ dice and a supply of Counting Tiles arranged along a number line from `2` to `12`. As teams roll the dice 36 times (and simulate rapid rolls on the SC-6 with `6 {{key:🎲}} 6 {{key:🎲}} {{key:+}}`), they stack a tile on the matching sum for every roll and watch the tall pyramid peak over `6`, `7`, and `8`. Follow up by switching to the **Prime Factor Studio**: challenge partners to race the SC-6 `{{key:FACT}}` key by building factor towers for `36`, `60`, `84`, and `120` in the comparator stage and discovering why stacking blocks in any order always reaches the exact same millimeter mark.
+
+### Hosting a Five-Table Family Math & Maker Night
+One of the most rewarding ways to build community excitement around mathematics is a 90-minute **Family Math & Maker Night** in the school library or cafeteria, where **students act as the station hosts** and teach their parents and grandparents how the four-shelf stack works. Set up five tables around the room with student ambassadors stationed at each table:
+
+| Family Night Table | Studio Equipment on the Table | What Student Ambassadors & Families Do Together |
 | :--- | :--- | :--- |
-| **Initial Acquisition** | Day 1 | $100\% \to 40\%$ without review |
-| **1st Spaced Retrieval** | Day 2 | Restores to $100\%$; floor rises to $60\%$ |
-| **2nd Spaced Retrieval** | Day 4 | Restores to $100\%$; floor rises to $80\%$ |
-| **3rd Spaced Retrieval** | Day 8 | Restores to $100\%$; floor rises to $90\%$ |
-| **Long-Term Automaticity** | Day 16+ | Consolidated in permanent long-term memory |
-
-### Smart Review Queue in the SC-6 Quiz Engine (`{{key:?}}`)
-The SC-6 Quiz Engine (`{{key:?}}`) uses a built-in smart review queue to help students master tricky facts without frustration:
-- When a student answers a challenge quickly and accurately, the question is marked as mastered and rests for at least $30$ problem turns.
-- When a student misses a question, the calculator quietly brings that fact back 3 turns and 7 turns later so the student can practice it again while the strategy is still fresh.
-
-| Student Evaluation (`{{key:ENTER}}`) | Queue Transition | Scoring & Review Policy |
-| :--- | :--- | :--- |
-| **Accurate & Steady** | Promoted to **Mastered** | Rests for $30$ problem turns; streak increases |
-| **Missed Fact** | Scheduled for **Quick Review** | Brought back in $+3$ and $+7$ turns for a second chance |
-
-### Synchronized Classroom Seed Codes & Continuous Memory
-During solo practice, the SC-6 shuffles questions automatically so no two practice sessions feel repetitive. For partner relays or whole-class fluency games, a teacher can announce a shared **Classroom Seed Number** (such as `42` followed by `{{key:?}}`) so every student's calculator generates the exact same sequence of 10 questions in the exact same order for a fair race. Even when powered off (`{{key:OFF}}`), the calculator remembers completed levels, high scores, and any tricky facts waiting for review.
+| **Table 1: "Beat the Smartphone!" Relay** | SC-6 Calculators + Parent Smartphones | Students hand parents a smartphone calculator while using the SC-6 themselves to race on two-group snack-bar orders like $(14 \times 6) + (18 \times 4)$ and mental-math squares like $65^2$ (`65 {{key:x²}}` $\to 4,225$). |
+| **Table 2: $84\text{ mm}$ Fraction Tower Challenge** | $84\text{ mm}$ Fraction Studio + Comparator Lid | Families race to find three different fraction block combinations that stand flush with the $84.0\text{ mm}$ `1 WHOLE` tower (such as $\frac{1}{2} + \frac{1}{3} + \frac{1}{6}$) and verify each with Two-Dot Entry and `{{key:SIMP}}`. |
+| **Table 3: Cereal-Box Unfolding Station** | Flattened Cardboard Boxes + Rulers + SC-6 | Families measure the three pairs of matching walls on unfolded boxes, toss each pair into `{{key:Σ+}}`, verify `Count = 3`, and read the total cardboard area with `{{key:Σx}}`. |
+| **Table 4: Tabletop Catapult & Pendulum Lab** | Rubber-Band Catapults + Tape Measure + SC-6 | Families launch three catapult shots across the floor, log the landing distances with `{{key:Σ+}}`, and press `{{key:x̄}}` and `{{key:MAD}}` to see both the bullseye average and the consistency spread ([Chapter 9](09-applied-stem-labs.md)). |
+| **Table 5: Live 3D-Printing Tile Station** | Desktop FDM 3D Printer + Digital Scale + SC-6 | A 3D printer extrudes $19.0 \times 19.0 \times 7.0\text{ mm}$ Counting Tiles live while student ambassadors show families how the SC-6 calculates the exact volume, gram weight (`3.1 g`), and 6-cent cost (`{{key:$}}`) of each tile! |
 
 ---
 
-## Companion Curriculum Suite Cross-Reference
+### Pacing the 25 Stations Across the School Year
 
-To extend these 25 turnkey station lessons across a full academic year, pair this playbook with the three companion StackCalc classroom volumes:
-- **[The 12-Unit Curriculum Guide](../../curriculum/teacher-guide.md):** Multi-week unit pacing calendars, CCSS-M/TEKS standards matrices, and station rotation schedules spanning Chapters 01–09.
-- **[The StackCalc Student Workbook](../../curriculum/sc6-elementary-companion-workbook.md) & [Big Ideas Math Middle School Supplement](../../curriculum/big-ideas-middle-school-sc6-workbook.md):** Printable student lab sheets, grid sketch pads, and middle-school extension quests for ratios, proportions, surface area nets, and pre-algebra zero pairs.
-- **[Timed Proficiency Trials](../../curriculum/worksheets.md):** Seed-synchronized classroom sprint scorecards, 4-player relay sheets, and fluency growth trackers for the SC-6 Quiz Engine (`{{key:?}}`).
+To weave these 25 station lessons across a full 36-week school year (or a summer math camp), educators can group the stations into four seasonal modules that spiral from whole-number foundations to applied STEM labs:
 
-For foundational formula references and prime catalogs, see [Appendix C: Formulas, Conversions & Prime Catalogs](appendix-c-formulas-and-conversions.md).
+| Seasonal Module | Recommended Weeks | Featured Station Rotations | Companion Book Chapters |
+| :--- | :---: | :--- | :--- |
+| **Quarter 1: Number Sense, Place Value & Stack Foundations** | Weeks 1–9 | Stations `F.1`–`F.10` (Ten-Frames, Make-a-Ten, Bundling, Regrouping & `{{key:REP}}` Ladders) | [Chapters 01](01-hardware-architecture.md)–[03](03-counting-place-value.md) |
+| **Quarter 2: Rectangular Arrays, Remainders & Unit Fractions** | Weeks 10–18 | Stations `F.11`, `3.1`–`3.4`, and `4.1` (`{{key:RECT}}` Arrays, `{{key:÷R}}` Sharing, Unit Fractions & `{{key:Σ+}}` Perimeters) | [Chapters 04](04-operations-skip-counting.md)–[05](05-fractions-decimals-ratios.md) |
+| **Quarter 3: Equivalent Fractions, 3D Prisms & Order of Operations** | Weeks 19–27 | Stations `4.2`–`4.4` and `5.1`–`5.3` (`{{key:SIMP}}` Reduction, Unlike Fractions, Volvelle Angles & 3D Prism Nets) | [Chapters 05](05-fractions-decimals-ratios.md)–[06](06-geometry-surface-area.md) |
+| **Quarter 4: Primes, Data Detective, Zero Pairs & Maker STEM Labs** | Weeks 28–36 | Stations `6.1`–`6.3` plus STEM Maker Projects (`{{key:+/-}}` Zero Pairs, `{{key:FACT}}` Prime Towers, Ratios & Sprints) | [Chapters 07](07-data-probability-primes.md)–[09](09-applied-stem-labs.md) |
+
+Within any single school week, teachers can rotate five table groups through a balanced **Monday-to-Friday Workshop Rhythm** so every student experiences hands-on block building, visual screen discovery, four-shelf stack verification, and team fluency relays without ever needing long paper packets:
+
+| Day of the Week | 45-Minute Classroom Focus | Physical Studio & SC-6 Mode | Quick Formative Check |
+| :--- | :--- | :--- | :--- |
+| **Monday (Launch & Build)** | Whole-class 5-minute anchor story + Partner A/B physical block build at Tables 1–5 | Assigned 3D-Printed Studio Tray + Visual Screen Mode (`{{key:▦}}`, `{{key:LINE}}`, `{{key:PV}}`, `{{key:🕒}}`) | First `+10` token placed on the Quest Scoreboard for verified physical model |
+| **Tuesday (Stack Connection)** | Partners translate Monday's physical block model into 4-shelf stack keystrokes ($X, Y, Z, T$) | `{{key:NUM}}` or Fraction Mode (`{{key:a ᵇ/c}}`) + `{{key:LASTX}}` reverse checks | Second `+10` token stacked (`+20` total) + 90-second "Point-and-Prove" check |
+| **Wednesday (Station Switch)** | Table groups rotate clockwise to a companion station or multi-step extension puzzle | Companion Studio Tray + Multi-step Shelf $Z$ or `{{key:Σ+}}` basket | Students log one 4-register trace table in their math notebooks |
+| **Thursday (Maker Application)** | Real-world STEM measurement lab (rulers, scales, stopwatches, or cardstock nets) | Chapter 9 Maker Lab + Unit Conversions (`{{key:▸cm}}`, `{{key:▸g}}`, `{{key:x̄}}`, `{{key:MAD}}`) | Partner teams compare `Count`, `Mean`, and `MAD` across table trials |
+| **Friday (Relay & Reflection)** | Synchronized Classroom Seed 4-Player Baton Relay (`{{key:?}}`) + Math Circle discussion | Shared Seed Code (`24 {{key:?}}`) + Studio Trays on table for $+3/+7$ review coaching | Celebrate personal-best growth over Tuesday baseline scores |
+
+**Why the Four-Shelf Stack Works in Elementary Classrooms:** Across all four quarters, teachers consistently notice that students make far fewer multi-step calculation mistakes on the SC-6 than on conventional parenthesis calculators. Studies of human memory show that our brains can comfortably focus on only a few numbers at a time {{cite:miller1956,sweller1988}}, and classroom research confirms that young learners grasp multi-step problems much more naturally when they enter numbers in the exact order they build with their blocks {{cite:hamrick1980}}. By combining parenthesis-free stack entry {{cite:burks1954}} with exact decimal and fraction arithmetic {{cite:kahan1979}}, the SC-6 keeps every step visible on Shelves $X, Y, Z,$ and $T$—so students can focus on the meaning of the math rather than hunting for missing brackets.

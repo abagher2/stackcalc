@@ -64,7 +64,7 @@ hide:
 
       <!-- Action Buttons -->
       <div class="ec-actions-row">
-        <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
+        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
           Order on Etsy ($24.00) ↗
         </a>
         <a href="/downloads/stackcalc-curriculum-sample-v0.2.0.pdf" class="ec-btn-secondary">
@@ -470,7 +470,7 @@ hide:
             <a href="/downloads/stackcalc-curriculum-sample-v0.2.0.pdf" class="ec-btn-secondary text-xs">
               &darr; Download Free Lab Sample (PDF)
             </a>
-            <a href="https://www.etsy.com/shop/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary text-xs" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary text-xs" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
               Order Complete Workbook on Etsy ↗
             </a>
           </div>

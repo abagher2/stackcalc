@@ -1,219 +1,214 @@
 ---
-title: "Chapter 4: Whole Number Operations & Skip-Counting Ladders"
+title: "Chapter 4: Tile Arrays, Skip-Counting & Remainders"
 description: "Mastering elementary multiplication, division, and RPN signature keys on the SC-6: 24-tile four-color arrays (and 144-tile classroom sets), the Four-Color Map Theorem, the [REP] repeat key, the [÷R] quotient-remainder key, and the [LASTX] recall key."
 ---
 
-# Chapter 4: Whole Number Operations & Skip-Counting Ladders
+# Chapter 4: Tile Arrays, Skip-Counting & Remainders
 
-## How 9-Year-Old Carl Friedrich Gauss Outsmarted His Teacher in Seconds (and Why Multiplication Is a Physical Rectangle, Not a Memorized Song)
+## Young Gauss's 10-Second Shortcut & 2D Tile Grids
 
-In 1786, inside a crowded elementary classroom at the St. Katharinen-Volksschule in Brunswick, Germany, schoolmaster J.G. Büttner and his young assistant Martin Bartels presided over roughly a hundred pupils {{cite:sartorius1856}}. Whenever Büttner wanted an hour of quiet, he assigned his arithmetic class a long summation problem to compute on their handheld slates.
+Break off a piece of a chocolate bar or pick up a LEGO baseplate and look at the bumps on top: 3 rows with 4 bumps in each row ($3 \times 4 = 12$). You don't have to guess what $3 \times 4$ means or recite a chant in the dark—**multiplication is literally a 2D tile grid you can see, touch, and rotate right on your desk!** Whenever you arrange square tiles into equal rows and columns, the answer is simply the number of tiles filling that rectangle.
 
-Walking to the front of the room, he assigned the class a daunting series: *Add every integer from 1 to 100 on your slates.*
+Back in 1786, in a noisy one-room schoolhouse in Germany, a grumpy teacher wanted an hour of peace and quiet {{cite:sartorius1856}}. So he walked to the blackboard and ordered the class to add up every single whole number from $1$ to $100$ on their chalk slates:
 
 $$\mathbf{1 + 2 + 3 + 4 + 5 + \dots + 98 + 99 + 100 = \ ?}$$
 
-The schoolmaster expected his pupils to spend the rest of the hour bent over their slates in laborious step-by-step addition.
+The teacher figured the kids would be hunched over their desks scribbling $1 + 2 = 3$, $3 + 3 = 6$, $6 + 4 = 10$ for the rest of the afternoon.
 
-As Gauss's friend and biographer Wolfgang Sartorius von Waltershausen recorded in *Gauss zum Gedächtniss* (1856) {{cite:sartorius1856}}, the problem had barely been stated when nine-year-old Carl Friedrich Gauss {{cite:gauss1809}} walked to the master's table, laid his slate down on top of the empty pile, and spoke the famous words in his native Low German dialect:
+Instead, a nine-year-old boy named **Carl Friedrich Gauss** {{cite:gauss1809}} stared at the numbers for a few seconds, wrote down one number on his slate, walked up to the teacher's desk, and smacked his slate down on the table:
 
 $$\text{\Large\textbf{„Ligget se!“}} \quad \text{("There it lies!")}$$
 
-While the other boys scribbled rows of intermediate sums for the remainder of the hour, Gauss sat quietly with his arms folded. When the slates were finally turned over and inspected, almost all the longer calculations contained errors—yet young Gauss’s slate held a single number, written without a scratch of intermediate work: **5,050** {{cite:sartorius1856}}.
+For the next hour, while the other kids furiously added and erased mistakes, nine-year-old Carl sat with his arms folded. When the teacher finally flipped the slates over, almost every kid in the room had gotten tangled in carrying errors—except Carl, whose slate had just one number with zero scratch work: **5,050**.
 
-How did a nine-year-old solve the series almost instantly?
+How did a nine-year-old beat the entire room in ten seconds?
 
-Gauss did not sing times tables in his head. He did not count on his fingers. He looked at the problem *spatially*. He noticed that the numbers could be folded in half like a piece of paper, pairing the extreme ends into identical sums:
+Carl didn't add the numbers one by one. Instead, he pictured the number line in his head and **folded it in half** so the first number teamed up with the last number:
 $$1 + 100 = 101, \quad 2 + 99 = 101, \quad 3 + 98 = 101, \quad \dots \quad 50 + 51 = 101$$
 
-There were exactly fifty pairs of $101$. And fifty groups of $101$ is not fifty tedious additions; it is a **geometric rectangle** measuring $50$ units wide by $101$ units tall:
+Every single pair added up to **$101$**, and folding $100$ numbers in half made **50 pairs**! Instead of doing 99 slow additions, Carl turned the problem into a **2D rectangle** that was $50$ rows tall by $101$ units wide:
 $$50 \times 101 = 5,050$$
 
-This is the key insight that conventional elementary school math so often conceals: **multiplication is not an arbitrary song you recite from memory; multiplication is a physical rectangle of space.** When you arrange tiles into equal rows and columns, the product is simply the physical area of the grid.
-
-On the **StackCalc SC-6**, we honor Gauss's spatial insight. Using our physical **24-Tile Four-Color Array Studio** (or pooling six desk kits into a 144-tile classroom set), you prove the commutative, associative, and distributive properties with your hands. And on the calculator keypad—working in standard whole-number (`{{key:NUM}}`) or currency (`{{key:$}}`) view alongside the core operators (`{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷}}`) and stack controls (`{{key:ENTER}}`, `{{key:x⇄y}}`, `{{key:C}}`, `{{key:<-}}`)—you command three computational signature keys: **Constant Repeat (`{{key:REP}}`)** for rhythmic skip-counting ladders, **Quotient & Remainder (`{{key:÷R}}`)** for instant simultaneous quotient and remainder display, and **Last Number Recall (`{{key:LASTX}}`)** for self-checking inverse arithmetic without scratch paper. As you work through this chapter, you will see how `{{key:REP}}`, `{{key:÷R}}`, and `{{key:LASTX}}` turn your four-level stack into a hands-on multiplication and division studio.
+On the **StackCalc SC-6**, we use Carl's exact visual approach. With your **24-Tile Four-Color Array Studio** (or sharing six desk kits to build a 144-tile classroom grid), you can snap rows and columns together on your desk to see how multiplication grids work. Then, on the calculator keypad, you will meet three special helper keys: **`{{key:REP}}` (Constant Repeat)** for climbing skip-counting ladders in a single tap, **`{{key:÷R}}` (Quotient & Remainder)** for seeing whole groups and leftovers at the same time, and **`{{key:LASTX}}` (Last Number)** for checking your own answers in reverse.
 
 ---
 
-{{res:sc6_bus_divr:screenshot|Field trip bus division: 145 students / 45-seat bus → Quotient 3, Remainder 10}}
+### Building 2D Tile Grids & Coloring Maps
 
-## Hands-On Studio: 24-Tile Four-Color Array Studio & Map Theory
+Every multiplication problem you meet can be built out of **equal groups**, **2D rectangular tile grids**, and **color-coded maps** right in your hands—feeling how rows and columns form a rectangle on your desk, seeing how wide grids split into four friendly color zones, and multiplying or chaining steps across the four shelves of your stack (`Y {{key:ENTER}} X {{key:×}}`).
 
-When you first learn multiplication, it might seem like a song to memorize. But multiplication is really **spatial equal groups**, **rectangular area arrays**, and **color-coded maps** you can build with your hands.
-
-| Topic | Physical Manipulative Kit | Visual Screen Mode | RPN Operational Stack |
-|---|---|---|---|
-| **1. Hands-On Blocks** | 24-Tile Four-Color Array Studio | Physical interlocking tiles and 90° array rotation | Tactile array perception |
-| **2. Visual Screen** | 4-Color Quadrant Partitioning & Map Theory | High-contrast LCD vector dot-matrix grid | Visual area model representation |
-| **3. Number Stack** | Four-Register RPN Stack ($T, Z, Y, X$) | `Y {{key:ENTER}} X {{key:×}}` two-number drop | Chained parenthesis-free speed |
-
-The StackCalc physical block kit replaces loose single-purpose blocks with the **24-Tile Four-Color Counting & Array Studio**:
-
-Each student desk kit provides 24 precision interlocking stacking tiles ($19.0 \times 19.0 \times 7.0\text{ mm}$ visible height, $8.85\text{ mm}$ overall with the top stacking lip) arranged across four distinct color palettes:
-1. **Archival White** (crisp matte finish)
-2. **Cobalt Blue** (deep saturated tone)
-3. **Radiant Gold** (warm amber tone)
-4. **Slate Gray** (technical neutral tone)
-
-With 6 tiles per color ($4 \times 6 = 24\text{ tiles}$ per student kit, or 6 kits pooled together for a 144-tile $12 \times 12$ classroom set), each tile has a $1\text{U}$ visible height ($7.0\text{ mm}$), aligning with the $1/12\text{th}$ Fraction Studio tile so that 12 vertically stacked tiles match the $84.0\text{ mm}$ master datum of the 1-Whole Fraction Tower. Smooth beveled edges let you snap tiles into flat arrays or stack them into 3D towers without sticking.
+Instead of a bag of loose cubes that roll onto the floor, your desk kit gives you the **24-Tile Four-Color Counting & Array Studio**. Each kit holds 24 snap-together square stacking tiles in four bold, high-contrast colors—6 tiles each of **Bright White** (clean snow-white finish), **Cobalt Blue** (deep ocean blue), **Radiant Gold** (warm golden-yellow), and **Slate Gray** (cool storm-cloud gray). With $4 \times 6 = 24\text{ tiles}$ in your personal desk kit (or 6 kits shared at a classroom table for a giant 144-tile $12 \times 12$ grid), the smooth beveled edges let you slide tiles side by side into flat rectangles on your desk mat or snap them vertically into sturdy 3D block prisms without sticking.
 
 {{blocks:counting_tiles_box_3x1x13u|24-Tile Four-Color Counting & Array Studio in Desktop Storage Case}}
 
-### The Mathematical Harmony of $4 \times 6 = 24$
-The number 24 divided into 4 colors creates rich mathematical properties for hands-on discovery:
-1. **Super-Factorable Versatility:** The 24-tile kit factors cleanly into $1 \times 24$, $2 \times 12$, $3 \times 8$, and $4 \times 6$ rectangular arrays.
-2. **Four Complete $2 \times 3$ Sub-Arrays:** Each individual color contains **6 tiles**, which is both a $2 \times 3$ rectangular array and a staircase triangular number ($1 + 2 + 3 = 6$).
-3. **From Desk Blocks to Giant Numbers:** By modeling foundational $2 \times 3$, $3 \times 8$, and $4 \times 6$ arrays physically on the desk, you build concrete intuition before scaling up to large multi-digit arrays on the SC-6 stack.
+### Why 24 Is the Champion Packing Number
 
-| Array Orientation | Grid Dimensions | Row Breakdown | Total Area |
+Why does your kit come with **24 tiles** split into 4 colors instead of 20 or 25? Because 24 is a champion packing number! You can snap all 24 tiles into **four different rectangles** without a single leftover tile: $1 \times 24$, $2 \times 12$, $3 \times 8$ (3 rows of 8 tiles: $8 + 8 + 8 = 24$), and $4 \times 6$ (4 rows of 6 tiles: $6 + 6 + 6 + 6 = 24$). Inside that set of 24, each of the 4 colors has **6 tiles**, which packs into its own $2 \times 3$ six-pack rectangle or a 3-step staircase ($1 + 2 + 3 = 6$). Reshaping those 24 physical tiles between a wide $3 \times 8$ grid and a compact $4 \times 6$ grid with your hands makes it effortless to picture giant multi-digit arrays on your SC-6 stack:
+
+| 24-Tile Rectangle | Turn-Around Twin ($90^\circ$ Turn) | Equal-Row Addition | Stack Multiplication Check |
 | :--- | :--- | :--- | :--- |
-| **Array A** | $3\text{ Rows} \times 8\text{ Columns}$ | 3 rows of 8 tiles ($8 + 8 + 8$) | **$3 \times 8 = 24\text{ tiles}$** |
-| **Array B** | $4\text{ Rows} \times 6\text{ Columns}$ | 4 rows of 6 tiles ($6 + 6 + 6 + 6$) | **$4 \times 6 = 24\text{ tiles}$** |
+| **1 Row of 24** ($1 \times 24$) | **24 Rows of 1** ($24 \times 1$) | Single long train of $24$ tiles | `1 {{key:ENTER}} 24 {{key:×}}` $\to \mathbf{24}$ |
+| **2 Rows of 12** ($2 \times 12$) | **12 Rows of 2** ($12 \times 2$) | $12 + 12 = 24$ (two dozen-rods) | `2 {{key:ENTER}} 12 {{key:×}}` $\to \mathbf{24}$ |
+| **3 Rows of 8** ($3 \times 8$) | **8 Rows of 3** ($8 \times 3$) | $8 + 8 + 8 = 24$ (three 8-bars) | `3 {{key:ENTER}} 8 {{key:×}}` $\to \mathbf{24}$ |
+| **4 Rows of 6** ($4 \times 6$) | **6 Rows of 4** ($6 \times 4$) | $6 + 6 + 6 + 6 = 24$ (four 6-color sets) | `4 {{key:ENTER}} 6 {{key:×}}` $\to \mathbf{24}$ |
 
-### Pythagoras's Secret: Why Odd Numbers Build Perfect Squares
-Over 2,500 years ago, Pythagoras and his students discovered a striking pattern hidden inside your **24-Tile Four-Color Counting & Array Studio** and the $90^\circ$ **L-Frame Stage**: what happens when you add consecutive **odd numbers** ($1 + 3 + 5 + 7$)?
-1. **Start with $1$ ($1 \times 1$):** Dock **1 White tile** snugly into the $90^\circ$ corner of the L-Frame Stage (or the bottom-left socket of your $6 \times 2$ Snapfinity lid). It is a tiny $1 \times 1 = \mathbf{1}$ square.
-2. **Add $3$ ($1 + 3 = 4$):** Take **3 Cobalt Blue tiles** and wrap them around the top and right edges of the White tile like an L-shaped corner border. Look down: you just built a **$2 \times 2 = \mathbf{4}$ square**.
-3. **Add $5$ ($1 + 3 + 5 = 9$):** Wrap an L-border of **5 Radiant Gold tiles** around the outer corner of the blue square. It locks into a **$3 \times 3 = \mathbf{9}$ square**.
-4. **Add $7$ ($1 + 3 + 5 + 7 = 16$):** Wrap **7 Slate Gray tiles** (your 6 Slate Gray tiles plus 1 spare White tile, using $16$ of your $24$ student kit tiles) around the gold square: it forms a **$4 \times 4 = \mathbf{16}$ square**! Notice how the $3 \times 3$ square grows into a $4 \times 4$ square by wrapping an L-border of $7$ tiles ($3$ on top, $3$ down the side, and $1$ in the corner) around its outer edge.
+### Frame Borders & the Difference of Two Squares
 
-| Step | Keystrokes | Register T | Register Z | Register Y | Register X | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `1 {{key:ENTER}} 3 {{key:+}}` | 0 | 0 | 0 | 4 | $1 + 3 = 4 = 2^2$ ($2 \times 2$ White + Blue square) |
-| 2 | `5 {{key:+}}` | 0 | 0 | 0 | 9 | $+ 5 = 9 = 3^2$ ($3 \times 3$ Gold L-border added) |
-| 3 | `7 {{key:+}}` | 0 | 0 | 0 | 16 | $+ 7 = 16 = 4^2$ ($4 \times 4$ Slate L-border added) |
-| 4 | `{{key:√x}}` | 0 | 0 | 0 | **4** | Square root confirms the $4 \times 4$ side length |
+In Chapter 3, you saw how wrapping odd-numbered L-borders ($1 + 3 + 5 + 7 = 16$) builds a square outward one layer at a time. Now flip that question around using your **Counting & Array Studio** and the $90^\circ$ **L-Frame Stage**: what happens when you start with a **$5 \times 5 = 25$ square** (all 24 tiles from your kit plus 1 unit miniblock in the corner) and lift a **$3 \times 3 = 9$ inner square** right out of its bottom-left corner?
+1. **Lift Out the Inner Square ($25 - 9 = 16$):** Removing the $3 \times 3 = 9$ inner square from the $5 \times 5 = 25$ square leaves a thick, L-shaped outer frame border made of **$16$ tiles** ($5^2 - 3^2 = 25 - 9 = 16$).
+2. **Slide the Frame into a Rectangle ($(5 - 3) \times (5 + 3) = 2 \times 8 = 16$):** Look at the two arms of that remaining L-shaped frame: the top strip is **$2$ rows tall by $5$ tiles wide** ($5 - 3 = 2$), and the side strip is **$3$ tiles tall by $2$ columns wide**. Swing that $3 \times 2$ side strip up and snap it onto the end of the $2 \times 5$ top strip! Together they form a long, sleek **$2 \times 8 = 16$ rectangle** whose height is the difference of the two squares' sides ($5 - 3 = 2$) and whose width is their sum ($5 + 3 = 8$)!
+3. **Reshape into a $4 \times 4$ Square (`5 {{key:x²}} 3 {{key:x²}} {{key:-}} {{key:√x}}`):** Cut that $2 \times 8$ rectangle in half and stack the two $2 \times 4$ halves on top of each other—it locks into a solid **$4 \times 4 = 16$ square**! Test both discoveries on your SC-6 stack: first **subtract the two squares** by keying in `5 {{key:x²}} 3 {{key:x²}} {{key:-}}` to see **`16`** on Shelf $X$ (and tap `{{key:√x}}` to confirm its **`4`**-tile square side length), and then **multiply the difference by the sum** by keying in `5 {{key:ENTER}} 3 {{key:-}} 5 {{key:ENTER}} 3 {{key:+}} {{key:×}}` to watch $(5 - 3) \times (5 + 3) = 2 \times 8 = \mathbf{16}$ come together right across your shelves!
 
 ---
 
-### The 24-Tile Rectangular Array Studio & Multiplication Properties
+### Spinning a Tile Rectangle Quarter-Turn on Your Desk
 
-{{blocks:counting_tiles_array_3x8|Commutative Property of Multiplication: 3x8 Array Rotated to 8x3 on Tabletop}}
+{{blocks:counting_tiles_array_3x8|Spinning a Tile Rectangle: Rotating a 3 × 8 Tile Array 90° into an 8 × 3 Array on Your Desk}}
 
-Once you see that any multiplication problem is a physical rectangle of tiles, the three great laws of multiplication—the **Commutative**, **Associative**, and **Distributive** properties—stop sounding like vocabulary words and become things you can prove with your hands in seconds.
+Once you see that any multiplication problem is a physical rectangle of tiles, the three classical laws of multiplication—which math books call the **Commutative**, **Associative**, and **Distributive** laws—turn into hands-on movements you can test on your desk in seconds.
 
-First, test the **Commutative Property ($\text{Rows} \times \text{Columns} = \text{Columns} \times \text{Rows}$)** right on your desk: snap together a solid rectangular mat of 3 rows of 8 tiles ($3 \times 8 = 24$), then physically pick up the mat and rotate it by $90^\circ$ on the tabletop so you see 8 rows of 3 tiles ($8 \times 3 = 24$). Did the number of tiles change? Not a single tile was added or removed! On the SC-6 stack, you can place both orientations side by side: first multiply 3 rows of 8 by pressing `{{res:sc6_04_operations_skip_counting_seq_53:keys}}` to put $\mathbf{24}$ on Shelf $X$, and then multiply 8 rows of 3 by pressing `{{res:sc6_04_operations_skip_counting_seq_54:keys}}` so the rotated $\mathbf{24}$ lands on Shelf $X$ while the original $\mathbf{24}$ waits right next to it on Shelf $Y$.
+First, try spinning a rectangle a quarter-turn ($\text{Rows} \times \text{Columns} = \text{Columns} \times \text{Rows}$) right on your desk: snap together a solid rectangular mat of 3 rows of 8 tiles ($3 \times 8 = 24$), then physically pick up the mat and turn it $90^\circ$ on the tabletop so you see 8 rows of 3 tiles ($8 \times 3 = 24$). Did the number of tiles change? Not a single tile was added or removed!
 
-| Keystroke | Register T | Register Z | Register Y | Register X (Display) |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:3}} {{key:ENTER}}` | 0 | 0 | 3 | 3 |
-| `{{key:8}} {{key:×}}` | 0 | 0 | 0 | 24 |
-| `{{key:8}} {{key:ENTER}}` | 0 | 24 | 8 | 8 |
-| `{{key:3}} {{key:×}}` | 0 | 0 | 24 | 24 |
+On the SC-6 stack, you can place both orientations side by side: first multiply 3 rows of 8 via `{{res:sc6_04_operations_skip_counting_seq_53:keys}}` to put $\mathbf{24}$ on Shelf $X$, and then multiply 8 rows of 3 with `{{res:sc6_04_operations_skip_counting_seq_54:keys}}` so the rotated $\mathbf{24}$ lands on Shelf $X$ while the original $\mathbf{24}$ waits right next to it on Shelf $Y$.
 
-Look at `Register Y` and `Register X` at the bottom of that table: both hold `24`! You see with your own eyes and feel with your own hands that spinning a rectangle never changes its area.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `3 {{key:ENTER}}` | 0 | 0 | 3 | 3 | Place 3 rows on Shelf $X$ and lift a copy to Shelf $Y$ |
+| `8 {{key:×}}` | 0 | 0 | 0 | 24 | Multiply by 8 columns per row ($3 \times 8 = 24$ tiles on Shelf $X$) |
+| `8 {{key:ENTER}}` | 0 | 24 | 8 | 8 | First rectangle (24) rides up to Shelf $Z$; lift 8 rows to Shelf $Y$ |
+| `3 {{key:×}}` | 0 | 0 | 24 | 24 | Multiply rotated $8 \times 3 = 24$ on Shelf $X$; both 24s sit side by side! |
 
-Next, what happens when you stack flat rectangles on top of each other into a 3D box? That brings us to the **Associative Property (grouping 3 factors in any order: $(3 \times 4) \times 3 = 3 \times (4 \times 3)$)**. On your desk, start with two layers of $3 \times 4$ tiles ($12$ tiles per layer, $24$ tiles total), and then scale up on your SC-6 to a three-layer block box ($\text{Length} = 3,\; \text{Width} = 4,\; \text{Height} = 3 \implies 36\text{ blocks}$). Because each tile has $7.0\text{ mm}$ of visible height, 3 stacked tiles equal $21.0\text{ mm}$:
+Look at Waiting Shelf $Y$ and Ground Shelf $X$ at the bottom of that table: both hold `24`! You see with your own eyes and feel with your own hands that spinning a rectangle never changes its area.
+
+### Stacking Flat Rectangles into Three-Story Block Boxes
+
+What happens when you stack flat rectangles on top of each other to build a 3D box? That shows why you can group three multiplied dimensions in any order: $(3 \times 4) \times 3 = 3 \times (4 \times 3)$. On your desk, start with two layers of $3 \times 4$ tiles ($12$ tiles per layer, $24$ tiles total), and then scale up on your SC-6 to a three-layer block box ($\text{Length} = 3,\; \text{Width} = 4,\; \text{Height} = 3 \implies 36\text{ blocks}$):
 
 $$\text{Box Volume} = \text{Length} \times \text{Width} \times \text{Height} = (3 \times 4) \times 3 = 3 \times (4 \times 3) = 36\text{ blocks}$$
 
-Why do we practice two different ways of building and multiplying the exact same 3D block prism?
-- **Horizontal Floor-Layer First ($(3 \times 4) \times 3$):** First lay a flat $3 \times 4$ floor mat on your desk ($12$ tiles per horizontal floor), then stack $3$ identical floors upward ($12 \times 3 = 36$). Architects use this floor-layer approach when calculating total building size from one floor's footprint multiplied by the number of stories: pressing `{{res:sc6_04_operations_skip_counting_seq_01:keys}}` multiplies the $3 \times 4$ floor footprint into `12` and then scales by `3` stories to reach $X = \mathbf{36}$.
-- **Vertical Wall-Slice First ($3 \times (4 \times 3)$):** First stand up a vertical $4 \times 3$ wall slice ($12$ tiles per vertical slice), then line up $3$ identical wall slices side-by-side ($12 \times 3 = 36$). Cargo spacecraft planners use this wall-slice approach when counting how many vertical supply walls fit down the length of a module (`4 {{key:ENTER}} 3 {{key:×}} {{key:LASTX}} {{key:×}}` $\longrightarrow X = \mathbf{36}$—notice how `{{key:LASTX}}` pulls the second `3` right back onto the ground floor without re-typing it).
+Why do builders and engineers practice two different ways of slicing and multiplying the exact same 3D block prism? If you build the **horizontal floor-layer first** ($(3 \times 4) \times 3$), you lay a flat $3 \times 4$ floor mat on your desk ($12$ tiles per horizontal layer) and stack $3$ identical layers upward ($12 \times 3 = 36$)—the exact layer-by-layer method architects use when multiplying one story's floor area by the number of stories (`{{res:sc6_04_operations_skip_counting_seq_01:keys}}` multiplies the $3 \times 4$ footprint into `12` and then scales by `3` stories to reach $X = \mathbf{36}$). If instead you build the **vertical wall-slice first** ($3 \times (4 \times 3)$), you stand up a vertical $4 \times 3$ wall slice ($12$ tiles per slice) and line up $3$ identical wall slices side-by-side ($12 \times 3 = 36$)—the method cargo spacecraft planners use when counting how many vertical supply bays fit down the length of a module (`4 {{key:ENTER}} 3 {{key:×}} {{key:LASTX}} {{key:×}}` $\longrightarrow X = \mathbf{36}$, where `{{key:LASTX}}` pulls the second `3` right back onto Shelf $X$).
 
-| Keystroke | Register T | Register Z | Register Y | Register X (Display) |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:3}} {{key:ENTER}}` | 0 | 0 | 3 | 3 |
-| `{{key:4}} {{key:×}}` | 0 | 0 | 0 | 12 |
-| `{{key:3}} {{key:×}}` | 0 | 0 | 0 | 36 |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `3 {{key:ENTER}}` | 0 | 0 | 3 | 3 | Place length 3 on Shelf $X$ and lift a copy to Shelf $Y$ |
+| `4 {{key:×}}` | 0 | 0 | 0 | 12 | Multiply by width 4 to build one $3 \times 4 = 12$-tile layer on Shelf $X$ |
+| `3 {{key:×}}` | 0 | 0 | 0 | 36 | Multiply by height 3 to stack three 12-tile layers into 36 blocks |
 
-Both physical constructions use the exact same blocks and land on $X = 36$ with zero parentheses.
+Whether you build horizontal floors first or vertical walls first, the box uses the exact same 36 blocks.
 
-Finally, what do you do when a multiplication rectangle is too big to multiply in your head all at once—like $12 \times 12$? You use the **Distributive Property & Four-Part Area Models**, slicing the big rectangle along the **10-lines** into smaller rectangles whose areas you already know! Start on your desk by arranging a $4 \times 4 = 16$-tile square using four $2 \times 2$ color quadrants (4 white, 4 blue, 4 gold, and 4 gray tiles: $4 + 4 + 4 + 4 = 16$). Now imagine doing the exact same thing with a $12 \times 12$ square by splitting each side of $12$ into **$10 + 2$**. Slicing between the $10$ and the $2$ divides the big $12 \times 12$ square into four friendly color zones:
+### Slicing Wide Grids Along the Ten-Lines
+
+What do you do when a multiplication grid is too wide to multiply in your head all at once—like $12 \times 12$? You slice the big rectangle along the **10-lines** into smaller corner rectangles whose areas are super easy to multiply!
+
+Start on your desk by arranging a $4 \times 4 = 16$-tile square using four $2 \times 2$ color corners (4 white, 4 blue, 4 gold, and 4 gray tiles: $4 + 4 + 4 + 4 = 16$). Now imagine doing the exact same thing with a $12 \times 12$ square by splitting each side of $12$ into **$10 + 2$**. Slicing between the $10$ and the $2$ divides the big $12 \times 12$ square into four friendly color pieces:
 $$(10 + 2) \times (10 + 2) = (10 \times 10) + (10 \times 2) + (2 \times 10) + (2 \times 2) = 100 + 20 + 20 + 4 = 144$$
 
-| Partial Product Quadrant | Dimensions | Area Value |
+| Grid Corner Piece | Dimensions | Area Value |
 | :--- | :--- | :--- |
 | **Upper-Left ($10 \times 10$)** | $10\text{ rows} \times 10\text{ columns}$ | $100\text{ square units}$ |
 | **Upper-Right ($10 \times 2$)** | $10\text{ rows} \times 2\text{ columns}$ | $20\text{ square units}$ |
 | **Lower-Left ($2 \times 10$)** | $2\text{ rows} \times 10\text{ columns}$ | $20\text{ square units}$ |
 | **Lower-Right ($2 \times 2$)** | $2\text{ rows} \times 2\text{ columns}$ | $4\text{ square units}$ |
-| **Total Distributive Area** | $(10 + 2) \times (10 + 2) = 12 \times 12$ | **$144\text{ square units}$** |
+| **Total Grid Area** | $(10 + 2) \times (10 + 2) = 12 \times 12$ | **$144\text{ square units}$** |
 
-{{blocks:counting_tiles_distributive_4color|Four-Color Distributive Area: (10 + 2) x (10 + 2) = 144 Square Units across 4 Quadrants}}
+{{blocks:counting_tiles_distributive_4color|Splitting a 12 × 12 Square into Four Color Corners: (10 + 2) × (10 + 2) = 100 + 20 + 20 + 4 = 144}}
 
-On the SC-6, you can build both $(10 + 2)$ sides and multiply them with zero parentheses by pressing `{{res:sc6_04_operations_skip_counting_seq_02:keys}}`, which forms `12` on Shelf $Y$ and `12` on Shelf $X$ before multiplying them into $X = \mathbf{144}$.
+On the SC-6, you can build both $(10 + 2)$ sides and multiply them directly across your shelves via `{{res:sc6_04_operations_skip_counting_seq_02:keys}}`, which forms `12` on Shelf $Y$ and `12` on Shelf $X$ before multiplying them into $X = \mathbf{144}$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X (Display) |
-| :--- | :--- | :--- | :--- | :--- |
-| `10 {{key:ENTER}}` | 0 | 0 | 10 | 10 |
-| `{{key:2}} {{key:+}}` | 0 | 0 | 0 | 12 |
-| `10 {{key:ENTER}}` | 0 | 12 | 10 | 10 |
-| `{{key:2}} {{key:+}}` | 0 | 0 | 12 | 12 |
-| `{{key:×}}` | 0 | 0 | 0 | 144 |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `10 {{key:ENTER}}` | 0 | 0 | 10 | 10 | Place 10 on Shelf $X$ and lift a copy to Shelf $Y$ |
+| `2 {{key:+}}` | 0 | 0 | 0 | 12 | Add 2 to build the first side length ($10 + 2 = 12$) on Shelf $X$ |
+| `10 {{key:ENTER}}` | 0 | 12 | 10 | 10 | First side 12 rides up to Shelf $Z$; lift 10 onto Shelf $Y$ |
+| `2 {{key:+}}` | 0 | 0 | 12 | 12 | Add 2 to build the second side 12 on Shelf $X$; first 12 drops to Shelf $Y$ |
+| `{{key:×}}` | 0 | 0 | 0 | 144 | Multiply the two 12-unit sides ($12 \times 12 = 144$) on Shelf $X$ |
 
-Those four color zones turn a big $12 \times 12$ multiplication problem into four bite-sized pieces ($100 + 20 + 20 + 4 = 144$) you can add in your head! (And once you build the first `12` in Register $X$, you can also duplicate and square it in two clicks: `{{key:ENTER}} {{key:×}}` $\to$ `144`.)
+Those four color zones turn a big $12 \times 12$ multiplication problem into four bite-sized pieces ($100 + 20 + 20 + 4 = 144$) you can add in your head! (And once you build the first `12` on Shelf $X$, you can also duplicate and square it in two clicks: `{{key:ENTER}} {{key:×}}` $\to$ `144`.)
 
-Once you see that you can slice any rectangle into two smaller rectangles, you unlock two everyday kitchen-table shortcuts for multiplying two-digit numbers and store prices in your head:
-- **Splitting Tens and Ones ($8 \times 53$):** Suppose 8 buses each carry 53 campers. Instead of reaching for a pencil, picture a rectangle 8 rows tall and 53 columns wide, and slice the width into **$50 + 3$**. Now you have an $8 \times 50$ rectangle ($400$) next to an $8 \times 3$ rectangle ($24$):
-  $$8 \times 53 = 8(50 + 3) = (8 \times 50) + (8 \times 3) = 400 + 24 = \mathbf{424}$$
-  On your SC-6 stack, compute both rectangles and fuse them with zero parentheses: `8 {{key:ENTER}} 50 {{key:×}} 8 {{key:ENTER}} 3 {{key:×}} {{key:+}}` $\longrightarrow$ **`424`**.
-- **The Store Price-Tag Trick ($6 \times \$9.90$):** Why do stores price items at $\$9.90$ instead of $\$10.00$? Because `.90` looks smaller—and it looks annoying to multiply! To outsmart the price tag when buying 6 maker kits at $\$9.90$ each, pretend each kit costs a clean **$\$10.00$**, and then subtract the **$\$0.10$** overcharge on each of the 6 kits:
-  $$6 \times \$9.90 = 6(\$10.00 - \$0.10) = (6 \times \$10.00) - (6 \times \$0.10) = \$60.00 - \$0.60 = \mathbf{\$59.40}$$
-  On your SC-6 stack: `6 {{key:ENTER}} 10 {{key:×}} 6 {{key:ENTER}} 0.10 {{key:×}} {{key:-}}` $\longrightarrow$ **`59.40`**.
+Once you see that you can slice any rectangle into two smaller rectangles, you unlock two everyday kitchen-table shortcuts for multiplying two-digit numbers and store prices in your head. In fact, around **1650 BC**, an **ancient Egyptian scribe named Ahmes** wrote down this exact approach on a 17-foot scroll called the *Rhind Mathematical Papyrus*: the builders who raised the Great Pyramids of Egypt **never needed giant wall-chart multiplication tables!** Instead, they multiplied and divided huge numbers simply by **doubling, halving, and breaking numbers into friendly chunks ($10\text{s}$, $5\text{s}$, and $2\text{s}$)**—the exact same method you use when you split a wide rectangle into two friendly pieces on Shelf $Z$ and Shelf $Y$ of your stack.
+
+Say **8 buses** each carry **53 campers** ($8 \times 53$). Instead of reaching for a pencil, picture a rectangle 8 rows tall and 53 columns wide, and slice the width into **$50 + 3$** so you have an $8 \times 50$ rectangle ($400$) right next to an $8 \times 3$ rectangle ($24$):
+$$8 \times 53 = 8(50 + 3) = (8 \times 50) + (8 \times 3) = 400 + 24 = \mathbf{424}$$
+On your SC-6 stack, you compute both rectangles and fuse them across your shelves in one smooth run: `8 {{key:ENTER}} 50 {{key:×}} 8 {{key:ENTER}} 3 {{key:×}} {{key:+}}` $\longrightarrow$ **`424`**. You can use that same rectangle-slicing trick in reverse to outsmart store price tags! Have you ever noticed how stores price items at $\$9.90$ instead of $\$10.00$ because `.90` looks smaller—and looks annoying to multiply? To outsmart the price tag when buying **6 maker kits at $\$9.90$ each** ($6 \times 9.90$), pretend each kit costs a clean **$\$10.00$**, and then subtract the **$\$0.10$** overcharge on each of the 6 kits:
+$$6 \times 9.90 = 6(10.00 - 0.10) = (6 \times 10.00) - (6 \times 0.10) = 60.00 - 0.60 = \mathbf{59.40}$$
+On your SC-6 stack, `6 {{key:ENTER}} 10 {{key:×}} 6 {{key:ENTER}} 0.10 {{key:×}} {{key:-}}` lands right on **`59.40`**—and now let's see how that same grid thinking powers real engineering projects!
+
+### Tile Grids on Spacecraft, Scoreboards & Bedroom Walls
+Rectangular tile grids aren't just for math class—engineers, electricians, and homeowners use them every day to wire solar panels on spacecraft, count LEDs in a scoreboard, tally a jar of quarters, and figure out how much paint a bedroom wall needs. Look at a solar-panel wing on a Mars rover: it applies the exact quarter-turn rule we proved on your desk! Whether engineers mount the wing horizontally as **3 rows of 8 solar cells** (`{{res:sc6_04_operations_skip_counting_seq_03:keys}}` $\to$ **`{{res:sc6_04_operations_skip_counting_seq_03:value}}`**) or rotate it $90^\circ$ to fit inside a rocket fairing as **8 rows of 3 cells** (`{{res:sc6_04_operations_skip_counting_seq_04:keys}}` $\to$ **`{{res:sc6_04_operations_skip_counting_seq_04:value}}`**), the panel packs the exact same $X = 24$ solar cells.
+
+Now glance up at the glowing numbers on a gym scoreboard or a crosswalk countdown sign, where each digit is built from a matrix of **9 rows with 7 LEDs per row**. Place 3 rows of 7 counting tiles ($21$ tiles) on your desk mat to see one-third of the grid, then scale up to all 9 rows on the stack: entering `{{res:sc6_04_operations_skip_counting_seq_10:keys}}` lifts the 9 rows onto Shelf $Y$ and multiplies by 7 LEDs per row, giving **`{{res:sc6_04_operations_skip_counting_seq_10:value}}`** LEDs ($X = 63$, which you can immediately reverse-check with `{{key:LASTX}} {{key:÷}}` $\to 9$). You can even use rectangular grouping at home when you dump out a coin jar, count **36 quarters**, and want to multiply $36 \times 25\text{ cents}$ in your head in two seconds! Picture stacking quarters in groups of four on a table: **4 quarters make 1 dollar ($100\text{ cents}$)**, which means $25$ is simply $100 \div 4$. Instead of multiplying $36 \times 25$ the long way, divide $36$ by $4$ to find how many 4-quarter dollar stacks you have, and multiply by $100$ via `{{res:sc6_04_operations_skip_counting_seq_45:keys}}`: `36 {{key:ENTER}} 4 {{key:÷}}` groups 36 quarters into 9 whole dollars, and `100 {{key:×}}` turns 9 dollars into **`{{res:sc6_04_operations_skip_counting_seq_45:value}}`** cents ($X = 900$, or $\$9.00$).
+
+What if your project combines *two* rectangular grids at once? Imagine painting a rectangular bedroom wall that measures **$15\text{ ft} \times 12\text{ ft}$**, where a wide sliding closet doorway measuring **$18\text{ ft} \times 6\text{ ft}$** doesn't need paint. How do you find the painted wall area—written $(15 \times 12) - (18 \times 6)$—right across your shelves?
+
+Watch Shelf $Z$ act as your automatic upper shelf, holding the $180\text{ sq ft}$ wall area while you multiply the $108\text{ sq ft}$ doorway area on the bottom shelf: running `{{res:sc6_04_operations_skip_counting_seq_49:keys}}` subtracts the doorway from the wall to display **`{{res:sc6_04_operations_skip_counting_seq_49:value}}`** square feet.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `15 {{key:ENTER}} 12` | 0 | 0 | 15 | 12 | Put wall width 15 onto Shelf $Y$ and height 12 onto Shelf $X$ |
+| `{{key:×}}` | 0 | 0 | 0 | 180 | Multiply wall size: $15 \times 12 = 180$ on Shelf $X$ |
+| `18 {{key:ENTER}} 6` | 0 | 180 | 18 | 6 | Wall size 180 lifts to Shelf $Z$; put 18 on Shelf $Y$ and 6 on Shelf $X$ |
+| `{{key:×}}` | 0 | 0 | 180 | 108 | Multiply doorway size: $18 \times 6 = 108$; 180 drops to Shelf $Y$ |
+| `{{key:-}}` | 0 | 0 | 0 | 72 | Subtract doorway from wall: $180 - 108 = 72$ on Shelf $X$ |
+
+The final display reads $X = \mathbf{72}$ square feet of wall to paint (and if you were laying flooring across a $15\text{ ft} \times 12\text{ ft}$ bedroom *plus* an $18\text{ ft} \times 6\text{ ft}$ hallway, tapping `{{key:+}}` at the end instead of `{{key:-}}` adds $180 + 108 = 288\text{ sq ft}$ with the exact same shelf-to-shelf rhythm).
 
 ---
 
-### The Four-Color Map Theorem Station Game
-In 1976, mathematicians Kenneth Appel and Wolfgang Haken proved a famous puzzle that had stumped mapmakers for over a century: **no more than four colors are ever needed** to color any flat map so that no two bordering countries share the same color!
+### Francis Guthrie & the Four-Color Map Mystery
 
-**Station Game: "Four-Color Map Showdown"**
-* **Players:** 2 to 4 players.
-* **Rules:** Players take turns snapping a counting tile onto the table grid to expand a connected "country". A placed tile may **never share a flat side edge** with a tile of the same color (touching at diagonal corners is legal).
-* **The Challenge:** Try to trap your opponent so they think they need a 5th color—and discover why 4 colors can always solve the map.
+There is a second reason your Counting & Array Studio is molded in exactly **four colors** (White, Blue, Gold, and Slate Gray): it lets you play one of the greatest mathematical mysteries of all time right on your desk!
 
-## Addition & Subtraction Dynamics: Regrouping Without Fear
+In **1852**, a twenty-year-old London student named **Francis Guthrie** was coloring a map of the counties of England by hand. As he painted each county so that no two bordering counties shared the same color, he noticed something strange: no matter how twisting, crowded, or irregular the county borders were, he never needed a fifth crayon! Even if five or six regions swirled around a center point, **four colors** were always enough to keep every shared border distinct.
 
-Before diving into multi-digit multiplication and division, let's see how the SC-6 stack and your place-value blocks turn tricky multi-digit addition and subtraction into smooth, visual steps.
+Francis showed the puzzle to his younger brother Frederick, who brought it to the famous mathematician Augustus De Morgan. At first, every professor who heard Guthrie's question assumed it would take an afternoon to prove. Instead, the **Four-Color Map Theorem** baffled the greatest mathematical minds on Earth for **124 years**! Only in **1976** did mathematicians **Kenneth Appel and Wolfgang Haken** finally prove that four colors can color *any* flat map in the universe—using **1,200 hours** on an electronic supercomputer to check $1,936$ tricky map configurations!
 
-### Why Traditional "Column Borrowing" Feels Like a Trap
-In traditional arithmetic worksheets, multi-digit subtraction ($92 - 38$) is often taught as a mechanical rule:
-1. "Look at the ones column: $2 - 8$. You can't take 8 from 2."
-2. "Cross out the 9, make it an 8."
-3. "Put a little 1 next to the 2 to make it 12."
-4. "$12 - 8 = 4$, and $8 - 3 = 5$. Answer: 54."
+You can test Francis Guthrie's discovery with a friend right now in a game of **Four-Color Map Showdown**. Deal your 24 four-color tiles between two players and take turns snapping a tile onto a growing map on your desk so that **no two tiles of the same color ever share a flat side edge** (touching at diagonal corners is fair game). Try to surround an empty gap with three different colors so your partner is forced to place the fourth color—and see for yourself why four colors can conquer any map you build!
 
-When you just cross out digits on paper, it is easy to forget *why* it works: that "little 1" isn't just a mark—it is a physical **10-rod** unbundled into 10 unit cubes. Even better, on your SC-6 you can use two mental-math shortcuts that skip column borrowing altogether!
+### Making Change & Hopping Across Decades
 
-First is the **Round-Landmark Compensation Trick ($92 - 38$)**: imagine paying for a $38\text{-cent}$ sticker when you have $92\text{ cents}$ in your pocket. Instead of counting out 38 pennies, you hand the cashier **4 dimes ($40\text{ cents}$)**—leaving $92 - 40 = 52\text{ cents}$ in your pocket—and the cashier hands you **$2\text{ cents}$ change** ($52 + 2 = 54$)! Because $38$ is just $2$ steps shy of the round landmark $40$, subtracting $40$ and adding $2$ back skips borrowing completely:
+Notice how we just multiplied $6 \times 9.90$ by jumping to a round landmark ($6 \times 10.00 = 60.00$) and adjusting by the tiny difference ($\$0.60$), and how we multiplied $8 \times 53$ by splitting $53$ into tens and ones ($50 + 3$). That exact same habit—jumping to friendly round tens and adjusting—turns tricky two-digit subtraction and addition into two-step mental hops!
+
+When you subtract $92 - 38$ on a paper worksheet by crossing out the `9`, writing an `8`, and penciling a tiny `1` next to the `2`, it is easy to lose track of what is actually happening on your desk: you are unbundling one physical **10-rod** into 10 unit cubes. Even better, just like our store price-tag shortcut for multiplication, you can solve $92 - 38$ in your head by jumping to the nearest round decade!
+
+First is **Round-Landmark Compensation ($92 - 38$)**: imagine paying for a $38\text{-cent}$ sticker when you have $92\text{ cents}$ in your pocket. Instead of counting out 38 pennies one by one, you hand the cashier **4 dimes ($40\text{ cents}$)**—leaving $92 - 40 = 52\text{ cents}$ in your pocket—and the cashier hands you **$2\text{ cents}$ change** ($52 + 2 = 54$)! Because $38$ is just $2$ steps shy of the round landmark $40$, subtracting $40$ and adding $2$ back lands on the answer in two smooth hops:
 $$92 - 38 = (92 - 40) + 2 = 52 + 2 = 54$$
-Try that exact two-step rhythm on the SC-6 stack by pressing `{{res:sc6_04_operations_skip_counting_seq_55:keys}}`, which subtracts `40` to reach `52` and adds the `2` cents of change to display $X = \mathbf{54}$.
+Try that exact two-step rhythm on the SC-6 stack via `{{res:sc6_04_operations_skip_counting_seq_55:keys}}`, which subtracts `40` to reach `52` and adds the `2` cents of change to display $X = \mathbf{54}$.
 
-Second is **Hop-by-Hop Bridging ($47 + 38$)**: when adding $47 + 38$ in your head, split $38$ into three friendly hops ($30 + 3 + 5$). First add the 3 tens ($47 + 30 = 77$), next hop $+3$ to lock into the round decade $80$, and finally add the remaining $5$:
+Second is **Hop-by-Hop Decade Bridging ($47 + 38$)**: when adding $47 + 38$ in your head, split $38$ into three friendly hops ($30 + 3 + 5$). First add the 3 tens ($47 + 30 = 77$), next hop $+3$ to lock into the round decade $80$, and finally add the remaining $5$:
 $$47 + 30 = 77 \quad \longrightarrow \quad 77 + 3 = 80 \quad \longrightarrow \quad 80 + 5 = 85$$
 Watch the stack trace your mental hops as you key in `{{res:sc6_04_operations_skip_counting_seq_56:keys}}` to land on $X = \mathbf{85}$.
 
 ---
 
-## Constant Repeat: Rhythmic Skip-Counting Ladders (`{{key:REP}}`)
+## Rhythmic Skip-Counting Ladders & Doubling Chains
 
 How do you build rock-solid fluency with your times tables? Not by staring at a wall chart, but by climbing **rhythmic skip-counting ladders** ($7, 14, 21, 28 \dots$) while laying down rows of tiles on your desk!
 
-On an ordinary calculator, trying to skip-count with `+ 7 = = =` is fragile—if you bump any other key, the hidden constant vanishes. And on older scientific RPN calculators, locking a constant into the top shelf required pressing `{{key:ENTER}}` three times in a row (`7 ENTER ENTER ENTER`).
+On an ordinary keypad, trying to skip-count with `+ 7 = = =` is fragile—if you bump any other key, the hidden constant vanishes. And on older scientific RPN calculators, locking a constant into the top register required pressing `{{key:ENTER}}` three times in a row (`7 ENTER ENTER ENTER`).
 
-Your SC-6 makes skip-counting effortless with **Constant Repeat (`{{key:REP}}`)** (`{{key:g}}` then `{{key:x⇄y}}`). When you type a step size like `{{key:7}}` and press `{{key:REP}}`, the calculator copies `7` onto **all four floors of the elevator ($T, Z, Y, X$) at once**!
+Your SC-6 makes skip-counting effortless with **Constant Repeat (`{{key:REP}}`)** (`{{key:g}}` then `{{key:x⇄y}}`). When you type a step size like `7` and press `{{key:REP}}`, the calculator copies `7` onto **all four shelves of the stack ($T, Z, Y, X$) at once**!
 
-Why does filling all four shelves turn `{{key:+}}` into an unstoppable skip-counting ladder? Remember the Top-Shelf Secret from Chapter 2: whenever an operation drops the stack, **Penthouse Floor $T$ leaves a copy of itself behind**. So every single time you tap `{{key:+}}`, a fresh `7` rides down from the roof to Shelf $Y$, ready for your next tap!
+Why does filling all four shelves turn `{{key:+}}` into an unstoppable skip-counting ladder? Remember how **Top Shelf $T$** works from Chapter 2: whenever an operation drops the stack, **Top Shelf $T$ leaves a copy of itself behind**. So every single time you tap `{{key:+}}`, a fresh `7` rides down from the top shelf to Shelf $Y$, ready for your next tap!
 
-### Climbing Skip-Counting Ladders with `{{key:REP}}`
+### How Constant Repeat Turns Addition into Multiplication
 
-Let's start by climbing the **Sevens Ladder**—the same rhythm that counts the days in 1, 2, 3, or 10 weeks. First type `{{key:7}}` and press `{{key:REP}}` (`{{key:g}}` then `{{key:x⇄y}}`) so every shelf ($T, Z, Y, X$) holds `7`, and then tap `{{key:+}}` in a steady rhythm as you place 7-tile rows onto your desk:
+Let's start by climbing the **Sevens Ladder**—the same rhythm that counts the days in 1, 2, 3, or 10 weeks. First type `7` and press `{{key:REP}}` (`{{key:g}}` then `{{key:x⇄y}}`) so every shelf ($T, Z, Y, X$) holds `7`, and then tap `{{key:+}}` in a steady rhythm as you place 7-tile rows onto your desk:
 
-| Keystroke | Register T (Constant) | Register Z | Register Y | Register X (Ladder) |
-| :--- | :--- | :--- | :--- | :--- |
-| `{{key:7}}` | 0 | 0 | 0 | 7 |
-| `{{key:REP}}` | 7 | 7 | 7 | 7 |
-| `{{key:+}}` | 7 | 7 | 7 | 14 |
-| `{{key:+}}` | 7 | 7 | 7 | 21 |
-| `{{key:+}}` | 7 | 7 | 7 | 28 |
-| `{{key:+}}` | 7 | 7 | 7 | 35 |
-| `{{key:+}}` | 7 | 7 | 7 | 42 |
-| `{{key:+}}` | 7 | 7 | 7 | 49 |
-| `{{key:+}}` | 7 | 7 | 7 | 56 |
-| `{{key:+}}` | 7 | 7 | 7 | 63 |
-| `{{key:+}}` | 7 | 7 | 7 | 70 |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `7` | 0 | 0 | 0 | 7 | Type step size 7 (1 week = 7 days) onto Shelf $X$ |
+| `{{key:REP}}` | 7 | 7 | 7 | 7 | Copy step size 7 across all four shelves ($T, Z, Y, X$) |
+| `{{key:+}}` | 7 | 7 | 7 | 14 | 2 weeks = 14 days; Top Shelf $T$ feeds a fresh 7 down |
+| `{{key:+}}` | 7 | 7 | 7 | 21 | 3 weeks = 21 days; another 7 drops into Shelf $Y$ |
+| `{{key:+}}` | 7 | 7 | 7 | 28 | 4 weeks = 28 days (length of February in a common year) |
+| `{{key:+}}` | 7 | 7 | 7 | 35 | 5 weeks = 35 days on Shelf $X$ |
+| `{{key:+}}` | 7 | 7 | 7 | 42 | 6 weeks = 42 days on Shelf $X$ |
+| `{{key:+}}` | 7 | 7 | 7 | 49 | 7 weeks = 49 days ($7 \times 7$ square!) |
+| `{{key:+}}` | 7 | 7 | 7 | 56 | 8 weeks = 56 days on Shelf $X$ |
+| `{{key:+}}` | 7 | 7 | 7 | 63 | 9 weeks = 63 days on Shelf $X$ |
+| `{{key:+}}` | 7 | 7 | 7 | 70 | 10 weeks = 70 days on Shelf $X$ |
 
-Look at the `Register T (Constant)` column: `7` never leaves the Penthouse! You can march through the entire 7s table ($7, 14, 21, 28 \dots 70$) with single taps of `{{key:+}}`.
+Look at Top Shelf $T$ in the table above: `7` never leaves Top Shelf $T$! You can march through the entire 7s table ($7, 14, 21, 28 \dots 70$) with single taps of `{{key:+}}`.
 
 Once you have climbed the sevens, try the **Twelves (Dozens) Ladder**. The number 12 is everywhere in daily life—dozens of eggs, hours on a clock face, inches in a foot, and months in a year. Type `12`, press `{{key:REP}}`, and tap `{{key:+}}` to climb the Dozens Ladder all the way to a gross ($144$):
 $$\mathbf{24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144}$$
@@ -225,328 +220,241 @@ $$\mathbf{24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144}$$
 | $3\text{ Dozen} = 36\text{ eggs}$ | $7\text{ Dozen} = 84\text{ eggs}$ | $11\text{ Dozen} = 132\text{ eggs}$ |
 | $4\text{ Dozen} = 48\text{ eggs}$ | $8\text{ Dozen} = 96\text{ eggs}$ | $12\text{ Dozen} = \mathbf{144}\text{ (1 Gross!)}$ |
 
-What if you want to **double** a number over and over on a **Powers-of-Two Doubling Ladder**—the way dividing cells, computer memory chips, or laser grids grow? Because pressing `{{key:ENTER}}` duplicates whatever sits on Shelf $X$ up into Shelf $Y$, the two-key rhythm **`{{key:ENTER}} {{key:+}}`** doubles any number on the spot: start with `{{key:2}}`, then tap `{{key:ENTER}} {{key:+}}` to get **`4`**, `{{key:ENTER}} {{key:+}}` to get **`8`**, `{{key:ENTER}} {{key:+}}` to get **`16`**, `{{key:ENTER}} {{key:+}}` to get **`32`**, and keep climbing through **`64, 128, 256, 512, 1024`**! (Or use `2 {{key:REP}} {{key:×}} {{key:×}} {{key:×}}...` to multiply by 2 on every single tap!)
+### Steady Steps vs. The Chessboard Doubling Explosion
+What is the difference between **adding the same step size** over and over (`+ 3`) and **doubling a number** over and over (`× 2`)? Adding climbs like a steady staircase, while doubling starts tiny and then explodes.
+
+First, let's climb a steady **3s addition ladder**—like spacing fence posts or garden stepping stones **3 feet apart** along a path. Instead of typing `+ 3` over and over, Constant Repeat (`{{key:REP}}`) copies `3` into all four registers ($T, Z, Y, X$) so every tap of `{{key:+}}` adds another 3-foot step.
+
+Snap together 3 rows of 3 counting tiles ($9$ tiles) on your desk mat and count: *3, 6, 9 feet*. Now climb all 9 steps on the stack by pressing `{{res:sc6_04_operations_skip_counting_seq_11:keys}}`, which feeds a fresh `3` down from Top Shelf $T$ on every tap to reach **`{{res:sc6_04_operations_skip_counting_seq_11:value}}`** feet.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `3 {{key:REP}}` | 3 | 3 | 3 | 3 | First stepping stone at $3\text{ ft}$ (copy step size 3 across all 4 shelves) |
+| `{{key:+}}` | 3 | 3 | 3 | 6 | 2nd stone at $6\text{ ft}$; Top Shelf $T$ keeps a fresh 3 ready |
+| `{{key:+}}` | 3 | 3 | 3 | 9 | 3rd stone at $9\text{ ft}$; a fresh 3 drops down from Top Shelf $T$ |
+| `{{key:+}}` | 3 | 3 | 3 | 12 | 4th stone at $12\text{ ft}$ along the garden path |
+| `{{key:+}}` | 3 | 3 | 3 | 15 | 5th stone at $15\text{ ft}$ (halfway down the garden path) |
+| `{{key:+}}` | 3 | 3 | 3 | 18 | 6th stone at $18\text{ ft}$ along the path |
+| `{{key:+}}` | 3 | 3 | 3 | 21 | 7th stone at $21\text{ ft}$ along the path |
+| `{{key:+}}` | 3 | 3 | 3 | 24 | 8th stone at $24\text{ ft}$ along the path |
+| `{{key:+}}` | 3 | 3 | 3 | 27 | 9th stone at $27\text{ ft}$ at the end of the path |
+
+Look at the two-digit numbers in Shelf $X$ and add their digits together ($1+2=3$, $1+5=6$, $1+8=9$, $2+1=3$, $2+4=6$, $2+7=9$): the digit sums of every multiple of 3 always cycle through **3, 6, 9**.
+
+Now compare that calm, steady $+3$ walk with one of the most famous legends in the history of mathematics: **The Wheat and the Chessboard**. Over a thousand years ago in ancient India, when the mathematician Sissa invented the game of chess (*chaturanga*) on an $8 \times 8$ board of 64 squares, the king offered him any reward he wanted. Sissa asked for what sounded like a tiny bargain: put **1 grain of wheat** on the first square of the chessboard, **2 grains** on the second square, **4 grains** on the third square, **8 grains** on the fourth, **doubling** the wheat on each square ($1 \to 2 \to 4 \to 8 \dots$).
+
+The king laughed and ordered his granary servants to fetch a small sack of wheat. Why was the king about to get a huge surprise? Place 1 counting tile on your desk, double it to 2, then 4, then 8, then 16 tiles to feel how fast doubling overtakes adding. On your SC-6, you can double any number either by locking `2` across all four shelves (`2 {{key:REP}} {{key:×}} {{key:×}}...`) or by riding the two-key cloning rhythm (`{{key:ENTER}} {{key:+}}`). Keying in `{{res:sc6_04_operations_skip_counting_seq_17:keys}}` duplicates and adds each square's count until Shelf $X$ reaches **`{{res:sc6_04_operations_skip_counting_seq_17:value}}`** grains of wheat on the 7th square.
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `1 {{key:ENTER}}` | 0 | 0 | 1 | 1 | Square 1: Place 1 grain of wheat on the corner square (duplicate into $Y$) |
+| `{{key:+}}` | 0 | 0 | 0 | 2 | Square 2: $1 + 1 = 2$ grains of wheat |
+| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 4 | Square 3: $2 + 2 = 4$ grains of wheat |
+| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 8 | Square 4: $4 + 4 = 8$ grains of wheat |
+| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 16 | Square 5: $8 + 8 = 16$ grains of wheat |
+| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 32 | Square 6: $16 + 16 = 32$ grains of wheat |
+| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 64 | Square 7: $32 + 32 = 64$ grains of wheat |
+
+After just 6 doublings, the pile on the 7th square is already at $64$ grains ($2^6 = 64$)—more than twice our 9-step addition ladder ($27$). At the end of the first row of 8 squares, it is still just a handful of wheat ($128$ grains on the 8th square), so the king kept smiling. By the halfway mark of the chessboard (Square 32), however, the doubling reaches over $2\text{ billion}$ grains—enough wheat to fill several freight train cars. And by the 64th square of the chessboard, the wheat pile explodes past $18.4\text{ quintillion}$ grains ($18,446,744,073,709,551,615$ grains in all)—enough wheat to bury the entire country of India more than a meter deep and exceed all the wheat harvested in human history!
 
 ---
 
-## Quotient & Remainder: Remainders You Can Hold (`{{key:÷R}}`)
+## Whole Groups & Remainders You Can Hold
+
+In real life, sharing or packing items into equal groups doesn't always come out even—and when you are packing school buses, egg cartons, or 3D-printed parts, a leftover item is a physical object you can hold in your hand. Your SC-6 lets you see both the full groups and the leftovers at the exact same time across Shelves $X$ and $Y$.
 
 ### Why Decimals Hide the Story in Whole-Number Division
 
-Suppose 6 friends are sharing 43 strawberries equally, and you want to know: *"How many strawberries does each friend get, and how many are left over on the plate?"*
-- **The Regular Calculator Trap:** If you type `43 ÷ 6 =` on a phone or basic calculator, the screen spits out `7.16666666667`. What on earth is `0.16666666667` of a strawberry? That decimal hides the leftover strawberry!
-- **The SC-6 Remainder-You-Can-Hold Solution (`{{key:÷R}}`):** On your SC-6, press `43 {{key:ENTER}} 6 {{key:÷R}}` (`{{key:g}}` then `{{key:÷}}`). Because your screen has **two side-by-side shelves ($Y$ and $X$)**, the calculator shows you *both* whole-number answers at the exact same time:
-  - **Ground Shelf $X$ shows `7`:** the **Whole Quotient** (7 strawberries for each friend).
-  - **Waiting Shelf $Y$ holds `1`:** the **Exact Remainder** (1 leftover strawberry sitting on the plate!).
-- Want to bring the remainder to the front shelf? Tap `{{key:x⇄y}}`. Want to prove that $7 \times 6 + 1 = 43$ without re-typing a single digit? Tap `{{key:LASTX}} {{key:×}} {{key:+}}` and watch `43` snap right back!
+{{res:sc6_bus_divr:screenshot|Field Trip Bus Division on the SC-6: 145 Students ÷ 45-Seat Bus Gives 3 Full Buses (X) and 10 Leftover Riders (Y)}}
 
-> **How `{{key:÷R}}` Splits Division Across Your Two Shelves:**
-> Put your starting Total on Shelf $Y$ and your Group Size on Shelf $X$, then press `{{key:÷R}}`:
-> - **Shelf $X$** shows **Whole Groups (Quotient $Q$)**—how many complete groups you can build.
-> - **Shelf $Y$** holds **Leftovers (Remainder $R$)**—how many loose items remain.
+Suppose 145 students are boarding 45-seat buses for a museum trip (like on the screen above), or 23 counting tiles are being dealt into stacks of 5. If you divide with standard decimal division (`{{key:÷}}`), a long decimal tail like `3.222222...` hides how many whole buses are full and how many students still need a seat!
 
-### Hands-On Discovery: Dealing 23 Tiles into Groups of 5 (`{{key:÷R}}`)
+When you press **Quotient & Remainder (`{{key:÷R}}`)** (`{{key:g}}` then `{{key:÷}}`), your side-by-side $Y \mid X$ screen shows *both* whole-number answers at once:
+- **Shelf $X$** shows **Whole Groups (Quotient $Q$)**—how many complete groups you can build.
+- **Shelf $Y$** holds **Leftovers (Remainder $R$)**—how many loose items remain.
 
-Count out **23 Counting Tiles** onto your desk and deal them into stacks of **5 tiles each**. You can build **4 complete stacks of 5** ($4 \times 5 = 20$ tiles), and you will have **3 loose tiles** left over in your hand that aren't enough to make a 5th stack.
+### Dealing 23 Tiles into Groups of 5
 
-Now watch your SC-6 mirror the exact piles on your desk:
-1. Type `23 {{key:ENTER}} {{key:5}} {{key:÷R}}`. Right away, Ground Shelf $X$ displays **`4`** (your 4 complete stacks of 5), while Waiting Shelf $Y$ holds **`3`** (your 3 loose leftover tiles)!
-2. Tap `{{key:x⇄y}}` to swap the shelves and bring the **`3`** leftover tiles into $X$ (and tap `{{key:x⇄y}}` again if you want to put Quotient `4` back in $X$ and Remainder `3` back in $Y$).
-3. **The 3-Key Remainder Proof:** With Quotient `4` in $X$ and Remainder `3` in $Y$, tap `{{key:LASTX}} {{key:×}} {{key:+}}`—`LASTX` recalls your group size (`5`), `{{key:×}}` multiplies $4 \times 5 = 20$, and `{{key:+}}` adds the `3` waiting on Shelf $Y$ to restore all **`23`** tiles!
+Count out **23 Counting Tiles** onto your desk and deal them into stacks of **5 tiles each**. You can build **4 complete stacks of 5** ($4 \times 5 = 20$ tiles), and you have **3 loose tiles** left over in your hand:
+1. Type `23 {{key:ENTER}} 5 {{key:÷R}}`. Shelf $X$ displays **`4`** (4 full stacks), while Shelf $Y$ holds **`3`** (3 loose tiles)!
+2. Tap `{{key:x⇄y}}` to swap the **`3`** leftover tiles into $X$ (and tap `{{key:x⇄y}}` again to put Quotient `4` back in $X$ and Remainder `3` back in $Y$).
+3. **The 3-Key Remainder Proof:** With Quotient `4` in $X$ and Remainder `3` in $Y$, tap `{{key:LASTX}} {{key:×}} {{key:+}}`—recalling `5` from `LASTX`, multiplying $4 \times 5 = 20$, and adding the `3` on Shelf $Y$ to restore all **`23`** tiles!
 
-| Keystroke | Register T | Register Z | Register Y | Register X (Display) |
-| :--- | :--- | :--- | :--- | :--- |
-| `23 {{key:ENTER}}` | 0 | 0 | 23 | 23 |
-| `{{key:5}}` | 0 | 0 | 23 | 5 |
-| `{{key:÷R}}` | 0 | 0 | 3 | 4 |
-| `{{key:x⇄y}}` | 0 | 0 | 4 | 3 |
-
----
-
-### Four Real-Life Remainder Puzzles
-
-Once you see how `{{key:÷R}}` separates full containers in Register $X$ from leftover items in Register $Y$, everyday sharing and packaging puzzles click into place across four classic scenarios.
-
-First, imagine a family farm that gathers **147 fresh eggs** in the morning and packs them into **12-egg cartons** for the farmer's market. How many full cartons can they pack, and how many loose eggs are left over for breakfast?
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `147` | 0 | 0 | 0 | 147 |
-| `{{key:ENTER}}` | 0 | 0 | 147 | 147 |
-| `12` | 0 | 0 | 147 | 12 |
-| `{{key:÷R}}` | 0 | 0 | 3 | 12 |
-| `{{key:x⇄y}}` | 0 | 0 | 12 | 3 |
-
-Register $X$ first shows **`12` full cartons**, and tapping `{{key:x⇄y}}` brings the **`3` loose eggs** left over to the front ($(12 \times 12) + 3 = 144 + 3 = 147$).
-
-Second, step from the farm into a robotics lab where the team has **86 rechargeable lithium cells**, and each **rover battery pack requires 6 cells**. Keying in `86 {{key:ENTER}} {{key:6}} {{key:÷R}}` immediately shows **`14` full battery packs** in Register $X$ and **`2` spare cells** waiting in Register $Y$ (and a single tap of `{{key:x⇄y}}` brings `2` to the front).
-
-Third, what happens when the items being divided are people who cannot be left behind? Suppose an elementary school is taking **380 students and chaperones** to the science museum in chartered buses that hold **54 passengers each**. When you key in `380 {{key:ENTER}} 54 {{key:÷R}}`, Register $X$ shows **`7` full buses** ($7 \times 54 = 378$ people) and Register $Y$ shows **`2` people left over**. Pause and think: *can the school order just 7 buses?* No way—you can't leave 2 students waving from the school parking lot! Whenever a bus or van problem has a remainder greater than zero, you must round up by 1 and order **`8` buses** in total.
-
-Fourth, `{{key:÷R}}` even works when four siblings earn **$\$17.50$** raking autumn leaves and want to take whole-dollar bills first before splitting the coins! Keying in `17.50 {{key:ENTER}} {{key:4}} {{key:÷R}}` shows **`4.00`** in Register $X$ (each sibling gets four $\$1$ bills) and **`1.50`** in Register $Y$ (the remaining $\$1.50$ in quarters and dimes still to be shared!).
-
----
-
-### Three-Way Division & Interpreting Remainders in Real Life
-
-You can verify and interpret division three ways—and see why the most important step in any real-world division problem is knowing **what the remainder means**:
-
-1. **Long Division & The Division Algorithm Check:** Every whole-number division obeys the exact identity:
-   $$\text{Quotient} \times \text{Divisor} + \text{Remainder} = \text{Dividend}$$
-   After any `{{key:÷R}}` calculation on the SC-6, Quotient $Q$ sits in Register $X$, Remainder $R$ waits in Register $Y$, and the Divisor sits in `LASTX`—so tapping `{{key:LASTX}} {{key:×}} {{key:+}}` verifies the Division Algorithm in 3 clicks.
-2. **Partial Quotients & Equal-Groups Tile Array:** Deal your Counting Tiles into equal rows on the tabletop. The completed rows show the **Whole Quotient ($Q$)**, and the loose tiles that cannot fill a complete row are the **Remainder ($R$)**.
-3. **Interpreting the Remainder in Real Life (Round Up vs. Keep Whole Quotient):**
-   - **When You MUST Round Up ($Q + 1$): Robotics Tournament Vans:** Suppose **135 robotics students** are riding to a tournament in **8-seat vans**. Tap `135 {{key:ENTER}} 8 {{key:÷R}}` $\longrightarrow$ Quotient **`16`** full vans in $X$, Remainder **`7`** students in $Y$ (check: `{{key:LASTX}} {{key:×}} {{key:+}}` $\to 135$). Can you leave 7 teammates standing in the parking lot? Never! You must round up to **$16 + 1 = \mathbf{17\text{ vans}}$**.
-   - **When Leftovers Need One Extra Cache — The Clark's Nutcracker:** A Clark's nutcracker collects **165 whitebark pine seeds** and buries **9 seeds** in each underground cache (`165 {{key:ENTER}} 9 {{key:÷R}}` $\longrightarrow$ Quotient **`18`** full caches in $X$, Remainder **`3`** seeds in $Y$). To hide every single seed before winter snow falls, the bird digs **18 full caches** plus **1 final partial cache** holding the last 3 seeds—**`19` caches in all**.
-   - **When Only Full Groups Count — 3D Printer Spool Budgeting:** A maker-lab spool holds **$450\text{ meters}$** of PLA filament, and each 3D-printed chess knight requires **$16\text{ meters}$** (`450 {{key:ENTER}} 16 {{key:÷R}}` $\longrightarrow$ Quotient **`28`** in $X$, Remainder **`2`** meters in $Y$). Because $2\text{ m}$ of leftover filament cannot print a 29th knight, you can print **`28` complete chess knights** with **$2\text{ m}$ of PLA left over**. *(See Chapter 7 for how `{{key:÷R}}` also powers Euclid's GCF algorithm.)*
-
----
-
-## Last Number Recall: Self-Checking Without Re-Typing (`{{key:LASTX}}`)
-
-A true math detective never just hopes an answer is right—they **prove** it by running the operation in reverse. Every arithmetic operation has an opposite partner that undoes its work: **subtraction undoes addition**, **addition undoes subtraction**, **division undoes multiplication**, and **multiplication undoes division**.
-
-On a regular calculator, checking your answer means clearing the screen and typing the whole problem backward from memory. On the SC-6, **Last Number Recall (`{{key:LASTX}}`)** (`{{key:f}}` then `{{key:ENTER}}`) automatically saves a backup copy of whatever number was sitting on Shelf $X$ right before your last operation! That gives you three everyday superpowers:
-1. **Two-Tap Detective Check:** Tap `{{key:LASTX}}` to pull your last number back onto Shelf $X$ (while your answer lifts to Shelf $Y$), then tap the opposite operator (`{{key:-}}` after `{{key:+}}`, or `{{key:÷}}` after `{{key:×}}`) to restore your starting number with **zero re-typing**.
-2. **The Instant "Oops!" Undo:** Accidentally tapped `{{key:+}}` when you meant to tap `{{key:×}}`? Just tap `{{key:LASTX}} {{key:-}}` to undo the addition, then tap `{{key:LASTX}} {{key:×}}`!
-3. **Zero-Retype Factor Re-Use:** Whenever the next step of a problem needs the exact same number again (like multiplying by `60` minutes and then by `60` seconds), `{{key:LASTX}}` hands it back to you in a single click.
-
-### Seeing All Four Inverse Checks in Two Taps
-
-Watch how `{{key:LASTX}}` pairs each of the four operations with its opposite partner. To check **addition with subtraction** ($47 + 36 = 83 \longrightarrow 83 - 36 = 47$), first add `{{res:sc6_04_operations_skip_counting_seq_57:keys}}` to reach $X = \mathbf{83}$. Now tap `{{key:LASTX}}`: the calculator brings `36` back into Shelf $X$ while lifting `83` to Shelf $Y$, so one tap of `{{key:-}}` computes $83 - 36 = \mathbf{47}$ and confirms your starting number!
-
-| Keystroke | Register T | Register Z | Register Y | Register X |
-| :--- | :--- | :--- | :--- | :--- |
-| `47` | 0 | 0 | 0 | 47 |
-| `{{key:ENTER}}` | 0 | 0 | 47 | 47 |
-| `36` | 0 | 0 | 47 | 36 |
-| `{{key:+}}` | 0 | 0 | 0 | 83 |
-| `{{key:LASTX}}` | 0 | 0 | 83 | 36 |
-| `{{key:-}}` | 0 | 0 | 0 | 47 |
-
-That exact same two-tap rhythm works for the other three operations as well. To check **multiplication with division** ($15 \times 8 = 120 \longrightarrow 120 \div 8 = 15$), multiply `{{res:sc6_04_operations_skip_counting_seq_58:keys}}` to reach $X = \mathbf{120}$, then tap `{{key:LASTX}}` to pull `8` back into Shelf $X$ (lifting `120` to Shelf $Y$) and tap `{{key:÷}}` to see $120 \div 8 = \mathbf{15}$. To check **subtraction with addition** ($95 - 38 = 57 \longrightarrow 57 + 38 = 95$), subtract `{{res:sc6_04_operations_skip_counting_seq_59:keys}}` to get $X = \mathbf{57}$, then tap `{{key:LASTX}}` to recall the `38` you took away and tap `{{key:+}}` to put it back ($57 + 38 = \mathbf{95}$). And to check **division with multiplication** ($84 \div 7 = 12 \longrightarrow 12 \times 7 = 84$), divide `{{res:sc6_04_operations_skip_counting_seq_60:keys}}` to get $X = \mathbf{12}$, then tap `{{key:LASTX}}` to recall divisor `7` and tap `{{key:×}}` to multiply $12 \times 7 = \mathbf{84}$ and restore the whole group!
-
----
-
-## Extreme Math Challenges: Doubling to the Sky & Your Age in Seconds
-
-Think multiplication is just memorizing times tables? Try these three challenges on your SC-6 and test them on your family:
-
-### Challenge 1: What Happens If You Fold a Piece of Paper 10 Times with `{{key:REP}}`?
-A sheet of notebook paper is only $1\text{ layer}$ thick. Every time you fold it in half, the number of layers **doubles** ($\times 2$). Can you fold a piece of paper 10 times with your bare hands? Almost nobody can—and Constant Repeat (`{{key:REP}}`) shows why! When you seed the stack with `2` and tap `{{key:×}}` nine times in a row—running `{{res:sc6_04_paper_fold_10_rep:keys}}`—you watch a 10-step **Doubling Chain ($2 \times 2 \times 2\dots$)** climb to **`{{res:sc6_04_paper_fold_10_rep:value}}` layers** (thicker than a 1,000-page dictionary).
-
-Watch what happens to that single sheet of paper on each fold: first tap `2` `{{key:REP}}` to lock constant factor 2 into every stack floor ($T = Z = Y = X = 2$), priming the doubling ladder after the first fold. Tap `{{key:×}}` for the 2nd fold and the 2 layers double to 4 ($X = 4$) while constant 2 drops down from Floor $T$ to wait on Floor $Y$; tap `{{key:×}}` for the 3rd fold and 4 layers double to 8 ($X = 8$), already thicker than cardstock; tap `{{key:×}}` for the 4th fold to reach 16 layers ($X = 16$), resisting thumb pressure; tap `{{key:×}}` for the 5th fold to reach 32 layers ($X = 32$), thick like a deck of index cards; tap `{{key:×}}` for the 6th fold to reach 64 layers ($X = 64$), stiff like a wooden slat; tap `{{key:×}}` for the 7th fold to reach 128 layers ($X = 128$), impossible to crease with bare fingers; tap `{{key:×}}` for the 8th fold to reach 256 layers ($X = 256$), thick like a textbook; tap `{{key:×}}` for the 9th fold to reach 512 layers ($X = 512$), a full 500-sheet ream of copy paper; and tap `{{key:×}}` for the 10th fold to reach 1,024 layers ($X = 1024$), towering like a colossal phone directory! If you kept tapping `{{key:×}}` 10 more times ($20\text{ folds} = 1,048,576\text{ layers}$), that single sheet of paper would stand taller than the Empire State Building!
-
-### Challenge 2: How Many Seconds Old Are You Right Now?
-If you are **11 years old** in 5th grade, have you lived for a million seconds yet? What about a *billion* seconds? Let's chain the multiplication right on the stack ($11\text{ years} \times 365\text{ days} \times 24\text{ hours} \times 60\text{ minutes} \times 60\text{ seconds}$) without writing down a single intermediate subtotal: pressing `{{res:sc6_04_seconds_in_11_years:keys}}` scales your age through days, hours, minutes, and seconds to reveal **`{{res:sc6_04_seconds_in_11_years:value}}` seconds** on Ground Shelf $X$!
-
-Follow the journey across the stack: first tap `11` `{{key:ENTER}}` to set your 11-year age baseline onto the upper mezzanine shelf ($Y = 11$), then tap `365` `{{key:×}}` to fold in the days per year ($11 \times 365 = 4,015\text{ days}$ of sunrise and sunset resting on $X = 4015$). Next, tap `24` `{{key:×}}` to convert those days into hours ($4,015 \times 24 = 96,360\text{ hours}$ lived at $X = 96360$), tap `60` `{{key:×}}` to convert hours into minutes ($96,360 \times 60 = 5,781,600\text{ minutes}$ at $X = 5781600$), and finally tap `60` `{{key:×}}`—or even faster, `{{key:LASTX}} {{key:×}}` since `60` is already sitting in `LASTX`—to convert minutes into seconds ($5,781,600 \times 60 = 346,896,000\text{ seconds}$)! You actually passed $1,000,000\text{ seconds}$ when you were only $11.5\text{ days}$ old—and at 11 years old, you are already more than **one-third of the way to 1 Billion seconds**.
-
-### Challenge 3: Doubling Chains ($2 \times 2 \times 2\dots$) & Multiplying by 5s ($5 \times 5 \times 5\dots$)
-With exponents (`{{key:x²}}` and `{{key:yˣ}}`), repeated multiplication models both treehouse rope pulleys and bird flock waves:
-
-- **The #1 Exponent Watch-Out with Counting Tiles ($4^2 \neq 4 \times 2$):** Before pressing an exponent key, build a **$4 \times 4$ square** on your desk with 16 Counting Tiles. Notice that $4^2$ means **4 multiplied by itself** ($4 \times 4 = \mathbf{16}$ tiles in a square), **never** $4 \times 2 = 8$! On your SC-6, tap `4 {{key:x²}}` $\longrightarrow$ **`16`**.
-- **Compound Treehouse Rope Pulleys (Doubling Chains $2 \times 2 \times 2\dots$):** How can you hoist a heavy **$96\text{-pound}$ tool crate** up into a backyard treehouse using only **$3\text{ pounds}$** of pulling force? By rigging a compound **block-and-tackle pulley hoist** where each movable pulley loop shares the load between two ropes, **doubling your lifting power ($\times 2$)** with every stage. With **5 movable pulleys**, your pulling force doubles 5 times ($2 \times 2 \times 2 \times 2 \times 2 = 2^5 = 32$):
-  $$\text{Total Lifting Force} = 3\text{ pounds} \times (2 \times 2 \times 2 \times 2 \times 2) = 3 \times 32 = \mathbf{96\text{ pounds}}$$
-  Verify on your SC-6 stack: `2 {{key:ENTER}} 5 {{key:yˣ}} 3 {{key:×}}` $\longrightarrow$ **`96` pounds**.
-- **Starling Murmuration Waves (Multiplying by 5s $5 \times 5 \times 5\dots$):** When European starlings wheel across the sunset sky in a swirling *murmuration*, each bird coordinates its turns with its nearest neighbors. If 1 startled scout signals **5 neighbors**, who each signal **5 more** ($5 \times 5 = 25$), across **4 signaling waves** ($5 \times 5 \times 5 \times 5 = 5^4$), how many starlings turn together in a fraction of a second? Tap `5 {{key:ENTER}} 4 {{key:yˣ}}` $\longrightarrow$ **`625` starlings**!
-
----
-
-### Key Insights & Common Pitfalls
-
-- **The Field Trip Bus Ceiling Trap:** When dividing $145$ students across $40$-seat buses (`145 {{key:ENTER}} 40 {{key:÷R}}` $\to X=3,\; Y=25$), remember that $25$ people cannot be left behind {{cite:singapore2014}}. Any remainder greater than zero requires ordering an extra bus ($3 + 1 = 4\text{ buses}$).
-- **Array Rotation & The Commutative Law:** Rotating a $3 \times 8$ counting tile array into an $8 \times 3$ array proves that $\text{Rows} \times \text{Columns} = \text{Columns} \times \text{Rows}$ ($3 \times 8 = 8 \times 3 = 24$) without altering the physical tile count.
-- **The 3-Key Remainder Proof:** Following George Pólya's "look back" strategy {{cite:polya1945}}, after any `{{key:÷R}}` division, pressing `{{key:LASTX}} {{key:×}} {{key:+}}` multiplies the quotient by the divisor and adds the remainder from Register $Y$ to restore your exact starting dividend.
-- **Leftovers vs. Decimals in Pizza Sharing:** Four friends sharing $15$ pizza slices (`15 {{key:ENTER}} 4 {{key:÷R}}`) receive 3 slices each with 3 whole slices left in the box for tomorrow, avoiding awkward decimal cuts ($3.75$).
-
----
-
-## Quick Troubleshooting Guide
-
-The following diagnostic table addresses the ten most common beginner stumbling blocks encountered during operations, skip-counting, and remainder division:
-
-| Common Mistake / What You See | Why It Happened | How to Fix It on the Stack |
-|:---|:---|:---|
-| **1. In skip-counting, `{{key:REP}}` was not pressed; `{{key:+}}` adds 0** | Forgot to seed all registers with `{{key:REP}}`. | Type step constant, press `{{key:REP}}`. |
-| **2. In division, expected remainder but got decimal** | Pressed `{{key:÷}}` instead of integer division. | Use `{{key:÷R}}` for whole quotient & remainder. |
-| **3. Cannot see remainder after pressing `{{key:÷R}}`** | Remainder is in Register Y; Register X holds quotient. | Tap `{{key:x⇄y}}` to swap and inspect remainder. |
-| **4. Self-check inverse gave wrong answer** | Pressed wrong inverse operator. | Addition pairs with `-`; multiplication pairs with `÷`. |
-| **5. Doubling ladder did not double** | Did not press `{{key:ENTER}}` before `{{key:+}}`. | Press `{{key:ENTER}} {{key:+}}` to duplicate and add. |
-| **6. Multiplication product was too small** | Pressed `{{key:+}}` instead of `{{key:×}}`. | `{{key:×}}` multiplies; `{{key:+}}` only adds. |
-| **7. Subtraction gave negative number (e.g., -54)** | Entered second number before starting number. | Enter starting number, `{{key:ENTER}}`, then subtract. |
-| **8. Pressed `{{key:C}}` after first product in chained sum** | Believed screen had to be cleared. | Do not clear; the stack lifts automatically. |
-| **9. Field trip bus answer was short by one bus** | Forgot that any leftover requires an additional bus. | If remainder > 0, round up by 1 whole bus. |
-| **10. `LASTX` recalled unexpected number** | Executed another operation after error. | `LASTX` updates on **every** operation. |
-
-### Standard Decimal Division vs. `{{key:÷R}}` Remainder Division
-
-Now that you have mastered `{{key:÷R}}`, `{{key:x⇄y}}`, and the 3-key `{{key:LASTX}}` remainder proof, compare how much work it takes to find and verify a whole-number remainder on a standard calculator versus the SC-6:
-
-| Challenge / Equation | The Algebraic Calculator Trap (Standard Entry) | The StackCalc SC-6 + Manipulative Method | Keystroke Reduction | Live Stack Visibility | Learning Breakthrough |
-| :--- | :--- | :--- | :---: | :--- | :--- |
-| **Integer Division with Remainder:** $185 \div 12$ | `1 8 5 / 1 2 =` $\rightarrow 15.41666667$. To extract integer remainder: `- 15 = * 12 =` (18 keystrokes). Self-check requires retyping: `15 * 12 + 5 =` (28 total keystrokes). *Trap: Decimals obscure discrete items; scratch paper required.* | **SC-6 + 24-Tile Array Studio & Egg Cartons:** `185 {{key:ENTER}} 12 {{key:÷R}}` (7 keystrokes). Simultaneously displays Quotient $Q = 15$ in Register $X$ and Remainder $R = 5$ in Register $Y$. Tap `{{key:x⇄y}}` to swap. Self-check in 3 keys: `{{key:LASTX}} {{key:×}} {{key:+}}` $\rightarrow 185$. | **75% fewer keystrokes** (7 vs. 28) | **Dual Live Registers:** Quotient $Q$ and Remainder $R$ visible simultaneously on the daylight screen; zero scratch paper. | **Discrete Math Alignment:** Eliminates decimal confusion in discrete sharing problems; transforms long division into an intuitive physical packaging and self-checking workflow. |
-
----
-
-## Multiplication, Division, and Remainders in Action
-
-Rather than marching through disconnected multiplication and division drills, you will step into six real-world engineering and discovery studios—from a pixel-art rover lab and an alpine mountain rescue team to a space-station cargo bay, a museum night-watch detective club, a battle-bot workshop, and a mental-math sprint arena.
-
-### The Voxel Game Studio & Solar Rover Array Lab
-You are the lead level designer in a pixel-art game studio and solar-rover lab. Instead of counting power cells and LEDs one by one, you build rectangular arrays, rotate solar wings on your tabletop, and wire up arcade scoreboards—proving with your hands that multiplication is simply the area of a rectangle.
-
-To power an autonomous Mars rover, your first task at the lab workbench is to snap together 3 rows of 8 Archival White counting tiles on your desk mat to model a rectangular solar wing. Instead of pointing your finger to count all 24 cells one by one, multiplication measures the whole rectangle in a single snap (`3 × 8`): when you lift the 3 rows onto Shelf $Y$ and multiply by the 8 columns via `{{res:sc6_04_operations_skip_counting_seq_03:keys}}`, the stack drops to show **`{{res:sc6_04_operations_skip_counting_seq_03:value}}`** solar cells on Ground Shelf $X$.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `{{key:3}}` | 0 | 0 | 0 | 3 | Key in row count; value enters active Register $X$ |
-| `{{key:ENTER}}` | 0 | 0 | 3 | 3 | Lift row dimension to holding Register $Y$ |
-| `{{key:8}}` | 0 | 0 | 3 | 8 | Key in tiles per row into Register $X$ |
-| `{{key:×}}` | 0 | 0 | 0 | 24 | Multiply dimensions; stack drops to display total area ($X = 24$) |
-
-With Register $X$ displaying $24$, you know your solar wing packs 24 power cells.
-
-Next, to fit that solar wing inside a narrow vertical rocket nose cone, you grip your $3 \times 8$ tile array from the rover workbench and rotate it by $90^\circ$ on your tabletop so it stands tall. Where there were 3 rows of 8 tiles, your eyes now see **8 rows of 3 tiles**. Without adding or removing a single tile, does rotating the wing change its power output? You check the rotated $8 \times 3$ array on the stack by pressing `{{res:sc6_04_operations_skip_counting_seq_04:keys}}`, which parks 8 into Register $Y$, multiplies by 3 on the ground floor, and leaves **`{{res:sc6_04_operations_skip_counting_seq_04:value}}`** on the daylight screen ($X = 24\text{ cells}$)—proving the **Commutative Law** ($\text{Rows} \times \text{Columns} = \text{Columns} \times \text{Rows}$, or $3 \times 8 = 8 \times 3 = 24$) with your own hands!
-
-Now that the rover wing is packed into the nose cone, you walk over to the voxel game studio to wire up a custom LED scoreboard made of 9 rows with 7 RGB light tiles in each row. Place 3 rows of 7 counting tiles ($21$ tiles) on your desk mat to see one-third of the scoreboard, then scale up to all 9 rows on the stack: pressing `{{res:sc6_04_operations_skip_counting_seq_10:keys}}` lifts the 9 rows into Register $Y$ and multiplies by 7 LEDs per row, lighting up **`{{res:sc6_04_operations_skip_counting_seq_10:value}}`** glowing pixels ($X = 63$). *(Want to prove $63 \div 7 = 9$ without re-typing `7`? Tap `{{key:LASTX}} {{key:÷}}`!)*
-
-### The Mountain Rescue Rhythmic Ladder
-From the indoor game studio, you helicopter up to an alpine search-and-rescue base camp! Climbing steep mountain ridges and expanding aerial drone searches require two different kinds of ladders: an **additive skip-counting ladder** (`{{key:REP}}` with `{{key:+}}`) that climbs by the same vertical step every time, and a **geometric doubling ladder** (`{{key:ENTER}} {{key:+}}`) that doubles the search grid every hour.
-
-As your search-and-rescue team climbs a snowy ridge, the lead mountaineer plants a neon trail flag every 3 vertical meters. Instead of typing `+ 3` over and over, Constant Repeat (`{{key:REP}}`) copies `3` into all four registers ($T, Z, Y, X$) so every single tap of `{{key:+}}` climbs another 3-meter rung! Snap together 3 rungs of 3 counting tiles ($9$ tiles) on your desk mat and chant: *3, 6, 9 meters!* Now climb all 9 checkpoints on the stack by pressing `{{res:sc6_04_operations_skip_counting_seq_11:keys}}`, which feeds a fresh `3` down from the Penthouse roof on every tap to reach **`{{res:sc6_04_operations_skip_counting_seq_11:value}}`** meters.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `{{key:3}} {{key:REP}}` | 3 | 3 | 3 | 3 | Load constant 3 into all 4 registers to seed the rhythmic ladder |
-| `{{key:+}}` | 3 | 3 | 3 | 6 | 1st step: $3 + 3 = 6\text{ m}$; Register $T$ preserves constant 3 |
-| `{{key:+}}` | 3 | 3 | 3 | 9 | 2nd step: $6 + 3 = 9\text{ m}$; constant 3 drops from $T$ |
-| `{{key:+}}` | 3 | 3 | 3 | 12 | 3rd step: $9 + 3 = 12\text{ m}$; rhythmically advancing up the ridge |
-| `{{key:+}}` | 3 | 3 | 3 | 15 | 4th step: $12 + 3 = 15\text{ m}$; halfway station reached |
-| `{{key:+}}` | 3 | 3 | 3 | 18 | 5th step: $15 + 3 = 18\text{ m}$; constant 3 preserved continuously |
-| `{{key:+}}` | 3 | 3 | 3 | 21 | 6th step: $18 + 3 = 21\text{ m}$ elevation waypoint |
-| `{{key:+}}` | 3 | 3 | 3 | 24 | 7th step: $21 + 3 = 24\text{ m}$ elevation waypoint |
-| `{{key:+}}` | 3 | 3 | 3 | 27 | 8th step: $24 + 3 = 27\text{ m}$; 9th multiple reached |
-
-If you play pattern detective and add the digits of every two-digit number in Register $X$ ($1+2=3$, $1+5=6$, $1+8=9$, $2+1=3$, $2+4=6$, $2+7=9$), you discover that the digit sums of the 3s ladder always cycle through **3, 6, 9**!
-
-Once your climbers reach that $27\text{-meter}$ ridge outlook, dusk begins to fall, and the team launches aerial rescue drones! In Hour 0, a single scout drone scans a $1\text{ km}^2$ mountain sector. Every hour after that, backup drones join the formation and **double** the scanned area ($1 \to 2 \to 4 \to 8 \dots$). Place 1 counting tile on your desk, double it to 2, then 4, then 8, then 16 tiles to feel how much faster doubling grows than adding 3. Then ride the two-key doubling rhythm (`{{key:ENTER}} {{key:+}}`) across 6 hours on your SC-6: keying in `{{res:sc6_04_operations_skip_counting_seq_17:keys}}` duplicates and adds each hour's coverage until Ground Shelf $X$ reaches **`{{res:sc6_04_operations_skip_counting_seq_17:value}}`** square kilometers.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `{{key:1}} {{key:ENTER}}` | 0 | 0 | 1 | 1 | Enter starting search area of $1\text{ km}^2$; duplicate into $Y$ |
-| `{{key:+}}` | 0 | 0 | 0 | 2 | Hour 1: $1 + 1 = 2\text{ km}^2$ searched |
-| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 4 | Hour 2: Duplicate 2 and sum: $2 + 2 = 4\text{ km}^2$ |
-| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 8 | Hour 3: Duplicate 4 and sum: $4 + 4 = 8\text{ km}^2$ |
-| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 16 | Hour 4: Duplicate 8 and sum: $8 + 8 = 16\text{ km}^2$ |
-| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 32 | Hour 5: Duplicate 16 and sum: $16 + 16 = 32\text{ km}^2$ |
-| `{{key:ENTER}} {{key:+}}` | 0 | 0 | 0 | 64 | Hour 6: Duplicate 32 and sum: $32 + 32 = 64\text{ km}^2$ |
-
-By Hour 6, the fleet covers $64\text{ km}^2$ ($2^6 = 64$)!
-
-### The Space Station Cargo & Wildlife Expedition Depot
-Next, you report for duty as logistics quartermaster at the Space Station & Field Science Depot. Whenever a harvest of eggs or a basket of crystal geodes arrives at the loading dock, you have to pack them into fixed-size crates—and use **Quotient & Remainder (`{{key:÷R}}`)** to separate full containers (in Register $X$) from leftover items (in Register $Y$) in a single click.
-
-In the depot's hydroponic farm module, crew members collect 185 fresh eggs to pack into 12-egg cartons. Why would a regular calculator's decimal answer (`15.41666...`) slow you down at the packing table? Because you need to know how many *whole* 12-egg cartons are full and how many *whole* eggs are left over! To divide all 185 eggs by 12 and inspect the leftover eggs, press `{{res:sc6_04_operations_skip_counting_seq_19:keys}}`, which first places 15 full cartons in Register $X$ with 5 leftover eggs in Register $Y$, and then swaps **`{{res:sc6_04_operations_skip_counting_seq_19:value}}`** into the active display.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `185 {{key:ENTER}}` | 0 | 0 | 185 | 185 | Load 185 total harvested eggs into holding Register $Y$ |
-| `12` | 0 | 0 | 185 | 12 | Enter carton capacity 12 into active Register $X$ |
-| `{{key:÷R}}` | 0 | 0 | 5 | 15 | Integer divide: $X = 15$ full cartons, $Y = 5$ leftover eggs |
-| `{{key:x⇄y}}` | 0 | 0 | 15 | 5 | Swap registers to inspect remainder in active display ($X = 5$) |
-
-Register $X$ shows $15$ full cartons right after `{{key:÷R}}`, and tapping `{{key:x⇄y}}` reveals the $5$ leftover eggs ($Q = 15\text{ cartons}$, $R = 5\text{ eggs}$).
-
-Right next to the farm pod, a planetary geology team unloads 140 sparkling quartz geodes to pack into padded 6-slot carrying cases. How many 6-slot cases are completely filled, how many geodes remain loose, and how can you prove not a single geode rolled under the table? When you divide the 140 geodes into 6-slot cases and swap shelves by pressing `{{res:sc6_04_operations_skip_counting_seq_22:keys}}`, `{{key:÷R}}` evaluates $140 \div 6$ in a single stroke to put **23 full cases** in $X$ and **2 extra geodes** in $Y$ before `{{key:x⇄y}}` brings **`{{res:sc6_04_operations_skip_counting_seq_22:value}}`** to the front ($Q = 23\text{ cases}$, $R = 2\text{ geodes}$). Now run the **3-Key `{{key:LASTX}}` Proof:** right after `{{key:÷R}}`, tap `{{key:LASTX}} {{key:×}} {{key:+}}` and watch $(23 \times 6) + 2 = 140$ reappear on the ground floor!
-
-### The Science Museum Night-Watch Detective Club
-Seeing how `{{key:LASTX}}` proved your geode count at the space-station depot earns you a badge in the **Science Museum & Space Camp Night-Watch Detective Club**! Every Saturday evening after the museum doors close, your junior detective squad walks through eight exhibit halls to audit priceless artifacts—sunken pirate coins, rocket motors, megalodon shark teeth, astronaut ice cream, trading-card vaults, LEGO mosaic walls, coral reef tanks, and robotics bins.
-
-Your golden detective rule is simple: **every operation has an opposite partner that undoes it** (`+` and `-` undo each other; `×` and `÷` undo each other). By tapping `{{key:LASTX}}` followed by the opposite operation at every exhibit stop, you will prove every single tally is $100\%$ accurate without re-typing a single number—walking from the quiet dim light of the Maritime Hall to the bright steel gantries of the Space Camp Launch Bay and the glowing aquariums of the Living Ocean Gallery with your SC-6 as your trusted field logbook!
-
-Your night-watch rounds begin in the Maritime Hall in front of a sunken pirate ship's sea chest holding **68 silver doubloon coins** and **27 copper coins**. Once you add them together ($68 + 27 = 95$ coins in all), how do you prove your total is right without dumping the chest out and recounting? If $68$ silver plus $27$ copper really equals $95$, then taking away the $27$ copper coins (`{{key:LASTX}} {{key:-}}`) must leave the exact $68$ silver coins you started with! Add the coins and run your two-tap subtraction check by pressing `{{res:sc6_04_operations_skip_counting_seq_29:keys}}`, which reaches `95` and then subtracts the recalled `27` copper coins to restore **`{{res:sc6_04_operations_skip_counting_seq_29:value}}`** silver coins on Ground Shelf $X$.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `68 {{key:ENTER}}` | 0 | 0 | 68 | 68 | Load 68 silver coins into $X$ and duplicate into Register $Y$ |
-| `27 {{key:+}}` | 0 | 0 | 0 | 95 | Add 27 copper coins; sum 95 displays in active Register $X$ |
-| `{{key:LASTX}}` | 0 | 0 | 95 | 27 | Last Number Recall: Recall last number 27 into $X$; sum lifts to $Y$ |
-| `{{key:-}}` | 0 | 0 | 0 | 68 | Inverse subtraction: $95 - 27 = 68$; original silver count restored |
-
-When Register $X$ returns to $68$ in two taps, your 95-coin treasure count is locked in.
-
-From the pirate ship, your squad walks into the Space Camp Launch Bay for your second stop, where **18 launch boxes** each hold **6 solid-fuel model rocket motors**. Multiplying gives the total motors ($18 \times 6 = 108$). Why does `{{key:LASTX}} {{key:÷}}` prove that multiplication is right? Because if 18 boxes of 6 make 108 motors, then packing those 108 motors back into groups of 6 (`÷ 6`) must give you back all **18 boxes**! Multiply the 18 boxes by 6 motors and reverse-check with division by pressing `{{res:sc6_04_operations_skip_counting_seq_30:keys}}`: `18 {{key:ENTER}} 6 {{key:×}}` evaluates $108$ motors in Register $X$, and tapping `{{key:LASTX}} {{key:÷}}` recalls box size `6` into Register $X$, lifts `108` into Register $Y$, and divides to restore **`{{res:sc6_04_operations_skip_counting_seq_30:value}}`** boxes ($X = 18$).
-
-Next door is your third stop, the Paleontology Lab, where a velvet specimen drawer starts the week with **92 fossilized megalodon and mako shark teeth**. The curator moves **35 teeth** into a glass display case (`92 - 35 = 57` left in the drawer). How do you prove no fossils went missing during the move? Since subtraction took 35 teeth out, **addition puts them back**: tapping `{{key:LASTX}} {{key:+}}` reunites the 35 displayed teeth with the 57 in the drawer! When you subtract the 35 displayed teeth and reunite them by pressing `{{res:sc6_04_operations_skip_counting_seq_31:keys}}`, the stack first leaves 57 teeth in Register $X$ and then recalls `35` via `{{key:LASTX}} {{key:+}}` to restore all **`{{res:sc6_04_operations_skip_counting_seq_31:value}}`** fossils ($X = 92$).
-
-Passing the fossil vault, your squad checks the fourth stop in the Space Camp Commissary, where a shipping carton of **156 freeze-dried astronaut ice cream pouches** is divided into mission bags of **12 pouches each** (`156 ÷ 12 = 13` mission bags). How do you prove that 13 bags of 12 hold every single pouch? Since division split the carton into groups of 12, **multiplication (`{{key:LASTX}} {{key:×}}`) recombines the 13 bags of 12**! Divide all 156 pouches by 12 and recombine them by pressing `{{res:sc6_04_operations_skip_counting_seq_32:keys}}`: after `156 {{key:ENTER}} 12 {{key:÷}}` finds `13` mission bags, tapping `{{key:LASTX}} {{key:×}}` recalls bag size `12` and multiplies $13 \times 12$ in place to restore **`{{res:sc6_04_operations_skip_counting_seq_32:value}}`** pouches ($X = 156$).
-
-Now that you have tested all four inverse pairs on two-digit numbers, your detective squad heads upstairs to the **Grand Hobby & Maker Atrium** for your fifth stop, where the numbers grow into the hundreds! In the collector display case, two best friends have combined their collections for the weekend hobby fair: **348 Pokémon and sports cards** plus **185 superhero cards**. Add them together (`348 + 185 = 533`), then use `{{key:LASTX}} {{key:-}}` to separate the 185 superhero cards right back out: keying in `{{res:sc6_04_operations_skip_counting_seq_33:keys}}` produces 533 cards on Shelf $X$ and then recalls `185` to subtract in one motion, verifying **`{{res:sc6_04_operations_skip_counting_seq_33:value}}`** on the screen ($X = 348$).
-
-Across the atrium in the Maker Studio is your sixth stop, where kids have built a giant pixel-art LEGO mosaic wall arranged in **24 rows** with **16 baseplates in each row**. On paper, multiplying $24 \times 16 = 384$ and then doing long division $384 \div 16$ to check your work would take half a page of scribbling. On your SC-6, pressing `{{res:sc6_04_operations_skip_counting_seq_34:keys}}` multiplies $24 \times 16$ into 384 baseplates and then uses `{{key:LASTX}} {{key:÷}}` to divide 384 by 16 in a single keystroke, returning **`{{res:sc6_04_operations_skip_counting_seq_34:value}}`** rows ($X = 24$) with zero long division!
-
-Your seventh stop takes you into the Living Ocean Gallery, where the glowing coral reef tank holds **500 liters** of saltwater. During Saturday night maintenance, the aquarist pumps **187 liters** into a filter tub (`500 - 187 = 313` liters left in the main tank). Before leaving the gallery, simulate pumping those 187 filtered liters right back into the main tank by pressing `{{res:sc6_04_operations_skip_counting_seq_35:keys}}`: draining 187 liters leaves 313 liters in Register $X$, and tapping `{{key:LASTX}} {{key:+}}` recalls `187` and adds it back to restore all **`{{res:sc6_04_operations_skip_counting_seq_35:value}}`** liters ($X = 500$).
-
-For the eighth and final stop of your night-watch rounds, you enter the Robotics Testing Arena! The club has ordered a bulk tub of **225 rubber omni-wheels** and sorted them into team bins of **15 wheels each**. Watch what happens when you divide `225` by `15`—you get **15 bins** (because $15 \times 15 = 225$ is a perfect square!), and `{{key:LASTX}} {{key:×}}` multiplies $15 \times 15$ right back to `225`: pressing `{{res:sc6_04_operations_skip_counting_seq_36:keys}}` divides 225 into 15 bins and then multiplies the quotient by the recalled `15` to restore **`{{res:sc6_04_operations_skip_counting_seq_36:value}}`** omni-wheels ($X = 225$). Your eight-stop museum audit is complete!
-
-### The Battle-Bot & Maker-Lab Workshop
-With your detective badge earned, you join the morning build crew in the **Battle-Bot & Maker-Lab Workshop**. Real engineering builds never happen in isolated single steps: you have to combine two separate hardware subtotals using Floor $Z$, and chain multi-part multiplication directly into a `{{key:÷R}}` packaging check!
-
-At the main assembly bench, you first bolt together a robot chassis using **3 drive-motor brackets at $\$4$ each** AND **2 titanium armor plates at $\$5$ each**. Just like we discovered in Chapter 2, the 4-level stack solves $(3 \times 4) + (2 \times 5)$ with zero parentheses because your first subtotal ($\$12$) rides the elevator up to Floor $Z$ while you multiply the second subtotal ($\$10$) on the ground floor! Lay out 3 rows of 4 blue counting tiles ($\$12$) and 2 rows of 5 gold counting tiles ($\$10$), then chain both products on the stack by pressing `{{res:sc6_04_operations_skip_counting_seq_37:keys}}`, which brings the $\$12$ bracket subtotal and $\$10$ armor subtotal together into **`{{res:sc6_04_operations_skip_counting_seq_37:value}}`** dollars.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `{{key:3}} {{key:ENTER}} 4` | 0 | 0 | 3 | 4 | Place 3 brackets in $Y$, key in $\$4$ unit cost in $X$ |
-| `{{key:×}}` | 0 | 0 | 0 | 12 | Evaluate motor bracket subtotal: $3 \times 4 = \$12$ |
-| `{{key:2}} {{key:ENTER}} 5` | 0 | 12 | 2 | 5 | Stack lifts $\$12$ to $Z$; load 2 armor plates at $\$5$ |
-| `{{key:×}}` | 0 | 0 | 12 | 10 | Evaluate armor subtotal: $2 \times 5 = \$10$; subtotal 1 in $Y$ |
-| `{{key:+}}` | 0 | 0 | 0 | 22 | Combine both hardware subtotals: $\$12 + \$10 = \$22$ |
-
-With Register $X$ reading $22$, the total chassis cost is $\mathbf{\$22}$ with zero parentheses.
-
-Once the battle-bot chassis is bolted together, your crew steps out into the maker-lab courtyard to build **3 gravity-coaster cars**. Each car rolls on **12 wheel bogies**, and every bogie spins on **3 steel skate bearings** ($3 \times 12 \times 3$ bearings in all). If bearings are sold in tubes of **8**, how many full tubes are emptied, and how many tubes must you buy so every wheel can spin? When you chain the three multiplications right into `8 {{key:÷R}}` and swap registers by pressing `{{res:sc6_04_operations_skip_counting_seq_44:keys}}`, multiplying $3 \times 12 \times 3$ gives 108 bearings in all, `8 {{key:÷R}}` splits 108 into **13 full tubes** ($X = 13$) with **4 extra bearings** needed ($Y = 4$), and `{{key:x⇄y}}` brings **`{{res:sc6_04_operations_skip_counting_seq_44:value}}`** to the front—meaning your team must buy **14 tubes** in total!
-
-### Mental Math & Rapid Arithmetic Shortcuts
-For our final adventure of Chapter 4, welcome to the **High-Speed Math Discovery Studio**! In championship math relays, speed comes from spotting clever shortcuts—like turning $\times 25$ into quarters of a hundred, snapping out 11s remainders in one click, and cutting a doorway rectangle out of a wall rectangle with zero parentheses.
-
-First, how can you multiply $36 \times 25$ in your head in under two seconds? Picture quarters in your pocket: **4 quarters make 1 dollar ($100\text{ cents}$)**, which means $25$ is simply $100 \div 4$. So instead of multiplying $36 \times 25$ the long way, just divide $36$ by $4$ (to find how many 4-quarter dollars you have) and multiply by $100$! Divide 36 by 4 and scale by 100 on the stack by pressing `{{res:sc6_04_operations_skip_counting_seq_45:keys}}`: `36 {{key:ENTER}} 4 {{key:÷}}` splits 36 quarters into 9 whole dollars, and `100 {{key:×}}` turns 9 dollars into **`{{res:sc6_04_operations_skip_counting_seq_45:value}}`** cents ($X = 900$).
-
-Next up on the relay board is a division puzzle designed to trip up standard calculators: what is the whole quotient and exact remainder when you divide $3,458$ by $11$? On a regular calculator, $3,458 \div 11$ fills the screen with a repeating decimal tail ($314.363636\dots$) that hides the remainder. On your SC-6, pressing `{{res:sc6_04_operations_skip_counting_seq_48:keys}}` divides by `11` with `{{key:÷R}}` to put Quotient **`314`** in Register $X$ and Remainder **`4`** in Register $Y$, and then swaps **`{{res:sc6_04_operations_skip_counting_seq_48:value}}`** into Register $X$. *(Tap `{{key:LASTX}} {{key:×}} {{key:+}}` right after `{{key:÷R}}` to see $(314 \times 11) + 4 = 3,458$ snap right back!)*
-
-That brings us to our capstone challenge of the relay: suppose you are painting a rectangular studio wall measuring $15\text{ ft} \times 12\text{ ft}$, and that wall has a large rectangular sliding doorway measuring $18\text{ ft} \times 6\text{ ft}$ that doesn't need paint. How do you find the painted area—written $(15 \times 12) - (18 \times 6)$—without touching a parenthesis key? Watch Floor $Z$ act as your automatic upper balcony, holding the $180\text{ sq ft}$ wall area while you multiply the $108\text{ sq ft}$ doorway area on the ground floor: pressing `{{res:sc6_04_operations_skip_counting_seq_49:keys}}` subtracts the doorway from the wall to display **`{{res:sc6_04_operations_skip_counting_seq_49:value}}`** square feet.
-
-| Keystroke | Register T | Register Z | Register Y | Register X | Operational Commentary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `15 {{key:ENTER}} 12` | 0 | 0 | 15 | 12 | Enter first factor pair: 15 into $Y$, 12 into $X$ |
-| `{{key:×}}` | 0 | 0 | 0 | 180 | Evaluate wall area: $15 \times 12 = 180$ in Register $X$ |
-| `18 {{key:ENTER}} 6` | 0 | 180 | 18 | 6 | Stack lifts 180 to $Z$; enter 18 into $Y$, 6 into $X$ |
-| `{{key:×}}` | 0 | 0 | 180 | 108 | Evaluate doorway area: $18 \times 6 = 108$; 180 drops to $Y$ |
-| `{{key:-}}` | 0 | 0 | 0 | 72 | Subtract areas: $180 - 108 = 72$ in active display |
-
-The final display reads $X = \mathbf{72}$ square feet of wall to paint!
+| `23 {{key:ENTER}}` | 0 | 0 | 23 | 23 | Place 23 counting tiles on Shelf $X$ and lift a copy to Shelf $Y$ |
+| `5` | 0 | 0 | 23 | 5 | Type group size 5 onto Shelf $X$ while 23 waits on Shelf $Y$ |
+| `{{key:÷R}}` | 0 | 0 | 3 | 4 | Divide into stacks of 5: Shelf $X = 4$ full stacks, Shelf $Y = 3$ left over |
+| `{{key:x⇄y}}` | 0 | 0 | 4 | 3 | Swap shelves to bring the 3 leftover tiles to Shelf $X$ |
 
 ---
 
-## Where to Go Next: Companion Workbook Quests & Kitchen-Table Challenges
+### Packing Cartons, Rock Trays, and Book Crates Without Decimals
+Whenever a farm, a science classroom, or a book warehouse packs items into fixed-size containers, `{{key:÷R}}` separates full boxes (on Shelf $X$) from leftovers (on Shelf $Y$) in a single click.
 
-> *For 30 additional worked problems with full 4-register stack tables, see Chapter 4 of the [SC-6 Elementary Companion Problem & Activity Workbook](../../curriculum/sc6-elementary-companion-workbook.md).*
+Picture a family farm that collects **185 fresh chicken eggs** in the morning to pack into standard **12-egg cartons**. Entering `{{res:sc6_04_operations_skip_counting_seq_19:keys}}` places **15 full cartons** on Shelf $X$ with **5 leftover eggs** on Shelf $Y$, and then swaps **`{{res:sc6_04_operations_skip_counting_seq_19:value}}`** into the active display for breakfast:
 
-With all four whole-number operations and the SC-6's dedicated keys (`{{key:REP}}`, `{{key:÷R}}`, `{{key:x²}}`, `{{key:yˣ}}`, and `{{key:LASTX}}`) in hand, pair this chapter with the **[Big Ideas Math Middle School Supplement](../../curriculum/big-ideas-middle-school-sc6-workbook.md) — Unit 1, Sections 1.1–1.2 (Whole Number Operations, Remainders & Exponents)** and **Unit 4, Section 4.3 (The Distributive Property)**, along with **Unit 4 of the 12-Unit Curriculum Guide** and the **StackCalc Student Workbook**—or try these three family challenges right now:
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `185 {{key:ENTER}}` | 0 | 0 | 185 | 185 | Put 185 total harvested eggs onto Shelf $Y$ |
+| `12` | 0 | 0 | 185 | 12 | Put carton size 12 onto Workbench Shelf $X$ |
+| `{{key:÷R}}` | 0 | 0 | 5 | 15 | Divide into whole cartons: Shelf $X = 15$ full cartons, Shelf $Y = 5$ leftover eggs |
+| `{{key:x⇄y}}` | 0 | 0 | 15 | 5 | Swap shelves to bring the 5 leftover eggs to Shelf $X$ |
 
-1. **Remainder Detective — Robotics Vans & Clark's Nutcracker Caches:** Test both real-world remainder rules on your SC-6: first run the **Robotics Van Challenge** (`135 {{key:ENTER}} 8 {{key:÷R}}` $\to$ Quotient `16`, Remainder `7` $\implies$ **17 vans needed**), then run **Clark's Nutcracker Seed Caches** (`165 {{key:ENTER}} 9 {{key:÷R}}` $\to$ `18` full caches + `1` partial cache of `3` seeds = **19 caches dug**), and prove each one in 3 clicks with `{{key:LASTX}} {{key:×}} {{key:+}}`.
-2. **Hands-On Explorer — The Odd-Number L-Border & Treehouse Pulley Hoist:** First, use your 24-Tile Array Studio to wrap odd L-borders ($1 + 3 + 5 + 7 = 4^2 = 16$) and split $8 \times 53 = 8(50 + 3) = 424$ via the Distributive Property. Then calculate the **5-Pulley Treehouse Hoist** (`2 {{key:ENTER}} 5 {{key:yˣ}} 3 {{key:×}}` $\to \mathbf{96\text{ lb}}$) and **Starling Murmuration Wave** (`5 {{key:ENTER}} 4 {{key:yˣ}}` $\to \mathbf{625}$).
-3. **"Bet Your Family!" (The Ending-in-Five Squaring Showdown):** Challenge a parent or older sibling to race you on $45^2$, $75^2$, and $85^2$. While they reach for scratch paper, multiply the tens digit by its next neighbor ($4 \times 5 = 20 \to 2,025$; $7 \times 8 = 56 \to 5,625$; $8 \times 9 = 72 \to 7,225$), announce the answer out loud, and prove it on your SC-6 with `85 {{key:x²}}` (or `85 {{key:ENTER}} {{key:×}}`)!
+That same two-shelf split works for any packing size, from a classroom rock collection to a giant printing warehouse. In a geology lab sorting **140 polished rock and mineral samples** into **6-slot display trays**, dividing 140 by 6 and swapping shelves via `{{res:sc6_04_operations_skip_counting_seq_22:keys}}` puts **23 full trays** in $X$ and **2 extra rocks** in $Y$ before `{{key:x⇄y}}` brings **`{{res:sc6_04_operations_skip_counting_seq_22:value}}`** to the front ($Q = 23\text{ trays}$, $R = 2\text{ rocks}$). And at a book warehouse packing **3,458 paperback books** into **11-book shipping cartons**, ordinary decimal division ($3,458 \div 11 = 314.363636\dots$) hides the leftover books inside a repeating decimal tail, whereas running `{{res:sc6_04_operations_skip_counting_seq_48:keys}}` puts Quotient **`314`** (314 full cartons) on Shelf $X$ and Remainder **`4`** on Shelf $Y$ before swapping **`{{res:sc6_04_operations_skip_counting_seq_48:value}}`** onto Shelf $X$!
 
 ---
 
-## Chapter Summary & Looking Ahead
+### Rebuilding the Starting Pile & Interpreting Leftovers
 
-Whole-number operations on the SC-6 rest on five spatial and mechanical principles:
-1. **The Four-Color Array Studio & Commutative Symmetry:** Building rectangular tile arrays ($3 \times 8 = 24$) and rotating the tray $90^\circ$ ($8 \times 3 = 24$) to see why multiplication order never changes the total area.
-2. **The Distributive Property (Break-Apart Arrays):** Splitting wide arrays into friendly four-color quadrants ($(10 + 2) \times (10 + 2) = 100 + 20 + 20 + 4 = 144$) across Registers $Y$ and $X$.
-3. **Skip-Counting & Constant Replication (`{{key:REP}}`):** Filling Register $T$ with a constant step size and tapping `{{key:+}}` or `{{key:×}}` to climb arithmetic and geometric ladders step by step.
-4. **Integer Division with Remainder (`{{key:÷R}}`):** Separating full containers (quotient in Register $X$) from leftover items (remainder in Register $Y$) in a single keystroke without confusing decimal tails.
-5. **Self-Checking Without Re-Typing (`{{key:LASTX}}`):** Recalling the last operand from `LASTX` to verify every sum, difference, product, and quotient in reverse—or reuse factors—with zero re-typing.
+Looking back to test your answer in reverse is the surest way to know you solved a problem accurately. Every whole-number division follows one unbreakable rule when you deal your Counting Tiles into equal rows on the tabletop:
+$$\text{Whole Groups} \times \text{Group Size} + \text{Leftovers} = \text{Starting Total}$$
+Right after any `{{key:÷R}}` division on your SC-6, your Whole Groups ($Q$) sit on Shelf $X$, your Leftovers ($R$) wait on Shelf $Y$, and the Group Size is tucked inside `LASTX`—so tapping `{{key:LASTX}} {{key:×}} {{key:+}}` rebuilds your starting pile in 3 clicks!
 
-What happens when you have a remainder that cannot be left as a whole leftover—like slicing a single remaining pizza among four friends, or measuring a piece of craft wood down to the exact quarter-inch? Turn the page to **[Chapter 05: Fractions, Decimals, Percents & Proportional Towers](05-fractions-decimals-ratios.md)**, where you will step into the 84 mm Fraction Tower Studio, master two-dot fraction entry, and reduce fractions step-by-step with **Step-by-Step Simplify (`{{key:SIMP}}`)**.
+Even more important in real life is deciding **what to do with the leftovers** sitting on Shelf $Y$. Sometimes a remainder forces you to **round the quotient up by 1 ($Q + 1$)** so nothing gets left behind. Say **135 robotics students** are riding to a tournament in **8-seat vans**: tapping `135 {{key:ENTER}} 8 {{key:÷R}}` shows Quotient **`16`** full vans in $X$ and Remainder **`7`** students in $Y$ (check: `{{key:LASTX}} {{key:×}} {{key:+}}` $\to 135$). Can you leave 7 teammates standing in the parking lot? Never! You must round up to **$16 + 1 = \mathbf{17\text{ vans}}$**. The same thing happens when you slide **165 baseball or Pokémon trading cards** into clear plastic binder pages that hold **9 cards per page** (`165 {{key:ENTER}} 9 {{key:÷R}}` $\longrightarrow$ Quotient **`18`** full pages in $X$, Remainder **`3`** cards in $Y$): to protect every card without leaving 3 cards loose in a drawer, you need **18 complete 9-pocket pages** plus **1 extra page** for the last 3 cards—**`19` album pages in all**.
+
+Other times, **only full groups count ($Q$)** because a leftover piece is too small to build another whole item. Suppose a maker-lab spool holds **$450\text{ meters}$** of PLA filament, and each 3D-printed chess knight requires **$16\text{ meters}$** (`450 {{key:ENTER}} 16 {{key:÷R}}` $\longrightarrow$ Quotient **`28`** in $X$, Remainder **`2`** meters in $Y$). Because $2\text{ m}$ of leftover filament cannot print a 29th knight, you can print **`28` complete chess knights** with **$2\text{ m}$ of PLA left over**. *(See Chapter 7 for how `{{key:÷R}}` also powers Euclid's GCF algorithm.)*
+
+---
+
+## Proving Your Work in Reverse & NASA's Human Computers
+
+Every arithmetic operation has an opposite partner that undoes its work: **subtraction undoes addition**, **addition undoes subtraction**, **division undoes multiplication**, and **multiplication undoes division**.
+
+Because **Last Number Recall (`{{key:LASTX}}`)** (`{{key:f}}` then `{{key:ENTER}}`) always holds a backup copy of the number that was sitting on Shelf $X$ right before your last operation, you can pair `{{key:LASTX}}` with all four opposite operations to check your work in two clicks, undo an accidental button press (`{{key:LASTX}} {{key:-}}` after an unintended `{{key:+}}`), or reuse a repeated factor without typing it twice.
+
+### Four Opposite-Operation Pairs & the Two-Click Speed Sprint
+
+Because `{{key:LASTX}}` keeps your last input ready, every operation has a two-click reverse check (`{{key:+}}` $\leftrightarrow$ `{{key:LASTX}} {{key:-}}` and `{{key:×}}` $\leftrightarrow$ `{{key:LASTX}} {{key:÷}}`). Test all four directions right on your keypad: for **Addition $\leftrightarrow$ Subtraction**, key `{{res:sc6_04_operations_skip_counting_seq_57:keys}}` ($47 + 36 = \mathbf{83}$) and tap `{{key:LASTX}} {{key:-}}` to return to $\mathbf{47}$, or subtract first via `{{res:sc6_04_operations_skip_counting_seq_59:keys}}` ($95 - 38 = \mathbf{57}$) and tap `{{key:LASTX}} {{key:+}}` to restore $\mathbf{95}$. In the exact same way, for **Multiplication $\leftrightarrow$ Division**, multiply `{{res:sc6_04_operations_skip_counting_seq_58:keys}}` ($15 \times 8 = \mathbf{120}$) and tap `{{key:LASTX}} {{key:÷}}` to return to $\mathbf{15}$, or divide first via `{{res:sc6_04_operations_skip_counting_seq_60:keys}}` ($84 \div 7 = \mathbf{12}$) and tap `{{key:LASTX}} {{key:×}}` to restore $\mathbf{84}$.
+
+Watch the stack trace a complete two-click check when you combine **68 quarters** and **27 dimes** (`{{res:sc6_04_operations_skip_counting_seq_29:keys}}` $\to 95$ coins, then `{{key:LASTX}} {{key:-}}` $\to$ **`{{res:sc6_04_operations_skip_counting_seq_29:value}}`** quarters):
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `68 {{key:ENTER}}` | 0 | 0 | 68 | 68 | Put 68 quarters onto Shelf $X$ and lift a copy to Shelf $Y$ |
+| `27 {{key:+}}` | 0 | 0 | 0 | 95 | Type 27 dimes on Shelf $X$ and add to make 95 coins |
+| `{{key:LASTX}}` | 0 | 0 | 95 | 27 | Bring back 27 dimes onto Shelf $X$; sum 95 lifts to Shelf $Y$ |
+| `{{key:-}}` | 0 | 0 | 0 | 68 | Subtract to check our work: $95 - 27 = 68$ quarters restored |
+
+Now try a **Two-Click Speed Sprint** across seven quick workshop and hobby counts, solving each calculation forward and immediately snapping it back to its starting number with `{{key:LASTX}}`. Start by multiplying **18 packs of 6 model-rocket motors** and reverse-checking (`{{res:sc6_04_operations_skip_counting_seq_30:keys}}` $\to$ **`{{res:sc6_04_operations_skip_counting_seq_30:value}}`** packs), then divide **156 trail-mix pouches** into bags of **12** and reverse-check (`{{res:sc6_04_operations_skip_counting_seq_32:keys}}` $\to$ **`{{res:sc6_04_operations_skip_counting_seq_32:value}}`** pouches). Next, move **35 fossil shark teeth** out of a **92-tooth** display box and add them back (`{{res:sc6_04_operations_skip_counting_seq_31:keys}}` $\to$ **`{{res:sc6_04_operations_skip_counting_seq_31:value}}`** teeth), or combine **348 baseball cards** with **185 football cards** and subtract the second pile back out (`{{res:sc6_04_operations_skip_counting_seq_33:keys}}` $\to$ **`{{res:sc6_04_operations_skip_counting_seq_33:value}}`** baseball cards). Finish the sprint by checking **24 rows of 16 auditorium seats** (`{{res:sc6_04_operations_skip_counting_seq_34:keys}}` $\to$ **`{{res:sc6_04_operations_skip_counting_seq_34:value}}`** rows), draining and refilling **187 liters** on a **500-liter** reef aquarium (`{{res:sc6_04_operations_skip_counting_seq_35:keys}}` $\to$ **`{{res:sc6_04_operations_skip_counting_seq_35:value}}`** liters), and sorting **225 skateboard wheels** into trays of **15** (`{{res:sc6_04_operations_skip_counting_seq_36:keys}}` $\to$ **`{{res:sc6_04_operations_skip_counting_seq_36:value}}`** wheels).
+
+---
+
+### Folding Paper to the Sky & Your Age in Seconds
+
+Think multiplication is only for small one-digit grids? A sheet of notebook paper is only $1\text{ layer}$ thick, and every time you fold it in half, the number of layers **doubles** ($\times 2$). Can you fold a piece of paper 10 times with your bare hands? Almost nobody can—and Constant Repeat (`{{key:REP}}`) shows why! When you seed the stack with `2` and tap `{{key:×}}` nine times in a row—running `{{res:sc6_04_paper_fold_10_rep:keys}}`—you watch a 10-step **Doubling Chain ($2 \times 2 \times 2\dots$)** climb to **`{{res:sc6_04_paper_fold_10_rep:value}}` layers** (thicker than a 1,000-page dictionary).
+
+Watch how fast that single sheet of paper grows as you tap `{{key:×}}`. First tap `2` `{{key:REP}}` to lock `2` into all four shelves ($T = Z = Y = X = 2$), then press `{{key:×}}` three times for **Folds 1 to 4** to double the paper to `4`, `8` (thicker than cardstock), and `16` layers—where it already fights back against your thumb! Three more taps for **Folds 5 to 7** reach `32` layers (like a deck of index cards), `64` layers (stiff like a wooden ruler), and `128` layers, where it becomes impossible to fold further with bare hands. The final three taps for **Folds 8 to 10** hit `256` layers (a hardcover book), `512` layers (a whole 500-sheet pack of printer paper), and **`1,024` layers**—and if you tapped `{{key:×}}` 10 more times ($20\text{ folds} = 1,048,576\text{ layers}$), that single sheet of paper would stand taller than the Empire State Building!
+
+Now test a second big-number challenge: if you are **11 years old**, have you lived for a million seconds yet—or even a *billion* seconds? Chain the multiplication right on the stack ($11\text{ years} \times 365\text{ days} \times 24\text{ hours} \times 60\text{ minutes} \times 60\text{ seconds}$) via `{{res:sc6_04_seconds_in_11_years:keys}}` to reveal **`{{res:sc6_04_seconds_in_11_years:value}}` seconds** on Shelf $X$. Start by tapping `11 {{key:ENTER}} 365 {{key:×}}` to see **`4,015` days** of sunrises and sunsets, then tap `24 {{key:×}}` to turn those days into **`96,360` hours**. Next, tap `60 {{key:×}}` to reach **`5,781,600` minutes**, and tap `60 {{key:×}}` (or `{{key:LASTX}} {{key:×}}`!) to reach **`346,896,000` seconds**—proving that you actually passed $1,000,000\text{ seconds}$ when you were only $11\text{ and a half days}$ old, and that at age 11 you are already more than **one-third of the way to 1 Billion seconds**!
+
+### Exponents and Multi-Step Builds in the Workshop
+
+Instead of tapping `{{key:×}}` ten times in a row when you multiply the same number by itself, your keypad gives you two dedicated power keys: the Square key **`{{key:x²}}`** and the Exponent key **`{{key:yˣ}}`**. Before pressing an exponent key, build a **$4 \times 4$ square** on your desk with 16 Counting Tiles to see the #1 exponent rule with your own eyes: $4^2$ means **4 multiplied by itself** ($4 \times 4 = \mathbf{16}$ tiles in a square), **never** $4 \times 2 = 8$! On your SC-6, tapping `4 {{key:x²}}` immediately turns `4` into **`16`**.
+
+What happens when you multiply a number by itself four or five times using **`{{key:yˣ}}`**? Suppose you want to hoist a heavy **$96\text{-pound}$ tool crate** up into a backyard treehouse using only **$3\text{ pounds}$** of pulling force. By rigging a compound **block-and-tackle pulley hoist** where each movable pulley loop shares the load between two ropes, you **double your lifting power ($\times 2$)** with every stage. With **5 movable pulleys**, your pulling force doubles 5 times ($2 \times 2 \times 2 \times 2 \times 2 = 2^5 = 32$):
+$$\text{Total Lifting Force} = 3\text{ pounds} \times (2 \times 2 \times 2 \times 2 \times 2) = 3 \times 32 = \mathbf{96\text{ pounds}}$$
+Verify that on your SC-6 stack: `2 {{key:ENTER}} 5 {{key:yˣ}} 3 {{key:×}}` $\longrightarrow$ **`96` pounds**. Biologists see an even faster power chain in nature when European starlings wheel across the sunset sky in a swirling *murmuration*: if 1 startled scout bird signals **5 nearest neighbors**, who each signal **5 more** ($5 \times 5 = 25$), across just **4 signaling waves** ($5 \times 5 \times 5 \times 5 = 5^4$), tapping `5 {{key:ENTER}} 4 {{key:yˣ}}` shows **`625` starlings** turning together in a fraction of a second!
+
+Now bring rectangular arrays, Shelf $Z$, and `{{key:÷R}}` together at a maker workbench where you are wiring a solar rover and assembling wheel bearings for three soapbox go-karts.
+
+Say your rover chassis needs **3 corner light pods with 4 LEDs in each pod** ($3 \times 4 = 12$ LEDs) AND **2 headlight bars with 5 LEDs in each bar** ($2 \times 5 = 10$ LEDs)—Notice that those are the exact same $3 \times 4$ and $2 \times 5$ numbers as our Chapter 2 snack-bar order ($3$ pretzels at $\$4$ + $2$ smoothies at $\$5$), now arranged as physical tile grids! Lay out 3 rows of 4 blue counting tiles ($12$) and 2 rows of 5 gold counting tiles ($10$) on your desk. When you chain both arrays on the stack via `{{res:sc6_04_operations_skip_counting_seq_37:keys}}`, the first array (`12`) automatically rides up to Shelf $Z$ while you multiply the second array (`10`), then drops back to combine into **`{{res:sc6_04_operations_skip_counting_seq_37:value}}`** LEDs in all:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `3 {{key:ENTER}} 4` | 0 | 0 | 3 | 4 | Place 3 corner pods on Shelf $Y$ and 4 LEDs per pod on Shelf $X$ |
+| `{{key:×}}` | 0 | 0 | 0 | 12 | Multiply for the corner-pod array ($3 \times 4 = 12$ LEDs) |
+| `2 {{key:ENTER}} 5` | 0 | 12 | 2 | 5 | Lift 12 LEDs to Shelf $Z$ and 2 bars to Shelf $Y$; type 5 LEDs per bar |
+| `{{key:×}}` | 0 | 0 | 12 | 10 | Multiply for the headlight-bar array ($10$ LEDs) while 12 waits on Shelf $Y$ |
+| `{{key:+}}` | 0 | 0 | 0 | 22 | Combine $12 + 10 = 22$ total rover LEDs on Shelf $X$ |
+
+With Shelf $X$ reading $22$, you know the rover wiring harness powers $\mathbf{22}$ LEDs in total.
+
+Next, picture building **3 rolling soapbox carts** in the driveway with your friends. Each cart rolls on **12 roller-blade wheels**, and every wheel housing holds **3 steel ball bearings** ($3 \times 12 \times 3$ bearings in all). If skateboard bearings are sold in plastic tubes of **8 bearings each**, how many full tubes are used up, and how many extra bearings are needed from one more tube?
+
+Chain the three multiplications right into `8 {{key:÷R}}` and swap registers with `{{res:sc6_04_operations_skip_counting_seq_44:keys}}`: multiplying $3 \times 12 \times 3$ gives 108 bearings in all, `8 {{key:÷R}}` splits 108 into **13 full tubes** ($X = 13$) with **4 extra bearings** needed ($Y = 4$), and `{{key:x⇄y}}` brings **`{{res:sc6_04_operations_skip_counting_seq_44:value}}`** to the front—meaning you need to buy **14 tubes** in total so every wheel can spin.
+
+---
+
+### Katherine Johnson & NASA's Human Computers
+
+Long before astronauts trusted their lives to electronic flight computers, spaceflight depended on the sharp eyes and self-checking habits of mathematicians known as **Human Computers**—and none was more legendary than **Katherine Johnson**.
+
+Growing up in White Sulphur Springs, West Virginia in the 1920s, young Katherine loved patterns and numbers so much that she counted *everything* she passed: the steps up the road to school and church, the forks and plates she dried after dinner, and the bright stars appearing in the evening sky. Because she saw how numbers grouped into rows, columns, and skip-counting steps—just like your Counting Tiles and the **`{{key:REP}}`** key (`{{key:g}}` then `{{key:x⇄y}}`)—she skipped three grades in elementary school, entered high school at age ten, and graduated from college with highest honors in mathematics at age eighteen!
+
+In **1953**, Katherine Johnson joined the Flight Research Division at **Langley Research Center** in Hampton, Virginia (which soon became part of **NASA**). When America prepared to launch its first astronauts into space in **1961** and **1962**, a single rounding error or stray digit in a trajectory equation could mean an astronaut's capsule splashed down hundreds of miles away from the recovery ship in the Atlantic Ocean.
+
+In February **1962**, as astronaut **John Glenn** prepared to become the first American to orbit the Earth aboard *Friendship 7*, NASA installed massive room-sized IBM electronic computers to calculate his orbital path. Yet before John Glenn would climb into the nose cone of the Atlas rocket, he gave the flight engineers a famous four-word order:
+
+> *"Get the girl to check the numbers."*
+
+Glenn declared that if Katherine Johnson checked the trajectory equations by hand on her desktop mechanical calculator and said the numbers were good, then he was ready to fly. Over a day and a half of intense focus, Katherine worked through every multi-step orbital equation—and how did she and her fellow Langley mathematicians make sure not a single step had slipped?
+
+They **ran every calculation in reverse using the opposite operation**—the exact two-tap habit built into your **`{{key:LASTX}}`** key! Whenever Katherine Johnson and her fellow Langley mathematicians **added** two velocity vectors ($A + B = S$), they immediately subtracted the second vector ($S - B = A$) to prove the starting value reappeared without a single altered digit; whenever they **subtracted** a fuel burn ($A - B = D$), they added $B$ right back ($D + B = A$).
+
+In the same way, whenever they **multiplied** an engine burn time by an acceleration rate ($A \times B = P$), they immediately **divided** the product by $B$ to verify that it returned to the exact starting value—and whenever an orbital period left a **whole number of revolutions plus a remainder**, they multiplied the whole orbits by the period and added the remainder back (`{{key:LASTX}} {{key:×}} {{key:+}}`) to prove the total flight time matched down to the tenth of a second.
+
+From calculating the suborbital arc of Alan Shepard's *Freedom 7* in 1961 and verifying John Glenn's *Friendship 7* orbital trajectory in 1962 to computing the lunar-orbit rendezvous window that connected the Apollo 11 Lunar Module *Eagle* with the Command Module *Columbia* above the Moon in 1969, Katherine Johnson's pencil-and-calculator proofs never missed a mark. Every time you tap **`{{key:LASTX}}`** on your SC-6 followed by the opposite operation key—or look at a remainder on Shelf $Y$ and decide whether a real-world bus trip needs one extra vehicle so nobody is left behind—you are practicing the exact verification discipline that brought America's astronauts safely home to Earth!
+
+### John Napier's 1617 Diagonal Multiplication Strips
+
+Three hundred years before Katherine Johnson checked NASA rocket trajectories on her desktop calculator, a Scottish inventor named **John Napier** (1550–1617) asked himself why multiplying big numbers on paper felt so slow and tiring. He noticed that almost every mistake happened when people tried to multiply two digits *and* carry a tens digit in their head at the exact same time.
+
+In **1617**, Napier published a tiny book in Edinburgh called *Rabdologiae* (*Calculation with Rods*) that unveiled one of the cleverest pocket inventions in history: **Napier's Bones**! Instead of forcing you to memorize giant multi-digit products, Napier carved the single-digit times tables (`0` through `9`) onto vertical strips of wood or bone, and drew a **diagonal slash** across every box from the bottom-left corner to the top-right corner. That diagonal line split every two-digit answer into two separate triangles: the **tens digit** sat in the upper-left triangle, and the **ones digit** sat in the lower-right triangle!
+
+Why did that simple diagonal line make big multiplications effortless? Because when you place two or three of Napier's strips side by side—say, the **`3` strip**, the **`6` strip**, and the **`8` strip** to form the number **`368`**—the lower-right ones triangle of each column lines up along the exact same diagonal alley as the upper-left tens triangle of the column to its right!
+
+Let's see how a 17th-century astronomer used Napier's strips to multiply **$368 \times 7$** in five seconds flat, and then watch how the exact same place-value pieces combine on your SC-6 stack:
+
+1. **Read Row `7` Across the `3`, `6`, and `8` Strips:** On the **`3` strip**, Row 7 reads `2 / 1` ($3 \times 7 = 21$, or $21\text{ hundreds} = 2,100$). On the **`6` strip**, Row 7 reads `4 / 2` ($6 \times 7 = 42$, or $42\text{ tens} = 420$). On the **`8` strip**, Row 7 reads `5 / 6` ($8 \times 7 = 56$, or $56\text{ ones}$):
+   $$\text{Row } 7 \text{ on the } 3\text{-}6\text{-}8 \text{ Strips: } \quad \mathbf{2}\ /\ \mathbf{1} \quad \big| \quad \mathbf{4}\ /\ \mathbf{2} \quad \big| \quad \mathbf{5}\ /\ \mathbf{6}$$
+2. **Slide Down the Diagonal Alleys:** Starting at the far right, the ones triangle holds **`6`**. In the next diagonal alley to the left, the `2` tens from `4 / 2` and the `5` tens from `5 / 6` sit together ($2 + 5 = \mathbf{7}$ tens). In the next diagonal alley left, the `1` hundred from `2 / 1` and the `4` hundreds from `4 / 2` sit together ($1 + 4 = \mathbf{5}$ hundreds). And at the far left sits **`2`** thousands—spelling out **`2,576`** right before your eyes!
+3. **Verify the Three Place-Value Strips on Your Stack:** Key the three strips into your SC-6 one column at a time:
+   - First multiply the **`300` strip**: `300 {{key:ENTER}} 7 {{key:×}}` puts **`2,100`** on Shelf $X$.
+   - Next multiply the **`60` strip** and add it in: `60 {{key:ENTER}} 7 {{key:×}} {{key:+}}` adds $420$ to reach **`2,520`**.
+   - Finally multiply the **`8` strip** and add it in: `8 {{key:ENTER}} 7 {{key:×}} {{key:+}}` adds $56$ to land on **`2,576`**—matching `368 {{key:ENTER}} 7 {{key:×}}` $\to \mathbf{2,576}$ to the exact digit!
+
+You can make your own pocket set of Napier's strips at home using ten ruled index cards and a ruler: draw 9 boxes down each card, slice each box diagonally from bottom-left to top-right, and write the multiples of that card's top number (`1` through `9`) inside the triangles. Whenever you lay two cards side by side and compare their diagonal alleys against your **Four-Color Array Studio** and your SC-6 stack, you can see four hundred years of hands-on math history working together on your desk.
+
+---
+
+## Array & Remainder Challenges & Looking Ahead
+
+With 2D tile grids, skip-counting chains, whole-number remainders, and two-click reverse checks in your toolkit, try these three challenges with your family before we slice leftover remainders into exact fractions in Chapter 5.
+
+### Three Array, Doubling & Remainder Challenges
+
+Bring a penny, your Four-Color Array tiles, and your SC-6 to the table and put these three puzzles to the test:
+
+1. **The 20-Day Doubling Penny vs. $\$1,000$ Cash Bet (`2 {{key:REP}} {{key:×}}`):** Ask a family member at dinner whether they would rather take **$\$1,000$ cash** right now or start with **$1\text{ penny}$** and double it every day for **20 doublings** ($2\text{ pennies}$ after 1 doubling, $4\text{ pennies}$ after 2 doublings, $8\text{ pennies}$ after 3 doublings, and so on).
+   - Almost everyone picks the $\$1,000$ cash! Now hand them your SC-6, lock `2` into all four shelves with **`2 {{key:REP}}`**, and let them tap **`{{key:×}}`** nineteen times in a row to watch the pennies double across the screen: after 10 doublings they have **`1,024` pennies** ($\$10.24$), and after 20 doublings ($2^{20}$)—which you can also reach in a single click from Day 10's `1,024` by tapping the Square key **`{{key:x²}}`**!—the stack lands on **`1,048,576` pennies**, or **$\$10,485.76$**!
+2. **Roller-Coaster Cars vs. Terrarium Moss Jars (`{{key:÷R}}` Detective):** Compare two division stories where the remainder changes your decision:
+   - **Story A (Roller-Coaster Cars):** **115 theme-park riders** are waiting in line to board **8-seat roller-coaster cars**. Run `115 {{key:ENTER}} 8 {{key:÷R}}` to find how many full cars (`14` on Shelf $X$) and how many extra riders (`3` on Shelf $Y$) you have—and decide whether the operator must dispatch **`14`** or **`15`** cars so everyone gets a ride!
+   - **Story B (Terrarium Moss Jars):** A botany club has **190 polished river pebbles**, and each glass terrarium jar requires **12 pebbles** for its drainage layer (`190 {{key:ENTER}} 12 {{key:÷R}}`). How many *complete* terrarium jars can they build (`15` on Shelf $X$), how many pebbles are left in the bowl (`10` on Shelf $Y$), and what happens when you tap `{{key:LASTX}} {{key:×}} {{key:+}}`?
+3. **The 120-Block Prism Slicer & Four-Color Map Duel:** Calculate the volume of a 3D storage crate measuring **$4\text{ units wide} \times 6\text{ units deep} \times 5\text{ units tall}$** in three different grouping orders:
+   - **Floor Layer First:** `4 {{key:ENTER}} 6 {{key:×}} 5 {{key:×}}` ($\to \mathbf{120}$)
+   - **Side Wall First:** `6 {{key:ENTER}} 5 {{key:×}} 4 {{key:×}}` ($\to \mathbf{120}$)
+   - **Front Wall First:** `4 {{key:ENTER}} 5 {{key:×}} 6 {{key:×}}` ($\to \mathbf{120}$)
+   Once you prove all three slices build the exact same **`120`-block prism**, deal all 24 tiles from your Four-Color Array Studio between two players and play a round of **Four-Color Map Showdown**!
+
+---
+
+### From Whole Remainders to Sliced Fractions in Chapter 5
+
+That physical connection between grids of tiles and fast calculation inspired the very first mechanical calculators in history. In **1617**, Scottish mathematician **John Napier** carved the multiplication table onto ten portable strips of wood or ivory—soon nicknamed **Napier's Bones**—where each square was split by a diagonal line into a **tens triangle** on top and a **ones triangle** on the bottom. Six years later, in **1623**, German astronomer **Wilhelm Schickard** mounted Napier's multiplication cylinders above 10-tooth counting gears to build the world's first mechanical calculating clock for his friend Johannes Kepler.
+
+Every time you split an array into friendly color zones, climb a `{{key:REP}}` doubling chain, or keep whole quotients and remainders side by side on Shelves $Y$ and $X$ with `{{key:÷R}}`, you are using that exact same visual power:
+
+| Hands-On Array & Division Discovery | What You Build on Your Desk | How Your Stack Shows It (`Y` and `X`) |
+| :--- | :--- | :--- |
+| **Turn-Around Arrays (Commutative)** | Rotate a $3 \times 8$ tile rectangle $90^\circ$ into $8 \times 3$ | `3 {{key:ENTER}} 8 {{key:×}}` and `8 {{key:ENTER}} 3 {{key:×}}` both fuse into `24` |
+| **3D Box Slicing (Associative)** | Slice a $2 \times 3 \times 4$ block crate by layers or walls | `(2 × 3) × 4` and `2 × (3 × 4)` both build `24` cubes |
+| **Four-Corner Grid Split (Distributive)** | Split $14 \times 13$ into $100 + 30 + 40 + 12$ color zones | Hold each corner area on Shelf $Z$ and Shelf $Y$, then tap `{{key:+}}` to reach `182` |
+| **Difference of Two Squares ($a^2 - b^2$)** | Lift a $3 \times 3$ square out of a $5 \times 5$ square | `5 {{key:x²}} 3 {{key:x²}} {{key:-}}` leaves a $16$-tile border (`4 × 4`) |
+| **Constant Step & Doubling (`{{key:REP}}`)** | Stack equal step bars or double wheat on a chessboard | `3 {{key:REP}} {{key:+}}` climbs `3, 6, 9...`; `2 {{key:REP}} {{key:×}}` doubles `2, 4, 8, 16...` |
+| **Whole Groups & Leftovers (`{{key:÷R}}`)** | Pack $135$ students into $8$-seat vans ($16$ full, $7$ left) | `135 {{key:ENTER}} 8 {{key:÷R}}` puts remainder `7` on Shelf $Y$ and quotient `16` on Shelf $X$ |
+| **Reverse Proof Check (`{{key:LASTX}}`)** | Rebuild the starting pile from groups plus leftovers | `{{key:LASTX}} {{key:×}} {{key:+}}` multiplies `16 × 8 = 128` and adds `7` back to `135` |
+
+Look at how naturally all seven of those ideas fit together on your desk: multiplication is simply building a rectangular array of rows and columns, skip-counting and powers (`{{key:REP}}`) are climbing a rhythmic ladder of equal steps or doublings, and fair-share division (`{{key:÷R}}`) is unpacking a pile into equal rows and inspecting any leftover tiles on Waiting Shelf $Y$. Best of all, Katherine Johnson's two-tap `{{key:LASTX}}` check lets you verify every single answer in reverse before you move on.
+
+Up to now, whenever a division problem had leftovers—like 7 robotics students waiting for a van or 5 loose eggs at the farm—we kept those remainders whole because you cannot chop a student or a raw egg into pieces! But what happens when you have a leftover that *can* be sliced fairly—like sharing 3 warm loaves of bread among 4 bakers, or measuring a skateboard deck down to the exact eighth of an inch? Turn the page to **[Chapter 5: Fractions, Decimals, Percents & Ratios](05-fractions-decimals-ratios.md)** to step into the $84\text{ mm}$ Fraction Tower Studio and find out!
