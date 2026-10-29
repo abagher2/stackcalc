@@ -215,8 +215,8 @@ hide:
         <a href="../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-cyan-400 border border-cyan-500/30 hover:bg-slate-700">
           &bull; Free 102-Page Student Workbook (PDF) &darr;
         </a>
-        <a href="../../downloads/worksheets/bigideas_middle_school_sc6_teacher_coach_guide.pdf" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
-          &bull; Free 10-Page Coach's Guide (PDF) &darr;
+        <a href="../../downloads/stackcalc-curriculum-guide-letter.pdf" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
+          &bull; Free Unified Master Teacher &amp; Coach Guide (PDF) &darr;
         </a>
         <a href="../../curriculum/big-ideas-middle-school-sc6-workbook/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/30 hover:bg-slate-700">
           &bull; Full Curriculum &amp; Section Guide &rarr;

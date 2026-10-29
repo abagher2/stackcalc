@@ -56,7 +56,7 @@ StackCalc literature is built to drop directly into existing school district pac
     </div>
     <h3 class="text-xl font-bold text-white mb-2">Bridges in Mathematics</h3>
     <p class="text-xs text-slate-300 leading-relaxed mb-4">
-      Native support for Bridges visual models: Number Racks (Rekenrek) map directly to our 10-Frame Carry Shelves; Open Arrays and Tile Models map to the Algebra Factoring Stage; Double Number Lines match our Fraction Waterline Comparator.
+      Native support for Bridges visual models: Make-Ten and Base-10 Regrouping map directly to our Place Value Studio (<code>PLACE-01</code>) with Gold <code>[+1]</code> Carry Tokens; Multiplicative Factor Trees map to Prime Factor Studio (<code>PRIME-01</code>); Double Number Lines and Ratio Bars match our 84.0 mm Fraction Studio Comparator (<code>FRAC-01</code>).
     </p>
     <a href="alignment-matrix/#bridges-in-mathematics" class="text-xs font-mono text-emerald-400 hover:underline font-bold">Explore Bridges Cross-References &rarr;</a>
   </div>
@@ -64,16 +64,15 @@ StackCalc literature is built to drop directly into existing school district pac
   <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-700/60">
     <div class="flex items-center gap-2 mb-2">
       <span class="font-mono text-xs text-amber-400 font-bold uppercase">FRAMEWORK 03</span>
-      <span class="text-xs text-slate-400">&bull; Section-by-Section Supplement &amp; Scoreboard</span>
+      <span class="text-xs text-slate-400">&bull; Section-by-Section Supplement &amp; Coach Guide</span>
     </div>
     <h3 class="text-xl font-bold text-white mb-2">Big Ideas Math (Larson &amp; Boswell)</h3>
     <p class="text-xs text-slate-300 leading-relaxed mb-4">
-      Aligned section-by-section with Big Ideas Math concepts, vocabulary, and methods across 10 units and 45 sections. Includes our <strong>108-Page Spiral Student Practice Supplement</strong> (Front Matter <code>pp. i–ii</code>, 10 Chapter Story Openers, 90 worksheets = Practice A &amp; B per section, 90 Two-Method Worked Examples showing how to earn <code>+10</code> vs. <code>+20</code> Double Points, 900 open-workspace practice problems, and 4 Back Matter Reference Appendices), <strong>10 Separate Printable Chapter PDFs (Units 1–10)</strong> for easy home &amp; classroom printing, the <strong>14-Page Spiral Chapter Coach's Guide</strong>, and the 2-piece <strong>SC-6 Quest Scoreboard &amp; +10 Token Kit (<code>QUEST-01</code>)</strong>.
+      Aligned section-by-section with middle school standards, vocabulary, and methods across 10 units and 45 sections. Includes our <strong>115-Page Spiral Student Practice Supplement</strong> (Title Page <code>p. i</code>, Copyright Page <code>p. ii</code>, Table of Contents <code>p. iii</code>, Student Preface <code>p. iv</code>, 10 Chapter Story Openers, 90 worksheets = Practice A &amp; B per section, 90 Two-Method Worked Examples showing how to earn <code>+10</code> vs. <code>+20</code> Double Points, 900 open-workspace practice problems, and Reference Appendices A–E + Student Self-Check Key), <strong>10 Separate Printable Chapter PDFs (Units 1–10)</strong> for easy home &amp; classroom printing, and the <strong>16-Page Spiral Chapter Coach's Guide</strong>.
     </p>
     <div class="flex flex-wrap gap-4">
-      <a href="big-ideas-middle-school-sc6-workbook/" class="text-xs font-mono text-amber-400 hover:underline font-bold">Open 108-Page Big Ideas Supplement &amp; 10 Chapter PDFs &rarr;</a>
+      <a href="big-ideas-middle-school-sc6-workbook/" class="text-xs font-mono text-amber-400 hover:underline font-bold">Open 115-Page Big Ideas Supplement &amp; 10 Chapter PDFs &rarr;</a>
       <a href="https://www.lulu.com/spotlight/stackcalc" class="text-xs font-mono text-sky-400 hover:underline font-bold">Order Spiral Workbook on Lulu ↗</a>
-      <a href="../products/quest-scoreboard/" class="text-xs font-mono text-emerald-400 hover:underline font-bold">Explore QUEST-01 Scoreboard &rarr;</a>
       <a href="alignment-matrix/#big-ideas-math" class="text-xs font-mono text-slate-400 hover:underline font-bold">Standards Matrix &rarr;</a>
     </div>
   </div>
@@ -85,7 +84,7 @@ StackCalc literature is built to drop directly into existing school district pac
     </div>
     <h3 class="text-xl font-bold text-white mb-2">Singapore Dimensions Math</h3>
     <p class="text-xs text-slate-300 leading-relaxed mb-4">
-      Direct implementation of Singapore Math’s Concrete-Pictorial-Abstract progression. Fraction Studio blocks serve as physical bar models (tape diagrams); Math Dominoes provide tactile Number Bonds; and RPN stacks mirror mental math branching.
+      Direct implementation of Singapore Math’s Concrete-Pictorial-Abstract progression. Fraction Studio blocks (<code>FRAC-01</code>) serve as physical 84.0 mm bar models (tape diagrams); Place Value Studio trays (<code>PLACE-01</code>) model tactile Number Bonds and Make-Ten regrouping; and RPN stacks mirror mental math branching.
     </p>
     <a href="alignment-matrix/#singapore-dimensions" class="text-xs font-mono text-purple-400 hover:underline font-bold">Explore Singapore Dimensions &rarr;</a>
   </div>
@@ -178,14 +177,14 @@ All StackCalc educational literature is licensed under Creative Commons with **u
     <div>
       <span class="font-mono text-xs text-amber-400 font-bold uppercase">BOOK 1 &amp; BOOK 2 (K–12)</span>
       <h4 class="text-lg font-bold text-white mt-1 mb-2">Unified Teacher Guide + Student Lab Workbook</h4>
-      <p class="text-xs text-slate-400 mb-4">Book 1: 56-page Unified Master Teacher's Guide by Concept (including Front Matter <code>pp. i–viii</code> on RPN onboarding, Studio Block Games &amp; Blender Orthographic Teacher Checks). Book 2: 29-page K–12 Hands-On Math Lab Student Workbook (with Self-Check Answer Key), plus 12 standalone 4-page Unit Packets.</p>
+      <p class="text-xs text-slate-400 mb-4">Book 1: 57-page Unified Master Teacher's Guide by Concept (including Title Page &amp; Educator Prefaces <code>pp. i–iii</code> on stack motivation &amp; district textbook integration, 3-Minute RPN Primer <code>pp. v–vi</code>, and Studio Block Games &amp; Orthographic Checks <code>pp. vii–ix</code>). Book 2: 30-page K–12 Hands-On Math Lab Student Workbook (with Student Preface &amp; Appendix A Self-Check Answer Key), plus 12 standalone 4-page Unit Packets.</p>
     </div>
     <div class="space-y-2">
       <a href="../downloads/stackcalc-curriculum-guide-letter.pdf" class="w-full py-2 text-center rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition block">
-        Book 1: Master Teacher Guide (56 pp.) &darr;
+        Book 1: Master Teacher Guide (57 pp.) &darr;
       </a>
       <a href="../downloads/stackcalc-student-lab-workbook-letter.pdf" class="w-full py-2 text-center rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono text-xs font-bold transition block">
-        Book 2: K–12 Student Lab Workbook (29 pp.) &darr;
+        Book 2: K–12 Student Lab Workbook (30 pp.) &darr;
       </a>
       <a href="teacher-guide/#print-individual-curriculum-units-units-0112-separate-pdfs" class="w-full py-2 text-center rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition block">
         Print Individual Units (01–12) &rarr;
@@ -196,15 +195,15 @@ All StackCalc educational literature is licensed under Creative Commons with **u
   <div class="p-6 rounded-xl bg-[#11141A] border border-white/10 flex flex-col justify-between">
     <div>
       <span class="font-mono text-xs text-purple-400 font-bold uppercase">BOOK 3 &amp; BOOK 4 (MIDDLE / SPEED)</span>
-      <h4 class="text-lg font-bold text-white mt-1 mb-2">Big Ideas Workbook + Speed Trials</h4>
-      <p class="text-xs text-slate-400 mb-4">Book 3: 114-page Big Ideas Middle School Student Workbook (900 problems + Student Self-Check Key) &amp; 10 Chapter PDFs. Book 4: 21-page Student Speed &amp; Proficiency Trials Workbook.</p>
+      <h4 class="text-lg font-bold text-white mt-1 mb-2">Middle School Math Lab + Speed Trials</h4>
+      <p class="text-xs text-slate-400 mb-4">Book 3: 115-page Middle School Math Lab Student Workbook (900 two-method problems + Appendix E Student Self-Check Key) &amp; 10 Chapter PDFs. Book 4: 24-page Student Speed &amp; Proficiency Trials Workbook (Title, Copyright, Contents, Competitor Preface &amp; Appendices A–C).</p>
     </div>
     <div class="space-y-2">
       <a href="../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" class="w-full py-2 text-center rounded bg-purple-500 hover:bg-purple-400 text-slate-950 font-mono text-xs font-bold transition block">
-        Book 3: Big Ideas Student Workbook (114 pp.) &darr;
+        Book 3: Middle School Workbook (115 pp.) &darr;
       </a>
       <a href="../downloads/stackcalc-student-proficiency-trials.pdf" class="w-full py-2 text-center rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 font-mono text-xs font-bold transition block">
-        Book 4: Student Speed Trials (21 pp.) &darr;
+        Book 4: Student Speed Trials (24 pp.) &darr;
       </a>
       <a href="big-ideas-middle-school-sc6-workbook/#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers" class="w-full py-2 text-center rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition block">
         Print Chapters 1–10 Separately &rarr;
@@ -228,7 +227,7 @@ Every curriculum unit, manipulative studio, and station worksheet is anchored by
       </div>
       <h3 class="text-xl font-bold text-white mb-2">SC-6 Elementary Manual &amp; Manipulative Companion</h3>
       <p class="text-xs text-slate-300 leading-relaxed mb-4">
-        Pairs every physical Gridfinity manipulative (Ten-Frames, 84mm Fraction Towers, 24-Tile Starter &amp; 144-Tile Classroom Arrays, Dominoes, Prime Factor Blocks, Planetary Clock) with the 4-stack elevator model, 141 signature showcase adventures, 25 turnkey 45-minute Teacher Lesson Plans (Appendix B), and 3D-printable blueprints (Appendix A).
+        Pairs our three published Gridfinity manipulative kits—Place Value Studio (<code>PLACE-01</code>), 84.0 mm Fraction Studio (<code>FRAC-01</code>), and Logarithmic Prime Factor Studio (<code>PRIME-01</code>)—with the 4-stack elevator model, 141 signature showcase adventures, 25 turnkey 45-minute Teacher Lesson Plans (Appendix B), and 3D-printable blueprints (Appendix A).
       </p>
     </div>
     <div class="flex flex-wrap gap-2">
@@ -281,7 +280,7 @@ Every lesson in our **12-Unit Teacher Curriculum Guide**, **45-Section Big Ideas
 
 1. **[Spiral-Bound Lay-Flat Curriculum Books & Workbooks on Lulu (`lulu.com/spotlight/stackcalc`) ↗](https://www.lulu.com/spotlight/stackcalc):** Coil-bound lay-flat classroom and homeschool editions of the *K–12 Teacher Curriculum Guide*, *Big Ideas Math Two-Method Student Workbook*, *Teacher Coach Guide*, and *Student Proficiency Trials*.
 2. **[Flagship Paperback & Hardcover Textbooks on Amazon (`link.amazon/B0f5cP0Ur`) ↗](https://link.amazon/B0f5cP0Ur):** Bookstore editions of *From Blocks to the Stack (SC-6)* and *Thinking in the Stack (SC-32)*.
-3. **[Handcrafted 3D-Printed Manipulative Boxed Kits & Hardware on Etsy (`stackcalcmath.etsy.com`) ↗](https://stackcalcmath.etsy.com):** Physical 3D-printed manipulative studios (`BASE-10`, `DOMI-01`, `PLACE-01`, `COUNT-01`, `FRAC-01`, `PRIME-01`, `TIME-01`, `ALGB-01`, `PROB-01`, `VOLV-01`, `QUEST-01`) and calculator hardware kits (physical kits only; books are on Amazon and Lulu).
+3. **[Handcrafted 3D-Printed Manipulative Boxed Kits & Hardware on Etsy (`stackcalcmath.etsy.com`) ↗](https://stackcalcmath.etsy.com):** Physical 3D-printed manipulative studios (`PLACE-01` Place Value Studio, `FRAC-01` Fraction Studio, and `PRIME-01` Prime Factor Studio) and calculator hardware kits (physical kits only; books are on Amazon and Lulu).
 4. **[On-Demand Factory Printed Manipulative Kits & Replacement Parts on Slant 3D (`teleportpod.com/portals/profile/StackCalc`) ↗](https://teleportpod.com/portals/profile/StackCalc):** Direct factory-printed manipulative kits and `$2.49` single-piece classroom refills.
 5. **[100% Free Open-Source STLs & 3MF Print Plates on Printables (`printables.com/@StackCalc_5593834`) ↗](https://www.printables.com/@StackCalc_5593834)** & **[Complete Product Specs (`stackcalc.io/products/`) &rarr;](../products/curriculum-and-decks.md)**.
 

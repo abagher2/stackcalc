@@ -15,7 +15,8 @@ DOCS_DIR = REPO_ROOT / "docs"
 DOWNLOADS_DIR = DOCS_DIR / "downloads"
 WATCH_CALC_ROOT = REPO_ROOT.parent / "watch-calc-32"
 SCAD_DIR = WATCH_CALC_ROOT / "Education" / "scad"
-STL_DIR = WATCH_CALC_ROOT / "Education" / "build" / "stl"
+SCRATCH_STL_DIR = WATCH_CALC_ROOT / "scratch" / "stl" / "education"
+STL_DIR = SCRATCH_STL_DIR if SCRATCH_STL_DIR.exists() else (WATCH_CALC_ROOT / "Education" / "build" / "stl")
 
 COUNTING_ZIP = DOWNLOADS_DIR / "counting-tiles-open-source-stls.zip"
 PRIME_ZIP = DOWNLOADS_DIR / "prime-factor-studio-open-source-stls.zip"

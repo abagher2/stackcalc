@@ -25,7 +25,7 @@ description: "Pedagogical master guide for elementary educators: Leveraging the 
 
 Traditional elementary calculators force children into an algebraic syntax that creates unnecessary cognitive barriers: students struggle with hidden memory registers (`M+`), syntax errors caused by nested parentheses, and decimal answers when they are learning division with remainders.
 
-In the latest system revisions, the **StackCalc SC-6 Elementary Calculator** standardizes on a **default 4-stack XYZT live operational display** for general arithmetic, while providing an automatic **2-stack mode (X, Y)** for paired concrete manipulatives (such as rekenrek counting racks and two-dice probability tables). Users and teachers can also toggle back to 2-stack mode whenever desired. This guide explains the mathematical and pedagogical rationale behind this architecture, and provides classroom-ready teaching modules for core RPN elementary capabilities:
+In the latest system revisions, the **StackCalc SC-6 Elementary Calculator** standardizes on a **default 4-stack XYZT live operational display** for general arithmetic, while providing a toggleable **2-stack mode ($Y, X$)** for early elementary instruction when focusing on two-row Place Value trays (`PLACE-01`). This guide explains the mathematical and pedagogical rationale behind this architecture, and provides classroom-ready teaching modules for core RPN elementary capabilities:
 
 1. **The 4-Stack XYZT Visual Model &amp; 2-Stack Manipulative Modes:** Visual permanence for multi-step arithmetic, with focused 2-line views for paired entry.
 2. **Integer Division with Remainders (`{{keycap:÷R}}`):** Simultaneous quotient ($X$) and remainder ($Y$) display.
@@ -68,11 +68,10 @@ The student controls the order of operations explicitly, mirroring the natural m
 ### 1.3 Uniformity Across the K–12 Continuum
 By standardizing on a 4-stack XYZT display from Grade 1, students develop an intuitive spatial mental model of the stack that carries forward seamlessly to the flagship **SC-32 Scientific Calculator** in middle school, high school AP Physics, and collegiate engineering. There is zero unlearning.
 
-### 1.4 Two-Stack Mode for Special Manipulative Entries &amp; Stack Depth Rubric
-While the 4-stack XYZT architecture is the default for general multi-step arithmetic, early elementary concrete manipulatives are frequently binary:
-* **Counting Racks &amp; Dual Ten-Frames (Rekenreks):** A standard counting rack has two rows of beads (top wire and bottom wire). When using counting rack and ten-frame shelf entry modes (`{{key:▦}}` or `{{key:COUNT}}`), the SC-6 automatically focuses on a **Two-Stack Display ($Y, X$)**. The top row maps directly to Register $Y$ and the bottom row maps to Register $X$. This creates an exact 1:1 spatial correspondence between the physical beads and the screen without the distraction of upper registers ($Z, T$).
-* **Two-Dice Probability &amp; Domino Pairs:** Pressing `{{key:🎲}}` generates random rolls directly in a focused 2-stack view, where Die 1 registers in $Y$ and Die 2 registers in $X$. Combining them (`{{key:+}}`), finding their difference (`{{key:-}}`), or computing products (`{{key:×}}`) is immediate and uncluttered.
-* **Returning to Standard 4-Stack Number Mode:** Pressing `{{key:NUM}}` (Whole Number Mode key at Row 3 Col 4) or `{{key:FDISP}}` immediately exits manipulative mode and restores the default 4-stack XYZT operational display.
+### 1.4 Two-Stack Mode ($Y, X$) &amp; Stack Depth Configuration Rubric
+While the 4-stack XYZT architecture is the default for general multi-step arithmetic, early elementary teachers can focus young learners on just the two active registers (**Waiting Shelf `Y`** and **Workbench `X`**):
+* **Two-Row Place Value &amp; Part-Whole Modeling (`PLACE-01`):** On the Place Value Studio `6×2` tray, Row 1 (upper row) maps directly to Register $Y$ and Row 0 (lower row) maps to Register $X$. Focusing on $Y$ and $X$ creates an exact 1:1 spatial correspondence between the physical rows on the tray and the screen without the distraction of upper registers ($Z, T$).
+* **Returning to Standard 4-Stack Number Mode:** Pressing `{{key:NUM}}` (Whole Number Mode key at Row 3 Col 4) or `{{key:FDISP}}` immediately restores the default 4-stack XYZT operational display.
 * **Manual Stack Depth Switching (`{{keycap:FLAGS}}` Key Rubric):** Kindergarten and early Grade 1 teachers who want to keep cognitive load minimal across all arithmetic operations can manually switch the SC-6 into 2-stack mode at any time using the hardware configuration rubric:
   1. Press `{{key:FLAGS}}` to open the system configuration matrix.
   2. Press digit `{{key:5}}` (`5:DEP`) to cycle stack depth between `4-LV` (4-level XYZT) and `2-LV` (2-level $Y, X$).
@@ -324,20 +323,17 @@ On the SC-6, students never type a parenthesis. Every sub-calculation is evaluat
 
 ---
 
-## 5.5 Curricular Module 5: SC-6 Tutorial Mode (`?`) &amp; The `QUEST-01` Scoreboard
+## 5.5 Curricular Module 5: SC-6 Tutorial Mode (`?`) &amp; Two-Method Verification
 
 <div class="p-4 rounded-xl bg-slate-900/80 border border-emerald-500/30 mb-6 font-mono text-xs">
-  <span class="text-emerald-400 font-bold uppercase">// HARDWARE &amp; WORKBOOK INTEGRATION</span><br>
-  <strong>Kit SKU:</strong> <code>QUEST-01</code> (3&times;1&times;7U 2-Piece Box + Lid + 60&times; <code>+10</code> Tokens) &bull; <strong>Tutorial Keycap:</strong> <code>[↰] [C]</code> (Question Mark in a Circle <code>?</code>)
+  <span class="text-emerald-400 font-bold uppercase">// TWO-METHOD VERIFICATION &amp; WORKBOOK INTEGRATION</span><br>
+  <strong>Published Block Studios:</strong> <code>PLACE-01</code>, <code>FRAC-01</code>, <code>PRIME-01</code> &bull; <strong>Tutorial Keycap:</strong> <code>[↰] [C]</code> (Question Mark in a Circle <code>?</code>)
 </div>
 
-Many upper-elementary and middle-school learners resist solving the same problem in multiple ways because traditional worksheets punish extra strategies with twice the handwriting. The **[SC-6 Quest Scoreboard & `+10` Token Kit (`QUEST-01`)](../products/quest-scoreboard/index.md)** and the **[46-Page Big Ideas Math Daily Supplement](big-ideas-middle-school-sc6-workbook.md)** invert that dynamic by turning multi-method verification into a physical game:
+Many upper-elementary and middle-school learners resist solving the same problem in multiple ways because traditional worksheets punish extra strategies with twice the handwriting. The **[114-Page Big Ideas Math Daily Supplement](big-ideas-middle-school-sc6-workbook.md)** turns multi-method verification into a structured two-step habit:
 
-* **2-Piece Snapfinity Box + Lid (`3x1x7U`):** The lid serves directly as the student's 10-question desk scoreboard, featuring 10 numbered quarter-sockets (**`1`–`10`**), a **`100` Mastery Tower** socket, and the **Question Mark in a Circle (`?`)** tutorial keycap badge (`[↰] [C]`).
-* **Universal `+10` Tokens (`60x` Included):**
-  * **1st Way (`1 Token = +10 pts`):** Solve Question $N$ using your favorite method (Big Ideas textbook method, physical block kit, or SC-6 RPN) and snap **1 `+10` token** into Socket $N$.
-  * **2nd Way (`2 Stacked Tokens = +20 pts`):** Verify the same question using a second method and stack a **2nd `+10` token** right on top!
-  * **100-Point Mastery Tower (`10 Stacked Tokens = 100 pts`):** Every 10 tokens earned stack into a 10-block tower (`84.0 mm` Whole datum height) in the **`100`** socket.
+* **1st Way (`+10 pts`):** Solve Question $N$ using your primary method (Big Ideas textbook method, physical block kit—`PLACE-01`, `FRAC-01`, or `PRIME-01`—or SC-6 RPN) and record `+10 pts` in the worksheet scoring box.
+* **2nd Way (`+20 pts` Double Points):** Verify the exact same question using a second method (checking your block/paper work on the SC-6 stack or in `SC-6 Tutorial Mode` `[↰] [C]`) to earn `+20 pts`.
 
 ---
 
@@ -357,7 +353,7 @@ Print this reference card for classroom math station desks:
 | **Step Through Multiples** | Press `{{key:+}}` repeatedly | $2\times, 3\times, 4\times, 5\times \dots$ with acoustic snap clicks |
 | **Powers of 2 (Doubling)** | `2 {{key:REP}} {{key:×}} {{key:×}} {{key:×}} ...` | Generates $4, 8, 16, 32, 64, 128, 256, 512, 1024$ |
 | **Simplify Fraction Step-by-Step** | `{{key:.}} N {{key:.}} D {{key:SIMP}}` | Reduces fraction by smallest common factor; flashes factor |
-| **Launch SC-6 Tutorial &amp; Quiz (`?`)** | `{{key:QUIZ}}` (`[↰] [C]`) | Launches interactive `+10` / `+20` point challenges paired with `QUEST-01` |
+| **Launch SC-6 Tutorial &amp; Quiz (`?`)** | `{{key:QUIZ}}` (`[↰] [C]`) | Launches interactive `+10` / `+20` point step-by-step challenges |
 | **Toggle Stack Depth (4-Stack / 2-Stack)** | `{{key:FLAGS}}` &bull; `{{key:5}}` (`DEP`) &bull; `{{key:C}}` | Toggles between default 4-stack XYZT (`4-LV`) and simplified 2-stack (`2-LV`) for early learners |
 </div>
 

@@ -270,7 +270,7 @@ def draw_paper_keycap_sequence(
     total_w = sum(it[1] for it in items) + spacing * max(0, len(items) - 1)
     scale = 1.0
     if max_width and total_w > max_width and total_w > 0:
-        scale = max(0.58, max_width / total_w)
+        scale = max(0.42, max_width / total_w)
 
     cur_x = x
     for p_path, w_pt, h_pt, layer_kind in items:
@@ -416,29 +416,31 @@ BOOK_COVER_SPECS = {
         book_id="proficiency_trials",
         title_line_1="STACK SPEED",
         title_line_2="& FLUENCY",
-        subtitle="15 Timed Number Sense & RPN Proficiency Sprints",
-        edition_badge="STUDENT FLUENCY & COMPETITION WORKBOOK  •  TRIALS 1–12 & C1–C3",
+        subtitle="15 Speed Lessons, Shortcut Playbooks & 60 Progressive Practice Tests (Levels 1–4)",
+        edition_badge="SPEED LESSONS & PROGRESSIVE PRACTICE TESTS  •  15 LESSONS / 60 TESTS",
         accent_hex="#FF4F00",
-        category_line="MATHEMATICS  /  NUMBER SENSE & COMPETITIONS",
-        hook_line_1="How fast can you think when",
-        hook_line_2="parentheses get out of the way?",
+        category_line="MATHEMATICS  /  SPEED LESSONS & FLUENCY PRACTICE TESTS",
+        hook_line_1="Learn the Champion Way first—then build",
+        hook_line_2="speed across four progressive test levels.",
         paragraph_1_html=(
-            "In Reverse Polish Notation (RPN), you evaluate expressions from the inside out—the exact order "
-            "in which you simplify mathematics in your head. Without parenthesis keys or hidden pending "
-            "operations, every intermediate result sits visibly on the four-level stack."
+            "Taking timed tests without learning faster methods only makes slow habits permanent. Every section in "
+            "<b>Stack Speed &amp; Fluency</b> opens with a <b>1-Page Speed Lesson &amp; Shortcut Playbook</b> contrasting "
+            "the <i>Slow / Amateur Way</i> against the <i>Champion Speed Way</i>, followed by 6 untimed guided warm-up "
+            "drills so students master algebraic shortcuts and zero-memory stack pipelines before starting the timer."
         ),
         paragraph_2_html=(
-            "<b>Stack Speed &amp; Fluency</b> challenges students from elementary number sense through "
-            "high school UIL/TMSCA calculator competitions with 15 timed proficiency sprints, "
-            "inside-out expression tactics, personal progress logs, and a complete self-check answer key."
+            "Designed for homeschooling families, classrooms, and competitive math/calculator teams, each section then "
+            "provides four 20-problem practice tests in increasing difficulty—<b>Test A (Level 1: Foundation)</b>, "
+            "<b>Test B (Level 2: Core Fluency)</b>, <b>Test C (Level 3: Multi-Step Speed)</b>, and <b>Test D (Level 4: "
+            "Advanced Challenge)</b>—plus complete answer keys with Optimal Champion Pipelines."
         ),
         inside_note_html=(
-            "<b>Inside the Workbook:</b> 12 Unit Time Trials  •  3 Cumulative Championship Rounds (C1–C3)  "
-            "•  150 timed sprint problems  •  Inside-out RPN speed tactics &amp; self-check answer key."
+            "<b>Inside the Workbook:</b> 15 Speed Lessons &amp; 'Slow vs. Champion' Playbooks  •  90 Guided Warm-Up Drills  "
+            "•  60 Progressive Practice Tests (1,200 problems)  •  Answer keys with Optimal Champion Pipelines."
         ),
         isbn_hyphenated="979-8-9914832-6-1",
         isbn_digits="9798991483261",
-        price_label="$16.00 US  •  CAN $21.99",
+        price_label="$19.00 US  •  CAN $25.99",
     ),
 }
 
@@ -541,46 +543,67 @@ def _draw_cover_centerpiece_illustration(
                 cur_y += full_h * frac
 
     elif book_id == "big_ideas":
-        # Tactile Algebra Area Model for (x + 2)(x + 3) = x^2 + 5x + 6 alongside stack registers
-        ox_tile = cx - 95.0
-        oy_tile = cy - 72.0
-        # x^2 square (76 x 76)
-        c.setFillColor(to_color("#E2DDD0"))
-        c.roundRect(ox_tile + 2.0, oy_tile + 62.0 - 2.0, 76.0, 76.0, 5.0, fill=1, stroke=0)
-        c.setFillColor(to_color("#0284C7"))
-        c.roundRect(ox_tile, oy_tile + 62.0, 76.0, 76.0, 5.0, fill=1, stroke=0)
-        c.setFont(FONT_BODY_BOLD, 16.0)
-        c.setFillColor(colors.white)
-        c.drawCentredString(ox_tile + 38.0, oy_tile + 94.0, "x²")
+        # Prime Factor Towers (2×2×3 = 12 and 2×3×3 = 18 -> GCF = 6, LCM = 36) paired with Stack Registers
+        left_x = cx - 165.0
+        base_y = cy - 68.0
+        tower_w = 42.0
+        # Tower 1: 12 = 2 * 2 * 3
+        t1_segs = [
+            (38.0, "#E11D48", "×2", "#FFFFFF"),
+            (38.0, "#E11D48", "×2", "#FFFFFF"),
+            (54.0, "#F59E0B", "×3", "#0F172A"),
+        ]
+        cur_y = base_y
+        for sh, col_hex, lbl, txt_hex in t1_segs:
+            c.setFillColor(to_color("#E2DDD0"))
+            c.roundRect(left_x + 2.0, cur_y - 2.0, tower_w, sh - 3.0, 4.0, fill=1, stroke=0)
+            c.setFillColor(to_color(col_hex))
+            c.roundRect(left_x, cur_y, tower_w, sh - 3.0, 4.0, fill=1, stroke=0)
+            c.setFont(FONT_MONO_BOLD, 10.0)
+            c.setFillColor(to_color(txt_hex))
+            c.drawCentredString(left_x + tower_w * 0.5, cur_y + (sh - 3.0) * 0.5 - 3.5, lbl)
+            cur_y += sh
 
-        # Three vertical x-bars on the right (3 x 24w x 76h)
-        for i in range(3):
-            bx = ox_tile + 82.0 + i * 28.0
-            c.setFillColor(to_color("#0D9488"))
-            c.roundRect(bx, oy_tile + 62.0, 24.0, 76.0, 4.0, fill=1, stroke=0)
-            c.setFont(FONT_BODY_ITALIC, 11.0)
-            c.setFillColor(colors.white)
-            c.drawCentredString(bx + 12.0, oy_tile + 96.0, "x")
+        # Tower 2: 18 = 2 * 3 * 3
+        t2_x = left_x + 56.0
+        t2_segs = [
+            (38.0, "#E11D48", "×2", "#FFFFFF"),
+            (54.0, "#F59E0B", "×3", "#0F172A"),
+            (54.0, "#F59E0B", "×3", "#0F172A"),
+        ]
+        cur_y = base_y
+        for sh, col_hex, lbl, txt_hex in t2_segs:
+            c.setFillColor(to_color("#E2DDD0"))
+            c.roundRect(t2_x + 2.0, cur_y - 2.0, tower_w, sh - 3.0, 4.0, fill=1, stroke=0)
+            c.setFillColor(to_color(col_hex))
+            c.roundRect(t2_x, cur_y, tower_w, sh - 3.0, 4.0, fill=1, stroke=0)
+            c.setFont(FONT_MONO_BOLD, 10.0)
+            c.setFillColor(to_color(txt_hex))
+            c.drawCentredString(t2_x + tower_w * 0.5, cur_y + (sh - 3.0) * 0.5 - 3.5, lbl)
+            cur_y += sh
 
-        # Two horizontal x-bars on bottom (2 x 76w x 24h)
-        for j in range(2):
-            by = oy_tile + j * 28.0
-            c.setFillColor(to_color("#0D9488"))
-            c.roundRect(ox_tile, by, 76.0, 24.0, 4.0, fill=1, stroke=0)
-            c.setFont(FONT_BODY_ITALIC, 11.0)
-            c.setFillColor(colors.white)
-            c.drawCentredString(ox_tile + 38.0, by + 8.0, "x")
-
-        # Six unit-1 squares in bottom-right (3 cols x 2 rows of 24x24)
-        for i in range(3):
-            for j in range(2):
-                bx = ox_tile + 82.0 + i * 28.0
-                by = oy_tile + j * 28.0
-                c.setFillColor(to_color("#F59E0B"))
-                c.roundRect(bx, by, 24.0, 24.0, 3.5, fill=1, stroke=0)
-                c.setFont(FONT_MONO_BOLD, 9.5)
-                c.setFillColor(to_color("#0F172A"))
-                c.drawCentredString(bx + 12.0, by + 8.0, "1")
+        # Right side: 4 Stack Bars (T, Z, Y, X) showing GCF & LCM
+        bar_x = cx + 10.0
+        bar_w = 158.0
+        bar_h = 26.0
+        bar_gap = 10.0
+        top_bar_y = base_y + 3 * (bar_h + bar_gap)
+        stack_bars = [
+            ("T", "12.000", "#E6E1D3", "#64748B", "#475569"),
+            ("Z", "18.000", "#DCD6C6", "#475569", "#334155"),
+            ("Y", "GCF: 6", "#1E293B", "#94A3B8", "#FFFFFF"),
+            ("X", "LCM: 36", "#0284C7", "#E0F2FE", "#FFFFFF"),
+        ]
+        for idx_b, (lbl, val, fill_hex, lbl_hex, val_hex) in enumerate(stack_bars):
+            by = top_bar_y - idx_b * (bar_h + bar_gap)
+            c.setFillColor(to_color(fill_hex))
+            c.roundRect(bar_x, by, bar_w, bar_h, 4.5, fill=1, stroke=0)
+            c.setFont(FONT_MONO_BOLD, 9.5)
+            c.setFillColor(to_color(lbl_hex))
+            c.drawString(bar_x + 10.0, by + 8.5, lbl)
+            c.setFont(FONT_MONO_BOLD, 11.0)
+            c.setFillColor(to_color(val_hex))
+            c.drawRightString(bar_x + bar_w - 10.0, by + 8.0, val)
 
     else:
         # Proficiency Trials: Struck-through Parenthesis Trap + 4 Floating Stack Bars

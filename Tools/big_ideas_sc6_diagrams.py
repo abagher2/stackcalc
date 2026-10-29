@@ -19,17 +19,17 @@ from typing import Any, Dict
 
 INK = "#0F172A"
 SLATE = "#334155"
-MUTED = "#64748B"
+MUTED = "#475569"
 BORDER = "#94A3B8"
 LIGHT_BORDER = "#CBD5E1"
 SUBTLE_HDR = "#F8FAFC"
 WHITE = "#FFFFFF"
-TEAL = "#0D5573"
-BLUE_FILL = "#DBEAFE"
-GREEN_FILL = "#DCFCE7"
-GOLD_FILL = "#FEF3C7"
-RED_FILL = "#FEE2E2"
-PURPLE_FILL = "#F3E8FF"
+TEAL = "#1E293B"
+BLUE_FILL = "#E2E8F0"
+GREEN_FILL = "#F1F5F9"
+GOLD_FILL = "#CBD5E1"
+RED_FILL = "#F8FAFC"
+PURPLE_FILL = "#E2E8F0"
 GRAY_FILL = "#E2E8F0"
 
 
@@ -196,8 +196,8 @@ def draw_section_concept_diagram(
         c_left = mid_x - 4.8
         c_right = mid_x + 4.8
         # Draw left & right circles + intersection highlight
-        p.circle(c_left, cy, r_v, fill="#EFF6FF", stroke=INK, line_w=0.3)
-        p.circle(c_right, cy, r_v, fill="#FEFCE8", stroke=INK, line_w=0.3)
+        p.circle(c_left, cy, r_v, fill=SUBTLE_HDR, stroke=INK, line_w=0.3)
+        p.circle(c_right, cy, r_v, fill=WHITE, stroke=INK, line_w=0.3)
         # Re-stroke left circle so both outlines show cleanly over the overlap lens
         p.circle(c_left, cy, r_v, fill=None, stroke=INK, line_w=0.3)
 
@@ -208,7 +208,7 @@ def draw_section_concept_diagram(
 
         p.text(mid_x + 27.5, cy - 2.2, "Primes of 50", size=1.68, bold=True, color=INK, align="center")
         p.text(mid_x + 27.5, cy + 0.3, "50 = 2 × 5 × 5", size=1.55, mono=True, color=SLATE, align="center")
-        p.text(mid_x + 27.5, cy + 2.8, "Right only: [5]", size=1.50, bold=True, color="#854D0E", align="center")
+        p.text(mid_x + 27.5, cy + 2.8, "Right only: [5]", size=1.50, bold=True, color=SLATE, align="center")
 
         # Left-only Prime Block [2]
         p.rect(c_left - 5.2, cy - 1.9, 4.4, 3.8, fill=BLUE_FILL, stroke=INK, r=0.45, line_w=0.25)
@@ -546,7 +546,7 @@ def draw_section_concept_diagram(
         # 6 x-bars (4 green + 2 light-green)
         rx = gx + 13.5
         for i in range(6):
-            p.rect(rx + i * 5.2, gy, 4.2, 10.5, fill=GREEN_FILL if i < 4 else "#BBF7D0", stroke=INK, r=0.35, line_w=0.22)
+            p.rect(rx + i * 5.2, gy, 4.2, 10.5, fill=GREEN_FILL if i < 4 else GOLD_FILL, stroke=INK, r=0.35, line_w=0.22)
             p.text(rx + i * 5.2 + 2.1, gy + 6.2, "x", size=1.75, bold=True, mono=True, color=INK, align="center")
         p.text(rx + 15.0, y + 18.2, "4x + 2x = 6x Terms", size=1.62, bold=True, mono=True, color=TEAL, align="center")
 
@@ -1283,14 +1283,46 @@ def draw_problem_workspace_organizer(
     prob_prompt: str = "",
 ) -> None:
     """Draws a light, problem-aware graphic organizer (number line, ratio table, mini coordinate grid, or structured step template) inside the open workspace of warm-up/core problem cards across ALL 45 sections."""
-    STROKE_FAINT = "#CBD5E1"
-    TEXT_FAINT = "#64748B"
+    STROKE_FAINT = "#94A3B8"
+    TEXT_FAINT = "#475569"
     pl = prob_prompt.lower()
 
     # Available lower-right workspace region inside card:
     org_y = py + row_h - 16.0
     org_x = px + col_w - 44.0
     org_w = 41.0
+
+    # Clean two-column vertical workspace with subtle 4.5 mm math dot-grid (instead of horizontal ruled lines)
+    has_right_org = (
+        (prob_num <= 4)
+        or (sec_num in ("3.2", "6.4", "6.5", "7.4") and prob_num <= 6)
+        or (sec_num == "5.4" and ((sheet_type == "A" and prob_num <= 4) or (sheet_type == "B" and prob_num in (1, 5, 7))))
+    )
+    left_x1 = px + 3.0
+    if has_right_org:
+        left_x2 = org_x - 3.0
+        p.text(left_x1, org_y + 1.4, "Way 1 (Paper Work):", size=1.38, bold=True, color=TEXT_FAINT)
+        p.line(org_x - 1.8, org_y - 0.2, org_x - 1.8, org_y + 10.6, color="#CBD5E1", width=0.22, dashed=True)
+        dx = left_x1 + 2.0
+        while dx <= left_x2 - 1.0:
+            dy = org_y + 3.6
+            while dy <= org_y + 10.2:
+                p.circle(dx, dy, 0.18, fill="#CBD5E1", stroke=None)
+                dy += 3.2
+            dx += 4.5
+    else:
+        mid_wx = px + col_w / 2.0
+        p.text(left_x1, org_y + 1.4, "Way 1 (Show Paper Steps):", size=1.38, bold=True, color=TEXT_FAINT)
+        p.text(mid_wx + 2.5, org_y + 1.4, "Way 2 (2nd Method / Check):", size=1.38, bold=True, color=TEXT_FAINT)
+        p.line(mid_wx, org_y - 0.2, mid_wx, org_y + 10.6, color="#CBD5E1", width=0.22, dashed=True)
+        for col_start, col_end in ((left_x1 + 2.0, mid_wx - 2.0), (mid_wx + 3.5, px + col_w - 3.0)):
+            dx = col_start
+            while dx <= col_end:
+                dy = org_y + 3.6
+                while dy <= org_y + 10.2:
+                    p.circle(dx, dy, 0.18, fill="#CBD5E1", stroke=None)
+                    dy += 3.2
+                dx += 4.5
 
     # --- UNIT 1: NUMERICAL EXPRESSIONS & FACTORS ---
     if sec_num == "1.1" and prob_num <= 4:

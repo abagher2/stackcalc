@@ -17,7 +17,7 @@
   <a href="../uil-competition/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🏆 UIL Competition</a>
 </nav>
 
-**Grade 6 Complete + Grade 7 Bridge • Spiral Front & Back Matter • 10 Unit Introductions • 45 Textbook Sections • 90 Printable Worksheets (Practice A & B) • 90 Multi-Way Worked Examples • 900 Practice Problems • 5 Reference Appendices (Including Student Self-Check Answer Key)**
+**Grade 6 Complete + Grade 7 Bridge • Title Page & Preface • 10 Unit Introductions • 45 Textbook Sections • 90 Printable Worksheets (Practice A & B) • 90 Multi-Way Worked Examples • 900 Practice Problems • 5 Reference Appendices (Including Student Self-Check Answer Key)**
 
 <div class="hero-buttons" style="margin: 1.25rem 0 1.75rem 0;">
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" class="md-button md-button--primary">📄 Download Complete Spiral Student Workbook PDF (114 Pages • Cover + pp. i–ii + 1–111)</a>
@@ -33,8 +33,8 @@
     - **100% Focused on How *Big Ideas Math* Teaches & Tests Each Concept:** Every section tracks the exact paper-and-pencil algorithms, conceptual models, and vocabulary (*dividend, divisor, quotient, prime factorization, GCF, LCM, reciprocal, tape diagram, ratio table, unit rate, equivalent expressions, Distributive Property, inverse operations, net, interquartile range (IQR), mean absolute deviation (MAD)*) that students are tested on in school.
     - **2 or 3 Authentic Textbook Ways & 100-Point Daily Goal:** Every Worked Example explicitly teaches the **distinct textbook solution pathways from *Big Ideas Math*** (`WAY 1`, `WAY 2`, and `WAY 3` where applicable). Students reach the **100-Point Daily Goal** either by solving **any 5 problems in 2 Ways (`5 × 20 = 100 pts`)** OR **all 10 problems in 1 Way (`10 × 10 = 100 pts`)**.
     - **Warm-Up Step 1 Starter Scaffolds (`#1–#2`), Common-Trap Alerts & Graphic Organizers:** Every worksheet includes a section-specific **`⚠️ WATCH OUT:`** misconception alert, a 1-line **Starter Step 1** prompt on Problems `#1–#2` to eliminate blank-page anxiety, and faint ready-to-use graphic organizers (number lines, ratio tables, mini coordinate grids, Venn diagrams, and box-plot axes) right inside the problem cards.
-    - **Blocks Reinforce Textbook Concepts Where Applicable:** Physical manipulatives (Array Tiles, Prime Factor Towers, Fraction Strips, Place Value Blocks, Two-Tone Zero-Pair Counters, Geared Modulo-60 Clock, Algebra Tiles, and Probability Dice) reinforce textbook concepts where they naturally fit, while paper/number-line/graph/table/formula sections focus directly on the textbook strategy.
-    - **Spiral-Bound Lay-Flat Edition on Lulu, Complete 114-Page PDF (with Student Self-Check Answer Key), or Individual Chapter Packets:** Order the **Coil-Bound Lay-Flat Edition on [Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc)** (including Front Matter `pp. i–ii` and Back Matter `Appendices A–E` on `pp. 103–111` with final answers for all 900 problems), print the complete PDF, or download any of the **10 standalone Chapter/Unit PDFs below** (10–14 pages each).
+    - **Blocks Reinforce Textbook Concepts Where Applicable:** Physical manipulatives (**Place Value Blocks (`PLACE-01`)**, **Prime Factor Towers (`PRIME-01`)**, and **Fraction Comparator Strips (`FRAC-01`)**) reinforce textbook concepts where they naturally fit, while paper/number-line/graph/table/formula sections focus directly on the textbook strategy.
+    - **Spiral-Bound Lay-Flat Edition on Lulu, Complete 114-Page PDF (with Student Self-Check Answer Key), or Individual Chapter Packets:** Order the **Coil-Bound Lay-Flat Edition on [Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc)** (including Title Page & Preface `pp. i–ii` and Reference `Appendices A–E` on `pp. 103–111` with final answers for all 900 problems), print the complete PDF, or download any of the **10 standalone Chapter/Unit PDFs below** (10–14 pages each).
 
 ---
 
@@ -44,28 +44,28 @@ Don't want to print all 114 pages at once? Each standalone **Chapter Packet PDF*
 
 | Unit | Big Ideas Math Chapter & Grade | Sections & Practice Load | *From Blocks to the Stack* Story & Block Listings | Standalone Printable Chapter PDF |
 | :---: | :--- | :--- | :--- | :--- |
-| **[Unit 1](#unit-1)** | **Numerical Expressions & Factors**<br>*Big Ideas Math Grade 6 — Chapter 1* | Sections 1.1–1.5<br>(`10 Worksheets • 100 Problems`) | **"Why 24 Is the Champion Packing Number & The 17-Year Cicada Mystery"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 9–12](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 1 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_01.pdf) |
-| **[Unit 2](#unit-2)** | **Fractions & Decimals**<br>*Big Ideas Math Grade 6 — Chapter 2* | Sections 2.1–2.5<br>(`10 Worksheets • 100 Problems`) | **"The Pharaoh's Bakery, 84mm Fraction Towers & Simon Stevin's Decimals"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lessons 15–19](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 2 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf) |
-| **[Unit 3](#unit-3)** | **Ratios, Rates & Percents**<br>*Big Ideas Math Grade 6 — Chapters 3, 4 & 5 (Ratios, Rates & Percents)* | Sections 3.1–3.5<br>(`10 Worksheets • 100 Problems`) | **"Pythagoras's Guitar Strings & The Hunting-Tooth Bicycle Gear Secret"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lesson 18](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Ten-Frame Studio (`BASE-10`)](../products/ten-frames/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 3 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf) |
-| **[Unit 4](#unit-4)** | **Algebraic Expressions & Properties**<br>*Big Ideas Math Grade 6 — Chapter 3 / Chapter 5 (Algebraic Expressions)* | Sections 4.1–4.4<br>(`8 Worksheets • 80 Problems`) | **"Breaking Apart Rectangles, Frame Borders & Al-Khwarizmi's Squares"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [SC-32 Ch. 7: Polynomials](../manuals/sc32/07-polynomials-brent-solver.md)<br>**Blocks:** [Algebra Tile Studio (`ALGB-01`)](../products/algebra-boxes/index.md) &bull; [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 4 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_04.pdf) |
-| **[Unit 5](#unit-5)** | **Areas of Polygons & Elapsed Time**<br>*Big Ideas Math Grade 6 — Chapter 4 (Areas of Polygons)* | Sections 5.1–5.4<br>(`8 Worksheets • 80 Problems`) | **"Why Babylonians Counted to 60 & The Rope-Stretchers of the Nile"** — [SC-6 Ch. 6: Geometry, Time & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lessons 20–21](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Modulo-60 Classroom Clock (`TIME-01`)](../products/classroom-clock/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 5 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_05.pdf) |
-| **[Unit 6](#unit-6)** | **Integers, Rational Numbers & The Coordinate Plane**<br>*Big Ideas Math Grade 6 — Chapter 6* | Sections 6.1–6.5<br>(`10 Worksheets • 100 Problems`) | **"Zero-Pair Counters, Sub-Zero Number Lines & Descartes's Coordinate Fly"** — [SC-6 Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) & [Ch. 6: Geometry](../manuals/sc6/06-geometry-surface-area.md)<br>**Blocks:** [Ten-Frame Two-Tone Studio (`BASE-10`)](../products/ten-frames/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 6 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_06.pdf) |
-| **[Unit 7](#unit-7)** | **Equations & Inequalities**<br>*Big Ideas Math Grade 6 — Chapter 7* | Sections 7.1–7.5<br>(`10 Worksheets • 100 Problems`) | **"Al-Jabr's Balanced Two-Pan Scale & Missing-Addend Mysteries"** — [SC-6 Ch. 8: Math Quiz Engine](../manuals/sc6/08-math-quiz-engine.md) & [SC-32 Ch. 3: Algebra](../manuals/sc32/03-algebra-transcendentals.md)<br>**Blocks:** [Algebra Tile Studio (`ALGB-01`)](../products/algebra-boxes/index.md) &bull; [Math Domino Studio (`DOMI-01`)](../products/math-dominoes/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 7 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_07.pdf) |
-| **[Unit 8](#unit-8)** | **Surface Area & Volume of 3D Solids**<br>*Big Ideas Math Grade 6 — Chapter 8* | Sections 8.1–8.4<br>(`8 Worksheets • 80 Problems`) | **"Galileo's Giant Bone Mystery (The Square-Cube Law) & Archimedes's Crown"** — [SC-6 Ch. 6: Geometry & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lesson 22](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value 3D Cubes (`PLACE-01`)](../products/place-value/index.md) &bull; [Algebra & Geometry Studio (`ALGB-01`)](../products/algebra-boxes/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 8 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_08.pdf) |
-| **[Unit 9](#unit-9)** | **Statistical Measures & Data Displays**<br>*Big Ideas Math Grade 6 — Chapters 9 & 10 (Statistical Measures and Data Displays)* | Sections 9.1–9.4<br>(`8 Worksheets • 80 Problems`) | **"Becoming a Data Detective: Leveling Mean Towers, Quartiles & Outliers"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 23–25](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Counting & Data Tower Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Probability & Stats Studio (`PROB-01`)](../products/dice-and-spinner/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 9 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_09.pdf) |
-| **[Unit 10](#unit-10)** | **Grade 7 Bridge — Signed Rationals, 2-Step Equations & Probability**<br>*Big Ideas Math Grade 7 Bridge — Chapters 1–3 & Chapter 7* | Sections 10.1–10.4<br>(`8 Worksheets • 80 Problems`) | **"Sir Francis Galton's 1873 Bean Machine & Fair Polyhedral Dice"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) & [Ch. 9: Applied STEM Labs](../manuals/sc6/09-applied-stem-labs.md)<br>**Blocks:** [Probability Dice & Spinner Studio (`PROB-01`)](../products/dice-and-spinner/index.md) &bull; [Ten-Frame Studio (`BASE-10`)](../products/ten-frames/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 10 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_10.pdf) |
+| **[Unit 1](#unit-1)** | **Numerical Expressions & Factors**<br>*Big Ideas Math Grade 6 — Chapter 1* | Sections 1.1–1.5<br>(`10 Worksheets • 100 Problems`) | **"Why 24 Is the Champion Packing Number & The 17-Year Cicada Mystery"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 9–12](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) | [**📄 Print Unit 1 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_01.pdf) |
+| **[Unit 2](#unit-2)** | **Fractions & Decimals**<br>*Big Ideas Math Grade 6 — Chapter 2* | Sections 2.1–2.5<br>(`10 Worksheets • 100 Problems`) | **"The Pharaoh's Bakery, 84mm Fraction Towers & Simon Stevin's Decimals"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lessons 15–19](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**📄 Print Unit 2 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf) |
+| **[Unit 3](#unit-3)** | **Ratios, Rates & Percents**<br>*Big Ideas Math Grade 6 — Chapters 3, 4 & 5 (Ratios, Rates & Percents)* | Sections 3.1–3.5<br>(`10 Worksheets • 100 Problems`) | **"Pythagoras's Guitar Strings & The Hunting-Tooth Bicycle Gear Secret"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lesson 18](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**📄 Print Unit 3 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf) |
+| **[Unit 4](#unit-4)** | **Algebraic Expressions & Properties**<br>*Big Ideas Math Grade 6 — Chapter 3 / Chapter 5 (Algebraic Expressions)* | Sections 4.1–4.4<br>(`8 Worksheets • 80 Problems`) | **"Breaking Apart Rectangles, Frame Borders & Al-Khwarizmi's Squares"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [SC-32 Ch. 7: Polynomials](../manuals/sc32/07-polynomials-brent-solver.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) | [**📄 Print Unit 4 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_04.pdf) |
+| **[Unit 5](#unit-5)** | **Areas of Polygons & Elapsed Time**<br>*Big Ideas Math Grade 6 — Chapter 4 (Areas of Polygons)* | Sections 5.1–5.4<br>(`8 Worksheets • 80 Problems`) | **"Why Babylonians Counted to 60 & The Rope-Stretchers of the Nile"** — [SC-6 Ch. 6: Geometry, Time & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lessons 20–21](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**📄 Print Unit 5 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_05.pdf) |
+| **[Unit 6](#unit-6)** | **Integers, Rational Numbers & The Coordinate Plane**<br>*Big Ideas Math Grade 6 — Chapter 6* | Sections 6.1–6.5<br>(`10 Worksheets • 100 Problems`) | **"Zero-Pair Counters, Sub-Zero Number Lines & Descartes's Coordinate Fly"** — [SC-6 Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) & [Ch. 6: Geometry](../manuals/sc6/06-geometry-surface-area.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**📄 Print Unit 6 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_06.pdf) |
+| **[Unit 7](#unit-7)** | **Equations & Inequalities**<br>*Big Ideas Math Grade 6 — Chapter 7* | Sections 7.1–7.5<br>(`10 Worksheets • 100 Problems`) | **"Al-Jabr's Balanced Two-Pan Scale & Missing-Addend Mysteries"** — [SC-6 Ch. 8: Math Quiz Engine](../manuals/sc6/08-math-quiz-engine.md) & [SC-32 Ch. 3: Algebra](../manuals/sc32/03-algebra-transcendentals.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**📄 Print Unit 7 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_07.pdf) |
+| **[Unit 8](#unit-8)** | **Surface Area & Volume of 3D Solids**<br>*Big Ideas Math Grade 6 — Chapter 8* | Sections 8.1–8.4<br>(`8 Worksheets • 80 Problems`) | **"Galileo's Giant Bone Mystery (The Square-Cube Law) & Archimedes's Crown"** — [SC-6 Ch. 6: Geometry & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lesson 22](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**📄 Print Unit 8 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_08.pdf) |
+| **[Unit 9](#unit-9)** | **Statistical Measures & Data Displays**<br>*Big Ideas Math Grade 6 — Chapters 9 & 10 (Statistical Measures and Data Displays)* | Sections 9.1–9.4<br>(`8 Worksheets • 80 Problems`) | **"Becoming a Data Detective: Leveling Mean Towers, Quartiles & Outliers"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 23–25](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**📄 Print Unit 9 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_09.pdf) |
+| **[Unit 10](#unit-10)** | **Grade 7 Bridge — Signed Rationals, 2-Step Equations & Probability**<br>*Big Ideas Math Grade 7 Bridge — Chapters 1–3 & Chapter 7* | Sections 10.1–10.4<br>(`8 Worksheets • 80 Problems`) | **"Sir Francis Galton's 1873 Bean Machine & Fair Polyhedral Dice"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) & [Ch. 9: Applied STEM Labs](../manuals/sc6/09-applied-stem-labs.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) | [**📄 Print Unit 10 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_10.pdf) |
 
 ---
 
-## 🏆 Optional Desk Companion: The 100-Point Double-Points Scoreboard (`QUEST-01`)
+## 🏆 How the 100-Point Two-Method Mastery System Works
 
-To motivate students to master multiple textbook methods on every worksheet, pair the workbook with the **[100-Point SC-6 Scoreboard & Token Kit (`QUEST-01`)](../products/quest-scoreboard/index.md)** ([Order on Etsy ↗](https://stackcalcmath.etsy.com) • [Order Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) • [Free Print Files on Printables ↗](https://www.printables.com/@StackCalc_5593834)):
+Every worksheet encourages students to master two independent solution methods and verify their work on the stack calculator:
 
-| Component | Layout | How Double-Points Scoring Works |
+| Mastery Step | Points Earned | How Two-Method Verification Works |
 | :--- | :--- | :--- |
-| **1. 10-Problem Scoreboard Grid (`1–10` + `100` + `(?)`)** | `6×2 = 12` sockets | **Left 5×2 Grid:** Numbered **`1`–`5`** (top row) and **`6`–`10`** (bottom row), matching **Problems `#1–#10`**. **Rightmost Column:** Top socket **`100`** (for a 10-block Mastery Tower) and bottom **Question Mark in a Circle (`?`)** tutorial keycap badge. |
-| **2. Desk Token Bank Box** | Holds 60 tokens | Stores all **60 universal `+10` tokens** in 5 neat layers of 12 (`6×2`) for quick classroom setup and cleanup. |
-| **3. 60 Identical `+10` Mastery Tokens** | Universal `+10` blocks | Every token is identical (`+10` on top and all 4 sides):<br>• **1 Block (`+10 pts`)** = Solved with **1st Textbook Way**<br>• **2 Stacked Blocks (`+20 pts DOUBLE`)** = Verified with **2nd Textbook Way**<br>• **10 Blocks (`100 pts`)** = **100-Point Daily Goal** (any 5 problems in 2 Ways OR all 10 in 1 Way)! |
+| **1. Solve in Your 1st Textbook Way** | **`+10 Points`** | Solve a problem by hand in the open workspace using the first textbook method (`WAY 1`) and check off `[x] +10 (1 Way)`. |
+| **2. Verify with a 2nd Textbook Way** | **`+20 Points (Double)`** | Solve the same problem using a second independent textbook method (`WAY 2` or a hands-on block model) and check off `[x] +20 (2 Ways)`. |
+| **3. Reach the 100-Point Daily Goal** | **`100 Points`** | Reach **100 points** either by solving **any 5 problems in 2 Ways (`5 × 20 = 100 pts`)** OR **all 10 problems in 1 Way (`10 × 10 = 100 pts`)**, then verify your answers using the section's **SC-6 Calculator Work-Check** box. |
 
 ---
 
@@ -77,11 +77,10 @@ To motivate students to master multiple textbook methods on every worksheet, pai
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_01.pdf" class="md-button md-button--primary">📄 Print Unit 1 Chapter Packet PDF (12 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
 </div>
 
-- **Manipulative Kits (`Counting & Array Studio (COUNT-01) + Prime Factor Studio (PRIME-01)`):** [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)
-- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Prime Factor Studio (PRIME-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Why 24 Is the Champion Packing Number & The 17-Year Cicada Mystery"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 9–12](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students interpret remainders as meaningless decimal tails (e.g., .875 of a person), read 2^3 as 2×3=6, lose track of PEMDAS parentheses, and confuse GCF (overlap) with LCM (union).
-- **Hands-On Remediation:** Have students build physical tile rows for division remainders, stack 2D/3D arrays for exponents, use the 4-line elevator (Y holds Room 1 while X solves Room 2) instead of rewriting PEMDAS lines, and stand logarithmic Prime Factor Towers side-by-side on the 12-socket lid.
+- **Hands-On & Stack Remediation:** Have students model division remainders on the Place Value Tray, stack Prime Factor Blocks ([2][2][2] = 2³) for exponents, use the 4-line elevator (Y holds Room 1 while X solves Room 2) instead of rewriting PEMDAS lines, and stand logarithmic Prime Factor Towers side-by-side on the 12-socket lid.
 
 Every summer in the Cascade Mountains, a group of sixth-grade volunteers helps the ranger station prepare backcountry campsites, wildlife observation blinds, and a small maker cabin. Maya signed up to organize the supply crates and battery banks, even though she secretly worried she would mess up the counts and leave a trail crew short on gear miles from the nearest road. Across the cabin, Leo tinkers with mountain bikes, solar signboards, and LEGO robotics prototypes, while Zoe hikes with the field biologists to watch Clark's nutcrackers hide thousands of pine seeds for the winter.
 
@@ -93,21 +92,21 @@ None of them felt like 'math people' at the start of the summer. But by working 
 
 ### Section 1.1: Whole Number Operations & Division with Remainders (Workbook pp. 4–5)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 1.1 (Whole Number Operations) (`CCSS.MATH.6.NS.B.2`) • **Big Ideas Methods:** *Way 1: Standard Long Division  |  Way 2: Partial Quotients  |  Way 3: Equal-Groups Array Model* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 1.1 (Whole Number Operations) (`CCSS.MATH.6.NS.B.2`) • **Big Ideas Methods:** *Way 1: Standard Long Division  |  Way 2: Partial Quotients  |  Way 3: Equal-Groups Array Model* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** dividend • divisor • quotient • remainder
 
-![Whole Number Operations & Division with Remainders](../assets/manuals/counting_tiles_array_3x8.png){ width="320" }
+![Whole Number Operations & Division with Remainders](../assets/manuals/place_value_regrouping.png){ width="320" }
 
-In Big Ideas Math, whole-number division splits a dividend into equal groups of the divisor: Dividend = (Quotient × Divisor) + Remainder, where the remainder is always less than the divisor. Grouping Counting Tiles (COUNT-01) into equal rows physically shows the full rows (Quotient) and leftover tiles (Remainder).
+In Big Ideas Math, whole-number division splits a dividend into equal groups of the divisor: Dividend = (Quotient × Divisor) + Remainder, where the remainder is always less than the divisor. Modeling the dividend on the Place Value Tray (PLACE-01) physically separates the equal groups (Quotient) from the leftover ones (Remainder).
 
 > **⚠️ WATCH OUT: A remainder must ALWAYS be smaller than the divisor (Rem < Divisor). Check whether the problem asks for full groups, leftovers, or rounding up!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** Divide Dividend ÷ Divisor to find the Quotient (full equal groups) and Remainder (leftover < Divisor).
 2. **Textbook Check:** Always verify division with the Division Algorithm: (Quotient × Divisor) + Remainder = Dividend.
-3. **Block Reinforcement (COUNT-01):** Deal 23 tiles into rows of 4 -> 5 full rows (20) + 3 leftover tiles (5 × 4 + 3 = 23).
+3. **Block Reinforcement (PLACE-01):** Group 23 into rows of 4 -> 5 full groups (20) + a [3] Digit Block remainder (5 × 4 + 3 = 23).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -157,21 +156,21 @@ At the ranger station, Maya stared at a bin of 53 lithium battery cells and felt
 
 ### Section 1.2: Powers and Exponents (Workbook pp. 6–7)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 1.2 (Powers and Exponents) (`CCSS.MATH.6.EE.A.1`) • **Big Ideas Methods:** *Way 1: Multiply Step-by-Step  |  Way 2: Group Factors in Pairs  |  Way 3: Square & Cube Array Model* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 1.2 (Powers and Exponents) (`CCSS.MATH.6.EE.A.1`) • **Big Ideas Methods:** *Way 1: Multiply Step-by-Step  |  Way 2: Group Factors in Pairs  |  Way 3: Square & Cube Array Model* • **Block Kit:** `PRIME-01` (Prime Factor Studio)
 
 **Key Vocabulary:** power • base • exponent • perfect square • perfect cube
 
-![Powers and Exponents](../assets/manuals/counting_tiles_box_3x1x13u.png){ width="320" }
+![Powers and Exponents](../assets/manuals/prime_studio_comparator_stage.png){ width="320" }
 
-A power represents repeated multiplication of the same factor. In bⁿ, the base b is the repeated factor and the exponent n tells how many times the base is used as a factor. With Counting Tiles (COUNT-01), a second power (4²) builds a 4 × 4 square array (16 tiles), and a third power (4³) stacks 4 square layers into a 3D cube (64 cubes).
+A power represents repeated multiplication of the same factor. In bⁿ, the base b is the repeated factor and the exponent n tells how many times the base is used as a factor. In the Prime Factor Studio (PRIME-01), stacking n identical prime blocks models bⁿ directly (for example, three [2] blocks build 2³ = 8, and four [2] blocks build 4² = 2⁴ = 16).
 
 > **⚠️ WATCH OUT: 4³ means 4 × 4 × 4 = 64 — NEVER multiply the base by the exponent (4 × 3 = 12)!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PRIME-01`: Prime Factor Studio)
 
 1. **Textbook Concept:** In bⁿ, the base b is the repeated factor and the exponent n counts how many times b is multiplied.
 2. **Textbook Watch-Out:** 4² means 4 × 4 = 16 (a 4-by-4 perfect square), NEVER base × exponent (4 × 2 = 8)!
-3. **Block Reinforcement (COUNT-01):** Build a 4 × 4 square array (16 tiles) for 4², and stack 4 layers high (64 cubes) for 4³.
+3. **Block Reinforcement (PRIME-01):** Stack prime blocks for 4² = 2⁴ = 16 and 4³ = 2⁶ = 64 (or sketch a 4 × 4 square array vs. 4 × 2).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -221,17 +220,17 @@ Leo was ready to give up when his biology lab sheet asked how many bacteria ther
 
 ### Section 1.3: Order of Operations (Workbook pp. 8–9)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 1.3 (Order of Operations) (`CCSS.MATH.6.EE.A.1`) • **Big Ideas Methods:** *Way 1: PEMDAS Step-by-Step Funnel  |  Way 2: Distributive Property / Fraction-Bar Grouping* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 1.3 (Order of Operations) (`CCSS.MATH.6.EE.A.1`) • **Big Ideas Methods:** *Way 1: PEMDAS Step-by-Step Funnel  |  Way 2: Distributive Property / Fraction-Bar Grouping* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** numerical expression • evaluate • order of operations • grouping symbols
 
-![Order of Operations](../assets/manuals/counting_tiles_distributive_4color.png){ width="320" }
+![Order of Operations](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 Big Ideas Order of Operations (PEMDAS): (1) Evaluate expressions inside grouping symbols (), [], or fraction bars first; (2) Evaluate powers; (3) Multiply and divide from left to right; (4) Add and subtract from left to right.
 
 > **⚠️ WATCH OUT: Multiply & Divide have EQUAL priority (go Left-to-Right!), and Add & Subtract have EQUAL priority (go Left-to-Right!).**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept (PEMDAS):** 1. Grouping Symbols ( ) [ ]  2. Exponents  3. Multiply & Divide (Left -> Right)  4. Add & Subtract (Left -> Right).
 2. **Textbook Watch-Out:** Multiplication and division have EQUAL priority (go Left to Right); addition and subtraction also go Left to Right!
@@ -419,11 +418,10 @@ Leo used to dread word problems with GCF and LCM because the two three-letter na
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf" class="md-button md-button--primary">📄 Print Unit 2 Chapter Packet PDF (12 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
 </div>
 
-- **Manipulative Kits (`Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
-- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Hands-On Block Kits (When Applicable — `Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"The Pharaoh's Bakery, 84mm Fraction Towers & Simon Stevin's Decimals"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lessons 15–19](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students treat fractions, mixed numbers, and decimals as unrelated rules, expect multiplication to always make numbers bigger, forget which fraction to flip in division, and misalign decimal columns.
-- **Hands-On Remediation:** Use the 84.0 mm Fraction Studio towers so equivalence and common denominators are physical millimeter height matches. Use [f] [1/x] on Floor 1 (X) so students see only the divisor flip, and use [f] [IP] / [g] [FP] to split whole dollars from decimal cents.
+- **Hands-On & Stack Remediation:** Use the 84.0 mm Fraction Studio towers so equivalence and common denominators are physical millimeter height matches. Use [f] [1/x] on Floor 1 (X) so students see only the divisor flip, and use [f] [IP] / [g] [FP] to split whole dollars from decimal cents.
 
 If you spend an afternoon helping Elena in her family's bakery kitchen, volunteering with Zoe at the bird-rehab aviary, or watching Marcus run the school's desktop 3D printer, you quickly run into an annoying truth: real measurements almost never land on whole numbers. Elena's measuring scoops are stamped in halves, thirds, quarters, and eighths, and she used to dread fractions because every rule felt backward—why did a bigger number on the bottom mean a smaller scoop?
 
@@ -567,7 +565,7 @@ Elena always assumed multiplying had to make a number get bigger, so when her ph
 
 **Key Vocabulary:** reciprocals • multiplicative inverses • common-denominator division • measurement division
 
-![Dividing Fractions and Mixed Numbers](../assets/manuals/counting_tiles_fraction_datum_84mm.png){ width="320" }
+![Dividing Fractions and Mixed Numbers](../assets/manuals/fraction_studio_common_denominator.png){ width="320" }
 
 In Big Ideas Math, you can divide fractions in two ways: (1) Multiply by the Reciprocal of the divisor: (a/b) ÷ (c/d) = (a/b) × (d/c), or (2) Rewrite both fractions with a Common Denominator and divide their numerators! Placing 1/8 Fraction Strips (FRAC-01) alongside a 3/4 strip shows why six 1/8s fit inside 3/4.
 
@@ -631,7 +629,7 @@ Whenever a teacher said 'keep, change, flip' for dividing fractions, Zoe followe
 
 **Key Vocabulary:** tenths • hundredths • thousandths • place-value alignment • trailing zeros • estimation
 
-![Adding, Subtracting, and Multiplying Decimals](../assets/manuals/place_value_regrouping.png){ width="320" }
+![Adding, Subtracting, and Multiplying Decimals](../assets/manuals/place_value_ortho_steps.png){ width="320" }
 
 To add or subtract decimals, line up the decimal points vertically so ones, tenths, and hundredths align, and annex trailing zeros as needed. To multiply decimals, multiply as whole numbers and count the total number of decimal places in the factors—always checking with a whole-number front-end estimate.
 
@@ -691,17 +689,17 @@ Marcus used to panic when decimal problems had uneven lengths, like adding a 345
 
 ### Section 2.5: Dividing Whole Numbers and Decimals (Workbook pp. 23–24)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 2.6 (Dividing Decimals) (`CCSS.MATH.6.NS.B.3`) • **Big Ideas Methods:** *Way 1: Power-of-10 Decimal Shift & Long Division  |  Way 2: Equivalent Fraction Scaling  |  Way 3: Reciprocal Fraction Division* • **Block Kit:** `FRAC-01` (Fraction & Place Value Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Section 2.6 (Dividing Decimals) (`CCSS.MATH.6.NS.B.3`) • **Big Ideas Methods:** *Way 1: Power-of-10 Decimal Shift & Long Division  |  Way 2: Equivalent Fraction Scaling  |  Way 3: Reciprocal Fraction Division* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
 
 **Key Vocabulary:** terminating decimal • power-of-10 shift • equivalent division expression • mixed number
 
-![Dividing Whole Numbers and Decimals](../assets/manuals/place_value_regrouping.png){ width="320" }
+![Dividing Whole Numbers and Decimals](../assets/manuals/place_value_ortho_steps.png){ width="320" }
 
 When dividing by a decimal (such as 6.75 ÷ 0.25), multiply both the divisor and the dividend by the same power of 10 (shift both decimal points the same number of places to the right) so the divisor becomes a whole number (675 ÷ 25 = 27).
 
 > **⚠️ WATCH OUT: When dividing by a decimal, shift the decimal point the SAME number of places right in BOTH the divisor and the dividend!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: Fraction & Place Value Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
 
 1. **Textbook Whole-Number Division:** Annex a decimal point and zeros (23.00 ÷ 4) to continue dividing until the remainder is 0.
 2. **Textbook Decimal Divisor Rule:** Multiply divisor and dividend by the same power of 10 (shift both decimal points right) to make the divisor a whole number.
@@ -761,11 +759,10 @@ Looking at the 3D-printer screen, Marcus needed to find how many 0.20-millimeter
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf" class="md-button md-button--primary">📄 Print Unit 3 Chapter Packet PDF (12 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
 </div>
 
-- **Manipulative Kits (`Counting & Array Tiles (COUNT-01) + Fraction Studio (FRAC-01)`):** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Ten-Frame Studio (`BASE-10`)](../products/ten-frames/index.md)
-- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Hands-On Block Kits (When Applicable — `Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Pythagoras's Guitar Strings & The Hunting-Tooth Bicycle Gear Secret"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lesson 18](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students confuse Part-to-Part (3:2) with Part-to-Whole (3/5), add instead of multiply in ratio tables, divide unit rates upside-down, and memorize 6 disconnected rules for moving decimal points in percents.
-- **Hands-On Remediation:** Use Blue and Gold Counting Tiles as physical Tape Diagram boxes, step through ratio tables rhythmically with [g] [REP], use [x⇄y] when unit-rate division is entered upside-down, and use [f] [%] + [FDISP] to show Fraction/Decimal/Percent are three costumes of one number.
+- **Hands-On & Stack Remediation:** Use equal Fraction Studio blocks as physical Tape Diagram units, step through ratio tables rhythmically with [g] [REP], use [x⇄y] when unit-rate division is entered upside-down, and use [f] [%] + [FDISP] to show Fraction/Decimal/Percent are three costumes of one number.
 
 Devon always wondered why pedaling his mountain bike uphill felt impossible in high gear, while shifting to low gear made his feet spin fast and easy. Flipping his bike upside down in the driveway, he counted 48 spiky teeth on the front pedal sprocket and 16 teeth on the back wheel sprocket. Because each link of the metal chain grabs one tooth at a time, pulling 48 front teeth forward forces the 16-tooth back gear to spin around three full times! One turn of Devon's feet spins the rear tire three times—trading harder pedal push for triple the speed.
 
@@ -777,21 +774,21 @@ Whether Devon is comparing bike gears, Priya is stretching the club snack budget
 
 ### Section 3.1: Ratios and Tape Diagrams (Workbook pp. 26–27)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 3.1 & 3.2 (Ratios and Tape Diagrams) (`CCSS.MATH.6.RP.A.1`) • **Big Ideas Methods:** *Way 1: Tape Diagram (Equal Boxes)  |  Way 2: Equivalent Ratio Fraction  |  Way 3: Divide by GCF* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 3.1 & 3.2 (Ratios and Tape Diagrams) (`CCSS.MATH.6.RP.A.1`) • **Big Ideas Methods:** *Way 1: Tape Diagram (Equal Boxes)  |  Way 2: Equivalent Ratio Fraction  |  Way 3: Divide by GCF* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
 
 **Key Vocabulary:** ratio • part-to-part ratio • part-to-whole ratio • equivalent ratios • tape diagram
 
-![Ratios and Tape Diagrams](../assets/manuals/counting_tiles_array_3x8.png){ width="320" }
+![Ratios and Tape Diagrams](../assets/manuals/fraction_studio_twin_comparator.png){ width="320" }
 
-A ratio compares two quantities (a to b, a:b, or a/b). In a Tape Diagram, each equal box (or Counting Tile in COUNT-01) represents the same unit amount. For a 3:2 ratio, 3 Blue tiles + 2 Gold tiles = 5 total tiles, making the Part-to-Whole ratios 3:5 and 2:5.
+A ratio compares two quantities (a to b, a:b, or a/b). In a Tape Diagram, each equal box (or equal-length Fraction Strip in FRAC-01) represents the same unit amount. For a 3:2 ratio, 3 equal strips + 2 equal strips = 5 total strips, making the Part-to-Whole ratios 3:5 and 2:5.
 
 > **⚠️ WATCH OUT: Order matters in ratios! Check whether the question asks for Part-to-Part (3:2) or Part-to-Whole (3:5).**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
 
 1. **Textbook Concept:** A ratio compares two quantities as a to b, a:b, or a/b. Distinguish Part-to-Part (3:2) from Part-to-Whole (3:5).
 2. **Textbook Visual Model (Tape Diagram):** Draw equal-sized boxes for each ratio part so every box represents the same unit amount.
-3. **Block Reinforcement (COUNT-01):** Build a 3-box row and a 2-box row (5 boxes total); placing 4 counters per box models 12:8 = 3:2.
+3. **Block Reinforcement (FRAC-01):** Build a 3-box row and a 2-box row (5 fifth-towers total); placing 4 units per box models 12:8 = 3:2.
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -841,21 +838,21 @@ When a smoothie recipe called for strawberries and bananas in a 4:3 ratio using 
 
 ### Section 3.2: Using Ratio Tables and Double Number Lines (Workbook pp. 28–29)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 3.3 (Ratio Tables & Double Number Lines) (`CCSS.MATH.6.RP.A.3a`) • **Big Ideas Methods:** *Way 1: Multiplicative Scale Factor  |  Way 2: Double Number Line / Repeated Addition  |  Way 3: Scale Down Then Up* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 3.3 (Ratio Tables & Double Number Lines) (`CCSS.MATH.6.RP.A.3a`) • **Big Ideas Methods:** *Way 1: Multiplicative Scale Factor  |  Way 2: Double Number Line / Repeated Addition  |  Way 3: Scale Down Then Up* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** ratio table • equivalent ratios • double number line • scaling (multiplying or dividing)
 
-![Using Ratio Tables and Double Number Lines](../assets/manuals/number_rack_subitizing.png){ width="320" }
+![Using Ratio Tables and Double Number Lines](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 In Big Ideas Math, you can find equivalent ratios in a Ratio Table or on a Double Number Line by (1) adding the base ratio quantities repeatedly, (2) multiplying or dividing both quantities by the same scale factor, or (3) scaling down to a smaller equivalent ratio and then scaling up.
 
 > **⚠️ WATCH OUT: Never add the same number to both rows of a ratio table — always MULTIPLY or DIVIDE both quantities by the same scale factor!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Method 1 (Ratio Table — Addition):** Add the base ratio quantities repeatedly to build a table of equivalent ratios.
 2. **Textbook Method 2 (Scale Factor — Multiplication/Division):** Multiply or divide both quantities in a ratio by the same nonzero number.
-3. **Block Reinforcement (COUNT-01):** Five repeated jumps of (3 s, 8 m) on a double number line match scaling the 3:8 ratio by ×5 (15 s, 40 m).
+3. **Visual Reinforcement:** Five repeated jumps of (3 s, 8 m) on a double number line match scaling the 3:8 ratio by ×5 (15 s, 40 m).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -905,17 +902,17 @@ Priya had to bake 10 pizza crusts for the robotics club using a recipe written f
 
 ### Section 3.3: Rates, Unit Rates, and Comparing Rates (Workbook pp. 30–31)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 3.4 & 3.5 (Rates and Unit Rates) (`CCSS.MATH.6.RP.A.2`) • **Big Ideas Methods:** *Way 1: Divide to Find the Unit Rate (1 Unit)  |  Way 2: Common Multiple Comparison  |  Way 3: Double Number Line* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 3.4 & 3.5 (Rates and Unit Rates) (`CCSS.MATH.6.RP.A.2`) • **Big Ideas Methods:** *Way 1: Divide to Find the Unit Rate (1 Unit)  |  Way 2: Common Multiple Comparison  |  Way 3: Double Number Line* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** rate • unit rate • unit cost (unit price) • equivalent rates
 
-![Rates, Unit Rates, and Comparing Rates](../assets/manuals/counting_tiles_box_3x1x13u.png){ width="320" }
+![Rates, Unit Rates, and Comparing Rates](../assets/manuals/place_value_ortho_steps.png){ width="320" }
 
 A rate compares two quantities measured in different units (such as miles and hours). A unit rate gives the amount per 1 unit of the second quantity (divide numerator ÷ denominator). Comparing unit prices shows which package is the better buy.
 
 > **⚠️ WATCH OUT: For unit price ('per item' or 'per ounce'), divide Money ÷ Quantity. The smaller unit cost is the better buy!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** A rate compares two quantities with different units. A unit rate has a denominator of 1 unit (divide numerator ÷ denominator).
 2. **Textbook Comparison Strategy:** To find the 'Better Buy' or faster speed, compare the unit rates (cost per 1 item) or scale to a common multiple.
@@ -983,7 +980,7 @@ Standing in the snack aisle, Priya held a 6-bar box of granola bars priced at $4
 
 1. **Textbook Concept:** Percent (%) means 'per hundred' (out of 100). Write an equivalent fraction with denominator 100, or divide numerator ÷ denominator.
 2. **Textbook Finding a Percent of a Number:** Convert the percent to a decimal or fraction and multiply by the whole (p% of w = (p/100) × w).
-3. **Block Reinforcement (COUNT-01 / FRAC-01):** On a 10 × 10 hundred-grid, 7/20 covers 35 of 100 squares (35/100 = 0.35 = 35%).
+3. **Block Reinforcement (FRAC-01 / PLACE-01):** On a 10 × 10 hundredths grid or Decimal Place Value Tray, 7/20 = 35/100 = 0.35 = 35%.
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -1033,17 +1030,17 @@ Zoe was trying to compare three different results—17 out of 20 gigabytes used 
 
 ### Section 3.5: Solving Percent Problems, Discounts & Conversions (Workbook pp. 34–35)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 5.6 & 5.7 (Percent Problems & Converting Measures) (`CCSS.MATH.6.RP.A.3d`) • **Big Ideas Methods:** *Way 1: Find Discount & Subtract  |  Way 2: Multiply by Remaining %  |  Way 3: Percent Proportion / Ratio Bar* • **Block Kit:** `PLACE-01` (Place Value & Fraction Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Section 5.6 & 5.7 (Percent Problems & Converting Measures) (`CCSS.MATH.6.RP.A.3d`) • **Big Ideas Methods:** *Way 1: Find Discount & Subtract  |  Way 2: Multiply by Remaining %  |  Way 3: Percent Proportion / Ratio Bar* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** discount • sale price • markup • sales tax • percent of change • conversion factor
 
-![Solving Percent Problems, Discounts & Conversions](../assets/manuals/place_value_regrouping.png){ width="320" }
+![Solving Percent Problems, Discounts & Conversions](../assets/manuals/place_value_ortho_steps.png){ width="320" }
 
 In Big Ideas Math, you can find a discounted sale price in two ways: (1) find the discount amount and subtract it from the original price, or (2) subtract the discount percent from 100% first and multiply! For percent change, divide (Change ÷ Original Amount) × 100%. For unit conversions, multiply by a conversion factor so the old units cancel.
 
 > **⚠️ WATCH OUT: For percent change, ALWAYS divide the change by the ORIGINAL starting amount — never the new ending amount!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value & Fraction Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Discounts & Markups:** Method 1: Find the discount/tax and subtract or add. Method 2: Multiply by the remaining/total percent (e.g., 75% or 107.5%).
 2. **Textbook Percent of Change & Conversions:** Percent Change = (Amount of Change ÷ Original Amount) × 100%; multiply by unit conversion factors so old units cancel.
@@ -1103,11 +1100,10 @@ When a $100 bike helmet bundle went on sale for 20% off and Priya had an extra c
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_04.pdf" class="md-button md-button--primary">📄 Print Unit 4 Chapter Packet PDF (10 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
 </div>
 
-- **Manipulative Kits (`Algebra Boxes & Factoring Stage (ALGB-01) + Counting Tiles (COUNT-01)`):** [Algebra Tile Studio (`ALGB-01`)](../products/algebra-boxes/index.md) &bull; [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md)
-- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Prime Factor Studio (PRIME-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Breaking Apart Rectangles, Frame Borders & Al-Khwarizmi's Squares"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [SC-32 Ch. 7: Polynomials](../manuals/sc32/07-polynomials-brent-solver.md)
 - **Target Misconception:** Students panic when letters appear, erroneously combine 3x + 2 into 5x or x² + x into x³, and don't see why 3(x + 4) = 3x + 12.
-- **Hands-On Remediation:** Show that a variable x is literally a physical green x-rod (42×14mm) whereas 1 is a small yellow unit cube (14×14mm) and x² is a large blue flat (42×42mm)—different physical shapes cannot be counted as one pile! Build rectangles on the L-frame stage for the Distributive Property.
+- **Hands-On & Stack Remediation:** Show that a variable x is simply an empty Place Value tray socket waiting for a Digit Block to be substituted in, and that different place-value columns (x², x, and 1s) cannot be combined into one column! Use Prime Factor Studio (PRIME-01) to find the GCF when factoring expressions.
 
 When Noah tried to code his first arcade game for the school STEM showcase, he almost deleted the whole project in frustration. To track a player's carnival tickets, he started writing one line of code for 1 ride, another line for 2 rides, and another for 3 rides. By twenty lines, his screen was a tangled mess. And when letters like x and g showed up in his math homework that same week, he complained that letters belonged in English class, not math.
 
@@ -1119,27 +1115,27 @@ As Noah, Maya, and Zoe work through these lessons, their nervousness around lett
 
 ### Section 4.1: Writing and Evaluating Algebraic Expressions (Workbook pp. 37–38)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 3.1 / 5.1 (Algebraic Expressions) (`CCSS.MATH.6.EE.A.2`) • **Big Ideas Methods:** *Way 1: Substitute in Parentheses & Follow PEMDAS  |  Way 2: Equal-Groups Bar / Algebra Tile Model* • **Block Kit:** `ALGB-01` (Algebra Boxes & Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 3.1 / 5.1 (Algebraic Expressions) (`CCSS.MATH.6.EE.A.2`) • **Big Ideas Methods:** *Way 1: Substitute in Parentheses & Follow PEMDAS  |  Way 2: Equal-Groups Bar / Place Value Model* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** algebraic expression • variable • term • coefficient • constant • evaluate • substitute
 
-![Writing and Evaluating Algebraic Expressions](../assets/manuals/algebra_factoring_area.png){ width="320" }
+![Writing and Evaluating Algebraic Expressions](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 An algebraic expression contains numbers, variables (letters representing unknown quantities), and operations. In an expression like 4x + 7, 4x and 7 are terms, 4 is the coefficient of x, and 7 is a constant. To evaluate an algebraic expression, substitute the given number for each variable and follow the Order of Operations (PEMDAS).
 
 > **⚠️ WATCH OUT: When substituting x into 4x + 7, 4x means 4 × x (multiply 4 × 5 = 20 first; do NOT write '45')!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`ALGB-01`: Algebra Boxes & Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** To evaluate an algebraic expression, substitute the given value for each variable in parentheses and follow PEMDAS.
 2. **Textbook Vocabulary:** Identify terms (parts added), coefficients (number multiplied by a variable), and constants (numbers alone).
-3. **Block Reinforcement (ALGB-01):** Placing 5 unit cubes into each of 4 x-cups plus 7 loose cubes visually shows 4(5) + 7 = 20 + 7 = 27.
+3. **Block Reinforcement (PLACE-01):** Placing a [5] Digit Block into each of 4 variable sockets plus [7] visually shows 4(5) + 7 = 20 + 7 = 27.
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
 | Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Practice A** (`p.37`) | **Evaluate 4x + 7 when x = 5.** | **WAY 1: Substitute with Parentheses & Follow PEMDAS:** Replace x with (5) in 4x + 7: 4(5) + 7. Multiply first (4 × 5 = 20), then add 7: 20 + 7 = 27. | **WAY 2: Equal-Groups Tile / Bar Model (With Blocks):** Write 4x + 7 as four x-groups plus 7: (5 + 5 + 5 + 5) + 7 = 20 + 7 = 27. | **27** |
+| **Practice A** (`p.37`) | **Evaluate 4x + 7 when x = 5.** | **WAY 1: Substitute with Parentheses & Follow PEMDAS:** Replace x with (5) in 4x + 7: 4(5) + 7. Multiply first (4 × 5 = 20), then add 7: 20 + 7 = 27. | **WAY 2: Equal-Groups Bar / Place Value Model (With Blocks):** Write 4x + 7 as four x-groups plus 7: (5 + 5 + 5 + 5) + 7 = 20 + 7 = 27. | **27** |
 | **Practice B** (`p.38`) | **In a game, each boss trophy (a) is worth 3a² points and each gem (b) is worth 4b points. What is your total score if you collect 5 trophies and 6 gems?** | **WAY 1: Substitute into 3a² + 4b & Follow PEMDAS:** Write 3(5)² + 4(6). Evaluate exponent first (5² = 25), multiply (3 × 25 = 75 and 4 × 6 = 24), then add: 75 + 24 = 99 points.<br>*PEMDAS Order: In s³ - 2m - 10 for s=5, m=8: evaluate 5³ = 125 first, then 2(8) = 16 -> 125 - 16 - 10 = 99.* | **WAY 2: Find Each Item's Sub-Score Separately:** 1 trophy = 3(5×5) = 75 pts. 6 gems = 6 × 4 = 24 pts. Combine both sub-scores: 75 + 24 = 99 points.<br>*Left-to-Right Subtraction: 125 - 16 = 109, then 109 - 10 = 99.* | **99 points** |
 
 #### How to Use the SC-6 Calculator to Check Your Work
@@ -1183,28 +1179,28 @@ Noah used to freeze up whenever letters showed up inside math expressions like 6
 
 ### Section 4.2: Simplifying Expressions by Combining Like Terms (Workbook pp. 39–40)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 3.2 & 3.3 / 5.2 (Simplifying Algebraic Expressions) (`CCSS.MATH.6.EE.A.3`) • **Big Ideas Methods:** *Way 1: Reorder & Add Coefficients (Properties)  |  Way 2: Sort by Tile Shape / Column Alignment* • **Block Kit:** `ALGB-01` (Algebra Boxes & Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 3.2 & 3.3 / 5.2 (Simplifying Algebraic Expressions) (`CCSS.MATH.6.EE.A.3`) • **Big Ideas Methods:** *Way 1: Reorder & Add Coefficients (Properties)  |  Way 2: Sort by Variable Power Columns* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** like terms • simplest form • Commutative Property • Associative Property • equivalent expressions
 
-![Simplifying Expressions by Combining Like Terms](../assets/manuals/algebra_factoring_area.png){ width="320" }
+![Simplifying Expressions by Combining Like Terms](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 Terms that have the exact same variable raised to the exact same exponent are called Like Terms (such as 4x and 2x, or 3x² and 2x²). Constant terms (such as 5 and 3) are also like terms. To simplify an expression, use the Commutative and Associative Properties to group like terms together and add or subtract their coefficients.
 
 > **⚠️ WATCH OUT: Combine only terms with the EXACT same variable and exponent — never combine 6x + 8 into 14x!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`ALGB-01`: Algebra Boxes & Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** Like terms have the exact same variable raised to the exact same power. Add or subtract their coefficients; keep the variable part unchanged.
 2. **Textbook Equivalence Check:** Substitute a test value (such as x = 2 or x = 10) into both the original and simplified expressions to verify they match.
-3. **Block Reinforcement (ALGB-01):** x²-flats, x-rods, and 1-cubes have different physical dimensions, showing why 4x and 5 cannot combine into 9x!
+3. **Block Reinforcement (PLACE-01):** Assigning x², x, and constant terms to separate tray columns shows why 4x and 5 cannot combine into 9x!
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
 | Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Practice A** (`p.39`) | **Simplify the expression 4x + 5 + 2x + 3.** | **WAY 1: Commutative & Associative Grouping:** Reorder and group like terms: (4x + 2x) + (5 + 3) = (4 + 2)x + 8 = 6x + 8. | **WAY 2: Sort by Algebra Tile Shape / Vertical Columns:** Place x-terms in Column 1 (4x + 2x = 6x) and constants in Column 2 (+5 + 3 = +8) -> 6x + 8. | **6x + 8** |
-| **Practice B** (`p.40`) | **Simplify the expression 3x² + 5x + 2x² - x + 6.** | **WAY 1: Group Terms with the Same Variable & Exponent:** Rewrite -x as -1x: (3x² + 2x²) + (5x - 1x) + 6 = (3 + 2)x² + (5 - 1)x + 6 = 5x² + 4x + 6.<br>*Group by Degree: (3x² + 2x²) + (7x - 3x) + 6 = 5x² + 4x + 6.* | **WAY 2: Sort by Algebra Tile Shape (x²-Flats, x-Rods, 1-Cubes):** Combine 3 + 2 = 5 blue x²-flats (5x²), 5 - 1 = 4 green x-rods (4x), and 6 yellow unit cubes (+6) -> 5x² + 4x + 6.<br>*Substitution Check (x = 2): Original = 12+14+8-6+6 = 34; Simplified = 5(4)+4(2)+6 = 34.* | **5x² + 4x + 6** |
+| **Practice A** (`p.39`) | **Simplify the expression 4x + 5 + 2x + 3.** | **WAY 1: Commutative & Associative Grouping:** Reorder and group like terms: (4x + 2x) + (5 + 3) = (4 + 2)x + 8 = 6x + 8. | **WAY 2: Sort by Place-Value / Variable Columns:** Place x-terms in Column 1 (4x + 2x = 6x) and constants in Column 2 (+5 + 3 = +8) -> 6x + 8. | **6x + 8** |
+| **Practice B** (`p.40`) | **Simplify the expression 3x² + 5x + 2x² - x + 6.** | **WAY 1: Group Terms with the Same Variable & Exponent:** Rewrite -x as -1x: (3x² + 2x²) + (5x - 1x) + 6 = (3 + 2)x² + (5 - 1)x + 6 = 5x² + 4x + 6.<br>*Group by Degree: (3x² + 2x²) + (7x - 3x) + 6 = 5x² + 4x + 6.* | **WAY 2: Sort into x², x, and Constant Columns:** Combine 3 + 2 = 5 in the x²-column (5x²), 5 - 1 = 4 in the x-column (4x), and 6 in the ones column (+6) -> 5x² + 4x + 6.<br>*Substitution Check (x = 2): Original = 12+14+8-6+6 = 34; Simplified = 5(4)+4(2)+6 = 34.* | **5x² + 4x + 6** |
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
@@ -1247,28 +1243,28 @@ Looking at the expression 6x + 9 - 2x + 5, Noah was tempted to mash everything t
 
 ### Section 4.3: The Distributive Property (Workbook pp. 41–42)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 3.4 / 5.3 (The Distributive Property) (`CCSS.MATH.6.EE.A.3`) • **Big Ideas Methods:** *Way 1: Multiply Each Term Inside a(b + c) = ab + ac  |  Way 2: Split-Rectangle Area Model  |  Way 3: Repeated Addition of Rows* • **Block Kit:** `ALGB-01` (Algebra Boxes & Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 3.4 / 5.3 (The Distributive Property) (`CCSS.MATH.6.EE.A.3`) • **Big Ideas Methods:** *Way 1: Multiply Each Term Inside a(b + c) = ab + ac  |  Way 2: Split-Rectangle Area Model  |  Way 3: Repeated Addition of Rows* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** Distributive Property • area model • partial products • equivalent expressions
 
-![The Distributive Property](../assets/manuals/counting_tiles_distributive_4color.png){ width="320" }
+![The Distributive Property](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 To multiply a sum or difference by a number, multiply each term inside the parentheses by the number outside the parentheses: a(b + c) = ab + ac and a(b - c) = ab - ac. Geometrically, a rectangle of height 3 and split width (x + 4) has two partial areas: 3(x) + 3(4) = 3x + 12.
 
 > **⚠️ WATCH OUT: Multiply the outside factor by EVERY term inside the parentheses: 3(2x + 5) = 6x + 15 (do not forget 3 × 5)!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`ALGB-01`: Algebra Boxes & Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept (Distributive Property):** To multiply a sum or difference by a number, multiply EACH term inside parentheses: a(b + c) = ab + ac.
 2. **Textbook Area Model:** A rectangle of height a and split width (b + c) has total area a(b + c), which equals the sum of the two sub-areas ab + ac.
-3. **Block Reinforcement (ALGB-01):** Splitting a 6 × 14 tile rectangle into 6 × 10 (60) and 6 × 4 (24) proves 6(10 + 4) = 60 + 24 = 84.
+3. **Block Reinforcement (PLACE-01):** Splitting 14 into Tens (10) and Ones (4) on the tray proves 6(10 + 4) = 60 + 24 = 84.
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
 | Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Practice A** (`p.41`) | **Evaluate 6(10 + 4) using the Order of Operations and using the Distributive Property.** | **WAY 1: Use the Distributive Property a(b + c) = ab + ac:** Multiply 6 by each term inside the parentheses: 6(10 + 4) = 6(10) + 6(4) = 60 + 24 = 84. | **WAY 2: Use the Order of Operations (Combine Width First):** Add inside the parentheses first: 6(10 + 4) = 6(14) = 84.<br>**WAY 3: Split-Rectangle Area Model (With Blocks):** A 6-by-14 tile rectangle splits into a 6×10 array (60) and a 6×4 array (24): 60 + 24 = 84. | **84** |
-| **Practice B** (`p.42`) | **Five friends each buy 2 tacos (x dollars each) and a $3 drink, and the group orders 4 extra tacos: 5(2x + 3) + 4x. Simplify the expression.** | **WAY 1: Distribute First, Then Combine Like Terms:** Distribute 5 across (2x + 3): 5(2x) + 5(3) + 4x = 10x + 15 + 4x. Combine x-terms: (10x + 4x) + 15 = 14x + 15.<br>*Distribute & Combine: 4(2x + 5) + 3(2x - 5) = 8x + 20 + 6x - 5 = 14x + 15.* | **WAY 2: Algebra Tile Rows (5 Rows of 2x + 3):** Stack 5 rows of (2 green x-rods + 3 unit cubes) = 10 x-rods + 15 cubes. Add 4 more x-rods -> 14x + 15.<br>*Substitution Check (x = 2): 4(9) + 3(4) - 5 = 36 + 7 = 43, and 14(2) + 15 = 43.* | **14x + 15** |
+| **Practice A** (`p.41`) | **Evaluate 6(10 + 4) using the Order of Operations and using the Distributive Property.** | **WAY 1: Use the Distributive Property a(b + c) = ab + ac:** Multiply 6 by each term inside the parentheses: 6(10 + 4) = 6(10) + 6(4) = 60 + 24 = 84. | **WAY 2: Use the Order of Operations (Combine Width First):** Add inside the parentheses first: 6(10 + 4) = 6(14) = 84.<br>**WAY 3: Split-Rectangle Area Model (Partial Products):** A 6-by-14 rectangle splits into a 6×10 section (60) and a 6×4 section (24): 60 + 24 = 84. | **84** |
+| **Practice B** (`p.42`) | **Five friends each buy 2 tacos (x dollars each) and a $3 drink, and the group orders 4 extra tacos: 5(2x + 3) + 4x. Simplify the expression.** | **WAY 1: Distribute First, Then Combine Like Terms:** Distribute 5 across (2x + 3): 5(2x) + 5(3) + 4x = 10x + 15 + 4x. Combine x-terms: (10x + 4x) + 15 = 14x + 15.<br>*Distribute & Combine: 4(2x + 5) + 3(2x - 5) = 8x + 20 + 6x - 5 = 14x + 15.* | **WAY 2: Equal-Group Rows (5 Groups of 2x + 3):** Five groups of (2x + 3) give 10x + 15. Add the 4 extra tacos (4x) -> 14x + 15.<br>*Substitution Check (x = 2): 4(9) + 3(4) - 5 = 36 + 7 = 43, and 14(2) + 15 = 43.* | **14x + 15** |
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
@@ -1311,21 +1307,21 @@ When Maya wrote 4(x + 7) for four soccer players each ordering an $x jersey and 
 
 ### Section 4.4: Factoring Expressions Using the GCF (Workbook pp. 43–44)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 3.4 Ext / 5.4 (Factoring Expressions) (`CCSS.MATH.6.EE.A.3`) • **Big Ideas Methods:** *Way 1: Factor Out the GCF Using Prime Factors  |  Way 2: Equal-Rows Area Model / Division Ladder* • **Block Kit:** `ALGB-01` (Algebra & Prime Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Section 3.4 Ext / 5.4 (Factoring Expressions) (`CCSS.MATH.6.EE.A.3`) • **Big Ideas Methods:** *Way 1: Factor Out the GCF Using Prime Factors  |  Way 2: Equal-Rows Area Model / Division Ladder* • **Block Kit:** `PRIME-01` (Prime Factor Studio)
 
 **Key Vocabulary:** factoring an expression • greatest common factor (GCF) • factored form • expanded form
 
-![Factoring Expressions Using the GCF](../assets/manuals/algebra_factoring_area.png){ width="320" }
+![Factoring Expressions Using the GCF](../assets/manuals/prime_lcm_gcd_venn.png){ width="320" }
 
 Factoring an expression means writing a sum or difference as a product—the exact reverse of the Distributive Property! To factor an expression completely, find the Greatest Common Factor (GCF) of its terms, write the GCF outside the parentheses, and divide each term by the GCF to find the terms inside.
 
 > **⚠️ WATCH OUT: Factor out the GREATEST common factor (GCF) so the terms left inside parentheses share no common factor > 1.**
 
-#### Textbook Concepts & Hands-On Reinforcement (`ALGB-01`: Algebra & Prime Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`PRIME-01`: Prime Factor Studio)
 
 1. **Textbook Concept (Factoring out the GCF):** Find the GCF of all terms, write the GCF outside parentheses, and divide each term by the GCF: ab + ac = a(b + c).
 2. **Textbook Verification:** Distribute your factored expression back out and check that the inside terms have no common factors left (GCF = 1).
-3. **Block Reinforcement (ALGB-01):** Arranging 18 x-rods and 24 unit cubes into 6 equal rows forms a rectangle of height 6 and width (3x + 4).
+3. **Block Reinforcement (PRIME-01):** Prime towers for 18 ([2][3][3]) and 24 ([2][2][2][3]) share [2][3] = 6, factoring 18x + 24 into 6(3x + 4).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -1381,11 +1377,10 @@ At the end of the craft fair, Maya had (16x + 24) stickers to pack into the grea
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_05.pdf" class="md-button md-button--primary">📄 Print Unit 5 Chapter Packet PDF (10 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
 </div>
 
-- **Manipulative Kits (`Counting & Array Tiles (COUNT-01) + Planetary Geared Clock (TIME-01)`):** [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Modulo-60 Classroom Clock (`TIME-01`)](../products/classroom-clock/index.md)
-- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Hands-On Block Kits (When Applicable — `Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Why Babylonians Counted to 60 & The Rope-Stretchers of the Nile"** — [SC-6 Ch. 6: Geometry, Time & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lessons 20–21](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students multiply the slanted side of a parallelogram instead of the vertical height, forget to divide by 2 for triangles, lose track of multi-piece composite areas, and subtract clock times in base-10 instead of base-60.
-- **Hands-On Remediation:** Slide the corner triangle of a parallelogram to form a straight [f] [RECT] rectangle, use the dedicated [g] [TRI] key ([g][7]) which divides by 2 automatically, accumulate composite chunks with [Σ+], and use the Planetary Clock (TIME-01) + [CLK] key for base-60 time.
+- **Hands-On & Stack Remediation:** Slide the corner triangle of a parallelogram to form a straight [f] [RECT] rectangle, use the dedicated [g] [TRI] key ([g][7]) which divides by 2 automatically, accumulate composite chunks with [Σ+], and use the Place Value Studio (PLACE-01) + [CLK] key for base-60 time.
 
 When Liam set out to build a wooden skateboard launch ramp and a pair of cornhole boards in his garage, he hit a wall right away at the hardware store. Plywood and grip tape are sold by the square foot, yet almost none of the pieces in his sketch were plain rectangles. The side panels of his ramp were right triangles, the gym vaulting box he wanted to copy had trapezoid sides, and the cornhole board had a square hole cut right out of the middle.
 
@@ -1397,27 +1392,27 @@ Everything changed when they took a pair of scissors to scrap cardboard and saw 
 
 ### Section 5.1: Areas of Parallelograms and Rectangles (Workbook pp. 46–47)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 4.1 (Areas of Parallelograms) (`CCSS.MATH.6.G.A.1`) • **Big Ideas Methods:** *Way 1: Area Formula A = bh  |  Way 2: Cut-and-Slide Rectangle Decomposition* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 4.1 (Areas of Parallelograms) (`CCSS.MATH.6.G.A.1`) • **Big Ideas Methods:** *Way 1: Area Formula A = bh  |  Way 2: Cut-and-Slide Rectangle Decomposition* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** polygon • parallelogram • base (b) • perpendicular height (h) • slant length • perimeter
 
-![Areas of Parallelograms and Rectangles](../assets/manuals/counting_tiles_array_3x8.png){ width="320" }
+![Areas of Parallelograms and Rectangles](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 If you cut a right triangle from one end of a parallelogram and translate (slide) it to the other end, the parallelogram forms a rectangle with the exact same base b and perpendicular height h! Therefore, the area of any parallelogram is A = bh, where h is the perpendicular vertical height (never the slanted side length).
 
 > **⚠️ WATCH OUT: Always multiply Base b × Perpendicular Height h (at 90°) — ignore the slanted side length when finding area!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** Area of a rectangle = lw; Area of a parallelogram = bh, where height h is PERPENDICULAR (90°) to the base b.
 2. **Textbook Visual Proof:** Cut the right triangle from one end of a parallelogram and slide it to the other end to form a b × h rectangle.
-3. **Block Reinforcement (COUNT-01):** Sliding the overhanging triangle on the grid turns the slanted parallelogram into a 12 × 8 rectangle (96 cm²).
+3. **Visual Proof:** Sliding the overhanging right triangle on the grid turns the slanted parallelogram into a 12 × 8 rectangle (96 cm²).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
 | Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Practice A** (`p.46`) | **Find the area of a parallelogram with base b = 12 cm, perpendicular height h = 8 cm, and slanted side 10 cm.** | **WAY 1: Use the Parallelogram Area Formula A = bh:** Multiply base b = 12 cm by perpendicular height h = 8 cm: A = 12 × 8 = 96 cm² (ignore the 10 cm slant side for area!). | **WAY 2: Cut-and-Slide into a Rectangle (With Grid Blocks):** Cut the right triangle off one end and slide it to the other end to form a 12 cm by 8 cm rectangle -> Area = 96 cm². | **96 cm²** |
+| **Practice A** (`p.46`) | **Find the area of a parallelogram with base b = 12 cm, perpendicular height h = 8 cm, and slanted side 10 cm.** | **WAY 1: Use the Parallelogram Area Formula A = bh:** Multiply base b = 12 cm by perpendicular height h = 8 cm: A = 12 × 8 = 96 cm² (ignore the 10 cm slant side for area!). | **WAY 2: Cut-and-Slide into a Rectangle:** Cut the right triangle off one end and slide it to the other end to form a 12 cm by 8 cm rectangle -> Area = 96 cm². | **96 cm²** |
 | **Practice B** (`p.47`) | **A parallelogram-shaped team banner has an area of 168 square inches and a base of 14 inches. What is the vertical height of the banner?** | **WAY 1: Substitute into A = bh & Solve Using Division:** Write 168 = 14h. Divide both sides by 14: h = 168 ÷ 14 = 12 inches.<br>*Substitute Known Values: 180 = 15h -> divide both sides by 15 -> h = 12 inches.* | **WAY 2: Partial Quotients / Area Decomposition:** Split 168 in² into 140 in² + 28 in²: (140 ÷ 14) + (28 ÷ 14) = 10 in + 2 in = 12 inches.<br>*Area Check: b × h = 15 in × 12 in = 180 in².* | **12 inches** |
 
 #### How to Use the SC-6 Calculator to Check Your Work
@@ -1461,21 +1456,21 @@ When Liam measured a slanted parallelogram parking space in the marina lot, his 
 
 ### Section 5.2: Areas of Triangles (Workbook pp. 48–49)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 4.2 (Areas of Triangles) (`CCSS.MATH.6.G.A.1`) • **Big Ideas Methods:** *Way 1: Formula A = (b × h) ÷ 2  |  Way 2: Take Half of Base or Height First (½b × h)* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 4.2 (Areas of Triangles) (`CCSS.MATH.6.G.A.1`) • **Big Ideas Methods:** *Way 1: Formula A = (b × h) ÷ 2  |  Way 2: Take Half of Base or Height First (½b × h)* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
 
 **Key Vocabulary:** triangle • congruent triangles • perpendicular base & height • Area Formula A = ½bh
 
-![Areas of Triangles](../assets/manuals/counting_tiles_array_3x8.png){ width="320" }
+![Areas of Triangles](../assets/manuals/fraction_studio_twin_comparator.png){ width="320" }
 
 Any triangle can be duplicated and rotated to form a parallelogram with the same base b and height h. Because the two congruent triangles make up one bh parallelogram, the area of a single triangle is exactly half the area of the parallelogram: A = ½bh = (b × h) ÷ 2.
 
 > **⚠️ WATCH OUT: Don't forget to divide by 2 for triangles (A = ½bh)! And when solving for a missing height, double the area first (h = 2A ÷ b).**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
 
 1. **Textbook Concept:** Two congruent triangles always form a parallelogram of area bh, so every triangle has area A = ½bh = (b × h) ÷ 2.
 2. **Textbook Mental-Math Tip:** You can either multiply b × h first and divide by 2, OR take half of the even dimension first and then multiply.
-3. **Block Reinforcement (COUNT-01):** Framing a 10 × 6 rectangle (60 squares) around the triangle shows the triangle covers exactly half (30 squares).
+3. **Block Reinforcement (FRAC-01):** Framing a 10 × 6 rectangle (60 squares) around the triangle shows the triangle covers 1/2 of the rectangle (30 squares).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -1525,21 +1520,21 @@ Sora always forgot to divide by 2 when finding the area of a triangle, especiall
 
 ### Section 5.3: Areas of Trapezoids and Composite Figures (Workbook pp. 50–51)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 4.3 & 4.3 Ext (Trapezoids and Composite Figures) (`CCSS.MATH.6.G.A.1`) • **Big Ideas Methods:** *Way 1: Decompose & Add Sub-Areas  |  Way 2: Trapezoid Formula A = ½h(b₁ + b₂)  |  Way 3: Enclosing Box Minus Cutouts* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 4.3 & 4.3 Ext (Trapezoids and Composite Figures) (`CCSS.MATH.6.G.A.1`) • **Big Ideas Methods:** *Way 1: Decompose & Add Sub-Areas  |  Way 2: Trapezoid Formula A = ½h(b₁ + b₂)  |  Way 3: Enclosing Box Minus Cutouts* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
 
 **Key Vocabulary:** trapezoid • parallel bases (b₁, b₂) • height (h) • composite figure • decompose
 
-![Areas of Trapezoids and Composite Figures](../assets/manuals/counting_tiles_distributive_4color.png){ width="320" }
+![Areas of Trapezoids and Composite Figures](../assets/manuals/fraction_studio_common_denominator.png){ width="320" }
 
 A trapezoid has two parallel bases, b₁ and b₂, and a perpendicular height h. Its area is half the product of the height and the sum of the bases: A = ½h(b₁ + b₂). To find the area of a composite figure, decompose it into non-overlapping rectangles, triangles, and trapezoids (or subtract cutout areas from an enclosing rectangle).
 
 > **⚠️ WATCH OUT: In a trapezoid, add the two parallel bases (b₁ + b₂) FIRST before multiplying by ½h!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
 
 1. **Textbook Trapezoid Formula:** A = ½h(b₁ + b₂) — add the two parallel bases, multiply by the perpendicular height h, and divide by 2 (average of bases × h).
 2. **Textbook Composite Figures:** Either DECOMPOSE (split into non-overlapping rectangles/triangles and add) or SUBTRACT (enclosing box minus cutouts).
-3. **Block Reinforcement (COUNT-01):** Splitting the 12 × 8 wall + roof into a rectangle (96) and triangle (30) matches subtracting corner triangles from a 12 × 13 box (156 - 30 = 126).
+3. **Visual Reinforcement:** Splitting the 12 × 8 wall + roof into a rectangle (96) and triangle (30) matches subtracting corner triangles from a 12 × 13 box (156 - 30 = 126).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -1589,21 +1584,21 @@ The trapezoid area formula—A = ½h(b₁ + b₂)—looked so crowded with subsc
 
 ### Section 5.4: Polygons in the Coordinate Plane & Elapsed Time (Workbook pp. 52–53)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 4.4 (Polygons in the Coordinate Plane) & Time Lab (`CCSS.MATH.6.G.A.3`) • **Big Ideas Methods:** *Way 1: Subtract Coordinates / Regroup 60 min = 1 hr  |  Way 2: Count Grid Squares / Time-Line Jumps* • **Block Kit:** `TIME-01` (Planetary Geared Clock)
+**Textbook Alignment:** Big Ideas Grade 6, Section 4.4 (Polygons in the Coordinate Plane) & Time Lab (`CCSS.MATH.6.G.A.3`) • **Big Ideas Methods:** *Way 1: Subtract Coordinates / Regroup 60 min = 1 hr  |  Way 2: Count Grid Squares / Time-Line Jumps* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** coordinate grid • vertices • horizontal side • vertical side • elapsed time • base-60 regrouping
 
-![Polygons in the Coordinate Plane & Elapsed Time](../assets/manuals/planetary_geared_clock_330.png){ width="320" }
+![Polygons in the Coordinate Plane & Elapsed Time](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 To find the length of a horizontal segment in Quadrant I, subtract the x-coordinates; for a vertical segment, subtract the y-coordinates. When calculating elapsed time, remember that hours and minutes use Base-60 (60 minutes = 1 hour), so regroup 60 minutes whenever minutes exceed 59 or when borrowing 1 hour.
 
 > **⚠️ WATCH OUT: Wait! 1 hour = 60 minutes (NOT 100): when borrowing 1 hour in elapsed time, add 60 minutes to the minutes column.**
 
-#### Textbook Concepts & Hands-On Reinforcement (`TIME-01`: Planetary Geared Clock)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Coordinate Polygons:** Subtract x-coordinates for horizontal side lengths and y-coordinates for vertical side lengths, then find Perimeter and Area.
 2. **Textbook Elapsed Time:** Regroup 60 minutes = 1 hour when adding/subtracting times, or jump to the nearest hour on a time number line.
-3. **Block Reinforcement (TIME-01):** Turning the 60-tooth geared clock hands shows why 60 minutes regroups into 1 full hour (and 15 min = 1/4 hr = 0.25 hr).
+3. **Block Reinforcement (FRAC-01):** Using 1/4, 1/2, and 3/4 Fraction Towers (where 1 Whole = 60 min) shows why 15 min = 0.25 hr and 60 min regroups into 1 hr.
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -1659,11 +1654,10 @@ When Sora plotted a rectangular park with corners at (1, 2) and (11, 8) on a map
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_06.pdf" class="md-button md-button--primary">📄 Print Unit 6 Chapter Packet PDF (12 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
 </div>
 
-- **Manipulative Kits (`Ten-Frame Two-Tone Counters (BASE-10) + Algebra Zero-Pair Tiles (ALGB-01)`):** [Ten-Frame Two-Tone Studio (`BASE-10`)](../products/ten-frames/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
-- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Zero-Pair Counters, Sub-Zero Number Lines & Descartes's Coordinate Fly"** — [SC-6 Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) & [Ch. 6: Geometry](../manuals/sc6/06-geometry-surface-area.md)
 - **Target Misconception:** Students confuse the subtraction operator [-] with the negative sign [+/-], think -18 > -5 because 18 > 5, confuse Opposite ([+/-]) with Absolute Value ([g] [|x|]), and reverse (x, y) coordinates.
-- **Hands-On Remediation:** Use two-tone (+1 / -1) Zero-Pair counters (BASE-10) and Zero-Pair tiles (ALGB-01), plot signed jumps on the SC-6 Number Line ([f] [LINE]), test inequalities with [f] [>] and [g] [<], contrast [+/-] (flip sign) with [g] [|x|] (always positive distance from 0), and use the Elevator Rule (walk across x first, ride up/down y second).
+- **Hands-On & Stack Remediation:** Use Place Value Studio (PLACE-01) tokens and the SC-6 Number Line ([f] [LINE]) to model opposites and zero pairs, test inequalities with [f] [>] and [g] [<], contrast [+/-] (flip sign) with [g] [|x|] (always positive distance from 0), and use the Elevator Rule (walk across x first, ride up/down y second).
 
 For Kai, who helps pilot a tethered underwater camera rover with the harbor oceanography club, zero isn't nothing—it's the glittering surface of the sea. High above the boat, a northern gannet circles at +32 meters in the air before folding its wings and plunging straight through the waves down to -14 meters underwater. Meanwhile, in the high Andes mountains, Zoe reads field logs about tiny hummingbirds that survive freezing nights by dropping their body temperature by 28 degrees.
 
@@ -1675,27 +1669,27 @@ By picturing a vertical thermometer and an underwater depth line, Kai, Zoe, and 
 
 ### Section 6.1: Positive and Negative Integers & Opposites (Workbook pp. 55–56)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 6.1 (Integers) (`CCSS.MATH.6.NS.C.5`) • **Big Ideas Methods:** *Way 1: Equal Distance on Opposite Sides of 0 (Number Line)  |  Way 2: Additive Inverse & Zero-Pair Counters* • **Block Kit:** `BASE-10` (Ten-Frame Zero-Pair Counters)
+**Textbook Alignment:** Big Ideas Grade 6, Section 6.1 (Integers) (`CCSS.MATH.6.NS.C.5`) • **Big Ideas Methods:** *Way 1: Equal Distance on Opposite Sides of 0 (Number Line)  |  Way 2: Additive Inverse & Zero Pairs* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** integer • positive number • negative number • opposites • additive inverse • zero pair
 
-![Positive and Negative Integers & Opposites](../assets/manuals/ten_frame_subitizing_5anchor.png){ width="320" }
+![Positive and Negative Integers & Opposites](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 Integers are the set of whole numbers and their opposites (... -3, -2, -1, 0, 1, 2, 3 ...). Positive numbers are greater than 0 and represent gains, deposits, or elevations above sea level; negative numbers are less than 0 and represent losses, withdrawals, or depths below sea level. Two numbers that are the same distance from 0 on opposite sides are called opposites, and their sum is always 0 (a Zero Pair).
 
 > **⚠️ WATCH OUT: Zero (0) is its own opposite and is neither positive nor negative; -(-x) means the opposite of -x, which is +x!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`BASE-10`: Ten-Frame Zero-Pair Counters)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** Positive and negative integers represent opposite directions from 0. Opposites (a and -a) are the same distance from 0 on opposite sides.
 2. **Textbook Additive Inverse Property:** The sum of any number and its opposite is always 0 (-15 + 15 = 0), and -(-a) = a.
-3. **Block Reinforcement (BASE-10):** Pairing 15 Red (-) counters with 15 Yellow (+) counters forms 15 Zero Pairs that cancel to 0.
+3. **Block Reinforcement (PLACE-01):** Pairing 15 negative (-1) steps with 15 positive (+1) tokens forms 15 Zero Pairs that cancel to 0.
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
 | Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Practice A** (`p.55`) | **Find the opposite of -15 and the value of -(-15).** | **WAY 1: Plot Equal Distance Across 0 on a Number Line:** -15 is 15 units to the left of 0. Its opposite is 15 units to the right of 0, which is +15. | **WAY 2: Additive Inverse / Zero-Pair Rule (With Counters):** The opposite of -15 is -(-15) = +15, because 15 negatives and 15 positives form 15 Zero Pairs: -15 + 15 = 0. | **Opposite of -15 is +15; -15 + 15 = 0** |
+| **Practice A** (`p.55`) | **Find the opposite of -15 and the value of -(-15).** | **WAY 1: Plot Equal Distance Across 0 on a Number Line:** -15 is 15 units to the left of 0. Its opposite is 15 units to the right of 0, which is +15. | **WAY 2: Additive Inverse / Zero-Pair Rule:** The opposite of -15 is -(-15) = +15, because 15 negatives and 15 positives form 15 Zero Pairs: -15 + 15 = 0. | **Opposite of -15 is +15; -15 + 15 = 0** |
 | **Practice B** (`p.56`) | **You start with a $0 balance, deposit $35, spend $50, and deposit $20. What is your final balance?** | **WAY 1: Step-by-Step Jumps on a Number Line:** Start at 0 -> move right to +35 -> move 50 left (passing 0 to -15) -> move 20 right (-15 + 20) -> lands at +$5.<br>*Number Line Jumps: Start at 0, move 20 left to -20, then 25 right -> lands at +5 ($5).* | **WAY 2: Group All Positives & All Negatives (Zero Pairs):** Combine positive deposits (+35 + 20 = +55) and pair with -50: 50 zero pairs cancel, leaving +$5.<br>*Zero-Pair Check: -20 + 20 = 0 (breaks even), with +$5 remaining.* | **+$5** |
 
 #### How to Use the SC-6 Calculator to Check Your Work
@@ -1710,7 +1704,7 @@ Integers are the set of whole numbers and their opposites (... -3, -2, -1, 0, 1,
 | **A1** | Write the integer that represents '25 feet below sea level' and state its opposite. | `Setup: -25; +/-  |  SC-6: 25 [+/-] -> -25; [+/-] -> 25` | **-25; Opposite = +25** |
 | **A2** | Find the opposite of -42, and then evaluate -(-42). | `Setup: 42  |  SC-6: 42 [+/-] [+/-]` | **+42; and +42** |
 | **A3** | A research submarine is at an elevation of -18 meters and rises 18 meters. What is its new elevation? | `Setup: -18 + 18  |  SC-6: 18 [+/-] [ENTER] 18 [+]` | **0 m (Sea level)** |
-| **A4** | You combine 6 positive (+1) counters and 6 negative (-1) counters. What is the net value? | `Setup: 6 + -6  |  SC-6: 6 [ENTER] 6 [+/-] [+]` | **0** |
+| **A4** | You combine 6 positive (+1) units and 6 negative (-1) units. What is the net value? | `Setup: 6 + -6  |  SC-6: 6 [ENTER] 6 [+/-] [+]` | **0** |
 | **A5** | A desert canyon hiker starts at -120 feet relative to sea level and climbs 120 feet up the canyon wall. What is her elevation now? | `Setup: -120 + 120  |  SC-6: 120 [+/-] [ENTER] 120 [+]` | **0 ft** |
 | **A6** | Which integer is its own opposite? Explain why using a number line. | `Setup: -0  |  SC-6: 0 [+/-]` | **0 (0 is 0 units from itself)** |
 | **A7** | A freezer thermometer starts at 0°F, drops 12°F, and then rises 19°F. What is the new temperature? | `Setup: -12 + 19  |  SC-6: 12 [+/-] [ENTER] 19 [+]` | **+7°F** |
@@ -1739,7 +1733,7 @@ At first, Kai felt silly writing negative signs in front of numbers—how could 
 
 ### Section 6.2: Comparing and Ordering Integers & Rational Numbers (Workbook pp. 57–58)
 
-**Textbook Alignment:** Big Ideas Grade 6, Sections 6.2 & 6.3 (Comparing & Ordering Integers and Rational Numbers) (`CCSS.MATH.6.NS.C.7`) • **Big Ideas Methods:** *Way 1: Convert to Decimals & Plot on Number Line  |  Way 2: Rewrite with Least Common Denominator (LCD)* • **Block Kit:** `FRAC-01` (SC-6 Number Line & Fraction Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Sections 6.2 & 6.3 (Comparing & Ordering Integers and Rational Numbers) (`CCSS.MATH.6.NS.C.7`) • **Big Ideas Methods:** *Way 1: Convert to Decimals & Plot on Number Line  |  Way 2: Rewrite with Least Common Denominator (LCD)* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
 
 **Key Vocabulary:** rational number • inequality (<, >) • number line order (left = less, right = greater)
 
@@ -1749,7 +1743,7 @@ On a horizontal number line, numbers increase from left to right and decrease fr
 
 > **⚠️ WATCH OUT: With negative numbers, a larger digit means FURTHER LEFT (smaller/colder): -18 < -5, and -0.80 < -0.75!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: SC-6 Number Line & Fraction Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
 
 1. **Textbook Concept:** On a horizontal number line, numbers increase from Left to Right (a number to the right is always greater).
 2. **Textbook Rational Ordering:** To compare negative fractions and decimals, convert to a common form (all decimals or LCD fractions) and plot on a number line.
@@ -1803,17 +1797,17 @@ Zoe got tripped up comparing a puffin diving to -45.8 meters and a cormorant div
 
 ### Section 6.3: Absolute Value and Magnitude (Workbook pp. 59–60)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 6.4 (Absolute Value) (`CCSS.MATH.6.NS.C.7c`) • **Big Ideas Methods:** *Way 1: Measure Distance from 0 on a Number Line  |  Way 2: Evaluate |x| Grouping Bars Before Outside Signs* • **Block Kit:** `ALGB-01` (SC-6 Number Line & Zero-Pair Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Section 6.4 (Absolute Value) (`CCSS.MATH.6.NS.C.7c`) • **Big Ideas Methods:** *Way 1: Measure Distance from 0 on a Number Line  |  Way 2: Evaluate |x| Grouping Bars Before Outside Signs* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** absolute value (|x|) • magnitude • distance from zero • opposite vs. absolute value
 
-![Absolute Value and Magnitude](../assets/manuals/ten_frame_subitizing_5anchor.png){ width="320" }
+![Absolute Value and Magnitude](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 The absolute value of a number is its distance from 0 on a number line, written as |x|. Because distance is never negative, the absolute value of any non-zero number is always positive: |-6| = 6 and |6| = 6. Be careful not to confuse Opposite (which flips + and -) with Absolute Value (which measures positive distance from 0).
 
 > **⚠️ WATCH OUT: Absolute value |x| is always ≥ 0, but a negative sign OUTSIDE the bars (-|-14| = -14) stays negative!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`ALGB-01`: SC-6 Number Line & Zero-Pair Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** The absolute value |x| is the distance between x and 0 on a number line. Since distance is never negative, |x| ≥ 0.
 2. **Textbook Order of Operations with |x|:** Absolute value bars act as grouping symbols—evaluate inside the bars FIRST, then apply any outside '-' sign.
@@ -1867,17 +1861,17 @@ When a northern gannet plunged from +32 meters in the air down to -14 meters und
 
 ### Section 6.4: The Four-Quadrant Coordinate Plane & Reflections (Workbook pp. 61–62)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 6.5 (The Coordinate Plane) (`CCSS.MATH.6.NS.C.6`) • **Big Ideas Methods:** *Way 1: Plot & Count Distance to the Mirror Axis  |  Way 2: Coordinate Reflection Sign Rules* • **Block Kit:** `COUNT-01` (4x4 Gridfinity Baseplate & Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 6.5 (The Coordinate Plane) (`CCSS.MATH.6.NS.C.6`) • **Big Ideas Methods:** *Way 1: Plot & Count Distance to the Mirror Axis  |  Way 2: Coordinate Reflection Sign Rules* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** coordinate plane • origin (0, 0) • x-axis • y-axis • quadrants (I, II, III, IV) • ordered pair (x, y) • reflection
 
-![The Four-Quadrant Coordinate Plane & Reflections](../assets/manuals/counting_tiles_array_3x8.png){ width="320" }
+![The Four-Quadrant Coordinate Plane & Reflections](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 The horizontal x-axis and vertical y-axis intersect at the origin (0, 0) and divide the coordinate plane into four quadrants: QI (+, +), QII (-, +), QIII (-, -), and QIV (+, -). To plot an ordered pair (x, y), move horizontally along the x-axis first, then vertically along the y-axis. Reflecting a point across the x-axis changes the sign of y; reflecting across the y-axis changes the sign of x.
 
 > **⚠️ WATCH OUT: In (x, y), move horizontally (Left/Right) for x FIRST, then vertically (Up/Down) for y. Reflecting across the x-axis flips y!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: 4x4 Gridfinity Baseplate & Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** For an ordered pair (x, y), start at the origin (0, 0), move horizontally along the x-axis first, then vertically parallel to the y-axis.
 2. **Textbook Reflection Rules:** Across the x-axis -> keep x, flip y: (x, y) -> (x, -y). Across the y-axis -> flip x, keep y: (x, y) -> (-x, y).
@@ -1931,17 +1925,17 @@ Whenever Mia plotted points like (-4, 3) on a four-quadrant grid, she second-gue
 
 ### Section 6.5: Distances in the Coordinate Plane (Workbook pp. 63–64)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 6.5 Ext (Distances on the Coordinate Plane) (`CCSS.MATH.6.NS.C.8`) • **Big Ideas Methods:** *Way 1: Add/Subtract Absolute Values to the Axis  |  Way 2: Absolute Difference of Coordinates |x₁ - x₂|* • **Block Kit:** `COUNT-01` (4x4 Gridfinity Baseplate & Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 6.5 Ext (Distances on the Coordinate Plane) (`CCSS.MATH.6.NS.C.8`) • **Big Ideas Methods:** *Way 1: Add/Subtract Absolute Values to the Axis  |  Way 2: Absolute Difference of Coordinates |x₁ - x₂|* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** horizontal distance • vertical distance • same quadrant (subtract |x|) • different quadrants (add |x|)
 
-![Distances in the Coordinate Plane](../assets/manuals/counting_tiles_array_3x8.png){ width="320" }
+![Distances in the Coordinate Plane](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 To find the distance between two points that share the same x-coordinate or the same y-coordinate: if the points lie in DIFFERENT quadrants (across an axis), add the absolute values of their differing coordinates; if they lie in the SAME quadrant, subtract the absolute values of their differing coordinates. Equivalently, distance is always |a - b|.
 
 > **⚠️ WATCH OUT: If two points are in DIFFERENT quadrants (cross an axis), ADD |x|; if they are in the SAME quadrant, SUBTRACT |x|!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: 4x4 Gridfinity Baseplate & Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Method 1 (Quadrant Rule):** Use absolute values—ADD distances to the axis when points are in DIFFERENT quadrants; SUBTRACT when in the SAME quadrant.
 2. **Textbook Method 2 (Coordinate Difference):** Subtract the changing coordinates and take the absolute value: |x₁ - x₂| or |y₁ - y₂|.
@@ -2001,11 +1995,10 @@ On a harbor coordinate map, Mia needed the length of a suspension bridge stretch
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_07.pdf" class="md-button md-button--primary">📄 Print Unit 7 Chapter Packet PDF (12 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
 </div>
 
-- **Manipulative Kits (`Algebra Boxes & Stage (ALGB-01) + Counting & Array Tiles (COUNT-01)`):** [Algebra Tile Studio (`ALGB-01`)](../products/algebra-boxes/index.md) &bull; [Math Domino Studio (`DOMI-01`)](../products/math-dominoes/index.md)
-- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Al-Jabr's Balanced Two-Pan Scale & Missing-Addend Mysteries"** — [SC-6 Ch. 8: Math Quiz Engine](../manuals/sc6/08-math-quiz-engine.md) & [SC-32 Ch. 3: Algebra](../manuals/sc32/03-algebra-transcendentals.md)
 - **Target Misconception:** Students treat '=' as 'write the answer', translate '8 less than n' backwards as 8 - n, resent writing -14 under both sides of x + 14 = 39, and confuse open vs. solid inequality circles.
-- **Hands-On Remediation:** Model '=' as a Balance Scale using Algebra Boxes & Stage (ALGB-01). Solve 1-step equations with inverse operations on both sides, verify your solution with the SC-6 Equality Test [≠] (which flashes NO when Left = Right!), and test inequalities on [f] [LINE] with [f] [≥] and [g] [≤] (which flash YES or NO).
+- **Hands-On & Stack Remediation:** Model '=' as a Balance Scale using Place Value Studio (PLACE-01) and Fraction Studio (FRAC-01). Solve 1-step equations with inverse operations on both sides, verify your solution with the SC-6 Equality Test [≠] (which flashes NO when Left = Right!), and test inequalities on [f] [LINE] with [f] [≥] and [g] [≤] (which flash YES or NO).
 
 In most math worksheets, you are given the starting numbers and asked for the final total. In real life, Maya noticed, it almost always happens backward: you already know the final total on a smudged receipt or the remaining plastic on a 3D-printer spool, and you have to figure out what you started with. When Maya saw 12 robotics shirts billed for $168 total, or Leo saw 185.2 grams left on a spool after a 64.8-gram print, they initially tried random guess-and-check and kept getting frustrated.
 
@@ -2017,27 +2010,27 @@ When Maya, Leo, and Devon start picturing every equation as a balanced two-pan s
 
 ### Section 7.1: Writing Equations in One Variable & Testing Solutions (Workbook pp. 66–67)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 7.1 (Writing Equations in One Variable) (`CCSS.MATH.6.EE.B.5`) • **Big Ideas Methods:** *Way 1: Substitute Candidates to Test Equality  |  Way 2: Balance Scale / Mental Unwrapping* • **Block Kit:** `ALGB-01` (Algebra Boxes & Stage)
+**Textbook Alignment:** Big Ideas Grade 6, Section 7.1 (Writing Equations in One Variable) (`CCSS.MATH.6.EE.B.5`) • **Big Ideas Methods:** *Way 1: Substitute Candidates to Test Equality  |  Way 2: Balance Scale / Mental Unwrapping* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** equation • solution of an equation • defining a variable • balance scale • turnaround words ('less than')
 
-![Writing Equations in One Variable & Testing Solutions](../assets/manuals/algebra_factoring_area.png){ width="320" }
+![Writing Equations in One Variable & Testing Solutions](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 An equation is a mathematical sentence that uses an equal sign (=) to state that two expressions have the exact same value—just like the two pans of a balanced scale. A value of the variable that makes the equation true is called a solution of the equation.
 
 > **⚠️ WATCH OUT: '12 less than k' translates to k - 12 (NOT 12 - k)! Always test your value by substituting it back into the original equation.**
 
-#### Textbook Concepts & Hands-On Reinforcement (`ALGB-01`: Algebra Boxes & Stage)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** An equation states that two expressions are equal. To test a value, substitute it for the variable and check if Left Side = Right Side.
 2. **Textbook Translation:** Translate key words ('is/equals' -> =, 'less than' -> turnaround subtraction, 'quotient' -> ÷) into a one-variable equation.
-3. **Block Reinforcement (ALGB-01):** An equation is a level balance scale—both pans equal 41 only when each of the 4 x-boxes holds 9 cubes (4(9)+5 = 41).
+3. **Block Reinforcement (PLACE-01):** An equation is a level balance scale—both sides equal 41 only when each of the 4 x-sockets holds a [9] Digit Block (4(9)+5 = 41).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
 | Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Practice A** (`p.66`) | **Tell whether x = 7 or x = 9 is a solution of 4x + 5 = 41.** | **WAY 1: Substitute Each Value to Test Equality:** Test x = 7: 4(7) + 5 = 33 ≠ 41 (not a solution). Test x = 9: 4(9) + 5 = 36 + 5 = 41 = 41 (x = 9 is the solution!). | **WAY 2: Balance Scale / Mental Math Unwrapping (With Blocks):** Ask: 'What number plus 5 equals 41?' -> 4x = 36. Then: '4 times what number equals 36?' -> x = 9. | **x = 9 is the solution (41 = 41)** |
+| **Practice A** (`p.66`) | **Tell whether x = 7 or x = 9 is a solution of 4x + 5 = 41.** | **WAY 1: Substitute Each Value to Test Equality:** Test x = 7: 4(7) + 5 = 33 ≠ 41 (not a solution). Test x = 9: 4(9) + 5 = 36 + 5 = 41 = 41 (x = 9 is the solution!). | **WAY 2: Balance Scale / Mental Math Unwrapping:** Ask: 'What number plus 5 equals 41?' -> 4x = 36. Then: '4 times what number equals 36?' -> x = 9. | **x = 9 is the solution (41 = 41)** |
 | **Practice B** (`p.67`) | **After 8 drones are eliminated in a qualifying round, 25 drones remain in the race. Write and solve an equation to find the starting number of drones n.** | **WAY 1: Translate Words to an Equation & Use Mental Math:** Starting drones (n) minus 8 equals 25: n - 8 = 25. Since 33 - 8 = 25, n = 33 drones.<br>*Equation Setup: Starting drones n minus 8 eliminated equals 25 -> n - 8 = 25 -> n = 33.* | **WAY 2: Part-Part-Whole Bar Model:** The total bar (n) splits into 8 eliminated drones and 25 remaining drones -> Total n = 25 + 8 = 33 drones.<br>*Substitution Check: 33 - 8 = 25 (Left Side = Right Side!).* | **n - 8 = 25; n = 33 drones** |
 
 #### How to Use the SC-6 Calculator to Check Your Work
@@ -2081,27 +2074,27 @@ Maya used to read an equals sign (=) as 'and the answer is,' which made equation
 
 ### Section 7.2: Solving Equations Using Addition or Subtraction (Workbook pp. 68–69)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 7.2 (Solving Equations Using Addition or Subtraction) (`CCSS.MATH.6.EE.B.7`) • **Big Ideas Methods:** *Way 1: Properties of Equality (Inverse Operations)  |  Way 2: Balance Scale / Part-Part-Whole Bar Model* • **Block Kit:** `ALGB-01` (Algebra Boxes & Stage)
+**Textbook Alignment:** Big Ideas Grade 6, Section 7.2 (Solving Equations Using Addition or Subtraction) (`CCSS.MATH.6.EE.B.7`) • **Big Ideas Methods:** *Way 1: Properties of Equality (Inverse Operations)  |  Way 2: Balance Scale / Part-Part-Whole Bar Model* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** inverse operations • Addition Property of Equality • Subtraction Property of Equality • isolate the variable
 
-![Solving Equations Using Addition or Subtraction](../assets/manuals/algebra_factoring_area.png){ width="320" }
+![Solving Equations Using Addition or Subtraction](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 Addition and subtraction are inverse operations—they undo each other. To solve an addition equation like x + 14 = 39, use the Subtraction Property of Equality to subtract 14 from BOTH sides so x is isolated on one pan of the balance scale. To solve a subtraction equation like x - 18 = 45, use the Addition Property of Equality to add 18 to both sides.
 
 > **⚠️ WATCH OUT: Use the INVERSE operation on BOTH sides of the '=' sign (+ undoes -, and - undoes +) to keep the equation balanced!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`ALGB-01`: Algebra Boxes & Stage)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept (Inverse Operations):** Addition and subtraction are inverse operations. Undo '+ a' by subtracting a from both sides; undo '- a' by adding a.
 2. **Textbook Properties of Equality:** Subtracting or adding the same number on both sides keeps the equation balanced. Always substitute back to check!
-3. **Block Reinforcement (ALGB-01):** Removing 28 unit cubes from both pans of x + 28 = 73 isolates the x-box on the left pan (x = 45).
+3. **Block Reinforcement (PLACE-01 / FRAC-01):** Subtracting 28 from both sides of x + 28 = 73 on the Place Value Tray isolates x = 45 (and 5/6 - 3/8 = 11/24 on Fraction Studio).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
 | Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Practice A** (`p.68`) | **Solve x + 28 = 73 and check your solution.** | **WAY 1: Subtraction Property of Equality (Undo + 28):** Subtract 28 from both sides of x + 28 = 73: (x + 28) - 28 = 73 - 28 -> x = 45. | **WAY 2: Balance Scale / Part-Whole Bar Model (With Blocks):** A whole bar of 73 is made of part x and part 28. Removing 28 from both pans leaves x = 73 - 28 = 45. (Check: 45+28 = 73.) | **x = 45** |
+| **Practice A** (`p.68`) | **Solve x + 28 = 73 and check your solution.** | **WAY 1: Subtraction Property of Equality (Undo + 28):** Subtract 28 from both sides of x + 28 = 73: (x + 28) - 28 = 73 - 28 -> x = 45. | **WAY 2: Balance Scale / Part-Whole Bar Model:** A whole bar of 73 is made of part x and part 28. Removing 28 from both pans leaves x = 73 - 28 = 45. (Check: 45+28 = 73.) | **x = 45** |
 | **Practice B** (`p.69`) | **After a 3D print uses 19.6 grams of filament, 34.8 grams remain on the spool. Also solve m + 3/8 = 5/6.** | **WAY 1: Addition & Subtraction Properties of Equality:** 1. For w - 19.6 = 34.8, add 19.6 to both sides: w = 34.8 + 19.6 = 54.4 g.  2. For m + 3/8 = 5/6, subtract 3/8: m = 20/24 - 9/24 = 11/24.<br>*Decimal Equation Check: w - 12.6 = 41.8 -> w = 41.8 + 12.6 = 54.4 (Check: 54.4 - 12.6 = 41.8).* | **WAY 2: Bar Model & Fraction Strip Comparison:** 1. Whole spool w = used (19.6) + left (34.8) = 54.4 g.  2. On twenty-fourths strips, 5/6 (20/24) is 11/24 longer than 3/8 (9/24).<br>*Fraction Equation Check: m + 3/8 = 5/6 -> m = 20/24 - 9/24 = 11/24 (Check: 11/24 + 9/24 = 5/6).* | **w = 54.4 g; m = 11/24** |
 
 #### How to Use the SC-6 Calculator to Check Your Work
@@ -2145,21 +2138,21 @@ When Leo saw the equation f - 64.8 = 185.2 for his 3D-printer spool (after a pri
 
 ### Section 7.3: Solving Equations Using Multiplication or Division (Workbook pp. 70–71)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 7.3 (Solving Equations Using Multiplication or Division) (`CCSS.MATH.6.EE.B.7`) • **Big Ideas Methods:** *Way 1: Divide/Multiply by Coefficient  |  Way 2: Multiply by the Reciprocal  |  Way 3: Equal-Groups Tape Diagram* • **Block Kit:** `ALGB-01` (Algebra & Fraction Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Section 7.3 (Solving Equations Using Multiplication or Division) (`CCSS.MATH.6.EE.B.7`) • **Big Ideas Methods:** *Way 1: Divide/Multiply by Coefficient  |  Way 2: Multiply by the Reciprocal  |  Way 3: Equal-Groups Tape Diagram* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
 
 **Key Vocabulary:** Multiplication Property of Equality • Division Property of Equality • reciprocal coefficient
 
-![Solving Equations Using Multiplication or Division](../assets/manuals/algebra_factoring_area.png){ width="320" }
+![Solving Equations Using Multiplication or Division](../assets/manuals/fraction_studio_common_denominator.png){ width="320" }
 
 Multiplication and division are inverse operations. To solve a multiplication equation like 6x = 84, use the Division Property of Equality to divide both sides by 6. To solve a division equation like k ÷ 7 = 14.5, use the Multiplication Property of Equality to multiply both sides by 7. When the coefficient is a fraction (such as 2/5 n = 16), multiply both sides by the reciprocal (5/2).
 
 > **⚠️ WATCH OUT: To solve (3/4)x = 18, multiply both sides by the RECIPROCAL (4/3); to solve k ÷ 7 = 14.5, multiply both sides by 7!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`ALGB-01`: Algebra & Fraction Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
 
 1. **Textbook Concept:** Multiplication and division are inverse operations. Undo 'a · x' by dividing both sides by a; undo 'x ÷ a' by multiplying both sides by a.
 2. **Textbook Fractional Coefficients:** To solve (a/b)x = c in one step, multiply both sides by the reciprocal (b/a).
-3. **Block Reinforcement (ALGB-01):** Sharing 136 unit cubes equally among 8 x-boxes on the balance scale puts 136 ÷ 8 = 17 cubes in each box.
+3. **Block Reinforcement (FRAC-01):** For (2/5)n = 16, two 1/5 Fraction Towers hold 16 (8 each), so all five 1/5 towers (1 Whole) hold 5 × 8 = 40!
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -2209,17 +2202,17 @@ Maya knew that 12 identical robotics shirts cost $168 (12s = 168), which meant d
 
 ### Section 7.4: Writing and Graphing Inequalities (Workbook pp. 72–73)
 
-**Textbook Alignment:** Big Ideas Grade 6, Sections 7.5–7.7 (Writing, Graphing, and Solving Inequalities) (`CCSS.MATH.6.EE.B.8`) • **Big Ideas Methods:** *Way 1: Inverse Property of Inequality & Number Line Graph  |  Way 2: Boundary & Test-Point Substitution* • **Block Kit:** `ALGB-01` (Algebra Balance Stage & SC-6 Number Line)
+**Textbook Alignment:** Big Ideas Grade 6, Sections 7.5–7.7 (Writing, Graphing, and Solving Inequalities) (`CCSS.MATH.6.EE.B.8`) • **Big Ideas Methods:** *Way 1: Inverse Property of Inequality & Number Line Graph  |  Way 2: Boundary & Test-Point Substitution* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** inequality • solution set • graph of an inequality • open circle (○ for <, >) • closed circle (● for ≤, ≥)
 
-![Writing and Graphing Inequalities](../assets/manuals/algebra_factoring_area.png){ width="320" }
+![Writing and Graphing Inequalities](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 An inequality compares two expressions using <, >, ≤ (at most / no more than), or ≥ (at least / no less than) and has infinitely many solutions. On a number line graph, use an OPEN circle (o) for < or > (boundary not included) and a SOLID dot (•) for ≤ or ≥ (boundary included), then shade the arrow in the direction of the true solutions.
 
 > **⚠️ WATCH OUT: Use an OPEN circle (○) for < or >, and a SOLID dot (●) for ≤ ('at most') or ≥ ('at least')!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`ALGB-01`: Algebra Balance Stage & SC-6 Number Line)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** Solve one-step inequalities using the same inverse operations as equations. Graph < or > with an OPEN circle (○), and ≤ or ≥ with a SOLID dot (●).
 2. **Textbook Shading Check:** Substitute one test number from your shaded arrow into the original inequality to verify it makes the statement TRUE.
@@ -2273,17 +2266,17 @@ Standing by the roller coaster entrance ('Riders must be at least 54 inches tall
 
 ### Section 7.5: Writing Equations in Two Variables (y = kx and y = x + b) (Workbook pp. 74–75)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 7.4 (Writing Equations in Two Variables) (`CCSS.MATH.6.EE.C.9`) • **Big Ideas Methods:** *Way 1: Test Constant Ratio y/x vs. Constant Difference y - x  |  Way 2: Input-Output Table & Coordinate Graph* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Section 7.4 (Writing Equations in Two Variables) (`CCSS.MATH.6.EE.C.9`) • **Big Ideas Methods:** *Way 1: Test Constant Ratio y/x vs. Constant Difference y - x  |  Way 2: Input-Output Table & Coordinate Graph* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** independent variable (input x) • dependent variable (output y) • multiplicative (y = kx) • additive (y = x + b)
 
-![Writing Equations in Two Variables (y = kx and y = x + b)](../assets/manuals/counting_tiles_array_3x8.png){ width="320" }
+![Writing Equations in Two Variables (y = kx and y = x + b)](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 In a two-variable equation such as y = 6x or y = x + 6, the input variable x is the independent variable (you choose its value freely) and the output variable y is the dependent variable (its value depends on x). In a table of values, if y - x is constant, the rule is additive (y = x + b); if y ÷ x is constant, the rule is multiplicative (y = kx).
 
 > **⚠️ WATCH OUT: Check ALL rows of the table! Multiplicative y = kx passes through (0, 0); additive y = x + b has a constant difference y - x.**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** In two-variable equations, x is the independent variable (input) and y is the dependent variable (output).
 2. **Textbook Rule Comparison:** Multiplicative relationships (y = kx) have a constant ratio y/x and pass through (0, 0); Additive (y = x + b) have a constant difference y - x.
@@ -2343,11 +2336,10 @@ Devon always mixed up which variable was 'independent' and which was 'dependent,
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_08.pdf" class="md-button md-button--primary">📄 Print Unit 8 Chapter Packet PDF (10 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
 </div>
 
-- **Manipulative Kits (`Counting & Array Tiles (COUNT-01) + Gridfinity 3x1 Storage Boxes`):** [Place Value 3D Cubes (`PLACE-01`)](../products/place-value/index.md) &bull; [Algebra & Geometry Studio (`ALGB-01`)](../products/algebra-boxes/index.md)
-- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Galileo's Giant Bone Mystery (The Square-Cube Law) & Archimedes's Crown"** — [SC-6 Ch. 6: Geometry & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lesson 22](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students drop one of the 6 faces when finding rectangular prism surface area, tangle prism and pyramid formulas, and confuse 2D Surface Area (cardboard outside) with 3D Volume (cubes inside).
-- **Hands-On Remediation:** Have students touch the 3 pairs of faces on their physical Gridfinity box while logging each pair into [Σ+] (n=1, 2, 3), use [f] [PRISM] ([f][9]) to multiply 3 stack floors (l, w, h) at once for volume, and unlock [f] [CIRC], [g] [CONE], and [g] [HYP].
+- **Hands-On & Stack Remediation:** Have students count the 3 pairs of opposite faces on a rectangular prism while logging each pair into [Σ+] (n=1, 2, 3), pack unit blocks or use [f] [PRISM] ([f][9]) to multiply 3 stack floors (l, w, h) at once for volume, and verify [f] [CIRC], [g] [CONE], and [g] [HYP].
 
 Why doesn't an Emperor penguin chick freeze when Antarctic winds hit -40°C? When Zoe read that penguins survive by huddling together to shrink their exposed 'surface area' while keeping their warm 'volume' the same, she admitted she always mixed those two terms up in math class. Liam had the same headache in the workshop: when he sewed nylon for a camping tent or ordered glass for an open-top fish tank, he wasn't sure when to add flat walls and when to multiply length times width times height.
 
@@ -2359,21 +2351,21 @@ By unfolding cardboard boxes and tents flat onto the table as 2D nets, packing w
 
 ### Section 8.1: Three-Dimensional Figures, Nets & Rectangular Prisms (Workbook pp. 77–78)
 
-**Textbook Alignment:** Big Ideas Grade 6, Sections 8.1 & 8.2 (Three-Dimensional Figures and Surface Area of Prisms) (`CCSS.MATH.6.G.A.4`) • **Big Ideas Methods:** *Way 1: Unfold into a 6-Face 2D Net  |  Way 2: Opposite Face Pairs SA = 2(lw + lh + wh)  |  Way 3: Lateral Strip Ph + 2B* • **Block Kit:** `COUNT-01` (3x1 Gridfinity Box & Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Sections 8.1 & 8.2 (Three-Dimensional Figures and Surface Area of Prisms) (`CCSS.MATH.6.G.A.4`) • **Big Ideas Methods:** *Way 1: Unfold into a 6-Face 2D Net  |  Way 2: Opposite Face Pairs SA = 2(lw + lh + wh)  |  Way 3: Lateral Strip Ph + 2B* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** polyhedron • face • edge • vertex • rectangular prism • cube • net • surface area (SA)
 
-![Three-Dimensional Figures, Nets & Rectangular Prisms](../assets/manuals/counting_tiles_box_3x1x13u.png){ width="320" }
+![Three-Dimensional Figures, Nets & Rectangular Prisms](../assets/manuals/place_value_ortho_steps.png){ width="320" }
 
 The surface area of a polyhedron is the sum of the areas of all its flat faces, which can be visualized by unfolding the solid into a two-dimensional net. A rectangular prism of length l, width w, and height h has 6 rectangular faces arranged in 3 congruent opposite pairs: SA = 2lw + 2lh + 2wh.
 
 > **⚠️ WATCH OUT: A rectangular prism has 6 faces (3 matching pairs: 2lw + 2lh + 2wh) — don't forget to double all three face pairs!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: 3x1 Gridfinity Box & Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Method 1 (2D Net):** Unfold the 3D rectangular prism into 6 flat rectangles (Top, Bottom, Front, Back, Left, Right) and add all 6 areas.
 2. **Textbook Method 2 (Opposite Face Pairs Formula):** Since opposite faces are congruent, use SA = 2lw + 2lh + 2wh = 2(lw + lh + wh).
-3. **Block Reinforcement (COUNT-01):** Unfolding the 6-face net on the grid visually shows the 3 congruent pairs: 2(8×5) + 2(8×3) + 2(5×3) = 158 cm².
+3. **Visual Net Proof:** Unfolding the 6-face net on the grid visually shows the 3 congruent pairs: 2(8×5) + 2(8×3) + 2(5×3) = 158 cm².
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -2423,21 +2415,21 @@ Liam used to plug numbers blindly into the 6-wall box formula SA = 2(lw + lh + w
 
 ### Section 8.2: Surface Areas of Triangular Prisms and Pyramids (Workbook pp. 79–80)
 
-**Textbook Alignment:** Big Ideas Grade 6, Sections 8.2 & 8.3 (Surface Area of Triangular Prisms and Pyramids) (`CCSS.MATH.6.G.A.4`) • **Big Ideas Methods:** *Way 1: Add All Individual Faces on the 2D Net  |  Way 2: Base Area + Combined Lateral Area* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Sections 8.2 & 8.3 (Surface Area of Triangular Prisms and Pyramids) (`CCSS.MATH.6.G.A.4`) • **Big Ideas Methods:** *Way 1: Add All Individual Faces on the 2D Net  |  Way 2: Base Area + Combined Lateral Area* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** triangular prism • pyramid • lateral face • slant height • regular pyramid • 2D net
 
-![Surface Areas of Triangular Prisms and Pyramids](../assets/manuals/counting_tiles_distributive_4color.png){ width="320" }
+![Surface Areas of Triangular Prisms and Pyramids](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 To find the surface area of a triangular prism, unfold its net into 2 congruent triangular bases and 3 rectangular lateral faces, and sum their areas. To find the surface area of a pyramid, add the area of its single polygon base to the areas of its triangular lateral faces (using the slant height of each triangle).
 
 > **⚠️ WATCH OUT: Use the ½ on EVERY triangular face (A = ½bh or ½bl), and count all faces in the net (5 for triangular prism, 5 for square pyramid)!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Triangular Prisms:** Unfold into 2 congruent triangular bases (each ½bh) plus 3 rectangular lateral faces, and add all 5 areas.
 2. **Textbook Pyramids:** Unfold into 1 polygon base B plus triangular lateral faces using the slant height l (each ½bl): SA = B + 4(½bl).
-3. **Block Reinforcement (COUNT-01):** Laying out the net flat ensures you never forget the 2 triangular bases of a prism or use ½ on the rectangular sides!
+3. **Visual Net Proof:** Laying out the net flat ensures you never forget the 2 triangular bases of a prism or use ½ on the rectangular sides!
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -2487,21 +2479,21 @@ When Liam tried to calculate the waterproof fabric needed for a triangular-prism
 
 ### Section 8.3: Volumes of Rectangular Prisms (Workbook pp. 81–82)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 8.4 (Volume of Rectangular Prisms) (`CCSS.MATH.6.G.A.2`) • **Big Ideas Methods:** *Way 1: Base Area × Height (V = Bh)  |  Way 2: Multiply Length × Width × Height (Fractions or Decimals)* • **Block Kit:** `COUNT-01` (Counting & Fraction Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Section 8.4 (Volume of Rectangular Prisms) (`CCSS.MATH.6.G.A.2`) • **Big Ideas Methods:** *Way 1: Base Area × Height (V = Bh)  |  Way 2: Multiply Length × Width × Height (Fractions or Decimals)* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
 
 **Key Vocabulary:** volume (V) • cubic units • base area (B = lw) • V = Bh = lwh • fractional edge length
 
-![Volumes of Rectangular Prisms](../assets/manuals/counting_tiles_box_3x1x13u.png){ width="320" }
+![Volumes of Rectangular Prisms](../assets/manuals/fraction_studio_twin_comparator.png){ width="320" }
 
 While Surface Area measures the 2D flat area covering the outside of a solid (in square units), Volume measures the 3D space inside the solid—the number of unit cubes needed to fill it completely (in cubic units). For any rectangular prism, Volume equals the base area B times the height h: V = Bh = l × w × h.
 
 > **⚠️ WATCH OUT: Volume is measured in CUBIC units (in.³, cm³). Eight ½-inch cubes (2 × 2 × 2 = 8) fit inside 1 cubic inch!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Fraction Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
 
 1. **Textbook Concept:** Volume measures the number of unit cubes that fill a 3D solid. Multiply Base Area B = lw by height h: V = Bh = lwh.
 2. **Textbook Fractional Edge Lengths:** Pack unit-fraction cubes OR multiply fractional dimensions as improper fractions or decimals.
-3. **Block Reinforcement (COUNT-01):** Building one 12 × 8 = 96-cube floor layer and stacking 5 layers high proves V = B × h = 96 × 5 = 480 in³.
+3. **Block Reinforcement (FRAC-01):** Building one 12 × 8 = 96-unit floor layer and stacking 5 layers high proves V = B × h = 96 × 5 = 480 in³ (and 8 half-inch cubes = 1 in³).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -2551,21 +2543,21 @@ Zoe used to confuse Surface Area (square units, cm²) with Volume (cubic units, 
 
 ### Section 8.4: Circles, Cones, and the Pythagorean Theorem (Workbook pp. 83–84)
 
-**Textbook Alignment:** Big Ideas Grade 6/7 Geometry Bridge (Circles, Cones & Right Triangles) (`CCSS.MATH.7.G.B.4`) • **Big Ideas Methods:** *Way 1: Exact Form in Terms of π & a² + b² = c²  |  Way 2: Decimal Approximation (π ≈ 3.14) & Scaled Triples* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6/7 Geometry Bridge (Circles, Cones & Right Triangles) (`CCSS.MATH.7.G.B.4`) • **Big Ideas Methods:** *Way 1: Exact Form in Terms of π & a² + b² = c²  |  Way 2: Decimal Approximation (π ≈ 3.14) & Scaled Triples* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
 
 **Key Vocabulary:** circle • radius (r) • diameter (d = 2r) • circumference (C = 2πr) • area (A = πr²) • cone (V = ⅓πr²h) • hypotenuse
 
-![Circles, Cones, and the Pythagorean Theorem](../assets/manuals/unit_circle_volvelle_30deg.png){ width="320" }
+![Circles, Cones, and the Pythagorean Theorem](../assets/manuals/fraction_studio_ortho_steps.png){ width="320" }
 
 In this Grade 7/8 Geometry Bridge: (1) The area of a circle with radius r is A = πr² (where r is half the diameter d). (2) In a right triangle with legs a and b and hypotenuse c, the Pythagorean Theorem states a² + b² = c², so c = √(a² + b²). (3) The volume of a cone is one-third the volume of a cylinder with the same base and height: V = ⅓πr²h.
 
 > **⚠️ WATCH OUT: If given diameter d, divide by 2 FIRST to get radius r = d ÷ 2 before squaring r²! And don't forget the ⅓ for cones!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
 
 1. **Textbook Circle & Cone Formulas:** Circle Area A = πr² (if given diameter d, divide by 2 first: r = d/2). Cone Volume V = ⅓Bh = ⅓πr²h.
 2. **Textbook Pythagorean Theorem:** In a right triangle with legs a and b and hypotenuse c, a² + b² = c², so c = √(a² + b²).
-3. **Test Strategy:** Always check whether a circle problem gives the diameter d or radius r, and remember that a cone is exactly 1/3 of a cylinder!
+3. **Block Reinforcement (FRAC-01):** Compare the 1/3 Fraction Tower to 1 Whole—a cone holds exactly 1/3 the volume of a cylinder with the same base and height!
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -2621,11 +2613,10 @@ At the team pizza party, Marcus and his friends were sure that two 10-inch diame
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_09.pdf" class="md-button md-button--primary">📄 Print Unit 9 Chapter Packet PDF (10 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
 </div>
 
-- **Manipulative Kits (`Counting & Array Tiles (COUNT-01) + Probability Dice Studio (PROB-01)`):** [Counting & Data Tower Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Probability & Stats Studio (`PROB-01`)](../products/dice-and-spinner/index.md)
-- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Becoming a Data Detective: Leveling Mean Towers, Quartiles & Outliers"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 23–25](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students forget to sort data before finding Median/Quartiles, lose their place adding long lists for Mean, and dread Mean Absolute Deviation (MAD) because doing it by hand takes 20 minutes of subtraction.
-- **Hands-On Remediation:** Show that Mean is physically leveling unequal cube towers to the same height. Then show that entering a list ONCE with [Σ+] unlocks Mean ([g] [x̄]), Median ([f] [MED]), Mode ([g] [MODE]), Range ([RNG]), Quartiles ([f] [1Q], [g] [3Q], [IQR]), and MAD ([g] [MAD]) in 1 click each!
+- **Hands-On & Stack Remediation:** Show that Mean is physically leveling unequal Place Value digit stacks to the same height. Then show that entering a list ONCE with [Σ+] unlocks Mean ([g] [x̄]), Median ([f] [MED]), Mode ([g] [MODE]), Range ([RNG]), Quartiles ([f] [1Q], [g] [3Q], [IQR]), and MAD ([g] [MAD]) in 1 click each!
 
 When Leo looked up the prices of five video games—$20, $25, $20, $30, and a rare $105 collector's edition—and calculated the average price as $40, he thought he must have divided wrong. How could the 'average' game be more expensive than four of the five games on the shelf? Meanwhile, on the basketball court, Maya wanted an 85 average across five quizzes after scoring 80, 88, 82, and 84 on the first four, and felt stuck trying to guess what she needed on Quiz 5.
 
@@ -2637,21 +2628,21 @@ At first, all the data vocabulary—mean, median, quartiles, IQR, and MAD—soun
 
 ### Section 9.1: Statistical Questions, Dot Plots, and the Mean (Workbook pp. 86–87)
 
-**Textbook Alignment:** Big Ideas Grade 6, Sections 9.1 & 9.2 (Statistical Questions, Dot Plots, and The Mean) (`CCSS.MATH.6.SP.B.5c`) • **Big Ideas Methods:** *Way 1: Mean Formula (Sum ÷ Count)  |  Way 2: Fair-Share Block Leveling  |  Way 3: Balance Point Deviations* • **Block Kit:** `COUNT-01` (Counting & Array Tiles)
+**Textbook Alignment:** Big Ideas Grade 6, Sections 9.1 & 9.2 (Statistical Questions, Dot Plots, and The Mean) (`CCSS.MATH.6.SP.B.5c`) • **Big Ideas Methods:** *Way 1: Mean Formula (Sum ÷ Count)  |  Way 2: Fair-Share Block Leveling  |  Way 3: Balance Point Deviations* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** statistical question • dot plot • peak • cluster • gap • measure of center • mean (fair share)
 
-![Statistical Questions, Dot Plots, and the Mean](../assets/manuals/counting_tiles_box_3x1x13u.png){ width="320" }
+![Statistical Questions, Dot Plots, and the Mean](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 The mean (or average, x̄) of a numerical data set is the sum of the data values divided by the number of data values: x̄ = (Σx) ÷ n. Physically, the mean represents a 'fair share'—if you build cube towers for each data value and move cubes from taller towers to shorter towers until all towers have the exact same height, that common height is the mean!
 
 > **⚠️ WATCH OUT: When finding a missing score for a target mean, multiply Target Mean × Total Count FIRST to find the required sum!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Array Tiles)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** A statistical question anticipates variability. The mean (x̄) is the sum of all data values divided by the number of values (Σx ÷ n).
 2. **Textbook Visual Model (Fair-Share / Balance Point):** The mean is the leveled height when blocks are shared equally, or the balance point on a dot plot.
-3. **Block Reinforcement (COUNT-01):** Moving top blocks from towers of 24 and 27 to towers of 18 and 15 levels all 5 towers to the fair-share mean of 21.
+3. **Block Reinforcement (PLACE-01):** Moving units from towers of 24 and 27 to towers of 18 and 15 levels all 5 towers to the fair-share mean of 21.
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -2701,17 +2692,17 @@ Maya scored 80, 88, 82, and 84 on her first four math quizzes and wanted a mean 
 
 ### Section 9.2: Measures of Center: Median, Mode, and Range (Workbook pp. 88–89)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 9.3 (Measures of Center: Median, Mode, and Range) (`CCSS.MATH.6.SP.B.5c`) • **Big Ideas Methods:** *Way 1: Ordered List (Least to Greatest)  |  Way 2: Dot Plot / Frequency Table Analysis* • **Block Kit:** `PROB-01` (Probability & Stats Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Section 9.3 (Measures of Center: Median, Mode, and Range) (`CCSS.MATH.6.SP.B.5c`) • **Big Ideas Methods:** *Way 1: Ordered List (Least to Greatest)  |  Way 2: Dot Plot / Frequency Table Analysis* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** median (middle value) • mode (most frequent) • range (max - min) • outlier • best measure of center
 
-![Measures of Center: Median, Mode, and Range](../assets/manuals/dice_spinner_probability.png){ width="320" }
+![Measures of Center: Median, Mode, and Range](../assets/manuals/place_value_ortho_steps.png){ width="320" }
 
 When data values are ordered from least to greatest: the Median is the middle value (or the mean of the two middle values when the count n is even); the Mode is the value(s) that occur most often; and the Range is the difference between the greatest and least values (Max - Min). When an extreme outlier is present, the median is usually the best measure of center.
 
 > **⚠️ WATCH OUT: ALWAYS sort the data from least to greatest BEFORE finding the Median! If n is even, average the two middle numbers.**
 
-#### Textbook Concepts & Hands-On Reinforcement (`PROB-01`: Probability & Stats Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Concept:** ALWAYS order data from least to greatest first! Median = middle value (or mean of two middle values if n is even); Mode = most frequent; Range = Max - Min.
 2. **Textbook Choosing the Best Measure:** Use the Median when an extreme outlier skews the Mean; use the Mean when data are symmetric with no outliers.
@@ -2765,7 +2756,7 @@ When Leo calculated the average price of five video games ($20, $25, $20, $30, a
 
 ### Section 9.3: Quartiles, Interquartile Range (IQR) & Box Plots (Workbook pp. 90–91)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 9.4 & 10.4 (Measures of Variation and Box-and-Whisker Plots) (`CCSS.MATH.6.SP.B.4`) • **Big Ideas Methods:** *Way 1: Split Ordered Data into Lower & Upper Halves  |  Way 2: Box-and-Whisker Plot & 25% Quartile Sections* • **Block Kit:** `FRAC-01` (Fraction & Stats Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Section 9.4 & 10.4 (Measures of Variation and Box-and-Whisker Plots) (`CCSS.MATH.6.SP.B.4`) • **Big Ideas Methods:** *Way 1: Split Ordered Data into Lower & Upper Halves  |  Way 2: Box-and-Whisker Plot & 25% Quartile Sections* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
 
 **Key Vocabulary:** quartiles • first quartile (Q₁) • third quartile (Q₃) • interquartile range (IQR = Q₃ - Q₁) • box-and-whisker plot • 5-number summary
 
@@ -2775,7 +2766,7 @@ Quartiles divide an ordered data set into four equal parts (each containing 25% 
 
 > **⚠️ WATCH OUT: When n is odd, DO NOT include the overall Median in either the lower half or upper half when finding Q₁ and Q₃!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: Fraction & Stats Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
 
 1. **Textbook 5-Number Summary:** Order data to find Min, Q₁ (median of lower half), Median (Q₂), Q₃ (median of upper half), and Max.
 2. **Textbook Box-and-Whisker Plot & IQR:** The box spans the middle 50% of data from Q₁ to Q₃; Interquartile Range IQR = Q₃ - Q₁. Each section holds 25% of the data.
@@ -2829,17 +2820,17 @@ Looking at a box-and-whisker plot of 60 pine trees (Min = 12 ft, Q₁ = 18 ft, M
 
 ### Section 9.4: Mean Absolute Deviation (MAD) (Workbook pp. 92–93)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 9.5 (Mean Absolute Deviation) (`CCSS.MATH.6.SP.B.5c`) • **Big Ideas Methods:** *Way 1: 3-Step MAD Distance Table  |  Way 2: Number-Line Deviation Balance* • **Block Kit:** `COUNT-01` (Counting & Stats Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Section 9.5 (Mean Absolute Deviation) (`CCSS.MATH.6.SP.B.5c`) • **Big Ideas Methods:** *Way 1: 3-Step MAD Distance Table  |  Way 2: Number-Line Deviation Balance* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** mean absolute deviation (MAD) • deviation from the mean (|x - x̄|) • measure of variation • consistency
 
-![Mean Absolute Deviation (MAD)](../assets/manuals/counting_tiles_box_3x1x13u.png){ width="320" }
+![Mean Absolute Deviation (MAD)](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 The Mean Absolute Deviation (MAD) is a measure of variation that tells the average distance between each data value and the mean. To find the MAD in 3 steps: (1) Find the mean x̄ of the data. (2) Find the absolute distance |x - x̄| of each data value from the mean. (3) Find the mean of those absolute distances!
 
 > **⚠️ WATCH OUT: Distances |x - Mean| are ALWAYS positive (subtract the smaller number from the larger for every data value)!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`COUNT-01`: Counting & Stats Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook 3-Step MAD Algorithm:** 1. Find the Mean (x̄).  2. Find the absolute distance |x - x̄| of each value from the mean.  3. Average those distances (Sum ÷ n).
 2. **Textbook Interpretation:** A smaller MAD means the data values are clustered tightly near the mean (more consistent); a larger MAD means more spread out.
@@ -2899,11 +2890,10 @@ In the bird-cognition lab, Raven A solved four puzzle trials in 8, 9, 9, and 10 
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_10.pdf" class="md-button md-button--primary">📄 Print Unit 10 Chapter Packet PDF (10 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
 </div>
 
-- **Manipulative Kits (`Ten-Frame Zero-Pair Counters (BASE-10) + Algebra Stage (ALGB-01) + Probability Studio (PROB-01)`):** [Probability Dice & Spinner Studio (`PROB-01`)](../products/dice-and-spinner/index.md) &bull; [Ten-Frame Studio (`BASE-10`)](../products/ten-frames/index.md)
-- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01) + Prime Factor Studio (PRIME-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Sir Francis Galton's 1873 Bean Machine & Fair Polyhedral Dice"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) & [Ch. 9: Applied STEM Labs](../manuals/sc6/09-applied-stem-labs.md)
 - **Target Misconception:** Students guess signs when adding/subtracting negatives, get -25 instead of +25 for (-5)² on algebraic calculators, undo ×3 before +7 in 3x + 7 = 28, and confuse Permutations (order matters) with Combinations (order doesn't).
-- **Hands-On Remediation:** Use Yellow/Red counters to show removing 4 red debt tokens (10 - (-4)) equals +14. Notice how RPN 5 [+/-] [x²] squares the entire register (-5)² = +25 without parentheses! Unwrap 2-step equations in reverse (untie ribbon ±b first, open box ×a second), and finish with [DICE], [f] [nCr], [g] [nPr], and [f] [?].
+- **Hands-On & Stack Remediation:** Use Place Value blocks and the SC-6 Number Line ([f] [LINE]) to show that removing a negative debt (10 - (-4)) equals +14. Notice how RPN 5 [+/-] [x²] squares the entire register (-5)² = +25 without parentheses! Unwrap 2-step equations in reverse (undo ±b first, then ÷a second), and finish with [DICE], [f] [nCr], [g] [nPr], and [f] [?].
 
 As the summer wraps up, Kai, Leo, Zoe, and Maya run into challenges where two rules happen at the same time. During a camp trivia night, Kai's team was sitting at -15 points when the judge canceled a -25-point penalty, and nobody at the table could agree whether their score went up to +10 or dropped to -40. At the go-kart track, Leo had $38 to spend when admission cost $8 plus $6 per lap, and he wasn't sure which number to undo first.
 
@@ -2915,27 +2905,27 @@ Step by step, the four friends discover that subtracting a negative penalty, unw
 
 ### Section 10.1: Adding and Subtracting Rational Numbers (Workbook pp. 95–96)
 
-**Textbook Alignment:** Big Ideas Grade 7, Sections 1.2, 1.3, 2.2 & 2.3 (Adding and Subtracting Integers & Rational Numbers) (`CCSS.MATH.7.NS.A.1`) • **Big Ideas Methods:** *Way 1: Zero-Pair Counters  |  Way 2: Number-Line Jumps  |  Way 3: Absolute Value Sign Rules & Add-the-Opposite* • **Block Kit:** `BASE-10` (Ten-Frame Zero-Pair Counters)
+**Textbook Alignment:** Big Ideas Grade 7, Sections 1.2, 1.3, 2.2 & 2.3 (Adding and Subtracting Integers & Rational Numbers) (`CCSS.MATH.7.NS.A.1`) • **Big Ideas Methods:** *Way 1: Zero-Pair Cancellation  |  Way 2: Number-Line Jumps  |  Way 3: Absolute Value Sign Rules & Add-the-Opposite* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** additive inverse • zero pair • Same-Sign Sum Rule • Different-Sign Difference Rule • Add-the-Opposite (a - b = a + (-b))
 
-![Adding and Subtracting Rational Numbers](../assets/manuals/ten_frame_subitizing_5anchor.png){ width="320" }
+![Adding and Subtracting Rational Numbers](../assets/manuals/place_value_regrouping.png){ width="320" }
 
 To add two numbers with the SAME sign, add their absolute values and keep the common sign (-6 + (-4) = -10). To add two numbers with DIFFERENT signs, subtract the lesser absolute value from the greater absolute value and keep the sign of the number with the greater absolute value (-8 + 5 = -3). To subtract any signed number, add its opposite: a - b = a + (-b), so 10 - (-4) = 10 + 4 = 14.
 
 > **⚠️ WATCH OUT: To subtract a signed number, ADD ITS OPPOSITE: a - (-b) = a + b (subtracting a negative moves RIGHT on the number line)!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`BASE-10`: Ten-Frame Zero-Pair Counters)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Addition Rules:** Same signs -> add absolute values and keep the common sign. Different signs -> subtract absolute values and keep the sign of the larger |x|.
 2. **Textbook Subtraction Rule (Add the Opposite):** To subtract any rational number, add its opposite: a - b = a + (-b), and a - (-b) = a + b.
-3. **Block Reinforcement (BASE-10):** Placing 8 Red (-) and 5 Yellow (+) counters cancels 5 Zero Pairs, leaving 3 Red (-3); removing -4 leaves +4.
+3. **Block Reinforcement (PLACE-01 / FRAC-01):** Pairing 8 negative (-1) steps and 5 positive (+1) tokens cancels 5 Zero Pairs, leaving -3 (and -3/4 + 5/8 = -1/8 on Fraction Studio).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
 | Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Practice A** (`p.95`) | **Evaluate -8 + 5 and -6 + (-4).** | **WAY 1: Two-Tone Zero-Pair Counters (With Blocks):** In -8 + 5, five (-1, +1) zero pairs cancel to 0, leaving 3 red negatives (-3). In -6 + (-4), 6 red + 4 red = 10 red (-10). | **WAY 2: Horizontal Number-Line Jumps:** For -8 + 5, start at -8 and move 5 units right -> -3. For -6 + (-4), start at -6 and move 4 units left -> -10.<br>**WAY 3: Big Ideas Absolute Value Sign Rules:** Different signs (-8 + 5): subtract |8| - |5| = 3, keep sign of -8 -> -3. Same signs (-6 + -4): add |6| + |4| = 10, keep '-' -> -10. | **-8 + 5 = -3; -6 + (-4) = -10** |
+| **Practice A** (`p.95`) | **Evaluate -8 + 5 and -6 + (-4).** | **WAY 1: Zero-Pair Cancellation Model:** In -8 + 5, five (-1, +1) zero pairs cancel to 0, leaving 3 negatives (-3). In -6 + (-4), 6 negatives + 4 negatives = -10. | **WAY 2: Horizontal Number-Line Jumps:** For -8 + 5, start at -8 and move 5 units right -> -3. For -6 + (-4), start at -6 and move 4 units left -> -10.<br>**WAY 3: Big Ideas Absolute Value Sign Rules:** Different signs (-8 + 5): subtract |8| - |5| = 3, keep sign of -8 -> -3. Same signs (-6 + -4): add |6| + |4| = 10, keep '-' -> -10. | **-8 + 5 = -3; -6 + (-4) = -10** |
 | **Practice B** (`p.96`) | **A mountain sensor rises from -4°C to +10°C. Find the temperature change 10 - (-4), and evaluate -3/4 - (-5/8).** | **WAY 1: Add the Opposite (a - b = a + (-b)):** Rewrite subtraction as adding the opposite: 10 - (-4) = 10 + (+4) = 14°C. For -3/4 - (-5/8): -6/8 + (+5/8) = -1/8.<br>*Add the Opposite: 10 - (-4) = 10 + 4 = 14°C.* | **WAY 2: Number-Line Distance from Start to End:** From -4°C up to 0°C is +4°C, and from 0°C to +10°C is +10°C -> total rise = 4 + 10 = +14°C. From -5/8 to -6/8 is -1/8.<br>*Signed Fractions (LCD = 8): -3/4 + 5/8 = -6/8 + 5/8 = -1/8.* | **14°C; and -1/8** |
 
 #### How to Use the SC-6 Calculator to Check Your Work
@@ -2979,7 +2969,7 @@ During camp trivia night, Kai's team was sitting at -15 points when the host rem
 
 ### Section 10.2: Multiplying and Dividing Rational Numbers (Workbook pp. 97–98)
 
-**Textbook Alignment:** Big Ideas Grade 7, Sections 1.4, 1.5 & 2.4 (Multiplying and Dividing Rational Numbers) (`CCSS.MATH.7.NS.A.2`) • **Big Ideas Methods:** *Way 1: Same/Different Sign Rules  |  Way 2: Repeated Addition / Equal Number-Line Jumps & Counter Flips* • **Block Kit:** `BASE-10` (Zero-Pair & Fraction Studio)
+**Textbook Alignment:** Big Ideas Grade 7, Sections 1.4, 1.5 & 2.4 (Multiplying and Dividing Rational Numbers) (`CCSS.MATH.7.NS.A.2`) • **Big Ideas Methods:** *Way 1: Same/Different Sign Rules  |  Way 2: Repeated Addition / Equal Number-Line Jumps* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
 
 **Key Vocabulary:** multiplicative sign rules • same signs (positive +) • different signs (negative -) • even/odd negative factors
 
@@ -2989,17 +2979,17 @@ When multiplying or dividing two non-zero numbers: if the signs are the SAME (bo
 
 > **⚠️ WATCH OUT: (-5)² = (-5) × (-5) = +25 (positive!), whereas -5² without parentheses means -(5 × 5) = -25!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`BASE-10`: Zero-Pair & Fraction Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
 
 1. **Textbook Sign Rules:** Same signs -> POSITIVE product or quotient (+ · + = +, - · - = +). Different signs -> NEGATIVE product or quotient (+ · - = -).
 2. **Textbook Multi-Factor Rule:** Count the negative factors—an EVEN number of negatives gives a Positive (+); an ODD number of negatives gives a Negative (-).
-3. **Block Reinforcement (BASE-10):** Multiplying by a negative means 'take the opposite' (flip counter color)—flipping Red (-) counters a second time gives Yellow (+)!
+3. **Block Reinforcement (FRAC-01):** Multiplying by a negative means 'take the opposite'; for (-5/6) ÷ (-5/12), two 5/12 Fraction Towers fit inside 5/6 (10/12) -> +2!
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
 | Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Practice A** (`p.97`) | **Evaluate 6 × (-4), (-6) × (-4), and (-5)².** | **WAY 1: Two-Number Sign Rules (Same = +, Different = -):** 6 × (-4) has different signs -> -24. (-6) × (-4) has the same signs -> +24. (-5)² = (-5) × (-5) has same signs -> +25. | **WAY 2: Repeated Addition / Counter Flip & Factor Count:** 6 jumps of -4 = -24; taking the opposite for (-6)(-4) gives +24. Count negative signs: 1 negative (odd) -> -; 2 negatives (even) -> +. | **6×(-4) = -24, (-6)×(-4) = +24, (-5)² = +25** |
+| **Practice A** (`p.97`) | **Evaluate 6 × (-4), (-6) × (-4), and (-5)².** | **WAY 1: Two-Number Sign Rules (Same = +, Different = -):** 6 × (-4) has different signs -> -24. (-6) × (-4) has the same signs -> +24. (-5)² = (-5) × (-5) has same signs -> +25. | **WAY 2: Repeated Addition & Factor Sign Count:** 6 jumps of -4 = -24; taking the opposite for (-6)(-4) gives +24. Count negative signs: 1 negative (odd) -> -; 2 negatives (even) -> +. | **6×(-4) = -24, (-6)×(-4) = +24, (-5)² = +25** |
 | **Practice B** (`p.98`) | **A research submersible descends to -5/6 kilometer at a rate of -5/12 kilometer per minute. How many minutes did the descent take?** | **WAY 1: Same-Sign Rule + Multiply by the Reciprocal:** Negative ÷ Negative = Positive (+). Multiply by the reciprocal: (-5/6) × (-12/5) = +(5 × 12)/(6 × 5) = +12/6 = 2 minutes.<br>*Same-Sign Quotient: (-90) ÷ (-45) = +2 minutes (and 3.5 × (-45) = -157.5 meters).* | **WAY 2: Common Denominator Division (Twelfths):** Rewrite -5/6 as -10/12 km. Divide numerators: (-10 twelfths) ÷ (-5 twelfths/min) = (-10) ÷ (-5) = +2 minutes.<br>*Inverse Multiplication Check: (+2 min) × (-45 m/min) = -90 m (verified!).* | **2 minutes** |
 
 #### How to Use the SC-6 Calculator to Check Your Work
@@ -3043,21 +3033,21 @@ Kai had no trouble seeing why 8 seconds of diving at -15 feet per second lands a
 
 ### Section 10.3: Solving Two-Step Equations (ax + b = c) (Workbook pp. 99–100)
 
-**Textbook Alignment:** Big Ideas Grade 7, Sections 3.3–3.5 (Solving Two-Step Equations) (`CCSS.MATH.7.EE.B.4a`) • **Big Ideas Methods:** *Way 1: Two-Step Inverse Operations  |  Way 2: Balance Scale / Bar Model Unwrapping* • **Block Kit:** `ALGB-01` (Algebra Boxes & Stage)
+**Textbook Alignment:** Big Ideas Grade 7, Sections 3.3–3.5 (Solving Two-Step Equations) (`CCSS.MATH.7.EE.B.4a`) • **Big Ideas Methods:** *Way 1: Two-Step Inverse Operations  |  Way 2: Balance Scale / Bar Model Unwrapping* • **Block Kit:** `PLACE-01` (Place Value Studio)
 
 **Key Vocabulary:** two-step equation (ax + b = c) • reverse order of operations • undo addition/subtraction first • undo multiplication/division second
 
-![Solving Two-Step Equations (ax + b = c)](../assets/manuals/algebra_factoring_area.png){ width="320" }
+![Solving Two-Step Equations (ax + b = c)](../assets/manuals/place_value_ortho_steps.png){ width="320" }
 
 A two-step equation contains two operations. To isolate the variable, undo the operations in the REVERSE order of operations: Step 1 undo addition or subtraction first to isolate the variable term (ax), and Step 2 undo multiplication or division second to isolate the variable x.
 
 > **⚠️ WATCH OUT: In two-step equations (ax + b = c), undo addition/subtraction FIRST, then undo multiplication/division SECOND!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`ALGB-01`: Algebra Boxes & Stage)
+#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
 
 1. **Textbook Two-Step Algorithm (ax + b = c):** 1. Undo addition or subtraction FIRST to isolate the variable term ax.  2. Undo multiplication or division SECOND to isolate x.
 2. **Textbook Verification:** Substitute your solution x back into the original two-step equation and follow PEMDAS to confirm Left Side = Right Side.
-3. **Block Reinforcement (ALGB-01):** On the balance scale for 3x + 7 = 28, remove the 7 loose cubes from both pans first (3x = 21), then split 21 into the 3 x-boxes (x = 7).
+3. **Block Reinforcement (PLACE-01):** For 3x + 7 = 28, subtract 7 from both sides first (3x = 21), then split 21 equally into 3 sockets so each holds a [7] Digit Block.
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
@@ -3107,17 +3097,17 @@ At the go-kart track, admission was $8 plus $6 per lap r, and Leo had $38 to spe
 
 ### Section 10.4: Theoretical Probability, Combinations & Permutations (Workbook pp. 101–102)
 
-**Textbook Alignment:** Big Ideas Grade 7, Chapter 7 (Probability) & SC-6 Graduation Finale (`CCSS.MATH.7.SP.C.5`) • **Big Ideas Methods:** *Way 1: Probability Ratio & Complement Rule  |  Way 2: Tree Diagram / Outcome List  |  Way 3: Fundamental Counting Principle* • **Block Kit:** `PROB-01` (Probability Dice & Spinner Studio)
+**Textbook Alignment:** Big Ideas Grade 7, Chapter 7 (Probability) & SC-6 Graduation Finale (`CCSS.MATH.7.SP.C.5`) • **Big Ideas Methods:** *Way 1: Probability Ratio & Complement Rule  |  Way 2: Tree Diagram / Outcome List  |  Way 3: Fundamental Counting Principle* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
 
 **Key Vocabulary:** experiment • outcomes • event • sample space • theoretical probability P(E) • complement P(not E) • tree diagram • Fundamental Counting Principle
 
-![Theoretical Probability, Combinations & Permutations](../assets/manuals/dice_spinner_d20_and_polyhedra.png){ width="320" }
+![Theoretical Probability, Combinations & Permutations](../assets/manuals/fraction_studio_twin_comparator.png){ width="320" }
 
 Theoretical probability is the ratio of favorable outcomes to total equally likely outcomes: P(event) = Favorable ÷ Total, written as a simplified fraction, decimal, or percent. The probability of an event NOT occurring is the complement: P(not E) = 1 - P(E). For counting arrangements: n! counts ways to order all n items; nPr counts ordered permutations; and nCr counts unordered combinations.
 
 > **⚠️ WATCH OUT: Ask 'Does order matter?' — awarding 1st/2nd/3rd medals is a Permutation (nPr); choosing a group/team is a Combination (nCr)!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`PROB-01`: Probability Dice & Spinner Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
 
 1. **Textbook Theoretical Probability:** P(event) = Favorable Outcomes ÷ Total Outcomes (from 0 to 1, or 0% to 100%), and P(not E) = 1 - P(E).
 2. **Textbook Counting & Permutations vs. Combinations:** Fundamental Counting Principle multiplies choices; Permutations nPr (order matters) vs. Combinations nCr (order doesn't matter).

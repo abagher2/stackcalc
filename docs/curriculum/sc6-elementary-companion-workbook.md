@@ -37,13 +37,13 @@ This companion workbook houses the **253 extended chapter-by-chapter worked prob
 
 | Chapter | Topic & Companion Problem Set | Primary Manipulative Kit | Worked Problems | Textbook Reference |
 | :--- | :--- | :--- | :---: | :--- |
-| **[Chapter 02](#chapter-02)** | How Stack Math Works: Stacking Numbers Just Like Blocks | `TEN-FRAME` & `COUNT-01` | **21** | [Manual Ch. 02 &rarr;](../manuals/sc6/02-rpn-for-young-learners.md) |
-| **[Chapter 03](#chapter-03)** | Counting, Number Lines & Place Value Studio | `BASE-10` & `TEN-FRAME` | **24** | [Manual Ch. 03 &rarr;](../manuals/sc6/03-counting-place-value.md) |
-| **[Chapter 04](#chapter-04)** | Whole Number Operations & Skip-Counting Ladders | `COUNT-01` & `DOMINO-01` | **30** | [Manual Ch. 04 &rarr;](../manuals/sc6/04-operations-skip-counting.md) |
+| **[Chapter 02](#chapter-02)** | How Stack Math Works: Stacking Numbers Just Like Blocks | `PLACE-01` Place Value Studio | **21** | [Manual Ch. 02 &rarr;](../manuals/sc6/02-rpn-for-young-learners.md) |
+| **[Chapter 03](#chapter-03)** | Counting, Number Lines & Place Value Studio | `PLACE-01` Place Value Studio | **24** | [Manual Ch. 03 &rarr;](../manuals/sc6/03-counting-place-value.md) |
+| **[Chapter 04](#chapter-04)** | Whole Number Operations & Skip-Counting Ladders | `PLACE-01` & `PRIME-01` | **30** | [Manual Ch. 04 &rarr;](../manuals/sc6/04-operations-skip-counting.md) |
 | **[Chapter 05](#chapter-05)** | Fractions, Decimals, Percents & Proportional Towers | `FRAC-01` Fraction Towers | **38** | [Manual Ch. 05 &rarr;](../manuals/sc6/05-fractions-decimals-ratios.md) |
-| **[Chapter 06](#chapter-06)** | Geometry, Surface Area & Planetary Geared Time | `COUNT-01` & `TIME-01` | **33** | [Manual Ch. 06 &rarr;](../manuals/sc6/06-geometry-surface-area.md) |
-| **[Chapter 07](#chapter-07)** | Discrete Probability, Primes & Pre-Algebra | `PRIME-01`, `PROB-01`, `ALGB-01` | **52** | [Manual Ch. 07 &rarr;](../manuals/sc6/07-data-probability-primes.md) |
-| **[Chapter 08](#chapter-08)** | The Gamified Math Quiz Engine & Scoreboard Fluency | `QUEST-01` Scoreboard | **29** | [Manual Ch. 08 &rarr;](../manuals/sc6/08-math-quiz-engine.md) |
+| **[Chapter 06](#chapter-06)** | Geometry, Surface Area & Modulo-60 Time | `FRAC-01` & `PRIME-01` | **33** | [Manual Ch. 06 &rarr;](../manuals/sc6/06-geometry-surface-area.md) |
+| **[Chapter 07](#chapter-07)** | Discrete Probability, Primes & Pre-Algebra | `PRIME-01` & `FRAC-01` | **52** | [Manual Ch. 07 &rarr;](../manuals/sc6/07-data-probability-primes.md) |
+| **[Chapter 08](#chapter-08)** | The Math Quiz Engine & Two-Method Fluency | `PLACE-01`, `FRAC-01` & `PRIME-01` | **29** | [Manual Ch. 08 &rarr;](../manuals/sc6/08-math-quiz-engine.md) |
 | **[Chapter 09](#chapter-09)** | Applied Elementary STEM & Maker Labs | Full Manipulative Bench | **26** | [Manual Ch. 09 &rarr;](../manuals/sc6/09-applied-stem-labs.md) |
 
 ---
@@ -64,7 +64,7 @@ Watch how the stack chains all three days without clearing: `{{res:sc6_02_rpn_fo
 ### Workbook Problem 2.2: Stepping Stones Across the Ten-Bridge
 
 Your crew is laying round sensory stepping stones along a winding garden path: 8 smooth slate stones in the morning, and 7 sparkling granite stones in the afternoon. How many stepping stones lead to the climbing tower?
-Place 8 counters into your first Ten-Frame tray. Slide 2 counters from the group of 7 into the empty pockets to complete a full 10; the remaining 5 counters sit in the second tray ($10 + 5 = 15$).
+Place `[8]` in Row 1 and `[7]` in Row 0 of your Place Value Tray (`PLACE-01`). Take 2 from 7 to complete a full 10 (snapping a Gold `[+1]` carry token into the Tens column), leaving `[5]` in the Ones column ($10 + 5 = 15$).
 
 Fuse the morning and afternoon stone deliveries on the stack: `{{res:sc6_02_rpn_for_young_learners_seq_04:keys}}` $\to$ **`{{res:sc6_02_rpn_for_young_learners_seq_04:value}}`** (T: 0, Z: 0, Y: 0, X: 15), bridging cleanly past ten to reach 15 stepping stones.
 
@@ -73,7 +73,7 @@ Fuse the morning and afternoon stone deliveries on the stack: `{{res:sc6_02_rpn_
 ### Workbook Problem 2.3: Climbing-Dome Steel Bolts
 
 A hardware box holds 10 heavy steel bolts for the geodesic climbing dome. Your crew bolts 6 of them into the main arch. How many bolts are left in the box for the balance-beam brackets?
-Fill a Ten-Frame tray with 10 counters and pop 6 counters out—your eyes instantly spot 4 counters left without counting one by one!
+On your Place Value Tray (`PLACE-01`), start with `10` (`[1]` in Tens, `[0]` in Ones) and subtract `[6]`—finding the complement `[4]` in the Ones column.
 
 Verify the ten-partner on your stack: `{{res:sc6_02_rpn_for_young_learners_seq_05:keys}}` $\to$ **`{{res:sc6_02_rpn_for_young_learners_seq_05:value}}`** (T: 0, Z: 0, Y: 0, X: 4), leaving 4 bolts ready in Register $X$.
 
@@ -231,23 +231,23 @@ Your school weather station reads $68^\circ\text{F}$. Convert it to Celsius usin
 
 ### Workbook Problem 3.1: Bioluminescent Jellyfish Pods
 
-A marine tank holds 8 neon-blue comb jellies in Pod A and 7 glowing moon jellies in Pod B. How many bioluminescent jellyfish are swimming in the tank? Look at Frame 1 on your Ten-Frame tray: 8 counters leave **2 empty pockets**. That tells you right away to split 7 into $2 + 5$!
+A marine tank holds 8 neon-blue comb jellies in Pod A and 7 glowing moon jellies in Pod B. How many bioluminescent jellyfish are swimming in the tank? On your Place Value Tray (`PLACE-01`), `[8]` needs **2 more** to complete 10—telling you right away to split 7 into $2 + 5$ and snap a Gold `[+1]` carry token into the Tens column!
 
-Bridge to ten on the stack: `{{res:sc6_03_counting_place_value_seq_04:keys}}` $\to$ **`{{res:sc6_03_counting_place_value_seq_04:value}}`** (T: 0, Z: 0, Y: 0, X: 15), filling the first ten-frame with 2 moon jellies before placing the remaining 5 into Frame 2's top row. $X = 15$ (1 full ten-frame plus 1 full five-row).
+Bridge to ten on the stack: `{{res:sc6_03_counting_place_value_seq_04:keys}}` $\to$ **`{{res:sc6_03_counting_place_value_seq_04:value}}`** (T: 0, Z: 0, Y: 0, X: 15), filling the first ten-group with 2 moon jellies before placing the remaining 5 into Frame 2's top row. $X = 15$ (1 full ten-group plus 1 full five-row).
 
 ---
 
 ### Workbook Problem 3.2: Completing the Double-Frame Solar Array
 
-Your nature dome's rooftop charger has 16 mini solar tiles wired across two 10-slot mounting frames. How many more solar tiles do you need to snap in so both ten-frames are completely full at 20? On your Ten-Frame tray, Frame 1 is full (10) and Frame 2 holds 6 counters, leaving **4 empty pockets**.
+Your nature dome's rooftop charger has 16 mini solar tiles wired across two 10-slot mounting frames. How many more solar tiles do you need to snap in so both ten-groups are completely full at 20? On your Place Value Tray (`PLACE-01`), `16` has `[1]` in the Tens column and `[6]` in the Ones column—needing **4 more** ones to regroup to `20`.
 
-Snap the 4 remaining solar tiles into the second tray: `{{res:sc6_03_counting_place_value_seq_06:keys}}` $\to$ **`{{res:sc6_03_counting_place_value_seq_06:value}}`** (T: 0, Z: 0, Y: 0, X: 20). Both frames are now 100% full at $X = 20$ because $6 + 4$ are ten-frame partners!
+Snap the 4 remaining solar tiles into the second tray: `{{res:sc6_03_counting_place_value_seq_06:keys}}` $\to$ **`{{res:sc6_03_counting_place_value_seq_06:value}}`** (T: 0, Z: 0, Y: 0, X: 20). Both frames are now 100% full at $X = 20$ because $6 + 4$ are ten-group partners!
 
 ---
 
 ### Workbook Problem 3.3: Combining Lunar Sample Canisters
 
-Inside the clean-room airlock, Rover Tray A holds 9 sealed lunar dust canisters and Rover Tray B holds 8 canisters. How many canisters are ready for analysis? Because 9 is just **1 away from 10**, borrow 1 canister from the 8 (splitting 8 into $1 + 7$) to complete the first ten-frame!
+Inside the clean-room airlock, Rover Tray A holds 9 sealed lunar dust canisters and Rover Tray B holds 8 canisters. How many canisters are ready for analysis? Because 9 is just **1 away from 10**, borrow 1 canister from the 8 (splitting 8 into $1 + 7$) to complete the first ten-group!
 
 Total the two canister trays: `{{res:sc6_03_counting_place_value_seq_09:keys}}` $\to$ **`{{res:sc6_03_counting_place_value_seq_09:value}}`** (T: 0, Z: 0, Y: 0, X: 17), completing Frame 1 at 10 and leaving 7 in Frame 2 ($X = 17$).
 
@@ -255,13 +255,13 @@ Total the two canister trays: `{{res:sc6_03_counting_place_value_seq_09:keys}}` 
 
 ### Workbook Problem 3.4: Five-Anchor Addition on the Bottom Wire
 
-Your underwater docking bay already holds 12 waterproof camera drones (10 on Rail 1, and 2 red beads on Rail 2). A surface boat lowers 5 more camera drones down the cable. How many drones are in the bay now? On your Number Rack, slide 5 more beads across Rail 2 and watch how the red group of 5 completes plus 2 white beads!
+Your underwater docking bay already holds 12 waterproof camera drones (10 on Rail 1, and 2 red beads on Rail 2). A surface boat lowers 5 more camera drones down the cable. How many drones are in the bay now? On your Place Value Tray (`PLACE-01`), place `12` (`[1]` in Tens, `[2]` in Ones) in Row 1 and `[5]` in Row 0 of the Ones column to combine the ones ($2 + 5 = 7$, giving `17`)!
 
 Add the 5 new drones to the bay tally: `{{res:sc6_03_counting_place_value_seq_11:keys}}` $\to$ **`{{res:sc6_03_counting_place_value_seq_11:value}}`** (T: 0, Z: 0, Y: 0, X: 17), combining the two groups into 17 without ever touching the top rail of 10 ($X = 17$).
 
 ---
 
-### Workbook Problem 3.5: Sliding Five Back on the Number Rack
+### Workbook Problem 3.5: Decomposing Teen Numbers on the Place Value Tray
 
 A reef diver carries a mesh bag with 18 biodegradable coral-reef temperature tags (10 on Rail 1, and 8 on Rail 2: 5 red + 3 white). Along the outer reef wall, the diver clips 5 tags onto brain corals. How many tags are left in the mesh bag? On Rail 2, slide a whole group of 5 beads back to the right in one motion, leaving 3 beads on Rail 2 and all 10 on Rail 1!
 
@@ -271,7 +271,7 @@ Subtract the 5 attached reef tags: `{{res:sc6_03_counting_place_value_seq_12:key
 
 ### Workbook Problem 3.6: Splitting a Teen Number into Ten and Ones
 
-A sea-floor basket holds 15 titanium diving weights. To store 10 weights in the main ballast locker and keep the rest on the workbench, how many single weights stay on the bench? On the Number Rack, 15 is 1 full wire of 10 on Rail 1 and 5 red beads on Rail 2.
+A sea-floor basket holds 15 titanium diving weights. To store 10 weights in the main ballast locker and keep the rest on the workbench, how many single weights stay on the bench? On the Place Value Tray (`PLACE-01`), `15` is `[1]` in the Tens socket and `[5]` in the Ones socket.
 
 Subtract the full bundle of 10 to isolate the ones: `{{res:sc6_03_counting_place_value_seq_13:keys}}` $\to$ **`{{res:sc6_03_counting_place_value_seq_13:value}}`** (T: 0, Z: 0, Y: 0, X: 5), proving that taking 10 away from 15 leaves the 5 red beads on Wire 2!
 
@@ -287,7 +287,7 @@ Subtract the 8 transferred tubes: `{{res:sc6_03_counting_place_value_seq_16:keys
 
 ### Workbook Problem 3.8: Subtracting from a Full Twenty-Rack
 
-A scuba gear locker holds a full rack of 20 compressed-air tanks across two rows of 10. A dive team checks out 7 tanks for an afternoon kelp-forest survey. How many tanks remain in the locker? Start with all 20 beads shifted left on the Number Rack, then slide 7 beads on Rail 2 back to the right (all 5 white beads plus 2 red beads).
+A scuba gear locker holds a full rack of 20 compressed-air tanks across two rows of 10. A dive team checks out 7 tanks for an afternoon kelp-forest survey. How many tanks remain in the locker? On your Place Value Tray (`PLACE-01`), start with `20` (`[2]` Tens, `[0]` Ones) and regroup 1 ten into 10 ones so you can subtract 7 ($10 - 7 = 3$, leaving `13`).
 
 Find the remaining scuba tanks on the rack: `{{res:sc6_03_counting_place_value_seq_17:keys}}` $\to$ **`{{res:sc6_03_counting_place_value_seq_17:value}}`** (T: 0, Z: 0, Y: 0, X: 13). Even without counting, you know $10 - 7 = 3$ on the bottom wire, plus the untouched 10 on the top wire gives $X = 13$!
 
@@ -329,7 +329,7 @@ Combine the two tree surveys: `{{res:sc6_03_counting_place_value_seq_24:keys}}` 
 
 At the solar telescope viewing deck, student astronomers count 5-cent tokens up to 50 cents. In 2-Stack mode, each tap of `{{key:+}}` drops another 5-cent group onto the stack: `{{res:sc6_03_counting_place_value_seq_45:keys}}` $\rightarrow$ **`{{res:sc6_03_counting_place_value_seq_45:value}}`**.
 
-In 2-Stack mode, run this sequence $\to$ (T: 0, Z: 0, Y: 5, X: 10). Successive taps of `{{key:+}}` slide additional 5-bead groups on the Number Rack, advancing through 15, 20, 25, up to 50 cents (10 nickels = 50 cents).
+In 2-Stack mode, run this sequence $\to$ (T: 0, Z: 0, Y: 5, X: 10). Successive taps of `{{key:+}}` step by 5s on the Place Value Tray (`PLACE-01`), advancing through 15, 20, 25, up to 50 cents (10 nickels = 50 cents).
 
 ---
 
@@ -491,7 +491,7 @@ Find the total rope height at the 9th anchor bolt: `{{res:sc6_04_operations_skip
 
 ### Workbook Problem 4.7: High-Altitude Shelter Packs by Sixes
 
-Eight mountain huts are stocked with 6 emergency solar blankets each. On your 2-wire Number Rack, slide 6 beads across Rail 1 and 6 beads across Rail 2 ($6 + 6 = 12$) to see the first two huts.
+Eight mountain huts are stocked with 6 emergency solar blankets each. On your Place Value Tray (`PLACE-01`), place `[6]` in Row 1 and `[6]` in Row 0 ($6 + 6 = 12$, regrouping a Gold `[+1]` carry token to Tens) to see the first two huts.
 
 Step through all 8 mountain huts with Constant Repeat: `{{res:sc6_04_operations_skip_counting_seq_13:keys}}` $\rightarrow$ **`{{res:sc6_04_operations_skip_counting_seq_13:value}}`**. Seeding the stack with `6 {{key:REP}}` keeps 6 locked in Register $T$, while 7 steady taps of `{{key:+}}` climb to $(T: 6, Z: 6, Y: 6, X: 48)$ solar blankets ($X = 48$).
 
@@ -507,7 +507,7 @@ Climb the 8s ladder across all 8 spans: `{{res:sc6_04_operations_skip_counting_s
 
 ### Workbook Problem 4.9: Summit Radio Beacons and the Magic Nine-Pattern
 
-Nine mountain summits each broadcast 9 emergency weather pulses per minute. Place 9 counters on Ten-Frame 1 (1 empty slot) and 9 counters on Ten-Frame 2 ($18$ total) to see why adding 9 is just **adding 10 and stepping back 1**!
+Nine mountain summits each broadcast 9 emergency weather pulses per minute. On your Place Value Tray (`PLACE-01`), compare adding `[9]` to adding `[1]` Ten and stepping the Ones digit back by 1 ($9 + 9 = 18$)!
 
 Climb all 9 summits with Constant Repeat: `{{res:sc6_04_operations_skip_counting_seq_15:keys}}` $\rightarrow$ **`{{res:sc6_04_operations_skip_counting_seq_15:value}}`**. Priming all four registers with `9 {{key:REP}}` and tapping `{{key:+}}` 8 times reaches $(T: 9, Z: 9, Y: 9, X: 81)$ pulses ($X = 81$). Watch the screen as you climb ($09, 18, 27, 36, 45, 54, 63, 72, 81$): the tens digit climbs up by 1 while the ones digit steps down by 1, so the two digits **always add up to 9**!
 
@@ -1688,7 +1688,7 @@ Compute $2^5 - 1$ and test primality on the SC-6: `{{res:sc6_07_data_probability
 
 ### Workbook Drill 8.1 (Level 1): $6 + 3 = ?$
 
-Use **Math Dominoes** or a **Ten-Frame Tray**. Start with the larger benchmark group of 6 (a full row of 5 plus 1 dot), then count on 3 quick hops: 7, 8, 9 ($6 + 3 = 9$). When `6 {{key:ENTER}} 3 {{key:+}} ?` appears, key in 9 {{key:ENTER}} in under $< 2.0\text{ seconds}$. 
+Use your **Place Value Tray (`PLACE-01`)**. Start with the larger benchmark group of 6 (a full row of 5 plus 1 dot), then count on 3 quick hops: 7, 8, 9 ($6 + 3 = 9$). When `6 {{key:ENTER}} 3 {{key:+}} ?` appears, key in 9 {{key:ENTER}} in under $< 2.0\text{ seconds}$. 
 
 On the stack, `{{res:sc6_08_drill_03:keys}}` $\to$ **`{{res:sc6_08_drill_03:value}}`** (T: 0, Z: 0, Y: 0, X: 9). Watch `6` lift to Floor $Y$ on `{{key:ENTER}}` before `{{key:+}}` drops it onto `3` to land on `9`.
 
@@ -1696,7 +1696,7 @@ On the stack, `{{res:sc6_08_drill_03:keys}}` $\to$ **`{{res:sc6_08_drill_03:valu
 
 ### Workbook Drill 8.2 (Level 1): $8 - 0 = ?$
 
-In your **Ten-Frame Tray**, set out 8 counters (5 on top, 3 on bottom). Subtracting zero means taking away zero blocks—all 8 counters stay locked in position ($8 - 0 = 8$). For `8 {{key:ENTER}} 0 {{key:-}} ?`, press 8 {{key:ENTER}} on the keypad (target time: $< 1.0\text{ seconds}$). 
+In your **Place Value Tray (`PLACE-01`)**, set out 8 counters (5 on top, 3 on bottom). Subtracting zero means taking away zero blocks—all 8 counters stay locked in position ($8 - 0 = 8$). For `8 {{key:ENTER}} 0 {{key:-}} ?`, press 8 {{key:ENTER}} on the keypad (target time: $< 1.0\text{ seconds}$). 
 
 Testing `{{res:sc6_08_drill_04:keys}}` $\to$ **`{{res:sc6_08_drill_04:value}}`** (T: 0, Z: 0, Y: 0, X: 8) shows that subtracting `0` in Register $X$ leaves `8` completely unchanged!
 
@@ -1704,7 +1704,7 @@ Testing `{{res:sc6_08_drill_04:keys}}` $\to$ **`{{res:sc6_08_drill_04:value}}`**
 
 ### Workbook Drill 8.3 (Level 1): $3 + 7 = ?$
 
-Look at your **Ten-Frame Tray**. Place 3 blue counters in the first row. The 7 empty pockets show its exact 10-partner—together they fill all 10 pockets of the tray ($3 + 7 = 10$). When `3 {{key:ENTER}} 7 {{key:+}} ?` (or Missing-Value Puzzle `3 ? + = 10`) shows up, tap 10 {{key:ENTER}} (aim for under $< 1.5\text{ seconds}$). 
+Look at your **Place Value Tray (`PLACE-01`)**. Place 3 blue counters in the first row. The 7 empty pockets show its exact 10-partner—together they fill all 10 pockets of the tray ($3 + 7 = 10$). When `3 {{key:ENTER}} 7 {{key:+}} ?` (or Missing-Value Puzzle `3 ? + = 10`) shows up, tap 10 {{key:ENTER}} (aim for under $< 1.5\text{ seconds}$). 
 
 Stack verification: `{{res:sc6_08_drill_05:keys}}` $\to$ **`{{res:sc6_08_drill_05:value}}`** (T: 0, Z: 0, Y: 0, X: 10). Just like Textbook Drill 2 in reverse, `3` and `7` snap together on the stack to form a complete `10`.
 
@@ -1712,7 +1712,7 @@ Stack verification: `{{res:sc6_08_drill_05:keys}}` $\to$ **`{{res:sc6_08_drill_0
 
 ### Workbook Drill 8.4 (Level 1): $9 - 5 = ?$
 
-With your **Ten-Frame Tray**, a group of 9 fills the top row of 5 plus 4 on the bottom row. When you lift off the full top row of 5, the 4 bottom counters remain ($9 - 5 = 4$). For the prompt `9 {{key:ENTER}} 5 {{key:-}} ?`, enter 4 {{key:ENTER}} within $< 1.8\text{ seconds}$. 
+With your **Place Value Tray (`PLACE-01`)**, a group of 9 fills the top row of 5 plus 4 on the bottom row. When you lift off the full top row of 5, the 4 bottom counters remain ($9 - 5 = 4$). For the prompt `9 {{key:ENTER}} 5 {{key:-}} ?`, enter 4 {{key:ENTER}} within $< 1.8\text{ seconds}$. 
 
 Keying `{{res:sc6_08_drill_06:keys}}` $\to$ **`{{res:sc6_08_drill_06:value}}`** (T: 0, Z: 0, Y: 0, X: 4) takes the benchmark `5` away from `9` in Register $Y$ and drops the difference `4` into Register $X$.
 
@@ -1720,7 +1720,7 @@ Keying `{{res:sc6_08_drill_06:keys}}` $\to$ **`{{res:sc6_08_drill_06:value}}`** 
 
 ### Workbook Drill 8.5 (Level 1): $4 + 4 = ?$
 
-Grab the $[4 \mid 4]$ tile from your **Math Dominoes** set. Both halves show identical $2 \times 2$ square clusters ($4 + 4 = 8$); doubling 4 clicks together like twin booster rockets! When you see `4 {{key:ENTER}} 4 {{key:+}} ?`, key in 8 {{key:ENTER}} in under $< 1.0\text{ seconds}$. 
+Place matching `[4]` digit blocks in Row 1 and Row 0 of your **Place Value Tray (`PLACE-01`)**. Both halves show identical $2 \times 2$ square clusters ($4 + 4 = 8$); doubling 4 clicks together like twin booster rockets! When you see `4 {{key:ENTER}} 4 {{key:+}} ?`, key in 8 {{key:ENTER}} in under $< 1.0\text{ seconds}$. 
 
 On your SC-6, `{{res:sc6_08_drill_07:keys}}` $\to$ **`{{res:sc6_08_drill_07:value}}`** (T: 0, Z: 0, Y: 0, X: 8). Pro Tip: Because `{{key:ENTER}}` copies `4` into both $Y$ and $X$, you can even test `4 {{key:ENTER}}` `{{key:+}}` to double a number in three taps!
 
@@ -1728,7 +1728,7 @@ On your SC-6, `{{res:sc6_08_drill_07:keys}}` $\to$ **`{{res:sc6_08_drill_07:valu
 
 ### Workbook Drill 8.6 (Level 1): $10 - 2 = ?$
 
-Start with a full 10 in your **Ten-Frame Tray**. Pop out the 2 end counters from the bottom row: you see a full row of 5 plus 3 on the bottom, giving 8 counters ($10 - 2 = 8$). For `10 {{key:ENTER}} 2 {{key:-}} ?` (or Missing-Value Puzzle `10 ? - = 8`), press 8 {{key:ENTER}} (target time: $< 1.2\text{ seconds}$). 
+Start with a full 10 in your **Place Value Tray (`PLACE-01`)**. Pop out the 2 end counters from the bottom row: you see a full row of 5 plus 3 on the bottom, giving 8 counters ($10 - 2 = 8$). For `10 {{key:ENTER}} 2 {{key:-}} ?` (or Missing-Value Puzzle `10 ? - = 8`), press 8 {{key:ENTER}} (target time: $< 1.2\text{ seconds}$). 
 
 Stack trace: `{{res:sc6_08_drill_08:keys}}` $\to$ **`{{res:sc6_08_drill_08:value}}`** (T: 0, Z: 0, Y: 0, X: 8). Counting back 2 from 10 on the stack lands cleanly on `8`.
 
@@ -1736,7 +1736,7 @@ Stack trace: `{{res:sc6_08_drill_08:keys}}` $\to$ **`{{res:sc6_08_drill_08:value
 
 ### Workbook Drill 8.7 (Level 2): $34 + 12 = ?$
 
-Use your two **Ten-Frame Trays**: in the left tray, model the tens ($3 + 1 = 4\text{ tens} = 40$); in the right tray, model the ones ($4 + 2 = 6\text{ ones}$). Put them together for $46$. When `34 {{key:ENTER}} 12 {{key:+}} ?` is shown, key in 46 {{key:ENTER}} in under $< 2.5\text{ seconds}$. 
+Use your two **Place Value Tray (`PLACE-01`)**: in the left tray, model the tens ($3 + 1 = 4\text{ tens} = 40$); in the right tray, model the ones ($4 + 2 = 6\text{ ones}$). Put them together for $46$. When `34 {{key:ENTER}} 12 {{key:+}} ?` is shown, key in 46 {{key:ENTER}} in under $< 2.5\text{ seconds}$. 
 
 Checking `{{res:sc6_08_drill_11:keys}}` $\to$ **`{{res:sc6_08_drill_11:value}}`** (T: 0, Z: 0, Y: 0, X: 46) shows how both tens and ones add without regrouping, landing on `46` in Register $X$.
 
@@ -1744,7 +1744,7 @@ Checking `{{res:sc6_08_drill_11:keys}}` $\to$ **`{{res:sc6_08_drill_11:value}}`*
 
 ### Workbook Drill 8.8 (Level 2): $67 - 25 = ?$
 
-Use your two **Ten-Frame Trays** as a Tens Tray and a Ones Tray: subtract the tens ($6 - 2 = 4\text{ tens} = 40$) and subtract the ones ($7 - 5 = 2\text{ ones}$) to get $42$. On `67 {{key:ENTER}} 25 {{key:-}} ?`, press 42 {{key:ENTER}} (target time: $< 2.8\text{ seconds}$). 
+Use your two **Place Value Tray (`PLACE-01`)** as a Tens Tray and a Ones Tray: subtract the tens ($6 - 2 = 4\text{ tens} = 40$) and subtract the ones ($7 - 5 = 2\text{ ones}$) to get $42$. On `67 {{key:ENTER}} 25 {{key:-}} ?`, press 42 {{key:ENTER}} (target time: $< 2.8\text{ seconds}$). 
 
 In `{{key:NUM}}` mode, `{{res:sc6_08_drill_12:keys}}` $\to$ **`{{res:sc6_08_drill_12:value}}`** (T: 0, Z: 0, Y: 0, X: 42). Keeping `67` in Register $Y$ and subtracting `25` in Register $X$ confirms `42`.
 
@@ -1752,7 +1752,7 @@ In `{{key:NUM}}` mode, `{{res:sc6_08_drill_12:keys}}` $\to$ **`{{res:sc6_08_dril
 
 ### Workbook Drill 8.9 (Level 2): $47 + 38 = ?$
 
-Use the **Make-a-Round-Number Trick** with your **Ten-Frame Trays**! Notice that 38 is just 2 shy of 40 (a nearly full 10-frame with 8 counters). Add 40 to 47 first ($47 + 40 = 87$), then step back 2 counters to land on $85$. For `47 {{key:ENTER}} 38 {{key:+}} ?`, tap 85 {{key:ENTER}} (aim for under $< 3.5\text{ seconds}$). 
+Use the **Make-a-Round-Number Trick** with your **Place Value Tray (`PLACE-01`)**! Notice that 38 is just 2 shy of 40 (a nearly full 10-group with 8 counters). Add 40 to 47 first ($47 + 40 = 87$), then step back 2 counters to land on $85$. For `47 {{key:ENTER}} 38 {{key:+}} ?`, tap 85 {{key:ENTER}} (aim for under $< 3.5\text{ seconds}$). 
 
 Stack check: `{{res:sc6_08_drill_13:keys}}` $\to$ **`{{res:sc6_08_drill_13:value}}`** (T: 0, Z: 0, Y: 0, X: 85). Or see how the ones regroup: $7 + 8 = 15$ (1 ten and 5 ones) plus $40 + 30 = 70$ gives `85`.
 
@@ -1760,7 +1760,7 @@ Stack check: `{{res:sc6_08_drill_13:keys}}` $\to$ **`{{res:sc6_08_drill_13:value
 
 ### Workbook Drill 8.10 (Level 2): $72 - 45 = ?$
 
-**Count Up to Subtract!** Use your **Ten-Frame Trays** to bridge the gap from 45 to 72: add 5 counters to 45 to reach the friendly multiple of ten ($50$), then add 22 more ($2\text{ tens} + 2\text{ ones}$) to reach $72$. Your total jump is $5 + 22 = 27$. When `72 {{key:ENTER}} 45 {{key:-}} ?` (or Missing-Value Puzzle `72 ? - = 27`) appears, enter 27 {{key:ENTER}} within $< 3.5\text{ seconds}$. 
+**Count Up to Subtract!** Use your **Place Value Tray (`PLACE-01`)** to bridge the gap from 45 to 72: add 5 counters to 45 to reach the friendly multiple of ten ($50$), then add 22 more ($2\text{ tens} + 2\text{ ones}$) to reach $72$. Your total jump is $5 + 22 = 27$. When `72 {{key:ENTER}} 45 {{key:-}} ?` (or Missing-Value Puzzle `72 ? - = 27`) appears, enter 27 {{key:ENTER}} within $< 3.5\text{ seconds}$. 
 
 Keying `{{res:sc6_08_drill_14:keys}}` $\to$ **`{{res:sc6_08_drill_14:value}}`** (T: 0, Z: 0, Y: 0, X: 27) confirms the difference—counting up from the smaller number to the larger number turns borrowing into easy addition!
 
@@ -1768,7 +1768,7 @@ Keying `{{res:sc6_08_drill_14:keys}}` $\to$ **`{{res:sc6_08_drill_14:value}}`** 
 
 ### Workbook Drill 8.11 (Level 2): $56 + 19 = ?$
 
-Model 19 on your **20-Counter Ten-Frame Pair**—it fills all 20 pockets except 1. Add 20 to 56 first ($56 + 20 = 76$), then take back that 1 empty pocket ($76 - 1 = 75$). For `56 {{key:ENTER}} 19 {{key:+}} ?`, key in 75 {{key:ENTER}} in under $< 2.8\text{ seconds}$. 
+Model 19 on your **Place Value Tray (`PLACE-01`)**—it fills all 20 pockets except 1. Add 20 to 56 first ($56 + 20 = 76$), then take back that 1 empty pocket ($76 - 1 = 75$). For `56 {{key:ENTER}} 19 {{key:+}} ?`, key in 75 {{key:ENTER}} in under $< 2.8\text{ seconds}$. 
 
 Verify on the stack: `{{res:sc6_08_drill_15:keys}}` $\to$ **`{{res:sc6_08_drill_15:value}}`** (T: 0, Z: 0, Y: 0, X: 75). Anytime you add 19, 29, or 39, jump up by the next ten and step back 1.
 
@@ -1776,7 +1776,7 @@ Verify on the stack: `{{res:sc6_08_drill_15:keys}}` $\to$ **`{{res:sc6_08_drill_
 
 ### Workbook Drill 8.12 (Level 2): $91 - 38 = ?$
 
-Use **Overshoot & Give Back**! Since 38 is 2 less than 40, subtract 40 from 91 first ($91 - 40 = 51$). Because you took away 2 too many, pop 2 counters back into your **Ten-Frame Tray** to finish at $51 + 2 = 53$. On `91 {{key:ENTER}} 38 {{key:-}} ?`, press 53 {{key:ENTER}} (target time: $< 3.5\text{ seconds}$). 
+Use **Overshoot & Give Back**! Since 38 is 2 less than 40, subtract 40 from 91 first ($91 - 40 = 51$). Because you took away 2 too many, pop 2 counters back into your **Place Value Tray (`PLACE-01`)** to finish at $51 + 2 = 53$. On `91 {{key:ENTER}} 38 {{key:-}} ?`, press 53 {{key:ENTER}} (target time: $< 3.5\text{ seconds}$). 
 
 Stack verification: `{{res:sc6_08_drill_16:keys}}` $\to$ **`{{res:sc6_08_drill_16:value}}`** (T: 0, Z: 0, Y: 0, X: 53). Overshooting by 40 and giving back 2 beats crossing out digits every time.
 
@@ -1784,7 +1784,7 @@ Stack verification: `{{res:sc6_08_drill_16:keys}}` $\to$ **`{{res:sc6_08_drill_1
 
 ### Workbook Drill 8.13 (Level 3): $6 \times 9 = ?$
 
-Use your **Ten-Frame Tray** to see the **"10 Minus 1" Rule**! Nine is $10 - 1$, so 6 groups of 9 is 6 groups of 10 ($60$) minus 6 single counters ($60 - 6 = 54$). For `6 {{key:ENTER}} 9 {{key:×}} ?`, key in 54 {{key:ENTER}} in under $< 1.5\text{ seconds}$. 
+Use your **Place Value Tray (`PLACE-01`)** to see the **"10 Minus 1" Rule**! Nine is $10 - 1$, so 6 groups of 9 is 6 groups of 10 ($60$) minus 6 single counters ($60 - 6 = 54$). For `6 {{key:ENTER}} 9 {{key:×}} ?`, key in 54 {{key:ENTER}} in under $< 1.5\text{ seconds}$. 
 
 Stack trace: `{{res:sc6_08_drill_19:keys}}` $\to$ **`{{res:sc6_08_drill_19:value}}`** (T: 0, Z: 0, Y: 0, X: 54). Notice that in `54`, the tens digit is $6 - 1 = 5$ and the digits add up to $5 + 4 = 9$.
 
@@ -1808,7 +1808,7 @@ On the stack, `{{res:sc6_08_drill_21:keys}}` $\to$ **`{{res:sc6_08_drill_21:valu
 
 ### Workbook Drill 8.16 (Level 3): $9 \times 9 = ?$
 
-Use your **Ten-Frame Tray** to picture 9 groups of 10 ($90$) and pull off 1 counter from each of the 9 groups ($90 - 9 = 81$). For `9 {{key:ENTER}} 9 {{key:×}} ?`, enter 81 {{key:ENTER}} within $< 1.2\text{ seconds}$. 
+Use your **Place Value Tray (`PLACE-01`)** to picture 9 groups of 10 ($90$) and pull off 1 counter from each of the 9 groups ($90 - 9 = 81$). For `9 {{key:ENTER}} 9 {{key:×}} ?`, enter 81 {{key:ENTER}} within $< 1.2\text{ seconds}$. 
 
 Testing `{{res:sc6_08_drill_22:keys}}` $\to$ **`{{res:sc6_08_drill_22:value}}`** (T: 0, Z: 0, Y: 0, X: 81) confirms `81`—or press `9 {{key:x²}}` in `{{key:NUM}}` mode to square 9 in a single operation!
 
@@ -1864,7 +1864,7 @@ Keying `{{res:sc6_08_drill_38:keys}}` $\to$ **`{{res:sc6_08_drill_38:value}}`** 
 
 ### Workbook Drill 8.23 (Level 5): $10\%\text{ of } 250 = ?$
 
-Use your **Ten-Frame Tray** to see why $10\%$ means 1 counter out of 10 ($\frac{1}{10}$). To find one tenth of 250, simply divide by 10 (shift the decimal point one place left): $250 \div 10 = 25$. On `250 {{key:ENTER}} 10 {{key:%}} ?`, key in 25 {{key:ENTER}} in under $< 1.5\text{ seconds}$. 
+Use your **Place Value Tray (`PLACE-01`)** to see why $10\%$ means 1 counter out of 10 ($\frac{1}{10}$). To find one tenth of 250, simply divide by 10 (shift the decimal point one place left): $250 \div 10 = 25$. On `250 {{key:ENTER}} 10 {{key:%}} ?`, key in 25 {{key:ENTER}} in under $< 1.5\text{ seconds}$. 
 
 Stack check: `{{res:sc6_08_drill_39:keys}}` $\to$ **`{{res:sc6_08_drill_39:value}}`** (T: 0, Z: 0, Y: 250, X: 25). Notice how `{{key:%}}` keeps the base `250` in Register $Y$ while placing $10\%$ (`25`) in Register $X$!
 
@@ -1880,7 +1880,7 @@ In `{{key:NUM}}` mode, `{{res:sc6_08_drill_41:keys}}` $\to$ **`{{res:sc6_08_dril
 
 ### Workbook Drill 8.25 (Level 6): $43 \times 11 = ?$
 
-Use the **11s Middle-Sum Shortcut**! Model $4 + 3 = 7$ in your **Ten-Frame Tray**. Now spread the digits `4` and `3` apart and drop their sum `7` right into the middle tens place: `473`. For `43 {{key:ENTER}} 11 {{key:×}} ?`, enter 473 {{key:ENTER}} within $< 1.5\text{ seconds}$. 
+Use the **11s Middle-Sum Shortcut**! Model $4 + 3 = 7$ in your **Place Value Tray (`PLACE-01`)**. Now spread the digits `4` and `3` apart and drop their sum `7` right into the middle tens place: `473`. For `43 {{key:ENTER}} 11 {{key:×}} ?`, enter 473 {{key:ENTER}} within $< 1.5\text{ seconds}$. 
 
 On the stack, `{{res:sc6_08_drill_42:keys}}` $\to$ **`{{res:sc6_08_drill_42:value}}`** (T: 0, Z: 0, Y: 0, X: 473). Why does it work? Because $43 \times 10 = 430$, and $430 + 43 = 473$.
 
@@ -1904,7 +1904,7 @@ Keying `{{res:sc6_08_drill_44:keys}}` $\to$ **`{{res:sc6_08_drill_44:value}}`** 
 
 ### Workbook Drill 8.28 (Level 6): $67 \times 11 = ?$
 
-Use the **11s Shortcut with a Carry**! Model $6 + 7 = 13$ across your two **Ten-Frame Trays** (1 full ten and 3 ones). Put the `3` in the middle tens slot and carry the `1` ten-frame over to the hundreds digit ($6 + 1 = 7$), giving `737`. When `67 {{key:ENTER}} 11 {{key:×}} ?` appears, tap 737 {{key:ENTER}} (aim for under $< 1.8\text{ seconds}$). 
+Use the **11s Shortcut with a Carry**! Model $6 + 7 = 13$ across your two **Place Value Tray (`PLACE-01`)** (1 full ten and 3 ones). Put the `3` in the middle tens slot and carry the `1` ten-group over to the hundreds digit ($6 + 1 = 7$), giving `737`. When `67 {{key:ENTER}} 11 {{key:×}} ?` appears, tap 737 {{key:ENTER}} (aim for under $< 1.8\text{ seconds}$). 
 
 Stack verification: `{{res:sc6_08_drill_45:keys}}` $\to$ **`{{res:sc6_08_drill_45:value}}`** (T: 0, Z: 0, Y: 0, X: 737). Whenever the two digits add to 10 or more, carry 1 to the left digit!
 
@@ -1912,7 +1912,7 @@ Stack verification: `{{res:sc6_08_drill_45:keys}}` $\to$ **`{{res:sc6_08_drill_4
 
 ### Workbook Drill 8.29 (Level 6): $15\%\text{ of } 80 = ?$
 
-Split $15\%$ into $10\% + 5\%$ using your **Ten-Frame Tray**! $10\%$ of 80 is $8$ counters, and $5\%$ is half of that ($4$ counters). Add them together in your tray: $8 + 4 = 12$. For `80 {{key:ENTER}} 15 {{key:%}} ?`, enter 12 {{key:ENTER}} within $< 1.8\text{ seconds}$. 
+Split $15\%$ into $10\% + 5\%$ using your **Place Value Tray (`PLACE-01`)**! $10\%$ of 80 is $8$ counters, and $5\%$ is half of that ($4$ counters). Add them together in your tray: $8 + 4 = 12$. For `80 {{key:ENTER}} 15 {{key:%}} ?`, enter 12 {{key:ENTER}} within $< 1.8\text{ seconds}$. 
 
 Testing `{{res:sc6_08_drill_46:keys}}` $\to$ **`{{res:sc6_08_drill_46:value}}`** (T: 0, Z: 0, Y: 80, X: 12) shows `80` waiting in Register $Y$ and `12` in Register $X$—so pressing `{{key:+}}` next would even give you $80 + 15\% = 92$.
 

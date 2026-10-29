@@ -11,19 +11,19 @@ description: "Comprehensive catalog of all 12 hardware error codes, mathematical
 
 ## The Non-Destructive Error Recovery Principle & Domain Singularities
 
-On vintage or poorly engineered consumer calculators, encountering an arithmetic singularity—such as dividing by zero, taking a logarithm of a negative number, or exceeding the floating-point exponent ceiling—triggers a catastrophic reset: the operational display flashes an error code, intermediate calculations are wiped, and the user is forced to re-key multi-step expressions from the beginning.
+On an expression-evaluating calculator without pre-execution domain guards, encountering an arithmetic singularity—such as dividing by zero, taking a real logarithm of a negative number, or exceeding the floating-point exponent ceiling—aborts the pending syntax tree and discards intermediate subtotals.
 
-The StackCalc SC-32 enforces an absolute architectural invariant: **The Non-Destructive Error Recovery Principle**. Because every operation in Reverse Polish Notation evaluates one step at a time on the values sitting in Registers $Y$ and $X$, the processor checks the mathematical domain *before* mutating your stack.
+The StackCalc SC-32 implements non-destructive error recovery across all arithmetic, transcendental, and iterative subsystems. Because every operation in Reverse Polish Notation evaluates one step at a time on the operands sitting in Registers $Y$ and $X$, the processor validates the mathematical domain *before* mutating the stack.
 
 ### The Non-Destructive Error Recovery Guarantee
 
 When any of the 12 hardware error conditions occurs:
-1. The descriptive error message is posted to the status line of the transflective LCD.
-2. The operation causing the exception is halted **before** mutating operational memory.
-3. **All four operational stack registers ($X, Y, Z, T$) and `LASTX` are frozen intact.**
-4. Pressing `{{key:C}}` or `{{key:<-}}` **dismisses the error banner** and restores your exact prior stack.
+1. **Diagnostic Banner:** The descriptive error message is posted to the status line of the transflective LCD.
+2. **Pre-Mutation Trap:** The operation causing the exception is halted before mutating operational memory.
+3. **Register Preservation:** All four operational stack registers ($X, Y, Z, T$) and `LASTX` remain frozen intact.
+4. **Single-Key Dismissal:** Pressing `{{key:C}}` or `{{key:<-}}` dismisses the error banner and restores the exact prior stack state.
 
-You can then inspect your operands, swap values via `{{key:x⇄y}}`, change a sign via `{{key:+/-}}`, or re-key the intended operator **without** losing a single intermediate calculation.
+You can then inspect your operands, swap values via `{{key:x⇄y}}`, change a sign via `{{key:+/-}}`, or re-key the intended operator without losing a single intermediate calculation.
 
 | Feature / Behavior | StackCalc SC-32 | Vintage HP-32SII | Conventional Algebraic Calculator (Infix) |
 | :--- | :--- | :--- | :--- |
@@ -33,10 +33,9 @@ You can then inspect your operands, swap values via `{{key:x⇄y}}`, change a si
 | **LASTX Protection** | Prior valid $X$ retained safely | Prior valid $X$ retained | No dedicated `LASTX` register |
 | **Shift/Prefix Clearance**| `{{key:C}}` cancels pending prefix harmlessly | `{{key:C}}` cancels | Keypad state unclear |
 
-> **Hardware & Stack Verification:**  
-> If you accidentally divide by zero, do **not** turn off the calculator or clear your stack. Press `{{key:C}}`. Your numerator is still resting safely in Register $Y$, and the zero is in Register $X$. You can overwrite the zero or swap registers on the spot.
+When a division by zero occurs during a multi-step calculation, there is no need to clear the stack or restart from the beginning: pressing `{{key:C}}` dismisses the banner while leaving the numerator intact in Register $Y$ and the zero divisor in Register $X$, ready to be overwritten or swapped on the spot.
 
-### Overview of the 12 Hardware Error Codes
+### Hardware Error Code Summary
 
 Every hardware error code on the SC-32 corresponds to a deterministic mathematical domain singularity or hardware boundary:
 
@@ -61,7 +60,7 @@ Every hardware error code on the SC-32 corresponds to a deterministic mathematic
   2. Press `{{key:C}}` to dismiss the `DIVIDE BY 0` banner.
   3. Key the intended non-zero divisor (e.g., `{{key:1}} {{key:5}}`)—since stack lift remains disabled or overwrites in place after `{{key:C}}`—and press `{{key:÷}}`.
 
-For example, suppose you are computing $\frac{450}{15}$, but mistakenly key $0$ as the divisor:
+When computing $\frac{450}{15}$ and mistakenly keying $0$ as the divisor:
 
 | Step | Keystroke | Display Output | Register X | Register Y | Register Z |
 | :---: | :--- | :--- | :---: | :---: | :---: |
@@ -87,7 +86,7 @@ For example, suppose you are computing $\frac{450}{15}$, but mistakenly key $0$ 
 ---
 
 ### Code 03: OVERFLOW (Floating-Point Magnitude Ceiling)
-* **Why the Singularity Happens:** In 64-bit IEEE-754 double-precision arithmetic, 11 bits are allocated to the binary exponent, providing a maximum finite magnitude of $(2 - 2^{-52}) \times 2^{1023} \approx 1.7976931348623157 \times 10^{308}$. Exponential and factorial functions grow so rapidly that modest inputs cross this threshold:
+* **Why the Singularity Happens:** In 64-bit IEEE-754 double-precision arithmetic, 11 bits are allocated to the binary exponent and establish a maximum finite magnitude of $(2 - 2^{-52}) \times 2^{1023} \approx 1.7976931348623157 \times 10^{308}$. Exponential and factorial functions grow so rapidly that modest inputs cross this threshold:
   * **Factorials (`{{key:x!}}`):** $170! \approx 7.2574 \times 10^{306}$ fits in Register $X$, whereas $171! \approx 1.2410 \times 10^{309}$ exceeds $10^{308}$.
   * **Natural & Common Exponentials:** $e^x$ overflows for $x > 709.782712893384$ ($\ln(1.7977 \times 10^{308})$), and $10^x$ overflows for $x > 308.2547155599167$.
 * **Stack State & Recovery Procedure:**
@@ -106,7 +105,7 @@ For example, suppose you are computing $\frac{450}{15}$, but mistakenly key $0$ 
 
 ---
 
-## Statistical, Iterative Solver & Financial Singularity Traps
+## Statistical, Iterative Solver & Financial Singularities
 
 While Codes 01–04 protect single-step arithmetic and transcendental functions, Codes 05–08 guard multi-variable statistical accumulators, numerical root-finders, polynomial solvers, and compound-interest financial registers.
 
@@ -115,7 +114,7 @@ While Codes 01–04 protect single-step arithmetic and transcendental functions,
   * **Sample Mean with Empty Data ($n = 0$):** Computing $\bar{x} = \frac{\sum x_i}{n}$ when no points have been accumulated via `{{key:Σ+}}` divides $0/0$.
   * **Sample Standard Deviation with a Single Point ($n < 2$):** Sample standard deviation uses Friedrich Bessel's correction in the denominator:
     $$s_x = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}}$$
-    Why $n - 1$ instead of $n$? Because the sample mean $\bar{x}$ is calculated from the data itself, which uses up $1$ degree of freedom. If you have only $n = 1$ data point, that point sits exactly on its own mean ($x_1 = \bar{x}$), giving zero apparent spread and a denominator of $n - 1 = 0$. You need at least $n = 2$ points to measure a distance between measurements!
+    The denominator uses $n - 1$ rather than $n$ because the sample mean $\bar{x}$ is calculated from the data itself, which uses up $1$ degree of freedom. If you have only $n = 1$ data point, that point sits on its own mean ($x_1 = \bar{x}$) and produces zero apparent spread with a denominator of $n - 1 = 0$. You need at least $n = 2$ points to measure a distance between measurements.
   * **Linear Regression with Identical $x$-Coordinates ($\sigma_x = 0$):** Fitting a line $\hat{y} = a + bx$ requires at least two distinct $x$-values. If all entered $(x_i, y_i)$ pairs share the same $x$-coordinate, the points stack in a vertical column of infinite slope ($b = \Delta y / 0$), and Pearson's correlation $r = \frac{s_{xy}}{s_x s_y}$ divides by $s_x = 0$.
 * **Stack State & Recovery Procedure:**
   1. Press `{{key:C}}` to dismiss; all six statistical accumulators ($\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n$) and the stack remain intact.
@@ -124,7 +123,7 @@ While Codes 01–04 protect single-step arithmetic and transcendental functions,
 ---
 
 ### Code 06: NO ROOT FOUND (Unbracketed Zero-Crossing in Brent's Solver)
-* **Why the Singularity Happens:** Richard Brent's hybrid root-finding algorithm (`{{key:SOLVE}}`) combines the guaranteed convergence of bisection with the rapid superlinear speed of secant and inverse quadratic interpolation. By the **Intermediate Value Theorem**, a continuous function $f(x)$ is guaranteed to cross the horizontal axis ($f(x^*) = 0$) inside an interval $[a, b]$ if and only if $f(a)$ and $f(b)$ have *opposite algebraic signs* ($f(a) \cdot f(b) < 0$—one point above the axis, one point below). `NO ROOT FOUND` occurs when:
+* **Why the Singularity Happens:** Richard Brent's hybrid root-finding algorithm (`{{key:SOLVE}}`) combines the guaranteed convergence of bisection with the rapid superlinear speed of secant and inverse quadratic interpolation. By the Intermediate Value Theorem, a continuous function $f(x)$ is guaranteed to cross the horizontal axis ($f(x^*) = 0$) inside an interval $[a, b]$ if and only if $f(a)$ and $f(b)$ have *opposite algebraic signs* ($f(a) \cdot f(b) < 0$—one point above the axis, one point below). `NO ROOT FOUND` occurs when:
   * The curve never crosses the real axis at all (for example, $f(x) = x^2 + 4 > 0$ for every real $x$).
   * Your two starting guesses in Registers $Y$ and $X$ sit on the same side of the root ($f(a) \cdot f(b) > 0$), and 100 secant steps fail to locate a sign reversal.
 * **Stack State & Recovery Procedure:**
@@ -138,23 +137,23 @@ While Codes 01–04 protect single-step arithmetic and transcendental functions,
 * **Why the Singularity Happens:** In the characteristic polynomial workspace (`{{key:POLY}}`), a cubic equation $A x^3 + B x^2 + C x + D = 0$ is normalized by dividing through by its highest non-zero leading coefficient ($A$ for a cubic, or $B$ when $A = 0$ for a quadratic). If both $A = 0$ and $B = 0$ (or when a cubic normalization requires a non-zero leading coefficient), dividing by zero is undefined because the polynomial degree collapses.
 * **Stack State & Recovery Procedure:**
   1. Press `{{key:C}}` to dismiss; your stored coefficients in `A`, `B`, `C`, and `D` remain untouched.
-  2. Store a non-zero leading coefficient and press `{{key:LFU4}}` (`EXEC`). Note that `{{key:POLY}}` solves quadratics $bx^2 + cx + d = 0$ either natively by setting cubic coefficient $A = 0$ (`0 {{key:A}}`) and entering $(B, C, D)$, or by entering $(A, B, C)$ with $D = 0$ (`0 {{key:D}}`, factoring $x(Ax^2 + Bx + C) = 0$). All three analytical roots $(r_1, r_2, r_3)$—including complex conjugate pairs—are written to indirect registers `R34`–`R39` (`34`–`35` for $\text{Re}(r_1), \text{Im}(r_1)$, `36`–`37` for $r_2$, and `38`–`39` for $r_3$) and can be browsed in the `{{key:REGS}}` (`{{key:0}}` or `{{key:MEM}}` $\to$ `REGS`, `STO` tab) catalog or recalled via indirect addressing (`34 {{key:STO}} i`, `{{key:RCL}} (i)`).
+  2. Store a non-zero leading coefficient and press `{{key:LFU4}}` (`EXEC`). The `{{key:POLY}}` workspace solves quadratics $bx^2 + cx + d = 0$ either natively by setting cubic coefficient $A = 0$ (`0 {{key:A}}`) and entering $(B, C, D)$, or by entering $(A, B, C)$ with $D = 0$ (`0 {{key:D}}`, factoring $x(Ax^2 + Bx + C) = 0$). All three analytical roots $(r_1, r_2, r_3)$—including complex conjugate pairs—are written to indirect registers `R34`–`R39` (`34`–`35` for $\text{Re}(r_1), \text{Im}(r_1)$, `36`–`37` for $r_2$, and `38`–`39` for $r_3$) and can be browsed in the `{{key:REGS}}` (`{{key:0}}` or `{{key:MEM}}` $\to$ `REGS`, `STO` tab) catalog or recalled via indirect addressing (`34 {{key:STO}} i`, `{{key:RCL}} (i)`).
 
 ---
 
 ### Code 08: ERROR 5 (Cash-Flow Sign Violation in Time Value of Money)
 * **Why the Singularity Happens:** The Time Value of Money (`{{key:TVM}}`) equation balances present value ($PV$), periodic payments ($PMT$), and future value ($FV$) discounted at periodic rate $i$. The display message `ERROR 5` intentionally preserves the classic HP-12C actuarial error designation for TVM cash-flow sign violations where `PV`, `PMT`, and `FV` all share the same sign:
   $$PV + PMT \left[\frac{1 - (1+i)^{-N}}{i}\right] + FV(1+i)^{-N} = 0$$
-  Here the right-hand side is **zero**. If you enter $PV > 0$, $PMT > 0$, and $FV \ge 0$ (all positive), you are asking the solver to find an interest rate where money flows *only toward you* and never leaves your pocket—a sum of strictly positive numbers can never add up to zero for any real interest rate $i > -100\%$.
+  Here the right-hand side is zero. If you enter $PV > 0$, $PMT > 0$, and $FV \ge 0$ (all positive), you are asking the solver to find an interest rate where money flows *only toward you* and never leaves your pocket—a sum of strictly positive numbers can never add up to zero for any real interest rate $i > -100\%$.
 * **Stack State & Recovery Procedure:**
   1. Press `{{key:C}}` to dismiss; all five financial registers (`N`, `I%`, `PV`, `PMT`, `FV`) remain intact.
-  2. Enforce the **Cash-Flow Sign Convention**: cash *received* (such as a loan principal $PV$) is positive, and cash *paid out* (such as monthly mortgage payments $PMT$ or a savings deposit) is negative (`{{key:+/-}}`). Flip the sign of the outflow variable, store it back into its TVM softkey, and solve again.
+  2. Enforce the cash-flow sign convention: cash *received* (such as a loan principal $PV$) is positive, and cash *paid out* (such as monthly mortgage payments $PMT$ or a savings deposit) is negative (`{{key:+/-}}`). Flip the sign of the outflow variable, store it back into its TVM softkey, and solve again.
 
 ---
 
 ## Memory, Quadrature & Hardware Diagnostic Recovery Protocols
 
-The final four error codes (`Codes 09–12`) handle non-volatile equation bank capacity, numerical integration convergence limits, manual user interrupts, and unsigned educational boundaries, followed by the three hardware reset levels.
+Codes 09 through 12 govern non-volatile equation bank capacity, numerical integration convergence limits, user interrupts, and unsigned arithmetic guards.
 
 ### Code 09: MEMORY FULL (Equation Bank Capacity Reached)
 * **Triggering Keystrokes:** Pressing `{{key:EQN}}` (Right Shift `{{key:↱}}` above `{{key:STO}}`) and attempting to create a 25th stored equation or exceed the flash equation token budget.
@@ -203,7 +202,3 @@ For collegiate and professional engineering examinations, laboratory baseline re
    * `CLΣ` (`{{key:LFU3}}`): Zeroes the six statistical accumulators ($\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n$).
    * `CLSTK` (`{{key:LFU5}}`): Zeroes stack registers $T, Z, Y, X$ while keeping stored variables intact.
 3. **Full Factory Baseline Reset (`CLALL`):** Hold `{{key:C}}` while powering on, or press `{{key:CLEAR}}` $\to$ `CLALL` (`{{key:LFU2}}`). Erases all variables `A`–`Z`, statistical accumulators, TVM financial registers, stored equations, and the stack, returning angular mode to `DEG` and display format to `ALL`. On every power-up, the firmware also verifies the cyclic redundancy checksum of its dual non-volatile state slots, automatically falling back to the last verified atomic snapshot if a battery swap occurred mid-write.
-
----
-
-Every state transition in Appendix A and every singularity trap in Appendix B is triggered through the SC-32's 43-key dual-shifted physical matrix. Turn next to **[Appendix C: Keycap Directory & How We Built StackCalc](appendix-c-keycap-directory.md)** for the complete row-and-column keycap lookup tables and the open-source engineering story behind the instrument.

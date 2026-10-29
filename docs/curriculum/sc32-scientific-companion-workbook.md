@@ -34,7 +34,7 @@ This companion casebook houses the **339 extended worked engineering, physics, n
 | **[Chapter 01](#chapter-01)** | Hardware Architecture & Instrument Craftsmanship | `RP2350` / Power & Timing | **8** | [Manual Ch. 01 &rarr;](../manuals/sc32/01-craftsmanship-hardware.md) |
 | **[Chapter 02](#chapter-02)** | Principles of RPN & 4-Stack XYZT Dynamics | `ENTER`, `x↔y`, `R↓`, `LASTX` | **15** | [Manual Ch. 02 &rarr;](../manuals/sc32/02-rpn-stack-dynamics.md) |
 | **[Chapter 03](#chapter-03)** | Algebra, Transcendentals & Display Formatting | Logs, Exponentials, Hyperbolics | **22** | [Manual Ch. 03 &rarr;](../manuals/sc32/03-algebra-transcendentals.md) |
-| **[Chapter 04](#chapter-04)** | Trigonometry, Coordinate Systems & 2D Vectors | `→P`, `→R`, `VOLV-01` Volvelle | **29** | [Manual Ch. 04 &rarr;](../manuals/sc32/04-trig-vectors-polar.md) |
+| **[Chapter 04](#chapter-04)** | Trigonometry, Coordinate Systems & 2D Vectors | `→P`, `→R`, `FRAC-01` & `PLACE-01` | **29** | [Manual Ch. 04 &rarr;](../manuals/sc32/04-trig-vectors-polar.md) |
 | **[Chapter 05](#chapter-05)** | Complex Numbers, AC Phasors & Euler's Identity | `[CMPLX]` Dual-Stack Engine | **21** | [Manual Ch. 05 &rarr;](../manuals/sc32/05-complex-numbers-phasors.md) |
 | **[Chapter 06](#chapter-06)** | Analytic & Solid Geometry, Surface Area & Mensuration | 2D/3D Mensuration & Geodesics | **15** | [Manual Ch. 06 &rarr;](../manuals/sc32/06-geometry-surface-area.md) |
 | **[Chapter 07](#chapter-07)** | Polynomials, Brent-Dekker Solver & Root Finding | `QUAD`, `CUBIC`, `SOLVE` | **26** | [Manual Ch. 07 &rarr;](../manuals/sc32/07-polynomials-brent-solver.md) |

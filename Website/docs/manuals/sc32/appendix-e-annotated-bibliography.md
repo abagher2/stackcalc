@@ -1,43 +1,36 @@
 ---
-title: "Appendix E: Primary Sources & Annotated Further Reading Guide | Thinking in the Stack (SC-32)"
-description: "An annotated bibliographic guide to the intellectual lineage of parenthesis-free logic, stack-based computer organization, floating-point numerical stability, and scientific storytelling."
+title: "Appendix E: Primary Sources & Annotated Bibliography | Thinking in the Stack (SC-32)"
+description: "Primary sources and historical works in parenthesis-free logic, stack-based computer organization, floating-point numerical analysis, and physical modeling."
 ---
 
-# Appendix E: Primary Sources & Annotated Further Reading Guide
+# Appendix E: Primary Sources & Annotated Bibliography
 
-The architecture of the StackCalc SC-32 does not exist in isolation. It represents the convergence of more than four centuries of mathematical discovery and a century of research across mathematical logic, stack-oriented computer organization, numerical error analysis, human-factors engineering, and scientific instrument craftsmanship.
-
-Throughout the fourteen chapters of this book, we have met the men and women who forged the tools of modern computation. We saw Jan Łukasiewicz write operations without parentheses in 1924 Warsaw, Bill Hewlett challenge his Palo Alto engineers to fit a scientific computer into a shirt pocket in 1971, and John Napier spend twenty years at Merchiston Castle turning multiplication into addition. Along the way, Eratosthenes measured the Earth with a noon shadow, twenty-four-year-old Carl Friedrich Gauss recovered the lost planetoid Ceres by Least Squares, and twenty-one-year-old Claude Shannon proved that relay switches obey George Boole's algebra of logic. We also followed Leonardo of Pisa (Fibonacci) bringing Hindu-Arabic numerals and compound-interest analysis to Mediterranean merchants in 1202, René Descartes watching a housefly on his ceiling unite algebra and geometry, Sadi Carnot bounding heat engines in 1824, and Enrico Fermi estimating the Trinity yield with drifting paper scraps. This appendix provides a complete, chapter-indexed annotated bibliography of the historical memoirs, foundational algorithms, and modern books cited across Volume II, followed by curated reading pathways for students and lifelong learners.
+The architecture of the StackCalc SC-32 draws on four centuries of mathematical discovery and a century of research across mathematical logic, stack-oriented computer organization, numerical error analysis, human-factors engineering, and scientific instrument design. From Jan Łukasiewicz's 1924 parenthesis-free notation in Warsaw and John Napier's 1614 logarithmic tables at Merchiston Castle to Carl Friedrich Gauss's method of Least Squares, Claude Shannon's symbolic relay algebra, and Bill Hewlett's 1971 pocket-calculator specification in Palo Alto, these primary works trace the lineage of direct numerical computation.
 
 ---
 
-## Annotated Literature & Thematic Reading Pathways
+## Primary Historical & Technical Sources
 
 {{bibliography:sc32}}
 
 ---
 
-## Continuing the Exploration: Reading Pathways for Students and Adults
+## Thematic Reading Pathways
 
-Whether you read this book on an airplane for the story of how mathematics works from the inside out or worked through every workbench trace with an SC-32 in your hands, the best way to deepen your intuition is to read the original thinkers in their own words. Great mathematicians and physicists rarely write in the dry, unmotivated style of modern summary sheets; in their primary works, you can watch them wrestle with the exact puzzles we explored in these chapters.
+### Foundations of Problem-Solving, Calculus & Physical Intuition
 
-### Pathway 1: For the High-School Student & Aspiring Scientist
-If you are taking Algebra II, Precalculus, introductory calculus, statistics, or physics and want to see formulas come alive as human stories rather than rules to memorize:
+* **Problem Formulation & Calculus:** George Pólya's *How to Solve It* (1945) formalizes heuristic reasoning—isolating unknowns, working backward, and testing limiting cases before computing. Steven Strogatz's *The Joy of x* (2012) and *Infinite Powers* (2019) trace the conceptual arc from elementary arithmetic to the infinitesimal calculus of Archimedes, Newton, and Leibniz.
+* **Physical Scaling & Complex Rotation:** Richard Feynman's *Lectures on Physics* (Volume I, Chapter 22: *"Algebra"*) progresses in ten pages from integer counting to Euler's formula, $e^{i\theta} = \cos\theta + i\sin\theta$, and shows why multiplication by $\sqrt{-1}$ performs a $90^\circ$ rotation in the plane. Galileo Galilei's *Two New Sciences* (1638) establishes dimensional scaling laws, structural strength, and the parabolic trajectories of projectiles.
+* **Transcendentals, Imaginary Units & Small Samples:** Eli Maor's *e: The Story of a Number* (1994) and Paul Nahin's *An Imaginary Tale* (1998) chronicle the analytic emergence of natural exponentials and complex numbers, while David Salsburg's *The Lady Tasting Tea* (2001) surveys the statistical methods of Carl Friedrich Gauss, Francis Galton, and William Sealy Gosset.
 
-* **The Art of Unpeeling Problems:** Begin with George Pólya's classic *How to Solve It* (1945), which teaches you how to look at an unfamiliar equation, work backward from the unknown, and test extreme cases before touching a key. Pair it with Steven Strogatz's *The Joy of x* (2012) and *Infinite Powers* (2019), which illuminate everything from why negative times negative is positive to how Archimedes, Newton, and Leibniz sliced curved motion into calculus.
-* **Seeing Physics & Complex Rotation:** Read Richard Feynman's *Lectures on Physics* (Volume I, Chapter 22: *"Algebra"*), where Feynman starts with simple whole-number counting and climbs in ten breathtaking pages all the way to Euler's jewel, $e^{i\theta} = \cos\theta + i\sin\theta$, showing why multiplying by $\sqrt{-1}$ is a physical $90^\circ$ turn. For scaling laws and structural geometry, Galileo Galilei's *Two New Sciences* (1638) reads like a lively conversation between three friends discovering why giants cannot have ant legs and why thrown projectiles trace parabolas.
-* **Numbers, Logic & Uncertainty:** For the story of how $e$ and $\sqrt{-1}$ reshaped science, Eli Maor's *e: The Story of a Number* (1994) and Paul Nahin's *An Imaginary Tale* (1998) trace the historical drama behind Chapters 3 and 5, while David Salsburg's *The Lady Tasting Tea* (2001) brings Carl Friedrich Gauss, Francis Galton's Quincunx, and William Sealy Gosset's brewery statistics (Chapter 9) to life.
+### History of Science, Navigation & Information Theory
 
-### Pathway 2: For the Airplane Reader & History-of-Science Enthusiast
-If you love the intersection of human ingenuity, navigation, astronomy, and information:
+* **Logarithms, Shadows & Navigation:** John Napier's *Mirifici Logarithmorum Canonis Descriptio* (1614, translated into English by Edward Wright) and Dava Sobel's *Longitude* (1995) show how logarithmic tables, spherical trigonometry, and marine chronometers reduced oceanic navigation to arithmetic addition and subtraction.
+* **Symbolic Logic & Information Theory:** Claude Shannon's 1938 master's thesis (*"A Symbolic Analysis of Relay and Switching Circuits"*) and his 1948 monograph (*"A Mathematical Theory of Communication"*) establish the direct correspondence between Boolean switching operators (`AND`, `OR`, `XOR`) and logarithmic information entropy ($\log_2 p$).
 
-* **Logarithms, Shadows & Navigation:** John Napier's *Mirifici Logarithmorum Canonis Descriptio* (1614, English translation by Edward Wright) and Dava Sobel's accounts of celestial navigation reveal how tables of logarithms and trigonometric shadows guided ships across trackless oceans for three hundred years before silicon existed.
-* **From Boole's Logic to the Information Age:** Claude Shannon's 1938 master's thesis (*"A Symbolic Analysis of Relay and Switching Circuits"*) and his 1948 landmark (*"A Mathematical Theory of Communication"*) remain two of the clearest, most readable papers ever written in twentieth-century engineering—showing how binary switches (`AND`, `OR`, `XOR`) and logarithmic bits ($\log_2 p$) govern every packet and pixel in the modern world.
+### Computer Architecture, Numerical Analysis & Floating-Point Silicon
 
-### Pathway 3: For the Working Engineer, Computer Scientist & Instrument Builder
-If you want to look under the hood of floating-point silicon, compiler stacks, and numerical algorithms:
+* **Postfix Stacks & Pocket Computation:** Jan Łukasiewicz's *Elementy logiki matematycznej* (1929), Charles Hamblin's 1957 and 1962 papers on reverse Polish hardware stacks, Edsger Dijkstra's 1961 shunting-yard algorithm, and the June 1972 *Hewlett-Packard Journal* articles by Thomas M. Whitney, France Rodé, Chung C. Tung, and David S. Cochran on the HP-35 four-register stack and CORDIC algorithms form the foundation of stack-machine evaluation, analyzed systematically in Donald Knuth's *The Art of Computer Programming* (Volumes 1 and 2).
+* **Floating-Point Arithmetic & Numerical Analysis:** William Kahan's monographs on IEEE-754 floating-point design and principal branch cuts (including *"Mathematics Written in Sand"*) explain why guard digits and compensated summation prevent catastrophic cancellation, while Richard Brent's *Algorithms for Minimization Without Derivatives* (1973), Werner Romberg's 1955 quadrature paper, and William Press et al.'s *Numerical Recipes* document the root-finding and integration algorithms implemented in the SC-32 firmware.
 
-* **Postfix Stacks & Computer Organization:** Jan Łukasiewicz's *Elementy logiki matematycznej* (*Elements of Mathematical Logic*, 1929, introducing his 1924 parenthesis-free notation), Charles Hamblin's 1957 *Australian Journal of Science* and 1962 *Computer Journal* papers on reverse Polish hardware stacks, Edsger Dijkstra's 1961 shunting-yard algorithm, and the June 1972 *Hewlett-Packard Journal* articles by Thomas M. Whitney, France Rodé, Chung C. Tung, and David S. Cochran on the HP-35 four-register RPN stack and CORDIC transcendental algorithms form the bedrock of compiler design and pocket scientific computation, carried forward in Donald Knuth's *The Art of Computer Programming* (Volumes 1 and 2).
-* **Floating-Point Honesty & Numerical Recipes:** Read William Kahan's essays on IEEE-754 floating-point arithmetic (*"Why Do We Need a Floating-Point Arithmetic Standard?"* and *"Mathematics Written in Sand"*) to see why guard digits, compensated summation, and careful branch-cut handling protect engineers from silent roundoff catastrophes. Finally, keep Richard Brent's *Algorithms for Minimization Without Derivatives* (1973), Werner Romberg's 1955 quadrature paper, and William Press et al.'s *Numerical Recipes* on your workbench alongside the SC-32.
-
-From Jan Łukasiewicz's parenthesis-free notation to the four-register operational stack in your hands, every historical story, inside-out derivation, and workbench trace in this volume shares a single goal: freeing your working memory from the tyranny of paper brackets so you can think in the flow of numbers. To revisit the opening narrative of this volume, return to the **[Prologue: Why We Write Equations One Way, Yet Solve Them Another](index.md)**, or explore interactive web simulators and ongoing open-source hardware logs at **[stackcalc.io](https://stackcalc.io)**.
+Interactive web simulators, firmware sources, and open-source hardware schematics are available at [stackcalc.io](https://stackcalc.io).

@@ -75,29 +75,42 @@ RPN_TESTS := \
 
 USER_GUIDES := docs/manuals/sc32-user-guide.md docs/manuals/sc6-user-guide.md
 PDF_MANUALS := docs/downloads/manuals/sc32-scientific-manual.pdf docs/downloads/manuals/sc6-elementary-manual.pdf
+OPEN_SOURCE_ZIPS := \
+	docs/downloads/counting-tiles-open-source-stls.zip \
+	docs/downloads/prime-factor-studio-open-source-stls.zip \
+	docs/downloads/quest-scoreboard-open-source-stls.zip
 SITE_INDEX := site/index.html
 
-.PHONY: help all book manuals blocks screenshots layouts verify pdfs site clean
+.PHONY: help all book manuals blocks printables all-parts screenshots layouts verify pdfs site clean
 
 help:
 	@echo "StackCalc Reference Manuals & Documentation Build System"
 	@echo "--------------------------------------------------------"
 	@echo "  make book        - Incrementally update blocks, layouts, screenshots, macros, tests, PDFs, & MkDocs site"
 	@echo "  make blocks      - Rebuild STL-backed OpenSCAD orthographic diagrams & blocks_registry.json if SCAD/STLs changed"
+	@echo "  make printables  - Update all-parts MK4S plates, Printables CAD/photo links, & open-source STL zips"
 	@echo "  make layouts     - Export layout_data.json and layout_data_sc6.json if Swift keymaps changed"
 	@echo "  make screenshots - Run SwiftUI Paper-theme test suite to update screenshots & sequences_registry.json"
 	@echo "  make verify      - Validate all book macros (keys, sequences, screenshots, blocks) and run 81 RPNCore unit tests"
 	@echo "  make pdfs        - Compile publication-grade SC-32 and SC-6 PDF manuals if chapters or assets changed"
 	@echo "  make site        - Build MkDocs documentation site with --strict validation"
 
-all: book
+all: book printables
 manuals: book
-book: $(PDF_MANUALS) $(SITE_INDEX)
+book: $(PDF_MANUALS) $(OPEN_SOURCE_ZIPS) $(SITE_INDEX)
 
 # ------------------------------------------------------------------------------
-# Stage 1: OpenSCAD / STL -> Orthographic Block Diagrams & blocks_registry.json
+# Stage 1: OpenSCAD / STL -> Orthographic Block Diagrams, All-Parts Plates & Printables Links
 # ------------------------------------------------------------------------------
-blocks: $(BLOCKS_REGISTRY)
+blocks: $(BLOCKS_REGISTRY) $(OPEN_SOURCE_ZIPS)
+
+printables all-parts: $(OPEN_SOURCE_ZIPS)
+	@echo "==> Updating all-parts plates, standalone OpenSCAD packages, & Printables links..."
+	$(MAKE) -C $(EDUCATION_DIR) printables
+
+$(OPEN_SOURCE_ZIPS): $(SCAD_SOURCES) $(STL_FILES) Tools/build_manipulative_zips.py
+	@echo "==> Packaging open-source manipulative STL archives..."
+	$(PYTHON) Tools/build_manipulative_zips.py
 
 $(BLOCKS_REGISTRY) $(BLOCK_PNGS): $(SCAD_SOURCES) $(STL_FILES) $(DIAGRAM_SCRIPT)
 	@echo "==> [1/5] Updating STL-backed manipulative diagrams & blocks_registry.json..."
