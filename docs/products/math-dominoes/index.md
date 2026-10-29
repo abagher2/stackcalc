@@ -249,6 +249,21 @@ hide:
         </a>
       </div>
 
+      <!-- MULTI-CHANNEL BLOCKS & BOOK ALIGNMENT -->
+      <div class="p-3.5 rounded-xl bg-slate-900/90 border border-white/15 my-3 text-xs">
+        <div class="font-mono font-bold text-amber-400 uppercase tracking-wider mb-1.5">🧱 Get `DOMI-01` Blocks in Multiple Places &amp; Printable Curriculum</div>
+        <div class="flex flex-wrap gap-2 mb-2">
+          <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 border border-orange-500/40 font-semibold">🛒 Handcrafted Kit on Etsy ↗</a>
+          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-semibold">🏭 On-Demand Print on Slant 3D ↗</a>
+          <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold">🖨️ Free STLs on Printables ↗</a>
+          <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold">📗 Companion Book on Amazon ↗</a>
+        </div>
+        <div class="text-slate-300 leading-relaxed">
+          <strong>📖 Aligned Book Story:</strong> <a href="../../manuals/sc6/03-counting-place-value/" class="text-sky-400 hover:underline">Spotting Number Partners at a Glance: Subitizing Pips & Friends of 10 (SC-6 Ch. 3 & Ch. 8)</a><br>
+          <strong>📄 Printable Lesson Packets:</strong> <a href="../../downloads/curriculum_units/stackcalc_curriculum_unit_02.pdf" class="text-emerald-400 hover:underline font-semibold">Print Unit 02 Math Dominoes 4-Page Packet (PDF)</a> &bull; <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_07.pdf" class="text-amber-300 hover:underline font-semibold">Print Big Ideas Unit 7 (Equations & Part-Whole PDF)</a>
+        </div>
+      </div>
+
       <!-- Trust Badges -->
       <div class="ec-trust-strip">
         <div class="ec-trust-item">

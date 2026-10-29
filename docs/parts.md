@@ -114,9 +114,10 @@ Quote these Part IDs when ordering via Slant 3D, searching Printables, or contac
 | **Official Website** | [`stackcalc.io`](https://stackcalc.io) | Core interactive calculator, documentation, and student curriculum. |
 | **Printables** | [`printables.com/@StackCalc_5593834`](https://www.printables.com/@StackCalc_5593834) | 100% free open-source STLs and 3MF print plates for school makerspaces. |
 | **Slant 3D Portals** | [`teleportpod.com/portals/profile/StackCalc`](https://teleportpod.com/portals/profile/StackCalc) | On-demand commercial manufacturing for replacement pieces and classroom fleet sets. |
-| **Etsy Storefront** | [`stackcalcmath.etsy.com`](https://stackcalcmath.etsy.com) | Handcrafted boxed math sets, lay-flat reference manuals, and hardware calculators. |
+| **Etsy Storefront** | [`stackcalcmath.etsy.com`](https://stackcalcmath.etsy.com) | Handcrafted 3D-printed manipulative boxed sets and hardware calculators. |
+| **Lulu Press** | [`lulu.com/spotlight/stackcalc`](https://www.lulu.com/spotlight/stackcalc) | Spiral-bound lay-flat curriculum guides, student workbooks, and coach manuals. |
 | **Hackaday** | [`hackaday.io/project/206743`](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator) | Open hardware build logs, PCB fabrication notes, and firmware architecture. |
-| **Amazon** | [Amazon Bookstore](https://link.amazon/B0f5cP0Ur) | *From Blocks to the Stack* official illustrated companion math book. |
+| **Amazon** | [Amazon Bookstore](https://link.amazon/B0f5cP0Ur) | *From Blocks to the Stack* and *Thinking in the Stack* official print textbooks. |
 
 ---
 

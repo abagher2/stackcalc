@@ -25,7 +25,7 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
         "price": "16.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://stackcalcmath.etsy.com"
+        "url": "https://www.lulu.com/spotlight/stackcalc"
       }
     },
     {
@@ -51,11 +51,11 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
         },
         {
           "@type": "Offer",
-          "name": "Etsy Spiral-Bound Edition",
+          "name": "Lulu Spiral-Bound Curriculum & Workbook Edition",
           "price": "16.00",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "url": "https://stackcalcmath.etsy.com"
+          "url": "https://www.lulu.com/spotlight/stackcalc"
         }
       ]
     }
@@ -81,7 +81,8 @@ Every worked example, story, and 4-register stack trace in both books is verifie
 Written directly for curious 3rd–6th graders, parents, and teachers, ***From Blocks to the Stack*** begins with a simple observation: before you ever learned to write equations with parentheses and equals signs, your hands already knew how to do math by **stacking physical things**. Pairing the **StackCalc SC-6** with nine 3D-printed manipulative studios (Ten-Frames, Counting Tiles, $84\text{ mm}$ Fraction Towers, Prime Factor Blocks, and a Planetary Geared Clock), the book gently guides young learners from their very first stack addition to multi-step problem solving without parentheses.
 
 - **[Order on Amazon: Paperback & Hardcover Bookstore Editions ↗](https://link.amazon/B0f5cP0Ur)**
-- **[Order on Etsy: Spiral-Bound Lay-Flat Bench Edition ($16.00) ↗](https://stackcalcmath.etsy.com)**
+- **[Order on Lulu: Spiral-Bound Lay-Flat Curriculum Books & Workbooks ↗](https://www.lulu.com/spotlight/stackcalc)**
+- **[Order Handcrafted 3D-Printed Manipulative Boxed Kits on Etsy ↗](https://stackcalcmath.etsy.com)**
 - **[Order Physical Math Blocks & Refills via Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)**
 - **[Explore Dedicated Book Product Page & TOC ↗](../products/sc6-book.md)**
 - **[Start Reading Online: Preface (`sc6/index.md`)](sc6/index.md)**
@@ -135,10 +136,10 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
 
 ## School District Procurement & Institutional Purchasing {: #school-district-procurement }
 
-We support school mathematics departments, STEM academies, and homeschool co-ops with direct institutional purchasing via formal Purchase Order (`orders@stackcalc.io`), individual print copies on [Amazon](https://link.amazon/B0f5cP0Ur), spiral-bound bench editions on [Etsy](https://stackcalcmath.etsy.com), and on-demand manipulative fleets through our [Slant 3D Portal](https://teleportpod.com/portals/profile/StackCalc).
+We support school mathematics departments, STEM academies, and homeschool co-ops with direct institutional purchasing via formal Purchase Order (`orders@stackcalc.io`), individual print copies on [Amazon](https://link.amazon/B0f5cP0Ur), spiral-bound lay-flat curriculum workbooks on [Lulu](https://www.lulu.com/spotlight/stackcalc), handcrafted 3D-printed manipulative kits on [Etsy](https://stackcalcmath.etsy.com), and on-demand manipulative fleets through our [Slant 3D Portal](https://teleportpod.com/portals/profile/StackCalc).
 
 | Tier | Order Quantity | Unit Price | Savings | Benefits Included |
 | :--- | :---: | :---: | :---: | :--- |
-| **Individual Bench Copy** | 1–4 copies | **$16.00** | Standard Retail | Spiral-bound lay-flat print edition via Etsy or web store |
+| **Individual Bench Copy** | 1–4 copies | **$16.00** | Standard Retail | Print edition on Amazon or spiral-bound lay-flat curriculum edition via Lulu |
 | **Classroom Lab Pack** | 5–19 copies | **$13.50** | **Save 15%** | Includes 1× Laminated Classroom Keypad Reference Chart |
 | **Department / District Fleet** | 20+ copies | **$11.00** | **Save 31%** | Teacher Facilitator Guide, signed W-9, Sole Source letter, and Net-30 invoicing |

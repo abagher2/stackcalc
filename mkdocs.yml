@@ -118,6 +118,7 @@ nav:
     - Critical Editorial Review: manuals/critical-editorial-review-and-school-adoption.md
     - Agent & OpenAPI Spec: api/index.md
   - Documentation:
+    - Engineering Blog: blog/index.md
     - Learning Lab: learning-lab.md
     - Hardware & Rubric: hardware.md
     - Firmware: firmware.md

@@ -76,4 +76,14 @@ To make the schematic-to-board netlist 100% explicit for both the pick-and-place
 * We designated the left-side pair as active electrical pads **`1`** (row net) and **`2`** (column net), and explicitly marked the opposite mechanical stabilizing pads as **`NC`**.
 * We rerouted the row and column buses (`P0`–`P21`) as continuous $0.25\text{ mm}$ copper segments on `F.Cu` and `B.Cu`, eliminating any dependency on internal switch jumpers to carry matrix continuity downstream.
 
-Catching these issues via PCBWay's bench photos before final pack-out saved our first hardware batch from arriving with unpressable top-row softkeys and unpopulated battery headers.
+---
+
+## 4. Exporting `dummy_pcb.stl` from `pcbnew` for 3D-Printed Enclosure Test-Fitting
+
+While resolving the electronic DFM items with PCBWay, we also needed to verify that our 4-part screwless sliding enclosure (`chassis`, `unified_faceplate`, `tpu_membrane`, and snap-fit `top_cap`) had zero mechanical interferences with the populated board.
+
+Rather than waiting for physical fiberglass boards to arrive to test our $0.40\text{ mm}$ lateral PCB rail clearances and $0.10\text{ mm}$ switch plunger datum, we wrote `Hardware/generate_scad.py` using KiCad's Python API (`pcbnew`). Every time `make layout` runs, it inspects `calculator.kicad_pcb` and generates two OpenSCAD files:
+1. **`pcb_layout_generated.scad`:** Extracts the exact $(X, Y)$ centers of all 43 tactile switches, the internal `Edge.Cuts` LCD FPC ribbon slot, and the rear component sweeps.
+2. **`dummy_pcb.scad` $\rightarrow$ `dummy_pcb.stl`:** A complete 3D-printable plastic replica of the populated PCB—including the $1.6\text{ mm}$ FR-4 substrate, all 43 switch bodies and actuator stems, the rear `MCU1` Pico 2 envelope, the `J1` 0.5mm ZIF socket, `JST1`, and the `C1`–`C8` charge-pump capacitors.
+
+By printing `dummy_pcb.stl` in PLA on our desktop printer, we slid the populated plastic "board" into the chassis rails, verified that all 43 Shore 95A TPU membrane plungers met the switch tops cleanly, and confirmed battery lead clearances before PCBWay finished final assembly.

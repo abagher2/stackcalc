@@ -40,14 +40,14 @@ hide:
         },
         {
           "@type": "Offer",
-          "name": "Etsy Spiral-Bound Lay-Flat Edition",
-          "url": "https://stackcalcmath.etsy.com",
+          "name": "Lulu Spiral-Bound Curriculum & Companion Workbooks",
+          "url": "https://www.lulu.com/spotlight/stackcalc",
           "priceCurrency": "USD",
           "price": "16.00",
           "availability": "https://schema.org/InStock",
           "seller": {
             "@type": "Organization",
-            "name": "StackCalc"
+            "name": "Lulu Press"
           }
         }
       ]
@@ -100,7 +100,7 @@ hide:
 
       <div class="ec-price-box">
         <span class="ec-price-current">$16.00</span>
-        <span class="ec-shipping-note">&check; Available on Amazon Prime &amp; Etsy</span>
+        <span class="ec-shipping-note">&check; Print Book on Amazon Prime &bull; Spiral Workbooks on Lulu</span>
       </div>
 
       <p class="ec-short-summary">
@@ -127,33 +127,44 @@ hide:
         </div>
       </div>
 
-      <!-- Action Buttons: Amazon, Etsy, Slant 3D, and Free Online Reading -->
+      <!-- Action Buttons: Amazon, Lulu, Etsy Blocks, Slant 3D, and Free Online Reading -->
       <div class="ec-actions-row" style="flex-direction: column; gap: 0.75rem;">
         <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; width: 100%;">
           <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="flex: 1; min-width: 200px; text-align: center; background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">
-            Order on Amazon ($16.00) ↗
+            Order Print Book on Amazon ($16.00) ↗
           </a>
-          <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="flex: 1; min-width: 200px; text-align: center; background-color: #f1641e; border-color: #f1641e; color: #ffffff; font-weight: 800;">
-            Order on Etsy (Spiral Lay-Flat) ↗
+          <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="flex: 1; min-width: 200px; text-align: center; background-color: #0284C7; border-color: #0284C7; color: #ffffff; font-weight: 800;">
+            Order Spiral Workbooks on Lulu ↗
           </a>
         </div>
 
         <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; width: 100%;">
-          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="flex: 1; min-width: 200px; text-align: center; border-color: #38BDF8; color: #38BDF8; font-weight: 700;">
-            Order Manipulatives on Slant 3D ↗
+          <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="flex: 1; min-width: 180px; text-align: center; border-color: #f1641e; color: #f1641e; font-weight: 700;">
+            Boxed Block Kits on Etsy ↗
           </a>
-          <a href="../../manuals/output/sc6-elementary-manual.pdf" download class="ec-btn-secondary" style="flex: 1; min-width: 200px; text-align: center; font-weight: 700;">
+          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="flex: 1; min-width: 180px; text-align: center; border-color: #38BDF8; color: #38BDF8; font-weight: 700;">
+            Factory Blocks on Slant 3D ↗
+          </a>
+          <a href="../../manuals/output/sc6-elementary-manual.pdf" download class="ec-btn-secondary" style="flex: 1; min-width: 180px; text-align: center; font-weight: 700;">
             Download Free Book PDF &darr;
           </a>
         </div>
       </div>
 
       <!-- Read Free Online Link -->
-      <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
-        <span class="text-xs text-slate-400">100% Free Open-Source Curriculum</span>
-        <a href="../../manuals/sc6/" class="text-xs font-bold text-sky-400 hover:text-sky-300">
-          Read All Chapters Free Online &rarr;
-        </a>
+      <div class="mt-4 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2">
+        <span class="text-xs text-slate-400">100% Free Open-Source Curriculum &amp; Printable Chapter PDFs</span>
+        <div class="flex flex-wrap gap-3">
+          <a href="../../manuals/sc6/" class="text-xs font-bold text-sky-400 hover:text-sky-300">
+            Read Book Online &rarr;
+          </a>
+          <a href="../../curriculum/big-ideas-middle-school-sc6-workbook/" class="text-xs font-bold text-amber-400 hover:text-amber-300">
+            Big Ideas Chapter PDFs (Units 1–10) &rarr;
+          </a>
+          <a href="../../curriculum/teacher-guide/" class="text-xs font-bold text-emerald-400 hover:text-emerald-300">
+            Teacher Guide &amp; Unit PDFs &rarr;
+          </a>
+        </div>
       </div>
 
     </div>

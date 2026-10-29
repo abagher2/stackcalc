@@ -64,11 +64,17 @@ hide:
 
       <!-- Action Buttons -->
       <div class="ec-actions-row">
-        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-          Order on Etsy ($24.00) ↗
+        <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #0284C7; border-color: #0284C7; color: #ffffff;">
+          Order 4 Spiral Books on Lulu ↗
         </a>
-        <a href="/downloads/stackcalc-curriculum-sample-v0.2.0.pdf" class="ec-btn-secondary">
-          Download Free PDF Sample &darr;
+        <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary">
+          Print Textbooks on Amazon ↗
+        </a>
+        <a href="/downloads/stackcalc-curriculum-guide-letter.pdf" class="ec-btn-secondary">
+          Book 1: Master Teacher Guide PDF &darr;
+        </a>
+        <a href="/downloads/stackcalc-student-lab-workbook-letter.pdf" class="ec-btn-secondary">
+          Book 2: K–12 Student Lab Workbook PDF &darr;
         </a>
       </div>
 
@@ -98,12 +104,13 @@ hide:
       <span style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">// 100% FREE DIGITAL CURRICULUM PORTAL</span>
       <h3 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.25rem; font-weight: 800; color: #FFFFFF;">Looking for Immediate Pre-Generated Printables?</h3>
       <p style="margin: 0; font-size: 0.85rem; color: #CBD5E1; max-width: 650px;">
-        Explore our complete digital catalog: 120 pre-generated classroom station guides (Singapore Math, Bridges, Big Ideas), the 91-page Big Ideas Middle School Practice Supplement (90 Worksheets &bull; 900 Problems) + 10-page Coach's Guide, and 12 official Texas UIL &amp; TMSCA tournament practice exams with complete 3-sig-fig scoring keys.
+        Explore our complete digital catalog: 120 pre-generated classroom station guides (Singapore Math, Bridges, Big Ideas), the 102-page Big Ideas Middle School Practice Supplement (90 Worksheets &bull; 900 Problems + 10 Separate Printable Chapter PDFs) + 10-page Coach's Guide, 12 separate 4-page Teacher Curriculum Unit PDFs, and 12 official Texas UIL &amp; TMSCA tournament practice exams with complete 3-sig-fig scoring keys.
       </p>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
       <a href="../../curriculum/worksheets/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #38BDF8; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">120 STATION GUIDES &rarr;</a>
-      <a href="../../curriculum/big-ideas-middle-school-sc6-workbook/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #F59E0B; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">91-PAGE BIG IDEAS SUPPLEMENT &rarr;</a>
+      <a href="../../curriculum/big-ideas-middle-school-sc6-workbook/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #F59E0B; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">102-PAGE BIG IDEAS + 10 CHAPTER PDFS &rarr;</a>
+      <a href="../../curriculum/teacher-guide/#print-individual-curriculum-units-units-0112-separate-pdfs" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #A855F7; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">12 PRINTABLE UNIT PDFS &rarr;</a>
       <a href="../../curriculum/uil-competition/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #10B981; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">24 UIL EXAMS &amp; KEYS &rarr;</a>
     </div>
   </div>
@@ -464,14 +471,14 @@ hide:
         <!-- Download & Order Row -->
         <div class="workbook-actions">
           <div class="text-xs text-slate-400">
-            <strong>Sample Page 14</strong> from the 36-page <em>StackCalc RPN Math Labs Student Workbook</em>.
+            <strong>Sample Page 14</strong> from the 50-page <em>StackCalc K–12 Teacher Curriculum &amp; Learning Lab Guide (Spiral Edition)</em>.
           </div>
           <div class="flex gap-2">
-            <a href="/downloads/stackcalc-curriculum-sample-v0.2.0.pdf" class="ec-btn-secondary text-xs">
-              &darr; Download Free Lab Sample (PDF)
+            <a href="/downloads/stackcalc-curriculum-guide-letter.pdf" class="ec-btn-secondary text-xs">
+              &darr; Download Free 50-Page Guide (PDF)
             </a>
-            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary text-xs" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-              Order Complete Workbook on Etsy ↗
+            <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary text-xs" style="background-color: #0284C7; border-color: #0284C7; color: #ffffff;">
+              Order Spiral Workbook on Lulu ↗
             </a>
           </div>
         </div>

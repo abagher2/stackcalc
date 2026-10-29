@@ -11,29 +11,29 @@ description: "George Miller's working-memory limit, Dijkstra's Shunting-Yard rai
 
 Why can a human being glance at a four-item grocery list—*milk, apples, coffee, bread*—and walk through a supermarket without writing anything down, yet freeze in frustration when staring at a four-layer algebraic fraction on a high-school math test?
 
-In 1956, as we glimpsed in the Prologue, Harvard cognitive psychologist **George A. Miller** published one of the most cited papers in the history of science, *"The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information"* {{cite:sweller1988,miller1956}}. Miller discovered that human **working memory**—the mental scratchpad where you hold numbers and ideas while actively reasoning—is remarkably small. Subsequent experiments by cognitive scientists Nelson Cowan and **John Sweller** {{cite:sweller1988,miller1956}} refined Miller's limit even further: when you are actively transforming information (rather than merely reciting a phone number), **the human brain can hold only about four independent chunks at one time**.
+In 1956, as we glimpsed in the Prologue, Harvard cognitive psychologist **George A. Miller** published one of the most cited papers in the history of science, *"The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information"* {{cite:miller1956}}. Miller discovered that human **working memory**—the mental scratchpad where you hold numbers and ideas while reasoning—is surprisingly small. Subsequent experiments by cognitive scientists Nelson Cowan and **John Sweller** {{cite:sweller1988}} refined Miller's limit even further: when you are actively transforming information rather than reciting a phone number, **the human brain can hold only about four independent chunks at one time**.
 
 Now think about what happens when you try to evaluate a multi-story rational expression from left to right on paper or on an ordinary infix calculator:
 
 $$U = \frac{(18.5 \times 4.2) + (7.1 \times 9.6)}{14.3 - 5.8}$$
 
-If you force yourself to read that equation strictly from left to right—the way 16th-century typesetters printed it—look at the tax imposed on your four mental slots {{cite:parker2019}}:
+If you force yourself to read that equation strictly from left to right—the way 16th-century typesetters printed it—look at the tax imposed on your four mental slots:
 1. First you have to remember that you are inside the **numerator** of a giant fraction (Slot 1).
 2. Next you open a second parenthesis to multiply $18.5 \times 4.2$ (Slot 2).
 3. Then you encounter a `+` sign that *cannot be executed yet* because the second product $(7.1 \times 9.6)$ has not been calculated (Slot 3).
 4. Then you encounter a division bar `÷ (` that *also* cannot be executed until the denominator $(14.3 - 5.8)$ is finished (Slot 4).
 
-Before you have done a single difficult piece of mathematics, all four slots of your working memory are jammed with **suspended grammar**—open parentheses and deferred operators waiting for their future partners {{cite:strogatz2012,ellenberg2014}}!
+Before you have done a single difficult piece of mathematics, all four slots of your working memory are jammed with **suspended grammar**—open parentheses and deferred operators waiting for their future partners!
 
-Compare that mental gridlock with how you naturally solve the same fraction in your head when nobody forces you to write a single giant line of symbols: you multiply $18.5 \times 4.2 = 77.70$ and hold that single finished number on one mental shelf; you multiply $7.1 \times 9.6 = 68.16$ and add the two products into $145.86$, freeing your second shelf immediately; and you subtract $14.3 - 5.8 = 8.5$ before dividing $145.86 \div 8.5 = 17.16$. At no moment did your brain hold more than three numbers at once, and at no moment did it hold a dangling parenthesis!
+Compare that mental gridlock with how you naturally solve the same fraction in your head when nobody forces you to write a single giant line of symbols: you multiply $18.5 \times 4.2 = 77.70$ and hold that single finished number on one mental shelf; you multiply $7.1 \times 9.6 = 68.16$ and add the two products into $145.86$, freeing your second shelf at once; and you subtract $14.3 - 5.8 = 8.5$ before dividing $145.86 \div 8.5 = 17.16$. At no moment did your brain hold more than three numbers at once, and at no moment did it hold a dangling parenthesis!
 
 ### Edsger Dijkstra's 1961 Railway Siding
 
-Humans are not the only ones who choke on left-to-right infix notation. Computers cannot read infix equations directly either!
+Humans are not the only ones who choke on left-to-right infix notation. Digital processors cannot evaluate infix equations in left-to-right order either!
 
 In 1960 and 1961, the thirty-one-year-old Dutch computer scientist **Edsger W. Dijkstra** {{cite:dijkstra1961}} and his colleague Jaap Zonneveld were writing the world's first **ALGOL 60** compiler on an Electrologica X1 computer at the Mathematical Centre in Amsterdam. Faced with the problem of teaching a digital machine with tiny magnetic-core memory how to read human formulas like $A + B \times C$ in a single left-to-right pass, Dijkstra realized that a processor cannot add $A$ and $B$ the moment it sees the `+` sign, because `×` has higher precedence (`PEMDAS`). The computer has to shunt the `+` sign onto a temporary waiting track—just like a freight locomotive shunting boxcars in a railway switchyard—until $B \times C$ has been coupled together!
 
-Dijkstra called his invention the **Shunting-Yard Algorithm** {{cite:dijkstra1961}}:
+Dijkstra called his invention the **Shunting-Yard Algorithm**:
 - Imagine an incoming train of symbols arriving from left to right along a main railway track: `18.5`, `×`, `4.2`, `+`, `7.1`, `×`, `9.6`.
 - Whenever a **number** boxcar arrives, it rolls straight through to the departure yard.
 - Whenever an **operator** boxcar (`×`, `+`, `÷`) or a **left parenthesis** `(` arrives, it is diverted onto a dead-end **operator siding** to wait until its right-hand numbers have passed by.
@@ -43,13 +43,13 @@ $$\text{Infix Input: } (18.5 \times 4.2) + (7.1 \times 9.6) \quad \xrightarrow{\
 
 Look closely at the train leaving Dijkstra's railway yard on the right: every single parenthesis has been uncoupled and thrown away, leaving the pure chronological postfix sequence that we traced in the Prologue from Łukasiewicz {{cite:lukasiewicz1924}} and Burks, Warren, and Wright {{cite:burks1954}} to Charles Hamblin's hardware push-down stack {{cite:hamblin1957}}. Today, whenever you type an equation into **Python**, **Java**, **C++**, **JavaScript**, or even an ordinary algebraic calculator and press `=`, an internal shunting-yard parser secretly translates your left-to-right infix text into postfix stack instructions before a single multiplication takes place—powering the **Java Virtual Machine (JVM)**, **WebAssembly (Wasm)**, **Adobe PostScript**, and deep-space **Forth** navigation computers {{cite:knuth1997,hp15c1982}}.
 
-When **Bill Hewlett** and **David Cochran** designed the HP-35 in 1972 {{cite:hewlett1972,cochran1972}}, they united George Miller's psychology with Edsger Dijkstra's computer science: *Why force a human being to pretend to be a 16th-century typesetter, holding open parentheses in fragile working memory, only for the silicon chip to translate those keystrokes back into a postfix stack anyway?* By placing the **four-shelf stack ($X, Y, Z, T$)** directly on the screen—matching the **four chunks** of human working memory—human and machine speak the exact same inside-out language, and every intermediate subtotal appears in plain sight the instant it is formed.
+When **Bill Hewlett** and **David Cochran** designed the HP-35 in 1972 {{cite:hewlett1972,cochran1972}}, they united George Miller's psychology with Edsger Dijkstra's computer science. Why force a human being to act like a 16th-century typesetter—holding open parentheses in fragile working memory—only for the silicon chip to translate those keystrokes back into a postfix stack anyway? By placing the **four-shelf stack ($X, Y, Z, T$)** on the screen to match the **four chunks** of human working memory, human and machine speak the same language, and every intermediate subtotal appears in plain sight the moment it is formed.
 
 ---
 
 ## Unpeeling Rational Expressions and the Two-Pipe Reservoir Puzzle
 
-How do four simple shelves ($X, Y, Z, T$) untangle any rational expression in high-school Algebra II or collegiate engineering without a single parenthesis? Let us trace the physical choreography of those four shelves in your mind.
+How do four shelves ($X, Y, Z, T$) untangle any rational expression in high-school Algebra II or collegiate engineering? Picture the physical choreography of those four shelves in motion.
 
 ### The Elevator Shaft: Why `ENTER` Parks the Car While Operators Arm It
 
@@ -62,28 +62,28 @@ In Chapter 1, we saw what each of the four shelves holds at rest. Now picture th
 | **Line Y (2nd Floor)** | **Staging Shelf** | Receives $X_{\text{old}}$ (`ENTER` parks lift; armed digit lifts) | Consumed with $X_{\text{old}}$; receives $Z_{\text{old}}$ from upstairs |
 | **Line X (Ground Floor)** | **Active Workbench** | Holds copy on `ENTER` (overwritten by next digit) | Receives new result $f(Y_{\text{old}}, X_{\text{old}})$ and arms stack lift |
 
-To make numbers flow effortlessly through this four-floor shaft, the elevator has only two states—**Parked** (`Stack Lift = FALSE`) and **Primed** (`Stack Lift = TRUE`):
+To keep numbers moving smoothly through this four-floor shaft, the elevator has only two states—**Parked** (`Stack Lift = FALSE`) and **Primed** (`Stack Lift = TRUE`):
 
 1. **Why `ENTER` Parks the Elevator (`Lift = FALSE`):**  
-   Suppose you want to multiply $18.5$ by $4.2$. You type `18.5` into the ground-floor lobby (Shelf $X$) and press **`ENTER`** to tell the instrument that your first number is complete. Pressing **`ENTER`** copies $18.5$ up to the second floor ($Y = 18.5$), while $18.5$ also remains visible on the ground floor ($X = 18.5$). Because the ground floor still holds a temporary copy of $18.5$, pressing **`ENTER` parks the elevator**: the very next digit you type (`4.2`) simply steps right over the temporary copy on Shelf $X$, leaving $Y = 18.5$ and $X = 4.2$ face to face.
+   To multiply $18.5$ by $4.2$, you type `18.5` into the ground-floor lobby (Shelf $X$) and press **`ENTER`** to tell the instrument that your first number is complete. Pressing **`ENTER`** copies $18.5$ up to the second floor ($Y = 18.5$), while $18.5$ also remains visible on the ground floor ($X = 18.5$). Because the ground floor still holds a temporary copy of $18.5$, pressing **`ENTER` parks the elevator**: the next number you type (`4.2`) writes over that temporary copy on Shelf $X$, leaving $Y = 18.5$ and $X = 4.2$ face to face.
 2. **Why Every Operator Arms the Elevator (`Lift = TRUE`):**  
-   Now you tap **`×`**. The second floor ($18.5$) drops down and fuses with the ground floor ($4.2$) into **`77.70`** on Shelf $X$. That `77.70` is not a temporary copy—it is a finished mathematical truth. Therefore, every operator or function automatically **arms the elevator** (`Stack Lift = TRUE`). The instant you begin typing the next number in your problem (`7.1`), you do **not** press `ENTER`: the armed elevator automatically lifts `77.70` up to Shelf $Y$ so `7.1` can enter Shelf $X$ cleanly.
+   Now you tap **`×`**. The second floor ($18.5$) drops down and fuses with the ground floor ($4.2$) into **`77.70`** on Shelf $X$. That `77.70` is not a temporary copy—it is a finished mathematical result. Every operator or function therefore **arms the elevator** (`Stack Lift = TRUE`). The instant you begin typing the next number in your problem (`7.1`), you do **not** press `ENTER`: the armed elevator lifts `77.70` up to Shelf $Y$ so `7.1` can take its place on Shelf $X$.
 3. **How Two-Branch Fractions Meet Without Parentheses (Dyadic Stack Drop):**  
-   Watch what happens when you press `ENTER` after `7.1` and type `9.6`: your finished first branch (`77.70`) rides safely up to the **3rd Floor (Shelf $Z$)** while `7.1` and `9.6` occupy Shelves $Y$ and $X$. When you tap **`×`** to multiply $7.1 \times 9.6 = 68.16$ on Shelf $X$, the upper floors drop down one story—bringing `77.70` from Shelf $Z$ right back down into Shelf $Y$. One tap of **`+`** fuses $77.70 + 68.16 = 145.86$ for the entire numerator. Then you compute the denominator $14.3 - 5.8 = 8.50$ on the lower shelves while $145.86$ waits upstairs, and one final tap of **`÷`** divides them ($145.86 \div 8.50 = 17.16$) {{cite:dijkstra1961}}!
+   Watch what happens when you press `ENTER` after `7.1` and type `9.6`: your finished first branch (`77.70`) rides safely up to the **3rd Floor (Shelf $Z$)** while `7.1` and `9.6` occupy Shelves $Y$ and $X$. When you tap **`×`** to multiply $7.1 \times 9.6 = 68.16$ on Shelf $X$, the upper floors drop down one story—bringing `77.70` from Shelf $Z$ right back down into Shelf $Y$. One tap of **`+`** fuses $77.70 + 68.16 = 145.86$ for the entire numerator. Then you compute the denominator $14.3 - 5.8 = 8.50$ on the lower shelves while $145.86$ waits upstairs, and one final tap of **`÷`** divides them ($145.86 \div 8.50 = 17.16$)!
 
 ### The Classic High-School Work-Rate Puzzle: Two Pipes Filling a Reservoir
 
-Now let us see how inside-out thinking illuminates one of the most famous word problems in high-school Algebra II.
+This same two-branch rhythm illuminates one of the classic word problems of high-school Algebra II.
 
-Suppose a civil engineer is testing the emergency water supply for a town reservoir:
+Picture a civil engineer testing the emergency water supply for a town reservoir:
 - **Pipe A** (the main valley aqueduct), running alone, can fill the empty reservoir to the brim in **$100\text{ minutes}$**.
 - **Pipe B** (the auxiliary river pump), running alone, can fill the same reservoir in **$220\text{ minutes}$**.
 
 If the water superintendent opens the valves on **both Pipe A and Pipe B at the same time**, how many minutes will it take them to fill the reservoir together?
 
-Every autumn in Algebra II classrooms, a tempting trap claims its victims: students try to average the two times ($(100 + 220)/2 = 160\text{ minutes}$) or add them ($320\text{ minutes}$). Pause for one second and test that against common sense: if Pipe A *alone* fills the reservoir in $100\text{ minutes}$, opening a second pipe to help it cannot possibly make the job take *longer* than $100\text{ minutes}$! Two pipes working together must finish in **less time than the fastest single pipe** ($T_{\text{together}} < 100\text{ minutes}$).
+Every autumn in Algebra II classrooms, a tempting trap claims its victims: students try to average the two times ($(100 + 220)/2 = 160\text{ minutes}$) or add them ($320\text{ minutes}$). Pause for one second and test that against common sense {{cite:strogatz2012,ellenberg2014}}: if Pipe A *alone* fills the reservoir in $100\text{ minutes}$, opening a second pipe to help it cannot possibly make the job take *longer* than $100\text{ minutes}$! Two pipes working together must finish in **less time than the fastest single pipe** ($T_{\text{together}} < 100\text{ minutes}$).
 
-Why can't we add the times $T_A$ and $T_B$ directly? Because **times do not add when two helpers work side by side—rates of flow add!**
+Why can't we add the times $T_A$ and $T_B$ together? Because **times do not add when two helpers work side by side—rates of flow add!**
 
 Look at the problem from the **inside out**, one minute at a time:
 1. If Pipe A fills $1\text{ reservoir}$ in $100\text{ minutes}$, then in **one single minute** Pipe A fills a fraction of the reservoir equal to its **reciprocal**:
@@ -92,14 +92,14 @@ Look at the problem from the **inside out**, one minute at a time:
    $$R_B = \frac{1}{220} \approx 0.004545\text{ reservoirs per minute}$$
 3. Because both pipes pour water into the same basin at the same time, their **per-minute flow rates add together**:
    $$R_{\text{total}} = R_A + R_B = \frac{1}{100} + \frac{1}{220} \approx 0.014545\text{ reservoirs per minute}$$
-4. Finally, if $0.014545$ of the reservoir fills each minute, the total time $T_{\text{together}}$ required to fill $1\text{ whole reservoir}$ is simply the **reciprocal** of the combined rate:
+4. Finally, if $0.014545$ of the reservoir fills each minute, the total time $T_{\text{together}}$ required to fill $1\text{ whole reservoir}$ is the **reciprocal** of the combined rate:
    $$T_{\text{together}} = \frac{1}{\frac{1}{100} + \frac{1}{220}} = \frac{100 \times 220}{100 + 220} = \frac{22,000}{320} = \mathbf{68.75\text{ minutes}}$$
 
-And what if the town opens two smaller backup pipes as well—**Pipe C** (which takes $470\text{ minutes}$ alone) and **Pipe D** (which takes $1,000\text{ minutes}$ alone)? Notice those numbers ($100, 220,$ and $470$): parallel water pipes filling a reservoir obey the **exact same harmonic reciprocal-sum law as the $100\,\Omega, 220\,\Omega,$ and $470\,\Omega$ parallel resistors we previewed in the Prologue**! Each new pipe adds its own reciprocal rate ($\frac{1}{470}$ and $\frac{1}{1000}$) to the flow, pulling the combined filling time down monotonically from $100\text{ minutes}$ (Pipe A alone) $\to 68.75\text{ minutes}$ (Pipes A + B) $\to 59.98\text{ minutes}$ (Pipes A + B + C) $\to \mathbf{56.58\text{ minutes}}$ (all four pipes together):
+What if the town also opens two smaller backup pipes: **Pipe C**, which takes $470\text{ minutes}$ alone, and **Pipe D**, which takes $1,000\text{ minutes}$ alone? Those numbers—$100, 220,$ and $470$—are familiar for a reason: parallel water pipes filling a reservoir obey the **same harmonic reciprocal-sum law as the $100\,\Omega, 220\,\Omega,$ and $470\,\Omega$ parallel resistors we met in the Prologue**! Each additional pipe contributes its own reciprocal rate, $\frac{1}{470}$ and $\frac{1}{1000}$, pulling the combined filling time down step by step: from $100\text{ minutes}$ for Pipe A alone, to $68.75\text{ minutes}$ for Pipes A and B, to $59.98\text{ minutes}$ with Pipe C added, and finally to $\mathbf{56.58\text{ minutes}}$ with all four pipes open:
 
 $$T_{\text{all four}} = \left(\frac{1}{100} + \frac{1}{220} + \frac{1}{470} + \frac{1}{1000}\right)^{-1} = 56.5831\text{ minutes}$$
 
-Notice the inside-out rhythm: *flip into rates, add the rates, flip back into time*—or combine each pair directly with the harmonic product-over-sum operator $\frac{T_A T_B}{T_A + T_B}$.
+Every harmonic problem follows this three-beat cadence: *flip into rates, add the rates, flip back into time*—or fold each new branch into the running total with the harmonic product-over-sum operator $\frac{T_A T_B}{T_A + T_B}$.
 
 ---
 
@@ -113,11 +113,11 @@ $$x = 1 + \frac{1}{2 + \frac{1}{3 + \frac{1}{4}}}$$
 
 To an eye trained to read from the top down, a continued fraction looks like a hall of mirrors: a fraction whose denominator contains a fraction, whose denominator contains yet another fraction. If you try to type that expression from the top down into an algebraic calculator—`1 + 1 / ( 2 + 1 / ( 3 + 1 / 4 ) )`—you have to open parentheses at every floor and pray they match at the bottom.
 
-Yet watch what happens when you read that exact same staircase from the **basement up** (the inside out):
-1. Start at the very bottom floor with $4$, and flip it upside down into $\frac{1}{4} = 0.25$.
+Yet watch what happens when you read that same staircase from the **basement up**:
+1. Start at the bottom floor with $4$, and flip it upside down into $\frac{1}{4} = 0.25$.
 2. Step up to the third floor and add $3$: now you have $3.25$ ($13/4$).
 3. Flip that entire sum upside down ($1 / 3.25 = 4/13 \approx 0.3077$) and add $2$: now you have $2.3077$ ($30/13$).
-4. Flip that upside down ($13/30 \approx 0.4333$) and add the roof integer $1$: you land cleanly on **$1.4333$** ($43/30$)!
+4. Flip that upside down ($13/30 \approx 0.4333$) and add the roof integer $1$: you land on **$1.4333$** ($43/30$)!
 
 You never had to hold two branches in your head at once! Every step was just *flip, add, flip, add*.
 
@@ -125,7 +125,7 @@ You never had to hold two branches in your head at once! Every step was just *fl
 
 Why have mathematicians from ancient Greece and fifth-century China to Christiaan Huygens and Srinivasa Ramanujan been so enchanted by continued fractions? Because continued fractions are nature's X-ray machine: they reveal the **best possible rational approximations** to any irrational number in the universe!
 
-Let us test this X-ray machine on the most famous number in geometry: **$\pi = 3.14159265358979\dots$**
+Put this X-ray machine to work on the most famous number in geometry: **$\pi = 3.14159265358979\dots$**
 1. Peel off the whole-number part **$3$**, leaving the decimal tail $0.14159265\dots$
 2. Flip that decimal tail upside down ($1 / 0.14159265\dots$): you get **$7.0625133\dots$**! Because $7.0625$ is so close to the integer **$7$**, stopping right there gives Archimedes's classic schoolhouse approximation:
    $$\pi \approx 3 + \frac{1}{7} = \frac{22}{7} \approx 3.142857 \quad (\text{accurate to } 2\text{ decimal places})$$
@@ -162,7 +162,7 @@ That mathematical property explains one of nature's most breathtaking sights: if
 
 ### François Viète's 1593 Nested Square-Root Cascade
 
-In 1593, the French mathematician and royal cryptographer **François Viète** discovered another gem of inside-out mathematics—the very first exact analytical formula for $\pi$ in European history.
+In 1593, the French mathematician and royal cryptographer **François Viète** discovered the first exact analytical formula for $\pi$ in European history.
 
 How did Viète trap a curved circle inside a staircase of square roots? Like Archimedes before him, Viète started by inscribing a regular square ($4$ sides) inside a unit circle of radius $r = 1$, and then repeatedly doubled the number of sides: from a square ($4$ sides) to a regular octagon ($8$ sides), a $16$-gon, a $32$-gon, a $64$-gon, and so on toward infinity.
 
@@ -170,7 +170,7 @@ Watch what happens to the trigonometry each time you slice a central angle $\the
 
 $$\cos\left(\frac{\theta}{2}\right) = \sqrt{\frac{1 + \cos\theta}{2}} = \frac{\sqrt{2 + 2\cos\theta}}{2}$$
 
-Starting at a right angle $\theta_1 = 90^\circ$ ($\pi/2\text{ radians}$, where $\cos 90^\circ = 0$), let us bisect the angle again and again from the inside out:
+Starting at a right angle $\theta_1 = 90^\circ$ ($\pi/2\text{ radians}$, where $\cos 90^\circ = 0$), bisect the angle step by step:
 - **First Bisection ($45^\circ$, Octagon):**
   $$2\cos(45^\circ) = \sqrt{2 + 2\cos(90^\circ)} = \sqrt{2}$$
 - **Second Bisection ($22.5^\circ$, $16$-gon):**
@@ -190,11 +190,11 @@ Just like continued fractions, nested square-root pyramids—whether Viète's po
 
 ## The Conveyor Belt at the Top of the Stack and Named Memory
 
-What happens at the very top of our four-floor elevator shaft—on **Floor 4 (Register $T$)**—when two numbers on the bottom floors ($Y$ and $X$) fuse together and the upper floors drop down?
+What happens at the top of our four-floor elevator shaft—on **Floor 4 (Register $T$)**—when two numbers on the bottom floors ($Y$ and $X$) fuse together and the upper floors drop down?
 
 ### Why Register $T$ Duplicates Itself Downward
 
-If Floor 4 ($T$) simply emptied out to zero every time the stack dropped, then after three operations your upper shelves would be blank. Instead, the architects of the classic HP-32SII and HP-15C gave Register $T$ a wonderfully clever property called **$T$-Register Duplication**:
+If Floor 4 ($T$) emptied out to zero every time the stack dropped, then after three operations your upper shelves would be blank. Instead, the architects of the classic HP-32SII and HP-15C gave Register $T$ a wonderfully clever property called **$T$-Register Duplication**:
 
 $$\begin{aligned}
 X_{\text{new}} &\leftarrow Y_{\text{old}} \text{ [op] } X_{\text{old}} \\
@@ -206,32 +206,32 @@ T_{\text{new}} &\leftarrow T_{\text{old}} \quad \text{(Copied downward while rem
 Think of Register $T$ as a **gravity-fed hopper** or a permanently meshed drive gear at the top of the shaft. Whenever the stack drops, Register $T$ hands a copy of its number down to Register $Z$ while keeping its own value in $T$! That single architectural detail unlocks three everyday techniques:
 1. **One-Touch Compound Growth:** If you fill all four shelves with a growth factor like $1.065$ (for $6.5\%$ annual growth) and type your starting principal $\$2,500$ into Shelf $X$, every tap of `×` advances the balance by one year ($\text{Year 1} \to \text{Year 2} \to \text{Year 3} \to \text{Year 4} \to \text{Year 5}$) because Register $T$ feeds an endless stream of $1.065$ multipliers down into Shelf $Y$!
 2. **Blueprint Unit-Conversion Pipelines:** If you load a conversion constant like $25.4\text{ mm/in}$ across the upper shelves, you can convert an entire table of machinist inch dimensions into millimeters with one multiplication and a single roll-down (`{{key:R↓}}`) per line.
-3. **Live Golden Ratio Convergence:** If you fill all four shelves with `1`, Register $T$ keeps feeding fresh `1`s into Shelf $Y$ so that alternating `{{key:1/x}}` and `{{key:+}}` climbs the Fibonacci continued-fraction ladder ($2/1 \to 3/2 \to 5/3 \to 8/5 \to \dots \to \varphi$) forever without typing another digit!
+3. **Fixed-Point Continued-Fraction Iteration:** Filling all four shelves with a constant integer $a$ turns Register $T$ into a steady source of $a$'s for continued-fraction staircases ($a + 1/(a + 1/\dots)$), as we will put to the test on the Golden Ratio $\varphi$ in our workbench trace.
 
 ### Rearranging Shelves, Recovering `LASTX`, and Two-Way Register Arithmetic
 
 To give you complete command over numbers in flight, the four operational shelves are paired with four sets of architectural tools:
 - **In-Place Shelf Permutations (`{{key:x⇄y}}`, `{{key:R↓}}`, `{{key:R↑}}`):**  
   Tapping **`{{key:x⇄y}}`** trades Shelves $Y$ and $X$ whenever you compute a denominator or subtracted term *before* the outer number:
-  * If you evaluated a complicated denominator $D$ first on Shelf $X$ and then typed the simple numerator $N$ onto Shelf $X$ (lifting $D$ to Shelf $Y$), pressing `{{key:÷}}` immediately would compute $D \div N$ instead of $N \div D$. A single tap of **`{{key:x⇄y}}`** swaps them into $Y = N, X = D$ so `{{key:÷}}` delivers $N \div D$.
-  * Similarly, if you evaluated a complicated subtrahend $B$ first and then typed $A$, tapping **`{{key:x⇄y}}`** followed by `{{key:-}}` evaluates $A - B$ cleanly.
+  * If you evaluated a complicated denominator $D$ first on Shelf $X$ and then typed the simple numerator $N$ onto Shelf $X$ (lifting $D$ to Shelf $Y$), pressing `{{key:÷}}` right away would compute $D \div N$ instead of $N \div D$. A single tap of **`{{key:x⇄y}}`** swaps them into $Y = N, X = D$ so `{{key:÷}}` delivers $N \div D$.
+  * Similarly, if you evaluated a complicated subtrahend $B$ first and then typed $A$, tapping **`{{key:x⇄y}}`** followed by `{{key:-}}` evaluates $A - B$ in the proper order.
   * Tapping **`{{key:R↓}}`** (Roll Down) or **`{{key:R↑}}`** (Roll Up) rotates all four shelves in a closed four-car Ferris wheel ($X \leftarrow Y \leftarrow Z \leftarrow T \leftarrow X$) without losing a single digit:
 
   $$\text{Roll Down (`R↓`): } (X, Y, Z, T) \leftarrow (Y, Z, T, X), \qquad \text{Roll Up (`R↑`): } (X, Y, Z, T) \leftarrow (T, X, Y, Z)$$
 
   Because four rolls bring every shelf right back to its starting floor, you can load four thermocouple readings onto the stack, cycle through them with `{{key:R↓}}` to inspect each reading in full precision, and then tap `{{key:+}} {{key:+}} {{key:+}} 4 {{key:÷}}` to compute their four-point ensemble mean.
 - **The Automatic Shadow Register (`{{key:LASTX}}`):**  
-  Every time an operation changes Shelf $X$, the previous occupant of Shelf $X$ is saved automatically inside **`LASTX`**. If you press the wrong operator or function key, `{{key:LASTX}}` lets you undo the mistake in seconds. Even better, whenever a formula uses the same variable $x$ twice—as in the optical diffraction sinc function $\frac{\sin\theta}{\theta}$, the symmetric rational fraction $\frac{x^2 - 1}{x^2 + 1}$, the quadratic roots $\frac{-b \pm \sqrt{\Delta}}{2a}$, or Arthur Kennelly's 1899 three-phase Delta-to-Wye ($\Delta \to \text{Y}$) resistor transformation—`{{key:LASTX}}` acts as an automatic **fifth shadow shelf**!
+  Every time an operation changes Shelf $X$, the previous occupant of Shelf $X$ is saved automatically inside **`LASTX`**. If you press the wrong operator or function key, `{{key:LASTX}}` lets you undo the mistake in seconds. Even better, whenever a formula uses the same variable $x$ or a shared divisor twice—as in the optical diffraction sinc function $\frac{\sin\theta}{\theta}$, the symmetric rational fraction $\frac{x^2 - 1}{x^2 + 1}$, the quadratic roots $\frac{-b \pm \sqrt{\Delta}}{2a}$, or Arthur Kennelly's 1899 three-phase Delta-to-Wye ($\Delta \to \text{Y}$) resistor transformation—`{{key:LASTX}}` acts as an automatic **fifth shadow shelf**!
 
-  Consider why Kennelly's $\Delta \to \text{Y}$ transformation is such a classic test of stack fluency: when three resistors $R_{12}, R_{23}, R_{31}$ are wired in a closed triangle ($\Delta$) inside a Wheatstone bridge or a three-phase industrial motor starter, neither series nor parallel rules apply directly. Converting the triangle into an equivalent three-branch star ($\text{Y}$) requires dividing each adjacent pair product by the perimeter sum $S = R_{12} + R_{23} + R_{31}$:
+  Kennelly's $\Delta \to \text{Y}$ transformation is a classic test of stack fluency: when three resistors $R_{12}, R_{23}, R_{31}$ are wired in a closed triangle ($\Delta$) inside a Wheatstone bridge or a three-phase industrial motor starter, neither series nor parallel rules apply on their own. Converting the triangle into an equivalent three-branch star ($\text{Y}$) requires dividing each adjacent pair product by the shared perimeter sum $S = R_{12} + R_{23} + R_{31}$:
 
   $$R_a = \frac{R_{12} R_{31}}{R_{12} + R_{23} + R_{31}}, \qquad R_b = \frac{R_{12} R_{23}}{R_{12} + R_{23} + R_{31}}, \qquad R_c = \frac{R_{23} R_{31}}{R_{12} + R_{23} + R_{31}}$$
 
-  Once you divide $R_{12} R_{31}$ by the perimeter sum $S$ to find $R_a$, that perimeter sum $S$ sits waiting inside **`LASTX`**—so you can compute $R_b$ and $R_c$ immediately by recalling `{{key:LASTX}}` without ever re-summing the three resistors!
+  Because any division $N \div S$ automatically captures its divisor $S$ inside **`LASTX`**, evaluating the first star branch $R_a$ latches the perimeter sum $S$ inside `LASTX` for free—allowing you to compute $R_b$ and $R_c$ next by recalling `{{key:LASTX}}` rather than re-summing the three resistors!
 - **26 Named Variables (`A`–`Z`), Two-Way Register Arithmetic, and Indirect Pointers (`i`, `(i)`):**  
-  What if all four stack shelves ($T, Z, Y, X$) are completely full of live subtotals and you need to multiply Shelf $X$ by a constant stored in variable `A`? If you recalled `A` onto the stack with a normal `{{key:RCL}} A`, the elevator would lift all four floors upward and **push the number on the 4th floor ($T$) off the roof**. To prevent that overflow, **Recall Arithmetic** (`{{key:RCL}} {{key:+}} A`, `{{key:RCL}} {{key:-}} A`, `{{key:RCL}} {{key:×}} A`, `{{key:RCL}} {{key:÷}} A`) scales or offsets Register $X$ *in place* ($X \leftarrow X \text{ op } A$) without moving Shelves $Y, Z,$ or $T$ by a single millimeter, while **Store Arithmetic** (`{{key:STO}} {{key:+}} A`, etc.) updates variable `A` in place ($A \leftarrow A \text{ op } X$).
+  What happens when all four stack shelves ($T, Z, Y, X$) are occupied by live subtotals and you need to combine Shelf $X$ with a constant stored in one of the 26 named variables `A`–`Z`? Because a standard `{{key:RCL}} A` lifts the stack by one floor—pushing the 4th-floor occupant ($T$) off the roof in `4-LVL` mode—the SC-32 provides two-way in-place register arithmetic that bypasses stack lift altogether. **Recall Arithmetic** (`{{key:RCL}}` followed by `+`, `-`, `×`, or `÷` and `A`) updates Register $X$ in place as $X \leftarrow X \text{ op } A$ while leaving Shelves $Y, Z,$ and $T$ untouched. Conversely, **Store Arithmetic** (`{{key:STO}}` followed by `+`, `-`, `×`, or `÷` and `A`) updates Variable `A` in place as $A \leftarrow A \text{ op } X$.
 
-  Even more powerfully, in 1949 **Tom Kilburn, Geoff Tootill, and Max Newman** at the University of Manchester introduced the **"B-line" index register** on the Manchester Mark 1—showing that instead of hard-wiring a fixed memory letter (`A`, `B`, `C`) into a calculation, a machine can hold an integer address $k$ inside a dedicated **index register (`i`)** and use **indirect addressing (`(i)`)** to point to whichever memory slot sits at address $k$. On the SC-32, when `{{key:STO}}` or `{{key:RCL}}` activates the `A–Z` Alpha layer, the decimal point key `{{key:.}}` carries the Alpha label **`i`** (the index register itself) and the neighboring key `{{key:x∥y}}` carries the Alpha label **`(i)`** (the indirect pointer that dereferences $k = \lfloor \lvert i \rvert \rfloor$). Storing `2 {{key:STO}} i` sets the pointer to slot $2$ (`B`), so `{{key:RCL}} (i)` recalls Variable `B`, `{{key:STO}} {{key:+}} (i)` adds Register $X$ directly into Variable `B`, and incrementing `i` (`1 {{key:STO}} {{key:+}} i`) slides your window smoothly across all 89 slots of the calculator's unified memory map:
+  Even more powerfully, in 1949 **Tom Kilburn, Geoff Tootill, and Max Newman** at the University of Manchester introduced the **"B-line" index register** on the Manchester Mark 1—showing that instead of hard-wiring a fixed memory letter (`A`, `B`, `C`) into a calculation, a machine can hold an integer address $k$ inside a dedicated **index register (`i`)** and use **indirect addressing (`(i)`)** to point to whichever memory slot sits at address $k$. On the SC-32, when `{{key:STO}}` or `{{key:RCL}}` activates the `A–Z` Alpha layer, the decimal point key `{{key:.}}` carries the Alpha label **`i`** (the index register itself) and the neighboring key `{{key:x∥y}}` carries the Alpha label **`(i)`** (the indirect pointer that dereferences $k = \lfloor \lvert i \rvert \rfloor$). Storing $2$ into `i` sets the pointer to slot $2$ (`B`), so `{{key:RCL}} (i)` recalls Variable `B`, `{{key:STO}} {{key:+}} (i)` adds Register $X$ into Variable `B`, and incrementing `i` by $1$ slides your window across all 89 slots of the calculator's unified memory map:
 
 | Pointer Range $k = \lfloor \lvert i \rvert \rfloor$ | Target Memory Bank | Addressed Register / Content | Access Permissions |
 | :---: | :--- | :--- | :--- |
@@ -242,7 +242,7 @@ To give you complete command over numbers in flight, the four operational shelve
 | **`40` … `89`** | **Statistical Data Points** | `DATA0` (`40`) through `DATA49` (`89`) | Read via `RCL (i)` |
 | **$k < 1$ or $k > 89$** | **Out of Bounds** | Displays `INVALID DATA` (Code 02) | N/A (Halts without stack corruption) |
 
-  Finally, to let you audit intermediate subtotals and adapt the elevator shaft to any problem, the SC-32 places two six-operator relational test menus right on the division key `{{key:÷}}` (`Row 4, Col 4`): Left Shift `{{key:↰}}` above `{{key:÷}}` opens **`{{key:x?y}}`** (`{{key:x=y}}`, `{{key:x≠y}}`, `{{key:x>y}}`, `{{key:x<y}}`, `{{key:x≥y}}`, `{{key:x≤y}}`), comparing Register $X$ against Register $Y$, while Right Shift `{{key:↱}}` above `{{key:÷}}` opens **`{{key:x?0}}`** (`{{key:x=0}}`, `{{key:x≠0}}`, `{{key:x>0}}`, `{{key:x<0}}`, `{{key:x≥0}}`, `{{key:x≤0}}`), comparing Register $X$ against zero. On the live stack, tapping any test in `{{key:x?y}}` or `{{key:x?0}}` flashes **`YES`** or **`NO`** on the screen without consuming or altering a single stack shelf—ideal for checking engineering tolerance bounds—while inside the symbolic Equation Editor (`{{key:EQN}}`), every test acts as **Kenneth Iverson's Boolean indicator bracket $[P] \in \{1, 0\}$**, evaluating to `1.0` when True and `0.0` when False right on the stack to model multi-branch **piecewise functions** (as we explore in Chapters 7, 8, and 12). Internally, the SC-32 computes with 64-bit IEEE-754 double-precision floating-point arithmetic ($53$ significand bits $\approx 15.95$ decimal digits) paired with a 12-digit guard-rounded display (`{{key:ALL}}`, `{{key:FIX}}`, `{{key:SCI}}`, `{{key:ENG}}`); holding `{{key:SHOW}}` (Right Shift `{{key:↱}}` above `{{key:ENTER}}`) reveals all 15 internal digits on demand. And via the `{{key:FLAGS}}` menu (Right Shift `{{key:↱}}` above `{{key:×}}`), you can configure User Flags `0–3`, System Flags `4–6`, or switch the stack depth between classic 4-level mode (`4-LVL`), extended 8-level mode (`8-LVL`), and unbounded 999-level heap mode (`INF`):
+  Finally, the division key `{{key:÷}}` carries two six-operator relational test menus: left-shifted **`{{key:x?y}}`** compares Register $X$ against Register $Y$ (`x=y`, `x≠y`, `x>y`, `x<y`, `x≥y`, `x≤y`), while right-shifted **`{{key:x?0}}`** compares Register $X$ against zero (`x=0`, `x≠0`, `x>0`, `x<0`, `x≥0`, `x≤0`). On the live stack, any test flashes **`YES`** or **`NO`** non-destructively; inside the Equation Editor `{{key:EQN}}`, each test acts as **Kenneth Iverson's Boolean indicator bracket $[P] \in \{1, 0\}$**, returning `1.0` or `0.0` to model piecewise functions in Chapters 7, 8, and 12. Internally, the SC-32 computes in 64-bit IEEE-754 double precision ($53$ significand bits $\approx 15.95$ decimal digits) with a 12-digit guard-rounded display across `{{key:DISP}}` (`ALL`, `FIX`, `SCI`, `ENG`) and 15-digit inspection via `{{key:SHOW}}`. Through the `{{key:FLAGS}}` menu—which also houses user flags and proctored `EXAM` mode in **Chapter 14**—you can switch the stack depth between `4-LVL`, `8-LVL`, and unbounded `INF` mode:
 
 | Mode ID | Architecture Name | Accessible Registers | Stack Drop Behavior | Recommended Application Zone |
 | :---: | :--- | :--- | :--- | :--- |
@@ -252,16 +252,16 @@ To give you complete command over numbers in flight, the four operational shelve
 
 ---
 
-## On the Stack: 4-Register Dynamics & Memory Workbench
+## On the Stack: 4-Register Dynamics & Memory Architecture
 
-Across this chapter, we saw why George Miller's four-chunk working-memory limit makes a four-level stack feel like a natural extension of your own mind, how combined flow-rate problems and rational fractions unpeel from the inside out, and how continued fractions and nested square-root towers climb smoothly from the bottom floor to the roof. Let us now step into the Chapter 2 Workbench and trace every one of these mechanisms keystroke by keystroke on the SC-32.
+Two physical habits govern every trace in this workbench: pressing `{{key:ENTER}}` parks stack lift so the next number you type overwrites Register $X$, while any dyadic operator (`{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷}}`) drops the upper shelves by one floor, replicates Register $T$ downward, and re-arms stack lift.
 
-{{res:sc32_order_of_ops:screenshot|Real-time 4-register operational stack (T, Z, Y, X) displaying intermediate calculation states with zero deferred parentheses.}}
+{{res:sc32_order_of_ops:screenshot|Real-time 4-register operational stack (T, Z, Y, X) displaying intermediate calculation states without deferred parentheses.}}
 
 ### Two-Branch Rational Fractions & Combined Reservoir Flow Rates
 
 1. **Weighted Span Rational Fraction ($\frac{(45 \times 3) + (18 \times 4)}{15 - 3} = 17.25$ — Slow-Motion Keystroke Trace):**  
-   In this first table, we give **every individual key press its own separate row** so you can watch in slow motion how `{{key:ENTER}}` disables stack lift (allowing `3`, `4`, and `3` to overwrite Register $X$ directly), how `{{key:×}}` and `{{key:-}}` drop the upper stack and re-arm stack lift, and how typing `18` and `15` automatically lifts your finished subtotals into Register $Y$ without a single parenthesis:
+   In this first table, we give **every individual key press its own separate row** so you can watch in slow motion how `{{key:ENTER}}` disables stack lift (allowing `3`, `4`, and `3` to overwrite Register $X$ in place), how `{{key:×}}` and `{{key:-}}` drop the upper stack and re-arm stack lift, and how typing `18` and `15` automatically lifts your finished subtotals into Register $Y$ by position alone:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -292,14 +292,7 @@ Across this chapter, we saw why George Miller's four-chunk working-memory limit 
 | `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$17.1600$** | Final heat transfer coefficient |
 
 3. **Combined Reservoir Pipe Flow Rates ($T = 100 \parallel 220 \parallel 470 \parallel 1000\text{ min}$):**  
-   When Pipe A ($100\text{ min}$) and Pipe B ($220\text{ min}$) fill a town reservoir together, the initial pair `{{res:sc32_02_rpn_stack_dynamics_seq_33:keys}}` ($\to 68.7500\text{ min}$) computes their two-pipe harmonic time in Register $X$ and arms stack lift automatically. Opening Pipe C ($470\text{ min}$) and Pipe D ($1,000\text{ min}$) in the full four-pipe sequence `{{res:sc32_02_rpn_stack_dynamics_seq_02:keys}}` then chains each additional harmonic branch directly onto the running total, yielding a combined filling time of **`{{res:sc32_02_rpn_stack_dynamics_seq_02:value}}`** $\text{minutes}$:
-
-| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `100 {{key:ENTER}}` | $0.0000$ | $0.0000$ | $100.0000$ | $100.0000$ | Load Pipe A solo time $T_1 = 100\text{ min}$; stack lift primes $Y$ |
-| `220 {{key:x∥y}}` | $0.0000$ | $0.0000$ | $0.0000$ | $68.7500$ | Two-pipe harmonic time $100 \parallel 220 = 68.7500\text{ min}$ in $X$ |
-| `470 {{key:x∥y}}` | $0.0000$ | $0.0000$ | $0.0000$ | $59.9768$ | Open third pipe ($68.75 \parallel 470\text{ min}$) |
-| `1000 {{key:x∥y}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$56.5831$** | Final 4-pipe reservoir filling time $T_{\text{total}}$ |
+   Compare the two-branch fraction above—which needed Shelf $Z$ to hold the finished numerator while the denominator formed—with a four-pipe harmonic network where Pipe A ($100\text{ min}$), Pipe B ($220\text{ min}$), Pipe C ($470\text{ min}$), and Pipe D ($1,000\text{ min}$) fill a town reservoir together. Because the parallel-harmonic operator `{{key:x∥y}}` is associative, you never have to stack all four pipe times onto $T, Z, Y,$ and $X$ at once! Instead, keying the initial pair `{{res:sc32_02_rpn_stack_dynamics_seq_33:keys}}` collapses $100\text{ min}$ on Shelf $Y$ and $220\text{ min}$ on Shelf $X$ straight into their two-pipe harmonic time ($68.7500\text{ min}$) on Shelf $X$, returning Shelf $Y$ to zero and arming stack lift. Opening Pipe C (`470 {{key:x∥y}}` $\to 59.9768\text{ min}$) and Pipe D (`1000 {{key:x∥y}}`) in the full sequence `{{res:sc32_02_rpn_stack_dynamics_seq_02:keys}}` then folds each additional aqueduct into that running subtotal on Register $X$ (`68.7500` $\to$ `59.9768` $\to$ **`{{res:sc32_02_rpn_stack_dynamics_seq_02:value}}`** $\text{minutes}$), leaving Registers $Z$ and $T$ completely untouched from start to finish.
 
 ### Register T Constant Replication, Cyclic Roll, and LASTX Recovery
 
@@ -314,7 +307,7 @@ Across this chapter, we saw why George Miller's four-chunk working-memory limit 
 | `{{key:×}}` | $1.0650$ | $1.0650$ | $1.0650$ | $2,835.5625$ | $T$ duplicates down; Year 2 balance in $X$ |
 | `{{key:×}}` | $1.0650$ | $1.0650$ | $1.0650$ | $3,019.8741$ | Year 3 balance compounded via $T$-replication |
 | `{{key:×}}` | $1.0650$ | $1.0650$ | $1.0650$ | $3,216.1659$ | Year 4 balance compounded |
-| `{{key:×}}` | $1.0650$ | $1.0650$ | $1.0650$ | **$3,425.2167$** | Year 5 portfolio balance with zero re-entry |
+| `{{key:×}}` | $1.0650$ | $1.0650$ | $1.0650$ | **$3,425.2167$** | Year 5 portfolio balance without re-entry |
 
 2. **Blueprint Inch-to-Millimeter Pipeline ($x_{\text{mm}} = 25.4\,x_{\text{in}}$):**  
    Flooding the stack with `25.4` locks the conversion factor in Register $T$:
@@ -341,28 +334,14 @@ Across this chapter, we saw why George Miller's four-chunk working-memory limit 
 | `{{key:R↓}}` | $21.5000$ | $24.8000$ | $28.2000$ | **$31.0000$** | 4th roll down: returns full cycle to $T_4 = 31.0^\circ\text{C}$ |
 
 4. **Optical Diffraction Sinc Function via `{{key:LASTX}}` ($\operatorname{sinc}\theta = \frac{\sin\theta}{\theta}$):**  
-   To evaluate $f(x) = \frac{\sin x}{x}$ for $x = 0.42\text{ radians}$ in `{{key:RAD}}` mode without typing $0.42$ twice:
-
-| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:RAD}} 0.42` | $0.0000$ | $0.0000$ | $0.0000$ | $0.420000$ | Switch to RAD and enter argument $x$ (`LASTX` = $0.0000$) |
-| `{{key:SIN}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.407760$ | $\sin(0.42)$; $0.420000$ saved automatically to `LASTX` |
-| `{{key:LASTX}}` | $0.0000$ | $0.0000$ | $0.407760$ | $0.420000$ | Stack lifts; $x = 0.420000$ restored from `LASTX` into $X$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.970857$** | $\frac{\sin(0.42)}{0.42} = 0.970857$ (`LASTX` = $0.420000$) |
-
-   For Fraunhofer slit diffraction at $\theta = 0.085\text{ radians}$, with radian mode selected, `{{key:RAD}} 0.085` followed by `{{key:SIN}} {{key:LASTX}} {{key:÷}}` in the full sequence `{{res:sc32_02_rpn_stack_dynamics_seq_04:keys}}` resolves the central lobe amplitude to $\mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_04:value}}}$ (switch back to `{{key:DEG}}` afterward).
+   Why does an expression like $\operatorname{sinc} x = \frac{\sin x}{x}$—where the independent variable $x$ appears in both the numerator and the denominator—never require `{{key:ENTER}}` or upper stack shelves? Because `{{key:LASTX}}` acts as an automatic fifth shadow register! In radian mode (`{{key:RAD}}`), entering $0.42$ into Register $X$ and pressing `{{key:SIN}}` replaces $0.420000$ in Register $X$ with $\sin(0.42) = 0.407760$ while automatically preserving the pre-operator argument $0.420000$ inside the shadow register. Recalling that saved argument lifts $0.407760$ onto Shelf $Y$ and restores $0.420000$ onto Shelf $X$, so a single division resolves $\frac{\sin(0.42)}{0.42} = \mathbf{0.970858}$ while Registers $Z$ and $T$ stay completely empty. Applying that same four-stroke rhythm to Fraunhofer single-slit diffraction at $\theta = 0.085\text{ radians}$ via `{{res:sc32_02_rpn_stack_dynamics_seq_04:keys}}` resolves the central diffraction lobe amplitude to $\mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_04:value}}}$ without typing the angle twice (switch back to `{{key:DEG}}` afterward).
 
 5. **Three-Phase Delta-to-Wye ($\Delta \to \text{Y}$) Transformation ($R_a = \frac{R_{12}R_{31}}{R_{12}+R_{23}+R_{31}}$):**  
-   In three-phase power networks and Wheatstone bridges, converting a closed $\Delta$ resistor loop ($R_{12} = 30\,\Omega,\; R_{23} = 45\,\Omega,\; R_{31} = 60\,\Omega$) into an equivalent star ($\text{Y}$) network divides each adjacent pair product by the same perimeter sum $R_{12} + R_{23} + R_{31} = 135\,\Omega$. Executing `{{res:sc32_02_rpn_stack_dynamics_seq_14:keys}}` resolves the first star branch $R_a = \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_14:value}}\,\Omega}$ while automatically latching the divisor $135\,\Omega$ inside `{{key:LASTX}}`. Because recalling `{{key:LASTX}}` *before* multiplying the next pair lets $135\,\Omega$ ride up to Register $Z$ while `30 {{key:ENTER}} 45` occupies $Y$ and $X$ (and then drop back to Register $Y$ when `{{key:×}}` collapses the product), `{{key:LASTX}} 30 {{key:ENTER}} 45 {{key:×}} {{key:x⇄y}} {{key:÷}}` and `{{key:LASTX}} 45 {{key:ENTER}} 60 {{key:×}} {{key:x⇄y}} {{key:÷}}` re-save $135\,\Omega$ into `{{key:LASTX}}` after each division and leave all three star branches ($Z = 13.3333,\; Y = 10.0000,\; X = 20.0000\,\Omega$) side by side on the stack:
+   That same shadow-register behavior becomes even more powerful in dyadic subtraction and division, where `{{key:LASTX}}` captures the **second operand** ($X_{\text{old}}$)—letting you evaluate relative change $\frac{Y - X}{X}$ by subtracting $Y - X$ and immediately dividing by `{{key:LASTX}}`, or reuse a shared denominator across multiple branches. In Arthur Kennelly's three-phase $\Delta \to \text{Y}$ transformation for a closed $\Delta$ loop with $R_{12} = 30\,\Omega,\; R_{23} = 45\,\Omega,\; R_{31} = 60\,\Omega$, all three equivalent star branches share the identical perimeter denominator $S = R_{12} + R_{23} + R_{31} = 135\,\Omega$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `30 {{key:ENTER}} 60 {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1,800.0000$ | Compute numerator product $R_{12} R_{31} = 1800$ |
-| `30 {{key:ENTER}} 45 {{key:+}}` | $0.0000$ | $0.0000$ | $1,800.0000$ | $75.0000$ | Start denominator: $R_{12} + R_{23} = 75$ |
-| `60 {{key:+}}` | $0.0000$ | $0.0000$ | $1,800.0000$ | $135.0000$ | Add $R_{31}$; total perimeter resistance $135\,\Omega$ in $X$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$13.3333$** | Divide numerator by denominator; equivalent $R_a = 13.33\,\Omega$ |
+   Watch how `{{res:sc32_02_rpn_stack_dynamics_seq_14:keys}}` computes the first star branch $R_a$ while priming `{{key:LASTX}}` for the remaining two branches: first multiplying $R_{12}R_{31} = 30 \times 60 = 1,800\,\Omega^2$ on Shelf $X$, then accumulating the perimeter sum $S = 30 + 45 + 60 = 135\,\Omega$ on Shelf $X$ while $1,800\,\Omega^2$ rides up to Shelf $Z$ and drops back to Shelf $Y$, and finally dividing to resolve $R_a = 1,800 / 135 = \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_14:value}}\,\Omega}$ in Register $X$ **while automatically latching the shared perimeter divisor $135.0000\,\Omega$ inside `{{key:LASTX}}`**. You never have to add $30 + 45 + 60$ again: recalling $135\,\Omega$ from `{{key:LASTX}}` before forming each remaining pair product ($R_{12}R_{23} = 1,350\,\Omega^2$ and $R_{23}R_{31} = 2,700\,\Omega^2$) and swapping via `{{key:x⇄y}}` for division leaves all three equivalent wye impedances ($Z = 13.3333\,\Omega,\; Y = 10.0000\,\Omega,\; X = 20.0000\,\Omega$) aligned on the stack!
 
-> **IEEE-754 Guard Rounding & 15-Digit Inspection (`{{key:SHOW}}`):** In raw 64-bit binary floating-point arithmetic, $0.1 + 0.2$ produces a tiny repeating-binary residual ($0.3000000000000000444\dots$). On the SC-32, 12-digit base-10 guard rounding ensures that `{{res:sc32_02_rpn_stack_dynamics_seq_32:keys}}` displays exact `0.3` on screen, while holding `{{key:SHOW}}` (Right Shift `{{key:↱}}` above `{{key:ENTER}}`) lets you inspect the full 15-digit internal mantissa whenever you are auditing numerical precision.
+> **IEEE-754 Guard Rounding & 15-Digit Inspection (`{{key:SHOW}}`):** In raw 64-bit binary floating-point arithmetic, $0.1 + 0.2$ produces a tiny repeating-binary residual ($0.3000000000000000444\dots$). On the SC-32, 12-digit base-10 guard rounding ensures that `{{res:sc32_02_rpn_stack_dynamics_seq_32:keys}}` displays exact `0.3` on screen, while holding `{{key:SHOW}}` lets you inspect the full 15-digit internal mantissa whenever you are auditing numerical precision.
 
 ### Continued Fractions, Nested Radicals & Recall Arithmetic
 
@@ -376,24 +355,15 @@ Across this chapter, we saw why George Miller's four-chunk working-memory limit 
 | `1 {{key:-}}` | $0.0000$ | $0.0000$ | $14.0625$ | $13.0625$ | Numerator $x^2 - 1$; $14.0625$ drops to $Y$ |
 | `{{key:x⇄y}}` | $0.0000$ | $0.0000$ | $13.0625$ | $14.0625$ | Swap $x^2$ into $X$, numerator into $Y$ |
 | `1 {{key:+}}` | $0.0000$ | $0.0000$ | $13.0625$ | $15.0625$ | Denominator $x^2 + 1 = 15.0625$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.867219$** | Final quotient $13.0625 / 15.0625$ |
+| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$0.867220$** | Final quotient $13.0625 / 15.0625$ |
 
 2. **Climbing a Four-Story Continued Fraction ($x = 1 + \frac{1}{2 + \frac{1}{3 + \frac{1}{4}}}$), Zu Chongzhi's $\pi \approx \frac{355}{113}$, and the Golden Ratio $\varphi$:**  
-   Starting from the lowest floor, `{{res:sc32_02_rpn_stack_dynamics_seq_34:keys}}` ($\to 3.25 = 13/4$) folds the bottom denominator into Register $X$ without touching Register $Y$. Continuing upward by alternating `{{key:1/x}}` and `{{key:+}}` in the full sequence `{{res:sc32_02_rpn_stack_dynamics_seq_09:keys}}` then collapses the entire four-story ladder in place into **`{{res:sc32_02_rpn_stack_dynamics_seq_09:value}}`** ($43/30$):
+   Why does a towering continued fraction—which looks on paper like four nested floors of division bars—leave Registers $Z$ and $T$ completely empty when evaluated from the bottom up? Because the unary reciprocal key `{{key:1/x}}` inverts each completed denominator **in place inside Register $X$**, and adding the next floor's integer immediately collapses $Y$ and $X$ back into a single number on Shelf $X$! Starting at the basement floor, keying `{{res:sc32_02_rpn_stack_dynamics_seq_34:keys}}` flips $4$ into $1/4 = 0.2500$ in Register $X$ and adds $3$ to form the third-floor denominator $3.2500$ ($13/4$) without leaving anything in Register $Y$. Continuing upward in the full sequence `{{res:sc32_02_rpn_stack_dynamics_seq_09:keys}}` alternates `{{key:1/x}}` and `{{key:+}}` right on the ground floor—flipping $13/4$ into $4/13 \approx 0.3077$, adding $2$ to reach $30/13 \approx 2.3077$, inverting to $13/30 \approx 0.4333$, and adding $1$ to land on **`{{res:sc32_02_rpn_stack_dynamics_seq_09:value}}`** ($43/30$) while Registers $Y, Z,$ and $T$ rest at zero.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `4 {{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.2500$ | Bottom denominator term $1/4 = 0.25$ |
-| `3 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.2500$ | Sum third denominator ($3 + 1/4 = 13/4$) |
-| `{{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.3077$ | Invert sub-fraction ($4/13 \approx 0.3077$) |
-| `2 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.3077$ | Sum second denominator ($2 + 4/13 = 30/13$) |
-| `{{key:1/x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $0.4333$ | Invert sub-fraction ($13/30 \approx 0.4333$) |
-| `1 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$1.4333$** | Complete continued fraction ($1 + 13/30 = 43/30$) |
-
-   Try the exact same basement-up rhythm on the two historical continued fractions from earlier in this chapter! For **Zu Chongzhi's $\pi \approx 3 + \frac{1}{7 + \frac{1}{15 + 1/1}}$**, start at the bottom with `1 {{key:1/x}} 15 {{key:+}} {{key:1/x}} 7 {{key:+}} {{key:1/x}} 3 {{key:+}}` to land on **`3.14159292035`** (and toggle fraction display mode via Left Shift `{{key:↰}}` above `{{key:.}}` for `{{key:FDISP}}` to see the exact reduced fraction `3 16/113`, or $\frac{355}{113}$!). Even better, to watch the **Golden Ratio $\varphi = 1 + \frac{1}{1 + \frac{1}{1 + \dots}}$** emerge from Fibonacci ratios without re-typing a single digit, flood all four shelves with `1` via `1 {{key:ENTER}} {{key:ENTER}} {{key:ENTER}}` and simply alternate **`{{key:1/x}} {{key:+}}`** again and again: because Register $T$ continuously feeds fresh `1`s down into Register $Y$, each two-key beat climbs one Fibonacci rung higher ($2.0000 \to 1.5000 \to 1.6667 \to 1.6000 \to 1.6250 \to 1.6154 \to \dots \to \mathbf{1.61803398875}$)!
+   Applying this identical basement-up cadence to Archimedes's $\pi \approx 3 + 1/7 = 22/7$ or **Zu Chongzhi's $\pi \approx 3 + \frac{1}{7 + \frac{1}{15 + 1/1}}$** (starting at the deepest $1$, inverting and adding $15$, inverting and adding $7$, and inverting and adding $3$) lands on **`3.14159292035`**, where toggling fraction display mode `{{key:FDISP}}` reveals the exact reduced rational `3 16/113` ($\frac{355}{113}$). Likewise, flooding all four stack shelves with $1$ via `{{key:ENTER}}` turns Register $T$'s constant replication into an endless source of $1$'s, so repeating the two-keystroke rhythm `{{key:1/x}} {{key:+}}` steps through the Fibonacci convergents ($2.0000 \to 1.5000 \to 1.6667 \to 1.6000 \to 1.6250 \to 1.6154 \to \dots$) to the **Golden Ratio $\varphi = \mathbf{1.61803398875}$**.
 
 3. **Nested Radical Quotient ($x = \sqrt{\frac{128.5 + \sqrt{48.2}}{19.4 - \sqrt{7.6}}}$):**  
-   Evaluating the numerator via `{{res:sc32_02_rpn_stack_dynamics_seq_35:keys}}` ($\to 135.44265$) and the denominator via `{{res:sc32_02_rpn_stack_dynamics_seq_36:keys}}` ($\to 16.64319$) parks the completed numerator safely on Shelf $Y$ while the denominator resolves on Shelf $X$. Chaining both branches and extracting the outer square root in `{{res:sc32_02_rpn_stack_dynamics_seq_26:keys}}` then yields **`{{res:sc32_02_rpn_stack_dynamics_seq_26:value}}`**:
+   When an expression branches into an independent radical numerator and radical denominator, Registers $Z, Y,$ and $X$ work together as a three-level staging elevator. Evaluating the numerator first via `{{res:sc32_02_rpn_stack_dynamics_seq_35:keys}}` ($\to 135.44262$) and then assembling the denominator via `{{res:sc32_02_rpn_stack_dynamics_seq_36:keys}}` ($\to 16.64319$) pushes the completed numerator safely up to Shelf $Z$ while $19.4$ and $\sqrt{7.6} \approx 2.7568$ occupy $Y$ and $X$, before `{{key:-}}` drops $135.4426$ back to Shelf $Y$. Chaining both branches and extracting the outer square root in `{{res:sc32_02_rpn_stack_dynamics_seq_26:keys}}` then yields **`{{res:sc32_02_rpn_stack_dynamics_seq_26:value}}`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -404,18 +374,10 @@ Across this chapter, we saw why George Miller's four-chunk working-memory limit 
 | `{{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.8527$** | Extract outer square root; final radical quotient |
 
 4. **Four-Story Continued Radical ($x = \sqrt{3 + \frac{5}{\sqrt{7 + \frac{11}{\sqrt{13 + 17}}}}}$):**  
-   Climbing from $\sqrt{13 + 17}$ outward via `{{res:sc32_02_rpn_stack_dynamics_seq_31:keys}}`:
-
-| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `13 {{key:ENTER}} 17 {{key:+}} {{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $5.4772$ | Innermost radical $\sqrt{13 + 17} = \sqrt{30} \approx 5.4772$ |
-| `11 {{key:x⇄y}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $2.0083$ | Swap and divide $11 / \sqrt{30} \approx 2.0083$ |
-| `7 {{key:+}} {{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.0014$ | Middle radical $\sqrt{7 + 2.0083} = \sqrt{9.0083} \approx 3.0014$ |
-| `5 {{key:x⇄y}} {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | $1.6659$ | Swap and divide $5 / 3.0014 \approx 1.6659$ |
-| `3 {{key:+}} {{key:√x}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$2.1601$** | Outermost radical $\sqrt{3 + 1.6659} \approx \mathbf{2.160069}$ |
+   Contrast the two-branch fraction above with a four-story continued radical that mixes square roots and fraction bars at every level. Why does climbing outward from $\sqrt{13 + 17}$ via `{{res:sc32_02_rpn_stack_dynamics_seq_31:keys}}` never touch Registers $Z$ or $T$ at all? Because each inner radical becomes the *divisor* of the floor immediately above it, and swapping via `{{key:x⇄y}}` before division collapses each floor in place! Specifically, summing $13 + 17$ and pressing `{{key:√x}}` extracts the deepest root $\sqrt{30} \approx 5.4772$ in Register $X$. Entering the numerator $11$ next lifts $5.4772$ to Shelf $Y$, where `{{key:x⇄y}}` and division place $11 / \sqrt{30} \approx 2.0083$ back on Shelf $X$ with Shelf $Y$ cleared to zero. Adding $7$ and extracting the root forms the middle radical $\sqrt{9.0083} \approx 3.0014$ in place; dividing $5$ by that root yields $1.6659$; and adding $3$ before one final square root extracts $\sqrt{4.6659} \approx \mathbf{2.1601}$ ($2.160069$), leaving Registers $Z$ and $T$ completely free!
 
 5. **Preserving a Full 4-Register Stack with Recall Arithmetic (`{{key:RCL}} {{key:×}} A`):**  
-   To see why Recall Arithmetic is such a lifesaver when your four-register workspace is full, suppose `2.5` is stored in variable `A` (`2.5 {{key:STO}} A`), and all four stack registers $(T, Z, Y, X)$ are completely occupied by four active subtotals (`10 {{key:ENTER}} 20 {{key:ENTER}} 30 {{key:ENTER}} 40`, placing $T = 10, Z = 20, Y = 30, X = 40$). You now need to multiply Register $X$ ($40$) by `A` ($2.5$). If you keyed a standard `{{key:RCL}} A {{key:×}}`, recalling `A` would lift the stack ($T \leftarrow 20, Z \leftarrow 30, Y \leftarrow 40, X \leftarrow 2.5$), **pushing $10$ off the top of Register $T$ forever**, and the subsequent `{{key:×}}` would leave $T = 20, Z = 20, Y = 30, X = 100$. By keying `{{key:RCL}} {{key:×}} A` instead, Register $X$ scales to $40 \times 2.5 = 100$ in place, preserving $T = 10, Z = 20, Y = 30$ intact:
+   With `2.5` stored in variable `A` (`2.5 {{key:STO}} A`) and all four stack registers $(T, Z, Y, X)$ occupied by active subtotals (`10 {{key:ENTER}} 20 {{key:ENTER}} 30 {{key:ENTER}} 40`, placing $T = 10, Z = 20, Y = 30, X = 40$), a standard `{{key:RCL}} A {{key:×}}` would lift the stack ($T \leftarrow 20, Z \leftarrow 30, Y \leftarrow 40, X \leftarrow 2.5$), **push $10$ off the top of Register $T$ forever**, and leave $T = 20, Z = 20, Y = 30, X = 100$. Keying `{{key:RCL}} {{key:×}} A` instead scales Register $X$ to $40 \times 2.5 = 100$ in place while preserving $T = 10, Z = 20, Y = 30$ intact:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -425,7 +387,7 @@ Across this chapter, we saw why George Miller's four-chunk working-memory limit 
 | `{{key:RCL}} {{key:×}} A` | **$10.0000$** | **$20.0000$** | **$30.0000$** | **$100.0000$** | In-place $X \leftarrow 40 \times 2.5$ (`LASTX` = $40.0000$, `A` = $2.5000$); **$T = 10$ is preserved** |
 
 6. **Indirect Register Addressing & Pointer Arithmetic via `i` and `(i)` (`{{key:STO}} i`, `{{key:RCL}} (i)`, `{{key:STO}} {{key:+}} (i)`):**  
-   Suppose you store calibration offsets $120.0$ in Variable `A` (slot $k = 1$) and $250.0$ in Variable `B` (slot $k = 2$). By loading the pointer $k = 1$ into index register `i` (`1 {{key:STO}} i`, tapping `{{key:.}}` for Alpha `i`), `{{key:RCL}} (i)` (tapping `{{key:x∥y}}` for Alpha `(i)`) dereferences slot $1$ (`A` = $120.0$). Incrementing the pointer in place via `1 {{key:STO}} {{key:+}} i` advances `i` to $2$ (`B`), allowing `35 {{key:STO}} {{key:+}} (i)` and `{{key:RCL}} (i)` to update and recall Variable `B` ($250 + 35 = 285.0$) through the indirect pointer:
+   Store calibration offset $120.0$ in Variable `A` at slot $k = 1$ and $250.0$ in Variable `B` at slot $k = 2$. Loading $k = 1$ into index register `i` via `1 {{key:STO}} i`—tapping `{{key:.}}` for Alpha `i`—lets `{{key:RCL}} (i)` on `{{key:x∥y}}` dereference slot $1$ to return $120.0$. Incrementing the pointer in place with `1 {{key:STO}} {{key:+}} i` advances `i` to slot $2$, where `35 {{key:STO}} {{key:+}} (i)` and `{{key:RCL}} (i)` update and recall Variable `B` as $250 + 35 = 285.0$:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -439,37 +401,24 @@ Across this chapter, we saw why George Miller's four-chunk working-memory limit 
 
 ### Multi-Register Engineering Synthesis
 
-Once you master those core moves, formulas from completely different engineering disciplines reveal themselves as variations of three universal 4-shelf patterns: **(1) Inner Ratio $\to$ Root $\to$ Outer Scale** (Hohmann orbits, RC filters, Darcy-Weisbach pipe flow, and cantilever beam slope), **(2) Two-Branch Difference Over Reciprocal Sum** (Stefan-Boltzmann radiation shields), and **(3) Running Sum Over Count or Resistance** (three-phase fault currents and composite wall conduction). Watch how effortlessly all seven equations unpeel on the stack without a single parenthesis:
+Once these stack movements become second nature, you stop seeing textbook formulas as isolated domain equations and start recognizing **three structural stack archetypes**:
 
-* **Hohmann Orbital Transfer ($\Delta v_1 = \sqrt{\frac{\mu}{r_1}}\left(\sqrt{\frac{2r_2}{r_1+r_2}} - 1\right)$):** Raising a spacecraft from a low parking orbit ($r_1 = 6,678\text{ km}$) to geostationary altitude ($r_2 = 42,164\text{ km}$) under Earth's gravitational parameter $\mu = 398,600\text{ km}^3/\text{s}^2$, evaluating the inner radical factor first via `{{res:sc32_02_rpn_stack_dynamics_seq_15:keys}}` resolves the perigee impulse $\Delta v_1 = \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_15:value}}\text{ km/s}}$.
-* **Stefan-Boltzmann Radiative Heat Shield ($q = \frac{\sigma(T_1^4 - T_2^4)}{\frac{1}{\varepsilon_1} + \frac{1}{\varepsilon_2} - 1}$):** Across two parallel plates at $T_1 = 800\text{ K}$ ($\varepsilon_1 = 0.85$) and $T_2 = 500\text{ K}$ ($\varepsilon_2 = 0.70$) with $\sigma = 5.67037 \times 10^{-8}\text{ W/m}^2\text{K}^4$, the numerator $\sigma(T_1^4 - T_2^4) = 19,681.8543\text{ W/m}^2$ rides up to Register $Z$ while the two emissivity reciprocals are formed in $Y$ and $X$, then drops back to Register $Y$ as soon as `{{key:+}}` combines them (`{{res:sc32_02_rpn_stack_dynamics_seq_16:keys}}` $\to \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_16:value}}\text{ W/m}^2}$):
+**Archetype I — Inside-Out Radical & Reactance Scaling (Two Active Shelves, $Z$ and $T$ Free).** Whenever an equation multiplies an outer physical scale by a dimensionless inner radical, starting inside the radical resolves the formula without touching Registers $Z$ or $T$. In a **Hohmann orbital transfer** ($\Delta v_1 = \sqrt{\frac{\mu}{r_1}}\left(\sqrt{\frac{2r_2}{r_1+r_2}} - 1\right)$) boosting a satellite from low Earth orbit ($r_1 = 6,678\text{ km}$) to geostationary altitude ($r_2 = 42,164\text{ km}$, with $\mu = 398,600\text{ km}^3/\text{s}^2$), start inside the dimensionless radius ratio $\frac{2r_2}{r_1+r_2} = \frac{84,328}{48,842} = 1.72655$. Extracting `{{key:√x}}` ($\to 1.31398$) and subtracting $1$ isolates the fractional boost $0.31398$ on Shelf $X$; forming the circular parking speed $\sqrt{\mu/r_1} = 7.72584\text{ km/s}$ on Shelf $X$ while $0.31398$ waits on Shelf $Y$ and multiplying (`{{res:sc32_02_rpn_stack_dynamics_seq_15:keys}}`) delivers the perigee burn $\Delta v_1 = \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_15:value}}\text{ km/s}}$—a classic orbital sprint we revisit in **Chapter 14**.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `800 {{key:ENTER}} 4 {{key:yˣ}}` | $0.0000$ | $0.0000$ | $0.0000$ | $4.0960 \times 10^{11}$ | Fourth power of $T_1$: $800^4 = 4.096 \times 10^{11}\text{ K}^4$ |
-| `500 {{key:ENTER}} 4 {{key:yˣ}}` | $0.0000$ | $0.0000$ | $4.0960 \times 10^{11}$ | $6.2500 \times 10^{10}$ | Fourth power of $T_2$: $500^4 = 6.25 \times 10^{10}\text{ K}^4$ |
-| `{{key:-}}` | $0.0000$ | $0.0000$ | $0.0000$ | $3.4710 \times 10^{11}$ | Temperature difference $\Delta(T^4) = 3.471 \times 10^{11}$ |
-| `5.67037 {{key:E}} 8 {{key:+/-}} {{key:×}}` | $0.0000$ | $0.0000$ | $0.0000$ | $19,681.8543$ | Multiply by $\sigma$; radiation numerator in $X$ |
-| `0.85 {{key:1/x}} 0.70 {{key:1/x}} {{key:+}} 1 {{key:-}}` | $0.0000$ | $0.0000$ | $19,681.8543$ | $1.6050$ | Numerator rides to $Z$ and drops back to $Y$ as $1/\varepsilon_1 + 1/\varepsilon_2 - 1$ forms in $X$ |
-| `{{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$12,262.5165$** | Net radiative heat flux $q \approx 12.26\text{ kW/m}^2$ |
+By the same two-shelf economy, evaluating the **first-order high-pass RC filter gain** $|H| = \frac{X}{\sqrt{1+X^2}}$ ($X = 2\pi f R C$) for an audio network with $R = 10,000\,\Omega$ and $C = 15 \times 10^{-9}\text{ F}$ at $f = 2,500\text{ Hz}$ forms the dimensionless frequency ratio $X \approx 2.35619$ in Register $X$ and presses `{{key:ENTER}}` once to copy $2.35619$ onto Shelf $Y$. Transforming Shelf $X$ in place via `{{key:x²}}`, `+ 1`, and `{{key:√x}}` produces $\sqrt{1 + X^2} \approx 2.55962$, so dividing `{{res:sc32_02_rpn_stack_dynamics_seq_22:keys}}` lands directly on $|H| = \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_22:value}}}$.
 
-* **Darcy-Weisbach Pipe Head Loss ($h_f = f\frac{L}{D}\frac{v^2}{2g}$):** Pumping water at $v = 2.4\text{ m/s}$ through a $L = 250\text{ m}$ main of diameter $D = 0.30\text{ m}$ with friction factor $f = 0.022$ and $g = 9.80665\text{ m/s}^2$, chaining `{{res:sc32_02_rpn_stack_dynamics_seq_17:keys}}` yields $h_f = \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_17:value}}\text{ m}}$.
-* **Zero-Sequence Ground Fault Current ($I_0 = \frac{I_a + I_b + I_c}{3}$):** Monitoring unbalanced feeder currents $I_a = 120\text{ A},\; I_b = 85\text{ A},\; I_c = 95\text{ A}$ (`{{res:sc32_02_rpn_stack_dynamics_seq_20:keys}}` $\to \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_20:value}}\text{ A}}$):
+**Archetype II — Two-Branch Difference Over Reciprocal or Series Sum (Shelves $Z, Y, X$ in Concert).** Whenever a physical driving difference ($\Delta(T^4)$ or $\Delta T$) sits above a multi-term sum of thermal resistances, you evaluate the numerator first so it rides up to Shelf $Z$ while the denominator terms meet on Shelves $Y$ and $X$. For a **Stefan-Boltzmann radiative heat shield** ($q = \frac{\sigma(T_1^4 - T_2^4)}{\frac{1}{\varepsilon_1} + \frac{1}{\varepsilon_2} - 1}$) between parallel spacecraft shields at $T_1 = 800\text{ K}$ ($\varepsilon_1 = 0.85$) and $T_2 = 500\text{ K}$ ($\varepsilon_2 = 0.70$, $\sigma = 5.67037 \times 10^{-8}\text{ W/m}^2\text{K}^4$), subtracting $800^4 - 500^4 = 3.4710 \times 10^{11}\text{ K}^4$ and scaling by $\sigma$ places the driving flux $19,681.8543\text{ W/m}^2$ on Shelf $X$. In `{{res:sc32_02_rpn_stack_dynamics_seq_16:keys}}`, the unary `{{key:1/x}}` key inverts $\varepsilon_1$ ($\to 1.1765$) and $\varepsilon_2$ ($\to 1.4286$) in place while the numerator rides to Shelf $Z$; when their sum minus $1$ collapses to $1.6050$ on Shelf $X$, the numerator drops from $Z$ to $Y$ for division into $\mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_16:value}}\text{ W/m}^2}$.
 
-| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| `120 {{key:ENTER}} 85 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $205.0000$ | Sum Phase A and Phase B fault currents ($120 + 85 = 205\text{ A}$) |
-| `95 {{key:+}}` | $0.0000$ | $0.0000$ | $0.0000$ | $300.0000$ | Add Phase C current ($205 + 95 = 300\text{ A}$) |
-| `3 {{key:÷}}` | $0.0000$ | $0.0000$ | $0.0000$ | **$100.0000$** | Divide by 3 phases; symmetrical zero-sequence current $I_0 = 100\text{ A}$ |
+Likewise, for **composite series wall conduction** ($q = \frac{\Delta T}{R_1 + R_2 + R_3}$) across an insulated building envelope supporting $\Delta T = 22.0\text{ K}$ across interior film ($R_1 = 0.08$), fiberglass batt ($R_2 = 2.20$), and exterior sheathing ($R_3 = 0.15\text{ m}^2\text{K/W}$), parking $\Delta T = 22.0\text{ K}$ on Shelf $Y$ while accumulating the three series resistances into $R_{\text{total}} = 2.4300\text{ m}^2\text{K/W}$ on Shelf $X$ (`{{res:sc32_02_rpn_stack_dynamics_seq_24:keys}}`) divides $Y$ by $X$ to yield $q = \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_24:value}}\text{ W/m}^2}$.
 
-* **High-Pass RC Filter Gain ($|H| = \frac{X}{\sqrt{1+X^2}}$, where $X = 2\pi f R C$):** Driving an RC high-pass network ($R = 10\text{ k}\Omega = 10,000\,\Omega$, $C = 15\text{ nF} = 15 \times 10^{-9}\text{ F}$) at $f = 2,500\text{ Hz}$, computing the dimensionless reactance ratio $X = 2\pi f R C \approx 2.3562$ and duplicating it across Registers $Y$ and $X$ with `{{key:ENTER}}` before evaluating $\sqrt{1 + X^2}$ in `{{res:sc32_02_rpn_stack_dynamics_seq_22:keys}}` yields $|H| = \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_22:value}}}$.
-* **Composite Series Wall Conduction ($q = \frac{\Delta T}{R_1+R_2+R_3}$):** Across an insulated building envelope with $\Delta T = 22.0\text{ K}$ and three series thermal resistances ($R_1 = 0.08$, $R_2 = 2.20$, and $R_3 = 0.15\text{ m}^2\text{K/W}$, totaling $2.43\text{ m}^2\text{K/W}$), parking $\Delta T$ in Register $Y$ while summing the denominator in Register $X$ via `{{res:sc32_02_rpn_stack_dynamics_seq_24:keys}}` gives $q = \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_24:value}}\text{ W/m}^2}$.
-* **Cantilever Beam Tip Slope ($\theta = \frac{PL^2}{2EI}$):** Applying an end load $P = 12,000\text{ N}$ to a steel cantilever of span $L = 3.5\text{ m}$ and flexural rigidity $EI = 4.2 \times 10^6\text{ N}\cdot\text{m}^2$, evaluating the tip rotation in radians and scaling by $1,000$ via `{{res:sc32_02_rpn_stack_dynamics_seq_27:keys}}` delivers **`{{res:sc32_02_rpn_stack_dynamics_seq_27:value}}`** $\text{mrad}$.
+**Archetype III — Single-Shelf Multiplicative & Additive Cascades (Register $X$ Alone).** Finally, when a formula is a pure chain of factors, divisors, and in-place squares—or a running sum divided by a count—each step folds immediately into Register $X$ so Registers $Z$ and $T$ never leave zero. In **Darcy-Weisbach pipe head loss** ($h_f = f\frac{L}{D}\frac{v^2}{2g}$), pumping water at $v = 2.4\text{ m/s}$ through an $L = 250\text{ m}$ cast-iron main of diameter $D = 0.30\text{ m}$ ($f = 0.022$, $g = 9.80665\text{ m/s}^2$) flows straight through Register $X$ in a single left-to-right pass (`{{res:sc32_02_rpn_stack_dynamics_seq_17:keys}}`): forming the dimensionless friction-length ratio $f L / D = 18.3333$, squaring the flow speed in place with `{{key:x²}}` ($\to 5.76\text{ m}^2/\text{s}^2$) to reach $105.60\text{ m}^2/\text{s}^2$, and dividing by $2$ and $g$ step by step lands on $h_f = \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_17:value}}\text{ m}}$.
+
+By that identical single-register rhythm, applying an end load $P = 12,000\text{ N}$ to a **cantilever steel girder** ($\theta = \frac{PL^2}{2EI}$) of span $L = 3.5\text{ m}$ and flexural rigidity $EI = 4.2 \times 10^6\text{ N}\cdot\text{m}^2$ (`{{res:sc32_02_rpn_stack_dynamics_seq_27:keys}}`) squares $L^2 = 12.25\text{ m}^2$ in place, multiplies by $P$ to $147,000\text{ N}\cdot\text{m}^2$, divides by $2$ and $EI$ into $0.0175\text{ rad}$, and scales by $1,000$ to **`{{res:sc32_02_rpn_stack_dynamics_seq_27:value}}`** $\text{mrad}$. And for **zero-sequence three-phase fault current** ($I_0 = \frac{I_a + I_b + I_c}{3}$) across unbalanced feeder currents $I_a = 120\text{ A},\; I_b = 85\text{ A},\; I_c = 95\text{ A}$ (`{{res:sc32_02_rpn_stack_dynamics_seq_20:keys}}`), folding $120 + 85 = 205.0\text{ A}$ and $+ 95 = 300.0\text{ A}$ on Shelf $X$ before dividing by $3$ isolates the neutral fault current $I_0 = \mathbf{{{res:sc32_02_rpn_stack_dynamics_seq_20:value}}\text{ A}}$ without ever touching the upper half of the stack.
 
 ---
 
 ### Beyond Rational Fractions: When Nature Multiplies Repeatedly
 
-Across Chapter 2, we saw that four operational shelves ($X, Y, Z, T$) and four arithmetic keys (`{{key:+}}`, `{{key:-}}`, `{{key:×}}`, `{{key:÷}}`)—assisted by `{{key:1/x}}`, `{{key:√x}}`, `{{key:x⇄y}}`, `{{key:R↓}}`, and `{{key:LASTX}}`—can untangle any rational fraction, continued fraction, or nested radical pyramid from the inside out without a single parenthesis. When all four shelves are occupied by live subtotals, two-way register arithmetic (`{{key:STO}} {{key:+}}`, `{{key:RCL}} {{key:×}}`), the 89-slot indirect pointer (`i` and `(i)`), and the twelve relational comparison tests (`{{key:x?y}}` and `{{key:x?0}}`) extend your workspace across every variable, statistical accumulator, and diagnostic check without disturbing the top of the stack.
+Addition, subtraction, multiplication, and division—even when aided by `{{key:1/x}}`, `{{key:√x}}`, `{{key:LASTX}}`, two-way register arithmetic (`{{key:STO}} {{key:+}}`, `{{key:RCL}} {{key:×}}`), and the 89-slot indirect pointer `i` and `(i)`—eventually hit a physical wall. What happens when nature stops adding and starts **multiplying repeatedly** across twenty or a hundred orders of magnitude?
 
-Yet what happens when nature stops adding and starts **multiplying repeatedly** across ten, twenty, or a hundred orders of magnitude—as when planets sweep around the Sun, radioactive carbon-14 decays inside ancient parchment, sound waves roar across a stadium, or a deck of playing cards is shuffled into $52!$ possible arrangements? Even on an RPN stack, pressing `{{key:×}}` a thousand times in a row would be exhausting. In **[Chapter 3: The Shortcut That Doubled the Lifespan of Astronomers](03-algebra-transcendentals.md)**, we travel to 1614 Scotland to meet a baron who discovered a secret tunnel in mathematics that turns the hardest multiplications and fractional powers in the universe into simple addition.
+When planets sweep around the Sun, radioactive carbon-14 decays inside ancient parchment, sound waves roar across a stadium, or a deck of playing cards is shuffled into $52!$ arrangements, pressing `{{key:×}}` a thousand times in a row is out of the question. In **[Chapter 3: The Shortcut That Doubled the Lifespan of Astronomers](03-algebra-transcendentals.md)**, we travel to 1614 Scotland to meet a baron who discovered a hidden tunnel in mathematics—turning the hardest multiplications and fractional powers in the universe into simple addition.

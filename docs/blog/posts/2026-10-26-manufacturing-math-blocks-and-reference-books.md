@@ -1,6 +1,6 @@
 ---
-title: "From OpenSCAD to the Classroom Desk: Manufacturing the Math Blocks and Compiling the Reference Books"
-description: "How we are manufacturing our physical Gridfinity math manipulatives in-house and on Slant3D—while using a test-verified publishing pipeline to compile 590+ workbook problems and two reference manuals."
+title: "From OpenSCAD to the Classroom Desk: 84mm Fraction Towers, Logarithmic Prime Blocks, and Unit-Tested Books"
+description: "How our 3D-printed Fraction Studio Towers, Logarithmic Prime Factor Slide Rules, dummy_pcb fit checks, and unit-tested reference manuals turn abstract math into concrete intuition."
 image: assets/renders/stackcalc-ecosystem-hero-4x3.png
 date: 2026-10-26
 authors:
@@ -13,9 +13,11 @@ categories:
 slug: manufacturing-math-blocks-and-reference-books
 ---
 
-Waiting for a PCB fab house to finish assembling boards is usually dead time in a hardware project. For StackCalc, however, the pocket calculator is only one leg of a three-part triad: **Tactile Hardware + Physical Classroom Manipulatives + Test-Verified Reference Books**.
+Whenever we tell someone we are manufacturing a new calculator alongside 3D-printed math blocks and printed textbooks, the natural question is: **"In a world with smartphones and AI, why does the world need another calculator?"**
 
-Because our physical math blocks and printed textbooks do not depend on the PCB assembly line, we used this window to move our core **Learning Lab manipulatives** into active manufacturing—both on our in-house printers and via **Slant3D**—while building an automated, unit-test-verified publishing pipeline for our reference manuals and student workbooks.
+Because even in the age of AI, **students still need to know how to think mathematically**. Handing a child an AI chatbot—or a standard school calculator where they type nested parentheses `(12 + 8) / (5 - 1) =` into a black box—hides every intermediate step of reasoning. By contrast, on a stack-based RPN calculator, **students learn `operator-precedence parsing` themselves** because they must break expressions down in the right order of operations to enter them onto the stack, seeing every intermediate result step by step. And unlike CAS (Computer Algebra System) calculators—which are banned on the SAT, ACT, IB, UIL, and college math exams—our calculator is purposefully designed to be **allowed in testing situations** (zero CAS symbolic manipulation, zero QWERTY keyboard, and zero wireless radios on the hardware).
+
+Our goal with the **StackCalc Ecosystem** is to make every step of mathematical reasoning visible and physical, connecting **3D-printed classroom manipulatives** (manufactured in-house and on **Slant3D**), **unit-test-verified reference books**, and our **SC-6 / SC-32 calculators**.
 
 <!-- more -->
 
@@ -23,52 +25,38 @@ Because our physical math blocks and printed textbooks do not depend on the PCB 
 
 ---
 
-## 1. Manufacturing the Physical Blocks: In-House Precision & Slant3D Scale
+## 1. What Our Fraction & Prime Number Blocks Actually Do
 
-Every physical kit in the [StackCalc Catalog](../../products.md) is engineered in parametric OpenSCAD around the **$42\text{ mm}$ Gridfinity modular desk standard**, meaning the storage box lid doubles as an active mathematical workbench on the student's desk.
+Every physical kit in the [StackCalc Catalog](../../products.md) is modeled in parametric OpenSCAD around the **$42\text{ mm}$ Gridfinity standard** so the storage box lid turns into an active math stage on the student's desk. Rather than printing generic plastic shapes, each manipulative encodes a specific mathematical invariant that maps $1:1$ to a key on the calculator:
 
-To get physical kits ready without choking our workshop printers on heavy storage enclosures, we split production across two parallel tracks:
+### A. Fraction Studio Proportional Towers ($84\text{ mm}$ Integer Datum)
+Standard plastic fraction bars often suffer from awkward decimal thicknesses that drift when stacked. We engineered our **[Fraction Studio Proportional Towers](../../products/fraction-studio/index.md)** around an **$84\text{ mm}$ Whole (`1/1`) height datum**—chosen because $84$ is divisible by $1, 2, 3, 4, 6, 7,$ and $12$ into exact integer millimeters ($42\text{ mm}, 28\text{ mm}, 21\text{ mm}, 14\text{ mm}, 12\text{ mm},$ and $7\text{ mm}$), eliminating slicer layer-rounding drift:
 
-1. **In-House Precision Pilot Runs:** Multi-color silk proportional towers, tight-clearance sliding comparators, planetary clock gear trains, and our 4-part mechanical calculator enclosures are printed and inspected in-house on calibrated PEI plates.
-2. **Slant3D Print-Farm Scaling:** High-volume, single-material structural components—such as monolithic Gridfinity storage boxes, ten-frame trays, and bulk counting tiles—are queued on Slant3D's automated print farm.
-
-### The Core Classroom Kits in Production
-
-* **[Fraction Studio Proportional Towers](../../products/fraction-studio/index.md):** Upright $84\text{ mm}$ whole-datum towers ($\frac{1}{1}$ through $\frac{1}{12}$) that dock into a twin comparator stage. Students physically stack $\frac{1}{2} + \frac{1}{3}$, compare heights against $\frac{5}{6}$, and execute the exact same sequence on the calculator's `[FDISP]` and `[SIMP]` keys.
-* **[Prime Factor Studio & Slide Rule Comparator](../../products/prime-factor-studio/index.md):** Tactile prime-factor blocks ($2, 3, 5, 7$) and a logarithmic slide-rule rail that turn Greatest Common Divisor (`GCD`) and Least Common Multiple (`LCM`) into a physical length-matching puzzle.
-* **[Place Value Studio & Regrouping Trays](../../products/place-value/index.md) & [Ten-Frames](../../products/ten-frames/index.md):** Base-10 ones, tens, and hundreds blocks with physical carry slots that mirror how numbers push and combine on the RPN stack.
-* **[SC-6 Quest Scoreboard](../../products/quest-scoreboard/index.md):** A physical $+10$ token tracker that pairs with the adaptive fluency quiz engine in `StackCalc 6`.
+* **On the Desk:** To compute $\frac{1}{2} + \frac{1}{3}$, a student drops the $\frac{1}{2}$ tower ($42\text{ mm}$) and $\frac{1}{3}$ tower ($28\text{ mm}$) into the left channel of the Twin Comparator Stage (reaching $70\text{ mm}$). In the right channel, they stack $\frac{1}{6}$ blocks ($14\text{ mm}$ each) until both columns stand flush at $5 \times 14\text{ mm} = 70\text{ mm}$ ($\frac{5}{6}$)—physically discovering why a common denominator is required.
+* **On the Calculator (`StackCalc 6`):** The student enters `.1.2 [ENTER] .1.3 [+]` to see `5/6`. And when reducing a fraction like $\frac{12}{18}$ (`.12.18`), pressing **`[SIMP]`** in `StackCalc 6` factors out **one prime divisor at a time** (showing `÷2` $\rightarrow \frac{6}{9}$, then `÷3` $\rightarrow \frac{2}{3}$) instead of jumping straight to the reduced answer like a black box.
 
 ![Fraction Studio proportional towers and twin comparator stage.](../../assets/renders/fraction-studio-hero.png)
 
+### B. Prime Factor Studio & Logarithmic Slide Rule Comparator
+Factor trees on paper often feel like arbitrary symbol manipulation to 4th–6th graders. Our **[Prime Factor Studio](../../products/prime-factor-studio/index.md)** turns prime factorization, **Greatest Common Divisor (`GCD`)**, and **Least Common Multiple (`LCM`)** into a physical length-matching puzzle:
+
+* **On the Desk:** Each prime block ($2, 3, 5, 7$) is scaled **logarithmically** ($\text{Length} \propto \log(p)$). Because $\log(a) + \log(b) = \log(a \times b)$, snapping a `2` block and a `3` block end-to-end inside the comparator trough physically equals the exact length of the `6` marker! When comparing $12$ ($2 \times 2 \times 3$) and $18$ ($2 \times 3 \times 3$) in parallel channels, students physically see the shared prime train ($2 \times 3 = 6 = \text{GCD}$) and the combined train needed to make both tracks equal length ($2 \times 2 \times 3 \times 3 = 36 = \text{LCM}$).
+* **On the Calculator:** Students verify their physical block trains using the dedicated **`[PRIME]`**, **`[GCD]`**, **`[LCM]`**, and **`[÷R]`** (integer division with remainder) keys in `StackCalc 6` and `StackCalc 32`.
+
 ---
 
-## 2. Compiling Books Like Firmware: A Unit-Tested Publishing Pipeline
+## 2. Hybrid Manufacturing (In-House + Slant3D) & 3D-Printed `dummy_pcb` Checks
 
-A mathematical instrument is only as useful as the books that teach you how to think with it. Over the past month, we authored and compiled a complete library of [Official Manuals & Companion Workbooks](../../manuals/index.md):
+To bring both the classroom blocks and the calculator enclosures to production simultaneously:
+* **In-House Precision:** We print our multi-color silk fraction/prime towers, planetary clock gear trains, and 4-part screwless calculator enclosures on calibrated PEI plates. Using `Hardware/generate_scad.py`, we also export **`dummy_pcb.scad` $\rightarrow$ `dummy_pcb.stl`** directly from KiCad's `pcbnew` API—allowing us to 3D-print an exact plastic replica of the populated PCB (including all 43 switches, the rear Pico 2 envelope, and the 0.5mm ZIF socket) to verify sliding rail clearances and TPU plunger reach before physical boards arrive.
+* **Slant3D Print Farm:** We offload the heavy, single-material Gridfinity storage boxes, lids, and trays to Slant3D's automated print farm so our workshop printers stay focused on precision multi-color kits.
 
-* **The SC-32 Scientific Owner's Manual & Reference Guide**
-* **The SC-6 Elementary Owner's Manual & Visual Math Guide**
-* **[SC-32 Scientific Companion Casebook (339 Graded Problems)](../../curriculum/sc32-scientific-companion-workbook.md)**
-* **[SC-6 Elementary Companion Workbook (253 Graded Problems)](../../curriculum/sc6-elementary-companion-workbook.md)**
-* **[120 Printable Station Worksheets](../../curriculum/worksheets.md) & [24 UIL Speed-Calculation Exams](../../curriculum/uil-competition.md)**
+---
 
-### Why Traditional Math Workbooks Have Typos—and How We Eliminated Them
+## 3. Compiling Books Like Firmware: A Unit-Tested Publishing Pipeline
 
-In a traditional textbook workflow, an author types a keystroke sequence into a word processor by hand, pastes a static screenshot, and hopes the answer key matches. If a key legend or firmware behavior changes later, the book silently goes stale.
+Surrounding the hardware and blocks is our library of [Official Manuals & Companion Workbooks](../../manuals/index.md)—including the **SC-32 Scientific Manual**, **SC-6 Elementary Manual**, **339-Problem SC-32 Casebook**, **253-Problem SC-6 Workbook**, and **24 UIL Competition Exams**.
 
-We built our documentation pipeline (`Makefile` + `Tools/book_engine.py`) so that **our books compile and test just like source code**:
-
-```
-OpenSCAD (.scad) ──► STL Meshes ──► Orthographic Block Diagrams (blocks_registry.json)
-                                               │
-Swift Keymaps & RPNCore ──► Simulator Tests ───┼──► book_engine.py ──► Validated Manuals & PDFs
-                                               │
-Manuscript Chapters (.md) ─────────────────────┘
-```
-
-1. **Executable Keystroke Macros:** Every worked example in the SC-32 and SC-6 manuals is written as a declarative sequence macro. During `make verify`, our build engine extracts every keystroke sequence from the prose and executes it against `RPNCore` in `TextbookVerificationTests_SC32.swift` and `TextbookVerificationTests_SC6.swift`. If a single worked example in the book does not produce the exact register state printed on the page, the build fails.
-2. **Automated Simulator Screenshots:** Our SwiftUI visual test suite runs every textbook sequence in a crisp, high-contrast "Paper" theme and exports the exact LCD dot-matrix state directly into `docs/assets/manuals/screenshots/`.
-3. **STL-Backed Manipulative Diagrams:** Every diagram of a Ten-Frame, Fraction Tower, or Prime Comparator in the workbooks is rendered directly from the production OpenSCAD `.stl` meshes (`blocks_registry.json`), guaranteeing 1:1 geometric fidelity between the page and the 3D print in the student's hands.
-
-You can browse the full curriculum online today in the [Master Curriculum Guide](../../curriculum/index.md) or download the printable PDFs and 3MF files from the [Download Center](../../downloads.md).
+To guarantee zero typos or stale screenshots, our build system (`Makefile` + `Tools/book_engine.py`) compiles the books just like firmware:
+1. **Executable Keystroke Macros:** Every worked example in the chapters is extracted and executed against `RPNCore` in `TextbookVerificationTests_SC32.swift` and `TextbookVerificationTests_SC6.swift`. If any register state in the prose disagrees with the calculator engine, the build fails.
+2. **Automated Simulator Screenshots & STL Diagrams:** Every LCD dot-matrix screenshot is exported directly from the SwiftUI test runner, and every manipulative diagram is rendered from the production OpenSCAD `.stl` meshes (`blocks_registry.json`).

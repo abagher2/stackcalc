@@ -9,10 +9,10 @@ description: "The definitive 43-key tabular reference for the StackCalc SC-32 St
 
 Before examining the formal transition matrices of Reverse Polish Notation (RPN), it helps to picture the four operational registers—**$X$ (Bottom/Display)**, **$Y$ (Second)**, **$Z$ (Third)**, and **$T$ (Top)**—as a physical four-shelf workbench or a spring-loaded cafeteria tray dispenser.
 
-Imagine standing at a laboratory workbench where every number you finish computing rests on the bottom shelf, **Register $X$**, right in front of your eyes. In an ordinary algebraic calculator, that bottom shelf is passive: if you want to compute $(14 \times 25) + (36 \times 48)$, you must either open nested parentheses or copy `350` onto a piece of scratch paper before typing `36`. On the SC-32, the bottom shelf is governed by a deterministic **George H. Mealy (1955) finite-state automaton** $(Q, \Sigma, \Delta, \delta, \lambda)$ called the **Stack Lift Automaton**, where the internal state set $Q = \{\text{EDIT}, \text{ARMED}, \text{DISABLED}\}$ and keystroke alphabet $\Sigma$ jointly determine both the next state $\delta(q, \sigma)$ and the immediate register transformation $\lambda(q, \sigma)$ in $\mathcal{O}(1)$ time:
+Imagine standing at a laboratory workbench where every number you finish computing rests on the bottom shelf, **Register $X$**, right in front of your eyes. In an ordinary algebraic calculator, that bottom shelf is passive: if you want to compute $(14 \times 25) + (36 \times 48)$, you must either open nested parentheses or copy `350` onto a piece of scratch paper before typing `36`. On the SC-32, the bottom shelf is governed by a deterministic **George H. Mealy (1955) finite-state automaton** $(Q, \Sigma, \Delta, \delta, \lambda)$ called the **Stack Lift Automaton**. Its internal state set $Q = \{\text{EDIT}, \text{ARMED}, \text{DISABLED}\}$ and keystroke alphabet $\Sigma$ jointly determine both the next state $\delta(q, \sigma)$ and the immediate register transformation $\lambda(q, \sigma)$ in $\mathcal{O}(1)$ time:
 
 * **Building a Number (`EDIT` / Digit Entry Active):** While you are tapping digits (`{{key:3}}`, `{{key:6}}`, `{{key:.}}`, `{{key:5}}`), you are sliding characters onto the single tray currently resting on Shelf $X$. Each digit appends to the right of the previous digit on that same tray without disturbing Shelves $Y$, $Z$, or $T$.
-* **Stack Lift Armed (`ARMED` / `Lift = TRUE`):** The moment you press any mathematical operator (`{{key:+}}`, `{{key:×}}`, `{{key:√x}}`, `{{key:SIN}}`, `{{key:LN}}`), the calculator finishes your number, computes the answer on Shelf $X$, and *cocks a spring* underneath the tray (`Lift = TRUE`). You do **not** need to press `{{key:ENTER}}` to protect that answer: the very next digit key (`{{key:0}}`–`{{key:9}}` or `{{key:.}}`) fires the spring automatically, lifting the finished result on Shelf $X$ safely up to Shelf $Y$ ($Y \leftarrow X, Z \leftarrow Y, T \leftarrow Z$) before starting your new number in $X$.
+* **Stack Lift Armed (`ARMED` / `Lift = TRUE`):** The moment you press any mathematical operator (`{{key:+}}`, `{{key:×}}`, `{{key:√x}}`, `{{key:SIN}}`, `{{key:LN}}`), the calculator finishes your number, computes the answer on Shelf $X$, and *cocks a spring* underneath the tray (`Lift = TRUE`). You do **not** need to press `{{key:ENTER}}` to protect that answer. Pressing the next digit key (`{{key:0}}`–`{{key:9}}` or `{{key:.}}`) fires the spring automatically, lifting the finished result on Shelf $X$ safely up to Shelf $Y$ ($Y \leftarrow X, Z \leftarrow Y, T \leftarrow Z$) before starting your new number in $X$.
 * **Stack Lift Neutral (`DISABLED` / `Lift = FALSE`):** We press `{{key:ENTER}}` only to separate two numbers typed *back-to-back* with no operator between them (such as `14` followed by `25`). Pressing `{{key:ENTER}}` pushes `14` up to Shelf $Y$, leaves a duplicate copy in $X$, and *unhooks the spring* (`Lift = FALSE`) so the first digit of `25` overwrites $X$ in place without pushing a second `14` into $Z$.
 
 Unlike algebraic calculators that require dynamic operator-precedence stacks and recursive parenthesis-parsing trees, this Mealy automaton—rooted in the classic Corvallis engineering specifications of the HP-15C and HP-32SII {{cite:hp15c1982,hp32sii1991}}—eliminates ambiguity while providing complete computational transparency.
@@ -66,7 +66,7 @@ The table below catalogs all 43 physical switch positions of the SC-32 hardware 
 | **Row 3, Col 2** | `{{key:x⇄y}}` | **Enables** | No | $X \leftarrow Y; Y \leftarrow X; Z, T \text{ unch}$ | Exchange Registers $X$ and $Y$ |
 | **Row 3, Col 3** | `{{key:+/-}}` | Preserves | No | $X \leftarrow -X; Y, Z, T \text{ unch}$ | Toggle arithmetic sign of active number |
 | **Row 3, Col 4** | `{{key:E}}` | Preserves | No | Arms scientific exponent entry buffer | Exponent entry separator |
-| **Row 3, Col 5** | `{{key:<-}}` | Preserves | No | Deletes trailing character from buffer | Backspace digit editor |
+| **Row 3, Col 5** | `{{key:<-}}` | Preserves (in `EDIT`) / **Disables** (as `CLx`) | No | Deletes trailing digit in `EDIT`; sets $X \leftarrow 0$ as `CLx` | Dual-mode backspace / Clear $X$ |
 | **Row 4, Col 0** | `{{key:XEQ}}` | Preserves | No | Context dependent | Execute designated program or equation |
 | **Row 4, Col 1** | `{{key:7}}` | (Consumes Lift)| No | If Lift: $T \leftarrow Z; Z \leftarrow Y; Y \leftarrow X$; $X \leftarrow 7$ | Digit input 7 |
 | **Row 4, Col 2** | `{{key:8}}` | (Consumes Lift)| No | If Lift: $T \leftarrow Z; Z \leftarrow Y; Y \leftarrow X$; $X \leftarrow 8$ | Digit input 8 |
@@ -92,11 +92,11 @@ The table below catalogs all 43 physical switch positions of the SC-32 hardware 
 
 ## Shifted Operations & Formal Register Delta Algebra
 
-Every shifted key on the SC-32 adheres strictly to the Stack Lift Automaton. The tables below catalog all left-shifted (`{{key:↰}}`, Primary Shift) and right-shifted (`{{key:↱}}`, Secondary Shift) operations, followed by the formal vector algebra of register transformations:
+Every shifted key on the SC-32 adheres strictly to the Stack Lift Automaton. Tables A.1 and A.2 catalog the mathematical, stack-control, and modal left-shifted (`{{key:↰}}`, Primary Shift) and right-shifted (`{{key:↱}}`, Secondary Shift) operations—while the ten physical unit conversion keys (`{{key:▸km}}`/`{{key:▸mi}}`, `{{key:▸kg}}`/`{{key:▸lb}}`, `{{key:▸°C}}`/`{{key:▸°F}}`, `{{key:▸cm}}`/`{{key:▸in}}`, `{{key:▸l}}`/`{{key:▸gal}}`) and angle/time conversions (`{{key:▸HR}}`/`{{key:▸HMS}}`, `{{key:▸DEG}}`/`{{key:▸RAD}}`) act as unary in-place transformations ($X \leftarrow f(X), \text{LASTX} \leftarrow X$) that arm stack lift—followed by the formal vector algebra of register transformations:
 
 ### Table A.1: Left-Shifted Operations (Primary Shift)
 
-| Shifted Combination | Function Name | Stack Lift Status | Updates LASTX? | Register Delta Transformation | Notes & Deviations |
+| Shifted Combination | Function Name | Stack Lift Status | Updates LASTX? | Register Delta Transformation | Operational Notes |
 | :--- | :--- | :---: | :---: | :--- | :--- |
 | `{{key:√x}}` | `x²` | **Enables** | **Yes** | $X \leftarrow X^2; Y, Z, T \text{ unch}$ | Unary square |
 | `{{key:eˣ}}` | `10ˣ` | **Enables** | **Yes** | $X \leftarrow 10^X; Y, Z, T \text{ unch}$ | Unary common exponential |
@@ -114,37 +114,37 @@ Every shifted key on the SC-32 adheres strictly to the Stack Lift Automaton. The
 | `{{key:E}}` | `DISP` | Preserves | No | Menu: `FIX n`, `SCI n`, `ENG n`, `ALL` | Non-destructive display precision |
 | `{{key:<-}}` | `CLEAR` | Preserves | No | Menu: `CLEQN`, `CLVARS`, `CLALL`, `CLΣ`, `CLREGS`, `CLSTK` | Selective memory wipe menu |
 | `{{key:÷}}` | `x?y` | Preserves | No | Comparison menu: `x=y`, `x≠y`, `x>y`, etc. | Conditional branching tests |
-| `{{key:4}}` | `▸θ,r` | **Enables** | **Yes** | $X \leftarrow \sqrt{X^2+Y^2}; Y \leftarrow \text{atan2}(Y, X); Z, T \text{ unch}$ | Rectangular to polar conversion |
+| `{{key:4}}` | `▸θ,r` | **Enables** | **Yes** | $X' \leftarrow \sqrt{X^2+Y^2};\; Y' \leftarrow \text{atan2}(Y, X);\; L \leftarrow X$ | Rectangular to polar conversion |
 | `{{key:×}}` | `BASE` | Preserves | No | Menu: `HEX`, `DEC`, `OCT`, `BIN` | Integer base switching menu |
-| `{{key:0}}` | `REGS` | Preserves | No | Displays register viewer table | Restored intentional deviation |
+| `{{key:0}}` | `REGS` | Preserves | No | Displays register viewer table | Full-screen register browser (`STACK`, `STO`, `STATS`, `DATA`) |
 | `{{key:.}}` | `FDISP` | Preserves | No | Toggles fraction display mode (Flag 7) | Rational fraction representation |
-| `{{key:x∥y}}` | `TVM` | Preserves | No | Opens 5-variable TVM workspace | Left-shifted `x∥y` deviation |
-| `{{key:+}}` | `LBL` | Preserves | No | Prompts for equation label letter | Restored intentional deviation |
+| `{{key:x∥y}}` | `TVM` | Preserves | No | Opens 5-variable TVM workspace | 5-variable Time Value of Money solver |
+| `{{key:+}}` | `LBL` | Preserves | No | Prompts for equation label letter | Inserts equation label token in `EQN` mode |
 
 ### Table A.2: Right-Shifted Operations (Secondary Shift)
 
-| Shifted Combination | Function Name | Stack Lift Status | Updates LASTX? | Register Delta Transformation | Notes & Deviations |
+| Shifted Combination | Function Name | Stack Lift Status | Updates LASTX? | Register Delta Transformation | Operational Notes |
 | :--- | :--- | :---: | :---: | :--- | :--- |
 | `{{key:√x}}` | `PARTS` | Preserves | No | Menu: `IP`, `FP`, `ABS`, `SGN`, `GCD`, `LCM` | Number theory and decomposition |
-| `{{key:eˣ}}` | `PROB` | Preserves | No | Menu: `Cn,r`, `Pn,r`, `x!`, `RAND` | Combinatorics and probability |
+| `{{key:eˣ}}` | `PROB` | Preserves | No | Menu: `Cn,r`, `Pn,r`, `x!`, `RAND`, `SD` | Combinatorics and probability |
 | `{{key:LN}}` | `L.R.` | Preserves | No | Menu: `ŷ`, `x̂`, `r`, `m`, `b` | Linear regression estimates & slope |
 | `{{key:yˣ}}` | `x̄,ȳ` | Preserves | No | Menu: `x̄`, `ȳ`, `x̄w` | Sample and weighted means |
 | `{{key:1/x}}` | `s,σ` | Preserves | No | Menu: `sx`, `sy`, `σx`, `σy` | Sample and population std dev |
 | `{{key:Σ+}}` | `SUMS` | Preserves | No | Menu: `Σx`, `Σy`, `Σx²`, `Σy²`, `Σxy`, `n` | Statistical accumulator viewer |
-| `{{key:STO}}` | `EQN` | Preserves | No | Enters postfix Equation Bank editor | User-defined equations |
+| `{{key:STO}}` | `EQN` | Preserves | No | Enters postfix Equation Bank editor | User-defined RPN equations |
 | `{{key:R↓}}` | `R↑` | **Enables** | No | $X \leftarrow T; Y \leftarrow X; Z \leftarrow Y; T \leftarrow Z$ | Circular roll stack upward |
 | `{{key:SIN}}` | `π` | **Enables** | No | $T \leftarrow Z; Z \leftarrow Y; Y \leftarrow X; X \leftarrow \pi$ | Pushes $\pi$ constant onto stack |
 | `{{key:COS}}` | `%` | **Enables** | **Yes** | $X \leftarrow (Y \times X)/100; Y, Z, T \text{ unch}$ | Kahan base-preserving percentage |
 | `{{key:TAN}}` | `%CHG` | **Enables** | **Yes** | $X \leftarrow 100(X - Y)/Y; Y, Z, T \text{ unch}$ | Base-preserving percent change |
 | `{{key:ENTER}}` | `SHOW` | Preserves | No | Renders 15-digit internal mantissa | Non-destructive temporary peek |
-| `{{key:+/-}}` | `ABS` | **Enables** | **Yes** | $X \leftarrow \lvert X\rvert; Y, Z, T \text{ unch}$ | Absolute value (HP-32SII deviation) |
-| `{{key:E}}` | `÷R` | **Enables** | **Yes** | $X \leftarrow \lfloor Y/X \rfloor; Y \leftarrow \text{rem}(Y, X); Z \leftarrow T; T \leftarrow T$ | Integer division & remainder (Deviation) |
-| `{{key:<-}}` | *(None)* | Preserves | No | Unassigned | Deliberate blank slot (Deviation) |
-| `{{key:XEQ}}` | `POLY` | Preserves | No | Dynamic cubic solver workspace (`A B C D EXEC CLR`)| Restored intentional deviation |
+| `{{key:+/-}}` | `ABS` | **Enables** | **Yes** | $X \leftarrow \lvert X\rvert; Y, Z, T \text{ unch}$ | Unary absolute value magnitude |
+| `{{key:E}}` | `÷R` | **Enables** | **Yes** | $X \leftarrow \lfloor Y/X \rfloor; Y \leftarrow \text{rem}(Y, X); Z \leftarrow T; T \leftarrow T$ | Euclidean integer quotient ($X$) & remainder ($Y$) |
+| `{{key:<-}}` | *(None)* | Preserves | No | Unassigned | Intentionally unassigned to prevent accidental clear |
+| `{{key:XEQ}}` | `POLY` | Preserves | No | Dynamic cubic solver workspace (`A B C D EXEC CLR`)| Closed-form quadratic and cubic root workspace |
 | `{{key:7}}` | `SOLVE` | **Enables** | **Yes** | $X \leftarrow x^*; Y \leftarrow x_{\text{prev}}; Z \leftarrow f(x^*)$ | Richard Brent hybrid root solver |
 | `{{key:8}}` | `∫` | **Enables** | **Yes** | $X \leftarrow \int_Y^X f(t)\,dt; Y \leftarrow \lvert\epsilon\rvert$ | Adaptive Romberg quadrature |
 | `{{key:÷}}` | `x?0` | Preserves | No | Comparison menu: `x=0`, `x≠0`, `x>0`, etc. | Zero-relative comparison tests |
-| `{{key:4}}` | `▸y,x` | **Enables** | **Yes** | $X \leftarrow X\cos Y; Y \leftarrow X\sin Y; Z, T \text{ unch}$ | Polar to rectangular conversion |
+| `{{key:4}}` | `▸y,x` | **Enables** | **Yes** | $X' \leftarrow X\cos Y;\; Y' \leftarrow X\sin Y;\; L \leftarrow X$ | Polar to rectangular conversion |
 | `{{key:×}}` | `FLAGS` | Preserves | No | Menu: `SF n`, `CF n`, `FS? n`, `STACK` (`2/4/8-LVL`, `INF`), `EXAM` | System flags & stack size |
 | `{{key:.}}` | `/c` | Preserves | No | Sets maximum fraction denominator | Denominator limiter (e.g. 16 for /16) |
 | `{{key:x∥y}}` | `PLOT` | Preserves | No | Enters graphic curve and scatter plotter | Graphic LCD vector plot engine |
@@ -168,22 +168,22 @@ To verify calculation pipelines with mathematical certainty, the effect of any o
 
 ## Comprehensive Stack Lift Trace Walkthroughs
 
-The following twelve fully traced operational scenarios demonstrate how the Stack Lift Automaton behaves across real-world engineering calculations. To keep every transition easy to scan at a glance, traces involving deep multi-register pipelines (`Traces 1, 2, 6, 8`) display the full four-register stack (`Register T, Register Z, Register Y, Register X`), focused state-machine traces (`Traces 3, 4, 5, 7`) highlight the active `Stack Lift Flag`, the working `Register X` and `Register Y` shelves, and the target auxiliary register (`LASTX`, `Register Z`, or `Stat Register n`), and `Traces 9, 10, 11` display compact 3-register (`Register X, Register Y, Register Z`) transitions.
+The following twelve fully traced operational scenarios demonstrate how the Stack Lift Automaton behaves across real-world engineering calculations. To keep every transition easy to scan at a glance, traces involving deep multi-register pipelines (`Traces 1, 2, 6, 8`) display the full four-register stack (`Register T, Register Z, Register Y, Register X`). Focused state-machine traces (`Traces 3, 4, 5, 7`) highlight the active `Stack Lift Flag`, the working `Register X` and `Register Y` shelves, and the target auxiliary register (`LASTX`, `Register Z`, or `Stat Register n`). Finally, `Traces 9, 10, 11` display compact 3-register (`Register X, Register Y, Register Z`) transitions.
 
 ### Trace 1: Chained Arithmetic Without Intermediary ENTER
 Calculate: $(14 \times 25) + (36 \times 48)$
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:1}} {{key:4}}` | `0` | `0` | `0` | `14` | First operand keyed (`Lift = Armed`) |
-| `{{key:ENTER}}` | `0` | `0` | `14` | `14` | Stack pushed; $X$ copied to $Y$; `Lift = Disarmed` |
-| `{{key:2}} {{key:5}}` | `0` | `0` | `14` | `25` | Overwrites $X$ in place; $Y$ preserved |
-| `{{key:×}}` | `0` | `0` | `0` | `350` | $14 \times 25 = 350$; stack drops; `Lift = Armed` |
-| `{{key:3}} {{key:6}}` | `0` | `0` | `350` | `36` | **No ENTER needed:** armed lift pushes `350` into $Y$ |
-| `{{key:ENTER}}` | `0` | `350` | `36` | `36` | Pushes `350` into $Z$; `Lift = Disarmed` |
-| `{{key:4}} {{key:8}}` | `0` | `350` | `36` | `48` | Overwrites $X$; registers $Y$ and $Z$ preserved |
-| `{{key:×}}` | `0` | `0` | `350` | `1728` | $36 \times 48 = 1728$; $Z$ drops to $Y$ (`Lift = Armed`) |
-| `{{key:+}}` | `0` | `0` | `0` | `2078` | $350 + 1728 = 2078$; final sum in $X$ |
+| `{{key:1}} {{key:4}}` | `0` | `0` | `0` | `14` | First operand keyed (`EDIT`) |
+| `{{key:ENTER}}` | `0` | `0` | `14` | `14` | Stack pushed; $X$ copied to $Y$ (`DISABLED`) |
+| `{{key:2}} {{key:5}}` | `0` | `0` | `14` | `25` | Overwrites $X$ in place (`EDIT`); $Y$ preserved |
+| `{{key:×}}` | `0` | `0` | `0` | `350` | $14 \times 25 = 350$; stack drops (`ARMED`) |
+| `{{key:3}} {{key:6}}` | `0` | `0` | `350` | `36` | **No ENTER needed:** `ARMED` lift pushes `350` into $Y$ (`EDIT`) |
+| `{{key:ENTER}}` | `0` | `350` | `36` | `36` | Pushes `350` into $Z$ (`DISABLED`) |
+| `{{key:4}} {{key:8}}` | `0` | `350` | `36` | `48` | Overwrites $X$ (`EDIT`); registers $Y$ and $Z$ preserved |
+| `{{key:×}}` | `0` | `0` | `350` | `1728` | $36 \times 48 = 1728$; $Z$ drops to $Y$ (`ARMED`) |
+| `{{key:+}}` | `0` | `0` | `0` | `2078` | $350 + 1728 = 2078$; final sum in $X$ (`ARMED`) |
 
 ---
 
@@ -192,24 +192,24 @@ Demonstrating why pressing `{{key:ENTER}}` prevents accidental stack duplication
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:5}} {{key:0}}` | `0` | `0` | `0` | `50` | Base value entered (`Lift = Armed`) |
-| `{{key:ENTER}}` | `0` | `0` | `50` | `50` | `Lift = Disarmed`; $X$ duplicated into $Y$ |
-| `{{key:8}}` | `0` | `0` | `50` | `8` | Digit `8` replaces $X$ directly without pushing stack |
-| `{{key:+}}` | `0` | `0` | `0` | `58` | Addition yields `58`; stack lift re-armed |
+| `{{key:5}} {{key:0}}` | `0` | `0` | `0` | `50` | Base value entered (`EDIT`) |
+| `{{key:ENTER}}` | `0` | `0` | `50` | `50` | `DISABLED`; $X$ duplicated into $Y$ |
+| `{{key:8}}` | `0` | `0` | `50` | `8` | Digit `8` replaces $X$ in place (`EDIT`) without pushing stack |
+| `{{key:+}}` | `0` | `0` | `0` | `58` | Addition yields `58`; stack lift `ARMED` |
 
 ---
 
 ### Trace 3: LASTX Dyadic Operator Correction
-The user intends to compute $100 \times 8 = 800$, but accidentally hits `{{key:÷}}`, producing $12.5$. The error is corrected instantly without re-keying $100$ or $8$:
+The user intends to compute $100 \times 8 = 800$, but accidentally hits `{{key:÷}}`, producing $12.5$. The error is corrected without re-keying $100$ or $8$:
 
 | Step | Keystroke | Stack Lift Flag | Register X | Register Y | LASTX | Operational Commentary |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{key:1}} {{key:0}} {{key:0}} {{key:ENTER}}`| False | `100` | `100` | `0` | Operands staged |
-| 2 | `{{key:8}} {{key:÷}}` | True | `12.5000` | `0` | `8` | Error: Divided instead of multiplied |
-| 3 | `{{key:LASTX}}` | True | `8` | `12.5000` | `8` | Recalls operand `8` that caused the operation |
-| 4 | `{{key:×}}` | True | `100.0000` | `0` | `8` | Multiplies $12.5 \times 8$ to recover original numerator $100$ |
-| 5 | `{{key:LASTX}}` | True | `8` | `100.0000` | `8` | Recalls operand `8` once more |
-| 6 | `{{key:×}}` | True | `800.0000` | `0` | `8` | Multiplies $100 \times 8$ to achieve intended target $800$ |
+| 1 | `{{key:1}} {{key:0}} {{key:0}} {{key:ENTER}}`| `DISABLED` | `100` | `100` | `0` | Operands staged |
+| 2 | `{{key:8}} {{key:÷}}` | `ARMED` | `12.5000` | `0` | `8` | Error: Divided instead of multiplied |
+| 3 | `{{key:LASTX}}` | `ARMED` | `8` | `12.5000` | `8` | Recalls operand `8` that caused the operation |
+| 4 | `{{key:×}}` | `ARMED` | `100.0000` | `0` | `8` | Multiplies $12.5 \times 8$ to recover original numerator $100$ |
+| 5 | `{{key:LASTX}}` | `ARMED` | `8` | `100.0000` | `8` | Recalls operand `8` once more |
+| 6 | `{{key:×}}` | `ARMED` | `800.0000` | `0` | `8` | Multiplies $100 \times 8$ to achieve intended target $800$ |
 
 ---
 
@@ -218,23 +218,23 @@ Demonstrating how `{{key:CLx}}` clears an erroneous entry without collapsing or 
 
 | Step | Keystroke | Stack Lift Flag | Register X | Register Y | Register Z | Operational Commentary |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{key:1}} {{key:5}} {{key:0}} {{key:ENTER}}`| False | `150` | `150` | `0` | Operand staged |
-| 2 | `{{key:9}} {{key:9}} {{key:9}}` | Inactive | `999` | `150` | `0` | User mistypes second operand |
-| 3 | `{{key:CLx}}` | **Disarmed (False)**| `0` | `150` | `0` | `{{key:CLx}}` zeroes $X$ and sets Lift = FALSE |
-| 4 | `{{key:2}} {{key:5}}` | Inactive | `25` | `150` | `0` | Typing `25` overwrites zero directly |
-| 5 | `{{key:-}}` | True | `125` | `0` | `0` | $150 - 25 = 125$ |
+| 1 | `{{key:1}} {{key:5}} {{key:0}} {{key:ENTER}}`| `DISABLED` | `150` | `150` | `0` | Operand staged |
+| 2 | `{{key:9}} {{key:9}} {{key:9}}` | `EDIT` | `999` | `150` | `0` | User mistypes second operand |
+| 3 | `{{key:CLx}}` | **`DISABLED`** | `0` | `150` | `0` | `{{key:CLx}}` zeroes $X$ and sets state to `DISABLED` (`Lift = FALSE`) |
+| 4 | `{{key:2}} {{key:5}}` | `EDIT` | `25` | `150` | `0` | Typing `25` overwrites zero in place |
+| 5 | `{{key:-}}` | `ARMED` | `125` | `0` | `0` | $150 - 25 = 125$ |
 
 ---
 
 ### Trace 5: Unary Function Lift Re-Arming
-Unary functions compute instantly on Register $X$ and re-arm stack lift so subsequent inputs push automatically:
+Unary functions evaluate in place on Register $X$ and re-arm stack lift so subsequent inputs push automatically:
 
 | Step | Keystroke | Stack Lift Flag | Register X | Register Y | Operational Commentary |
 | :---: | :--- | :---: | :---: | :---: | :--- |
-| 1 | `{{key:1}} {{key:6}}` | Armed | `16` | `0` | Raw value entered |
-| 2 | `{{key:√x}}` | **Armed (True)** | `4` | `0` | $\sqrt{16} = 4$; Lift flag armed |
-| 3 | `{{key:9}}` | Inactive | `9` | `4` | Inputting `9` triggers lift push; $4 \to Y$ |
-| 4 | `{{key:+}}` | Armed | `13` | `0` | $4 + 9 = 13$ |
+| 1 | `{{key:1}} {{key:6}}` | `EDIT` | `16` | `0` | Raw value entered |
+| 2 | `{{key:√x}}` | **`ARMED`** | `4` | `0` | $\sqrt{16} = 4$; Lift flag `ARMED` (`Lift = TRUE`) |
+| 3 | `{{key:9}}` | `EDIT` | `9` | `4` | Inputting `9` triggers lift push; $4 \to Y$ |
+| 4 | `{{key:+}}` | `ARMED` | `13` | `0` | $4 + 9 = 13$ |
 
 ---
 
@@ -256,10 +256,10 @@ Entering pairs $(x, y) = (10, 25)$ into statistical memory:
 
 | Step | Keystroke | Stack Lift Flag | Register X | Register Y | Stat Register $n$ | Operational Commentary |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | `{{key:2}} {{key:5}} {{key:ENTER}}` | False | `25` | `25` | `0` | $y$-coordinate pushed to $Y$ |
-| 2 | `{{key:1}} {{key:0}}` | Inactive | `10` | `25` | `0` | $x$-coordinate keyed into $X$ |
-| 3 | `{{key:Σ+}}` | **Disarmed (False)**| `1` | `25` | `1` | Register $X$ shows sample count $n=1$; lift disabled |
-| 4 | `{{key:3}} {{key:5}}` | Inactive | `35` | `25` | `1` | Next $y$ overwrites $X$ directly without stack lift |
+| 1 | `{{key:2}} {{key:5}} {{key:ENTER}}` | `DISABLED` | `25` | `25` | `0` | $y$-coordinate pushed to $Y$ |
+| 2 | `{{key:1}} {{key:0}}` | `EDIT` | `10` | `25` | `0` | $x$-coordinate keyed into $X$ |
+| 3 | `{{key:Σ+}}` | **`DISABLED`** | `1` | `25` | `1` | Register $X$ shows sample count $n=1$; lift `DISABLED` |
+| 4 | `{{key:3}} {{key:5}}` | `EDIT` | `35` | `25` | `1` | Next $y$ overwrites $X$ directly without stack lift |
 
 ---
 
@@ -312,20 +312,20 @@ Compute $|-45.75|$:
 Under extended system flags (`{{key:FLAGS}}`), the user can expand the stack beyond 4 levels:
 * **`4-LVL` (Classic HP):** 4 registers ($X, Y, Z, T$). $T$ replicated on drop; values pushed off $T$ are discarded.
 * **`8-LVL` (Extended STEM):** 8 registers ($X, Y, Z, T, R_5, R_6, R_7, R_8$). Deeper parenthetical evaluations can occur without variable storage. $R_8$ replicated on drop.
-* **`INF` (Infinite Dynamic):** Dynamic heap allocation. Stack grows unboundedly until system memory limit. Stack drop pulls previous elements down without replication.
+* **`INF` (Infinite Dynamic):** Dynamic LIFO stack scaling up to **999 levels** (`RPNCore` ceiling). Stack drop pulls upper elements down without top-register replication.
 
-**Stack Depth Architecture Comparison:**
+**Stack Depth Architecture Comparison (e.g., After Pushing `2` through `7` onto the Stack):**
 
 | Level | 4-Level Stack (`4-LVL`) | 8-Level Stack (`8-LVL`) | Infinite Stack (`INF`) |
 | :--- | :--- | :--- | :--- |
-| **Top / Level 8** | — | `R8:` Level 8 Register | Dynamic Heap Top ($N$) |
+| **Top / Level 8** | — | `R8:` Level 8 Register | Dynamic Stack Top (up to Level 999) |
 | **Level 7** | — | `R7:` Level 7 Register | $\dots$ |
-| **Level 6** | — | `R6:` Level 6 Register | Level 5 Register |
-| **Level 5** | — | `R5:` Level 5 Register | Level 4 Register |
-| **Level 4** | `T:` Constant Replicator | `T:` Level 4 Register | Level 3 Register |
-| **Level 3** | `Z:` Third Operative | `Z:` Level 3 Register | Level 2 Register |
-| **Level 2** | `Y:` Second Operative | `Y:` Level 2 Register | Level 1 Register |
-| **Level 1 (Display)** | `X:` Primary Display | `X:` Level 1 (Display) | Level 0 (Primary Display) |
+| **Level 6** | — | `R6:` Level 6 Register | Level 6 = `2` |
+| **Level 5** | — | `R5:` Level 5 Register | Level 5 = `3` |
+| **Level 4** | `T:` Constant Replicator | `T:` Level 4 Register | Level 4 ($T$) = `4` |
+| **Level 3** | `Z:` Third Operative | `Z:` Level 3 Register | Level 3 ($Z$) = `5` |
+| **Level 2** | `Y:` Second Operative | `Y:` Level 2 Register | Level 2 ($Y$) = `6` |
+| **Level 1 (Display)** | `X:` Primary Display | `X:` Level 1 (Display) | Level 1 ($X$) = `7` (Primary Display) |
 
 ---
 

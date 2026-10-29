@@ -5,22 +5,30 @@
     <link>https://www.stackcalc.io/blog/</link>
     <description>A high-quality, everyday-use RPN calculator for a new generation.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Oct 2026 01:35:39 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 23:18:12 +0000</lastBuildDate>
     <atom:link href="https://www.stackcalc.io/blog/feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title><![CDATA[From OpenSCAD to the Classroom Desk: Manufacturing the Math Blocks and Compiling the Reference Books]]></title>
+      <title><![CDATA[From OpenSCAD to the Classroom Desk: 84mm Fraction Towers, Logarithmic Prime Blocks, and Unit-Tested Books]]></title>
       <link>https://www.stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/</link>
       <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/</guid>
       <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[How we are manufacturing our physical Gridfinity math manipulatives in-house and on Slant3D—while using a test-verified publishing pipeline to compile 590+ workbook problems and two reference manuals.]]></description>
+      <description><![CDATA[How our 3D-printed Fraction Studio Towers, Logarithmic Prime Factor Slide Rules, dummy_pcb fit checks, and unit-tested reference manuals turn abstract math into concrete intuition.]]></description>
       <category>Education</category><category>Manufacturing</category><category>3D Printing</category><category>Documentation</category>
     </item>
     <item>
-      <title><![CDATA[Shipping StackCalc v1.1 on the App Store: Unifying Scientific Mode (SC-32) and Visual Learning Mode (SC-6)]]></title>
+      <title><![CDATA[Co-Developing an App Store App and Bare-Metal RP2350 Firmware with a Shared Swift Core and STL-Backed Digital Twin]]></title>
+      <link>https://www.stackcalc.io/blog/2026/10/25/co-developing-swiftui-and-embedded-swift-with-stl-digital-twin/</link>
+      <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/10/25/co-developing-swiftui-and-embedded-swift-with-stl-digital-twin/</guid>
+      <pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[How we share a single zero-dependency Swift package (RPNCore) between iOS, watchOS, and bare-metal Embedded Swift on the Raspberry Pi RP2350—and use our production OpenSCAD STLs to render an exact 1:1 hardware replica.]]></description>
+      <category>Software</category><category>Swift</category><category>Firmware</category><category>CAD</category>
+    </item>
+    <item>
+      <title><![CDATA[Shipping StackCalc v1.1 on the App Store: A Clean-Room RPN Calculator That Grows With Your Kid (SC-6 to SC-32)]]></title>
       <link>https://www.stackcalc.io/blog/2026/10/23/shipping-stackcalc-v1-1-sc32-and-sc6/</link>
       <guid isPermaLink="true">https://www.stackcalc.io/blog/2026/10/23/shipping-stackcalc-v1-1-sc32-and-sc6/</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[How Version 1.1 of the universal iPhone, iPad, and standalone Apple Watch app unites a professional 4-level scientific RPN calculator with a K–8 visual math playground.]]></description>
+      <description><![CDATA[Why we modeled StackCalc 32 on the menu-free ergonomics of the HP-32SII (with Harmonic Mean, TVM, Polynomial Solver, and Plotting), added StackCalc 6 for K–6 Common Core math, and used our production STLs to co-develop the app and firmware.]]></description>
       <category>Software</category><category>iOS</category><category>watchOS</category><category>Education</category>
     </item>
     <item>

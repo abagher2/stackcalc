@@ -17,41 +17,69 @@
   <a href="../uil-competition/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🏆 UIL Competition</a>
 </nav>
 
-**Grade 6 Complete + Grade 7 Bridge • 1-Page Token Scoring Guide • 10 Unit Introductions • 45 Textbook Sections • 90 Printable Worksheets (Practice A & B) • 90 Multi-Way Worked Examples • 900 Practice Problems**
+**Grade 6 Complete + Grade 7 Bridge • Spiral Front & Back Matter • 10 Unit Introductions • 45 Textbook Sections • 90 Printable Worksheets (Practice A & B) • 90 Multi-Way Worked Examples • 900 Practice Problems • 5 Reference Appendices (Including Student Self-Check Answer Key)**
 
 <div class="hero-buttons" style="margin: 1.25rem 0 1.75rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" class="md-button md-button--primary">📄 Download Student Supplement Workbook PDF (102 Pages • 45 Sections, 90 Worksheets & 900 Problems)</a>
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" class="md-button md-button--primary">📄 Download Complete Spiral Student Workbook PDF (114 Pages • Cover + pp. i–ii + 1–111)</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" class="md-button">📘 Order Spiral-Bound Lay-Flat Workbook on Lulu ↗</a>
+  <a href="#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers" class="md-button">🖨️ Print Individual Chapters (Units 1–10 Separate PDFs)</a>
   <a href="../../downloads/worksheets/sc6_quest_token_scoring_guide.pdf" class="md-button">🏆 Download 1-Page Token Scoring & SC-6 Work-Check Guide PDF</a>
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_teacher_coach_guide.pdf" class="md-button">🔑 Download Compact 10-Page Coach & Answer Key PDF (1 Page Per Unit)</a>
+  <a href="../../downloads/stackcalc-curriculum-guide-letter.pdf" class="md-button">🔑 Download Unified Master Teacher's Guide PDF (Includes Complete 900-Problem Worked Setups & Keys)</a>
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_workbook_lulu_cover.pdf" class="md-button">🎨 Student Workbook Lulu Coil Cover PDF</a>
 </div>
 
 !!! abstract "Built for Students Who Need Extra Practice: Two Textbook Ways, Hands-On Block Models & 100-Point Daily Goal"
-    - **Relatable Real-World Stories & Honest Student Perspectives:** Every Unit and lesson connects the math to real-world situations—from packing drone batteries, building skate ramps, and comparing bicycle gear sprockets to 3D-printer slicers, Antarctic penguin huddles, and wildlife puzzles—showing how students who initially doubt themselves discover why each mathematical concept works.
+    - **Relatable Real-World Stories & Honest Student Perspectives:** Every Unit and lesson connects the math to real-world situations—from packing drone batteries, building skate ramps, and comparing bicycle gear sprockets to engineering workshops, Antarctic penguin huddles, and wildlife puzzles—showing how students who initially doubt themselves discover why each mathematical concept works.
     - **100% Focused on How *Big Ideas Math* Teaches & Tests Each Concept:** Every section tracks the exact paper-and-pencil algorithms, conceptual models, and vocabulary (*dividend, divisor, quotient, prime factorization, GCF, LCM, reciprocal, tape diagram, ratio table, unit rate, equivalent expressions, Distributive Property, inverse operations, net, interquartile range (IQR), mean absolute deviation (MAD)*) that students are tested on in school.
     - **2 or 3 Authentic Textbook Ways & 100-Point Daily Goal:** Every Worked Example explicitly teaches the **distinct textbook solution pathways from *Big Ideas Math*** (`WAY 1`, `WAY 2`, and `WAY 3` where applicable). Students reach the **100-Point Daily Goal** either by solving **any 5 problems in 2 Ways (`5 × 20 = 100 pts`)** OR **all 10 problems in 1 Way (`10 × 10 = 100 pts`)**.
     - **Warm-Up Step 1 Starter Scaffolds (`#1–#2`), Common-Trap Alerts & Graphic Organizers:** Every worksheet includes a section-specific **`⚠️ WATCH OUT:`** misconception alert, a 1-line **Starter Step 1** prompt on Problems `#1–#2` to eliminate blank-page anxiety, and faint ready-to-use graphic organizers (number lines, ratio tables, mini coordinate grids, Venn diagrams, and box-plot axes) right inside the problem cards.
-    - **Blocks Reinforce Textbook Concepts Where Applicable:** Physical manipulatives (`COUNT-01`, `PRIME-01`, `FRAC-01`, `ALGB-01`, `BASE-10` Two-Tone Zero-Pair Counters, `TIME-01`, `STAT-01`, `PROB-01`) are used purely to reinforce the textbook concepts where they naturally fit (such as arrays, factor towers, Prime Factor Venn Diagrams, fraction strips, tape diagrams, algebra tiles, two-tone zero-pair counters, balance scales, and 2D nets), while paper/number-line/graph/table/formula sections focus directly on the textbook strategy.
-    - **2 Full Worksheets Per Section (90 Worksheets • 900 Problems):** Each of the 45 textbook sections includes **Practice A (*Key Ideas & Multi-Method Practice*)** and **Practice B (*Modeling Real Life & Applications*)** with generous, uncluttered white space to work out each problem.
+    - **Blocks Reinforce Textbook Concepts Where Applicable:** Physical manipulatives (Array Tiles, Prime Factor Towers, Fraction Strips, Place Value Blocks, Two-Tone Zero-Pair Counters, Geared Modulo-60 Clock, Algebra Tiles, and Probability Dice) reinforce textbook concepts where they naturally fit, while paper/number-line/graph/table/formula sections focus directly on the textbook strategy.
+    - **Spiral-Bound Lay-Flat Edition on Lulu, Complete 114-Page PDF (with Student Self-Check Answer Key), or Individual Chapter Packets:** Order the **Coil-Bound Lay-Flat Edition on [Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc)** (including Front Matter `pp. i–ii` and Back Matter `Appendices A–E` on `pp. 103–111` with final answers for all 900 problems), print the complete PDF, or download any of the **10 standalone Chapter/Unit PDFs below** (10–14 pages each).
 
 ---
 
-## 🏆 Optional Desk Companion: The Simplified 2-Piece `3x1x7U` SC-6 Scoreboard (`QUEST-01`)
+## 🖨️ Print Individual Chapters (Units 1–10 Separate PDFs for Parents & Teachers)
 
-To motivate students to master multiple textbook methods on every worksheet, pair the workbook with the **`3x1x7U` Gridfinity SC-6 Scoreboard & Token Kit (`QUEST-01`)**:
+Don't want to print all 114 pages at once? Each standalone **Chapter Packet PDF** below contains that unit's **1-Page Real-World Story & Concept Opener**, all **Practice A & Practice B Section Worksheets** (`20 problems per section`), and the **1-Page Parent & Teacher Coach Answer Key** at the back of the packet.
 
-| Hardware Component | Dimensions & Gridfinity Standard | How Double-Points Scoring Works |
+| Unit | Big Ideas Math Chapter & Grade | Sections & Practice Load | *From Blocks to the Stack* Story & Block Listings | Standalone Printable Chapter PDF |
+| :---: | :--- | :--- | :--- | :--- |
+| **[Unit 1](#unit-1)** | **Numerical Expressions & Factors**<br>*Big Ideas Math Grade 6 — Chapter 1* | Sections 1.1–1.5<br>(`10 Worksheets • 100 Problems`) | **"Why 24 Is the Champion Packing Number & The 17-Year Cicada Mystery"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 9–12](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 1 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_01.pdf) |
+| **[Unit 2](#unit-2)** | **Fractions & Decimals**<br>*Big Ideas Math Grade 6 — Chapter 2* | Sections 2.1–2.5<br>(`10 Worksheets • 100 Problems`) | **"The Pharaoh's Bakery, 84mm Fraction Towers & Simon Stevin's Decimals"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lessons 15–19](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 2 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf) |
+| **[Unit 3](#unit-3)** | **Ratios, Rates & Percents**<br>*Big Ideas Math Grade 6 — Chapters 3, 4 & 5 (Ratios, Rates & Percents)* | Sections 3.1–3.5<br>(`10 Worksheets • 100 Problems`) | **"Pythagoras's Guitar Strings & The Hunting-Tooth Bicycle Gear Secret"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lesson 18](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Ten-Frame Studio (`BASE-10`)](../products/ten-frames/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 3 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf) |
+| **[Unit 4](#unit-4)** | **Algebraic Expressions & Properties**<br>*Big Ideas Math Grade 6 — Chapter 3 / Chapter 5 (Algebraic Expressions)* | Sections 4.1–4.4<br>(`8 Worksheets • 80 Problems`) | **"Breaking Apart Rectangles, Frame Borders & Al-Khwarizmi's Squares"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [SC-32 Ch. 7: Polynomials](../manuals/sc32/07-polynomials-brent-solver.md)<br>**Blocks:** [Algebra Tile Studio (`ALGB-01`)](../products/algebra-boxes/index.md) &bull; [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 4 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_04.pdf) |
+| **[Unit 5](#unit-5)** | **Areas of Polygons & Elapsed Time**<br>*Big Ideas Math Grade 6 — Chapter 4 (Areas of Polygons)* | Sections 5.1–5.4<br>(`8 Worksheets • 80 Problems`) | **"Why Babylonians Counted to 60 & The Rope-Stretchers of the Nile"** — [SC-6 Ch. 6: Geometry, Time & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lessons 20–21](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Modulo-60 Classroom Clock (`TIME-01`)](../products/classroom-clock/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 5 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_05.pdf) |
+| **[Unit 6](#unit-6)** | **Integers, Rational Numbers & The Coordinate Plane**<br>*Big Ideas Math Grade 6 — Chapter 6* | Sections 6.1–6.5<br>(`10 Worksheets • 100 Problems`) | **"Zero-Pair Counters, Sub-Zero Number Lines & Descartes's Coordinate Fly"** — [SC-6 Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) & [Ch. 6: Geometry](../manuals/sc6/06-geometry-surface-area.md)<br>**Blocks:** [Ten-Frame Two-Tone Studio (`BASE-10`)](../products/ten-frames/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 6 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_06.pdf) |
+| **[Unit 7](#unit-7)** | **Equations & Inequalities**<br>*Big Ideas Math Grade 6 — Chapter 7* | Sections 7.1–7.5<br>(`10 Worksheets • 100 Problems`) | **"Al-Jabr's Balanced Two-Pan Scale & Missing-Addend Mysteries"** — [SC-6 Ch. 8: Math Quiz Engine](../manuals/sc6/08-math-quiz-engine.md) & [SC-32 Ch. 3: Algebra](../manuals/sc32/03-algebra-transcendentals.md)<br>**Blocks:** [Algebra Tile Studio (`ALGB-01`)](../products/algebra-boxes/index.md) &bull; [Math Domino Studio (`DOMI-01`)](../products/math-dominoes/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 7 PDF (12 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_07.pdf) |
+| **[Unit 8](#unit-8)** | **Surface Area & Volume of 3D Solids**<br>*Big Ideas Math Grade 6 — Chapter 8* | Sections 8.1–8.4<br>(`8 Worksheets • 80 Problems`) | **"Galileo's Giant Bone Mystery (The Square-Cube Law) & Archimedes's Crown"** — [SC-6 Ch. 6: Geometry & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lesson 22](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value 3D Cubes (`PLACE-01`)](../products/place-value/index.md) &bull; [Algebra & Geometry Studio (`ALGB-01`)](../products/algebra-boxes/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 8 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_08.pdf) |
+| **[Unit 9](#unit-9)** | **Statistical Measures & Data Displays**<br>*Big Ideas Math Grade 6 — Chapters 9 & 10 (Statistical Measures and Data Displays)* | Sections 9.1–9.4<br>(`8 Worksheets • 80 Problems`) | **"Becoming a Data Detective: Leveling Mean Towers, Quartiles & Outliers"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 23–25](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Counting & Data Tower Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Probability & Stats Studio (`PROB-01`)](../products/dice-and-spinner/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 9 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_09.pdf) |
+| **[Unit 10](#unit-10)** | **Grade 7 Bridge — Signed Rationals, 2-Step Equations & Probability**<br>*Big Ideas Math Grade 7 Bridge — Chapters 1–3 & Chapter 7* | Sections 10.1–10.4<br>(`8 Worksheets • 80 Problems`) | **"Sir Francis Galton's 1873 Bean Machine & Fair Polyhedral Dice"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) & [Ch. 9: Applied STEM Labs](../manuals/sc6/09-applied-stem-labs.md)<br>**Blocks:** [Probability Dice & Spinner Studio (`PROB-01`)](../products/dice-and-spinner/index.md) &bull; [Ten-Frame Studio (`BASE-10`)](../products/ten-frames/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) | [**📄 Print Unit 10 PDF (10 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_10.pdf) |
+
+---
+
+## 🏆 Optional Desk Companion: The 100-Point Double-Points Scoreboard (`QUEST-01`)
+
+To motivate students to master multiple textbook methods on every worksheet, pair the workbook with the **[100-Point SC-6 Scoreboard & Token Kit (`QUEST-01`)](../products/quest-scoreboard/index.md)** ([Order on Etsy ↗](https://stackcalcmath.etsy.com) • [Order Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) • [Free Print Files on Printables ↗](https://www.printables.com/@StackCalc_5593834)):
+
+| Component | Layout | How Double-Points Scoring Works |
 | :--- | :--- | :--- |
-| **1. Snapfinity Scoreboard Lid (`1–10` + `100` + `(?)`)** | `125.5 × 42.0 mm` (`3x1` Stackable Lid, `6×2 = 12` sockets) | **Left 5×2 Grid:** Numbered **`1`–`5`** (top row) and **`6`–`10`** (bottom row), matching **Problems `#1–#10`**. **Rightmost Column:** Top socket **`100`** (for a 10-block Mastery Tower) and bottom **Question Mark in a Circle (`?`)** tutorial keycap badge. |
-| **2. `3x1x7U` Token Bank Box (`QUEST BOARD`)** | `125.5 × 42.0 × 49.0 mm` (`7U` height, `(?` tutorial badge) | Holds all **60 universal `+10` Quarter-Block tokens** in 5 neat layers of 12 (`6×2`) directly on its Gridfinity floor—no separate inner tray needed! |
-| **3. 60 Identical `+10` Quarter-Block Tokens** | `19.0 × 19.0 × 8.85 mm` (`7.0 mm` visible `1U` height) | Every token is identical (`+10` on top and all 4 sides):<br>• **1 Block (`+10 pts`)** = Solved with **1st Textbook Way**<br>• **2 Stacked Blocks (`+20 pts DOUBLE`)** = Verified with **2nd Textbook Way**<br>• **10 Blocks (`100 pts`)** = **100-Point Daily Goal** (any 5 problems in 2 Ways OR all 10 in 1 Way)! |
+| **1. 10-Problem Scoreboard Grid (`1–10` + `100` + `(?)`)** | `6×2 = 12` sockets | **Left 5×2 Grid:** Numbered **`1`–`5`** (top row) and **`6`–`10`** (bottom row), matching **Problems `#1–#10`**. **Rightmost Column:** Top socket **`100`** (for a 10-block Mastery Tower) and bottom **Question Mark in a Circle (`?`)** tutorial keycap badge. |
+| **2. Desk Token Bank Box** | Holds 60 tokens | Stores all **60 universal `+10` tokens** in 5 neat layers of 12 (`6×2`) for quick classroom setup and cleanup. |
+| **3. 60 Identical `+10` Mastery Tokens** | Universal `+10` blocks | Every token is identical (`+10` on top and all 4 sides):<br>• **1 Block (`+10 pts`)** = Solved with **1st Textbook Way**<br>• **2 Stacked Blocks (`+20 pts DOUBLE`)** = Verified with **2nd Textbook Way**<br>• **10 Blocks (`100 pts`)** = **100-Point Daily Goal** (any 5 problems in 2 Ways OR all 10 in 1 Way)! |
 
 ---
 
-## Unit 1: Numerical Expressions & Factors — The Backcountry Trail Crew & Maker Cabin (p. 3)
+## Unit 1: Numerical Expressions & Factors — The Backcountry Trail Crew & Maker Cabin (p. 3) {#unit-1}
 
 *Big Ideas Math Grade 6 — Chapter 1 — Whole Number Operations, Powers & Exponents, Order of Operations, Prime Factorization, GCF & LCM*
 
-- **Manipulative Kits:** `Counting & Array Studio (COUNT-01) + Prime Factor Studio (PRIME-01)`
+<div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_01.pdf" class="md-button md-button--primary">📄 Print Unit 1 Chapter Packet PDF (12 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
+</div>
+
+- **Manipulative Kits (`Counting & Array Studio (COUNT-01) + Prime Factor Studio (PRIME-01)`):** [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)
+- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Aligned *From Blocks to the Stack* Story & Chapter:** **"Why 24 Is the Champion Packing Number & The 17-Year Cicada Mystery"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 9–12](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students interpret remainders as meaningless decimal tails (e.g., .875 of a person), read 2^3 as 2×3=6, lose track of PEMDAS parentheses, and confuse GCF (overlap) with LCM (union).
 - **Hands-On Remediation:** Have students build physical tile rows for division remainders, stack 2D/3D arrays for exponents, use the 4-line elevator (Y holds Room 1 while X solves Room 2) instead of rewriting PEMDAS lines, and stand logarithmic Prime Factor Towers side-by-side on the 12-socket lid.
 
@@ -383,11 +411,17 @@ Leo used to dread word problems with GCF and LCM because the two three-letter na
 
 ---
 
-## Unit 2: Fractions & Decimals — The Kitchen Bakery, the Avian Lab & the 3D Print Shop (p. 14)
+## Unit 2: Fractions & Decimals — The Kitchen Bakery, the Avian Lab & the 3D Print Shop (p. 14) {#unit-2}
 
 *Big Ideas Math Grade 6 — Chapter 2 — Equivalent Fractions, Multiplying & Dividing Fractions, and All Four Decimal Operations*
 
-- **Manipulative Kits:** `Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`
+<div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf" class="md-button md-button--primary">📄 Print Unit 2 Chapter Packet PDF (12 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
+</div>
+
+- **Manipulative Kits (`Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
+- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Aligned *From Blocks to the Stack* Story & Chapter:** **"The Pharaoh's Bakery, 84mm Fraction Towers & Simon Stevin's Decimals"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lessons 15–19](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students treat fractions, mixed numbers, and decimals as unrelated rules, expect multiplication to always make numbers bigger, forget which fraction to flip in division, and misalign decimal columns.
 - **Hands-On Remediation:** Use the 84.0 mm Fraction Studio towers so equivalence and common denominators are physical millimeter height matches. Use [f] [1/x] on Floor 1 (X) so students see only the divisor flip, and use [f] [IP] / [g] [FP] to split whole dollars from decimal cents.
 
@@ -719,11 +753,17 @@ Looking at the 3D-printer screen, Marcus needed to find how many 0.20-millimeter
 
 ---
 
-## Unit 3: Ratios, Rates & Percents — Bicycle Sprockets, Supermarket Aisles & Field Surveys (p. 25)
+## Unit 3: Ratios, Rates & Percents — Bicycle Sprockets, Supermarket Aisles & Field Surveys (p. 25) {#unit-3}
 
 *Big Ideas Math Grade 6 — Chapters 3, 4 & 5 (Ratios, Rates & Percents) — Ratios & Tape Diagrams, Ratio Tables, Unit Rates, Percents, Discounts & Unit Conversions*
 
-- **Manipulative Kits:** `Counting & Array Tiles (COUNT-01) + Fraction Studio (FRAC-01)`
+<div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf" class="md-button md-button--primary">📄 Print Unit 3 Chapter Packet PDF (12 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
+</div>
+
+- **Manipulative Kits (`Counting & Array Tiles (COUNT-01) + Fraction Studio (FRAC-01)`):** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Ten-Frame Studio (`BASE-10`)](../products/ten-frames/index.md)
+- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Aligned *From Blocks to the Stack* Story & Chapter:** **"Pythagoras's Guitar Strings & The Hunting-Tooth Bicycle Gear Secret"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lesson 18](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students confuse Part-to-Part (3:2) with Part-to-Whole (3/5), add instead of multiply in ratio tables, divide unit rates upside-down, and memorize 6 disconnected rules for moving decimal points in percents.
 - **Hands-On Remediation:** Use Blue and Gold Counting Tiles as physical Tape Diagram boxes, step through ratio tables rhythmically with [g] [REP], use [x⇄y] when unit-rate division is entered upside-down, and use [f] [%] + [FDISP] to show Fraction/Decimal/Percent are three costumes of one number.
 
@@ -1055,11 +1095,17 @@ When a $100 bike helmet bundle went on sale for 20% off and Priya had an extra c
 
 ---
 
-## Unit 4: Algebraic Expressions & Properties — Coding an Arcade Game & Running the School Craft Booth (p. 36)
+## Unit 4: Algebraic Expressions & Properties — Coding an Arcade Game & Running the School Craft Booth (p. 36) {#unit-4}
 
 *Big Ideas Math Grade 6 — Chapter 3 / Chapter 5 (Algebraic Expressions) — Evaluating Algebraic Expressions, Combining Like Terms, Distributive Property & Factoring with GCF*
 
-- **Manipulative Kits:** `Algebra Boxes & Factoring Stage (ALGB-01) + Counting Tiles (COUNT-01)`
+<div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_04.pdf" class="md-button md-button--primary">📄 Print Unit 4 Chapter Packet PDF (10 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
+</div>
+
+- **Manipulative Kits (`Algebra Boxes & Factoring Stage (ALGB-01) + Counting Tiles (COUNT-01)`):** [Algebra Tile Studio (`ALGB-01`)](../products/algebra-boxes/index.md) &bull; [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md)
+- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Aligned *From Blocks to the Stack* Story & Chapter:** **"Breaking Apart Rectangles, Frame Borders & Al-Khwarizmi's Squares"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [SC-32 Ch. 7: Polynomials](../manuals/sc32/07-polynomials-brent-solver.md)
 - **Target Misconception:** Students panic when letters appear, erroneously combine 3x + 2 into 5x or x² + x into x³, and don't see why 3(x + 4) = 3x + 12.
 - **Hands-On Remediation:** Show that a variable x is literally a physical green x-rod (42×14mm) whereas 1 is a small yellow unit cube (14×14mm) and x² is a large blue flat (42×42mm)—different physical shapes cannot be counted as one pile! Build rectangles on the L-frame stage for the Distributive Property.
 
@@ -1327,11 +1373,17 @@ At the end of the craft fair, Maya had (16x + 24) stickers to pack into the grea
 
 ---
 
-## Unit 5: Areas of Polygons & Elapsed Time — Building Skate Ramps, Measuring Sails & Navigating by Grid (p. 45)
+## Unit 5: Areas of Polygons & Elapsed Time — Building Skate Ramps, Measuring Sails & Navigating by Grid (p. 45) {#unit-5}
 
 *Big Ideas Math Grade 6 — Chapter 4 (Areas of Polygons) — Areas of Parallelograms, Triangles, Trapezoids, Composite Figures, Coordinate Polygons & Base-60 Time*
 
-- **Manipulative Kits:** `Counting & Array Tiles (COUNT-01) + Planetary Geared Clock (TIME-01)`
+<div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_05.pdf" class="md-button md-button--primary">📄 Print Unit 5 Chapter Packet PDF (10 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
+</div>
+
+- **Manipulative Kits (`Counting & Array Tiles (COUNT-01) + Planetary Geared Clock (TIME-01)`):** [Counting & Array Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Modulo-60 Classroom Clock (`TIME-01`)](../products/classroom-clock/index.md)
+- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Aligned *From Blocks to the Stack* Story & Chapter:** **"Why Babylonians Counted to 60 & The Rope-Stretchers of the Nile"** — [SC-6 Ch. 6: Geometry, Time & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lessons 20–21](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students multiply the slanted side of a parallelogram instead of the vertical height, forget to divide by 2 for triangles, lose track of multi-piece composite areas, and subtract clock times in base-10 instead of base-60.
 - **Hands-On Remediation:** Slide the corner triangle of a parallelogram to form a straight [f] [RECT] rectangle, use the dedicated [g] [TRI] key ([g][7]) which divides by 2 automatically, accumulate composite chunks with [Σ+], and use the Planetary Clock (TIME-01) + [CLK] key for base-60 time.
 
@@ -1599,11 +1651,17 @@ When Sora plotted a rectangular park with corners at (1, 2) and (11, 8) on a map
 
 ---
 
-## Unit 6: Integers, Rational Numbers & The Coordinate Plane — Deep-Sea Rovers, Plunging Seabirds & Four-Quadrant Radar (p. 54)
+## Unit 6: Integers, Rational Numbers & The Coordinate Plane — Deep-Sea Rovers, Plunging Seabirds & Four-Quadrant Radar (p. 54) {#unit-6}
 
 *Big Ideas Math Grade 6 — Chapter 6 — Positive & Negative Integers, Comparing Rational Numbers, Absolute Value, and the 4-Quadrant Coordinate Plane*
 
-- **Manipulative Kits:** `Ten-Frame Two-Tone Counters (BASE-10) + Algebra Zero-Pair Tiles (ALGB-01)`
+<div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_06.pdf" class="md-button md-button--primary">📄 Print Unit 6 Chapter Packet PDF (12 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
+</div>
+
+- **Manipulative Kits (`Ten-Frame Two-Tone Counters (BASE-10) + Algebra Zero-Pair Tiles (ALGB-01)`):** [Ten-Frame Two-Tone Studio (`BASE-10`)](../products/ten-frames/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
+- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Aligned *From Blocks to the Stack* Story & Chapter:** **"Zero-Pair Counters, Sub-Zero Number Lines & Descartes's Coordinate Fly"** — [SC-6 Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) & [Ch. 6: Geometry](../manuals/sc6/06-geometry-surface-area.md)
 - **Target Misconception:** Students confuse the subtraction operator [-] with the negative sign [+/-], think -18 > -5 because 18 > 5, confuse Opposite ([+/-]) with Absolute Value ([g] [|x|]), and reverse (x, y) coordinates.
 - **Hands-On Remediation:** Use two-tone (+1 / -1) Zero-Pair counters (BASE-10) and Zero-Pair tiles (ALGB-01), plot signed jumps on the SC-6 Number Line ([f] [LINE]), test inequalities with [f] [>] and [g] [<], contrast [+/-] (flip sign) with [g] [|x|] (always positive distance from 0), and use the Elevator Rule (walk across x first, ride up/down y second).
 
@@ -1935,11 +1993,17 @@ On a harbor coordinate map, Mia needed the length of a suspension bridge stretch
 
 ---
 
-## Unit 7: Equations & Inequalities — Mystery Receipts, Roller Coaster Height Bars & Bike Drives (p. 65)
+## Unit 7: Equations & Inequalities — Mystery Receipts, Roller Coaster Height Bars & Bike Drives (p. 65) {#unit-7}
 
 *Big Ideas Math Grade 6 — Chapter 7 — Writing Equations, Solving One-Step Equations, Writing & Graphing Inequalities, and Two-Variable Relationships*
 
-- **Manipulative Kits:** `Algebra Boxes & Stage (ALGB-01) + Counting & Array Tiles (COUNT-01)`
+<div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_07.pdf" class="md-button md-button--primary">📄 Print Unit 7 Chapter Packet PDF (12 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
+</div>
+
+- **Manipulative Kits (`Algebra Boxes & Stage (ALGB-01) + Counting & Array Tiles (COUNT-01)`):** [Algebra Tile Studio (`ALGB-01`)](../products/algebra-boxes/index.md) &bull; [Math Domino Studio (`DOMI-01`)](../products/math-dominoes/index.md)
+- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Aligned *From Blocks to the Stack* Story & Chapter:** **"Al-Jabr's Balanced Two-Pan Scale & Missing-Addend Mysteries"** — [SC-6 Ch. 8: Math Quiz Engine](../manuals/sc6/08-math-quiz-engine.md) & [SC-32 Ch. 3: Algebra](../manuals/sc32/03-algebra-transcendentals.md)
 - **Target Misconception:** Students treat '=' as 'write the answer', translate '8 less than n' backwards as 8 - n, resent writing -14 under both sides of x + 14 = 39, and confuse open vs. solid inequality circles.
 - **Hands-On Remediation:** Model '=' as a Balance Scale using Algebra Boxes & Stage (ALGB-01). Solve 1-step equations with inverse operations on both sides, verify your solution with the SC-6 Equality Test [≠] (which flashes NO when Left = Right!), and test inequalities on [f] [LINE] with [f] [≥] and [g] [≤] (which flash YES or NO).
 
@@ -2271,11 +2335,17 @@ Devon always mixed up which variable was 'independent' and which was 'dependent,
 
 ---
 
-## Unit 8: Surface Area & Volume of 3D Solids — Penguin Huddles, Camping Tents, Aquariums & Ziplines (p. 76)
+## Unit 8: Surface Area & Volume of 3D Solids — Penguin Huddles, Camping Tents, Aquariums & Ziplines (p. 76) {#unit-8}
 
 *Big Ideas Math Grade 6 — Chapter 8 — Surface Area of Rectangular & Triangular Prisms, Pyramids, Volume of Prisms, and Circles/Cones/Hypotenuse*
 
-- **Manipulative Kits:** `Counting & Array Tiles (COUNT-01) + Gridfinity 3x1 Storage Boxes`
+<div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_08.pdf" class="md-button md-button--primary">📄 Print Unit 8 Chapter Packet PDF (10 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
+</div>
+
+- **Manipulative Kits (`Counting & Array Tiles (COUNT-01) + Gridfinity 3x1 Storage Boxes`):** [Place Value 3D Cubes (`PLACE-01`)](../products/place-value/index.md) &bull; [Algebra & Geometry Studio (`ALGB-01`)](../products/algebra-boxes/index.md)
+- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Aligned *From Blocks to the Stack* Story & Chapter:** **"Galileo's Giant Bone Mystery (The Square-Cube Law) & Archimedes's Crown"** — [SC-6 Ch. 6: Geometry & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lesson 22](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students drop one of the 6 faces when finding rectangular prism surface area, tangle prism and pyramid formulas, and confuse 2D Surface Area (cardboard outside) with 3D Volume (cubes inside).
 - **Hands-On Remediation:** Have students touch the 3 pairs of faces on their physical Gridfinity box while logging each pair into [Σ+] (n=1, 2, 3), use [f] [PRISM] ([f][9]) to multiply 3 stack floors (l, w, h) at once for volume, and unlock [f] [CIRC], [g] [CONE], and [g] [HYP].
 
@@ -2543,11 +2613,17 @@ At the team pizza party, Marcus and his friends were sure that two 10-inch diame
 
 ---
 
-## Unit 9: Statistical Measures & Data Displays — Basketball Stats, Outlier Prices & Bird Puzzle Trials (p. 85)
+## Unit 9: Statistical Measures & Data Displays — Basketball Stats, Outlier Prices & Bird Puzzle Trials (p. 85) {#unit-9}
 
 *Big Ideas Math Grade 6 — Chapters 9 & 10 (Statistical Measures and Data Displays) — Mean as Fair Share, Median, Mode, Range, Quartiles, Interquartile Range (IQR), Box Plots & MAD*
 
-- **Manipulative Kits:** `Counting & Array Tiles (COUNT-01) + Probability Dice Studio (PROB-01)`
+<div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_09.pdf" class="md-button md-button--primary">📄 Print Unit 9 Chapter Packet PDF (10 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
+</div>
+
+- **Manipulative Kits (`Counting & Array Tiles (COUNT-01) + Probability Dice Studio (PROB-01)`):** [Counting & Data Tower Studio (`COUNT-01`)](../products/counting-tiles/index.md) &bull; [Probability & Stats Studio (`PROB-01`)](../products/dice-and-spinner/index.md)
+- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Aligned *From Blocks to the Stack* Story & Chapter:** **"Becoming a Data Detective: Leveling Mean Towers, Quartiles & Outliers"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 23–25](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students forget to sort data before finding Median/Quartiles, lose their place adding long lists for Mean, and dread Mean Absolute Deviation (MAD) because doing it by hand takes 20 minutes of subtraction.
 - **Hands-On Remediation:** Show that Mean is physically leveling unequal cube towers to the same height. Then show that entering a list ONCE with [Σ+] unlocks Mean ([g] [x̄]), Median ([f] [MED]), Mode ([g] [MODE]), Range ([RNG]), Quartiles ([f] [1Q], [g] [3Q], [IQR]), and MAD ([g] [MAD]) in 1 click each!
 
@@ -2815,11 +2891,17 @@ In the bird-cognition lab, Raven A solved four puzzle trials in 8, 9, 9, and 10 
 
 ---
 
-## Unit 10: Grade 7 Bridge — Signed Rationals, 2-Step Equations & Probability — Arctic Weather Swings, Go-Kart Tracks & Token Jars (Grade 7 Bridge) (p. 94)
+## Unit 10: Grade 7 Bridge — Signed Rationals, 2-Step Equations & Probability — Arctic Weather Swings, Go-Kart Tracks & Token Jars (Grade 7 Bridge) (p. 94) {#unit-10}
 
 *Big Ideas Math Grade 7 Bridge — Chapters 1–3 & Chapter 7 — Adding, Subtracting, Multiplying & Dividing Signed Rationals, Two-Step Equations, and Probability/Combinatorics*
 
-- **Manipulative Kits:** `Ten-Frame Zero-Pair Counters (BASE-10) + Algebra Stage (ALGB-01) + Probability Studio (PROB-01)`
+<div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
+  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_10.pdf" class="md-button md-button--primary">📄 Print Unit 10 Chapter Packet PDF (10 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
+</div>
+
+- **Manipulative Kits (`Ten-Frame Zero-Pair Counters (BASE-10) + Algebra Stage (ALGB-01) + Probability Studio (PROB-01)`):** [Probability Dice & Spinner Studio (`PROB-01`)](../products/dice-and-spinner/index.md) &bull; [Ten-Frame Studio (`BASE-10`)](../products/ten-frames/index.md)
+- **Where to Get the Spiral Workbook, Books & Blocks:** [Spiral-Bound Workbook on Lulu ↗](https://www.lulu.com/spotlight/stackcalc) &bull; [Illustrated Book on Amazon ↗](https://link.amazon/B0f5cP0Ur) &bull; [Boxed Block Kits on Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Factory Print on Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Free STLs on Printables ↗](https://www.printables.com/@StackCalc_5593834)
+- **Aligned *From Blocks to the Stack* Story & Chapter:** **"Sir Francis Galton's 1873 Bean Machine & Fair Polyhedral Dice"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) & [Ch. 9: Applied STEM Labs](../manuals/sc6/09-applied-stem-labs.md)
 - **Target Misconception:** Students guess signs when adding/subtracting negatives, get -25 instead of +25 for (-5)² on algebraic calculators, undo ×3 before +7 in 3x + 7 = 28, and confuse Permutations (order matters) with Combinations (order doesn't).
 - **Hands-On Remediation:** Use Yellow/Red counters to show removing 4 red debt tokens (10 - (-4)) equals +14. Notice how RPN 5 [+/-] [x²] squares the entire register (-5)² = +25 without parentheses! Unwrap 2-step equations in reverse (untie ribbon ±b first, open box ×a second), and finish with [DICE], [f] [nCr], [g] [nPr], and [f] [?].
 

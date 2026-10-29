@@ -344,8 +344,9 @@ CONTENTS OF THIS EVALUATION KIT:
     invoicing procedures, and 24-hour IRS Form W-9 onboarding SLA.
 
 02_Teacher_Facilitation_Guide_and_Rubrics.pdf
-    34-page master guide for station setup, 4-tier student mastery rubrics,
-    and diagnostic remediation guides for common arithmetic misconceptions.
+    50-page spiral-edition master guide (pp. i-iv + 1-46) for station setup,
+    12 K-12 STEM units, 4-tier student mastery rubrics, diagnostic remediation
+    guides, and 4 Back Matter Appendices (Slicer Profiles, BOM, Keystrokes, Log).
 
 03_RPN_Math_Labs_Curriculum_Sample.pdf
     12-page sample instructional unit detailing the Concrete-Pictorial-Abstract (CPA)
@@ -371,12 +372,24 @@ CONTENTS OF THIS EVALUATION KIT:
     Tournament-standard 4-column grading key with 3-significant-figure canonical
     answers and official acceptance intervals.
 
+09_Big_Ideas_Unit_01_Printable_Chapter_Packet.pdf
+    Sample standalone Big Ideas Math Middle School SC-6 Chapter Packet (Unit 1:
+    Numerical Expressions & Factors, 12 pages with Practice A & B + Coach Key).
+
+10_Curriculum_Unit_06_Fraction_Studio_Packet.pdf
+    Sample standalone 4-page Teacher Curriculum Unit Packet (Unit 06: 84mm
+    Fraction Comparator Studio with Core Lesson, Extension, Lab Sheet, and Key).
+
 --------------------------------------------------------------------------------
 ORDERING & EVALUATION ASSISTANCE:
 Questions regarding classroom pilots, sample kits, or volume purchase orders?
-Email: quotes@stackcalc.io
-Web:   https://stackcalc.io/#school-po
-Store: https://stackcalcmath.etsy.com
+Email:         quotes@stackcalc.io
+Web:           https://stackcalc.io/#school-po
+Spiral Books:  https://www.lulu.com/spotlight/stackcalc
+Print Books:   https://link.amazon/B0f5cP0Ur
+3D Block Kits: https://stackcalcmath.etsy.com
+Factory Print: https://teleportpod.com/portals/profile/StackCalc
+Free STLs:     https://www.printables.com/@StackCalc_5593834
 ================================================================================
 """
 
@@ -422,6 +435,16 @@ Store: https://stackcalcmath.etsy.com
         uil_sol = DOWNLOADS_DIR / "uil" / "uil_solutions_26a.pdf"
         if uil_sol.exists():
             zf.write(uil_sol, arcname="08_Texas_UIL_Official_Scoring_Key_26A.pdf")
+
+        # 09 Big Ideas Unit 01 Chapter Packet
+        bi_u1 = DOWNLOADS_DIR / "worksheets" / "bigideas_middle_school_sc6_unit_01.pdf"
+        if bi_u1.exists():
+            zf.write(bi_u1, arcname="09_Big_Ideas_Unit_01_Printable_Chapter_Packet.pdf")
+
+        # 10 Teacher Curriculum Unit 06 Packet
+        cu_u6 = DOWNLOADS_DIR / "curriculum_units" / "stackcalc_curriculum_unit_06.pdf"
+        if cu_u6.exists():
+            zf.write(cu_u6, arcname="10_Curriculum_Unit_06_Fraction_Studio_Packet.pdf")
 
     print(f"Generated ZIP: {OUTPUT_ZIP} ({OUTPUT_ZIP.stat().st_size} bytes)")
 

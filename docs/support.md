@@ -19,7 +19,8 @@ If you need direct assistance, encountered a bug, or have a question:
 - **GitHub Issue Tracker:** [https://github.com/abagher2/stackcalc/issues](https://github.com/abagher2/stackcalc/issues) *(Best for bug reports, troubleshooting, and feature requests)*
 - **Official Storefronts & Fulfillment:**
   - **Amazon Bookstore:** [From Blocks to the Stack on Amazon (B0HPJN3KP9) ↗](https://link.amazon/B0f5cP0Ur)
-  - **Etsy Storefront:** [Handcrafted Kits & Spiral Manuals (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
+  - **Lulu Press:** [Spiral-Bound Lay-Flat Curriculum Guides & Workbooks ↗](https://www.lulu.com/spotlight/stackcalc)
+  - **Etsy Storefront:** [Handcrafted 3D-Printed Manipulative & Hardware Kits (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
   - **Slant 3D Portal:** [On-Demand Additive Manufacturing & Replacement Parts ↗](https://teleportpod.com/portals/profile/StackCalc)
 - **Replacement Parts & Refills:** Missing a block or need hardware parts? See our [Replacement Parts Guide](parts.md).
 - **Community Documentation:** Explore our in-depth guides for [Hardware](hardware.md), [Firmware](firmware.md), [iOS App](ios_app.md), and [Interactive Tutorials](tutorials.md).

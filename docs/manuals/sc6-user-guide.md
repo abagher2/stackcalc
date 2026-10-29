@@ -5353,7 +5353,7 @@ Within any single school week, teachers can rotate five table groups through a b
 | **Thursday (Maker Application)** | Real-world STEM measurement lab (rulers, scales, stopwatches, or cardstock nets) | Chapter 9 Maker Lab + Unit Conversions (`[f] [▸cm]`, `[f] [▸g]`, `[g] [x̄]`, `[g] [MAD]`) | Partner teams compare `Count`, `Mean`, and `MAD` across table trials |
 | **Friday (Relay & Reflection)** | Synchronized Classroom Seed 4-Player Baton Relay (`[f] [?]`) + Math Circle discussion | Shared Seed Code (`24 [f] [?]`) + Studio Trays on table for $+3/+7$ review coaching | Celebrate personal-best growth over Tuesday baseline scores |
 
-**Why the Four-Shelf Stack Works in Elementary Classrooms:** Across all four quarters, teachers consistently notice that students make far fewer multi-step calculation mistakes on the SC-6 than on conventional parenthesis calculators. Studies of human memory show that our brains can comfortably focus on only a few numbers at a time *([Miller, 1956](sc6/appendix-c-formulas-and-conversions.md#cite-miller1956); [Sweller, 1988](sc6/appendix-c-formulas-and-conversions.md#cite-sweller1988))*, and classroom research confirms that young learners grasp multi-step problems much more naturally when they enter numbers in the exact order they build with their blocks *([Hamrick, 1980](sc6/appendix-c-formulas-and-conversions.md#cite-hamrick1980))*. By combining parenthesis-free stack entry *([Burks et al., 1954](sc6/appendix-c-formulas-and-conversions.md#cite-burks1954))* with exact decimal and fraction arithmetic *([Kahan, 1979](sc6/appendix-c-formulas-and-conversions.md#cite-kahan1979))*, the SC-6 keeps every step visible on Shelves $X, Y, Z,$ and $T$—so students can focus on the meaning of the math rather than hunting for missing brackets.
+**Why the Four-Shelf Stack Works in Elementary Classrooms:** Across all four quarters, teachers consistently notice that students make far fewer multi-step calculation mistakes on the SC-6 than on conventional parenthesis calculators. Studies of human memory show that our brains can comfortably focus on only a few numbers at a time *([Miller, 1956](sc6/appendix-c-formulas-and-conversions.md#cite-miller1956); [Sweller, 1988](sc6/appendix-c-formulas-and-conversions.md#cite-sweller1988))*, and classroom research confirms that young learners grasp multi-step problems much more naturally when they enter numbers in the exact order they build with their blocks *([Hamrick, 1996](sc6/appendix-c-formulas-and-conversions.md#cite-hamrick1980))*. By combining parenthesis-free stack entry *([Burks et al., 1954](sc6/appendix-c-formulas-and-conversions.md#cite-burks1954))* with exact decimal and fraction arithmetic *([Kahan, 1979](sc6/appendix-c-formulas-and-conversions.md#cite-kahan1979))*, the SC-6 keeps every step visible on Shelves $X, Y, Z,$ and $T$—so students can focus on the meaning of the math rather than hunting for missing brackets.
 
 ---
 
@@ -5367,7 +5367,7 @@ $$\text{Triangle Area} = (\text{Base} \times \text{Height}) \div 2 \qquad \text{
 
 When students try to type these rules into an ordinary calculator, it is easy to miss a parenthesis or lose track of a middle step.
 
-On the **StackCalc SC-6**, the four-shelf stack ($X, Y, Z, T$) needs zero parentheses *([Łukasiewicz, 1924](#cite-lukasiewicz1924); [Hamrick, 1980](#cite-hamrick1980))*. Just like looking inside a cutaway drawing of a machine *([Macaulay, 2016](#cite-macaulay2016))*, every middle step stays visible on Waiting Shelf $Y$ and Upper Shelf $Z$ and drops into place right when you tap an operation key. This appendix gives you step-by-step RPN keystrokes, unit conversion factors, divisibility tests, and prime-number catalogs for every elementary and middle-school topic. This directory pairs core number rules, 2D flat shape rules, and 3D solid box and cylinder rules with their physical block models and SC-6 keystroke sequences.
+On the **StackCalc SC-6**, the four-shelf stack ($X, Y, Z, T$) needs zero parentheses *([Łukasiewicz, 1924](#cite-lukasiewicz1924); [Hamrick, 1996](#cite-hamrick1980))*. Just like looking inside a cutaway drawing of a machine *([Macaulay, 2016](#cite-macaulay2016))*, every middle step stays visible on Waiting Shelf $Y$ and Upper Shelf $Z$ and drops into place right when you tap an operation key. This appendix gives you step-by-step RPN keystrokes, unit conversion factors, divisibility tests, and prime-number catalogs for every elementary and middle-school topic. This directory pairs core number rules, 2D flat shape rules, and 3D solid box and cylinder rules with their physical block models and SC-6 keystroke sequences.
 
 ### C.1.1 Foundational Number Rules & Block Models
 
@@ -5968,8 +5968,8 @@ To explore the history and beauty of everyday math, look for **Steven Strogatz's
 ### C.5.1 History of Stack Notation & Pocket Calculators
 
 <a id="cite-lukasiewicz1924"></a>
-**[lukasiewicz1924] Jan Łukasiewicz (1924)** — *Oznaczenie bez nawiasów (Parenthesis-Free Notation)*. *Komunikaty Polskiego Towarzystwa Matematycznego, Vol. 1, pp. 1–6*.
-> **Annotation:** Introduces parenthesis-free prefix and postfix notation, demonstrating that operator position alone uniquely determines evaluation order without grouping symbols.  
+**[lukasiewicz1924] Jan Łukasiewicz (1929)** — *Elementy logiki matematycznej (Elements of Mathematical Logic; parenthesis-free notation devised 1924)*. *Komisja Wydawnicza Koła Matematyczno-Fizycznego Słuchaczów Uniwersytetu Warszawskiego (Warsaw; English trans. Pergamon Press, 1963)*.
+> **Annotation:** Introduces parenthesis-free prefix and postfix notation (devised in 1924 and published in his 1929 Warsaw logic treatise), demonstrating that operator position alone uniquely determines evaluation order without grouping symbols.  
 > **Cited in Chapters:** [App C](sc6/appendix-c-formulas-and-conversions.md), [Ch 02](sc6/02-rpn-for-young-learners.md)
 
 <a id="cite-burks1954"></a>
@@ -5978,7 +5978,7 @@ To explore the history and beauty of everyday math, look for **Steven Strogatz's
 > **Cited in Chapters:** [App B](sc6/appendix-b-teacher-lesson-plans.md)
 
 <a id="cite-hamrick1980"></a>
-**[hamrick1980] Kathy B. Hamrick (1980)** — *The History of Reverse Polish Notation*. *The Two-Year College Mathematics Journal, Vol. 11, No. 5, pp. 317–326*.
+**[hamrick1980] Kathy B. Hamrick (1996)** — *The History of the Hand-Held Electronic Calculator*. *The American Mathematical Monthly, Vol. 103, No. 8, pp. 633–639*.
 > **Annotation:** Traces the historical evolution of Polish notation from abstract Warsaw mathematical logic to Corvallis handheld scientific computing.  
 > **Cited in Chapters:** [App B](sc6/appendix-b-teacher-lesson-plans.md), [App C](sc6/appendix-c-formulas-and-conversions.md)
 
@@ -6116,14 +6116,12 @@ To explore the history and beauty of everyday math, look for **Steven Strogatz's
 ### C.5.5 Complete BibTeX Catalog (StackCalc SC-6 Elementary)
 
 ```bibtex
-@article{lukasiewicz1924,
+@book{lukasiewicz1924,
   author    = {Łukasiewicz, Jan},
-  title     = {Oznaczenie bez nawiasów (Parenthesis-Free Notation)},
-  journal   = {Komunikaty Polskiego Towarzystwa Matematycznego},
-  volume    = {1},
-  pages     = {1--6},
-  year      = {1924},
-  note      = {Introduces parenthesis-free prefix and postfix notation, demonstrating that operator position alone uniquely determines evaluation order without grouping symbols.}
+  title     = {Elementy logiki matematycznej (Elements of Mathematical Logic; parenthesis-free notation devised 1924)},
+  publisher = {Komisja Wydawnicza Koła Matematyczno-Fizycznego Słuchaczów Uniwersytetu Warszawskiego (Warsaw; English trans. Pergamon Press, 1963)},
+  year      = {1929},
+  note      = {Introduces parenthesis-free prefix and postfix notation (devised in 1924 and published in his 1929 Warsaw logic treatise), demonstrating that operator position alone uniquely determines evaluation order without grouping symbols.}
 }
 
 @article{burks1954,
@@ -6139,12 +6137,12 @@ To explore the history and beauty of everyday math, look for **Steven Strogatz's
 
 @article{hamrick1980,
   author    = {Hamrick, Kathy B.},
-  title     = {The History of Reverse Polish Notation},
-  journal   = {The Two-Year College Mathematics Journal},
-  volume    = {11},
-  number    = {5},
-  pages     = {317--326},
-  year      = {1980},
+  title     = {The History of the Hand-Held Electronic Calculator},
+  journal   = {The American Mathematical Monthly},
+  volume    = {103},
+  number    = {8},
+  pages     = {633--639},
+  year      = {1996},
   note      = {Traces the historical evolution of Polish notation from abstract Warsaw mathematical logic to Corvallis handheld scientific computing.}
 }
 
@@ -6323,7 +6321,7 @@ To explore the history and beauty of everyday math, look for **Steven Strogatz's
 }
 
 @article{falkner1999,
-  author = {Karen P. Falkner, Thomas P. Carpenter & Elizabeth Fennema},
+  author = {Karen P. Falkner and Thomas P. Carpenter and Elizabeth Fennema},
   title = {Children's Understanding of Equality: A Foundation for Algebra},
   year = {1999},
   journal = {Teaching Children Mathematics},
@@ -6359,7 +6357,7 @@ To explore the history and beauty of everyday math, look for **Steven Strogatz's
 }
 
 @article{gilbert2006,
-  author = {Caroline Gilbert, Graham Robertson, Yvon Le Maho, Yasuhiko Naito & André Ancel},
+  author = {Caroline Gilbert and Graham Robertson and Yvon Le Maho and Yasuhiko Naito and André Ancel},
   title = {Huddling behavior in emperor penguins: Dynamics of huddling},
   year = {2006},
   journal = {Physiology & Behavior},

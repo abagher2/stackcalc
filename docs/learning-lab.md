@@ -18,7 +18,7 @@ All manipulatives are built on the open-source **Gridfinity** modular standard w
 | **Ten-Frame Studio** | `{{keycap:▦}}` Ten-Frame key | Dual-color counters in 2×5 arrays and 8-bit register trays for place-value anchoring and base-10 decomposition. |
 | **Math Domino Studio** | Doubles facts / Part-part-whole | Precision dominoes in 12-frame debossed trays illustrating additive composition and associative grouping. |
 | **Place Value Studio** | `{{keycap:123}}` Place Value key | Proportional base-10 units, rods, flats, and thousands cubes matching register staging. |
-| **Algebra Studio & Factoring Stage** | `{{keycap:EQN}}` Equation solver | Quadratic factoring frames and area tiles ($x^2$, $x$, $1$) for tactile polynomial expansion and binomial root solving. |
+| **Algebra Studio & Factoring Stage** | `{{keycap:POLY}}` Polynomial solver | Quadratic factoring frames and area tiles ($x^2$, $x$, $1$) for tactile polynomial expansion and binomial root solving. |
 | **Classroom Planetary Clock** | `{{keycap:CLK}}` Time key | Geared mechanical gear train with visible epicyclic movement linking 60-minute cycles directly to fractional hours. |
 | **Unit Circle Trig Volvelle** | `{{keycap:SIN}}`, `{{keycap:COS}}`, `{{keycap:RAD}}`, `{{keycap:π}}` keys | Dual-rotor rotating dial showing exact radian-degree equivalents, coordinates, and exact radical ratios. |
 | **Probability Dice & Spinner** | `{{keycap:Σ+}}`, `{{keycap:x̄}}` Statistics keys | Weighted dice sets and calibrated spinner for empirical frequency logging and real-time mean/standard deviation. |
@@ -40,11 +40,11 @@ All classroom curriculum, teacher guides, student proficiency trials, and 3D pri
 
 | Literature & Print Files | Description | Format |
 | :--- | :--- | :--- |
-| **Big Ideas Middle School Supplement (45 Sections)** | 91-page Two-Method Student Workbook (90 Practice A & B worksheets, 900 problems, 90 two-method worked examples, step-by-step block instructions) + 10-page Teacher Coach Guide. | [Student Workbook (91p PDF)](downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf) · [Coach Guide (10p PDF)](downloads/worksheets/bigideas_middle_school_sc6_teacher_coach_guide.pdf) |
-| **12-Unit Teacher Curriculum Guide** | Full 12-unit instructional syllabus with standards alignment, lesson plans, and step-by-step keystroke transcripts. | [Letter PDF](downloads/stackcalc-curriculum-guide-letter.pdf) · [A4 PDF](downloads/stackcalc-curriculum-guide-a4.pdf) |
-| **Student Timed Proficiency Trials** | 12 student assessment challenges with scoring rubrics and time-gate benchmarks. | [Letter PDF](downloads/stackcalc-student-proficiency-trials.pdf) · [A4 PDF](downloads/student-proficiency-trials-a4.pdf) |
-| **Teacher Booklet & Lab Sheets** | Classroom investigation cards, reproducible lab exercises, and diagnostic guides. | [Letter PDF](downloads/teacher-booklet-letter.pdf) · [A4 PDF](downloads/teacher-booklet-a4.pdf) |
-| **Hardware Reference Cards** | Desk cards summarizing RPN stack operations, Quest Scoreboard +10/+20 scoring, trigonometry volvelle reading, and fraction conversions. | [Letter PDF](downloads/reference-cards-letter.pdf) · [A4 PDF](downloads/reference-cards-a4.pdf) |
+| **Book 1: Unified Master Teacher's Guide** | 50-page K–12 teacher guide organized by mathematical concept, including Middle School coaching & 900 keys, plus **12 Separate Printable 4-Page Unit PDFs**. | [Letter PDF](downloads/stackcalc-curriculum-guide-letter.pdf) · [Print Units 01–12](curriculum/teacher-guide.md#print-individual-curriculum-units-units-0112-separate-pdfs) |
+| **Book 2: K–12 Student Hands-On Math Lab Workbook** | 29-page student exploration workbook for Units 01–12 with Guided Stack Walkthroughs, 48 Lab Investigations, and Student Self-Check Answer Key. | [Letter PDF](downloads/stackcalc-student-lab-workbook-letter.pdf) |
+| **Book 3: Big Ideas Middle School Supplement (45 Sections)** | 114-page Two-Method Student Workbook (10 Chapter Openers, 90 Practice A & B worksheets, 900 problems, Student Self-Check Key) + **10 Separate Printable Chapter PDFs**. | [Full Workbook (114p PDF)](downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf) · [Print Chapters 1–10](curriculum/big-ideas-middle-school-sc6-workbook.md#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers) |
+| **Book 4: Student Speed & Proficiency Trials** | 21-page timed RPN speed sprint workbook (15 Sprints + Self-Check Answer Keys + Speed Tactics). | [Letter PDF](downloads/stackcalc-student-proficiency-trials.pdf) |
+| **Hardware Reference Cards** | Desk cards summarizing RPN stack operations, Quest Scoreboard +10/+20 scoring, trigonometry volvelle reading, and fraction conversions. | [Letter PDF](downloads/reference-cards-letter.pdf) |
 | **Printable STL / 3MF Models** | Complete 3D manufacturing files for all manipulative kits on Printables with calibrated Bambu Lab and Prusa print profiles. | [Printables Hub ↗](https://www.printables.com/@StackCalc_5593834) · [Makerspace Kits Guide](printables.md) |
 
 Read the related documentation and lesson guides:

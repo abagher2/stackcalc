@@ -193,7 +193,7 @@ hide:
           <div class="text-sm font-semibold text-slate-300 mt-1">Hands-On Math &amp; the SC-6 Stack Calculator</div>
           <div class="te-price-headline" style="margin-top: 0.5rem;">
             <span class="te-price-main">$16.00</span>
-            <span class="te-price-note">✓ Available on Amazon Prime &amp; Etsy</span>
+            <span class="te-price-note">✓ Print Book on Amazon Prime &bull; Spiral Workbooks on Lulu</span>
           </div>
           <p class="te-card-desc" style="font-size: 0.92rem; margin-top: 0.75rem;">
             The student handbook, parent guide, and classroom companion connecting 3D-printed math blocks with the 4-level number stack ($X, Y, Z, T$). 9 illustrated chapters, 25 complete teacher lesson plans, and engine-verified stack traces.
@@ -202,7 +202,7 @@ hide:
         <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem;">
           <a href="sc6-book/" class="te-btn-primary">Book Overview &amp; TOC &rarr;</a>
           <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">Order on Amazon ($16) ↗</a>
-          <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #f1641e; color: #f1641e; font-weight: 700;">Order on Etsy ($16) ↗</a>
+          <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #0284C7; color: #38BDF8; font-weight: 700;">Spiral Workbooks on Lulu ↗</a>
           <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #38BDF8; color: #38BDF8; font-weight: 700;">Slant 3D Manipulatives ↗</a>
         </div>
       </div>
@@ -1117,7 +1117,7 @@ hide:
           <div class="text-sm font-semibold text-slate-300 mt-1">Hands-On Math &amp; the SC-6 Stack Calculator</div>
           <div class="te-price-headline" style="margin-top: 0.5rem;">
             <span class="te-price-main">$16.00</span>
-            <span class="te-price-note">✓ Available on Amazon Prime &amp; Etsy</span>
+            <span class="te-price-note">✓ Print Book on Amazon Prime &bull; Spiral Workbooks on Lulu</span>
           </div>
           <p class="te-card-desc" style="font-size: 0.92rem; margin-top: 0.75rem;">
             The student handbook, parent guide, and classroom companion connecting 3D-printed math blocks with the 4-level number stack ($X, Y, Z, T$). 9 illustrated chapters, 25 complete teacher lesson plans, and engine-verified stack traces.
@@ -1126,7 +1126,7 @@ hide:
         <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem;">
           <a href="sc6-book/" class="te-btn-primary">Book Overview &amp; TOC &rarr;</a>
           <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">Order on Amazon ($16) ↗</a>
-          <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #f1641e; color: #f1641e; font-weight: 700;">Order on Etsy ($16) ↗</a>
+          <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #0284C7; color: #38BDF8; font-weight: 700;">Spiral Workbooks on Lulu ↗</a>
           <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #38BDF8; color: #38BDF8; font-weight: 700;">Slant 3D Manipulatives ↗</a>
         </div>
       </div>

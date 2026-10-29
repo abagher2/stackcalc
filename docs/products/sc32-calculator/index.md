@@ -1191,8 +1191,8 @@ FORCE (g)
         <a href="../../manuals/#sc-32-scientific" class="px-4 py-2.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-mono text-xs font-bold transition text-center whitespace-nowrap">
           Preview &amp; Table of Contents &rarr;
         </a>
-        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition text-center shadow-md whitespace-nowrap">
-          Order Spiral Manual ($16) ↗
+        <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition text-center shadow-md whitespace-nowrap">
+          Order Spiral Manual on Lulu ↗
         </a>
       </div>
     </div>

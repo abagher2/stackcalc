@@ -32,15 +32,16 @@ Rather than treating mobile math as another flat, soulless grid of glass—or hi
 
 ---
 
-## 2. The Design Philosophy: Bridging Classroom Intuition and Engineering Precision
+## 2. The Founding Story & Vision: A Kid-Friendly Calculator That Grows With Them
 
-Traditional math tools force learners through three disconnected worlds: children begin with physical classroom blocks, transition to algebraic school calculators cluttered with nested parentheses and syntax errors, and only encounter clean stack-based computation (Reverse Polish Notation) in university or professional engineering—often on discontinued vintage hardware like the **HP-32SII** or \$250+ boutique collectors' calculators.
+Traditional math tools force learners through three disconnected worlds: children begin with physical classroom blocks, transition to algebraic school calculators cluttered with nested parentheses and syntax errors, and only encounter clean stack-based computation (Reverse Polish Notation) in university or professional engineering—often on discontinued vintage hardware like the **HP-32SII** (fetching \$200+ on eBay with aging switches) or **\$250+ boutique collectors' calculators** (such as the SwissMicros DM42/C47, DM32, DM41CC, or DM15CC).
 
-**StackCalc was created to unify that journey in a single, accessible instrument:**
+After training our own children on a DM41CC—proving that kids master RPN effortlessly when freed from parenthesis soup—we realized two things: first, **on a stack-based postfix calculator, users learn `operator-precedence parsing` themselves** in order to decompose and enter expressions onto the visible stack—building real structural understanding and appreciating the lessons learned in the past 50 years of computing so they can build the next 50 years. Second, no parent wants a child carrying a \$250 collector's instrument or a fragile \$200 eBay antique to school every day. **StackCalc was created to deliver a durable, kid-friendly RPN ecosystem—launching our initial small-batch maker hardware at \$89.99 while engineering our volume manufacturing roadmap toward a \$29.99 classroom target:**
 
-* **End Parenthesis Anxiety:** By keeping active numbers visible on a clean vertical stack, users operate on numbers in the exact order they think—eliminating bracket mismatches and hidden state.
-* **Connect Physical and Digital Learning:** Elementary students see numbers transform directly into visual models on screen alongside free, open-source 3D-printable classroom blocks, building spatial number sense before graduating to full scientific and calculus workflows.
-* **Built for Everyday Use & Exam Integrity:** Free of programming modes, CAS engines, QWERTY keyboards, ads, or subscriptions—delivering pure, distraction-free mathematical utility across iPhone, iPad, and Apple Watch.
+* **Why the HP-32SII Architecture Over the HP-15C or HP-42S:** Rather than burying everyday operations inside deep hierarchical softkey menus (like the HP-42S) or requiring memorized numeric matrix/label codes on a landscape chassis (like the HP-15C), StackCalc builds on the HP-32SII's ergonomic sweet spot—keeping essential scientific operations directly accessible on the keys while using a clean 1-line context bar for `CLEAR`, `STAT`, `SOLVE`, and `INTG`.
+* **Not an Emulator—A Clean-Room Engine with Modern Upgrades:** Written from scratch in Swift (`RPNCore`) rather than wrapping vintage ROM dumps, `StackCalc 32` adds **Harmonic Mean (`H.M.`)**, **Time Value of Money (`TVM`)**, a **Quadratic & Cubic Polynomial Root Solver (`POLY`)**, and **interactive curve plotting (`PLOT`)**, while `StackCalc 6` covers Common Core math up through 6th grade with **step-by-step prime-factor fraction simplification (`[SIMP]`)**, **integer division with remainder (`÷R`)**, **`[PRIME]`**, **`[GCD]`**, and **`[LCM]`**.
+* **Even in the Age of AI, Students Need Mathematical Intuition:** Handing a student a black-box LLM or an infix calculator that hides intermediate steps behind `=` undermines number sense. StackCalc pairs a visible operational stack with physical 3D-printed blocks (**84mm Fraction Studio Towers** and **Logarithmic Prime Factor Slide Rules**) and unit-test-verified workbooks from 1st grade (`StackCalc 6`) through AP Calculus (`StackCalc 32`).
+* **Designed to Be Allowed in Testing Situations (No CAS Ban):** Because CAS (Computer Algebra System) calculators are banned on the SAT, ACT, IB, UIL, NCEES FE/PE engineering exams, and most university math exams, StackCalc is purposefully designed for exam integrity—free of CAS symbolic engines, QWERTY keyboards, wireless transceivers, ads, or subscriptions.
 
 ---
 
@@ -55,10 +56,10 @@ StackCalc is a single universal app that adapts to the user's stage of learning 
 Designed for engineers, scientists, AP students, and anyone who values speed and transparency over black-box answers:
 
 * **Zero Parentheses, Visible 4-Level Stack (`X, Y, Z, T`):** Enter numbers, tap operations, and watch intermediate results stay visible at every step. You never lose your place or battle syntax errors.
-* **Exact Mixed Fractions (`SIMP`):** Natural mixed-fraction entry and display (e.g., `2 1/8`) with dedicated step-by-step prime factor reduction so students and builders see *how* fractions simplify.
-* **Multi-Variable Equation Solver & Calculus:** Store custom formulas, solve numerically for any unknown variable, and evaluate definite integrals using Simpson convergence.
+* **Exact Mixed Fractions (`a b/c`):** Rapid dot-separated fraction entry (e.g., `.1.2` for $\frac{1}{2}$ or `2.1.8` for $2\frac{1}{8}$) and exact rational arithmetic (`FDISP`) without floating-point rounding drift.
+* **Multi-Variable Equation Solver, TVM & Polynomials:** Store custom formulas, solve numerically for any unknown variable, run 5-variable **Time Value of Money (`TVM`)** and **Quadratic/Cubic Polynomial (`POLY`)** solvers, and evaluate definite integrals using Simpson convergence.
 * **Interactive Curve Plotting:** High-contrast graphing canvas with real-time root inspection, inflection tracing, and shaded area-under-the-curve integration.
-* **STEM & Computer Science Toolkit:** Complex numbers, 2-variable statistical regressions, and Base-N programmer modes (`HEX`, `DEC`, `OCT`, `BIN`).
+* **STEM & Computer Science Toolkit:** Complex numbers, 2-variable statistical regressions (including **Harmonic Mean `H.M.`**), and Base-N programmer modes (`HEX`, `DEC`, `OCT`, `BIN`).
 
 #### 60fps App Preview Walkthroughs (Normal Distribution Integration & Z-Score)
 
@@ -83,8 +84,9 @@ Designed for engineers, scientists, AP students, and anyone who values speed and
 
 ![StackCalc 6 Visual Learning Mode Hero](assets/press/sc6_product_page_header.png)
 
-In Version 1.1, switching into **Visual Learning Mode (`StackCalc 6`)** transforms the calculator into a distraction-free K–8 educational playground aligned with **Singapore Math (Concrete • Pictorial • Abstract)** and **Common Core**:
+In Version 1.1, switching into **Visual Learning Mode (`StackCalc 6`)** transforms the calculator into a distraction-free K–6 educational playground aligned with **Singapore Math (Concrete • Pictorial • Abstract)** and **Common Core**:
 
+* **Common Core K–6 Fractions & Number Theory (`[SIMP]`, `÷R`, `[PRIME]`, `[GCD]`, `[LCM]`):** Students enter fractions with rapid dot syntax (`.1.2 [ENTER] .1.3 [+]`) and press **`[SIMP]`** to step through fraction simplification **one prime divisor per key press** (`12/18` $\rightarrow \div 2 \rightarrow$ `6/9` $\rightarrow \div 3 \rightarrow$ `2/3`) rather than receiving a black-box reduced answer.
 * **Live Pictorial LCD Visualizations:** As students enter numbers and perform operations on a focused 2-level stack, the dot-matrix display dynamically renders quantities as:
   * **Ten-Frames (`10F`):** Subitizing and make-ten bridging strategies up to 100.
   * **20-Bead Number Rack (`RACK`):** Classic 5-and-5 Rekenrek bead grouping for doubles and near-doubles fluency.

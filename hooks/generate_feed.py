@@ -34,6 +34,9 @@ def on_post_build(config, **kwargs):
         except Exception:
             continue
 
+        if meta.get("draft"):
+            continue
+
         title = meta.get("title", md_file.stem)
         description = meta.get("description", "")
         date_val = meta.get("date")

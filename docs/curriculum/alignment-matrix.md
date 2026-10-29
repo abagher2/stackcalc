@@ -43,7 +43,7 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 | **09** | **Discrete Probability & Statistics** | Grades 7 – 9 | Probability Dice & Modular Spinner | `{{keycap:🎲}}`, `{{key:Σ+}}`, `{{key:x̄}}`, `{{key:s,σ}}` Accumulators | **SC-6 Manual, Ch. 7** & **SC-32 Manual, Ch. 9** | CCSS.MATH.7.SP.C.5, 7.SP.C.7 |
 | **10** | **Trigonometric Coordinates & Radians** | Grades 11 – 12 | Precision Acrylic Trig Volvelle | `{{key:SIN}}`, `{{key:COS}}`, `{{key:RAD}}`, `{{key:▸θ,r}}` | **SC-32 Manual, Ch. 4** & **SC-32 Manual, Ch. 5** | CCSS.MATH.HSF.TF.A.1, HSF.TF.A.2 |
 | **11** | **Parenthesis-Free Multi-Step Math** | Grades 5 – 8 | SC-6 & SC-32 4-Line Hardware LCD Stack | 4-Line Live Registers ($X, Y, Z, T$) & `{{key:LASTX}}` | **SC-6 Manual, Ch. 2** & **SC-32 Manual, Ch. 2** | CCSS.MATH.5.OA.A.1, 6.EE.A.2 |
-| **12** | **Gamified Multi-Method Mastery (`QUEST-01`)** | Grades 4 – 8 | [SC-6 Quest Scoreboard & `+10` Token Kit](../products/quest-scoreboard/index.md) | `{{key:QUIZ}}` (`[↰] [C]` / `?`) Tutorial Mode (`+10` / `+20` pts) | **[46-Page Big Ideas Supplement](big-ideas-middle-school-sc6-workbook.md)** & **10-Page Coach's Guide** | CCSS.MATH.PRACTICE.MP1, MP3, MP5 |
+| **12** | **Gamified Multi-Method Mastery (`QUEST-01`)** | Grades 4 – 8 | [SC-6 Quest Scoreboard & `+10` Token Kit](../products/quest-scoreboard/index.md) | `{{key:QUIZ}}` (`[↰] [C]` / `?`) Tutorial Mode (`+10` / `+20` pts) | **[102-Page Big Ideas Supplement & 10 Chapter PDFs](big-ideas-middle-school-sc6-workbook.md)** & **10-Page Coach's Guide** | CCSS.MATH.PRACTICE.MP1, MP3, MP5 |
 
 ---
 
@@ -91,8 +91,8 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 
 ### 2.3 Big Ideas Math (Larson &amp; Boswell) {: #big-ideas-math }
 
-> [!TIP] **Complete 45-Section Middle School Practice Supplement &amp; `QUEST-01` Scoreboard:**  
-> For section-by-section coverage of **Big Ideas Math Units 1–10 (Sections 1.1–10.4)**—complete with 1 worked example per section, step-by-step physical block kit instructions, open workspace for 450 practice problems, the **10-Page Chapter Coach's Guide**, and the 2-piece **[SC-6 Quest Scoreboard & `+10` Token Kit (`QUEST-01`)](../products/quest-scoreboard/index.md)**—visit the **[Big Ideas 45-Section SC-6 Practice Supplement &rarr;](big-ideas-middle-school-sc6-workbook.md)**.
+> [!TIP] **Complete 45-Section Middle School Practice Supplement (102 Pages • 900 Problems), 10 Printable Chapter PDFs &amp; `QUEST-01` Scoreboard:**  
+> For section-by-section coverage of **Big Ideas Math Units 1–10 (Sections 1.1–10.4)**—complete with 10 Chapter Story Openers, 90 Practice A &amp; B worksheets, Two-Method Worked Examples, step-by-step physical block kit instructions, open workspace for 900 practice problems, **10 Separate Printable Chapter PDFs (`Unit 1`–`Unit 10`)**, the **10-Page Chapter Coach's Guide**, and the 2-piece **[SC-6 Quest Scoreboard & `+10` Token Kit (`QUEST-01`)](../products/quest-scoreboard/index.md)**—visit the **[Big Ideas 45-Section SC-6 Practice Supplement &rarr;](big-ideas-middle-school-sc6-workbook.md)**.
 
 <div class="te-table-wrapper">
 | Big Ideas Grade &amp; Book | Chapter / Topic | StackCalc Manipulative | Exploratory Activity, Keystroke Flow &amp; Book Chapter |
@@ -103,7 +103,7 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 | **Grade 3** | Chapter 2: Multiplication Concepts | Counting Tiles (144-Tile Studio) | Exploration: "Four-Quadrant Array Area Models". Build 12x12 grid, evaluate `12 {{key:ENTER}} 12 {{key:×}} = 144` (**SC-6 Manual, Ch. 4**). |
 | **Grade 3** | Chapter 12: Time and Measurement | Clock &amp; Interval Timer | Exploration: "Elapsed Time on a Clock". Rotate bezel to measure elapsed minutes, verify with `{{keycap:🕒}}` (**SC-6 Manual, Ch. 9**). |
 | **Grade 4** | Chapter 7: Understand Fractions | Fraction Studio Towers | Exploration: "Decomposing Fractions". Match three 1/8 blocks to 3/8, verify with `3 {{key:.}} 8` (**SC-6 Manual, Ch. 5**). |
-| **Grades 5–7 (Units 1–10)** | Sections 1.1–10.4 (45 Sections) | `QUEST-01` Scoreboard + All 9 Block Kits | **46-Page Student Practice Supplement** &amp; **10-Page Coach's Guide**: `+10` (1st Way) / `+20` (2nd Way) token scoring &amp; `{{key:QUIZ}}` (`?`) Tutorial Mode (**[View Supplement &rarr;](big-ideas-middle-school-sc6-workbook.md)**). |
+| **Grades 5–7 (Units 1–10)** | Sections 1.1–10.4 (45 Sections) | `QUEST-01` Scoreboard + All 9 Block Kits | **102-Page Student Practice Supplement**, **10 Separate Printable Chapter PDFs** &amp; **10-Page Coach's Guide**: `+10` (1st Way) / `+20` (2nd Way) token scoring &amp; `{{key:QUIZ}}` (`?`) Tutorial Mode (**[View Supplement &amp; Chapter PDFs &rarr;](big-ideas-middle-school-sc6-workbook.md)**). |
 | **Grade 6** | Chapter 1: Numerical Expressions &amp; Factors | Prime Factor Studio | Exploration: "Prime Factor Trees &amp; Factor Sockets". Stack factor blocks in towers, verify with `{{key:FACT}}` (**SC-6 Manual, Ch. 7**). |
 | **Grade 6** | Chapter 3: Algebraic Expressions | SC-32 4-Line Hardware LCD Stack | Exploration: "Parentheses-Free Operations". Evaluate multi-step arithmetic via RPN stack (**SC-32 Manual, Ch. 2**). |
 | **Algebra 1** | Chapter 7: Polynomials &amp; Factoring | Algebra Studio &amp; Factoring Stage | Exploration: "Area Models for Quadratic Factoring". Form rectangle with $x^2 + 5x + 6$, solve roots with `{{key:POLY}}` / `{{key:SOLVE}}` (**SC-32 Manual, Ch. 7**). |
@@ -135,6 +135,9 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 Explore our spiral-bound reference handbooks ($16 print editions) and download our complete open-source classroom teacher guides and student station materials:
 
 * **[Explore Official Reference Books & Manuals ($16 Spiral Editions) &rarr;](../manuals/index.md)**
-* **[Download Complete Teacher Curriculum Guide (Letter PDF) &rarr;](../downloads/stackcalc-curriculum-guide-letter.pdf)**
-* **[Download Complete Teacher Curriculum Guide (A4 PDF) &rarr;](../downloads/stackcalc-curriculum-guide-a4.pdf)**
-* **[Download Student Proficiency Trials Book (Letter PDF) &rarr;](../downloads/stackcalc-student-proficiency-trials.pdf)**
+* **[Download Book 1: Unified Master Teacher's Guide by Concept (50-Page Letter PDF) &rarr;](../downloads/stackcalc-curriculum-guide-letter.pdf)**
+* **[Download Book 2: K–12 Hands-On Math Lab Student Workbook (29-Page Letter PDF) &rarr;](../downloads/stackcalc-student-lab-workbook-letter.pdf)**
+* **[Download Book 3: Big Ideas Middle School Student Workbook (114-Page Letter PDF) &rarr;](../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf)**
+* **[Download Book 4: Student Speed & Proficiency Trials Workbook (21-Page Letter PDF) &rarr;](../downloads/stackcalc-student-proficiency-trials.pdf)**
+* **[Print Individual Teacher Curriculum Units (Units 01–12 Separate 4-Page PDFs) &rarr;](teacher-guide.md#print-individual-curriculum-units-units-0112-separate-pdfs)**
+* **[Print Individual Big Ideas Middle School Chapters (Units 1–10 Separate PDFs) &rarr;](big-ideas-middle-school-sc6-workbook.md#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers)**

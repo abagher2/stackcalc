@@ -52,7 +52,7 @@ Free downloadable teaching guides, pre-generated station companions, competition
     <div style="max-width: 680px;">
       <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #10B981; text-transform: uppercase;">// 1-CLICK DISTRICT &amp; EDUCATOR BUNDLE &bull; 9 ARCHIVES</span>
       <h3 style="margin: 0.25rem 0; font-size: 1.25rem; font-weight: 800; color: #FFFFFF;">Teacher Evaluation Kit &amp; District Requisition Packet (.ZIP)</h3>
-      <p style="margin: 0; font-size: 0.85rem; color: #CBD5E1; line-height: 1.45;">Everything required to evaluate StackCalc for school districts, math teams, or classroom pilots: includes the <strong>District PO Order Requisition Form (Net-30)</strong>, <strong>IRS Form W-9 Vendor Onboarding SLA</strong>, 34-page Teacher Facilitator Guide, sample CPA math labs, 3 textbook station guides (Singapore, Bridges, Big Ideas), and a full Texas UIL tournament sprint test with scoring keys.</p>
+      <p style="margin: 0; font-size: 0.85rem; color: #CBD5E1; line-height: 1.45;">Everything required to evaluate StackCalc for school districts, math teams, or classroom pilots: includes the <strong>District PO Order Requisition Form (Net-30)</strong>, <strong>IRS Form W-9 Vendor Onboarding SLA</strong>, 41-page Teacher Facilitator Guide, sample CPA math labs, 3 textbook station guides (Singapore, Bridges, Big Ideas), and a full Texas UIL tournament sprint test with scoring keys.</p>
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.5rem; min-width: 220px;">
       <a href="stackcalc-teacher-evaluation-kit.zip" download style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.25rem; border-radius: 6px; background-color: #10B981; color: #022C22; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 800; text-decoration: none; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);">
@@ -91,32 +91,35 @@ Free downloadable teaching guides, pre-generated station companions, competition
 
   <div style="background: #11141A; border: 1px solid rgba(255, 191, 0, 0.2); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #FFBF00; font-weight: 700;">SPIRAL WORKBOOK &bull; 43 PAGES</span>
-      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Curriculum Guide &amp; Math Labs</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Complete 43-page classroom manual with 20 hands-on STEM investigations, Singapore/Bridges/Big Ideas pacing tables, and teacher diagnostic keys.</p>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #FFBF00; font-weight: 700;">SPIRAL BOOKS 1 &amp; 2 &bull; TEACHER GUIDE + STUDENT LAB</span>
+      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Master Teacher Guide &amp; K–12 Student Lab Workbook</h3>
+      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Book 1: 50-page Unified Master Teacher's Guide by Concept. Book 2: 29-page K–12 Hands-On Math Lab Student Workbook (with Self-Check Answer Key), plus 12 standalone 4-page Unit Packets.</p>
     </div>
-    <div style="display: flex; gap: 0.5rem;">
-      <a href="stackcalc-curriculum-guide-letter.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>Letter &darr;</span>
+    <div style="display: flex; gap: 0.4rem;">
+      <a href="stackcalc-curriculum-guide-letter.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>Book 1 Teacher (50p) &darr;</span>
       </a>
-      <a href="stackcalc-curriculum-guide-a4.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>A4 &darr;</span>
+      <a href="stackcalc-student-lab-workbook-letter.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>Book 2 Student (29p) &darr;</span>
+      </a>
+      <a href="../curriculum/teacher-guide/#print-individual-curriculum-units-units-0112-separate-pdfs" style="flex: 0.9; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>12 Units &rarr;</span>
       </a>
     </div>
   </div>
 
   <div style="background: #11141A; border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #10B981; font-weight: 700;">SPEED TRIALS &bull; 18 PAGES</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #10B981; font-weight: 700;">SPIRAL BOOK 4 &bull; 21 PAGES (US LETTER)</span>
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Student Proficiency Time Trials</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">18-page timed sprint booklet modeled on UIL speed rounds with maximum stack depth constraints and scoring rubrics.</p>
+      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">21-page spiral timed sprint workbook (15 Sprints + Self-Check Answer Keys + RPN Speed Tactics &amp; Certificate) modeled on UIL speed rounds.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
       <a href="stackcalc-student-proficiency-trials.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>Letter &darr;</span>
+        <span>Book 4 Speed Trials (21p Letter) &darr;</span>
       </a>
-      <a href="student-proficiency-trials-a4.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>A4 &darr;</span>
+      <a href="stackcalc-proficiency-trials-lulu-cover.pdf" download style="flex: 0.8; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>Lulu Cover &darr;</span>
       </a>
     </div>
   </div>
@@ -166,16 +169,19 @@ Free downloadable teaching guides, pre-generated station companions, competition
 
   <div style="background: #11141A; border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700;">BIG IDEAS SUPPLEMENT &bull; 91P + 10P</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700;">BIG IDEAS SUPPLEMENT &bull; 108P + 10 CHAPTER PDFS</span>
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Big Ideas Middle School Workbook &amp; Coach's Guide</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">91-page Two-Method Student Practice Workbook (90 Practice A &amp; B worksheets, 900 problems across 45 sections with step-by-step block instructions) + 10-page Teacher Coach Guide.</p>
+      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">108-page Spiral Two-Method Student Practice Workbook (pp. i–ii + 1–106 + 4 Appendices), 10 separate printable Chapter PDFs, + 14-page Spiral Coach Guide.</p>
     </div>
-    <div style="display: flex; gap: 0.5rem;">
-      <a href="worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>Workbook (91p) &darr;</span>
+    <div style="display: flex; gap: 0.4rem;">
+      <a href="worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>Full (108p) &darr;</span>
       </a>
-      <a href="worksheets/bigideas_middle_school_sc6_teacher_coach_guide.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>Coach Guide (10p) &darr;</span>
+      <a href="worksheets/bigideas_middle_school_sc6_teacher_coach_guide.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>Coach (14p) &darr;</span>
+      </a>
+      <a href="../curriculum/big-ideas-middle-school-sc6-workbook/#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers" style="flex: 1.2; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>10 Ch. PDFs &rarr;</span>
       </a>
     </div>
   </div>
@@ -193,23 +199,34 @@ Free downloadable teaching guides, pre-generated station companions, competition
 
 </div>
 
+### Print Individual Chapters, Units &amp; Lulu Coil-Bound Cover PDFs
+
+To make home, classroom, and print-shop binding effortless, every unit of the **Big Ideas Math Middle School SC-6 Supplement (Units 1–10)** and the **K–12 Teacher Curriculum Guide (Units 01–12)** is pre-compiled as a standalone PDF packet, and our **Lulu Coil-Bound Front &amp; Back Covers (`8.5" × 11"` + `0.125"` bleed)** are available below:
+
+* **Big Ideas Middle School Chapter PDFs (Units 1–10, 10–12 pp. each):** [Unit 1: Numerical Expressions](downloads/worksheets/bigideas_middle_school_sc6_unit_01.pdf) &bull; [Unit 2: Fractions & Decimals](downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf) &bull; [Unit 3: Ratios & Rates](downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf) &bull; [Unit 4: Percents](downloads/worksheets/bigideas_middle_school_sc6_unit_04.pdf) &bull; [Unit 5: Algebraic Expressions](downloads/worksheets/bigideas_middle_school_sc6_unit_05.pdf) &bull; [Unit 6: Equations](downloads/worksheets/bigideas_middle_school_sc6_unit_06.pdf) &bull; [Unit 7: Area, Surface Area & Volume](downloads/worksheets/bigideas_middle_school_sc6_unit_07.pdf) &bull; [Unit 8: Integers & Coordinate Plane](downloads/worksheets/bigideas_middle_school_sc6_unit_08.pdf) &bull; [Unit 9: Statistical Measures](downloads/worksheets/bigideas_middle_school_sc6_unit_09.pdf) &bull; [Unit 10: Data Displays](downloads/worksheets/bigideas_middle_school_sc6_unit_10.pdf)
+* **K–12 Teacher Curriculum Unit PDFs (Units 01–12, 4 pp. each):** [Unit 01: Ten-Frames](downloads/curriculum_units/stackcalc_curriculum_unit_01.pdf) &bull; [Unit 02: Number Bonds](downloads/curriculum_units/stackcalc_curriculum_unit_02.pdf) &bull; [Unit 03: Number Rack](downloads/curriculum_units/stackcalc_curriculum_unit_03.pdf) &bull; [Unit 04: Counting & Arrays](downloads/curriculum_units/stackcalc_curriculum_unit_04.pdf) &bull; [Unit 05: Place Value](downloads/curriculum_units/stackcalc_curriculum_unit_05.pdf) &bull; [Unit 06: 84mm Fractions](downloads/curriculum_units/stackcalc_curriculum_unit_06.pdf) &bull; [Unit 07: Expression Trees](downloads/curriculum_units/stackcalc_curriculum_unit_07.pdf) &bull; [Unit 08: Algebra Factoring](downloads/curriculum_units/stackcalc_curriculum_unit_08.pdf) &bull; [Unit 09: Modulo-60 Clock](downloads/curriculum_units/stackcalc_curriculum_unit_09.pdf) &bull; [Unit 10: Probability Studio](downloads/curriculum_units/stackcalc_curriculum_unit_10.pdf) &bull; [Unit 11: Trig Volvelle](downloads/curriculum_units/stackcalc_curriculum_unit_11.pdf) &bull; [Unit 12: Calculus Integrals](downloads/curriculum_units/stackcalc_curriculum_unit_12.pdf)
+* **Lulu Coil-Bound Front &amp; Back Cover PDFs (`8.75" × 11.25"` with `0.125"` bleed &amp; `0.50"` coil-punch safety margin):** [Teacher Curriculum Guide Cover](downloads/stackcalc-curriculum-guide-lulu-cover.pdf) &bull; [Student Proficiency Trials Cover](downloads/stackcalc-proficiency-trials-lulu-cover.pdf) &bull; [Big Ideas Student Workbook Cover](downloads/worksheets/bigideas_middle_school_sc6_workbook_lulu_cover.pdf) &bull; [Big Ideas Coach Guide Cover](downloads/worksheets/bigideas_middle_school_sc6_coach_lulu_cover.pdf)
+
 ---
 
-## 2. Official Calculator Manuals &amp; Machine-Readable Specs (Print &amp; .JSON)
+## 2. Official Calculator Manuals, Spiral Workbooks &amp; Machine-Readable Specs (Print &amp; .JSON)
 
-Official spiral-bound bench reference manuals, structured JSON operational datasets, and view-only OpenAPI 3.1 specifications. Both manuals are published as **$16.00 coil-bound spiral print editions** engineered to lay 100% flat on laboratory desks.
+Official reference manuals, spiral-bound curriculum workbooks, structured JSON operational datasets, and view-only OpenAPI 3.1 specifications. Our flagship books are available in paperback and hardcover on **[Amazon ↗](https://link.amazon/B0f5cP0Ur)**, and our **coil-bound lay-flat spiral curriculum books &amp; workbooks** are published on **[Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc)**.
 
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
   <div>
-    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #F59E0B; text-transform: uppercase;">// SPIRAL-BOUND BENCH EDITIONS ($16.00)</span>
-    <p style="margin: 0.2rem 0 0 0; font-size: 0.8rem; color: #CBD5E1;">Tear-resistant 32lb synthetic stock, water-resistant laminated covers, and continuous lay-flat wire coil binding.</p>
+    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #F59E0B; text-transform: uppercase;">// SPIRAL CURRICULUM BOOKS ON LULU &amp; FLAGSHIP BOOKS ON AMAZON</span>
+    <p style="margin: 0.2rem 0 0 0; font-size: 0.8rem; color: #CBD5E1;">Order coil-bound lay-flat curriculum workbooks on Lulu Press or bookstore paperback/hardcover textbooks on Amazon.</p>
   </div>
   <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
     <a href="../manuals/" style="padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
       EXPLORE MANUALS HUB &rarr;
     </a>
-    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background: #F59E0B; color: #0F172A; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
-      ORDER SPIRAL MANUAL ($16) ↗
+    <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background: #0284C7; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
+      SPIRAL BOOKS ON LULU ↗
+    </a>
+    <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background: #F59E0B; color: #0F172A; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
+      PRINT BOOKS ON AMAZON ↗
     </a>
   </div>
 </div>
@@ -220,14 +237,14 @@ Official spiral-bound bench reference manuals, structured JSON operational datas
     <div>
       <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700;">OFFICIAL MANUAL &bull; SC-32</span>
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">SC-32 Scientific Reference Manual ($16)</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Complete operational reference: 4-stack XYZT, numerical solvers (SOLVE, ∫, POLY, TVM), vector plotting engine, and Texas UIL contest speed tactics. 370 pages, spiral-bound flat-lay bench edition.</p>
+      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Complete operational reference: 4-stack XYZT, numerical solvers (SOLVE, ∫, POLY, TVM), vector plotting engine, and Texas UIL contest speed tactics.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
       <a href="../manuals/#sc-32-scientific" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>PREVIEW &amp; TOC &rarr;</span>
       </a>
-      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>ORDER ($16) ↗</span>
+      <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>LULU SPIRAL ↗</span>
       </a>
     </div>
   </div>
@@ -236,14 +253,14 @@ Official spiral-bound bench reference manuals, structured JSON operational datas
     <div>
       <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #10B981; font-weight: 700;">OFFICIAL MANUAL &bull; SC-6</span>
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">SC-6 Elementary Companion ($16)</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Classroom and family companion: 4-stack XYZT secret, skip-counting [REP], [÷R] division remainders, concrete math block bridge, and math quiz engine. 387 pages, spiral-bound flat-lay bench edition.</p>
+      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Classroom and family companion: 4-stack XYZT secret, skip-counting [REP], [÷R] division remainders, concrete math block bridge, and math quiz engine.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
       <a href="../manuals/#sc-6-elementary" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>PREVIEW &amp; TOC &rarr;</span>
       </a>
-      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>ORDER ($16) ↗</span>
+      <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>AMAZON ($16) ↗</span>
       </a>
     </div>
   </div>
@@ -310,6 +327,7 @@ Instead of charging for digital STL downloads or maintaining large ZIP files, we
 
 For schools, teachers, or parents who don't have access to a 3D printer:
 - **Order On-Demand from Slant 3D:** Our official manufacturing partner produces matching replacement parts, individual block refills, and classroom sets on industrial additive manufacturing farms: [Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)
-- **Order Complete Boxed Kits on Etsy:** Handcrafted kits, spiral-bound reference manuals, and pre-soldered calculator kits ship within 48 hours: [Etsy Storefront (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
+- **Order Handcrafted 3D-Printed Manipulative & Hardware Kits on Etsy:** Handcrafted 3D-printed manipulative block kits and pre-soldered calculator hardware kits ship within 48 hours: [Etsy Storefront (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
+- **Order Spiral-Bound Curriculum Books on Lulu & Print Textbooks on Amazon:** Lay-flat coil-bound curriculum guides and workbooks are on [Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc), and flagship paperback/hardcover books are on [Amazon ↗](https://link.amazon/B0f5cP0Ur).
 - **Follow Hardware Build Logs on Hackaday:** For KiCad PCB schematics, RP2350 silicon bring-up, and engineering discussion: [Hackaday Project ↗](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)
 - **View Full Refill Instructions:** Read our dedicated [Replacement Parts & Refills Guide](parts.md).

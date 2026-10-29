@@ -58,11 +58,13 @@ We hold our documentation to a strict standard of engineering truthfulness:
 - [Log 07: Origami to Puzzle Stand](logs/log-07-origami-to-puzzle-stand.md) — From Folding Cardstock to Interlocking 3D Print
 - [Log 08: PCB Envelope & Fabrication](logs/log-08-pcb-envelope-and-fabrication.md) — How Routing Drove Enclosure Geometry
 - [Log 09: Notes from the PCBWay Assembly Floor](logs/log-09-pcbway-dfm-photos-and-jumper-fixes.md) — Header Pins, JST Pads & Tactile Switch Jumper Routing
-- [Log 10: Shipping StackCalc v1.1 (SC-32 & SC-6)](logs/log-10-shipping-stackcalc-v1-1-sc32-and-sc6.md) — Unifying Scientific & Visual Learning Modes on iOS & watchOS
-- [Log 11: Manufacturing the Math Blocks & Reference Books](logs/log-11-manufacturing-math-blocks-and-reference-books.md) — In-House + Slant3D Production & Unit-Tested Manuals
+- [Log 10: Shipping StackCalc v1.1 (SC-32 & SC-6)](logs/log-10-shipping-stackcalc-v1-1-sc32-and-sc6.md) — A Clean-Room RPN Calculator That Grows With Your Kid
+- [Log 11: 84mm Fraction Towers, Prime Blocks & Books](logs/log-11-manufacturing-math-blocks-and-reference-books.md) — Mathematical CAD Invariants, Dummy PCBs & Unit-Tested Manuals
+- [Log 12: Launch Day: First 5 Calculators & Ecosystem](logs/log-12-launch-day-first-five-calculators-and-ecosystem.md) — First 5 Units on the Bench & Synchronized Launch (Target: 11/10)
 - [Build Instructions](build-instructions.md) — Step-by-step mechanical assembly guide
 - [Project Files](files.md) — Approved downloadable STLs and teacher PDFs
 - [Launch Cadence & Community Asks](launch-cadence.md) — Publishing schedule and engineering questions
+- [Forum & Community Launch Playbook](forum-launch-playbook.md) — Copy-paste announcements for HP Museum, Show HN, Swift, KiCad, Raspberry Pi, Teacher Forums, and Printables (linked to individual blog posts)
 - [Board Arrival Protocol](board-arrival.md) — Gated bring-up checklist for PCB delivery
 
 ---
@@ -73,8 +75,9 @@ StackCalc is a comprehensive open-hardware, educational, and computational ecosy
 
 - 🌐 **Official Website & Interactive Docs:** [stackcalc.io](https://stackcalc.io) — Interactive web calculator, technical manuals, and curriculum pacing guides.
 - 🖨️ **Printables 3D Models Hub:** [printables.com/@StackCalc_5593834](https://www.printables.com/@StackCalc_5593834) — 100% free open-source STLs and pre-sliced 3MF plates for school makerspaces, teachers, and enthusiasts.
-- 🛒 **Etsy Storefront:** [stackcalcmath.etsy.com](https://stackcalcmath.etsy.com) — Handcrafted boxed manipulative sets, lay-flat coil-bound reference manuals, and pre-soldered hardware calculator kits.
+- 🛒 **Etsy Storefront:** [stackcalcmath.etsy.com](https://stackcalcmath.etsy.com) — Handcrafted 3D-printed boxed manipulative sets and pre-soldered hardware calculator kits.
+- 📘 **Lulu Press:** [lulu.com/spotlight/stackcalc](https://www.lulu.com/spotlight/stackcalc) — Lay-flat coil-bound curriculum guides, student workbooks, and coach manuals.
 - 🏭 **Slant 3D Manufacturing Portal:** [teleportpod.com/portals/profile/StackCalc](https://teleportpod.com/portals/profile/StackCalc) — Industrial on-demand 3D printing for single-piece replacement refills and classroom fleet sets.
-- 📖 **Companion Book on Amazon:** [*From Blocks to the Stack* (ASIN B0HPJN3KP9)](https://link.amazon/B0f5cP0Ur) — Illustrated K–8 popular math handbook and SC-6 student guide.
+- 📖 **Companion Books on Amazon:** [*From Blocks to the Stack* (ASIN B0HPJN3KP9)](https://link.amazon/B0f5cP0Ur) — Illustrated K–8 popular math handbook and SC-6 student guide.
 - 📱 **Apple App Store:** [StackCalc on the App Store](https://apps.apple.com/app/id6801788040) — Native iOS, iPadOS, and standalone watchOS RPN calculator apps.
 
