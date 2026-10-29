@@ -68,8 +68,8 @@ def draw_section_concept_diagram(
 
         p.line(mid_x - 1.0, y + 1.5, mid_x - 1.0, y + h - 1.5, color=LIGHT_BORDER, width=0.22, dashed=True)
 
-        # Right: COUNT-01 Physical Array (5 rows of 4 + 3 leftover tiles)
-        p.text(mid_x + 21.5, y + 3.1, "Block Array (COUNT-01): 5 Rows of 4 + 3", size=1.72, bold=True, color=TEAL, align="center")
+        # Right: Equal-Groups Array (5 rows of 4 + 3 leftover units)
+        p.text(mid_x + 21.5, y + 3.1, "Equal-Groups Array: 5 Rows of 4 + 3", size=1.72, bold=True, color=TEAL, align="center")
         gx, gy = mid_x + 4.5, y + 4.8
         ts, gap = 2.7, 0.35
         for r in range(5):
@@ -95,8 +95,8 @@ def draw_section_concept_diagram(
 
         p.line(mid_x - 2.5, y + 1.5, mid_x - 2.5, y + h - 1.5, color=LIGHT_BORDER, width=0.22, dashed=True)
 
-        # Right: 4×4 Square Array (16 tiles) vs 4×2 Array (8 tiles)
-        p.text(mid_x + 20.0, y + 3.1, "COUNT-01: 4² Square (16) vs. 4×2 (8)", size=1.68, bold=True, color=TEAL, align="center")
+        # Right: 4×4 Square Array (16 units) vs 4×2 Array (8 units)
+        p.text(mid_x + 20.0, y + 3.1, "Prime & Square Model: 4² (16) vs. 4×2 (8)", size=1.68, bold=True, color=TEAL, align="center")
         gx, gy = mid_x + 2.0, y + 5.0
         ts, gap = 3.0, 0.35
         for r in range(4):
@@ -383,8 +383,8 @@ def draw_section_concept_diagram(
     # UNIT 3: RATIOS, RATES & PERCENTS (3.1 - 3.5)
     # =========================================================================
     elif sec_num == "3.1":
-        # Tape Diagram (COUNT-01) for 12 Builders and 8 Programmers (3:2 Part-to-Part and 3:5 Part-to-Whole)
-        p.text(mid_x, y + 3.0, "Ratio Tape Diagram (COUNT-01): 12 Builders & 8 Programmers (5 Total Boxes = 20 Members)", size=1.68, bold=True, color=INK, align="center")
+        # Tape Diagram for 12 Builders and 8 Programmers (3:2 Part-to-Part and 3:5 Part-to-Whole)
+        p.text(mid_x, y + 3.0, "Ratio Tape Diagram: 12 Builders & 8 Programmers (5 Total Boxes = 20 Members)", size=1.68, bold=True, color=INK, align="center")
         gx = x + 3.5
         p.text(gx, y + 8.2, "Builders (3):", size=1.68, bold=True, color=INK)
         p.text(gx, y + 15.6, "Program (2):", size=1.68, bold=True, color=INK)
@@ -511,7 +511,7 @@ def draw_section_concept_diagram(
     # UNIT 4: ALGEBRAIC EXPRESSIONS & PROPERTIES (4.1 - 4.4)
     # =========================================================================
     elif sec_num == "4.1":
-        # Expression Anatomy (4x + 7) + ALGB-01 Substitution Cups (x = 5 -> 27)
+        # Expression Anatomy (4x + 7) + Place Value Substitution Boxes (x = 5 -> 27)
         p.text(x + 20.5, y + 3.0, "Parts of an Expression: 4x + 7", size=1.68, bold=True, color=INK, align="center")
         p.rect(x + 2.5, y + 4.8, 36.0, 18.0, fill=SUBTLE_HDR, stroke=BORDER, r=0.6, line_w=0.22)
         p.text(x + 20.5, y + 9.6, "4x  +  7", size=2.8, bold=True, mono=True, color=INK, align="center")
@@ -523,7 +523,7 @@ def draw_section_concept_diagram(
         p.line(mid_x - 2.0, y + 1.5, mid_x - 2.0, y + h - 1.5, color=LIGHT_BORDER, width=0.22, dashed=True)
 
         rx = mid_x + 20.5
-        p.text(rx, y + 3.0, "Substitute x = 5 into 4x + 7 (ALGB-01)", size=1.65, bold=True, color=TEAL, align="center")
+        p.text(rx, y + 3.0, "Substitute x = 5 into 4x + 7 (PLACE-01)", size=1.65, bold=True, color=TEAL, align="center")
         bx = mid_x + 0.5
         for i in range(4):
             p.rect(bx + i * 7.2, y + 5.5, 6.2, 6.5, fill=GREEN_FILL, stroke=INK, r=0.5, line_w=0.22)
@@ -535,33 +535,33 @@ def draw_section_concept_diagram(
         p.text(rx, y + 20.8, "Multiply 4(5) BEFORE adding 7 (PEMDAS)!", size=1.52, bold=True, color=TEAL, align="center")
 
     elif sec_num == "4.2":
-        # Algebra Tiles (ALGB-01): Combining Like Terms 4x + 5 + 2x + 3 = 6x + 8
-        p.text(mid_x, y + 3.0, "Algebra Tiles (ALGB-01): Combine Like Terms 4x + 5 + 2x + 3 = 6x + 8", size=1.68, bold=True, color=INK, align="center")
+        # Combining Like Terms by Variable Power: 4x + 5 + 2x + 3 = 6x + 8
+        p.text(mid_x, y + 3.0, "Combining Like Terms by Variable Power: 4x + 5 + 2x + 3 = 6x + 8", size=1.68, bold=True, color=INK, align="center")
         gx, gy = x + 3.0, y + 5.0
-        # x² flat for reference
+        # x² block for reference
         p.rect(gx, gy, 10.5, 10.5, fill=BLUE_FILL, stroke=INK, r=0.5, line_w=0.24)
-        p.text(gx + 5.25, gy + 6.2, "x² Flat", size=1.65, bold=True, mono=True, color=INK, align="center")
+        p.text(gx + 5.25, gy + 6.2, "x² Term", size=1.65, bold=True, mono=True, color=INK, align="center")
         p.text(gx + 5.25, y + 18.2, "(x by x)", size=1.45, color=SLATE, align="center")
 
-        # 6 x-rods (4 green + 2 light-green)
+        # 6 x-bars (4 green + 2 light-green)
         rx = gx + 13.5
         for i in range(6):
             p.rect(rx + i * 5.2, gy, 4.2, 10.5, fill=GREEN_FILL if i < 4 else "#BBF7D0", stroke=INK, r=0.35, line_w=0.22)
             p.text(rx + i * 5.2 + 2.1, gy + 6.2, "x", size=1.75, bold=True, mono=True, color=INK, align="center")
-        p.text(rx + 15.0, y + 18.2, "4x + 2x = 6x Rods", size=1.62, bold=True, mono=True, color=TEAL, align="center")
+        p.text(rx + 15.0, y + 18.2, "4x + 2x = 6x Terms", size=1.62, bold=True, mono=True, color=TEAL, align="center")
 
-        # 8 unit cubes (5 + 3)
+        # 8 unit blocks (5 + 3)
         ux = rx + 33.5
         for r in range(2):
             for c in range(4):
                 p.rect(ux + c * 4.2, gy + 1.2 + r * 4.4, 3.5, 3.5, fill=GOLD_FILL, stroke=INK, r=0.3, line_w=0.2)
                 p.text(ux + c * 4.2 + 1.75, gy + 1.2 + r * 4.4 + 2.4, "1", size=1.45, bold=True, mono=True, color=INK, align="center")
         p.text(ux + 8.0, y + 18.2, "5 + 3 = 8 Ones", size=1.62, bold=True, mono=True, color=INK, align="center")
-        p.text(mid_x, y + h - 1.6, "Watch Out: 6x and 8 have different dimensions -> NEVER combine into 14x!", size=1.55, bold=True, color=SLATE, align="center")
+        p.text(mid_x, y + h - 1.6, "Watch Out: 6x and 8 are unlike terms -> NEVER combine into 14x!", size=1.55, bold=True, color=SLATE, align="center")
 
     elif sec_num == "4.3":
         # Distributive Property Area Model: 6(10 + 4) = 60 + 24 = 84 & 3(2x + 5) = 6x + 15
-        p.text(x + 23.0, y + 3.0, "Area Model (ALGB-01): 6(10 + 4) = 60 + 24", size=1.65, bold=True, color=INK, align="center")
+        p.text(x + 23.0, y + 3.0, "Area Model (PLACE-01): 6(10 + 4) = 60 + 24", size=1.65, bold=True, color=INK, align="center")
         rx, ry = x + 6.5, y + 6.8
         w1, w2, rh_box = 22.0, 11.0, 10.5
         p.rect(rx, ry, w1, rh_box, fill=BLUE_FILL, stroke=INK, line_w=0.28)
@@ -610,7 +610,7 @@ def draw_section_concept_diagram(
     # =========================================================================
     elif sec_num == "5.1":
         # Parallelogram Cut-and-Slide Visual Proof into a b × h Rectangle
-        p.text(mid_x, y + 3.0, "Parallelogram Cut-and-Slide Proof (COUNT-01): Area = Base b × Perpendicular Height h", size=1.68, bold=True, color=INK, align="center")
+        p.text(mid_x, y + 3.0, "Parallelogram Cut-and-Slide Proof: Area = Base b × Perpendicular Height h", size=1.68, bold=True, color=INK, align="center")
         # Left: Parallelogram with right triangle shaded on left
         px0, py0 = x + 4.5, y + 6.0
         pts_main = [(px0 + 6.0, py0), (px0 + 28.0, py0), (px0 + 28.0, py0 + 11.5), (px0 + 6.0, py0 + 11.5)]
@@ -636,7 +636,7 @@ def draw_section_concept_diagram(
 
     elif sec_num == "5.2":
         # Triangle Area = 1/2 of Enclosing Rectangle/Parallelogram (A = 1/2 bh)
-        p.text(mid_x, y + 3.0, "Triangle Area Proof (COUNT-01): Every Triangle Is 1/2 of a b × h Rectangle (A = ½bh)", size=1.68, bold=True, color=INK, align="center")
+        p.text(mid_x, y + 3.0, "Triangle Area Proof: Every Triangle Is 1/2 of a b × h Rectangle (A = ½bh)", size=1.68, bold=True, color=INK, align="center")
         rx, ry, rw, rh_b = x + 6.0, y + 5.5, 32.0, 12.5
         p.rect(rx, ry, rw, rh_b, fill=SUBTLE_HDR, stroke=BORDER, line_w=0.25)
         pts = [(rx, ry + rh_b), (rx + rw, ry + rh_b), (rx + 10.0, ry)]
@@ -680,7 +680,7 @@ def draw_section_concept_diagram(
         p.text(rx, y + h - 1.5, "Total = 96 + 30 = 126 ft²", size=1.6, bold=True, mono=True, color=INK, align="center")
 
     elif sec_num == "5.4":
-        # Left: Coordinate Plane Rectangle (2,3)-(9,3)-(9,8)-(2,8) | Right: TIME-01 Geared Clock & Regrouping
+        # Left: Coordinate Plane Rectangle (2,3)-(9,3)-(9,8)-(2,8) | Right: Base-60 Clock & Regrouping
         p.text(x + 21.5, y + 3.0, "Polygon on Coordinate Grid", size=1.68, bold=True, color=INK, align="center")
         gx, gy, gw, gh = x + 6.0, y + 5.0, 28.0, 12.5
         p.line(gx - 2.0, gy + gh + 1.5, gx + gw + 3.0, gy + gh + 1.5, color=INK, width=0.28)
@@ -696,7 +696,7 @@ def draw_section_concept_diagram(
         p.line(mid_x, y + 1.5, mid_x, y + h - 1.5, color=LIGHT_BORDER, width=0.22, dashed=True)
 
         rx = mid_x + 21.5
-        p.text(rx, y + 3.0, "Elapsed Time (TIME-01: 1 hr = 60 min)", size=1.65, bold=True, color=TEAL, align="center")
+        p.text(rx, y + 3.0, "Elapsed Time (Base-60: 1 hr = 60 min)", size=1.65, bold=True, color=TEAL, align="center")
         cx, cy, r_c = mid_x + 10.5, y + 11.8, 6.2
         p.circle(cx, cy, r_c, fill=SUBTLE_HDR, stroke=INK, line_w=0.28)
         for hr in range(12):
@@ -713,7 +713,7 @@ def draw_section_concept_diagram(
     # UNIT 6: INTEGERS, RATIONAL NUMBERS & COORDINATE PLANE (6.1 - 6.5)
     # =========================================================================
     elif sec_num == "6.1":
-        # Opposites on a Number Line + Two-Tone Zero-Pair Counters (BASE-10)
+        # Opposites on a Number Line + Zero-Pair Cancellation
         p.text(x + 23.0, y + 3.0, "Opposites on a Number Line (-15 and +15)", size=1.65, bold=True, color=INK, align="center")
         lx1, lx2, ny = x + 3.5, mid_x - 2.5, y + 12.2
         mx = (lx1 + lx2) / 2.0
@@ -729,7 +729,7 @@ def draw_section_concept_diagram(
         p.line(mid_x, y + 1.5, mid_x, y + h - 1.5, color=LIGHT_BORDER, width=0.22, dashed=True)
 
         rx = mid_x + 21.5
-        p.text(rx, y + 3.0, "Zero-Pair Counters (BASE-10): (+1)+(-1)=0", size=1.62, bold=True, color=TEAL, align="center")
+        p.text(rx, y + 3.0, "Zero-Pair Cancellation: (+1)+(-1)=0", size=1.62, bold=True, color=TEAL, align="center")
         gx = mid_x + 6.5
         for i in range(4):
             cx = gx + i * 8.5
@@ -830,7 +830,7 @@ def draw_section_concept_diagram(
     # UNIT 7: EQUATIONS & INEQUALITIES (7.1 - 7.5)
     # =========================================================================
     elif sec_num in ("7.1", "7.2", "7.3"):
-        # Balance Scale (ALGB-01) + Part-Whole Bar / Equal-Box Tape Model
+        # Equation Balance Scale + Part-Whole Bar / Equal-Box Tape Model
         if sec_num == "7.1":
             l_pan, r_pan, step_txt, bar_title, bar_sub = (
                 "4x + 5",
@@ -850,13 +850,13 @@ def draw_section_concept_diagram(
         else:
             l_pan, r_pan, step_txt, bar_title, bar_sub = (
                 "8 x-boxes (÷8)",
-                "136 cubes (÷8)",
+                "136 units (÷8)",
                 "Divide both sides by 8 -> x = 17",
                 "Equal-Box Tape Model (8x = 136)",
                 "8 boxes = 136  ->  1 box = 136 ÷ 8 = 17",
             )
 
-        p.text(x + 22.0, y + 3.0, f"Balance Scale (ALGB-01): {l_pan} = {r_pan}", size=1.62, bold=True, color=INK, align="center")
+        p.text(x + 22.0, y + 3.0, f"Balance Scale Model: {l_pan} = {r_pan}", size=1.62, bold=True, color=INK, align="center")
         cx, by = x + 22.0, y + 14.5
         p.line(x + 4.0, by, x + 40.0, by, color=INK, width=0.42)
         p.polygon([(cx, by), (cx - 2.4, by + 3.4), (cx + 2.4, by + 3.4)], fill=INK, stroke=INK)
@@ -931,7 +931,7 @@ def draw_section_concept_diagram(
 
         # Right: Unfolded 6-Face Net
         nx, ny = x + 52.5, y + 8.6
-        p.text(x + 61.0, y + 3.0, "Way 1: Unfolded 6-Face 2D Net (COUNT-01)", size=1.65, bold=True, color=TEAL, align="center")
+        p.text(x + 61.0, y + 3.0, "Way 1: Unfolded 6-Face 2D Net", size=1.65, bold=True, color=TEAL, align="center")
         p.rect(nx, ny, 14.0, 4.4, fill=BLUE_FILL, stroke=INK, line_w=0.24)
         p.text(nx + 7.0, ny + 2.8, "Bottom (40)", size=1.42, bold=True, mono=True, color=INK, align="center")
         p.rect(nx, ny - 3.6, 14.0, 3.6, fill=GREEN_FILL, stroke=INK, line_w=0.24)
@@ -971,7 +971,7 @@ def draw_section_concept_diagram(
 
     elif sec_num == "8.3":
         # Volume of Rectangular Prism: Layer Packing (B = l×w stacked h layers)
-        p.text(x + 23.0, y + 3.0, "Unit-Cube Layer Packing (COUNT-01)", size=1.68, bold=True, color=INK, align="center")
+        p.text(x + 23.0, y + 3.0, "Unit-Cube Layer Packing (V = Bh)", size=1.68, bold=True, color=INK, align="center")
         bx, by, bw, bh = x + 7.5, y + 7.8, 22.0, 10.5
         dx, dy = 6.0, -3.6
         p.rect(bx, by, bw, bh, fill=BLUE_FILL, stroke=INK, line_w=0.28)
@@ -1032,8 +1032,8 @@ def draw_section_concept_diagram(
     # UNIT 9: STATISTICAL MEASURES & DATA DISPLAYS (9.1 - 9.4)
     # =========================================================================
     elif sec_num == "9.1":
-        # Left: Fair-Share Block Leveling Towers (STAT-01) | Right: Balance Point on Dot Plot
-        p.text(x + 22.0, y + 3.0, "Way 2: Fair-Share Block Leveling (STAT-01)", size=1.65, bold=True, color=INK, align="center")
+        # Left: Fair-Share Block Leveling Towers | Right: Balance Point on Dot Plot
+        p.text(x + 22.0, y + 3.0, "Way 2: Fair-Share Tower Leveling", size=1.65, bold=True, color=INK, align="center")
         towers = [18, 24, 15, 27, 21]
         base_y = y + 19.5
         scale = 12.5 / 27.0
@@ -1173,8 +1173,8 @@ def draw_section_concept_diagram(
         p.text(rx, y + 20.0, "Ex: (-2)³ = (-2)(-2)(-2) = -8", size=1.62, bold=True, mono=True, color=INK, align="center")
 
     elif sec_num == "10.3":
-        # Two-Step Balance Scale (ALGB-01) for 3x + 7 = 28 -> 3x = 21 -> x = 7
-        p.text(mid_x, y + 3.0, "Two-Step Equation Balance Scale (ALGB-01): Solve 3x + 7 = 28 in 2 Steps", size=1.68, bold=True, color=INK, align="center")
+        # Two-Step Balance Scale for 3x + 7 = 28 -> 3x = 21 -> x = 7
+        p.text(mid_x, y + 3.0, "Two-Step Equation Balance Scale: Solve 3x + 7 = 28 in 2 Steps", size=1.68, bold=True, color=INK, align="center")
         # Step 1 box
         p.rect(x + 2.5, y + 4.8, 39.0, 18.0, fill=GREEN_FILL, stroke=INK, r=0.6, line_w=0.22)
         p.text(x + 22.0, y + 8.0, "Step 1: Undo + or - FIRST", size=1.65, bold=True, color=INK, align="center")
@@ -1191,8 +1191,8 @@ def draw_section_concept_diagram(
         p.text(rx + 19.5, y + 19.8, "x = 7   (Check: 3(7)+7 = 28!)", size=1.75, bold=True, mono=True, color=TEAL, align="center")
 
     else:  # 10.4
-        # Theoretical Probability Spinner + Permutations (nPr) vs. Combinations (nCr)
-        p.text(x + 19.5, y + 3.0, "Probability (PROB-01)", size=1.68, bold=True, color=INK, align="center")
+        # Theoretical Probability Fraction Ratios + Permutations (nPr) vs. Combinations (nCr)
+        p.text(x + 19.5, y + 3.0, "Probability Ratio (FRAC-01)", size=1.68, bold=True, color=INK, align="center")
         cx, cy, r_s = x + 13.5, y + 11.8, 6.2
         p.circle(cx, cy, r_s, fill=BLUE_FILL, stroke=INK, line_w=0.28)
         for s_i in range(10):

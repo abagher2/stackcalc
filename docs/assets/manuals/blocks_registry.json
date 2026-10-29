@@ -668,6 +668,69 @@
     ],
     "svg": "prime_studio_comparator_stage.svg"
   },
+  "sc32_concept_argand_phasor": {
+    "description": "Multiplying by i as a 90-Degree Quarter-Turn and Steinmetz's AC Impedance Phasor",
+    "id": "sc32_concept_argand_phasor",
+    "png": "sc32_concept_argand_phasor.png",
+    "scene": "Tools/generate_sc32_concept_diagrams.py",
+    "svg": "sc32_concept_argand_phasor.png"
+  },
+  "sc32_concept_cavalieri_simpson": {
+    "description": "Galileo's Square-Cube Scaling Law and Simpson's Universal Prismoidal Cross-Sections",
+    "id": "sc32_concept_cavalieri_simpson",
+    "png": "sc32_concept_cavalieri_simpson.png",
+    "scene": "Tools/generate_sc32_concept_diagrams.py",
+    "svg": "sc32_concept_cavalieri_simpson.png"
+  },
+  "sc32_concept_gauss_least_squares": {
+    "description": "Gauss's Method of Least Squares and the Gaussian Normal Probability Distribution",
+    "id": "sc32_concept_gauss_least_squares",
+    "png": "sc32_concept_gauss_least_squares.png",
+    "scene": "Tools/generate_sc32_concept_diagrams.py",
+    "svg": "sc32_concept_gauss_least_squares.png"
+  },
+  "sc32_concept_khwarizmi_brent": {
+    "description": "Al-Khwarizmi's Geometric Completion of the Square and Richard Brent's Root-Hunting Cage",
+    "id": "sc32_concept_khwarizmi_brent",
+    "png": "sc32_concept_khwarizmi_brent.png",
+    "scene": "Tools/generate_sc32_concept_diagrams.py",
+    "svg": "sc32_concept_khwarizmi_brent.png"
+  },
+  "sc32_concept_napier_log_scale": {
+    "description": "Napier's Logarithmic Bridge and Natural Exponential Decay Across Time Constants",
+    "id": "sc32_concept_napier_log_scale",
+    "png": "sc32_concept_napier_log_scale.png",
+    "scene": "Tools/generate_sc32_concept_diagrams.py",
+    "svg": "sc32_concept_napier_log_scale.png"
+  },
+  "sc32_concept_romberg_quadrature": {
+    "description": "Central-Difference Secant Slope Cancelation and Romberg Trapezoidal Extrapolation",
+    "id": "sc32_concept_romberg_quadrature",
+    "png": "sc32_concept_romberg_quadrature.png",
+    "scene": "Tools/generate_sc32_concept_diagrams.py",
+    "svg": "sc32_concept_romberg_quadrature.png"
+  },
+  "sc32_concept_stack_elevator": {
+    "description": "Inside-Out Expression Tree and the 4-Register Operational Stack Elevator (T, Z, Y, X)",
+    "id": "sc32_concept_stack_elevator",
+    "png": "sc32_concept_stack_elevator.png",
+    "scene": "Tools/generate_sc32_concept_diagrams.py",
+    "svg": "sc32_concept_stack_elevator.png"
+  },
+  "sc32_concept_tvm_cashflow": {
+    "description": "TVM Cash-Flow Conservation Timeline and 30-Year Mortgage Principal-vs-Interest Crossover",
+    "id": "sc32_concept_tvm_cashflow",
+    "png": "sc32_concept_tvm_cashflow.png",
+    "scene": "Tools/generate_sc32_concept_diagrams.py",
+    "svg": "sc32_concept_tvm_cashflow.png"
+  },
+  "sc32_concept_unit_circle_polar": {
+    "description": "The Unit Circle Projections (cos, sin, tan) and Rectangular-to-Polar Vector Geometry",
+    "id": "sc32_concept_unit_circle_polar",
+    "png": "sc32_concept_unit_circle_polar.png",
+    "scene": "Tools/generate_sc32_concept_diagrams.py",
+    "svg": "sc32_concept_unit_circle_polar.png"
+  },
   "sc32_craftsmanship_pureblack": {
     "alt": "StackCalc SC-32 Laser-Ablated Keycap Legends and Matte Enclosure Craftsmanship",
     "camera": "lens=65mm,elev=28,azim=14",

@@ -178,11 +178,11 @@ All StackCalc educational literature is licensed under Creative Commons with **u
     <div>
       <span class="font-mono text-xs text-amber-400 font-bold uppercase">BOOK 1 &amp; BOOK 2 (K–12)</span>
       <h4 class="text-lg font-bold text-white mt-1 mb-2">Unified Teacher Guide + Student Lab Workbook</h4>
-      <p class="text-xs text-slate-400 mb-4">Book 1: 50-page Unified Master Teacher's Guide by Concept. Book 2: 29-page K–12 Hands-On Math Lab Student Workbook (with Self-Check Answer Key), plus 12 standalone 4-page Unit Packets.</p>
+      <p class="text-xs text-slate-400 mb-4">Book 1: 56-page Unified Master Teacher's Guide by Concept (including Front Matter <code>pp. i–viii</code> on RPN onboarding, Studio Block Games &amp; Blender Orthographic Teacher Checks). Book 2: 29-page K–12 Hands-On Math Lab Student Workbook (with Self-Check Answer Key), plus 12 standalone 4-page Unit Packets.</p>
     </div>
     <div class="space-y-2">
       <a href="../downloads/stackcalc-curriculum-guide-letter.pdf" class="w-full py-2 text-center rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition block">
-        Book 1: Master Teacher Guide (50 pp.) &darr;
+        Book 1: Master Teacher Guide (56 pp.) &darr;
       </a>
       <a href="../downloads/stackcalc-student-lab-workbook-letter.pdf" class="w-full py-2 text-center rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono text-xs font-bold transition block">
         Book 2: K–12 Student Lab Workbook (29 pp.) &darr;

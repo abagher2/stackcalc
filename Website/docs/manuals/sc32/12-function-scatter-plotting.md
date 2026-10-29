@@ -145,7 +145,12 @@ You can pan and bisect the plotted viewport with the six binary-search navigatio
 
 ## On the Stack: Function Graphing, Reticle Tracing & Scatter Plots
 
-A horizontal plotting window $[X_{\min}, X_{\max}]$—like a Cartesian point $(x, y)$ on Descartes's ceiling—occupies two adjacent stack registers: Register `Y` holds the lower domain bound $X_{\min}$, and Register `X` holds the upper domain bound $X_{\max}$. Instead of burying window bounds inside a modal setup form, `{{key:PLOT}}` reads $[X_{\min}, X_{\max}]$ straight from Registers `Y` and `X` and autoscales the vertical range automatically. Conversely, when you frame a zero crossing or drop two markers $[x_1, x_2]$ on the canvas and tap `{{key:PLOT}}` $\to$ `STORE` (`{{key:LFU2}}`), the plotter writes those coordinates back into Registers `Y` and `X` for 12-digit root refinement via `{{key:SOLVE}}` or Romberg integration via `{{key:∫}}`. The workbench traces below put that two-way visual bridge to work across polynomials, Fourier waves, and bivariate data clouds.
+A horizontal plotting window $[X_{\min}, X_{\max}]$—like a Cartesian point $(x, y)$ on Descartes's ceiling—occupies two adjacent stack registers: Register `Y` holds the lower domain bound $X_{\min}$, and Register `X` holds the upper domain bound $X_{\max}$. Instead of burying window bounds inside a modal setup form, `{{key:PLOT}}` reads $[X_{\min}, X_{\max}]$ straight from Registers `Y` and `X` and autoscales the vertical range automatically. Conversely, when you frame a zero crossing or drop two markers $[x_1, x_2]$ on the canvas and tap `{{key:PLOT}}` $\to$ `STORE` (`{{key:LFU2}}`), the plotter writes those coordinates back into Registers `Y` and `X` for 12-digit root refinement via `{{key:SOLVE}}` or Romberg integration via `{{key:∫}}`.
+
+> **The Three-Step Visual Plotting Rhythm (`{{key:PLOT}}`):**
+> 1. **Define or Select $f(X)$ in `{{key:EQN}}`** (or accumulate $(y_k, x_k)$ data pairs via `{{key:Σ+}}` for a scatter plot with trendline overlays).
+> 2. **Frame the Horizontal Window $[x_{\min}, x_{\max}]$ on the Stack:** Place $x_{\min}$ in Register `Y` and $x_{\max}$ in Register `X` (`x_min {{key:ENTER}} x_max`).
+> 3. **Launch `{{key:PLOT}}` (Right Shift `{{key:↱}}` above `{{key:x∥y}}`):** Use the live viewport controls (`TRACE` crosshair telemetry, `ZOOM+` / `IN`, `ZOOM-` / `OUT`, `AUTO` vertical autoscaling, `AXES`, `Y-LOCK`, and the second-tap `MARK` / `STORE` / `∫ f(x)` action bar) to inspect roots, extrema, and inflection points!
 
 {{res:sc32_plot_polynomial:screenshot|The StackCalc SC-32 rendering an interactive vector curve (X³ − 6X² + 11X − 6) via {{key:PLOT}} with real-time coordinate crosshair telemetry.}}
 

@@ -365,8 +365,8 @@ BOOK_COVER_SPECS = {
         hook_line_2="Prove it on the stack.",
         paragraph_1_html=(
             "Every mathematical idea in this workbook begins in your hands. Before you write an equation "
-            "or press a calculator key, you will arrange ten-frames, dominoes, 84 mm fraction towers, "
-            "algebra tiles, or probability dice on your desk to see why the pattern works."
+            "or press a calculator key, you will arrange Place Value Digit &amp; Carry Blocks, 84 mm Fraction Towers, "
+            "or Logarithmic Prime Factor Blocks on your desk to see why the pattern works."
         ),
         paragraph_2_html=(
             "Designed as the student lab companion to <b>From Blocks to the Stack</b> (SC-6) and "
