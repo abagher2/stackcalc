@@ -125,7 +125,7 @@ Similarly, whereas the equation $z^3 = 1$ has only the single root $1$ on the re
 
 $$1 = 1\angle 0^\circ, \qquad a = 1\angle 120^\circ = -\frac{1}{2} + i\frac{\sqrt{3}}{2}, \qquad a^2 = 1\angle 240^\circ = -\frac{1}{2} - i\frac{\sqrt{3}}{2}$$
 
-Because those three unit vectors are spaced symmetrically at $0^\circ$, $120^\circ$, and $240^\circ$, their vector sum vanishes identically ($1 + a + a^2 = 0$). As Charles LeGeyt Fortescue demonstrated in 1918, this $120^\circ$ three-phase symmetry is the foundational principle of polyphase AC power transmission: in a balanced three-phase network with phase currents displaced by $0^\circ, 120^\circ,$ and $240^\circ$, the instantaneous return currents sum to $1 + a + a^2 = 0$ at the neutral node, so three conductors transmit polyphase power without a fourth return conductor.
+Because those three unit vectors are spaced symmetrically at $0^\circ$, $120^\circ$, and $240^\circ$, their vector sum vanishes identically ($1 + a + a^2 = 0$). This $120^\circ$ three-phase symmetry is the foundational principle of polyphase AC power transmission (pioneered in 1888–1891 by Nikola Tesla and Mikhail Dolivo-Dobrovolsky, and generalized to unbalanced fault analysis through the operator $a = 1\angle 120^\circ$ in Charles LeGeyt Fortescue's 1918 method of symmetrical components): in a balanced three-phase network with phase currents displaced by $0^\circ, 120^\circ,$ and $240^\circ$, the instantaneous return currents sum to $1 + a + a^2 = 0$ at the neutral node, so three conductors transmit polyphase power without a fourth return conductor.
 
 ### Beyond the Unit Circle: Analytic Continuation and Joukowsky Airfoils
 
@@ -137,13 +137,13 @@ When a complex argument $z = x + iy$ is evaluated via `{{key:CMPLX}} {{key:SIN}}
 
 $$\sin(x + iy) = \sin x \cosh y + i \cos x \sinh y, \qquad \cos(x + iy) = \cos x \cosh y - i \sin x \sinh y$$
 
-Even when $\cosh y$ drives the magnitudes of $\sin z$ and $\cos z$ well past $[-1, +1]$, *analytic continuation* preserves the Pythagorean identity $\sin^2 z + \cos^2 z = 1$ across the complex plane. For multivalued inverse and fractional-power functions—the complex natural logarithm $\operatorname{Ln}(\mathbf{z}) = \ln|\mathbf{z}| + i\operatorname{Arg}(\mathbf{z})$, the complex square root $\sqrt{\mathbf{z}} = \sqrt{|\mathbf{z}|}\,e^{i\operatorname{Arg}(\mathbf{z})/2}$, and general complex powers $\mathbf{z}^{\mathbf{w}} = e^{\mathbf{w}\operatorname{Ln}(\mathbf{z})}$—the SC-32 follows William Kahan's 1987 specification (*"Branch Cuts for Complex Elementary Functions"*), restricting the principal argument $\operatorname{Arg}(\mathbf{z})$ to $(-\pi, \pi]$ with a branch cut along the negative real axis $(-\infty, 0)$.
+Even when $\cosh y$ drives the magnitudes of $\sin z$ and $\cos z$ well past $[-1, +1]$, *analytic continuation* preserves the Pythagorean identity $\sin^2 z + \cos^2 z = 1$ across the complex plane. For multivalued inverse and fractional-power functions—the complex natural logarithm $\operatorname{Ln}(\mathbf{z}) = \ln|\mathbf{z}| + i\operatorname{Arg}(\mathbf{z})$, the complex square root $\sqrt{\mathbf{z}} = \sqrt{|\mathbf{z}|}\,e^{i\operatorname{Arg}(\mathbf{z})/2}$, and general complex powers $\mathbf{z}^{\mathbf{w}} = e^{\mathbf{w}\operatorname{Ln}(\mathbf{z})}$—the SC-32 follows William Kahan's 1987 specification (*"Branch Cuts for Complex Elementary Functions"*), placing a seam (branch cut) along the negative real axis $(-\infty, 0)$ just as cartographers place the International Date Line along the $180^\circ$ meridian so every point has one unambiguous principal angle $\operatorname{Arg}(\mathbf{z}) \in (-\pi, \pi]$.
 
 This convention guarantees that `{{key:CMPLX}} {{key:√x}}` always maps into the closed right half-plane $\operatorname{Re}(\sqrt{\mathbf{z}}) \ge 0$ (with $\sqrt{-4 + 0i} = 0 + 2i$ on the upper boundary of the cut), while a Nyquist contour crossing the negative real axis $(-\infty, 0)$ exhibits a $2\pi$ phase transition between $+\pi$ and $-\pi$.
 
-Holomorphic complex functions also define *conformal mappings*: at every point where $f'(z) \ne 0$, a complex mapping $w = f(z)$ preserves local angles between intersecting curves and transforms solutions of Laplace's equation ($\nabla^2\phi = 0$) in one geometry into solutions of Laplace's equation in the mapped geometry.
+Holomorphic complex functions also define *conformal mappings*: at every point where $f'(z) \ne 0$, a complex mapping $w = f(z)$ acts like an angle-preserving mathematical lens that transforms solutions of Laplace's equation ($\nabla^2\phi = 0$) around a simple shape into exact solutions around a complex shape.
 
-In 1910, Russian aerodynamicist Nikolai Zhukovsky (Joukowsky) used conformal mapping to reduce the two-dimensional potential flow around an aircraft wing to the known potential flow (with circulation $\Gamma$) around a circular cylinder. Evaluating the sum of a complex coordinate $z$ on an offset circle (passing through the critical point $z = +c$ and enclosing $z = -c$) and its scaled reciprocal $c^2/z$ defines the *Joukowsky transformation*:
+In 1910, before wind tunnels and digital computers existed, Russian aerodynamicist Nikolai Zhukovsky (Joukowsky) used conformal mapping to transform the easily solved airflow (with circulation $\Gamma$) around a circular cylinder into the airflow around a curved aircraft wing. Evaluating the sum of a complex coordinate $z$ on an offset circle (passing through the critical point $z = +c$ and enclosing $z = -c$) and its scaled reciprocal $c^2/z$ defines the *Joukowsky transformation*:
 
 $$\zeta = z + \frac{c^2}{z}$$
 
@@ -163,7 +163,7 @@ At the 1893 Chicago Congress, Charles Proteus Steinmetz presented *"Complex Quan
 
 ### Steinmetz's Phasor Transform: Turning Differential Equations into Algebra
 
-Steinmetz observed that in a linear AC network driven at a single angular frequency $\omega$, every steady-state voltage and current oscillates at that same angular frequency $\omega$. Rather than carrying explicit $\cos(\omega t + \theta)$ time functions through differential equations, Steinmetz represented each sinusoid by a complex number—a *phasor*—encoding its RMS amplitude and initial phase angle relative to a common reference.
+Steinmetz observed that in a linear AC network driven at a single angular frequency $\omega$, every steady-state voltage and current oscillates at that same angular frequency $\omega$. Rather than carrying explicit $\cos(\omega t + \theta)$ time functions through differential equations, Steinmetz represented each sinusoid by a complex number—a *phasor*—scaled by its root-mean-square amplitude ($|\mathbf{V}| = V_0/\sqrt{2}$, eliminating the factor of $\frac{1}{2}$ so AC power laws $P = |\mathbf{I}|^2 R$ and $\mathbf{S} = \mathbf{V}\mathbf{I}^*$ match DC Ohm's and Joule's laws) and initial phase angle relative to a common reference.
 
 Differentiating a rotating complex exponential $e^{j\omega t}$ with respect to time (where electrical engineering denotes the imaginary unit by $j = \sqrt{-1}$ to reserve $i$ for electrical current) multiplies the phasor by $j\omega$:
 
@@ -221,7 +221,7 @@ In 1976, Siegfried Linkwitz and Russ Riley resolved this phase opposition by cas
 
 $$H_{\text{LR4}}(j) = \left[H_{\text{Butter2}}(j)\right]^2 = \left(-\frac{j}{\sqrt{2}}\right)^2 = \frac{j^2}{2} = -0.5000 + 0.0000j \quad (-6.02\text{ dB}, \text{ phase } -180^\circ)$$
 
-At crossover, both the low-pass and high-pass outputs have magnitude $|H| = 0.5$ ($-6.02\text{ dB}$) and identical phase ($-180^\circ$), so their acoustic outputs sum in phase to unity ($0.5 + 0.5 = 1.0$, or $0\text{ dB}$).
+At crossover, both the low-pass and high-pass outputs have magnitude $|H| = 0.5$ ($-6.02\text{ dB}$) and identical phase ($-180^\circ$), so their acoustic outputs sum in phase to unit magnitude ($|-0.5 + (-0.5)| = 1.0$, or $0\text{ dB}$ all-pass response).
 
 ### Coaxial Transmission Lines, Standing Waves, and Phillip Smith's Chart
 
@@ -229,7 +229,7 @@ At radio and microwave frequencies where the signal wavelength is comparable to 
 
 $$Z_0 = \sqrt{\frac{R' + j\omega L'}{G' + j\omega C'}}$$
 
-When an electromagnetic wave propagating along a feedline of characteristic impedance $Z_0 = 50\,\Omega$ encounters a load or antenna whose complex impedance $\mathbf{Z}_L = R_L + jX_L$ differs from $Z_0$, a portion of the incident wave reflects back toward the source. In 1939, Bell Telephone Laboratories engineer Phillip H. Smith observed that the complex *voltage reflection coefficient* $\mathbf{\Gamma}$ (denoted $S_{11}$ in scattering-parameter measurements):
+Much like light partially reflecting off a pane of glass or an ocean wave rebounding off a seawall, when an electromagnetic wave propagating along a feedline of characteristic impedance $Z_0 = 50\,\Omega$ encounters an antenna whose complex impedance $\mathbf{Z}_L = R_L + jX_L$ differs from $Z_0$, part of the wave echoes backward down the cable and interferes with the forward wave to create stationary voltage peaks (*standing waves*). In 1939, Bell Telephone Laboratories engineer Phillip H. Smith observed that the complex *voltage reflection coefficient* $\mathbf{\Gamma}$ (denoted $S_{11}$ in scattering-parameter measurements):
 
 $$\mathbf{\Gamma} = \frac{\mathbf{Z}_L - Z_0}{\mathbf{Z}_L + Z_0}$$
 
@@ -260,7 +260,7 @@ $$\mathbf{z} = Y + X i$$
 | **Register $Y$ (Line 2)** | Real Part | $\operatorname{Re}(\mathbf{z})$ | $a$ (Upper line on transflective LCD) |
 | **Register $X$ (Line 1)** | Imaginary Part | $\operatorname{Im}(\mathbf{z})$ | $b$ (Active prompt line on transflective LCD) |
 
-Pressing `{{key:C}}` cancels the transient `{{key:CMPLX}}` prefix if tapped by mistake, and complex trigonometric and exponential operations evaluate in radian mode (`{{key:RAD}}`) unless degrees (`{{key:DEG}}`) are selected. Internally, direct unscaled complex division $\frac{a+bi}{c+di} = \frac{(ac+bd) + i(bc-ad)}{c^2+d^2}$ fails whenever $|c|$ or $|d|$ exceeds $\sqrt{\Omega_{\max}} \approx 1.34 \times 10^{154}$, because squaring $c^2 + d^2$ overflows to $\infty$ even when the quotient itself is near unity. To prevent premature overflow above $10^{154}$ or underflow below $10^{-154}$, `{{key:CMPLX}} {{key:÷}}` and `{{key:CMPLX}} {{key:1/x}}` implement Robert L. Smith's 1962 *Algorithm 116* scaling pivot:
+Pressing `{{key:C}}` cancels the transient `{{key:CMPLX}}` prefix if tapped by mistake, and complex trigonometric and exponential operations (`{{key:CMPLX}} {{key:SIN}}`, `{{key:COS}}`, `{{key:TAN}}`, `{{key:eˣ}}`, `{{key:LN}}`, `{{key:√x}}`) always evaluate in natural analytic radians regardless of the scalar `{{key:DEG}}`/`{{key:RAD}}` angular setting. Internally, direct unscaled complex division $\frac{a+bi}{c+di} = \frac{(ac+bd) + i(bc-ad)}{c^2+d^2}$ fails whenever $|c|$ or $|d|$ exceeds $\sqrt{\Omega_{\max}} \approx 1.34 \times 10^{154}$, because squaring $c^2 + d^2$ overflows to $\infty$ even when the quotient itself is near unity. To prevent premature overflow above $10^{154}$ or underflow below $10^{-154}$, `{{key:CMPLX}} {{key:÷}}` and `{{key:CMPLX}} {{key:1/x}}` implement Robert L. Smith's 1962 *Algorithm 116* scaling pivot:
 
 $$\frac{a + bi}{c + di} = \begin{cases} \dfrac{a + b(d/c)}{c + d(d/c)} + i\,\dfrac{b - a(d/c)}{c + d(d/c)} & \text{if } |c| \ge |d|, \\[10pt] \dfrac{a(c/d) + b}{c(c/d) + d} + i\,\dfrac{b(c/d) - a}{c(c/d) + d} & \text{if } |d| > |c|. \end{cases}$$
 
@@ -418,7 +418,7 @@ When an AC network is not symmetric—such as a four-arm Thévenin AC impedance 
 In a second-order Butterworth low-pass section $H_{\text{Butter2}}(s) = \frac{1}{s^2 + \sqrt{2}s + 1}$, evaluating the normalized crossover frequency $s = j$ cancels $j^2 = -1$ against $+1$ in the denominator and reduces it to $B_2(j) = 0 + \sqrt{2}i$. Inverting that denominator vector in place on $(Y, X)$ via `{{key:CMPLX}} {{key:1/x}}` yields the Butterworth crossover response, and pressing `{{key:CMPLX}} {{key:x²}}` squares it in place to verify the fourth-order Linkwitz-Riley (`LR4`) loudspeaker crossover $(Y = \mathbf{-0.500000},\; X = \mathbf{0.000000}, \text{ or } -6.02\text{ dB at } -180^\circ\text{ phase})$:
 * **2nd-Order Butterworth Crossover Response ($1/(j\sqrt{2})$):** `{{res:sc32_05_complex_numbers_phasors_seq_23:keys}}` $\to H_{\text{Butter2}}(j) = \mathbf{0.000000 - 0.707107i}$ ($-3.01\text{ dB}, -90^\circ$).
 
-Likewise, in an inverting operational-amplifier bandpass stage where a virtual-ground summing node sets the closed-loop voltage gain to $A_v = -\mathbf{Z}_f / \mathbf{Z}_{\text{in}}$, pairing feedback impedance $\mathbf{Z}_f = 5000 - 5000i\,\Omega$ in $(T, Z)$ with input impedance $\mathbf{Z}_{\text{in}} = 1000 - 1000i\,\Omega$ in $(Y, X)$ (`{{res:sc32_05_complex_numbers_phasors_seq_25:keys}}`) engages all four registers during `{{key:CMPLX}} {{key:÷}}` and `{{key:CMPLX}} {{key:+/-}}` to determine $A_v = \mathbf{-5.000000} +$ `{{res:sc32_05_complex_numbers_phasors_seq_25:value}}` $i$:
+Likewise, in an inverting operational-amplifier active RC stage where a virtual-ground summing node sets the closed-loop voltage gain to $A_v = -\mathbf{Z}_f / \mathbf{Z}_{\text{in}}$, pairing feedback impedance $\mathbf{Z}_f = 5000 - 5000i\,\Omega$ in $(T, Z)$ with input impedance $\mathbf{Z}_{\text{in}} = 1000 - 1000i\,\Omega$ in $(Y, X)$ (`{{res:sc32_05_complex_numbers_phasors_seq_25:keys}}`) engages all four registers during `{{key:CMPLX}} {{key:÷}}` and `{{key:CMPLX}} {{key:+/-}}` to determine $A_v = \mathbf{-5.000000} +$ `{{res:sc32_05_complex_numbers_phasors_seq_25:value}}` $i$:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |

@@ -682,6 +682,13 @@
     "scene": "Tools/generate_sc32_concept_diagrams.py",
     "svg": "sc32_concept_cavalieri_simpson.png"
   },
+  "sc32_concept_composite_area_integral": {
+    "description": "Composite Plate & Cutout Dissection (\u03a3+ / \u03a3\u2212) and Continuous Definite-Integral Area (\u222b)",
+    "id": "sc32_concept_composite_area_integral",
+    "png": "sc32_concept_composite_area_integral.png",
+    "scene": "Tools/generate_sc32_concept_diagrams.py",
+    "svg": "sc32_concept_composite_area_integral.png"
+  },
   "sc32_concept_gauss_least_squares": {
     "description": "Gauss's Method of Least Squares and the Gaussian Normal Probability Distribution",
     "id": "sc32_concept_gauss_least_squares",

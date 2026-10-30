@@ -182,7 +182,7 @@ Formulated by Henry Darcy and Julius Weisbach, this foundational hydraulic loss 
 
 #### Manning Formula for Open Channel Uniform Flow
 $$v = \frac{1}{n} R_h^{2/3} S^{1/2}$$
-Irish engineer Robert Manning's 1889 empirical correlation governs steady, uniform, free-surface gravity flow in aqueducts, storm culverts, and natural riverbeds, balancing the downslope gravitational component $S = \Delta z / L$ against boundary roughness $n$ across a channel of hydraulic radius $R_h = A / P_{\text{wet}}$ ($\text{m}$, the cross-sectional flow area divided by wetted perimeter). Deep, compact channels with a large hydraulic radius $R_h$ minimize wall drag per unit flow area, accelerating mean velocity as $R_h^{2/3}$. Raising $R_h$ to the $\frac{2}{3}$ power via `{{key:yˣ}}`, multiplying by $\sqrt{S}$, and dividing by Gauckler–Manning roughness $n$ (`Rh {{key:ENTER}} 2 {{key:ENTER}} 3 {{key:÷}} {{key:yˣ}} S {{key:√x}} {{key:×}} n {{key:÷}}`) for a concrete-lined canal ($n = 0.015, R_h = 0.85\text{ m}, S = 0.0025$) produces `2.9911` $\text{m/s}$.
+Irish engineer Robert Manning's 1889 empirical correlation governs steady, uniform, free-surface gravity flow in aqueducts, storm culverts, and natural riverbeds, balancing the downslope gravitational component $S = \Delta z / L$ against boundary roughness $n$ across a channel of hydraulic radius $R_h = A / P_{\text{wet}}$ ($\text{m}$, the cross-sectional flow area divided by wetted perimeter, with SI unit factor $k_n = 1.0\text{ m}^{1/3}/\text{s}$ or U.S. customary factor $1.4859\text{ ft}^{1/3}/\text{s}$). Deep, compact channels with a large hydraulic radius $R_h$ minimize wall drag per unit flow area, accelerating mean velocity as $R_h^{2/3}$. Raising $R_h$ to the $\frac{2}{3}$ power via `{{key:yˣ}}`, multiplying by $\sqrt{S}$, and dividing by Gauckler–Manning roughness $n$ (`Rh {{key:ENTER}} 2 {{key:ENTER}} 3 {{key:÷}} {{key:yˣ}} S {{key:√x}} {{key:×}} n {{key:÷}}`) for a concrete-lined canal ($n = 0.015, R_h = 0.85\text{ m}, S = 0.0025$) produces `2.9911` $\text{m/s}$.
 
 ---
 
@@ -424,7 +424,7 @@ Computing the reciprocal-square difference $1/n_1^2 - 1/n_2^2$, multiplying by $
 
 ---
 
-### Coordinate Geometry & Planar Mensuration
+### Euclidean Mensuration, Trigonometry & Coordinate Geometry
 
 
 #### Volume and Surface Area of Sphere
@@ -469,7 +469,7 @@ Generalized from Book II, Propositions 12–13 of Euclid's *Elements* by the Per
 $$d = 2 R \arcsin\left(\sqrt{\sin^2\left(\frac{\Delta\phi}{2}\right) + \cos\phi_1 \cos\phi_2 \sin^2\left(\frac{\Delta\lambda}{2}\right)}\right)$$
 Introduced by James Inman in his 1835 *Navigation and Nautical Astronomy*, the haversine formula computes the shortest geodesic arc $d$ across a sphere of mean Earth radius $R = 6371.0\text{ km}$ between coordinates $(\phi_1, \lambda_1)$ and $(\phi_2, \lambda_2)$ using half-versed sines $\text{hav}(\theta) = \sin^2(\theta/2)$ of the latitude difference $\Delta\phi = \phi_2 - \phi_1$ and longitude difference $\Delta\lambda = \lambda_2 - \lambda_1$. Expressing central angle entirely in terms of $\sin^2(\Delta/2)$ avoids the severe floating-point cancellation that plagues the spherical law of cosines $\arccos(\sin\phi_1\sin\phi_2 + \cos\phi_1\cos\phi_2\cos\Delta\lambda)$ when two waypoints lie only meters or kilometers apart ($\cos\theta \approx 0.99999999$).
 
-In `{{key:DEG}}` mode, evaluating the two haversine terms from the inside out (`phi2 {{key:ENTER}} phi1 {{key:-}} 2 {{key:÷}} {{key:SIN}} {{key:x²}} phi1 {{key:COS}} phi2 {{key:COS}} {{key:×}} lam2 {{key:ENTER}} lam1 {{key:-}} 2 {{key:÷}} {{key:SIN}} {{key:x²}} {{key:×}} {{key:+}} {{key:√x}} {{key:ASIN}} 2 {{key:×}} 6371.0 {{key:×}}`) from New York ($40.7128^\circ\text{N}, 74.0060^\circ\text{W}$) to London ($51.5074^\circ\text{N}, 0.1278^\circ\text{W}$) yields `5570.2` $\text{km}$ ($3461.2\text{ miles}$).
+In `{{key:DEG}}` mode, evaluating the two haversine terms from the inside out and converting the half-central angle to radians via `{{key:▸RAD}}` (`phi2 {{key:ENTER}} phi1 {{key:-}} 2 {{key:÷}} {{key:SIN}} {{key:x²}} phi1 {{key:COS}} phi2 {{key:COS}} {{key:×}} lam2 {{key:ENTER}} lam1 {{key:-}} 2 {{key:÷}} {{key:SIN}} {{key:x²}} {{key:×}} {{key:+}} {{key:√x}} {{key:ASIN}} {{key:▸RAD}} 2 {{key:×}} 6371.0 {{key:×}}`) from New York ($40.7128^\circ\text{N}, 74.0060^\circ\text{W}$) to London ($51.5074^\circ\text{N}, 0.1278^\circ\text{W}$) yields `5570.2` $\text{km}$ ($3461.2\text{ miles}$).
 
 ---
 
@@ -685,7 +685,9 @@ Siméon Denis Poisson derived in 1837 that as the number of trials $n \to \infty
 ---
 
 #### Gaussian Standard $z$-Score & Confidence Interval Half-Width
+
 $$z = \frac{x - \mu}{\sigma}, \quad E = z_{\alpha/2}\frac{s}{\sqrt{n}}$$
+
 Standardizing a normally distributed observation $x$ by subtracting the population mean $\mu$ and dividing by standard deviation $\sigma$ maps any Gaussian variable onto the dimensionless unit normal distribution $\mathcal{N}(0, 1)$, while the Central Limit Theorem guarantees that the sample mean $\bar{x}$ of $n$ independent measurements with sample standard deviation $s$ (`{{key:sx}}`) has standard error $\text{SE} = s / \sqrt{n}$. Multiplying $s / \sqrt{n}$ by the two-sided critical quantile $z_{\alpha/2}$ ($1.9600$ for a $95\%$ confidence interval or $2.5758$ for $99\%$) yields the confidence interval half-width $E$, where quadrupling the sample size $n$ is required to halve the margin of error. Computing `x {{key:ENTER}} mu {{key:-}} sigma {{key:÷}}` for a $z$-score or `s {{key:ENTER}} n {{key:√x}} {{key:÷}} 1.96 {{key:×}}` for the $95\%$ confidence half-width with $s = 8.40\text{ MPa}, n = 49\text{ tensile specimens}, z_{\alpha/2} = 1.96$ returns $E =$ `2.3520` $\text{MPa}$.
 
 ---
@@ -707,7 +709,9 @@ Evaluating the closer upper limit via `USL {{key:ENTER}} xbar {{key:-}} 3 {{key:
 ---
 
 #### Shannon Information Entropy (Base-2 Bits)
+
 $$H(X) = -\sum_{i=1}^m p_i \log_2 p_i = -\frac{1}{\ln 2}\sum_{i=1}^m p_i \ln p_i$$
+
 In his 1948 monograph *A Mathematical Theory of Communication*, Claude Elwood Shannon defined the entropy $H(X)$ (in $\text{bits/symbol}$ when using base-$2$ logarithms) of a discrete random source emitting symbols $x_1, \dots, x_m$ with probabilities $p_1, \dots, p_m$ ($\sum p_i = 1$) as the expected self-information $\mathbb{E}[-\log_2 p_i]$. By Shannon's source coding theorem, $H(X)$ sets the exact theoretical lower bound on the average number of bits per symbol required for lossless compression (approached by Huffman and arithmetic coding), peaking at $\log_2 m\text{ bits}$ when all $m$ symbols are equiprobable and vanishing when one outcome is certain ($p_i = 1$). Summing $p_i \ln p_i$ on the stack and dividing by $-\ln 2$ (`p {{key:ENTER}} {{key:LN}} {{key:×}} 1 {{key:ENTER}} p {{key:-}} {{key:ENTER}} {{key:LN}} {{key:×}} {{key:+}} 2 {{key:LN}} {{key:÷}} {{key:+/-}}`) for a biased binary telemetry source ($p_1 = 0.75, p_2 = 0.25$) yields `0.8113` $\text{bits/symbol}$.
 
 ---
@@ -814,12 +818,12 @@ When evaluating a formula with a repeated scalar factor $K$ across multiple inpu
 
 ### Numerical Root-Finding and Quadrature Function Selector
 
-The SC-32 provides root-finding via Richard Brent's hybrid algorithm (`{{key:SOLVE}}`) and adaptive Romberg quadrature (`{{key:∫}}`). When an equation is active in `{{key:EQN}}`, pressing `{{key:SOLVE}}` or `{{key:∫}}` prompts for the variable softkey (`X`, `T`, etc.); otherwise, digit `0`–`5` selects a built-in template:
+The SC-32 provides root-finding via Richard Brent's hybrid algorithm (`{{key:SOLVE}}`) and adaptive Romberg quadrature (`{{key:∫}}`) across equations stored in the 24-slot Equation Bank (`{{key:EQN}}`, labeled `A`–`Z`):
 
-1. **User Equations (`{{key:EQN}}`):** Select an RPN expression in `{{key:EQN}}`, load $[a, b]$ into $Y$ and $X$ (`a {{key:ENTER}} b`), and press `{{key:SOLVE}}` or `{{key:∫}}` plus the variable softkey (`X`).
-2. **Built-In Templates ($f_0$–$f_5$):** `0` ($f_0(x) = x^2 - c$, $c$ in $Z$), `1` ($\cos x - x$), `2` ($\sin x$), `3` ($e^{-x^2}$), `4` ($x^3 - 2x - 5$), or `5` ($\ln x - 1$).
-3. **Brent Solver (`{{key:SOLVE}}`):** With bracket $[a, b]$ in $(Y, X)$, returns root $x^*$ in $X$, prior iterate in $Y$, and residual $f(x^*)$ in $Z$.
-4. **Romberg Quadrature (`{{key:∫}}`):** With limits $[a, b]$ in $(Y, X)$, returns $\int_a^b f(x)\,dx$ in $X$ and error estimate in $Y$ (e.g., `0 {{key:ENTER}} 0 {{key:ENTER}} 4 {{key:∫}} 0` $\to$ `21.3333`).
+1. **User Equations (`{{key:EQN}}`):** Enter or select an RPN expression in `{{key:EQN}}`, stage initial guesses or integration limits $[a, b]$ in Registers $Y$ and $X$ (`a {{key:ENTER}} b`, or seed the target variable via `{{key:STO}}`), and press `{{key:SOLVE}}` or `{{key:∫}}` followed by the equation label (`A`–`Z`) and variable softkey (`X`, `T`, etc.).
+2. **Closed-Form Polynomials (`{{key:POLY}}`):** For quadratics $Ax^2 + Bx + C = 0$ (`0 {{key:D}}`) and cubics $Ax^3 + Bx^2 + Cx + D = 0$, press `{{key:POLY}}` (`{{key:↱}}` + `{{key:XEQ}}`), load coefficients `A`–`D`, and tap `EXEC` to compute all real and complex conjugate roots in closed form (stored in indirect registers `R34`–`R39`).
+3. **Brent Solver (`{{key:SOLVE}}`):** Pushes the converged root $x^*$ onto Register $X$ while lifting prior stack registers into $Y, Z, T$ (`{{key:STO}} X` followed by `{{key:XEQ}}` audits the residual $f(x^*)$).
+4. **Romberg Quadrature (`{{key:∫}}`):** With integration limits $[a, b]$ in $(Y, X)$, returns the definite integral $\int_a^b f(x)\,dx$ in Register $X$ and the Richardson error estimate $\lvert\epsilon\rvert$ in Register $Y$.
 
 ### Storing Physical Constants & Numerical Boundary Guards
 

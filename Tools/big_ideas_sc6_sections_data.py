@@ -529,7 +529,7 @@ CHAPTERS_DATA: List[Dict[str, Any]] = [
         "kit_summary": "Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)",
         "hero_png": "fraction_studio_twin_comparator.png",
         "coach_misconception": "Students confuse Part-to-Part (3:2) with Part-to-Whole (3/5), add instead of multiply in ratio tables, divide unit rates upside-down, and memorize 6 disconnected rules for moving decimal points in percents.",
-        "coach_remediation": "Use equal Fraction Studio blocks as physical Tape Diagram units, step through ratio tables rhythmically with [g] [REP], use [x⇄y] when unit-rate division is entered upside-down, and use [f] [%] + [FDISP] to show Fraction/Decimal/Percent are three costumes of one number.",
+        "coach_remediation": "Use equal Fraction Studio blocks as physical Tape Diagram units, step through ratio tables rhythmically with [g] [REP], use [x⇄y] when unit-rate division is entered upside-down, and use [f] [▸%] + [FDISP] to show Fraction/Decimal/Percent are three costumes of one number.",
         "sections": [
             {
                 "day_num": 11,
@@ -984,7 +984,7 @@ CHAPTERS_DATA: List[Dict[str, Any]] = [
         "kit_summary": "Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)",
         "hero_png": "fraction_studio_common_denominator.png",
         "coach_misconception": "Students multiply the slanted side of a parallelogram instead of the vertical height, forget to divide by 2 for triangles, lose track of multi-piece composite areas, and subtract clock times in base-10 instead of base-60.",
-        "coach_remediation": "Slide the corner triangle of a parallelogram to form a straight [f] [RECT] rectangle, use the dedicated [g] [TRI] key ([g][7]) which divides by 2 automatically, accumulate composite chunks with [Σ+], and use the Place Value Studio (PLACE-01) + [CLK] key for base-60 time.",
+        "coach_remediation": "Slide the corner triangle of a parallelogram to form a straight [f] [RECT] rectangle, use the dedicated [g] [TRI] key which divides by 2 automatically, accumulate composite chunks with [Σ+], and use the Place Value Blocks + [CLK] key for base-60 time.",
         "sections": [
             {
                 "day_num": 20,
@@ -1227,7 +1227,7 @@ CHAPTERS_DATA.extend([
                     }
                 ],
                 "problems": [
-                    {"num": 1, "part": "A", "prompt": "Write the integer that represents '25 feet below sea level' and state its opposite.", "keys": "25 [+/-] -> -25; [+/-] -> 25", "yx": "-25 <-> +25", "ans": "-25; Opposite = +25"},
+                    {"num": 1, "part": "A", "prompt": "Write the integer that represents '25 feet below sea level' and state its opposite.", "keys": "25 [+/-] [+/-]", "yx": "-25 <-> +25", "ans": "-25; Opposite = +25"},
                     {"num": 2, "part": "A", "prompt": "Find the opposite of -42, and then evaluate -(-42).", "keys": "42 [+/-] [+/-]", "yx": "-42 -> +42", "ans": "+42; and +42"},
                     {"num": 3, "part": "A", "prompt": "A research submarine is at an elevation of -18 meters and rises 18 meters. What is its new elevation?", "keys": "18 [+/-] [ENTER] 18 [+]", "yx": "Y:-18 | X:18", "ans": "0 m (Sea level)"},
                     {"num": 4, "part": "A", "prompt": "You combine 6 positive (+1) units and 6 negative (-1) units. What is the net value?", "keys": "6 [ENTER] 6 [+/-] [+]", "yx": "Y:6 | X:-6", "ans": "0"},
@@ -1692,7 +1692,7 @@ CHAPTERS_DATA.extend([
         "kit_summary": "Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)",
         "hero_png": "place_value_regrouping.png",
         "coach_misconception": "Students drop one of the 6 faces when finding rectangular prism surface area, tangle prism and pyramid formulas, and confuse 2D Surface Area (cardboard outside) with 3D Volume (cubes inside).",
-        "coach_remediation": "Have students count the 3 pairs of opposite faces on a rectangular prism while logging each pair into [Σ+] (n=1, 2, 3), pack unit blocks or use [f] [PRISM] ([f][9]) to multiply 3 stack floors (l, w, h) at once for volume, and verify [f] [CIRC], [g] [CONE], and [g] [HYP].",
+        "coach_remediation": "Have students count the 3 pairs of opposite faces on a rectangular prism while logging each pair into [Σ+] (n=1, 2, 3), pack unit blocks or use [f] [PRISM] to multiply 3 stack floors (l, w, h) at once for volume, and verify [f] [CIRC], [g] [CONE], and [g] [HYP].",
         "sections": [
             {
                 "day_num": 34,
@@ -1937,7 +1937,7 @@ CHAPTERS_DATA.extend([
                     {"num": 2, "part": "A", "prompt": "Find the sum and the mean of the data set: 12, 15, 18, 11, 14.", "keys": "Load 5 nums into [Σ+] -> [g][x̄]", "yx": "Σx:70 | n:5", "ans": "Sum = 70, Mean = 14"},
                     {"num": 3, "part": "A", "prompt": "Seed-Bomber Catapult Mean: In three test launches, a seed-bomber catapult flings clay seed pods distances of 150 cm, 162 cm, and 156 cm. What is the mean launch distance?", "keys": "150 [Σ+] 162 [Σ+] 156 [Σ+] [g][x̄]", "yx": "Σx:468 | n:3", "ans": "156 cm"},
                     {"num": 4, "part": "A", "prompt": "Find the mean of these four mineral sample masses (in grams): 4.2, 3.8, 4.5, 3.5.", "keys": "Load into [Σ+] -> [g][x̄]", "yx": "Σx:16.0 | n:4", "ans": "Mean = 4.0 g"},
-                    {"num": 5, "part": "B", "prompt": "Three measurements are 10, 20, and 25. Find the sum and the mean (rounded to the nearest hundredth).", "keys": "... 35 [f][Σ-] 25 [Σ+] [g][x̄]", "yx": "Σx:55 | n:3", "ans": "Sum = 55, Mean = 18.33"},
+                    {"num": 5, "part": "B", "prompt": "Three measurements are 10, 20, and 25. Find the sum and the mean (rounded to the nearest hundredth).", "keys": "[g][CLΣ] 10 [Σ+] 20 [Σ+] 25 [Σ+] [g][x̄]", "yx": "Σx:55 | n:3", "ans": "Sum = 55, Mean = 18.33"},
                     {"num": 6, "part": "B", "prompt": "In a dot plot of 6 quiz scores, the score 10 appears 4 times and the score 20 appears 2 times. What is the mean of all 6 scores (rounded to the nearest hundredth)?", "keys": "10 [ENTER] 4 [FRQ] 20 [ENTER] 2 [FRQ] [g][x̄]", "yx": "Σx:80 | n:6", "ans": "13.33 (80 ÷ 6)"},
                     {"num": 7, "part": "B", "prompt": "Find the mean daily high temperature (°F) for the 6-day period: 68, 72, 75, 71, 64, 70.", "keys": "Load 6 temps into [Σ+] -> [g][x̄]", "yx": "Σx:420 | n:6", "ans": "70°F"},
                     {"num": 8, "part": "B", "prompt": "If 5 stacks of blocks have a mean height of 12 blocks, how many total blocks are in all 5 stacks combined?", "keys": "5 [ENTER] 12 [×]", "yx": "Y:5 | X:12", "ans": "60 total blocks"},
@@ -2137,9 +2137,9 @@ CHAPTERS_DATA.extend([
                     }
                 ],
                 "problems": [
-                    {"num": 1, "part": "A", "prompt": "Evaluate: (a) -15 + 9 and (b) -15 + (-9).", "keys": "15 [+/-] [ENTER] 9 [+] / 9 [+/-] [+]", "yx": "Fight vs Team up", "ans": "(a) -6; (b) -24"},
+                    {"num": 1, "part": "A", "prompt": "Evaluate: (a) -15 + 9 and (b) -15 + (-9).", "keys": "15 [+/-] [ENTER] 9 [+] / 15 [+/-] [ENTER] 9 [+/-] [+]", "yx": "Fight vs Team up", "ans": "(a) -6; (b) -24"},
                     {"num": 2, "part": "A", "prompt": "Evaluate: 14 + (-23).", "keys": "14 [ENTER] 23 [+/-] [+]", "yx": "Y:14 | X:-23", "ans": "-9"},
-                    {"num": 3, "part": "A", "prompt": "Evaluate: (a) 12 - (-18) and (b) -12 - (-8).", "keys": "12 [ENTER] 18 [+/-] [-] / 12 [+/-]...", "yx": "12+18 vs -12+8", "ans": "(a) 30; (b) -4"},
+                    {"num": 3, "part": "A", "prompt": "Evaluate: (a) 12 - (-18) and (b) -12 - (-8).", "keys": "12 [ENTER] 18 [+/-] [-] / 12 [+/-] [ENTER] 8 [+/-] [-]", "yx": "12+18 vs -12+8", "ans": "(a) 30; (b) -4"},
                     {"num": 4, "part": "A", "prompt": "Evaluate: -9 - 16.", "keys": "9 [+/-] [ENTER] 16 [-]", "yx": "Y:-9 | X:16", "ans": "-25"},
                     {"num": 5, "part": "B", "prompt": "Chemical Freezing Point Depression: Pure water freezes at 0°C. Adding a salt solute lowers the freezing point by 7.8°C, and adding an alcohol co-solvent lowers it by another 6.4°C. What is the new freezing point of the mixture?", "keys": "0 [ENTER] 7.8 [-] 6.4 [-]", "yx": "Y:-7.8 | X:6.4", "ans": "-14.2°C"},
                     {"num": 6, "part": "B", "prompt": "Evaluate: 6.4 - 11.2.", "keys": "6.4 [ENTER] 11.2 [-]", "yx": "Y:6.4 | X:11.2", "ans": "-4.8"},
@@ -2184,8 +2184,8 @@ CHAPTERS_DATA.extend([
                     }
                 ],
                 "problems": [
-                    {"num": 1, "part": "A", "prompt": "Evaluate: (a) 7 × (-8) and (b) (-7) × (-8).", "keys": "7 [ENTER] 8 [+/-] [×] / 7 [+/-]...", "yx": "1 neg vs 2 negs", "ans": "(a) -56; (b) +56"},
-                    {"num": 2, "part": "A", "prompt": "Evaluate: (a) -45 ÷ 9 and (b) -45 ÷ (-9).", "keys": "45 [+/-] [ENTER] 9 [÷] / 9 [+/-] [÷]", "yx": "1 neg vs 2 negs", "ans": "(a) -5; (b) +5"},
+                    {"num": 1, "part": "A", "prompt": "Evaluate: (a) 7 × (-8) and (b) (-7) × (-8).", "keys": "7 [ENTER] 8 [+/-] [×] / 7 [+/-] [ENTER] 8 [+/-] [×]", "yx": "1 neg vs 2 negs", "ans": "(a) -56; (b) +56"},
+                    {"num": 2, "part": "A", "prompt": "Evaluate: (a) -45 ÷ 9 and (b) -45 ÷ (-9).", "keys": "45 [+/-] [ENTER] 9 [÷] / 45 [+/-] [ENTER] 9 [+/-] [÷]", "yx": "1 neg vs 2 negs", "ans": "(a) -5; (b) +5"},
                     {"num": 3, "part": "A", "prompt": "Evaluate (-5)². Explain why the result is positive.", "keys": "5 [+/-] [x²]", "yx": "(-5) × (-5)", "ans": "+25 (2 negative factors = positive)"},
                     {"num": 4, "part": "A", "prompt": "Evaluate (-2)³. Explain why the cube of a negative number is negative.", "keys": "2 [+/-] [x³]", "yx": "(-2)×(-2)×(-2)", "ans": "-8 (3 negative factors = odd count = negative)"},
                     {"num": 5, "part": "B", "prompt": "Evaluate: (-3.5) × (-2.4).", "keys": "3.5 [+/-] [ENTER] 2.4 [+/-] [×]", "yx": "Y:-3.5 | X:-2.4", "ans": "+8.4"},

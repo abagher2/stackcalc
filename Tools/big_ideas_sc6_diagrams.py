@@ -318,7 +318,9 @@ def draw_section_concept_diagram(
         bw = 39.0
         p.rect(bx, y + 5.2, bw, 4.8, fill=BLUE_FILL, stroke=INK, line_w=0.25)
         for q in range(1, 3):
-            p.line(bx + q * (bw / 3.0), y + 5.2, bx + q * (bw / 3.0), y + 10.0, color=INK, width=0.22, dashed=True)
+            qx = bx + q * (bw / 3.0)
+            p.line(qx, y + 5.2, qx, y + 6.3, color=INK, width=0.22)
+            p.line(qx, y + 8.9, qx, y + 10.0, color=INK, width=0.22)
         p.text(bx + bw / 2.0, y + 8.3, "3/4 Strip (= 6/8)", size=1.7, bold=True, mono=True, color=INK, align="center")
         w8 = bw / 6.0
         for i in range(6):
@@ -345,8 +347,12 @@ def draw_section_concept_diagram(
         p.text(x + 35.5, y + 8.6, "<- Annex 0", size=1.45, bold=True, color=TEAL, align="right")
         p.text(x + 26.0, y + 12.2, "+  3.85", size=2.0, bold=True, mono=True, color=INK, align="right")
         p.line(x + 10.0, y + 13.4, x + 27.0, y + 13.4, color=INK, width=0.28)
-        p.text(x + 26.0, y + 16.8, "18.45", size=2.05, bold=True, mono=True, color=TEAL, align="right")
-        p.line(x + 20.1, y + 6.0, x + 20.1, y + 17.5, color=TEAL, width=0.25, dashed=True)
+        p.text(x + 26.0, y + 16.8, "18.45", size=2.0, bold=True, mono=True, color=TEAL, align="right")
+        # Align vertical guide directly with the center of the decimal point '.' (3rd char from right)
+        char_w_mm = p.c.stringWidth("0", p._pick_font("0", True, False, True), 2.0 * 2.83464567) / 2.83464567
+        dot_x = (x + 26.0) - 2.5 * char_w_mm
+        p.line(dot_x, y + 5.6, dot_x, y + 6.9, color=TEAL, width=0.25)
+        p.line(dot_x, y + 17.3, dot_x, y + 18.6, color=TEAL, width=0.25)
         p.text(x + 21.0, y + 21.0, "Estimate: 15 + 4 = 19 (Close!)", size=1.55, bold=True, color=SLATE, align="center")
 
         p.line(mid_x - 1.0, y + 1.5, mid_x - 1.0, y + h - 1.5, color=LIGHT_BORDER, width=0.22, dashed=True)
@@ -631,8 +637,8 @@ def draw_section_concept_diagram(
         p.rect(rx, py0, 22.0, 11.5, fill=BLUE_FILL, stroke=INK, line_w=0.28)
         p.polygon([(rx + 22.0, py0), (rx + 28.0, py0), (rx + 22.0, py0 + 11.5)], fill=GOLD_FILL, stroke=INK, line_w=0.28)
         p.rect(rx, py0, 28.0, 11.5, fill=None, stroke=INK, line_w=0.3)
-        p.text(rx + 14.0, py0 + 6.5, "Rectangle: 12 × 8 = 96 cm²", size=1.68, bold=True, mono=True, color=INK, align="center")
-        p.text(rx + 14.0, py0 + 14.2, "Perimeter = 12+10+12+10 = 44 cm", size=1.55, bold=True, mono=True, color=TEAL, align="center")
+        p.text(rx + 11.0, py0 + 6.5, "Rect: 12 × 8 = 96 cm²", size=1.48, bold=True, mono=True, color=INK, align="center", max_w=20.0)
+        p.text(rx + 14.0, py0 + 14.2, "Perimeter = 12+10+12+10 = 44 cm", size=1.55, bold=True, mono=True, color=TEAL, align="center", max_w=34.0)
 
     elif sec_num == "5.2":
         # Triangle Area = 1/2 of Enclosing Rectangle/Parallelogram (A = 1/2 bh)
@@ -758,7 +764,7 @@ def draw_section_concept_diagram(
             p.circle(px, ny, 1.05, fill=col, stroke=INK, line_w=0.2)
             y_lbl = ny - 2.6 if val in (-0.80, 0.0) else ny + 4.2
             p.text(px, y_lbl, lbl, size=1.55, bold=True, mono=True, color=col, align="center")
-        p.text(mid_x, y + h - 1.8, "-5 > -18 (since -5 is right of -18)   |   -3/4 (-0.75) > -4/5 (-0.80) (Closer to 0 = Greater!)", size=1.55, bold=True, mono=True, color=TEAL, align="center")
+        p.text(mid_x, y + h - 1.8, "-5 > -18 (since -5 is right of -18)  |  -3/4 (-0.75) > -4/5 (-0.80) (Closer to 0 = Greater!)", size=1.48, bold=True, mono=True, color=TEAL, align="center", max_w=w - 4.0)
 
     elif sec_num == "6.3":
         # Absolute Value = Distance from 0 (Always >= 0)
@@ -856,23 +862,23 @@ def draw_section_concept_diagram(
                 "8 boxes = 136  ->  1 box = 136 ÷ 8 = 17",
             )
 
-        p.text(x + 22.0, y + 3.0, f"Balance Scale Model: {l_pan} = {r_pan}", size=1.62, bold=True, color=INK, align="center")
+        p.text(x + 21.5, y + 3.0, f"Balance Scale Model: {l_pan} = {r_pan}", size=1.52, bold=True, color=INK, align="center", max_w=39.5)
         cx, by = x + 22.0, y + 14.5
         p.line(x + 4.0, by, x + 40.0, by, color=INK, width=0.42)
         p.polygon([(cx, by), (cx - 2.4, by + 3.4), (cx + 2.4, by + 3.4)], fill=INK, stroke=INK)
         p.rect(x + 3.5, y + 5.5, 16.0, 7.6, fill=GREEN_FILL, stroke=INK, r=0.5, line_w=0.24)
-        p.text(x + 11.5, y + 10.0, l_pan, size=1.62, bold=True, mono=True, color=INK, align="center")
+        p.text(x + 11.5, y + 10.0, l_pan, size=1.55, bold=True, mono=True, color=INK, align="center", max_w=15.0)
         p.rect(x + 24.5, y + 5.5, 16.0, 7.6, fill=GOLD_FILL, stroke=INK, r=0.5, line_w=0.24)
-        p.text(x + 32.5, y + 10.0, r_pan, size=1.62, bold=True, mono=True, color=INK, align="center")
+        p.text(x + 32.5, y + 10.0, r_pan, size=1.55, bold=True, mono=True, color=INK, align="center", max_w=15.0)
         p.text(cx, y + h - 1.8, step_txt, size=1.55, bold=True, color=TEAL, align="center")
 
         p.line(mid_x, y + 1.5, mid_x, y + h - 1.5, color=LIGHT_BORDER, width=0.22, dashed=True)
         rx = mid_x + 21.5
         p.text(rx, y + 3.0, bar_title, size=1.65, bold=True, color=TEAL, align="center")
         p.rect(mid_x + 2.5, y + 5.5, 38.0, 16.8, fill=SUBTLE_HDR, stroke=INK, r=0.6, line_w=0.22)
-        p.text(rx, y + 10.2, bar_sub, size=1.58, bold=True, mono=True, color=INK, align="center")
-        p.text(rx, y + 15.2, "Inverse Operations Undo Each Other:", size=1.52, bold=True, color=SLATE, align="center")
-        p.text(rx, y + 19.0, "+ <-> -     and     × <-> ÷ (or × b/a)", size=1.58, bold=True, mono=True, color=TEAL, align="center")
+        p.text(rx, y + 10.2, bar_sub, size=1.50, bold=True, mono=True, color=INK, align="center", max_w=35.5)
+        p.text(rx, y + 15.2, "Inverse Operations Undo Each Other:", size=1.52, bold=True, color=SLATE, align="center", max_w=35.5)
+        p.text(rx, y + 19.0, "+ <-> -     and     × <-> ÷ (or × b/a)", size=1.50, bold=True, mono=True, color=TEAL, align="center", max_w=35.5)
 
     elif sec_num == "7.4":
         # Inequality Number Line Graphs: Open Circle (<, >) vs. Solid Dot (<=, >=)
@@ -982,7 +988,7 @@ def draw_section_concept_diagram(
             p.line(bx + c_i * (bw / 4.0), by, bx + c_i * (bw / 4.0), by + bh, color=INK, width=0.18)
         for r_i in range(1, 3):
             p.line(bx, by + r_i * (bh / 3.0), bx + bw, by + r_i * (bh / 3.0), color=INK, width=0.18)
-        p.text(bx + bw / 2.0, y + h - 1.6, "Base B = 12×8 = 96  |  × 5 layers = 480 in³", size=1.55, bold=True, mono=True, color=TEAL, align="center")
+        p.text(x + 22.0, y + h - 1.6, "Base B = 12×8 = 96  |  × 5 layers = 480 in³", size=1.48, bold=True, mono=True, color=TEAL, align="center", max_w=40.5)
 
         p.line(mid_x + 2.0, y + 1.5, mid_x + 2.0, y + h - 1.5, color=LIGHT_BORDER, width=0.22, dashed=True)
         rx = mid_x + 22.5
@@ -1495,11 +1501,11 @@ def draw_problem_workspace_organizer(
             p.text(org_x, org_y + 3.2, "Outer Sides: s₁=___  s₂=___", size=1.24, mono=True, color=TEXT_FAINT)
             p.text(org_x, org_y + 7.4, "Perimeter P = 2(s₁ + s₂) = _____", size=1.24, mono=True, color=TEXT_FAINT)
         else:
-            p.text(org_x, org_y + 3.2, "b = _____   ⊥h = _____", size=1.26, mono=True, color=TEXT_FAINT)
+            p.text(org_x, org_y + 3.2, "Base b = ___  Height h = ___", size=1.24, mono=True, color=TEXT_FAINT)
             p.text(org_x, org_y + 7.4, "Area A = b × h = _________", size=1.26, mono=True, color=TEXT_FAINT)
 
     elif sec_num == "5.2" and prob_num <= 4:
-        p.text(org_x, org_y + 3.2, "b = _____   ⊥h = _____", size=1.26, mono=True, color=TEXT_FAINT)
+        p.text(org_x, org_y + 3.2, "Base b = ___  Height h = ___", size=1.24, mono=True, color=TEXT_FAINT)
         p.text(org_x, org_y + 7.4, "Area A = ½ × b × h = _____", size=1.26, mono=True, color=TEXT_FAINT)
 
     elif sec_num == "5.3" and prob_num <= 4:
@@ -1633,7 +1639,7 @@ def draw_problem_workspace_organizer(
 
     elif sec_num == "9.3" and prob_num <= 4:
         # 5-Number Summary + Box Plot axis
-        p.text(org_x - 4.0, org_y + 2.8, "Min:___ Q1:___ Med:___ Q3:___ Max:___", size=1.28, mono=True, color=TEXT_FAINT)
+        p.text(org_x, org_y + 2.8, "Min:___ Q1:___ Med:___ Q3:___ Max:___", size=1.22, mono=True, color=TEXT_FAINT, max_w=org_w - 1.0)
         ly = org_y + 7.5
         p.line(org_x, ly, org_x + org_w - 1.5, ly, color=STROKE_FAINT, width=0.26)
         for t_i in range(6):
@@ -1642,9 +1648,9 @@ def draw_problem_workspace_organizer(
 
     elif sec_num == "9.4" and prob_num <= 4:
         # 3-Step MAD check lines
-        p.text(org_x - 2.0, org_y + 2.8, "1. Mean = _____", size=1.32, mono=True, color=TEXT_FAINT)
-        p.text(org_x - 2.0, org_y + 6.0, "2. |x - Mean|: ____, ____, ____, ____", size=1.32, mono=True, color=TEXT_FAINT)
-        p.text(org_x - 2.0, org_y + 9.2, "3. MAD = Sum ÷ n = _____", size=1.32, mono=True, color=TEXT_FAINT)
+        p.text(org_x, org_y + 2.8, "1. Mean = _____", size=1.26, mono=True, color=TEXT_FAINT, max_w=org_w - 1.0)
+        p.text(org_x, org_y + 6.0, "2. |x - Mean|: ____, ____, ____, ____", size=1.22, mono=True, color=TEXT_FAINT, max_w=org_w - 1.0)
+        p.text(org_x, org_y + 9.2, "3. MAD = Sum ÷ n = _____", size=1.26, mono=True, color=TEXT_FAINT, max_w=org_w - 1.0)
 
     # --- UNIT 10: GRADE 7 BRIDGE (10.2 - 10.4) ---
     elif sec_num == "10.2" and prob_num <= 4:
@@ -1749,7 +1755,7 @@ def _parse_single_rpn_clause(clause: str, prev_pair: List[str]) -> str:
             if t.rstrip(",;").replace(".", "").replace("-", "").isdigit()
         ]
         if nums:
-            return f"{stat_lbl}({', '.join(nums[:5])}{'...' if len(nums) > 5 else ''})"
+            return f"{stat_lbl}({', '.join(nums)})"
         return f"Calc {stat_lbl}"
 
     stack: List[str] = []

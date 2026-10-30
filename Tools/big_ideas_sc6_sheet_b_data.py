@@ -1284,10 +1284,10 @@ STARTER_SCAFFOLDS: Dict[str, Tuple[str, str, str, str]] = {
         "Starter Step 1: Split the 8 sorted hours into the lower 4 and upper 4; average each pair of middle numbers to find Median, Q₁, and Q₃.",
     ),
     "9.4": (
-        "Starter Step 1: Step 1: Average the 3 numbers for the Mean. Step 2: Find each number's distance |x - Mean|. Step 3: Average those distances.",
-        "Starter Step 1: Step 1: Add the 5 values and divide by 5 for the Mean. Step 2: Find each distance from the Mean. Step 3: Divide the distance sum by 5.",
-        "Starter Step 1: Step 1: Find the Mean of the 4 temperatures. Step 2: Find how far each reading is from the Mean. Step 3: Average those 4 distances.",
-        "Starter Step 1: Step 1: Find the Mean of the 5 practices. Step 2: Find each practice's distance from the Mean. Step 3: Average those 5 distances.",
+        "Starter Step 1: Average the 3 numbers for the Mean -> Step 2: Find each number's distance |x - Mean| -> Step 3: Average those distances.",
+        "Starter Step 1: Add the 5 values and divide by 5 for the Mean -> Step 2: Find each distance from the Mean -> Step 3: Divide the distance sum by 5.",
+        "Starter Step 1: Find the Mean of the 4 temperatures -> Step 2: Find how far each reading is from the Mean -> Step 3: Average those 4 distances.",
+        "Starter Step 1: Find the Mean of the 5 practices -> Step 2: Find each practice's distance from the Mean -> Step 3: Average those 5 distances.",
     ),
     "10.1": (
         "Starter Step 1: In (a) the signs are different, so subtract the absolute values (15 - 9) and keep the sign of -15; in (b) the signs are the same.",
@@ -1302,8 +1302,8 @@ STARTER_SCAFFOLDS: Dict[str, Tuple[str, str, str, str]] = {
         "Starter Step 1: Write (-4) × (-10); apply the Same-Signs Rule for multiplying two negative numbers.",
     ),
     "10.3": (
-        "Starter Step 1: Step 1: Undo + 9 FIRST by subtracting 9 from both sides. Step 2: Undo 4x SECOND by dividing both sides by 4.",
-        "Starter Step 1: Step 1: Undo - 12 FIRST by adding 12 to both sides. Step 2: Undo 5x SECOND by dividing both sides by 5.",
+        "Starter Step 1: Undo + 9 FIRST by subtracting 9 from both sides -> Step 2: Undo 4x SECOND by dividing both sides by 4.",
+        "Starter Step 1: Undo - 12 FIRST by adding 12 to both sides -> Step 2: Undo 5x SECOND by dividing both sides by 5.",
         "Starter Step 1: Write 6r + 8 = 38 -> Step 1: Subtract the $8 admission from both sides first -> Step 2: Divide by $6 per lap.",
         "Starter Step 1: Write 4h + 12 = 48 -> Step 1: Subtract the $12 setup fee from both sides first -> Step 2: Divide by $4 per hour.",
     ),

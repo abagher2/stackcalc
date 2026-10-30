@@ -32,7 +32,7 @@ Every key on the 43-button matrix belongs to one of three deterministic state-tr
 
 1. **Enables Stack Lift (`Lift = TRUE`):** Nearly all mathematical operators (`+`, `-`, `×`, `÷`, `√x`, `SIN`, `LN`, etc.), constants (`{{key:π}}`), recalls (`{{key:RCL}}`, `{{key:LASTX}}`), and stack permutations (`{{key:R↓}}`, `{{key:R↑}}`, `{{key:x⇄y}}`) set `Lift = TRUE`. The next digit key pushes $T \leftarrow Z, Z \leftarrow Y, Y \leftarrow X$ (discarding the old $T$ in `4-LVL` mode) before writing the new digit into $X$.
 2. **Disables Stack Lift (`Lift = FALSE`):** Established exclusively by `{{key:ENTER}}` (the Stack Entry Invariant, which duplicates $Y \leftarrow X$ and disarms lift so the second operand overwrites $X$), `{{key:C}}` / `{{key:<-}}` (`CLx`), and statistical accumulation (`{{key:Σ+}}`, `{{key:Σ-}}`). The next digit key overwrites Register $X$ in place while leaving $Y, Z,$ and $T$ untouched.
-3. **Preserves Stack Lift (State Unchanged):** Prefix and modal keys (`{{key:↰}}`, `{{key:↱}}`, `{{key:STO}}`, `{{key:+/-}}`, `{{key:E}}`, and softkey menu openers) leave the active stack-lift flag unaltered.
+3. **Preserves Stack Lift (State Unchanged):** Prefix and modal keys (`{{key:↰}}`, `{{key:↱}}`, `{{key:STO}}`, `{{key:E}}`, softkey menu openers, and `{{key:+/-}}` during active `EDIT` digit entry—whereas pressing `{{key:+/-}}` on a finalized register enables stack lift) leave the active stack-lift flag unaltered.
 
 Because every operator sets the `Lift` flag deterministically upon completion, intermediate results never require explicit parentheses or scratchpad storage; tracking whether an operation enables or disables stack lift prevents accidental operand duplication.
 
@@ -64,7 +64,7 @@ All 43 physical switch positions of the SC-32 keypad are indexed by electrical s
 | **Row 2, Col 5** | `{{key:TAN}}` | **Enables** | **Yes** | $X \leftarrow \tan X; Y, Z, T \text{ unch}$ | Trigonometric tangent in active angular mode |
 | **Row 3, Col 0-1**| `{{key:ENTER}}` | **Disables** | No | $T \leftarrow Z; Z \leftarrow Y; Y \leftarrow X; X \leftarrow X$ | Duplicate $X \to Y$; disable stack lift |
 | **Row 3, Col 2** | `{{key:x⇄y}}` | **Enables** | No | $X \leftarrow Y; Y \leftarrow X; Z, T \text{ unch}$ | Exchange Registers $X$ and $Y$ |
-| **Row 3, Col 3** | `{{key:+/-}}` | Preserves | No | $X \leftarrow -X; Y, Z, T \text{ unch}$ | Toggle arithmetic sign of active number |
+| **Row 3, Col 3** | `{{key:+/-}}` | Preserves (in `EDIT`) / **Enables** | **Yes** (finalized) / No (`EDIT`) | $X \leftarrow -X; Y, Z, T \text{ unch}$ | Toggle arithmetic sign of active number |
 | **Row 3, Col 4** | `{{key:E}}` | Preserves | No | Arms scientific exponent entry buffer | Exponent entry separator |
 | **Row 3, Col 5** | `{{key:<-}}` | Preserves (in `EDIT`) / **Disables** (as `CLx`) | No | Deletes trailing digit in `EDIT`; sets $X \leftarrow 0$ as `CLx` | Dual-mode backspace / Clear $X$ |
 | **Row 4, Col 0** | `{{key:XEQ}}` | Preserves | No | Context dependent | Execute designated program or equation |
@@ -138,16 +138,16 @@ Every shifted key on the SC-32 adheres strictly to the Stack Lift Automaton. Tab
 | `{{key:TAN}}` | `%CHG` | **Enables** | **Yes** | $X \leftarrow 100(X - Y)/Y; Y, Z, T \text{ unch}$ | Base-preserving percent change |
 | `{{key:ENTER}}` | `SHOW` | Preserves | No | Renders 15-digit internal mantissa | Non-destructive temporary peek |
 | `{{key:+/-}}` | `ABS` | **Enables** | **Yes** | $X \leftarrow \lvert X\rvert; Y, Z, T \text{ unch}$ | Unary absolute value magnitude |
-| `{{key:E}}` | `÷R` | **Enables** | **Yes** | $X \leftarrow \lfloor Y/X \rfloor; Y \leftarrow \text{rem}(Y, X); Z \leftarrow T; T \leftarrow T$ | Euclidean integer quotient ($X$) & remainder ($Y$) |
+| `{{key:E}}` | `÷R` | **Enables** | **Yes** | $X \leftarrow \operatorname{trunc}(Y/X); Y \leftarrow \text{rem}(Y, X); Z, T \text{ unch}$ | Integer quotient ($X$) & remainder ($Y$) |
 | `{{key:<-}}` | *(None)* | Preserves | No | Unassigned | Intentionally unassigned to prevent accidental clear |
 | `{{key:XEQ}}` | `POLY` | Preserves | No | Dynamic cubic solver workspace (`A B C D EXEC CLR`)| Closed-form quadratic and cubic root workspace |
-| `{{key:7}}` | `SOLVE` | **Enables** | **Yes** | $X \leftarrow x^*; Y \leftarrow x_{\text{prev}}; Z \leftarrow f(x^*)$ | Richard Brent hybrid root solver |
-| `{{key:8}}` | `∫` | **Enables** | **Yes** | $X \leftarrow \int_Y^X f(t)\,dt; Y \leftarrow \lvert\epsilon\rvert$ | Adaptive Romberg quadrature |
+| `{{key:7}}` | `SOLVE` | **Enables** | No | $T \leftarrow Z; Z \leftarrow Y; Y \leftarrow X; X \leftarrow x^*$ | Richard Brent hybrid root solver |
+| `{{key:8}}` | `∫` | **Enables** | No | $X \leftarrow \int_Y^X f(t)\,dt; Y \leftarrow \lvert\epsilon\rvert$ | Adaptive Romberg quadrature |
 | `{{key:÷}}` | `x?0` | Preserves | No | Comparison menu: `x=0`, `x≠0`, `x>0`, etc. | Zero-relative comparison tests |
 | `{{key:4}}` | `▸y,x` | **Enables** | **Yes** | $X' \leftarrow X\cos Y;\; Y' \leftarrow X\sin Y;\; L \leftarrow X$ | Polar to rectangular conversion |
 | `{{key:×}}` | `FLAGS` | Preserves | No | Menu: `SF n`, `CF n`, `FS? n`, `STACK` (`2/4/8-LVL`, `INF`), `EXAM` | System flags & stack size |
-| `{{key:.}}` | `/c` | Preserves | No | Sets maximum fraction denominator | Denominator limiter (e.g. 16 for /16) |
-| `{{key:x∥y}}` | `PLOT` | Preserves | No | Enters graphic curve and scatter plotter | Graphic LCD vector plot engine |
+| `{{key:.}}` | `/c` | **Enables** | No | Pops $c \in [2, 4095]$ from $X$; drops stack | Fixed fraction denominator ($1/c$) |
+| `{{key:x∥y}}` | *(None)* | Preserves | No | Unassigned on physical non-graphing hardware | Intentionally unassigned (`TVM` sits on `{{key:↰}}`) |
 
 ### The Formal Register Delta Algebra
 

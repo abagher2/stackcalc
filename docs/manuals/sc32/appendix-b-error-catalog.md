@@ -51,9 +51,8 @@ Every hardware error code on the SC-32 corresponds to a deterministic mathematic
 ### Code 01: DIVIDE BY 0 (Division by Zero & Pole Singularities)
 * **Why the Singularity Happens:** Division asks how many times a divisor $x$ fits into a dividend $y$. As $x$ shrinks toward zero ($0.1, 0.001, 10^{-12}$), the quotient $y/x$ explodes without bound toward $+\infty$ from one side and $-\infty$ from the other, meaning $y/0$ has no finite value on the real number line. The same vertical asymptote (a *pole singularity*) appears inside disguised quotients across algebra and trigonometry:
   * **Direct Division & Reciprocals:** $y \div 0$ (`{{key:÷}}`), integer remainder division $y \;\text{rem}\; 0$ (`{{key:÷R}}`), or multiplicative reciprocal $1/0$ (`{{key:1/x}}`).
-  * **Trigonometric Poles on the Unit Circle:** Because $\tan\theta = \frac{\sin\theta}{\cos\theta}$, evaluating $\tan(90^\circ)$ or $\tan(270^\circ)$ in Degrees mode divides the vertical height $\sin(90^\circ) = 1$ by the horizontal shadow $\cos(90^\circ) = 0$, shooting the tangent line vertically to $\pm\infty$.
   * **Logarithmic Origin Pole:** Evaluating $\ln(0)$ or $\log_{10}(0)$ asks what power of $e$ or $10$ equals zero; as $x \to 0^+$, the logarithm plunges vertically to $-\infty$.
-  * **Zero Base with Non-Positive Exponent:** Evaluating $0^y$ for $y \le 0$ (such as $0^{-2} = 1/0^2$) places zero in the denominator.
+  * **Zero Base with Negative Exponent:** Evaluating $0^y$ for $y < 0$ (such as $0^{-2} = 1/0^2$) places zero in the denominator (whereas $0^0$ is an indeterminate power form guarded under domain rules).
 * **IEEE-754 Protection:** Rather than silently polluting your stack with `NaN` or `Inf` symbols that ruin subsequent calculations, the hardware trap intercepts the operation before mutating any register.
 * **Stack State & Recovery Procedure:**
   1. Register $X$ holds `0.0000` (the offending divisor or argument), Register $Y$ holds your original numerator untouched, and `LASTX` preserves the $X$ value from your previous completed calculation.
@@ -75,8 +74,8 @@ When computing $\frac{450}{15}$ and mistakenly keying $0$ as the divisor:
 * **Why the Singularity Happens:** Many mathematical functions are defined only on a specific interval of the real number line $\mathbb{R}$, and stepping outside that interval asks a question that has no real-number answer:
   * **Even Roots of Negative Numbers ($\sqrt{x}$ for $x < 0$):** Because the square of any real number—positive or negative—is always non-negative ($x^2 \ge 0$), no point on the real line squares to $-16$.
   * **Logarithms of Negative Numbers ($\ln x$ or $\log_{10} x$ for $x < 0$):** Because $e \approx 2.718$ and $10$ are strictly positive bases, raising them to any real exponent $y$ always produces a strictly positive result ($e^y > 0$). Thus $\ln x$ exists on the real line only for $x > 0$.
-  * **Inverse Sine & Cosine Outside $[-1, +1]$ ($\arcsin x$ or $\arccos x$ for $|x| > 1$):** On the unit circle of radius $1$, the vertical leg $\sin\theta$ and horizontal leg $\cos\theta$ can never exceed the hypotenuse of length $1$. Asking for an angle whose sine is $1.5$ violates the triangle inequality.
-  * **Gamma Poles & Combinatorial Boundaries:** Factorials of negative integers $(-n)!$ hit poles of Euler's Gamma function $\Gamma(x+1)$, and combinations $\binom{n}{r}$ (`{{key:Cn,r}}`) or permutations $P(n,r)$ (`{{key:Pn,r}}`) cannot choose $r > n$ items or negative counts.
+  * **Inverse Sine & Cosine Outside $[-1, +1]$ ($\arcsin x$ or $\arccos x$ for $|x| > 1$) and Orthogonal Tangent Poles ($\tan 90^\circ, \tan 270^\circ$):** On the unit circle of radius $1$, the vertical leg $\sin\theta$ and horizontal leg $\cos\theta$ can never exceed the hypotenuse of length $1$, while $\tan(90^\circ)$ and $\tan(270^\circ)$ sit on vertical asymptotes where $\cos\theta = 0$.
+  * **Factorial Poles & Combinatorial Boundaries:** Real factorials `{{key:x!}}` evaluate $\Gamma(x+1)$ across real arguments except at the negative-integer poles $x \in \{-1, -2, -3, \dots\}$ where $\Gamma(x+1)$ diverges, and discrete combinations $\binom{n}{r}$ (`{{key:Cn,r}}`) or permutations $P(n,r)$ (`{{key:Pn,r}}`) cannot choose $r > n$ items or negative integer counts.
 * **Stack State & Recovery Procedure:**
   1. All four registers remain frozen with the offending argument in Register $X$.
   2. Press `{{key:C}}` to clear the error banner.
@@ -128,8 +127,8 @@ While Codes 01–04 protect single-step arithmetic and transcendental functions,
   * Your two starting guesses in Registers $Y$ and $X$ sit on the same side of the root ($f(a) \cdot f(b) > 0$), and 100 secant steps fail to locate a sign reversal.
 * **Stack State & Recovery Procedure:**
   1. Press `{{key:C}}` to clear the banner; the solver deposits its closest candidate $x$ in Register $X$ while preserving your equation.
-  2. Open the interactive graphic plotter via `{{key:PLOT}}` to inspect the curve across $[X_{\min}, X_{\max}]$ and see visually where the graph crosses the horizontal axis.
-  3. Exit `{{key:PLOT}}`, enter two new bracket guesses $a$ (`{{key:ENTER}}`) and $b$ that straddle opposite sides of the crossing, and press `{{key:SOLVE}}`.
+  2. Sample the active `FN=` equation at trial endpoints via `{{key:XEQ}}` (for example, storing trial abscissas in your equation variable and inspecting the sign of $f(x)$ in Register $X$) to locate an interval $[a, b]$ where $f(a)$ and $f(b)$ have opposite algebraic signs.
+  3. Enter the two verified bracket guesses $a$ (`{{key:ENTER}}`) and $b$ that straddle opposite sides of the zero crossing, and press `{{key:SOLVE}}`.
 
 ---
 
@@ -174,8 +173,8 @@ Codes 09 through 12 govern non-volatile equation bank capacity, numerical integr
 ---
 
 ### Code 11: INTERRUPTED (Clean User Abort of Iterative Engine)
-* **Triggering Keystrokes:** Pressing `{{key:C}}` during an active `{{key:SOLVE}}`, `{{key:∫}}`, `{{key:POLY}}`, or `{{key:PLOT}}` sweep.
-* **Why the Singularity Happens:** Pressing `{{key:C}}` while the calculator is actively running a multi-step Romberg integral (`{{key:∫}}`), a Brent root search (`{{key:SOLVE}}`), a cubic solve (`{{key:POLY}}`), or a pixel plot sweep (`{{key:PLOT}}`) halts the iterative loop.
+* **Triggering Keystrokes:** Pressing `{{key:C}}` during an active `{{key:SOLVE}}`, `{{key:∫}}`, or `{{key:POLY}}` sweep.
+* **Why the Singularity Happens:** Pressing `{{key:C}}` while the calculator is actively running a multi-step Romberg integral (`{{key:∫}}`), a Brent root search (`{{key:SOLVE}}`), or a cubic solve (`{{key:POLY}}`) halts the iterative loop.
 * **Non-Destructive Recovery:**
   1. Temporary solver scratch variables are discarded, and your four operational stack registers ($X, Y, Z, T$) are restored to their pre-execution state.
   2. Press `{{key:C}}` once more to clear the `INTERRUPTED` notice and resume calculation.
@@ -183,8 +182,8 @@ Codes 09 through 12 govern non-volatile equation bank capacity, numerical integr
 ---
 
 ### Code 12: Unsigned Flag 6 (`NO NEG`), Equation & Integer Guard Banners
-* **Triggering Keystrokes:** Subtracting $Y < X$ or pressing `{{key:+/-}}` while System Flag 6 (`NO NEG`) is active (`INVALID DATA` on the SC-32; `CANNOT BE < 0` on the elementary SC-6), invoking `{{key:XEQ}}`, `{{key:SOLVE}}`, `{{key:∫}}`, or `{{key:PLOT}}` without an active equation (`NO EQN`) or with a malformed token stream (`INVALID FOR EQN`), or invoking `{{key:GCD}}` / `{{key:LCM}}` in `PARTS` on a fractional operand (`INTEGER REQUIRED`).
-* **Why the Singularity Happens:** When Flag 6 (`NO NEG`, the unsigned whole-number arithmetic profile) is active, negative inputs and results ($Y - X < 0$) are blocked at zero. Likewise, equation engines require a valid stored RPN formula in `{{key:EQN}}` (or a built-in template `0`–`5`), and number-theoretic greatest common divisor (`{{key:GCD}}`) and least common multiple (`{{key:LCM}}`) are defined strictly over the ring of integers $\mathbb{Z}$.
+* **Triggering Keystrokes:** Subtracting $Y < X$ or pressing `{{key:+/-}}` while System Flag 6 (`NO NEG`) is active (`INVALID DATA` on the SC-32; `CANNOT BE < 0` on the elementary SC-6), invoking `{{key:XEQ}}`, `{{key:SOLVE}}`, or `{{key:∫}}` without an active equation (`NO EQN`) or with a malformed token stream (`INVALID FOR EQN`), or invoking `{{key:GCD}}` / `{{key:LCM}}` in `PARTS` on a fractional operand (`INTEGER REQUIRED`).
+* **Why the Singularity Happens:** When Flag 6 (`NO NEG`, the unsigned whole-number arithmetic profile) is active, negative inputs and results ($Y - X < 0$) are blocked at zero. Likewise, equation engines require a valid stored RPN formula in `{{key:EQN}}`, and number-theoretic greatest common divisor (`{{key:GCD}}`) and least common multiple (`{{key:LCM}}`) are defined strictly over the ring of integers $\mathbb{Z}$.
 * **Non-Destructive Recovery:**
   1. Press `{{key:C}}` to dismiss the diagnostic banner; both $Y$ and $X$ remain untouched.
   2. For `NO NEG`, press `{{key:x⇄y}}` to swap $Y$ and $X$ or clear Flag 6 (`{{key:FLAGS}}` $\to$ `CF 6`); for `NO EQN` / `INVALID FOR EQN`, enter or select a valid equation in `{{key:EQN}}`; and for `INTEGER REQUIRED`, strip fractional parts via `{{key:PARTS}}` $\to$ `{{key:IP}}` before computing `{{key:GCD}}` or `{{key:LCM}}`.

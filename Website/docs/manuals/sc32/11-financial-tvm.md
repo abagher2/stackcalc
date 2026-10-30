@@ -115,17 +115,17 @@ Each extra dollar directed to principal in early periods bypasses all compound i
 
 ### Coupon Discounting, Inverse Yield Dynamics, and Macaulay Duration
 
-A fixed-rate bond is a standardized loan contract in which an issuer promises to pay a sequence of periodic coupon inflows $PMT = +C$ across $N$ compounding periods together with a par redemption inflow $FV = +M$ at maturity. When the market requires a periodic yield to maturity $y$ on securities of comparable credit risk, the fair purchase price $P$ (entered as an acquisition outflow $PV = -P$) is the sum of the discounted coupons and discounted par redemption:
+A fixed-rate bond is a standardized loan contract in which an issuer promises to pay a sequence of periodic coupon inflows $PMT = +C$ across $N$ compounding periods together with a par redemption inflow $FV = +M$ at maturity. When the market requires a periodic yield to maturity $y$ on securities of comparable credit risk, the fair purchase price $P$ on a coupon date (entered as an acquisition outflow $PV = -P$; between coupon dates, the settlement "dirty" invoice price adds accrued interest to the quoted "clean" price) is the sum of the discounted coupons and discounted par redemption:
 
 $$P(y) = C \left[ \frac{1 - (1 + y)^{-N}}{y} \right] + M (1 + y)^{-N}$$
 
 Because the contractual cash promises $C$ and $M$ are fixed at issuance, the market price $P(y)$ moves inversely to the prevailing yield $y$. When the market yield $y$ equals the coupon rate $c = C / M$, the bond trades at par ($P = M$); when prevailing yields rise above the coupon rate ($y > c$), the bond must trade at a discount ($P < M$) so that the capital gain $M - P$ at maturity compensates the buyer for the below-market coupons; when yields fall below the coupon rate ($y < c$), the bond trades at a premium ($P > M$).
 
-In 1938, economist Frederick Macaulay introduced a closed-form measure of a bond's effective maturity and interest-rate sensitivity by treating the discounted cash flows $w_t = C_t (1 + y)^{-t}$ at epochs $t = 1, 2, \dots, N$ as point masses distributed along a timeline. The center-of-mass fulcrum where that timeline balances—identical in form to Archimedes' weighted centroid $\bar{t} = \frac{\sum t w_t}{\sum w_t}$—is Macaulay Duration ($D$). Differentiating $P(y)$ with respect to $y$ and dividing $D$ by $(1 + y)$ yields Modified Duration ($D^*$), the first-order elasticity linking percentage price changes to yield shifts $\Delta y$:
+In 1938, economist Frederick Macaulay introduced a closed-form measure of a bond's effective maturity and interest-rate sensitivity by treating the discounted cash flows $w_t = C_t (1 + y)^{-t}$ at epochs $t = 1, 2, \dots, N$ as point masses distributed along a timeline. The center-of-mass fulcrum where that timeline balances—identical in form to Archimedes' weighted centroid $\bar{t} = \frac{\sum t w_t}{\sum w_t}$—is Macaulay Duration ($D$, measured in periods, or $D_{\text{yr}} = D/m$ in years for $m$ coupons per year). Differentiating $P(y)$ with respect to $y$ and dividing $D_{\text{yr}}$ by $(1 + y/m)$ yields Modified Duration ($D^*$), the first-order elasticity linking percentage price changes to annual yield shifts $\Delta y$:
 
 $$D = \frac{1}{P} \sum_{t=1}^{N} \frac{t \cdot C_t}{(1 + y)^t}, \qquad \frac{\Delta P}{P} \approx -D^* \cdot \Delta y = -\frac{D}{1 + y} \cdot \Delta y$$
 
-This duration lever explains why short-dated notes with small $D^*$ exhibit minimal price volatility when central-bank rates move, whereas long-dated bonds—whose cash-flow centroid sits far out along the time axis—experience large percentage price swings for every $1\%$ shift in yield.
+This duration lever explains why short-dated notes with small $D^*$ exhibit minimal price volatility when central-bank rates move, whereas long-dated bonds—whose cash-flow centroid sits far out along the time axis—experience large percentage price swings for every $1\%$ shift in yield (if a bond fund has $D^* = 7.0\text{ yr}$ and market interest rates rise by $1\%$, the fund's price drops by roughly $7\%$, before second-order convexity curvature $\frac{1}{2}C(\Delta y)^2$).
 
 ### Net Present Value (`NPV`) as a Horner Polynomial and `IRR` Root-Finding
 
@@ -139,11 +139,11 @@ $$\text{NPV}(x) = C_0 + \left(\cdots\left(\left(C_N \div x + C_{N-1}\right) \div
 
 This nested polynomial representation directly governs the inverse valuation problem: given an initial investment outlay $C_0 < 0$ followed by future cash flows $C_1, \dots, C_N$, the Internal Rate of Return (`IRR`) is the critical discount rate $r^*$ at which the Net Present Value vanishes, $\text{NPV}(r^*) = 0$.
 
-Determining `IRR`—or solving the Master TVM Equation for an unknown periodic rate `I%` (`{{key:I%YR}}` on `{{key:LFU1}}`)—requires finding the root of a degree-$N$ polynomial. As Niels Henrik Abel and Évariste Galois proved in the nineteenth century, no closed-form radical formula exists for general polynomial equations of degree $N \ge 5$. Moreover, as William Kahan demonstrated in his 1979 analysis of financial calculators, direct evaluation of $\frac{1 - (1 + i)^{-N}}{i}$ suffers catastrophic cancellation when $i \to 0$, requiring evaluation through $\ln(1 + i)$ and $\exp(x) - 1$ primitives during iterative root-finding:
+Determining `IRR`—or solving the Master TVM Equation for an unknown periodic rate `I%` (`{{key:I%}}` on `{{key:LFU1}}`)—requires finding the root of a degree-$N$ polynomial. As Niels Henrik Abel and Évariste Galois proved in the nineteenth century, no closed-form radical formula exists for general polynomial equations of degree $N \ge 5$. Moreover, as William Kahan demonstrated in his 1979 analysis of financial calculators, direct evaluation of $\frac{1 - (1 + i)^{-N}}{i}$ suffers catastrophic cancellation when $i \to 0$, requiring evaluation through $\ln(1 + i)$ and $\exp(x) - 1$ primitives during iterative root-finding:
 
 $$a_{\overline{N}|i} = \frac{1 - \exp\!\left(-N \ln(1 + i)\right)}{i}$$
 
-Two structural properties govern numerical root-finding on discounted cash-flow polynomials. First, `NPV` and `IRR` can rank mutually exclusive projects differently when their scales or cash-flow timings diverge: `IRR` implicitly assumes intermediate cash inflows can be reinvested at the internal rate $r^*$ itself, whereas `NPV` discounts every cash flow at the external opportunity cost of capital $r$.
+Two structural properties govern numerical root-finding on discounted cash-flow polynomials. First, `NPV` and `IRR` can rank mutually exclusive projects differently when their scales or cash-flow timings diverge: `IRR` measures the constant compounding rate earned on capital while it remains invested inside the project (whereas Modified `MIRR` explicitly compounds intermediate inflows to the horizon at the firm's external reinvestment rate before taking the $N$-th root), while `NPV` discounts every cash flow at the external opportunity cost of capital $r$.
 
 Second, by René Descartes's 1637 Rule of Signs, a conventional investment whose cash-flow sequence changes sign only once ($C_0 < 0$ followed by $C_t \ge 0$) possesses a unique positive root $x^* = 1 + r^*$. By contrast, a project with a large terminal decommissioning or reclamation outflow ($-, +, +, -$) changes sign twice and can exhibit two distinct internal rates of return. To handle both regimes cleanly, the SC-32 combines Horner stack evaluation with Richard Brent's `{{key:SOLVE}}` root-finder and William Kahan's financial convergence safeguards {{cite:kahan1979,brent1973}} across `N`, `I%`, `PV`, `PMT`, `FV`, and `END`/`BEG`.
 
@@ -151,7 +151,7 @@ Second, by René Descartes's 1637 Rule of Signs, a conventional investment whose
 
 ## Percentages, Mortgage Amortization & Discounted Cash Flows
 
-Because a unit of capital today compounds at periodic rate $i$ into $(1 + i)^N$ units $N$ periods hence, every commercial invoice, amortizing loan, bond, or capital budget is governed by discounted cash-flow conservation. On the StackCalc SC-32, financial computation relies on a two-register discipline: Register `Y` holds the baseline principal or subtotal untouched while Register `X` evaluates `{{key:%}}` or `{{key:%CHG}}`, and the five-variable `{{key:TVM}}` softkey bar (`{{key:N}}`, `{{key:I%YR}}`, `{{key:PV}}`, `{{key:PMT}}`, `{{key:FV}}`) reads known inputs from and writes solved roots directly to Register `X` without disturbing the upper stack.
+Because a unit of capital today compounds at periodic rate $i$ into $(1 + i)^N$ units $N$ periods hence, every commercial invoice, amortizing loan, bond, or capital budget is governed by discounted cash-flow conservation. On the StackCalc SC-32, financial computation relies on a two-register discipline: Register `Y` holds the baseline principal or subtotal untouched while Register `X` evaluates `{{key:%}}` or `{{key:%CHG}}`, and the five-variable `{{key:TVM}}` softkey bar (`{{key:N}}`, `{{key:I%}}`, `{{key:PV}}`, `{{key:PMT}}`, `{{key:FV}}`) reads known inputs from and writes solved roots directly to Register `X` without disturbing the upper stack.
 
 Pressing `{{key:TVM}}` (Left Shift `{{key:↰}}` above `{{key:x∥y}}`) maps the five financial variables plus `END/BEG` across the six top softkeys (`{{key:LFU0}}`–`{{key:LFU5}}`), where two operational invariants govern every entry. Under the wallet reference frame, cash flowing into your pocket is entered as positive (`+`), whereas cash flowing out of your pocket is negated with `{{key:+/-}}` (`-`). To solve for an unknown quantity from four known parameters, keying a number and tapping a softkey stores that parameter from Register `X`, while tapping a fifth softkey without prior numeric entry solves for that unknown variable.
 
@@ -184,7 +184,7 @@ By contrast, comparing the Markup Trap against true Gross Margin Pricing on a pr
 
 The Percent Change Function (`{{key:%CHG}}`) is executed via Right Shift `{{key:↱}}` followed by `{{key:%CHG}}` using the chronological order Old Value `{{key:ENTER}}` New Value `{{key:%CHG}}`, preserving the Old Value in Register $Y$ and the New Value in `LASTX`.
 
-In a quarterly SaaS operating review where Annual Recurring Revenue (`ARR`) grew from $\$12.0\text{M}$ to $\$15.6\text{M}$, `{{res:sc32_11_financial_tvm_seq_10:keys}}` returns $+30.00\%$. Over the same period, Customer Acquisition Cost (`CAC`) expanded from $\$2.4\text{M}$ to $\$2.88\text{M}$, where `{{res:sc32_11_financial_tvm_seq_11:keys}}` returns $+20.00\%$. Dropping the old baseline out of the way via `{{key:x⇄y}} {{key:R↓}}` aligns `ARR` growth in Register $Y$ ($30.00$) and `CAC` growth in Register $X$ ($20.00$) side-by-side on the stack. Pressing `{{key:-}}` then gives the `+10.00%` growth spread, while `{{res:sc32_11_financial_tvm_seq_12:keys}}` delivers the `{{res:sc32_11_financial_tvm_seq_12:value}}` growth elasticity multiplier:
+In a quarterly SaaS operating review where Annual Recurring Revenue (`ARR`) grew from $\$12.0\text{M}$ to $\$15.6\text{M}$, `{{res:sc32_11_financial_tvm_seq_10:keys}}` returns $+30.00\%$. Over the same period, Customer Acquisition Cost (`CAC`) expanded from $\$2.4\text{M}$ to $\$2.88\text{M}$, where `{{res:sc32_11_financial_tvm_seq_11:keys}}` returns $+20.00\%$. Dropping the old baseline out of the way via `{{key:x⇄y}} {{key:R↓}}` aligns `ARR` growth in Register $Y$ ($30.00$) and `CAC` growth in Register $X$ ($20.00$) side-by-side on the stack. Pressing `{{key:-}}` then gives the `+10.00%` growth spread, while `{{res:sc32_11_financial_tvm_seq_12:keys}}` delivers the `{{res:sc32_11_financial_tvm_seq_12:value}}` bang-for-the-buck growth elasticity multiplier ($1.50\times$ revenue growth per $1\times$ marketing spend growth):
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -205,7 +205,7 @@ The onboard Five-Variable Time Value of Money (`{{key:TVM}}`) Engine is accessed
 | TVM Variable | LFU Softkey | Actuarial Description | Computational Units |
 | :---: | :---: | :--- | :--- |
 | **$N$** | `{{key:N}}` (`{{key:LFU0}}`) | Total number of compounding periods | Integer or fractional periods |
-| **$I\%$** | `{{key:I%YR}}` (`{{key:LFU1}}`) | Periodic interest rate per compounding period ($i\%$) | Percent per period (e.g. `6.5` for 6.5%/yr or `6.75/12 = 0.5625` for monthly) |
+| **$I\%$** | `{{key:I%}}` (`{{key:LFU1}}`) | Periodic interest rate per compounding period ($i\%$) | Percent per period (e.g. `6.5` for 6.5%/yr or `6.75/12 = 0.5625` for monthly) |
 | **$PV$** | `{{key:PV}}` (`{{key:LFU2}}`) | Present value (initial loan principal or investment) | Currency ($) |
 | **$PMT$** | `{{key:PMT}}` (`{{key:LFU3}}`) | Periodic annuity payment amount | Currency ($ per period) |
 | **$FV$** | `{{key:FV}}` (`{{key:LFU4}}`) | Future value (final balloon balance or accumulated savings) | Currency ($) |
@@ -213,13 +213,13 @@ The onboard Five-Variable Time Value of Money (`{{key:TVM}}`) Engine is accessed
 
 Four hardware state conventions govern the `{{key:TVM}}` softkey interface:
 1. **Store versus Solve Dispatch:** Tapping any `{{key:TVM}}` softkey immediately after numeric entry or an arithmetic operation stores Register $X$ into that financial register; tapping a softkey immediately after another `{{key:TVM}}` softkey solves for that unknown variable into Register $X$.
-2. **Periodic Interest Rate Scaling:** Softkey `{{key:I%YR}}` (`{{key:LFU1}}`) stores the periodic interest rate $i\%$ per compounding interval. For a monthly contract quoted at nominal annual rate $\text{APR}$, divide by $12$ (`6.75 {{key:ENTER}} 12 {{key:÷}}` $\to 0.5625\%$) before storing.
+2. **Periodic Interest Rate Scaling:** Softkey `{{key:I%}}` (`{{key:LFU1}}`) stores the periodic interest rate $i\%$ per compounding interval. For a monthly contract quoted at nominal annual rate $\text{APR}$, divide by $12$ (`6.75 {{key:ENTER}} 12 {{key:÷}}` $\to 0.5625\%$) before storing.
 3. **Payment Timing Mode (`END/BEG`):** Softkey `{{key:LFU5}}` toggles between Ordinary Annuity (`END`, end-of-period cash flows) and Annuity Due (`BEG`, beginning-of-period cash flows).
 4. **Register Persistence Across Scenarios:** All five `{{key:TVM}}` registers retain their stored parameters across calculations for sensitivity analysis; explicitly zero any unused variable (such as `0 {{key:FV}}` or `{{key:CLEAR}}` $\to$ `{{key:CLVARS}}` on `{{key:LFU1}}`) before starting an unrelated contract.
 
 Applying this five-variable sequence to a 30-year fixed residential mortgage of $PV = +\$350,000.00$ at $6.75\%$ APR establishes the monthly payment and lifetime interest burden:
 1. **Total Periods (`N = 360`):** Thirty years of monthly payments span $30 \times 12 = 360$ compounding periods $\to$ `360 {{key:N}}`.
-2. **Monthly Periodic Rate (`I% = 6.75 / 12 = 0.5625`):** Divide the $6.75\%$ annual rate by $12$ months to get $0.5625\%$ per month $\to$ `.5625 {{key:I%YR}}`.
+2. **Monthly Periodic Rate (`I% = 6.75 / 12 = 0.5625`):** Divide the $6.75\%$ annual rate by $12$ months to get $0.5625\%$ per month $\to$ `.5625 {{key:I%}}`.
 3. **Present Value Loan Inflow (`PV = +350000`):** At closing, the lender wires $+\$350,000.00$ into your transaction $\to$ `350000 {{key:PV}}`.
 4. **Target Future Payoff Balance (`FV = 0`):** A fully amortizing mortgage pays the balance down to zero at Month 360 $\to$ `0 {{key:FV}}`.
 5. **Solve for the Unknown Monthly Outflow (`PMT`):** With four variables stored, tap `{{key:PMT}}` without typing a number to solve for the monthly check ($-\$2,270.09$):
@@ -227,14 +227,14 @@ Applying this five-variable sequence to a 30-year fixed residential mortgage of 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `360 {{key:N}}` | 0.00 | 0.00 | 0.00 | 360.00 | Store term $N = 360\text{ months}$ |
-| `.5625 {{key:I%YR}}` | 0.00 | 0.00 | 360.00 | 0.56 | Store monthly periodic rate $i = 0.5625\%$ |
+| `.5625 {{key:I%}}` | 0.00 | 0.00 | 360.00 | 0.56 | Store monthly periodic rate $i = 0.5625\%$ |
 | `350000 {{key:PV}}` | 0.00 | 360.00 | 0.56 | 350000.00 | Store loan principal inflow $PV = +\$350,000.00$ |
 | `0 {{key:FV}}` | 360.00 | 0.56 | 350000.00 | 0.00 | Zero unused balloon register $FV = \$0.00$ before solving |
 | `{{key:PMT}}` | 360.00 | 0.56 | 350000.00 | -2270.09 | Solve monthly mortgage outflow $PMT = -\$2,270.09$ |
 | `360 {{key:×}}` | 0.56 | 0.56 | 350000.00 | -817233.60 | Total 30-year payments $-\$817,233.60$ |
 | `350000 {{key:+}}` | 0.56 | 0.56 | 350000.00 | -467233.60 | Total lifetime interest paid $-\$467,233.60$ |
 
-Dissecting the Month 1 interest/principal split requires only Registers $X$ and $Y$ while Registers $Z$ and $T$ stay at zero: during the first month, the bank assesses one periodic rate interval ($i = 0.0675 / 12 = 0.005625$) against the entire $\$350,000.00$ starting balance. Keying `350000 {{key:ENTER}} 0.005625 {{key:×}}` computes the Month 1 interest charge $I_1 = \$1,968.75$ right in Register $X$—consuming $86.7\%$ of the family's $\$2,270.09$ check before a single cent touches the debt. Deducting that interest from the monthly payment via `2270.09 {{key:x⇄y}} {{key:-}}` isolates the Month 1 principal reduction $P_1 = \$301.34$ ($13.3\%$ of the check), and subtracting $P_1$ from the initial balance via `350000 {{key:x⇄y}} {{key:-}}` leaves $\$349,698.66$ still owed after Month 1. By the crossover formula $k_{\text{cross}} = 361 - \frac{\ln 2}{\ln(1.005625)} = 237.43$, Month 238 is the first integer month where principal overtakes interest:
+Dissecting the Month 1 interest/principal split requires only Registers $X$ and $Y$ while Registers $Z$ and $T$ stay at zero (noting that Truth-in-Lending cent-rounding from $-\$2,270.0934$ adjusts the Month 360 payoff by a few cents): in Month 1, the bank assesses one periodic rate ($i = 0.0675 / 12 = 0.005625$) against the $\$350,000.00$ balance. Keying `350000 {{key:ENTER}} 0.005625 {{key:×}}` computes Month 1 interest $I_1 = \$1,968.75$ in Register $X$—consuming $86.7\%$ of the $\$2,270.09$ check before a single cent touches the debt. Deducting that interest via `2270.09 {{key:x⇄y}} {{key:-}}` isolates the Month 1 principal reduction $P_1 = \$301.34$ ($13.3\%$), and subtracting $P_1$ via `350000 {{key:x⇄y}} {{key:-}}` leaves $\$349,698.66$ owed after Month 1. By the crossover formula $k_{\text{cross}} = 361 - \frac{\ln 2}{\ln(1.005625)} = 237.43$, Month 238 is the first integer month where principal overtakes interest:
 
 | Month | Remaining Balance | Monthly Payment | Interest ($I_k$) | Principal ($P_k$) | Equity % | Financial Milestone |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -246,7 +246,7 @@ Because the `TVM` registers retain your loan parameters, testing an extra $\$250
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 |:---|:---|:---|:---|:---|:---|
-| `6.75 {{key:ENTER}} 12 {{key:÷}} {{key:I%YR}}` | 0.00 | 0.00 | 0.00 | 0.56 | Monthly rate i = 0.5625% |
+| `6.75 {{key:ENTER}} 12 {{key:÷}} {{key:I%}}` | 0.00 | 0.00 | 0.00 | 0.56 | Monthly rate i = 0.5625% |
 | `350000 {{key:PV}} 0 {{key:FV}}` | 0.00 | 0.56 | 350000.00 | 0.00 | Store PV = \$350,000.00 and zero FV = \$0.00 before solving |
 | `2520.09 {{key:+/-}} {{key:PMT}}` | 0.56 | 350000.00 | 0.00 | -2520.09 | Augmented payment: -\$2,520.09/mo |
 | `{{key:N}}` | 0.56 | 350000.00 | 0.00 | 270.93 | Accelerated repayment: 270.93 months |
@@ -256,7 +256,7 @@ Next, take a commercial 5-year balloon note lending $\$500,000$ at $7.5\%$ APR (
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `300 {{key:N}}` | 0.00 | 0.00 | 0.00 | 300.00 | Store 25-year amortization schedule $N = 300\text{ months}$ |
-| `.625 {{key:I%YR}}` | 0.00 | 0.00 | 300.00 | 0.63 | Store monthly periodic rate $7.5\% / 12 = 0.625\%$ |
+| `.625 {{key:I%}}` | 0.00 | 0.00 | 300.00 | 0.63 | Store monthly periodic rate $7.5\% / 12 = 0.625\%$ |
 | `500000 {{key:PV}}` | 0.00 | 300.00 | 0.63 | 500000.00 | Store commercial loan principal $PV = +\$500,000.00$ |
 | `0 {{key:FV}}` | 300.00 | 0.63 | 500000.00 | 0.00 | Target $FV = 0$ over full 300-month amortization |
 | `{{key:PMT}}` | 300.00 | 0.63 | 500000.00 | -3694.96 | Monthly payment $PMT = -\$3,694.96$ |
@@ -274,7 +274,7 @@ Every `{{key:TVM}}` calculation can also be cross-checked from the closed-form a
 
 ### Bond Yield to Maturity (`YTM`), Duration, `NPV`, `IRR` & Portfolio Risk
 
-For a 10-year corporate bond ($N = 20$ semi-annual periods) with par value $FV = +\$1,000.00$ and a $5.5\%$ annual coupon paid semi-annually ($PMT = +\$27.50$) purchased at $PV = -\$925.00$, storing $N, PV, PMT, FV$ and pressing `{{key:I%YR}}` finds the semi-annual yield $3.2666\%$, which doubles (`2 {{key:×}}`) to the annualized Yield to Maturity $\text{YTM} = 6.53\%$:
+For a 10-year corporate bond ($N = 20$ semi-annual periods) with par value $FV = +\$1,000.00$ and a $5.5\%$ annual coupon paid semi-annually ($PMT = +\$27.50$) purchased at $PV = -\$925.00$, storing $N, PV, PMT, FV$ and pressing `{{key:I%}}` finds the semi-annual yield $3.2666\%$, which doubles (`2 {{key:×}}`) to the Wall Street Bond-Equivalent Yield $\text{BEY} = 2i = 6.53\%$ (or compounds via $(1 + i)^2 - 1 = 6.64\%$ as an Effective Annual Yield $\text{EAY}$):
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -282,7 +282,7 @@ For a 10-year corporate bond ($N = 20$ semi-annual periods) with par value $FV =
 | `925 {{key:+/-}} {{key:PV}}` | 0.00 | 0.00 | 20.00 | -925.00 | Store bond purchase price outflow $PV = -\$925.00$ |
 | `27.50 {{key:PMT}}` | 0.00 | 20.00 | -925.00 | 27.50 | Store semi-annual coupon inflow $PMT = +\$27.50$ |
 | `1000 {{key:FV}}` | 20.00 | -925.00 | 27.50 | 1000.00 | Store maturity par redemption $FV = +\$1,000.00$ |
-| `{{key:I%YR}}` | 20.00 | -925.00 | 27.50 | 3.27 | Solve semi-annual periodic yield $i = 3.2666\%$ |
+| `{{key:I%}}` | 20.00 | -925.00 | 27.50 | 3.27 | Solve semi-annual periodic yield $i = 3.2666\%$ |
 | `2 {{key:×}}` | -925.00 | -925.00 | 27.50 | 6.53 | Annualized bond-equivalent $\text{YTM} = 6.53\%$ |
 
 To evaluate Macaulay Duration $D$ and Modified Duration $D^*$ for a 3-year $8.0\%$ annual coupon bond trading at par of $\$1,000.00$ with yield $y = 8.0\%$, accumulate the time-weighted present values $\sum t \cdot C_t / (1.08)^t$ and divide by price and $(1 + y)$:
@@ -309,6 +309,6 @@ To discount a 4-year corporate free-cash-flow stream of $\$10\text{M}, \$12\text
 
 *(Horner Nested Discounting via Register $T$: Pre-filling the stack with `1.1 {{key:ENTER}} {{key:ENTER}} {{key:ENTER}}` and alternating `{{key:x⇄y}} {{key:÷}}` with each cash-flow addition from Year 4 ($234$) down to Year 1 ($10$) evaluates $\$190.10\text{M}$ with `1.1` typed only once and zero `{{key:yˣ}}` exponentiations.)*
 
-To solve for the Internal Rate of Return (`IRR`) of an upfront outlay $C_0 = -\$100,000$ returning $C_1 = \$30,000$, $C_2 = \$40,000$, and $C_3 = \$50,000$, store the Net Present Value polynomial (`-100+30/X+40/X^2+50/X^3`, or in Horner nested form `((50000 / X + 40000) / X + 30000) / X - 100000`) in `{{key:EQN}}` mode, where $X = 1 + r$ is the gross annual discount factor. Because Richard Brent's root-finder evaluates the stored equation internally, the live stack needs only Register $X$ (and $Y$ for the prior iterate) while Registers $Z$ and $T$ stay at zero: passing a two-guess bracket `1.0 {{key:ENTER}} 1.2` and invoking `{{key:SOLVE}}` converges to the zero-NPV root $X = 1.088963$ in Register $X$ (with the previous secant iterate in $Y$ and $0.0000$ residual in $Z$). Subtracting unity and multiplying by $100$ then extracts the project's exact internal rate of return, $\text{IRR} = 8.90\%/\text{yr}$ ($8.8963\%$).
+To solve for the Internal Rate of Return (`IRR`) of an upfront outlay $C_0 = -\$100,000$ returning $C_1 = \$30,000$, $C_2 = \$40,000$, and $C_3 = \$50,000$, store the Net Present Value polynomial $((50000 / X + 40000) / X + 30000) / X - 100000$ in `{{key:EQN}}` mode using Horner RPN tokens `50000 X ÷ 40000 + X ÷ 30000 + X ÷ 100000 -`, where $X = 1 + r$ is the gross annual discount factor. Because Richard Brent's root-finder evaluates the stored equation internally, passing a two-guess bracket `1.0 {{key:ENTER}} 1.2` (or seeding `1.1 {{key:STO}} X`) and invoking `{{key:SOLVE}}` pushes the converged zero-NPV root $X = 1.088963$ into Register $X$ (lifting the prior contents of Register $X$ into $Y$ and preserving the upper stack in $Z$ and $T$). Subtracting unity and multiplying by $100$ then extracts the project's exact internal rate of return, $\text{IRR} = 8.90\%/\text{yr}$ ($8.8963\%$).
 
-Finally, to evaluate portfolio risk metrics on the stack: for a systematic strategy returning $R_p = 18.5\%$ against a risk-free rate $R_f = 4.5\%$ with annualized volatility $\sigma_p = 11.2\%$, the sequence `{{res:sc32_11_trader_sharpe_ratio:keys}}` produces William Sharpe's Ratio `{{res:sc32_11_trader_sharpe_ratio:value}}` ($\frac{18.5 - 4.5}{11.2} = 1.25$). And for a trade setup with win probability $p = 0.56$ ($q = 1 - p = 0.44$) and payoff odds $b = 1.50$, entering `{{res:sc32_11_trader_kelly_criterion:keys}}` evaluates John Kelly's Criterion $f^* = \frac{bp - q}{b} \times 100 = \left(p - \frac{1-p}{b}\right) \times 100$ to `{{res:sc32_11_trader_kelly_criterion:value}}` ($26.67\%$)—where recalling $p = 0.56$ from `{{key:LASTX}}` right after subtracting $1 - 0.56$ lets you evaluate the optimal capital fraction while typing `0.56` and `1.5` only once.
+Finally, two classic metrics quantify risk-adjusted return and position sizing on the stack. William Sharpe's Ratio $(R_p - R_f)/\sigma_p$ measures the excess return earned above a risk-free Treasury bill per unit of volatility: for $R_p = 18.5\%$ against $R_f = 4.5\%$ with volatility $\sigma_p = 11.2\%$, `{{res:sc32_11_trader_sharpe_ratio:keys}}` yields `{{res:sc32_11_trader_sharpe_ratio:value}}` ($\frac{18.5 - 4.5}{11.2} = 1.25$). John Kelly's 1956 Criterion $f^* = \frac{bp - q}{b} = p - \frac{1-p}{b}$ determines the fraction of capital to wager on a favorable repeat bet to maximize long-run logarithmic growth without risking ruin: for win probability $p = 0.56$ ($q = 0.44$) and odds $b = 1.50$, `{{res:sc32_11_trader_kelly_criterion:keys}}` yields `{{res:sc32_11_trader_kelly_criterion:value}}` ($26.67\%$, with `{{key:LASTX}}` recalling $0.56$; in practice, portfolio managers often deploy "Half-Kelly" $\frac{1}{2}f^* \approx 13.3\%$ to halve drawdown volatility while retaining three-quarters of the compound growth rate).
