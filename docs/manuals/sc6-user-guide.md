@@ -27,8 +27,8 @@ When you work with numbers that have two or three parts—like measuring boards 
 
 Now look at the bottom-right corner of your **StackCalc SC-6**. Instead of an equals key, there is a wide button labeled **`[ENTER]`**, and the screen above it acts like a **stack of four sturdy shelves** where your numbers stay in plain sight while you work:
 
-- **Shelf $X$ (Your Ground Shelf & Workbench):** This is the bottom shelf (or the right side of the split `Y | X` screen). Every number you type appears right here on Shelf $X$, and every finished answer lands here too.
-- **Shelf $Y$ (Your Waiting Shelf):** This shelf sits right above Ground Shelf $X$ (or on the left side of the `Y | X` screen). Whenever you finish typing your first number and press **`[ENTER]`**, an invisible elevator lifts that number up onto Shelf $Y$ so the bottom shelf is clear for your next number.
+- **Shelf $X$ (Your Ground Shelf & Workbench):** This is the bottom shelf, shown in large bold digits along the lower edge of the screen. Every number you type appears right here on Shelf $X$, and every finished answer lands here too.
+- **Shelf $Y$ (Your Waiting Shelf):** This shelf sits stacked right above Ground Shelf $X$. Whenever you finish typing your first number and press **`[ENTER]`**, an invisible elevator lifts that number up onto Shelf $Y$ so the bottom shelf is clear for your next number.
 - **Shelf $Z$ and Top Shelf $T$ (Your Upper Shelves):** Above Shelf $Y$ sit two more waiting shelves. Whenever a math puzzle has two or three separate parts, finished pieces ride safely upstairs to Shelf $Z$ and Top Shelf $T$ until you need them, then drop right back down when it is time to combine them.
 
 ![The StackCalc SC-6 Calculator and Four-Shelf Number Stack](../assets/renders/sc6-elementary-hero.png)
@@ -130,7 +130,7 @@ As you travel through the chapters ahead, you will meet several more helper keys
 | :--- | :--- |
 | **Constant Repeat (`[g] [REP]`)** | **Skip-Counting & Times Tables:** Copies your number across all four shelves ($X = 7, Y = 7, Z = 7, T = 7$) so repeated taps of `[+]` climb times tables (`7, 14, 21, 28...`) or repeated taps of `[×]` double `2` twenty times past **one million (`1,048,576`)**! |
 | **Quotient & Remainder (`[g] [÷R]`)** | **Whole Groups & Leftovers Together:** Divides in one tap, putting the whole groups (Quotient) on Shelf $X$ and the exact leftovers (Remainder) on Shelf $Y$. |
-| **Step-by-Step Simplify (`[g] [SIMP]`)** | **Fraction Reduction You Control:** Keeps fractions like `. 12 . 18` unreduced until *you* press `[g] [SIMP]` to divide out shared factors into `2/3`, flashing `LOWEST TERMS` when fully simplified. |
+| **One-Tap GCF Simplify (`[g] [SIMP]`)** | **Fraction Reduction You Control:** Keeps fractions like `0 [.] 12 [.] 18` unreduced until *you* press `[g] [SIMP]` to divide top and bottom by their Greatest Common Factor in one tap into `2/3`, displaying `LOWEST TERMS` when already simplified. |
 | **Add to Total (`[Σ+]`)** | **A Shopping Basket for Totals:** Lets you toss finished numbers into a running basket (`1`, `2`, `3` items) and tap `[f] [Σx]` to see the grand total in one click. |
 
 Look at how handy that **`[Σ+]` (Add to Total)** basket is whenever a project has several separate pieces to add up. Imagine painting three plywood walls for a backyard treehouse: a **North Wall** measuring $4\text{ ft} \times 3\text{ ft}$ ($12\text{ sq ft}$), an **East Wall** measuring $5\text{ ft} \times 3\text{ ft}$ ($15\text{ sq ft}$), and a **South Wall** measuring $6\text{ ft} \times 3\text{ ft}$ ($18\text{ sq ft}$). Instead of writing those three wall sizes down on scrap paper, you simply empty your calculator's running-total basket with **`[g] [CLΣ]`** and toss each finished wall straight in. First, multiply the North Wall (`4 [ENTER] 3 [×]`) and tap **`[Σ+]`**—Shelf $X$ displays **`1`** to confirm *"1 wall is safely inside the basket."* Next, multiply and add the East Wall (`5 [ENTER] 3 [×] [Σ+]` $\to$ **`2`** walls) and the South Wall (`6 [ENTER] 3 [×] [Σ+]` $\to$ **`3`** walls). Finally, one tap of **`[f] [Σx]`** adds the entire basket together to reveal **`45.0` $\text{sq ft}$** of total wall area—and tapping **`[g] [x̄]`** divides that $45\text{ sq ft}$ total equally across all $3$ walls to show an average wall size of **`15.0` $\text{sq ft}$**!
@@ -171,10 +171,10 @@ If you are curious about a specific math puzzle today—whether it's why cicadas
 | **[Chapter 02](sc6/02-rpn-for-young-learners.md)** | Riding the 4-shelf RPN stack ($X, Y, Z, T$) & solving multi-step order of operations step by step | Stack Shelves & Counting Tiles | `[ENTER]`, `[+]`, `[-]`, `[x⇄y]`, `[f] [R↓]`, `[f] [CSTK]` | Weighing a dog on a bathroom scale, cell division, smoothie pitchers & backyard patios |
 | **[Chapter 03](sc6/03-counting-place-value.md)** | Spotting groups at a glance, make-ten bridging, multi-digit place value (`1000 \| 100 \| 10 \| 1`), rounding & negative number-line hops | Ten-Frame Studio, Number Rack & Place Value Trays | `[▦]`, `[g] [COUNT]`, `[f] [LINE]`, `[PV]`, `[$]` | Fireflies & ten-pin bowling, Jupiter's moons, red kangaroo leaps & Voyager 1 |
 | **[Chapter 04](sc6/04-operations-skip-counting.md)** | Rectangular multiplication arrays, rhythmic skip-counting ladders, powers & fair-share division with remainders | 24-Tile Counting & Array Studio | `[×]`, `[÷]`, `[g] [REP]`, `[g] [÷R]`, `[f] [MOD]`, `[f] [LASTX]` | Spacecraft solar panels, the chessboard wheat legend, farm egg cartons & garage skateboards |
-| **[Chapter 05](sc6/05-fractions-decimals-ratios.md)** | Equivalent fractions, step-by-step factor reduction, common denominators, mixed numbers, decimals, percents & ratios | 84 mm Fraction Tower Studio & Decimal Tray | `[a ᵇ/c]`, `[f] [d/c]`, `[g] [SIMP]`, `[FDISP]`, `[%]`, `[g] [%CHG]` | Musical guitar strings, bicycle sprockets, woodworking boards & the 1-2-3 concrete rule |
+| **[Chapter 05](sc6/05-fractions-decimals-ratios.md)** | Equivalent fractions, one-tap GCF reduction, common denominators, mixed numbers, decimals, percents & ratios | 84 mm Fraction Tower Studio & Decimal Tray | `[a ᵇ/c]`, `[f] [d/c]`, `[g] [SIMP]`, `[FDISP]`, `[%]`, `[g] [%CHG]` | Musical guitar strings, bicycle sprockets, woodworking boards & the 1-2-3 concrete rule |
 | **[Chapter 06](sc6/06-geometry-surface-area.md)** | 2D area/perimeter, Pythagorean theorem, 3D prism/cylinder/cone volume, surface area via `[Σ+]` & modulo-60 clock time | Counting Tiles, L-Frame, Volvelle & Geared Clock | `[f] [RECT]`, `[f] [CIRC]`, `[f] [PRISM]`, `[Σ+]`, `[🕒]`, `[f] [▸HR]` | Penguin huddles, Antarctic Scott tents, gift-box wrapping & Palomar dome |
 | **[Chapter 07](sc6/07-data-probability-primes.md)** | Prime factor trees, GCF & LCM, polyhedral dice probability, dot plots, mean/median/IQR/MAD & signed integers | Prime Factor Studio, Polyhedral Dice & Two-Color Counters | `[PRIME]`, `[g] [FACT]`, `[GCF]`, `[f] [LCM]`, `[🎲]`, `[g] [x̄]`, `[f] [MED]`, `[+/-]` | 17-year cicadas, RSA secret codes, dice trials & submersible Alvin |
-| **[Chapter 08](sc6/08-math-quiz-engine.md)** | Left-to-right mental math tricks (matching tens, 11s split, staircase sums) & 6-level 4-second speedruns | Math Dominoes & Quest Scoreboard | `[f] [?]` (`[f]` + `[C]`), `[f] [LASTX]`, Classroom Seeds | Mental-math speed shortcuts & 6-level 4-second speedrun sprints |
+| **[Chapter 08](sc6/08-math-quiz-engine.md)** | Left-to-right mental math tricks (matching tens, 11s split, staircase sums) & 6-level 4-second speedruns | Math Dominoes & Quest Scoreboard | `[f] [?]` (`[f]` + `[C]`), `[≠]`, `[f] [LASTX]` | Mental-math speed shortcuts & 6-level 4-second speedrun sprints |
 | **[Chapter 09](sc6/09-applied-stem-labs.md)** | 3D-printed block weights and layer slicing, bean sprout growth, recipe scaling, gear ratios, and solar ovens | All Studios + Calipers, Scale & Stopwatches | `[π]`, `[x²]`, `[f] [√x]`, `[f] [▸g]`, `[f] [▸cm]`, `[f] [▸°C]` | 3D printer slicing, pendulum clocks, botanical growth & maker workshops |
 | **[Appendices A–D](sc6/appendix-a-manipulative-blueprints.md)** | CAD/3D-print blueprints ([App. A](sc6/appendix-a-manipulative-blueprints.md)), 25 station lesson plans ([App. B](sc6/appendix-b-teacher-lesson-plans.md)), formulas & primes ([App. C](sc6/appendix-c-formulas-and-conversions.md)), and 43-key matrix ([App. D](sc6/appendix-d-keycap-directory.md)) | Full 3D-Printed Math Block & Reference Suite | Complete 43-Key Hardware Matrix | Turnkey Classroom & Home Reference |
 
@@ -221,9 +221,9 @@ Now look at the other side of your desk: the **StackCalc SC-6**. Molded from tou
 
 Your brain works best when it can focus on a few clear steps at a time instead of juggling hidden numbers in the dark. When you try to solve a math puzzle on a buzzing tablet—or on a cramped screen that hides your first number the moment you type your second—all that extra clutter gets in your way. Just like a cutaway drawing that opens up a machine so you can see every gear turning inside *([Macaulay, 2016](sc6/appendix-c-formulas-and-conversions.md#cite-macaulay2016))*, the SC-6 pairs **physical math blocks on your desk** with **four visible number shelves on the screen**, so every step stays right in front of your eyes.
 
-### 1.1.1 Two Hands, One Workbench: Matching Your Tray to the Split Screen
+### 1.1.1 Two Hands, One Workbench: Matching Your Tray to the Stack Screen
 
-Set a 3D-printed math block tray on the left side of your desk and wake up your SC-6 on the right by tapping **`[C]`**. Notice how the split `Y | X` screen mirrors the physical layout of your desk tray: the **first group of blocks** you place in the top row of your tray with your left hand matches **Waiting Shelf $Y$** on the left side of the screen, while the **second group of blocks** you place in the bottom row matches **Ground Shelf $X$** on the right side.
+Set a 3D-printed math block tray on the left side of your desk and wake up your SC-6 on the right by tapping **`[C]`**. Notice how the vertical stack screen mirrors the physical layout of your desk tray: the **first group of blocks** you place in the top row of your tray with your left hand matches **Waiting Shelf $Y$** stacked right above on the screen, while the **second group of blocks** you place in the bottom row matches **Ground Shelf $X$** in large bold digits along the bottom of the screen.
 
 Try that two-hand rhythm right now with the **$7\text{ mm}$ Tile Rule (`6 + 4 = 10` Tiles)**. With your left hand, pick up **6 blue Counting Tiles** (each tile is $7\text{ mm}$ thick, making a $42\text{ mm}$ stack), and with your right hand type `6 [ENTER]` to lift `6` onto Shelf $Y$. Next, pick up **4 gold Counting Tiles** ($28\text{ mm}$ tall) and type `4` onto Shelf $X$—without pressing `[ENTER]` after the second number. Now slide the 4 gold tiles onto the 6 blue tiles to build a **10-tile tower** ($70\text{ mm}$ tall, matching the exact height of your Ten-Frame 10-Rod!) as you tap **`[+]`** on your keypad. Shelf $Y$ drops down and fuses with Shelf $X$ into **`10`**—and if you multiply `10 [ENTER] 7 [×]`, the screen confirms your tower stands **`70` millimeters** tall!
 
@@ -231,8 +231,8 @@ Try that two-hand rhythm right now with the **$7\text{ mm}$ Tile Rule (`6 + 4 = 
 
 Instead of hiding math tools inside confusing computer menus, every sculpted button on the SC-6 can perform up to **three actions** (Direct Press, **`[f]` Shift**, and **`[g]` Shift**):
 - **Direct Press:** Tapping any key directly uses the main white label on the keycap face—digits `0`–`9`, `[ENTER]`, `[+]`, `[-]`, `[×]`, `[÷]`, clear `[C]`, and backspace `[<-]` (which erases the last digit if you make a typing slip).
-- **`[f]` Shift Key:** Pressing `[f]` first lights up the **`↰`** indicator in the top-left corner of the screen and activates the feature printed above the keycap, such as finding common multiples with `[f] [LCM]`, simplifying fractions step-by-step with `[g] [SIMP]`, recalling your last number with `[f] [LASTX]`, and inspecting memory `[f] [REGS]`.
-- **`[g]` Shift Key:** Pressing `[g]` first lights up the **`↱`** indicator on the screen and activates the feature printed on the right bevel of the keycap, such as prime factor trees with `[g] [FACT]`, skip-counting ladders with `[g] [REP]`, whole-number division with remainder `[g] [÷R]`, low-power sleep `[g] [OFF]`, and settings `[g] [FLAGS]`. (If you ever tap `[f]` or `[g]` by mistake, just tap the same shift key again to cancel it!)
+- **`[f]` Shift Key:** Pressing `[f]` first lights up the **`↰`** indicator in the top-left corner of the screen and activates the feature printed above the keycap, such as finding common multiples with `[f] [LCM]`, clearing the entire stack with `[f] [CSTK]`, recalling your last number with `[f] [LASTX]`, and inspecting memory `[f] [REGS]`.
+- **`[g]` Shift Key:** Pressing `[g]` first lights up the **`↱`** indicator on the screen and activates the feature printed on the right bevel of the keycap, such as prime factor trees with `[g] [FACT]`, simplifying fractions with `[g] [SIMP]`, skip-counting ladders with `[g] [REP]`, whole-number division with remainder `[g] [÷R]`, low-power sleep `[g] [OFF]`, and settings `[g] [FLAGS]`. (If you ever tap `[f]` or `[g]` by mistake, just tap the same shift key again to cancel it!)
 
 Before we open your math block kits, slide the protective cover downward off the front of your calculator, flip the calculator over, and slide the cover onto the rear rails until it clicks into place. Your SC-6 now rests at a hands-free **$15^\circ$ reading angle**, leaving your left hand free to build with blocks while your right hand taps keys onto the stack.
 
@@ -266,14 +266,14 @@ Whenever you start an activity in this book, place your **3D-printed block tray 
 ![The 90° Corner L-Frame and Area-Grid Tiles Alongside Your Modular Desk Trays](../assets/renders/algebra-boxes-hero.png)
 
 - **84 mm Fraction Towers & Comparator Tray (`[FDISP]` & `[g] [SIMP]`):** Why did our engineers make the $1\text{-Whole}$ master tower **$84.0\text{ mm}$** tall instead of $100\text{ mm}$? Because $84$ divides evenly by $1, 2, 3, 4, 6, 7, 12, 14, 21, 28,$ and $42$—giving every fraction block ($1/2 = 42\text{ mm}$, $1/3 = 28\text{ mm}$, $1/4 = 21\text{ mm}$, $1/6 = 14\text{ mm}$, $1/12 = 7\text{ mm}$) an exact whole-millimeter height!
-  - *Try This 5-Second Height Check:* Stack **twelve $7\text{ mm}$ Counting Tiles** right next to your **$84\text{ mm}$ 1-Whole Fraction Tower**, run your finger across their flush tops, and tap `12 [ENTER] 7 [×]` to see **`84`** millimeters on Shelf $X$. When you stand two $1/4$ blocks in the tray and type `. 2 . 4 [g] [SIMP]`, the screen reduces `2/4` to `1/2` while your fingers feel their matching $42\text{ mm}$ height.
+  - *Try This 5-Second Height Check:* Stack **twelve $7\text{ mm}$ Counting Tiles** right next to your **$84\text{ mm}$ 1-Whole Fraction Tower**, run your finger across their flush tops, and tap `12 [ENTER] 7 [×]` to see **`84`** millimeters on Shelf $X$. When you stand two $1/4$ blocks in the tray and type `0 [.] 2 [.] 4 [g] [SIMP]`, the screen divides top and bottom by their Greatest Common Factor in one tap to reduce `2/4` to `1/2` (displaying `LOWEST TERMS` if already simplified) while your fingers feel their matching $42\text{ mm}$ height.
 - **Prime Factor Studio (`[PRIME]` & `[g] [FACT]`):** Color-coded prime-number blocks (`2`, `3`, `5`, `7`, ...) are scaled so that stacking block `2` on top of block `3` reaches the exact height of $2 \times 3 = 6$ on the back-wall ruler, while typing `60 [g] [FACT]` on the keypad reveals $2^2 \times 3 \times 5$.
 - **Planetary Geared Clock (`[🕒]`):** Real interlocking 12-to-1 planetary gears link the minute hand and hour hand so turning the minute hand automatically glides the hour hand—matching `[🕒]` Clock mode when you add hours and minutes across 60-minute boundaries.
 - **Polyhedral Dice (`[🎲]`), Place Value Trays (`[PV]`), Number Rack (`[g] [COUNT]`) & Quest Scoreboard (`[f] [?]`):** Balanced **Polyhedral Dice** ($d4, d6, d8, d10, d12, d20$) pair with `[🎲]` digital dice rolls; **Whole & Decimal Place Value Trays** pair with `[PV]` (`347 = 300 + 40 + 7`); the two-rail **Number Rack** (5 red and 5 white beads per row) pairs with `[g] [COUNT]`; and the **Quest Scoreboard** pegboard tracks your 4-second speedrun streaks in `[f] [?]` Quiz Mode.
 
 ### 1.2.2 Inside the 4-Floor Number Elevator
 
-So far, our two visible screen shelves—Waiting Shelf $Y$ on the left and Ground Shelf $X$ on the right—have been plenty for combining two piles of blocks. What happens, though, when you are organizing several studio trays on your desk at once and your math puzzle has *three* or *four* parts that need to wait their turn? That is where the two upper floors of your **4-Floor Number Elevator ($T, Z, Y, X$)** come to the rescue.
+So far, our bottom two screen shelves—Waiting Shelf $Y$ stacked right above Ground Shelf $X$—have been plenty for combining two piles of blocks. What happens, though, when you are organizing several studio trays on your desk at once and your math puzzle has *three* or *four* parts that need to wait their turn? That is where the two upper floors of your **4-Floor Number Elevator ($T, Z, Y, X$)** come to the rescue.
 
 Flip any of your 3D-printed math block trays upside down and look at the square sockets molded into its base. To keep counters, fraction towers, and array tiles from sliding around during an experiment, every tray snaps into a modular desktop baseplate made of $42\text{ mm}$ squares called **Gridfinity squares**. Suppose you clear a space on your desk to set up a three-tray math station side by side: a **Ten-Frame Tray** that is $2\text{ squares long} \times 1\text{ square wide}$, a **Fraction Studio Well** that is $3\text{ squares long} \times 1\text{ square wide}$, and a **Counting & Array Box** that is $3\text{ squares long} \times 2\text{ squares wide}$. How many Gridfinity squares does your whole three-tray station cover?
 
@@ -308,7 +308,7 @@ If you typed `12 × 15 + 8 × 14 =` from left to right on a simple four-function
 On your SC-6, your hands follow the exact order in which you pack the boxes on your floor:
 1. **Pack the tall boxes first:** Tap `12 [ENTER] 15 [×]`. Right away, Shelf $X$ shows **`180`** comic books—so you know for sure how many comics fit in the tall boxes before you move on.
 2. **Pack the small boxes second:** Tap `8 [ENTER] 14 [×]`. The moment you touch `8`, your finished `180` rides upstairs to **Shelf $Z$** to stay out of the way, and as soon as `8 × 14` finishes (`112` on Shelf $X$), your waiting `180` drops right back down onto **Shelf $Y$**!
-3. **Check both boxes side by side and snap them together:** Look at your split screen now: **`180`** is sitting on the left (Shelf $Y$) and **`112`** is sitting on the right (Shelf $X$). One tap of **`[+]`** unites both sets of boxes into **`292`** comic books!
+3. **Check both boxes on the stack and snap them together:** Look at your stack screen now: **`180`** is waiting on Shelf $Y$ right above **`112`** sitting on Ground Shelf $X$. One tap of **`[+]`** unites both sets of boxes into **`292`** comic books!
 
 That same two-shelf visibility helps whenever you are shopping or building with a friend—like upgrading a skateboard with **2 packs of bearings at $\$3.50$ each** (`3.50 [ENTER] 2 [×]` $\to$ $\$7.00$) and **4 deck stickers at $\$0.75$ each** (`0.75 [ENTER] 4 [×]` $\to$ $\$3.00$), where you see the $\$7.00$ bearings on Shelf $Y$ and the $\$3.00$ stickers on Shelf $X$ before tapping `[+]` to get $\$10.00$. Whenever you can see both pieces on the workbench before combining them, you know your calculation matches the real objects on your desk.
 
@@ -326,7 +326,7 @@ Lean in close and look at a digit on your calculator screen. The numbers, ten-fr
 
 In computer memory, each pixel dot takes $1\text{ bit}$ (`1` for a dark dot, `0` for a silver-white dot), and **$8$ bits** pack neatly into **$1$ byte** of memory. How many pixel dots are on your screen altogether, and how many bytes of memory does it take to hold one full screen picture?
 
-First multiply the $132$ columns by the $65$ rows (`132 [ENTER] 65 [×]`) to see all **`8,580` pixels** on Shelf $X$. Then type `8` (which automatically sends `8,580` up to Shelf $Y$) and tap `[÷]` (`132 [ENTER] 65 [×] 8 [÷]` $\rightarrow$ **`1072.5`**) to see that the whole screen fits into **`1072.5` bytes** ($1,073$ whole bytes). *(Try tapping `[f] [LASTX] [×]` right after—it brings back `8` and multiplies to show all $8,580$ pixels again.)*
+First multiply the $132$ columns by the $65$ rows (`132 [ENTER] 65 [×]`) to see all **`8,580` pixels** on Shelf $X$. Notice how your SC-6 boots and resets (`[C]`) with **Whole Number Mode (`[NUM]`) ON**—showing clean whole numbers like `0` up to `999,999,999` and keeping division in whole numbers—while tapping **`[NUM]`** a second time (or tapping **`[f] [ALL]`** or **`[g] [FIX]`**) toggles Whole Number Mode **OFF** and switches to full decimal floating-point mode (so `132 [ENTER] 65 [×] 8 [÷]` gives `1072.5` and `9.35 [ENTER] 4.5 [×]` gives `42.075`). With Whole Number Mode toggled off for decimals, type `8` (which automatically sends `8,580` up to Shelf $Y$) and tap `[÷]` (`132 [ENTER] 65 [×] 8 [÷]` $\rightarrow$ **`1072.5`**) to see that the whole screen fits into **`1072.5` bytes** ($1,073$ whole bytes). *(Try tapping `[f] [LASTX] [×]` right after—it brings back `8` and multiplies to show all $8,580$ pixels again.)*
 
 Why do phones and tablets run out of battery every single day, while your SC-6 can run for months without charging? A tablet shines a bright electric flashlight through the glass from behind—and the brighter the room gets, the harder a tablet has to fight the sunlight.
 
@@ -372,22 +372,22 @@ What lets a single battery the size of a nickel power your calculator for nearly
 
 $$\text{School Days} = \text{Total Energy Drops} \div (\text{Awake Drops} + \text{Sleeping Drops}) = 225 \div ((0.65 \times 2) + (0.0025 \times 22)) \approx 166.05\text{ days}$$
 
-Watch how we solve this two-team battery story on the stack step by step:
+Watch how we solve this two-team battery story on the stack step by step (first toggling Whole Number Mode `[NUM]` off—or tapping `[f] [ALL]` / `[g] [FIX] 4`—so we can enter decimal rates):
 1. First multiply the **Awake Team**: `0.65 [ENTER] 2 [×]` puts **`1.30`** awake drops on Shelf $X$.
 2. Next multiply the **Sleeping Team**: `0.0025 [ENTER] 22 [×]` puts **`0.055`** sleeping drops on Shelf $X$ while `1.30` waits safely on Shelf $Y$, and tapping **`[+]`** adds them into **`1.355`** energy drops per day.
 3. Finally, type `225` onto Shelf $X$ (lifting `1.355` onto Shelf $Y$), tap the **`[x⇄y]` (Swap)** key so `225` trades places into Shelf $Y$ and `1.355` sits in Shelf $X$, and tap **`[÷]`** (`0.65 [ENTER] 2 [×] 0.0025 [ENTER] 22 [×] [+] 225 [x⇄y] [÷]` $\rightarrow$ **`166.051660517`**) to discover that one tiny battery lasts **`166.05` school days**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `0.65 [ENTER]` | 0 | 0 | $0.6500$ | $0.6500$ | Put the awake energy rate ($0.65\text{ energy drops/hr}$) onto Shelf $Y$ |
-| `2 [×]` | 0 | 0 | 0 | $1.3000$ | Awake energy drops: $0.65 \times 2 = 1.30\text{ energy drops}$ on Shelf $X$ |
-| `0.0025 [ENTER]` | 0 | $1.3000$ | $0.0025$ | $0.0025$ | Enter sleeping energy rate ($0.0025\text{ drops/hr}$); awake drops lift to Shelf $Z$ |
-| `22 [×]` | 0 | 0 | $1.3000$ | $0.0550$ | Sleeping energy drops: $0.0025 \times 22 = 0.055\text{ drops}$ on Shelf $X$; awake drops drop to Shelf $Y$ |
-| `[+]` | 0 | 0 | 0 | $1.3550$ | Total daily energy drops: $1.30 + 0.055 = 1.355\text{ energy drops/day}$ on Shelf $X$ |
-| `225 [x⇄y]` | 0 | 0 | $225.0000$ | $1.3550$ | Enter $225\text{ total energy drops}$ and swap so $225$ sits on Shelf $Y$ and daily drops sit on Shelf $X$ |
+| `0.65 [ENTER]` | 0 | 0 | $0.65$ | $0.65$ | Put the awake energy rate ($0.65\text{ energy drops/hr}$) onto Shelf $Y$ |
+| `2 [×]` | 0 | 0 | 0 | $1.3$ | Awake energy drops: $0.65 \times 2 = 1.30\text{ energy drops}$ on Shelf $X$ |
+| `0.0025 [ENTER]` | 0 | $1.3$ | $0.0025$ | $0.0025$ | Enter sleeping energy rate ($0.0025\text{ drops/hr}$); awake drops lift to Shelf $Z$ |
+| `22 [×]` | 0 | 0 | $1.3$ | $0.055$ | Sleeping energy drops: $0.0025 \times 22 = 0.055\text{ drops}$ on Shelf $X$; awake drops drop to Shelf $Y$ |
+| `[+]` | 0 | 0 | 0 | $1.355$ | Total daily energy drops: $1.30 + 0.055 = 1.355\text{ energy drops/day}$ on Shelf $X$ |
+| `225 [x⇄y]` | 0 | 0 | $225$ | $1.355$ | Enter $225\text{ total energy drops}$ and swap so $225$ sits on Shelf $Y$ and daily drops sit on Shelf $X$ |
 | `[÷]` | 0 | 0 | 0 | $166.0517$ | Divide total energy drops by daily drops: $\approx 166.05\text{ school days}$ of battery power |
 
-Keeping your SC-6 ready for action across all those school days takes almost no effort at all. Whenever the calculator goes to sleep between study sessions, a single tap of **`[C]`** in a well-lit room wakes the screen right up with all four stack shelves still in place. If your screen is showing ten-frames (`[▦]`), clock hands (`[🕒]`), or a number line (`[f] [LINE]`), one tap of **`[C]`** (or `[NUM]`) switches straight back to regular numbers without erasing your stack, and you can customize display settings anytime in the `[g] [FLAGS]` menu (`Flag 5` toggles the split `Y | X` view, and `Flag 8` toggles fraction auto-reduction). When you want to clear all saved registers and quiz scores before a head-to-head race, just hold `[C]` down while tapping `[g] [OFF]`—and when the tiny battery icon eventually appears in the top-right corner after months of exploring, an adult can use a small screwdriver to open the child-safe rear battery door and slip in a fresh CR2032 cell (`+` side up) while internal memory keeps your shelves safe. Now that you know what is humming under the hood, let's put the calculator and tiles to work on your desk!
+Keeping your SC-6 ready for action across all those school days takes almost no effort at all. Whenever the calculator goes to sleep between study sessions, a single tap of **`[C]`** in a well-lit room wakes the screen right up with all four stack shelves still in place (starting in `[NUM]` Whole Number Mode showing `0` on Shelf $X$, or toggling to full decimal floating-point mode whenever you tap `[NUM]` again, `[f] [ALL]`, or `[g] [FIX]`). If your screen is showing ten-frames (`[▦]`), clock hands (`[🕒]`), or a number line (`[f] [LINE]`), one tap of **`[C]`** (or `[NUM]`) switches straight back to regular numbers without erasing your stack, and you can customize display settings anytime in the `[g] [FLAGS]` menu (`Flag 4` toggles the 4-shelf vs. 1-line stack view, `Flag 5` cycles Stack Depth across `2-LV` $\to$ `4-LV` $\to$ `8-LV`, and `Flag 8` toggles Fixed Denominator `/c`). When you want to clear all stack shelves and saved statistics before a head-to-head race, just tap `[f] [CSTK]` (`[f]` + `[<-]`) and `[g] [CLΣ]` (`[g]` + `[<-]`)—and when the tiny battery icon eventually appears in the top-right corner after months of exploring, an adult can use a small screwdriver to open the child-safe rear battery door and slip in a fresh CR2032 cell (`+` side up) while internal memory keeps your shelves safe. Now that you know what is humming under the hood, let's put the calculator and tiles to work on your desk!
 
 ---
 
@@ -415,7 +415,7 @@ Even better, your SC-6 is built to grow right alongside you from your very first
 
 | SC-6 Desk Studio Feature | How It Is Engineered | How You Use It on Your Workbench |
 | :--- | :--- | :--- |
-| **Daylight Screen ($132 \times 65$ px)** | Reflective LCD that grows brighter in room light or sunshine | Shows both **Waiting Shelf $Y$** and **Ground Shelf $X$** side by side (`2.03` aspect ratio) |
+| **Daylight Screen ($132 \times 65$ px)** | Reflective LCD that grows brighter in room light or sunshine | Shows **Waiting Shelf $Y$** (and upper shelves $Z, T$) stacked vertically above **Ground Shelf $X$** (`2.03` aspect ratio) |
 | **43 Snap-Action Buttons** | Stainless-steel snap domes ($160\text{ gf}$) with color-coded `[f]` (Gold) and `[g]` (Blue) shifts | Gives your thumb a crisp physical *click!* so you can feel every entry without looking down |
 | **`[<-]` vs. `[C]` Rescue Keys** | Single-digit backspace (`[<-]`) vs. Ground Shelf $X$ clear (`[C]`) | Fixes a mistyped digit or clears Shelf $X$ to `0` while keeping Shelf $Y$ safe upstairs |
 | **$42\text{ mm}$ Gridfinity Block Trays** | $1 \times 1$ ($42\text{ mm}$), $2 \times 2$ ($84\text{ mm}$), and $3 \times 3$ ($126\text{ mm}$) modular baseplates | Organizes your Counting Tiles ($19\text{ mm}$), Fraction Towers ($84\text{ mm}$), and Dice on your desk |
@@ -468,8 +468,8 @@ Your SC-6 has **two more waiting shelves upstairs**—**Shelf $Z$ (the Third-Sto
 |---|---|---|---|
 | **Top Shelf $T$** | **Register T** | **The Repeat Shelf:** Keeps a constant step size locked at the top for skip-counting ladders | Top shelf of the 4-story elevator |
 | **Shelf $Z$** | **Register Z** | **The Upper Waiting Shelf:** Holds your first finished group while you build a second group below | Just above Shelf $Y$ |
-| **Shelf $Y$** | **Register Y** | **The Waiting Shelf:** Holds your first number ready to combine with Shelf $X$ | Left side of the $Y \mid X$ split screen |
-| **Ground Shelf $X$** | **Register X** | **Your Workbench:** Every number you type and every answer you calculate appears right here | Right side of the $Y \mid X$ split screen |
+| **Shelf $Y$** | **Register Y** | **The Waiting Shelf:** Holds your first number ready to combine with Shelf $X$ | Stacked right above Ground Shelf $X$ |
+| **Ground Shelf $X$** | **Register X** | **Your Workbench:** Every number you type and every answer you calculate appears right here | Bottom line of the screen in large bold digits |
 
 ### 2.1.2 The Three Golden Rules of Stack Math
 
@@ -501,18 +501,18 @@ Whenever you press a two-number action key (`+`, `-`, `×`, `÷`), all four shel
 
 Why does Top Shelf $T$ leave a copy of itself behind every time the elevator drops? Because if you lock a step size (like `7`) into Top Shelf $T$, it will keep feeding fresh `7`s down the elevator forever, letting you skip-count through your times tables ($7, 14, 21, 28 \dots$) with single taps of `[+]`!
 
-### 2.1.5 Reading Left to Right on Your Split Screen ($Y \mid X$)
+### 2.1.5 Reading Your Stacked Shelves ($Y$ Above $X$)
 
-When you write a subtraction ($12 - 4 = 8$) or division ($12 \div 4 = 3$) story on paper, you read it from left to right. Older scientific calculators stacked their shelves vertically ($Y$ above $X$), which meant reading from top to bottom.
+When you write a column addition or subtraction story on paper, or stack two rows of blocks in your desk tray, the first number sits on the upper row and the second number sits right underneath it on the bottom row.
 
-Your SC-6 daylight screen makes reading natural by giving you a **Side-by-Side $Y \mid X$ Split Screen**. Across the top status bar sit your mode indicators and battery icon, while a crisp vertical line down the middle divides the main display into two side-by-side shelves: **Waiting Shelf $Y$ on the left** holds the first number you locked in with `[ENTER]` (like **`12`**), and **Ground Shelf $X$ on the right** shows the second number you are typing right now (like **`4`**). Because **`12`** sits on the left and **`4`** sits on the right, reading across your screen from left to right (`12 | 4`) matches the exact left-to-right order of $12 - 4 = 8$ and $12 \div 4 = 3$ on your notebook page! *(Prefer one extra-large number on screen instead of the split view? Open `[g] [FLAGS]` anytime to toggle between the default **Side-by-Side $Y \mid X$** view and **Single-Shelf $X$** view.)*
+Your SC-6 daylight screen matches that exact physical layout by stacking **Waiting Shelf $Y$ right above Ground Shelf $X$**. Across the top status bar sit your mode indicators and battery icon; below them sit the waiting shelves (**`T:`**, **`Z:`**, and **`Y:`** in 4-shelf mode, or **`T:`** right above **`X`** in 2-shelf mode); and along the bottom edge of the screen in extra-large bold digits sits **Ground Shelf $X$**. **Waiting Shelf $Y$** holds the first number you locked in with `[ENTER]` (like **`12`**), and **Ground Shelf $X$** right below it shows the second number you are typing right now (like **`4`**). Because **`12`** sits on the upper shelf and **`4`** sits on the lower shelf, reading down your screen from Shelf $Y$ to Shelf $X$ matches the exact top-to-bottom order of $12 - 4 = 8$ and $12 \div 4 = 3$! *(Prefer one extra-large number on screen without the upper shelves? Open `[g] [FLAGS]` anytime and toggle Flag 4 between the default **4-Shelf Stack** view and **Single-Shelf $X$** view.)*
 
 ![Math Dominoes Studio: Placing [5|4] = 9 and [3|2] = 5 Across the 10-Break Line on the 12-Frame Tray to Regroup 9 + 5 into 10 + 4 = 14](../assets/manuals/math_dominoes_bridging_12frame.png)
 
-### 2.1.6 Fast Split-Screen Warm-Up: Dominoes, Swaps & Saving for a Telescope
-Just as a single **Math Domino** holds two dot patterns side by side across its center divider line, your calculator's $Y \mid X$ split screen keeps both numbers of a calculation visible right before they combine. Pick up the `[5|3]` Math Domino from your tray: 5 pips sit on the left half and 3 pips sit on the right half. Keying `5 [ENTER] 3 [+]` mirrors that exact domino on your screen—sliding `5` to the left half ($Y = 5$), placing `3` on the right half ($X = 3$), and snapping them together into **`8`**. *(Did your screen show `53` instead of `8`? That just means your thumb forgot to press `[ENTER]` to separate the two numbers!)*
+### 2.1.6 Fast Two-Shelf Warm-Up: Dominoes, Swaps & Saving for a Telescope
+Just as a single **Math Domino** holds two dot patterns across its divider line, your calculator's stacked $Y$ and $X$ shelves keep both numbers of a calculation visible right before they combine. Pick up the `[5|3]` Math Domino from your tray: 5 pips sit on one half and 3 pips sit on the other half. Keying `5 [ENTER] 3 [+]` mirrors that exact domino on your screen—lifting `5` up onto Waiting Shelf $Y$ ($Y = 5$), placing `3` on Ground Shelf $X$ ($X = 3$), and snapping them together into **`8`**. *(Did your screen show `53` instead of `8`? That just means your thumb forgot to press `[ENTER]` to separate the two numbers!)*
 
-That side-by-side layout is even handier when order matters, like subtraction. Suppose your friends eat $4$ slices from a $9$-slice square pizza: the starting total (`9`) belongs on the left (Shelf $Y$) and the slices eaten (`4`) belong on the right (Shelf $X$), so keying `9 [ENTER] 4 [-]` leaves **`5`** slices on the pan. What if you were talking to a friend and accidentally typed `4 [ENTER] 9` backward? Instead of clearing and starting over, just glance at your split screen (`4 | 9`), tap **`[x⇄y]`** once to swap the two halves into `9 | 4`, and press `[-]`!
+Seeing both shelves at once is even handier when order matters, like subtraction. Suppose your friends eat $4$ slices from a $9$-slice square pizza: the starting total (`9`) belongs on Waiting Shelf $Y$ above and the slices eaten (`4`) belong on Ground Shelf $X$ below, so keying `9 [ENTER] 4 [-]` leaves **`5`** slices on the pan. What if you were talking to a friend and accidentally typed `4 [ENTER] 9` backward? Instead of clearing and starting over, just glance at your stack (`Y: 4` above `X: 9`), tap **`[x⇄y]`** once to swap the two shelves into `Y: 9` above `X: 4`, and press `[-]`!
 
 Now step up from single digits to two-digit numbers—say, **23 trading cards** in your binder and **14 cards** in a deck box. Dock `2` tens and `3` ones in the top row of your **Place Value Tray** ($23$, matching Shelf $Y$) and `1` ten and `4` ones in the bottom row ($14$, matching Shelf $X$). Keying `23 [ENTER] 14 [+]` combines the tens ($20 + 10 = 30$) and the ones ($3 + 4 = 7$) into **`37`** cards.
 
@@ -604,17 +604,17 @@ Notice how smooth that elevator drop felt: once your hands learn to lift numbers
 
 ### 2.2.2 Choosing How Many Shelves You Need: `2-LVL`, `4-LVL`, and `8-LVL`
 
-Just as you might use a small two-pocket folder for a quick homework sheet or a big four-shelf locker for all your school projects, the `[g] [FLAGS]` menu lets you choose how many shelves your Number Elevator uses:
+Just as you might use a small two-pocket folder for a quick homework sheet or a big four-shelf locker for all your school projects, the `[g] [FLAGS]` menu (`Flag 5` on hardware firmware, or the Stack Depth selector in the companion app) lets you choose how many shelves your Number Elevator uses:
 
-- **2-Shelf Mode ($X, Y$ — `2-LVL`):** Uses just two shelves—Shelf $Y$ and Shelf $X$. Because Shelf $Y$ is the top shelf in this mode, whatever number sits on Shelf $Y$ stays locked there like a permanent step-counter! That makes `2-LVL` wonderful for early explorers practicing single-step addition, subtraction, and Ten-Frame games.
+- **2-Shelf Mode ($T, X$ — `2-LVL`):** Uses just two shelves—**Top Shelf $T$** (for the waiting number) and **Ground Shelf $X$** (for the active number). Because Top Shelf $T$ is the roof of this two-story elevator, whatever number sits on Shelf $T$ stays locked there like a permanent step-counter when the stack drops! That makes `2-LVL` wonderful for early explorers practicing single-step addition, subtraction, and Ten-Frame games.
 - **4-Shelf Mode ($X, Y, Z, T$ — `4-LVL` Standard):** The classic four-story Number Elevator—Shelf $X$, Shelf $Y$, Shelf $Z$, and Top Shelf $T$. This is your everyday mode for 3rd–6th grade adventures: multi-step word problems, whole-number division with remainders (`[g] [÷R]`), fractions, and multi-group calculations.
-- **8-Shelf Mode (8 Stories Deep — `8-LVL`):** Expands the elevator to 8 full waiting shelves for long tournament mental-math relays where you want to stack half a dozen subtotals at once.
+- **8-Shelf Mode (8 Stories Deep — `8-LVL` Companion App Option):** Expands the elevator to 8 full waiting shelves in the companion app for long tournament mental-math relays where you want to stack half a dozen subtotals at once.
 
 One of the first experiments kids try on a calculator is building an automatic step counter: typing `1 [ENTER] 1 [+]` and tapping `[+]` over and over to watch the screen climb $2, 3, 4, 5 \dots$
 
 Try it in **4-Shelf Mode (`4-LVL`)** first: after `1 [ENTER] 1 [+]` gives `2`, what happens if you tap `[+]` again? The screen stays at `2`! Why? Because in 4-Shelf mode, the elevator dropped `0` down from Shelf $Z$ into Shelf $Y$, so tapping `[+]` simply added $2 + 0 = 2$. To make a 4-shelf elevator count forever, you first press Constant Repeat (`1 [g] [REP]`), which fills all four shelves ($T, Z, Y, X$) with `1` so Top Shelf $T$ keeps feeding fresh `1`s down the stack!
 
-In **2-Shelf Mode (`2-LVL`)**, however, Shelf $Y$ *is* the top shelf of the building. So when `+` drops the stack, Shelf $Y$ automatically keeps its `1` forever:
+In **2-Shelf Mode (`2-LVL`)**, however, Top Shelf $T$ *is* the second shelf right above Ground Shelf $X$. So when `+` drops the stack, Top Shelf $T$ automatically keeps its `1` forever:
 `1 [ENTER] 1 [+]` $\implies \mathbf{2}$, `[+]` $\implies \mathbf{3}$, `[+]` $\implies \mathbf{4}$, `[+]` $\implies \mathbf{5}$!
 
 ---
@@ -634,7 +634,7 @@ Five dedicated keys on your keypad let you trade, spin, repeat, recall, or inspe
 ### 2.3.1 Fixing Reversed Entries & Spinning the 4-Shelf Carousel
 What happens if you type two numbers onto the stack in reverse order during a subtraction or division problem? Picture blending a **24-ounce pitcher of berry smoothie** in the kitchen and wanting to pour it equally into **8 cups** ($24 \div 8 = 3$). Because you are counting the 8 cups on the counter first, your fingers accidentally type `8` before `24` (`8 [ENTER] 24`).
 
-Just look at your split screen before pressing divide: `8` is sitting on Shelf $Y$ and `24` is sitting on Shelf $X$. One tap of `[x⇄y]` swaps them onto their proper shelves before you press `[÷]`. When you run `8 [ENTER] 24 [x⇄y] [÷]`, the swap key puts `24` onto Shelf $Y$ and `8` onto Shelf $X$ so division cleanly gives **`3`** ounces per cup.
+Just look at your stacked shelves before pressing divide: `8` is sitting on Shelf $Y$ above `24` on Shelf $X$. One tap of `[x⇄y]` swaps them onto their proper shelves before you press `[÷]`. When you run `8 [ENTER] 24 [x⇄y] [÷]`, the swap key puts `24` onto Shelf $Y$ and `8` onto Shelf $X$ so division cleanly gives **`3`** ounces per cup.
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -928,15 +928,15 @@ Every visual mode on your SC-6 screen—and every 3D-printed tray on your desk�
 
 Think of the four visual sandbox keys (`[▦]`, `[g] [COUNT]`, `[f] [LINE]`, and `[PV]`) as special camera lenses that let you peek inside your calculator's shelves and *see* your numbers as real blocks, beads, and number trails.
 
-Type `7` onto Shelf $X$ and press `[▦]`. Right away, the screen opens a split picture window: the upper half of the display draws two side-by-side ten-frame trays while the lower half keeps your live `Y: 0` and **`X: 7`** shelves in plain view. Inside the first ten-frame on the upper screen, all 5 pockets of the top row are filled with dark round counters (`[●][●][●][●][●]`), while the bottom row holds 2 counters followed by **3 empty pockets** (`[●][●][ ][ ][ ]`), and the second ten-frame waits completely empty beside it.
+Type `7` onto Shelf $X$ and press `[▦]`. Right away, the screen opens the Ten-Frame Studio with two visual rows labeled **`T`** (for the waiting number above) and **`X`** (for your active workbench below). For numbers from $1$ to $10$, a single $5 \times 2$ ten-frame tray is drawn cleanly on the row; as soon as a number grows to $11\text{–}20$, a second side-by-side ten-frame tray appears automatically right next to the first! Inside the ten-frame on Row **`X`** for `7`, all 5 pockets of the top row are filled with dark round counters (`[●][●][●][●][●]`), while the bottom row holds 2 counters followed by **3 empty pockets** (`[●][●][ ][ ][ ]`).
 
 While you are inside the Ten-Frame Studio, the decimal key `[.]` acts like your own hand dropping counters into the tray one at a time. Starting from $X = 7$, watch what happens each time you tap `[.]`:
 - Tap `[.]` once and an 8th counter drops into the bottom row ($X = 8$).
-- Tap `[.]` again and a 9th counter lands next to it ($X = 9$), leaving just **1 empty pocket** in the first frame.
-- Tap `[.]` a third time and the 10th counter snaps that last pocket shut ($X = 10$)! The border of the first ten-frame flashes briefly to celebrate that you have built one complete group of ten.
-- Tap `[.]` one more time ($X = 11$) and the 11th counter hops across the gap into the first pocket of Frame 2, showing $10 + 1 = 11$ right before your eyes.
+- Tap `[.]` again and a 9th counter lands next to it ($X = 9$), leaving just **1 empty pocket** in the tray.
+- Tap `[.]` a third time and the 10th counter fills all 10 pockets of the tray ($X = 10$), showing one complete group of ten!
+- Tap `[.]` one more time ($X = 11$) and a second side-by-side ten-frame appears automatically as the 11th counter hops into the first pocket of Frame 2, showing $10 + 1 = 11$ right before your eyes.
 
-> **Spotting the Partner to Ten & Switching Lenses Anytime:** Because Ten-Frame mode (`[▦]`) draws whatever number is already sitting on Shelf $X$, type a number like `7` *first* and then tap `[▦]` to see its counters pop into the tray! With 7 counters in Frame 1, you see 3 empty pockets waiting at the end of the row—so pressing `3` `[+]` fills the frame completely and lands on $X = \mathbf{10}$. And whenever you want to return from any visual picture window (`[▦]`, `[g] [COUNT]`, `[f] [LINE]`, or `[PV]`) to regular digits, just tap **`[NUM]`** (or tap **`[C]`** once when you aren't typing digits) to switch the camera lens back while keeping every shelf ($T, Z, Y, X$) completely intact!
+> **Spotting the Partner to Ten & Switching Lenses Anytime:** Because Ten-Frame mode (`[▦]`) draws whatever number is already sitting on Shelf $X$, type a number like `7` *first* and then tap `[▦]` to see its counters pop into the tray! With 7 counters in Frame 1, you see 3 empty pockets waiting at the end of the row—so pressing `3` `[+]` fills all 10 pockets of the tray and lands on $X = \mathbf{10}$. Whenever you want to return from any visual picture window (`[▦]`, `[g] [COUNT]`, `[f] [LINE]`, or `[PV]`) to regular stack digits, just tap **`[NUM]`** (or tap **`[C]`** once when you aren't typing digits) to switch back while keeping every shelf ($T, Z, Y, X$) completely intact. In stack view, `[NUM]` starts with Whole Number Mode **ON** (so typing `12.34` begins a mixed fraction); tapping **`[NUM]`** a second time (or tapping **`[f] [ALL]`** / **`[g] [FIX]`**) toggles Whole Number Mode **OFF** whenever you want to type a decimal like `12.34`!
 
 ---
 
@@ -950,7 +950,7 @@ $$\mathbf{8 + 5 = 8 + (2 + 3) = (8 + 2) + 3 = 10 + 3 = 13}$$
 First, build the bridge on your desk: place **8 coral-red counters** into Frame 1 of your physical tray (`[●][●][●][●][●] | [●][●][●][ ][ ]`, leaving **2 empty pockets**), and hold **5 amber-gold counters** in your hand. Instead of adding all 5 at once, split your 5 gold counters into **`2 + 3`**:
 1. Drop **2 gold counters** into the two empty pockets of Frame 1 (`[●][●][●][●][●] | [●][●][●][●][●]`) to lock in a **Full 10** ($8 + 2 = 10$).
 2. Drop the remaining **3 gold counters** into the fresh second frame (`[●][●][●][ ][ ] | [ ][ ][ ][ ][ ]`).
-3. Read the two trays together: **1 full tray of 10 + 3 extras = 13!** On your SC-6, key in `[▦] 8 [ENTER] 5 [+]` to see **`13`**, or step through the bridge inside your Ten-Frame window (`8 [▦]`, then `2 [+]` to flash the completed 10, then `3 [+]` to land the remaining 3 counters in Frame 2):
+3. Read the two trays together: **1 full tray of 10 + 3 extras = 13!** On your SC-6, key in `[▦] 8 [ENTER] 5 [+]` to see **`13`**, or step through the bridge inside your Ten-Frame window (`8 [▦]`, then `2 [+]` to fill all 10 pockets of Frame 1, then `3 [+]` to open Frame 2 with the remaining 3 counters):
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -1084,7 +1084,7 @@ Remember this *"put two staircases together into a rectangle and cut it in half"
 If the Ten-Frame Studio lets you see numbers as trays of counters, the **Open Number Line (`[f] [LINE]`)** turns addition and subtraction into a hiking trail across your screen.
 
 ### 3.3.1 Forward Hops, Backward Hops & The Two-Tap Return Trip
-Whenever you press `[f] [LINE]`, the top half of your screen draws a crisp horizontal ruler trail (`0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11...`) that automatically scales its tick marks ($1, 2, 5,$ or $10$) to fit your journey. As soon as you add or subtract—for example, `2 [ENTER] 5 [+]`—a curved **jump arc** labeled `+5` leaps across the top of the ruler from tick `2` to tick `7`, while the bottom of the screen shows your starting milepost (`Y: 2`) right beside your landing spot (`X: 7`).
+Whenever you press `[f] [LINE]`, your screen draws a crisp horizontal ruler trail (`0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11...`) that automatically scales its tick marks ($1, 2, 5,$ or $10$) to fit your journey. As soon as you add or subtract—for example, `2 [ENTER] 5 [+]`—the top of the screen displays the equation **`2 + 5 = 7`** on the left and **`X:7`** on the right, while a curved **jump arc** labeled **`+5`** leaps right above the number line from tick `2` to tick `7`.
 
 Watching the arc leap across the screen connects three ideas at once—where you started (Shelf $Y$), how far and which way you hopped, and where you landed (Shelf $X$). For a **Forward Jump (Addition)** like `2 [ENTER] 5 [+]` ($\to 7$), an arc sweeps **to the right** labeled `+5`, showing your number growing along the trail; for a **Backward Jump (Subtraction)** like `9 [ENTER] 4 [-]` ($\to 5$), an arc leaps **to the left** labeled `-4`, showing you walking back down the trail. Even better, you can use the **`[f] [LASTX]` Return-Trip Trick** to hop right back to your starting milepost in two taps: right after `2 [ENTER] 5 [+]` lands on `7`, tap `[f] [LASTX] [-]` and watch `LASTX` remember your `5`-step jump and arc straight back to `2`!
 
@@ -1126,7 +1126,7 @@ Not at all! The mark $0$ is simply the mirror line—like sea level at the beach
 
 ![Positive and Negative Numbers Above and Below 0 m Sea Level: Seabird Dive, Submarine Depth & Hot-Air Balloon Sandbags](../assets/manuals/diagram_submarine_elevation.png)
 
-Try that two-stage hop past zero on your calculator right now: tap `[f] [LINE]`, then key in `3 [ENTER] 5 [-]`. Watch the jump arc hop **3 steps left to reach $0$**, and then continue **2 more steps left of zero** to land on **`-2`**! Biologists see that exact temperature drop high in the Andes mountains, where a tiny hummingbird conserving energy in nighttime *torpor* watches the mountain air fall from $+3^\circ\text{C}$ at dusk by $5^\circ\text{C}$ overnight ($3 - 5 = \mathbf{-2^\circ\text{C}}$, or $2^\circ\text{C}$ below freezing). You can even feel why $+3$ and $-5$ combine to $-2$ on your Ten-Frame tray: 1 gold counter ($+1$) and 1 coral-red counter ($-1$) form a **Zero Pair** ($+1 + (-1) = 0$) that cancels out to zero, leaving 2 red counters ($-2$)—a tool you will use alongside the `[+/-]` key and the submarine *Alvin* in **[Chapter 7: Prime Numbers, Fair Dice & Data Detective](sc6/07-data-probability-primes.md)**.
+Try that two-stage hop past zero on your calculator right now: tap `[f] [LINE]` (which automatically switches out of Whole Number Mode so negative numbers are unlocked on the number line), then key in `3 [ENTER] 5 [-]` (or `4 [ENTER] 9 [-]` $\to \mathbf{-5}$). Watch the jump arc hop **3 steps left to reach $0$**, and then continue **2 more steps left of zero** to land on **`-2`**! *(Whenever you are in normal stack view instead of `[f] [LINE]`, simply toggle `[NUM]` off—or tap `[f] [ALL]`—before subtracting below zero or using `[+/-]`.)* Biologists see that exact temperature drop high in the Andes mountains, where a tiny hummingbird conserving energy in nighttime *torpor* watches the mountain air fall from $+3^\circ\text{C}$ at dusk by $5^\circ\text{C}$ overnight ($3 - 5 = \mathbf{-2^\circ\text{C}}$, or $2^\circ\text{C}$ below freezing). You can even feel why $+3$ and $-5$ combine to $-2$ on your Ten-Frame tray: 1 gold counter ($+1$) and 1 coral-red counter ($-1$) form a **Zero Pair** ($+1 + (-1) = 0$) that cancels out to zero, leaving 2 red counters ($-2$)—a tool you will use alongside the `[+/-]` key and the submarine *Alvin* in **[Chapter 7: Prime Numbers, Fair Dice & Data Detective](sc6/07-data-probability-primes.md)**.
 
 Before we leave our visual counting studios to explore three- and four-digit place value, let's open one more hands-on tool that combines the 5-and-10 grouping of the Ten-Frame with the left-to-right sliding motion of a number line: the two-wire **Number Rack**.
 
@@ -1250,7 +1250,7 @@ Each addition fills the next open zero column—uniting $9$ ten-thousands, $8$ t
 ### 3.4.3 Exploring Tenths and Hundredths with Place Value
 The exact same 10-for-1 pattern continues to the right of the raised decimal bump (`•`) on your **Decimal Place Value Tray (`1 • 0.1 | 0.01 | 0.001`)**. If you slice $1\text{ whole}$ into 10 equal strips, each strip is one **Tenth ($0.1$)**; if you slice 1 tenth into 10 tiny squares, each square is one **Hundredth ($0.01$)**.
 
-Park $345.67$ on Shelf $Y$ (`345.67 [ENTER]`) and X-ray both sides of the decimal bump with `[PV]`. Probing two places left of the ones column with `100 [PV]` reveals $X = \mathbf{3}$ ($3$ hundreds), while stepping one place right of the decimal point with `0.1 [PV]` reveals $X = \mathbf{6}$ ($6$ tenths) and two places right with `0.01 [PV]` reveals $X = \mathbf{7}$ ($7$ hundredths). And if you test a number with an empty middle column like `405 [ENTER] 10 [PV]`, Shelf $X$ displays **`0`**—doing the exact job Indian and Mayan mathematicians invented zero for by holding the empty tens column open between the $4$ hundreds and $5$ ones!
+Toggle Whole Number Mode (`[NUM]`) off—or tap `[f] [ALL]` / `[g] [FIX]`—so the dot key enters a decimal point rather than a mixed fraction, then park $345.67$ on Shelf $Y$ (`345.67 [ENTER]`) and X-ray both sides of the decimal bump with `[PV]`. Probing two places left of the ones column with `100 [PV]` reveals $X = \mathbf{3}$ ($3$ hundreds), while stepping one place right of the decimal point with `0.1 [PV]` reveals $X = \mathbf{6}$ ($6$ tenths) and two places right with `0.01 [PV]` reveals $X = \mathbf{7}$ ($7$ hundredths). And if you test a number with an empty middle column like `405 [ENTER] 10 [PV]`, Shelf $X$ displays **`0`**—doing the exact job Indian and Mayan mathematicians invented zero for by holding the empty tens column open between the $4$ hundreds and $5$ ones!
 
 Your Decimal Place Value Tray also makes it obvious *why* you must line up the decimal points—not the rightmost digits—when adding or subtracting decimals like $14.6 + 3.85$. If you dock `14.60` in the top row of the Decimal Tray (adding a placeholder `0` in the hundredths socket so $14.6$ becomes $14.60$) and `3.85` in the bottom row, the raised decimal bump (`•`) physically keeps the Tenths (`6` and `8`) and Hundredths (`0` and `5`) in matching vertical columns so Tenths add to Tenths ($.60 + .80$) and Hundredths add to Hundredths ($.00 + .05$): $14.60 + 3.85 = \mathbf{18.45}$ (`14.6 [ENTER] 3.85 [+]`, where `0.1 [PV]` $\to 4$ Tenths and `0.01 [PV]` $\to 5$ Hundredths). Makers use that exact decimal alignment when checking workshop drawer clearance: if you slide **4 modular Gridfinity storage bins** ($42.0\text{ mm}$ wide each) side-by-side into a desk drawer whose inside width is **$170.5\text{ mm}$**, subtracting the width of the 4 bins from the drawer width (`170.5 [ENTER] 4 [ENTER] 42 [×] [-]`) shows **`2.5` mm** of smooth sliding clearance ($170.5 - 168.0 = 2.5\text{ mm}$).
 
@@ -1344,7 +1344,7 @@ Stepping up to eight- and nine-digit numbers across time and space, the red plan
 Venturing even deeper into the solar system, the ringed planet Saturn orbits the Sun at an average distance of **1 billion, 427 million kilometers** ($1,427,000,000\text{ km}$), while a nearby dwarf galaxy cluster holds $2,500,000,000$ stars:
 $$1,427,000,000 = 1,000,000,000 + 400,000,000 + 20,000,000 + 7,000,000$$
 
-Here we reach the **ten-digit Billions column** ($10^9 = 1,000,000,000$). Parking Saturn's orbit on Shelf $Y$ (`1427000000 [ENTER]`) and stepping down from `1000000000 [PV]` ($\to \mathbf{1}\text{ billion}$) through `100000000 [PV]` ($\to \mathbf{4}\text{ hundred-millions}$), `10000000 [PV]` ($\to \mathbf{2}\text{ ten-millions}$), and `1000000 [PV]` ($\to \mathbf{7}\text{ millions}$) confirms every term of the expanded equation—and doing the same on the dwarf galaxy (`2500000000 [ENTER] 1000000000 [PV]` $\to \mathbf{2}\text{ billions}$, `100000000 [PV]` $\to \mathbf{5}\text{ hundred-millions}$) shows how just ten digits can measure an entire galaxy of stars.
+Here we reach the **ten-digit Billions column** ($10^9 = 1,000,000,000$). Because Whole Number Mode (`[NUM]`) caps whole-number entry at 9 digits (`999,999,999`), toggle `[NUM]` off (or tap `[f] [ALL]`) first to unlock full 10-digit entry. Parking Saturn's orbit on Shelf $Y$ (`1427000000 [ENTER]`) and stepping down from `1000000000 [PV]` ($\to \mathbf{1}\text{ billion}$) through `100000000 [PV]` ($\to \mathbf{4}\text{ hundred-millions}$), `10000000 [PV]` ($\to \mathbf{2}\text{ ten-millions}$), and `1000000 [PV]` ($\to \mathbf{7}\text{ millions}$) confirms every term of the expanded equation—and doing the same on the dwarf galaxy (`2500000000 [ENTER] 1000000000 [PV]` $\to \mathbf{2}\text{ billions}$, `100000000 [PV]` $\to \mathbf{5}\text{ hundred-millions}$) shows how just ten digits can measure an entire galaxy of stars.
 
 ---
 
@@ -1659,7 +1659,7 @@ In real life, sharing or packing items into equal groups doesn't always come out
 
 Suppose 145 students are boarding 45-seat buses for a museum trip (like on the screen above), or 23 counting tiles are being dealt into stacks of 5. If you divide with standard decimal division (`[÷]`), a long decimal tail like `3.222222...` hides how many whole buses are full and how many students still need a seat!
 
-When you press **Quotient & Remainder (`[g] [÷R]`)** (`[g]` then `[÷]`), your side-by-side $Y \mid X$ screen shows *both* whole-number answers at once:
+When you press **Quotient & Remainder (`[g] [÷R]`)** (`[g]` then `[÷]`), your stacked screen shows *both* whole-number answers at once (with Waiting Shelf $Y$ right above Ground Shelf $X$):
 - **Shelf $X$** shows **Whole Groups (Quotient $Q$)**—how many complete groups you can build.
 - **Shelf $Y$** holds **Leftovers (Remainder $R$)**—how many loose items remain.
 
@@ -1855,7 +1855,7 @@ Up to now, whenever a division problem had leftovers—like 7 robotics students 
 
 ## 5.1 How Fractions and Ratios Run the Physical World
 
-Grab four $\frac{1}{8}$ blocks and one scarlet $\frac{1}{2}$ block ($42.0\text{ mm}$) from your **84 mm Fraction Studio** and drop them side by side into the **Twin Comparator Well**. Run your fingertip across their tops: they stand at the **exact same $42.0\text{ mm}$ height**, proving in one touch why $\frac{4}{8}\text{ inch}$ on a carpenter's tape measure is the exact same length as a $\frac{1}{2}\text{ inch}$ bolt! Now type `. 4 . 8 [g] [SIMP]` on your SC-6 and watch **Step-by-Step Simplify (`[g] [SIMP]`)** peel away common factors until `4/8` simplifies to `1/2`.
+Grab four $\frac{1}{8}$ blocks and one scarlet $\frac{1}{2}$ block ($42.0\text{ mm}$) from your **84 mm Fraction Studio** and drop them side by side into the **Twin Comparator Well**. Run your fingertip across their tops: they stand at the **exact same $42.0\text{ mm}$ height**, proving in one touch why $\frac{4}{8}\text{ inch}$ on a carpenter's tape measure is the exact same length as a $\frac{1}{2}\text{ inch}$ bolt! Now type `0 [.] 4 [.] 8 [g] [SIMP]` on your SC-6 and watch **One-Tap GCF Simplify (`[g] [SIMP]`)** divide out their Greatest Common Factor ($4$) in one tap so `4/8` simplifies straight to `1/2`.
 
 If fractions on a school worksheet ever made you groan, you are in famous company: **for centuries, even adult astronomers, bakers, and surveyors dreaded adding awkward fractions by hand!** In 9th-century Baghdad, the mathematician **al-Khwarizmi** wrote the first practical guides showing shopkeepers how to line up mismatched fractions on a common grid. Seven hundred years later, in **1585**, Flemish engineer **Simon Stevin** published a tiny 36-page booklet called *De Thiende* (*The Tenth*) for everyday carpenters and tailors—showing how slicing $1\text{ whole}$ into tenths ($0.1$) and hundredths ($0.01$) long before John Napier popularized the modern decimal point in 1614 *([Napier, 1614](sc6/appendix-c-formulas-and-conversions.md#cite-napier1614))* turns fraction arithmetic into whole-number place value, while **Least Common Multiple (`[f] [LCM]`)** snaps any two fractions onto the same grid. Peel back the cover of any machine *([Macaulay, 2016](sc6/appendix-c-formulas-and-conversions.md#cite-macaulay2016))*, and every meshing pair of gears, pulley block, and guitar string is a living fraction in motion.
 
@@ -1866,8 +1866,8 @@ A thousand years later in ancient Greece, **Pythagoras** discovered that those e
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `. 1 . 2 [ENTER]` | 0 | 0 | 1/2 | 1/2 | Put the Egyptian half-loaf $\frac{1}{2}$ ($42.0\text{ mm}$ block) onto Shelf $Y$ |
-| `. 1 . 4 [+]` | 0 | 0 | 0 | 3/4 | Add the quarter-loaf $\frac{1}{4}$ ($21.0\text{ mm}$ block) to reach $\frac{3}{4}$ ($63.0\text{ mm}$) |
+| `0 [.] 1 [.] 2 [ENTER]` | 0 | 0 | 1/2 | 1/2 | Put the Egyptian half-loaf $\frac{1}{2}$ ($42.0\text{ mm}$ block) onto Shelf $Y$ |
+| `0 [.] 1 [.] 4 [+]` | 0 | 0 | 0 | 3/4 | Add the quarter-loaf $\frac{1}{4}$ ($21.0\text{ mm}$ block) to reach $\frac{3}{4}$ ($63.0\text{ mm}$) |
 
 ---
 
@@ -1910,7 +1910,7 @@ Bicycle engineers prevent this wear by choosing gear tooth counts that **share n
 
 Look at the two gear systems in the diagram above. In **Panel 1 (Bicycle Sprockets)**, when your foot turns a **48-tooth front pedal gear** one full turn, the chain pulls **48 links** forward and wraps them around a smaller **16-tooth back wheel gear**—and because $48 \div 16 = 3$, one turn of your pedals spins the back wheel **3 full turns**! In **Panel 2 (Meshing Gear Teeth)**, when a **14-tooth gear** meshes directly with a **21-tooth gear**, each tooth on the small gear pushes one tooth on the big gear. If you mark the touching pair of teeth with gold paint, when will those two gold teeth touch again? Only when the total number of teeth that have clicked past the center point is a multiple of *both* $14$ and $21$—which happens at $\text{LCM}(14, 21) = \mathbf{42\text{ teeth}}$ ($3$ turns of the small gear and $2$ turns of the big gear)!
 
-Throughout this chapter, you will pair your $84\text{ mm}$ Fraction Towers with two-dot fraction entry (`[.]` for `. n . d` and `w . n . d`) and Fraction/Decimal Display Mode (`[FDISP]`), flipping effortlessly between Mixed Numbers (`[a ᵇ/c]`), Improper Fractions (`[f] [d/c]`), and Repeating Decimals (`[f] [0.3̄]`). You will watch common factors peel away one step at a time with `[g] [SIMP]`, find common denominators and shared factors with `[f] [LCM]` and `[GCF]`, and scale recipes and gear ratios in Ratio Mode (`[g] [a:b]`).
+Throughout this chapter, you will pair your $84\text{ mm}$ Fraction Towers with two-dot fraction entry (`[.]` for `0 . n . d`, `n . . d`, `. n . d`, and `w . n . d`) and Fraction/Decimal Display Mode (`[FDISP]`), flipping effortlessly between Mixed Numbers (`[a ᵇ/c]`), Improper Fractions (`[f] [d/c]`), and Repeating Decimals (`[f] [0.3̄]`). You will divide out the Greatest Common Factor in a single tap with `[g] [SIMP]`, find common denominators and shared factors with `[f] [LCM]` and `[GCF]`, and scale recipes and gear ratios in Ratio Mode (`[g] [a:b]`).
 
 ![Finding the Least Common Multiple of 12 and 18 on the SC-6 Stack (LCM = 36)](../assets/manuals/screenshots/sc6_fractions_lcm.png)
 
@@ -1924,7 +1924,7 @@ Because $84$ is a super-divisible number! While $100$ cannot be divided cleanly 
 
 ### 5.1.6 Seeing $\frac{3}{4} + \frac{2}{3} = 1\frac{5}{12}$ Before You Touch a Pencil
 
-Watch how your $84\text{ mm}$ Fraction Towers take the mystery out of adding fractions with different denominators, like $\frac{3}{4} + \frac{2}{3}$. On paper alone, adding $\frac{3}{4} + \frac{2}{3}$ requires finding the Least Common Multiple of 4 and 3 ($12$), rewriting $\frac{3}{4} = \frac{9}{12}$ and $\frac{2}{3} = \frac{8}{12}$, adding $9 + 8 = \frac{17}{12}$, and converting to $1\frac{5}{12}$. In your hands, however, you can see the answer in five seconds! Drop the $\frac{3}{4}$ tower ($63.0\text{ mm}$) and the $\frac{2}{3}$ tower ($56.0\text{ mm}$) into the left channel of your **Twin Comparator Well** ($63.0 + 56.0 = 119.0\text{ mm}$), and drop the white **1-Whole** tower ($84.0\text{ mm}$) into the right channel beside them. Your $\frac{3}{4} + \frac{2}{3}$ stack sticks up above 1 Whole by $35.0\text{ mm}$—and when you stack **five $\frac{1}{12}$ lilac blocks** ($5 \times 7.0\text{ mm} = 35.0\text{ mm}$) on top of the 1-Whole tower, both channels stand completely flush at **$1\frac{5}{12}$**! Then key in `. 3 . 4 [ENTER] . 2 . 3 [+]` on your SC-6 stack: the screen immediately shows `1 5/12` (or `17/12` if you tap `[f] [d/c]`, and `1.41666667` if you tap `[FDISP]`), while keeping fractions unreduced whenever you multiply so you can simplify step by step with `[g] [SIMP]`.
+Watch how your $84\text{ mm}$ Fraction Towers take the mystery out of adding fractions with different denominators, like $\frac{3}{4} + \frac{2}{3}$. On paper alone, adding $\frac{3}{4} + \frac{2}{3}$ requires finding the Least Common Multiple of 4 and 3 ($12$), rewriting $\frac{3}{4} = \frac{9}{12}$ and $\frac{2}{3} = \frac{8}{12}$, adding $9 + 8 = \frac{17}{12}$, and converting to $1\frac{5}{12}$. In your hands, however, you can see the answer in five seconds! Drop the $\frac{3}{4}$ tower ($63.0\text{ mm}$) and the $\frac{2}{3}$ tower ($56.0\text{ mm}$) into the left channel of your **Twin Comparator Well** ($63.0 + 56.0 = 119.0\text{ mm}$), and drop the white **1-Whole** tower ($84.0\text{ mm}$) into the right channel beside them. Your $\frac{3}{4} + \frac{2}{3}$ stack sticks up above 1 Whole by $35.0\text{ mm}$—and when you stack **five $\frac{1}{12}$ lilac blocks** ($5 \times 7.0\text{ mm} = 35.0\text{ mm}$) on top of the 1-Whole tower, both channels stand completely flush at **$1\frac{5}{12}$**! Then key in `0 [.] 3 [.] 4 [ENTER] 0 [.] 2 [.] 3 [+]` on your SC-6 stack: the screen immediately shows `1 5/12` (or `17/12` if you tap `[f] [d/c]`, and `1.41666667` if you tap `[FDISP]`), while keeping fractions unreduced whenever you multiply so you can reduce by their Greatest Common Factor in one tap with `[g] [SIMP]`.
 
 ![StackCalc Fraction Studio: 84mm Proportional Towers and Twin Comparator Well](../assets/renders/fraction-studio-hero.png)
 
@@ -1953,13 +1953,13 @@ Try two hands-on experiments right now:
 1. **Two Halves Make One Whole ($\frac{2}{2} = 1$):** Place the white **1-Whole** tower ($84.0\text{ mm}$) into Well A, and stack two scarlet **$\frac{1}{2}$** towers ($42.0\text{ mm} + 42.0\text{ mm} = 84.0\text{ mm}$) into Well B. Slide your finger across the top: there is zero step between them, proving $\frac{2}{2} = 1$.
 2. **Which Is Bigger: $\frac{3}{4}$ or $\frac{4}{6}$? (And How Much Bigger?):** Stack three blue **$\frac{1}{4}$** blocks in Well A ($3 \times 21.0\text{ mm} = 63.0\text{ mm}$) and four green **$\frac{1}{6}$** blocks in Well B ($4 \times 14.0\text{ mm} = 56.0\text{ mm}$). Slide your finger across the top: Well A stands taller than Well B by $7.0\text{ mm}$, proving $\frac{3}{4} > \frac{4}{6}$! Now grab **1 Counting Tile** ($7.0\text{ mm}$ visible height, which is $\frac{1}{12}$ of $84\text{ mm}$) from your Counting Studio and drop it on top of the $\frac{4}{6}$ stack in Well B ($56.0 + 7.0 = 63.0\text{ mm}$). Run your finger across again—*completely flush!* Your fingertips just discovered that $\frac{4}{6} + \frac{1}{12} = \frac{3}{4}$.
 
-Now watch the SC-6 stack confirm what your hands just felt—enter $\frac{4}{6}$ (`[.] 4 [.] 6 [ENTER]`), add $\frac{1}{12}$ (`[.] 1 [.] 12 [+]`) to see the unreduced twelfths sum **`9/12`**, and tap `[g] [SIMP]` to reduce it to **`3/4`**:
+Now watch the SC-6 stack confirm what your hands just felt—enter $\frac{4}{6}$ (`0 [.] 4 [.] 6 [ENTER]`), add $\frac{1}{12}$ (`0 [.] 1 [.] 12 [+]`) to see the unreduced twelfths sum **`9/12`**, and tap `[g] [SIMP]` to reduce it to **`3/4`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[.] 4 [.] 6` | 0 | 0 | 0 | 4/6 | Build the green tower fraction $\frac{4}{6}$ ($56.0\text{ mm}$) on Shelf $X$ |
+| `0 [.] 4 [.] 6` | 0 | 0 | 0 | 4/6 | Build the green tower fraction $\frac{4}{6}$ ($56.0\text{ mm}$) on Shelf $X$ |
 | `[ENTER]` | 0 | 0 | 4/6 | 4/6 | Lift $\frac{4}{6}$ onto Shelf $Y$ without reducing it |
-| `[.] 1 [.] 12` | 0 | 0 | 4/6 | 1/12 | Build the $\frac{1}{12}$ bridge tile ($7.0\text{ mm}$) on Shelf $X$ |
+| `0 [.] 1 [.] 12` | 0 | 0 | 4/6 | 1/12 | Build the $\frac{1}{12}$ bridge tile ($7.0\text{ mm}$) on Shelf $X$ |
 | `[+]` | 0 | 0 | 0 | 9/12 | Add in twelfths ($\frac{8}{12} + \frac{1}{12} = \frac{9}{12}$) on Shelf $X$ |
 | `[g] [SIMP]` | 0 | 0 | 0 | 3/4 | Divide out the shared factor of 3 to reach $\frac{3}{4}$ ($63.0\text{ mm}$) |
 
@@ -1970,13 +1970,13 @@ Now watch the SC-6 stack confirm what your hands just felt—enter $\frac{4}{6}$
 Now that your hands have felt how the $84.0\text{ mm}$ Fraction Towers line up in the Twin Comparator Well, let's see how to enter, multiply, divide, simplify, and add any pair of fractions right on the SC-6 stack.
 
 ### 5.2.1 Entering Fractions with Two Dots
-Did you notice how quickly we entered `4/6` and `1/12` in the table above using the dot key `[.]`? Instead of hunting for a fraction-template button or arrowing up and down between little boxes, you build a fraction from top to bottom on the SC-6 using the single button your fingers already know best—the **dot key (`[.]`)**. Think of the **first dot (`[.]`)** as saying *"Get ready for a fraction!"* and the **second dot (`[.]`)** as drawing the **fraction bar (`/`)** between the top number (numerator) and bottom number (denominator). To enter a **Proper Fraction** like $\frac{3}{8}$, tap `[.] 3 [.] 8` so the display shows **`3/8`**. If your fraction has a whole number in front—like the **Mixed Number** $2\frac{3}{4}$—simply type the whole number *before* the first dot (`2 [.] 3 [.] 4` $\longrightarrow$ **`2 3/4`**), or enter it directly as an **Improper Fraction** ($\frac{11}{4}$) by tapping `[.] 11 [.] 4` $\longrightarrow$ **`11/4`**.
+Did you notice how quickly we entered `4/6` and `1/12` in the table above using the dot key `[.]`? Instead of hunting for a fraction-template button or arrowing up and down between little boxes, you build a fraction from top to bottom on the SC-6 using the single button your fingers already know best—the **dot key (`[.]`)**. Think of the **first dot (`[.]`)** as separating the whole number from the numerator and the **second dot (`[.]`)** as drawing the **fraction bar (`/`)** between the top number (numerator) and bottom number (denominator). From default Whole Number Mode (`[NUM]`), you can enter a **Proper Fraction** like $\frac{3}{8}$ either by typing `0` before the first dot (`0 [.] 3 [.] 8`) or by double-tapping the dot (`3 [.] [.] 8`) so the display shows **`3/8`**—and once Fraction Display (`[FDISP]`) is active (or `[NUM]` is toggled off), you can also use the leading-dot shorthand `[.] 3 [.] 8`! If your fraction has a whole number in front—like the **Mixed Number** $2\frac{3}{4}$—simply type the whole number *before* the first dot (`2 [.] 3 [.] 4` $\longrightarrow$ **`2 3/4`**), or enter it directly as an **Improper Fraction** ($\frac{11}{4}$) by tapping `0 [.] 11 [.] 4` (or `11 [.] [.] 4` / `[.] 11 [.] 4`) $\longrightarrow$ **`11/4`**.
 
-The moment your finger taps that second dot `[.]`, the calculator knows you are building a fraction and displays it clearly in your horizontal $Y \mid X$ split screen, automatically sizing the digits so nothing ever gets cut off:
+The moment your finger taps that second dot `[.]`, the calculator knows you are building a fraction and displays it clearly on your vertical stack screen (with Waiting Shelf $Y$ right above Ground Shelf $X$), automatically sizing the digits so nothing ever gets cut off:
 
 | Fraction Type or View | What You Key on the SC-6 | What Appears on Shelf $X$ | Physical $84\text{ mm}$ Tower Match |
 | :--- | :--- | :--- | :--- |
-| **Proper Fraction ($\frac{3}{8}$)** | `[.] 3 [.] 8` | **`3/8`** | Three cyan $\frac{1}{8}$ blocks ($31.5\text{ mm}$) |
+| **Proper Fraction ($\frac{3}{8}$)** | `0 [.] 3 [.] 8` *(or `[.] 3 [.] 8`)* | **`3/8`** | Three cyan $\frac{1}{8}$ blocks ($31.5\text{ mm}$) |
 | **Mixed Number ($2\frac{3}{4}$)** | `2 [.] 3 [.] 4` | **`2 3/4`** | Two Whole towers + three $\frac{1}{4}$ blocks |
 | **Improper Toggle (`[f] [d/c]`)** | Tap `[f] [d/c]` on `2 3/4` | **`11/4`** | Eleven blue $\frac{1}{4}$ blocks stacked |
 | **Decimal Toggle (`[FDISP]`)** | Tap `[FDISP]` on `2 3/4` | **`2.75`** | Right-hand decimal face of the tower |
@@ -1988,7 +1988,7 @@ In real music, sheet music opens with a fraction-like **time signature** ($\frac
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[.] 5 [.] 8` | 0 | 0 | 0 | 5/8 | Two dots enter the top number 5 and bottom number 8 on Shelf $X$ |
+| `0 [.] 5 [.] 8` | 0 | 0 | 0 | 5/8 | Two dots enter the top number 5 and bottom number 8 on Shelf $X$ |
 | `[ENTER]` | 0 | 0 | 5/8 | 5/8 | Lift the fraction onto Shelf $Y$ as an exact fraction |
 
 The daylight display confirms $X = 5/8$ as an exact fraction without any decimal rounding, matching the five cyan eighth-blocks in your Twin Comparator Well down to the half-millimeter.
@@ -2001,13 +2001,13 @@ Why does $3\ \frac{2}{5}$ turn into $\frac{17}{5}$? Because each of the $3$ whol
 
 ---
 
-### 5.2.3 Seeing the True Grid First: Unreduced Fractions & Step-by-Step Reduction
+### 5.2.3 Seeing the True Grid First: Unreduced Fractions & One-Tap GCF Reduction
 
 When you multiply $\frac{1}{2} \times \frac{2}{3}$ on a standard school calculator, the moment you press equals, the screen jumps straight to `1/3`.
 
 Why is that actually a problem when you are learning fractions? Because if the calculator jumps straight from $\frac{1}{2} \times \frac{2}{3}$ to $\frac{1}{3}$, it hides the most important rule of fraction multiplication: **multiplying the numerators ($1 \times 2 = 2$) and multiplying the denominators ($2 \times 3 = 6$) to get $\frac{2}{6}$!**
 
-On the SC-6, **arithmetic never hides your intermediate steps**. When you multiply $\frac{1}{2} \times \frac{2}{3}$, the screen first displays your true unreduced product—**`2/6`**—so you can see how the numerators and denominators multiplied straight across. Then, when you are ready to reduce the fraction, **you** press **Step-by-Step Simplify (`[g] [SIMP]`)** and watch the shared factor divide out to reveal **`1/3`** (or flash `LOWEST TERMS` when a fraction cannot be reduced any further):
+On the SC-6, **arithmetic never hides your intermediate steps**. When you multiply $\frac{1}{2} \times \frac{2}{3}$, the screen first displays your true unreduced product—**`2/6`**—so you can see how the numerators and denominators multiplied straight across. Then, when you are ready to reduce the fraction, **you** press **One-Tap GCF Simplify (`[g] [SIMP]`)** to divide out the Greatest Common Factor in one tap and reveal **`1/3`** (or flash `LOWEST TERMS` when a fraction cannot be reduced any further):
 
 | Operation | Unreduced Output | Next Step with `[g] [SIMP]` |
 |:---|:---|:---|
@@ -2022,7 +2022,7 @@ On the SC-6, **arithmetic never hides your intermediate steps**. When you multip
 
 Seeing the unreduced fraction first also helps you understand a famous shortcut your teacher will show you on paper called **cross-canceling**.
 
-Imagine building a 3-stage robot gear train where each gear slows the spin down for extra climbing power. Gear 1 spins at $\frac{1}{2}$ the motor's speed, Gear 2 spins at $\frac{2}{3}$ of Gear 1's speed, and Gear 3 spins at $\frac{3}{4}$ of Gear 2's speed. How fast does Gear 3 spin compared to the motor? You can test two different pathways to find out. First, try multiplying straight across and then pressing `[g] [SIMP]`: multiply all the numerators ($1 \times 2 \times 3 = 6$) and all the denominators ($2 \times 3 \times 4 = 24$) by keying `[.] 1 [.] 2 [ENTER] [.] 2 [.] 3 [×] [.] 3 [.] 4 [×]` ($\to \mathbf{6/24}$), and then tap `[g] [SIMP]` to shrink $\frac{6}{24} \longrightarrow \mathbf{\frac{1}{4}}$.
+Imagine building a 3-stage robot gear train where each gear slows the spin down for extra climbing power. Gear 1 spins at $\frac{1}{2}$ the motor's speed, Gear 2 spins at $\frac{2}{3}$ of Gear 1's speed, and Gear 3 spins at $\frac{3}{4}$ of Gear 2's speed. How fast does Gear 3 spin compared to the motor? You can test two different pathways to find out. First, try multiplying straight across and then pressing `[g] [SIMP]`: multiply all the numerators ($1 \times 2 \times 3 = 6$) and all the denominators ($2 \times 3 \times 4 = 24$) by keying `0 [.] 1 [.] 2 [ENTER] 0 [.] 2 [.] 3 [×] 0 [.] 3 [.] 4 [×]` ($\to \mathbf{6/24}$), and then tap `[g] [SIMP]` to shrink $\frac{6}{24} \longrightarrow \mathbf{\frac{1}{4}}$.
 
 Now compare that with the paper shortcut of **cross-canceling shared factors** before you multiply. Look at the numerators and denominators side by side: there is a $2$ on the bottom and a $2$ on top, plus a $3$ on the bottom and a $3$ on top! Canceling those matching pairs ($\frac{2}{2} = 1$ and $\frac{3}{3} = 1$) leaves the answer right away:
 $$\frac{1}{\cancel{2}} \times \frac{\cancel{2}}{\cancel{3}} \times \frac{\cancel{3}}{4} = \mathbf{\frac{1}{4}}$$
@@ -2032,23 +2032,23 @@ The middle gears act like bridges—only the first numerator ($1$) and last deno
 
 Let's see how fraction multiplication works in two everyday situations—first multiplying proper fractions to see the unreduced grid before pressing `[g] [SIMP]`, and then scaling a mixed-number measurement by $1\ \frac{1}{2}$ times.
 
-Cut a rectangular canvas or carbon-fiber patch measuring **$\frac{2}{3}\text{ meter}$ wide by $\frac{3}{4}\text{ meter}$ long**—what is its area in square meters? Picture folding a $1\text{-meter}$ square into $3$ columns (taking $2$) and $4$ rows (taking $3$): the overlapping patch covers $2 \times 3 = 6$ out of $3 \times 4 = 12$ mini-rectangles ($\frac{6}{12}$). Multiply on the stack so you can see the unreduced $\frac{6}{12}$ grid first, and then tap `[g] [SIMP]` to peel away the shared factor of $6$: keying in `[.] 2 [.] 3 [ENTER] [.] 3 [.] 4 [×] [g] [SIMP]` shows `6/12` and then reduces it to **`1/2`**:
+Cut a rectangular canvas or carbon-fiber patch measuring **$\frac{2}{3}\text{ meter}$ wide by $\frac{3}{4}\text{ meter}$ long**—what is its area in square meters? Picture folding a $1\text{-meter}$ square into $3$ columns (taking $2$) and $4$ rows (taking $3$): the overlapping patch covers $2 \times 3 = 6$ out of $3 \times 4 = 12$ mini-rectangles ($\frac{6}{12}$). Multiply on the stack so you can see the unreduced $\frac{6}{12}$ grid first, and then tap `[g] [SIMP]` to divide out the Greatest Common Factor of $6$ in one tap: keying in `[.] 2 [.] 3 [ENTER] [.] 3 [.] 4 [×] [g] [SIMP]` shows `6/12` and then reduces it to **`1/2`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[.] 2 [.] 3 [ENTER]` | 0 | 0 | 2/3 | 2/3 | Put the width $\frac{2}{3}\text{ m}$ onto Shelf $Y$ |
-| `[.] 3 [.] 4 [×]` | 0 | 0 | 0 | 6/12 | Multiply by length $\frac{3}{4}\text{ m}$; shows $\frac{6}{12}$ before simplifying so you can see the matching twelfths |
+| `0 [.] 2 [.] 3 [ENTER]` | 0 | 0 | 2/3 | 2/3 | Put the width $\frac{2}{3}\text{ m}$ onto Shelf $Y$ |
+| `0 [.] 3 [.] 4 [×]` | 0 | 0 | 0 | 6/12 | Multiply by length $\frac{3}{4}\text{ m}$; shows $\frac{6}{12}$ before simplifying so you can see the matching twelfths |
 | `[g] [SIMP]` | 0 | 0 | 0 | 1/2 | Tap `[g] [SIMP]` to reduce $\frac{6}{12}$ to $\frac{1}{2}\text{ m}^2$ |
 
 What if a recipe or bike-fork oil service calls for **$2\ \frac{1}{4}\text{ ounces}$** (or cups), and you want to make **$1\ \frac{1}{2}$ batches**? How much do you measure out?
 
 In improper fractions, $2\ \frac{1}{4}$ is $\frac{9}{4}$ and $1\ \frac{1}{2}$ is $\frac{3}{2}$, so their product is $\frac{27}{8}$ ounces. Watch the SC-6 multiply the mixed numbers directly and convert $\frac{27}{8}$ back into whole ounces and eighths with `[a ᵇ/c]`: `[2] [.] 1 [.] 4 [ENTER] [1] [.] 1 [.] 2 [×] [a ᵇ/c]` lands right on **`3 3/8`**. Because $24$ eighths fill $3$ whole ounces and leave $3$ eighths left over, your measuring cup reaches the **$3\ \frac{3}{8}\text{-ounce}$** line.
 
-### 5.2.6 Three Visual Ways to Understand Fraction Division
+### 5.2.6 Visual Ways to Understand Fraction Division: Measurement & Partitive Models
 
 When you first see a fraction division problem like $\frac{3}{4} \div \frac{1}{8} = 6$, you might ask a great question: *"Wait—how can dividing make the answer BIGGER ($6$)?"*
 
-Think about what $12 \div 3 = 4$ means with whole numbers: it asks, *"How many groups of $3$ fit inside $12$?"* Now ask the exact same question for $\frac{3}{4} \div \frac{1}{8}$: **"How many $\frac{1}{8}\text{-size}$ blocks fit inside a $\frac{3}{4}\text{-size}$ tower?"** Because $\frac{1}{8}$ blocks are small, you can fit **6 of them** inside $\frac{3}{4}$! You can see and prove this three ways:
+Think about what $12 \div 3 = 4$ means with whole numbers: it asks, *"How many groups of $3$ fit inside $12$?"* Now ask the exact same question for $\frac{3}{4} \div \frac{1}{8}$: **"How many $\frac{1}{8}\text{-size}$ blocks fit inside a $\frac{3}{4}\text{-size}$ tower?"** Because $\frac{1}{8}$ blocks are small, you can fit **6 of them** inside $\frac{3}{4}$! You can see and prove this **Measurement (Quotitive) Division** model three ways:
 
 1. **Physical Fraction Tower Alignment:** Stack three blue $\frac{1}{4}$ blocks ($3 \times 21.0\text{ mm} = 63.0\text{ mm}$) in Well A of your **84 mm Fraction Studio**, and stack cyan $\frac{1}{8}$ blocks ($10.5\text{ mm}$ each) in Well B until both towers stand flush. It takes exactly **6 cyan $\frac{1}{8}$ blocks** ($6 \times 10.5\text{ mm} = 63.0\text{ mm}$) to match $\frac{3}{4}$!
 2. **Common-Denominator Measurement Division:** Rewrite both fractions using the same block size (eighths, since $\frac{3}{4} = \frac{6}{8}$). Now the question is simply *"How many $1\text{-eighths}$ fit inside $6\text{-eighths}$?"*
@@ -2056,7 +2056,12 @@ Think about what $12 \div 3 = 4$ means with whole numbers: it asks, *"How many g
 3. **Multiplying by the Reciprocal (`[f] [1/x]`):** Because eight $\frac{1}{8}$ blocks fit inside $1$ Whole, dividing by $\frac{1}{8}$ is the same as multiplying by its flipped partner (the **reciprocal** $\frac{8}{1}$, which you can see anytime with the `[f] [1/x]` key):
    $$\frac{3}{4} \times \frac{8}{1} = \frac{24}{4} = \mathbf{6}$$
 
-Once you picture fraction division as *"how many small slices fit inside a total amount?"*, everyday kitchen and workshop puzzles click right into place. Suppose you are prepping trail mix for a Saturday hike: a big mixing bowl holds $4\frac{1}{2}\text{ cups}$ of trail mix, and each hiker's snack bag holds $\frac{3}{8}\text{ cup}$. Keying `4 [.] 1 [.] 2 [ENTER] [.] 3 [.] 8 [÷]` ($\frac{9}{2} \div \frac{3}{8} = \frac{36}{8} \div \frac{3}{8} = 36 \div 3$) reveals that you can pack **$12$ full snack bags**. The exact same slicing question works when you are cutting craft ribbon for tournament medals: if you have a $6\text{-meter}$ roll of satin ribbon and snip it into $\frac{3}{20}\text{-meter}$ strips ($15\text{ cm}$ each), keying `6 [ENTER] [.] 3 [.] 20 [÷]` shows you will get **`40` strips** with zero ribbon wasted. And once you can multiply or divide two fractions on their own, you are ready to chain both moves together in a single run.
+What if the divisor does *not* fit a whole number of times into the dividend, as in $\frac{1}{2} \div \frac{3}{4} = \frac{2}{3}$? That is where the universal **Partitive "Split & Rebuild 1 Full Tower" ($\div c$ then $\times d$)** model shines!
+- **The Partitive Question:** *"If a $\frac{1}{2}$ block ($42.0\text{ mm}$) is $\frac{3}{4}$ of a mystery tower, how tall is $1$ full mystery tower ($\frac{1}{2} \div \frac{3}{4}$)?"*
+- **Step 1 — Split by the Numerator ($\div 3$):** Because your $42.0\text{ mm}$ half-tower represents $3$ fourths of the mystery tower, split $42.0\text{ mm}$ into $3$ equal parts to find $\frac{1}{4}$ of the mystery tower: three green $\frac{1}{6}$ blocks ($14.0\text{ mm}$ each, since $42.0\text{ mm} \div 3 = 14.0\text{ mm}$).
+- **Step 2 — Rebuild by the Denominator ($\times 4$):** Now stack $4$ of those $\frac{1}{6}$ blocks together ($4 \times 14.0\text{ mm} = 56.0\text{ mm} = \frac{4}{6} = \frac{2}{3}$) in Well B to build all $\frac{4}{4}$ ($1$ full mystery tower)—physically proving why dividing by $\frac{c}{d}$ always splits by $c$ ($\div c$) and rebuilds by $d$ ($\times d$), which is multiplying by the reciprocal $\frac{d}{c}$! *(Classroom Pod Note: When building towers that require extra sixth-blocks or twelfth-blocks across both comparator wells, partner pairs in a 4-kit table pod can pool their sixth- and twelfth-blocks.)*
+
+Once you picture fraction division both ways—*"how many slices fit inside?"* and *"split by the top, rebuild by the bottom"*—everyday kitchen and workshop puzzles click right into place. Suppose you are prepping trail mix for a Saturday hike: a big mixing bowl holds $4\frac{1}{2}\text{ cups}$ of trail mix, and each hiker's snack bag holds $\frac{3}{8}\text{ cup}$. Keying `4 [.] 1 [.] 2 [ENTER] 0 [.] 3 [.] 8 [÷]` ($\frac{9}{2} \div \frac{3}{8} = \frac{36}{8} \div \frac{3}{8} = 36 \div 3$) reveals that you can pack **$12$ full snack bags**. The exact same slicing question works when you are cutting craft ribbon for tournament medals: if you have a $6\text{-meter}$ roll of satin ribbon and snip it into $\frac{3}{20}\text{-meter}$ strips ($15\text{ cm}$ each), keying `6 [ENTER] 0 [.] 3 [.] 20 [÷]` shows you will get **`40` strips** with zero ribbon wasted. And once you can multiply or divide two fractions on their own, you are ready to chain both moves together in a single run.
 
 ### 5.2.7 Chaining Mixed-Number Multiplication and Division in One Flow
 What happens when a woodworking or baking project combines mixed-number multiplication *and* fraction division in a single expression, like $(3\ \frac{1}{2} \times 2\ \frac{2}{3}) \div 1\ \frac{1}{6}$? Under the hood, $\frac{7}{2} \times \frac{8}{3} = \frac{28}{3}$, and dividing by $\frac{7}{6}$ flips and multiplies ($\frac{28}{3} \times \frac{6}{7} = 4 \times 2 = 8$). Watch two-dot RPN glide straight to **`8`** in 17 keystrokes when you key in `3 [.] 1 [.] 2 [ENTER] 2 [.] 2 [.] 3 [×] 1 [.] 1 [.] 6 [÷] [a ᵇ/c]` to land on **`8`**:
@@ -2071,24 +2076,24 @@ Both the multiplication step and the division step resolve to the exact whole nu
 
 ---
 
-### 5.2.8 Reducing Fractions Step by Step
+### 5.2.8 Reducing Fractions to Lowest Terms in One Tap
 
 Simplifying a fraction to lowest terms is really just trading lots of small slices for fewer, bigger blocks that reach the exact same height. When you drop two $\frac{1}{4}$ blocks ($42.0\text{ mm}$) and one $\frac{1}{2}$ block ($42.0\text{ mm}$) into your Twin Comparator Well, their top edges stand completely flush—showing your fingers that $\frac{2}{4}$ and $\frac{1}{2}$ are the exact same height, just built with fewer blocks!
 
 ![Comparing Fraction Tower Heights Side by Side in the Twin Comparator Well](../assets/renders/fraction-studio-gauge-comparison.png)
 
-Even better, if you lift a copy of your unreduced fraction onto **Shelf $Y$** with `[ENTER]` before pressing **`[g] [SIMP]`**, your screen acts just like the Twin Comparator Well—keeping the original unreduced fraction on Shelf $Y$ right beside the simplified fraction on Shelf $X$!
+Even better, if you lift a copy of your unreduced fraction onto **Shelf $Y$** with `[ENTER]` before pressing **`[g] [SIMP]`**, your screen acts just like the Twin Comparator Well—keeping the original unreduced fraction on Shelf $Y$ right above the simplified fraction on Shelf $X$!
 
-To test this hands-on, stack twelve $\frac{1}{18}$ unit slices ($12 \times 4.67\text{ mm} = 56.0\text{ mm}$) in Well A and two yellow $\frac{1}{3}$ blocks ($2 \times 28.0\text{ mm} = 56.0\text{ mm}$) in Well B. Their tops match at $56.0\text{ mm}$, proving $\frac{12}{18} = \frac{2}{3}$. Now watch `[g] [SIMP]` place both forms side by side on the stack:
-1. Enter $\frac{12}{18}$ using two-dot syntax: `[.] 12 [.] 18 [ENTER]`.
+To test this hands-on, stack twelve $\frac{1}{18}$ unit slices ($12 \times 4.67\text{ mm} = 56.0\text{ mm}$) in Well A and two yellow $\frac{1}{3}$ blocks ($2 \times 28.0\text{ mm} = 56.0\text{ mm}$) in Well B. Their tops match at $56.0\text{ mm}$, proving $\frac{12}{18} = \frac{2}{3}$. Now watch `[g] [SIMP]` place both forms together on the stack:
+1. Enter $\frac{12}{18}$ using two-dot syntax: `0 [.] 12 [.] 18 [ENTER]`.
 2. Press `[g] [SIMP]`: the calculator divides both $12$ and $18$ by their Greatest Common Factor ($6$), updating Shelf $X$ to **`2/3`** while keeping your original `12/18` visible on Shelf $Y$ for comparison!
 3. Press `[g] [SIMP]` a second time: because $2$ and $3$ share no common factor greater than $1$, the screen flashes **`LOWEST TERMS`**!
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[.] 12 [.] 18` | 0 | 0 | 0 | 12/18 | Build the unreduced fraction $\frac{12}{18}$ on Shelf $X$ |
-| `[ENTER]` | 0 | 0 | 12/18 | 12/18 | Lift a copy of $\frac{12}{18}$ to Shelf $Y$ for side-by-side comparison |
-| `[g] [SIMP]` | 0 | 0 | 12/18 | 2/3 | Divide out the shared factor of 6 to show $\frac{2}{3}$ beside $\frac{12}{18}$ |
+| `0 [.] 12 [.] 18` | 0 | 0 | 0 | 12/18 | Build the unreduced fraction $\frac{12}{18}$ on Shelf $X$ |
+| `[ENTER]` | 0 | 0 | 12/18 | 12/18 | Lift a copy of $\frac{12}{18}$ to Shelf $Y$ for comparison |
+| `[g] [SIMP]` | 0 | 0 | 12/18 | 2/3 | Divide out the shared factor of 6 to show $\frac{2}{3}$ under $\frac{12}{18}$ |
 | `[g] [SIMP]` | 0 | 0 | 12/18 | 2/3 | Second press flashes `LOWEST TERMS` to confirm $\frac{2}{3}$ is fully reduced! |
 
 ---
@@ -2107,12 +2112,12 @@ Instead of listing multiples on scrap paper, ask your SC-6 for the Least Common 
 | `8 [ENTER]` | 0 | 0 | 8 | 8 | Place first denominator 8 onto Shelf $Y$ |
 | `12` | 0 | 0 | 8 | 12 | Type second denominator 12 onto Shelf $X$ |
 | `[f] [LCM]` | 0 | 0 | 0 | 24 | Find the Least Common Denominator: $\text{LCM}(8, 12) = 24$ |
-| `[.] 3 [.] 8` | 0 | 0 | 24 | 3/8 | Common denominator 24 lifts to Shelf $Y$; enter $\frac{3}{8}$ on Shelf $X$ |
+| `0 [.] 3 [.] 8` | 0 | 0 | 24 | 3/8 | Common denominator 24 lifts to Shelf $Y$; enter $\frac{3}{8}$ on Shelf $X$ |
 | `[ENTER]` | 0 | 24 | 3/8 | 3/8 | Lift $\frac{3}{8}$ to Shelf $Y$ while 24 waits on Shelf $Z$ |
-| `[.] 5 [.] 12` | 0 | 24 | 3/8 | 5/12 | Enter $\frac{5}{12}$ on Shelf $X$ beside $\frac{3}{8}$ on Shelf $Y$ |
-| `[+]` | 0 | 0 | 24 | 19/24 | Add $\frac{9}{24} + \frac{10}{24} = \frac{19}{24}$ on Shelf $X$ beside LCD 24 on Shelf $Y$! |
+| `0 [.] 5 [.] 12` | 0 | 24 | 3/8 | 5/12 | Enter $\frac{5}{12}$ on Shelf $X$ below $\frac{3}{8}$ on Shelf $Y$ |
+| `[+]` | 0 | 0 | 24 | 19/24 | Add $\frac{9}{24} + \frac{10}{24} = \frac{19}{24}$ on Shelf $X$ with LCD 24 on Shelf $Y$! |
 
-Look at the bottom row of that table: Shelf $Y$ still holds the common denominator `24` right beside the exact fraction sum `19/24` on Shelf $X$! And whenever you want to add those two boards in a single quick step (`[.] 3 [.] 8 [ENTER] [.] 5 [.] 12 [+]`), the SC-6 automatically finds that shared twenty-fourths grid under the hood and displays **`19/24`** ($\mathbf{19/24\text{ inch}}$)—or subtracts a $\frac{5}{12}\text{-foot}$ section from a $\frac{7}{8}\text{-foot}$ board via `. 7 . 8 [ENTER] . 5 . 12 [-]` to leave $\mathbf{\frac{11}{24}\text{ foot}}$.
+Look at the bottom row of that table: Shelf $Y$ still holds the common denominator `24` right above the exact fraction sum `19/24` on Shelf $X$! And whenever you want to add those two boards in a single quick step (`[.] 3 [.] 8 [ENTER] [.] 5 [.] 12 [+]`), the SC-6 automatically finds that shared twenty-fourths grid under the hood and displays **`19/24`** ($\mathbf{19/24\text{ inch}}$)—or subtracts a $\frac{5}{12}\text{-foot}$ section from a $\frac{7}{8}\text{-foot}$ board via `0 [.] 7 [.] 8 [ENTER] 0 [.] 5 [.] 12 [-]` to leave $\mathbf{\frac{11}{24}\text{ foot}}$.
 
 ### 5.2.11 Cedar Workbench Boards & the Perfect Number 6
 What happens when you join two boards that already share the *same* denominator, or test the famous unit-fraction trio that makes $6$ the first **Perfect Number** in mathematics?
@@ -2170,13 +2175,13 @@ If you try to enter the ratio $15:25$ using standard division (`15 ÷ 25`), the 
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[.] 15 [.] 25` | 0 | 0 | 0 | 15/25 | Enter 15 and 25 using two-dot syntax on Shelf $X$ |
+| `0 [.] 15 [.] 25` | 0 | 0 | 0 | 15/25 | Enter 15 and 25 using two-dot syntax on Shelf $X$ |
 | `[g] [a:b]` | 0 | 0 | 0 | 15:25 | Switch into Ratio Mode to lock both parts together as `15:25` |
 | `[g] [SIMP]` | 0 | 0 | 0 | 3:5 | Divide out the shared factor of 5 to reveal the base ratio `3:5` |
 | `2 [×]` | 0 | 0 | 0 | 6:10 | Scale both sides of the ratio by 2 for a double batch (`6:10`) |
 | `[g] [SIMP]` | 0 | 0 | 0 | 3:5 | Reduce `6:10` right back down to the base ratio `3:5` |
 
-And if you already have a part-to-whole fraction like $\frac{15}{25}$ committed on the stack (15 selected items out of 25 total items), pressing `[g] [a:b]` converts it into the **part-to-part ratio** comparing the 15 selected items to the remaining $25 - 15 = 10$ items (**`15:10`**, which simplifies with `[g] [SIMP]` to **`3:2`**)!
+And if you already have a part-to-whole fraction like $\frac{15}{25}$ committed on the stack (15 selected items out of 25 total items), pressing `[g] [a:b]` converts it into the **part-to-part ratio** comparing the 15 selected items to the remaining $25 - 15 = 10$ items (**`15:10`**, which simplifies with `[g] [SIMP]` to **`3:2`**)! Better yet, while any ratio is active in `[g] [a:b]` mode, tapping `[▦]` opens an interactive **Ratio Scaling Table** showing `1×` through `10×` multiples side by side (use `[+]` and `[-]` to page 4 rows at a time, type `<N> [ENTER]` to jump straight to row `N`, or type `<N> [▦]` to expand the table range up to `100×`).
 
 ### 5.3.4 Visualizing Ratios with Tile Tape Diagrams
 
@@ -2186,7 +2191,7 @@ Say you are blending **$35\text{ ounces}$** of berry smoothie in a **$3:2$ ratio
 
 What if you want to compare two speeds that were measured over different amounts of time? You divide to find the **unit rate**—the speed for **1 single second** or **1 single minute**. When a 3D printer extruder pulls $45\text{ cm}$ of plastic filament in $18\text{ seconds}$, dividing `45 [ENTER] 18 [÷]` finds the unit rate for $1\text{ second}$ (**$2.5\text{ cm/s}$**), and tapping `50 [×]` immediately predicts it will feed **$125\text{ cm}$** of filament in $50\text{ seconds}$. Or listen to two woodpeckers drumming on hollow oak trees in the forest: Woodpecker A drums $220\text{ taps}$ in $4\text{ minutes}$ (`220 [ENTER] 4 [÷]` $\longrightarrow \mathbf{55\text{ taps/min}}$), while Woodpecker B drums $285\text{ taps}$ in $5\text{ minutes}$ (`285 [ENTER] 5 [÷]` $\longrightarrow \mathbf{57\text{ taps/min}}$). Finding the 1-minute unit rate reveals right away that Woodpecker B is the faster drummer!
 
-Even animals in university animal-intelligence labs have tested their skills with fractions and percents! In Dr. Irene Pepperberg's famous parrot intelligence lab, **Alex the African Grey parrot** learned to count objects by color and shape and even identify which tray held more blocks. In one set of trials, Alex answered **$21$ out of $24$** spoken counting and tray-addition questions accurately. Keying `[.] 21 [.] 24 [g] [SIMP]` reduces Alex's score to **`7/8`**; tapping `[FDISP]` flips it to **`0.875`**, and multiplying by `100 [×]` reveals **`87.5%`** accuracy!
+Even animals in university animal-intelligence labs have tested their skills with fractions and percents! In Dr. Irene Pepperberg's famous parrot intelligence lab, **Alex the African Grey parrot** learned to count objects by color and shape and even identify which tray held more blocks. In one set of trials, Alex answered **$21$ out of $24$** spoken counting and tray-addition questions accurately. Keying `0 [.] 21 [.] 24 [g] [SIMP]` reduces Alex's score to **`7/8`**; tapping `[FDISP]` flips it to **`0.875`**, and multiplying by `100 [×]` reveals **`87.5%`** accuracy!
 
 ### 5.3.5 Simplifying Gear Ratios & Mixing 1-2-3 Concrete
 Remember the bicycle gear pairs we explored earlier? Instead of turning a $12\text{-tooth}$ drive gear and a $36\text{-tooth}$ wheel gear into a repeating decimal (`0.3333...`), **Ratio Mode (`[g] [a:b]`)** keeps both tooth counts visible side by side: keying `[.] 12 [.] 36 [g] [a:b] [g] [SIMP]` divides out their shared factor of $12$ to display a clean **`1:3`** gear ratio ($3$ turns of the small gear for every $1$ turn of the wheel gear).
@@ -2223,7 +2228,7 @@ He used a brass compass, wooden divider calipers, and **exact whole-number fract
 
 Even today, if you visit the *Museo del Violino* in Cremona and examine Stradivari's original paper patterns and walnut forms, you won't find messy decimal strings scribbled in the margins—you find clean fractional steps and whole-number ratios (`3:4`, `4:5`, and `2:3`) that any student with an $84\text{ mm}$ Fraction Tower kit can recognize right away, never confusing a **part-to-part ratio** (`3:5` in **`[g] [a:b]`** mode) with a **part-to-whole fraction** ($\frac{3}{8}$).
 
-In the same workshop spirit, your SC-6 lets you build and inspect exact fractional grids before reducing them. Just as Stradivari marked out the full twelfth- and sixteenth-part grid across his wooden molds before carving the final curve, unreduced products on your stack (`. 1 . 2 [ENTER] . 2 . 3 [×]` $\to$ `2/6`) let you see the true subdivision grid first, and then divide out shared factors step by step with **`[g] [SIMP]`** until you reach `1/3` (`LOWEST TERMS`). Whether you are measuring a spruce soundboard in mixed inches, checking its decimal twin, or scaling a three-part workshop mix, every view on your calculator honors the exact proportions of the physical studio.
+In the same workshop spirit, your SC-6 lets you build and inspect exact fractional grids before reducing them. Just as Stradivari marked out the full twelfth- and sixteenth-part grid across his wooden molds before carving the final curve, unreduced products on your stack (`0 [.] 1 [.] 2 [ENTER] 0 [.] 2 [.] 3 [×]` $\to$ `2/6`) let you see the true subdivision grid first, and then divide out their Greatest Common Factor in a single tap with **`[g] [SIMP]`** to reach `1/3` (with a second tap confirming `LOWEST TERMS`). Whether you are measuring a spruce soundboard in mixed inches, checking its decimal twin, or scaling a three-part workshop mix, every view on your calculator honors the exact proportions of the physical studio.
 
 ### 5.3.7 Pythagoras at the Blacksmith's Forge & the One-String Monochord
 
@@ -2241,9 +2246,9 @@ Rushing home to his workshop, Pythagoras stretched a single gut string across a 
 | **Octave Higher** | $\mathbf{\frac{1}{2}}$ of string | **$42.0\text{ mm}$** (One $\frac{1}{2}$ Red Block) | **`2:1`** | The exact same note family vibrating twice as fast! |
 
 Look at the third column of that table and verify those heights on your SC-6 right now:
-- **Octave ($\frac{1}{2}$ of $84\text{ mm}$):** Key in `84 [ENTER] . 1 . 2 [×]` to see **`42` mm**—and when you flip the fraction $\frac{1}{2}$ upside down with the Reciprocal key **`[f] [1/x]`** (`[g]` then `[÷]`), it shows **`2`**, meaning half the string length vibrates **twice as fast**!
-- **Perfect Fifth ($\frac{2}{3}$ of $84\text{ mm}$):** Key in `84 [ENTER] . 2 . 3 [×]` to see **`56` mm**—the exact height of two $28\text{ mm}$ Gold $\frac{1}{3}$ blocks stacked in your Comparator Well.
-- **Combining a Fifth and a Fourth ($\frac{2}{3} \times \frac{3}{4}$):** What happens on a guitar neck if you shorten a string to $\frac{2}{3}$ of its length (a Perfect Fifth), and then take $\frac{3}{4}$ of *that* shortened string (a Perfect Fourth)? Multiply them on your stack: `. 2 . 3 [ENTER] . 3 . 4 [×]` first shows **`6/12`** (six twelfths of the string), and one tap of **`[g] [SIMP]`** reduces `6/12` to **`1/2`**—proving that going up a Perfect Fifth and then up a Perfect Fourth lands you on a clean **Octave ($\frac{1}{2}$)**!
+- **Octave ($\frac{1}{2}$ of $84\text{ mm}$):** Key in `84 [ENTER] 0 [.] 1 [.] 2 [×]` to see **`42` mm**—and when you flip the fraction $\frac{1}{2}$ upside down with the Reciprocal key **`[f] [1/x]`** (`[f]` then `[FDISP]`), it shows **`2`**, meaning half the string length vibrates **twice as fast**!
+- **Perfect Fifth ($\frac{2}{3}$ of $84\text{ mm}$):** Key in `84 [ENTER] 0 [.] 2 [.] 3 [×]` to see **`56` mm**—the exact height of two $28\text{ mm}$ Gold $\frac{1}{3}$ blocks stacked in your Comparator Well.
+- **Combining a Fifth and a Fourth ($\frac{2}{3} \times \frac{3}{4}$):** What happens on a guitar neck if you shorten a string to $\frac{2}{3}$ of its length (a Perfect Fifth), and then take $\frac{3}{4}$ of *that* shortened string (a Perfect Fourth)? Multiply them on your stack: `0 [.] 2 [.] 3 [ENTER] 0 [.] 3 [.] 4 [×]` first shows **`6/12`** (six twelfths of the string), and one tap of **`[g] [SIMP]`** reduces `6/12` to **`1/2`**—proving that going up a Perfect Fifth and then up a Perfect Fourth lands you on a clean **Octave ($\frac{1}{2}$)**!
 
 Every time you press down a guitar, violin, or ukulele string against a fret—or stretch a rubber band across an $84\text{ mm}$ Fraction Tower tray and pinch it at the $\frac{1}{2}$, $\frac{2}{3}$, and $\frac{3}{4}$ marks—your ears are literally *listening* to fractions in lowest terms.
 
@@ -2255,8 +2260,8 @@ To wrap up your tour of fractions, decimals, percents, and ratios, try these thr
 
 ### 5.4.1 Three Kitchen & Musical-Glass Fraction Experiments
 
-1. **The Water-Glass Musical Scale (`1/2`, `2/3`, `3/4`, `5/8`):** Line up four identical drinking glasses. Leave the first empty, fill the second to $\frac{1}{2}$ ($42.0\text{ mm}$), the third to $\frac{2}{3}$ ($56.0\text{ mm}$), and the fourth to $\frac{3}{4}$ ($63.0\text{ mm}$) using your $84\text{ mm}$ Fraction Towers as a height gauge. Tap each glass with a spoon to hear the pitch change, then use `. 3 . 4 [ENTER] . 2 . 3 [-]` ($\to \mathbf{1/12}$) to find the exact fraction difference between glasses!
-2. **The Weekend Batch Recipe Scaler (`[g] [a:b]` and `[f] [LASTX]`):** Grab a recipe card that uses fractional cups (like $1\ \frac{3}{4}$ cups flour and $\frac{3}{8}$ teaspoon cinnamon). Multiply every ingredient by $1\ \frac{1}{2}$ (`1 . 3 . 4 [ENTER] 1 . 1 . 2 [×] [a ᵇ/c]` $\to \mathbf{2\ 5/8\text{ cups}}$), using `[f] [LASTX]` to pull $1\ \frac{1}{2}$ right back onto Shelf $X$ for the next ingredient!
+1. **The Water-Glass Musical Scale (`1/2`, `2/3`, `3/4`, `5/8`):** Line up four identical drinking glasses. Leave the first empty, fill the second to $\frac{1}{2}$ ($42.0\text{ mm}$), the third to $\frac{2}{3}$ ($56.0\text{ mm}$), and the fourth to $\frac{3}{4}$ ($63.0\text{ mm}$) using your $84\text{ mm}$ Fraction Towers as a height gauge. Tap each glass with a spoon to hear the pitch change, then use `0 [.] 3 [.] 4 [ENTER] 0 [.] 2 [.] 3 [-]` ($\to \mathbf{1/12}$) to find the exact fraction difference between glasses!
+2. **The Weekend Batch Recipe Scaler (`[g] [a:b]` and `[f] [LASTX]`):** Grab a recipe card that uses fractional cups (like $1\ \frac{3}{4}$ cups flour and $\frac{3}{8}$ teaspoon cinnamon). Multiply every ingredient by $1\ \frac{1}{2}$ (`1 [.] 3 [.] 4 [ENTER] 1 [.] 1 [.] 2 [×] [a ᵇ/c]` $\to \mathbf{2\ 5/8\text{ cups}}$), using `[f] [LASTX]` to pull $1\ \frac{1}{2}$ right back onto Shelf $X$ for the next ingredient!
 3. **The Infinite Zeno Paper-Folding Challenge:** Around 450 BCE, Zeno of Elea asked: if you walk halfway across a room ($\frac{1}{2}$), then half of what remains ($\frac{1}{4}$), then $\frac{1}{8}$, do you ever reach the far wall? Fold a strip of paper into $\frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16},$ and $\frac{1}{32}$, adding each fold on your SC-6 (`[+]`) and tapping `[FDISP]` to watch $\frac{31}{32}$ creep toward $1.0000000$!
 
 ---
@@ -2267,8 +2272,8 @@ Walk into a woodworking shop or unroll an ancient Egyptian papyrus scroll, and y
 
 | Hands-On Fraction Studio Discovery | What You Build in the Comparator Well | How Your SC-6 Stack Shows It |
 | :--- | :--- | :--- |
-| **Two-Dot Entry (`[.]`)** | Stack five $\frac{1}{8}$ blocks ($52.5\text{ mm}$) or $2\frac{3}{4}$ towers | `. 5 . 8` enters `5/8`; `2 . 3 . 4` enters `2 3/4` |
-| **Step-by-Step Simplify (`[g] [SIMP]`)** | Match $\frac{4}{8}$ ($42.0\text{ mm}$) flush against $\frac{1}{2}$ ($42.0\text{ mm}$) | `. 12 . 18 [g] [SIMP]` divides out shared factors to `2/3` (`LOWEST TERMS`) |
+| **Two-Dot Entry (`[.]`)** | Stack five $\frac{1}{8}$ blocks ($52.5\text{ mm}$) or $2\frac{3}{4}$ towers | `0 . 5 . 8` *(or `. 5 . 8`)* enters `5/8`; `2 . 3 . 4` enters `2 3/4` |
+| **One-Tap GCF Simplify (`[g] [SIMP]`)** | Match $\frac{4}{8}$ ($42.0\text{ mm}$) flush against $\frac{1}{2}$ ($42.0\text{ mm}$) | `0 . 12 . 18 [g] [SIMP]` divides out the GCF ($6$) in one tap to `2/3` (`LOWEST TERMS`) |
 | **Least Common Denominator (`[f] [LCM]`)** | Bridge $\frac{1}{3}$ ($28\text{ mm}$) + $\frac{1}{4}$ ($21\text{ mm}$) with seven $\frac{1}{12}$ blocks ($49\text{ mm}$) | `8 [ENTER] 12 [f] [LCM]` $\to$ `24` (shared twenty-fourths grid) |
 | **Three-Face Block Rotation (`[FDISP]`)** | Turn the blue $\frac{1}{4}$ block to read `1/4`, `0.25`, and `25%` | Flip between `a ᵇ/c`, `d/c`, repeating bar `0.3̄`, and decimal views |
 | **Two-Shelf Sale & Tip (`[%]`)** | Compare a $15\%$ slice against the full $100\%$ starting tower | `80 [ENTER] 15 [%]` puts `12` in $X$ while keeping `80` on Shelf $Y$ |
@@ -2416,7 +2421,7 @@ Even today, carpenters framing a backyard deck or coaches chalking the foul line
 ### 6.2.4 Circles, Disks & Rings
 What happens when a shape has no straight sides at all (`[f] [CIRC]`)? Pin one end of a piece of string to the center of your paper and sweep a pencil all the way around: every point on the **Circle** sits at the exact same distance (the **Radius**) from the center. The distance straight across through the center is the **Diameter** ($\text{Diameter} = 2 \times \text{Radius}$).
 
-Over two thousand years ago, builders noticed something remarkable: no matter how tiny or gigantic a circle is—whether it is a shirt button or a Ferris wheel—if you wrap a string around its outside rim (the **Circumference**) and compare it to the **Diameter** straight across, the circumference is always just over $3.14$ times as long. Mathematicians call that universal circle ratio **$\pi$ (pi)**, approximately $3.1415926535\dots$, accessed on your SC-6 via the shifted key `[π]`.
+Over two thousand years ago, builders noticed something remarkable: no matter how tiny or gigantic a circle is—whether it is a shirt button or a Ferris wheel—if you wrap a string around its outside rim (the **Circumference**) and compare it to the **Diameter** straight across, the circumference is always just over $3.14$ times as long. Mathematicians call that universal circle ratio **$\pi$ (pi)**, approximately $3.1415926535\dots$, accessed on your SC-6 via the primary key `[π]`.
 
 Why does that same number $\pi$ also find the flat **Area** inside a circle ($\text{Circle Area} = \text{Radius} \times \text{Radius} \times \pi$)? Picture slicing a round pizza into 16 thin triangular wedges and lining them up alternating point-up, point-down, point-up, point-down like teeth on a zipper. As you slice the pizza into 32 wedges, then 64, and then 1,000 paper-thin wedges, the bumpy crust edges flatten out into two straight horizontal lines and the leaning end slice stands straight up into a crisp $90^\circ$ rectangular corner! The straight-up height of that rectangle is one pizza slice long ($\text{Radius}$), and its bottom width is half of the crust ($\frac{1}{2} \times 2 \times \pi \times \text{Radius} = \pi \times \text{Radius}$), because half the crusts sit along the top edge and half sit along the bottom edge. Multiply that $\pi \times \text{Radius}$ width by the $\text{Radius}$ height, and out pops the circle area rule:
 $$\text{Circumference} = 2 \times \pi \times \text{Radius} = \pi \times \text{Diameter}, \qquad \text{Circle Area} = \text{Radius} \times \text{Radius} \times \pi$$
@@ -2432,16 +2437,16 @@ To find the enclosed turf area inside a $15\text{-meter}$ radius semicircular tu
 
 Because `[f] [CIRC]` just used the radius `15`, that `15` is still sitting inside `LASTX`. If you also want the racing distance around the outside of that circle, pull `15` right back onto the bottom shelf and multiply by $2\pi$ with `[f] [LASTX] 2 [×] [π] [×]` to reveal the **94.2478-meter** lap circumference while the turf area $706.8583\text{ m}^2$ rests right above it on Shelf $Y$.
 
-Now try unrolling the **Cylindrical Wrapper Net** from your block kit to see how circumference works around a backyard above-ground swimming pool (or the painted center kickoff circle of a youth soccer field) with a radius of $4.2\text{ meters}$ ($8.4\text{ meters}$, or about $27.5\text{ feet}$, straight across). While tapping `4.2 [f] [CIRC]` ($\pi \times 4.2^2$) tells you that a floating solar cover needs $\mathbf{55.42\text{ m}^2}$ of fabric to blanket the water, unrolling the pool's outer wall shows that the top rim stretches $\pi$ times the diameter ($\text{Circumference} = 2 \times \text{Radius} \times \pi$). Doubling the $4.2\text{ m}$ radius into the $8.4\text{ m}$ diameter and multiplying by $\pi$ with `4.2 [ENTER] [2] [×] [π] [×]` gives **`26.38937829`**:
+Now try unrolling the **Cylindrical Wrapper Net** from your block kit to see how circumference works around a backyard above-ground swimming pool (or the painted center kickoff circle of a youth soccer field) with a radius of $4.2\text{ meters}$ ($8.4\text{ meters}$, or about $27.5\text{ feet}$, straight across). *(Note: If your SC-6 is still in default `[NUM]` Whole Number Mode, tap `[NUM]` or `[f] [ALL]` first so the decimal point enters decimal numbers like `4.2`; pressing `[π]` or `[f] [CIRC]` also switches to decimal floating-point automatically.)* While tapping `4.2 [f] [CIRC]` ($\pi \times 4.2^2$) tells you that a floating solar cover needs $\mathbf{55.42\text{ m}^2}$ of fabric to blanket the water, unrolling the pool's outer wall shows that the top rim stretches $\pi$ times the diameter ($\text{Circumference} = 2 \times \text{Radius} \times \pi$). Doubling the $4.2\text{ m}$ radius into the $8.4\text{ m}$ diameter and multiplying by $\pi$ with `4.2 [ENTER] [2] [×] [π] [×]` gives **`26.38937829`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `4.2` | $0.0000$ | $0.0000$ | $0.0000$ | $4.2$ | Type the pool radius ($4.2\text{ m}$) onto Shelf $X$ |
-| `[ENTER]` | $0.0000$ | $0.0000$ | $4.2$ | $4.2$ | Copy the $4.2\text{ m}$ radius up onto Shelf $Y$ |
-| `2` | $0.0000$ | $0.0000$ | $4.2$ | $2.0000$ | Type 2 to double the radius into the diameter |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $8.4$ | Multiply to get the full $8.4\text{ m}$ diameter on Shelf $X$ |
-| `[π]` | $0.0000$ | $0.0000$ | $8.4$ | $3.1416$ | Place $\pi \approx 3.1416$ on Shelf $X$; $8.4$ lifts to Shelf $Y$ |
-| `[×]` | $0.0000$ | $0.0000$ | $0.0000$ | $26.3894$ | Multiply diameter by $\pi$ to wrap the full rim ($26.39\text{ m}$) |
+| `4.2` | $0$ | $0$ | $0$ | $4.2$ | Type the pool radius ($4.2\text{ m}$) onto Shelf $X$ |
+| `[ENTER]` | $0$ | $0$ | $4.2$ | $4.2$ | Copy the $4.2\text{ m}$ radius up onto Shelf $Y$ |
+| `2` | $0$ | $0$ | $4.2$ | $2$ | Type 2 to double the radius into the diameter |
+| `[×]` | $0$ | $0$ | $0$ | $8.4$ | Multiply to get the full $8.4\text{ m}$ diameter on Shelf $X$ |
+| `[π]` | $0$ | $0$ | $8.4$ | $3.1416$ | Place $\pi \approx 3.1416$ on Shelf $X$; $8.4$ lifts to Shelf $Y$ |
+| `[×]` | $0$ | $0$ | $0$ | $26.3894$ | Multiply diameter by $\pi$ to wrap the full rim ($26.39\text{ m}$) |
 
 Wrapping the outer rim of the $4.2\text{-meter}$ radius pool takes $\mathbf{26.39\text{ meters}}$ of top-rail coping, enclosing $\mathbf{55.42\text{ m}^2}$ of water inside.
 
@@ -3085,7 +3090,7 @@ $$\text{Probability of an Event} = \frac{\text{Number of Winning Outcomes}}{\tex
 | **$1.0$** | Certain | Rolling a whole number from `1` to `6` on a standard $d6$ |
 
 ### 7.2.1 Rolling Digital Dice & Custom Random Ranges
-What if you want to run a 60-roll probability experiment right at your desk without chasing runaway dice across the classroom floor? Pressing the dedicated dice key `[🎲]` on your SC-6 keypad turns the screen into an instant digital dice cup. Each press of `[🎲]` wakes up the calculator's random number roller, showing a quick 3-frame rolling tumble before drawing a crisp $32 \times 32$ pixel die face right in the middle of the display with classic dot patterns—from a single center dot for `1`, diagonal pairs and triples for `2` and `3`, four corner dots ($2 \times 2$ square) for `4`, four corners plus a center dot ($4 + 1$) for `5`, up to two columns of three dots ($2 \times 3$ rectangle) for `6`. Even better, the number you rolled ($1 \dots 6$) lands directly on Shelf $X$ with **automatic stack lift** ($X \to Y \to Z \to T$), so you can roll two dice (`2d6`) and tap `[+]` to add them, or tap `[Σ+]` to log 50 rolls in a row.
+What if you want to run a 60-roll probability experiment right at your desk without chasing runaway dice across the classroom floor? Pressing the dedicated dice key `[🎲]` on your SC-6 keypad turns the screen into an instant digital dice cup. Each press of `[🎲]` wakes up the calculator's random number roller, drawing crisp $17 \times 17$ pixel die faces right on the display (`T` and `X`) with classic dot patterns—from a single center dot for `1`, diagonal pairs and triples for `2` and `3`, four corner dots ($2 \times 2$ square) for `4`, four corners plus a center dot ($4 + 1$) for `5`, up to two columns of three dots ($2 \times 3$ rectangle) for `6`. Even better, the number you rolled ($1 \dots 6$) lands directly on Shelf $X$ with **automatic stack lift** ($X \to Y \to Z \to T$), so you can roll two dice (`2d6`) and tap `[+]` to add them, or tap `[Σ+]` to log 50 rolls in a row.
 
 When your game or science experiment needs a 20-sided die ($d20$), a coin flip (`1` or `2`), or a random student number from `1` to `28`, two shifted random-range keys let you build any custom spinner or die you can imagine. The **`[f] [1…x]` (Random 1 to X)** key picks a random whole number from $1$ up to whatever number is sitting on Shelf $X$: type `20 [f] [1…x]` to roll a 20-sided die ($d20$ from $1$ to $20$), type `2 [f] [1…x]` to flip a fair coin ($1 = \text{Heads}, 2 = \text{Tails}$), or type `28 [f] [1…x]` to pick a random lab partner from a class of 28 students. And when you want a custom starting number other than $1$, the **`[g] [t…x]` (Random Y to X)** key picks a random whole number between the starting number on Shelf $Y$ and the ending number on Shelf $X$—for example, keying `10 [ENTER] 99 [g] [t…x]` generates a random two-digit number from $10$ to $99$:
 
@@ -3102,7 +3107,7 @@ Why doesn't a real die land on `4` *exactly* once every 6 rolls? Because **Expec
 $$\text{Expected Chance of Rolling a 4} = \frac{1}{6} \approx 0.1667 \ (16.67\%)$$
 $$\text{Expected Count} = 60 \times \frac{1}{6} = 10\text{ times}$$
 
-In a real 60-roll classroom trial, you might see a 4 turn up twelve times instead of ten. Dividing your 12 wins by the 60 total rolls on the stack with `12 [ENTER] 60 [÷]` gives a real-life rate of $0.2000$ ($20.0\%$), and subtracting the expected $\frac{1}{6}$ share with `0.20 [ENTER] 1 [ENTER] 6 [÷] [-]` shows a $+0.0333$ ($+3.33\%$) difference.
+In a real 60-roll classroom trial, you might see a 4 turn up twelve times instead of ten. With Whole Number Mode (`[NUM]`) toggled off (or after tapping `[g] [FIX] 4` / `[f] [ALL]`), dividing your 12 wins by the 60 total rolls on the stack with `12 [ENTER] 60 [÷]` gives a real-life rate of $0.2000$ ($20.0\%$), and subtracting the expected $\frac{1}{6}$ share with `0.20 [ENTER] 1 [ENTER] 6 [÷] [-]` shows a $+0.0333$ ($+3.33\%$) difference.
 
 Game designers use this exact ratio (`Winning Outcomes ÷ Total Outcomes`) to check the fairness of every die roll and card draw before printing a rulebook. Pick up one of your physical $d6$ dice and count the odd faces ($1, 3,$ and $5$): 3 out of the 6 faces are odd. Dividing 3 by 6 on your SC-6 with `[3] [ENTER] [6] [÷]` gives **`0.5`**—an exact coin-flip ($\mathbf{0.5000}$ or $50\%$), so across 60 rolls you can expect roughly 30 odd numbers.
 
@@ -3136,7 +3141,7 @@ Look at the `Count` column (`1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1`): if you stack one
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `. 6 . 36 [g] [SIMP]` | 0 | 0 | 0 | **1/6** | 6 ways out of 36 simplifies by their $\text{GCF} = 6$ to **$\frac{1}{6}$** |
+| `0 [.] 6 [.] 36 [g] [SIMP]` | 0 | 0 | 0 | **1/6** | 6 ways out of 36 simplifies by their $\text{GCF} = 6$ to **$\frac{1}{6}$** |
 | `[FDISP]` | 0 | 0 | 0 | **0.1667** | Toggle fraction/decimal view: $\frac{1}{6} \approx \mathbf{16.67\%}$ |
 
 The probability of rolling a sum of $7$ is **$1/6 \approx 16.67\%$**—six times more likely than rolling a $2$ or a $12$.
@@ -3160,14 +3165,14 @@ What happens when you pull a marble out of a bag (or deal a card from a deck) an
 Reach into a cloth bag containing 5 Red and 3 Blue marbles ($8$ marbles in all) and draw two marbles without looking and without putting the first marble back. What is the chance of drawing two Blue marbles in a row? On your first reach, $3$ out of $8$ marbles are Blue ($\frac{3}{8}$). Once you hold that Blue marble in your hand, only $2$ Blue marbles remain among the $7$ marbles left in the bag ($\frac{2}{7}$). Multiply the two step chances together:
 $$\text{Chance of Both Blue} = \text{Chance of 1st Blue} \times \text{Chance of 2nd Blue} = \frac{3}{8} \times \frac{2}{7} = \frac{6}{56} = \frac{3}{28}$$
 
-On the stack, compute the first draw probability $\frac{3}{8}$, compute the second draw probability $\frac{2}{7}$, and multiply them with `3 [ENTER] 8 [÷] 2 [ENTER] 7 [÷] [×]` to obtain $0.107143$. Tapping `[FDISP]` switches to exact fraction view ($\mathbf{3/28}$), showing that the probability of drawing two blue marbles in a row is $3/28 \approx \mathbf{10.71\%}$.
+On the stack (with `[NUM]` toggled off or in `[f] [ALL]` decimal view), compute the first draw probability $\frac{3}{8}$, compute the second draw probability $\frac{2}{7}$, and multiply them with `3 [ENTER] 8 [÷] 2 [ENTER] 7 [÷] [×]` to obtain $0.107143$. Tapping `[FDISP]` switches to exact fraction view ($\mathbf{3/28}$), showing that the probability of drawing two blue marbles in a row is $3/28 \approx \mathbf{10.71\%}$.
 
 What if someone asks for the chance of drawing **at least one Red marble** in those two picks? Instead of adding up three different branches (Red-Red, Red-Blue, and Blue-Red), use a clever shortcut: notice that the *only* way to miss Red completely is to draw **Both Blue** ($\frac{3}{28}$). Subtracting the chance of Both Blue from $1$ ($100\%$) gives the answer in one step:
 $$\text{Chance of At Least One Red} = 1 - \text{Chance of Both Blue} = 1 - \frac{3}{28} = \frac{25}{28}$$
 
 Enter `1` ($100\%$), divide `3` by `28`, and subtract with `1 [ENTER] 3 [ENTER] 28 [÷] [-]` to reach $0.892857$—and one tap of `[FDISP]` reveals the exact fraction $\mathbf{25/28}$ ($\approx \mathbf{89.29\%}$).
 
-That same keep-it-in-your-hand rule explains why drawing **two Aces in a row** from a 52-card deck is such a rare event. On the first draw, $4$ of the $52$ cards are Aces ($4/52$). Once you hold that first Ace in your hand, only **$3$ Aces** remain among the **$51$ cards** left in the deck ($3/51$). Multiplying the two step chances on the stack with `[4] [ENTER] 52 [÷] [3] [ENTER] 51 [÷] [×]` gives **`0.0045248869`**—a combined probability of $1/221 \approx \mathbf{0.45\%}$, happening only once in every 221 two-card deals. And whenever you want to simplify a single-draw bag ratio—such as reaching into a cloth pouch holding $9$ winning gold tokens and $3$ silver tokens ($12$ tokens in all)—typing `[.] 9 [.] 12 [g] [SIMP]` immediately reduces the $9/12$ chance to $\mathbf{3/4} = 75\%$.
+That same keep-it-in-your-hand rule explains why drawing **two Aces in a row** from a 52-card deck is such a rare event. On the first draw, $4$ of the $52$ cards are Aces ($4/52$). Once you hold that first Ace in your hand, only **$3$ Aces** remain among the **$51$ cards** left in the deck ($3/51$). Multiplying the two step chances on the stack with `[4] [ENTER] 52 [÷] [3] [ENTER] 51 [÷] [×]` gives **`0.0045248869`**—a combined probability of $1/221 \approx \mathbf{0.45\%}$, happening only once in every 221 two-card deals. And whenever you want to simplify a single-draw bag ratio—such as reaching into a cloth pouch holding $9$ winning gold tokens and $3$ silver tokens ($12$ tokens in all)—typing `0 [.] 9 [.] 12 [g] [SIMP]` immediately reduces the $9/12$ chance to $\mathbf{3/4} = 75\%$.
 
 ---
 
@@ -3424,7 +3429,7 @@ $$70, \ 75, \ 80, \ 80, \ 85, \ 85, \ 85, \ 90, \ 90, \ 95$$
 
 Look at the shape of the dot plot above. The scores climb smoothly from $70$ up to a central peak at $85$ (the **Mode**, because $85$ shows up the most times), and then step back down toward $95$.
 
-Now toss all 10 scores into your `[Σ+]` running-total basket: start with `[g] [CLΣ]` to empty the basket ($\text{Count} = 0$), then enter `70 [Σ+]` ($\text{Count} = 1$), `75 [Σ+]` ($\text{Count} = 2$), `80 [Σ+] 80 [Σ+]` ($\text{Count} = 4$), `85 [Σ+] 85 [Σ+] 85 [Σ+]` ($\text{Count} = 7$), `90 [Σ+] 90 [Σ+]` ($\text{Count} = 9$), and `95 [Σ+]` ($\text{Count} = 10$). (If you ever mistype a score, tapping `[f] [Σ-]` takes it right back out of the basket, while `[FRQ]` checks how many times a score appears and `[Σx²]` adds up the squared scores.)
+Now toss all 10 scores into your `[Σ+]` running-total basket: start with `[g] [CLΣ]` to empty the basket ($\text{Count} = 0$), then enter `70 [Σ+]` ($\text{Count} = 1$), `75 [Σ+]` ($\text{Count} = 2$), `80 [Σ+] 80 [Σ+]` ($\text{Count} = 4$), `85 [Σ+] 85 [Σ+] 85 [Σ+]` ($\text{Count} = 7$), `90 [Σ+] 90 [Σ+]` ($\text{Count} = 9$), and `95 [Σ+]` ($\text{Count} = 10$). (If you ever mistype a score, tapping `[f] [Σ-]` takes it right back out of the basket, while `[FRQ]` opens the scrollable `FREQ TABLE` showing how many times each score appears in your data list.)
 
 Once all ten quiz papers are in the basket, each data key tells a different part of the classroom story. Tapping `[N]` confirms that you logged $X = \mathbf{10}$ quizzes in all, while `[f] [Σx]` adds every point earned across the room into a grand total of $X = \mathbf{835.0}$. When you tap `[f] [MED]` for the middle student in the lineup and `[g] [MODE]` for the most common score at the peak of the dot plot, both land right on $X = \mathbf{85.0}$. Meanwhile, tapping `[g] [x̄]` levels all ten scores into a fair-share **Mean** of $X = \mathbf{83.5}$—sitting just $1.5$ points below the median and mode because that single score of $70$ at the left edge pulls the average slightly downward—and tapping `[RNG]` measures the full $X = \mathbf{25.0}$ spread from the lowest paper ($70$) to the highest ($95 - 70 = 25$).
 
@@ -3434,7 +3439,7 @@ Once all ten quiz papers are in the basket, each data key tells a different part
 
 Now let's zoom in on a 5-student study group with scores of $85, 90, 75, 90, 100$ (where the sample count is $n = 5$) so you can see how `[IQR]` and `[g] [MAD]` measure spread. When you load all five scores into your running-total basket with `[g] [CLΣ] 85 [Σ+] 90 [Σ+] 75 [Σ+] 90 [Σ+] 100 [Σ+]` and sort them from lowest to highest ($75, 85, 90, 90, 100$), they span from a minimum of $\mathbf{75.0}$ to a maximum of $\mathbf{100.0}$ (a total range of $100 - 75 = \mathbf{25.0}$). Tapping `[f] [Σx]` adds the five papers to $\mathbf{440.00}$, so the fair-share **Mean** (`[g] [x̄]`) is $440 \div 5 = \mathbf{88.00}$, while both the middle **Median** (`[f] [MED]`, the 3rd score out of 5) and the most frequent **Mode** (`[g] [MODE]`) sit at $\mathbf{90.00}$.
 
-To see how tightly the study group is clustered without being fooled by the single $75$ or $100$ at the ends, tap `[IQR]` for the **Interquartile Range**. On the SC-6, the **First Quartile (1Q)** sits at $85.0$ and the **Third Quartile (3Q)** sits at $90.0$, fencing off the middle half of the group inside a narrow $5\text{-point}$ window:
+To see how tightly the study group is clustered without being fooled by the single $75$ or $100$ at the ends, tap `[IQR]` for the **Interquartile Range**. With $5$ sorted scores ($75, 85, \mathbf{90}, 90, 100$), the SC-6 splits the odd-sized list into two inclusive halves that both include the middle median ($90$): the lower half ($75, \mathbf{85}, 90$) and the upper half ($90, \mathbf{90}, 100$). On the SC-6, the **First Quartile (1Q)** is the median of the lower half, $\mathbf{85.0}$, and the **Third Quartile (3Q)** is the median of the upper half, $\mathbf{90.0}$, fencing off the middle half of the group inside a $5\text{-point}$ window:
 $$\text{Interquartile Range (IQR)} = \text{Third Quartile (3Q)} - \text{First Quartile (1Q)} = 90.0 - 85.0 = \mathbf{5.00}$$
 
 Next, tap `[g] [MAD]` to find the **Mean Absolute Deviation**—the average distance each student's score wanders from the group mean of $88.0$. Measuring how far each of the five scores ($75, 85, 90, 90, 100$) sits from $88$ gives distances of $13, 3, 2, 2,$ and $12$. Adding those five distances together ($13 + 3 + 2 + 2 + 12 = 32.0$) and dividing by the $5$ students reveals that a typical score in the study group sits $\mathbf{6.40\text{ points}}$ away from the mean:
@@ -3476,7 +3481,7 @@ When one $+1$ puff of hot air and one $-1$ sandbag meet, they form a **Zero Pair
 
 What happens if your balloon is floating at $+7\text{ meters}$ and you **subtract (toss overboard) $3$ heavy sandbags** ($7 - (-3) = 10$, or a friend cancels a $\$3$ debt you owed them)? With $3$ fewer sandbags pulling it down, the balloon rises **up $+3\text{ meters}$** to $+10$! Taking away a negative weight does the exact same thing as adding a positive boost—and keying `7 [ENTER] 3 [+/-] [-]` on your SC-6 confirms **`10`**. By the same token, if adding $3$ groups of $2$ Crimson sandbags ($+3 \times -2 = -6$) pulls the balloon down $6\text{ meters}$, then **removing ($-3$ groups of) $2$ Crimson sandbags** (`-3 × -2`) lifts $6$ sandbags *off* the basket, sending the balloon rising to **`+6`** (`3 [+/-] [ENTER] 2 [+/-] [×]` $\longrightarrow$ **`6`**).
 
-On the SC-6, look at the difference between the two keys that have a minus sign: the **subtraction key** (`[-]`) works between two shelves by subtracting $X$ from $Y$ ($Y - X$), whereas the **change-sign key** (`[+/-]`) flips the sign of the single number currently sitting in $X$ (turning positive `8` into negative `-8`, or `-8` back into `+8`). To enter $-8$ on your SC-6, simply type `8 [+/-]` so the screen displays `-8`; pressing `[+/-]` a second time flips `-8` right back to `8`.
+On the SC-6, look at the difference between the two keys that have a minus sign: the **subtraction key** (`[-]`) works between two shelves by subtracting $X$ from $Y$ ($Y - X$), whereas the **change-sign key** (`[+/-]`) flips the sign of the single number currently sitting in $X$ (turning positive `8` into negative `-8`, or `-8` back into `+8`). Because default **Whole Number Mode (`[NUM]`)** keeps stack numbers at `0` or above, toggle `[NUM]` off first (or tap `[f] [ALL]` / `[g] [FIX]`) whenever you want to work with negative numbers in stack view: then type `8 [+/-]` so the screen displays `-8`, and pressing `[+/-]` a second time flips `-8` right back to `8`.
 
 Imagine checking an outdoor thermometer in Minnesota on a frosty morning: at 6:00 AM, it reads $-12^\circ\text{C}$ ($12$ degrees below freezing). By 2:00 PM, the afternoon sun warms the air up by $+15^\circ\text{C}$. What is the afternoon temperature?
 
@@ -3611,34 +3616,35 @@ Your StackCalc SC-6 doesn't replace your brain—it coaches it! With the built-i
 
 ### 8.1.1 Starting a 4-Second Speedrun & Stack Mystery Puzzles
 
-Have you ever played a musical rhythm game where notes glide down the screen and you tap the beat right on time, or raced a speedrun clock where each clean streak unlocks a faster puzzle tier? Tapping **`[f] [?]`** (`[f]` + `[C]`) turns your SC-6 screen into an interactive mental-math speedrun challenge: a puzzle flashes on screen, you type the answer using the number keys (plus `.` for fractions or `[<-]` if you want to fix a digit), and you lock it in with one tap of **`[ENTER]`**. Whenever you want to check your score and average response speed during a game, tap **`[g] [SHOW]`**; when you are ready to return to your normal calculator stack, just tap **`[C]`** twice (or tap `[NUM]`).
+Have you ever played a musical rhythm game where notes glide down the screen and you tap the beat right on time, or raced a speedrun clock where each clean streak unlocks a faster puzzle tier? Tapping **`[f] [?]`** (`[f]` + `[C]`) opens the **Quiz Mode Level Picker (`⚡ QUIZ MODE` / `Press 1-6 to Pick Level`)** showing which levels you have unlocked; tap a number key **`1`–`6`** to launch your mental-math speedrun challenge! A puzzle flashes on screen, you type the answer using the number keys (plus `.` for fractions or `[<-]` if you want to fix a digit), and you lock in your answer with one tap of **`[≠]`** (the `=/≠` submit key). After the feedback screen (`Press C for Next Quiz`) grades your answer, tap **`[C]`** (or `[≠]`) to advance to the next question! Because **`[≠]`** submits your quiz answer, **`[ENTER]` and all of your arithmetic keys remain completely free for RPN stack scratch work**! Whenever you want to check your running score (`SCORE  <score> / <total>`) during a game, tap **`[g] [SHOW]`**; when you are ready to exit Quiz Mode back to your normal calculator stack, tap **`[NUM]`** (or press `[C]` while a question prompt is on screen).
 
-Most quiz apps lock you into multiple-choice guessing games—where you can often spot the right answer just by looking at the last digit without actually doing the math. On the SC-6, there are no multiple-choice buttons to guess from. Instead, the Quiz Engine challenges your brain with two puzzle styles on the screen:
+Most quiz apps lock you into multiple-choice guessing games—where you can often spot the right answer just by looking at the last digit without actually doing the math. On the SC-6, there are no multiple-choice buttons to guess from. Instead, the Quiz Engine challenges your brain with two on-screen prompt formats (paired with hands-on Mystery Block bonds on your desk):
 
-1. **Stack Mystery Puzzles (`3 ? + = 10` or `8 ? × = 56`):** Shows how two numbers sit on Shelf $Y$ and Shelf $X$ before an operation combines them, with a mystery question mark `?` hiding one of the shelves:
-   $$\mathtt{3 \ ? \ + \ = \ 10}$$
-2. **Direct Mental-Math Prompts (`4 + 5 = ?`, `1/2 + 1/4 = ?`, or `35² = ?`):** Shows a classic math challenge where you picture the blocks in your head, type the exact answer onto Shelf $X$, and tap `[ENTER]`.
+1. **RPN Stack Prompts (`4 [ENTER] 5 +`, `1/2 [ENTER] 1/4 +`, or `24 [ENTER] 36 GCF`):** Used across Levels 1–4 and Level 5 Bands 1–2, showing the two numbers sitting on Shelf $Y$ and Shelf $X$ followed by the operation that combines them (`Q1/100 | Press ≠ | C: Reset`):
+   $$\mathtt{4 \ \ [ENT] \ \ 5 \ \ +}$$
+2. **Algebraic & Multi-Step Prompts (`5² + 3² = ?`, `15% of 60 = ?`, `4! ÷ 6 = ?`, or `gcd(48,36) = ?`):** Used in Level 5 Band 3 and throughout Level 6 (`L6: Math Champ`), where you picture the multi-step pattern in your head, type the exact answer onto Shelf $X$, and tap `[≠]` (`Q1 | Enter answer, press ≠`).
+3. **Hands-On Missing-Number Bonds (`3 + ? = 10` or `8 × ? = 56`):** Using the physical **`?` Mystery Block** on your **Quest Scoreboard** rail, you can also set up missing-number stories on your desk and solve them by working backward (`10 [ENTER] 3 -` or `56 [ENTER] 8 ÷`).
 
-During a live game, the graphic LCD organizes everything into three clean horizontal bands: a top scoreboard banner showing your current level, points, and five-dot streak meter (**`SCORE: 40`** • **`STREAK: 3 ●●●○○`**), a bold center prompt displaying the active puzzle (**`3  ?  +  =  10`**), and a bottom stack line (**`Y: 3`**, **`X: _`**) waiting for your entry. Look at that puzzle `3  ?  +  =  10` on your screen as a four-step story on the stack display: *"Start with `3` resting on Shelf $Y$, place the missing mystery number `?` on Shelf $X$, press `+` to combine them, and land on `10`."*
+During a live game, the graphic LCD organizes everything into clean horizontal bands: a top scoreboard banner showing your current level (`L1: +/- to 10`) on the left and your running score (`Score: 4/4`) on the right, a bold center prompt displaying the active puzzle (`3 [ENTER] 7 +` or `5² + 3² = ?`) and your typed digits, and a bottom status bar (`Q1/100 | Press ≠ | C: Reset`).
 
-In a heartbeat, your brain translates that stack story into a familiar number bond (*"What number added to 3 makes 10?"*) and you tap `7 [ENTER]`. The moment you press `[ENTER]`, the calculator checks your answer in any equivalent form—automatically matching `2/4`, `0.5`, and `1/2`—while its internal stopwatch times your solve against the 4.0-second speedrun clock (`★ FAST!` under 4s, `✓ GOOD` in 4–8s, `OK` over 8s, or `WRONG: <expected>` so you immediately see the right fact before it cycles back a few turns later). Better yet, after any quiz sprint, you can test every single puzzle right in `[NUM]` mode using the exact stack moves shown in each level below.
+In a heartbeat, your brain spots the ten-partner (*"3 and 7 make 10!"*) and you tap `10 [≠]`. The moment you press `[≠]`, the calculator checks your answer in any equivalent form—automatically matching `2/4`, `0.5`, and `1/2`—while its internal stopwatch times your solve against the 4.0-second speedrun clock (`CORRECT! <time>s ★ FAST!` under 4s, `CORRECT! <time>s ✓` in 4–8s, `CORRECT! <time>s` over 8s, or `WRONG: <expected>` so you immediately see the right fact before it cycles back 3 and 7 turns later), displaying `Mastery: <score>% · Fast Streak: <n>` on the second line and `Press C for Next Quiz` at the bottom. Better yet, you can test every single puzzle right on your calculator stack using the exact moves shown in each level below.
 
 ---
 
-## 8.2 The 6-Level Game Ladder & Classroom Seed Codes
+## 8.2 The 6-Level Game Ladder & Head-to-Head Sprints
 
-How does a well-tuned puzzle game know the exact moment to make a level slightly faster—not so easy that you yawn, and not so steep that you get stuck? During solo play, the SC-6 shuffles each level's puzzle deck automatically so every round feels fresh. And when you want to race a friend or run a kitchen-table relay, two players can type the exact same **Classroom Seed Number** (such as `42` followed by `[f] [?]`) so both calculators deal the exact same shuffled puzzles in the exact same order.
+How does a well-tuned puzzle game know the exact moment to make a level slightly faster—not so easy that you yawn, and not so steep that you get stuck? During solo play, the SC-6 shuffles each level's puzzle deck automatically across three adaptive bands so every round feels fresh. And when you want to race a friend or run a kitchen-table relay, both players can tap `[f] [?]` and pick the exact same target level (`1`–`6`) to race through that level's 3-band challenge deck head to head.
 
-Every level is organized into **three smooth difficulty bands (`Band 1: Warm-Up`, `Band 2: Builder`, `Band 3: Boss Sprint`)**, displaying either **Stack Prompts** (`3 4 + = ?`) or **Classic Prompts** (`3 + 4 = ?`):
+Every level is organized into **three smooth difficulty bands (`Band 1: Warm-Up`, `Band 2: Builder`, `Band 3: Boss Sprint`)**, progressing from **RPN Stack Prompts** (`4 [ENTER] 5 +`) in Levels 1–5 to **Algebraic Multi-Step Prompts** (`5² + 3² = ?`) in Level 5 Band 3 and Level 6:
 
 | Level | Screen Tag | Band 1 (Warm-Up) | Band 2 (Builder) | Band 3 (Boss Sprint) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Level 1** | `L1: +/- to 10` | Sums $\le 5$ and differences within 5 ($3 + 2 = {?}$, $4 - 1 = {?}$) | Sums 6 to 10 and ten-frame partners ($7 + 3 = {?}$, $8 - 5 = {?}$) | Missing-number bonds (`3 + ? = 10`, `? - 4 = 5`) |
-| **Level 2** | `L2: +/- to 100` | Two-digit + single-digit without carrying ($23 + 5 = {?}$, $48 - 6 = {?}$) | Full two-digit mental addition & subtraction ($34 + 25 = {?}$, $67 - 24 = {?}$) | Trading across tens & missing numbers (`47 + ? = 85`, `? - 28 = 44`) |
-| **Level 3** | `L3: x/÷ to 12` | Starter tables $1\text{--}5$ ($5 \times 4 = {?}$, $20 \div 5 = {?}$) | Full multiplication & division tables $2\text{--}9$ ($7 \times 8 = {?}$, $56 \div 7 = {?}$) | Big tables $6\text{--}12$ & missing factors (`8 × ? = 96`, `? ÷ 9 = 11`) |
-| **Level 4** | `L4: Fractions` | Same-denominator $+ / -$ with simplifying ($1/4 + 1/4 = 1/2$) | Different denominators $\le 6$ ($1/2 + 1/3 = 5/6$, $3/4 - 1/6 = 7/12$) | All four operations ($+, -, \times, \div$) up to 10ths ($2/3 \div 4/5 = 5/6$) |
-| **Level 5** | `L5: Mixed Mastery` | Whole-number & benchmark fraction mix ($1/2 + 1/4$, $40 + 30$) | Two-step order of operations & mixed numbers ($24 \div 6 + 7$, $1\frac{1}{2} + 2\frac{1}{4}$) | 20 mental-math bridge warm-ups ($15^2$, $23 \times 11$, $16 \times 25$, $\text{GCF}/\text{LCM}$) |
-| **Level 6** | `L6: Math Champ` | Ends-in-5 squares ($35^2, 65^2$), $\times 11$, $\times 25/\times 50$, staircase sums | $\times 101$, $\times 125$, near-100 products ($98 \times 97$), $54^2 - 46^2$, cubes | Remainders, $\times 37$, $\times 3367$, odd/even sums, unit-fraction telescopes |
+| **Level 1** | `L1: +/- to 10` | Sums & differences within 5 (`3 [ENTER] 2 +`, `4 [ENTER] 1 -`) | Sums 6 to 10 & ten-frame partners (`7 [ENTER] 3 +`, `8 [ENTER] 5 -`) | Full $0\text{--}10$ facts with zeroes & doubles (`9 [ENTER] 0 +`, `5 [ENTER] 5 +`) |
+| **Level 2** | `L2: +/- to 100` | Multiples of 10 (`40 [ENTER] 30 +`, `80 [ENTER] 20 -`) | Two-digit $+ / -$ without regrouping (`34 [ENTER] 25 +`, `67 [ENTER] 24 -`) | Two-digit $+ / -$ with regrouping (`47 [ENTER] 38 +`, `82 [ENTER] 45 -`) |
+| **Level 3** | `L3: x/÷ to 12` | $\times / \div$ by $2, 5, 10$ (`5 [ENTER] 4 ×`, `20 [ENTER] 5 ÷`) | $\times / \div$ by $3, 4, 6, 8$ (`6 [ENTER] 8 ×`, `48 [ENTER] 6 ÷`) | $\times / \div$ by $7, 9, 11, 12$ (`7 [ENTER] 8 ×`, `72 [ENTER] 9 ÷`) |
+| **Level 4** | `L4: Fractions` | Like denominators $+ / -$ (`1/4 [ENTER] 1/4 +`, `5/6 [ENTER] 1/6 -`) | Related denominators $+ / -$ (`1/2 [ENTER] 1/4 +`, `5/6 [ENTER] 1/3 -`) | Unlike denominators $+, -, \times$ (`2/3 [ENTER] 1/4 +`, `2/3 [ENTER] 3/4 ×`) |
+| **Level 5** | `L5: Mixed Mastery` | Fraction $+ / \times$ review (`3/4 [ENTER] 1/2 +`, `2/3 [ENTER] 3/5 ×`) | Two-digit RPN $+ / -$ sprints (`58 [ENTER] 37 +`, `91 [ENTER] 46 -`) | Multi-step squares, cubes, roots & percents (`5² + 3² = ?`, `15% of 60 = ?`, `√144 + 5 = ?`) |
+| **Level 6** | `L6: Math Champ` | Factorials, $\log_{10}$, powers, $\Sigma(1..n)$, $P(n,r)$, $C(n,r)$, $\gcd$, $\text{lcm}$ | Multi-step roots, powers & $\Sigma k^2$ (`(√169 - 5)² = ?`, `∑(k²,k=1..4) = ?`) | Compound $\Sigma k^3$, combinatorics & nested powers (`∑(k³,k=1..4) = ?`, `C(10,4) ÷ C(5,2) = ?`) |
 
 Every level is directly paired with your physical **StackCalc Block Studios** so that mental speed grows naturally out of hands-on building. In Levels 1 and 2, for instance, you build fast number-bond recognition using the **Math Dominoes**—whose 28 double-six domino tiles train your eyes to spot $4 + 5 = 9$ and turn-around twins like $[3 \mid 5]$ and $[5 \mid 3]$ without counting dots one by one—and the **Quest Scoreboard**, whose physical **`?` Mystery Block** slots right into an equation rail to model missing-number puzzles like `3 ? + = 10` before you tap `[f] [?]` on the keypad.
 
@@ -3646,39 +3652,39 @@ Every level is directly paired with your physical **StackCalc Block Studios** so
 
 ![Dominoes Studio: Desktop Tray and Raised-Dot Math Dominoes](../assets/renders/dominoes-studio-hero.png)
 
-Let's walk through all six levels of the challenge ladder—from **Level 1 (Addition & Subtraction Warm-Up)** to **Level 6 (Multi-Step Boss Round / `L6: Math Champ`)**—to see how each physical block studio powers your mental shortcuts and how every quiz prompt plays out on the 4-shelf stack in `[NUM]` mode.
+Let's walk through all six levels of the challenge ladder—from **Level 1 (Addition & Subtraction Warm-Up)** to **Level 6 (Championship Boss Round / `L6: Math Champ`)**—to see how each physical block studio powers your mental shortcuts and how every quiz prompt plays out on the 4-shelf stack.
 
 ### Level 1: Single-Digit Number Bonds (Sums & Differences to 10)
-Level 1 is your Addition & Subtraction Warm-Up: instead of counting dots one by one on your fingers, you use two speedrunner tricks—**Double-Plus-One** and **Ten-Frame Partners**—to spot answers in under a second and start filling your 5-dot streak meter (`●●●●●`).
+Level 1 is your Addition & Subtraction Warm-Up: instead of counting dots one by one on your fingers, you use two speedrunner tricks—**Double-Plus-One** and **Ten-Frame Partners**—to spot answers in under a second and start building your 5-fast streak.
 
-First, watch how **spotting a hidden double ($4 + 5$)** beats counting on your fingers. When a puzzle like `4 [ENTER] 5 [+] ?` flashes on the screen, don't count up from 4. Pull the $[4 \mid 5]$ tile from your **Math Dominoes** and look at how the five side is just a four-square with one bonus dot in the middle. Your eyes lock onto the twin fours ($4 + 4 = 8$) and pop the center dot on top ($8 + 1 = 9$)—letting you key in `9 [ENTER]` and light up your first streak dot (`●○○○○`). When you switch to `[NUM]` mode and key `4 [ENTER] 5 [+]`, Shelf $Y$ (`4`) and Shelf $X$ (`5`) fuse directly into **`9`**.
+First, watch how **spotting a hidden double ($4 + 5$)** beats counting on your fingers. When a puzzle like `4 [ENTER] 5 +` flashes on the screen, don't count up from 4. Pull the $[4 \mid 5]$ tile from your **Math Dominoes** and look at how the five side is just a four-square with one bonus dot in the middle. Your eyes lock onto the twin fours ($4 + 4 = 8$) and pop the center dot on top ($8 + 1 = 9$)—letting you key in `9 [≠]` and advance your fast streak (`Fast Streak: 1`). When you switch to `[NUM]` mode and key `4 [ENTER] 5 [+]`, Shelf $Y$ (`4`) and Shelf $X$ (`5`) fuse directly into **`9`**.
 
-Now flip from addition to subtraction by **reading the empty spaces in a Ten-Frame ($10 - 7$)**. Subtraction feels twice as fast when you look at what is *missing* instead of counting backward. Picture a full **Ten-Frame Tray** holding two rows of 5 counters, and lift 7 counters out (one whole row of 5 plus 2 from the bottom row). You don't even have to count the 7 you took away—your eyes immediately see **3 empty pockets** staring back at you, because $7$ and $3$ are ten-partners. That lets you solve `10 [ENTER] 7 [-] ?` (or the mystery prompt `10 ? - = 3`) right away with `3 [ENTER]`, matching the ten-partner bond `10 [ENTER] 7 [-]` $\to$ **`3`** on the live stack.
+Now flip from addition to subtraction by **reading the empty spaces in a Ten-Frame ($10 - 7$)**. Subtraction feels twice as fast when you look at what is *missing* instead of counting backward. Picture a full **Ten-Frame Tray** holding two rows of 5 counters, and lift 7 counters out (one whole row of 5 plus 2 from the bottom row). You don't even have to count the 7 you took away—your eyes immediately see **3 empty pockets** staring back at you, because $7$ and $3$ are ten-partners. That lets you solve `10 [ENTER] 7 -` right away with `3 [≠]`, matching the ten-partner bond `10 [ENTER] 7 [-]` $\to$ **`3`** on the live stack.
 
 ---
 
 ### Level 2: Two-Digit Mental Addition & Subtraction (To 100)
-With five fast solves under 4.0 seconds in Level 1, all five dots on your streak meter (`●●●●●`) light up, the screen flashes `★ NEXT LEVEL UNLOCKED! ★`, and you advance to Level 2. Here you unlock two essential two-digit mental strategies: **Jumping by Tens** and **The Two-Hop Split** (plus a bonus **99 Trick** for big sums like $64 + 99$, where you just add $100$ to get $164$ and step back $1$ to land on $163$).
+With five fast solves under 4.0 seconds in Level 1 (`Fast Streak: 5`), the screen flashes `★ NEXT LEVEL UNLOCKED! ★`, and you advance to Level 2. Here you unlock two essential two-digit mental strategies: **Jumping by Tens** and **The Two-Hop Split** (plus a bonus **99 Trick** for big sums like $64 + 99$, where you just add $100$ to get $164$ and step back $1$ to land on $163$).
 
-Start by **turning big tens into friendly ones ($40 + 30$)**. Whenever both numbers end in zero, cover up the zeros in your mind. Putting 4 counters and 3 counters into your **Ten-Frame Tray** gives $4 + 3 = 7$. Now treat every counter as a 10-rod: $4\text{ tens} + 3\text{ tens} = 7\text{ tens}$, which is $70$. The moment `40 [ENTER] 30 [+] ?` pops up, `70 [ENTER]` locks in the point—just as stacking four 10-rods and three 10-rods via `40 [ENTER] 30 [+]` places **`70`** on Shelf $X$.
+Start by **turning big tens into friendly ones ($40 + 30$)**. Whenever both numbers end in zero, cover up the zeros in your mind. Putting 4 counters and 3 counters into your **Ten-Frame Tray** gives $4 + 3 = 7$. Now treat every counter as a 10-rod: $4\text{ tens} + 3\text{ tens} = 7\text{ tens}$, which is $70$. The moment `40 [ENTER] 30 +` pops up, `70 [≠]` locks in the point—just as stacking four 10-rods and three 10-rods via `40 [ENTER] 30 [+]` places **`70`** on Shelf $X$.
 
-What if the second number has both tens *and* ones, like $80 - 25$? Use **the two-hop split with zero borrowing ($80 - 25$)**! Have you ever tried to borrow across columns in your head on a problem like $80 - 25$ and lost track of the digits? Hop in two clean steps from left to right instead: start with 8 ten-rods ($80$), hop back 2 tens first ($80 - 20 = 60$), and then hop back the last 5 ones ($60 - 5 = 55$). Whether the screen shows `80 [ENTER] 25 [-] ?` or the mystery puzzle `80 ? - = 55`, that two-hop jump ($80 \to 60 \to 55$) gives you `55 [ENTER]` without a single borrow, matching `80 [ENTER] 25 [-]` $\to$ **`55`**.
+What if the second number has both tens *and* ones, like $80 - 25$? Use **the two-hop split with zero borrowing ($80 - 25$)**! Have you ever tried to borrow across columns in your head on a problem like $80 - 25$ and lost track of the digits? Hop in two clean steps from left to right instead: start with 8 ten-rods ($80$), hop back 2 tens first ($80 - 20 = 60$), and then hop back the last 5 ones ($60 - 5 = 55$). When the screen shows `80 [ENTER] 25 -`, that two-hop jump ($80 \to 60 \to 55$) gives you `55 [≠]` without a single borrow, matching `80 [ENTER] 25 [-]` $\to$ **`55`**.
 
 ---
 
 ### Level 3: Multiplication & Division Mastery (Up to $12 \times 12$)
 Level 3 turns the rectangular tile grids from Chapter 4 into fast times-table shortcuts—like slicing tricky rectangles in half, reading the 9s tens-digit code, or using the **Split-and-Double Trick** (where a rectangle like $15 \times 14$ gets cut in half one way and doubled the other way to become $30 \times 7 = 210$).
 
-First, let's **slice the toughest times-table fact in two ($7 \times 8$)**. Ask ten students which multiplication fact trips them up the most, and nine of them will say $7 \times 8$. Here are two ways to never miss it again: first, slice 7 rows of 8 tiles into 5 rows of 8 ($40$) plus 2 rows of 8 ($16$ from your **24 Array Tiles**), which snap together into $40 + 16 = 56$. Second, notice the four-number countdown march: **5, 6, 7, 8** $\to \mathbf{56} = \mathbf{7} \times \mathbf{8}$. Either way, `7 [ENTER] 8 [×] ?` (or `7 ? × = 56`) is an instant `56 [ENTER]` solve, and multiplying the rectangle on your keypad with `7 [ENTER] 8 [×]` lands squarely on **`56`**.
+First, let's **slice the toughest times-table fact in two ($7 \times 8$)**. Ask ten students which multiplication fact trips them up the most, and nine of them will say $7 \times 8$. Here are two ways to never miss it again: first, slice 7 rows of 8 tiles into 5 rows of 8 ($40$) plus 2 rows of 8 ($16$ from your **24 Array Tiles**), which snap together into $40 + 16 = 56$. Second, notice the four-number countdown march: **5, 6, 7, 8** $\to \mathbf{56} = \mathbf{7} \times \mathbf{8}$. Either way, `7 [ENTER] 8 ×` is an instant `56 [≠]` solve, and multiplying the rectangle on your keypad with `7 [ENTER] 8 [×]` lands squarely on **`56`**.
 
-Once you can build rectangles fast, you can also run them in reverse by **cracking the secret 9s tens-digit code ($72 \div 9$)**. Every multiple of 9 up to $90$ hides a clue right inside its tens digit. Build $2 \times 9 = 18$ with your **24 Array Tiles**: notice that the tens digit ($1$) is **one less** than the number you multiplied by ($2$), and the two digits always add up to 9 ($1 + 8 = 9$). So when `72 [ENTER] 9 [÷] ?` flashes on the screen, look at the tens digit **`7`** in $72$ and add $1$: $7 + 1 = 8$. Lock in `8 [ENTER]` for the speed bonus, matching the missing side length **`8`** when you divide `72` by `9` with `72 [ENTER] 9 [÷]`.
+Once you can build rectangles fast, you can also run them in reverse by **cracking the secret 9s tens-digit code ($72 \div 9$)**. Every multiple of 9 up to $90$ hides a clue right inside its tens digit. Build $2 \times 9 = 18$ with your **24 Array Tiles**: notice that the tens digit ($1$) is **one less** than the number you multiplied by ($2$), and the two digits always add up to 9 ($1 + 8 = 9$). So when `72 [ENTER] 9 ÷` flashes on the screen, look at the tens digit **`7`** in $72$ and add $1$: $7 + 1 = 8$. Lock in `8 [≠]` for the speed bonus, matching the missing side length **`8`** when you divide `72` by `9` with `72 [ENTER] 9 [÷]`.
 
 ---
 
 ### Level 4: Remainder Division & Fraction Benchmarks
 In Level 4, the puzzles shift from whole-number rectangles into leftover tiles (`[g] [÷R]`) and **Fraction Towers** (`[g] [SIMP]`). Instead of writing out slow common-denominator steps, you trade tower pieces in your head and beat the 4.0-second clock with room to spare.
 
-Your first Level 4 challenge is **counting full towers and leftover tiles ($17 \div 5$)** when a division problem doesn't come out even. Ask yourself: *how many full towers of 5 fit inside 17?* Grab 17 tiles from your **24-Tile Counting & Array Studio** and stack them by fives ($5, 10, 15$). You get **3 full towers** ($15$ tiles) with **2 leftover tiles** in your hand. In Quiz Mode, `17 [ENTER] 5 [g] [÷R] ?` asks for the whole number of towers (`3 [ENTER]`), while `17 [ENTER] 5 [g] [÷R]` in `[NUM]` mode shows **`3`** on Shelf $X$ with the remainder perched above it:
+Your first Level 4 warmup is **counting full towers and leftover tiles ($17 \div 5$)** when a division problem doesn't come out even. Ask yourself: *how many full towers of 5 fit inside 17?* Grab 17 tiles from your **24-Tile Counting & Array Studio** and stack them by fives ($5, 10, 15$). You get **3 full towers** ($15$ tiles) with **2 leftover tiles** in your hand. When solving for the whole number of towers, `3 [≠]` locks in the quotient, while `17 [ENTER] 5 [g] [÷R]` in `[NUM]` mode shows **`3`** on Shelf $X$ with the remainder perched above it:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -3689,29 +3695,29 @@ Your first Level 4 challenge is **counting full towers and leftover tiles ($17 \
 
 *(Shelf $X$ shows your 3 full towers of 5, while Shelf $Y$ holds the 2 leftover tiles; tap `[x⇄y]` anytime you want to bring the remainder to the front).*
 
-Next, the game deals fraction puzzles where you **trade a half for two quarters ($1/2 + 1/4$)**. Think of quarters in your pocket or look at your **Fraction Towers** comparison well: one $1/2$ block is the exact same height as two $1/4$ blocks ($2/4$). Dropping one more $1/4$ block on top gives you three quarters ($3/4$) immediately. You can type `[.] 3 [.] 4 [ENTER]` the instant `1/2 [ENTER] 1/4 [+] ?` appears—the exact same **`3/4`** tower height built by `. 1 . 2 [ENTER] . 1 . 4 [+]`.
+Next, the game deals fraction puzzles where you **trade a half for two quarters ($1/2 + 1/4$)**. Think of quarters in your pocket or look at your **Fraction Towers** comparison well: one $1/2$ block is the exact same height as two $1/4$ blocks ($2/4$). Dropping one more $1/4$ block on top gives you three quarters ($3/4$) immediately. You can type `0 [.] 3 [.] 4 [≠]` (or `[.] 3 [.] 4 [≠]`) the instant `1/2 [ENTER] 1/4 +` appears—the exact same **`3/4`** tower height built by `. 1 . 2 [ENTER] . 1 . 4 [+]`.
 
-What happens when you subtract two fractions and **shrink the leftover fraction tower ($5/6 - 1/3$)** into a simpler block? Stand five $1/6$ pieces ($5/6$) next to a $1/3$ piece in your **Fraction Towers** kit. Since one $1/3$ piece equals two $1/6$ pieces ($2/6$), taking away two sixths from five sixths leaves three sixths ($3/6$)—which is the exact height of a **$1/2$ tower**. Typing the simplified answer `[.] 1 [.] 2 [ENTER]` on `5/6 [ENTER] 1/3 [-] ?` grabs the fast bonus in one move, just as `. 5 . 6 [ENTER] . 1 . 3 [-] [g] [SIMP]` reduces the fraction to **`1/2`**:
+What happens when you subtract two fractions and **shrink the leftover fraction tower ($5/6 - 1/3$)** into a simpler block? Stand five $1/6$ pieces ($5/6$) next to a $1/3$ piece in your **Fraction Towers** kit. Since one $1/3$ piece equals two $1/6$ pieces ($2/6$), taking away two sixths from five sixths leaves three sixths ($3/6$)—which is the exact height of a **$1/2$ tower**. Typing the simplified answer `0 [.] 1 [.] 2 [≠]` on `5/6 [ENTER] 1/3 -` grabs the fast bonus in one move, just as `. 5 . 6 [ENTER] . 1 . 3 [-] [g] [SIMP]` reduces the fraction to **`1/2`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[.] 5 [.] 6` | 0 | 0 | 0 | 5/6 | Enter fraction $5/6$ onto Shelf $X$ |
+| `0 [.] 5 [.] 6` | 0 | 0 | 0 | 5/6 | Enter fraction $5/6$ onto Shelf $X$ |
 | `[ENTER]` | 0 | 0 | 5/6 | 5/6 | Copy $5/6$ up onto Shelf $Y$ |
-| `[.] 1 [.] 3` | 0 | 0 | 5/6 | 1/3 | Enter fraction $1/3$ onto Shelf $X$ |
+| `0 [.] 1 [.] 3` | 0 | 0 | 5/6 | 1/3 | Enter fraction $1/3$ onto Shelf $X$ |
 | `[-]` | 0 | 0 | 0 | 3/6 | Subtract: $5/6 - 2/6 = 3/6$ |
 | `[g] [SIMP]` | 0 | 0 | 0 | 1/2 | Simplify $3/6$ to its cleanest fraction block: **`1/2`** |
 
-Trading those three $1/6$ blocks (`3/6`) for a single `1/2` block in your hands matches `[g] [SIMP]` on the screen. As you climb into Band 2 of Level 4, you unlock **the criss-cross twelfths match ($2/3 + 1/4$)** for denominators like $3$ and $4$ that meet at $12$ ($3 \times 4 = 12$). Reach for the twelfths pieces in your **Fraction Towers** kit: two thirds ($2/3$) match $8$ twelfths ($8/12$), and one fourth ($1/4$) matches $3$ twelfths ($3/12$). Add $8 + 3 = 11$ twelfths in your head and type `[.] 11 [.] 12 [ENTER]` when `2/3 [ENTER] 1/4 [+] ?` appears—mirroring `. 2 . 3 [ENTER] . 1 . 4 [+]` as the stack combines both fractions into **`11/12`** on Shelf $X$.
+Trading those three $1/6$ blocks (`3/6`) for a single `1/2` block in your hands matches `[g] [SIMP]` on the screen. As you climb into Band 3 of Level 4, you unlock **the criss-cross twelfths match ($2/3 + 1/4$)** for denominators like $3$ and $4$ that meet at $12$ ($3 \times 4 = 12$). Reach for the twelfths pieces in your **Fraction Towers** kit: two thirds ($2/3$) match $8$ twelfths ($8/12$), and one fourth ($1/4$) matches $3$ twelfths ($3/12$). Add $8 + 3 = 11$ twelfths in your head and type `0 [.] 11 [.] 12 [≠]` when `2/3 [ENTER] 1/4 +` appears—mirroring `. 2 . 3 [ENTER] . 1 . 4 [+]` as the stack combines both fractions into **`11/12`** on Shelf $X$.
 
-Right after adding twelfths, the quiz tests how fast you can **spot a shared six-pack ($\text{Simplify } 18/24$)** when `18/24 [g] [SIMP] ?` flashes on screen. Look for the biggest group size that packs both numbers evenly: using your **24 Array Tiles**, 18 is **3 six-packs** ($3 \times 6$) and 24 is **4 six-packs** ($4 \times 6$). Cancel out the shared six-packs in your head and `18/24` shrinks right down to **`3/4`** (`[.] 3 [.] 4 [ENTER]`), the same reduced fraction **`3/4`** that appears on Shelf $X$ when you tap `. 18 . 24 [ENTER] [g] [SIMP]`.
+Right after adding twelfths, you can **spot a shared six-pack ($\text{Simplify } 18/24$)** whenever an unreduced fraction appears. Look for the biggest group size that packs both numbers evenly: using your **24 Array Tiles**, 18 is **3 six-packs** ($3 \times 6$) and 24 is **4 six-packs** ($4 \times 6$). Cancel out the shared six-packs in your head and `18/24` shrinks right down to **`3/4`** (`0 [.] 3 [.] 4 [≠]`), the same reduced fraction **`3/4`** that appears on Shelf $X$ when you tap `. 18 . 24 [ENTER] [g] [SIMP]`.
 
-Finally, for your Level 4 promotion challenge, watch what happens when two fraction towers **spill over the 1-Whole line ($5/8 + 1/2$)**. In your **Fraction Towers** well, $1/2$ equals four eighths ($4/8$). Add $5/8 + 4/8$ to get nine eighths ($9/8$)—which is $8$ eighths ($1$ whole tower) with **$1$ extra eighth** perched on top (`1 1/8`). Punch in `1 [.] 1 [.] 8 [ENTER]` to clear `5/8 [ENTER] 1/2 [+] ?`, and watch `. 5 . 8 [ENTER] . 1 . 2 [+]` build **`1 1/8`** step by step:
+Finally, for your Level 4 promotion challenge, watch what happens when two fraction towers **spill over the 1-Whole line ($5/8 + 1/2$)**. In your **Fraction Towers** well, $1/2$ equals four eighths ($4/8$). Add $5/8 + 4/8$ to get nine eighths ($9/8$)—which is $8$ eighths ($1$ whole tower) with **$1$ extra eighth** perched on top (`1 1/8`). Punch in `1 [.] 1 [.] 8 [≠]` (or `0 [.] 9 [.] 8 [≠]`) to clear `5/8 [ENTER] 1/2 +`, and watch `. 5 . 8 [ENTER] . 1 . 2 [+]` build **`1 1/8`** step by step:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[.] 5 [.] 8` | 0 | 0 | 0 | 5/8 | Enter fraction $5/8$ onto Shelf $X$ |
+| `0 [.] 5 [.] 8` | 0 | 0 | 0 | 5/8 | Enter fraction $5/8$ onto Shelf $X$ |
 | `[ENTER]` | 0 | 0 | 5/8 | 5/8 | Copy $5/8$ up onto Shelf $Y$ |
-| `[.] 1 [.] 2` | 0 | 0 | 5/8 | 1/2 | Enter fraction $1/2$ ($4/8$) onto Shelf $X$ |
+| `0 [.] 1 [.] 2` | 0 | 0 | 5/8 | 1/2 | Enter fraction $1/2$ ($4/8$) onto Shelf $X$ |
 | `[+]` | 0 | 0 | 0 | 1 1/8 | Add: $5/8 + 4/8 = 9/8 =$ **`1 1/8`** |
 
 Just like snapping eight $1/8$ blocks into a full $1$-whole tower with one $1/8$ block on top, the stack turns `9/8` into `1 1/8` automatically—and one tap of `[f] [d/c]` or `[a ᵇ/c]` flips between `1 1/8`, `9/8`, and `1.125` anytime you like.
@@ -3719,9 +3725,9 @@ Just like snapping eight $1/8$ blocks into a full $1$-whole tower with one $1/8$
 ---
 
 ### Level 5: Multi-Step Order of Operations, Decimals & Percents
-In Level 5, the Quiz Engine deals two-step puzzles and mixed numbers to test whether you can spot **which math action happens first**—and even spot hidden 100s in multiplication chains like $4 \times 17 \times 25$ (where $4 \times 25 = 100$ first, turning the whole problem into $100 \times 17 = 1,700$).
+In Level 5, the Quiz Engine combines fraction operations (Band 1), two-digit RPN addition and subtraction sprints (Band 2), and multi-step algebraic expressions with squares, cubes, roots, and percents (`5² + 3² = ?`, `15% of 60 = ?`, `√144 + 5 = ?` in Band 3) to test whether you can spot **which math action happens first**—and even spot hidden 100s in multiplication chains like $4 \times 17 \times 25$ (where $4 \times 25 = 100$ first, turning the whole problem into $100 \times 17 = 1,700$).
 
-The first golden rule in Level 5 is to **divide the array before adding loose singles ($24 \div 6 + 7$)**. Look at `24 ÷ 6 + 7 = ?`: if you added $6 + 7 = 13$ first, $24 \div 13$ would make a messy fraction. Multiplication and division are tightly bundled rectangles, so they always go before loose single counters. Split your **24 Array Tiles** into 6 equal rows of **4** ($24 \div 6 = 4$), then slide in 7 counters from your **Ten-Frame Tray** ($4 + 7 = 11$) and lock in `11 [ENTER]`. Here is how `24 [ENTER] 6 [÷] 7 [+]` unfolds to **`11`** on the four shelves:
+The first golden rule in Level 5 is to **multiply or divide the array before adding loose singles ($24 \div 6 + 7$)**. Look at `24 ÷ 6 + 7 = ?`: if you added $6 + 7 = 13$ first, $24 \div 13$ would make a messy fraction. Multiplication, division, powers, and roots are tightly bundled groups, so they always go before loose single counters. Split your **24 Array Tiles** into 6 equal rows of **4** ($24 \div 6 = 4$), then slide in 7 counters from your **Ten-Frame Tray** ($4 + 7 = 11$) and lock in `11 [≠]`. Here is how `24 [ENTER] 6 [÷] 7 [+]` unfolds to **`11`** on the four shelves:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -3732,9 +3738,9 @@ The first golden rule in Level 5 is to **divide the array before adding loose si
 | `7` | 0 | 0 | 4 | 7 | Type 7 loose counters; $4$ lifts to Shelf $Y$ |
 | `[+]` | 0 | 0 | 0 | 11 | Add the 7 counters: $4 + 7 = \mathbf{11}$ |
 
-Watching `4` appear on Shelf $X$ before `7` arrives makes the order of operations crystal clear. Now apply that exact same rectangle-first habit to **dodge the left-to-right subtraction trap ($15 - 3 \times 4$)**—the puzzle that tricks almost everyone who reads strictly left-to-right: `15 - 3 × 4 = ?`. If you subtract $15 - 3 = 12$ first and multiply by $4$, you get $48$. Instead, see `3 × 4` as a solid $3 \times 4 = 12$ rectangle of **Array Tiles** that must be lifted away from your pile of 15 tiles all at once, leaving $15 - 12 = \mathbf{3}$ tiles (`3 [ENTER]`). When you key `15 [ENTER] 3 [ENTER] 4 [×] [-]` to reach **`3`**, your starting `15` waits safely up on Shelf $Z$ while `3` and `4` multiply into `12` below, and then `[-]` takes `12` away from `15` to leave `3`.
+Watching `4` appear on Shelf $X$ before `7` arrives makes the order of operations crystal clear. Now apply that exact same rectangle-first habit to **dodge the left-to-right subtraction trap ($15 - 3 \times 4$)**—the puzzle that tricks almost everyone who reads strictly left-to-right: `15 - 3 × 4 = ?`. If you subtract $15 - 3 = 12$ first and multiply by $4$, you get $48$. Instead, see `3 × 4` as a solid $3 \times 4 = 12$ rectangle of **Array Tiles** that must be lifted away from your pile of 15 tiles all at once, leaving $15 - 12 = \mathbf{3}$ tiles (`3 [≠]`). When you key `15 [ENTER] 3 [ENTER] 4 [×] [-]` to reach **`3`**, your starting `15` waits safely up on Shelf $Z$ while `3` and `4` multiply into `12` below, and then `[-]` takes `12` away from `15` to leave `3`.
 
-What if a classic prompt wraps parentheses `( )` around two numbers, like `(18 - 6) ÷ 3 = ?`? Then you **unpack the box first ($(18 - 6) \div 3$)**! Treat the brackets like a closed gift box: take 6 tiles away from 18 **Array Tiles** inside the box to leave 12 tiles ($18 - 6 = 12$), then deal those 12 tiles equally to 3 friends ($12 \div 3 = 4$) and tap `4 [ENTER]`. Keying `18 [ENTER] 6 [-] 3 [÷]` in `[NUM]` mode steps through **`4`**:
+What if a classic prompt wraps parentheses `( )` around two numbers, like `(18 - 6) ÷ 3 = ?`? Then you **unpack the box first ($(18 - 6) \div 3$)**! Treat the brackets like a closed gift box: take 6 tiles away from 18 **Array Tiles** inside the box to leave 12 tiles ($18 - 6 = 12$), then deal those 12 tiles equally to 3 friends ($12 \div 3 = 4$) and tap `4 [≠]`. Keying `18 [ENTER] 6 [-] 3 [÷]` in `[NUM]` mode steps through **`4`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -3745,9 +3751,9 @@ What if a classic prompt wraps parentheses `( )` around two numbers, like `(18 -
 | `3` | 0 | 0 | 12 | 3 | Type 3 equal groups; $12$ lifts to Shelf $Y$ |
 | `[÷]` | 0 | 0 | 0 | 4 | Divide 12 into 3 equal shares of **`4`** |
 
-Taking away the 6 tiles first leaves `12` on Shelf $X$, ready to divide cleanly into 3 equal groups of `4`. Next, when Level 5 deals mixed numbers like `1 1/2 [ENTER] 2 1/4 [+] ?`, don't waste time turning them into big improper fractions—just **snap the whole towers and fraction slices separately ($1\ 1/2 + 2\ 1/4$)**! Snap the whole **Fraction Towers** together first ($1 + 2 = 3$), then snap the half ($2/4$) and quarter ($1/4$) together into $3/4$ for a total of **`3 3/4`** (`3 [.] 3 [.] 4 [ENTER]`)—the exact mixed number **`3 3/4`** resting on Shelf $X$ after `1 . 1 . 2 [ENTER] 2 . 1 . 4 [+]`.
+Taking away the 6 tiles first leaves `12` on Shelf $X$, ready to divide cleanly into 3 equal groups of `4`. Next, when Level 5 deals mixed numbers like `1 1/2 + 2 1/4`, don't waste time turning them into big improper fractions—just **snap the whole towers and fraction slices separately ($1\ 1/2 + 2\ 1/4$)**! Snap the whole **Fraction Towers** together first ($1 + 2 = 3$), then snap the half ($2/4$) and quarter ($1/4$) together into $3/4$ for a total of **`3 3/4`** (`3 [.] 3 [.] 4 [≠]`)—the exact mixed number **`3 3/4`** resting on Shelf $X$ after `1 . 1 . 2 [ENTER] 2 . 1 . 4 [+]`.
 
-One last order-of-operations challenge stands between you and Level 6: **building the rectangle before adding loose counters ($8 + 4 \times 5$)** when `8 + 4 × 5 = ?` appears. Ignore the temptation to add $8 + 4$. Spot the $4 \times 5 = 20$ rectangle first (two full **Ten-Frame Trays**), toss the 8 loose counters on top ($20 + 8 = 28$), and punch in `28 [ENTER]`. Watch `8 [ENTER] 4 [ENTER] 5 [×] [+]` assemble **`28`** without disturbing the `8` until the rectangle is ready:
+One last order-of-operations challenge stands between you and Level 6: **building the rectangle before adding loose counters ($8 + 4 \times 5$)** when `8 + 4 × 5 = ?` appears. Ignore the temptation to add $8 + 4$. Spot the $4 \times 5 = 20$ rectangle first (two full **Ten-Frame Trays**), toss the 8 loose counters on top ($20 + 8 = 28$), and punch in `28 [≠]`. Watch `8 [ENTER] 4 [ENTER] 5 [×] [+]` assemble **`28`** without disturbing the `8` until the rectangle is ready:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -3764,9 +3770,9 @@ Holding `8` up on Shelf $Z$ while the $4 \times 5 = 20$ rectangle forms on the b
 ---
 
 ### Level 6: Championship Speed Sprints (`L6: Math Champ`)
-Welcome to **Level 6 (`L6: Math Champ`)**, the highest tier on the SC-6. Here negative numbers (`[+/-]`), prime factor building blocks (`[GCF]` and `[f] [LCM]`), and high-speed number patterns come together for championship speedruns.
+Welcome to **Level 6 (`L6: Math Champ`)**, the highest tier on the SC-6. Here negative numbers (`[+/-]`), prime factor building blocks (`[GCF]` / `gcd` and `[f] [LCM]` / `lcm`), factorials (`[x!]`), combinations (`[f] [nCr]`), and high-speed number patterns come together for championship speedruns.
 
-First, watch how you **climb toward the ice surface on a submarine depth gauge ($-14 + 9$)** when `-14 [ENTER] 9 [+] ?` flashes on the screen. Picture an Arctic research submarine cruising $14\text{ meters}$ below the polar ice pack (`-14`) and rising $+9\text{ meters}$ toward the surface—or 14 blue sub-zero counters meeting 9 gold warming counters in your **Ten-Frame Trays**. Nine zero-pairs cancel out, leaving the submarine $14 - 9 = 5\text{ meters}$ below the ice (`-5`). To enter a negative answer fast in Quiz Mode, type the digits first and flip the sign with `[+/-]`: `5 [+/-] [ENTER]`, matching the depth gauge reading **`-5`** from `14 [+/-] [ENTER] 9 [+]`:
+First, watch how you **climb toward the ice surface on a submarine depth gauge ($-14 + 9$)** when a signed-number challenge appears. Picture an Arctic research submarine cruising $14\text{ meters}$ below the polar ice pack (`-14`) and rising $+9\text{ meters}$ toward the surface—or 14 blue sub-zero counters meeting 9 gold warming counters in your **Ten-Frame Trays**. Nine zero-pairs cancel out, leaving the submarine $14 - 9 = 5\text{ meters}$ below the ice (`-5`). To enter a negative answer fast in Quiz Mode, type the digits first and flip the sign with `[+/-]`: `5 [+/-] [≠]`, matching the depth gauge reading **`-5`** from `14 [+/-] [ENTER] 9 [+]` (with `[NUM]` toggled off in stack view):
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -3776,7 +3782,7 @@ First, watch how you **climb toward the ice surface on a submarine depth gauge (
 | `9` | 0 | 0 | $-14.0000$ | 9 | Type the $+9\text{ m}$ upward climb onto Shelf $X$ |
 | `[+]` | 0 | 0 | 0 | $-5.0000$ | Cancel 9 zero-pairs: $-14 + 9 = \mathbf{-5}$ |
 
-After rising 9 meters from $-14\text{ m}$, the submarine hovers at `-5`—five meters below the surface ice. Next, for our final championship challenge, `24 [ENTER] 36 [GCF] ?` asks you to **spot the biggest shared building block ($\text{GCF of } 24\text{ and } 36$)**. Instead of listing every factor from 1 upward, look at the gap between the two numbers ($36 - 24 = 12$) and check if $12$ divides into both. With your **Prime Factor Blocks**, $24$ is two **`12`**-stacks ($2 \times 2 \times 3 = 12$, times $2$) and $36$ is three **`12`**-stacks ($12 \times 3$). They share a full **`12`** (`12 [ENTER]`), the exact common factor **`12`** returned by `24 [ENTER] 36 [GCF]`:
+After rising 9 meters from $-14\text{ m}$, the submarine hovers at `-5`—five meters below the surface ice. Next, for our final championship challenge, `gcd(24,36) = ?` (or `24 [ENTER] 36 GCF`) asks you to **spot the biggest shared building block ($\text{GCF of } 24\text{ and } 36$)**. Instead of listing every factor from 1 upward, look at the gap between the two numbers ($36 - 24 = 12$) and check if $12$ divides into both. With your **Prime Factor Blocks**, $24$ is two **`12`**-stacks ($2 \times 2 \times 3 = 12$, times $2$) and $36$ is three **`12`**-stacks ($12 \times 3$). They share a full **`12`** (`12 [≠]`), the exact common factor **`12`** returned by `24 [ENTER] 36 [GCF]`:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -3785,24 +3791,24 @@ After rising 9 meters from $-14\text{ m}$, the submarine hovers at `-5`—five m
 | `36` | 0 | 0 | 24 | 36 | Type 36 onto Shelf $X$ |
 | `[GCF]` | 0 | 0 | 0 | 12 | Find the Greatest Common Factor: $\text{GCF}(24, 36) = \mathbf{12}$ |
 
-*(Bonus `[f] [LASTX]` move: Because `[GCF]` saved `36` inside `LASTX`, tapping `24 [f] [LASTX] [f] [LCM]` right afterward checks the matching Least Common Multiple `72` without re-typing `36`—completing all six levels of the challenge ladder with every dot on the 5-dot streak meter glowing.)*
+*(Bonus `[f] [LASTX]` move: Because `[GCF]` saved `36` inside `LASTX`, tapping `24 [f] [LASTX] [f] [LCM]` right afterward checks the matching Least Common Multiple `72` without re-typing `36`—completing all six levels of the challenge ladder with your 5-fast streak glowing.)*
 
 ---
 
 ### 8.2.1 How Streaks, Mastery Bars & Automatic Level-Ups Work
 
-How does the SC-6 know when you are ready to graduate from warm-up questions to tougher puzzles, or unlock the next level altogether? It watches two things at once—your **steady mastery bar** and your **5-dot speed streak** (`●●●○○`):
+How does the SC-6 know when you are ready to graduate from warm-up questions to tougher puzzles, or unlock the next level altogether? It watches two things at once—your **steady mastery score** (`Mastery: <score>%`) and your **fast streak counter** (`Fast Streak: <n>`):
 
 | Quiz Event & Response Time | LCD Feedback Banner | Mastery Point Delta | Fast Streak Effect |
 | :--- | :--- | :--- | :--- |
-| **Fast Correct (Under 4 seconds)** | `★ FAST!  <ans> (<time>s)` | **`+20%` Mastery** | Increments Fast Streak (`+1`, fills pip `●`) |
-| **Good Correct (4 to 8 seconds)** | `✓ GOOD  <ans> (<time>s)` | **`+10%` Mastery** | Preserves current Fast Streak |
-| **Steady Correct (Over 8 seconds)** | `OK  <ans> (<time>s)` | **`+5%` Mastery** | Resets Fast Streak to `0` |
+| **Fast Correct (Under 4 seconds)** | `CORRECT! <time>s ★ FAST!` | **`+20%` Mastery** | Increments Fast Streak (`+1`) |
+| **Good Correct (4 to 8 seconds)** | `CORRECT! <time>s ✓` | **`+10%` Mastery** | Preserves current Fast Streak |
+| **Steady Correct (Over 8 seconds)** | `CORRECT! <time>s` | **`+5%` Mastery** | Resets Fast Streak to `0` |
 | **Incorrect Submission** | `WRONG: <expected>` | **`-10%` Mastery** (min `0%`) | Resets Fast Streak to `0` (demotes band if Mastery $< 25\%$) |
 
-Notice something important about the table above: you don't have to be the fastest player in the room on your very first try to level up. The SC-6 gives you two ways to advance—either by filling your **Mastery Bar to `100%`** at a steady pace, or by lighting up **all five streak dots (`●●●●●`)** in a row under 4.0 seconds each. Within each level, **Band 1 $\to$ Band 2 Promotion** unlocks automatically when your `Mastery` reaches `35%` or you hit a `Fast Streak` of `2` (`●●○○○`), and **Band 2 $\to$ Band 3 Promotion** unlocks when your `Mastery` reaches `70%` or you hit a `Fast Streak` of `4` (`●●●●○`).
+Notice something important about the table above: you don't have to be the fastest player in the room on your very first try to level up. The SC-6 gives you two ways to advance—either by filling your **Mastery Score to `100%`** at a steady pace, or by hitting a **5-Fast-Streak (`Fast Streak: 5`)** in a row under 4.0 seconds each. Within each level, **Band 1 $\to$ Band 2 Promotion** unlocks automatically when your `Mastery` reaches `35%` or you hit a `Fast Streak` of `2`, and **Band 2 $\to$ Band 3 Promotion** unlocks when your `Mastery` reaches `70%` or you hit a `Fast Streak` of `4`.
 
-The moment your `Mastery` hits `100%`—or you complete a **5-Fast-Streak (`●●●●●`)** of five consecutive answers under $4.0\text{ seconds}$—the game triggers **Next Level Advance (`★ NEXT LEVEL UNLOCKED! ★`)**! For example, when you nail **`8  ?  ×  =  56`** in Level 3 by keying `7` `[ENTER]` (`Y: 8`, `X: 7`), the top header lights up all five streak dots (**`SCORE: 180`** • **`STREAK: 5 ●●●●●`**), the center banner flashes **`★ NEXT LEVEL UNLOCKED! ★`**, and the very next prompt lifts you to `Level + 1` (all the way up to `L6: Math Champ`). In classroom team relays, players also celebrate four streak milestones across rounds: **Bronze Streak** (`3` fast), **Silver Streak** (`5` fast — automatic level advance), **Golden Master** (`10` fast), and the **20-Streak Flawless Sprint**.
+The moment your `Mastery` hits `100%`—or you complete a **5-Fast-Streak** of five consecutive answers under $4.0\text{ seconds}$—the game triggers **Next Level Advance (`★ NEXT LEVEL UNLOCKED! ★`)**! For example, when you nail **`7 [ENTER] 8 ×`** in Level 3 by keying `56` `[≠]`, the feedback screen flashes **`★ NEXT LEVEL UNLOCKED! ★`**, and tapping `[C]` lifts you straight to `Level + 1` (all the way up to `L6: Math Champ`). In classroom team relays, players also celebrate four streak milestones across rounds: **Bronze Streak** (`3` fast), **Silver Streak** (`5` fast — automatic level advance), **Golden Master** (`10` fast), and the **20-Streak Flawless Sprint**.
 
 ---
 
@@ -3812,13 +3818,13 @@ What does it feel like when your mental-math shortcuts and your fingers lock int
 
 | Sprint Round & Prompt | Mental Math Strategy | Your Keystrokes | Elapsed Time & Score |
 | :--- | :--- | :--- | :--- |
-| **1st Round (`●○○○○`):** `35² = ?` | Multiply tens digit by $(\text{tens} + 1)$: $3 \times 4 = 12$; attach $25 \to 1225$ | `1225` `[ENTER]` | $1.8\text{ s}$ (`+20 pts`, `●○○○○`) |
-| **2nd Round (`●●○○○`):** `48 × 5 = ?` | Cut $48$ in half $\to 24$, then multiply by $10 \to 240$ | `240` `[ENTER]` | $1.4\text{ s}$ (`+20 pts`, `●●○○○`) |
-| **3rd Round (`●●●○○`):** `1000 - 647 = ?` | Complement from $999$: $(9-6)(9-4)(10-7) = 353$ | `353` `[ENTER]` | $1.7\text{ s}$ (`+20 pts`, `●●●○○`) |
-| **4th Round (`●●●●○`):** `144 ÷ 12 = ?` | Picture the $12 \times 12 = 144$ square array $\to 12$ | `12` `[ENTER]` | $1.1\text{ s}$ (`+20 pts`, `●●●●○`) |
-| **5th Round (`●●●●●`):** `25 × 16 = ?` | Four quarters make $100$: $16 \div 4 = 4$ hundreds $\to 400$ | `400` `[ENTER]` | $1.5\text{ s}$ (`+20 pts`, `●●●●●` **5-Streak Bonus `+25 pts`**) |
+| **1st Round (`Streak: 1`):** `35² = ?` | Multiply tens digit by $(\text{tens} + 1)$: $3 \times 4 = 12$; attach $25 \to 1225$ | `1225` `[≠]` | $1.8\text{ s}$ (`+20% Mastery`, `Fast Streak: 1`) |
+| **2nd Round (`Streak: 2`):** `48 × 5 = ?` | Cut $48$ in half $\to 24$, then multiply by $10 \to 240$ | `240` `[≠]` | $1.4\text{ s}$ (`+20% Mastery`, `Fast Streak: 2`) |
+| **3rd Round (`Streak: 3`):** `1000 - 647 = ?` | Complement from $999$: $(9-6)(9-4)(10-7) = 353$ | `353` `[≠]` | $1.7\text{ s}$ (`+20% Mastery`, `Fast Streak: 3`) |
+| **4th Round (`Streak: 4`):** `144 ÷ 12 = ?` | Picture the $12 \times 12 = 144$ square array $\to 12$ | `12` `[≠]` | $1.1\text{ s}$ (`+20% Mastery`, `Fast Streak: 4`) |
+| **5th Round (`Streak: 5`):** `25 × 16 = ?` | Four quarters make $100$: $16 \div 4 = 4$ hundreds $\to 400$ | `400` `[≠]` | $1.5\text{ s}$ (`+20% Mastery`, `★ NEXT LEVEL UNLOCKED! ★`) |
 
-The entire 5-problem wave took just $7.5\text{ seconds}$ of active thinking—lighting up all five streak dots (`●●●●●`) and triggering the `+25` streak bonus.
+The entire 5-problem wave took just $7.5\text{ seconds}$ of active thinking—completing the 5-fast streak and triggering `★ NEXT LEVEL UNLOCKED! ★`.
 
 ---
 
@@ -3843,11 +3849,11 @@ You can also turn mental math into a team sport with **four players and a single
 ---
 
 ### 8.2.4 Speedrun Rescues & Strategy
-Before a head-to-head race or team relay, you can clear out old scores and stack shelves in a single three-finger move so every player starts from a brand-new baseline: simply hold down the clear key `[C]`, momentarily tap `[g] [OFF]`, and release `[C]`. The screen briefly announces `"MEMORY CLEARED - ALL REGISTERS PURGED"`, resetting all four stack shelves ($X, Y, Z, T$) and your quiz scoreboard cleanly to zero.
+Before a head-to-head race or team relay, you can clear out your stack shelves and start a fresh round in two taps: exit to `[NUM]` mode, tap `[f] [CSTK]` (`[f]` + `[<-]`) to clear all four stack shelves ($X, Y, Z, T$) to zero, and then tap `[f] [?]` and pick your target level `1`–`6` so every player starts from the exact same baseline and difficulty band.
 
 Why do smart mental shortcuts always beat frantic button-mashing in a tournament? Timed paper tests on a classroom wall chart can make anyone's stomach flip, but on the SC-6 your practice is just between you and your screen. When you miss a problem, the game simply shows you the right answer and brings that puzzle back a few turns later so you can nail it—and even when you turn the calculator off (`[g] [OFF]`), it remembers your unlocked levels, high scores, and streak records.
 
-Better yet, slowing down for one extra breath protects your streak dots. Every wrong guess deducts $-10\%$ mastery and wipes out your fast streak, while taking a moment to slice $7 \times 8 = 56$ inside the $4.0\text{-second}$ window (`★ FAST!`) earns $+20\%$ mastery and moves you one dot closer to `★ NEXT LEVEL UNLOCKED! ★` (and answering in $4.0\text{--}8.0\text{ seconds}$ earns $+10\%$ `✓ GOOD` while keeping your streak alive). Ten thoughtful answers ($200\text{ points}$) beat forty wild guesses every single time. And when a fraction prompt appears, picturing the physical blocks before you key keeps you out of the classic button-mashing trap of adding denominators straight across ($\frac{1}{3} + \frac{1}{4} \ne \frac{2}{7}$): stand a $\frac{1}{3}$ tower and a $\frac{1}{4}$ tower in your **Fraction Towers** well in your mind, see both trade cleanly into twelfths ($\frac{4}{12} + \frac{3}{12} = \frac{7}{12}$), and type `[.] 7 [.] 1 2 [ENTER]` to grab the full $+20$ fast bonus. Now let's open the speedrunner playbook and learn eight mental-math shortcuts that let you call out answers faster than a grown-up can type them.
+Better yet, slowing down for one extra breath protects your fast streak. Every wrong guess deducts $-10\%$ mastery and wipes out your fast streak, while taking a moment to slice $7 \times 8 = 56$ inside the $4.0\text{-second}$ window (`★ FAST!`) earns $+20\%$ mastery and moves you one step closer to `★ NEXT LEVEL UNLOCKED! ★` (and answering in $4.0\text{--}8.0\text{ seconds}$ earns $+10\%$ `✓` while keeping your streak alive). Ten thoughtful answers beat forty wild guesses every single time. And when a fraction prompt appears, picturing the physical blocks before you key keeps you out of the classic button-mashing trap of adding denominators straight across ($\frac{1}{3} + \frac{1}{4} \ne \frac{2}{7}$): stand a $\frac{1}{3}$ tower and a $\frac{1}{4}$ tower in your **Fraction Towers** well in your mind, see both trade cleanly into twelfths ($\frac{4}{12} + \frac{3}{12} = \frac{7}{12}$), and type `0 [.] 7 [.] 1 2 [≠]` to grab the full $+20\%$ fast bonus. Now let's open the speedrunner playbook and learn eight mental-math shortcuts that let you call out answers faster than a grown-up can type them.
 
 ---
 
@@ -3883,7 +3889,7 @@ When a staircase sum pops up on the 4-second Level 6 boss clock, **don't multipl
 $$\text{How Many Odd Numbers } (N) = (\text{Last Odd Number} + 1) \div 2, \qquad \text{Odd Sum} = N^2$$
 To add **$1 + 3 + 5 + \dots + 19$**, add $1 + 19 = 20$, cut it in half to get $N = 10$, and square $10^2 = \mathbf{100}$ in two seconds flat. For **$1 + 3 + 5 + \dots + 23$**, half of $(1 + 23)$ is $12$, and squaring $12^2$ gives **144**—confirmed in a single tap with `12 [x²]` $\to \mathbf{144.00}$. And for **$1 + 3 + 5 + \dots + 29$**, half of $(1 + 29)$ is $15$, and squaring $15^2$ with the Ends-in-5 rule ($1 \times 2 = 2 \to \mathbf{225}$) beats any button-pusher in the room!
 
-**7. Turning Repeating Nines ($9\text{s}$ and $99\text{s}$) into Exact Fractions:** Whenever a decimal repeats **one digit forever** (like $0.777\dots$), it always equals **that digit over $9$** ($\mathbf{\frac{7}{9}}$). Why? When $9$ friends share $1$ whole ($1 \div 9$), trading $1$ whole for $10$ tenths gives each friend $0.1$ with $1$ tenth left over, and trading that tenth for $10$ hundredths gives each friend $0.01$ with $1$ hundredth left over forever ($\frac{1}{9} = 0.111\dots$). By the same logic, because $99$ sits $1$ step shy of $100$, a decimal that repeats **two digits forever** (like $0.363636\dots$) equals **that two-digit pair over $99$** ($\frac{36}{99}$)—divide top and bottom by $9$ in your head to get $\mathbf{\frac{4}{11}}$, verified with `[.] 36 [.] 99 [g] [SIMP]` $\to \mathbf{4/11}$.
+**7. Turning Repeating Nines ($9\text{s}$ and $99\text{s}$) into Exact Fractions:** Whenever a decimal repeats **one digit forever** (like $0.777\dots$), it always equals **that digit over $9$** ($\mathbf{\frac{7}{9}}$). Why? When $9$ friends share $1$ whole ($1 \div 9$), trading $1$ whole for $10$ tenths gives each friend $0.1$ with $1$ tenth left over, and trading that tenth for $10$ hundredths gives each friend $0.01$ with $1$ hundredth left over forever ($\frac{1}{9} = 0.111\dots$). By the same logic, because $99$ sits $1$ step shy of $100$, a decimal that repeats **two digits forever** (like $0.363636\dots$) equals **that two-digit pair over $99$** ($\frac{36}{99}$)—divide top and bottom by $9$ in your head to get $\mathbf{\frac{4}{11}}$, verified with `0 [.] 36 [.] 99 [g] [SIMP]` $\to \mathbf{4/11}$.
 
 **8. The Split-and-Drop $\times 11$ Shortcut & Divisibility Tug-of-War:** Because $11 = 10 + 1$, multiplying any number by $11$ just adds the number to a shifted copy of itself ($\text{Number} \times 10 + \text{Number}$). For a two-digit number like $53 \times 11$, pull the two digits apart (`5 _ 3`) and drop their sum ($5 + 3 = 8$) into the middle gap to get **$583$** (or for $42 \times 11$, $4 + 2 = 6 \to \mathbf{462}$). If the middle sum hits $10$ or more—like $75 \times 11$, where $7 + 5 = 12$—leave the `2` in the middle gap and carry the `1` onto the left digit ($7 + 1 = 8$) to get **$825$**, confirmed on the stack via `10 [ENTER] 7 [-]`.
 
@@ -3903,7 +3909,7 @@ That exact same pattern-chunking superpower is what turned legendary Indian ment
 
 Whenever students asked Shakuntala Devi how she moved so fast without losing her place, she pointed out that school worksheets teach children to calculate backward from **right to left**—starting with the tiny ones column, carrying invisible digits in their heads, and discovering the most important part of the answer last. Mental-math masters and chess grandmasters always read a board from **left to right**, locking onto the biggest, most meaningful chunks first. When you add $68 + 27$, instead of adding $8 + 7 = 15$ and juggling a carried $1$, you grab the big ten-rods on the left first ($60 + 20 = 80$) and snap the $8 + 7 = 15$ onto the end ($80 + 15 = \mathbf{95}$). When `2/5 + 1/5 = ?` flashes on the 4-second clock, your eyes don't see four isolated digits to add across—they see two $\frac{1}{5}$ blocks and one $\frac{1}{5}$ block standing in your **Fraction Towers** well (`3/5`), and when $17 \div 5$ leaves $2$ tiles over (`17 [ENTER] 5 [g] [÷R]` $\to$ Quotient `3`, Remainder `2`), you immediately recognize those $2$ leftover tiles as two fifths ($\frac{2}{5} = 0.4 \to \mathbf{3.4}$). Even when splitting $68 \times 11$ into `6 _ 8`, you see that the middle tens gap holds a single digit, so $6 + 8 = 14$ leaves `4` in the tens place and carries `+1` hundred onto the left chunk ($600 + 140 + 8 = \mathbf{748}$).
 
-Every time you build an L-Frame square (`35 [x²]` $\to 1,225$), spot a domino double-plus-one ($7 + 8 = 14 + 1 = 15$), or lock in an answer with `[ENTER]` inside the 4.0-second `★ FAST!` window, you are training your eyes to see numbers the way grandmasters see a chessboard: not as lonely digits to count one by one, but as friendly, interlocking patterns you can recognize in a single glance.
+Every time you build an L-Frame square (`35 [x²]` $\to 1,225$), spot a domino double-plus-one ($7 + 8 = 14 + 1 = 15$), or lock in an answer with `[≠]` inside the 4.0-second `★ FAST!` window, you are training your eyes to see numbers the way grandmasters see a chessboard: not as lonely digits to count one by one, but as friendly, interlocking patterns you can recognize in a single glance.
 
 Once you get the hang of reading numbers in chunks, you can even extend Shortcut 8's **Split-and-Drop $\times 11$ trick** to three-digit numbers! Engineer **Jakow Trachtenberg**—who developed a complete system of paperless mental arithmetic in the 1940s—called this *"adding the neighbor."* To multiply a three-digit number like **$342 \times 11$** in your head, write down the outer digits **`3`** and **`2`** as your bookends, and drop the sums of each adjacent neighbor pair ($3 + 4 = \mathbf{7}$ and $4 + 2 = \mathbf{6}$) into the middle to get **`3,762`**—which you can verify in one tap on your SC-6 with `342 [ENTER] 11 [×]` $\to \mathbf{3,762}$!
 
@@ -3944,7 +3950,7 @@ Gather your family around the table after dinner, pull out a smartphone calculat
 ### 8.4.1 Three Family Speedrun Challenges to Try
 
 1. **The Ends-in-5 Beat-the-Smartphone Bet:** Hand a family member a smartphone calculator while you solve $25^2, 35^2, 45^2, 65^2, 75^2,$ and $85^2$ out loud using the **Matching-Tens Shortcut**: multiply the tens digit by the next whole number up and attach $25$ ($6 \times 7 = 42 \to \mathbf{4,225}$), then prove it in one tap on your SC-6 with `[x²]`.
-2. **The Same-Seed Head-to-Head Duel:** Both players type the exact same Classroom Seed Code—try `42 [f] [?]`—so the Quiz Engine deals the exact same shuffled puzzles in the exact same order. Who can light up all five streak dots (`●●●●●`) and unlock the next level first without a `-10` miss?
+2. **The Same-Level Head-to-Head Duel:** Both players tap `[f] [?]` and select the exact same target level (`1`–`6`) at the same time to race through its 3-band challenge deck. Who can hit a 5-Fast-Streak (`Fast Streak: 5`) and unlock `★ NEXT LEVEL UNLOCKED! ★` first without a `-10%` miss?
 3. **The 11-Divisibility Tug-of-War Bluff Game:** Ask someone to multiply any two- or three-digit number by `11` on their phone—or make up a four-digit bluff! Using the alternating-digit Tug-of-War rule from Shortcut 8 ($\text{Ones} + \text{Hundreds}$ vs. $\text{Tens} + \text{Thousands}$), call out whether their number is a multiple of $11$, then prove it with `11 [g] [÷R]` (Remainder `0` in Shelf $Y$)!
 
 ---
@@ -4267,7 +4273,7 @@ Second, to wash down the warm granola bars, you blend $3\ \frac{1}{2}$ cups of b
 | `[ENTER]` | 0 | 0 | $3\ 1/2$ | $3\ 1/2$ | Push $3\ \frac{1}{2}$ onto Shelf $Y$ |
 | `4` | 0 | 0 | $3\ 1/2$ | 4 | Enter 4 equal cups |
 | `[÷]` | 0 | 0 | 0 | $7/8$ | Divide $3\ \frac{1}{2} \div 4 = 7/8$ cup |
-| `[a ᵇ/c]` | 0 | 0 | 0 | $0.875$ | Toggle between exact fraction `7/8` and decimal `0.875` |
+| `[FDISP]` | 0 | 0 | 0 | $0.875$ | Toggle between exact fraction `7/8` and decimal `0.875` |
 
 Each tasting cup gets $\mathbf{7/8\text{ cup}}$ ($0.875\text{ cup}$) of smoothie—just one eighth of a cup shy of a full cup, so you can pour it right up to the $\frac{3}{4}\text{-cup}$ plus $\frac{1}{8}\text{-cup}$ line on your kitchen pitcher!
 
@@ -4601,37 +4607,44 @@ You can also build the **$120\text{ mm}$ Unit Circle Volvelle & Prime Comparator
 
 ## A.2 Printing Settings, Color Guide & Quick Checks
 
-Teachers and parents can customize classroom settings anytime via the `[g] [FLAGS]` menu (`[g] [FLAGS]`):
+Teachers and parents can customize classroom settings anytime via the `[g] [FLAGS]` menu (`[g]` + `[×]`, then tap `0`–`9` to toggle a flag):
 
-| Flag # | Default State | Classroom Purpose |
+| Flag # | Screen Tag & Default | Classroom Purpose |
 | :--- | :--- | :--- |
-| **Flag 0** | `0` (Normal) | Math Exception Trap: `1` = Flash gentle hint & keep stack intact |
-| **Flag 1** | `0` (Normal) | Battery Health: `1` = Low battery icon active |
-| **Flag 2** | `0` (4-Stack) | Stack Depth Mode: `0` = 4-Stack XYZT, `1` = Simple 2-Stack |
-| **Flag 3** | `0` (Degrees) | Angle Mode: `0` = Degrees ($360^\circ$), `1` = Pre-Algebra Turn Units |
-| **Flag 4** | `0` (12-Hour) | Clock Format: `0` = 12-Hour Clock, `1` = 24-Hour Time |
-| **Flag 5** | `0` (Dual Stack) | Screen Layout: `0` = Side-by-Side `Y \| X`, `1` = Large Single `X` |
-| **Flag 6** | `0` (Silent) | Sound Chime: `0` = Classroom Silent, `1` = Click & Streak Beeps |
-| **Flag 7** | `0` (Decimal) | Fraction Display: `0` = Decimal, `1` = Fraction (`a b/c`) |
-| **Flag 8** | `0` (Manual) | Fraction Reduction: `0` = Step-by-Step `[g] [SIMP]`, `1` = Auto-Simplify |
-| **Flag 9** | `0` (General) | Quiz Mode State: `1` = Active `[f] [?]` Math Sprint |
+| **Flag 0** | `0:F0` (`0` Off) | General-purpose user flag 0 for classroom experiments |
+| **Flag 1** | `1:F1` (`0` Off) | General-purpose user flag 1 for classroom experiments |
+| **Flag 2** | `2:INT` (`0` Off) | Integer-only mode: `1` restricts entry and results to whole integers |
+| **Flag 3** | `3:FACE` (`0` Off) | Hardware / App faceplate skin selector |
+| **Flag 4** | `4:STK` (`0` 4-Line) | Stack View Layout: `0` = 4-Shelf / Split Stack View, `1` = Large Single-Line `X` |
+| **Flag 5** | `5:DEP` (`4-LV`) | Stack Depth Mode: cycles `2-LV` (2-Level) $\to$ `4-LV` (4-Level $T, Z, Y, X$, default) $\to$ `8-LV` (8-Level) |
+| **Flag 6** | `6:MOD` (`0` SC-6) | Active Calculator Model selector (when inside the `FLAGS` menu) |
+| **Flag 7** | `7:FRC` (`0` Decimal) | Fraction Display Mode: `0` = Decimal, `1` = Fraction (`a b/c` or `d/c`) |
+| **Flag 8** | `8:/c` (`0` Auto) | Fixed Denominator Lock: `1` = Locks fractions to the denominator set by `[g] [/c]` |
+| **Flag 9** | `9:d/c` (`0` Mixed) | Improper Fraction Style: `0` = Mixed Number (`a b/c`), `1` = Improper (`d/c`) |
 
-### A.2.1 3D Print & Filament Schedule (9 Studios / 12 Modular Kits)
+### A.2.1 3D Print & Filament Schedule (Part 1: 3 Core Anchor Studios & Part 2: 6 Companion Specialty Studios)
 
-| Studio & Modular Kit Name | Gridfinity Box | Filament & Slicer Profile | Direct STL Pack Download |
+To make classroom 3D printing simple and modular, the nine physical studios are organized into **Part 1: The 3 Core Anchor Block Studios** (`PLACE-01`, `FRAC-01`, and `PRIME-01`, which anchor 80% of daily K–6 lessons across *Book 2A* and *Book 2B*) and **Part 2: The 6 Companion Specialty Studios** (which you can print as your class reaches geometry, time, probability, and fluency stations):
+
+#### Part 1: The 3 Core Anchor Block Studios (Print These First)
+
+| Anchor Studio Code & Kit Name | Gridfinity Box | Filament & Slicer Profile | Direct STL Pack Download |
 | :--- | :---: | :--- | :--- |
-| **1. Ten-Frame Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; pause at $1.80\text{ mm}$ on counters for red/gold swap | [Ten-Frame STL Pack](https://stackcalc.io/downloads/ten-frames-open-source-stls.zip) |
-| **2. Place Value Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; top-layer white swap on column labels & `•` dot | [Place Value STL Pack](https://stackcalc.io/downloads/place-value-open-source-stls.zip) |
-| **3. 84 mm Fraction Studio** | Desktop Case ($3 \times 1$) | $0.20\text{ mm}$ PLA ($0.10\text{ mm}$ adaptive on $\frac{1}{8}$ block for $10.5\text{ mm}$ height) | [Fraction Studio STL Pack](https://stackcalc.io/downloads/fraction-studio-open-source-stls.zip) |
+| **`PLACE-01`: Ten-Frame, Place Value & Counting/Array Studios** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; pause at $1.80\text{ mm}$ on counters for red/gold swap; 4-color tile plates ($12 \times 7.0 = 84.0\text{ mm}$) | [Ten-Frame STL](https://stackcalc.io/downloads/ten-frames-open-source-stls.zip) • [Place Value STL](https://stackcalc.io/downloads/place-value-open-source-stls.zip) • [Counting Tiles STL](https://stackcalc.io/downloads/counting-tiles-open-source-stls.zip) |
+| **`FRAC-01`: 84 mm Fraction Towers & Comparator Studio** | Desktop Case ($3 \times 1$) | $0.20\text{ mm}$ PLA ($0.10\text{ mm}$ adaptive on $\frac{1}{8}$ block for exact $10.5\text{ mm}$ height) | [Fraction Studio STL Pack](https://stackcalc.io/downloads/fraction-studio-open-source-stls.zip) |
+| **`PRIME-01`: Prime Factor Logarithmic Tower Studio** | Desktop Case ($3 \times 1$) | $0.10\text{ mm}$ fine layers for $\pm 0.05\text{ mm}$ logarithmic height match ($h(p) = 7.0 \cdot \log_2(p)\text{ mm}$) | [Prime Factor STL Pack](https://stackcalc.io/downloads/prime-factor-studio-open-source-stls.zip) |
+
+#### Part 2: The 6 Companion Specialty Studios (Print as Needed by Unit)
+
+| Companion Studio & Modular Kit Name | Gridfinity Box | Filament & Slicer Profile | Direct STL Pack Download |
+| :--- | :---: | :--- | :--- |
 | **4. 90° Corner L-Frame & Area Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA in 4 colors (gold flats, blue rods, white/red units) | [L-Frame & Area STL Pack](https://stackcalc.io/downloads/algebra-boxes-open-source-stls.zip) |
 | **5a. Planetary Geared Clock** | $3 \times 2 \times 7\text{U}$ | $0.20\text{ mm}$ PLA with $0.15\text{ mm}$ elephant-foot compensation on gears | [Geared Clock STL Pack](https://stackcalc.io/downloads/classroom-clock-open-source-stls.zip) |
 | **5b. Unit Circle Volvelle** | $120\text{ mm}$ Disc | $0.20\text{ mm}$ PLA; two-color swap on degree ticks & sight window | [Unit Circle STL Pack](https://stackcalc.io/downloads/unit-circle-volvelle-open-source-stls.zip) |
 | **6a. Number Rack Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; print sliding $5+5$ beads in white and coral red | [Number Rack STL Pack](https://stackcalc.io/downloads/) |
 | **6b. Math Dominoes Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; top-layer contrast swap on raised domino pips | [Math Dominoes STL Pack](https://stackcalc.io/downloads/) |
 | **6c. Quest Scoreboard** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; 60 radiant-gold `+10` tokens & dark slate lid | [Quest Scoreboard STL Pack](https://stackcalc.io/downloads/) |
-| **7. Counting & Array Studio** | Desktop Case ($3 \times 1$) | $0.20\text{ mm}$ PLA; 4-color batch plates (verify $12 \times 7.0 = 84.0\text{ mm}$) | [Counting Tiles STL Pack](https://stackcalc.io/downloads/counting-tiles-open-source-stls.zip) |
 | **8. Probability Dice & Spinner** | $1 \times 1 \times 7\text{U}$ | $100\%$ concentric infill on dice; $0.12\text{ mm}$ layers on spinner spindle | [Dice & Spinner STL Pack](https://stackcalc.io/downloads/dice-and-spinner-open-source-stls.zip) |
-| **9. Prime Factor Studio** | Desktop Case ($3 \times 1$) | $0.10\text{ mm}$ fine layers for $\pm 0.05\text{ mm}$ logarithmic height match | [Prime Factor STL Pack](https://stackcalc.io/downloads/prime-factor-studio-open-source-stls.zip) |
 
 ### A.2.2 Five-Color Filament Palette & Multi-Color Layer Swaps
 To help students spot mathematical connections across different chapters—and to let any single-nozzle printer produce high-contrast parts—all nine studios share a five-color filament palette:
@@ -4774,7 +4787,7 @@ Ask partners how many tiles sit where the two towers are neck-and-neck (4 tiles)
 
 Invite partners to build and compare tower pairs of `9` and `5` (`9 [ENTER] 5 [-]` $\to 4$), `8` and `8` (`8 [ENTER] 8 [-]` $\to 0$, level tops), and `6` and `2` (`6 [ENTER] 2 [-]` $\to 4$).
 
-Whenever a student enters the shorter tower first (`4 [ENTER] 7 [-]`) and sees `-3`, explain that `-3` tells us the gold tower is 3 tiles *shorter* than the blue tower, and show how tapping `[x⇄y]` before `[-]` puts the taller tower on Shelf $Y$ first. Also make sure both towers are seated firmly in the lid sockets so the tile steps align cleanly.
+Whenever a student enters the shorter tower first (`4 [ENTER] 7 [-]`)—in `[f] [LINE]` Number Line mode or with `[NUM]` Whole Number Mode toggled off—and sees `-3`, explain that `-3` tells us the gold tower is 3 tiles *shorter* than the blue tower, and show how tapping `[x⇄y]` before `[-]` puts the taller tower on Shelf $Y$ first. Also make sure both towers are seated firmly in the lid sockets so the tile steps align cleanly.
 
 ---
 
@@ -4814,7 +4827,7 @@ To mirror that physical flip on the calculator, have students enter `3 [ENTER] 7
 
 Encourage partners to test $4 + 8$ vs. $8 + 4$ (both `12`), $2 + 9$ vs. $9 + 2$ (both `11`), and $6 + 5$ vs. $5 + 6$ (both `11`) using `[x⇄y]`.
 
-Before closing the station, pose a thought-provoking extension question: does *subtraction* also obey the Turn-Around Rule ($7 - 3$ vs. $3 - 7$)? Having students key `3 [ENTER] 7 [-]` on the SC-6 and seeing `-4` appear on screen sparks a memorable conversation about why order matters in subtraction even though addition is turn-around friendly.
+Before closing the station, pose a thought-provoking extension question: does *subtraction* also obey the Turn-Around Rule ($7 - 3$ vs. $3 - 7$)? Having students switch to `[f] [LINE]` Number Line mode (or toggle `[NUM]` off) and key `3 [ENTER] 7 [-]` on the SC-6 so `-4` appears on screen sparks a memorable conversation about why order matters in subtraction even though addition is turn-around friendly.
 
 ---
 
@@ -4981,16 +4994,16 @@ Then let partners play **"Remainder Race to Bank"** with a shared pool of 36 til
 
 Why does a larger denominator produce a *smaller* unit fraction ($\frac{1}{8} < \frac{1}{2}$) when $8$ is bigger than $2$? Standing the **$84\text{ mm}$ Fraction Studio** towers upright on the desk settles this third-grade question in seconds (**CCSS 3.NF.A.1**; **TEKS 3.3.A**). Begin the activity by having students stand the $1\text{-Whole}$ tower ($84.0\text{ mm}$) next to two stacked $\frac{1}{2}$ blocks ($42.0\text{ mm}$ each) to feel their flush tops.
 
-Now ask partners to stand a single $\frac{1}{2}$ block next to a single $\frac{1}{8}$ block ($10.5\text{ mm}$) and explain why the $\frac{1}{8}$ block is so much shorter even though $8$ is larger than $2$. Seeing the blocks side by side makes the reason obvious: slicing the same $84\text{ mm}$ bar into 8 equal shares makes each share four times thinner than slicing it into 2 shares. Have students measure the height gap between $\frac{1}{2}$ and $\frac{1}{8}$ on the SC-6 by entering $\frac{1}{2}$ (`[.] 1 [.] 2 [ENTER]`) and subtracting $\frac{1}{8}$ (`[.] 1 [.] 8 [-]`) to see `3/8` on Shelf $X$, then stack three $\frac{1}{8}$ blocks on top of the $\frac{1}{8}$ block so it stands flush with $\frac{1}{2}$ ($\frac{4}{8} = \frac{1}{2}$).
+Now ask partners to stand a single $\frac{1}{2}$ block next to a single $\frac{1}{8}$ block ($10.5\text{ mm}$) and explain why the $\frac{1}{8}$ block is so much shorter even though $8$ is larger than $2$. Seeing the blocks side by side makes the reason obvious: slicing the same $84\text{ mm}$ bar into 8 equal shares makes each share four times thinner than slicing it into 2 shares. Have students measure the height gap between $\frac{1}{2}$ and $\frac{1}{8}$ on the SC-6 by entering $\frac{1}{2}$ (`0 [.] 1 [.] 2 [ENTER]`) and subtracting $\frac{1}{8}$ (`0 [.] 1 [.] 8 [-]`) to see `3/8` on Shelf $X$, then stack three $\frac{1}{8}$ blocks on top of the $\frac{1}{8}$ block so it stands flush with $\frac{1}{2}$ ($\frac{4}{8} = \frac{1}{2}$).
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[.] 1 [.] 2` | 0 | 0 | 0 | 1/2 | Enter fraction $1/2$ onto Shelf $X$ |
+| `0 [.] 1 [.] 2` | 0 | 0 | 0 | 1/2 | Enter fraction $1/2$ onto Shelf $X$ |
 | `[ENTER]` | 0 | 0 | 1/2 | 1/2 | Copy $1/2$ up onto Shelf $Y$ |
-| `[.] 1 [.] 8` | 0 | 0 | 1/2 | 1/8 | Enter fraction $1/8$ onto Shelf $X$ |
+| `0 [.] 1 [.] 8` | 0 | 0 | 1/2 | 1/8 | Enter fraction $1/8$ onto Shelf $X$ |
 | `[-]` | 0 | 0 | 0 | 3/8 | Subtract: $4/8 - 1/8 =$ **`3/8`** height difference |
 
-During partner practice, students verify three relationships with blocks and keys: stacking three $\frac{1}{3}$ blocks to equal 1 whole (`[.] 1 [.] 3 [ENTER] 3 [×]` $\to 1$), measuring the height difference between $\frac{1}{2}$ and $\frac{1}{4}$ (`[.] 1 [.] 2 [ENTER]` followed by `[.] 1 [.] 4 [-]` $\to 1/4$), and standing four $\frac{1}{8}$ blocks beside $\frac{1}{2}$ (`[.] 1 [.] 8 [ENTER] 4 [×]` $\to 1/2$).
+During partner practice, students verify three relationships with blocks and keys: stacking three $\frac{1}{3}$ blocks to equal 1 whole (`0 [.] 1 [.] 3 [ENTER] 3 [×]` $\to 1$), measuring the height difference between $\frac{1}{2}$ and $\frac{1}{4}$ (`0 [.] 1 [.] 2 [ENTER]` followed by `0 [.] 1 [.] 4 [-]` $\to 1/4$), and standing four $\frac{1}{8}$ blocks beside $\frac{1}{2}$ (`0 [.] 1 [.] 8 [ENTER] 4 [×]` $\to 1/2$).
 
 Whenever a student slips into whole-number thinking and claims $\frac{1}{8} > \frac{1}{4}$ because $8 > 4$, simply ask them to stand the $\frac{1}{8}$ block ($10.5\text{ mm}$) beside the $\frac{1}{4}$ block ($21.0\text{ mm}$) in the comparator lid—their fingertips will correct the misconception in seconds.
 
@@ -5022,7 +5035,7 @@ If a student's perimeter on the second or third shape comes out unexpectedly lar
 
 ## B.3 Grade 4 Lesson Plans (Ages 9–10)
 
-Grade 4 stations extend division to multi-digit remainders (`[g] [÷R]`), build equivalent fractions and step-by-step reductions (`[g] [SIMP]`), add and subtract unlike fractions, and measure angles with the $360^\circ$ Volvelle.
+Grade 4 stations extend division to multi-digit remainders (`[g] [÷R]`), build equivalent fractions and one-tap GCF reductions (`[g] [SIMP]`), add and subtract unlike fractions, and measure angles with the $360^\circ$ Volvelle.
 
 ### Station 4.1: Long Division with Remainders
 
@@ -5044,22 +5057,21 @@ When coaching at tables, watch for students who read the remainder `9` on Shelf 
 
 ---
 
-### Station 4.2: Equivalent Fractions & Step-by-Step Simplification
+### Station 4.2: Equivalent Fractions & One-Tap GCF Simplification
 
-Stack six $\frac{1}{8}$ blocks ($6 \times 10.5\text{ mm} = 63.0\text{ mm}$) in the comparator well of the **$84\text{ mm}$ Fraction Studio** and ask partners how many $\frac{1}{4}$ blocks ($21.0\text{ mm}$ each) match that exact height (**CCSS 4.NF.A.1**; **TEKS 4.3.C**). Pairing the physical fraction towers with the SC-6 Step-by-Step Simplify key (`[g] [SIMP]`) proves that simplifying a fraction fuses smaller slices into larger slices without changing the tower's height.
+Stack six $\frac{1}{8}$ blocks ($6 \times 10.5\text{ mm} = 63.0\text{ mm}$) in the comparator well of the **$84\text{ mm}$ Fraction Studio** and ask partners how many $\frac{1}{4}$ blocks ($21.0\text{ mm}$ each) match that exact height (**CCSS 4.NF.A.1**; **TEKS 4.3.C**). Pairing the physical fraction towers with the SC-6 Simplify key (`[g] [SIMP]`) proves that simplifying a fraction fuses smaller slices into the largest shared slice size (`GCF`) without changing the tower's height.
 
-Students see that three $\frac{1}{4}$ blocks stand flush with six $\frac{1}{8}$ blocks because every pair of $\frac{1}{8}$ blocks fuses into one $\frac{1}{4}$ block. Now have them enter six-eighths on the SC-6 (`[.] 6 [.] 8 [ENTER]`) and press `[g] [SIMP]` once: Shelf $X$ reduces `6/8` to `3/4` by dividing both the top and bottom numbers by their smallest shared prime factor (`2`). When they press `[g] [SIMP]` a second time, the screen flashes `LOWEST TERMS` because `3` and `4` share no common factor greater than 1.
+Students see that three $\frac{1}{4}$ blocks stand flush with six $\frac{1}{8}$ blocks because every pair of $\frac{1}{8}$ blocks fuses into one $\frac{1}{4}$ block. Now have them enter six-eighths on the SC-6 (`0 [.] 6 [.] 8 [ENTER]`) and press `[g] [SIMP]` (`[g]` + `[a ᵇ/c]`): Shelf $X$ reduces `6/8` to `3/4` by dividing both the top and bottom numbers by their Greatest Common Factor (`2`).
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[.] 6 [.] 8` | 0 | 0 | 0 | 6/8 | Enter fraction $6/8$ onto Shelf $X$ |
+| `0 [.] 6 [.] 8` | 0 | 0 | 0 | 6/8 | Enter fraction $6/8$ onto Shelf $X$ |
 | `[ENTER]` | 0 | 0 | 6/8 | 6/8 | Copy $6/8$ up onto Shelf $Y$ |
-| `[g] [SIMP]` | 0 | 0 | 6/8 | 3/4 | Divide top and bottom by 2: **`3/4`** |
-| `[g] [SIMP]` | 0 | 0 | 6/8 | 3/4 | Screen flashes `LOWEST TERMS` to confirm `3/4` is fully simplified |
+| `[g] [SIMP]` | 0 | 0 | 6/8 | 3/4 | Divide top and bottom by $\text{GCF}(6,8) = 2$: **`3/4`** |
 
-Have partners build the matching towers and step through `[g] [SIMP]` for $\frac{8}{12}$ (`[.] 8 [.] 12 [ENTER] [g] [SIMP]` $\to \frac{4}{6} \to \frac{2}{3}$), $\frac{10}{25}$ (`[.] 10 [.] 25 [ENTER] [g] [SIMP]` $\to \frac{2}{5}$), and $\frac{18}{24}$ (`[.] 18 [.] 24 [ENTER] [g] [SIMP]` $\to \frac{9}{12} \to \frac{3}{4}$), recording each intermediate step in their notebooks.
+Have partners build the matching towers, predict the Greatest Common Factor with `[GCF]`, and confirm with `[g] [SIMP]` for $\frac{8}{12}$ (`0 [.] 8 [.] 12 [g] [SIMP]` $\to \frac{2}{3}$, dividing by $\text{GCF} = 4$), $\frac{10}{25}$ (`0 [.] 10 [.] 25 [g] [SIMP]` $\to \frac{2}{5}$, dividing by $\text{GCF} = 5$), and $\frac{18}{24}$ (`0 [.] 18 [.] 24 [g] [SIMP]` $\to \frac{3}{4}$, dividing by $\text{GCF} = 6$), recording the starting tower, shared GCF group size, and simplified tower in their notebooks.
 
-One quick teacher check before the rotation starts: if a calculator jumps straight from `8/12` to `2/3` in a single press, System Flag 8 has been set to Auto-Simplify; keep Flag 8 at its default `0` (Manual Step-by-Step `[g] [SIMP]`) during this station so students see every single shared factor divide out one step at a time.
+One quick teacher check before the rotation starts: if a student wants to hold an unreduced denominator on screen (such as keeping twelfths visible while comparing $\frac{8}{12}$ and $\frac{9}{12}$), they can lock a fixed denominator with `12 [g] [/c]` (`Flag 8`), and then tap `[g] [SIMP]` when ready to reduce to lowest terms (`2/3` and `3/4`).
 
 ---
 
@@ -5067,16 +5079,16 @@ One quick teacher check before the rotation starts: if a calculator jumps straig
 
 Before students ever compute a common denominator on paper, let them feel why unlike fractions must trade into a shared slice size using the **$84\text{ mm}$ Fraction Studio** towers (**CCSS 4.NF.B.3**; **TEKS 4.3.E**). Open the activity by having partners stack one $\frac{1}{2}$ block ($42.0\text{ mm}$) and one $\frac{1}{4}$ block ($21.0\text{ mm}$) together and measure the combined $63.0\text{ mm}$ tower against their $\frac{1}{4}$ blocks.
 
-Because the $\frac{1}{2}$ block trades cleanly for two $\frac{1}{4}$ blocks, the combined tower equals three $\frac{1}{4}$ blocks ($\frac{2}{4} + \frac{1}{4} = \frac{3}{4}$). Have students verify this on the SC-6 by keying $\frac{1}{2}$ (`[.] 1 [.] 2 [ENTER]`) and adding $\frac{1}{4}$ (`[.] 1 [.] 4 [+]`) to see `3/4` on Shelf $X$. Next, challenge them to model $\frac{5}{6} - \frac{1}{3}$ by trading the $\frac{1}{3}$ block ($28.0\text{ mm}$) for two $\frac{1}{6}$ blocks ($14.0\text{ mm}$ each): removing $\frac{2}{6}$ from $\frac{5}{6}$ leaves $\frac{3}{6}$, which stands flush with the $\frac{1}{2}$ block and matches $\frac{5}{6}$ (`[.] 5 [.] 6 [ENTER]`) minus $\frac{1}{3}$ (`[.] 1 [.] 3 [-]` $\to$ `1/2`) on the calculator.
+Because the $\frac{1}{2}$ block trades cleanly for two $\frac{1}{4}$ blocks, the combined tower equals three $\frac{1}{4}$ blocks ($\frac{2}{4} + \frac{1}{4} = \frac{3}{4}$). Have students verify this on the SC-6 by keying $\frac{1}{2}$ (`0 [.] 1 [.] 2 [ENTER]`) and adding $\frac{1}{4}$ (`0 [.] 1 [.] 4 [+]`) to see `3/4` on Shelf $X$. Next, challenge them to model $\frac{5}{6} - \frac{1}{3}$ by trading the $\frac{1}{3}$ block ($28.0\text{ mm}$) for two $\frac{1}{6}$ blocks ($14.0\text{ mm}$ each): removing $\frac{2}{6}$ from $\frac{5}{6}$ leaves $\frac{3}{6}$, which stands flush with the $\frac{1}{2}$ block and matches $\frac{5}{6}$ (`0 [.] 5 [.] 6 [ENTER]`) minus $\frac{1}{3}$ (`0 [.] 1 [.] 3 [-]` $\to$ `3/6`, then `[g] [SIMP]` $\to$ `1/2`) on the calculator.
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[.] 1 [.] 2` | 0 | 0 | 0 | 1/2 | Enter fraction $1/2$ onto Shelf $X$ |
+| `0 [.] 1 [.] 2` | 0 | 0 | 0 | 1/2 | Enter fraction $1/2$ onto Shelf $X$ |
 | `[ENTER]` | 0 | 0 | 1/2 | 1/2 | Copy $1/2$ up onto Shelf $Y$ |
-| `[.] 1 [.] 4` | 0 | 0 | 1/2 | 1/4 | Enter fraction $1/4$ onto Shelf $X$ |
+| `0 [.] 1 [.] 4` | 0 | 0 | 1/2 | 1/4 | Enter fraction $1/4$ onto Shelf $X$ |
 | `[+]` | 0 | 0 | 0 | 3/4 | Trade $1/2$ for $2/4$ and add: **`3/4`** |
 
-From there, partners build with blocks and verify three practice sums and differences on the stack: adding $\frac{1}{3} + \frac{1}{6}$ (`[.] 1 [.] 3 [ENTER]` and `[.] 1 [.] 6 [+]` $\to \frac{1}{2}$), subtracting $\frac{3}{4} - \frac{1}{8}$ (`[.] 3 [.] 4 [ENTER]` and `[.] 1 [.] 8 [-]` $\to \frac{5}{8}$), and combining $\frac{2}{5} + \frac{3}{10}$ (`[.] 2 [.] 5 [ENTER]` and `[.] 3 [.] 10 [+]` $\to \frac{7}{10}$).
+From there, partners build with blocks and verify three practice sums and differences on the stack: adding $\frac{1}{3} + \frac{1}{6}$ (`0 [.] 1 [.] 3 [ENTER]` and `0 [.] 1 [.] 6 [+]` $\to \frac{1}{2}$), subtracting $\frac{3}{4} - \frac{1}{8}$ (`0 [.] 3 [.] 4 [ENTER]` and `0 [.] 1 [.] 8 [-]` $\to \frac{5}{8}$), and combining $\frac{2}{5} + \frac{3}{10}$ (`0 [.] 2 [.] 5 [ENTER]` and `0 [.] 3 [.] 10 [+]` $\to \frac{7}{10}$).
 
 Whenever a student falls into the add-across trap on paper—writing $\frac{1}{2} + \frac{1}{4} = \frac{2}{6}$ by adding tops and bottoms separately—ask them to stand two $\frac{1}{6}$ blocks ($28.0\text{ mm}$) next to their starting $\frac{1}{2}$ block ($42.0\text{ mm}$). Seeing that $\frac{2}{6}$ is *shorter* than the $\frac{1}{2}$ block they started with before even adding $\frac{1}{4}$ permanently cures the add-across habit!
 
@@ -5109,7 +5121,7 @@ Grade 5 stations explore 3D prism volume and `[Σ+]` surface area baskets, fract
 
 Hand each partner pair a **$6 \times 5 \times 4\text{ cm}$ rectangular prism** (distinct from the $5 \times 4 \times 3\text{ cm}$ gift box in Chapter 6 so students apply the 3-pair wall method to a fresh dimension set) and ask them to turn it in their hands to compare the space packed inside against the six flat walls wrapping the outside (**CCSS 5.MD.C.5, 6.G.A.4**; **TEKS 5.6.B**). Using the SC-6 running-total basket (`[Σ+]`), students can separate 3D interior volume from 2D exterior surface area without needing scratch paper. Have partners inspect all 6 faces of the box first and notice that opposite faces are identical twins: a matching top and bottom ($6 \times 5$), a matching front and back ($6 \times 4$), and a matching left and right end ($5 \times 4$).
 
-First, have students find the interior volume ($\text{Length} \times \text{Width} \times \text{Height}$) by keying `6 [ENTER] 5 [×] 4 [×]` (or `6 [ENTER] 5 [ENTER] 4 [f] [PRISM]`) to get `120 cm³`. Then have them clear the statistics basket (`[g] [CLΣ]`) to accumulate the 6 outer walls in three twin pairs: first the **Top & Bottom Pair** ($6 \times 5 \times 2$ via `6 [ENTER] 5 [×] 2 [×] [Σ+]` $\to$ `60 cm²`, `Count = 1`), second the **Front & Back Pair** ($6 \times 4 \times 2$ via `6 [ENTER] 4 [×] 2 [×] [Σ+]` $\to$ `48 cm²`, `Count = 2`), and third the **Left & Right Pair** ($5 \times 4 \times 2$ via `5 [ENTER] 4 [×] 2 [×] [Σ+]` $\to$ `40 cm²`, `Count = 3`).
+First, have students find the interior volume ($\text{Length} \times \text{Width} \times \text{Height}$) by keying `6 [ENTER] 5 [×] 4 [×]` (or `6 [ENTER] 5 [f] [RECT] 4 [f] [PRISM]`) to get `120 cm³`. Then have them clear the statistics basket (`[g] [CLΣ]`) to accumulate the 6 outer walls in three twin pairs: first the **Top & Bottom Pair** ($6 \times 5 \times 2$ via `6 [ENTER] 5 [×] 2 [×] [Σ+]` $\to$ `60 cm²`, `Count = 1`), second the **Front & Back Pair** ($6 \times 4 \times 2$ via `6 [ENTER] 4 [×] 2 [×] [Σ+]` $\to$ `48 cm²`, `Count = 2`), and third the **Left & Right Pair** ($5 \times 4 \times 2$ via `5 [ENTER] 4 [×] 2 [×] [Σ+]` $\to$ `40 cm²`, `Count = 3`).
 
 With `Count = 3` pairs verified on screen, tapping `[f] [Σx]` recalls the complete 6-face surface area of `148 cm²` on Shelf $X$.
 
@@ -5132,19 +5144,19 @@ Watch for `74 cm²` instead of `148 cm²` on the $6 \times 5 \times 4\text{ cm}$
 
 ### Station 5.2: Fraction Multiplication & Flip-and-Multiply Division
 
-Why does multiplying two proper fractions make a *smaller* piece, while dividing by a fraction flips the divisor upside down? At this station (**CCSS 5.NF.B.4, 5.NF.B.7**; **TEKS 5.3.I, 5.3.L**), students use **transparent area-grid overlays** (or Fraction Studio towers) alongside the SC-6 reciprocal key `[f] [1/x]` to see both operations in action. Begin by having students shade $\frac{3}{4}$ of a square grid vertically in blue and $\frac{2}{3}$ of the same square horizontally in yellow: counting the 6 green overlapping cells out of 12 total cells visually proves that $\frac{2}{3} \times \frac{3}{4} = \frac{6}{12} = \frac{1}{2}$, which matches entering $\frac{2}{3}$ (`[.] 2 [.] 3 [ENTER]`) and multiplying by $\frac{3}{4}$ (`[.] 3 [.] 4 [×]` $\to$ `1/2`) on the SC-6.
+Why does multiplying two proper fractions make a *smaller* piece, while dividing by a fraction flips the divisor upside down? At this station (**CCSS 5.NF.B.4, 5.NF.B.7**; **TEKS 5.3.I, 5.3.L**), students use **transparent area-grid overlays** (or Fraction Studio towers) alongside the SC-6 reciprocal key `[f] [1/x]` to see both operations in action. Begin by having students shade $\frac{3}{4}$ of a square grid vertically in blue and $\frac{2}{3}$ of the same square horizontally in yellow: counting the 6 green overlapping cells out of 12 total cells visually proves that $\frac{2}{3} \times \frac{3}{4} = \frac{6}{12} = \frac{1}{2}$, which matches entering $\frac{2}{3}$ (`0 [.] 2 [.] 3 [ENTER]`), multiplying by $\frac{3}{4}$ (`0 [.] 3 [.] 4 [×]` $\to$ `6/12`), and tapping `[g] [SIMP]` ($\to$ `1/2`) on the SC-6.
 
-Now explore why dividing by a fraction is the same as multiplying by its flipped reciprocal (`[f] [1/x]`). Pose the problem $\frac{3}{4} \div \frac{2}{5}$: have students enter the starting quantity $\frac{3}{4}$ onto Shelf $Y$ (`[.] 3 [.] 4 [ENTER]`), enter the divisor $\frac{2}{5}$ on Shelf $X$ (`[.] 2 [.] 5`), and tap `[f] [1/x]`. Right on the bottom shelf, `2/5` flips upside down into `5/2`, and pressing `[×]` multiplies $\frac{3}{4} \times \frac{5}{2}$ to display `15/8` (or `1 7/8` when toggled with `[a ᵇ/c]`).
+Now explore why dividing by a fraction is the same as multiplying by its flipped reciprocal (`[f] [1/x]`). Pose the problem $\frac{3}{4} \div \frac{2}{5}$: have students enter the starting quantity $\frac{3}{4}$ onto Shelf $Y$ (`0 [.] 3 [.] 4 [ENTER]`), enter the divisor $\frac{2}{5}$ on Shelf $X$ (`0 [.] 2 [.] 5`), and tap `[f] [1/x]`. Right on the bottom shelf, `2/5` flips upside down into `5/2`, and pressing `[×]` multiplies $\frac{3}{4} \times \frac{5}{2}$ to display `15/8` (or `1 7/8` when toggled with `[a ᵇ/c]`).
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `[.] 3 [.] 4` | 0 | 0 | 0 | 3/4 | Enter starting fraction $3/4$ onto Shelf $X$ |
+| `0 [.] 3 [.] 4` | 0 | 0 | 0 | 3/4 | Enter starting fraction $3/4$ onto Shelf $X$ |
 | `[ENTER]` | 0 | 0 | 3/4 | 3/4 | Copy $3/4$ up onto Shelf $Y$ |
-| `[.] 2 [.] 5` | 0 | 0 | 3/4 | 2/5 | Enter divisor fraction $2/5$ onto Shelf $X$ |
+| `0 [.] 2 [.] 5` | 0 | 0 | 3/4 | 2/5 | Enter divisor fraction $2/5$ onto Shelf $X$ |
 | `[f] [1/x]` | 0 | 0 | 3/4 | 5/2 | Flip divisor $2/5$ into its reciprocal $5/2$ |
 | `[×]` | 0 | 0 | 0 | 15/8 | Multiply $3/4 \times 5/2 =$ **`15/8`** ($1\frac{7}{8}$) |
 
-For partner practice, teams solve three fraction challenges: multiplying $\frac{4}{5} \times \frac{5}{8}$ (`[.] 4 [.] 5 [ENTER]` and `[.] 5 [.] 8 [×]` $\to \frac{1}{2}$), dividing $\frac{1}{2} \div \frac{1}{6}$ (`[.] 1 [.] 2 [ENTER]` and `[.] 1 [.] 6 [f] [1/x] [×]` $\to 3$, verified by stacking three $\frac{1}{6}$ blocks beside one $\frac{1}{2}$ block!), and dividing $\frac{2}{3} \div \frac{4}{9}$ (`[.] 2 [.] 3 [ENTER]` and `[.] 4 [.] 9 [f] [1/x] [×]` $\to \frac{3}{2} = 1\frac{1}{2}$).
+For partner practice, teams solve three fraction challenges: multiplying $\frac{4}{5} \times \frac{5}{8}$ (`0 [.] 4 [.] 5 [ENTER]` and `0 [.] 5 [.] 8 [×] [g] [SIMP]` $\to \frac{1}{2}$), dividing $\frac{1}{2} \div \frac{1}{6}$ (`0 [.] 1 [.] 2 [ENTER]` and `0 [.] 1 [.] 6 [f] [1/x] [×]` $\to 3$, verified by stacking three $\frac{1}{6}$ blocks beside one $\frac{1}{2}$ block!), and dividing $\frac{2}{3} \div \frac{4}{9}$ (`0 [.] 2 [.] 3 [ENTER]` and `0 [.] 4 [.] 9 [f] [1/x] [×] [g] [SIMP]` $\to \frac{3}{2} = 1\frac{1}{2}$).
 
 When a student isn't sure *which* of the two fractions gets flipped with `[f] [1/x]`, remind them of the elevator roles: Shelf $Y$ holds the starting batch of dough you have on the table, while Shelf $X$ holds the measuring scoop you are dividing by—so `[f] [1/x]` always flips the divisor sitting on the bottom shelf.
 
@@ -5180,7 +5192,7 @@ Grade 6 stations bridge into pre-algebra with two-color integer zero-pairs (`[+/
 
 Slide one $+1$ yellow counter and one $-1$ red counter together on the desk until they cancel out as a **zero pair**, and signed integer arithmetic loses all its mystery (**CCSS 6.NS.C.5, 6.NS.C.6**; **TEKS 6.2.B**). Equip each pair with **30 two-color counters** (15 yellow for $+1$ and 15 red for $-1$, or the $+1$ and $-1$ unit tiles from the Algebra Factoring Studio) alongside the SC-6 sign-flip key `[+/-]`. Start by having partners place 7 yellow counters ($+7$) and 4 red counters ($-4$) on the desk, slide each $+1/-1$ pair together to cancel as a zero pair, and see that 3 yellow counters ($+3$) remain.
 
-Now reverse the balance by having students lay out 8 red counters ($-8$) and 5 yellow counters ($+5$): after 5 zero pairs cancel out, 3 red counters ($-3$) remain on the desk. To enter $-8$ on the SC-6, students type `8` first and tap `[+/-]` to flip its sign to `-8` on Shelf $X$, press `[ENTER]` to lift `-8` to Shelf $Y$, and then type `5 [+]` to confirm `-3` on the bottom shelf.
+Now reverse the balance by having students lay out 8 red counters ($-8$) and 5 yellow counters ($+5$): after 5 zero pairs cancel out, 3 red counters ($-3$) remain on the desk. To enter $-8$ on the SC-6 (after toggling `[NUM]` Whole Number Mode off or tapping `[f] [ALL]` so signed integers are unlocked), students type `8` first and tap `[+/-]` to flip its sign to `-8` on Shelf $X$, press `[ENTER]` to lift `-8` to Shelf $Y$, and then type `5 [+]` to confirm `-3` on the bottom shelf.
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -5278,11 +5290,11 @@ Brief, spaced two-minute replays across several days build far stronger fluency 
 | **Day 1 (Station Launch)** | Untimed Two-Way Mastery (`10` problems with blocks + SC-6) | Verify every student can build the physical block model before touching `[f] [?]`. |
 | **Day 2 (1st Replay)** | Solo 2-Minute Personal-Best Sprint (`[f] [?]`) | Students record their starting score and streak in their notebook log. |
 | **Day 4 (2nd Replay)** | Partner Check with Physical Studio Blocks Nearby | Any missed fact that returns in the $+3/+7$ review queue is built once with blocks. |
-| **Day 8 (3rd Replay)** | 4-Player Baton Relay (Shared Classroom Seed Code) | Mixed-ability table teams pass the calculator every 2 questions (`1`–`10`). |
-| **Day 16+ (Spiral Review)** | Friday Warm-Up Tournament (Shared Seed + `[g] [CLΣ]` Reset) | Celebrate personal growth over Day 2 baseline scores across the whole class. |
+| **Day 8 (3rd Replay)** | 4-Player Baton Relay (Shared Target Level `1`–`6`) | Mixed-ability table teams pass the calculator every 2 questions (`1`–`10`). |
+| **Day 16+ (Spiral Review)** | Friday Warm-Up Tournament (Shared Level + `[g] [CLΣ]` Reset) | Celebrate personal growth over Day 2 baseline scores across the whole class. |
 
-**Synchronized Seed Codes & Smart Review Coaching:**
-During independent practice, the SC-6 shuffles questions automatically so students sitting side by side cannot copy each other's screens. When you want to run a whole-class warm-up or a 4-player table relay where every team faces the *exact same 10 questions in the exact same order*, write a shared **Classroom Seed Number** on the board (for example, today's date `24`). Having every student type `24` on Shelf $X$ right before tapping `[f] [?]` locks every calculator in the room onto the identical 10-question sequence—and allows you to walk through Question #4 or Question #7 on the document camera afterward knowing every student solved that exact prompt.
+**Synchronized Level Launches & Smart Review Coaching:**
+During independent practice, the SC-6 shuffles questions automatically so students sitting side by side cannot copy each other's screens. When you want to run a whole-class warm-up or a 4-player table relay where every team races through the same skill tier, write the target **Quiz Level (`1`–`6`)** on the board. Having every student tap `[f] [?]` and select that same level launches every calculator in the room into the identical 3-band challenge deck (where students submit each answer with `[≠]` and tap `[C]` to advance to the next prompt).
 
 Because the SC-6 Quiz Engine automatically recycles any missed fact **3 turns later** and **7 turns later** within the same round (while resting mastered facts for 30 turns), you never need to grade stacks of fluency slips to spot which facts a student finds tricky. As you circulate during the last two minutes of a sprint, glance at which problems reappear on a student's screen and keep the corresponding studio tray within reach—whether that means sliding two counters across the 5-anchor rib for a make-ten fact, turning a Counting Tile array $90^\circ$ for a multiplication fact, or canceling $+1/-1$ counter pairs for a signed-integer challenge.
 
@@ -5311,13 +5323,13 @@ In an after-school **Math Circle** or library club, students from Grades 3 throu
    Start by handing each table 25 Four-Color Counting Tiles and asking them to build a $1 \times 1$ white square in the corner, wrap a 3-tile blue L-border around it to form a $2 \times 2$ square ($1 + 3 = 4$), wrap a 5-tile gold L-border around that to form a $3 \times 3$ square ($4 + 5 = 9$), and then add a 7-tile slate L-border ($9 + 7 = 16$) and a 9-tile white L-border ($16 + 9 = 25$). Challenge the circle to predict what happens if you add the first **20 odd numbers** ($1 + 3 + 5 + \dots + 39$) before testing it on the SC-6 (`20 [x²]` $\to 400$). Then ask older students to remove an inner $3 \times 3$ square from a $5 \times 5$ square ($5^2 - 3^2 = 16$) and rearrange the leftover L-border into a single rectangle to discover why $(5 - 3) \times (5 + 3) = 2 \times 8 = 16$.
 
 2. **The Musical Monochord & Egyptian Fraction Bakery ([Chapter 5](sc6/05-fractions-decimals-ratios.md)):**
-   Bring four identical drinking glasses, a pitcher of water, a ruler, and a metal spoon to the library table alongside the **84 mm Fraction Studio**. Have students measure the glass height, pour water to $\frac{1}{4}$, $\frac{1}{3}$, $\frac{1}{2}$, and $\frac{3}{4}$ full, and tap the glasses to hear the musical intervals rise as the air column shortens. Next, pose the ancient Egyptian scribe puzzle from the Rhind Papyrus: *How can 8 bakers share 5 loaves of bread fairly without crumbling the loaves into tiny bits?* Have students model $\frac{5}{8}$ in the Twin Comparator Well by stacking one $\frac{1}{2}$ block ($42.0\text{ mm}$) and one $\frac{1}{8}$ block ($10.5\text{ mm}$) to reach $52.5\text{ mm}$, then verify `. 1 . 2 [ENTER] . 1 . 8 [+]` $\to$ `5/8` on the SC-6.
+   Bring four identical drinking glasses, a pitcher of water, a ruler, and a metal spoon to the library table alongside the **84 mm Fraction Studio**. Have students measure the glass height, pour water to $\frac{1}{4}$, $\frac{1}{3}$, $\frac{1}{2}$, and $\frac{3}{4}$ full, and tap the glasses to hear the musical intervals rise as the air column shortens. Next, pose the ancient Egyptian scribe puzzle from the Rhind Papyrus: *How can 8 bakers share 5 loaves of bread fairly without crumbling the loaves into tiny bits?* Have students model $\frac{5}{8}$ in the Twin Comparator Well by stacking one $\frac{1}{2}$ block ($42.0\text{ mm}$) and one $\frac{1}{8}$ block ($10.5\text{ mm}$) to reach $52.5\text{ mm}$, then verify `0 [.] 1 [.] 2 [ENTER] 0 [.] 1 [.] 8 [+]` $\to$ `5/8` on the SC-6.
 
 3. **The Antarctic Penguin Huddle & Giant Monster Scaling Lab ([Chapter 6](sc6/06-geometry-surface-area.md)):**
    Ask the circle why a movie monster that is $10\text{ times}$ taller than a human would collapse under its own weight, and why Emperor penguins huddle tightly together in $-40^\circ\text{C}$ blizzards. Have students take 8 Unit Miniblocks and compare their exposed square faces when standing apart ($8 \times 6 = 48$ chilly faces) versus snapped into a $2 \times 2 \times 2$ cube ($6 \times 4 = 24$ exposed faces—cutting heat loss in half!). Then challenge teams to use `[g] [CLΣ]` and `[Σ+]` to find which 3D rectangular prism built from 24 Counting Tiles ($1 \times 1 \times 24$, $1 \times 2 \times 12$, $1 \times 3 \times 8$, $1 \times 4 \times 6$, or $2 \times 3 \times 4$) has the *smallest* outer surface area (`2 × 3 × 4` wins with just $52$ square faces!).
 
 4. **The Settlers of Catan Dice Pyramid & Prime Factor Vault ([Chapter 7](sc6/07-data-probability-primes.md)):**
-   Give each team two volume-equalized $d6$ dice and a supply of Counting Tiles arranged along a number line from `2` to `12`. As teams roll the dice 36 times (and simulate rapid rolls on the SC-6 with `6 [🎲] 6 [🎲] [+]`), they stack a tile on the matching sum for every roll and watch the tall pyramid peak over `6`, `7`, and `8`. Follow up by switching to the **Prime Factor Studio**: challenge partners to race the SC-6 `[g] [FACT]` key by building factor towers for `36`, `60`, `84`, and `120` in the comparator stage and discovering why stacking blocks in any order always reaches the exact same millimeter mark.
+   Give each team two volume-equalized $d6$ dice and a supply of Counting Tiles arranged along a number line from `2` to `12`. As teams roll the dice 36 times (and simulate rapid rolls on the SC-6 with `[🎲] [🎲] [+]`), they stack a tile on the matching sum for every roll and watch the tall pyramid peak over `6`, `7`, and `8`. Follow up by switching to the **Prime Factor Studio**: challenge partners to race the SC-6 `[g] [FACT]` key by building factor towers for `36`, `60`, `84`, and `120` in the comparator stage and discovering why stacking blocks in any order always reaches the exact same millimeter mark.
 
 ### B.7.3 Hosting a Five-Table Family Math & Maker Night
 One of the most rewarding ways to build community excitement around mathematics is a 90-minute **Family Math & Maker Night** in the school library or cafeteria, where **students act as the station hosts** and teach their parents and grandparents how the four-shelf stack works. Set up five tables around the room with student ambassadors stationed at each table:
@@ -5332,26 +5344,26 @@ One of the most rewarding ways to build community excitement around mathematics 
 
 ---
 
-### B.7.4 Pacing the 25 Stations Across the School Year
+### B.7.4 Pacing the 25 Stations Across the School Year & Companion Workbook Cross-Reference
 
-To weave these 25 station lessons across a full 36-week school year (or a summer math camp), educators can group the stations into four seasonal modules that spiral from whole-number foundations to applied STEM labs:
+To weave these 25 station lessons across a full 36-week school year (or a summer math camp), educators can group the stations into four seasonal modules that spiral from whole-number foundations to applied STEM labs and align directly with **Book 2A (*Grades K–2 Elementary Companion Workbook*)**, **Book 2B (*Grades 3–5 Elementary Companion Workbook*)**, and **Book 3 (*Big Ideas Middle School SC-6 Workbook*)**:
 
-| Seasonal Module | Recommended Weeks | Featured Station Rotations | Companion Book Chapters |
-| :--- | :---: | :--- | :--- |
-| **Quarter 1: Number Sense, Place Value & Stack Foundations** | Weeks 1–9 | Stations `F.1`–`F.10` (Ten-Frames, Make-a-Ten, Bundling, Regrouping & `[g] [REP]` Ladders) | [Chapters 01](sc6/01-hardware-architecture.md)–[03](sc6/03-counting-place-value.md) |
-| **Quarter 2: Rectangular Arrays, Remainders & Unit Fractions** | Weeks 10–18 | Stations `F.11`, `3.1`–`3.4`, and `4.1` (`[f] [RECT]` Arrays, `[g] [÷R]` Sharing, Unit Fractions & `[Σ+]` Perimeters) | [Chapters 04](sc6/04-operations-skip-counting.md)–[05](sc6/05-fractions-decimals-ratios.md) |
-| **Quarter 3: Equivalent Fractions, 3D Prisms & Order of Operations** | Weeks 19–27 | Stations `4.2`–`4.4` and `5.1`–`5.3` (`[g] [SIMP]` Reduction, Unlike Fractions, Volvelle Angles & 3D Prism Nets) | [Chapters 05](sc6/05-fractions-decimals-ratios.md)–[06](sc6/06-geometry-surface-area.md) |
-| **Quarter 4: Primes, Data Detective, Zero Pairs & Maker STEM Labs** | Weeks 28–36 | Stations `6.1`–`6.3` plus STEM Maker Projects (`[+/-]` Zero Pairs, `[g] [FACT]` Prime Towers, Ratios & Sprints) | [Chapters 07](sc6/07-data-probability-primes.md)–[09](sc6/09-applied-stem-labs.md) |
+| Seasonal Module | Recommended Weeks | Featured Station Rotations | Companion Workbook Units (`Book 2A` / `Book 2B` / `Book 3`) | Companion Book Chapters |
+| :--- | :---: | :--- | :--- | :--- |
+| **Quarter 1: Number Sense, Place Value & Stack Foundations** | Weeks 1–9 | Stations `F.1`–`F.10` (Ten-Frames, Make-a-Ten, Bundling, Regrouping & `[g] [REP]` Ladders) | `Book 2A` Units `U01`–`U05` (`PLACE-01` Ten-Frames, Number Bonds, Regrouping & Skip-Counting) | [Chapters 01](sc6/01-hardware-architecture.md)–[03](sc6/03-counting-place-value.md) |
+| **Quarter 2: Rectangular Arrays, Remainders & Unit Fractions** | Weeks 10–18 | Stations `F.11`, `3.1`–`3.4`, and `4.1` (`[f] [RECT]` Arrays, `[g] [÷R]` Sharing, Unit Fractions & `[Σ+]` Perimeters) | `Book 2A` `U06`–`U08` & `Book 2B` `U01`–`U03` (`PLACE-01` Arrays, Division with Remainders & `FRAC-01` Unit Towers) | [Chapters 04](sc6/04-operations-skip-counting.md)–[05](sc6/05-fractions-decimals-ratios.md) |
+| **Quarter 3: Equivalent Fractions, 3D Prisms & Order of Operations** | Weeks 19–27 | Stations `4.2`–`4.4` and `5.1`–`5.3` (`[g] [SIMP]` Reduction, Unlike Fractions, Volvelle Angles & 3D Prism Nets) | `Book 2B` Units `U04`–`U07` (`FRAC-01` Equivalence, Partitive Division, 3D Prism Nets & 4-Shelf Order of Operations) | [Chapters 05](sc6/05-fractions-decimals-ratios.md)–[06](sc6/06-geometry-surface-area.md) |
+| **Quarter 4: Primes, Data Detective, Zero Pairs & Maker STEM Labs** | Weeks 28–36 | Stations `6.1`–`6.3` plus STEM Maker Projects (`[+/-]` Zero Pairs, `[g] [FACT]` Prime Towers, Ratios & Sprints) | `Book 2B` `U08`–`U10` & `Book 3` Units `U01`–`U06` (`PRIME-01` Logarithmic Towers, `GCF`/`LCM`, `1Q`/`3Q`/`IQR` & Signed Integers) | [Chapters 07](sc6/07-data-probability-primes.md)–[09](sc6/09-applied-stem-labs.md) |
 
-Within any single school week, teachers can rotate five table groups through a balanced **Monday-to-Friday Workshop Rhythm** so every student experiences hands-on block building, visual screen discovery, four-shelf stack verification, and team fluency relays without ever needing long paper packets:
+Within any single school week, teachers can rotate five table groups through a balanced **5-Day Weekly Workshop Rhythm** paired with **3-Tier Differentiation (`Practice A–F`)** from the companion workbooks so every student experiences hands-on block building, visual screen discovery, four-shelf stack verification, and team fluency relays:
 
-| Day of the Week | 45-Minute Classroom Focus | Physical Studio & SC-6 Mode | Quick Formative Check |
+| Day of the Week | 45-Minute Classroom Focus | Physical Studio & SC-6 Mode | 3-Tier Workbook Differentiation (`Practice A–F`) & Formative Check |
 | :--- | :--- | :--- | :--- |
-| **Monday (Launch & Build)** | Whole-class 5-minute anchor story + Partner A/B physical block build at Tables 1–5 | Assigned 3D-Printed Studio Tray + Visual Screen Mode (`[▦]`, `[f] [LINE]`, `[PV]`, `[🕒]`) | First `+10` token placed on the Quest Scoreboard for verified physical model |
-| **Tuesday (Stack Connection)** | Partners translate Monday's physical block model into 4-shelf stack keystrokes ($X, Y, Z, T$) | `[NUM]` or Fraction Mode (`[a ᵇ/c]`) + `[f] [LASTX]` reverse checks | Second `+10` token stacked (`+20` total) + 90-second "Point-and-Prove" check |
-| **Wednesday (Station Switch)** | Table groups rotate clockwise to a companion station or multi-step extension puzzle | Companion Studio Tray + Multi-step Shelf $Z$ or `[Σ+]` basket | Students log one 4-register trace table in their math notebooks |
-| **Thursday (Maker Application)** | Real-world STEM measurement lab (rulers, scales, stopwatches, or cardstock nets) | Chapter 9 Maker Lab + Unit Conversions (`[f] [▸cm]`, `[f] [▸g]`, `[g] [x̄]`, `[g] [MAD]`) | Partner teams compare `Count`, `Mean`, and `MAD` across table trials |
-| **Friday (Relay & Reflection)** | Synchronized Classroom Seed 4-Player Baton Relay (`[f] [?]`) + Math Circle discussion | Shared Seed Code (`24 [f] [?]`) + Studio Trays on table for $+3/+7$ review coaching | Celebrate personal-best growth over Tuesday baseline scores |
+| **Monday (Launch & Build)** | Whole-class 5-minute anchor story + Partner A/B physical block build at Tables 1–5 | Core Anchor Studio (`PLACE-01`, `FRAC-01`, or `PRIME-01`) + Visual Mode (`[▦]`, `[f] [LINE]`, `[PV]`, `[🕒]`) | **Tier 1 (`Practice A–B` Concrete Launch):** First `+10` token placed on Quest Scoreboard for verified physical model |
+| **Tuesday (Stack Connection)** | Partners translate Monday's physical block model into 4-shelf stack keystrokes ($X, Y, Z, T$) | `[NUM]` or Fraction Mode (`[a ᵇ/c]`) + `[f] [LASTX]` reverse checks | **Tier 2 (`Practice C–D` Representational Stack Bridge):** Second `+10` token stacked (`+20` total) + 90-second "Point-and-Prove" check |
+| **Wednesday (Station Switch)** | Table groups rotate clockwise to a companion station or multi-step extension puzzle | Companion Studio Tray + Multi-step Shelf $Z$ or `[Σ+]` basket | **Tier 2–3 (`Practice D–E` Multi-Step Reasoning):** Students log one 4-register trace table in their math notebooks |
+| **Thursday (Maker Application)** | Real-world STEM measurement lab (rulers, scales, stopwatches, or cardstock nets) | Chapter 9 Maker Lab + Unit Conversions (`[f] [▸cm]`, `[f] [▸g]`, `[g] [x̄]`, `[g] [MAD]`) | **Tier 3 (`Practice E–F` Transfer & STEM Challenge):** Partner teams compare `Count`, `Mean`, and `MAD` across table trials |
+| **Friday (Relay & Reflection)** | Synchronized Level 4-Player Baton Relay (`[f] [?]`) + Math Circle discussion | Shared Target Level (`[f] [?]`, then level `1`–`6`, `[≠]` submit, and `[C]` next) + Studio Trays on table | **All Tiers (`Practice A–F` Spiral Synthesis):** Celebrate personal-best growth over Tuesday baseline scores |
 
 **Why the Four-Shelf Stack Works in Elementary Classrooms:** Across all four quarters, teachers consistently notice that students make far fewer multi-step calculation mistakes on the SC-6 than on conventional parenthesis calculators. Studies of human memory show that our brains can comfortably focus on only a few numbers at a time *([Miller, 1956](sc6/appendix-c-formulas-and-conversions.md#cite-miller1956); [Sweller, 1988](sc6/appendix-c-formulas-and-conversions.md#cite-sweller1988))*, and classroom research confirms that young learners grasp multi-step problems much more naturally when they enter numbers in the exact order they build with their blocks *([Hamrick, 1996](sc6/appendix-c-formulas-and-conversions.md#cite-hamrick1980))*. By combining parenthesis-free stack entry *([Burks et al., 1954](sc6/appendix-c-formulas-and-conversions.md#cite-burks1954))* with exact decimal and fraction arithmetic *([Kahan, 1979](sc6/appendix-c-formulas-and-conversions.md#cite-kahan1979))*, the SC-6 keeps every step visible on Shelves $X, Y, Z,$ and $T$—so students can focus on the meaning of the math rather than hunting for missing brackets.
 
@@ -6043,7 +6055,7 @@ To explore the history and beauty of everyday math, look for **Steven Strogatz's
 
 <a id="cite-strogatz2012"></a>
 **[strogatz2012] Steven Strogatz (2012)** — *The Joy of x: A Guided Tour of Math, from One to Infinity*. *Eamon Dolan / Houghton Mifflin Harcourt, Boston*.
-> **Annotation:** Opens every mathematical section with everyday curiosity and intuitive aha-moments, showing how mathematical beauty connects to human experience.  
+> **Annotation:** Guides the reader through arithmetic, algebra, geometry, and calculus using everyday curiosity and intuitive geometric insight.  
 > **Cited in Chapters:** [App C](sc6/appendix-c-formulas-and-conversions.md), [Ch 06](sc6/06-geometry-surface-area.md), [Foreword](sc6/index.md)
 
 <a id="cite-ellenberg2014"></a>
@@ -6435,8 +6447,8 @@ Even the number pad (`1`–`9` and `-`) is organized as a visual map so your fin
 | Number-Pad Zone | Keys | `[f]` Shift (Top-Left) | `[g]` Shift (Top-Right) | Why It Is Grouped This Way |
 | :--- | :---: | :--- | :--- | :--- |
 | **Row 4: 2D & 3D Geometry Workbench** | `7`, `8`, `9` | `[f] [RECT]`, `[f] [CIRC]`, `[f] [PRISM]` | `[g] [TRI]`, `[g] [HYP]`, `[g] [CONE]` | Moves left-to-right from flat rectangles/triangles (`7`) and circles/right triangles (`8`) to 3D prisms/cones (`9`) |
-| **Row 5: Mass & Length Conversions** | `4`, `5`, `6` | `[f] [▸g]`, `[f] [▸kg]`, `[f] [▸cm]` | `[g] [▸oz]`, `[g] [▸lb]`, `[g] [▸in]` | Every key pairs its **Metric unit on `[f]` (left)** with its **U.S. Customary partner on `[g]` (right)** |
-| **Row 6: Volume & Temperature** | `1`, `2`, `-` | `[f] [▸mL]`, `[f] [▸L]`, `[f] [▸°C]` | `[g] [▸fl]`, `[g] [▸gal]`, `[g] [▸°F]` | Tapping `[f]` converts to Metric (`mL`, `L`, `°C`); tapping `[g]` on the same key converts back (`fl oz`, `gal`, `°F`) |
+| **Row 5: Everyday Weight, Distance & Volume** | `4`, `5`, `6` | `[f] [▸g]`, `[f] [▸ft]`, `[f] [▸mL]` | `[g] [▸oz]`, `[g] [▸mi]`, `[g] [▸fl]` | Pairs grams/ounces (`4`), feet/miles (`5`), and milliliters/fluid ounces (`6`) across `[f]` (left) and `[g]` (right) |
+| **Row 6: Heavy Mass, Temperature, Length & Tanks** | `1`, `2`, `3`, `-` | `[f] [▸kg]`, `[f] [▸°C]`, `[f] [▸cm]`, `[f] [▸L]` | `[g] [▸lb]`, `[g] [▸°F]`, `[g] [▸in]`, `[g] [▸gal]` | Tapping `[f]` converts to Metric (`kg`, `°C`, `cm`, `L`); tapping `[g]` on the same key converts to U.S. Customary (`lb`, `°F`, `in`, `gal`) |
 
 ---
 
@@ -6453,18 +6465,18 @@ The table below catalogs every keycap position, primary legend, `[f]` and `[g]` 
 | **05** (R0, C4) | `[PV]` | `[f] [IP]` Whole Part | `[g] [FP]` Fraction Part | Grades 3–4 • [Chapter 3: Place Value Decomposition](sc6/03-counting-place-value.md) • [Chapter 5: Whole & Fractional Parts](sc6/05-fractions-decimals-ratios.md) |
 | **06** (R0, C5) | `[$]` | `[f] [ALL]` Full Digits | `[g] [RND]` Round | Grades 3–5 • [Chapter 3: Currency & Place Value](sc6/03-counting-place-value.md) • [Chapter 4: Rounding](sc6/04-operations-skip-counting.md) |
 | **07** (R1, C0) | `[FDISP]` | `[f] [1/x]` Reciprocal | `[g] [/c]` Denominator | Grades 3–5 • [Chapter 5: Fraction Entry, Reciprocals & Fixed Denominators](sc6/05-fractions-decimals-ratios.md) |
-| **08** (R1, C1) | `[a ᵇ/c]` | `[f] [d/c]` Improper | `[g] [SIMP]` Simplify | Grades 3–5 • [Chapter 5: Mixed Numbers, Improper Fractions & Step-by-Step Simplify](sc6/05-fractions-decimals-ratios.md) |
+| **08** (R1, C1) | `[a ᵇ/c]` | `[f] [d/c]` Improper | `[g] [SIMP]` Simplify | Grades 3–5 • [Chapter 5: Mixed Numbers, Improper Fractions & Simplify](sc6/05-fractions-decimals-ratios.md) |
 | **09** (R1, C2) | `[GCF]` | `[f] [LCM]` Multiple | `[g] [a:b]` Ratio | Grades 5–6 • [Chapter 7: Number Theory GCF & LCM](sc6/07-data-probability-primes.md) • [Chapter 5: Ratios & Rates](sc6/05-fractions-decimals-ratios.md) |
 | **10** (R1, C3) | `[PRIME]` | `[f] [C.FAC]` Common Factors | `[g] [FACT]` Factor Tree | Grades 5–6 • [Chapter 7: Prime Studio & Factorization](sc6/07-data-probability-primes.md) |
 | **11** (R1, C4) | `[x⇄y]` | `[f] [R↓]` Roll Down | `[g] [REP]` Replicate | Grades 3–4 • [Chapter 2: Stack Swapping & Rolling](sc6/02-rpn-for-young-learners.md) • [Chapter 4: Constant Repeat Skip-Counting](sc6/04-operations-skip-counting.md) |
-| **12** (R1, C5) | `[+/-]` | `[f] [E]` Exponent | `[ABS]` Absolute Value | Grades 5–6 • [Chapter 7: Signed Numbers & Absolute Value](sc6/07-data-probability-primes.md) • [Chapter 3: Big Numbers](sc6/03-counting-place-value.md) |
+| **12** (R1, C5) | `[+/-]` | `[f] [E]` Exponent | `[g] [|x|]` Absolute Value | Grades 5–6 • [Chapter 7: Signed Numbers & Absolute Value](sc6/07-data-probability-primes.md) • [Chapter 3: Big Numbers](sc6/03-counting-place-value.md) |
 | **13** (R2, C0) | `[FRQ]` | `[f] [MED]` Median | `[g] [MODE]` Mode | Grades 5–6 • [Chapter 7: Frequency Tables, Median & Mode](sc6/07-data-probability-primes.md) |
 | **14** (R2, C1) | `[RNG]` | `[f] [MIN]` Minimum | `[g] [MAX]` Maximum | Grades 5–6 • [Chapter 7: Data Spread & Extremes](sc6/07-data-probability-primes.md) |
 | **15** (R2, C2) | `[IQR]` | `[f] [1Q]` Quartile 1 | `[g] [3Q]` Quartile 3 | Grades 6+ • [Chapter 7: Quartiles & Box Plots](sc6/07-data-probability-primes.md) |
 | **16** (R2, C3) | `[Σ+]` | `[f] [Σ-]` Remove | `[g] [MAD]` Mean Deviation | Grades 4–6 • [Chapter 6: Master Surface Area via Stats](sc6/06-geometry-surface-area.md) • [Chapter 7: Mean Absolute Deviation](sc6/07-data-probability-primes.md) |
 | **17** (R2, C4) | `[N]` | `[f] [Σx]` Total Sum | `[g] [x̄]` Mean Average | Grades 5–6 • [Chapter 7: Sample Count & Fair-Share Mean](sc6/07-data-probability-primes.md) |
 | **18** (R2, C5) | `[%]` | `[f] [▸%]` Decimal to % | `[g] [%CHG]` % Change | Grades 5–6 • [Chapter 5: Percentages, Tips & Discounts](sc6/05-fractions-decimals-ratios.md) |
-| **19** (R3, C0-1) | `[ENTER]` | `[f] [LASTX]` Last X | `[g] [SHOW]` Full 15-Digit | Grades 3–6 • [Chapter 2: The Elevator Push](sc6/02-rpn-for-young-learners.md) • [Chapter 4: Last Number Self-Check](sc6/04-operations-skip-counting.md) • [Chapter 8: Quiz Submit](sc6/08-math-quiz-engine.md) |
+| **19** (R3, C0-1) | `[ENTER]` | `[f] [LASTX]` Last X | `[g] [SHOW]` Full 15-Digit | Grades 3–6 • [Chapter 2: The Elevator Push](sc6/02-rpn-for-young-learners.md) • [Chapter 4: Last Number Self-Check](sc6/04-operations-skip-counting.md) |
 | **20** (R3, C2) | `[🕒]` | `[f] [▸HR]` Decimal Hours | `[g] [▸HMS]` Clock Time | Grades 3–5 • [Chapter 6: Planetary Geared Clock & Elapsed Time](sc6/06-geometry-surface-area.md) |
 | **21** (R3, C3) | `[▦]` | `[f] [LINE]` Number Line | `[g] [COUNT]` Step Count | Grades 3–5 • [Chapter 3: Ten-Frame, Number Line & Number Rack](sc6/03-counting-place-value.md) |
 | **22** (R3, C4) | `[NUM]` | `[f] [SCI]` Scientific | `[g] [FIX]` Fixed Decimals | Grades 3–6 • [Chapter 2: Numerical 4-Stack Mode](sc6/02-rpn-for-young-learners.md) • [Chapter 3: Display Formats](sc6/03-counting-place-value.md) |
@@ -6487,7 +6499,7 @@ The table below catalogs every keycap position, primary legend, `[f]` and `[g]` 
 | **39** (R7, C0) | `[C]` (ON) | `[f] [?]` Quiz Sprint | `[g] [OFF]` Sleep | Grades 3–6 • [Chapter 1: Wake & Sleep](sc6/01-hardware-architecture.md) • [Chapter 8: Math Quiz Game](sc6/08-math-quiz-engine.md) |
 | **40** (R7, C1) | `[0]` | `[f] [REGS]` Stack Viewer | — | Grades 3–6 • [Chapter 3: Zero & Place Value](sc6/03-counting-place-value.md) • [Chapter 2: Stack Viewer](sc6/02-rpn-for-young-learners.md) |
 | **41** (R7, C2) | `[.]` | `[f] [0.3̄]` Repeating | — | Grades 3–5 • [Chapter 5: Two-Dot Fractions & Repeating Decimals](sc6/05-fractions-decimals-ratios.md) |
-| **42** (R7, C3) | `[≠]` | `[f] [>]` Greater Than | `[g] [<]` Less Than | Grades 3–5 • [Chapter 4: Comparing Numbers](sc6/04-operations-skip-counting.md) |
+| **42** (R7, C3) | `[≠]` | `[f] [>]` Greater Than | `[g] [<]` Less Than | Grades 3–5 • [Chapter 4: Comparing Numbers](sc6/04-operations-skip-counting.md) • [Chapter 8: Quiz Submit](sc6/08-math-quiz-engine.md) |
 | **43** (R7, C4) | `[+]` | `[f] [≥]` Greater/Equal | `[g] [≤]` Less/Equal | Grades 3–5 • [Chapter 4: Addition & Comparisons](sc6/04-operations-skip-counting.md) |
 
 ---
@@ -6501,9 +6513,9 @@ Not sure which buttons to try next? Follow this six-step map from your very firs
 | **1. First Stack Moves** | Counting groups, making 10s, and adding or subtracting on the shelves | `[▦]` Ten-Frame, `[g] [COUNT]`, `[f] [LINE]`, `[+]`, `[-]`, `[ENTER]`, `[C]`, `[<-]` |
 | **2. Place Value & Skip-Counting** | Breaking big numbers into 1000s/100s/10s/1s, money math, and skip-counting | `[PV]` Place Value, `[g] [REP]` Constant Repeat, `[$]` Money, `[x⇄y]` |
 | **3. Tile Arrays, Area & Clock Time** | Building tile rectangles, telling geared clock time, and entering fractions | `[×]`, `[÷]`, `[f] [RECT]`, `[🕒]` Geared Clock, `[FDISP]`, `[.]` |
-| **4. Remainders & Fraction Towers** | Sharing with leftovers, simplifying fractions step by step, and checking work | `[g] [÷R]` Quotient & Remainder, `[a ᵇ/c]`, `[f] [d/c]`, `[g] [SIMP]`, `[f] [LASTX]` |
+| **4. Remainders & Fraction Towers** | Sharing with leftovers, simplifying fractions to lowest terms, and checking work | `[g] [÷R]` Quotient & Remainder, `[a ᵇ/c]`, `[f] [d/c]`, `[g] [SIMP]`, `[f] [LASTX]` |
 | **5. Common Slices & 3D Boxes** | Finding common denominators, wrapping 3D boxes, and building tally tables | `[GCF]`, `[f] [LCM]`, `[f] [PRISM]`, `[Σ+]` Add to Total, `[FRQ]` Tables |
-| **6. Primes, Fair Dice & Quiz Sprints** | Negative numbers, prime factor trees, fair-share data averages, and quiz sprints | `[+/-]`, `[ABS]`, `[PRIME]`, `[g] [FACT]`, `[g] [a:b]`, `[x²]`, `[f] [√x]`, `[IQR]`, `[g] [MAD]` |
+| **6. Primes, Fair Dice & Quiz Sprints** | Negative numbers, prime factor trees, fair-share data averages, and quiz sprints | `[+/-]`, `[g] [|x|]`, `[PRIME]`, `[g] [FACT]`, `[g] [a:b]`, `[x²]`, `[f] [√x]`, `[IQR]`, `[g] [MAD]` |
 
 ### D.3.1 Task-to-Button Quick Finder ("I Want To... $\to$ Press This Key")
 
@@ -6517,8 +6529,8 @@ Whenever you are in the middle of a math puzzle or maker project and want to fin
 | **Skip-count by the same number on every tap** | Type step, tap `[g] [REP]` (`[x⇄y]`), tap `[+]` | `7 [g] [REP] [+] [+] [+]` $\to$ `14, 21, 28` |
 | **Divide and see both Whole Groups and Leftovers** | Put Total in $Y$, Group Size in $X$, tap `[g] [÷R]` (`[÷]`) | `145 [ENTER] 45 [g] [÷R]` $\to$ `X: 3` buses, `Y: 10` left over |
 | **X-ray the digit sitting in any place-value column** | Put number in $Y$, column (`1, 10, 100...`) in $X$, tap `[PV]` | `4725 [ENTER] 100 [PV]` $\to$ `7` hundreds |
-| **Enter a proper fraction (like $\frac{3}{8}$) or mixed number ($2\frac{1}{4}$)** | Use two dots (`[.]`) to separate top and bottom | `[.] 3 [.] 8 [ENTER]` or `2 [.] 1 [.] 4 [ENTER]` |
-| **Simplify a fraction or ratio step by step** | Tap `[g] [SIMP]` (`[a ᵇ/c]`) | `[.] 12 [.] 18 [ENTER] [g] [SIMP]` $\to$ `2/3` |
+| **Enter a proper fraction (like $\frac{3}{8}$) or mixed number ($2\frac{1}{4}$)** | Use two dots (`[.]`) to separate whole, top, and bottom | `0 [.] 3 [.] 8 [ENTER]` *(or `[.] 3 [.] 8`)* or `2 [.] 1 [.] 4 [ENTER]` |
+| **Simplify a fraction or ratio to lowest terms** | Tap `[g] [SIMP]` (`[a ᵇ/c]`) | `0 [.] 12 [.] 18 [ENTER] [g] [SIMP]` $\to$ `2/3` |
 | **Find the Least Common Denominator of two fractions** | Put denominators on $Y$ and $X$, tap `[f] [LCM]` (`[GCF]`) | `8 [ENTER] 12 [f] [LCM]` $\to$ `24` |
 | **Take a sale discount or add a tip in two taps** | Put price on $Y$, percent on $X$, tap `[%]`, then `[-]` or `[+]` | `80 [ENTER] 15 [%] [-]` $\to$ `68.00` |
 | **Find the area of a rectangle, triangle, or circle** | Use `[f] [RECT]` (`[f]` `7`), `[g] [TRI]` (`[g]` `7`), or `[f] [CIRC]` (`[f]` `8`) | `14 [ENTER] 9 [g] [TRI]` $\to$ `63` |
@@ -6539,8 +6551,8 @@ Want a fast way to keep all 43 buttons fresh in your fingertips? Pick any two of
 | **3** | **Place-Value X-Ray Check** | `8042 [ENTER] 100 [PV]` | Extracts the hundreds column digit **`0`** (zero hundred-flats holding the column open) |
 | **4** | **Constant Doubling Ladder** | `2 [g] [REP] [×] [×] [×] [×]` | Doubles `2` across four taps (`4` $\to$ `8` $\to$ `16` $\to$ **`32`**) |
 | **5** | **Remainder & Reverse Proof** | `100 [ENTER] 7 [g] [÷R]` $\to$ `[f] [LASTX] [×] [+]` | Splits `100` into **`14`** ($X$) with **`2`** left ($Y$), then rebuilds **`100`** |
-| **6** | **Fraction Tower Addition** | `[.] 1 [.] 3 [ENTER] [.] 1 [.] 4 [+]` | Bridges thirds and fourths on the shared twelfths grid to display **`7/12`** |
-| **7** | **3D Box Surface Wrapper** | `5 [ENTER] 4 [ENTER] 3 [f] [PRISM]` | Displays Volume **`60`** on Shelf $X$ and Total Surface Area **`94`** on Shelf $Y$ |
+| **6** | **Fraction Tower Addition** | `0 [.] 1 [.] 3 [ENTER] 0 [.] 1 [.] 4 [+]` | Bridges thirds and fourths on the shared twelfths grid to display **`7/12`** |
+| **7** | **3D Box Volume Builder** | `5 [ENTER] 4 [f] [RECT] 3 [f] [PRISM]` | Multiplies the $5 \times 4 = 20$ base rectangle by height $3$ to display Volume **`60`** on Shelf $X$ |
 | **8** | **Geared Clock Time Jump** | `2.45 [f] [▸HR] 1.30 [f] [▸HR] [+] [g] [▸HMS]` | Adds $2\text{ hr } 45\text{ min}$ and $1\text{ hr } 30\text{ min}$ to land on **`4.15`** ($4{:}15$) |
 | **9** | **Prime Factor Tree Builder** | `84 [PRIME]` $\to$ `[g] [FACT]` | Identifies $84$ as `COMPOSITE` and reveals its prime tower **`2² × 3 × 7`** |
 | **10** | **Data Basket Mean & Median** | `[g] [CLΣ] 12 [Σ+] 15 [Σ+] 24 [Σ+] [g] [x̄]` | Averages the $3$ measurements to **`17.0`**, while `[f] [MED]` shows middle **`15.0`** |

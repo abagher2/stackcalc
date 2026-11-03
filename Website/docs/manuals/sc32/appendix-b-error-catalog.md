@@ -5,199 +5,63 @@ description: "Comprehensive catalog of all 12 hardware error codes, mathematical
 
 # Appendix B: Error Catalog & Singularity Analysis
 
+The StackCalc SC-32 (**Figure B.1**) implements non-destructive error recovery across all arithmetic, transcendental, statistical, financial, and iterative subsystems. Because every RPN operation evaluates one step at a time on Registers $Y$ and $X$, the processor validates the mathematical domain *before* mutating the stack:
+1. **Diagnostic Banner & Pre-Mutation Trap:** Posts the descriptive error message to the LCD status line and halts the operation before mutating operational memory.
+2. **Register Preservation & Single-Key Dismissal:** Freezes all four operational registers ($X, Y, Z, T$) and `LASTX` without modification; pressing `{{key:C}}` or `{{key:<-}}` clears the error banner without side effects, while pressing any other key clears the banner and executes its normal function.
+
 {{blocks:sc32_exploded_assembly|Exploded hardware assembly showing the internal keypad matrix, display module, and continuous memory architecture.}}
 
 ---
 
-## The Non-Destructive Error Recovery Principle & Domain Singularities
+## Hardware Error Codes, Boundary Conditions & Recovery Reference
 
-On an expression-evaluating calculator without pre-execution domain guards, encountering an arithmetic singularity—such as dividing by zero, taking a real logarithm of a negative number, or exceeding the floating-point exponent ceiling—aborts the pending syntax tree and discards intermediate subtotals.
+Each of the twelve hardware diagnostic codes (`Code 01` through `Code 12`) preserves the pre-operation state of Registers $X, Y, Z, T$, `LASTX`, and all named storage registers:
 
-The StackCalc SC-32 implements non-destructive error recovery across all arithmetic, transcendental, and iterative subsystems. Because every operation in Reverse Polish Notation evaluates one step at a time on the operands sitting in Registers $Y$ and $X$, the processor validates the mathematical domain *before* mutating the stack.
+| Error Code | Banner Designation | Triggering Domain / Boundary Condition | Stack & Register State | Non-Destructive Recovery Protocol |
+| :--- | :--- | :--- | :--- | :--- |
+| **Code 01** | `DIVIDE BY 0` | Domain Violation: $Y \div 0$, $1/0$, $\ln(0)$, $\log_{10}(0)$, $0^X$ ($X < 0$), $X \parallel Y$ ($X + Y = 0$), or $\Delta\%$ ($Y = 0$). | Pre-operation $X$ and $Y$ preserved; `LASTX` unchanged. | Press `{{key:C}}`; key non-zero divisor (overwrites $X$) and press `{{key:÷}}`. |
+| **Code 02** | `INVALID DATA` | Real-domain violations: $\sqrt{X}$ ($X < 0$), $Y^X$ ($Y < 0, X \notin \mathbb{Z}$), $\ln X$/$\log_{10} X$ ($X < 0$), $\arcsin X$/$\arccos X$ ($\lvert X\rvert > 1$), $\operatorname{acosh} X$ ($X < 1$), $\operatorname{atanh} X$ ($\lvert X\rvert \ge 1$), $\tan((2k+1)90^\circ)$, $X! = \Gamma(X+1)$ at $X \in \{-1, -2, \dots\}$, or $C_{n,r}, P_{n,r}$ domain violations ($r > n$, $n < 0$, or $r < 0$). | All four registers ($X, Y, Z, T$) frozen with offending argument in $X$. | Press `{{key:C}}`; arm `{{key:CMPLX}}` and re-invoke for complex evaluation, or press `{{key:+/-}}`. |
+| **Code 03** | `OVERFLOW` | Magnitude exceeds IEEE-754 ceiling $\approx 1.798 \times 10^{308}$ (e.g., $X! > 170!$, $e^X$ for $X > 709.78$, or $10^X$ for $X > 308.25$). | Pre-operation operands remain frozen in $Y$ and $X$. | Press `{{key:C}}`; rescale operands or evaluate in logarithmic space ($\ln(n!)$). |
+| **Code 04** | `TOO BIG` | Switching into `HEX`, `OCT`, or `BIN` (`{{key:BASE}}`) while $X$ lies outside signed 36-bit range $[-2^{35}, +2^{35}-1]$. | Full 64-bit floating-point value remains preserved in Register $X$. | Press `{{key:C}}`; stay in `DEC` or reduce modulo $2^{36}$ via `{{key:÷R}}` before base conversion. |
+| **Code 05** | `STAT ERROR` | Computing $\bar{x}, \bar{y}$ with $n = 0$; $\sigma_x, \sigma_y$ requested with $n < 1$; sample $s_x, s_y$ with $n < 2$; $\bar{x}_w$ requested with $\Sigma y = 0$; linear regression (`L.R.`) when all $x_i$ are identical ($\sigma_x = 0$); or correlation $r$ or $\hat{x}$ requested when all $y_i$ are identical ($\sigma_y = 0$, $m = 0$). | All 6 statistical accumulators ($\Sigma$) and stack preserved. | Press `{{key:C}}`; accumulate additional $(x_i, y_i)$ pairs via `{{key:Σ+}}`, or use $\sigma_x$ (`{{key:s,σ}}`). |
+| **Code 06** | `NO ROOT FOUND` | Convergence Failure: `{{key:SOLVE}}` fails to bracket a sign change $f(a)\cdot f(b) \le 0$ within $50$ expansion steps, or Brent's method completes $100$ iterations without converging to a true root. | Stack and target variable restored to pre-`SOLVE` values; stored `EQN` preserved. | Press `{{key:C}}`; sample $f(x)$ via `{{key:XEQ}}` to locate a sign-change neighborhood, store a closer seed via `{{key:STO}}` + letter, and re-run `{{key:SOLVE}}`. |
+| **Code 07** | `A ≠ 0` | Invoking `{{key:XEQ}}` in `{{key:POLY}}` ($Ax^3 + Bx^2 + Cx + D = 0$) when both $A = 0$ and $B = 0$. | Stored coefficients `A`, `B`, `C`, `D` remain untouched. | Press `{{key:C}}`; store non-zero $A$ (cubic) or $B$ (quadratic) and press `{{key:XEQ}}`. |
+| **Code 08** | `ERROR 5` | Financial Singularity: Cash-flow sign violation in `{{key:TVM}}` when solving for `N` or `I%` (all nonzero cash flows share the same sign), $N = 0$ when solving for `PMT`/`I%`, or periodic rate $i \le -100\%$. | All five `TVM` registers (`N`, `I%`, `PV`, `PMT`, `FV`) and stack preserved. | Press `{{key:C}}`; negate outflows via `{{key:+/-}}`, re-store, and re-solve. |
+| **Code 09** | `MEMORY FULL` | Allocating a 25th equation in `{{key:EQN}}` or exceeding the flash token sector budget. | All 24 existing equations, variables `A`–`Z`, and stack remain preserved. | Press `{{key:C}}`; open `{{key:EQN}}`, select an unused equation, and delete via `{{key:CLEAR}}` $\to$ `{{key:CLEQN}}`. |
+| **Code 10** | `TIMEOUT` | Execution Watchdog: Symbolic equation evaluation (`EQN`, `{{key:SOLVE}}`, or `{{key:∫}}`) exceeds the 100,000-instruction-cycle hardware watchdog (e.g., an infinite backward `GTO` loop). | Execution aborted; pre-operation stack preserved. | Press `{{key:C}}`; inspect the active equation in `{{key:EQN}}` and remove any unconditional backward branch loop. |
+| **Code 11** | `INTERRUPTED` | Pressing `{{key:C}}` while an iterative `{{key:SOLVE}}`, `{{key:∫}}`, or `{{key:POLY}}` sweep is executing. | Temporary scratch state discarded; $X, Y, Z, T$ restored. | Press `{{key:C}}` once more to clear `INTERRUPTED` and resume keypad operation. |
+| **Code 12** | `NO EQN` / `INVALID FOR EQN` / `INTEGER REQUIRED` | Mode / Domain Guard: `{{key:SOLVE}}` or `{{key:∫}}` invoked with an empty equation bank (`NO EQN`); disallowed mode or mutating store command (`{{key:STO}}`) pressed during equation entry (`INVALID FOR EQN`; `{{key:RCL}}` and recall arithmetic `RCL +`/`-`/`×`/`÷` are allowed so iterative `SOLVE`, `∫`, and `PLOT` evaluations remain side-effect-free); or non-integer argument passed to `GCD` or `LCM` (`INTEGER REQUIRED`). | Operands in $Y$ and $X$ remain frozen at pre-operation values. | Press `{{key:C}}`; select a valid equation in `{{key:EQN}}`, replace `{{key:STO}}` with `{{key:RCL}}` inside `EQN`, or strip fractions via `{{key:PARTS}}` $\to$ `{{key:IP}}`. |
 
-### The Non-Destructive Error Recovery Guarantee
+## Code 09: MEMORY FULL & SC-32 Hardware Recovery Protocols
 
-When any of the 12 hardware error conditions occurs:
-1. **Diagnostic Banner:** The descriptive error message is posted to the status line of the transflective LCD.
-2. **Pre-Mutation Trap:** The operation causing the exception is halted before mutating operational memory.
-3. **Register Preservation:** All four operational stack registers ($X, Y, Z, T$) and `LASTX` remain frozen intact.
-4. **Single-Key Dismissal:** Pressing `{{key:C}}` or `{{key:<-}}` dismisses the error banner and restores the exact prior stack state.
+The SC-32 stores up to 24 persistent postfix equations in flash memory (`{{key:EQN}}`), alongside 26 variables (`A`–`Z`), pointer `i`, 6 statistical sums, 50 data slots (`DATA0`–`DATA49`), and 5 `TVM` registers. When `MEMORY FULL` (Code 09) occurs, allocation halts before overwriting flash; pressing `{{key:C}}` dismisses the banner, and `{{key:CLEAR}}` $\to$ `{{key:CLEQN}}` reclaims equation slots:
 
-You can then inspect your operands, swap values via `{{key:x⇄y}}`, change a sign via `{{key:+/-}}`, or re-key the intended operator without losing a single intermediate calculation.
-
-| Feature / Behavior | StackCalc SC-32 | Vintage HP-32SII | Conventional Algebraic Calculator (Infix) |
-| :--- | :--- | :--- | :--- |
-| **Stack Preservation** | 100% frozen; zero register mutation | Frozen stack | Stack cleared or lost in syntax tree |
-| **Recovery Keystroke** | Single `{{key:C}}` or `{{key:<-}}` restores display | `{{key:C}}` or `{{key:<-}}` restores | Requires quitting or clearing editor |
-| **Operand Inspection** | Operands remain visible in $X$ and $Y$ | Operands remain | Operands often must be retyped |
-| **LASTX Protection** | Prior valid $X$ retained safely | Prior valid $X$ retained | No dedicated `LASTX` register |
-| **Shift/Prefix Clearance**| `{{key:C}}` cancels pending prefix harmlessly | `{{key:C}}` cancels | Keypad state unclear |
-
-When a division by zero occurs during a multi-step calculation, there is no need to clear the stack or restart from the beginning: pressing `{{key:C}}` dismisses the banner while leaving the numerator intact in Register $Y$ and the zero divisor in Register $X$, ready to be overwritten or swapped on the spot.
-
-### Hardware Error Code Summary
-
-Every hardware error code on the SC-32 corresponds to a deterministic mathematical domain singularity or hardware boundary:
-
-| Error Code | Designation | Error Code | Designation | Error Code | Designation |
-|:---|:---|:---|:---|:---|:---|
-| Code 01 | `DIVIDE BY 0` | Code 05 | `STAT ERROR` | Code 09 | `MEMORY FULL` |
-| Code 02 | `INVALID DATA` | Code 06 | `NO ROOT FOUND` | Code 10 | `TIMEOUT` |
-| Code 03 | `OVERFLOW` | Code 07 | `A ≠ 0` | Code 11 | `INTERRUPTED` |
-| Code 04 | `TOO BIG` | Code 08 | `ERROR 5` *(HP-12C TVM)* | Code 12 | `NO NEG` / `EQN` / `INT` Guards |
+| Reset Level | Keystroke Sequence | Operational Scope & State Preserved |
+| :--- | :--- | :--- |
+| **1. Soft Status Clear** | Press `{{key:C}}` twice | Cancels active menu prompts, dismisses error banners, and clears pending `{{key:↰}}`/`{{key:↱}}` shifts without erasing variables, statistics, equations, or the stack. |
+| **2. Selective Workspace Clear** | `{{key:CLEAR}}` (`{{key:↰}}` + `{{key:<-}}`) | Opens six targeted reset softkeys: `CLEQN` (clears the stored equation bank), `CLVARS` / `CLV` (zeroes `A`–`Z` and `TVM` registers), `CLALL`, `CLSTAT` (zeroes 6 statistical sums, equivalent to `{{key:CLΣ}}`), `CLREGS` (zeroes `A`–`Z` and `TVM` registers), and `CLSTK` (zeroes $T, Z, Y, X$). |
+| **3. Full Factory Baseline (`CLALL` / `EXAM`)** | Hold `{{key:C}}` at power-on, or `{{key:CLEAR}}` $\to$ `{{key:CLALL}}` | Erases all variables `A`–`Z`, statistical accumulators, `TVM` registers, stored equations, and the stack, returning angular mode to `DEG` and display format to `ALL`, and verifies the dual $32\text{ KiB}$ flash FNV-1a checksum. |
 
 ---
 
-### Code 01: DIVIDE BY 0 (Division by Zero & Pole Singularities)
-* **Why the Singularity Happens:** Division asks how many times a divisor $x$ fits into a dividend $y$. As $x$ shrinks toward zero ($0.1, 0.001, 10^{-12}$), the quotient $y/x$ explodes without bound toward $+\infty$ from one side and $-\infty$ from the other, meaning $y/0$ has no finite value on the real number line. The same vertical asymptote (a *pole singularity*) appears inside disguised quotients across algebra and trigonometry:
-  * **Direct Division & Reciprocals:** $y \div 0$ (`{{key:÷}}`), integer remainder division $y \;\text{rem}\; 0$ (`{{key:÷R}}`), or multiplicative reciprocal $1/0$ (`{{key:1/x}}`).
-  * **Logarithmic Origin Pole:** Evaluating $\ln(0)$ or $\log_{10}(0)$ asks what power of $e$ or $10$ equals zero; as $x \to 0^+$, the logarithm plunges vertically to $-\infty$.
-  * **Zero Base with Negative Exponent:** Evaluating $0^y$ for $y < 0$ (such as $0^{-2} = 1/0^2$) places zero in the denominator (whereas $0^0$ is an indeterminate power form guarded under domain rules).
-* **IEEE-754 Protection:** Rather than silently polluting your stack with `NaN` or `Inf` symbols that ruin subsequent calculations, the hardware trap intercepts the operation before mutating any register.
-* **Stack State & Recovery Procedure:**
-  1. Register $X$ holds `0.0000` (the offending divisor or argument), Register $Y$ holds your original numerator untouched, and `LASTX` preserves the $X$ value from your previous completed calculation.
-  2. Press `{{key:C}}` to dismiss the `DIVIDE BY 0` banner.
-  3. Key the intended non-zero divisor (e.g., `{{key:1}} {{key:5}}`)—since stack lift remains disabled or overwrites in place after `{{key:C}}`—and press `{{key:÷}}`.
+## Mathematical Singularity Conditioning & Overflow Rescaling
 
-When computing $\frac{450}{15}$ and mistakenly keying $0$ as the divisor:
+When an engineering calculation encounters an IEEE-754 floating-point ceiling (`OVERFLOW`, **Code 03**) or a removable $0/0$ indeterminate form (`DIVIDE BY 0`, **Code 01**), algebraic domain conditioning resolves the expression without losing double-precision significance:
 
-| Step | Keystroke | Display Output | Register X | Register Y | Register Z |
-| :---: | :--- | :--- | :---: | :---: | :---: |
-| 1 | `{{key:4}} {{key:5}} {{key:0}} {{key:ENTER}}` | `450.0000` | `450.0000` | `450.0000` | `0.0000` |
-| 2 | `{{key:0}} {{key:÷}}` | `DIVIDE BY 0` | `0.0000` | `450.0000` | `0.0000` |
-| 3 | `{{key:C}}` | `0.0000` | `0.0000` | `450.0000` | `0.0000` |
-| 4 | `{{key:1}} {{key:5}} {{key:÷}}` | `30.0000` | `30.0000` | `0.0000` | `0.0000` |
+1. **Logarithmic Stirling Rescaling Beyond the $170!$ Factorial Ceiling (`Code 03`, Eq. B.1):** Because $171! \approx 1.241 \times 10^{309}$ exceeds the IEEE-754 double-precision maximum $D_{\max} \approx 1.798 \times 10^{308}$, large combinatorial ratios and hypergeometric probabilities for integer count $n > 170$ are conditioned in natural-logarithm space by converting the product $n! = \prod_{k=1}^n k$ into a sum of logarithms $\ln(n!) = \sum_{k=1}^n \ln k$ and applying Pierre-Simon Laplace and James Stirling's asymptotic series **(Eq. B.1)**:
 
----
+   $$\ln(n!) = \sum_{k=1}^{n} \ln k \approx n\ln n - n + \frac{1}{2}\ln(2\pi n) + \frac{1}{12n} - \frac{1}{360n^3}$$
 
-### Code 02: INVALID DATA (Real-Valued Domain Violations)
-* **Why the Singularity Happens:** Many mathematical functions are defined only on a specific interval of the real number line $\mathbb{R}$, and stepping outside that interval asks a question that has no real-number answer:
-  * **Even Roots of Negative Numbers ($\sqrt{x}$ for $x < 0$):** Because the square of any real number—positive or negative—is always non-negative ($x^2 \ge 0$), no point on the real line squares to $-16$.
-  * **Logarithms of Negative Numbers ($\ln x$ or $\log_{10} x$ for $x < 0$):** Because $e \approx 2.718$ and $10$ are strictly positive bases, raising them to any real exponent $y$ always produces a strictly positive result ($e^y > 0$). Thus $\ln x$ exists on the real line only for $x > 0$.
-  * **Inverse Sine & Cosine Outside $[-1, +1]$ ($\arcsin x$ or $\arccos x$ for $|x| > 1$) and Orthogonal Tangent Poles ($\tan 90^\circ, \tan 270^\circ$):** On the unit circle of radius $1$, the vertical leg $\sin\theta$ and horizontal leg $\cos\theta$ can never exceed the hypotenuse of length $1$, while $\tan(90^\circ)$ and $\tan(270^\circ)$ sit on vertical asymptotes where $\cos\theta = 0$.
-  * **Factorial Poles & Combinatorial Boundaries:** Real factorials `{{key:x!}}` evaluate $\Gamma(x+1)$ across real arguments except at the negative-integer poles $x \in \{-1, -2, -3, \dots\}$ where $\Gamma(x+1)$ diverges, and discrete combinations $\binom{n}{r}$ (`{{key:Cn,r}}`) or permutations $P(n,r)$ (`{{key:Pn,r}}`) cannot choose $r > n$ items or negative integer counts.
-* **Stack State & Recovery Procedure:**
-  1. All four registers remain frozen with the offending argument in Register $X$.
-  2. Press `{{key:C}}` to clear the error banner.
-  3. **If you intended a complex-plane calculation:** Arm the complex prefix by pressing `{{key:CMPLX}}`, then re-execute the function. For example, with `-16` in $X$, pressing `{{key:CMPLX}} {{key:√x}}` steps off the real line into the Gaussian plane and returns $0 + 4i$ (`0` in $Y$, `4` in $X$).
-  4. **If you made a sign error:** Press `{{key:+/-}}` to flip the sign in $X$ and press the function key again.
+   The continuous integral $\int_1^n \ln x\,dx = n\ln n - n$ supplies the dominant growth rate, the half-logarithm $\frac{1}{2}\ln(2\pi n)$ corrects for the trapezoidal midpoint offset across the discrete steps $k = 1 \dots n$, and the reciprocal Bernoulli terms $+\frac{1}{12n} - \frac{1}{360n^3}$ cancel the remaining curvature error to better than $15$ significant digits for $n \ge 10$; dividing $\ln(n!)$ by $\ln 10$ then separates the base-10 exponent $\operatorname{IP}(\log_{10} n!)$ from the mantissa $10^{\operatorname{FP}(\log_{10} n!)}$.
 
----
+2. **Removable Coordinate Singularities & Secant Regularization (`Code 01`, Eq. B.2):** Near removable $0/0$ singularities—such as the optical diffraction sinc limit $\lim_{x \to 0}\frac{\sin x}{x} = 1$ (for radian angle $x$) or the thermal radiation Planck factor $\lim_{u \to 0}\frac{u}{e^u - 1} = 1$ (for dimensionless photon-energy ratio $u = hc/(\lambda k_B T)$)—direct substitution at $x = 0$ or $u = 0$ traps on `DIVIDE BY 0` (`Code 01`). Dismissing the banner via `{{key:C}}` and perturbing $x$ by $\delta = 10^{-7}$ (or expanding the Maclaurin power series, **Eq. B.2**) cancels the vanishing factor from numerator and denominator to recover full precision on the stack:
 
-### Code 03: OVERFLOW (Floating-Point Magnitude Ceiling)
-* **Why the Singularity Happens:** In 64-bit IEEE-754 double-precision arithmetic, 11 bits are allocated to the binary exponent and establish a maximum finite magnitude of $(2 - 2^{-52}) \times 2^{1023} \approx 1.7976931348623157 \times 10^{308}$. Exponential and factorial functions grow so rapidly that modest inputs cross this threshold:
-  * **Factorials (`{{key:x!}}`):** $170! \approx 7.2574 \times 10^{306}$ fits in Register $X$, whereas $171! \approx 1.2410 \times 10^{309}$ exceeds $10^{308}$.
-  * **Natural & Common Exponentials:** $e^x$ overflows for $x > 709.782712893384$ ($\ln(1.7977 \times 10^{308})$), and $10^x$ overflows for $x > 308.2547155599167$.
-* **Stack State & Recovery Procedure:**
-  1. Press `{{key:C}}` to dismiss the `OVERFLOW` banner; your unscaled operands remain intact in $Y$ and $X$.
-  2. Work in logarithmic space (for example, using Stirling's approximation $\ln(n!) \approx n\ln n - n + \frac{1}{2}\ln(2\pi n)$ or adding logarithms $\log_{10}(a \times b) = \log_{10} a + \log_{10} b$) so huge exponents never overflow the hardware mantissa.
+   $$\frac{\sin x}{x} = 1 - \frac{x^2}{6} + \frac{x^4}{120} - \mathcal{O}(x^6), \qquad \frac{u}{e^u - 1} = 1 - \frac{u}{2} + \frac{u^2}{12} - \mathcal{O}(u^4)$$
 
----
+   Factoring out the leading linear term leaves the exact limiting value $1$ at the origin, followed by smooth polynomial corrections ($-x^2/6$ for the symmetric sinc peak and $-u/2 + u^2/12$ for the Rayleigh–Jeans thermal slope) that evaluate without division by zero:
 
-### Code 04: TOO BIG (36-Bit Two's-Complement Word Overflow)
-* **Why the Singularity Happens:** When operating in Computer Science integer base modes (`HEX`, `OCT`, `BIN`), the SC-32 models a classic 36-bit signed two's-complement architecture, where 1 bit represents the sign and 35 bits represent magnitude:
-  $$\text{Signed 36-Bit Range: } -2^{35} = -34,359,738,368 \;\;(\text{0x800000000}) \;\;\text{to}\;\; +2^{35}-1 = +34,359,738,367 \;\;(\text{0x7FFFFFFFF})$$
-  Attempting to switch from `DEC` into `HEX`, `OCT`, or `BIN` while Register $X$ holds a floating-point number outside $[-2^{35}, 2^{35}-1]$ triggers `TOO BIG`.
-* **Stack State & Recovery Procedure:**
-  1. Press `{{key:C}}` to dismiss the message; your full floating-point value remains intact in Register $X$.
-  2. Remain in `{{key:BASE}} {{key:DEC}}` for arbitrary floating-point magnitudes, or reduce the integer modulo $2^{36}$ before converting to hexadecimal or binary.
-
----
-
-## Statistical, Iterative Solver & Financial Singularities
-
-While Codes 01–04 protect single-step arithmetic and transcendental functions, Codes 05–08 guard multi-variable statistical accumulators, numerical root-finders, polynomial solvers, and compound-interest financial registers.
-
-### Code 05: STAT ERROR (Degrees-of-Freedom & Vertical-Line Singularities)
-* **Why the Singularity Happens:** Statistical summaries condense a cloud of $n$ data points into a center and a spread, which requires enough independent observations to define those geometric quantities:
-  * **Sample Mean with Empty Data ($n = 0$):** Computing $\bar{x} = \frac{\sum x_i}{n}$ when no points have been accumulated via `{{key:Σ+}}` divides $0/0$.
-  * **Sample Standard Deviation with a Single Point ($n < 2$):** Sample standard deviation uses Friedrich Bessel's correction in the denominator:
-    $$s_x = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}}$$
-    The denominator uses $n - 1$ rather than $n$ because the sample mean $\bar{x}$ is calculated from the data itself, which uses up $1$ degree of freedom. If you have only $n = 1$ data point, that point sits on its own mean ($x_1 = \bar{x}$) and produces zero apparent spread with a denominator of $n - 1 = 0$. You need at least $n = 2$ points to measure a distance between measurements.
-  * **Linear Regression with Identical $x$-Coordinates ($\sigma_x = 0$):** Fitting a line $\hat{y} = a + bx$ requires at least two distinct $x$-values. If all entered $(x_i, y_i)$ pairs share the same $x$-coordinate, the points stack in a vertical column of infinite slope ($b = \Delta y / 0$), and Pearson's correlation $r = \frac{s_{xy}}{s_x s_y}$ divides by $s_x = 0$.
-* **Stack State & Recovery Procedure:**
-  1. Press `{{key:C}}` to dismiss; all six statistical accumulators ($\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n$) and the stack remain intact.
-  2. Inspect your current sample count via `{{key:SUMS}}` (`n` on `{{key:LFU5}}`) and add at least a second distinct data point with `{{key:Σ+}}`, or use population standard deviation $\sigma_x$ (`{{key:s,σ}}` $\to$ `σx`) if a single-point population divisor $n = 1$ is intended.
-
----
-
-### Code 06: NO ROOT FOUND (Unbracketed Zero-Crossing in Brent's Solver)
-* **Why the Singularity Happens:** Richard Brent's hybrid root-finding algorithm (`{{key:SOLVE}}`) combines the guaranteed convergence of bisection with the rapid superlinear speed of secant and inverse quadratic interpolation. By the Intermediate Value Theorem, a continuous function $f(x)$ is guaranteed to cross the horizontal axis ($f(x^*) = 0$) inside an interval $[a, b]$ if and only if $f(a)$ and $f(b)$ have *opposite algebraic signs* ($f(a) \cdot f(b) < 0$—one point above the axis, one point below). `NO ROOT FOUND` occurs when:
-  * The curve never crosses the real axis at all (for example, $f(x) = x^2 + 4 > 0$ for every real $x$).
-  * Your two starting guesses in Registers $Y$ and $X$ sit on the same side of the root ($f(a) \cdot f(b) > 0$), and 100 secant steps fail to locate a sign reversal.
-* **Stack State & Recovery Procedure:**
-  1. Press `{{key:C}}` to clear the banner; the solver deposits its closest candidate $x$ in Register $X$ while preserving your equation.
-  2. Sample the active `FN=` equation at trial endpoints via `{{key:XEQ}}` (for example, storing trial abscissas in your equation variable and inspecting the sign of $f(x)$ in Register $X$) to locate an interval $[a, b]$ where $f(a)$ and $f(b)$ have opposite algebraic signs.
-  3. Enter the two verified bracket guesses $a$ (`{{key:ENTER}}`) and $b$ that straddle opposite sides of the zero crossing, and press `{{key:SOLVE}}`.
-
----
-
-### Code 07: A ≠ 0 (Degenerate Leading Coefficient in POLY Solver)
-* **Why the Singularity Happens:** In the characteristic polynomial workspace (`{{key:POLY}}`), a cubic equation $A x^3 + B x^2 + C x + D = 0$ is normalized by dividing through by its highest non-zero leading coefficient ($A$ for a cubic, or $B$ when $A = 0$ for a quadratic). If both $A = 0$ and $B = 0$ (or when a cubic normalization requires a non-zero leading coefficient), dividing by zero is undefined because the polynomial degree collapses.
-* **Stack State & Recovery Procedure:**
-  1. Press `{{key:C}}` to dismiss; your stored coefficients in `A`, `B`, `C`, and `D` remain untouched.
-  2. Store a non-zero leading coefficient and press `{{key:LFU4}}` (`EXEC`). The `{{key:POLY}}` workspace solves quadratics $bx^2 + cx + d = 0$ either natively by setting cubic coefficient $A = 0$ (`0 {{key:A}}`) and entering $(B, C, D)$, or by entering $(A, B, C)$ with $D = 0$ (`0 {{key:D}}`, factoring $x(Ax^2 + Bx + C) = 0$). All three analytical roots $(r_1, r_2, r_3)$—including complex conjugate pairs—are written to indirect registers `R34`–`R39` (`34`–`35` for $\text{Re}(r_1), \text{Im}(r_1)$, `36`–`37` for $r_2$, and `38`–`39` for $r_3$) and can be browsed in the `{{key:REGS}}` (`{{key:0}}` or `{{key:MEM}}` $\to$ `REGS`, `STO` tab) catalog or recalled via indirect addressing (`34 {{key:STO}} i`, `{{key:RCL}} (i)`).
-
----
-
-### Code 08: ERROR 5 (Cash-Flow Sign Violation in Time Value of Money)
-* **Why the Singularity Happens:** The Time Value of Money (`{{key:TVM}}`) equation balances present value ($PV$), periodic payments ($PMT$), and future value ($FV$) discounted at periodic rate $i$. The display message `ERROR 5` intentionally preserves the classic HP-12C actuarial error designation for TVM cash-flow sign violations where `PV`, `PMT`, and `FV` all share the same sign:
-  $$PV + PMT \left[\frac{1 - (1+i)^{-N}}{i}\right] + FV(1+i)^{-N} = 0$$
-  Here the right-hand side is zero. If you enter $PV > 0$, $PMT > 0$, and $FV \ge 0$ (all positive), you are asking the solver to find an interest rate where money flows *only toward you* and never leaves your pocket—a sum of strictly positive numbers can never add up to zero for any real interest rate $i > -100\%$.
-* **Stack State & Recovery Procedure:**
-  1. Press `{{key:C}}` to dismiss; all five financial registers (`N`, `I%`, `PV`, `PMT`, `FV`) remain intact.
-  2. Enforce the cash-flow sign convention: cash *received* (such as a loan principal $PV$) is positive, and cash *paid out* (such as monthly mortgage payments $PMT$ or a savings deposit) is negative (`{{key:+/-}}`). Flip the sign of the outflow variable, store it back into its TVM softkey, and solve again.
-
----
-
-## Memory, Quadrature & Hardware Diagnostic Recovery Protocols
-
-Codes 09 through 12 govern non-volatile equation bank capacity, numerical integration convergence limits, user interrupts, and unsigned arithmetic guards.
-
-### Code 09: MEMORY FULL (Equation Bank Capacity Reached)
-* **Triggering Keystrokes:** Pressing `{{key:EQN}}` (Right Shift `{{key:↱}}` above `{{key:STO}}`) and attempting to create a 25th stored equation or exceed the flash equation token budget.
-* **Why the Singularity Happens:** The SC-32 stores up to 24 persistent user-defined postfix equations in continuous flash memory (`{{key:EQN}}`). Attempting to allocate a 25th equation slot or exceed the flash sector step budget triggers `MEMORY FULL`.
-* **Non-Destructive Recovery:**
-  1. Press `{{key:C}}` to dismiss; all existing equations, variables `A`–`Z`, and the stack remain 100% intact.
-  2. Open the equation bank (`{{key:EQN}}`), scroll to a temporary or obsolete equation, and delete it via `{{key:CLEAR}}` $\to$ `CLEQN` (`{{key:LFU0}}`).
-
----
-
-### Code 10: TIMEOUT (Romberg Quadrature Subdivision Exhaustion)
-* **Triggering Keystrokes:** Invoking `{{key:∫}}` (Right Shift `{{key:↱}}` above `{{key:8}}`) on an integrand that fails to converge within the maximum Romberg refinement depth.
-* **Why the Singularity Happens:** Adaptive Romberg quadrature (`{{key:∫}}`) repeatedly halves the trapezoid width $h_k = (b-a)/2^k$ and applies Richardson $\frac{4^m T_{k,m-1} - T_{k-1,m-1}}{4^m - 1}$ extrapolation until successive diagonal estimates agree to within $\epsilon = 10^{-9}$. If an integrand has a vertical asymptote inside $[a, b]$, a sharp step discontinuity, or violent high-frequency oscillation (such as $\sin(1/x)$ near $x = 0$), the error estimate may not settle within 100,000 function evaluations.
-* **Non-Destructive Recovery:**
-  1. Press `{{key:C}}` to dismiss; the finest-grid numerical approximation achieved before timeout is preserved in Register $X$.
-  2. Split the integration interval $[a, b]$ at the discontinuity or narrow the bounds around smooth sub-intervals, and sum the piecewise integrals on the stack.
-
----
-
-### Code 11: INTERRUPTED (Clean User Abort of Iterative Engine)
-* **Triggering Keystrokes:** Pressing `{{key:C}}` during an active `{{key:SOLVE}}`, `{{key:∫}}`, or `{{key:POLY}}` sweep.
-* **Why the Singularity Happens:** Pressing `{{key:C}}` while the calculator is actively running a multi-step Romberg integral (`{{key:∫}}`), a Brent root search (`{{key:SOLVE}}`), or a cubic solve (`{{key:POLY}}`) halts the iterative loop.
-* **Non-Destructive Recovery:**
-  1. Temporary solver scratch variables are discarded, and your four operational stack registers ($X, Y, Z, T$) are restored to their pre-execution state.
-  2. Press `{{key:C}}` once more to clear the `INTERRUPTED` notice and resume calculation.
-
----
-
-### Code 12: Unsigned Flag 6 (`NO NEG`), Equation & Integer Guard Banners
-* **Triggering Keystrokes:** Subtracting $Y < X$ or pressing `{{key:+/-}}` while System Flag 6 (`NO NEG`) is active (`INVALID DATA` on the SC-32; `CANNOT BE < 0` on the elementary SC-6), invoking `{{key:XEQ}}`, `{{key:SOLVE}}`, or `{{key:∫}}` without an active equation (`NO EQN`) or with a malformed token stream (`INVALID FOR EQN`), or invoking `{{key:GCD}}` / `{{key:LCM}}` in `PARTS` on a fractional operand (`INTEGER REQUIRED`).
-* **Why the Singularity Happens:** When Flag 6 (`NO NEG`, the unsigned whole-number arithmetic profile) is active, negative inputs and results ($Y - X < 0$) are blocked at zero. Likewise, equation engines require a valid stored RPN formula in `{{key:EQN}}`, and number-theoretic greatest common divisor (`{{key:GCD}}`) and least common multiple (`{{key:LCM}}`) are defined strictly over the ring of integers $\mathbb{Z}$.
-* **Non-Destructive Recovery:**
-  1. Press `{{key:C}}` to dismiss the diagnostic banner; both $Y$ and $X$ remain untouched.
-  2. For `NO NEG`, press `{{key:x⇄y}}` to swap $Y$ and $X$ or clear Flag 6 (`{{key:FLAGS}}` $\to$ `CF 6`); for `NO EQN` / `INVALID FOR EQN`, enter or select a valid equation in `{{key:EQN}}`; and for `INTEGER REQUIRED`, strip fractional parts via `{{key:PARTS}}` $\to$ `{{key:IP}}` before computing `{{key:GCD}}` or `{{key:LCM}}`.
-
----
-
-### SC-32 Hardware Recovery Protocols
-
-For collegiate and professional engineering examinations, laboratory baseline resets, or power transitions, the SC-32 provides three graduated reset levels:
-
-1. **Soft Status Clear (Non-Destructive):** Press `{{key:C}}` twice. Cancels any active menu prompt, dismisses error banners, and clears pending `{{key:↰}}` or `{{key:↱}}` shift flags without erasing variables, statistical accumulators, or the stack.
-2. **Selective Workspace Clear (`{{key:CLEAR}}` Menu):** Press `{{key:CLEAR}}` (Left Shift `{{key:↰}}` above `{{key:<-}}`) to choose a targeted reset on the six top LFU softkeys:
-   * `CLEQN` (`{{key:LFU0}}`): Deletes the selected equation in the Equation Bank.
-   * `CLVARS` (`{{key:LFU1}}`) / `CLREGS` (`{{key:LFU4}}`): Zeroes letter storage registers `A`–`Z` (and `CLVARS` also zeroes the five `TVM` financial registers `N`, `I%`, `PV`, `PMT`, `FV`).
-   * `CLΣ` (`{{key:LFU3}}`): Zeroes the six statistical accumulators ($\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n$).
-   * `CLSTK` (`{{key:LFU5}}`): Zeroes stack registers $T, Z, Y, X$ while keeping stored variables intact.
-3. **Full Factory Baseline Reset (`CLALL`):** Hold `{{key:C}}` while powering on, or press `{{key:CLEAR}}` $\to$ `CLALL` (`{{key:LFU2}}`). Erases all variables `A`–`Z`, statistical accumulators, TVM financial registers, stored equations, and the stack, returning angular mode to `DEG` and display format to `ALL`. On every power-up, the firmware also verifies the cyclic redundancy checksum of its dual non-volatile state slots, automatically falling back to the last verified atomic snapshot if a battery swap occurred mid-write.
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `200 {{key:LN}} 200 {{key:×}} 200 {{key:-}}` | $0$ | $0$ | $0$ | $859.663$ | Leading Stirling terms $n\ln n - n$ for $n = 200$ (beyond $170!$ ceiling) |
+| `2 {{key:π}} {{key:×}} 200 {{key:×}} {{key:LN}} 2 {{key:÷}} {{key:+}} 2400 {{key:1/x}} {{key:+}}` | $0$ | $0$ | $0$ | $863.232$ | Add $\frac{1}{2}\ln(2\pi n) + \frac{1}{12n} \approx 3.569$: $\ln(200!) \approx 863.232$ |
+| `10 {{key:LN}} {{key:÷}}` | $0$ | $0$ | $0$ | **$374.897$** | Convert to base-10 log: $\log_{10}(200!) \approx 374.897 \implies 200! \approx 7.886 \times 10^{374}$ |

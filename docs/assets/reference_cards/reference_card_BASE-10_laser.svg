@@ -145,52 +145,59 @@
       <line x1="12" y1="69" x2="438" y2="69" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
       <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Counter Blocks A</text>
-      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">26x</text>
+      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">20x</text>
       <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#ffffff">19.0 mm Tile</text>
       <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA White</text>
       <line x1="12" y1="91" x2="438" y2="91" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Counter Blocks B</text>
-      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">26x</text>
+      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Landmark [10] A</text>
+      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">6x</text>
       <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#ffffff">19.0 mm Tile</text>
-      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA Tan</text>
+      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA White</text>
       <line x1="12" y1="113" x2="438" y2="113" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Regrouping Cubes</text>
-      <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">2x</text>
-      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#ffffff">19.0 mm Cube</text>
-      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Muted Red</text>
+      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Counter Blocks B</text>
+      <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">20x</text>
+      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#ffffff">19.0 mm Tile</text>
+      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA Tan</text>
       <line x1="12" y1="135" x2="438" y2="135" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Twin Stage Lid</text>
-      <text x="180" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
-      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#ffffff">Twin 10-Frame</text>
-      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA White</text>
+      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Landmark [10] B</text>
+      <text x="180" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">6x</text>
+      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#ffffff">19.0 mm Tile</text>
+      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA Tan</text>
       <line x1="12" y1="157" x2="438" y2="157" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">3x1 Storage Bin</text>
+      <text x="14" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Twin Stage Lid</text>
       <text x="180" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
-      <text x="215" y="174" class="font-mono" font-size="12.5px" fill="#ffffff">49.0 mm</text>
+      <text x="215" y="174" class="font-mono" font-size="12.5px" fill="#ffffff">Twin 10-Frame</text>
       <text x="436" y="174" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA White</text>
       <line x1="12" y1="179" x2="438" y2="179" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
+      <text x="14" y="196" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">3x1 Storage Bin</text>
+      <text x="180" y="196" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
+      <text x="215" y="196" class="font-mono" font-size="12.5px" fill="#ffffff">49.0 mm</text>
+      <text x="436" y="196" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA White</text>
+      <line x1="12" y1="201" x2="438" y2="201" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+
 
     <!-- Total Pieces Summary -->
-    <text x="14" y="212" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">TOTAL: 52 Counters + 2 Carry Cubes + 2 Trays</text>
-    <text x="14" y="228" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">+ Box + Lid = 56 Parts</text>
+    <text x="14" y="234" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">TOTAL: 40 Counters + 12 Landmark [10] Blocks</text>
+    <text x="14" y="250" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">+ 2 Trays + Box + Lid = 56 Parts</text>
 
     <!-- Palette Box -->
-    <g transform="translate(12, 254)">
-      <rect x="0" y="0" width="426" height="172" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <g transform="translate(12, 276)">
+      <rect x="0" y="0" width="426" height="190" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">SLANT 3D PRODUCTION PALETTE</text>
     </g>
-    <text x="24" y="290" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA White: Counter Set A, Storage Box Body &amp; Stage</text>
-    <text x="24" y="308" class="font-sans" font-size="13.5px" fill="#cccccc">Lid.</text>
-    <text x="24" y="326" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA Tan: Counter Set B for second operand.</text>
-    <text x="24" y="344" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA Gray: Dual 2x5 activity trays for neutral</text>
-    <text x="24" y="362" class="font-sans" font-size="13.5px" fill="#cccccc">ground.</text>
-    <text x="24" y="380" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA Matte Muted Red: Regrouping carry cubes (+1 /</text>
-    <text x="24" y="398" class="font-sans" font-size="13.5px" fill="#cccccc">+10).</text>
+    <text x="24" y="312" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA White: Set A (20x Counters + 6x [10] Blocks),</text>
+    <text x="24" y="330" class="font-sans" font-size="13.5px" fill="#cccccc">Box Body &amp; Stage Lid.</text>
+    <text x="24" y="348" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA Tan: Set B (20x Counters + 6x [10] Blocks) for</text>
+    <text x="24" y="366" class="font-sans" font-size="13.5px" fill="#cccccc">second operand.</text>
+    <text x="24" y="384" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA Gray: Dual 5x2 Ten-Frame activity trays for high</text>
+    <text x="24" y="402" class="font-sans" font-size="13.5px" fill="#cccccc">contrast.</text>
+    <text x="24" y="420" class="font-sans" font-size="13.5px" fill="#cccccc">• All 52 blocks pack in 4 columns of 13 blocks + 2</text>
+    <text x="24" y="438" class="font-sans" font-size="13.5px" fill="#cccccc">side trays.</text>
   </g>
 
   <!-- COLUMN 3: WHY KEEP CARD (Width: 290) -->
@@ -258,7 +265,7 @@
   <metadata id="stackcalc-book-macro-manifest" data-kit="BASE-10">
     <stackcalc-macros>
       <macro-ref token="{{blocks:ten_frame_bridging_ten}}" kind="blocks" id="ten_frame_bridging_ten" png="ten_frame_bridging_ten.png" svg="ten_frame_bridging_ten.svg" scene="Education/tools/generate_book_diagrams.py::book_ten_frame_bridging_ten.scad" scad="book_ten_frame_bridging_ten.scad" scad-sources="Education/scad/ten_frames_box.scad,Education/scad/ten_frames_parts.scad" stls="Education/build/stl/components/tenframe_tray_1.stl,Education/build/stl/components/tenframe_counter_face_a_1.stl,Education/build/stl/components/tenframe_box_body.stl" />
-      <macro-ref token="{{blocks:place_value_regrouping}}" kind="blocks" id="place_value_regrouping" png="place_value_regrouping.png" svg="place_value_regrouping.svg" scene="Education/tools/generate_book_diagrams.py::book_place_value_regrouping.scad" scad="book_place_value_regrouping.scad" scad-sources="Education/scad/place_value_box.scad,Education/scad/place_value_parts.scad" stls="Education/build/stl/components/place_value_box_body.stl,Education/build/stl/components/place_value_tray_4x2_1.stl,Education/build/stl/components/pv_digit_block_slate_1.stl" />
+      <macro-ref token="{{blocks:place_value_regrouping}}" kind="blocks" id="place_value_regrouping" png="place_value_regrouping.png" svg="place_value_regrouping.svg" scene="Education/tools/generate_book_diagrams.py::book_place_value_regrouping.scad" scad="book_place_value_regrouping.scad" scad-sources="Education/scad/place_value_box.scad,Education/scad/place_value_parts.scad" stls="Education/build/stl/components/place_value_box_body.stl,Education/build/stl/components/place_value_tray_whole.stl,Education/build/stl/components/pv_digit_block_slate_1_13.stl" />
       <macro-ref token="{{blocks:ten_frame_subitizing_5anchor}}" kind="blocks" id="ten_frame_subitizing_5anchor" png="ten_frame_subitizing_5anchor.png" svg="ten_frame_subitizing_5anchor.svg" scene="Education/tools/generate_book_diagrams.py::book_ten_frame_subitizing_5anchor.scad" scad="book_ten_frame_subitizing_5anchor.scad" scad-sources="Education/scad/ten_frames_box.scad,Education/scad/ten_frames_parts.scad" stls="Education/build/stl/components/tenframe_box_body.stl,Education/build/stl/components/tenframe_tray_1.stl,Education/build/stl/components/tenframe_counter_face_a_1.stl,Education/build/stl/components/tenframe_miniblock_10_1.stl" />
       <macro-ref token="{{blocks:ten_frames_hero}}" kind="blocks" id="ten_frames_hero" png="ten-frames-hero.png" svg="ten-frames-hero.png" scene="Tools/rendering/render_product_stills.py::render_ten_frames" scad="Education/scad/ten_frames_box.scad" scad-sources="Education/scad/ten_frames_box.scad,Education/scad/ten_frames_parts.scad" stls="scratch/stl/education/ten_frames_box.stl,scratch/stl/ten_frame_tray.stl,scratch/stl/ten_frame_shelf.stl,scratch/stl/ten_frame_counter.stl" />
       <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />

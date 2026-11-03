@@ -641,31 +641,43 @@ hide:
       <tbody>
         <tr>
           <td class="ec-spec-k">Whole Unit \(\left(\frac{1}{1}\right)\)</td>
-          <td class="ec-spec-v">84.0 mm visible height datum &bull; 1 included &bull; Debossed 4-face notation</td>
+          <td class="ec-spec-v">84.00 mm visible height datum &bull; 2 included (2 columns) &bull; Debossed 4-face notation</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Halves \(\left(\frac{1}{2}\right)\)</td>
-          <td class="ec-spec-v">42.0 mm visible height &bull; 2 included &bull; 2 blocks = 84.0 mm flush</td>
+          <td class="ec-spec-v">42.00 mm visible height &bull; 4 included (2 columns of 2) &bull; 2 blocks = 84.00 mm flush</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Thirds \(\left(\frac{1}{3}\right)\)</td>
-          <td class="ec-spec-v">28.0 mm visible height &bull; 3 included &bull; 3 blocks = 84.0 mm flush</td>
+          <td class="ec-spec-v">28.00 mm visible height &bull; 3 included &bull; 3 blocks = 84.00 mm flush</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Quarters \(\left(\frac{1}{4}\right)\)</td>
-          <td class="ec-spec-v">21.0 mm visible height &bull; 4 included &bull; 4 blocks = 84.0 mm flush</td>
+          <td class="ec-spec-v">21.00 mm visible height &bull; 4 included &bull; 4 blocks = 84.00 mm flush</td>
+        </tr>
+        <tr>
+          <td class="ec-spec-k">Fifths \(\left(\frac{1}{5}\right)\)</td>
+          <td class="ec-spec-v">16.80 mm visible height &bull; 5 included &bull; 5 blocks = 84.00 mm flush</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Sixths \(\left(\frac{1}{6}\right)\)</td>
-          <td class="ec-spec-v">14.0 mm visible height &bull; 6 included &bull; 6 blocks = 84.0 mm flush</td>
+          <td class="ec-spec-v">14.00 mm visible height &bull; 6 included &bull; 6 blocks = 84.00 mm flush</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Eighths \(\left(\frac{1}{8}\right)\)</td>
-          <td class="ec-spec-v">10.5 mm visible height &bull; 8 included &bull; 8 blocks = 84.0 mm flush</td>
+          <td class="ec-spec-v">10.50 mm visible height &bull; 8 included &bull; 8 blocks = 84.00 mm flush</td>
+        </tr>
+        <tr>
+          <td class="ec-spec-k">Ninths \(\left(\frac{1}{9}\right)\)</td>
+          <td class="ec-spec-v">9.33 mm visible height &bull; 9 included &bull; 9 blocks = 84.00 mm flush</td>
+        </tr>
+        <tr>
+          <td class="ec-spec-k">Tenths \(\left(\frac{1}{10}\right)\)</td>
+          <td class="ec-spec-v">8.40 mm visible height &bull; 10 included &bull; 10 blocks = 84.00 mm flush</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Twelfths \(\left(\frac{1}{12}\right)\)</td>
-          <td class="ec-spec-v">7.0 mm visible height &bull; 2 included &bull; 12 blocks = 84.0 mm flush</td>
+          <td class="ec-spec-v">7.00 mm visible height &bull; 12 included &bull; 12 blocks = 84.00 mm flush</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Industrial Design &amp; CMF</td>
@@ -692,24 +704,24 @@ hide:
        ========================================================================== -->
   <section class="ec-section">
     <h2 class="ec-section-title">What's in the Kit</h2>
-    <p class="ec-section-subtitle">Complete 26-piece classroom and home mathematics lab.</p>
+    <p class="ec-section-subtitle">Complete 65-piece classroom and home mathematics lab.</p>
 
     <div class="ec-box-grid">
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">26 Precision Proportional Fraction Towers (\(\frac{1}{1}\) through \(\frac{1}{12}\))</span>
+        <span class="ec-box-text">63 Precision Proportional Fraction Towers across 12 columns and 10 curriculum denominators (\(\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \frac{1}{6}, \frac{1}{8}, \frac{1}{9}, \frac{1}{10}, \frac{1}{12}\))</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">3&times;1&times;13U Snapfinity Gridfinity Storage Enclosure Box with Snapfinity Stackable Fraction Stage Lid</span>
+        <span class="ec-box-text">3&times;1&times;13U Caddy-Free Socketed Gridfinity Storage Enclosure Box (125.5 &times; 42.0 &times; 98.4 mm) with 12 integrated debossed fraction socket floors</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">Removable 12-Column Caddy Chassis with anti-scrape vertical runner glides and debossed fraction socket floors</span>
+        <span class="ec-box-text">Snapfinity Dual-Well Stackable Fraction Comparator Stage Lid</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">12 Laminated Hands-On Fraction Investigation Activity Cards &bull; Teacher / Parent Implementation Guide</span>
+        <span class="ec-box-text">Archival 4&times;6" Reference Card &bull; 12 Laminated Fraction Investigation Activity Cards &bull; Teacher / Parent Guide</span>
       </div>
     </div>
   </section>
@@ -826,11 +838,11 @@ hide:
     <div class="space-y-4">
       <details class="p-4 rounded-lg bg-slate-900/50 border border-slate-700/60 group">
         <summary class="font-semibold text-gray-100 cursor-pointer flex justify-between items-center">
-          <span>How does the 12-column caddy keep classroom pieces organized?</span>
+          <span>How does the 12-column socketed enclosure keep classroom pieces organized?</span>
           <span class="text-cyan-400 text-lg group-open:rotate-45 transition-transform">+</span>
         </summary>
         <p class="mt-3 text-sm text-gray-300 leading-relaxed">
-          The 12-column caddy chassis slides smoothly into the 3&times;1&times;13U Gridfinity enclosure on anti-scrape vertical runner glides. Every socket floor features permanently debossed fraction numerals (Row 0: 1/7 to 1/12; Row 1: 1 to 1/6), allowing teachers and students to complete a full visual inventory audit in under 3 seconds before packing away.
+          The 3&times;1&times;13U Gridfinity enclosure features 12 integrated socket wells with permanently debossed fraction numerals (Row 1: 1, 1, 1/2, 1/2, 1/3, 1/4; Row 0: 1/5, 1/6, 1/8, 1/9, 1/10, 1/12). Every complete fraction column levels off at the uniform 84.00 mm waterline, allowing teachers and students to complete a full visual inventory audit in under 3 seconds before packing away.
         </p>
       </details>
 
@@ -840,7 +852,7 @@ hide:
           <span class="text-cyan-400 text-lg group-open:rotate-45 transition-transform">+</span>
         </summary>
         <p class="mt-3 text-sm text-gray-300 leading-relaxed">
-          The whole unit tower measures exactly 80.0 mm in height. Fractions scale proportionally: \(1/2 = 40.0\,\text{mm}\), \(1/3 \approx 26.7\,\text{mm}\), \(1/4 = 20.0\,\text{mm}\), \(1/6 \approx 13.3\,\text{mm}\), \(1/8 = 10.0\,\text{mm}\), and \(1/12 \approx 6.7\,\text{mm}\). Placing two 1/4 blocks next to a 1/2 block creates a continuous, perfectly flush top plane.
+          The whole unit tower measures exactly 84.00 mm in visible height. Fractions scale proportionally across all 10 curriculum denominators: \(1/2 = 42.00\,\text{mm}\), \(1/3 = 28.00\,\text{mm}\), \(1/4 = 21.00\,\text{mm}\), \(1/5 = 16.80\,\text{mm}\), \(1/6 = 14.00\,\text{mm}\), \(1/8 = 10.50\,\text{mm}\), \(1/9 = 9.33\,\text{mm}\), \(1/10 = 8.40\,\text{mm}\), and \(1/12 = 7.00\,\text{mm}\). Placing two 1/4 blocks next to a 1/2 block creates a continuous, perfectly flush top plane.
         </p>
       </details>
 

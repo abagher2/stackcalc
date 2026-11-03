@@ -173,7 +173,7 @@ class KeyRegistry:
         # Additional contextual softkeys in STAT / EQN / PLOT / TVM modes
         extra_softkeys = [
             "CLx", "CLΣ", "2-LV", "4-LV", "8-LV",
-            "I%", "END/BEG", "BGN/END", "d/dx",
+            "I%", "I%YR", "END/BEG", "BGN/END", "d/dx",
             "NEW", "VARS", "PRGM",
         ]
         for sk in extra_softkeys:
@@ -363,8 +363,6 @@ def scan_citation_backreferences(volume: str) -> Dict[str, List[Tuple[str, str]]
         return backrefs
 
     for md_path in sorted(manuals_dir.glob("*.md")):
-        if md_path.name == bib_file:
-            continue
         text = md_path.read_text(encoding="utf-8")
         ch_label = get_chapter_label(md_path)
         for m in CITE_MACRO_PATTERN.finditer(text):
@@ -403,18 +401,134 @@ def get_bibtex_blocks_for_volume(volume: str) -> str:
     return "\n\n".join(blocks)
 
 
+def _invert_single_author_name(name: str, short_author: str = "") -> str:
+    name = name.strip()
+    if short_author and name.endswith(" " + short_author):
+        given = name[: -len(short_author)].strip()
+        return f"{short_author}, {given}"
+    parts = name.rsplit(" ", 1)
+    if len(parts) == 2:
+        return f"{parts[1]}, {parts[0]}"
+    return name
+
+
+def _format_sc32_bib_author(e: dict) -> str:
+    raw = e.get("author", "").strip()
+    sa = e.get("short_author", "").strip()
+    eid = e.get("id", "")
+    if eid == "student1908":
+        return "Student (William Sealy Gosset)"
+    if eid == "cleomedes2004":
+        return raw.replace(" & ", " and ")
+    if any(
+        corp in raw
+        for corp in ("Company", "Society", "Association", "Council", "Institute", "League", "Agency")
+    ):
+        return raw.replace(" & ", " and ")
+    if " & " in raw:
+        left, right = raw.split(" & ", 1)
+        first_group = [p.strip() for p in left.split(",") if p.strip()]
+        first_inv = _invert_single_author_name(first_group[0])
+        rest = first_group[1:]
+        if rest:
+            return f"{first_inv}, " + ", ".join(rest) + f", and {right.strip()}"
+        return f"{first_inv}, and {right.strip()}"
+    return _invert_single_author_name(raw, sa)
+
+
+def _bib_sort_key(text: str) -> str:
+    norm = text.replace("Ł", "L").replace("ł", "l")
+    return unicodedata.normalize("NFKD", norm).encode("ascii", "ignore").decode("ascii").lower()
+
+
 def generate_bibliography_markdown(volume: str, target_format: str = "web", file_path: Optional[Path] = None) -> str:
     reg = get_citations_registry()
+    if volume == "sc32":
+        sc32_entries = [
+            e for e in reg.values()
+            if e.get("volume_scope", "both") in ("sc32", "both")
+        ]
+        sc32_entries.sort(
+            key=lambda x: (
+                _bib_sort_key(_format_sc32_bib_author(x)),
+                x.get("year", 0),
+                x.get("title", "").lower(),
+            )
+        )
+        lines: List[str] = []
+        for e in sc32_entries:
+            eid = e["id"]
+            author = _format_sc32_bib_author(e).rstrip(".")
+            year = e.get("year", "")
+            title = e.get("title", "").replace("--", "–").rstrip(".")
+            etype = e.get("entry_type", "book")
+            journal = e.get("journal", "").replace("--", "–")
+            publisher = (
+                e.get("publisher")
+                or e.get("institution")
+                or e.get("organization")
+                or ""
+            ).replace("--", "–")
+            vol = e.get("volume", "")
+            num = e.get("number", "")
+            pages = e.get("pages", "").replace("--", "–")
+            addr = e.get("address", "")
+
+            if journal:
+                venue = f"*{journal}*"
+                if vol and num:
+                    venue += f" {vol}, {num} ({year})"
+                elif vol:
+                    venue += f" {vol} ({year})"
+                if pages:
+                    venue += f", {pages}"
+                venue_part = f" {venue}." if venue else ""
+                ref_line = f"{author}. {year}. {title}.{venue_part}"
+            elif etype == "techreport":
+                rep_no = f" Technical Report {num}." if num else " Technical Report."
+                pub_addr = ", ".join(p for p in (publisher, addr) if p)
+                pub_part = f" {pub_addr}." if pub_addr else ""
+                ref_line = f"{author}. {year}. *{title}*.{rep_no}{pub_part}"
+            else:
+                pub_addr = ", ".join(p for p in (publisher, addr) if p)
+                pub_part = f" {pub_addr}." if pub_addr else ""
+                ref_line = f"{author}. {year}. *{title}*.{pub_part}"
+
+            if target_format == "web":
+                lines.append(f'<a id="cite-{eid}"></a>')
+            lines.append(ref_line)
+            lines.append("")
+        return "\n".join(lines)
+
     backrefs = scan_citation_backreferences(volume)
 
-    CATEGORY_ORDER = [
-        "Foundations of Logic & Computer Architecture",
-        "Corvallis Silicon & Handheld Architecture",
-        "Numerical Stability & Scientific Algorithms",
-        "Breakout Mathematics & Scientific Nonfiction",
-        "Pedagogy, Cognitive Science & Manipulatives",
-        "Standards & Hardware Handbooks",
-    ]
+    if volume == "sc6":
+        CATEGORY_ORDER = [
+            "History of Stack Notation & Pocket Calculators",
+            "Classic Discoveries in Mathematics & Physics",
+            "Mathematics, Nature & Popular Nonfiction",
+            "Hands-On Mathematics Education & Curriculum Standards",
+        ]
+        SC6_CAT_MAP = {
+            "Foundations of Logic & Computer Architecture": "History of Stack Notation & Pocket Calculators",
+            "Corvallis Silicon & Handheld Architecture": "History of Stack Notation & Pocket Calculators",
+            "Numerical Stability & Scientific Algorithms": "Classic Discoveries in Mathematics & Physics",
+            "Breakout Mathematics & Scientific Nonfiction": "Mathematics, Nature & Popular Nonfiction",
+            "Pedagogy, Cognitive Science & Manipulatives": "Hands-On Mathematics Education & Curriculum Standards",
+            "Standards & Hardware Handbooks": "Hands-On Mathematics Education & Curriculum Standards",
+        }
+    else:
+        CATEGORY_ORDER = [
+            "Foundations of Logic & Computer Architecture",
+            "Corvallis Silicon & Handheld Architecture",
+            "Numerical Stability & Scientific Algorithms",
+            "Breakout Mathematics & Scientific Nonfiction",
+            "Cognitive Science, Problem Solving & Mathematical Intuition",
+            "Standards & Hardware Handbooks",
+        ]
+        SC6_CAT_MAP = {
+            "Pedagogy, Cognitive Science & Manipulatives": "Cognitive Science, Problem Solving & Mathematical Intuition",
+        }
 
     cat_entries: Dict[str, List[dict]] = {cat: [] for cat in CATEGORY_ORDER}
     other_entries: List[dict] = []
@@ -423,7 +537,8 @@ def generate_bibliography_markdown(volume: str, target_format: str = "web", file
         scope = entry.get("volume_scope", "both")
         if scope != "both" and scope != volume:
             continue
-        cat = entry.get("category", "")
+        raw_cat = entry.get("category", "")
+        cat = SC6_CAT_MAP.get(raw_cat, raw_cat)
         if cat in cat_entries:
             cat_entries[cat].append(entry)
         else:
@@ -1052,7 +1167,7 @@ def auto_number_headings(markdown: str, file_path: Path) -> str:
         if line.startswith("### ") and not line.startswith("#### "):
             raw_title = line[4:].strip()
             clean_title = strip_manual_section_number(raw_title)
-            if re.match(r"^(?:Problem|Adventure|Challenge|Equation|Case Study|Station|Drill)\s+[A-Z0-9]", clean_title):
+            if re.match(r"^(?:Problem|Adventure|Challenge|Equation|Case Study|Station|Drill|Level)\s+[A-Z0-9]", clean_title):
                 out_lines.append(f"### {clean_title}")
             elif h2_count > 0:
                 h3_count += 1
@@ -1154,6 +1269,81 @@ def sync_cross_reference_anchors(markdown: str, file_path: Path, is_sc32: bool) 
     return re.sub(r"\[([^\]]+)\]\(([^)#]*?)#([a-z0-9_-]+)\)", _link_repl, markdown)
 
 
+def auto_number_figures_and_equations(markdown: str, file_path: Path, is_sc32: bool, target_format: str = "web") -> str:
+    """
+    Deterministically numbers all standalone markdown images `![caption](path)` as
+    `![Figure X.Y: caption](path)` and (for web target) appends `\\tag{Eq. X.Y}` to
+    standalone `$$ ... $$` display equations in SC-32 manual chapters and appendices.
+    """
+    if not is_sc32:
+        return markdown
+    name = file_path.name
+    if name == "index.md":
+        prefix = "0"
+    else:
+        prefix = get_chapter_prefix(file_path)
+    if prefix is None:
+        return markdown
+
+    lines = markdown.split("\n")
+    out_lines: List[str] = []
+    in_fence = False
+    fig_count = 0
+
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("```"):
+            in_fence = not in_fence
+            out_lines.append(line)
+            continue
+        if in_fence:
+            out_lines.append(line)
+            continue
+
+        img_m = re.match(r"^!\[(.*?)\]\((.*?)\)\s*$", stripped)
+        if img_m:
+            fig_count += 1
+            raw_alt = img_m.group(1).strip()
+            img_url = img_m.group(2).strip()
+            clean_alt = re.sub(r"^(?:Figure(?:\s+[A-Za-z0-9.]+)?:\s*)", "", raw_alt, flags=re.IGNORECASE).strip()
+            out_lines.append(f"![Figure {prefix}.{fig_count}: {clean_alt}]({img_url})")
+            continue
+
+        out_lines.append(line)
+
+    result = "\n".join(out_lines)
+    if target_format == "web":
+        fenced_blocks: Dict[str, str] = {}
+
+        def _save_fenced(m: re.Match) -> str:
+            k = f"QQWEBFENCE{len(fenced_blocks)}QQ"
+            fenced_blocks[k] = m.group(0)
+            return k
+
+        result = re.sub(r"```.*?```", _save_fenced, result, flags=re.DOTALL)
+        eq_count = 0
+
+        def _tag_display_eq(m: re.Match) -> str:
+            nonlocal eq_count
+            inner = m.group(1).strip()
+            if not inner or "\n>" in m.group(0):
+                return m.group(0)
+            if inner.startswith((r"\mathtt{[", r"\texttt{[")):
+                return m.group(0)
+            eq_count += 1
+            if r"\tag{" in inner:
+                return m.group(0)
+            if "\n" in m.group(1):
+                return f"$$\n{inner} \\tag{{Eq. {prefix}.{eq_count}}}\n$$"
+            return f"$${inner} \\tag{{Eq. {prefix}.{eq_count}}}$$"
+
+        result = re.sub(r"(?<!\\)\$\$(.+?)(?<!\\)\$\$", _tag_display_eq, result, flags=re.DOTALL)
+        for k, v in fenced_blocks.items():
+            result = result.replace(k, v)
+
+    return result
+
+
 def process_manual_markdown(
     markdown: str,
     file_path: Path,
@@ -1167,6 +1357,7 @@ def process_manual_markdown(
       2. Synchronizes any `#anchor` cross-references to auto-numbered sections
       3. Validates and expands all `{{key:...}}`, `{{keycap:...}}`, `{{seq:...}}`,
          `{{res:...}}`, `{{screenshot:...}}`, `{{blocks:...}}`, and `{{cite:...}}` macros.
+      4. Auto-numbers figures (`Figure X.Y:`) and web display equations (`Eq. X.Y`).
     """
     if is_sc32 is None:
         is_sc32 = "sc32" in str(file_path)
@@ -1181,7 +1372,8 @@ def process_manual_markdown(
     step1 = auto_number_headings(step0, file_path)
     step2 = sync_cross_reference_anchors(step1, file_path, is_sc32=is_sc32)
     step3 = expand_key_macros(step2, is_sc32=is_sc32, file_path=file_path, target_format=target_format)
-    return step3
+    step4 = auto_number_figures_and_equations(step3, file_path, is_sc32=is_sc32, target_format=target_format)
+    return step4
 
 
 if __name__ == "__main__":

@@ -1,78 +1,59 @@
 ---
-title: "Appendix C: Physical Keycap Directory & Engineering Architecture | Thinking in the Stack (SC-32)"
-description: "Complete 43-key matrix directory, primary, left-shifted, and right-shifted legends, authoritative comparison against the HP-32SII, HP-15C, and HP-12C, and open-source hardware and firmware architecture."
+title: "Appendix C: Physical Keycap & Softkey Menu Directory | Thinking in the Stack (SC-32)"
+description: "Complete 43-key matrix directory, primary, left-shifted, and right-shifted legends, ergonomic zone architecture, and dynamic LFU softkey menus on the StackCalc SC-32."
 ---
 
-# Appendix C: Physical Keycap Directory & Engineering Architecture
+# Appendix C: Physical Keycap & Softkey Menu Directory
 
----
-
-## Physical Keypad Layout & the 43-Key Matrix
-
-A pocket scientific instrument faces a fundamental human-factors trade-off: it must expose dozens of transcendental functions, statistical estimators, coordinate transformations, and numerical solvers without burying everyday arithmetic inside scrolling multi-page menus or crowding the faceplate with tiny, closely spaced keys. The SC-32 addresses this trade-off through a 43-key tactile matrix divided into three ergonomic zones, paired with a three-layer shift grammar that groups functions by mathematical association rather than arbitrary menu trees.
+The StackCalc SC-32 organizes its 43-key tactile matrix (**Figure C.1**) into three ergonomic zones paired with a three-layer shift grammar that groups functions by mathematical association without deeply nested menu trees.
 
 {{blocks:sc32_utility_ortho|StackCalc SC-32 Scientific RPN Calculator physical faceplate render, showing the 43-key layout, upper dynamic LFU softkeys, double-wide ENTER bar, and high-contrast primary and secondary shift legends.}}
 
-### The Three-Layer Ergonomic Grammar
+## Three-Zone Keypad Architecture & Shift Grammar
 
-Below the top row of six dynamic softkeys, each of the 37 main physical keys carries three coordinated operational meanings—plus an automatic alpha character for variable and equation naming—organized by a strict conceptual rule:
+Beneath the top row of six dynamic softkeys (`{{key:LFU0}}`–`{{key:LFU5}}`), each of the 37 main physical keys carries three operational meanings plus an automatic alpha character (`A`–`Z`, `i`, `(i)`):
 
-* **Primary Legend (White Center Label — 1 Tap):** Every key's unshifted tap executes the foundational, highest-frequency operation for that position on the faceplate. These include core transcendental functions (`{{key:√x}}`, `{{key:eˣ}}`, `{{key:LN}}`, `{{key:yˣ}}`, `{{key:1/x}}`, `{{key:SIN}}`, `{{key:COS}}`, `{{key:TAN}}`) and statistical accumulation (`{{key:Σ+}}`), alongside stack and memory control (`{{key:STO}}`, `{{key:RCL}}`, `{{key:R↓}}`, `{{key:ENTER}}`, `{{key:x⇄y}}`) and immediate postfix arithmetic (`{{key:÷}}`, `{{key:×}}`, `{{key:-}}`, `{{key:+}}`, `{{key:x∥y}}`).
-* **Left Shift (`{{key:↰}}` — Mathematical Inverse or Direct Companion):** Tapping `{{key:↰}}` accesses the mathematical inverse or companion printed above the upper-left corner of the key: `{{key:√x}}` $\leftrightarrow$ `{{key:x²}}`, `{{key:eˣ}}` $\leftrightarrow$ `{{key:10ˣ}}`, `{{key:LN}}` $\leftrightarrow$ `{{key:LOG}}`, `{{key:yˣ}}` $\leftrightarrow$ `{{key:ˣ√y}}`, `{{key:1/x}}` $\leftrightarrow$ `{{key:x!}}`, `{{key:Σ+}}` $\leftrightarrow$ `{{key:Σ-}}`, `{{key:SIN}}` $\leftrightarrow$ `{{key:ASIN}}`, `{{key:COS}}` $\leftrightarrow$ `{{key:ACOS}}`, `{{key:TAN}}` $\leftrightarrow$ `{{key:ATAN}}`, and `{{key:ENTER}}` $\leftrightarrow$ `{{key:LASTX}}` to recover the pre-operation operand. Across the lower number pad, `{{key:↰}}` converts imperial inputs into metric (SI) units (`{{key:▸km}}`, `{{key:▸kg}}`, `{{key:▸°C}}`, `{{key:▸cm}}`, `{{key:▸l}}`) and polar/decimal formats (`{{key:▸θ,r}}`, `{{key:▸HR}}`, `{{key:▸DEG}}`).
-* **Right Shift (`{{key:↱}}` — Modal Workspaces, Solvers & Softkey Menus):** Tapping `{{key:↱}}` opens the analytical workspace or specialized operator printed above the upper-right corner. On the top rows, `{{key:↱}}` opens the softkey menus associated with each key's domain: `PARTS` above `{{key:√x}}`, `PROB` above `{{key:eˣ}}`, `L.R.` above `{{key:LN}}`, `x̄,ȳ` above `{{key:yˣ}}`, `s,σ` above `{{key:1/x}}`, and `SUMS` above `{{key:Σ+}}`. Elsewhere on the keypad, `{{key:↱}}` launches the numerical engines (`{{key:POLY}}`, `{{key:SOLVE}}`, `{{key:∫}}`, `EQN`) and invokes specialized operators (`π`, `{{key:%}}`, `{{key:%CHG}}`, `{{key:ABS}}`, `{{key:÷R}}`, `{{key:SHOW}}`). On the digit pad, `{{key:↱}}` converts metric values into US/Imperial units (`{{key:▸mi}}`, `{{key:▸lb}}`, `{{key:▸°F}}`, `{{key:▸in}}`, `{{key:▸gal}}`) and rectangular/sexagesimal formats (`{{key:▸y,x}}`, `{{key:▸HMS}}`, `{{key:▸RAD}}`).
-* **Alpha Labels (`A`–`Z`, `i`, `(i)`):** Printed to the lower-right of the main keys, the 26 alphabetical register labels `A` through `Z` plus the indirect-addressing indicators `i` and `(i)` activate automatically whenever a command prompts for a register or program label, such as after pressing `{{key:STO}}`, `{{key:RCL}}`, `{{key:XEQ}}`, `FN=`, `LBL`, `{{key:SOLVE}}`, or `{{key:∫}}`. You never need to toggle a dedicated alpha-lock mode to store a physical constant in Register `G` or solve an equation for variable `T`.
+* **Primary Legend (White Center Label — 1 Tap):** Executes the primary operation for that key position: core transcendentals (`{{key:√x}}`, `{{key:eˣ}}`, `{{key:LN}}`, `{{key:yˣ}}`, `{{key:1/x}}`, `{{key:SIN}}`, `{{key:COS}}`, `{{key:TAN}}`), statistical accumulation (`{{key:Σ+}}`), stack and memory control (`{{key:STO}}`, `{{key:RCL}}`, `{{key:R↓}}`, `{{key:ENTER}}`, `{{key:x⇄y}}`), and postfix arithmetic (`{{key:÷}}`, `{{key:×}}`, `{{key:-}}`, `{{key:+}}`, `{{key:x∥y}}`).
+* **Left Shift (`{{key:↰}}` — Mathematical Inverse or SI Companion):** Accesses the mathematical inverse printed over the upper-left corner (`{{key:√x}}` $\leftrightarrow$ `{{key:x²}}`, `{{key:eˣ}}` $\leftrightarrow$ `{{key:10ˣ}}`, `{{key:LN}}` $\leftrightarrow$ `{{key:LOG}}`, `{{key:yˣ}}` $\leftrightarrow$ `{{key:ˣ√y}}`, `{{key:1/x}}` $\leftrightarrow$ `{{key:x!}}`, `{{key:Σ+}}` $\leftrightarrow$ `{{key:Σ-}}`, `{{key:SIN}}` $\leftrightarrow$ `{{key:ASIN}}`, `{{key:COS}}` $\leftrightarrow$ `{{key:ACOS}}`, `{{key:TAN}}` $\leftrightarrow$ `{{key:ATAN}}`, `{{key:ENTER}}` $\leftrightarrow$ `{{key:LASTX}}`), complex/hyperbolic prefixes (`{{key:CMPLX}}`, `{{key:HYP}}`), system menus (`MODES`, `DISP`, `CLEAR`, `BASE`, `REGS`, `TVM`), and metric/polar conversions (`{{key:▸km}}`, `{{key:▸kg}}`, `{{key:▸°C}}`, `{{key:▸cm}}`, `{{key:▸l}}`, `{{key:▸θ,r}}`, `{{key:▸HR}}`, `{{key:▸DEG}}`).
+* **Right Shift (`{{key:↱}}` — Analytical Workspaces, Solvers & Softkey Menus):** Opens domain softkey menus (`PARTS`, `PROB`, `L.R.`, `x̄,ȳ`, `s,σ`, `SUMS`, `FLAGS`, `x?0`), numerical solvers (`{{key:POLY}}`, `{{key:SOLVE}}`, `{{key:∫}}`, `EQN`), specialized operators (`π`, `{{key:%}}`, `{{key:%CHG}}`, `{{key:ABS}}`, `{{key:÷R}}`, `{{key:SHOW}}`), and imperial/rectangular conversions (`{{key:▸mi}}`, `{{key:▸lb}}`, `{{key:▸°F}}`, `{{key:▸in}}`, `{{key:▸gal}}`, `{{key:▸y,x}}`, `{{key:▸HMS}}`, `{{key:▸RAD}}`).
+* **Alpha Labels (`A`–`Z`, `i`, `(i)`):** Activate whenever a command prompts for a register or label (`{{key:STO}}`, `{{key:RCL}}`, `{{key:XEQ}}`, `FN=`, `LBL`, `{{key:SOLVE}}`, `{{key:∫}}`). The `(i)` label on `{{key:x∥y}}` dereferences pointer `i` across all 89 memory slots (`1`–`26` = `A`–`Z`, `27` = `i`, `28`–`33` = statistical sums, `34`–`39` = `POLY` roots, `40`–`89` = `DATA0`–`DATA49`).
 
-### Upper Function Zone (Rows 0–2, 6 Columns)
+| Zone | Rows & Pitch | Architectural Layout |
+| :--- | :--- | :--- |
+| **Upper Function Zone** | Rows 0–2 (6 Cols) | Row 0: `{{key:LFU0}}`–`{{key:LFU5}}` dynamic softkeys. Row 1: `{{key:√x}}`, `{{key:eˣ}}`, `{{key:LN}}`, `{{key:yˣ}}`, `{{key:1/x}}`, `{{key:Σ+}}`. Row 2: `{{key:STO}}`, `{{key:RCL}}`, `{{key:R↓}}`, `{{key:SIN}}`, `{{key:COS}}`, `{{key:TAN}}`. |
+| **Transition Zone** | Row 3 (5 Keys / 6 Cols) | Double-wide `{{key:ENTER}}` bar (Cols 0–1), `{{key:x⇄y}}` (Col 2), `{{key:+/-}}` (Col 3), `{{key:E}}` (Col 4), and dual-mode `{{key:<-}}` / `CLx` (Col 5). |
+| **Lower Arithmetic Zone** | Rows 4–7 (5 Cols) | Col 0: `{{key:XEQ}}`, `{{key:↰}}`, `{{key:↱}}`, `{{key:C}}`. Cols 1–3: `0`–`9`, `.`, `{{key:x∥y}}`. Col 4: `{{key:÷}}`, `{{key:×}}`, `{{key:-}}`, `{{key:+}}`. |
 
-The top three rows of the keypad form a compact 6-column scientific command deck positioned beneath the transflective display so your eyes can scan the stack and the top keys in a single field of view. Row 0 (`{{key:LFU0}}` through `{{key:LFU5}}`) is a dedicated, context-aware LFU (Least Frequently Used) dynamic softkey strip: in normal state, it dynamically surfaces the six functions tracked by the LFU algorithm, and whenever you open a menu or workspace such as `PARTS`, `PROB`, `L.R.`, `BASE`, `MODES`, `DISP`, `FLAGS`, `TVM`, or `POLY`, it remaps to that menu's softkey labels along the bottom pixel row of the LCD. Pressing any `{{key:LFU0}}`–`{{key:LFU5}}` button executes the corresponding on-screen command in a single tap without hiding the active stack registers or hijacking the fixed scientific keys below.
+## Physical Matrix Coordinate Grids by Zone
 
-Below the softkey bar, Row 1 (`{{key:√x}}`, `{{key:eˣ}}`, `{{key:LN}}`, `{{key:yˣ}}`, `{{key:1/x}}`, `{{key:Σ+}}`) groups every power, root, exponential, logarithmic, reciprocal, and statistical accumulation operator along a single horizontal row. Four of these keys (`{{key:√x}}`, `{{key:eˣ}}`, `{{key:LN}}`, `{{key:1/x}}`) and their `{{key:↰}}` companions (`{{key:x²}}`, `{{key:10ˣ}}`, `{{key:LOG}}`, `{{key:x!}}`) are immediate unary transformations that replace $X$ in place while preserving $Y, Z, T$. By contrast, `{{key:yˣ}}` and `{{key:ˣ√y}}` combine $Y$ and $X$ dyadically as $Y^X$ and $Y^{1/X}$. At the right end of Row 1, `{{key:Σ+}}` and `{{key:Σ-}}` feed $(x, y)$ data pairs into the six statistical accumulators while updating $X$ with the sample count $n$ and disarming stack lift. The right shifts (`{{key:↱}}`) across Row 1 turn those six keys into a statistical and number-theory toolbar: `PARTS`, `PROB`, `L.R.`, `x̄,ȳ`, `s,σ`, and `SUMS`.
+Row 0 (`{{key:LFU0}}`–`{{key:LFU5}}`) is a context-aware LFU (Least Frequently Used) dynamic softkey strip: in normal state, it surfaces the six functions tracked by the LFU algorithm, and whenever a menu or workspace (such as `PARTS`, `PROB`, `L.R.`, `BASE`, `MODES`, `DISP`, `FLAGS`, `TVM`, or `POLY`) opens, it remaps to that menu's softkey labels along the bottom row of the LCD. Row 1 groups power, exponential, logarithmic, reciprocal, and statistical accumulation operators along a single row, while Row 2 pairs register management (`{{key:STO}}`, `{{key:RCL}}`) and circular stack rotation (`{{key:R↓}}`) with planar trigonometry (`{{key:SIN}}`, `{{key:COS}}`, `{{key:TAN}}`):
 
-Row 2 (`{{key:STO}}`, `{{key:RCL}}`, `{{key:R↓}}`, `{{key:SIN}}`, `{{key:COS}}`, `{{key:TAN}}`) pairs named register management and stack rotation on the left with planar trigonometry on the right. Pressing `{{key:STO}}` or `{{key:RCL}}` followed by any letter key `A`–`Z` stores or recalls a value, and inserting `+`, `-`, `×`, or `÷` before the letter performs non-destructive Storage or Recall Arithmetic without cluttering the stack. Their shifted legends open two primary workspaces: Left Shift `{{key:↰}}` above `{{key:STO}}` (`CMPLX`) arms the four-register Gaussian complex phasor engine on $(Y, X)$ and $(T, Z)$, while Right Shift `{{key:↱}}` above `{{key:STO}}` (`EQN`) opens the symbolic Equation Bank.
-
-Next to `{{key:RCL}}`, `{{key:R↓}}` and its right shift `{{key:R↑}}` rotate all four stack registers circularly so you can inspect or reposition any intermediate value. Left Shift `{{key:↰}}` above `{{key:R↓}}` (`{{key:HYP}}`) serves as the hyperbolic prefix for `{{key:SIN}}`, `{{key:COS}}`, `{{key:TAN}}`, and their `{{key:↰}}` inverse functions. Finally, the right shifts of the three trig keys place $\pi$ above `{{key:SIN}}`, Kahan's base-preserving percentage `{{key:%}}` above `{{key:COS}}`, and percent change `{{key:%CHG}}` above `{{key:TAN}}` within thumb reach.
-
-| Row | Col 0 | Col 1 | Col 2 | Col 3 | Col 4 | Col 5 |
+| Upper Zone Row | Col 0 | Col 1 | Col 2 | Col 3 | Col 4 | Col 5 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Row 0** | `{{key:LFU0}}` | `{{key:LFU1}}` | `{{key:LFU2}}` | `{{key:LFU3}}` | `{{key:LFU4}}` | `{{key:LFU5}}` |
 | **Row 1** | `{{key:√x}}` | `{{key:eˣ}}` | `{{key:LN}}` | `{{key:yˣ}}` | `{{key:1/x}}` | `{{key:Σ+}}` |
 | **Row 2** | `{{key:STO}}` | `{{key:RCL}}` | `{{key:R↓}}` | `{{key:SIN}}` | `{{key:COS}}` | `{{key:TAN}}` |
 
-### Transition Zone (Row 3)
+Across Row 3, five physical keys bridge the upper 6-column scientific deck and the lower 5-column numeric pad. Anchoring Columns 0–1 is the double-wide `{{key:ENTER}}` bar (`{{key:LASTX}}` on `{{key:↰}}`, `{{key:SHOW}}` on `{{key:↱}}`), flanked by `{{key:x⇄y}}`, `{{key:+/-}}`, `{{key:E}}`, and dual-mode `{{key:<-}}` (character backspace during `EDIT`; `CLx` on a finalized register):
 
-Row 3 forms the structural and ergonomic bridge between the upper scientific function array and the lower number pad. Anchoring Columns 0 and 1 is the double-wide `{{key:ENTER}}` bar—the physical fulcrum of Reverse Polish Notation. When you finish typing the first number of a dyadic pair, pressing `{{key:ENTER}}` terminates digit entry, pushes a copy of $X$ up into $Y$ ($T \leftarrow Z, Z \leftarrow Y, Y \leftarrow X$), and disables stack lift so the next number you type overwrites $X$ in place. Its shifted legends above `{{key:ENTER}}` provide operand recovery and full-precision inspection: Left Shift `{{key:↰}}` (`{{key:LASTX}}`) recalls the exact value that was in Register $X$ before the last mathematical operation, while Right Shift `{{key:↱}}` (`{{key:SHOW}}`) temporarily reveals the full 15-digit internal mantissa and exponent of Register $X$ without altering your active `FIX`, `SCI`, or `ENG` display setting.
-
-To the right of `{{key:ENTER}}` sits `{{key:x⇄y}}` at Row 3, Col 2, the register-exchange key that gives RPN its algebraic freedom. Whenever you evaluate a complex denominator or subtrahend *first* and then push the numerator or minuend onto the stack, a single tap of `{{key:x⇄y}}` swaps $X$ and $Y$ so `{{key:÷}}`, `{{key:-}}`, or `{{key:yˣ}}` executes in the proper order without parentheses. Its shifted functions inspect available memory (`{{key:↰}}` `MEM`) or swap $X$ with any letter register (`{{key:x⇄?}}`). Beside it at Row 3, Col 3, `{{key:+/-}}` toggles the sign of the number currently in $X$—or negates the power-of-ten exponent if pressed after `{{key:E}}`—while hosting the angular/radix `MODES` menu on `{{key:↰}}` and absolute value `{{key:ABS}}` ($|x|$) on `{{key:↱}}`.
-
-Completing the transition bridge are `{{key:E}}` at Row 3, Col 4 and `{{key:<-}}` at Row 3, Col 5. Pressing `{{key:E}}` during number entry transitions from the mantissa to the base-10 exponent ($m \times 10^n$) so you can key physical constants like Planck's constant or Avogadro's number without multiplying by $10^x$. Its left shift opens the `DISP` precision menu (`FIX`, `SCI`, `ENG`, `ALL`), and its right shift executes Euclidean integer division with remainder (`{{key:÷R}}`), placing the quotient $\lfloor Y/X \rfloor$ in $X$ and the remainder in $Y$. At the far right, the backspace key `{{key:<-}}` adapts to your state: while you are actively typing digits, it erases one character at a time from the right. Once a number is finalized on the stack, pressing `{{key:<-}}` acts as `CLx`, zeroing Register $X$ and disabling stack lift without dropping $Y, Z,$ or $T$, while Left Shift `{{key:↰}}` opens the selective `CLEAR` menu.
-
-| Row | Col 0 & 1 (Double-Wide) | Col 2 | Col 3 | Col 4 | Col 5 |
+| Transition Row | Col 0 & 1 (Double-Wide) | Col 2 | Col 3 | Col 4 | Col 5 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Row 3** | `{{key:ENTER}}` | `{{key:x⇄y}}` | `{{key:+/-}}` | `{{key:E}}` | `{{key:<-}}` |
 
-### Lower Arithmetic Zone (Rows 4–7, 5 Columns)
+Rows 4–7 widen into a 5-column numeric and postfix arithmetic grid. Column 0 houses `{{key:XEQ}}` (`FN=` / `POLY`), latching shifts `{{key:↰}}` and `{{key:↱}}`, and `{{key:C}}` (`?` / `OFF`). Column 4 houses `{{key:÷}}`, `{{key:×}}`, `{{key:-}}`, and `{{key:+}}`. Across the central `0`–`9`, `.`, and `{{key:x∥y}}` keys in Columns 1–3, shifted legends provide root finding (`{{key:SOLVE}}` on `{{key:7}}`), Romberg integration (`{{key:∫}}` on `{{key:8}}`), 2D vector and angular conversions (`{{key:4}}`, `{{key:5}}`, `{{key:6}}`), SI $\leftrightarrow$ Imperial unit conversions (`{{key:9}}`, `{{key:1}}`, `{{key:2}}`, `{{key:3}}`, `{{key:-}}`), register inspection (`{{key:0}}`), rational fraction control (`{{key:.}}`), and the 5-variable `TVM` financial workspace (`{{key:x∥y}}`):
 
-The lower four rows widen into a generous 5-column pitch engineered for rapid, eyes-free numeric entry and postfix arithmetic. Along the left margin in Column 0, four dedicated control keys govern execution and shift state. `{{key:XEQ}}` executes stored equations by label, while its shifts designate the target equation `FN=` on `{{key:↰}}` and open the quadratic/cubic `POLY` root workspace on `{{key:↱}}`. Below it, `{{key:↰}}` and `{{key:↱}}` act as latching, toggleable left- and right-shift prefixes. At the bottom-left corner, `{{key:C}}` (`ON`) wakes the hardware, cancels active prompts, or clears Register $X$, with `{{key:?}}` on `{{key:↰}}` for the interactive guided tutorial and `OFF` on `{{key:↱}}` for deep sleep.
-
-Along the right margin in Column 4, the four foundational dyadic operators—`{{key:÷}}`, `{{key:×}}`, `{{key:-}}`, and `{{key:+}}`—fuse $Y$ and $X$, drop the stack ($Y \leftarrow Z, Z \leftarrow T$), replicate $T$, and leave stack lift armed. Their shifted legends provide relational tests (`x?y`, `x?0`), computer-science integer `BASE` modes and system `FLAGS`, liter/gallon conversions (`{{key:▸l}}`/`{{key:▸gal}}`), and equation labels (`[LBL]`/`[RTN]`).
-
-Across the central `0`–`9` and `.` digit pad in Columns 1–3, the shifted legends are organized into five engineering clusters so you can model physical problems on the stack:
-* **Calculus, Root-Finding & Equation Stepping (`7` and `8`):** Right-shifting `{{key:7}}` (`{{key:SOLVE}}`) and `{{key:8}}` (`{{key:∫}}`) invokes Richard Brent's root finder and Werner Romberg's adaptive quadrature on the active `FN=` equation using your bounds in $Y$ and $X$. Left-shifting `{{key:7}}` (`{{key:↓}}`) and `{{key:8}}` (`{{key:↑}}`) steps vertically through multi-equation banks and register catalogs.
-* **2D Vector, Sexagesimal Time & Angular Conversions (`4`, `5`, and `6`):** Key `{{key:4}}` converts between rectangular coordinates $(x, y)$ in $(X, Y)$ and polar phasors $(r, \theta)$ via `{{key:▸θ,r}}` and `{{key:▸y,x}}`. Key `{{key:5}}` translates between `DD.MMSS` sexagesimal angles/timestamps and decimal hours/degrees (`{{key:▸HR}}` $\leftrightarrow$ `{{key:▸HMS}}`), and Key `{{key:6}}` converts between radians and degrees (`{{key:▸DEG}}` $\leftrightarrow$ `{{key:▸RAD}}`).
-* **Physical SI $\leftrightarrow$ Imperial Unit Conversions (`9`, `1`, `2`, `3`, and `-`):** Every paired conversion puts the metric unit on `{{key:↰}}` and the imperial unit on `{{key:↱}}`. Distance sits on `{{key:9}}` (`{{key:▸km}}` $\leftrightarrow$ `{{key:▸mi}}`), mass on `{{key:1}}` (`{{key:▸kg}}` $\leftrightarrow$ `{{key:▸lb}}`), and temperature on `{{key:2}}` (`{{key:▸°C}}` $\leftrightarrow$ `{{key:▸°F}}`), followed by length on `{{key:3}}` (`{{key:▸cm}}` $\leftrightarrow$ `{{key:▸in}}`) and fluid volume on `{{key:-}}` (`{{key:▸l}}` $\leftrightarrow$ `{{key:▸gal}}`).
-* **Register Inspection, Fractions & Indirect Addressing (`0`, `.`, `i`, `(i)`):** Key `{{key:0}}` opens the full-screen `REGS` table (`{{key:↰}}`) or single-register `VIEW` (`{{key:↱}}`). Next to it, the radix point `{{key:.}}` toggles exact fraction display `{{key:FDISP}}` (`{{key:↰}}`), sets the fixed fraction denominator `/c` (`{{key:↱}}`), and carries the Alpha label `i` for the index register. The Alpha label `(i)` on `{{key:x∥y}}` dereferences the integer pointer in `i` across all 89 slots of the memory map: `1`–`26` = `A`–`Z`, `27` = `i`, `28`–`33` = statistical sums, `34`–`39` = `POLY` roots, and `40`–`89` = raw statistical data points (`DATA0`–`DATA49`).
-* **The Harmonic Hub (`x∥y`) & Relational Tests (`x?y`, `x?0`):** At Row 7, Col 3 sits the `{{key:x∥y}}` key: a single unshifted tap evaluates the parallel harmonic product $\frac{Y \times X}{Y + X}$, while its left shift (`{{key:↰}}`) launches the 5-variable `TVM` financial solver (`N`, `I%`, `PV`, `PMT`, `FV`, `END/BEG`) and its Alpha label `(i)` provides indirect register dereferencing. Meanwhile, the division key `{{key:÷}}` at Row 4, Col 4 hosts the two six-operator relational comparison menus `{{key:x?y}}` (`{{key:↰}}`) and `{{key:x?0}}` (`{{key:↱}}`), which flash `YES`/`NO` non-destructively on the live stack and act as $1/0$ Iverson Boolean indicator switches inside `{{key:EQN}}` to model piecewise functions.
-
-| Row | Col 0 | Col 1 | Col 2 | Col 3 | Col 4 |
+| Lower Zone Row | Col 0 | Col 1 | Col 2 | Col 3 | Col 4 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Row 4** | `{{key:XEQ}}` | `{{key:7}}` | `{{key:8}}` | `{{key:9}}` | `{{key:÷}}` |
 | **Row 5** | `{{key:↰}}` (Left Shift) | `{{key:4}}` | `{{key:5}}` | `{{key:6}}` | `{{key:×}}` |
 | **Row 6** | `{{key:↱}}` (Right Shift) | `{{key:1}}` | `{{key:2}}` | `{{key:3}}` | `{{key:-}}` |
 | **Row 7** | `{{key:C}}` (ON) | `{{key:0}}` | `{{key:.}}` | `{{key:x∥y}}` | `{{key:+}}` |
 
-### The 43-Key Function Directory
+---
 
-Each key position is indexed by matrix coordinate (Row, Col), primary legend, left `{{key:↰}}` and right `{{key:↱}}` shift functions, alpha register letter, and operational behavior:
+## The 43-Key Function Directory
+
+The 43-key hardware directory maps every matrix coordinate `(R, C)` across Rows `R0`–`R7` to its primary legend, left shift (`{{key:↰}}`), right shift (`{{key:↱}}`), and alpha register label:
 
 | Key # | Matrix (R, C) | Primary Legend | Left Shift `{{key:↰}}` | Right Shift `{{key:↱}}` | Alpha | Functional Summary |
 | :---: | :---: | :--- | :--- | :--- | :---: | :--- |
@@ -83,20 +64,20 @@ Each key position is indexed by matrix coordinate (Row, Col), primary legend, le
 | **5** | R0, C4 | `{{key:LFU4}}` | Softkey 5 | Softkey 5 | — | Dynamic LFU slot 5 / active softkey menu item 5 |
 | **6** | R0, C5 | `{{key:LFU5}}` | Softkey 6 | Softkey 6 | — | Dynamic LFU slot 6 / active softkey menu item 6 |
 | **7** | R1, C0 | `{{key:√x}}` | `{{key:x²}}` | `PARTS` Menu | `A` | Square root √x, square x², and number-theory PARTS menu (IP, FP, ABS, SGN, GCD, LCM) |
-| **8** | R1, C1 | `{{key:eˣ}}` | `{{key:10ˣ}}` | `PROB` Menu | `B` | Natural exponential eˣ, common antilog 10ˣ, and combinatorics PROB menu (Cn,r, Pn,r, x!, RAND, SD) |
+| **8** | R1, C1 | `{{key:eˣ}}` | `{{key:10ˣ}}` | `PROB` Menu | `B` | Natural exponential eˣ, common antilog 10ˣ, and combinatorics PROB menu (Cn,r, Pn,r, n!, RAND, SD) |
 | **9** | R1, C2 | `{{key:LN}}` | `{{key:LOG}}` | `L.R.` Menu | `C` | Natural logarithm LN, base-10 logarithm LOG, and linear regression L.R. menu (ŷ, x̂, r, m, b) |
 | **10**| R1, C3 | `{{key:yˣ}}` | `{{key:ˣ√y}}` | `x̄,ȳ` Menu | `D` | Dyadic power yˣ, x-th root ˣ√y, and sample/weighted means menu (x̄, ȳ, x̄w) |
 | **11**| R1, C4 | `{{key:1/x}}` | `{{key:x!}}` | `s,σ` Menu | `E` | Reciprocal 1/x, factorial/Gamma x!, and sample/population standard deviation menu (sx, sy, σx, σy) |
 | **12**| R1, C5 | `{{key:Σ+}}` | `{{key:Σ-}}` | `SUMS` Menu | `F` | Statistical data accumulation Σ+, removal Σ-, and summation register menu (Σx, Σy, Σx², Σy², Σxy, n) |
 | **13**| R2, C0 | `{{key:STO}}` | `CMPLX` Mode | `EQN` Mode | `G` | Store register STO, complex phasor prefix CMPLX, and symbolic RPN Equation Bank EQN |
-| **14**| R2, C1 | `{{key:RCL}}` | `{{key:RND}}` Round | `[SCRL]` Scroll | `H` | Recall register RCL, round mantissa to display precision RND, and scroll long equations |
+| **14**| R2, C1 | `{{key:RCL}}` | `{{key:RND}}` Round | `{{key:SCRL}}` Scroll | `H` | Recall register RCL, round mantissa to display precision RND, and scroll long equations |
 | **15**| R2, C2 | `{{key:R↓}}` | `{{key:HYP}}` Prefix | `{{key:R↑}}` Roll Up | `I` | Roll stack down R↓, hyperbolic function prefix HYP, and roll stack up R↑ |
 | **16**| R2, C3 | `{{key:SIN}}` | `{{key:ASIN}}` | `π` Constant | `J` | Sine SIN, inverse sine ASIN, and 15-digit π constant |
 | **17**| R2, C4 | `{{key:COS}}` | `{{key:ACOS}}` | `{{key:%}}` Base Pct | `K` | Cosine COS, inverse cosine ACOS, and Kahan base-preserving percentage % |
 | **18**| R2, C5 | `{{key:TAN}}` | `{{key:ATAN}}` | `{{key:%CHG}}` Pct Chg| `L` | Tangent TAN, inverse tangent ATAN, and base-preserving percent change %CHG |
 | **19**| R3, C0-1| `{{key:ENTER}}` | `{{key:LASTX}}` | `{{key:SHOW}}` | `M` | Duplicate X to Y and disable lift ENTER, recall prior operand LASTX, and full-precision peek SHOW |
-| **20**| R3, C2 | `{{key:x⇄y}}` | `MEM` Specs | `[x⇄?]` Swap Reg| `N` | Swap X and Y registers x⇄y, memory status summary MEM, and exchange X with named register x⇄? |
-| **21**| R3, C3 | `{{key:+/-}}` | `MODES` Menu | `{{key:ABS}}` Abs | `O` | Toggle sign +/-, angular/radix MODES menu (DEG, RAD, GRAD, ., ,), and absolute value \|x\| |
+| **20**| R3, C2 | `{{key:x⇄y}}` | `MEM` Specs | `{{key:x⇄?}}` (`x⇄`) | `N` | Swap X and Y registers x⇄y, memory status summary MEM, and exchange X with named register x⇄? |
+| **21**| R3, C3 | `{{key:+/-}}` | `MODES` Menu | `{{key:ABS}}` ($\lvert x\rvert$) | `O` | Toggle sign +/-, angular/radix MODES menu (DEG, RAD, GRAD, ., ,), and absolute value $\lvert x\rvert$ |
 | **22**| R3, C4 | `{{key:E}}` | `DISP` Menu | `{{key:÷R}}` Div/Rem | `P` | Scientific exponent entry E, display format DISP menu (FIX, SCI, ENG, ALL), and Euclidean quotient/remainder ÷R |
 | **23**| R3, C5 | `{{key:<-}}` | `CLEAR` Menu | *(Unassigned)*| — | Digit backspace / clear X register CLx, and selective workspace CLEAR menu |
 | **24**| R4, C0 | `{{key:XEQ}}` | `FN=` Define | `POLY` Solver | — | Execute equation XEQ, select target function FN=, and closed-form quadratic/cubic POLY root solver |
@@ -117,120 +98,62 @@ Each key position is indexed by matrix coordinate (Row, Col), primary legend, le
 | **39**| R7, C0 | `{{key:C}}` (ON) | `{{key:?}}` Tutorial | `OFF` Sleep | — | Clear entry / dismiss error / wake hardware C, interactive guided tutorial ?, and power sleep OFF |
 | **40**| R7, C1 | `{{key:0}}` | `REGS` Viewer | `VIEW` Single | `Z` | Digit 0, full-screen register browser REGS (STACK, STO, STATS, DATA), and single-register inspect VIEW |
 | **41**| R7, C2 | `{{key:.}}` | `{{key:FDISP}}` Frac | `{{key:/c}}` Denom | `i` | Decimal radix point ., toggle rational fraction display FDISP, and set fixed fraction denominator /c |
-| **42**| R7, C3 | `{{key:x∥y}}` | `TVM` Solver | *(Unassigned)* | `(i)`| Parallel harmonic operator x∥y, 5-variable TVM financial solver, and indirect address pointer (i) |
-| **43**| R7, C4 | `{{key:+}}` | `[LBL]` Label | `[RTN]` Return | — | Dyadic addition +, equation label token [LBL], and subroutine return token [RTN] |
+| **42**| R7, C3 | `{{key:x∥y}}` | `TVM` Solver | `{{key:PLOT}}` Graph | `(i)`| Parallel harmonic operator x∥y, 5-variable TVM financial solver, App-mode function/scatter plotter PLOT (omitted on physical firmware for exam compliance), and indirect address pointer (i) |
+| **43**| R7, C4 | `{{key:+}}` | `{{key:LBL}}` Label | `{{key:RTN}}` Return | — | Dyadic addition +, equation label token `LBL`, and subroutine return token `RTN` |
 
 ---
 
-## Architectural Refinements, Dynamic LFU Menus & Complete HP-32SII / HP-15C / HP-12C Comparison
+## Dynamic LFU Softkey Menus & Analytical Workspaces Directory
 
-The SC-32 keypad layout follows the Dvorak Principle applied to calculators: whereas computer terminals and menu-driven graphing calculators place common operations inside nested menu trees, routine scientific and engineering calculations on a handheld instrument should execute from direct tactile keystrokes.
+The six top keys (`{{key:LFU0}}` through `{{key:LFU5}}`) dynamically remap to on-screen menu labels along the bottom pixel row of the transflective LCD whenever a modal menu or analytical workspace is opened, executing the corresponding softkey action without obscuring the four visible stack registers ($T, Z, Y, X$). In normal calculation mode (`ALL`/`FIX`/`SCI`/`ENG` without an active modal submenu), the six softkey slots display the six most frequently invoked functions, retained by a Least-Frequently-Used (LFU) cache-eviction policy:
 
-### The Corvallis HP-32SII Structural Foundation
+| Menu / Workspace | Access Keystroke | Top-Row Softkeys (`LFU0` – `LFU5`) | Default & Execution Behavior |
+| :--- | :--- | :--- | :--- |
+| **`DISP`** | `{{key:↰}}` + `{{key:E}}` | `FIX n`, `SCI n`, `ENG n`, `ALL` | Default `ALL`; tapping `FIX`, `SCI`, or `ENG` prompts for digit `0`–`9` (`•` marks active format). |
+| **`MODES`** | `{{key:↰}}` + `{{key:+/-}}` | `DEG`, `RAD`, `GRAD`, `.`, `,` | Default `DEG` and radix `.`; active angular unit and radix mark carry a bullet (`•`). |
+| **`BASE`** | `{{key:↰}}` + `{{key:×}}` | `HEX`, `DEC`, `OCT`, `BIN` | Default `DEC`; re-renders integers in $[-2^{35}, 2^{35}-1]$ (64-bit two's complement for negatives; `HEX` maps Row 1 keys to `A`–`F`). |
+| **`CONST`** | Companion / Menu | `π`, `e`, `h`, `c`, `G`, `Na`, `R`, `k` | Pushes fundamental physical/mathematical constants ($\pi, e, h, c, G, N_A, R, k_B$) to $X$ with stack lift. |
+| **`CLEAR`** | `{{key:↰}}` + `{{key:<-}}` | `CLEQN`, `CLVARS`, `CLALL`, `CLSTAT`, `CLREGS`, `CLSTK` | Resets the selected subsystem to `0` (`CLSTAT` aliases `{{key:CLΣ}}`) without disturbing other workspaces. |
+| **`MEM`** | `{{key:↰}}` + `{{key:x⇄y}}` | `VARS`, `EQN`, `REGS` | Displays available memory and catalogs allocated variable, equation, and register blocks. |
+| **`FLAGS`** | `{{key:↱}}` + `{{key:×}}` | `STACK ▸`, `MODE ▸`, `UI ▸`, `EXAM`, `SF`, `CF` | Displays 10-flag status grid (`0:F0`–`9:d/c`) toggled by digits `0`–`9` (or submenus in companion app). |
+| **`STACK`** | `FLAGS` $\to$ `STACK` | `2-LVL`, `4-LVL`, `8-LVL`, `INF`, `VIEW` | Default `4-LVL` ($T, Z, Y, X$ with $T$-replication) and `4-LN` four-line view (`VIEW` toggles `1-LN`). |
+| **`PARTS`** | `{{key:↱}}` + `{{key:√x}}` | `IP`, `FP`, `ABS`, `SGN`, `GCD`, `LCM` | Monadic `IP`, `FP`, `ABS`, `SGN` act on $X$; dyadic `GCD` and `LCM` reduce integers across $(Y, X)$. |
+| **`PROB`** | `{{key:↱}}` + `{{key:eˣ}}` | `Cn,r`, `Pn,r`, `n!`, `RAND`, `SD` | `Cn,r` and `Pn,r` consume $(Y = n,\; X = r)$; `RAND` pushes $U[0,1)$ with stack lift; `SD` seeds generator from $X$ and drops stack. |
+| **`SUMS`** | `{{key:↱}}` + `{{key:Σ+}}` | `Σx`, `Σy`, `Σx²`, `Σy²`, `Σxy`, `n` | Recalls the six sufficient statistics (`R28 = n`, `R29 = Σx`, `R30 = Σy`, `R31 = Σx²`, `R32 = Σy²`, `R33 = Σxy`) to $X$ observing stack lift (`Σ+` disables lift so first query overwrites $n$ in $X$ and enables lift). |
+| **`x̄,ȳ`** | `{{key:↱}}` + `{{key:yˣ}}` | `x̄`, `ȳ`, `x̄w` | Each softkey places its mean ($\bar{x}$, $\bar{y}$, or $\bar{x}_w = \Sigma xy / \Sigma y$) into $X$ observing stack lift and enables stack lift. |
+| **`s,σ`** | `{{key:↱}}` + `{{key:1/x}}` | `sx`, `sy`, `σx`, `σy` | Each softkey places its standard deviation ($s_x$, $s_y$ with $n - 1$, or $\sigma_x$, $\sigma_y$ with $n$) into $X$ observing stack lift and enables stack lift. |
+| **`L.R.`** | `{{key:↱}}` + `{{key:LN}}` | `ŷ`, `x̂`, `r`, `m`, `b` | `ŷ` and `x̂` transform $X$ into $\hat{y}(X)$ or $\hat{x}(X)$; `r`, `m`, and `b` push Pearson $r$, slope $m$, or intercept $b$ to $X$ observing stack lift. |
+| **`x?y`** | `{{key:↰}}` + `{{key:÷}}` | `x=y`, `x≠y`, `x>y`, `x<y`, `x≥y`, `x≤y` | Compares $X$ against $Y$ (`YES`/`NO` banner interactively; evaluates to `1` when true and `0` when false inside `EQN`). |
+| **`x?0`** | `{{key:↱}}` + `{{key:÷}}` | `x=0`, `x≠0`, `x>0`, `x<0`, `x≥0`, `x≤0` | Compares $X$ against $0$ (`YES`/`NO` banner interactively; evaluates to `1` when true and `0` when false inside `EQN`). |
+| **`POLY`** | `{{key:↱}}` + `{{key:XEQ}}` | `A`, `B`, `C`, `D`, `CLR` | Unassigned slots default to `0`; typing a value + tapping `A`–`D` stores (`•`) without `STO`/`RCL`; pressing `{{key:XEQ}}` solves cubic/quadratic (`r1` $\to Y, X$; all roots in `REGS` `STO` `R1`–`R6` / `R34`–`R39`). |
+| **`TVM`** | `{{key:↰}}` + `{{key:x∥y}}` | `N`, `I%`, `PV`, `PMT`, `FV`, `END/BEG` | Unassigned slots default to `0` (`END` default); typing or computing a value + tapping a softkey stores $X$ (`STO N`, etc.); tapping immediately after another `TVM` softkey solves for that variable without `STO`, `RCL`, or `XEQ`. |
+| **`EQN`** | `{{key:↱}}` + `{{key:STO}}` | `NEW`, `[1:Eq₁ … n:Eqₙ]` | Stores up to 24 RPN equations (`A`–`Z`); tapping an equation edits it, while `{{key:XEQ}}`, `{{key:SOLVE}}`, `{{key:∫}}`, and `CLEQN` evaluate, solve, integrate, or clear equations. |
+| **`SOLVE`** | `{{key:↱}}` + `{{key:7}}` | `{{key:A}}`, `{{key:B}}`, `...` $\to$ `SOLVE _` | Selects stored equation and target variable (`A`–`Z` key or variable softkey; value + variable softkey stores parameter), prompts `A?`, `B?` ($\to$ `{{key:ENTER}}`/`{{key:XEQ}}`) for unassigned parameters, seeds Brent's solver from $x_0$ (default `0`), and returns $x^* \to X$. |
+| **`∫`** | `{{key:↱}}` + `{{key:8}}` | `{{key:A}}`, `{{key:B}}`, `...` $\to$ `∫ _` | Integrates selected equation over $[a, b]$ in $(Y, X)$ with respect to selected variable (`A`–`Z` key or variable softkey), prompts `A?`, `B?` ($\to$ `{{key:ENTER}}`/`{{key:XEQ}}`) for unassigned parameters, and returns $(\pm\varepsilon \to Y,\; I \to X)$. |
+| **`PLOT`** | `{{key:↱}}` + `{{key:x∥y}}` | `{{key:A}}`, `{{key:B}}`, `...` (`<`, `\|<-`, `OUT`, `IN`, `->\|`, `>`) | Companion App feature (excluded from physical firmware for exam compliance): plots stored equation across $[\min(Y,X), \max(Y,X)]$ (default $[-3, 3]$, or $[-10, 10]$ via `{{key:XEQ}}`), or plots `Σ+` scatter points when no equations are stored (`CLEQN`). |
+| **`REGS`** | `{{key:↰}}` + `{{key:0}}` | `STACK`, `STO`, `STATS`, `DATA`, `▲`, `▼` | Read-only inspector for stack (`T,Z,Y,X,LASTX`), variables/roots (`A`–`Z`, `R1`–`R6` / `R34`–`R39`), statistical sums (`R28`–`R33`), and raw data (`R40`–`R89`). |
 
-The 1991 HP-32SII Pioneer provides an ergonomic and symbolic baseline for a portrait RPN scientific instrument. Its one-handed geometry keeps the digit pad, `{{key:ENTER}}`, and arithmetic column inside the natural sweep of a single thumb. At the same time, its 26 automatic alpha variables (`A`–`Z`) and symbolic Equation Bank (`{{key:EQN}}`) replace anonymous register numbers (`R0`–`R9`) and blind keystroke subroutines (`LBL 0..9`), while eight SI $\leftrightarrow$ Imperial unit conversions (expanded to ten on the SC-32) and native rational fractions (`{{key:FDISP}}`, `{{key:/c}}`) sit directly on the number pad.
-
-The SC-32 preserves that 1991 Pioneer matrix while replacing its 1-line display and infix-equation mode with a 4-line stack display and pure RPN equation steps. It also integrates the analytical engines of the 1982 HP-15C Voyager (`{{key:SOLVE}}`, `{{key:∫}}`, `{{key:CMPLX}}`), a closed-form quadratic/cubic `{{key:POLY}}` engine, and the 1981 HP-12C Voyager financial functions (`{{key:TVM}}`, `{{key:%}}`, `{{key:%CHG}}`) onto shifted keys:
-
-| Architectural Dimension | HP-12C Voyager (1981) | HP-15C Voyager (1982) | HP-32SII Pioneer (1991) | StackCalc SC-32 |
-| :--- | :--- | :--- | :--- | :--- |
-| **Form Factor & Ergonomics** | Landscape (two-handed) | Landscape (two-handed) | Portrait (one-handed thumb arc) | Portrait 43-key Pioneer geometry (one-handed thumb arc) |
-| **Display & Stack Visibility** | 1-line, 10-digit 7-seg (`X` only) | 1-line, 10-digit 7-seg (`X` only) | 1-line, 12-char dot-matrix (`X` only) | 4-line $132 \times 65$ transflective LCD ($T, Z, Y, X$ visible simultaneously) |
-| **Softkey Menu Bar** | None | None | Remaps top row (`√x`..`Σ+`) with 1-line text | Dedicated 6-key Dynamic LFU Bar (`{{key:LFU0}}`–`{{key:LFU5}}`) above `√x`..`Σ+` |
-| **Operational Stack Depth** | 4-level ($X, Y, Z, T$) | 4-level ($X, Y, Z, T$) | 4-level ($X, Y, Z, T$) | Selectable `{{key:4-LVL}}` (classic Corvallis), `{{key:8-LVL}}`, or `{{key:INF}}` (999-level LIFO) |
-| **Storage Registers** | `R0`–`R9`, `.0`–`.9` (numbered) | `R0`–`R9`, `.0`–`.9`, `I` (numbered) | `A`–`Z` (26 named letters) + `i`, `(i)` | `A`–`Z` (26 named letters) + `i`, `(i)` across 89 indirect slots (`R1`–`R89`) |
-| **Equation Bank (`EQN`)** | None (keystroke `R/S` only) | None (keystroke `LBL 0..9` only) | Algebraic infix `EQN` (`(`, `)`, `=`) | Pure RPN `{{key:EQN}}` Bank with Iverson Boolean `[x?0]`/`[x?y]` piecewise switches |
-| **Root Finder & Calculus** | `IRR` / `NPV` cash-flow only | Brent `SOLVE` & Romberg `∫f(x)` via `LBL` | Brent `SOLVE` & Romberg `∫` via `EQN` | Brent `{{key:SOLVE}}` & Romberg `{{key:∫}}` via `{{key:EQN}}` + Dedicated Analytic `{{key:POLY}}` (`R34`–`R39`) |
-| **Complex Numbers (`CMPLX`)** | None | Parallel complex stack via `I` / `Re⇄Im` | 4-register $(Y, X)$ & $(T, Z)$ via `CMPLX` prefix | 4-register $(Y, X)$ & $(T, Z)$ via `{{key:CMPLX}}` prefix (including complex `{{key:x∥y}}` & `{{key:POLY}}` roots) |
-| **Time Value of Money (`TVM`)** | Dedicated `n`, `i`, `PV`, `PMT`, `FV` keys | None | None (requires manual keystroke program) | Built-in 5-Variable `{{key:TVM}}` (`N`, `I%`, `PV`, `PMT`, `FV`, `END/BEG`) on `{{key:x∥y}}` |
-| **Physical Unit Conversions** | None | `→H.MS`, `→RAD` only | 8 SI $\leftrightarrow$ US keys + polar/HMS/angle | 10 SI (`{{key:↰}}`) $\leftrightarrow$ US (`{{key:↱}}`) keys (adds `km` $\leftrightarrow$ `mi` on `9`) + polar/HMS/angle |
-| **Exact Fractions & Number Theory** | None | None | `a b/c`, `FDISP`, `/c`; `PARTS` menu | Exact fractions (`{{key:FDISP}}`, `{{key:/c}}`), direct `{{key:÷R}}` & `{{key:ABS}}` keys (`GCD`/`LCM` in `PARTS` softkey menu) |
-| **Parallel / Harmonic Operator** | None | None | None | Dedicated unshifted `{{key:x∥y}}` key ($\frac{Y \times X}{Y + X}$ for resistors, lenses, capacitors) |
-| **Exam Mode & Base Word** | Non-programmable | Programmable (10-digit) | Programmable (32-bit unsigned `BASE`) | Non-graphing scientific + proctored `{{key:EXAM}}` lockdown & 36-bit signed `BASE` |
-
-### Complete Key-by-Key & Menu Differences: HP-32SII vs. SC-32
-
-Every primary key, left shift (`{{key:↰}}`, corresponding to the HP-32SII orange shift), right shift (`{{key:↱}}`, corresponding to the HP-32SII blue shift), and alpha legend on the SC-32 behaves identically to the 1991 HP-32SII except for the intentional hardware and menu additions listed below:
-
-| Position / Menu | Key Face (SC-32 vs. HP-32SII) | Left Shift `{{key:↰}}` (SC-32 vs. HP-32SII) | Right Shift `{{key:↱}}` (SC-32 vs. HP-32SII) | Engineering Rationale for the SC-32 Design |
-| :---: | :--- | :--- | :--- | :--- |
-| **R0, C0–C5** | `{{key:LFU0}}`–`{{key:LFU5}}` *(New dedicated row)* | Dynamic LFU / Menu softkeys | Dynamic LFU / Menu softkeys | Reserves 6 dedicated physical softkeys beneath the 4-line LCD (showing 6 dynamic LFU functions in normal state and menu labels in menus) so menus never hijack `{{key:√x}}`..`{{key:Σ+}}` (`Row 1`). |
-| **R3, C3** | `{{key:+/-}}` *(Same)* | `MODES` *(Adds `.` / `,` radix)* | `{{key:ABS}}` (`\|x\|`) *(HP-32SII: `(` open paren)* | Parentheses are unnecessary in RPN mode; places Absolute Value (`\|x\|`) on a direct right-shifted key while also retaining `ABS` inside the `PARTS` softkey menu. |
-| **R3, C4** | `{{key:E}}` *(Same)* | `DISP` *(Same)* | `{{key:÷R}}` *(HP-32SII: `)` close paren)* | Parentheses are unnecessary in RPN mode; adds Euclidean integer division (`÷R`: quotient in $X$, remainder in $Y$) as a direct key. |
-| **R3, C5** | `{{key:<-}}` *(Same)* | `CLEAR` *(Expanded menu)* | *(Unassigned)* *(HP-32SII: `=` equals)* | Infix `=` is not needed in RPN mode; leaving Right-Shift `{{key:<-}}` unassigned prevents accidental clears during fast entry. |
-| **R4, C0** | `{{key:XEQ}}` *(Same)* | `FN=` *(Same)* | `{{key:POLY}}` *(HP-32SII: no direct key)* | Adds the closed-form quadratic/cubic `{{key:POLY}}` coefficient entry and root solver (`A`, `B`, `C`, `D`, `EXEC`, `CLR`) on `BLUE + XEQ`. |
-| **R4, C3** | `{{key:9}}` *(Same)* | `{{key:▸km}}` *(HP-32SII: blank)* | `{{key:▸mi}}` *(HP-32SII: blank)* | Adds direct kilometer $\leftrightarrow$ mile unit conversions (`{{key:▸km}}` on `{{key:↰}}`, `{{key:▸mi}}` on `{{key:↱}}`) on `{{key:9}}`. |
-| **R7, C1** | `{{key:0}}` *(Same)* | `REGS` *(HP-32SII: `INPUT`)* | `VIEW` *(Same)* | Repurposes programming-only `INPUT` to the `REGS` register viewer while keeping single-variable `VIEW` on `{{key:↱}}`. |
-| **R7, C3** | `{{key:x∥y}}` *(HP-32SII: `R/S`)* | `TVM` *(HP-32SII: `PRGM`)* | *(Unassigned)* *(HP-32SII: `PSE`)* | Repurposes `R/S` (`PRGM`/`PSE`) to Primary `{{key:x∥y}}`, Left-Shift `TVM` financial solver, and Alpha `(i)` indirect pointer. |
-| **R7, C4** | `{{key:+}}` *(Same)* | `[LBL]` *(Restored for `EQN`)* | `[RTN]` *(Same)* | Retains `[LBL]` on Left-Shift `{{key:+}}` so stored RPN equations can begin with an explicit single-letter label. |
-| **`PARTS` Menu** | Trigger: `Right-Shift {{key:√x}}` | HP-32SII: `IP`, `FP`, `ABS` | SC-32 adds `SGN`, `GCD`, `LCM` | Places `SGN`, `GCD`, and `LCM` inside the 6-item `PARTS` softkey menu (`IP`, `FP`, `ABS`, `SGN`, `GCD`, `LCM`; only the elementary SC-6 has physical `GCF`/`LCM` buttons). |
-| **`CLEAR` Menu** | Trigger: `Left-Shift {{key:<-}}` | HP-32SII: `CLx`, `CLVARS`, `CLΣ`, `ALL` | SC-32: `CLEQN`, `CLVARS`, `CLALL`, `CLΣ`, `CLREGS`, `CLSTK` | Expands `CLEAR` to six softkeys (plus `FIN` inside `TVM` to zero `N`, `I%`, `PV`, `PMT`, `FV` while preserving `END`/`BEG`). |
-| **`FLAGS` Menu** | Trigger: `Right-Shift {{key:×}}` | HP-32SII: `SF n`, `CF n`, `FS? n`, `FC? n` | SC-32 adds `4-LVL`, `8-LVL`, `INF`, `EXAM` | Extends `FLAGS` with selectable stack depth (`4-LVL`, `8-LVL`, `INF`) and proctored `EXAM` lockdown. |
-| **`EQN` Mode** | Trigger: `Right-Shift {{key:STO}}` | HP-32SII: Infix strings (`SIN(X)+1`) | SC-32: RPN step entry + `EQN_NEW`/`EQN_EDIT` | Stores and edits equations as pure RPN instruction steps with LFU softkeys (`EQN_NEW`, `EQN_EDIT`). |
-
-### Seven Architectural Enhancements Over the Vintage HP-32SII
-
-Beyond the physical keycap legends, the SC-32 expands seven core subsystems while preserving 100% compatibility with classic HP-32SII keystroke sequences:
-
-* **Four-Line Stack Display & Dedicated 6-Key LFU Bar (`R0, C0–C5`):** Replaces the HP-32SII's single-line 12-character LCD with a $132 \times 65\text{ px}$ transflective 4-line stack view ($T, Z, Y, X$) paired with six physical LFU softkeys (`{{key:LFU0}}`–`{{key:LFU5}}`), so active submenus never hijack `{{key:√x}}`..`{{key:Σ+}}`.
-* **Pure RPN Equations & Iverson Piecewise Booleans (`{{key:EQN}}`):** Evaluates stored equations as pure, side-effect-free RPN token streams rather than infix strings. Relational tests from `{{key:x?y}}` and `{{key:x?0}}` (`R4C4`) act as non-destructive Iverson indicator brackets $[P] \in \{1, 0\}$ on Register $X$ (preserving $Y$ and $Z$) to support branchless piecewise formulas across `{{key:XEQ}}`, `{{key:SOLVE}}`, and `{{key:∫}}`.
-* **Direct `|x|` & `÷R` Keys and Expanded `PARTS` Softkey Menu (`R1C0`, `R3C3–C4`):** Reclaiming infix `(` and `)` on Row 3 places Absolute Value `{{key:ABS}}` (`|x|`) and Euclidean quotient-remainder division `{{key:÷R}}` on direct right-shifted keys, while the `PARTS` softkey menu (`Right-Shift {{key:√x}}`) retains the HP-32SII's `IP`, `FP`, and `ABS` softkeys (`LFU0`–`LFU2`) and adds Signum (`SGN`), Greatest Common Divisor (`GCD`), and Least Common Multiple (`LCM`) on `LFU3`–`LFU5` (unlike the elementary SC-6, where `GCF` and `LCM` are physical keys).
-* **Analytic `POLY` Root Workspace & `TVM` Financial Engine (`R4C0`, `R7C3`):** Adds a closed-form quadratic and cubic polynomial solver (`{{key:POLY}}`: `A`, `B`, `C`, `D`, `EXEC`, `CLR`) that writes all real and complex conjugate roots to `R34`–`R39`, alongside a 5-variable HP-12C `{{key:TVM}}` solver (`N`, `I%`, `PV`, `PMT`, `FV`, `END/BEG`).
-* **Dedicated Parallel-Harmonic Operator (`{{key:x∥y}}` at `R7C3`):** Evaluates the reciprocal product-over-sum law $\frac{Y \times X}{Y + X}$ in a single unshifted keystroke across real and complex (`{{key:CMPLX}}`) operands for parallel resistors, series capacitors, thin lenses, and combined flow rates.
-* **Configurable Stack Depth (`4-LVL`, `8-LVL`, `INF`) & Proctored `EXAM` Mode (`R5C4`):** The `FLAGS` menu preserves user Flags `0`–`9` (`SF`, `CF`, `FS?`) and adds the `STACK` submenu (`2-LVL`, `4-LVL`, `8-LVL`, `INF`, `VIEW`) plus proctored `EXAM` lockdown. Default `4-LVL` mode preserves exact Corvallis 4-register physics (including top-of-stack $T$-replication on drop), while `8-LVL` and `INF` (999-level LIFO) eliminate register overflow during deeply nested evaluations.
-* **36-Bit Signed Two's-Complement `BASE` Arithmetic & 89-Slot Indirect Memory Map (`i`, `(i)`):** Expands integer `BASE` operations (`DEC`, `HEX`, `OCT`, `BIN`) from 32-bit unsigned truncation to a 36-bit signed two's-complement word (9 hex nibbles, 12 octal digits). Integer pointers $k \in \{1 \dots 89\}$ stored in `i` (`STO` `{{key:.}}`) and dereferenced via `(i)` (`RCL` `{{key:x∥y}}` or `STO` `{{key:x∥y}}`) address:
-  * `1`–`26`: Named variables `A` through `Z` (`1 = A`, `2 = B`, $\dots$, `26 = Z`), plus `27` for the index register `i` itself.
-  * `28`–`33`: Live statistical accumulators (`Σn, Σx, Σy, Σx², Σy², Σxy` at indirect slots `28`–`33`; arranged as `Σx, Σy, Σx², Σy², Σxy, n` on the `SUMS` softkey bar).
-  * `34`–`39`: Analytic polynomial roots from `{{key:POLY}}` ($\text{Re}(r_1), \text{Im}(r_1), \text{Re}(r_2), \text{Im}(r_2), \text{Re}(r_3), \text{Im}(r_3)$).
-  * `40`–`89`: Up to 50 raw statistical data values (`DATA0`–`DATA49`, storing up to 25 bivariate $(x_k, y_k)$ pairs) accumulated via `{{key:Σ+}}` for residual and regression auditing (`DATA` tab in `{{key:REGS}}`).
-
-### Dynamic LFU Softkey Menus Directory
-
-The six top keys (`{{key:LFU0}}` through `{{key:LFU5}}`) automatically remap depending on the active menu state:
-
-| Menu | LFU0 | LFU1 | LFU2 | LFU3 | LFU4 | LFU5 |
-|:---|:---|:---|:---|:---|:---|:---|
-| DISP | FIX n | SCI n | ENG n | ALL | (None) | (None) |
-| MODES | DEG | RAD | GRAD | . | , | (None) |
-| BASE | HEX | DEC | OCT | BIN | (None) | (None) |
-| CLEAR | CLEQN | CLVARS | CLALL | CLSTAT (CLΣ) | CLREGS | CLSTK |
-| FLAGS | SF n | CF n | FS? n | STACK | EXAM | (More ▸) |
-| STACK | 2-LVL | 4-LVL | 8-LVL | INF | VIEW | (None) |
-| PARTS | IP | FP | ABS | SGN | GCD | LCM |
-| PROB | C n, r | P n, r | n! (x!) | RAND | SD | (None) |
-| SUMS | Σx | Σy | Σx² | Σy² | Σxy | n |
-| x̄,ȳ | x̄ | ȳ | x̄w | (None) | (None) | (None) |
-| s,σ | sx | sy | σx | σy | (None) | (None) |
-| L.R. | ŷ | x̂ | r | m | b | (None) |
-| x?y | x=y | x≠y | x>y | x<y | x≥y | x≤y |
-| x?0 | x=0 | x≠0 | x>0 | x<0 | x≥0 | x≤0 |
-| TVM | N | I% | PV | PMT | FV | END/BEG |
-| POLY | A | B | C | D | EXEC | CLR |
-| REGS | STACK | STO | STATS | DATA | ▲ | ▼ |
+From any active softkey submenu, `{{key:C}}` (`EXIT`) dismisses the modal overlay and restores the six LFU telemetry slots along the bottom row without altering Register $X$ or the current stack lift state.
 
 ---
 
-## Open-Source Hardware & Firmware Architecture
+## System Flags Directory (`FLAGS` Menu & Flags `0`–`9`)
 
-Live schematics, Gerber fabrication files, and firmware sources are maintained at [stackcalc.io/hardware](https://stackcalc.io/hardware) and in our public engineering build logs on [Hackaday](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator).
+The key sequence `{{key:↱}}` + `{{key:×}}` (`FLAGS`) opens the System Flags and Configuration workspace. On the StackCalc SC-32, ten persistent system and general-purpose flags (`Flag 0` through `Flag 9`) govern instrument configuration, stack architecture, interface presentation, and rational fraction display formatting. Flags are modified interactively through the `FLAGS` toggle grid (pressing digits `0`–`9` directly on hardware/replica, or using `SF 0`–`SF 9` and `CF 0`–`CF 9` in the companion app):
 
-### Deterministic State-Machine Execution
-The SC-32 firmware is structured around a pure, side-effect-free transition function $\delta(S, k) \to S'$ that separates mathematical state execution from display rendering and matrix scanning. Rather than dispersing stack-lift rules, edit-buffer termination, and error trapping across user-interface handlers, the entire calculator state—comprising the active stack registers, `LASTX`, the 26 named variables (`A`–`Z`), indirect index register `i`, statistical accumulators, `TVM` financial registers, and the Stack Lift flag—resides in a single deterministic value structure.
+| Flag # | Engine ID | Default State | Access & Control | Functional Role & Architectural Behavior |
+| :---: | :---: | :---: | :--- | :--- |
+| **Flag 0** | `0:F0` | `OFF` (`0`) | Digit `0` (`SF 0` / `CF 0`) | **General-Purpose Flag 0:** User-toggleable boolean flag 0 for status tracking. |
+| **Flag 1** | `1:F1` | `OFF` (`0`) | Digit `1` (`SF 1` / `CF 1`) | **General-Purpose Flag 1:** Secondary user-toggleable boolean flag 1 for status tracking. |
+| **Flag 2** | `2:INT` | `HRD` / `APP` | Digit `2` or `FLAGS` $\to$ `UI` | **Interface Presentation Mode:** Selects between the hardware replica bezel layout (`HRD`/`REPLICA`, `Flag 2 = ON`) and the expanded touch interface (`APP`, `Flag 2 = OFF`) on companion software platforms. |
+| **Flag 3** | `3:FACE` | Theme ID | Digit `3` or `FLAGS` $\to$ `FACE` | **Visual Faceplate Selector:** Cycles the active visual faceplate palette (`RETR`, `STLH`, `NOVA`, `SPAC`, `VOYG`, `SYNT`, `ARCD`, `BLCK`) on companion software platforms without altering key coordinates or shift assignments. |
+| **Flag 4** | `4:STK` | `4-LN` (`ON`) | Digit `4` or `FLAGS` $\to$ `STACK` $\to$ `VIEW` | **Stack Display Layout (`4-LN` vs. `1-LN`):** When set (`4-LN`), the LCD renders all four operational registers ($T, Z, Y, X$); when cleared (`1-LN`), the display focuses on active Register $X$. |
+| **Flag 5** | `5:DEP` | `4-LVL` | Digit `5` or `FLAGS` $\to$ `STACK` (`2-LVL`, `4-LVL`, `8-LVL`, `INF`) | **Operational Stack Depth Selector:** Selects classical 4-register RPN with $T$-replication (`4-LVL`), 2-register (`2-LVL`), 8-register (`8-LVL`), or dynamic 999-level LIFO heap (`INF`). |
+| **Flag 6** | `6:MOD` | `SC32` (`OFF`) | Digit `6` or `FLAGS` $\to$ `MODE` | **Instrument Architecture Profile:** Cycles the active calculator model when inside the `FLAGS` menu (`SC-32`, `SC-6`, and domain models). |
+| **Flag 7** | `7:FRC` | `OFF` (`0`) | Digit `7` or `{{key:↰}}` + `{{key:.}}` (`FDISP`) | **Rational Fraction Display Mode (`FDISP`):** Toggles Register $X$ between floating-point decimal display (`OFF`) and rational fraction rendering (`ON`, e.g., `3 1/8` or `25/8`). |
+| **Flag 8** | `8:/c` | `OFF` (`0`) | Digit `8` or `FLAGS` $\to$ `MODE` | **Unreduced vs. Reduced Fraction Mode (`8:/c`):** When cleared (`OFF`), rational fractions reduce to lowest terms by dividing by $\gcd(n, d)$; when set (`ON`), fractions retain the unreduced denominator. |
+| **Flag 9** | `9:d/c` | `OFF` (`0`) | Digit `9` or `FLAGS` $\to$ `MODE` | **Improper vs. Mixed Fraction Mode (`9:d/c`):** When cleared (`OFF`), rational display renders mixed numbers (`a b/c`); when set (`ON`), fractions render as improper fractions (`d/c`). |
 
-Maintaining behavioral parity between the physical microcontroller firmware and the desktop/web hardware simulator requires strict adherence to edge-case invariants: how `{{key:ENTER}}` disarms stack lift, how an in-progress digit entry interacts with `{{key:x⇄y}}`, how `{{key:LASTX}}` captures pre-operation operands differently across unary and dyadic operators, and how pre-mutation domain guards trap $\tan(90^\circ)$ or $\ln(0)$ without corrupting upper registers. Every physical row-and-column switch closure on the handheld PCB steps the formal four-register automaton defined in Appendix A before updating the $132 \times 65$ display buffer.
+In addition to individual flag toggles (`0`–`9`, `SF`, `CF`), the `FLAGS` softkey menu provides the **Sanctioned Examination Lockdown (`EXAM`)** toggle. Invoking `EXAM` executes an atomic `CLALL` memory purge (zeroing the operational stack, `LASTX`, all 26 named variables `A`–`Z`, the indirect register `i`, statistical accumulators, and stored equations) and locks the instrument into a verifiable examination compliance state until exited.
 
-### Mathematical Rigor in Silicon: Lanczos, Brent, and Romberg
-Every transcendental function, statistical estimator, root solver, and definite integral on the SC-32 is implemented using established algorithms from numerical analysis:
-
-* **Continuous Factorials via Cornelius Lanczos's Gamma Approximation:** Rather than limiting `{{key:x!}}` to a lookup table of whole numbers, the engine evaluates $\Gamma(x+1)$ across the real line using Cornelius Lanczos's Chebyshev rational approximation paired with Euler's reflection formula $\Gamma(z)\Gamma(1-z) = \frac{\pi}{\sin(\pi z)}$, maintaining 15-digit internal precision from fractional half-integers up to $170! \approx 7.2574 \times 10^{306}$.
-* **Guaranteed Root-Finding via Richard Brent's Hybrid Algorithm:** Pure Newton–Raphson iteration can diverge when a curve flattens near a local extremum, while pure bisection converges at one binary bit per step. The `{{key:SOLVE}}` engine implements Richard Brent's 1973 hybrid method, which uses inverse quadratic and secant interpolation whenever the iterate converges rapidly and falls back to bisection whenever an iterate would step outside the bracket $[a, b]$ or stall.
-* **Adaptive Calculus via Werner Romberg's Richardson Tableau:** When you press `{{key:∫}}`, the calculator constructs a triangular Romberg tableau, halving the trapezoidal step size and applying Lewis Fry Richardson's $\frac{4^m T_{k,m-1} - T_{k-1,m-1}}{4^m - 1}$ error-cancellation cascade to eliminate successive powers of $h^2, h^4, h^6$ until the integral converges to machine tolerance.
-
-Each of these numerical engines—alongside William Kahan's compensated summation and base-preserving percentages, Gaussian complex phasor arithmetic, and 36-bit two's-complement word operations—is verified against reference mathematical test vectors across the full domain.
-
-### Four-Layer Gold-Immersion Hardware, Daylight Optics & Tactile Key-Feel
-The physical hardware integrates the PCB switch matrix, reflective optics, and mechanical enclosure as a unified assembly:
-
-* **Four-Layer ENIG Circuit Architecture & Continuous Memory:** The custom four-layer printed circuit board uses an electroless nickel immersion gold (ENIG) surface finish across its switch matrix pads for corrosion-free contact longevity over hundreds of thousands of actuations. Between calculations, the firmware writes atomic, FNV-1a checksum-verified state snapshots—preserving all four stack registers ($T, Z, Y, X$), `LASTX`, the 26 letter registers (`A`–`Z`), all six statistical accumulators, TVM financial registers, and the 24-slot Equation Bank—into dual alternating $32\text{ KiB}$ non-volatile flash slots.
-* **Reflective Daylight Readability & Tactile Dome-Switch Mechanics:** Rather than an emissive smartphone screen that washes out in direct sunlight, the SC-32 pairs a $132 \times 65$ transflective liquid-crystal display with a laser-micro-foamed thermoplastic faceplate and a unified TPU 95A keypad membrane over 43 discrete tactile dome switches. Ambient light passes through the liquid-crystal layer and reflects off the internal metallic reflector, increasing contrast as ambient illumination rises, while the 43 tactile dome switches beneath the sculpted keycaps provide crisp mechanical feedback on each actuation.
-* **Simulating Silicon & Board-Aware Parametric CAD:** During board fabrication, a browser-based hardware simulator wired to a cycle-accurate microcontroller emulator verified matrix debouncing, sleep wake-up timing, and pixel typography before physical bring-up. As documented in the Hackaday engineering logs, the parametric OpenSCAD enclosure scripts read mounting and switch coordinates directly from the KiCad layout—separating mechanical alignment, capture, stop, and release geometries so the tapered chassis, faceplate, TPU keypad membrane, and snap-retained cap assemble without screws or adhesive. Complete KiCad schematics, parametric CAD sources, printable `.stl`/`.3mf` files, and firmware build logs are published at [stackcalc.io/downloads](https://stackcalc.io/downloads) for students, educators, and engineers.
+Within the symbolic Equation Bank (`{{key:EQN}}`) and interactive stack workflows, conditional piecewise branching is performed directly with the relational test menus `{{key:x?y}}` (`{{key:↰}}` + `{{key:÷}}`) and `{{key:x?0}}` (`{{key:↱}}` + `{{key:÷}}`). Interactively on the keypad, executing a relational test displays `"YES"` or `"NO"` on the status line; inside symbolic `{{key:EQN}}` expressions, each test evaluates to `1` when True and `0` when False. Multiplying two sub-expressions by complementary relational tests (such as `X A x>y` and `X A x≤y`) allows a single stored equation in `{{key:EQN}}` to switch cleanly between two physical regimes—such as Macaulay beam singularity brackets, subsonic vs. supersonic drag laws, or laminar vs. turbulent pipe friction—when evaluated via `{{key:XEQ}}`, `{{key:SOLVE}}`, or `{{key:∫}}`.

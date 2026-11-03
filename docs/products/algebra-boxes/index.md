@@ -174,7 +174,7 @@ hide:
       </div>
 
       <p class="ec-short-summary">
-        The tactile algebraic laboratory for mastering polynomial expressions, the distributive property, binomial multiplication, and quadratic factoring. A modular 3&times;1 Gridfinity storage box integrates a precision factoring stage with perimeter guidance rails and 35 chamfered dual-color snap tiles.
+        The tactile algebraic laboratory for mastering polynomial expressions, the distributive property, binomial multiplication, and quadratic factoring. A modular 3&times;1&times;7U Gridfinity storage box integrates a precision factoring stage with 2 interlocking Cartesian guidance L-rails and 40 chamfered dual-color polynomial tiles (43 pieces total).
       </p>
 
       <!-- Highlights Checklist -->
@@ -189,11 +189,11 @@ hide:
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>30 Chamfered Tiles:</strong> Tactile large \(x^2\) squares, \(x\) bars, and unit \(1\) tiles with debossed algebraic labels and thumb-lift notches.</span>
+          <span><strong>40 Chamfered Tiles (20 Positive + 20 Negative):</strong> Tactile large \(\pm x^2\) squares, \(\pm x\) bars, and unit \(\pm 1\) tiles with debossed algebraic labels and thumb-lift notches.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Gridfinity 3x1 Standard:</strong> Neatly stores into standard classroom desk organizers and maker systems.</span>
+          <span><strong>Gridfinity 3x1x7U Standard:</strong> Neatly stores into standard classroom desk organizers and maker systems.</span>
         </div>
       </div>
 
@@ -643,8 +643,8 @@ hide:
           <td class="ec-spec-v">Dual grooved coordinate guidance tracks for factor positioning along X and Y axes</td>
         </tr>
         <tr>
-          <td class="ec-spec-k">Polynomial Tiles (30 Total)</td>
-          <td class="ec-spec-v">2&times; \(x^2\) large squares (\(38.6 \times 38.6\,\text{mm}\)), 10&times; \(x\) rods (\(38.6 \times 19.0\,\text{mm}\)), 18&times; unit \(1\) squares (\(19.0 \times 19.0\,\text{mm}\))</td>
+          <td class="ec-spec-k">Polynomial Tiles (40 Total)</td>
+          <td class="ec-spec-v">20 Positive (\(2\times +x^2, 6\times +x, 12\times +1\)) + 20 Negative (\(2\times -x^2, 6\times -x, 12\times -1\)) &bull; \(x^2 = 38.6 \times 38.6\,\text{mm}\), \(x = 38.6 \times 19.0\,\text{mm}\), \(1 = 19.0 \times 19.0\,\text{mm}\)</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Tile Annotations</td>
@@ -676,11 +676,11 @@ hide:
     <div class="ec-box-grid">
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">3x1x13U Gridfinity Enclosure Box with Snapfinity Bi-Directional Sliding Hard Lid and Integrated Factoring Stage Rails (Snap-on TPU non-skid feet sold separately)</span>
+        <span class="ec-box-text">3x1x7U Gridfinity Enclosure Box with 2 Interlocking Cartesian Factoring Stage L-Rails (43 pieces total)</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">30 Chamfered Precision Polynomial Tiles (\(x^2\), \(x\), and \(1\))</span>
+        <span class="ec-box-text">40 Chamfered Precision Polynomial Tiles: 20 Positive (\(2\times +x^2, 6\times +x, 12\times +1\)) and 20 Negative (\(2\times -x^2, 6\times -x, 12\times -1\))</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>

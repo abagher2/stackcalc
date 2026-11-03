@@ -24,7 +24,7 @@ hide:
     <div class="ec-catalog-eyebrow">Classroom Hardware &bull; 3x1 Gridfinity Standard</div>
     <h1 class="ec-catalog-headline">Ten-Frames Dual Stage Assembly Guide</h1>
     <p class="ec-catalog-subhead">
-      Featuring a slide-out 2&times;5 counting stage, elevated +10 carry shelf, and 20 reversible Gridfinity miniblock counters. Learn how the physical tiers interlock.
+      Featuring 2 independent 2&times;5 counting trays, a twin 10-frame docking stage lid, 40 tactile counter miniblocks, and 12 Landmark <code>[10]</code> carry blocks in a 3&times;1&times;7U enclosure (56 pieces total). Learn how the physical tiers interlock.
     </p>
   </header>
 

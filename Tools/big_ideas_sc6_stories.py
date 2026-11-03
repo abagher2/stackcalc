@@ -486,8 +486,8 @@ SECTION_STORY_PARAGRAPHS: Dict[str, str] = {
     "8.1": (
         "Liam used to plug numbers blindly into the 6-wall box formula SA = 2(lw + lh + wh) without thinking about the actual "
         "object—until he ordered too much glass for an open-top aquarium and got the wrong painted area when Zoe glued two "
-        "4-centimeter wooden cubes face-to-face to model huddling penguins. When they unfolded a paper model of the fish tank "
-        "flat on the table, Liam saw why the formula failed him: an open-top tank only has 5 glass panels (no top lid!), and "
+        "4-centimeter wooden cubes face-to-face to model huddling penguins. When they sketched the 2D net of the fish tank "
+        "flat on their blueprint, Liam saw why the formula failed him: an open-top tank only has 5 glass panels (no top lid!), and "
         "gluing two cubes together hides their 2 touching faces inside, leaving only 10 exposed outer squares instead of 12."
     ),
     # Planning Metadata — Sec 8.2: Camping tents & square-pyramid gazebo roofs | Character: Liam

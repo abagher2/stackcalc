@@ -240,7 +240,7 @@
     "id" : "refcard_algb01_ex2",
     "model" : "sc32",
     "res" : "2",
-    "seq" : "{{key:POLY}} 1 {{key:A}} 0 {{key:B}} 4 {{key:+\/-}} {{key:C}} 0 {{key:D}} {{key:EXEC}} {{key:RCL}} 1 {{key:RCL}} 5",
+    "seq" : "{{key:POLY}} 1 {{key:A}} 0 {{key:B}} 4 {{key:+\/-}} {{key:C}} 0 {{key:D}} {{key:XEQ}} {{key:RCL}} 1 {{key:RCL}} 5",
     "stack" : {
       "T" : "-2",
       "X" : "2",
@@ -254,7 +254,7 @@
     "id" : "refcard_algb01_ex3",
     "model" : "sc32",
     "res" : "-2",
-    "seq" : "{{key:POLY}} 1 {{key:A}} 5 {{key:B}} 6 {{key:C}} 0 {{key:D}} {{key:EXEC}} {{key:RCL}} 1 {{key:RCL}} 3",
+    "seq" : "{{key:POLY}} 1 {{key:A}} 5 {{key:B}} 6 {{key:C}} 0 {{key:D}} {{key:XEQ}} {{key:RCL}} 1 {{key:RCL}} 3",
     "stack" : {
       "T" : "-3",
       "X" : "-2",
@@ -4790,7 +4790,7 @@
     "stack" : {
       "T" : "0",
       "X" : "23",
-      "Y" : "7",
+      "Y" : "0",
       "Z" : "0"
     }
   },
@@ -4798,13 +4798,13 @@
     "description" : "07-data-probability-primes.md verified sequence #24",
     "id" : "sc6_07_data_probability_primes_seq_24",
     "model" : "sc6",
-    "res" : "0.75",
+    "res" : "1",
     "seq" : "{{key:CLΣ}} 0.1 {{key:Σ+}} 0.2 {{key:Σ+}} 0.4 {{key:Σ+}} 0.6 {{key:Σ+}} 0.9 {{key:Σ+}} 1.2 {{key:Σ+}} 1.5 {{key:Σ+}} {{key:IQR}}",
     "seqKeys" : "{{key:CLΣ}} {{key:0}} {{key:.}} {{key:1}} {{key:Σ+}} {{key:0}} {{key:.}} {{key:2}} {{key:Σ+}} {{key:0}} {{key:.}} {{key:4}} {{key:Σ+}} {{key:0}} {{key:.}} {{key:6}} {{key:Σ+}} {{key:0}} {{key:.}} {{key:9}} {{key:Σ+}} {{key:1}} {{key:.}} {{key:2}} {{key:Σ+}} {{key:1}} {{key:.}} {{key:5}} {{key:Σ+}} {{key:IQR}}",
     "stack" : {
       "T" : "0",
-      "X" : "0.75",
-      "Y" : "7",
+      "X" : "1",
+      "Y" : "0",
       "Z" : "0"
     }
   },
@@ -4818,7 +4818,7 @@
     "stack" : {
       "T" : "0",
       "X" : "6",
-      "Y" : "5",
+      "Y" : "0",
       "Z" : "0"
     }
   },
@@ -4911,8 +4911,8 @@
     "id" : "sc6_07_data_probability_primes_seq_32",
     "model" : "sc6",
     "res" : "125",
-    "seq" : "125 {{key:+\/-}} {{key:|x|}}",
-    "seqKeys" : "{{key:1}} {{key:2}} {{key:5}} {{key:+\/-}} {{key:|x|}}",
+    "seq" : "125 {{key:+\/-}} {{key:ABS}}",
+    "seqKeys" : "{{key:1}} {{key:2}} {{key:5}} {{key:+\/-}} {{key:ABS}}",
     "stack" : {
       "T" : "0",
       "X" : "125",
@@ -4925,8 +4925,8 @@
     "id" : "sc6_07_data_probability_primes_seq_33",
     "model" : "sc6",
     "res" : "30",
-    "seq" : "18 {{key:+\/-}} {{key:|x|}} 12 {{key:|x|}} {{key:+}}",
-    "seqKeys" : "{{key:1}} {{key:8}} {{key:+\/-}} {{key:|x|}} {{key:1}} {{key:2}} {{key:|x|}} {{key:+}}",
+    "seq" : "18 {{key:+\/-}} {{key:ABS}} 12 {{key:ABS}} {{key:+}}",
+    "seqKeys" : "{{key:1}} {{key:8}} {{key:+\/-}} {{key:ABS}} {{key:1}} {{key:2}} {{key:ABS}} {{key:+}}",
     "stack" : {
       "T" : "0",
       "X" : "30",
@@ -4939,8 +4939,8 @@
     "id" : "sc6_07_data_probability_primes_seq_34",
     "model" : "sc6",
     "res" : "27",
-    "seq" : "15 {{key:ENTER}} 12 {{key:+\/-}} {{key:-}} {{key:|x|}}",
-    "seqKeys" : "{{key:1}} {{key:5}} {{key:ENTER}} {{key:1}} {{key:2}} {{key:+\/-}} {{key:-}} {{key:|x|}}",
+    "seq" : "15 {{key:ENTER}} 12 {{key:+\/-}} {{key:-}} {{key:ABS}}",
+    "seqKeys" : "{{key:1}} {{key:5}} {{key:ENTER}} {{key:1}} {{key:2}} {{key:+\/-}} {{key:-}} {{key:ABS}}",
     "stack" : {
       "T" : "0",
       "X" : "27",
@@ -5280,7 +5280,7 @@
     "stack" : {
       "T" : "0",
       "X" : "3.1428571429",
-      "Y" : "7",
+      "Y" : "0",
       "Z" : "0"
     }
   },
@@ -5294,7 +5294,7 @@
     "stack" : {
       "T" : "0",
       "X" : "16.5",
-      "Y" : "8",
+      "Y" : "0",
       "Z" : "0"
     }
   },
@@ -11214,7 +11214,7 @@
     "id" : "sc32_07_polynomials_brent_solver_seq_02",
     "model" : "sc32",
     "res" : "26.590115798",
-    "seq" : "{{key:POLY}} 360.3673 {{key:A}} 1200 {{key:+\/-}} {{key:B}} 510.3673 {{key:C}} 0 {{key:D}} {{key:EXEC}} {{key:RCL}} 3 {{key:ATAN}}",
+    "seq" : "{{key:POLY}} 360.3673 {{key:A}} 1200 {{key:+\/-}} {{key:B}} 510.3673 {{key:C}} 0 {{key:D}} {{key:XEQ}} {{key:RCL}} 3 {{key:ATAN}}",
     "seqKeys" : "{{key:POLY}}",
     "stack" : {
       "T" : "-1,200",
@@ -11228,7 +11228,7 @@
     "id" : "sc32_07_polynomials_brent_solver_seq_03",
     "model" : "sc32",
     "res" : "4.2619723651",
-    "seq" : "{{key:POLY}} 1 {{key:A}} 4.828427 {{key:+\/-}} {{key:B}} 2.414214 {{key:C}} 0 {{key:D}} {{key:EXEC}} {{key:RCL}} 5",
+    "seq" : "{{key:POLY}} 1 {{key:A}} 4.828427 {{key:+\/-}} {{key:B}} 2.414214 {{key:C}} 0 {{key:D}} {{key:XEQ}} {{key:RCL}} 5",
     "seqKeys" : "{{key:POLY}}",
     "stack" : {
       "T" : "-4.828427",
@@ -11311,8 +11311,8 @@
     "description" : "Verified calculation in sc32\/07-polynomials-brent-solver.md",
     "model" : "sc32",
     "res" : "0.3587362482",
-    "seq" : "{{key:POLY}} 50 {{key:A}} 26.753 {{key:+\/-}} {{key:B}} 3.59 {{key:C}} 0.153293 {{key:+\/-}} {{key:D}} {{key:EXEC}} {{key:x⇄y}}",
-    "seqKeys" : "{{key:POLY}} {{key:5}} {{key:0}} {{key:A}} {{key:2}} {{key:6}} {{key:.}} {{key:7}} {{key:5}} {{key:3}} {{key:+\/-}} {{key:B}} {{key:3}} {{key:.}} {{key:5}} {{key:9}} {{key:C}} {{key:0}} {{key:.}} {{key:1}} {{key:5}} {{key:3}} {{key:2}} {{key:9}} {{key:3}} {{key:+\/-}} {{key:D}} {{key:EXEC}}",
+    "seq" : "{{key:POLY}} 50 {{key:A}} 26.753 {{key:+\/-}} {{key:B}} 3.59 {{key:C}} 0.153293 {{key:+\/-}} {{key:D}} {{key:XEQ}} {{key:x⇄y}}",
+    "seqKeys" : "{{key:POLY}} {{key:5}} {{key:0}} {{key:A}} {{key:2}} {{key:6}} {{key:.}} {{key:7}} {{key:5}} {{key:3}} {{key:+\/-}} {{key:B}} {{key:3}} {{key:.}} {{key:5}} {{key:9}} {{key:C}} {{key:0}} {{key:.}} {{key:1}} {{key:5}} {{key:3}} {{key:2}} {{key:9}} {{key:3}} {{key:+\/-}} {{key:D}} {{key:XEQ}}",
     "stack" : {
       "T" : "50",
       "X" : "0.3587362482",
@@ -11324,8 +11324,8 @@
     "description" : "Verified calculation in sc32\/07-polynomials-brent-solver.md",
     "model" : "sc32",
     "res" : "-5",
-    "seq" : "{{key:POLY}} 1 {{key:A}} 12 {{key:B}} 45 {{key:C}} 50 {{key:D}} {{key:EXEC}} {{key:x⇄y}}",
-    "seqKeys" : "{{key:POLY}} {{key:1}} {{key:A}} {{key:1}} {{key:2}} {{key:B}} {{key:4}} {{key:5}} {{key:C}} {{key:5}} {{key:0}} {{key:D}} {{key:EXEC}}",
+    "seq" : "{{key:POLY}} 1 {{key:A}} 12 {{key:B}} 45 {{key:C}} 50 {{key:D}} {{key:XEQ}} {{key:x⇄y}}",
+    "seqKeys" : "{{key:POLY}} {{key:1}} {{key:A}} {{key:1}} {{key:2}} {{key:B}} {{key:4}} {{key:5}} {{key:C}} {{key:5}} {{key:0}} {{key:D}} {{key:XEQ}}",
     "stack" : {
       "T" : "1",
       "X" : "-5",
@@ -11337,8 +11337,8 @@
     "description" : "Verified calculation in sc32\/07-polynomials-brent-solver.md",
     "model" : "sc32",
     "res" : "1,453.299832",
-    "seq" : "{{key:POLY}} 0.05 {{key:A}} 120 {{key:B}} 280000 {{key:+\/-}} {{key:C}} 0 {{key:D}} {{key:EXEC}} {{key:RCL}} 3",
-    "seqKeys" : "{{key:POLY}} {{key:0}} {{key:.}} {{key:0}} {{key:5}} {{key:A}} {{key:1}} {{key:2}} {{key:0}} {{key:B}} {{key:2}} {{key:8}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:+\/-}} {{key:C}} {{key:0}} {{key:D}} {{key:EXEC}} {{key:RCL}} {{key:3}}",
+    "seq" : "{{key:POLY}} 0.05 {{key:A}} 120 {{key:B}} 280000 {{key:+\/-}} {{key:C}} 0 {{key:D}} {{key:XEQ}} {{key:RCL}} 3",
+    "seqKeys" : "{{key:POLY}} {{key:0}} {{key:.}} {{key:0}} {{key:5}} {{key:A}} {{key:1}} {{key:2}} {{key:0}} {{key:B}} {{key:2}} {{key:8}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:+\/-}} {{key:C}} {{key:0}} {{key:D}} {{key:XEQ}} {{key:RCL}} {{key:3}}",
     "stack" : {
       "T" : "120",
       "X" : "1,453.299832",
@@ -11350,8 +11350,8 @@
     "description" : "Verified calculation in sc32\/07-polynomials-brent-solver.md",
     "model" : "sc32",
     "res" : "112.90729452",
-    "seq" : "{{key:POLY}} 1 {{key:A}} 190 {{key:+\/-}} {{key:B}} 9900 {{key:C}} 135000 {{key:+\/-}} {{key:D}} {{key:EXEC}} {{key:RCL}} 1 {{key:RCL}} 3 {{key:RCL}} 5",
-    "seqKeys" : "{{key:POLY}} {{key:1}} {{key:A}} {{key:7}} {{key:0}} {{key:+\/-}} {{key:B}} {{key:1}} {{key:1}} {{key:7}} {{key:5}} {{key:C}} {{key:5}} {{key:7}} {{key:5}} {{key:0}} {{key:+\/-}} {{key:D}} {{key:EXEC}}",
+    "seq" : "{{key:POLY}} 1 {{key:A}} 190 {{key:+\/-}} {{key:B}} 9900 {{key:C}} 135000 {{key:+\/-}} {{key:D}} {{key:XEQ}} {{key:RCL}} 1 {{key:RCL}} 3 {{key:RCL}} 5",
+    "seqKeys" : "{{key:POLY}} {{key:1}} {{key:A}} {{key:7}} {{key:0}} {{key:+\/-}} {{key:B}} {{key:1}} {{key:1}} {{key:7}} {{key:5}} {{key:C}} {{key:5}} {{key:7}} {{key:5}} {{key:0}} {{key:+\/-}} {{key:D}} {{key:XEQ}}",
     "stack" : {
       "T" : "0",
       "X" : "112.90729452",
@@ -11363,8 +11363,8 @@
     "description" : "Verified calculation in sc32\/07-polynomials-brent-solver.md",
     "model" : "sc32",
     "res" : "0.6013896973",
-    "seq" : "{{key:POLY}} 1 {{key:A}} 1.5 {{key:+\/-}} {{key:B}} 0 {{key:C}} 0.325 {{key:D}} {{key:EXEC}} {{key:RCL}} 3",
-    "seqKeys" : "{{key:POLY}} {{key:1}} {{key:A}} {{key:1}} {{key:.}} {{key:5}} {{key:+\/-}} {{key:B}} {{key:0}} {{key:C}} {{key:0}} {{key:.}} {{key:3}} {{key:2}} {{key:5}} {{key:D}} {{key:EXEC}}",
+    "seq" : "{{key:POLY}} 1 {{key:A}} 1.5 {{key:+\/-}} {{key:B}} 0 {{key:C}} 0.325 {{key:D}} {{key:XEQ}} {{key:RCL}} 3",
+    "seqKeys" : "{{key:POLY}} {{key:1}} {{key:A}} {{key:1}} {{key:.}} {{key:5}} {{key:+\/-}} {{key:B}} {{key:0}} {{key:C}} {{key:0}} {{key:.}} {{key:3}} {{key:2}} {{key:5}} {{key:D}} {{key:XEQ}}",
     "stack" : {
       "T" : "-1.5",
       "X" : "0.6013896973",
@@ -11376,8 +11376,8 @@
     "description" : "Verified calculation in sc32\/07-polynomials-brent-solver.md",
     "model" : "sc32",
     "res" : "56.366833086",
-    "seq" : "{{key:POLY}} 20 {{key:A}} 735.75 {{key:+\/-}} {{key:B}} 22072.5 {{key:+\/-}} {{key:C}} 0 {{key:D}} {{key:EXEC}} {{key:RCL}} 5",
-    "seqKeys" : "{{key:POLY}} {{key:2}} {{key:0}} {{key:A}} {{key:7}} {{key:3}} {{key:5}} {{key:.}} {{key:7}} {{key:5}} {{key:+\/-}} {{key:B}} {{key:2}} {{key:2}} {{key:0}} {{key:7}} {{key:2}} {{key:.}} {{key:5}} {{key:+\/-}} {{key:C}} {{key:EXEC}}",
+    "seq" : "{{key:POLY}} 20 {{key:A}} 735.75 {{key:+\/-}} {{key:B}} 22072.5 {{key:+\/-}} {{key:C}} 0 {{key:D}} {{key:XEQ}} {{key:RCL}} 5",
+    "seqKeys" : "{{key:POLY}} {{key:2}} {{key:0}} {{key:A}} {{key:7}} {{key:3}} {{key:5}} {{key:.}} {{key:7}} {{key:5}} {{key:+\/-}} {{key:B}} {{key:2}} {{key:2}} {{key:0}} {{key:7}} {{key:2}} {{key:.}} {{key:5}} {{key:+\/-}} {{key:C}} {{key:XEQ}}",
     "stack" : {
       "T" : "-735.75",
       "X" : "56.366833086",
@@ -11389,8 +11389,8 @@
     "description" : "Verified calculation in sc32\/07-polynomials-brent-solver.md",
     "model" : "sc32",
     "res" : "0.0658872344",
-    "seq" : "{{key:POLY}} 4 {{key:A}} 0.04 {{key:B}} 0.02 {{key:+\/-}} {{key:C}} 0 {{key:D}} {{key:EXEC}} {{key:RCL}} 5",
-    "seqKeys" : "{{key:POLY}} {{key:4}} {{key:A}} {{key:0}} {{key:.}} {{key:0}} {{key:4}} {{key:0}} {{key:B}} {{key:0}} {{key:.}} {{key:0}} {{key:2}} {{key:0}} {{key:+\/-}} {{key:C}} {{key:EXEC}}",
+    "seq" : "{{key:POLY}} 4 {{key:A}} 0.04 {{key:B}} 0.02 {{key:+\/-}} {{key:C}} 0 {{key:D}} {{key:XEQ}} {{key:RCL}} 5",
+    "seqKeys" : "{{key:POLY}} {{key:4}} {{key:A}} {{key:0}} {{key:.}} {{key:0}} {{key:4}} {{key:0}} {{key:B}} {{key:0}} {{key:.}} {{key:0}} {{key:2}} {{key:0}} {{key:+\/-}} {{key:C}} {{key:XEQ}}",
     "stack" : {
       "T" : "0.04",
       "X" : "0.0658872344",
@@ -11402,8 +11402,8 @@
     "description" : "Verified calculation in sc32\/07-polynomials-brent-solver.md",
     "model" : "sc32",
     "res" : "10",
-    "seq" : "{{key:POLY}} 2 {{key:A}} 30 {{key:+\/-}} {{key:B}} 0 {{key:C}} 1000 {{key:D}} {{key:EXEC}} {{key:RCL}} 3",
-    "seqKeys" : "{{key:POLY}} {{key:2}} {{key:A}} {{key:3}} {{key:0}} {{key:+\/-}} {{key:B}} {{key:0}} {{key:C}} {{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:D}} {{key:EXEC}}",
+    "seq" : "{{key:POLY}} 2 {{key:A}} 30 {{key:+\/-}} {{key:B}} 0 {{key:C}} 1000 {{key:D}} {{key:XEQ}} {{key:RCL}} 3",
+    "seqKeys" : "{{key:POLY}} {{key:2}} {{key:A}} {{key:3}} {{key:0}} {{key:+\/-}} {{key:B}} {{key:0}} {{key:C}} {{key:1}} {{key:0}} {{key:0}} {{key:0}} {{key:D}} {{key:XEQ}}",
     "stack" : {
       "T" : "-30",
       "X" : "10",
@@ -11415,8 +11415,8 @@
     "description" : "Verified calculation in sc32\/07-polynomials-brent-solver.md",
     "model" : "sc32",
     "res" : "0.478138005",
-    "seq" : "{{key:POLY}} 2 {{key:A}} 0 {{key:B}} 10 {{key:C}} 5 {{key:+\/-}} {{key:D}} {{key:EXEC}} {{key:x⇄y}}",
-    "seqKeys" : "{{key:POLY}} {{key:2}} {{key:A}} {{key:0}} {{key:B}} {{key:1}} {{key:0}} {{key:C}} {{key:5}} {{key:+\/-}} {{key:D}} {{key:EXEC}}",
+    "seq" : "{{key:POLY}} 2 {{key:A}} 0 {{key:B}} 10 {{key:C}} 5 {{key:+\/-}} {{key:D}} {{key:XEQ}} {{key:x⇄y}}",
+    "seqKeys" : "{{key:POLY}} {{key:2}} {{key:A}} {{key:0}} {{key:B}} {{key:1}} {{key:0}} {{key:C}} {{key:5}} {{key:+\/-}} {{key:D}} {{key:XEQ}}",
     "stack" : {
       "T" : "2",
       "X" : "0.478138005",
@@ -12715,8 +12715,8 @@
     "id" : "sc32_11_financial_tvm_seq_01",
     "model" : "sc32",
     "res" : "-564.76",
-    "seq" : "60 {{key:N}} 4.9 {{key:ENTER}} 12 {{key:÷}} {{key:I%YR}} 30000 {{key:PV}} 0 {{key:FV}} {{key:PMT}}",
-    "seqKeys" : "{{key:6}} {{key:0}} {{key:N}} {{key:4}} {{key:.}} {{key:9}} {{key:ENTER}} {{key:1}} {{key:2}} {{key:÷}} {{key:I%YR}} {{key:3}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}} {{key:0}} {{key:FV}} {{key:PMT}}",
+    "seq" : "60 {{key:N}} 4.9 {{key:ENTER}} 12 {{key:÷}} {{key:I%}} 30000 {{key:PV}} 0 {{key:FV}} {{key:PMT}}",
+    "seqKeys" : "{{key:6}} {{key:0}} {{key:N}} {{key:4}} {{key:.}} {{key:9}} {{key:ENTER}} {{key:1}} {{key:2}} {{key:÷}} {{key:I%}} {{key:3}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}} {{key:0}} {{key:FV}} {{key:PMT}}",
     "stack" : {
       "T" : "60",
       "X" : "-564.7636059",
@@ -12757,8 +12757,8 @@
     "id" : "sc32_11_financial_tvm_seq_04",
     "model" : "sc32",
     "res" : "-716.64",
-    "seq" : "60 {{key:N}} .5 {{key:I%YR}} 0 {{key:PV}} 50000 {{key:FV}} {{key:PMT}}",
-    "seqKeys" : "{{key:6}} {{key:0}} {{key:N}} {{key:.}} {{key:5}} {{key:I%YR}} {{key:0}} {{key:PV}} {{key:5}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:FV}} {{key:PMT}}",
+    "seq" : "60 {{key:N}} .5 {{key:I%}} 0 {{key:PV}} 50000 {{key:FV}} {{key:PMT}}",
+    "seqKeys" : "{{key:6}} {{key:0}} {{key:N}} {{key:.}} {{key:5}} {{key:I%}} {{key:0}} {{key:PV}} {{key:5}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:FV}} {{key:PMT}}",
     "stack" : {
       "T" : "60",
       "X" : "-716.6400765",
@@ -12914,8 +12914,8 @@
     "description" : "Verified calculation in sc32\/11-financial-tvm.md",
     "model" : "sc32",
     "res" : "-3,000.98003",
-    "seq" : "180 {{key:N}} 6.25 {{key:ENTER}} 12 {{key:÷}} {{key:I%YR}} 350000 {{key:PV}} 0 {{key:FV}} {{key:PMT}}",
-    "seqKeys" : "{{key:1}} {{key:8}} {{key:0}} {{key:N}} {{key:6}} {{key:.}} {{key:2}} {{key:5}} {{key:ENTER}} {{key:1}} {{key:2}} {{key:÷}} {{key:I%YR}} {{key:3}} {{key:5}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}} {{key:0}} {{key:FV}} {{key:PMT}}",
+    "seq" : "180 {{key:N}} 6.25 {{key:ENTER}} 12 {{key:÷}} {{key:I%}} 350000 {{key:PV}} 0 {{key:FV}} {{key:PMT}}",
+    "seqKeys" : "{{key:1}} {{key:8}} {{key:0}} {{key:N}} {{key:6}} {{key:.}} {{key:2}} {{key:5}} {{key:ENTER}} {{key:1}} {{key:2}} {{key:÷}} {{key:I%}} {{key:3}} {{key:5}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}} {{key:0}} {{key:FV}} {{key:PMT}}",
     "stack" : {
       "T" : "180",
       "X" : "-3,000.98003",
@@ -12927,8 +12927,8 @@
     "description" : "Verified calculation in sc32\/11-financial-tvm.md",
     "model" : "sc32",
     "res" : "-3,694.95589",
-    "seq" : "300 {{key:N}} 7.5 {{key:ENTER}} 12 {{key:÷}} {{key:I%YR}} 500000 {{key:PV}} 0 {{key:FV}} {{key:PMT}}",
-    "seqKeys" : "{{key:3}} {{key:0}} {{key:0}} {{key:N}} {{key:7}} {{key:.}} {{key:5}} {{key:ENTER}} {{key:1}} {{key:2}} {{key:÷}} {{key:I%YR}} {{key:5}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}} {{key:0}} {{key:FV}} {{key:PMT}}",
+    "seq" : "300 {{key:N}} 7.5 {{key:ENTER}} 12 {{key:÷}} {{key:I%}} 500000 {{key:PV}} 0 {{key:FV}} {{key:PMT}}",
+    "seqKeys" : "{{key:3}} {{key:0}} {{key:0}} {{key:N}} {{key:7}} {{key:.}} {{key:5}} {{key:ENTER}} {{key:1}} {{key:2}} {{key:÷}} {{key:I%}} {{key:5}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}} {{key:0}} {{key:FV}} {{key:PMT}}",
     "stack" : {
       "T" : "300",
       "X" : "-3,694.95589",
@@ -13304,8 +13304,8 @@
     "chapter" : "docs\/manuals\/sc32\/11-financial-tvm.md",
     "model" : "sc32",
     "res" : "270.93",
-    "seq" : "6.75 {{key:ENTER}} 12 {{key:÷}} {{key:I%YR}} 350000 {{key:PV}} 0 {{key:FV}} 2520.09 {{key:+\/-}} {{key:PMT}} {{key:N}}",
-    "seqKeys" : "{{key:6}} {{key:.}} {{key:7}} {{key:5}} {{key:ENTER}} {{key:1}} {{key:2}} {{key:÷}} {{key:I%YR}} {{key:3}} {{key:5}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}} {{key:0}} {{key:FV}} {{key:2}} {{key:5}} {{key:2}} {{key:0}} {{key:.}} {{key:0}} {{key:9}} {{key:+\/-}} {{key:PMT}} {{key:N}}",
+    "seq" : "6.75 {{key:ENTER}} 12 {{key:÷}} {{key:I%}} 350000 {{key:PV}} 0 {{key:FV}} 2520.09 {{key:+\/-}} {{key:PMT}} {{key:N}}",
+    "seqKeys" : "{{key:6}} {{key:.}} {{key:7}} {{key:5}} {{key:ENTER}} {{key:1}} {{key:2}} {{key:÷}} {{key:I%}} {{key:3}} {{key:5}} {{key:0}} {{key:0}} {{key:0}} {{key:0}} {{key:PV}} {{key:0}} {{key:FV}} {{key:2}} {{key:5}} {{key:2}} {{key:0}} {{key:.}} {{key:0}} {{key:9}} {{key:+\/-}} {{key:PMT}} {{key:N}}",
     "stack" : {
       "T" : "0.5625",
       "X" : "270.92771037",

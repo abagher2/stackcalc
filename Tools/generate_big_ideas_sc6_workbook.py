@@ -67,6 +67,7 @@ from curriculum_shared import (
     BOOK_COVER_SPECS,
     draw_curriculum_bestseller_front_cover,
     draw_paper_keycap_sequence,
+    generate_kdp_full_wrap_cover_pdf,
     generate_lulu_coil_cover_pdf,
     get_paper_keycap_png,
 )
@@ -937,6 +938,238 @@ class CanvasPage:
 # =============================================================================
 # 1. STUDENT WORKBOOK GENERATOR (1 Cover Page + 90 Full Worksheets = 91 Pages)
 # =============================================================================
+SECTION_TEKS: Dict[str, str] = {
+    "1.1": "TEKS 6.3E",
+    "1.2": "TEKS 6.7A",
+    "1.3": "TEKS 6.7A",
+    "1.4": "TEKS 6.7A",
+    "1.5": "TEKS 6.7A",
+    "2.1": "TEKS 6.3E",
+    "2.2": "TEKS 6.3E",
+    "2.3": "TEKS 6.3E",
+    "2.4": "TEKS 6.3E",
+    "2.5": "TEKS 6.3E",
+    "3.1": "TEKS 6.4B",
+    "3.2": "TEKS 6.4B, 6.5A",
+    "3.3": "TEKS 6.4D, 6.4H",
+    "3.4": "TEKS 6.4G, 6.5C",
+    "3.5": "TEKS 6.5B",
+    "4.1": "TEKS 6.7A",
+    "4.2": "TEKS 6.7B",
+    "4.3": "TEKS 6.7C, 6.7D",
+    "4.4": "TEKS 6.7D",
+    "5.1": "TEKS 6.8B, 6.8D",
+    "5.2": "TEKS 6.8B, 6.8D",
+    "5.3": "TEKS 6.8B, 6.8D",
+    "5.4": "TEKS 6.8D",
+    "6.1": "TEKS 6.2B",
+    "6.2": "TEKS 6.2C, 6.2D",
+    "6.3": "TEKS 6.2C, 6.2D",
+    "6.4": "TEKS 6.11A",
+    "6.5": "TEKS 6.11A",
+    "7.1": "TEKS 6.9A",
+    "7.2": "TEKS 6.10A",
+    "7.3": "TEKS 6.10A",
+    "7.4": "TEKS 6.6A, 6.6C",
+    "7.5": "TEKS 6.9B, 6.10B",
+    "8.1": "TEKS 6.8D",
+    "8.2": "TEKS 7.9D",
+    "8.3": "TEKS 7.9D",
+    "8.4": "TEKS 6.8D, 7.9A",
+    "9.1": "TEKS 6.12C",
+    "9.2": "TEKS 6.12C",
+    "9.3": "TEKS 6.12C, 8.11B",
+    "9.4": "TEKS 6.12A, 6.13A",
+    "10.1": "TEKS 6.3D",
+    "10.2": "TEKS 6.3D",
+    "10.3": "TEKS 7.11A",
+    "10.4": "TEKS 7.6I",
+}
+
+UNIT_QUIZZES_DATA: Dict[int, Dict[str, Any]] = {
+    1: {
+        "ccss": "CCSS 6.NS.B.2–4, 6.EE.A.1",
+        "teks": "TEKS 6.7A",
+        "best": "FL MA.6.NSO.2–3",
+        "contest": "UIL Number Sense & MathCounts Prime/GCF/LCM",
+        "problems": [
+            {"num": 1, "tag": "CORE FLUENCY (SEC 1.1)", "prompt": "Find the whole-number quotient and remainder: 1,745 ÷ 16.", "ans": "109 R1"},
+            {"num": 2, "tag": "CORE FLUENCY (SEC 1.1)", "prompt": "Evaluate the exact multi-digit quotient: 2,484 ÷ 23.", "ans": "108"},
+            {"num": 3, "tag": "CORE FLUENCY (SEC 1.2)", "prompt": "Evaluate the sum of powers: 4³ + 5².", "ans": "89"},
+            {"num": 4, "tag": "CORE FLUENCY (SEC 1.3)", "prompt": "Evaluate using order of operations: 60 − 3 × (2³ + 4) ÷ 2.", "ans": "42"},
+            {"num": 5, "tag": "CORE FLUENCY (SEC 1.4)", "prompt": "Write the prime factorization of 180 using exponents.", "ans": "2² · 3² · 5"},
+            {"num": 6, "tag": "CORE FLUENCY (SEC 1.5)", "prompt": "Find both the GCF and the LCM of 24 and 36.", "ans": "GCF=12, LCM=72"},
+            {"num": 7, "tag": "REAL LIFE (SEC 1.5)", "prompt": "A florist has 48 red roses and 64 white roses to make identical bouquets with none left over. What is the greatest number of bouquets she can make, and how many red roses are in each?", "ans": "16 bouquets (3 red)"},
+            {"num": 8, "tag": "REAL LIFE (SEC 1.5)", "prompt": "Two airport shuttles leave together. Shuttle A returns every 12 minutes and Shuttle B every 18 minutes. In how many minutes will both shuttles next leave together?", "ans": "36 min"},
+            {"num": 9, "tag": "REAL LIFE (SEC 1.3)", "prompt": "A robotics club buys 4 motor kits for $18 each and 3 sensor packs for $12 each, then splits the cost equally among 6 members. How much does each member pay?", "ans": "$18"},
+            {"num": 10, "tag": "ERROR ANALYSIS (SEC 1.3)", "prompt": "Alex evaluated 50 − 4 × 2³ by subtracting 50 − 4 = 46 and writing 2³ = 6 to get 46 × 6 = 276. Identify both errors and find the true value.", "ans": "2³=8 & mult first: 18"},
+        ],
+    },
+    2: {
+        "ccss": "CCSS 6.NS.A.1, 6.NS.B.3",
+        "teks": "TEKS 6.3E",
+        "best": "FL MA.6.NSO.2.1–2",
+        "contest": "UIL Number Sense & Calculator Fractions/Decimals",
+        "problems": [
+            {"num": 1, "tag": "CORE FLUENCY (SEC 2.1)", "prompt": "Multiply and write in simplest form: (3/4) × (8/9).", "ans": "2/3"},
+            {"num": 2, "tag": "CORE FLUENCY (SEC 2.1)", "prompt": "Multiply the mixed numbers: 2 1/4 × 1 1/3.", "ans": "3"},
+            {"num": 3, "tag": "CORE FLUENCY (SEC 2.2)", "prompt": "Divide and write in simplest form: (5/6) ÷ (5/12).", "ans": "2"},
+            {"num": 4, "tag": "CORE FLUENCY (SEC 2.3)", "prompt": "Divide the mixed numbers: 3 3/4 ÷ 1 1/4.", "ans": "3"},
+            {"num": 5, "tag": "CORE FLUENCY (SEC 2.4)", "prompt": "Evaluate the decimal expression: 24.8 + 7.65 − 9.4.", "ans": "23.05"},
+            {"num": 6, "tag": "CORE FLUENCY (SEC 2.5)", "prompt": "Multiply and divide: (a) 4.5 × 0.24   (b) 15.6 ÷ 0.6.", "ans": "(a) 1.08  (b) 26"},
+            {"num": 7, "tag": "REAL LIFE (SEC 2.2)", "prompt": "A carpenter has a cedar board 7/8 meter long and cuts it into pieces each 1/16 meter long. How many pieces does she get?", "ans": "14 pieces"},
+            {"num": 8, "tag": "REAL LIFE (SEC 2.5)", "prompt": "Trail mix costs $4.80 per pound. How much does 2.25 pounds of trail mix cost?", "ans": "$10.80"},
+            {"num": 9, "tag": "REAL LIFE (SEC 2.3)", "prompt": "A 6 1/2-quart jug of sports drink is poured equally into 1/2-quart bottles. How many bottles are filled?", "ans": "13 bottles"},
+            {"num": 10, "tag": "ERROR ANALYSIS (SEC 2.2)", "prompt": "To solve (2/3) ÷ (1/6), Maya flipped the first fraction and multiplied (3/2) × (1/6) = 1/4. Explain her error and find the true quotient.", "ans": "Flip divisor (6/1): 4"},
+        ],
+    },
+    3: {
+        "ccss": "CCSS 6.RP.A.1–3",
+        "teks": "TEKS 6.4B–H, 6.5B",
+        "best": "FL MA.6.AR.3.1–5",
+        "contest": "MathCounts & TMSCA Ratios, Rates & Percents",
+        "problems": [
+            {"num": 1, "tag": "CORE FLUENCY (SEC 3.1)", "prompt": "Write the ratio 18 : 24 in simplest form and find an equivalent ratio with second term 40.", "ans": "3 : 4 and 30 : 40"},
+            {"num": 2, "tag": "CORE FLUENCY (SEC 3.2)", "prompt": "In a ratio table, if 4 laps take 10 minutes, how many minutes do 14 laps take at the same rate?", "ans": "35 min"},
+            {"num": 3, "tag": "CORE FLUENCY (SEC 3.3)", "prompt": "Find the unit rate in miles per gallon: 270 miles driven on 12 gallons of gas.", "ans": "22.5 mpg"},
+            {"num": 4, "tag": "CORE FLUENCY (SEC 3.4)", "prompt": "Write the fraction 3/8 as an exact decimal and as a percent.", "ans": "0.375 and 37.5%"},
+            {"num": 5, "tag": "CORE FLUENCY (SEC 3.5)", "prompt": "Find 35% of 80.", "ans": "28"},
+            {"num": 6, "tag": "CORE FLUENCY (SEC 3.5)", "prompt": "18 is 24% of what number?", "ans": "75"},
+            {"num": 7, "tag": "REAL LIFE (SEC 3.1)", "prompt": "Bronze alloy is mixed in a copper-to-tin ratio of 5 : 2. If a batch has 35 kg of total alloy, how many kilograms of copper are in the batch?", "ans": "25 kg"},
+            {"num": 8, "tag": "REAL LIFE (SEC 3.3)", "prompt": "Store A sells 5 avocados for $6.25. Store B sells 8 avocados for $9.60. Which store has the lower unit price, and what is that price?", "ans": "Store B ($1.20)"},
+            {"num": 9, "tag": "REAL LIFE (SEC 3.5)", "prompt": "A $60 backpack is on sale for 25% off. What is the sale price before tax?", "ans": "$45"},
+            {"num": 10, "tag": "ERROR ANALYSIS (SEC 3.1)", "prompt": "In a club with 12 boys and 18 girls, Leo says the ratio of boys to the whole club is 12 : 18 = 2 : 3. Explain the mistake and write the true ratio.", "ans": "Whole is 30 -> 2 : 5"},
+        ],
+    },
+    4: {
+        "ccss": "CCSS 6.EE.A.2–4",
+        "teks": "TEKS 6.7A–D",
+        "best": "FL MA.6.AR.1.1–4",
+        "contest": "MathCounts & UIL Algebraic Evaluation & Factoring",
+        "problems": [
+            {"num": 1, "tag": "CORE FLUENCY (SEC 4.1)", "prompt": "Evaluate 3x² − 4y when x = 4 and y = 5.", "ans": "28"},
+            {"num": 2, "tag": "CORE FLUENCY (SEC 4.2)", "prompt": "Write an algebraic expression for: '8 less than the product of 5 and n.'", "ans": "5n − 8"},
+            {"num": 3, "tag": "CORE FLUENCY (SEC 4.3)", "prompt": "Combine like terms to simplify: 7x + 9 + 4x − 3.", "ans": "11x + 6"},
+            {"num": 4, "tag": "CORE FLUENCY (SEC 4.4)", "prompt": "Use the Distributive Property to expand: 6(3x + 4).", "ans": "18x + 24"},
+            {"num": 5, "tag": "CORE FLUENCY (SEC 4.4)", "prompt": "Simplify by expanding and combining like terms: 4(2x + 3) + 5x.", "ans": "13x + 12"},
+            {"num": 6, "tag": "CORE FLUENCY (SEC 4.4)", "prompt": "Factor the expression completely using the GCF: 24x + 36.", "ans": "12(2x + 3)"},
+            {"num": 7, "tag": "REAL LIFE (SEC 4.1)", "prompt": "The surface area of a cube with edge length s is 6s². Find the surface area when s = 5 cm.", "ans": "150 cm²"},
+            {"num": 8, "tag": "REAL LIFE (SEC 4.2)", "prompt": "Museum admission costs $12 plus $4 per planetarium show s. Write an expression and find the total cost for 3 shows.", "ans": "12 + 4s; $24"},
+            {"num": 9, "tag": "REAL LIFE (SEC 4.4)", "prompt": "A rectangular garden has width 5 meters and length (2x + 7) meters. Write an expanded expression for its area.", "ans": "10x + 35"},
+            {"num": 10, "tag": "ERROR ANALYSIS (SEC 4.4)", "prompt": "Noah simplified 5(2x + 3) as 10x + 3, and then combined 10x + 3 = 13x. Identify both algebraic errors and write the true simplified expression.", "ans": "5·3=15; keep 10x + 15"},
+        ],
+    },
+    5: {
+        "ccss": "CCSS 6.G.A.1",
+        "teks": "TEKS 6.8B–D",
+        "best": "FL MA.6.GR.2.1–2",
+        "contest": "UIL Calculator Applications & MathCounts 2D Geometry",
+        "problems": [
+            {"num": 1, "tag": "CORE FLUENCY (SEC 5.1)", "prompt": "Find the area of a parallelogram with base b = 15 cm and perpendicular height h = 8 cm.", "ans": "120 cm²"},
+            {"num": 2, "tag": "CORE FLUENCY (SEC 5.2)", "prompt": "Find the area of a triangle with base b = 18 m and height h = 11 m.", "ans": "99 m²"},
+            {"num": 3, "tag": "CORE FLUENCY (SEC 5.3)", "prompt": "Find the area of a trapezoid with parallel bases b₁ = 9 in., b₂ = 15 in., and height h = 7 in.", "ans": "84 in²"},
+            {"num": 4, "tag": "CORE FLUENCY (SEC 5.2)", "prompt": "A triangle has an area of 60 ft² and a base of 15 ft. What is its perpendicular height h?", "ans": "8 ft"},
+            {"num": 5, "tag": "CORE FLUENCY (SEC 5.4)", "prompt": "Find the total area of an L-shaped deck composed of a 10 ft by 8 ft rectangle and a 6 ft by 4 ft rectangle.", "ans": "104 ft²"},
+            {"num": 6, "tag": "CORE FLUENCY (SEC 5.4)", "prompt": "A train departs at 1:45 PM and arrives at 4:20 PM. What is the elapsed travel time in hours and minutes?", "ans": "2 hr 35 min"},
+            {"num": 7, "tag": "REAL LIFE (SEC 5.2)", "prompt": "A triangular sailboat sail has base 12 ft and height 25 ft. If sailcloth costs $4 per square foot, how much does the cloth cost?", "ans": "$600 (150 ft²)"},
+            {"num": 8, "tag": "REAL LIFE (SEC 5.3)", "prompt": "A trapezoidal courtyard has parallel sides of 20 m and 28 m and a width (height) of 10 m. How many square meters of pavers are needed?", "ans": "240 m²"},
+            {"num": 9, "tag": "REAL LIFE (SEC 5.4)", "prompt": "A rectangular wall is 14 ft wide and 9 ft tall with a 3 ft by 4 ft window. Find the painted wall area excluding the window.", "ans": "114 ft²"},
+            {"num": 10, "tag": "ERROR ANALYSIS (SEC 5.1)", "prompt": "A parallelogram has base 12 cm, slant side 10 cm, and perpendicular height 8 cm. Chloe multiplied 12 × 10 = 120 cm². Explain her error and find the true area.", "ans": "Use perp h=8: 96 cm²"},
+        ],
+    },
+    6: {
+        "ccss": "CCSS 6.NS.C.5–8",
+        "teks": "TEKS 6.2B–D, 6.11A",
+        "best": "FL MA.6.NSO.1.1–4, MA.6.GR.1",
+        "contest": "UIL & MathCounts Signed Rationals & Coordinate Geometry",
+        "problems": [
+            {"num": 1, "tag": "CORE FLUENCY (SEC 6.1)", "prompt": "Write the opposite of −14 and evaluate |−14| + |−5|.", "ans": "14; 19"},
+            {"num": 2, "tag": "CORE FLUENCY (SEC 6.2)", "prompt": "Order the integers from least to greatest: −3, 4, −8, 0, −1.", "ans": "−8, −3, −1, 0, 4"},
+            {"num": 3, "tag": "CORE FLUENCY (SEC 6.3)", "prompt": "Compare using <, >, or =:  (a) −3/4 ___ −1/2    (b) −1.8 ___ −1.25.", "ans": "(a) <   (b) <"},
+            {"num": 4, "tag": "CORE FLUENCY (SEC 6.4)", "prompt": "Identify the quadrant of point P(−6, 5) and write the coordinates of its reflection across the x-axis.", "ans": "Quad II; (−6, −5)"},
+            {"num": 5, "tag": "CORE FLUENCY (SEC 6.5)", "prompt": "Find the distance between A(−4, 3) and B(7, 3) on the coordinate plane.", "ans": "11 units"},
+            {"num": 6, "tag": "CORE FLUENCY (SEC 6.5)", "prompt": "Find the perimeter of a rectangle with vertices (−3, 2), (5, 2), (5, −4), and (−3, −4).", "ans": "28 units"},
+            {"num": 7, "tag": "REAL LIFE (SEC 6.2)", "prompt": "A research submarine is at −240 m and a diving bell is at −185 m. Which vessel is deeper, and by how many meters?", "ans": "Submarine by 55 m"},
+            {"num": 8, "tag": "REAL LIFE (SEC 6.1)", "prompt": "The morning temperature in Fairbanks was −16°F. By afternoon it reached 0°F. How many degrees did the temperature change?", "ans": "16°F"},
+            {"num": 9, "tag": "REAL LIFE (SEC 6.5)", "prompt": "On a town grid where 1 unit = 1 block, the library is at (−5, −2) and the park is at (−5, 6). How many blocks apart are they?", "ans": "8 blocks"},
+            {"num": 10, "tag": "ERROR ANALYSIS (SEC 6.2)", "prompt": "Sam claims that −12 > −5 because 12 is greater than 5. Use a number line to explain why Sam is incorrect and write the true inequality.", "ans": "−12 is left of −5; −12 < −5"},
+        ],
+    },
+    7: {
+        "ccss": "CCSS 6.EE.B.5–8, 6.EE.C.9",
+        "teks": "TEKS 6.9A–C, 6.10A",
+        "best": "FL MA.6.AR.2.1–4",
+        "contest": "MathCounts & TMSCA Equations & Inequalities",
+        "problems": [
+            {"num": 1, "tag": "CORE FLUENCY (SEC 7.1)", "prompt": "Write an equation and solve: 'A number x decreased by 17 equals 29.'", "ans": "x − 17 = 29; x = 46"},
+            {"num": 2, "tag": "CORE FLUENCY (SEC 7.2)", "prompt": "Solve the addition equation: x + 18.5 = 42.", "ans": "x = 23.5"},
+            {"num": 3, "tag": "CORE FLUENCY (SEC 7.3)", "prompt": "Solve the multiplication equation: 8x = 136.", "ans": "x = 17"},
+            {"num": 4, "tag": "CORE FLUENCY (SEC 7.3)", "prompt": "Solve the division equation: x / 6 = 14.", "ans": "x = 84"},
+            {"num": 5, "tag": "CORE FLUENCY (SEC 7.4)", "prompt": "A train travels at 65 mph for t hours, covering d miles. Write an equation relating d and t, and find d when t = 4.", "ans": "d = 65t; 260 mi"},
+            {"num": 6, "tag": "CORE FLUENCY (SEC 7.5)", "prompt": "Tell whether x = 6 is a solution of 3x − 4 ≥ 14, and state whether the number line graph of x ≥ 6 has an open or closed circle.", "ans": "Yes (14≥14); closed circle"},
+            {"num": 7, "tag": "REAL LIFE (SEC 7.2)", "prompt": "After spending $28 on a hoodie, Elena has $37 left. Write and solve an equation to find how much money m she had at first.", "ans": "m − 28 = 37; $65"},
+            {"num": 8, "tag": "REAL LIFE (SEC 7.3)", "prompt": "Three-fourths of the students in a band play wind instruments. If 27 play wind instruments, how many students n are in the band?", "ans": "(3/4)n = 27; 36"},
+            {"num": 9, "tag": "REAL LIFE (SEC 7.5)", "prompt": "An elevator has a maximum weight limit of 1,800 lb. Write an inequality for the allowed weight w and tell whether w = 1,800 lb is allowed.", "ans": "w ≤ 1,800; Yes"},
+            {"num": 10, "tag": "ERROR ANALYSIS (SEC 7.3)", "prompt": "To solve x / 4 = 12, Jordan divided 12 by 4 and wrote x = 3. Explain the inverse-operation mistake and find the true solution.", "ans": "Multiply 12 × 4: x = 48"},
+        ],
+    },
+    8: {
+        "ccss": "CCSS 6.G.A.2, 6.G.A.4",
+        "teks": "TEKS 6.8D, 7.9A, 7.9D",
+        "best": "FL MA.6.GR.2.3–4",
+        "contest": "UIL Calculator Applications 3D Solids, Surface Area & Volume",
+        "problems": [
+            {"num": 1, "tag": "CORE FLUENCY (SEC 8.1)", "prompt": "How many faces, edges, and vertices does a rectangular prism have?", "ans": "6 faces, 12 edges, 8 vertices"},
+            {"num": 2, "tag": "CORE FLUENCY (SEC 8.2)", "prompt": "Find the total surface area of a rectangular prism with length 8 cm, width 5 cm, and height 4 cm.", "ans": "184 cm²"},
+            {"num": 3, "tag": "CORE FLUENCY (SEC 8.2)", "prompt": "Find the total surface area of a cube with edge length 6 in.", "ans": "216 in²"},
+            {"num": 4, "tag": "CORE FLUENCY (SEC 8.3)", "prompt": "A square pyramid has a 10 m by 10 m base and four triangular lateral faces each with slant height 12 m. Find its total surface area.", "ans": "340 m²"},
+            {"num": 5, "tag": "CORE FLUENCY (SEC 8.4)", "prompt": "Find the volume of a rectangular prism with length 9 ft, width 4.5 ft, and height 6 ft.", "ans": "243 ft³"},
+            {"num": 6, "tag": "CORE FLUENCY (SEC 8.4)", "prompt": "How many 1/2-inch cubes are needed to completely fill a rectangular box measuring 3 in. by 2 in. by 1 1/2 in.?", "ans": "72 cubes (Vol = 9 in³)"},
+            {"num": 7, "tag": "REAL LIFE (SEC 8.2)", "prompt": "A gift box is 10 in. long, 6 in. wide, and 5 in. tall. How many square inches of wrapping paper are needed to cover all 6 faces with no overlap?", "ans": "280 in²"},
+            {"num": 8, "tag": "REAL LIFE (SEC 8.4)", "prompt": "A rectangular aquarium holds 360,000 cm³ of water. If its base is 100 cm long and 60 cm wide, what is the water depth h?", "ans": "60 cm"},
+            {"num": 9, "tag": "REAL LIFE (SEC 8.3)", "prompt": "A triangular prism tent has two triangular ends (base 6 ft, height 4 ft) and three 6 ft by 8 ft rectangular sides (including the floor). Find the total surface area.", "ans": "168 ft²"},
+            {"num": 10, "tag": "ERROR ANALYSIS (SEC 8.2)", "prompt": "Liam found the surface area of a 5 cm by 4 cm by 3 cm prism by multiplying 5 × 4 × 3 = 60 cm². Explain what he actually found and compute the true surface area.", "ans": "60 is Vol; SA = 94 cm²"},
+        ],
+    },
+    9: {
+        "ccss": "CCSS 6.SP.A.1–3, 6.SP.B.4–5",
+        "teks": "TEKS 6.12A–D, 6.13A",
+        "best": "FL MA.6.DP.1.1–6",
+        "contest": "MathCounts & TMSCA Data Analysis, Mean, Median, IQR & MAD",
+        "problems": [
+            {"num": 1, "tag": "CORE FLUENCY (SEC 9.1)", "prompt": "Find the mean, median, and mode of the quiz scores: 14, 18, 20, 18, 25.", "ans": "Mean=19, Med=18, Mode=18"},
+            {"num": 2, "tag": "CORE FLUENCY (SEC 9.2)", "prompt": "Find the median and range of the ordered dataset: 8, 12, 15, 19, 22, 26.", "ans": "Median = 17, Range = 18"},
+            {"num": 3, "tag": "CORE FLUENCY (SEC 9.3)", "prompt": "For the ordered data 4, 6, 8, 10, 12, 16, 20, find Q₁, the median, Q₃, and the interquartile range (IQR).", "ans": "Q₁=6, Med=10, Q₃=16, IQR=10"},
+            {"num": 4, "tag": "CORE FLUENCY (SEC 9.3)", "prompt": "Compute the Mean Absolute Deviation (MAD) of the dataset: 6, 8, 10, 16.", "ans": "Mean = 10, MAD = 3"},
+            {"num": 5, "tag": "CORE FLUENCY (SEC 9.4)", "prompt": "A box plot has minimum 12, Q₁ = 18, median = 24, Q₃ = 31, and maximum 40. What percent of the data lies between 18 and 31, and what is the IQR?", "ans": "50%; IQR = 13"},
+            {"num": 6, "tag": "CORE FLUENCY (SEC 9.1)", "prompt": "After 4 games, Mia's mean score is 15 points. How many points must she score in Game 5 to raise her 5-game mean to 17?", "ans": "25 points"},
+            {"num": 7, "tag": "REAL LIFE (SEC 9.2)", "prompt": "Five house prices on a block (in $1,000s) are 220, 230, 240, 250, and 960. Find the mean and median, and state which better represents a typical house.", "ans": "Mean=380, Med=240 (Median)"},
+            {"num": 8, "tag": "REAL LIFE (SEC 9.3)", "prompt": "Battery life tests (in hours) for Brand A have IQR = 1.5 hr and Brand B have IQR = 4.8 hr. Which brand is more consistent?", "ans": "Brand A (smaller IQR)"},
+            {"num": 9, "tag": "REAL LIFE (SEC 9.4)", "prompt": "In a histogram of 40 hikers, 12 hiked 0–2 mi, 18 hiked 3–5 mi, and 10 hiked 6–8 mi. What percent of hikers walked 3 miles or more?", "ans": "70% (28 / 40)"},
+            {"num": 10, "tag": "ERROR ANALYSIS (SEC 9.2)", "prompt": "To find the median of 15, 8, 22, 10, 19, Ben picked the middle number as written and said 22. Explain his error and find the true median.", "ans": "Sort first (8,10,15,19,22): 15"},
+        ],
+    },
+    10: {
+        "ccss": "CCSS 7.NS.A, 7.EE.B.4, 7.SP.C",
+        "teks": "TEKS 6.3D, 7.11A, 7.6I",
+        "best": "FL MA.7.NSO.2, MA.7.AR.2, MA.7.DP.2",
+        "contest": "MathCounts & UIL Signed Arithmetic, 2-Step Equations & Probability",
+        "problems": [
+            {"num": 1, "tag": "CORE FLUENCY (SEC 10.1)", "prompt": "Evaluate the signed expressions: (a) −9 + 14    (b) −6 − (−15).", "ans": "(a) 5   (b) 9"},
+            {"num": 2, "tag": "CORE FLUENCY (SEC 10.2)", "prompt": "Evaluate the signed products and powers: (a) (−7) × (−8)    (b) (−5)².", "ans": "(a) 56   (b) 25"},
+            {"num": 3, "tag": "CORE FLUENCY (SEC 10.2)", "prompt": "Evaluate using order of operations: (−48) ÷ 6 + (−3) × (−4).", "ans": "4"},
+            {"num": 4, "tag": "CORE FLUENCY (SEC 10.3)", "prompt": "Solve the two-step equation: 3x − 7 = 20.", "ans": "x = 9"},
+            {"num": 5, "tag": "CORE FLUENCY (SEC 10.3)", "prompt": "Solve the two-step equation: (x / 4) + 5 = 11.", "ans": "x = 24"},
+            {"num": 6, "tag": "CORE FLUENCY (SEC 10.4)", "prompt": "A bag holds 5 red, 3 blue, and 4 green marbles. Find the probability of drawing a blue marble in simplest form.", "ans": "1/4"},
+            {"num": 7, "tag": "REAL LIFE (SEC 10.1)", "prompt": "A scuba diver starts at −18 meters, descends 12 meters, and then ascends 9 meters. What is the diver's final elevation?", "ans": "−21 m"},
+            {"num": 8, "tag": "REAL LIFE (SEC 10.3)", "prompt": "A kayak rental costs a $15 safety fee plus $12 per hour h. If a family paid $63 total, how many hours did they rent the kayak?", "ans": "4 hours"},
+            {"num": 9, "tag": "REAL LIFE (SEC 10.4)", "prompt": "You flip a fair coin and roll a standard 6-sided die. What is the compound probability of getting Heads AND a number greater than 4?", "ans": "1/6"},
+            {"num": 10, "tag": "ERROR ANALYSIS (SEC 10.3)", "prompt": "To solve 2x + 6 = 18, Ava divided 18 by 2 first to get x + 6 = 9, then subtracted 6 to get x = 3. Check x = 3 and solve correctly.", "ans": "2(3)+6=12≠18; x = 6"},
+        ],
+    },
+}
+
+
 def draw_student_cover_page(p: CanvasPage, chapters: List[Dict[str, Any]]) -> None:
     margin = 12.0
     uw = p.w - 2 * margin
@@ -1048,24 +1281,23 @@ def draw_student_cover_page(p: CanvasPage, chapters: List[Dict[str, Any]]) -> No
             p.text(margin + 71.5, ry + 3.4 + li * 2.9, sl, size=1.82, color=INK, max_w=69.0)
 
         m_sum = unit_methods_summary.get(ch["num"], "")
-        n_probs = len(ch["sections"]) * 20
         p.text(margin + 143.5, ry + 5.0, m_sum, size=1.85, bold=True, color=INK, max_w=46.0)
         p.text(margin + 143.5, ry + 9.4, f"Model: {clean_tools.split('&')[0].strip()}", size=1.78, mono=True, color=SLATE, max_w=46.0)
-        p.text(margin + 143.5, ry + 13.7, f"[ ] Story + {len(ch['sections'])*2} Sheets ({n_probs} Probs)", size=1.78, bold=True, color=TEAL_ACCENT, max_w=46.0)
+        p.text(margin + 143.5, ry + 13.7, f"[ ] {len(ch['sections'])*2} Sheets + Unit Quiz (p.{111 + ch['num']})", size=1.78, bold=True, color=TEAL_ACCENT, max_w=46.0)
 
     p.text(
         margin,
-        p.h - 6.0,
-        "StackCalc Learning Systems  •  Big Ideas Math Middle School Supplement (Two-Method Mastery Guide p.2 • 10 Unit Stories • 45 Sections • 90 Worksheets)",
+        p.h - 8.2,
+        "StackCalc Learning Systems  •  Big Ideas Math Middle School Supplement (Two-Method Guide p.2 • 90 Worksheets • 10 Unit Quizzes pp.112–121)",
         size=1.92,
         mono=True,
         color=MUTED,
         max_w=uw - 28.0,
     )
-    p.text(margin + uw, p.h - 6.0, "Page 1 of 111", size=2.0, bold=True, mono=True, color=INK, align="right")
+    p.text(margin + uw, p.h - 8.2, "Page 1 of 123", size=2.0, bold=True, mono=True, color=INK, align="right")
 
 
-def draw_token_scoring_guide_page(p: CanvasPage, chapters: List[Dict[str, Any]], page_label: str = "Page 2 of 111") -> None:
+def draw_token_scoring_guide_page(p: CanvasPage, chapters: List[Dict[str, Any]], page_label: str = "Page 2 of 123") -> None:
     """Renders the 1-Page Two-Method Mastery Scoring & SC-6 Work-Check Guide."""
     margin = 11.0
     uw = p.w - 2 * margin
@@ -1417,9 +1649,9 @@ def draw_token_scoring_guide_page(p: CanvasPage, chapters: List[Dict[str, Any]],
             max_lines=2,
         )
 
-    # 5. Bottom Tracker: 45-Section 100-Point Mastery Tower Log (y = 233.5 .. 268.5 mm, height = 35.0 mm)
-    bot_y = 233.5
-    bot_h = 35.0
+    # 5. Bottom Tracker: 45-Section 100-Point Mastery Tower Log (y = 233.0 .. 266.5 mm, height = 33.5 mm)
+    bot_y = 233.0
+    bot_h = 33.5
     p.rect(margin, bot_y, uw, bot_h, fill=WHITE, stroke=INK, r=0.9, line_w=0.28)
     p.rect(margin, bot_y, uw, 4.5, fill=SUBTLE_HDR, stroke=INK, r=0.7, line_w=0.22)
     p.text(
@@ -1436,27 +1668,27 @@ def draw_token_scoring_guide_page(p: CanvasPage, chapters: List[Dict[str, Any]],
 
     # 2 Columns × 5 Rows of Units inside the bottom log
     u_col_w = (uw - 6.0) / 2.0
-    u_row_h = 5.6
+    u_row_h = 5.4
     for idx, ch in enumerate(chapters):
         uc = idx // 5
         ur = idx % 5
         ux = margin + 2.2 + uc * (u_col_w + 1.6)
-        uy = bot_y + 5.8 + ur * u_row_h
+        uy = bot_y + 5.6 + ur * u_row_h
         p.rect(ux, uy, u_col_w, u_row_h - 0.5, fill=SUBTLE_HDR if ur % 2 == 0 else WHITE, stroke=LIGHT_BORDER, r=0.4, line_w=0.16)
-        p.text(ux + 1.4, uy + 3.4, f"Unit {ch['num']}:", size=1.58, bold=True, color=INK)
+        p.text(ux + 1.4, uy + 3.3, f"Unit {ch['num']}:", size=1.58, bold=True, color=INK)
         sec_checks = "   ".join(f"[ ] {s['sec_num']}" for s in ch["sections"])
-        p.text(ux + 16.5, uy + 3.4, sec_checks, size=1.58, bold=True, mono=True, color=TEAL_ACCENT, max_w=u_col_w - 18.0)
+        p.text(ux + 16.5, uy + 3.3, sec_checks, size=1.58, bold=True, mono=True, color=TEAL_ACCENT, max_w=u_col_w - 18.0)
 
     p.text(
         margin,
-        p.h - 5.2,
+        p.h - 8.2,
         "StackCalc SC-6 Textbook Supplement  •  Two-Method Mastery Scoring & SC-6 Work-Check Guide",
         size=1.88,
         mono=True,
         color=MUTED,
         max_w=uw - 28.0,
     )
-    p.text(margin + uw, p.h - 5.2, page_label, size=1.88, bold=True, mono=True, color=INK, align="right")
+    p.text(margin + uw, p.h - 8.2, page_label, size=1.88, bold=True, mono=True, color=INK, align="right")
 
 
 def generate_token_scoring_guide_pdf(chapters: List[Dict[str, Any]], output_path: Path) -> None:
@@ -1480,10 +1712,11 @@ def draw_unit_story_page(p: CanvasPage, ch: Dict[str, Any], page_num: int, total
     story = UNIT_STORIES[ch_num]
 
     # 1. Clean Top Header (y = 9.0 .. 24.8 mm)
+    u_quiz_meta = UNIT_QUIZZES_DATA[ch_num]
     p.text(
         margin,
         12.2,
-        f"UNIT {ch_num} INTRODUCTION  •  {ch['big_ideas_book'].upper()}",
+        f"UNIT {ch_num} INTRODUCTION  •  {ch['big_ideas_book'].upper()} ({u_quiz_meta['ccss']} • {u_quiz_meta['teks']})",
         size=2.0,
         bold=True,
         mono=True,
@@ -1581,7 +1814,7 @@ def draw_unit_story_page(p: CanvasPage, ch: Dict[str, Any], page_num: int, total
     secs = ch["sections"]
     n_secs = len(secs)
     cards_y0 = 132.8
-    avail_h = 268.2 - cards_y0
+    avail_h = 266.2 - cards_y0
     c_gap = 1.8
     card_h = (avail_h - (n_secs - 1) * c_gap) / n_secs
 
@@ -1673,14 +1906,14 @@ def draw_unit_story_page(p: CanvasPage, ch: Dict[str, Any], page_num: int, total
 
     p.text(
         margin,
-        p.h - 5.2,
+        p.h - 8.2,
         f"StackCalc SC-6 Textbook Supplement  •  Unit {ch_num}: {ch['title']}",
         size=1.88,
         mono=True,
         color=MUTED,
         max_w=uw - 28.0,
     )
-    p.text(margin + uw, p.h - 5.2, f"Page {page_num} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+    p.text(margin + uw, p.h - 8.2, f"Page {page_num} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
 
 
 def draw_sc6_check_box(
@@ -1789,10 +2022,11 @@ def draw_student_section_page_a(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
     check_info = SC6_SECTION_CHECK_GUIDE[sec_num]
 
     # 1. Clean Textbook Header (y = 9.0 .. 24.5 mm)
+    teks_lbl = SECTION_TEKS.get(sec_num, "TEKS 6.7A")
     p.text(
         margin,
         12.2,
-        f"{ped['unit_name'].upper()}  •  {sec['big_ideas_ref'].upper()} ({sec['ccss']})",
+        f"{ped['unit_name'].upper()}  •  {sec['big_ideas_ref'].upper()} ({sec['ccss']} • {teks_lbl})",
         size=2.0,
         bold=True,
         mono=True,
@@ -2085,8 +2319,8 @@ def draw_student_section_page_a(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
 
     grid_y0 = 99.1
     col_w = (uw - 3.0) / 2.0
-    row_h = 33.0
-    row_gap = 1.1
+    row_h = 32.5
+    row_gap = 1.05
 
     probs = sec["problems"]
     for idx, prob in enumerate(probs[:10]):
@@ -2157,14 +2391,14 @@ def draw_student_section_page_a(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
 
     p.text(
         margin,
-        p.h - 5.2,
+        p.h - 8.2,
         f"StackCalc SC-6 Textbook Supplement  •  {ped['unit_name']} — Section {sec_num} Practice A ({sec['big_ideas_ref']})",
         size=1.88,
         mono=True,
         color=MUTED,
         max_w=uw - 28.0,
     )
-    p.text(margin + uw, p.h - 5.2, f"Page {page_num} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+    p.text(margin + uw, p.h - 8.2, f"Page {page_num} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
 
 
 def draw_student_section_page_b(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str, Any], page_num: int, total_pages: int) -> None:
@@ -2181,10 +2415,11 @@ def draw_student_section_page_b(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
     check_info = SC6_SECTION_CHECK_GUIDE[sec_num]
 
     # 1. Clean Textbook Header (y = 9.0 .. 24.4 mm)
+    teks_lbl = SECTION_TEKS.get(sec_num, "TEKS 6.7A")
     p.text(
         margin,
         12.2,
-        f"{ped['unit_name'].upper()}  •  {sec['big_ideas_ref'].upper()} — MODELING REAL LIFE & APPLICATIONS",
+        f"{ped['unit_name'].upper()}  •  {sec['big_ideas_ref'].upper()} ({sec['ccss']} • {teks_lbl}) — MODELING REAL LIFE",
         size=2.0,
         bold=True,
         mono=True,
@@ -2438,8 +2673,8 @@ def draw_student_section_page_b(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
 
     grid_y0 = 99.1
     col_w = (uw - 3.0) / 2.0
-    row_h = 33.0
-    row_gap = 1.1
+    row_h = 32.5
+    row_gap = 1.05
 
     for idx, prob in enumerate(b_probs[:10]):
         r = idx // 2
@@ -2506,14 +2741,14 @@ def draw_student_section_page_b(p: CanvasPage, ch: Dict[str, Any], sec: Dict[str
 
     p.text(
         margin,
-        p.h - 5.2,
+        p.h - 8.2,
         f"StackCalc SC-6 Textbook Supplement  •  {ped['unit_name']} — Section {sec_num} Practice B ({sec['big_ideas_ref']})",
         size=1.88,
         mono=True,
         color=MUTED,
         max_w=uw - 28.0,
     )
-    p.text(margin + uw, p.h - 5.2, f"Page {page_num} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+    p.text(margin + uw, p.h - 8.2, f"Page {page_num} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
 
 
 def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]], is_coach: bool = False) -> None:
@@ -2542,7 +2777,7 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
     series_kicker = (
         "THE STACKCALC LIBRARY  •  CURRICULUM SERIES — BOOK 3 COACH GUIDE"
         if is_coach
-        else "THE STACKCALC LIBRARY  •  CURRICULUM SERIES — BOOK 3 OF 4"
+        else "THE STACKCALC LIBRARY  •  CURRICULUM SERIES — BOOK 3 OF 5"
     )
     p.text(left_x, 54.0, series_kicker, size=2.35, bold=True, mono=True, color=INK)
 
@@ -2589,14 +2824,15 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
         (
             "Illustrated Companion Trade Books (History of Mathematics & Stack Thinking)",
             "• Volume I — From Blocks to the Stack: How Hands-On Blocks Make Numbers Click (Grades K–6 / StackCalc SC-6)\n"
-            "• Volume II — Thinking in the Stack: The Art of Calculating Without Parentheses (Grades 7–12, AP & Engineers / StackCalc SC-32)",
+            "• Volume II — Thinking in the Stack: The Art of Solving Equations from the Inside Out (Grades 7–12, AP & Engineers / StackCalc SC-32)",
         ),
         (
             "K–12 Concept-First Curriculum & Student Workbooks (US Letter 8.5\" × 11\" Editions)",
             "• Book 1 — Teaching with the Stack: Unified K–12 Master Teacher & Homeschool Guide, Lessons & Complete Answer Keys\n"
-            "• Book 2 — Hands-On Math Lab: K–12 Student Manipulative & Four-Line Stack Exploration Workbook\n"
-            "• Book 3 — Middle School Math Lab: Grades 6–8 Two-Method Student Practice Workbook (900 Problems)\n"
-            "• Book 4 — Stack Speed & Fluency: 15 Speed Lessons, Shortcut Playbooks & 60 Progressive Practice Tests (1,200 Problems)",
+            "• Book 2A & 2B — Early Elementary (K–2) & Upper Elementary (3–5) Math Labs: Student Manipulative & Stack Workbooks\n"
+            "• Book 3 — Middle School Math Lab: Grades 6–8 Two-Method Student Practice Workbook (900 Problems • ISBN 979-8-16-653215-2)\n"
+            "• Book 4 — High School & STEM Lab: Grades 9–12 & AP Scientific RPN & Engineering Student Workbook\n"
+            "• Book 5 — Stack Speed & Fluency: 15 Speed Lessons, Shortcut Playbooks & 180 Progressive Practice Tests (3,690 Problems)",
         ),
         (
             "Three Published Physical Manipulative Block Studios & Four-Line Stack Calculators (stackcalc.io)",
@@ -2617,7 +2853,7 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
     colophon_blocks = [
         (
             f"MIDDLE SCHOOL MATH LAB: {subtitle}",
-            "Copyright © 2026 by StackCalc (https://stackcalc.io). Some rights reserved. Published by StackCalc Learning Lab, San Francisco, California. First Edition (US Letter 8.50 × 11.00 in / 215.9 × 279.4 mm).",
+            "Copyright © 2026 by StackCalc (https://stackcalc.io). Some rights reserved. Published by StackCalc Learning Lab, San Francisco, California. ISBN-13: 979-8-16-653215-2 (9798166532152) • First Edition (US Letter 8.50 × 11.00 in / 215.9 × 279.4 mm).",
         ),
         (
             "Homeschool & Classroom Curriculum Compatibility:",
@@ -2641,9 +2877,9 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
         p.text(left_x, cy, c_head, size=1.95, bold=True, color=INK, max_w=content_w)
         cy = p.para(left_x, cy + 4.0, c_body, max_w=content_w, size=1.82, color=SLATE, leading=1.22) + 2.8
 
-    p.line(margin, p.h - 11.5, margin + uw, p.h - 11.5, color=BORDER, width=0.25)
-    p.text(margin, p.h - 5.2, f"STACKCALC MATHEMATICS  •  {doc_footer}", size=1.88, mono=True, color=MUTED)
-    p.text(margin + uw, p.h - 5.2, "ii", size=2.1, bold=True, mono=True, color=INK, align="right")
+    p.line(margin, p.h - 12.2, margin + uw, p.h - 12.2, color=BORDER, width=0.25)
+    p.text(margin, p.h - 8.2, f"THE STACKCALC LIBRARY  •  {doc_footer}", size=1.88, mono=True, color=MUTED)
+    p.text(margin + uw, p.h - 8.2, "ii", size=2.1, bold=True, mono=True, color=INK, align="right")
     c.showPage()
 
     # =========================================================
@@ -2701,7 +2937,7 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
             secs = ch["sections"]
             u_start = 3 + (ch_num - 1) + (secs[0]["day_num"] - 1) * 2
             u_end = 3 + ch_num + (secs[-1]["day_num"] - 1) * 2 + 1
-            sec_range = f"Sec {secs[0]['sec_num']}–{secs[-1]['sec_num']} ({len(secs) * 2} Sheets)"
+            sec_range = f"Sec {secs[0]['sec_num']}–{secs[-1]['sec_num']} + Quiz p.{111 + ch_num}"
             toc_entries.append((
                 f"Unit {ch_num:02d}: {ch['title']}",
                 sec_range,
@@ -2714,10 +2950,12 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
             ("Appendix C: Hands-On Manipulative & Visual Modeling Guide", "All 10 Units", "How to Model Textbook Concepts with the 3 Block Kits", "p. 105"),
             ("Appendix D: Mastery Certificate & Dot-Grid Scratchpad", "Certificate & Grid", "100-Point Mastery Certificate & Graph Workspace", "p. 106"),
             ("Appendix E: Compact Student Self-Check Answer Key", "All 900 Problems", "Final Answers for All 90 Practice A & B Sheets", "pp. 107–111"),
+            ("Appendix F: 10 End-of-Unit Mastery Quizzes (Units 1–10)", "100 Assessment Items", "1-Page Unscaffolded Summative Quiz per Unit", "pp. 112–121"),
+            ("Appendix G: Quiz Keys, Standards & 3D Block Studios", "CCSS • TEKS • 3D Kits", "Unit Quiz Keys, Crosswalk & Official 3D Block Studios", "pp. 122–124"),
         ])
 
     ty = 30.2
-    th = 12.2 if not is_coach else 16.5
+    th = 11.0 if not is_coach else 16.5
     for idx, (c1, c2, c3, c4) in enumerate(toc_entries):
         bg = WHITE if idx % 2 == 0 else SUBTLE_HDR
         p.rect(margin, ty, uw, th, fill=bg, stroke=LIGHT_BORDER, line_w=0.18)
@@ -2727,9 +2965,9 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
         p.text(margin + uw - 2.5, ty + th * 0.60, c4, size=1.95, bold=True, mono=True, color=INK, align="right")
         ty += th
 
-    p.line(margin, p.h - 11.5, margin + uw, p.h - 11.5, color=BORDER, width=0.25)
-    p.text(margin, p.h - 5.2, f"STACKCALC MATHEMATICS  •  {doc_footer}", size=1.88, mono=True, color=MUTED)
-    p.text(margin + uw, p.h - 5.2, "iii", size=2.1, bold=True, mono=True, color=INK, align="right")
+    p.line(margin, p.h - 12.2, margin + uw, p.h - 12.2, color=BORDER, width=0.25)
+    p.text(margin, p.h - 8.2, f"THE STACKCALC LIBRARY  •  {doc_footer}", size=1.88, mono=True, color=MUTED)
+    p.text(margin + uw, p.h - 8.2, "iii", size=2.1, bold=True, mono=True, color=INK, align="right")
     c.showPage()
 
     # =========================================================
@@ -2823,10 +3061,10 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
     for lb in loop_bullets:
         lby = p.para(margin + 3.5, lby, lb, max_w=uw - 7.0, size=1.95, color=INK, leading=1.20, max_lines=2) + 1.6
 
-    # Box 3: Companion Curriculum Lineup (The 4 Books)
+    # Box 3: Companion Curriculum Lineup (The StackCalc Library)
     p.rect(margin, 156.0, uw, 68.0, fill=WHITE, stroke=INK, r=1.0, line_w=0.28)
     p.rect(margin, 156.0, uw, 5.0, fill=BAND_HDR, stroke=INK, r=0.8, line_w=0.25)
-    p.text(margin + 3.0, 159.6, "3. THE COMPLETE STACKCALC CURRICULUM LINEUP (100% SELF-CONTAINED)", size=1.92, bold=True, mono=True, color=INK)
+    p.text(margin + 3.0, 159.6, "3. THE COMPLETE STACKCALC LIBRARY CURRICULUM LINEUP (100% SELF-CONTAINED)", size=1.92, bold=True, mono=True, color=INK)
 
     channels = [
         (
@@ -2835,18 +3073,18 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
             TEAL_ACCENT,
         ),
         (
-            "BOOK 2 & BOOK 3 — HANDS-ON MATH LAB (K–12) & MIDDLE SCHOOL MATH LAB (THIS VOLUME)",
-            "Self-contained lay-flat student workbooks pairing concrete manipulative models, real-world mathematical story openers, guided paper-and-pencil methods, and compact self-check answer keys.",
+            "BOOKS 2A, 2B, 3 & 4 — GRADE-BAND HANDS-ON MATH LABS (K–2, 3–5, 6–8 & 9–12/AP)",
+            "Self-contained lay-flat student workbooks pairing concrete 3D Block Studios, real-world mathematical story openers, guided paper-and-pencil methods, and step-by-step stack verification.",
             INK,
         ),
         (
-            "BOOK 4 — STACK SPEED & FLUENCY: SPEED LESSONS, PLAYBOOKS & 60 PROGRESSIVE PRACTICE TESTS",
-            "15 speed lessons ('Slow Way vs. Champion Way' playbooks + 90 guided drills) and 60 progressive 20-problem practice tests (Tests A–D, 1,200 problems) with answer keys.",
+            "BOOK 5 — STACK SPEED & FLUENCY: SPEED LESSONS, PLAYBOOKS & 180 PROGRESSIVE PRACTICE TESTS",
+            "15 speed lessons ('Slow Way vs. Champion Way' playbooks + 90 guided drills) and 180 progressive 20-problem practice tests (Tests A1–D3, 3,690 problems) for full-year computational fluency.",
             TEAL_ACCENT,
         ),
         (
-            "OPTIONAL COMPANION STORYBOOKS & TACTILE BLOCK STUDIOS",
-            "Explore From Blocks to the Stack (Grades K–6) and Thinking in the Stack (Grades 7–12), plus our Place Value, Fraction, and Prime Factor block kits at stackcalc.io.",
+            "COMPANION ILLUSTRATED STORYBOOKS & 3D MANIPULATIVE BLOCK STUDIOS",
+            "Explore From Blocks to the Stack (Grades K–6) and Thinking in the Stack (Grades 7–12), plus our Place Value, Fraction, and Prime Factor 3D Block Studios at stackcalc.io.",
             INK,
         ),
     ]
@@ -2859,25 +3097,193 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
 
     # Box 4: Pacing & Book Alignment Summary
     p.rect(margin, 226.5, uw, 34.5, fill=SUBTLE_HDR, stroke=BORDER, r=1.0, line_w=0.25)
-    p.text(margin + 3.5, 231.0, "4. FLEXIBLE HOMESCHOOL KITCHEN-TABLE & CLASSROOM PACING", size=1.92, bold=True, mono=True, color=TEAL_ACCENT)
+    p.text(margin + 3.5, 231.0, "4. RECOMMENDED MIDDLE SCHOOL KIT, FREE WEB SIMULATOR & FLEXIBLE PACING", size=1.92, bold=True, mono=True, color=TEAL_ACCENT)
     pacing_notes = [
-        "• Homeschool Mastery Rhythm (No-Tears 5-Problem Option): Have your student solve 5 problems in 2 Ways (+20 pts each = 100 pts) and self-check on the SC-6.",
-        "• Daily Classroom Supplement (90 Days): Assign Practice A (Key Ideas) on Day 1 of a textbook section and Practice B (Modeling Real Life) on Day 2.",
-        "• 45-Day Summer Bridge or Pre-Algebra Readiness (9 Weeks): Complete 1 Section per day to build rock-solid arithmetic, fraction, and algebra foundations.",
+        "• Core Kit for Book 3: StackCalc SC-6 Calculator + Place Value, Fraction & Prime Factor Block Kits (pp. 123–124) + Volume I & II Trade Books!",
+        "• Waiting for Your Physical SC-6? Practice every lesson today on our free interactive web simulator or iOS/watchOS app at https://stackcalc.io!",
+        "• Daily Supplement + 10 Unit Quizzes (pp. 112–121): Solve any 5 problems in 2 Ways (+20 pts each = 100 pts) or all 10 in 1 Way (+10 each).",
     ]
     py_n = 236.5
     for p_line in pacing_notes:
         p.text(margin + 3.5, py_n, p_line, size=1.85, color=INK, max_w=uw - 7.0)
         py_n += 7.2
 
-    p.line(margin, p.h - 11.5, margin + uw, p.h - 11.5, color=BORDER, width=0.25)
-    p.text(margin, p.h - 5.2, f"STACKCALC MATHEMATICS  •  {doc_footer}", size=1.88, mono=True, color=MUTED)
-    p.text(margin + uw, p.h - 5.2, "iv", size=2.1, bold=True, mono=True, color=INK, align="right")
+    p.line(margin, p.h - 12.2, margin + uw, p.h - 12.2, color=BORDER, width=0.25)
+    p.text(margin, p.h - 8.2, f"THE STACKCALC LIBRARY  •  {doc_footer}", size=1.88, mono=True, color=MUTED)
+    p.text(margin + uw, p.h - 8.2, "iv", size=2.1, bold=True, mono=True, color=INK, align="right")
     c.showPage()
 
 
+def draw_unit_mastery_quiz_page(
+    p: CanvasPage,
+    ch: Dict[str, Any],
+    page_num: int,
+    total_pages: int,
+    page_label_override: Optional[str] = None,
+) -> None:
+    """Renders a 1-Page Unscaffolded End-of-Unit Mastery Assessment (10 problems × 10 pts = 100 pts)."""
+    margin = 11.0
+    uw = p.w - 2 * margin
+    ch_num = ch["num"]
+    quiz = UNIT_QUIZZES_DATA[ch_num]
+    probs = quiz["problems"]
+
+    # 1. Top Assessment Header (y = 9.0 .. 24.4 mm)
+    p.text(
+        margin,
+        12.2,
+        f"APPENDIX F • END-OF-UNIT MASTERY QUIZ — UNIT {ch_num:02d} OF 10 ({quiz['ccss']} • {quiz['teks']})",
+        size=1.95,
+        bold=True,
+        mono=True,
+        color=TEAL_ACCENT,
+        max_w=122.0,
+    )
+    p.rect(margin + uw - 70.0, 9.0, 70.0, 4.6, fill=SUBTLE_HDR, stroke=INK, r=0.8, line_w=0.25)
+    p.text(
+        margin + uw - 35.0,
+        12.1,
+        "SUMMATIVE QUIZ: 10 ITEMS × 10 PTS = 100",
+        size=1.75,
+        bold=True,
+        mono=True,
+        color=INK,
+        align="center",
+        max_w=67.0,
+    )
+
+    p.text(
+        margin,
+        18.0,
+        f"Unit {ch_num} Mastery Quiz: {ch['title']}",
+        size=3.95,
+        bold=True,
+        color=INK,
+        max_w=uw,
+    )
+    p.text(
+        margin,
+        22.9,
+        "Directions: Show all paper steps in each box (+6 pts work, +4 pts answer).",
+        size=1.88,
+        bold=True,
+        color=SLATE,
+        max_w=101.0,
+    )
+    p.text(
+        margin + uw,
+        22.9,
+        "Name: ____________________   Date: ________   Score: ____ / 100",
+        size=1.90,
+        bold=True,
+        color=INK,
+        align="right",
+    )
+    p.line(margin, 24.4, margin + uw, 24.4, color=INK, width=0.45)
+
+    # 2. Assessment Rubric Banner (y = 25.4 .. 35.8 mm, height = 10.4 mm)
+    p.rect(margin, 25.4, uw, 10.4, fill=SUBTLE_HDR, stroke=INK, r=0.8, line_w=0.25)
+    p.rect(margin, 25.4, uw, 4.0, fill=BAND_HDR, stroke=INK, r=0.7, line_w=0.22)
+    p.text(
+        margin + 2.5,
+        28.2,
+        f"ASSESSMENT BREAKDOWN: #1–#6 CORE FLUENCY (60 PTS)  •  #7–#9 REAL-LIFE APPLICATIONS (30 PTS)  •  #10 ERROR ANALYSIS (10 PTS)",
+        size=1.72,
+        bold=True,
+        mono=True,
+        color=INK,
+        max_w=uw - 5.0,
+    )
+    p.text(
+        margin + 2.5,
+        33.4,
+        f"Standards Assessed: {quiz['ccss']}  •  {quiz['teks']}  •  {quiz['best']}  •  {quiz['contest']}",
+        size=1.72,
+        bold=True,
+        color=TEAL_ACCENT,
+        max_w=uw - 5.0,
+    )
+
+    # 3. 10 Unscaffolded Quiz Cards (y = 37.2 .. 265.1 mm, 5 Rows × 2 Columns)
+    grid_y0 = 37.2
+    col_w = (uw - 3.0) / 2.0
+    row_h = 44.5
+    row_gap = 1.35
+
+    for idx, qprob in enumerate(probs[:10]):
+        r = idx // 2
+        c_idx = idx % 2
+        px = margin + c_idx * (col_w + 3.0)
+        py = grid_y0 + r * (row_h + row_gap)
+
+        p.rect(px, py, col_w, row_h, fill=WHITE, stroke=SLATE, r=0.9, line_w=0.28)
+        q_num = qprob["num"]
+        p.rect(px + 2.0, py + 1.8, 5.4, 4.4, fill=BAND_HDR, stroke=INK, r=0.65, line_w=0.22)
+        p.text(px + 4.7, py + 4.8, str(q_num), size=2.10, bold=True, mono=True, color=INK, align="center")
+
+        p.text(
+            px + 8.8,
+            py + 4.7,
+            f"{qprob['tag']} • 10 PTS",
+            size=1.55,
+            bold=True,
+            mono=True,
+            color=TEAL_ACCENT,
+            max_w=col_w - 11.0,
+        )
+
+        p.para(
+            px + 2.6,
+            py + 9.2,
+            qprob["prompt"],
+            max_w=col_w - 5.2,
+            size=1.96,
+            bold=True,
+            color=INK,
+            leading=1.15,
+            max_lines=3,
+        )
+
+        # Clean 5 mm dot-grid scratch workspace (unscaffolded — zero giveaway hints)
+        for gx_mm in range(int(px + 5), int(px + col_w - 3), 5):
+            for gy_mm in range(int(py + 21), int(py + row_h - 6), 5):
+                p.circle(float(gx_mm), float(gy_mm), 0.19, fill=BORDER, stroke=BORDER, line_w=0.04)
+
+        p.text(
+            px + 2.4,
+            py + row_h - 2.0,
+            "[ ] Work (+6)  [ ] Ans (+4)",
+            size=1.50,
+            mono=True,
+            color=MUTED,
+            max_w=col_w - 45.0,
+        )
+        p.text(
+            px + col_w - 2.4,
+            py + row_h - 2.0,
+            "Ans: ________________________",
+            size=1.90,
+            bold=True,
+            mono=True,
+            color=INK,
+            align="right",
+        )
+
+    p.text(
+        margin,
+        p.h - 8.2,
+        f"StackCalc SC-6 Textbook Supplement  •  Unit {ch_num}: {ch['title']} — Summative Unit Mastery Quiz ({quiz['ccss']} • {quiz['teks']})",
+        size=1.85,
+        mono=True,
+        color=MUTED,
+        max_w=uw - 28.0,
+    )
+    pg_lbl = page_label_override or f"Page {page_num} of {total_pages}"
+    p.text(margin + uw, p.h - 8.2, pg_lbl, size=1.88, bold=True, mono=True, color=INK, align="right")
+
+
 def draw_student_workbook_back_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]], start_page: int, total_pages: int) -> None:
-    """Renders 9 Reference Appendix Pages (Appendices A–D + 5-Page Compact Student Self-Check Answer Key in Appendix E)."""
+    """Renders 21 Reference & Assessment Appendix Pages (Appendices A–E on pp. 103–111, Appendix F Unit Quizzes on pp. 112–121, and Appendix G Quiz Keys, Crosswalk & Printable Manipulatives on pp. 122–123)."""
     margin = 13.0
     uw = (letter[0] / mm) - 2 * margin
 
@@ -2942,8 +3348,8 @@ def draw_student_workbook_back_matter(c: canvas.Canvas, chapters: List[Dict[str,
             ly += 2.6
         fy += box_h + 3.2
 
-    p.text(margin, p.h - 5.2, "StackCalc SC-6 Textbook Supplement  •  Appendix A: Middle School Math Formulas & Conversions", size=1.88, mono=True, color=MUTED)
-    p.text(margin + uw, p.h - 5.2, f"Page {start_page} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+    p.text(margin, p.h - 8.2, "StackCalc SC-6 Textbook Supplement  •  Appendix A: Middle School Math Formulas & Conversions", size=1.88, mono=True, color=MUTED)
+    p.text(margin + uw, p.h - 8.2, f"Page {start_page} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
     c.showPage()
 
     # ---------------------------------------------------------
@@ -2992,8 +3398,8 @@ def draw_student_workbook_back_matter(c: canvas.Canvas, chapters: List[Dict[str,
         p.para(margin + 136.0, ky + 4.4, k_desc, max_w=uw - 138.0, size=1.65, color=INK, leading=1.15, max_lines=3)
         ky += kh
 
-    p.text(margin, p.h - 5.2, "StackCalc SC-6 Textbook Supplement  •  Appendix B: SC-6 Keycap & 4-Stack Reference", size=1.88, mono=True, color=MUTED)
-    p.text(margin + uw, p.h - 5.2, f"Page {start_page + 1} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+    p.text(margin, p.h - 8.2, "StackCalc SC-6 Textbook Supplement  •  Appendix B: SC-6 Keycap & 4-Stack Reference", size=1.88, mono=True, color=MUTED)
+    p.text(margin + uw, p.h - 8.2, f"Page {start_page + 1} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
     c.showPage()
 
     # ---------------------------------------------------------
@@ -3032,13 +3438,13 @@ def draw_student_workbook_back_matter(c: canvas.Canvas, chapters: List[Dict[str,
 
     p.rect(margin, 227.5, uw, 34.0, fill=M2_BG, stroke=TEAL_ACCENT, r=1.0, line_w=0.28)
     p.text(margin + 3.0, 232.8, "COMPANION RESOURCES & OPEN CURRICULUM LIBRARY", size=2.0, bold=True, mono=True, color=TEAL_ACCENT)
-    p.text(margin + 3.0, 238.5, "• Spiral-Bound Lay-Flat Student Workbooks & Unified Teacher's Guide: https://www.lulu.com/spotlight/stackcalc", size=1.85, bold=True, color=INK)
+    p.text(margin + 3.0, 238.5, "• Print & Digital Workbooks + Unified Teacher's Guide (The StackCalc Library): https://stackcalc.io/curriculum/", size=1.85, bold=True, color=INK)
     p.text(margin + 3.0, 244.0, "• Illustrated Companion Book — From Blocks to the Stack (Amazon): https://link.amazon/B0f5cP0Ur", size=1.85, color=INK)
     p.text(margin + 3.0, 249.5, "• Classroom Manipulative Sets & Hardware: https://stackcalcmath.etsy.com  |  https://stackcalc.io", size=1.85, color=INK)
     p.text(margin + 3.0, 255.0, "• Printable Individual Chapter Packets (Units 1–10): https://stackcalc.io/curriculum/big-ideas-middle-school-sc6-workbook/", size=1.85, color=INK)
 
-    p.text(margin, p.h - 5.2, "StackCalc SC-6 Textbook Supplement  •  Appendix C: Hands-On Manipulative Models Guide", size=1.88, mono=True, color=MUTED)
-    p.text(margin + uw, p.h - 5.2, f"Page {start_page + 2} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+    p.text(margin, p.h - 8.2, "StackCalc SC-6 Textbook Supplement  •  Appendix C: Hands-On Manipulative Models Guide", size=1.88, mono=True, color=MUTED)
+    p.text(margin + uw, p.h - 8.2, f"Page {start_page + 2} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
     c.showPage()
 
     # ---------------------------------------------------------
@@ -3083,8 +3489,8 @@ def draw_student_workbook_back_matter(c: canvas.Canvas, chapters: List[Dict[str,
         for gy_mm in range(int(grid_y + 10), int(grid_y + grid_h - 4), 5):
             p.circle(float(gx_mm), float(gy_mm), 0.22, fill=BORDER, stroke=BORDER, line_w=0.05)
 
-    p.text(margin, p.h - 5.2, "StackCalc SC-6 Textbook Supplement  •  Appendix D: Mastery Certificate & Scratchpad", size=1.88, mono=True, color=MUTED)
-    p.text(margin + uw, p.h - 5.2, f"Page {start_page + 3} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+    p.text(margin, p.h - 8.2, "StackCalc SC-6 Textbook Supplement  •  Appendix D: Mastery Certificate & Scratchpad", size=1.88, mono=True, color=MUTED)
+    p.text(margin + uw, p.h - 8.2, f"Page {start_page + 3} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
     c.showPage()
 
     # ---------------------------------------------------------
@@ -3179,14 +3585,303 @@ def draw_student_workbook_back_matter(c: canvas.Canvas, chapters: List[Dict[str,
 
         p.text(
             margin,
-            p.h - 5.2,
+            p.h - 8.2,
             f"StackCalc SC-6 Textbook Supplement  •  Appendix E: Student Self-Check Answer Key (Units {u_pair[0]['num']}–{u_pair[1]['num']})",
             size=1.88,
             mono=True,
             color=MUTED,
         )
-        p.text(margin + uw, p.h - 5.2, f"Page {pg_cur} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+        p.text(margin + uw, p.h - 8.2, f"Page {pg_cur} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
         c.showPage()
+
+    # ---------------------------------------------------------
+    # APPENDIX F (Pages 112–121): 10 End-of-Unit Mastery Quizzes (Units 1–10, 1 Page per Unit)
+    # ---------------------------------------------------------
+    for u_idx, ch_quiz in enumerate(chapters):
+        pg_quiz = start_page + 9 + u_idx
+        pq = CanvasPage(c, letter)
+        draw_unit_mastery_quiz_page(pq, ch_quiz, pg_quiz, total_pages)
+        c.showPage()
+
+    # ---------------------------------------------------------
+    # APPENDIX G, PART 1 (Page 122): Unit Mastery Quiz Answer Keys & State Standards Crosswalk
+    # ---------------------------------------------------------
+    pg_g1 = start_page + 19
+    p = CanvasPage(c, letter)
+    p.text(
+        margin,
+        11.5,
+        "REFERENCE APPENDIX G (PART 1)  •  UNIT MASTERY QUIZ ANSWER KEYS & STATE STANDARDS CROSSWALK",
+        size=1.95,
+        bold=True,
+        mono=True,
+        color=TEAL_ACCENT,
+    )
+    p.text(
+        margin,
+        17.2,
+        "Appendix G: Unit Mastery Quiz Keys & State Standards Crosswalk (Units 1–10)",
+        size=3.70,
+        bold=True,
+        color=INK,
+        max_w=uw,
+    )
+    p.text(
+        margin,
+        21.2,
+        "Complete answers for all 10 End-of-Unit Mastery Quizzes (pp. 112–121) plus Common Core (CCSS), Texas TEKS & Florida B.E.S.T. alignment.",
+        size=1.78,
+        color=SLATE,
+        max_w=uw,
+    )
+    p.line(margin, 22.6, margin + uw, 22.6, color=INK, width=0.4)
+
+    # Top Section: 10 Unit Quiz Answer Key Strips (y = 24.0 .. 166.5 mm)
+    qy = 24.0
+    qh = 13.7
+    qgap = 0.55
+    for ch_obj in chapters:
+        u_num = ch_obj["num"]
+        q_meta = UNIT_QUIZZES_DATA[u_num]
+        q_probs = q_meta["problems"]
+        p.rect(margin, qy, uw, qh, fill=WHITE, stroke=INK, r=0.7, line_w=0.22)
+        p.rect(margin, qy, uw, 3.9, fill=BAND_HDR, stroke=INK, r=0.6, line_w=0.20)
+        p.text(
+            margin + 2.2,
+            qy + 2.8,
+            f"UNIT {u_num:02d} MASTERY QUIZ KEY (p. {111 + u_num}): {ch_obj['title'].upper()}",
+            size=1.60,
+            bold=True,
+            mono=True,
+            color=INK,
+            max_w=105.0,
+        )
+        p.text(
+            margin + uw - 2.2,
+            qy + 2.8,
+            f"{q_meta['ccss']} • {q_meta['teks']} • {q_meta['best']}",
+            size=1.48,
+            bold=True,
+            mono=True,
+            color=TEAL_ACCENT,
+            align="right",
+            max_w=80.0,
+        )
+        q_line_1 = "   ".join(f"Q{qp['num']}: {qp['ans']}" for qp in q_probs[:5])
+        q_line_2 = "   ".join(f"Q{qp['num']}: {qp['ans']}" for qp in q_probs[5:10])
+        p.text(margin + 2.4, qy + 7.6, q_line_1, size=1.66, bold=True, mono=True, color=INK, max_w=uw - 4.8)
+        p.text(margin + 2.4, qy + 11.6, q_line_2, size=1.66, mono=True, color=SLATE, max_w=uw - 4.8)
+        qy += qh + qgap
+
+    # Bottom Section: Middle School State Standards & Competition Crosswalk (y = 169.0 .. 266.5 mm)
+    st_y = 169.0
+    p.rect(margin, st_y, uw, 4.8, fill=BAND_HDR, stroke=INK, r=0.7, line_w=0.25)
+    p.text(margin + 2.0, st_y + 3.3, "UNIT & TOPIC", size=1.60, bold=True, mono=True, color=INK)
+    p.text(margin + 50.0, st_y + 3.3, "COMMON CORE (CCSS)", size=1.60, bold=True, mono=True, color=INK)
+    p.text(margin + 90.0, st_y + 3.3, "TEXAS TEKS", size=1.60, bold=True, mono=True, color=INK)
+    p.text(margin + 120.0, st_y + 3.3, "FLORIDA B.E.S.T.", size=1.60, bold=True, mono=True, color=INK)
+    p.text(margin + 150.0, st_y + 3.3, "CONTEST / CURRICULUM", size=1.60, bold=True, mono=True, color=INK)
+
+    ry_st = st_y + 4.8
+    rh_st = 9.2
+    for idx_u, ch_obj in enumerate(chapters):
+        u_num = ch_obj["num"]
+        q_meta = UNIT_QUIZZES_DATA[u_num]
+        p.rect(margin, ry_st, uw, rh_st, fill=WHITE if idx_u % 2 == 0 else SUBTLE_HDR, stroke=LIGHT_BORDER, line_w=0.18)
+        p.text(margin + 2.0, ry_st + 5.8, f"U{u_num:02d}: {ch_obj['title']}", size=1.68, bold=True, color=INK, max_w=46.0)
+        p.text(margin + 50.0, ry_st + 5.8, q_meta["ccss"].replace("CCSS ", ""), size=1.62, color=SLATE, max_w=38.0)
+        p.text(margin + 90.0, ry_st + 5.8, q_meta["teks"].replace("TEKS ", ""), size=1.62, bold=True, color=TEAL_ACCENT, max_w=28.0)
+        p.text(margin + 120.0, ry_st + 5.8, q_meta["best"].replace("FL ", ""), size=1.62, color=SLATE, max_w=28.0)
+        p.text(margin + 150.0, ry_st + 5.8, q_meta["contest"], size=1.58, color=INK, max_w=uw - 152.0)
+        ry_st += rh_st
+
+    p.text(
+        margin,
+        p.h - 8.2,
+        "StackCalc SC-6 Textbook Supplement  •  Appendix G (Part 1): Unit Mastery Quiz Answer Keys & Standards Crosswalk",
+        size=1.88,
+        mono=True,
+        color=MUTED,
+    )
+    p.text(margin + uw, p.h - 8.2, f"Page {pg_g1} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+    c.showPage()
+
+    # ---------------------------------------------------------
+    # APPENDIX G, PART 2 (Page 123): Official 3D Manipulative Block Studios & Desk Activities
+    # ---------------------------------------------------------
+    pg_g2 = start_page + 20
+    p = CanvasPage(c, letter)
+    p.text(
+        margin,
+        11.5,
+        "REFERENCE APPENDIX G (PART 2)  •  OFFICIAL 3D MANIPULATIVE BLOCK STUDIOS & DESK ACTIVITIES",
+        size=1.95,
+        bold=True,
+        mono=True,
+        color=TEAL_ACCENT,
+    )
+    p.text(
+        margin,
+        17.2,
+        "Official 3D Manipulative Block Studios & Middle School Activities",
+        size=3.75,
+        bold=True,
+        color=INK,
+        max_w=uw,
+    )
+    p.text(
+        margin,
+        21.2,
+        "How our three precision 3D-printed Block Studios make middle school factors, fractions, ratios, and decimals physical.",
+        size=1.78,
+        color=SLATE,
+        max_w=uw,
+    )
+    p.line(margin, 22.6, margin + uw, 22.6, color=INK, width=0.4)
+
+    studio_cards = [
+        (
+            "1. PLACE VALUE STUDIO (PLACE-01) — 6×2 WHOLE & DECIMAL TRAYS, DIGIT BLOCKS (0–9) & GOLD [+1] CARRY TOKENS",
+            "place_value_regrouping.png",
+            "• Middle School Units 1, 2, 6, 7 & 10: Dock the 6×2 Whole Number Tray and Decimal Tray side-by-side at the raised decimal point (•) to model multi-digit division remainders ([÷R]), decimal place-value shifts (×10 / ÷10), and signed integer differences across Row 1 (Register Y) and Row 0 (Register X).\n"
+            "• 2-Second Desk Check: Every socket holds a single Digit Block [0]–[9]; whenever a column reaches 10, snap a Gold [+1] Carry Token one column left.",
+            "Try on SC-6 (Decimal Split 14.75 -> IP=14, FP=0.75):",
+            ["14.75", "ENTER", "f", "IP"],
+        ),
+        (
+            "2. FRACTION STUDIO (FRAC-01) — 84.0 MM PROPORTIONAL FRACTION TOWERS & 12-SOCKET COMPARATOR LID",
+            "fraction_studio_twin_comparator.png",
+            "• Middle School Units 2, 3, 5 & 8: Because 1 Whole stands 84.0 mm tall (2² × 3 × 7), halves (42 mm), thirds (28 mm), fourths (21 mm), sixths (14 mm), sevenths (12 mm), eighths (10.5 mm), and twelfths (7 mm) stand side-by-side in the 12-Socket Comparator Lid to prove common denominators, tape-diagram ratios, and Split-and-Rebuild fraction division by touch!\n"
+            "• 4-Face Rotational Engraving: Rotate any block 90° to read its Fraction (1/4), Decimal (0.25), Percent (25%), and Two-Dot Key (.1.4).",
+            "Try on SC-6 (Two-Dot Division 3/4 ÷ 3/8 = 2):",
+            [".", "3", ".", "4", "ENTER", ".", "3", ".", "8", "÷"],
+        ),
+        (
+            "3. PRIME FACTOR STUDIO (PRIME-01) — LOGARITHMIC PRIME BLOCKS (h(p) = 7.0·log2(p) MM FOR PRIMES 2, 3, 5, 7)",
+            "prime_lcm_gcd_venn.png",
+            "• Middle School Units 1, 4 & 10: Each prime block's physical height is proportional to its logarithm: [2] = 7.00 mm (1U), [3] = 11.09 mm, [5] = 16.25 mm, [7] = 19.65 mm. Stacking prime blocks adds their heights to multiply factors—so 2 × 2 × 3 = 12 stands dead-flush with 3 × 2 × 2!\n"
+            "• GCF & LCM Comparator: Shared prime blocks between two towers form the GCF sub-tower; the tallest count of each prime forms the LCM tower.",
+            "Try on SC-6 (GCF of 24 and 36 = 12):",
+            ["24", "ENTER", "36", "GCF"],
+        ),
+    ]
+
+    scy = 25.0
+    sch = 76.5
+    for sc_title, sc_img, sc_body, sc_klbl, sc_keys in studio_cards:
+        p.rect(margin, scy, uw, sch, fill=WHITE, stroke=INK, r=0.9, line_w=0.26)
+        p.rect(margin, scy, uw, 5.0, fill=BAND_HDR, stroke=INK, r=0.7, line_w=0.25)
+        p.text(margin + 2.5, scy + 3.6, sc_title, size=1.72, bold=True, mono=True, color=INK, max_w=uw - 5.0)
+        p.rect(margin + 2.5, scy + 6.8, 56.0, sch - 9.2, fill=SUBTLE_HDR, stroke=LIGHT_BORDER, r=0.6, line_w=0.18)
+        p.image(ASSETS_MANUALS_DIR / sc_img, margin + 3.5, scy + 7.8, 54.0, sch - 11.2)
+        p.para(margin + 61.5, scy + 10.5, sc_body, max_w=uw - 64.5, size=1.82, color=INK, leading=1.22, max_lines=9)
+        p.rect(margin + 61.5, scy + sch - 14.5, uw - 64.5, 11.8, fill=M2_BG, stroke=TEAL_ACCENT, r=0.6, line_w=0.22)
+        p.text(margin + 64.0, scy + sch - 7.2, sc_klbl, size=1.72, bold=True, color=INK, max_w=68.0)
+        p.draw_keycap_sequence(sc_keys, margin + 134.0, scy + sch - 11.0, max_w=uw - 138.0, h=4.5, gap=0.9)
+        scy += sch + 3.2
+
+    p.text(
+        margin,
+        p.h - 8.2,
+        "THE STACKCALC LIBRARY  •  Appendix G (Part 2): Official 3D Manipulative Block Studios & Desk Activities",
+        size=1.88,
+        mono=True,
+        color=MUTED,
+    )
+    p.text(margin + uw, p.h - 8.2, f"Page {pg_g2} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+    c.showPage()
+
+    # ---------------------------------------------------------
+    # APPENDIX G, PART 3 (Page 124 / PDF Page 128): Official StackCalc Hardware Ecosystem & Ordering Directory
+    # ---------------------------------------------------------
+    pg_g3 = start_page + 21
+    p = CanvasPage(c, letter)
+    p.text(
+        margin,
+        11.5,
+        "REFERENCE APPENDIX G (PART 3)  •  OFFICIAL STACKCALC HARDWARE ECOSYSTEM & LIBRARY DIRECTORY",
+        size=1.95,
+        bold=True,
+        mono=True,
+        color=TEAL_ACCENT,
+    )
+    p.text(
+        margin,
+        17.2,
+        "Official StackCalc Block Studios, Calculators & Library Guide",
+        size=3.75,
+        bold=True,
+        color=INK,
+        max_w=uw,
+    )
+    p.text(
+        margin,
+        21.2,
+        "Explore our 3D Manipulative Block Studios, distraction-free calculators, and companion books at https://stackcalc.io",
+        size=1.78,
+        color=SLATE,
+        max_w=uw,
+    )
+    p.line(margin, 22.6, margin + uw, 22.6, color=INK, width=0.4)
+
+    # Box 1: Hardware & Block Studio Table
+    p.rect(margin, 25.0, uw, 96.0, fill=WHITE, stroke=INK, r=0.9, line_w=0.26)
+    p.rect(margin, 25.0, uw, 5.0, fill=BAND_HDR, stroke=INK, r=0.7, line_w=0.25)
+    p.text(margin + 2.5, 28.6, "1. OFFICIAL 3D MANIPULATIVE BLOCK STUDIOS & FOUR-LINE STACK CALCULATORS (STACKCALC.IO)", size=1.75, bold=True, mono=True, color=INK)
+
+    hw_rows = [
+        ("BLOCK KIT 1", "Place Value Studio — Digit Blocks & Carry Trays", "6×2 Whole & Decimal Trays, 40 Digit Blocks (0–9), Gold [+1] Carry Tokens & Base-10 Set", "Core Kit • K–8"),
+        ("BLOCK KIT 2", "Fraction Studio — 84.0 mm Fraction Towers & Lid", "78 Proportional Fraction Towers (84.0 mm Whole down to 1/12) & 12-Socket Comparator Lid", "Core Kit • 2–8"),
+        ("BLOCK KIT 3", "Prime Factor Studio — Logarithmic Prime Blocks", "Logarithmic Prime Blocks (h(p) = 7.0·log2(p) mm for primes 2, 3, 5, 7) & Comparator Lid", "Core Kit • 3–10"),
+        ("SC-6 CALC", "StackCalc SC-6 Elementary & Middle School Calculator", "4-Register Visible Stack (T, Z, Y, X), Two-Dot Fractions (.a.b), [÷R], [FACT], [GCF] + Web Sim", "Core Calc • K–8"),
+        ("SC-32 CALC", "StackCalc SC-32 Scientific & STEM Calculator", "32-Key Scientific RPN: [POLY], [▸θ,r], [SIN/COS/TAN], [LN/LOG], [BASE] + iOS/watchOS App", "Next Step • 8–12"),
+    ]
+    hy = 32.0
+    for sku_c, hw_name, hw_spec, hw_grd in hw_rows:
+        p.rect(margin + 2.5, hy, uw - 5.0, 16.5, fill=SUBTLE_HDR if int(hy) % 2 == 0 else WHITE, stroke=LIGHT_BORDER, r=0.6, line_w=0.20)
+        p.rect(margin + 4.5, hy + 2.2, 24.0, 5.4, fill=BAND_HDR, stroke=TEAL_ACCENT, r=0.5, line_w=0.20)
+        p.text(margin + 16.5, hy + 6.0, sku_c, size=1.68, bold=True, mono=True, color=TEAL_ACCENT, align="center")
+        p.text(margin + 31.5, hy + 6.0, hw_name, size=1.95, bold=True, color=INK, max_w=95.0)
+        p.text(margin + uw - 5.0, hy + 6.0, hw_grd, size=1.72, bold=True, color=TEAL_ACCENT, align="right")
+        p.text(margin + 4.5, hy + 13.0, hw_spec, size=1.72, color=SLATE, max_w=uw - 10.0)
+        hy += 17.5
+
+    # Box 2: Complete Books in The StackCalc Library
+    p.rect(margin, 124.5, uw, 90.0, fill=WHITE, stroke=INK, r=0.9, line_w=0.26)
+    p.rect(margin, 124.5, uw, 5.0, fill=BAND_HDR, stroke=INK, r=0.7, line_w=0.25)
+    p.text(margin + 2.5, 128.1, "2. COMPANION BOOKS & WORKBOOKS IN THE STACKCALC LIBRARY (US LETTER & 7\" × 10\" PRINT EDITIONS)", size=1.75, bold=True, mono=True, color=INK)
+
+    lib_books = [
+        ("Volume I", "From Blocks to the Stack (Grades K–6 Trade Book)", "Illustrated history of mathematics, physical block studios, and SC-6 discovery stories."),
+        ("Volume II", "Thinking in the Stack (Grades 7–12 & AP Trade Book)", "Parenthesis-free algebraic, trigonometric, vector, and engineering mastery on the SC-32."),
+        ("Book 1", "Teaching with the Stack (Master Teacher & Homeschool Guide)", "Unified K–12 concept guide, word-for-word scripts, misconception matrix, and middle school coaching."),
+        ("Book 2A / 2B", "Early Elementary (K–2) & Upper Elementary (3–5) Math Labs", "128-page student lab workbooks (10 units, Practice A–F, STEM cases, and 4 cumulative exams each)."),
+        ("Book 4", "High School & STEM Lab (Grades 9–12 & AP • SC-32)", "128-page secondary math & engineering lab workbook (840 problems across Algebra, Trig, Vectors & CS)."),
+        ("Book 5", "Stack Speed & Fluency (Full-Year Timed Fluency Edition)", "15 speed lessons, Champion playbooks, and 180 progressive 20-problem timed tests (3,690 problems)."),
+    ]
+    by_l = 131.5
+    for b_code, b_name, b_desc in lib_books:
+        p.rect(margin + 2.5, by_l, uw - 5.0, 12.8, fill=WHITE if int(by_l) % 2 == 0 else SUBTLE_HDR, stroke=LIGHT_BORDER, r=0.5, line_w=0.18)
+        p.text(margin + 4.5, by_l + 5.0, f"{b_code}: {b_name}", size=1.82, bold=True, color=INK, max_w=uw - 10.0)
+        p.text(margin + 4.5, by_l + 10.2, b_desc, size=1.68, color=SLATE, max_w=uw - 10.0)
+        by_l += 13.6
+
+    # Box 3: Online Answer Key Portal (kept above y = 242 mm to leave bottom-right KDP barcode zone clear)
+    p.rect(margin, 218.0, uw, 24.0, fill=M2_BG, stroke=TEAL_ACCENT, r=0.9, line_w=0.26)
+    p.text(margin + 3.5, 223.2, "3. ONLINE WORKED SOLUTIONS, FREE WEB SIMULATOR & HARDWARE ORDERING PORTAL", size=1.80, bold=True, mono=True, color=TEAL_ACCENT)
+    p.text(margin + 3.5, 229.4, "• Full Worked Solutions & Free Web/iOS Simulator:  https://stackcalc.io/curriculum/answers#middle-school", size=1.80, bold=True, color=INK)
+    p.text(margin + 3.5, 235.6, "• Order Physical 3D Block Kits (Place Value Blocks, Fraction Strips & Prime Factor Towers) & Calculators (SC-6, SC-32):  https://stackcalc.io", size=1.78, color=INK)
+
+    p.text(
+        margin,
+        p.h - 8.2,
+        "THE STACKCALC LIBRARY  •  Appendix G (Part 3): Official StackCalc Block Studios & Hardware Ecosystem",
+        size=1.88,
+        mono=True,
+        color=MUTED,
+    )
+    p.text(margin + uw, p.h - 8.2, f"Page {pg_g3} of {total_pages}", size=1.88, bold=True, mono=True, color=INK, align="right")
+    c.showPage()
 
 
 def draw_coach_guide_back_matter(
@@ -3222,8 +3917,8 @@ def draw_coach_guide_back_matter(
         my += mh
 
     p1_lbl = str(start_master_page) if start_master_page is not None else f"Part II Page {total_chapters + 1} of {total_chapters + 2}"
-    p.text(margin, p.h - 5.0, "STACKCALC MATHEMATICS  •  TEACHING WITH THE STACK • MIDDLE SCHOOL MISCONCEPTION MATRIX", size=1.85, mono=True, color=MUTED)
-    p.text(margin + uw, p.h - 5.0, p1_lbl, size=2.1, bold=True, mono=True, color=INK, align="right")
+    p.text(margin, p.h - 8.2, "THE STACKCALC LIBRARY  •  TEACHING WITH THE STACK • MIDDLE SCHOOL MISCONCEPTION MATRIX", size=1.85, mono=True, color=MUTED)
+    p.text(margin + uw, p.h - 8.2, p1_lbl, size=2.1, bold=True, mono=True, color=INK, align="right")
     c.showPage()
 
     # Page 12 (Appendix B): Photocopiable Classroom / Homeschool Progress Roster & Notes
@@ -3251,15 +3946,15 @@ def draw_coach_guide_back_matter(
     p.rect(margin, 214.0, uw, 48.0, fill=WHITE, stroke=TEAL_ACCENT, r=1.0, line_w=0.28)
     p.rect(margin, 214.0, uw, 5.2, fill=BAND_HDR, stroke=INK, r=0.8, line_w=0.25)
     p.text(margin + 3.0, 217.6, "TEACHER OBSERVATION NOTES & INTERVENTION LOG", size=1.85, bold=True, mono=True, color=INK)
-    p.text(margin + 3.5, 224.5, "• Spiral-Bound Student Workbooks & Teacher Guides (Lulu): https://www.lulu.com/spotlight/stackcalc", size=1.85, bold=True, color=INK)
+    p.text(margin + 3.5, 224.5, "• Print & Digital Student Workbooks & Teacher Guides (The StackCalc Library): https://stackcalc.io/curriculum/", size=1.85, bold=True, color=INK)
     p.text(margin + 3.5, 230.0, "• Companion Book — From Blocks to the Stack (Amazon): https://link.amazon/B0f5cP0Ur  |  Manipulatives: https://stackcalc.io", size=1.85, color=INK)
     for ln_i in range(3):
         ly = 238.5 + ln_i * 7.0
         p.line(margin + 3.5, ly, margin + uw - 3.5, ly, color=LIGHT_BORDER, width=0.25)
 
     p2_lbl = str(start_master_page + 1) if start_master_page is not None else f"Part II Page {total_chapters + 2} of {total_chapters + 2}"
-    p.text(margin, p.h - 5.0, "STACKCALC MATHEMATICS  •  TEACHING WITH THE STACK • MIDDLE SCHOOL MASTERY ROSTER", size=1.85, mono=True, color=MUTED)
-    p.text(margin + uw, p.h - 5.0, p2_lbl, size=2.1, bold=True, mono=True, color=INK, align="right")
+    p.text(margin, p.h - 8.2, "THE STACKCALC LIBRARY  •  TEACHING WITH THE STACK • MIDDLE SCHOOL MASTERY ROSTER", size=1.85, mono=True, color=MUTED)
+    p.text(margin + uw, p.h - 8.2, p2_lbl, size=2.1, bold=True, mono=True, color=INK, align="right")
     c.showPage()
 
 
@@ -3267,11 +3962,11 @@ def generate_student_workbook_pdf(chapters: List[Dict[str, Any]], output_path: P
     output_path.parent.mkdir(parents=True, exist_ok=True)
     c = canvas.Canvas(str(output_path), pagesize=letter)
     c.setTitle("Middle School Math Lab: Big Ideas Two-Method Block & SC-6 Student Workbook")
-    c.setAuthor("StackCalc Learning Lab")
+    c.setAuthor("The StackCalc Library")
 
     total_secs = sum(len(ch["sections"]) for ch in chapters)
     core_pages = 2 + len(chapters) + total_secs * 2  # 102 core numbered pages
-    total_pages = core_pages + 9  # + 9 Reference Appendix pages (pp. 103-111, including 5-page Compact Answer Key)
+    total_pages = core_pages + 22  # + 22 Appendix pages (pp. 103-124: Appendices A-E, 10 Unit Quizzes in Appendix F, and 3 Appendix G pages)
 
     # Pages i–iv: Title Page (i), Copyright Page (ii), Table of Contents (iii), Preface (iv)
     draw_workbook_front_matter(c, chapters, is_coach=False)
@@ -3307,11 +4002,11 @@ def generate_student_workbook_pdf(chapters: List[Dict[str, Any]], output_path: P
             c.showPage()
             page_num += 1
 
-    # Extra Back Matter Pages 103–111 (Appendices A–E)
+    # Extra Back Matter Pages 103–124 (Appendices A–G)
     draw_student_workbook_back_matter(c, chapters, page_num, total_pages)
 
     c.save()
-    print(f"[OK] Built Student Supplement Workbook (Spiral Edition): {output_path} ({output_path.stat().st_size / 1024:.1f} KB, pp. i-iv + {total_pages} numbered pages = {total_pages + 4} total pages)")
+    print(f"[OK] Built Student Supplement Workbook (KDP Print & Digital Edition): {output_path} ({output_path.stat().st_size / 1024:.1f} KB, pp. i-iv + {total_pages} numbered pages = {total_pages + 4} total pages)")
 
 
 # =============================================================================
@@ -3437,12 +4132,12 @@ def draw_coach_chapter_page(
         max_lines=2,
     )
 
-    # 3. Section-by-Section Complete Answer Key Bands (y = 41.0 .. 269.0 mm)
+    # 3. Section-by-Section Complete Answer Key Bands (y = 41.0 .. 259.6 mm)
     #    Each section displays Practice A (#1-#10) on the Left Half and Practice B (#1-#10) on the Right Half!
     secs = ch["sections"]
     n_secs = len(secs)
-    avail_h = 223.8
-    sec_gap = 1.5
+    avail_h = 216.2
+    sec_gap = 1.4
     sec_h = (avail_h - (n_secs - 1) * sec_gap) / n_secs
 
     for s_idx, sec in enumerate(secs):
@@ -3613,17 +4308,45 @@ def draw_coach_chapter_page(
                     max_w=qcol_w - 2.4,
                 )
 
+    # 4. Bottom Strip: Unit Mastery Quiz Answer Key (Q1-Q10) & Standards (y = 258.2 .. 266.2 mm, h = 8.0 mm)
+    q_meta = UNIT_QUIZZES_DATA[ch_num]
+    q_probs = q_meta["problems"]
+    q_bar_y = 258.2
+    p.rect(margin, q_bar_y, uw, 8.0, fill=SUBTLE_HDR, stroke=TEAL_ACCENT, r=0.6, line_w=0.24)
+    q_ans_line1 = "  ".join(f"Q{qp['num']}: {qp['ans']}" for qp in q_probs[:5])
+    q_ans_line2 = "  ".join(f"Q{qp['num']}: {qp['ans']}" for qp in q_probs[5:10])
+    p.text(
+        margin + 2.0,
+        q_bar_y + 3.1,
+        f"UNIT {ch_num:02d} MASTERY QUIZ KEY (p.{111 + ch_num} • {q_meta['teks']}):  {q_ans_line1}",
+        size=1.52,
+        bold=True,
+        mono=True,
+        color=TEAL_ACCENT,
+        max_w=uw - 4.0,
+    )
+    p.text(
+        margin + 2.0,
+        q_bar_y + 6.5,
+        f"Quiz Q6–Q10 Answers:  {q_ans_line2}",
+        size=1.52,
+        bold=True,
+        mono=True,
+        color=INK,
+        max_w=uw - 4.0,
+    )
+
     pg_lbl = str(master_page_num) if master_page_num is not None else f"Part II Page {ch_num} of {total_chapters}"
     p.text(
         margin,
-        p.h - 5.0,
+        p.h - 8.2,
         f"STACKCALC MATHEMATICS  •  TEACHING WITH THE STACK (MIDDLE SCHOOL KEY • UNIT {ch_num:02d})",
         size=1.85,
         mono=True,
         color=MUTED,
         max_w=uw - 38.0,
     )
-    p.text(margin + uw, p.h - 5.0, pg_lbl, size=2.1, bold=True, mono=True, color=INK, align="right")
+    p.text(margin + uw, p.h - 8.2, pg_lbl, size=2.1, bold=True, mono=True, color=INK, align="right")
 
 
 def generate_coach_guide_pdf(chapters: List[Dict[str, Any]], output_path: Path) -> None:
@@ -3646,11 +4369,13 @@ def generate_coach_guide_pdf(chapters: List[Dict[str, Any]], output_path: Path) 
 
 
 def generate_big_ideas_lulu_covers(chapters: List[Dict[str, Any]], out_dir: Path) -> None:
-    """Generates 2-page US Letter + 0.125-inch bleed (8.75\" x 11.25\") Lulu Coil-Bound Front & Back Cover PDF for Book 3 using the Bestseller Cover Engine."""
+    """Generates Amazon KDP Full-Wrap Paperback Cover + Spine Spread PDF (and 2-page Front/Back Cover PDF) for Book 3 without ISBN barcodes."""
     out_dir.mkdir(parents=True, exist_ok=True)
+    wb_kdp_cover = out_dir / "bigideas_middle_school_sc6_workbook_kdp_cover.pdf"
+    generate_kdp_full_wrap_cover_pdf(wb_kdp_cover, "big_ideas", interior_pdf_path=STUDENT_PDF, default_pages=128)
     wb_cover = out_dir / "bigideas_middle_school_sc6_workbook_lulu_cover.pdf"
     generate_lulu_coil_cover_pdf(wb_cover, "big_ideas")
-    print(f"[OK] Built Lulu Coil-Bound Cover PDF: {wb_cover.name}")
+    print(f"[OK] Built KDP Full-Wrap & 2-Page Cover PDFs: {wb_kdp_cover.name}, {wb_cover.name}")
 
 
 def generate_chapter_pdfs(chapters: List[Dict[str, Any]], out_dir: Path) -> None:
@@ -3664,7 +4389,7 @@ def generate_chapter_pdfs(chapters: List[Dict[str, Any]], out_dir: Path) -> None
         c.setTitle(f"StackCalc SC-6 Big Ideas Math Supplement — Unit {ch_num}: {ch['title']} (Printable Chapter Packet)")
         c.setAuthor("StackCalc Learning Lab")
 
-        unit_total_pages = 1 + len(ch["sections"]) * 2 + 1
+        unit_total_pages = 1 + len(ch["sections"]) * 2 + 2
         page_num = 1
 
         # Page 1: Unit Story & Concept Opener
@@ -3684,6 +4409,12 @@ def generate_chapter_pdfs(chapters: List[Dict[str, Any]], out_dir: Path) -> None
             draw_student_section_page_b(pb, ch, sec, page_num, unit_total_pages)
             c.showPage()
             page_num += 1
+
+        # Second-to-Last Page: 1-Page End-of-Unit Mastery Quiz
+        pq = CanvasPage(c, letter)
+        draw_unit_mastery_quiz_page(pq, ch, page_num, unit_total_pages)
+        c.showPage()
+        page_num += 1
 
         # Final Page: 1-Page Parent & Teacher Coach Answer Key for this Unit
         pc = CanvasPage(c, letter)
@@ -3748,15 +4479,14 @@ def sync_curriculum_markdown(chapters: List[Dict[str, Any]], md_path: Path) -> N
         "  <a href=\"../uil-competition/\" class=\"px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold\">🏆 UIL Competition</a>",
         "</nav>",
         "",
-        "**Grade 6 Complete + Grade 7 Bridge • Title Page & Preface • 10 Unit Introductions • 45 Textbook Sections • 90 Printable Worksheets (Practice A & B) • 90 Multi-Way Worked Examples • 900 Practice Problems • 5 Reference Appendices (Including Student Self-Check Answer Key)**",
+        "**Grade 6 Complete + Grade 7 Bridge • Title Page & Preface • 10 Unit Introductions • 45 Textbook Sections • 90 Printable Worksheets (Practice A & B) • 90 Multi-Way Worked Examples • 900 Practice Problems + 10 End-of-Unit Mastery Quizzes (100 Quiz Items) • 7 Reference Appendices (Answer Keys, Standards Crosswalk & Official 3D Block Studio Guides)**",
         "",
         "<div class=\"hero-buttons\" style=\"margin: 1.25rem 0 1.75rem 0;\">",
-        "  <a href=\"../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf\" class=\"md-button md-button--primary\">📄 Download Complete Spiral Student Workbook PDF (115 Pages • pp. i–iv + 1–111)</a>",
-        "  <a href=\"https://www.lulu.com/spotlight/stackcalc\" class=\"md-button\">📘 Order Spiral-Bound Lay-Flat Workbook on Lulu ↗</a>",
+        "  <a href=\"../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf\" class=\"md-button md-button--primary\">📄 Download Complete Student Workbook PDF (128 Pages • pp. i–iv + 1–124)</a>",
         "  <a href=\"#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers\" class=\"md-button\">🖨️ Print Individual Chapters (Units 1–10 Separate PDFs)</a>",
         "  <a href=\"../../downloads/worksheets/sc6_quest_token_scoring_guide.pdf\" class=\"md-button\">🏆 Download 1-Page Token Scoring & SC-6 Work-Check Guide PDF</a>",
         "  <a href=\"../../downloads/stackcalc-curriculum-guide-letter.pdf\" class=\"md-button\">🔑 Download Unified Master Teacher's Guide PDF (Includes Complete 900-Problem Worked Setups & Keys)</a>",
-        "  <a href=\"../../downloads/worksheets/bigideas_middle_school_sc6_workbook_lulu_cover.pdf\" class=\"md-button\">🎨 Student Workbook Lulu Coil Cover PDF</a>",
+        "  <a href=\"../../downloads/worksheets/bigideas_middle_school_sc6_workbook_kdp_cover.pdf\" class=\"md-button\">🎨 Student Workbook KDP Paperback Full-Wrap Cover PDF</a>",
         "</div>",
         "",
         "!!! abstract \"Built for Students Who Need Extra Practice: Two Textbook Ways, Hands-On Block Models & 100-Point Daily Goal\"",
@@ -3764,14 +4494,14 @@ def sync_curriculum_markdown(chapters: List[Dict[str, Any]], md_path: Path) -> N
         "    - **100% Focused on How *Big Ideas Math* Teaches & Tests Each Concept:** Every section tracks the exact paper-and-pencil algorithms, conceptual models, and vocabulary (*dividend, divisor, quotient, prime factorization, GCF, LCM, reciprocal, tape diagram, ratio table, unit rate, equivalent expressions, Distributive Property, inverse operations, net, interquartile range (IQR), mean absolute deviation (MAD)*) that students are tested on in school.",
         "    - **2 or 3 Authentic Textbook Ways & 100-Point Daily Goal:** Every Worked Example explicitly teaches the **distinct textbook solution pathways from *Big Ideas Math*** (`WAY 1`, `WAY 2`, and `WAY 3` where applicable). Students reach the **100-Point Daily Goal** either by solving **any 5 problems in 2 Ways (`5 × 20 = 100 pts`)** OR **all 10 problems in 1 Way (`10 × 10 = 100 pts`)**.",
         "    - **Warm-Up Step 1 Starter Scaffolds (`#1–#2`), Common-Trap Alerts & Graphic Organizers:** Every worksheet includes a section-specific **`⚠️ WATCH OUT:`** misconception alert, a 1-line **Starter Step 1** prompt on Problems `#1–#2` to eliminate blank-page anxiety, and faint ready-to-use graphic organizers (number lines, ratio tables, mini coordinate grids, Venn diagrams, and box-plot axes) right inside the problem cards.",
-        "    - **Blocks Reinforce Textbook Concepts Where Applicable:** Physical manipulatives (**Place Value Blocks**, **Prime Factor Towers**, and **Fraction Comparator Strips**) reinforce textbook concepts where they naturally fit, while paper/number-line/graph/table/formula sections focus directly on the textbook strategy.",
-        "    - **Spiral-Bound Lay-Flat Edition on Lulu, Complete 115-Page PDF (with Student Self-Check Answer Key), or Individual Chapter Packets:** Order the **Coil-Bound Lay-Flat Edition on [Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc)** (including Front Matter `pp. i–iv` and Reference `Appendices A–E` on `pp. 103–111` with final answers for all 900 problems), print the complete PDF, or download any of the **10 standalone Chapter/Unit PDFs below** (10–14 pages each).",
+        "    - **10 Unscaffolded End-of-Unit Mastery Quizzes & Official 3D Block Studio Guides:** Appendix F (`pp. 112–121`) includes a 1-page Summative Unit Mastery Quiz (`10 problems / 100 points`) for every unit, while Appendix G (`pp. 122–124`) provides the Quiz Answer Keys, State Standards Crosswalk (`CCSS • Texas TEKS • Florida B.E.S.T.`), and Official 3D Manipulative Block Studio & Hardware Guides (`PLACE-01`, `FRAC-01`, `PRIME-01`, `SC-6`, `SC-32`).",
+        "    - **The StackCalc Library Print Edition on Amazon, Complete 128-Page PDF, or Individual Chapter Packets:** Available in **Paperback as part of *The StackCalc Library* on Amazon** (including Front Matter `pp. i–iv` and Reference `Appendices A–G` on `pp. 103–124`), as a complete downloadable PDF, or as **10 standalone Chapter/Unit PDFs below** (11–13 pages each).",
         "",
         "---",
         "",
         "## 🖨️ Print Individual Chapters (Units 1–10 Separate PDFs for Parents & Teachers)",
         "",
-        "Don't want to print all 114 pages at once? Each standalone **Chapter Packet PDF** below contains that unit's **1-Page Real-World Story & Concept Opener**, all **Practice A & Practice B Section Worksheets** (`20 problems per section`), and the **1-Page Parent & Teacher Coach Answer Key** at the back of the packet.",
+        "Don't want to print all 127 pages at once? Each standalone **Chapter Packet PDF** below contains that unit's **1-Page Real-World Story & Concept Opener**, all **Practice A & Practice B Section Worksheets** (`20 problems per section`), the **1-Page Unscaffolded End-of-Unit Mastery Quiz**, and the **1-Page Parent & Teacher Coach Answer Key** at the back of the packet.",
         "",
         "| Unit | Big Ideas Math Chapter & Grade | Sections & Practice Load | *From Blocks to the Stack* Story & Block Listings | Standalone Printable Chapter PDF |",
         "| :---: | :--- | :--- | :--- | :--- |",
@@ -3783,12 +4513,12 @@ def sync_curriculum_markdown(chapters: List[Dict[str, Any]], md_path: Path) -> N
         sec_range = f"Sections {secs[0]['sec_num']}–{secs[-1]['sec_num']}"
         n_ws = len(secs) * 2
         n_probs = len(secs) * 20
-        unit_pages = 1 + n_ws + 1
+        unit_pages = 1 + n_ws + 2
         unit_pdf_md = f"../downloads/worksheets/bigideas_middle_school_sc6_unit_{ch_num:02d}.pdf"
         book_ref = UNIT_BOOK_REFS.get(ch_num, "[SC-6 Elementary Manual](../manuals/sc6/index.md)")
         prod_links = UNIT_PRODUCT_LINKS.get(ch_num, "[Manipulative Kits](../products/curriculum-and-decks.md)")
         lines.append(
-            f"| **[Unit {ch_num}](#unit-{ch_num})** | **{ch['title']}**<br>*{ch['big_ideas_book']}* | {sec_range}<br>(`{n_ws} Worksheets • {n_probs} Problems`) | {book_ref}<br>**Blocks:** {prod_links} | [**📄 Print Unit {ch_num} PDF ({unit_pages} pp.)**]({unit_pdf_md}) |"
+            f"| **[Unit {ch_num}](#unit-{ch_num})** | **{ch['title']}**<br>*{ch['big_ideas_book']}* | {sec_range}<br>(`{n_ws} Worksheets • {n_probs} Problems + Quiz`) | {book_ref}<br>**Blocks:** {prod_links} | [**📄 Print Unit {ch_num} PDF ({unit_pages} pp.)**]({unit_pdf_md}) |"
         )
 
     lines.extend([
@@ -3814,7 +4544,7 @@ def sync_curriculum_markdown(chapters: List[Dict[str, Any]], md_path: Path) -> N
         unit_story_pg = 3 + (ch_num - 1) + (ch["sections"][0]["day_num"] - 1) * 2
         story = UNIT_STORIES[ch_num]
         n_ws = len(ch["sections"]) * 2
-        unit_pages = 1 + n_ws + 1
+        unit_pages = 1 + n_ws + 2
         unit_pdf_rel = f"../../downloads/worksheets/bigideas_middle_school_sc6_unit_{ch_num:02d}.pdf"
         book_ref = UNIT_BOOK_REFS.get(ch_num, "[SC-6 Elementary Manual](../manuals/sc6/index.md)")
         prod_links = UNIT_PRODUCT_LINKS.get(ch_num, "[Manipulative Kits](../products/curriculum-and-decks.md)")

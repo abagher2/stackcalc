@@ -45,8 +45,8 @@ Even the number pad (`1`–`9` and `-`) is organized as a visual map so your fin
 | Number-Pad Zone | Keys | `{{key:f}}` Shift (Top-Left) | `{{key:g}}` Shift (Top-Right) | Why It Is Grouped This Way |
 | :--- | :---: | :--- | :--- | :--- |
 | **Row 4: 2D & 3D Geometry Workbench** | `7`, `8`, `9` | `{{key:RECT}}`, `{{key:CIRC}}`, `{{key:PRISM}}` | `{{key:TRI}}`, `{{key:HYP}}`, `{{key:CONE}}` | Moves left-to-right from flat rectangles/triangles (`7`) and circles/right triangles (`8`) to 3D prisms/cones (`9`) |
-| **Row 5: Mass & Length Conversions** | `4`, `5`, `6` | `{{key:▸g}}`, `{{key:▸kg}}`, `{{key:▸cm}}` | `{{key:▸oz}}`, `{{key:▸lb}}`, `{{key:▸in}}` | Every key pairs its **Metric unit on `{{key:f}}` (left)** with its **U.S. Customary partner on `{{key:g}}` (right)** |
-| **Row 6: Volume & Temperature** | `1`, `2`, `-` | `{{key:▸mL}}`, `{{key:▸L}}`, `{{key:▸°C}}` | `{{key:▸fl}}`, `{{key:▸gal}}`, `{{key:▸°F}}` | Tapping `{{key:f}}` converts to Metric (`mL`, `L`, `°C`); tapping `{{key:g}}` on the same key converts back (`fl oz`, `gal`, `°F`) |
+| **Row 5: Everyday Weight, Distance & Volume** | `4`, `5`, `6` | `{{key:▸g}}`, `{{key:▸ft}}`, `{{key:▸mL}}` | `{{key:▸oz}}`, `{{key:▸mi}}`, `{{key:▸fl}}` | Pairs grams/ounces (`4`), feet/miles (`5`), and milliliters/fluid ounces (`6`) across `{{key:f}}` (left) and `{{key:g}}` (right) |
+| **Row 6: Heavy Mass, Temperature, Length & Tanks** | `1`, `2`, `3`, `-` | `{{key:▸kg}}`, `{{key:▸°C}}`, `{{key:▸cm}}`, `{{key:▸L}}` | `{{key:▸lb}}`, `{{key:▸°F}}`, `{{key:▸in}}`, `{{key:▸gal}}` | Tapping `{{key:f}}` converts to Metric (`kg`, `°C`, `cm`, `L`); tapping `{{key:g}}` on the same key converts to U.S. Customary (`lb`, `°F`, `in`, `gal`) |
 
 ---
 
@@ -63,18 +63,18 @@ The table below catalogs every keycap position, primary legend, `{{key:f}}` and 
 | **05** (R0, C4) | `{{key:PV}}` | `{{key:IP}}` Whole Part | `{{key:FP}}` Fraction Part | Grades 3–4 • [Chapter 3: Place Value Decomposition](03-counting-place-value.md) • [Chapter 5: Whole & Fractional Parts](05-fractions-decimals-ratios.md) |
 | **06** (R0, C5) | `{{key:$}}` | `{{key:ALL}}` Full Digits | `{{key:RND}}` Round | Grades 3–5 • [Chapter 3: Currency & Place Value](03-counting-place-value.md) • [Chapter 4: Rounding](04-operations-skip-counting.md) |
 | **07** (R1, C0) | `{{key:FDISP}}` | `{{key:1/x}}` Reciprocal | `{{key:/c}}` Denominator | Grades 3–5 • [Chapter 5: Fraction Entry, Reciprocals & Fixed Denominators](05-fractions-decimals-ratios.md) |
-| **08** (R1, C1) | `{{key:a ᵇ/c}}` | `{{key:d/c}}` Improper | `{{key:SIMP}}` Simplify | Grades 3–5 • [Chapter 5: Mixed Numbers, Improper Fractions & Step-by-Step Simplify](05-fractions-decimals-ratios.md) |
+| **08** (R1, C1) | `{{key:a ᵇ/c}}` | `{{key:d/c}}` Improper | `{{key:SIMP}}` Simplify | Grades 3–5 • [Chapter 5: Mixed Numbers, Improper Fractions & Simplify](05-fractions-decimals-ratios.md) |
 | **09** (R1, C2) | `{{key:GCF}}` | `{{key:LCM}}` Multiple | `{{key:a:b}}` Ratio | Grades 5–6 • [Chapter 7: Number Theory GCF & LCM](07-data-probability-primes.md) • [Chapter 5: Ratios & Rates](05-fractions-decimals-ratios.md) |
 | **10** (R1, C3) | `{{key:PRIME}}` | `{{key:C.FAC}}` Common Factors | `{{key:FACT}}` Factor Tree | Grades 5–6 • [Chapter 7: Prime Studio & Factorization](07-data-probability-primes.md) |
 | **11** (R1, C4) | `{{key:x⇄y}}` | `{{key:R↓}}` Roll Down | `{{key:REP}}` Replicate | Grades 3–4 • [Chapter 2: Stack Swapping & Rolling](02-rpn-for-young-learners.md) • [Chapter 4: Constant Repeat Skip-Counting](04-operations-skip-counting.md) |
-| **12** (R1, C5) | `{{key:+/-}}` | `{{key:E}}` Exponent | `{{key:ABS}}` Absolute Value | Grades 5–6 • [Chapter 7: Signed Numbers & Absolute Value](07-data-probability-primes.md) • [Chapter 3: Big Numbers](03-counting-place-value.md) |
+| **12** (R1, C5) | `{{key:+/-}}` | `{{key:E}}` Exponent | `{{key:|x|}}` Absolute Value | Grades 5–6 • [Chapter 7: Signed Numbers & Absolute Value](07-data-probability-primes.md) • [Chapter 3: Big Numbers](03-counting-place-value.md) |
 | **13** (R2, C0) | `{{key:FRQ}}` | `{{key:MED}}` Median | `{{key:MODE}}` Mode | Grades 5–6 • [Chapter 7: Frequency Tables, Median & Mode](07-data-probability-primes.md) |
 | **14** (R2, C1) | `{{key:RNG}}` | `{{key:MIN}}` Minimum | `{{key:MAX}}` Maximum | Grades 5–6 • [Chapter 7: Data Spread & Extremes](07-data-probability-primes.md) |
 | **15** (R2, C2) | `{{key:IQR}}` | `{{key:1Q}}` Quartile 1 | `{{key:3Q}}` Quartile 3 | Grades 6+ • [Chapter 7: Quartiles & Box Plots](07-data-probability-primes.md) |
 | **16** (R2, C3) | `{{key:Σ+}}` | `{{key:Σ-}}` Remove | `{{key:MAD}}` Mean Deviation | Grades 4–6 • [Chapter 6: Master Surface Area via Stats](06-geometry-surface-area.md) • [Chapter 7: Mean Absolute Deviation](07-data-probability-primes.md) |
 | **17** (R2, C4) | `{{key:N}}` | `{{key:Σx}}` Total Sum | `{{key:x̄}}` Mean Average | Grades 5–6 • [Chapter 7: Sample Count & Fair-Share Mean](07-data-probability-primes.md) |
 | **18** (R2, C5) | `{{key:%}}` | `{{key:▸%}}` Decimal to % | `{{key:%CHG}}` % Change | Grades 5–6 • [Chapter 5: Percentages, Tips & Discounts](05-fractions-decimals-ratios.md) |
-| **19** (R3, C0-1) | `{{key:ENTER}}` | `{{key:LASTX}}` Last X | `{{key:SHOW}}` Full 15-Digit | Grades 3–6 • [Chapter 2: The Elevator Push](02-rpn-for-young-learners.md) • [Chapter 4: Last Number Self-Check](04-operations-skip-counting.md) • [Chapter 8: Quiz Submit](08-math-quiz-engine.md) |
+| **19** (R3, C0-1) | `{{key:ENTER}}` | `{{key:LASTX}}` Last X | `{{key:SHOW}}` Full 15-Digit | Grades 3–6 • [Chapter 2: The Elevator Push](02-rpn-for-young-learners.md) • [Chapter 4: Last Number Self-Check](04-operations-skip-counting.md) |
 | **20** (R3, C2) | `{{key:🕒}}` | `{{key:▸HR}}` Decimal Hours | `{{key:▸HMS}}` Clock Time | Grades 3–5 • [Chapter 6: Planetary Geared Clock & Elapsed Time](06-geometry-surface-area.md) |
 | **21** (R3, C3) | `{{key:▦}}` | `{{key:LINE}}` Number Line | `{{key:COUNT}}` Step Count | Grades 3–5 • [Chapter 3: Ten-Frame, Number Line & Number Rack](03-counting-place-value.md) |
 | **22** (R3, C4) | `{{key:NUM}}` | `{{key:SCI}}` Scientific | `{{key:FIX}}` Fixed Decimals | Grades 3–6 • [Chapter 2: Numerical 4-Stack Mode](02-rpn-for-young-learners.md) • [Chapter 3: Display Formats](03-counting-place-value.md) |
@@ -97,7 +97,7 @@ The table below catalogs every keycap position, primary legend, `{{key:f}}` and 
 | **39** (R7, C0) | `{{key:C}}` (ON) | `{{key:?}}` Quiz Sprint | `{{key:OFF}}` Sleep | Grades 3–6 • [Chapter 1: Wake & Sleep](01-hardware-architecture.md) • [Chapter 8: Math Quiz Game](08-math-quiz-engine.md) |
 | **40** (R7, C1) | `{{key:0}}` | `{{key:REGS}}` Stack Viewer | — | Grades 3–6 • [Chapter 3: Zero & Place Value](03-counting-place-value.md) • [Chapter 2: Stack Viewer](02-rpn-for-young-learners.md) |
 | **41** (R7, C2) | `{{key:.}}` | `{{key:0.3̄}}` Repeating | — | Grades 3–5 • [Chapter 5: Two-Dot Fractions & Repeating Decimals](05-fractions-decimals-ratios.md) |
-| **42** (R7, C3) | `{{key:≠}}` | `{{key:>}}` Greater Than | `{{key:<}}` Less Than | Grades 3–5 • [Chapter 4: Comparing Numbers](04-operations-skip-counting.md) |
+| **42** (R7, C3) | `{{key:≠}}` | `{{key:>}}` Greater Than | `{{key:<}}` Less Than | Grades 3–5 • [Chapter 4: Comparing Numbers](04-operations-skip-counting.md) • [Chapter 8: Quiz Submit](08-math-quiz-engine.md) |
 | **43** (R7, C4) | `{{key:+}}` | `{{key:≥}}` Greater/Equal | `{{key:≤}}` Less/Equal | Grades 3–5 • [Chapter 4: Addition & Comparisons](04-operations-skip-counting.md) |
 
 ---
@@ -111,9 +111,9 @@ Not sure which buttons to try next? Follow this six-step map from your very firs
 | **1. First Stack Moves** | Counting groups, making 10s, and adding or subtracting on the shelves | `{{key:▦}}` Ten-Frame, `{{key:COUNT}}`, `{{key:LINE}}`, `{{key:+}}`, `{{key:-}}`, `{{key:ENTER}}`, `{{key:C}}`, `{{key:<-}}` |
 | **2. Place Value & Skip-Counting** | Breaking big numbers into 1000s/100s/10s/1s, money math, and skip-counting | `{{key:PV}}` Place Value, `{{key:REP}}` Constant Repeat, `{{key:$}}` Money, `{{key:x⇄y}}` |
 | **3. Tile Arrays, Area & Clock Time** | Building tile rectangles, telling geared clock time, and entering fractions | `{{key:×}}`, `{{key:÷}}`, `{{key:RECT}}`, `{{key:🕒}}` Geared Clock, `{{key:FDISP}}`, `{{key:.}}` |
-| **4. Remainders & Fraction Towers** | Sharing with leftovers, simplifying fractions step by step, and checking work | `{{key:÷R}}` Quotient & Remainder, `{{key:a ᵇ/c}}`, `{{key:d/c}}`, `{{key:SIMP}}`, `{{key:LASTX}}` |
+| **4. Remainders & Fraction Towers** | Sharing with leftovers, simplifying fractions to lowest terms, and checking work | `{{key:÷R}}` Quotient & Remainder, `{{key:a ᵇ/c}}`, `{{key:d/c}}`, `{{key:SIMP}}`, `{{key:LASTX}}` |
 | **5. Common Slices & 3D Boxes** | Finding common denominators, wrapping 3D boxes, and building tally tables | `{{key:GCF}}`, `{{key:LCM}}`, `{{key:PRISM}}`, `{{key:Σ+}}` Add to Total, `{{key:FRQ}}` Tables |
-| **6. Primes, Fair Dice & Quiz Sprints** | Negative numbers, prime factor trees, fair-share data averages, and quiz sprints | `{{key:+/-}}`, `{{key:ABS}}`, `{{key:PRIME}}`, `{{key:FACT}}`, `{{key:a:b}}`, `{{key:x²}}`, `{{key:√x}}`, `{{key:IQR}}`, `{{key:MAD}}` |
+| **6. Primes, Fair Dice & Quiz Sprints** | Negative numbers, prime factor trees, fair-share data averages, and quiz sprints | `{{key:+/-}}`, `{{key:|x|}}`, `{{key:PRIME}}`, `{{key:FACT}}`, `{{key:a:b}}`, `{{key:x²}}`, `{{key:√x}}`, `{{key:IQR}}`, `{{key:MAD}}` |
 
 ### Task-to-Button Quick Finder ("I Want To... $\to$ Press This Key")
 
@@ -127,8 +127,8 @@ Whenever you are in the middle of a math puzzle or maker project and want to fin
 | **Skip-count by the same number on every tap** | Type step, tap `{{key:REP}}` (`{{key:x⇄y}}`), tap `{{key:+}}` | `7 {{key:REP}} {{key:+}} {{key:+}} {{key:+}}` $\to$ `14, 21, 28` |
 | **Divide and see both Whole Groups and Leftovers** | Put Total in $Y$, Group Size in $X$, tap `{{key:÷R}}` (`{{key:÷}}`) | `145 {{key:ENTER}} 45 {{key:÷R}}` $\to$ `X: 3` buses, `Y: 10` left over |
 | **X-ray the digit sitting in any place-value column** | Put number in $Y$, column (`1, 10, 100...`) in $X$, tap `{{key:PV}}` | `4725 {{key:ENTER}} 100 {{key:PV}}` $\to$ `7` hundreds |
-| **Enter a proper fraction (like $\frac{3}{8}$) or mixed number ($2\frac{1}{4}$)** | Use two dots (`{{key:.}}`) to separate top and bottom | `{{key:.}} 3 {{key:.}} 8 {{key:ENTER}}` or `2 {{key:.}} 1 {{key:.}} 4 {{key:ENTER}}` |
-| **Simplify a fraction or ratio step by step** | Tap `{{key:SIMP}}` (`{{key:a ᵇ/c}}`) | `{{key:.}} 12 {{key:.}} 18 {{key:ENTER}} {{key:SIMP}}` $\to$ `2/3` |
+| **Enter a proper fraction (like $\frac{3}{8}$) or mixed number ($2\frac{1}{4}$)** | Use two dots (`{{key:.}}`) to separate whole, top, and bottom | `0 {{key:.}} 3 {{key:.}} 8 {{key:ENTER}}` *(or `{{key:.}} 3 {{key:.}} 8`)* or `2 {{key:.}} 1 {{key:.}} 4 {{key:ENTER}}` |
+| **Simplify a fraction or ratio to lowest terms** | Tap `{{key:SIMP}}` (`{{key:a ᵇ/c}}`) | `0 {{key:.}} 12 {{key:.}} 18 {{key:ENTER}} {{key:SIMP}}` $\to$ `2/3` |
 | **Find the Least Common Denominator of two fractions** | Put denominators on $Y$ and $X$, tap `{{key:LCM}}` (`{{key:GCF}}`) | `8 {{key:ENTER}} 12 {{key:LCM}}` $\to$ `24` |
 | **Take a sale discount or add a tip in two taps** | Put price on $Y$, percent on $X$, tap `{{key:%}}`, then `{{key:-}}` or `{{key:+}}` | `80 {{key:ENTER}} 15 {{key:%}} {{key:-}}` $\to$ `68.00` |
 | **Find the area of a rectangle, triangle, or circle** | Use `{{key:RECT}}` (`{{key:f}}` `7`), `{{key:TRI}}` (`{{key:g}}` `7`), or `{{key:CIRC}}` (`{{key:f}}` `8`) | `14 {{key:ENTER}} 9 {{key:TRI}}` $\to$ `63` |
@@ -149,8 +149,8 @@ Want a fast way to keep all 43 buttons fresh in your fingertips? Pick any two of
 | **3** | **Place-Value X-Ray Check** | `8042 {{key:ENTER}} 100 {{key:PV}}` | Extracts the hundreds column digit **`0`** (zero hundred-flats holding the column open) |
 | **4** | **Constant Doubling Ladder** | `2 {{key:REP}} {{key:×}} {{key:×}} {{key:×}} {{key:×}}` | Doubles `2` across four taps (`4` $\to$ `8` $\to$ `16` $\to$ **`32`**) |
 | **5** | **Remainder & Reverse Proof** | `100 {{key:ENTER}} 7 {{key:÷R}}` $\to$ `{{key:LASTX}} {{key:×}} {{key:+}}` | Splits `100` into **`14`** ($X$) with **`2`** left ($Y$), then rebuilds **`100`** |
-| **6** | **Fraction Tower Addition** | `{{key:.}} 1 {{key:.}} 3 {{key:ENTER}} {{key:.}} 1 {{key:.}} 4 {{key:+}}` | Bridges thirds and fourths on the shared twelfths grid to display **`7/12`** |
-| **7** | **3D Box Surface Wrapper** | `5 {{key:ENTER}} 4 {{key:ENTER}} 3 {{key:PRISM}}` | Displays Volume **`60`** on Shelf $X$ and Total Surface Area **`94`** on Shelf $Y$ |
+| **6** | **Fraction Tower Addition** | `0 {{key:.}} 1 {{key:.}} 3 {{key:ENTER}} 0 {{key:.}} 1 {{key:.}} 4 {{key:+}}` | Bridges thirds and fourths on the shared twelfths grid to display **`7/12`** |
+| **7** | **3D Box Volume Builder** | `5 {{key:ENTER}} 4 {{key:RECT}} 3 {{key:PRISM}}` | Multiplies the $5 \times 4 = 20$ base rectangle by height $3$ to display Volume **`60`** on Shelf $X$ |
 | **8** | **Geared Clock Time Jump** | `2.45 {{key:▸HR}} 1.30 {{key:▸HR}} {{key:+}} {{key:▸HMS}}` | Adds $2\text{ hr } 45\text{ min}$ and $1\text{ hr } 30\text{ min}$ to land on **`4.15`** ($4{:}15$) |
 | **9** | **Prime Factor Tree Builder** | `84 {{key:PRIME}}` $\to$ `{{key:FACT}}` | Identifies $84$ as `COMPOSITE` and reveals its prime tower **`2² × 3 × 7`** |
 | **10** | **Data Basket Mean & Median** | `{{key:CLΣ}} 12 {{key:Σ+}} 15 {{key:Σ+}} 24 {{key:Σ+}} {{key:x̄}}` | Averages the $3$ measurements to **`17.0`**, while `{{key:MED}}` shows middle **`15.0`** |

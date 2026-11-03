@@ -47,7 +47,8 @@ class RPNStackSimulator:
         self.reset()
 
     def reset(self) -> None:
-        # 4 registers: index 0 is X, 1 is Y, 2 is Z, 3 is T
+        # 4 registers by default (configurable to 8 or 999 via 8-LVL / INF): index 0 is X, 1 is Y, 2 is Z, 3 is T
+        self.stack_size_limit: int = 4
         self.stack: List[float] = [0.0, 0.0, 0.0, 0.0]
         self.last_x: float = 0.0
         self.stack_lift_enabled: bool = False
@@ -80,6 +81,14 @@ class RPNStackSimulator:
         self.poly_mode: bool = False
         self.poly_coeffs: List[float] = [0.0, 0.0, 0.0, 0.0]
 
+    def set_stack_size(self, depth: int) -> None:
+        self.stack_size_limit = max(2, min(999, depth))
+        self.two_stack_mode = (self.stack_size_limit <= 2)
+        if len(self.stack) < self.stack_size_limit:
+            self.stack.extend([0.0] * (self.stack_size_limit - len(self.stack)))
+        elif len(self.stack) > self.stack_size_limit and self.stack_size_limit >= 4:
+            self.stack = self.stack[:self.stack_size_limit]
+
     @property
     def x(self) -> float:
         return self.stack[0]
@@ -99,10 +108,12 @@ class RPNStackSimulator:
     # --- Basic Stack Operations ---
 
     def push_to_stack(self, val: float) -> None:
-        """Unconditionally shifts stack up (T <- Z, Z <- Y, Y <- X, X <- val), matching RPNCore pushToStack."""
-        self.stack[3] = self.stack[2]
-        self.stack[2] = self.stack[1]
-        self.stack[1] = self.stack[0]
+        """Unconditionally shifts stack up (up to stack_size_limit), matching RPNCore pushToStack."""
+        limit = max(4, self.stack_size_limit)
+        while len(self.stack) < limit:
+            self.stack.append(0.0)
+        for i in range(limit - 1, 0, -1):
+            self.stack[i] = self.stack[i - 1]
         self.stack[0] = val
         self.is_building_number = False
         self.stack_lift_enabled = True
@@ -110,10 +121,11 @@ class RPNStackSimulator:
     def push_number(self, val: float) -> None:
         """Enters a number onto the stack, observing stack lift rules."""
         if self.stack_lift_enabled and not self.is_building_number:
-            # duplicateX / stack push: T <- Z, Z <- Y, Y <- X, X <- val
-            self.stack[3] = self.stack[2]
-            self.stack[2] = self.stack[1]
-            self.stack[1] = self.stack[0]
+            limit = max(4, self.stack_size_limit)
+            while len(self.stack) < limit:
+                self.stack.append(0.0)
+            for i in range(limit - 1, 0, -1):
+                self.stack[i] = self.stack[i - 1]
             self.stack[0] = val
         else:
             self.stack[0] = val
@@ -121,23 +133,27 @@ class RPNStackSimulator:
         self.stack_lift_enabled = True
 
     def enter(self) -> None:
-        """ENTER: T <- Z, Z <- Y, Y <- X, X <- X; stackLiftEnabled = False."""
-        self.stack[3] = self.stack[2]
-        self.stack[2] = self.stack[1]
-        self.stack[1] = self.stack[0]
+        """ENTER: shifts stack up up to stack_size_limit, X <- X; stackLiftEnabled = False."""
+        limit = max(4, self.stack_size_limit)
+        while len(self.stack) < limit:
+            self.stack.append(0.0)
+        for i in range(limit - 1, 0, -1):
+            self.stack[i] = self.stack[i - 1]
         self.stack_lift_enabled = False
         self.is_building_number = False
 
     def drop(self) -> None:
-        """Dyadic stack drop with T-replication (or Y-replication in 2-stack mode)."""
+        """Dyadic stack drop with top-of-stack replication (at stack_size_limit - 1)."""
         if self.two_stack_mode:
             self.stack[0] = self.stack[1]
             return
-        t_top = self.stack[3]
-        self.stack[0] = self.stack[1]
-        self.stack[1] = self.stack[2]
-        self.stack[2] = t_top
-        self.stack[3] = t_top
+        limit = max(4, self.stack_size_limit)
+        while len(self.stack) < limit:
+            self.stack.append(0.0)
+        top_val = self.stack[limit - 1]
+        for i in range(limit - 1):
+            self.stack[i] = self.stack[i + 1]
+        self.stack[limit - 1] = top_val
 
     def execute_dyadic(self, op_func) -> None:
         """Executes a binary operator (Y op X), drops the stack, and places result in X."""
@@ -198,8 +214,8 @@ class RPNStackSimulator:
         self.is_building_number = False
 
     def clear_stack(self) -> None:
-        """CLSTK: Clears all 4 registers to 0.0."""
-        self.stack = [0.0, 0.0, 0.0, 0.0]
+        """CLSTK: Clears all registers to 0.0."""
+        self.stack = [0.0] * max(4, self.stack_size_limit)
         self.stack_lift_enabled = False
         self.is_building_number = False
 
@@ -210,7 +226,7 @@ class RPNStackSimulator:
     def execute_rep(self) -> None:
         """REP: Replicates X across the entire stack; stackLiftEnabled = False."""
         val = self.stack[0]
-        self.stack = [val, val, val, val]
+        self.stack = [val] * max(4, self.stack_size_limit)
         self.stack_lift_enabled = False
         self.is_building_number = False
 
@@ -450,20 +466,18 @@ class RPNStackSimulator:
         self.push_number(r)
 
     def stat_estimate_y(self) -> None:
-        """ŷ: Pushes r into Y and predicted ŷ into X."""
+        """ŷ: Computes predicted ŷ from x in X (in-place in X)."""
         n = self.stat_n
         num = self.stat_sum_xy - (self.stat_sum_x * self.stat_sum_y / n) if n > 0 else 0.0
         den_x = self.stat_sum_x2 - (self.stat_sum_x ** 2 / n) if n > 0 else 0.0
-        den_y = self.stat_sum_y2 - (self.stat_sum_y ** 2 / n) if n > 0 else 0.0
         m = num / den_x if den_x != 0 else 0.0
         b = (self.stat_sum_y - m * self.stat_sum_x) / n if n > 0 else 0.0
-        den = math.sqrt(den_x * den_y) if den_x > 0 and den_y > 0 else 0.0
-        r = num / den if den != 0 else 0.0
         x_val = self.stack[0]
         y_hat = m * x_val + b
         self.last_x = x_val
-        self.stack[0] = r
-        self.push_number(y_hat)
+        self.stack[0] = y_hat
+        self.stack_lift_enabled = True
+        self.is_building_number = False
 
     def stat_estimate_x(self) -> None:
         """x̂: Computes predicted x̂ from y in X."""
@@ -486,49 +500,49 @@ class RPNStackSimulator:
         xs = sorted(pt[0] for pt in self.points)
         n = len(xs)
         med = xs[n // 2] if n % 2 == 1 else (xs[n // 2 - 1] + xs[n // 2]) / 2.0
-        self.push_to_stack(med)
+        self.push_number(med)
 
     def stat_range(self) -> None:
         """RNG: Computes and pushes range (max - min) of x points."""
         if not self.points:
             return
         xs = sorted(pt[0] for pt in self.points)
-        self.push_to_stack(xs[-1] - xs[0])
+        self.push_number(xs[-1] - xs[0])
 
     def stat_q1(self) -> None:
-        """1Q: Computes and pushes first quartile (inclusive median method for odd n)."""
+        """1Q: Computes and pushes first quartile (exclusive median method for odd n)."""
         if len(self.points) < 4:
             return
         xs = sorted(pt[0] for pt in self.points)
         n = len(xs)
-        lower = xs[: n // 2] if n % 2 == 0 else xs[: n // 2 + 1]
+        lower = xs[: n // 2]
         lh = len(lower)
         q1 = lower[lh // 2] if lh % 2 == 1 else (lower[lh // 2 - 1] + lower[lh // 2]) / 2.0
-        self.push_to_stack(q1)
+        self.push_number(q1)
 
     def stat_q3(self) -> None:
-        """3Q: Computes and pushes third quartile (inclusive median method for odd n)."""
+        """3Q: Computes and pushes third quartile (exclusive median method for odd n)."""
         if len(self.points) < 4:
             return
         xs = sorted(pt[0] for pt in self.points)
         n = len(xs)
-        upper = xs[n // 2 :]
+        upper = xs[n // 2 :] if n % 2 == 0 else xs[n // 2 + 1 :]
         uh = len(upper)
         q3 = upper[uh // 2] if uh % 2 == 1 else (upper[uh // 2 - 1] + upper[uh // 2]) / 2.0
-        self.push_to_stack(q3)
+        self.push_number(q3)
 
     def stat_iqr(self) -> None:
-        """IQR: Computes and pushes interquartile range (Q3 - Q1)."""
+        """IQR: Computes and pushes interquartile range (Q3 - Q1, exclusive median method for odd n)."""
         if len(self.points) < 4:
             return
         xs = sorted(pt[0] for pt in self.points)
         n = len(xs)
-        lower = xs[: n // 2] if n % 2 == 0 else xs[: n // 2 + 1]
-        upper = xs[n // 2 :]
+        lower = xs[: n // 2]
+        upper = xs[n // 2 :] if n % 2 == 0 else xs[n // 2 + 1 :]
         lh, uh = len(lower), len(upper)
         q1 = lower[lh // 2] if lh % 2 == 1 else (lower[lh // 2 - 1] + lower[lh // 2]) / 2.0
         q3 = upper[uh // 2] if uh % 2 == 1 else (upper[uh // 2 - 1] + upper[uh // 2]) / 2.0
-        self.push_to_stack(q3 - q1)
+        self.push_number(q3 - q1)
 
     def stat_mad(self) -> None:
         """MAD: Computes and pushes Mean Absolute Deviation."""
@@ -537,7 +551,7 @@ class RPNStackSimulator:
         xs = [pt[0] for pt in self.points]
         mean = sum(xs) / len(xs)
         mad = sum(abs(x - mean) for x in xs) / len(xs)
-        self.push_to_stack(mad)
+        self.push_number(mad)
 
     def stat_mode(self) -> None:
         """MODE: Computes and pushes statistical mode of x points."""
@@ -548,19 +562,19 @@ class RPNStackSimulator:
         for x in xs:
             freq[x] = freq.get(x, 0) + 1
         mode = max(freq.items(), key=lambda kv: kv[1])[0]
-        self.push_to_stack(mode)
+        self.push_number(mode)
 
     def stat_min(self) -> None:
         """MIN: Pushes minimum of x points."""
         if not self.points:
             return
-        self.push_to_stack(min(pt[0] for pt in self.points))
+        self.push_number(min(pt[0] for pt in self.points))
 
     def stat_max(self) -> None:
         """MAX: Pushes maximum of x points."""
         if not self.points:
             return
-        self.push_to_stack(max(pt[0] for pt in self.points))
+        self.push_number(max(pt[0] for pt in self.points))
 
     def stat_freq(self) -> None:
         """FRQ: Counts occurrences of X in points, drops X, and pushes count."""
@@ -688,6 +702,8 @@ class RPNStackSimulator:
         for idx, rt in enumerate(cleaned):
             self.regs[str(idx * 2 + 1)] = rt.real
             self.regs[str(idx * 2 + 2)] = rt.imag
+            self.regs[str(34 + idx * 2)] = rt.real
+            self.regs[str(35 + idx * 2)] = rt.imag
         if cleaned:
             self.stack[0] = cleaned[0].imag
             self.stack[1] = cleaned[0].real
@@ -721,7 +737,7 @@ class RPNStackSimulator:
             self.poly_coeffs = [0.0, 0.0, 0.0, 0.0]
             return
 
-        if self.poly_mode and t in ("A", "B", "C", "D", "EXEC", "CLR"):
+        if self.poly_mode and t in ("A", "B", "C", "D", "EXEC", "XEQ", "CLR"):
             if t in ("A", "B", "C", "D"):
                 idx = {"A": 0, "B": 1, "C": 2, "D": 3}[t]
                 self.poly_coeffs[idx] = self.stack[0]
@@ -732,7 +748,7 @@ class RPNStackSimulator:
             if t == "CLR":
                 self.poly_coeffs = [0.0, 0.0, 0.0, 0.0]
                 return
-            if t == "EXEC":
+            if t in ("EXEC", "XEQ"):
                 self.execute_poly_exec()
                 return
 
@@ -775,13 +791,15 @@ class RPNStackSimulator:
             except ValueError:
                 pass
 
-        try:
-            # Check for scientific notation or standard float
-            val = float(t)
-            self.push_number(val)
-            return
-        except ValueError:
-            pass
+        if t.upper() not in ("INF", "NAN", "+INF", "-INF", "INFINITY"):
+            try:
+                # Check for scientific notation or standard float
+                val = float(t)
+                if math.isfinite(val):
+                    self.push_number(val)
+                    return
+            except ValueError:
+                pass
 
         # Check for fraction literal like '5/8' or '3 2/5'
         m_mixed = re.match(r"^(\d+)\s+(\d+)/(\d+)$", t)
@@ -945,6 +963,14 @@ class RPNStackSimulator:
             "CLx": self.clear_x,
             "CLEAR_X": self.clear_x,
             "CLSTK": self.clear_stack,
+            "4-LVL": lambda: self.set_stack_size(4),
+            "STK4": lambda: self.set_stack_size(4),
+            "8-LVL": lambda: self.set_stack_size(8),
+            "STK8": lambda: self.set_stack_size(8),
+            "INF": lambda: self.set_stack_size(999),
+            "STKINF": lambda: self.set_stack_size(999),
+            "EXAM": self.clear_stack,
+            "TOGGLE_EXAM": self.clear_stack,
             "CLΣ": self.stat_clear,
             "CLSTAT": self.stat_clear,
             "Σ+": self.stat_add,
@@ -993,6 +1019,30 @@ class RPNStackSimulator:
             "→HR": lambda: self.execute_monadic(self._hms_to_hr),
             "▸HMS": lambda: self.execute_monadic(self._hr_to_hms),
             "→HMS": lambda: self.execute_monadic(self._hr_to_hms),
+            "▸DEG": lambda: self.execute_monadic(math.degrees),
+            "→DEG": lambda: self.execute_monadic(math.degrees),
+            "▸RAD": lambda: self.execute_monadic(math.radians),
+            "→RAD": lambda: self.execute_monadic(math.radians),
+            "▸kg": lambda: self.execute_monadic(lambda x: x * 0.45359237),
+            "→kg": lambda: self.execute_monadic(lambda x: x * 0.45359237),
+            "▸lb": lambda: self.execute_monadic(lambda x: x / 0.45359237),
+            "→lb": lambda: self.execute_monadic(lambda x: x / 0.45359237),
+            "▸°C": lambda: self.execute_monadic(lambda x: (x - 32.0) * 5.0 / 9.0),
+            "→°C": lambda: self.execute_monadic(lambda x: (x - 32.0) * 5.0 / 9.0),
+            "▸°F": lambda: self.execute_monadic(lambda x: x * 9.0 / 5.0 + 32.0),
+            "→°F": lambda: self.execute_monadic(lambda x: x * 9.0 / 5.0 + 32.0),
+            "▸cm": lambda: self.execute_monadic(lambda x: x * 2.54),
+            "→cm": lambda: self.execute_monadic(lambda x: x * 2.54),
+            "▸in": lambda: self.execute_monadic(lambda x: x / 2.54),
+            "→in": lambda: self.execute_monadic(lambda x: x / 2.54),
+            "▸l": lambda: self.execute_monadic(lambda x: x * 3.785411784),
+            "→l": lambda: self.execute_monadic(lambda x: x * 3.785411784),
+            "▸gal": lambda: self.execute_monadic(lambda x: x / 3.785411784),
+            "→gal": lambda: self.execute_monadic(lambda x: x / 3.785411784),
+            "▸km": lambda: self.execute_monadic(lambda x: x * 1.609344),
+            "→km": lambda: self.execute_monadic(lambda x: x * 1.609344),
+            "▸mi": lambda: self.execute_monadic(lambda x: x / 1.609344),
+            "→mi": lambda: self.execute_monadic(lambda x: x / 1.609344),
             "RECT": lambda: self.execute_dyadic(lambda y, x: y * x),
             "AREA_RECT": lambda: self.execute_dyadic(lambda y, x: y * x),
             "TRI": lambda: self.execute_dyadic(lambda y, x: 0.5 * y * x),
@@ -1028,13 +1078,25 @@ class RPNStackSimulator:
             "OR": lambda: self.execute_dyadic(lambda y, x: float(int(y) | int(x))),
             "XOR": lambda: self.execute_dyadic(lambda y, x: float(int(y) ^ int(x))),
             "NOT": lambda: self.execute_monadic(lambda x: float(~int(x) & 0xFFFFFFFFF)),
+            "x=0": lambda: self.execute_monadic(lambda x: 1.0 if x == 0.0 else 0.0),
+            "x≠0": lambda: self.execute_monadic(lambda x: 1.0 if x != 0.0 else 0.0),
+            "x>0": lambda: self.execute_monadic(lambda x: 1.0 if x > 0.0 else 0.0),
+            "x<0": lambda: self.execute_monadic(lambda x: 1.0 if x < 0.0 else 0.0),
+            "x≥0": lambda: self.execute_monadic(lambda x: 1.0 if x >= 0.0 else 0.0),
+            "x≤0": lambda: self.execute_monadic(lambda x: 1.0 if x <= 0.0 else 0.0),
+            "x=y": lambda: self.execute_dyadic(lambda y, x: 1.0 if x == y else 0.0),
+            "x≠y": lambda: self.execute_dyadic(lambda y, x: 1.0 if x != y else 0.0),
+            "x>y": lambda: self.execute_dyadic(lambda y, x: 1.0 if x > y else 0.0),
+            "x<y": lambda: self.execute_dyadic(lambda y, x: 1.0 if x < y else 0.0),
+            "x≥y": lambda: self.execute_dyadic(lambda y, x: 1.0 if x >= y else 0.0),
+            "x≤y": lambda: self.execute_dyadic(lambda y, x: 1.0 if x <= y else 0.0),
             "a:b": lambda: setattr(self, "ratio_mode", True),
         }
 
         if t in op_map:
             op_map[t]()
-        elif t in ("↰", "↱", "f", "g", "SHOW", "FLAGS", "FDISP", "SIMP", "<-", "BACKSPACE"):
-            # Passive / shift-prefix / display toggles
+        elif t in ("↰", "↱", "f", "g", "SHOW", "FLAGS", "STACK", "L.R.", "CLEAR", "PARTS", "PROB", "BASE", "FDISP", "SIMP", "<-", "BACKSPACE", "x?0", "x?y", "𝑥?0", "𝑥?𝑦"):
+            # Passive / shift-prefix / display toggles / menu openers
             pass
         elif t.startswith("STO ") and len(t) > 4:
             self.regs[t[4:].strip()] = self.stack[0]
@@ -1283,12 +1345,60 @@ def execute_keystroke_sequence(
             i += 1
             continue
 
-        # Check for STO / RCL parameterization
-        if tok in ("STO", "RCL") and (i + 1) < len(tokens) and len(tokens[i + 1]) == 1:
-            var_name = tokens[i + 1]
+        def _resolve_reg_name(raw_name: str) -> str:
+            if raw_name == "(i)":
+                idx = int(abs(sim.regs.get("i", 0.0)))
+                if 1 <= idx <= 26:
+                    return chr(64 + idx)
+                if idx == 27:
+                    return "i"
+                if 34 <= idx <= 39:
+                    return str(idx)
+            return raw_name
+
+        # Check for STO / RCL arithmetic (STO + A, RCL × A, STO + (i), etc.)
+        if (
+            tok in ("STO", "RCL")
+            and (i + 2) < len(tokens)
+            and tokens[i + 1] in ("+", "-", "−", "*", "×", "/", "÷")
+            and (len(tokens[i + 2]) == 1 or tokens[i + 2] == "(i)")
+        ):
+            op_tok = tokens[i + 1]
+            var_name = _resolve_reg_name(tokens[i + 2])
+            reg_val = sim.regs.get(var_name, 0.0)
+            if tok == "STO":
+                if op_tok == "+":
+                    sim.regs[var_name] = reg_val + sim.stack[0]
+                elif op_tok in ("-", "−"):
+                    sim.regs[var_name] = reg_val - sim.stack[0]
+                elif op_tok in ("*", "×"):
+                    sim.regs[var_name] = reg_val * sim.stack[0]
+                elif op_tok in ("/", "÷"):
+                    sim.regs[var_name] = reg_val / sim.stack[0] if sim.stack[0] != 0 else 0.0
+                sim.stack_lift_enabled = True
+                sim.is_building_number = False
+            else:
+                sim.last_x = sim.stack[0]
+                if op_tok == "+":
+                    sim.stack[0] = sim.stack[0] + reg_val
+                elif op_tok in ("-", "−"):
+                    sim.stack[0] = sim.stack[0] - reg_val
+                elif op_tok in ("*", "×"):
+                    sim.stack[0] = sim.stack[0] * reg_val
+                elif op_tok in ("/", "÷"):
+                    sim.stack[0] = sim.stack[0] / reg_val if reg_val != 0 else 0.0
+                sim.stack_lift_enabled = True
+                sim.is_building_number = False
+            i += 3
+            continue
+
+        # Check for STO / RCL parameterization (including indirect (i))
+        if tok in ("STO", "RCL") and (i + 1) < len(tokens) and (len(tokens[i + 1]) == 1 or tokens[i + 1] == "(i)"):
+            var_name = _resolve_reg_name(tokens[i + 1])
             if tok == "STO":
                 sim.regs[var_name] = sim.stack[0]
                 sim.stack_lift_enabled = True
+                sim.is_building_number = False
             else:
                 sim.push_number(sim.regs.get(var_name, 0.0))
             i += 2
@@ -1485,7 +1595,23 @@ def format_stack_register(
         return f"**{res}**" if is_bold else res
 
     abs_v = abs(val)
-    if abs_v == 0.0:
+    if not is_sc6:
+        precision = min(precision, 3)
+        if abs_v == 0.0:
+            res = "$0$"
+        elif abs_v < 1e-3 or abs_v >= 1e7:
+            exp = int(math.floor(math.log10(abs_v)))
+            mant = val / (10 ** exp)
+            m_str = f"{mant:.3f}".rstrip("0").rstrip(".")
+            res = f"${m_str} \\times 10^{{{exp}}}$"
+        else:
+            v_str = f"{val:.{precision}f}"
+            if "." in v_str:
+                v_str = v_str.rstrip("0").rstrip(".")
+            if v_str in ("-0", ""):
+                v_str = "0"
+            res = f"${v_str}$"
+    elif abs_v == 0.0:
         res = "$0$" if (is_sc6 and precision == 0) else f"${0.0:.{precision}f}$"
     elif abs_v < 1e-3 or abs_v >= 1e7:
         # LaTeX scientific notation: $a.bbbb \times 10^{exp}$
@@ -1861,15 +1987,16 @@ def audit_table(table: StackTableLocation) -> List[TableDiscrepancy]:
             sim.stat_n = int(m_sn.group(1))
     except Exception:
         pass
-    if any("{{key:A}}" in r[1] or "{{key:EXEC}}" in r[1] for r in table.row_lines):
+    if any("{{key:A}}" in r[1] or "{{key:XEQ}}" in r[1] or "{{key:EXEC}}" in r[1] for r in table.row_lines):
         sim.poly_mode = True
     if any(re.search(r"^\s*[\$`\*]*0[0-9A-Fa-f]*h[\$`\*]*\s*$", r[1].split("|")[table.col_t + 1]) for r in table.row_lines if len(r[1].split("|")) > table.col_t + 1):
         sim.base_mode = "hex"
 
     def _is_numeric_literal_token(tok: str) -> bool:
+        if tok.upper() in ("INF", "NAN", "+INF", "-INF", "INFINITY"):
+            return False
         try:
-            float(tok)
-            return True
+            return math.isfinite(float(tok))
         except ValueError:
             return bool(re.match(r"^[0-9A-Fa-f]+h$", tok))
 

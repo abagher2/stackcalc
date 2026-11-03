@@ -7,7 +7,7 @@ description: "Mastering elementary fractions, decimals, percents, and ratios on 
 
 ## How Fractions and Ratios Run the Physical World
 
-Grab four $\frac{1}{8}$ blocks and one scarlet $\frac{1}{2}$ block ($42.0\text{ mm}$) from your **84 mm Fraction Studio** and drop them side by side into the **Twin Comparator Well**. Run your fingertip across their tops: they stand at the **exact same $42.0\text{ mm}$ height**, proving in one touch why $\frac{4}{8}\text{ inch}$ on a carpenter's tape measure is the exact same length as a $\frac{1}{2}\text{ inch}$ bolt! Now type `. 4 . 8 {{key:SIMP}}` on your SC-6 and watch **Step-by-Step Simplify (`{{key:SIMP}}`)** peel away common factors until `4/8` simplifies to `1/2`.
+Grab four $\frac{1}{8}$ blocks and one scarlet $\frac{1}{2}$ block ($42.0\text{ mm}$) from your **84 mm Fraction Studio** and drop them side by side into the **Twin Comparator Well**. Run your fingertip across their tops: they stand at the **exact same $42.0\text{ mm}$ height**, proving in one touch why $\frac{4}{8}\text{ inch}$ on a carpenter's tape measure is the exact same length as a $\frac{1}{2}\text{ inch}$ bolt! Now type `0 {{key:.}} 4 {{key:.}} 8 {{key:SIMP}}` on your SC-6 and watch **One-Tap GCF Simplify (`{{key:SIMP}}`)** divide out their Greatest Common Factor ($4$) in one tap so `4/8` simplifies straight to `1/2`.
 
 If fractions on a school worksheet ever made you groan, you are in famous company: **for centuries, even adult astronomers, bakers, and surveyors dreaded adding awkward fractions by hand!** In 9th-century Baghdad, the mathematician **al-Khwarizmi** wrote the first practical guides showing shopkeepers how to line up mismatched fractions on a common grid. Seven hundred years later, in **1585**, Flemish engineer **Simon Stevin** published a tiny 36-page booklet called *De Thiende* (*The Tenth*) for everyday carpenters and tailors—showing how slicing $1\text{ whole}$ into tenths ($0.1$) and hundredths ($0.01$) long before John Napier popularized the modern decimal point in 1614 {{cite:napier1614}} turns fraction arithmetic into whole-number place value, while **Least Common Multiple (`{{key:LCM}}`)** snaps any two fractions onto the same grid. Peel back the cover of any machine {{cite:macaulay2016}}, and every meshing pair of gears, pulley block, and guitar string is a living fraction in motion.
 
@@ -18,8 +18,8 @@ A thousand years later in ancient Greece, **Pythagoras** discovered that those e
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `. 1 . 2 {{key:ENTER}}` | 0 | 0 | 1/2 | 1/2 | Put the Egyptian half-loaf $\frac{1}{2}$ ($42.0\text{ mm}$ block) onto Shelf $Y$ |
-| `. 1 . 4 {{key:+}}` | 0 | 0 | 0 | 3/4 | Add the quarter-loaf $\frac{1}{4}$ ($21.0\text{ mm}$ block) to reach $\frac{3}{4}$ ($63.0\text{ mm}$) |
+| `0 {{key:.}} 1 {{key:.}} 2 {{key:ENTER}}` | 0 | 0 | 1/2 | 1/2 | Put the Egyptian half-loaf $\frac{1}{2}$ ($42.0\text{ mm}$ block) onto Shelf $Y$ |
+| `0 {{key:.}} 1 {{key:.}} 4 {{key:+}}` | 0 | 0 | 0 | 3/4 | Add the quarter-loaf $\frac{1}{4}$ ($21.0\text{ mm}$ block) to reach $\frac{3}{4}$ ($63.0\text{ mm}$) |
 
 ---
 
@@ -62,7 +62,7 @@ Bicycle engineers prevent this wear by choosing gear tooth counts that **share n
 
 Look at the two gear systems in the diagram above. In **Panel 1 (Bicycle Sprockets)**, when your foot turns a **48-tooth front pedal gear** one full turn, the chain pulls **48 links** forward and wraps them around a smaller **16-tooth back wheel gear**—and because $48 \div 16 = 3$, one turn of your pedals spins the back wheel **3 full turns**! In **Panel 2 (Meshing Gear Teeth)**, when a **14-tooth gear** meshes directly with a **21-tooth gear**, each tooth on the small gear pushes one tooth on the big gear. If you mark the touching pair of teeth with gold paint, when will those two gold teeth touch again? Only when the total number of teeth that have clicked past the center point is a multiple of *both* $14$ and $21$—which happens at $\text{LCM}(14, 21) = \mathbf{42\text{ teeth}}$ ($3$ turns of the small gear and $2$ turns of the big gear)!
 
-Throughout this chapter, you will pair your $84\text{ mm}$ Fraction Towers with two-dot fraction entry (`{{key:.}}` for `. n . d` and `w . n . d`) and Fraction/Decimal Display Mode (`{{key:FDISP}}`), flipping effortlessly between Mixed Numbers (`{{key:a ᵇ/c}}`), Improper Fractions (`{{key:d/c}}`), and Repeating Decimals (`{{key:0.3̄}}`). You will watch common factors peel away one step at a time with `{{key:SIMP}}`, find common denominators and shared factors with `{{key:LCM}}` and `{{key:GCF}}`, and scale recipes and gear ratios in Ratio Mode (`{{key:a:b}}`).
+Throughout this chapter, you will pair your $84\text{ mm}$ Fraction Towers with two-dot fraction entry (`{{key:.}}` for `0 . n . d`, `n . . d`, `. n . d`, and `w . n . d`) and Fraction/Decimal Display Mode (`{{key:FDISP}}`), flipping effortlessly between Mixed Numbers (`{{key:a ᵇ/c}}`), Improper Fractions (`{{key:d/c}}`), and Repeating Decimals (`{{key:0.3̄}}`). You will divide out the Greatest Common Factor in a single tap with `{{key:SIMP}}`, find common denominators and shared factors with `{{key:LCM}}` and `{{key:GCF}}`, and scale recipes and gear ratios in Ratio Mode (`{{key:a:b}}`).
 
 {{res:sc6_lcm_12_18:screenshot|Finding the Least Common Multiple of 12 and 18 on the SC-6 Stack (LCM = 36)}}
 
@@ -76,7 +76,7 @@ Because $84$ is a super-divisible number! While $100$ cannot be divided cleanly 
 
 ### Seeing $\frac{3}{4} + \frac{2}{3} = 1\frac{5}{12}$ Before You Touch a Pencil
 
-Watch how your $84\text{ mm}$ Fraction Towers take the mystery out of adding fractions with different denominators, like $\frac{3}{4} + \frac{2}{3}$. On paper alone, adding $\frac{3}{4} + \frac{2}{3}$ requires finding the Least Common Multiple of 4 and 3 ($12$), rewriting $\frac{3}{4} = \frac{9}{12}$ and $\frac{2}{3} = \frac{8}{12}$, adding $9 + 8 = \frac{17}{12}$, and converting to $1\frac{5}{12}$. In your hands, however, you can see the answer in five seconds! Drop the $\frac{3}{4}$ tower ($63.0\text{ mm}$) and the $\frac{2}{3}$ tower ($56.0\text{ mm}$) into the left channel of your **Twin Comparator Well** ($63.0 + 56.0 = 119.0\text{ mm}$), and drop the white **1-Whole** tower ($84.0\text{ mm}$) into the right channel beside them. Your $\frac{3}{4} + \frac{2}{3}$ stack sticks up above 1 Whole by $35.0\text{ mm}$—and when you stack **five $\frac{1}{12}$ lilac blocks** ($5 \times 7.0\text{ mm} = 35.0\text{ mm}$) on top of the 1-Whole tower, both channels stand completely flush at **$1\frac{5}{12}$**! Then key in `. 3 . 4 {{key:ENTER}} . 2 . 3 {{key:+}}` on your SC-6 stack: the screen immediately shows `1 5/12` (or `17/12` if you tap `{{key:d/c}}`, and `1.41666667` if you tap `{{key:FDISP}}`), while keeping fractions unreduced whenever you multiply so you can simplify step by step with `{{key:SIMP}}`.
+Watch how your $84\text{ mm}$ Fraction Towers take the mystery out of adding fractions with different denominators, like $\frac{3}{4} + \frac{2}{3}$. On paper alone, adding $\frac{3}{4} + \frac{2}{3}$ requires finding the Least Common Multiple of 4 and 3 ($12$), rewriting $\frac{3}{4} = \frac{9}{12}$ and $\frac{2}{3} = \frac{8}{12}$, adding $9 + 8 = \frac{17}{12}$, and converting to $1\frac{5}{12}$. In your hands, however, you can see the answer in five seconds! Drop the $\frac{3}{4}$ tower ($63.0\text{ mm}$) and the $\frac{2}{3}$ tower ($56.0\text{ mm}$) into the left channel of your **Twin Comparator Well** ($63.0 + 56.0 = 119.0\text{ mm}$), and drop the white **1-Whole** tower ($84.0\text{ mm}$) into the right channel beside them. Your $\frac{3}{4} + \frac{2}{3}$ stack sticks up above 1 Whole by $35.0\text{ mm}$—and when you stack **five $\frac{1}{12}$ lilac blocks** ($5 \times 7.0\text{ mm} = 35.0\text{ mm}$) on top of the 1-Whole tower, both channels stand completely flush at **$1\frac{5}{12}$**! Then key in `0 {{key:.}} 3 {{key:.}} 4 {{key:ENTER}} 0 {{key:.}} 2 {{key:.}} 3 {{key:+}}` on your SC-6 stack: the screen immediately shows `1 5/12` (or `17/12` if you tap `{{key:d/c}}`, and `1.41666667` if you tap `{{key:FDISP}}`), while keeping fractions unreduced whenever you multiply so you can reduce by their Greatest Common Factor in one tap with `{{key:SIMP}}`.
 
 {{blocks:fraction_studio_hero|StackCalc Fraction Studio: 84mm Proportional Towers and Twin Comparator Well}}
 
@@ -105,13 +105,13 @@ Try two hands-on experiments right now:
 1. **Two Halves Make One Whole ($\frac{2}{2} = 1$):** Place the white **1-Whole** tower ($84.0\text{ mm}$) into Well A, and stack two scarlet **$\frac{1}{2}$** towers ($42.0\text{ mm} + 42.0\text{ mm} = 84.0\text{ mm}$) into Well B. Slide your finger across the top: there is zero step between them, proving $\frac{2}{2} = 1$.
 2. **Which Is Bigger: $\frac{3}{4}$ or $\frac{4}{6}$? (And How Much Bigger?):** Stack three blue **$\frac{1}{4}$** blocks in Well A ($3 \times 21.0\text{ mm} = 63.0\text{ mm}$) and four green **$\frac{1}{6}$** blocks in Well B ($4 \times 14.0\text{ mm} = 56.0\text{ mm}$). Slide your finger across the top: Well A stands taller than Well B by $7.0\text{ mm}$, proving $\frac{3}{4} > \frac{4}{6}$! Now grab **1 Counting Tile** ($7.0\text{ mm}$ visible height, which is $\frac{1}{12}$ of $84\text{ mm}$) from your Counting Studio and drop it on top of the $\frac{4}{6}$ stack in Well B ($56.0 + 7.0 = 63.0\text{ mm}$). Run your finger across again—*completely flush!* Your fingertips just discovered that $\frac{4}{6} + \frac{1}{12} = \frac{3}{4}$.
 
-Now watch the SC-6 stack confirm what your hands just felt—enter $\frac{4}{6}$ (`{{key:.}} 4 {{key:.}} 6 {{key:ENTER}}`), add $\frac{1}{12}$ (`{{key:.}} 1 {{key:.}} 12 {{key:+}}`) to see the unreduced twelfths sum **`9/12`**, and tap `{{key:SIMP}}` to reduce it to **`3/4`**:
+Now watch the SC-6 stack confirm what your hands just felt—enter $\frac{4}{6}$ (`0 {{key:.}} 4 {{key:.}} 6 {{key:ENTER}}`), add $\frac{1}{12}$ (`0 {{key:.}} 1 {{key:.}} 12 {{key:+}}`) to see the unreduced twelfths sum **`9/12`**, and tap `{{key:SIMP}}` to reduce it to **`3/4`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 4 {{key:.}} 6` | 0 | 0 | 0 | 4/6 | Build the green tower fraction $\frac{4}{6}$ ($56.0\text{ mm}$) on Shelf $X$ |
+| `0 {{key:.}} 4 {{key:.}} 6` | 0 | 0 | 0 | 4/6 | Build the green tower fraction $\frac{4}{6}$ ($56.0\text{ mm}$) on Shelf $X$ |
 | `{{key:ENTER}}` | 0 | 0 | 4/6 | 4/6 | Lift $\frac{4}{6}$ onto Shelf $Y$ without reducing it |
-| `{{key:.}} 1 {{key:.}} 12` | 0 | 0 | 4/6 | 1/12 | Build the $\frac{1}{12}$ bridge tile ($7.0\text{ mm}$) on Shelf $X$ |
+| `0 {{key:.}} 1 {{key:.}} 12` | 0 | 0 | 4/6 | 1/12 | Build the $\frac{1}{12}$ bridge tile ($7.0\text{ mm}$) on Shelf $X$ |
 | `{{key:+}}` | 0 | 0 | 0 | 9/12 | Add in twelfths ($\frac{8}{12} + \frac{1}{12} = \frac{9}{12}$) on Shelf $X$ |
 | `{{key:SIMP}}` | 0 | 0 | 0 | 3/4 | Divide out the shared factor of 3 to reach $\frac{3}{4}$ ($63.0\text{ mm}$) |
 
@@ -122,13 +122,13 @@ Now watch the SC-6 stack confirm what your hands just felt—enter $\frac{4}{6}$
 Now that your hands have felt how the $84.0\text{ mm}$ Fraction Towers line up in the Twin Comparator Well, let's see how to enter, multiply, divide, simplify, and add any pair of fractions right on the SC-6 stack.
 
 ### Entering Fractions with Two Dots
-Did you notice how quickly we entered `4/6` and `1/12` in the table above using the dot key `{{key:.}}`? Instead of hunting for a fraction-template button or arrowing up and down between little boxes, you build a fraction from top to bottom on the SC-6 using the single button your fingers already know best—the **dot key (`{{key:.}}`)**. Think of the **first dot (`{{key:.}}`)** as saying *"Get ready for a fraction!"* and the **second dot (`{{key:.}}`)** as drawing the **fraction bar (`/`)** between the top number (numerator) and bottom number (denominator). To enter a **Proper Fraction** like $\frac{3}{8}$, tap `{{key:.}} 3 {{key:.}} 8` so the display shows **`3/8`**. If your fraction has a whole number in front—like the **Mixed Number** $2\frac{3}{4}$—simply type the whole number *before* the first dot (`2 {{key:.}} 3 {{key:.}} 4` $\longrightarrow$ **`2 3/4`**), or enter it directly as an **Improper Fraction** ($\frac{11}{4}$) by tapping `{{key:.}} 11 {{key:.}} 4` $\longrightarrow$ **`11/4`**.
+Did you notice how quickly we entered `4/6` and `1/12` in the table above using the dot key `{{key:.}}`? Instead of hunting for a fraction-template button or arrowing up and down between little boxes, you build a fraction from top to bottom on the SC-6 using the single button your fingers already know best—the **dot key (`{{key:.}}`)**. Think of the **first dot (`{{key:.}}`)** as separating the whole number from the numerator and the **second dot (`{{key:.}}`)** as drawing the **fraction bar (`/`)** between the top number (numerator) and bottom number (denominator). From default Whole Number Mode (`{{key:NUM}}`), you can enter a **Proper Fraction** like $\frac{3}{8}$ either by typing `0` before the first dot (`0 {{key:.}} 3 {{key:.}} 8`) or by double-tapping the dot (`3 {{key:.}} {{key:.}} 8`) so the display shows **`3/8`**—and once Fraction Display (`{{key:FDISP}}`) is active (or `{{key:NUM}}` is toggled off), you can also use the leading-dot shorthand `{{key:.}} 3 {{key:.}} 8`! If your fraction has a whole number in front—like the **Mixed Number** $2\frac{3}{4}$—simply type the whole number *before* the first dot (`2 {{key:.}} 3 {{key:.}} 4` $\longrightarrow$ **`2 3/4`**), or enter it directly as an **Improper Fraction** ($\frac{11}{4}$) by tapping `0 {{key:.}} 11 {{key:.}} 4` (or `11 {{key:.}} {{key:.}} 4` / `{{key:.}} 11 {{key:.}} 4`) $\longrightarrow$ **`11/4`**.
 
-The moment your finger taps that second dot `{{key:.}}`, the calculator knows you are building a fraction and displays it clearly in your horizontal $Y \mid X$ split screen, automatically sizing the digits so nothing ever gets cut off:
+The moment your finger taps that second dot `{{key:.}}`, the calculator knows you are building a fraction and displays it clearly on your vertical stack screen (with Waiting Shelf $Y$ right above Ground Shelf $X$), automatically sizing the digits so nothing ever gets cut off:
 
 | Fraction Type or View | What You Key on the SC-6 | What Appears on Shelf $X$ | Physical $84\text{ mm}$ Tower Match |
 | :--- | :--- | :--- | :--- |
-| **Proper Fraction ($\frac{3}{8}$)** | `{{key:.}} 3 {{key:.}} 8` | **`3/8`** | Three cyan $\frac{1}{8}$ blocks ($31.5\text{ mm}$) |
+| **Proper Fraction ($\frac{3}{8}$)** | `0 {{key:.}} 3 {{key:.}} 8` *(or `{{key:.}} 3 {{key:.}} 8`)* | **`3/8`** | Three cyan $\frac{1}{8}$ blocks ($31.5\text{ mm}$) |
 | **Mixed Number ($2\frac{3}{4}$)** | `2 {{key:.}} 3 {{key:.}} 4` | **`2 3/4`** | Two Whole towers + three $\frac{1}{4}$ blocks |
 | **Improper Toggle (`{{key:d/c}}`)** | Tap `{{key:d/c}}` on `2 3/4` | **`11/4`** | Eleven blue $\frac{1}{4}$ blocks stacked |
 | **Decimal Toggle (`{{key:FDISP}}`)** | Tap `{{key:FDISP}}` on `2 3/4` | **`2.75`** | Right-hand decimal face of the tower |
@@ -140,7 +140,7 @@ In real music, sheet music opens with a fraction-like **time signature** ($\frac
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 5 {{key:.}} 8` | 0 | 0 | 0 | 5/8 | Two dots enter the top number 5 and bottom number 8 on Shelf $X$ |
+| `0 {{key:.}} 5 {{key:.}} 8` | 0 | 0 | 0 | 5/8 | Two dots enter the top number 5 and bottom number 8 on Shelf $X$ |
 | `{{key:ENTER}}` | 0 | 0 | 5/8 | 5/8 | Lift the fraction onto Shelf $Y$ as an exact fraction |
 
 The daylight display confirms $X = 5/8$ as an exact fraction without any decimal rounding, matching the five cyan eighth-blocks in your Twin Comparator Well down to the half-millimeter.
@@ -153,13 +153,13 @@ Why does $3\ \frac{2}{5}$ turn into $\frac{17}{5}$? Because each of the $3$ whol
 
 ---
 
-### Seeing the True Grid First: Unreduced Fractions & Step-by-Step Reduction
+### Seeing the True Grid First: Unreduced Fractions & One-Tap GCF Reduction
 
 When you multiply $\frac{1}{2} \times \frac{2}{3}$ on a standard school calculator, the moment you press equals, the screen jumps straight to `1/3`.
 
 Why is that actually a problem when you are learning fractions? Because if the calculator jumps straight from $\frac{1}{2} \times \frac{2}{3}$ to $\frac{1}{3}$, it hides the most important rule of fraction multiplication: **multiplying the numerators ($1 \times 2 = 2$) and multiplying the denominators ($2 \times 3 = 6$) to get $\frac{2}{6}$!**
 
-On the SC-6, **arithmetic never hides your intermediate steps**. When you multiply $\frac{1}{2} \times \frac{2}{3}$, the screen first displays your true unreduced product—**`2/6`**—so you can see how the numerators and denominators multiplied straight across. Then, when you are ready to reduce the fraction, **you** press **Step-by-Step Simplify (`{{key:SIMP}}`)** and watch the shared factor divide out to reveal **`1/3`** (or flash `LOWEST TERMS` when a fraction cannot be reduced any further):
+On the SC-6, **arithmetic never hides your intermediate steps**. When you multiply $\frac{1}{2} \times \frac{2}{3}$, the screen first displays your true unreduced product—**`2/6`**—so you can see how the numerators and denominators multiplied straight across. Then, when you are ready to reduce the fraction, **you** press **One-Tap GCF Simplify (`{{key:SIMP}}`)** to divide out the Greatest Common Factor in one tap and reveal **`1/3`** (or flash `LOWEST TERMS` when a fraction cannot be reduced any further):
 
 | Operation | Unreduced Output | Next Step with `{{key:SIMP}}` |
 |:---|:---|:---|
@@ -174,7 +174,7 @@ On the SC-6, **arithmetic never hides your intermediate steps**. When you multip
 
 Seeing the unreduced fraction first also helps you understand a famous shortcut your teacher will show you on paper called **cross-canceling**.
 
-Imagine building a 3-stage robot gear train where each gear slows the spin down for extra climbing power. Gear 1 spins at $\frac{1}{2}$ the motor's speed, Gear 2 spins at $\frac{2}{3}$ of Gear 1's speed, and Gear 3 spins at $\frac{3}{4}$ of Gear 2's speed. How fast does Gear 3 spin compared to the motor? You can test two different pathways to find out. First, try multiplying straight across and then pressing `{{key:SIMP}}`: multiply all the numerators ($1 \times 2 \times 3 = 6$) and all the denominators ($2 \times 3 \times 4 = 24$) by keying `{{key:.}} 1 {{key:.}} 2 {{key:ENTER}} {{key:.}} 2 {{key:.}} 3 {{key:×}} {{key:.}} 3 {{key:.}} 4 {{key:×}}` ($\to \mathbf{6/24}$), and then tap `{{key:SIMP}}` to shrink $\frac{6}{24} \longrightarrow \mathbf{\frac{1}{4}}$.
+Imagine building a 3-stage robot gear train where each gear slows the spin down for extra climbing power. Gear 1 spins at $\frac{1}{2}$ the motor's speed, Gear 2 spins at $\frac{2}{3}$ of Gear 1's speed, and Gear 3 spins at $\frac{3}{4}$ of Gear 2's speed. How fast does Gear 3 spin compared to the motor? You can test two different pathways to find out. First, try multiplying straight across and then pressing `{{key:SIMP}}`: multiply all the numerators ($1 \times 2 \times 3 = 6$) and all the denominators ($2 \times 3 \times 4 = 24$) by keying `0 {{key:.}} 1 {{key:.}} 2 {{key:ENTER}} 0 {{key:.}} 2 {{key:.}} 3 {{key:×}} 0 {{key:.}} 3 {{key:.}} 4 {{key:×}}` ($\to \mathbf{6/24}$), and then tap `{{key:SIMP}}` to shrink $\frac{6}{24} \longrightarrow \mathbf{\frac{1}{4}}$.
 
 Now compare that with the paper shortcut of **cross-canceling shared factors** before you multiply. Look at the numerators and denominators side by side: there is a $2$ on the bottom and a $2$ on top, plus a $3$ on the bottom and a $3$ on top! Canceling those matching pairs ($\frac{2}{2} = 1$ and $\frac{3}{3} = 1$) leaves the answer right away:
 $$\frac{1}{\cancel{2}} \times \frac{\cancel{2}}{\cancel{3}} \times \frac{\cancel{3}}{4} = \mathbf{\frac{1}{4}}$$
@@ -184,23 +184,23 @@ The middle gears act like bridges—only the first numerator ($1$) and last deno
 
 Let's see how fraction multiplication works in two everyday situations—first multiplying proper fractions to see the unreduced grid before pressing `{{key:SIMP}}`, and then scaling a mixed-number measurement by $1\ \frac{1}{2}$ times.
 
-Cut a rectangular canvas or carbon-fiber patch measuring **$\frac{2}{3}\text{ meter}$ wide by $\frac{3}{4}\text{ meter}$ long**—what is its area in square meters? Picture folding a $1\text{-meter}$ square into $3$ columns (taking $2$) and $4$ rows (taking $3$): the overlapping patch covers $2 \times 3 = 6$ out of $3 \times 4 = 12$ mini-rectangles ($\frac{6}{12}$). Multiply on the stack so you can see the unreduced $\frac{6}{12}$ grid first, and then tap `{{key:SIMP}}` to peel away the shared factor of $6$: keying in `{{res:sc6_05_fractions_decimals_ratios_seq_21:keys}}` shows `6/12` and then reduces it to **`{{res:sc6_05_fractions_decimals_ratios_seq_21:value}}`**:
+Cut a rectangular canvas or carbon-fiber patch measuring **$\frac{2}{3}\text{ meter}$ wide by $\frac{3}{4}\text{ meter}$ long**—what is its area in square meters? Picture folding a $1\text{-meter}$ square into $3$ columns (taking $2$) and $4$ rows (taking $3$): the overlapping patch covers $2 \times 3 = 6$ out of $3 \times 4 = 12$ mini-rectangles ($\frac{6}{12}$). Multiply on the stack so you can see the unreduced $\frac{6}{12}$ grid first, and then tap `{{key:SIMP}}` to divide out the Greatest Common Factor of $6$ in one tap: keying in `{{res:sc6_05_fractions_decimals_ratios_seq_21:keys}}` shows `6/12` and then reduces it to **`{{res:sc6_05_fractions_decimals_ratios_seq_21:value}}`**:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 2 {{key:.}} 3 {{key:ENTER}}` | 0 | 0 | 2/3 | 2/3 | Put the width $\frac{2}{3}\text{ m}$ onto Shelf $Y$ |
-| `{{key:.}} 3 {{key:.}} 4 {{key:×}}` | 0 | 0 | 0 | 6/12 | Multiply by length $\frac{3}{4}\text{ m}$; shows $\frac{6}{12}$ before simplifying so you can see the matching twelfths |
+| `0 {{key:.}} 2 {{key:.}} 3 {{key:ENTER}}` | 0 | 0 | 2/3 | 2/3 | Put the width $\frac{2}{3}\text{ m}$ onto Shelf $Y$ |
+| `0 {{key:.}} 3 {{key:.}} 4 {{key:×}}` | 0 | 0 | 0 | 6/12 | Multiply by length $\frac{3}{4}\text{ m}$; shows $\frac{6}{12}$ before simplifying so you can see the matching twelfths |
 | `{{key:SIMP}}` | 0 | 0 | 0 | 1/2 | Tap `{{key:SIMP}}` to reduce $\frac{6}{12}$ to $\frac{1}{2}\text{ m}^2$ |
 
 What if a recipe or bike-fork oil service calls for **$2\ \frac{1}{4}\text{ ounces}$** (or cups), and you want to make **$1\ \frac{1}{2}$ batches**? How much do you measure out?
 
 In improper fractions, $2\ \frac{1}{4}$ is $\frac{9}{4}$ and $1\ \frac{1}{2}$ is $\frac{3}{2}$, so their product is $\frac{27}{8}$ ounces. Watch the SC-6 multiply the mixed numbers directly and convert $\frac{27}{8}$ back into whole ounces and eighths with `{{key:a ᵇ/c}}`: `{{res:sc6_05_fractions_decimals_ratios_seq_22:keys}}` lands right on **`{{res:sc6_05_fractions_decimals_ratios_seq_22:value}}`**. Because $24$ eighths fill $3$ whole ounces and leave $3$ eighths left over, your measuring cup reaches the **$3\ \frac{3}{8}\text{-ounce}$** line.
 
-### Three Visual Ways to Understand Fraction Division
+### Visual Ways to Understand Fraction Division: Measurement & Partitive Models
 
 When you first see a fraction division problem like $\frac{3}{4} \div \frac{1}{8} = 6$, you might ask a great question: *"Wait—how can dividing make the answer BIGGER ($6$)?"*
 
-Think about what $12 \div 3 = 4$ means with whole numbers: it asks, *"How many groups of $3$ fit inside $12$?"* Now ask the exact same question for $\frac{3}{4} \div \frac{1}{8}$: **"How many $\frac{1}{8}\text{-size}$ blocks fit inside a $\frac{3}{4}\text{-size}$ tower?"** Because $\frac{1}{8}$ blocks are small, you can fit **6 of them** inside $\frac{3}{4}$! You can see and prove this three ways:
+Think about what $12 \div 3 = 4$ means with whole numbers: it asks, *"How many groups of $3$ fit inside $12$?"* Now ask the exact same question for $\frac{3}{4} \div \frac{1}{8}$: **"How many $\frac{1}{8}\text{-size}$ blocks fit inside a $\frac{3}{4}\text{-size}$ tower?"** Because $\frac{1}{8}$ blocks are small, you can fit **6 of them** inside $\frac{3}{4}$! You can see and prove this **Measurement (Quotitive) Division** model three ways:
 
 1. **Physical Fraction Tower Alignment:** Stack three blue $\frac{1}{4}$ blocks ($3 \times 21.0\text{ mm} = 63.0\text{ mm}$) in Well A of your **84 mm Fraction Studio**, and stack cyan $\frac{1}{8}$ blocks ($10.5\text{ mm}$ each) in Well B until both towers stand flush. It takes exactly **6 cyan $\frac{1}{8}$ blocks** ($6 \times 10.5\text{ mm} = 63.0\text{ mm}$) to match $\frac{3}{4}$!
 2. **Common-Denominator Measurement Division:** Rewrite both fractions using the same block size (eighths, since $\frac{3}{4} = \frac{6}{8}$). Now the question is simply *"How many $1\text{-eighths}$ fit inside $6\text{-eighths}$?"*
@@ -208,7 +208,12 @@ Think about what $12 \div 3 = 4$ means with whole numbers: it asks, *"How many g
 3. **Multiplying by the Reciprocal (`{{key:1/x}}`):** Because eight $\frac{1}{8}$ blocks fit inside $1$ Whole, dividing by $\frac{1}{8}$ is the same as multiplying by its flipped partner (the **reciprocal** $\frac{8}{1}$, which you can see anytime with the `{{key:1/x}}` key):
    $$\frac{3}{4} \times \frac{8}{1} = \frac{24}{4} = \mathbf{6}$$
 
-Once you picture fraction division as *"how many small slices fit inside a total amount?"*, everyday kitchen and workshop puzzles click right into place. Suppose you are prepping trail mix for a Saturday hike: a big mixing bowl holds $4\frac{1}{2}\text{ cups}$ of trail mix, and each hiker's snack bag holds $\frac{3}{8}\text{ cup}$. Keying `4 {{key:.}} 1 {{key:.}} 2 {{key:ENTER}} {{key:.}} 3 {{key:.}} 8 {{key:÷}}` ($\frac{9}{2} \div \frac{3}{8} = \frac{36}{8} \div \frac{3}{8} = 36 \div 3$) reveals that you can pack **$12$ full snack bags**. The exact same slicing question works when you are cutting craft ribbon for tournament medals: if you have a $6\text{-meter}$ roll of satin ribbon and snip it into $\frac{3}{20}\text{-meter}$ strips ($15\text{ cm}$ each), keying `6 {{key:ENTER}} {{key:.}} 3 {{key:.}} 20 {{key:÷}}` shows you will get **`40` strips** with zero ribbon wasted. And once you can multiply or divide two fractions on their own, you are ready to chain both moves together in a single run.
+What if the divisor does *not* fit a whole number of times into the dividend, as in $\frac{1}{2} \div \frac{3}{4} = \frac{2}{3}$? That is where the universal **Partitive "Split & Rebuild 1 Full Tower" ($\div c$ then $\times d$)** model shines!
+- **The Partitive Question:** *"If a $\frac{1}{2}$ block ($42.0\text{ mm}$) is $\frac{3}{4}$ of a mystery tower, how tall is $1$ full mystery tower ($\frac{1}{2} \div \frac{3}{4}$)?"*
+- **Step 1 — Split by the Numerator ($\div 3$):** Because your $42.0\text{ mm}$ half-tower represents $3$ fourths of the mystery tower, split $42.0\text{ mm}$ into $3$ equal parts to find $\frac{1}{4}$ of the mystery tower: three green $\frac{1}{6}$ blocks ($14.0\text{ mm}$ each, since $42.0\text{ mm} \div 3 = 14.0\text{ mm}$).
+- **Step 2 — Rebuild by the Denominator ($\times 4$):** Now stack $4$ of those $\frac{1}{6}$ blocks together ($4 \times 14.0\text{ mm} = 56.0\text{ mm} = \frac{4}{6} = \frac{2}{3}$) in Well B to build all $\frac{4}{4}$ ($1$ full mystery tower)—physically proving why dividing by $\frac{c}{d}$ always splits by $c$ ($\div c$) and rebuilds by $d$ ($\times d$), which is multiplying by the reciprocal $\frac{d}{c}$! *(Classroom Pod Note: When building towers that require extra sixth-blocks or twelfth-blocks across both comparator wells, partner pairs in a 4-kit table pod can pool their sixth- and twelfth-blocks.)*
+
+Once you picture fraction division both ways—*"how many slices fit inside?"* and *"split by the top, rebuild by the bottom"*—everyday kitchen and workshop puzzles click right into place. Suppose you are prepping trail mix for a Saturday hike: a big mixing bowl holds $4\frac{1}{2}\text{ cups}$ of trail mix, and each hiker's snack bag holds $\frac{3}{8}\text{ cup}$. Keying `4 {{key:.}} 1 {{key:.}} 2 {{key:ENTER}} 0 {{key:.}} 3 {{key:.}} 8 {{key:÷}}` ($\frac{9}{2} \div \frac{3}{8} = \frac{36}{8} \div \frac{3}{8} = 36 \div 3$) reveals that you can pack **$12$ full snack bags**. The exact same slicing question works when you are cutting craft ribbon for tournament medals: if you have a $6\text{-meter}$ roll of satin ribbon and snip it into $\frac{3}{20}\text{-meter}$ strips ($15\text{ cm}$ each), keying `6 {{key:ENTER}} 0 {{key:.}} 3 {{key:.}} 20 {{key:÷}}` shows you will get **`40` strips** with zero ribbon wasted. And once you can multiply or divide two fractions on their own, you are ready to chain both moves together in a single run.
 
 ### Chaining Mixed-Number Multiplication and Division in One Flow
 What happens when a woodworking or baking project combines mixed-number multiplication *and* fraction division in a single expression, like $(3\ \frac{1}{2} \times 2\ \frac{2}{3}) \div 1\ \frac{1}{6}$? Under the hood, $\frac{7}{2} \times \frac{8}{3} = \frac{28}{3}$, and dividing by $\frac{7}{6}$ flips and multiplies ($\frac{28}{3} \times \frac{6}{7} = 4 \times 2 = 8$). Watch two-dot RPN glide straight to **`8`** in 17 keystrokes when you key in `{{res:sc6_05_fractions_decimals_ratios_seq_36:keys}}` to land on **`{{res:sc6_05_fractions_decimals_ratios_seq_36:value}}`**:
@@ -223,24 +228,24 @@ Both the multiplication step and the division step resolve to the exact whole nu
 
 ---
 
-### Reducing Fractions Step by Step
+### Reducing Fractions to Lowest Terms in One Tap
 
 Simplifying a fraction to lowest terms is really just trading lots of small slices for fewer, bigger blocks that reach the exact same height. When you drop two $\frac{1}{4}$ blocks ($42.0\text{ mm}$) and one $\frac{1}{2}$ block ($42.0\text{ mm}$) into your Twin Comparator Well, their top edges stand completely flush—showing your fingers that $\frac{2}{4}$ and $\frac{1}{2}$ are the exact same height, just built with fewer blocks!
 
 {{blocks:fraction_gauge_comparison|Comparing Fraction Tower Heights Side by Side in the Twin Comparator Well}}
 
-Even better, if you lift a copy of your unreduced fraction onto **Shelf $Y$** with `{{key:ENTER}}` before pressing **`{{key:SIMP}}`**, your screen acts just like the Twin Comparator Well—keeping the original unreduced fraction on Shelf $Y$ right beside the simplified fraction on Shelf $X$!
+Even better, if you lift a copy of your unreduced fraction onto **Shelf $Y$** with `{{key:ENTER}}` before pressing **`{{key:SIMP}}`**, your screen acts just like the Twin Comparator Well—keeping the original unreduced fraction on Shelf $Y$ right above the simplified fraction on Shelf $X$!
 
-To test this hands-on, stack twelve $\frac{1}{18}$ unit slices ($12 \times 4.67\text{ mm} = 56.0\text{ mm}$) in Well A and two yellow $\frac{1}{3}$ blocks ($2 \times 28.0\text{ mm} = 56.0\text{ mm}$) in Well B. Their tops match at $56.0\text{ mm}$, proving $\frac{12}{18} = \frac{2}{3}$. Now watch `{{key:SIMP}}` place both forms side by side on the stack:
-1. Enter $\frac{12}{18}$ using two-dot syntax: `{{key:.}} 12 {{key:.}} 18 {{key:ENTER}}`.
+To test this hands-on, stack twelve $\frac{1}{18}$ unit slices ($12 \times 4.67\text{ mm} = 56.0\text{ mm}$) in Well A and two yellow $\frac{1}{3}$ blocks ($2 \times 28.0\text{ mm} = 56.0\text{ mm}$) in Well B. Their tops match at $56.0\text{ mm}$, proving $\frac{12}{18} = \frac{2}{3}$. Now watch `{{key:SIMP}}` place both forms together on the stack:
+1. Enter $\frac{12}{18}$ using two-dot syntax: `0 {{key:.}} 12 {{key:.}} 18 {{key:ENTER}}`.
 2. Press `{{key:SIMP}}`: the calculator divides both $12$ and $18$ by their Greatest Common Factor ($6$), updating Shelf $X$ to **`2/3`** while keeping your original `12/18` visible on Shelf $Y$ for comparison!
 3. Press `{{key:SIMP}}` a second time: because $2$ and $3$ share no common factor greater than $1$, the screen flashes **`LOWEST TERMS`**!
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 12 {{key:.}} 18` | 0 | 0 | 0 | 12/18 | Build the unreduced fraction $\frac{12}{18}$ on Shelf $X$ |
-| `{{key:ENTER}}` | 0 | 0 | 12/18 | 12/18 | Lift a copy of $\frac{12}{18}$ to Shelf $Y$ for side-by-side comparison |
-| `{{key:SIMP}}` | 0 | 0 | 12/18 | 2/3 | Divide out the shared factor of 6 to show $\frac{2}{3}$ beside $\frac{12}{18}$ |
+| `0 {{key:.}} 12 {{key:.}} 18` | 0 | 0 | 0 | 12/18 | Build the unreduced fraction $\frac{12}{18}$ on Shelf $X$ |
+| `{{key:ENTER}}` | 0 | 0 | 12/18 | 12/18 | Lift a copy of $\frac{12}{18}$ to Shelf $Y$ for comparison |
+| `{{key:SIMP}}` | 0 | 0 | 12/18 | 2/3 | Divide out the shared factor of 6 to show $\frac{2}{3}$ under $\frac{12}{18}$ |
 | `{{key:SIMP}}` | 0 | 0 | 12/18 | 2/3 | Second press flashes `LOWEST TERMS` to confirm $\frac{2}{3}$ is fully reduced! |
 
 ---
@@ -259,12 +264,12 @@ Instead of listing multiples on scrap paper, ask your SC-6 for the Least Common 
 | `8 {{key:ENTER}}` | 0 | 0 | 8 | 8 | Place first denominator 8 onto Shelf $Y$ |
 | `12` | 0 | 0 | 8 | 12 | Type second denominator 12 onto Shelf $X$ |
 | `{{key:LCM}}` | 0 | 0 | 0 | 24 | Find the Least Common Denominator: $\text{LCM}(8, 12) = 24$ |
-| `{{key:.}} 3 {{key:.}} 8` | 0 | 0 | 24 | 3/8 | Common denominator 24 lifts to Shelf $Y$; enter $\frac{3}{8}$ on Shelf $X$ |
+| `0 {{key:.}} 3 {{key:.}} 8` | 0 | 0 | 24 | 3/8 | Common denominator 24 lifts to Shelf $Y$; enter $\frac{3}{8}$ on Shelf $X$ |
 | `{{key:ENTER}}` | 0 | 24 | 3/8 | 3/8 | Lift $\frac{3}{8}$ to Shelf $Y$ while 24 waits on Shelf $Z$ |
-| `{{key:.}} 5 {{key:.}} 12` | 0 | 24 | 3/8 | 5/12 | Enter $\frac{5}{12}$ on Shelf $X$ beside $\frac{3}{8}$ on Shelf $Y$ |
-| `{{key:+}}` | 0 | 0 | 24 | 19/24 | Add $\frac{9}{24} + \frac{10}{24} = \frac{19}{24}$ on Shelf $X$ beside LCD 24 on Shelf $Y$! |
+| `0 {{key:.}} 5 {{key:.}} 12` | 0 | 24 | 3/8 | 5/12 | Enter $\frac{5}{12}$ on Shelf $X$ below $\frac{3}{8}$ on Shelf $Y$ |
+| `{{key:+}}` | 0 | 0 | 24 | 19/24 | Add $\frac{9}{24} + \frac{10}{24} = \frac{19}{24}$ on Shelf $X$ with LCD 24 on Shelf $Y$! |
 
-Look at the bottom row of that table: Shelf $Y$ still holds the common denominator `24` right beside the exact fraction sum `19/24` on Shelf $X$! And whenever you want to add those two boards in a single quick step (`{{res:sc6_05_fractions_decimals_ratios_seq_15:keys}}`), the SC-6 automatically finds that shared twenty-fourths grid under the hood and displays **`{{res:sc6_05_fractions_decimals_ratios_seq_15:value}}`** ($\mathbf{19/24\text{ inch}}$)—or subtracts a $\frac{5}{12}\text{-foot}$ section from a $\frac{7}{8}\text{-foot}$ board via `. 7 . 8 {{key:ENTER}} . 5 . 12 {{key:-}}` to leave $\mathbf{\frac{11}{24}\text{ foot}}$.
+Look at the bottom row of that table: Shelf $Y$ still holds the common denominator `24` right above the exact fraction sum `19/24` on Shelf $X$! And whenever you want to add those two boards in a single quick step (`{{res:sc6_05_fractions_decimals_ratios_seq_15:keys}}`), the SC-6 automatically finds that shared twenty-fourths grid under the hood and displays **`{{res:sc6_05_fractions_decimals_ratios_seq_15:value}}`** ($\mathbf{19/24\text{ inch}}$)—or subtracts a $\frac{5}{12}\text{-foot}$ section from a $\frac{7}{8}\text{-foot}$ board via `0 {{key:.}} 7 {{key:.}} 8 {{key:ENTER}} 0 {{key:.}} 5 {{key:.}} 12 {{key:-}}` to leave $\mathbf{\frac{11}{24}\text{ foot}}$.
 
 ### Cedar Workbench Boards & the Perfect Number 6
 What happens when you join two boards that already share the *same* denominator, or test the famous unit-fraction trio that makes $6$ the first **Perfect Number** in mathematics?
@@ -322,13 +327,13 @@ If you try to enter the ratio $15:25$ using standard division (`15 ÷ 25`), the 
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `{{key:.}} 15 {{key:.}} 25` | 0 | 0 | 0 | 15/25 | Enter 15 and 25 using two-dot syntax on Shelf $X$ |
+| `0 {{key:.}} 15 {{key:.}} 25` | 0 | 0 | 0 | 15/25 | Enter 15 and 25 using two-dot syntax on Shelf $X$ |
 | `{{key:a:b}}` | 0 | 0 | 0 | 15:25 | Switch into Ratio Mode to lock both parts together as `15:25` |
 | `{{key:SIMP}}` | 0 | 0 | 0 | 3:5 | Divide out the shared factor of 5 to reveal the base ratio `3:5` |
 | `2 {{key:×}}` | 0 | 0 | 0 | 6:10 | Scale both sides of the ratio by 2 for a double batch (`6:10`) |
 | `{{key:SIMP}}` | 0 | 0 | 0 | 3:5 | Reduce `6:10` right back down to the base ratio `3:5` |
 
-And if you already have a part-to-whole fraction like $\frac{15}{25}$ committed on the stack (15 selected items out of 25 total items), pressing `{{key:a:b}}` converts it into the **part-to-part ratio** comparing the 15 selected items to the remaining $25 - 15 = 10$ items (**`15:10`**, which simplifies with `{{key:SIMP}}` to **`3:2`**)!
+And if you already have a part-to-whole fraction like $\frac{15}{25}$ committed on the stack (15 selected items out of 25 total items), pressing `{{key:a:b}}` converts it into the **part-to-part ratio** comparing the 15 selected items to the remaining $25 - 15 = 10$ items (**`15:10`**, which simplifies with `{{key:SIMP}}` to **`3:2`**)! Better yet, while any ratio is active in `{{key:a:b}}` mode, tapping `{{key:▦}}` opens an interactive **Ratio Scaling Table** showing `1×` through `10×` multiples side by side (use `{{key:+}}` and `{{key:-}}` to page 4 rows at a time, type `<N> {{key:ENTER}}` to jump straight to row `N`, or type `<N> {{key:▦}}` to expand the table range up to `100×`).
 
 ### Visualizing Ratios with Tile Tape Diagrams
 
@@ -338,7 +343,7 @@ Say you are blending **$35\text{ ounces}$** of berry smoothie in a **$3:2$ ratio
 
 What if you want to compare two speeds that were measured over different amounts of time? You divide to find the **unit rate**—the speed for **1 single second** or **1 single minute**. When a 3D printer extruder pulls $45\text{ cm}$ of plastic filament in $18\text{ seconds}$, dividing `45 {{key:ENTER}} 18 {{key:÷}}` finds the unit rate for $1\text{ second}$ (**$2.5\text{ cm/s}$**), and tapping `50 {{key:×}}` immediately predicts it will feed **$125\text{ cm}$** of filament in $50\text{ seconds}$. Or listen to two woodpeckers drumming on hollow oak trees in the forest: Woodpecker A drums $220\text{ taps}$ in $4\text{ minutes}$ (`220 {{key:ENTER}} 4 {{key:÷}}` $\longrightarrow \mathbf{55\text{ taps/min}}$), while Woodpecker B drums $285\text{ taps}$ in $5\text{ minutes}$ (`285 {{key:ENTER}} 5 {{key:÷}}` $\longrightarrow \mathbf{57\text{ taps/min}}$). Finding the 1-minute unit rate reveals right away that Woodpecker B is the faster drummer!
 
-Even animals in university animal-intelligence labs have tested their skills with fractions and percents! In Dr. Irene Pepperberg's famous parrot intelligence lab, **Alex the African Grey parrot** learned to count objects by color and shape and even identify which tray held more blocks. In one set of trials, Alex answered **$21$ out of $24$** spoken counting and tray-addition questions accurately. Keying `{{key:.}} 21 {{key:.}} 24 {{key:SIMP}}` reduces Alex's score to **`7/8`**; tapping `{{key:FDISP}}` flips it to **`0.875`**, and multiplying by `100 {{key:×}}` reveals **`87.5%`** accuracy!
+Even animals in university animal-intelligence labs have tested their skills with fractions and percents! In Dr. Irene Pepperberg's famous parrot intelligence lab, **Alex the African Grey parrot** learned to count objects by color and shape and even identify which tray held more blocks. In one set of trials, Alex answered **$21$ out of $24$** spoken counting and tray-addition questions accurately. Keying `0 {{key:.}} 21 {{key:.}} 24 {{key:SIMP}}` reduces Alex's score to **`7/8`**; tapping `{{key:FDISP}}` flips it to **`0.875`**, and multiplying by `100 {{key:×}}` reveals **`87.5%`** accuracy!
 
 ### Simplifying Gear Ratios & Mixing 1-2-3 Concrete
 Remember the bicycle gear pairs we explored earlier? Instead of turning a $12\text{-tooth}$ drive gear and a $36\text{-tooth}$ wheel gear into a repeating decimal (`0.3333...`), **Ratio Mode (`{{key:a:b}}`)** keeps both tooth counts visible side by side: keying `{{res:sc6_05_fractions_decimals_ratios_seq_27:keys}}` divides out their shared factor of $12$ to display a clean **`{{res:sc6_05_fractions_decimals_ratios_seq_27:value}}`** gear ratio ($3$ turns of the small gear for every $1$ turn of the wheel gear).
@@ -375,7 +380,7 @@ He used a brass compass, wooden divider calipers, and **exact whole-number fract
 
 Even today, if you visit the *Museo del Violino* in Cremona and examine Stradivari's original paper patterns and walnut forms, you won't find messy decimal strings scribbled in the margins—you find clean fractional steps and whole-number ratios (`3:4`, `4:5`, and `2:3`) that any student with an $84\text{ mm}$ Fraction Tower kit can recognize right away, never confusing a **part-to-part ratio** (`3:5` in **`{{key:a:b}}`** mode) with a **part-to-whole fraction** ($\frac{3}{8}$).
 
-In the same workshop spirit, your SC-6 lets you build and inspect exact fractional grids before reducing them. Just as Stradivari marked out the full twelfth- and sixteenth-part grid across his wooden molds before carving the final curve, unreduced products on your stack (`. 1 . 2 {{key:ENTER}} . 2 . 3 {{key:×}}` $\to$ `2/6`) let you see the true subdivision grid first, and then divide out shared factors step by step with **`{{key:SIMP}}`** until you reach `1/3` (`LOWEST TERMS`). Whether you are measuring a spruce soundboard in mixed inches, checking its decimal twin, or scaling a three-part workshop mix, every view on your calculator honors the exact proportions of the physical studio.
+In the same workshop spirit, your SC-6 lets you build and inspect exact fractional grids before reducing them. Just as Stradivari marked out the full twelfth- and sixteenth-part grid across his wooden molds before carving the final curve, unreduced products on your stack (`0 {{key:.}} 1 {{key:.}} 2 {{key:ENTER}} 0 {{key:.}} 2 {{key:.}} 3 {{key:×}}` $\to$ `2/6`) let you see the true subdivision grid first, and then divide out their Greatest Common Factor in a single tap with **`{{key:SIMP}}`** to reach `1/3` (with a second tap confirming `LOWEST TERMS`). Whether you are measuring a spruce soundboard in mixed inches, checking its decimal twin, or scaling a three-part workshop mix, every view on your calculator honors the exact proportions of the physical studio.
 
 ### Pythagoras at the Blacksmith's Forge & the One-String Monochord
 
@@ -393,9 +398,9 @@ Rushing home to his workshop, Pythagoras stretched a single gut string across a 
 | **Octave Higher** | $\mathbf{\frac{1}{2}}$ of string | **$42.0\text{ mm}$** (One $\frac{1}{2}$ Red Block) | **`2:1`** | The exact same note family vibrating twice as fast! |
 
 Look at the third column of that table and verify those heights on your SC-6 right now:
-- **Octave ($\frac{1}{2}$ of $84\text{ mm}$):** Key in `84 {{key:ENTER}} . 1 . 2 {{key:×}}` to see **`42` mm**—and when you flip the fraction $\frac{1}{2}$ upside down with the Reciprocal key **`{{key:1/x}}`** (`{{key:g}}` then `{{key:÷}}`), it shows **`2`**, meaning half the string length vibrates **twice as fast**!
-- **Perfect Fifth ($\frac{2}{3}$ of $84\text{ mm}$):** Key in `84 {{key:ENTER}} . 2 . 3 {{key:×}}` to see **`56` mm**—the exact height of two $28\text{ mm}$ Gold $\frac{1}{3}$ blocks stacked in your Comparator Well.
-- **Combining a Fifth and a Fourth ($\frac{2}{3} \times \frac{3}{4}$):** What happens on a guitar neck if you shorten a string to $\frac{2}{3}$ of its length (a Perfect Fifth), and then take $\frac{3}{4}$ of *that* shortened string (a Perfect Fourth)? Multiply them on your stack: `. 2 . 3 {{key:ENTER}} . 3 . 4 {{key:×}}` first shows **`6/12`** (six twelfths of the string), and one tap of **`{{key:SIMP}}`** reduces `6/12` to **`1/2`**—proving that going up a Perfect Fifth and then up a Perfect Fourth lands you on a clean **Octave ($\frac{1}{2}$)**!
+- **Octave ($\frac{1}{2}$ of $84\text{ mm}$):** Key in `84 {{key:ENTER}} 0 {{key:.}} 1 {{key:.}} 2 {{key:×}}` to see **`42` mm**—and when you flip the fraction $\frac{1}{2}$ upside down with the Reciprocal key **`{{key:1/x}}`** (`{{key:f}}` then `{{key:FDISP}}`), it shows **`2`**, meaning half the string length vibrates **twice as fast**!
+- **Perfect Fifth ($\frac{2}{3}$ of $84\text{ mm}$):** Key in `84 {{key:ENTER}} 0 {{key:.}} 2 {{key:.}} 3 {{key:×}}` to see **`56` mm**—the exact height of two $28\text{ mm}$ Gold $\frac{1}{3}$ blocks stacked in your Comparator Well.
+- **Combining a Fifth and a Fourth ($\frac{2}{3} \times \frac{3}{4}$):** What happens on a guitar neck if you shorten a string to $\frac{2}{3}$ of its length (a Perfect Fifth), and then take $\frac{3}{4}$ of *that* shortened string (a Perfect Fourth)? Multiply them on your stack: `0 {{key:.}} 2 {{key:.}} 3 {{key:ENTER}} 0 {{key:.}} 3 {{key:.}} 4 {{key:×}}` first shows **`6/12`** (six twelfths of the string), and one tap of **`{{key:SIMP}}`** reduces `6/12` to **`1/2`**—proving that going up a Perfect Fifth and then up a Perfect Fourth lands you on a clean **Octave ($\frac{1}{2}$)**!
 
 Every time you press down a guitar, violin, or ukulele string against a fret—or stretch a rubber band across an $84\text{ mm}$ Fraction Tower tray and pinch it at the $\frac{1}{2}$, $\frac{2}{3}$, and $\frac{3}{4}$ marks—your ears are literally *listening* to fractions in lowest terms.
 
@@ -407,8 +412,8 @@ To wrap up your tour of fractions, decimals, percents, and ratios, try these thr
 
 ### Three Kitchen & Musical-Glass Fraction Experiments
 
-1. **The Water-Glass Musical Scale (`1/2`, `2/3`, `3/4`, `5/8`):** Line up four identical drinking glasses. Leave the first empty, fill the second to $\frac{1}{2}$ ($42.0\text{ mm}$), the third to $\frac{2}{3}$ ($56.0\text{ mm}$), and the fourth to $\frac{3}{4}$ ($63.0\text{ mm}$) using your $84\text{ mm}$ Fraction Towers as a height gauge. Tap each glass with a spoon to hear the pitch change, then use `. 3 . 4 {{key:ENTER}} . 2 . 3 {{key:-}}` ($\to \mathbf{1/12}$) to find the exact fraction difference between glasses!
-2. **The Weekend Batch Recipe Scaler (`{{key:a:b}}` and `{{key:LASTX}}`):** Grab a recipe card that uses fractional cups (like $1\ \frac{3}{4}$ cups flour and $\frac{3}{8}$ teaspoon cinnamon). Multiply every ingredient by $1\ \frac{1}{2}$ (`1 . 3 . 4 {{key:ENTER}} 1 . 1 . 2 {{key:×}} {{key:a ᵇ/c}}` $\to \mathbf{2\ 5/8\text{ cups}}$), using `{{key:LASTX}}` to pull $1\ \frac{1}{2}$ right back onto Shelf $X$ for the next ingredient!
+1. **The Water-Glass Musical Scale (`1/2`, `2/3`, `3/4`, `5/8`):** Line up four identical drinking glasses. Leave the first empty, fill the second to $\frac{1}{2}$ ($42.0\text{ mm}$), the third to $\frac{2}{3}$ ($56.0\text{ mm}$), and the fourth to $\frac{3}{4}$ ($63.0\text{ mm}$) using your $84\text{ mm}$ Fraction Towers as a height gauge. Tap each glass with a spoon to hear the pitch change, then use `0 {{key:.}} 3 {{key:.}} 4 {{key:ENTER}} 0 {{key:.}} 2 {{key:.}} 3 {{key:-}}` ($\to \mathbf{1/12}$) to find the exact fraction difference between glasses!
+2. **The Weekend Batch Recipe Scaler (`{{key:a:b}}` and `{{key:LASTX}}`):** Grab a recipe card that uses fractional cups (like $1\ \frac{3}{4}$ cups flour and $\frac{3}{8}$ teaspoon cinnamon). Multiply every ingredient by $1\ \frac{1}{2}$ (`1 {{key:.}} 3 {{key:.}} 4 {{key:ENTER}} 1 {{key:.}} 1 {{key:.}} 2 {{key:×}} {{key:a ᵇ/c}}` $\to \mathbf{2\ 5/8\text{ cups}}$), using `{{key:LASTX}}` to pull $1\ \frac{1}{2}$ right back onto Shelf $X$ for the next ingredient!
 3. **The Infinite Zeno Paper-Folding Challenge:** Around 450 BCE, Zeno of Elea asked: if you walk halfway across a room ($\frac{1}{2}$), then half of what remains ($\frac{1}{4}$), then $\frac{1}{8}$, do you ever reach the far wall? Fold a strip of paper into $\frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16},$ and $\frac{1}{32}$, adding each fold on your SC-6 (`{{key:+}}`) and tapping `{{key:FDISP}}` to watch $\frac{31}{32}$ creep toward $1.0000000$!
 
 ---
@@ -419,8 +424,8 @@ Walk into a woodworking shop or unroll an ancient Egyptian papyrus scroll, and y
 
 | Hands-On Fraction Studio Discovery | What You Build in the Comparator Well | How Your SC-6 Stack Shows It |
 | :--- | :--- | :--- |
-| **Two-Dot Entry (`{{key:.}}`)** | Stack five $\frac{1}{8}$ blocks ($52.5\text{ mm}$) or $2\frac{3}{4}$ towers | `. 5 . 8` enters `5/8`; `2 . 3 . 4` enters `2 3/4` |
-| **Step-by-Step Simplify (`{{key:SIMP}}`)** | Match $\frac{4}{8}$ ($42.0\text{ mm}$) flush against $\frac{1}{2}$ ($42.0\text{ mm}$) | `. 12 . 18 {{key:SIMP}}` divides out shared factors to `2/3` (`LOWEST TERMS`) |
+| **Two-Dot Entry (`{{key:.}}`)** | Stack five $\frac{1}{8}$ blocks ($52.5\text{ mm}$) or $2\frac{3}{4}$ towers | `0 . 5 . 8` *(or `. 5 . 8`)* enters `5/8`; `2 . 3 . 4` enters `2 3/4` |
+| **One-Tap GCF Simplify (`{{key:SIMP}}`)** | Match $\frac{4}{8}$ ($42.0\text{ mm}$) flush against $\frac{1}{2}$ ($42.0\text{ mm}$) | `0 . 12 . 18 {{key:SIMP}}` divides out the GCF ($6$) in one tap to `2/3` (`LOWEST TERMS`) |
 | **Least Common Denominator (`{{key:LCM}}`)** | Bridge $\frac{1}{3}$ ($28\text{ mm}$) + $\frac{1}{4}$ ($21\text{ mm}$) with seven $\frac{1}{12}$ blocks ($49\text{ mm}$) | `8 {{key:ENTER}} 12 {{key:LCM}}` $\to$ `24` (shared twenty-fourths grid) |
 | **Three-Face Block Rotation (`{{key:FDISP}}`)** | Turn the blue $\frac{1}{4}$ block to read `1/4`, `0.25`, and `25%` | Flip between `a ᵇ/c`, `d/c`, repeating bar `0.3̄`, and decimal views |
 | **Two-Shelf Sale & Tip (`{{key:%}}`)** | Compare a $15\%$ slice against the full $100\%$ starting tower | `80 {{key:ENTER}} 15 {{key:%}}` puts `12` in $X$ while keeping `80` on Shelf $Y$ |

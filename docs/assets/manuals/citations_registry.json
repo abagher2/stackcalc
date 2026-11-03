@@ -1,18 +1,16 @@
 {
   "lukasiewicz1924": {
     "id": "lukasiewicz1924",
-    "entry_type": "article",
+    "entry_type": "book",
     "author": "Jan Łukasiewicz",
     "short_author": "Łukasiewicz",
     "short_cite": "Łukasiewicz, 1924",
-    "year": 1924,
-    "title": "Oznaczenie bez nawiasów (Parenthesis-Free Notation)",
-    "journal": "Komunikaty Polskiego Towarzystwa Matematycznego",
-    "volume": "1",
-    "pages": "1--6",
+    "year": 1929,
+    "title": "Elementy logiki matematycznej (Elements of Mathematical Logic; parenthesis-free notation devised 1924)",
+    "publisher": "Komisja Wydawnicza Koła Matematyczno-Fizycznego Słuchaczów Uniwersytetu Warszawskiego (Warsaw; English trans. Pergamon Press, 1963)",
     "category": "Foundations of Logic & Computer Architecture",
     "volume_scope": "both",
-    "annotation": "Introduces parenthesis-free prefix and postfix notation, demonstrating that operator position alone uniquely determines evaluation order without grouping symbols."
+    "annotation": "Introduces parenthesis-free prefix and postfix notation (devised in 1924 and published in his 1929 Warsaw logic treatise), demonstrating that operator position alone uniquely determines evaluation order without grouping symbols."
   },
   "burks1954": {
     "id": "burks1954",
@@ -33,18 +31,18 @@
   "hamblin1957": {
     "id": "hamblin1957",
     "entry_type": "article",
-    "author": "Charles Leonard Hamblin",
+    "author": "Charles L. Hamblin",
     "short_author": "Hamblin",
     "short_cite": "Hamblin, 1957",
     "year": 1957,
-    "title": "An Addressless Computer",
+    "title": "Computer Languages",
     "journal": "The Australian Journal of Science",
     "volume": "20",
-    "number": "4",
-    "pages": "111--123",
+    "number": "5",
+    "pages": "135--139",
     "category": "Foundations of Logic & Computer Architecture",
     "volume_scope": "sc32",
-    "annotation": "Pioneers the push-down operational stack in computer hardware, demonstrating that a zero-address computer architecture eliminates memory traffic and register allocation overhead."
+    "annotation": "Pioneers the push-down operational stack in computer hardware (alongside his June 1957 WRE Salisbury conference paper \"An Addressless Coding Scheme Based on Mathematical Notation\" and 1962 The Computer Journal paper \"Translation to and from Polish Notation\"), demonstrating that a zero-address stack architecture eliminates memory traffic and register allocation overhead."
   },
   "dijkstra1961": {
     "id": "dijkstra1961",
@@ -95,18 +93,18 @@
   "hewlett1972": {
     "id": "hewlett1972",
     "entry_type": "article",
-    "author": "William R. Hewlett",
-    "short_author": "Hewlett",
-    "short_cite": "Hewlett, 1972",
+    "author": "Thomas M. Whitney, France Rodé & Chung C. Tung",
+    "short_author": "Whitney, Rodé & Tung",
+    "short_cite": "Whitney, Rodé & Tung, 1972",
     "year": 1972,
-    "title": "The Idea of a Personal Scientific Calculator",
+    "title": "The 'Powerful Pocketful': An Electronic Calculator Challenges the Slide Rule",
     "journal": "Hewlett-Packard Journal",
     "volume": "23",
     "number": "10",
-    "pages": "2--4",
+    "pages": "2--9",
     "category": "Corvallis Silicon & Handheld Architecture",
     "volume_scope": "sc32",
-    "annotation": "Documents Bill Hewlett's shirt-pocket challenge to his Corvallis engineering team, conceiving the HP-35 as an electronic slide rule."
+    "annotation": "Documents William R. Hewlett's shirt-pocket challenge to HP's Palo Alto engineering team and the architectural design of the HP-35 as an electronic slide rule."
   },
   "cochran1972": {
     "id": "cochran1972",
@@ -115,11 +113,11 @@
     "short_author": "Cochran",
     "short_cite": "Cochran, 1972",
     "year": 1972,
-    "title": "Algorithms and Hardware for the HP-35",
+    "title": "Algorithms and Accuracy in the HP-35",
     "journal": "Hewlett-Packard Journal",
     "volume": "23",
     "number": "10",
-    "pages": "10--14",
+    "pages": "10--11",
     "category": "Corvallis Silicon & Handheld Architecture",
     "volume_scope": "sc32",
     "annotation": "Documents the 4-register XYZT stack, serial bit-slice silicon architecture, CORDIC transcendental algorithms, and T-register constant replication."
@@ -127,64 +125,50 @@
   "crowley1979": {
     "id": "crowley1979",
     "entry_type": "article",
-    "author": "William L. Crowley",
-    "short_author": "Crowley",
-    "short_cite": "Crowley, 1979",
-    "year": 1979,
-    "title": "Inside the HP-41C: Architecture of an Alphanumeric Handheld Computer",
+    "author": "Bernard E. Musch, John J. Wong & David R. Conklin",
+    "short_author": "Musch, Wong & Conklin",
+    "short_cite": "Musch, Wong & Conklin, 1980",
+    "year": 1980,
+    "title": "Powerful Personal Calculator System Sets New Standards",
     "journal": "Hewlett-Packard Journal",
-    "volume": "30",
-    "number": "12",
-    "pages": "3--11",
+    "volume": "31",
+    "number": "3",
+    "pages": "3--12",
     "category": "Corvallis Silicon & Handheld Architecture",
     "volume_scope": "sc32",
-    "annotation": "Introduces continuous CMOS memory, alphanumeric display segments, user key reassignment, and expandable peripheral architectures."
+    "annotation": "Introduces the HP-41C alphanumeric handheld computer system with continuous CMOS memory, alphanumeric display segments, user key reassignment, and expandable peripheral architectures."
   },
   "evett1983": {
     "id": "evett1983",
     "entry_type": "article",
-    "author": "Eric A. Evett, Charles M. Fraser & Leonard J. Miller",
+    "author": "Eric A. Evett, Paul J. McClellan & Joseph P. Tanzini",
     "short_author": "Evett et al.",
     "short_cite": "Evett et al., 1983",
     "year": 1983,
-    "title": "Scientific Handheld Calculator with Extension Capabilities",
+    "title": "Scientific Pocket Calculator Extends Range of Built-In Functions",
     "journal": "Hewlett-Packard Journal",
     "volume": "34",
     "number": "5",
-    "pages": "3--14",
+    "pages": "25--35",
     "category": "Corvallis Silicon & Handheld Architecture",
     "volume_scope": "sc32",
-    "annotation": "Establishes the split-stack complex number convention, matrix solver algorithms, and continuous memory architecture of the HP-15C Voyager."
+    "annotation": "Establishes the split-stack complex number convention, matrix solver algorithms, root finding, numerical integration, and continuous memory architecture of the HP-15C Voyager."
   },
   "hamrick1980": {
     "id": "hamrick1980",
     "entry_type": "article",
     "author": "Kathy B. Hamrick",
     "short_author": "Hamrick",
-    "short_cite": "Hamrick, 1980",
-    "year": 1980,
-    "title": "The History of Reverse Polish Notation",
-    "journal": "The Two-Year College Mathematics Journal",
-    "volume": "11",
-    "number": "5",
-    "pages": "317--326",
+    "short_cite": "Hamrick, 1996",
+    "year": 1996,
+    "title": "The History of the Hand-Held Electronic Calculator",
+    "journal": "The American Mathematical Monthly",
+    "volume": "103",
+    "number": "8",
+    "pages": "633--639",
     "category": "Corvallis Silicon & Handheld Architecture",
     "volume_scope": "both",
     "annotation": "Traces the historical evolution of Polish notation from abstract Warsaw mathematical logic to Corvallis handheld scientific computing."
-  },
-  "nelsonppc": {
-    "id": "nelsonppc",
-    "entry_type": "article",
-    "author": "Richard J. Nelson",
-    "short_author": "Nelson",
-    "short_cite": "Nelson, 1974",
-    "year": 1974,
-    "title": "PPC Journal (formerly 65 Notes)",
-    "publisher": "Personal Programmable Calculator Club",
-    "address": "Santa Ana, CA",
-    "category": "Corvallis Silicon & Handheld Architecture",
-    "volume_scope": "sc32",
-    "annotation": "Pioneering user-group forensic engineering publications demanding absolute register transparency and synthetic programming capabilities."
   },
   "nelson1974": {
     "id": "nelson1974",
@@ -436,7 +420,7 @@
     "address": "New York",
     "isbn": "978-0385493628",
     "category": "Breakout Mathematics & Scientific Nonfiction",
-    "volume_scope": "both",
+    "volume_scope": "sc6",
     "annotation": "Captures the three-century human quest to prove Fermat's Last Theorem, conveying the passion and stakes of mathematical discovery."
   },
   "gardner1959": {
@@ -450,7 +434,7 @@
     "publisher": "Simon & Schuster",
     "address": "New York",
     "category": "Breakout Mathematics & Scientific Nonfiction",
-    "volume_scope": "both",
+    "volume_scope": "sc6",
     "annotation": "Pioneered popular mathematical recreations, flexagons, hexaflexagons, and spatial puzzles that celebrate mathematical play."
   },
   "miller1956": {
@@ -480,7 +464,7 @@
     "publisher": "Harvard University Press",
     "address": "Cambridge, MA",
     "category": "Pedagogy, Cognitive Science & Manipulatives",
-    "volume_scope": "both",
+    "volume_scope": "sc6",
     "annotation": "Establishes the developmental progression from physical action to visual imagery and symbolic notation underpinning the StackCalc manipulative studios and display modes."
   },
   "dienes1960": {
@@ -625,7 +609,7 @@
     "institution": "National Governors Association & CCSSO",
     "address": "Washington, DC",
     "category": "Standards & Hardware Handbooks",
-    "volume_scope": "both",
+    "volume_scope": "sc6",
     "annotation": "The foundational curriculum standards framework governing K-12 operations, algebraic thinking, number sense, and geometry in US classrooms."
   },
   "falkner1999": {
@@ -656,7 +640,7 @@
     "address": "New York",
     "isbn": "978-0471393405",
     "category": "Breakout Mathematics & Scientific Nonfiction",
-    "volume_scope": "both",
+    "volume_scope": "sc6",
     "annotation": "Comprehensive historical account of tally stones, Mesopotamian sexagesimal accounting, Egyptian hieroglyphic numerals, and the independent invention of zero and positional place value in India and Mesoamerica."
   },
   "sartorius1856": {
@@ -671,7 +655,7 @@
     "address": "Leipzig",
     "pages": "12--13",
     "category": "Breakout Mathematics & Scientific Nonfiction",
-    "volume_scope": "both",
+    "volume_scope": "sc6",
     "annotation": "Primary biographical source recording young Carl Friedrich Gauss's arithmetic series solution in J.G. Büttner's Brunswick classroom and his Low German exclamation 'Ligget se!' ('There it lies!')."
   },
   "galilei1638": {
@@ -825,5 +809,53 @@
     "category": "Standards & Hardware Handbooks",
     "volume_scope": "sc32",
     "annotation": "Standard engineering reference on Fourier thermal conduction, Newton's law of convective cooling, extended fin surface area efficiency, and electronics thermal management."
+  },
+  "moore1965": {
+    "id": "moore1965",
+    "entry_type": "article",
+    "author": "Gordon E. Moore",
+    "short_author": "Moore",
+    "short_cite": "Moore, 1965",
+    "year": 1965,
+    "title": "Cramming More Components onto Integrated Circuits",
+    "journal": "Electronics",
+    "volume": "38",
+    "number": "8",
+    "pages": "114--117",
+    "category": "Numerical Stability & Scientific Algorithms",
+    "volume_scope": "sc32",
+    "annotation": "Establishes the semi-logarithmic exponential scaling trajectory of integrated circuit transistor density (Moore's Law)."
+  },
+  "student1908": {
+    "id": "student1908",
+    "entry_type": "article",
+    "author": "William Sealy Gosset (\"Student\")",
+    "short_author": "Student (Gosset)",
+    "short_cite": "Student, 1908",
+    "year": 1908,
+    "title": "The Probable Error of a Mean",
+    "journal": "Biometrika",
+    "volume": "6",
+    "number": "1",
+    "pages": "1--25",
+    "category": "Numerical Stability & Scientific Algorithms",
+    "volume_scope": "sc32",
+    "annotation": "Introduces Student's t-distribution for small-sample statistical inference, accounting for the sampling variance of Bessel-corrected standard deviation s."
+  },
+  "weibull1951": {
+    "id": "weibull1951",
+    "entry_type": "article",
+    "author": "Waloddi Weibull",
+    "short_author": "Weibull",
+    "short_cite": "Weibull, 1951",
+    "year": 1951,
+    "title": "A Statistical Distribution Function of Wide Applicability",
+    "journal": "Journal of Applied Mechanics",
+    "volume": "18",
+    "number": "3",
+    "pages": "293--297",
+    "category": "Numerical Stability & Scientific Algorithms",
+    "volume_scope": "sc32",
+    "annotation": "Establishes the Weibull survival and reliability distribution unifying infant-mortality, random-shock, and fatigue wear-out failure regimes."
   }
 }

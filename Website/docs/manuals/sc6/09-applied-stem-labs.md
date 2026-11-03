@@ -302,7 +302,7 @@ Second, to wash down the warm granola bars, you blend $3\ \frac{1}{2}$ cups of b
 | `{{key:ENTER}}` | 0 | 0 | $3\ 1/2$ | $3\ 1/2$ | Push $3\ \frac{1}{2}$ onto Shelf $Y$ |
 | `4` | 0 | 0 | $3\ 1/2$ | 4 | Enter 4 equal cups |
 | `{{key:÷}}` | 0 | 0 | 0 | $7/8$ | Divide $3\ \frac{1}{2} \div 4 = 7/8$ cup |
-| `{{key:a ᵇ/c}}` | 0 | 0 | 0 | $0.875$ | Toggle between exact fraction `7/8` and decimal `0.875` |
+| `{{key:FDISP}}` | 0 | 0 | 0 | $0.875$ | Toggle between exact fraction `7/8` and decimal `0.875` |
 
 Each tasting cup gets $\mathbf{7/8\text{ cup}}$ ($0.875\text{ cup}$) of smoothie—just one eighth of a cup shy of a full cup, so you can pour it right up to the $\frac{3}{4}\text{-cup}$ plus $\frac{1}{8}\text{-cup}$ line on your kitchen pitcher!
 

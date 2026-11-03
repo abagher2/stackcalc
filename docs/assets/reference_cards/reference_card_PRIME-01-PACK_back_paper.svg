@@ -621,9 +621,9 @@
       <rect x="0" y="0" width="775" height="145" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
       <circle cx="28" cy="28" r="14" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
       <text x="28" y="33" class="font-mono" font-size="14px" font-weight="700" text-anchor="middle" fill="#0f172a">1</text>
-      <text x="54" y="33" class="font-mono" font-size="15px" font-weight="700" fill="#0f172a">1. VERIFY TOWER HEIGHTS</text>
+      <text x="54" y="33" class="font-mono" font-size="15px" font-weight="700" fill="#0f172a">1. SEAT 43 BLOCKS IN 4-3-3-2 SOCKETS</text>
       <text x="54" y="66" class="font-sans" font-size="14.5px" fill="#475569">
-        <tspan x="54" dy="0">Seat all 70 blocks into the 12 floor sockets. Ensure every tower matches its</tspan><tspan x="54" dy="22">floor product badge (2048, 2187, 1875, 2401, 2662...).</tspan>
+        <tspan x="54" dy="0">Pack 6x[2] in the 4 left sockets (Cols 0-1), 3x[3] in Front Cols 2-4, 2x[5]</tspan><tspan x="54" dy="22">in Back Cols 2-4, and 2x[7] in Right Cols 5.</tspan>
       </text>
     </g>
 
@@ -631,9 +631,9 @@
       <rect x="0" y="0" width="775" height="145" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
       <circle cx="28" cy="28" r="14" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
       <text x="28" y="33" class="font-mono" font-size="14px" font-weight="700" text-anchor="middle" fill="#0f172a">2</text>
-      <text x="54" y="33" class="font-mono" font-size="15px" font-weight="700" fill="#0f172a">2. CHECK THE 84.0MM WATERLINE</text>
+      <text x="54" y="33" class="font-mono" font-size="15px" font-weight="700" fill="#0f172a">2. CHECK THE 42.0MM WATERLINE</text>
       <text x="54" y="66" class="font-sans" font-size="14.5px" fill="#475569">
-        <tspan x="54" dy="0">Confirm all 12 packed towers level off at the interior 84.0mm summit</tspan><tspan x="54" dy="22">waterline near the top rim of the box.</tspan>
+        <tspan x="54" dy="0">Confirm all 12 packed columns level off flush at the interior 42.0mm (2⁶=64)</tspan><tspan x="54" dy="22">stepped-floor waterline.</tspan>
       </text>
     </g>
 
@@ -643,7 +643,7 @@
       <text x="28" y="33" class="font-mono" font-size="14px" font-weight="700" text-anchor="middle" fill="#0f172a">3</text>
       <text x="54" y="33" class="font-mono" font-size="15px" font-weight="700" fill="#0f172a">3. TUCK CARD &amp; SNAP LID SHUT</text>
       <text x="54" y="66" class="font-sans" font-size="14.5px" fill="#475569">
-        <tspan x="54" dy="0">Place your reference card on top and snap the stage lid onto the rim for</tspan><tspan x="54" dy="22">rattle-free storage.</tspan>
+        <tspan x="54" dy="0">Place your reference card on top and snap the 12-socket stage lid onto the</tspan><tspan x="54" dy="22">rim for rattle-free storage.</tspan>
       </text>
     </g>
 
@@ -664,7 +664,7 @@
   <metadata id="stackcalc-book-macro-manifest" data-kit="BASE-10">
     <stackcalc-macros>
       <macro-ref token="{{blocks:ten_frame_bridging_ten}}" kind="blocks" id="ten_frame_bridging_ten" png="ten_frame_bridging_ten.png" svg="ten_frame_bridging_ten.svg" scene="Education/tools/generate_book_diagrams.py::book_ten_frame_bridging_ten.scad" scad="book_ten_frame_bridging_ten.scad" scad-sources="Education/scad/ten_frames_box.scad,Education/scad/ten_frames_parts.scad" stls="Education/build/stl/components/tenframe_tray_1.stl,Education/build/stl/components/tenframe_counter_face_a_1.stl,Education/build/stl/components/tenframe_box_body.stl" />
-      <macro-ref token="{{blocks:place_value_regrouping}}" kind="blocks" id="place_value_regrouping" png="place_value_regrouping.png" svg="place_value_regrouping.svg" scene="Education/tools/generate_book_diagrams.py::book_place_value_regrouping.scad" scad="book_place_value_regrouping.scad" scad-sources="Education/scad/place_value_box.scad,Education/scad/place_value_parts.scad" stls="Education/build/stl/components/place_value_box_body.stl,Education/build/stl/components/place_value_tray_4x2_1.stl,Education/build/stl/components/pv_digit_block_slate_1.stl" />
+      <macro-ref token="{{blocks:place_value_regrouping}}" kind="blocks" id="place_value_regrouping" png="place_value_regrouping.png" svg="place_value_regrouping.svg" scene="Education/tools/generate_book_diagrams.py::book_place_value_regrouping.scad" scad="book_place_value_regrouping.scad" scad-sources="Education/scad/place_value_box.scad,Education/scad/place_value_parts.scad" stls="Education/build/stl/components/place_value_box_body.stl,Education/build/stl/components/place_value_tray_whole.stl,Education/build/stl/components/pv_digit_block_slate_1_13.stl" />
       <macro-ref token="{{blocks:ten_frame_subitizing_5anchor}}" kind="blocks" id="ten_frame_subitizing_5anchor" png="ten_frame_subitizing_5anchor.png" svg="ten_frame_subitizing_5anchor.svg" scene="Education/tools/generate_book_diagrams.py::book_ten_frame_subitizing_5anchor.scad" scad="book_ten_frame_subitizing_5anchor.scad" scad-sources="Education/scad/ten_frames_box.scad,Education/scad/ten_frames_parts.scad" stls="Education/build/stl/components/tenframe_box_body.stl,Education/build/stl/components/tenframe_tray_1.stl,Education/build/stl/components/tenframe_counter_face_a_1.stl,Education/build/stl/components/tenframe_miniblock_10_1.stl" />
       <macro-ref token="{{blocks:ten_frames_hero}}" kind="blocks" id="ten_frames_hero" png="ten-frames-hero.png" svg="ten-frames-hero.png" scene="Tools/rendering/render_product_stills.py::render_ten_frames" scad="Education/scad/ten_frames_box.scad" scad-sources="Education/scad/ten_frames_box.scad,Education/scad/ten_frames_parts.scad" stls="scratch/stl/education/ten_frames_box.stl,scratch/stl/ten_frame_tray.stl,scratch/stl/ten_frame_shelf.stl,scratch/stl/ten_frame_counter.stl" />
       <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />

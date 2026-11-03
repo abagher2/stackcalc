@@ -87,7 +87,7 @@ hide:
           "name": "How does the kit teach decimal place value?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The kit includes a dedicated Decimal Numbers Tray (TENTHS, HUNDREDTHS, THOUSANDTHS, 10-THOUS, 100-THOUS, MILLIONTHS) with a tactile decimal point on its left edge. Placing the Whole Numbers Tray and Decimal Tray side-by-side forms a continuous 12-column real-number workstation."
+            "text": "The kit includes a dedicated 6x2 Decimal Numbers Tray (.1, .01, .001, 10^-4, 10^-5, 10^-6) with a tactile decimal point on its left edge. Placing the Whole Numbers Tray (100K, 10K, 1K, 100, 10, 1) and Decimal Tray side-by-side forms a continuous 12-column real-number workstation."
           }
         },
         {
@@ -270,15 +270,15 @@ hide:
         </tr>
         <tr>
           <td class="ec-spec-k">Activity Trays</td>
-          <td class="ec-spec-v">Two 6&times;2 pull-out trays (117.4 &times; 38.6 mm): Whole Numbers (100k–1) and Decimal Numbers (0.1–0.000001)</td>
+          <td class="ec-spec-v">Two 6&times;2 pull-out trays (117.4 &times; 38.6 mm): Whole Numbers (<code>100K, 10K, 1K, 100, 10, 1</code>) and Decimal Numbers (<code>.1, .01, .001, 10^-4, 10^-5, 10^-6</code>)</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Miniblock Footprint</td>
           <td class="ec-spec-v">0.5U Gridfinity pitch (19.0 &times; 19.0 mm), 7.0 mm visible height, 1.85 mm recessed top stacking socket</td>
         </tr>
         <tr>
-          <td class="ec-spec-k">Pieces Included</td>
-          <td class="ec-spec-v">40 digit blocks (4 sets of 0–9) + 4 extra zero blocks + 9 stackable +1 regrouping unit tokens = 53 total blocks</td>
+          <td class="ec-spec-k">Pieces Included (57 Total)</td>
+          <td class="ec-spec-v">44 digit blocks (22 Set A: 8&times; '0', 4&times; '6', 2&times; '1–5'; 22 Set B: 4&times; '7', 4&times; '8', 4&times; '9', 2&times; '1–5') + 9 stackable +1 regrouping unit tokens + 2 6&times;2 trays + 1 7U box + 1 <code>[123]</code> lid = 57 pieces</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Material</td>

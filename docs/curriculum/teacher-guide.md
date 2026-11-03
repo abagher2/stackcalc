@@ -12,35 +12,37 @@ description: "Classroom facilitation guide for teachers using StackCalc Place Va
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
   <a href="../" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📖 Master Guide</a>
-  <a href="../sc6-elementary-companion-workbook/" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">📗 SC-6 Companion Workbook (253 Problems)</a>
-  <a href="../sc32-scientific-companion-workbook/" class="px-3 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 transition font-bold">📘 SC-32 Companion Casebook (339 Problems)</a>
-  <a href="../big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🚀 Big Ideas 45-Day Catch-Up (SC-6)</a>
-  <a href="../rpn-elementary-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ RPN Power Guide</a>
-  <a href="../worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 120 Station Worksheets</a>
+  <a href="../answers/" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">🔑 Online Answer Keys</a>
+  <a href="../sc6-elementary-companion-workbook/" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">📗 Book 2A: Early Elementary</a>
+  <a href="../sc6-elementary-companion-workbook/" class="px-3 py-1.5 rounded bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-500/30 transition font-bold">📘 Book 2B: Upper Elementary</a>
+  <a href="../big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">📙 Book 3: Middle School</a>
+  <a href="../sc32-scientific-companion-workbook/" class="px-3 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 transition font-bold">📕 Book 4: High School & STEM</a>
+  <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">🧑‍🏫 Book 1: Teacher Guide</a>
+  <a href="../worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 Worksheets</a>
   <a href="../alignment-matrix/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎯 Standards Matrix</a>
-  <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">🧑‍🏫 Teacher Guide</a>
   <a href="../uil-competition/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🏆 UIL Competition</a>
 </nav>
 
 Integrating physical manipulatives and calculators into a busy classroom—or a home study table—works best when every tool serves a clear mathematical purpose. Because **no one wakes up searching for an "RPN calculator curriculum"**—ours is the first ever built—every book in the StackCalc Learning Lab has a **separate print cover** and begins in standard book order with a **Title Page (`Page i`)**, **Copyright & Library Colophon Page (`Page ii`)**, **Table of Contents (`Page iii`)**, and **Educator / Student Preface (`Page iv+`)** that introduce our ecosystem from zero assumptions:
 
 1. **The Mathematical Concept (Grounded in the Stack):** When you solve math by hand on paper, you hold your first quantity on a top **Waiting Line (`Y`)**, write your second quantity below it on an active **Workbench (`X`)**, and then apply the operation (`+`, `-`, `×`, `÷`). Every lesson begins with this inside-out mathematical structure—never with mechanical button-pushing.
-2. **The Three Published Physical Block Kits (Used When Applicable):** Where concrete geometry genuinely clarifies the concept, students build the structure first using one of our three published manipulative kits—**[Place Value Studio (`PLACE-01`)](../products/place-value/index.md)** (`0–9` digit blocks & Gold `[+1]` carry tokens on a 2-row tray mirroring `Y` and `X`), **[Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)** (`84.0 mm` proportional towers where common denominators stand dead-flush), or **[Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)** (logarithmic prime blocks `2, 3, 5, 7` where equal products have equal tower height). Where geometric diagrams or coordinate tables are more honest (such as trigonometry), we use diagrams directly rather than forcing plastic blocks into an artificial role.
+2. **The Three Published Physical Block Studios:** Where concrete geometry clarifies Place Value, Fractions, or Prime Factors, students build the structure first using one of our three Published Block Studios—**[Place Value Studio (`PLACE-01`)](../products/place-value/index.md)** (`0–9` digit blocks & Gold `[+1]` carry tokens on a 2-row tray mirroring `Y` and `X`), **[Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)** (`84.0 mm` proportional towers where common denominators stand dead-flush), or **[Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)** (logarithmic prime blocks `2, 3, 5, 7` scaled to $h(p) = 7.0 \cdot \log_2(p)\text{ mm}$ where equal products stand equal in height)—before solving by hand in their workbook.
 3. **The Four-Line Stack Calculators (`SC-6` Elementary & `SC-32` Scientific):** Because there is no `[=]` key and no parentheses keys, the calculator is never a "black box." Students predict the result by hand first, then verify step-by-step across four visible stack registers (`T, Z, Y, X`).
 4. **Companion Illustrated Storybooks & State/District Curriculum Integration:** Pairs with our illustrated history-of-math trade books—**[From Blocks to the Stack (Grades K–6 / SC-6)](../manuals/sc6/index.md)** and **[Thinking in the Stack (Grades 7–12 / SC-32)](../manuals/sc32/index.md)**—and plugs directly into state-mandated standards (**Common Core CCSS**, **Texas TEKS**, **Florida B.E.S.T.**, **Virginia SOL**, **AP**) and district basal textbooks (*Eureka Math / EngageNY*, *Illustrative Mathematics*, *enVision Mathematics*, *Big Ideas Math*, *HMH Into Math*, *Bridges in Mathematics*, and *Dimensions Math*) without changing a teacher's pacing calendar.
 
 <div class="p-5 rounded-xl bg-slate-900/90 border border-amber-500/40 my-6 shadow-lg">
   <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
     <div>
-      <div class="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">THE 4-BOOK US LETTER SPIRAL CURRICULUM LINEUP (TEACHER GUIDE + 3 STUDENT WORKBOOKS)</div>
-      <div class="text-sm text-slate-200 font-semibold">Download our unified 57-page K–12 Master Teacher's Guide by Concept (Book 1) and the 3 companion Student Workbooks (Book 2: General K–12 Hands-On Math Lab, Book 3: Middle School Math Lab, Book 4: Stack Speed &amp; Fluency), order lay-flat spiral editions on Lulu, or print individual 4-page Unit Packets separately.</div>
+      <div class="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">THE 6-VOLUME US LETTER CURRICULUM LINEUP (1 MASTER TEACHER GUIDE + 5 GRADE-BAND WORKBOOKS)</div>
+      <div class="text-sm text-slate-200 font-semibold">Download our unified 46-page K–12 Master Teacher's Guide by Concept (Book 1, with printed worked answers on every Domain page) and the 5 companion 128-page Student Workbooks (Book 2A: Early Elementary K–2, Book 2B: Upper Elementary 3–5, Book 3: Middle School 6–8, Book 4: High School &amp; STEM 9–12, Book 5: Stack Speed &amp; Fluency), or print individual 4-page Unit Packets separately.</div>
     </div>
     <div class="flex flex-wrap gap-2.5">
-      <a href="../../downloads/stackcalc-curriculum-guide-letter.pdf" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition shadow">📕 Book 1: Unified Teacher's Guide (57 pp. Letter)</a>
-      <a href="../../downloads/stackcalc-student-lab-workbook-letter.pdf" class="px-3.5 py-2 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-mono text-xs font-bold transition">📗 Book 2: K–12 Student Lab Workbook (30 pp.)</a>
-      <a href="../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" class="px-3.5 py-2 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-mono text-xs font-bold transition">📘 Book 3: Middle School Math Lab (115 pp.)</a>
-      <a href="../../downloads/stackcalc-student-proficiency-trials.pdf" class="px-3.5 py-2 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/40 font-mono text-xs font-bold transition">⚡ Book 4: Student Speed Trials (24 pp.)</a>
-      <a href="https://www.lulu.com/spotlight/stackcalc" class="px-3.5 py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-mono text-xs font-bold transition">📘 Order Spiral Editions on Lulu ↗</a>
+      <a href="../../downloads/stackcalc-curriculum-guide-letter.pdf" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition shadow">📕 Book 1: Master Teacher's Guide (46 pp.)</a>
+      <a href="../../downloads/StackCalc-Book-2A-Early-Elementary-Math-Lab.pdf" class="px-3.5 py-2 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-mono text-xs font-bold transition">📗 Book 2A: Early Elem K–2 (128 pp.)</a>
+      <a href="../../downloads/StackCalc-Book-2B-Upper-Elementary-Math-Lab.pdf" class="px-3.5 py-2 rounded-lg bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-500/40 font-mono text-xs font-bold transition">📘 Book 2B: Upper Elem 3–5 (128 pp.)</a>
+      <a href="../../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" class="px-3.5 py-2 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-mono text-xs font-bold transition">📙 Book 3: Middle School 6–8 (128 pp.)</a>
+      <a href="../../downloads/StackCalc-Book-4-High-School-STEM-Lab.pdf" class="px-3.5 py-2 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 font-mono text-xs font-bold transition">📕 Book 4: High School 9–12 (128 pp.)</a>
+      <a href="../../downloads/StackCalc-Book-5-Stack-Speed-and-Fluency.pdf" class="px-3.5 py-2 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/40 font-mono text-xs font-bold transition">⚡ Book 5: Speed &amp; Fluency (128 pp.)</a>
       <a href="#print-individual-curriculum-units-units-0112-separate-pdfs" class="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-slate-200 border border-white/20 font-mono text-xs font-bold transition">🖨️ Print Individual Units (01–12)</a>
     </div>
   </div>
@@ -90,8 +92,15 @@ Consider what happens when a middle school student evaluates $\frac{8 + 4}{9 - 3
 | **Try-It 3: Two-Dot Fractions (`1/3 + 1/4 = 7/12`)** | `[.] [1] [.] [3] [ENTER] [.] [1] [.] [4] [+]` | Pressing `[.]` twice on the SC-6 enters a fraction (`0.1.3` = `1/3`). Press `[+]` $\rightarrow$ displays **`7/12`** as an exact fraction. |
 | **Try-It 4: Fixing Reversed Numbers (`20 ÷ 4 = 5`)** | `[4] [ENTER] [2] [0] [x⇄y] [÷]` | Typed `4` then `20` when you meant `20 ÷ 4`? Press Swap (`[x⇄y]` / `[⇅]`) to flip `Y` and `X`, then press `[÷]` $\rightarrow$ `5`. |
 
-> [!TIP] **Your 60-Second Day 1 Script (Read Aloud to Introduce the Stack to Students)**
+> [!TIP] **Your 60-Second Day 1 Script, Stack Hand-Signals & Partner Protocols**
 > *"Class, look at your calculator—notice there is no equals sign and no parentheses. That is because this calculator works just like the blocks on your desk. The bottom line, **Line X**, is your **Workbench** where you type a number. The line right above it, **Line Y**, is your **Waiting Shelf**. When we want to add `8 + 5`, we first type `8` and press **`[ENTER]`** to push `8` up onto the Waiting Shelf. Then we type `5` on our Workbench, and press **`[+]`** to combine them. Put the two numbers on the shelves first, then press the operation key."*
+>
+> - **4 Physical Stack Hand-Signals:** **Hands flat on desk** = Register `X` (Workbench) • **Hands at chest height** = Register `Y` (Waiting Shelf) • **Hands at shoulder height** = Register `Z` • **Hands overhead** = Top Shelf `T`.
+> - **Partner Roles & The Two-Token Rule:** Pair students as **Partner A (*The Architect*, builds the physical block model first for a `+10` token)** and **Partner B (*The Stack Navigator*, verifies on the keypad for a `+10` token)**, swapping roles every 3 problems so no student skips the concrete blocks. End every lab with the **60-Second Gridfinity Socket Count-In** (`84.0 mm` flush waterline check).
+> - **SC-6 Pedagogical Superpower Keys & Classroom `[FLAGS]` (`[g] [FLAGS]`):**
+>   - **`[SIMP]` (Step-by-Step Fraction Reduction, `Flag 8`):** Shows the true unreduced product first (e.g., `2/3 × 3/4 = 6/12` matching the 12-part area grid) and steps down factor by factor to `LOWEST TERMS` when the student presses **`[SIMP]`**.
+>   - **`[LASTX]` (`[g] [LSTx]` — 2-Tap Inverse Detective Check):** Recalls the last number consumed by an operation so students can check division with multiplication or subtraction with addition in two taps.
+>   - **Classroom Flags (`[g] [FLAGS]`):** **`Flag 6`** toggles **Classroom Silent Mode**; **`Flag 7`** switches between **2-Shelf Beginner Mode (`2-LVL`, K–2)** and **4-Shelf Full Stack (`4-LVL`)**; **`Flag 8`** toggles **Manual `[SIMP]` vs. Auto-Simplify**.
 
 ---
 
@@ -129,27 +138,32 @@ Below are the **step-by-step orthographic checks** and **9 lesson-linked classro
 
 ![Prime Factor Studio Orthographic Step-by-Step Teacher Check](../assets/curriculum/prime_factor_ortho_steps.png)
 
-| Classroom Game (10–12 Min Partner Activity) | How Students Play with the Logarithmic Prime Blocks (`h = k·log10(p)`) | How to Check Students Are Right + SC-6 Keys |
+| Classroom Game (10–12 Min Partner Activity) | How Students Play with the Logarithmic Prime Blocks ($h(p) = 7.0 \cdot \log_2(p)\text{ mm}$) | How to Check Students Are Right + SC-6 Keys |
 | :--- | :--- | :--- |
-| **Game 1: *"The Commutative Skyscraper Race (`2 × 3 × 5 = 30`)"***<br>*(Units 07 & 10 • Grades 3–6)* | Call out a composite number (e.g., `12`, `30`, or `42`). Partner A factors it using one factor tree (e.g., `30 = 6 × 5` $\rightarrow$ `[2] + [3] + [5]`) and stacks the prime blocks in Col 2. Partner B uses a different factor tree (`30 = 10 × 3` $\rightarrow$ `[5] + [2] + [3]`) in Col 3. Because block height is proportional to $\log_{10}(p)$, both towers stand **flush (`34.35 mm`)**—demonstrating commutativity and unique factorization physically. | **Walk-By Check:** Both factor trees stand flush (`0.000 mm` step) regardless of stacking order (`[2][3][5]` vs `[5][3][2]`).<br>**SC-6 Keys (`30 = 2 × 3 × 5`):**<br>`[3] [0] [ENTER] [FACT]` |
+| **Game 1: *"The Commutative Skyscraper Race (`2 × 3 × 5 = 30`)"***<br>*(Units 07 & 10 • Grades 3–6)* | Call out a composite number (e.g., `12`, `30`, or `42`). Partner A factors it using one factor tree (e.g., `30 = 6 × 5` $\rightarrow$ `[2] + [3] + [5]`) and stacks the prime blocks in Col 2. Partner B uses a different factor tree (`30 = 10 × 3` $\rightarrow$ `[5] + [2] + [3]`) in Col 3. Because block height follows $h(p) = 7.0 \cdot \log_2(p)\text{ mm}$ (`[2] = 7.0 mm = 1U`, `[3] = 11.09 mm`, `[5] = 16.25 mm`), both towers stand **flush (`34.35 mm`)**—demonstrating commutativity and unique factorization physically. | **Walk-By Check:** Both factor trees stand flush (`0.000 mm` step) regardless of stacking order (`[2][3][5]` vs `[5][3][2]`).<br>**SC-6 Keys (`30 = 2 × 3 × 5`):**<br>`[3] [0] [ENTER] [FACT]` |
 | **Game 2: *"Impossible Impostor (Fundamental Theorem Challenge)"***<br>*(Units 07, 10 & MS Unit 01 • Grades 5–8)* | Student A builds a prime tower (e.g., `12 = [2] + [2] + [3] = 25.10 mm`) and challenges Student B to match its exact height using **different** prime blocks (e.g., trying `[5] + [2] = 10 = 23.25 mm` or `[2] + [7] = 14 = 26.65 mm`). Students see immediately that **no other combination of primes will ever stand flush**—experiencing the Fundamental Theorem of Arithmetic in their hands. | **Walk-By Check:** Any wrong prime factor creates an immediate height step (like the red `2×3×7 = 42` tower stepping above `30` in Step 3 above).<br>**SC-6 Keys:**<br>`[1] [2] [FACT]` vs `[1] [4] [FACT]` |
 | **Game 3: *"Side-by-Side GCF Overlap & LCM Union Duel"***<br>*(Units 07, 10 & MS Unit 01 • Grades 5–8)* | Given `A = 20` and `B = 50`, students stack Tower A (`[2]+[2]+[5]`) in Col 1 and Tower B (`[2]+[5]+[5]`) in Col 2. To build **`GCF(20,50) = 10`** in Col 0, they copy only the **shared** prime blocks present in both towers (`[2]+[5]`). To build **`LCM(20,50) = 100`** in Col 3, they stack the **tallest count** of each prime (`[2]+[2]+[5]+[5]`), then verify `[FACT]`, `[GCF]`, and `[LCM]` on the SC-6. | **Walk-By Check:** Col 0 (`GCF`) is the shortest tower, Col 3 (`LCM`) is the tallest tower, and `h(GCF) + h(LCM) = h(A) + h(B)`.<br>**SC-6 Keys:**<br>`[2] [0] [ENTER] [5] [0] [GCF]` (`10`) & `[LCM]` (`100`) |
 
 ---
 
-## 📐 Curriculum Architecture: 1 Unified Teacher's Guide by Concept + 3 Student Workbooks
+## 📐 Curriculum Architecture: 1 Unified Teacher's Guide by Concept + 5 Grade-Band Student Workbooks
 
-Most public, charter, and private school teachers do not choose their district's textbook—they are bound to state standards (**Common Core CCSS**, **Texas TEKS**, **Florida B.E.S.T.**, **Virginia SOL**) and an adopted basal series (*Eureka Math / EngageNY*, *Illustrative Mathematics*, *enVision Mathematics*, *Big Ideas Math*, *HMH Into Math*, or *Bridges in Mathematics*). Our US Letter (`8.5" × 11"`) curriculum is organized by **universal mathematical concept** so teachers can plug any lesson into their existing textbook pacing without changing their calendar:
+Most public, charter, and private school teachers do not choose their district's textbook—they are bound to state standards (**Common Core CCSS**, **Texas TEKS**, **Florida B.E.S.T.**, **Virginia SOL**) and an adopted basal series (*Eureka Math / EngageNY*, *Illustrative Mathematics*, *enVision Mathematics*, *Big Ideas Math*, *HMH Into Math*, or *Bridges in Mathematics*). Our US Letter (`8.5" × 11"`) curriculum is organized by **universal mathematical concept** so teachers and homeschool parents can plug any lesson into their existing textbook pacing without changing their calendar:
 
-- **Why the Teacher's Guide Is Organized into One Volume by Mathematical Concept (Book 1):** Teachers, math coaches, interventionists, and homeschool parents need to see **vertical progression** (how counting and place value connect to fractions, prime factorization, algebraic expressions, and the 4-level stack), **concept-first explanations (`1. Concept → 2. Blocks (When Applicable) → 3. Calculator`)**, **misconception diagnostics**, and **State Standards & District Textbook Crosswalks** (*CCSS*, *TEKS*, *Eureka Math*, *Illustrative Math*, *enVision*, *Big Ideas*, *Bridges*) in a single desk manual—plus complete worked solutions and canonical SC-6/SC-32 keystrokes for every student workbook.
-- **Why Students Have Separate Unit-Aligned Workbooks with Self-Check Appendices (Books 2, 3, and 4):** Students need clean, uncluttered write-in pages organized unit-by-unit or section-by-section, beginning with a friendly **Student & Family Preface** that explains why the calculator has an `[ENTER]` key instead of `[=]`, and closing with a **compact Student Self-Check Answer Key Appendix** so learners can verify their own answers immediately after checking on their calculator.
+- **Why the Teacher's Guide Is Organized into One Volume by Mathematical Concept (Book 1, 46 Pages):** Teachers, math coaches, interventionists, and homeschool parents need to see **vertical progression** (how counting and place value connect to fractions, prime factorization, algebraic expressions, and the 4-level stack), **concept-first explanations (`1. Concept → 2. Blocks → 3. Paper → 4. Calculator`)**, **misconception diagnostics**, **worked answers printed directly on every Concept Domain spread (`Pages A & B`)**, and **State Standards & District/Homeschool Crosswalks** (*CCSS*, *TEKS*, *Singapore*, *Saxon*, *RightStart*, *AoPS*, *Eureka*, *Illustrative*, *Big Ideas*, *Bridges*) in a single desk manual.
+- **Why Students Have Separate 128-Page Grade-Band Workbooks (Books 2A, 2B, 3, 4 & 5):** Students need clean, uncluttered write-in pages organized unit-by-unit without back-of-book answer tables tempting them to peek. Each 11-page unit in **Books 2A, 2B & 4** includes **6 Leveled Practice Worksheets (`Practice A` through `Practice F`)** engineered for a **5-Day Weekly Rhythm** and **3-Tier Classroom Differentiation**:
+  - **Tier 1 — Concrete Foundation & Intervention (`Practice A & B`, Day 2):** Hands-on 3D block pairing, visual models, and core 2-step stack fluency.
+  - **Tier 2 — Grade-Level Core & Error Analysis (`Practice C & D`, Day 3):** Multi-step word problems, mental math shortcuts, and *"Spot the Mistake"* diagnostics.
+  - **Tier 3 — Challenge & Fast Finishers (`Practice E, F & STEM Lab`, Days 4–5):** Multi-step synthesis, championship problems, 100-Point Unit Mastery Quiz, and Applied STEM Case Study.
 
-| Spiral Book (US Letter `8.5" × 11"`) | Audience & Structure | Interior PDF | Lulu Coil Cover PDF (`8.75" × 11.25"`) |
+| Curriculum Volume (US Letter `8.5" × 11"`) | Audience & Structure | Interior PDF | Online Answer Key |
 | :--- | :--- | :--- | :--- |
-| **Book 1: *Teaching with the Stack***<br>*(Unified K–12 Master Teacher's Guide by Concept)* | **Teachers, Coaches & Parents (57 Pages):**<br>• **Title & Copyright Page (`p. i`) & Educator Prefaces (`pp. ii–iii`):** Ecosystem Overview, Why Teach with a Stack, and Using This Guide with Your Mandated District Curriculum<br>• **Orientation & Block Kits (`pp. iv–ix`):** Table of Contents (`p. iv`), **First-Time Teacher 3-Minute RPN Primer (`pp. v–vi`)** & **3 Published Block Studios: Games & Orthographic Teacher Check (`pp. vii–ix`)**<br>• **State Standards (`CCSS`/`TEKS`) & District Crosswalks (`pp. 1–3`)**<br>• **Part I (`pp. 4–27`):** Concept Domains 01–12 (**1. Concept & Stack Approach → 2. Blocks (When Applicable) & Teacher Talk → 3. Calculator Stack Trace**, plus Extension & Misconception Remediations)<br>• **Part II (`pp. 28–40`):** Middle School Section Coaching (`Concept → Blocks → Calculator`) & Complete 900-Problem Worked Keys (*Big Ideas* Units 1–10)<br>• **Part III (`pp. 41–47`):** Master Answer Keys for Books 2 & 4, Keycap Reference, Pacing Log & **Send-Home Parent Welcome Letter (`p. 47`)** | **[📄 Download Book 1 PDF (57 pp.)](../downloads/stackcalc-curriculum-guide-letter.pdf)** | **[🎨 Book 1 Lulu Cover PDF](../downloads/stackcalc-curriculum-guide-lulu-cover.pdf)** |
-| **Book 2: *Hands-On Math Lab***<br>*(K–12 Student Manipulative & Stack Workbook)* | **Students Grades K–12 (30 Pages):**<br>• **Title & Copyright Page (`p. i`), Student & Family Preface (`p. ii`) & Contents (`p. iii`):** How Your Blocks, Storybooks & 4-Line Stack Calculator Work Together<br>• **12 Two-Page Unit Spreads (`pp. 1–24`):** Odd Page = Concept Rules, Block Model (When Applicable), Stack Walkthrough & Story Context; Even Page = 4-Problem Hands-On Lab Investigation Worksheet<br>• **Appendices A & B (`pp. 25–26`):** Student Self-Check Answer Key (`Appendix A`) & Stack Mastery Certificate (`Appendix B`) | **[📄 Download Book 2 PDF (30 pp.)](../downloads/stackcalc-student-lab-workbook-letter.pdf)** | **[🎨 Book 2 Lulu Cover PDF](../downloads/stackcalc-student-lab-workbook-lulu-cover.pdf)** |
-| **Book 3: *Middle School Math Lab***<br>*(Two-Method Student Practice Workbook)* | **Students Grades 6–8 (114 Pages):**<br>• **Title & Copyright Page (`p. i`) & Student Preface (`p. ii`) + 10 Unit Story Openers + 90 Worksheets (`Practice A & B` across 45 Sections = `900 Problems`)**<br>• **Appendices A–E (`pp. 103–111`):** Reference Appendices A–D + **Appendix E Compact Student Self-Check Answer Key (`pp. 107–111`)** | **[📄 Download Book 3 PDF (114 pp.)](../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf)** | **[🎨 Book 3 Lulu Cover PDF](../downloads/worksheets/bigideas_middle_school_sc6_workbook_lulu_cover.pdf)** |
-| **Book 4: *Stack Speed & Fluency***<br>*(Student Speed & Proficiency Trials Workbook)* | **Students Grades 3–12 & UIL Competitors (23 Pages):**<br>• **Title & Copyright Page (`p. i`), Competitor Preface (`p. ii`) & Rules/Log (`p. 1`) + 15 Timed Speed Sprints (`pp. 2–16`)**<br>• **Appendices A–C (`pp. 17–20`):** Student Self-Check Answer Keys (`Appendix A, pp. 17–18`), Inside-Out RPN Speed Tactics (`Appendix B, p. 19`), and Progress Graph & Certificate (`Appendix C, p. 20`) | **[📄 Download Book 4 PDF (23 pp.)](../downloads/stackcalc-student-proficiency-trials.pdf)** | **[🎨 Book 4 Lulu Cover PDF](../downloads/stackcalc-proficiency-trials-lulu-cover.pdf)** |
+| **Book 1: *Teaching with the Stack***<br>*(Unified K–12 Master Teacher's Guide by Concept)* | **Teachers, Coaches & Parents (46 Pages):**<br>• **Front Matter (`pp. i–x`):** Title/Colophon (`pp. i–ii`), Table of Contents (`p. iii`), Educator Prefaces (`pp. iv–v`), **3-Minute Hands-On RPN Primer (`pp. vi–vii`)** & **3 Published Block Studios: Games & 2-Second Walk-By Checks (`pp. viii–x`)**<br>• **Homeschool & State Standards Crosswalks (`pp. 1–3`)**<br>• **Part I (`pp. 4–27`):** Concept Domains 01–12 (**1. Concept & Stack Approach → 2. Blocks / Visual Model & Teacher Talk → 3. Calculator Stack Trace → 4. Story Context & Worked Answers for Warm-Ups A/B & Investigations 1–4**)<br>• **Part II (`pp. 28–32`):** Middle School Units 01–10 Coaching (`Concept → Blocks → Calculator`), Misconception Matrix & Mastery Roster<br>• **Part III (`pp. 33–36`):** Online Answer Key Directory, 3-Studio Manipulative & Keycap Reference, **5-Day Pacing & 3-Tier Differentiation Log (`p. 35`)** & **Family Welcome Guide (`p. 36`)** | **[📄 Download Book 1 PDF (46 pp.)](../downloads/stackcalc-curriculum-guide-letter.pdf)** | **[🔑 Master Answer Key](answers.md)** |
+| **Book 2A: *Early Elementary Math Lab***<br>*(Grades K–2 • SC-6 Elementary)* | **Students Grades K–2 (128 Pages • 840 Verified Problems):**<br>• **Front Matter (`pp. i–iv`) & 4-Page CRA / Stack Bootcamp (`pp. 1–4`)**<br>• **10 Eleven-Page Units (`pp. 5–114`):** Core & Extension Labs, 4 Hands-On Investigations, **6 Leveled Worksheets (`Practice A–F`)**, 100-Point Mastery Quiz & Applied STEM Lab (`80 problems/unit`)<br>• **Appendices A–D (`pp. 115–124`):** Award Certificate, Progress Tracker, **4 Cumulative Benchmark Exams (`40 problems`)** & 3D Manipulative Studio Reference | **[📄 Download Book 2A PDF (128 pp.)](../downloads/StackCalc-Book-2A-Early-Elementary-Math-Lab.pdf)** | **[🔑 Book 2A Answers](answers.md#early-elementary)** |
+| **Book 2B: *Upper Elementary Math Lab***<br>*(Grades 3–5 • SC-6 Elementary)* | **Students Grades 3–5 (128 Pages • 840 Verified Problems):**<br>• **Front Matter (`pp. i–iv`) & 4-Page CRA / Stack Bootcamp (`pp. 1–4`)**<br>• **10 Eleven-Page Units (`pp. 5–114`):** Core & Extension Labs, 4 Hands-On Investigations, **6 Leveled Worksheets (`Practice A–F`)**, 100-Point Mastery Quiz & Applied STEM Lab (`80 problems/unit`)<br>• **Appendices A–D (`pp. 115–124`):** Award Certificate, Progress Tracker, **4 Cumulative Benchmark Exams (`40 problems`)** & 3D Manipulative Studio Reference | **[📄 Download Book 2B PDF (128 pp.)](../downloads/StackCalc-Book-2B-Upper-Elementary-Math-Lab.pdf)** | **[🔑 Book 2B Answers](answers.md#upper-elementary)** |
+| **Book 3: *Middle School Math Lab***<br>*(Grades 6–8 • SC-6 Elementary)* | **Students Grades 6–8 (128 Pages • 900 Section Problems + 10 Unit Quizzes):**<br>• **Front Matter & Bootcamp + 10 Units (45 Sections):** Story Openers, 90 Two-Method Worksheets (`Practice A & B` = `900 Problems`) & 10 End-of-Unit Mastery Quizzes | **[📄 Download Book 3 PDF (128 pp.)](../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf)** | **[🔑 Book 3 Answers](answers.md#middle-school)** |
+| **Book 4: *High School & STEM Lab***<br>*(Grades 9–12 & AP • SC-32 Scientific)* | **Students Grades 9–12 (128 Pages • 840 Verified Problems):**<br>• **Front Matter (`pp. i–iv`) & 4-Page CRA / Stack Bootcamp (`pp. 1–4`)**<br>• **10 Eleven-Page Units (`pp. 5–114`):** Core & Extension Labs, 4 Hands-On Investigations, **6 Leveled Worksheets (`Practice A–F`)**, 100-Point Mastery Quiz & Applied STEM Lab (`80 problems/unit`)<br>• **Appendices A–D (`pp. 115–124`):** Award Certificate, Progress Tracker, **4 Cumulative Benchmark Exams (`40 problems`)** & 3D Manipulative Studio Reference | **[📄 Download Book 4 PDF (128 pp.)](../downloads/StackCalc-Book-4-High-School-STEM-Lab.pdf)** | **[🔑 Book 4 Answers](answers.md#high-school)** |
+| **Book 5: *Stack Speed & Fluency***<br>*(Full-Year Edition • Grades 3–12 & UIL)* | **Students Grades 3–12 & Competitors (128 Pages • 3,690 Verified Problems):**<br>• **Front Matter (`pp. i–iv`) & 180-Test Master Trackers (`pp. 1–2`)**<br>• **15 Seven-Page Speed Sections (`pp. 3–107`):** 1-Page Speed Lesson & Playbook + 12 Progressive 20-Problem Timed Tests (`Tests A1–A3, B1–B3, C1–C3, D1–D3` = `180 Tests`)<br>• **Appendices A–E (`pp. 108–124`):** Stack Tactics, Mental Sprints, Progress Graph, Award Certificate & 3D Block Studio Reference | **[📄 Download Book 5 PDF (128 pp.)](../downloads/StackCalc-Book-5-Stack-Speed-and-Fluency.pdf)** | **[🔑 Book 5 Answers](answers.md#speed-fluency)** |
 
 ---
 
@@ -166,10 +180,10 @@ Every curriculum unit below is aligned to the mathematical progressions in **[Fr
 | **[Unit 05: The 4-Register Stack: Four Operations & Automatic Lift](#unit-05)** | Grades 3–4 | [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) — Place Value Blocks & 4-Register Stack + **SC-6 Elementary** | *Inside the 4-Floor Number Elevator (T, Z, Y, X) & Young Gauss's 10-Second Shortcut* ([Read Chapter](../manuals/sc6/02-rpn-for-young-learners.md)) | **[📄 Print Unit 05 PDF (4 pp.)](../downloads/curriculum_units/stackcalc_curriculum_unit_05.pdf)** |
 | **[Unit 06: Fraction Studio: Height Equivalence & Two-Dot Notation](#unit-06)** | Grades 4–5 | [Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) — 84 mm Fraction Towers & Twin Comparator Well + **SC-6 Elementary** | *The Pharaoh's Bakery, Pythagoras's Guitar Strings & Why Your Fraction Towers Stand 84.0 mm Tall* ([Read Chapter](../manuals/sc6/05-fractions-decimals-ratios.md)) | **[📄 Print Unit 06 PDF (4 pp.)](../downloads/curriculum_units/stackcalc_curriculum_unit_06.pdf)** |
 | **[Unit 07: Postfix Evaluation, Factor Trees & Chained Operations](#unit-07)** | Grades 5–6 | [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) — Prime Factor Studio (Logarithmic Prime Blocks) & 4-Register Stack + **SC-6 Elementary** | *Why 24 Is the Champion Packing Number, The Typesetter's Bargain & Dijkstra's 1961 Railway Siding* ([Read Chapter](../manuals/sc32/02-rpn-stack-dynamics.md)) | **[📄 Print Unit 07 PDF (4 pp.)](../downloads/curriculum_units/stackcalc_curriculum_unit_07.pdf)** |
-| **[Unit 08: Algebraic Expressions, Base-x Polynomials & Quadratic Factoring](#unit-08)** | Grades 7–8 | [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) — Place Value Studio (Base-x Coefficient Trays) & Prime Factor Studio + **SC-6 & SC-32 Bridge** | *From Al-Khwarizmi's Squares to the 1535 Duel in Milan & Kahan's [POLY] Solver* ([Read Chapter](../manuals/sc32/07-polynomials-brent-solver.md)) | **[📄 Print Unit 08 PDF (4 pp.)](../downloads/curriculum_units/stackcalc_curriculum_unit_08.pdf)** |
-| **[Unit 09: Trigonometry, Vectors & Polar/Rectangular Coordinates](#unit-09)** | Grades 9–11 | [Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) — Fraction Studio (84 mm Ratio Towers) & Place Value Studio (Vector Component Trays) + **SC-32 Scientific** | *A Stick in Alexandria: How Eratosthenes Measured the Earth with a Shadow & Crosswind Vectors* ([Read Chapter](../manuals/sc32/04-trig-vectors-polar.md)) | **[📄 Print Unit 09 PDF (4 pp.)](../downloads/curriculum_units/stackcalc_curriculum_unit_09.pdf)** |
+| **[Unit 08: Algebraic Expressions, Base-x Polynomials & Quadratic Factoring](#unit-08)** | Grades 7–8 | [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) — Prime Factor Studio (Factor Pairs) & 2×2 Algebraic Area Grid + **SC-6 & SC-32 Bridge** | *From Al-Khwarizmi's Squares to the 1535 Duel in Milan & Kahan's [POLY] Solver* ([Read Chapter](../manuals/sc32/07-polynomials-brent-solver.md)) | **[📄 Print Unit 08 PDF (4 pp.)](../downloads/curriculum_units/stackcalc_curriculum_unit_08.pdf)** |
+| **[Unit 09: Trigonometry, Vectors & Polar/Rectangular Coordinates](#unit-09)** | Grades 9–11 | Right-Triangle & 2D Vector Diagram + **SC-32 Scientific** | *A Stick in Alexandria: How Eratosthenes Measured the Earth with a Shadow & Crosswind Vectors* ([Read Chapter](../manuals/sc32/04-trig-vectors-polar.md)) | **[📄 Print Unit 09 PDF (4 pp.)](../downloads/curriculum_units/stackcalc_curriculum_unit_09.pdf)** |
 | **[Unit 10: Exponential Growth, Compound Interest & Logarithms](#unit-10)** | Grades 10–12 | [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) — Prime Factor Studio (Logarithmic Prime Blocks) & Fraction Studio Towers + **SC-32 Scientific** | *The Scottish Baron Who Doubled the Lifespan of Astronomers (John Napier), Euler's e & The Rule of 72* ([Read Chapter](../manuals/sc32/03-algebra-transcendentals.md)) | **[📄 Print Unit 10 PDF (4 pp.)](../downloads/curriculum_units/stackcalc_curriculum_unit_10.pdf)** |
-| **[Unit 11: Combinatorics, Probability Ratios & Series Accumulation](#unit-11)** | Grades 11–12 / AP | [Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) — Fraction Studio (84 mm Probability Ratio Towers) & Prime Factor Studio + **SC-32 Scientific** | *Sir Francis Galton's 1873 Bean Machine, The Asteroid Ceres & The Guinness Brewery Chemist* ([Read Chapter](../manuals/sc32/09-statistics-curve-fitting.md)) | **[📄 Print Unit 11 PDF (4 pp.)](../downloads/curriculum_units/stackcalc_curriculum_unit_11.pdf)** |
+| **[Unit 11: Combinatorics, Probability Ratios & Series Accumulation](#unit-11)** | Grades 11–12 / AP | [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) — Prime Factor Studio (Factorial Cancellation) & Statistical Data Plot + **SC-32 Scientific** | *Sir Francis Galton's 1873 Bean Machine, The Asteroid Ceres & The Guinness Brewery Chemist* ([Read Chapter](../manuals/sc32/09-statistics-curve-fitting.md)) | **[📄 Print Unit 11 PDF (4 pp.)](../downloads/curriculum_units/stackcalc_curriculum_unit_11.pdf)** |
 | **[Unit 12: Digital Logic, Base Conversions & Computer Architecture](#unit-12)** | Grades 9–12 / AP CS | [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) — Place Value Studio (Binary [0]/[1] Register Trays & Base-N Columns) + **SC-32 Scientific** | *Leibniz's Binary Medallion, Claude Shannon's 1937 Relay Basement & NASA's 36-Bit IBM 7090 Word* ([Read Chapter](../manuals/sc32/10-computer-science-bases.md)) | **[📄 Print Unit 12 PDF (4 pp.)](../downloads/curriculum_units/stackcalc_curriculum_unit_12.pdf)** |
 
 > [!TIP] **Companion Workbooks & Printable Chapter Supplements**
@@ -551,8 +565,8 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
 #### 1. Core Mathematical Rules & Stack Mapping (`Two-Dot Fraction Entry & Tower Equivalence`)
 * One Whole tower stands 84.0 mm tall, dividing cleanly into halves (42 mm), thirds (28 mm), fourths (21 mm), sixths (14 mm), eighths (10.5 mm), and twelfths (7 mm).
 * Twin Comparator Well: Stack equivalent fraction towers side-by-side against the 84.0 mm Whole tower to verify equivalence by sight and touch.
-* Two-dot entry format: [WHOLE] [.] [NUMERATOR] [.] [DENOMINATOR] (or [a ᵇ/c] on SC-6).
-* Proper fractions have 0 whole: press [.] [3] [.] [4] for 3/4.
+* Dividing by a Fraction (Split & Rebuild 1 Full Tower): Just as $A \div 3$ splits tower $A$ into $3$ parts to find $1$ full tower, $A \div \frac{c}{d}$ splits tower $A$ into $c$ equal parts ($\div c$) and stacks $d$ of them ($\times d$) to build $1$ full mystery tower in the Comparator Well (pooling blocks across a 4-kit classroom table pod when a demonstration requires more than one Whole's worth of a denominator).
+* Two-dot entry format: [WHOLE] [.] [NUMERATOR] [.] [DENOMINATOR] (or [a ᵇ/c] on SC-6); proper fractions start with [.] (e.g., [.][3][.][4] for 3/4).
 * **Canonical Stack Pattern:** `[.] [3] [.] [4] = 3/4   |   [2] [.] [1] [.] [2] = 2 1/2`
 
 #### 2. Primary Core Lesson — *Mixed Numbers & Height Equivalence: 3/4 + 2 1/2* (Singapore Math: Primary 5, Chapter 4 • `CCSS.MATH.5.NF.A.1`)
@@ -586,9 +600,9 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
 
 #### 3. Follow-Up Extension Lesson — *Fraction Multiplication & Reciprocals* (Bridges in Mathematics: Grade 5, Unit 2 • `CCSS.MATH.5.NF.B.4`)
 * **Extension Objective:** Multiply fractions and verify division as multiplication by the reciprocal.
-* **Step 1 — The Mathematical Concept & Stack-Based Approach:** Multiplying fractions ((3/4) × (2/3)) scales one rational quantity by another, while dividing by a fraction multiplies by its reciprocal. On the stack, placing the dividend in Y and divisor in X lets you either divide directly or invert X ([1/x]) and multiply.
+* **Step 1 — The Mathematical Concept & Stack-Based Approach:** Multiplying fractions ($\frac{3}{4} \times \frac{2}{3}$) scales one tower by another. To divide by a fraction with the exact same tower-height meaning as whole-number division—*"If tower $A$ is $\frac{c}{d}$ of a mystery tower, how tall is $1$ full mystery tower?"*—use **Split & Rebuild** across a 4-kit table pod: for $\frac{1}{2} \div \frac{3}{4}$, split the `1/2` block ($42\text{ mm}$) into $3$ equal `1/6` blocks ($14\text{ mm}$ each $= \frac{1}{4}$ of the mystery tower, $\div 3$), then stack $4$ of those `1/6` blocks ($56\text{ mm} = \frac{2}{3}$, $\times 4$) beside two `1/3` blocks to see physically why $\div \frac{3}{4} = \times \frac{4}{3}$! On the stack, placing the dividend in Y and divisor in X lets you either divide directly or invert X (`[1/x]`) and multiply.
 * **Step 2 — Modeling with Physical Blocks (When Applicable) & Hypothesis (`FRAC-01`):**
-  * *Setup:* Set up 3/4 of a tower (63 mm) and divide into 3 equal parts (21 mm each), taking 2 parts: (3/4) × (2/3).
+  * *Setup:* Set up 3/4 of a tower (63 mm) and divide into 3 equal parts (21 mm each), taking 2 parts: (3/4) × (2/3). For the reciprocal division check ($\frac{1}{2} \div \frac{3}{4} = \frac{2}{3}$ or $\frac{3}{4} \div \frac{1}{2} = 1\frac{1}{2}$), have students at a 4-kit table pod combine blocks so they can keep the starting dividend tower in Well A while building the full rebuilt mystery tower in Well B.
   * *Student Hypothesis:* 3/4 × 2/3 = 6/12 = 1/2. The resulting block height matches one 1/2 block (42 mm).
 * **Step 3 — Calculator Execution & 4-Level Stack Trace (`T, Z, Y, X`):**
 
@@ -609,8 +623,8 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
   **Worked Solution & Keystrokes:** **1/4 (height 21 mm). Keystrokes: [.][2][.][3] [ENTER] [.][3][.][8] [×]**
 
 #### 4. Target Misconceptions & 30-Second Teacher Remediations
-* **Misconception:** *Adding numerators and denominators directly (e.g., 1/2 + 1/4 = 2/6) because 6 looks larger.*  
-  **30-Second Teacher Remediation:** Place the 1/2 tower (42 mm) + 1/4 tower (21 mm) beside two 1/6 towers (28 mm) in the Fraction Studio comparator lid; the physical height difference proves 1/2 + 1/4 = 3/4 (63 mm).
+* **Misconception:** *Adding numerators and denominators directly (e.g., 1/2 + 1/4 = 2/6) because 6 looks larger, or treating "invert and multiply" for fraction division as an arbitrary trick.*  
+  **30-Second Teacher Remediation:** Place the 1/2 tower (42 mm) + 1/4 tower (21 mm) beside two 1/6 towers (28 mm) in the Fraction Studio comparator lid; the physical height difference proves 1/2 + 1/4 = 3/4 (63 mm). For fraction division (e.g., $\frac{1}{2} \div \frac{3}{4} = \frac{2}{3}$ or $\frac{3}{4} \div \frac{1}{2} = 1\frac{1}{2}$), have a 4-kit table pod pool blocks to **Split & Rebuild 1 Full Tower**: in $\frac{1}{2} \div \frac{3}{4}$, `1/2` ($42\text{ mm}$) is $3$ fourths of the mystery tower—split by $3$ into three `1/6` blocks ($14\text{ mm}$ is $1$ fourth), then rebuild all $4$ fourths by stacking four `1/6` blocks ($56\text{ mm}$), which stands flush with two `1/3` blocks ($\frac{2}{3}$).
 * **Misconception:** *Entering a proper fraction like 3/4 as [3] [.] [4] (which is decimal 3.4) instead of using Two-Dot fraction notation [.][3][.][4].*  
   **30-Second Teacher Remediation:** Teach the rule: 'First dot = whole number zero, second dot = fraction bar.' Typing [.][3][.][4] displays exact 3/4 on the stack.
 
@@ -712,22 +726,22 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
 
 ### Unit 08: Algebraic Expressions, Base-x Polynomials & Quadratic Factoring {#unit-08}
 
-**Grade Band:** Grades 7–8 &nbsp;|&nbsp; **Calculator:** SC-6 Elementary & SC-32 Scientific Bridge (Grades 7–8) &nbsp;|&nbsp; **Published Block Kit (When Applicable):** [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) (`Place Value Studio (Base-x Coefficient Trays) & Prime Factor Studio`)  
+**Grade Band:** Grades 7–8 &nbsp;|&nbsp; **Calculator:** SC-6 Elementary & SC-32 Scientific Bridge (Grades 7–8) &nbsp;|&nbsp; **Block & Visual Model:** [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) (`Prime Factor Studio (Factor Pairs) & 2×2 Algebraic Area Grid`)  
 **Standards:** `CCSS.MATH.7.EE.A.1`, `CCSS.MATH.8.EE.C.7`, `CCSS.MATH.HSA.APR.A.1`, `CCSS.MATH.HSA.REI.B.4` &nbsp;|&nbsp; **Curricular Alignment:** Big Ideas Math (Algebra 1 Ch 7) &bull; Singapore Math (Dimensions 8A Ch 5)  
 **📄 Printable 4-Page Unit Packet:** **[Download Unit 08 PDF (Concept, Blocks, Stack Trace, Student Lab Sheet & Answer Key)](../downloads/curriculum_units/stackcalc_curriculum_unit_08.pdf)** &nbsp;|&nbsp; **📖 Companion Textbook:** **[From Blocks to the Stack (SC-6 Ch. 4: Difference of Two Squares) & Thinking in the Stack (SC-32 Ch. 7: The Duel in Milan & [POLY])](../manuals/sc32/07-polynomials-brent-solver.md)**
 
 #### 1. Core Mathematical Rules & Stack Mapping (`Base-x Polynomial Columns & Quadratic Factoring Rules`)
-* A polynomial ax² + bx + c is a base-x place value number: place coefficients [a], [b], [c] into the Hundreds (x²), Tens (x¹), and Ones (x⁰) sockets of the Place Value Tray.
+* A polynomial ax² + bx + c mirrors base-10 place value with variable powers (x², x¹, x⁰); sketch a 2×2 area grid to separate quadratic (x²), linear (px, qx), and constant (pq) terms.
 * To factor x² + bx + c into (x + p)(x + q), use Prime Factor Studio blocks to factor c into pairs (p, q) whose sum equals b.
 * Signed coefficients: track negative linear or constant terms when testing factor pairs (p + q = b and p × q = c).
 * SC-32 quadratic solver [POLY]: enter coefficients a, b, c to display roots and verify factors on the 4-line LCD!
 * **Canonical Stack Pattern:** `[a] [ENTER] [b] [ENTER] [c] [↱] [POLY] -> Roots in Y and X registers`
 
 #### 2. Primary Core Lesson — *Factoring x² + 5x + 6 into (x + 2)(x + 3) with Prime Factor Blocks* (Big Ideas Math: Algebra 1, Chapter 7 • `CCSS.MATH.HSA.APR.A.1`)
-* **Lesson Objective:** Model quadratic coefficients on the Place Value Tray, factor the constant term with Prime Factor blocks, and verify with the SC-32 [POLY] solver.
+* **Lesson Objective:** Sketch a 2×2 algebraic area grid, factor the constant term with Prime Factor blocks, and verify with the SC-32 [POLY] solver.
 * **Step 1 — The Mathematical Concept & Stack-Based Approach:** A polynomial ax² + bx + c mirrors base-10 place value with variable powers (x², x¹, x⁰) in place of 10², 10¹, 10⁰. Factoring x² + 5x + 6 into (x + 2)(x + 3) decomposes the constant term into prime factors (2 × 3 = 6) whose sum equals the linear coefficient (2 + 3 = 5), which [POLY] verifies when [a, b, c] are pushed into Z, Y, X.
-* **Step 2 — Modeling with Physical Blocks (When Applicable) & Student Prediction (`PRIME-01`):**
-  * *Hands-On Setup:* Place [1], [5], [6] into the x², x¹, and x⁰ sockets of the Place Value Tray, and stack Prime Factor blocks [2] and [3] (2 × 3 = 6) in the comparator lid.
+* **Step 2 — Modeling with Physical Blocks & Paper Area Grid (`PRIME-01`):**
+  * *Hands-On Setup:* Sketch a 2×2 area grid for x² + 5x + 6 on paper, and stack Prime Factor blocks [2] and [3] (2 × 3 = 6) in the comparator lid to find the factor pair whose sum is 5.
   * *Student Prediction (Before Pressing Keys):* Prime factors of 6 are 2 and 3, and their sum is 2 + 3 = 5. The factored form is (x + 2)(x + 3) with roots -2 and -3.
   * *Teacher Coaching ("Say This, Not That"):* **Say:** *""Factor the constant 6 with Prime Factor blocks [2] and [3]—their sum 2 + 3 = 5 matches the middle x¹ coefficient, giving factors (x + 2)(x + 3)!""* &nbsp;|&nbsp; **Avoid:** *""Just FOIL the letters and memorize the quadratic formula.""*
 * **Step 3 — Calculator Execution & 4-Level Stack Trace (`T, Z, Y, X`):**
@@ -742,16 +756,16 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
 | `POLY` | **`-2`** | Press [↱] [POLY]: Root 1 = -2 in Y (factor: x + 2), Root 2 = -3 in X (factor: x + 3)! |
 
 * **Step 4 — Story Context & Guided Classroom Investigation:**
-  * *Historical & Real-World Hook ("From Al-Khwarizmi's Squares to the 1535 Duel in Milan & Kahan's [POLY] Solver"):* In 820 AD in Baghdad, Al-Khwarizmi solved x² + 10x = 39 by completing the square—and in 1535 in Milan, Niccolò Tartaglia defeated Antonio Fiore in a 30-problem public algebra duel overnight! By mapping polynomial coefficients onto the Place Value Tray and factoring constant terms with Prime Factor Studio blocks, students discover how (x + a)(x + b) connects directly to the SC-32 [POLY] solver.
-  * *60-Second Bell-Ringer Prompt:* Place [1], [5], [6] in the Hundreds (x²), Tens (x¹), and Ones (x⁰) sockets of your Place Value Tray. How is x² + 5x + 6 just like base-10 place value?
-  * *Guided Classroom Investigation:* *Place coefficients [1], [7], [12] for x² + 7x + 12 on your tray, factor 12 with Prime Factor blocks to find the pair summing to 7, then verify with [POLY].*  
+  * *Historical & Real-World Hook ("From Al-Khwarizmi's Squares to the 1535 Duel in Milan & Kahan's [POLY] Solver"):* In 820 AD in Baghdad, Al-Khwarizmi solved x² + 10x = 39 by completing a geometric square—and in 1535 in Milan, Niccolò Tartaglia defeated Antonio Fiore in a 30-problem public algebra duel overnight! By factoring constant terms with Prime Factor Studio blocks and sketching a 2×2 area grid on paper, students discover how (x + a)(x + b) connects directly to the SC-32 [POLY] solver.
+  * *60-Second Bell-Ringer Prompt:* Sketch a 2×2 area grid for (x + 2)(x + 3) and factor 6 with Prime Factor blocks [2] and [3]: why does the middle x term equal the sum 2x + 3x = 5x while the corner constant equals the product 2 × 3 = 6?
+  * *Guided Classroom Investigation:* *For x² + 7x + 12, factor 12 with Prime Factor blocks to find the factor pair summing to 7, sketch the 2×2 area grid, then verify with [POLY].*  
     **Worked Solution & Keystrokes:** **(x + 3)(x + 4), roots -3 and -4. Keystrokes: [1] [ENTER] [7] [ENTER] [1][2] [↱][POLY]**
 
 #### 3. Follow-Up Extension Lesson — *Signed Factor Pairs: Factoring Trinomials with Negative Terms* (Singapore Math: Dimensions 8A, Chapter 5 • `CCSS.MATH.HSA.REI.B.4`)
-* **Extension Objective:** Use Prime Factor blocks and signed coefficients on the Place Value Tray to factor quadratic expressions containing subtraction.
+* **Extension Objective:** Use Prime Factor blocks for |c| and a 2×2 signed area grid on paper to factor quadratic expressions containing subtraction.
 * **Step 1 — The Mathematical Concept & Stack-Based Approach:** When a quadratic has a negative constant or linear term (such as x² - x - 6), the factor pair must have opposite signs (-3 and +2) so their product is -6 and their sum is -1. Entering signed coefficients with [+/-] onto the stack verifies both real roots.
-* **Step 2 — Modeling with Physical Blocks (When Applicable) & Hypothesis (`PRIME-01`):**
-  * *Setup:* Set up coefficients for x² - x - 6 on the Place Value Tray and factor |c| = 6 into Prime Factor blocks [2] and [3].
+* **Step 2 — Modeling with Physical Blocks & Paper Area Grid (`PRIME-01`):**
+  * *Setup:* Factor |c| = 6 into Prime Factor blocks [2] and [3], then assign signs (+2 and -3) on a paper 2×2 area grid for x² - x - 6.
   * *Student Hypothesis:* Assign signs to the factor pair (2, -3) so their product is -6 and their sum is 2 + (-3) = -1: factors are (x - 3)(x + 2).
 * **Step 3 — Calculator Execution & 4-Level Stack Trace (`T, Z, Y, X`):**
 
@@ -771,7 +785,7 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
 
 #### 4. Target Misconceptions & 30-Second Teacher Remediations
 * **Misconception:** *Expanding (x + 2)(x + 3) as x² + 6 by forgetting the two linear cross-terms (2x and 3x).*  
-  **30-Second Teacher Remediation:** Place coefficients [1], [5], [6] in the x², x¹, x⁰ sockets of the Place Value Tray and factor 6 into Prime Factor blocks [2] and [3] so students see that b = 2 + 3 = 5 and c = 2 × 3 = 6.
+  **30-Second Teacher Remediation:** Sketch the 2×2 area grid for (x + 2)(x + 3) and factor 6 into Prime Factor blocks [2] and [3] so students see the four boxes x², 2x, 3x, and 6 (giving b = 2 + 3 = 5 and c = 2 × 3 = 6).
 * **Misconception:** *Using the subtraction operator [−] instead of the change-sign key [+/−] when entering negative polynomial coefficients into [POLY].*  
   **30-Second Teacher Remediation:** Point out that [−] immediately subtracts X from Y, whereas [+/−] negates the number currently in Register X without collapsing the stack.
 
@@ -788,78 +802,77 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
 
 ### Unit 09: Trigonometry, Vectors & Polar/Rectangular Coordinates {#unit-09}
 
-**Grade Band:** Grades 9–11 &nbsp;|&nbsp; **Calculator:** SC-32 Scientific (Grades 7–12+) &nbsp;|&nbsp; **Published Block Kit (When Applicable):** [Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) (`Fraction Studio (84 mm Ratio Towers) & Place Value Studio (Vector Component Trays)`)  
+**Grade Band:** Grades 9–11 &nbsp;|&nbsp; **Calculator:** SC-32 Scientific (Grades 7–12+) &nbsp;|&nbsp; **Visual Mathematical Model:** `Right-Triangle & 2D Vector Diagram & SC-32 [▸θ,r]`  
 **Standards:** `CCSS.MATH.HSG.SRT.C.8`, `CCSS.MATH.HSN.VM.A.1`, `CCSS.MATH.HSN.VM.A.3` &nbsp;|&nbsp; **Curricular Alignment:** Big Ideas Math (Geometry / Precalculus) &bull; Singapore Math (Additional Math)  
-**📄 Printable 4-Page Unit Packet:** **[Download Unit 09 PDF (Concept, Blocks, Stack Trace, Student Lab Sheet & Answer Key)](../downloads/curriculum_units/stackcalc_curriculum_unit_09.pdf)** &nbsp;|&nbsp; **📖 Companion Textbook:** **[Thinking in the Stack (SC-32 Manual) — Ch. 4: Trigonometry, Vectors & Polar Coordinates (A Stick in Alexandria)](../manuals/sc32/04-trig-vectors-polar.md)**
+**📄 Printable 4-Page Unit Packet:** **[Download Unit 09 PDF (Concept, Visual Model, Stack Trace, Student Lab Sheet & Answer Key)](../downloads/curriculum_units/stackcalc_curriculum_unit_09.pdf)** &nbsp;|&nbsp; **📖 Companion Textbook:** **[Thinking in the Stack (SC-32 Manual) — Ch. 4: Trigonometry, Vectors & Polar Coordinates (A Stick in Alexandria)](../manuals/sc32/04-trig-vectors-polar.md)**
 
 #### 1. Core Mathematical Rules & Stack Mapping (`Vector Decomposition & Polar Conversion Rules`)
-* Trigonometric functions are ratios of triangle sides: a 1/2 tower (42.0 mm) beside the 1 Whole tower (84.0 mm) models sin(30°) = cos(60°) = 1/2.
-* A 2D vector v = <x, y> places horizontal run x in Row 1 (Register Y) and vertical rise y in Row 0 (Register X) of the Place Value Tray.
-* Rectangular to Polar [↰] [▸θ,r]: Converts (x, y) into angle θ (in X) and magnitude r (in Y).
-* To swap between angle and magnitude after conversion, press [x⇄y]!
-* **Canonical Stack Pattern:** `[RUN x] [ENTER] [RISE y] [↰] [▸θ,r] -> Angle in X, Magnitude in Y`
+* Trigonometric functions are ratios of right-triangle sides: sin(θ) = Opposite / Hypotenuse, cos(θ) = Adjacent / Hypotenuse, tan(θ) = Opposite / Adjacent (e.g., sin(30°) = cos(60°) = 0.5).
+* A 2D vector v = <x, y> pairs vertical rise y (in Register Y) and horizontal run x (in Register X) across the bottom two stack registers.
+* Rectangular to Polar [↰] [▸θ,r]: Converts (Y = y, X = x) into angle θ (in Y) and magnitude r (in X).
+* To swap between magnitude and angle after conversion, press [x⇄y]!
+* **Canonical Stack Pattern:** `[RISE y] [ENTER] [RUN x] [↰] [▸θ,r] -> Magnitude r in X, Angle θ in Y`
 
 #### 2. Primary Core Lesson — *Vector Magnitude & Direction: Cartesian to Polar* (Big Ideas Math: Geometry / Precalculus • `CCSS.MATH.HSN.VM.A.1`)
-* **Lesson Objective:** Decompose 2D vectors into horizontal and vertical components on the Place Value Tray and convert to polar coordinates (r, θ).
-* **Step 1 — The Mathematical Concept & Stack-Based Approach:** Every 2D vector or right triangle relates two perpendicular legs (Δx, Δy) to a hypotenuse r and angle θ via r = √(x² + y²) and tan(θ) = y/x. By placing Δy in Register Y and Δx in Register X, the stack keeps both components paired to compute magnitude and angle simultaneously.
-* **Step 2 — Modeling with Physical Blocks (When Applicable) & Student Prediction (`FRAC-01`):**
-  * *Hands-On Setup:* Place horizontal run [4] in Row 1 and vertical rise [3] in Row 0 of the Place Value Tray (forming a 3-4-5 right triangle).
-  * *Student Prediction (Before Pressing Keys):* Run = 4, Rise = 3. Predict magnitude: r = sqrt(4² + 3²) = 5. Predict angle: arctan(3/4) ≈ 36.87°.
-  * *Teacher Coaching ("Say This, Not That"):* **Say:** *""Put your horizontal Run (x) in Row 1 (Shelf Y) and vertical Rise (y) in Row 0 (Workbench X), then press [▸θ,r] to see angle θ and hypotenuse r!""* &nbsp;|&nbsp; **Avoid:** *""Type arctan(y/x) and guess which quadrant you're in.""*
+* **Lesson Objective:** Sketch 2D vectors as right triangles with horizontal and vertical components (Δx, Δy) and convert to polar coordinates (r, θ) on the stack.
+* **Step 1 — The Mathematical Concept & Stack-Based Approach:** Every 2D vector or right triangle relates two perpendicular legs (Δx, Δy) to a hypotenuse r and angle θ via r = √(x² + y²) and tan(θ) = y/x. By placing vertical component y into Register Y and horizontal component x into Register X, the stack keeps both legs paired to compute magnitude r (in X) and angle θ (in Y) simultaneously.
+* **Step 2 — Visual Mathematical Model & Student Prediction:**
+  * *Visual Setup:* Sketch a right triangle on paper with vertical rise y = 3 and horizontal run x = 4 (forming a 3-4-5 right triangle).
+  * *Student Prediction (Before Pressing Keys):* Rise = 3, Run = 4. Predict magnitude: r = sqrt(4² + 3²) = 5. Predict angle: arctan(3/4) ≈ 36.87°.
+  * *Teacher Coaching ("Say This, Not That"):* **Say:** *""Sketch the right triangle first, place vertical Rise (y) into Y and horizontal Run (x) into X, and press [▸θ,r] to see hypotenuse r in X and angle θ in Y!""* &nbsp;|&nbsp; **Avoid:** *""Type arctan(y/x) and guess which quadrant you're in.""*
 * **Step 3 — Calculator Execution & 4-Level Stack Trace (`T, Z, Y, X`):**
 
 | Key Pressed | Screen (`X`) | Internal 4-Level Stack Effect (`T, Z, Y, X`) |
 | :--- | :--- | :--- |
-| `4` | **`4`** | Enter horizontal component x = 4 |
-| `enter` | **`4`** | 4 lifted to register Y |
-| `3` | **`3`** | Enter vertical component y = 3 in X |
-| `▸θ,r` | **`36.87`** | Rectangular to Polar! Screen displays angle θ = 36.87° |
-| `x⇄y` | **`5.00`** | Swap registers: Y displays vector magnitude r = 5.00! |
+| `3` | **`3`** | Enter vertical component y = 3 |
+| `enter` | **`3`** | y = 3 lifted to Waiting Shelf Y |
+| `4` | **`4`** | Enter horizontal component x = 4 in Workbench X |
+| `▸θ,r` | **`5.00`** | Rectangular to Polar! Screen X displays magnitude r = 5.00 (θ = 36.87° in Y) |
+| `x⇄y` | **`36.87`** | Swap registers: X displays direction angle θ = 36.87°! |
 
 * **Step 4 — Story Context & Guided Classroom Investigation:**
-  * *Historical & Real-World Hook ("A Stick in Alexandria: How Eratosthenes Measured the Earth with a Shadow & Crosswind Vectors"):* In 240 BC, Eratosthenes measured a 7.2° shadow angle in Alexandria at noon on the summer solstice while a well in Syene 800 km away had zero shadow—calculating Earth's circumference within 1% using pure geometry! Using 84.0 mm Fraction Studio ratio towers and [▸θ,r] polar conversion, students resolve right triangles and aircraft crosswind vectors in a single keystroke.
-  * *60-Second Bell-Ringer Prompt:* Stand the 1/2 Fraction Tower (42 mm) beside the 1-Whole Tower (84 mm): why is sin(30°) = 0.5000—the exact half-height ratio of the hypotenuse?
-  * *Guided Classroom Investigation:* *A surveyor walks 60 m East and 80 m North. Find the straight-line displacement magnitude and heading.*  
-    **Worked Solution & Keystrokes:** **Displacement: 100 m, Heading: 53.13°. Keystrokes: [6][0] [ENTER] [8][0] [↰][▸θ,r] [x⇄y]**
+  * *Historical & Real-World Hook ("A Stick in Alexandria: How Eratosthenes Measured the Earth with a Shadow & Crosswind Vectors"):* In 240 BC, Eratosthenes measured a 7.2° shadow angle in Alexandria at noon on the summer solstice while a well in Syene 800 km away had zero shadow—calculating Earth's circumference within 1% using pure geometry! Using right-triangle diagrams and [▸θ,r] polar conversion, students resolve survey sightlines and aircraft crosswind vectors in a single keystroke.
+  * *60-Second Bell-Ringer Prompt:* Sketch a 30°-60°-90° right triangle (half of an equilateral triangle with hypotenuse 2 and opposite leg 1): why is sin(30°) = 1/2 = 0.5000?
+  * *Guided Classroom Investigation:* *A surveyor walks 60 m East (x = 60) and 80 m North (y = 80). Find the straight-line displacement magnitude and heading.*  
+    **Worked Solution & Keystrokes:** **Displacement: 100 m, Heading: 53.13°. Keystrokes: [8][0] [ENTER] [6][0] [↰][▸θ,r]**
 
 #### 3. Follow-Up Extension Lesson — *2D Vector Addition: Resultant Forces* (Big Ideas Math: Precalculus, Chapter 6 • `CCSS.MATH.HSN.VM.A.3`)
 * **Extension Objective:** Add non-collinear 2D vectors by accumulating orthogonal components on the RPN stack.
-* **Step 1 — The Mathematical Concept & Stack-Based Approach:** Non-collinear vectors cannot be added by simply summing their lengths; their horizontal (x) and vertical (y) components must be summed separately first. The 4-level stack accumulates ∑x and ∑y from the inside out before converting the resultant back to polar form.
-* **Step 2 — Modeling with Physical Blocks (When Applicable) & Hypothesis (`FRAC-01`):**
-  * *Setup:* Use the Place Value Tray to track component vectors F1 = <3, 2> and F2 = <1, 5>.
-  * *Student Hypothesis:* Add components: x_net = 3 + 1 = 4; y_net = 2 + 5 = 7. Magnitude r = sqrt(4² + 7²) = sqrt(65) ≈ 8.06.
+* **Step 1 — The Mathematical Concept & Stack-Based Approach:** Non-collinear vectors cannot be added by simply summing their lengths; their vertical (y) and horizontal (x) components must be summed separately first. The 4-level stack accumulates ∑y in Register Y and ∑x in Register X from the inside out before converting the resultant back to polar form.
+* **Step 2 — Visual Mathematical Model & Hypothesis:**
+  * *Visual Setup:* Sketch tip-to-tail component vectors F1 = <3, 2> and F2 = <1, 5> on a coordinate grid.
+  * *Student Hypothesis:* Add components: y_net = 2 + 5 = 7; x_net = 3 + 1 = 4. Magnitude r = sqrt(4² + 7²) = sqrt(65) ≈ 8.06.
 * **Step 3 — Calculator Execution & 4-Level Stack Trace (`T, Z, Y, X`):**
 
 | Key Pressed | Screen (`X`) | Internal 4-Level Stack Effect (`T, Z, Y, X`) |
 | :--- | :--- | :--- |
-| `3` | **`3`** | Horizontal component x1 = 3 |
-| `enter` | **`3`** | Lifted to Y |
-| `1` | **`1`** | Horizontal component x2 = 1 |
-| `plus` | **`4`** | Net horizontal force x_net = 4 in X |
-| `2` | **`2`** | Vertical component y1 = 2 (4 lifts to Y) |
-| `enter` | **`2`** | 2 lifted to Y; 4 in Z |
-| `5` | **`5`** | Vertical component y2 = 5 in X |
-| `plus` | **`7`** | Net vertical force y_net = 7 in X; x_net = 4 in Y |
-| `▸θ,r` | **`60.26`** | Resultant angle θ = 60.26° |
-| `x⇄y` | **`8.06`** | Resultant force magnitude r = 8.06! |
+| `2` | **`2`** | Vertical component y1 = 2 |
+| `enter` | **`2`** | Lifted to Y |
+| `5` | **`5`** | Vertical component y2 = 5 |
+| `plus` | **`7`** | Net vertical force y_net = 7 in X |
+| `3` | **`3`** | Horizontal component x1 = 3 (7 lifts to Y) |
+| `enter` | **`3`** | 3 lifted to Y; 7 in Z |
+| `1` | **`1`** | Horizontal component x2 = 1 in X |
+| `plus` | **`4`** | Net horizontal force x_net = 4 in X; y_net = 7 waits in Y |
+| `▸θ,r` | **`8.06`** | Resultant force magnitude r = 8.06 in X (angle θ = 60.26° in Y)! |
 
 * **Extension Investigation:** *Two cables pull on a post: Vector A is <5, 2> and Vector B is <-2, 4>. Find the resultant vector magnitude.*  
   **Worked Solution & Keystrokes:** **Magnitude: 6.71. Resultant: <3, 6>.**
 
 #### 4. Target Misconceptions & 30-Second Teacher Remediations
 * **Misconception:** *Evaluating trigonometric functions in Radian mode when angles are given in Degrees (or vice versa).*  
-  **30-Second Teacher Remediation:** Have students check the DEG/RAD indicator on the SC-32 status bar and verify with the 1/2 (42 mm) and 1 Whole (84 mm) Fraction Studio towers that sin(30°) = 42/84 = 0.5000 before starting vector problems.
+  **30-Second Teacher Remediation:** Have students check the DEG/RAD indicator on the SC-32 status bar and verify with a 30°-60°-90° triangle benchmark that sin(30°) = 0.5000 before starting vector problems.
 * **Misconception:** *Swapping x and y components when converting rectangular coordinates to polar via [▸θ,r].*  
-  **30-Second Teacher Remediation:** Place horizontal Run (x) in Row 1 (Register Y) and vertical Rise (y) in Row 0 (Register X) of the Place Value Tray before pressing [▸θ,r].
+  **30-Second Teacher Remediation:** Sketch the right triangle and verify that vertical Rise (Δy) is in Register Y and horizontal Run (Δx) is in Register X before pressing [▸θ,r].
 
 #### 5. Student Lab Worksheet Problems (`P1`–`P4`) & Answer Key
 
 | Problem | Student Lab Investigation Prompt | StackCalc Check Keystrokes | Expected Answer |
 | :--- | :--- | :--- | :--- |
-| **P1** | Find magnitude and angle for vector <12, 5>. | `[1][2] [ENTER] [5] [↰][▸θ,r]` | **θ = 22.62°, r = 13** |
-| **P2** | Find the hypotenuse of a right triangle with legs 7 and 24. | `[7] [ENTER] [2][4] [↰][▸θ,r] [x⇄y]` | **25** |
-| **P3** | Compare the 1/2 tower (42 mm) to the 1 Whole tower (84 mm) and calculate sin(30°). | `[3][0] [SIN]` | **0.5** |
-| **P4** | A vector has magnitude 10 at angle 45°. What are its x and y components? | `[1][0] [ENTER] [4][5] [↱][▸y,x]` | **x = 7.07, y = 7.07** |
+| **P1** | Find magnitude and angle for vector <12, 5>. | `[5] [ENTER] [1][2] [↰][▸θ,r]` | **r = 13, θ = 22.62°** |
+| **P2** | Find the hypotenuse of a right triangle with legs 7 and 24. | `[2][4] [ENTER] [7] [↰][▸θ,r]` | **25** |
+| **P3** | In a 30°-60°-90° right triangle, the opposite leg is half the hypotenuse. Verify sin(30°). | `[3][0] [SIN]` | **0.5** |
+| **P4** | A vector has magnitude 10 at angle 45°. What are its x and y components? | `[4][5] [ENTER] [1][0] [↱][▸y,x]` | **x = 7.07, y = 7.07** |
 
 ---
 
@@ -880,7 +893,7 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
 * **Lesson Objective:** Model continuous exponential accumulation and compound interest using the natural exponential function [eˣ].
 * **Step 1 — The Mathematical Concept & Stack-Based Approach:** Exponential growth P·e^(rt) compounds continuously by scaling a base quantity according to an inner rate-time product (r × t). Evaluating from the inside out on the stack—computing r × t first, applying [eˣ], and multiplying by P—follows the exact mathematical hierarchy without parentheses.
 * **Step 2 — Modeling with Physical Blocks (When Applicable) & Student Prediction (`PRIME-01`):**
-  * *Hands-On Setup:* Stack Prime Factor [2] blocks (15 mm each) to show linear height addition representing exponential doubling (2¹ = 2, 2² = 4, 2³ = 8).
+  * *Hands-On Setup:* Stack Prime Factor [2] blocks (7.0 mm each) to show linear height addition representing exponential doubling (2¹ = 2, 2² = 4, 2³ = 8).
   * *Student Prediction (Before Pressing Keys):* Invest $1,000 at 7% continuous interest for 10 years: A = 1000 × e^(0.07 × 10) = 1000 × e^0.7. Will it double? (e^0.7 ≈ 2.01).
   * *Teacher Coaching ("Say This, Not That"):* **Say:** *""Compute the inner growth exponent r × t first, press [eˣ] to get the growth factor, and then multiply by principal P!""* &nbsp;|&nbsp; **Avoid:** *""Multiply the base by the exponent or round intermediate decimals to two places.""*
 * **Step 3 — Calculator Execution & 4-Level Stack Trace (`T, Z, Y, X`):**
@@ -896,8 +909,8 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
 | `times` | **`2013.75`** | Total accumulated amount A = $2,013.75! |
 
 * **Step 4 — Story Context & Guided Classroom Investigation:**
-  * *Historical & Real-World Hook ("The Scottish Baron Who Doubled the Lifespan of Astronomers (John Napier), Euler's e & The Rule of 72"):* In 1614, John Napier at Merchiston Castle realized that logarithms turn tedious multiplication into simple height addition—the exact engineering principle of our Prime Factor blocks (where h = 15 × log2(p) mm)! Paired with Jakob Bernoulli's continuous compounding limit e and Fibonacci's Liber Abaci (1202), students model exponential doubling and half-life decay.
-  * *60-Second Bell-Ringer Prompt:* Stack three [2] Prime Factor blocks (15 mm each) beside the tower for 8 (45 mm). How did adding physical block heights multiply 2 × 2 × 2 = 8?
+  * *Historical & Real-World Hook ("The Scottish Baron Who Doubled the Lifespan of Astronomers (John Napier), Euler's e & The Rule of 72"):* In 1614, John Napier at Merchiston Castle realized that logarithms turn tedious multiplication into simple height addition—the exact engineering principle of our Prime Factor blocks (where h = 7.0 × log2(p) mm)! Paired with Jakob Bernoulli's continuous compounding limit e and Fibonacci's Liber Abaci (1202), students model exponential doubling and half-life decay.
+  * *60-Second Bell-Ringer Prompt:* Stack three [2] Prime Factor blocks (7.0 mm each) beside the 21.0 mm mark for 8 on the comparator scale. How did adding physical block heights multiply 2 × 2 × 2 = 8?
   * *Guided Classroom Investigation:* *A bacteria culture starts at 500 and triples every hour. Use [yˣ] to calculate population after 4 hours.*  
     **Worked Solution & Keystrokes:** **40,500 bacteria. Keystrokes: [3] [ENTER] [4] [yˣ] [5][0][0] [×]**
 
@@ -938,7 +951,7 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
 
 ### Unit 11: Combinatorics, Probability Ratios & Series Accumulation {#unit-11}
 
-**Grade Band:** Grades 11–12 / AP &nbsp;|&nbsp; **Calculator:** SC-32 Scientific (Grades 7–12+) &nbsp;|&nbsp; **Published Block Kit (When Applicable):** [Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) (`Fraction Studio (84 mm Probability Ratio Towers) & Prime Factor Studio`)  
+**Grade Band:** Grades 11–12 / AP &nbsp;|&nbsp; **Calculator:** SC-32 Scientific (Grades 7–12+) &nbsp;|&nbsp; **Block & Visual Model:** [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) (`Prime Factor Studio (Factorial Cancellation) & Statistical Data Plot`)  
 **Standards:** `CCSS.MATH.HSS.CP.B.9`, `CCSS.MATH.HSA.SSE.B.4` &nbsp;|&nbsp; **Curricular Alignment:** AP Statistics (Unit 4: Probability) &bull; Discrete Mathematics &bull; Singapore Math (H2)  
 **📄 Printable 4-Page Unit Packet:** **[Download Unit 11 PDF (Concept, Blocks, Stack Trace, Student Lab Sheet & Answer Key)](../downloads/curriculum_units/stackcalc_curriculum_unit_11.pdf)** &nbsp;|&nbsp; **📖 Companion Textbook:** **[From Blocks to the Stack (SC-6 Ch. 7: Galton's Bean Machine) & Thinking in the Stack (SC-32 Ch. 9: Ceres, Guinness & [Σ+])](../manuals/sc32/09-statistics-curve-fitting.md)**
 
@@ -952,7 +965,7 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
 #### 2. Primary Core Lesson — *Combinations vs. Permutations: Subsets & Prime Cancellation* (AP Statistics: AP Statistics, Unit 4 • `CCSS.MATH.HSS.CP.B.9`)
 * **Lesson Objective:** Calculate permutations and combinations by evaluating factorials across the 4-register stack and canceling prime factors.
 * **Step 1 — The Mathematical Concept & Stack-Based Approach:** Combinations nCr = n! / (r!(n-r)!) count unordered selections by dividing ordered permutations by duplicate arrangements. On the stack, you can either evaluate and cancel the factorial branches step-by-step across Y and X or verify directly with [nCr].
-* **Step 2 — Modeling with Physical Blocks (When Applicable) & Student Prediction (`FRAC-01`):**
+* **Step 2 — Modeling with Physical Blocks & Student Prediction (`PRIME-01`):**
   * *Hands-On Setup:* Use Prime Factor blocks to model prime factor cancellation in 8! / (3! × 5!) = (8 × 7 × 6) / 6 = 8 × 7 = 56.
   * *Student Prediction (Before Pressing Keys):* How many ways to choose a committee of 3 from 8 candidates? 8C3 = 8! / (3! × 5!) = 40320 / (6 × 120) = 56.
   * *Teacher Coaching ("Say This, Not That"):* **Say:** *""Press [CLΣ] first, then feed each sample value in with [Σ+]—watch Register X count n while the stack tracks the running mean!""* &nbsp;|&nbsp; **Avoid:** *""Re-type all 12 numbers from scratch if you want both the mean and standard deviation.""*
@@ -970,16 +983,16 @@ Each unit below follows the **1. Mathematical Concept (Stack Approach) → 2. Ph
 | `divide` | **`56`** | 6720 / 120 = 56 combinations! |
 
 * **Step 4 — Story Context & Guided Classroom Investigation:**
-  * *Historical & Real-World Hook ("Sir Francis Galton's 1873 Bean Machine, The Asteroid Ceres & The Guinness Brewery Chemist"):* In 1873, Sir Francis Galton built a board studded with pins (the Quincunx) to show how independent random bounces settle into a bell-shaped curve—while in 1908 at the Guinness Brewery in Dublin, chemist William Sealy Gosset ('Student') invented small-sample statistics with n - 1 degrees of freedom! Students model exact probability ratios on 84 mm Fraction Studio towers, cancel factorial primes, and accumulate trials with [Σ+].
-  * *60-Second Bell-Ringer Prompt:* Compare the 1/6 tower (14 mm) and 1/2 tower (42 mm) in the Fraction Studio comparator lid: how many 1/6 outcomes equal a 50% probability?
+  * *Historical & Real-World Hook ("Sir Francis Galton's 1873 Bean Machine, The Asteroid Ceres & The Guinness Brewery Chemist"):* In 1873, Sir Francis Galton built a board studded with pins (the Quincunx) to show how independent random bounces settle into a bell-shaped curve—while in 1908 at the Guinness Brewery in Dublin, chemist William Sealy Gosset ('Student') invented small-sample statistics with n - 1 degrees of freedom! Students cancel factorial prime factors with Prime Factor blocks and accumulate sample trials with [Σ+].
+  * *60-Second Bell-Ringer Prompt:* In C(8,3) = (8 × 7 × 6) ÷ (3 × 2 × 1), why do the Prime Factor blocks [3] and [2] in the denominator cancel the 6 in the numerator cleanly?
   * *Guided Classroom Investigation:* *A lottery draws 4 winning numbers from a pool of 10. How many combinations? Calculate 10C4.*  
     **Worked Solution & Keystrokes:** **210 combinations. Keystrokes: [1][0] [↰][x!] [4] [↰][x!] [÷] [6] [↰][x!] [÷]**
 
 #### 3. Follow-Up Extension Lesson — *Statistical Accumulation: Mean & Variance with [Σ+]* (AP Statistics: AP Statistics, Unit 1 • `CCSS.MATH.HSS.ID.A.2`)
 * **Extension Objective:** Accumulate discrete data sets into the statistical registers and compute sample statistics.
 * **Step 1 — The Mathematical Concept & Stack-Based Approach:** Statistical measures of center (Mean x̄) and spread (Standard Deviation s) summarize an entire distribution of values. Pressing [Σ+] on the stack calculator accumulates n, ∑x, and ∑x² simultaneously in dedicated statistical registers so x̄ and s can be read without re-entering data.
-* **Step 2 — Modeling with Physical Blocks (When Applicable) & Hypothesis (`FRAC-01`):**
-  * *Setup:* Lay out the 5 sample values (4, 6, 7, 8, 10) with Digit Blocks on the Place Value Tray and accumulate them with [Σ+].
+* **Step 2 — Visual Mathematical Model & Hypothesis:**
+  * *Visual Setup:* Plot the 5 sample values (4, 6, 7, 8, 10) on a number-line dot plot to find the balance point, then accumulate them with [Σ+].
   * *Student Hypothesis:* Sum = 4 + 6 + 7 + 8 + 10 = 35. Sample size n = 5. Mean x̄ = 35 / 5 = 7.0.
 * **Step 3 — Calculator Execution & 4-Level Stack Trace (`T, Z, Y, X`):**
 
@@ -1189,7 +1202,7 @@ For additional elementary routines, see the **[RPN Elementary Power Guide &rarr;
 ### Routine 5: Two-Method Verification & Tutorial Mode (`[↰] [C]`)
 * **The Math Concept:** Encouraging students to connect paper/block reasoning with stack verification rather than relying on a single rote procedure.
 * **How It Works in Practice:**
-  1. **Method 1 (`+10 pts`):** Solve the problem using the concrete block kit (`PLACE-01`, `FRAC-01`, or `PRIME-01`) or structured paper model, and record the predicted answer.
+  1. **Method 1 (`+10 pts`):** Solve the problem by hand in the workbook (and build with `PLACE-01`, `FRAC-01`, or `PRIME-01` on Place Value, Fraction, or Prime Factor units), and record the predicted answer.
   2. **Method 2 (`+20 pts`):** Verify the exact same problem on the 4-level stack (or using **[SC-6 Tutorial Mode (`[↰] [C]`)](../manuals/sc6/08-math-quiz-engine.md)**) and check that the stack registers match the intermediate steps of the paper/block solution.
 
 ---

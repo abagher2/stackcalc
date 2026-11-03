@@ -121,8 +121,8 @@ hide:
 
   <!-- Component Roster Table -->
   <section class="ec-section">
-    <h2 class="ec-section-title">26-Piece Kit Component Specifications</h2>
-    <p class="ec-section-subtitle">All components 3D printed in single-color warm parchment PLA/PETG.</p>
+    <h2 class="ec-section-title">65-Piece Kit Component Specifications (63 Blocks + Box + Lid)</h2>
+    <p class="ec-section-subtitle">Color-coded across 4 curriculum families (Tan Wholes &amp; Halves, Red Multiples of 3, Blue Powers of 2, White Fifths &amp; Tenths) in a 13U socketed enclosure.</p>
 
     <table class="ec-spec-table">
       <thead>
@@ -136,13 +136,13 @@ hide:
       <tbody>
         <tr>
           <td class="ec-spec-k">Whole \(\left(\frac{1}{1}\right)\)</td>
-          <td class="ec-spec-v">1</td>
+          <td class="ec-spec-v">2 (2 columns)</td>
           <td class="ec-spec-v">84.00 mm</td>
           <td class="ec-spec-v">85.85 mm</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Halves \(\left(\frac{1}{2}\right)\)</td>
-          <td class="ec-spec-v">2</td>
+          <td class="ec-spec-v">4 (2 columns of 2)</td>
           <td class="ec-spec-v">42.00 mm</td>
           <td class="ec-spec-v">43.85 mm</td>
         </tr>
@@ -159,6 +159,12 @@ hide:
           <td class="ec-spec-v">22.85 mm</td>
         </tr>
         <tr>
+          <td class="ec-spec-k">Fifths \(\left(\frac{1}{5}\right)\)</td>
+          <td class="ec-spec-v">5</td>
+          <td class="ec-spec-v">16.80 mm</td>
+          <td class="ec-spec-v">18.65 mm</td>
+        </tr>
+        <tr>
           <td class="ec-spec-k">Sixths \(\left(\frac{1}{6}\right)\)</td>
           <td class="ec-spec-v">6</td>
           <td class="ec-spec-v">14.00 mm</td>
@@ -171,8 +177,20 @@ hide:
           <td class="ec-spec-v">12.35 mm</td>
         </tr>
         <tr>
+          <td class="ec-spec-k">Ninths \(\left(\frac{1}{9}\right)\)</td>
+          <td class="ec-spec-v">9</td>
+          <td class="ec-spec-v">9.33 mm</td>
+          <td class="ec-spec-v">11.18 mm</td>
+        </tr>
+        <tr>
+          <td class="ec-spec-k">Tenths \(\left(\frac{1}{10}\right)\)</td>
+          <td class="ec-spec-v">10</td>
+          <td class="ec-spec-v">8.40 mm</td>
+          <td class="ec-spec-v">10.25 mm</td>
+        </tr>
+        <tr>
           <td class="ec-spec-k">Twelfths \(\left(\frac{1}{12}\right)\)</td>
-          <td class="ec-spec-v">2</td>
+          <td class="ec-spec-v">12</td>
           <td class="ec-spec-v">7.00 mm</td>
           <td class="ec-spec-v">8.85 mm</td>
         </tr>

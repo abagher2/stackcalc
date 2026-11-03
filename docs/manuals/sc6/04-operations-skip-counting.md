@@ -269,7 +269,7 @@ In real life, sharing or packing items into equal groups doesn't always come out
 
 Suppose 145 students are boarding 45-seat buses for a museum trip (like on the screen above), or 23 counting tiles are being dealt into stacks of 5. If you divide with standard decimal division (`{{key:÷}}`), a long decimal tail like `3.222222...` hides how many whole buses are full and how many students still need a seat!
 
-When you press **Quotient & Remainder (`{{key:÷R}}`)** (`{{key:g}}` then `{{key:÷}}`), your side-by-side $Y \mid X$ screen shows *both* whole-number answers at once:
+When you press **Quotient & Remainder (`{{key:÷R}}`)** (`{{key:g}}` then `{{key:÷}}`), your stacked screen shows *both* whole-number answers at once (with Waiting Shelf $Y$ right above Ground Shelf $X$):
 - **Shelf $X$** shows **Whole Groups (Quotient $Q$)**—how many complete groups you can build.
 - **Shelf $Y$** holds **Leftovers (Remainder $R$)**—how many loose items remain.
 

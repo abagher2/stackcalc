@@ -24,7 +24,7 @@ import re
 import sys
 from collections import Counter
 from pathlib import Path
-from typing import List, Set, Tuple
+from typing import Any, Dict, List, Set, Tuple
 
 TOOLS_DIR = Path(__file__).resolve().parent
 REPO_ROOT = TOOLS_DIR.parent
@@ -439,6 +439,12 @@ def convert_keystrokes_to_macros(text: str, file_path: Path, is_sc32: bool) -> s
             out_lines.append(line)
             continue
 
+        # Never inject {{key:...}} macros into Markdown heading lines (#, ##, ###)
+        if not in_fence and line.lstrip().startswith("#"):
+            clean_h = re.sub(r"`?\{\{key(?:cap)?:([^{}]+)\}\}`?", r"\1", line)
+            out_lines.append(clean_h)
+            continue
+
         is_table_row = line.strip().startswith("|")
 
         # Temporarily mask inline math $...$ on this line so \sqrt[3]{...} or [a, b] in LaTeX is preserved
@@ -511,26 +517,23 @@ def _collapse_plain_pair(match: re.Match, registry: KeyRegistry) -> str:
 
 def add_faceplate_color_note(text: str, file_path: Path, is_sc32: bool) -> str:
     """
-    Adds a concise note in Chapter 1 of both manuals explaining that key and shift
-    accent colors vary depending on the faceplate theme, so shifts are referenced
-    as Left Shift `{{key:↰}}` and Right Shift `{{key:↱}}` on SC-32, and `{{key:f}}`
-    and `{{key:g}}` on SC-6.
+    Adds a concise note in Chapter 1 of the SC-6 manual explaining that key and shift
+    accent colors vary depending on the faceplate theme. On SC-32, faceplate themes are
+    not enumerated in Chapter 1 (Flag 3 is documented in the Appendix C Flags Directory).
     """
-    if "Faceplate Themes & Shift Legend Conventions" in text or "Your Favorite Color Theme, Same Friendly Shift Keys" in text:
+    if is_sc32:
+        return text
+
+    if (
+        "Faceplate Themes & Shift Legend Conventions" in text
+        or "Your Favorite Color Theme, Same Friendly Shift Keys" in text
+        or "interchangeable faceplate" in text
+    ):
         return text
 
     # Skip past YAML frontmatter if present
     m_fm = re.match(r"^(---\n.*?\n---\n)", text, flags=re.DOTALL)
     fm_end = m_fm.end() if m_fm else 0
-
-    if is_sc32 and file_path.name == "01-craftsmanship-hardware.md":
-        note = (
-            "\n> **Faceplate Themes & Shift Legend Conventions:**  \n"
-            "> Because both the physical StackCalc SC-32 faceplate editions and the companion software app support multiple interchangeable faceplate themes (`Pure Black`, `Retro Futurism`, `Pioneer Brown`, `Pioneer Black`, `Stealth`, `Supernova`, `Deep Space`, `Voyager`, `Synthwave`, and `Arcade`), shift accent colors adapt dynamically to the active faceplate palette. Throughout this manual, shifted functions are referenced independent of color using the hardware directional shift symbols: **Left Shift `{{key:↰}}`** (Row 5, Col 0) and **Right Shift `{{key:↱}}`** (Row 6, Col 0).\n"
-        )
-        idx = text.find("\n---\n", fm_end)
-        if idx != -1:
-            return text[:idx] + note + text[idx:]
 
     if not is_sc32 and file_path.name == "01-hardware-architecture.md":
         note = (
@@ -646,7 +649,7 @@ def sync_consolidated_user_guides() -> None:
 
         guide_path.write_text(header + "\n" + "\n\n---\n\n".join(parts) + "\n", encoding="utf-8")
 
-    # Sync SC-6 markdown sources and consolidated guide to mirror directories across workspaces
+    # Sync SC-6 and SC-32 markdown sources and consolidated guides to mirror directories across workspaces
     import shutil
     mirror_manual_roots = [
         REPO_ROOT / "Website" / "docs" / "manuals",
@@ -655,13 +658,18 @@ def sync_consolidated_user_guides() -> None:
     ]
     for mroot in mirror_manual_roots:
         if mroot.exists():
-            sc6_dst = mroot / "sc6"
-            if sc6_dst.exists():
-                for src_md in sorted((MANUALS_DIR / "sc6").glob("*.md")):
-                    shutil.copy2(src_md, sc6_dst / src_md.name)
-            sc6_guide_src = MANUALS_DIR / "sc6-user-guide.md"
-            if sc6_guide_src.exists() and (mroot / "sc6-user-guide.md").exists():
-                shutil.copy2(sc6_guide_src, mroot / "sc6-user-guide.md")
+            for sub_name, guide_fn in (("sc6", "sc6-user-guide.md"), ("sc32", "sc32-user-guide.md")):
+                sub_dst = mroot / sub_name
+                if sub_dst.exists():
+                    for src_md in sorted((MANUALS_DIR / sub_name).glob("*.md")):
+                        dst_file = sub_dst / src_md.name
+                        if src_md.resolve() != dst_file.resolve():
+                            shutil.copy2(src_md, dst_file)
+                guide_src = MANUALS_DIR / guide_fn
+                if guide_src.exists() and (mroot / guide_fn).exists():
+                    dst_guide = mroot / guide_fn
+                    if guide_src.resolve() != dst_guide.resolve():
+                        shutil.copy2(guide_src, dst_guide)
 
 
 def process_all_files() -> None:
@@ -844,13 +852,16 @@ def process_all_files() -> None:
     from verify_and_sync_stack_tables import audit_all_tables_and_traces
     strict_stack = "--strict-stack" in sys.argv or "--check-stack" in sys.argv or os.environ.get("GATE_S10_STRICT") == "1"
     stack_stats = audit_all_tables_and_traces(repo_root=REPO_ROOT, strict=strict_stack, verbose=False)
-    assert stack_stats["tables_checked"] >= 200, f"Expected >= 200 signature showcase tables in Gate S15, found {stack_stats['tables_checked']}"
+    assert stack_stats["tables_checked"] >= 80, f"Expected >= 80 signature showcase tables in Gate S15, found {stack_stats['tables_checked']}"
 
     # 8. Gate S12: Assert zero single-brace {key:, {res:, or {cite: macro patterns in manuals/
     manuals_scanned = validate_no_single_brace_macros(MANUALS_DIR)
 
     # 9. Gate S16: Assert zero persona-bleed callout labels or explicit CRA scaffolding in chapter files & consolidated guides
     validate_no_persona_or_cra_bleed(MANUALS_DIR)
+
+    # 10. Gate S17: Assert SC-32 3-section narrative/calculator architecture, 3-decimal precision, and 43-key appendix parity
+    s17_stats = validate_sc32_chapter_architecture_and_precision(MANUALS_DIR, seq_reg_data)
 
     print(f"✅ Transformed and validated {len(manual_files)} manual chapter/appendix files + {len(curriculum_pages)} curriculum pages + 2 consolidated guides.")
     print(f"   - Validated {{key:...}} / {{keycap:...}} macros: {total_key_macros:,}")
@@ -862,6 +873,10 @@ def process_all_files() -> None:
     print(f"   - Gate S10 Stack Verification:                   {stack_stats['tables_checked']:,} tables / {stack_stats['traces_checked']:,} inline traces audited ({disc_msg})")
     print(f"   - Gate S12 Single-Brace Macro Audit:             {manuals_scanned} manual files scanned (0 single-brace {{key:/{{res:/{{cite: defects)")
     print("   - Gate S16 Persona-Bleed & CRA Scaffolding:      0 persona labels / 0 explicit CRA bullets: 100% PASS")
+    print(
+        f"   - Gate S17 SC-32 Narrative & Precision Audit:    {s17_stats['chapters_checked']} chapters (0 keycaps in N.1/N.2 & N.3 prose, "
+        f"{s17_stats['stack_tables']} stack tables, {s17_stats['screenshots']} LCD figures, <=3-decimal res values, 43-key parity): 100% PASS"
+    )
     print("   - Zero ASCII boxes, zero dummy tables, zero placeholder results, zero double-shifts, zero monadic-ENTER bugs: 100% PASS")
     print("   - Code fence parity, inline backtick parity, and section numbering uniqueness: 100% PASS")
 
@@ -956,6 +971,584 @@ def validate_no_persona_or_cra_bleed(manuals_dir: Path) -> None:
         f"Gate S16 Anti-AI-Slop / Persona-Bleed / Explicit CRA Scaffolding Failure ({len(violations)} violation(s)):\n  "
         + "\n  ".join(violations[:15])
     )
+
+
+def validate_sc32_chapter_architecture_and_precision(
+    manuals_dir: Path, seq_reg_data: Dict[str, Any]
+) -> Dict[str, int]:
+    """
+    Gate S17: Enforces Volume II (SC-32) structural, narrative, and precision invariants:
+      1. Every chapter (01..14) has exactly 3 `## ` sections (N.1, N.2, N.3).
+      2. Narrative sections N.1 and N.2 contain zero `{{key:...}}` or `{{keycap:...}}` macros.
+      3. The opening of Section N.3 (before the first `### ` subsection) contains a
+         self-contained Keypad & Softkey Orientation Block (>= 3 `{{key:...}}` macros).
+      4. All `### ` narrative subsections of Section N.3 contain zero inline `{{key:...}}`
+         macros outside markdown tables.
+      5. Every chapter contains 1 or 2 four-register stack tables (<= 22 total across Vol II),
+         and <= 16 LCD screenshot figures across Vol II.
+      6. Every `{{res:ID:value}}` referenced in SC-32 chapters has <= 3 decimal places.
+      7. Appendix A, C, and D maintain full 43-key hardware and 14-chapter worked-example parity.
+      8. Every Markdown table row across all SC-32 files has the exact same unescaped `|` count as its header.
+      9. Every register cell (`T, Z, Y, X`) in all SC-32 4-register stack tables matches RPNStackSimulator within 6e-4.
+      10. Every executable worked-example sequence in Appendix D matches its Verified Result column under RPNStackSimulator.
+      11. Every `Eq. X.Y` and `Figure X.Y` reference across all SC-32 files resolves to a defined equation/figure after rendering.
+    """
+    import verify_and_sync_stack_tables as vst
+    import book_engine
+
+    sc32_dir = manuals_dir / "sc32"
+    chapter_files = sorted(sc32_dir.glob("[0-9][0-9]-*.md"))
+    assert len(chapter_files) == 14, f"Expected 14 SC-32 chapter files, found {len(chapter_files)}"
+
+    # Check 8: Markdown table pipe-count parity across all SC-32 files
+    pipe_violations: List[str] = []
+    for md_file in sorted(sc32_dir.glob("*.md")):
+        md_lines = md_file.read_text(encoding="utf-8").splitlines()
+        in_table = False
+        expected_pipes = 0
+        for line_idx, ln in enumerate(md_lines, 1):
+            s = ln.strip()
+            if s.startswith("|") and s.endswith("|"):
+                pipes = len(re.findall(r"(?<!\\)\|", s))
+                if not in_table:
+                    in_table = True
+                    expected_pipes = pipes
+                elif pipes != expected_pipes:
+                    pipe_violations.append(
+                        f"{md_file.name}:{line_idx} has {pipes} pipes (expected {expected_pipes})"
+                    )
+            else:
+                in_table = False
+    assert not pipe_violations, (
+        "Gate S17 Failure: Unescaped pipe mismatch in SC-32 Markdown table(s):\n  "
+        + "\n  ".join(pipe_violations)
+    )
+
+    key_pat = re.compile(r"\{\{key(?:cap)?:[^}]+\}\}")
+    res_val_pat = re.compile(r"\{\{res:([^:}]+):value\}\}")
+    screenshot_pat = re.compile(r"\{\{res:[^:}]+:screenshot(?:\|[^}]*)?\}\}")
+
+    total_stack_tables = 0
+    total_screenshots = 0
+    referenced_res_ids: Set[str] = set()
+
+    for ch_file in chapter_files:
+        txt = ch_file.read_text(encoding="utf-8")
+        lines = txt.splitlines()
+        h2_indices = [i for i, ln in enumerate(lines) if ln.startswith("## ")]
+        assert len(h2_indices) == 3, (
+            f"Gate S17 Failure in {ch_file.name}: Expected exactly 3 `## ` sections (N.1, N.2, N.3), "
+            f"found {len(h2_indices)}: {[lines[i] for i in h2_indices]}"
+        )
+
+        # Sections N.1 and N.2 must have zero {{key:...}} macros
+        sec_1_and_2_txt = "\n".join(lines[h2_indices[0] : h2_indices[2]])
+        s12_keys = key_pat.findall(sec_1_and_2_txt)
+        assert not s12_keys, (
+            f"Gate S17 Failure in {ch_file.name}: Sections N.1/N.2 must contain zero keycap macros, "
+            f"found {len(s12_keys)}: {s12_keys[:5]}"
+        )
+
+        # Section N.3 structure: orientation block before first `### `, then `### ` narrative subsections
+        sec_3_lines = lines[h2_indices[2] :]
+        h3_rel_indices = [i for i, ln in enumerate(sec_3_lines) if ln.startswith("### ")]
+        assert h3_rel_indices, f"Gate S17 Failure in {ch_file.name}: Section N.3 has no `### ` subsections"
+
+        n3_intro_txt = "\n".join(sec_3_lines[: h3_rel_indices[0]])
+        intro_keys = key_pat.findall(n3_intro_txt)
+        assert len(intro_keys) >= 3, (
+            f"Gate S17 Failure in {ch_file.name}: Section N.3 opening orientation block must introduce "
+            f"chapter keys (>= 3 `{{{{key:...}}}}` macros), found {len(intro_keys)}"
+        )
+
+        # Inside N.3 `### ` subsections, zero `{{key:...}}` allowed outside markdown table rows
+        for rel_idx in range(h3_rel_indices[0], len(sec_3_lines)):
+            ln = sec_3_lines[rel_idx]
+            if not ln.strip().startswith("|"):
+                prose_keys = key_pat.findall(ln)
+                assert not prose_keys, (
+                    f"Gate S17 Failure in {ch_file.name} (line {h2_indices[2] + rel_idx + 1}): "
+                    f"Inline keycap macro(s) {prose_keys} found in N.3 `###` narrative prose outside stack table"
+                )
+
+        # Count 4-register stack tables and screenshots
+        ch_stack_tables = sum(
+            1 for ln in lines if ln.strip().startswith("|") and "Register T" in ln and "Register X" in ln
+        )
+        assert 1 <= ch_stack_tables <= 2, (
+            f"Gate S17 Failure in {ch_file.name}: Expected 1 or 2 four-register stack tables, found {ch_stack_tables}"
+        )
+        total_stack_tables += ch_stack_tables
+        total_screenshots += len(screenshot_pat.findall(txt))
+
+        for m in res_val_pat.finditer(txt):
+            referenced_res_ids.add(m.group(1))
+
+    assert total_stack_tables <= 22, (
+        f"Gate S17 Failure: Expected <= 22 four-register stack tables across SC-32 chapters, found {total_stack_tables}"
+    )
+    assert total_screenshots <= 16, (
+        f"Gate S17 Failure: Expected <= 16 LCD screenshots across SC-32 chapters, found {total_screenshots}"
+    )
+
+    # Check 3-decimal precision on all referenced {{res:ID:value}} entries in SC-32 chapters
+    over_precision: List[str] = []
+    for rid in sorted(referenced_res_ids):
+        r_val = str(seq_reg_data.get(rid, {}).get("res", ""))
+        if re.search(r"\.\d{4,}", r_val):
+            over_precision.append(f"{rid}: {r_val!r}")
+    assert not over_precision, (
+        f"Gate S17 Failure: SC-32 {{res:ID:value}} entries exceed 3 decimal places:\n  " + "\n  ".join(over_precision)
+    )
+
+    # Check Appendix A, C, and D hardware/chapter parity
+    app_a = (sc32_dir / "appendix-a-stack-lift-state-machine.md").read_text(encoding="utf-8")
+    app_c = (sc32_dir / "appendix-c-keycap-directory.md").read_text(encoding="utf-8")
+    app_d = (sc32_dir / "appendix-d-constants-and-equations.md").read_text(encoding="utf-8")
+    assert "`TVM` / `PLOT`" in app_a, "Gate S17 Failure: Appendix A missing `TVM` / `PLOT` on `x∥y`"
+    for k_idx in range(1, 44):
+        assert re.search(rf"^\|\s*\*\*{k_idx}\*\*\s*\|", app_c, re.MULTILINE), (
+            f"Gate S17 Failure: Appendix C missing key #{k_idx}"
+        )
+    assert "{{key:PLOT}}" in app_c, "Gate S17 Failure: Appendix C missing `{{key:PLOT}}` on R7, C3 (`x∥y`)"
+    for ch_num in range(1, 15):
+        assert f"**Ch {ch_num}:" in app_d, f"Gate S17 Failure: Appendix D missing worked sequences for Ch {ch_num}"
+
+    # Check 9: Strict 3-decimal stack table cell accuracy (tol = 6e-4) across all SC-32 files
+    strict_table_drifts: List[str] = []
+    for ch_file in sorted(sc32_dir.glob("*.md")):
+        tables = vst.find_4_register_tables(ch_file)
+        for tbl in tables:
+            sim = vst.RPNStackSimulator()
+            if "05-complex" in str(tbl.file_path):
+                sim.angle_mode = "rad"
+            if any("{{key:A}}" in r[1] or "{{key:XEQ}}" in r[1] or "{{key:EXEC}}" in r[1] for r in tbl.row_lines):
+                sim.poly_mode = True
+            if any(
+                re.search(r"^\s*[\$`\*]*0[0-9A-Fa-f]*h[\$`\*]*\s*$", r[1].split("|")[tbl.col_t + 1])
+                for r in tbl.row_lines
+                if len(r[1].split("|")) > tbl.col_t + 1
+            ):
+                sim.base_mode = "hex"
+            for r_idx, (line_num, raw_line) in enumerate(tbl.row_lines):
+                cells = [c.strip() for c in raw_line.split("|")[1:-1]]
+                if len(cells) <= max(tbl.col_k, tbl.col_t, tbl.col_z, tbl.col_y, tbl.col_x):
+                    continue
+                k_cell = cells[tbl.col_k]
+                step_x = vst.parse_register_cell(cells[tbl.col_x])
+                step_y = vst.parse_register_cell(cells[tbl.col_y])
+                vst.execute_keystroke_sequence(sim, k_cell, step_x=step_x, step_y=step_y)
+                reg_cells = [cells[tbl.col_t], cells[tbl.col_z], cells[tbl.col_y], cells[tbl.col_x]]
+                sim_vals = [sim.t, sim.z, sim.y, sim.x]
+                for reg_name, doc_cell, sim_val in zip(["T", "Z", "Y", "X"], reg_cells, sim_vals):
+                    doc_num = vst.parse_register_cell(doc_cell)
+                    if doc_num is not None and abs(doc_num - sim_val) > 6e-4:
+                        strict_table_drifts.append(
+                            f"{ch_file.name}:L{line_num} row {r_idx+1} {reg_name}: "
+                            f"doc={doc_cell!r} ({doc_num}) vs sim={sim_val:.6f}"
+                        )
+    assert not strict_table_drifts, (
+        "Gate S17 Failure: SC-32 4-register stack table cell(s) drift from 3-decimal rounding (> 6e-4):\n  "
+        + "\n  ".join(strict_table_drifts)
+    )
+
+    # Check 10: Programmatic simulation of Appendix D worked sequences (tol = 6e-4) AND chapter cross-reference parity
+    app_d_mismatches: List[str] = []
+    app_d_checked = 0
+    ch_rendered_map: Dict[int, str] = {}
+    for ch_f in chapter_files:
+        m_ch = re.match(r"^(\d\d)-", ch_f.name)
+        if m_ch:
+            raw_ch = ch_f.read_text(encoding="utf-8")
+            raw_ch = re.sub(
+                r"\{\{res:([^:}]+):value\}\}",
+                lambda m: str(seq_reg_data.get(m.group(1), {}).get("res", "")),
+                raw_ch,
+            )
+            ch_rendered_map[int(m_ch.group(1))] = raw_ch.replace("{,}", "").replace(",", "")
+    for line_idx, ln in enumerate(app_d.splitlines(), 1):
+        s = ln.strip()
+        if s.startswith("| **Ch ") and "`" in s:
+            cols = [c.strip() for c in s.strip("|").split("|")]
+            if len(cols) >= 4:
+                ex_name, expr, seq_col, res_col = cols[0], cols[1], cols[2], cols[3]
+                m_ch_num = re.search(r"\*\*Ch (\d+):", ex_name)
+                ch_num = int(m_ch_num.group(1)) if m_ch_num else 0
+                res_no_sub = re.sub(r"\^\{[^}]+\}|\^\d+|_\{[^}]+\}|_\d+", "", res_col)
+                ch_nums = [
+                    n.replace("{,}", "").replace(",", "")
+                    for n in re.findall(r"[-+]?\d+(?:\{,\}\d{3}|,\d{3})*(?:\.\d+)?", res_no_sub)
+                ]
+                if ch_num in ch_rendered_map and ch_nums:
+                    ch_txt = ch_rendered_map[ch_num]
+                    missing_in_ch = [n for n in ch_nums if n not in ch_txt and n.lstrip("+-") not in ch_txt]
+                    if missing_in_ch:
+                        app_d_mismatches.append(
+                            f"appendix-d:L{line_idx} {ex_name}: result number(s) {missing_in_ch} missing in Ch {ch_num}"
+                        )
+                if "EQN" in seq_col or "Transform" in seq_col:
+                    continue
+                sub_seqs = re.findall(r"`([^`]+)`", seq_col)
+                all_sim_vals: List[float] = []
+                for sub_s in sub_seqs:
+                    sim = vst.RPNStackSimulator()
+                    if "{{key:POLY}}" in sub_s:
+                        sim.poly_mode = True
+                    vst.execute_keystroke_sequence(sim, sub_s)
+                    all_sim_vals.extend([sim.x, sim.y, sim.z, sim.t])
+                    all_sim_vals.extend(sim.regs.values())
+                if all_sim_vals:
+                    app_d_checked += 1
+                    res_clean = res_col.replace("{,}", "").replace(",", "").replace("\\$", "")
+                    res_clean = re.sub(r"_\{[^}]+\}", "", res_clean)
+                    res_clean = re.sub(r"r_[123]\s*=", "", res_clean)
+                    res_clean = re.sub(r"\\sigma_[123]\s*=", "", res_clean)
+                    res_clean = re.sub(r"f\([^)]+\)\s*=", "", res_clean)
+                    res_clean = re.sub(r"\\hat\{y\}\([^)]+\)\s*=", "", res_clean)
+                    res_clean = re.sub(r"([+-]?\d+(?:\.\d+)?)\s*\\times\s*10\^\{([+-]?\d+)\}", r"\1e\2", res_clean)
+                    doc_nums = [
+                        float(x)
+                        for x in re.findall(r"(?<![A-Za-z0-9_])[-+]?\d+(?:\.\d+)?(?:e[-+]?\d+)?", res_clean)
+                    ]
+                    if doc_nums and not any(
+                        abs(dn - sv) <= (6e-4 if abs(dn) < 1e6 else abs(dn) * 1e-3)
+                        for dn in doc_nums
+                        for sv in all_sim_vals
+                    ):
+                        app_d_mismatches.append(
+                            f"appendix-d:L{line_idx} {ex_name}: doc={doc_nums} vs sim={[round(v, 4) for v in all_sim_vals[:4]]}"
+                        )
+    assert not app_d_mismatches, (
+        "Gate S17 Failure: Appendix D worked sequence(s) do not match RPNStackSimulator or Chapter narrative:\n  "
+        + "\n  ".join(app_d_mismatches)
+    )
+
+    # Check 11: Every Eq. X.Y and Figure X.Y reference resolves to a real equation/figure after rendering
+    dangling_refs: List[str] = []
+    for md_file in sorted(sc32_dir.glob("*.md")):
+        rendered = book_engine.process_manual_markdown(
+            md_file.read_text(encoding="utf-8"), md_file, is_sc32=True, target_format="web"
+        )
+        defined_figs = set(re.findall(r"!\[(Figure\s+[A-Za-z0-9.]+):", rendered))
+        ref_figs = set(re.findall(r"\b(Figure\s+[A-Za-z0-9.]+)\b", rendered)) - defined_figs
+        defined_eqs = set(re.findall(r"\\tag\{(Eq\.\s+[A-Za-z0-9.]+)\}", rendered))
+        ref_eqs = set(re.findall(r"\b(Eq\.\s+[A-Za-z0-9.]+)\b", rendered)) - defined_eqs
+        for rf in sorted(ref_figs | ref_eqs):
+            dangling_refs.append(f"{md_file.name}: unresolved reference {rf!r}")
+    assert not dangling_refs, (
+        "Gate S17 Failure: Unresolved Eq. X.Y or Figure X.Y reference(s) in SC-32 manual:\n  "
+        + "\n  ".join(dangling_refs)
+    )
+
+    # Check 12: Every {{res:ID:value}} in SC-32 matches RPNStackSimulator, 3-decimal rounding, unit-free purity, and \approx sign
+    from decimal import Decimal, ROUND_HALF_UP
+    res_binding_errors: List[str] = []
+    for md_file in sorted(sc32_dir.glob("*.md")):
+        for line_idx, ln in enumerate(md_file.read_text(encoding="utf-8").splitlines(), 1):
+            for m in res_val_pat.finditer(ln):
+                sid = m.group(1)
+                entry = seq_reg_data.get(sid, {})
+                res_s = str(entry.get("res", ""))
+                x_s = str(entry.get("stack", {}).get("X", ""))
+                seq_s = str(entry.get("seq", ""))
+                sim = vst.RPNStackSimulator()
+                vst.execute_keystroke_sequence(sim, seq_s)
+                res_clean = res_s.replace(",", "").replace("\\times 10^{", "e").replace("}", "").replace(" ", "")
+                m_num = re.match(r"^[-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?", res_clean)
+                res_num = float(m_num.group(0)) if m_num else None
+                try:
+                    x_num = float(x_s.replace(",", ""))
+                except ValueError:
+                    x_num = None
+                if x_num is not None and abs(sim.x - x_num) > max(1e-4, abs(sim.x) * 1e-4):
+                    res_binding_errors.append(
+                        f"{md_file.name}:L{line_idx} {sid}: sim.x={sim.x:.6g} != stack.X={x_num:.6g}"
+                    )
+                if res_num is not None and x_num is not None and abs(res_num) < 1e6 and "E" not in res_s and "times" not in res_s:
+                    half_up = float(Decimal(str(x_num)).quantize(Decimal("0.001"), rounding=ROUND_HALF_UP))
+                    if abs(res_num - half_up) > 1e-6 and abs(res_num - round(x_num, 3)) > 6e-4:
+                        res_binding_errors.append(
+                            f"{md_file.name}:L{line_idx} {sid}: 3-decimal drift res={res_s!r} vs X={x_s!r}"
+                        )
+                if re.search(r"[a-zA-Z]", res_s.replace("E", "").replace("\\times", "")):
+                    res_binding_errors.append(f"{md_file.name}:L{line_idx} {sid}: unit string embedded in res={res_s!r}")
+                prefix = ln[max(0, m.start() - 45) : m.start()]
+                is_exact = (
+                    res_num is not None
+                    and x_num is not None
+                    and abs(res_num - x_num) <= 1e-7
+                    and abs(res_num - sim.x) <= 1e-7
+                )
+                if not is_exact and prefix.rfind("=") > prefix.rfind("\\approx"):
+                    res_binding_errors.append(
+                        f"{md_file.name}:L{line_idx} {sid}: rounded result res={res_s!r} (X={x_s!r}) preceded by '=' instead of '\\approx'"
+                    )
+    assert not res_binding_errors, (
+        "Gate S17 Failure: SC-32 {{res:ID:value}} binding/rounding/approximation error(s):\n  "
+        + "\n  ".join(res_binding_errors)
+    )
+
+    # Check 13: Hardware shift-direction and host-key claims across SC-32 match Appendix C 43-key directory
+    import unicodedata
+    hw_key_map: Dict[str, Tuple[str, str]] = {}
+    for ln in app_c.splitlines():
+        m_hw = re.match(r"^\|\s*\*\*(\d+)\*\*\s*\|\s*`?R\d+,\s*C[\d-]+`?\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*([^|]+)\|", ln)
+        if m_hw:
+            prim_m = re.search(r"\{\{key(?:cap)?:([^}]+)\}\}", m_hw.group(2))
+            prim = unicodedata.normalize("NFC", prim_m.group(1) if prim_m else m_hw.group(2).strip().strip("`*"))
+            l_m = re.search(r"\{\{key(?:cap)?:([^}]+)\}\}", m_hw.group(3)) or re.search(r"`([^`]+)`", m_hw.group(3))
+            r_m = re.search(r"\{\{key(?:cap)?:([^}]+)\}\}", m_hw.group(4)) or re.search(r"`([^`]+)`", m_hw.group(4))
+            hw_key_map[prim] = (
+                unicodedata.normalize("NFC", l_m.group(1) if l_m else ""),
+                unicodedata.normalize("NFC", r_m.group(1) if r_m else ""),
+            )
+    assert len(hw_key_map) == 43, f"Gate S17 Failure: Expected 43 keys in hw_key_map, found {len(hw_key_map)}"
+    shift_claim_errors: List[str] = []
+    shift_claim_pats = [
+        re.compile(
+            r"`\{\{key(?:cap)?:([^}]+)\}\}`\s*\((?:the\s+)?(left|right)-shifted(?:\s+function|\s+partner|\s+counterpart)?\s+on\s+(?:the\s+)?`\{\{key(?:cap)?:([^}]+)\}\}`",
+            re.IGNORECASE,
+        ),
+        re.compile(
+            r"`\{\{key(?:cap)?:([^}]+)\}\}`\s+on\s+(Left|Right)[\s-]Shift(?:\s+`\{\{key:[↰↱]\}\}`)?\s+`\{\{key(?:cap)?:([^}]+)\}\}`",
+            re.IGNORECASE,
+        ),
+    ]
+    for md_file in sorted(sc32_dir.glob("*.md")):
+        for line_idx, ln in enumerate(md_file.read_text(encoding="utf-8").splitlines(), 1):
+            for pat in shift_claim_pats:
+                for m_sc in pat.finditer(ln):
+                    fn = unicodedata.normalize("NFC", m_sc.group(1))
+                    side = m_sc.group(2).lower()
+                    host = unicodedata.normalize("NFC", m_sc.group(3))
+                    if host in hw_key_map:
+                        actual_l, actual_r = hw_key_map[host]
+                        expected_fn = actual_l if side == "left" else actual_r
+                        if expected_fn != fn:
+                            shift_claim_errors.append(
+                                f"{md_file.name}:L{line_idx} claims {fn!r} is {side}-shifted on {host!r}, "
+                                f"but Appendix C has left={actual_l!r}, right={actual_r!r}"
+                            )
+            m_menu_row = re.match(
+                r"^\|\s*\*\*`([^`]+)`\*\*\s*\|\s*`\{\{key:([↰↱])\}\}`\s*\+\s*`\{\{key:([^}]+)\}\}`\s*\|",
+                ln,
+            )
+            if m_menu_row:
+                fn = unicodedata.normalize("NFC", m_menu_row.group(1))
+                arrow = m_menu_row.group(2)
+                host = unicodedata.normalize("NFC", m_menu_row.group(3))
+                if host in hw_key_map:
+                    actual_l, actual_r = hw_key_map[host]
+                    expected_fn = actual_l if arrow == "↰" else actual_r
+                    if expected_fn != fn:
+                        shift_claim_errors.append(
+                            f"{md_file.name}:L{line_idx} menu table claims {fn!r} is {arrow} on {host!r}, "
+                            f"but Appendix C 43-key table has left={actual_l!r}, right={actual_r!r}"
+                        )
+    assert not shift_claim_errors, (
+        "Gate S17 Failure: SC-32 prose shift/host-key claim mismatch against Appendix C:\n  "
+        + "\n  ".join(shift_claim_errors)
+    )
+
+    # Check 14: Zero unapproved 4+ decimal floating-point numbers across index.md and Chapters 01..14
+    allowed_4dec = {
+        "0.0025", "0.0022", "0.0000006328", "0.3048", "0.00225", "0.0048", "0.0182", "0.0134", "0.0118",
+        "0.0301", "14.6875", "0.6875", "35.1536", "1.0003", "42.1836", "2.2236", "0.0185", "0.0016",
+        "7.2436", "1.0825", "0.0425",
+    }
+    literal_4dec_violations: List[str] = []
+    for md_file in [sc32_dir / "index.md", *chapter_files]:
+        for line_idx, ln in enumerate(md_file.read_text(encoding="utf-8").splitlines(), 1):
+            for m_4d in re.finditer(r"(?<![A-Za-z0-9_])(\d+\.\d{4,})(?![A-Za-z0-9_])", ln):
+                num_tok = m_4d.group(1)
+                if num_tok not in allowed_4dec:
+                    literal_4dec_violations.append(f"{md_file.name}:L{line_idx} -> {num_tok!r}")
+    assert not literal_4dec_violations, (
+        "Gate S17 Failure: Unapproved 4+ decimal number(s) in SC-32 narrative chapters:\n  "
+        + "\n  ".join(literal_4dec_violations)
+    )
+
+    # Check 15: Zero dangling Section X.Y refs, broken relative links/anchors, or unbalanced LaTeX delimiters
+    def _slugify_heading(heading: str) -> str:
+        h = re.sub(r"`([^`]+)`", r"\1", heading)
+        h = re.sub(r"\$([^$]+)\$", r"\1", h)
+        h = re.sub(r"[*_~]", "", h).strip().lower()
+        h = re.sub(r"[^\w\s-]", "", h)
+        return re.sub(r"[\s]+", "-", h)
+
+    sc32_heading_slugs: Dict[str, set] = {}
+    for md_file in sorted(sc32_dir.glob("*.md")):
+        slugs = set()
+        for ln in md_file.read_text(encoding="utf-8").splitlines():
+            m_hd = re.match(r"^(#{1,6})\s+(.+)$", ln.strip())
+            if m_hd:
+                slugs.add(_slugify_heading(m_hd.group(2)))
+        sc32_heading_slugs[md_file.name] = slugs
+
+    structural_latex_errors: List[str] = []
+    for md_file in sorted(sc32_dir.glob("*.md")):
+        raw_txt = md_file.read_text(encoding="utf-8")
+        for dm in re.finditer(r"\$\$(.*?)\$\$", raw_txt, re.DOTALL):
+            body = dm.group(1)
+            lineno = raw_txt[: dm.start()].count("\n") + 1
+            b_clean = body.replace(r"\{", "").replace(r"\}", "")
+            if b_clean.count("{") != b_clean.count("}"):
+                structural_latex_errors.append(f"{md_file.name}:L{lineno} unbalanced braces in $$...$$")
+            if len(re.findall(r"\\left\b", body)) != len(re.findall(r"\\right\b", body)):
+                structural_latex_errors.append(f"{md_file.name}:L{lineno} unbalanced \\left/\\right in $$...$$")
+        for line_idx, ln in enumerate(raw_txt.splitlines(), 1):
+            if re.search(r"\bSections?\s+\d+\.\d+", ln):
+                structural_latex_errors.append(f"{md_file.name}:L{line_idx} dangling numbered Section X.Y reference")
+            for m_lnk in re.finditer(r"(?<!!)\[([^\]]+)\]\(([^)]+)\)", ln):
+                url = m_lnk.group(2)
+                if url.startswith(("http://", "https://", "mailto:")):
+                    continue
+                parts = url.split("#", 1)
+                t_file, anchor = parts[0], (parts[1] if len(parts) > 1 else None)
+                if t_file:
+                    t_base = Path(t_file).name
+                    if not t_base.endswith(".md"):
+                        t_base += ".md"
+                    if t_base not in sc32_heading_slugs:
+                        structural_latex_errors.append(f"{md_file.name}:L{line_idx} broken file link {url!r}")
+                    elif anchor and anchor not in sc32_heading_slugs[t_base]:
+                        structural_latex_errors.append(f"{md_file.name}:L{line_idx} broken anchor link {url!r}")
+                elif anchor and anchor not in sc32_heading_slugs[md_file.name]:
+                    structural_latex_errors.append(f"{md_file.name}:L{line_idx} broken self-anchor #{anchor}")
+            ln_no_code = re.sub(r"`[^`]+`", "", re.sub(r"\$\$.*?\$\$", "", ln))
+            if len(re.findall(r"(?<!\\)\$", ln_no_code)) % 2 != 0:
+                structural_latex_errors.append(f"{md_file.name}:L{line_idx} odd unescaped '$' delimiter count")
+            for im in re.finditer(r"(?<!\\)\$((?:\\.|[^$])+)(?<!\\)\$", ln_no_code):
+                ib = im.group(1)
+                ib_clean = ib.replace(r"\{", "").replace(r"\}", "")
+                if ib_clean.count("{") != ib_clean.count("}"):
+                    structural_latex_errors.append(f"{md_file.name}:L{line_idx} unbalanced braces in ${ib}$")
+                if len(re.findall(r"\\left\b", ib)) != len(re.findall(r"\\right\b", ib)):
+                    structural_latex_errors.append(f"{md_file.name}:L{line_idx} unbalanced \\left/\\right in ${ib}$")
+    assert not structural_latex_errors, (
+        "Gate S17 Failure: SC-32 structural link/section/LaTeX delimiter error(s):\n  "
+        + "\n  ".join(structural_latex_errors)
+    )
+
+    # Check 16: Zero RCL <digit> sequences, index.md Chapter H1 title parity, and prose paragraph word-count ceiling (<= 220 words)
+    check16_errors: List[str] = []
+    for md_file in sorted(sc32_dir.glob("*.md")):
+        raw_txt = md_file.read_text(encoding="utf-8")
+        for line_idx, ln in enumerate(raw_txt.splitlines(), 1):
+            if re.search(r"\{\{key(?:cap)?:RCL\}\}\s*`?\s*\d\b", ln):
+                check16_errors.append(
+                    f"{md_file.name}:L{line_idx} invalid '{{{{key:RCL}}}} <digit>' sequence (RCL activates Alpha mode A-Z/(i) on SC-32)"
+                )
+
+    idx_txt = (sc32_dir / "index.md").read_text(encoding="utf-8")
+    idx_titles: Dict[str, str] = {}
+    for m_row in re.finditer(
+        r"\|\s*\*\*\[Chapter\s+\d+\]\(([^)]+)\)\*\*\s*\|\s*\*\*([^*]+)\*\*\s*\|",
+        idx_txt,
+    ):
+        idx_titles[m_row.group(1).strip()] = m_row.group(2).strip()
+
+    for ch_file in chapter_files:
+        ch_txt = ch_file.read_text(encoding="utf-8")
+        m_h1 = re.search(r"^#\s+Chapter\s+\d+:\s+(.+)$", ch_txt, re.MULTILINE)
+        assert m_h1, f"Gate S17 Failure: Missing '# Chapter N: <Title>' in {ch_file.name}"
+        h1_title = m_h1.group(1).strip()
+        if ch_file.name not in idx_titles:
+            check16_errors.append(f"index.md missing Organization table row for {ch_file.name}")
+        elif idx_titles[ch_file.name] != h1_title:
+            check16_errors.append(
+                f"index.md title mismatch for {ch_file.name}: table has {idx_titles[ch_file.name]!r} vs H1 {h1_title!r}"
+            )
+        if "### Try It on the Stack" not in ch_txt:
+            check16_errors.append(f"{ch_file.name} missing '### Try It on the Stack' end-of-chapter practice block")
+        else:
+            try_block = ch_txt.split("### Try It on the Stack", 1)[1]
+            for prob_idx in (1, 2, 3):
+                if not re.search(rf"^{prob_idx}\.\s+\*\*", try_block, re.MULTILINE):
+                    check16_errors.append(f"{ch_file.name} '### Try It on the Stack' missing problem #{prob_idx}")
+        ch_lines = ch_txt.splitlines()
+        h2_indices = [idx for idx, line in enumerate(ch_lines) if line.startswith("## ")]
+        n3_start = h2_indices[-1] if h2_indices else 0
+        for idx, line in enumerate(ch_lines[:n3_start], 1):
+            if ":screenshot" in line:
+                check16_errors.append(
+                    f"{ch_file.name}:L{idx} calculator UI screenshot macro found in Section N.1/N.2 (must reside in Section N.3)"
+                )
+
+    seen_screenshots: Dict[str, str] = {}
+    for md_file in sorted(sc32_dir.glob("*.md")):
+        for line_idx, ln in enumerate(md_file.read_text(encoding="utf-8").splitlines(), 1):
+            for m_resval in re.finditer(r"\{\{res:([^:}]+):value\}\}", ln):
+                check16_errors.append(
+                    f"{md_file.name}:L{line_idx} unexpanded {{res:{m_resval.group(1)}:value}} macro found (replace with verified <=3-decimal literal)"
+                )
+            for m_shot in re.finditer(r"\{\{res:([^:}]+):screenshot", ln):
+                shot_id = m_shot.group(1).strip()
+                if "plot_" in shot_id:
+                    check16_errors.append(f"{md_file.name}:L{line_idx} non-hardware plot screenshot {shot_id!r} used in SC-32 manual")
+                if shot_id in seen_screenshots:
+                    check16_errors.append(
+                        f"{md_file.name}:L{line_idx} duplicate screenshot {shot_id!r} (already used in {seen_screenshots[shot_id]})"
+                    )
+                else:
+                    seen_screenshots[shot_id] = f"{md_file.name}:L{line_idx}"
+
+    for req_menu in (
+        "DISP", "MODES", "BASE", "CLEAR", "FLAGS", "STACK", "PARTS", "PROB",
+        "SUMS", "x̄,ȳ", "s,σ", "L.R.", "x?y", "x?0", "POLY", "TVM",
+        "EQN", "SOLVE", "∫", "PLOT", "REGS", "MEM",
+    ):
+        if f"| **`{req_menu}`**" not in unicodedata.normalize("NFC", app_c):
+            check16_errors.append(f"appendix-c-keycap-directory.md missing softkey menu row for {req_menu!r}")
+
+    for p_file in [sc32_dir / "index.md"] + chapter_files:
+        in_fm = False
+        p_txt = p_file.read_text(encoding="utf-8")
+        web_rendered = process_manual_markdown(p_txt, p_file, is_sc32=True, target_format="web")
+        if re.search(r"\\(?:mathtt|texttt)\{\[[^\n]*\\tag\{Eq\.", web_rendered):
+            check16_errors.append(f"{p_file.name}: softkey ribbon diagram erroneously tagged as an equation")
+        valid_eq_tags = set(re.findall(r"\\tag\{(Eq\.\s*[0-9A-Z]+\.\d+)\}", web_rendered))
+        for m_eqref in re.finditer(r"\b(Eq\.\s*[0-9A-Z]+\.\d+)\b", p_txt):
+            ref_str = re.sub(r"\s+", " ", m_eqref.group(1).strip())
+            if ref_str not in valid_eq_tags:
+                check16_errors.append(
+                    f"{p_file.name}: equation reference {ref_str!r} does not match any numbered equation in chapter (max/valid: {sorted(valid_eq_tags)[-3:] if valid_eq_tags else 'none'})"
+                )
+        for line_idx, ln in enumerate(p_txt.splitlines(), 1):
+            s = ln.strip()
+            if line_idx == 1 and s == "---":
+                in_fm = True
+                continue
+            if in_fm:
+                if s == "---":
+                    in_fm = False
+                continue
+            if not s or s.startswith(("#", "|", "!", ">", "-", "*", "$$", "{{", "```")):
+                continue
+            wc = len(s.split())
+            if wc > 220:
+                check16_errors.append(
+                    f"{p_file.name}:L{line_idx} prose paragraph exceeds 220-word ceiling ({wc} words)"
+                )
+
+    pdf_gen_path = REPO_ROOT / "Tools" / "generate_manual_pdfs.py"
+    if pdf_gen_path.exists():
+        pdf_gen_txt = pdf_gen_path.read_text(encoding="utf-8")
+        for bad_tok in ("<b>STAT</b>", "<b>CONST</b>", "<b>CONV</b>", "<b>↖</b>", "<b>↗</b>"):
+            if bad_tok in pdf_gen_txt:
+                check16_errors.append(f"generate_manual_pdfs.py contains obsolete/phantom SC-32 frontispiece token {bad_tok!r}")
+
+    assert not check16_errors, (
+        "Gate S17 Failure: SC-32 Check 16 (RCL grammar, index title parity, or paragraph length) error(s):\n  "
+        + "\n  ".join(check16_errors)
+    )
+
+    return {
+        "chapters_checked": len(chapter_files),
+        "stack_tables": total_stack_tables,
+        "screenshots": total_screenshots,
+        "appendix_d_verified": app_d_checked,
+    }
 
 
 def export_curriculum_uil_registry() -> None:

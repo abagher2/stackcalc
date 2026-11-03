@@ -978,6 +978,11 @@
       "ENG",
       "ALL"
     ],
+    "EQN" : [
+      "NEW",
+      "EDIT",
+      "[Eq₁ … Eqₙ]"
+    ],
     "FLAGS" : [
       "STACK ▸",
       "MODE ▸",
@@ -1015,12 +1020,19 @@
       "GCD",
       "LCM"
     ],
+    "PLOT" : [
+      "<",
+      "|<-",
+      "OUT",
+      "IN",
+      "->|",
+      ">"
+    ],
     "POLY" : [
       "A",
       "B",
       "C",
       "D",
-      "EXEC",
       "CLR"
     ],
     "PROB" : [
@@ -1029,6 +1041,14 @@
       "n!",
       "RAND",
       "SD"
+    ],
+    "REGS" : [
+      "STACK",
+      "STO",
+      "STATS",
+      "DATA",
+      "▲",
+      "▼"
     ],
     "STACK" : [
       "2-LVL",
@@ -1053,11 +1073,11 @@
     ],
     "TVM" : [
       "N",
-      "I%YR",
+      "I%",
       "PV",
       "PMT",
       "FV",
-      "BGN\/END"
+      "END/BEG"
     ],
     "s,σ" : [
       "sx",

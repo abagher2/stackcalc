@@ -178,14 +178,14 @@ hide:
       </div>
 
       <p class="ec-short-summary">
-        The foundational tactile laboratory for early numeracy, subitizing, number bonds, and place-value regrouping. Features a precision dual 2&times;5 counting stage with inset square sockets, an integrated elevated carry shelf for base-ten regrouping, 20 high-contrast bi-color square miniblocks (19&times;19mm), and a solid 2U cube "10" Carry Block housed neatly in a modular 3&times;1 Gridfinity storage box.
+        The foundational tactile laboratory for early numeracy, subitizing, number bonds, and place-value regrouping. Features 2 independent 2&times;5 ten-frame counting trays, a twin 10-frame docking stage lid, 40 high-contrast square counter miniblocks (20 Set A + 20 Set B), and 12 Landmark <code>[10]</code> Carry Blocks (6 Set A + 6 Set B) housed neatly in a modular 3&times;1&times;7U Gridfinity storage box (56 pieces total).
       </p>
 
       <!-- Highlights Checklist -->
       <div class="ec-highlights-list">
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Elevated Carry Shelf &amp; 2U Carry Cube:</strong> Gives physical form to "carrying the ten"—counters regroup into a green 2U cube placed on the upper shelf during addition.</span>
+          <span><strong>12 Landmark <code>[10]</code> Carry Blocks:</strong> Gives physical form to "carrying the ten"—ten counters regroup into a stamped <code>[10]</code> landmark block during addition and place-value trading.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
@@ -193,11 +193,11 @@ hide:
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>20 Square Miniblocks (19&times;19mm):</strong> Dual-tone counters (Ocean Teal and Amber-Orange) with anti-roll square footprint seat securely into the stage sockets.</span>
+          <span><strong>40 Square Counter Miniblocks (20 Set A + 20 Set B):</strong> Contrasting counters (19&times;19mm) with anti-roll square footprint seat securely into the 2&times;5 tray sockets.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Gridfinity 3x1 Standard:</strong> Fits standard modular desktop classroom organization bins.</span>
+          <span><strong>Gridfinity 3x1x7U Standard:</strong> Fits standard modular desktop classroom organization bins.</span>
         </div>
       </div>
 
@@ -776,19 +776,19 @@ hide:
     <div class="ec-box-grid">
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">3x1x13U Gridfinity Enclosure Box with Snapfinity Bi-Directional Sliding Hard Lid and Integrated Carry Shelf (Snap-on TPU non-skid feet sold separately)</span>
+        <span class="ec-box-text">3x1x7U Gridfinity Enclosure Box with Snapfinity Twin 10-Frame Docking Stage Lid</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">Slide-Out 2&times;5 Dual Ten-Frame Counting Tray</span>
+        <span class="ec-box-text">2 Independent 2&times;5 Ten-Frame Activity Trays</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">20 Two-Tone High-Contrast Counters (Glow Red / Glow Yellow)</span>
+        <span class="ec-box-text">52 Miniblocks: 40 Tactile Counters (20 Set A + 20 Set B) and 12 Landmark <code>[10]</code> Carry Blocks (6 Set A + 6 Set B) — 56 pieces total</span>
       </div>
       <div class="ec-box-item">
         <span class="ec-box-icon">&check;</span>
-        <span class="ec-box-text">Early Math Number Bond &amp; Regrouping Challenge Guide</span>
+        <span class="ec-box-text">Archival 4&times;6" Reference Card &bull; Early Math Number Bond &amp; Regrouping Challenge Guide</span>
       </div>
     </div>
   </section>

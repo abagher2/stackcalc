@@ -66,7 +66,7 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 | **6.EE.A.2** | Write, read, and evaluate expressions in which letters stand for numbers. | **Unit 07:** 4-Line Hardware LCD Stack & `PRIME-01` | `A {{key:ENTER}} B {{key:+}} C {{key:×}}` (Postfix order, **SC-32 Manual, Ch. 2**) |
 | **7.SP.C.7** | Develop a probability model and use it to find probabilities of events. | **Unit 11:** Fraction Studio (`FRAC-01`: Ratio Towers) | `Sample Value {{key:Σ+}}` (Statistical accumulator, **SC-6 Manual, Ch. 7**) |
 | **HSA.SSE.A.2**| Use the structure of an expression to identify ways to rewrite it (Factoring Quadratics). | **Unit 08:** Place Value Studio (Base-$x$ Trays) & `PRIME-01` | `1 {{key:ENTER}} 5 {{key:ENTER}} 6 {{key:POLY}}` (**SC-32 Manual, Ch. 7**) |
-| **HSG.SRT.C.8** | Use trigonometric ratios and the Pythagorean Theorem to solve right triangles. | **Unit 09:** Fraction Studio (`FRAC-01`) & Place Value Studio | `Run {{key:ENTER}} Rise {{key:▸θ,r}}` (**SC-32 Manual, Ch. 4**) |
+| **HSG.SRT.C.8** | Use trigonometric ratios and the Pythagorean Theorem to solve right triangles. | **Unit 09:** Right-Triangle & 2D Vector Diagram & SC-32 `[▸θ,r]` | `Rise {{key:ENTER}} Run {{key:▸θ,r}}` (**SC-32 Manual, Ch. 4**) |
 </div>
 
 ---
@@ -123,7 +123,7 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 | **Dimensions 4A** | Ch 3, Lesson 3.1: Fraction Equivalence | Fraction Studio (`FRAC-01`: 84.0 mm Whole) | **C:** Stand two 1/4 blocks (`42 mm`) flush beside one 1/2 block (`42 mm`). **P:** Singapore Bar Model. **A:** `{{key:.}} 2 {{key:.}} 4 {{keycap:SIMP}} => 1/2` (**SC-6 Manual, Ch. 5**). |
 | **Dimensions 5A** | Ch 1, Lesson 1.4: Prime Factorization | Prime Factor Studio (`PRIME-01`) | **C:** Stack factor blocks $[2], [3], [5]$ (`34.35 mm`) in comparator well. **P:** Prime factor tree diagram. **A:** Verify with `{{key:FACT}}` (**SC-6 Manual, Ch. 7**). |
 | **Dimensions 8A** | Ch 4, Lesson 4.2: Factoring Trinomials | Place Value Studio (Base-$x$ Trays) &amp; `PRIME-01` | **C:** Place $[1], [5], [6]$ in $x^2, x, 1$ sockets and factor $c=6$ with prime blocks. **P:** Area model diagram. **A:** `{{key:POLY}}` root evaluation on SC-32 (**SC-32 Manual, Ch. 7**). |
-| **Additional Math** | Ch 8: Right-Triangle Trig &amp; Vectors | Fraction Studio (`FRAC-01`) &amp; Place Value Studio | **C:** Place run $x$ in Row 1 and rise $y$ in Row 0. **P:** Right-triangle projection sketch. **A:** Convert to polar $(r, \theta)$ with `{{key:▸θ,r}}` (**SC-32 Manual, Ch. 4**). |
+| **Additional Math** | Ch 8: Right-Triangle Trig &amp; Vectors | Right-Triangle &amp; 2D Vector Diagram | **C:** Place rise $y$ in Register Y and run $x$ in Register X. **P:** Right-triangle projection sketch. **A:** Convert to polar $(r, \theta)$ with `{{key:▸θ,r}}` (**SC-32 Manual, Ch. 4**). |
 </div>
 
 ---

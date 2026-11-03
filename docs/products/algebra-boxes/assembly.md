@@ -24,7 +24,7 @@ hide:
     <div class="ec-catalog-eyebrow">Classroom Hardware &bull; Modular L-Frame</div>
     <h1 class="ec-catalog-headline">Algebra Factoring Studio Assembly Guide</h1>
     <p class="ec-catalog-subhead">
-      Featuring interlocking base and height perimeter guidance rails with 30 chamfered tactile polynomial snap tiles. Learn how the physical factoring stage is set up.
+      Featuring 2 interlocking Cartesian base and height perimeter guidance L-rails with 40 chamfered tactile polynomial tiles (20 Positive + 20 Negative, 43 pieces total). Learn how the physical factoring stage is set up.
     </p>
   </header>
 

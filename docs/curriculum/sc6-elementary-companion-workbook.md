@@ -839,7 +839,7 @@ Multiply the $5$ slats `5 {{key:ENTER}}` $(T: 0, Z: 0, Y: 5, X: 5)$ by `18 . 1 .
 
 ### Workbook Problem 5.20: Dividing Ceramic Frame Polish into Restoration Bottles
 
-You have $\frac{2}{3}\text{ liter}$ of ceramic frame polish, and each full bicycle restoration uses $\frac{1}{4}\text{ liter}$. Why does dividing by $\frac{1}{4}$ make the number get *bigger*? Because each whole liter holds $4$ quarter-liter jobs! In the Comparator Well, two $1/3$ blocks ($56\text{ mm}$) fit two $1/4$ blocks ($42\text{ mm}$) plus an extra $14\text{ mm}$ ($\frac{2}{3}$ of another $1/4$ block): `{{res:sc6_05_fractions_decimals_ratios_seq_24:keys}}` $\rightarrow$ **`{{res:sc6_05_fractions_decimals_ratios_seq_24:value}}`**.
+You have $\frac{2}{3}\text{ liter}$ of ceramic frame polish, and each full bicycle restoration uses $\frac{1}{4}\text{ liter}$. Why does dividing by $\frac{1}{4}$ make the number get *bigger*—and how do we model it with the exact same tower-height meaning as whole-number division? When we divide by a whole number (like $\frac{3}{4} \div 3 = \frac{1}{4}$), we ask: *"If $\frac{3}{4}$ is $3$ equal parts of a target tower, how tall is $1$ full target tower?"* Ask the exact same **Split & Rebuild (1 Full Tower)** question for $\frac{2}{3} \div \frac{1}{4}$: *"If two $1/3$ blocks ($56\text{ mm}$) are just $\frac{1}{4}$ of a mystery tower, how tall is all $\frac{4}{4}$ ($1$ full mystery tower)?"* Pooling blocks across your 4-kit classroom table pod, stack $4$ sets of two $1/3$ blocks ($4 \times 56\text{ mm} = 224\text{ mm} = \text{eight } 1/3\text{ blocks}$), which stands flush beside $2$ Whole blocks plus two $1/3$ blocks ($2\ \frac{2}{3}$)! (You can also verify by measurement in the Comparator Well: two $1/3$ blocks at $56\text{ mm}$ fit two $1/4$ blocks at $42\text{ mm}$ plus an extra $14\text{ mm}$, which is $\frac{2}{3}$ of a $21\text{ mm}$ quarter-block): `{{res:sc6_05_fractions_decimals_ratios_seq_24:keys}}` $\rightarrow$ **`{{res:sc6_05_fractions_decimals_ratios_seq_24:value}}`**.
 
 Pour the available polish `. 2 . 3` into $Y$ with `{{key:ENTER}}` $(T: 0, Z: 0, Y: 2/3, X: 2/3)$, divide by the per-bike dose `. 1 . 4 {{key:÷}}` $(T: 0, Z: 0, Y: 0, X: 8/3)$, and unpack via `{{key:a ᵇ/c}}` $(T: 0, Z: 0, Y: 0, X: 2\ 2/3)$ to see $2$ full bike restorations plus $\frac{2}{3}$ of a third!
 
@@ -847,7 +847,7 @@ Pour the available polish `. 2 . 3` into $Y$ with `{{key:ENTER}}` $(T: 0, Z: 0, 
 
 ### Workbook Problem 5.21: Snipping Braided Shifter Housing into Derailleur Loops
 
-A $4\ \frac{1}{2}\text{-foot}$ coil of braided shifter cable housing must be snipped into $\frac{3}{4}\text{-foot}$ loops for rear derailleur bends. Notice that $1\ \frac{1}{2}\text{ feet}$ is exactly two $\frac{3}{4}\text{-foot}$ loops, and $4\ \frac{1}{2}$ is three times $1\ \frac{1}{2}$! Confirm how many loops come out of the coil on your stack: `{{res:sc6_05_fractions_decimals_ratios_seq_25:keys}}` $\rightarrow$ **`{{res:sc6_05_fractions_decimals_ratios_seq_25:value}}`**.
+A $4\ \frac{1}{2}\text{-foot}$ coil of braided shifter cable housing must be snipped into $\frac{3}{4}\text{-foot}$ loops for rear derailleur bends. With your 4-kit table pod, you can see why dividing by $\frac{3}{4}$ always **splits by the numerator ($\div 3$) and rebuilds by the denominator ($\times 4$)**: for instance, in $\frac{1}{2} \div \frac{3}{4}$, a $1/2$ block ($42\text{ mm}$) is $3$ fourths of a mystery tower, so splitting by $3$ gives one $1/6$ block ($14\text{ mm}$) per fourth, and stacking $4$ of those $1/6$ blocks ($56\text{ mm}$) builds the full mystery tower of $\frac{2}{3}$! Applying the same $(\div 3) \times 4$ rule to $4\ \frac{1}{2} \div \frac{3}{4}$: splitting $4\ \frac{1}{2}$ into $3$ equal parts gives $1\ \frac{1}{2}$, and multiplying by $4$ gives $6$. Confirm how many loops come out of the coil on your stack: `{{res:sc6_05_fractions_decimals_ratios_seq_25:keys}}` $\rightarrow$ **`{{res:sc6_05_fractions_decimals_ratios_seq_25:value}}`**.
 
 Place the coil length `4 . 1 . 2` into $Y$ with `{{key:ENTER}}` $(T: 0, Z: 0, Y: 4\ 1/2, X: 4\ 1/2)$ and divide by the loop length `. 3 . 4 {{key:÷}}` $(T: 0, Z: 0, Y: 0, X: 6)$ to get $6$ derailleur loops with zero waste.
 
@@ -1398,15 +1398,15 @@ Extract the mode from the statistical registers: `{{res:sc6_07_data_probability_
 
 Weather Station Spread Analysis: Weekly maximum temperatures: $62, 65, 78, 81, 74, 69, 85^\circ\text{F}$. Calculate the temperature range ($\max - \min = 85 - 62$). Mark the minimum temperature ($62^\circ$) and maximum temperature ($85^\circ$) on a number line. The span between the two extremes measures $23^\circ$.
 
-Calculate the weekly spread using `{{key:RNG}}`: `{{res:sc6_07_data_probability_primes_seq_23:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_23:value}}`** (T: 0, Z: 0, Y: 7, X: 23). Even though the temperatures were entered out of order, the SC-6 finds the coolest ($62^\circ$) and warmest ($85^\circ$) days to report a $\mathbf{23.00^\circ\text{F}}$ range.
+Calculate the weekly spread using `{{key:RNG}}`: `{{res:sc6_07_data_probability_primes_seq_23:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_23:value}}`** (T: 0, Z: 0, Y: 0, X: 23). Even though the temperatures were entered out of order, the SC-6 finds the coolest ($62^\circ$) and warmest ($85^\circ$) days to report a $\mathbf{23.00^\circ\text{F}}$ range.
 
 ---
 
 ### Workbook Problem 7.18: Interquartile Range of Daily Rainfall
 
-Precipitation Spread: Weekly rainfall measurements: $0.1, 0.2, 0.4, 0.6, 0.9, 1.2, 1.5\text{ inches}$. Find the interquartile range ($Q_3 - Q_1$). Using the SC-6 inclusive-median quartile method, the lower half including the median ($0.1, 0.2, 0.4, 0.6$) has midpoint $Q_1 = (0.2 + 0.4)/2 = 0.30$, and the upper half including the median ($0.6, 0.9, 1.2, 1.5$) has midpoint $Q_3 = (0.9 + 1.2)/2 = 1.05$, giving $\text{IQR} = 1.05 - 0.30 = 0.75\text{ inches}$.
+Precipitation Spread: Weekly rainfall measurements: $0.1, 0.2, 0.4, 0.6, 0.9, 1.2, 1.5\text{ inches}$. Find the interquartile range ($Q_3 - Q_1$). Using the SC-6 exclusive-median quartile method (matching *Big Ideas Math*), excluding the median ($0.6$) leaves the lower half ($0.1, 0.2, 0.4$) with midpoint $Q_1 = 0.20$ and the upper half ($0.9, 1.2, 1.5$) with midpoint $Q_3 = 1.20$, giving $\text{IQR} = 1.20 - 0.20 = 1.00\text{ inch}$.
 
-Compute the middle-50% spread directly with `{{key:IQR}}`: `{{res:sc6_07_data_probability_primes_seq_24:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_24:value}}`** (T: 0, Z: 0, Y: 7, X: 0.75). Unlike the full range, the interquartile range ($\mathbf{0.75\text{ inches}}$) ignores the driest and stormiest outlier days to show how typical rainfall varies.
+Compute the middle-50% spread directly with `{{key:IQR}}`: `{{res:sc6_07_data_probability_primes_seq_24:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_24:value}}`** (T: 0, Z: 0, Y: 0, X: 1). Unlike the full range, the interquartile range ($\mathbf{1.00\text{ inch}}$) ignores the driest and stormiest outlier days to show how typical rainfall varies.
 
 ---
 
@@ -1414,7 +1414,7 @@ Compute the middle-50% spread directly with `{{key:IQR}}`: `{{res:sc6_07_data_pr
 
 Sensor Error Analysis: A 5-point dataset: $10, 15, 20, 25, 30$ has mean $\bar{x} = 20.0$. Deviations from mean are $|-10|, |-5|, |0|, |+5|, |+10|$. Sum of deviations $= 30$. Find the Mean Absolute Deviation ($\text{MAD} = 30 / 5 = 6.0$). Lay out the points on a number line. Measure the distance from each point to the center mark 20: $10 + 5 + 0 + 5 + 10 = 30$. Dividing by 5 yields the average distance from center.
 
-Find the Mean Absolute Deviation on the SC-6: `{{res:sc6_07_data_probability_primes_seq_25:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_25:value}}`** (T: 0, Z: 0, Y: 5, X: 6). On average, each sensor reading sits **6 units** away from the balance point of 20.
+Find the Mean Absolute Deviation on the SC-6: `{{res:sc6_07_data_probability_primes_seq_25:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_25:value}}`** (T: 0, Z: 0, Y: 0, X: 6). On average, each sensor reading sits **6 units** away from the balance point of 20.
 
 ---
 
@@ -1454,7 +1454,7 @@ Divide $-72$ by $9$ on the SC-6: `{{res:sc6_07_data_probability_primes_seq_31:ke
 
 Evaluate $|-125|$. Locate $-125$ on a number line. Regardless of direction from the origin, geometric distance from 0 to $-125$ is strictly non-negative: 125 units.
 
-Measure the distance from zero using `{{key:|x|}}`: `{{res:sc6_07_data_probability_primes_seq_32:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_32:value}}`** (T: 0, Z: 0, Y: 0, X: 125). Whether you walk 125 steps east or 125 steps west, your pedometer logs **125 steps** of distance.
+Measure the distance from zero using `{{key:ABS}}`: `{{res:sc6_07_data_probability_primes_seq_32:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_32:value}}`** (T: 0, Z: 0, Y: 0, X: 125). Whether you walk 125 steps east or 125 steps west, your pedometer logs **125 steps** of distance.
 
 ---
 
@@ -1462,7 +1462,7 @@ Measure the distance from zero using `{{key:|x|}}`: `{{res:sc6_07_data_probabili
 
 Evaluate $|-18| + |12|$. On a number line, the distance from $-18$ to 0 is 18 units and the distance from 0 to $+12$ is 12 units, giving a combined distance of 30 units.
 
-Add the two magnitudes on the stack: `{{res:sc6_07_data_probability_primes_seq_33:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_33:value}}`** (T: 0, Z: 0, Y: 0, X: 30). Because `{{key:|x|}}` acts immediately on Register $X$, you never need vertical-bar brackets around each term to find the total distance of **30 units**.
+Add the two magnitudes on the stack: `{{res:sc6_07_data_probability_primes_seq_33:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_33:value}}`** (T: 0, Z: 0, Y: 0, X: 30). Because `{{key:ABS}}` acts immediately on Register $X$, you never need vertical-bar brackets around each term to find the total distance of **30 units**.
 
 ---
 
@@ -1470,7 +1470,7 @@ Add the two magnitudes on the stack: `{{res:sc6_07_data_probability_primes_seq_3
 
 Find distance between $-12$ and $+15$ on the real line: $|15 - (-12)|$. Mark $-12$ and $+15$ on a number line and count the unit intervals between them: 12 units to reach zero, plus 15 units past zero, totaling 27 units.
 
-Compute the span with subtraction and `{{key:|x|}}`: `{{res:sc6_07_data_probability_primes_seq_34:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_34:value}}`** (T: 0, Z: 0, Y: 0, X: 27). Subtracting the two coordinates and tapping `{{key:|x|}}` always gives the positive distance (**27 units**), no matter which endpoint you enter first!
+Compute the span with subtraction and `{{key:ABS}}`: `{{res:sc6_07_data_probability_primes_seq_34:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_34:value}}`** (T: 0, Z: 0, Y: 0, X: 27). Subtracting the two coordinates and tapping `{{key:ABS}}` always gives the positive distance (**27 units**), no matter which endpoint you enter first!
 
 ---
 
@@ -1622,7 +1622,7 @@ Verify the Euclidean ladder endpoint on the SC-6: `{{res:sc6_07_data_probability
 
 Dataset: $12, 14, 15, 16, 18, 20, 24$ (Mean = 17.0). Deviations: $5, 3, 2, 1, 1, 3, 7$. Sum = 22. MAD = $22/7$. Plot the 7 points on a dot plot and mark the mean at 17. Measuring the distance from each dot to 17 gives $5 + 3 + 2 + 1 + 1 + 3 + 7 = 22$, and dividing among the 7 data points gives $22/7 \approx 3.1429$.
 
-Evaluate the Mean Absolute Deviation with `{{key:MAD}}`: `{{res:sc6_07_data_probability_primes_seq_58:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_58:value}}`** (T: 0, Z: 0, Y: 7, X: 3.1428571429). Look closely at the decimal $3.142857\dots$ in Register $X$: because the sum of deviations is $22$ across $n=7$ points, the MAD is the famous fraction $22/7$ (Archimedes' classic approximation for $\pi$)!
+Evaluate the Mean Absolute Deviation with `{{key:MAD}}`: `{{res:sc6_07_data_probability_primes_seq_58:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_58:value}}`** (T: 0, Z: 0, Y: 0, X: 3.1428571429). Look closely at the decimal $3.142857\dots$ in Register $X$: because the sum of deviations is $22$ across $n=7$ points, the MAD is the famous fraction $22/7$ (Archimedes' classic approximation for $\pi$)!
 
 ---
 
@@ -1630,7 +1630,7 @@ Evaluate the Mean Absolute Deviation with `{{key:MAD}}`: `{{res:sc6_07_data_prob
 
 Scores: $65, 72, 75, 80, 84, 88, 92, 96$. Find IQR ($Q_3 - Q_1 = 90 - 73.5 = 16.5$). Line up 8 Counting Tiles to mark the 8 sorted scores, splitting them into a lower half ($65, 72, 75, 80$) with midpoint $Q_1 = 73.5$ and an upper half ($84, 88, 92, 96$) with midpoint $Q_3 = 90$. The spread between the quartiles is $90 - 73.5 = 16.5$.
 
-Compute the interquartile range on the stack: `{{res:sc6_07_data_probability_primes_seq_59:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_59:value}}`** (T: 0, Z: 0, Y: 8, X: 16.5). With $n=8$ students in Register $Y$, the middle 50% of the class spans **16.5 points** in Register $X$.
+Compute the interquartile range on the stack: `{{res:sc6_07_data_probability_primes_seq_59:keys}}` $\to$ **`{{res:sc6_07_data_probability_primes_seq_59:value}}`** (T: 0, Z: 0, Y: 0, X: 16.5). Across the $n=8$ students, the middle 50% of the class spans **16.5 points** in Register $X$.
 
 ---
 
@@ -1688,7 +1688,7 @@ Compute $2^5 - 1$ and test primality on the SC-6: `{{res:sc6_07_data_probability
 
 ### Workbook Drill 8.1 (Level 1): $6 + 3 = ?$
 
-Use your **Place Value Tray (`PLACE-01`)**. Start with the larger benchmark group of 6 (a full row of 5 plus 1 dot), then count on 3 quick hops: 7, 8, 9 ($6 + 3 = 9$). When `6 {{key:ENTER}} 3 {{key:+}} ?` appears, key in 9 {{key:ENTER}} in under $< 2.0\text{ seconds}$. 
+Use your **Place Value Tray (`PLACE-01`)**. Start with the larger benchmark group of 6 (a full row of 5 plus 1 dot), then count on 3 quick hops: 7, 8, 9 ($6 + 3 = 9$). When `6  3  +  =  ?` appears in Quiz Mode, key in 9 {{key:≠}} in under $< 2.0\text{ seconds}$. 
 
 On the stack, `{{res:sc6_08_drill_03:keys}}` $\to$ **`{{res:sc6_08_drill_03:value}}`** (T: 0, Z: 0, Y: 0, X: 9). Watch `6` lift to Floor $Y$ on `{{key:ENTER}}` before `{{key:+}}` drops it onto `3` to land on `9`.
 
@@ -1696,7 +1696,7 @@ On the stack, `{{res:sc6_08_drill_03:keys}}` $\to$ **`{{res:sc6_08_drill_03:valu
 
 ### Workbook Drill 8.2 (Level 1): $8 - 0 = ?$
 
-In your **Place Value Tray (`PLACE-01`)**, set out 8 counters (5 on top, 3 on bottom). Subtracting zero means taking away zero blocks—all 8 counters stay locked in position ($8 - 0 = 8$). For `8 {{key:ENTER}} 0 {{key:-}} ?`, press 8 {{key:ENTER}} on the keypad (target time: $< 1.0\text{ seconds}$). 
+In your **Place Value Tray (`PLACE-01`)**, set out 8 counters (5 on top, 3 on bottom). Subtracting zero means taking away zero blocks—all 8 counters stay locked in position ($8 - 0 = 8$). For `8  0  -  =  ?` in Quiz Mode, press 8 {{key:≠}} on the keypad (target time: $< 1.0\text{ seconds}$). 
 
 Testing `{{res:sc6_08_drill_04:keys}}` $\to$ **`{{res:sc6_08_drill_04:value}}`** (T: 0, Z: 0, Y: 0, X: 8) shows that subtracting `0` in Register $X$ leaves `8` completely unchanged!
 
@@ -1704,7 +1704,7 @@ Testing `{{res:sc6_08_drill_04:keys}}` $\to$ **`{{res:sc6_08_drill_04:value}}`**
 
 ### Workbook Drill 8.3 (Level 1): $3 + 7 = ?$
 
-Look at your **Place Value Tray (`PLACE-01`)**. Place 3 blue counters in the first row. The 7 empty pockets show its exact 10-partner—together they fill all 10 pockets of the tray ($3 + 7 = 10$). When `3 {{key:ENTER}} 7 {{key:+}} ?` (or Missing-Value Puzzle `3 ? + = 10`) shows up, tap 10 {{key:ENTER}} (aim for under $< 1.5\text{ seconds}$). 
+Look at your **Place Value Tray (`PLACE-01`)**. Place 3 blue counters in the first row. The 7 empty pockets show its exact 10-partner—together they fill all 10 pockets of the tray ($3 + 7 = 10$). When `3  7  +  =  ?` (or Missing-Value Puzzle `3 ? + = 10`) shows up in Quiz Mode, tap 10 {{key:≠}} (aim for under $< 1.5\text{ seconds}$). 
 
 Stack verification: `{{res:sc6_08_drill_05:keys}}` $\to$ **`{{res:sc6_08_drill_05:value}}`** (T: 0, Z: 0, Y: 0, X: 10). Just like Textbook Drill 2 in reverse, `3` and `7` snap together on the stack to form a complete `10`.
 
@@ -1712,7 +1712,7 @@ Stack verification: `{{res:sc6_08_drill_05:keys}}` $\to$ **`{{res:sc6_08_drill_0
 
 ### Workbook Drill 8.4 (Level 1): $9 - 5 = ?$
 
-With your **Place Value Tray (`PLACE-01`)**, a group of 9 fills the top row of 5 plus 4 on the bottom row. When you lift off the full top row of 5, the 4 bottom counters remain ($9 - 5 = 4$). For the prompt `9 {{key:ENTER}} 5 {{key:-}} ?`, enter 4 {{key:ENTER}} within $< 1.8\text{ seconds}$. 
+With your **Place Value Tray (`PLACE-01`)**, a group of 9 fills the top row of 5 plus 4 on the bottom row. When you lift off the full top row of 5, the 4 bottom counters remain ($9 - 5 = 4$). For the Quiz Mode prompt `9  5  -  =  ?`, enter 4 {{key:≠}} within $< 1.8\text{ seconds}$. 
 
 Keying `{{res:sc6_08_drill_06:keys}}` $\to$ **`{{res:sc6_08_drill_06:value}}`** (T: 0, Z: 0, Y: 0, X: 4) takes the benchmark `5` away from `9` in Register $Y$ and drops the difference `4` into Register $X$.
 
@@ -1720,7 +1720,7 @@ Keying `{{res:sc6_08_drill_06:keys}}` $\to$ **`{{res:sc6_08_drill_06:value}}`** 
 
 ### Workbook Drill 8.5 (Level 1): $4 + 4 = ?$
 
-Place matching `[4]` digit blocks in Row 1 and Row 0 of your **Place Value Tray (`PLACE-01`)**. Both halves show identical $2 \times 2$ square clusters ($4 + 4 = 8$); doubling 4 clicks together like twin booster rockets! When you see `4 {{key:ENTER}} 4 {{key:+}} ?`, key in 8 {{key:ENTER}} in under $< 1.0\text{ seconds}$. 
+Place matching `[4]` digit blocks in Row 1 and Row 0 of your **Place Value Tray (`PLACE-01`)**. Both halves show identical $2 \times 2$ square clusters ($4 + 4 = 8$); doubling 4 clicks together like twin booster rockets! When you see `4  4  +  =  ?` in Quiz Mode, key in 8 {{key:≠}} in under $< 1.0\text{ seconds}$. 
 
 On your SC-6, `{{res:sc6_08_drill_07:keys}}` $\to$ **`{{res:sc6_08_drill_07:value}}`** (T: 0, Z: 0, Y: 0, X: 8). Pro Tip: Because `{{key:ENTER}}` copies `4` into both $Y$ and $X$, you can even test `4 {{key:ENTER}}` `{{key:+}}` to double a number in three taps!
 
@@ -1728,7 +1728,7 @@ On your SC-6, `{{res:sc6_08_drill_07:keys}}` $\to$ **`{{res:sc6_08_drill_07:valu
 
 ### Workbook Drill 8.6 (Level 1): $10 - 2 = ?$
 
-Start with a full 10 in your **Place Value Tray (`PLACE-01`)**. Pop out the 2 end counters from the bottom row: you see a full row of 5 plus 3 on the bottom, giving 8 counters ($10 - 2 = 8$). For `10 {{key:ENTER}} 2 {{key:-}} ?` (or Missing-Value Puzzle `10 ? - = 8`), press 8 {{key:ENTER}} (target time: $< 1.2\text{ seconds}$). 
+Start with a full 10 in your **Place Value Tray (`PLACE-01`)**. Pop out the 2 end counters from the bottom row: you see a full row of 5 plus 3 on the bottom, giving 8 counters ($10 - 2 = 8$). For `10  2  -  =  ?` (or Missing-Value Puzzle `10 ? - = 8`) in Quiz Mode, press 8 {{key:≠}} (target time: $< 1.2\text{ seconds}$). 
 
 Stack trace: `{{res:sc6_08_drill_08:keys}}` $\to$ **`{{res:sc6_08_drill_08:value}}`** (T: 0, Z: 0, Y: 0, X: 8). Counting back 2 from 10 on the stack lands cleanly on `8`.
 
@@ -1736,7 +1736,7 @@ Stack trace: `{{res:sc6_08_drill_08:keys}}` $\to$ **`{{res:sc6_08_drill_08:value
 
 ### Workbook Drill 8.7 (Level 2): $34 + 12 = ?$
 
-Use your two **Place Value Tray (`PLACE-01`)**: in the left tray, model the tens ($3 + 1 = 4\text{ tens} = 40$); in the right tray, model the ones ($4 + 2 = 6\text{ ones}$). Put them together for $46$. When `34 {{key:ENTER}} 12 {{key:+}} ?` is shown, key in 46 {{key:ENTER}} in under $< 2.5\text{ seconds}$. 
+Use your two **Place Value Tray (`PLACE-01`)**: in the left tray, model the tens ($3 + 1 = 4\text{ tens} = 40$); in the right tray, model the ones ($4 + 2 = 6\text{ ones}$). Put them together for $46$. When `34  12  +  =  ?` is shown in Quiz Mode, key in 46 {{key:≠}} in under $< 2.5\text{ seconds}$. 
 
 Checking `{{res:sc6_08_drill_11:keys}}` $\to$ **`{{res:sc6_08_drill_11:value}}`** (T: 0, Z: 0, Y: 0, X: 46) shows how both tens and ones add without regrouping, landing on `46` in Register $X$.
 
@@ -1744,7 +1744,7 @@ Checking `{{res:sc6_08_drill_11:keys}}` $\to$ **`{{res:sc6_08_drill_11:value}}`*
 
 ### Workbook Drill 8.8 (Level 2): $67 - 25 = ?$
 
-Use your two **Place Value Tray (`PLACE-01`)** as a Tens Tray and a Ones Tray: subtract the tens ($6 - 2 = 4\text{ tens} = 40$) and subtract the ones ($7 - 5 = 2\text{ ones}$) to get $42$. On `67 {{key:ENTER}} 25 {{key:-}} ?`, press 42 {{key:ENTER}} (target time: $< 2.8\text{ seconds}$). 
+Use your two **Place Value Tray (`PLACE-01`)** as a Tens Tray and a Ones Tray: subtract the tens ($6 - 2 = 4\text{ tens} = 40$) and subtract the ones ($7 - 5 = 2\text{ ones}$) to get $42$. On `67  25  -  =  ?` in Quiz Mode, press 42 {{key:≠}} (target time: $< 2.8\text{ seconds}$). 
 
 In `{{key:NUM}}` mode, `{{res:sc6_08_drill_12:keys}}` $\to$ **`{{res:sc6_08_drill_12:value}}`** (T: 0, Z: 0, Y: 0, X: 42). Keeping `67` in Register $Y$ and subtracting `25` in Register $X$ confirms `42`.
 
@@ -1752,7 +1752,7 @@ In `{{key:NUM}}` mode, `{{res:sc6_08_drill_12:keys}}` $\to$ **`{{res:sc6_08_dril
 
 ### Workbook Drill 8.9 (Level 2): $47 + 38 = ?$
 
-Use the **Make-a-Round-Number Trick** with your **Place Value Tray (`PLACE-01`)**! Notice that 38 is just 2 shy of 40 (a nearly full 10-group with 8 counters). Add 40 to 47 first ($47 + 40 = 87$), then step back 2 counters to land on $85$. For `47 {{key:ENTER}} 38 {{key:+}} ?`, tap 85 {{key:ENTER}} (aim for under $< 3.5\text{ seconds}$). 
+Use the **Make-a-Round-Number Trick** with your **Place Value Tray (`PLACE-01`)**! Notice that 38 is just 2 shy of 40 (a nearly full 10-group with 8 counters). Add 40 to 47 first ($47 + 40 = 87$), then step back 2 counters to land on $85$. For `47  38  +  =  ?` in Quiz Mode, tap 85 {{key:≠}} (aim for under $< 3.5\text{ seconds}$). 
 
 Stack check: `{{res:sc6_08_drill_13:keys}}` $\to$ **`{{res:sc6_08_drill_13:value}}`** (T: 0, Z: 0, Y: 0, X: 85). Or see how the ones regroup: $7 + 8 = 15$ (1 ten and 5 ones) plus $40 + 30 = 70$ gives `85`.
 
@@ -1760,7 +1760,7 @@ Stack check: `{{res:sc6_08_drill_13:keys}}` $\to$ **`{{res:sc6_08_drill_13:value
 
 ### Workbook Drill 8.10 (Level 2): $72 - 45 = ?$
 
-**Count Up to Subtract!** Use your **Place Value Tray (`PLACE-01`)** to bridge the gap from 45 to 72: add 5 counters to 45 to reach the friendly multiple of ten ($50$), then add 22 more ($2\text{ tens} + 2\text{ ones}$) to reach $72$. Your total jump is $5 + 22 = 27$. When `72 {{key:ENTER}} 45 {{key:-}} ?` (or Missing-Value Puzzle `72 ? - = 27`) appears, enter 27 {{key:ENTER}} within $< 3.5\text{ seconds}$. 
+**Count Up to Subtract!** Use your **Place Value Tray (`PLACE-01`)** to bridge the gap from 45 to 72: add 5 counters to 45 to reach the friendly multiple of ten ($50$), then add 22 more ($2\text{ tens} + 2\text{ ones}$) to reach $72$. Your total jump is $5 + 22 = 27$. When `72  45  -  =  ?` (or Missing-Value Puzzle `72 ? - = 27`) appears in Quiz Mode, enter 27 {{key:≠}} within $< 3.5\text{ seconds}$. 
 
 Keying `{{res:sc6_08_drill_14:keys}}` $\to$ **`{{res:sc6_08_drill_14:value}}`** (T: 0, Z: 0, Y: 0, X: 27) confirms the difference—counting up from the smaller number to the larger number turns borrowing into easy addition!
 
@@ -1768,7 +1768,7 @@ Keying `{{res:sc6_08_drill_14:keys}}` $\to$ **`{{res:sc6_08_drill_14:value}}`** 
 
 ### Workbook Drill 8.11 (Level 2): $56 + 19 = ?$
 
-Model 19 on your **Place Value Tray (`PLACE-01`)**—it fills all 20 pockets except 1. Add 20 to 56 first ($56 + 20 = 76$), then take back that 1 empty pocket ($76 - 1 = 75$). For `56 {{key:ENTER}} 19 {{key:+}} ?`, key in 75 {{key:ENTER}} in under $< 2.8\text{ seconds}$. 
+Model 19 on your **Place Value Tray (`PLACE-01`)**—it fills all 20 pockets except 1. Add 20 to 56 first ($56 + 20 = 76$), then take back that 1 empty pocket ($76 - 1 = 75$). For `56  19  +  =  ?` in Quiz Mode, key in 75 {{key:≠}} in under $< 2.8\text{ seconds}$. 
 
 Verify on the stack: `{{res:sc6_08_drill_15:keys}}` $\to$ **`{{res:sc6_08_drill_15:value}}`** (T: 0, Z: 0, Y: 0, X: 75). Anytime you add 19, 29, or 39, jump up by the next ten and step back 1.
 
@@ -1776,7 +1776,7 @@ Verify on the stack: `{{res:sc6_08_drill_15:keys}}` $\to$ **`{{res:sc6_08_drill_
 
 ### Workbook Drill 8.12 (Level 2): $91 - 38 = ?$
 
-Use **Overshoot & Give Back**! Since 38 is 2 less than 40, subtract 40 from 91 first ($91 - 40 = 51$). Because you took away 2 too many, pop 2 counters back into your **Place Value Tray (`PLACE-01`)** to finish at $51 + 2 = 53$. On `91 {{key:ENTER}} 38 {{key:-}} ?`, press 53 {{key:ENTER}} (target time: $< 3.5\text{ seconds}$). 
+Use **Overshoot & Give Back**! Since 38 is 2 less than 40, subtract 40 from 91 first ($91 - 40 = 51$). Because you took away 2 too many, pop 2 counters back into your **Place Value Tray (`PLACE-01`)** to finish at $51 + 2 = 53$. On `91  38  -  =  ?` in Quiz Mode, press 53 {{key:≠}} (target time: $< 3.5\text{ seconds}$). 
 
 Stack verification: `{{res:sc6_08_drill_16:keys}}` $\to$ **`{{res:sc6_08_drill_16:value}}`** (T: 0, Z: 0, Y: 0, X: 53). Overshooting by 40 and giving back 2 beats crossing out digits every time.
 
@@ -1784,7 +1784,7 @@ Stack verification: `{{res:sc6_08_drill_16:keys}}` $\to$ **`{{res:sc6_08_drill_1
 
 ### Workbook Drill 8.13 (Level 3): $6 \times 9 = ?$
 
-Use your **Place Value Tray (`PLACE-01`)** to see the **"10 Minus 1" Rule**! Nine is $10 - 1$, so 6 groups of 9 is 6 groups of 10 ($60$) minus 6 single counters ($60 - 6 = 54$). For `6 {{key:ENTER}} 9 {{key:×}} ?`, key in 54 {{key:ENTER}} in under $< 1.5\text{ seconds}$. 
+Use your **Place Value Tray (`PLACE-01`)** to see the **"10 Minus 1" Rule**! Nine is $10 - 1$, so 6 groups of 9 is 6 groups of 10 ($60$) minus 6 single counters ($60 - 6 = 54$). For `6  9  ×  =  ?` in Quiz Mode, key in 54 {{key:≠}} in under $< 1.5\text{ seconds}$. 
 
 Stack trace: `{{res:sc6_08_drill_19:keys}}` $\to$ **`{{res:sc6_08_drill_19:value}}`** (T: 0, Z: 0, Y: 0, X: 54). Notice that in `54`, the tens digit is $6 - 1 = 5$ and the digits add up to $5 + 4 = 9$.
 
@@ -1792,7 +1792,7 @@ Stack trace: `{{res:sc6_08_drill_19:keys}}` $\to$ **`{{res:sc6_08_drill_19:value
 
 ### Workbook Drill 8.14 (Level 3): $48 \div 6 = ?$
 
-**Model Half with Your Kit $\to$ Double It!** Take all **24 Array Tiles** from your kit and arrange them into 6 equal rows: you get 6 rows of 4 ($24 \div 6 = 4$). Since 48 is double 24, double the row length from 4 to 8 ($48 \div 6 = 8$). On `48 {{key:ENTER}} 6 {{key:÷}} ?` (or Missing-Value Puzzle `48 ? ÷ = 8`), press 8 {{key:ENTER}} (target time: $< 1.8\text{ seconds}$). 
+**Model Half with Your Kit $\to$ Double It!** Take all **24 Array Tiles** from your kit and arrange them into 6 equal rows: you get 6 rows of 4 ($24 \div 6 = 4$). Since 48 is double 24, double the row length from 4 to 8 ($48 \div 6 = 8$). On `48  6  ÷  =  ?` (or Missing-Value Puzzle `48 ? ÷ = 8`) in Quiz Mode, press 8 {{key:≠}} (target time: $< 1.8\text{ seconds}$). 
 
 Keying `{{res:sc6_08_drill_20:keys}}` $\to$ **`{{res:sc6_08_drill_20:value}}`** (T: 0, Z: 0, Y: 0, X: 8) confirms `8`. Halving 48 to 24 turns a big division fact into one you can build right on your desk.
 
@@ -1800,7 +1800,7 @@ Keying `{{res:sc6_08_drill_20:keys}}` $\to$ **`{{res:sc6_08_drill_20:value}}`** 
 
 ### Workbook Drill 8.15 (Level 3): $12 \times 7 = ?$
 
-**Split 12 into $10 + 2$.** Use 14 of your **24 Array Tiles** to build the $2 \times 7 = 14$ rectangle on your desk, then add the easy $10 \times 7 = 70$ mental block: $70 + 14 = 84$. When `12 {{key:ENTER}} 7 {{key:×}} ?` flashes, tap 84 {{key:ENTER}} (aim for under $< 2.2\text{ seconds}$). 
+**Split 12 into $10 + 2$.** Use 14 of your **24 Array Tiles** to build the $2 \times 7 = 14$ rectangle on your desk, then add the easy $10 \times 7 = 70$ mental block: $70 + 14 = 84$. When `12  7  ×  =  ?` flashes in Quiz Mode, tap 84 {{key:≠}} (aim for under $< 2.2\text{ seconds}$). 
 
 On the stack, `{{res:sc6_08_drill_21:keys}}` $\to$ **`{{res:sc6_08_drill_21:value}}`** (T: 0, Z: 0, Y: 0, X: 84). Every $12 \times N$ fact is just $10N + 2N$!
 
@@ -1808,7 +1808,7 @@ On the stack, `{{res:sc6_08_drill_21:keys}}` $\to$ **`{{res:sc6_08_drill_21:valu
 
 ### Workbook Drill 8.16 (Level 3): $9 \times 9 = ?$
 
-Use your **Place Value Tray (`PLACE-01`)** to picture 9 groups of 10 ($90$) and pull off 1 counter from each of the 9 groups ($90 - 9 = 81$). For `9 {{key:ENTER}} 9 {{key:×}} ?`, enter 81 {{key:ENTER}} within $< 1.2\text{ seconds}$. 
+Use your **Place Value Tray (`PLACE-01`)** to picture 9 groups of 10 ($90$) and pull off 1 counter from each of the 9 groups ($90 - 9 = 81$). For `9  9  ×  =  ?` in Quiz Mode, enter 81 {{key:≠}} within $< 1.2\text{ seconds}$. 
 
 Testing `{{res:sc6_08_drill_22:keys}}` $\to$ **`{{res:sc6_08_drill_22:value}}`** (T: 0, Z: 0, Y: 0, X: 81) confirms `81`—or press `9 {{key:x²}}` in `{{key:NUM}}` mode to square 9 in a single operation!
 
@@ -1816,7 +1816,7 @@ Testing `{{res:sc6_08_drill_22:keys}}` $\to$ **`{{res:sc6_08_drill_22:value}}`**
 
 ### Workbook Drill 8.17 (Level 3): $84 \div 12 = ?$
 
-Take all **24 Array Tiles** and group them into dozens ($24 \div 12 = 2\text{ dozens}$). Now scale up to 84: since $70 + 14 = 84$, it takes 7 dozens to make 84 ($84 \div 12 = 7$). When `84 {{key:ENTER}} 12 {{key:÷}} ?` (or Missing-Value Puzzle `84 ? ÷ = 7`) appears, key in 7 {{key:ENTER}} in under $< 2.0\text{ seconds}$. 
+Take all **24 Array Tiles** and group them into dozens ($24 \div 12 = 2\text{ dozens}$). Now scale up to 84: since $70 + 14 = 84$, it takes 7 dozens to make 84 ($84 \div 12 = 7$). When `84  12  ÷  =  ?` (or Missing-Value Puzzle `84 ? ÷ = 7`) appears in Quiz Mode, key in 7 {{key:≠}} in under $< 2.0\text{ seconds}$. 
 
 Stack check: `{{res:sc6_08_drill_23:keys}}` $\to$ **`{{res:sc6_08_drill_23:value}}`** (T: 0, Z: 0, Y: 0, X: 7). Recognizing 84 from Workbook Drill 8.15 ($12 \times 7 = 84$) gives you the inverse division fact for free!
 
@@ -1824,7 +1824,7 @@ Stack check: `{{res:sc6_08_drill_23:keys}}` $\to$ **`{{res:sc6_08_drill_23:value
 
 ### Workbook Drill 8.18 (Level 3): $11 \times 11 = ?$
 
-Use the **11s Split Trick**! Model $2 \times 11 = 22$ with 22 of your **24 Array Tiles**. For $11 \times 11$, split the digits `1` and `1` apart and put their sum ($1 + 1 = 2$) right in the middle: `121`. For `11 {{key:ENTER}} 11 {{key:×}} ?`, press 121 {{key:ENTER}} (target time: $< 1.5\text{ seconds}$). 
+Use the **11s Split Trick**! Model $2 \times 11 = 22$ with 22 of your **24 Array Tiles**. For $11 \times 11$, split the digits `1` and `1` apart and put their sum ($1 + 1 = 2$) right in the middle: `121`. For `11  11  ×  =  ?` in Quiz Mode, press 121 {{key:≠}} (target time: $< 1.5\text{ seconds}$). 
 
 In `{{key:NUM}}` mode, `{{res:sc6_08_drill_24:keys}}` $\to$ **`{{res:sc6_08_drill_24:value}}`** (T: 0, Z: 0, Y: 0, X: 121). $10 \times 11 = 110$, plus one more $11$ equals `121`.
 
@@ -1832,7 +1832,7 @@ In `{{key:NUM}}` mode, `{{res:sc6_08_drill_24:keys}}` $\to$ **`{{res:sc6_08_dril
 
 ### Workbook Drill 8.19 (Level 4): $3/4 - 2/5 = ?$
 
-Compare three $1/4$ pieces ($3/4$) against two $1/5$ pieces ($2/5$) in your **Fraction Towers** comparator well, then find their shared common denominator of 20: $3/4 = 15/20$ and $2/5 = 8/20$, so the height difference is $15/20 - 8/20 = 7/20$. When `3/4 {{key:ENTER}} 2/5 {{key:-}} ?` appears, tap {{key:.}} 7 {{key:.}} 20 {{key:ENTER}} (aim for under $< 4.5\text{ seconds}$). 
+Compare three $1/4$ pieces ($3/4$) against two $1/5$ pieces ($2/5$) in your **Fraction Towers** comparator well, then find their shared common denominator of 20: $3/4 = 15/20$ and $2/5 = 8/20$, so the height difference is $15/20 - 8/20 = 7/20$. When `3/4  2/5  -  =  ?` appears in Quiz Mode, tap {{key:.}} 7 {{key:.}} 20 {{key:≠}} (aim for under $< 4.5\text{ seconds}$). 
 
 In `{{key:NUM}}` mode, `{{res:sc6_08_drill_29:keys}}` $\to$ **`{{res:sc6_08_drill_29:value}}`** (T: 0, Z: 0, Y: 0, X: 7/20). Two-Dot entry (`{{key:.}} 3 {{key:.}} 4` and `{{key:.}} 2 {{key:.}} 5`) automatically finds the common denominator of 20 on the stack!
 
@@ -1840,7 +1840,7 @@ In `{{key:NUM}}` mode, `{{res:sc6_08_drill_29:keys}}` $\to$ **`{{res:sc6_08_dril
 
 ### Workbook Drill 8.20 (Level 4): $38 \div 6 \to Q=?, R=?$
 
-Take 14 of your **24 Array Tiles** and make groups of 6 (2 full groups of 6 with 2 left over). Now scale up to 38: 6 full groups of 6 use $36$ tiles and leave $2$ tiles left over ($Q=6, R=2$). For `38 {{key:ENTER}} 6 {{key:÷R}} ?`, key in 6 {{key:ENTER}} in under $< 3.0\text{ seconds}$. 
+Take 14 of your **24 Array Tiles** and make groups of 6 (2 full groups of 6 with 2 left over). Now scale up to 38: 6 full groups of 6 use $36$ tiles and leave $2$ tiles left over ($Q=6, R=2$). For `38  6  ÷R  =  ?` in Quiz Mode, key in 6 {{key:≠}} in under $< 3.0\text{ seconds}$. 
 
 On the stack, `{{res:sc6_08_drill_31:keys}}` $\to$ **`{{res:sc6_08_drill_31:value}}`** (T: 0, Z: 0, Y: 2, X: 6). `{{key:÷R}}` puts the whole quotient `6` in Register $X$ and the remainder `2` right above it in Register $Y$!
 
@@ -1848,7 +1848,7 @@ On the stack, `{{res:sc6_08_drill_31:keys}}` $\to$ **`{{res:sc6_08_drill_31:valu
 
 ### Workbook Drill 8.21 (Level 5): $0.25 \times 80 = ?$
 
-Connect decimals to your **Fraction Towers**! The decimal $0.25$ is stamped right on the $1/4$ tower ($0.25 = 1/4$). Taking one fourth of 80 is just $80 \div 4 = 20$. For `0.25 {{key:ENTER}} 80 {{key:×}} ?`, enter 20 {{key:ENTER}} within $< 2.0\text{ seconds}$. 
+Connect decimals to your **Fraction Towers**! The decimal $0.25$ is stamped right on the $1/4$ tower ($0.25 = 1/4$). Taking one fourth of 80 is just $80 \div 4 = 20$. For `0.25  80  ×  =  ?` in Quiz Mode, enter 20 {{key:≠}} within $< 2.0\text{ seconds}$. 
 
 On the stack, `{{res:sc6_08_drill_34:keys}}` $\to$ **`{{res:sc6_08_drill_34:value}}`** (T: 0, Z: 0, Y: 0, X: 20). Multiplying by `0.25` is always the same as dividing by `4`.
 
@@ -1856,7 +1856,7 @@ On the stack, `{{res:sc6_08_drill_34:keys}}` $\to$ **`{{res:sc6_08_drill_34:valu
 
 ### Workbook Drill 8.22 (Level 5): $0.5 \times 48 = ?$
 
-Check the $1/2$ piece in your **Fraction Towers** kit: $0.5$ is one half! Splitting 48 in half ($48 \div 2 = 24$) leaves exactly 24—the full count of your **24 Array Tiles**! For `0.5 {{key:ENTER}} 48 {{key:×}} ?`, enter 24 {{key:ENTER}} within $< 1.5\text{ seconds}$. 
+Check the $1/2$ piece in your **Fraction Towers** kit: $0.5$ is one half! Splitting 48 in half ($48 \div 2 = 24$) leaves exactly 24—the full count of your **24 Array Tiles**! For `0.5  48  ×  =  ?` in Quiz Mode, enter 24 {{key:≠}} within $< 1.5\text{ seconds}$. 
 
 Keying `{{res:sc6_08_drill_38:keys}}` $\to$ **`{{res:sc6_08_drill_38:value}}`** (T: 0, Z: 0, Y: 0, X: 24) confirms `24`. Multiplying any even number by `0.5` is as fast as cutting both digits in half ($4 \to 2$, $8 \to 4 \implies 24$).
 
@@ -1864,7 +1864,7 @@ Keying `{{res:sc6_08_drill_38:keys}}` $\to$ **`{{res:sc6_08_drill_38:value}}`** 
 
 ### Workbook Drill 8.23 (Level 5): $10\%\text{ of } 250 = ?$
 
-Use your **Place Value Tray (`PLACE-01`)** to see why $10\%$ means 1 counter out of 10 ($\frac{1}{10}$). To find one tenth of 250, simply divide by 10 (shift the decimal point one place left): $250 \div 10 = 25$. On `250 {{key:ENTER}} 10 {{key:%}} ?`, key in 25 {{key:ENTER}} in under $< 1.5\text{ seconds}$. 
+Use your **Place Value Tray (`PLACE-01`)** to see why $10\%$ means 1 counter out of 10 ($\frac{1}{10}$). To find one tenth of 250, simply divide by 10 (shift the decimal point one place left): $250 \div 10 = 25$. On `250  10  %  =  ?` in Quiz Mode, key in 25 {{key:≠}} in under $< 1.5\text{ seconds}$. 
 
 Stack check: `{{res:sc6_08_drill_39:keys}}` $\to$ **`{{res:sc6_08_drill_39:value}}`** (T: 0, Z: 0, Y: 250, X: 25). Notice how `{{key:%}}` keeps the base `250` in Register $Y$ while placing $10\%$ (`25`) in Register $X$!
 
@@ -1872,7 +1872,7 @@ Stack check: `{{res:sc6_08_drill_39:keys}}` $\to$ **`{{res:sc6_08_drill_39:value
 
 ### Workbook Drill 8.24 (Level 6): $35^2 = ?$
 
-For any number ending in 5, multiply the tens digit $3$ by the next whole number $4$ using 12 of your **24 Array Tiles** ($3 \times 4 = 12\text{ hundreds} = 1,200$), then snap on $5^2 = 25$ at the end: $1,225$. When `35 {{key:x²}} ?` flashes, tap 1225 {{key:ENTER}} (aim for under $< 1.5\text{ seconds}$). 
+For any number ending in 5, multiply the tens digit $3$ by the next whole number $4$ using 12 of your **24 Array Tiles** ($3 \times 4 = 12\text{ hundreds} = 1,200$), then snap on $5^2 = 25$ at the end: $1,225$. When `35  x²  =  ?` flashes in Quiz Mode, tap 1225 {{key:≠}} (aim for under $< 1.5\text{ seconds}$). 
 
 In `{{key:NUM}}` mode, `{{res:sc6_08_drill_41:keys}}` $\to$ **`{{res:sc6_08_drill_41:value}}`** (T: 0, Z: 0, Y: 0, X: 1225). The unary `{{key:x²}}` key squares `35` right inside Register $X$ without even needing `{{key:ENTER}}`!
 
@@ -1880,7 +1880,7 @@ In `{{key:NUM}}` mode, `{{res:sc6_08_drill_41:keys}}` $\to$ **`{{res:sc6_08_dril
 
 ### Workbook Drill 8.25 (Level 6): $43 \times 11 = ?$
 
-Use the **11s Middle-Sum Shortcut**! Model $4 + 3 = 7$ in your **Place Value Tray (`PLACE-01`)**. Now spread the digits `4` and `3` apart and drop their sum `7` right into the middle tens place: `473`. For `43 {{key:ENTER}} 11 {{key:×}} ?`, enter 473 {{key:ENTER}} within $< 1.5\text{ seconds}$. 
+Use the **11s Middle-Sum Shortcut**! Model $4 + 3 = 7$ in your **Place Value Tray (`PLACE-01`)**. Now spread the digits `4` and `3` apart and drop their sum `7` right into the middle tens place: `473`. For `43  11  ×  =  ?` in Quiz Mode, enter 473 {{key:≠}} within $< 1.5\text{ seconds}$. 
 
 On the stack, `{{res:sc6_08_drill_42:keys}}` $\to$ **`{{res:sc6_08_drill_42:value}}`** (T: 0, Z: 0, Y: 0, X: 473). Why does it work? Because $43 \times 10 = 430$, and $430 + 43 = 473$.
 
@@ -1888,7 +1888,7 @@ On the stack, `{{res:sc6_08_drill_42:keys}}` $\to$ **`{{res:sc6_08_drill_42:valu
 
 ### Workbook Drill 8.26 (Level 6): $65^2 = ?$
 
-Use the **Ends-in-5 Squaring Rule**! Multiply the tens digit $6$ by the next integer $7$ ($6 \times 7 = 42\text{ hundreds} = 4,200$), then attach $5^2 = 25$ to the last two digits: $4,225$. On `65 {{key:x²}} ?`, key in 4225 {{key:ENTER}} in under $< 1.5\text{ seconds}$. 
+Use the **Ends-in-5 Squaring Rule**! Multiply the tens digit $6$ by the next integer $7$ ($6 \times 7 = 42\text{ hundreds} = 4,200$), then attach $5^2 = 25$ to the last two digits: $4,225$. On `65  x²  =  ?` in Quiz Mode, key in 4225 {{key:≠}} in under $< 1.5\text{ seconds}$. 
 
 Checking `{{res:sc6_08_drill_43:keys}}` $\to$ **`{{res:sc6_08_drill_43:value}}`** (T: 0, Z: 0, Y: 0, X: 4225) confirms `4225`—once you know $6 \times 7 = 42$, you can type `4225` faster than anyone using an algebraic calculator!
 
@@ -1896,7 +1896,7 @@ Checking `{{res:sc6_08_drill_43:keys}}` $\to$ **`{{res:sc6_08_drill_43:value}}`*
 
 ### Workbook Drill 8.27 (Level 6): $75^2 = ?$
 
-Recall $7 \times 8 = 56$ from Textbook Drill 5. Multiply the tens digit $7$ by the next integer $8$ ($56\text{ hundreds} = 5,600$) and tack on $25$: $5,625$. For `75 {{key:x²}} ?`, press 5625 {{key:ENTER}} (target time: $< 1.5\text{ seconds}$). 
+Recall $7 \times 8 = 56$ from Textbook Drill 5. Multiply the tens digit $7$ by the next integer $8$ ($56\text{ hundreds} = 5,600$) and tack on $25$: $5,625$. For `75  x²  =  ?` in Quiz Mode, press 5625 {{key:≠}} (target time: $< 1.5\text{ seconds}$). 
 
 Keying `{{res:sc6_08_drill_44:keys}}` $\to$ **`{{res:sc6_08_drill_44:value}}`** (T: 0, Z: 0, Y: 0, X: 5625) confirms your mental square `5625` in Register $X$ with a single tap of `{{key:x²}}`.
 
@@ -1904,7 +1904,7 @@ Keying `{{res:sc6_08_drill_44:keys}}` $\to$ **`{{res:sc6_08_drill_44:value}}`** 
 
 ### Workbook Drill 8.28 (Level 6): $67 \times 11 = ?$
 
-Use the **11s Shortcut with a Carry**! Model $6 + 7 = 13$ across your two **Place Value Tray (`PLACE-01`)** (1 full ten and 3 ones). Put the `3` in the middle tens slot and carry the `1` ten-group over to the hundreds digit ($6 + 1 = 7$), giving `737`. When `67 {{key:ENTER}} 11 {{key:×}} ?` appears, tap 737 {{key:ENTER}} (aim for under $< 1.8\text{ seconds}$). 
+Use the **11s Shortcut with a Carry**! Model $6 + 7 = 13$ across your two **Place Value Tray (`PLACE-01`)** (1 full ten and 3 ones). Put the `3` in the middle tens slot and carry the `1` ten-group over to the hundreds digit ($6 + 1 = 7$), giving `737`. When `67  11  ×  =  ?` appears in Quiz Mode, tap 737 {{key:≠}} (aim for under $< 1.8\text{ seconds}$). 
 
 Stack verification: `{{res:sc6_08_drill_45:keys}}` $\to$ **`{{res:sc6_08_drill_45:value}}`** (T: 0, Z: 0, Y: 0, X: 737). Whenever the two digits add to 10 or more, carry 1 to the left digit!
 
@@ -1912,7 +1912,7 @@ Stack verification: `{{res:sc6_08_drill_45:keys}}` $\to$ **`{{res:sc6_08_drill_4
 
 ### Workbook Drill 8.29 (Level 6): $15\%\text{ of } 80 = ?$
 
-Split $15\%$ into $10\% + 5\%$ using your **Place Value Tray (`PLACE-01`)**! $10\%$ of 80 is $8$ counters, and $5\%$ is half of that ($4$ counters). Add them together in your tray: $8 + 4 = 12$. For `80 {{key:ENTER}} 15 {{key:%}} ?`, enter 12 {{key:ENTER}} within $< 1.8\text{ seconds}$. 
+Split $15\%$ into $10\% + 5\%$ using your **Place Value Tray (`PLACE-01`)**! $10\%$ of 80 is $8$ counters, and $5\%$ is half of that ($4$ counters). Add them together in your tray: $8 + 4 = 12$. For `80  15  %  =  ?` in Quiz Mode, enter 12 {{key:≠}} within $< 1.8\text{ seconds}$. 
 
 Testing `{{res:sc6_08_drill_46:keys}}` $\to$ **`{{res:sc6_08_drill_46:value}}`** (T: 0, Z: 0, Y: 80, X: 12) shows `80` waiting in Register $Y$ and `12` in Register $X$—so pressing `{{key:+}}` next would even give you $80 + 15\% = 92$.
 

@@ -43,7 +43,7 @@
 
   <!-- Header Typography -->
   <text x="165" y="55" class="font-mono card-title">PRIME FACTOR STUDIO — IN-BOX USER GUIDE</text>
-  <text x="165" y="74" class="font-sans card-subtitle">Kinesthetic Number Theory, Proportional Logarithmic Stacking &amp; 12-Socket Lid Tray</text>
+  <text x="165" y="74" class="font-sans card-subtitle">Kinesthetic Number Theory, 4-3-3-2 Eratosthenes {2,3,5,7} Set &amp; 12-Socket Lid Tray</text>
   <text x="165" y="93" class="font-mono" font-size="12.5px" font-weight="700" fill="#0284c7">SERIES 1 • CARD 05 / 12 • DOMAIN: FUNDAMENTAL THEOREM OF ARITHMETIC</text>
 
   <!-- Top-Right SKU Badges -->
@@ -129,7 +129,7 @@
   <g transform="translate(425, 120)">
     <rect x="0" y="0" width="450" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
     <rect x="0" y="0" width="450" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-    <text x="16" y="23" class="font-mono section-hdr">2. KIT PARTS INVENTORY (23 PIECES)</text>
+    <text x="16" y="23" class="font-mono section-hdr">2. KIT PARTS INVENTORY (45 PIECES)</text>
 
     <!-- Table Header -->
     <text x="14" y="52" class="font-mono th">COMPONENT</text>
@@ -140,99 +140,59 @@
 
     
       <text x="14" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [2]</text>
-      <text x="180" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
+      <text x="180" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">24x</text>
       <text x="215" y="64" class="font-mono" font-size="12.5px" fill="#0f172a">7.00 mm</text>
       <text x="436" y="64" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
       <line x1="12" y1="69" x2="438" y2="69" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [2²]</text>
-      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
-      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#0f172a">14.00 mm</text>
-      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
+      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [3]</text>
+      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">9x</text>
+      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#0f172a">11.10 mm</text>
+      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
       <line x1="12" y1="91" x2="438" y2="91" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [2³]</text>
-      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
-      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#0f172a">21.00 mm</text>
-      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
+      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [5]</text>
+      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">6x</text>
+      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#0f172a">16.25 mm</text>
+      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
       <line x1="12" y1="113" x2="438" y2="113" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [3]</text>
+      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [7]</text>
       <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">4x</text>
-      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#0f172a">11.09 mm</text>
-      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
+      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#0f172a">19.65 mm</text>
+      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Tan</text>
       <line x1="12" y1="135" x2="438" y2="135" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [3²]</text>
+      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">7U Stepped Box</text>
       <text x="180" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
-      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#0f172a">22.18 mm</text>
-      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
+      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#0f172a">56.4 mm</text>
+      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Gray</text>
       <line x1="12" y1="157" x2="438" y2="157" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [5]</text>
-      <text x="180" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
-      <text x="215" y="174" class="font-mono" font-size="12.5px" fill="#0f172a">16.25 mm</text>
+      <text x="14" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">12-Socket Lid</text>
+      <text x="180" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="174" class="font-mono" font-size="12.5px" fill="#0f172a">125.5×42.0mm</text>
       <text x="436" y="174" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
       <line x1="12" y1="179" x2="438" y2="179" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="196" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [7]</text>
-      <text x="180" y="196" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
-      <text x="215" y="196" class="font-mono" font-size="12.5px" fill="#0f172a">19.65 mm</text>
-      <text x="436" y="196" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Gray</text>
-      <line x1="12" y1="201" x2="438" y2="201" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
-
-      <text x="14" y="218" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [11]</text>
-      <text x="180" y="218" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
-      <text x="215" y="218" class="font-mono" font-size="12.5px" fill="#0f172a">24.21 mm</text>
-      <text x="436" y="218" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Tan</text>
-      <line x1="12" y1="223" x2="438" y2="223" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
-
-      <text x="14" y="240" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [13]</text>
-      <text x="180" y="240" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
-      <text x="215" y="240" class="font-mono" font-size="12.5px" fill="#0f172a">25.90 mm</text>
-      <text x="436" y="240" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Tan</text>
-      <line x1="12" y1="245" x2="438" y2="245" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
-
-      <text x="14" y="262" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [17]</text>
-      <text x="180" y="262" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
-      <text x="215" y="262" class="font-mono" font-size="12.5px" fill="#0f172a">28.61 mm</text>
-      <text x="436" y="262" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Gray</text>
-      <line x1="12" y1="267" x2="438" y2="267" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
-
-      <text x="14" y="284" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [19]</text>
-      <text x="180" y="284" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
-      <text x="215" y="284" class="font-mono" font-size="12.5px" fill="#0f172a">29.73 mm</text>
-      <text x="436" y="284" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Gray</text>
-      <line x1="12" y1="289" x2="438" y2="289" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
-
-      <text x="14" y="306" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [23]</text>
-      <text x="180" y="306" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
-      <text x="215" y="306" class="font-mono" font-size="12.5px" fill="#0f172a">31.67 mm</text>
-      <text x="436" y="306" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
-      <line x1="12" y1="311" x2="438" y2="311" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
-
-      <text x="14" y="328" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [29]</text>
-      <text x="180" y="328" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
-      <text x="215" y="328" class="font-mono" font-size="12.5px" fill="#0f172a">33.51 mm</text>
-      <text x="436" y="328" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
-      <line x1="12" y1="333" x2="438" y2="333" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
-
 
     <!-- Total Pieces Summary -->
-    <text x="14" y="366" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">TOTAL: 21 Blocks + 7U Box + Stage Lid = 23</text>
-    <text x="14" y="382" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">Parts (7U Farm) • 47 Parts (13U)</text>
+    <text x="14" y="212" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">TOTAL: 43 Pure Prime Blocks (4-3-3-2 Layout)</text>
+    <text x="14" y="228" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">+ 7U Box + Stage Lid = 45 Parts</text>
 
     <!-- Palette Box -->
-    <g transform="translate(12, 408)">
-      <rect x="0" y="0" width="426" height="154" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <g transform="translate(12, 254)">
+      <rect x="0" y="0" width="426" height="190" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">SLANT 3D PRODUCTION PALETTE</text>
     </g>
-    <text x="24" y="444" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Blue: Prime [2] family (2, 2², 2³).</text>
-    <text x="24" y="462" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Muted Red: Prime [3] family (3, 3²).</text>
-    <text x="24" y="480" class="font-sans" font-size="13.5px" fill="#475569">• PLA White: Prime [5], Primes [23], [29], Enclosure</text>
-    <text x="24" y="498" class="font-sans" font-size="13.5px" fill="#475569">Box &amp; Lid.</text>
-    <text x="24" y="516" class="font-sans" font-size="13.5px" fill="#475569">• PLA Tan: Mid primes [11], [13] • PLA Gray: Primes</text>
-    <text x="24" y="534" class="font-sans" font-size="13.5px" fill="#475569">[7], [17], [19].</text>
+    <text x="24" y="290" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Blue: 24x Prime [2] (4 columns × 6 blocks</text>
+    <text x="24" y="308" class="font-sans" font-size="13.5px" fill="#475569">= 42.0mm).</text>
+    <text x="24" y="326" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Muted Red: 9x Prime [3] (3 columns × 3</text>
+    <text x="24" y="344" class="font-sans" font-size="13.5px" fill="#475569">blocks + 8.71mm riser).</text>
+    <text x="24" y="362" class="font-sans" font-size="13.5px" fill="#475569">• PLA White: 6x Prime [5] (3 columns × 2 blocks +</text>
+    <text x="24" y="380" class="font-sans" font-size="13.5px" fill="#475569">9.49mm riser) &amp; Stage Lid.</text>
+    <text x="24" y="398" class="font-sans" font-size="13.5px" fill="#475569">• PLA Tan: 4x Prime [7] (2 cols × 2 blocks + 2.70mm</text>
+    <text x="24" y="416" class="font-sans" font-size="13.5px" fill="#475569">riser) • PLA Gray: 7U Box.</text>
   </g>
 
   <!-- COLUMN 3: WHY KEEP CARD (Width: 290) -->
@@ -246,11 +206,11 @@
       <rect x="0" y="0" width="266" height="136" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#d97706">✓ 10-SECOND PACK-UP</text>
     </g>
-    <text x="24" y="82" class="font-sans" font-size="13px" fill="#475569">Stand prime blocks in product-labeled</text>
-    <text x="24" y="100" class="font-sans" font-size="13px" fill="#475569">sockets (2¹²=4096, 3⁷·2=4374, etc).</text>
-    <text x="24" y="118" class="font-sans" font-size="13px" fill="#475569">All 12 towers level off at the 84mm</text>
-    <text x="24" y="136" class="font-sans" font-size="13px" fill="#475569">waterline. Snap stage lid flush for</text>
-    <text x="24" y="154" class="font-sans" font-size="13px" fill="#475569">silent carry.</text>
+    <text x="24" y="82" class="font-sans" font-size="13px" fill="#475569">Stand all 43 prime blocks in the</text>
+    <text x="24" y="100" class="font-sans" font-size="13px" fill="#475569">4-3-3-2 stepped floor sockets (4 cols</text>
+    <text x="24" y="118" class="font-sans" font-size="13px" fill="#475569">of [2], 3 cols of [3], 3 cols of [5],</text>
+    <text x="24" y="136" class="font-sans" font-size="13px" fill="#475569">2 cols of [7]). All 12 columns level</text>
+    <text x="24" y="154" class="font-sans" font-size="13px" fill="#475569">at the 42.0mm (2⁶=64) waterline. Snap</text>
 
     <!-- Reason 2: Guarantee -->
     <g transform="translate(12, 190)">

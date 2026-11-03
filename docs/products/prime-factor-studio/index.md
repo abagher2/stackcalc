@@ -151,22 +151,22 @@ hide:
       </div>
 
       <p class="ec-short-summary">
-        The world's first physical logarithmic manipulative for prime factorization, prime vs. composite numbers, and early number theory. Contains <strong>29 proportional stacking prime factor blocks</strong> (powers of 2, 3, 5, 7, and higher prime markers) housed in a 3&times;1&times;13U Snapfinity Gridfinity enclosure with a removable 12-column caddy chassis and Snapfinity stackable lid. Stepped floor pedestals elevate larger primes ([11], [13], [17], [19], [23], [29]), bringing every column summit to the uniform 84.00mm waterline flush against the lid. Stacking prime blocks physically multiplies them, matching composite factor heights with 0.000mm error.
+        The world's first physical logarithmic manipulative for prime factorization, prime vs. composite numbers, and early number theory. Contains <strong>43 proportional stacking pure prime factor blocks</strong> (24&times; [2], 9&times; [3], 6&times; [5], 4&times; [7]) housed in a 3&times;1&times;7U stepped-floor Snapfinity Gridfinity enclosure with a dual-well comparator stage lid (45 pieces total). Integrated 4-3-3-2 stepped floor pedestals elevate each prime family so every column summit reaches the uniform 42.00mm (\(2^6 = 64\)) waterline flush against the lid. Stacking prime blocks physically multiplies them, matching composite factor heights with 0.000mm error.
       </p>
 
       <!-- Highlights Checklist -->
       <div class="ec-highlights-list">
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>12-Column Caddy &amp; Stepped Pedestals:</strong> Removable 12-column caddy chassis features anti-scrape vertical runner glides and individual cell dividers. Stepped floor pedestals in Row 1 elevate larger primes ([11], [13], [17], [19], [23], [29]) so every column summit reaches the uniform 84.00mm waterline flush under the Snapfinity lid.</span>
+          <span><strong>4-3-3-2 Stepped Pedestal Grid:</strong> 12 internal floor sockets (4 columns of [2], 3 columns of [3], 3 columns of [5], 2 columns of [7]) feature calibrated risers (0.00 mm, 8.71 mm, 9.49 mm, 2.70 mm) so every full column reaches the uniform 42.00mm waterline flush under the Snapfinity lid.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Physical Proof of \(a \times b = b \times a\):</strong> Stacking [2] then [5] reaches exactly the same height as [5] then [2] (both reach 42.00mm, representing product 10), physically proving the commutative property of multiplication.</span>
+          <span><strong>Physical Proof of \(a \times b = b \times a\):</strong> Stacking [2] then [5] reaches exactly the same height as [5] then [2] (both reach 23.25mm visible height, representing product 10), physically proving the commutative property of multiplication.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Additive Logarithmic Geometry:</strong> Each block's visible height is \(42.0 \times \log_{10}(p)\text{ mm}\). Because \(\log(ab) = \log(a) + \log(b)\), physical tower height directly measures the arithmetic product.</span>
+          <span><strong>Additive Logarithmic Geometry:</strong> Each block's visible height is \(42.0 \times \log_{10}(p) / \log_{10}(64)\text{ mm}\). Because \(\log(ab) = \log(a) + \log(b)\), physical tower height directly measures the arithmetic product.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
@@ -174,7 +174,7 @@ hide:
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Prime Power Storage Lid:</strong> Docking sockets for \(2^6, 3^4, 5^2, 7^2, 11, 13, 17, 19, 23\) and an authentic HP-32 hardware replica button badge stamped <code>[FACT]</code>.</span>
+          <span><strong>Comparator Stage Lid:</strong> Dual comparator sockets for side-by-side GCF/LCM tower alignment and an authentic HP-32 hardware replica button badge stamped <code>[FACT]</code>.</span>
         </div>
       </div>
 
@@ -411,16 +411,15 @@ hide:
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8 font-mono text-xs">
       <div class="p-6 rounded-xl bg-[#11141A] border border-white/10 space-y-3">
-        <h3 class="text-sm font-bold text-white uppercase tracking-wider">// HARDWARE INVENTORY (29 BLOCKS)</h3>
+        <h3 class="text-sm font-bold text-white uppercase tracking-wider">// HARDWARE INVENTORY (45 PIECES: 43 BLOCKS + BOX + LID)</h3>
         <ul class="space-y-2 text-slate-300">
-          <li><strong>12&times; [2] Factor Blocks:</strong> Teal / Blue (\(h_{\text{vis}} = 12.64\text{ mm}\))</li>
-          <li><strong>8&times; [3] Factor Blocks:</strong> Amber / Green (\(h_{\text{vis}} = 20.04\text{ mm}\))</li>
-          <li><strong>2&times; [5] Factor Blocks:</strong> Royal Blue / Gold (\(h_{\text{vis}} = 29.36\text{ mm}\))</li>
-          <li><strong>2&times; [7] Factor Blocks:</strong> Crimson / Purple (\(h_{\text{vis}} = 35.49\text{ mm}\))</li>
-          <li><strong>5&times; Higher Primes:</strong> 1 each of [11], [13], [17], [19], [23]</li>
+          <li><strong>24&times; [2] Factor Blocks (4 columns &times; 6):</strong> Matte Blue (\(h_{\text{vis}} = 7.00\text{ mm}\), \(8.85\text{ mm}\) total)</li>
+          <li><strong>9&times; [3] Factor Blocks (3 columns &times; 3):</strong> Muted Red (\(h_{\text{vis}} = 11.10\text{ mm}\), \(12.95\text{ mm}\) total)</li>
+          <li><strong>6&times; [5] Factor Blocks (3 columns &times; 2):</strong> White (\(h_{\text{vis}} = 16.25\text{ mm}\), \(18.10\text{ mm}\) total)</li>
+          <li><strong>4&times; [7] Factor Blocks (2 columns &times; 2):</strong> Tan (\(h_{\text{vis}} = 19.65\text{ mm}\), \(21.50\text{ mm}\) total)</li>
           <li><strong>Footprint:</strong> 19.0 &times; 19.0 mm square 0.5U Gridfinity miniblock</li>
           <li><strong>Socket Nesting Depth:</strong> 1.85 mm (cancels identically on every joint)</li>
-          <li><strong>Enclosure &amp; Caddy:</strong> 3&times;1&times;13U Gridfinity Bin (125.5 &times; 42.0 &times; 91.0 mm) with removable 12-column caddy chassis (anti-scrape runner glides, stepped pedestals for primes 11–29, and 84mm waterline) and Snapfinity stackable lid with prime power sockets</li>
+          <li><strong>Enclosure &amp; Lid:</strong> 3&times;1&times;7U Stepped-Floor Gridfinity Bin (125.5 &times; 42.0 &times; 56.4 mm) with integrated 4-3-3-2 stepped pedestals (42.00 mm / \(2^6=64\) waterline) and Snapfinity dual-well comparator stage lid</li>
         </ul>
       </div>
 

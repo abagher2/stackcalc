@@ -77,37 +77,44 @@ You can also build the **$120\text{ mm}$ Unit Circle Volvelle & Prime Comparator
 
 ## Printing Settings, Color Guide & Quick Checks
 
-Teachers and parents can customize classroom settings anytime via the `{{key:FLAGS}}` menu (`{{key:FLAGS}}`):
+Teachers and parents can customize classroom settings anytime via the `{{key:FLAGS}}` menu (`{{key:g}}` + `{{key:×}}`, then tap `0`–`9` to toggle a flag):
 
-| Flag # | Default State | Classroom Purpose |
+| Flag # | Screen Tag & Default | Classroom Purpose |
 | :--- | :--- | :--- |
-| **Flag 0** | `0` (Normal) | Math Exception Trap: `1` = Flash gentle hint & keep stack intact |
-| **Flag 1** | `0` (Normal) | Battery Health: `1` = Low battery icon active |
-| **Flag 2** | `0` (4-Stack) | Stack Depth Mode: `0` = 4-Stack XYZT, `1` = Simple 2-Stack |
-| **Flag 3** | `0` (Degrees) | Angle Mode: `0` = Degrees ($360^\circ$), `1` = Pre-Algebra Turn Units |
-| **Flag 4** | `0` (12-Hour) | Clock Format: `0` = 12-Hour Clock, `1` = 24-Hour Time |
-| **Flag 5** | `0` (Dual Stack) | Screen Layout: `0` = Side-by-Side `Y \| X`, `1` = Large Single `X` |
-| **Flag 6** | `0` (Silent) | Sound Chime: `0` = Classroom Silent, `1` = Click & Streak Beeps |
-| **Flag 7** | `0` (Decimal) | Fraction Display: `0` = Decimal, `1` = Fraction (`a b/c`) |
-| **Flag 8** | `0` (Manual) | Fraction Reduction: `0` = Step-by-Step `{{key:SIMP}}`, `1` = Auto-Simplify |
-| **Flag 9** | `0` (General) | Quiz Mode State: `1` = Active `{{key:?}}` Math Sprint |
+| **Flag 0** | `0:F0` (`0` Off) | General-purpose user flag 0 for classroom experiments |
+| **Flag 1** | `1:F1` (`0` Off) | General-purpose user flag 1 for classroom experiments |
+| **Flag 2** | `2:INT` (`0` Off) | Integer-only mode: `1` restricts entry and results to whole integers |
+| **Flag 3** | `3:FACE` (`0` Off) | Hardware / App faceplate skin selector |
+| **Flag 4** | `4:STK` (`0` 4-Line) | Stack View Layout: `0` = 4-Shelf / Split Stack View, `1` = Large Single-Line `X` |
+| **Flag 5** | `5:DEP` (`4-LV`) | Stack Depth Mode: cycles `2-LV` (2-Level) $\to$ `4-LV` (4-Level $T, Z, Y, X$, default) $\to$ `8-LV` (8-Level) |
+| **Flag 6** | `6:MOD` (`0` SC-6) | Active Calculator Model selector (when inside the `FLAGS` menu) |
+| **Flag 7** | `7:FRC` (`0` Decimal) | Fraction Display Mode: `0` = Decimal, `1` = Fraction (`a b/c` or `d/c`) |
+| **Flag 8** | `8:/c` (`0` Auto) | Fixed Denominator Lock: `1` = Locks fractions to the denominator set by `{{key:/c}}` |
+| **Flag 9** | `9:d/c` (`0` Mixed) | Improper Fraction Style: `0` = Mixed Number (`a b/c`), `1` = Improper (`d/c`) |
 
-### 3D Print & Filament Schedule (9 Studios / 12 Modular Kits)
+### 3D Print & Filament Schedule (Part 1: 3 Core Anchor Studios & Part 2: 6 Companion Specialty Studios)
 
-| Studio & Modular Kit Name | Gridfinity Box | Filament & Slicer Profile | Direct STL Pack Download |
+To make classroom 3D printing simple and modular, the nine physical studios are organized into **Part 1: The 3 Core Anchor Block Studios** (`PLACE-01`, `FRAC-01`, and `PRIME-01`, which anchor 80% of daily K–6 lessons across *Book 2A* and *Book 2B*) and **Part 2: The 6 Companion Specialty Studios** (which you can print as your class reaches geometry, time, probability, and fluency stations):
+
+#### Part 1: The 3 Core Anchor Block Studios (Print These First)
+
+| Anchor Studio Code & Kit Name | Gridfinity Box | Filament & Slicer Profile | Direct STL Pack Download |
 | :--- | :---: | :--- | :--- |
-| **1. Ten-Frame Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; pause at $1.80\text{ mm}$ on counters for red/gold swap | [Ten-Frame STL Pack](https://stackcalc.io/downloads/ten-frames-open-source-stls.zip) |
-| **2. Place Value Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; top-layer white swap on column labels & `•` dot | [Place Value STL Pack](https://stackcalc.io/downloads/place-value-open-source-stls.zip) |
-| **3. 84 mm Fraction Studio** | Desktop Case ($3 \times 1$) | $0.20\text{ mm}$ PLA ($0.10\text{ mm}$ adaptive on $\frac{1}{8}$ block for $10.5\text{ mm}$ height) | [Fraction Studio STL Pack](https://stackcalc.io/downloads/fraction-studio-open-source-stls.zip) |
+| **`PLACE-01`: Ten-Frame, Place Value & Counting/Array Studios** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; pause at $1.80\text{ mm}$ on counters for red/gold swap; 4-color tile plates ($12 \times 7.0 = 84.0\text{ mm}$) | [Ten-Frame STL](https://stackcalc.io/downloads/ten-frames-open-source-stls.zip) • [Place Value STL](https://stackcalc.io/downloads/place-value-open-source-stls.zip) • [Counting Tiles STL](https://stackcalc.io/downloads/counting-tiles-open-source-stls.zip) |
+| **`FRAC-01`: 84 mm Fraction Towers & Comparator Studio** | Desktop Case ($3 \times 1$) | $0.20\text{ mm}$ PLA ($0.10\text{ mm}$ adaptive on $\frac{1}{8}$ block for exact $10.5\text{ mm}$ height) | [Fraction Studio STL Pack](https://stackcalc.io/downloads/fraction-studio-open-source-stls.zip) |
+| **`PRIME-01`: Prime Factor Logarithmic Tower Studio** | Desktop Case ($3 \times 1$) | $0.10\text{ mm}$ fine layers for $\pm 0.05\text{ mm}$ logarithmic height match ($h(p) = 7.0 \cdot \log_2(p)\text{ mm}$) | [Prime Factor STL Pack](https://stackcalc.io/downloads/prime-factor-studio-open-source-stls.zip) |
+
+#### Part 2: The 6 Companion Specialty Studios (Print as Needed by Unit)
+
+| Companion Studio & Modular Kit Name | Gridfinity Box | Filament & Slicer Profile | Direct STL Pack Download |
+| :--- | :---: | :--- | :--- |
 | **4. 90° Corner L-Frame & Area Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA in 4 colors (gold flats, blue rods, white/red units) | [L-Frame & Area STL Pack](https://stackcalc.io/downloads/algebra-boxes-open-source-stls.zip) |
 | **5a. Planetary Geared Clock** | $3 \times 2 \times 7\text{U}$ | $0.20\text{ mm}$ PLA with $0.15\text{ mm}$ elephant-foot compensation on gears | [Geared Clock STL Pack](https://stackcalc.io/downloads/classroom-clock-open-source-stls.zip) |
 | **5b. Unit Circle Volvelle** | $120\text{ mm}$ Disc | $0.20\text{ mm}$ PLA; two-color swap on degree ticks & sight window | [Unit Circle STL Pack](https://stackcalc.io/downloads/unit-circle-volvelle-open-source-stls.zip) |
 | **6a. Number Rack Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; print sliding $5+5$ beads in white and coral red | [Number Rack STL Pack](https://stackcalc.io/downloads/) |
 | **6b. Math Dominoes Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; top-layer contrast swap on raised domino pips | [Math Dominoes STL Pack](https://stackcalc.io/downloads/) |
 | **6c. Quest Scoreboard** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; 60 radiant-gold `+10` tokens & dark slate lid | [Quest Scoreboard STL Pack](https://stackcalc.io/downloads/) |
-| **7. Counting & Array Studio** | Desktop Case ($3 \times 1$) | $0.20\text{ mm}$ PLA; 4-color batch plates (verify $12 \times 7.0 = 84.0\text{ mm}$) | [Counting Tiles STL Pack](https://stackcalc.io/downloads/counting-tiles-open-source-stls.zip) |
 | **8. Probability Dice & Spinner** | $1 \times 1 \times 7\text{U}$ | $100\%$ concentric infill on dice; $0.12\text{ mm}$ layers on spinner spindle | [Dice & Spinner STL Pack](https://stackcalc.io/downloads/dice-and-spinner-open-source-stls.zip) |
-| **9. Prime Factor Studio** | Desktop Case ($3 \times 1$) | $0.10\text{ mm}$ fine layers for $\pm 0.05\text{ mm}$ logarithmic height match | [Prime Factor STL Pack](https://stackcalc.io/downloads/prime-factor-studio-open-source-stls.zip) |
 
 ### Five-Color Filament Palette & Multi-Color Layer Swaps
 To help students spot mathematical connections across different chapters—and to let any single-nozzle printer produce high-contrast parts—all nine studios share a five-color filament palette:

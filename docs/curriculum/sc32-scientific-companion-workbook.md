@@ -22,7 +22,7 @@ description: "Complete chapter-by-chapter engineering, scientific, financial, an
   <a href="../uil-competition/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🏆 UIL Competition</a>
 </nav>
 
-*Companion Engineering, Scientific & Competition Problem Volume to **[Thinking in the Stack: The Science and Art of Reverse Polish Computation on the StackCalc SC-32](../manuals/sc32/index.md)***
+*Companion Engineering, Scientific & Competition Problem Volume to **[Thinking in the Stack: The Art of Solving Equations from the Inside Out (SC-32)](../manuals/sc32/index.md)***
 
 This companion casebook houses the **339 extended worked engineering, physics, numerical analysis, computer science, corporate finance, and high-speed UIL competition problems** that accompany the **Bookstore Edition** of *Thinking in the Stack*. Every problem includes its governing mathematical formulation, inside-out RPN keystroke sequence, and `RPNCore`-verified 4-register $(T, Z, Y, X)$ stack trace.
 
@@ -1107,10 +1107,11 @@ Three coplanar cable forces on a gusset plate:
 3. Vector 2: `110 {{key:ENTER}} 75 {{key:▸y,x}} {{key:Σ+}}`
 4. Vector 3: `225 {{key:ENTER}} 60 {{key:▸y,x}} {{key:Σ+}}`
 5. Recall sums and resolve:
-   `{{key:SUMS}}` $\to \Sigma x = -24.7731\text{ kN}$, $\Sigma y = 53.0506\text{ kN}$
-   `{{key:x⇄y}} {{key:▸θ,r}}`
+   `{{key:SUMS}} {{key:Σy}}` $\to \Sigma y = 53.0506\text{ kN}$
+   `{{key:SUMS}} {{key:Σx}}` $\to \Sigma x = -24.7731\text{ kN}$ (lifts $\Sigma y$ to Register $Y$)
+   `{{key:▸θ,r}}`
 
-This workflow is one of the crowning architectural idioms of the SC-32: because `{{key:▸y,x}}` deposits $(Y: r\sin\theta, X: r\cos\theta)$ and `{{key:Σ+}}` simultaneously accumulates Register $X$ into $\Sigma x$ and Register $Y$ into $\Sigma y$, you can sum an arbitrary number of 2D vectors without consuming the 4-level stack! Clearing statistical registers (`{{key:CLΣ}}`) and piping each polar cable force through `{{key:▸y,x}} {{key:Σ+}}` accumulates the three gusset loads into hardware memory; recalling the Cartesian totals (`{{key:SUMS}}`, $\Sigma x = -24.7731\text{ kN}, \Sigma y = 53.0506\text{ kN}$) and converting back to polar (`{{key:x⇄y}} {{key:▸θ,r}}`, $T: 0.0000, Z: 0.0000, Y: 115.01^\circ, X: 58.5444\text{ kN}$) delivers resultant magnitude $R = \mathbf{58.54\text{ kN}}$ at bearing $\theta = \mathbf{115.01^\circ}$.
+This workflow is one of the crowning architectural idioms of the SC-32: because `{{key:▸y,x}}` deposits $(Y: r\sin\theta, X: r\cos\theta)$ and `{{key:Σ+}}` simultaneously accumulates Register $X$ into $\Sigma x$ and Register $Y$ into $\Sigma y$, you can sum an arbitrary number of 2D vectors without consuming the 4-level stack! Clearing statistical registers (`{{key:CLΣ}}`) and piping each polar cable force through `{{key:▸y,x}} {{key:Σ+}}` accumulates the three gusset loads into hardware memory; recalling the Cartesian totals via the single-scalar `SUMS` softkeys (`{{key:SUMS}} {{key:Σy}}` $= 53.0506\text{ kN}$, then `{{key:SUMS}} {{key:Σx}}` $= -24.7731\text{ kN}$ which lifts $\Sigma y$ to Register $Y$) and converting back to polar (`{{key:▸θ,r}}`, $T: 0.0000, Z: 0.0000, Y: 115.01^\circ, X: 58.5444\text{ kN}$) delivers resultant magnitude $R = \mathbf{58.54\text{ kN}}$ at bearing $\theta = \mathbf{115.01^\circ}$.
 
 ---
 
@@ -1831,7 +1832,7 @@ $$H_{\text{prod}}(T) - H_{\text{react}} = 0 \implies 0.05 T^2 + 120 T - 280,000 
 
 **Keystrokes:** `{{res:sc32_07_polynomials_brent_solver_seq_11:keys}}` $\rightarrow$ **`{{res:sc32_07_polynomials_brent_solver_seq_11:value}}`**
 
-In `{{key:POLY}}`, keying `0.05 {{key:A}} 120 {{key:B}}` registers enthalpy temperature coefficients $A$ and $B$ $(T: 0.0000, Z: 0.0000, Y: 0.0500, X: 120.0000)$. Entering `280000 {{key:+/-}} {{key:C}} 0 {{key:D}}` loads enthalpy release $C = -280,000$ and depressed constant $D = 0.0$ $(T: 0.0500, Z: 120.0000, Y: -280000.0000, X: 0.0000)$. Pressing `{{key:EXEC}}` computes Cardano roots; keying `{{key:RCL}} 5` extracts the physical positive adiabatic flame temperature $(T: 120.0000, Z: -3853.3000, Y: 0.0000, X: \mathbf{1453.299832}\text{ K})$ in Register $X$ (with unphysical negative rebound root $-3,853.30\text{ K}$ stored in variable 1), confirming **$T_{\text{flame}} = 1,453.30\text{ Kelvin}$**.
+In `{{key:POLY}}`, keying `0.05 {{key:A}} 120 {{key:B}}` registers enthalpy temperature coefficients $A$ and $B$ $(T: 0.0000, Z: 0.0000, Y: 0.0500, X: 120.0000)$. Entering `280000 {{key:+/-}} {{key:C}} 0 {{key:D}}` loads enthalpy release $C = -280,000$ and depressed constant $D = 0.0$ $(T: 0.0500, Z: 120.0000, Y: -280000.0000, X: 0.0000)$. Pressing `{{key:XEQ}}` computes Cardano roots; keying `{{key:RCL}} 5` extracts the physical positive adiabatic flame temperature $(T: 120.0000, Z: -3853.3000, Y: 0.0000, X: \mathbf{1453.299832}\text{ K})$ in Register $X$ (with unphysical negative rebound root $-3,853.30\text{ K}$ stored in variable 1), confirming **$T_{\text{flame}} = 1,453.30\text{ Kelvin}$**.
 
 ---
 
@@ -1843,7 +1844,7 @@ $$20 x^2 - 735.75 x - 22,072.5 = 0$$
 
 **Keystrokes:** `{{res:sc32_07_polynomials_brent_solver_seq_14:keys}}` $\rightarrow$ **`{{res:sc32_07_polynomials_brent_solver_seq_14:value}}`**
 
-In `{{key:POLY}}`, keying `20 {{key:A}} 735.75 {{key:+/-}} {{key:B}}` loads quadratic coefficient $A = 20.0$ and linear coefficient $B = -735.75$ $(T: 0.0000, Z: 0.0000, Y: 20.0000, X: -735.7500)$. Entering `22072.5 {{key:+/-}} {{key:C}}` stores constant term $C = -22,072.5$ (with cubic constant $D$ defaulting to $0.0$ automatically for depressed quadratic solving, or explicitly keyed as `0 {{key:D}}`) $(T: 20.0000, Z: -735.7500, Y: -22072.5000, X: 0.0000)$. Striking `{{key:EXEC}}` computes Cardano roots; keying `{{key:RCL}} 5` extracts the physical positive maximum dynamic cord elongation $(T: -735.7500, Z: -19.579333, Y: 0.0000, X: \mathbf{56.366833}\text{ m})$ in Register $X$ (with unphysical negative rebound root $-19.5793\text{ m}$ stored in variable 1), confirming **$x = 56.3668\text{ meters}$** (total fall distance $L + x = 86.37\text{ m}$).
+In `{{key:POLY}}`, keying `20 {{key:A}} 735.75 {{key:+/-}} {{key:B}}` loads quadratic coefficient $A = 20.0$ and linear coefficient $B = -735.75$ $(T: 0.0000, Z: 0.0000, Y: 20.0000, X: -735.7500)$. Entering `22072.5 {{key:+/-}} {{key:C}}` stores constant term $C = -22,072.5$ (with cubic constant $D$ defaulting to $0.0$ automatically for depressed quadratic solving, or explicitly keyed as `0 {{key:D}}`) $(T: 20.0000, Z: -735.7500, Y: -22072.5000, X: 0.0000)$. Striking `{{key:XEQ}}` computes Cardano roots; keying `{{key:RCL}} 5` extracts the physical positive maximum dynamic cord elongation $(T: -735.7500, Z: -19.579333, Y: 0.0000, X: \mathbf{56.366833}\text{ m})$ in Register $X$ (with unphysical negative rebound root $-19.5793\text{ m}$ stored in variable 1), confirming **$x = 56.3668\text{ meters}$** (total fall distance $L + x = 86.37\text{ m}$).
 
 ---
 
@@ -1855,7 +1856,7 @@ $$4 x^2 + 0.040 x - 0.020 = 0$$
 
 **Keystrokes:** `{{res:sc32_07_polynomials_brent_solver_seq_15:keys}}` $\rightarrow$ **`{{res:sc32_07_polynomials_brent_solver_seq_15:value}}`**
 
-In `{{key:POLY}}`, entering `4 {{key:A}} 0.040 {{key:B}}` loads stoichiometry coefficients $A$ and $B$ $(T: 0.0000, Z: 0.0000, Y: 4.0000, X: 0.0400)$. Entering `0.020 {{key:+/-}} {{key:C}}` loads constant $C = -0.020$ (with $D$ defaulting to $0.0$ automatically for depressed quadratic embedding, or explicitly keyed as `0 {{key:D}}`) $(T: 4.0000, Z: 0.0400, Y: -0.0200, X: 0.0000)$. Striking `{{key:EXEC}}` evaluates quadratic roots; keying `{{key:RCL}} 5` isolates the positive dissociated equilibrium extent $(T: 0.0400, Z: -0.075887, Y: 0.0000, X: \mathbf{0.065887}\text{ M})$ in Register $X$ ($65.89\text{ mM}$, corresponding to $[NO_2] = 2x = 0.1318\text{ M}$ and $13.18\%$ dissociation).
+In `{{key:POLY}}`, entering `4 {{key:A}} 0.040 {{key:B}}` loads stoichiometry coefficients $A$ and $B$ $(T: 0.0000, Z: 0.0000, Y: 4.0000, X: 0.0400)$. Entering `0.020 {{key:+/-}} {{key:C}}` loads constant $C = -0.020$ (with $D$ defaulting to $0.0$ automatically for depressed quadratic embedding, or explicitly keyed as `0 {{key:D}}`) $(T: 4.0000, Z: 0.0400, Y: -0.0200, X: 0.0000)$. Striking `{{key:XEQ}}` evaluates quadratic roots; keying `{{key:RCL}} 5` isolates the positive dissociated equilibrium extent $(T: 0.0400, Z: -0.075887, Y: 0.0000, X: \mathbf{0.065887}\text{ M})$ in Register $X$ ($65.89\text{ mM}$, corresponding to $[NO_2] = 2x = 0.1318\text{ M}$ and $13.18\%$ dissociation).
 
 ---
 
@@ -1867,7 +1868,7 @@ $$2 x^3 - 3 L x^2 + L^3 = 0 \implies \text{for } L = 10\text{ m}: \quad 2 x^3 - 
 
 **Keystrokes:** `{{res:sc32_07_polynomials_brent_solver_seq_16:keys}}` $\rightarrow$ **`{{res:sc32_07_polynomials_brent_solver_seq_16:value}}`**
 
-In `{{key:POLY}}`, keying `2 {{key:A}} 30 {{key:+/-}} {{key:B}}` registers cubic and quadratic flexural coefficients $(T: 0.0000, Z: 0.0000, Y: 2.0000, X: -30.0000)$. Entering `0 {{key:C}} 1000 {{key:D}}` sets linear coefficient $C = 0.0$ and boundary constant $D = 1000$ $(T: 2.0000, Z: -30.0000, Y: 0.0000, X: 1000.0000)$. Striking `{{key:EXEC}}` runs Cardano's closed-form cubic resolvent, factoring $2(x+5)(x-10)^2 = 0$; keying `{{key:RCL}} 3` extracts the physical clamped-support double root $(T: -30.0000, Z: -5.0000, Y: 0.0000, X: \mathbf{10.000000}\text{ m})$ in Register $X$, where the repeated multiplicity confirms both $v(L) = 0$ and $v'(L) = 0$.
+In `{{key:POLY}}`, keying `2 {{key:A}} 30 {{key:+/-}} {{key:B}}` registers cubic and quadratic flexural coefficients $(T: 0.0000, Z: 0.0000, Y: 2.0000, X: -30.0000)$. Entering `0 {{key:C}} 1000 {{key:D}}` sets linear coefficient $C = 0.0$ and boundary constant $D = 1000$ $(T: 2.0000, Z: -30.0000, Y: 0.0000, X: 1000.0000)$. Striking `{{key:XEQ}}` runs Cardano's closed-form cubic resolvent, factoring $2(x+5)(x-10)^2 = 0$; keying `{{key:RCL}} 3` extracts the physical clamped-support double root $(T: -30.0000, Z: -5.0000, Y: 0.0000, X: \mathbf{10.000000}\text{ m})$ in Register $X$, where the repeated multiplicity confirms both $v(L) = 0$ and $v'(L) = 0$.
 
 ---
 
@@ -1879,7 +1880,7 @@ $$\lambda^2 - 2 \mu \lambda + \mu = 0 \implies \lambda^2 - 4.828427 \lambda + 2.
 
 **Keystrokes:** `{{res:sc32_07_polynomials_brent_solver_seq_03:keys}}` $\rightarrow$ **`{{res:sc32_07_polynomials_brent_solver_seq_03:value}}`**
 
-In `{{key:POLY}}`, entering `1 {{key:A}} 4.828427 {{key:+/-}} {{key:B}}` enters unit quadratic and negative coupling term $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: -4.828427)$. Entering `2.414214 {{key:C}}` sets structural constant $C = 2.414214$ (with $D$ defaulting to $0.0$ automatically for quadratic solving, or keyed as `0 {{key:D}}`) $(T: 1.0000, Z: -4.828427, Y: 2.414214, X: 0.0000)$. Striking `{{key:EXEC}}` evaluates Cardano roots; keying `{{key:RCL}} 5` yields the optimal stage mass ratio $(T: -4.828427, Z: 0.0000, Y: 0.0000, X: \mathbf{4.261972})$ in Register $X$ (with secondary reciprocal root $\lambda_2 = 0.566455$ in variable 3), confirming **$\lambda = 4.261972$**.
+In `{{key:POLY}}`, entering `1 {{key:A}} 4.828427 {{key:+/-}} {{key:B}}` enters unit quadratic and negative coupling term $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: -4.828427)$. Entering `2.414214 {{key:C}}` sets structural constant $C = 2.414214$ (with $D$ defaulting to $0.0$ automatically for quadratic solving, or keyed as `0 {{key:D}}`) $(T: 1.0000, Z: -4.828427, Y: 2.414214, X: 0.0000)$. Striking `{{key:XEQ}}` evaluates Cardano roots; keying `{{key:RCL}} 5` yields the optimal stage mass ratio $(T: -4.828427, Z: 0.0000, Y: 0.0000, X: \mathbf{4.261972})$ in Register $X$ (with secondary reciprocal root $\lambda_2 = 0.566455$ in variable 3), confirming **$\lambda = 4.261972$**.
 
 ---
 
@@ -1888,7 +1889,7 @@ In `{{key:POLY}}`, entering `1 {{key:A}} 4.828427 {{key:+/-}} {{key:B}}` enters 
 In a high-density distribution warehouse where floor congestion imposes a quadratic marginal holding cost ($h_2 = \$0.05/\text{unit}^2\cdot\text{yr}$) atop the classical Ford W. Harris (1913) linear inventory holding rate ($h_1 = \$7.35/\text{unit}\cdot\text{yr}$) and annualized setup-demand product ($5,000\text{ units}^2/\text{yr}$), differentiating total annual cost $\text{TC}(Q) = \frac{K D}{Q} + \frac{h_1 Q}{2} + \frac{h_2 Q^2}{4}$ with respect to lot size $Q$ yields the quadratic equilibrium condition:
 $$0.05 Q^2 + 7.35 Q - 5,000 = 0$$
 
-In `{{key:POLY}}`, keying `0.05 {{key:A}} 7.35 {{key:B}}` loads quadratic congestion coefficient $A = 0.05$ and linear holding coefficient $B = 7.35$ $(T: 0.0000, Z: 0.0000, Y: 0.0500, X: 7.3500)$. Entering `5000 {{key:+/-}} {{key:C}} {{key:EXEC}}` loads setup constant $C = -5,000.0$ (with $D = 0.0$ by default) and computes the Cardano roots $(T: 0.0000, Z: 0.0500, Y: -398.1571, X: 0.0000)$. Keying `{{key:RCL}} 5` recalls the positive optimal production lot size $(T: 0.0500, Z: -398.1571, Y: 0.0000, X: \mathbf{251.157127}\text{ units})$ into Register $X$, yielding **$Q^* = 251.16\text{ units}$** (smaller than the congestion-free Wilson EOQ of $\sqrt{2(5000)/7.35} = 368.86\text{ units}$).
+In `{{key:POLY}}`, keying `0.05 {{key:A}} 7.35 {{key:B}}` loads quadratic congestion coefficient $A = 0.05$ and linear holding coefficient $B = 7.35$ $(T: 0.0000, Z: 0.0000, Y: 0.0500, X: 7.3500)$. Entering `5000 {{key:+/-}} {{key:C}} {{key:XEQ}}` loads setup constant $C = -5,000.0$ (with $D = 0.0$ by default) and computes the Cardano roots $(T: 0.0000, Z: 0.0500, Y: -398.1571, X: 0.0000)$. Keying `{{key:RCL}} 5` recalls the positive optimal production lot size $(T: 0.0500, Z: -398.1571, Y: 0.0000, X: \mathbf{251.157127}\text{ units})$ into Register $X$, yielding **$Q^* = 251.16\text{ units}$** (smaller than the congestion-free Wilson EOQ of $\sqrt{2(5000)/7.35} = 368.86\text{ units}$).
 
 ---
 
@@ -1897,7 +1898,7 @@ In `{{key:POLY}}`, keying `0.05 {{key:A}} 7.35 {{key:B}}` loads quadratic conges
 A thermal lens with focal parameter $f = 350\text{ mm}$ inside a flat-flat laser resonator cavity of length $L = 600\text{ mm}$ establishes a confocal Rayleigh range squared $z_0^2 = L(2f - L) = 600(700 - 600) = 60,000\text{ mm}^2$ ($z_0 = 244.9490\text{ mm}$). By Kogelnik's $ABCD$ complex beam parameter transformation, the intracavity TEM$_{00}$ beam waist positions $z$ satisfy the quadratic resonator stability equation:
 $$z^2 - L z + z_0^2 = 0 \implies z^2 - 600 z + 60,000 = 0$$
 
-In `{{key:POLY}}`, keying `1 {{key:A}} 600 {{key:+/-}} {{key:B}}` loads quadratic coefficient $A = 1.0$ and cavity span $B = -600.0$ $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: -600.0000)$. Entering `60000 {{key:C}} {{key:EXEC}}` sets $C = 60,000.0$ and solves the quadratic $(T: 0.0000, Z: 1.0000, Y: 0.0000, X: 0.0000)$. Keying `{{key:RCL}} 3` extracts the primary intracavity waist position $(T: 1.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{126.794919}\text{ mm})$, and keying `{{key:RCL}} 5` recalls the conjugate symmetric waist location $(T: 0.0000, Z: 0.0000, Y: 126.7949, X: \mathbf{473.205081}\text{ mm})$ (with $z_1 + z_2 = L = 600.0\text{ mm}$ by Viète's sum of roots).
+In `{{key:POLY}}`, keying `1 {{key:A}} 600 {{key:+/-}} {{key:B}}` loads quadratic coefficient $A = 1.0$ and cavity span $B = -600.0$ $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: -600.0000)$. Entering `60000 {{key:C}} {{key:XEQ}}` sets $C = 60,000.0$ and solves the quadratic $(T: 0.0000, Z: 1.0000, Y: 0.0000, X: 0.0000)$. Keying `{{key:RCL}} 3` extracts the primary intracavity waist position $(T: 1.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{126.794919}\text{ mm})$, and keying `{{key:RCL}} 5` recalls the conjugate symmetric waist location $(T: 0.0000, Z: 0.0000, Y: 126.7949, X: \mathbf{473.205081}\text{ mm})$ (with $z_1 + z_2 = L = 600.0\text{ mm}$ by Viète's sum of roots).
 
 ---
 
@@ -1906,7 +1907,7 @@ In `{{key:POLY}}`, keying `1 {{key:A}} 600 {{key:+/-}} {{key:B}}` loads quadrati
 A centrifugal pump with backward-curved impeller blades exhibits manometric head curve $H_p(Q) = 60 + 0.15 Q - 0.002 Q^2$, while the pipeline system resistance (static lift plus Darcy-Weisbach friction loss) is $H_s(Q) = 15 + 0.005 Q^2$. Equating pump supply head to pipeline demand head determines the steady-state hydraulic operating point:
 $$60 + 0.15 Q - 0.002 Q^2 = 15 + 0.005 Q^2 \implies 0.007 Q^2 - 0.15 Q - 45 = 0$$
 
-In `{{key:POLY}}`, entering `0.007 {{key:A}} 0.15 {{key:+/-}} {{key:B}}` loads combined hydraulic resistance $A = 0.0070$ and linear Euler swirl coefficient $B = -0.1500$ $(T: 0.0000, Z: 0.0000, Y: 0.0070, X: -0.1500)$. Keying `45 {{key:+/-}} {{key:C}} {{key:EXEC}}` sets static head differential $C = -45.0$ and solves for the roots $(T: 0.0000, Z: 0.0070, Y: -70.1768, X: 0.0000)$. Pressing `{{key:RCL}} 5` isolates the physical positive operating discharge $(T: 0.0070, Z: -70.1768, Y: 0.0000, X: \mathbf{91.605369}\text{ m}^3/\text{hr})$, yielding **$Q = 91.61\text{ m}^3/\text{hr}$** at operating head $H = 56.97\text{ m}$.
+In `{{key:POLY}}`, entering `0.007 {{key:A}} 0.15 {{key:+/-}} {{key:B}}` loads combined hydraulic resistance $A = 0.0070$ and linear Euler swirl coefficient $B = -0.1500$ $(T: 0.0000, Z: 0.0000, Y: 0.0070, X: -0.1500)$. Keying `45 {{key:+/-}} {{key:C}} {{key:XEQ}}` sets static head differential $C = -45.0$ and solves for the roots $(T: 0.0000, Z: 0.0070, Y: -70.1768, X: 0.0000)$. Pressing `{{key:RCL}} 5` isolates the physical positive operating discharge $(T: 0.0070, Z: -70.1768, Y: 0.0000, X: \mathbf{91.605369}\text{ m}^3/\text{hr})$, yielding **$Q = 91.61\text{ m}^3/\text{hr}$** at operating head $H = 56.97\text{ m}$.
 
 ---
 
@@ -1915,7 +1916,7 @@ In `{{key:POLY}}`, entering `0.007 {{key:A}} 0.15 {{key:+/-}} {{key:B}}` loads c
 A spherical meteorological drop-sonde descending through the atmosphere experiences both linear Stokes viscous shear drag ($c_1 v = 6\pi\mu r v$, with $c_1 = 0.27\text{ N}\cdot\text{s/m}$) and quadratic Newton pressure-wake drag ($c_2 v^2 = \frac{1}{2}\rho C_D A v^2$, with $c_2 = 0.018\text{ N}\cdot\text{s}^2/\text{m}^2$) balancing its net buoyant weight $W = 31.5\text{ N}$:
 $$c_2 v^2 + c_1 v - W = 0 \implies 0.018 v^2 + 0.27 v - 31.5 = 0$$
 
-In `{{key:POLY}}`, loading `0.018 {{key:A}} 0.27 {{key:B}}` enters quadratic pressure-drag coefficient $A = 0.0180$ and linear viscous coefficient $B = 0.2700$ $(T: 0.0000, Z: 0.0000, Y: 0.0180, X: 0.2700)$. Keying `31.5 {{key:+/-}} {{key:C}} {{key:EXEC}}` loads net weight $C = -31.5$ and solves the quadratic $(T: 0.0000, Z: 0.0180, Y: -50.0000, X: 0.0000)$. Pressing `{{key:RCL}} 5` recalls the positive terminal equilibrium velocity $(T: 0.0180, Z: -50.0000, Y: 0.0000, X: \mathbf{35.000000}\text{ m/s})$, yielding **$v = 35.00\text{ m/s}$** ($126.0\text{ km/h}$).
+In `{{key:POLY}}`, loading `0.018 {{key:A}} 0.27 {{key:B}}` enters quadratic pressure-drag coefficient $A = 0.0180$ and linear viscous coefficient $B = 0.2700$ $(T: 0.0000, Z: 0.0000, Y: 0.0180, X: 0.2700)$. Keying `31.5 {{key:+/-}} {{key:C}} {{key:XEQ}}` loads net weight $C = -31.5$ and solves the quadratic $(T: 0.0000, Z: 0.0180, Y: -50.0000, X: 0.0000)$. Pressing `{{key:RCL}} 5` recalls the positive terminal equilibrium velocity $(T: 0.0180, Z: -50.0000, Y: 0.0000, X: \mathbf{35.000000}\text{ m/s})$, yielding **$v = 35.00\text{ m/s}$** ($126.0\text{ km/h}$).
 
 ---
 
@@ -1927,7 +1928,7 @@ $$2 \theta^3 + 10 \theta - 5 = 0$$
 
 **Keystrokes:** `{{res:sc32_07_polynomials_brent_solver_seq_17:keys}}` $\rightarrow$ **`{{res:sc32_07_polynomials_brent_solver_seq_17:value}}`**
 
-In `{{key:POLY}}`, entering `2 {{key:A}}` loads non-linear cubic coefficient $A = 2.0$ (with quadratic coefficient $B$ defaulting to $0.0$ automatically, or explicitly keyed as `0 {{key:B}}`) $(T: 0.0000, Z: 0.0000, Y: 2.0000, X: 0.0000)$. Entering `10 {{key:C}} 5 {{key:+/-}} {{key:D}}` loads linear restoring torque $C = 10.0$ and external load $D = -5.0$ $(T: 2.0000, Z: 0.0000, Y: 10.0000, X: -5.0000)$. Striking `{{key:EXEC}}` computes Cardano roots; because $p = C/A = 5 > 0$, the cubic is strictly monotonic and the unique real equilibrium deflection angle emerges in Register $Y$ $(T: 2.0000, Z: 0.0000, Y: \mathbf{0.478138}, X: 0.000000)$ with the complex conjugate pair stored in variables `3`–`6`, or recalled directly via `{{key:RCL}} 1`, confirming **$\theta = 0.478138\text{ radians}$** ($27.40^\circ$).
+In `{{key:POLY}}`, entering `2 {{key:A}}` loads non-linear cubic coefficient $A = 2.0$ (with quadratic coefficient $B$ defaulting to $0.0$ automatically, or explicitly keyed as `0 {{key:B}}`) $(T: 0.0000, Z: 0.0000, Y: 2.0000, X: 0.0000)$. Entering `10 {{key:C}} 5 {{key:+/-}} {{key:D}}` loads linear restoring torque $C = 10.0$ and external load $D = -5.0$ $(T: 2.0000, Z: 0.0000, Y: 10.0000, X: -5.0000)$. Striking `{{key:XEQ}}` computes Cardano roots; because $p = C/A = 5 > 0$, the cubic is strictly monotonic and the unique real equilibrium deflection angle emerges in Register $Y$ $(T: 2.0000, Z: 0.0000, Y: \mathbf{0.478138}, X: 0.000000)$ with the complex conjugate pair stored in variables `3`–`6`, or recalled directly via `{{key:RCL}} 1`, confirming **$\theta = 0.478138\text{ radians}$** ($27.40^\circ$).
 
 ---
 
@@ -1936,7 +1937,7 @@ In `{{key:POLY}}`, entering `2 {{key:A}}` loads non-linear cubic coefficient $A 
 For a uniform-wear annular friction clutch of outer radius $R = 150.0\text{ mm}$ where axial contact pressure varies inversely with radius ($p(r) \propto 1/r$), normalizing the inner radius $x = r_i / R \in (0, 1)$ produces normalized frictional torque capacity $T(x) \propto x(1 - x^2)$, which peaks at $x^* = 1/\sqrt{3} \approx 0.57735$. Sizing an annular lining to deliver a specified fraction of theoretical capacity requires solving the depressed cubic polynomial ($\Delta < 0$, *casus irreducibilis* with three distinct real roots):
 $$x^3 - 3 x + 1.5 = 0$$
 
-In `{{key:POLY}}`, keying `1 {{key:A}} 0 {{key:B}}` sets leading cubic coefficient $A = 1.0$ and depressed quadratic coefficient $B = 0.0$ $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: 0.0000)$. Entering `3 {{key:+/-}} {{key:C}} 1.5 {{key:D}} {{key:EXEC}}` loads $C = -3.0, D = 1.5$ and executes François Viète's trigonometric trisection $(T: 1.0000, Z: 0.0000, Y: -1.9422, X: 0.0000)$. Keying `{{key:RCL}} 3 150 {{key:×}}` recalls the unique physical inner-to-outer radius ratio $x = 0.557875 \in (0, 1)$ and scales by $R = 150.0\text{ mm}$ $(T: -1.9422, Z: -1.9422, Y: 0.0000, X: \mathbf{83.681205}\text{ mm})$, yielding **$r_i = 83.68\text{ mm}$**.
+In `{{key:POLY}}`, keying `1 {{key:A}} 0 {{key:B}}` sets leading cubic coefficient $A = 1.0$ and depressed quadratic coefficient $B = 0.0$ $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: 0.0000)$. Entering `3 {{key:+/-}} {{key:C}} 1.5 {{key:D}} {{key:XEQ}}` loads $C = -3.0, D = 1.5$ and executes François Viète's trigonometric trisection $(T: 1.0000, Z: 0.0000, Y: -1.9422, X: 0.0000)$. Keying `{{key:RCL}} 3 150 {{key:×}}` recalls the unique physical inner-to-outer radius ratio $x = 0.557875 \in (0, 1)$ and scales by $R = 150.0\text{ mm}$ $(T: -1.9422, Z: -1.9422, Y: 0.0000, X: \mathbf{83.681205}\text{ mm})$, yielding **$r_i = 83.68\text{ mm}$**.
 
 ---
 
@@ -1945,7 +1946,7 @@ In `{{key:POLY}}`, keying `1 {{key:A}} 0 {{key:B}}` sets leading cubic coefficie
 A supercritical open-channel spillway flow with upstream depth $y_1 = 0.40\text{ m}$ and Froude number $\text{Fr}_1 = 4.5$ ($\text{Fr}_1^2 = 20.25$) undergoes a turbulent stationary shock—a hydraulic jump—into tranquil subcritical flow. Although mechanical energy is dissipated across the turbulent roller, Jean-Baptiste Ch. Bélanger (1838) showed that specific momentum flux $\frac{1}{2}y^2 + \frac{q^2}{gy}$ is conserved across the jump, yielding the Bélanger quadratic equation for downstream conjugate (sequent) depth $y_2$:
 $$y_2^2 + y_1 y_2 - 2 y_1^2 \text{Fr}_1^2 = 0 \implies y_2^2 + 0.40 y_2 - 6.48 = 0 \implies y_2 = \mathbf{2.353429\text{ meters}}$$
 
-In `{{key:POLY}}`, entering `1 {{key:A}} 0.40 {{key:B}}` loads unit quadratic coefficient $A = 1.0$ and upstream depth $B = 0.40\text{ m}$ $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: 0.4000)$. Keying `6.48 {{key:+/-}} {{key:C}} {{key:EXEC}}` loads momentum constant $C = -2(0.40)^2(20.25) = -6.48$ and extracts the roots $(T: 0.0000, Z: 1.0000, Y: -2.7534, X: 0.0000)$. Pressing `{{key:RCL}} 5` recalls the positive subcritical conjugate depth $(T: 1.0000, Z: -2.7534, Y: 0.0000, X: \mathbf{2.353429}\text{ m})$, yielding **$y_2 = 2.3534\text{ meters}$** (a $5.88\times$ depth jump dissipating $\Delta E = \frac{(y_2 - y_1)^3}{4 y_1 y_2} = 1.98\text{ m}$ of hydraulic head).
+In `{{key:POLY}}`, entering `1 {{key:A}} 0.40 {{key:B}}` loads unit quadratic coefficient $A = 1.0$ and upstream depth $B = 0.40\text{ m}$ $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: 0.4000)$. Keying `6.48 {{key:+/-}} {{key:C}} {{key:XEQ}}` loads momentum constant $C = -2(0.40)^2(20.25) = -6.48$ and extracts the roots $(T: 0.0000, Z: 1.0000, Y: -2.7534, X: 0.0000)$. Pressing `{{key:RCL}} 5` recalls the positive subcritical conjugate depth $(T: 1.0000, Z: -2.7534, Y: 0.0000, X: \mathbf{2.353429}\text{ m})$, yielding **$y_2 = 2.3534\text{ meters}$** (a $5.88\times$ depth jump dissipating $\Delta E = \frac{(y_2 - y_1)^3}{4 y_1 y_2} = 1.98\text{ m}$ of hydraulic head).
 
 ---
 
@@ -1954,7 +1955,7 @@ In `{{key:POLY}}`, entering `1 {{key:A}} 0.40 {{key:B}}` loads unit quadratic co
 An acoustic Helmholtz absorber chamber of volume $V = 1.93793 \times 10^{-3}\text{ m}^3$ and physical neck length $L = 50.0\text{ mm}$ ($c = 343\text{ m/s}$) is tuned to attenuate a $f_0 = 120\text{ Hz}$ tonal resonance. Because the oscillating air plug in the neck radiates piston-like acoustic inertia into both the cavity and free space, Lord Rayleigh's flanged end-correction extends the effective inertial length to $L' = L + 1.7a$, coupling neck radius $a$ (in $\text{mm}$) into both numerator area $A = \pi a^2$ and denominator mass length inside $f_0 = \frac{c}{2\pi}\sqrt{\frac{\pi a^2}{V(L + 1.7a)}}$:
 $$a^2 - \left(\frac{6.8\pi f_0^2 V}{c^2}\right) a - \left(\frac{4\pi f_0^2 V L}{c^2}\right) = 0 \implies a^2 - 5.066225 a - 149.006625 = 0$$
 
-In `{{key:POLY}}`, keying `1 {{key:A}} 5.066225 {{key:+/-}} {{key:B}}` loads $A = 1.0$ and Rayleigh end-correction coefficient $B = -5.066225\text{ mm}$ $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: -5.066225)$. Entering `149.006625 {{key:+/-}} {{key:C}} {{key:EXEC}}` sets cavity constant $C = -149.006625\text{ mm}^2$ and solves the quadratic $(T: 0.0000, Z: 1.0000, Y: -9.9338, X: 0.0000)$. Striking `{{key:RCL}} 5` isolates the physical positive neck radius $(T: 1.0000, Z: -9.9338, Y: 0.0000, X: \mathbf{15.000000}\text{ mm})$, giving **$a = 15.00\text{ mm}$** (neck diameter $d = 2a = 30.00\text{ mm}$ and effective acoustic neck length $L' = 50.0 + 1.7(15.0) = 75.50\text{ mm}$).
+In `{{key:POLY}}`, keying `1 {{key:A}} 5.066225 {{key:+/-}} {{key:B}}` loads $A = 1.0$ and Rayleigh end-correction coefficient $B = -5.066225\text{ mm}$ $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: -5.066225)$. Entering `149.006625 {{key:+/-}} {{key:C}} {{key:XEQ}}` sets cavity constant $C = -149.006625\text{ mm}^2$ and solves the quadratic $(T: 0.0000, Z: 1.0000, Y: -9.9338, X: 0.0000)$. Striking `{{key:RCL}} 5` isolates the physical positive neck radius $(T: 1.0000, Z: -9.9338, Y: 0.0000, X: \mathbf{15.000000}\text{ mm})$, giving **$a = 15.00\text{ mm}$** (neck diameter $d = 2a = 30.00\text{ mm}$ and effective acoustic neck length $L' = 50.0 + 1.7(15.0) = 75.50\text{ mm}$).
 
 ---
 
@@ -1963,7 +1964,7 @@ In `{{key:POLY}}`, keying `1 {{key:A}} 5.066225 {{key:+/-}} {{key:B}}` loads $A 
 A synchrotron proton ($m_0 c^2 = 938.272\text{ MeV}$) circulates with relativistic momentum $p c = 2,500.0\text{ MeV}$. Substituting total relativistic energy $E = K + m_0 c^2$ into Einstein's Lorentz-invariant energy-momentum four-vector norm $E^2 - (pc)^2 - (m_0 c^2)^2 = 0$ eliminates the rest-mass square and yields a quadratic equation directly in kinetic energy $K$:
 $$K^2 + 2(m_0 c^2) K - (pc)^2 = 0 \implies K^2 + 1876.544 K - 6,250,000 = 0 \implies K = \mathbf{1,732.0003\text{ MeV}}$$
 
-In `{{key:POLY}}`, keying `1 {{key:A}} 1876.544 {{key:B}}` enters $A = 1.0$ and rest-energy coupling $B = 2 m_0 c^2 = 1876.544\text{ MeV}$ $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: 1876.5440)$. Entering `6250000 {{key:+/-}} {{key:C}} {{key:EXEC}}` loads $C = -(pc)^2 = -6,250,000\text{ MeV}^2$ and solves for the energy branches $(T: 0.0000, Z: 1.0000, Y: -3608.5443, X: 0.0000)$. Pressing `{{key:RCL}} 5` recalls the positive-energy particle kinetic energy $(T: 1.0000, Z: -3608.5443, Y: 0.0000, X: 0.000000)$, yielding **$K = 1,732.000\text{ MeV}$** (total energy $E = K + m_0 c^2 = 2,670.272\text{ MeV}$, Lorentz factor $\gamma = E / m_0 c^2 = 2.8459$, while the lower root $r_1 = -3,608.544\text{ MeV} = -E - m_0 c^2$ in Register `3` reflects Paul Dirac's negative-energy sea).
+In `{{key:POLY}}`, keying `1 {{key:A}} 1876.544 {{key:B}}` enters $A = 1.0$ and rest-energy coupling $B = 2 m_0 c^2 = 1876.544\text{ MeV}$ $(T: 0.0000, Z: 0.0000, Y: 1.0000, X: 1876.5440)$. Entering `6250000 {{key:+/-}} {{key:C}} {{key:XEQ}}` loads $C = -(pc)^2 = -6,250,000\text{ MeV}^2$ and solves for the energy branches $(T: 0.0000, Z: 1.0000, Y: -3608.5443, X: 0.0000)$. Pressing `{{key:RCL}} 5` recalls the positive-energy particle kinetic energy $(T: 1.0000, Z: -3608.5443, Y: 0.0000, X: 0.000000)$, yielding **$K = 1,732.000\text{ MeV}$** (total energy $E = K + m_0 c^2 = 2,670.272\text{ MeV}$, Lorentz factor $\gamma = E / m_0 c^2 = 2.8459$, while the lower root $r_1 = -3,608.544\text{ MeV} = -E - m_0 c^2$ in Register `3` reflects Paul Dirac's negative-energy sea).
 
 ---
 
@@ -1983,7 +1984,7 @@ Keying `30 {{key:STO}} X` seeds initial terminal approach guess $X_0 = 30.0^\cir
 An aircraft wing of aspect ratio $\text{AR} = 9.5$ and Oswald span efficiency $e = 0.85$ has Prandtl lifting-line induced-drag factor $k = \frac{1}{\pi e \text{AR}} = 0.039419$, cambered airfoil minimum-drag shift $b = -0.0050$, and parasitic zero-lift drag $C_{D0} = 0.0200$. At a cruise thrust setting corresponding to total drag coefficient $C_D = 0.033405$, the operating lift coefficient $C_L$ satisfies the cambered parabolic drag polar:
 $$k C_L^2 + b C_L + (C_{D0} - C_D) = 0 \implies 0.039419 C_L^2 - 0.0050 C_L - 0.013405 = 0$$
 
-In `{{key:POLY}}`, entering `0.039419 {{key:A}} 0.0050 {{key:+/-}} {{key:B}}` loads induced-drag factor $A = 0.039419$ and camber offset $B = -0.0050$ $(T: 0.0000, Z: 0.0000, Y: 0.0394, X: -0.0050)$. Keying `0.013405 {{key:+/-}} {{key:C}} {{key:EXEC}}` sets net drag margin $C = -0.013405$ and extracts the roots $(T: 0.0000, Z: 0.0394, Y: -0.5232, X: 0.0000)$. Pressing `{{key:RCL}} 5` recalls the positive cruise lift coefficient $(T: 0.0394, Z: -0.5232, Y: 0.0000, X: \mathbf{0.650010})$, yielding **$C_L = 0.6500$** (where vortex-induced drag is $C_{Di} = k C_L^2 = 0.016655$ and lift-to-drag ratio is $L/D = C_L / C_D = 19.46$).
+In `{{key:POLY}}`, entering `0.039419 {{key:A}} 0.0050 {{key:+/-}} {{key:B}}` loads induced-drag factor $A = 0.039419$ and camber offset $B = -0.0050$ $(T: 0.0000, Z: 0.0000, Y: 0.0394, X: -0.0050)$. Keying `0.013405 {{key:+/-}} {{key:C}} {{key:XEQ}}` sets net drag margin $C = -0.013405$ and extracts the roots $(T: 0.0000, Z: 0.0394, Y: -0.5232, X: 0.0000)$. Pressing `{{key:RCL}} 5` recalls the positive cruise lift coefficient $(T: 0.0394, Z: -0.5232, Y: 0.0000, X: \mathbf{0.650010})$, yielding **$C_L = 0.6500$** (where vortex-induced drag is $C_{Di} = k C_L^2 = 0.016655$ and lift-to-drag ratio is $L/D = C_L / C_D = 19.46$).
 
 ---
 
@@ -2001,7 +2002,7 @@ Pushing `11.45 {{key:x²}}` squares injection burn velocity to obtain $v^2 = 131
 Incompressible Newtonian fluid ($\mu = 0.10\text{ Pa}\cdot\text{s}$, $\nu = 10^{-4}\text{ m}^2/\text{s}$) flows between a stationary lower wall ($y = 0$) and a parallel upper wall at $h = 0.050\text{ m}$ translating at $U = 2.0\text{ m/s}$ ($\text{Re} = U h / \nu = 1,000.0$) against an adverse stream-wise pressure gradient $dp/dx = +120\text{ Pa/m}$. Integrating the Navier-Stokes momentum balance $\mu \frac{d^2 u}{dy^2} = \frac{dp}{dx}$ superimposes linear Couette shear and parabolic Poiseuille backflow into $u(y) = 600 y^2 + 10 y$. Find the channel elevation $y$ where local velocity reaches $u(y) = 1.00\text{ m/s}$:
 $$600 y^2 + 10 y - 1.00 = 0 \implies y = \mathbf{0.033333\text{ meters}}$$
 
-In `{{key:POLY}}`, loading `600 {{key:A}} 10 {{key:B}}` enters pressure-gradient curvature $A = \frac{1}{2\mu}\frac{dp}{dx} = 600.0$ and wall-shear gradient $B = 10.0$ $(T: 0.0000, Z: 0.0000, Y: 600.0000, X: 10.0000)$. Keying `1 {{key:+/-}} {{key:C}} {{key:EXEC}}` loads target velocity offset $C = -1.00$ and solves the quadratic $(T: 0.0000, Z: 600.0000, Y: -0.0500, X: 0.0000)$. Pressing `{{key:RCL}} 5` isolates the physical channel elevation $(T: 600.0000, Z: -0.0500, Y: 0.0000, X: \mathbf{0.033333}\text{ m})$, yielding **$y = 33.33\text{ mm}$** ($2/3$ of the channel gap $h$).
+In `{{key:POLY}}`, loading `600 {{key:A}} 10 {{key:B}}` enters pressure-gradient curvature $A = \frac{1}{2\mu}\frac{dp}{dx} = 600.0$ and wall-shear gradient $B = 10.0$ $(T: 0.0000, Z: 0.0000, Y: 600.0000, X: 10.0000)$. Keying `1 {{key:+/-}} {{key:C}} {{key:XEQ}}` loads target velocity offset $C = -1.00$ and solves the quadratic $(T: 0.0000, Z: 600.0000, Y: -0.0500, X: 0.0000)$. Pressing `{{key:RCL}} 5` isolates the physical channel elevation $(T: 600.0000, Z: -0.0500, Y: 0.0000, X: \mathbf{0.033333}\text{ m})$, yielding **$y = 33.33\text{ mm}$** ($2/3$ of the channel gap $h$).
 
 ---
 
@@ -2029,7 +2030,7 @@ Keying `8.435 {{key:ENTER}} {{key:ENTER}} {{key:ENTER}}` fills all four stack re
 A high-pressure cylindrical autoclave of outer radius $R_o = 200\text{ mm}$ ($D = 400\text{ mm}$) containing internal pressure $P = 45.0\text{ MPa}$ must limit maximum inner-bore circumferential (hoop) stress—governed by Gabriel Lamé's (1852) thick-shell elasticity solution $\sigma_\theta(R_i) = P \frac{R_o^2 + (R_o - t)^2}{R_o^2 - (R_o - t)^2}$—to allowable working stress $\sigma_{\text{allow}} = 125.0\text{ MPa}$, yielding the wall-thickness quadratic:
 $$17 t^2 - 6,800 t + 360,000 = 0 \implies t = \mathbf{62.801132\text{ mm}}$$
 
-In `{{key:POLY}}`, entering `17 {{key:A}} 6800 {{key:+/-}} {{key:B}}` loads Lamé stress sum $A = (\sigma_{\text{allow}} + P)/10 = 17.0$ and linear bore coefficient $B = -2 R_o A = -6,800.0$ $(T: 0.0000, Z: 0.0000, Y: 17.0000, X: -6800.0000)$. Keying `360000 {{key:C}} {{key:EXEC}}` loads pressure-radius constant $C = 360,000.0$ and extracts the roots $(T: 0.0000, Z: 17.0000, Y: 0.0000, X: 0.0000)$. Pressing `{{key:RCL}} 3` recalls the physical wall thickness $t < R_o$ $(T: 17.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{62.801132}\text{ mm})$, yielding **$t = 62.80\text{ mm}$** (inner bore radius $R_i = R_o - t = 137.20\text{ mm}$, compared to the unconservative thin-wall Barlow approximation $t_{\text{thin}} = P R_o / \sigma_{\text{allow}} = 72.0\text{ mm}$).
+In `{{key:POLY}}`, entering `17 {{key:A}} 6800 {{key:+/-}} {{key:B}}` loads Lamé stress sum $A = (\sigma_{\text{allow}} + P)/10 = 17.0$ and linear bore coefficient $B = -2 R_o A = -6,800.0$ $(T: 0.0000, Z: 0.0000, Y: 17.0000, X: -6800.0000)$. Keying `360000 {{key:C}} {{key:XEQ}}` loads pressure-radius constant $C = 360,000.0$ and extracts the roots $(T: 0.0000, Z: 17.0000, Y: 0.0000, X: 0.0000)$. Pressing `{{key:RCL}} 3` recalls the physical wall thickness $t < R_o$ $(T: 17.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{62.801132}\text{ mm})$, yielding **$t = 62.80\text{ mm}$** (inner bore radius $R_i = R_o - t = 137.20\text{ mm}$, compared to the unconservative thin-wall Barlow approximation $t_{\text{thin}} = P R_o / \sigma_{\text{allow}} = 72.0\text{ mm}$).
 
 ---
 
@@ -2038,7 +2039,7 @@ In `{{key:POLY}}`, entering `17 {{key:A}} 6800 {{key:+/-}} {{key:B}}` loads Lam�
 A rapidly spinning axisymmetric gyroscopic rotor with transverse moment of inertia $I_t = 0.030\text{ kg}\cdot\text{m}^2$, polar spin angular momentum $H = I_p \omega_s = 18.0\text{ N}\cdot\text{m}\cdot\text{s}$, and gravitational overturning torque $M g L = 2.40\text{ N}\cdot\text{m}$ executes steady conical motion at nutation angle $\theta \approx 90^\circ$ when its precession angular velocity $\Omega$ satisfies Euler's gyroscopic quadratic:
 $$I_t \Omega^2 - H \Omega + M g L = 0 \implies 0.030 \Omega^2 - 18.0 \Omega + 2.40 = 0$$
 
-In `{{key:POLY}}`, keying `0.030 {{key:A}} 18.0 {{key:+/-}} {{key:B}}` loads transverse inertia $A = 0.0300$ and negative spin angular momentum $B = -18.0000$ $(T: 0.0000, Z: 0.0000, Y: 0.0300, X: -18.0000)$. Entering `2.40 {{key:C}} {{key:EXEC}}` loads gravitational torque $C = 2.40$ and solves for both modal frequencies $(T: 0.0000, Z: 0.0300, Y: 0.0000, X: 0.0000)$. Keying `{{key:RCL}} 3` extracts the slow steady precession root $(T: 0.0300, Z: 0.0000, Y: 0.0000, X: \mathbf{0.133363}\text{ rad/s})$ (closely matching the elementary asymptotic approximation $\Omega_1 \approx M g L / H = 0.133333\text{ rad/s}$), while `{{key:RCL}} 5` recalls the fast retrograde nutational mode $(T: 0.0000, Z: 0.0000, Y: 0.1334, X: \mathbf{599.866637}\text{ rad/s} \approx H / I_t)$.
+In `{{key:POLY}}`, keying `0.030 {{key:A}} 18.0 {{key:+/-}} {{key:B}}` loads transverse inertia $A = 0.0300$ and negative spin angular momentum $B = -18.0000$ $(T: 0.0000, Z: 0.0000, Y: 0.0300, X: -18.0000)$. Entering `2.40 {{key:C}} {{key:XEQ}}` loads gravitational torque $C = 2.40$ and solves for both modal frequencies $(T: 0.0000, Z: 0.0300, Y: 0.0000, X: 0.0000)$. Keying `{{key:RCL}} 3` extracts the slow steady precession root $(T: 0.0300, Z: 0.0000, Y: 0.0000, X: \mathbf{0.133363}\text{ rad/s})$ (closely matching the elementary asymptotic approximation $\Omega_1 \approx M g L / H = 0.133333\text{ rad/s}$), while `{{key:RCL}} 5` recalls the fast retrograde nutational mode $(T: 0.0000, Z: 0.0000, Y: 0.1334, X: \mathbf{599.866637}\text{ rad/s} \approx H / I_t)$.
 
 ---
 
@@ -2047,7 +2048,7 @@ In `{{key:POLY}}`, keying `0.030 {{key:A}} 18.0 {{key:+/-}} {{key:B}}` loads tra
 For Earth's sidereal rotation period $T = 86,164.1\text{ s}$ ($23\text{ h } 56\text{ m } 4.1\text{ s}$) and geocentric gravitational constant $\mu = 3.9860044 \times 10^{14}\text{ m}^3/\text{s}^2$ ($R_E = 6,378.14\text{ km}$), Kepler's Third Law ($r^3 \omega^2 = \mu$) dictates that the Clarke geostationary orbital radius $r$ (expressed in megameters, $1\text{ Mm} = 1,000\text{ km}$) satisfies the pure cubic equation:
 $$r^3 - \frac{\mu T^2}{4\pi^2} = 0 \implies r^3 - 74,960.202 = 0 \implies r = \mathbf{42.164173\text{ Mm}} = 42,164.17\text{ km}$$
 
-In `{{key:POLY}}`, keying `1 {{key:A}} 74960.202 {{key:+/-}} {{key:D}} {{key:EXEC}}` sets $A = 1.0$ and $D = -74,960.202$ (leaving $B = C = 0$ by default) and extracts the unique real cube root in Register $Y$ $(T: 0.0000, Z: 0.0000, Y: 42.1642, X: 0.0000)$ alongside the two non-physical complex conjugate roots $r e^{\pm j 2\pi/3}$ in variables 3–6. Keying `{{key:x⇄y}} 1000 {{key:×}} 6378.14 {{key:-}}` brings $r$ to Register $X$, converts to kilometers, and subtracts Earth's equatorial radius $R_E$, resolving equatorial geostationary altitude $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{35786.0326}\text{ km})$.
+In `{{key:POLY}}`, keying `1 {{key:A}} 74960.202 {{key:+/-}} {{key:D}} {{key:XEQ}}` sets $A = 1.0$ and $D = -74,960.202$ (leaving $B = C = 0$ by default) and extracts the unique real cube root in Register $Y$ $(T: 0.0000, Z: 0.0000, Y: 42.1642, X: 0.0000)$ alongside the two non-physical complex conjugate roots $r e^{\pm j 2\pi/3}$ in variables 3–6. Keying `{{key:x⇄y}} 1000 {{key:×}} 6378.14 {{key:-}}` brings $r$ to Register $X$, converts to kilometers, and subtracts Earth's equatorial radius $R_E$, resolving equatorial geostationary altitude $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: \mathbf{35786.0326}\text{ km})$.
 
 ---
 
@@ -2720,9 +2721,9 @@ In William Sharpe's Capital Asset Pricing Model, regressing an equity's excess r
 
 ### Workbook Problem 9.22: Vector Graphic Scatter Plotting & Trendline Overlay
 
-*Accessible via Right Shift `{{key:↱}}` then `{{key:PLOT}}`*
+*Accessible in **App Mode** via Right Shift `{{key:↱}}` then `{{key:PLOT}}` (excluded from physical firmware for standardized-exam compliance)*
 
-After accumulating bivariate datasets, pressing `{{key:PLOT}}` transitions the high-contrast dot-matrix display to the 64-point vector curve engine:
+When bivariate `Σ+` data is accumulated and no algebraic equations are stored in `EQN`, pressing `{{key:↱}} {{key:PLOT}}` in App Mode transitions the high-contrast dot-matrix display to the bivariate scatter & regression plotter:
 * The independent variable $x$ scales along the horizontal axis ($X_{\min} \to X_{\max}$).
 * The dependent variable $y$ scales along the vertical axis ($Y_{\min} \to Y_{\max}$).
 * Each accumulated point appears as a $2\times 2$ pixel reticle.
@@ -2733,7 +2734,7 @@ After accumulating bivariate datasets, pressing `{{key:PLOT}}` transitions the h
   * Press `{{key:+}}` to zoom in, `{{key:-}}` to zoom out.
   * Press `{{key:C}}` to exit plot mode and return to the RPN stack.
 
-As Francis Anscombe famously demonstrated with Anscombe's Quartet, summary regression statistics ($m, b, r$) alone cannot distinguish a true linear relationship from high-leverage outliers or unmodeled curvature. Launching `{{key:PLOT}}` overlays the least-squares vector trendline $y = mx + b$ directly across the $2\times 2$ pixel data reticles while preserving the operational stack registers $(T, Z, Y, X)$ untouched in background memory; panning (`{{key:4}}`/`{{key:6}}`, `{{key:8}}`/`{{key:2}}`) and zooming (`{{key:+}}`/`{{key:-}}`) inspect residual structure visually before `{{key:C}}` returns to the four-register stack $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.0000)$.
+As Francis Anscombe famously demonstrated with Anscombe's Quartet, summary regression statistics ($m, b, r$) alone cannot distinguish a true linear relationship from high-leverage outliers or unmodeled curvature. Launching `{{key:↱}} {{key:PLOT}}` in App Mode overlays the least-squares vector trendline $y = mx + b$ directly across the $2\times 2$ pixel data reticles while preserving the operational stack registers $(T, Z, Y, X)$ untouched in background memory; panning (`{{key:4}}`/`{{key:6}}`, `{{key:8}}`/`{{key:2}}`) and zooming (`{{key:+}}`/`{{key:-}}`) inspect residual structure visually before `{{key:C}}` returns to the four-register stack $(T: 0.0000, Z: 0.0000, Y: 0.0000, X: 0.0000)$.
 
 ---
 
@@ -3151,7 +3152,7 @@ A manufacturing firm expands revenue from $\$240.0\text{M}$ to $\$310.0\text{M}$
 Compare the $\$350,000.00$ mortgage on a 15-year term ($N = 180$) at $6.25\%$ interest ($i = 6.25 / 12 = 0.520833\%$):
 * Payment: `{{res:sc32_11_financial_tvm_seq_16:keys}}` $\rightarrow$ **`{{res:sc32_11_financial_tvm_seq_16:value}}`**
 
-Halving the amortization horizon to $N = 180\text{ months}$ (`180 {{key:N}}`, $(T: 0.00, Z: 0.00, Y: 0.00, X: 180.00)$) at a $50\text{-bp}$ lower rate (`6.25 {{key:ENTER}} 12 {{key:÷}} {{key:I%YR}}` $= 0.520833\%/\text{mo}$, $(T: 0.00, Z: 0.00, Y: 180.00, X: 0.52)$) on the same $\$350,000$ principal (`350000 {{key:PV}} 0 {{key:FV}}`, $(T: 180.00, Z: 0.52, Y: 350000.00, X: 0.00)$) increases the monthly debt service `{{key:PMT}}` by only $\$730.89/\text{mo}$ to $(T: 180.00, Z: 0.52, Y: 350000.00, X: \mathbf{-3000.98})$, while cutting total lifetime outlays (`180 {{key:×}}`, $(T: 0.52, Z: 0.52, Y: 350000.00, X: \mathbf{-540176.41})$) by **$\$277,057.19$**.
+Halving the amortization horizon to $N = 180\text{ months}$ (`180 {{key:N}}`, $(T: 0.00, Z: 0.00, Y: 0.00, X: 180.00)$) at a $50\text{-bp}$ lower rate (`6.25 {{key:ENTER}} 12 {{key:÷}} {{key:I%}}` $= 0.520833\%/\text{mo}$, $(T: 0.00, Z: 0.00, Y: 180.00, X: 0.52)$) on the same $\$350,000$ principal (`350000 {{key:PV}} 0 {{key:FV}}`, $(T: 180.00, Z: 0.52, Y: 350000.00, X: 0.00)$) increases the monthly debt service `{{key:PMT}}` by only $\$730.89/\text{mo}$ to $(T: 180.00, Z: 0.52, Y: 350000.00, X: \mathbf{-3000.98})$, while cutting total lifetime outlays (`180 {{key:×}}`, $(T: 0.52, Z: 0.52, Y: 350000.00, X: \mathbf{-540176.41})$) by **$\$277,057.19$**.
 
 ---
 
@@ -3168,10 +3169,10 @@ Under Modigliani-Miller corporate tax-shield accounting, interest expense is tax
 
 An investment yields $8.0\%$ annually. Compare the Rule of 72 mental estimate with exact compound TVM:
 * Rule of 72 estimate: $72 / 8 = \mathbf{9.00\text{ years}}$.
-* Exact TVM Doubling: `8 {{key:I%YR}} 1 {{key:+/-}} {{key:PV}} 0 {{key:PMT}} 2 {{key:FV}} {{key:N}}` $\rightarrow$ **`9.01 years`**.
+* Exact TVM Doubling: `8 {{key:I%}} 1 {{key:+/-}} {{key:PV}} 0 {{key:PMT}} 2 {{key:FV}} {{key:N}}` $\rightarrow$ **`9.01 years`**.
 * Error is under $0.11\%$.
 
-Luca Pacioli's classic Rule of 72 (`72 {{key:ENTER}} 8 {{key:÷}}` $= 9.00\text{ years}$, $(T: 0.00, Z: 0.00, Y: 0.00, X: 9.00)$) approximates $N = \ln(2)/\ln(1+i) \approx 69.31/i + 0.35$, making $72/i$ remarkably accurate near $i = 8\%$. Programming `8 {{key:I%YR}} 1 {{key:+/-}} {{key:PV}} 0 {{key:PMT}} 2 {{key:FV}}` $(T: 8.00, Z: -1.00, Y: 0.00, X: 2.00)$ and solving `{{key:N}}` yields the exact doubling horizon $\ln(2)/\ln(1.08) = \mathbf{9.0065\text{ years}}$ $(T: 8.00, Z: -1.00, Y: 0.00, X: \mathbf{9.01}\text{ years})$.
+Luca Pacioli's classic Rule of 72 (`72 {{key:ENTER}} 8 {{key:÷}}` $= 9.00\text{ years}$, $(T: 0.00, Z: 0.00, Y: 0.00, X: 9.00)$) approximates $N = \ln(2)/\ln(1+i) \approx 69.31/i + 0.35$, making $72/i$ remarkably accurate near $i = 8\%$. Programming `8 {{key:I%}} 1 {{key:+/-}} {{key:PV}} 0 {{key:PMT}} 2 {{key:FV}}` $(T: 8.00, Z: -1.00, Y: 0.00, X: 2.00)$ and solving `{{key:N}}` yields the exact doubling horizon $\ln(2)/\ln(1.08) = \mathbf{9.0065\text{ years}}$ $(T: 8.00, Z: -1.00, Y: 0.00, X: \mathbf{9.01}\text{ years})$.
 
 ---
 
@@ -3206,7 +3207,7 @@ New vehicle price $\$38,500.00$. Trade-in allowance $\$8,500.00$. Net loan princ
 Financing: 60 months ($N=60$) at $4.90\%$ APR ($i = 4.90 / 12 = 0.408333\%$):
 Keystrokes: `{{res:sc32_11_financial_tvm_seq_01:keys}}` $\rightarrow$ **`{{res:sc32_11_financial_tvm_seq_01:value}}`**.
 
-Deducting the $\$8,500$ trade-in credit leaves a net financed principal of $\$30,000.00$: storing `60 {{key:N}}` $(T: 0.00, Z: 0.00, Y: 0.00, X: 60.00)$, converting the $4.90\%$ APR to a monthly rate via `4.9 {{key:ENTER}} 12 {{key:÷}} {{key:I%YR}}` ($0.408333\%/\text{mo}$, $(T: 0.00, Z: 0.00, Y: 60.00, X: 0.41)$), and entering `30000 {{key:PV}} 0 {{key:FV}}` $(T: 60.00, Z: 0.41, Y: 30000.00, X: 0.00)$ allows `{{key:PMT}}` to resolve the monthly installment $(T: 60.00, Z: 0.41, Y: 30000.00, X: \mathbf{-564.76})$.
+Deducting the $\$8,500$ trade-in credit leaves a net financed principal of $\$30,000.00$: storing `60 {{key:N}}` $(T: 0.00, Z: 0.00, Y: 0.00, X: 60.00)$, converting the $4.90\%$ APR to a monthly rate via `4.9 {{key:ENTER}} 12 {{key:÷}} {{key:I%}}` ($0.408333\%/\text{mo}$, $(T: 0.00, Z: 0.00, Y: 60.00, X: 0.41)$), and entering `30000 {{key:PV}} 0 {{key:FV}}` $(T: 60.00, Z: 0.41, Y: 30000.00, X: 0.00)$ allows `{{key:PMT}}` to resolve the monthly installment $(T: 60.00, Z: 0.41, Y: 30000.00, X: \mathbf{-564.76})$.
 
 ---
 
@@ -3214,7 +3215,7 @@ Deducting the $\$8,500$ trade-in credit leaves a net financed principal of $\$30
 
 An industrial CNC milling machine can be leased for $\$12,000.00/\text{year}$ for 5 years at an $8.00\%$ hurdle discount rate. Outright purchase price is $\$52,000.00$:
 $$\text{PV of Lease} = 12,000 \times \left[\frac{1 - 1.08^{-5}}{0.08}\right] = \mathbf{\$47,912.52}$$
-Leasing saves $\$4,087.48$ in present value terms compared to outright purchase. Programming the 5-year lease obligation `5 {{key:N}} 8 {{key:I%YR}} 12000 {{key:+/-}} {{key:PMT}} 0 {{key:FV}}` $(T: 5.00, Z: 8.00, Y: -12000.00, X: 0.00)$ and solving `{{key:PV}}` discounts the lease stream to $(T: 5.00, Z: 8.00, Y: -12000.00, X: \mathbf{47912.52})$, which compares directly against the $\$52,000$ purchase price via `52000 {{key:x⇄y}} {{key:-}}` to quantify the net present value advantage of leasing $(T: 5.00, Z: 8.00, Y: 52000.00, X: \mathbf{\$4087.48})$.
+Leasing saves $\$4,087.48$ in present value terms compared to outright purchase. Programming the 5-year lease obligation `5 {{key:N}} 8 {{key:I%}} 12000 {{key:+/-}} {{key:PMT}} 0 {{key:FV}}` $(T: 5.00, Z: 8.00, Y: -12000.00, X: 0.00)$ and solving `{{key:PV}}` discounts the lease stream to $(T: 5.00, Z: 8.00, Y: -12000.00, X: \mathbf{47912.52})$, which compares directly against the $\$52,000$ purchase price via `52000 {{key:x⇄y}} {{key:-}}` to quantify the net present value advantage of leasing $(T: 5.00, Z: 8.00, Y: 52000.00, X: \mathbf{\$4087.48})$.
 
 ---
 
@@ -3331,16 +3332,16 @@ In mergers-and-acquisitions valuation, Enterprise Value represents the net takeo
 Save $\$50,000$ in 5 years ($N=60\text{ months}$) at $6.0\%$ APR ($i = 0.5\%/\text{mo}$):
 Keystrokes: `{{res:sc32_11_financial_tvm_seq_04:keys}}`$\rightarrow$ **`{{res:sc32_11_financial_tvm_seq_04:value}}`**.
 
-Programming the sinking-fund parameters `60 {{key:N}} .5 {{key:I%YR}} 0 {{key:PV}} 50000 {{key:FV}}` $(T: 60.00, Z: 0.50, Y: 0.00, X: 50000.00)$ and solving `{{key:PMT}}` determines the required monthly deposit $(T: 60.00, Z: 0.50, Y: 0.00, X: \mathbf{-716.64})$.
+Programming the sinking-fund parameters `60 {{key:N}} .5 {{key:I%}} 0 {{key:PV}} 50000 {{key:FV}}` $(T: 60.00, Z: 0.50, Y: 0.00, X: 50000.00)$ and solving `{{key:PMT}}` determines the required monthly deposit $(T: 60.00, Z: 0.50, Y: 0.00, X: \mathbf{-716.64})$.
 
 ---
 
 ### Workbook Problem 11.24: College Education Fund Present Value
 
 Annual tuition $\$35,000$ for 4 years ($N=4$, beginning of year `BEGIN` mode) at $5\%$ investment return:
-Toggled to `BEGIN` mode: `4 {{key:N}} 5 {{key:I%YR}} 35000 {{key:PMT}} 0 {{key:FV}} {{key:PV}}` $\rightarrow$ **`-$130,417.84`**.
+Toggled to `BEGIN` mode: `4 {{key:N}} 5 {{key:I%}} 35000 {{key:PMT}} 0 {{key:FV}} {{key:PV}}` $\rightarrow$ **`-$130,417.84`**.
 
-Because university bursars collect tuition at the start of each academic year (an *annuity due*), toggling `BEGIN` mode and storing `4 {{key:N}} 5 {{key:I%YR}} 35000 {{key:PMT}} 0 {{key:FV}}` $(T: 4.00, Z: 5.00, Y: 35000.00, X: 0.00)$ before pressing `{{key:PV}}` discounts only the three subsequent installments, yielding the required freshman-day endowment $(T: 4.00, Z: 5.00, Y: 35000.00, X: \mathbf{-\$130417.84})$.
+Because university bursars collect tuition at the start of each academic year (an *annuity due*), toggling `BEGIN` mode and storing `4 {{key:N}} 5 {{key:I%}} 35000 {{key:PMT}} 0 {{key:FV}}` $(T: 4.00, Z: 5.00, Y: 35000.00, X: 0.00)$ before pressing `{{key:PV}}` discounts only the three subsequent installments, yielding the required freshman-day endowment $(T: 4.00, Z: 5.00, Y: 35000.00, X: \mathbf{-\$130417.84})$.
 
 ---
 
@@ -3355,7 +3356,7 @@ $$\text{PV Annuity Factor} = \frac{1 - (1.12)^{-3}}{0.12} = \frac{1 - 0.71178}{0
 * Project Beta: $52,000 \times 2.40183 - 120,000 = \$124,895.22 - \$120,000 = \mathbf{+\$4,895.22}$.
 Project Beta delivers $\$831.12$ more net present value to shareholders.
 
-Because `N`, `I%YR`, and `FV` remain persistent across TVM evaluations, discounting Project Alpha (`3 {{key:N}} 12 {{key:I%YR}} 35000 {{key:+/-}} {{key:PMT}} 0 {{key:FV}} {{key:PV}}` $\rightarrow \$84,064.10$, $(T: 3.00, Z: 12.00, Y: -35000.00, X: 84064.10)$, less `80000 {{key:-}}` $\rightarrow (T: 3.00, Z: 12.00, Y: -35000.00, X: \mathbf{+\$4064.10})$) requires only updating `PMT` for Project Beta (`52000 {{key:+/-}} {{key:PMT}} {{key:PV}}` $\rightarrow \$124,895.22$, $(T: 12.00, Z: -35000.00, Y: 4064.09, X: 124895.22)$, less `120000 {{key:-}}` $\rightarrow (T: 3.00, Z: 12.00, Y: -52000.00, X: \mathbf{+\$4895.22})$).
+Because `N`, `I%`, and `FV` remain persistent across TVM evaluations, discounting Project Alpha (`3 {{key:N}} 12 {{key:I%}} 35000 {{key:+/-}} {{key:PMT}} 0 {{key:FV}} {{key:PV}}` $\rightarrow \$84,064.10$, $(T: 3.00, Z: 12.00, Y: -35000.00, X: 84064.10)$, less `80000 {{key:-}}` $\rightarrow (T: 3.00, Z: 12.00, Y: -35000.00, X: \mathbf{+\$4064.10})$) requires only updating `PMT` for Project Beta (`52000 {{key:+/-}} {{key:PMT}} {{key:PV}}` $\rightarrow \$124,895.22$, $(T: 12.00, Z: -35000.00, Y: 4064.09, X: 124895.22)$, less `120000 {{key:-}}` $\rightarrow (T: 3.00, Z: 12.00, Y: -52000.00, X: \mathbf{+\$4895.22})$).
 
 ---
 
@@ -3425,17 +3426,17 @@ Deducting the $28\%$ vacancy and operating-expense reserve via `112500 {{key:ENT
 
 ## Chapter 12: Function & Scatter Plotting Engine — Extended Engineering & Competition Problems {#chapter-12}
 
-*Accompanies [Chapter 12 of Thinking in the Stack](../manuals/sc32/12-function-scatter-plotting.md) (27 Worked Engineering Problems)*
+*Accompanies [Chapter 12 of Thinking in the Stack](../manuals/sc32/12-function-scatter-plotting.md) (27 Worked Engineering Problems — `PLOT` is an **App Mode** feature, excluded from physical firmware for exam compliance)*
 
 ### Workbook Problem 12.1: Cubic Extrema & Root Guess Bracketing for Brent's Solver
 
-Before executing Richard Brent's root finder ({{key:SOLVE}}), plot the polynomial to visually bracket roots:
+Before executing Richard Brent's root finder ({{key:SOLVE}}), plot the polynomial in App Mode to visually bracket roots:
 
 $$f(x) = x^3 - 3x^2 - 9x + 5 = 0$$
 
-1. Program in `{{key:EQN}}`: `X 3 {{key:yˣ}} 3 X {{key:x²}} {{key:×}} {{key:-}} 9 X {{key:×}} {{key:-}} 5 {{key:+}}`
-2. Domain: `4 {{key:+/-}} {{key:STO}} "XMIN"`, `6 {{key:STO}} "XMAX"`
-3. Press `{{key:PLOT}}`.
+1. Program in `{{key:EQN}}`: `X^3 - 3*X^2 - 9*X + 5`
+2. Stage domain on the stack ($x_{\min}$ in Register $Y$, $x_{\max}$ in Register $X$): `4 {{key:+/-}} {{key:ENTER}} 6`
+3. Press `{{key:↱}} {{key:PLOT}}`.
 
 | Plot Telemetry | Crosshair Readout | Curve Feature |
 | :--- | :--- | :--- |
@@ -3466,9 +3467,9 @@ Plot the Gaussian normal distribution curve with mean $\mu = 0$ and standard dev
 
 $$f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$$
 
-1. Program in `{{key:EQN}}`: `X {{key:x²}} 2 {{key:÷}} {{key:+/-}} {{key:eˣ}} 2 {{key:π}} {{key:×}} {{key:√x}} {{key:÷}}`
-2. Domain: `4 {{key:+/-}} {{key:STO}} "XMIN"`, `4 {{key:STO}} "XMAX"`
-3. Press `{{key:PLOT}}`.
+1. Program in `{{key:EQN}}`: `EXP(-X^2/2)/SQRT(2*π)`
+2. Stage domain ($x_{\min}$ in $Y$, $x_{\max}$ in $X$): `4 {{key:+/-}} {{key:ENTER}} 4`
+3. Press `{{key:↱}} {{key:PLOT}}`.
 
 | Plot Telemetry | Crosshair Readout | Curve Feature |
 | :--- | :--- | :--- |
@@ -3494,9 +3495,9 @@ The voltage gain of a first-order passive low-pass RC filter with cutoff frequen
 
 $$|H(f)| = \frac{1}{\sqrt{1 + (f / 1000)^2}}$$
 Plot gain across frequency domain $f \in [0, 5000\text{ Hz}]$:
-1. Program in `{{key:EQN}}`: `F 1000 {{key:÷}} {{key:x²}} 1 {{key:+}} {{key:√x}} {{key:1/x}}`
-2. Domain: `0 {{key:STO}} "XMIN"`, `5000 {{key:STO}} "XMAX"`
-3. Press `{{key:PLOT}}`.
+1. Program in `{{key:EQN}}`: `1/SQRT(1+(X/1000)^2)`
+2. Stage domain ($x_{\min}$ in $Y$, $x_{\max}$ in $X$): `0 {{key:ENTER}} 5000`
+3. Press `{{key:↱}} {{key:PLOT}}`.
 
 | Plot Telemetry | Crosshair Readout | Curve Feature |
 | :--- | :--- | :--- |
@@ -3522,9 +3523,9 @@ The high-pass filter frequency response is given by:
 
 $$|H(f)| = \frac{f / f_c}{\sqrt{1 + (f / f_c)^2}}$$
 For cutoff frequency $f_c = 1000\text{ Hz}$:
-1. Program: `F 1000 {{key:÷}} {{key:STO}} A {{key:x²}} 1 {{key:+}} {{key:√x}} {{key:RCL}} A {{key:x⇄y}} {{key:÷}}`
-2. Domain: `0 {{key:STO}} "XMIN"`, `5000 {{key:STO}} "XMAX"`
-3. Press `{{key:PLOT}}`.
+1. Program in `{{key:EQN}}`: `(X/1000)/SQRT(1+(X/1000)^2)`
+2. Stage domain ($x_{\min}$ in $Y$, $x_{\max}$ in $X$): `0 {{key:ENTER}} 5000`
+3. Press `{{key:↱}} {{key:PLOT}}`.
 The curve begins at $0$ at DC ($f=0$), crosses $0.707107$ at $f = 1000\text{ Hz}$, and asymptotically approaches $1.00$ at high frequencies.
 **Octave-Above-Cutoff Check ($f = 2000\text{ Hz}$):** {{res:sc32_12_plot_06:keys}} $\implies \mathbf{{{res:sc32_12_plot_06:value}}}$.
 
@@ -3539,7 +3540,7 @@ In solid-state semiconductor electronics, junction diode current follows:
 
 $$I = I_s \left( e^{\frac{V}{n V_T}} - 1 \right)$$
 For silicon diode with saturation current $I_s = 10^{-12}\text{ A}$, emission coefficient $n = 1.0$, thermal voltage $V_T = 0.026\text{ V}$:
-1. Domain: `0 {{key:STO}} "XMIN"`, `0.80 {{key:STO}} "XMAX"`
+1. Stage domain ($x_{\min}$ in $Y$, $x_{\max}$ in $X$): `0 {{key:ENTER}} 0.80`, then press `{{key:↱}} {{key:PLOT}}`.
 2. Curve remains nearly zero until the threshold "knee" voltage ($V \approx 0.65\text{ V}$), then skyrockets exponentially.
 
 | STEP | KEYSTROKE | REGISTER T | REGISTER Z | REGISTER Y | REGISTER X | DISPLAY |
@@ -3761,9 +3762,9 @@ Johannes Diderik van der Waals corrected the ideal gas law for finite molecular 
 
 ### Workbook Problem 12.22: Bivariate Scatter Plot: Hooke's Law Spring Calibration
 
-Accumulating four experimental force-displacement pairs $(1\text{ cm}, 4.8\text{ N})$, $(2\text{ cm}, 10.1\text{ N})$, $(3\text{ cm}, 14.9\text{ N})$, and $(4\text{ cm}, 20.2\text{ N})$ via `{{key:Σ+}}` and selecting `{{key:PLOT}}` (`STAT` overlay) renders the four $2\times 2$ data markers alongside the least-squares regression line of slope $k = \mathbf{5.10\text{ N/cm}}$ ($510\text{ N/m}$) and correlation $r = \mathbf{0.9998}$.
+Accumulating four experimental force-displacement pairs $(1\text{ cm}, 4.8\text{ N})$, $(2\text{ cm}, 10.1\text{ N})$, $(3\text{ cm}, 14.9\text{ N})$, and $(4\text{ cm}, 20.2\text{ N})$ via `{{key:Σ+}}` (with no active equations in `EQN`) and pressing `{{key:↱}} {{key:PLOT}}` in App Mode renders the four $2\times 2$ data markers alongside the least-squares regression line of slope $k = \mathbf{5.10\text{ N/cm}}$ ($510\text{ N/m}$) and correlation $r = \mathbf{0.9998}$.
 
-Resetting the statistical accumulators (`{{key:CLEAR}} {{key:CLΣ}}`, $(T: 0.00, Z: 0.00, Y: 0.00, X: 0.00)$), streaming the four extension-load pairs (`4.8 {{key:ENTER}} 1 {{key:Σ+}}`, `10.1 {{key:ENTER}} 2 {{key:Σ+}}`, `14.9 {{key:ENTER}} 3 {{key:Σ+}}`, `20.2 {{key:ENTER}} 4 {{key:Σ+}}` $\rightarrow n = 4$), and pressing `{{key:m}}` extracts the least-squares Hookean stiffness $(T: 10.10, Z: 14.90, Y: 20.20, X: \mathbf{5.100000}\text{ N/cm}$, or $510\text{ N/m})$ which the vector plotter superimposes directly across the four scatter markers.
+Resetting the statistical accumulators (`{{key:CLEAR}} {{key:CLΣ}}`, $(T: 0.00, Z: 0.00, Y: 0.00, X: 0.00)$), streaming the four extension-load pairs (`4.8 {{key:ENTER}} 1 {{key:Σ+}}`, `10.1 {{key:ENTER}} 2 {{key:Σ+}}`, `14.9 {{key:ENTER}} 3 {{key:Σ+}}`, `20.2 {{key:ENTER}} 4 {{key:Σ+}}` $\rightarrow n = 4$), and pressing `{{key:L.R.}} {{key:m}}` extracts the least-squares Hookean stiffness $(T: 0.00, Z: 14.90, Y: 20.20, X: \mathbf{5.100000}\text{ N/cm}$, or $510\text{ N/m})$ which the vector plotter superimposes directly across the four scatter markers.
 
 ---
 
@@ -4415,7 +4416,7 @@ Find the real root of $x^3 - 2x - 5 = 0$.
 
 With the cubic residual $f(x) = x^3 - 2x - 5$ programmed in `{{key:EQN}}` mode (`X 3 {{key:yˣ}} 2 X {{key:×}} {{key:-}} 5 {{key:-}}`), typing `2 {{key:ENTER}} 3` loads initial physical bracketing interval $[2.0, 3.0]$ across registers $(Y, X)$ $(T: 0.0000, Z: -5.0000, Y: 2.0000, X: 3.0000)$. Executing `{{key:SOLVE}} X` contracts the bracket via Brent's hybrid algorithm until $|f(x)| < 10^{-12}$, depositing the converged real root $x = \mathbf{2.0946}$ into Register $X$ $(T: -5.0000, Z: 2.0000, Y: 3.0000, X: 2.0946)$ (3-sig-fig target: **`2.09`**, full mantissa $2.094551481$).
 
-*(Tournament Closed-Form Alternative)*: In sprint contests, you can also solve $x^3 - 2x - 5 = 0$ instantaneously with Cardano's exact polynomial engine `{{key:POLY}}`. Because unentered coefficients default to $0.0$, quadratic coefficient $B$ can be skipped entirely: key `1 {{key:A}} 2 {{key:+/-}} {{key:C}} 5 {{key:+/-}} {{key:D}} {{key:EXEC}} {{key:RCL}} 1` to extract $2.094551$ in $<5\text{ ms}$!
+*(Tournament Closed-Form Alternative)*: In sprint contests, you can also solve $x^3 - 2x - 5 = 0$ instantaneously with Cardano's exact polynomial engine `{{key:POLY}}`. Because unentered coefficients default to $0.0$, quadratic coefficient $B$ can be skipped entirely: key `1 {{key:A}} 2 {{key:+/-}} {{key:C}} 5 {{key:+/-}} {{key:D}} {{key:XEQ}} {{key:RCL}} 1` to extract $2.094551$ in $<5\text{ ms}$!
 
 ---
 

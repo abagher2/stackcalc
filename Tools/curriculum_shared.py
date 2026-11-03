@@ -328,7 +328,7 @@ BOOK_COVER_SPECS = {
         title_line_1="TEACHING WITH",
         title_line_2="THE STACK",
         subtitle="Hands-On Mathematics & Concept Facilitation Guide (K–12)",
-        edition_badge="UNIFIED TEACHER'S CONCEPT GUIDE  •  GRADES K–12",
+        edition_badge="THE STACKCALC LIBRARY  •  MASTER TEACHER & HOMESCHOOL GUIDE (K–12)",
         accent_hex="#059669",
         category_line="MATHEMATICS  /  TEACHING & CURRICULUM",
         hook_line_1="How do you turn abstract math symbols",
@@ -342,105 +342,201 @@ BOOK_COVER_SPECS = {
         paragraph_2_html=(
             "Organized by <b>mathematical concept rather than isolated textbook chapters</b>, "
             "<b>Teaching with the Stack</b> unifies K–12 hands-on math lab facilitation with middle school "
-            "<b>Big Ideas Math</b> coaching notes, cross-curriculum pacing tables for <b>Singapore Math</b> and "
-            "<b>Bridges in Mathematics</b>, misconception diagnostics, and complete worked answer keys."
+            "<b>Big Ideas Math</b> coaching notes, cross-curriculum pacing tables for <b>Singapore Math</b>, "
+            "<b>Saxon</b>, <b>AoPS</b>, <b>CCSS</b>, <b>Texas TEKS</b>, and <b>Florida B.E.S.T.</b>, "
+            "misconception diagnostics, and online answer keys at <b>stackcalc.io/curriculum/answers</b>."
         ),
         inside_note_html=(
-            "<b>Inside the Master Teacher's Guide:</b> 12 Concept Domains (Pre-K to AP)  •  Cross-curriculum alignment index  "
-            "•  Big Ideas Math Grades 6–8 teaching notes  •  Diagnostic remediations &amp; complete answer keys."
+            "<b>Inside the Master Teacher's Guide:</b> 12 Concept Domains (Pre-K to AP)  •  CCSS / TEKS / B.E.S.T. &amp; Homeschool Crosswalk  "
+            "•  45 Middle School Section Guides  •  Block Studio Games &amp; Online Answer Key Directory."
         ),
-        isbn_hyphenated="979-8-9914832-3-0",
-        isbn_digits="9798991483230",
-        price_label="$29.00 US  •  CAN $38.99",
+        isbn_hyphenated="",
+        isbn_digits="",
+        price_label="",
+    ),
+    "early_elementary_lab": CurriculumBookCoverSpec(
+        book_id="early_elementary_lab",
+        title_line_1="EARLY ELEMENTARY",
+        title_line_2="MATH LAB",
+        subtitle="Counting, Number Bonds, Make-10 Regrouping & Early Multiplication (Grades K–2)",
+        edition_badge="THE STACKCALC LIBRARY  •  GRADES K–2 (SC-6)  •  10 UNITS / 840 PROBLEMS",
+        accent_hex="#0D9488",
+        category_line="MATHEMATICS  /  EARLY ELEMENTARY LAB WORKBOOK (GRADES K–2)",
+        hook_line_1="Build it with blocks. Solve it on paper.",
+        hook_line_2="Prove it on the stack.",
+        paragraph_1_html=(
+            "Every mathematical idea in this early elementary workbook begins in your hands. Before you write an equation "
+            "or press a key on the <b>StackCalc SC-6</b>, you will arrange Place Value 6×2 Trays, Digit Blocks (0–9), "
+            "and Gold <b>[+1] Carry Tokens</b> on your desk to see why numbers group and trade."
+        ),
+        paragraph_2_html=(
+            "100% self-contained for homeschooling families and classrooms alongside any K–2 math curriculum, "
+            "<b>Early Elementary Math Lab</b> guides learners through 10 deep units covering counting, addition/subtraction, "
+            "make-10 regrouping, 2-digit arithmetic, and early multiplication: each with Core &amp; Extension "
+            "Concept Labs, 4-Problem Investigations, <b>6 leveled worksheets (Practice A–F)</b>, "
+            "a <b>100-Point Unit Mastery Check</b>, a <b>STEM Lab Case Study</b>, <b>4 Cumulative Mastery Exams</b>, and <b>3D Block Studio Guides</b>."
+        ),
+        inside_note_html=(
+            "<b>Inside the Grades K–2 Lab Workbook:</b> 4-Page Bootcamp  •  10 Eleven-Page Units (110 Lab, Practice A–F, Quiz &amp; STEM Pages)  "
+            "•  840 Active Problems  •  4 Cumulative Mastery Exams &amp; 3D Block Studios (PLACE-01)  •  128 Pages."
+        ),
+        isbn_hyphenated="",
+        isbn_digits="",
+        price_label="",
+    ),
+    "upper_elementary_lab": CurriculumBookCoverSpec(
+        book_id="upper_elementary_lab",
+        title_line_1="UPPER ELEMENTARY",
+        title_line_2="MATH LAB",
+        subtitle="Multi-Digit Operations, 84 mm Fraction Towers, Prime Factors & Order of Operations (Grades 3–5)",
+        edition_badge="THE STACKCALC LIBRARY  •  GRADES 3–5 (SC-6)  •  10 UNITS / 840 PROBLEMS",
+        accent_hex="#0F766E",
+        category_line="MATHEMATICS  /  UPPER ELEMENTARY LAB WORKBOOK (GRADES 3–5)",
+        hook_line_1="See fractions and prime factors in 3D.",
+        hook_line_2="Master order of operations from the inside out.",
+        paragraph_1_html=(
+            "Upper elementary is where arithmetic becomes structural. With the <b>Place Value Studio</b>, "
+            "<b>84 mm Proportional Fraction Towers</b>, and <b>Logarithmic Prime Factor Blocks</b> paired with the "
+            "4-register <b>StackCalc SC-6</b>, students physically see common denominators, unique prime factorizations, "
+            "and parenthesis-free order of operations."
+        ),
+        paragraph_2_html=(
+            "100% self-contained for Grades 3–5 homeschooling families and classrooms, "
+            "<b>Upper Elementary Math Lab</b> delivers a 4-page RPN, Two-Dot Fraction &amp; Prime Bootcamp followed by "
+            "10 comprehensive units covering multi-digit operations, fractions (including block multiplication &amp; division), "
+            "primes, GCF/LCM, decimals, and PEMDAS, each with Core &amp; Extension Labs, <b>6 leveled worksheets (Practice A–F)</b>, "
+            "a <b>100-Point Unit Mastery Check</b>, a <b>STEM Case Study</b>, <b>4 Cumulative Mastery Exams</b>, and <b>3D Block Studio Guides</b>."
+        ),
+        inside_note_html=(
+            "<b>Inside the Grades 3–5 Lab Workbook:</b> 4-Page Fraction &amp; Stack Bootcamp  •  10 Eleven-Page Units (110 Lab, Practice A–F, Quiz &amp; STEM Pages)  "
+            "•  840 Active Problems  •  4 Cumulative Mastery Exams &amp; 3D Block Studios (FRAC-01, PRIME-01)  •  128 Pages."
+        ),
+        isbn_hyphenated="",
+        isbn_digits="",
+        price_label="",
     ),
     "student_lab": CurriculumBookCoverSpec(
         book_id="student_lab",
-        title_line_1="HANDS-ON",
+        title_line_1="EARLY ELEMENTARY",
         title_line_2="MATH LAB",
-        subtitle="Student Explorations from Physical Blocks to the Stack",
-        edition_badge="STUDENT LAB WORKBOOK  •  UNITS 1–12",
+        subtitle="Counting, Number Bonds, Make-10 Regrouping & Early Multiplication (Grades K–2)",
+        edition_badge="THE STACKCALC LIBRARY  •  GRADES K–2 (SC-6)  •  10 UNITS / 840 PROBLEMS",
         accent_hex="#0D9488",
-        category_line="MATHEMATICS  /  STUDENT LAB WORKBOOK",
-        hook_line_1="Build it with blocks. Predict the pattern.",
+        category_line="MATHEMATICS  /  EARLY ELEMENTARY LAB WORKBOOK (GRADES K–2)",
+        hook_line_1="Build it with blocks. Solve it on paper.",
         hook_line_2="Prove it on the stack.",
         paragraph_1_html=(
-            "Every mathematical idea in this workbook begins in your hands. Before you write an equation "
-            "or press a calculator key, you will arrange Place Value Digit &amp; Carry Blocks, 84 mm Fraction Towers, "
-            "or Logarithmic Prime Factor Blocks on your desk to see why the pattern works."
+            "Every mathematical idea in this early elementary workbook begins in your hands. Before you write an equation "
+            "or press a key on the <b>StackCalc SC-6</b>, you will arrange Place Value 6×2 Trays, Digit Blocks (0–9), "
+            "and Gold <b>[+1] Carry Tokens</b> on your desk to see why numbers group and trade."
         ),
         paragraph_2_html=(
-            "Designed as the student lab companion to <b>From Blocks to the Stack</b> (SC-6) and "
-            "<b>Thinking in the Stack</b> (SC-32), <b>Hands-On Math Lab</b> guides learners through "
-            "12 progressive concept investigations with visual block sketches, guided stack walkthroughs, "
-            "structured lab recording sheets, and a self-check answer key."
+            "100% self-contained for homeschooling families and classrooms alongside any K–2 math curriculum, "
+            "<b>Early Elementary Math Lab</b> guides learners through 10 deep units covering counting, addition/subtraction, "
+            "make-10 regrouping, 2-digit arithmetic, and early multiplication: each with Core &amp; Extension "
+            "Concept Labs, 4-Problem Investigations, <b>6 leveled worksheets (Practice A–F)</b>, "
+            "a <b>100-Point Unit Mastery Check</b>, a <b>STEM Lab Case Study</b>, <b>4 Cumulative Mastery Exams</b>, and <b>3D Block Studio Guides</b>."
         ),
         inside_note_html=(
-            "<b>Inside the Student Lab Workbook:</b> 12 Hands-On Lab Units  •  Story openers &amp; visual block rules  "
-            "•  Guided SC-6 &amp; SC-32 stack traces  •  72 structured lab investigations &amp; student answer key."
+            "<b>Inside the Grades K–2 Lab Workbook:</b> 4-Page Bootcamp  •  10 Eleven-Page Units (110 Lab, Practice A–F, Quiz &amp; STEM Pages)  "
+            "•  840 Active Problems  •  4 Cumulative Mastery Exams &amp; 3D Block Studios (PLACE-01)  •  128 Pages."
         ),
-        isbn_hyphenated="979-8-9914832-4-7",
-        isbn_digits="9798991483247",
-        price_label="$19.00 US  •  CAN $25.99",
+        isbn_hyphenated="",
+        isbn_digits="",
+        price_label="",
     ),
     "big_ideas": CurriculumBookCoverSpec(
         book_id="big_ideas",
         title_line_1="MIDDLE SCHOOL",
         title_line_2="MATH LAB",
         subtitle="Student Practice Workbook for Big Ideas Math (Grades 6–8)",
-        edition_badge="BIG IDEAS MATH COMPANION  •  10 UNITS / 900 PROBLEMS",
+        edition_badge="THE STACKCALC LIBRARY  •  10 UNITS / 900 PROBLEMS + 10 UNIT QUIZZES",
         accent_hex="#0284C7",
         category_line="MATHEMATICS  /  MIDDLE SCHOOL WORKBOOK",
         hook_line_1="Why solve a problem only one way when",
-        hook_line_2="three perspectives make it unforgettable?",
+        hook_line_2="two textbook methods make it unforgettable?",
         paragraph_1_html=(
             "Middle school is the bridge between elementary arithmetic and high school algebra. "
-            "When students solve every section three ways—by hand on paper, with physical math blocks, "
-            "and step-by-step on the <b>StackCalc SC-6</b> four-register stack—ratios, fractions, integers, "
-            "equations, geometry, and statistics lock into place."
+            "When students solve every section using two independent textbook methods on paper first—reinforced "
+            "with physical math blocks and verified step-by-step on the <b>StackCalc SC-6</b> stack—ratios, "
+            "fractions, integers, equations, geometry, and statistics lock into place."
         ),
         paragraph_2_html=(
-            "Aligned section-by-section to the <b>Big Ideas Math Middle School</b> sequence (Grades 6–8), "
-            "this workbook delivers 45 core sections, 90 tiered Practice A &amp; Practice B worksheets, "
-            "900 multi-method problems, chapter stories from <b>From Blocks to the Stack</b>, and a complete "
-            "back-of-book student answer key."
+            "Aligned section-by-section to <b>Big Ideas Math Middle School</b> (Grades 6–8) with full "
+            "<b>CCSS, Texas TEKS, and Florida B.E.S.T.</b> crosswalks, this 100% self-contained workbook delivers "
+            "45 core sections, 90 Practice A &amp; B worksheets (900 problems), <b>10 End-of-Unit Mastery Quizzes</b>, "
+            "complete self-check answer keys, and <b>3D Block Studio &amp; SC-6 Reference Guides</b>."
         ),
         inside_note_html=(
-            "<b>Inside the Workbook:</b> 10 Middle School Units  •  45 Concept Openers &amp; Worked Examples  "
-            "•  90 Practice A &amp; B Worksheets (900 problems)  •  Complete self-check answer key."
+            "<b>Inside the Workbook:</b> 10 Units &amp; 45 Sections  •  90 Practice A &amp; B Worksheets (900 problems)  "
+            "•  10 End-of-Unit Mastery Quizzes (100 items)  •  Answer Keys, Standards Crosswalk &amp; 3D Block Studio Guides."
         ),
-        isbn_hyphenated="979-8-9914832-5-4",
-        isbn_digits="9798991483254",
-        price_label="$24.00 US  •  CAN $32.99",
+        isbn_hyphenated="979-8-16-653215-2",
+        isbn_digits="9798166532152",
+        price_label="",
+    ),
+    "high_school_lab": CurriculumBookCoverSpec(
+        book_id="high_school_lab",
+        title_line_1="HIGH SCHOOL",
+        title_line_2="& STEM LAB",
+        subtitle="Algebra, Trigonometry, Vectors, Logarithms & Digital Logic on the Stack (Grades 9–12 & AP)",
+        edition_badge="THE STACKCALC LIBRARY  •  GRADES 9–12 & AP (SC-32)  •  10 UNITS / 840 PROBLEMS",
+        accent_hex="#4F46E5",
+        category_line="MATHEMATICS  /  HIGH SCHOOL & STEM LAB WORKBOOK (GRADES 9–12 & AP)",
+        hook_line_1="Master secondary math and engineering",
+        hook_line_2="with zero-parenthesis stack fluency.",
+        paragraph_1_html=(
+            "High school and AP mathematics demand structural fluency: evaluating discriminants, resolving 2D force "
+            "vectors, linearizing exponential decay, computing binomial probabilities, and masking 8-bit registers. "
+            "Paired with the scientific <b>StackCalc SC-32</b>, every multi-step expression executes from the inside "
+            "out across four visible stack registers (<b>T, Z, Y, X</b>) without parentheses or hidden scratchpad errors."
+        ),
+        paragraph_2_html=(
+            "Built specifically for Grades 9–12, Pre-Calculus, AP STEM, and college-prep learners, "
+            "<b>High School &amp; STEM Lab</b> opens with a <b>4-Page SC-32 Scientific RPN Bootcamp</b> and "
+            "delivers 10 deep units covering quadratics, trigonometry, vectors, polar coordinates, exponential growth, "
+            "logarithms, sequences &amp; series, statistics &amp; combinatorics, and binary/hex/bitwise logic: each with "
+            "Core &amp; Extension Labs, 4-Problem Investigations, <b>6 leveled worksheets (Practice A–F)</b>, "
+            "a <b>100-Point Unit Mastery Check</b>, a <b>STEM Lab Case Study</b>, <b>4 Cumulative Mastery Exams</b>, and <b>Prime Factor Studio &amp; SC-32 Reference Guides</b>."
+        ),
+        inside_note_html=(
+            "<b>Inside the High School &amp; STEM Lab:</b> 4-Page SC-32 RPN Bootcamp  •  10 Eleven-Page Units (110 Lab, Practice A–F, Quiz &amp; STEM Pages)  "
+            "•  840 Active Problems  •  4 Cumulative Mastery Exams &amp; Prime Factor Studio (PRIME-01)  •  128 Pages."
+        ),
+        isbn_hyphenated="",
+        isbn_digits="",
+        price_label="",
     ),
     "proficiency_trials": CurriculumBookCoverSpec(
         book_id="proficiency_trials",
         title_line_1="STACK SPEED",
         title_line_2="& FLUENCY",
-        subtitle="15 Speed Lessons, Shortcut Playbooks & 60 Progressive Practice Tests (Levels 1–4)",
-        edition_badge="SPEED LESSONS & PROGRESSIVE PRACTICE TESTS  •  15 LESSONS / 60 TESTS",
+        subtitle="Full-Year Edition: 15 Speed Lessons, Playbooks & 180 Progressive Practice Tests",
+        edition_badge="THE STACKCALC LIBRARY  •  FULL-YEAR EDITION: 180 TESTS (3,690 PROBLEMS)  •  128 PAGES",
         accent_hex="#FF4F00",
-        category_line="MATHEMATICS  /  SPEED LESSONS & FLUENCY PRACTICE TESTS",
+        category_line="MATHEMATICS  /  FULL-YEAR SPEED LESSONS & FLUENCY TESTS",
         hook_line_1="Learn the Champion Way first—then build",
-        hook_line_2="speed across four progressive test levels.",
+        hook_line_2="fluency across 180 progressive daily tests.",
         paragraph_1_html=(
             "Taking timed tests without learning faster methods only makes slow habits permanent. Every section in "
             "<b>Stack Speed &amp; Fluency</b> opens with a <b>1-Page Speed Lesson &amp; Shortcut Playbook</b> contrasting "
             "the <i>Slow / Amateur Way</i> against the <i>Champion Speed Way</i>, followed by 6 untimed guided warm-up "
-            "drills so students master algebraic shortcuts and zero-memory stack pipelines before starting the timer."
+            "drills and a <b>3-Stage Mastery Protocol</b> (<i>Untimed Accuracy → Count-Up Personal Best → Timed Sprint</i>)."
         ),
         paragraph_2_html=(
-            "Designed for homeschooling families, classrooms, and competitive math/calculator teams, each section then "
-            "provides four 20-problem practice tests in increasing difficulty—<b>Test A (Level 1: Foundation)</b>, "
-            "<b>Test B (Level 2: Core Fluency)</b>, <b>Test C (Level 3: Multi-Step Speed)</b>, and <b>Test D (Level 4: "
-            "Advanced Challenge)</b>—plus complete answer keys with Optimal Champion Pipelines."
+            "Designed for a full 36-week school year at home, in class, or on a competitive math/calculator team, each "
+            "7-page section provides <b>12 unique 20-problem practice tests</b> with worked examples at the top of "
+            "every test page—<b>Tests A1–A3 (Level 1: Foundation)</b>, <b>Tests B1–B3 (Level 2: Core Fluency)</b>, "
+            "<b>Tests C1–C3 (Level 3: Multi-Step Speed)</b>, and <b>Tests D1–D3 (Level 4: Tournament Challenge)</b>—"
+            "totaling <b>3,690 non-repeating problems</b> with online answer keys at <b>stackcalc.io/curriculum/answers</b>."
         ),
         inside_note_html=(
-            "<b>Inside the Workbook:</b> 15 Speed Lessons &amp; 'Slow vs. Champion' Playbooks  •  90 Guided Warm-Up Drills  "
-            "•  60 Progressive Practice Tests (1,200 problems)  •  Answer keys with Optimal Champion Pipelines."
+            "<b>Inside the Full-Year Edition:</b> 15 Speed Lessons &amp; 90 Guided Warm-Ups  •  180 Unique Progressive Tests "
+            "(A1–D3, 3,600 Test Problems)  •  90 Page-Top Worked Examples  •  6 Sprint Drills &amp; 180-Day Streak Grid  •  128 Pages."
         ),
-        isbn_hyphenated="979-8-9914832-6-1",
-        isbn_digits="9798991483261",
-        price_label="$19.00 US  •  CAN $25.99",
+        isbn_hyphenated="",
+        isbn_digits="",
+        price_label="",
     ),
 }
 
@@ -513,7 +609,50 @@ def _draw_cover_centerpiece_illustration(
             c.setFillColor(to_color(val_hex))
             c.drawRightString(bar_x + bar_w - 10.0, by + 8.0, val)
 
-    elif book_id == "student_lab":
+    elif book_id in ("early_elementary_lab", "student_lab"):
+        # Left side: 2x5 Ten-Frame (8 teal + 2 gold Make-10 bridge); Right side: SC-6 Stack Bars (8 ENTER 5 + -> 13)
+        tf_x = cx - 170.0
+        tf_y = cy - 42.0
+        cell_sz = 28.0
+        cell_gap = 4.0
+        for r_i in range(2):
+            for c_i in range(5):
+                idx_c = (1 - r_i) * 5 + c_i
+                bx = tf_x + c_i * (cell_sz + cell_gap)
+                by_c = tf_y + r_i * (cell_sz + cell_gap)
+                c.setFillColor(to_color("#E2DDD0"))
+                c.roundRect(bx + 2.0, by_c - 2.0, cell_sz, cell_sz, 4.0, fill=1, stroke=0)
+                col_hex = "#0D9488" if idx_c < 8 else "#F59E0B"
+                c.setFillColor(to_color(col_hex))
+                c.roundRect(bx, by_c, cell_sz, cell_sz, 4.0, fill=1, stroke=0)
+                c.setFillColor(to_color("#FFFFFF" if idx_c < 8 else "#0F172A"))
+                c.circle(bx + cell_sz * 0.5, by_c + cell_sz * 0.5, 6.2, fill=1, stroke=0)
+
+        # Right side: 4 Stack Bars (T, Z, Y, X) showing 8 + 5 -> 10 + 3 = 13
+        bar_x = cx + 16.0
+        bar_w = 154.0
+        bar_h = 26.0
+        bar_gap = 10.0
+        base_y = cy - 68.0
+        top_bar_y = base_y + 3 * (bar_h + bar_gap)
+        stack_bars = [
+            ("T", "0", "#E6E1D3", "#64748B", "#475569"),
+            ("Z", "8 + 2 = 10", "#DCD6C6", "#475569", "#334155"),
+            ("Y", "10 (Carry +1)", "#1E293B", "#94A3B8", "#FFFFFF"),
+            ("X", "13", "#0D9488", "#CCFBF1", "#FFFFFF"),
+        ]
+        for idx_b, (lbl, val, fill_hex, lbl_hex, val_hex) in enumerate(stack_bars):
+            by = top_bar_y - idx_b * (bar_h + bar_gap)
+            c.setFillColor(to_color(fill_hex))
+            c.roundRect(bar_x, by, bar_w, bar_h, 4.5, fill=1, stroke=0)
+            c.setFont(FONT_MONO_BOLD, 9.5)
+            c.setFillColor(to_color(lbl_hex))
+            c.drawString(bar_x + 10.0, by + 8.5, lbl)
+            c.setFont(FONT_MONO_BOLD, 10.5)
+            c.setFillColor(to_color(val_hex))
+            c.drawRightString(bar_x + bar_w - 10.0, by + 8.0, val)
+
+    elif book_id == "upper_elementary_lab":
         # Proportional 84mm Fraction Towers side-by-side (1 Whole, 1/2 + 1/2, 1/3 + 1/3 + 1/3, 1/4 x 4)
         tower_w = 38.0
         tower_gap = 14.0
@@ -605,6 +744,49 @@ def _draw_cover_centerpiece_illustration(
             c.setFillColor(to_color(val_hex))
             c.drawRightString(bar_x + bar_w - 10.0, by + 8.0, val)
 
+    elif book_id == "high_school_lab":
+        # Left side: Algebra Area Tile Grid (x^2 + 2x + 1) + Right side: SC-32 4-Level Scientific Stack (▸θ,r)
+        left_x = cx - 170.0
+        base_y = cy - 66.0
+        # x^2 tile (82 x 82) at top-left, x bar (36 x 82) at top-right, x bar (82 x 36) at bottom-left, 1 unit (36 x 36) at bottom-right
+        tiles = [
+            (left_x, base_y + 42.0, 82.0, 82.0, "#4F46E5", "x²", "#FFFFFF"),
+            (left_x + 88.0, base_y + 42.0, 36.0, 82.0, "#0284C7", "x", "#FFFFFF"),
+            (left_x, base_y, 82.0, 36.0, "#0284C7", "x", "#FFFFFF"),
+            (left_x + 88.0, base_y, 36.0, 36.0, "#F59E0B", "1", "#0F172A"),
+        ]
+        for tx, ty, tw, th, col_hex, lbl, txt_hex in tiles:
+            c.setFillColor(to_color("#E2DDD0"))
+            c.roundRect(tx + 2.0, ty - 2.0, tw, th, 4.5, fill=1, stroke=0)
+            c.setFillColor(to_color(col_hex))
+            c.roundRect(tx, ty, tw, th, 4.5, fill=1, stroke=0)
+            c.setFont(FONT_MONO_BOLD, 11.5 if lbl == "x²" else 10.0)
+            c.setFillColor(to_color(txt_hex))
+            c.drawCentredString(tx + tw * 0.5, ty + th * 0.5 - 4.0, lbl)
+
+        # Right side: 4 Stack Bars (T, Z, Y, X) showing Vector / Scientific Stack
+        bar_x = cx + 6.0
+        bar_w = 164.0
+        bar_h = 26.0
+        bar_gap = 10.0
+        top_bar_y = base_y + 3 * (bar_h + bar_gap)
+        stack_bars = [
+            ("T", "b²-4ac: 25", "#E6E1D3", "#64748B", "#475569"),
+            ("Z", "0xFF & 0x0F", "#DCD6C6", "#475569", "#334155"),
+            ("Y", "deg: 36.87°", "#1E293B", "#94A3B8", "#FFFFFF"),
+            ("X", "r: 5.0000", "#4F46E5", "#E0E7FF", "#FFFFFF"),
+        ]
+        for idx_b, (lbl, val, fill_hex, lbl_hex, val_hex) in enumerate(stack_bars):
+            by = top_bar_y - idx_b * (bar_h + bar_gap)
+            c.setFillColor(to_color(fill_hex))
+            c.roundRect(bar_x, by, bar_w, bar_h, 4.5, fill=1, stroke=0)
+            c.setFont(FONT_MONO_BOLD, 9.5)
+            c.setFillColor(to_color(lbl_hex))
+            c.drawString(bar_x + 10.0, by + 8.5, lbl)
+            c.setFont(FONT_MONO_BOLD, 10.5)
+            c.setFillColor(to_color(val_hex))
+            c.drawRightString(bar_x + bar_w - 10.0, by + 8.0, val)
+
     else:
         # Proficiency Trials: Struck-through Parenthesis Trap + 4 Floating Stack Bars
         expr_y = cy + 68.0
@@ -683,13 +865,24 @@ def draw_curriculum_bestseller_front_cover(
     c.drawCentredString(cx, oy + h - 86.0, spec.edition_badge)
 
     # 2. Monumental Centered Bestseller Title (Upper Third)
+    from reportlab.pdfbase import pdfmetrics
+    max_panel_text_w = w - 84.0
+    title_sz = 46.0
+    for t_line in (spec.title_line_1, spec.title_line_2):
+        tw_pt = pdfmetrics.stringWidth(t_line, FONT_BODY_BOLD, title_sz)
+        if tw_pt > max_panel_text_w and tw_pt > 0:
+            title_sz = min(title_sz, title_sz * (max_panel_text_w / tw_pt))
     c.setFillColor(to_color(ink_obsidian))
-    c.setFont(FONT_BODY_BOLD, 46.0)
+    c.setFont(FONT_BODY_BOLD, title_sz)
     c.drawCentredString(cx, oy + h - 152.0, spec.title_line_1)
     c.drawCentredString(cx, oy + h - 208.0, spec.title_line_2)
 
-    # 3. Concise Italic Subtitle
-    c.setFont(FONT_BODY_ITALIC, 15.0)
+    # 3. Concise Italic Subtitle (auto-fitted to safe panel margins)
+    sub_sz = 15.0
+    sub_w_pt = pdfmetrics.stringWidth(spec.subtitle, FONT_BODY_ITALIC, sub_sz)
+    if sub_w_pt > max_panel_text_w and sub_w_pt > 0:
+        sub_sz = max(10.5, sub_sz * (max_panel_text_w / sub_w_pt))
+    c.setFont(FONT_BODY_ITALIC, sub_sz)
     c.setFillColor(to_color(ink_slate))
     c.drawCentredString(cx, oy + h - 248.0, spec.subtitle)
 
@@ -797,34 +990,131 @@ def draw_curriculum_bestseller_back_cover(
     rule_y2 = note_y - 14.0
     c.line(safe_x, rule_y2, safe_x + safe_w, rule_y2)
 
-    # 5. Bottom Left Imprint & Bottom Right Official 2.00 x 1.20 in White ISBN Barcode Box
+    # 5. Bottom Left Imprint (Bottom Right 2.00 x 1.20 in zone left completely clear for Amazon KDP custom ISBN barcode)
     c.setFillColor(to_color(ink_obsidian))
     c.setFont(FONT_BODY_BOLD, 16.0)
     c.drawString(safe_x, oy + 104.0, "StackCalc")
 
     c.setFillColor(to_color(ink_muted))
     c.setFont(FONT_BODY, 9.5)
-    c.drawString(safe_x, oy + 86.0, "Instruments, Books & Classroom Manipulatives")
+    c.drawString(safe_x, oy + 86.0, "The StackCalc Library  •  Instruments, Books & Classroom Manipulatives")
     c.setFont(FONT_MONO_BOLD, 9.0)
     c.setFillColor(to_color(spec.accent_hex))
     c.drawString(safe_x, oy + 68.0, "stackcalc.io")
 
-    bc_w = 144.0
-    bc_h = 86.4
-    bc_x = safe_x + safe_w - bc_w
-    bc_y = oy + 56.0
-    draw_vector_isbn_barcode(
+    c.restoreState()
+
+
+def generate_kdp_full_wrap_cover_pdf(
+    out_path: Path,
+    book_key: str,
+    interior_pdf_path: Optional[Path] = None,
+    default_pages: int = 128,
+) -> None:
+    """
+    Generates a standalone 1-Page KDP-compliant 3-Panel US Letter (8.50" x 11.00") Full-Wrap Paperback
+    Cover + Spine Spread PDF:
+      - Left Panel: Back Cover (8.50" x 11.00" trim, bottom-right 2.00" x 1.20" zone left clear for KDP ISBN barcode)
+      - Center Panel: Dynamic KDP White-Paper Spine (actual_pages * 0.002252 in/page @ 444 PPI; spine text printed when >= 79 pages)
+      - Right Panel: Front Cover (8.50" x 11.00" trim)
+      - Outer Bleed: Official KDP 0.125" (9.0 pt) bleed on all 4 outer edges.
+    """
+    spec = BOOK_COVER_SPECS[book_key]
+    actual_pages = default_pages
+    if interior_pdf_path is not None and interior_pdf_path.exists():
+        try:
+            import pypdf
+            actual_pages = len(pypdf.PdfReader(str(interior_pdf_path)).pages)
+        except Exception:
+            pass
+
+    bleed = 9.0  # Official KDP 0.125 in (9.0 pt) outer bleed
+    panel_w, panel_h = letter  # 612.0 x 792.0 pt (8.50" x 11.00" US Letter trim)
+    spine_in = actual_pages * 0.002252  # Official KDP White Paper spine formula
+    spine_w = spine_in * 72.0
+
+    total_w = (2.0 * panel_w) + spine_w + (2.0 * bleed)
+    total_h = panel_h + (2.0 * bleed)
+
+    paper_cream = "#F7F4EB"
+    ink_obsidian = "#0F172A"
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    c = canvas.Canvas(str(out_path), pagesize=(total_w, total_h))
+    c.setTitle(f"{spec.title_line_1} {spec.title_line_2} — KDP Full-Wrap Paperback Cover")
+    c.setAuthor("The StackCalc Library")
+
+    back_x = bleed
+    spine_x = bleed + panel_w
+    front_x = bleed + panel_w + spine_w
+    base_y = bleed
+
+    # 1. LEFT PANEL: Bestseller Back Cover (with left/top/bottom 0.125 in bleed)
+    draw_curriculum_bestseller_back_cover(
         c,
-        bc_x,
-        bc_y,
-        bc_w,
-        bc_h,
-        spec.isbn_hyphenated,
-        spec.isbn_digits,
-        spec.price_label,
+        ox=back_x,
+        oy=base_y,
+        w=panel_w,
+        h=panel_h,
+        spec=spec,
+        bleed_l=bleed,
+        bleed_r=0.0,
+        bleed_t=bleed,
+        bleed_b=bleed,
     )
 
+    # 2. RIGHT PANEL: Bestseller Front Cover (with right/top/bottom 0.125 in bleed)
+    draw_curriculum_bestseller_front_cover(
+        c,
+        ox=front_x,
+        oy=base_y,
+        w=panel_w,
+        h=panel_h,
+        spec=spec,
+        bleed_l=0.0,
+        bleed_r=bleed,
+        bleed_t=bleed,
+        bleed_b=bleed,
+    )
+
+    # 3. CENTER PANEL: Continuous Warm Archival Paper Spine
+    c.saveState()
+    c.setFillColor(to_color(paper_cream))
+    c.rect(spine_x, 0.0, spine_w, total_h, fill=1, stroke=0)
+
+    # KDP allows spine text only when page count >= 79 pages (ensures >= 0.0625 in / 4.5 pt hinge clearance)
+    if actual_pages >= 79 and spine_w >= 12.5:
+        spine_cx = spine_x + (spine_w / 2.0)
+        mark_w = max(4.0, min(spine_w - 10.0, 14.0))
+        c.setFillColor(to_color(spec.accent_hex))
+        c.roundRect(spine_cx - mark_w * 0.5, base_y + panel_h - 62.0, mark_w, 5.0, 1.5, fill=1, stroke=0)
+
+        # Vertical Rotated Spine Title (-90 deg top-to-bottom US standard, sized inside safe zone)
+        max_spine_font = min(11.0, (spine_w - 9.0) * 0.85)
+        c.saveState()
+        c.translate(spine_cx, base_y + (panel_h * 0.52))
+        c.rotate(-90)
+        c.setFillColor(to_color(ink_obsidian))
+        c.setFont(FONT_BODY_BOLD, max_spine_font)
+        spine_main = f"{spec.title_line_1} {spec.title_line_2}"
+        c.drawCentredString(0.0, -max_spine_font * 0.34, spine_main)
+        c.restoreState()
+
+        # Bottom Spine Imprint ('StackCalc')
+        imp_font = min(9.0, (spine_w - 9.0) * 0.75)
+        c.saveState()
+        c.translate(spine_cx, base_y + 82.0)
+        c.rotate(-90)
+        c.setFillColor(to_color(spec.accent_hex))
+        c.circle(-34.0, 0.0, 2.0, fill=1, stroke=0)
+        c.setFillColor(to_color(ink_obsidian))
+        c.setFont(FONT_BODY_BOLD, imp_font)
+        c.drawCentredString(0.0, -imp_font * 0.34, "StackCalc")
+        c.restoreState()
+
     c.restoreState()
+    c.showPage()
+    c.save()
 
 
 def generate_lulu_coil_cover_pdf(out_path: Path, book_key: str) -> None:
@@ -842,7 +1132,7 @@ def generate_lulu_coil_cover_pdf(out_path: Path, book_key: str) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     c = canvas.Canvas(str(out_path), pagesize=(page_w, page_h))
     c.setTitle(f"{spec.title_line_1} {spec.title_line_2} — Lulu Coil-Bound Cover")
-    c.setAuthor("StackCalc Learning Lab")
+    c.setAuthor("The StackCalc Library")
 
     # Page 1: Front Cover
     draw_curriculum_bestseller_front_cover(

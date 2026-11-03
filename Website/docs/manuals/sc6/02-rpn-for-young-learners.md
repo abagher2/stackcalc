@@ -45,8 +45,8 @@ Your SC-6 has **two more waiting shelves upstairs**—**Shelf $Z$ (the Third-Sto
 |---|---|---|---|
 | **Top Shelf $T$** | **Register T** | **The Repeat Shelf:** Keeps a constant step size locked at the top for skip-counting ladders | Top shelf of the 4-story elevator |
 | **Shelf $Z$** | **Register Z** | **The Upper Waiting Shelf:** Holds your first finished group while you build a second group below | Just above Shelf $Y$ |
-| **Shelf $Y$** | **Register Y** | **The Waiting Shelf:** Holds your first number ready to combine with Shelf $X$ | Left side of the $Y \mid X$ split screen |
-| **Ground Shelf $X$** | **Register X** | **Your Workbench:** Every number you type and every answer you calculate appears right here | Right side of the $Y \mid X$ split screen |
+| **Shelf $Y$** | **Register Y** | **The Waiting Shelf:** Holds your first number ready to combine with Shelf $X$ | Stacked right above Ground Shelf $X$ |
+| **Ground Shelf $X$** | **Register X** | **Your Workbench:** Every number you type and every answer you calculate appears right here | Bottom line of the screen in large bold digits |
 
 ### The Three Golden Rules of Stack Math
 
@@ -78,18 +78,18 @@ Whenever you press a two-number action key (`+`, `-`, `×`, `÷`), all four shel
 
 Why does Top Shelf $T$ leave a copy of itself behind every time the elevator drops? Because if you lock a step size (like `7`) into Top Shelf $T$, it will keep feeding fresh `7`s down the elevator forever, letting you skip-count through your times tables ($7, 14, 21, 28 \dots$) with single taps of `{{key:+}}`!
 
-### Reading Left to Right on Your Split Screen ($Y \mid X$)
+### Reading Your Stacked Shelves ($Y$ Above $X$)
 
-When you write a subtraction ($12 - 4 = 8$) or division ($12 \div 4 = 3$) story on paper, you read it from left to right. Older scientific calculators stacked their shelves vertically ($Y$ above $X$), which meant reading from top to bottom.
+When you write a column addition or subtraction story on paper, or stack two rows of blocks in your desk tray, the first number sits on the upper row and the second number sits right underneath it on the bottom row.
 
-Your SC-6 daylight screen makes reading natural by giving you a **Side-by-Side $Y \mid X$ Split Screen**. Across the top status bar sit your mode indicators and battery icon, while a crisp vertical line down the middle divides the main display into two side-by-side shelves: **Waiting Shelf $Y$ on the left** holds the first number you locked in with `{{key:ENTER}}` (like **`12`**), and **Ground Shelf $X$ on the right** shows the second number you are typing right now (like **`4`**). Because **`12`** sits on the left and **`4`** sits on the right, reading across your screen from left to right (`12 | 4`) matches the exact left-to-right order of $12 - 4 = 8$ and $12 \div 4 = 3$ on your notebook page! *(Prefer one extra-large number on screen instead of the split view? Open `{{key:FLAGS}}` anytime to toggle between the default **Side-by-Side $Y \mid X$** view and **Single-Shelf $X$** view.)*
+Your SC-6 daylight screen matches that exact physical layout by stacking **Waiting Shelf $Y$ right above Ground Shelf $X$**. Across the top status bar sit your mode indicators and battery icon; below them sit the waiting shelves (**`T:`**, **`Z:`**, and **`Y:`** in 4-shelf mode, or **`T:`** right above **`X`** in 2-shelf mode); and along the bottom edge of the screen in extra-large bold digits sits **Ground Shelf $X$**. **Waiting Shelf $Y$** holds the first number you locked in with `{{key:ENTER}}` (like **`12`**), and **Ground Shelf $X$** right below it shows the second number you are typing right now (like **`4`**). Because **`12`** sits on the upper shelf and **`4`** sits on the lower shelf, reading down your screen from Shelf $Y$ to Shelf $X$ matches the exact top-to-bottom order of $12 - 4 = 8$ and $12 \div 4 = 3$! *(Prefer one extra-large number on screen without the upper shelves? Open `{{key:FLAGS}}` anytime and toggle Flag 4 between the default **4-Shelf Stack** view and **Single-Shelf $X$** view.)*
 
 {{blocks:math_dominoes_bridging_12frame|Math Dominoes Studio: Placing [5|4] = 9 and [3|2] = 5 Across the 10-Break Line on the 12-Frame Tray to Regroup 9 + 5 into 10 + 4 = 14}}
 
-### Fast Split-Screen Warm-Up: Dominoes, Swaps & Saving for a Telescope
-Just as a single **Math Domino** holds two dot patterns side by side across its center divider line, your calculator's $Y \mid X$ split screen keeps both numbers of a calculation visible right before they combine. Pick up the `[5|3]` Math Domino from your tray: 5 pips sit on the left half and 3 pips sit on the right half. Keying `{{res:sc6_02_rpn_for_young_learners_seq_01:keys}}` mirrors that exact domino on your screen—sliding `5` to the left half ($Y = 5$), placing `3` on the right half ($X = 3$), and snapping them together into **`{{res:sc6_02_rpn_for_young_learners_seq_01:value}}`**. *(Did your screen show `53` instead of `8`? That just means your thumb forgot to press `{{key:ENTER}}` to separate the two numbers!)*
+### Fast Two-Shelf Warm-Up: Dominoes, Swaps & Saving for a Telescope
+Just as a single **Math Domino** holds two dot patterns across its divider line, your calculator's stacked $Y$ and $X$ shelves keep both numbers of a calculation visible right before they combine. Pick up the `[5|3]` Math Domino from your tray: 5 pips sit on one half and 3 pips sit on the other half. Keying `{{res:sc6_02_rpn_for_young_learners_seq_01:keys}}` mirrors that exact domino on your screen—lifting `5` up onto Waiting Shelf $Y$ ($Y = 5$), placing `3` on Ground Shelf $X$ ($X = 3$), and snapping them together into **`{{res:sc6_02_rpn_for_young_learners_seq_01:value}}`**. *(Did your screen show `53` instead of `8`? That just means your thumb forgot to press `{{key:ENTER}}` to separate the two numbers!)*
 
-That side-by-side layout is even handier when order matters, like subtraction. Suppose your friends eat $4$ slices from a $9$-slice square pizza: the starting total (`9`) belongs on the left (Shelf $Y$) and the slices eaten (`4`) belong on the right (Shelf $X$), so keying `{{res:sc6_02_rpn_for_young_learners_seq_02:keys}}` leaves **`{{res:sc6_02_rpn_for_young_learners_seq_02:value}}`** slices on the pan. What if you were talking to a friend and accidentally typed `4 {{key:ENTER}} 9` backward? Instead of clearing and starting over, just glance at your split screen (`4 | 9`), tap **`{{key:x⇄y}}`** once to swap the two halves into `9 | 4`, and press `{{key:-}}`!
+Seeing both shelves at once is even handier when order matters, like subtraction. Suppose your friends eat $4$ slices from a $9$-slice square pizza: the starting total (`9`) belongs on Waiting Shelf $Y$ above and the slices eaten (`4`) belong on Ground Shelf $X$ below, so keying `{{res:sc6_02_rpn_for_young_learners_seq_02:keys}}` leaves **`{{res:sc6_02_rpn_for_young_learners_seq_02:value}}`** slices on the pan. What if you were talking to a friend and accidentally typed `4 {{key:ENTER}} 9` backward? Instead of clearing and starting over, just glance at your stack (`Y: 4` above `X: 9`), tap **`{{key:x⇄y}}`** once to swap the two shelves into `Y: 9` above `X: 4`, and press `{{key:-}}`!
 
 Now step up from single digits to two-digit numbers—say, **23 trading cards** in your binder and **14 cards** in a deck box. Dock `2` tens and `3` ones in the top row of your **Place Value Tray** ($23$, matching Shelf $Y$) and `1` ten and `4` ones in the bottom row ($14$, matching Shelf $X$). Keying `{{res:sc6_02_rpn_for_young_learners_seq_09:keys}}` combines the tens ($20 + 10 = 30$) and the ones ($3 + 4 = 7$) into **`{{res:sc6_02_rpn_for_young_learners_seq_09:value}}`** cards.
 
@@ -181,17 +181,17 @@ Notice how smooth that elevator drop felt: once your hands learn to lift numbers
 
 ### Choosing How Many Shelves You Need: `2-LVL`, `4-LVL`, and `8-LVL`
 
-Just as you might use a small two-pocket folder for a quick homework sheet or a big four-shelf locker for all your school projects, the `{{key:FLAGS}}` menu lets you choose how many shelves your Number Elevator uses:
+Just as you might use a small two-pocket folder for a quick homework sheet or a big four-shelf locker for all your school projects, the `{{key:FLAGS}}` menu (`Flag 5` on hardware firmware, or the Stack Depth selector in the companion app) lets you choose how many shelves your Number Elevator uses:
 
-- **2-Shelf Mode ($X, Y$ — `2-LVL`):** Uses just two shelves—Shelf $Y$ and Shelf $X$. Because Shelf $Y$ is the top shelf in this mode, whatever number sits on Shelf $Y$ stays locked there like a permanent step-counter! That makes `2-LVL` wonderful for early explorers practicing single-step addition, subtraction, and Ten-Frame games.
+- **2-Shelf Mode ($T, X$ — `2-LVL`):** Uses just two shelves—**Top Shelf $T$** (for the waiting number) and **Ground Shelf $X$** (for the active number). Because Top Shelf $T$ is the roof of this two-story elevator, whatever number sits on Shelf $T$ stays locked there like a permanent step-counter when the stack drops! That makes `2-LVL` wonderful for early explorers practicing single-step addition, subtraction, and Ten-Frame games.
 - **4-Shelf Mode ($X, Y, Z, T$ — `4-LVL` Standard):** The classic four-story Number Elevator—Shelf $X$, Shelf $Y$, Shelf $Z$, and Top Shelf $T$. This is your everyday mode for 3rd–6th grade adventures: multi-step word problems, whole-number division with remainders (`{{key:÷R}}`), fractions, and multi-group calculations.
-- **8-Shelf Mode (8 Stories Deep — `8-LVL`):** Expands the elevator to 8 full waiting shelves for long tournament mental-math relays where you want to stack half a dozen subtotals at once.
+- **8-Shelf Mode (8 Stories Deep — `8-LVL` Companion App Option):** Expands the elevator to 8 full waiting shelves in the companion app for long tournament mental-math relays where you want to stack half a dozen subtotals at once.
 
 One of the first experiments kids try on a calculator is building an automatic step counter: typing `{{res:sc6_02_rpn_for_young_learners_seq_41:keys}}` and tapping `{{key:+}}` over and over to watch the screen climb $2, 3, 4, 5 \dots$
 
 Try it in **4-Shelf Mode (`4-LVL`)** first: after `1 {{key:ENTER}} 1 {{key:+}}` gives `2`, what happens if you tap `{{key:+}}` again? The screen stays at `2`! Why? Because in 4-Shelf mode, the elevator dropped `0` down from Shelf $Z$ into Shelf $Y$, so tapping `{{key:+}}` simply added $2 + 0 = 2$. To make a 4-shelf elevator count forever, you first press Constant Repeat (`1 {{key:REP}}`), which fills all four shelves ($T, Z, Y, X$) with `1` so Top Shelf $T$ keeps feeding fresh `1`s down the stack!
 
-In **2-Shelf Mode (`2-LVL`)**, however, Shelf $Y$ *is* the top shelf of the building. So when `+` drops the stack, Shelf $Y$ automatically keeps its `1` forever:
+In **2-Shelf Mode (`2-LVL`)**, however, Top Shelf $T$ *is* the second shelf right above Ground Shelf $X$. So when `+` drops the stack, Top Shelf $T$ automatically keeps its `1` forever:
 `1 {{key:ENTER}} 1 {{key:+}}` $\implies \mathbf{2}$, `{{key:+}}` $\implies \mathbf{3}$, `{{key:+}}` $\implies \mathbf{4}$, `{{key:+}}` $\implies \mathbf{5}$!
 
 ---
@@ -211,7 +211,7 @@ Five dedicated keys on your keypad let you trade, spin, repeat, recall, or inspe
 ### Fixing Reversed Entries & Spinning the 4-Shelf Carousel
 What happens if you type two numbers onto the stack in reverse order during a subtraction or division problem? Picture blending a **24-ounce pitcher of berry smoothie** in the kitchen and wanting to pour it equally into **8 cups** ($24 \div 8 = 3$). Because you are counting the 8 cups on the counter first, your fingers accidentally type `8` before `24` (`8 {{key:ENTER}} 24`).
 
-Just look at your split screen before pressing divide: `8` is sitting on Shelf $Y$ and `24` is sitting on Shelf $X$. One tap of `{{key:x⇄y}}` swaps them onto their proper shelves before you press `{{key:÷}}`. When you run `{{res:sc6_02_rpn_for_young_learners_seq_24:keys}}`, the swap key puts `24` onto Shelf $Y$ and `8` onto Shelf $X$ so division cleanly gives **`{{res:sc6_02_rpn_for_young_learners_seq_24:value}}`** ounces per cup.
+Just look at your stacked shelves before pressing divide: `8` is sitting on Shelf $Y$ above `24` on Shelf $X$. One tap of `{{key:x⇄y}}` swaps them onto their proper shelves before you press `{{key:÷}}`. When you run `{{res:sc6_02_rpn_for_young_learners_seq_24:keys}}`, the swap key puts `24` onto Shelf $Y$ and `8` onto Shelf $X$ so division cleanly gives **`{{res:sc6_02_rpn_for_young_learners_seq_24:value}}`** ounces per cup.
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
