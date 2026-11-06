@@ -83,9 +83,9 @@ Teachers and parents can customize classroom settings anytime via the `{{key:FLA
 | :--- | :--- | :--- |
 | **Flag 0** | `0:F0` (`0` Off) | General-purpose user flag 0 for classroom experiments |
 | **Flag 1** | `1:F1` (`0` Off) | General-purpose user flag 1 for classroom experiments |
-| **Flag 2** | `2:INT` (`0` Off) | Integer-only mode: `1` restricts entry and results to whole integers |
+| **Flag 2** | `2:INT` (`HRD` / `APP`) | Interface Style Selector: toggles between Hardware replica (`HRD`) and expanded touch (`APP`) layout |
 | **Flag 3** | `3:FACE` (`0` Off) | Hardware / App faceplate skin selector |
-| **Flag 4** | `4:STK` (`0` 4-Line) | Stack View Layout: `0` = 4-Shelf / Split Stack View, `1` = Large Single-Line `X` |
+| **Flag 4** | `4:STK` (`1` `4-LN`) | Stack View Layout: `1` (`4-LN`, default) = 4-Shelf / Split Stack View, `0` (`1-LN`) = Large Single-Line `X` |
 | **Flag 5** | `5:DEP` (`4-LV`) | Stack Depth Mode: cycles `2-LV` (2-Level) $\to$ `4-LV` (4-Level $T, Z, Y, X$, default) $\to$ `8-LV` (8-Level) |
 | **Flag 6** | `6:MOD` (`0` SC-6) | Active Calculator Model selector (when inside the `FLAGS` menu) |
 | **Flag 7** | `7:FRC` (`0` Decimal) | Fraction Display Mode: `0` = Decimal, `1` = Fraction (`a b/c` or `d/c`) |

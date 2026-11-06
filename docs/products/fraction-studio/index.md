@@ -215,6 +215,7 @@ hide:
           <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 border border-orange-500/40 font-semibold">🛒 Handcrafted Kit on Etsy ↗</a>
           <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-semibold">🏭 On-Demand Print on Slant 3D ↗</a>
           <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold">🖨️ Free STLs on Printables ↗</a>
+          <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold">📙 Middle School Workbook on Amazon ↗</a>
           <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold">📗 Companion Book on Amazon ↗</a>
         </div>
         <div class="text-slate-300 leading-relaxed">

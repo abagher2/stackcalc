@@ -287,18 +287,18 @@ SECTION_STORY_PARAGRAPHS: Dict[str, str] = {
     "3.1": (
         "When a smoothie recipe called for strawberries and bananas in a 4:3 ratio using 28 pieces of fruit in all, Devon "
         "initially tried dividing 28 by 4 and 28 by 3—and when 28 ÷ 3 didn't even come out whole, he thought the problem was "
-        "broken. Then he remembered how he had simplified his bike's 48-tooth front sprocket and 16-tooth rear sprocket into "
-        "equal groups, and sketched 4 strawberry boxes and 3 banana boxes side by side. Looking at the sketch, he saw his "
-        "mistake right away: there were 4 + 3 = 7 equal boxes sharing the 28 fruits! Dividing 28 ÷ 7 put 4 fruits in every "
-        "box, making 16 strawberries and 12 bananas without any guesswork."
+        "broken. Then he looked at the A1..A6 and B1..B5 sockets on his Prime Factor Studio lid, reserving 4 Back-Row sockets "
+        "(A1..A4) for strawberries and 3 Front-Row sockets (B1..B3) for bananas. Looking at the lid, he saw his mistake right "
+        "away: there were 4 + 3 = 7 equal sockets sharing the 28 fruits ([2][2][7])! Placing a [2][2] = 4 prime tower in each "
+        "of the 7 sockets gave 16 strawberries and 12 bananas without any guesswork."
     ),
     # Planning Metadata — Sec 3.2: Aquarium salt mixes & pizza dough scaling | Character: Priya
     "3.2": (
         "Priya had to bake 10 pizza crusts for the robotics club using a recipe written for 4 crusts (6 cups of flour for 4 crusts), "
-        "and she got stuck because 4 doesn't multiply evenly into 10. For a minute she thought she would have to deal with messy "
-        "fractions in every column. Then she drew a quick ratio table and realized nobody forces you to jump from 4 to 10 in one step: "
-        "she could divide both numbers by 2 first to find the amount for 2 crusts (3 cups of flour), and then multiply by 5 to reach "
-        "10 crusts (15 cups of flour). Stepping down to a smaller friendly column first made scaling any recipe feel effortless."
+        "and she got stuck because 4 doesn't multiply evenly into 10. Then she built 4 = [2][2] in socket A1 and 6 = [2][3] in "
+        "socket B1 of her Prime Factor Ratio Table lid and realized nobody forces you to jump from 4 to 10 in one step: she could "
+        "remove the shared [2] block first (dividing by 2) in Column 2 (A2 = [2] = 2 crusts, B2 = [3] = 3 cups of flour), and then "
+        "stack a [5] block onto both in Column 3 to reach A3 = [2][5] = 10 crusts and B3 = [3][5] = 15 cups of flour."
     ),
     # Planning Metadata — Sec 3.3: Grocery unit price tags & foraging speeds | Character: Priya & Devon
     "3.3": (
@@ -597,8 +597,8 @@ SECTION_STORY_PARAGRAPHS: Dict[str, str] = {
 # =============================================================================
 SC6_SECTION_CHECK_GUIDE: Dict[str, Dict[str, str]] = {
     "1.1": {
-        "check_a": "Solve 23 ÷ 4 on paper first. Then check on your SC-6: type 23 [ENTER] 4 [g][÷R]. Read the Quotient (5) on line Y and the Remainder (3) on line X! Press [f][LASTX] [×] [+] to verify 5 × 4 + 3 = 23.",
-        "check_b": "Work out 135 ÷ 8 by hand first, then press 135 [ENTER] 8 [g][÷R] on your SC-6. Line Y shows 16 full vans and line X shows 7 leftover students—confirming you must round up to 17 vans! Press [f][LASTX] [×] [+] to check 16 × 8 + 7 = 135.",
+        "check_a": "Solve 23 ÷ 4 on paper first. Then check on your SC-6: type 23 [ENTER] 4 [g][÷R]. Read the Remainder (3) on line Y and the Quotient (5) on line X! Press [f][LASTx] [×] [+] to verify 5 × 4 + 3 = 23.",
+        "check_b": "Work out 135 ÷ 8 by hand first, then press 135 [ENTER] 8 [g][÷R] on your SC-6. Line X shows 16 full vans and line Y shows 7 leftover students—confirming you must round up to 17 vans! Press [f][LASTx] [×] [+] to check 16 × 8 + 7 = 135.",
     },
     "1.2": {
         "check_a": "Write out the repeated multiplication by hand first. Then check on your SC-6: press 4 [x²] to verify 4² = 16, and press 4 [x³] to verify 4³ = 64.",
@@ -633,16 +633,16 @@ SC6_SECTION_CHECK_GUIDE: Dict[str, Dict[str, str]] = {
         "check_b": "Multiply 3.6 × 2.25 on paper and count decimal places first. Then check on your SC-6: press 3.6 [ENTER] 2.25 [×] (and press [$] for Currency Mode or [FDISP] for fraction/decimal view) to confirm $8.10.",
     },
     "2.5": {
-        "check_a": "Divide 23 ÷ 4 by hand first. On your SC-6, press 23 [ENTER] 4 [÷] and tap [FDISP], [a b/c], and [f][d/c] to cycle through 5.75, 5 3/4, and 23/4 (or use [f][0.3-rep] for repeating decimals)!",
-        "check_b": "Shift the decimal point 2 places right (675 ÷ 25) and divide on paper first. Then check on your SC-6: press 6.75 [ENTER] 0.25 [÷] to confirm 27 quarters, and [f][LASTX] [×] to verify 27 × 0.25 = 6.75.",
+        "check_a": "Divide 23 ÷ 4 by hand first. On your SC-6, press 23 [ENTER] 4 [÷] and tap [FDISP], [a b/c], and [f][d/c] to cycle through 5.75, 5 3/4, and 23/4 (or use [f][0.3̄] for repeating decimals)!",
+        "check_b": "Shift the decimal point 2 places right (675 ÷ 25) and divide on paper first. Then check on your SC-6: press 6.75 [ENTER] 0.25 [÷] to confirm 27 quarters, and [f][LASTx] [×] to verify 27 × 0.25 = 6.75.",
     },
     "3.1": {
-        "check_a": "Simplify the ratio 12 : 8 on paper first. Then check on your SC-6 using Ratio Mode: press 12 [ENTER] 8 [g][a:b] to simplify directly to 3:2 (and tap [10F] to view the interactive Ratio Table)!",
-        "check_b": "Draw the 5 + 3 = 8-box tape diagram on paper first. Then check on your SC-6: press 32 [ENTER] 5 [ENTER] 3 [+] [÷] (4 games per box) and 5 [×] to confirm 20 wins.",
+        "check_a": "Model 12 to 8 with Prime Blocks ([2][2]=4 in A1..A3 and B1..B2) on paper first, then check on your SC-6: press 12 [ENTER] 8 [g][a:b] to simplify directly to 3:2 (and tap [10F] to view the Ratio Table)!",
+        "check_b": "Place [2][2]=4 in the 5 + 3 = 8 tape sockets (A1..A5 and B1..B3) first, then check on your SC-6: press 32 [ENTER] 5 [ENTER] 3 [+] [÷] (4 games per socket) and 5 [×] to confirm 20 wins.",
     },
     "3.2": {
-        "check_a": "Complete the ratio table columns by hand first. On your SC-6, enter 3 [ENTER] 8 [g][a:b] and press [10F] to step through the Ratio Table (or repeat steps with [g][REP]) to verify 15 : 40!",
-        "check_b": "Scale the ratio table on paper first (divide by 3 to find 1 bag, then multiply by 5). Check on your SC-6: press 45 [ENTER] 3 [÷] 5 [×] to confirm $75.",
+        "check_a": "Scale [3] and [2][2][2]=8 by stacking [5] on A5/B5 first, then check on your SC-6: enter 3 [ENTER] 8 [g][a:b] and press [10F] to step through the Ratio Table (or repeat steps with [g][REP]) to verify 15 to 40!",
+        "check_b": "Remove shared [3] from (6, 45) and stack [5] on A3/B3 first, then check on your SC-6: press 45 [ENTER] 3 [÷] 5 [×] to confirm $75.",
     },
     "3.3": {
         "check_a": "Divide 315 words by 5 minutes on paper first to find the unit rate per 1 minute. Then check on your SC-6: press 315 [ENTER] 5 [÷] to confirm 63 words per minute.",
@@ -674,7 +674,7 @@ SC6_SECTION_CHECK_GUIDE: Dict[str, Dict[str, str]] = {
     },
     "5.1": {
         "check_a": "Multiply base × perpendicular height (12 × 8) on paper first. Then check on your SC-6: press 12 [ENTER] 8 [f][RECT] to confirm Area = 96 cm² on X (and Perimeter = 40 cm on Y).",
-        "check_b": "Solve 168 ÷ 14 by hand first to find the missing height. Then check on your SC-6: press 168 [ENTER] 14 [÷] to confirm 12 inches, and [f][LASTX] [f][RECT] to verify 12 × 14 = 168 in².",
+        "check_b": "Solve 168 ÷ 14 by hand first to find the missing height. Then check on your SC-6: press 168 [ENTER] 14 [÷] to confirm 12 inches, and [f][LASTx] [f][RECT] to verify 12 × 14 = 168 in².",
     },
     "5.2": {
         "check_a": "Calculate ½ × 10 × 6 on paper first. Then check on your SC-6 using the Triangle Area key: press 10 [ENTER] 6 [g][TRI] (which automatically computes ½ × b × h) to confirm 30 cm²!",
@@ -737,12 +737,12 @@ SC6_SECTION_CHECK_GUIDE: Dict[str, Dict[str, str]] = {
         "check_b": "Add the 2 triangular ends and 3 rectangular sides on paper first. Check on your SC-6: press 6 [ENTER] 8 [g][TRI] 2 [×] (48 ft²) plus 6 [ENTER] 8 [+] 10 [+] 10 [f][RECT] (240 ft²) [+] to confirm 288 ft².",
     },
     "8.3": {
-        "check_a": "Multiply length × width × height on paper first. Then check on your SC-6 using the 3-number Prism Volume key: type 12 [ENTER] 8 [ENTER] 5 [f][PRISM] to confirm 480 in³ in one step!",
+        "check_a": "Multiply length × width × height on paper first. Then check on your SC-6 using the Prism Volume pipeline: type 12 [ENTER] 8 [f][RECT] 5 [f][PRISM] (Base Area 96 × Height 5) to confirm 480 in³!",
         "check_b": "Find the base area B = 9 × 5 = 45 in² and divide 360 ÷ 45 on paper first. Check on your SC-6: press 360 [ENTER] 45 [÷] to confirm a depth of 8 inches.",
     },
     "8.4": {
         "check_a": "Cut the 12-inch diameter in half (r = 6) and calculate πr² and √(12² + 5²) on paper first. Check on your SC-6: press 6 [f][CIRC] to verify 113.10 in², and 12 [ENTER] 5 [g][HYP] to verify 13 ft!",
-        "check_b": "Calculate V = ⅓πr²h on paper first. Then check on your SC-6 using the Cone Volume key: type radius 3 [ENTER] height 10 [g][CONE] to confirm 94.25 cm³!",
+        "check_b": "Calculate V = ⅓πr²h on paper first. Then check on your SC-6 using the Cone Volume pipeline: type radius 3 [f][CIRC] height 10 [g][CONE] (Base Area × Height ÷ 3) to confirm 94.25 cm³!",
     },
     "9.1": {
         "check_a": "Add the 5 values and divide by 5 on paper first. On your SC-6, clear stats with [g][CLΣ], enter each value with [Σ+] (or view the dot plot in [FRQ] mode), and press [g][x̄] to confirm Mean = 21!",
@@ -773,7 +773,7 @@ SC6_SECTION_CHECK_GUIDE: Dict[str, Dict[str, str]] = {
         "check_b": "Subtract 14 first, then divide by -3 on paper (h = 4). Check on your SC-6: press 2 [ENTER] 14 [-] 3 [+/-] [÷] (4), then test 2 [ENTER] 14 [ENTER] 3 [ENTER] 4 [×] [-] [≠]—it flashes NO to confirm 14 - 3(4) = 2!",
     },
     "10.4": {
-        "check_a": "Write P(event) = favorable / total and simplify on paper first. Check on your SC-6: press [.] 4 [.] 10 [g][SIMP] to confirm 2/5, press 5 [x!] to confirm 5! = 120, and explore rolls with [DICE] or [f][1..x]!",
+        "check_a": "Write P(event) = favorable / total and simplify on paper first. Check on your SC-6: press [.] 4 [.] 10 [g][SIMP] to confirm 2/5, press 5 [x!] to confirm 5! = 120, and explore rolls with [DICE] or [f][1…x]!",
         "check_b": "Decide whether order matters first! Then check on your SC-6: press 10 [ENTER] 3 [g][nPr] to confirm 720 ordered podiums (permutations), and 10 [ENTER] 3 [f][nCr] to confirm 120 unordered crews (combinations)!",
     },
 }

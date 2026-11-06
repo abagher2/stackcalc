@@ -60,8 +60,8 @@ All 8 launch listings have complete, pre-validated copy-paste Markdown packages 
 | SKU | Product Listing Guide | Base Price | Primary 1:1 Image Asset | 4:3 Context Banner Asset |
 |---|---|:---:|---|---|
 | `SC-32-HW` | SC-32 Scientific RPN Maker Kit | \$89.00 | `sc32-hero-keynote-square.png` | `sc32-hero-keynote-4x3.png` |
-| `FRAC-01` | Fraction Studio Towers | \$48.00 | `fraction-studio-hero-square.png` | `fraction-studio-hero-4x3.png` |
-| `PRIME-01` | Prime Factor Studio & Slide Rule | \$46.00 | `prime-studio-hero.png` | `prime-studio-hero.png` |
+| `FRAC-01` | Fraction Studio Towers | \$24.99 (Beta) / \$48.00 | `fraction-studio-real-towers-front-hero-tight.jpg` | `fraction-studio-real-towers-front-4x3.jpg` |
+| `PRIME-01` | Prime Factor Studio & Slide Rule | \$24.99 (Beta) / \$48.00 | `prime-factor-studio-real-staircase-iso-hero-tight.jpg` | `prime-factor-studio-real-staircase-iso-4x3.jpg` |
 | `TILE-01` | Counting Tiles & Planar Array Studio | \$44.00 | `counting-tiles-hero.png` | `counting-tiles-hero.png` |
 | `TIME-01` | Classroom Planetary Clock | \$44.00 | `clock-classroom-hero-square.png` | `clock-classroom-hero-4x3.png` |
 | `ALGB-01` | Algebra Factoring Studio | \$42.00 | `algebra-boxes-hero-square.png` | `algebra-boxes-hero-4x3.png` |

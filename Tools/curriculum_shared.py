@@ -327,7 +327,7 @@ BOOK_COVER_SPECS = {
         book_id="teacher_guide",
         title_line_1="TEACHING WITH",
         title_line_2="THE STACK",
-        subtitle="Hands-On Mathematics & Concept Facilitation Guide (K–12)",
+        subtitle="A Practical Concept-First Teacher & Homeschool Guide to Hands-On Mathematics (Grades K–12)",
         edition_badge="THE STACKCALC LIBRARY  •  MASTER TEACHER & HOMESCHOOL GUIDE (K–12)",
         accent_hex="#059669",
         category_line="MATHEMATICS  /  TEACHING & CURRICULUM",
@@ -342,16 +342,16 @@ BOOK_COVER_SPECS = {
         paragraph_2_html=(
             "Organized by <b>mathematical concept rather than isolated textbook chapters</b>, "
             "<b>Teaching with the Stack</b> unifies K–12 hands-on math lab facilitation with middle school "
-            "<b>Big Ideas Math</b> coaching notes, cross-curriculum pacing tables for <b>Singapore Math</b>, "
-            "<b>Saxon</b>, <b>AoPS</b>, <b>CCSS</b>, <b>Texas TEKS</b>, and <b>Florida B.E.S.T.</b>, "
+            "two-method coaching notes, cross-curriculum pacing tables for <b>Singapore Math</b>, "
+            "<b>Saxon</b>, <b>AoPS</b>, <b>Big Ideas Math</b>, <b>CCSS</b>, <b>Texas TEKS</b>, and <b>Florida B.E.S.T.</b>, "
             "misconception diagnostics, and online answer keys at <b>stackcalc.io/curriculum/answers</b>."
         ),
         inside_note_html=(
             "<b>Inside the Master Teacher's Guide:</b> 12 Concept Domains (Pre-K to AP)  •  CCSS / TEKS / B.E.S.T. &amp; Homeschool Crosswalk  "
             "•  45 Middle School Section Guides  •  Block Studio Games &amp; Online Answer Key Directory."
         ),
-        isbn_hyphenated="",
-        isbn_digits="",
+        isbn_hyphenated="979-8-14005-372-7",
+        isbn_digits="9798140053727",
         price_label="",
     ),
     "early_elementary_lab": CurriculumBookCoverSpec(
@@ -449,10 +449,10 @@ BOOK_COVER_SPECS = {
         book_id="big_ideas",
         title_line_1="MIDDLE SCHOOL",
         title_line_2="MATH LAB",
-        subtitle="Student Practice Workbook for Big Ideas Math (Grades 6–8)",
-        edition_badge="THE STACKCALC LIBRARY  •  10 UNITS / 900 PROBLEMS + 10 UNIT QUIZZES",
+        subtitle="Two-Method Student Practice Workbook with Physical Blocks & Stack Verification (Grades 6–8)",
+        edition_badge="THE STACKCALC LIBRARY  •  GRADES 6–8 (SC-6)  •  10 UNITS / 1,000 PROBLEMS",
         accent_hex="#0284C7",
-        category_line="MATHEMATICS  /  MIDDLE SCHOOL WORKBOOK",
+        category_line="MATHEMATICS  /  MIDDLE SCHOOL WORKBOOK (GRADES 6–8)",
         hook_line_1="Why solve a problem only one way when",
         hook_line_2="two textbook methods make it unforgettable?",
         paragraph_1_html=(
@@ -462,17 +462,17 @@ BOOK_COVER_SPECS = {
             "fractions, integers, equations, geometry, and statistics lock into place."
         ),
         paragraph_2_html=(
-            "Aligned section-by-section to <b>Big Ideas Math Middle School</b> (Grades 6–8) with full "
-            "<b>CCSS, Texas TEKS, and Florida B.E.S.T.</b> crosswalks, this 100% self-contained workbook delivers "
-            "45 core sections, 90 Practice A &amp; B worksheets (900 problems), <b>10 End-of-Unit Mastery Quizzes</b>, "
-            "complete self-check answer keys, and <b>3D Block Studio &amp; SC-6 Reference Guides</b>."
+            "100% self-contained for Grades 6–8 homeschooling families and classrooms alongside <b>Saxon</b>, "
+            "<b>Singapore Dimensions</b>, <b>AoPS Prealgebra</b>, <b>Big Ideas Math</b>, and <b>CCSS / TEKS / B.E.S.T.</b>, "
+            "this workbook delivers 45 core sections, 90 Practice A &amp; B worksheets (900 problems), "
+            "<b>10 End-of-Unit Mastery Quizzes</b>, complete self-check answer keys, and <b>3D Block Studio &amp; SC-6 Reference Guides</b>."
         ),
         inside_note_html=(
-            "<b>Inside the Workbook:</b> 10 Units &amp; 45 Sections  •  90 Practice A &amp; B Worksheets (900 problems)  "
-            "•  10 End-of-Unit Mastery Quizzes (100 items)  •  Answer Keys, Standards Crosswalk &amp; 3D Block Studio Guides."
+            "<b>Inside the Grades 6–8 Workbook:</b> 10 Units &amp; 45 Sections  •  90 Practice A &amp; B Worksheets (900 problems)  "
+            "•  10 End-of-Unit Mastery Quizzes (100 items)  •  Answer Keys, Standards Crosswalk &amp; 3D Block Studio Guides  •  128 Pages."
         ),
-        isbn_hyphenated="979-8-16-653215-2",
-        isbn_digits="9798166532152",
+        isbn_hyphenated="",
+        isbn_digits="",
         price_label="",
     ),
     "high_school_lab": CurriculumBookCoverSpec(
@@ -511,7 +511,7 @@ BOOK_COVER_SPECS = {
         book_id="proficiency_trials",
         title_line_1="STACK SPEED",
         title_line_2="& FLUENCY",
-        subtitle="Full-Year Edition: 15 Speed Lessons, Playbooks & 180 Progressive Practice Tests",
+        subtitle="Full-Year Edition: 15 Speed Lessons, Shortcut Playbooks & 180 Progressive Practice Tests",
         edition_badge="THE STACKCALC LIBRARY  •  FULL-YEAR EDITION: 180 TESTS (3,690 PROBLEMS)  •  128 PAGES",
         accent_hex="#FF4F00",
         category_line="MATHEMATICS  /  FULL-YEAR SPEED LESSONS & FLUENCY TESTS",
@@ -745,24 +745,50 @@ def _draw_cover_centerpiece_illustration(
             c.drawRightString(bar_x + bar_w - 10.0, by + 8.0, val)
 
     elif book_id == "high_school_lab":
-        # Left side: Algebra Area Tile Grid (x^2 + 2x + 1) + Right side: SC-32 4-Level Scientific Stack (▸θ,r)
+        # Left side: 2D Polar Vector Right-Triangle (Rise y=3, Run x=4, r=5.00, θ=36.87°) + Right side: SC-32 4-Level Scientific Stack
         left_x = cx - 170.0
         base_y = cy - 66.0
-        # x^2 tile (82 x 82) at top-left, x bar (36 x 82) at top-right, x bar (82 x 36) at bottom-left, 1 unit (36 x 36) at bottom-right
-        tiles = [
-            (left_x, base_y + 42.0, 82.0, 82.0, "#4F46E5", "x²", "#FFFFFF"),
-            (left_x + 88.0, base_y + 42.0, 36.0, 82.0, "#0284C7", "x", "#FFFFFF"),
-            (left_x, base_y, 82.0, 36.0, "#0284C7", "x", "#FFFFFF"),
-            (left_x + 88.0, base_y, 36.0, 36.0, "#F59E0B", "1", "#0F172A"),
-        ]
-        for tx, ty, tw, th, col_hex, lbl, txt_hex in tiles:
-            c.setFillColor(to_color("#E2DDD0"))
-            c.roundRect(tx + 2.0, ty - 2.0, tw, th, 4.5, fill=1, stroke=0)
-            c.setFillColor(to_color(col_hex))
-            c.roundRect(tx, ty, tw, th, 4.5, fill=1, stroke=0)
-            c.setFont(FONT_MONO_BOLD, 11.5 if lbl == "x²" else 10.0)
-            c.setFillColor(to_color(txt_hex))
-            c.drawCentredString(tx + tw * 0.5, ty + th * 0.5 - 4.0, lbl)
+        card_w = 136.0
+        card_h = 134.0
+        c.setFillColor(to_color("#E2DDD0"))
+        c.roundRect(left_x + 2.5, base_y - 2.5, card_w, card_h, 6.0, fill=1, stroke=0)
+        c.setFillColor(to_color("#FFFFFF"))
+        c.setStrokeColor(to_color("#CBD5E1"))
+        c.setLineWidth(1.2)
+        c.roundRect(left_x, base_y, card_w, card_h, 6.0, fill=1, stroke=1)
+
+        ax, ay = left_x + 18.0, base_y + 28.0
+        bx, by_pt = left_x + 102.0, base_y + 28.0
+        cx_pt, cy_pt = left_x + 102.0, base_y + 98.0
+
+        # Right-angle marker at B
+        c.setStrokeColor(to_color("#94A3B8"))
+        c.setLineWidth(1.2)
+        c.line(bx - 10.0, by_pt, bx - 10.0, by_pt + 10.0)
+        c.line(bx - 10.0, by_pt + 10.0, bx, by_pt + 10.0)
+
+        # Triangle legs (dx=4, dy=3) and polar vector hypotenuse (r=5)
+        c.setStrokeColor(to_color("#0F172A"))
+        c.setLineWidth(2.2)
+        c.line(ax, ay, bx, by_pt)
+        c.line(bx, by_pt, cx_pt, cy_pt)
+        c.setStrokeColor(to_color("#4F46E5"))
+        c.setLineWidth(3.0)
+        c.line(ax, ay, cx_pt, cy_pt)
+
+        # Labels on vector card (use FONT_BODY_BOLD for Greek θ and arrow →)
+        c.setFont(FONT_MONO_BOLD, 9.0)
+        c.setFillColor(to_color("#0F172A"))
+        c.drawCentredString((ax + bx) * 0.5, ay - 14.0, "x = 4 (X)")
+        c.drawString(bx + 6.0, (by_pt + cy_pt) * 0.5 - 3.0, "y = 3")
+        c.setFillColor(to_color("#4F46E5"))
+        c.drawString(ax + 4.0, (ay + cy_pt) * 0.5 + 8.0, "r = 5.00")
+        c.setFillColor(to_color("#D97706"))
+        c.setFont(FONT_BODY_BOLD, 9.2)
+        c.drawString(ax + 19.0, ay + 5.5, "θ = 36.87°")
+        c.setFillColor(to_color("#475569"))
+        c.setFont(FONT_BODY_BOLD, 8.8)
+        c.drawCentredString(left_x + card_w * 0.5, base_y + card_h - 15.0, "3 [ENTER] 4 [→θ,r]")
 
         # Right side: 4 Stack Bars (T, Z, Y, X) showing Vector / Scientific Stack
         bar_x = cx + 6.0
@@ -1000,7 +1026,8 @@ def draw_curriculum_bestseller_back_cover(
     c.drawString(safe_x, oy + 86.0, "The StackCalc Library  •  Instruments, Books & Classroom Manipulatives")
     c.setFont(FONT_MONO_BOLD, 9.0)
     c.setFillColor(to_color(spec.accent_hex))
-    c.drawString(safe_x, oy + 68.0, "stackcalc.io")
+    imprint_url_line = f"stackcalc.io  •  ISBN {spec.isbn_hyphenated}" if spec.isbn_hyphenated else "stackcalc.io"
+    c.drawString(safe_x, oy + 68.0, imprint_url_line)
 
     c.restoreState()
 
@@ -1164,3 +1191,93 @@ def generate_lulu_coil_cover_pdf(out_path: Path, book_key: str) -> None:
     )
     c.showPage()
     c.save()
+
+
+def generate_kindle_front_cover(out_pdf_path: Path, out_jpg_path: Path, book_key: str, dpi: int = 300) -> None:
+    """
+    Generates a standalone 1-page Kindle Primary Front Cover PDF (8.5" x 11.0" US Letter trim, no bleed/spine/back)
+    and rasterizes it to a 300 DPI RGB JPEG (2550 x 3300 px) for Amazon KDP Kindle eBook / Print Replica upload.
+    """
+    import shutil
+    import subprocess
+    spec = BOOK_COVER_SPECS[book_key]
+    trim_w, trim_h = letter  # 612 x 792 pt
+
+    out_pdf_path.parent.mkdir(parents=True, exist_ok=True)
+    out_jpg_path.parent.mkdir(parents=True, exist_ok=True)
+    c = canvas.Canvas(str(out_pdf_path), pagesize=(trim_w, trim_h))
+    c.setTitle(f"{spec.title_line_1} {spec.title_line_2} — Kindle Primary Cover")
+    c.setAuthor("The StackCalc Library")
+    draw_curriculum_bestseller_front_cover(
+        c,
+        ox=0.0,
+        oy=0.0,
+        w=trim_w,
+        h=trim_h,
+        spec=spec,
+        bleed_l=0.0,
+        bleed_r=0.0,
+        bleed_t=0.0,
+        bleed_b=0.0,
+    )
+    c.showPage()
+    c.save()
+
+    pdftoppm_bin = shutil.which("pdftoppm")
+    if pdftoppm_bin:
+        prefix = str(out_jpg_path.with_suffix(""))
+        subprocess.run(
+            [
+                pdftoppm_bin,
+                "-jpeg",
+                "-jpegopt",
+                "quality=95",
+                "-r",
+                str(dpi),
+                "-singlefile",
+                str(out_pdf_path),
+                prefix,
+            ],
+            check=True,
+        )
+        return
+
+    magick_bin = shutil.which("magick")
+    if magick_bin:
+        subprocess.run(
+            [
+                magick_bin,
+                "-density",
+                str(dpi),
+                f"{out_pdf_path}[0]",
+                "-colorspace",
+                "sRGB",
+                "-quality",
+                "95",
+                str(out_jpg_path),
+            ],
+            check=True,
+        )
+        return
+
+    sips_bin = shutil.which("sips")
+    if sips_bin:
+        subprocess.run(
+            [
+                sips_bin,
+                "-s",
+                "format",
+                "jpeg",
+                "-s",
+                "formatOptions",
+                "95",
+                str(out_pdf_path),
+                "--out",
+                str(out_jpg_path),
+            ],
+            check=True,
+            capture_output=True,
+        )
+        return
+
+    raise RuntimeError("No PDF-to-JPEG rasterizer found (expected pdftoppm, magick, or sips).")

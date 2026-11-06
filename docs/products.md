@@ -108,6 +108,11 @@ hide:
           <span>SC-6 Book on Amazon ↗</span>
         </a>
       </div>
+      <div class="te-trust-item">
+        <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="color: #FF9900; font-weight: 700; text-decoration: none;">
+          <span>Middle School Workbook ↗</span>
+        </a>
+      </div>
     </div>
 
     <!-- Institutional School PO Banner & Free Curriculum Lead Magnet -->
@@ -202,6 +207,7 @@ hide:
         <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem;">
           <a href="sc6-book/" class="te-btn-primary">Book Overview &amp; TOC &rarr;</a>
           <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">Order on Amazon ($16) ↗</a>
+          <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #FF9900; color: #FF9900; font-weight: 700;">Middle School Workbook ↗</a>
           <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #0284C7; color: #38BDF8; font-weight: 700;">Spiral Workbooks on Lulu ↗</a>
           <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #38BDF8; color: #38BDF8; font-weight: 700;">Slant 3D Manipulatives ↗</a>
         </div>
@@ -387,6 +393,12 @@ hide:
         <div class="te-actions-row">
           <a href="sc32-calculator/" class="te-btn-primary">
             <span>Explore Hardware &amp; 4K Videos &rarr;</span>
+          </a>
+          <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #FF9900; color: #FF9900; font-weight: 700;">
+            <span>Book (Paperback $16) ↗</span>
+          </a>
+          <a href="https://link.amazon/B09AnTIQI" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #FF9900; color: #FF9900; font-weight: 700;">
+            <span>Book (Hardcover) ↗</span>
           </a>
           <a href="../manuals/#sc-32-scientific" class="te-btn-secondary">
             <span>Reference Manual &amp; Print ($16) &rarr;</span>
@@ -1126,6 +1138,7 @@ hide:
         <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem;">
           <a href="sc6-book/" class="te-btn-primary">Book Overview &amp; TOC &rarr;</a>
           <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">Order on Amazon ($16) ↗</a>
+          <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #FF9900; color: #FF9900; font-weight: 700;">Middle School Workbook ↗</a>
           <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #0284C7; color: #38BDF8; font-weight: 700;">Spiral Workbooks on Lulu ↗</a>
           <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #38BDF8; color: #38BDF8; font-weight: 700;">Slant 3D Manipulatives ↗</a>
         </div>

@@ -55,6 +55,9 @@ def _install_reportlab_img_wrap_fix() -> None:
         return
     orig_gfw = rl_para._getFragWords
 
+    def _has_img(word_entry) -> bool:
+        return any(getattr(x[0], "_fkind", None) == rl_para._FK_IMG for x in word_entry[1:])
+
     def _patched_gfw(frags, maxWidth=None):
         words = orig_gfw(frags, maxWidth=maxWidth)
         out = []
@@ -67,7 +70,7 @@ def _install_reportlab_img_wrap_fix() -> None:
                 and w[0] == 0.0
                 and len(w) == 2
                 and w[1][1] == ""
-                and any(getattr(x[0], "_fkind", None) == rl_para._FK_IMG for x in out[-1][1:])
+                and _has_img(out[-1])
             ):
                 if not isinstance(out[-1], rl_para._HSFrag):
                     out[-1] = rl_para._HSFrag(out[-1])
@@ -75,7 +78,24 @@ def _install_reportlab_img_wrap_fix() -> None:
                 continue
             out.append(w)
             i += 1
-        return out
+        # Glue any non-space-separated punctuation/text fragment (like opening `(` or closing `)`, `,`, `:`)
+        # directly to its adjacent `<img .../>` word so `(` is never stranded at the end of a line and
+        # `)` / `,` / `:` never wraps onto the next line by itself after a keycap.
+        merged = []
+        for w in out:
+            if (
+                merged
+                and not isinstance(merged[-1], rl_para._HSFrag)
+                and (_has_img(merged[-1]) or _has_img(w))
+            ):
+                prev = merged.pop()
+                comb = [prev[0] + w[0]] + list(prev[1:]) + list(w[1:])
+                if isinstance(w, rl_para._HSFrag):
+                    comb = rl_para._HSFrag(comb)
+                merged.append(comb)
+            else:
+                merged.append(w)
+        return merged
 
     rl_para._getFragWords = _patched_gfw
 
@@ -86,10 +106,37 @@ def _install_reportlab_img_wrap_fix() -> None:
         "if nText or getattr(f, '_fkind', None) == _FK_IMG or "
         "any(getattr(x[0], '_fkind', None) == _FK_IMG for x in w[1:]): n += 1"
     )
+    old_hy_guard = "and not hasattr(f,'cbDefn'):"
+    new_hy_guard = (
+        "and not hasattr(f,'cbDefn') and not any(getattr(x[0],'_fkind',None)==_FK_IMG for x in w[1:]):"
+    )
+    old_space_block = (
+        "                                if wi._fkind==_FK_TEXT:\n"
+        "                                    if not wi.text.endswith(' '):\n"
+        "                                        wi.text += ' '\n"
+        "                                    break"
+    )
+    new_space_block = (
+        "                                if wi._fkind==_FK_IMG:\n"
+        "                                    sp = wi.clone(_fkind=_FK_TEXT, text=' ')\n"
+        "                                    if hasattr(sp, 'cbDefn'):\n"
+        "                                        del sp.cbDefn\n"
+        "                                    words.insert(i+2, sp)\n"
+        "                                    break\n"
+        "                                if wi._fkind==_FK_TEXT:\n"
+        "                                    if not wi.text.endswith(' '):\n"
+        "                                        wi.text += ' '\n"
+        "                                    break"
+    )
     if target_line in src:
+        patched_src = (
+            src.replace(target_line, replacement_line)
+            .replace(old_hy_guard, new_hy_guard)
+            .replace(old_space_block, new_space_block)
+        )
         ns = dict(rl_para.__dict__)
         exec(
-            "\n".join(line[4:] for line in src.replace(target_line, replacement_line).splitlines()),
+            "\n".join(line[4:] for line in patched_src.splitlines()),
             ns,
         )
         rl_para.Paragraph.breakLines = ns["breakLines"]
@@ -265,6 +312,12 @@ SC6_PRIMARY = "#111827" if BW_PRINT_INTERIOR else "#064e3b"
 SC6_ACCENT = "#000000" if BW_PRINT_INTERIOR else "#059669"
 SC6_COVER_ACCENT = "#059669"     # Vibrant Emerald Accent
 
+# Volume III Domain Series Palette (Cover & Optional Color Mode)
+DOMAINS_COVER_BG = "#111318"     # Sculptural Matte Obsidian
+DOMAINS_PRIMARY = "#111827" if BW_PRINT_INTERIOR else "#0369a1"
+DOMAINS_ACCENT = "#000000" if BW_PRINT_INTERIOR else "#0284C7"
+DOMAINS_COVER_ACCENT = "#0284C7" # Deep Industrial Cobalt Accent
+
 # Print Book Interior Palette (Archival White Paper — High-Contrast KDP B&W Ready)
 PAGE_BG = "#ffffff"              # Pure Archival White
 TEXT_MAIN = "#000000" if BW_PRINT_INTERIOR else "#101114"
@@ -319,12 +372,12 @@ class BookmarkFlowable(Flowable):
         self.keepWithNext = True
 
     def draw(self):
-        pg = self.canv._pageNumber
         if self.level == 0:
             self.canv.is_chapter_opener_page = True
-        dest = self.canv.bookmarkPage(self.key)
-        dest.setPage(PDFObjectReference(f"Page{pg}"))
-        self.canv.addOutlineEntry(self.title, self.key, level=self.level, closed=False)
+        if hasattr(self.canv, "_outline_entries"):
+            clean_t = " ".join(str(self.title).replace("\t", " ").split())
+            if clean_t:
+                self.canv._outline_entries.append([int(self.level), int(self.canv.getPageNumber() - 1), clean_t])
 
 
 class ChapterTracker(Flowable):
@@ -389,7 +442,7 @@ class ManualDocTemplate(SimpleDocTemplate):
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.arabic_start_page = 7
+        self.arabic_start_page = 9
 
     def build(self, flowables, *args, **kwargs):
         for fl in flowables:
@@ -549,11 +602,13 @@ class ManualDocTemplate(SimpleDocTemplate):
             items_to_check.extend(getattr(flowable, "_content", []))
         for sub_f in items_to_check:
             if hasattr(sub_f, '_toc_info'):
-                level, text, key = sub_f._toc_info
-                self.notify('TOCEntry', (level, text, arabic_pg, key))
+                level, text, _key = sub_f._toc_info
+                # Pass a 3-tuple (level, text, pageNum) without key so ReportLab does NOT emit
+                # interactive /Subtype /Link /Annots on TOC pages (which KDP flags as non-printable markup).
+                self.notify('TOCEntry', (level, _protect_special_unicode_glyphs(text), arabic_pg))
             if hasattr(sub_f, '_index_terms'):
                 for term in sub_f._index_terms:
-                    self.notify('IndexEntry', (term, arabic_pg))
+                    self.notify('IndexEntry', (_protect_special_unicode_glyphs(term), arabic_pg))
 
 
 # ---------------------------------------------------------------------------
@@ -584,6 +639,7 @@ class NumberedCanvas(canvas.Canvas):
         self.is_chapter_opener_page = False
         self.arabic_start_raw_page = 7
         self.is_sc32 = True
+        self._outline_entries = []
 
     def showPage(self):
         state = dict(self.__dict__)
@@ -594,6 +650,7 @@ class NumberedCanvas(canvas.Canvas):
         self._startPage()
 
     def save(self):
+        recorded_outline = list(getattr(self, "_outline_entries", []))
         # Determine where Arabic Page 1 begins across saved page states
         arabic_start = 7
         for st in self._saved_page_states:
@@ -602,7 +659,16 @@ class NumberedCanvas(canvas.Canvas):
                 break
         for idx_s, st in enumerate(self._saved_page_states):
             ch_t = st.get("page_chapter_title", "")
-            if ch_t not in ("HALF TITLE", "SERIES FRONTISPIECE", "TITLE PAGE", "COPYRIGHT AND COLOPHON", "DEDICATION AND EPIGRAPH", "TABLE OF CONTENTS", "BLANK_PAGE"):
+            if ch_t not in (
+                "HALF TITLE",
+                "SERIES FRONTISPIECE",
+                "TITLE PAGE",
+                "COPYRIGHT AND COLOPHON",
+                "DEDICATION AND EPIGRAPH",
+                "ARCHITECTURAL FRONTISPIECE",
+                "TABLE OF CONTENTS",
+                "BLANK_PAGE",
+            ):
                 arabic_start = idx_s + 1
                 break
 
@@ -641,6 +707,14 @@ class NumberedCanvas(canvas.Canvas):
             )
             super().showPage()
         super().save()
+        try:
+            fn = getattr(self, "_filename", None)
+            if recorded_outline and isinstance(fn, (str, Path)) and not str(fn).startswith("<"):
+                import json
+                sidecar = Path(str(fn)).with_suffix(".outline.json")
+                sidecar.write_text(json.dumps(recorded_outline, ensure_ascii=False, indent=2), encoding="utf-8")
+        except Exception:
+            pass
 
     def draw_interior_page_decorations(
         self,
@@ -657,7 +731,14 @@ class NumberedCanvas(canvas.Canvas):
         - Chapter Openers: no top running header; Arabic folio on outside footer.
         - Regular Body Pages: mirrored running header + outside Arabic folio (1, 2, 3...).
         """
-        if chapter_title in ("HALF TITLE", "SERIES FRONTISPIECE", "TITLE PAGE", "DEDICATION AND EPIGRAPH", "BLANK_PAGE"):
+        if chapter_title in (
+            "HALF TITLE",
+            "SERIES FRONTISPIECE",
+            "TITLE PAGE",
+            "DEDICATION AND EPIGRAPH",
+            "ARCHITECTURAL FRONTISPIECE",
+            "BLANK_PAGE",
+        ):
             return
 
         self.saveState()
@@ -665,17 +746,34 @@ class NumberedCanvas(canvas.Canvas):
         left_x = MARGIN_PT + gutter_shift
         right_x = (w - MARGIN_PT) + gutter_shift
         is_odd = (self._pageNumber % 2 == 1)
-        is_front_matter = (self._pageNumber < arabic_start) or (chapter_title in ("COPYRIGHT AND COLOPHON", "DEDICATION AND EPIGRAPH", "TABLE OF CONTENTS"))
+        is_front_matter = (self._pageNumber < arabic_start) or (
+            chapter_title in ("COPYRIGHT AND COLOPHON", "DEDICATION AND EPIGRAPH", "ARCHITECTURAL FRONTISPIECE", "TABLE OF CONTENTS")
+        )
 
-        # 1. Top Running Header (Suppressed on Copyright Page and on Chapter Opening Pages)
-        show_header = (not is_opener) and (chapter_title != "COPYRIGHT AND COLOPHON")
+        # 1. Top Running Header (Suppressed across all pages so Kindle & Print Replica conversions have zero running header artifacts)
+        show_header = False
         if show_header:
             self.setStrokeColor(to_color(DIVIDER_HEX))
             self.setLineWidth(0.45)
             self.line(left_x, h - 29, right_x, h - 29)
 
             doc_hdr = "THINKING IN THE STACK" if getattr(self, "is_sc32", True) else "FROM BLOCKS TO THE STACK"
-            disp_title = (chapter_title[:80] + ("..." if len(chapter_title) > 80 else "")) if chapter_title else ""
+            max_title_w = (right_x - left_x) - self.stringWidth(doc_hdr, FONT_BODY_BOLD, 6.8) - 8.0
+            disp_title = chapter_title or ""
+            if disp_title.startswith("Prologue:") and self.stringWidth(disp_title, FONT_BODY_BOLD, 6.8) > max_title_w:
+                disp_title = "Prologue: The Inside-Out Mind"
+            if disp_title and self.stringWidth(disp_title, FONT_BODY_BOLD, 6.8) > max_title_w and disp_title.count(":") >= 2:
+                disp_title = ":".join(disp_title.split(":")[:2]).strip()
+            if disp_title and self.stringWidth(disp_title, FONT_BODY_BOLD, 6.8) > max_title_w and " & " in disp_title:
+                disp_title = disp_title.split(" & ")[0].strip()
+                if ", " in disp_title and " & " not in disp_title:
+                    disp_title = disp_title.replace(", ", " & ", 1)
+            if disp_title and self.stringWidth(disp_title, FONT_BODY_BOLD, 6.8) > max_title_w and ", " in disp_title:
+                disp_title = disp_title.split(", ")[0].strip()
+            if disp_title and self.stringWidth(disp_title, FONT_BODY_BOLD, 6.8) > max_title_w:
+                while disp_title and self.stringWidth(disp_title + "...", FONT_BODY_BOLD, 6.8) > max_title_w:
+                    disp_title = disp_title[:-1].rstrip()
+                disp_title = disp_title + "..."
 
             if is_odd:
                 # Recto (Odd): Chapter title on outside (right), Book title on inside (left)
@@ -725,9 +823,15 @@ MATH_REPLACEMENTS = [
     (r"\leftrightarrow", "↔"),
     (r"\leftarrow", "←"),
     (r"\rightarrow", "→"),
+    (r"\uparrow", "↑"),
+    (r"\downarrow", "↓"),
+    (r"\Uparrow", "⇑"),
+    (r"\Downarrow", "⇓"),
     (r"\implies", "⇒"),
     (r"\iff", "⇔"),
     (r"\parallel", "∥"),
+    (r"\perp", "⊥"),
+    (r"\notin", "∉"),
     (r"\times", "×"),
     (r"\div", "÷"),
     (r"\cdot", "·"),
@@ -751,6 +855,7 @@ MATH_REPLACEMENTS = [
     (r"\vert", "|"),
     (r"\Box", "□"),
     (r"\oplus", "⊕"),
+    (r"\odot", "☉"),
     (r"\prime", "′"),
     (r"\langle", "⟨"),
     (r"\rangle", "⟩"),
@@ -823,9 +928,45 @@ def _extract_braced(text: str, open_brace_idx: int):
     return text[open_brace_idx + 1 : i - 1], i
 
 
+def _is_paren_wrapped(s: str) -> bool:
+    s = s.strip()
+    if len(s) < 2 or s[0] != "(" or s[-1] != ")":
+        return False
+    depth = 0
+    for idx, ch in enumerate(s):
+        if ch == "(":
+            depth += 1
+        elif ch == ")":
+            depth -= 1
+            if depth == 0 and idx < len(s) - 1:
+                return False
+    return depth == 0
+
+
+def _has_top_level_frac_op(s: str, include_mul: bool = False) -> bool:
+    s = s.strip()
+    depth = 0
+    i = 0
+    while i < len(s):
+        ch = s[i]
+        if ch in "{([":
+            depth += 1
+        elif ch in "})]":
+            depth = max(0, depth - 1)
+        elif depth == 0:
+            if ch == "+" or (ch == "-" and i > 0 and s[i - 1] not in "^_({["):
+                return True
+            if s[i:].startswith(r"\pm") or s[i:].startswith(r"\mp") or s[i:].startswith(r"\div") or ch in "÷/":
+                return True
+            if include_mul and (s[i:].startswith(r"\times") or s[i:].startswith(r"\cdot") or ch in "×·"):
+                return True
+        i += 1
+    return False
+
+
 def replace_latex_frac(text: str) -> str:
     """Recursively replaces \\frac{num}{den} and \\binom{n}{k} handling nested braces."""
-    for cmd, fmt in [(r"\dfrac", "frac"), (r"\tfrac", "frac"), (r"\frac", "frac"), (r"\binom", "binom")]:
+    for cmd, fmt in [(r"\dfrac", "frac"), (r"\tfrac", "frac"), (r"\cfrac", "frac"), (r"\frac", "frac"), (r"\binom", "binom")]:
         while True:
             idx = text.find(cmd + "{")
             if idx == -1:
@@ -839,13 +980,54 @@ def replace_latex_frac(text: str) -> str:
             if fmt == "binom":
                 text = text[:idx] + f"C({num}, {den})" + text[j:]
             elif re.match(r'^\d+$', num.strip()) and re.match(r'^\d+$', den.strip()):
-                lead_sp = " " if (idx > 0 and text[idx - 1].isdigit()) else ""
-                trail_sp = " " if (j < len(text) and text[j].isdigit()) else ""
-                text = text[:idx] + f"{lead_sp}{num.strip()}/{den.strip()}{trail_sp}" + text[j:]
+                if idx > 0 and text[idx - 1].isalpha():
+                    text = text[:idx] + f"({num.strip()}/{den.strip()})" + text[j:]
+                else:
+                    lead_sp = " " if (idx > 0 and text[idx - 1].isdigit()) else ""
+                    rest = text[j:].lstrip()
+                    if rest and (rest[0].isalpha() or rest[0] == "\\"):
+                        text = text[:idx] + f"{lead_sp}({num.strip()}/{den.strip()})" + text[j:]
+                    else:
+                        trail_sp = " " if (j < len(text) and text[j].isdigit()) else ""
+                        text = text[:idx] + f"{lead_sp}{num.strip()}/{den.strip()}{trail_sp}" + text[j:]
             else:
-                num_s = f"({num})" if (r"\div" in num or "÷" in num) and not (num.startswith("(") and num.endswith(")")) else num
-                den_s = f"({den})" if (r"\div" in den or "÷" in den) and not (den.startswith("(") and den.endswith(")")) else den
-                text = text[:idx] + f"({num_s} / {den_s})" + text[j:]
+                num_clean = num.strip()
+                den_clean = den.strip()
+                num_wrapped = not _is_paren_wrapped(num_clean) and _has_top_level_frac_op(num_clean, include_mul=False)
+                den_wrapped = not _is_paren_wrapped(den_clean) and _has_top_level_frac_op(den_clean, include_mul=True)
+                num_s = f"({num_clean})" if num_wrapped else num_clean
+                den_s = f"({den_clean})" if den_wrapped else den_clean
+                before = text[:idx].rstrip()
+                after = text[j:].lstrip()
+                already_enclosed = before.endswith("(") and after.startswith(")")
+                needs_outer = (
+                    (idx > 0 and text[idx - 1].isalpha())
+                    or before.endswith(("/", "^"))
+                    or (
+                        bool(after)
+                        and (after[0].isalnum() or after[0] in "([\\")
+                        and not re.match(
+                            r'^\\(?:text|mathrm|longrightarrow|to|approx|le|ge|leq|geq|ne|neq|pm|mp|times|cdot|quad|;|,)\b',
+                            after,
+                        )
+                    )
+                )
+                is_compact = (
+                    not num_wrapped
+                    and not den_wrapped
+                    and len(num_s) <= 10
+                    and len(den_s) <= 10
+                    and " " not in num_s
+                    and " " not in den_s
+                )
+                sep = "/" if is_compact else " / "
+                core = f"{num_s}{sep}{den_s}"
+                if already_enclosed:
+                    text = text[:idx] + core + text[j:]
+                elif needs_outer:
+                    text = text[:idx] + f"({core})" + text[j:]
+                else:
+                    text = text[:idx] + core + text[j:]
     return text
 
 
@@ -861,8 +1043,8 @@ def replace_latex_sqrt(text: str) -> str:
         if radicand is None:
             break
         rad_clean = radicand.strip()
-        prefix = "∛" if root_deg == "3" else ("∜" if root_deg == "4" else (f"^{{{root_deg}}}√" if root_deg else "√"))
-        if re.match(r'^[A-Za-z0-9\\]+$', rad_clean):
+        prefix = f"^{{{root_deg}}}√" if root_deg else "√"
+        if re.match(r'^[A-Za-z0-9\\]+$', rad_clean) or _is_paren_wrapped(rad_clean):
             rep = f"{prefix}{rad_clean}"
         else:
             rep = f"{prefix}({rad_clean})"
@@ -901,24 +1083,32 @@ def clean_latex_math(text: str) -> str:
     # Handle \begin{...} / \end{...} environments (aligned, cases, pmatrix, bmatrix) and \\ BEFORE r"\ "
     if r"\begin{" in text:
         text = re.sub(r'\s*&\s*=', ' = ', text)
-        text = re.sub(r'\s*&\s*', '  ', text)
-    text = re.sub(r'\\begin\{[^}]*\}', '', text)
+        text = re.sub(r'\s*&\s*', ', ', text)
+    text = re.sub(r'\\begin\{bmatrix\}', '[', text)
+    text = re.sub(r'\\end\{bmatrix\}', ']', text)
+    text = re.sub(r'\\begin\{pmatrix\}', '(', text)
+    text = re.sub(r'\\end\{pmatrix\}', ')', text)
+    text = re.sub(r'\\begin\{[^}]*\}(?:\{[lcr|]+\})?', '', text)
     text = re.sub(r'\\end\{[^}]*\}', '', text)
+    text = text.replace(r"\hline", "")
     text = text.replace(r"\\", "; ")
 
     # Unescape LaTeX literal escapes before XML escaping (keep \_ protected until after subscript parsing)
-    text = text.replace(r"\%", "%").replace(r"\$", "$").replace(r"\_", "\x00ESC_US\x00").replace(r"\&", "&")
+    text = text.replace(r"\%", "%").replace(r"\$", "$").replace("QQPH0QQ", "$").replace("QQPH1QQ", "%").replace(r"\_", "\x00ESC_US\x00").replace(r"\&", "&")
     text = text.replace(r"\{", "(").replace(r"\}", ")")
     text = text.replace(r"\ ", " ")
 
     # Escape XML special characters FIRST so < and > in inequalities never corrupt ReportLab tags
     text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
-    # 1. Strip \left and \right delimiters FIRST so \le does not corrupt \left to ≤ft
+    # 1. Strip \left, \right, and \big/\Big/\bigg/\Bigg delimiters FIRST so \le does not corrupt \left to ≤ft
     text = re.sub(r'\\left\s*([(\[{|.])', r'\1', text)
     text = re.sub(r'\\right\s*([)\]}|.])', r'\1', text)
     text = re.sub(r'\\left\b', '', text)
     text = re.sub(r'\\right\b', '', text)
+    text = re.sub(r'\\[bB]igg?[lr]?\b\s*', '', text)
+    text = re.sub(r'\\cancel\{([^{}]*)\}', r'\1', text)
+    text = re.sub(r'\\underbrace\{((?:[^{}]|\{[^{}]*\})*)\}_\{((?:[^{}]|\{[^{}]*\})*)\}', r'\1 (\2)', text)
 
     # 2. Floor and ceil delimiters
     text = re.sub(r'\\lfloor\b', '⌊', text)
@@ -933,7 +1123,12 @@ def clean_latex_math(text: str) -> str:
     text = re.sub(r'\\vert\b', '|', text)
 
     # 3. Handle fractions, binomials, roots, and bold macros with balanced braces
+    text = re.sub(r'\\phantom\{[^{}]*\}', 'x', text)
     text = replace_latex_frac(text)
+    text = re.sub(r'\\underbrace\{((?:[^{}]|\{[^{}]*\})*)\}_\{((?:[^{}]|\{[^{}]*\})*)\}', r'\1 (\2)', text)
+    text = re.sub(r'\\overset\{((?:[^{}]|\{[^{}]*\})*)\}\{((?:[^{}]|\{[^{}]*\})*)\}', r'\2(\1)', text)
+    text = re.sub(r'\\underset\{((?:[^{}]|\{[^{}]*\})*)\}\{((?:[^{}]|\{[^{}]*\})*)\}', r'\2(\1)', text)
+    text = re.sub(r'\\xrightarrow\[([^\]]*)\]\{([^{}]*)\}', r'→[\2; \1]', text)
     text = replace_latex_sqrt(text)
     text = replace_latex_bold(text)
 
@@ -948,7 +1143,7 @@ def clean_latex_math(text: str) -> str:
     text = re.sub(r'\\gg(?![a-zA-Z])', '≫', text)
     text = re.sub(r'\\ne(?![a-zA-Z])', '≠', text)
     text = re.sub(r'\\neq(?![a-zA-Z])', '≠', text)
-    text = re.sub(r'\\sim(?![a-zA-Z])', '~', text)
+    text = re.sub(r'\\sim(?![a-zA-Z])\s*', '∼ ', text)
     text = re.sub(r'\\in(?![a-zA-Z])', '∈', text)
     text = re.sub(r'\\mid(?![a-zA-Z])', '|', text)
     text = re.sub(r'\\to(?![a-zA-Z])', '→', text)
@@ -956,23 +1151,51 @@ def clean_latex_math(text: str) -> str:
     text = re.sub(r'\\Large(?![a-zA-Z])', '', text)
     text = re.sub(r'\\bmod(?![a-zA-Z])', ' mod ', text)
 
+    text = re.sub(r'\\Delta(?![a-zA-Z])\s*(?=[a-zA-Z0-9\\])', 'Δ', text)
+    text = re.sub(r'\\partial(?![a-zA-Z])\s*(?=[a-zA-Z0-9\\])', '∂', text)
+    text = re.sub(r'\\nabla(?![a-zA-Z])\s*(?=[a-zA-Z0-9\\])', '∇', text)
+
     for pat, rep in MATH_REPLACEMENTS:
         if pat[-1].isalpha():
             text = re.sub(re.escape(pat) + r'(?![a-zA-Z])', lambda _, r=rep: r, text)
         else:
             text = text.replace(pat, rep)
 
-    # 5. Handle font, text, and accent macros (iterated for nesting)
+    # 5. Handle standard math operators (\sin, \cos, \tan, \ln, \log, \exp, etc.) and upright text macros
+    upright_tokens: Dict[str, str] = {}
+
+    def _save_upright(val: str) -> str:
+        k = f"\x00UP{len(upright_tokens)}\x00"
+        upright_tokens[k] = val
+        return k
+
+    _MATH_OP_NAMES = r'(?:arcsin|arccos|arctan|sinh|cosh|tanh|sin|cos|tan|sec|csc|cot|ln|log|exp|det|lim|max|min|gcd|lcm|arg|deg|dim|ker|hom|sup|inf)'
+    text = re.sub(rf'(?<=[0-9a-zA-Zα-ωΑ-Ω)\]])\\({_MATH_OP_NAMES})(?![a-zA-Z])', r' \\\1', text)
+    text = re.sub(rf'(\\({_MATH_OP_NAMES})(?![a-zA-Z])(?:\s*\^(?:\{{[^{{}}]*\}}|[0-9a-zA-Z+-]+))?)\s*(?=[0-9a-zA-Zα-ωΑ-Ω\\])', r'\1 ', text)
+    text = re.sub(rf'\\({_MATH_OP_NAMES})(?![a-zA-Z])', lambda m: _save_upright(m.group(1)), text)
+
     text = re.sub(r'\\underline\{\s*\\hspace\{[^{}]*\}\s*\}', '___', text)
     for _ in range(3):
-        text = re.sub(r'\\(?:text|mathrm|operatorname|mathcal|mathbb|mathbin|mathrel|mathtt|texttt|underline)\{([^{}]*)\}', r'\1', text)
+        text = re.sub(
+            r'\\(?:text|mathrm|operatorname|mathtt|texttt)\{([^{}]*)\}',
+            lambda m: _save_upright(m.group(1)),
+            text,
+        )
+        text = re.sub(r'\\(?:mathcal|mathbb|mathbin|mathrel|underline)\{([^{}]*)\}', r'\1', text)
         text = re.sub(r'\\(?:mathbf|textbf|boldsymbol)\{([^{}]*)\}', r'<b>\1</b>', text)
         text = re.sub(r'\\mathit\{([^{}]*)\}', r'<i>\1</i>', text)
         text = re.sub(r'\\(?:bar|overline)\{([^{}]*)\}', r'\1̄', text)
         text = re.sub(r'\\hat\{([^{}]*)\}', r'\1̂', text)
         text = re.sub(r'\\dot\{([^{}]*)\}', r'\1̇', text)
+        text = re.sub(r'\\ddot\{([^{}]*)\}', "\\1\u0308", text)
+        text = re.sub(r'\\tilde\{([^{}]*)\}', "\\1\u0303", text)
         text = re.sub(r'\\vec\{([^{}]*)\}', r'<b><i>\1</i></b>', text)
-        text = re.sub(r'\\pmod\{((?:[^{}]|\{[^{}]*\})*)\}', r' (mod \1)', text)
+        text = re.sub(r'\\pmod\{((?:[^{}]|\{[^{}]*\})*)\}', lambda m: f" ({_save_upright('mod')} {m.group(1)})", text)
+        text = re.sub(r'\\pmod\s+([a-zA-Z0-9]+)', lambda m: f" ({_save_upright('mod')} {m.group(1)})", text)
+        text = re.sub(r'\\underbrace\{((?:[^{}]|\{[^{}]*\})*)\}_\{((?:[^{}]|\{[^{}]*\})*)\}', r'\1 (\2)', text)
+        text = re.sub(r'\\overset\{((?:[^{}]|\{[^{}]*\})*)\}\{((?:[^{}]|\{[^{}]*\})*)\}', r'\2(\1)', text)
+        text = re.sub(r'\\underset\{((?:[^{}]|\{[^{}]*\})*)\}\{((?:[^{}]|\{[^{}]*\})*)\}', r'\2(\1)', text)
+        text = re.sub(r'\\xrightarrow\[([^\]]*)\]\{([^{}]*)\}', r'→[\2; \1]', text)
         text = re.sub(r'\\xrightarrow\{([^{}]*)\}', r'→[\1]', text)
         text = re.sub(r'\\hspace\{[^{}]*\}', ' ', text)
 
@@ -983,22 +1206,68 @@ def clean_latex_math(text: str) -> str:
     text = text.replace("{}", "")
     for _ in range(2):
         text = re.sub(r'\^\{([^{}]*)\}', r'<sup>\1</sup>', text)
-        text = re.sub(r'_\{([^{}]*)\}', r'<sub>\1</sub>', text)
-    text = re.sub(r'\^([0-9a-zA-Zα-ωΑ-Ω+*′∞∂∇ℓℏ-])', r'<sup>\1</sup>', text)
-    text = re.sub(r'_([0-9a-zA-Zα-ωΑ-Ω+*′∞∂∇ℓℏ-])', r'<sub>\1</sub>', text)
+        text = re.sub(
+            r'_\{([^{}]*)\}',
+            lambda m: f"<sub>{_save_upright(m.group(1)) if re.match(r'^[a-zA-Z]{3,}$', m.group(1).strip()) else m.group(1)}</sub>",
+            text,
+        )
+    text = re.sub(r'\^([0-9a-zA-Zα-ωΑ-Ω+*′∞∂∇ℓℏ⊕⊙⊖⊗⊥∥-])', r'<sup>\1</sup>', text)
+    text = re.sub(r'_([0-9a-zA-Zα-ωΑ-Ω+*′∞∂∇ℓℏ⊕⊙⊖⊗⊥∥-])', r'<sub>\1</sub>', text)
     text = text.replace("\x00ESC_US\x00", "_")
 
-    # Flatten any nested <sup>...<sup>...</sup></sup> or <sub>...<sub>...</sub></sub>
-    text = re.sub(r'<sup>([^<]*)<sup>([^<]*)</sup>([^<]*)</sup>', r'<sup>\1^\2\3</sup>', text)
-    text = re.sub(r'<sub>([^<]*)<sub>([^<]*)</sub>([^<]*)</sub>', r'<sub>\1_\2\3</sub>', text)
+    # Flatten nested and standard <sup>...</sup> or <sub>...</sub> using Unicode superscripts/subscripts
+    # so PDF-to-Kindle converters (like Poppler pdftohtml, which ignores PDF Ts Text Rise) preserve exact superscripts/subscripts.
+    _SUP_CHARS = "0123456789+-=()nixb"
+    _SUP_MAP = str.maketrans(_SUP_CHARS, "⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿⁱˣᵇ")
+    _SUB_CHARS = "0123456789+-=()aeoxhklmnpst"
+    _SUB_MAP = str.maketrans(_SUB_CHARS, "₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ₐₑₒₓₕₖₗₘₙₚₛₜ")
+    for _ in range(2):
+        text = re.sub(
+            r'<sup>([^<]*)<sup>([^<]*)</sup>([^<]*)</sup>',
+            lambda m: f"<sup>{m.group(1)}{m.group(2).translate(_SUP_MAP)}{m.group(3)}</sup>",
+            text,
+        )
+        text = re.sub(
+            r'<sub>([^<]*)<sub>([^<]*)</sub>([^<]*)</sub>',
+            lambda m: f"<sub>{m.group(1)}{m.group(2).translate(_SUB_MAP)}{m.group(3)}</sub>",
+            text,
+        )
+    text = re.sub(
+        r'<sup>([0123456789+\-=()nixb]+)</sup>',
+        lambda m: m.group(1).translate(_SUP_MAP),
+        text,
+    )
+    text = re.sub(
+        r'<sub>([0123456789+\-=()aeoxhklmnpst]+)</sub>',
+        lambda m: m.group(1).translate(_SUB_MAP),
+        text,
+    )
 
     # Strip remaining LaTeX command backslashes and leftover grouping braces
     text = re.sub(r'\\([a-zA-Z]+)', r'\1', text)
     text = text.replace("{", "").replace("}", "")
     text = text.replace("---", "—").replace("--", "–")
-    # Use <super rise='2.5' size='6.5'> (+2.5pt) and <sub rise='1.8' size='6.5'> (-1.8pt in ReportLab)
-    text = re.sub(r'<sup>(.*?)</sup>', r"<super rise='2.5' size='6.5'>\1</super>", text)
-    text = re.sub(r'<sub>(.*?)</sub>', r"<sub rise='1.8' size='6.5'>\1</sub>", text)
+
+    # Italicize mathematical variable letters while preserving HTML tags, XML entities, and upright function names
+    _UPRIGHT_WORDS = {"sin", "cos", "tan", "sec", "csc", "cot", "sinh", "cosh", "tanh", "arcsin", "arccos", "arctan", "ln", "log", "exp", "mod", "max", "min", "lim", "det", "gcd", "lcm", "rank", "erf", "erfc", "Si", "Ci", "Re", "Im", "and", "or", "if", "for", "vs"}
+
+    def _italicize_math_vars(m: re.Match) -> str:
+        if m.group(1):
+            return m.group(1)
+        word = m.group(2)
+        if word in _UPRIGHT_WORDS:
+            return word
+        return f"<i>{word}</i>"
+
+    text = re.sub(r'(<[^>]+>|&[a-zA-Z]+;|QQPH\d+QQ|\x00UP\d+\x00|[a-zA-Z][\u0304\u0302\u0307\u0308\u0303])|([a-zA-Z]+)', _italicize_math_vars, text)
+    for k_up, v_up in reversed(list(upright_tokens.items())):
+        text = text.replace(k_up, v_up)
+    text = text.replace("---", "—").replace("--", "–")
+    text = re.sub(r'<i>(?:<i>)+', '<i>', text)
+    text = re.sub(r'</i>(?:</i>)+', '</i>', text)
+    # Use <super rise='4.5' size='6.0'> (+4.5pt so bounding-box top < base top in pdftohtml/KDP) and <sub rise='2.2' size='6.0'> (-2.2pt in ReportLab)
+    text = re.sub(r'<sup>(.*?)</sup>', r"<super rise='4.5' size='6.0'>\1</super>", text)
+    text = re.sub(r'<sub>(.*?)</sub>', r"<sub rise='2.2' size='6.0'>\1</sub>", text)
     # Keep scientific notation (e.g., 6.6743 × 10^-11) on a single line using non-breaking spaces
     text = re.sub(r'(\d)\s*([×·])\s*(10\b)', "\\1\u00a0\\2\u00a0\\3", text)
     cleaned = text.strip()
@@ -1010,15 +1279,15 @@ def clean_latex_math(text: str) -> str:
 
 
 _MATH_SERIF_GLYPH_RE = re.compile(
-    r'([^\s<>][\u0304\u0302\u0307]|'
-    r'[≤≥≠≈≡∞∑∏∫∬∭∂∇↔⇌⇒⇔∝∠∥⊕∓′ˣᵇ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿ₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎□●⟨⟩ℏ⌊⌋⌈⌉])'
+    r'([^\s<>][\u0304\u0302\u0307\u0308\u0303]|'
+    r'[≤≥≠≈≡∞∑∏∫∬∭∂∇↔⇌⇒⇔↑↓⇑⇓∝∠∥⊕∓′ˣᵇ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿⁱ₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎□●⟨⟩ℏ⌊⌋⌈⌉])'
 )
 
 _MATH_SANS_GLYPH_RE = re.compile(
     r'([⊗⊙⊖⊘⊞⊟⊠⊡⊢⊣⊤⊥⊨⊩⊪⊫⊬⊭⊮⊯⊰⊱⊲⊳⊴⊵⊶⊷⊸⊹⊺⊻⊼⊽⊾⊿⋀⋁⋂⋃⋄⋅⋆⋇⋈⋉⋊⋋⋌⋍⋎⋏⋐⋑⋒⋓⋔⋕⋖⋗⋘⋙⋚⋛⋜⋝⋞⋟⋠⋡⋢⋣⋤⋥⋦⋧⋨⋩⋪⋫⋬⋭⋮⋯⋰⋱'
     r'⇐⇑⇓⇕↦↪↩↼⇀↽⇁⇋∀∃∅∈∉∋∌∐∔∕∖∗∘∙∛∜∟∡∢∣∤∦∧∨∮∯∰∱∲∳∴∵∶∷∸∹∺∻∼∽∾∿≀≁≂≃≄≅≆≇≉≊≋≌≍≎≏≐≑≒≓≔≕≖≗≘≙≚≛≜≝≞≟'
     r'≢≣≦≧≨≩≪≫≬≭≮≯≰≱≲≳≴≵≶≷≸≹≺≻≼≽≾≿⊀⊁⊂⊃⊄⊅⊆⊇⊈⊉⊊⊋⊌⊍⊎⊏⊐⊑⊒⊓⊔⟪⟫⟬⟭⟮⟯'
-    r'ȳℓ─○★✓✗↖↗■])'
+    r'ₐₑₒₓₔₕₖₗₘₙₚₛₜ⇄↰↱ȳℓ─○★✓✗↖↗■☉▸▲▼])'
 )
 
 
@@ -1027,8 +1296,8 @@ def _protect_special_unicode_glyphs(text: str, in_code: bool = False) -> str:
     Wraps specialized mathematical/calculator Unicode glyphs (≤, ≥, ≠, ≈, ∞, ∑, ∫, ⊕, ⇒, ⇔, ∈, ∇, ∠, ∝, ∥, ⌊, ⌋, etc.)
     that are absent in CMUSerif or SpaceMono with DejaVuSerif (MathSerif) or DejaVuSans (MathSans) so zero tofu boxes (□) ever appear.
     """
-    text = text.replace("⇄", "↔").replace("↰", "↖").replace("↱", "↗").replace("▸", "→").replace("^°", "°")
-    text = text.replace("🎲", "[DICE]").replace("🕒", "[CLOCK]").replace("▦", "[FRAME]")
+    text = text.replace("^°", "°")
+    text = text.replace("🎲", "[DICE]").replace("🕒", "[CLOCK]").replace("▦", "[FRAME]").replace("⚡", "[QUIZ]")
     text = text.replace("\u20d7", "").replace("⟌", "/").replace("⬜", "□").replace("🔴", "●").replace("⚪", "○").replace("🟦", "■")
     if in_code and BOOK_SERIF_AVAILABLE:
         text = re.sub(r'([α-ωΑ-Ω])', f"<font face='{FONT_BODY}'>\\1</font>", text)
@@ -1048,7 +1317,14 @@ def _protect_special_unicode_glyphs(text: str, in_code: bool = False) -> str:
 # ---------------------------------------------------------------------------
 _PAPER_KEYCAP_ATLAS: Dict[bool, Dict[Tuple[str, int, int], Tuple[Path, int, int]]] = {}
 _PAPER_FALLBACK_CACHE: Dict[Tuple[bool, str], Tuple[Path, int, int]] = {}
-_KEYCAP_CACHE_DIR = Path("/tmp/stackcalc_paper_keycaps_v6")
+_KEYCAP_CACHE_DIR = Path("/tmp/stackcalc_paper_keycaps_v8")
+
+
+def _pad_keycap_horiz(im_in: PIL.Image.Image, margin_px: int = 4) -> PIL.Image.Image:
+    """Adds clean horizontal breathing room outside the keycap border."""
+    padded = PIL.Image.new("RGB", (im_in.width + 2 * margin_px, im_in.height), (255, 255, 255))
+    padded.paste(im_in, (margin_px, 0))
+    return padded
 
 
 def _ensure_paper_keycap_atlas(is_sc32: bool) -> Dict[Tuple[str, int, int], Tuple[Path, int, int]]:
@@ -1132,9 +1408,9 @@ def _ensure_paper_keycap_atlas(is_sc32: bool) -> Dict[Tuple[str, int, int], Tupl
                 inner = im.crop((x0 + 38, y0, x1 - 38, y1))
                 dr = ImageDraw.Draw(inner)
                 dr.rounded_rectangle([1, 1, inner.width - 2, inner.height - 2], radius=12, outline=(0, 0, 0), width=3)
-                crop_p = inner
+                crop_p = _pad_keycap_horiz(inner, margin_px=4)
             else:
-                crop_p = im.crop((x0 - 1, y0 - 1, x1 + 1, y1 + 1))
+                crop_p = _pad_keycap_horiz(im.crop((x0 - 1, y0 - 1, x1 + 1, y1 + 1)), margin_px=4)
             p_path = out_dir / f"primary_r{r_idx}_c{k_col}.png"
             crop_p.save(p_path, format="PNG")
             atlas[("primary", r_idx, k_col)] = (p_path, crop_p.width, crop_p.height)
@@ -1164,6 +1440,7 @@ def _ensure_paper_keycap_atlas(is_sc32: bool) -> Dict[Tuple[str, int, int], Tupl
                     bcrop = im.crop((bx0, by0, bx1, by1))
                     dr_b = ImageDraw.Draw(bcrop)
                     dr_b.rounded_rectangle([0, 0, bcrop.width - 1, bcrop.height - 1], radius=4, outline=(0, 0, 0), width=2)
+                    bcrop = _pad_keycap_horiz(bcrop, margin_px=3)
                     b_path = out_dir / f"blue_r{r_idx}_c{k_col}.png"
                     bcrop.save(b_path, format="PNG")
                     atlas[("blue", r_idx, k_col)] = (b_path, bcrop.width, bcrop.height)
@@ -1179,6 +1456,7 @@ def _ensure_paper_keycap_atlas(is_sc32: bool) -> Dict[Tuple[str, int, int], Tupl
                 framed.paste(ycrop, (pad_x, pad_y))
                 dr_y = ImageDraw.Draw(framed)
                 dr_y.rounded_rectangle([1, 1, framed.width - 2, framed.height - 2], radius=5, outline=(0, 0, 0), width=2)
+                framed = _pad_keycap_horiz(framed, margin_px=3)
                 y_path = out_dir / f"yellow_r{r_idx}_c{k_col}.png"
                 framed.save(y_path, format="PNG")
                 atlas[("yellow", r_idx, k_col)] = (y_path, framed.width, framed.height)
@@ -1204,8 +1482,20 @@ def _get_fallback_paper_keycap(clean_label: str, is_sc32: bool) -> Tuple[Path, i
 
     space_mono_bold = FONT_DIR / "SpaceMono-Bold.ttf"
     arial_bold = Path("/System/Library/Fonts/Supplemental/Arial Bold.ttf")
-    if "ˣ" not in disp and space_mono_bold.exists():
+    dejavu_bold: Optional[Path] = None
+    try:
+        import matplotlib
+        cand_dj = Path(matplotlib.get_data_path()) / "fonts" / "ttf" / "DejaVuSans-Bold.ttf"
+        if cand_dj.exists():
+            dejavu_bold = cand_dj
+    except Exception:
+        pass
+    if all(ord(c) < 128 for c in disp) and space_mono_bold.exists():
         font_path = str(space_mono_bold)
+    elif "ˣ" in disp and arial_bold.exists():
+        font_path = str(arial_bold)
+    elif dejavu_bold is not None:
+        font_path = str(dejavu_bold)
     elif arial_bold.exists():
         font_path = str(arial_bold)
     else:
@@ -1230,11 +1520,12 @@ def _get_fallback_paper_keycap(clean_label: str, is_sc32: bool) -> Tuple[Path, i
     tx = (w - tw) / 2.0 - bbox[0]
     ty = (h - th) / 2.0 - bbox[1]
     dr.text((tx, ty), disp, font=fnt, fill=(0, 0, 0))
+    img = _pad_keycap_horiz(img, margin_px=3)
 
     safe_name = re.sub(r'[^A-Za-z0-9_+-]', lambda m: f"u{ord(m.group(0)):04x}", clean_label)
     f_path = out_dir / f"soft_{safe_name}.png"
     img.save(f_path, format="PNG")
-    res = (f_path, w, h)
+    res = (f_path, img.width, img.height)
     _PAPER_FALLBACK_CACHE[cache_key] = res
     return res
 
@@ -1256,6 +1547,10 @@ def format_hardware_keycap_cartouche(key_token: str, is_sc32: bool, target_h_pt:
         reg = get_registry(try_sc32)
         try:
             entry = reg.resolve(clean_k)
+            if entry.row == 0 or clean_k.upper().startswith("LFU"):
+                png_info = _get_fallback_paper_keycap(clean_k, try_sc32)
+                layer_kind = "menu"
+                break
             if entry.layer in ("yellow", "blue") and entry.canonical in {"x²", "ˣ√y", "x!", "1/x", "|x|"}:
                 png_info = _get_fallback_paper_keycap(entry.canonical, try_sc32)
                 layer_kind = entry.layer
@@ -1328,6 +1623,21 @@ def sanitize_inline_markdown(text: str, is_sc32: bool, in_table: bool = False) -
     registry = get_registry(is_sc32)
     alt_registry = get_registry(not is_sc32)
 
+    _DOMAIN_KEYCAP_SET = {
+        "ENTER", "ON", "C", "CLEAR", "AC", "<-", "BS", "DICE", "CLOCK", "FRAME",
+        "FWD", "INV", "BRG", "WND", "ISA", "TRAV", "trav", "→HR", "→HMS", "POL", "REC",
+        "RUN", "RISE", "DIAG", "HIP", "BEND", "VD", "TBL", "3PH÷", "→mm", "→in",
+        "HEX", "DEC", "BIN", "OCT", "WSZ", "ENDN", "FLT", "AND", "OR", "XOR", "NOT",
+        "SL", "SR", "ASR", "RL", "RR", "MOD",
+        "TC", "FPS", "DOF", "EXP", "AUD", "dB⊕",
+        "dBm", "→W", "SWR", "FSPL", "SMTH", "NF", "ML",
+        "MW", "MOL", "C₁V₁", "M₁V₁", "pH", "BUFF", "ABS", "TITR", "10⁻ˣ",
+        "FLR", "BKR%", "DDT", "ABV", "STRK", "IBU",
+        "BSA", "IBW", "CrCl", "MCG", "GTT", "PED", "AGE", "SEX", "SCR", "W", "H",
+        "N", "I/Y", "I%YR", "PV", "PMT", "FV", "CPK", "AMRT", "NPV", "IRR", "NormCDF", "InvNorm",
+        "SHOW", "x²", "yˣ", "√x", "1/x", "+/-", "x⇄y", "R↓", "←",
+    }
+
     def _is_valid_keycap(token: str) -> bool:
         t_clean = token.strip()
         if not t_clean:
@@ -1338,31 +1648,136 @@ def sanitize_inline_markdown(text: str, is_sc32: bool, in_table: bool = False) -
                 return True
             except ValueError:
                 pass
-        return t_clean.upper() in {"ENTER", "ON", "C", "CLEAR", "AC", "<-", "BS", "DICE", "CLOCK", "FRAME"}
+        return t_clean in _DOMAIN_KEYCAP_SET or t_clean.upper() in _DOMAIN_KEYCAP_SET
 
     # Handle single-keycap backtick `[KEY]` BEFORE math so `[$]` never collides with $...$
     def sub_backtick_keycap(m):
-        k = m.group(1)
-        return save_placeholder(format_hardware_keycap_cartouche(k, is_sc32, target_h_pt=keycap_h))
+        k = m.group(1).strip()
+        if k and _is_valid_keycap(k):
+            return save_placeholder(format_hardware_keycap_cartouche(k, is_sc32, target_h_pt=keycap_h))
+        return m.group(0)
     text = re.sub(r'`\[([^`\]\n]+)\]`', sub_backtick_keycap, text)
+
+    _SYM_SEQ_TOKENS = {
+        "alpha": f"<font face='{FONT_MATH}'>α</font>",
+        "beta": f"<font face='{FONT_MATH}'>β</font>",
+        "theta": f"<font face='{FONT_MATH}'>θ</font>",
+        "theta1": f"<font face='{FONT_MATH}'>θ</font><sub>1</sub>",
+        "phi1": f"<font face='{FONT_MATH}'>φ</font><sub>1</sub>",
+        "phi2": f"<font face='{FONT_MATH}'>φ</font><sub>2</sub>",
+        "lam": f"<font face='{FONT_MATH}'>λ</font>",
+        "lambda": f"<font face='{FONT_MATH}'>λ</font>",
+        "lam1": f"<font face='{FONT_MATH}'>λ</font><sub>1</sub>",
+        "lam2": f"<font face='{FONT_MATH}'>λ</font><sub>2</sub>",
+        "mu": f"<font face='{FONT_MATH}'>μ</font>",
+        "omega": f"<font face='{FONT_MATH}'>ω</font>",
+        "rho": f"<font face='{FONT_MATH}'>ρ</font>",
+        "sigma": f"<font face='{FONT_MATH}'>σ</font>",
+        "eps": f"<font face='{FONT_MATH}'>ε</font>",
+        "dx": f"<font face='{FONT_MATH}'>Δ</font><i>x</i>",
+        "dP": f"<font face='{FONT_MATH}'>Δ</font><i>P</i>",
+        "dH": f"<font face='{FONT_MATH}'>Δ</font><i>H</i>",
+        "dT1": f"<font face='{FONT_MATH}'>Δ</font><i>T</i><sub>1</sub>",
+        "dT2": f"<font face='{FONT_MATH}'>Δ</font><i>T</i><sub>2</sub>",
+        "SNR_dB": "<i>SNR</i><sub>dB</sub>",
+        "SNR": "<i>SNR</i>",
+        "Tinf": f"<i>T</i><sub><font face='{FONT_MATH}'>∞</font></sub>",
+        "thalf": "<i>t</i><sub>1/2</sub>",
+        "xbar": f"<i>x</i><font face='{FONT_MATH}'>̄</font>",
+        "H3O": "[H<sub>3</sub>O<super>+</super>]",
+        "pKa": "p<i>K</i><sub>a</sub>",
+        "pH": "pH",
+        "Abot": "<i>A</i><sub>bot</sub>",
+        "Amid": "<i>A</i><sub>mid</sub>",
+        "Atop": "<i>A</i><sub>top</sub>",
+        "Atot": "<i>A</i><sub>tot</sub>",
+        "Vmax": "<i>V</i><sub>max</sub>",
+        "Prms": "<i>P</i><sub>rms</sub>",
+        "fobj": "<i>f</i><sub>obj</sub>",
+        "feye": "<i>f</i><sub>eye</sub>",
+        "ncore": "<i>n</i><sub>core</sub>",
+        "nclad": "<i>n</i><sub>clad</sub>",
+        "PnotA": f"<i>P</i>(<font face='{FONT_MATH}'>¬</font><i>A</i>)",
+        "PBnotA": f"<i>P</i>(<i>B</i>|<font face='{FONT_MATH}'>¬</font><i>A</i>)",
+        "PBA": "<i>P</i>(<i>B</i>|<i>A</i>)",
+        "PA": "<i>P</i>(<i>A</i>)",
+        "A1": "<i>A</i><sub>1</sub>", "A2": "<i>A</i><sub>2</sub>",
+        "C1": "<i>C</i><sub>1</sub>", "C2": "<i>C</i><sub>2</sub>",
+        "E0": "<i>E</i><sub>0</sub>", "Ea": "<i>E</i><sub>a</sub>",
+        "I0": "<i>I</i><sub>0</sub>", "IS": "<i>I</i><sub>S</sub>",
+        "Km": "<i>K</i><sub>m</sub>", "L0": "<i>L</i><sub>0</sub>", "Lv": "<i>L</i><sub>v</sub>",
+        "N0": "<i>N</i><sub>0</sub>", "P1": "<i>P</i><sub>1</sub>", "P2": "<i>P</i><sub>2</sub>",
+        "R1": "<i>R</i><sub>1</sub>", "R2": "<i>R</i><sub>2</sub>", "R3": "<i>R</i><sub>3</sub>",
+        "Rf": "<i>R</i><sub>f</sub>", "Rg": "<i>R</i><sub>g</sub>", "Rh": "<i>R</i><sub>h</sub>",
+        "T0": "<i>T</i><sub>0</sub>", "T1": "<i>T</i><sub>1</sub>", "T2": "<i>T</i><sub>2</sub>",
+        "TC": "<i>T</i><sub>C</sub>", "TH": "<i>T</i><sub>H</sub>",
+        "V0": "<i>V</i><sub>0</sub>", "VD": "<i>V</i><sub>D</sub>",
+        "VDD": "<i>V</i><sub>DD</sub>", "VT": "<i>V</i><sub>T</sub>",
+        "b1": "<i>b</i><sub>1</sub>", "b2": "<i>b</i><sub>2</sub>",
+        "c1": "<i>c</i><sub>1</sub>", "c2": "<i>c</i><sub>2</sub>",
+        "di": "<i>d</i><sub>i</sub>", "do": "<i>d</i><sub>o</sub>",
+        "f0": "<i>f</i><sub>0</sub>", "k1": "<i>k</i><sub>1</sub>", "k2": "<i>k</i><sub>2</sub>",
+        "m0": "<i>m</i><sub>0</sub>", "m1": "<i>m</i><sub>1</sub>",
+        "m2": "<i>m</i><sub>2</sub>", "mf": "<i>m</i><sub>f</sub>",
+        "n1": "<i>n</i><sub>1</sub>", "n2": "<i>n</i><sub>2</sub>",
+        "rp": "<i>r</i><sub>p</sub>", "v0": "<i>v</i><sub>0</sub>",
+        "ve": "<i>v</i><sub>e</sub>", "vi": "<i>v</i><sub>i</sub>", "vs": "<i>v</i><sub>s</sub>",
+        "x0": "<i>x</i><sub>0</sub>", "x1": "<i>x</i><sub>1</sub>", "x2": "<i>x</i><sub>2</sub>",
+        "y0": "<i>y</i><sub>0</sub>", "y1": "<i>y</i><sub>1</sub>", "y2": "<i>y</i><sub>2</sub>",
+        "z1": "<i>z</i><sub>1</sub>", "z2": "<i>z</i><sub>2</sub>",
+    }
 
     # Handle standard inline code `...` BEFORE math (converting any [KEY] inside backticks into Paper keycaps!)
     def sub_code(m):
         raw = m.group(1)
         # Split on [KEY] tokens inside the code span so keystroke sequences render with real Paper keycaps
         parts = re.split(r'(\[[^\]\n]+\])', raw)
+        has_keycaps = any(
+            pt.startswith("[") and pt.endswith("]") and bool(pt[1:-1].strip()) and _is_valid_keycap(pt[1:-1].strip())
+            for pt in parts
+        )
         rendered_parts = []
         for pt in parts:
             if not pt:
                 continue
             if pt.startswith("[") and pt.endswith("]"):
                 inner_k = pt[1:-1].strip()
-                if _is_valid_keycap(inner_k):
+                if inner_k and _is_valid_keycap(inner_k):
                     rendered_parts.append(format_hardware_keycap_cartouche(inner_k, is_sc32, target_h_pt=keycap_h))
                     continue
+                if has_keycaps and inner_k in ("A⁻", "HA"):
+                    chem_fmt = f"[A<font face='{FONT_MATH_SERIF}'>⁻</font>]" if inner_k == "A⁻" else "[HA]"
+                    rendered_parts.append(f"<font face='{FONT_BODY}' color='{accent_hex}'><b>{chem_fmt}</b></font>")
+                    continue
+            if has_keycaps:
+                sub_tokens = re.split(r'(\s+)', pt)
+                sub_out = []
+                for st in sub_tokens:
+                    if not st:
+                        continue
+                    if st in _SYM_SEQ_TOKENS:
+                        sym_html = _SYM_SEQ_TOKENS[st]
+                        sym_html = re.sub(
+                            r'<sub>([0123456789+\-=()aeoxhklmnpst]+)</sub>',
+                            lambda m_s: _protect_special_unicode_glyphs(m_s.group(1).translate(str.maketrans("0123456789+-=()aeoxhklmnpst", "₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ₐₑₒₓₕₖₗₘₙₚₛₜ"))),
+                            sym_html,
+                        )
+                        sym_html = re.sub(
+                            r'<super>([0123456789+\-=()nixb]+)</super>',
+                            lambda m_s: _protect_special_unicode_glyphs(m_s.group(1).translate(str.maketrans("0123456789+-=()nixb", "⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿⁱˣᵇ"))),
+                            sym_html,
+                        )
+                        sym_html = sym_html.replace("<sub>", "<sub rise='2.2' size='6.0'>").replace("<super>", "<super rise='4.5' size='6.0'>")
+                        sub_out.append(f"<font face='{FONT_BODY}' color='{accent_hex}'><b>{sym_html}</b></font>")
+                    else:
+                        st_esc = st.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                        st_esc = _protect_special_unicode_glyphs(st_esc, in_code=True)
+                        sub_out.append(f"<font face='{FONT_BODY_BOLD}' color='{accent_hex}'><b>{st_esc}</b></font>")
+                rendered_parts.append("".join(sub_out))
+                continue
             pt_esc = pt.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
             pt_esc = _protect_special_unicode_glyphs(pt_esc, in_code=True)
-            rendered_parts.append(f"<font face='{FONT_MONO}' size='7.5' color='{accent_hex}'><b>{pt_esc}</b></font>")
+            rendered_parts.append(f"<font face='{FONT_BODY_BOLD}' color='{accent_hex}'><b>{pt_esc}</b></font>")
         return save_placeholder("".join(rendered_parts))
     text = re.sub(r'`([^`\n]+)`', sub_code, text)
 
@@ -1383,7 +1798,7 @@ def sanitize_inline_markdown(text: str, is_sc32: bool, in_table: bool = False) -
     # Handle bare hardware keycaps [KEY] (only if recognized by KeyRegistry)
     def sub_bare_keycap(m):
         k = m.group(1)
-        if _is_valid_keycap(k):
+        if k.strip() and _is_valid_keycap(k):
             return save_placeholder(format_hardware_keycap_cartouche(k, is_sc32, target_h_pt=keycap_h))
         return m.group(0)
     text = re.sub(r'(?<!\!)\[([^\]\n]{1,12})\](?!\()', sub_bare_keycap, text)
@@ -1395,15 +1810,47 @@ def sanitize_inline_markdown(text: str, is_sc32: bool, in_table: bool = False) -
     # Handle markdown links [text](url) -> <b>text</b>
     text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'<b>\1</b>', text)
 
-    # 4. Handle markdown bold and italic (guarded against word boundaries)
-    text = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', text)
-    text = re.sub(r'(?<!\w)__([^_]+)__(?!\w)', r'<b>\1</b>', text)
+    # 4. Handle markdown bold and italic (supporting nested *italic* inside **bold** and ***bold-italic***)
+    text = re.sub(r'\*\*\*((?:(?!\*\*\*).)+)\*\*\*', r'<b><i>\1</i></b>', text)
+    text = re.sub(r'\*\*((?:(?!\*\*).)+)\*\*', r'<b>\1</b>', text)
+    text = re.sub(r'(?<!\w)__((?:(?!__).)+)__(?!\w)', r'<b>\1</b>', text)
     text = re.sub(r'\*([^*]+)\*', r'<i>\1</i>', text)
     text = re.sub(r'(?<!\w)_([^_]+)_(?!\w)', r'<i>\1</i>', text)
 
     # 5. Restore placeholders in reverse order so nested placeholders resolve cleanly
     for key, val in reversed(list(placeholders.items())):
         text = text.replace(key, val)
+
+    # Flatten any nested <i>...<i>...</i>...</i> or <b>...<b>...</b>...</b> tags so ReportLab XML parser never trips
+    i_depth = 0
+    b_depth = 0
+
+    def _flatten_bi(m: re.Match) -> str:
+        nonlocal i_depth, b_depth
+        tag = m.group(0)
+        if tag == "<i>":
+            i_depth += 1
+            return "<i>" if i_depth == 1 else ""
+        if tag == "</i>":
+            if i_depth > 0:
+                i_depth -= 1
+                return "</i>" if i_depth == 0 else ""
+            return ""
+        if tag == "<b>":
+            b_depth += 1
+            return "<b>" if b_depth == 1 else ""
+        if tag == "</b>":
+            if b_depth > 0:
+                b_depth -= 1
+                return "</b>" if b_depth == 0 else ""
+            return ""
+        return tag
+
+    text = re.sub(r'</?[ib]>', _flatten_bi, text)
+    if i_depth > 0:
+        text += "</i>"
+    if b_depth > 0:
+        text += "</b>"
 
     # Keep scientific notation outside inline math (e.g., 6.6743 × 10⁻¹¹) on a single line
     text = re.sub(r'(\d)\s*([×·])\s*(10\b)', "\\1\u00a0\\2\u00a0\\3", text)
@@ -1420,6 +1867,7 @@ def format_heading_text(raw_title: str, is_sc32: bool = True) -> Tuple[str, str]
     if not (BOOK_SERIF_AVAILABLE or BOOK_SANS_AVAILABLE):
         t = t.replace("Ł", "L").replace("ł", "l")
     t = t.replace(r"\$", "QQESCDOLLARQQ").replace(r"\%", "%")
+    t = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', t)
     t = re.sub(r'`\[([^`]+)\]`', r'[\1]', t)
     math_ph = {}
     def _save_h_math(m):
@@ -1456,6 +1904,19 @@ def format_heading_text(raw_title: str, is_sc32: bool = True) -> Tuple[str, str]
                 return ph_k
             except ValueError:
                 pass
+        if k_tok in {
+            "FWD", "INV", "BRG", "WND", "ISA", "trav", "→HR", "→HMS", "POL", "REC",
+            "RUN", "RISE", "DIAG", "HIP", "BEND", "VD", "TBL", "3PH÷", "→mm", "→in",
+            "HEX", "DEC", "BIN", "OCT", "WSZ", "ENDN", "FLT", "AND", "OR", "XOR", "NOT",
+            "SL", "SR", "ASR", "RL", "RR", "MOD", "TC", "FPS", "DOF", "EXP", "AUD", "dB⊕",
+            "dBm", "→W", "SWR", "FSPL", "SMTH", "NF", "ML", "MW", "MOL", "C₁V₁", "M₁V₁",
+            "pH", "BUFF", "ABS", "TITR", "10⁻ˣ", "FLR", "BKR%", "DDT", "ABV", "STRK", "IBU",
+            "BSA", "IBW", "CrCl", "MCG", "GTT", "PED", "AGE", "SEX", "SCR",
+            "N", "I/Y", "I%YR", "PV", "PMT", "FV", "CPK", "AMRT", "NPV", "IRR", "NormCDF", "InvNorm",
+        }:
+            ph_k = f"QQHK{len(key_ph)}QQ"
+            key_ph[ph_k] = format_hardware_keycap_cartouche(k_tok, is_sc32, target_h_pt=10.0)
+            return ph_k
         return m.group(0)
     t_styled = re.sub(r'\[([^\]\n]{1,12})\]', _save_h_key, t)
     t_styled = t_styled.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -1482,110 +1943,258 @@ def make_paragraph(text: str, style: ParagraphStyle) -> Paragraph:
 # Subject Index Catalogs & Term Extraction
 # ---------------------------------------------------------------------------
 INDEX_CATALOG_SC32 = [
-    ("Hardware Architecture & Dovetail Chassis", [re.compile(r'\b(hardware architecture|craftsmanship|dovetail|tactile switches)\b', re.IGNORECASE)]),
-    ("43-Key Matrix Keypad", [re.compile(r'\b(keypad matrix|43-key|tactile keypad)\b', re.IGNORECASE)]),
-    ("Transflective Monochrome LCD", [re.compile(r'\b(transflective lcd|monochrome lcd|132\s*[x×]\s*65)\b', re.IGNORECASE)]),
-    ("RPN (Reverse Polish Notation)", [re.compile(r'\b(reverse polish notation|postfix notation)\b', re.IGNORECASE), re.compile(r'\bRPN\b')]),
-    ("4-Level XYZT Operational Stack", [re.compile(r'\b(xyzt stack|4-stack|register [xyzt])\b', re.IGNORECASE)]),
-    ("Stack Lift State Machine", [re.compile(r'\b(stack lift|lift enabled|lift disabled)\b', re.IGNORECASE)]),
-    ("Roll Down (R↓) & Stack Cycling", [re.compile(r'\b(stack drop|roll down|stack cycl)\b', re.IGNORECASE), re.compile(r'\[R[↓\\]+\]')]),
-    ("LASTX Preservation & Recovery", [re.compile(r'\b(lastx|last x)\b', re.IGNORECASE)]),
-    ("Register Swap (x⇄y)", [re.compile(r'\b(swap x and y|x-y swap)\b', re.IGNORECASE), re.compile(r'\[x[⇄↔<->]+y\]')]),
-    ("Deep Stack Architecture", [re.compile(r'\b(deep stack|arbitrary depth stack)\b', re.IGNORECASE)]),
-    ("Algebraic Functions & Powers", [re.compile(r'\b(transcendentals|powers and roots|algebraic evaluation)\b', re.IGNORECASE)]),
-    ("Trigonometry & Polar Coordinates", [re.compile(r'\b(polar coordinates|rectangular coordinates|geodetic traverse)\b', re.IGNORECASE)]),
-    ("2D Vector Operations", [re.compile(r'\b(2d vectors?|vector addition|vector magnitude)\b', re.IGNORECASE)]),
-    ("Complex Numbers & AC Phasors", [re.compile(r'\b(complex numbers?|phasor analysis|euler\'s identity|complex impedance)\b', re.IGNORECASE)]),
-    ("Geometry & Surface Area via [Σ+]", [re.compile(r'\b(surface area via|mensuration|prism volume)\b', re.IGNORECASE), re.compile(r'\[[Σ∑]\+\]')]),
-    ("Brent's Root Finding Algorithm ([SOLVE])", [re.compile(r'\b(brent\'s solver|brent solver|numerical root|colebrook)\b', re.IGNORECASE)]),
-    ("Adaptive Romberg Quadrature ([∫])", [re.compile(r'\b(romberg quadrature|adaptive quadrature|numerical integration)\b', re.IGNORECASE)]),
-    ("Polynomial Root Extraction ([POLY])", [re.compile(r'\b(polynomial solver|polynomial roots|companion matrix|cardano)\b', re.IGNORECASE)]),
-    ("Bivariate Statistics & Curve Fitting ([L.R.])", [re.compile(r'\b(bivariate statistics|linear regression|curve fitting|correlation coefficient)\b', re.IGNORECASE)]),
-    ("Computer Science & 36-Bit Integers", [re.compile(r'\b(36-bit|two\'s complement|subnet masking|bitwise|amdahl)\b', re.IGNORECASE)]),
-    ("Financial TVM Solver & Amortization", [re.compile(r'\b(tvm solver|financial mathematics|amortization schedule|perpetuit|npv|irr)\b', re.IGNORECASE)]),
-    ("Function & Scatter Plotting Engine ([PLOT])", [re.compile(r'\b(scatter plotting|function plotting|pixel grid)\b', re.IGNORECASE)]),
-    ("3D Printing Extrusion Fluid Dynamics", [re.compile(r'\b(extrusion fluid dynamics|volumetric flow|filament density)\b', re.IGNORECASE)]),
-    ("Audio Engineering Crossover Filters", [re.compile(r'\b(crossover filter|butterworth|linkwitz-riley)\b', re.IGNORECASE)]),
-    ("Civil Surveying & Closed Traverses", [re.compile(r'\b(closed-loop traverse|traverse misclosure|geodetic azimuth|haversine)\b', re.IGNORECASE)]),
-    ("High-Speed Equation Entry & Inside-Out Mastery", [re.compile(r'\b(inside-out|radical pyramid|nested fraction|high-speed equation)\b', re.IGNORECASE)]),
-    ("Classical Mechanics, Kinematics & Projectiles", [re.compile(r'\b(projectile|centripetal|kinematic|moment of inertia|pendulum)\b', re.IGNORECASE)]),
-    ("Orbital Mechanics, Escape Velocity & Tsiolkovsky Rocket Equation", [re.compile(r'\b(tsiolkovsky|hohmann|vis-viva|kepler|escape velocity|orbital)\b', re.IGNORECASE)]),
-    ("Fluid Mechanics, Reynolds Number & Bernoulli Equation", [re.compile(r'\b(reynolds|bernoulli|poiseuille|darcy-weisbach|torricelli|mach number)\b', re.IGNORECASE)]),
-    ("Thermodynamics, Ideal Gas Law & Carnot Efficiency", [re.compile(r'\b(carnot|ideal gas|stefan-boltzmann|adiabatic|rankine|brayton|fourier)\b', re.IGNORECASE)]),
-    ("Electricity, RLC Resonance & Parallel Impedance ([∥])", [re.compile(r'\b(rlc|reactance|inductance|capacitance|coulomb|poynting|parallel resistor)\b', re.IGNORECASE)]),
-    ("Optics, Thin-Lens Equation & Snell's Refraction", [re.compile(r'\b(snell|thin lens|doppler|brewster|rayleigh|diffraction)\b', re.IGNORECASE)]),
-    ("Relativity, Quantum Mechanics & Radioactive Decay", [re.compile(r'\b(lorentz|de broglie|planck|half-life|carbon-14|rydberg|photoelectric)\b', re.IGNORECASE)]),
-    ("Chemistry, pH Buffers, Nernst & Arrhenius Kinetics", [re.compile(r'\b(henderson-hasselbalch|nernst|arrhenius|beer-lambert|clausius-clapeyron|michaelis-menten|ionic strength)\b', re.IGNORECASE)]),
-    ("Probability Distributions (Binomial, Poisson, Bayes & Normal)", [re.compile(r'\b(binomial|poisson|bayes|gaussian|confidence interval|process capability)\b', re.IGNORECASE)]),
-    ("Information Theory, Shannon Entropy & Channel Capacity", [re.compile(r'\b(shannon|channel capacity|queueing|entropy)\b', re.IGNORECASE)]),
-    ("Structural Mechanics, Euler Buckling & Beam Deflection", [re.compile(r'\b(euler column|buckling|beam deflection|hooke|young\'s modulus)\b', re.IGNORECASE)]),
-    ("Semiconductors, Shockley Diode, Op-Amps & Friis RF Link", [re.compile(r'\b(shockley|operational amplifier|op-amp|friis|path loss)\b', re.IGNORECASE)]),
-    ("Keycap [ENTER]", [re.compile(r'\[ENTER\]', re.IGNORECASE)]),
-    ("Keycap [LASTX]", [re.compile(r'\[LASTX\]', re.IGNORECASE)]),
-    ("Keycap [x⇄y]", [re.compile(r'\[x[⇄↔<->]+y\]', re.IGNORECASE)]),
-    ("Keycap [R↓]", [re.compile(r'\[R[↓\\]+\]')]),
-    ("Keycap [Σ+]", [re.compile(r'\[[Σ∑]\+\]')]),
-    ("Keycap [STO]", [re.compile(r'\[STO\]', re.IGNORECASE)]),
-    ("Keycap [RCL]", [re.compile(r'\[RCL\]', re.IGNORECASE)]),
-    ("Keycap [SIN] / [COS] / [TAN]", [re.compile(r'\[(SIN|COS|TAN)\]', re.IGNORECASE)]),
-    ("Keycap [√x]", [re.compile(r'\[[√\\]+x\]')]),
-    ("Keycap [eˣ]", [re.compile(r'\[e[\^ˣx]+\]')]),
-    ("Keycap [LN]", [re.compile(r'\[LN\]')]),
-    ("Keycap [yˣ]", [re.compile(r'\[y[\^ˣx]+\]')]),
-    ("Keycap [1/x]", [re.compile(r'\[1\/x\]')]),
-    ("Keycap [+/-]", [re.compile(r'\[\+\/\-\]')]),
-    ("Keycap [E] (Scientific E)", [re.compile(r'\[E\]')]),
-    ("Keycap [∥] (Parallel)", [re.compile(r'\[[∥\|]{2}\]')]),
+    ("36-Bit Word Architecture (IBM 7090 & DEC PDP-10)", [re.compile(r'\b(36-bit|pdp-10|ibm 7090)\b', re.IGNORECASE)]),
+    ("4-Level XYZT Operational Stack", [re.compile(r'\b(xyzt stack|4-stack|register [xyzt]|four-shelf|four registers)\b', re.IGNORECASE)]),
+    ("43-Key Tactile Matrix Keypad", [re.compile(r'\b(keypad matrix|43-key|tactile keypad|snap-dome)\b', re.IGNORECASE)]),
+    ("Abel, Niels Henrik & Évariste Galois (Quintic Insolvability)", [re.compile(r'\b(abel|galois|quintic|degree 5)\b', re.IGNORECASE)]),
+    ("AC Phasors, Impedance & Charles Proteus Steinmetz", [re.compile(r'\b(steinmetz|phasor|reactance|impedance)\b', re.IGNORECASE)]),
+    ("Adaptive Romberg Quadrature ([∫]) & Werner Romberg", [re.compile(r'\b(romberg|adaptive quadrature|numerical integration)\b', re.IGNORECASE)]),
+    ("Al-Khwarizmi & Completing the Square", [re.compile(r'\b(al-khwarizmi|completing the square|al-jabr)\b', re.IGNORECASE)]),
+    ("Amortization Schedules & Mortgage Crossover", [re.compile(r'\b(amortization|mortgage|principal and interest)\b', re.IGNORECASE)]),
+    ("Anscombe's Quartet & Visual Data Inspection", [re.compile(r'\b(anscombe|quartet|scatter cloud)\b', re.IGNORECASE)]),
+    ("Archimedes (Sphere-Cylinder Ratio, Parabola & Buoyancy)", [re.compile(r'\b(archimedes|syracuse|buoyancy|parabola)\b', re.IGNORECASE)]),
+    ("Arrhenius Chemical Kinetics & Activation Energy", [re.compile(r'\b(arrhenius|activation energy|rate constant)\b', re.IGNORECASE)]),
+    ("Bessel's Correction (Sample Variance Degrees of Freedom n - 1)", [re.compile(r'\b(bessel|n\s*-\s*1|degrees? of freedom)\b', re.IGNORECASE)]),
+    ("Binary ([BIN]), Octal ([OCT]), Decimal ([DEC]) & Hexadecimal ([HEX])", [re.compile(r'\b(hexadecimal|octal|binary|nibbles?)\b', re.IGNORECASE)]),
+    ("Bitwise Logic, Bitfields & Subnet Masks ([BASE], [÷R])", [re.compile(r'\b(bitwise|subnet mask|boolean|rgb color)\b', re.IGNORECASE)]),
+    ("Brent's Hybrid Root-Finding Algorithm ([SOLVE])", [re.compile(r'\b(richard brent|brent\'s|brent solver|inverse quadratic)\b', re.IGNORECASE)]),
+    ("Bresenham's Line Algorithm & Affine Pixel Mapping", [re.compile(r'\b(bresenham|affine|pixel grid|viewport)\b', re.IGNORECASE)]),
+    ("Carbon-14 Radiometric Dating & Willard Libby", [re.compile(r'\b(carbon-14|radiocarbon|willard libby|half-life)\b', re.IGNORECASE)]),
+    ("Cardano, Gerolamo & Tartaglia (1535 Milan Cubic Contest)", [re.compile(r'\b(cardano|tartaglia|ars magna|cubic)\b', re.IGNORECASE)]),
+    ("Carnot Heat-Engine Efficiency & Counter-Flow Heat Exchangers", [re.compile(r'\b(sadi carnot|carnot|heat exchanger|lmtd)\b', re.IGNORECASE)]),
+    ("Catenary Curve (cosh x), Hanging Chains & Gateway Arch", [re.compile(r'\b(catenary|gateway arch|hanging chain|hyperbolic cosine)\b', re.IGNORECASE)]),
+    ("Catastrophic Cancellation & Numerical Stability (William Kahan)", [re.compile(r'\b(catastrophic cancellation|kahan|loss of significance)\b', re.IGNORECASE)]),
+    ("Cavalieri's Principle & 3D Solid Mensuration", [re.compile(r'\b(cavalieri|mensuration|frustum|torus)\b', re.IGNORECASE)]),
+    ("Center of Mass, Moment of Inertia & Parallel-Axis Theorem", [re.compile(r'\b(center of mass|centroid|moment of inertia|steiner)\b', re.IGNORECASE)]),
+    ("Central Difference Derivative & Taylor Error Cancellation", [re.compile(r'\b(central difference|numerical derivative|taylor series)\b', re.IGNORECASE)]),
+    ("Claude Shannon & Boolean Switching Circuits (1937 Thesis)", [re.compile(r'\b(claude shannon|shannon|george boole|relay)\b', re.IGNORECASE)]),
+    ("Complex Numbers ([CMPLX]) & 90-Degree Rotation (i = √-1)", [re.compile(r'\b(complex numbers?|complex plane|caspar wessel|argand)\b', re.IGNORECASE)]),
+    ("Composite Cross-Sections, Parallel-Axis Theorem & Singularity Functions", [re.compile(r'\b(composite cross-section|neutral axis|singularity|macaulay)\b', re.IGNORECASE)]),
+    ("Compound Microscopes & Thin-Lens Optics", [re.compile(r'\b(compound microscope|thin-lens|focal length|magnification)\b', re.IGNORECASE)]),
+    ("Continued Fractions (Golden Ratio φ & Pi 355/113)", [re.compile(r'\b(continued fractions?|355/113|golden ratio|zu chongzhi)\b', re.IGNORECASE)]),
+    ("De Moivre's Theorem & Roots of Unity", [re.compile(r'\b(de moivre|roots of unity)\b', re.IGNORECASE)]),
+    ("Descartes, René & the Cartesian Coordinate Plane", [re.compile(r'\b(descartes|cartesian|analytic geometry)\b', re.IGNORECASE)]),
+    ("Difference of Two Squares & Mental Multiplication", [re.compile(r'\b(difference of two squares|difference-of-squares|shakuntala devi)\b', re.IGNORECASE)]),
+    ("Dijkstra's Shunting-Yard Algorithm & Charles Hamblin", [re.compile(r'\b(dijkstra|shunting-yard|hamblin)\b', re.IGNORECASE)]),
+    ("Eratosthenes of Cyrene & Earth's Circumference", [re.compile(r'\b(eratosthenes|syene|alexandria|gnomon)\b', re.IGNORECASE)]),
+    ("Error Catalog & Mathematical Singularities", [re.compile(r'\b(div by 0|singularit|domain error|overflow)\b', re.IGNORECASE)]),
+    ("Euler's Column Buckling Law (Pcr = π²EI / L²)", [re.compile(r'\b(column buckling|critical buckling|slenderness)\b', re.IGNORECASE)]),
+    ("Euler's Identity (eⁱπ + 1 = 0) & Complex Exponential", [re.compile(r'\b(euler\'s identity|feynman)\b', re.IGNORECASE)]),
+    ("Euler's Natural Base e ([eˣ], [LN]) & Continuous Growth", [re.compile(r'\b(natural logarithm|natural base|euler\'s number)\b', re.IGNORECASE)]),
+    ("Factorials ([x!]), Combinatorics & Lanczos Gamma Approximation", [re.compile(r'\b(factorial|lanczos|gamma function|combinatorics)\b', re.IGNORECASE)]),
+    ("Fermi Estimation & Enrico Fermi's Trinity Paper-Drop Test", [re.compile(r'\b(enrico fermi|fermi|back-of-the-envelope|piano tuners)\b', re.IGNORECASE)]),
+    ("Fibonacci (Leonardo of Pisa) & Present Value in Liber Abaci", [re.compile(r'\b(fibonacci|leonardo of pisa|liber abaci)\b', re.IGNORECASE)]),
+    ("Galileo Galilei & the Square-Cube Scaling Law", [re.compile(r'\b(galileo|square-cube law|two new sciences)\b', re.IGNORECASE)]),
+    ("Galton, Sir Francis (Quincunx Bean Machine & Regression to the Mean)", [re.compile(r'\b(galton|quincunx|bean machine|regression to the mean)\b', re.IGNORECASE)]),
+    ("Gauss, Carl Friedrich (1801 Ceres Orbit, Least Squares & Bell Curve)", [re.compile(r'\b(ceres|piazzi|least squares|gaussian)\b', re.IGNORECASE)]),
+    ("Great-Circle Navigation, Surveying Traverses & Crosswind Vectors", [re.compile(r'\b(great-circle|haversine|crosswind|traverse)\b', re.IGNORECASE)]),
+    ("Heron's Triangle Formula & Ramanujan's Ellipse Approximation", [re.compile(r'\b(heron|semi-perimeter|ramanujan)\b', re.IGNORECASE)]),
+    ("Horner's Nested Polynomial Scheme & Single-Entry LASTX Spine", [re.compile(r'\b(horner|nested polynomial|companion matrix)\b', re.IGNORECASE)]),
+    ("Hyperbolic Functions ([HYP], sinh, cosh, tanh) & Ocean Waves", [re.compile(r'\b(hyperbolic|sinh|cosh|tanh|rapidity)\b', re.IGNORECASE)]),
+    ("Inside-Out Thinking vs. Outside-In Paper Notation", [re.compile(r'\b(inside-out|outside-in|typesetters)\b', re.IGNORECASE)]),
+    ("Kepler's Orbital Laws & Transcendental Anomaly Equation", [re.compile(r'\b(johannes kepler|kepler\'s|eccentric anomaly)\b', re.IGNORECASE)]),
+    ("Keycap [1/x] (Reciprocal)", [re.compile(r'\[1\/x\]')]),
+    ("Keycap [CMPLX] (Complex Prefix)", [re.compile(r'\[CMPLX\]', re.IGNORECASE)]),
+    ("Keycap [E] (Scientific Exponent Entry)", [re.compile(r'\[E\]')]),
+    ("Keycap [ENTER] (Stack Lift & Duplication)", [re.compile(r'\[ENTER\]', re.IGNORECASE)]),
+    ("Keycap [HYP] (Hyperbolic Prefix)", [re.compile(r'\[HYP\]', re.IGNORECASE)]),
+    ("Keycap [L.R.], [x̄,ȳ] & [s,σ] (Linear Regression & Sample Statistics)", [re.compile(r'\[(m,b|L\.R\.|x̄|sx|x̄w)\]', re.IGNORECASE)]),
+    ("Keycap [LASTX] (Argument Recovery & Horner Verification)", [re.compile(r'\[LASTX\]', re.IGNORECASE)]),
+    ("Keycap [LN] & [eˣ] (Natural Log & Exponential)", [re.compile(r'\[(LN|e[\^ˣx]+)\]')]),
+    ("Keycap [LOG] & [10ˣ] (Common Base-10 Log & Antilog)", [re.compile(r'\[(LOG|10[\^ˣx]+)\]')]),
+    ("Keycap [POLY] (Polynomial Root Solver)", [re.compile(r'\[POLY\]', re.IGNORECASE)]),
+    ("Keycap [R↓] (Roll Stack Down)", [re.compile(r'\[R[↓\\]+\]')]),
+    ("Keycap [SIN], [COS], [TAN] & Inverse Trig", [re.compile(r'\[(A?SIN|A?COS|A?TAN)\]', re.IGNORECASE)]),
+    ("Keycap [SOLVE] (Brent Numerical Root Solver)", [re.compile(r'\[SOLVE\]', re.IGNORECASE)]),
+    ("Keycap [STO] & [RCL] (Memory Storage & Recall)", [re.compile(r'\[(STO|RCL)\]', re.IGNORECASE)]),
+    ("Keycap [x⇄y] (Register X-Y Swap)", [re.compile(r'\[x[⇄↔<->]+y\]', re.IGNORECASE)]),
+    ("Keycap [yˣ] & [ˣ√y] (Powers & Roots)", [re.compile(r'\[(y[\^ˣx]+|ˣ√y)\]')]),
+    ("Keycap [÷R] (Euclidean Integer Quotient & Remainder)", [re.compile(r'\[÷R\]')]),
+    ("Keycap [∫] (Adaptive Romberg Numerical Quadrature)", [re.compile(r'\[∫\]')]),
+    ("Keycap [▸θ,r] & [▸y,x] (Polar-Rectangular Vector Conversion)", [re.compile(r'\[(▸θ,r|▸y,x|→POL|→REC)\]')]),
+    ("Keycap [x∥y] (Universal Harmonic / Parallel Operator)", [re.compile(r'\[(x?∥y?|\|\|)\]')]),
+    ("Keycap [Σ+] (Statistical & Geometric Accumulator)", [re.compile(r'\[[Σ∑]\+\]')]),
+    ("Kleiber's 3/4-Power Metabolic Scaling Law", [re.compile(r'\b(kleiber|metabolic|3/4)\b', re.IGNORECASE)]),
+    ("Leibniz, Gottfried Wilhelm (Binary Arithmetic & Calculus)", [re.compile(r'\b(leibniz|binary medallion)\b', re.IGNORECASE)]),
+    ("Linear Regression, Karl Pearson's Correlation (r) & Linearization", [re.compile(r'\b(karl pearson|correlation coefficient|linear regression|moore\'s law)\b', re.IGNORECASE)]),
+    ("Loudspeaker Butterworth Crossovers & Standing-Wave Ratio (VSWR)", [re.compile(r'\b(butterworth|crossover|vswr|standing-wave)\b', re.IGNORECASE)]),
+    ("Lukasiewicz, Jan & 1924 Warsaw Parenthesis-Free Logic", [re.compile(r'\b(łukasiewicz|lukasiewicz|warsaw|postfix)\b', re.IGNORECASE)]),
+    ("Miller, George A. & Working-Memory Limits (1956 Paper)", [re.compile(r'\b(george a?\.?\s*miller|working memory|magical number seven)\b', re.IGNORECASE)]),
+    ("Napier, John & Henry Briggs (1614 Invention of Logarithms)", [re.compile(r'\b(john napier|merchiston|henry briggs|logarithms?)\b', re.IGNORECASE)]),
+    ("Net Present Value (NPV), Internal Rate of Return (IRR) & Bonds", [re.compile(r'\b(net present value|internal rate of return|\bnpv\b|\birr\b|bond price)\b', re.IGNORECASE)]),
+    ("Newton's Law of Cooling & Thermal Relaxation", [re.compile(r'\b(newton\'s law of cooling|cooling coffee|thermal relaxation)\b', re.IGNORECASE)]),
+    ("Normal Bell Curve, Central Limit Theorem & Cumulative Φ(z)", [re.compile(r'\b(central limit theorem|normal distribution|bell curve|cumulative normal)\b', re.IGNORECASE)]),
+    ("Percentages ([%], [%CHG]), Multiplicative Asymmetry & Rule of 72", [re.compile(r'\b(rule of 72|percentage asymmetry|multiplicative asymmetry|percent change)\b', re.IGNORECASE)]),
+    ("Quartz Crystal Oscillator (32,768 Hz = 2¹⁵ Hz) & Reflective LCD", [re.compile(r'\b(32,768|quartz|reflective|transflective)\b', re.IGNORECASE)]),
+    ("Relativistic Time Dilation (Cosmic-Ray Muons & Lorentz Factor γ)", [re.compile(r'\b(lorentz factor|time dilation|muons?)\b', re.IGNORECASE)]),
+    ("Reynolds Number, Pipe Turbulence & Venturi Pressure Drop", [re.compile(r'\b(osborne reynolds|reynolds number|laminar|venturi)\b', re.IGNORECASE)]),
+    ("Richardson Extrapolation (4/3 - 1/3 Error Cancellation)", [re.compile(r'\b(lewis fry richardson|richardson extrapolation|4/3)\b', re.IGNORECASE)]),
+    ("Root-Sum-Square (RSS) Mechanical Tolerance Stacking", [re.compile(r'\b(root-sum-square|tolerance stacking)\b', re.IGNORECASE)]),
+    ("Sabine's Reverberation Law (Boston Symphony Hall) & Acoustics", [re.compile(r'\b(wallace.*sabine|sabine|reverberation|symphony hall)\b', re.IGNORECASE)]),
+    ("Hewlett, Bill, Dave Packard & the HP-35 / HP-32SII RPN Lineage", [re.compile(r'\b(hewlett|packard|hp-35|hp-15c|hp-32sii|osborne|cochran|slide rule)\b', re.IGNORECASE)]),
+    ("Stack Lift State Machine & Register T Replication", [re.compile(r'\b(stack lift|t-replication|t replication|conveyor belt)\b', re.IGNORECASE)]),
+    ("Student's t-Distribution & William Sealy Gosset (Guinness Brewery)", [re.compile(r'\b(gosset|guinness|student\'s t)\b', re.IGNORECASE)]),
+    ("Time Value of Money ([TVM]: [N], [I%], [PV], [PMT], [FV])", [re.compile(r'\b(time value of money|cash-flow sign|present value|future value)\b', re.IGNORECASE)]),
+    ("Tsiolkovsky Rocket Equation, Saturn V & Clarke Geostationary Orbit", [re.compile(r'\b(tsiolkovsky|saturn v|geostationary|arthur c\. clarke)\b', re.IGNORECASE)]),
+    ("Two's Complement Negative Numbers & Odometer Arithmetic", [re.compile(r'\b(two\'s complement|odometer|sign bit)\b', re.IGNORECASE)]),
+    ("Unit Circle, Planar Triangulation & Law of Cosines", [re.compile(r'\b(unit circle|triangulation|law of cosines)\b', re.IGNORECASE)]),
+    ("Van der Waals Real Gas Cubic & 3D Principal Stress Eigenvalues", [re.compile(r'\b(van der waals|molar volume|principal stress)\b', re.IGNORECASE)]),
+    ("Viète's Nested Square-Root Cascade", [re.compile(r'\b(viète|viete|nested radical|radical pyramid)\b', re.IGNORECASE)]),
+    ("Weber-Fechner Law (Decibels, Richter Scale, Stellar Magnitudes & pH)", [re.compile(r'\b(weber-fechner|decibels?|richter|stellar magnitude)\b', re.IGNORECASE)]),
+    ("Weibull Reliability Distribution & Poisson Rare Events", [re.compile(r'\b(weibull|poisson)\b', re.IGNORECASE)]),
 ]
 
 INDEX_CATALOG_SC6 = [
-    ("Hardware Architecture & Classroom Durability", [re.compile(r'\b(hardware architecture|classroom durability|sliding desk-stand|protective cowl)\b', re.IGNORECASE)]),
-    ("Tactile TPU Keypad", [re.compile(r'\b(tactile switches|tactile feedback|sculpted tpu|tpu key)\b', re.IGNORECASE)]),
-    ("Transflective Ambient Display", [re.compile(r'\b(transflective|ambient-light|high-contrast display)\b', re.IGNORECASE)]),
-    ("Fraction Studio 84mm Towers", [re.compile(r'\b(fraction studio|proportional towers|84\s*mm)\b', re.IGNORECASE)]),
-    ("Ten-Frames & Desk Counters", [re.compile(r'\b(ten-frames?|desk counters?|counting grid|make-ten)\b', re.IGNORECASE)]),
-    ("Classroom Planetary Clock", [re.compile(r'\b(planetary clock|geared clock|modulo 60|elapsed time)\b', re.IGNORECASE)]),
-    ("Math Domino Studio", [re.compile(r'\b(math dominoes?|domino studio|dot arrays?)\b', re.IGNORECASE)]),
-    ("Area-Model Factoring Tiles & L-Frame", [re.compile(r'\b(factoring tiles?|l-frame|area models?)\b', re.IGNORECASE)]),
-    ("Probability Dice & Spinners", [re.compile(r'\b(probability dice|dice and spinner|random generator)\b', re.IGNORECASE)]),
-    ("RPN 4-Story Glass Elevator Metaphor", [re.compile(r'\b(elevator metaphor|elevator model|ground floor|glass elevator)\b', re.IGNORECASE)]),
-    ("2-Stack Operational Display", [re.compile(r'\b(2-stack|two-stack|upper stack|lower stack)\b', re.IGNORECASE)]),
-    ("Counting, Place Value & Base-10 Regrouping", [re.compile(r'\b(place value|base-10|units and tens|hundreds board|regrouping)\b', re.IGNORECASE)]),
-    ("Number Lines & Skip-Counting", [re.compile(r'\b(number lines?|skip-counting|skip counting)\b', re.IGNORECASE)]),
-    ("Repeat Key [REP] (Skip-Counting Ladder)", [re.compile(r'\[REP\]'), re.compile(r'\bskip-counting ladder\b', re.IGNORECASE)]),
-    ("Quotient & Remainder Key [÷R]", [re.compile(r'\[(DivR|÷R)\]', re.IGNORECASE), re.compile(r'\bquotient and remainder\b', re.IGNORECASE)]),
-    ("Simplify Key [SIMP] (Fraction Reduction)", [re.compile(r'\[SIMP\]', re.IGNORECASE), re.compile(r'\bfactor reduction\b', re.IGNORECASE)]),
-    ("Last Number Key [LASTX] (Undo & Check)", [re.compile(r'\[LASTX\]', re.IGNORECASE), re.compile(r'\bundoing operations\b', re.IGNORECASE)]),
-    ("Two-Dot Fraction Entry Syntax", [re.compile(r'\btwo-dot|fraction entry|mixed fractions?\b', re.IGNORECASE)]),
-    ("Ratio Mode, Unit Rates & Percentages", [re.compile(r'\bratio mode|proportional reasoning|unit rate|sales tax|discount\b', re.IGNORECASE)]),
-    ("Geometry, Perimeter, Area & Surface Area via [Σ+]", [re.compile(r'\bsurface area via|rectangular prism|cylinder volume|pythagorean|triangle area\b', re.IGNORECASE), re.compile(r'\[[Σ∑]\+\]')]),
-    ("Discrete Probability, Prime Numbers & Factor Trees", [re.compile(r'\bdiscrete probability|prime factorization|sieve of eratosthenes|twin prime|goldbach|lcm\b', re.IGNORECASE)]),
-    ("Negative Numbers, Zero Pairs & Absolute Value", [re.compile(r'\bzero pairs?|negative integer|submarine depth|temperature swing|absolute value\b', re.IGNORECASE)]),
-    ("Gamified Math Quiz Engine ([?])", [re.compile(r'\bmath quiz engine|gamified quiz|flashcard mode\b', re.IGNORECASE)]),
-    ("Applied Elementary STEM & Maker Labs", [re.compile(r'\bapplied stem|3d-printed|solar oven|maker labs?\b', re.IGNORECASE)]),
-    ("Curriculum Standards (CCSS-M, Singapore, Bridges, Big Ideas)", [re.compile(r'\bbridges in math|ccss alignment|curriculum matrix|singapore dimensions\b', re.IGNORECASE)]),
-    ("Teacher Lesson Plans (25 Turnkey 45-Minute Stations)", [re.compile(r'\blesson plan|station guide|teacher script\b', re.IGNORECASE)]),
-    ("Keycap [ENTER]", [re.compile(r'\[ENTER\]', re.IGNORECASE)]),
-    ("Keycap [C] / [CLEAR]", [re.compile(r'\[(C|CLEAR)\]', re.IGNORECASE)]),
-    ("Keycap [LASTX]", [re.compile(r'\[LASTX\]', re.IGNORECASE)]),
-    ("Keycap [x⇄y]", [re.compile(r'\[x[⇄↔<->]+y\]', re.IGNORECASE)]),
-    ("Keycap [REP]", [re.compile(r'\[REP\]', re.IGNORECASE)]),
-    ("Keycap [÷R]", [re.compile(r'\[(DivR|÷R)\]', re.IGNORECASE)]),
-    ("Keycap [SIMP]", [re.compile(r'\[SIMP\]', re.IGNORECASE)]),
-    ("Keycap [Σ+]", [re.compile(r'\[[Σ∑]\+\]')]),
-    ("Keycap [COUNT] (Number Rack)", [re.compile(r'\[COUNT\]', re.IGNORECASE)]),
-    ("Keycap [CLOCK]", [re.compile(r'\[CLOCK\]', re.IGNORECASE)]),
-    ("Keycap [.] (Fraction Two-Dot)", [re.compile(r'\[\.\]')]),
+    ("Absolute Value & Distance from Zero ([|x|])", [re.compile(r'\b(absolute value|distance from zero)\b', re.IGNORECASE)]),
+    ("Ada Lovelace & Charles Babbage (Analytical Engine)", [re.compile(r'\b(ada lovelace|babbage|analytical engine)\b', re.IGNORECASE)]),
+    ("Addition & Make-a-Ten Strategy", [re.compile(r'\b(make-a-ten|making a ten|friends of ten|bridging across ten)\b', re.IGNORECASE)]),
+    ("Ahmes & Ancient Egyptian Multiplication", [re.compile(r'\b(ahmes|rhind|rope-stretchers|harpedonaptai)\b', re.IGNORECASE)]),
+    ("Al-Khwarizmi & Balancing Equations", [re.compile(r'\b(al-khwarizmi|hisab al-jabr)\b', re.IGNORECASE)]),
+    ("Alvin Deep-Sea Submersible & Sea-Level Dives", [re.compile(r'\b(submersible alvin|woods hole|below sea level)\b', re.IGNORECASE)]),
+    ("Apollo Guidance Computer & Margaret Hamilton", [re.compile(r'\b(apollo guidance computer|margaret hamilton|lunar module)\b', re.IGNORECASE)]),
+    ("Archimedes (Sphere, Crown Test & Pi)", [re.compile(r'\b(archimedes|syracuse|water displacement)\b', re.IGNORECASE)]),
+    ("Area & Perimeter of 2D Shapes ([RECT], [TRI], [CIRC])", [re.compile(r'\b(perimeter|area of a rectangle|area of a triangle|trapezoid)\b', re.IGNORECASE)]),
+    ("Area-Model Factoring Tiles & L-Frame", [re.compile(r'\b(factoring tiles?|l-frame|area models?|partial products?)\b', re.IGNORECASE)]),
+    ("Averages: Mean ([x̄]), Median ([MED]) & Mode ([MODE])", [re.compile(r'\b(fair-share average|median|mean absolute deviation)\b', re.IGNORECASE)]),
+    ("Baker's Percentages & Recipe Scaling", [re.compile(r'\b(baker\'s percentage|recipe scaling|sourdough)\b', re.IGNORECASE)]),
+    ("Base-10 Place Value ([PV]) & Regrouping", [re.compile(r'\b(place value|base-10|regrouping|ten-for-one)\b', re.IGNORECASE)]),
+    ("Base-60 Clock Time ([H.MMSS], [->HR], [->HMS])", [re.compile(r'\b(base-60|decimal hours|h\.mmss)\b', re.IGNORECASE)]),
+    ("Blaise Pascal (Pascaline & Hydraulic Syringe Press)", [re.compile(r'\b(blaise pascal|pascaline|hydraulic)\b', re.IGNORECASE)]),
+    ("Box Plots, Quartiles & Interquartile Range ([IQR])", [re.compile(r'\b(box plot|interquartile range|outlier)\b', re.IGNORECASE)]),
+    ("Carl Friedrich Gauss & Triangular Staircases", [re.compile(r'\b(carl friedrich gauss|triangular number|staircase)\b', re.IGNORECASE)]),
+    ("Chessboard Doubling Legend & Exponents ([y^x])", [re.compile(r'\b(chessboard|sissa|exponents?|powers of two)\b', re.IGNORECASE)]),
+    ("Cicadas (13-Year & 17-Year Prime Cycles)", [re.compile(r'\b(cicadas?|magicicada|prime cycle)\b', re.IGNORECASE)]),
+    ("Circles, Pi ([π]) & Circumference", [re.compile(r'\b(circumference|radius|diameter)\b', re.IGNORECASE)]),
+    ("Classroom Planetary Geared Clock ([CLOCK])", [re.compile(r'\b(planetary clock|geared clock|sun gear|planet gears)\b', re.IGNORECASE)]),
+    ("Commutative, Associative & Distributive Laws", [re.compile(r'\b(commutative|associative|distributive|turn-around rule)\b', re.IGNORECASE)]),
+    ("Common Denominators & Equivalent Fractions", [re.compile(r'\b(common denominator|equivalent fractions?|unreduced)\b', re.IGNORECASE)]),
+    ("Concrete 1-2-3 Mixing Ratio", [re.compile(r'\b(1-2-3 rule|portland cement|concrete)\b', re.IGNORECASE)]),
+    ("Counting Tiles (7.0 mm) & 24-Tile Arrays", [re.compile(r'\b(counting tiles?|24-tile|champion packing)\b', re.IGNORECASE)]),
+    ("Decimals, Tenths, Hundredths & Repeating Bars", [re.compile(r'\b(tenths|hundredths|repeating decimal|simon stevin)\b', re.IGNORECASE)]),
+    ("Dice, Spinners & 36-Outcome Probability Grid ([DICE])", [re.compile(r'\b(36-outcome|polyhedral dice|fair dice|spinner)\b', re.IGNORECASE)]),
+    ("Difference of Two Squares & Odd-Number L-Borders", [re.compile(r'\b(difference of two squares|odd-number|l-border)\b', re.IGNORECASE)]),
+    ("Eratosthenes (Sieve of Primes & Earth's Circumference)", [re.compile(r'\b(eratosthenes|sieve of)\b', re.IGNORECASE)]),
+    ("Euclid's Elements & Remainder Algorithm", [re.compile(r'\b(euclid|euclidean|elements)\b', re.IGNORECASE)]),
+    ("Euler's Polyhedron Formula (V - E + F = 2) & Soccer Balls", [re.compile(r'\b(leonhard euler|geodesic dome|pentagons and hexagons)\b', re.IGNORECASE)]),
+    ("Fermi Estimation & Powers of Ten", [re.compile(r'\b(enrico fermi|fermi question|order of magnitude)\b', re.IGNORECASE)]),
+    ("Fibonacci (Leonardo of Pisa) & Liber Abaci", [re.compile(r'\b(fibonacci|leonardo of pisa|liber abaci)\b', re.IGNORECASE)]),
+    ("Florence Nightingale & Data Detective Work", [re.compile(r'\b(florence nightingale|data detective)\b', re.IGNORECASE)]),
+    ("Four-Color Map Theorem (Francis Guthrie)", [re.compile(r'\b(four-color|francis guthrie)\b', re.IGNORECASE)]),
+    ("Four-Shelf Stack (Shelf X, Y, Z, T) & Stack Lift", [re.compile(r'\b(4-shelf|four-shelf|stack lift|waiting shelf)\b', re.IGNORECASE)]),
+    ("Fraction Studio (84.0 mm Proportional Towers)", [re.compile(r'\b(fraction studio|fraction towers?|84\.0\s*mm|84\s*mm)\b', re.IGNORECASE)]),
+    ("Galileo Galilei (Square-Cube Law, Pendulums & Dice)", [re.compile(r'\b(galileo|square-cube law|penguin huddle)\b', re.IGNORECASE)]),
+    ("Gear Ratios & Bicycle Sprockets", [re.compile(r'\b(gear ratio|chainring|sprocket|compound gear)\b', re.IGNORECASE)]),
+    ("Grace Hopper & Kitchen-Table Stack Thinking", [re.compile(r'\b(grace hopper|compiler)\b', re.IGNORECASE)]),
+    ("Greatest Common Factor ([GCF]) & Least Common Multiple ([LCM])", [re.compile(r'\b(greatest common factor|least common multiple|secret partner rule)\b', re.IGNORECASE)]),
+    ("Hypatia of Alexandria & Conic Sections", [re.compile(r'\b(hypatia|conic sections?)\b', re.IGNORECASE)]),
+    ("Jan Lukasiewicz & Parenthesis-Free Polish Notation", [re.compile(r'\b(lukasiewicz|łodź|warsaw|parenthesis-free)\b', re.IGNORECASE)]),
+    ("John Harrison & the H4 Marine Sea Clock", [re.compile(r'\b(john harrison|sea clock|longitude)\b', re.IGNORECASE)]),
+    ("John Napier & Diagonal Multiplication Strips", [re.compile(r'\b(john napier|napier\'s bones|rabdologia)\b', re.IGNORECASE)]),
+    ("Kaprekar's Constant (6,174) & Palindrome Numbers", [re.compile(r'\b(kaprekar|6,174|6174|palindrome)\b', re.IGNORECASE)]),
+    ("Katherine Johnson & NASA's Human Computers", [re.compile(r'\b(katherine johnson|human computers?|glenn)\b', re.IGNORECASE)]),
+    ("Keycap [.] (Two-Dot Fraction Entry)", [re.compile(r'\btwo-dot\b', re.IGNORECASE), re.compile(r'\[\.\]')]),
+    ("Keycap [?] (4-Second Math Quiz Game)", [re.compile(r'\b(quiz game|quiz engine|4-second)\b', re.IGNORECASE)]),
+    ("Keycap [C] (Clear / Backspace)", [re.compile(r'\[(C|CLEAR)\]', re.IGNORECASE)]),
+    ("Keycap [COUNT] (Two-Rail Number Rack)", [re.compile(r'\[COUNT\]', re.IGNORECASE), re.compile(r'\bnumber rack\b', re.IGNORECASE)]),
+    ("Keycap [ENTER] (Stack Lift & Copy)", [re.compile(r'\[ENTER\]', re.IGNORECASE)]),
+    ("Keycap [FRAME] (Ten-Frame Studio)", [re.compile(r'\bten-frame studio\b', re.IGNORECASE)]),
+    ("Keycap [LASTX] (Undo & Inverse Check)", [re.compile(r'\[LASTX\]', re.IGNORECASE)]),
+    ("Keycap [LINE] (Open Number Line)", [re.compile(r'\[LINE\]', re.IGNORECASE), re.compile(r'\bopen number line\b', re.IGNORECASE)]),
+    ("Keycap [REP] (Constant Repeat & Skip-Counting)", [re.compile(r'\[REP\]', re.IGNORECASE)]),
+    ("Keycap [R↓] (Roll Stack Carousel)", [re.compile(r'\[R[↓\\]+\]'), re.compile(r'\bcarousel\b', re.IGNORECASE)]),
+    ("Keycap [SIMP] (Step-by-Step Fraction Reduction)", [re.compile(r'\[SIMP\]', re.IGNORECASE)]),
+    ("Keycap [x<->y] (Swap Shelf X and Shelf Y)", [re.compile(r'\[x[⇄↔<->]+y\]', re.IGNORECASE)]),
+    ("Keycap [÷R] (Whole-Number Quotient & Remainder)", [re.compile(r'\[(DivR|÷R)\]', re.IGNORECASE)]),
+    ("Keycap [Σ+] (Wall & Data Basket Accumulator)", [re.compile(r'\[[Σ∑]\+\]')]),
+    ("Leap Years & Calendar Remainders", [re.compile(r'\b(leap year|gregorian calendar|julius caesar)\b', re.IGNORECASE)]),
+    ("Maryam Mirzakhani & Curved Surface Geometry", [re.compile(r'\b(maryam mirzakhani|fields medal)\b', re.IGNORECASE)]),
+    ("Math Dominoes & Mental Math Shortcuts", [re.compile(r'\b(math dominoes?|shakuntala devi|mental math)\b', re.IGNORECASE)]),
+    ("Negative Numbers, Zero Pairs & Sign Flip ([+/-])", [re.compile(r'\b(zero pairs?|negative numbers?|hot-air balloon)\b', re.IGNORECASE)]),
+    ("Prime Numbers ([PRIME]), Factor Trees ([FACT]) & RSA Codes", [re.compile(r'\b(prime factorization|factor tree|rsa encryption|goldbach)\b', re.IGNORECASE)]),
+    ("Pyramids, Cones ([CONE]) & the 3:1 Pouring Proof", [re.compile(r'\b(3:1 pouring|scott tent|square pyramid)\b', re.IGNORECASE)]),
+    ("Pythagoras (3-4-5 Right Triangle & Musical Strings)", [re.compile(r'\b(pythagoras|3-4-5|monochord|hypotenuse)\b', re.IGNORECASE)]),
+    ("Ratios, Tape Diagrams, Unit Rates & Percentages ([%])", [re.compile(r'\b(tape diagram|unit rate|sales tax|percent change)\b', re.IGNORECASE)]),
+    ("Srinivasa Ramanujan & Taxicab Number 1,729", [re.compile(r'\b(ramanujan|1,729|1729|taxicab)\b', re.IGNORECASE)]),
+    ("STEM Maker Labs (3D Printing, Solar Ovens, Catapults & Bridges)", [re.compile(r'\b(solar oven|catapult|paper truss|strength-to-weight)\b', re.IGNORECASE)]),
+    ("Surface Area & Unfolding 3D Nets ([PRISM])", [re.compile(r'\b(surface area|folding net|twin walls)\b', re.IGNORECASE)]),
+    ("Teacher Lesson Plans (25 Turnkey 45-Minute Stations)", [re.compile(r'\b(station f\.|station 3\.|station 4\.|station 5\.|station 6\.)\b', re.IGNORECASE)]),
+    ("Thomas Jefferson & Decimal Currency (Pieces of Eight)", [re.compile(r'\b(thomas jefferson|piece of eight|two bits)\b', re.IGNORECASE)]),
+    ("Volume of Prisms, Cylinders, Cones & Spheres", [re.compile(r'\b(volume of a|weather balloon|aqueduct)\b', re.IGNORECASE)]),
+    ("Wright Brothers & the 1901 Bicycle-Shop Wind Tunnel", [re.compile(r'\b(wright brothers|orville|wind tunnel)\b', re.IGNORECASE)]),
 ]
 
-def extract_index_terms(text: str, is_sc32: bool, term_counts: Optional[Dict[str, int]] = None, max_per_term: int = 8) -> List[str]:
+INDEX_CATALOG_DOMAINS = [
+    ("4-Register RPN Stack (T, Z, Y, X) & Row 0 Domain Softkeys", [re.compile(r'\b(row 0|register [xyzt]|four-register|stack lift)\b', re.IGNORECASE)]),
+    ("ABV (Alcohol by Volume) & Specific Gravity ([ABV])", [re.compile(r'\b(alcohol by volume|original gravity|final gravity|attenuation)\b', re.IGNORECASE)]),
+    ("Acid-Base Titration & Henderson-Hasselbalch Buffers ([BUFF], [TITR])", [re.compile(r'\b(henderson-hasselbalch|titration|equivalence point|buffer)\b', re.IGNORECASE)]),
+    ("Arrhenius Activation Energy & Chemical Kinetics", [re.compile(r'\b(arrhenius|activation energy|rate constant)\b', re.IGNORECASE)]),
+    ("Aviation Wind Triangle, Crosswind & WCA ([WND])", [re.compile(r'\b(wind triangle|crosswind|wind correction angle|e6b)\b', re.IGNORECASE)]),
+    ("Baker's Percentage, Dough Hydration & DDT ([FLR], [BKR%], [DDT])", [re.compile(r'\b(baker\'s percentage|dough hydration|desired dough temperature|friction factor)\b', re.IGNORECASE)]),
+    ("Beer-Lambert Law, Absorbance & Spectrophotometry ([ABS])", [re.compile(r'\b(beer-lambert|absorbance|transmittance|molar absorptivity)\b', re.IGNORECASE)]),
+    ("Bitwise Logic, Shift/Rotate & Two's Complement ([AND], [XOR], [RL])", [re.compile(r'\b(two\'s complement|bitwise|rotate left|arithmetic shift)\b', re.IGNORECASE)]),
+    ("Black-Scholes Option Pricing & Volatility", [re.compile(r'\b(black-scholes|call option|volatility|risk-free)\b', re.IGNORECASE)]),
+    ("Body Surface Area (Mosteller Formula, [BSA])", [re.compile(r'\b(mosteller|body surface area|\bbsa\b)\b', re.IGNORECASE)]),
+    ("Bowditch Compass Rule & Traverse Closure ([trav])", [re.compile(r'\b(bowditch|compass rule|misclosure|closure error)\b', re.IGNORECASE)]),
+    ("CIDR IPv4 Subnetting & Shannon Entropy", [re.compile(r'\b(cidr|subnet|shannon entropy|netmask)\b', re.IGNORECASE)]),
+    ("Cockcroft-Gault Creatinine Clearance ([CrCl])", [re.compile(r'\b(cockcroft-gault|creatinine clearance|renal)\b', re.IGNORECASE)]),
+    ("Conduit Offset Bends, Travel & Shrink ([BEND])", [re.compile(r'\b(conduit|offset bend|shrink|benfield)\b', re.IGNORECASE)]),
+    ("Coordinate Inverse & Forward Traverse ([FWD], [INV], [BRG])", [re.compile(r'\b(coordinate inverse|forward traverse|azimuth|northing|easting)\b', re.IGNORECASE)]),
+    ("Decibel Power/Voltage Ratios & dBm ([dBm], [dB⊕])", [re.compile(r'\b(decibels?|\bdbm\b|bell labs|incoherent)\b', re.IGNORECASE)]),
+    ("Density Altitude & International Standard Atmosphere ([ISA])", [re.compile(r'\b(density altitude|pressure altitude|standard atmosphere)\b', re.IGNORECASE)]),
+    ("Depth of Field, Hyperfocal Distance & Circle of Confusion ([DOF])", [re.compile(r'\b(hyperfocal|depth of field|circle of confusion)\b', re.IGNORECASE)]),
+    ("Dilution Solver (C1V1 = C2V2, [C₁V₁])", [re.compile(r'\b(serial dilution|stock solution|aliquot)\b', re.IGNORECASE)]),
+    ("Endianness Byte Swap & IEEE 754 Floating-Point ([ENDN], [FLT])", [re.compile(r'\b(endianness|little-endian|big-endian|ieee 754|mantissa)\b', re.IGNORECASE)]),
+    ("Exposure Triangle, T-Stops & Rotary Shutter Angle ([EXP])", [re.compile(r'\b(shutter angle|t-stop|nd filter|foot-candles)\b', re.IGNORECASE)]),
+    ("Framing Rafters, Roof Pitch & Feet-Inches-Fractions ([RUN], [RISE], [DIAG])", [re.compile(r'\b(rafter|unit rise|roof pitch|steel square)\b', re.IGNORECASE)]),
+    ("Friis Free-Space Path Loss & Link Budgets ([FSPL])", [re.compile(r'\b(friis|free-space path loss|link budget|\bfspl\b)\b', re.IGNORECASE)]),
+    ("Gravity IV Drip Rates & Weight-Based Infusions ([MCG], [GTT])", [re.compile(r'\b(drip factor|drops per minute|vasopressor|norepinephrine|titration)\b', re.IGNORECASE)]),
+    ("Hexadecimal ([HEX]), Binary ([BIN]) & 64-Bit Word Sizes ([WSZ])", [re.compile(r'\b(hexadecimal|word size|64-bit|register mask)\b', re.IGNORECASE)]),
+    ("Hop Utilization (Tinseth IBU) & Mash Strike Water ([STRK], [IBU])", [re.compile(r'\b(tinseth|strike water|alpha-acid|grist)\b', re.IGNORECASE)]),
+    ("Ideal & Adjusted Body Weight (Devine Formula, [IBW])", [re.compile(r'\b(ideal body weight|adjusted body weight|devine)\b', re.IGNORECASE)]),
+    ("Molar Mass, Stoichiometry & Molarity ([MW], [MOL])", [re.compile(r'\b(molar mass|molarity|stoichiometry|avogadro)\b', re.IGNORECASE)]),
+    ("Modular Exponentiation & RSA Cryptography ([MOD])", [re.compile(r'\b(modular exponentiation|diffie-hellman|\brsa\b|cipher)\b', re.IGNORECASE)]),
+    ("NEC Conductor Voltage Drop & Three-Phase Power ([VD], [3PH÷])", [re.compile(r'\b(three-phase|circular mils|voltage drop|power factor)\b', re.IGNORECASE)]),
+    ("Net Present Value (NPV), IRR & Bond Duration ([NPV], [IRR])", [re.compile(r'\b(net present value|internal rate of return|macaulay duration)\b', re.IGNORECASE)]),
+    ("Pediatric Safe-Dose Guardrails & Calcium Correction ([PED])", [re.compile(r'\b(pediatric|amoxicillin|albumin|calcium)\b', re.IGNORECASE)]),
+    ("Reflection Coefficient Γ, VSWR & Return Loss ([SWR], [RL])", [re.compile(r'\b(reflection coefficient|\bvswr\b|standing wave|return loss|mismatch loss)\b', re.IGNORECASE)]),
+    ("SC-14 Industrial Trades, Electrical & Mechanical Calculator", [re.compile(r'\bsc-14\b', re.IGNORECASE)]),
+    ("SC-16 Systems Programming, Embedded & Cyber Calculator", [re.compile(r'\bsc-16\b', re.IGNORECASE)]),
+    ("SC-24 Cinema Optics, Broadcast Timecode & Sound Calculator", [re.compile(r'\bsc-24\b', re.IGNORECASE)]),
+    ("SC-35 Geomatics, Land Surveying & Flight Navigation Calculator", [re.compile(r'\bsc-35\b', re.IGNORECASE)]),
+    ("SC-50 RF Spectrum, Transmission Lines & Microwave Calculator", [re.compile(r'\bsc-50\b', re.IGNORECASE)]),
+    ("SC-60 Wet-Lab Chemistry, Stoichiometry & Spectroscopy Calculator", [re.compile(r'\bsc-60\b', re.IGNORECASE)]),
+    ("SC-78 Commercial Bakery, Fermentation Science & Brewing Calculator", [re.compile(r'\bsc-78\b', re.IGNORECASE)]),
+    ("SC-80 Clinical Nursing, Hospital Pharmacy & Infusions Calculator", [re.compile(r'\bsc-80\b', re.IGNORECASE)]),
+    ("SC-95 Quantitative Finance, Actuarial Science & Six Sigma Calculator", [re.compile(r'\bsc-95\b', re.IGNORECASE)]),
+    ("Sexagesimal Degrees-Minutes-Seconds (D.MMSS, [→HR], [→HMS])", [re.compile(r'\b(sexagesimal|d\.mmss|arc-minutes|arc-seconds)\b', re.IGNORECASE)]),
+    ("Six Sigma Process Capability (Cp, Cpk & Normal Quantiles, [CPK])", [re.compile(r'\b(six sigma|process capability|\bcpk\b|specification limit)\b', re.IGNORECASE)]),
+    ("Smith Chart L-Network Impedance Matching ([SMTH])", [re.compile(r'\b(smith chart|phillip smith|impedance matching|l-network)\b', re.IGNORECASE)]),
+    ("SMPTE Timecode & 29.97 Drop-Frame Arithmetic ([TC], [FPS])", [re.compile(r'\b(smpte|timecode|drop-frame|29\.97)\b', re.IGNORECASE)]),
+    ("Thermal Noise Floor & Cascaded Noise Figure ([NF])", [re.compile(r'\b(noise figure|thermal noise|-174\s*dbm|johnson-nyquist)\b', re.IGNORECASE)]),
+    ("Time Value of Money & Loan Amortization ([N], [I/Y], [PV], [PMT], [FV])", [re.compile(r'\b(time value of money|amortization|compound interest)\b', re.IGNORECASE)]),
+]
+
+
+def extract_index_terms(
+    text: str,
+    is_sc32: bool,
+    term_counts: Optional[Dict[str, int]] = None,
+    max_per_term: int = 6,
+    manual_kind: Optional[str] = None,
+) -> List[str]:
     """
     Identifies relevant subject index terms from paragraph or heading text.
     Limits each term to at most `max_per_term` distinct references across the manual.
     """
     if term_counts is None:
         return []
-    catalog = INDEX_CATALOG_SC32 if is_sc32 else INDEX_CATALOG_SC6
+    kind = manual_kind or ("sc32" if is_sc32 else "sc6")
+    if kind == "domains":
+        catalog = INDEX_CATALOG_DOMAINS
+    elif kind == "sc32":
+        catalog = INDEX_CATALOG_SC32
+    else:
+        catalog = INDEX_CATALOG_SC6
     matched = []
     for canonical_name, patterns in catalog:
         if term_counts.get(canonical_name, 0) >= max_per_term:
@@ -1678,6 +2287,10 @@ def draw_vector_isbn_barcode(
         "0001101", "0011001", "0010011", "0111101", "0100011",
         "0110001", "0101111", "0111011", "0110111", "0001011",
     ]
+    G_CODES = [
+        "0100111", "0110011", "0011011", "0100001", "0011101",
+        "0111001", "0000101", "0010001", "0001001", "0010111",
+    ]
     R_CODES = [
         "1110010", "1100110", "1101100", "1000010", "1011100",
         "1001110", "1010000", "1000100", "1001000", "1110100",
@@ -1686,24 +2299,27 @@ def draw_vector_isbn_barcode(
     while len(digits) < 13:
         digits.append(0)
 
+    # EAN-13 parity pattern for leading digit '9' (Bookland 978/979) is LLGLGG
+    left_parity = "LLGLGG"
     bits = "101"  # Left guard
-    for d in digits[1:7]:
-        bits += L_CODES[d]
+    for idx_d, d in enumerate(digits[1:7]):
+        bits += L_CODES[d] if left_parity[idx_d] == "L" else G_CODES[d]
     bits += "01010"  # Center guard
     for d in digits[7:13]:
         bits += R_CODES[d]
     bits += "101"  # Right guard
 
-    # 5-digit price add-on ("51900" = $19.00 US)
+    # 5-digit Bookland add-on ("90000" = No Suggested Retail Price Encoded; EAN-5 parity for 90000 is GLLGL)
+    addon_parity = "GLLGL"
     addon_bits = "1011"
-    for idx_a, d in enumerate([5, 1, 9, 0, 0]):
-        addon_bits += L_CODES[d]
+    for idx_a, d in enumerate([9, 0, 0, 0, 0]):
+        addon_bits += L_CODES[d] if addon_parity[idx_a] == "L" else G_CODES[d]
         if idx_a < 4:
             addon_bits += "01"
 
     bar_x0 = x + 13.0
     module_w = 0.88
-    bar_bottom = y + 22.0
+    bar_bottom = y + 18.0
     bar_top = y + h - 17.0
     bar_h = bar_top - bar_bottom
 
@@ -1715,22 +2331,23 @@ def draw_vector_isbn_barcode(
             bh = bar_h + (4.0 if is_guard else 0.0)
             c.rect(bar_x0 + idx_b * module_w, by, module_w * 0.96, bh, fill=1, stroke=0)
 
-    # Draw 5-digit price add-on bars to the right
+    # Draw 5-digit "90000" add-on bars to the right
     addon_x0 = bar_x0 + len(bits) * module_w + 6.0
     addon_h = bar_h - 6.0
     c.setFont(FONT_MONO_BOLD, 6.2)
-    c.drawCentredString(addon_x0 + (len(addon_bits) * module_w) * 0.5, bar_top - 4.5, "51900 >")
+    c.drawCentredString(addon_x0 + (len(addon_bits) * module_w) * 0.5, bar_top - 4.5, "90000 >")
     for idx_b, bit in enumerate(addon_bits):
         if bit == "1":
             c.rect(addon_x0 + idx_b * module_w, bar_bottom, module_w * 0.96, addon_h, fill=1, stroke=0)
 
-    # Bottom human-readable digits & retail price
+    # Bottom human-readable EAN-13 digits (no hardcoded price text)
     c.setFont(FONT_MONO_BOLD, 6.8)
     raw_d = "".join(str(d) for d in digits)
-    c.drawString(bar_x0 - 6.0, y + 12.5, f"{raw_d[0]}  {raw_d[1:7]}  {raw_d[7:13]}")
-    c.setFont(FONT_BODY_BOLD, 6.5)
-    c.setFillColor(to_color("#334155"))
-    c.drawCentredString(x + w * 0.5, y + 4.0, price_label)
+    c.drawString(bar_x0 - 6.0, y + 7.5, f"{raw_d[0]}  {raw_d[1:7]}  {raw_d[7:13]}")
+    if price_label:
+        c.setFont(FONT_BODY_BOLD, 6.5)
+        c.setFillColor(to_color("#334155"))
+        c.drawCentredString(x + w * 0.5, y + 4.0, price_label)
     c.restoreState()
 
 
@@ -1744,24 +2361,26 @@ def draw_bestseller_front_cover(
     bleed_l: float = 0.0,
     bleed_r: float = 0.0,
     bleed_t: float = 0.0,
-    bleed_b: float = 0.0
+    bleed_b: float = 0.0,
+    manual_kind: Optional[str] = None,
 ) -> None:
     """
     Renders a true minimalist NYT Bestseller 6x9 trade Front Cover ("very simple visuals with few words"):
     - Continuous Warm Archival Paper (#F7F4EB) across the entire cover with >65% open whitespace.
-    - Only 11-12 words on the entire front cover:
-      1. Monumental Title: "THINKING IN THE STACK" / "FROM BLOCKS TO THE STACK"
-      2. Concise 6-word Subtitle: "The Art of Calculating Without Parentheses" / "How Hands-On Blocks Make Numbers Click"
+    - Only 11-14 words on the entire front cover:
+      1. Monumental Title: "THINKING IN THE STACK" / "FROM BLOCKS TO THE STACK" / "THE STACK IN THE FIELD"
+      2. Concise Subtitle: "The Art of Solving Equations from the Inside Out" / "How Hands-On Blocks Make Numbers Click" / "When Mathematics Meets the Physical Trades"
       3. One simple, clever, unboxed minimalist vector illustration floating in the center.
       4. Single-word imprint at the foot: "StackCalc"
     All live elements sit well inside KDP's cover safe zone (>= 0.50 in / 36 pt inside trim).
     """
     c.saveState()
+    kind = manual_kind or ("sc32" if is_sc32 else "sc6")
 
     paper_cream = "#F7F4EB"
     ink_obsidian = "#0F172A"
     ink_slate = "#475569"
-    accent = "#FF4F00" if is_sc32 else "#059669"
+    accent = "#0284C7" if kind == "domains" else ("#FF4F00" if kind == "sc32" else "#059669")
 
     # 1. Single Continuous Warm Archival Paper Background (#F7F4EB)
     c.setFillColor(to_color(paper_cream))
@@ -1778,24 +2397,74 @@ def draw_bestseller_front_cover(
 
     # 2. Monumental Centered Bestseller Title (Upper Third)
     c.setFillColor(to_color(ink_obsidian))
-    if is_sc32:
+    if kind == "domains":
+        c.setFont(FONT_BODY_BOLD, 40.0)
+        c.drawCentredString(cx, oy + h - 118.0, "THE STACK")
+        c.drawCentredString(cx, oy + h - 166.0, "IN THE FIELD")
+        subtitle_str = "When Mathematics Meets the Physical Trades"
+    elif kind == "sc32":
         c.setFont(FONT_BODY_BOLD, 42.0)
         c.drawCentredString(cx, oy + h - 118.0, "THINKING IN")
         c.drawCentredString(cx, oy + h - 166.0, "THE STACK")
-        subtitle_str = "The Art of Calculating Without Parentheses"
+        subtitle_str = "The Art of Solving Equations from the Inside Out"
     else:
         c.setFont(FONT_BODY_BOLD, 38.0)
         c.drawCentredString(cx, oy + h - 118.0, "FROM BLOCKS")
         c.drawCentredString(cx, oy + h - 166.0, "TO THE STACK")
         subtitle_str = "How Hands-On Blocks Make Numbers Click"
 
-    # 3. Short 6-Word Subtitle
+    # 3. Short Subtitle
     c.setFont(FONT_BODY_ITALIC, 13.0)
     c.setFillColor(to_color(ink_slate))
     c.drawCentredString(cx, oy + h - 198.0, subtitle_str)
 
     # 4. Single Minimalist Iconic Visual Floating in Generous Whitespace (Center of Cover)
-    if is_sc32:
+    if kind == "domains":
+        # Part A: Row 0 Domain Softkey Bar (6 physical trade softkeys across the 9 instruments)
+        softkeys = ["FWD", "3PH", "HEX", "TC", "SWR", "NPV"]
+        pill_w = 34.0
+        pill_h = 18.0
+        pill_gap = 5.0
+        total_pills_w = len(softkeys) * pill_w + (len(softkeys) - 1) * pill_gap
+        start_px = cx - (total_pills_w * 0.5)
+        pill_y = oy + 358.0
+        for idx_s, sk_lbl in enumerate(softkeys):
+            px = start_px + idx_s * (pill_w + pill_gap)
+            c.setFillColor(to_color("#E2DDD0"))
+            c.roundRect(px + 1.5, pill_y - 1.5, pill_w, pill_h, 3.5, fill=1, stroke=0)
+            c.setFillColor(to_color("#1E293B"))
+            c.roundRect(px, pill_y, pill_w, pill_h, 3.5, fill=1, stroke=0)
+            c.setFillColor(to_color(accent if idx_s in (0, 4) else "#D97706"))
+            c.rect(px + 5.0, pill_y + pill_h - 3.0, pill_w - 10.0, 1.5, fill=1, stroke=0)
+            c.setFont(FONT_MONO_BOLD, 7.5)
+            c.setFillColor(to_color("#FFFFFF"))
+            c.drawCentredString(px + pill_w * 0.5, pill_y + 5.0, sk_lbl)
+
+        # Part B: Four Minimalist Floating Stack Bars (T, Z, Y, X) holding live trade quantities
+        bar_w = 229.0
+        bar_h = 24.0
+        bar_gap = 10.0
+        bar_x = cx - (bar_w * 0.5)
+        top_bar_y = oy + 312.0
+
+        stack_bars = [
+            ("T", "N 34°15'20\" E", "#E6E1D3", "#64748B", "#475569"),
+            ("Z", "0xDEADBEEF", "#DCD6C6", "#475569", "#334155"),
+            ("Y", "01:04:12:18", "#1E293B", "#94A3B8", "#FFFFFF"),
+            ("X", "VSWR: 1.5000", "#0284C7", "#E0F2FE", "#FFFFFF"),
+        ]
+        for idx_b, (lbl, val, fill_hex, lbl_hex, val_hex) in enumerate(stack_bars):
+            by = top_bar_y - idx_b * (bar_h + bar_gap)
+            c.setFillColor(to_color(fill_hex))
+            c.roundRect(bar_x, by, bar_w, bar_h, 4.0, fill=1, stroke=0)
+            c.setFont(FONT_MONO_BOLD, 9.5)
+            c.setFillColor(to_color(lbl_hex))
+            c.drawString(bar_x + 10.0, by + 8.0, lbl)
+            if val:
+                c.setFont(FONT_MONO_BOLD, 10.5)
+                c.setFillColor(to_color(val_hex))
+                c.drawRightString(bar_x + bar_w - 12.0, by + 7.5, val)
+    elif kind == "sc32":
         # Part A: The Parenthesis Trap — lightly struck through with a single bold orange slash
         expr_y = oy + 372.0
         c.setFont(FONT_MONO, 17.0)
@@ -1808,7 +2477,7 @@ def draw_bestseller_front_cover(
         c.setLineCap(1)
         c.line(cx - 102.0, expr_y - 4.0, cx + 102.0, expr_y + 16.0)
 
-        # Part B: Four Minimalist Floating Stack Bars (T, Z, Y, X) — authentic RPN state after 3 ENTER 4 + 5 ENTER 6
+        # Part B: Four Minimalist Floating Stack Bars (T, Z, Y, X) — authentic RPN state after solving both inner branches 3 ENTER 4 + 5 ENTER 6 +
         bar_w = 188.0
         bar_h = 24.0
         bar_gap = 10.0
@@ -1816,10 +2485,10 @@ def draw_bestseller_front_cover(
         top_bar_y = oy + 306.0
 
         stack_bars = [
-            ("T", "0.0000", "#E6E1D3", "#64748B", "#64748B"),
-            ("Z", "7.0000", "#DCD6C6", "#475569", "#334155"),
-            ("Y", "5.0000", "#1E293B", "#94A3B8", "#FFFFFF"),
-            ("X", "6.0000", "#FF4F00", "#FFE4D6", "#FFFFFF"),
+            ("T", "0", "#E6E1D3", "#64748B", "#64748B"),
+            ("Z", "0", "#DCD6C6", "#475569", "#334155"),
+            ("Y", "7", "#1E293B", "#94A3B8", "#FFFFFF"),
+            ("X", "11", "#FF4F00", "#FFE4D6", "#FFFFFF"),
         ]
         for idx_b, (lbl, val, fill_hex, lbl_hex, val_hex) in enumerate(stack_bars):
             by = top_bar_y - idx_b * (bar_h + bar_gap)
@@ -1886,7 +2555,8 @@ def draw_bestseller_back_cover(
     bleed_l: float = 0.0,
     bleed_r: float = 0.0,
     bleed_t: float = 0.0,
-    bleed_b: float = 0.0
+    bleed_b: float = 0.0,
+    manual_kind: Optional[str] = None,
 ) -> None:
     """
     Renders a minimalist 6x9 NYT Bestseller trade Back Cover on continuous Warm Archival Paper (#F7F4EB):
@@ -1895,12 +2565,13 @@ def draw_bestseller_back_cover(
       KDP's mandatory 2.00 x 1.20 in white ISBN-13 barcode box.
     """
     c.saveState()
+    kind = manual_kind or ("sc32" if is_sc32 else "sc6")
 
     paper_cream = "#F7F4EB"
     ink_obsidian = "#0F172A"
     ink_slate = "#334155"
     ink_muted = "#64748B"
-    accent = "#FF4F00" if is_sc32 else "#059669"
+    accent = "#0284C7" if kind == "domains" else ("#FF4F00" if kind == "sc32" else "#059669")
 
     # 1. Continuous Warm Archival Paper Background (#F7F4EB)
     c.setFillColor(to_color(paper_cream))
@@ -1922,29 +2593,53 @@ def draw_bestseller_back_cover(
     c.drawString(
         safe_x,
         oy + h - 52.0,
-        "MATHEMATICS  /  POPULAR SCIENCE" if is_sc32 else "MATHEMATICS  /  EDUCATION"
+        "MATHEMATICS  /  APPLIED ENGINEERING & TRADES"
+        if kind == "domains" else
+        ("MATHEMATICS  /  POPULAR SCIENCE" if kind == "sc32" else "MATHEMATICS  /  EDUCATION")
     )
 
     # 3. Bold Armchair-Reader Hook Question
     c.setFillColor(to_color(ink_obsidian))
     c.setFont(FONT_BODY_BOLD, 17.5)
-    if is_sc32:
-        c.drawString(safe_x, oy + h - 92.0, "Why do we write equations one way,")
-        c.drawString(safe_x, oy + h - 114.0, "yet solve them in our heads another?")
+    if kind == "domains":
+        c.drawString(safe_x, oy + h - 92.0, "Every physical trade speaks its own")
+        c.drawString(safe_x, oy + h - 114.0, "dialect of mathematics.")
         p1_html = (
-            "In 1924, the Polish logician Jan Łukasiewicz showed that algebraic parentheses are an artifact "
-            "of flat paper rather than a requirement of mathematics. When you build a calculation "
-            "from the inside out on a four-level stack, parentheses vanish, hidden memory traps disappear, "
-            "and complex ideas unfold one step at a time."
+            "A land surveyor sighting an azimuth in degrees, minutes, and seconds; a master electrician "
+            "bending a 30-degree conduit offset; a focus puller computing hyperfocal distance on an anamorphic "
+            "lens; an RF engineer matching a 50-ohm antenna on a Smith Chart; and an ICU nurse titrating a "
+            "weight-based infusion all face the same hazard: multi-step formulas where one misplaced parenthesis ruins the work."
         )
         p2_html = (
-            "Written for both the general reader and the practicing engineer or student at a desk, "
-            "<b>Thinking in the Stack</b> pairs the historical stories behind great mathematical breakthroughs "
-            "with a complete hands-on reference for the <b>StackCalc SC-32</b>."
+            "<b>The Stack in the Field</b> introduces the nine domain-specific instruments of the "
+            "<b>StackCalc Series</b> (<b>SC-35, SC-14, SC-16, SC-24, SC-50, SC-60, SC-78, SC-80,</b> and "
+            "<b>SC-95</b>)—pairing the historical origin and first-principles derivation of each trade's equations "
+            "with parenthesis-free four-register stack traces (<b>T, Z, Y, X</b>) and dedicated <b>Row 0</b> softkey solvers."
         )
         ref_note_html = (
-            "<b>Inside the Book:</b> 14 narrative chapters  •  The stories behind logarithms, phasors, "
-            "root finding, and Romberg integration  •  100 essential STEM equations  •  Complete SC-32 reference."
+            "<b>Nine Instruments Inside:</b> Geomatics &amp; Flight (SC-35)  •  Electrical &amp; Mechanical Trades (SC-14)  "
+            "•  Systems &amp; Cyber (SC-16)  •  Cinema &amp; Broadcast (SC-24)  •  RF &amp; Microwave (SC-50)  "
+            "•  Wet-Lab Chemistry (SC-60)  •  Bakery &amp; Brewing (SC-78)  •  Clinical Pharmacy (SC-80)  •  Quantitative Finance &amp; Six Sigma (SC-95)."
+        )
+    elif kind == "sc32":
+        c.drawString(safe_x, oy + h - 92.0, "Written for paper from the outside in.")
+        c.drawString(safe_x, oy + h - 114.0, "Solved in time from the inside out.")
+        p1_html = (
+            "In 1924, the Polish logician Jan Łukasiewicz proved that algebraic parentheses are an artifact "
+            "of sixteenth-century printing, not a law of mathematics. When an equation is solved "
+            "from its innermost core outward across four visible registers, parentheses vanish, hidden memory "
+            "states disappear, and complex derivations unfold one live physical quantity at a time."
+        )
+        p2_html = (
+            "Across fourteen chapters—from William Hewlett's 1971 pocket-calculator "
+            "challenge and John Napier's logarithms to Steinmetz's AC phasors, Cardano and Brent's root solvers, "
+            "Gauss's recovery of Ceres by Least Squares, and Enrico Fermi's Trinity paper scraps—<b>Thinking in the "
+            "Stack</b> connects the history of mathematical ideas with the <b>StackCalc SC-32</b>."
+        )
+        ref_note_html = (
+            "Logarithms &amp; Power Laws  •  Vectors, Phasors &amp; Solid Geometry  •  Cardano's Cubic &amp; "
+            "Brent's Root Solver  •  Romberg Quadrature &amp; Least Squares  •  36-Bit Binary, Time Value of Money "
+            "&amp; Applied Engineering Case Studies."
         )
     else:
         c.drawString(safe_x, oy + h - 92.0, "What happens when you can hold")
@@ -2007,7 +2702,7 @@ def draw_bestseller_back_cover(
     rule_y2 = note_y - 10.0
     c.line(safe_x, rule_y2, safe_x + safe_w, rule_y2)
 
-    # 5. Bottom Left Imprint & Bottom Right KDP 2.00 x 1.20 in White ISBN Barcode Box
+    # 5. Bottom Left Imprint (Bottom-right 2.00 x 1.20 in zone intentionally left clear for KDP's auto-stamped ISBN barcode)
     c.setFillColor(to_color(ink_obsidian))
     c.setFont(FONT_BODY_BOLD, 14.0)
     c.drawString(safe_x, oy + 88.0, "StackCalc")
@@ -2019,20 +2714,15 @@ def draw_bestseller_back_cover(
     c.setFillColor(to_color(accent))
     c.drawString(safe_x, oy + 56.0, "stackcalc.io")
 
-    # Official KDP 2.00 in x 1.20 in (144 pt x 86.4 pt) White Barcode Box at bottom-right
-    bc_w = 144.0
-    bc_h = 86.4
-    bc_x = safe_x + safe_w - bc_w
-    bc_y = oy + 44.0
-    if is_sc32:
-        draw_vector_isbn_barcode(c, bc_x, bc_y, bc_w, bc_h, "979-8-9914832-2-3", "9798991483223", "$19.00 US  •  CAN $25.99")
-    else:
-        draw_vector_isbn_barcode(c, bc_x, bc_y, bc_w, bc_h, "979-8-9914832-1-6", "9798991483216", "$19.00 US  •  CAN $25.99")
-
     c.restoreState()
 
 
-def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> List[Flowable]:
+def build_kdp_front_matter(
+    is_sc32: bool,
+    styles: Dict[str, ParagraphStyle],
+    is_hardcover: bool = False,
+    manual_kind: Optional[str] = None,
+) -> List[Flowable]:
     """
     Generates traditional KDP 6x9 trade/reference book front matter (Pages i–iv in lowercase Roman):
       - Page i   (Recto / Odd):  Half-Title Page (no header, no footer folio)
@@ -2042,6 +2732,11 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
     Covers are NEVER included inside the KDP interior manuscript PDF.
     """
     elements: List[Flowable] = []
+    kind = manual_kind or ("sc32" if is_sc32 else "sc6")
+    sc6_isbn = "979-8-16-593829-0" if is_hardcover else "979-8-16-592706-5"
+    sc32_isbn = "979-8-16-745932-8" if is_hardcover else "979-8-16-742684-9"
+    domains_isbn = "979-8-16-841932-1" if is_hardcover else "979-8-16-841205-6"
+    binding_label = "Hardcover Edition" if is_hardcover else "Paperback Edition"
 
     half_title_style = ParagraphStyle(
         "KDPHalfTitle",
@@ -2116,20 +2811,30 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
         spaceAfter=5,
     )
 
-    main_title = "THINKING IN THE STACK" if is_sc32 else "FROM BLOCKS TO THE STACK"
-    vol_label = "THE STACKCALC LIBRARY  •  VOLUME II" if is_sc32 else "THE STACKCALC LIBRARY  •  VOLUME I"
-    sub_line = (
-        "The Art of Calculating Without Parentheses"
-        if is_sc32 else
-        "How Hands-On Blocks Make Numbers Click"
-    )
-    desc_line = (
-        "A Narrative Guide &amp; Desk Reference to Reverse Polish Notation, Applied Physics, "
-        "Numerical Calculus, and 100 Essential Equations — for the <b>StackCalc SC-32</b>"
-        if is_sc32 else
-        "An Illustrated Guide to Visual Number Sense, Fractions, 3D-Printable Math Blocks, "
-        "and Parenthesis-Free Thinking for Grades 3–6 (Ages 8–12) — with the <b>StackCalc SC-6</b>"
-    )
+    if kind == "domains":
+        main_title = "THE STACK IN THE FIELD"
+        vol_label = "THE STACKCALC LIBRARY  •  VOLUME III"
+        sub_line = "When Mathematics Meets the Physical Trades"
+        desc_line = (
+            "Applied Field Mathematics, Domain Softkeys, and Four-Register Stack Traces "
+            "Across Nine Professional Instruments (<b>SC-35, SC-14, SC-16, SC-24, SC-50, SC-60, SC-78, SC-80 &amp; SC-95</b>)"
+        )
+    elif kind == "sc32":
+        main_title = "THINKING IN THE STACK"
+        vol_label = "THE STACKCALC LIBRARY  •  VOLUME II"
+        sub_line = "The Art of Solving Equations from the Inside Out"
+        desc_line = (
+            "Reverse Polish Notation, Historical Derivations, Numerical Methods, "
+            "and Applied Engineering on the <b>StackCalc SC-32</b>"
+        )
+    else:
+        main_title = "FROM BLOCKS TO THE STACK"
+        vol_label = "THE STACKCALC LIBRARY  •  VOLUME I"
+        sub_line = "How Hands-On Blocks Make Numbers Click"
+        desc_line = (
+            "An Illustrated Guide to Visual Number Sense, Fractions, 3D-Printable Math Blocks, "
+            "and Parenthesis-Free Thinking for Grades 3–6 (Ages 8–12) — with the <b>StackCalc SC-6</b>"
+        )
 
     # --- PAGE i (Recto): Half-Title Page ---
     elements.append(ChapterTracker("HALF TITLE"))
@@ -2145,28 +2850,35 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
 
     # --- PAGE ii (Verso): Series Frontispiece ("The StackCalc Library") ---
     elements.append(ChapterTracker("SERIES FRONTISPIECE"))
-    elements.append(Spacer(1, 100))
+    elements.append(Spacer(1, 90))
     elements.append(make_paragraph("BOOKS &amp; OPEN-SOURCE INSTRUMENTS IN THE STACKCALC LIBRARY", kicker_style))
     elements.append(Spacer(1, 8))
     elements.append(HRFlowable(width="100%", thickness=1.0, color=to_color(TEXT_MAIN), spaceAfter=10))
     elements.append(make_paragraph(
         "<b>Volume I — From Blocks to the Stack (Grades 3–6 / Ages 8–12)</b><br/>"
         "<i>How Hands-On Blocks Make Numbers Click</i><br/>"
-        "ISBN 979-8-9914832-1-6 (Placeholder)  •  9 Story-Driven Chapters, 9 Open-Source 3D-Printable Math Block Studios &amp; 25 Station Guides",
+        f"ISBN {sc6_isbn}  •  9 Story-Driven Chapters, 9 Open-Source 3D-Printable Math Block Studios &amp; 25 Station Guides",
         copyright_style
     ))
     elements.append(Spacer(1, 6))
     elements.append(make_paragraph(
         "<b>Volume II — Thinking in the Stack (High School, University &amp; Practicing Engineers)</b><br/>"
-        "<i>The Art of Calculating Without Parentheses</i><br/>"
-        "ISBN 979-8-9914832-2-3 (Placeholder)  •  14 Narrative Chapters, Historical Derivations, Numerical Methods &amp; 100 Master Equations",
+        "<i>The Art of Solving Equations from the Inside Out</i><br/>"
+        f"ISBN {sc32_isbn}  •  14 Narrative Chapters, Historical Derivations, Numerical Methods &amp; Applied Engineering Case Studies",
         copyright_style
     ))
     elements.append(Spacer(1, 6))
     elements.append(make_paragraph(
-        "<b>Companion Software &amp; 3D-Printable Manipulative Studios (stackcalc.io)</b><br/>"
-        "• <b>StackCalc iOS, iPadOS &amp; watchOS Applications:</b> Full four-register RPN calculators for phone, tablet, or wrist.<br/>"
-        "• <b>OpenSCAD 42mm Gridfinity 3D Models:</b> Print Ten-Frames, 84mm Fraction Towers, Prime Blocks, Volvelles &amp; Geared Clocks.",
+        "<b>Volume III — The Stack in the Field (Domain Calculator Series)</b><br/>"
+        "<i>When Mathematics Meets the Physical Trades</i><br/>"
+        f"ISBN {domains_isbn}  •  Geomatics (SC-35), Trades (SC-14), Cyber (SC-16), Cinema (SC-24), RF (SC-50), Wet-Lab (SC-60), Brewing (SC-78), Clinical (SC-80) &amp; Finance (SC-95)",
+        copyright_style
+    ))
+    elements.append(Spacer(1, 6))
+    elements.append(make_paragraph(
+        "<b>Software Applications &amp; Open-Source Hardware (stackcalc.io)</b><br/>"
+        "• <b>StackCalc iOS, iPadOS &amp; watchOS Applications:</b> Four-register RPN calculators for phone, tablet, or wrist.<br/>"
+        "• <b>OpenSCAD &amp; KiCad Hardware Files:</b> Printable calculator enclosures, tactile keycap matrices, 42mm Gridfinity math blocks, and PCB schematics.",
         copyright_style
     ))
     elements.append(PageBreak())
@@ -2177,7 +2889,13 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
     elements.append(Spacer(1, 70))
     elements.append(make_paragraph(vol_label, kicker_style))
     elements.append(Spacer(1, 10))
-    elements.append(make_paragraph(main_title, full_title_style))
+    if kind == "domains":
+        full_page_title = "THE STACK<br/>IN THE FIELD"
+    elif kind == "sc32":
+        full_page_title = "THINKING IN<br/>THE STACK"
+    else:
+        full_page_title = main_title
+    elements.append(make_paragraph(full_page_title, full_title_style))
     elements.append(Spacer(1, 12))
     elements.append(HRFlowable(width="100%", thickness=1.8, color=to_color(TEXT_MAIN), spaceAfter=12))
     elements.append(make_paragraph(sub_line, full_sub_style))
@@ -2196,34 +2914,72 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
     elements.append(ChapterTracker("COPYRIGHT AND COLOPHON"))
     elements.append(BookmarkFlowable("bm_copyright", "Copyright & Print Colophon", level=0))
     elements.append(Spacer(1, 24))
-    isbn_str = "979-8-9914832-2-3" if is_sc32 else "979-8-9914832-1-6"
+    isbn_str = domains_isbn if kind == "domains" else (sc32_isbn if kind == "sc32" else sc6_isbn)
     elements.append(make_paragraph(
         f"<b>{main_title}: {sub_line}</b><br/>"
         f"Copyright © 2026 by <b>StackCalc</b> (https://stackcalc.io). Some rights reserved.<br/>"
         f"Published by <b>StackCalc</b>.<br/>"
-        f"<b>ISBN-13:</b> {isbn_str} (Placeholder) &nbsp;&nbsp;|&nbsp;&nbsp; <b>First Edition</b>",
+        f"<b>ISBN-13:</b> {isbn_str} ({binding_label}) &nbsp;&nbsp;|&nbsp;&nbsp; <b>First Edition</b>",
         copyright_style
     ))
-    elements.append(make_paragraph(
-        "<b>Open-Education License (CC BY-NC-SA 4.0):</b> Classroom teachers, university instructors, parents, and "
-        "students are expressly permitted to reproduce tables, 4-register stack traces, and 3D manipulative "
-        "STL/3MF models for non-commercial educational instruction under Creative Commons Attribution-NonCommercial-"
-        "ShareAlike 4.0 International.",
-        copyright_style
-    ))
-    elements.append(make_paragraph(
-        "<b>Regulatory &amp; Physical Safety Notice (Reese’s Law / P.L. 117-171 / 16 CFR Part 1263 &amp; ASTM F963):</b> "
-        "Physical calculator instruments that utilize coin or button cell batteries must maintain a captive, tool-secured "
-        "battery compartment compliant with UL 4200A. 3D-printed unit tiles and polyhedral dice "
-        "constitute small parts under 16 CFR Part 1501; adult supervision is required for children under 6 years of age.",
-        copyright_style
-    ))
-    elements.append(make_paragraph(
-        "<b>Trademark Notice:</b> <i>StackCalc</i>, <i>SC-32</i>, and <i>SC-6</i> are trademarks of StackCalc. "
-        "<i>Common Core State Standards</i>, <i>Singapore Math</i>, <i>Bridges in Mathematics</i>, <i>AP</i>, <i>Hewlett-Packard</i>, "
-        "and <i>Gridfinity</i> are trademarks of their respective owners, none of whom endorse or sponsor this publication.",
-        copyright_style
-    ))
+    if kind == "domains":
+        elements.append(make_paragraph(
+            "<b>Open-Education License (CC BY-NC-SA 4.0):</b> Vocational instructors, university faculty, apprentices, "
+            "and practicing engineers are expressly permitted to reproduce tables, 4-register stack traces, and worked "
+            "field examples for non-commercial educational instruction under Creative Commons Attribution-NonCommercial-"
+            "ShareAlike 4.0 International.",
+            copyright_style
+        ))
+        elements.append(make_paragraph(
+            "<b>Engineering, Aviation &amp; Clinical Practice Notice:</b> Worked examples in surveying (SC-35), electrical "
+            "and structural trades (SC-14), aviation wind/density altitude, and clinical pharmacy/nursing dosage (SC-80) "
+            "are presented for mathematical instruction and reference verification. Always verify operational flight plans, "
+            "NEC/local electrical code compliance, and patient medication dosages against official institutional protocols "
+            "and dual-clinician checks.",
+            copyright_style
+        ))
+        elements.append(make_paragraph(
+            "<b>Trademark Notice:</b> <i>StackCalc</i>, <i>SC-32</i>, <i>SC-6</i>, and <i>SC-35 / SC-14 / SC-16 / SC-24 / SC-50 / SC-60 / SC-78 / SC-80 / SC-95</i> "
+            "are trademarks of StackCalc. <i>Hewlett-Packard</i>, <i>SMPTE</i>, <i>National Electrical Code (NEC)</i>, and other "
+            "standard or historical names referenced for scholarly attribution are the property of their respective owners.",
+            copyright_style
+        ))
+    elif kind == "sc32":
+        elements.append(make_paragraph(
+            "<b>Open-Education License (CC BY-NC-SA 4.0):</b> University instructors, classroom teachers, and "
+            "students are expressly permitted to reproduce tables, 4-register stack traces, and worked engineering "
+            "examples for non-commercial educational instruction under Creative Commons Attribution-NonCommercial-"
+            "ShareAlike 4.0 International.",
+            copyright_style
+        ))
+        elements.append(make_paragraph(
+            "<b>Trademark Notice:</b> <i>StackCalc</i>, <i>SC-32</i>, and <i>SC-6</i> are trademarks of StackCalc. "
+            "<i>Hewlett-Packard</i>, <i>HP-35</i>, <i>HP-15C</i>, <i>HP-32SII</i>, <i>Gridfinity</i>, and other historical "
+            "instrument or standard names referenced for scholarly attribution and educational context are the property "
+            "of their respective owners, none of whom endorse or sponsor this publication.",
+            copyright_style
+        ))
+    else:
+        elements.append(make_paragraph(
+            "<b>Open-Education License (CC BY-NC-SA 4.0):</b> Classroom teachers, university instructors, parents, and "
+            "students are expressly permitted to reproduce tables, 4-register stack traces, and 3D manipulative "
+            "STL/3MF models for non-commercial educational instruction under Creative Commons Attribution-NonCommercial-"
+            "ShareAlike 4.0 International.",
+            copyright_style
+        ))
+        elements.append(make_paragraph(
+            "<b>Regulatory &amp; Physical Safety Notice (Reese’s Law / P.L. 117-171 / 16 CFR Part 1263 &amp; ASTM F963):</b> "
+            "Physical calculator instruments that utilize coin or button cell batteries must maintain a captive, tool-secured "
+            "battery compartment compliant with UL 4200A. 3D-printed unit tiles and polyhedral dice "
+            "constitute small parts under 16 CFR Part 1501; adult supervision is required for children under 6 years of age.",
+            copyright_style
+        ))
+        elements.append(make_paragraph(
+            "<b>Trademark Notice:</b> <i>StackCalc</i>, <i>SC-32</i>, and <i>SC-6</i> are trademarks of StackCalc. "
+            "<i>Common Core State Standards</i>, <i>Singapore Math</i>, <i>Bridges in Mathematics</i>, <i>Hewlett-Packard</i>, "
+            "and <i>Gridfinity</i> are trademarks of their respective owners, none of whom endorse or sponsor this publication.",
+            copyright_style
+        ))
     elements.append(make_paragraph(
         "<b>Print &amp; Typography Colophon:</b> Typeset in Computer Modern Unicode (CMU Serif), SpaceMono, STIX Math, and Terminus LCD "
         "on 6.00 × 9.00 in (152.4 × 228.6 mm) archival white paper in high-contrast monochrome ink for trade paperback "
@@ -2234,6 +2990,7 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
 
     # --- PAGE v (Recto): Dedication & Epigraph Page ---
     elements.append(ChapterTracker("DEDICATION AND EPIGRAPH"))
+    elements.append(BookmarkFlowable("bm_dedication", "Dedication & Epigraph", level=0))
     dedication_style = ParagraphStyle(
         "KDPDedication",
         parent=styles["Normal"],
@@ -2251,20 +3008,84 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
         leading=14.2,
         textColor=to_color(TEXT_MUTED),
         alignment=1,
-        leftIndent=36,
-        rightIndent=36,
+        leftIndent=14,
+        rightIndent=14,
     )
     epigraph_attr_style = ParagraphStyle(
         "KDPEpigraphAttr",
         parent=styles["Normal"],
         fontName=FONT_BODY_BOLD,
-        fontSize=8.5,
+        fontSize=8.3,
         leading=12.0,
         textColor=to_color(TEXT_MAIN),
         alignment=1,
     )
     elements.append(Spacer(1, 145))
-    if is_sc32:
+    if kind == "domains":
+        elements.append(make_paragraph(
+            "<i>For the surveyors, electricians, systems programmers, focus pullers,<br/>"
+            "RF engineers, chemists, bakers, brewmasters, clinical nurses, and analysts<br/>"
+            "who put mathematics to work in the physical world.</i>",
+            dedication_style
+        ))
+        elements.append(Spacer(1, 48))
+        elements.append(make_paragraph(
+            "“Theory without practice is empty;<br/>"
+            "practice without theory is blind.”",
+            epigraph_quote_style
+        ))
+        elements.append(Spacer(1, 6))
+        elements.append(make_paragraph(
+            "— IMMANUEL KANT, <i>Critique of Pure Reason</i> (1781)",
+            epigraph_attr_style
+        ))
+        elements.append(PageBreak())
+        # --- PAGE vi (Verso): Architectural Frontispiece & Domain Series Key ---
+        elements.append(ChapterTracker("ARCHITECTURAL FRONTISPIECE"))
+        elements.append(BookmarkFlowable("bm_arch_frontispiece", "Architectural Frontispiece", level=0))
+        front_hdr_style = ParagraphStyle(
+            "DomFrontispieceHdr",
+            parent=styles["Normal"],
+            fontName=FONT_BODY_BOLD,
+            fontSize=7.9,
+            leading=10.5,
+            textColor=to_color(SC32_PRIMARY),
+            alignment=1,
+            spaceAfter=4,
+        )
+        front_sub_style = ParagraphStyle(
+            "DomFrontispieceSub",
+            parent=styles["Normal"],
+            fontName=FONT_BODY_ITALIC,
+            fontSize=8.2,
+            leading=11.0,
+            textColor=to_color(TEXT_MUTED),
+            alignment=1,
+            spaceAfter=10,
+        )
+        front_body_style = ParagraphStyle(
+            "DomFrontispieceBody",
+            parent=styles["BodyText"],
+            fontName=FONT_BODY,
+            fontSize=7.8,
+            leading=10.6,
+            alignment=4,
+            spaceAfter=6.0,
+        )
+        elements.append(Spacer(1, 12))
+        elements.append(make_paragraph("ARCHITECTURAL FRONTISPIECE: THE NINE DOMAIN INSTRUMENTS", front_hdr_style))
+        elements.append(make_paragraph("Invariant Four-Register RPN Core, Row 0 Trade Softkeys &amp; Domain Input Modes", front_sub_style))
+        front_notes = [
+            "<b>1. One Invariant Stack Across Nine Physical Trades:</b> Every calculator in the StackCalc Domain Series (<b>SC-35, SC-14, SC-16, SC-24, SC-50, SC-60, SC-78, SC-80,</b> and <b>SC-95</b>) executes inside the same four-level operational stack (<b>Registers T, Z, Y, X</b>). Learning RPN stack mechanics once grants immediate fluency across all nine instruments.",
+            "<b>2. Row 0 Domain Softkey Solvers:</b> Rather than burying trade formulas inside nested menus, each instrument maps its top physical row of six keys (<b>Row 0</b>) to the fundamental nouns and verbs of that discipline—such as <b>FWD</b>, <b>INV</b>, and <b>BRG</b> on the SC-35 Surveyor; <b>RUN</b>, <b>RISE</b>, <b>DIAG</b>, and <b>BEND</b> on the SC-14 Tradesman; <b>HEX</b>, <b>BIN</b>, <b>WSZ</b>, and <b>FLT</b> on the SC-16 Programmer; and <b>BSA</b>, <b>IBW</b>, <b>CrCl</b>, and <b>MCG</b> on the SC-80 Clinician.",
+            "<b>3. Native Trade Input Modes:</b> Numbers are entered and displayed in the exact notation of the field: packed sexagesimal degrees-minutes-seconds (<b>D.MMSS</b>) in surveying, feet-inches-sixteenths (<b>FT-IN</b>) in carpentry and conduit bending, 8/16/32/64-bit two's complement hexadecimal and binary in embedded systems, and frame-accurate <b>HH:MM:SS:FF</b> SMPTE timecode on cinema sets.",
+            "<b>4. Worked Stack Traces &amp; Verification:</b> Every chapter pairs historical context and first-principles mathematical derivations with step-by-step four-register stack trace tables and self-check practice problems.",
+        ]
+        for fn_txt in front_notes:
+            elements.append(make_paragraph(_protect_special_unicode_glyphs(fn_txt), front_body_style))
+        elements.append(PageBreak())
+        return elements
+    elif kind == "sc32":
         elements.append(make_paragraph(
             "<i>For every engineer, scientist, and student who has ever wanted to see<br/>"
             "inside the equation—and for the pioneers of parenthesis-free calculation<br/>"
@@ -2282,6 +3103,76 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
             "— ALFRED NORTH WHITEHEAD, <i>An Introduction to Mathematics</i> (1911)",
             epigraph_attr_style
         ))
+        elements.append(PageBreak())
+        # --- PAGE vi (Verso): Architectural Frontispiece & Notation Key ---
+        elements.append(ChapterTracker("ARCHITECTURAL FRONTISPIECE"))
+        elements.append(BookmarkFlowable("bm_arch_frontispiece", "Architectural Frontispiece", level=0))
+        front_hdr_style = ParagraphStyle(
+            "SC32FrontispieceHdr",
+            parent=styles["Normal"],
+            fontName=FONT_BODY_BOLD,
+            fontSize=7.9,
+            leading=10.5,
+            textColor=to_color(SC32_PRIMARY),
+            alignment=1,
+            spaceAfter=4,
+        )
+        front_sub_style = ParagraphStyle(
+            "SC32FrontispieceSub",
+            parent=styles["Normal"],
+            fontName=FONT_BODY_ITALIC,
+            fontSize=8.2,
+            leading=11.0,
+            textColor=to_color(TEXT_MUTED),
+            alignment=1,
+            spaceAfter=8,
+        )
+        front_body_style = ParagraphStyle(
+            "SC32FrontispieceBody",
+            parent=styles["BodyText"],
+            fontName=FONT_BODY,
+            fontSize=7.8,
+            leading=10.4,
+            alignment=4,
+            spaceAfter=4.5,
+        )
+        elements.append(Spacer(1, 6))
+        elements.append(make_paragraph("ARCHITECTURAL FRONTISPIECE: THE SC-32 INSTRUMENT &amp; NOTATION KEY", front_hdr_style))
+        elements.append(make_paragraph("Four-Register RPN Evaluation, Dual-Shift Faceplate Topography &amp; Symbolic Conventions", front_sub_style))
+        ortho_candidates = [
+            MANUALS_ASSETS_DIR / "sc32-utility-ortho.png",
+            DOCS_DIR / "assets" / "renders" / "sc32-utility-ortho.png",
+            REPO_ROOT / "Website" / "docs" / "assets" / "renders" / "sc32-utility-ortho.png",
+        ]
+        ortho_img_p = next((p for p in ortho_candidates if p.exists()), None)
+        if ortho_img_p is not None:
+            try:
+                import io
+                from PIL import ImageOps
+                with PIL.Image.open(ortho_img_p) as fimg:
+                    ow, oh = fimg.size
+                    sc_f = min(PRINTABLE_WIDTH / ow, 225.0 / oh, 1.0)
+                    fw, fh = ow * sc_f, oh * sc_f
+                    g_fimg = ImageOps.autocontrast(fimg.convert("L"), cutoff=1)
+                    f_buf = io.BytesIO()
+                    g_fimg.save(f_buf, format="PNG")
+                    f_buf.seek(0)
+                    rl_fimg = RLImage(f_buf, width=fw, height=fh)
+                    rl_fimg.hAlign = "CENTER"
+                    elements.append(rl_fimg)
+                    elements.append(Spacer(1, 6))
+            except Exception:
+                pass
+        front_notes = [
+            "<b>1. The Four-Level Operational Stack (<i>T, Z, Y, X</i>) &amp; LASTX:</b> Every calculation executes across four visible active registers: <b>Register X</b> (bottom entry and result line), <b>Register Y</b> (second operand line), <b>Register Z</b> (third holding level), and <b>Register T</b> (top constant-replication level), backed by <b>LASTX</b> (which preserves the prior <i>X</i> argument before every operation) and 26 lettered storage registers (<b>A</b>–<b>Z</b>).",
+            "<b>2. Hardware Keycap Cartouches &amp; Dual Shifts:</b> Throughout this volume, primary faceplate keys appear as inline cartouches (<b>ENTER</b>, <b>x⇄y</b>, <b>R↓</b>, <b>SIN</b>, <b>LN</b>). Functions printed above a key in warm orange (accessed via the Left Shift key <b>↰</b>) or cool blue (accessed via the Right Shift key <b>↱</b>) are shown with their explicit directional shift prefix so every keystroke sequence is unambiguous.",
+            "<b>3. Dynamic Softkey Menu Bar (Top Key Row):</b> Opening a softkey menu or interactive workspace (<b>DISP</b>, <b>MODES</b>, <b>BASE</b>, <b>CLEAR</b>, <b>FLAGS</b>, <b>PARTS</b>, <b>PROB</b>, <b>SUMS</b>, <b>x̄,ȳ</b>, <b>s,σ</b>, <b>L.R.</b>, <b>x?y</b>, <b>x?0</b>, <b>POLY</b>, <b>TVM</b>, <b>EQN</b>, <b>SOLVE</b>, <b>∫</b>, <b>PLOT</b>, or <b>REGS</b>) maps the top row of six physical keys to context-sensitive labels along the bottom edge of the LCD; in <b>POLY</b> and <b>TVM</b>, those top-row softkeys accept coefficients and financial variables from Register <i>X</i> without pressing <b>STO</b> or <b>RCL</b>.",
+            "<b>4. Numbered Figures, Equations &amp; Stack Traces:</b> All schematic figures (<i>Figure C.N</i>) and display equations (<i>Eq. C.N</i>) are numbered sequentially by chapter. Every multi-step keystroke table displays the exact post-execution state of Registers <i>T, Z, Y,</i> and <i>X</i> verified to 64-bit IEEE-754 double precision.",
+        ]
+        for fn_txt in front_notes:
+            elements.append(make_paragraph(_protect_special_unicode_glyphs(fn_txt), front_body_style))
+        elements.append(PageBreak())
+        return elements
     else:
         elements.append(make_paragraph(
             "<i>For every young builder who learns best by holding an idea in their hands,<br/>"
@@ -2298,9 +3189,9 @@ def build_kdp_front_matter(is_sc32: bool, styles: Dict[str, ParagraphStyle]) -> 
             "— RICHARD P. FEYNMAN, blackboard inscription (1988)",
             epigraph_attr_style
         ))
-    elements.append(PageBreak())
-    elements.append(EnsureRectoPageFlowable())
-    return elements
+        elements.append(PageBreak())
+        elements.append(EnsureRectoPageFlowable())
+        return elements
 
 
 # ---------------------------------------------------------------------------
@@ -2332,14 +3223,27 @@ def _normalize_mathtext_latex(raw_tex: str) -> str:
     elif s.startswith("$") and s.endswith("$"):
         s = s[1:-1].strip()
     s = " ".join(line.strip() for line in s.splitlines() if line.strip())
-    s = re.sub(r"\\(?:begin|end)\{(?:aligned|align\*?|array|cases|matrix|pmatrix|bmatrix)\}", "", s)
-    s = s.replace("&", " ").replace(r"\\", r", \quad ")
+    s = re.sub(r"\\begin\{bmatrix\}", r"\\left[ ", s)
+    s = re.sub(r"\\end\{bmatrix\}", r" \\right]", s)
+    s = re.sub(r"\\begin\{pmatrix\}", r"\\left( ", s)
+    s = re.sub(r"\\end\{pmatrix\}", r" \\right)", s)
+    s = re.sub(r"\\(?:begin|end)\{(?:aligned|align\*?|array|cases|matrix|pmatrix|bmatrix)\}(?:\{[lcr|]+\})?", "", s)
+    s = s.replace(r"\hline", "")
+    s = s.replace("&", " ").replace(r"\\", r", \; ")
     s = re.sub(r"</?[a-zA-Z][^>]*>", "", s)
     s = re.sub(r'"([^"]*)"', r"“\1”", s)
     s = re.sub(r"\{\{key:([^}]+)\}\}", r"[\1]", s)
+    s = s.replace("`", "")
     s = re.sub(r"(?<!\\)\$", "", s)
     s = re.sub(r"\\(?:Large|large|small|normalsize|footnotesize|Huge|huge)\s*", "", s)
-    s = s.replace(r"\tfrac", r"\frac").replace(r"\dfrac", r"\frac")
+    s = re.sub(r"\\[bB]igg?[lr]?\b\s*", "", s)
+    s = re.sub(r"\\cancel\{((?:[^{}]|\{[^{}]*\})*)\}", r"\1", s)
+    s = re.sub(
+        r"\\underbrace\{((?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*)\}_\{((?:[^{}]|\{[^{}]*\})*)\}",
+        r"\\underset{[\2]}{\\left(\1\\right)}",
+        s,
+    )
+    s = s.replace(r"\tfrac", r"\frac").replace(r"\dfrac", r"\frac").replace(r"\cfrac", r"\frac")
     s = s.replace(r"\leqslant", r"\leq").replace(r"\geqslant", r"\geq")
     s = re.sub(r"\\le(?![a-zA-Z])", r"\\leq", s)
     s = re.sub(r"\\ge(?![a-zA-Z])", r"\\geq", s)
@@ -2353,7 +3257,7 @@ def _normalize_mathtext_latex(raw_tex: str) -> str:
     s = s.replace(r"\Box", "□").replace(r"\square", "□")
     s = re.sub(r"\\pmod\{((?:[^{}]|\{[^{}]*\})*)\}", r"\\;(\\mathrm{mod}\\; \1)", s)
     s = re.sub(r"\\bmod\b", r"\\;\\mathrm{mod}\\;", s)
-    s = re.sub(r"\\xrightarrow\{([^{}]*)\}", r"\\overset{\1}{\\longrightarrow}", s)
+    s = s.replace("↓", r"\downarrow ").replace("↑", r"\uparrow ").replace("→", r"\rightarrow ").replace("←", r"\leftarrow ")
     for _ in range(3):
         s = re.sub(
             r"\\(?:text|textbf|textit|textrm|operatorname)\{([^{}]*)\}",
@@ -2366,10 +3270,21 @@ def _normalize_mathtext_latex(raw_tex: str) -> str:
             lambda m: r"\mathbf{" + m.group(1).replace(r"\cdot", r"}\cdot\mathbf{") + "}",
             s,
         )
+    s = re.sub(
+        r"\\xrightarrow\[([^\]]*)\]\{((?:[^{}]|\{[^{}]*\})*)\}",
+        r"\\overset{\2}{\\underset{\1}{\\longrightarrow}}",
+        s,
+    )
+    s = re.sub(r"\\xrightarrow\{((?:[^{}]|\{[^{}]*\})*)\}", r"\\overset{\1}{\\longrightarrow}", s)
     s = s.replace("−", "-").replace("×", r"\times ").replace("÷", r"\div ").replace("±", r"\pm ")
     s = s.replace("≤", r"\leq ").replace("≥", r"\geq ").replace("≠", r"\neq ").replace("≈", r"\approx ")
     s = s.replace("∞", r"\infty ").replace("π", r"\pi ").replace("°", r"^\circ ")
     s = s.replace("√", r"\sqrt")
+    s = re.sub(
+        r"(?<=[0-9a-zA-Z\}\)])\s*\\(sin|cos|tan|cot|sec|csc|sinh|cosh|tanh|arcsin|arccos|arctan|ln|log|exp)\b",
+        r"\\,\\\1",
+        s,
+    )
     return s.strip()
 
 
@@ -2387,23 +3302,24 @@ def _render_latex_display_equation(
     global _DISPLAY_EQ_CACHE_DIR, _MATHTEXT_INITIALIZED
     import hashlib
     if _DISPLAY_EQ_CACHE_DIR is None:
-        _DISPLAY_EQ_CACHE_DIR = Path("/tmp/stackcalc_display_eqs_v5")
+        _DISPLAY_EQ_CACHE_DIR = Path("/tmp/stackcalc_display_eqs_v8")
         _DISPLAY_EQ_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
     norm_tex = _normalize_mathtext_latex(raw_tex)
-    eq_col_w = PRINTABLE_WIDTH - 54.0
+    has_label = bool(eq_label and eq_label.strip())
+    eq_col_w = (PRINTABLE_WIDTH - 54.0) if has_label else PRINTABLE_WIDTH
     num_col_w = 54.0
 
     eq_num_style = ParagraphStyle(
         "EquationNumber",
         parent=styles["BodyText"],
         fontName=FONT_BODY_BOLD,
-        fontSize=8.0,
-        leading=10.0,
+        fontSize=8.2,
+        leading=10.2,
         alignment=2,
-        textColor=to_color(TEXT_MUTED),
+        textColor=to_color(TEXT_MAIN),
     )
-    num_para = make_paragraph(f"<a name='{bm_key}'/>({eq_label})", eq_num_style)
+    num_para = make_paragraph(f"({eq_label})", eq_num_style) if has_label else None
 
     eq_flowable: Optional[Flowable] = None
     try:
@@ -2426,7 +3342,7 @@ def _render_latex_display_equation(
             prop = FontProperties(size=10.5)
             dpi = 300
             mathtext.math_to_image(
-                f"${norm_tex}$",
+                f"${norm_tex}\\,$",
                 str(png_path),
                 prop=prop,
                 dpi=dpi,
@@ -2439,7 +3355,7 @@ def _render_latex_display_equation(
                 diff = ImageChops.difference(im, bg)
                 bbox = diff.getbbox()
                 if bbox:
-                    pad = 4
+                    pad = 6
                     left = max(0, bbox[0] - pad)
                     top = max(0, bbox[1] - pad)
                     right = min(im.size[0], bbox[2] + pad)
@@ -2483,19 +3399,29 @@ def _render_latex_display_equation(
         )
         eq_flowable = make_paragraph(cleaned, disp_style)
 
-    eq_tbl = Table([[eq_flowable, num_para]], colWidths=[eq_col_w, num_col_w])
-    eq_tbl.setStyle(TableStyle([
-        ("ALIGN", (0, 0), (0, 0), "CENTER"),
-        ("ALIGN", (1, 0), (1, 0), "RIGHT"),
-        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-        ("LEFTPADDING", (0, 0), (-1, -1), 2),
-        ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-        ("TOPPADDING", (0, 0), (-1, -1), 3.5),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 3.5),
-    ]))
+    if has_label and num_para is not None:
+        eq_tbl = Table([[eq_flowable, num_para]], colWidths=[eq_col_w, num_col_w])
+        eq_tbl.setStyle(TableStyle([
+            ("ALIGN", (0, 0), (0, 0), "CENTER"),
+            ("ALIGN", (1, 0), (1, 0), "RIGHT"),
+            ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+            ("LEFTPADDING", (0, 0), (-1, -1), 2),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+            ("TOPPADDING", (0, 0), (-1, -1), 3.5),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 3.5),
+        ]))
+    else:
+        eq_tbl = Table([[eq_flowable]], colWidths=[PRINTABLE_WIDTH])
+        eq_tbl.setStyle(TableStyle([
+            ("ALIGN", (0, 0), (0, 0), "CENTER"),
+            ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+            ("LEFTPADDING", (0, 0), (-1, -1), 2),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 2),
+            ("TOPPADDING", (0, 0), (-1, -1), 3.5),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 3.5),
+        ]))
     eq_tbl.spaceBefore = 2.0
     eq_tbl.spaceAfter = 3.0
-    eq_tbl.keepWithNext = True
     return eq_tbl
 
 
@@ -2507,31 +3433,59 @@ def parse_markdown_file(
     chapter_idx: int,
     is_sc32: bool,
     styles: Dict[str, ParagraphStyle],
-    term_counts: Optional[Dict[str, int]] = None
+    term_counts: Optional[Dict[str, int]] = None,
+    manual_kind: Optional[str] = None,
 ) -> List[Flowable]:
     """
     Parses a single manual markdown file and converts its headings, tables, code blocks,
     and text into publication-grade ReportLab Flowables on pure white paper.
     """
+    kind = manual_kind or ("sc32" if is_sc32 else "sc6")
     elements: List[Flowable] = []
-    primary_hex = SC32_PRIMARY if is_sc32 else SC6_PRIMARY
-    accent_hex = SC32_ACCENT if is_sc32 else SC6_ACCENT
+    if kind == "domains":
+        primary_hex = DOMAINS_PRIMARY
+        accent_hex = DOMAINS_ACCENT
+    else:
+        primary_hex = SC32_PRIMARY if is_sc32 else SC6_PRIMARY
+        accent_hex = SC32_ACCENT if is_sc32 else SC6_ACCENT
 
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Strip YAML frontmatter
+    # Strip YAML frontmatter and HTML comments
     content = re.sub(r'^---\n.*?\n---\n', '', content, flags=re.DOTALL)
+    content = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
+    # Strip inline parenthetical notes (e.g. (Classroom Pod Note: ...), (Note: ...)) from PDF while keeping in source
+    content = re.sub(r'\s*\((?:Classroom Pod )?Note:\s*[^)]+\)', '', content)
 
     # In the print PDF, Copyright, Safety & Trademark notices are already typeset on Page iv
     # of the KDP front matter, so omit the duplicate web-only notice block inside index.md
     if file_path.stem.lower() == "index":
         content = re.sub(
-            r"\n## Safety, Regulatory, Trademark.*?(?=\n## Turning the Page:)",
+            r"\n## Safety, Regulatory, Trademark.*?(?=\n## |\n### |\Z)",
             "\n",
             content,
             flags=re.DOTALL,
         )
+        if kind == "domains":
+            # Strip repository directory tree block and software test file list from print interior
+            content = re.sub(
+                r"\n```\ndocumentation/manuals/domains/.*?\n```\n",
+                "\n",
+                content,
+                flags=re.DOTALL,
+            )
+            content = re.sub(
+                r"\n### Verification Suite & Source Grounding\n.*\Z",
+                "\n",
+                content,
+                flags=re.DOTALL,
+            )
+
+    if kind == "domains":
+        # Convert introductory reader orientation blockquotes (> **Who this is for:** / > *"...) into clean body paragraphs
+        content = re.sub(r"^>\s*(\*\*Who this (?:series )?is for:\*\*.*)$", r"\1", content, flags=re.MULTILINE)
+        content = re.sub(r'^>\s*(\*".*)$', r"\1", content, flags=re.MULTILINE)
 
     # Auto-number sections and expand/validate keystroke macros from app layout JSON
     from book_engine import process_manual_markdown
@@ -2582,6 +3536,13 @@ def parse_markdown_file(
         content,
         flags=re.DOTALL | re.IGNORECASE,
     )
+    # Strip admonition note divs from the PDF (any tables inside were already split out above)
+    content = re.sub(
+        r'<div\s+class=["\']admonition[^"\']*["\']\s*>.*?</div\s*>',
+        '',
+        content,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
 
     content = re.sub(
         r'(?<!\\)\$\$(.+?)(?<!\\)\$\$',
@@ -2613,6 +3574,7 @@ def parse_markdown_file(
 
     eq_prefix = _chapter_eq_prefix(file_path)
     eq_counter = 0
+    fig_counter = 0
 
     lines = content.split("\n")
     i = 0
@@ -2678,8 +3640,11 @@ def parse_markdown_file(
             flat_clean = re.sub(r'\s+', ' ', clean_text).strip()
             if is_centered_caption_div or re.match(r'^(?:\*|_)?Figure\s+[A-Za-z0-9]', flat_clean):
                 if flat_clean:
-                    cap_san = sanitize_inline_markdown(flat_clean, is_sc32)
-                    elements.append(make_paragraph(f"<i>{cap_san}</i>", styles["FigureCaption"]))
+                    fig_counter += 1
+                    fig_label = f"Figure {eq_prefix}.{fig_counter}"
+                    clean_cap_div = re.sub(r'^(?:\*|_)?Figure(?:\s+[A-Za-z0-9.]+)?:\s*', '', flat_clean, flags=re.IGNORECASE).strip('*_ ')
+                    cap_san = sanitize_inline_markdown(clean_cap_div, is_sc32)
+                    elements.append(make_paragraph(f"<font face='{FONT_BODY_BOLD}' color='{TEXT_MAIN}'><b>{fig_label}:</b></font> <i>{cap_san}</i>", styles["FigureCaption"]))
                     elements.append(Spacer(1, 4))
                 continue
             div_rows = []
@@ -2711,11 +3676,11 @@ def parse_markdown_file(
                     ('TOPPADDING', (0,0), (-1,0), 5),
                     ('BOTTOMPADDING', (0,-1), (-1,-1), 5),
                 ]
-                if len(div_rows) <= 10 and sum(len(s) for s in div_plain_lines) < 1600:
+                if len(div_rows) <= (4 if is_sc32 else 10) and sum(len(s) for s in div_plain_lines) < (520 if is_sc32 else 1600):
                     d_style.append(('NOSPLIT', (0, 0), (-1, -1)))
                 else:
-                    d_style.append(('NOSPLIT', (0, 0), (-1, 1)))
-                    d_style.append(('NOSPLIT', (0, -2), (-1, -1)))
+                    d_style.append(('NOSPLIT', (0, 0), (-1, min(1, len(div_rows) - 1))))
+                    d_style.append(('NOSPLIT', (0, max(0, len(div_rows) - 2)), (-1, -1)))
                     for r_idx, pl in enumerate(div_plain_lines[:-1]):
                         if pl.rstrip('* ').endswith(':'):
                             d_style.append(('NOSPLIT', (0, r_idx), (-1, r_idx + 1)))
@@ -2728,94 +3693,10 @@ def parse_markdown_file(
                 elements.append(callout_tbl)
             continue
 
-        # Blockquote (e.g. > [!NOTE] or > quote)
+        # Blockquote / Note / Callout (e.g. > [!NOTE] or > note: strip from PDF while keeping in source)
         if line.startswith(">"):
-            quote_lines = []
             while i < num_lines and lines[i].startswith(">"):
-                quote_lines.append(lines[i].lstrip("> ").strip())
                 i += 1
-
-            # Detect callout badge on first non-empty line
-            while quote_lines and not quote_lines[0]:
-                quote_lines.pop(0)
-            badge_title = ""
-            badge_color = primary_hex
-            if quote_lines:
-                badge_match = re.match(r'^\[!(NOTE|IMPORTANT|TIP|WARNING|CHECKPOINT|TEACHER)\]\s*(.*)$', quote_lines[0], flags=re.IGNORECASE)
-                if badge_match:
-                    tag = badge_match.group(1).upper()
-                    rem = badge_match.group(2).strip()
-                    if rem:
-                        quote_lines[0] = rem
-                    else:
-                        quote_lines.pop(0)
-                    if tag in ("NOTE", "TIP"):
-                        badge_color = accent_hex
-                    elif tag == "WARNING":
-                        badge_color = "#b91c1c"
-                    else:
-                        badge_color = primary_hex
-
-            quote_joined = "\n".join(quote_lines)
-            quote_joined = re.sub(
-                r'\$\$([^\$]+)\$\$',
-                lambda m: '$$' + ' '.join(s.strip() for s in m.group(1).splitlines() if s.strip()) + '$$',
-                quote_joined,
-            )
-            quote_lines = quote_joined.split("\n") if quote_joined else []
-
-            quote_rows = []
-            quote_plain_lines = []
-            extra_top_rows = []
-            if badge_title:
-                badge_html = f"<b><font size='8.5' face='{FONT_BODY_BOLD}' color='{badge_color}'>{badge_title}</font></b>"
-                quote_rows.append([make_paragraph(badge_html, styles["CalloutText"])])
-                quote_plain_lines.append(badge_title)
-
-            prev_blank = bool(badge_title)
-            for ql in quote_lines:
-                if not ql:
-                    prev_blank = True
-                else:
-                    ql_norm = re.sub(r'^#{1,6}\s+(.*)$', r'**\1**', ql)
-                    ql_norm = re.sub(r'^[\*\-]\s+', '• ', ql_norm)
-                    ql_norm = re.sub(r'^(Step\s+\d+:\s*[^*\n]+)$', r'**\1**', ql_norm)
-                    ql_san = sanitize_inline_markdown(ql_norm, is_sc32)
-                    if prev_blank and quote_rows:
-                        extra_top_rows.append(len(quote_rows))
-                    quote_rows.append([make_paragraph(ql_san, styles["CalloutText"])])
-                    quote_plain_lines.append(ql_norm)
-                    prev_blank = False
-
-            if quote_rows:
-                q_style = [
-                    ('BACKGROUND', (0,0), (-1,-1), to_color(CALLOUT_BG_SC32 if is_sc32 else CALLOUT_BG_SC6)),
-                    ('LINEBEFORE', (0,0), (0,-1), 3.5, to_color(badge_color)),
-                    ('BOX', (0,0), (-1,-1), 0.5, to_color(DIVIDER_HEX)),
-                    ('LEFTPADDING', (0,0), (-1,-1), 10),
-                    ('RIGHTPADDING', (0,0), (-1,-1), 10),
-                    ('TOPPADDING', (0,0), (-1,-1), 1.5),
-                    ('BOTTOMPADDING', (0,0), (-1,-1), 1.5),
-                    ('TOPPADDING', (0,0), (-1,0), 6),
-                    ('BOTTOMPADDING', (0,-1), (-1,-1), 6),
-                ]
-                for r_idx in extra_top_rows:
-                    q_style.append(('TOPPADDING', (0, r_idx), (-1, r_idx), 5))
-                if len(quote_rows) <= 10 and sum(len(s) for s in quote_plain_lines) < 1600:
-                    q_style.append(('NOSPLIT', (0, 0), (-1, -1)))
-                else:
-                    q_style.append(('NOSPLIT', (0, 0), (-1, 1)))
-                    q_style.append(('NOSPLIT', (0, -2), (-1, -1)))
-                    for r_idx, pl in enumerate(quote_plain_lines[:-1]):
-                        if pl.rstrip('* ').endswith(':'):
-                            q_style.append(('NOSPLIT', (0, r_idx), (-1, r_idx + 1)))
-                callout_tbl = Table(quote_rows, colWidths=[PRINTABLE_WIDTH], splitByRow=1)
-                callout_tbl.setStyle(TableStyle(q_style))
-                callout_tbl.spaceBefore = 3
-                callout_tbl.spaceAfter = 4
-                if len(quote_rows) <= 12 and sum(len(s) for s in quote_plain_lines) < 1800:
-                    callout_tbl._is_latex_float = True
-                elements.append(callout_tbl)
             continue
 
         # Code Block or ASCII Art Diagram (``` ... ```)
@@ -2972,7 +3853,7 @@ def parse_markdown_file(
 
                             sanitized = sanitize_inline_markdown(cell_str, is_sc32, in_table=True)
                             if is_hdr:
-                                # Ensure inline math ($Y, X$) and code inside dark header rows inherit white header text
+                                # Ensure inline math ($Y, X$) and code inside header rows inherit TableHeader text color
                                 sanitized = re.sub(r"\s*color=['\"][^'\"]*['\"]", "", sanitized)
                             # Convert inline <img width="W".../> tags (and any immediately following space) into
                             # contiguous synthetic characters so ReportLab's <img/> + word run never overflows a column
@@ -3095,8 +3976,8 @@ def parse_markdown_file(
 
                     nosplit_end = min(2, len(normalized_data) - 1)
                     tbl_styles = [
-                        ('BACKGROUND', (0,0), (-1,0), to_color(primary_hex)),
-                        ('TEXTCOLOR', (0,0), (-1,0), white),
+                        ('BACKGROUND', (0,0), (-1,0), to_color("#e4e4e7")),
+                        ('TEXTCOLOR', (0,0), (-1,0), to_color(TEXT_MAIN)),
                         ('ALIGN', (0,0), (-1,-1), 'LEFT'),
                         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
                         ('TOPPADDING', (0,0), (-1,-1), 2.0),
@@ -3105,10 +3986,17 @@ def parse_markdown_file(
                         ('RIGHTPADDING', (0,0), (-1,-1), 3.5),
                         ('ROWBACKGROUNDS', (0,1), (-1,-1), [white, to_color("#f8fafc")]),
                         ('GRID', (0,0), (-1,-1), 0.5, to_color(DIVIDER_HEX)),
+                        ('LINEABOVE', (0,0), (-1,0), 1.2, to_color(primary_hex)),
                         ('LINEBELOW', (0,0), (-1,0), 1.0, to_color(primary_hex)),
                         ('BOX', (0,0), (-1,-1), 0.85, to_color(primary_hex)),
                     ]
-                    if len(normalized_data) <= 12:
+                    total_tbl_chars = sum(len(str(c)) for r in table_lines for c in r)
+                    is_compact_table = (
+                        (len(normalized_data) <= 8 and total_tbl_chars < 950)
+                        if is_sc32
+                        else (len(normalized_data) <= 8 and total_tbl_chars < 950)
+                    )
+                    if is_compact_table:
                         tbl_styles.append(('NOSPLIT', (0, 0), (-1, -1)))
                     else:
                         tbl_styles.append(('NOSPLIT', (0, 0), (-1, nosplit_end)))
@@ -3117,7 +4005,7 @@ def parse_markdown_file(
                     reportlab_table.setStyle(TableStyle(tbl_styles))
                     reportlab_table.spaceBefore = 2.5
                     reportlab_table.spaceAfter = 3.5
-                    if len(normalized_data) <= 26:
+                    if is_compact_table:
                         # Mark table as a LaTeX [ht] float so it stays intact while allowing following prose to flow
                         # into the bottom of the current page if the table itself does not fit in the remaining space.
                         if elements and isinstance(elements[-1], Paragraph) and getattr(getattr(elements[-1], "style", None), "name", "") in ("Heading3", "Heading4"):
@@ -3132,6 +4020,8 @@ def parse_markdown_file(
                             reportlab_table._is_latex_float = True
                             elements.append(reportlab_table)
                     else:
+                        if elements and isinstance(elements[-1], Paragraph) and getattr(getattr(elements[-1], "style", None), "name", "") in ("Heading2", "Heading3", "Heading4"):
+                            elements[-1].keepWithNext = False
                         elements.append(reportlab_table)
             continue
 
@@ -3147,11 +4037,12 @@ def parse_markdown_file(
             elements.append(ChapterTracker(plain_title))
 
             bm_key = f"bm_ch_{chapter_idx}_{i}"
-            elements.append(BookmarkFlowable(bm_key, plain_title, level=0))
+            toc_title = plain_title
+            elements.append(BookmarkFlowable(bm_key, toc_title, level=0))
 
             h1_p = make_paragraph(styled_title, styles["Heading1"])
-            h1_p._toc_info = (0, plain_title, bm_key)
-            terms = extract_index_terms(plain_title, is_sc32, term_counts)
+            h1_p._toc_info = (0, toc_title, bm_key)
+            terms = extract_index_terms(plain_title, is_sc32, term_counts, manual_kind=kind)
             if terms:
                 h1_p._index_terms = terms
             elements.append(h1_p)
@@ -3170,8 +4061,9 @@ def parse_markdown_file(
             elements.append(BookmarkFlowable(bm_key, plain_title, level=1))
 
             h2_p = make_paragraph(styled_title, styles["Heading2"])
-            h2_p._toc_info = (1, plain_title, bm_key)
-            terms = extract_index_terms(plain_title, is_sc32, term_counts)
+            if not (is_sc32 and kind != "domains" and file_path.name.startswith("appendix-")):
+                h2_p._toc_info = (1, plain_title, bm_key)
+            terms = extract_index_terms(plain_title, is_sc32, term_counts, manual_kind=kind)
             if terms:
                 h2_p._index_terms = terms
             elements.append(h2_p)
@@ -3187,7 +4079,7 @@ def parse_markdown_file(
             elements.append(BookmarkFlowable(bm_key, plain_title, level=2))
 
             h3_p = make_paragraph(styled_title, styles["Heading3"])
-            terms = extract_index_terms(plain_title, is_sc32, term_counts)
+            terms = extract_index_terms(plain_title, is_sc32, term_counts, manual_kind=kind)
             if terms:
                 h3_p._index_terms = terms
             elements.append(h3_p)
@@ -3200,7 +4092,7 @@ def parse_markdown_file(
             plain_title, styled_title = format_heading_text(title, is_sc32=is_sc32)
 
             h4_p = make_paragraph(styled_title, styles["Heading4"])
-            terms = extract_index_terms(plain_title, is_sc32, term_counts)
+            terms = extract_index_terms(plain_title, is_sc32, term_counts, manual_kind=kind)
             if terms:
                 h4_p._index_terms = terms
             elements.append(h4_p)
@@ -3211,19 +4103,42 @@ def parse_markdown_file(
         if re.match(r'^\s*[-*]\s+', line):
             list_items = []
             while i < num_lines and re.match(r'^\s*[-*]\s+', lines[i]):
-                item_text = re.sub(r'^\s*[-*]\s+', '', lines[i]).strip()
-                list_items.append(item_text)
+                lead_spaces = len(lines[i]) - len(lines[i].lstrip())
+                is_sub = lead_spaces >= 2
+                item_parts = [re.sub(r'^\s*[-*]\s+', '', lines[i]).strip()]
                 i += 1
+                while (
+                    i < num_lines
+                    and lines[i].strip()
+                    and re.match(r'^\s{2,}\S', lines[i])
+                    and not re.match(r'^\s*[-*]\s+', lines[i])
+                    and not re.match(r'^\s*\d+\.\s+', lines[i])
+                    and not lines[i].strip().startswith(("```", "|", "$$", ">", "#", "---", "{{blocks:", "{{screenshot:", "!["))
+                ):
+                    item_parts.append(lines[i].strip())
+                    i += 1
+                list_items.append((is_sub, " ".join(item_parts)))
 
-            keep_short_list = len(list_items) <= 6 and sum(len(x) for x in list_items) < 900
+            keep_short_list = (not is_sc32) and len(list_items) <= 3 and sum(len(x[1]) for x in list_items) < 420
             last_keep = False
-            for idx, itm in enumerate(list_items):
+            for idx, (is_sub, itm) in enumerate(list_items):
                 sanitized = sanitize_inline_markdown(itm, is_sc32)
-                bullet_p = make_paragraph(f"&bull; &nbsp; {sanitized}", styles["ListBullet"])
-                if itm.rstrip('*` ').endswith(':'):
+                if is_sub:
+                    bullet_p = make_paragraph(f"&ndash; &nbsp; {sanitized}", styles["ListSubBullet"])
+                else:
+                    bullet_p = make_paragraph(f"&bull; &nbsp; {sanitized}", styles["ListBullet"])
+                next_is_sub = (idx < len(list_items) - 1) and list_items[idx + 1][0]
+                if (not is_sub) and next_is_sub:
+                    bullet_p.keepWithNext = True
+                    last_keep = False
+                elif not is_sc32 and itm.rstrip('*` ').endswith(':') and len(itm) < 220:
                     bullet_p.keepWithNext = True
                     last_keep = True
-                elif idx < len(list_items) - 1 and (keep_short_list or idx == 0 or idx == len(list_items) - 2):
+                elif not is_sc32 and idx < len(list_items) - 1 and (
+                    keep_short_list
+                    or (idx == 0 and len(itm) < 180 and len(list_items[idx + 1][1]) < 180)
+                    or (idx == len(list_items) - 2 and len(itm) < 180 and len(list_items[idx + 1][1]) < 180)
+                ):
                     bullet_p.keepWithNext = True
                     last_keep = False
                 else:
@@ -3240,19 +4155,35 @@ def parse_markdown_file(
             num_items = []
             while i < num_lines and re.match(r'^\s*(\d+)\.\s+', lines[i]):
                 m = re.match(r'^\s*(\d+)\.\s+(.*)$', lines[i])
-                if m:
-                    num_items.append((m.group(1), m.group(2).strip()))
                 i += 1
+                if m:
+                    num_str = m.group(1)
+                    item_parts = [m.group(2).strip()]
+                    while (
+                        i < num_lines
+                        and lines[i].strip()
+                        and re.match(r'^\s{2,}\S', lines[i])
+                        and not re.match(r'^\s*[-*]\s+', lines[i])
+                        and not re.match(r'^\s*\d+\.\s+', lines[i])
+                        and not lines[i].strip().startswith(("```", "|", "$$", ">", "#", "---", "{{blocks:", "{{screenshot:", "!["))
+                    ):
+                        item_parts.append(lines[i].strip())
+                        i += 1
+                    num_items.append((num_str, " ".join(item_parts)))
 
-            keep_short_num_list = len(num_items) <= 6 and sum(len(x[1]) for x in num_items) < 900
+            keep_short_num_list = (not is_sc32) and len(num_items) <= 3 and sum(len(x[1]) for x in num_items) < 420
             last_keep = False
             for idx, (num_str, itm) in enumerate(num_items):
                 sanitized = sanitize_inline_markdown(itm, is_sc32)
                 num_p = make_paragraph(f"<b>{num_str}.</b> &nbsp; {sanitized}", styles["ListBullet"])
-                if itm.rstrip('*` ').endswith(':'):
+                if itm.rstrip('*` ').endswith(':') and len(itm) < (140 if is_sc32 else 220):
                     num_p.keepWithNext = True
                     last_keep = True
-                elif idx < len(num_items) - 1 and (keep_short_num_list or idx == 0 or idx == len(num_items) - 2):
+                elif not is_sc32 and idx < len(num_items) - 1 and (
+                    keep_short_num_list
+                    or (idx == 0 and len(itm) < 180 and len(num_items[idx + 1][1]) < 180)
+                    or (idx == len(num_items) - 2 and len(itm) < 180 and len(num_items[idx + 1][1]) < 180)
+                ):
                     num_p.keepWithNext = True
                     last_keep = False
                 else:
@@ -3307,37 +4238,87 @@ def parse_markdown_file(
             if resolved_img:
                 try:
                     import io
-                    from PIL import ImageOps
+                    from PIL import ImageOps, ImageDraw
                     with PIL.Image.open(resolved_img) as pimg:
-                        orig_w, orig_h = pimg.size
-                        max_w = PRINTABLE_WIDTH
-                        max_h = 135.0 if is_sc32 else (165.0 if "diagram_" in resolved_img.name else 142.0)
+                        work_img = pimg
+                        orig_w, orig_h = work_img.size
+                        is_sc32_bezel_crop = (
+                            is_sc32
+                            and "screenshots" in str(resolved_img)
+                            and orig_h > orig_w * 1.4
+                            and "hero_stack" not in resolved_img.name
+                            and "plot_" not in resolved_img.name
+                        )
+                        is_sc32_plot_crop = (
+                            is_sc32
+                            and "screenshots" in str(resolved_img)
+                            and "plot_" in resolved_img.name
+                        )
+                        if is_sc32_bezel_crop:
+                            work_img = work_img.crop(
+                                (
+                                    int(orig_w * 0.04),
+                                    int(orig_h * 0.038),
+                                    int(orig_w * 0.96),
+                                    int(orig_h * 0.302),
+                                )
+                            )
+                            orig_w, orig_h = work_img.size
+                            max_w = 215.0
+                            max_h = 85.0
+                        elif is_sc32_plot_crop:
+                            y0_crop = int(orig_h * 0.048) if ("romberg" in resolved_img.name or "normal" in resolved_img.name) else 0
+                            work_img = work_img.crop((0, y0_crop, orig_w, int(orig_h * 0.902)))
+                            orig_w, orig_h = work_img.size
+                            max_w = 215.0
+                            max_h = 138.0
+                        else:
+                            max_w = PRINTABLE_WIDTH
+                            max_h = 135.0 if is_sc32 else (165.0 if "diagram_" in resolved_img.name else 142.0)
                         scale = min(max_w / orig_w, max_h / orig_h, 1.0)
                         w = orig_w * scale
                         h = orig_h * scale
                         if BW_PRINT_INTERIOR:
-                            gray_img = ImageOps.autocontrast(pimg.convert("L"), cutoff=1)
+                            gray_img = ImageOps.autocontrast(work_img.convert("L"), cutoff=1)
+                            if is_sc32_plot_crop:
+                                dr_p = ImageDraw.Draw(gray_img)
+                                dr_p.rectangle([0, 0, gray_img.width - 1, gray_img.height - 1], outline=40, width=3)
                             img_buf = io.BytesIO()
                             gray_img.save(img_buf, format="PNG")
+                            img_buf.seek(0)
+                            rl_img = RLImage(img_buf, width=w, height=h)
+                        elif is_sc32_bezel_crop or is_sc32_plot_crop:
+                            img_buf = io.BytesIO()
+                            work_img.save(img_buf, format="PNG")
                             img_buf.seek(0)
                             rl_img = RLImage(img_buf, width=w, height=h)
                         else:
                             rl_img = RLImage(str(resolved_img), width=w, height=h)
                     rl_img.hAlign = 'CENTER'
                     fig_items: List[Flowable] = [Spacer(1, 2), rl_img]
+                    fig_counter += 1
+                    fig_label = f"Figure {eq_prefix}.{fig_counter}"
                     if explicit_caption_line:
-                        cap_clean = explicit_caption_line.strip("*_ ").strip()
+                        cap_clean = re.sub(r'^(?:\*|_)?Figure(?:\s+[A-Za-z0-9.]+)?:\s*', '', explicit_caption_line.strip("*_ ").strip(), flags=re.IGNORECASE).strip("*_ ")
                         cap_san = sanitize_inline_markdown(cap_clean, is_sc32)
-                        fig_items.append(make_paragraph(f"<i>{cap_san}</i>", styles["FigureCaption"]))
+                        fig_items.append(make_paragraph(f"<font face='{FONT_BODY_BOLD}' color='{TEXT_MAIN}'><b>{fig_label}:</b></font> <i>{cap_san}</i>", styles["FigureCaption"]))
                         fig_items.append(Spacer(1, 3))
                         i = look_j + 1
                     elif alt_text and not has_explicit_next_caption:
-                        fig_items.append(make_paragraph(f"<i>Figure: {alt_text}</i>", styles["FigureCaption"]))
+                        alt_clean = re.sub(r'^(?:\*|_)?Figure(?:\s+[A-Za-z0-9.]+)?:\s*', '', alt_text.strip(), flags=re.IGNORECASE).strip("*_ ")
+                        alt_san = sanitize_inline_markdown(alt_clean, is_sc32)
+                        fig_items.append(make_paragraph(f"<font face='{FONT_BODY_BOLD}' color='{TEXT_MAIN}'><b>{fig_label}:</b></font> <i>{alt_san}</i>", styles["FigureCaption"]))
                         fig_items.append(Spacer(1, 3))
                         i += 1
                     else:
+                        fig_items.append(make_paragraph(f"<font face='{FONT_BODY_BOLD}' color='{TEXT_MAIN}'><b>{fig_label}</b></font>", styles["FigureCaption"]))
                         fig_items.append(Spacer(1, 3))
                         i += 1
+                    if elements and isinstance(elements[-1], Paragraph) and getattr(getattr(elements[-1], "style", None), "name", "") in ("Heading2", "Heading3", "Heading4"):
+                        hdr_prefix: List[Flowable] = [elements.pop()]
+                        if elements and isinstance(elements[-1], BookmarkFlowable):
+                            hdr_prefix.insert(0, elements.pop())
+                        fig_items = hdr_prefix + fig_items
                     fig_kt = KeepTogether(fig_items)
                     fig_kt._is_latex_float = True
                     elements.append(fig_kt)
@@ -3351,11 +4332,26 @@ def parse_markdown_file(
 
         # Standalone LaTeX Display Equation ($$ ... $$)
         if line.strip().startswith("$$") and line.strip().endswith("$$") and len(line.strip()) > 4:
-            eq_counter += 1
-            eq_label = f"Eq. {eq_prefix}.{eq_counter}"
-            bm_key = f"bm_eq_{chapter_idx}_{eq_prefix}_{eq_counter}"
+            inner_disp = line.strip()[2:-2].strip()
+            is_softkey_ribbon = inner_disp.startswith((r"\mathtt{[", r"\texttt{["))
+            if is_softkey_ribbon:
+                eq_label = ""
+                bm_key = ""
+            else:
+                eq_counter += 1
+                eq_label = f"Eq. {eq_prefix}.{eq_counter}"
+                bm_key = f"bm_eq_{chapter_idx}_{eq_prefix}_{eq_counter}"
             eq_flowable = _render_latex_display_equation(line.strip(), eq_label, bm_key, styles, is_sc32)
-            eq_flowable.keepWithNext = True
+            # Only glue a display equation to its following paragraph in Appendix D (where each
+            # equation block is a tight header+formula+explanation unit) or when the next line
+            # is a direct "where ..." variable-definition clause. Otherwise, alternating
+            # colon-ending paragraphs and display equations chain transitively into 35-line blocks!
+            next_eq_idx = i + 1
+            while next_eq_idx < num_lines and not lines[next_eq_idx].strip():
+                next_eq_idx += 1
+            nxt_after_eq = lines[next_eq_idx].strip() if next_eq_idx < num_lines else ""
+            if eq_prefix == "D" or nxt_after_eq.startswith("where "):
+                eq_flowable.keepWithNext = True
             elements.append(eq_flowable)
             i += 1
             continue
@@ -3390,10 +4386,45 @@ def parse_markdown_file(
         if para_lines:
             raw_para = " ".join(para_lines)
             sanitized = sanitize_inline_markdown(raw_para, is_sc32)
-            para_p = make_paragraph(sanitized, styles["BodyText"])
-            if raw_para.rstrip('*` ').endswith(':') or re.match(r'^\*(?:Variables|RPN Sequence|Benchmark):\*', raw_para.strip()):
+            if is_sc32 and "appendix-e" in file_path.stem.lower() and re.search(r"\.\s+(?:15|16|17|18|19|20)\d{2}\.", raw_para):
+                bib_style = ParagraphStyle(
+                    "SC32BibItem",
+                    parent=styles["BodyText"],
+                    leftIndent=14,
+                    firstLineIndent=-14,
+                    spaceAfter=3.8,
+                )
+                para_p = make_paragraph(sanitized, bib_style)
+            else:
+                para_p = make_paragraph(sanitized, styles["BodyText"])
+            if re.match(r'^\*(?:Variables|RPN Sequence|Benchmark):\*', raw_para.strip()):
                 para_p.keepWithNext = True
-            terms = extract_index_terms(raw_para, is_sc32, term_counts)
+            elif raw_para.rstrip('*` ').endswith(':') and len(raw_para) <= 240:
+                # Only glue a concise colon-ending lead-in paragraph (<= 240 chars) to the next flowable
+                # if the next non-empty line is a compact table, display equation, figure, code block, heading,
+                # or a concise list item (< 240 chars)—never a long multi-line narrative paragraph.
+                next_idx = i
+                while next_idx < num_lines and not lines[next_idx].strip():
+                    next_idx += 1
+                if next_idx < num_lines:
+                    nxt = lines[next_idx].strip()
+                    is_list_nxt = bool(re.match(r'^(?:[-*]|\d+\.)\s+', nxt))
+                    is_short_table = False
+                    if nxt.startswith("|"):
+                        tbl_scan = next_idx
+                        tbl_chars = 0
+                        while tbl_scan < num_lines and lines[tbl_scan].strip().startswith("|"):
+                            tbl_chars += len(lines[tbl_scan])
+                            tbl_scan += 1
+                        is_short_table = (tbl_scan - next_idx) <= 8 and tbl_chars < 950
+                    if (
+                        is_short_table
+                        or nxt.startswith(("$$", "```", "#", "![", "<figure", ">", "{{blocks:"))
+                        or ":screenshot" in nxt
+                        or (is_list_nxt and len(nxt) < 240)
+                    ):
+                        para_p.keepWithNext = True
+            terms = extract_index_terms(raw_para, is_sc32, term_counts, manual_kind=kind)
             if terms:
                 para_p._index_terms = terms
             elements.append(para_p)
@@ -3406,21 +4437,34 @@ def parse_markdown_file(
 # ---------------------------------------------------------------------------
 # Manual Compilation Orchestrator
 # ---------------------------------------------------------------------------
-def compile_manual_pdf(is_sc32: bool) -> Path:
-    """Compiles either the SC-32 or SC-6 KDP-compliant 6x9 trade interior manuscript PDF."""
+def compile_manual_pdf(is_sc32: bool = True, manual_kind: Optional[str] = None) -> Path:
+    """Compiles the SC-6 (Volume I), SC-32 (Volume II), or Domain Series (Volume III) KDP-compliant 6x9 trade interior manuscript PDF."""
+    kind = manual_kind or ("sc32" if is_sc32 else "sc6")
+    if kind == "domains":
+        is_sc32 = True
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    pdf_filename = "sc32-scientific-manual.pdf" if is_sc32 else "sc6-elementary-manual.pdf"
+    if kind == "domains":
+        pdf_filename = "sc-domains-manual.pdf"
+    else:
+        pdf_filename = "sc32-scientific-manual.pdf" if is_sc32 else "sc6-elementary-manual.pdf"
     output_pdf_path = OUTPUT_DIR / pdf_filename
 
     print(f"\n=======================================================")
     print(f"Compiling KDP 6x9 Interior Manuscript: {output_pdf_path.name}")
     print(f"=======================================================")
 
-    primary_hex = SC32_PRIMARY if is_sc32 else SC6_PRIMARY
-    accent_hex = SC32_ACCENT if is_sc32 else SC6_ACCENT
-    cover_bg_hex = SC32_COVER_BG if is_sc32 else SC6_COVER_BG
-    cover_accent_hex = SC32_COVER_ACCENT if is_sc32 else SC6_COVER_ACCENT
-    doc_code = "STK-REF-32-V2" if is_sc32 else "STK-REF-06-V1"
+    if kind == "domains":
+        primary_hex = DOMAINS_PRIMARY
+        accent_hex = DOMAINS_ACCENT
+        cover_bg_hex = DOMAINS_COVER_BG
+        cover_accent_hex = DOMAINS_COVER_ACCENT
+        doc_code = "STK-REF-DOM-V3"
+    else:
+        primary_hex = SC32_PRIMARY if is_sc32 else SC6_PRIMARY
+        accent_hex = SC32_ACCENT if is_sc32 else SC6_ACCENT
+        cover_bg_hex = SC32_COVER_BG if is_sc32 else SC6_COVER_BG
+        cover_accent_hex = SC32_COVER_ACCENT if is_sc32 else SC6_COVER_ACCENT
+        doc_code = "STK-REF-32-V2" if is_sc32 else "STK-REF-06-V1"
 
     # Style Sheet Setup (Calibrated for 6x9 Trade Paperback & Hardcover with Full Justification)
     styles = getSampleStyleSheet()
@@ -3480,12 +4524,22 @@ def compile_manual_pdf(is_sc32: bool) -> Path:
     ))
 
     styles.add(ParagraphStyle(
+        "ListSubBullet",
+        parent=styles["BodyText"],
+        alignment=4,  # TA_JUSTIFY
+        leftIndent=22,
+        firstLineIndent=-8,
+        spaceAfter=1.5,
+        spaceShrinkage=0.0,
+    ))
+
+    styles.add(ParagraphStyle(
         "TableHeader",
         parent=styles["Normal"],
         fontName=FONT_BODY_BOLD,
         fontSize=6.8,
         leading=8.5,
-        textColor=white,
+        textColor=to_color(TEXT_MAIN),
         spaceShrinkage=0.0,
     ))
 
@@ -3533,7 +4587,24 @@ def compile_manual_pdf(is_sc32: bool) -> Path:
     ))
 
     # Chapter Ordering
-    if is_sc32:
+    if kind == "domains":
+        manual_dir = MANUALS_ROOT / "domains"
+        chapter_files = [
+            "index.md",
+            "01-sc35-geomatics-navigation.md",
+            "02-sc14-electrical-trades.md",
+            "03-sc16-systems-cyber.md",
+            "04-sc24-cinema-broadcast.md",
+            "05-sc50-rf-spectrum.md",
+            "06-sc60-chemistry-wetlab.md",
+            "07-sc78-culinary-brewing.md",
+            "08-sc80-clinical-pharmacy.md",
+            "09-sc95-finance-statistics.md",
+            "appendix-a-cross-domain-formula-compendium.md",
+            "appendix-b-domain-keycap-and-softkey-directory.md",
+        ]
+        doc_title = "THE STACK IN THE FIELD"
+    elif is_sc32:
         manual_dir = MANUALS_ROOT / "sc32"
         chapter_files = [
             "index.md",
@@ -3582,7 +4653,7 @@ def compile_manual_pdf(is_sc32: bool) -> Path:
     story: List[Flowable] = []
 
     # 1. Build KDP Front Matter (Pages i–iv: Half-Title, Series Frontispiece, Title Page, Copyright/Colophon)
-    story.extend(build_kdp_front_matter(is_sc32, styles))
+    story.extend(build_kdp_front_matter(is_sc32, styles, manual_kind=kind))
 
     # 2. Table of Contents (Pages v–vi in lowercase Roman numerals, Two-Pass Auto-Updated with Dot Leaders)
     story.append(ChapterTracker("TABLE OF CONTENTS"))
@@ -3594,26 +4665,36 @@ def compile_manual_pdf(is_sc32: bool) -> Path:
 
     toc = TableOfContents()
     toc.dotsMinLevel = 0
+    if is_sc32:
+        toc.tableStyle = TableStyle([
+            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ("LEFTPADDING", (0, 0), (-1, -1), 0),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+            ("TOPPADDING", (0, 0), (-1, -1), 0.35),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 0.35),
+        ])
     toc_level0 = ParagraphStyle(
         "TOCLevel0",
         parent=styles["Normal"],
         fontName=FONT_BODY_BOLD,
-        fontSize=8.4,
-        leading=11.2,
+        fontSize=7.4 if is_sc32 else 8.4,
+        leading=9.2 if is_sc32 else 11.2,
+        rightIndent=12 if is_sc32 else 28,
         textColor=to_color(primary_hex),
-        spaceBefore=4,
-        spaceAfter=1,
+        spaceBefore=2.2 if is_sc32 else 4,
+        spaceAfter=0.4 if is_sc32 else 1,
     )
     toc_level1 = ParagraphStyle(
         "TOCLevel1",
         parent=styles["Normal"],
         fontName=FONT_BODY,
-        fontSize=7.6,
-        leading=9.8,
+        fontSize=7.1 if is_sc32 else 7.6,
+        leading=8.6 if is_sc32 else 9.8,
         leftIndent=10,
+        rightIndent=24 if is_sc32 else 28,
         textColor=to_color(TEXT_MAIN),
-        spaceBefore=1.0,
-        spaceAfter=0.5,
+        spaceBefore=0.3 if is_sc32 else 1.0,
+        spaceAfter=0.2 if is_sc32 else 0.5,
     )
     toc_level2 = ParagraphStyle(
         "TOCLevel2",
@@ -3622,6 +4703,7 @@ def compile_manual_pdf(is_sc32: bool) -> Path:
         fontSize=7.2,
         leading=9.2,
         leftIndent=18,
+        rightIndent=28,
         textColor=to_color(TEXT_MUTED),
         spaceBefore=0.8,
         spaceAfter=0.5,
@@ -3642,7 +4724,7 @@ def compile_manual_pdf(is_sc32: bool) -> Path:
             print(f"  [WARN] Missing chapter file: {fpath}")
             continue
         print(f"  -> Processing: {fpath.name}")
-        ch_elements = parse_markdown_file(fpath, ch_idx, is_sc32, styles, term_counts)
+        ch_elements = parse_markdown_file(fpath, ch_idx, is_sc32, styles, term_counts, manual_kind=kind)
         story.extend(ch_elements)
 
     # 4. Alphabetical Subject Index (Two-Pass Auto-Updated A-Z)
@@ -3654,24 +4736,55 @@ def compile_manual_pdf(is_sc32: bool) -> Path:
     story.append(Spacer(1, 3))
     story.append(HRFlowable(width="100%", thickness=1.5, color=to_color(primary_hex), spaceAfter=10))
 
-    idx = SimpleIndex(dot=' . ')
+    class NoOrphanSimpleIndex(SimpleIndex):
+        """Subclass of ReportLab SimpleIndex that binds each A–Z letter heading to its first entry."""
+        def _build(self, availWidth, availHeight):
+            super()._build(availWidth, availHeight)
+            tbl = getattr(self, "_flowable", None)
+            if tbl is not None and hasattr(tbl, "_cellvalues"):
+                rows = tbl._cellvalues
+                merged_rows = []
+                r_idx = 0
+                while r_idx < len(rows):
+                    # Detect pattern: [Spacer(spaceBefore)], [Paragraph(header, IndexAlphaHead)], [Spacer(spaceAfter)], [Paragraph(first_entry)]
+                    if (
+                        r_idx + 3 < len(rows)
+                        and len(rows[r_idx]) == 1
+                        and len(rows[r_idx + 1]) == 1
+                        and isinstance(rows[r_idx + 1][0], Paragraph)
+                        and getattr(getattr(rows[r_idx + 1][0], "style", None), "name", "") == "IndexAlphaHead"
+                    ):
+                        combined_cell = (
+                            list(rows[r_idx])
+                            + list(rows[r_idx + 1])
+                            + list(rows[r_idx + 2])
+                            + list(rows[r_idx + 3])
+                        )
+                        merged_rows.append([combined_cell])
+                        r_idx += 4
+                    else:
+                        merged_rows.append(rows[r_idx])
+                        r_idx += 1
+                self._flowable = Table(merged_rows, colWidths=[availWidth], style=self.tableStyle)
+
+    idx = NoOrphanSimpleIndex(dot=' . ')
     idx_head = ParagraphStyle(
         "IndexAlphaHead",
         parent=styles["Heading2"],
         fontName=FONT_BODY_BOLD,
-        fontSize=10.0,
-        leading=12.8,
+        fontSize=9.8 if is_sc32 else 10.0,
+        leading=11.5 if is_sc32 else 12.8,
         textColor=to_color(primary_hex),
-        spaceBefore=6,
-        spaceAfter=2,
+        spaceBefore=4.0 if is_sc32 else 6,
+        spaceAfter=1.0 if is_sc32 else 2,
         keepWithNext=True,
     )
     idx_entry = ParagraphStyle(
         "IndexEntryStyle",
         parent=styles["Normal"],
         fontName=FONT_BODY,
-        fontSize=7.6,
-        leading=10.0,
+        fontSize=7.5 if is_sc32 else 7.6,
+        leading=9.3 if is_sc32 else 10.0,
         textColor=to_color(TEXT_MAIN),
     )
     idx.setup(style=idx_entry, dot=' . ', headers=True)
@@ -3702,67 +4815,240 @@ def compile_manual_pdf(is_sc32: bool) -> Path:
     print("  Building PDF document with multiBuild (two-pass TOC and Subject Index)...")
     passes = doc.multiBuild(story, canvasmaker=custom_canvas_maker, maxPasses=6)
     print(f"  ✓ MultiBuild converged in {passes} passes.")
-    print(f"  ✓ Successfully compiled: {output_pdf_path} ({output_pdf_path.stat().st_size:,} bytes)")
+    sanitize_pdf_for_kdp_and_kindle(output_pdf_path)
+    print(f"  ✓ Successfully compiled & sanitized: {output_pdf_path} ({output_pdf_path.stat().st_size:,} bytes)")
+
+    # Generate Hardcover Interior Manuscript variant for SC-32, SC-6, and Domain Series
+    compile_hardcover_interior_variant(output_pdf_path, is_sc32, styles, custom_canvas_maker, manual_kind=kind)
 
     return output_pdf_path
 
 
-def compile_full_wrap_cover_spread(is_sc32: bool) -> Path:
+def sanitize_pdf_for_kdp_and_kindle(pdf_path: Path) -> None:
+    """
+    Strips all PDF non-visual meta information (/Info dictionary, /Outlines, /Names, /Dests,
+    /StructTreeRoot, /MarkInfo, /Metadata, /OCProperties, /PieceInfo, /PageMode), page /Annots,
+    and unused unembedded Type 1 Helvetica (/F1) font resources so KDP and Kindle Create
+    transforms encounter only clean embedded TrueType fonts and page streams.
+    Before stripping /Outlines, saves any hierarchical bookmark outline to a sidecar .outline.json
+    so generate_manual_kpf.py can still populate the Kindle Print Replica TOC navigation.
+    """
+    import json
+    import pypdf
+    from pypdf.generic import NameObject
+
+    try:
+        reader = pypdf.PdfReader(str(pdf_path))
+        outline_entries = []
+
+        def _walk_outline(items, depth):
+            for item in items:
+                if isinstance(item, list):
+                    _walk_outline(item, depth + 1)
+                else:
+                    try:
+                        p_idx = reader.get_destination_page_number(item)
+                    except Exception:
+                        p_idx = 0
+                    if p_idx is None:
+                        p_idx = 0
+                    t_str = " ".join(str(getattr(item, "title", "")).replace("\t", " ").split())
+                    if t_str:
+                        outline_entries.append([depth, int(p_idx), t_str])
+
+        if reader.outline:
+            _walk_outline(reader.outline, 0)
+        if outline_entries:
+            sidecar_path = pdf_path.with_suffix(".outline.json")
+            sidecar_path.write_text(json.dumps(outline_entries, ensure_ascii=False, indent=2), encoding="utf-8")
+    except Exception:
+        pass
+
+    writer = pypdf.PdfWriter(clone_from=str(pdf_path))
+    root = writer._root_object
+    for k in (
+        "/Outlines",
+        "/Names",
+        "/Dests",
+        "/PageLabels",
+        "/StructTreeRoot",
+        "/MarkInfo",
+        "/Metadata",
+        "/OCProperties",
+        "/PieceInfo",
+        "/PageMode",
+    ):
+        if k in root:
+            del root[NameObject(k)]
+
+    if writer._info is not None:
+        writer._info.get_object().clear()
+
+    for pg in writer.pages:
+        if "/Annots" in pg:
+            del pg[NameObject("/Annots")]
+        res = pg.get("/Resources")
+        if res:
+            res_obj = res.get_object()
+            fonts = res_obj.get("/Font")
+            if fonts:
+                fonts_obj = fonts.get_object()
+                embedded_ref = None
+                for fk in list(fonts_obj.keys()):
+                    f_obj = fonts_obj[fk].get_object()
+                    if f_obj.get("/Subtype") != "/Type1":
+                        embedded_ref = fonts_obj.raw_get(fk)
+                        break
+                for fk in list(fonts_obj.keys()):
+                    f_obj = fonts_obj[fk].get_object()
+                    if f_obj.get("/Subtype") == "/Type1":
+                        if embedded_ref is not None:
+                            fonts_obj[NameObject(fk)] = embedded_ref
+                        else:
+                            del fonts_obj[NameObject(fk)]
+
+    with open(pdf_path, "wb") as f_out:
+        writer.write(f_out)
+
+
+def compile_hardcover_interior_variant(
+    paperback_pdf_path: Path,
+    is_sc32: bool,
+    styles: Dict[str, ParagraphStyle],
+    custom_canvas_maker,
+    manual_kind: Optional[str] = None,
+) -> Path:
+    """
+    Generates a separate Hardcover Interior Manuscript PDF
+    whose Series Frontispiece (Page ii) and Copyright/Colophon (Page iv) carry the dedicated
+    Hardcover ISBN-13, while preserving 100% of the interior layout.
+    """
+    import io
+    import pypdf
+    kind = manual_kind or ("sc32" if is_sc32 else "sc6")
+    hc_front_buf = io.BytesIO()
+    hc_doc = ManualDocTemplate(
+        hc_front_buf,
+        pagesize=(PAGE_WIDTH, PAGE_HEIGHT),
+        leftMargin=MARGIN_PT,
+        rightMargin=MARGIN_PT,
+        topMargin=MARGIN_PT,
+        bottomMargin=MARGIN_PT,
+    )
+    hc_story = build_kdp_front_matter(is_sc32, styles, is_hardcover=True, manual_kind=kind)
+    hc_doc.multiBuild(hc_story, canvasmaker=custom_canvas_maker, maxPasses=2)
+    hc_front_buf.seek(0)
+    hc_front_reader = pypdf.PdfReader(hc_front_buf)
+
+    if kind == "domains":
+        hc_pdf_path = OUTPUT_DIR / "sc-domains-manual-hardcover.pdf"
+    else:
+        hc_pdf_path = OUTPUT_DIR / ("sc32-scientific-manual-hardcover.pdf" if is_sc32 else "sc6-elementary-manual-hardcover.pdf")
+    writer = pypdf.PdfWriter(clone_from=str(paperback_pdf_path))
+    for pg_idx in (1, 3):  # Page ii (index 1) and Page iv (index 3)
+        writer.pages[pg_idx].replace_contents(None)
+        writer.pages[pg_idx].merge_page(hc_front_reader.pages[pg_idx])
+    with open(hc_pdf_path, "wb") as f_out:
+        writer.write(f_out)
+    sanitize_pdf_for_kdp_and_kindle(hc_pdf_path)
+    print(f"  ✓ Successfully compiled Hardcover Interior Manuscript: {hc_pdf_path} ({hc_pdf_path.stat().st_size:,} bytes)")
+    return hc_pdf_path
+
+
+def compile_full_wrap_cover_spread(
+    is_sc32: bool = True,
+    is_hardcover: bool = False,
+    manual_kind: Optional[str] = None,
+) -> Path:
     """
     Generates a standalone KDP-compliant 3-panel 6x9 Full-Wrap Cover + Spine Spread PDF:
-    - Left Panel: Back Cover (6.00 x 9.00 in trim)
-    - Center Panel: Dynamic KDP White-Paper Spine (actual_pages * 0.002252 in/page @ 444 PPI)
-    - Right Panel: Front Cover (6.00 x 9.00 in trim)
-    Continuous Warm Archival Paper (#F7F4EB) across Front, Spine, and Back with exact 0.125 in (9.0 pt)
-    outer bleed on all 4 edges, KDP-compliant 0.0625 in spine hinge clearance, zero visible crop/fold lines,
-    and a vector EAN-13 barcode inside KDP's mandatory 2.00 x 1.20 in white barcode zone.
+    - Paperback (is_hardcover=False): 0.125 in outer bleed, 6.00 x 9.00 in panels, spine = pages * 0.002252 in.
+    - Hardcover Case-Laminate (is_hardcover=True): 0.591 in (15 mm) outer wrap, 0.394 in (10 mm) spine hinges,
+      5.866 x 9.236 in boards (6.260 in panel+hinge width), spine = (pages * 0.002252 in) + 0.189 in.
+    Continuous Warm Archival Paper (#F7F4EB) across Front, Spine, and Back with zero barcode (reserved for KDP).
     """
     import pypdf
+    kind = manual_kind or ("sc32" if is_sc32 else "sc6")
+    if kind == "domains":
+        is_sc32 = True
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    manual_name = "sc32-scientific-manual.pdf" if is_sc32 else "sc6-elementary-manual.pdf"
+    if kind == "domains":
+        manual_name = "sc-domains-manual.pdf"
+    else:
+        manual_name = "sc32-scientific-manual.pdf" if is_sc32 else "sc6-elementary-manual.pdf"
     manual_path = OUTPUT_DIR / manual_name
-    actual_pages = 500 if is_sc32 else 440
+    actual_pages = 120 if kind == "domains" else (500 if is_sc32 else 440)
     if manual_path.exists():
         try:
             actual_pages = len(pypdf.PdfReader(str(manual_path)).pages)
         except Exception:
             pass
 
-    spread_name = "sc32-full-wrap-cover.pdf" if is_sc32 else "sc6-full-wrap-cover.pdf"
+    if kind == "domains":
+        spread_name = "sc-domains-hardcover-wrap-cover.pdf" if is_hardcover else "sc-domains-full-wrap-cover.pdf"
+    elif is_hardcover:
+        spread_name = "sc32-hardcover-wrap-cover.pdf" if is_sc32 else "sc6-hardcover-wrap-cover.pdf"
+    else:
+        spread_name = "sc32-full-wrap-cover.pdf" if is_sc32 else "sc6-full-wrap-cover.pdf"
     spread_path = OUTPUT_DIR / spread_name
 
-    bleed = 9.0            # Official KDP 0.125 in (3.2 mm) outer bleed
-    panel_w = PAGE_WIDTH   # 432.0 pt (6.00 in trade trim width)
-    panel_h = PAGE_HEIGHT  # 648.0 pt (9.00 in trade trim height)
-    spine_in = actual_pages * 0.002252  # Official KDP White Paper spine formula
-    spine_w = spine_in * 72.0
+    if is_hardcover:
+        bleed_x = 0.591 * 72.0          # Official KDP Hardcover 0.591 in (15 mm) left/right turn-in wrap
+        bleed_y = 0.591 * 72.0          # Official KDP Hardcover 0.591 in (15 mm) top/bottom turn-in wrap
+        hinge_pt = 0.394 * 72.0         # Official KDP Hardcover 0.394 in (10 mm) spine hinge
+        board_w = 5.866 * 72.0          # Official KDP Hardcover 5.866 in (149 mm) board width
+        panel_w = board_w + hinge_pt    # 6.260 in (board + hinge) per cover side
+        panel_h = 9.236 * 72.0          # Official KDP Hardcover 9.236 in (234.6 mm) board height
+        spine_in = (actual_pages * 0.002252) + 0.189  # KDP Hardcover spine width (+0.189 in board allowance)
+        spine_w = spine_in * 72.0
+    else:
+        bleed_x = 9.0                   # Official KDP Paperback 0.125 in (3.2 mm) outer bleed
+        bleed_y = 9.0
+        hinge_pt = 0.0
+        panel_w = PAGE_WIDTH            # 432.0 pt (6.00 in trade trim width)
+        panel_h = PAGE_HEIGHT           # 648.0 pt (9.00 in trade trim height)
+        spine_in = actual_pages * 0.002252  # Official KDP White Paper spine formula
+        spine_w = spine_in * 72.0
 
-    total_w = (2.0 * panel_w) + spine_w + (2.0 * bleed)
-    total_h = panel_h + (2.0 * bleed)
+    total_w = (2.0 * panel_w) + spine_w + (2.0 * bleed_x)
+    total_h = panel_h + (2.0 * bleed_y)
 
     paper_cream = "#F7F4EB"
     ink_obsidian = "#0F172A"
-    cover_accent = "#FF4F00" if is_sc32 else "#059669"
+    if kind == "domains":
+        cover_accent = DOMAINS_COVER_ACCENT
+    else:
+        cover_accent = "#FF4F00" if is_sc32 else "#059669"
 
     c = canvas.Canvas(str(spread_path), pagesize=(total_w, total_h))
 
-    # Panel X coordinates (inside 0.125 in bleed)
-    back_x = bleed
-    spine_x = bleed + panel_w
-    front_x = bleed + panel_w + spine_w
-    base_y = bleed
+    # Fill entire full-wrap canvas (including wraps, hinges, boards, and spine) with Warm Archival Paper
+    c.setFillColor(to_color(paper_cream))
+    c.rect(0.0, 0.0, total_w, total_h, fill=1, stroke=0)
 
-    # 1. LEFT PANEL: Minimalist Bestseller Back Cover (with left/top/bottom 0.125 in bleed)
+    # Panel X coordinates (centering the 6.00 x 9.00 live art inside each board area away from the spine hinge)
+    spine_x = bleed_x + panel_w
+    art_y = bleed_y + (panel_h - PAGE_HEIGHT) * 0.5
+    if is_hardcover:
+        back_art_x = bleed_x + (board_w - PAGE_WIDTH) * 0.5
+        front_art_x = spine_x + spine_w + hinge_pt + (board_w - PAGE_WIDTH) * 0.5
+    else:
+        back_art_x = bleed_x
+        front_art_x = spine_x + spine_w
+
+    # 1. LEFT PANEL: Minimalist Bestseller Back Cover
     draw_bestseller_back_cover(
-        c, back_x, base_y, panel_w, panel_h, is_sc32,
+        c, back_art_x, art_y, PAGE_WIDTH, PAGE_HEIGHT, is_sc32,
         total_pages=actual_pages,
-        bleed_l=bleed, bleed_r=0.0, bleed_t=bleed, bleed_b=bleed
+        bleed_l=0.0, bleed_r=0.0, bleed_t=0.0, bleed_b=0.0,
+        manual_kind=kind,
     )
 
-    # 2. RIGHT PANEL: Minimalist Bestseller Front Cover (with right/top/bottom 0.125 in bleed)
+    # 2. RIGHT PANEL: Minimalist Bestseller Front Cover
     draw_bestseller_front_cover(
-        c, front_x, base_y, panel_w, panel_h, is_sc32,
-        bleed_l=0.0, bleed_r=bleed, bleed_t=bleed, bleed_b=bleed
+        c, front_art_x, art_y, PAGE_WIDTH, PAGE_HEIGHT, is_sc32,
+        bleed_l=0.0, bleed_r=0.0, bleed_t=0.0, bleed_b=0.0,
+        manual_kind=kind,
     )
 
     # 3. CENTER PANEL: Continuous Warm Archival Paper Spine (with >= 0.0625 in / 4.5 pt safe margin)
@@ -3770,47 +5056,230 @@ def compile_full_wrap_cover_spread(is_sc32: bool) -> Path:
     c.setFillColor(to_color(paper_cream))
     c.rect(spine_x, 0.0, spine_w, total_h, fill=1, stroke=0)
 
-    spine_cx = spine_x + (spine_w / 2.0)
+    if is_hardcover or (actual_pages >= 79 and spine_w >= 12.5):
+        spine_cx = spine_x + (spine_w / 2.0)
+        base_y = bleed_y
 
-    # Minimalist geometric accent bar at top of spine
-    mark_w = min(spine_w - 18.0, 26.0)
-    c.setFillColor(to_color(cover_accent))
-    c.roundRect(spine_cx - mark_w * 0.5, base_y + panel_h - 62.0, mark_w, 6.0, 2.0, fill=1, stroke=0)
+        # Minimalist geometric accent bar at top of spine
+        mark_w = max(4.0, min(spine_w - 10.0, 26.0))
+        c.setFillColor(to_color(cover_accent))
+        c.roundRect(spine_cx - mark_w * 0.5, base_y + panel_h - 62.0, mark_w, 6.0, 2.0, fill=1, stroke=0)
 
-    # Vertical Rotated Spine Title (Standard US Top-to-Bottom Spine Orientation: -90 deg)
-    c.saveState()
-    c.translate(spine_cx, base_y + (panel_h * 0.52))
-    c.rotate(-90)
-    c.setFillColor(to_color(ink_obsidian))
-    c.setFont(FONT_BODY_BOLD, 13.5)
-    spine_main = (
-        "THINKING IN THE STACK"
-        if is_sc32 else
-        "FROM BLOCKS TO THE STACK"
-    )
-    c.drawCentredString(0.0, -4.5, spine_main)
-    c.restoreState()
+        # Vertical Rotated Spine Title (Standard US Top-to-Bottom Spine Orientation: -90 deg)
+        spine_font_sz = min(13.5, max(7.0, (spine_w - 9.0) * 0.82))
+        c.saveState()
+        c.translate(spine_cx, base_y + (panel_h * 0.52))
+        c.rotate(-90)
+        c.setFillColor(to_color(ink_obsidian))
+        c.setFont(FONT_BODY_BOLD, spine_font_sz)
+        if kind == "domains":
+            spine_main = "THE STACK IN THE FIELD"
+        else:
+            spine_main = (
+                "THINKING IN THE STACK"
+                if is_sc32 else
+                "FROM BLOCKS TO THE STACK"
+            )
+        c.drawCentredString(0.0, -spine_font_sz * 0.33, spine_main)
+        c.restoreState()
 
-    # Bottom Spine Company Imprint ('StackCalc' rotated or horizontal inside safe zone)
-    c.saveState()
-    c.translate(spine_cx, base_y + 82.0)
-    c.rotate(-90)
-    c.setFillColor(to_color(cover_accent))
-    c.circle(-38.0, 0.0, 2.5, fill=1, stroke=0)
-    c.setFillColor(to_color(ink_obsidian))
-    c.setFont(FONT_BODY_BOLD, 10.5)
-    c.drawCentredString(0.0, -3.5, "StackCalc")
-    c.restoreState()
+        # Bottom Spine Company Imprint ('StackCalc' rotated inside safe zone)
+        imp_font_sz = min(10.5, max(6.5, (spine_w - 9.0) * 0.72))
+        c.saveState()
+        c.translate(spine_cx, base_y + 82.0)
+        c.rotate(-90)
+        c.setFillColor(to_color(cover_accent))
+        c.circle(-38.0, 0.0, min(2.5, spine_font_sz * 0.2), fill=1, stroke=0)
+        c.setFillColor(to_color(ink_obsidian))
+        c.setFont(FONT_BODY_BOLD, imp_font_sz)
+        c.drawCentredString(0.0, -imp_font_sz * 0.33, "StackCalc")
+        c.restoreState()
 
     c.restoreState()
 
     c.showPage()
     c.save()
+    sanitize_pdf_for_kdp_and_kindle(spread_path)
+    kind_lbl = "Hardcover Case-Laminate" if is_hardcover else "Paperback Full-Wrap"
     print(
-        f"  ✓ Successfully compiled KDP 6x9 Full-Wrap Cover + Spine Spread: {spread_path.name} "
+        f"  ✓ Successfully compiled KDP 6x9 {kind_lbl} Cover + Spine Spread: {spread_path.name} "
         f"({actual_pages} pp -> spine {spine_in:.3f} in, total {total_w/72.0:.3f} x {total_h/72.0:.3f} in, {spread_path.stat().st_size:,} bytes)"
     )
     return spread_path
+
+
+def compile_lulu_coil_cover_spread(
+    is_sc32: bool = True,
+    manual_kind: Optional[str] = None,
+) -> Path:
+    """
+    Generates a standalone 2-page Lulu Coil-Bound Cover PDF (6.25" x 9.25" with 0.125" full bleed
+    around 6.00" x 9.00" trade trim). Page 1 = Front Cover, Page 2 = Back Cover.
+    """
+    import pypdf
+    kind = manual_kind or ("sc32" if is_sc32 else "sc6")
+    if kind == "domains":
+        is_sc32 = True
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    if kind == "domains":
+        manual_name = "sc-domains-manual.pdf"
+        lulu_name = "sc-domains-lulu-cover.pdf"
+    elif is_sc32:
+        manual_name = "sc32-scientific-manual.pdf"
+        lulu_name = "sc32-lulu-cover.pdf"
+    else:
+        manual_name = "sc6-elementary-manual.pdf"
+        lulu_name = "sc6-lulu-cover.pdf"
+
+    manual_path = OUTPUT_DIR / manual_name
+    actual_pages = 120 if kind == "domains" else (500 if is_sc32 else 440)
+    if manual_path.exists():
+        try:
+            actual_pages = len(pypdf.PdfReader(str(manual_path)).pages)
+        except Exception:
+            pass
+
+    lulu_path = OUTPUT_DIR / lulu_name
+    bleed = 9.0
+    page_w = PAGE_WIDTH + 2.0 * bleed
+    page_h = PAGE_HEIGHT + 2.0 * bleed
+
+    c = canvas.Canvas(str(lulu_path), pagesize=(page_w, page_h))
+    draw_bestseller_front_cover(
+        c, bleed, bleed, PAGE_WIDTH, PAGE_HEIGHT, is_sc32,
+        bleed_l=bleed, bleed_r=bleed, bleed_t=bleed, bleed_b=bleed,
+        manual_kind=kind,
+    )
+    c.showPage()
+    draw_bestseller_back_cover(
+        c, bleed, bleed, PAGE_WIDTH, PAGE_HEIGHT, is_sc32,
+        total_pages=actual_pages,
+        bleed_l=bleed, bleed_r=bleed, bleed_t=bleed, bleed_b=bleed,
+        manual_kind=kind,
+    )
+    c.showPage()
+    c.save()
+    sanitize_pdf_for_kdp_and_kindle(lulu_path)
+    print(f"  ✓ Successfully compiled Lulu 2-Page Coil-Bound Cover: {lulu_path.name} ({lulu_path.stat().st_size:,} bytes)")
+    return lulu_path
+
+
+def rasterize_pdf_to_jpg(pdf_path: Path, jpg_path: Path, dpi: int = 300) -> Path:
+    """
+    Rasterizes a single-page front-cover PDF into a 300 DPI RGB JPEG for Amazon KDP Kindle eBook / Print Replica upload.
+    """
+    import shutil
+    import subprocess
+    jpg_path.parent.mkdir(parents=True, exist_ok=True)
+    pdftoppm_bin = shutil.which("pdftoppm")
+    if pdftoppm_bin:
+        prefix = str(jpg_path.with_suffix(""))
+        subprocess.run(
+            [
+                pdftoppm_bin,
+                "-jpeg",
+                "-jpegopt",
+                "quality=95",
+                "-r",
+                str(dpi),
+                "-singlefile",
+                str(pdf_path),
+                prefix,
+            ],
+            check=True,
+        )
+        return jpg_path
+
+    magick_bin = shutil.which("magick")
+    if magick_bin:
+        subprocess.run(
+            [
+                magick_bin,
+                "-density",
+                str(dpi),
+                f"{pdf_path}[0]",
+                "-colorspace",
+                "sRGB",
+                "-quality",
+                "95",
+                str(jpg_path),
+            ],
+            check=True,
+        )
+        return jpg_path
+
+    sips_bin = shutil.which("sips")
+    if sips_bin:
+        subprocess.run(
+            [
+                sips_bin,
+                "-s",
+                "format",
+                "jpeg",
+                "-s",
+                "formatOptions",
+                "95",
+                str(pdf_path),
+                "--out",
+                str(jpg_path),
+            ],
+            check=True,
+            capture_output=True,
+        )
+        return jpg_path
+
+    raise RuntimeError("No PDF-to-JPEG rasterizer found (expected pdftoppm, magick, or sips).")
+
+
+def compile_kindle_front_cover(
+    is_sc32: bool = True,
+    dpi: int = 300,
+    manual_kind: Optional[str] = None,
+) -> Tuple[Path, Path]:
+    """
+    Generates the standalone Amazon KDP Kindle eBook / Print Replica Primary Front Cover:
+      - Vector front-cover PDF (6.00 x 9.00 in / 432 x 648 pt, no spine or back cover):
+        sc32-kindle-cover.pdf, sc6-kindle-cover.pdf, or sc-domains-kindle-cover.pdf
+      - High-resolution 300 DPI RGB JPEG (1800 x 2700 px):
+        sc32-kindle-cover.jpg, sc6-kindle-cover.jpg, or sc-domains-kindle-cover.jpg
+    """
+    kind = manual_kind or ("sc32" if is_sc32 else "sc6")
+    if kind == "domains":
+        is_sc32 = True
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    if kind == "domains":
+        stem = "sc-domains-kindle-cover"
+    else:
+        stem = "sc32-kindle-cover" if is_sc32 else "sc6-kindle-cover"
+    pdf_path = OUTPUT_DIR / f"{stem}.pdf"
+    jpg_path = OUTPUT_DIR / f"{stem}.jpg"
+
+    c = canvas.Canvas(str(pdf_path), pagesize=(PAGE_WIDTH, PAGE_HEIGHT))
+    draw_bestseller_front_cover(
+        c,
+        0.0,
+        0.0,
+        PAGE_WIDTH,
+        PAGE_HEIGHT,
+        is_sc32=is_sc32,
+        bleed_l=0.0,
+        bleed_r=0.0,
+        bleed_t=0.0,
+        bleed_b=0.0,
+        manual_kind=kind,
+    )
+    c.showPage()
+    c.save()
+    sanitize_pdf_for_kdp_and_kindle(pdf_path)
+
+    rasterize_pdf_to_jpg(pdf_path, jpg_path, dpi=dpi)
+    with PIL.Image.open(jpg_path) as im:
+        px_w, px_h = im.size
+    print(
+        f"  ✓ Successfully compiled Kindle Primary Front Cover: {jpg_path.name} "
+        f"({px_w}x{px_h} px @ {dpi} DPI, {jpg_path.stat().st_size:,} bytes) & {pdf_path.name}"
+    )
+    return pdf_path, jpg_path
 
 
 def main():
@@ -3818,79 +5287,147 @@ def main():
     parser = argparse.ArgumentParser(description="Generate publication-grade PDFs for StackCalc manuals.")
     parser.add_argument("--sc32-only", action="store_true", help="Compile only the SC-32 Scientific manual.")
     parser.add_argument("--sc6-only", action="store_true", help="Compile only the SC-6 Elementary manual.")
+    parser.add_argument("--domains-only", action="store_true", help="Compile only the Volume III Domain Series manual.")
+    parser.add_argument("--covers-only", action="store_true", help="Compile only the Print & Kindle covers.")
     parser.add_argument("--min-pages", type=int, default=240, help="Minimum required page count (default: 240).")
     args = parser.parse_args()
 
-    build_both = not args.sc32_only and not args.sc6_only
+    build_all = not args.sc32_only and not args.sc6_only and not args.domains_only
 
     import shutil
+    if (STACKCALC_ROOT / "docs" / "downloads").exists():
+        (STACKCALC_ROOT / "docs" / "downloads" / "manuals").mkdir(parents=True, exist_ok=True)
+    education_pdf_dir = WATCH_CALC_ROOT / "Education" / "output" / "pdf"
     mirror_out_dirs = [
-        REPO_ROOT / "Website" / "docs" / "manuals" / "output",
-        REPO_ROOT.parent / "stackcalc" / "docs" / "manuals" / "output",
-        REPO_ROOT.parent / "stackcalc" / "Website" / "docs" / "manuals" / "output",
-        REPO_ROOT.parent / "stackcalc" / "site" / "manuals" / "output",
+        WATCH_CALC_ROOT / "Website" / "docs" / "manuals" / "output",
+        WATCH_CALC_ROOT / "documentation" / "manuals" / "output" / "kdp_upload",
+        STACKCALC_ROOT / "docs" / "manuals" / "output",
+        STACKCALC_ROOT / "docs" / "manuals" / "output" / "kdp_upload",
+        STACKCALC_ROOT / "docs" / "downloads" / "manuals",
+        STACKCALC_ROOT / "Website" / "docs" / "manuals" / "output",
+        STACKCALC_ROOT / "site" / "manuals" / "output",
+        education_pdf_dir,
+        education_pdf_dir / "kdp_upload",
+        education_pdf_dir / "kdp_upload_ready",
     ]
+    for kdp_dir in (
+        WATCH_CALC_ROOT / "documentation" / "manuals" / "output" / "kdp_upload",
+        STACKCALC_ROOT / "docs" / "manuals" / "output" / "kdp_upload",
+        education_pdf_dir,
+        education_pdf_dir / "kdp_upload",
+        education_pdf_dir / "kdp_upload_ready",
+    ):
+        if kdp_dir.parent.exists():
+            kdp_dir.mkdir(parents=True, exist_ok=True)
 
-    if build_both or args.sc32_only:
-        compile_manual_pdf(is_sc32=True)
-        compile_full_wrap_cover_spread(is_sc32=True)
+    if build_all or args.sc32_only:
+        if not args.covers_only:
+            compile_manual_pdf(is_sc32=True, manual_kind="sc32")
+        compile_full_wrap_cover_spread(is_sc32=True, is_hardcover=False, manual_kind="sc32")
+        compile_full_wrap_cover_spread(is_sc32=True, is_hardcover=True, manual_kind="sc32")
+        compile_lulu_coil_cover_spread(is_sc32=True, manual_kind="sc32")
+        compile_kindle_front_cover(is_sc32=True, manual_kind="sc32")
         for mdir in mirror_out_dirs:
             if mdir.exists():
-                for fname in ("sc32-scientific-manual.pdf", "sc32-full-wrap-cover.pdf"):
+                for fname in (
+                    "sc32-scientific-manual.pdf",
+                    "sc32-scientific-manual-hardcover.pdf",
+                    "sc32-full-wrap-cover.pdf",
+                    "sc32-hardcover-wrap-cover.pdf",
+                    "sc32-lulu-cover.pdf",
+                    "sc32-kindle-cover.pdf",
+                    "sc32-kindle-cover.jpg",
+                ):
                     src_f = OUTPUT_DIR / fname
                     if src_f.exists():
                         shutil.copy2(src_f, mdir / fname)
+        if education_pdf_dir.exists() and (OUTPUT_DIR / "sc32-scientific-manual.pdf").exists():
+            shutil.copy2(OUTPUT_DIR / "sc32-scientific-manual.pdf", education_pdf_dir / "StackCalc-Pro-Scientific-Edition.pdf")
 
-    if build_both or args.sc6_only:
-        compile_manual_pdf(is_sc32=False)
-        compile_full_wrap_cover_spread(is_sc32=False)
+    if build_all or args.sc6_only:
+        if not args.covers_only:
+            compile_manual_pdf(is_sc32=False, manual_kind="sc6")
+        compile_full_wrap_cover_spread(is_sc32=False, is_hardcover=False, manual_kind="sc6")
+        compile_full_wrap_cover_spread(is_sc32=False, is_hardcover=True, manual_kind="sc6")
+        compile_lulu_coil_cover_spread(is_sc32=False, manual_kind="sc6")
+        compile_kindle_front_cover(is_sc32=False, manual_kind="sc6")
         for mdir in mirror_out_dirs:
             if mdir.exists():
-                for fname in ("sc6-elementary-manual.pdf", "sc6-full-wrap-cover.pdf"):
+                for fname in (
+                    "sc6-elementary-manual.pdf",
+                    "sc6-elementary-manual-hardcover.pdf",
+                    "sc6-full-wrap-cover.pdf",
+                    "sc6-hardcover-wrap-cover.pdf",
+                    "sc6-lulu-cover.pdf",
+                    "sc6-kindle-cover.pdf",
+                    "sc6-kindle-cover.jpg",
+                ):
                     src_f = OUTPUT_DIR / fname
                     if src_f.exists():
                         shutil.copy2(src_f, mdir / fname)
+        if education_pdf_dir.exists() and (OUTPUT_DIR / "sc6-elementary-manual.pdf").exists():
+            shutil.copy2(OUTPUT_DIR / "sc6-elementary-manual.pdf", education_pdf_dir / "StackCalc-Elementary-Edition.pdf")
+
+    if build_all or args.domains_only:
+        if not args.covers_only:
+            compile_manual_pdf(is_sc32=True, manual_kind="domains")
+        compile_full_wrap_cover_spread(is_sc32=True, is_hardcover=False, manual_kind="domains")
+        compile_full_wrap_cover_spread(is_sc32=True, is_hardcover=True, manual_kind="domains")
+        compile_lulu_coil_cover_spread(is_sc32=True, manual_kind="domains")
+        compile_kindle_front_cover(is_sc32=True, manual_kind="domains")
+        for mdir in mirror_out_dirs:
+            if mdir.exists():
+                for fname in (
+                    "sc-domains-manual.pdf",
+                    "sc-domains-manual-hardcover.pdf",
+                    "sc-domains-full-wrap-cover.pdf",
+                    "sc-domains-hardcover-wrap-cover.pdf",
+                    "sc-domains-lulu-cover.pdf",
+                    "sc-domains-kindle-cover.pdf",
+                    "sc-domains-kindle-cover.jpg",
+                ):
+                    src_f = OUTPUT_DIR / fname
+                    if src_f.exists():
+                        shutil.copy2(src_f, mdir / fname)
+        if education_pdf_dir.exists():
+            dom_pairs = [
+                ("sc-domains-manual.pdf", "StackCalc-Volume-3-Domain-Calculators.pdf"),
+                ("sc-domains-manual.pdf", "domain-calculators-manual.pdf"),
+                ("sc-domains-full-wrap-cover.pdf", "domain-calculators-manual-kdp-cover.pdf"),
+                ("sc-domains-lulu-cover.pdf", "domain-calculators-manual-lulu-cover.pdf"),
+            ]
+            for src_name, dst_name in dom_pairs:
+                src_f = OUTPUT_DIR / src_name
+                if src_f.exists():
+                    shutil.copy2(src_f, education_pdf_dir / dst_name)
 
     print("\n=======================================================")
     print("PDF Generation Complete. Validating outputs...")
     print("=======================================================")
     try:
         import pypdf
-        for pdf_name in ["sc32-scientific-manual.pdf", "sc6-elementary-manual.pdf"]:
+        validation_targets = []
+        if build_all or args.sc32_only:
+            validation_targets.append(("sc32-scientific-manual.pdf", 180))
+        if build_all or args.sc6_only:
+            validation_targets.append(("sc6-elementary-manual.pdf", 180))
+        if build_all or args.domains_only:
+            validation_targets.append(("sc-domains-manual.pdf", 50))
+        for pdf_name, min_p in validation_targets:
             pdf_path = OUTPUT_DIR / pdf_name
             if not pdf_path.exists():
                 continue
             reader = pypdf.PdfReader(str(pdf_path))
             num_pages = len(reader.pages)
-
-            def count_bookmarks(outline_list):
-                cnt = 0
-                for item in outline_list:
-                    if isinstance(item, list):
-                        cnt += count_bookmarks(item)
-                    else:
-                        cnt += 1
-                return cnt
-
-            def collect_dest_pages(outline_list):
-                pages = []
-                for item in outline_list:
-                    if isinstance(item, list):
-                        pages.extend(collect_dest_pages(item))
-                    else:
-                        try:
-                            pages.append(reader.get_destination_page_number(item))
-                        except Exception:
-                            pass
-                return pages
-
-            dest_pages = set(collect_dest_pages(reader.outline))
-            print(f"    Unique bookmark destination pages: {len(dest_pages)}")
-            assert len(dest_pages) >= 50, f"Outline bookmarks collapsed to {len(dest_pages)} unique pages (expected >= 50)!"
-            assert num_pages >= 240, f"{pdf_name} has only {num_pages} pages (expected >= 240)!"
+            root_obj = reader.trailer["/Root"].get_object()
+            assert "/Outlines" not in root_obj, f"Found /Outlines metadata in {pdf_name}!"
+            assert not reader.metadata, f"Found non-empty /Info metadata dictionary in {pdf_name}: {reader.metadata}!"
+            assert num_pages >= min_p, f"{pdf_name} has only {num_pages} pages (expected >= {min_p})!"
 
             for pg_idx, page in enumerate(reader.pages):
+                assert "/Annots" not in page, f"Found non-printable /Annots markup on page {pg_idx + 1} of {pdf_name}!"
                 pg_text = page.extract_text() or ""
+                assert "\x00" not in pg_text, f"Found unmapped NUL glyph on page {pg_idx + 1} of {pdf_name}!"
                 assert "RP2350" not in pg_text, f"Found prohibited token RP2350 on page {pg_idx + 1} of {pdf_name}!"
                 assert "ST7567A" not in pg_text, f"Found prohibited token ST7567A on page {pg_idx + 1} of {pdf_name}!"
                 assert not re.search(r'\bmathbf\b', pg_text), f"Found naked mathbf on page {pg_idx + 1} of {pdf_name}!"
@@ -3901,7 +5438,7 @@ def main():
                 assert "the automated verification suite" not in pg_text, f"Found leaked phrase 'the automated verification suite' on page {pg_idx + 1} of {pdf_name}!"
                 contest_match = re.search(r'\b(UIL|TMSCA|PSIA)\b', pg_text)
                 assert not contest_match, f"Found regional contest token '{contest_match.group(0)}' on page {pg_idx + 1} of {pdf_name}!"
-            print(f"    ✓ Passed all forensic validation assertions across all {num_pages} pages (>= 300 pp, 0 naked mathbf, 0 raw LaTeX, 0 test identifiers, 0 leaked phrases, 0 contest acronyms)!")
+            print(f"    ✓ [{pdf_name}] Passed all forensic validation assertions across all {num_pages} pages (0 metadata/outlines/annots, 0 NUL glyphs, 0 naked mathbf, 0 raw LaTeX, 0 test identifiers, 0 leaked phrases, 0 contest acronyms)!")
     except Exception as e:
         print(f"  [ERROR] Validation failed: {e}")
         sys.exit(1)

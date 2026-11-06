@@ -325,11 +325,11 @@ Because the screen confirms `Count = 5` after the fifth tap, students know they 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `{{key:CLΣ}}` | 0 | 0 | 0 | 0 | Clear the statistics basket (`Count = 0`) |
-| `6 {{key:Σ+}}` | 0 | 0 | 0 | Count = 1 | Add Side 1 ($6\text{ cm}$) to the basket |
-| `4 {{key:Σ+}}` | 0 | 0 | 0 | Count = 2 | Add Side 2 ($4\text{ cm}$) to the basket |
-| `4.2 {{key:Σ+}}` | 0 | 0 | 0 | Count = 3 | Add Side 3 ($4.2\text{ cm}$) to the basket |
-| `4.2 {{key:Σ+}}` | 0 | 0 | 0 | Count = 4 | Add Side 4 ($4.2\text{ cm}$) to the basket |
-| `4 {{key:Σ+}}` | 0 | 0 | 0 | Count = 5 | Add Side 5 ($4\text{ cm}$) to the basket |
+| `6 {{key:Σ+}}` | 0 | 0 | 0 | 1 | Add Side 1 ($6\text{ cm}$) to the basket (`Count = 1`) |
+| `4 {{key:Σ+}}` | 0 | 0 | 0 | 2 | Add Side 2 ($4\text{ cm}$) to the basket (`Count = 2`) |
+| `4.2 {{key:Σ+}}` | 0 | 0 | 0 | 3 | Add Side 3 ($4.2\text{ cm}$) to the basket (`Count = 3`) |
+| `4.2 {{key:Σ+}}` | 0 | 0 | 0 | 4 | Add Side 4 ($4.2\text{ cm}$) to the basket (`Count = 4`) |
+| `4 {{key:Σ+}}` | 0 | 0 | 0 | 5 | Add Side 5 ($4\text{ cm}$) to the basket (`Count = 5`) |
 | `{{key:Σx}}` | 0 | 0 | 0 | 22.4 | Sum all 5 sides: **22.4 cm** perimeter |
 
 Have partners use `{{key:CLΣ}}`, `{{key:Σ+}}`, and `{{key:Σx}}` to find the perimeter of a triangle with sides $5, 7, 8$ (`Count = 3`, sum `20`), a rectangle with sides $8, 5, 8, 5$ (`Count = 4`, sum `26`), and a hexagon with sides $3, 3, 4, 4, 5, 5$ (`Count = 6`, sum `24`).
@@ -434,11 +434,11 @@ With `Count = 3` pairs verified on screen, tapping `{{key:Σx}}` recalls the com
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `{{key:CLΣ}}` | 0 | 0 | 0 | 0 | Clear the statistics basket (`Count = 0`) |
 | `6 {{key:ENTER}} 5 {{key:×}} 2 {{key:×}}` | 0 | 0 | 0 | 60 | Top & bottom pair: $6 \times 5 \times 2 = 60\text{ cm}^2$ |
-| `{{key:Σ+}}` | 0 | 0 | 0 | Count = 1 | Toss Pair 1 into the basket (`Count = 1`) |
+| `{{key:Σ+}}` | 0 | 0 | 0 | 1 | Toss Pair 1 into the basket (`Count = 1`) |
 | `6 {{key:ENTER}} 4 {{key:×}} 2 {{key:×}}` | 0 | 0 | 0 | 48 | Front & back pair: $6 \times 4 \times 2 = 48\text{ cm}^2$ |
-| `{{key:Σ+}}` | 0 | 0 | 0 | Count = 2 | Toss Pair 2 into the basket (`Count = 2`) |
+| `{{key:Σ+}}` | 0 | 0 | 0 | 2 | Toss Pair 2 into the basket (`Count = 2`) |
 | `5 {{key:ENTER}} 4 {{key:×}} 2 {{key:×}}` | 0 | 0 | 0 | 40 | Left & right pair: $5 \times 4 \times 2 = 40\text{ cm}^2$ |
-| `{{key:Σ+}}` | 0 | 0 | 0 | Count = 3 | Toss Pair 3 into the basket (`Count = 3`) |
+| `{{key:Σ+}}` | 0 | 0 | 0 | 3 | Toss Pair 3 into the basket (`Count = 3`) |
 | `{{key:Σx}}` | 0 | 0 | 0 | 148 | Sum all 6 faces: **148 cm²** total surface area |
 
 Next, have partners compute both volume and total surface area for a $6 \times 3 \times 2\text{ cm}$ box ($\text{Volume} = 36\text{ cm}^3$, $\text{Surface Area} = 72\text{ cm}^2$), a $4 \times 4 \times 4\text{ cm}$ cube ($\text{Volume} = 64\text{ cm}^3$, $\text{Surface Area} = 96\text{ cm}^2$), and a $10 \times 8 \times 5\text{ cm}$ storage crate ($\text{Volume} = 400\text{ cm}^3$, $\text{Surface Area} = 340\text{ cm}^2$).

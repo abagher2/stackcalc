@@ -20,13 +20,32 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
         "name": "StackCalc",
         "url": "https://www.stackcalc.io"
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "16.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://www.lulu.com/spotlight/stackcalc"
-      }
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Amazon Paperback Edition",
+          "price": "16.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://link.amazon/B07DqTRR5"
+        },
+        {
+          "@type": "Offer",
+          "name": "Amazon Hardcover Edition",
+          "price": "24.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://link.amazon/B09AnTIQI"
+        },
+        {
+          "@type": "Offer",
+          "name": "Etsy Spiral-Bound Edition",
+          "price": "16.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://stackcalcmath.etsy.com"
+        }
+      ]
     },
     {
       "@type": "Book",
@@ -58,6 +77,27 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
           "url": "https://www.lulu.com/spotlight/stackcalc"
         }
       ]
+    },
+    {
+      "@type": "Book",
+      "name": "Middle School Math Block Supplement & Student Workbook (Grades 6–8)",
+      "description": "The hands-on middle school student workbook connecting StackCalc math blocks with two-method problem solving. 10 units, 45 textbook sections, 90 daily worksheets, and 900 practice problems.",
+      "bookFormat": "https://schema.org/Paperback",
+      "genre": "Mathematics / Middle School Education / Study Guide",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "StackCalc",
+        "url": "https://www.stackcalc.io"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Amazon Print Edition",
+        "price": "16.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://link.amazon/B07bxzYKq"
+      }
     }
   ]
 }
@@ -109,6 +149,9 @@ Written directly for curious 3rd–6th graders, parents, and teachers, ***From B
 
 Written in the narrative tradition of popular mathematics and classic Corvallis engineering handbooks, ***Thinking in the Stack*** explores why postfix stack computation mirrors physical causality—and how four visible registers ($X, Y, Z, T$) let you evaluate everything from parallel impedances and AC phasors to Richard Brent's root solver (`SOLVE`), adaptive Romberg integration (`∫`), bivariate curve fitting (`L.R.`), 36-bit binary/hex arithmetic, and Time Value of Money (`TVM`) without a single parenthesis.
 
+- **[Order on Amazon: Paperback Bookstore Edition ($16.00) ↗](https://link.amazon/B07DqTRR5)**
+- **[Order on Amazon: Hardcover Casebound Edition ↗](https://link.amazon/B09AnTIQI)**
+- **[Order on Etsy: Spiral-Bound Lay-Flat Bench Edition ($16.00) ↗](https://stackcalcmath.etsy.com)**
 - **[Start Reading Online: Prologue (`sc32/index.md`)](sc32/index.md)**
 - **[Download Complete Typeset Book PDF (`sc32-scientific-manual.pdf`)](output/sc32-scientific-manual.pdf)**
 - **[Explore the 100 Master STEM Equations (`sc32/appendix-d-constants-and-equations.md`)](sc32/appendix-d-constants-and-equations.md)**
@@ -131,6 +174,16 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
 | **[Chapter 13: Applied STEM Case Studies](sc32/13-applied-stem-case-studies.md)** | Cross-disciplinary harmonic laws (`x∥y`, `▸θ,r`) and 11 multi-stage aerospace, civil, electrical, and chemical synthesis labs |
 | **[Chapter 14: Rapid Calculation & Contest Playbook](sc32/14-uil-contest-playbook.md)** | Mental estimation, inside-out keystroke conservation, Horner's method, and rapid tournament problem solving |
 | **[Appendices A–E](sc32/appendix-a-stack-lift-state-machine.md)** | [App. A: Stack-Lift State Machine](sc32/appendix-a-stack-lift-state-machine.md) • [App. B: Error Catalog](sc32/appendix-b-error-catalog.md) • [App. C: 43-Key Directory](sc32/appendix-c-keycap-directory.md) • [App. D: 100 STEM Equations](sc32/appendix-d-constants-and-equations.md) • [App. E: Annotated Bibliography](sc32/appendix-e-annotated-bibliography.md) |
+
+---
+
+### Volume III: *Middle School Math Block Supplement & Hands-On Workbook* (Grades 6–8)
+
+Written specifically for middle school math classrooms, homeschool families, and intervention specialists, the ***Middle School Math Block Supplement & Student Workbook*** bridges 3D-printed math blocks (Prime Factor Studio, Fraction Studio, Place Value Studio, and Algebra Factoring Tiles) with standard middle school math curricula (Big Ideas Math, Common Core, Texas TEKS, Florida B.E.S.T.). Features 10 units, 45 textbook sections, 90 daily practice worksheets (Practice A & B), 90 multi-way worked examples, and 900 practice problems.
+
+- **[Order on Amazon: Middle School Math Workbook ↗](https://link.amazon/B07bxzYKq)**
+- **[Explore Online Workbook & 10 Chapter Packets (`../curriculum/big-ideas-middle-school-sc6-workbook.md`)](../curriculum/big-ideas-middle-school-sc6-workbook.md)**
+- **[Download Complete Student Workbook PDF (128 Pages)](../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf)**
 
 ---
 

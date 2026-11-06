@@ -242,6 +242,12 @@ hide:
         <a href="../../manuals/#sc-32-scientific" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
           &bull; Reference Manual &amp; TOC Preview &rarr;
         </a>
+        <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-[#FF9900]/20 text-[#FF9900] border border-[#FF9900]/40 hover:bg-[#FF9900]/30">
+          &bull; Order Book (Paperback $16) ↗
+        </a>
+        <a href="https://link.amazon/B09AnTIQI" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-[#FF9900]/20 text-[#FF9900] border border-[#FF9900]/40 hover:bg-[#FF9900]/30">
+          &bull; Order Book (Hardcover) ↗
+        </a>
       </div>
 
       <!-- Trust Badges -->

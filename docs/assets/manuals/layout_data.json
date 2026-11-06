@@ -128,7 +128,7 @@
       "primaryAction" : "sqrt",
       "primaryBitmapIdentifier" : "operation.34",
       "primaryLabel" : "√𝑥",
-      "primaryLatex" : "\\sqrt{x}",
+      "primaryLatex" : "\\sqrt{\\,x\\,}",
       "row" : 1,
       "w" : 7,
       "yellowAction" : "square",
@@ -152,13 +152,13 @@
       "primaryAction" : "exp",
       "primaryBitmapIdentifier" : "operation.30",
       "primaryLabel" : "𝑒ˣ",
-      "primaryLatex" : "e^x",
+      "primaryLatex" : "e^{\\,x}",
       "row" : 1,
       "w" : 7,
       "yellowAction" : "exp10",
       "yellowBitmapIdentifier" : "operation.29",
       "yellowLabel" : "10ˣ",
-      "yellowLatex" : "10^x"
+      "yellowLatex" : "10^{\\,x}"
     },
     {
       "alphaLabel" : "C",
@@ -197,13 +197,13 @@
       "primaryAction" : "power",
       "primaryBitmapIdentifier" : "operation.31",
       "primaryLabel" : "𝑦ˣ",
-      "primaryLatex" : "y^x",
+      "primaryLatex" : "y^{\\,x}",
       "row" : 1,
       "w" : 7,
       "yellowAction" : "xRootY",
       "yellowBitmapIdentifier" : "operation.32",
       "yellowLabel" : "ˣ√𝑦",
-      "yellowLatex" : "\\sqrt[x]{y}"
+      "yellowLatex" : "\\sqrt[x]{\\,y\\,}"
     },
     {
       "alphaLabel" : "E",
@@ -222,7 +222,7 @@
       "primaryAction" : "reciprocal",
       "primaryBitmapIdentifier" : "operation.28",
       "primaryLabel" : "𝑥⁻¹",
-      "primaryLatex" : "x^{-1}",
+      "primaryLatex" : "x^{\\,-1}",
       "row" : 1,
       "w" : 7,
       "yellowAction" : "factorial",
@@ -246,13 +246,13 @@
       "primaryAction" : "statAdd",
       "primaryBitmapIdentifier" : "operation.109",
       "primaryLabel" : "Σ+",
-      "primaryLatex" : "\\Sigma+",
+      "primaryLatex" : "\\Sigma\\,+",
       "row" : 1,
       "w" : 7,
       "yellowAction" : "statSub",
       "yellowBitmapIdentifier" : "operation.110",
       "yellowLabel" : "Σ-",
-      "yellowLatex" : "\\Sigma-"
+      "yellowLatex" : "\\Sigma\\,-"
     },
     {
       "alphaLabel" : "G",
@@ -446,7 +446,7 @@
       "primaryAction" : "toggleSign",
       "primaryBitmapIdentifier" : "operation.27",
       "primaryLabel" : "+\/-",
-      "primaryLatex" : "+\\!\/\\!-",
+      "primaryLatex" : "+\\,\/\\,-",
       "row" : 3,
       "w" : 7,
       "yellowAction" : "modes",
@@ -458,7 +458,7 @@
       "blueAction" : "intDiv",
       "blueBitmapIdentifier" : "operation.68",
       "blueLabel" : "÷R",
-      "blueLatex" : "\\div_R",
+      "blueLatex" : "\\div_{\\mkern-2mu\\textstyle\\mathrm{R}}",
       "col" : 4,
       "cx" : 53.25,
       "cy" : 89.92500000000001,
@@ -621,6 +621,7 @@
       "isShiftBlue" : false,
       "isShiftYellow" : true,
       "primaryAction" : "shiftYellow",
+      "primaryBitmapIdentifier" : "operation.129",
       "primaryLabel" : "↰",
       "row" : 5,
       "w" : 8.6,
@@ -738,6 +739,7 @@
       "isShiftBlue" : true,
       "isShiftYellow" : false,
       "primaryAction" : "shiftBlue",
+      "primaryBitmapIdentifier" : "operation.130",
       "primaryLabel" : "↱",
       "row" : 6,
       "w" : 8.6,
@@ -978,11 +980,6 @@
       "ENG",
       "ALL"
     ],
-    "EQN" : [
-      "NEW",
-      "EDIT",
-      "[Eq₁ … Eqₙ]"
-    ],
     "FLAGS" : [
       "STACK ▸",
       "MODE ▸",
@@ -1020,14 +1017,6 @@
       "GCD",
       "LCM"
     ],
-    "PLOT" : [
-      "<",
-      "|<-",
-      "OUT",
-      "IN",
-      "->|",
-      ">"
-    ],
     "POLY" : [
       "A",
       "B",
@@ -1041,14 +1030,6 @@
       "n!",
       "RAND",
       "SD"
-    ],
-    "REGS" : [
-      "STACK",
-      "STO",
-      "STATS",
-      "DATA",
-      "▲",
-      "▼"
     ],
     "STACK" : [
       "2-LVL",
@@ -1073,11 +1054,11 @@
     ],
     "TVM" : [
       "N",
-      "I%",
+      "I%YR",
       "PV",
       "PMT",
       "FV",
-      "END/BEG"
+      "BGN\/END"
     ],
     "s,σ" : [
       "sx",

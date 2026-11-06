@@ -75,29 +75,32 @@ RPN_TESTS := \
 
 USER_GUIDES := docs/manuals/sc32-user-guide.md docs/manuals/sc6-user-guide.md
 PDF_MANUALS := docs/downloads/manuals/sc32-scientific-manual.pdf docs/downloads/manuals/sc6-elementary-manual.pdf
+KPF_MANUALS := docs/manuals/output/kdp_upload/sc32-scientific-manual.kpf docs/manuals/output/kdp_upload/sc6-elementary-manual.kpf
+KINDLE_COVERS := docs/manuals/output/kdp_upload/sc32-kindle-cover.jpg docs/manuals/output/kdp_upload/sc6-kindle-cover.jpg
 OPEN_SOURCE_ZIPS := \
 	docs/downloads/counting-tiles-open-source-stls.zip \
 	docs/downloads/prime-factor-studio-open-source-stls.zip \
 	docs/downloads/quest-scoreboard-open-source-stls.zip
 SITE_INDEX := site/index.html
 
-.PHONY: help all book manuals blocks printables all-parts screenshots layouts verify pdfs site clean
+.PHONY: help all book manuals blocks printables all-parts screenshots layouts verify pdfs kpf site clean
 
 help:
 	@echo "StackCalc Reference Manuals & Documentation Build System"
 	@echo "--------------------------------------------------------"
-	@echo "  make book        - Incrementally update blocks, layouts, screenshots, macros, tests, PDFs, & MkDocs site"
+	@echo "  make book        - Incrementally update blocks, layouts, screenshots, macros, tests, PDFs, KPFs, & MkDocs site"
 	@echo "  make blocks      - Rebuild STL-backed OpenSCAD orthographic diagrams & blocks_registry.json if SCAD/STLs changed"
 	@echo "  make printables  - Update all-parts MK4S plates, Printables CAD/photo links, & open-source STL zips"
 	@echo "  make layouts     - Export layout_data.json and layout_data_sc6.json if Swift keymaps changed"
 	@echo "  make screenshots - Run SwiftUI Paper-theme test suite to update screenshots & sequences_registry.json"
 	@echo "  make verify      - Validate all book macros (keys, sequences, screenshots, blocks) and run 81 RPNCore unit tests"
-	@echo "  make pdfs        - Compile publication-grade SC-32 and SC-6 PDF manuals if chapters or assets changed"
+	@echo "  make pdfs        - Compile publication-grade SC-32/SC-6 PDFs, Kindle primary covers, & KPF packages into kdp_upload"
+	@echo "  make kpf         - Generate Kindle Print Replica (.kpf) packages & Kindle primary covers into kdp_upload"
 	@echo "  make site        - Build MkDocs documentation site with --strict validation"
 
 all: book printables
 manuals: book
-book: $(PDF_MANUALS) $(OPEN_SOURCE_ZIPS) $(SITE_INDEX)
+book: $(PDF_MANUALS) $(KPF_MANUALS) $(KINDLE_COVERS) $(OPEN_SOURCE_ZIPS) $(SITE_INDEX)
 
 # ------------------------------------------------------------------------------
 # Stage 1: OpenSCAD / STL -> Orthographic Block Diagrams, All-Parts Plates & Printables Links
@@ -157,14 +160,22 @@ $(USER_GUIDES): $(SC32_CHAPTERS) $(SC6_CHAPTERS) $(BOOK_ENGINE_TOOLS) $(LAYOUT_S
 	@touch $(USER_GUIDES)
 
 # ------------------------------------------------------------------------------
-# Stage 4: Publication PDF Manuals (ReportLab)
+# Stage 4: Publication PDF Manuals (ReportLab) & Kindle Print Replica (.kpf)
 # ------------------------------------------------------------------------------
-pdfs: $(PDF_MANUALS)
+pdfs: $(PDF_MANUALS) $(KPF_MANUALS) $(KINDLE_COVERS)
 
-$(PDF_MANUALS): $(USER_GUIDES) Tools/generate_manual_pdfs.py $(BLOCK_PNGS) $(SCREENSHOT_PNGS)
-	@echo "==> [4/5] Compiling SC-32 and SC-6 publication PDFs..."
+kpf: $(KPF_MANUALS) $(KINDLE_COVERS)
+
+$(PDF_MANUALS): $(USER_GUIDES) Tools/generate_manual_pdfs.py Tools/generate_manual_kpf.py $(BLOCK_PNGS) $(SCREENSHOT_PNGS)
+	@echo "==> [4/5] Compiling SC-32 and SC-6 publication PDFs, Kindle primary covers, and KPF packages..."
 	$(PYTHON) Tools/generate_manual_pdfs.py
-	@touch $(PDF_MANUALS)
+	$(PYTHON) Tools/generate_manual_kpf.py
+	@touch $(PDF_MANUALS) $(KPF_MANUALS) $(KINDLE_COVERS)
+
+$(KPF_MANUALS) $(KINDLE_COVERS): $(PDF_MANUALS) Tools/generate_manual_kpf.py
+	@echo "==> Generating Kindle Print Replica (.kpf) packages and Kindle primary covers into kdp_upload..."
+	$(PYTHON) Tools/generate_manual_kpf.py
+	@touch $(KPF_MANUALS) $(KINDLE_COVERS)
 
 # ------------------------------------------------------------------------------
 # Stage 5: MkDocs Strict Documentation Build

@@ -78,6 +78,7 @@ def clean_manipulative_label(raw: str) -> str:
     replacements = {
         "PLACE-01 + FRAC-01 + PRIME-01": "Place Value, Fraction & Prime Blocks",
         "Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01) + Prime Factor Studio (PRIME-01)": "Place Value, Fraction & Prime Blocks",
+        "Prime Factor Studio (PRIME-01) + Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)": "Prime Factor, Fraction & Place Value Blocks",
         "Place Value Studio (PLACE-01) + Prime Factor Studio (PRIME-01)": "Place Value & Prime Factor Blocks",
         "Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)": "Fraction Strips & Place Value Blocks",
         "Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)": "Place Value Blocks & Fraction Strips",
@@ -1403,8 +1404,8 @@ def draw_token_scoring_guide_page(p: CanvasPage, chapters: List[Dict[str, Any]],
         elif s_idx == 2:
             # SC-6 2-Line LCD + Keycaps
             p.rect(sx + 3.5, gy + 1.4, col_w - 7.0, 6.0, fill="#E2E8F0", stroke=INK, r=0.4, line_w=0.22)
-            p.text(sx + 5.0, gy + 3.9, "Y: 5 (Quotient)", size=1.42, bold=True, mono=True, color=SLATE)
-            p.text(sx + 5.0, gy + 6.4, "X: 3 (Remainder)", size=1.42, bold=True, mono=True, color=TEAL_ACCENT)
+            p.text(sx + 5.0, gy + 3.9, "Y: 3 (Remainder)", size=1.42, bold=True, mono=True, color=SLATE)
+            p.text(sx + 5.0, gy + 6.4, "X: 5 (Quotient)", size=1.42, bold=True, mono=True, color=TEAL_ACCENT)
             p.draw_keycap_sequence(["23", "ENTER", "4", "g", "÷R"], sx + 4.2, gy + 8.4, max_w=col_w - 8.4, h=3.2, gap=0.5)
         else:
             # 100-Point Worksheet Mastery Badge
@@ -1614,16 +1615,16 @@ def draw_token_scoring_guide_page(p: CanvasPage, chapters: List[Dict[str, Any]],
     p.text(margin + c1_w + c2_w + c3_w + 1.8, col_hdr_y + 2.7, "WHAT TO VERIFY ON THE SC-6 DISPLAY", size=1.55, bold=True, mono=True, color=INK)
 
     unit_check_rows = [
-        ("Unit 1: Whole Numbers & Factors", "Long Div / Tree vs. Array / Venn", ["23", "ENTER", "4", "g", "÷R"], "Line Y = Quotient, Line X = Remainder; [PRIME], [g][FACT], [GCF], [f][LCM], [x²], [x³]"),
+        ("Unit 1: Whole Numbers & Factors", "Long Div / Tree vs. Array / Venn", ["23", "ENTER", "4", "g", "÷R"], "Line Y = Remainder, Line X = Quotient; [PRIME], [g][FACT], [GCF], [f][LCM], [x²], [x³]"),
         ("Unit 2: Fractions & Decimals", "LCD Strips & Reciprocals vs. Cross-Mult", [".", "2", ".", "3", "ENTER", ".", "1", ".", "4", "+"], "HP-32 Two-Dot fraction entry ([.] n [.] d & w [.] n [.] d); [g][SIMP], [FDISP], [a b/c], [f][d/c], [PV], [$]"),
         ("Unit 3: Ratios, Rates & Percents", "Tape Diagrams vs. Ratio Tables & % Prop", ["12", "ENTER", "8", "g", "a:b"], "[g][a:b] Ratio Mode (+ [10F] table), [g][REP], [%] part of whole, [g][%CHG], [f][▸cm]/[g][▸in]"),
         ("Unit 4: Algebraic Expressions", "Area Model / Like Terms vs. GCF Factor", ["4", "ENTER", "5", "×", "7", "+"], "Evaluate at x = 5 in both original & simplified forms and press [≠] (flashes NO when equal!)"),
         ("Unit 5: Area & Elapsed Time", "Cut-and-Slide Grid vs. Polygon Formulas", ["12", "ENTER", "8", "f", "RECT"], "[f][RECT] area/perim, [g][TRI] ½bh, [Σ+]/[f][Σx] composite sum, [CLK] + [f][▸HR]/[g][▸HMS]"),
         ("Unit 6: Integers & Coord Plane", "Number Line Jumps vs. Absolute Value |x|", ["f", "LINE", "18", "+/-", "5", "+/-", "f", ">"], "[f][LINE] Number Line jumps, [+/-] sign, [g][|x|] distance, [f][>]/[g][<] (flashes YES/NO!)"),
         ("Unit 7: Equations & Inequalities", "Balance Scale vs. Inverse Operations", ["41", "ENTER", "4", "ENTER", "9", "×", "5", "+", "≠"], "Equality test [≠] flashes NO when Left = Right (balanced!); [f][≥] & [g][≤] flash YES/NO"),
-        ("Unit 8: 3D Surface Area & Volume", "Unfolded 2D Net vs. Prism/Cone Formulas", ["12", "ENTER", "8", "ENTER", "5", "f", "PRISM"], "[f][PRISM] 3D volume, [g][CLΣ]+[Σ+]+[f][Σx] 2D net surface area, [f][CIRC], [g][HYP], [g][CONE]"),
+        ("Unit 8: 3D Surface Area & Volume", "Unfolded 2D Net vs. Prism/Cone Formulas", ["12", "ENTER", "8", "f", "RECT", "5", "f", "PRISM"], "[f][RECT]->[f][PRISM] 3D volume, [g][CLΣ]+[Σ+]+[f][Σx] 2D net area, [f][CIRC]->[g][CONE], [g][HYP]"),
         ("Unit 9: Statistics & Distributions", "Fair-Share Leveling / Peel vs. IQR & MAD", ["g", "CLΣ", "18", "Σ+", "24", "Σ+", "g", "x̄"], "Enter list with [Σ+] (or [FRQ]): check [g][x̄], [f][MED], [g][MODE], [RNG], [f][1Q], [g][3Q], [IQR], [g][MAD]"),
-        ("Unit 10: Signed Ops & Probability", "Zero-Pair Chips & Trees vs. Sign Rules", ["f", "LINE", "10", "ENTER", "4", "+/-", "-"], "[f][LINE] signed hops, [+/-], [≠] 2-step equation check, [DICE]/[f][1..x], [x!], [f][nCr], [g][nPr]"),
+        ("Unit 10: Signed Ops & Probability", "Zero-Pair Chips & Trees vs. Sign Rules", ["f", "LINE", "10", "ENTER", "4", "+/-", "-"], "[f][LINE] signed hops, [+/-], [≠] 2-step equation check, [DICE]/[f][1…x], [x!], [f][nCr], [g][nPr]"),
     ]
     r_y0 = col_hdr_y + col_hdr_h
     r_h = 7.75
@@ -1890,7 +1891,7 @@ def draw_unit_story_page(p: CanvasPage, ch: Dict[str, Any], page_num: int, total
             max_w=rw,
         )
         after_keys_y = p.draw_keycap_sequence(ex1_keys, rx, cy + 8.3, max_w=rw, h=2.6, gap=0.42)
-        check_short = check_info["check_a"].split(":", 1)[-1].strip()
+        check_short = check_info["check_a"].split(": ", 1)[-1].strip()
         if check_short:
             check_short = check_short[0].upper() + check_short[1:]
         p.para(
@@ -1974,8 +1975,8 @@ def draw_sc6_check_box(
     # Right Step-by-Step Verification Instructions
     rx = x + tray_w + 4.8
     rw = w - tray_w - 6.8
-    if ":" in check_text:
-        lead_lbl, rest_txt = check_text.split(":", 1)
+    if ": " in check_text:
+        lead_lbl, rest_txt = check_text.split(": ", 1)
         rest_clean = rest_txt.strip()
         if rest_clean:
             rest_clean = rest_clean[0].upper() + rest_clean[1:]
@@ -2777,7 +2778,7 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
     series_kicker = (
         "THE STACKCALC LIBRARY  •  CURRICULUM SERIES — BOOK 3 COACH GUIDE"
         if is_coach
-        else "THE STACKCALC LIBRARY  •  CURRICULUM SERIES — BOOK 3 OF 5"
+        else "THE STACKCALC LIBRARY  •  CURRICULUM SERIES — BOOK 3"
     )
     p.text(left_x, 54.0, series_kicker, size=2.35, bold=True, mono=True, color=INK)
 
@@ -2794,7 +2795,7 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
     else:
         p.text(left_x, 68.0, "MIDDLE SCHOOL", size=9.2, bold=True, color=INK)
         p.text(left_x, 80.5, "MATH LAB", size=9.2, bold=True, color=INK)
-        subtitle = "Two-Method Student Practice Workbook with Physical Blocks, Real-World Stories & Four-Line Stack Verification"
+        subtitle = "Two-Method Student Practice Workbook with Physical Blocks & Stack Verification (Grades 6–8)"
         desc_body = (
             "A self-contained Grades 6–8 practice workbook (10 Units, 45 Sections, 90 Practice A & B Worksheets, and 900 "
             "problems) for homeschooling families and classrooms. Teaches students to solve every concept by hand on paper in two "
@@ -2804,7 +2805,26 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
 
     p.line(left_x, 88.0, right_x, 88.0, color=INK, width=0.65)
     sub_end_y = p.para(left_x, 96.5, subtitle, max_w=content_w, size=3.35, bold=True, color=INK, leading=1.25)
-    p.para(left_x, sub_end_y + 3.5, desc_body, max_w=content_w, size=2.30, color=SLATE, leading=1.36)
+    desc_end_y = p.para(left_x, sub_end_y + 3.5, desc_body, max_w=content_w, size=2.30, color=SLATE, leading=1.36)
+
+    # 3-Pillar CRA & 4-Level Stack Architecture Showcase Box on Title Page
+    box_top_y = max(152.0, desc_end_y + 8.0)
+    p.rect(left_x, box_top_y, content_w, 38.0, fill=SUBTLE_HDR, stroke=TEAL_ACCENT, r=1.8, line_w=0.45)
+    p.rect(left_x, box_top_y, content_w, 6.2, fill=BAND_HDR, stroke=TEAL_ACCENT, r=1.2, line_w=0.45)
+    p.text(left_x + 3.5, box_top_y + 4.3, "THE THREE PILLARS OF THE STACKCALC LIBRARY", size=1.95, bold=True, color=INK, max_w=content_w - 7.0)
+    pillars = [
+        ("1. CONCRETE BLOCK STUDIOS", "Tactile 3D Manipulatives", "Build with Place Value Studio, Fraction Studio, or Prime Factor Studio 3D blocks."),
+        ("2. PAPER-FIRST MASTERY", "Two-Method Fluency", "Solve every problem by hand on paper using two independent methods before touching a key."),
+        ("3. 4-LEVEL STACK VERIFICATION", "Parenthesis-Free RPN", "Verify step-by-step on the distraction-free SC-6 & SC-32 4-register stack (T, Z, Y, X)."),
+    ]
+    pw_card = (content_w - 11.0) / 3.0
+    for p_idx, (p_hdr, p_sub, p_txt) in enumerate(pillars):
+        px_c = left_x + 3.5 + p_idx * (pw_card + 2.0)
+        py_c = box_top_y + 8.5
+        p.rect(px_c, py_c, pw_card, 26.8, fill=WHITE, stroke=BORDER, r=1.0, line_w=0.30)
+        p.text(px_c + 2.5, py_c + 4.8, p_hdr, size=1.50, bold=True, color=TEAL_ACCENT, max_w=pw_card - 5.0)
+        p.text(px_c + 2.5, py_c + 9.4, p_sub, size=1.62, bold=True, color=INK, max_w=pw_card - 5.0)
+        p.para(px_c + 2.5, py_c + 13.8, p_txt, max_w=pw_card - 5.0, size=1.55, color=SLATE, leading=1.20, max_lines=3)
 
     imprint_rule_y = p.h - 52.0
     p.line(left_x, imprint_rule_y, right_x, imprint_rule_y, color=BORDER, width=0.30)
@@ -2830,7 +2850,7 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
             "K–12 Concept-First Curriculum & Student Workbooks (US Letter 8.5\" × 11\" Editions)",
             "• Book 1 — Teaching with the Stack: Unified K–12 Master Teacher & Homeschool Guide, Lessons & Complete Answer Keys\n"
             "• Book 2A & 2B — Early Elementary (K–2) & Upper Elementary (3–5) Math Labs: Student Manipulative & Stack Workbooks\n"
-            "• Book 3 — Middle School Math Lab: Grades 6–8 Two-Method Student Practice Workbook (900 Problems • ISBN 979-8-16-653215-2)\n"
+            "• Book 3 — Middle School Math Lab: Grades 6–8 Two-Method Student Practice Workbook (10 Units • 1,000 Problems • 128 Pages)\n"
             "• Book 4 — High School & STEM Lab: Grades 9–12 & AP Scientific RPN & Engineering Student Workbook\n"
             "• Book 5 — Stack Speed & Fluency: 15 Speed Lessons, Shortcut Playbooks & 180 Progressive Practice Tests (3,690 Problems)",
         ),
@@ -2853,7 +2873,7 @@ def draw_workbook_front_matter(c: canvas.Canvas, chapters: List[Dict[str, Any]],
     colophon_blocks = [
         (
             f"MIDDLE SCHOOL MATH LAB: {subtitle}",
-            "Copyright © 2026 by StackCalc (https://stackcalc.io). Some rights reserved. Published by StackCalc Learning Lab, San Francisco, California. ISBN-13: 979-8-16-653215-2 (9798166532152) • First Edition (US Letter 8.50 × 11.00 in / 215.9 × 279.4 mm).",
+            "Copyright © 2026 by StackCalc (https://stackcalc.io). Some rights reserved. Published by StackCalc Learning Lab, San Francisco, California. First Edition (US Letter 8.50 × 11.00 in / 215.9 × 279.4 mm).",
         ),
         (
             "Homeschool & Classroom Curriculum Compatibility:",
@@ -3374,7 +3394,7 @@ def draw_student_workbook_back_matter(c: canvas.Canvas, chapters: List[Dict[str,
 
     sc6_keys_dir = [
         ("[ENTER]", "Stack Lift / Push", ["14", "ENTER", "6", "+"], "Pushes X up to Y so you can type the 2nd number; [ENTER][+] doubles X."),
-        ("[g] [÷R]", "Quotient & Remainder", ["23", "ENTER", "4", "g", "÷R"], "Divides Y by X, placing whole Quotient in Y (5) and Remainder in X (3)."),
+        ("[g] [÷R]", "Quotient & Remainder", ["23", "ENTER", "4", "g", "÷R"], "Divides Y by X, placing Remainder in Y (3) and whole Quotient in X (5)."),
         ("[g] [FACT]", "Prime Factorization", ["24", "g", "FACT"], "Decomposes whole number into prime powers (2³ × 3¹); [PRIME] tests primality."),
         ("[GCF] / [f][LCM]", "GCF & LCM", ["24", "ENTER", "36", "GCF"], "Computes Greatest Common Factor (12); press [f][LCM] for Least Common Multiple (72)."),
         ("[.] n [.] d", "Two-Dot Fraction", [".", "2", ".", "3", "ENTER", ".", "1", ".", "4", "+"], "Enters proper fraction 2/3 or mixed number w[.]n[.]d; [g][SIMP] simplifies step-by-step."),
@@ -3383,7 +3403,7 @@ def draw_student_workbook_back_matter(c: canvas.Canvas, chapters: List[Dict[str,
         ("[≠] / [f][>]", "Equality & Compare", ["41", "ENTER", "4", "ENTER", "9", "×", "5", "+", "≠"], "Tests Y ≠ X (flashes NO when both sides are equal!). [f][>], [g][<], [f][≥], [g][≤]."),
         ("[f] [LINE]", "Number Line Mode", ["f", "LINE", "4", "+/-", "7", "+"], "Animates signed hops right (+) and left (-) along a visual number line on screen."),
         ("[f][RECT] / [g][TRI]", "2D Polygon Area", ["12", "ENTER", "8", "f", "RECT"], "Computes rectangle area (96) & perimeter (40) or triangle area (1/2)·b·h."),
-        ("[f][PRISM] / [g][CONE]", "3D Solid Volume", ["12", "ENTER", "8", "ENTER", "5", "f", "PRISM"], "Computes 3D rectangular prism volume l·w·h (480) or cone volume (1/3)·B·h."),
+        ("[f][PRISM] / [g][CONE]", "3D Solid Volume", ["12", "ENTER", "8", "f", "RECT", "5", "f", "PRISM"], "Multiplies base area B (from [f][RECT] or [f][CIRC]) by height h for prism (480) or cone (⅓Bh)."),
         ("[Σ+] / [g][x̄] / [IQR]", "Statistics Suite", ["g", "CLΣ", "18", "Σ+", "24", "Σ+", "g", "x̄"], "Accumulates data list; computes Mean [g][x̄], Median [f][MED], [IQR], and [g][MAD]."),
         ("[DICE] / [f][nCr]", "Probability & Combos", ["6", "ENTER", "2", "f", "nCr"], "Simulates fair dice/coin trials [DICE] and computes combinations nCr (15) & nPr."),
         ("[f] [?] (Tutorial)", "Built-In Math Quiz", ["f", "?"], "Launches interactive step-by-step Tutorial & Quiz Mode for 100-Point Mastery!"),
@@ -3420,7 +3440,7 @@ def draw_student_workbook_back_matter(c: canvas.Canvas, chapters: List[Dict[str,
         ("Place Value Whole-Number Tray", "Unit 1", "Model multi-digit division quotients and remainders across base-10 place columns and hold partial sub-results on stack shelf Y."),
         ("Fraction Strips & Comparator", "Unit 2", "Compare fraction strips side-by-side inside the 84 mm twin comparator channel to find common denominators and model fraction division."),
         ("Place Value Decimal Tray", "Unit 2", "Trade ones, tenths, hundredths, and thousandths across decimal columns before verifying exact decimal operations on the stack."),
-        ("Fraction Tape Diagrams & Ratios", "Unit 3", "Use equal-length fraction strips as physical Tape Diagram bars to compare part-to-part vs. part-to-whole ratios, unit rates, and percents."),
+        ("Prime Factor Ratio Lid & Tape Models", "Unit 3", "Use the PRIME-01 A1..A6 / B1..B5 lid sockets to build equal-tower Tape Diagrams, remove shared GCF prime blocks to simplify ratios, and stack identical scale-factor blocks across columns for Ratio Tables."),
         ("Place Value & Prime Factor Models", "Unit 4", "Treat variable powers (x², x, 1) as distinct place columns that cannot be combined, and use Prime Factor blocks to factor out the GCF."),
         ("Fraction & Place Value + Grids", "Unit 5", "Decompose parallelograms, triangles, and trapezoids on grid diagrams, accumulate composite areas with [Σ+], and regroup base-60 time with [CLK]."),
         ("Place Value, Number Line & Scale", "Units 6, 7", "Model signed opposites and zero pairs along the [f][LINE] number line, and solve one-step equations as balanced scales verified with [≠]."),
@@ -3759,8 +3779,8 @@ def draw_student_workbook_back_matter(c: canvas.Canvas, chapters: List[Dict[str,
         (
             "3. PRIME FACTOR STUDIO (PRIME-01) — LOGARITHMIC PRIME BLOCKS (h(p) = 7.0·log2(p) MM FOR PRIMES 2, 3, 5, 7)",
             "prime_lcm_gcd_venn.png",
-            "• Middle School Units 1, 4 & 10: Each prime block's physical height is proportional to its logarithm: [2] = 7.00 mm (1U), [3] = 11.09 mm, [5] = 16.25 mm, [7] = 19.65 mm. Stacking prime blocks adds their heights to multiply factors—so 2 × 2 × 3 = 12 stands dead-flush with 3 × 2 × 2!\n"
-            "• GCF & LCM Comparator: Shared prime blocks between two towers form the GCF sub-tower; the tallest count of each prime forms the LCM tower.",
+            "• Middle School Units 1, 3, 4 & 10: Each prime block's physical height is proportional to its logarithm: [2] = 7.00 mm (1U), [3] = 11.09 mm, [5] = 16.25 mm, [7] = 19.65 mm. Stacking prime blocks adds their heights to multiply factors—so 2 × 2 × 3 = 12 stands dead-flush with 3 × 2 × 2!\n"
+            "• Ratio Tape Lid & Ratio Tables (A1..A6 / B1..B5): Back Row A1..A6 and Front Row B1..B5 model equal-tower Tape Diagrams, GCF ratio reduction, and 5-column multiplicative Ratio Tables.",
             "Try on SC-6 (GCF of 24 and 36 = 12):",
             ["24", "ENTER", "36", "GCF"],
         ),
@@ -4016,7 +4036,7 @@ UNIT_COACH_TRIAD: Dict[int, Dict[str, str]] = {
     1: {
         "concept": "1. Concept (Stack Approach): Multi-step expressions evaluate from the inside out—holding completed groups on shelf Y while building the next group on X. Every whole number factors uniquely into primes.",
         "blocks": "2. Blocks (Place Value & Prime): Model division quotients/remainders on the Place Value tray (PLACE-01) and stack Prime Factor blocks (PRIME-01) to see exponents (2³), GCF (overlap), and LCM (union).",
-        "calc": "3. Calculator (SC-6): Use [g][÷R] to split Quotient (Y) and Remainder (X), [g][FACT] for prime powers, and [GCF]/[f][LCM] to verify Venn diagram results.",
+        "calc": "3. Calculator (SC-6): Use [g][÷R] to split Remainder (Y) and Quotient (X), [g][FACT] for prime powers, and [GCF]/[f][LCM] to verify Venn diagram results.",
     },
     2: {
         "concept": "1. Concept (Stack Approach): Rational operations require common units before adding/subtracting and multiplicative inverses (reciprocals) when dividing, holding the first operand on Y while transforming X.",
@@ -4025,7 +4045,7 @@ UNIT_COACH_TRIAD: Dict[int, Dict[str, str]] = {
     },
     3: {
         "concept": "1. Concept (Stack Approach): Ratios, unit rates, and percents are multiplicative comparisons. Keeping Y and X paired preserves the two quantities being compared across scaling steps.",
-        "blocks": "2. Blocks (Fraction & Place Value): Lay out equal-length Fraction Strips (FRAC-01) as physical Tape Diagram bars to distinguish Part-to-Part (3:2) from Part-to-Whole (3/5) and model benchmark percents.",
+        "blocks": "2. Blocks (Prime Factor, Fraction & Place Value): Use the Prime Factor (PRIME-01) A1..A6 / B1..B5 lid sockets to build equal-tower Tape Diagrams (e.g., [2][2]=4 per socket), remove shared GCF prime blocks to simplify ratios, and stack identical scale-factor blocks across columns for Ratio Tables.",
         "calc": "3. Calculator (SC-6): Simplify ratios on Y:X with [g][a:b], step through ratio tables with [g][REP], swap upside-down unit rates with [x⇄y], and toggle forms with [FDISP].",
     },
     4: {
@@ -4049,9 +4069,9 @@ UNIT_COACH_TRIAD: Dict[int, Dict[str, str]] = {
         "calc": "3. Calculator (SC-6): Solve with inverse operations on the stack, then push the left and right sides into Y and X and press [≠] (flashes NO when both sides are equal).",
     },
     8: {
-        "concept": "1. Concept (Stack Approach): Surface area sums 2D face areas across an unfolded net, whereas 3D volume multiplies three orthogonal dimensions (l, w, h) held simultaneously in registers Z, Y, and X.",
-        "blocks": "2. Blocks (When Applicable — Place Value & Fraction): Pack Place Value unit blocks (PLACE-01) to see V = l·w·h in layers, and use Fraction Strips (FRAC-01) to model fractional edge lengths.",
-        "calc": "3. Calculator (SC-6): Accumulate opposite face pairs with [Σ+] -> [f][Σx] for surface area, multiply Z·Y·X with [f][PRISM] for volume, and verify [f][CIRC], [g][CONE], and [g][HYP].",
+        "concept": "1. Concept (Stack Approach): Surface area sums 2D face areas across an unfolded net, whereas 3D volume multiplies the 2D base area B (in Y) by the perpendicular height h (in X).",
+        "blocks": "2. Blocks (When Applicable — Place Value & Fraction): Pack Place Value unit blocks (PLACE-01) to see V = B·h in layers, and use Fraction Strips (FRAC-01) to model fractional edge lengths.",
+        "calc": "3. Calculator (SC-6): Accumulate opposite face pairs with [Σ+] -> [f][Σx] for surface area, multiply Base Area × Height with [f][RECT] -> [f][PRISM] for volume, and verify [f][CIRC] -> [g][CONE] and [g][HYP].",
     },
     9: {
         "concept": "1. Concept (Stack Approach): Statistical summaries condense a list of numbers into measures of center (Mean, Median) and spread (IQR, MAD) by accumulating data into dedicated statistical registers.",
@@ -4444,7 +4464,7 @@ UNIT_BOOK_REFS: Dict[int, str] = {
 UNIT_PRODUCT_LINKS: Dict[int, str] = {
     1: "[Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)",
     2: "[84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)",
-    3: "[84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)",
+    3: "[Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)",
     4: "[Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)",
     5: "[84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)",
     6: "[Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)",

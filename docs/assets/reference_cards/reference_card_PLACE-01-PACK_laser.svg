@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="6.0in" height="4.0in" viewBox="0 0 1200 800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .card-title { font-size: 24px; font-weight: 700; fill: #ffffff; letter-spacing: -0.5px; }
+      .card-subtitle { font-size: 15px; font-weight: 400; fill: #e2e8f0; }
+      .section-hdr { font-size: 15.5px; font-weight: 700; fill: #ffffff; letter-spacing: 0.6px; text-transform: uppercase; }
+      .th { font-size: 13.5px; font-weight: 700; fill: #cccccc; text-transform: uppercase; }
+      .footer-txt { font-size: 14px; font-weight: 400; fill: #cccccc; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="800" fill="#000000" />
+  <rect x="10" y="10" width="1180" height="780" rx="12" fill="#000000" stroke="#ffffff" stroke-width="1.8" />
+  <rect x="18" y="18" width="1164" height="764" rx="8" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+
+  <rect x="25" y="25" width="1150" height="84" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+  <g transform="translate(36, 36)">
+    <rect x="0" y="0" width="52" height="52" rx="7" fill="#000000" stroke="#ffffff" stroke-width="1.3" />
+    <rect x="10" y="11" width="32" height="5" rx="1.5" fill="#ffffff" />
+    <rect x="13" y="19" width="26" height="5" rx="1.5" fill="#ffffff" opacity="0.85" />
+    <rect x="16" y="27" width="20" height="5" rx="1.5" fill="#ffffff" opacity="0.70" />
+    <rect x="19" y="35" width="14" height="5" rx="1.5" fill="#ffffff" opacity="0.55" />
+  </g>
+
+  <text x="105" y="55" class="font-mono card-title">PLACE VALUE STUDIO — PACKING BENCH &amp; QC SPEC</text>
+  <text x="105" y="74" class="font-sans card-subtitle">Symmetric 22 White + 22 Blue-Gray Digits, 4x (+1) Carry, 4x (10) Borrow &amp; Dual 5x2 Trays</text>
+  <text x="105" y="93" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">WAREHOUSE FULFILLMENT &amp; PACKING BENCH REFERENCE • REV a793ddd • 3x1x7U Box + 2 Inner 5x2 Trays + [123] Lid</text>
+
+  <g transform="translate(975, 36)">
+    <rect x="0" y="0" width="190" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="95" y="19" class="font-mono" font-size="16px" font-weight="700" text-anchor="middle" fill="#ffffff">SKU: PLACE-01-PACK</text>
+    <rect x="0" y="34" width="190" height="26" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="95" y="52" class="font-mono" font-size="13.5px" font-weight="700" text-anchor="middle" fill="#ffffff">REV a793ddd</text>
+  </g>
+
+  <!-- Left: Parts Table -->
+  <g transform="translate(25, 120)">
+    <rect x="0" y="0" width="725" height="585" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="725" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="23" class="font-mono section-hdr">PACKING BENCH MANIFEST &amp; REFILL REPLACEMENT PRICING</text>
+    <text x="16" y="52" class="font-mono th">#</text>
+    <text x="45" y="52" class="font-mono th">COMPONENT DESCRIPTION</text>
+    <text x="315" y="52" class="font-mono th">QTY</text>
+    <text x="365" y="52" class="font-mono th">COLOR / SPEC</text>
+    <text x="515" y="52" class="font-mono th">CONTENT-ADDRESSED ID</text>
+    <text x="705" y="52" class="font-mono th" text-anchor="end">REFILL</text>
+    <line x1="12" y1="58" x2="713" y2="58" stroke="#ffffff" stroke-width="1" />
+    
+    <circle cx="21" cy="70" r="9" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="21" y="74" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+    <text x="45" y="74" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">White Digits A (4×0, 2×1–9)</text>
+    <text x="315" y="74" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">22x</text>
+    <text x="365" y="74" class="font-mono" font-size="14px" fill="#ffffff">PLA White</text>
+    <text x="515" y="74" class="font-mono" font-size="13.5px" font-weight="700" fill="#ffffff">PLAC-DIG-WHT</text>
+    <text x="705" y="74" class="font-mono" font-size="14px" font-weight="700" text-anchor="end" fill="#ffffff">$1.88</text>
+    <line x1="12" y1="80" x2="710" y2="80" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="94" r="9" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="21" y="98" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+    <text x="45" y="98" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">Blue Digits B (4×0, 2×1–9)</text>
+    <text x="315" y="98" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">22x</text>
+    <text x="365" y="98" class="font-mono" font-size="14px" fill="#ffffff">Blue-Gray / Tan</text>
+    <text x="515" y="98" class="font-mono" font-size="13.5px" font-weight="700" fill="#ffffff">PLAC-DIG-BLU</text>
+    <text x="705" y="98" class="font-mono" font-size="14px" font-weight="700" text-anchor="end" fill="#ffffff">$1.88</text>
+    <line x1="12" y1="104" x2="710" y2="104" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="118" r="9" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="21" y="122" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+    <text x="45" y="122" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">4× [+1] Carry &amp; 4× [10] Borrow</text>
+    <text x="315" y="122" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">8x</text>
+    <text x="365" y="122" class="font-mono" font-size="14px" fill="#ffffff">Glow Yellow</text>
+    <text x="515" y="122" class="font-mono" font-size="13.5px" font-weight="700" fill="#ffffff">PLAC-TOKN-RG</text>
+    <text x="705" y="122" class="font-mono" font-size="14px" font-weight="700" text-anchor="end" fill="#ffffff">$2.25</text>
+    <line x1="12" y1="128" x2="710" y2="128" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="142" r="9" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="21" y="146" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#ffffff">4</text>
+    <text x="45" y="146" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">Inner 5x2 Whole Tray (L5)</text>
+    <text x="315" y="146" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">1x</text>
+    <text x="365" y="146" class="font-mono" font-size="14px" fill="#ffffff">Blue-Gray / Gray</text>
+    <text x="515" y="146" class="font-mono" font-size="13.5px" font-weight="700" fill="#ffffff">PLAC-TRAY-WHL</text>
+    <text x="705" y="146" class="font-mono" font-size="14px" font-weight="700" text-anchor="end" fill="#ffffff">$6.75</text>
+    <line x1="12" y1="152" x2="710" y2="152" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="166" r="9" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="21" y="170" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#ffffff">5</text>
+    <text x="45" y="170" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">Inner 5x2 Decimal Tray (L6)</text>
+    <text x="315" y="170" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">1x</text>
+    <text x="365" y="170" class="font-mono" font-size="14px" fill="#ffffff">Blue-Gray / Gray</text>
+    <text x="515" y="170" class="font-mono" font-size="13.5px" font-weight="700" fill="#ffffff">PLAC-TRAY-DEC</text>
+    <text x="705" y="170" class="font-mono" font-size="14px" font-weight="700" text-anchor="end" fill="#ffffff">$6.75</text>
+    <line x1="12" y1="176" x2="710" y2="176" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+
+    <circle cx="21" cy="190" r="9" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="21" y="194" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#ffffff">6</text>
+    <text x="45" y="194" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">3x1x7U Box (12 Sockets) &amp; Lid</text>
+    <text x="315" y="194" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">2x</text>
+    <text x="365" y="194" class="font-mono" font-size="14px" fill="#ffffff">PLA White / Gray</text>
+    <text x="515" y="194" class="font-mono" font-size="13.5px" font-weight="700" fill="#ffffff">PLAC-BOX-7U</text>
+    <text x="705" y="194" class="font-mono" font-size="14px" font-weight="700" text-anchor="end" fill="#ffffff">$19.50</text>
+    <line x1="12" y1="200" x2="710" y2="200" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+
+    <text x="16" y="355" class="font-mono" font-size="14.5px" font-weight="700" fill="#ffffff">TOTAL: 56 VERIFIED WORKING COMPONENTS</text>
+    <g transform="translate(12, 375)">
+      <rect x="0" y="0" width="701" height="195" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <text x="16" y="26" class="font-mono" font-size="15.5px" font-weight="700" fill="#ffffff">WAREHOUSE NO LOST PIECE GUARANTEE</text>
+      <text x="16" y="52" class="font-sans" font-size="14.5px" fill="#cccccc">
+        <tspan x="16" dy="0">Individual replacement blocks are permanently stocked in Mountain View, California.</tspan>
+        <tspan x="16" dy="22">Anti-arbitrage pricing: Order single replacement components anytime at stackcalc.io/parts.</tspan>
+        <tspan x="16" dy="22">Never retire an educational classroom kit due to a single misplaced component.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Right: QC Checks & Waterline Notice -->
+  <g transform="translate(765, 120)">
+    <rect x="0" y="0" width="410" height="585" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <rect x="0" y="0" width="410" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <text x="16" y="23" class="font-mono section-hdr">PACKING QC &amp; WATERLINE PROTOCOL</text>
+
+    <g transform="translate(14, 48)">
+      <rect x="0" y="0" width="382" height="142" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="22" class="font-mono section-hdr">FINAL BENCH INSPECTION</text>
+      
+      <text x="14" y="40" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">✓</text>
+      <text x="30" y="40" class="font-mono" font-size="13px" fill="#ffffff">22x White Digits: 4x [0] + 2x [1]–[9]</text>
+
+      <text x="14" y="64" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">✓</text>
+      <text x="30" y="64" class="font-mono" font-size="13px" fill="#ffffff">22x Blue Digits: 4x [0] + 2x [1]–[9]</text>
+
+      <text x="14" y="88" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">✓</text>
+      <text x="30" y="88" class="font-mono" font-size="13px" fill="#ffffff">4x [+1] Carry + 4x [10] Borrow = 8 tokens</text>
+
+      <text x="14" y="112" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">✓</text>
+      <text x="30" y="112" class="font-mono" font-size="13px" fill="#ffffff">2x Inner 5x2 Trays (Whole + Decimal)</text>
+
+    </g>
+
+    <g transform="translate(14, 202)">
+      <rect x="0" y="0" width="382" height="150" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+      <rect x="0" y="0" width="382" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="19" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">PACKING WATERLINE NOTICE</text>
+      <text x="12" y="50" class="font-sans" font-size="14px" fill="#ffffff">
+        <tspan x="12" dy="0">56-PC PACK-UP: Seat 4 blocks in Cols 0–4</tspan><tspan x="12" dy="20">(0–9 = 40 pcs), 6 blocks in Col 5 (4x [0],</tspan><tspan x="12" dy="20">4x [+1], 4x [10] = 12 pcs), nest both 5x2</tspan><tspan x="12" dy="20">Trays over Cols 0–4, and snap Lid shut.</tspan>
+      </text>
+    </g>
+
+    <g transform="translate(14, 365)">
+      <rect x="0" y="0" width="382" height="205" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="22" class="font-mono th" fill="#cccccc">CALIFORNIA LAB QC AUDIT</text>
+      <text x="12" y="48" class="font-mono" font-size="16px" font-weight="700" fill="#ffffff">INSPECTION: PASSED</text>
+      <text x="12" y="74" class="font-sans" font-size="14px" fill="#ffffff">Inspector: Station 04 • Mountain View, CA</text>
+      <text x="12" y="96" class="font-sans" font-size="14px" fill="#ffffff">Lot Release: 2026-Q4-ARCHIVAL</text>
+      <text x="12" y="118" class="font-sans" font-size="14px" fill="#ffffff">Standards: ASTM F963 / EN71 / RoHS Lead-Free</text>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(25, 715)">
+    <rect x="0" y="0" width="1150" height="60" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    <g transform="translate(20, 24)">
+      <text x="0" y="0" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">FACTORY SPECIFICATION</text>
+      <text x="0" y="18" class="font-sans footer-txt">Harmonized Modular Mathematics System • Manufactured with Pride in California, USA.</text>
+    </g>
+    <g transform="translate(860, 24)">
+      <text x="0" y="0" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">INSTITUTIONAL DIRECT</text>
+      <text x="0" y="18" class="font-mono" font-size="15px" font-weight="700" fill="#ffffff">sales@stackcalc.io</text>
+    </g>
+  </g>
+  <metadata id="stackcalc-book-macro-manifest" data-kit="PRIME-01">
+    <stackcalc-macros>
+      <macro-ref token="{{blocks:prime_studio_comparator_stage}}" kind="blocks" id="prime_studio_comparator_stage" png="prime_studio_comparator_stage.png" svg="prime_studio_comparator_stage.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_comparator_stage.scad" scad="book_prime_comparator_stage.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_3_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_lcm_gcd_venn}}" kind="blocks" id="prime_lcm_gcd_venn" png="prime_lcm_gcd_venn.png" svg="prime_lcm_gcd_venn.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_lcm_gcd_venn.scad" scad="book_prime_lcm_gcd_venn.scad" scad-sources="Education/scad/prime_lcm_gcd_assembly.scad,Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_studio_commutativity}}" kind="blocks" id="prime_studio_commutativity" png="prime_studio_commutativity.png" svg="prime_studio_commutativity.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_studio_commutativity.scad" scad="book_prime_studio_commutativity.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{blocks:sc32_hero_keynote}}" kind="blocks" id="sc32_hero_keynote" png="sc32-hero-keynote.png" svg="sc32-hero-keynote.png" scene="Tools/rendering/render_product_stills.py::render_sc32_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{seq:refcard_prime01_ex1}}" res-token="{{res:refcard_prime01_ex1}}" stack-token="{{res:refcard_prime01_ex1:stack}}" kind="sequence" id="refcard_prime01_ex1" model="sc6" expanded-seq="12 [g] [FACT] 18 [g] [FACT]" res="18" stack="T:0|Z:0|Y:12|X:18" />
+      <macro-ref token="{{seq:refcard_prime01_ex2}}" res-token="{{res:refcard_prime01_ex2}}" stack-token="{{res:refcard_prime01_ex2:stack}}" kind="sequence" id="refcard_prime01_ex2" model="sc6" expanded-seq="12 [ENTER] 18 [GCF] 12 [ENTER] 18 [f] [LCM]" res="36" stack="T:0|Z:0|Y:6|X:36" />
+      <macro-ref token="{{seq:refcard_prime01_ex3}}" res-token="{{res:refcard_prime01_ex3}}" stack-token="{{res:refcard_prime01_ex3:stack}}" kind="sequence" id="refcard_prime01_ex3" model="sc6" expanded-seq="2 [ENTER] 3 [×] 5 [×] [g] [FACT]" res="30" stack="T:0|Z:0|Y:0|X:30" />
+      <macro-ref token="{{icon:button_prime}}" kind="icon" id="button_prime" svg="Education/scad/lib/icons/button_prime.svg" scad="Education/scad/prime_studio_box.scad" key="FACT" model="sc6" />
+    </stackcalc-macros>
+  </metadata>
+</svg>

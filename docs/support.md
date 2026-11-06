@@ -18,7 +18,9 @@ If you need direct assistance, encountered a bug, or have a question:
 - **Direct Email Support:** [support@stackcalc.io](mailto:support@stackcalc.io) *(Fastest response for App Store customers and reviewers)*
 - **GitHub Issue Tracker:** [https://github.com/abagher2/stackcalc/issues](https://github.com/abagher2/stackcalc/issues) *(Best for bug reports, troubleshooting, and feature requests)*
 - **Official Storefronts & Fulfillment:**
-  - **Amazon Bookstore:** [From Blocks to the Stack on Amazon (B0HPJN3KP9) ↗](https://link.amazon/B0f5cP0Ur)
+  - **Amazon Bookstore (SC-32):** [Thinking in the Stack on Amazon: Paperback ↗](https://link.amazon/B07DqTRR5) &bull; [Hardcover Edition ↗](https://link.amazon/B09AnTIQI)
+  - **Amazon Bookstore (SC-6):** [From Blocks to the Stack on Amazon (B0HPJN3KP9) ↗](https://link.amazon/B0f5cP0Ur)
+  - **Amazon Bookstore (Middle School):** [Middle School Math Blocks Workbook on Amazon ↗](https://link.amazon/B07bxzYKq)
   - **Lulu Press:** [Spiral-Bound Lay-Flat Curriculum Guides & Workbooks ↗](https://www.lulu.com/spotlight/stackcalc)
   - **Etsy Storefront:** [Handcrafted 3D-Printed Manipulative & Hardware Kits (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
   - **Slant 3D Portal:** [On-Demand Additive Manufacturing & Replacement Parts ↗](https://teleportpod.com/portals/profile/StackCalc)

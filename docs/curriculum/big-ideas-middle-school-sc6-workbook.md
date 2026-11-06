@@ -45,7 +45,7 @@ Don't want to print all 127 pages at once? Each standalone **Chapter Packet PDF*
 | :---: | :--- | :--- | :--- | :--- |
 | **[Unit 1](#unit-1)** | **Numerical Expressions & Factors**<br>*Big Ideas Math Grade 6 — Chapter 1* | Sections 1.1–1.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Why 24 Is the Champion Packing Number & The 17-Year Cicada Mystery"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 9–12](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) | [**📄 Print Unit 1 PDF (13 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_01.pdf) |
 | **[Unit 2](#unit-2)** | **Fractions & Decimals**<br>*Big Ideas Math Grade 6 — Chapter 2* | Sections 2.1–2.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"The Pharaoh's Bakery, 84mm Fraction Towers & Simon Stevin's Decimals"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lessons 15–19](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**📄 Print Unit 2 PDF (13 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf) |
-| **[Unit 3](#unit-3)** | **Ratios, Rates & Percents**<br>*Big Ideas Math Grade 6 — Chapters 3, 4 & 5 (Ratios, Rates & Percents)* | Sections 3.1–3.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Pythagoras's Guitar Strings & The Hunting-Tooth Bicycle Gear Secret"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lesson 18](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**📄 Print Unit 3 PDF (13 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf) |
+| **[Unit 3](#unit-3)** | **Ratios, Rates & Percents**<br>*Big Ideas Math Grade 6 — Chapters 3, 4 & 5 (Ratios, Rates & Percents)* | Sections 3.1–3.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Pythagoras's Guitar Strings & The Hunting-Tooth Bicycle Gear Secret"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lesson 18](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**📄 Print Unit 3 PDF (13 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf) |
 | **[Unit 4](#unit-4)** | **Algebraic Expressions & Properties**<br>*Big Ideas Math Grade 6 — Chapter 3 / Chapter 5 (Algebraic Expressions)* | Sections 4.1–4.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Breaking Apart Rectangles, Frame Borders & Al-Khwarizmi's Squares"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [SC-32 Ch. 7: Polynomials](../manuals/sc32/07-polynomials-brent-solver.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) | [**📄 Print Unit 4 PDF (11 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_04.pdf) |
 | **[Unit 5](#unit-5)** | **Areas of Polygons & Elapsed Time**<br>*Big Ideas Math Grade 6 — Chapter 4 (Areas of Polygons)* | Sections 5.1–5.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Why Babylonians Counted to 60 & The Rope-Stretchers of the Nile"** — [SC-6 Ch. 6: Geometry, Time & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lessons 20–21](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**📄 Print Unit 5 PDF (11 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_05.pdf) |
 | **[Unit 6](#unit-6)** | **Integers, Rational Numbers & The Coordinate Plane**<br>*Big Ideas Math Grade 6 — Chapter 6* | Sections 6.1–6.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Zero-Pair Counters, Sub-Zero Number Lines & Descartes's Coordinate Fly"** — [SC-6 Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) & [Ch. 6: Geometry](../manuals/sc6/06-geometry-surface-area.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**📄 Print Unit 6 PDF (13 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_06.pdf) |
@@ -116,8 +116,8 @@ In Big Ideas Math, whole-number division splits a dividend into equal groups of 
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.4`):** Solve 23 ÷ 4 on paper first. Then check on your SC-6: type 23 [ENTER] 4 [g][÷R]. Read the Quotient (5) on line X and the Remainder (3) on line Y! Press [f][LASTX] [×] [+] to verify 5 × 4 + 3 = 23. *(Worked Example Keystrokes: `[23]` `[ENTER]` `[4]` `[g]` `[÷R]` → **`5 R 3`**)*
-- **Practice B Real-Life Work-Check (`p.5`):** Work out 135 ÷ 8 by hand first, then press 135 [ENTER] 8 [g][÷R] on your SC-6. Line X shows 16 full vans and line Y shows 7 leftover students—confirming you must round up to 17 vans! Press [f][LASTX] [×] [+] to check 16 × 8 + 7 = 135. *(Worked Example Keystrokes: `[135]` `[ENTER]` `[8]` `[g]` `[÷R]` `[f]` `[LASTX]` `[×]` `[+]` → **`17 vans (16 full vans + 1 van with 7 students)`**)*
+- **Practice A Work-Check (`p.4`):** Solve 23 ÷ 4 on paper first. Then check on your SC-6: type 23 [ENTER] 4 [g][÷R]. Read the Remainder (3) on line Y and the Quotient (5) on line X! Press [f][LASTx] [×] [+] to verify 5 × 4 + 3 = 23. *(Worked Example Keystrokes: `[23]` `[ENTER]` `[4]` `[g]` `[÷R]` → **`5 R 3`**)*
+- **Practice B Real-Life Work-Check (`p.5`):** Work out 135 ÷ 8 by hand first, then press 135 [ENTER] 8 [g][÷R] on your SC-6. Line X shows 16 full vans and line Y shows 7 leftover students—confirming you must round up to 17 vans! Press [f][LASTx] [×] [+] to check 16 × 8 + 7 = 135. *(Worked Example Keystrokes: `[135]` `[ENTER]` `[8]` `[g]` `[÷R]` `[f]` `[LASTx]` `[×]` `[+]` → **`17 vans (16 full vans + 1 van with 7 students)`**)*
 
 #### Practice A (p. 4): Key Ideas & Multi-Method Practice (10 Exercises)
 
@@ -308,7 +308,7 @@ In Big Ideas Math, a Factor Tree or Division Ladder splits a composite number un
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.10`):** Build your factor tree for 60 by hand until every branch ends at a prime. On your SC-6, test any branch with [PRIME] (flashes PRIME or COMPOSITE) and type 60 [g][FACT] to verify the prime factorization 2² × 3 × 5! *(Worked Example Keystrokes: `[60]` `[g]` `[FACT]` → **`60 = 2² × 3 × 5`**)*
+- **Practice A Work-Check (`p.10`):** Build your factor tree for 60 by hand until every branch ends at a prime. On your SC-6, test any branch with [PRIME] (flashes YES/NO) and type 60 [g][FACT] to verify the prime factorization 2² × 3 × 5! *(Worked Example Keystrokes: `[60]` `[g]` `[FACT]` → **`60 = 2² × 3 × 5`**)*
 - **Practice B Real-Life Work-Check (`p.11`):** To check the whole number built from 2³ × 3 × 5 on your SC-6, press 2 [x³] 3 [×] 5 [×] to confirm 120 (then press [g][FACT] to see its prime factors or [f][C.FAC] to compare two numbers). *(Worked Example Keystrokes: `[2]` `[x³]` `[3]` `[×]` `[5]` `[×]` → **`2³ × 3 × 5 (e.g., 8 × 15 or 10 × 12)`**)*
 
 #### Practice A (p. 10): Key Ideas & Multi-Method Practice (10 Exercises)
@@ -457,14 +457,14 @@ In Big Ideas Math, divide the numerator and denominator by their GCF to write a 
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.15`):** Simplify 12/18 by hand first. On the SC-6 (like the HP-32), enter fractions with the Two-Dot [.] syntax ([.] n [.] d): type [.] 12 [.] 18 [ENTER], then press [g][SIMP] to divide out GCF(12, 18) = 6 in one step to 2/3! *(Worked Example Keystrokes: `[.]` `[12]` `[.]` `[18]` `[ENTER]` `[g]` `[SIMP]` → **`2/3`**)*
+- **Practice A Work-Check (`p.15`):** Simplify 12/18 by hand first. On the SC-6 (like the HP-32), enter fractions with the Two-Dot [.] syntax ([.] n [.] d): type [.] 12 [.] 18 [ENTER], then press [g][SIMP] to step through common factors to 2/3! *(Worked Example Keystrokes: `[.]` `[12]` `[.]` `[18]` `[ENTER]` `[g]` `[SIMP]` `[g]` `[SIMP]` → **`2/3`**)*
 - **Practice B Real-Life Work-Check (`p.16`):** Add 1 2/3 + 1 1/4 on paper first. On your SC-6, enter mixed numbers as w [.] n [.] d: type 1 [.] 2 [.] 3 [ENTER] 1 [.] 1 [.] 4 [+] to confirm 2 11/12 (press [f][d/c] for 35/12 or [a b/c] for mixed view). *(Worked Example Keystrokes: `[1]` `[.]` `[2]` `[.]` `[3]` `[ENTER]` `[1]` `[.]` `[1]` `[.]` `[4]` `[+]` → **`2 11/12 miles (35/12 miles)`**)*
 
 #### Practice A (p. 15): Key Ideas & Multi-Method Practice (10 Exercises)
 
 | # | Problem Prompt | Tutor Setup & SC-6 Check | Final Answer |
 | :---: | :--- | :--- | :--- |
-| **A1** | Write 8/12 in simplest form. | `Setup: Simp(8/12)  |  SC-6: [.] 8 [.] 12 [ENTER] [g][SIMP]` | **2/3** |
+| **A1** | Write 8/12 in simplest form. | `Setup: Simp(8/12)×2  |  SC-6: [.] 8 [.] 12 [ENTER] [g][SIMP]×2` | **2/3** |
 | **A2** | Championship Pizza Party: A team eats 48 slices from trays cut into 18ths (48/18). Write 48/18 in simplest form and as a mixed number. | `Setup: Simp(48/18)  |  SC-6: [.] 48 [.] 18 [ENTER] [g][SIMP]` | **8/3 = 2 2/3 trays** |
 | **A3** | Write the mixed number 2 3/5 as an improper fraction and as a decimal. | `Setup: Improper(2 3/5)  |  SC-6: 2 [.] 3 [.] 5 [ENTER] [f][d/c]` | **13/5 and 2.6** |
 | **A4** | Pizza Slice Inventory: After a festival, 23 sixth-slices (23/6) remain. How many whole pizzas and leftover sixth-slices can be boxed? | `Setup: 23/6  |  SC-6: [.] 23 [.] 6 [ENTER]` | **3 5/6 pizzas (3 whole, 5 sixths)** |
@@ -649,7 +649,7 @@ To add or subtract decimals, line up the decimal points vertically so ones, tent
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.21`):** Line up the decimal points and add 14.60 + 3.85 by hand first. On your SC-6, check any place-value digit with [PV] (e.g., 14.6 [ENTER] 0.1 [PV]), then press 14.6 [ENTER] 3.85 [+] to confirm 18.45! *(Worked Example Keystrokes: `[14.6]` `[ENTER]` `[3.85]` `[+]` `[f]` `[LASTX]` `[-]` → **`18.45`**)*
+- **Practice A Work-Check (`p.21`):** Line up the decimal points and add 14.60 + 3.85 by hand first. On your SC-6, check any place-value digit with [PV] (e.g., 14.6 [ENTER] 0.1 [PV]), then press 14.6 [ENTER] 3.85 [+] to confirm 18.45! *(Worked Example Keystrokes: `[14.6]` `[ENTER]` `[3.85]` `[+]` `[f]` `[LASTx]` `[-]` → **`18.45`**)*
 - **Practice B Real-Life Work-Check (`p.22`):** Multiply 3.6 × 2.25 on paper and count decimal places first. Then check on your SC-6: press 3.6 [ENTER] 2.25 [×] (and press [$] for Currency Mode or [FDISP] for fraction/decimal view) to confirm $8.10. *(Worked Example Keystrokes: `[3.6]` `[ENTER]` `[2.25]` `[×]` `[FDISP]` → **`$8.10`**)*
 
 #### Practice A (p. 21): Key Ideas & Multi-Method Practice (10 Exercises)
@@ -713,8 +713,8 @@ When dividing by a decimal (such as 6.75 ÷ 0.25), multiply both the divisor and
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.23`):** Divide 23 ÷ 4 by hand first. On your SC-6, press 23 [ENTER] 4 [÷] and tap [FDISP], [a b/c], and [f][d/c] to cycle through 5.75, 5 3/4, and 23/4 (or use [f][0.3-rep] for repeating decimals)! *(Worked Example Keystrokes: `[23]` `[ENTER]` `[4]` `[÷]` `[FDISP]` `[f]` `[d/c]` → **`5 R 3 = 5 3/4 = 5.75`**)*
-- **Practice B Real-Life Work-Check (`p.24`):** Shift the decimal point 2 places right (675 ÷ 25) and divide on paper first. Then check on your SC-6: press 6.75 [ENTER] 0.25 [÷] to confirm 27 quarters, and [f][LASTX] [×] to verify 27 × 0.25 = 6.75. *(Worked Example Keystrokes: `[6.75]` `[ENTER]` `[0.25]` `[÷]` `[f]` `[LASTX]` `[×]` → **`27 quarters`**)*
+- **Practice A Work-Check (`p.23`):** Divide 23 ÷ 4 by hand first. On your SC-6, press 23 [ENTER] 4 [÷] and tap [FDISP], [a b/c], and [f][d/c] to cycle through 5.75, 5 3/4, and 23/4 (or use [f][0.3̄] for repeating decimals)! *(Worked Example Keystrokes: `[23]` `[ENTER]` `[4]` `[÷]` `[FDISP]` `[f]` `[d/c]` → **`5 R 3 = 5 3/4 = 5.75`**)*
+- **Practice B Real-Life Work-Check (`p.24`):** Shift the decimal point 2 places right (675 ÷ 25) and divide on paper first. Then check on your SC-6: press 6.75 [ENTER] 0.25 [÷] to confirm 27 quarters, and [f][LASTx] [×] to verify 27 × 0.25 = 6.75. *(Worked Example Keystrokes: `[6.75]` `[ENTER]` `[0.25]` `[÷]` `[f]` `[LASTx]` `[×]` → **`27 quarters`**)*
 
 #### Practice A (p. 23): Key Ideas & Multi-Method Practice (10 Exercises)
 
@@ -758,10 +758,10 @@ Looking at the 3D-printer screen, Marcus needed to find how many 0.20-millimeter
   <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf" class="md-button md-button--primary">📄 Print Unit 3 Chapter Packet PDF (13 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
 </div>
 
-- **Hands-On Block Kits (When Applicable — `Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
+- **Hands-On Block Kits (When Applicable — `Prime Factor Studio (PRIME-01) + Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Pythagoras's Guitar Strings & The Hunting-Tooth Bicycle Gear Secret"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lesson 18](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students confuse Part-to-Part (3:2) with Part-to-Whole (3/5), add instead of multiply in ratio tables, divide unit rates upside-down, and memorize 6 disconnected rules for moving decimal points in percents.
-- **Hands-On & Stack Remediation:** Use equal Fraction Studio blocks as physical Tape Diagram units, step through ratio tables rhythmically with [g] [REP], use [x⇄y] when unit-rate division is entered upside-down, and use [f] [▸%] + [FDISP] to show Fraction/Decimal/Percent are three costumes of one number.
+- **Hands-On & Stack Remediation:** Use the Prime Factor Studio (PRIME-01) A1..A6 / B1..B5 Ratio Lid to build equal-tower Tape Diagrams, remove shared GCF prime blocks to simplify ratios, and stack identical scale-factor blocks across columns (A1/B1..A5/B5) for Ratio Tables; then verify on SC-6 with [g] [a:b], [g] [REP], and [f] [▸%] + [FDISP].
 
 Devon always wondered why pedaling his mountain bike uphill felt impossible in high gear, while shifting to low gear made his feet spin fast and easy. Flipping his bike upside down in the driveway, he counted 48 spiky teeth on the front pedal sprocket and 16 teeth on the back wheel sprocket. Because each link of the metal chain grabs one tooth at a time, pulling 48 front teeth forward forces the 16-tooth back gear to spin around three full times! One turn of Devon's feet spins the rear tire three times—trading harder pedal push for triple the speed.
 
@@ -773,33 +773,33 @@ Whether Devon is comparing bike gears, Priya is stretching the club snack budget
 
 ### Section 3.1: Ratios and Tape Diagrams (Workbook pp. 26–27)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 3.1 & 3.2 (Ratios and Tape Diagrams) (`CCSS.MATH.6.RP.A.1`) • **Big Ideas Methods:** *Way 1: Tape Diagram (Equal Boxes)  |  Way 2: Equivalent Ratio Fraction  |  Way 3: Divide by GCF* • **Block Kit:** `FRAC-01` (84mm Fraction Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Section 3.1 & 3.2 (Ratios and Tape Diagrams) (`CCSS.MATH.6.RP.A.1`) • **Big Ideas Methods:** *Way 1: Tape Diagram (Equal Boxes)  |  Way 2: Equivalent Ratio Fraction  |  Way 3: Divide by GCF* • **Block Kit:** `PRIME-01` (Prime Factor Studio)
 
 **Key Vocabulary:** ratio • part-to-part ratio • part-to-whole ratio • equivalent ratios • tape diagram
 
-![Ratios and Tape Diagrams](../assets/manuals/fraction_studio_twin_comparator.png){ width="320" }
+![Ratios and Tape Diagrams](../assets/manuals/prime_lcm_gcd_venn.png){ width="320" }
 
-A ratio compares two quantities (a to b, a:b, or a/b). In a Tape Diagram, each equal box (or equal-length Fraction Strip in FRAC-01) represents the same unit amount. For a 3:2 ratio, 3 equal strips + 2 equal strips = 5 total strips, making the Part-to-Whole ratios 3:5 and 2:5.
+A ratio compares two quantities (a to b, a:b, or a/b). On the Prime Factor Studio (PRIME-01) Ratio Lid, Back Row sockets A1..A6 and Front Row sockets B1..B5 act as a physical Tape Diagram: placing the same Prime Block tower (GCF) into each occupied socket gives every box the exact same unit value, while removing shared GCF prime blocks from A1 and B1 reduces any ratio to simplest form.
 
 > **⚠️ WATCH OUT: Order matters in ratios! Check whether the question asks for Part-to-Part (3:2) or Part-to-Whole (3:5).**
 
-#### Textbook Concepts & Hands-On Reinforcement (`FRAC-01`: 84mm Fraction Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`PRIME-01`: Prime Factor Studio)
 
 1. **Textbook Concept:** A ratio compares two quantities as a to b, a:b, or a/b. Distinguish Part-to-Part (3:2) from Part-to-Whole (3:5).
 2. **Textbook Visual Model (Tape Diagram):** Draw equal-sized boxes for each ratio part so every box represents the same unit amount.
-3. **Block Reinforcement (FRAC-01):** Build a 3-box row and a 2-box row (5 fifth-towers total); placing 4 units per box models 12:8 = 3:2.
+3. **Block Reinforcement (PRIME-01):** Place [2][2] = 4 into 3 Row-A sockets (A1..A3) and 2 Row-B sockets (B1..B2) to model 12:8 = 3:2 (or remove shared GCF [2][2] from 12 and 8).
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
 | Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Practice A** (`p.26`) | **A robotics team has 12 builders and 8 programmers. Write the simplified Part-to-Part and Part-to-Whole ratios.** | **WAY 1: Divide Both Terms by Their GCF:** Part-to-Part = 12:8. Divide both terms by GCF(12, 8) = 4 -> 3:2. Total = 12+8 = 20 -> Part-to-Whole = 12:20 = 3:5. | **WAY 2: Tape Diagram Model (With Blocks):** Place 4 members in each tile box: 12 is 3 boxes and 8 is 2 boxes (5 boxes total) -> Part-to-Part = 3:2; Part-to-Whole = 3:5.<br>**WAY 3: Equivalent Ratio Table:** Scale down in steps: (12, 8, 20) ÷ 2 -> (6, 4, 10) ÷ 2 -> (3, 2, 5). | **Part-to-Part = 3:2; Part-to-Whole = 3:5** |
-| **Practice B** (`p.27`) | **A robotics team's ratio of wins to losses is 5:3. If the team played 32 matches in all, how many matches did they win?** | **WAY 1: Tape Diagram (Count All Boxes):** Draw 5 Win boxes and 3 Loss boxes = 8 equal boxes total. Each box = 32 ÷ 8 = 4 matches. Wins = 5 × 4 = 20 matches.<br>*Tape Diagram Step: 5 win boxes + 3 loss boxes = 8 boxes; 32 ÷ 8 = 4 games per box -> 20 wins.* | **WAY 2: Scale the Part-to-Whole Ratio:** Wins to Total is 5 to (5 + 3) = 5/8. Since 8 × 4 = 32, multiply numerator by 4: (5 × 4)/(8 × 4) = 20/32 -> 20 wins.<br>*Equivalent Ratio Check: 5/8 = (5 × 4)/(8 × 4) = 20/32 (20 wins, 12 losses).*<br>**WAY 3: Repeated Addition Ratio Table:** (Wins, Losses, Total): (5, 3, 8) -> (10, 6, 16) -> (15, 9, 24) -> (20, 12, 32) -> 20 wins. | **20 wins (and 12 losses)** |
+| **Practice A** (`p.26`) | **A robotics team has 12 builders and 8 programmers. Write the simplified Part-to-Part and Part-to-Whole ratios.** | **WAY 1: Divide Both Terms by Their GCF (Prime Tower Reduction):** Build 12 = [2][2][3] in A1 and 8 = [2][2][2] in B1. Remove shared GCF = [2][2] = 4 -> [3] : [2] (3:2). Total = 12+8 = 20 -> Part-to-Whole = 3:5. | **WAY 2: Tape Diagram Model (PRIME-01 A1..A3 & B1..B2 Sockets):** Place a [2][2] = 4 prime tower in each socket: 12 fills 3 sockets (A1..A3) and 8 fills 2 sockets (B1..B2, 5 total) -> Part-to-Part = 3:2; Part-to-Whole = 3:5.<br>**WAY 3: Equivalent Ratio Table:** Remove one [2] block at a time: (12, 8, 20) ÷ 2 -> (6, 4, 10) ÷ 2 -> (3, 2, 5). | **Part-to-Part = 3:2; Part-to-Whole = 3:5** |
+| **Practice B** (`p.27`) | **A robotics team's ratio of wins to losses is 5:3. If the team played 32 matches in all, how many matches did they win?** | **WAY 1: Tape Diagram on PRIME-01 Lid (A1..A5 vs. B1..B3):** Use 5 Win sockets (A1..A5) and 3 Loss sockets (B1..B3) = 8 sockets total. Each socket holds 32 ÷ 8 = 4 = [2][2] matches. Wins = 5 × 4 = 20 matches.<br>*PRIME-01 Tape Lid: 5 Win sockets (A1..A5) + 3 Loss sockets (B1..B3) = 8 sockets; 32 ÷ 8 = [2][2] = 4 per socket -> 20 wins.* | **WAY 2: Scale the Part-to-Whole Ratio:** Wins to Total is 5 to (5 + 3) = 5/8. Stack [2][2] = 4 onto both: (5 × 4)/(8 × 4) = 20/32 -> 20 wins.<br>*Equivalent Ratio Check: 5/8 = (5 × 4)/(8 × 4) = 20/32 (20 wins, 12 losses).*<br>**WAY 3: Repeated Addition Ratio Table:** (Wins, Losses, Total): (5, 3, 8) -> (10, 6, 16) -> (15, 9, 24) -> (20, 12, 32) -> 20 wins. | **20 wins (and 12 losses)** |
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.26`):** Simplify the ratio 12 : 8 on paper first. Then check on your SC-6 using Ratio Mode: press 12 [ENTER] 8 [g][a:b] to simplify directly to 3:2 (and tap [▦] to view the interactive Ratio Table)! *(Worked Example Keystrokes: `[12]` `[ENTER]` `[8]` `[g]` `[a:b]` → **`Part-to-Part = 3:2; Part-to-Whole = 3:5`**)*
-- **Practice B Real-Life Work-Check (`p.27`):** Draw the 5 + 3 = 8-box tape diagram on paper first. Then check on your SC-6: press 32 [ENTER] 5 [ENTER] 3 [+] [÷] (4 games per box) and 5 [×] to confirm 20 wins. *(Worked Example Keystrokes: `[32]` `[ENTER]` `[5]` `[ENTER]` `[3]` `[+]` `[÷]` `[5]` `[×]` → **`20 wins (and 12 losses)`**)*
+- **Practice A Work-Check (`p.26`):** Model 12 to 8 with Prime Blocks ([2][2]=4 in A1..A3 and B1..B2) on paper first, then check on your SC-6: press 12 [ENTER] 8 [g][a:b] to simplify directly to 3:2 (and tap [10F] to view the Ratio Table)! *(Worked Example Keystrokes: `[12]` `[ENTER]` `[8]` `[g]` `[a:b]` → **`Part-to-Part = 3:2; Part-to-Whole = 3:5`**)*
+- **Practice B Real-Life Work-Check (`p.27`):** Place [2][2]=4 in the 5 + 3 = 8 tape sockets (A1..A5 and B1..B3) first, then check on your SC-6: press 32 [ENTER] 5 [ENTER] 3 [+] [÷] (4 games per socket) and 5 [×] to confirm 20 wins. *(Worked Example Keystrokes: `[32]` `[ENTER]` `[5]` `[ENTER]` `[3]` `[+]` `[÷]` `[5]` `[×]` → **`20 wins (and 12 losses)`**)*
 
 #### Practice A (p. 26): Key Ideas & Multi-Method Practice (10 Exercises)
 
@@ -818,7 +818,7 @@ A ratio compares two quantities (a to b, a:b, or a/b). In a Tape Diagram, each e
 
 #### Practice B (p. 27): Modeling Real Life & Multi-Method Applications (10 Exercises)
 
-When a smoothie recipe called for strawberries and bananas in a 4:3 ratio using 28 pieces of fruit in all, Devon initially tried dividing 28 by 4 and 28 by 3—and when 28 ÷ 3 didn't even come out whole, he thought the problem was broken. Then he remembered how he had simplified his bike's 48-tooth front sprocket and 16-tooth rear sprocket into equal groups, and sketched 4 strawberry boxes and 3 banana boxes side by side. Looking at the sketch, he saw his mistake right away: there were 4 + 3 = 7 equal boxes sharing the 28 fruits! Dividing 28 ÷ 7 put 4 fruits in every box, making 16 strawberries and 12 bananas without any guesswork.
+When a smoothie recipe called for strawberries and bananas in a 4:3 ratio using 28 pieces of fruit in all, Devon initially tried dividing 28 by 4 and 28 by 3—and when 28 ÷ 3 didn't even come out whole, he thought the problem was broken. Then he looked at the A1..A6 and B1..B5 sockets on his Prime Factor Studio lid, reserving 4 Back-Row sockets (A1..A4) for strawberries and 3 Front-Row sockets (B1..B3) for bananas. Looking at the lid, he saw his mistake right away: there were 4 + 3 = 7 equal sockets sharing the 28 fruits ([2][2][7])! Placing a [2][2] = 4 prime tower in each of the 7 sockets gave 16 strawberries and 12 bananas without any guesswork.
 
 | # | Modeling Real Life Application Prompt | Tutor Setup & SC-6 Check | Final Answer |
 | :---: | :--- | :--- | :--- |
@@ -837,33 +837,33 @@ When a smoothie recipe called for strawberries and bananas in a 4:3 ratio using 
 
 ### Section 3.2: Using Ratio Tables and Double Number Lines (Workbook pp. 28–29)
 
-**Textbook Alignment:** Big Ideas Grade 6, Section 3.3 (Ratio Tables & Double Number Lines) (`CCSS.MATH.6.RP.A.3a`) • **Big Ideas Methods:** *Way 1: Multiplicative Scale Factor  |  Way 2: Double Number Line / Repeated Addition  |  Way 3: Scale Down Then Up* • **Block Kit:** `PLACE-01` (Place Value Studio)
+**Textbook Alignment:** Big Ideas Grade 6, Section 3.3 (Ratio Tables & Double Number Lines) (`CCSS.MATH.6.RP.A.3a`) • **Big Ideas Methods:** *Way 1: Multiplicative Scale Factor (Prime Blocks)  |  Way 2: Double Number Line / Repeated Addition  |  Way 3: Scale Down Then Up* • **Block Kit:** `PRIME-01` (Prime Factor Studio)
 
 **Key Vocabulary:** ratio table • equivalent ratios • double number line • scaling (multiplying or dividing)
 
-![Using Ratio Tables and Double Number Lines](../assets/manuals/place_value_regrouping.png){ width="320" }
+![Using Ratio Tables and Double Number Lines](../assets/manuals/prime_studio_commutativity.png){ width="320" }
 
-In Big Ideas Math, you can find equivalent ratios in a Ratio Table or on a Double Number Line by (1) adding the base ratio quantities repeatedly, (2) multiplying or dividing both quantities by the same scale factor, or (3) scaling down to a smaller equivalent ratio and then scaling up.
+Columns 1–5 of the Prime Factor Studio (PRIME-01) lid pair sockets (A1, B1) through (A5, B5) as a physical 5-column Ratio Table. Because Prime Factor blocks are logarithmic, stacking the exact same Prime Block ([2], [3], or [5]) onto both Row A and Row B multiplies both terms by that factor, while removing a shared Prime Block scales both terms down!
 
 > **⚠️ WATCH OUT: Never add the same number to both rows of a ratio table — always MULTIPLY or DIVIDE both quantities by the same scale factor!**
 
-#### Textbook Concepts & Hands-On Reinforcement (`PLACE-01`: Place Value Studio)
+#### Textbook Concepts & Hands-On Reinforcement (`PRIME-01`: Prime Factor Studio)
 
 1. **Textbook Method 1 (Ratio Table — Addition):** Add the base ratio quantities repeatedly to build a table of equivalent ratios.
 2. **Textbook Method 2 (Scale Factor — Multiplication/Division):** Multiply or divide both quantities in a ratio by the same nonzero number.
-3. **Visual Reinforcement:** Five repeated jumps of (3 s, 8 m) on a double number line match scaling the 3:8 ratio by ×5 (15 s, 40 m).
+3. **Block Reinforcement (PRIME-01):** Build 3 = [3] in A1 and 8 = [2][2][2] in B1; stacking [5] onto both in A5/B5 scales 3:8 by ×5 to [3][5]=15 and [2]³[5]=40.
 
 #### Authentic Textbook Worked Examples (Learn & Solve by Hand First in 1 Way `+10 pts` or 2 Ways `+20 pts`)
 
 | Worksheet | Problem | Way 1 | Way 2 (& Way 3 Where Applicable) | Final Answer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Practice A** (`p.28`) | **A drone flies 8 meters every 3 seconds. How far does it fly in 15 seconds?** | **WAY 1: Multiply Both Quantities by the Scale Factor:** To scale Time from 3 s to 15 s, multiply by 5 (3 × 5 = 15). Multiply Distance by 5: 8 m × 5 = 40 m. | **WAY 2: Repeated Addition in a Ratio Table:** Add (3 s, 8 m) step-by-step: (3, 8) -> (6, 16) -> (9, 24) -> (12, 32) -> (15, 40) -> 40 m.<br>**WAY 3: Double Number Line Jumps:** Mark jumps of +3 s on the top line (0, 3, 6, 9, 12, 15) and matching jumps of +8 m on the bottom line (0, 8, 16, 24, 32, 40). | **40 meters** |
-| **Practice B** (`p.29`) | **Six skate park passes cost $45. At this rate, how much do 10 skate park passes cost?** | **WAY 1: Scale Down Then Scale Up in a Ratio Table:** Divide (6 passes, $45) by 3 to get (2 passes, $15). Then multiply (2 passes, $15) by 5 to get (10 passes, $75).<br>*Scale Down / Scale Up: (6 tickets, $45) -> ÷3 -> (2 tickets, $15) -> ×5 -> (10 tickets, $75).* | **WAY 2: Add Columns in the Ratio Table (6 Passes + 4 Passes):** Since 2 passes cost $15, 4 passes cost $30. Add 6 passes ($45) + 4 passes ($30) = 10 passes for $75.<br>*Unit Rate Check: $45 ÷ 6 = $7.50 per ticket; 10 × $7.50 = $75.00.*<br>**WAY 3: Unit Rate (Cost per 1 Pass):** Divide $45 ÷ 6 = $7.50 per pass. Multiply by 10 passes: 10 × $7.50 = $75. | **$75** |
+| **Practice A** (`p.28`) | **A drone flies 8 meters every 3 seconds. How far does it fly in 15 seconds?** | **WAY 1: Stack the Same Scale-Factor Prime Block on Row A & Row B:** Build 3 s = [3] in A1 and 8 m = [2][2][2] in B1. Stack a [5] block on both in A5/B5: Time = [3][5] = 15 s and Distance = [2][2][2][5] = 40 m. | **WAY 2: Build Columns A1/B1..A5/B5 Across the Ratio Table:** Scale 3:8 across the 5 lid columns (×1, ×2, ×3, ×4, ×5): (3, 8) -> (6, 16) -> (9, 24) -> (12, 32) -> (15, 40) -> 40 m.<br>**WAY 3: Double Number Line Jumps:** Mark jumps of +3 s on the top line (0, 3, 6, 9, 12, 15) and matching jumps of +8 m on the bottom line (0, 8, 16, 24, 32, 40). | **40 meters** |
+| **Practice B** (`p.29`) | **Six skate park passes cost $45. At this rate, how much do 10 skate park passes cost?** | **WAY 1: Scale Down Then Scale Up with Prime Blocks (A1/B1 -> A2/B2 -> A3/B3):** Build 6 = [2][3] in A1 and 45 = [3][3][5] in B1. Remove shared [3] (÷3) -> A2 = [2] (2 passes), B2 = [3][5] ($15). Stack [5] on both (×5) -> A3 = [2][5] = 10 passes, B3 = [3][5][5] = $75.<br>*PRIME-01 Ratio Table: (6=[2][3], 45=[3][3][5]) -> remove [3] -> (A2=[2]=2, B2=[3][5]=15) -> stack [5] -> (A3=[2][5]=10, B3=[3][5][5]=75).* | **WAY 2: Add Columns in the Ratio Table (6 Passes + 4 Passes):** Since 2 passes cost $15, 4 passes cost $30. Add 6 passes ($45) + 4 passes ($30) = 10 passes for $75.<br>*Unit Rate Check: $45 ÷ 6 = $7.50 per ticket; 10 × $7.50 = $75.00.*<br>**WAY 3: Unit Rate (Cost per 1 Pass):** Divide $45 ÷ 6 = $7.50 per pass. Multiply by 10 passes: 10 × $7.50 = $75. | **$75** |
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.28`):** Complete the ratio table columns by hand first. On your SC-6, enter 3 [ENTER] 8 [g][a:b] and press [▦] to step through the Ratio Table (or repeat steps with [g][REP]) to verify 15 : 40! *(Worked Example Keystrokes: `[8]` `[g]` `[REP]` `[+]` `[+]` `[+]` `[+]` → **`40 meters`**)*
-- **Practice B Real-Life Work-Check (`p.29`):** Scale the ratio table on paper first (divide by 3 to find 1 bag, then multiply by 5). Check on your SC-6: press 45 [ENTER] 3 [÷] 5 [×] to confirm $75. *(Worked Example Keystrokes: `[45]` `[ENTER]` `[3]` `[÷]` `[5]` `[×]` → **`$75`**)*
+- **Practice A Work-Check (`p.28`):** Scale [3] and [2][2][2]=8 by stacking [5] on A5/B5 first, then check on your SC-6: enter 3 [ENTER] 8 [g][a:b] and press [10F] to step through the Ratio Table (or repeat steps with [g][REP]) to verify 15 to 40! *(Worked Example Keystrokes: `[8]` `[g]` `[REP]` `[+]` `[+]` `[+]` `[+]` → **`40 meters`**)*
+- **Practice B Real-Life Work-Check (`p.29`):** Remove shared [3] from (6, 45) and stack [5] on A3/B3 first, then check on your SC-6: press 45 [ENTER] 3 [÷] 5 [×] to confirm $75. *(Worked Example Keystrokes: `[45]` `[ENTER]` `[3]` `[÷]` `[5]` `[×]` → **`$75`**)*
 
 #### Practice A (p. 28): Key Ideas & Multi-Method Practice (10 Exercises)
 
@@ -882,7 +882,7 @@ In Big Ideas Math, you can find equivalent ratios in a Ratio Table or on a Doubl
 
 #### Practice B (p. 29): Modeling Real Life & Multi-Method Applications (10 Exercises)
 
-Priya had to bake 10 pizza crusts for the robotics club using a recipe written for 4 crusts (6 cups of flour for 4 crusts), and she got stuck because 4 doesn't multiply evenly into 10. For a minute she thought she would have to deal with messy fractions in every column. Then she drew a quick ratio table and realized nobody forces you to jump from 4 to 10 in one step: she could divide both numbers by 2 first to find the amount for 2 crusts (3 cups of flour), and then multiply by 5 to reach 10 crusts (15 cups of flour). Stepping down to a smaller friendly column first made scaling any recipe feel effortless.
+Priya had to bake 10 pizza crusts for the robotics club using a recipe written for 4 crusts (6 cups of flour for 4 crusts), and she got stuck because 4 doesn't multiply evenly into 10. Then she built 4 = [2][2] in socket A1 and 6 = [2][3] in socket B1 of her Prime Factor Ratio Table lid and realized nobody forces you to jump from 4 to 10 in one step: she could remove the shared [2] block first (dividing by 2) in Column 2 (A2 = [2] = 2 crusts, B2 = [3] = 3 cups of flour), and then stack a [5] block onto both in Column 3 to reach A3 = [2][5] = 10 crusts and B3 = [3][5] = 15 cups of flour.
 
 | # | Modeling Real Life Application Prompt | Tutor Setup & SC-6 Check | Final Answer |
 | :---: | :--- | :--- | :--- |
@@ -1379,7 +1379,7 @@ At the end of the craft fair, Maya had (16x + 24) stickers to pack into the grea
 - **Hands-On Block Kits (When Applicable — `Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Why Babylonians Counted to 60 & The Rope-Stretchers of the Nile"** — [SC-6 Ch. 6: Geometry, Time & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lessons 20–21](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students multiply the slanted side of a parallelogram instead of the vertical height, forget to divide by 2 for triangles, lose track of multi-piece composite areas, and subtract clock times in base-10 instead of base-60.
-- **Hands-On & Stack Remediation:** Slide the corner triangle of a parallelogram to form a straight [f] [RECT] rectangle, use the dedicated [g] [TRI] key which divides by 2 automatically, accumulate composite chunks with [Σ+], and use the Place Value Blocks + [🕒] key for base-60 time.
+- **Hands-On & Stack Remediation:** Slide the corner triangle of a parallelogram to form a straight [f] [RECT] rectangle, use the dedicated [g] [TRI] key which divides by 2 automatically, accumulate composite chunks with [Σ+], and use the Place Value Blocks + [CLK] key for base-60 time.
 
 When Liam set out to build a wooden skateboard launch ramp and a pair of cornhole boards in his garage, he hit a wall right away at the hardware store. Plywood and grip tape are sold by the square foot, yet almost none of the pieces in his sketch were plain rectangles. The side panels of his ramp were right triangles, the gym vaulting box he wanted to copy had trapezoid sides, and the cornhole board had a square hole cut right out of the middle.
 
@@ -1416,8 +1416,8 @@ If you cut a right triangle from one end of a parallelogram and translate (slide
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.46`):** Multiply base × perpendicular height (12 × 8) on paper first. Then check on your SC-6: press 12 [ENTER] 8 [f][RECT] to confirm Area = 96 cm² on X. *(Worked Example Keystrokes: `[12]` `[ENTER]` `[8]` `[f]` `[RECT]` → **`96 cm²`**)*
-- **Practice B Real-Life Work-Check (`p.47`):** Solve 168 ÷ 14 by hand first to find the missing height. Then check on your SC-6: press 168 [ENTER] 14 [÷] to confirm 12 inches, and [f][LASTX] [f][RECT] to verify 12 × 14 = 168 in². *(Worked Example Keystrokes: `[168]` `[ENTER]` `[14]` `[÷]` `[f]` `[LASTX]` `[f]` `[RECT]` → **`12 inches`**)*
+- **Practice A Work-Check (`p.46`):** Multiply base × perpendicular height (12 × 8) on paper first. Then check on your SC-6: press 12 [ENTER] 8 [f][RECT] to confirm Area = 96 cm² on X (and Perimeter = 40 cm on Y). *(Worked Example Keystrokes: `[12]` `[ENTER]` `[8]` `[f]` `[RECT]` → **`96 cm²`**)*
+- **Practice B Real-Life Work-Check (`p.47`):** Solve 168 ÷ 14 by hand first to find the missing height. Then check on your SC-6: press 168 [ENTER] 14 [÷] to confirm 12 inches, and [f][LASTx] [f][RECT] to verify 12 × 14 = 168 in². *(Worked Example Keystrokes: `[168]` `[ENTER]` `[14]` `[÷]` `[f]` `[LASTx]` `[f]` `[RECT]` → **`12 inches`**)*
 
 #### Practice A (p. 46): Key Ideas & Multi-Method Practice (10 Exercises)
 
@@ -1556,11 +1556,11 @@ A trapezoid has two parallel bases, b₁ and b₂, and a perpendicular height h.
 | **A3** | An L-shaped floor plan consists of a 10 ft by 6 ft section and an 8 ft by 4 ft section. What is the total floor area? | `Setup: Stats(10, 6, 8, 4)  |  SC-6: 10 [ENTER] 6 [f][RECT] [Σ+] 8 [ENTER] 4 [f][RECT] [Σ+] [f][Σx]` | **92 ft²** |
 | **A4** | A directional sign is made of a 15 in. by 6 in. rectangle attached to a triangular arrowhead with base 10 in. and height 6 in. What is the total area of the sign? | `Setup: Stats(15, 6, 10, 6)  |  SC-6: 15 [ENTER] 6 [f][RECT] [Σ+] 10 [ENTER] 6 [g][TRI] [Σ+] [f][Σx]` | **120 in.²** |
 | **A5** | Find the area of a trapezoid with parallel bases b₁ = 8.5 m and b₂ = 5.5 m, and height h = 4.2 m. | `Setup: A = ½((8.5 + 5.5) × 4.2)  |  SC-6: 8.5 [ENTER] 5.5 [+] 4.2 [g][TRI]` | **29.4 m²** |
-| **A6** | Picture Frame Mat: A 10 in. by 8 in. rectangular mat board has a 6 in. by 4 in. rectangular photo window cut out of the center. What is the remaining area of the mat border? | `Setup: Stats(10, 8, 6, 4)  |  SC-6: 10 [ENTER] 8 [f][RECT] [Σ+] 6 [ENTER] 4 [f][RECT] [f][Σ-] [f][Σx]` | **56 in.²** |
+| **A6** | Picture Frame Mat: A 10 in. by 8 in. rectangular mat board has a 6 in. by 4 in. rectangular photo window cut out of the center. What is the remaining area of the mat border? | `Setup: Stats(10, 8, 6, 4)  |  SC-6: 10 [ENTER] 8 [f][RECT] [Σ+] 6 [ENTER] 4 [f][RECT] [f][Σ−] [f][Σx]` | **56 in.²** |
 | **A7** | A trapezoid has an area of 90 cm² and parallel bases of 11 cm and 7 cm. What is its perpendicular height h? | `Setup: (90 × 2) ÷ (11 + 7)  |  SC-6: 90 [ENTER] 2 [×] 11 [ENTER] 7 [+] [÷]` | **10 cm** |
 | **A8** | Mini-Golf Fairway: A mini-golf hole is made of a 12 ft by 5 ft rectangular fairway connected to a trapezoid green (bases 5 ft and 9 ft, height 4 ft). How much turf is needed to cover the hole? | `Setup: Stats(60, 5, 9, 4)  |  SC-6: 60 [Σ+] 5 [ENTER] 9 [+] 4 [g][TRI] [Σ+] [f][Σx]` | **88 ft²** |
 | **A9** | Two Ways to Measure a Trapezoid: Find the area of a right trapezoid with bases 10 cm and 16 cm and height 8 cm both by using the trapezoid formula and by splitting it into a 10×8 rectangle and a 6×8 right triangle. | `Setup: A = ½((10 + 16) × 8)  |  SC-6: 10 [ENTER] 16 [+] 8 [g][TRI]` | **104 cm² (80 + 24 = 104)** |
-| **A10** | Backyard Landscaping: A 20 ft by 15 ft rectangular yard contains a triangular flowerbed (base 8 ft, height 6 ft) and a 5 ft by 5 ft square storage shed. How many square feet of grass lawn remain? | `Setup: Stats(300, 24, 25)  |  SC-6: 300 [Σ+] 24 [f][Σ-] 25 [f][Σ-] [f][Σx]` | **251 ft²** |
+| **A10** | Backyard Landscaping: A 20 ft by 15 ft rectangular yard contains a triangular flowerbed (base 8 ft, height 6 ft) and a 5 ft by 5 ft square storage shed. How many square feet of grass lawn remain? | `Setup: Stats(300, 24, 25)  |  SC-6: 300 [Σ+] 24 [f][Σ−] 25 [f][Σ−] [f][Σx]` | **251 ft²** |
 
 #### Practice B (p. 51): Modeling Real Life & Multi-Method Applications (10 Exercises)
 
@@ -1608,8 +1608,8 @@ To find the length of a horizontal segment in Quadrant I, subtract the x-coordin
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.52`):** Subtract coordinates to find the width and height on paper first. Check on your SC-6: press 9 [ENTER] 2 [-] (7) and 8 [ENTER] 3 [-] (5), then [f][RECT] to see Area = 35 on X! *(Worked Example Keystrokes: `[9]` `[ENTER]` `[2]` `[-]` `[8]` `[ENTER]` `[3]` `[-]` `[f]` `[RECT]` → **`Width = 7, Height = 5, Perimeter = 24, Area = 35`**)*
-- **Practice B Real-Life Work-Check (`p.53`):** Add the hours and minutes on paper first (rolling 60 minutes into 1 hour). Check on your SC-6 using [🕒] Planetary Clock Mode or convert H.MM values with [f][▸HR] and [g][▸HMS] to confirm 12:30 PM! *(Worked Example Keystrokes: `[🕒]` `[9.40]` `[ENTER]` `[2.50]` `[+]` `[3.15]` `[f]` `[▸HR]` → **`12:30 PM`**)*
+- **Practice A Work-Check (`p.52`):** Subtract coordinates to find the width and height on paper first. Check on your SC-6: press 9 [ENTER] 2 [-] (7) and 8 [ENTER] 3 [-] (5), then [f][RECT] to see Area = 35 on X and Perimeter = 24 on Y! *(Worked Example Keystrokes: `[9]` `[ENTER]` `[2]` `[-]` `[8]` `[ENTER]` `[3]` `[-]` `[f]` `[RECT]` → **`Width = 7, Height = 5, Perimeter = 24, Area = 35`**)*
+- **Practice B Real-Life Work-Check (`p.53`):** Add the hours and minutes on paper first (rolling 60 minutes into 1 hour). Check on your SC-6 using [CLK] Planetary Clock Mode or convert H.MM values with [f][▸HR] and [g][▸HMS] to confirm 12:30 PM! *(Worked Example Keystrokes: `[CLK]` `[9.40]` `[ENTER]` `[2.50]` `[+]` `[3.15]` `[f]` `[▸HR]` → **`12:30 PM`**)*
 
 #### Practice A (p. 52): Key Ideas & Multi-Method Practice (10 Exercises)
 
@@ -1617,11 +1617,11 @@ To find the length of a horizontal segment in Quadrant I, subtract the x-coordin
 | :---: | :--- | :--- | :--- |
 | **A1** | Find the length of the horizontal segment connecting (3, 4) and (11, 4) in the coordinate plane. | `Setup: 11 - 3  |  SC-6: 11 [ENTER] 3 [-]` | **8 units** |
 | **A2** | A rectangle has vertices at (1, 2), (10, 2), (10, 8), and (1, 8). What is its area? | `Setup: A = (10 - 1) × (8 - 2)  |  SC-6: 10 [ENTER] 1 [-] 8 [ENTER] 2 [-] [f][RECT]` | **54 square units** |
-| **A3** | Aquarium Filter Cycle: The main bio-filter pump starts its morning cycle at 7:10 AM and runs for 3 hours and 48 minutes. At what time does the cycle finish? | `Setup: 7.10 + 3.48  |  SC-6: [🕒] 7.10 [ENTER] 3.48 [+]` | **10:58 AM** |
+| **A3** | Aquarium Filter Cycle: The main bio-filter pump starts its morning cycle at 7:10 AM and runs for 3 hours and 48 minutes. At what time does the cycle finish? | `Setup: 7.10 + 3.48  |  SC-6: [CLK] 7.10 [ENTER] 3.48 [+]` | **10:58 AM** |
 | **A4** | Convert 2 hours 30 minutes into decimal hours, and convert 4 hours 45 minutes into decimal hours. | `Setup: 2.30 (to HR); 4.45 (to HR)  |  SC-6: 2.30 [f][▸HR]; 4.45 [f][▸HR]` | **2.5 hours; 4.75 hours** |
-| **A5** | Science Museum Fountain Shift: The courtyard water fountain turns on at 8:15 AM and shuts down for maintenance at 3:05 PM. For how many hours and minutes did the fountain run? | `Setup: 15.05 - 8.15  |  SC-6: [🕒] 15.05 [ENTER] 8.15 [-]` | **6 hours 50 minutes** |
+| **A5** | Science Museum Fountain Shift: The courtyard water fountain turns on at 8:15 AM and shuts down for maintenance at 3:05 PM. For how many hours and minutes did the fountain run? | `Setup: 15.05 - 8.15  |  SC-6: [CLK] 15.05 [ENTER] 8.15 [-]` | **6 hours 50 minutes** |
 | **A6** | Convert 1.75 hours into hours and minutes. | `Setup: 1.75 (to HMS)  |  SC-6: 1.75 [g][▸HMS]` | **1 hour 45 minutes** |
-| **A7** | A train departs at 8:50 AM and arrives at 11:25 AM. How long was the train ride in hours and minutes? | `Setup: 11.25 - 8.50  |  SC-6: [🕒] 11.25 [ENTER] 8.50 [-]` | **2 hours 35 minutes** |
+| **A7** | A train departs at 8:50 AM and arrives at 11:25 AM. How long was the train ride in hours and minutes? | `Setup: 11.25 - 8.50  |  SC-6: [CLK] 11.25 [ENTER] 8.50 [-]` | **2 hours 35 minutes** |
 | **A8** | A right triangle in the coordinate plane has vertices at (2, 1), (10, 1), and (2, 7). What is the area of the triangle? | `Setup: A = ½(8 × 6)  |  SC-6: 8 [ENTER] 6 [g][TRI]` | **24 square units** |
 | **A9** | Saturday Pet-Sitting: You pet-sit a neighbor's dogs from 9:15 AM until 2:45 PM on Saturday at a rate of $18.50 per hour. How many hours did you work, and how much did you earn? | `Setup: 5.5 × 18.50  |  SC-6: 5.5 [ENTER] 18.50 [×]` | **5.5 hours (5 hr 30 min); $101.75** |
 | **A10** | Coordinate Park Blueprint: A rectangular park has vertices (2, 2), (14, 2), (14, 11), and (2, 11), where each grid unit represents 10 yards. What are the perimeter (in yards) and area (in square yards) of the park? | `Setup: A = 12 × 9  |  SC-6: 12 [ENTER] 9 [f][RECT]` | **Perimeter = 420 yd; Area = 10,800 yd²** |
@@ -1634,12 +1634,12 @@ When Sora plotted a rectangular park with corners at (1, 2) and (11, 8) on a map
 | :---: | :--- | :--- | :--- |
 | **B1** | Coordinate Soccer Field: A field on a coordinate map has corners at (1, 2), (11, 2), (11, 8), and (1, 8). Find its perimeter and area. | `Setup: A = (11 - 1) × (8 - 2)  |  SC-6: 11 [ENTER] 1 [-] 8 [ENTER] 2 [-] [f][RECT]` | **W=10, H=6, P=32, Area=60** |
 | **B2** | Coordinate Right Triangle: A triangle has vertices at (2, 1), (10, 1), and (2, 7). Find its area. | `Setup: A = ½((10 - 2) × (7 - 1))  |  SC-6: 10 [ENTER] 2 [-] 7 [ENTER] 1 [-] [g][TRI]` | **Base=8, Height=6, Area=24** |
-| **B3** | Flight Duration: A flight departs at 8:35 AM and lands 3 hours 40 minutes later. At what time does the flight land? | `Setup: 8.35 + 3.40  |  SC-6: [🕒] 8.35 [ENTER] 3.40 [+]` | **12:15 PM** |
-| **B4** | Science Lab Timer: A chemistry experiment starts at 10:45 AM and ends at 2:20 PM. How many hours and minutes did the experiment run? | `Setup: 14.20 - 10.45  |  SC-6: [🕒] 14.20 [ENTER] 10.45 [-]` | **3 hours 35 minutes** |
-| **B5** | Marathon Split Sum: A runner completes the first half of a marathon in 1 hour 52 minutes and the second half in 1 hour 58 minutes. What is her total time? | `Setup: 1.52 + 1.58  |  SC-6: [🕒] 1.52 [ENTER] 1.58 [+]` | **3 hours 50 minutes** |
+| **B3** | Flight Duration: A flight departs at 8:35 AM and lands 3 hours 40 minutes later. At what time does the flight land? | `Setup: 8.35 + 3.40  |  SC-6: [CLK] 8.35 [ENTER] 3.40 [+]` | **12:15 PM** |
+| **B4** | Science Lab Timer: A chemistry experiment starts at 10:45 AM and ends at 2:20 PM. How many hours and minutes did the experiment run? | `Setup: 14.20 - 10.45  |  SC-6: [CLK] 14.20 [ENTER] 10.45 [-]` | **3 hours 35 minutes** |
+| **B5** | Marathon Split Sum: A runner completes the first half of a marathon in 1 hour 52 minutes and the second half in 1 hour 58 minutes. What is her total time? | `Setup: 1.52 + 1.58  |  SC-6: [CLK] 1.52 [ENTER] 1.58 [+]` | **3 hours 50 minutes** |
 | **B6** | Lifeguard Shift Pay: You work a lifeguard shift from 1:15 PM to 4:45 PM at $14 per hour. How much do you earn for the shift? | `Setup: 3.5 × 14  |  SC-6: 3.5 [ENTER] 14 [×]` | **3.5 hr × $14 = $49.00** |
 | **B7** | Battery Endurance Test: A laptop battery test lasts 2.75 hours. How many hours and minutes is that? | `Setup: 2.75 (to HMS)  |  SC-6: 2.75 [g][▸HMS]` | **2 hours 45 minutes** |
-| **B8** | 3D Print Queue: Print A takes 1 hr 25 min, Print B takes 2 hr 15 min, and Print C takes 50 min. What is the total print time in hours and minutes? | `Setup: (1.25 + 2.15) + 0.50  |  SC-6: [🕒] 1.25 [ENTER] 2.15 [+] 0.50 [+]` | **4 hours 30 minutes** |
+| **B8** | 3D Print Queue: Print A takes 1 hr 25 min, Print B takes 2 hr 15 min, and Print C takes 50 min. What is the total print time in hours and minutes? | `Setup: (1.25 + 2.15) + 0.50  |  SC-6: [CLK] 1.25 [ENTER] 2.15 [+] 0.50 [+]` | **4 hours 30 minutes** |
 | **B9** | Missing Vertex: Three corners of a rectangle are at (3, 4), (9, 4), and (9, 10). What are the coordinates of the fourth corner, and what is the area of the rectangle? | `Setup: A = (9 - 3) × (10 - 4)  |  SC-6: 9 [ENTER] 3 [-] 10 [ENTER] 4 [-] [f][RECT]` | **(3, 10); Area = 36** |
 | **B10** | Train Travel Distance: A train travels for 2 hours 15 minutes at an average speed of 80 miles per hour. How many miles does it travel? | `Setup: 2.25 × 80  |  SC-6: 2.25 [ENTER] 80 [×]` | **180 miles** |
 
@@ -1655,8 +1655,8 @@ When Sora plotted a rectangular park with corners at (1, 2) and (11, 8) on a map
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Zero-Pair Counters, Sub-Zero Number Lines & Descartes's Coordinate Fly"** — [SC-6 Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) & [Ch. 6: Geometry](../manuals/sc6/06-geometry-surface-area.md)
-- **Target Misconception:** Students confuse the subtraction operator [-] with the negative sign [+/-], think -18 > -5 because 18 > 5, confuse Opposite ([+/-]) with Absolute Value ([g] [ABS]), and reverse (x, y) coordinates.
-- **Hands-On & Stack Remediation:** Use Place Value Studio (PLACE-01) tokens and the SC-6 Number Line ([f] [LINE]) to model opposites and zero pairs, test inequalities with [f] [>] and [g] [<], contrast [+/-] (flip sign) with [g] [ABS] (always positive distance from 0), and use the Elevator Rule (walk across x first, ride up/down y second).
+- **Target Misconception:** Students confuse the subtraction operator [-] with the negative sign [+/-], think -18 > -5 because 18 > 5, confuse Opposite ([+/-]) with Absolute Value ([g] [|x|]), and reverse (x, y) coordinates.
+- **Hands-On & Stack Remediation:** Use Place Value Studio (PLACE-01) tokens and the SC-6 Number Line ([f] [LINE]) to model opposites and zero pairs, test inequalities with [f] [>] and [g] [<], contrast [+/-] (flip sign) with [g] [|x|] (always positive distance from 0), and use the Elevator Rule (walk across x first, ride up/down y second).
 
 For Kai, who helps pilot a tethered underwater camera rover with the harbor oceanography club, zero isn't nothing—it's the glittering surface of the sea. High above the boat, a northern gannet circles at +32 meters in the air before folding its wings and plunging straight through the waves down to -14 meters underwater. Meanwhile, in the high Andes mountains, Zoe reads field logs about tiny hummingbirds that survive freezing nights by dropping their body temperature by 28 degrees.
 
@@ -1664,7 +1664,7 @@ At first, working below zero made Kai and Mia doubt their own common sense. On a
 
 Mia ran into the same sign traps when plotting landmarks across all four quadrants of the harbor radar screen, mixing up which way to move first and when to add versus subtract distances between coordinates.
 
-By picturing a vertical thermometer and an underwater depth line, Kai, Zoe, and Mia untangle the difference between where a number sits (its signed value) and how far you travel from zero (its absolute value)—and use the sign-change `[+/-]` and absolute-value `[ABS]` keys on the SC-6 to verify every step.
+By picturing a vertical thermometer and an underwater depth line, Kai, Zoe, and Mia untangle the difference between where a number sits (its signed value) and how far you travel from zero (its absolute value)—and use the sign-change `[+/-]` and absolute-value `[|x|]` keys on the SC-6 to verify every step.
 
 ### Section 6.1: Positive and Negative Integers & Opposites (Workbook pp. 55–56)
 
@@ -1790,7 +1790,7 @@ Zoe got tripped up comparing a puffin diving to -45.8 meters and a cormorant div
 | **B7** | Stock Market Change: Stock A changed by -1.8% and Stock B changed by -1.08%. Which stock had the greater (less negative) percent change? | `Setup: Compare -1.8 > -1.08  |  SC-6: 1.8 [+/-] [ENTER] 1.08 [+/-] [f][>]` | **Stock B (-1.08% > -1.8%)** |
 | **B8** | Name one fraction and one decimal that lie between -4 and -3 on a number line. | `Setup: -3.5  |  SC-6: 3.5 [+/-]` | **Examples: -3 1/2 and -3.5** |
 | **B9** | Order -7/4, -1.6, 3/2, and -2 from least to greatest. | `Setup: -7/4 -> Dec/Frac  |  SC-6: [.] 7 [.] 4 [+/-] [FDISP]` | **-2, -7/4 (-1.75), -1.6, 3/2 (1.5)** |
-| **B10** | If a < b and both a and b are negative numbers, which number is farther from 0 on the number line? Give an example. | `Setup: |-10|  |  SC-6: 10 [+/-] [g][ABS]` | **a is farther from 0 (e.g., -10 < -2)** |
+| **B10** | If a < b and both a and b are negative numbers, which number is farther from 0 on the number line? Give an example. | `Setup: |-10|  |  SC-6: 10 [+/-] [g][|x|]` | **a is farther from 0 (e.g., -10 < -2)** |
 
 ---
 
@@ -1821,22 +1821,22 @@ The absolute value of a number is its distance from 0 on a number line, written 
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.59`):** Find the distance from 0 on paper first. On your SC-6, view the distance on [f][LINE] Number Line Mode or press 14 [+/-] [g][ABS] to confirm |-14| = 14. *(Worked Example Keystrokes: `[14]` `[+/-]` `[g]` `[ABS]` → **`|-14| = 14, |14| = 14, -|-14| = -14`**)*
-- **Practice B Real-Life Work-Check (`p.60`):** Add the distances to and past sea level on paper first. Check on your SC-6: for 50 - |-18|, press 50 [ENTER] 18 [+/-] [g][ABS] [-] to confirm 32. *(Worked Example Keystrokes: `[50]` `[ENTER]` `[18]` `[+/-]` `[g]` `[ABS]` `[-]` → **`46 m plunge; and 50 - |-18| = 32`**)*
+- **Practice A Work-Check (`p.59`):** Find the distance from 0 on paper first. On your SC-6, view the distance on [f][LINE] Number Line Mode or press 14 [+/-] [g][|x|] to confirm |-14| = 14. *(Worked Example Keystrokes: `[14]` `[+/-]` `[g]` `[|x|]` → **`|-14| = 14, |14| = 14, -|-14| = -14`**)*
+- **Practice B Real-Life Work-Check (`p.60`):** Add the distances to and past sea level on paper first. Check on your SC-6: for 50 - |-18|, press 50 [ENTER] 18 [+/-] [g][|x|] [-] to confirm 32. *(Worked Example Keystrokes: `[50]` `[ENTER]` `[18]` `[+/-]` `[g]` `[|x|]` `[-]` → **`46 m plunge; and 50 - |-18| = 32`**)*
 
 #### Practice A (p. 59): Key Ideas & Multi-Method Practice (10 Exercises)
 
 | # | Problem Prompt | Tutor Setup & SC-6 Check | Final Answer |
 | :---: | :--- | :--- | :--- |
-| **A1** | Evaluate |-125|. | `Setup: |-125|  |  SC-6: 125 [+/-] [g][ABS]` | **125** |
-| **A2** | Evaluate |-18| + |12|. | `Setup: |-18| + 12  |  SC-6: 18 [+/-] [g][ABS] [ENTER] 12 [+]` | **30** |
-| **A3** | Evaluate |-4.8| + |-3.2|. | `Setup: |-4.8| + |-3.2|  |  SC-6: 4.8 [+/-] [g][ABS] [ENTER] 3.2 [+/-] [g][ABS] [+]` | **8.0** |
-| **A4** | Evaluate |-35| - |-19|. | `Setup: |-35| - |-19|  |  SC-6: 35 [+/-] [g][ABS] [ENTER] 19 [+/-] [g][ABS] [-]` | **16** |
+| **A1** | Evaluate |-125|. | `Setup: |-125|  |  SC-6: 125 [+/-] [g][|x|]` | **125** |
+| **A2** | Evaluate |-18| + |12|. | `Setup: |-18| + 12  |  SC-6: 18 [+/-] [g][|x|] [ENTER] 12 [+]` | **30** |
+| **A3** | Evaluate |-4.8| + |-3.2|. | `Setup: |-4.8| + |-3.2|  |  SC-6: 4.8 [+/-] [g][|x|] [ENTER] 3.2 [+/-] [g][|x|] [+]` | **8.0** |
+| **A4** | Evaluate |-35| - |-19|. | `Setup: |-35| - |-19|  |  SC-6: 35 [+/-] [g][|x|] [ENTER] 19 [+/-] [g][|x|] [-]` | **16** |
 | **A5** | Compare |-12| and |9| using > or <. | `Setup: 12 > 9` | **|-12| > |9| (12 > 9)** |
-| **A6** | Evaluate -|-24|. | `Setup: |-24|  |  SC-6: 24 [+/-] [g][ABS] [+/-]` | **-24** |
-| **A7** | Evaluate 50 - |-18|. | `Setup: 50 - |-18|  |  SC-6: 50 [ENTER] 18 [+/-] [g][ABS] [-]` | **32** |
+| **A6** | Evaluate -|-24|. | `Setup: |-24|  |  SC-6: 24 [+/-] [g][|x|] [+/-]` | **-24** |
+| **A7** | Evaluate 50 - |-18|. | `Setup: 50 - |-18|  |  SC-6: 50 [ENTER] 18 [+/-] [g][|x|] [-]` | **32** |
 | **A8** | Order the values from least to greatest: |-8|, -6, |-3|, 0, -|-9|. | `Setup: Values: 8, -6, 3, 0, -9` | **-|-9|, -6, 0, |-3|, |-8|** |
-| **A9** | A scuba diver is at -32 feet and a seagull is flying at +25 feet relative to sea level (0 ft). Which is closer to sea level, and by how many feet? | `Setup: |-32| - 25  |  SC-6: 32 [+/-] [g][ABS] [ENTER] 25 [-]` | **Seagull is closer by 7 feet (25 < 32)** |
+| **A9** | A scuba diver is at -32 feet and a seagull is flying at +25 feet relative to sea level (0 ft). Which is closer to sea level, and by how many feet? | `Setup: |-32| - 25  |  SC-6: 32 [+/-] [g][|x|] [ENTER] 25 [-]` | **Seagull is closer by 7 feet (25 < 32)** |
 | **A10** | Two bank accounts have balances of -$45 and -$28. Which account has the greater debt (magnitude), and which account has the greater balance? | `Setup: |-45|=45 > |-28|=28` | **Greater debt: -$45 ($45); Greater balance: -$28** |
 
 #### Practice B (p. 60): Modeling Real Life & Multi-Method Applications (10 Exercises)
@@ -1845,15 +1845,15 @@ When a northern gannet plunged from +32 meters in the air down to -14 meters und
 
 | # | Modeling Real Life Application Prompt | Tutor Setup & SC-6 Check | Final Answer |
 | :---: | :--- | :--- | :--- |
-| **B1** | Plunging Gannet Dive: A northern gannet spots a fish from +32 meters in the air and plunges to -14 meters underwater. What is the total vertical distance of its dive? | `Setup: |32| + |-14|  |  SC-6: 32 [g][ABS] 14 [+/-] [g][ABS] [+]` | **|32| + |-14| = 46 meters** |
-| **B2** | Account Balances: Account A has a balance of -$65 and Account B has a balance of -$40. Which account has the greater balance, and which account has the greater debt? | `Setup: |-65|  |  SC-6: 65 [+/-] [g][ABS]` | **-$40 is greater balance; Account A owes more ($65)** |
-| **B3** | Drone Flight Distance: A drone flies 18 meters west (-18) from its launch pad, hovers, and then flies 14 meters east (+14) from the launch pad. What is the sum of the two distances from the pad? | `Setup: |-18| + |14|  |  SC-6: 18 [+/-] [g][ABS] 14 [g][ABS] [+]` | **|-18| + |14| = 32 meters** |
-| **B4** | Evaluate |-35| and -|-35|. Explain why the two answers have opposite signs. | `Setup: |-35|  |  SC-6: 35 [+/-] [g][ABS] [+/-]` | **35 and -35 (outside minus applies after | |)** |
-| **B5** | Archery Bullseye Error: Three arrows land at -2.4 cm, +1.8 cm, and -1.5 cm from the center of a target (0). Which arrow landed closest to the bullseye? | `Setup: |-1.5|  |  SC-6: 1.5 [+/-] [g][ABS]` | **-1.5 cm (|-1.5| = 1.5 cm is smallest)** |
-| **B6** | Evaluate |-42| ÷ |-6| + |-11|. | `Setup: (|-42| ÷ |-6|) + |-11|  |  SC-6: 42 [+/-] [g][ABS] 6 [+/-] [g][ABS] [÷] 11 [+/-] [g][ABS] [+]` | **42 ÷ 6 + 11 = 18** |
-| **B7** | Submarine Camera Cable: A research vessel winches a camera from +25 feet on the deck down to -140 feet in the ocean. How many feet of cable are let out? | `Setup: |25| + |-140|  |  SC-6: 25 [g][ABS] 140 [+/-] [g][ABS] [+]` | **|25| + |-140| = 165 feet** |
-| **B8** | Find all numbers on the number line whose absolute value is 19. | `Setup: |-19|  |  SC-6: 19 [+/-] [g][ABS]` | **19 and -19** |
-| **B9** | Order |-8|, -6, |5|, and -|-9| from least to greatest. | `Setup: |-9|  |  SC-6: 9 [+/-] [g][ABS] [+/-]` | **-|-9| (-9), -6, |5| (5), |-8| (8)** |
+| **B1** | Plunging Gannet Dive: A northern gannet spots a fish from +32 meters in the air and plunges to -14 meters underwater. What is the total vertical distance of its dive? | `Setup: |32| + |-14|  |  SC-6: 32 [g][|x|] 14 [+/-] [g][|x|] [+]` | **|32| + |-14| = 46 meters** |
+| **B2** | Account Balances: Account A has a balance of -$65 and Account B has a balance of -$40. Which account has the greater balance, and which account has the greater debt? | `Setup: |-65|  |  SC-6: 65 [+/-] [g][|x|]` | **-$40 is greater balance; Account A owes more ($65)** |
+| **B3** | Drone Flight Distance: A drone flies 18 meters west (-18) from its launch pad, hovers, and then flies 14 meters east (+14) from the launch pad. What is the sum of the two distances from the pad? | `Setup: |-18| + |14|  |  SC-6: 18 [+/-] [g][|x|] 14 [g][|x|] [+]` | **|-18| + |14| = 32 meters** |
+| **B4** | Evaluate |-35| and -|-35|. Explain why the two answers have opposite signs. | `Setup: |-35|  |  SC-6: 35 [+/-] [g][|x|] [+/-]` | **35 and -35 (outside minus applies after | |)** |
+| **B5** | Archery Bullseye Error: Three arrows land at -2.4 cm, +1.8 cm, and -1.5 cm from the center of a target (0). Which arrow landed closest to the bullseye? | `Setup: |-1.5|  |  SC-6: 1.5 [+/-] [g][|x|]` | **-1.5 cm (|-1.5| = 1.5 cm is smallest)** |
+| **B6** | Evaluate |-42| ÷ |-6| + |-11|. | `Setup: (|-42| ÷ |-6|) + |-11|  |  SC-6: 42 [+/-] [g][|x|] 6 [+/-] [g][|x|] [÷] 11 [+/-] [g][|x|] [+]` | **42 ÷ 6 + 11 = 18** |
+| **B7** | Submarine Camera Cable: A research vessel winches a camera from +25 feet on the deck down to -140 feet in the ocean. How many feet of cable are let out? | `Setup: |25| + |-140|  |  SC-6: 25 [g][|x|] 140 [+/-] [g][|x|] [+]` | **|25| + |-140| = 165 feet** |
+| **B8** | Find all numbers on the number line whose absolute value is 19. | `Setup: |-19|  |  SC-6: 19 [+/-] [g][|x|]` | **19 and -19** |
+| **B9** | Order |-8|, -6, |5|, and -|-9| from least to greatest. | `Setup: |-9|  |  SC-6: 9 [+/-] [g][|x|] [+/-]` | **-|-9| (-9), -6, |5| (5), |-8| (8)** |
 | **B10** | Evaluate |-3 1/2| + |2 1/4| - |-1 1/8|. | `Setup: (3 1/2 + 2 1/4) - 1 1/8  |  SC-6: 3 [.] 1 [.] 2 [ENTER] 2 [.] 1 [.] 4 [+] 1 [.] 1 [.] 8 [-]` | **4 5/8** |
 
 ---
@@ -1949,21 +1949,21 @@ To find the distance between two points that share the same x-coordinate or the 
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.63`):** Sketch the points on a grid line first to see if they cross an axis. Then check the distance between (-6, 4) and (9, 4) on your SC-6 (or in [f][LINE] mode): press 6 [+/-] [ENTER] 9 [-] [g][ABS] to confirm 15 units! *(Worked Example Keystrokes: `[6]` `[+/-]` `[ENTER]` `[9]` `[-]` `[g]` `[ABS]` → **`15 units; and 8 units`**)*
-- **Practice B Real-Life Work-Check (`p.64`):** Find the horizontal width |-4 - 5| = 9 and vertical height |6 - (-2)| = 8 on paper first. Check on your SC-6: press 9 [ENTER] 8 [f][RECT] to verify Area = 72 on X! *(Worked Example Keystrokes: `[4]` `[+/-]` `[ENTER]` `[5]` `[-]` `[g]` `[ABS]` `[6]` `[ENTER]` `[2]` `[+/-]` `[-]` `[f]` `[RECT]` → **`Perimeter = 34 units; Area = 72 square units`**)*
+- **Practice A Work-Check (`p.63`):** Sketch the points on a grid line first to see if they cross an axis. Then check the distance between (-6, 4) and (9, 4) on your SC-6 (or in [f][LINE] mode): press 6 [+/-] [ENTER] 9 [-] [g][|x|] to confirm 15 units! *(Worked Example Keystrokes: `[6]` `[+/-]` `[ENTER]` `[9]` `[-]` `[g]` `[|x|]` → **`15 units; and 8 units`**)*
+- **Practice B Real-Life Work-Check (`p.64`):** Find the horizontal width |-4 - 5| = 9 and vertical height |6 - (-2)| = 8 on paper first. Check on your SC-6: press 9 [ENTER] 8 [f][RECT] to verify Area = 72 on X and Perimeter = 34 on Y! *(Worked Example Keystrokes: `[4]` `[+/-]` `[ENTER]` `[5]` `[-]` `[g]` `[|x|]` `[6]` `[ENTER]` `[2]` `[+/-]` `[-]` `[f]` `[RECT]` → **`Perimeter = 34 units; Area = 72 square units`**)*
 
 #### Practice A (p. 63): Key Ideas & Multi-Method Practice (10 Exercises)
 
 | # | Problem Prompt | Tutor Setup & SC-6 Check | Final Answer |
 | :---: | :--- | :--- | :--- |
-| **A1** | Find the distance between (-12, 5) and (15, 5). | `Setup: |(-12 - 15)|  |  SC-6: 12 [+/-] [ENTER] 15 [-] [g][ABS]` | **27 units** |
-| **A2** | Find the vertical distance between (-3, -4) and (-3, -15). | `Setup: |(-4 - -15)|  |  SC-6: 4 [+/-] [ENTER] 15 [+/-] [-] [g][ABS]` | **11 units** |
-| **A3** | Find the vertical distance between (7, 9) and (7, -6). | `Setup: |(9 - -6)|  |  SC-6: 9 [ENTER] 6 [+/-] [-] [g][ABS]` | **15 units** |
-| **A4** | Find the horizontal distance between (-14, 2) and (-5, 2). | `Setup: |(-14 - -5)|  |  SC-6: 14 [+/-] [ENTER] 5 [+/-] [-] [g][ABS]` | **9 units** |
-| **A5** | Find the distance between (-3.5, 4) and (6.5, 4). | `Setup: |(-3.5 - 6.5)|  |  SC-6: 3.5 [+/-] [ENTER] 6.5 [-] [g][ABS]` | **10 units** |
-| **A6** | Find the distance between (2, -4 1/2) and (2, 3 1/2). | `Setup: |(-4.5 - 3.5)|  |  SC-6: 4.5 [+/-] [ENTER] 3.5 [-] [g][ABS]` | **8 units** |
+| **A1** | Find the distance between (-12, 5) and (15, 5). | `Setup: |(-12 - 15)|  |  SC-6: 12 [+/-] [ENTER] 15 [-] [g][|x|]` | **27 units** |
+| **A2** | Find the vertical distance between (-3, -4) and (-3, -15). | `Setup: |(-4 - -15)|  |  SC-6: 4 [+/-] [ENTER] 15 [+/-] [-] [g][|x|]` | **11 units** |
+| **A3** | Find the vertical distance between (7, 9) and (7, -6). | `Setup: |(9 - -6)|  |  SC-6: 9 [ENTER] 6 [+/-] [-] [g][|x|]` | **15 units** |
+| **A4** | Find the horizontal distance between (-14, 2) and (-5, 2). | `Setup: |(-14 - -5)|  |  SC-6: 14 [+/-] [ENTER] 5 [+/-] [-] [g][|x|]` | **9 units** |
+| **A5** | Find the distance between (-3.5, 4) and (6.5, 4). | `Setup: |(-3.5 - 6.5)|  |  SC-6: 3.5 [+/-] [ENTER] 6.5 [-] [g][|x|]` | **10 units** |
+| **A6** | Find the distance between (2, -4 1/2) and (2, 3 1/2). | `Setup: |(-4.5 - 3.5)|  |  SC-6: 4.5 [+/-] [ENTER] 3.5 [-] [g][|x|]` | **8 units** |
 | **A7** | A horizontal segment starts at (-6, 3) and extends 10 units to the right. What are the coordinates of its right endpoint? | `Setup: -6 + 10  |  SC-6: 6 [+/-] [ENTER] 10 [+]` | **(4, 3)** |
-| **A8** | Error Analysis: To find the distance from (-5, 2) to (8, 2), Sam subtracted 8 - 5 = 3. Explain why the distance is 13 units, not 3 units. | `Setup: |(-5 - 8)|  |  SC-6: 5 [+/-] [ENTER] 8 [-] [g][ABS]` | **13 units (They lie on opposite sides of the y-axis: |-5| + |8| = 13)** |
+| **A8** | Error Analysis: To find the distance from (-5, 2) to (8, 2), Sam subtracted 8 - 5 = 3. Explain why the distance is 13 units, not 3 units. | `Setup: |(-5 - 8)|  |  SC-6: 5 [+/-] [ENTER] 8 [-] [g][|x|]` | **13 units (They lie on opposite sides of the y-axis: |-5| + |8| = 13)** |
 | **A9** | Archaeological Survey Grid: A rectangular excavation zone has corners at (-4, 6), (5, 6), (5, -2), and (-4, -2). What are the perimeter and area of the zone? | `Setup: Width 9, Height 8` | **Perimeter = 34 units, Area = 72 sq units** |
 | **A10** | City Grid Walk: On a map where 1 grid unit equals 0.5 mile, you walk from (-6, -2) north to (-6, 8), and then east to (4, 8). How many total miles did you walk? | `Setup: 10 + 10 = 20 units × 0.5` | **20 grid units = 10 miles** |
 
@@ -1973,10 +1973,10 @@ On a harbor coordinate map, Mia needed the length of a suspension bridge stretch
 
 | # | Modeling Real Life Application Prompt | Tutor Setup & SC-6 Check | Final Answer |
 | :---: | :--- | :--- | :--- |
-| **B1** | Suspension Bridge: On a map, the West Tower of a bridge is at (-8, 5) and the East Tower is at (11, 5). How many units long is the bridge? | `Setup: |(-8 - 11)|  |  SC-6: 8 [+/-] [ENTER] 11 [-] [g][ABS]` | **|-8| + |11| = 19 units** |
-| **B2** | Campus Map Walk: On a school map where 1 unit = 10 meters, the gym is at (-14, 6) and the library is at (-5, 6). How many meters apart are they? | `Setup: |(-14 - -5)|  |  SC-6: 14 [+/-] [ENTER] 5 [+/-] [-] [g][ABS]` | **9 units = 90 meters** |
-| **B3** | Mine Shaft: A vertical elevator runs from a surface tower at (4, 15) straight down to a tunnel at (4, -35). What is the total vertical distance? | `Setup: |(15 - -35)|  |  SC-6: 15 [ENTER] 35 [+/-] [-] [g][ABS]` | **|15| + |-35| = 50 units** |
-| **B4** | Dog Park Perimeter: A rectangular dog park has corners at (-3, 4), (7, 4), (7, -2), and (-3, -2). Find its width, height, and perimeter. | `Setup: (|(-3 - 7)| + |(4 - -2)|) × 2  |  SC-6: 3 [+/-] [ENTER] 7 [-] [g][ABS] 4 [ENTER] 2 [+/-] [-] [g][ABS] [+] 2 [×]` | **W = 10, H = 6, Perimeter = 32 units** |
+| **B1** | Suspension Bridge: On a map, the West Tower of a bridge is at (-8, 5) and the East Tower is at (11, 5). How many units long is the bridge? | `Setup: |(-8 - 11)|  |  SC-6: 8 [+/-] [ENTER] 11 [-] [g][|x|]` | **|-8| + |11| = 19 units** |
+| **B2** | Campus Map Walk: On a school map where 1 unit = 10 meters, the gym is at (-14, 6) and the library is at (-5, 6). How many meters apart are they? | `Setup: |(-14 - -5)|  |  SC-6: 14 [+/-] [ENTER] 5 [+/-] [-] [g][|x|]` | **9 units = 90 meters** |
+| **B3** | Mine Shaft: A vertical elevator runs from a surface tower at (4, 15) straight down to a tunnel at (4, -35). What is the total vertical distance? | `Setup: |(15 - -35)|  |  SC-6: 15 [ENTER] 35 [+/-] [-] [g][|x|]` | **|15| + |-35| = 50 units** |
+| **B4** | Dog Park Perimeter: A rectangular dog park has corners at (-3, 4), (7, 4), (7, -2), and (-3, -2). Find its width, height, and perimeter. | `Setup: (|(-3 - 7)| + |(4 - -2)|) × 2  |  SC-6: 3 [+/-] [ENTER] 7 [-] [g][|x|] 4 [ENTER] 2 [+/-] [-] [g][|x|] [+] 2 [×]` | **W = 10, H = 6, Perimeter = 32 units** |
 | **B5** | Dog Park Area: What is the area of the rectangular dog park in Problem 4? | `Setup: A = 10 × 6  |  SC-6: 10 [ENTER] 6 [f][RECT]` | **60 square units** |
 | **B6** | Subway Line: Stop A is at (-3.5, 2) and Stop C is at (4.25, 2), where each unit is 1 mile. How many miles is it from Stop A to Stop C? | `Setup: 3.5 + 4.25  |  SC-6: 3.5 [ENTER] 4.25 [+]` | **7.75 miles** |
 | **B7** | Find the vertical distance between (2, 3 1/2) and (2, -2 1/4). | `Setup: 3 1/2 + 2 1/4  |  SC-6: 3 [.] 1 [.] 2 [ENTER] 2 [.] 1 [.] 4 [+]` | **5 3/4 units** |
@@ -2338,7 +2338,7 @@ Devon always mixed up which variable was 'independent' and which was 'dependent,
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Galileo's Giant Bone Mystery (The Square-Cube Law) & Archimedes's Crown"** — [SC-6 Ch. 6: Geometry & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lesson 22](../manuals/sc6/appendix-b-teacher-lesson-plans.md))
 - **Target Misconception:** Students drop one of the 6 faces when finding rectangular prism surface area, tangle prism and pyramid formulas, and confuse 2D Surface Area (cardboard outside) with 3D Volume (cubes inside).
-- **Hands-On & Stack Remediation:** Have students count the 3 pairs of opposite faces on a rectangular prism while logging each pair into [Σ+] (n=1, 2, 3), pack unit blocks or chain [f] [RECT] base area into [f] [PRISM] (B × h) for volume, and verify [f] [CIRC], [g] [CONE], and [g] [HYP].
+- **Hands-On & Stack Remediation:** Have students count the 3 pairs of opposite faces on a rectangular prism while logging each pair into [Σ+] (n=1, 2, 3), pack unit blocks or use [f] [PRISM] to multiply 3 stack floors (l, w, h) at once for volume, and verify [f] [CIRC], [g] [CONE], and [g] [HYP].
 
 Why doesn't an Emperor penguin chick freeze when Antarctic winds hit -40°C? When Zoe read that penguins survive by huddling together to shrink their exposed 'surface area' while keeping their warm 'volume' the same, she admitted she always mixed those two terms up in math class. Liam had the same headache in the workshop: when he sewed nylon for a camping tent or ordered glass for an open-top fish tank, he wasn't sure when to add flat walls and when to multiply length times width times height.
 
@@ -2503,19 +2503,19 @@ While Surface Area measures the 2D flat area covering the outside of a solid (in
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.81`):** Multiply length × width × height on paper first. Then check on your SC-6 using Base Area [f][RECT] and Prism Volume [f][PRISM] (V = B × h): type 12 [ENTER] 8 [f][RECT] 5 [f][PRISM] to confirm 480 in³! *(Worked Example Keystrokes: `[12]` `[ENTER]` `[8]` `[f]` `[RECT]` `[5]` `[f]` `[PRISM]` → **`Crate = 480 in.³; Aquarium = 10 1/2 ft³`**)*
+- **Practice A Work-Check (`p.81`):** Multiply length × width × height on paper first. Then check on your SC-6 using the Prism Volume pipeline: type 12 [ENTER] 8 [f][RECT] 5 [f][PRISM] (Base Area 96 × Height 5) to confirm 480 in³! *(Worked Example Keystrokes: `[12]` `[ENTER]` `[8]` `[f]` `[RECT]` `[5]` `[f]` `[PRISM]` → **`Crate = 480 in.³; Aquarium = 10 1/2 ft³`**)*
 - **Practice B Real-Life Work-Check (`p.82`):** Find the base area B = 9 × 5 = 45 in² and divide 360 ÷ 45 on paper first. Check on your SC-6: press 360 [ENTER] 45 [÷] to confirm a depth of 8 inches. *(Worked Example Keystrokes: `[360]` `[ENTER]` `[45]` `[÷]` → **`8 inches deep`**)*
 
 #### Practice A (p. 81): Key Ideas & Multi-Method Practice (10 Exercises)
 
 | # | Problem Prompt | Tutor Setup & SC-6 Check | Final Answer |
 | :---: | :--- | :--- | :--- |
-| **A1** | Cereal Storage Container: Find the volume of a rectangular plastic container that is 18 cm long, 6 cm wide, and 28 cm tall. | `Setup: Prism(18×6×28)  |  SC-6: 18 [ENTER] 6 [f][RECT] 28 [f][PRISM]` | **3,024 cm³** |
+| **A1** | Cereal Storage Container: Find the volume of a rectangular plastic container that is 18 cm long, 6 cm wide, and 28 cm tall. | `Setup: Prism((18×6)×28)  |  SC-6: 18 [ENTER] 6 [f][RECT] 28 [f][PRISM]` | **3,024 cm³** |
 | **A2** | Find the volume of a cube with edge length s = 5 inches. | `Setup: 5³  |  SC-6: 5 [x³]` | **125 in.³** |
-| **A3** | Camp Lap Pool: A rectangular camp swimming pool is 25 meters long, 10 meters wide, and filled with water 2 meters deep. How many cubic meters of water does it hold? | `Setup: Prism(25×10×2)  |  SC-6: 25 [ENTER] 10 [f][RECT] 2 [f][PRISM]` | **500 m³** |
-| **A4** | A rectangular prism has a base area of B = 32 m² and a height of h = 7 m. What is its volume? | `Setup: 32 × 7  |  SC-6: 32 [ENTER] 7 [f][PRISM]` | **224 m³** |
-| **A5** | Find the volume of a fish tank that is 3 1/2 feet long, 1 1/2 feet wide, and 2 feet tall. | `Setup: Prism(3.5×1.5×2)  |  SC-6: 3.5 [ENTER] 1.5 [f][RECT] 2 [f][PRISM]` | **10 1/2 ft³ (10.5)** |
-| **A6** | Find the volume of a wooden block measuring 4 1/2 inches long, 3 inches wide, and 2 inches high. | `Setup: Prism(4.5×3×2)  |  SC-6: 4.5 [ENTER] 3 [f][RECT] 2 [f][PRISM]` | **27 in.³** |
+| **A3** | Camp Lap Pool: A rectangular camp swimming pool is 25 meters long, 10 meters wide, and filled with water 2 meters deep. How many cubic meters of water does it hold? | `Setup: Prism((25×10)×2)  |  SC-6: 25 [ENTER] 10 [f][RECT] 2 [f][PRISM]` | **500 m³** |
+| **A4** | A rectangular prism has a base area of B = 32 m² and a height of h = 7 m. What is its volume? | `Setup: Prism(32×7)  |  SC-6: 32 [ENTER] 7 [f][PRISM]` | **224 m³** |
+| **A5** | Find the volume of a fish tank that is 3 1/2 feet long, 1 1/2 feet wide, and 2 feet tall. | `Setup: Prism((3.5×1.5)×2)  |  SC-6: 3.5 [ENTER] 1.5 [f][RECT] 2 [f][PRISM]` | **10 1/2 ft³ (10.5)** |
+| **A6** | Find the volume of a wooden block measuring 4 1/2 inches long, 3 inches wide, and 2 inches high. | `Setup: Prism((4.5×3)×2)  |  SC-6: 4.5 [ENTER] 3 [f][RECT] 2 [f][PRISM]` | **27 in.³** |
 | **A7** | A rectangular storage box has a volume of 270 in.³, a length of 9 in., and a width of 5 in. What is its height h? | `Setup: 270 ÷ (9 × 5)  |  SC-6: 270 [ENTER] 9 [ENTER] 5 [×] [÷]` | **6 in.** |
 | **A8** | How many 1/2-inch cubes are needed to completely fill a 1-inch cube (measuring 1 in. by 1 in. by 1 in.)? | `Setup: 2³  |  SC-6: 2 [x³]` | **8 half-inch cubes** |
 | **A9** | Garden Planter Depth: A raised cedar planter has a base measuring 9 inches by 5 inches and holds 360 cubic inches of potting soil. What is the depth h of the soil? | `Setup: 360 ÷ 45  |  SC-6: 360 [ENTER] 45 [÷]` | **8 inches** |
@@ -2527,16 +2527,16 @@ Zoe used to confuse Surface Area (square units, cm²) with Volume (cubic units, 
 
 | # | Modeling Real Life Application Prompt | Tutor Setup & SC-6 Check | Final Answer |
 | :---: | :--- | :--- | :--- |
-| **B1** | Swimming Lap Pool: A rectangular pool is 25 meters long, 10 meters wide, and 2 meters deep. What is the volume of the pool? | `Setup: Prism(25×10×2)  |  SC-6: 25 [ENTER] 10 [f][RECT] 2 [f][PRISM]` | **500 m³** |
-| **B2** | Raised Garden Bed: A cedar garden bed is 8 feet long, 4 feet wide, and 1 1/2 feet deep. How many cubic feet of soil are needed to fill it? | `Setup: Prism(8×4×1.5)  |  SC-6: 8 [ENTER] 4 [f][RECT] 1.5 [f][PRISM]` | **48 ft³** |
+| **B1** | Swimming Lap Pool: A rectangular pool is 25 meters long, 10 meters wide, and 2 meters deep. What is the volume of the pool? | `Setup: Prism((25×10)×2)  |  SC-6: 25 [ENTER] 10 [f][RECT] 2 [f][PRISM]` | **500 m³** |
+| **B2** | Raised Garden Bed: A cedar garden bed is 8 feet long, 4 feet wide, and 1 1/2 feet deep. How many cubic feet of soil are needed to fill it? | `Setup: Prism((8×4)×1.5)  |  SC-6: 8 [ENTER] 4 [f][RECT] 1.5 [f][PRISM]` | **48 ft³** |
 | **B3** | 3D Printer Build Volume: A 3D printer has a cubic build volume measuring 25 cm on each edge. What is its build volume in cubic centimeters? | `Setup: 25³  |  SC-6: 25 [x³]` | **15,625 cm³** |
-| **B4** | Bento Lunchbox: A rectangular bento box measures 6 1/2 inches long, 4 inches wide, and 2 1/2 inches tall. What is its volume? | `Setup: Prism(6.5×4×2.5)  |  SC-6: 6.5 [ENTER] 4 [f][RECT] 2.5 [f][PRISM]` | **65 in³** |
+| **B4** | Bento Lunchbox: A rectangular bento box measures 6 1/2 inches long, 4 inches wide, and 2 1/2 inches tall. What is its volume? | `Setup: Prism((6.5×4)×2.5)  |  SC-6: 6.5 [ENTER] 4 [f][RECT] 2.5 [f][PRISM]` | **65 in³** |
 | **B5** | Half-Inch Cube Packing: How many 1/2-inch cubes fit inside a 1-cubic-inch space, and how many 1/2-inch cubes are needed to completely fill a 3 in by 2 in by 2 in box? | `Setup: 12 × 8  |  SC-6: 12 [ENTER] 8 [×]` | **8 per in³; 96 half-inch cubes** |
 | **B6** | Crow Water-Displacement Tank (Aesop's Fable): A crow's rectangular water tube has an 8 cm by 5 cm base. Dropping pebbles into the water displaces 120 cm³ of volume. By how many centimeters does the water level rise? | `Setup: 120 ÷ 40  |  SC-6: 120 [ENTER] 40 [÷]` | **3 cm rise** |
-| **B7** | Cargo Container: A rectangular cargo box is 5.5 feet long, 4 feet wide, and 3.5 feet tall. What is its volume? | `Setup: Prism(5.5×4×3.5)  |  SC-6: 5.5 [ENTER] 4 [f][RECT] 3.5 [f][PRISM]` | **77 ft³** |
+| **B7** | Cargo Container: A rectangular cargo box is 5.5 feet long, 4 feet wide, and 3.5 feet tall. What is its volume? | `Setup: Prism((5.5×4)×3.5)  |  SC-6: 5.5 [ENTER] 4 [f][RECT] 3.5 [f][PRISM]` | **77 ft³** |
 | **B8** | Concrete Patio Slab: A rectangular patio is 12 feet long, 9 feet wide, and 1/3 foot (4 inches) thick. How many cubic feet of concrete are needed? | `Setup: (12 × 9) ÷ 3  |  SC-6: 12 [ENTER] 9 [×] 3 [÷]` | **36 ft³** |
 | **B9** | Acrylic Puzzle Box: A kea parrot's acrylic puzzle box has a rectangular base of 9 inches by 5 inches and a volume of 360 cubic inches. What is the height of the puzzle box? | `Setup: 360 ÷ 45  |  SC-6: 360 [ENTER] 45 [÷]` | **8 inches** |
-| **B10** | Aquarium Gallons: A fish tank measures 24 inches long, 12 inches wide, and 16 inches tall. Find its volume in cubic inches, and then find how many gallons of water it holds (1 gallon = 231 in³). | `Setup: Prism(24×12×16) ÷ 231  |  SC-6: 24 [ENTER] 12 [f][RECT] 16 [f][PRISM] 231 [÷]` | **4,608 in³ ≈ 19.95 (about 20) gallons** |
+| **B10** | Aquarium Gallons: A fish tank measures 24 inches long, 12 inches wide, and 16 inches tall. Find its volume in cubic inches, and then find how many gallons of water it holds (1 gallon = 231 in³). | `Setup: Prism((24×12)×16) ÷ 231  |  SC-6: 24 [ENTER] 12 [f][RECT] 16 [f][PRISM] 231 [÷]` | **4,608 in³ ≈ 19.95 (about 20) gallons** |
 
 ---
 
@@ -2568,7 +2568,7 @@ In this Grade 7/8 Geometry Bridge: (1) The area of a circle with radius r is A =
 #### How to Use the SC-6 Calculator to Check Your Work
 
 - **Practice A Work-Check (`p.83`):** Cut the 12-inch diameter in half (r = 6) and calculate πr² and √(12² + 5²) on paper first. Check on your SC-6: press 6 [f][CIRC] to verify 113.10 in², and 12 [ENTER] 5 [g][HYP] to verify 13 ft! *(Worked Example Keystrokes: `[6]` `[f]` `[CIRC]` `[12]` `[ENTER]` `[5]` `[g]` `[HYP]` → **`Pizza = 113.10 in.²; Ramp diagonal = 13 ft`**)*
-- **Practice B Real-Life Work-Check (`p.84`):** Calculate V = ⅓πr²h on paper first. Then check on your SC-6 using Circle Area [f][CIRC] and Cone Volume [g][CONE] (V = ⅓ B × h): type radius 3 [f][CIRC] height 10 [g][CONE] to confirm 94.25 cm³! *(Worked Example Keystrokes: `[3]` `[f]` `[CIRC]` `[10]` `[g]` `[CONE]` → **`94.25 cm³ (exact: 30π cm³)`**)*
+- **Practice B Real-Life Work-Check (`p.84`):** Calculate V = ⅓πr²h on paper first. Then check on your SC-6 using the Cone Volume pipeline: type radius 3 [f][CIRC] height 10 [g][CONE] (Base Area × Height ÷ 3) to confirm 94.25 cm³! *(Worked Example Keystrokes: `[3]` `[f]` `[CIRC]` `[10]` `[g]` `[CONE]` → **`94.25 cm³ (exact: 30π cm³)`**)*
 
 #### Practice A (p. 83): Key Ideas & Multi-Method Practice (10 Exercises)
 
@@ -2580,9 +2580,9 @@ In this Grade 7/8 Geometry Bridge: (1) The area of a circle with radius r is A =
 | **A4** | Treehouse Zip-Line Shortcut: A backyard treehouse platform is 6 meters high, and the anchor post is 8 meters away across flat ground. How long is the straight diagonal zip-line cable connecting them? | `Setup: √(6² + 8²)  |  SC-6: 6 [ENTER] 8 [g][HYP]` | **10 meters** |
 | **A5** | A skateboard ramp has a horizontal base of 12 feet and a vertical back height of 5 feet. How long is the sloped riding surface? | `Setup: √(12² + 5²)  |  SC-6: 12 [ENTER] 5 [g][HYP]` | **13 ft** |
 | **A6** | A circular landing pad has a diameter of d = 16 meters. What is its radius r, and what is its area rounded to the nearest hundredth? | `Setup: π × (16 ÷ 2)²  |  SC-6: 16 [ENTER] 2 [÷] [f][CIRC]` | **r = 8 m; Area = 201.06 m²** |
-| **A7** | Conical Sand Filtration Pile: A conical pile of water-filtration sand at the treatment plant has a base radius of r = 3 meters and a height of h = 2 meters. What is the volume of the sand pile, rounded to the nearest hundredth? | `Setup: ⅓π(3²)(2)  |  SC-6: 3 [f][CIRC] 2 [g][CONE]` | **18.85 m³** |
-| **A8** | Find the volume of a cone with radius r = 6 inches and height h = 5 inches, rounded to the nearest hundredth. | `Setup: ⅓π(6²)(5)  |  SC-6: 6 [f][CIRC] 5 [g][CONE]` | **188.50 in.³** |
-| **A9** | Cylinder vs. Cone Volume: A cylinder and a cone both have radius r = 3 cm and height h = 10 cm. Find the volume of the cylinder and the volume of the cone, rounded to the nearest hundredth. | `Setup: ⅓π(3²)(10)  |  SC-6: 3 [f][CIRC] 10 [g][CONE]` | **Cylinder = 282.74 cm³; Cone = 94.25 cm³** |
+| **A7** | Conical Sand Filtration Pile: A conical pile of water-filtration sand at the treatment plant has a base radius of r = 3 meters and a height of h = 2 meters. What is the volume of the sand pile, rounded to the nearest hundredth? | `Setup: ⅓(π × 3²)(2)  |  SC-6: 3 [f][CIRC] 2 [g][CONE]` | **18.85 m³** |
+| **A8** | Find the volume of a cone with radius r = 6 inches and height h = 5 inches, rounded to the nearest hundredth. | `Setup: ⅓(π × 6²)(5)  |  SC-6: 6 [f][CIRC] 5 [g][CONE]` | **188.50 in.³** |
+| **A9** | Cylinder vs. Cone Volume: A cylinder and a cone both have radius r = 3 cm and height h = 10 cm. Find the volume of the cylinder and the volume of the cone, rounded to the nearest hundredth. | `Setup: ⅓(π × 3²)(10)  |  SC-6: 3 [f][CIRC] 10 [g][CONE]` | **Cylinder = 282.74 cm³; Cone = 94.25 cm³** |
 | **A10** | Widescreen Monitor Diagonal: Computer monitors are advertised by their diagonal screen length. If a monitor screen is 32 inches wide and 24 inches tall, what is its diagonal measurement? | `Setup: √(32² + 24²)  |  SC-6: 32 [ENTER] 24 [g][HYP]` | **40 inches** |
 
 #### Practice B (p. 84): Modeling Real Life & Multi-Method Applications (10 Exercises)
@@ -2596,8 +2596,8 @@ At the team pizza party, Marcus and his friends were sure that two 10-inch diame
 | **B3** | Bicycle Tire Distance: A bicycle wheel has a radius of 14 inches from the center hub to the tire tread. How many inches forward does the bike roll in one full turn of the wheel (its circumference, to the nearest hundredth)? | `Setup: (2 × π) × 14  |  SC-6: 2 [ENTER] [π] [×] 14 [×]` | **87.96 inches** |
 | **B4** | Zipline Cable: A zipline tower is 15 meters tall and is anchored to the ground 20 meters away horizontally. How long is the diagonal zipline cable? | `Setup: √(15² + 20²)  |  SC-6: 15 [ENTER] 20 [g][HYP]` | **25 meters** |
 | **B5** | Monitor Diagonal: A rectangular computer monitor screen is 16 inches wide and 12 inches tall. What is its diagonal screen size? | `Setup: √(16² + 12²)  |  SC-6: 16 [ENTER] 12 [g][HYP]` | **20 inches** |
-| **B6** | Snow Cone Cup: A paper snow cone cup is shaped like a cone with radius 4 cm and height 9 cm. What is its volume (to the nearest hundredth)? | `Setup: ⅓π(4²)(9)  |  SC-6: 4 [f][CIRC] 9 [g][CONE]` | **150.80 cm³ (48π)** |
-| **B7** | Highway Safety Cone: A traffic cone has a base diameter of 12 inches and a height of 15 inches. What is its volume (to the nearest hundredth)? | `Setup: ⅓π(6²)(15)  |  SC-6: 6 [f][CIRC] 15 [g][CONE]` | **565.49 in³ (180π)** |
+| **B6** | Snow Cone Cup: A paper snow cone cup is shaped like a cone with radius 4 cm and height 9 cm. What is its volume (to the nearest hundredth)? | `Setup: ⅓(π × 4²)(9)  |  SC-6: 4 [f][CIRC] 9 [g][CONE]` | **150.80 cm³ (48π)** |
+| **B7** | Highway Safety Cone: A traffic cone has a base diameter of 12 inches and a height of 15 inches. What is its volume (to the nearest hundredth)? | `Setup: ⅓(π × 6²)(15)  |  SC-6: 6 [f][CIRC] 15 [g][CONE]` | **565.49 in³ (180π)** |
 | **B8** | Pizza Size Comparison: Does one 16-inch diameter pizza or two 10-inch diameter pizzas give you more total pizza area? Justify your answer by finding the areas. | `Setup: π × 5² × 2  |  SC-6: 8 [f][CIRC] 5 [f][CIRC] 2 [×]` | **One 16-in pizza (201.06 in² > 157.08 in²)** |
 | **B9** | Basketball Court Semicircle: The top of a basketball free-throw lane is a semicircle with a radius of 6 feet. What is the area of the semicircle (to the nearest hundredth)? | `Setup: π × 6² ÷ 2  |  SC-6: 6 [f][CIRC] 2 [÷]` | **56.55 ft²** |
 | **B10** | Ladder Against a Wall: The bottom of a ladder is placed 8 feet from the base of a wall so that the top of the ladder reaches 15 feet up the wall. How long is the ladder? | `Setup: √(8² + 15²)  |  SC-6: 8 [ENTER] 15 [g][HYP]` | **17 feet** |
@@ -2892,7 +2892,7 @@ In the bird-cognition lab, Raven A solved four puzzle trials in 8, 9, 9, and 10 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01) + Prime Factor Studio (PRIME-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)
 - **Aligned *From Blocks to the Stack* Story & Chapter:** **"Sir Francis Galton's 1873 Bean Machine & Fair Polyhedral Dice"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) & [Ch. 9: Applied STEM Labs](../manuals/sc6/09-applied-stem-labs.md)
 - **Target Misconception:** Students guess signs when adding/subtracting negatives, get -25 instead of +25 for (-5)² on algebraic calculators, undo ×3 before +7 in 3x + 7 = 28, and confuse Permutations (order matters) with Combinations (order doesn't).
-- **Hands-On & Stack Remediation:** Use Place Value blocks and the SC-6 Number Line ([f] [LINE]) to show that removing a negative debt (10 - (-4)) equals +14. Notice how RPN 5 [+/-] [x²] squares the entire register (-5)² = +25 without parentheses! Unwrap 2-step equations in reverse (undo ±b first, then ÷a second), and finish with [🎲], [f] [nCr], [g] [nPr], and [f] [?].
+- **Hands-On & Stack Remediation:** Use Place Value blocks and the SC-6 Number Line ([f] [LINE]) to show that removing a negative debt (10 - (-4)) equals +14. Notice how RPN 5 [+/-] [x²] squares the entire register (-5)² = +25 without parentheses! Unwrap 2-step equations in reverse (undo ±b first, then ÷a second), and finish with [DICE], [f] [nCr], [g] [nPr], and [f] [?].
 
 As the summer wraps up, Kai, Leo, Zoe, and Maya run into challenges where two rules happen at the same time. During a camp trivia night, Kai's team was sitting at -15 points when the judge canceled a -25-point penalty, and nobody at the table could agree whether their score went up to +10 or dropped to -40. At the go-kart track, Leo had $38 to spend when admission cost $8 plus $6 per lap, and he wasn't sure which number to undo first.
 
@@ -2929,7 +2929,7 @@ To add two numbers with the SAME sign, add their absolute values and keep the co
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.95`):** Use zero-pair chips or a number line on paper first. On your SC-6, open [f][LINE] Number Line Mode (or [▦] zero-pair frame) and press 8 [+/-] [ENTER] 5 [+] to confirm -3, and 6 [+/-] [ENTER] 4 [+/-] [+] to confirm -10! *(Worked Example Keystrokes: `[f]` `[LINE]` `[8]` `[+/-]` `[ENTER]` `[5]` `[+]` `[6]` `[+/-]` `[ENTER]` `[4]` `[+/-]` `[+]` → **`-8 + 5 = -3; -6 + (-4) = -10`**)*
+- **Practice A Work-Check (`p.95`):** Use zero-pair chips or a number line on paper first. On your SC-6, open [f][LINE] Number Line Mode (or [10F] zero-pair frame) and press 8 [+/-] [ENTER] 5 [+] to confirm -3, and 6 [+/-] [ENTER] 4 [+/-] [+] to confirm -10! *(Worked Example Keystrokes: `[f]` `[LINE]` `[8]` `[+/-]` `[ENTER]` `[5]` `[+]` `[6]` `[+/-]` `[ENTER]` `[4]` `[+/-]` `[+]` → **`-8 + 5 = -3; -6 + (-4) = -10`**)*
 - **Practice B Real-Life Work-Check (`p.96`):** Rewrite subtraction as adding the opposite on paper first. Check on your SC-6 (in [f][LINE] mode or with Two-Dot fractions): press 10 [ENTER] 4 [+/-] [-] (+14°C) and [.] 3 [.] 4 [+/-] [ENTER] [.] 5 [.] 8 [+/-] [-] (-1/8). *(Worked Example Keystrokes: `[10]` `[ENTER]` `[4]` `[+/-]` `[-]` `[.]` `[3]` `[.]` `[4]` `[+/-]` `[ENTER]` `[.]` `[5]` `[.]` `[8]` `[+/-]` `[-]` → **`14°C; and -1/8`**)*
 
 #### Practice A (p. 95): Key Ideas & Multi-Method Practice (10 Exercises)
@@ -3121,7 +3121,7 @@ Theoretical probability is the ratio of favorable outcomes to total equally like
 
 #### How to Use the SC-6 Calculator to Check Your Work
 
-- **Practice A Work-Check (`p.101`):** Write P(event) = favorable / total and simplify on paper first. Check on your SC-6: press [.] 4 [.] 10 [g][SIMP] to confirm 2/5, press 5 [x!] to confirm 5! = 120, and explore rolls with [🎲] or [f][1…x]! *(Worked Example Keystrokes: `[.]` `[4]` `[.]` `[10]` `[g]` `[SIMP]` `[5]` `[x!]` → **`P(Blue) = 2/5 = 0.4 = 40%; 5! = 120 ways`**)*
+- **Practice A Work-Check (`p.101`):** Write P(event) = favorable / total and simplify on paper first. Check on your SC-6: press [.] 4 [.] 10 [g][SIMP] to confirm 2/5, press 5 [x!] to confirm 5! = 120, and explore rolls with [DICE] or [f][1…x]! *(Worked Example Keystrokes: `[.]` `[4]` `[.]` `[10]` `[g]` `[SIMP]` `[5]` `[x!]` → **`P(Blue) = 2/5 = 0.4 = 40%; 5! = 120 ways`**)*
 - **Practice B Real-Life Work-Check (`p.102`):** Decide whether order matters first! Then check on your SC-6: press 10 [ENTER] 3 [g][nPr] to confirm 720 ordered podiums (permutations), and 10 [ENTER] 3 [f][nCr] to confirm 120 unordered crews (combinations)! *(Worked Example Keystrokes: `[10]` `[ENTER]` `[3]` `[f]` `[nCr]` `[10]` `[ENTER]` `[3]` `[g]` `[nPr]` → **`720 ordered podiums; 120 unordered 3-runner crews`**)*
 
 #### Practice A (p. 101): Key Ideas & Multi-Method Practice (10 Exercises)

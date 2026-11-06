@@ -144,9 +144,9 @@ For every $1\text{ mm}$ that kickstand reaches back across your desk, the $15^\c
 
 ### How 14 Copper Wires Read All 43 Buttons (The Keypad Matrix)
 
-Here is a hardware puzzle that surprises almost everyone who opens up a calculator or computer keyboard for the first time: your SC-6 has **43 physical buttons**, yet if you look at the green circuit board inside, there aren't 43 separate wires running from the buttons to the calculator's main chip—there are only **13 wires**! How can 13 thin copper tracks read 43 separate buttons without ever getting confused?
+Here is a hardware puzzle that surprises almost everyone who opens up a calculator or computer keyboard for the first time: your SC-6 has **43 physical buttons**, yet if you look at the green circuit board inside, there aren't 43 separate wires running from the buttons to the calculator's main chip—there are only **14 wires**! How can 14 thin copper tracks read 43 separate buttons without ever getting confused?
 
-The secret is a **row-and-column grid** called a **key matrix**, organized just like the numbered streets and avenues of a city or the rows and columns of your **Counting & Array Studio**! Underneath the keypad face, the 43 buttons are arranged along **8 horizontal row wires** (`Row 0` through `Row 7`) and **5 vertical column wires** (`Column 0` through `Column 4`), with 3 top-row shift keys sharing an extra sixth column track:
+The secret is a **row-and-column grid** called a **key matrix**, organized just like the numbered streets and avenues of a city or the rows and columns of your **Counting & Array Studio**! Underneath the keypad face, the 43 buttons are arranged along **8 horizontal row wires** (`Row 0` through `Row 7`) and **6 vertical column wires** (`Column 0` through `Column 5`), with 5 main columns running down all 8 rows and a 6th column wire reading the 3 extra keys in the top three 6-key rows:
 
 $$\text{Total Grid Intersections} = 8\text{ Rows} \times 5\text{ Main Columns} + 3\text{ Top Keys} = 40 + 3 = 43\text{ Buttons}$$
 

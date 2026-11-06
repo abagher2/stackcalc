@@ -350,9 +350,9 @@ For every $1\text{ mm}$ that kickstand reaches back across your desk, the $15^\c
 
 ### 1.3.3 How 14 Copper Wires Read All 43 Buttons (The Keypad Matrix)
 
-Here is a hardware puzzle that surprises almost everyone who opens up a calculator or computer keyboard for the first time: your SC-6 has **43 physical buttons**, yet if you look at the green circuit board inside, there aren't 43 separate wires running from the buttons to the calculator's main chip—there are only **13 wires**! How can 13 thin copper tracks read 43 separate buttons without ever getting confused?
+Here is a hardware puzzle that surprises almost everyone who opens up a calculator or computer keyboard for the first time: your SC-6 has **43 physical buttons**, yet if you look at the green circuit board inside, there aren't 43 separate wires running from the buttons to the calculator's main chip—there are only **14 wires**! How can 14 thin copper tracks read 43 separate buttons without ever getting confused?
 
-The secret is a **row-and-column grid** called a **key matrix**, organized just like the numbered streets and avenues of a city or the rows and columns of your **Counting & Array Studio**! Underneath the keypad face, the 43 buttons are arranged along **8 horizontal row wires** (`Row 0` through `Row 7`) and **5 vertical column wires** (`Column 0` through `Column 4`), with 3 top-row shift keys sharing an extra sixth column track:
+The secret is a **row-and-column grid** called a **key matrix**, organized just like the numbered streets and avenues of a city or the rows and columns of your **Counting & Array Studio**! Underneath the keypad face, the 43 buttons are arranged along **8 horizontal row wires** (`Row 0` through `Row 7`) and **6 vertical column wires** (`Column 0` through `Column 5`), with 5 main columns running down all 8 rows and a 6th column wire reading the 3 extra keys in the top three 6-key rows:
 
 $$\text{Total Grid Intersections} = 8\text{ Rows} \times 5\text{ Main Columns} + 3\text{ Top Keys} = 40 + 3 = 43\text{ Buttons}$$
 
@@ -3239,7 +3239,7 @@ How does your SC-6 uncover that exact `2² × 3 × 5` prime tower the instant yo
 ### 7.3.4 The Prime Detective Key
 On the SC-6, pressing the primary key `[PRIME]` tests the whole number sitting on Shelf $X$ in a flash: it momentarily flashes `PRIME` or `COMPOSITE` on the top status banner while leaving Shelf $X$ and the rest of the 4-shelf stack completely untouched so you can immediately keep working with your number.
 
-Why isn't the number `1` considered prime? A prime number must have *two different factors* ($1$ and itself), whereas $1$ has only *one* factor. Even deeper, remember the **Fundamental Theorem of Arithmetic**: every composite number has *one unique* prime block tower (like $12 = 2 \times 2 \times 3$). If mathematicians called $1$ a prime number, you could tack on $\times 1$ forever ($12 = 2 \times 2 \times 3 \times 1 = 2 \times 2 \times 3 \times 1 \times 1 \dots$) and no number would have a unique prime signature! That is why $1$ is a single building unit (neither prime nor composite): testing `1` with `1 [PRIME]` flashes `NEITHER` (or `INVALID DATA`) because $1$ is neither prime nor composite, whereas testing `2` with `2 [PRIME]` flashes `PRIME` and keeps `2` on Shelf $X$ as the smallest prime number and the only even prime.
+Why isn't the number `1` considered prime? A prime number must have *two different factors* ($1$ and itself), whereas $1$ has only *one* factor. Even deeper, remember the **Fundamental Theorem of Arithmetic**: every composite number has *one unique* prime block tower (like $12 = 2 \times 2 \times 3$). If mathematicians called $1$ a prime number, you could tack on $\times 1$ forever ($12 = 2 \times 2 \times 3 \times 1 = 2 \times 2 \times 3 \times 1 \times 1 \dots$) and no number would have a unique prime signature! That is why $1$ is a single building unit (neither prime nor composite): testing `1` with `1 [PRIME]` flashes `NEITHER` because $1$ is neither prime nor composite, whereas testing `2` with `2 [PRIME]` flashes `PRIME` and keeps `2` on Shelf $X$ as the smallest prime number and the only even prime.
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -4613,9 +4613,9 @@ Teachers and parents can customize classroom settings anytime via the `[g] [FLAG
 | :--- | :--- | :--- |
 | **Flag 0** | `0:F0` (`0` Off) | General-purpose user flag 0 for classroom experiments |
 | **Flag 1** | `1:F1` (`0` Off) | General-purpose user flag 1 for classroom experiments |
-| **Flag 2** | `2:INT` (`0` Off) | Integer-only mode: `1` restricts entry and results to whole integers |
+| **Flag 2** | `2:INT` (`HRD` / `APP`) | Interface Style Selector: toggles between Hardware replica (`HRD`) and expanded touch (`APP`) layout |
 | **Flag 3** | `3:FACE` (`0` Off) | Hardware / App faceplate skin selector |
-| **Flag 4** | `4:STK` (`0` 4-Line) | Stack View Layout: `0` = 4-Shelf / Split Stack View, `1` = Large Single-Line `X` |
+| **Flag 4** | `4:STK` (`1` `4-LN`) | Stack View Layout: `1` (`4-LN`, default) = 4-Shelf / Split Stack View, `0` (`1-LN`) = Large Single-Line `X` |
 | **Flag 5** | `5:DEP` (`4-LV`) | Stack Depth Mode: cycles `2-LV` (2-Level) $\to$ `4-LV` (4-Level $T, Z, Y, X$, default) $\to$ `8-LV` (8-Level) |
 | **Flag 6** | `6:MOD` (`0` SC-6) | Active Calculator Model selector (when inside the `FLAGS` menu) |
 | **Flag 7** | `7:FRC` (`0` Decimal) | Fraction Display Mode: `0` = Decimal, `1` = Fraction (`a b/c` or `d/c`) |
@@ -5020,11 +5020,11 @@ Because the screen confirms `Count = 5` after the fifth tap, students know they 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `[g] [CLΣ]` | 0 | 0 | 0 | 0 | Clear the statistics basket (`Count = 0`) |
-| `6 [Σ+]` | 0 | 0 | 0 | Count = 1 | Add Side 1 ($6\text{ cm}$) to the basket |
-| `4 [Σ+]` | 0 | 0 | 0 | Count = 2 | Add Side 2 ($4\text{ cm}$) to the basket |
-| `4.2 [Σ+]` | 0 | 0 | 0 | Count = 3 | Add Side 3 ($4.2\text{ cm}$) to the basket |
-| `4.2 [Σ+]` | 0 | 0 | 0 | Count = 4 | Add Side 4 ($4.2\text{ cm}$) to the basket |
-| `4 [Σ+]` | 0 | 0 | 0 | Count = 5 | Add Side 5 ($4\text{ cm}$) to the basket |
+| `6 [Σ+]` | 0 | 0 | 0 | 1 | Add Side 1 ($6\text{ cm}$) to the basket (`Count = 1`) |
+| `4 [Σ+]` | 0 | 0 | 0 | 2 | Add Side 2 ($4\text{ cm}$) to the basket (`Count = 2`) |
+| `4.2 [Σ+]` | 0 | 0 | 0 | 3 | Add Side 3 ($4.2\text{ cm}$) to the basket (`Count = 3`) |
+| `4.2 [Σ+]` | 0 | 0 | 0 | 4 | Add Side 4 ($4.2\text{ cm}$) to the basket (`Count = 4`) |
+| `4 [Σ+]` | 0 | 0 | 0 | 5 | Add Side 5 ($4\text{ cm}$) to the basket (`Count = 5`) |
 | `[f] [Σx]` | 0 | 0 | 0 | 22.4 | Sum all 5 sides: **22.4 cm** perimeter |
 
 Have partners use `[g] [CLΣ]`, `[Σ+]`, and `[f] [Σx]` to find the perimeter of a triangle with sides $5, 7, 8$ (`Count = 3`, sum `20`), a rectangle with sides $8, 5, 8, 5$ (`Count = 4`, sum `26`), and a hexagon with sides $3, 3, 4, 4, 5, 5$ (`Count = 6`, sum `24`).
@@ -5129,11 +5129,11 @@ With `Count = 3` pairs verified on screen, tapping `[f] [Σx]` recalls the compl
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `[g] [CLΣ]` | 0 | 0 | 0 | 0 | Clear the statistics basket (`Count = 0`) |
 | `6 [ENTER] 5 [×] 2 [×]` | 0 | 0 | 0 | 60 | Top & bottom pair: $6 \times 5 \times 2 = 60\text{ cm}^2$ |
-| `[Σ+]` | 0 | 0 | 0 | Count = 1 | Toss Pair 1 into the basket (`Count = 1`) |
+| `[Σ+]` | 0 | 0 | 0 | 1 | Toss Pair 1 into the basket (`Count = 1`) |
 | `6 [ENTER] 4 [×] 2 [×]` | 0 | 0 | 0 | 48 | Front & back pair: $6 \times 4 \times 2 = 48\text{ cm}^2$ |
-| `[Σ+]` | 0 | 0 | 0 | Count = 2 | Toss Pair 2 into the basket (`Count = 2`) |
+| `[Σ+]` | 0 | 0 | 0 | 2 | Toss Pair 2 into the basket (`Count = 2`) |
 | `5 [ENTER] 4 [×] 2 [×]` | 0 | 0 | 0 | 40 | Left & right pair: $5 \times 4 \times 2 = 40\text{ cm}^2$ |
-| `[Σ+]` | 0 | 0 | 0 | Count = 3 | Toss Pair 3 into the basket (`Count = 3`) |
+| `[Σ+]` | 0 | 0 | 0 | 3 | Toss Pair 3 into the basket (`Count = 3`) |
 | `[f] [Σx]` | 0 | 0 | 0 | 148 | Sum all 6 faces: **148 cm²** total surface area |
 
 Next, have partners compute both volume and total surface area for a $6 \times 3 \times 2\text{ cm}$ box ($\text{Volume} = 36\text{ cm}^3$, $\text{Surface Area} = 72\text{ cm}^2$), a $4 \times 4 \times 4\text{ cm}$ cube ($\text{Volume} = 64\text{ cm}^3$, $\text{Surface Area} = 96\text{ cm}^2$), and a $10 \times 8 \times 5\text{ cm}$ storage crate ($\text{Volume} = 400\text{ cm}^3$, $\text{Surface Area} = 340\text{ cm}^2$).
@@ -5795,7 +5795,7 @@ There are **46 prime numbers** less than 200. The table below lists each prime n
 
 In [Chapter 7](sc6/07-data-probability-primes.md), you used the **Sieve of Eratosthenes** to cross out multiples of $2, 3, 5,$ and $7$ on a $1\text{--}100$ grid. Notice the remarkable shortcut that happens when you extend Eratosthenes' sieve all the way to **$200$** in the 46-prime reference table above: **once you finish crossing out multiples of $2, 3, 5, 7, 11,$ and $13$, every single remaining uncrossed number up to $200$ is guaranteed to be prime!**
 
-Why don't you have to test $17, 19, 23,$ or any larger prime? Because whenever a composite number $N$ factors into two numbers $A \times B = N$, the two factors cannot *both* be larger than $\sqrt{N}$—if both were larger than $\sqrt{N}$, their product would already exceed $N$! That means every composite number up to $200$ must have at least one prime factor less than or equal to $\sqrt{200}$. On your SC-6, tapping `200 [f] [√x]` displays **`14.142136`**, and the largest prime below $14.142136$ is **$13$** (since the smallest composite number built purely from $17$ or larger primes is $17 \times 17 = 289$, well past $200$). That exact **$\sqrt{N}$ Stop Rule** is how the SC-6 `[PRIME]` and `[g] [FACT]` keys test even a four-digit number like $1,999$ in a tiny fraction of a second: since `1999 [f] [√x]` is $44.71$, the processor checks only the 14 primes up to $43$ and immediately declares `1999 IS PRIME`!
+Why don't you have to test $17, 19, 23,$ or any larger prime? Because whenever a composite number $N$ factors into two numbers $A \times B = N$, the two factors cannot *both* be larger than $\sqrt{N}$—if both were larger than $\sqrt{N}$, their product would already exceed $N$! That means every composite number up to $200$ must have at least one prime factor less than or equal to $\sqrt{200}$. On your SC-6, tapping `200 [f] [√x]` displays **`14.142136`**, and the largest prime below $14.142136$ is **$13$** (since the smallest composite number built purely from $17$ or larger primes is $17 \times 17 = 289$, well past $200$). That exact **$\sqrt{N}$ Stop Rule** is how the SC-6 `[PRIME]` and `[g] [FACT]` keys test even a four-digit number like $1,999$ in a tiny fraction of a second: since `1999 [f] [√x]` is $44.71$, the processor checks only the 14 primes up to $43$ and immediately flashes `PRIME`!
 
 Eratosthenes of Cyrene (chief librarian of the great Library of Alexandria around 240 BCE) used that same eye for clean mathematical bounds to pull off one of the greatest measurements in science history: **measuring the distance around the entire planet Earth using nothing but a stick's shadow!** Travelers told him that at noon on the summer solstice in the southern city of Syene (modern Aswan), the sun shone straight down to the bottom of a deep water well with zero shadow ($0^\circ$). On that exact same day in Alexandria—$800\text{ kilometers}$ due north—Eratosthenes stood a vertical measuring stick in the ground and used a protractor wheel like your **$360^\circ$ Unit Circle Volvelle** to measure the sun's shadow angle at **$7.2^\circ$**.
 

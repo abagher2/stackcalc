@@ -142,6 +142,7 @@ not_in_nav: |
   manuals/sc6-user-guide.md
   manuals/sc32/**
   manuals/sc6/**
+  manuals/domains/**
 
 validation:
   nav:

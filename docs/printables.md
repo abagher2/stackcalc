@@ -29,7 +29,7 @@ Instead of charging for digital STL downloads or hosting cumbersome raw files ac
     <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.25rem; border-radius: 8px; background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.85rem; font-weight: 700; text-decoration: none;">
       SLANT 3D STORE ↗
     </a>
-    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.25rem; border-radius: 8px; background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.85rem; font-weight: 700; text-decoration: none;">
+    <a href="https://www.etsy.com/shop/StackCalcMath" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.25rem; border-radius: 8px; background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.85rem; font-weight: 700; text-decoration: none;">
       ETSY STORE ↗
     </a>
   </div>
@@ -62,7 +62,7 @@ Commercial manipulative kits from educational publishers cost $40 to $80 per box
 
 1. **Free to 3D Print (Open Source):** If you or your school have a 3D printer, every single component, tray, and block is free to download and print right here on Printables under a Creative Commons (CC BY-NC-SA 4.0) license. No digital paywalls, no subscriptions.
 2. **"No Lost Piece Left Behind":** Every single part carries a permanent, debossed **Part ID** matching the included inventory card. If a block goes missing, don't throw away the set—just download that single Part ID STL and print an exact replacement in 15–20 minutes!
-3. **Don't Have a 3D Printer? We've Got You Covered:** For parents, schools, and teachers who don't have access to 3D printers, we manufacture and sell finished physical kits. You can order on-demand factory refills directly through our [Slant 3D Portal](https://teleportpod.com/portals/profile/StackCalc), or handcrafted boxed sets with printed cards and spiral guides from our [Etsy Storefront](https://stackcalcmath.etsy.com).
+3. **Don't Have a 3D Printer? We've Got You Covered:** For parents, schools, and teachers who don't have access to 3D printers, we manufacture and sell finished physical kits. You can order on-demand factory refills directly through our [Slant 3D Portal](https://teleportpod.com/portals/profile/StackCalc), or handcrafted boxed sets with printed cards and spiral guides from our [Etsy Storefront](https://www.etsy.com/shop/StackCalcMath).
 4. **Engineered for Real Classrooms:** Zero supports, zero fragile filament swaps, and heavy-duty 3-perimeter walls designed to survive tile floor drops.
 
 ---
@@ -231,7 +231,7 @@ The Place Value Studio makes positional notation physical through dual 6x2 activ
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
       <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: PLACE-01 &bull; 3X1X7U GRIDFINITY &bull; CALC KEY: [PV]</span>
-      <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes Whole Tray, Decimal Tray, 44 Digit Tiles (0–9), 9 Regrouping Tokens, and Snapfinity Stage Lid.</div>
+      <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes Whole Tray, Decimal Tray, 44 Symmetric Digit Tiles (22 White + 22 Blue-Gray), 4 Regrouping (+1) Tokens, 7U Box with 12 Labeled Floor Sockets, and Snapfinity Stage Lid.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
   </div>
@@ -240,20 +240,20 @@ The Place Value Studio makes positional notation physical through dual 6x2 activ
 #### Bill of Materials
 | Part ID | Description | Quantity | Dimensions |
 | :--- | :--- | :---: | :--- |
-| `PLACE-TRAY-WHOLE` | Whole Numbers 6x2 Activity Tray (100k down to 1) | 1 | `117.4 x 38.6 x 8.85 mm` |
-| `PLACE-TRAY-DEC` | Decimal Numbers 6x2 Activity Tray (0.1 down to 0.000001) | 1 | `117.4 x 38.6 x 8.85 mm` |
-| `PLACE-TILE-0 to 9` | Digit '0' through '9' MathBlocks (Quarter-Grid, 7mm visible height) | 44 | `19.0 x 19.0 x 8.85 mm` |
-| `PLACE-TOKEN-PLUS1` | +1 Stackable Regrouping Carry Tokens (Identical height to digit blocks) | 9 | `19.0 x 19.0 x 8.85 mm` |
-| `PLACE-BOX-3X1` | 3x1x7U Gridfinity Storage Box with debossed [123] lid | 1 | `125.5 x 42.0 x 56.4 mm` |
+| `PLACE-TRAY-WHOLE` | Whole Numbers 6x2 Activity Tray (100k down to 1, Layer 5) | 1 | `117.4 x 38.6 x 8.85 mm` |
+| `PLACE-TRAY-DEC` | Decimal Numbers 6x2 Activity Tray (0.1 down to 0.000001, Layer 6) | 1 | `117.4 x 38.6 x 8.85 mm` |
+| `PLACE-TILE-0 to 9` | Symmetric Digit '0' through '9' MathBlocks (22 White + 22 Blue-Gray: 4x '0', 2x '1'–'9' each) | 44 | `19.0 x 19.0 x 8.85 mm` |
+| `PLACE-TOKEN-PLUS1` | +1 Stackable Regrouping Carry Tokens (Identical height to digit blocks) | 4 | `19.0 x 19.0 x 8.85 mm` |
+| `PLACE-BOX-3X1` | 3x1x7U Gridfinity Storage Box (12 Labeled Floor Sockets: 0,0,1..9,+1) with debossed [123] lid | 2 | `125.5 x 42.0 x 56.4 mm` |
 
 #### Plate-by-Plate Print Settings (Consolidated Slant 3D Plates)
 | Plate STL File | Target Color | Material | Recommended Infill | Included Components & Role |
 | :--- | :--- | :---: | :---: | :--- |
-| `pv_plate_gray_box.stl` | **Technical Dark Gray** | PLA | 15% Grid | 3x1x7U Gridfinity storage enclosure box body with internal ribs |
-| `pv_plate_white_lid_and_blocks_22pcs.stl` | **Pure White** | PLA | 15% Gyroid | Dual-purpose Snapfinity workbench lid/stage + 22 White Digit Blocks ('0'–'9' Set A) |
-| `pv_plate_gray_trays_2pcs.stl` | **Technical Dark Gray** | PLA | 15% Grid | Whole Numbers 6x2 Activity Tray + Decimal Numbers 6x2 Activity Tray |
-| `pv_plate_tan_blocks_22pcs.stl` | **Tan / Teal** | PLA | 15% Gyroid | 22 Digit Blocks ('0'–'9' Set B) in 6x4 ganged matrix (0.8mm farm gap) |
-| `pv_plate_red_blocks_9pcs.stl` | **Matte Muted Red / Yellow** | PLA | 15% Gyroid | 9 Regrouping (+1) carry/borrow tokens in 3x3 matrix |
+| `pv_plate_gray_box.stl` | **Technical Dark Gray** | PLA | 15% Grid | 3x1x7U Gridfinity storage enclosure box body with 12 labeled floor sockets |
+| `pv_plate_white_lid_and_blocks_22pcs.stl` | **Pure White** | PLA | 15% Gyroid | Dual-purpose Snapfinity workbench lid/stage + 22 White Digit Blocks (4x '0', 2x '1'–'9') |
+| `pv_plate_gray_trays_2pcs.stl` | **Technical Dark Gray / Blue-Gray** | PLA | 15% Grid | Whole Numbers 6x2 Activity Tray + Decimal Numbers 6x2 Activity Tray |
+| `pv_plate_tan_blocks_22pcs.stl` | **Slate Blue-Gray / Tan** | PLA | 15% Gyroid | 22 Digit Blocks (4x '0', 2x '1'–'9' Set B) in 6x4 ganged matrix |
+| `pv_plate_red_blocks_4pcs.stl` | **Glow Yellow / Matte Muted Red** | PLA | 15% Gyroid | 4 Regrouping (+1) carry/borrow tokens in 2x2 matrix |
 
 ---
 
@@ -758,9 +758,11 @@ The SC-6 Elementary Calculator chassis is an ultra-rugged, drop-proof handheld e
 | :--- | :--- | :---: | :--- |
 | **Self-Service 3D Printing (Free)** | **Printables Community Hub** | [Printables @StackCalc_5593834](https://www.printables.com/@StackCalc_5593834) | 100% free open-source STLs and pre-sliced 3MF profiles. Zero paywalls. |
 | **On-Demand Replacement Refills** | **Slant 3D Portals Store** | [Slant 3D Storefront](https://teleportpod.com/portals/profile/StackCalc) | Industrial high-precision 3D printing dispatched directly to your school front office. |
-| **Boxed Classroom Gift Sets & Books** | **Etsy Handcrafted Store** | [Etsy Storefront](https://stackcalcmath.etsy.com) | Complete handcrafted boxed sets, reference manuals, and calculator kits. |
+| **Boxed Classroom Gift Sets & Books** | **Etsy Handcrafted Store** | [Etsy Storefront](https://www.etsy.com/shop/StackCalcMath) | Complete handcrafted boxed sets, reference manuals, and calculator kits. |
 | **Open Hardware Build Logs** | **Hackaday Engineering Hub** | [Hackaday Project (206743)](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator) | Engineering logs, RP2350 schematics, KiCad layouts, and firmware bring-up. |
-| **Student Handbook on Amazon** | **Amazon Bookstore** | [Amazon Bookstore (B0HPJN3KP9)](https://link.amazon/B0f5cP0Ur) | *From Blocks to the Stack* illustrated paperback/hardcover textbook. |
+| **SC-32 Scientific Book on Amazon** | **Amazon Bookstore** | [Paperback](https://link.amazon/B07DqTRR5) &bull; [Hardcover](https://link.amazon/B09AnTIQI) | *Thinking in the Stack: The Art of Reverse Polish Notation* editions. |
+| **SC-6 Student Handbook on Amazon** | **Amazon Bookstore** | [Amazon Bookstore (B0HPJN3KP9)](https://link.amazon/B0f5cP0Ur) | *From Blocks to the Stack* illustrated paperback/hardcover textbook. |
+| **Middle School Workbook on Amazon** | **Amazon Bookstore** | [Amazon Bookstore (B07bxzYKq)](https://link.amazon/B07bxzYKq) | *Middle School Math Block Supplement & Student Workbook* (128 pages • Grades 6–8). |
 | **District Net-30 Purchase Orders** | **Direct Institutional Sales** | `quotes@stackcalc.io` | Formal Net-30 institutional billing, signed W-9, and volume tiered discounts. |
 
 ---

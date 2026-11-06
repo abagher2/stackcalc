@@ -389,39 +389,39 @@ def draw_section_concept_diagram(
     # UNIT 3: RATIOS, RATES & PERCENTS (3.1 - 3.5)
     # =========================================================================
     elif sec_num == "3.1":
-        # Tape Diagram for 12 Builders and 8 Programmers (3:2 Part-to-Part and 3:5 Part-to-Whole)
-        p.text(mid_x, y + 3.0, "Ratio Tape Diagram: 12 Builders & 8 Programmers (5 Total Boxes = 20 Members)", size=1.68, bold=True, color=INK, align="center")
-        gx = x + 3.5
-        p.text(gx, y + 8.2, "Builders (3):", size=1.68, bold=True, color=INK)
-        p.text(gx, y + 15.6, "Program (2):", size=1.68, bold=True, color=INK)
-        bx0 = gx + 20.5
-        bw, bh = 8.2, 5.2
+        # Tape Diagram on PRIME-01 Ratio Lid (A1..A3 vs B1..B2 with [2][2]=4 per socket)
+        p.text(mid_x, y + 3.0, "Ratio Tape Diagram on Lid (A1..A3 vs. B1..B2): [2][2] = 4 per Socket", size=1.62, bold=True, color=INK, align="center")
+        gx = x + 2.5
+        p.text(gx, y + 8.2, "Row A (A1..A3):", size=1.55, bold=True, color=INK)
+        p.text(gx, y + 15.6, "Row B (B1..B2):", size=1.55, bold=True, color=INK)
+        bx0 = gx + 22.0
+        bw, bh = 9.0, 5.2
         for i in range(3):
             p.rect(bx0 + i * (bw + 0.6), y + 4.8, bw, bh, fill=BLUE_FILL, stroke=INK, r=0.4, line_w=0.22)
-            p.text(bx0 + i * (bw + 0.6) + bw / 2.0, y + 8.1, "4", size=1.85, bold=True, mono=True, color=INK, align="center")
+            p.text(bx0 + i * (bw + 0.6) + bw / 2.0, y + 8.1, "[2][2]=4", size=1.35, bold=True, mono=True, color=INK, align="center")
         for i in range(2):
             p.rect(bx0 + i * (bw + 0.6), y + 12.2, bw, bh, fill=GOLD_FILL, stroke=INK, r=0.4, line_w=0.22)
-            p.text(bx0 + i * (bw + 0.6) + bw / 2.0, y + 15.5, "4", size=1.85, bold=True, mono=True, color=INK, align="center")
-        p.text(bx0 + 3 * (bw + 0.6) + 2.0, y + 8.1, "= 12 Builders (3 × 4)", size=1.70, bold=True, mono=True, color=TEAL)
-        p.text(bx0 + 2 * (bw + 0.6) + 2.0, y + 15.5, "= 8 Programmers (2 × 4)", size=1.70, bold=True, mono=True, color=SLATE)
-        p.text(mid_x, y + h - 1.8, "Part-to-Part = 12:8 = 3:2   |   Part-to-Whole = 12:20 = 3:5 (Each box = 4 members)", size=1.60, bold=True, mono=True, color=TEAL, align="center")
+            p.text(bx0 + i * (bw + 0.6) + bw / 2.0, y + 15.5, "[2][2]=4", size=1.35, bold=True, mono=True, color=INK, align="center")
+        p.text(bx0 + 3 * (bw + 0.6) + 1.5, y + 8.1, "= 12 Builders ([2][2][3])", size=1.52, bold=True, mono=True, color=TEAL)
+        p.text(bx0 + 2 * (bw + 0.6) + 1.5, y + 15.5, "= 8 Program ([2][2][2])", size=1.52, bold=True, mono=True, color=SLATE)
+        p.text(mid_x, y + h - 1.8, "Remove shared GCF [2][2]=4 -> Part-to-Part = 3:2  |  Part-to-Whole = 3:5 (5 sockets)", size=1.50, bold=True, mono=True, color=TEAL, align="center")
 
     elif sec_num == "3.2":
-        # Left: Ratio Table | Right: Double Number Line
-        p.text(x + 21.0, y + 3.0, "Way 1 & 2: Ratio Table (×5 Scale)", size=1.65, bold=True, color=INK, align="center")
+        # Left: PRIME-01 Ratio Table Lid (A1..A5 / B1..B5) | Right: Double Number Line
+        p.text(x + 21.0, y + 3.0, "Way 1 & 2: Ratio Table Lid (A1/B1..A5/B5)", size=1.55, bold=True, color=INK, align="center")
         tx, ty = x + 2.5, y + 4.8
         cw_t, rh_t = 7.2, 5.8
-        headers = ["Time", "3", "6", "9", "15"]
-        dists = ["Dist", "8", "16", "24", "40"]
+        headers = ["Row A", "3", "6", "9", "15"]
+        dists = ["Row B", "8", "16", "24", "40"]
         for c_i, (h_v, d_v) in enumerate(zip(headers, dists)):
             cx = tx + c_i * cw_t
             bg1 = SUBTLE_HDR if c_i == 0 else (BLUE_FILL if c_i == 4 else WHITE)
             bg2 = SUBTLE_HDR if c_i == 0 else (GOLD_FILL if c_i == 4 else WHITE)
             p.rect(cx, ty, cw_t, rh_t, fill=bg1, stroke=INK, line_w=0.22)
             p.rect(cx, ty + rh_t, cw_t, rh_t, fill=bg2, stroke=INK, line_w=0.22)
-            p.text(cx + cw_t / 2.0, ty + 3.8, h_v, size=1.65, bold=True, mono=True, color=INK, align="center")
-            p.text(cx + cw_t / 2.0, ty + rh_t + 3.8, d_v, size=1.65, bold=True, mono=True, color=INK, align="center")
-        p.text(x + 21.0, y + 20.8, "3 × 5 = 15 s  and  8 × 5 = 40 m", size=1.58, bold=True, mono=True, color=TEAL, align="center")
+            p.text(cx + cw_t / 2.0, ty + 3.8, h_v, size=1.55, bold=True, mono=True, color=INK, align="center")
+            p.text(cx + cw_t / 2.0, ty + rh_t + 3.8, d_v, size=1.55, bold=True, mono=True, color=INK, align="center")
+        p.text(x + 21.0, y + 20.8, "Stack [5] on Both: [3][5]=15 & [2]³[5]=40", size=1.42, bold=True, mono=True, color=TEAL, align="center")
 
         p.line(mid_x - 1.5, y + 1.5, mid_x - 1.5, y + h - 1.5, color=LIGHT_BORDER, width=0.22, dashed=True)
 
@@ -1804,7 +1804,7 @@ def _parse_single_rpn_clause(clause: str, prev_pair: List[str]) -> str:
             stack.append(expr)
             steps.append(expr)
             continue
-        if tk in ("[x²]", "[g][x²]") and stack:
+        if tk == "[x²]" and stack:
             a = stack.pop()
             expr = f"{a}²"
             stack.append(expr)
@@ -1865,7 +1865,7 @@ def _parse_single_rpn_clause(clause: str, prev_pair: List[str]) -> str:
             steps.append(expr)
             continue
         if tk.startswith("[g][SIMP]") or tk.endswith("[SIMP]"):
-            suffix = tk.replace("[g][SIMP]", "").replace("[f][SIMP]", "").replace("[SIMP]", "")
+            suffix = tk.replace("[g][SIMP]", "").replace("[SIMP]", "")
             if len(stack) >= 2:
                 b, a = stack.pop(), stack.pop()
                 expr = f"Simp({a}:{b}){suffix}"
@@ -1942,9 +1942,9 @@ def _parse_single_rpn_clause(clause: str, prev_pair: List[str]) -> str:
             stack.append(f"½({a}×{b})")
             steps.append(f"A = ½({a} × {b})")
             continue
-        if tk.endswith("[PRISM]") and len(stack) >= 3:
-            c, b, a = stack.pop(), stack.pop(), stack.pop()
-            expr = f"Prism({a}×{b}×{c})"
+        if tk.endswith("[PRISM]") and len(stack) >= 2:
+            b, a = stack.pop(), stack.pop()
+            expr = f"Prism({a}×{b})"
             stack.append(expr)
             steps.append(expr)
             continue
@@ -1956,7 +1956,7 @@ def _parse_single_rpn_clause(clause: str, prev_pair: List[str]) -> str:
             continue
         if tk.endswith("[CONE]") and len(stack) >= 2:
             b, a = stack.pop(), stack.pop()
-            expr = f"⅓π({a}²)({b})"
+            expr = f"⅓({a})({b})"
             stack.append(expr)
             steps.append(expr)
             continue

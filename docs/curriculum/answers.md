@@ -544,8 +544,8 @@
 | **#5** | **12**<br>`3 ENTER 3 + 3 + 3 +` | **30**<br>`5 ENTER 6 ×` | **24 eggs**<br>`2 ENTER 12 ×` | **7**<br>`14 ENTER 2 ÷` | **70**<br>`7 ENTER 10 ×` | **36**<br>`6 x²` |
 | **#6** | **20**<br>`5 ENTER 5 + 5 + 5 +` | **30**<br>`6 ENTER 5 ×` | **27 books**<br>`3 ENTER 9 ×` | **10**<br>`20 ENTER 2 ÷` | **19**<br>`3 ENTER 5 × 4 +` | **24**<br>`6 ENTER + ENTER +` |
 | **#7** | **15**<br>`5 ENTER 3 ×` | **4**<br>`12 ENTER 3 ÷` | **25 plants**<br>`5 ENTER 5 ×` | **12**<br>`24 ENTER 2 ÷` | **22**<br>`4 ENTER 4 × 6 +` | **32**<br>`8 ENTER + ENTER +` |
-| **#8** | **25**<br>`5 ENTER 5 ×` | **6**<br>`18 ENTER 3 ÷` | **35 fingers**<br>`7 ENTER 5 ×` | **6 R 1**<br>`13 ENTER 2 INT÷` | **17**<br>`5 ENTER 4 × 3 -` | **9**<br>`5 x² 4 x² -` |
-| **#9** | **21**<br>`7 ENTER 7 + 7 +` | **4**<br>`20 ENTER 5 ÷` | **8 stickers**<br>`16 ENTER 2 ÷` | **8 R 1**<br>`17 ENTER 2 INT÷` | **20**<br>`2 ENTER 4 × 3 ENTER 4 × +` | **11**<br>`6 x² 5 x² -` |
+| **#8** | **25**<br>`5 ENTER 5 ×` | **6**<br>`18 ENTER 3 ÷` | **35 fingers**<br>`7 ENTER 5 ×` | **6 R 1**<br>`13 ENTER 2 ÷R` | **17**<br>`5 ENTER 4 × 3 -` | **9**<br>`5 x² 4 x² -` |
+| **#9** | **21**<br>`7 ENTER 7 + 7 +` | **4**<br>`20 ENTER 5 ÷` | **8 stickers**<br>`16 ENTER 2 ÷` | **8 R 1**<br>`17 ENTER 2 ÷R` | **20**<br>`2 ENTER 4 × 3 ENTER 4 × +` | **11**<br>`6 x² 5 x² -` |
 | **#10** | **24**<br>`6 ENTER 4 ×` | **6**<br>`24 ENTER 4 ÷` | **18**<br>`3 ENTER 6 ×` | **14**<br>`8 ENTER 6 +` | **30**<br>`3 ENTER 6 × 2 ENTER 6 × +` | **39**<br>`4 ENTER 6 × 3 ENTER 5 × +` |
 
 #### 4. 100-Point Unit Mastery Check
@@ -559,8 +559,8 @@
 | **6** | Core Fluency | Array plus loose blocks: (3 × 4) + 7 = | 10 pts | **19** | `3 ENTER 4 × 7 +` |
 | **7** | Application | A baking sheet has 4 rows of 5 cookies. How many cookies are on the sheet? | 10 pts | **20 cookies** | `4 ENTER 5 ×` |
 | **8** | Application | 6 boxes each hold 3 tennis balls. How many tennis balls are there in all? | 10 pts | **18 balls** | `6 ENTER 3 ×` |
-| **9** | Application | Divide 19 blocks into 2 equal rows. How many in each row and how many left over? | 10 pts | **9 R 1** | `19 ENTER 2 INT÷` |
-| **10** | Error Analysis | Error Analysis: Why is 17 an odd number when you build a 2-row array? | 10 pts | **1 block left over (8 R 1)** | `17 ENTER 2 INT÷` |
+| **9** | Application | Divide 19 blocks into 2 equal rows. How many in each row and how many left over? | 10 pts | **9 R 1** | `19 ENTER 2 ÷R` |
+| **10** | Error Analysis | Error Analysis: Why is 17 an odd number when you build a 2-row array? | 10 pts | **1 block left over (8 R 1)** | `17 ENTER 2 ÷R` |
 
 #### 5. STEM Lab Case Study: The Community Garden Veggie Patch
 > *Scenario:* Second-grade botanists lay out rectangular raised beds in the school garden, spacing vegetable seedlings in equal rows and columns.
@@ -782,29 +782,29 @@
   - *Keystrokes:* `36 ENTER 4 ÷`
 - **Warm-Up B (Extension Lab):** A baker puts 29 cookies into boxes of 6. How many full boxes and how many cookies left over?
   - *Verified Answer:* `4 full boxes, 5 leftover cookies (29 = 6 × 4 + 5).`
-  - *Keystrokes:* `29 ENTER 6 INT÷`
+  - *Keystrokes:* `29 ENTER 6 ÷R`
 
 #### 2. Hands-On Lab Investigations (Investigations 1–4)
 | # | Investigation Prompt | Expected Solution | Calculator Verification Keys |
 |---|---|---|---|
 | 1 | Divide 35 candies equally into 5 treat bags. How many per bag? | **7** | `35 ENTER 5 ÷` |
 | 2 | How many groups of 8 are in 48? | **6** | `48 ENTER 8 ÷` |
-| 3 | Share 27 marbles among 4 friends. Find the quotient and remainder: | **6 R 3** | `27 ENTER 4 INT÷` |
+| 3 | Share 27 marbles among 4 friends. Find the quotient and remainder: | **6 R 3** | `27 ENTER 4 ÷R` |
 | 4 | Divide 56 books equally across 7 classroom shelves. How many per shelf? | **8** | `56 ENTER 7 ÷` |
 
 #### 3. Leveled Practice Worksheets (Practice A through F)
 | Problem # | Practice A (Core) | Practice B (Multi-Step) | Practice C (Real-World) | Practice D (Mental Math) | Practice E (STEM Apps) | Practice F (Mastery) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **#1** | **7**<br>`28 ENTER 4 ÷` | **8**<br>`56 ENTER 7 ÷` | **8 seedlings**<br>`40 ENTER 5 ÷` | **6 R 1**<br>`19 ENTER 3 INT÷` | **25**<br>`6 ENTER 4 × 1 +` | **8**<br>`18 ENTER 14 + 4 ÷` |
-| **#2** | **6**<br>`36 ENTER 6 ÷` | **9**<br>`54 ENTER 6 ÷` | **7 boxes**<br>`56 ENTER 8 ÷` | **5 R 3**<br>`23 ENTER 4 INT÷` | **38**<br>`7 ENTER 5 × 3 +` | **8**<br>`27 ENTER 29 + 7 ÷` |
-| **#3** | **9**<br>`45 ENTER 5 ÷` | **4**<br>`32 ENTER 8 ÷` | **5 pieces**<br>`45 ENTER 9 ÷` | **5 R 4**<br>`29 ENTER 5 INT÷` | **53**<br>`8 ENTER 6 × 5 +` | **7**<br>`50 ENTER 8 - 6 ÷` |
-| **#4** | **6**<br>`42 ENTER 7 ÷` | **7**<br>`49 ENTER 7 ÷` | **9 students**<br>`63 ENTER 7 ÷` | **5 R 4**<br>`34 ENTER 6 INT÷` | **67**<br>`9 ENTER 7 × 4 +` | **8**<br>`80 ENTER 8 - 9 ÷` |
-| **#5** | **6**<br>`48 ENTER 8 ÷` | **8**<br>`72 ENTER 9 ÷` | **8 panels**<br>`72 ENTER 9 ÷` | **6 R 3**<br>`45 ENTER 7 INT÷` | **71**<br>`8 ENTER 8 × 7 +` | **9**<br>`6 ENTER 6 × 4 ÷` |
-| **#6** | **6**<br>`54 ENTER 9 ÷` | **40**<br>`5 ENTER 8 ×` | **8 liters**<br>`48 ENTER 6 ÷` | **6 R 2**<br>`50 ENTER 8 INT÷` | **5 R 1**<br>`31 ENTER 6 INT÷` | **6**<br>`4 ENTER 12 × 8 ÷` |
-| **#7** | **8**<br>`64 ENTER 8 ÷` | **63**<br>`7 ENTER 9 ×` | **30 chairs**<br>`180 ENTER 6 ÷` | **6 R 6**<br>`60 ENTER 9 INT÷` | **11 carts**<br>`44 ENTER 4 ÷` | **13**<br>`56 ENTER 7 ÷ 45 ENTER 9 ÷ +` |
-| **#8** | **9**<br>`63 ENTER 7 ÷` | **72**<br>`9 ENTER 8 ×` | **50 packs**<br>`350 ENTER 7 ÷` | **8 R 5**<br>`53 ENTER 6 INT÷` | **2 markers**<br>`50 ENTER 6 ENTER 8 × -` | **4**<br>`72 ENTER 8 ÷ 30 ENTER 6 ÷ -` |
-| **#9** | **9**<br>`72 ENTER 8 ÷` | **30**<br>`120 ENTER 4 ÷` | **4 boxes**<br>`36 ENTER 4 - 8 ÷` | **8 R 3**<br>`67 ENTER 8 INT÷` | **8 beads**<br>`62 ENTER 6 ENTER 9 × -` | **61**<br>`8 ENTER 7 × 5 +` |
-| **#10** | **9**<br>`81 ENTER 9 ÷` | **40**<br>`240 ENTER 6 ÷` | **7**<br>`35 ENTER 5 ÷` | **8 R 4**<br>`76 ENTER 9 INT÷` | **5 boats**<br>`4 ENTER 1 +` | **23**<br>`64 ENTER 8 ÷ 3 ENTER 5 × +` |
+| **#1** | **7**<br>`28 ENTER 4 ÷` | **8**<br>`56 ENTER 7 ÷` | **8 seedlings**<br>`40 ENTER 5 ÷` | **6 R 1**<br>`19 ENTER 3 ÷R` | **25**<br>`6 ENTER 4 × 1 +` | **8**<br>`18 ENTER 14 + 4 ÷` |
+| **#2** | **6**<br>`36 ENTER 6 ÷` | **9**<br>`54 ENTER 6 ÷` | **7 boxes**<br>`56 ENTER 8 ÷` | **5 R 3**<br>`23 ENTER 4 ÷R` | **38**<br>`7 ENTER 5 × 3 +` | **8**<br>`27 ENTER 29 + 7 ÷` |
+| **#3** | **9**<br>`45 ENTER 5 ÷` | **4**<br>`32 ENTER 8 ÷` | **5 pieces**<br>`45 ENTER 9 ÷` | **5 R 4**<br>`29 ENTER 5 ÷R` | **53**<br>`8 ENTER 6 × 5 +` | **7**<br>`50 ENTER 8 - 6 ÷` |
+| **#4** | **6**<br>`42 ENTER 7 ÷` | **7**<br>`49 ENTER 7 ÷` | **9 students**<br>`63 ENTER 7 ÷` | **5 R 4**<br>`34 ENTER 6 ÷R` | **67**<br>`9 ENTER 7 × 4 +` | **8**<br>`80 ENTER 8 - 9 ÷` |
+| **#5** | **6**<br>`48 ENTER 8 ÷` | **8**<br>`72 ENTER 9 ÷` | **8 panels**<br>`72 ENTER 9 ÷` | **6 R 3**<br>`45 ENTER 7 ÷R` | **71**<br>`8 ENTER 8 × 7 +` | **9**<br>`6 ENTER 6 × 4 ÷` |
+| **#6** | **6**<br>`54 ENTER 9 ÷` | **40**<br>`5 ENTER 8 ×` | **8 liters**<br>`48 ENTER 6 ÷` | **6 R 2**<br>`50 ENTER 8 ÷R` | **5 R 1**<br>`31 ENTER 6 ÷R` | **6**<br>`4 ENTER 12 × 8 ÷` |
+| **#7** | **8**<br>`64 ENTER 8 ÷` | **63**<br>`7 ENTER 9 ×` | **30 chairs**<br>`180 ENTER 6 ÷` | **6 R 6**<br>`60 ENTER 9 ÷R` | **11 carts**<br>`44 ENTER 4 ÷` | **13**<br>`56 ENTER 7 ÷ 45 ENTER 9 ÷ +` |
+| **#8** | **9**<br>`63 ENTER 7 ÷` | **72**<br>`9 ENTER 8 ×` | **50 packs**<br>`350 ENTER 7 ÷` | **8 R 5**<br>`53 ENTER 6 ÷R` | **2 markers**<br>`50 ENTER 6 ENTER 8 × -` | **4**<br>`72 ENTER 8 ÷ 30 ENTER 6 ÷ -` |
+| **#9** | **9**<br>`72 ENTER 8 ÷` | **30**<br>`120 ENTER 4 ÷` | **4 boxes**<br>`36 ENTER 4 - 8 ÷` | **8 R 3**<br>`67 ENTER 8 ÷R` | **8 beads**<br>`62 ENTER 6 ENTER 9 × -` | **61**<br>`8 ENTER 7 × 5 +` |
+| **#10** | **9**<br>`81 ENTER 9 ÷` | **40**<br>`240 ENTER 6 ÷` | **7**<br>`35 ENTER 5 ÷` | **8 R 4**<br>`76 ENTER 9 ÷R` | **5 boats**<br>`4 ENTER 1 +` | **23**<br>`64 ENTER 8 ÷ 3 ENTER 5 × +` |
 
 #### 4. 100-Point Unit Mastery Check
 | # | Category | Assessment Prompt | Points | Expected Solution | Verification Keys |
@@ -812,13 +812,13 @@
 | **1** | Core Fluency | Evaluate exact quotient: 54 ÷ 6 = | 10 pts | **9** | `54 ENTER 6 ÷` |
 | **2** | Core Fluency | Evaluate exact quotient: 63 ÷ 9 = | 10 pts | **7** | `63 ENTER 9 ÷` |
 | **3** | Core Fluency | Find the missing divisor: 48 ÷ [ ? ] = 6 | 10 pts | **8** | `48 ENTER 6 ÷` |
-| **4** | Core Fluency | Find quotient and remainder: 29 ÷ 4 = | 10 pts | **7 R 1** | `29 ENTER 4 INT÷` |
-| **5** | Core Fluency | Find quotient and remainder: 47 ÷ 6 = | 10 pts | **7 R 5** | `47 ENTER 6 INT÷` |
+| **4** | Core Fluency | Find quotient and remainder: 29 ÷ 4 = | 10 pts | **7 R 1** | `29 ENTER 4 ÷R` |
+| **5** | Core Fluency | Find quotient and remainder: 47 ÷ 6 = | 10 pts | **7 R 5** | `47 ENTER 6 ÷R` |
 | **6** | Core Fluency | Verify division using (Q × D) + R: (8 × 7) + 4 = | 10 pts | **60** | `8 ENTER 7 × 4 +` |
 | **7** | Application | 72 books are placed equally onto 8 library shelves. How many books per shelf? | 10 pts | **9 books** | `72 ENTER 8 ÷` |
-| **8** | Application | 38 tennis balls are packed in cans of 3. Find full cans and leftover balls: | 10 pts | **12 R 2** | `38 ENTER 3 INT÷` |
+| **8** | Application | 38 tennis balls are packed in cans of 3. Find full cans and leftover balls: | 10 pts | **12 R 2** | `38 ENTER 3 ÷R` |
 | **9** | Application | Evaluate two-step pipeline: (42 + 14) ÷ 8 = | 10 pts | **7** | `42 ENTER 14 + 8 ÷` |
-| **10** | Error Analysis | Error Analysis: Ben says 37 ÷ 5 = 6 R 7 because 5×6+7=37. Find the true quotient and remainder: | 10 pts | **7 R 2** | `37 ENTER 5 INT÷` |
+| **10** | Error Analysis | Error Analysis: Ben says 37 ÷ 5 = 6 R 7 because 5×6+7=37. Find the true quotient and remainder: | 10 pts | **7 R 2** | `37 ENTER 5 ÷R` |
 
 #### 5. STEM Lab Case Study: Wildlife Rescue Meal Distribution
 > *Scenario:* Marine biologists divide daily fish rations and vitamin packs among orphaned seal pups and sea otters.
@@ -826,7 +826,7 @@
 - **Case Question 1:** Share 36 kg of herring equally among 4 seal pups. How many kg per pup?
   - *Expected Result:* **9 kg each** | *Keystrokes:* `36 ENTER 4 ÷`
 - **Case Question 2:** Divide 45 vitamin tablets into packs of 6. Find quotient and remainder.
-  - *Expected Result:* **7 R 3 (6×7+3=45).** | *Keystrokes:* `45 ENTER 6 INT÷`
+  - *Expected Result:* **7 R 3 (6×7+3=45).** | *Keystrokes:* `45 ENTER 6 ÷R`
 - **Case Question 3:** If 54 fish are shared among 9 otters, how many fish does each otter receive?
   - *Expected Result:* **6 fish** | *Keystrokes:* `54 ENTER 9 ÷`
 - **Case Question 4:** Error Analysis: Sam enters 6 [ENTER] 30 [÷] and gets 0.2. What should he do?
@@ -965,7 +965,7 @@
 #### 1. Concept Labs & Warm-Up Solutions
 - **Warm-Up A (Core Lab):** Divide 95 ÷ 6 on paper. State quotient and remainder, then verify on stack.
   - *Verified Answer:* `15 R 5 (6 × 15 + 5 = 95).`
-  - *Keystrokes:* `95 ENTER 6 INT÷`
+  - *Keystrokes:* `95 ENTER 6 ÷R`
 - **Warm-Up B (Extension Lab):** If 134 ÷ 5 = 26 R 4, verify by evaluating 26 × 5 + 4 on the stack.
   - *Verified Answer:* `134 (Verified).`
   - *Keystrokes:* `26 ENTER 5 × 4 +`
@@ -973,24 +973,24 @@
 #### 2. Hands-On Lab Investigations (Investigations 1–4)
 | # | Investigation Prompt | Expected Solution | Calculator Verification Keys |
 |---|---|---|---|
-| 1 | Divide 76 ÷ 3 on paper: state quotient and remainder = | **25 R 1** | `76 ENTER 3 INT÷` |
+| 1 | Divide 76 ÷ 3 on paper: state quotient and remainder = | **25 R 1** | `76 ENTER 3 ÷R` |
 | 2 | Verify division on stack: 25 × 3 + 1 = | **76** | `25 ENTER 3 × 1 +` |
-| 3 | Divide 98 ÷ 4 on paper: state quotient and remainder = | **24 R 2** | `98 ENTER 4 INT÷` |
-| 4 | Divide 125 ÷ 6 on paper: state quotient and remainder = | **20 R 5** | `125 ENTER 6 INT÷` |
+| 3 | Divide 98 ÷ 4 on paper: state quotient and remainder = | **24 R 2** | `98 ENTER 4 ÷R` |
+| 4 | Divide 125 ÷ 6 on paper: state quotient and remainder = | **20 R 5** | `125 ENTER 6 ÷R` |
 
 #### 3. Leveled Practice Worksheets (Practice A through F)
 | Problem # | Practice A (Core) | Practice B (Multi-Step) | Practice C (Real-World) | Practice D (Mental Math) | Practice E (STEM Apps) | Practice F (Mastery) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **#1** | **34**<br>`68 ENTER 2 ÷` | **25 R 1**<br>`76 ENTER 3 INT÷` | **76**<br>`25 ENTER 3 × 1 +` | **102**<br>`408 ENTER 4 ÷` | **28 crates**<br>`168 ENTER 6 ÷` | **88**<br>`84 ENTER 92 + 88 + 3 ÷` |
-| **#2** | **24**<br>`96 ENTER 4 ÷` | **21 R 3**<br>`87 ENTER 4 INT÷` | **94**<br>`18 ENTER 5 × 4 +` | **205**<br>`615 ENTER 3 ÷` | **30 chairs**<br>`270 ENTER 9 ÷` | **50**<br>`42 ENTER 48 + 54 + 56 + 4 ÷` |
-| **#3** | **17**<br>`85 ENTER 5 ÷` | **18 R 4**<br>`94 ENTER 5 INT÷` | **95**<br>`15 ENTER 6 × 5 +` | **204**<br>`816 ENTER 4 ÷` | **26 R 4**<br>`134 ENTER 5 INT÷` | **12**<br>`480 ENTER 8 ÷ 5 ÷` |
-| **#4** | **13**<br>`91 ENTER 7 ÷` | **15 R 5**<br>`95 ENTER 6 INT÷` | **98**<br>`24 ENTER 4 × 2 +` | **107**<br>`535 ENTER 5 ÷` | **26 R 7**<br>`215 ENTER 8 INT÷` | **12**<br>`648 ENTER 9 ÷ 6 ÷` |
-| **#5** | **18**<br>`108 ENTER 6 ÷` | **24 R 2**<br>`98 ENTER 4 INT÷` | **115**<br>`16 ENTER 7 × 3 +` | **107**<br>`642 ENTER 6 ÷` | **27 boxes**<br>`324 ENTER 12 ÷` | **40**<br>`24 ENTER 15 × 9 ÷` |
-| **#6** | **18**<br>`144 ENTER 8 ÷` | **16 R 3**<br>`115 ENTER 7 INT÷` | **125**<br>`20 ENTER 6 × 5 +` | **104**<br>`728 ENTER 7 ÷` | **30 drums**<br>`450 ENTER 15 ÷` | **63**<br>`36 ENTER 14 × 8 ÷` |
-| **#7** | **18**<br>`162 ENTER 9 ÷` | **20 R 5**<br>`125 ENTER 6 INT÷` | **146**<br>`24 ENTER 6 × 2 +` | **120**<br>`480 ENTER 4 ÷` | **33 tiles**<br>`528 ENTER 16 ÷` | **10**<br>`288 ENTER 8 ÷ 156 ENTER 6 ÷ -` |
-| **#8** | **45**<br>`225 ENTER 5 ÷` | **24 R 2**<br>`146 ENTER 6 INT÷` | **173**<br>`21 ENTER 8 × 5 +` | **150**<br>`750 ENTER 5 ÷` | **12 boxes**<br>`100 ENTER 4 - 8 ÷` | **70**<br>`315 ENTER 7 ÷ 225 ENTER 9 ÷ +` |
-| **#9** | **48**<br>`336 ENTER 7 ÷` | **21 R 5**<br>`173 ENTER 8 INT÷` | **230**<br>`32 ENTER 7 × 6 +` | **26**<br>`120 ENTER 6 ÷ 36 ENTER 6 ÷ +` | **32 trucks**<br>`140 ENTER 116 + 8 ÷` | **313**<br>`34 ENTER 9 × 7 +` |
-| **#10** | **54**<br>`432 ENTER 8 ÷` | **24 R 3**<br>`219 ENTER 9 INT÷` | **6**<br>`150 ENTER 18 ENTER 8 × -` | **36**<br>`210 ENTER 7 ÷ 42 ENTER 7 ÷ +` | **90**<br>`104 ENTER 14 -` | **0**<br>`816 ENTER 4 ÷ 204 -` |
+| **#1** | **34**<br>`68 ENTER 2 ÷` | **25 R 1**<br>`76 ENTER 3 ÷R` | **76**<br>`25 ENTER 3 × 1 +` | **102**<br>`408 ENTER 4 ÷` | **28 crates**<br>`168 ENTER 6 ÷` | **88**<br>`84 ENTER 92 + 88 + 3 ÷` |
+| **#2** | **24**<br>`96 ENTER 4 ÷` | **21 R 3**<br>`87 ENTER 4 ÷R` | **94**<br>`18 ENTER 5 × 4 +` | **205**<br>`615 ENTER 3 ÷` | **30 chairs**<br>`270 ENTER 9 ÷` | **50**<br>`42 ENTER 48 + 54 + 56 + 4 ÷` |
+| **#3** | **17**<br>`85 ENTER 5 ÷` | **18 R 4**<br>`94 ENTER 5 ÷R` | **95**<br>`15 ENTER 6 × 5 +` | **204**<br>`816 ENTER 4 ÷` | **26 R 4**<br>`134 ENTER 5 ÷R` | **12**<br>`480 ENTER 8 ÷ 5 ÷` |
+| **#4** | **13**<br>`91 ENTER 7 ÷` | **15 R 5**<br>`95 ENTER 6 ÷R` | **98**<br>`24 ENTER 4 × 2 +` | **107**<br>`535 ENTER 5 ÷` | **26 R 7**<br>`215 ENTER 8 ÷R` | **12**<br>`648 ENTER 9 ÷ 6 ÷` |
+| **#5** | **18**<br>`108 ENTER 6 ÷` | **24 R 2**<br>`98 ENTER 4 ÷R` | **115**<br>`16 ENTER 7 × 3 +` | **107**<br>`642 ENTER 6 ÷` | **27 boxes**<br>`324 ENTER 12 ÷` | **40**<br>`24 ENTER 15 × 9 ÷` |
+| **#6** | **18**<br>`144 ENTER 8 ÷` | **16 R 3**<br>`115 ENTER 7 ÷R` | **125**<br>`20 ENTER 6 × 5 +` | **104**<br>`728 ENTER 7 ÷` | **30 drums**<br>`450 ENTER 15 ÷` | **63**<br>`36 ENTER 14 × 8 ÷` |
+| **#7** | **18**<br>`162 ENTER 9 ÷` | **20 R 5**<br>`125 ENTER 6 ÷R` | **146**<br>`24 ENTER 6 × 2 +` | **120**<br>`480 ENTER 4 ÷` | **33 tiles**<br>`528 ENTER 16 ÷` | **10**<br>`288 ENTER 8 ÷ 156 ENTER 6 ÷ -` |
+| **#8** | **45**<br>`225 ENTER 5 ÷` | **24 R 2**<br>`146 ENTER 6 ÷R` | **173**<br>`21 ENTER 8 × 5 +` | **150**<br>`750 ENTER 5 ÷` | **12 boxes**<br>`100 ENTER 4 - 8 ÷` | **70**<br>`315 ENTER 7 ÷ 225 ENTER 9 ÷ +` |
+| **#9** | **48**<br>`336 ENTER 7 ÷` | **21 R 5**<br>`173 ENTER 8 ÷R` | **230**<br>`32 ENTER 7 × 6 +` | **26**<br>`120 ENTER 6 ÷ 36 ENTER 6 ÷ +` | **32 trucks**<br>`140 ENTER 116 + 8 ÷` | **313**<br>`34 ENTER 9 × 7 +` |
+| **#10** | **54**<br>`432 ENTER 8 ÷` | **24 R 3**<br>`219 ENTER 9 ÷R` | **6**<br>`150 ENTER 18 ENTER 8 × -` | **36**<br>`210 ENTER 7 ÷ 42 ENTER 7 ÷ +` | **90**<br>`104 ENTER 14 -` | **0**<br>`816 ENTER 4 ÷ 204 -` |
 
 #### 4. 100-Point Unit Mastery Check
 | # | Category | Assessment Prompt | Points | Expected Solution | Verification Keys |
@@ -998,23 +998,23 @@
 | **1** | Core Fluency | Evaluate exact quotient: 156 ÷ 6 = | 10 pts | **26** | `156 ENTER 6 ÷` |
 | **2** | Core Fluency | Evaluate exact quotient with zero in tens: 816 ÷ 4 = | 10 pts | **204** | `816 ENTER 4 ÷` |
 | **3** | Core Fluency | Evaluate 2-digit divisor quotient: 360 ÷ 15 = | 10 pts | **24** | `360 ENTER 15 ÷` |
-| **4** | Core Fluency | Find quotient and remainder: 87 ÷ 4 = | 10 pts | **21 R 3** | `87 ENTER 4 INT÷` |
-| **5** | Core Fluency | Find quotient and remainder: 146 ÷ 6 = | 10 pts | **24 R 2** | `146 ENTER 6 INT÷` |
+| **4** | Core Fluency | Find quotient and remainder: 87 ÷ 4 = | 10 pts | **21 R 3** | `87 ENTER 4 ÷R` |
+| **5** | Core Fluency | Find quotient and remainder: 146 ÷ 6 = | 10 pts | **24 R 2** | `146 ENTER 6 ÷R` |
 | **6** | Core Fluency | Verify division on stack: (26 × 5) + 4 = | 10 pts | **134** | `26 ENTER 5 × 4 +` |
 | **7** | Application | 252 books are packed into 7 equal cartons. How many books per carton? | 10 pts | **36 books** | `252 ENTER 7 ÷` |
-| **8** | Application | 95 containers are stacked 6 high. Find full stacks and leftover containers: | 10 pts | **15 R 5** | `95 ENTER 6 INT÷` |
+| **8** | Application | 95 containers are stacked 6 high. Find full stacks and leftover containers: | 10 pts | **15 R 5** | `95 ENTER 6 ÷R` |
 | **9** | Application | Find the average of 3 container loads: 115, 125, and 135: | 10 pts | **125** | `115 ENTER 125 + 135 + 3 ÷` |
-| **10** | Error Analysis | Error Analysis: A student says 98 ÷ 4 = 23 R 6. Find the true quotient and remainder: | 10 pts | **24 R 2** | `98 ENTER 4 INT÷` |
+| **10** | Error Analysis | Error Analysis: A student says 98 ÷ 4 = 23 R 6. Find the true quotient and remainder: | 10 pts | **24 R 2** | `98 ENTER 4 ÷R` |
 
 #### 5. STEM Lab Case Study: Cargo Ship Container Loading
 > *Scenario:* Port logistics engineers pack intermodal shipping containers into uniform vessel bays and verify remainders.
 
-- **Case Question 1:** 87 intermodal containers are loaded into vessel bays of 4 containers each. Find the full bays and remaining containers with [INT÷]:
-  - *Expected Result:* **21 R 3** | *Keystrokes:* `87 ENTER 4 INT÷`
+- **Case Question 1:** 87 intermodal containers are loaded into vessel bays of 4 containers each. Find the full bays and remaining containers with [÷R]:
+  - *Expected Result:* **21 R 3** | *Keystrokes:* `87 ENTER 4 ÷R`
 - **Case Question 2:** Manifest Audit: Rebuild the total container count on the stack from 21 full bays of 4 plus 3 deck containers (21 × 4 + 3):
   - *Expected Result:* **87 containers** | *Keystrokes:* `21 ENTER 4 × 3 +`
 - **Case Question 3:** Bulk Cement Hold: 146 export pallets are crane-lifted in slings of 6 pallets per lift. Find full lifts and leftover pallets:
-  - *Expected Result:* **24 R 2** | *Keystrokes:* `146 ENTER 6 INT÷`
+  - *Expected Result:* **24 R 2** | *Keystrokes:* `146 ENTER 6 ÷R`
 - **Case Question 4:** Error Analysis: Distributing 816 tons of ballast equally across 4 hull tanks (816 ÷ 4), a clerk wrote 24 tons per tank. Find the true load:
   - *Expected Result:* **204 (tens place has 0 tens).** | *Keystrokes:* `816 ENTER 4 ÷`
 
@@ -1108,28 +1108,28 @@
 #### 3. Leveled Practice Worksheets (Practice A through F)
 | Problem # | Practice A (Core) | Practice B (Multi-Step) | Practice C (Real-World) | Practice D (Mental Math) | Practice E (STEM Apps) | Practice F (Mastery) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **#1** | **32**<br>`2 ENTER 5 yˣ` | **30**<br>`2 ENTER 3 × 5 ×` | **12 bouquets**<br>`24 ENTER 36 GCD` | **8**<br>`64 √x` | **96**<br>`8 ENTER 12 ×` | **3**<br>`36 ENTER 12 ÷` |
+| **#1** | **32**<br>`2 ENTER 5 yˣ` | **30**<br>`2 ENTER 3 × 5 ×` | **12 bouquets**<br>`24 ENTER 36 GCF` | **8**<br>`64 √x` | **96**<br>`8 ENTER 12 ×` | **3**<br>`36 ENTER 12 ÷` |
 | **#2** | **81**<br>`3 ENTER 4 yˣ` | **84**<br>`2 x² 3 × 7 ×` | **48 teeth**<br>`12 ENTER 16 LCM` | **12**<br>`144 √x` | **150**<br>`10 ENTER 15 ×` | **5**<br>`225 ENTER 45 ÷` |
 | **#3** | **2³ × 3**<br>`3 ENTER 2` | **40**<br>`2 x³ 5 ×` | **24 (3 & 4 packs)**<br>`8 ENTER 6 LCM` | **3**<br>`27 ENTER 3 ˣ√𝑦` | **12**<br>`6 ENTER 36 × 18 ÷` | **2**<br>`100 ENTER 50 ÷` |
-| **#4** | **2² × 3 × 5**<br>`3 ENTER 2` | **45**<br>`3 x² 5 ×` | **14 teeth**<br>`42 ENTER 14 GCD` | **10**<br>`6 x² 8 x² + √x` | **12**<br>`4 ENTER 60 × 20 ÷` | **12**<br>`36 ENTER 48 GCD` |
+| **#4** | **2² × 3 × 5**<br>`3 ENTER 2` | **45**<br>`3 x² 5 ×` | **14 teeth**<br>`42 ENTER 14 GCF` | **10**<br>`6 x² 8 x² + √x` | **12**<br>`4 ENTER 60 × 20 ÷` | **12**<br>`36 ENTER 48 GCF` |
 | **#5** | **29 (Prime)**<br>`29 ENTER 1 ÷` | **50**<br>`2 ENTER 5 x² ×` | **51 years**<br>`17 ENTER 3 LCM` | **8**<br>`10 x² 6 x² - √x` | **28**<br>`2 ENTER 3 + 5 + 7 + 11 +` | **80**<br>`16 ENTER 20 LCM` |
-| **#6** | **8**<br>`16 ENTER 24 GCD` | **72**<br>`2 x³ 3 x² ×` | **221 years**<br>`13 ENTER 17 ×` | **6**<br>`3 ENTER 2 ×` | **24**<br>`11 ENTER 13 +` | **10**<br>`5 ENTER 30 × 15 ÷` |
-| **#7** | **15**<br>`30 ENTER 45 GCD` | **7**<br>`42 ENTER 6 ÷` | **42**<br>`2 ENTER 3 × 7 ×` | **9**<br>`3 ENTER 3 ×` | **36**<br>`17 ENTER 19 +` | **60**<br>`2 ENTER 5 × 6 ×` |
+| **#6** | **8**<br>`16 ENTER 24 GCF` | **72**<br>`2 x³ 3 x² ×` | **221 years**<br>`13 ENTER 17 ×` | **6**<br>`3 ENTER 2 ×` | **24**<br>`11 ENTER 13 +` | **10**<br>`5 ENTER 30 × 15 ÷` |
+| **#7** | **15**<br>`30 ENTER 45 GCF` | **7**<br>`42 ENTER 6 ÷` | **42**<br>`2 ENTER 3 × 7 ×` | **9**<br>`3 ENTER 3 ×` | **36**<br>`17 ENTER 19 +` | **60**<br>`2 ENTER 5 × 6 ×` |
 | **#8** | **24**<br>`6 ENTER 8 LCM` | **7**<br>`28 ENTER 4 ÷` | **8 factors**<br>`24 ENTER 3 ÷` | **10**<br>`2 ENTER 3 + 5 +` | **47**<br>`50 ENTER 3 -` | **36**<br>`1 x³ 2 x³ + 3 x³ +` |
-| **#9** | **60**<br>`12 ENTER 15 LCM` | **5**<br>`75 ENTER 15 ÷` | **18 counts**<br>`6 ENTER 9 LCM` | **6**<br>`12 ENTER 18 GCD 30 GCD` | **17**<br>`30 ENTER 13 -` | **60**<br>`6 ENTER 10 ×` |
+| **#9** | **60**<br>`12 ENTER 15 LCM` | **5**<br>`75 ENTER 15 ÷` | **18 counts**<br>`6 ENTER 9 LCM` | **6**<br>`12 ENTER 18 GCF 30 GCF` | **17**<br>`30 ENTER 13 -` | **60**<br>`6 ENTER 10 ×` |
 | **#10** | **36**<br>`12 ENTER 18 LCM` | **15**<br>`135 ENTER 9 ÷` | **64**<br>`4 ENTER 4 × 4 ×` | **24**<br>`4 ENTER 6 LCM 8 LCM` | **8**<br>`2 x³` | **15**<br>`9 x² 12 x² + √x` |
 
 #### 4. 100-Point Unit Mastery Check
 | # | Category | Assessment Prompt | Points | Expected Solution | Verification Keys |
 |:---:|---|---|:---:|---|---|
 | **1** | Core Fluency | Write the prime factorization of 45: | 10 pts | **3² × 5** | `5 ENTER 3` |
-| **2** | Core Fluency | Find GCF(24, 36) using shared prime factors: | 10 pts | **12** | `24 ENTER 36 GCD` |
+| **2** | Core Fluency | Find GCF(24, 36) using shared prime factors: | 10 pts | **12** | `24 ENTER 36 GCF` |
 | **3** | Core Fluency | Find LCM(8, 10) using union of prime factors: | 10 pts | **40** | `8 ENTER 10 LCM` |
 | **4** | Core Fluency | Stack the Prime Factor blocks: 2² × 3 × 5 = | 10 pts | **60** | `2 x² 3 × 5 ×` |
 | **5** | Core Fluency | How many positive factors does 18 = 2¹ × 3² have? | 10 pts | **6** | `2 ENTER 3 ×` |
 | **6** | Core Fluency | Given GCF(a, 12) = 4 and LCM(a, 12) = 24, find a: | 10 pts | **8** | `4 ENTER 24 × 12 ÷` |
 | **7** | Application | Bus A arrives every 10 min and Bus B every 15 min. Both arrive at 9:00 AM. Minutes until next overlap (LCM)? | 10 pts | **30 min (9:30 AM)** | `10 ENTER 15 LCM` |
-| **8** | Application | 32 sixth-graders and 40 seventh-graders form equal-sized trivia teams with no mixed grades. Max team size? | 10 pts | **8 students** | `32 ENTER 40 GCD` |
+| **8** | Application | 32 sixth-graders and 40 seventh-graders form equal-sized trivia teams with no mixed grades. Max team size? | 10 pts | **8 students** | `32 ENTER 40 GCF` |
 | **9** | Application | 17-Year Prime Cicadas emerge every 17 years; a predator cycles every 2 years. Years until both overlap? | 10 pts | **34 years** | `17 ENTER 2 LCM` |
 | **10** | Error Analysis | Error Analysis: Sam claims 51 is prime. Divide 51 ÷ 3 on your stack to find its hidden prime factor! | 10 pts | **17 (51 = 3 × 17)** | `51 ENTER 3 ÷` |
 
@@ -1139,7 +1139,7 @@
 - **Case Question 1:** Pinion Tooth Decomposition: A 12-tooth brass pinion gear is machined for a clockwork train. Stack your Prime Factor blocks to build 12:
   - *Expected Result:* **2 × 2 × 3 = 12** | *Keystrokes:* `2 ENTER 2 × 3 ×`
 - **Case Question 2:** Shared Gear Pitch (GCF): An 18-tooth drive gear meshes with a 24-tooth idler gear. Find the largest shared tooth grouping GCF(18, 24):
-  - *Expected Result:* **6 (2 × 3 = 6).** | *Keystrokes:* `18 ENTER 24 GCD`
+  - *Expected Result:* **6 (2 × 3 = 6).** | *Keystrokes:* `18 ENTER 24 GCF`
 - **Case Question 3:** Full Mesh Alignment Cycle (LCM): A 12-tooth gear drives an 18-tooth gear. After how many tooth-meshes do the exact same two marked teeth meet again?
   - *Expected Result:* **36** | *Keystrokes:* `12 ENTER 18 LCM`
 - **Case Question 4:** Error Analysis: An apprentice claims a 9-tooth cog has a prime number of teeth so it cannot share factors. Divide 9 ÷ 3 to prove 9 is composite:
@@ -1176,7 +1176,7 @@
 | **#4** | **18**<br>`60 ENTER 7 ENTER 6 × -` | **34**<br>`10 ENTER 6 ENTER 4 × +` | **9 boxes**<br>`84 ENTER 12 - 8 ÷` | **10**<br>`7 ENTER 8 × 6 - 2 ENTER 3 + ÷` | **26**<br>`2 ENTER 3 × 2 ENTER 4 × + 3 ENTER 4 × +` | **4**<br>`6 x² 2 x² - 2 x³ ÷` |
 | **#5** | **24**<br>`15 ENTER 36 ENTER 4 ÷ +` | **15**<br>`50 ENTER 7 ENTER 5 × -` | **$51**<br>`3 ENTER 9 × 4 ENTER 6 × +` | **4**<br>`40 ENTER 24 + 5 x² 9 - ÷` | **52**<br>`2 ENTER 3 × 2 ENTER 4 × + 3 ENTER 4 × + 2 ×` | **6**<br>`7 ENTER 8 + 90 x⇄y ÷` |
 | **#6** | **42**<br>`50 ENTER 48 ENTER 6 ÷ -` | **21**<br>`12 ENTER 36 ENTER 4 ÷ +` | **46 m**<br>`100 ENTER 3 ENTER 18 × -` | **6**<br>`14 ENTER 16 + 2 x³ 3 - ÷` | **94**<br>`3 ENTER 4 × 3 ENTER 5 × + 4 ENTER 5 × + 2 ×` | **46**<br>`6 ENTER 9 × 100 x⇄y -` |
-| **#7** | **8**<br>`14 ENTER 10 + 3 ÷` | **39**<br>`4 ENTER 6 × 3 ENTER 5 × +` | **7 teams, R 1**<br>`29 ENTER 4 INT÷` | **30**<br>`4 ENTER 5 × 6 ENTER 3 × + 8 -` | **91 cm³**<br>`4 x³ 3 x³ +` | **100**<br>`12 ENTER 4 × 13 ENTER 4 × +` |
+| **#7** | **8**<br>`14 ENTER 10 + 3 ÷` | **39**<br>`4 ENTER 6 × 3 ENTER 5 × +` | **7 teams, R 1**<br>`29 ENTER 4 ÷R` | **30**<br>`4 ENTER 5 × 6 ENTER 3 × + 8 -` | **91 cm³**<br>`4 x³ 3 x³ +` | **100**<br>`12 ENTER 4 × 13 ENTER 4 × +` |
 | **#8** | **80**<br>`35 ENTER 15 - 4 ×` | **32**<br>`8 ENTER 7 × 6 ENTER 4 × -` | **36 m**<br>`45 ENTER 18 + 27 -` | **12**<br>`20 ENTER 4 ÷ 7 +` | **14 faces**<br>`3 ENTER 6 × 4 -` | **90**<br>`25 ENTER 6 × 15 ENTER 4 × -` |
 | **#9** | **46**<br>`10 ENTER 3 x² 4 × +` | **60**<br>`7 ENTER 5 + 11 ENTER 6 - ×` | **150 seats**<br>`5 ENTER 12 × 6 ENTER 15 × +` | **30**<br>`6 ENTER 4 + 5 ENTER 2 - ×` | **20**<br>`12 x² 8 x² - 12 ENTER 8 - ÷` | **88**<br>`82 ENTER 86 + 90 + 94 + 4 ÷` |
 | **#10** | **9**<br>`5 x² 2 ENTER 8 × -` | **6**<br>`28 ENTER 14 + 13 ENTER 6 - ÷` | **26**<br>`6 ENTER 4 ENTER 5 × +` | **32**<br>`50 ENTER 3 ENTER 6 × -` | **68**<br>`2 ENTER 3 × 4 ENTER 5 × + 6 ENTER 7 × +` | **5**<br>`45 ENTER 15 + 18 ENTER 6 - ÷` |
@@ -1486,32 +1486,32 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 #### 1. Concept Labs & Warm-Up Solutions
 - **Warm-Up A (Core Lab):** Factor x² + 7x + 12 by decomposing 12 with Prime Factor blocks to find the factor pair whose sum is 7, and find both roots of x² + 7x + 12 = 0.
   - *Verified Answer:* `3 × 4 = 12 and 3 + 4 = 7; factored form (x + 3)(x + 4), roots x = -3 and x = -4.`
-  - *Keystrokes:* `1 ENTER 7 ENTER 1 2 POLY`
+  - *Keystrokes:* `POLY 1 B 7 C 1 2 D XEQ`
 - **Warm-Up B (Extension Lab):** Factor x² - 5x + 6 into two binomials by finding two negative factors of +6 whose sum is -5, and state both roots.
   - *Verified Answer:* `(-2) × (-3) = +6 and (-2) + (-3) = -5; factored form (x - 2)(x - 3), roots x = 2 and x = 3.`
-  - *Keystrokes:* `1 ENTER 5 CHS ENTER 6 POLY`
+  - *Keystrokes:* `POLY 1 B 5 +/- C 6 D XEQ`
 
 #### 2. Hands-On Lab Investigations (Investigations 1–4)
 | # | Investigation Prompt | Expected Solution | Calculator Verification Keys |
 |---|---|---|---|
-| 1 | Factor x² + 6x + 8 by decomposing 8 into a factor pair that sums to 6, and find the roots. | **(x + 2)(x + 4); roots -2, -4** | `1 ENTER 6 ENTER 8 POLY` |
-| 2 | Factor x² - 4 (difference of two squares, where the linear coefficient b = 0). | **(x - 2)(x + 2); roots 2, -2** | `1 ENTER 0 ENTER 4 CHS POLY` |
-| 3 | Factor x² + 5x + 4 into two binomials and state the solutions to x² + 5x + 4 = 0. | **(x + 1)(x + 4); roots -1, -4** | `1 ENTER 5 ENTER 4 POLY` |
-| 4 | Factor x² - 5x + 6 using signed factor pairs and state both roots. | **(x - 2)(x - 3); roots 2, 3** | `1 ENTER 5 CHS ENTER 6 POLY` |
+| 1 | Factor x² + 6x + 8 by decomposing 8 into a factor pair that sums to 6, and find the roots. | **(x + 2)(x + 4); roots -2, -4** | `POLY 1 B 6 C 8 D XEQ` |
+| 2 | Factor x² - 4 (difference of two squares, where the linear coefficient b = 0). | **(x - 2)(x + 2); roots 2, -2** | `POLY 1 B 0 C 4 +/- D XEQ` |
+| 3 | Factor x² + 5x + 4 into two binomials and state the solutions to x² + 5x + 4 = 0. | **(x + 1)(x + 4); roots -1, -4** | `POLY 1 B 5 C 4 D XEQ` |
+| 4 | Factor x² - 5x + 6 using signed factor pairs and state both roots. | **(x - 2)(x - 3); roots 2, 3** | `POLY 1 B 5 +/- C 6 D XEQ` |
 
 #### 3. Leveled Practice Worksheets (Practice A through F)
 | Problem # | Practice A (Core) | Practice B (Multi-Step) | Practice C (Real-World) | Practice D (Mental Math) | Practice E (STEM Apps) | Practice F (Mastery) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **#1** | **18**<br>`3 ENTER 6 ×` | **x² + 7x + 10**<br>`2 ENTER 5 +` | **156 (12 × 13)**<br>`10 x² 5 ENTER 10 × + 6 +` | **2x² + 9x + 4**<br>`2 ENTER 4 × 1 +` | **9**<br>`6 ENTER 2 ÷ x²` | **600**<br>`53 ENTER 47 - 53 ENTER 47 + ×` |
 | **#2** | **11**<br>`4 ENTER 7 +` | **x² + x - 12**<br>`3 ENTER 4 ×` | **x² + 8x + 15**<br>`3 ENTER 5 +` | **3x² + 7x - 6**<br>`3 ENTER 3 × 2 -` | **36**<br>`12 ENTER 2 ÷ x²` | **3000**<br>`65 ENTER 35 - 65 ENTER 35 + ×` |
-| **#3** | **35**<br>`3 ENTER 2 + 3 ENTER 4 + ×` | **x² - 36**<br>`6 ENTER 6 ×` | **t = 6 sec**<br>`-1 ENTER 6 ENTER 0 POLY` | **x² + 10x + 25**<br>`5 x²` | **3**<br>`39 ENTER 25 + √x 5 -` | **5**<br>`15 ENTER 3 ÷` |
-| **#4** | **30**<br>`3 x² 5 ENTER 3 × + 6 +` | **(x + 2)(x + 4) (roots -2, -4)**<br>`1 ENTER 6 ENTER 8 POLY` | **4 and 7**<br>`1 ENTER -11 ENTER 28 POLY` | **4x² - 12x + 9**<br>`-3 x²` | **2**<br>`16 ENTER 9 + √x 3 -` | **-5**<br>`-20 ENTER 4 ÷` |
-| **#5** | **12**<br>`5 x² 4 ENTER 5 × - 7 +` | **(x + 4)(x + 5) (roots -4, -5)**<br>`1 ENTER 9 ENTER 20 POLY` | **13 and 7**<br>`20 ENTER 6 + 2 ÷` | **(2x + 1)(x + 2) (roots -0.5, -2)**<br>`2 ENTER 5 ENTER 2 POLY` | **(4, 7)**<br>`8 ENTER 2 ÷` | **2**<br>`8 ENTER 4 ÷` |
-| **#6** | **14 (5x² + 9x)**<br>`5 ENTER 9 +` | **(x - 2)(x - 5) (roots 2, 5)**<br>`1 ENTER -7 ENTER 10 POLY` | **9 (25 - 16)**<br>`-5 x² 4 ENTER 2 × 2 × -` | **3(x - 2)(x + 2)**<br>`3 ENTER 0 ENTER -12 POLY` | **4 (at x = 5)**<br>`5 x² 10 ENTER 5 × - 29 +` | **19**<br>`5 x² 2 ENTER 3 × -` |
-| **#7** | **6x² + 15x**<br>`3 ENTER 2 ×` | **(x - 5)(x + 3) (roots 5, -3)**<br>`1 ENTER -2 ENTER -15 POLY` | **x = 3, y = 7**<br>`10 ENTER 1 - 3 ÷` | **x + 4**<br>`16 ENTER 4 ÷` | **10 (at x = 3)**<br>`3 x² CHS 6 ENTER 3 × + 1 +` | **37**<br>`4 x³ 3 x³ -` |
-| **#8** | **6x(2x + 3)**<br>`12 ENTER 18 GCD` | **x = 2, 4**<br>`1 ENTER -6 ENTER 8 POLY` | **x = 4 (y = 3)**<br>`8 ENTER 2 ÷` | **x + 5**<br>`10 ENTER 2 ÷` | **0 (1 repeated root)**<br>`-6 x² 4 ENTER 1 × 9 × -` | **(x - 2)(x² + 2x + 4)**<br>`8 ENTER 3 ˣ√𝑦` |
-| **#9** | **75 (x² - 25)**<br>`10 x² 25 -` | **x = 2, -4**<br>`1 ENTER 2 ENTER -8 POLY` | **-5 ([+/-] negates X)**<br>`5 CHS` | **20**<br>`15 ENTER 5 +` | **-16 (2 complex roots)**<br>`2 x² 4 ENTER 1 × 5 × -` | **x = 2 or x = 3**<br>`1 ENTER -5 ENTER 6 POLY` |
-| **#10** | **156**<br>`12 ENTER 13 ×` | **Sum = 9, Prod = 14**<br>`1 ENTER -9 ENTER 14 POLY +` | **x = -2, -5**<br>`1 ENTER 7 ENTER 10 POLY` | **x = 3**<br>`2 ENTER -7 ENTER 3 POLY` | **c = 16**<br>`8 ENTER 2 ÷ x²` | **b = -5 (negate X)**<br>`5 CHS` |
+| **#3** | **35**<br>`3 ENTER 2 + 3 ENTER 4 + ×` | **x² - 36**<br>`6 ENTER 6 ×` | **t = 6 sec**<br>`POLY -1 B 6 C 0 D XEQ` | **x² + 10x + 25**<br>`5 x²` | **3**<br>`39 ENTER 25 + √x 5 -` | **5**<br>`15 ENTER 3 ÷` |
+| **#4** | **30**<br>`3 x² 5 ENTER 3 × + 6 +` | **(x + 2)(x + 4) (roots -2, -4)**<br>`POLY 1 B 6 C 8 D XEQ` | **4 and 7**<br>`POLY 1 B -11 C 28 D XEQ` | **4x² - 12x + 9**<br>`-3 x²` | **2**<br>`16 ENTER 9 + √x 3 -` | **-5**<br>`-20 ENTER 4 ÷` |
+| **#5** | **12**<br>`5 x² 4 ENTER 5 × - 7 +` | **(x + 4)(x + 5) (roots -4, -5)**<br>`POLY 1 B 9 C 20 D XEQ` | **13 and 7**<br>`20 ENTER 6 + 2 ÷` | **(2x + 1)(x + 2) (roots -0.5, -2)**<br>`POLY 2 B 5 C 2 D XEQ` | **(4, 7)**<br>`8 ENTER 2 ÷` | **2**<br>`8 ENTER 4 ÷` |
+| **#6** | **14 (5x² + 9x)**<br>`5 ENTER 9 +` | **(x - 2)(x - 5) (roots 2, 5)**<br>`POLY 1 B -7 C 10 D XEQ` | **9 (25 - 16)**<br>`-5 x² 4 ENTER 2 × 2 × -` | **3(x - 2)(x + 2)**<br>`POLY 3 B 0 C -12 D XEQ` | **4 (at x = 5)**<br>`5 x² 10 ENTER 5 × - 29 +` | **19**<br>`5 x² 2 ENTER 3 × -` |
+| **#7** | **6x² + 15x**<br>`3 ENTER 2 ×` | **(x - 5)(x + 3) (roots 5, -3)**<br>`POLY 1 B -2 C -15 D XEQ` | **x = 3, y = 7**<br>`10 ENTER 1 - 3 ÷` | **x + 4**<br>`16 ENTER 4 ÷` | **10 (at x = 3)**<br>`3 x² +/- 6 ENTER 3 × + 1 +` | **37**<br>`4 ENTER 3 yˣ 3 ENTER 3 yˣ -` |
+| **#8** | **6x(2x + 3)**<br>`12 ENTER 18 GCD` | **x = 2, 4**<br>`POLY 1 B -6 C 8 D XEQ` | **x = 4 (y = 3)**<br>`8 ENTER 2 ÷` | **x + 5**<br>`10 ENTER 2 ÷` | **0 (1 repeated root)**<br>`-6 x² 4 ENTER 1 × 9 × -` | **(x - 2)(x² + 2x + 4)**<br>`8 ENTER 3 ˣ√𝑦` |
+| **#9** | **75 (x² - 25)**<br>`10 x² 25 -` | **x = 2, -4**<br>`POLY 1 B 2 C -8 D XEQ` | **-5 ([+/-] negates X)**<br>`5 +/-` | **20**<br>`15 ENTER 5 +` | **-16 (2 complex roots)**<br>`2 x² 4 ENTER 1 × 5 × -` | **x = 2 or x = 3**<br>`POLY 1 B -5 C 6 D XEQ` |
+| **#10** | **156**<br>`12 ENTER 13 ×` | **Sum = 9, Prod = 14**<br>`POLY 1 B -9 C 14 D XEQ 2 ENTER 7 +` | **x = -2, -5**<br>`POLY 1 B 7 C 10 D XEQ` | **x = 3**<br>`POLY 2 B -7 C 3 D XEQ` | **c = 16**<br>`8 ENTER 2 ÷ x²` | **b = -5 (negate X)**<br>`5 +/-` |
 
 #### 4. 100-Point Unit Mastery Check
 | # | Category | Assessment Prompt | Points | Expected Solution | Verification Keys |
@@ -1519,12 +1519,12 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 | **1** | Core Fluency | Evaluate the quadratic area 2x² + 3x - 4 when x = 3: | 10 pts | **23** | `2 ENTER 3 x² × 3 ENTER 3 × + 4 -` |
 | **2** | Core Fluency | Area Grid Expansion: Expand (x + 3)(x + 4) and evaluate at x = 2: | 10 pts | **30** | `2 ENTER 3 + 2 ENTER 4 + ×` |
 | **3** | Core Fluency | Al-Khwarizmi's Square: Find c = (b/2)² to complete the square for x² + 14x + c: | 10 pts | **49** | `14 ENTER 2 ÷ x²` |
-| **4** | Core Fluency | Factor completely: x² + 8x + 15 = | 10 pts | **(x + 3)(x + 5) (roots -3, -5)** | `1 ENTER 8 ENTER 15 POLY` |
-| **5** | Core Fluency | Find both roots of x² - 8x + 12 = 0: | 10 pts | **x = 2, 6** | `1 ENTER -8 ENTER 12 POLY` |
+| **4** | Core Fluency | Factor completely: x² + 8x + 15 = | 10 pts | **(x + 3)(x + 5) (roots -3, -5)** | `POLY 1 B 8 C 15 D XEQ` |
+| **5** | Core Fluency | Find both roots of x² - 8x + 12 = 0: | 10 pts | **x = 2, 6** | `POLY 1 B -8 C 12 D XEQ` |
 | **6** | Core Fluency | Find both roots of x² - 25 = 0: | 10 pts | **x = 5, -5** | `25 √x` |
-| **7** | Application | A rectangle has sides (x + 1) and (x + 5) and area 21. Find the positive value of x: | 10 pts | **x = 2** | `1 ENTER 6 ENTER -16 POLY` |
-| **8** | Application | Find two numbers whose sum is 13 and product is 40: | 10 pts | **5 and 8** | `1 ENTER -13 ENTER 40 POLY` |
-| **9** | Application | What is the sum of the roots of x² - 11x + 24 = 0? | 10 pts | **11** | `1 ENTER -11 ENTER 24 POLY +` |
+| **7** | Application | A rectangle has sides (x + 1) and (x + 5) and area 21. Find the positive value of x: | 10 pts | **x = 2** | `POLY 1 B 6 C -16 D XEQ` |
+| **8** | Application | Find two numbers whose sum is 13 and product is 40: | 10 pts | **5 and 8** | `POLY 1 B -13 C 40 D XEQ` |
+| **9** | Application | What is the sum of the roots of x² - 11x + 24 = 0? | 10 pts | **11** | `POLY 1 B -11 C 24 D XEQ 3 ENTER 8 +` |
 | **10** | Error Analysis | Error Analysis: Why does (x + 4)² equal x² + 8x + 16 instead of x² + 16? | 10 pts | **Two 4x rectangles (+8x)** | `2 ENTER 4 ×` |
 
 #### 5. STEM Lab Case Study: Renaissance Garden Quadrangle Proportions
@@ -1551,40 +1551,40 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
   - *Keystrokes:* `-7 x² 4 ENTER 2 × 3 × -`
 - **Warm-Up B (Extension Lab):** Use [POLY] on the SC-32 to solve 2x² − 5x − 3 = 0.
   - *Verified Answer:* `x1 = 3.0, x2 = -0.5.`
-  - *Keystrokes:* `2 ENTER -5 ENTER -3 POLY`
+  - *Keystrokes:* `POLY 2 B -5 C -3 D XEQ`
 
 #### 2. Hands-On Lab Investigations (Investigations 1–4)
 | # | Investigation Prompt | Expected Solution | Calculator Verification Keys |
 |---|---|---|---|
 | 1 | Evaluate discriminant for x² + 6x + 9 = 0: Δ = | **0** | `6 x² 4 ENTER 1 × 9 × -` |
-| 2 | Solve roots with [POLY]: x² − 7x + 12 = 0 -> | **x = 4, 3** | `1 ENTER -7 ENTER 12 POLY` |
-| 3 | Solve roots with [POLY]: x² + 2x − 15 = 0 -> | **x = 3, -5** | `1 ENTER 2 ENTER -15 POLY` |
+| 2 | Solve roots with [POLY]: x² − 7x + 12 = 0 -> | **x = 4, 3** | `POLY 1 B -7 C 12 D XEQ` |
+| 3 | Solve roots with [POLY]: x² + 2x − 15 = 0 -> | **x = 3, -5** | `POLY 1 B 2 C -15 D XEQ` |
 | 4 | Evaluate discriminant for x² + 4x + 13 = 0: Δ = | **-36** | `4 x² 4 ENTER 1 × 13 × -` |
 
 #### 3. Leveled Practice Worksheets (Practice A through F)
 | Problem # | Practice A (Core) | Practice B (Multi-Step) | Practice C (Real-World) | Practice D (Mental Math) | Practice E (STEM Apps) | Practice F (Mastery) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **#1** | **9**<br>`7 x² 4 ENTER 1 × 10 × -` | **x = 3, 2**<br>`1 ENTER -5 ENTER 6 POLY` | **x = 3, 0.5**<br>`2 ENTER -7 ENTER 3 POLY` | **4**<br>`8 ENTER 2 ÷` | **5**<br>`-16 ENTER 64 ENTER 80 POLY` | **7**<br>`14 ENTER 2 ÷` |
-| **#2** | **0**<br>`-6 x² 4 ENTER 1 × 9 × -` | **x = 5, 3**<br>`1 ENTER -8 ENTER 15 POLY` | **x = -0.5, -2**<br>`2 ENTER 5 ENTER 2 POLY` | **-3**<br>`-12 ENTER 4 ÷` | **2 s**<br>`-64 ENTER -32 ÷` | **4.5**<br>`9 ENTER 2 ÷` |
-| **#3** | **49**<br>`3 x² 4 ENTER 1 × -10 × -` | **x = 3, -5**<br>`1 ENTER 2 ENTER -15 POLY` | **x = 2.5, -1**<br>`2 ENTER -3 ENTER -5 POLY` | **3**<br>`-18 ENTER -6 ÷` | **144 ft**<br>`2 x² -16 × 64 ENTER 2 × + 80 +` | **-5**<br>`-20 ENTER 4 ÷` |
-| **#4** | **9**<br>`5 x² 4 ENTER 2 × 2 × -` | **x = 5, -2**<br>`1 ENTER -3 ENTER -10 POLY` | **x = 1.5, -0.5**<br>`4 ENTER -4 ENTER -3 POLY` | **2.5**<br>`20 ENTER 8 ÷` | **3 s**<br>`-16 ENTER 0 ENTER 144 POLY x⇄y` | **-2.75**<br>`-11 ENTER 4 ÷` |
-| **#5** | **64**<br>`-10 x² 4 ENTER 3 × 3 × -` | **x = -3, -4**<br>`1 ENTER 7 ENTER 12 POLY` | **x = 3, -0.4**<br>`5 ENTER -13 ENTER -6 POLY` | **5**<br>`25 √x` | **5 s**<br>`-5 ENTER 20 ENTER 25 POLY` | **3**<br>`4 ENTER -7 + CHS` |
-| **#6** | **0**<br>`-12 x² 4 ENTER 4 × 9 × -` | **x = 5, 4**<br>`1 ENTER -9 ENTER 20 POLY` | **x = 4, 0.5**<br>`2 ENTER -9 ENTER 4 POLY` | **8**<br>`64 √x` | **45 m**<br>`2 x² -5 × 20 ENTER 2 × + 25 +` | **-28**<br>`4 ENTER -7 ×` |
-| **#7** | **-36**<br>`4 x² 4 ENTER 1 × 13 × -` | **x = 3, -7**<br>`1 ENTER 4 ENTER -21 POLY` | **x = 2.5, -2.5**<br>`4 ENTER 0 ENTER -25 POLY` | **3**<br>`7 ENTER 5 + 4 ÷` | **5**<br>`1 ENTER 4 ENTER -45 POLY x⇄y` | **5**<br>`4 x² 8 ENTER 4 × - 21 +` |
-| **#8** | **49**<br>`-3 x² 4 ENTER 2 × -5 × -` | **x = 4, -4**<br>`1 ENTER 0 ENTER -16 POLY` | **x = 1, 0.6**<br>`5 ENTER -8 ENTER 3 POLY` | **0.5**<br>`7 ENTER 5 - 4 ÷` | **5**<br>`2 ENTER 14 ENTER -120 POLY x⇄y` | **8**<br>`3 x² -2 × 12 ENTER 3 × + 10 -` |
-| **#9** | **-16**<br>`2 x² 4 ENTER 5 × 1 × -` | **5**<br>`1 ENTER -10 ENTER 25 POLY` | **x = 0.75, 0.5**<br>`8 ENTER -10 ENTER 3 POLY` | **4.2361**<br>`4 ENTER 20 √x + 2 ÷` | **26.06 mph**<br>`0.05 ENTER 1 ENTER -60 POLY x⇄y` | **12**<br>`4 ENTER 36 × √x` |
-| **#10** | **361**<br>`-11 x² 4 ENTER 6 × -10 × -` | **x = 8, 3**<br>`1 ENTER -11 ENTER 24 POLY` | **x = 1.5, 0.2**<br>`10 ENTER -17 ENTER 3 POLY` | **1.618**<br>`1 ENTER 5 √x + 2 ÷` | **16**<br>`-6 x² 4 ENTER 1 × 5 × -` | **5**<br>`2 ENTER -10 ENTER 12 POLY +` |
+| **#1** | **9**<br>`7 x² 4 ENTER 1 × 10 × -` | **x = 3, 2**<br>`POLY 1 B -5 C 6 D XEQ` | **x = 3, 0.5**<br>`POLY 2 B -7 C 3 D XEQ` | **4**<br>`8 ENTER 2 ÷` | **5**<br>`POLY -16 B 64 C 80 D XEQ` | **7**<br>`14 ENTER 2 ÷` |
+| **#2** | **0**<br>`-6 x² 4 ENTER 1 × 9 × -` | **x = 5, 3**<br>`POLY 1 B -8 C 15 D XEQ` | **x = -0.5, -2**<br>`POLY 2 B 5 C 2 D XEQ` | **-3**<br>`-12 ENTER 4 ÷` | **2 s**<br>`-64 ENTER -32 ÷` | **4.5**<br>`9 ENTER 2 ÷` |
+| **#3** | **49**<br>`3 x² 4 ENTER 1 × -10 × -` | **x = 3, -5**<br>`POLY 1 B 2 C -15 D XEQ` | **x = 2.5, -1**<br>`POLY 2 B -3 C -5 D XEQ` | **3**<br>`-18 ENTER -6 ÷` | **144 ft**<br>`2 x² -16 × 64 ENTER 2 × + 80 +` | **-5**<br>`-20 ENTER 4 ÷` |
+| **#4** | **9**<br>`5 x² 4 ENTER 2 × 2 × -` | **x = 5, -2**<br>`POLY 1 B -3 C -10 D XEQ` | **x = 1.5, -0.5**<br>`POLY 4 B -4 C -3 D XEQ` | **2.5**<br>`20 ENTER 8 ÷` | **3 s**<br>`POLY -16 B 0 C 144 D XEQ` | **-2.75**<br>`-11 ENTER 4 ÷` |
+| **#5** | **64**<br>`-10 x² 4 ENTER 3 × 3 × -` | **x = -3, -4**<br>`POLY 1 B 7 C 12 D XEQ` | **x = 3, -0.4**<br>`POLY 5 B -13 C -6 D XEQ` | **5**<br>`25 √x` | **5 s**<br>`POLY -5 B 20 C 25 D XEQ` | **3**<br>`4 ENTER -7 + +/-` |
+| **#6** | **0**<br>`-12 x² 4 ENTER 4 × 9 × -` | **x = 5, 4**<br>`POLY 1 B -9 C 20 D XEQ` | **x = 4, 0.5**<br>`POLY 2 B -9 C 4 D XEQ` | **8**<br>`64 √x` | **45 m**<br>`2 x² -5 × 20 ENTER 2 × + 25 +` | **-28**<br>`4 ENTER -7 ×` |
+| **#7** | **-36**<br>`4 x² 4 ENTER 1 × 13 × -` | **x = 3, -7**<br>`POLY 1 B 4 C -21 D XEQ` | **x = 2.5, -2.5**<br>`POLY 4 B 0 C -25 D XEQ` | **3**<br>`7 ENTER 5 + 4 ÷` | **5**<br>`POLY 1 B 4 C -45 D XEQ` | **5**<br>`4 x² 8 ENTER 4 × - 21 +` |
+| **#8** | **49**<br>`-3 x² 4 ENTER 2 × -5 × -` | **x = 4, -4**<br>`POLY 1 B 0 C -16 D XEQ` | **x = 1, 0.6**<br>`POLY 5 B -8 C 3 D XEQ` | **0.5**<br>`7 ENTER 5 - 4 ÷` | **5**<br>`POLY 2 B 14 C -120 D XEQ` | **8**<br>`3 x² -2 × 12 ENTER 3 × + 10 -` |
+| **#9** | **-16**<br>`2 x² 4 ENTER 5 × 1 × -` | **5**<br>`POLY 1 B -10 C 25 D XEQ` | **x = 0.75, 0.5**<br>`POLY 8 B -10 C 3 D XEQ` | **4.2361**<br>`4 ENTER 20 √x + 2 ÷` | **26.06 mph**<br>`POLY 0.05 B 1 C -60 D XEQ` | **12**<br>`4 ENTER 36 × √x` |
+| **#10** | **361**<br>`-11 x² 4 ENTER 6 × -10 × -` | **x = 8, 3**<br>`POLY 1 B -11 C 24 D XEQ` | **x = 1.5, 0.2**<br>`POLY 10 B -17 C 3 D XEQ` | **1.618**<br>`1 ENTER 5 √x + 2 ÷` | **16**<br>`-6 x² 4 ENTER 1 × 5 × -` | **5**<br>`POLY 2 B -10 C 12 D XEQ 2 ENTER 3 +` |
 
 #### 4. 100-Point Unit Mastery Check
 | # | Category | Assessment Prompt | Points | Expected Solution | Verification Keys |
 |:---:|---|---|:---:|---|---|
 | **1** | Core Fluency | Evaluate discriminant Δ = b² − 4ac for 2x² − 7x + 3 = 0: | 10 pts | **25** | `-7 x² 4 ENTER 2 × 3 × -` |
 | **2** | Core Fluency | Evaluate discriminant Δ = b² − 4ac for x² + 4x + 13 = 0: | 10 pts | **-36** | `4 x² 4 ENTER 1 × 13 × -` |
-| **3** | Core Fluency | Solve roots with [POLY]: x² − 7x + 12 = 0 -> | 10 pts | **x = 4, 3** | `1 ENTER -7 ENTER 12 POLY` |
-| **4** | Core Fluency | Solve roots with [POLY]: x² + 2x − 15 = 0 -> | 10 pts | **x = 3, -5** | `1 ENTER 2 ENTER -15 POLY` |
-| **5** | Core Fluency | Solve roots with [POLY]: 2x² − 5x − 3 = 0 -> | 10 pts | **x = 3, -0.5** | `2 ENTER -5 ENTER -3 POLY` |
+| **3** | Core Fluency | Solve roots with [POLY]: x² − 7x + 12 = 0 -> | 10 pts | **x = 4, 3** | `POLY 1 B -7 C 12 D XEQ` |
+| **4** | Core Fluency | Solve roots with [POLY]: x² + 2x − 15 = 0 -> | 10 pts | **x = 3, -5** | `POLY 1 B 2 C -15 D XEQ` |
+| **5** | Core Fluency | Solve roots with [POLY]: 2x² − 5x − 3 = 0 -> | 10 pts | **x = 3, -0.5** | `POLY 2 B -5 C -3 D XEQ` |
 | **6** | Core Fluency | Find the axis of symmetry x = -b ÷ (2a) for y = 3x² − 18x + 7: | 10 pts | **3** | `18 ENTER 6 ÷` |
-| **7** | Application | A projectile follows h(t) = -16t² + 48t + 64. Find positive landing time t: | 10 pts | **4 s** | `-16 ENTER 48 ENTER 64 POLY` |
+| **7** | Application | A projectile follows h(t) = -16t² + 48t + 64. Find positive landing time t: | 10 pts | **4 s** | `POLY -16 B 48 C 64 D XEQ` |
 | **8** | Application | Find Vieta's product of roots (c ÷ a) for 5x² − 17x + 30 = 0: | 10 pts | **6** | `30 ENTER 5 ÷` |
 | **9** | Application | Find vertex minimum value of f(x) = x² − 6x + 13 at x = 3: | 10 pts | **4** | `3 x² 6 ENTER 3 × - 13 +` |
 | **10** | Error Analysis | Error Analysis: A student got Δ = -11 for x² − 3x − 5 by subtracting 4(1)(-5) as +20. Find true Δ: | 10 pts | **29** | `-3 x² 4 ENTER 1 × -5 × -` |
@@ -1595,9 +1595,9 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 - **Case Question 1:** Radar Target Clearance: Evaluate discriminant Δ = b² − 4ac for flight clearance curve 2x² − 7x + 3 = 0:
   - *Expected Result:* **25 (2 real roots)** | *Keystrokes:* `-7 x² 4 ENTER 2 × 3 × -`
 - **Case Question 2:** Wind-Tunnel Calibration Arc: Extract the reference roots of x² + 5x + 6 = 0 using [POLY]:
-  - *Expected Result:* **x1 = -2, x2 = -3** | *Keystrokes:* `1 ENTER 5 ENTER 6 POLY`
+  - *Expected Result:* **x1 = -2, x2 = -3** | *Keystrokes:* `POLY 1 B 5 C 6 D XEQ`
 - **Case Question 3:** Downrange Impact Solution: Extract the roots of trajectory profile 2x² − 5x − 3 = 0 using [POLY]:
-  - *Expected Result:* **x1 = 3.0, x2 = -0.5** | *Keystrokes:* `2 ENTER -5 ENTER -3 POLY`
+  - *Expected Result:* **x1 = 3.0, x2 = -0.5** | *Keystrokes:* `POLY 2 B -5 C -3 D XEQ`
 - **Case Question 4:** Error Analysis: Student says Δ < 0 for x² + 4 = 0 means no roots. Evaluate Δ:
   - *Expected Result:* **-16 (2 complex conjugate roots ±2i).** | *Keystrokes:* `0 x² 4 ENTER 1 × 4 × -`
 
@@ -1628,8 +1628,8 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **#1** | **6**<br>`1 ENTER 2 × 3 + 2 × -4 +` | **3**<br>`1 ENTER 3 × -7 + 3 × 15 +` | **0**<br>`1 ENTER 2 × 0 + 2 × -7 + 2 × 6 +` | **9**<br>`1 ENTER 2 × -2 + 2 × 3 + 2 × -4 + 2 × 5 +` | **80 cm³**<br>`1 ENTER 10 × 8 ×` | **4**<br>`12 ENTER 4 + 8 - 2 ÷` |
 | **#2** | **10**<br>`2 ENTER 3 × -5 + 3 × 7 +` | **15**<br>`2 ENTER 2 × 5 + 2 × -3 +` | **0**<br>`1 ENTER -3 × 0 + -3 × -7 + -3 × 6 +` | **21**<br>`1 ENTER 2 × 1 + 2 × -2 + 2 × 3 + 2 × -1 +` | **96 cm³**<br>`2 ENTER 8 × 6 ×` | **7**<br>`10 ENTER 2 ENTER 9 × 15 - -` |
-| **#3** | **54**<br>`3 ENTER 4 × 4 + 4 × -10 +` | **3**<br>`1 ENTER 2 × -2 + 2 × 4 + 2 × -5 +` | **14**<br>`1 ENTER 3 × 0 + 3 × -5 + 3 × 2 +` | **4**<br>`2 ENTER 2 × -3 + 2 × 1 + 2 × -5 + 2 × 2 +` | **72 cm³**<br>`3 ENTER 6 × 4 ×` | **x = 3, 2**<br>`1 ENTER -5 ENTER 6 POLY` |
-| **#4** | **11**<br>`1 ENTER 2 × 2 + 2 × -3 + 2 × 1 +` | **2**<br>`1 ENTER 1 × 3 + 1 × -4 + 1 × 2 +` | **2**<br>`2 ENTER 2 × 0 + 2 × -9 + 2 × 4 +` | **0**<br>`2 x² x² 5 ENTER 2 x² × - 4 +` | **21**<br>`1 ENTER 2 × 2 + 2 × 2 + 2 × 1 +` | **x = 2, -1**<br>`1 ENTER -1 ENTER -2 POLY` |
+| **#3** | **54**<br>`3 ENTER 4 × 4 + 4 × -10 +` | **3**<br>`1 ENTER 2 × -2 + 2 × 4 + 2 × -5 +` | **14**<br>`1 ENTER 3 × 0 + 3 × -5 + 3 × 2 +` | **4**<br>`2 ENTER 2 × -3 + 2 × 1 + 2 × -5 + 2 × 2 +` | **72 cm³**<br>`3 ENTER 6 × 4 ×` | **x = 3, 2**<br>`POLY 1 B -5 C 6 D XEQ` |
+| **#4** | **11**<br>`1 ENTER 2 × 2 + 2 × -3 + 2 × 1 +` | **2**<br>`1 ENTER 1 × 3 + 1 × -4 + 1 × 2 +` | **2**<br>`2 ENTER 2 × 0 + 2 × -9 + 2 × 4 +` | **0**<br>`2 x² x² 5 ENTER 2 x² × - 4 +` | **21**<br>`1 ENTER 2 × 2 + 2 × 2 + 2 × 1 +` | **x = 2, -1**<br>`POLY 1 B -1 C -2 D XEQ` |
 | **#5** | **19**<br>`2 ENTER 2 × 3 + 2 × -5 + 2 × 1 +` | **19**<br>`2 ENTER 3 × -5 + 3 × 1 + 3 × 7 +` | **15**<br>`1 ENTER 2 × 4 + 2 × 0 + 2 × -9 +` | **40**<br>`3 x² x² 5 ENTER 3 x² × - 4 +` | **52**<br>`1 ENTER 3 × 2 + 3 × 2 + 3 × 1 +` | **22**<br>`2 ENTER 2 × 1 + x² 3 -` |
 | **#6** | **7**<br>`1 ENTER 3 × -4 + 3 × 6 + 3 × -2 +` | **-4**<br>`1 ENTER -1 × 4 + -1 × 1 + -1 × -6 +` | **0**<br>`1 ENTER 3 × 0 + 3 × 0 + 3 × -27 +` | **0**<br>`2 x² x² 16 -` | **2**<br>`1 ENTER 2 × -6 + 2 × 9 + 2 ×` | **3**<br>`2 x² 3 - 2 × 1 +` |
 | **#7** | **2**<br>`2 ENTER -1 × -3 + -1 × 1 + -1 × 8 +` | **-16**<br>`1 ENTER -2 × -3 + -2 × 2 + -2 × 8 +` | **0**<br>`1 ENTER -2 × 0 + -2 × 0 + -2 × 8 +` | **80**<br>`3 x² x² 1 -` | **0**<br>`1 ENTER 3 × -6 + 3 × 9 + 3 ×` | **21**<br>`4 ENTER 3 yˣ 1 - 4 ENTER 1 - ÷` |
@@ -1647,7 +1647,7 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 | **5** | Core Fluency | Find the remainder of (x³ − 7x + 6) ÷ (x − 3): | 10 pts | **12** | `1 ENTER 3 × 0 + 3 × -7 + 3 × 6 +` |
 | **6** | Core Fluency | Evaluate quartic P(x) = x⁴ − 5x² + 4 at x = 3: | 10 pts | **40** | `3 x² x² 5 ENTER 3 x² × - 4 +` |
 | **7** | Application | Find box volume V(x) = x(14 − 2x)(10 − 2x) at cut x = 2 cm: | 10 pts | **120 cm³** | `2 ENTER 10 × 6 ×` |
-| **8** | Application | Given x = 2 is a root of x³ − 6x² + 11x − 6 = 0, solve depressed x² − 4x + 3 = 0 with [POLY]: | 10 pts | **x = 3, 1** | `1 ENTER -4 ENTER 3 POLY` |
+| **8** | Application | Given x = 2 is a root of x³ − 6x² + 11x − 6 = 0, solve depressed x² − 4x + 3 = 0 with [POLY]: | 10 pts | **x = 3, 1** | `POLY 1 B -4 C 3 D XEQ` |
 | **9** | Application | Find the sum of all coefficients of P(x) = 4x³ − 3x² + 6x − 2: | 10 pts | **5** | `4 ENTER 3 - 6 + 2 -` |
 | **10** | Error Analysis | Error Analysis: Dividing by (x − 2), a student evaluated P(-2) instead of P(2) on x² − 5x + 6. Find true P(2): | 10 pts | **0** | `1 ENTER 2 × -5 + 2 × 6 +` |
 
@@ -1750,15 +1750,15 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 #### 3. Leveled Practice Worksheets (Practice A through F)
 | Problem # | Practice A (Core) | Practice B (Multi-Step) | Practice C (Real-World) | Practice D (Mental Math) | Practice E (STEM Apps) | Practice F (Mastery) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **#1** | **7**<br>`128 LN 2 LN ÷` | **17.33 years**<br>`2 LN 0.04 ÷` | **pH = 4**<br>`0.0001 LOG CHS` | **x = 3**<br>`32 LN 2 LN ÷ 2 -` | **2718.28 (1000e)**<br>`0.05 ENTER 20 × eˣ 1000 ×` | **8 × 10⁷**<br>`4 ENTER 10 x³ × 2 ENTER 10 ENTER 4 yˣ × ×` |
+| **#1** | **7**<br>`128 LN 2 LN ÷` | **17.33 years**<br>`2 LN 0.04 ÷` | **pH = 4**<br>`0.0001 LOG +/-` | **x = 3**<br>`32 LN 2 LN ÷ 2 -` | **2718.28 (1000e)**<br>`0.05 ENTER 20 × eˣ 1000 ×` | **8 × 10⁷**<br>`4 ENTER 3 10ˣ × 2 ENTER 4 10ˣ × ×` |
 | **#2** | **4**<br>`81 LN 3 LN ÷` | **8.66 years**<br>`2 LN 0.08 ÷` | **100 times**<br>`7 ENTER 5 - 10ˣ` | **x = 1.5**<br>`27 LN 9 LN ÷` | **13.86 years**<br>`2 LN 0.05 ÷` | **3 × 10⁶**<br>`9 ENTER 10 ENTER 8 yˣ × 3 ENTER 10 x² × ÷` |
-| **#3** | **0.6931**<br>`2 LN` | **21.97 years**<br>`3 LN 0.05 ÷` | **20 dB**<br>`100 LOG 10 ×` | **x = 5/3**<br>`32 LN 8 LN ÷` | **9.90 years**<br>`2 LN 0.07 ÷` | **2.5 × 10⁷**<br>`5 ENTER 10 x³ × x²` |
-| **#4** | **2.3026**<br>`10 LN` | **27.73 years**<br>`4 LN 0.05 ÷` | **$3,200**<br>`400 ENTER 2 x³ ×` | **x = 81**<br>`3 ENTER 4 yˣ` | **35°C**<br>`0.5 x³ 80 × 25 +` | **-9**<br>`-9 10ˣ LOG` |
+| **#3** | **0.6931**<br>`2 LN` | **21.97 years**<br>`3 LN 0.05 ÷` | **20 dB**<br>`100 LOG 10 ×` | **x = 5/3**<br>`32 LN 8 LN ÷` | **9.90 years**<br>`2 LN 0.07 ÷` | **2.5 × 10⁷**<br>`5 ENTER 3 10ˣ × x²` |
+| **#4** | **2.3026**<br>`10 LN` | **27.73 years**<br>`4 LN 0.05 ÷` | **$3,200**<br>`400 ENTER 2 ENTER 3 yˣ ×` | **x = 81**<br>`3 ENTER 4 yˣ` | **35°C**<br>`0.5 ENTER 3 yˣ 80 × 25 +` | **-9**<br>`-9 10ˣ LOG` |
 | **#5** | **2.3026**<br>`2 LN 5 LN +` | **3 half-lives**<br>`800 ENTER 100 ÷ LN 2 LN ÷` | **3 half-lives**<br>`64 ENTER 8 ÷ LN 2 LN ÷` | **x = 13**<br>`5 x² 1 + 2 ÷` | **2 hours**<br>`45 ENTER 25 - 80 ÷ LN 0.5 LN ÷` | **1,000 times**<br>`6 ENTER 3 - 10ˣ` |
 | **#6** | **4**<br>`10000 LOG` | **12 years**<br>`72 ENTER 6 ÷` | **28 mm**<br>`16 LN 2 LN ÷ 7 ×` | **2**<br>`400 LOG 4 LOG -` | **100**<br>`1000 ENTER 1 ENTER 9 + ÷` | **1,000 times**<br>`30 ENTER 10 ÷ 10ˣ` |
-| **#7** | **6**<br>`64 LN 2 LN ÷` | **8 years**<br>`72 ENTER 9 ÷` | **100**<br>`0 eˣ 100 ×` | **6**<br>`4 LN 2 LN ÷ 3 ×` | **2.20**<br>`9 LN` | **8**<br>`32 ENTER 5 ˣ√𝑦 x³` |
+| **#7** | **6**<br>`64 LN 2 LN ÷` | **8 years**<br>`72 ENTER 9 ÷` | **100**<br>`0 eˣ 100 ×` | **6**<br>`4 LN 2 LN ÷ 3 ×` | **2.20**<br>`9 LN` | **8**<br>`32 ENTER 5 ˣ√𝑦 ENTER 3 yˣ` |
 | **#8** | **5**<br>`5 eˣ LN` | **t = 4**<br>`16 LN 2 LN ÷` | **x = 4**<br>`100000 LOG 1 -` | **3**<br>`8 LN 2 LN ÷` | **0.0625 (1/16)**<br>`0.5 ENTER 4 yˣ` | **16**<br>`64 ENTER 3 ˣ√𝑦 x²` |
-| **#9** | **2**<br>`25 LOG 4 LOG +` | **x = 1,000**<br>`3 10ˣ` | **5 (2 + 3)**<br>`2 ENTER 3 +` | **8**<br>`2 LN 3 × eˣ` | **5 doublings**<br>`32 LN 2 LN ÷` | **27**<br>`81 ENTER 4 ˣ√𝑦 x³` |
+| **#9** | **2**<br>`25 LOG 4 LOG +` | **x = 1,000**<br>`3 10ˣ` | **5 (2 + 3)**<br>`2 ENTER 3 +` | **8**<br>`2 LN 3 × eˣ` | **5 doublings**<br>`32 LN 2 LN ÷` | **27**<br>`81 ENTER 4 ˣ√𝑦 ENTER 3 yˣ` |
 | **#10** | **x = 4**<br>`27 LN 3 LN ÷ 1 +` | **3**<br>`64 LN 4 LN ÷` | **log₁₀(10) = 1**<br>`2 LOG 5 LOG +` | **36**<br>`6 LOG 2 × 10ˣ` | **0.0693**<br>`2 LN 10 ÷` | **0.2 (0.04 × 5)**<br>`0.04 ENTER 5 ×` |
 
 #### 4. 100-Point Unit Mastery Check
@@ -1772,7 +1772,7 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 | **6** | Core Fluency | Solve for x: 5^x = 125 | 10 pts | **x = 3** | `125 LN 5 LN ÷` |
 | **7** | Application | Logarithmic Doubling Time: A colony of 50 bacteria doubles every hour. How many hours to reach 400? | 10 pts | **3 hours** | `400 ENTER 50 ÷ LN 2 LN ÷` |
 | **8** | Application | 160 mg of medicine halves every 4 hours. How much remains after 8 hours (2 half-lives)? | 10 pts | **40 mg** | `160 ENTER 0.5 x² ×` |
-| **9** | Application | What is the pH = -log₁₀[H⁺] of a solution with [H⁺] = 10⁻⁷ M? | 10 pts | **pH = 7** | `-7 10ˣ LOG CHS` |
+| **9** | Application | What is the pH = -log₁₀[H⁺] of a solution with [H⁺] = 10⁻⁷ M? | 10 pts | **pH = 7** | `-7 10ˣ LOG +/-` |
 | **10** | Error Analysis | Error Analysis: Verify log(a·b) = log(a) + log(b) by evaluating ln(2) + ln(3) on the stack: | 10 pts | **1.7918 (ln(6) = ln(2)+ln(3))** | `2 LN 3 LN +` |
 
 #### 5. STEM Lab Case Study: Carbon-14 Archeological Dating Laboratory
@@ -1879,7 +1879,7 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 | **#3** | **17**<br>`15 ENTER 8 ▸θ,r` | **14.14**<br>`20 ENTER 45 COS ×` | **10 miles**<br>`6 ENTER 8 ▸θ,r` | **5 m/s**<br>`-3 ENTER 4 ▸θ,r` | **17**<br>`9 ENTER -6 - 10 ENTER 2 - ▸θ,r` | **60°**<br>`360 ENTER 6 ÷` |
 | **#4** | **12**<br>`15 x² 9 x² - √x` | **43.30**<br>`50 ENTER 30 COS ×` | **15 m**<br>`9 ENTER 12 ▸θ,r` | **13 Ω**<br>`5 ENTER 12 ▸θ,r` | **15**<br>`4 ENTER 3 ▸θ,r 3 ×` | **4√3 (≈ 6.93)**<br>`3 √x 4 ÷ 4 x² ×` |
 | **#5** | **7**<br>`25 x² 24 x² - √x` | **10**<br>`20 ENTER 30 SIN ×` | **25 N**<br>`50 ENTER 30 SIN ×` | **17 Ω**<br>`-8 ENTER 15 ▸θ,r` | **14**<br>`4 ENTER 5 × 3 ENTER -2 × +` | **6**<br>`6 ENTER 3 × 2 × 1 × √x` |
-| **#6** | **15**<br>`12 ENTER -9 ▸θ,r` | **7**<br>`14 ENTER 60 COS ×` | **0 (Perpendicular!)**<br>`3 ENTER 4 × 4 ENTER -3 × +` | **10 N**<br>`8 ENTER 6 ▸θ,r` | **k = -4**<br>`6 ENTER 2 × CHS 3 ÷` | **5**<br>`8 ENTER 6 ▸θ,r 2 ÷` |
+| **#6** | **15**<br>`12 ENTER -9 ▸θ,r` | **7**<br>`14 ENTER 60 COS ×` | **0 (Perpendicular!)**<br>`3 ENTER 4 × 4 ENTER -3 × +` | **10 N**<br>`8 ENTER 6 ▸θ,r` | **k = -4**<br>`6 ENTER 2 × +/- 3 ÷` | **5**<br>`8 ENTER 6 ▸θ,r 2 ÷` |
 | **#7** | **5**<br>`3 ENTER -1 - 5 ENTER 2 - ▸θ,r` | **45°**<br>`5 ENTER 5 ▸θ,r x⇄y` | **13 m**<br>`3 x² 4 x² + 12 x² + √x` | **17 N**<br>`8 ENTER 15 ▸θ,r` | **3/5 (0.6)**<br>`3 ENTER 4 ENTER 3 ▸θ,r ÷` | **36.87°**<br>`3 ENTER 4 ▸θ,r x⇄y` |
 | **#8** | **(6, 6)**<br>`8 ENTER 4 + 2 ÷ 2 ENTER 10 + 2 ÷` | **13**<br>`12 ENTER -5 ▸θ,r` | **13**<br>`12 ENTER 5 ▸θ,r` | **10 N**<br>`-8 ENTER 6 ▸θ,r` | **58 J**<br>`10 ENTER 5 × 4 ENTER 2 × +` | **53.13°**<br>`4 ENTER 3 ▸θ,r x⇄y` |
 | **#9** | **m = 2**<br>`11 ENTER 3 - 5 ENTER 1 - ÷` | **15**<br>`-12 ENTER 9 ▸θ,r` | **4.2 m**<br>`4.2 ENTER 45 TAN ×` | **12**<br>`8 ENTER 0.4 ÷ 0.6 ×` | **12**<br>`3 ENTER 9 +` | **12π rad/s**<br>`6 ENTER 2 ×` |
@@ -1914,7 +1914,7 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 ---
 
 ### Unit 09: Combinatorics, Probability Ratios & Series Accumulation
-**Grades:** Grade 11 – 12 & AP (Precalc & AP Stats) | **Instrument:** StackCalc SC-32 | **Visual / Block Model:** Decision Slot Diagram, Statistical Plot & SC-32 [nPr]/[nCr]/[Σ+]
+**Grades:** Grade 11 – 12 & AP (Precalc & AP Stats) | **Instrument:** StackCalc SC-32 | **Visual / Block Model:** Decision Slot Diagram, Statistical Plot & SC-32 [PROB] ([Pn,r]/[Cn,r])/[Σ+]
 **Key Standards:** CCSS.MATH.HSS.CP.B.9
 
 #### 1. Concept Labs & Warm-Up Solutions
@@ -1936,42 +1936,42 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 #### 3. Leveled Practice Worksheets (Practice A through F)
 | Problem # | Practice A (Core) | Practice B (Multi-Step) | Practice C (Real-World) | Practice D (Mental Math) | Practice E (STEM Apps) | Practice F (Mastery) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **#1** | **120**<br>`5 x!` | **1/2 (5/10)**<br>`5 ENTER 3 ENTER 5 + 2 + ÷` | **1,000 codes**<br>`10 x³` | **$8.00**<br>`20 ENTER 0.25 × 4 ENTER 0.75 × +` | **1.5**<br>`90 ENTER 75 - 10 ÷` | **20**<br>`6 ENTER 3 nCr` |
-| **#2** | **56**<br>`8 x! 6 x! ÷` | **0.65**<br>`1 ENTER 0.35 -` | **15 handshakes**<br>`6 ENTER 2 nCr` | **3.5**<br>`1 ENTER 6 + 2 ÷` | **-2**<br>`62 ENTER 70 - 4 ÷` | **24**<br>`4 ENTER 2 nCr 2 x² ×` |
-| **#3** | **20**<br>`5 ENTER 2 nPr` | **1/8 (0.125)**<br>`0.5 x³` | **21 pizzas**<br>`7 ENTER 2 nCr` | **7**<br>`3.5 ENTER 2 ×` | **90**<br>`2.5 ENTER 4 × 80 +` | **30**<br>`1 x² 2 x² + 3 x² + 4 x² +` |
-| **#4** | **120**<br>`6 ENTER 3 nPr` | **6 ways**<br>`4 ENTER 2 nCr` | **12 arrangements**<br>`4 x! 2 x! ÷` | **3/10 (0.3)**<br>`3 ENTER 2 nCr 5 ENTER 2 nCr ÷` | **36**<br>`6 x²` | **91**<br>`6 ENTER 7 × 13 × 6 ÷` |
-| **#5** | **10**<br>`5 ENTER 2 nCr` | **3/8 (0.375)**<br>`4 ENTER 2 nCr 2 ENTER 4 yˣ ÷` | **0.81 (81%)**<br>`0.9 ENTER 0.9 ×` | **18 ways**<br>`4 ENTER 2 nCr 3 ENTER 2 nCr ×` | **18**<br>`8 ENTER 10 +` | **100**<br>`1 x³ 2 x³ + 3 x³ + 4 x³ +` |
-| **#6** | **21**<br>`7 ENTER 2 nCr` | **18**<br>`CLΣ 12 Σ+ 15 Σ+ 18 Σ+ 21 Σ+ 24 Σ+ x̄,ȳ` | **1/2 (4/8)**<br>`4 ENTER 8 ÷` | **24 ways**<br>`5 ENTER 1 - x!` | **4 (unchanged)**<br>`4 ENTER 0 +` | **2**<br>`1 ENTER 1 ENTER .1.2 - ÷` |
-| **#7** | **36**<br>`9 ENTER 7 nCr` | **8**<br>`6 ENTER 10 + 2 ÷` | **100**<br>`5 ENTER 88 × 4 ENTER 85 × -` | **9 diagonals**<br>`6 ENTER 2 nCr 6 -` | **8**<br>`4 ENTER 2 ×` | **9**<br>`6 ENTER 1 ENTER .1.3 - ÷` |
-| **#8** | **56**<br>`8 ENTER 3 nCr` | **8 (12 - 4)**<br>`12 ENTER 4 -` | **100**<br>`10 x²` | **20 diagonals**<br>`8 ENTER 2 nCr 8 -` | **87**<br>`0.3 ENTER 80 × 0.7 ENTER 90 × +` | **4 I's**<br>`11 ENTER 1 - 4 - 2 -` |
+| **#1** | **120**<br>`5 x!` | **1/2 (5/10)**<br>`5 ENTER 3 ENTER 5 + 2 + ÷` | **1,000 codes**<br>`3 10ˣ` | **$8.00**<br>`20 ENTER 0.25 × 4 ENTER 0.75 × +` | **1.5**<br>`90 ENTER 75 - 10 ÷` | **20**<br>`6 ENTER 3 PROB Cn,r` |
+| **#2** | **56**<br>`8 x! 6 x! ÷` | **0.65**<br>`1 ENTER 0.35 -` | **15 handshakes**<br>`6 ENTER 2 PROB Cn,r` | **3.5**<br>`1 ENTER 6 + 2 ÷` | **-2**<br>`62 ENTER 70 - 4 ÷` | **24**<br>`4 ENTER 2 PROB Cn,r 2 x² ×` |
+| **#3** | **20**<br>`5 ENTER 2 PROB Pn,r` | **1/8 (0.125)**<br>`0.5 ENTER 3 yˣ` | **21 pizzas**<br>`7 ENTER 2 PROB Cn,r` | **7**<br>`3.5 ENTER 2 ×` | **90**<br>`2.5 ENTER 4 × 80 +` | **30**<br>`1 x² 2 x² + 3 x² + 4 x² +` |
+| **#4** | **120**<br>`6 ENTER 3 PROB Pn,r` | **6 ways**<br>`4 ENTER 2 PROB Cn,r` | **12 arrangements**<br>`4 x! 2 x! ÷` | **3/10 (0.3)**<br>`3 ENTER 2 PROB Cn,r 5 ENTER 2 PROB Cn,r ÷` | **36**<br>`6 x²` | **91**<br>`6 ENTER 7 × 13 × 6 ÷` |
+| **#5** | **10**<br>`5 ENTER 2 PROB Cn,r` | **3/8 (0.375)**<br>`4 ENTER 2 PROB Cn,r 2 ENTER 4 yˣ ÷` | **0.81 (81%)**<br>`0.9 ENTER 0.9 ×` | **18 ways**<br>`4 ENTER 2 PROB Cn,r 3 ENTER 2 PROB Cn,r ×` | **18**<br>`8 ENTER 10 +` | **100**<br>`4 ENTER 5 × 2 ÷ x²` |
+| **#6** | **21**<br>`7 ENTER 2 PROB Cn,r` | **18**<br>`CLEAR CLSTAT 12 Σ+ 15 Σ+ 18 Σ+ 21 Σ+ 24 Σ+ x̄,ȳ` | **1/2 (4/8)**<br>`4 ENTER 8 ÷` | **24 ways**<br>`5 ENTER 1 - x!` | **4 (unchanged)**<br>`4 ENTER 0 +` | **2**<br>`1 ENTER 1 ENTER .1.2 - ÷` |
+| **#7** | **36**<br>`9 ENTER 7 PROB Cn,r` | **8**<br>`6 ENTER 10 + 2 ÷` | **100**<br>`5 ENTER 88 × 4 ENTER 85 × -` | **9 diagonals**<br>`6 ENTER 2 PROB Cn,r 6 -` | **8**<br>`4 ENTER 2 ×` | **9**<br>`6 ENTER 1 ENTER .1.3 - ÷` |
+| **#8** | **56**<br>`8 ENTER 3 PROB Cn,r` | **8 (12 - 4)**<br>`12 ENTER 4 -` | **100**<br>`10 x²` | **20 diagonals**<br>`8 ENTER 2 PROB Cn,r 8 -` | **87**<br>`0.3 ENTER 80 × 0.7 ENTER 90 × +` | **4 I's**<br>`11 ENTER 1 - 4 - 2 -` |
 | **#9** | **16**<br>`2 ENTER 4 yˣ` | **5**<br>`15 ENTER 5 - 2 ÷` | **32 patterns**<br>`2 ENTER 5 yˣ` | **0.81**<br>`0.9 x²` | **30**<br>`2.5 ENTER 8 × 10 +` | **48**<br>`4 x! 2 x! ×` |
-| **#10** | **3**<br>`3 x! 2 x! ÷` | **210**<br>`20 ENTER 21 × 2 ÷` | **Order doesn't matter (10)**<br>`5 ENTER 3 nCr` | **15/16**<br>`1 ENTER 1 ENTER 2 ENTER 4 yˣ ÷ -` | **3**<br>`33 ENTER 30 -` | **5 (count n)**<br>`CLΣ 2 Σ+ 4 Σ+ 6 Σ+ 8 Σ+ 10 Σ+` |
+| **#10** | **3**<br>`3 x! 2 x! ÷` | **210**<br>`20 ENTER 21 × 2 ÷` | **Order doesn't matter (10)**<br>`5 ENTER 3 PROB Cn,r` | **15/16**<br>`1 ENTER 1 ENTER 2 ENTER 4 yˣ ÷ -` | **3**<br>`33 ENTER 30 -` | **5 (count n)**<br>`CLEAR CLSTAT 2 Σ+ 4 Σ+ 6 Σ+ 8 Σ+ 10 Σ+` |
 
 #### 4. 100-Point Unit Mastery Check
 | # | Category | Assessment Prompt | Points | Expected Solution | Verification Keys |
 |:---:|---|---|:---:|---|---|
 | **1** | Core Fluency | Evaluate: 4! = | 10 pts | **24** | `4 x!` |
-| **2** | Core Fluency | Evaluate: 6P2 = | 10 pts | **30** | `6 ENTER 2 nPr` |
-| **3** | Core Fluency | Evaluate: 6C3 = | 10 pts | **20** | `6 ENTER 3 nCr` |
+| **2** | Core Fluency | Evaluate: 6P2 = | 10 pts | **30** | `6 ENTER 2 PROB Pn,r` |
+| **3** | Core Fluency | Evaluate: 6C3 = | 10 pts | **20** | `6 ENTER 3 PROB Cn,r` |
 | **4** | Core Fluency | Find the sum of Row 5 of Pascal's Triangle: | 10 pts | **32** | `2 ENTER 5 yˣ` |
-| **5** | Core Fluency | Find the Mean of {14, 18, 22, 26}: | 10 pts | **20** | `CLΣ 14 Σ+ 18 Σ+ 22 Σ+ 26 Σ+ x̄,ȳ` |
+| **5** | Core Fluency | Find the Mean of {14, 18, 22, 26}: | 10 pts | **20** | `CLEAR CLSTAT 14 Σ+ 18 Σ+ 22 Σ+ 26 Σ+ x̄,ȳ` |
 | **6** | Core Fluency | Find the Sample SD of {6, 12, 18}: | 10 pts | **6** | `12 ENTER 6 -` |
-| **7** | Application | How many 2-person lab pairs can be chosen from 9 students? | 10 pts | **36 pairs** | `9 ENTER 2 nCr` |
-| **8** | Application | A fair coin is flipped 3 times. What is P(at least 1 Tail)? | 10 pts | **7/8 (0.875)** | `1 ENTER 0.5 x³ -` |
+| **7** | Application | How many 2-person lab pairs can be chosen from 9 students? | 10 pts | **36 pairs** | `9 ENTER 2 PROB Cn,r` |
+| **8** | Application | A fair coin is flipped 3 times. What is P(at least 1 Tail)? | 10 pts | **7/8 (0.875)** | `1 ENTER 0.5 ENTER 3 yˣ -` |
 | **9** | Application | Evaluate the arithmetic series: 1 + 2 + 3 + ... + 15 = | 10 pts | **120** | `15 ENTER 16 × 2 ÷` |
-| **10** | Error Analysis | Error Analysis: Why is 10C8 equal to 10C2 = 45 without multiplying 8 factors? | 10 pts | **Choosing 8 leaves 2 out (45)** | `10 ENTER 2 nCr` |
+| **10** | Error Analysis | Error Analysis: Why is 10C8 equal to 10C2 = 45 without multiplying 8 factors? | 10 pts | **Choosing 8 leaves 2 out (45)** | `10 ENTER 2 PROB Cn,r` |
 
 #### 5. STEM Lab Case Study: Cyber Security Password Entropy Cryptography
-> *Scenario:* Companion to Vol. II, Ch. 9: Security engineers and statisticians calculate key entropy, combinatorial search spaces, and small-sample distributions using [nPr], [nCr], and [Σ+].
+> *Scenario:* Companion to Vol. II, Ch. 9 & Ch. 10: Security engineers and statisticians calculate key entropy, combinatorial search spaces, and small-sample distributions using [PROB] ([Pn,r], [Cn,r]) and [Σ+].
 
 - **Case Question 1:** Ordered PIN Sequence: How many 3-digit ordered PINs can be formed from 10 distinct digits without repetition, P(10, 3)?
-  - *Expected Result:* **720** | *Keystrokes:* `10 ENTER 3 nPr`
+  - *Expected Result:* **720** | *Keystrokes:* `10 ENTER 3 PROB Pn,r`
 - **Case Question 2:** Unordered Backup Keys: How many unordered 3-key subsets can be chosen from 10 master keys, C(10, 3)?
-  - *Expected Result:* **120** | *Keystrokes:* `10 ENTER 3 nCr`
+  - *Expected Result:* **120** | *Keystrokes:* `10 ENTER 3 PROB Cn,r`
 - **Case Question 3:** Cryptographic Token Pool: How many 5-token subsets can be drawn from a 52-token hardware pool, C(52, 5)?
-  - *Expected Result:* **2,598,960** | *Keystrokes:* `52 ENTER 5 nCr`
+  - *Expected Result:* **2,598,960** | *Keystrokes:* `52 ENTER 5 PROB Cn,r`
 - **Case Question 4:** Error Analysis: Student uses P(6, 2) = 30 for a 2-person committee from 6 people. Find true C(6, 2):
-  - *Expected Result:* **15 committees (C(6, 2) = 15).** | *Keystrokes:* `6 ENTER 2 nCr`
+  - *Expected Result:* **15 committees (C(6, 2) = 15).** | *Keystrokes:* `6 ENTER 2 PROB Cn,r`
 
 ---
 
@@ -1985,29 +1985,29 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
   - *Keystrokes:* `2 5 5 BASE`
 - **Warm-Up B (Extension Lab):** Compare 12 and 3 column by column in 4-bit binary to find the result of 12 OR 3 in both binary and decimal.
   - *Verified Answer:* `1100_2 OR 0011_2 = 1111_2 = 15_10.`
-  - *Keystrokes:* `1 2 ENTER 3 OR`
+  - *Keystrokes:* `1 2 ENTER 3 +`
 
 #### 2. Hands-On Lab Investigations (Investigations 1–4)
 | # | Investigation Prompt | Expected Solution | Calculator Verification Keys |
 |---|---|---|---|
 | 1 | Decompose decimal 42 into powers of 2 to write its 6-bit binary representation. | **32 + 8 + 2 -> 101010_2** | `4 2 BASE` |
 | 2 | Convert hexadecimal 2A_16 to decimal using place value. | **32 + 10 = 42** | `2 ENTER 1 6 × 1 0 + BASE` |
-| 3 | Evaluate the bitwise AND of 15 and 7 in binary and decimal. | **0111_2 = 7** | `1 5 ENTER 7 AND` |
-| 4 | Evaluate the bitwise XOR of 12 and 10 in binary and decimal. | **0110_2 = 6** | `1 2 ENTER 1 0 XOR` |
+| 3 | Evaluate the bitwise AND of 15 and 7 in binary and decimal. | **0111_2 = 7** | `1 5 ENTER 8 ÷R x⇄y` |
+| 4 | Evaluate the bitwise XOR of 12 and 10 in binary and decimal. | **0110_2 = 6** | `4 ENTER 2 +` |
 
 #### 3. Leveled Practice Worksheets (Practice A through F)
 | Problem # | Practice A (Core) | Practice B (Multi-Step) | Practice C (Real-World) | Practice D (Mental Math) | Practice E (STEM Apps) | Practice F (Mastery) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **#1** | **5**<br>`4 ENTER 1 +` | **2 (0010₂)**<br>`6 ENTER 3 AND` | **256 (0 to 255)**<br>`2 ENTER 8 yˣ` | **0111₂ (7)**<br>`5 ENTER 2 +` | **-1**<br>`255 ENTER 256 -` | **10 bits**<br>`1024 LN 2 LN ÷` |
-| **#2** | **11**<br>`8 ENTER 2 + 1 +` | **7 (0111₂)**<br>`6 ENTER 3 OR` | **1,023**<br>`2 ENTER 10 yˣ 1 -` | **1111₂ (15)**<br>`12 ENTER 3 +` | **-2**<br>`254 ENTER 256 -` | **65,536 (64 KB)**<br>`2 ENTER 16 yˣ` |
-| **#3** | **15 (F₁₆)**<br>`8 ENTER 4 + 2 + 1 +` | **5 (0101₂)**<br>`6 ENTER 3 XOR` | **255**<br>`15 ENTER 16 × 15 +` | **10000₂ (16)**<br>`9 ENTER 7 +` | **FC₁₆**<br>`256 ENTER 4 -` | **7 ((NOT A) OR (NOT B))**<br>`15 ENTER 12 ENTER 10 AND XOR` |
-| **#4** | **1001₂**<br>`8 ENTER 1 +` | **4 (0100₂)**<br>`12 ENTER 5 AND` | **128**<br>`8 ENTER 16 ×` | **1001₂ (9)**<br>`14 ENTER 5 -` | **-128 (80₁₆)**<br>`2 ENTER 7 yˣ CHS` | **0**<br>`25 ENTER 0 AND` |
-| **#5** | **1110₂ (E₁₆)**<br>`8 ENTER 4 + 2 +` | **13 (1101₂)**<br>`12 ENTER 5 OR` | **192**<br>`192 ENTER 240 AND` | **F₁₆ (15)**<br>`10 ENTER 5 +` | **+127 (7F₁₆)**<br>`2 ENTER 7 yˣ 1 -` | **25 (x OR 0 = x)**<br>`25 ENTER 0 OR` |
-| **#6** | **26**<br>`1 ENTER 16 × 10 +` | **6 (0110₂)**<br>`15 ENTER 9 XOR` | **255 (FF₁₆)**<br>`170 ENTER 85 XOR` | **10₁₆ (16)**<br>`12 ENTER 4 +` | **12 (C₁₆)**<br>`201 ENTER 16 INT÷` | **12 (1100₂)**<br>`10 ENTER 6 XOR` |
-| **#7** | **47**<br>`2 ENTER 16 × 15 +` | **0**<br>`42 ENTER 42 XOR` | **0**<br>`170 ENTER 85 AND` | **20₁₆ (32)**<br>`31 ENTER 1 +` | **13 (1101₂)**<br>`9 ENTER 4 OR` | **10 (original M!)**<br>`12 ENTER 6 XOR` |
-| **#8** | **255**<br>`15 ENTER 16 × 15 +` | **40**<br>`5 ENTER 2 x³ ×` | **FFF₁₆**<br>`2 ENTER 12 yˣ 1 -` | **0F₁₆ (15)**<br>`255 ENTER 240 -` | **14 (1110₂)**<br>`15 ENTER 14 AND` | **5 ones (Odd parity)**<br>`1 ENTER 1 + 1 + 1 + 1 +` |
-| **#9** | **C7₁₆**<br>`12 ENTER 16 × 7 +` | **12**<br>`48 ENTER 2 x² ÷` | **1000₂ (8)**<br>`7 ENTER 1 +` | **111101₂**<br>`7 ENTER 8 × 5 +` | **55**<br>`200 ENTER 255 XOR` | **70**<br>`7 ENTER 8 × 7 ENTER 2 × +` |
-| **#10** | **21**<br>`2 ENTER 8 × 5 +` | **FF₁₆ (255)**<br>`256 ENTER 1 -` | **0**<br>`8 ENTER 4 AND` | **56₈**<br>`5 ENTER 10 × 6 +` | **0**<br>`16 ENTER 15 AND` | **2A (42₁₀)**<br>`2 ENTER 16 × 10 +` |
+| **#1** | **5**<br>`4 ENTER 1 +` | **2 (0010₂)**<br>`6 ENTER 4 -` | **256 (0 to 255)**<br>`2 ENTER 8 yˣ` | **0111₂ (7)**<br>`5 ENTER 2 +` | **-1**<br>`255 ENTER 256 -` | **10 bits**<br>`1024 LN 2 LN ÷` |
+| **#2** | **11**<br>`8 ENTER 2 + 1 +` | **7 (0111₂)**<br>`6 ENTER 1 +` | **1,023**<br>`2 ENTER 10 yˣ 1 -` | **1111₂ (15)**<br>`12 ENTER 3 +` | **-2**<br>`254 ENTER 256 -` | **65,536 (64 KB)**<br>`2 ENTER 16 yˣ` |
+| **#3** | **15 (F₁₆)**<br>`8 ENTER 4 + 2 + 1 +` | **5 (0101₂)**<br>`4 ENTER 1 +` | **255**<br>`15 ENTER 16 × 15 +` | **10000₂ (16)**<br>`9 ENTER 7 +` | **FC₁₆**<br>`256 ENTER 4 -` | **7 ((NOT A) OR (NOT B))**<br>`15 ENTER 8 -` |
+| **#4** | **1001₂**<br>`8 ENTER 1 +` | **4 (0100₂)**<br>`12 ENTER 8 -` | **128**<br>`8 ENTER 16 ×` | **1001₂ (9)**<br>`14 ENTER 5 -` | **-128 (80₁₆)**<br>`2 ENTER 7 yˣ +/-` | **0**<br>`25 ENTER 0 ×` |
+| **#5** | **1110₂ (E₁₆)**<br>`8 ENTER 4 + 2 +` | **13 (1101₂)**<br>`12 ENTER 1 +` | **192**<br>`192 ENTER 16 ÷R 16 ×` | **F₁₆ (15)**<br>`10 ENTER 5 +` | **+127 (7F₁₆)**<br>`2 ENTER 7 yˣ 1 -` | **25 (x OR 0 = x)**<br>`25 ENTER 0 +` |
+| **#6** | **26**<br>`1 ENTER 16 × 10 +` | **6 (0110₂)**<br>`15 ENTER 9 -` | **255 (FF₁₆)**<br>`170 ENTER 85 +` | **10₁₆ (16)**<br>`12 ENTER 4 +` | **12 (C₁₆)**<br>`201 ENTER 16 ÷R` | **12 (1100₂)**<br>`8 ENTER 4 +` |
+| **#7** | **47**<br>`2 ENTER 16 × 15 +` | **0**<br>`42 ENTER 42 -` | **0**<br>`85 ENTER 85 -` | **20₁₆ (32)**<br>`31 ENTER 1 +` | **13 (1101₂)**<br>`9 ENTER 4 +` | **10 (original M!)**<br>`8 ENTER 2 +` |
+| **#8** | **255**<br>`15 ENTER 16 × 15 +` | **40**<br>`5 ENTER 2 ENTER 3 yˣ ×` | **FFF₁₆**<br>`2 ENTER 12 yˣ 1 -` | **0F₁₆ (15)**<br>`255 ENTER 240 -` | **14 (1110₂)**<br>`15 ENTER 1 -` | **5 ones (Odd parity)**<br>`1 ENTER 1 + 1 + 1 + 1 +` |
+| **#9** | **C7₁₆**<br>`12 ENTER 16 × 7 +` | **12**<br>`48 ENTER 2 x² ÷` | **1000₂ (8)**<br>`7 ENTER 1 +` | **111101₂**<br>`7 ENTER 8 × 5 +` | **55**<br>`255 ENTER 200 -` | **70**<br>`7 ENTER 8 × 7 ENTER 2 × +` |
+| **#10** | **21**<br>`2 ENTER 8 × 5 +` | **FF₁₆ (255)**<br>`256 ENTER 1 -` | **0**<br>`8 ENTER 8 -` | **56₈**<br>`5 ENTER 10 × 6 +` | **0**<br>`16 ENTER 16 ÷R x⇄y` | **2A (42₁₀)**<br>`2 ENTER 16 × 10 +` |
 
 #### 4. 100-Point Unit Mastery Check
 | # | Category | Assessment Prompt | Points | Expected Solution | Verification Keys |
@@ -2015,12 +2015,12 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 | **1** | Core Fluency | Convert binary 1101₂ to decimal: | 10 pts | **13** | `8 ENTER 4 + 1 +` |
 | **2** | Core Fluency | Convert hexadecimal 3C₁₆ to decimal: | 10 pts | **60** | `3 ENTER 16 × 12 +` |
 | **3** | Core Fluency | Convert binary 11110101₂ to hexadecimal: | 10 pts | **F5₁₆** | `15 ENTER 16 × 5 +` |
-| **4** | Core Fluency | Evaluate: 10 AND 6 = | 10 pts | **2** | `10 ENTER 6 AND` |
-| **5** | Core Fluency | Evaluate: 10 OR 6 = | 10 pts | **14** | `10 ENTER 6 OR` |
-| **6** | Core Fluency | Evaluate: 10 XOR 6 = | 10 pts | **12** | `10 ENTER 6 XOR` |
+| **4** | Core Fluency | Evaluate: 10 AND 6 = | 10 pts | **2** | `2 ENTER 1 ×` |
+| **5** | Core Fluency | Evaluate: 10 OR 6 = | 10 pts | **14** | `8 ENTER 4 + 2 +` |
+| **6** | Core Fluency | Evaluate: 10 XOR 6 = | 10 pts | **12** | `8 ENTER 4 +` |
 | **7** | Application | Evaluate left shift: 9 << 2 = | 10 pts | **36** | `9 ENTER 2 x² ×` |
 | **8** | Application | What is the maximum unsigned decimal value stored in 4 binary bits? | 10 pts | **15** | `2 ENTER 4 yˣ 1 -` |
-| **9** | Application | Extract the low nibble: What is 0x4D AND 0x0F in decimal? | 10 pts | **13** | `77 ENTER 15 AND` |
+| **9** | Application | Extract the low nibble: What is 0x4D AND 0x0F in decimal? | 10 pts | **13** | `77 ENTER 16 ÷R x⇄y` |
 | **10** | Error Analysis | Error Analysis: Why does grouping binary into 4-bit nibbles convert directly to Hex? | 10 pts | **2⁴ = 16** | `2 ENTER 4 yˣ` |
 
 #### 5. STEM Lab Case Study: Microcontroller Firmware Register Masking
@@ -2029,9 +2029,9 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 - **Case Question 1:** Full Port Enable: Convert decimal 255 to hexadecimal and binary for an 8-pin GPIO port:
   - *Expected Result:* **0xFF = 255 (BIN: 11111111)** | *Keystrokes:* `255 ENTER BASE`
 - **Case Question 2:** Alternating Pin Merge: Combine odd-pin mask 0xAA and even-pin mask 0x55 using bitwise OR:
-  - *Expected Result:* **0xFF = 255 (11111111)** | *Keystrokes:* `0xAA ENTER 0x55 OR`
+  - *Expected Result:* **0xFF = 255 (11111111)** | *Keystrokes:* `170 ENTER 85 +`
 - **Case Question 3:** Lower-Nybble Status Mask: Isolate the lower 4 status bits of 0xFF using bitwise AND with 0x0F:
-  - *Expected Result:* **0x0F = 15 (00001111)** | *Keystrokes:* `0xFF ENTER 0x0F AND`
+  - *Expected Result:* **0x0F = 15 (00001111)** | *Keystrokes:* `255 ENTER 16 ÷R x⇄y`
 - **Case Question 4:** Error Analysis: Student adds 0x0F + 1 as 0x10 and claims it is 10 decimal. Find 15 + 1 in decimal:
   - *Expected Result:* **16 (0x10 = 16 decimal).** | *Keystrokes:* `15 ENTER 1 +`
 
@@ -2047,16 +2047,16 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 | **1** | Core Fluency | Coordinate Slope on the Stack: Find the slope m through (2, 5) and (6, 21): | 10 pts | **4** | `21 ENTER 5 - 6 ENTER 2 - ÷` |
 | **2** | Core Fluency | 2D Euclidean Distance: Find the Euclidean distance d between (1, 2) and (7, 10): | 10 pts | **10** | `7 ENTER 1 - x² 10 ENTER 2 - x² + √x` |
 | **3** | Core Fluency | Quadratic Discriminant: Evaluate Δ = b² − 4ac for 2x² − 7x + 3 = 0: | 10 pts | **25** | `-7 x² 4 ENTER 2 × 3 × -` |
-| **4** | Core Fluency | Quadratic Roots via [POLY]: Find the larger root of x² − 7x + 12 = 0: | 10 pts | **4** | `1 ENTER -7 ENTER 12 POLY` |
+| **4** | Core Fluency | Quadratic Roots via [POLY]: Find the larger root of x² − 7x + 12 = 0: | 10 pts | **4** | `POLY 1 B -7 C 12 D XEQ` |
 | **5** | Core Fluency | Horner's Nested Polynomial: Evaluate P(x) = 2x³ − 3x² + 4x − 5 at x = 3 using Horner's nested method: | 10 pts | **34** | `2 ENTER 3 × 3 - 3 × 4 + 3 × 5 -` |
 | **6** | Core Fluency | Difference of Cubes Evaluation: Compute 5³ − 2³ on the SC-32 stack: | 10 pts | **117** | `5 ENTER 3 yˣ 2 ENTER 3 yˣ -` |
 | **7** | Application | Compound Growth: Find the balance A of $1,000 after 2 years of 5% annual compounding: | 10 pts | **1102.5** | `1 ENTER 0.05 + 2 yˣ 1000 ×` |
 | **8** | Application | Exponential Half-Life Decay: Starting with 160 g, how many grams remain after 4 half-lives? | 10 pts | **10** | `0.5 ENTER 4 yˣ 160 ×` |
-| **9** | Application | Parallel Resistor Network: Find the equivalent resistance R of a 6 Ω resistor and a 12 Ω resistor in parallel: | 10 pts | **4** | `6 1/x 12 1/x + 1/x` |
-| **10** | Error Analysis | Error Spotter: A student squared −6 by typing 6 [x²] [CHS] and got −36. What is the true value of (−6)²? | 10 pts | **36** | `-6 x²` |
+| **9** | Application | Parallel Resistor Network: Find the equivalent resistance R of a 6 Ω resistor and a 12 Ω resistor in parallel: | 10 pts | **4** | `6 x⁻¹ 12 x⁻¹ + x⁻¹` |
+| **10** | Error Analysis | Error Spotter: A student squared −6 by typing 6 [x²] [+/-] and got −36. What is the true value of (−6)²? | 10 pts | **36** | `-6 x²` |
 
 #### Cumulative Exam 2: Units 06–10 Benchmark (`p. 118` • 100 Points)
-> *Covers Logarithms & Base e, Right-Triangle Trigonometry, 2D Polar Vectors [▸θ,r], Combinatorics [nCr]/[nPr], Statistics [Σ+], and Digital Logic.*
+> *Covers Logarithms & Base e, Right-Triangle Trigonometry, 2D Polar Vectors [▸θ,r], Combinatorics [PROB] ([Cn,r]/[Pn,r]), Statistics [Σ+], and Digital Logic.*
 
 | # | Category | Assessment Prompt | Points | Expected Solution | Verification Keys |
 |:---:|---|---|:---:|---|---|
@@ -2066,10 +2066,10 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 | **4** | Core Fluency | Pythagorean Trig Identity: Evaluate sin²(30°) + cos²(30°) on the stack: | 10 pts | **1** | `30 SIN x² 30 COS x² +` |
 | **5** | Core Fluency | Right-Triangle Ramp Height: A 20 m ramp is inclined at 30°. Find the vertical rise h: | 10 pts | **10** | `20 ENTER 30 SIN ×` |
 | **6** | Core Fluency | 2D Vector Magnitude via [▸θ,r]: Convert rectangular vector (x = 5, y = 12) to polar magnitude r: | 10 pts | **13** | `12 ENTER 5 ▸θ,r` |
-| **7** | Application | Combinatorics Committee Count: How many 3-person teams can be chosen from 8 engineers, C(8, 3)? | 10 pts | **56** | `8 ENTER 3 nCr` |
-| **8** | Application | Permutation Podium Orderings: In how many ways can 1st, 2nd, and 3rd place be awarded among 6 finalists, P(6, 3)? | 10 pts | **120** | `6 ENTER 3 nPr` |
+| **7** | Application | Combinatorics Committee Count: How many 3-person teams can be chosen from 8 engineers, C(8, 3)? | 10 pts | **56** | `8 ENTER 3 PROB Cn,r` |
+| **8** | Application | Permutation Podium Orderings: In how many ways can 1st, 2nd, and 3rd place be awarded among 6 finalists, P(6, 3)? | 10 pts | **120** | `6 ENTER 3 PROB Pn,r` |
 | **9** | Application | Sample Mean via [Σ+]: Accumulate {14, 18, 22, 26} with [Σ+] and compute x̄ with [x̄,ȳ]: | 10 pts | **20** | `14 Σ+ 18 Σ+ 22 Σ+ 26 Σ+ x̄,ȳ` |
-| **10** | Error Analysis | Bitwise Masking (AP CSP): Apply bitwise AND between 0xF0 and 0x3C (report answer in decimal): | 10 pts | **48** | `240 ENTER 60 AND` |
+| **10** | Error Analysis | Bitwise Masking (AP CSP): Apply bitwise AND between 0xF0 and 0x3C (report answer in decimal): | 10 pts | **48** | `60 ENTER 16 ÷R 16 ×` |
 
 #### Cumulative Exam 3: Multi-Step Synthesis (`p. 119` • 100 Points)
 > *Synthesizes Difference Quotients, Law of Cosines, 3D Vectors, pH & Decibel Scales, Binomial Counts, and Bitwise Register Operations.*
@@ -2080,12 +2080,12 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 | **2** | Core Fluency | Quadratic Vertex Output: Evaluate y = 3x² − 12x + 17 at its axis of symmetry x = 2: | 10 pts | **5** | `3 ENTER 2 x² × 12 ENTER 2 × - 17 +` |
 | **3** | Core Fluency | Law of Cosines Side c: For a triangle with sides a = 5, b = 8, and included angle C = 60°, find side c: | 10 pts | **7** | `5 x² 8 x² + 2 ENTER 5 × 8 × 60 COS × - √x` |
 | **4** | Core Fluency | 3D Space Diagonal: Find the space diagonal d of a 3 × 4 × 12 rectangular prism: | 10 pts | **13** | `3 x² 4 x² + 12 x² + √x` |
-| **5** | Core Fluency | pH Hydrogen Ion Scale: Calculate the pH of a solution with hydrogen ion concentration [H⁺] = 0.0001 M: | 10 pts | **4** | `0.0001 LOG CHS` |
+| **5** | Core Fluency | pH Hydrogen Ion Scale: Calculate the pH of a solution with hydrogen ion concentration [H⁺] = 0.0001 M: | 10 pts | **4** | `0.0001 LOG +/-` |
 | **6** | Core Fluency | Decibel Gain Ratio: Find the decibel gain dB = 10 · log₁₀(P₂ / P₁) for a 1000× power ratio: | 10 pts | **30** | `1000 LOG 10 ×` |
-| **7** | Application | Binomial Probability Count: Multiply C(6, 2) × 2² to count weighted 2-success paths: | 10 pts | **60** | `6 ENTER 2 nCr 2 x² ×` |
+| **7** | Application | Binomial Probability Count: Multiply C(6, 2) × 2² to count weighted 2-success paths: | 10 pts | **60** | `6 ENTER 2 PROB Cn,r 2 x² ×` |
 | **8** | Application | Factorial Ratio: Evaluate 7! ÷ 5! on the SC-32 stack: | 10 pts | **42** | `7 x! 5 x! ÷` |
-| **9** | Application | Bitwise OR Register Merge: Combine upper nybble 0xA0 and lower nybble 0x05 using [OR] (report in decimal): | 10 pts | **165** | `160 ENTER 5 OR` |
-| **10** | Error Analysis | Bitwise XOR Toggle: Toggle bits of 0xFF with mask 0x0F using [XOR] (report in decimal): | 10 pts | **240** | `255 ENTER 15 XOR` |
+| **9** | Application | Bitwise OR Register Merge: Combine upper nybble 0xA0 and lower nybble 0x05 using bitwise OR (report in decimal): | 10 pts | **165** | `160 ENTER 5 +` |
+| **10** | Error Analysis | Bitwise XOR Toggle: Toggle bits of 0xFF with mask 0x0F using bitwise XOR (report in decimal): | 10 pts | **240** | `255 ENTER 15 -` |
 
 #### Cumulative Exam 4: Final Capstone Mastery (`p. 120` • 100 Points)
 > *Final Grades 9–12 & AP mastery assessment integrating Physics Kinematics, Harmonic & RMS Means, Golden Ratio Radicals, and Stack Architecture.*
@@ -2096,7 +2096,7 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 | **2** | Core Fluency | Kinetic Energy Formula: Find the kinetic energy KE (in Joules) for mass m = 4 kg and velocity v = 15 m/s: | 10 pts | **450** | `0.5 ENTER 4 × 15 x² ×` |
 | **3** | Core Fluency | Projectile Range at 45°: Compute R = (v² · sin(90°)) ÷ g for v = 28 m/s and g = 9.8 m/s²: | 10 pts | **80** | `28 x² 90 SIN × 9.8 ÷` |
 | **4** | Core Fluency | Continuous Compounding Return: Evaluate A = 500 · e^(0.05 × 20) (to 2 decimal places) on the SC-32: | 10 pts | **1359.14** | `0.05 ENTER 20 × eˣ 500 ×` |
-| **5** | Core Fluency | Harmonic Mean of Two Rates: Find the average round-trip speed for 30 mph outbound and 60 mph return: | 10 pts | **40** | `2 ENTER 30 1/x 60 1/x + ÷` |
+| **5** | Core Fluency | Harmonic Mean of Two Rates: Find the average round-trip speed for 30 mph outbound and 60 mph return: | 10 pts | **40** | `2 ENTER 30 x⁻¹ 60 x⁻¹ + ÷` |
 | **6** | Core Fluency | Golden Ratio Quadratic Root: Compute (1 + √5) ÷ 2 to 4 decimal places on the SC-32: | 10 pts | **1.618** | `1 ENTER 5 √x + 2 ÷` |
 | **7** | Application | Polar-to-Rectangular X Component: For polar magnitude r = 10 and angle θ = 60°, find the horizontal component x: | 10 pts | **5** | `10 ENTER 60 COS ×` |
 | **8** | Application | Acoustics Inverse-Square Ratio: If initial sound intensity is 120 units and drops by a factor of 2 per doubling, find the intensity after 3 doublings: | 10 pts | **15** | `120 ENTER 2 ENTER 3 yˣ ÷` |
@@ -2507,7 +2507,7 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 | **#20** | 25 | 23 | 35 | 17 | 82 | 123 | 5 | 3 | 4 | 9 | 13 | 14 |
 
 #### 3. Optimal Champion Pipelines
-- **8C #5 (Roots of x²+5x+6=0):** `[1] [ENTER] [5] [ENTER] [6] [POLY] -> -2, -3`
+- **8C #5 (Roots of x²+5x+6=0):** `[↱][POLY] 1 [B] 5 [C] 6 [D] [XEQ] -> -3, -2`
 - **8D #5 (Sum of roots 2x²-10x+7):** `Vieta's -b/a = 10 / 2 = 5`
 - **8D #10 (Min of x²-8x+19):** `Complete square: (x - 4)² + 3 -> min is 3`
 - **8D #18 (√(3²+4²+12²)):** `Chained (3,4,5) + (5,12,13) -> 13`
@@ -2598,7 +2598,7 @@ Complete section-by-section answers, calculator keystroke traces, and 100-point 
 
 #### 3. Optimal Champion Pipelines
 - **9D #1 (12 cos 45° + 5 sin 45°):** `Factor (12 + 5) × sin(45°): [17] [ENTER] [45] [SIN] [×] -> 12.0208`
-- **9D #5 (Angle of <3, 4>):** `[4] [ENTER] [3] [yellow] [▸θ,r] [x⇄y] -> 53.13°`
+- **9D #5 (Angle of <3, 4>):** `[4] [ENTER] [3] [↰] [▸θ,r] [x⇄y] -> 53.13°`
 - **9D #10 (Law of Cosines a=8,b=5,C=60°):** `cos(60°)=0.5 cancels the 2 in 2ab cos C: c² = a²+b²-ab = 64+25-40 = 49 -> 7`
 - **9D #17 (max of 5 sin x + 12 cos x):** `Amplitude √(5² + 12²) = 13`
 

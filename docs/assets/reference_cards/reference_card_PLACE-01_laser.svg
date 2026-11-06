@@ -67,24 +67,24 @@
     <!-- Concept lines -->
     <text x="16" y="66" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">A digit's value depends on its place</text>
     <text x="16" y="86" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">column: d_k × 10^k.</text>
-    <text x="16" y="106" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">Trade 10 units for 1 regrouping token (+1)</text>
-    <text x="16" y="126" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">to carry.</text>
-    <text x="16" y="146" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">Dual 6x2 trays connect whole numbers</text>
-    <text x="16" y="166" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">directly to decimals:</text>
-    <text x="16" y="186" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">Whole numbers to the left, decimals to the</text>
-    <text x="16" y="206" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">right!</text>
+    <text x="16" y="106" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">Addition: Trade 10 units for 1 Carry block</text>
+    <text x="16" y="126" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">(+1) one column left.</text>
+    <text x="16" y="146" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">Subtraction: Borrow 1 from left column for</text>
+    <text x="16" y="166" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">a (10) Trade block.</text>
+    <text x="16" y="186" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">Dual 5x2 trays connect whole numbers</text>
+    <text x="16" y="206" class="font-sans" font-size="15px" font-weight="400" fill="#ffffff">directly to decimals!</text>
 
     <!-- Datum Box -->
     <g transform="translate(12, 236)">
       <rect x="0" y="0" width="366" height="154" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">CALIBRATED 19.00 MM POSITIONAL GRID</text>
     </g>
-    <text x="24" y="272" class="font-mono" font-size="13.5px" fill="#cccccc">• Digit Tile: 19.00 × 19.00 mm with 1.85mm</text>
-    <text x="24" y="290" class="font-mono" font-size="13.5px" fill="#cccccc">stacking detent</text>
-    <text x="24" y="308" class="font-mono" font-size="13.5px" fill="#cccccc">• Whole Tray: Thousands, Hundreds, Tens,</text>
-    <text x="24" y="326" class="font-mono" font-size="13.5px" fill="#cccccc">Ones (PLA Gray)</text>
-    <text x="24" y="344" class="font-mono" font-size="13.5px" fill="#cccccc">• Decimal Tray: Ones, Tenths, Hundredths,</text>
-    <text x="24" y="362" class="font-mono" font-size="13.5px" fill="#cccccc">Thousandths (PLA Gray)</text>
+    <text x="24" y="272" class="font-mono" font-size="13.5px" fill="#cccccc">• Digit Tile: 19.00 × 19.00 × 7.00 mm (1U)</text>
+    <text x="24" y="290" class="font-mono" font-size="13.5px" fill="#cccccc">with 1.85mm detent</text>
+    <text x="24" y="308" class="font-mono" font-size="13.5px" fill="#cccccc">• Whole Tray: 10,000, 1000, 100, 10, 1</text>
+    <text x="24" y="326" class="font-mono" font-size="13.5px" fill="#cccccc">(Inner 5×2 Tray #1)</text>
+    <text x="24" y="344" class="font-mono" font-size="13.5px" fill="#cccccc">• Decimal Tray: 0.1, 0.01, 0.001, 10⁻⁴,</text>
+    <text x="24" y="362" class="font-mono" font-size="13.5px" fill="#cccccc">10⁻⁵ (Inner 5×2 Tray #2)</text>
 
     <!-- Proof Diagram Box -->
     <g transform="translate(12, 402)">
@@ -132,7 +132,7 @@
   <g transform="translate(425, 120)">
     <rect x="0" y="0" width="450" height="585" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
     <rect x="0" y="0" width="450" height="34" rx="8" fill="#000000" stroke="#ffffff" stroke-width="1" />
-    <text x="16" y="23" class="font-mono section-hdr">2. KIT PARTS INVENTORY (57 PIECES)</text>
+    <text x="16" y="23" class="font-mono section-hdr">2. KIT PARTS INVENTORY (56 PIECES)</text>
 
     <!-- Table Header -->
     <text x="14" y="52" class="font-mono th">COMPONENT</text>
@@ -142,34 +142,34 @@
     <line x1="12" y1="58" x2="438" y2="58" stroke="#ffffff" stroke-width="1" />
 
     
-      <text x="14" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Digit Blocks A</text>
+      <text x="14" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">White Digits (0–9)</text>
       <text x="180" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">22x</text>
-      <text x="215" y="64" class="font-mono" font-size="12.5px" fill="#ffffff">19.0 mm Tile</text>
+      <text x="215" y="64" class="font-mono" font-size="12.5px" fill="#ffffff">4×0, 2×1–9</text>
       <text x="436" y="64" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA White</text>
       <line x1="12" y1="69" x2="438" y2="69" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Digit Blocks B</text>
+      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Blue Digits (0–9)</text>
       <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">22x</text>
-      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#ffffff">19.0 mm Tile</text>
-      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA Tan</text>
+      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#ffffff">4×0, 2×1–9</text>
+      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Blue-Gray</text>
       <line x1="12" y1="91" x2="438" y2="91" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Regrouping Tokens</text>
-      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">9x</text>
-      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#ffffff">19.0 mm Token</text>
-      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Muted Red</text>
+      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Carry &amp; Borrow Tokens</text>
+      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">8x</text>
+      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#ffffff">4×, 4×</text>
+      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Glow Yellow</text>
       <line x1="12" y1="113" x2="438" y2="113" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
       <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Whole Numbers Tray</text>
       <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
-      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#ffffff">6×2 Tray</text>
-      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA Gray</text>
+      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#ffffff">Inner 5×2</text>
+      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Blue-Gray</text>
       <line x1="12" y1="135" x2="438" y2="135" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Decimal Numbers</text>
+      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Decimal Numbers Tray</text>
       <text x="180" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
-      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#ffffff">6×2 Tray</text>
-      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">PLA Gray</text>
+      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#ffffff">Inner 5×2</text>
+      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Blue-Gray</text>
       <line x1="12" y1="157" x2="438" y2="157" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
       <text x="14" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">3x1 Storage Bin</text>
@@ -186,20 +186,22 @@
 
 
     <!-- Total Pieces Summary -->
-    <text x="14" y="234" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">TOTAL: 44 Digit Tiles + 9 Tokens + 2 Trays +</text>
-    <text x="14" y="250" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">Box + Lid = 57 Parts</text>
+    <text x="14" y="234" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">TOTAL: 44 Digit Tiles + 8 (+1/10) Tokens + 2</text>
+    <text x="14" y="250" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">Inner 5x2 Trays + Box + Lid = 56 Parts</text>
 
     <!-- Palette Box -->
     <g transform="translate(12, 276)">
-      <rect x="0" y="0" width="426" height="154" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
-      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">SLANT 3D PRODUCTION PALETTE</text>
+      <rect x="0" y="0" width="426" height="190" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">SYMMETRIC 2-COLOR OPERAND &amp; REGROUPING PALETTE</text>
     </g>
-    <text x="24" y="312" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA White: Operand A digit blocks (0–9) and</text>
-    <text x="24" y="330" class="font-sans" font-size="13.5px" fill="#cccccc">enclosure.</text>
-    <text x="24" y="348" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA Tan: Operand B digit blocks (0–9).</text>
-    <text x="24" y="366" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA Gray: Dual Whole Number and Decimal activity</text>
-    <text x="24" y="384" class="font-sans" font-size="13.5px" fill="#cccccc">trays.</text>
-    <text x="24" y="402" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA Matte Muted Red: Regrouping carry tokens (+1).</text>
+    <text x="24" y="312" class="font-sans" font-size="13.5px" fill="#cccccc">• PLA White (Set A, 22x): 4x '0' + 2x each of '1'–'9'</text>
+    <text x="24" y="330" class="font-sans" font-size="13.5px" fill="#cccccc">+ Box + Lid.</text>
+    <text x="24" y="348" class="font-sans" font-size="13.5px" fill="#cccccc">• Slate Blue-Gray (Set B, 22x): 4x '0' + 2x each of</text>
+    <text x="24" y="366" class="font-sans" font-size="13.5px" fill="#cccccc">'1'–'9'.</text>
+    <text x="24" y="384" class="font-sans" font-size="13.5px" fill="#cccccc">• Slate Blue-Gray (2x Inner Trays): 5×2 Whole &amp;</text>
+    <text x="24" y="402" class="font-sans" font-size="13.5px" fill="#cccccc">Decimal Trays.</text>
+    <text x="24" y="420" class="font-sans" font-size="13.5px" fill="#cccccc">• Glow Yellow / Red (8x): 4x (+1) Carry + 4x (10)</text>
+    <text x="24" y="438" class="font-sans" font-size="13.5px" fill="#cccccc">Borrow tokens.</text>
   </g>
 
   <!-- COLUMN 3: WHY KEEP CARD (Width: 290) -->
@@ -213,11 +215,11 @@
       <rect x="0" y="0" width="266" height="136" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">✓ 10-SECOND PACK-UP</text>
     </g>
-    <text x="24" y="82" class="font-sans" font-size="13px" fill="#cccccc">Stack both 6x2 trays into the 7U box.</text>
-    <text x="24" y="100" class="font-sans" font-size="13px" fill="#cccccc">Digit blocks nest into their</text>
-    <text x="24" y="118" class="font-sans" font-size="13px" fill="#cccccc">designated bays. Any missing piece is</text>
-    <text x="24" y="136" class="font-sans" font-size="13px" fill="#cccccc">visible in 3 seconds. Lid snaps flush</text>
-    <text x="24" y="154" class="font-sans" font-size="13px" fill="#cccccc">for silent, secure classroom carry.</text>
+    <text x="24" y="82" class="font-sans" font-size="13px" fill="#cccccc">Stack 4 blocks in Cols 0–4 (0–9),</text>
+    <text x="24" y="100" class="font-sans" font-size="13px" fill="#cccccc">stack 6 blocks in Col 5 (+1, 10, &amp;</text>
+    <text x="24" y="118" class="font-sans" font-size="13px" fill="#cccccc">extra 0s = 52 blocks total), nest the</text>
+    <text x="24" y="136" class="font-sans" font-size="13px" fill="#cccccc">2 inner 5x2 trays over Cols 0–4</text>
+    <text x="24" y="154" class="font-sans" font-size="13px" fill="#cccccc">(leaving Col 5 for easy finger grip)</text>
 
     <!-- Reason 2: Guarantee -->
     <g transform="translate(12, 190)">

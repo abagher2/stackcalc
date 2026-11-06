@@ -1,6 +1,12 @@
 .agents/**
 site/**
 scratch/**
+.build/**
 .DS_Store
 **/__pycache__/**
 *.pyc
+docs/downloads/manuals/**
+docs/manuals/output/kdp_upload/**
+docs/manuals/output/*_KCB/**
+docs/manuals/output/*.kpf
+docs/manuals/output/*-kindle-cover.*

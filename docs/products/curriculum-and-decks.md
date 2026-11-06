@@ -64,11 +64,14 @@ hide:
 
       <!-- Action Buttons -->
       <div class="ec-actions-row">
-        <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #0284C7; border-color: #0284C7; color: #ffffff;">
-          Order 4 Spiral Books on Lulu ↗
+        <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #F59E0B; border-color: #F59E0B; color: #0F172A; font-weight: 800;">
+          Middle School Workbook on Amazon ↗
+        </a>
+        <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border-color: #0284C7; color: #38BDF8; font-weight: 700;">
+          Spiral Books on Lulu ↗
         </a>
         <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary">
-          Print Textbooks on Amazon ↗
+          Elementary Book on Amazon ↗
         </a>
         <a href="/downloads/stackcalc-curriculum-guide-letter.pdf" class="ec-btn-secondary">
           Book 1: Master Teacher Guide PDF &darr;

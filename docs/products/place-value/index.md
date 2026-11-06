@@ -206,6 +206,7 @@ hide:
           <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 border border-orange-500/40 font-semibold">🛒 Handcrafted Kit on Etsy ↗</a>
           <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-semibold">🏭 On-Demand Print on Slant 3D ↗</a>
           <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold">🖨️ Free STLs on Printables ↗</a>
+          <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold">📙 Middle School Workbook on Amazon ↗</a>
           <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold">📗 Companion Book on Amazon ↗</a>
         </div>
         <div class="text-slate-300 leading-relaxed">
@@ -277,8 +278,8 @@ hide:
           <td class="ec-spec-v">0.5U Gridfinity pitch (19.0 &times; 19.0 mm), 7.0 mm visible height, 1.85 mm recessed top stacking socket</td>
         </tr>
         <tr>
-          <td class="ec-spec-k">Pieces Included (57 Total)</td>
-          <td class="ec-spec-v">44 digit blocks (22 Set A: 8&times; '0', 4&times; '6', 2&times; '1–5'; 22 Set B: 4&times; '7', 4&times; '8', 4&times; '9', 2&times; '1–5') + 9 stackable +1 regrouping unit tokens + 2 6&times;2 trays + 1 7U box + 1 <code>[123]</code> lid = 57 pieces</td>
+          <td class="ec-spec-k">Pieces Included (52 Total)</td>
+          <td class="ec-spec-v">44 symmetric digit blocks (22 White Set A: 4&times; '0', 2&times; '1–9'; 22 Slate Blue-Gray Set B: 4&times; '0', 2&times; '1–9') + 4 stackable +1 regrouping carry tokens + 2 inner 6&times;2 trays (Whole + Decimal) + 1 7U box (12 labeled floor sockets) + 1 <code>[123]</code> lid = 52 pieces</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Material</td>
