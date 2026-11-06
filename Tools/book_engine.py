@@ -41,6 +41,33 @@ MANUALS_ASSETS_DIR = (
 SC32_JSON_PATH = MANUALS_ASSETS_DIR / "layout_data.json"
 SC6_JSON_PATH = MANUALS_ASSETS_DIR / "layout_data_sc6.json"
 
+DOMAIN_MODELS: Tuple[str, ...] = (
+    "sc35", "sc14", "sc16", "sc24", "sc50", "sc60", "sc78", "sc80", "sc95"
+)
+ALL_MODELS: Tuple[str, ...] = ("sc32", "sc6") + DOMAIN_MODELS
+
+MODEL_JSON_PATHS: Dict[str, Path] = {
+    "sc32": SC32_JSON_PATH,
+    "sc6": SC6_JSON_PATH,
+    **{m: MANUALS_ASSETS_DIR / f"layout_data_{m}.json" for m in DOMAIN_MODELS},
+}
+
+
+def infer_model_from_path(file_path: Optional[Path], is_sc32: bool = True) -> str:
+    if file_path is not None:
+        name = file_path.name.lower()
+        for m in DOMAIN_MODELS:
+            if f"-{m}-" in name or name.startswith(f"{m}-"):
+                return m
+        p_str = str(file_path).replace("\\", "/").lower()
+        if "/manuals/sc6/" in p_str or name.startswith("sc6-"):
+            return "sc6"
+        if "/manuals/sc32/" in p_str or name.startswith("sc32-"):
+            return "sc32"
+        if "/manuals/domains/" in p_str:
+            return "domains"
+    return "sc32" if is_sc32 else "sc6"
+
 
 def normalize_key_token(raw: str) -> str:
     """
@@ -83,6 +110,60 @@ def normalize_key_token(raw: str) -> str:
         "-&gt;REC": "▸y,x",
         "-&gt;POL": "▸θ,r",
         "&divide;": "÷",
+        "ft·in": "f-i",
+        "ft-in": "f-i",
+        "FF.IISS": "f-i",
+        ">FF.IISS": "f-i",
+        "TBL": "▦",
+        "C1V1": "C₁V₁",
+        "EBC": "εbc",
+        "DG": "ΔG",
+        "E0": "E°",
+        "Keq": "Kₑq",
+        "KEQ": "Kₑq",
+        "Ea": "Eₐ",
+        "pKa": "pKₐ",
+        "PKA": "pKₐ",
+        "t1/2": "t½",
+        "NA": "Nₐ",
+        "Na": "Nₐ",
+        "KB": "kB",
+        "z0": "z₀",
+        "Z0_STAT": "z₀",
+        "t2": "t₂",
+        "pchi2": "pχ²",
+        "qchi2": "qχ²",
+        "rchi2": "rχ²",
+        "pχ2": "pχ²",
+        "qχ2": "qχ²",
+        "rχ2": "rχ²",
+        "ΔD": "ΔD",
+        "%Sigma": "%Σ",
+        "Cv": "Cᵥ",
+        "CV": "Cᵥ",
+        "rhow": "ρw",
+        "vs": "vₛ",
+        "CO2": "CO₂",
+        "SO2": "SO₂",
+        "SigmaW": "ΣW",
+        "Ca2+": "Ca²⁺",
+        "Na+": "Na⁺",
+        "O2": "O₂",
+        "2^x": "2ˣ",
+        "<<": "≪",
+        ">>": "≫",
+        "XOR": "⊕",
+        "tau": "τ",
+        "Gamma": "Γ",
+        "Z<-Gamma": "Z←Γ",
+        "Z<-Γ": "Z←Γ",
+        "Z0": "Z₀",
+        "f0": "f₀",
+        "df": "Δf",
+        "T0": "T₀",
+        "Pn": "Pₙ",
+        "F1": "F₁",
+        "lambda/L": "λ/L",
     }
     for k, v in replacements.items():
         if s == k:
@@ -116,9 +197,10 @@ class KeyEntry:
 class KeyRegistry:
     """Authoritative key and softkey lookup grounded in layout_data*.json from RPNCore."""
 
-    def __init__(self, json_path: Path, is_sc32: bool):
+    def __init__(self, json_path: Path, is_sc32: bool, model_code: Optional[str] = None):
         self.json_path = json_path
         self.is_sc32 = is_sc32
+        self.model_code = model_code or ("sc32" if is_sc32 else "sc6")
         self.entries: Dict[str, KeyEntry] = {}
         self.primary_labels: Set[str] = set()
         self.yellow_labels: Set[str] = set()
@@ -126,8 +208,8 @@ class KeyRegistry:
         self.menu_labels: Set[str] = set()
         self.alpha_labels: Set[str] = set()
         self.raw_data = json.loads(json_path.read_text(encoding="utf-8"))
-        self.left_shift_label = "↰" if is_sc32 else "f"
-        self.right_shift_label = "↱" if is_sc32 else "g"
+        self.left_shift_label = "↰" if self.model_code == "sc32" else "f"
+        self.right_shift_label = "↱" if self.model_code == "sc32" else "g"
         for k in self.raw_data.get("keys", []):
             if k.get("isShiftYellow") and k.get("primaryLabel"):
                 self.left_shift_label = k["primaryLabel"].strip()
@@ -140,8 +222,8 @@ class KeyRegistry:
         for key in {alias.strip(), norm, alias.strip().upper(), norm.upper()}:
             if not key:
                 continue
-            # Do not let case-insensitive upper alias clobber distinct case-sensitive keys (like 'e' vs 'E' or 'm' vs 'M')
-            if key in ("E", "M", "B", "R", "N", "S") and key != alias.strip() and key != norm:
+            # Do not let case-insensitive upper alias clobber distinct case-sensitive keys (like 'e' vs 'E' or 'f'/'g' vs 'F'/'G')
+            if key in ("E", "M", "B", "R", "N", "S", "F", "G") and key != alias.strip() and key != norm:
                 continue
             if overwrite or key not in self.entries:
                 self.entries[key] = entry
@@ -257,11 +339,16 @@ class KeyRegistry:
 
     def resolve(self, key_name: str) -> KeyEntry:
         clean = key_name.strip().replace("&#124;", "|")
+        if clean.lower().startswith(("softkey:", "sk:")):
+            sk_raw = clean.split(":", 1)[1].strip()
+            sk_norm = normalize_key_token(sk_raw)
+            if sk_raw in self.menu_labels or sk_norm in self.menu_labels or sk_raw in self.alpha_labels:
+                return KeyEntry(sk_raw, None, "menu", 0, 0)
         norm = normalize_key_token(clean)
         for candidate in (clean, norm, clean.upper(), norm.upper()):
             if candidate in self.entries:
                 return self.entries[candidate]
-        model = "SC-32" if self.is_sc32 else "SC-6"
+        model = self.model_code.upper()
         raise ValueError(
             f"Unknown key macro '{key_name}' (normalized: '{norm}') for {model} "
             f"(not found in {self.json_path.name})"
@@ -269,12 +356,22 @@ class KeyRegistry:
 
 
 _REGISTRIES: Dict[bool, KeyRegistry] = {}
+_MODEL_REGISTRIES: Dict[str, KeyRegistry] = {}
+
+
+def get_model_registry(model_code: str) -> KeyRegistry:
+    m = model_code.strip().lower()
+    if m not in MODEL_JSON_PATHS:
+        raise ValueError(f"Unknown calculator model '{model_code}'")
+    if m not in _MODEL_REGISTRIES:
+        path = MODEL_JSON_PATHS[m]
+        _MODEL_REGISTRIES[m] = KeyRegistry(path, is_sc32=(m != "sc6"), model_code=m)
+    return _MODEL_REGISTRIES[m]
 
 
 def get_registry(is_sc32: bool) -> KeyRegistry:
     if is_sc32 not in _REGISTRIES:
-        path = SC32_JSON_PATH if is_sc32 else SC6_JSON_PATH
-        _REGISTRIES[is_sc32] = KeyRegistry(path, is_sc32=is_sc32)
+        _REGISTRIES[is_sc32] = get_model_registry("sc32" if is_sc32 else "sc6")
     return _REGISTRIES[is_sc32]
 
 
@@ -834,25 +931,47 @@ UNIFIED_MACRO_PATTERN = re.compile(r"\{\{(seq|seq_keys|res|screenshot|blocks|ico
 
 
 def _expand_only_keys(markdown: str, is_sc32: bool, file_path: Optional[Path] = None) -> str:
-    registry = get_registry(is_sc32)
+    inferred_model = infer_model_from_path(file_path, is_sc32=is_sc32)
+    if inferred_model in MODEL_JSON_PATHS:
+        registry = get_model_registry(inferred_model)
+    else:
+        registry = get_registry(is_sc32)
     is_strict_manual = False
     if file_path:
         p_str = str(file_path).replace("\\", "/")
-        if "/manuals/sc32/" in p_str or "/manuals/sc6/" in p_str or p_str.endswith("sc32-user-guide.md") or p_str.endswith("sc6-user-guide.md"):
+        if "/manuals/sc32/" in p_str or "/manuals/sc6/" in p_str or p_str.endswith("sc32-user-guide.md") or p_str.endswith("sc6-user-guide.md") or inferred_model in DOMAIN_MODELS:
             is_strict_manual = True
 
     def _repl(match: re.Match) -> str:
         kind = match.group(1)
         raw_name = match.group(2).strip()
-        if raw_name.lower().startswith("sc6:"):
-            entry = get_registry(False).resolve(raw_name[4:].strip())
-        elif raw_name.lower().startswith("sc32:"):
-            entry = get_registry(True).resolve(raw_name[5:].strip())
+        lower_name = raw_name.lower()
+        explicit_model: Optional[str] = None
+        for m in ALL_MODELS:
+            if lower_name.startswith(f"{m}:"):
+                explicit_model = m
+                raw_name = raw_name[len(m) + 1:].strip()
+                break
+        if explicit_model is not None:
+            entry = get_model_registry(explicit_model).resolve(raw_name)
         else:
             try:
                 entry = registry.resolve(raw_name)
             except ValueError as err:
-                if not is_strict_manual:
+                if inferred_model == "domains":
+                    resolved_entry = None
+                    for dm in DOMAIN_MODELS:
+                        try:
+                            resolved_entry = get_model_registry(dm).resolve(raw_name)
+                            break
+                        except ValueError:
+                            continue
+                    if resolved_entry is not None:
+                        entry = resolved_entry
+                    else:
+                        loc = f" in {file_path}" if file_path else ""
+                        raise ValueError(f"{err}{loc}") from err
+                elif not is_strict_manual:
                     try:
                         entry = get_registry(not is_sc32).resolve(raw_name)
                     except ValueError:
@@ -1152,6 +1271,20 @@ def auto_number_headings(markdown: str, file_path: Path) -> str:
             out_lines.append(line)
             continue
 
+        if line.startswith("# ") and not line.startswith("## "):
+            m_unit = re.match(r"^#\s+Unit\s+([IVX]+)\b", stripped, flags=re.IGNORECASE)
+            m_ch_h1 = re.match(r"^#\s+Chapter\s+(\d+)\b", stripped, flags=re.IGNORECASE)
+            if m_unit:
+                prefix = m_unit.group(1).upper()
+                h2_count = 0
+                h3_count = 0
+            elif m_ch_h1:
+                prefix = m_ch_h1.group(1)
+                h2_count = 0
+                h3_count = 0
+            out_lines.append(line)
+            continue
+
         if line.startswith("## ") and not line.startswith("### "):
             raw_title = line[3:].strip()
             clean_title = strip_manual_section_number(raw_title)
@@ -1297,6 +1430,18 @@ def auto_number_figures_and_equations(markdown: str, file_path: Path, is_sc32: b
             out_lines.append(line)
             continue
         if in_fence:
+            out_lines.append(line)
+            continue
+
+        if stripped.startswith("# ") and not stripped.startswith("## "):
+            m_unit = re.match(r"^#\s+Unit\s+([IVX]+)\b", stripped, flags=re.IGNORECASE)
+            m_ch_h1 = re.match(r"^#\s+Chapter\s+(\d+)\b", stripped, flags=re.IGNORECASE)
+            if m_unit:
+                prefix = m_unit.group(1).upper()
+                fig_count = 0
+            elif m_ch_h1:
+                prefix = m_ch_h1.group(1)
+                fig_count = 0
             out_lines.append(line)
             continue
 

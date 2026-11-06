@@ -1,158 +1,229 @@
 ---
-title: "Appendix B: Master Row 0 Softkey & Shifted Keycap Directory"
-description: "Complete hardware keycap, Row 0 domain softkey, and register input/output directory for all nine instruments in the StackCalc Domain Series (SC-35 through SC-95)."
+title: "Appendix B: Domain Instrument Keycap & Workspace Directory"
+description: "Complete hardware keycap, Row 0 domain softkey, and register input/output directory for all nine instruments in the StackCalc Domain Series (SC-35 through SC-95, Units I–IX, Chapters 1–27)."
 ---
 
-# Appendix B: Master Row 0 Softkey & Shifted Keycap Directory
+# Appendix B: Domain Instrument Keycap & Workspace Directory
 
-> **Who this is for:** Operators, educators, and engineers who want a complete hardware keycap and Row 0 domain softkey directory across all nine StackCalc Domain Series instruments, showing exact pre-execution stack arguments ($Z, Y, X$) and post-execution outputs ($Y', X'$).
+This directory catalogs the physical keycaps, Row 0 contextual/LFU softkeys ({{key:LFU0}}–{{key:LFU5}}), yellow ({{key:f}}) and blue ({{key:g}}) shift layers, bidirectional Equation Solver Workspaces ({{key:sc35:SOLVE}} / {{key:XEQ}}), and register input-output signatures across all nine instruments in the StackCalc Domain Series (`SC-35` through `SC-95`, covered in Units I through IX, Chapters 1 through 27). Each table lists the pre-execution stack arguments consumed from `Register T`, `Register Z`, `Register Y`, and `Register X` alongside the post-execution results returned to `Register X'` and `Register Y'` and the softkey variable bindings inside each instrument's Equation Solver Workspace.
 
----
+## Shared Three-Pillar Core Keys Across All Nine Instruments
 
-## 1. Shared Core Keys Across All Nine Instruments
+Every calculator in the StackCalc Domain Series is built on the same **three-pillar architecture**: configurable RPN stack depth (`4-LV`, `8-LV`, or `INF` cycled on Flag 5 `5:DEP` inside {{key:FLAGS}}), dual-mode domain keys that combine one-key RPN stack evaluation with a bidirectional Equation Solver Workspace ({{key:sc35:SOLVE}} / {{key:XEQ}} + {{key:LFU0}}–{{key:LFU5}}), and non-destructive Live Reference Ledgers ({{key:▦}}) paired with ten general-purpose memory registers (`R₀`–`R₉`):
 
-Every calculator in the StackCalc Domain Series shares the same physical core keypad layout for stack manipulation, register storage, and arithmetic:
-
-| Keycap / Sequence | Function Name | Pre-Execution Stack ($Y, X$) | Post-Execution Stack ($Y', X'$) |
+| Keycap / Sequence | Function Name | Pre-Execution Stack ($Y, X$) | Post-Execution Stack ($Y', X'$) & Architecture Role |
 | :--- | :--- | :--- | :--- |
-| `[ENTER]` | Stack Lift & Duplicate | `Y, X` | `X, X` (prior $Y \to Z$, $Z \to T$) |
-| `[x⇄y]` | Swap Registers $X$ and $Y$ | `Y, X` | `X, Y` ($Z$ and $T$ unchanged) |
-| `[R↓]` | Roll Stack Downward | `T, Z, Y, X` | `X, T, Z, Y` |
-| `[←]` / `[C]` | Backspace / Clear $X$ | `Y, X` | `Y, 0.0000` (disables stack lift) |
-| `[+/-]` | Change Sign / Negate | `Y, X` | `Y, -X` |
-| `[STO] [0]–[9]` | Store $X$ in Register $R_n$ | `Y, X` | `Y, X` ($R_n \leftarrow X$) |
-| `[RCL] [0]–[9]` | Recall Register $R_n$ to $X$ | `Y, X` | `X, Rₙ` (lifts stack first) |
-| `[f]` | Yellow Primary Shift | — | Arms yellow shifted legend for next key |
-| `[g]` | Blue Secondary Shift | — | Arms blue shifted legend for next key |
-| `[SHOW]` | Full-Precision Mantissa Peek | `Y, X` | Temporarily reveals all 15 significant digits of $X$ |
+| {{key:ENTER}} | Stack Lift & Duplicate | `Y, X` | `X, X` (prior $Y \to Z$, $Z \to T$; lifts across `4-LV`, `8-LV`, or `INF` via Flag 5 `5:DEP` in {{key:FLAGS}}) |
+| {{key:x⇄y}} | Swap Registers $X$ and $Y$ | `Y, X` | `X, Y` ($Z$ and $T$ unchanged) |
+| {{key:R↓}} / {{key:R↑}} | Roll Stack Down / Up | `T, Z, Y, X` | `X, T, Z, Y` or `Z, Y, X, T` (cycles active stack window) |
+| {{key:<-}} / {{key:C}} | Backspace / Clear $X$ | `Y, X` | `Y, 0.0000` (disables stack lift) |
+| {{key:+/-}} | Change Sign / Negate | `Y, X` | `Y, -X` (or two's complement negation {{key:sc16:NEG}} on `SC-16`) |
+| {{key:STO}} {{key:0}}–{{key:9}} | Store $X$ in Register $R_n$ | `Y, X` | `Y, X` ($R_n \leftarrow X$) |
+| {{key:RCL}} {{key:0}}–{{key:9}} | Recall Register $R_n$ to $X$ | `Y, X` | `X, Rₙ` (lifts stack first) |
+| {{key:sc35:SOLVE}} / {{key:XEQ}} | Bidirectional Solver Arm | `Y, X` | Arms Equation Workspace to solve forward or backward for the next {{key:LFU0}}–{{key:LFU5}} softkey pressed |
+| {{key:LFU0}}–{{key:LFU5}} | Row 0 Softkeys (Cols 0–5) | `Y, X` | Populates dynamically with recently/frequently used operations (`LFU`) when idle, or stores/solves symbolic variables in an active Equation Workspace |
+| {{key:▦}} | Live Reference Ledger | `Y, X` | Opens non-destructive domain reference lookup and ledger (`@COGO`, `@BOM`, `@BK%`, `@PAT`, cash-flow / stats table) |
+| {{key:f}} | Yellow Primary Shift | — | Arms yellow shifted legend for next key |
+| {{key:g}} | Blue Secondary Shift | — | Arms blue shifted legend for next key |
+| {{key:SHOW}} | Full-Precision Mantissa Peek | `Y, X` | Temporarily reveals all 15–17 significant IEEE 754 digits of $X$ |
+
+### Master Directory of Bidirectional Equation Solver Workspaces
+
+Opening a multi-parameter domain workspace (by pressing the key with $X = 0, Y = 0$ or after {{key:sc35:SOLVE}}) renders its governing law on Line 1 of the display and binds the Row 0 softkeys ({{key:LFU0}}–{{key:LFU5}}) to its symbolic variables so any parameter can be solved forward or backward via {{key:XEQ}} `<SOFTKEY>` (or {{key:sc35:SOLVE}} `<SOFTKEY>`):
+
+| Instrument | Workspace Key | Governing Equation on Line 1 | Bound Softkeys ({{key:LFU0}}–{{key:LFU5}}) |
+| :--- | :--- | :--- | :--- |
+| **SC-35** | {{key:sc35:CRV}} (`HCRV`) | `L = R × D × π / 180` | {{keycap:L}} arc length • {{keycap:R}} radius • {{keycap:D}} central angle $\Delta$ |
+| **SC-35** | {{key:sc35:LVL}} (`LVL`) | `E = H + B - F` | {{keycap:E}} elevation • {{keycap:H}} benchmark / HI • {{keycap:B}} backsight • {{keycap:F}} foresight |
+| **SC-35** | {{key:sc35:WND}} (`WIND`) | `X = V × SIN(A)` | {{keycap:X}} crosswind • {{keycap:V}} wind speed • {{keycap:A}} wind angle $\gamma$ |
+| **SC-35** | {{key:sc35:ALT}} (`ALT`) | `D = P + 120 × (T - 15)` | {{keycap:D}} density altitude • {{keycap:P}} pressure altitude • {{keycap:T}} OAT ($^\circ\text{C}$) |
+| **SC-14** | {{key:sc14:AWG}} (`AWG`) | `D = 2 × R × L × I / 1000` | {{keycap:D}} drop ($\text{V}$) • {{keycap:R}} $\Omega/\text{kft}$ • {{keycap:L}} one-way run ($\text{ft}$) • {{keycap:I}} load ($\text{A}$) • {{keycap:G}} AWG gauge |
+| **SC-14** | {{key:sc14:OFS}} (`BEND`) | `T = O / SIN(A)` | {{keycap:T}} center-to-center travel • {{keycap:O}} obstruction offset • {{keycap:A}} bend angle $\theta$ |
+| **SC-14** | {{key:sc14:Cᵥ}} (`CV`) | `Q = C × √(P / G)` | {{keycap:Q}} flow ($\text{GPM}$) • {{keycap:C}} valve $C_v$ • {{keycap:P}} $\Delta P$ ($\text{psi}$) • {{keycap:G}} specific gravity |
+| **SC-14** | {{key:sc14:PMP}} (`PMP`) | `P = Q × H / 3960` | {{keycap:P}} hydraulic/brake HP • {{keycap:Q}} flow ($\text{GPM}$) • {{keycap:H}} total dynamic head ($\text{ft}$) |
+| **SC-16** | {{key:sc16:PWM}} (`PWM`) | `F = C / (P × A)` | {{keycap:F}} PWM freq ($\text{Hz}$) • {{keycap:C}} clock $f_{\text{clk}}$ • {{keycap:P}} prescaler $P_{\text{PSC}}+1$ • {{keycap:A}} period $A_{\text{ARR}}+1$ |
+| **SC-16** | {{key:sc16:ADC}} (`ADC`) | `D = (V / R) × 2^N` | {{keycap:D}} digital code • {{keycap:V}} input $V_{\text{in}}$ • {{keycap:R}} reference $V_{\text{ref}}$ • {{keycap:N}} bit depth |
+| **SC-16** | {{key:sc16:τ}} (`TAU`) | `T = R × C` | {{keycap:T}} time constant $\tau$ ($\text{s}$) • {{keycap:R}} series resistance ($\Omega$) • {{keycap:C}} capacitance ($\text{F}$) |
+| **SC-24** | {{key:sc24:FOV}} (`FOV`) | `A = 2 × ATAN(W / (2 × F))` | {{keycap:A}} angle of view ($^\circ$) • {{keycap:W}} sensor gate width ($\text{mm}$) • {{keycap:F}} focal length ($\text{mm}$) |
+| **SC-24** | {{key:sc24:EV}} (`EV`) | `N² = T × 2^E` | {{keycap:N}} aperture $f$-stop • {{keycap:T}} exposure time ($\text{s}$) • {{keycap:E}} exposure value $\text{EV}_{100}$ |
+| **SC-24** | {{key:sc24:DOF}} (`DOF`) | `H = F² / (N × C)` | {{keycap:H}} hyperfocal • {{keycap:F}} focal length ($\text{mm}$) • {{keycap:N}} $T$-stop • {{keycap:C}} circle of confusion ($\text{mm}$) |
+| **SC-24** | {{key:sc24:TC}} (`TC`) | `F = S × R` | {{keycap:F}} total frame count • {{keycap:S}} elapsed seconds • {{keycap:R}} frame rate ($\text{fps}$) |
+| **SC-50** | {{key:sc50:f₀}} (`F0`) | `F = 1 / (2π√(L×C))` | {{keycap:F}} resonant $f_0$ ($\text{Hz}$) • {{keycap:L}} inductance ($\text{H}$) • {{keycap:C}} capacitance ($\text{F}$) |
+| **SC-50** | {{key:sc50:SWR}} (`SWR`) | `S = (1 + G) / (1 - G)` | {{keycap:S}} standing wave ratio $\text{VSWR}$ • {{keycap:G}} reflection magnitude $\lvert\Gamma\rvert$ |
+| **SC-50** | {{key:sc50:FSL}} (`FSL`) | `L = 20LOG(D) + 20LOG(F) + 32.44` | {{keycap:L}} path loss $\text{FSPL}_{\text{dB}}$ • {{keycap:D}} link distance ($\text{km}$) • {{keycap:F}} carrier ($\text{MHz}$) |
+| **SC-50** | {{key:sc50:LNK}} (`LNK`) | `R = P + G - L` | {{keycap:R}} received $P_{\text{rx}}$ ($\text{dBm}$) • {{keycap:P}} transmit $P_{\text{tx}}$ • {{keycap:G}} net antenna gain • {{keycap:L}} total loss |
+| **SC-50** | {{key:sc50:C/B}} (`C/B`) | `C = B × LN(1 + S) / LN(2)` | {{keycap:C}} capacity ($\text{bps}$) • {{keycap:B}} bandwidth ($\text{Hz}$) • {{keycap:S}} linear $\text{SNR}$ |
+| **SC-50** | {{key:sc50:Γ}} (`ZMAT`) | `Z = √(S × L)` | {{keycap:Z}} quarter-wave transformer $Z_q$ • {{keycap:S}} source impedance $Z_S$ • {{keycap:L}} load impedance $Z_L$ |
+| **SC-60** | {{key:sc60:εbc}} (`EBC`) | `A = E × B × C` | {{keycap:A}} absorbance • {{keycap:E}} molar absorptivity $\varepsilon$ • {{keycap:B}} path length ($\text{cm}$) • {{keycap:C}} molarity ($\text{M}$) |
+| **SC-60** | {{key:sc60:BUF}} (`BUF`) | `P = K + LOG(A / H)` | {{keycap:P}} target $\text{pH}$ • {{keycap:K}} acid $\text{p}K_a$ • {{keycap:A}} base $[\text{A}^-]$ • {{keycap:H}} acid $[\text{HA}]$ |
+| **SC-60** | {{key:sc60:PVT}} (`PVT`) | `P × V = N × 8.3145 × T` | {{keycap:P}} pressure • {{keycap:V}} volume • {{keycap:N}} moles $n$ • {{keycap:T}} absolute temperature ($\text{K}$) |
+| **SC-60** | {{key:sc60:C₁V₁}} (`C1V1`) | `C × V = D × U` | {{keycap:C}} stock $C_1$ • {{keycap:V}} aliquot $V_1$ • {{keycap:D}} target $C_2$ • {{keycap:U}} final volume $V_2$ |
+| **SC-78** | {{key:sc78:BK%}} (`BK%`) | `P = (I / F) × 100` | {{keycap:P}} baker's $\%$ • {{keycap:I}} ingredient weight • {{keycap:F}} total flour weight |
+| **SC-78** | {{key:sc78:Tw}} (`TW`) | `W = 3 × D - R - F - M` | {{keycap:W}} water temp $T_w$ • {{keycap:D}} target $\text{DDT}$ • {{keycap:R}} room $T_r$ • {{keycap:F}} flour $T_f$ • {{keycap:M}} friction |
+| **SC-78** | {{key:sc78:MSH}} (`MSH`) | `S = (0.2 / R) × (T - G) + T` | {{keycap:S}} strike water temp • {{keycap:R}} water-grist ratio • {{keycap:T}} mash target • {{keycap:G}} dry grain temp |
+| **SC-78** | {{key:sc78:IBU}} (`IBU`) | `I = W × A × U × 74.89 / V` | {{keycap:I}} bitterness $\text{IBU}$ • {{keycap:W}} hop mass ($\text{oz}$) • {{keycap:A}} alpha acid $\%$ • {{keycap:U}} utilization • {{keycap:V}} volume ($\text{gal}$) |
+| **SC-78** | {{key:sc78:CST}} (`CST`) | `P = C / (F / 100)` | {{keycap:P}} menu price • {{keycap:C}} portion cost • {{keycap:F}} target food cost $\%$ |
+| **SC-80** | {{key:sc80:BSA}} (`BSA`) | `B = √(H × W / 3600)` | {{keycap:B}} BSA ($\text{m}^2$) • {{keycap:H}} height ($\text{cm}$) • {{keycap:W}} weight ($\text{kg}$) • {{keycap:PAT}} patient profile |
+| **SC-80** | {{key:sc80:GFR}} (`GFR`) | `C = (140-A)×W / (72×S)` | {{keycap:C}} clearance ($\text{mL/min}$) • {{keycap:A}} age ($\text{yr}$) • {{keycap:W}} weight ($\text{kg}$) • {{keycap:S}} $\text{SCr}$ ($\text{mg/dL}$) • {{keycap:PAT}} |
+| **SC-80** | {{key:sc80:DRP}} (`DRP`) | `R = D × W × 60 / C` | {{keycap:R}} pump rate ($\text{mL/hr}$) • {{keycap:D}} dose ($\text{mcg/kg/min}$) • {{keycap:W}} weight ($\text{kg}$) • {{keycap:C}} concentration ($\text{mcg/mL}$) • {{keycap:PAT}} |
+| **SC-80** | {{key:sc80:PK}} (`PK`) | `T = 0.693 × V / C` | {{keycap:T}} half-life $t_{1/2}$ ($\text{hr}$) • {{keycap:V}} volume $V_d$ ($\text{L}$) • {{keycap:C}} clearance $\text{CL}$ ($\text{L/hr}$) |
+| **SC-95** | {{key:sc95:TVM}} (`TVM`) | `PV(1+I)^N + PMT... + FV = 0` | {{keycap:N}} periods • {{keycap:I%}} rate • {{keycap:PV}} present value • {{keycap:PMT}} payment • {{keycap:FV}} future value • {{keycap:END}}/{{keycap:BEG}} |
+| **SC-95** | {{key:sc95:CF}} (`NPV`) | `V = C×(1-(1+R/100)⁻ᴺ)/(R/100) - I` | {{keycap:V}} net present value • {{keycap:C}} uniform cash flow • {{keycap:R}} discount rate / $\text{IRR}$ ($\%$) • {{keycap:N}} periods • {{keycap:I}} outlay |
+| **SC-95** | {{key:sc95:BND}} (`BND`) | `P = C×(1-(1+Y/100)⁻ᴺ)/(Y/100) + F/(1+Y/100)ᴺ` | {{keycap:P}} bond price • {{keycap:C}} periodic coupon • {{keycap:Y}} periodic yield ($\%$) • {{keycap:N}} periods • {{keycap:F}} par face value |
+| **SC-95** | {{key:sc95:n*}} (`NSIZE`) | `N = (Z × S / E)²` | {{keycap:N}} sample size $n^*$ • {{keycap:Z}} critical quantile $z_{\alpha/2}$ • {{keycap:S}} dispersion $s$ • {{keycap:E}} margin of error |
 
 ---
 
-## 2. SC-35 Geomatics, Land Surveying & Flight Navigation
+## Geomatics, Land Surveying, and Flight Navigation Keycaps
+
+On the **SC-35** ([Unit I, Chapters 1–3](01-sc35-geomatics-navigation.md)), the Row 1 and Row 2 geomatics keys and shifted trigonometric/navigation operators execute plane coordinate geometry (`COGO`), horizontal and vertical highway curves, Bowditch traverse closure, sexagesimal angle conversions, and E6B aviation wind-triangle and density-altitude solutions:
 
 | Keycap / Softkey | Layer | Operation & Stack Signature |
 | :--- | :--- | :--- |
-| `[FWD]` | Row 0 Softkey (Col 0) | **Forward Traverse:** Consumes distance $D$ ($Y$) and azimuth $\alpha$ ($X$); returns $\Delta E$ in $Y'$ and $\Delta N$ in $X'$. |
-| `[INV]` | Row 0 Softkey (Col 1) | **Coordinate Inverse:** Consumes $\Delta N$ ($Y$) and $\Delta E$ ($X$); returns azimuth $\alpha \in [0^\circ, 360^\circ)$ in $Y'$ and horizontal distance $D$ in $X'$. |
-| `[BRG]` | Row 0 Softkey (Col 2) | **Quadrant Bearing:** Formats azimuth in $X$ as surveyor quadrant bearing (`NE`, `SE`, `SW`, `NW`) and degree-minute-second components. |
-| `[WND]` | Row 0 Softkey (Col 3) | **E6B Wind Triangle:** Decomposes wind speed/angle into headwind ($Y'$) and crosswind ($X'$) components, or solves Wind Correction Angle (`WCA`). |
-| `[ISA]` | Row 0 Softkey (Col 4) | **ISA & Density Altitude:** Computes Pressure Altitude (`PA`) and Density Altitude (`DA`) from elevation, altimeter setting, and OAT. |
-| `[trav]` | Row 0 Softkey (Col 5) | **Bowditch Traverse Accumulator:** Accumulates station leg $(\Delta N_i, \Delta E_i, D_i)$ and computes closure error and precision ratio. |
-| `[f] [→HR]` | Yellow Shift | Converts packed sexagesimal `D.MMSS` in $X$ to decimal degrees/hours. |
-| `[g] [→HMS]` | Blue Shift | Converts decimal degrees/hours in $X$ to packed sexagesimal `D.MMSS`. |
-| `[g] [POL]` | Blue Shift | Rectangular $(Y, X)$ to Polar: magnitude $r \to X'$, angle $\theta \to Y'$. |
-| `[f] [REC]` | Yellow Shift | Polar $(Y, X)$ to Rectangular: $x = r\cos\theta \to X'$, $y = r\sin\theta \to Y'$. |
+| {{key:sc35:TRV}} / {{key:sc35:PT+}} | Row 1 Primary / Yellow Shift | **Forward Traverse & Station Accumulator:** Consumes distance $D$ and azimuth $\alpha$ to resolve $(\Delta N, \Delta E)$ ({{key:sc35:N⇄E}} swaps Northing/Easting), and {{key:sc35:PT+}} accumulates station coordinates. |
+| {{key:sc35:INV}} / {{key:sc35:CLS}} | Row 1 Primary / Blue Shift | **Coordinate Inverse & Bowditch Closure:** Consumes $\Delta N$ ($Y$) and $\Delta E$ ($X$) to return azimuth $\alpha$ and distance $D$; {{key:sc35:CLS}} computes traverse closure error and precision ratio. |
+| {{key:sc35:BRG}} / {{key:sc35:ISC}} | Row 1 Primary / Yellow Shift | **Quadrant Bearing & Intersection:** Formats azimuth in $X$ as surveyor quadrant bearing (`NE`, `SE`, `SW`, `NW`), and {{key:sc35:ISC}} evaluates bearing-bearing intersections. |
+| {{key:sc35:CRV}} / {{key:sc35:STA}} | Row 1 Primary / Blue Shift | **Horizontal Curve Workspace (`HCRV`) & Stationing:** Solves circular arc `L = R × D × π / 180` ({{keycap:L}}, {{keycap:R}}, {{keycap:D}}) and formats highway stationing `XX+XX.XX`. |
+| {{key:sc35:SLP}} / {{key:sc35:VCV}} / {{key:sc35:GR%}} | Row 1 Col 4 (Primary / Yellow / Blue) | **Slope Reduction, Vertical Curve & Grade %:** Reduces slope distance/angle ({{key:sc35:SLP}}), solves parabolic vertical curves ({{key:sc35:VCV}}), and computes percent grade ({{key:sc35:GR%}}). |
+| {{key:sc35:LVL}} / {{key:sc35:FLW}} / {{key:sc35:△}} | Yellow / Primary / Blue Shift | **Differential Leveling (`LVL`), Open-Channel Flow (`FLW`) & Triangle (`TRI`):** Solves `E = H + B - F` ({{keycap:E}}, {{keycap:H}}, {{keycap:B}}, {{keycap:F}}), continuity `Q = A × V`, and triangle area `A = 0.5 × B × H`. |
+| {{key:sc35:WND}} / {{key:sc35:ALT}} / {{key:sc35:XWC}} | Row 7 Col 3 (Primary / Yellow / Blue) | **E6B Wind Triangle (`WIND`), Density Altitude (`ALT`) & Crosswind:** Solves `X = V × SIN(A)` ({{keycap:X}}, {{keycap:V}}, {{keycap:A}}), density altitude `D = P + 120 × (T - 15)` ({{keycap:D}}, {{keycap:P}}, {{keycap:T}}), and crosswind component ({{key:sc35:XWC}}). |
+| {{key:sc35:TSD}} / {{key:sc35:CG}} / {{key:sc35:TID}} | Row 2 Col 2 (Primary / Yellow / Blue) | **Time-Speed-Distance (`TSD`), Weight & Balance (`CG`) & Tidal Height:** Solves `D = S × T` ({{keycap:D}}, {{keycap:S}}, {{keycap:T}}), moment `M = W × A` ({{keycap:M}}, {{keycap:W}}, {{keycap:A}}), and rule-of-twelfths tidal stage ({{key:sc35:TID}}). |
+| {{key:sc35:▸HR}} / {{key:sc35:▸HMS}} / {{key:sc35:▸DEG}} / {{key:sc35:▸RAD}} / {{key:sc35:▸GRD}} | Angular & Sexagesimal Shifts | Converts packed sexagesimal `DDD.MMSS` to decimal degrees/hours ({{key:sc35:▸HR}}) and back ({{key:sc35:▸HMS}}), or converts between degrees, radians, and gradians. |
+| {{key:sc35:▸θ,r}} / {{key:sc35:▸y,x}} / {{key:sc35:f-i}} | Coordinate & Feet-Inch Shifts | Converts between Rectangular $(Y, X)$ and Polar $(r, \theta)$ coordinates and enters/formats feet-inch-fractions ({{key:sc35:f-i}}). |
 
 ---
 
-## 3. SC-14 Industrial Trades, Electrical & Mechanical
+## Industrial Trades, Electrical, and Mechanical Keycaps
+
+On the **SC-14** ([Unit II, Chapters 4–6](02-sc14-electrical-trades.md)), the Row 1 and Row 2 electrical, conduit, piping, and machining keys pair with dimensional shift converters to resolve National Electrical Code (`NEC`) conductor sizing, three-phase power and motor full-load amps, conduit offset bends, industrial process flow, and spindle machining speeds:
 
 | Keycap / Softkey | Layer | Operation & Stack Signature |
 | :--- | :--- | :--- |
-| `[RUN]` | Row 0 Softkey (Col 0) | Stores or solves horizontal framing run $R$ in feet-inches-fractions (`FT-IN`). |
-| `[RISE]` | Row 0 Softkey (Col 1) | Stores or solves vertical rise from unit pitch ($U/12$) and run $R$. |
-| `[DIAG]` | Row 0 Softkey (Col 2) | Computes common rafter diagonal $\sqrt{\text{Run}^2 + \text{Rise}^2}$ in `FT-IN` (`[g] [HIP]` for hip/valley). |
-| `[BEND]` | Row 0 Softkey (Col 3) | **Conduit Offset Solver:** Consumes offset $O$ ($Y$) and bend angle $\theta$ ($X$); returns travel length $L_{\text{travel}}$ in $X'$ and shrink $S$ in $Y'$. |
-| `[VD]` | Row 0 Softkey (Col 4) | **NEC Voltage Drop:** Computes conductor voltage drop $V_{\text{drop}}$ and terminal voltage from current $I$, one-way distance $L$, and AWG wire gauge. |
-| `[TBL]` | Row 0 Softkey (Col 5) | **Trade Lookup Table:** Recalls NEC Chapter 9 circular mils / ampacity and ANSI drill-tap allowances. |
-| `[f] [3PH÷]` | Yellow Shift | Divides apparent three-phase power $S$ ($Y$) by $\sqrt{3} \cdot V_{LL}$ ($X$) to return line current $I_L$ in $X'$. |
-| `[f] [→mm]` | Yellow Shift | Converts decimal or fractional inches in $X$ to exact millimeters ($\times 25.4$). |
-| `[g] [→in]` | Blue Shift | Converts millimeters in $X$ to decimal and nearest $1/16\text{ in}$ fractional inches. |
+| {{key:sc14:AWG}} / {{key:sc14:MTR}} / {{key:sc14:FLA}} | Row 1 Col 1 (Primary / Yellow / Blue) | **NEC Voltage Drop (`AWG`), Motor HP (`MTR`) & Full-Load Amps (`FLA`):** Looks up NEC Table 8 resistance $R$ ($\Omega/\text{kft}$) and solves `D = 2 × R × L × I / 1000` ({{keycap:D}}, {{keycap:R}}, {{keycap:L}}, {{keycap:I}}, {{keycap:G}}), motor torque `H = T × N / 5252`, and three-phase `FLA`. |
+| {{key:sc14:OFS}} / {{key:sc14:MIT}} / {{key:sc14:FIT}} | Row 1 Col 2 (Primary / Yellow / Blue) | **Conduit Offset (`BEND`), Miter Angle & Pipe Fitting Take-Off:** Solves `T = O / SIN(A)` ({{keycap:T}}, {{keycap:O}}, {{keycap:A}}) on the stack or bidirectionally, miter cut angle ({{key:sc14:MIT}}), and elbow fitting take-off ({{key:sc14:FIT}}). |
+| {{key:sc14:PF}} / {{key:sc14:Ω}} / {{key:sc14:kVA}} / {{key:sc14:x∥y}} | Electrical Power & Impedance Keys | **Power Factor (`PF`), Ohm's Law (`OHM`), Transformer (`KVA`) & Parallel (`x∥y`):** Solves real power `P = V × I × F` ({{keycap:P}}, {{keycap:V}}, {{keycap:I}}, {{keycap:F}}), `P = V × I`, three-phase `S = V × I × 1.732 / 1000`, and parallel impedance $X \parallel Y = XY/(X+Y)$. |
+| {{key:sc14:PIP}} / {{key:sc14:SCH}} / {{key:sc14:WAL}} | Row 1 Col 4 (Primary / Yellow / Blue) | **Pipe Continuity (`PIP`), Schedule Lookup & Barlow Wall Thickness:** Solves `Q = A × V` ({{keycap:Q}}, {{keycap:A}}, {{keycap:V}}), pipe internal diameter ({{key:sc14:SCH}}), and pressure wall thickness ({{key:sc14:WAL}}). |
+| {{key:sc14:PMP}} / {{key:sc14:TNK}} / {{key:sc14:Cᵥ}} / {{key:sc14:ORF}} / {{key:sc14:NPH}} | Hydraulics & Process Keys | **Pump Power (`PMP`), Tank Volume, Valve $C_v$ (`CV`), Orifice & NPSH:** Solves `P = Q × H / 3960` ({{keycap:P}}, {{keycap:Q}}, {{keycap:H}}), `Q = C × √(P / G)` ({{keycap:Q}}, {{keycap:C}}, {{keycap:P}}, {{keycap:G}}),partially filled tank volume ({{key:sc14:TNK}}), orifice flow ({{key:sc14:ORF}}), and net positive suction head ({{key:sc14:NPH}}). |
+| {{key:sc14:mA}} / {{key:sc14:RTD}} / {{key:sc14:STM}} | Row 2 Col 2 (Primary / Yellow / Blue) | **4–20 mA Loop Scaling, Callendar–Van Dusen RTD & Saturated Steam:** Converts between $4\text{--}20\text{ mA}$ current and engineering span ({{key:sc14:mA}}), Pt100 RTD resistance/temperature ({{key:sc14:RTD}}), and steam pressure/temperature ({{key:sc14:STM}}). |
+| {{key:sc14:SFM}} / {{key:sc14:WLD}} / {{key:sc14:TAP}} / {{key:sc14:RPM}} / {{key:sc14:BC}} | Machining, Welding & Millwright Keys | **Surface Speed (`SFM`), Weld Heat (`WLD`), Tap Drill, Belt Ratio & Bolt Circle (`BOLT`):** Solves spindle speed `N = 3.82 × S / D` ({{keycap:N}}, {{keycap:S}}, {{keycap:D}}), weld heat input `H = 60 × V × I / (1000 × S)` ({{keycap:H}}, {{keycap:V}}, {{keycap:I}}, {{keycap:S}}), tap drill allowance ({{key:sc14:TAP}}), pulley ratio ({{key:sc14:RPM}}), and bolt-circle chord `C = D × SIN(180 / N)` ({{keycap:C}}, {{keycap:D}}, {{keycap:N}}). |
+| {{key:sc14:f-i}} / {{key:sc14:▸mm}} / {{key:sc14:▸in}} / {{key:sc14:▸cm}} / {{key:sc14:▸kW}} / {{key:sc14:▸HP}} / {{key:sc14:▸PSI}} / {{key:sc14:▸kPa}} / {{key:sc14:▸Nm}} / {{key:sc14:▸lbf}} / {{key:sc14:▸GPM}} / {{key:sc14:▸MGD}} | Dimensional & Trade Converters | Enters/formats feet-inch-fractions ({{key:sc14:f-i}}) and converts between metric and US customary length, power, pressure, torque, and flow units. |
 
 ---
 
-## 4. SC-16 Systems Programming, Embedded & Cyber Operations
+## Systems Programming, Embedded, and Cyber Operations Keycaps
+
+On the **SC-16** ([Unit III, Chapters 7–9](03-sc16-systems-cyber.md)), radix and word-architecture keys pair with bitwise logical operators, bit shifts, circular rotations, embedded timer/ADC workspaces, and modular/network keys (while Row 0 softkeys {{key:LFU0}}–{{key:LFU5}} automatically become hexadecimal digits {{keycap:A}}–{{keycap:F}} whenever {{key:sc16:HEX}} mode is active):
 
 | Keycap / Softkey | Layer | Operation & Stack Signature |
 | :--- | :--- | :--- |
-| `[HEX]` | Row 0 Softkey (Col 0) | Switches display and keypad entry to base-16 hexadecimal (`0`–`9`, `A`–`F`). |
-| `[DEC]` | Row 0 Softkey (Col 1) | Switches display to signed/unsigned base-10 decimal integer or float mode. |
-| `[BIN]` | Row 0 Softkey (Col 2) | Switches display to base-2 binary bit-grouped view (`[g] [OCT]` for base-8 octal). |
-| `[WSZ]` | Row 0 Softkey (Col 3) | Cycles hardware word width across `8-bit`, `16-bit`, `32-bit`, and `64-bit` registers. |
-| `[ENDN]` | Row 0 Softkey (Col 4) | Swaps byte endianness (`BSWAP16`, `BSWAP32`, `BSWAP64`) of integer in $X$. |
-| `[FLT]` | Row 0 Softkey (Col 5) | Reinterprets 32-bit hex word in $X$ as an IEEE 754 `float32` value (and vice versa). |
-| `[f] [AND]` / `[OR]` / `[XOR]` | Yellow Shift | Bitwise logical `AND`, `OR`, or `XOR` between $Y$ and $X$ masked to active word width. |
-| `[f] [NOT]` | Yellow Shift | Bitwise one's complement ($\sim X$) masked to active word width (`[+/-]` for two's complement). |
-| `[g] [SL]` / `[SR]` / `[ASR]` | Blue Shift | Logical shift left (`<<`), logical shift right (`>>>`), and arithmetic shift right (`>>`). |
-| `[g] [RL]` / `[RR]` | Blue Shift | Circular bit rotate left (`ROL`) and rotate right (`ROR`) by $X$ bit positions. |
-| `[MOD]` | Primary Key | Computes $Y \bmod X$ (`[MOD]` followed by `[yˣ]` executes $Z^Y \bmod X$). |
+| {{key:sc16:HEX}} / {{key:sc16:DEC}} / {{key:sc16:OCT}} / {{key:sc16:BIN}} | Row 1 Col 1 & Col 5 | Switches display and keypad entry across base-16 hexadecimal (binding {{key:LFU0}}–{{key:LFU5}} to {{keycap:A}}–{{keycap:F}}), base-10 decimal, base-8 octal, and base-2 binary view. |
+| {{key:sc16:WSZ}} / {{key:sc16:UNS}} / {{key:sc16:NEG}} / {{key:sc16:OVF}} | Word Architecture & Sign Keys | Cycles hardware word width across `8-bit`, `16-bit`, `32-bit`, and `64-bit` registers ({{key:sc16:WSZ}}), toggles unsigned interpretation ({{key:sc16:UNS}}), applies two's complement negation $-X \equiv \sim X + 1 \pmod{2^W}$ ({{key:sc16:NEG}}), and inspects carry/overflow status ({{key:sc16:OVF}}). |
+| {{key:sc16:FLT}} / {{key:sc16:F16}} / {{key:sc16:F64}} / {{key:sc16:Q.n}} / {{key:sc16:FXP}} | Row 1 Col 2 & Row 7 Col 2 | Encodes/decodes IEEE 754 `float32` ({{key:sc16:FLT}}), `float16` ({{key:sc16:F16}}), and `float64` ({{key:sc16:F64}}) bit patterns, and converts real coefficients to/from $Q_{m.n}$ fixed-point integers ({{key:sc16:Q.n}}, {{key:sc16:FXP}}). |
+| {{key:sc16:&}} / {{key:sc16:~&}} / {{key:sc16:~}} / {{key:sc16:&#124;}} / {{key:sc16:~&#124;}} / {{key:sc16:⊕}} | Row 2 Cols 3–5 (Primary / Yellow / Blue) | Bitwise logical `AND` ({{key:sc16:&}}), `NAND` ({{key:sc16:~&}}), `NOT` ({{key:sc16:~}}), `OR` ({{key:sc16:&#124;}}), `NOR` ({{key:sc16:~&#124;}}), and `XOR` ({{key:sc16:⊕}}) masked to active {{key:sc16:WSZ}}. |
+| {{key:sc16:≪}} / {{key:sc16:≫}} / {{key:sc16:ASR}} / {{key:sc16:ROR}} | Row 1 Cols 3–4 (Primary / Yellow / Blue) | Logical shift left ({{key:sc16:≪}}, $Y \ll X$), logical shift right ({{key:sc16:≫}}, $Y \ggg X$), sign-preserving arithmetic shift right ({{key:sc16:ASR}}, $Y \gg X$), and circular bit rotation ({{key:sc16:ROR}}). |
+| {{key:sc16:SB}} / {{key:sc16:CB}} / {{key:sc16:B?}} / {{key:sc16:MSK}} | Bitfield Manipulation Keys | Sets ({{key:sc16:SB}}), clears ({{key:sc16:CB}}), or tests ({{key:sc16:B?}}) bit index $X$ in word $Y$, or generates a contiguous $X$-bit mask $2^X - 1$ ({{key:sc16:MSK}}). |
+| {{key:sc16:#B}} / {{key:sc16:CLZ}} / {{key:sc16:2ˣ}} / {{key:sc16:lg}} | Bit Counting & Base-2 Keys | Counts set `1`-bits (Hamming weight {{key:sc16:#B}}) or leading zeros ({{key:sc16:CLZ}}) in $X$, and evaluates exact base-2 powers $2^X$ ({{key:sc16:2ˣ}}) and $\log_2(X)$ ({{key:sc16:lg}}). |
+| {{key:sc16:PWM}} / {{key:sc16:τ}} / {{key:sc16:ALN}} / {{key:sc16:BPS}} | Row 7 Col 3 & Row 2 Col 1 | **Timer (`PWM`), RC Settling (`TAU`), Memory Alignment & UART Baud:** Solves `F = C / (P × A)` ({{keycap:F}}, {{keycap:C}}, {{keycap:P}}, {{keycap:A}}), RC time constant `T = R × C` ({{keycap:T}}, {{keycap:R}}, {{keycap:C}}), power-of-two address alignment ({{key:sc16:ALN}}), and UART baud divisor ({{key:sc16:BPS}}). |
+| {{key:sc16:ADC}} / {{key:sc16:DAC}} | Mixed-Signal Keys | **ADC Quantization Workspace (`ADC`) & DAC Output:** Solves `D = (V / R) × 2^N` ({{keycap:D}}, {{keycap:V}}, {{keycap:R}}, {{keycap:N}}) and reconstructs analog DAC output voltage ({{key:sc16:DAC}}). |
+| {{key:sc16:NET}} / {{key:sc16:CRC}} / {{key:sc16:SWP}} / {{key:sc16:÷R}} / {{key:sc16:MOD}} / {{key:sc16:GCD}} | Row 2 Col 2 & Modular Keys | Computes IPv4 `/P` usable host count $2^{32-P}-2$ ({{key:sc16:NET}}), IEEE 802.3 `CRC-32` ({{key:sc16:CRC}}), byte-order endian swap ({{key:sc16:SWP}}), integer quotient ({{key:sc16:÷R}}), remainder $Y \bmod X$ ({{key:sc16:MOD}}), and greatest common divisor ({{key:sc16:GCD}}). |
+| {{key:sc16:▸B}} / {{key:sc16:▸bit}} / {{key:sc16:▸KiB}} / {{key:sc16:▸MiB}} / {{key:sc16:▸GiB}} / {{key:sc16:▸TiB}} / {{key:sc16:▸ms}} / {{key:sc16:▸μs}} / {{key:sc16:▸MHz}} / {{key:sc16:▸GHz}} / {{key:sc16:▸cyc}} / {{key:sc16:▸ns}} | Storage & Clock Converters | Converts between IEC binary storage prefixes ($2^{10}$–$2^{40}$), bytes/bits ($\times 8$), and clock frequency, period, and cycle counts. |
 
 ---
 
-## 5. SC-24 Cinema Optics, Broadcast Timecode & Sound
+## Cinema Optics, Broadcast Timecode, and Sound Keycaps
+
+On the **SC-24** ([Unit IV, Chapters 10–12](04-sc24-cinema-broadcast.md)), the Row 1 and Row 2 camera, lighting, audio, and DIT keys pair with Row 7 SMPTE timecode solvers to evaluate angle of view, rotary shutter exposure, hyperfocal and depth-of-field lens geometry, mired color-temperature shifts, and location sound acoustics:
 
 | Keycap / Softkey | Layer | Operation & Stack Signature |
 | :--- | :--- | :--- |
-| `[TC]` | Row 0 Softkey (Col 0) | Toggles `HH:MM:SS:FF` SMPTE timecode entry and arithmetic mode. |
-| `[FPS]` | Row 0 Softkey (Col 1) | Cycles frame rate across `23.976`, `24.00`, `25.00`, `29.97 DF`, `29.97 NDF`, `30.00`, and `60.00` fps. |
-| `[DOF]` | Row 0 Softkey (Col 2) | **Depth of Field Solver:** Consumes focal length $f$ ($Z$), $T$-stop ($Y$), and focus distance $d$ ($X$); returns hyperfocal $H$, near limit $D_{\text{near}}$, and far limit $D_{\text{far}}$. |
-| `[EXP]` | Row 0 Softkey (Col 3) | **Exposure & Shutter Solver:** Computes exposure time $t_{\text{exp}}$ or T-stop compensation across FPS, shutter angle, and ND filters. |
-| `[AUD]` | Row 0 Softkey (Col 4) | **Acoustic Delay & Wavelength:** Computes sound propagation delay ($\text{ms}$) and frame offset for distance $d$ at ambient temperature $T$. |
-| `[dB⊕]` | Row 0 Softkey (Col 5) | **Incoherent Decibel Power Sum:** Computes $10\log_{10}(10^{Y/10} + 10^{X/10})$ for combining two audio/noise sources in dB. |
+| {{key:sc24:FOV}} / {{key:sc24:▸35}} / {{key:sc24:▸16}} / {{key:sc24:W:H}} | Optics & Format Keys | **Angle of View (`FOV`), Crop Factors & Aspect Ratio:** Solves `A = 2 × ATAN(W / (2 × F))` ({{keycap:A}}, {{keycap:W}}, {{keycap:F}}), applies Super-35 ({{key:sc24:▸35}}) and 16mm ({{key:sc24:▸16}}) crop equivalents, and evaluates frame aspect ratio ({{key:sc24:W:H}}). |
+| {{key:sc24:EV}} / {{key:sc24:SHT}} / {{key:sc24:GEL}} | Row 1 Col 1 (Primary / Yellow / Blue) | **Exposure Value (`EV`), Rotary Shutter & CTO/CTB Gel Mired Shift:** Solves `N² = T × 2^E` ({{keycap:N}}, {{keycap:T}}, {{keycap:E}}), shutter exposure time $t = \theta_{\text{shutter}} / (360 \cdot \text{FPS})$ ({{key:sc24:SHT}}), and mired color shift $10^6/T_2 - 10^6/T_1$ ({{key:sc24:GEL}}). |
+| {{key:sc24:LUX}} / {{key:sc24:BM°}} / {{key:sc24:▸fc}} / {{key:sc24:▸lux}} / {{key:sc24:▸MRD}} / {{key:sc24:▸K}} | Photometrics & Color Keys | **Inverse-Square Illuminance (`LUX`), Beam Spread & Photometric Units:** Solves `E = I / D²` ({{keycap:E}}, {{keycap:I}}, {{keycap:D}}), luminaire beam diameter ({{key:sc24:BM°}}), footcandles/lux ({{key:sc24:▸fc}}, {{key:sc24:▸lux}}), and mired/Kelvin conversions ({{key:sc24:▸MRD}}, {{key:sc24:▸K}}). |
+| {{key:sc24:DOF}} / {{key:sc24:HFD}} / {{key:sc24:DPT}} / {{key:sc24:▸EV}} / {{key:sc24:▸ND}} | Depth of Field & Filter Keys | **Depth of Field (`DOF`), Hyperfocal, Diopter & ND Stops:** Solves `H = F² / (N × C)` ({{keycap:H}}, {{keycap:F}}, {{keycap:N}}, {{keycap:C}}), direct hyperfocal distance ({{key:sc24:HFD}}), close-up diopter power ({{key:sc24:DPT}}), and optical density / EV stops ({{key:sc24:▸EV}}, {{key:sc24:▸ND}}). |
+| {{key:sc24:dB}} / {{key:sc24:SPL}} / {{key:sc24:λ}} / {{key:sc24:vₛ}} / {{key:sc24:DLY}} / {{key:sc24:SYN}} | Acoustic & Audio Keys | Evaluates decibel voltage/power ratios ({{key:sc24:dB}}), inverse-square SPL attenuation ({{key:sc24:SPL}}), acoustic wavelength ({{key:sc24:λ}}) using speed of sound {{key:sc24:vₛ}}, delay tower alignment ({{key:sc24:DLY}}), and audio-video lip-sync offset ({{key:sc24:SYN}}). |
+| {{key:sc24:BIT}} / {{key:sc24:TB}} / {{key:sc24:DMX}} / {{key:sc24:PWR}} / {{key:sc24:W/A}} | DIT Data & Gaffer Power Keys | **Uncompressed Data Rate (`BIT`), RAID Capacity, DMX512 & Generator Load:** Solves `R = B × F / 8` ({{keycap:R}}, {{keycap:B}}, {{keycap:F}}), storage footprint ({{key:sc24:TB}}), DMX universe/address ({{key:sc24:DMX}}), and stage tie-in load ({{key:sc24:PWR}}, {{key:sc24:W/A}}). |
+| {{key:sc24:TC}} / {{key:sc24:FPS}} / {{key:sc24:DF}} / {{key:sc24:+TC}} / {{key:sc24:-TC}} / {{key:sc24:▸FRM}} / {{key:sc24:▸TC}} | Timecode & Frame-Rate Keys | **SMPTE Timecode Workspace (`TC`) & Frame Arithmetic:** Solves `F = S × R` ({{keycap:F}}, {{keycap:S}}, {{keycap:R}}), sets frame rate ({{key:sc24:FPS}}), computes SMPTE 29.97 drop-frame drift ({{key:sc24:DF}}), adds/subtracts timecode ({{key:sc24:+TC}}, {{key:sc24:-TC}}), and converts between frames and `HH:MM:SS:FF` ({{key:sc24:▸FRM}}, {{key:sc24:▸TC}}). |
 
 ---
 
-## 6. SC-50 RF Spectrum, Transmission Lines & Microwave
+## RF Spectrum, Transmission Lines, and Microwave Keycaps
+
+On the **SC-50** ([Unit V, Chapters 13–15](05-sc50-rf-spectrum.md)), the Row 1 and Row 2 RF propagation, impedance matching, and dynamic range keys pair with bidirectional Equation Workspaces and decibel converters to solve transmission-line standing waves, resonant LC networks, free-space link budgets, cascaded noise figures, Shannon capacity, and radar Doppler shifts:
 
 | Keycap / Softkey | Layer | Operation & Stack Signature |
 | :--- | :--- | :--- |
-| `[dBm]` | Row 0 Softkey (Col 0) | Converts power in Watts/milliwatts in $X$ to $\text{dBm}$ ($10\log_{10}(P / 1\text{ mW})$). |
-| `[→W]` | Row 0 Softkey (Col 1) | Converts power level in $\text{dBm}$ in $X$ to linear power in Watts ($10^{(X-30)/10}$). |
-| `[SWR]` | Row 0 Softkey (Col 2) | Converts load impedance $Z_L$ or reflection magnitude $|\Gamma|$ in $X$ to standing wave ratio $\text{VSWR}$. |
-| `[FSPL]` | Row 0 Softkey (Col 3) | **Friis Path Loss:** Consumes link distance $d$ ($Y$) and frequency $f$ ($X$); returns free-space path loss $\text{FSPL}_{\text{dB}}$ in $X'$. |
-| `[SMTH]` | Row 0 Softkey (Col 4) | **L-Network Impedance Matcher:** Consumes $Z_0$ ($Z$), $R_L$ ($Y$), and $X_L$ ($X$); returns series/shunt matching reactances and $L, C$ values. |
-| `[NF]` | Row 0 Softkey (Col 5) | **Friis Cascade Noise Figure & Thermal Floor:** Computes cascaded noise figure or receiver noise floor $N_{\text{dBm}}$ for bandwidth $B$. |
-| `[f] [RL]` / `[ML]` | Yellow Shift | Converts VSWR or $|\Gamma|$ in $X$ directly to Return Loss ($\text{RL}_{\text{dB}}$) or Mismatch Loss ($\text{ML}_{\text{dB}}$). |
+| {{key:sc50:dBm}} / {{key:sc50:▸dBm}} / {{key:sc50:▸mW}} / {{key:sc50:▸dBW}} / {{key:sc50:▸dBV}} / {{key:sc50:▸μV}} | Power & Voltage Decibel Keys | Converts linear power in milliwatts/Watts in $X$ to $\text{dBm}$ ($10\log_{10}(P_{\text{mW}})$), inverse $\text{mW}$ ($10^{X/10}$), Watt-referenced $\text{dBW}$ ($P_{\text{dBm}} - 30$), or RMS voltage across active impedance {{key:sc50:Z₀}} ($50\,\Omega$ default). |
+| {{key:sc50:SWR}} / {{key:sc50:Γ}} / {{key:sc50:TLN}} / {{key:sc50:COX}} | Impedance & Transmission-Line Keys | **Standing Wave (`SWR`) & Quarter-Wave (`ZMAT`) Workspaces:** Solves `S = (1 + G) / (1 - G)` ({{keycap:S}}, {{keycap:G}}) and quarter-wave transformer `Z = √(S × L)` ({{keycap:Z}}, {{keycap:S}}, {{keycap:L}}), transmission-line electrical length ({{key:sc50:TLN}}), and coaxial attenuation ({{key:sc50:COX}}). |
+| {{key:sc50:FSL}} / {{key:sc50:LNK}} / {{key:sc50:F₁}} / {{key:sc50:λ/L}} | Propagation & Antenna Keys | **Friis Path Loss (`FSL`), Link Budget (`LNK`), Fresnel Zone & Whip Length:** Solves `L = 20LOG(D) + 20LOG(F) + 32.44` ({{keycap:L}}, {{keycap:D}}, {{keycap:F}}), link budget `R = P + G - L` ({{keycap:R}}, {{keycap:P}}, {{keycap:G}}, {{keycap:L}}), first Fresnel zone radius ({{key:sc50:F₁}}), and quarter-wave whip length ({{key:sc50:λ/L}}). |
+| {{key:sc50:NF}} / {{key:sc50:IP3}} / {{key:sc50:FDR}} / {{key:sc50:Pₙ}} / {{key:sc50:dBc}} | Receiver Noise & Dynamic Range | **Friis Cascaded Noise (`NF`), Cascaded IIP3, SFDR & Thermal Floor:** Solves `F = A + (B - 1) / G` ({{keycap:F}}, {{keycap:A}}, {{keycap:B}}, {{keycap:G}}), cascaded third-order intercept ({{key:sc50:IP3}}), spurious-free dynamic range ({{key:sc50:FDR}}), thermal noise floor $P_n = -174 + 10\log_{10}(B)$ ({{key:sc50:Pₙ}}), and oscillator phase noise ({{key:sc50:dBc}}). |
+| {{key:sc50:f₀}} / {{key:sc50:XLC}} / {{key:sc50:PAD}} / {{key:sc50:fc}} / {{key:sc50:EIA}} | Resonance, Reactance & Filter Keys | **LC Tank (`F0`), Reactance, Attenuator Pad & Cutoff:** Solves `F = 1 / (2π√(L×C))` ({{keycap:F}}, {{keycap:L}}, {{keycap:C}}), inductive/capacitive reactance ({{key:sc50:XLC}}), resistive $\pi$/$T$-pad resistors ({{key:sc50:PAD}}), RC/RL $-3\text{ dB}$ cutoff ({{key:sc50:fc}}), and EIA SMD codes ({{key:sc50:EIA}}). |
+| {{key:sc50:C/B}} / {{key:sc50:RCS}} / {{key:sc50:Δf}} | Spectrum & Radar Solvers | **Shannon Capacity (`C/B`), Radar Range & Doppler Shift:** Solves `C = B × LN(1 + S) / LN(2)` ({{keycap:C}}, {{keycap:B}}, {{keycap:S}}), monostatic radar range/RCS ({{key:sc50:RCS}}), and two-way radar Doppler shift $\Delta f = 2 v f_0 / c$ ({{key:sc50:Δf}}). |
+| {{key:sc50:Z₀}} / {{key:sc50:T₀}} / {{key:sc50:c}} / {{key:sc50:kB}} | RF Reference Constants | Recalls or configures characteristic system impedance $Z_0$ ($50\,\Omega$), IEEE reference noise temperature $T_0$ ($290\text{ K}$), speed of light $c$, and Boltzmann constant $k_B$. |
 
 ---
 
-## 7. SC-60 Wet-Lab Chemistry, Stoichiometry & Spectroscopy
+## Wet-Lab Chemistry, Stoichiometry, and Spectroscopy Keycaps
+
+On the **SC-60** ([Unit VI, Chapters 16–18](06-sc60-chemistry-wetlab.md)), the Row 1 and Row 2 analytical chemistry keys and bidirectional Equation Workspaces evaluate formula molecular weights, gravimetric molarity, stock aliquot dilutions, Sørensen $\text{pH}$, Henderson–Hasselbalch buffer pairs, Beer–Lambert optical absorbance, chemical thermodynamics, and Nernstian electrochemistry:
 
 | Keycap / Softkey | Layer | Operation & Stack Signature |
 | :--- | :--- | :--- |
-| `[MW]` | Row 0 Softkey (Col 0) | Computes or recalls molecular weight ($\text{g/mol}$) from atomic masses (`[C]`, `[H]`, `[N]`, `[O]`, `[Na]`, `[Cl]`, `[P]`, `[S]`). |
-| `[MOL]` | Row 0 Softkey (Col 1) | Solves mass $m_{\text{g}} = M \times \text{MW} \times V_{\text{L}}$ or molarity $M$ from mass, molecular weight, and volume. |
-| `[C₁V₁]` | Row 0 Softkey (Col 2) | **Dilution Solver:** Consumes stock $C_1$ ($Z$), target $C_2$ ($Y$), and target volume $V_2$ ($X$); returns stock aliquot $V_1$ in $X'$ and diluent volume $V_2 - V_1$ in $Y'$. |
-| `[pH]` | Row 0 Softkey (Col 3) | Converts $[\text{H}^+]$ molarity in $X$ to $\text{pH} = -\log_{10}(X)$ (`[g] [10⁻ˣ]` for inverse). |
-| `[BUFF]` | Row 0 Softkey (Col 4) | **Henderson-Hasselbalch Buffer:** Consumes $\text{p}K_a$ ($Z$), target $\text{pH}$ ($Y$), and total molarity $C_{\text{tot}}$ ($X$); returns $[\text{HA}]$ and $[\text{A}^-]$. |
-| `[ABS]` | Row 0 Softkey (Col 5) | **Beer-Lambert Law:** Converts percent transmittance $\%T$ to absorbance $A = 2 - \log_{10}(\%T)$ or solves concentration $c = A / (\varepsilon \ell)$. |
-| `[TITR]` | Shifted Solver | Computes equivalence-point volume $V_{\text{eq}}$ and titration curve pH from titrant and analyte volumes/molarities. |
+| {{key:sc60:Z}} / {{key:sc60:MW}} / {{key:sc60:w/w}} / {{key:sc60:ISO}} / {{key:sc60:ION}} | Atomic & Gravimetric Keys | **Element Lookup (`Z`), Molar Mass (`MW`) & Mass Fraction:** Recalls 118-element IUPAC atomic mass ({{key:sc60:Z}} with $X > 0$) or opens Formula Mode ({{key:sc60:Z}} with $X = 0$; softkeys {{keycap:ALP}}, {{keycap:NUM}}, {{keycap:FML}}), solves `W = N × M` ({{keycap:W}}, {{keycap:N}}, {{keycap:M}}), mass percent ({{key:sc60:w/w}}), isotope decay ({{key:sc60:ISO}}), and polyatomic ion ledger ({{key:sc60:ION}}). |
+| {{key:sc60:C₁V₁}} / {{key:sc60:RXN}} / {{key:sc60:w/v}} | Row 2 Col 2 (Primary / Yellow / Blue) | **Dilution (`C1V1`), Stoichiometry (`RXN`) & Weight/Volume %:** Solves `C × V = D × U` ({{keycap:C}}, {{keycap:V}}, {{keycap:D}}, {{keycap:U}}), molar stoichiometry `N = C × V` ({{keycap:N}}, {{keycap:C}}, {{keycap:V}}), and $\%(\text{w/v})$ concentration ({{key:sc60:w/v}}). |
+| {{key:sc60:εbc}} / {{key:sc60:%T}} | Row 2 Col 3 (Primary / Yellow) | **Beer–Lambert (`EBC`) & Optical Transmittance:** Solves `A = E × B × C` ({{keycap:A}}, {{keycap:E}}, {{keycap:B}}, {{keycap:C}}) and converts percent transmittance $\%T$ to absorbance $A = 2 - \log_{10}(\%T)$ ({{key:sc60:%T}}). |
+| {{key:sc60:pH}} / {{key:sc60:pKₐ}} / {{key:sc60:EQV}} / {{key:sc60:BUF}} / {{key:sc60:%Y}} | Row 2 Cols 4–5 & Row 1 Col 2 | **Sørensen pH, Titration Equivalence (`EQV`), Buffer (`BUF`) & Yield:** Converts $[\text{H}^+]$ or $K_a$ to $-\log_{10}(X)$ ({{key:sc60:pH}}, {{key:sc60:pKₐ}}), solves titration equivalence `A × V = B × U` ({{keycap:A}}, {{keycap:V}}, {{keycap:B}}, {{keycap:U}}), Henderson–Hasselbalch `P = K + LOG(A / H)` ({{keycap:P}}, {{keycap:K}}, {{keycap:A}}, {{keycap:H}}), and percent yield ({{key:sc60:%Y}}). |
+| {{key:sc60:PVT}} / {{key:sc60:CAL}} / {{key:sc60:RCF}} | Row 7 Col 3 (Primary / Yellow / Blue) | **Ideal Gas (`PVT`), Calorimetry (`CAL`) & Centrifuge RCF:** Solves `P × V = N × R × T` ({{keycap:P}}, {{keycap:V}}, {{keycap:N}}, {{keycap:T}}), heat transfer `Q = M × C × T` ({{keycap:Q}}, {{keycap:M}}, {{keycap:C}}, {{keycap:T}}), and relative centrifugal force $\text{RCF} = 1.118 \times 10^{-5} r\,\text{RPM}^2$ ({{key:sc60:RCF}}). |
+| {{key:sc60:Kₑq}} / {{key:sc60:Eₐ}} / {{key:sc60:ΔG}} / {{key:sc60:E°}} / {{key:sc60:t½}} | Kinetics, Thermodynamics & Electrochemistry | Evaluates equilibrium constant ({{key:sc60:Kₑq}}), Arrhenius rate factor ({{key:sc60:Eₐ}}), Gibbs free energy `G = H - T × S` ({{key:sc60:ΔG}}: {{keycap:G}}, {{keycap:H}}, {{keycap:T}}, {{keycap:S}}), Nernst cell potential `E = S - (0.05916/N)LOG(Q)` ({{key:sc60:E°}}: {{keycap:E}}, {{keycap:S}}, {{keycap:N}}, {{keycap:Q}}), and first-order half-life $t_{1/2} = \ln(2)/k$ ({{key:sc60:t½}}). |
+| {{key:sc60:R}} / {{key:sc60:h}} / {{key:sc60:F}} / {{key:sc60:Nₐ}} / {{key:sc60:kB}} / {{key:sc60:c}} | Fundamental Physical Constants | Recalls CODATA molar gas constant $R$, Planck constant $h$, Faraday constant $F$, Avogadro constant $N_A$, Boltzmann constant $k_B$, and speed of light $c$. |
 
 ---
 
-## 8. SC-78 Commercial Bakery, Fermentation Science & Brewing
+## Commercial Bakery, Fermentation Science, and Brewing Keycaps
+
+On the **SC-78** ([Unit VII, Chapters 19–21](07-sc78-culinary-brewing.md)), the Row 1 bakery and culinary yield keys and Row 2 brewing and enology keys pair with bidirectional Equation Workspaces to anchor batch scaling to total flour mass, compute mix water and flake-ice mass from friction and ambient heat, evaluate brewing gravity attenuation, strike water temperature, and hop bitterness, and audit butcher trim yields and menu food cost:
 
 | Keycap / Softkey | Layer | Operation & Stack Signature |
 | :--- | :--- | :--- |
-| `[FLR]` | Row 0 Softkey (Col 0) | Sets total flour weight ($100\%$ Baker's Percentage reference base) from Register $X$. |
-| `[BKR%]` | Row 0 Softkey (Col 1) | Converts ingredient percentage in $X$ to batch weight (or batch weight to Baker's $\%$). |
-| `[DDT]` | Row 0 Softkey (Col 2) | **Desired Dough Temperature:** Consumes target $\text{DDT}$ ($T$), room temp ($Z$), flour temp ($Y$), and mixer friction ($X$); returns required water temperature $T_{\text{water}}$. |
-| `[ABV]` | Row 0 Softkey (Col 3) | **Fermentation Gravity Solver:** Consumes Original Gravity $\text{OG}$ ($Y$) and Final Gravity $\text{FG}$ ($X$); returns $\text{ABV\%}$ in $X'$ and apparent attenuation in $Y'$. |
-| `[STRK]` | Row 0 Softkey (Col 4) | **Mash Strike Water:** Consumes grist ratio $R$ ($Z$), grain temp ($Y$), and target mash rest temp ($X$); returns strike water temperature $T_{\text{strike}}$. |
-| `[IBU]` | Row 0 Softkey (Col 5) | **Tinseth Hop Bitterness:** Computes International Bitterness Units ($\text{IBU}$) from hop mass, alpha-acid $\%$, boil time, wort gravity, and batch volume. |
+| {{key:sc78:BK%}} / {{key:sc78:HYD}} / {{key:sc78:SCL}} / {{key:sc78:PAN}} | Baker's Percentage & Scaling Keys | **Baker's % (`BK%`), Hydration, Batch Scale & Pan Scaling:** Consumes flour mass ($Y$) and ingredient mass ($X$) or opens `P = (I / F) × 100` ({{keycap:P}}, {{keycap:I}}, {{keycap:F}}), computes dough hydration % ({{key:sc78:HYD}}), scales ingredient weights ({{key:sc78:SCL}}), and scales across pan volumes ({{key:sc78:PAN}}). |
+| {{key:sc78:LEV}} / {{key:sc78:PRF}} / {{key:sc78:LV%}} | Row 1 Col 1 (Primary / Yellow / Blue) | **Sourdough Starter (`LEV`), Proofing Time & inoculation (`LV%`):** Splits levain build mass into flour/water components ({{key:sc78:LEV}}), adjusts fermentation proof time for ambient temperature $Q_{10}$ ({{key:sc78:PRF}}), and computes pre-ferment inoculation % ({{key:sc78:LV%}}). |
+| {{key:sc78:Tw}} / {{key:sc78:ΣW}} / {{key:sc78:DIV}} / {{key:sc78:ICE}} | Row 1 Cols 3–4 (Primary / Yellow / Blue) | **Desired Dough Temp (`TW`), Total Weight, Portion Divide & Flake Ice:** Solves `W = 3 × D - R - F - M` ({{keycap:W}}, {{keycap:D}}, {{keycap:R}}, {{keycap:F}}, {{keycap:M}}), computes total dough mass from flour and total baker's % ({{key:sc78:ΣW}}), divides batch into equal loaves ({{key:sc78:DIV}}), and computes flake-ice replacement mass ({{key:sc78:ICE}}). |
+| {{key:sc78:ABV}} / {{key:sc78:CHP}} / {{key:sc78:SRM}} / {{key:sc78:BRX}} / {{key:sc78:SGT}} | Gravity, Alcohol & Color Keys | **Alcohol by Volume (`ABV`), Chaptalization, Morey SRM & Hydrometer:** Solves `A = (O - F) × 131.25` ({{keycap:A}}, {{keycap:O}}, {{keycap:F}}), sugar addition ({{key:sc78:CHP}}), beer color $\text{SRM} = 1.4922 \cdot \text{MCU}^{0.6859}$ ({{key:sc78:SRM}}), alcohol-corrected refractometer FG ({{key:sc78:BRX}}), and hydrometer temperature correction ({{key:sc78:SGT}}). |
+| {{key:sc78:MSH}} / {{key:sc78:SPG}} / {{key:sc78:IBU}} / {{key:sc78:CO₂}} | Row 2 Cols 4–5 (Primary / Yellow) | **Mash Strike (`MSH`), Sparge Volume, Hop Bitterness (`IBU`) & Carbonation:** Solves `S = (0.2 / R) × (T - G) + T` ({{keycap:S}}, {{keycap:R}}, {{keycap:T}}, {{keycap:G}}), boil/sparge volume ({{key:sc78:SPG}}), hop bitterness `I = W × A × U × 74.89 / V` ({{keycap:I}}, {{keycap:W}}, {{keycap:A}}, {{keycap:U}}, {{keycap:V}}), and keg head pressure ({{key:sc78:CO₂}}). |
+| {{key:sc78:C₁V₁}} / {{key:sc78:TA}} / {{key:sc78:WTR}} / {{key:sc78:SO₂}} / {{key:sc78:ACD}} | Enology, Acid & Water Keys | Solves Pearson dilution `C × V = D × U` ({{key:sc78:C₁V₁}}), titratable acidity ({{key:sc78:TA}}), brewing salt ppm ({{key:sc78:WTR}}), potassium metabisulfite dosage ({{key:sc78:SO₂}}), and acid blend adjustment ({{key:sc78:ACD}}). |
+| {{key:sc78:YLD}} / {{key:sc78:MAC}} / {{key:sc78:CST}} / {{key:sc78:PRC}} / {{key:sc78:PU}} | Yield, Costing & Food Safety Keys | **Butcher Yield (`YLD`) & Plate Costing (`CST`):** Computes edible yield $\text{EP}/\text{AP}\times 100$ ({{key:sc78:YLD}}), Atwater caloric macros ({{key:sc78:MAC}}), solves `P = C / (F / 100)` ({{keycap:P}}, {{keycap:C}}, {{keycap:F}}) or menu price ({{key:sc78:PRC}}), and evaluates thermal pasteurization units ({{key:sc78:PU}}). |
+| {{key:sc78:▸Brx}} / {{key:sc78:▸SG}} / {{key:sc78:▸°P}} / {{key:sc78:▸PRF}} / {{key:sc78:TDS}} / {{key:sc78:DTR}} / {{key:sc78:SAL}} / {{key:sc78:SV}} / {{key:sc78:SYR}} / {{key:sc78:Aw}} | Culinary R&D & Sugar Scale Keys | Converts between Brix, Specific Gravity, Plato, and US Proof; evaluates coffee extraction yield ({{key:sc78:TDS}}) and roast development time ratio ({{key:sc78:DTR}}), equilibrium brine salinity ({{key:sc78:SAL}}), sous-vide thermal diffusion ({{key:sc78:SV}}), syrup Brix ({{key:sc78:SYR}}), and water activity ({{key:sc78:Aw}}). |
 
 ---
 
-## 9. SC-80 Clinical Nursing, Hospital Pharmacy & Infusions
+## Clinical Nursing, Hospital Pharmacy, and Infusions Keycaps
+
+On the **SC-80** ([Unit VIII, Chapters 22–24](08-sc80-clinical-pharmacy.md)), the Row 1 and Row 2 clinical dosing, clearance, and pharmacy compounding keys pair with the Patient Profile softkey bar ({{keycap:PAT}}: {{keycap:W}}, {{keycap:H}}, {{keycap:A}}, {{keycap:S}}, {{keycap:MALE}}/{{keycap:FEM}}) to evaluate Mosteller body surface area, Devine ideal and adjusted dosing weights, Cockcroft–Gault renal clearance, pediatric maintenance rules, vasoactive pump and gravity drip rates, and one-compartment pharmacokinetics:
 
 | Keycap / Softkey | Layer | Operation & Stack Signature |
 | :--- | :--- | :--- |
-| `[BSA]` | Row 0 Softkey (Col 0) | **Mosteller BSA:** Consumes patient height in $\text{cm}$ ($Y$) and weight in $\text{kg}$ ($X$); returns Body Surface Area ($\text{m}^2$) in $X'$. |
-| `[IBW]` | Row 0 Softkey (Col 1) | **Devine Ideal & Adjusted Body Weight:** Computes $\text{IBW}_{\text{kg}}$ and $\text{ABW}_{\text{kg}}$ from patient sex, height, and actual weight. |
-| `[CrCl]` | Row 0 Softkey (Col 2) | **Cockcroft-Gault Renal Clearance:** Consumes age ($Z$), weight in $\text{kg}$ ($Y$), and serum creatinine $\text{SCr}$ ($X$); returns $\text{CrCl}$ ($\text{mL/min}$). |
-| `[MCG]` | Row 0 Softkey (Col 3) | **Weight-Based IV Titration:** Converts ordered dose ($\text{mcg/kg/min}$), patient weight ($\text{kg}$), and bag concentration ($\text{mcg/mL}$) to pump rate ($\text{mL/hr}$). |
-| `[GTT]` | Row 0 Softkey (Col 4) | **Gravity IV Drip Rate:** Consumes infusion rate in $\text{mL/hr}$ ($Y$) and tubing drop factor in $\text{gtt/mL}$ ($X$); returns rounded whole drops per minute ($\text{gtt/min}$). |
-| `[PED]` | Row 0 Softkey (Col 5) | **Pediatric Safe-Dose Guardrail:** Verifies ordered dose against $\text{mg/kg/day}$ safe range and computes liquid suspension volume ($\text{mL/dose}$). |
+| {{key:sc80:BSA}} / {{key:sc80:IBW}} / {{key:sc80:ABW}} / {{key:sc80:BMI}} | Anthropometric & Dosing Weight Keys | **Mosteller BSA (`BSA`), Ideal/Adjusted Weight & BMI:** Consumes height in $\text{cm}$ ($Y$) and weight in $\text{kg}$ ($X$) or solves `B = √(H × W / 3600)` ({{keycap:B}}, {{keycap:H}}, {{keycap:W}}, {{keycap:PAT}}), Devine ideal body weight ({{key:sc80:IBW}}), $40\%$ obese-adjusted dosing weight ({{key:sc80:ABW}}), and Quetelet BMI ({{key:sc80:BMI}}). |
+| {{key:sc80:GFR}} / {{keycap:PAT}} | Row 1 Col 2 & Patient Softkey | **Cockcroft–Gault Renal Clearance (`GFR`):** Solves `C = ((140 - A) × W) / (72 × S)` ({{keycap:C}}, {{keycap:A}}, {{keycap:W}}, {{keycap:S}}, {{keycap:PAT}}), automatically applying the $\times 0.85$ female sex factor when {{keycap:FEM}} is active in the {{keycap:PAT}} profile. |
+| {{key:sc80:DRP}} / {{key:sc80:IV}} / {{key:sc80:gtt}} / {{key:sc80:DOS}} / {{key:sc80:MGH}} | Critical-Care Infusion & Titration Keys | **Vasoactive Drip (`DRP`), Volumetric Pump (`IV`), Gravity (`gtt`) & Weight Dose (`DOS`):** Solves `R = D × W × 60 / C` ({{keycap:R}}, {{keycap:D}}, {{keycap:W}}, {{keycap:C}}, {{keycap:PAT}}), pump rate `R = V / T` ({{keycap:R}}, {{keycap:V}}, {{keycap:T}}), gravity roller clamp rate $R \times F_{\text{drop}} / 60$ ({{key:sc80:gtt}}), weight-based dose `T = W × D` ({{keycap:T}}, {{keycap:W}}, {{keycap:D}}, {{keycap:PAT}}), and $\text{mg/hr}$ mass rate ({{key:sc80:MGH}}). |
+| {{key:sc80:Rx}} / {{key:sc80:ALG}} / {{key:sc80:IST}} / {{key:sc80:VIL}} / {{key:sc80:TPN}} / {{key:sc80:GIR}} | Pharmacy Compounding & Nutrition Keys | Evaluates tablets/volume per dose ({{key:sc80:Rx}}), two-stock alligation alternate ratio ({{key:sc80:ALG}}), sodium chloride isotonicity equivalent ({{key:sc80:IST}}), powder vial reconstitution volume ({{key:sc80:VIL}}), parenteral nutrition non-protein kcal ({{key:sc80:TPN}}), and neonatal glucose infusion rate ({{key:sc80:GIR}}). |
+| {{key:sc80:PED}} / {{key:sc80:421}} / {{key:sc80:REE}} / {{key:sc80:VET}} | Pediatric, Metabolic & Veterinary Keys | Computes Clark/Young pediatric dose ({{key:sc80:PED}}), Holliday–Segar `4-2-1` hourly maintenance fluid rate ({{key:sc80:421}}), Mifflin–St Jeor resting energy expenditure ({{key:sc80:REE}}), and Kleiber allometric veterinary metabolic energy $70 \cdot W_{\text{kg}}^{0.75}$ ({{key:sc80:VET}}). |
+| {{key:sc80:PK}} / {{key:sc80:EBM}} / {{key:sc80:NNT}} / {{key:sc80:OR}} | Pharmacokinetics & Biostatistics Keys | **One-Compartment Elimination (`PK`) & Clinical Epidemiology:** Converts between $k_e$ and $t_{1/2} = \ln(2)/k_e$ on the stack or solves `T = 0.693 × V / C` ({{keycap:T}}, {{keycap:V}}, {{keycap:C}}), and evaluates specificity/NPV ({{key:sc80:EBM}}), number needed to treat ({{key:sc80:NNT}}), and odds ratio ({{key:sc80:OR}}). |
+| {{key:sc80:AG}} / {{key:sc80:Ca²⁺}} / {{key:sc80:Na⁺}} / {{key:sc80:OSM}} | Serum Electrolyte & Osmolality Keys | Evaluates serum anion gap $\text{AG} = \text{Na}^+ - (\text{Cl}^- + \text{HCO}_3^-)$ ({{key:sc80:AG}}), Payne albumin-corrected calcium ({{key:sc80:Ca²⁺}}), Katz hyperglycemia-corrected sodium ({{key:sc80:Na⁺}}), and calculated serum osmolality ({{key:sc80:OSM}}). |
+| {{key:sc80:ICU}} / {{key:sc80:MAP}} / {{key:sc80:BRN}} / {{key:sc80:ABG}} / {{key:sc80:QTc}} / {{key:sc80:O₂}} | Hemodynamics, Burn & Emergency Keys | **Cardiac Output (`ICU`), MAP, Parkland Burn (`BRN`) & Respiratory Keys:** Solves `Q = H × S / 1000` ({{keycap:Q}}, {{keycap:H}}, {{keycap:S}}), mean arterial pressure $\text{DBP} + (\text{SBP}-\text{DBP})/3$ ({{key:sc80:MAP}}), Parkland burn fluid `V = 4 × W × B` ({{keycap:V}}, {{keycap:W}}, {{keycap:B}}), Berlin ARDS $P_a\text{O}_2/F_i\text{O}_2$ ratio ({{key:sc80:ABG}}), Bazett $\text{QTc}$ ({{key:sc80:QTc}}), and oxygen cylinder duration ({{key:sc80:O₂}}). |
 
 ---
 
-## 10. Quantitative Finance, Actuarial Science & Six Sigma (SC-95)
+## Quantitative Finance, Actuarial Science, and Six Sigma Keycaps
+
+On the **SC-95** ([Unit IX, Chapters 25–27](09-sc95-finance-statistics.md)), the Row 7 Time Value of Money workspace key ({{key:sc95:TVM}}), Row 1 and Row 2 R-style probability distribution keys, and shifted financial and statistical solvers combine five-variable compound interest, discounted cash-flow and bond valuation, unit-economic accounting, and Six Sigma statistical inference:
 
 | Keycap / Softkey | Layer | Operation & Stack Signature |
 | :--- | :--- | :--- |
-| `[N]` / `[I/Y]` / `[PV]` / `[PMT]` / `[FV]` | Row 0 Softkeys (Cols 0–4) | **Five-Key TVM Solver:** If preceded by numeric entry, stores $X$ into that TVM variable; if pressed after another TVM key, solves for that variable using signed cash-flow convention. |
-| `[CPK]` | Row 0 Softkey (Col 5) | **Six Sigma Process Capability:** Consumes $\text{LSL}$ ($T$), $\text{USL}$ ($Z$), sample mean $\mu$ ($Y$), and standard deviation $\hat{\sigma}$ ($X$); returns $C_{pk}$ in $X'$ and $C_p$ in $Y'$. |
-| `[f] [I%YR]` | Yellow Shift | Divides annual nominal rate in $Y$ by compounding periods per year in $X$ and stores periodic rate in `[I/Y]`. |
-| `[f] [AMRT]` | Yellow Shift | Computes principal paid ($\Delta\text{Prin}$), interest paid ($\Delta\text{Int}$), and remaining balance over payment range $[p_1, p_2]$. |
-| `[f] [NPV]` / `[IRR]` | Yellow Shift | Computes Net Present Value or Internal Rate of Return across cash-flow series $CF_0, CF_1, \dots, CF_T$. |
-| `[g] [NormCDF]` / `[InvNorm]` | Blue Shift | Standard normal cumulative probability $\Phi(z)$ and inverse quantile $\Phi^{-1}(p)$. |
+| {{key:sc95:TVM}} $\to$ {{keycap:N}} {{keycap:I%}} {{keycap:PV}} {{keycap:PMT}} {{keycap:FV}} {{keycap:END}}/{{keycap:BEG}} | Row 7 Col 3 Primary & Softkeys | **Five-Variable TVM Workspace:** Pressing {{key:sc95:TVM}} binds {{key:LFU0}}–{{key:LFU5}} to {{keycap:N}}, {{keycap:I%}}, {{keycap:PV}}, {{keycap:PMT}}, {{keycap:FV}}, and payment timing {{keycap:END}}/{{keycap:BEG}}; pressing `<VALUE>` `<SOFTKEY>` stores a known parameter, and {{key:sc95:SOLVE}} `<SOFTKEY>` (or {{key:XEQ}} `<SOFTKEY>`) solves for the unknown variable. |
+| {{key:sc95:AMR}} / {{key:sc95:EAR}} | Row 7 Col 3 (Yellow / Blue) | **Loan Amortization & Effective Annual Rate (`EAR`):** Computes principal/interest reduction from the active `TVM` registers ({{key:sc95:AMR}}), or solves `E = ((1 + A / (100 × M))^M - 1) × 100` ({{keycap:E}}, {{keycap:A}}, {{keycap:M}}) via {{key:sc95:EAR}}. |
+| {{key:sc95:CF}} (`NPV` Workspace) / {{key:sc95:ROI}} / {{key:sc95:CGR}} / {{key:sc95:WAC}} / {{key:sc95:CAP}} | Capital Budgeting & Return Keys | **Discounted Cash-Flow Workspace (`NPV`) & Growth Solvers:** {{key:sc95:CF}} solves `V = C×(1-(1+R/100)⁻ᴺ)/(R/100) - I` ({{keycap:V}} for NPV, {{keycap:R}} for IRR at $V=0$, {{keycap:C}}, {{keycap:N}}, {{keycap:I}}), return on investment ({{key:sc95:ROI}}), compound annual growth `F = P × (1 + R/100)^N` ({{key:sc95:CGR}}: {{keycap:F}}, {{keycap:P}}, {{keycap:R}}, {{keycap:N}}), WACC ({{key:sc95:WAC}}), and perpetuity capitalization ({{key:sc95:CAP}}). |
+| {{key:sc95:MGN}} / {{key:sc95:MKP}} / {{key:sc95:BEP}} / {{key:sc95:EOQ}} / {{key:sc95:DEP}} / {{key:sc95:TAX}} / {{key:sc95:%Σ}} | Commercial & CPA Accounting Keys | Solves gross margin `M = (P - C) / P × 100` ({{key:sc95:MGN}}: {{keycap:M}}, {{keycap:P}}, {{keycap:C}}), markup `U = (P - C) / C × 100` ({{key:sc95:MKP}}: {{keycap:U}}, {{keycap:P}}, {{keycap:C}}), break-even units `Q = F / (P - V)` ({{key:sc95:BEP}}: {{keycap:Q}}, {{keycap:F}}, {{keycap:P}}, {{keycap:V}}), Wilson `Q = √(2×D×S/H)` ({{key:sc95:EOQ}}: {{keycap:Q}}, {{keycap:D}}, {{keycap:S}}, {{keycap:H}}), straight-line depreciation `D = (C - S) / L` ({{key:sc95:DEP}}: {{keycap:D}}, {{keycap:C}}, {{keycap:S}}, {{keycap:L}}), sales tax `T = P × (1 + R/100)` ({{key:sc95:TAX}}: {{keycap:T}}, {{keycap:P}}, {{keycap:R}}), and share of total ({{key:sc95:%Σ}}). |
+| {{key:sc95:BND}} (`BND` Workspace) | Row 2 Col 1 Blue Shift | **Fixed-Income Bond Workspace (`BND`):** Solves `P = C×(1-(1+Y/100)⁻ᴺ)/(Y/100) + F/(1+Y/100)ᴺ` forward for clean price {{keycap:P}} or backward for periodic yield to maturity {{keycap:Y}}, coupon {{keycap:C}}, remaining periods {{keycap:N}}, or par redemption {{keycap:F}}. |
+| {{key:sc95:pN}} / {{key:sc95:qN}} / {{key:sc95:rN}} / {{key:sc95:pt}} / {{key:sc95:qt}} / {{key:sc95:rt}} / {{key:sc95:pχ²}} / {{key:sc95:qχ²}} / {{key:sc95:rχ²}} / {{key:sc95:pF}} / {{key:sc95:qF}} / {{key:sc95:rF}} / {{key:sc95:pB}} / {{key:sc95:qB}} / {{key:sc95:rB}} / {{key:sc95:PDF}} | Row 1 Col 3 & Row 2 Cols 2–5 | **R-Style CDF (`p*`), Inverse Quantile (`q*`), Random Variate (`r*`) & Density (`PDF`):** Evaluates cumulative probabilities (blue shift), critical quantiles (yellow shift), and random variates (unshifted primary) for Binomial ({{key:sc95:pB}}/{{key:sc95:qB}}/{{key:sc95:rB}}), Normal ({{key:sc95:pN}}/{{key:sc95:qN}}/{{key:sc95:rN}}), Student's $t$ ({{key:sc95:pt}}/{{key:sc95:qt}}/{{key:sc95:rt}}), Chi-square ({{key:sc95:pχ²}}/{{key:sc95:qχ²}}/{{key:sc95:rχ²}}), and Fisher $F$ ({{key:sc95:pF}}/{{key:sc95:qF}}/{{key:sc95:rF}}) distributions, or prefixes with {{key:sc95:PDF}} for point density/mass. |
+| {{key:sc95:Σ+}} / {{key:sc95:Σ-}} / {{key:sc95:x̄,ȳ}} / {{key:sc95:MED}} / {{key:sc95:s,σ}} / {{key:sc95:L.R.}} | Summary Statistics & Regression Keys | Accumulates/removes $(x_i, y_i)$ pairs ({{key:sc95:Σ+}}, {{key:sc95:Σ-}}), computes sample means ({{key:sc95:x̄,ȳ}}), median/IQR ({{key:sc95:MED}}), sample/population standard deviations ({{key:sc95:s,σ}}), and opens the least-squares regression menu ({{key:sc95:L.R.}} $\to$ {{keycap:ŷ}}, {{keycap:x̂}}, {{keycap:m}}, {{keycap:b}}, {{keycap:r}}). |
+| {{key:sc95:Cpk}} / {{key:sc95:SPC}} / {{key:sc95:CI}} / {{key:sc95:z₀}} / {{key:sc95:t₂}} / {{key:sc95:A/B}} / {{key:sc95:n*}} / {{key:sc95:P&#124;B}} / {{key:sc95:β}} | Six Sigma, Inference & Bayesian Solvers | Solves process capability `C = (U - L) / (6 × S)` ({{key:sc95:Cpk}}: {{keycap:C}}, {{keycap:U}}, {{keycap:L}}, {{keycap:S}}), $3\sigma$ Shewhart control limits ({{key:sc95:SPC}}), confidence margin `E = Z × S / √N` ({{key:sc95:CI}}: {{keycap:E}}, {{keycap:Z}}, {{keycap:S}}, {{keycap:N}}), one-sample $z$-test ({{key:sc95:z₀}}), two-sample $t$-test ({{key:sc95:t₂}}), two-proportion test ({{key:sc95:A/B}}), sample size `N = (Z × S / E)²` ({{key:sc95:n*}}: {{keycap:N}}, {{keycap:Z}}, {{keycap:S}}, {{keycap:E}}), Bayes posterior ({{key:sc95:P&#124;B}}), and three-point Beta-PERT mean `E = (O + 4×M + P) / 6` ({{key:sc95:β}}: {{keycap:E}}, {{keycap:O}}, {{keycap:M}}, {{keycap:P}}). |
+| {{key:sc95:▸YR}} / {{key:sc95:▸YMD}} / {{key:sc95:DT+}} / {{key:sc95:ΔD}} | Calendar & Day-Count Keys | Converts day counts to annualized years ({{key:sc95:▸YR}}), formats ISO `YYYY.MMDD` dates ({{key:sc95:▸YMD}}), projects future maturity dates ({{key:sc95:DT+}}), and computes day counts between dates ({{key:sc95:ΔD}}). |

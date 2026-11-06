@@ -584,8 +584,8 @@
     "scene": "Education/tools/generate_book_diagrams.py::book_place_value_regrouping.scad",
     "stls": [
       "Education/build/stl/components/place_value_box_body.stl",
-      "Education/build/stl/components/place_value_tray_4x2_1.stl",
-      "Education/build/stl/components/pv_digit_block_slate_1.stl"
+      "Education/build/stl/components/place_value_tray_whole.stl",
+      "Education/build/stl/components/pv_digit_block_slate_1_6.stl"
     ],
     "svg": "place_value_regrouping.svg"
   },

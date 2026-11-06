@@ -1,103 +1,70 @@
 ---
-title: "StackCalc Domain Calculator Series: Field Applied Mathematics & Professional Manuals"
-description: "A comprehensive applied mathematics introduction to the 9 StackCalc domain calculators (SC-35, SC-14, SC-16, SC-24, SC-50, SC-60, SC-78, SC-80, SC-95)."
+title: "Volume III — The Stack in the Field: When Mathematics Meets the Physical Trades"
+description: "A concept-first applied mathematics guide to nine physical trades and engineering disciplines across nine units and twenty-seven narrative-problem chapters, uniting first-principles derivations with RPN stack execution and bidirectional equation solvers."
 ---
 
-# StackCalc Domain Calculator Series
-## When Mathematics Meets the Physical Trades
+# Prologue: When Mathematics Meets the Physical Trades
 
-> **Who this series is for:** You already know how algebra, trigonometry, vectors, and logarithms work on paper. But how does an electrician turn right triangles into bent steel pipes thirty feet in the air? How does an artisan baker use percentages where the total is $197\%$? Why does an ICU nurse use square roots of height and weight to protect an elderly patient's kidneys? And why does a radio engineer care about waves reflecting backward down a coaxial cable?
+In the summer of 1858, while the first transatlantic telegraph cable was being paid out across the floor of the North Atlantic between Valentia Island, Ireland, and Heart's Content, Newfoundland, the thirty-four-year-old Scottish physicist William Thomson—later Lord Kelvin—sat aboard HMS *Agamemnon* watching a mirror galvanometer. In university lecture halls, electrical circuits had been taught as idealized abstractions: wires carried current without resistance, signals arrived at the far end of a line without delay, and pulses retained their sharp rectangular edges regardless of distance. Across two thousand nautical miles of gutta-percha-insulated copper core resting on the ocean seabed, physical reality intervened. Distributed conductor resistance and seawater capacitance turned crisp Morse dots into slow, attenuating thermal and electromagnetic diffusions, and when the chief electrician in London applied high-voltage induction coils to force a faster signal through the cable, the insulation charred and failed within weeks.
 
----
+Twenty-five years later, in a famous 1883 address to the Institution of Civil Engineers in London, Kelvin distilled the lesson of the Atlantic cable into the foundational maxim of applied science: until you can measure what you are speaking about and express it in numbers, your knowledge remains of a meager and unsatisfactory kind. In a classroom, angles begin along the horizontal $+x$ axis and sweep counterclockwise, conductors carry current without heating, integers grow arbitrarily large without wrapping around, waves travel down cables without reflecting, and chemical or culinary formulations scale by volume. When mathematics enters the field, the shop floor, the wet lab, or the flight deck, it encounters the physical properties of real materials and the historical conventions of human instruments.
 
-### The Philosophy: Mathematics Grounded in Physical Reality
-
-Pure mathematics is clean, timeless, and abstract. But when math steps out of the lecture hall and onto a job site, it hits the friction of the real world:
-- Heat dissipates in copper wires.
-- Measurement errors compound across property lines.
-- Microprocessors overflow when numbers exceed silicon registers.
-- Yeast fermentation speeds up when a mixer blade gets warm.
-- Sound waves collide in echoes and phase cancellations.
-
-For decades, professionals in these fields used specialized pocket slide rules, tables, or legendary instruments like the **HP-35**, **HP-16C**, and **HP-12C**. 
-
-The **StackCalc Domain Series** expands that heritage into nine specialized physical and software instruments. Each calculator takes the timeless power of the 4-level Reverse Polish Notation (RPN) stack and customizes its keys, constants, and display for the natural rhythm of a specific craft.
-
-Every instrument in the series shares five core engineering principles:
-
-1. **Pure Scalar Stack (`X`, `Y:`, `Z:`, `T:`):** Calculations are never blocked by clunky unit-mismatch errors. The numbers are clean, double-precision scalars.
-2. **Top-Zero Suppression:** Empty stack registers above your active numbers stay silent, keeping the screen uncluttered.
-3. **Dedicated Table Inspector (`TBL` via `[g] [+/-]`):** Lookup tables (AWG wire ampacities, periodic table molar masses, hop yields, and pipe dimensions) are accessible instantly without modifying your working stack.
-4. **Physical Row 0 Softkeys:** Six dedicated keys align with LCD screen slots for 1-tap parameter workspaces.
-5. **Non-Destructive Inspection (`SHOW`):** Transiently displays deep analytical breakdowns (like quadrant bearings, IEEE-754 float bitfields, or kitchen utensil equivalents) and returns to the stack untouched.
+Compasses and optical theodolites measure angles clockwise from True North ($0^\circ$), swapping the roles of sine and cosine, while historic property deeds record bearings in sexagesimal degrees, arcminutes, and arcseconds ($D^\circ M' S''$) and structural blueprints specify dimensions in feet and binary fractional inches. Copper and aluminum feeders resist electron flow and convert voltage into heat inside steel raceways that foreshorten along their run when bent around overhead beams. Silicon microprocessor registers hold a fixed number of bistable flip-flops ($W \in \{8, 16, 32, 64\}$ bits) whose signed integers wrap around modulo $2^W$ in two's complement arithmetic. Camera lenses focus light across a finite depth of field governed by the circle of confusion, radio-frequency waves reflect from mismatched antenna impedances, analytical chemists weigh macroscopic grams to count submicroscopic moles, commercial bakers anchor dough hydration and mixer friction to flour mass, hospital pharmacists titrate narrow-therapeutic-index infusions to patient body surface area and renal clearance, and quality engineers measure manufacturing capability against Six Sigma tolerance bands.
 
 ---
 
-### Discipline Chapters & Overviews
+## Physical Constraints and Operational Acronyms
 
-```
-documentation/manuals/domains/
-├── 01-sc35-geomatics-navigation.md  # Land Surveying, Civil COGO & Flight Navigation
-├── 02-sc14-electrical-trades.md     # Electrical Feeder Sizing, Conduit Bending & Machining
-├── 03-sc16-systems-cyber.md         # Embedded Firmware, Two's Complement & IEEE-754 Floats
-├── 04-sc24-cinema-broadcast.md      # Cinema Optics, SMPTE Timecode & Sound Acoustics
-├── 05-sc50-rf-spectrum.md           # RF Microwaves, VSWR, Return Loss & Smith Charts
-├── 06-sc60-chemistry-wetlab.md      # Molecular Weights, Dilutions, pH & Buffer Solutions
-├── 07-sc78-culinary-brewing.md      # Baker's Percentages, Dough Thermodynamics & Brewing
-├── 08-sc80-clinical-pharmacy.md     # Patient Biometrics, BSA, Renal Dosing & IV Infusions
-└── 09-sc95-finance-statistics.md    # 5-Key TVM, Cash Flows, Six Sigma & R Distributions
-```
+Across every technical craft, practitioners condense recurring mathematical relationships into compact three- or four-letter operational shorthand. Rather than speaking in unanchored algebraic symbols, a land surveyor speaks of running a **Forward** coordinate projection (`{{key:sc35:TRV}}`) or an **Inverse** monument check (`{{key:sc35:INV}}`); a master electrician checks branch-circuit **Voltage Drop** (`{{key:sc14:AWG}}`), **Power Factor** (`{{key:sc14:PF}}`), or motor **Full-Load Amps** (`{{key:sc14:FLA}}`); and an embedded systems engineer applies a contiguous bitfield **Mask** (`{{key:sc16:MSK}}`), an **Arithmetic Shift Right** (`{{key:sc16:ASR}}`), or a **Cyclic Redundancy Check** (`{{key:sc16:CRC}}`).
 
-#### [Chapter 1: SC-35 Geomatics, Land Surveying & Flight Navigation](01-sc35-geomatics-navigation.md)
-*Mapping a World That Refuses to Stand Still*
-- **The Core Puzzle:** Why do surveyors swap sine and cosine compared to standard math, and why do historic property deeds use quadrant bearings ($\text{S } 45^\circ \text{ W}$) instead of $0\text{--}360^\circ$ angles?
-- **Key Concepts:** Sexagesimal $DDD.MMSS$ angles, Forward and Inverse Coordinate Geometry (COGO), traverse loop closure with Gauss's Shoelace polygon area, and solving aerodynamic crosswind drift.
+![From physical observation to mathematical model and RPN stack operator.](../assets/diagrams/domains/diagram_intro_pipeline.png)
 
-#### [Chapter 2: SC-14 Industrial Trades, Electrical & Mechanical Handbook](02-sc14-electrical-trades.md)
-*When Ohm's Law Meets Heavy Copper*
-- **The Core Puzzle:** Why does a vacuum cleaner dim your living room lamp, and how do electricians use cosecant multipliers to bend rigid steel conduit around ceiling beams?
-- **Key Concepts:** Conductor resistance and Circular Mils ($CM$), single-phase and 3-phase voltage drop ($VD = 2KIL/CM$), the geometric $\sqrt{3} \approx 1.732$ factor of 3-phase AC power, and CNC surface feet per minute ($SFM$).
-
-#### [Chapter 3: SC-16 Systems Programming, Embedded & Cyber Operations](03-sc16-systems-cyber.md)
-*When Numbers Hit the Silicon Ceiling*
-- **The Core Puzzle:** Why do digital odometers and computer registers roll over to zero, and how did a 16-bit integer overflow destroy the Ariane 5 rocket?
-- **Key Concepts:** Two's complement signed integer mechanics, speaking in hexadecimal (base-16 nibbles), memory alignment padding gaps, and dissecting single-precision IEEE-754 floating-point bits.
-
-#### [Chapter 4: SC-24 Cinema Optics, Broadcast Timecode & Sound Handbook](04-sc24-cinema-broadcast.md)
-*When Light and Sound Become Numbers*
-- **The Core Puzzle:** Why does North American television run at $29.97\text{ frames per second}$ instead of $30.00$, and why are two people shouting together only $3\text{ dB}$ louder than one?
-- **Key Concepts:** SMPTE drop-frame drift compensation, circle of confusion and hyperfocal depth-of-field, Exposure Value ($EV$) photometrics, and logarithmic acoustic decibel summing ($dB\oplus$).
-
-#### [Chapter 5: SC-50 RF Spectrum, Transmission Lines & Microwave Handbook](05-sc50-rf-spectrum.md)
-*When Wires Stop Acting Like Wires*
-- **The Core Puzzle:** Why do high-frequency radio waves bounce backward down an antenna cable like an echo in a canyon, and how does a mismatched antenna melt an expensive transmitter transistor?
-- **Key Concepts:** Characteristic impedance ($50\,\Omega$ vs. $75\,\Omega$), reflection coefficient ($\Gamma$), Voltage Standing Wave Ratio ($VSWR$), folding the infinite impedance plane into a Smith Chart circle, and Friis cascaded receiver noise.
-
-#### [Chapter 6: SC-60 Wet-Lab Chemistry, Stoichiometry & Spectroscopy](06-sc60-chemistry-wetlab.md)
-*Counting What You Cannot See*
-- **The Core Puzzle:** How do analytical chemists translate an exact count of trillions of invisible molecules into a pile of white powder on a lab balance?
-- **Key Concepts:** IUPAC molar mass summation ($m = C \cdot V \cdot MW$), serial dilution ($C_1 V_1 = C_2 V_2$), logarithmic pH scales, Henderson-Hasselbalch biochemical buffer design, and the Beer-Lambert spectrophotometry law.
-
-#### [Chapter 7: SC-78 Commercial Bakery, Fermentation Science & Brewing](07-sc78-culinary-brewing.md)
-*When the Kitchen Becomes a Laboratory*
-- **The Core Puzzle:** Why is measuring flour by volume a trap, and why do commercial bakeries anchor flour at $100\%$ so that recipes can total $197\%$?
-- **Key Concepts:** Baker's Percentages ($BK\%$), Desired Dough Water Temperature ($T_W$) with spiral-mixer friction compensation, equilibrium meat curing salinity, and brewing specific gravity ($SG, ^\circ\text{P}, ABV$).
-
-#### [Chapter 8: SC-80 Clinical Nursing, Hospital Pharmacy & Infusions](08-sc80-clinical-pharmacy.md)
-*When a Decimal Point Means Everything*
-- **The Core Puzzle:** Why is dosing a drug purely by body weight dangerous, and why do cancer chemotherapy and critical care medications scale with surface area ($m^2$)?
-- **Key Concepts:** The persistent Patient Profile (`@PAT`), Mosteller Body Surface Area, Cockcroft-Gault Creatinine Clearance ($CrCl$) for aging kidneys, and microgram weight-based infusion pump titrations ($\mu\text{g/kg/min}$).
-
-#### [Chapter 9: SC-95 Quantitative Finance, Actuarial Science & Six Sigma](09-sc95-finance-statistics.md)
-*The Cost of Tomorrow: Time, Uncertainty, and Capital*
-- **The Core Puzzle:** Why is $\$10{,}000$ today worth more than $\$10{,}000$ in ten years, and how do industrial engineers know if a factory process is producing defect-free parts?
-- **Key Concepts:** The William Kahan 5-key TVM system ($PV, i, N, PMT, FV$), discounted cash flows (NPV and IRR), bond pricing, and Six Sigma process capability indices ($C_p, C_{pk}$).
+Throughout this volume, each operational acronym is introduced directly inside the first-principles conceptual derivation that motivates it. Treating tokens such as `{{key:sc35:TRV}}`, `{{key:sc35:INV}}`, `{{key:sc35:BRG}}`, `{{key:sc35:CRV}}`, `{{key:sc14:AWG}}`, `{{key:sc14:OFS}}`, `{{key:sc14:Cᵥ}}`, `{{key:sc16:NEG}}`, `{{key:sc16:FLT}}`, `{{key:sc16:ADC}}`, `{{key:sc16:NET}}`, `{{key:sc24:DOF}}`, `{{key:sc50:SWR}}`, `{{key:sc60:εbc}}`, `{{key:sc60:BUF}}`, `{{key:sc78:Tw}}`, `{{key:sc80:GFR}}`, and `{{key:sc95:Cpk}}` as named mathematical transformations serves two pedagogical purposes at once. First, it binds every governing equation to its physical trade context: seeing `{{key:sc35:INV}}` recalls extracting straight-line distance and compass azimuth between two boundary monuments, while seeing `{{key:sc14:OFS}}` recalls the cosecant hypotenuse of a conduit offset triangle. Second, once the geometry and physics behind each acronym are established through worked analytical examples, transitioning to an operational keypad where those exact legends engrave the keys requires no translation layer.
 
 ---
 
-### Verification Suite & Source Grounding
+## Dual-Mode RPN Stack Pipelines and Bidirectional Equation Workspaces
 
-Every calculation, keystroke sequence, and formula documented in these chapters is tested against our automated test suites in `watch-calc-32`:
-- `DomainSoftkeyAndInputModeTests.swift`: Validates softkey layouts and input modes across all 9 domain models.
-- `DomainForumIntegrationTests.swift`: Validates real-world problem solutions from practitioner forums.
-- `ModelMatrixTests.swift`: Confirms 100% key coordinate invariance across the calculator family.
+In an introductory algebra course, an equation is typically presented as a single static formula on paper and evaluated once. In the physical trades, field computation unfolds as a **progressive pipeline of intermediate physical quantities** where the output of one transformation becomes the input to the next, or as an **inverse design problem** where a physical boundary constraint fixes the output and the practitioner must solve backward for a required input dimension. An electrician computes the apparent power of a three-phase load in kilovolt-amperes, converts that apparent power into line current in amperes, scales by $125\%$ for continuous duty, and checks either the voltage drop across a selected wire gauge or the maximum conduit run length permitted under a $3\%$ voltage-drop ceiling. A land surveyor reduces an inclined slope distance to horizontal ground distance, projects that horizontal distance into North and East displacements, and adds those displacements to the starting benchmark coordinates. A clinical pharmacist calculates a patient's body surface area in square meters, multiplies by an oncology protocol dose in $\text{mg/m}^2$ to determine total milligrams, divides by stock vial concentration to find required milliliters, and divides by infusion duration to set the volumetric pump rate in $\text{mL/hr}$.
+
+![Architecture of the four-register RPN stack (T, Z, Y, X) during physical multi-parameter evaluation.](../assets/diagrams/domains/diagram_intro_stack.png)
+
+Every instrument in the StackCalc Domain Series (`SC-35` through `SC-95`) is built around a **three-pillar computational architecture** designed specifically for this dual forward-and-inverse field workflow:
+
+1. **Configurable RPN Stack Depth (`4-LV`, `8-LV`, or Deep Stack `INF`):** Practitioners can operate with classic four-register $(X, Y, Z, T)$ RPN discipline, or cycle Flag 5 (`5:DEP`) inside `{{key:FLAGS}}` to `8-LV` for an eight-register stack or `INF` for deep stack capacity so register depth is never an artificial hardware bottleneck. Throughout this volume, stack trace tables display the active four-register window ($T, Z, Y, X$) at the bottom of the stack where operands are staged and inspected.
+2. **Dual-Mode Domain Keys (Quick-Access RPN Stack Shortcuts + Bidirectional Equation Solver Workspaces):**
+   - **Immediate Stack Mode (Quick-Access Shortcut):** When operands are already staged in Registers $Z, Y,$ and $X$, pressing a domain key executes the forward transformation in a single keystroke and remains on the RPN stack so results can be chained immediately. Domain operators embed fundamental physical constants (such as the molar gas constant $R = 8.314462618\text{ J/(mol}\cdot\text{K)}$ on `{{key:sc60:R}}`, the Faraday constant $F = 96{,}485.33\text{ C/mol}$ on `{{key:sc60:F}}`, and standard water density $\rho_w$ on `{{key:sc14:ρw}}`), regulatory lookup tables (such as NEC Chapter 9, Table 8 conductor resistances in `{{key:sc14:AWG}}` and 118-element IUPAC atomic weights in `{{key:sc60:Z}}`), and dimensional scaling factors so field engineers can chain calculations without error-prone manual constant entry.
+   - **Bidirectional Equation Solver Workspace (`{{key:SOLVE}}` / `{{key:XEQ}}` + Softkeys `{{key:LFU0}}`–`{{key:LFU5}}`):** When idle on the RPN stack, the six top-row softkeys (`{{key:LFU0}}`–`{{key:LFU5}}`) dynamically surface your most recently used domain operations via `LFUManager` (or hexadecimal digits `{{keycap:A}}`–`{{keycap:F}}` on the `SC-16` in `{{key:sc16:HEX}}` mode). Pressing a domain key when $X = 0$ and $Y = 0$ (or after `{{key:SOLVE}}`) opens its Equation Solver Workspace, displaying the classical governing law across Line 1 of the LCD—such as `L = R × Δ × π / 180` for horizontal curves (`{{key:sc35:CRV}}`), `A = ε × B × C` for Beer–Lambert spectrophotometry (`{{key:sc60:εbc}}`), `P = K + LOG(A/H)` for Henderson–Hasselbalch buffers (`{{key:sc60:BUF}}`), `D = 2×R×L×I / 1000` for feeder voltage drop (`{{key:sc14:AWG}}`), `T = O / SIN(A)` for conduit offsets (`{{key:sc14:OFS}}`), or `Q = C × √(P / G)` for control valve flow (`{{key:sc14:Cᵥ}}`)—and rebinds `{{key:LFU0}}`–`{{key:LFU5}}` to the equation's named variables. Storing known parameters in any order and pressing `{{key:SOLVE}}` (or `{{key:XEQ}}`) on the remaining variable softkey solves **forward or backward for any unknown variable** without algebraic rearrangement.
+3. **Domain Input Parsers and Live Reference Ledgers (`{{key:▦}}`):** Dedicated entry parsers accept native trade notation—packed sexagesimal `DDD.MMSS` angles (`{{key:sc35:▸DEG}}` / `{{key:sc35:▸HMS}}`), architectural feet and fractional inches (`{{key:sc35:f-i}}`), chemical formulas (`{{key:sc60:Z}}`), hardware radix words (`{{key:sc16:HEX}}`, `{{key:sc16:BIN}}`, `{{key:sc16:OCT}}`), and broadcast timecode (`{{key:sc24:TC}}`)—while the non-destructive Reference Table (`{{key:▦}}`) maintains live domain ledgers such as `@COGO` survey coordinates and polygon area/closure, NEC wire ampacity tables, and elemental mass breakdowns.
+
+To see how immediate stack execution and the bidirectional Equation Solver complement each other, consider a $150\text{ ft}$ single-phase $240\text{ V}$ branch circuit carrying $I = 24\text{ A}$ on `#10 AWG` copper wire ($R = 1.24\ \Omega/\text{kft}$). On the RPN stack, staging current $I = 24\text{ A}$ in Register $Z$, one-way length $L = 150\text{ ft}$ in Register $Y$, and wire gauge `10` in Register $X$ before pressing `{{key:sc14:AWG}}` evaluates the round-trip line voltage drop $V_{\text{drop}} = \frac{2 R L I}{1000} = \mathbf{8.928\text{ V}}$ directly from the built-in NEC Table 8 resistance lookup, or you can inspect each intermediate physical product step by step:
+
+| Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `10 {{key:sc14:AWG}}` | $0$ | $0$ | $0$ | $1.24$ | Look up NEC Table 8 copper resistance for `#10 AWG` ($1.24\ \Omega/\text{kft}$) |
+| `2 {{key:×}} 150 {{key:×}}` | $0$ | $0$ | $0$ | $372$ | Form round-trip resistance-length product $2 R L = 372\ \Omega\cdot\text{ft}/\text{kft}$ |
+| `24 {{key:×}} 1000 {{key:÷}}` | $0$ | $0$ | $0$ | $8.928$ | Scale by $I = 24\text{ A}$ and divide by $1{,}000$ to find $V_{\text{drop}} = 8.928\text{ V}$ |
+| `240 {{key:÷}} 100 {{key:×}}` | $0$ | $0$ | $0$ | **$3.72$** | Divide by $240\text{ V}$ supply and scale to percentage drop ($3.72\%$) |
+
+Because $3.72\%$ exceeds the NEC $3.0\%$ branch-circuit recommendation ($D_{\max} = 0.03 \times 240\text{ V} = 7.20\text{ V}$), suppose the electrician needs to know the **maximum allowable one-way conduit length $L$** on `#10 AWG` wire at $I = 24\text{ A}$ without exceeding $D = 7.20\text{ V}$. Opening the `{{key:sc14:AWG}}` Equation Workspace displays `D = 2×R×L×I / 1000` with variable softkeys `{{keycap:D}}`, `{{keycap:R}}`, `{{keycap:L}}`, `{{keycap:I}}`, and `{{keycap:G}}` on `{{key:LFU0}}`–`{{key:LFU4}}`: keying `10 {{key:sc14:AWG}}` auto-populates $R = 1.24\ \Omega/\text{kft}$ and binds `{{keycap:G}}` $= 10$, storing `7.20 {{keycap:D}}` (`{{key:LFU0}}`) and `24 {{keycap:I}}` (`{{key:LFU3}}`), and pressing `{{key:SOLVE}} {{keycap:L}}` (`{{key:LFU2}}`) immediately solves the equation backward to return $L = \frac{1000 \times 7.20}{2 \times 1.24 \times 24} \approx \mathbf{120.97\text{ ft}}$.
+
+---
+
+## Scope and Mathematical Progression
+
+This volume is organized into **nine domain Units**—one for each specialized instrument in the StackCalc Domain Series (`SC-35`, `SC-14`, `SC-16`, `SC-24`, `SC-50`, `SC-60`, `SC-78`, `SC-80`, and `SC-95`)—spanning **twenty-seven narrative-problem Chapters** and two formal reference appendices. Each Unit opens with the historical and mathematical foundations of its discipline and unfolds across three interconnected field narratives, where each chapter solves an authentic end-to-end engineering problem from first principles using both immediate RPN stack pipelines and bidirectional Equation Workspaces:
+
+| Unit & Chapters | Domain Instrument & Scope | Narrative Problems & Domain Keys Mastered |
+| :--- | :--- | :--- |
+| **[Unit I (Chapters 1–3)](01-sc35-geomatics-navigation.md)** | **Geomatics, Land Surveying & Flight Navigation** (`SC-35`) | **Ch 1:** Retracing a lost 18th-century timber boundary & polygon closure (`{{key:sc35:▸DEG}}`, `{{key:sc35:▸HMS}}`, `{{key:sc35:▸HR}}`, `{{key:sc35:f-i}}`, `{{key:sc35:SLP}}`, `{{key:sc35:TRV}}`, `{{key:sc35:INV}}`, `{{key:sc35:BRG}}`, `{{key:sc35:PT+}}`, `{{key:sc35:CLS}}`, `{{key:sc35:△}}`, `{{key:sc35:LVL}}`, `{{key:▦}}`) • **Ch 2:** Mountain highway switchback curve, vertical crest curve, earthwork & canyon spirit leveling (`{{key:sc35:CRV}}`, `{{key:sc35:VCV}}`, `{{key:sc35:LVL}}`, `{{key:sc35:STA}}`, `{{key:sc35:GR%}}`, `{{key:sc35:CUT}}`, `{{key:sc35:FLW}}`) • **Ch 3:** High-desert night crosswind approach, density altitude, weight & balance, and fuel endurance (`{{key:sc35:WND}}`, `{{key:sc35:XWC}}`, `{{key:sc35:ALT}}`, `{{key:sc35:TSD}}`, `{{key:sc35:CG}}`) |
+| **[Unit II (Chapters 4–6)](02-sc14-electrical-trades.md)** | **Electrical Power, Conduit Geometry & Industrial Trades** (`SC-14`) | **Ch 4:** Pier 14 gantry crane feeder voltage drop, three-phase power factor & conduit offsets (`{{key:sc14:AWG}}`, `{{key:sc14:PF}}`, `{{key:sc14:FLA}}`, `{{key:sc14:kVA}}`, `{{key:sc14:OFS}}`, `{{key:sc14:x∥y}}`, `{{key:sc14:Ω}}`) • **Ch 5:** Parallel boiler-room I-beam conduit offsets, miter/fitting layouts & machining speeds (`{{key:sc14:OFS}}`, `{{key:sc14:MIT}}`, `{{key:sc14:FIT}}`, `{{key:sc14:SFM}}`, `{{key:sc14:TAP}}`, `{{key:sc14:BC}}`, `{{key:▦}}`) • **Ch 6:** Process piping velocity, hydraulic pump power, NPSH, valve $C_v$ & $4\text{--}20\text{ mA}$ loops (`{{key:sc14:PIP}}`, `{{key:sc14:PMP}}`, `{{key:sc14:NPH}}`, `{{key:sc14:Cᵥ}}`, `{{key:sc14:mA}}`, `{{key:sc14:RTD}}`, `{{key:sc14:RPM}}`, `{{key:sc14:WLD}}`) |
+| **[Unit III (Chapters 7–9)](03-sc16-systems-cyber.md)** | **Digital Systems, Bitwise Logic & Embedded Timing** (`SC-16`) | **Ch 7:** Stuck motor-controller interrupt flag, two's complement, arithmetic shifts & IEEE-754/Q-format encoding (`{{key:sc16:HEX}}`, `{{key:sc16:BIN}}`, `{{key:sc16:OCT}}`, `{{key:sc16:DEC}}`, `{{key:sc16:WSZ}}`, `{{key:sc16:NEG}}`, `{{key:sc16:&}}`, `{{key:sc16:&#124;}}`, `{{key:sc16:⊕}}`, `{{key:sc16:~}}`, `{{key:sc16:MSK}}`, `{{key:sc16:≪}}`, `{{key:sc16:≫}}`, `{{key:sc16:ASR}}`, `{{key:sc16:ROR}}`, `{{key:sc16:FLT}}`, `{{key:sc16:Q.n}}`, `{{key:sc16:FXP}}`) • **Ch 8:** Corrupt serial telemetry packet, endian byte swap, CRC, CIDR subnetting & UART baud drift (`{{key:sc16:SWP}}`, `{{key:sc16:FLT}}`, `{{key:sc16:CRC}}`, `{{key:sc16:NET}}`, `{{key:sc16:PWM}}`, `{{key:sc16:BPS}}`) • **Ch 9:** Mixed-signal 12-bit ADC front end, RC time constant, timer PWM & `/26` factory floor subnetting (`{{key:sc16:PWM}}`, `{{key:sc16:ADC}}`, `{{key:sc16:τ}}`, `{{key:sc16:#B}}`, `{{key:sc16:CLZ}}`, `{{key:sc16:NET}}`, `{{key:sc16:ALN}}`) |
+| **[Unit IV (Chapters 10–12)](04-sc24-cinema-broadcast.md)** | **Cinema Optics, Broadcast Timecode & Live Acoustics** (`SC-24`) | **Ch 10:** NTSC drop-frame broadcast sync & frame-accurate editing (`{{key:sc24:TC}}`, `{{key:sc24:FPS}}`, `{{key:sc24:DF}}`, `{{key:sc24:▸FRM}}`, `{{key:sc24:▸TC}}`, `{{key:sc24:+TC}}`, `{{key:sc24:-TC}}`) • **Ch 11:** Anamorphic thin-lens hyperfocal distance, depth of field & rotary shutter exposure (`{{key:sc24:DOF}}`, `{{key:sc24:HFD}}`, `{{key:sc24:FOV}}`, `{{key:sc24:EV}}`, `{{key:sc24:SHT}}`, `{{key:sc24:LUX}}`, `{{key:sc24:GEL}}`) • **Ch 12:** Stadium delay-tower acoustics, decibel power addition & wavelength delay (`{{key:sc24:dB}}`, `{{key:sc24:SPL}}`, `{{key:sc24:λ}}`, `{{key:sc24:DLY}}`, `{{key:sc24:vₛ}}`) |
+| **[Unit V (Chapters 13–15)](05-sc50-rf-spectrum.md)** | **Radio-Frequency Engineering, Transmission Lines & Link Budgets** (`SC-50`) | **Ch 13:** Coaxial feedline impedance mismatch, reflection coefficient & standing wave ratio (`{{key:sc50:dBm}}`, `{{key:sc50:▸mW}}`, `{{key:sc50:Γ}}`, `{{key:sc50:SWR}}`) • **Ch 14:** Quarter-wave stub matching & LC resonance synthesis (`{{key:sc50:Z₀}}`, `{{key:sc50:λ/L}}`, `{{key:sc50:TLN}}`, `{{key:sc50:f₀}}`) • **Ch 15:** Geostationary microwave link budget, Friis path loss & cascaded noise figure (`{{key:sc50:FSL}}`, `{{key:sc50:LNK}}`, `{{key:sc50:NF}}`, `{{key:sc50:IP3}}`, `{{key:sc50:FDR}}`, `{{key:sc50:C/B}}`) |
+| **[Unit VI (Chapters 16–18)](06-sc60-chemistry-wetlab.md)** | **Wet-Lab Chemistry, Stoichiometry & Optical Spectroscopy** (`SC-60`) | **Ch 16:** Gravimetric reagent preparation, IUPAC molar mass, serial dilutions & UV-Vis verification (`{{key:sc60:MW}}`, `{{key:sc60:Z}}`, `{{key:sc60:ION}}`, `{{key:sc60:C₁V₁}}`, `{{key:sc60:RXN}}`, `{{key:sc60:εbc}}`, `{{key:sc60:▸M}}`, `{{key:sc60:▸mM}}`, `{{key:sc60:▸mol}}`) • **Ch 17:** Sørensen $\text{pH}$, weak-acid dissociation & Henderson–Hasselbalch buffer synthesis (`{{key:sc60:pH}}`, `{{key:sc60:pKₐ}}`, `{{key:sc60:BUF}}`, `{{key:sc60:EQV}}`, `{{key:sc60:10ˣ}}`) • **Ch 18:** Beer–Lambert UV-Vis spectrophotometry, ideal gas vessels, Nernst redox, Arrhenius kinetics & centrifugation (`{{key:sc60:εbc}}`, `{{key:sc60:%T}}`, `{{key:sc60:PVT}}`, `{{key:sc60:ΔG}}`, `{{key:sc60:Kₑq}}`, `{{key:sc60:E°}}`, `{{key:sc60:Eₐ}}`, `{{key:sc60:t½}}`, `{{key:sc60:RCF}}`) |
+| **[Unit VII (Chapters 19–21)](07-sc78-culinary-brewing.md)** | **Commercial Baking, Dough Thermodynamics & Brewing Science** (`SC-78`) | **Ch 19:** Artisan sourdough scaling, flour-anchored baker's percentages & preferments (`{{key:sc78:BK%}}`, `{{key:sc78:HYD}}`, `{{key:sc78:SCL}}`, `{{key:sc78:LEV}}`, `{{key:sc78:ΣW}}`, `{{key:sc78:DIV}}`) • **Ch 20:** Desired dough temperature, spiral-mixer friction calorimetry & ice batching (`{{key:sc78:Tw}}`, `{{key:sc78:ICE}}`, `{{key:sc78:YLD}}`, `{{key:sc78:CST}}`, `{{key:sc78:PRC}}`) • **Ch 21:** All-grain mash strike thermodynamics, Plato gravity attenuation & Tinseth hop isomerization (`{{key:sc78:MSH}}`, `{{key:sc78:SGT}}`, `{{key:sc78:▸°P}}`, `{{key:sc78:ABV}}`, `{{key:sc78:IBU}}`, `{{key:sc78:SRM}}`) |
+| **[Unit VIII (Chapters 22–24)](08-sc80-clinical-pharmacy.md)** | **Clinical Dosing, Renal Clearance & Pharmacokinetics** (`SC-80`) | **Ch 22:** Oncology body surface area, Devine ideal weight & Cockcroft–Gault renal clearance (`{{key:sc80:BSA}}`, `{{key:sc80:IBW}}`, `{{key:sc80:ABW}}`, `{{key:sc80:BMI}}`, `{{key:sc80:GFR}}`) • **Ch 23:** ICU vasoactive microgram titrations, stock reconstitution & gravity drip factors (`{{key:sc80:DOS}}`, `{{key:sc80:DRP}}`, `{{key:sc80:IV}}`, `{{key:sc80:VIL}}`, `{{key:sc80:▸mcg}}`, `{{key:sc80:gtt}}`, `{{key:sc80:PED}}`) • **Ch 24:** First-order elimination half-life, vancomycin trough kinetics & serum electroneutrality (`{{key:sc80:PK}}`, `{{key:sc80:AG}}`, `{{key:sc80:Ca²⁺}}`, `{{key:sc80:ABG}}`) |
+| **[Unit IX (Chapters 25–27)](09-sc95-finance-statistics.md)** | **Quantitative Finance, Fixed-Income Valuation & Six Sigma Quality** (`SC-95`) | **Ch 25:** Commercial project cash flows, five-variable TVM, amortization & internal rate of return (`{{key:sc95:TVM}}`, `{{key:sc95:AMR}}`, `{{key:sc95:CF}}`) • **Ch 26:** Fixed-income bond pricing, yield to maturity & capital asset depreciation (`{{key:sc95:BND}}`, `{{key:sc95:DEP}}`, `{{key:sc95:CGR}}`, `{{key:sc95:EAR}}`) • **Ch 27:** Precision aerospace tolerance bands, normal quantiles & Six Sigma capability (`{{key:sc95:pN}}`, `{{key:sc95:qN}}`, `{{key:sc95:rN}}`, `{{key:sc95:z₀}}`, `{{key:sc95:t₂}}`, `{{key:sc95:Cpk}}`, `{{key:sc95:CI}}`) |
+| **[Appendices A–B](appendix-a-cross-domain-formula-compendium.md)** | **Formal Reference Compendium** | **App. A:** Cross-Domain Formula & Governing Equation Compendium • **[App. B](appendix-b-domain-keycap-and-softkey-directory.md):** Domain Keycap, Softkey & Operator Directory across `SC-35` through `SC-95` |
+
+We begin on the land and in the sky in [Unit I: Geomatics, Land Surveying & Flight Navigation](01-sc35-geomatics-navigation.md).

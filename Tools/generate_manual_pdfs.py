@@ -1140,6 +1140,7 @@ def clean_latex_math(text: str) -> str:
     text = re.sub(r'\\leq(?![a-zA-Z])', '≤', text)
     text = re.sub(r'\\geq(?![a-zA-Z])', '≥', text)
     text = re.sub(r'\\ll(?![a-zA-Z])', '≪', text)
+    text = re.sub(r'\\ggg(?![a-zA-Z])', '≫', text)
     text = re.sub(r'\\gg(?![a-zA-Z])', '≫', text)
     text = re.sub(r'\\ne(?![a-zA-Z])', '≠', text)
     text = re.sub(r'\\neq(?![a-zA-Z])', '≠', text)
@@ -1287,8 +1288,11 @@ _MATH_SANS_GLYPH_RE = re.compile(
     r'([⊗⊙⊖⊘⊞⊟⊠⊡⊢⊣⊤⊥⊨⊩⊪⊫⊬⊭⊮⊯⊰⊱⊲⊳⊴⊵⊶⊷⊸⊹⊺⊻⊼⊽⊾⊿⋀⋁⋂⋃⋄⋅⋆⋇⋈⋉⋊⋋⋌⋍⋎⋏⋐⋑⋒⋓⋔⋕⋖⋗⋘⋙⋚⋛⋜⋝⋞⋟⋠⋡⋢⋣⋤⋥⋦⋧⋨⋩⋪⋫⋬⋭⋮⋯⋰⋱'
     r'⇐⇑⇓⇕↦↪↩↼⇀↽⇁⇋∀∃∅∈∉∋∌∐∔∕∖∗∘∙∛∜∟∡∢∣∤∦∧∨∮∯∰∱∲∳∴∵∶∷∸∹∺∻∼∽∾∿≀≁≂≃≄≅≆≇≉≊≋≌≍≎≏≐≑≒≓≔≕≖≗≘≙≚≛≜≝≞≟'
     r'≢≣≦≧≨≩≪≫≬≭≮≯≰≱≲≳≴≵≶≷≸≹≺≻≼≽≾≿⊀⊁⊂⊃⊄⊅⊆⊇⊈⊉⊊⊋⊌⊍⊎⊏⊐⊑⊒⊓⊔⟪⟫⟬⟭⟮⟯'
-    r'ₐₑₒₓₔₕₖₗₘₙₚₛₜ⇄↰↱ȳℓ─○★✓✗↖↗■☉▸▲▼])'
+    r'ₐₑₒₓₔₕₖₗₘₙₚₛₜᵥᴺ⇄↰↱ȳℓ─○★✓✗↖↗■☉▸▲▼])'
 )
+
+
+_ACTIVE_MANUAL_KIND: str = "sc32"
 
 
 def _protect_special_unicode_glyphs(text: str, in_code: bool = False) -> str:
@@ -1297,7 +1301,8 @@ def _protect_special_unicode_glyphs(text: str, in_code: bool = False) -> str:
     that are absent in CMUSerif or SpaceMono with DejaVuSerif (MathSerif) or DejaVuSans (MathSans) so zero tofu boxes (□) ever appear.
     """
     text = text.replace("^°", "°")
-    text = text.replace("🎲", "[DICE]").replace("🕒", "[CLOCK]").replace("▦", "[FRAME]").replace("⚡", "[QUIZ]")
+    grid_tok = "[TBL]" if _ACTIVE_MANUAL_KIND == "domains" else "[FRAME]"
+    text = text.replace("🎲", "[DICE]").replace("🕒", "[CLOCK]").replace("▦", grid_tok).replace("⚡", "[QUIZ]")
     text = text.replace("\u20d7", "").replace("⟌", "/").replace("⬜", "□").replace("🔴", "●").replace("⚪", "○").replace("🟦", "■")
     if in_code and BOOK_SERIF_AVAILABLE:
         text = re.sub(r'([α-ωΑ-Ω])', f"<font face='{FONT_BODY}'>\\1</font>", text)
@@ -1478,7 +1483,8 @@ def _get_fallback_paper_keycap(clean_label: str, is_sc32: bool) -> Tuple[Path, i
     out_dir.mkdir(parents=True, exist_ok=True)
 
     disp = clean_label.replace("⇄", "↔").replace("↰", "f").replace("↱", "g").replace("▸", "→")
-    disp = disp.replace("🎲", "DICE").replace("🕒", "CLOCK").replace("▦", "FRAME")
+    grid_lbl = "TBL" if (is_sc32 or _ACTIVE_MANUAL_KIND == "domains") else "FRAME"
+    disp = disp.replace("🎲", "DICE").replace("🕒", "CLOCK").replace("▦", grid_lbl)
 
     space_mono_bold = FONT_DIR / "SpaceMono-Bold.ttf"
     arial_bold = Path("/System/Library/Fonts/Supplemental/Arial Bold.ttf")
@@ -1624,24 +1630,28 @@ def sanitize_inline_markdown(text: str, is_sc32: bool, in_table: bool = False) -
     alt_registry = get_registry(not is_sc32)
 
     _DOMAIN_KEYCAP_SET = {
-        "ENTER", "ON", "C", "CLEAR", "AC", "<-", "BS", "DICE", "CLOCK", "FRAME",
+        "ENTER", "ON", "C", "CLEAR", "AC", "<-", "BS", "DICE", "CLOCK", "FRAME", "TBL", "SOLVE", "XEQ",
         "FWD", "INV", "BRG", "WND", "ISA", "TRAV", "trav", "→HR", "→HMS", "POL", "REC",
-        "RUN", "RISE", "DIAG", "HIP", "BEND", "VD", "TBL", "3PH÷", "→mm", "→in",
-        "HEX", "DEC", "BIN", "OCT", "WSZ", "ENDN", "FLT", "AND", "OR", "XOR", "NOT",
-        "SL", "SR", "ASR", "RL", "RR", "MOD",
-        "TC", "FPS", "DOF", "EXP", "AUD", "dB⊕",
-        "dBm", "→W", "SWR", "FSPL", "SMTH", "NF", "ML",
-        "MW", "MOL", "C₁V₁", "M₁V₁", "pH", "BUFF", "ABS", "TITR", "10⁻ˣ",
-        "FLR", "BKR%", "DDT", "ABV", "STRK", "IBU",
-        "BSA", "IBW", "CrCl", "MCG", "GTT", "PED", "AGE", "SEX", "SCR", "W", "H",
-        "N", "I/Y", "I%YR", "PV", "PMT", "FV", "CPK", "AMRT", "NPV", "IRR", "NormCDF", "InvNorm",
-        "SHOW", "x²", "yˣ", "√x", "1/x", "+/-", "x⇄y", "R↓", "←",
+        "SLOPE", "GRADE%", "PT+", "CLOSURE", "HCRV", "VCRV", "3-W", "STA", "LVL", "WIND", "XWIND", "HW", "ALT", "TSD", "TOD", "VS", "TRI",
+        "RUN", "RISE", "DIAG", "HIP", "BEND", "VD", "3PH÷", "→mm", "→in", "AWG", "Cᵥ", "PUMP", "RPM", "SFM", "FEED", "TAP", "BOLT", "4-20", "RTD", "M·S", "HYD",
+        "HEX", "DEC", "BIN", "OCT", "WSZ", "ENDN", "FLT", "AND", "OR", "XOR", "NOT", "NAND", "NOR",
+        "SL", "SR", "ASR", "RL", "RR", "MOD", "ROL", "ROR", "2's", "BSWP", "BSET", "BCLR", "BTST", "MSK", "POP", "CLZ", "2ˣ", "LOG₂", "PWM", "ADC", "BAUD", "τ", "CRC", "CIDR",
+        "TC", "+TC", "−TC", "-TC", "FPS", "DOF", "FOV", "EV", "SHUTTER", "CROP", "ASPECT", "EXP", "AUD", "dB⊕", "SPL", "dB", "λ", "vₛ",
+        "dBm", "→W", "SWR", "VSWR", "RL", "FSPL", "FSL", "LNK", "EIRP", "SMTH", "NF", "ML", "Γ", "Z₀", "T₀", "c", "kB", "f₀", "fc", "λ/L", "F₁", "Δf", "RADAR", "C/B", "Pₙ",
+        "FML", "MW", "Z", "ION", "MOL", "C₁V₁", "M₁V₁", "εbc", "pH", "pKₐ", "BUFF", "BUF", "ABS", "TITR", "10⁻ˣ", "Kₑq", "ΔG", "E°", "Eₐ", "t½", "RCF", "Nₐ", "R", "F",
+        "FLR", "FLOUR", "BKR%", "BK%", "ΣW", "DIV", "Tw", "DDT", "ABV", "STRK", "MSH", "OG", "IBU", "SRM", "CO₂", "SO₂", "Aw", "YLD", "CST", "MGN", "MKP",
+        "PT", "BSA", "IBW", "AdjW", "CrCl", "GFR", "DOS", "DRP", "IV", "MCG", "GTT", "PED", "AGE", "SEX", "SCR", "W", "H", "PK", "MAP", "BRN", "A-a", "AG", "Ca²⁺", "Na⁺", "QTc", "O₂",
+        "N", "I/Y", "I%YR", "PV", "PMT", "FV", "CPK", "Cpk", "AMRT", "NPV", "IRR", "BOND", "NormCDF", "InvNorm",
+        "pN", "qN", "rN", "pt", "qt", "rt", "pχ²", "qχ²", "rχ²", "pF", "qF", "rF", "pB", "qB", "rB", "z₀", "t₂", "CI", "n*", "ŷ", "ΔD", "%Σ", "Σ+",
+        "SHOW", "x²", "yˣ", "√x", "1/x", "+/-", "x⇄y", "R↓", "←", "≪", "≫", "⊕", "x∥y",
     }
 
     def _is_valid_keycap(token: str) -> bool:
         t_clean = token.strip()
         if not t_clean:
             return False
+        if t_clean.startswith("▸") and len(t_clean) <= 6:
+            return True
         for reg in (registry, alt_registry):
             try:
                 reg.resolve(t_clean)
@@ -1881,11 +1891,13 @@ def format_heading_text(raw_title: str, is_sc32: bool = True) -> Tuple[str, str]
 
     # Plain version for TOC & PDF Bookmarks (convert special key symbols to clean readable ASCII/Unicode)
     t_plain = t.replace("↰", "f").replace("↱", "g").replace("⇄", "↔").replace("∥", "||").replace("▸", "→")
-    t_plain = t_plain.replace("🎲", "DICE").replace("🕒", "CLOCK").replace("▦", "FRAME")
+    t_plain = t_plain.replace("ᵥ", "v").replace("ᴺ", "N")
+    grid_plain = "TBL" if (is_sc32 or _ACTIVE_MANUAL_KIND == "domains") else "FRAME"
+    t_plain = t_plain.replace("🎲", "DICE").replace("🕒", "CLOCK").replace("▦", grid_plain)
     t_plain = t_plain.replace("⌊", "floor(").replace("⌋", ")").replace("⌈", "ceil(").replace("⌉", ")")
     for k, v in math_ph.items():
         v_plain = re.sub(r'</?[a-zA-Z][^>]*>', '', v)
-        v_plain = v_plain.replace("∥", "||").replace("⌊", "floor(").replace("⌋", ")")
+        v_plain = v_plain.replace("∥", "||").replace("⌊", "floor(").replace("⌋", ")").replace("ᵥ", "v").replace("ᴺ", "N")
         t_plain = t_plain.replace(k, v_plain)
     plain = html.unescape(re.sub(r'</?[a-zA-Z][^>]*>', '', t_plain)).strip()
 
@@ -1904,15 +1916,20 @@ def format_heading_text(raw_title: str, is_sc32: bool = True) -> Tuple[str, str]
                 return ph_k
             except ValueError:
                 pass
-        if k_tok in {
-            "FWD", "INV", "BRG", "WND", "ISA", "trav", "→HR", "→HMS", "POL", "REC",
-            "RUN", "RISE", "DIAG", "HIP", "BEND", "VD", "TBL", "3PH÷", "→mm", "→in",
-            "HEX", "DEC", "BIN", "OCT", "WSZ", "ENDN", "FLT", "AND", "OR", "XOR", "NOT",
-            "SL", "SR", "ASR", "RL", "RR", "MOD", "TC", "FPS", "DOF", "EXP", "AUD", "dB⊕",
-            "dBm", "→W", "SWR", "FSPL", "SMTH", "NF", "ML", "MW", "MOL", "C₁V₁", "M₁V₁",
-            "pH", "BUFF", "ABS", "TITR", "10⁻ˣ", "FLR", "BKR%", "DDT", "ABV", "STRK", "IBU",
-            "BSA", "IBW", "CrCl", "MCG", "GTT", "PED", "AGE", "SEX", "SCR",
-            "N", "I/Y", "I%YR", "PV", "PMT", "FV", "CPK", "AMRT", "NPV", "IRR", "NormCDF", "InvNorm",
+        if (k_tok.startswith("▸") and len(k_tok) <= 6) or k_tok in {
+            "FWD", "INV", "BRG", "WND", "ISA", "TRAV", "trav", "→HR", "→HMS", "POL", "REC",
+            "SLOPE", "GRADE%", "PT+", "CLOSURE", "HCRV", "VCRV", "3-W", "STA", "LVL", "WIND", "XWIND", "HW", "ALT", "TSD", "TOD", "VS", "TRI",
+            "RUN", "RISE", "DIAG", "HIP", "BEND", "VD", "TBL", "3PH÷", "→mm", "→in", "AWG", "Cᵥ", "PUMP", "RPM", "SFM", "FEED", "TAP", "BOLT", "4-20", "RTD", "M·S", "HYD",
+            "HEX", "DEC", "BIN", "OCT", "WSZ", "ENDN", "FLT", "AND", "OR", "XOR", "NOT", "NAND", "NOR",
+            "SL", "SR", "ASR", "RL", "RR", "MOD", "ROL", "ROR", "2's", "BSWP", "BSET", "BCLR", "BTST", "MSK", "POP", "CLZ", "2ˣ", "LOG₂", "PWM", "ADC", "BAUD", "τ", "CRC", "CIDR",
+            "TC", "+TC", "−TC", "-TC", "FPS", "DOF", "FOV", "EV", "SHUTTER", "CROP", "ASPECT", "EXP", "AUD", "dB⊕", "SPL", "dB", "λ", "vₛ",
+            "dBm", "→W", "SWR", "VSWR", "FSPL", "FSL", "LNK", "EIRP", "SMTH", "NF", "ML", "Γ", "Z₀", "T₀", "c", "kB", "f₀", "fc", "λ/L", "F₁", "Δf", "RADAR", "C/B", "Pₙ",
+            "FML", "MW", "Z", "ION", "MOL", "C₁V₁", "M₁V₁", "εbc", "pH", "pKₐ", "BUFF", "BUF", "ABS", "TITR", "10⁻ˣ", "Kₑq", "ΔG", "E°", "Eₐ", "t½", "RCF", "Nₐ", "R", "F",
+            "FLR", "FLOUR", "BKR%", "BK%", "ΣW", "DIV", "Tw", "DDT", "ABV", "STRK", "MSH", "OG", "IBU", "SRM", "CO₂", "SO₂", "Aw", "YLD", "CST", "MGN", "MKP",
+            "PT", "BSA", "IBW", "AdjW", "CrCl", "GFR", "DOS", "DRP", "IV", "MCG", "GTT", "PED", "AGE", "SEX", "SCR", "PK", "MAP", "BRN", "A-a", "AG", "Ca²⁺", "Na⁺", "QTc", "O₂",
+            "N", "I/Y", "I%YR", "PV", "PMT", "FV", "CPK", "Cpk", "AMRT", "NPV", "IRR", "BOND", "NormCDF", "InvNorm",
+            "pN", "qN", "rN", "pt", "qt", "rt", "pχ²", "qχ²", "rχ²", "pF", "qF", "rF", "pB", "qB", "rB", "z₀", "t₂", "CI", "n*", "ŷ", "ΔD", "%Σ", "Σ+",
+            "SOLVE", "XEQ", "≪", "≫", "⊕", "x∥y",
         }:
             ph_k = f"QQHK{len(key_ph)}QQ"
             key_ph[ph_k] = format_hardware_keycap_cartouche(k_tok, is_sc32, target_h_pt=10.0)
@@ -2124,54 +2141,84 @@ INDEX_CATALOG_SC6 = [
 ]
 
 INDEX_CATALOG_DOMAINS = [
-    ("4-Register RPN Stack (T, Z, Y, X) & Row 0 Domain Softkeys", [re.compile(r'\b(row 0|register [xyzt]|four-register|stack lift)\b', re.IGNORECASE)]),
+    ("4-Register RPN Stack (T, Z, Y, X) & Vector Decomposition", [re.compile(r'\b(register [xyzt]|four-register|stack lift)\b', re.IGNORECASE)]),
+    ("4–20 mA Current Loop Scaling & Live Zero ([4-20])", [re.compile(r'\b(4-20|4\s*mA|20\s*mA|current loop|live zero)\b', re.IGNORECASE)]),
     ("ABV (Alcohol by Volume) & Specific Gravity ([ABV])", [re.compile(r'\b(alcohol by volume|original gravity|final gravity|attenuation)\b', re.IGNORECASE)]),
-    ("Acid-Base Titration & Henderson-Hasselbalch Buffers ([BUFF], [TITR])", [re.compile(r'\b(henderson-hasselbalch|titration|equivalence point|buffer)\b', re.IGNORECASE)]),
-    ("Arrhenius Activation Energy & Chemical Kinetics", [re.compile(r'\b(arrhenius|activation energy|rate constant)\b', re.IGNORECASE)]),
-    ("Aviation Wind Triangle, Crosswind & WCA ([WND])", [re.compile(r'\b(wind triangle|crosswind|wind correction angle|e6b)\b', re.IGNORECASE)]),
-    ("Baker's Percentage, Dough Hydration & DDT ([FLR], [BKR%], [DDT])", [re.compile(r'\b(baker\'s percentage|dough hydration|desired dough temperature|friction factor)\b', re.IGNORECASE)]),
-    ("Beer-Lambert Law, Absorbance & Spectrophotometry ([ABS])", [re.compile(r'\b(beer-lambert|absorbance|transmittance|molar absorptivity)\b', re.IGNORECASE)]),
-    ("Bitwise Logic, Shift/Rotate & Two's Complement ([AND], [XOR], [RL])", [re.compile(r'\b(two\'s complement|bitwise|rotate left|arithmetic shift)\b', re.IGNORECASE)]),
+    ("Acid-Base Titration & Henderson-Hasselbalch Buffers ([BUF])", [re.compile(r'\b(henderson-hasselbalch|titration|conjugate base|buffer)\b', re.IGNORECASE)]),
+    ("ADC Quantization, LSB Step & Mixed-Signal Resolution ([ADC])", [re.compile(r'\b(analog-to-digital|quantization|\badc\b)\b', re.IGNORECASE)]),
+    ("Arrhenius Activation Energy & Chemical Kinetics ([ARR])", [re.compile(r'\b(arrhenius|activation energy|rate constant)\b', re.IGNORECASE)]),
+    ("Avogadro, Amedeo & Stoichiometric Molar Bridge", [re.compile(r'\b(avogadro|cannizzaro|stoichiometr)\b', re.IGNORECASE)]),
+    ("Aviation Wind Triangle, Crosswind & WCA ([WND])", [re.compile(r'\b(wind triangle|crosswind|wind correction angle)\b', re.IGNORECASE)]),
+    ("Baker's Percentage, Dough Hydration & Scaling ([FLR], [BKR%])", [re.compile(r'\b(baker\'s percentage|dough hydration|flour weight)\b', re.IGNORECASE)]),
+    ("Beer-Lambert Law, Absorbance & Spectrophotometry ([ABS], [BEER])", [re.compile(r'\b(beer-lambert|absorbance|transmittance|molar absorptivity)\b', re.IGNORECASE)]),
+    ("Bitfield Masking, Population Count & Leading Zeros ([MSK], [POP], [CLZ])", [re.compile(r'\b(bitfield|hamming weight|population count|leading zeros)\b', re.IGNORECASE)]),
+    ("Bitwise Logic, Shift/Rotate & Two's Complement ([2's], [ASR], [ROL])", [re.compile(r'\b(two\'s complement|bitwise|rotate left|arithmetic shift)\b', re.IGNORECASE)]),
     ("Black-Scholes Option Pricing & Volatility", [re.compile(r'\b(black-scholes|call option|volatility|risk-free)\b', re.IGNORECASE)]),
-    ("Body Surface Area (Mosteller Formula, [BSA])", [re.compile(r'\b(mosteller|body surface area|\bbsa\b)\b', re.IGNORECASE)]),
-    ("Bowditch Compass Rule & Traverse Closure ([trav])", [re.compile(r'\b(bowditch|compass rule|misclosure|closure error)\b', re.IGNORECASE)]),
-    ("CIDR IPv4 Subnetting & Shannon Entropy", [re.compile(r'\b(cidr|subnet|shannon entropy|netmask)\b', re.IGNORECASE)]),
-    ("Cockcroft-Gault Creatinine Clearance ([CrCl])", [re.compile(r'\b(cockcroft-gault|creatinine clearance|renal)\b', re.IGNORECASE)]),
-    ("Conduit Offset Bends, Travel & Shrink ([BEND])", [re.compile(r'\b(conduit|offset bend|shrink|benfield)\b', re.IGNORECASE)]),
-    ("Coordinate Inverse & Forward Traverse ([FWD], [INV], [BRG])", [re.compile(r'\b(coordinate inverse|forward traverse|azimuth|northing|easting)\b', re.IGNORECASE)]),
-    ("Decibel Power/Voltage Ratios & dBm ([dBm], [dB⊕])", [re.compile(r'\b(decibels?|\bdbm\b|bell labs|incoherent)\b', re.IGNORECASE)]),
+    ("Body Surface Area (Du Bois & Mosteller Formula, [BSA])", [re.compile(r'\b(mosteller|du bois|body surface area|\bbsa\b)\b', re.IGNORECASE)]),
+    ("Bolt Circle Coordinates & Rotary Machining ([BOLT], [SFM])", [re.compile(r'\b(bolt circle|surface feet per minute|spindle speed)\b', re.IGNORECASE)]),
+    ("Bond Pricing, Macaulay Duration & Convexity", [re.compile(r'\b(macaulay duration|yield to maturity|bond price|convexity)\b', re.IGNORECASE)]),
+    ("Bowditch Compass Rule & Traverse Closure ([trav], [CLOS])", [re.compile(r'\b(bowditch|compass rule|misclosure|closure error)\b', re.IGNORECASE)]),
+    ("Brake Horsepower & Control Valve Sizing ([BHP], [Cv])", [re.compile(r'\b(brake horsepower|flow coefficient|\bcv\b)\b', re.IGNORECASE)]),
+    ("Centrifuge Relative Centrifugal Force ([RCF])", [re.compile(r'\b(centrifugal force|\brcf\b|centrifuge)\b', re.IGNORECASE)]),
+    ("CIDR IPv4 Subnetting & Host Capacity ([CIDR])", [re.compile(r'\b(cidr|subnet|netmask|broadcast address)\b', re.IGNORECASE)]),
+    ("Circular Highway Curves, Tangent & Chord ([HCRV])", [re.compile(r'\b(circular curve|deflection angle|long chord|middle ordinate)\b', re.IGNORECASE)]),
+    ("Cockcroft-Gault Creatinine Clearance ([CrCl])", [re.compile(r'\b(cockcroft-gault|creatinine clearance|renal|glomerular)\b', re.IGNORECASE)]),
+    ("Color Temperature, Mired Shift & Inverse-Square Lux ([LUX])", [re.compile(r'\b(mired|correlated color temperature|illuminance|foot-candles)\b', re.IGNORECASE)]),
+    ("Conduit Offset Bends, Cosecant & Shrink ([BEND])", [re.compile(r'\b(conduit|offset bend|shrinkage|saddle bend)\b', re.IGNORECASE)]),
+    ("Coordinate Inverse & Forward Projection ([FWD], [INV], [BRG])", [re.compile(r'\b(coordinate geometry|azimuth|northing|easting|departure)\b', re.IGNORECASE)]),
+    ("CRC-32 Polynomial Division & Checksums ([CRC])", [re.compile(r'\b(cyclic redundancy|crc-32|galois)\b', re.IGNORECASE)]),
+    ("Decibel Power/Voltage Ratios & dBm ([dBm], [dB⊕])", [re.compile(r'\b(decibels?|\bdbm\b|incoherent|sound pressure level)\b', re.IGNORECASE)]),
     ("Density Altitude & International Standard Atmosphere ([ISA])", [re.compile(r'\b(density altitude|pressure altitude|standard atmosphere)\b', re.IGNORECASE)]),
-    ("Depth of Field, Hyperfocal Distance & Circle of Confusion ([DOF])", [re.compile(r'\b(hyperfocal|depth of field|circle of confusion)\b', re.IGNORECASE)]),
-    ("Dilution Solver (C1V1 = C2V2, [C₁V₁])", [re.compile(r'\b(serial dilution|stock solution|aliquot)\b', re.IGNORECASE)]),
-    ("Endianness Byte Swap & IEEE 754 Floating-Point ([ENDN], [FLT])", [re.compile(r'\b(endianness|little-endian|big-endian|ieee 754|mantissa)\b', re.IGNORECASE)]),
-    ("Exposure Triangle, T-Stops & Rotary Shutter Angle ([EXP])", [re.compile(r'\b(shutter angle|t-stop|nd filter|foot-candles)\b', re.IGNORECASE)]),
-    ("Framing Rafters, Roof Pitch & Feet-Inches-Fractions ([RUN], [RISE], [DIAG])", [re.compile(r'\b(rafter|unit rise|roof pitch|steel square)\b', re.IGNORECASE)]),
-    ("Friis Free-Space Path Loss & Link Budgets ([FSPL])", [re.compile(r'\b(friis|free-space path loss|link budget|\bfspl\b)\b', re.IGNORECASE)]),
+    ("Depth of Field, Hyperfocal Distance & Circle of Confusion ([DOF], [HYP])", [re.compile(r'\b(hyperfocal|depth of field|circle of confusion)\b', re.IGNORECASE)]),
+    ("Desired Dough Temperature & Mixer Friction ([DDT])", [re.compile(r'\b(desired dough temperature|friction factor|strike-water)\b', re.IGNORECASE)]),
+    ("Differential Spirit Leveling & Three-Wire Stadia ([LVL])", [re.compile(r'\b(differential leveling|backsight|foresight|stadia)\b', re.IGNORECASE)]),
+    ("Dilution Conservation (C1V1 = C2V2, [DIL])", [re.compile(r'\b(dilution|stock solution|aliquot)\b', re.IGNORECASE)]),
+    ("Endianness Byte Swap & IEEE-754 Floating-Point ([BSWP], [FLT])", [re.compile(r'\b(endianness|little-endian|big-endian|ieee-754|mantissa)\b', re.IGNORECASE)]),
+    ("Exposure Value, f-Stops & Rotary Shutter Angle ([EV], [SHUTTER])", [re.compile(r'\b(shutter angle|exposure value|aperture)\b', re.IGNORECASE)]),
+    ("Fibonacci (Leonardo of Pisa) & Present-Value Discounting", [re.compile(r'\b(fibonacci|liber abaci|present value)\b', re.IGNORECASE)]),
+    ("Field of View & Sensor Crop Factor ([FOV])", [re.compile(r'\b(field of view|focal length|rectilinear)\b', re.IGNORECASE)]),
+    ("First-Order Pharmacokinetic Elimination & Half-Life", [re.compile(r'\b(half-life|elimination rate|steady-state|trough)\b', re.IGNORECASE)]),
+    ("Fixed-Point Q-Format Scaling & Memory Alignment ([Q-FMT], [ALGN])", [re.compile(r'\b(fixed-point|q-format|cache-line|alignment)\b', re.IGNORECASE)]),
+    ("Friis, Harald T. & Free-Space Link Budgets ([FSPL], [LINK])", [re.compile(r'\b(friis|free-space path loss|link budget|\bfspl\b)\b', re.IGNORECASE)]),
+    ("Gauss's Shoelace Polygon Area Formula ([AREA])", [re.compile(r'\b(shoelace|polygon area|acreage)\b', re.IGNORECASE)]),
     ("Gravity IV Drip Rates & Weight-Based Infusions ([MCG], [GTT])", [re.compile(r'\b(drip factor|drops per minute|vasopressor|norepinephrine|titration)\b', re.IGNORECASE)]),
-    ("Hexadecimal ([HEX]), Binary ([BIN]) & 64-Bit Word Sizes ([WSZ])", [re.compile(r'\b(hexadecimal|word size|64-bit|register mask)\b', re.IGNORECASE)]),
-    ("Hop Utilization (Tinseth IBU) & Mash Strike Water ([STRK], [IBU])", [re.compile(r'\b(tinseth|strike water|alpha-acid|grist)\b', re.IGNORECASE)]),
+    ("Heaviside, Oliver & Transmission-Line Telegrapher Equations", [re.compile(r'\b(heaviside|characteristic impedance|transmission line)\b', re.IGNORECASE)]),
+    ("Hexadecimal ([HEX]), Binary ([BIN]) & Word Sizes ([WSZ])", [re.compile(r'\b(hexadecimal|word size|nibble|radix)\b', re.IGNORECASE)]),
+    ("Holliday-Segar 4-2-1 Pediatric Fluid Rule ([PED])", [re.compile(r'\b(holliday-segar|4-2-1|pediatric maintenance)\b', re.IGNORECASE)]),
+    ("Hop Utilization (Tinseth IBU) & Mash Strike Water ([STRK], [IBU])", [re.compile(r'\b(tinseth|strike water|alpha-acid|isomerization)\b', re.IGNORECASE)]),
     ("Ideal & Adjusted Body Weight (Devine Formula, [IBW])", [re.compile(r'\b(ideal body weight|adjusted body weight|devine)\b', re.IGNORECASE)]),
-    ("Molar Mass, Stoichiometry & Molarity ([MW], [MOL])", [re.compile(r'\b(molar mass|molarity|stoichiometry|avogadro)\b', re.IGNORECASE)]),
-    ("Modular Exponentiation & RSA Cryptography ([MOD])", [re.compile(r'\b(modular exponentiation|diffie-hellman|\brsa\b|cipher)\b', re.IGNORECASE)]),
-    ("NEC Conductor Voltage Drop & Three-Phase Power ([VD], [3PH÷])", [re.compile(r'\b(three-phase|circular mils|voltage drop|power factor)\b', re.IGNORECASE)]),
-    ("Net Present Value (NPV), IRR & Bond Duration ([NPV], [IRR])", [re.compile(r'\b(net present value|internal rate of return|macaulay duration)\b', re.IGNORECASE)]),
-    ("Pediatric Safe-Dose Guardrails & Calcium Correction ([PED])", [re.compile(r'\b(pediatric|amoxicillin|albumin|calcium)\b', re.IGNORECASE)]),
-    ("Reflection Coefficient Γ, VSWR & Return Loss ([SWR], [RL])", [re.compile(r'\b(reflection coefficient|\bvswr\b|standing wave|return loss|mismatch loss)\b', re.IGNORECASE)]),
-    ("SC-14 Industrial Trades, Electrical & Mechanical Calculator", [re.compile(r'\bsc-14\b', re.IGNORECASE)]),
-    ("SC-16 Systems Programming, Embedded & Cyber Calculator", [re.compile(r'\bsc-16\b', re.IGNORECASE)]),
+    ("Ideal Gas Law (PV = nRT, [IDEAL])", [re.compile(r'\b(ideal gas|universal gas constant)\b', re.IGNORECASE)]),
+    ("Kelvin, Lord (William Thomson) & Physical Measurement", [re.compile(r'\b(kelvin|william thomson)\b', re.IGNORECASE)]),
+    ("Leibniz, Shannon & Boolean Switching Algebra", [re.compile(r'\b(leibniz|shannon|boolean)\b', re.IGNORECASE)]),
+    ("Mason, Charles & Jeremiah Dixon (Geodetic Azimuth Survey)", [re.compile(r'\b(mason|dixon|theodolite)\b', re.IGNORECASE)]),
+    ("Molar Mass, Stoichiometry & Molarity ([MW], [MOL], [MOLAR])", [re.compile(r'\b(molar mass|molarity|formula weight)\b', re.IGNORECASE)]),
+    ("NEC Conductor Resistance, Ampacity & Voltage Drop ([VD], [AWG])", [re.compile(r'\b(circular mils|voltage drop|american wire gauge|\bawg\b)\b', re.IGNORECASE)]),
+    ("Net Present Value (NPV) & Internal Rate of Return ([NPV], [IRR])", [re.compile(r'\b(net present value|internal rate of return)\b', re.IGNORECASE)]),
+    ("Ohm, Georg Simon & Feeder Loop Resistance", [re.compile(r'\b(ohm|feeder|conductor resistance)\b', re.IGNORECASE)]),
+    ("Plato, Fritz & Balling Wort Gravity Scales", [re.compile(r'\b(plato|balling|wort|specific gravity)\b', re.IGNORECASE)]),
+    ("Platinum RTD Callendar-Van Dusen Thermometry ([RTD])", [re.compile(r'\b(pt100|callendar-van dusen|\brtd\b)\b', re.IGNORECASE)]),
+    ("PWM Timer Prescalers & UART Baud Divisors ([PWM], [UART])", [re.compile(r'\b(pulse-width modulation|baud rate|prescaler|\buart\b|\bpwm\b)\b', re.IGNORECASE)]),
+    ("Quarter-Wave Impedance Transformer ([λ/4], [Z0])", [re.compile(r'\b(quarter-wave|geometric mean|matching section)\b', re.IGNORECASE)]),
+    ("Reflection Coefficient Γ, VSWR & Return Loss ([SWR], [RL], [GAMMA])", [re.compile(r'\b(reflection coefficient|\bvswr\b|standing wave|return loss|mismatch loss)\b', re.IGNORECASE)]),
+    ("Sabine, Wallace Clement & Room Reverberation ([RT60], [WAV])", [re.compile(r'\b(sabine|reverberation|\brt60\b)\b', re.IGNORECASE)]),
+    ("SC-14 Electrical Power, Conduit & Industrial Trades Calculator", [re.compile(r'\bsc-14\b', re.IGNORECASE)]),
+    ("SC-16 Binary Radix, Bitwise Logic & Embedded Calculator", [re.compile(r'\bsc-16\b', re.IGNORECASE)]),
     ("SC-24 Cinema Optics, Broadcast Timecode & Sound Calculator", [re.compile(r'\bsc-24\b', re.IGNORECASE)]),
     ("SC-35 Geomatics, Land Surveying & Flight Navigation Calculator", [re.compile(r'\bsc-35\b', re.IGNORECASE)]),
-    ("SC-50 RF Spectrum, Transmission Lines & Microwave Calculator", [re.compile(r'\bsc-50\b', re.IGNORECASE)]),
-    ("SC-60 Wet-Lab Chemistry, Stoichiometry & Spectroscopy Calculator", [re.compile(r'\bsc-60\b', re.IGNORECASE)]),
-    ("SC-78 Commercial Bakery, Fermentation Science & Brewing Calculator", [re.compile(r'\bsc-78\b', re.IGNORECASE)]),
-    ("SC-80 Clinical Nursing, Hospital Pharmacy & Infusions Calculator", [re.compile(r'\bsc-80\b', re.IGNORECASE)]),
-    ("SC-95 Quantitative Finance, Actuarial Science & Six Sigma Calculator", [re.compile(r'\bsc-95\b', re.IGNORECASE)]),
-    ("Sexagesimal Degrees-Minutes-Seconds (D.MMSS, [→HR], [→HMS])", [re.compile(r'\b(sexagesimal|d\.mmss|arc-minutes|arc-seconds)\b', re.IGNORECASE)]),
-    ("Six Sigma Process Capability (Cp, Cpk & Normal Quantiles, [CPK])", [re.compile(r'\b(six sigma|process capability|\bcpk\b|specification limit)\b', re.IGNORECASE)]),
-    ("Smith Chart L-Network Impedance Matching ([SMTH])", [re.compile(r'\b(smith chart|phillip smith|impedance matching|l-network)\b', re.IGNORECASE)]),
+    ("SC-50 RF Engineering, Transmission Lines & Link Calculator", [re.compile(r'\bsc-50\b', re.IGNORECASE)]),
+    ("SC-60 Stoichiometry, Equilibrium & Wet-Lab Calculator", [re.compile(r'\bsc-60\b', re.IGNORECASE)]),
+    ("SC-78 Commercial Baking, Dough & Brewing Calculator", [re.compile(r'\bsc-78\b', re.IGNORECASE)]),
+    ("SC-80 Clinical Dosing, Renal Clearance & ICU Calculator", [re.compile(r'\bsc-80\b', re.IGNORECASE)]),
+    ("SC-95 Quantitative Finance, Valuation & Six Sigma Calculator", [re.compile(r'\bsc-95\b', re.IGNORECASE)]),
+    ("Sexagesimal Degrees-Minutes-Seconds (DDD.MMSS, [DMS])", [re.compile(r'\b(sexagesimal|ddd\.mmss|arcminutes|arcseconds)\b', re.IGNORECASE)]),
+    ("Shewhart, Walter A. & Six Sigma Process Capability ([CPK], [NormCDF])", [re.compile(r'\b(shewhart|six sigma|process capability|\bcpk\b)\b', re.IGNORECASE)]),
+    ("Slope Distance Reduction & Architectural Feet-Inches ([SLOPE], [FT-IN])", [re.compile(r'\b(slope distance|zenith|fractional inches)\b', re.IGNORECASE)]),
+    ("Smith, Phillip H. & Normalized Impedance Chart", [re.compile(r'\b(smith chart|phillip h\.? smith|normalized impedance)\b', re.IGNORECASE)]),
     ("SMPTE Timecode & 29.97 Drop-Frame Arithmetic ([TC], [FPS])", [re.compile(r'\b(smpte|timecode|drop-frame|29\.97)\b', re.IGNORECASE)]),
-    ("Thermal Noise Floor & Cascaded Noise Figure ([NF])", [re.compile(r'\b(noise figure|thermal noise|-174\s*dbm|johnson-nyquist)\b', re.IGNORECASE)]),
-    ("Time Value of Money & Loan Amortization ([N], [I/Y], [PV], [PMT], [FV])", [re.compile(r'\b(time value of money|amortization|compound interest)\b', re.IGNORECASE)]),
+    ("Sørensen, Søren P. L. & Logarithmic pH Activity ([pH], [pKa])", [re.compile(r'\b(sørensen|sorensen|hydrogen-ion|acid dissociation)\b', re.IGNORECASE)]),
+    ("Tesla, Nikola & Three-Phase AC Power Triangle ([PF], [3PH÷], [KVA], [FLA])", [re.compile(r'\b(tesla|three-phase|power factor|apparent power|reactive power)\b', re.IGNORECASE)]),
+    ("Thermal Noise Floor, Cascaded Noise Figure & IP3 ([NF], [IP3])", [re.compile(r'\b(noise figure|thermal noise|intermodulation|\bip3\b)\b', re.IGNORECASE)]),
+    ("Time Value of Money & Loan Amortization ([N], [I/Y], [PV], [PMT], [FV], [AMRT])", [re.compile(r'\b(time value of money|amortization|compound interest)\b', re.IGNORECASE)]),
 ]
 
 
@@ -2605,21 +2652,21 @@ def draw_bestseller_back_cover(
         c.drawString(safe_x, oy + h - 92.0, "Every physical trade speaks its own")
         c.drawString(safe_x, oy + h - 114.0, "dialect of mathematics.")
         p1_html = (
-            "A land surveyor sighting an azimuth in degrees, minutes, and seconds; a master electrician "
-            "bending a 30-degree conduit offset; a focus puller computing hyperfocal distance on an anamorphic "
-            "lens; an RF engineer matching a 50-ohm antenna on a Smith Chart; and an ICU nurse titrating a "
-            "weight-based infusion all face the same hazard: multi-step formulas where one misplaced parenthesis ruins the work."
+            "Why do land surveyors measure angles clockwise from true North instead of counterclockwise "
+            "from East? Why do bakers anchor every ingredient to flour weight rather than total dough weight? "
+            "Why does radio power decay with the square of distance and frequency, and why must clinical drug "
+            "doses scale with body surface area and renal clearance rather than body weight alone?"
         )
         p2_html = (
-            "<b>The Stack in the Field</b> introduces the nine domain-specific instruments of the "
-            "<b>StackCalc Series</b> (<b>SC-35, SC-14, SC-16, SC-24, SC-50, SC-60, SC-78, SC-80,</b> and "
-            "<b>SC-95</b>)—pairing the historical origin and first-principles derivation of each trade's equations "
-            "with parenthesis-free four-register stack traces (<b>T, Z, Y, X</b>) and dedicated <b>Row 0</b> softkey solvers."
+            "<b>The Stack in the Field</b> explores the first-principles mathematics behind nine physical disciplines—"
+            "using compact operational acronyms (<b>FWD, INV, VD, BEND, HEX, TC, SWR, MW, BKR%, BSA, NPV</b>) to motivate "
+            "each idea before showing how those equations unfold step by step across a four-register Reverse Polish Notation "
+            "stack (<b>Registers T, Z, Y, X</b>) on the <b>SC-35, SC-14, SC-16, SC-24, SC-50, SC-60, SC-78, SC-80,</b> and <b>SC-95</b>."
         )
         ref_note_html = (
-            "<b>Nine Instruments Inside:</b> Geomatics &amp; Flight (SC-35)  •  Electrical &amp; Mechanical Trades (SC-14)  "
-            "•  Systems &amp; Cyber (SC-16)  •  Cinema &amp; Broadcast (SC-24)  •  RF &amp; Microwave (SC-50)  "
-            "•  Wet-Lab Chemistry (SC-60)  •  Bakery &amp; Brewing (SC-78)  •  Clinical Pharmacy (SC-80)  •  Quantitative Finance &amp; Six Sigma (SC-95)."
+            "<b>Nine Disciplines Inside:</b> Geomatics &amp; Flight Navigation  •  Electrical &amp; Industrial Trades  "
+            "•  Binary Logic &amp; Embedded Timing  •  Cinematography, Timecode &amp; Acoustics  •  RF Propagation &amp; Link Budgets  "
+            "•  Stoichiometry &amp; Wet-Lab Analytics  •  Artisan Baking &amp; Zymurgy  •  Clinical Dosing &amp; Kinetics  •  Capital Valuation &amp; Statistical Inference."
         )
     elif kind == "sc32":
         c.drawString(safe_x, oy + h - 92.0, "Written for paper from the outside in.")
@@ -2816,8 +2863,8 @@ def build_kdp_front_matter(
         vol_label = "THE STACKCALC LIBRARY  •  VOLUME III"
         sub_line = "When Mathematics Meets the Physical Trades"
         desc_line = (
-            "Applied Field Mathematics, Domain Softkeys, and Four-Register Stack Traces "
-            "Across Nine Professional Instruments (<b>SC-35, SC-14, SC-16, SC-24, SC-50, SC-60, SC-78, SC-80 &amp; SC-95</b>)"
+            "First-Principles Applied Mathematics, Operational Shorthand, and Four-Register RPN Stack Traces "
+            "Across Surveying, Electrical Trades, Embedded Systems, Cinema, RF, Chemistry, Brewing, Clinical Dosing &amp; Finance"
         )
     elif kind == "sc32":
         main_title = "THINKING IN THE STACK"
@@ -2836,54 +2883,13 @@ def build_kdp_front_matter(
             "and Parenthesis-Free Thinking for Grades 3–6 (Ages 8–12) — with the <b>StackCalc SC-6</b>"
         )
 
-    # --- PAGE i (Recto): Half-Title Page ---
-    elements.append(ChapterTracker("HALF TITLE"))
-    elements.append(BookmarkFlowable("bm_halftitle", "Half-Title Page", level=0))
-    elements.append(Spacer(1, 120))
-    elements.append(make_paragraph(vol_label, kicker_style))
-    elements.append(Spacer(1, 6))
-    elements.append(make_paragraph(main_title, half_title_style))
-    elements.append(Spacer(1, 8))
-    elements.append(HRFlowable(width="25%", thickness=1.5, color=to_color(TEXT_MAIN), hAlign='LEFT', spaceAfter=8))
-    elements.append(make_paragraph(sub_line, half_sub_style))
-    elements.append(PageBreak())
+    # Note: Series overview and architectural notation conventions are documented
+    # here in code comments rather than printed as frontispiece pages in the book:
+    # - Volume I (SC-6): Visual number sense & 3D math blocks (Grades 3-6)
+    # - Volume II (SC-32): Scientific RPN, historical derivations & numerical methods
+    # - Volume III (Domains): Applied mathematics across nine physical trades (SC-35..SC-95)
 
-    # --- PAGE ii (Verso): Series Frontispiece ("The StackCalc Library") ---
-    elements.append(ChapterTracker("SERIES FRONTISPIECE"))
-    elements.append(Spacer(1, 90))
-    elements.append(make_paragraph("BOOKS &amp; OPEN-SOURCE INSTRUMENTS IN THE STACKCALC LIBRARY", kicker_style))
-    elements.append(Spacer(1, 8))
-    elements.append(HRFlowable(width="100%", thickness=1.0, color=to_color(TEXT_MAIN), spaceAfter=10))
-    elements.append(make_paragraph(
-        "<b>Volume I — From Blocks to the Stack (Grades 3–6 / Ages 8–12)</b><br/>"
-        "<i>How Hands-On Blocks Make Numbers Click</i><br/>"
-        f"ISBN {sc6_isbn}  •  9 Story-Driven Chapters, 9 Open-Source 3D-Printable Math Block Studios &amp; 25 Station Guides",
-        copyright_style
-    ))
-    elements.append(Spacer(1, 6))
-    elements.append(make_paragraph(
-        "<b>Volume II — Thinking in the Stack (High School, University &amp; Practicing Engineers)</b><br/>"
-        "<i>The Art of Solving Equations from the Inside Out</i><br/>"
-        f"ISBN {sc32_isbn}  •  14 Narrative Chapters, Historical Derivations, Numerical Methods &amp; Applied Engineering Case Studies",
-        copyright_style
-    ))
-    elements.append(Spacer(1, 6))
-    elements.append(make_paragraph(
-        "<b>Volume III — The Stack in the Field (Domain Calculator Series)</b><br/>"
-        "<i>When Mathematics Meets the Physical Trades</i><br/>"
-        f"ISBN {domains_isbn}  •  Geomatics (SC-35), Trades (SC-14), Cyber (SC-16), Cinema (SC-24), RF (SC-50), Wet-Lab (SC-60), Brewing (SC-78), Clinical (SC-80) &amp; Finance (SC-95)",
-        copyright_style
-    ))
-    elements.append(Spacer(1, 6))
-    elements.append(make_paragraph(
-        "<b>Software Applications &amp; Open-Source Hardware (stackcalc.io)</b><br/>"
-        "• <b>StackCalc iOS, iPadOS &amp; watchOS Applications:</b> Four-register RPN calculators for phone, tablet, or wrist.<br/>"
-        "• <b>OpenSCAD &amp; KiCad Hardware Files:</b> Printable calculator enclosures, tactile keycap matrices, 42mm Gridfinity math blocks, and PCB schematics.",
-        copyright_style
-    ))
-    elements.append(PageBreak())
-
-    # --- PAGE iii (Recto): Full Title Page ---
+    # --- PAGE i (Recto): Full Title Page ---
     elements.append(ChapterTracker("TITLE PAGE"))
     elements.append(BookmarkFlowable("bm_titlepage", "Title Page", level=0))
     elements.append(Spacer(1, 70))
@@ -2910,7 +2916,7 @@ def build_kdp_front_matter(
     ))
     elements.append(PageBreak())
 
-    # --- PAGE iv (Verso): Copyright, ISBN, Safety & KDP Colophon Page ---
+    # --- PAGE ii (Verso): Copyright, ISBN, Safety & KDP Colophon Page ---
     elements.append(ChapterTracker("COPYRIGHT AND COLOPHON"))
     elements.append(BookmarkFlowable("bm_copyright", "Copyright & Print Colophon", level=0))
     elements.append(Spacer(1, 24))
@@ -2988,7 +2994,7 @@ def build_kdp_front_matter(
     ))
     elements.append(PageBreak())
 
-    # --- PAGE v (Recto): Dedication & Epigraph Page ---
+    # --- PAGE iii (Recto): Dedication & Epigraph Page ---
     elements.append(ChapterTracker("DEDICATION AND EPIGRAPH"))
     elements.append(BookmarkFlowable("bm_dedication", "Dedication & Epigraph", level=0))
     dedication_style = ParagraphStyle(
@@ -3030,59 +3036,15 @@ def build_kdp_front_matter(
         ))
         elements.append(Spacer(1, 48))
         elements.append(make_paragraph(
-            "“Theory without practice is empty;<br/>"
-            "practice without theory is blind.”",
+            "“When you can measure what you are speaking about,<br/>"
+            "and express it in numbers, you know something about it.”",
             epigraph_quote_style
         ))
         elements.append(Spacer(1, 6))
         elements.append(make_paragraph(
-            "— IMMANUEL KANT, <i>Critique of Pure Reason</i> (1781)",
+            "— WILLIAM THOMSON (LORD KELVIN), <i>Electrical Units of Measurement</i> (1883)",
             epigraph_attr_style
         ))
-        elements.append(PageBreak())
-        # --- PAGE vi (Verso): Architectural Frontispiece & Domain Series Key ---
-        elements.append(ChapterTracker("ARCHITECTURAL FRONTISPIECE"))
-        elements.append(BookmarkFlowable("bm_arch_frontispiece", "Architectural Frontispiece", level=0))
-        front_hdr_style = ParagraphStyle(
-            "DomFrontispieceHdr",
-            parent=styles["Normal"],
-            fontName=FONT_BODY_BOLD,
-            fontSize=7.9,
-            leading=10.5,
-            textColor=to_color(SC32_PRIMARY),
-            alignment=1,
-            spaceAfter=4,
-        )
-        front_sub_style = ParagraphStyle(
-            "DomFrontispieceSub",
-            parent=styles["Normal"],
-            fontName=FONT_BODY_ITALIC,
-            fontSize=8.2,
-            leading=11.0,
-            textColor=to_color(TEXT_MUTED),
-            alignment=1,
-            spaceAfter=10,
-        )
-        front_body_style = ParagraphStyle(
-            "DomFrontispieceBody",
-            parent=styles["BodyText"],
-            fontName=FONT_BODY,
-            fontSize=7.8,
-            leading=10.6,
-            alignment=4,
-            spaceAfter=6.0,
-        )
-        elements.append(Spacer(1, 12))
-        elements.append(make_paragraph("ARCHITECTURAL FRONTISPIECE: THE NINE DOMAIN INSTRUMENTS", front_hdr_style))
-        elements.append(make_paragraph("Invariant Four-Register RPN Core, Row 0 Trade Softkeys &amp; Domain Input Modes", front_sub_style))
-        front_notes = [
-            "<b>1. One Invariant Stack Across Nine Physical Trades:</b> Every calculator in the StackCalc Domain Series (<b>SC-35, SC-14, SC-16, SC-24, SC-50, SC-60, SC-78, SC-80,</b> and <b>SC-95</b>) executes inside the same four-level operational stack (<b>Registers T, Z, Y, X</b>). Learning RPN stack mechanics once grants immediate fluency across all nine instruments.",
-            "<b>2. Row 0 Domain Softkey Solvers:</b> Rather than burying trade formulas inside nested menus, each instrument maps its top physical row of six keys (<b>Row 0</b>) to the fundamental nouns and verbs of that discipline—such as <b>FWD</b>, <b>INV</b>, and <b>BRG</b> on the SC-35 Surveyor; <b>RUN</b>, <b>RISE</b>, <b>DIAG</b>, and <b>BEND</b> on the SC-14 Tradesman; <b>HEX</b>, <b>BIN</b>, <b>WSZ</b>, and <b>FLT</b> on the SC-16 Programmer; and <b>BSA</b>, <b>IBW</b>, <b>CrCl</b>, and <b>MCG</b> on the SC-80 Clinician.",
-            "<b>3. Native Trade Input Modes:</b> Numbers are entered and displayed in the exact notation of the field: packed sexagesimal degrees-minutes-seconds (<b>D.MMSS</b>) in surveying, feet-inches-sixteenths (<b>FT-IN</b>) in carpentry and conduit bending, 8/16/32/64-bit two's complement hexadecimal and binary in embedded systems, and frame-accurate <b>HH:MM:SS:FF</b> SMPTE timecode on cinema sets.",
-            "<b>4. Worked Stack Traces &amp; Verification:</b> Every chapter pairs historical context and first-principles mathematical derivations with step-by-step four-register stack trace tables and self-check practice problems.",
-        ]
-        for fn_txt in front_notes:
-            elements.append(make_paragraph(_protect_special_unicode_glyphs(fn_txt), front_body_style))
         elements.append(PageBreak())
         return elements
     elif kind == "sc32":
@@ -3100,77 +3062,12 @@ def build_kdp_front_matter(
         ))
         elements.append(Spacer(1, 6))
         elements.append(make_paragraph(
+            "— ALFRED NORTH WHITEHEAD, <i>An Introduction to Mathematics</i> (1811)",
+            epigraph_attr_style
+        ) if False else make_paragraph(
             "— ALFRED NORTH WHITEHEAD, <i>An Introduction to Mathematics</i> (1911)",
             epigraph_attr_style
         ))
-        elements.append(PageBreak())
-        # --- PAGE vi (Verso): Architectural Frontispiece & Notation Key ---
-        elements.append(ChapterTracker("ARCHITECTURAL FRONTISPIECE"))
-        elements.append(BookmarkFlowable("bm_arch_frontispiece", "Architectural Frontispiece", level=0))
-        front_hdr_style = ParagraphStyle(
-            "SC32FrontispieceHdr",
-            parent=styles["Normal"],
-            fontName=FONT_BODY_BOLD,
-            fontSize=7.9,
-            leading=10.5,
-            textColor=to_color(SC32_PRIMARY),
-            alignment=1,
-            spaceAfter=4,
-        )
-        front_sub_style = ParagraphStyle(
-            "SC32FrontispieceSub",
-            parent=styles["Normal"],
-            fontName=FONT_BODY_ITALIC,
-            fontSize=8.2,
-            leading=11.0,
-            textColor=to_color(TEXT_MUTED),
-            alignment=1,
-            spaceAfter=8,
-        )
-        front_body_style = ParagraphStyle(
-            "SC32FrontispieceBody",
-            parent=styles["BodyText"],
-            fontName=FONT_BODY,
-            fontSize=7.8,
-            leading=10.4,
-            alignment=4,
-            spaceAfter=4.5,
-        )
-        elements.append(Spacer(1, 6))
-        elements.append(make_paragraph("ARCHITECTURAL FRONTISPIECE: THE SC-32 INSTRUMENT &amp; NOTATION KEY", front_hdr_style))
-        elements.append(make_paragraph("Four-Register RPN Evaluation, Dual-Shift Faceplate Topography &amp; Symbolic Conventions", front_sub_style))
-        ortho_candidates = [
-            MANUALS_ASSETS_DIR / "sc32-utility-ortho.png",
-            DOCS_DIR / "assets" / "renders" / "sc32-utility-ortho.png",
-            REPO_ROOT / "Website" / "docs" / "assets" / "renders" / "sc32-utility-ortho.png",
-        ]
-        ortho_img_p = next((p for p in ortho_candidates if p.exists()), None)
-        if ortho_img_p is not None:
-            try:
-                import io
-                from PIL import ImageOps
-                with PIL.Image.open(ortho_img_p) as fimg:
-                    ow, oh = fimg.size
-                    sc_f = min(PRINTABLE_WIDTH / ow, 225.0 / oh, 1.0)
-                    fw, fh = ow * sc_f, oh * sc_f
-                    g_fimg = ImageOps.autocontrast(fimg.convert("L"), cutoff=1)
-                    f_buf = io.BytesIO()
-                    g_fimg.save(f_buf, format="PNG")
-                    f_buf.seek(0)
-                    rl_fimg = RLImage(f_buf, width=fw, height=fh)
-                    rl_fimg.hAlign = "CENTER"
-                    elements.append(rl_fimg)
-                    elements.append(Spacer(1, 6))
-            except Exception:
-                pass
-        front_notes = [
-            "<b>1. The Four-Level Operational Stack (<i>T, Z, Y, X</i>) &amp; LASTX:</b> Every calculation executes across four visible active registers: <b>Register X</b> (bottom entry and result line), <b>Register Y</b> (second operand line), <b>Register Z</b> (third holding level), and <b>Register T</b> (top constant-replication level), backed by <b>LASTX</b> (which preserves the prior <i>X</i> argument before every operation) and 26 lettered storage registers (<b>A</b>–<b>Z</b>).",
-            "<b>2. Hardware Keycap Cartouches &amp; Dual Shifts:</b> Throughout this volume, primary faceplate keys appear as inline cartouches (<b>ENTER</b>, <b>x⇄y</b>, <b>R↓</b>, <b>SIN</b>, <b>LN</b>). Functions printed above a key in warm orange (accessed via the Left Shift key <b>↰</b>) or cool blue (accessed via the Right Shift key <b>↱</b>) are shown with their explicit directional shift prefix so every keystroke sequence is unambiguous.",
-            "<b>3. Dynamic Softkey Menu Bar (Top Key Row):</b> Opening a softkey menu or interactive workspace (<b>DISP</b>, <b>MODES</b>, <b>BASE</b>, <b>CLEAR</b>, <b>FLAGS</b>, <b>PARTS</b>, <b>PROB</b>, <b>SUMS</b>, <b>x̄,ȳ</b>, <b>s,σ</b>, <b>L.R.</b>, <b>x?y</b>, <b>x?0</b>, <b>POLY</b>, <b>TVM</b>, <b>EQN</b>, <b>SOLVE</b>, <b>∫</b>, <b>PLOT</b>, or <b>REGS</b>) maps the top row of six physical keys to context-sensitive labels along the bottom edge of the LCD; in <b>POLY</b> and <b>TVM</b>, those top-row softkeys accept coefficients and financial variables from Register <i>X</i> without pressing <b>STO</b> or <b>RCL</b>.",
-            "<b>4. Numbered Figures, Equations &amp; Stack Traces:</b> All schematic figures (<i>Figure C.N</i>) and display equations (<i>Eq. C.N</i>) are numbered sequentially by chapter. Every multi-step keystroke table displays the exact post-execution state of Registers <i>T, Z, Y,</i> and <i>X</i> verified to 64-bit IEEE-754 double precision.",
-        ]
-        for fn_txt in front_notes:
-            elements.append(make_paragraph(_protect_special_unicode_glyphs(fn_txt), front_body_style))
         elements.append(PageBreak())
         return elements
     else:
@@ -3190,7 +3087,6 @@ def build_kdp_front_matter(
             epigraph_attr_style
         ))
         elements.append(PageBreak())
-        elements.append(EnsureRectoPageFlowable())
         return elements
 
 
@@ -3229,6 +3125,8 @@ def _normalize_mathtext_latex(raw_tex: str) -> str:
     s = re.sub(r"\\end\{pmatrix\}", r" \\right)", s)
     s = re.sub(r"\\(?:begin|end)\{(?:aligned|align\*?|array|cases|matrix|pmatrix|bmatrix)\}(?:\{[lcr|]+\})?", "", s)
     s = s.replace(r"\hline", "")
+    s = s.replace(r"\&", r"\;\mathrm{AND}\;")
+    s = s.replace(r"\ggg", r"\gg")
     s = s.replace("&", " ").replace(r"\\", r", \; ")
     s = re.sub(r"</?[a-zA-Z][^>]*>", "", s)
     s = re.sub(r'"([^"]*)"', r"“\1”", s)
@@ -3580,6 +3478,7 @@ def parse_markdown_file(
     i = 0
     num_lines = len(lines)
     is_first_h1 = True
+    last_h1_bm_level = 0
 
     while i < num_lines:
         line = lines[i].rstrip()
@@ -4025,10 +3924,21 @@ def parse_markdown_file(
                         elements.append(reportlab_table)
             continue
 
-        # Heading 1 (# Chapter Title)
+        # Heading 1 (# Chapter Title or # Unit Title)
         if line.startswith("# "):
             title = line[2:].strip()
             plain_title, styled_title = format_heading_text(title, is_sc32=is_sc32)
+
+            m_unit_h1 = re.match(r"^Unit\s+([IVX]+)\b", plain_title, flags=re.IGNORECASE)
+            m_ch_h1 = re.match(r"^Chapter\s+(\d+)\b", plain_title, flags=re.IGNORECASE)
+            if m_unit_h1:
+                eq_prefix = m_unit_h1.group(1).upper()
+                eq_counter = 0
+                fig_counter = 0
+            elif m_ch_h1:
+                eq_prefix = m_ch_h1.group(1)
+                eq_counter = 0
+                fig_counter = 0
 
             if chapter_idx > 0 or not is_first_h1:
                 elements.append(PageBreak())
@@ -4038,10 +3948,13 @@ def parse_markdown_file(
 
             bm_key = f"bm_ch_{chapter_idx}_{i}"
             toc_title = plain_title
-            elements.append(BookmarkFlowable(bm_key, toc_title, level=0))
+            is_domain_subchapter = (kind == "domains" and bool(m_ch_h1))
+            bm_level = 1 if is_domain_subchapter else 0
+            last_h1_bm_level = bm_level
+            elements.append(BookmarkFlowable(bm_key, toc_title, level=bm_level))
 
             h1_p = make_paragraph(styled_title, styles["Heading1"])
-            h1_p._toc_info = (0, toc_title, bm_key)
+            h1_p._toc_info = (bm_level, toc_title, bm_key)
             terms = extract_index_terms(plain_title, is_sc32, term_counts, manual_kind=kind)
             if terms:
                 h1_p._index_terms = terms
@@ -4058,10 +3971,10 @@ def parse_markdown_file(
             plain_title, styled_title = format_heading_text(title, is_sc32=is_sc32)
 
             bm_key = f"bm_sec_{chapter_idx}_{i}"
-            elements.append(BookmarkFlowable(bm_key, plain_title, level=1))
+            elements.append(BookmarkFlowable(bm_key, plain_title, level=min(last_h1_bm_level + 1, 2)))
 
             h2_p = make_paragraph(styled_title, styles["Heading2"])
-            if not (is_sc32 and kind != "domains" and file_path.name.startswith("appendix-")):
+            if kind != "domains" and not (is_sc32 and file_path.name.startswith("appendix-")):
                 h2_p._toc_info = (1, plain_title, bm_key)
             terms = extract_index_terms(plain_title, is_sc32, term_counts, manual_kind=kind)
             if terms:
@@ -4204,6 +4117,7 @@ def parse_markdown_file(
             candidates = [
                 file_path.parent / raw_path,
                 MANUALS_ROOT / raw_path.lstrip("/"),
+                MANUALS_ASSETS_DIR / "diagrams" / "domains" / Path(raw_path).name,
                 MANUALS_ASSETS_DIR / "screenshots" / Path(raw_path).name,
                 MANUALS_ASSETS_DIR / Path(raw_path).name,
                 REPO_ROOT / raw_path.lstrip("/"),
@@ -4274,12 +4188,18 @@ def parse_markdown_file(
                             max_h = 138.0
                         else:
                             max_w = PRINTABLE_WIDTH
-                            max_h = 135.0 if is_sc32 else (165.0 if "diagram_" in resolved_img.name else 142.0)
+                            if "diagram_" in resolved_img.name:
+                                max_h = 160.0
+                            else:
+                                max_h = 135.0 if is_sc32 else 142.0
                         scale = min(max_w / orig_w, max_h / orig_h, 1.0)
                         w = orig_w * scale
                         h = orig_h * scale
                         if BW_PRINT_INTERIOR:
-                            gray_img = ImageOps.autocontrast(work_img.convert("L"), cutoff=1)
+                            if "diagram_" in resolved_img.name:
+                                gray_img = work_img.convert("L")
+                            else:
+                                gray_img = ImageOps.autocontrast(work_img.convert("L"), cutoff=1)
                             if is_sc32_plot_crop:
                                 dr_p = ImageDraw.Draw(gray_img)
                                 dr_p.rectangle([0, 0, gray_img.width - 1, gray_img.height - 1], outline=40, width=3)
@@ -4421,7 +4341,7 @@ def parse_markdown_file(
                         is_short_table
                         or nxt.startswith(("$$", "```", "#", "![", "<figure", ">", "{{blocks:"))
                         or ":screenshot" in nxt
-                        or (is_list_nxt and len(nxt) < 240)
+                        or is_list_nxt
                     ):
                         para_p.keepWithNext = True
             terms = extract_index_terms(raw_para, is_sc32, term_counts, manual_kind=kind)
@@ -4439,7 +4359,9 @@ def parse_markdown_file(
 # ---------------------------------------------------------------------------
 def compile_manual_pdf(is_sc32: bool = True, manual_kind: Optional[str] = None) -> Path:
     """Compiles the SC-6 (Volume I), SC-32 (Volume II), or Domain Series (Volume III) KDP-compliant 6x9 trade interior manuscript PDF."""
+    global _ACTIVE_MANUAL_KIND
     kind = manual_kind or ("sc32" if is_sc32 else "sc6")
+    _ACTIVE_MANUAL_KIND = kind
     if kind == "domains":
         is_sc32 = True
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
