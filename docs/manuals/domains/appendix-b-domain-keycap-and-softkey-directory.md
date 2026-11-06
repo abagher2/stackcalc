@@ -5,7 +5,7 @@ description: "Complete hardware keycap, Row 0 domain softkey, and register input
 
 # Appendix B: Master Row 0 Softkey & Shifted Keycap Directory
 
-> **Who this is for:** Operators, educators, and engineers who want a complete hardware keycap and Row 0 domain softkey directory across all nine StackCalc Domain Series instruments, showing exact pre-execution stack arguments (`Z, Y, X`) and post-execution outputs (`Y', X'`).
+> **Who this is for:** Operators, educators, and engineers who want a complete hardware keycap and Row 0 domain softkey directory across all nine StackCalc Domain Series instruments, showing exact pre-execution stack arguments ($Z, Y, X$) and post-execution outputs ($Y', X'$).
 
 ---
 
@@ -13,7 +13,7 @@ description: "Complete hardware keycap, Row 0 domain softkey, and register input
 
 Every calculator in the StackCalc Domain Series shares the same physical core keypad layout for stack manipulation, register storage, and arithmetic:
 
-| Keycap / Sequence | Function Name | Pre-Execution Stack (`Y, X`) | Post-Execution Stack (`Y', X'`) |
+| Keycap / Sequence | Function Name | Pre-Execution Stack ($Y, X$) | Post-Execution Stack ($Y', X'$) |
 | :--- | :--- | :--- | :--- |
 | `[ENTER]` | Stack Lift & Duplicate | `Y, X` | `X, X` (prior $Y \to Z$, $Z \to T$) |
 | `[x⇄y]` | Swap Registers $X$ and $Y$ | `Y, X` | `X, Y` ($Z$ and $T$ unchanged) |
@@ -21,7 +21,7 @@ Every calculator in the StackCalc Domain Series shares the same physical core ke
 | `[←]` / `[C]` | Backspace / Clear $X$ | `Y, X` | `Y, 0.0000` (disables stack lift) |
 | `[+/-]` | Change Sign / Negate | `Y, X` | `Y, -X` |
 | `[STO] [0]–[9]` | Store $X$ in Register $R_n$ | `Y, X` | `Y, X` ($R_n \leftarrow X$) |
-| `[RCL] [0]–[9]` | Recall Register $R_n$ to $X$ | `Y, X` | `X, R_n` (lifts stack first) |
+| `[RCL] [0]–[9]` | Recall Register $R_n$ to $X$ | `Y, X` | `X, Rₙ` (lifts stack first) |
 | `[f]` | Yellow Primary Shift | — | Arms yellow shifted legend for next key |
 | `[g]` | Blue Secondary Shift | — | Arms blue shifted legend for next key |
 | `[SHOW]` | Full-Precision Mantissa Peek | `Y, X` | Temporarily reveals all 15 significant digits of $X$ |

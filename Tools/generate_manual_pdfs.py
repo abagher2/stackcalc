@@ -1199,8 +1199,8 @@ def clean_latex_math(text: str) -> str:
         text = re.sub(r'\\xrightarrow\{([^{}]*)\}', r'→[\1]', text)
         text = re.sub(r'\\hspace\{[^{}]*\}', ' ', text)
 
-    # Clean any residual ^° into °
-    text = text.replace("^°", "°")
+    # Clean any residual ^° into ° and prime/double-prime in math
+    text = text.replace("^°", "°").replace("''", "″").replace("'", "′")
 
     # 6. Clean empty braces before superscripts/subscripts (e.g., {}^{40}K)
     text = text.replace("{}", "")
@@ -1280,7 +1280,7 @@ def clean_latex_math(text: str) -> str:
 
 _MATH_SERIF_GLYPH_RE = re.compile(
     r'([^\s<>][\u0304\u0302\u0307\u0308\u0303]|'
-    r'[≤≥≠≈≡∞∑∏∫∬∭∂∇↔⇌⇒⇔↑↓⇑⇓∝∠∥⊕∓′ˣᵇ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿⁱ₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎□●⟨⟩ℏ⌊⌋⌈⌉])'
+    r'[≤≥≠≈≡∞∑∏∫∬∭∂∇↔⇌⇒⇔↑↓⇑⇓∝∠∥⊕∓′″ˣᵇ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿⁱ₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎□●⟨⟩ℏ⌊⌋⌈⌉])'
 )
 
 _MATH_SANS_GLYPH_RE = re.compile(
